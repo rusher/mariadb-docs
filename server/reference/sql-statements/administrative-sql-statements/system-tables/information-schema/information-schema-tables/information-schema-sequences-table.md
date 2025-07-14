@@ -1,6 +1,8 @@
 # Information Schema SEQUENCES Table
 
-**MariaDB starting with** [**11.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+{% hint style="info" %}
+This table is available as of MariaDB  [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115).
+{% endhint %}
 
 The [Information Schema](../) `SEQUENCES` table stores information about [sequences](../../../../../sql-structure/sequences/) on the server.
 
@@ -8,7 +10,6 @@ It contains the following columns. See [CREATE SEQUENCE](../../../../../sql-stru
 
 | Column                    | Description                                       |
 | ------------------------- | ------------------------------------------------- |
-| Column                    | Description                                       |
 | SEQUENCE\_CATALOG         | Catalog name                                      |
 | SEQUENCE\_SCHEMA          | Database name                                     |
 | SEQUENCE\_NAME            | Sequence name                                     |
@@ -24,7 +25,7 @@ It contains the following columns. See [CREATE SEQUENCE](../../../../../sql-stru
 
 ## Example
 
-```
+```sql
 CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;
 
 SELECT * FROM INFORMATION_SCHEMA.SEQUENCES\G

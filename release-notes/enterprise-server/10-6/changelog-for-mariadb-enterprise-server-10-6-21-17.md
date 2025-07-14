@@ -82,7 +82,7 @@ MariaDB Enterprise Server 10.6.21-17 was released on 19 Mar 2025.
 * ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869)) Fix possibly wrong result using a degenerated subquery (SELECT ) with window function
 * ([MDEV-20281](https://jira.mariadb.org/browse/MDEV-20281)) The "Failed to write to mysql.slow\_log" error no longer shown without a detailed reason for the error
 * ([MDEV-35907](https://jira.mariadb.org/browse/MDEV-35907)) Fix debian-start script failure when using non-standard socket path
-* ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749)) wsrep\_sst\_mariabackup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours
+* ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749)) wsrep\_sst\_mariadb-backup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours
 * (MENT-2238) Replicate\_\* fields in Show-Slave-Status may be truncated, impacting replication monitoring.
 * (MENT-2243) Cherry-Pick [MDEV-35813](https://jira.mariadb.org/browse/MDEV-35813) - Performance regression in INSERT...SELECT due to unnecessarily making InnoDB log durable
 * (MENT-2245) Galera SSL errors after wolfSSL upgrade
@@ -108,7 +108,7 @@ MariaDB Enterprise Server 10.6.21-17 was released on 19 Mar 2025.
 * ([MDEV-24337](https://jira.mariadb.org/browse/MDEV-24337)) Server crash in DTCollation::set\_repertoire\_from\_charset
 * ([MDEV-25593](https://jira.mariadb.org/browse/MDEV-25593)) Assertion \`0' failed in Type\_handler\_temporal\_result::Item\_get\_date on double EXECUTE
 * ([MDEV-35273](https://jira.mariadb.org/browse/MDEV-35273)) thread\_pool\_generic::m\_thread\_data\_cache alignment violation
-* ([MDEV-32755](https://jira.mariadb.org/browse/MDEV-32755)) Stack-Buffer-Overflow at /mariadb-11.3.0/strings/int2str.c:122 @ralf, this issue is not for release notes. It shows up in debug builds only. No any negative effect in release builds.
+* ([MDEV-32755](https://jira.mariadb.org/browse/MDEV-32755)) Stack-Buffer-Overflow at /mariadb-11.3.0/strings/int2str.c:122
 * ([MDEV-21589](https://jira.mariadb.org/browse/MDEV-21589)) AddressSanitizer: memcpy-param-overlap in Static\_binary\_string::q\_append or String::append
 * ([MDEV-25174](https://jira.mariadb.org/browse/MDEV-25174)) DOUBLE columns now accept large hex hybrids when previously these failed in some cases
 * ([MDEV-23687](https://jira.mariadb.org/browse/MDEV-23687)) Assertion \`is\_valid\_value\_slow()' failed in Datetime::Datetime upon EXTRACT under mode ZERO\_DATE\_TIME\_CAST
@@ -186,7 +186,7 @@ MariaDB Enterprise Server 10.6.21-17 was released on 19 Mar 2025.
 * ([MDEV-31366](https://jira.mariadb.org/browse/MDEV-31366)) Assertion \`thd->start\_time' failed in bool LOGGER::slow\_log\_print(THD\*, const char\*, size\_t, ulonglong)
 * ([MDEV-35181](https://jira.mariadb.org/browse/MDEV-35181)) Assertion 'state < buf\_page\_t::READ\_FIX' in buf\_page\_create\_low()
 * ([MDEV-35626](https://jira.mariadb.org/browse/MDEV-35626)) Race condition between buf\_page\_create\_low() and read completion
-* ([MDEV-34820](https://jira.mariadb.org/browse/MDEV-34820)) wsrep\_sst\_mariabackup SST script could incorrectly calculate the actual file size on ZFS under FreeBSD, which could lead to progress reporting errors
+* ([MDEV-34820](https://jira.mariadb.org/browse/MDEV-34820)) wsrep\_sst\_mariadb-backup SST script could incorrectly calculate the actual file size on ZFS under FreeBSD, which could lead to progress reporting errors
 * ([MDEV-35578](https://jira.mariadb.org/browse/MDEV-35578)) innodb\_gis.rtree\_debug fails on mac
 * ([MDEV-35660](https://jira.mariadb.org/browse/MDEV-35660)) Internal failure in wsrep-recover test which was observed during work on [MDEV-24035](https://jira.mariadb.org/browse/MDEV-24035)
 * ([MDEV-35657](https://jira.mariadb.org/browse/MDEV-35657)) MSAN errors in os\_file\_readdir\_next\_file (xtrabackup)
@@ -231,9 +231,11 @@ MariaDB Enterprise Server 10.6.21-17 was released on 19 Mar 2025.
 * ([MDEV-35394](https://jira.mariadb.org/browse/MDEV-35394)) New parameter --skip-freed-pages for Innochecksum. Use this parameter to not get freed undo logs reported as existing undo log pages.
 * ([MDEV-35505](https://jira.mariadb.org/browse/MDEV-35505)) Galera protocol versions are now shown by show status - change available with installation of galera library 26.4.21+
 * ([MDEV-35643](https://jira.mariadb.org/browse/MDEV-35643)) MariaDB now supports MySQL 8.0 binlog events, including PARTIAL\_UPDATE\_ROWS\_EVENT, TRANSACTION\_PAYLOAD\_EVENT, and HEARTBEAT\_LOG\_EVENT\_V2.
-* ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526)) Fix possible crash in wsrep\_sst\_mariabackup script when upgrading node in cluster from 10.11.9 to 10.11.10.
+* ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526)) Fix possible crash in wsrep\_sst\_mariadb-backup script when upgrading node in cluster from 10.11.9 to 10.11.10.
 * ([MDEV-35910](https://jira.mariadb.org/browse/MDEV-35910)) Conditions with SP local variables are now pushed into derived table. Previous behaviour caused slow performance and table scans instead of using the pushed down condition
 * ([MDEV-34665](https://jira.mariadb.org/browse/MDEV-34665)) NULL-aware materialization with IN predicate and single column no longer skips building sorted Ordered\_key structures
 * ([MDEV-35363](https://jira.mariadb.org/browse/MDEV-35363)) Cloning of table statistics while saving the InnoDB table stats is now avoided
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

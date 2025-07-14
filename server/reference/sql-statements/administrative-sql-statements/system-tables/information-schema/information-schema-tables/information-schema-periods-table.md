@@ -1,6 +1,8 @@
 # Information Schema PERIODS Table
 
-**MariaDB starting with** [**11.4.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-1-release-notes)
+{% hint style="info" %}
+This table is available as of MariaDB [11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-1-release-notes).
+{% endhint %}
 
 The [Information Schema](../) `PERIODS` table provides information about [Application-Time Periods](../../../../../sql-structure/temporal-tables/application-time-periods.md).
 
@@ -8,7 +10,6 @@ It contains the following columns:
 
 | Column              | Description                                |
 | ------------------- | ------------------------------------------ |
-| Column              | Description                                |
 | TABLE\_CATALOG      | Always contains the string 'def'.          |
 | TABLE\_SCHEMA       | Database name.                             |
 | TABLE\_NAME         | Table name.                                |
@@ -18,7 +19,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 CREATE OR REPLACE TABLE t1(
  name VARCHAR(50), 
  date_1 DATE, 

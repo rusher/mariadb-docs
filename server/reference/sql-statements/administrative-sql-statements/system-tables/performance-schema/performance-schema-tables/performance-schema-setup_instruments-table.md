@@ -6,14 +6,13 @@ It contains the following columns:
 
 | Column  | Description                                                                                                                                                                                             |
 | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column  | Description                                                                                                                                                                                             |
 | NAME    | Instrument name                                                                                                                                                                                         |
 | ENABLED | Whether or not the instrument is enabled. It can be disabled, and the instrument will produce no events.                                                                                                |
 | TIMED   | Whether or not the instrument is timed. It can be set, but if disabled, events produced by the instrument will have NULL values for the corresponding TIMER\_START, TIMER\_END, and TIMER\_WAIT values. |
 
 ## Example
 
-From [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1057-release-notes), default settings with the Performance Schema enabled:
+From [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), default settings with the Performance Schema enabled:
 
 ```
 SELECT * FROM setup_instruments ORDER BY name;

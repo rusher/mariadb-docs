@@ -33,7 +33,7 @@ CREATE ROLE journalist;
 
 GRANT SHOW DATABASES ON *.* TO journalist;
 
-GRANT journalist to hulda;
+GRANT journalist TO hulda;
 ```
 
 Note, that hulda has no `SHOW DATABASES` privilege, even though she was granted the journalist role. She needs to **set** the role first:
@@ -141,7 +141,7 @@ SELECT CURRENT_USER
 
 SET ROLE r1;
 
-CREATE TABLE db1.t1 (i int);
+CREATE TABLE db1.t1 (i INT);
 
 CREATE VIEW db.v1 AS SELECT * FROM db1.t1;
 

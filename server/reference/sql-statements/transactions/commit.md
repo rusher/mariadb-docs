@@ -4,7 +4,7 @@ The `COMMIT` statement ends a transaction, saving any changes to the data so tha
 
 The required syntax for the `COMMIT` statement is as follows:
 
-```
+```sql
 COMMIT [WORK] [AND [NO] CHAIN] [[NO] RELEASE]
 ```
 

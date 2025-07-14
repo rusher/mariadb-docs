@@ -4,17 +4,6 @@ description: >-
   performance, and security. This section serves as your central hub for all
   aspects of MariaDB Server management.
 icon: gear
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Server Management

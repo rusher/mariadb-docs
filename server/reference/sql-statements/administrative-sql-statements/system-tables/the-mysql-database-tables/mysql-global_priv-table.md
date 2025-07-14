@@ -8,12 +8,11 @@ The `mysql.global_priv` table contains the following fields:
 
 | Field | Type     | Null | Key | Default | Description                                                                |
 | ----- | -------- | ---- | --- | ------- | -------------------------------------------------------------------------- |
-| Field | Type     | Null | Key | Default | Description                                                                |
 | Host  | char(60) | NO   | PRI |         | Host (together with User makes up the unique identifier for this account). |
 | User  | char(80) | NO   | PRI |         | User (together with Host makes up the unique identifier for this account). |
 | Priv  | longtext | NO   |     |         | Global privileges, granted to the account and other account properties     |
 
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), in order to help the server understand which version a privilege record was written by, the `priv` field contains a new JSON field, `version_id` ([MDEV-21704](https://jira.mariadb.org/browse/MDEV-21704)).
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), in order to help the server understand which version a privilege record was written by, the `priv` field contains a new JSON field, `version_id` ([MDEV-21704](https://jira.mariadb.org/browse/MDEV-21704)).
 
 ## Examples
 
@@ -72,7 +71,7 @@ SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv)) FROM mysql.global_pr
 +--------------------------------------------------------------------------------------+
 ```
 
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes):
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes):
 
 ```
 GRANT FILE ON *.* TO user1@localhost;
@@ -96,7 +95,6 @@ The `access` field contains the grants of the user which can be mapped to indivi
 
 | Grant                 | Bit          |
 | --------------------- | ------------ |
-| Grant                 | Bit          |
 | SELECT                | (1UL << 0)   |
 | INSERT                | (1UL << 1)   |
 | UPDATE                | (1UL << 2)   |

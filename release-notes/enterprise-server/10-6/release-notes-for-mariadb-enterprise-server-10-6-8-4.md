@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.6.8-4 was released on 2022-06-13.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/cve.org) link) | CVSS base score |
 | [CVE-2022-27458](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27458)                                                                                               | 7.5             |
 | [CVE-2022-27457](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27457)                                                                                               | 7.5             |
 | [CVE-2022-27456](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27456)                                                                                               | 7.5             |
@@ -45,8 +44,8 @@ MariaDB Enterprise Server 10.6.8-4 was released on 2022-06-13.
 MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server:
 
 * [mariadb-dump option --as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) reads data as of specific timestamp from system-versioned tables. (MENT-1457)
-* Added [JSON_EQUALS() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_equals) to check JSON equality. (MENT-1452)
-* Added [JSON_NORMALIZE() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_normalize) to normalize JSON values. (MENT-1456)
+* Added [JSON\_EQUALS() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_equals) to check JSON equality. (MENT-1452)
+* Added [JSON\_NORMALIZE() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_normalize) to normalize JSON values. (MENT-1456)
 * Added [password\_reuse\_check password validation plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/password-reuse-check-plugin). (MENT-1451)
 
 ## Notable Changes
@@ -54,7 +53,7 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 * Galera updated to 26.4.12
 * Spider storage engine refuses attempts to create a temporary table since the engine cannot itself store data and cannot create temporary tables on a remote server. ([MDEV-28225](https://jira.mariadb.org/browse/MDEV-28225))
 * Status variables Innodb\_encryption\_key\_rotation\_list\_length, Innodb\_num\_index\_pages\_written and Innodb\_num\_non\_index\_pages\_written were unused and have been removed. ([MDEV-28541](https://jira.mariadb.org/browse/MDEV-28541), [MDEV-28537](https://jira.mariadb.org/browse/MDEV-28537))
-* Starting with this release, when [wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set to `rsync` or `mariabackup`, the `sst_max_binlogs` SST option can be specified in the \[`sst`] option group in configuration files. This parameter specifies the number of binary log files to be sent to the joiner node during SST. ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* Starting with this release, when [wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set to `rsync` or `mariadb-backup`, the `sst_max_binlogs` SST option can be specified in the \[`sst`] option group in configuration files. This parameter specifies the number of binary log files to be sent to the joiner node during SST. ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
   * The default value is `0`:
     * If a binlog exists, it will be transferred.
     * If a binlog does not exist, no binlog will be transferred.
@@ -77,7 +76,7 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 
 ### Can result in a hang or crash
 
-* With MariaDB Enterprise Cluster, powered by Galera, when [wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set to `rsync` or `mariabackup`, the donor node does not transfer the correct binary logs to the joiner node with some configurations. ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* With MariaDB Enterprise Cluster, powered by Galera, when [wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set to `rsync` or `mariadb-backup`, the donor node does not transfer the correct binary logs to the joiner node with some configurations. ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
 * When a window function is used in the global ORDER BY clause of a [SELECT statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) with a `UNION`, the statement should be rejected, but the server executes the statement and crashes with a segmentation fault. ([MDEV-15208](https://jira.mariadb.org/browse/MDEV-15208))
 * When a stored procedure queries a view and uses a for loop, the server can crash with a segmentation fault when the stored procedure is called twice in the same session. ([MDEV-26009](https://jira.mariadb.org/browse/MDEV-26009))
 * When [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) is executed on an encrypted tablespace file using the [--page-type-summary or -S option](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum#options), `innochecksum` crashes with a segmentation fault unless the [--page-type-dump or -D option](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum#options) is also specified. ([MDEV-27835](https://jira.mariadb.org/browse/MDEV-27835))
@@ -142,14 +141,14 @@ View being updated does not have complete key of underlying table in it
 * When using [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) with [--raw](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog#-raw) and [--stop-never](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog#-stop-never), events from the primary server's currently active log file are not written to their respective log file specified by [--result-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog#-result-file). ([MDEV-14608](https://jira.mariadb.org/browse/MDEV-14608))
 * When a prepared statement is used to execute [EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain), a different query plan can be returned on the second execution. ([MDEV-19631](https://jira.mariadb.org/browse/MDEV-19631))
 * When [slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is enabled with semi-synchronous replication, the numbering on packet headers can become out of sync between the primary and replica servers, but the inconsistency does not have any negative impact with release builds of MariaDB Enterprise Server. ([MDEV-25580](https://jira.mariadb.org/browse/MDEV-25580))
-* The server and [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) can raise unnecessary warnings about tablespace IDs in some scenarios. ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
+* The server and [MariaDB Enterprise Backup](broken-reference) can raise unnecessary warnings about tablespace IDs in some scenarios. ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
   * The warning can appear as the following:
 
 ```
 InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old maximum was 0
 ```
 
-* This warning can be written to standard output (stdout) when preparing a backup with [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup).
+* This warning can be written to standard output (stdout) when preparing a backup with [MariaDB Enterprise Backup](broken-reference).
 * This warning can be written to the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when InnoDB performs crash recovery at startup.
 * With MariaDB Enterprise Cluster, the joiner node fails to complete an SST when [innodb\_log\_group\_home\_dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_group_home_dir) specifies a directory different than [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir). ([MDEV-27740](https://jira.mariadb.org/browse/MDEV-27740))
 * When a non-partitioned table using the `DATA DIRECTORY` clause is converted to a partitioned table, the `DATA DIRECTORY` clause is silently ignored, and the partitioned table is moved to the default directory. ([MDEV-27065](https://jira.mariadb.org/browse/MDEV-27065))
@@ -159,12 +158,12 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 * With MariaDB Enterprise Cluster, State Snapshot Transfers (SSTs) can fail on the donor node when binary logs are enabled. ([MDEV-26201](https://jira.mariadb.org/browse/MDEV-26201))
 * With MariaDB Enterprise Cluster, when [wsrep\_node\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_address) contains an IPv6 address and [wsrep\_sst\_receive\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_receive_address) is set to the default value of `AUTO`, State Snapshot Transfers (SST) can fail. ([MDEV-26171](https://jira.mariadb.org/browse/MDEV-26171))
 * With [temporal tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables), replication can break if a system versioned table has been created on the replica via mariadb-dump, if the original table was altered before. ([MDEV-28254](https://jira.mariadb.org/browse/MDEV-28254))
-* `mariabackup` does not detect multi-source replication primary. ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* `mariadb-backup` does not detect multi-source replication primary. ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * `Master_SSL_Crl` shows `Master_SSL_CA` value in `SHOW REPLICA STATUS` output. ([MDEV-28428](https://jira.mariadb.org/browse/MDEV-28428))
 * MariaDB Audit plugin produces corrupted log entries for `CONNECT` events. (MENT-1438)
 * `mariadb-dump` does not create a dump where the `sql_mode` is set correctly for SQL/PL packages. ([MDEV-27816](https://jira.mariadb.org/browse/MDEV-27816))
 * Missing binlog data for [INSERT .. ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) ([MDEV-28310](https://jira.mariadb.org/browse/MDEV-28310))
-* `mariabackup prepare` fails for incremental backups if a new schema is created after full backup. ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
+* `mariadb-backup prepare` fails for incremental backups if a new schema is created after full backup. ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 * Optimizer uses all partitions during an `UPDATE` and ignores partitioning filters. ([MDEV-28246](https://jira.mariadb.org/browse/MDEV-28246))
 * When [INSERT .. ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) is executed and `binlog_format` is set to `MIXED`, the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-6/broken-reference/README.md) even though the statement is written to the binary log in row-based format. ([MDEV-21810](https://jira.mariadb.org/browse/MDEV-21810))
   * The warning can appear in the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) as the following:
@@ -178,14 +177,14 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 * With MariaDB Enterprise Cluster (Galera), `wsrep_incoming_addresses` does not include address details. (MENT-1527)
 * With HashiCorp key management (`hashicorp_key_management`), dynamic changes to `hashicorp_key_management_cache_timeout` and `hashicorp_key_management_cache_version_timeout` system variables are ignored. (MENT-1512)
 * With Enterprise Spider, "Error while parsing DSN" can be returned when connecting to an ODBC source. (MENT-1316)
-* Last binlog file and position are "empty" in `mariabackup --prepare` output. ([MDEV-26322](https://jira.mariadb.org/browse/MDEV-26322))
+* Last binlog file and position are "empty" in `mariadb-backup --prepare` output. ([MDEV-26322](https://jira.mariadb.org/browse/MDEV-26322))
 * "Error" is shown instead of NULL in performance schema table `P_S.THREADS_CONNECTION_TYPE` for background threads. ([MDEV-28255](https://jira.mariadb.org/browse/MDEV-28255))
 * With Enterprise Spider, login to ODBC resources fails if the password contains a semicolon. (MENT-805)
 * When setting `group_concat_max_len` to 1 GB or more and using `GROUP_CONCAT()` in a subquery, the result gets truncated. ([MDEV-28490](https://jira.mariadb.org/browse/MDEV-28490))
 * Crash recovery fails if the configured server ID does not match the server ID in the crashed data directory. ([MDEV-27342](https://jira.mariadb.org/browse/MDEV-27342))
 * The `innochecksum -w` option was inadvertently removed. ([MDEV-28181](https://jira.mariadb.org/browse/MDEV-28181))
 * Poor scaling with InnoDB and `utf8mb3` ([MDEV-27767](https://jira.mariadb.org/browse/MDEV-27767))
-* `mariabackup --log-copy-interval` is measured in milliseconds in MariaDB Enterprise Server 10.5 and in microseconds in MariaDB Enterprise Server 10.6. ([MDEV-27919](https://jira.mariadb.org/browse/MDEV-27919))
+* `mariadb-backup --log-copy-interval` is measured in milliseconds in MariaDB Enterprise Server 10.5 and in microseconds in MariaDB Enterprise Server 10.6. ([MDEV-27919](https://jira.mariadb.org/browse/MDEV-27919))
 * Upsert during `ALTER TABLE` results in `Duplicate entry` error. ([MDEV-15250](https://jira.mariadb.org/browse/MDEV-15250))
 * After a failed `IMPORT TABLESPACE` fails to delete files, `DROP TABLE` on the table can result in `ERROR 1005 (HY000): Can't create table` test`.`t2 `(errno: 184 "Tablespace already exists")` ([MDEV-27274](https://jira.mariadb.org/browse/MDEV-27274))
 * Query performance degradation when using many tables. ([MDEV-28073](https://jira.mariadb.org/browse/MDEV-28073))
@@ -275,6 +274,6 @@ This is the final release for Debian 9.
 * [Upgrade to MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

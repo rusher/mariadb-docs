@@ -91,7 +91,6 @@ The ColumnStore nodes:
 
 | Software Component                                                                                                   | Role                                                                                               |
 | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Software Component                                                                                                   | Role                                                                                               |
 | [MariaDB Enterprise ColumnStore](../../kb/en/mariadb-columnstore/)                                                   | • Columnar storage engine • Query execution • Data storage                                         |
 | [MariaDB Enterprise Server](../../kb/en/mariadb-enterprise-server/)                                                  | Enterprise-grade database server                                                                   |
 | [ColumnStore Storage Engine Plugin](columnstore-architectural-overview.md#columnstore-storage-engine-plugin)         | • Storage engine plugin • Integrates MariaDB Enterprise ColumnStore into MariaDB Enterprise Server |
@@ -290,7 +289,6 @@ MariaDB Enterprise ColumnStore leverages common technologies to provide highly a
 
 | Technology                                                                                                                  | Role                                                                                                                                                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Technology                                                                                                                  | Role                                                                                                                                                                                                                                               |
 | [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage)           | • HA for data • Optional.                                                                                                                                                                                                                          |
 | [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                           | • With S3: HA for [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) • Without S3: HA for [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) |
 | [MariaDB Replication](columnstore-architectural-overview.md#mariadb-replication)                                            | • Schema replication (ColumnStore tables) • Schema and data replication (non-ColumnStore tables) • Database object replication                                                                                                                     |
@@ -410,7 +408,6 @@ MariaDB Enterprise ColumnStore supports backup and restore using well-known tool
 
 | Component                                                                                                         | Backup Methods                     |
 | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| Component                                                                                                         | Backup Methods                     |
 | [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) | • S3 snapshot                      |
 | [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                 | • File system snapshot • File copy |
 | [Enterprise Server Data Directory](columnstore-architectural-overview.md#enterprise-server-data-directory)        | • MariaDB Enterprise Backup        |
@@ -437,7 +434,7 @@ The shared local storage can be backed up by:
 
 ### Enterprise Server Data Directory
 
-MariaDB Enterprise ColumnStore can leverage the standard [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) utility to backup the Enterprise Server data directory.
+MariaDB Enterprise ColumnStore can leverage the standard [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) utility to backup the Enterprise Server data directory.
 
 The backup contains:
 

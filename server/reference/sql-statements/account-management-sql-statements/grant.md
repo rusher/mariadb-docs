@@ -106,7 +106,7 @@ GRANT USAGE ON *.* TO 'user123'@'%'
   IDENTIFIED VIA PAM using 'mariadb' require ssl ;
 Query OK, 0 rows affected (0.00 sec)
  
-select host, user from mysql.user where user='user123' ;
+SELECT host, user FROM mysql.user WHERE user='user123' ;
 
 +------+----------+
 | host | user     |
@@ -183,7 +183,7 @@ Enables administration of the [binary log](../../../server-management/server-mon
 * [sync\_binlog](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sync_binlog).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 BINLOG ADMIN isn't available.
 {% endtab %}
 {% endtabs %}
@@ -195,7 +195,7 @@ BINLOG ADMIN isn't available.
 New name for [REPLICATION CLIENT](grant.md#replication-client). `REPLICATION CLIENT` can still be used, though.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 Use [REPLICATION CLIENT](grant.md#replication-client) instead. [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) isn't included in this privilege, and [REPLICA MONITOR](grant.md#replica-monitor) is required.
 {% endtab %}
 {% endtabs %}
@@ -214,8 +214,8 @@ Enables replaying the binary log with the [BINLOG](../administrative-sql-stateme
 * [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
-BINLOG REPLAY isn't available.
+{% tab title="< 10.5" %}
+`BINLOG REPLAY` isn't available.
 {% endtab %}
 {% endtabs %}
 
@@ -257,7 +257,7 @@ Create a user using the [CREATE USER](create-user.md) statement, or implicitly c
 Execute [CREATE SERVER](../data-definition/create/create-server.md), [ALTER SERVER](../data-definition/alter/alter-server.md), and [DROP SERVER](../data-definition/drop/drop-server.md) statements.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 `FEDERATED ADMIN` is not available.
 {% endtab %}
 {% endtabs %}
@@ -283,14 +283,14 @@ User ignores the [read\_only](../../../ha-and-performance/optimization-and-tunin
 The `READ_ONLY ADMIN` privilege has been removed from [SUPER](grant.md#super). The benefit of this is that one can remove the READ\_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary.
 {% endtab %}
 
-{% tab title="< 10.11.0" %}
+{% tab title="< 10.11" %}
 User ignores the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable, and can perform write operations even when the `read_only` option is active.
 
 The `READ_ONLY ADMIN` privilege is included in [SUPER](grant.md#super).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
-READ\_ONLY ADMIN isn't available.
+{% tab title="< 10.5" %}
+`READ\_ONLY ADMIN` isn't available.
 {% endtab %}
 {% endtabs %}
 
@@ -300,7 +300,15 @@ Execute [FLUSH](../administrative-sql-statements/flush-commands/flush.md) statem
 
 #### **REPLICATION CLIENT**
 
-Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor) in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) (but still supported as an alias for compatibility reasons). [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) was part of [REPLICATION CLIENT](grant.md#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105).
+{% tabs %}
+{% tab title="Current" %}
+Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor) (but still supported as an alias for compatibility reasons).
+{% endtab %}
+
+{% tab title="< 10.5" %}
+Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) is part of [REPLICATION CLIENT](grant.md#replication-client).
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="Current" %}
@@ -308,7 +316,7 @@ Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-s
 {% endtab %}
 
 {% tab title="< 10.6" %}
-Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor) in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) (but still supported as an alias for compatibility reasons). [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) was part of [REPLICATION CLIENT](grant.md#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105).
+Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor) in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes) (but still supported as an alias for compatibility reasons). [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) was part of [REPLICATION CLIENT](grant.md#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105).
 {% endtab %}
 {% endtabs %}
 
@@ -316,11 +324,11 @@ Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-s
 
 {% tabs %}
 {% tab title="Current" %}
-Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid\_binlog\_state](../../../ha-and-performance/standard-replication/gtid.md#gtid_binlog_state), [gtid\_domain\_id](../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id), [master\_verify\_checksum](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables.&#x20;
+Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid\_binlog\_state](../../../ha-and-performance/standard-replication/gtid.md#gtid_binlog_state), [gtid\_domain\_id](../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id), [master\_verify\_checksum](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
-#### `REPLICATION MASTER ADMIN` is not available.
+{% tab title="< 10.5" %}
+**`REPLICATION MASTER ADMIN` is not available.**
 {% endtab %}
 {% endtabs %}
 
@@ -334,9 +342,9 @@ See _Reasoning_ tab as to why this was implemented.
 {% endtab %}
 
 {% tab title="Reasoning" %}
-When a user would upgrade from an older major release to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes), certain user accounts would lose capabilities. For example, a user account that had the REPLICATION CLIENT privilege in older major releases could run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), but after upgrading to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes), they could no longer run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), because that statement was changed to require the REPLICATION REPLICA ADMIN privilege.
+When a user would upgrade from an older major release to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes), certain user accounts would lose capabilities. For example, a user account that had the REPLICATION CLIENT privilege in older major releases could run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), but after upgrading to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes), they could no longer run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), because that statement was changed to require the REPLICATION REPLICA ADMIN privilege.
 
-This issue is fixed in [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes) with this new privilege, which now grants the user the ability to execute `SHOW [ALL] (SLAVE | REPLICA) STATUS`.
+This issue is fixed in [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes) with this new privilege, which now grants the user the ability to execute `SHOW [ALL] (SLAVE | REPLICA) STATUS`.
 
 When a database is upgraded from an older major release to MariaDB Server 10.5.9 or later, any user accounts with the `REPLICATION CLIENT` or `REPLICATION SLAVE` privileges will automatically be granted the new `REPLICA MONITOR` privilege. The privilege fix occurs when the server is started up, not when mariadb-upgrade is performed.
 
@@ -355,8 +363,8 @@ However, when a database is upgraded from an early 10.5 minor release to 10.5.9 
 Synonym for [REPLICATION SLAVE](grant.md#replication-slave).
 {% endtab %}
 
-{% tab title="< 10.5.1" %}
-#### `REPLICATION REPLICA` is not available.
+{% tab title="< 10.5" %}
+**`REPLICATION REPLICA` is not available.**
 {% endtab %}
 {% endtabs %}
 
@@ -367,8 +375,8 @@ Synonym for [REPLICATION SLAVE](grant.md#replication-slave).
 Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master. [REPLICATION REPLICA](grant.md#replication-replica) is an alias for `REPLICATION SLAVE`.
 {% endtab %}
 
-{% tab title="< 10.5.1" %}
-Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master.&#x20;
+{% tab title="< 10.5" %}
+Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master.
 {% endtab %}
 {% endtabs %}
 
@@ -413,7 +421,7 @@ Permits administering replica servers, including [START REPLICA/SLAVE](../admini
 * [sync\_relay\_log\_info](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sync_relay_log_info).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 `REPLICATION SLAVE ADMIN` is not available.
 {% endtab %}
 {% endtabs %}
@@ -425,7 +433,7 @@ Permits administering replica servers, including [START REPLICA/SLAVE](../admini
 Enables setting the `DEFINER` when creating [triggers](../../../server-usage/triggers-events/triggers/), [views](../../../server-usage/views/), [stored functions](../../../server-usage/stored-routines/stored-functions/) and [stored procedures](../../../server-usage/stored-routines/stored-procedures/).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 SET USER isn't available.
 {% endtab %}
 {% endtabs %}
@@ -479,7 +487,7 @@ The SUPER privilege has been split into multiple smaller privileges to allow for
 These grants are part of SUPER and don't need to be granted separately.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 Use the SUPER privilege.
 {% endtab %}
 {% endtabs %}
@@ -494,14 +502,14 @@ To set a privilege for a database, specify the database using`db_name.*` for _pr
 
 ### Table Privileges
 
-<table><thead><tr><th width="257.851806640625">Privilege</th><th>Description</th></tr></thead><tbody><tr><td>ALTER</td><td>Change the structure of an existing table using the <a href="../data-definition/alter/alter-table.md">ALTER TABLE</a> statement.</td></tr><tr><td>CREATE</td><td>Create a table using the <a href="../data-definition/create/create-table.md">CREATE TABLE</a> statement. You can grant the CREATE privilege on tables that do not yet exist.</td></tr><tr><td>CREATE VIEW</td><td>Create a view using the <a href="../../../server-usage/views/create-view.md">CREATE_VIEW</a> statement.</td></tr><tr><td>DELETE</td><td>Remove rows from a table using the <a href="../data-manipulation/changing-deleting-data/delete.md">DELETE</a> statement.</td></tr><tr><td>DELETE HISTORY</td><td>Remove <a href="../../sql-structure/temporal-tables/system-versioned-tables.md">historical rows</a> from a table using the <a href="../data-manipulation/changing-deleting-data/delete.md">DELETE HISTORY</a> statement. Displays as DELETE VERSIONING ROWS when running SHOW PRIVILEGES until <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes">MariaDB 10.5.2</a> (<a href="https://jira.mariadb.org/browse/MDEV-20382">MDEV-20382</a>). If a user has the SUPER privilege but not this privilege, running <a href="../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md">mariadb-upgrade</a> will grant this privilege as well.</td></tr><tr><td>DROP</td><td>Drop a table using the <a href="../data-definition/drop/drop-table.md">DROP TABLE</a> statement or a view using the <a href="../../../server-usage/views/drop-view.md">DROP VIEW</a> statement. Also required to execute the <a href="../table-statements/truncate-table.md">TRUNCATE TABLE</a> statement.</td></tr><tr><td>GRANT OPTION</td><td>Grant table privileges. You can only grant privileges that you have.</td></tr><tr><td>INDEX</td><td>Create an index on a table using the <a href="../data-definition/create/create-index.md">CREATE INDEX</a> statement. Without the INDEX privilege, you can still create indexes when creating a table using the <a href="../data-definition/create/create-table.md">CREATE TABLE</a> statement if the you have the CREATE privilege, and you can create indexes using the <a href="../data-definition/alter/alter-table.md">ALTER TABLE</a> statement if you have the ALTER privilege.</td></tr><tr><td>INSERT</td><td>Add rows to a table using the <a href="../data-manipulation/inserting-loading-data/insert.md">INSERT</a> statement. The INSERT privilege can also be set on individual columns; see <a href="grant.md#column-privileges">Column Privileges</a> below for details.</td></tr><tr><td>REFERENCES</td><td>Unused.</td></tr><tr><td>SELECT</td><td>Read data from a table using the <a href="../data-manipulation/selecting-data/select.md">SELECT</a> statement. The SELECT privilege can also be set on individual columns; see <a href="grant.md#column-privileges">Column Privileges</a> below for details.</td></tr><tr><td>SHOW VIEW</td><td>Show the <a href="../../../server-usage/views/create-view.md">CREATE VIEW</a> statement to create a view using the <a href="../administrative-sql-statements/show/show-create-view.md">SHOW CREATE VIEW</a> statement.</td></tr><tr><td>TRIGGER</td><td>Required to run the <a href="../../../server-usage/triggers-events/triggers/create-trigger.md">CREATE TRIGGER</a>, <a href="../data-definition/drop/drop-trigger.md">DROP TRIGGER</a>, and <a href="../administrative-sql-statements/show/show-create-trigger.md">SHOW CREATE TRIGGER</a> statements. When another user activates a trigger (running INSERT, UPDATE, or DELETE statements on the associated table), for the trigger to execute, the user that defined the trigger should have the TRIGGER privilege for the table. The user running the INSERT, UPDATE, or DELETE statements on the table is not required to have the TRIGGER privilege.</td></tr><tr><td>UPDATE</td><td>Update existing rows in a table using the <a href="../data-manipulation/changing-deleting-data/update.md">UPDATE</a> statement. UPDATE statements usually include a WHERE clause to update only certain rows. You must have SELECT privileges on the table or the appropriate columns for the WHERE clause. The UPDATE privilege can also be set on individual columns; see <a href="grant.md#column-privileges">Column Privileges</a> below for details.</td></tr></tbody></table>
+<table><thead><tr><th width="257.851806640625">Privilege</th><th>Description</th></tr></thead><tbody><tr><td>ALTER</td><td>Change the structure of an existing table using the <a href="../data-definition/alter/alter-table/">ALTER TABLE</a> statement.</td></tr><tr><td>CREATE</td><td>Create a table using the <a href="../data-definition/create/create-table.md">CREATE TABLE</a> statement. You can grant the CREATE privilege on tables that do not yet exist.</td></tr><tr><td>CREATE VIEW</td><td>Create a view using the <a href="../../../server-usage/views/create-view.md">CREATE_VIEW</a> statement.</td></tr><tr><td>DELETE</td><td>Remove rows from a table using the <a href="../data-manipulation/changing-deleting-data/delete.md">DELETE</a> statement.</td></tr><tr><td>DELETE HISTORY</td><td>Remove <a href="../../sql-structure/temporal-tables/system-versioned-tables.md">historical rows</a> from a table using the <a href="../data-manipulation/changing-deleting-data/delete.md">DELETE HISTORY</a> statement. Displays as DELETE VERSIONING ROWS when running SHOW PRIVILEGES until <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes">MariaDB 10.5.2</a> (<a href="https://jira.mariadb.org/browse/MDEV-20382">MDEV-20382</a>). If a user has the SUPER privilege but not this privilege, running <a href="../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md">mariadb-upgrade</a> will grant this privilege as well.</td></tr><tr><td>DROP</td><td>Drop a table using the <a href="../data-definition/drop/drop-table.md">DROP TABLE</a> statement or a view using the <a href="../../../server-usage/views/drop-view.md">DROP VIEW</a> statement. Also required to execute the <a href="../table-statements/truncate-table.md">TRUNCATE TABLE</a> statement.</td></tr><tr><td>GRANT OPTION</td><td>Grant table privileges. You can only grant privileges that you have.</td></tr><tr><td>INDEX</td><td>Create an index on a table using the <a href="../data-definition/create/create-index.md">CREATE INDEX</a> statement. Without the INDEX privilege, you can still create indexes when creating a table using the <a href="../data-definition/create/create-table.md">CREATE TABLE</a> statement if the you have the CREATE privilege, and you can create indexes using the <a href="../data-definition/alter/alter-table/">ALTER TABLE</a> statement if you have the ALTER privilege.</td></tr><tr><td>INSERT</td><td>Add rows to a table using the <a href="../data-manipulation/inserting-loading-data/insert.md">INSERT</a> statement. The INSERT privilege can also be set on individual columns; see <a href="grant.md#column-privileges">Column Privileges</a> below for details.</td></tr><tr><td>REFERENCES</td><td>Unused.</td></tr><tr><td>SELECT</td><td>Read data from a table using the <a href="../data-manipulation/selecting-data/select.md">SELECT</a> statement. The SELECT privilege can also be set on individual columns; see <a href="grant.md#column-privileges">Column Privileges</a> below for details.</td></tr><tr><td>SHOW VIEW</td><td>Show the <a href="../../../server-usage/views/create-view.md">CREATE VIEW</a> statement to create a view using the <a href="../administrative-sql-statements/show/show-create-view.md">SHOW CREATE VIEW</a> statement.</td></tr><tr><td>TRIGGER</td><td>Required to run the <a href="../../../server-usage/triggers-events/triggers/create-trigger.md">CREATE TRIGGER</a>, <a href="../data-definition/drop/drop-trigger.md">DROP TRIGGER</a>, and <a href="../administrative-sql-statements/show/show-create-trigger.md">SHOW CREATE TRIGGER</a> statements. When another user activates a trigger (running INSERT, UPDATE, or DELETE statements on the associated table), for the trigger to execute, the user that defined the trigger should have the TRIGGER privilege for the table. The user running the INSERT, UPDATE, or DELETE statements on the table is not required to have the TRIGGER privilege.</td></tr><tr><td>UPDATE</td><td>Update existing rows in a table using the <a href="../data-manipulation/changing-deleting-data/update.md">UPDATE</a> statement. UPDATE statements usually include a WHERE clause to update only certain rows. You must have SELECT privileges on the table or the appropriate columns for the WHERE clause. The UPDATE privilege can also be set on individual columns; see <a href="grant.md#column-privileges">Column Privileges</a> below for details.</td></tr></tbody></table>
 
 ### Column Privileges
 
 Some table privileges can be set for individual columns of a table. To use column privileges, specify the table explicitly and provide a list of column names after the privilege type. For example, the following statement would allow the user to read the names and positions of employees, but not other information from the same table, such as salaries.
 
 ```sql
-GRANT SELECT (name, position) on Employee to 'jeffrey'@'localhost';
+GRANT SELECT (name, position) ON Employee TO 'jeffrey'@'localhost';
 ```
 
 <table><thead><tr><th width="249.5555419921875">Privilege</th><th>Description</th></tr></thead><tbody><tr><td>INSERT (column_list)</td><td>Add rows specifying values in columns using the <a href="../data-manipulation/inserting-loading-data/insert.md">INSERT</a> statement. If you only have column-level INSERT privileges, you must specify the columns you are setting in the INSERT statement. All other columns will be set to their default values, or NULL.</td></tr><tr><td>REFERENCES (column_list)</td><td>Unused.</td></tr><tr><td>SELECT (column_list)</td><td>Read values in columns using the <a href="../data-manipulation/selecting-data/select.md">SELECT</a> statement. You cannot access or query any columns for which you do not have SELECT privileges, including in WHERE, ON, GROUP BY, and ORDER BY clauses.</td></tr><tr><td>UPDATE (column_list)</td><td>Update values in columns of existing rows using the <a href="../data-manipulation/changing-deleting-data/update.md">UPDATE</a> statement. UPDATE statements usually include a WHERE clause to update only certain rows. You must have SELECT privileges on the table or the appropriate columns for the WHERE clause.</td></tr></tbody></table>
@@ -514,7 +522,6 @@ GRANT SELECT (name, position) on Employee to 'jeffrey'@'localhost';
 
 | Privilege     | Description                                                                                                                                                                                                                                                                                         |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Privilege     | Description                                                                                                                                                                                                                                                                                         |
 | ALTER ROUTINE | Change the characteristics of a stored procedure using the [ALTER PROCEDURE](../../../server-usage/stored-routines/stored-procedures/alter-procedure.md) statement.                                                                                                                                 |
 | EXECUTE       | Execute a [stored procedure](../../../server-usage/stored-routines/stored-procedures/) using the [CALL](../stored-routine-statements/call.md) statement. The privilege to call a procedure may allow you to perform actions you wouldn't otherwise be able to do, such as insert rows into a table. |
 | GRANT OPTION  | Grant procedure privileges. You can only grant privileges that you have.                                                                                                                                                                                                                            |
@@ -527,7 +534,6 @@ GRANT EXECUTE ON PROCEDURE mysql.create_db TO maintainer;
 
 | Privilege | Description                                 |
 | --------- | ------------------------------------------- |
-| Privilege | Description                                 |
 | PROXY     | Permits one user to be a proxy for another. |
 
 The `PROXY` privilege allows one user to proxy as another user, which means their privileges change to that of the proxy user, and the [CURRENT\_USER()](../../sql-functions/secondary-functions/information-functions/current_user.md) function returns the user name of the proxy user.
@@ -739,7 +745,6 @@ It is possible to set per-account limits for certain server resources. The follo
 
 | Limit Type                  | Decription                                                                                                                                                                                                                      |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Limit Type                  | Decription                                                                                                                                                                                                                      |
 | MAX\_QUERIES\_PER\_HOUR     | Number of statements that the account can issue per hour (including updates)                                                                                                                                                    |
 | MAX\_UPDATES\_PER\_HOUR     | Number of updates (not queries) that the account can issue per hour                                                                                                                                                             |
 | MAX\_CONNECTIONS\_PER\_HOUR | Number of connections that the account can start per hour                                                                                                                                                                       |
@@ -767,7 +772,7 @@ The count can be reset for all users using [FLUSH USER\_RESOURCES](../administra
 Users with the `CONNECTION ADMIN` privilege or the `SUPER` privilege are not restricted by `max_user_connections` or `max_password_errors` , and they are allowed one additional connection when `max_connections` is reached.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 Users with the `CONNECTION ADMIN` privilege or the `SUPER` privilege are restricted by `max_user_connections` or `max_password_errors` , and they are not allowed one additional connection when `max_connections` is reached.
 {% endtab %}
 {% endtabs %}
@@ -843,8 +848,8 @@ TO PUBLIC is unavailable.
 ### Syntax
 
 ```sql
-GRANT <privilege> ON <database>.<object> TO PUBLIC;
-REVOKE <privilege> ON <database>.<object> FROM PUBLIC;
+GRANT <privilege> ON <DATABASE>.<object> TO PUBLIC;
+REVOKE <privilege> ON <DATABASE>.<object> FROM PUBLIC;
 ```
 
 GRANT ... TO PUBLIC grants privileges to all users with access to the server. The privileges also apply to users created after the privileges are granted. This can be useful when one only wants to state once that all users need to have a certain set of privileges.\
@@ -858,7 +863,7 @@ You can create a user that has privileges similar to the default `root` accounts
 
 ```sql
 CREATE USER 'alexander'@'localhost';
-GRANT ALL PRIVILEGES ON  *.* to 'alexander'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON  *.* TO 'alexander'@'localhost' WITH GRANT OPTION;
 ```
 
 ## See Also

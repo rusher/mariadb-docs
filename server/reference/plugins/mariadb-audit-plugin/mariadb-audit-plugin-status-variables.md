@@ -1,8 +1,8 @@
-# MariaDB Audit Plugin - Status Variables
+# Audit Plugin Status Variables
 
 There are a few status variables related to the [MariaDB Audit Plugin](./), once it has been [installed](mariadb-audit-plugin-installation.md). These variables can be displayed using the [SHOW STATUS](../../sql-statements/administrative-sql-statements/show/show-status.md) statement like so:
 
-```
+```sql
 SHOW STATUS LIKE 'server_audit%';
 
 +----------------------------+------------------+
@@ -36,7 +36,7 @@ Below is a list of all status variables related to the Audit Plugin. These canno
 
 #### `Server_audit_writes_failed`
 
-* Description: The number of log records since last logging-start that weren't properly stored because of errors of any kind. The global value can be flushed by [FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: The number of log records since last logging-start that weren't properly stored because of errors of any kind. The global value can be flushed by [FLUSH STATUS](../../sql-statements/administrative-sql-statements/flush-commands/).
 * Data Type: `numeric`
 * Default Value: `0`
 

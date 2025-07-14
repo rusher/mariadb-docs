@@ -153,9 +153,9 @@ details of the revision and view diffs of the code modified in that revision.
   2017-10-15 06:01:59 +0200
   * [MDEV-14027](https://jira.mariadb.org/browse/MDEV-14027): Determine TLS/SSL library version
 * [Revision #5e32110](https://github.com/mariadb-corporation/mariadb-connector-c/commit/5e32110)\
-  2017-10-12 12:15:39 +0200
-  *
-    * Build fix: When building as subproject inside server tree, ZLIB\_FOUND was already set by parent, so we need additionally check if WITH\_EXTERNAL\_ZLIB was specified. - New server status flags Added SERVER\_STATUS\_ANSI\_QUOTES and SERVER\_STATUS\_IN\_TRANS\_READONLY
+  2017-10-12 12:15:39 +0200\
+  \*
+  * Build fix: When building as subproject inside server tree, ZLIB\_FOUND was already set by parent, so we need additionally check if WITH\_EXTERNAL\_ZLIB was specified. - New server status flags Added SERVER\_STATUS\_ANSI\_QUOTES and SERVER\_STATUS\_IN\_TRANS\_READONLY
 * [Revision #6d24e0b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/6d24e0b)\
   2017-10-12 09:56:50 +0200
   * Added missing dependency for zlib (WITH\_EXTERNAL\_ZLIB=ON) Added CC\_SOURCE\_REVISION definition (mariadb\_version.h)
@@ -222,5 +222,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #843c492](https://github.com/mariadb-corporation/mariadb-connector-c/commit/843c492)\
   2017-07-25 09:43:55 +0200
   * Fix for [CONC-271](https://jira.mariadb.org/browse/CONC-271): RPM layout now works for other 64-bit architectures than x86\_64. Thx to Michal Schorn for contributing this patch.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

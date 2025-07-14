@@ -5,7 +5,7 @@
 **Release date:** 4 Feb 2019
 
 For the highlights of this release, see the[release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10038-release-notes.md).\
-For changes made in MariaDB, see the [MariaDB 10.0.38 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10038-changelog.md).
+For changes made in MariaDB, see the [MariaDB 10.0.38 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10038-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
@@ -33,5 +33,9 @@ modified in that revision.
   * postmerge rollbacks and fixes
 * Merge [Revision #d6feda205a](https://github.com/MariaDB/server/commit/d6feda205a) 2019-02-01 11:02:03 +0200 - Merge tag 'mariadb-10.0.38' into 10.0-galera
 * Merge [Revision #c2caca02ac](https://github.com/MariaDB/server/commit/c2caca02ac) 2018-11-02 08:46:04 +0200 - Merge remote-tracking branch 'origin/10.0' into 10.0-galera
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

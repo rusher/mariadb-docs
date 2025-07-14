@@ -3,7 +3,7 @@
 ## What is MariaDB Connector/J?
 
 {% hint style="info" %}
-The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes)
+The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-4-release-notes)
 {% endhint %}
 
 [Download MariaDB Connector/J](https://mariadb.com/downloads/connector)
@@ -17,7 +17,7 @@ a lightweight JDBC connector for use with MariaDB and MySQL database servers.\
 It was originally based on the Drizzle JDBC code with numerous additions and\
 bug fixes.
 
-#### Server Compatibility
+### Server Compatibility
 
 MariaDB Connector/J is compatible with all MariaDB and MySQL server versions.
 
@@ -25,13 +25,12 @@ MariaDB Connector/J is compatible with all MariaDB and MySQL server versions.
 MariaDB Connector/J releases older than 1.2.0 may be compatible with server versions older than MySQL 5.5, but those MariaDB Connector/J releases aren't supported anymore.
 {% endhint %}
 
-#### Java Compatibility
+### Java Compatibility
 
 To determine which MariaDB Connector/J release series would be best to use for each Java version, please see the following table:
 
 | Java Version(s)                   | Recommended MariaDB Connector/J Release Series                                | JDBC Version |
 | --------------------------------- | ----------------------------------------------------------------------------- | ------------ |
-| Java Version(s)                   | Recommended MariaDB Connector/J Release Series                                | JDBC Version |
 | Java 21, Java 17, Java 11, Java 8 | MariaDB Connector/J 3.5, 3.4, 3.3\[[1](about-mariadb-connector-j.md#_note-0)] | JDBC 4.2     |
 | Java 17, Java 11, Java 8          | MariaDB Connector/J 2.7                                                       | JDBC 4.2     |
 
@@ -43,13 +42,11 @@ MariaDB Connector/J can be installed using [Maven](https://maven.apache.org/what
 
 MariaDB Connector/J `.jar` files and source code tarballs can be downloaded from the following URL:
 
-*
+* [#jar](https://mariadb.com/downloads/#connectors) 
+* [#source tar](https://github.com/mariadb-corporation/mariadb-connector-j/releases)
+* [#github](https://github.com/mariadb-corporation/mariadb-connector-j/)
 
-MariaDB Connector/J `.jar` files can also be downloaded from the following URL:
-
-* [#connectors](https://mariadb.com/downloads/#connectors)
-
-#### Installing Dependencies
+### Installing Dependencies
 
 JNA (net.java.dev.jna:jna) and JNA-PLATFORM (net.java.dev.jna:jna-platform) 4.2.1 or greater are also needed when you would like to connect to the server with Unix sockets or windows pipes.
 
@@ -59,11 +56,11 @@ The following subsections show the formatting of JDBC connection strings for\
 MariaDB and MySQL database servers. Additionally, sample code is provided that\
 demonstrates how to connect to one of these servers and create a table.
 
-### Getting a New Connection
+## Getting a New Connection
 
 There are two standard ways to get a connection:
 
-**Using DriverManager**
+### **Using DriverManager**
 
 The preferred way to get a connection with MariaDB Connector/J is to use the [DriverManager](https://docs.oracle.com/javase/8/docs/api/java/sql/DriverManager.html) class.\
 When the `DriverManager` class is used to locate and load MariaDB Connector/J, the application needs no further configuration. The `DriverManager` class will automatically load MariaDB Connector/J and allow it to be used in the same way as any other JDBC driver.
@@ -78,7 +75,7 @@ Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:33
 The legacy way of loading a JDBC driver also still works for MariaDB Connector/J. e.g.: `Class.forName("org.mariadb.jdbc.Driver")`
 {% endhint %}
 
-**jdbc:mysql scheme compatibility**
+#### **jdbc:mysql scheme compatibility**
 
 MariaDB Connector/J 3.0 only accepts `jdbc:mariadb:` as the protocol in connection strings by default. When both MariaDB Connector/J and the MySQL drivers are found in the class-path, using `jdbc:mariadb:` as the protocol helps to ensure that Java chooses MariaDB Connector/J.
 
@@ -88,7 +85,7 @@ Connector/J still allows `jdbc:mysql:` as the protocol in connection strings whe
 
 (2.x version did permit connection URLs beginning with both `jdbc:mariadb` and `jdbc:mysql`)
 
-**Using a Pool**
+### **Using a Pool**
 
 Another way to get a connection with MariaDB Connector/J is to use a connection pool.
 
@@ -97,7 +94,7 @@ MariaDB Connector/J provides 2 different Datasource pool implementations:
 * `MariaDbDataSource`: The basic implementation. It creates a new connection each time the `getConnection()` method is called.
 * `MariaDbPoolDataSource`: A connection pool implementation. It maintains a pool of connections, and when a new connection is requested, one is borrowed from the pool.
 
-**Internal Pool**
+#### **Internal Pool**
 
 The driver's internal pool configuration provides a very fast pool implementation and deals with the issues most of the java pool have:
 
@@ -106,7 +103,7 @@ The driver's internal pool configuration provides a very fast pool implementatio
 
 See the [pool documentation](pool-datasource-implementation.md) for more information.
 
-**External pool**
+#### **External pool**
 
 When using an external connection pool, the MariaDB Driver class `org.mariadb.jdbc.Driver` must be configured.
 
@@ -122,11 +119,11 @@ final HikariDataSource ds = new HikariDataSource();
         ds.setAutoCommit(false);
 ```
 
-Please note that the driver class provided by MariaDB Connector/J **is not `com.mysql.jdbc.Driver` but `org.mariadb.jdbc.Driver!
+Please note that the driver class provided by MariaDB Connector/J \*\*is not `com.mysql.jdbc.Driver` but \`org.mariadb.jdbc.Driver!
 
 The `org.mariadb.jdbc.MariaDbDataSource` class can be used when the pool datasource configuration only permits the java.sql.Datasource implementation.
 
-#### Connection Strings
+## Connection Strings
 
 The format of the JDBC connection string is:
 
@@ -160,31 +157,31 @@ Examples:
 
 The `jdbc:mariadb:sequential:address=(localSocket=/socket)(sslMode=disable),10.0.0.1:3306/DB?sslMode=verify-full` connection string will permit to connect to local unix socket if available, or to host 10.0.0.1 using SSL if not.
 
-#### Failover and Load-Balancing Modes
+## Failover and Load-Balancing Modes
 
 Failover and Load-Balancing Modes were introduced in [MariaDB Connector/J 1.2.0.](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-12-release-notes/mariadb-connector-j-120-release-notes)
 
-###### sequential
+### **sequential**
 
 * Description: This mode supports connection failover in a multi-master environment, such as MariaDB Galera Cluster. This mode does not support load-balancing reads on replicas. The connector will try to connect to hosts in the order in which they were declared in the connection URL, so the first available host is used for all queries.For example, let's say that the connection URL is the following: `jdbc:mariadb:sequential:host1,host2,host3/testdb`When the connector tries to connect, it will always try host1 first. If that host is not available, then it will try host2. etc. When a host fails, the connector will try to reconnect to hosts in the same order.
 * Introduced: 1.3.0
 
-###### loadbalance
+### **loadbalance**
 
 * Description: This mode supports connection load-balancing in a multi-master environment, such as MariaDB Galera Cluster. This mode does not support load-balancing reads on replicas. The connector performs load-balancing for all queries by randomly picking a host from the connection URL for each connection, so queries will be load-balanced as a result of the connections getting randomly distributed across all hosts. Before 2.4.2, this option was named `failover` - alias still exist for compatibility -
 * Introduced: 1.2.0
 
-###### replication
+### **replication**
 
 * Description: This mode supports connection failover in a primary-replica environment, such as a MariaDB Replication cluster. The mode supports environments with one or more masters. This mode does support load-balancing reads on replicas if the connection is set to read-only before executing the read. The connector performs load-balancing by randomly picking a replica from the connection URL to execute read queries for a connection
 * Introduced: 1.2.0
 
-###### load-balance-read
+### **load-balance-read**
 
 * Description: When running a multi-master cluster (i.e. Galera), writing to more than one node can lead to optimistic locking errors ("deadlocks"). Writing concurrently to multiple nodes also doesn't bring a whole lot of performance, due to having to (synchronously) replicate to all nodes anyway. This mode supports connection failover in a multi-master environment, such as MariaDB Galera Cluster. This mode does support load-balancing reads on replicas. The connector will try to connect to primary hosts in the order in which they were declared in the connection URL, so the first available host is used for all queries.For example, let's say that the connection URL is the following: `jdbc:mariadb:load-balance-read:primary1,primary2,address=(host=replica1)(type=replica),address=(host=replica2)(type=replica)/DB`When the connector tries to connect, it will always try primary1 first. If that host is not available, then it will try primary2. etc. When a primary host fails, the connector will try to reconnect to hosts in the same order.For replica hosts, the connector performs load-balancing for all queries by randomly picking a replica host from the connection URL for each connection, so queries will be load-balanced as a result of the connections getting randomly distributed across all replica hosts.
 * Introduced: 3.5.1
 
-###### aurora
+### **aurora**
 
 * Description: This mode supports connection failover in an Amazon Aurora cluster. This mode does support load-balancing reads on replica instances if the connection is set to read-only before executing the read. The connector performs load-balancing by randomly picking a replica instance to execute read queries for a connection
 * Introduced: 1.2.0 and not supported anymore since 3.0 version
@@ -196,36 +193,36 @@ Issues for Aurora were piling up without the community proposing any PR for them
 
 See [failover description](failover-and-high-availability-with-mariadb-connector-j.md) for more information.
 
-### Optional URL Parameters
+## Optional URL Parameters
 
 General remark: Unknown options are accepted and silently ignored.
 
 The following options are currently supported.
 
-#### Essential Parameters
+### Essential Parameters
 
-###### user
+#### **user**
 
 * Description: User name.
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 1.0.0
 
-###### password
+#### **password**
 
 * Description: password
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 1.0.0
 
-###### connectTimeout
+#### **connectTimeout**
 
 * Description: The connect timeout value, in milliseconds, or zero for no timeout
 * Data Type: `integer`
 * Default Value: `30 000`
 * Introduced: 1.1.8
 
-###### useServerPrepStmts
+#### **useServerPrepStmts**
 
 * Description: Text (default) is a globaly a safe default behavior, always working without issue. Binary protocol (useServerPrepStmts=true) has usually good benefits, but that depends: if missing cache, it will have an overhead of preparing before execution. If hitting cache, this perform better, but difference usually isn't huge, because most of the queries have simple execution plan. This is totally depending on queries, but to have some order of difference, here is some realistic differences : missing cache : 50% performance loss / hitting cache: 5-10% performance gain (because simple execution plan).\
   Another thing to consider : Since [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) Server with [MDEV-19237](https://jira.mariadb.org/browse/MDEV-19237), server now permits to avoid resending metadata when they haven't changed when enabling useServerPrepStmts option (This concerns SQL commands that return a result-set). This avoids useless information transiting on the network and parsing those metadata, and that permit huge gain (around 10-30% depending on query, metadata can be huge compare to resultset data). So, if you use a MariaDB server version 10.6, and application doesn't execute completly differents queries, binary protocol (option 'useServerPrepStmts') is recommended.
@@ -233,18 +230,18 @@ The following options are currently supported.
 * Default Value: `false`
 * Introduced: 1.3.0
 
-###### allowLocalInfile
+#### **allowLocalInfile**
 
 * Description: Permit loading data from file. see [LOAD DATA LOCAL INFILE](about-mariadb-connector-j.md#load-data-infile). Having this option enable can impact batch performance. Disabling it can permit some batch improvement
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 1.2.1
 
-#### TLS Parameters
+### TLS Parameters
 
 more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-with-mariadb-java-connector.md)
 
-###### sslMode
+#### **sslMode**
 
 * Description: Enables SSL/TLS in a specific mode. this option replaces the deprecated options: disableSslHostnameVerification, trustServerCertificate, useSsl
 * Data Type: `string`
@@ -256,14 +253,14 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
   * verify-full: Use SSL/TLS for encryption, certificate verification, and hostname verification (alias 'verify\_identity', 'true', '1')
 * Introduced: 3.0.0
 
-###### serverSslCert
+#### **serverSslCert**
 
 * Description: |Permits providing server's certificate in DER form, or server's CA certificate. The server will be added to trustStore. This permits a self-signed certificate to be trusted.Can be used in one of 3 forms : \* serverSslCert=/path/to/cert.pem (full path to certificate)\* serverSslCert=classpath:relative/cert.pem (relative to current classpath)\* or as verbatim DER-encoded certificate string "------BEGIN CERTIFICATE-----"
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 1.1.0
 
-###### keyStore
+#### **keyStore**
 
 * Description: File path of the keyStore file that contain client private key store and associate certificates (similar to java System property "javax.net.ssl.keyStore", but ensure that only the private key's entries are used).
 * Data Type: `string`
@@ -271,7 +268,7 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Alias: clientCertificateKeyStoreUrl
 * Introduced: 1.1.1
 
-###### keyStorePassword
+#### **keyStorePassword**
 
 * Description: Password for the client certificate keyStore (similar to java System property "javax.net.ssl.keyStorePassword")
 * Data Type: `string`
@@ -279,14 +276,14 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Alias: clientCertificateKeyStorePassword
 * Introduced: 1.3.4
 
-###### enabledSslCipherSuites
+#### **enabledSslCipherSuites**
 
 * Description: Force TLS/SSL cipher (comma separated list). Example : "TLS\_DHE\_RSA\_WITH\_AES\_256\_GCM\_SHA384, TLS\_DHE\_DSS\_WITH\_AES\_256\_GCM\_SHA384"
 * Data Type: `string`
 * Default Value: `use JRE ciphers`
 * Introduced: 1.5.0
 
-###### enabledSslProtocolSuites
+#### **enabledSslProtocolSuites**
 
 * Description: Force TLS/SSL protocol to a specific set of TLS versions (comma separated list). Example : "TLSv1,TLSv1.1,TLSv1.2
 * Data Type: `string`
@@ -294,7 +291,7 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Alias: enabledSSLProtocolSuites
 * Introduced: 1.5.0
 
-###### disableSslHostnameVerification
+#### **disableSslHostnameVerification**
 
 * Description: _deprecated, use sslMode instea&#x64;_&#x57;hen using ssl, the driver checks the hostname against the server's identity as presented in the server's certificate (checking alternative names or the certificate CN) to prevent man-in-the-middle attacks. This option permits deactivating this validation. Hostname verification is disabled when the trustServerCertificate option is set
 * Data Type: `boolean`
@@ -302,7 +299,7 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Introduced: 2.1.0
 * Deprecated: 3.0.0
 
-###### useSsl
+#### **useSsl**
 
 * Description: _deprecated, use sslMode instead_ Force [SSL/TLS on connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview)(useSSL can be used as alias).
 * Data Type: `boolean`
@@ -310,7 +307,7 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Introduced: 1.1.0
 * Deprecated: 3.0.0
 
-###### trustServerCertificate
+#### **trustServerCertificate**
 
 * Description: _deprecated, use sslMode instead_ When using SSL/TLS, do not check server's certificate
 * Data Type: `boolean`
@@ -318,452 +315,448 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Introduced: 1.1.1
 * Deprecated: 3.0.0
 
-#### Pool Parameters
+### Pool Parameters
 
 See the [pool documentation](pool-datasource-implementation.md) for pool configuration.
 
-###### pool
+#### **pool**
 
 * Description: Use pool. This option is useful only if not using a DataSource object, but only a connection object
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 2.2.0
 
-###### poolName
+#### **poolName**
 
 * Description: Pool name that permits identifying threads.default: auto-generated as MariaDb-pool-
 * Data Type: `string`
 * Default Value: `MariaDB-pool`
 * Introduced: 2.2.0
 
-###### maxPoolSize
+#### **maxPoolSize**
 
 * Description: The maximum number of physical connections that the pool should contain
 * Data Type: `integer`
 * Default Value: `8`
 * Introduced: 2.2.0
 
-###### minPoolSize
+#### **minPoolSize**
 
-* Description: When connections are removed due to not being used for longer than than "maxIdleTime", connections are closed and removed from the pool. "minPoolSize" indicates the number of physical connections the pool should keep available at all times. Should be less or equal to maxPoolSize.
+* Description: When connections are removed due to not being used for longer than "maxIdleTime", connections are closed and removed from the pool. "minPoolSize" indicates the number of physical connections the pool should keep available at all times. Should be less or equal to maxPoolSize.
 * Data Type: `integer`
 * Default Value: `maxPoolSize value`
 * Introduced: 2.2.0
 
-###### poolValidMinDelay
+#### **poolValidMinDelay**
 
 * Description: When asking a connection to pool, the pool will validate the connection state. "poolValidMinDelay" permits disabling this validation if the connection has been borrowed recently avoiding useless verifications in case of frequent reuse of connections. 0 means validation is done each time the connection is asked. In milleseconds.
 * Data Type: `integer`
 * Default Value: `1000`
 * Introduced: 2.2.0
 
-###### maxIdleTime
+#### **maxIdleTime**
 
 * Description: The maximum amount of time in seconds that a connection can stay in the pool when not used. This value must always be below @wait\_timeout value - 45s
 * Data Type: `integer`
 * Default Value: `600` minimum value is 60 seconds
 * Introduced: 2.2.0
 
-###### useResetConnection
+#### **useResetConnection**
 
 * Description: When a connection is closed() (given back to pool), the pool resets the connection state. Setting this option, the prepare command will be deleted, session variables changed will be reset, and user variables will be destroyed when the server permits it (>= MySQL 5.7.3), permitting saving memory on the server if the application make extensive use of variables
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 2.2.0
 
-###### registerJmxPool
+#### **registerJmxPool**
 
 * Description: Register JMX monitoring pools
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 2.2.0
 
-#### Infrequently Used Parameters
+### Infrequently Used Parameters
 
-###### trustStore
+#### **trustStore**
 
 * Description: File path of the trustStore file (similar to java System property "javax.net.ssl.trustStore"). (legacy alias trustCertificateKeyStoreUrl)Use the specified file for trusted root certificates.When set, overrides serverSslCert. (see trustStorePassword in case if a jks truststore with a password)
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 3.5.0 (or 1.3.4 in 1.x, 2.0.0 in 2.x)
 
-###### trustStorePassword
+#### **trustStorePassword**
 
 * Description: Password for the trusted root certificate file (similar to java System property "javax.net.ssl.trustStorePassword").(legacy alias trustCertificateKeyStorePassword).
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 3.5.0 (or 1.3.4 in 1.x, 2.0.0 in 2.x)
 
-###### trustStoreType
+#### **trustStoreType**
 
 * Description: Indicate trust store type (JKS/PKCS12). default is null, then using java default type.(legacy alias trustCertificateKeystoreType).
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 3.5.0 (or 2.4.0 in 2.x)
 
-###### useMysqlMetadata
+#### **useMysqlMetadata**
 
 * Description: [databaseMetaData.getDatabaseProductName()](https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/DatabaseMetaData.html#getDatabaseProductName\(\)) return "MariaDB" or "MySQL" according to server type
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 2.4.0
 
-###### restrictedAuth
+#### **restrictedAuth**
 
 * Description: permits to restrict authentication plugins (comma separated). For example, the following connection string only allows the mysql\_native\_password and client\_ed25519 client authentication plugins:`jdbc:mariadb:HOST/DATABASE?restrictedAuth=mysql_native_password,client_ed25519`. If not set, permit all authentication plugins.
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 3.0.0
 
-###### maxQuerySizeToLog
+#### **maxQuerySizeToLog**
 
 * Description: Only the first characters corresponding to this options size will be displayed in logs
 * Data Type: `integer`
 * Default Value: `1024`
 * Introduced: 1.5.0
 
-###### allowMultiQueries
+#### **allowMultiQueries**
 
 * Description: permit multi-queries like `insert into ab (i) values (1); insert into ab (i) values (2)`.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 1.0.0
 
-###### dumpQueriesOnException
+#### **dumpQueriesOnException**
 
 * Description: If set to 'true', an exception is thrown during query execution containing a query string. This is useful in development, but can lead to security issue if logs are available.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 1.1.0
 
-###### useCompression
+#### **useCompression**
 
 * Description: Compresses the exchange with the database through gzip. This permits better performance when the database is not in the same location.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 1.0.0
 
-###### socketFactory
+#### **socketFactory**
 
 * Description: to use a custom socket factory, set it to the full name of the class that implements javax.net.SocketFactory
 * Introduced: 1.1.0
 
-###### tcpKeepAlive
+#### **tcpKeepAlive**
 
 * Description: Sets corresponding option on the connection socket. Default to true since 3.0.0 (was false before)
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 1.0.0
 
-###### tcpAbortiveClose
+#### **tcpAbortiveClose**
 
 * Description: This option can be used in environments where connections are created and closed in rapid succession. Often, it is not possible to create a socket in such an environment after a while, since all local "ephemeral" ports are used up by TCP connections in TCP\_WAIT state. Using tcpAbortiveClose works around this problem by resetting TCP connections (abortive or hard close) rather than doing an orderly close. It is accomplished by using socket.setSoLinger(true,0) for abortive close.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 1.1.1
 
-###### pipe
+#### **pipe**
 
 * Description: On Windows, specify named pipe name to connect (windows equivalent of unix socket)
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 1.1.3
 
-###### tinyInt1isBit
+#### **tinyInt1isBit**
 
 * Description: Datatype mapping flag, handle MySQL Tiny as BIT(boolean).
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 1.0.0
 
-###### yearIsDateType
+#### **yearIsDateType**
 
 * Description: returns Year as date type, rather than numerical.
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 1.0.0
 
-###### sessionVariables
+#### **sessionVariables**
 
 * Description: = pairs separated by comma, mysql session variables, set upon establishing successful connection.
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 1.1.4
 
-###### localSocket
+#### **localSocket**
 
 * Description: Permits connecting to the database via Unix domain socket, if the server allows it. The value is the path of Unix domain socket (i.e "socket" database parameter : select @@socket) .
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 1.1.4
 
-###### localSocketAddress
+#### **localSocketAddress**
 
 * Description: Hostname or IP address to bind the connection socket to a local (UNIX domain) socket.
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 1.1.7
 
-###### socketTimeout
+#### **socketTimeout**
 
 * Description: Defined the network socket timeout (SO\_TIMEOUT) in milliseconds. Value of 0 disables this timeout. If the goal is to set a timeout for all queries, the server has permitted a solution to limit the query time by setting a system variable, [max\_statement\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_statement_time). The advantage is that the connection then is still usable.
 * Data Type: `integer`
 * Default Value: `0`
 * Introduced: 1.1.7
 
-###### socketTimeout
+#### **socketTimeout**
 
 * Description: Defined the network socket timeout (SO\_TIMEOUT) in milliseconds. Value of 0 disables this timeout. If the goal is to set a timeout for all queries, the server has permitted a solution to limit the query time by setting a system variable, [max\_statement\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_statement_time). The advantage is that the connection then is still usable.
 * Data Type: `integer`
 * Default Value: `0`
 * Introduced: 1.1.7
 
-###### createDatabaseIfNotExist
+#### **createDatabaseIfNotExist**
 
 * Description: the specified database in the url will be created if nonexistent.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 1.1.7
 
-###### cacheCallableStmts
+#### **cacheCallableStmts**
 
 * Description:enable/disable callable Statement cache
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 1.4.0
 
-###### connectionAttributes
+#### **connectionAttributes**
 
 * Description: When performance\_schema is active, permit to send server some client information in a key;value pair format (example: connectionAttributes=key1:value1,key2,value2).Those informations can be retrieved on server within tables performance\_schema.session\_connect\_attrs and performance\_schema.session\_account\_connect\_attrs.This can permit from server an identification of client/application
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 1.4.0
 
-###### usePipelineAuth
+#### **usePipelineAuth**
 
 * Description: Not compatible with aurora\*During connection, different queries are executed. When option is active those queries are send using pipeline (all queries are send, then only all results are reads), permitting faster connection creation.
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 1.6.0
 
-###### autocommit
+#### **autocommit**
 
 * Description: Set default autocommit value on connection initialization.
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 2.2.0
 
-###### galeraAllowedState
+#### **galeraAllowedState**
 
 * Description: Usually, Connection.isValid just send an empty packet to server, and server send a small response to ensure connectivity. When this option is set, connector will ensure Galera server state "wsrep\_local\_state" correspond to allowed values (separated by comma). example "4,5", recommended is "4". see [galera state to know more](https://galeracluster.com/library/documentation/node-states.html#node-state-changes)
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 2.2.5
 
-###### includeInnodbStatusInDeadlockExceptions
+#### **includeInnodbStatusInDeadlockExceptions**
 
 * Description: add "SHOW ENGINE INNODB STATUS" result to exception trace when having a deadlock exception.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 2.3.0
 
-###### includeThreadDumpInDeadlockExceptions
+#### **includeThreadDumpInDeadlockExceptions**
 
 * Description: add thread dump to exception trace when having a deadlock exception.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 2.3.0
 
-###### useReadAheadInput
+#### **useReadAheadInput**
 
 * Description: Use a buffered inputSteam that read socket available data
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 2.4.0
 
-###### servicePrincipalName
+#### **servicePrincipalName**
 
 * Description: When using [GSSAPI authentication](gssapi-authentication-with-mariadb-connector-j.md), use this value as the Service Principal Name (SPN) instead of the one defined for the user account on the database server.
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 2.4.0
 
-###### useMysqlMetadata
+#### **useMysqlMetadata**
 
 * Description: force DatabaseMetadata.getDatabaseProductName() to return "MySQL" as database, not real database type.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 2.4.1
 
-###### defaultFetchSize
+#### **defaultFetchSize**
 
 * Description: The driver will call setFetchSize(n) with this value on all newly-created Statements
 * Data Type: `integer`
 * Default Value: `0`
 * Introduced: 2.4.2
 
-###### blankTableNameMeta
+#### **blankTableNameMeta**
 
 * Description: Resultset metadata getTableName always return blank. This option is mainly for ORACLE db compatibility.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 2.4.3
 
-###### serverRsaPublicKeyFile
+#### **serverRsaPublicKeyFile**
 
 * Description: Indicate path to RSA server public key file for sha256\_password and caching\_sha2\_password authentication password
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 2.5.0
 
-###### allowPublicKeyRetrieval
+#### **allowPublicKeyRetrieval**
 
 * Description: Authorize client to retrieve RSA server public key when serverRsaPublicKeyFile is not set (for sha256\_password and caching\_sha2\_password authentication password)
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 2.5.0
 
-###### tlsSocketType
+#### **tlsSocketType**
 
 * Description: Indicate the TLS org.mariadb.jdbc.tls.TlsSocketPlugin plugin type to use. Plugin must be present in classpath
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 2.5.0
 
-###### credentialType
+#### **credentialType**
 
 * Description: Indicate the credential plugin type to use. Plugin must be present in classpath
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 2.5.0
 
-###### tcpKeepCount
+#### **tcpKeepCount**
 
 * Description: Permit to set socket option TCP\_KEEPCOUNT (only if java 11+)
 * Data Type: `integer`
 * Default Value: `0`
 * Introduced: 3.0.0
 
-###### tcpKeepIdle
+#### **tcpKeepIdle**
 
 * Description: Permit to set socket option TCP\_KEEPIDLE (only if java 11+)
 * Data Type: `integer`
 * Default Value: `0`
 * Introduced: 3.0.0
 
-###### tcpKeepInterval
+#### **tcpKeepInterval**
 
 * Description: Permit to set socket option TCP\_KEEPINTERVAL (only if java 11+)
 * Data Type: `integer`
 * Default Value: `0`
 * Introduced: 3.0.0
 
-###### permitMysqlScheme
+#### **permitMysqlScheme**
 
 * Description: when added to connection string, permit `jdbc:mysql:` prefix in connection string
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 3.0.0
 
-###### prepStmtCacheSize
+#### **prepStmtCacheSize**
 
 * Description: When useServerPrepStmts is enabled, any positive value indicates that a prepared statement cache of the specified size will be used. If the value is less than or equal to zero, the cache will not be enabled. Before 3.0, an option cachePrepStmts was indicatin if cache has to be enable
 * Data Type: `integer`
 * Default Value: `250`
 * Introduced: 1.3.0
 
-###### transactionReplay
+#### **transactionReplay**
 
 * Description: Enables transaction caching. If a failover occurs before a transaction is committed or rolled back, the transaction's cached statements are re-executed on the new primary server. Connector/J requires that applications only use idempotent queries. If the number of statements in the transaction cache exceeds transactionReplaySize, caching will be disabled until the transaction is committed or rolled back.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 3.0.0
 
-###### transactionReplaySize
+#### **transactionReplaySize**
 
 * Description: Sets the number of statements that should be saved in the transaction cache when transactionReplay is enabled.
 * Data Type: `integer`
 * Default Value: `64`
 * Introduced: 3.0.0
 
-###### useBulkStmts
+#### **useBulkStmts**
 
 * Description: Use dedicated COM\_STMT\_BULK\_EXECUTE protocol for batch insert when possible. (batch without Statement.RETURN\_GENERATED\_KEYS and streams) to have faster batch.
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 3.0.0 (was false since version >= 2.3.0)
 
-###### useCatalogTerm
+#### **useCatalogTerm**
 
 * Description: |"schema" and "database" are server synonymous. Connector historically get/set database using Connection.setCatalog()/getCatalog(), setSchema()/getSchema() being no-op. Setting option useCatalogTerm to "schema" will change that behavior to use Schema in place of Catalog. Affected changes : database change will be done with either Connection.setCatalog()/getCatalog() or Connection.setSchema()/getSchema(), 2: DatabaseMetadata methods that use catalog or schema filtering, 3: ResultsetMetadata getCatalogName/getSchemaName
 * Data Type: `string`
 * Default Value: `CATALOG`
 * Introduced: 3.2.0
 
-###### returnMultiValuesGeneratedIds
+#### **returnMultiValuesGeneratedIds**
 
 * Description: for connector 2.x compatibility only, getGeneratedKeys() will then returns all ids of multi-value inserts. This is not compatible with galera servers
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 3.3.2
 
-###### pinGlobalTxToPhysicalConnection
+#### **pinGlobalTxToPhysicalConnection**
 
 * Description: When set, commands with a specific XID will reuse previous connection used for this XID.
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 3.4.1
 
-###### connectionCollation
+#### **connectionCollation**
 
 * Description: Connector force utf8mb4 charset at connection. Indicate what utf8mb4 collation to use if set. if not set, server default collation for utf8mb4 will be used.Useful only for server before [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), because then a better solution would be to set character\_set\_collations
 * Data Type: `string`
 * Default Value: `null`
 * Introduced: 3.5.0
 
-###### disconnectOnExpiredPasswords
+#### **disconnectOnExpiredPasswords**
 
 * Description: On connection creation, indicate behavior when password is expired. When true (default) throw an expired password error. When false, connection succeed in "sandbox" mode, only queries related to password change are allowed.
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 3.5.2
 
-###### permitNoResults
+#### **permitNoResults**
 
 * Description: Indicate if Statement/PreparedStatement.executeQuery for command that produce no result will return an exception or just an empty result-set. When enabled, command not returning no data will end returning an empty result-set, when disabled, command not returning no data will end throwing an exception
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 3.5.2
 
-###### oldModeNoPrecisionTimestamp
+#### **oldModeNoPrecisionTimestamp**
 
 * Description: When enable, Timestamps string representation will be compatible with 2.7's behavior (fractional part will only be displayed if required, not according to timestamp precision) .
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 3.5.3
 
-
-###### cachedCodecs
+#### **cachedCodecs**
 
 * Description: permit to enable/disable caching of codecs (FIELD encoder/decoder).
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: 3.5.4
 
+#### **metaExportedKeys**
 
-###### metaExportedKeys
-
-* Description: Possible implementation DatabaseMetadata.getExportedKey. Either use INFORMATION_SCHEMA or SHOW CREATE TABLE to retrieve metadata information. When set to "auto", the method will automatically choose between the INFORMATION_SCHEMA approach or the SHOW CREATE implementation based on whether the database server is running locally or remotely. Possible values: "UseInformationSchema", "UseShowCreate", or "auto". 
+* Description: Possible implementation DatabaseMetadata.getExportedKey. Either use INFORMATION\_SCHEMA or SHOW CREATE TABLE to retrieve metadata information. When set to "auto", the method will automatically choose between the INFORMATION\_SCHEMA approach or the SHOW CREATE implementation based on whether the database server is running locally or remotely. Possible values: "UseInformationSchema", "UseShowCreate", or "auto".
 * Data Type: `string`
 * Default Value: `auto`
 * Introduced: 3.5.4
 
-
-##### Removed options
+### **Removed options**
 
 | Parameter                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Parameter                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | allowMasterDownConnection   | When the replication Failover and Load Balancing Mode is in use, allow the creation of connections when the master is down. If no masters are available, then the default connection will be a replica, and Connection.isReadOnly() will return true. Default: false. Since 2.2.0, removed in 3.0.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | interactiveClient           | Session timeout is defined by the [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) server variable. Setting interactiveClient to true will tell the server to use the [interactive\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables) server variable.Default: false. Since 1.1.7                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | assureReadOnly              | When this parameter enabled when a Failover and Load Balancing Mode is in use, and a read-only connection is made to a host, assure that this connection is in read-only mode by setting the session to read-only.Default to false.Since 1.3.0, removed in 3.0.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -795,9 +788,9 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 | useOldAliasMetadataBehavior | Metadata ResultSetMetaData.getTableName() returns the physical table name. "useOldAliasMetadataBehavior" permits activating the legacy code that sends the table alias if set. Default: false. Since 1.1.9                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | validConnectionTimeout      | When multiple hosts are configured, the connector verifies that the connections haven't been lost after this much time in seconds has elapsed.When this parameter is set to 0, no verification will be done. Default:120 secondssince 1.2.0, removed in 3.0.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
-### JDBC API Implementation Notes
+## JDBC API Implementation Notes
 
-#### Size consideration
+### Size consideration
 
 GSSAPI in windows isn't well supported in java, causing recurrent issues. Since 3.1, waffle-jna is marked as a dependency to provide good GSSAPI support without problems. This has the drawback to make connector and dependencies to a size of around 4Mb.
 
@@ -831,7 +824,7 @@ dependencies {
 }
 ```
 
-#### Parsec authentication
+### Parsec authentication
 
 Since 3.5.1, parsec authentication is implemented in connector.\
 This requires java 15+ (to use java native ed25519 Algorithm implementation).
@@ -846,13 +839,13 @@ In order to use parsec authentication with previous version of java, BouncyCastl
         </dependency>
 ```
 
-#### Timezone consideration
+### Timezone consideration
 
-**The Ideal Scenario**
+#### **The Ideal Scenario**
 
 The simplest approach to avoid time zone headaches is for the client and server to operate in the same time zone.
 
-**Java Connector Timezone Options**
+#### **Java Connector Timezone Options**
 
 There are 3 options that control timestamps behavior in the java connector:
 
@@ -860,29 +853,29 @@ There are 3 options that control timestamps behavior in the java connector:
 * forceConnectionTimeZoneToSession: (true | false) - This setting dictates whether the connector enforces the connection time zone for the session.
 * preserveInstants: (true | false) - This option controls whether the connector converts Timestamp values to the connection's time zone.
 
-**Recommendation**
+#### **Recommendation**
 
 By default, the connector adopts the JVM's default time zone. If the client and server reside in different time zones, it's recommended to configure the connection time zone to match the JVM's default by setting forceConnectionTimeZoneToSession to true.\
 This ensures proper operation of time functions.
 
 (This isn’t the default behavior because there is a server Requirements to set tzinfo depending on the JVM's time zones)
 
-**TIMESTAMP vs. DATETIME: Know the Difference**
+#### **TIMESTAMP vs. DATETIME: Know the Difference**
 
 Just like Java's Instant and LocalDateTime, server-side TIMESTAMP and DATETIME fields serve distinct purposes. One represents a specific point in time (a moment), while the other doesn't.
 
 * TIMESTAMP: This represents an exact moment on the timeline, expressed using the connection's time zone. When stored, it gets converted to UTC (Coordinated Universal Time) for consistency. Upon retrieval, it's converted back to the connection's time zone for display.
 * DATETIME: This combines date and time-of-day information but doesn't represent a specific moment.
 
-**The Misuse of DATETIME:**
+#### **The Misuse of DATETIME:**
 
 Due to its wider range, DATETIME is sometimes mistakenly used to store a specific point in time. While this might work if the client and server share the same time zone, it creates problems when they differ.
 
-**A (Discouraged) Workaround:**
+#### **A (Discouraged) Workaround:**
 
 While using DATETIME instead of TIMESTAMP is generally discouraged, a specific combination of settings ("preserveInstants=true\&connectionTimeZone=SERVER") can force all Java Timestamp exchanges to be converted to the connection's time zone during storage and retrieval. However, this approach is not recommended for long-term solutions.
 
-**Compatibility with Older Connectors (Pre-3.4):**
+#### **Compatibility with Older Connectors (Pre-3.4):**
 
 The MariaDB Connector/J versions before 3.4 offered a single "timezone" option. While this functionality remains compatible, it's now separated into two distinct settings: connectionTimeZone and forceConnectionTimeZoneToSession. Here's a breakdown of how the old option translates to the new ones:\
 "timezone=America/Los\_Angeles" is equivalent to "connectionTimeZone=America/Los\_Angeles\&forceConnectionTimeZone=true
@@ -891,7 +884,7 @@ To mimic the behavior of the "useLegacyDatetimeCode=false" option from MariaDB 2
 
 Note: Unlike the MySQL Connector, the MariaDB Connector/J defaults connectionTimeZone to LOCAL (JVM's default) instead of SERVER.
 
-#### "LOAD DATA INFILE"
+### "LOAD DATA INFILE"
 
 {% hint style="info" %}
 LOAD DATA INFILE was the fastest way to load data. Now the fastest way is the standard JDBC executeBatch() when option 'useBulkStmts' is enabled
@@ -920,7 +913,7 @@ Statement statement = connection.createStatement();
 
 Contrary to mysql connector, setLocalInfileInputStream value can only be used for next execution.
 
-#### Set a Query Timeout
+### Set a Query Timeout
 
 Driver follow the JDBC specifications, permitting Statement.setQueryTimeout() for a particular statement.
 
@@ -936,7 +929,7 @@ Example :
 jdbc:mariadb://localhost/db?user=user&sessionVariables=max_statement_time=10
 ```
 
-#### Streaming Result Sets
+### Streaming Result Sets
 
 By default, `Statement.executeQuery()` will read the full result set from the server.\
 With large result sets, this will require large amounts of memory.
@@ -963,11 +956,11 @@ If another query is executed on the same connection when a streaming resultset h
 
 Before version 1.4.0, the only accepted value for fetch size was `Statement.setFetchSize(Integer.MIN_VALUE)` (equivalent to `Statement.setFetchSize(1)`). This value is still accepted for compatilibity reasons but rather use `Statement.setFetchSize(1)`, since according to JDBC the value must be >= 0.
 
-#### Prepared Statements
+### Prepared Statements
 
 The driver uses server prepared statements as a standard to communicate with the database (since 1.3.0). If the "allowMultiQueries" options are set to true, the driver will only use text protocol. Prepared statements (parameter substitution) is handled by the driver, on the client side.
 
-#### CallableStatement
+### CallableStatement
 
 Callable statement implementation won't need to access stored procedure\
 metadata ([mysql.proc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table)) table if both of following are true
@@ -978,7 +971,7 @@ metadata ([mysql.proc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/
 When possible, following the two rules above provides both better speed and\
 eliminates concerns about SELECT privileges on the[mysql.proc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table) table.
 
-#### Generated keys limitation
+### Generated keys limitation
 
 Java permit retrieving last generated keys,using [Statement.getGeneratedKeys()](https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Statement.html#getGeneratedKeys\(\)).
 
@@ -993,11 +986,11 @@ Statement stmt = sharedConn.createStatement();
     System.out.println(rs.getInt(1));
 ```
 
-Only the the first generated key will be returned, meaning that for multi-insert the generated key retrieved will correspond to the first generated value of the command.
+Only the first generated key will be returned, meaning that for multi-insert the generated key retrieved will correspond to the first generated value of the command.
 
 If retrieving all generated values for multiple insert is needed, please use [INSERT...RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning) command (since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)).
 
-#### Optional JDBC Classes
+### Optional JDBC Classes
 
 The following optional interfaces are implemented by the\
 org.mariadb.jdbc.MariaDbDataSource class : javax.sql.DataSource,\
@@ -1005,12 +998,12 @@ javax.sql.ConnectionPoolDataSource, javax.sql.XADataSource
 
 careful : org.mariadb.jdbc.MySQLDataSource doesn't exist anymore and should be replaced with org.mariadb.jdbc.MariaDbDataSource since v1.3.0
 
-### Usage Examples
+## Usage Examples
 
 The following code provides a basic example of how to connect to a MariaDB or\
 MySQL server and create a table.
 
-**Creating a Table on a MariaDB or MySQL Server**
+### **Creating a Table on a MariaDB or MySQL Server**
 
 ```java
 Connection  connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/test", "username", "password");
@@ -1020,7 +1013,7 @@ stmt.close();
 connection.close();
 ```
 
-### Services
+## Services
 
 The driver implements 3 kinds of services:
 
@@ -1028,7 +1021,7 @@ The driver implements 3 kinds of services:
 * Authentication service: permit adding client authentication plugins.
 * SSL factory service: custom TSL implementation
 
-#### Credential service
+### Credential service
 
 Credentials are usually set using user/password in the connection string or by using DriverManager.getConnection(String url, String user, String password).
 
@@ -1036,7 +1029,7 @@ Credential plugins permit to provide credential information from other means. Th
 
 The driver has 3 default plugins :
 
-**AWS IAM**
+#### **AWS IAM**
 
 This permits AWS database IAM authentication. The plugin generate a token using IAM credential and region. Token is valid for 15 minutes and cached for 10 minutes.
 
@@ -1048,19 +1041,19 @@ Example: `jdbc:mariadb://host/db?credentialType=AWS-IAM&useSsl&serverSslCert=/so
 
 with AWS\_ACCESS\_KEY\_ID, AWS\_SECRET\_ACCESS\_KEY and AWS\_REGION environment variable set.
 
-**Environment**
+#### **Environment**
 
 User and Password are retrieved from environment variables. default environment variables are MARIADB\_USER and MARIADB\_PWD, but can be changed by setting additional option `userKey` and `pwdKey`
 
 Example : using connection string `jdbc:mariadb://host/db?credentialType=ENV` user and password will be retrieved from environment variable MARIADB\_USER and MARIADB\_PWD.
 
-**Property**
+#### **Property**
 
 User and Password are retrieved from java properties. default property name are mariadb.user and mariadb.pwd, but property names can be changed by setting additional option `userKey` and `pwdKey`
 
 Example : using connection string `jdbc:mariadb://host/db?credentialType=PROPERTY&userKey=mariadbUser&pwdKey=mariadbPwd` user and password will be retrieved from java properties `mariadbUser` and `mariadbPwd`
 
-#### Authentication service
+### Authentication service
 
 [Client authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) are now defined as services. This permits to easily add new client authentication plugins.
 
@@ -1077,7 +1070,7 @@ List of authentication plugins in java connector :
 
 New authentication plugins can be created implementing interface org.mariadb.jdbc.authentication.AuthenticationPlugin, and listing new plugin in a META-INF/services/org.mariadb.jdbc.authentication.AuthenticationPlugin file.
 
-#### SSL factory service
+### SSL factory service
 
 Custom SSL implementation can be used implementing\
 A connection to a server initially creates a socket. When set, SSL socket is layered over this existing socket.\
@@ -1087,7 +1080,7 @@ Custom implementation need to implement org.mariadb.jdbc.tls.TlsSocketPlugin and
 
 Custom implementation are activated using option `tlsSocketType`
 
-**Easy to use logging**
+## **Easy to use logging**
 
 In MariaDB Connector/J 3.0, logging can now be enabled at runtime. Connector/J uses the slf4j API if it is installed. Otherwise, Connector/J uses the JDK logger / console.
 
@@ -1097,7 +1090,6 @@ Connector/J supports the following Java logging levels:
 
 | Log Levels   | Description            |
 | ------------ | ---------------------- |
-| Log Levels   | Description            |
 | INFO         | Logs connection errors |
 | DEBUG/FINE   | Logs SQL statements    |
 | TRACE/FINEST | Logs network exchanges |
@@ -1158,25 +1150,25 @@ Exemple of generated logs :
 +--------------------------------------------------+------------------+
 ```
 
-### Continuous Integration and Automated Tests
+## Continuous Integration and Automated Tests
 
 For MariaDB Connector/J's continuous integration and automated test results, please see [MariaDB Connector/J's Travis CI](https://app.travis-ci.com/github/mariadb-corporation/mariadb-connector-j).
 
-### Reporting Bugs
+## Reporting Bugs
 
 If you find a bug, please report it via the [CONJ project](https://jira.mariadb.org/projects/CONJ/issues) on [MariaDB's Jira bug tracker](https://jira.mariadb.org).
 
-### Source Code
+## Source Code
 
 The source code is available at the [mariadb-connector-j repository](https://github.com/MariaDB/mariadb-connector-j) on GitHub.
 
-### License
+## License
 
 GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
 
 For licensing questions, see the [Licensing FAQ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/faq/licensing-questions/licensing-faq).
 
-### F.A.Q.
+## F.A.Q.
 
 **Error "Could not read resultset: unexpected end of stream, read 0 bytes from 4"**
 
@@ -1189,7 +1181,7 @@ If you don't expect results to be handled in this amount of time there is anothe
 * for older servers, a specific query will have to temporarily set net\_write\_timeout ("SET STATEMENT net\_write\_timeout=..."), and set it back afterward.
 * if your application usually uses a lot of long queries with fetch size, the connection can be set using the "sessionVariables=net\_write\_timeout=xxx" option.
 
-**How to Do a Lightweight Ping / Avoid Mass "select 1"**
+### **How to Do a Lightweight Ping / Avoid Mass "select 1"**
 
 Connection.isValid() is a good approach.\
 Connection.isValid() is doing a ping (ping in mysql protocol, not network ping).\

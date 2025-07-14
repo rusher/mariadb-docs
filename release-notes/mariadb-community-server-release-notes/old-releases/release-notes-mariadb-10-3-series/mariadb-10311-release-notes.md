@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.3](what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.3.11/)[Release Notes](mariadb-10311-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-10311-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
+[Download](https://downloads.mariadb.org/mariadb/10.3.11/)[Release Notes](mariadb-10311-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-10311-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
 
 **Release date:** 20 Nov 2018
 
@@ -29,9 +29,9 @@ Notable changes of this release include:
 * [MDEV-17531](https://jira.mariadb.org/browse/MDEV-17531) - Fix crash in [RENAME TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/rename-table) with [FOREIGN KEY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys) and [FULLTEXT INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes)
 * [Spatial index](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/spatial-index) fixes: [MDEV-17545](https://jira.mariadb.org/browse/MDEV-17545), [MDEV-17546](https://jira.mariadb.org/browse/MDEV-17546)
 * [Virtual column](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns) fixes: [MDEV-17215](https://jira.mariadb.org/browse/MDEV-17215), [MDEV-17548](https://jira.mariadb.org/browse/MDEV-17548)
-* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) fixes:
-  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/truncate-table) now works with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)
-  * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) - Allow InnoDB start up with empty ib\_logfile0 from mariabackup --prepare
+* [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) fixes:
+  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/truncate-table) now works with [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/)
+  * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) - Allow InnoDB start up with empty ib\_logfile0 from mariadb-backup --prepare
 * Packages for Fedora 29 and Ubuntu 18.10 Cosmic have been added in this release
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be\
   the last release of [MariaDB 10.3](what-is-mariadb-103.md) for Fedora 27
@@ -50,21 +50,19 @@ Notable changes of this release include:
   * [CVE-2018-3284](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3284)
 
 When upgrading from [MariaDB 10.3.8](mariadb-1038-release-notes.md) or earlier to [MariaDB 10.3.9](mariadb-1039-release-notes.md) or higher,\
-running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.3.11](mariadb-10311-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-10311-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-10311-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.3.11](mariadb-10311-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-3-11-and-mariadb-connector-c-3-0-7-connector-odbc-3-0-7-and-connector-node-js-2-0-1-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

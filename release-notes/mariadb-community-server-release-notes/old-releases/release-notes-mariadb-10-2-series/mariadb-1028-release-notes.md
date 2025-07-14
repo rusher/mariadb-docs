@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.8)[Release Notes](mariadb-1028-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-1028-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.8)[Release Notes](mariadb-1028-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-1028-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 18 Aug 2017
 
@@ -24,9 +24,9 @@ Thanks, and enjoy MariaDB!
   * Beta support for [MongoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect/connect-table-types/connect-mongo-table-type) added
 * Fix [ST\_GeomFromGeoJSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/geometry-constructors/st_geomfromgeojson) ([MDEV-12181](https://jira.mariadb.org/browse/MDEV-12181))
 * Fix [ST\_AsGeoJSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/geometry-constructors/geojson-st_asgeojson) ([MDEV-12180](https://jira.mariadb.org/browse/MDEV-12180))
-* Fixed bug that permitted columns being dropped which would would result in an additional constraint being added to the table. See the example in [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#drop-column-if-exists-col_name-cascaderestrict) ([MDEV-11114](https://jira.mariadb.org/browse/MDEV-11114)).
+* Fixed bug that permitted columns being dropped which would result in an additional constraint being added to the table. See the example in [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#drop-column-if-exists-col_name-cascaderestrict) ([MDEV-11114](https://jira.mariadb.org/browse/MDEV-11114)).
 * Nonsensical combinations of SIGNED, UNSIGNED and ZEROFILL are no longer permitted - see [Numeric Data Type Overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric-data-type-overview) ([MDEV-8659](https://jira.mariadb.org/browse/MDEV-8659)).
-* [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) now included for Debian and Ubuntu (in [MariaDB 10.2.7](mariadb-1027-release-notes.md) it was released only for Red Hat, CentOS, and Fedora)
+* [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) now included for Debian and Ubuntu (in [MariaDB 10.2.7](mariadb-1027-release-notes.md) it was released only for Red Hat, CentOS, and Fedora)
 * Fedora 26 repositories have been added in this release.
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.2](what-is-mariadb-102.md) for Fedora 24.
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
@@ -43,12 +43,10 @@ Thanks, and enjoy MariaDB!
 ## Notes
 
 For a complete list of changes made in [MariaDB 10.2.8](mariadb-1028-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-1028-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-1028-changelog.md).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

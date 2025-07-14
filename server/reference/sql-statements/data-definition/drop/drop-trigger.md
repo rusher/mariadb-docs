@@ -2,37 +2,39 @@
 
 ## Syntax
 
-```
+```sql
 DROP TRIGGER [IF EXISTS] [schema_name.]trigger_name
 ```
 
 ## Description
 
-This statement drops a [trigger](../../../../server-usage/triggers-events/triggers/). The schema (database) name is optional. If the\
-schema is omitted, the trigger is dropped from the default schema.\
-Its use requires the `TRIGGER` privilege for the table associated with the trigger.
+This statement drops a [trigger](../../../../server-usage/triggers-events/triggers/). The schema (database) name is optional. If the schema is omitted, the trigger is dropped from the default schema. Its use requires the `TRIGGER` privilege for the table associated with the trigger.
 
-Use `IF EXISTS` to prevent an error from occurring for a\
-trigger that does not exist. A `NOTE` is generated for a non-existent trigger\
-when using `IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
+Use `IF EXISTS` to prevent an error from occurring for a trigger that does not exist. A `NOTE` is generated for a non-existent trigger when using `IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
 
 **Note:** Triggers for a table are also dropped if you drop the table.
 
 ### Atomic DDL
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+`DROP TRIGGER` is [atomic](../atomic-ddl.md).
+{% endtab %}
 
-[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../atomic-ddl.md) and `DROP TRIGGER` is atomic.
+{% tab title="< 10.6.1" %}
+`DROP TRIGGER` is **not** [atomic](../atomic-ddl.md).
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
-```
+```sql
 DROP TRIGGER test.example_trigger;
 ```
 
 Using the IF EXISTS clause:
 
-```
+```sql
 DROP TRIGGER IF EXISTS test.example_trigger;
 Query OK, 0 rows affected, 1 warning (0.01 sec)
 
@@ -53,6 +55,6 @@ SHOW WARNINGS;
 * [SHOW CREATE TRIGGER](../../administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

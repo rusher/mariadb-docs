@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column                 | Description                |
 | ---------------------- | -------------------------- |
-| Column                 | Description                |
 | CHARACTER\_SET\_NAME   | Name of the character set. |
 | DEFAULT\_COLLATE\_NAME | Default collation used.    |
 | DESCRIPTION            | Character set description. |
@@ -14,13 +13,13 @@ It contains the following columns:
 
 The [SHOW CHARACTER SET](../../../show/show-character-set.md) statement returns the same results (although in a different order), and both can be refined in the same way. For example, the following two statements return the same results:
 
-```
+```sql
 SHOW CHARACTER SET WHERE Maxlen LIKE '2';
 ```
 
 and
 
-```
+```sql
 SELECT * FROM information_schema.CHARACTER_SETS 
 WHERE MAXLEN LIKE '2';
 ```
@@ -29,7 +28,7 @@ See [Setting Character Sets and Collations](../../../../../data-types/string-dat
 
 ## Example
 
-```
+```sql
 SELECT CHARACTER_SET_NAME FROM information_schema.CHARACTER_SETS 
 WHERE DEFAULT_COLLATE_NAME LIKE '%chinese%';
 +--------------------+

@@ -1,14 +1,13 @@
 # Information Schema THREAD\_POOL\_GROUPS Table
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
-
-The [Information Schema](../) `THREAD_POOL_GROUPS` table was introduced in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes).
+{% hint style="info" %}
+This table is available as of MariaDB [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105).
+{% endhint %}
 
 The table provides information about [thread pool](../../../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) groups, and contains the following columns:
 
 | Column           | Description                                                                                                                                                                                                                                                                                  |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column           | Description                                                                                                                                                                                                                                                                                  |
 | GROUP\_ID        | the thread group this row is showing data for                                                                                                                                                                                                                                                |
 | CONNECTIONS      | the number of clients currently connected to this thread group                                                                                                                                                                                                                               |
 | THREADS          | total number of threads in this group (ACTIVE+STANDBY+LISTENER)                                                                                                                                                                                                                              |

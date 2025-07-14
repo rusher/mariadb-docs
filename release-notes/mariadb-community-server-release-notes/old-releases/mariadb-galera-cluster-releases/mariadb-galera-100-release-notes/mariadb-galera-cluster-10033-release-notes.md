@@ -15,7 +15,7 @@ available in the [**Galera**](https://github.com/mariadb-corporation/docs-releas
 
 For a list of changes made in MariaDB Galera Cluster 10.0.33, with links to\
 detailed information on each push, see the[MariaDB Galera Cluster 10.0.33 Changelog](../mariadb-galera-100-changelogs/mariadb-galera-cluster-10033-changelog.md).\
-For changes made in [MariaDB 10.0.33](../../release-notes-mariadb-10-0-series/mariadb-10033-release-notes.md), see the[MariaDB 10.0.33 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10033-changelog.md)
+For changes made in [MariaDB 10.0.33](../../release-notes-mariadb-10-0-series/mariadb-10033-release-notes.md), see the[MariaDB 10.0.33 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10033-changelog.md)
 
 ## Updates and fixes in this version
 
@@ -27,7 +27,7 @@ For changes made in [MariaDB 10.0.33](../../release-notes-mariadb-10-0-series/ma
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * [CVE-2017-10378](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-10378), [MDEV-13819](https://jira.mariadb.org/browse/MDEV-13819)
   * [CVE-2017-10268](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-10268)
-* See the [MariaDB 10.0.33 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10033-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10033-changelog.md) for more information on the changes in\
+* See the [MariaDB 10.0.33 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10033-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10033-changelog.md) for more information on the changes in\
   MariaDB.
 
 ## Notes
@@ -53,10 +53,8 @@ are not supported.
 
 Thank you for using MariaDB Galera Cluster!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

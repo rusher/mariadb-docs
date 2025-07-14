@@ -8,7 +8,7 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 ## Upgrading
 
-* See [Upgrading Between Major MariaDB Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions) and [Upgrading from MariaDB 11.2 to MariaDB 11.3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-2-to-mariadb-11-3).
+* See [Upgrading Between Major MariaDB Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions) and [Upgrading from MariaDB 11.2 to MariaDB 11.3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-11-2-to-mariadb-11-3).
 
 ## New Features & Improvements
 
@@ -28,7 +28,7 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 ### Data Types
 
-* It is now possible to create [partitions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177))
+* It is now possible to create [partitions](https://mariadb.com/docs/server/reference/sql-statements/data-definition/alter/alter-table#partitions) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177))
 * [INET4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet4) data types can now be cast into [INET6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet6) types ([MDEV-31626](https://jira.mariadb.org/browse/MDEV-31626))
 * This means INET4 values can be compared with INET6 values and can be inserted into INET6 columns;\
   the server can automatically convert INET4 value into INET6 as needed.
@@ -60,7 +60,7 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 ### mariadb-backup
 
-* [mariabackup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
+* [mariadb-backup --innobackupex](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#innobackupex) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
 
 ### Spider
 
@@ -88,11 +88,14 @@ page.
 
 ## List of All [MariaDB 11.3](what-is-mariadb-113.md) Releases
 
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                   |
-| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                   |
-| 16 Feb 2024 | [MariaDB 11.3.2](mariadb-11-3-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-3-2-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-2-changelog.md) |
-| 21 Nov 2023 | [MariaDB 11.3.1](mariadb-11-3-1-release-notes.md) | RC          | [Release Notes](mariadb-11-3-1-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md) |
-| 20 Sep 2023 | [MariaDB 11.3.0](mariadb-11-3-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-3-0-release-notes.md) |                                                                                             |
+| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
+| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| 16 Feb 2024 | [MariaDB 11.3.2](mariadb-11-3-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-3-2-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-2-changelog.md) |
+| 21 Nov 2023 | [MariaDB 11.3.1](mariadb-11-3-1-release-notes.md) | RC          | [Release Notes](mariadb-11-3-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md) |
+| 20 Sep 2023 | [MariaDB 11.3.0](mariadb-11-3-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-3-0-release-notes.md) |                                                                                          |
+
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

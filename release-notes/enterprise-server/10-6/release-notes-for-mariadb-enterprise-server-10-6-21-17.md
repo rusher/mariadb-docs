@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.6.21-17 was released on 19 Mar 2025.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/cve.org) link) | CVSS base score |
 | [CVE-2025-21490](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21490)                                                                                               | 4.9             |
 
 ## Changes in Storage Engines
@@ -23,7 +22,7 @@ MariaDB Enterprise Server 10.6.21-17 was released on 19 Mar 2025.
 * MariaDB now supports MySQL 8.0 binlog events, including `PARTIAL_UPDATE_ROWS_EVENT`, `TRANSACTION_PAYLOAD_EVENT`, and `HEARTBEAT_LOG_EVENT_V2`. ([MDEV-35643](https://jira.mariadb.org/browse/MDEV-35643))
 * InnoDB deadlock output query length increased to improve visibility of deadlocked statements. ([MDEV-32576](https://jira.mariadb.org/browse/MDEV-32576))
 * [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) updated to 26.4.21
-  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
+  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 
 ## Issues Fixed
 
@@ -95,7 +94,7 @@ MariaDB Enterprise Server 10.6.21-17 was released on 19 Mar 2025.
 * Fix possibly wrong result using a degenerated subquery `(SELECT <expr>)` with window function ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869))
 * The "`Failed to write to mysql.slow_log`" error no longer shown without a detailed reason for the error ([MDEV-20281](https://jira.mariadb.org/browse/MDEV-20281))
 * Fix `debian-start` script failure when using non-standard socket path ([MDEV-35907](https://jira.mariadb.org/browse/MDEV-35907))
-* `wsrep_sst_mariabackup.sh` no longer uses `--use-memory default (100MB)` resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
+* `wsrep_sst_mariadb-backup.sh` no longer uses `--use-memory default (100MB)` resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
 * `Replicate_*` fields in `Show-Slave-Status` may be truncated, impacting replication monitoring. (MENT-2238)
 
 ### Related to performance
@@ -149,6 +148,6 @@ Some components of MariaDB Enterprise Server are supported on a subset of platfo
 * [Upgrade to MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

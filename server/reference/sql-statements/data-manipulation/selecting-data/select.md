@@ -50,20 +50,18 @@ lock_option:
 
 ## Description
 
-`SELECT` is used to retrieve rows selected from one or more\
-tables, and can include [UNION](joins-subqueries/union.md) statements and [subqueries](joins-subqueries/subqueries/).
+`SELECT` is used to retrieve rows selected from one or more tables, and can include [UNION](joins-subqueries/union.md) statements and [subqueries](joins-subqueries/subqueries/).
 
-* Each select\_expr expression indicates a column or data that you want to retrieve. You must have at least one select expression. See [Select Expressions](select.md#select-expressions) below.
+* Each `select_expr` expression indicates a column or data that you want to retrieve. You must have at least one select expression. See [Select Expressions](select.md#select-expressions) below.
 * The `FROM` clause indicates the table or tables from which to retrieve rows. Use either a single table name or a `JOIN` expression. See [JOIN](joins-subqueries/joins/join-syntax.md) for details. If no table is involved, [FROM DUAL](dual.md) can be specified.
 * Each table can also be specified as `db_name`.`tabl_name`. Each column can also be specified as `tbl_name`.`col_name` or even `db_name`.`tbl_name`.`col_name`. This allows one to write queries which involve multiple databases. See [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md) for syntax details.
-* The `WHERE` clause, if given, indicates the condition or\
-  conditions that rows must satisfy to be selected.`where_condition` is an expression that evaluates to true for each row to be selected. The statement selects all rows if there is no WHERE clause.
+* The `WHERE` clause, if given, indicates the condition or conditions that rows must satisfy to be selected. The `where_condition` is an expression that evaluates to true for each row to be selected. The statement selects all rows if there is no WHERE clause.
   * In the `WHERE` clause, you can use any of the functions and operators that MariaDB supports, except for aggregate (summary) functions. See [Functions and Operators](../../../sql-functions/) and [Functions and Modifiers for use with GROUP BY](../../../sql-functions/aggregate-functions/) (aggregate).
 * Use the [ORDER BY](order-by.md) clause to order the results.
-* Use the [LIMIT](limit.md) clause allows you to restrict the results to only a certain number of rows, optionally with an offset.
+* Use the [LIMIT](limit.md) clause to restrict the results to only a certain number of rows, optionally with an offset.
 * Use the [GROUP BY](group-by.md) and `HAVING` clauses to group rows together when they have columns or computed values in common.
 
-SELECT can also be used to retrieve rows computed without reference to any table.
+`SELECT` can also be used to retrieve rows computed without reference to any table.
 
 ### Select Expressions
 
@@ -72,18 +70,17 @@ A `SELECT` statement must contain one or more select expressions, separated by c
 * The name of a column.
 * Any expression using [functions and operators](../../../sql-functions/).
 * `*` to select all columns from all tables in the `FROM` clause.
-* `tbl_name.*` to select all columns from just the table tbl\_name.
+* `tbl_name.*` to select all columns from just the table `tbl_name`.
 
 When specifying a column, you can either use just the column name or qualify the column name with the name of the table using `tbl_name.col_name`. The qualified form is useful if you are joining multiple tables in the `FROM` clause. If you do not qualify the column names when selecting from multiple tables, MariaDB will try to find the column in each table. It is an error if that column name exists in multiple tables.
 
 You can quote column names using backticks. If you are qualifying column names with table names, quote each part separately as ``tbl_name`.`col_name``.
 
-If you use any [grouping functions](../../../sql-functions/aggregate-functions/)\
-in any of the select expressions, all rows in your results will be implicitly grouped, as if you had used `GROUP BY NULL`. `GROUP BY NULL` being an expression behaves specially such that the entire result set is treated as a group.
+If you use any [grouping functions](../../../sql-functions/aggregate-functions/) in any of the select expressions, all rows in your results will be implicitly grouped, as if you had used `GROUP BY NULL`. `GROUP BY NULL` being an expression behaves specially such that the entire result set is treated as a group.
 
 ### DISTINCT
 
-A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the resultset, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../../sql-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle#simple-syntax-compatibility).
+A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the result set, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../../sql-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle#simple-syntax-compatibility).
 
 ### INTO
 

@@ -9,8 +9,7 @@ PointN(ls,N)
 
 ## Description
 
-Returns the N-th [Point](../../../sql-statements/geometry-constructors/geometry-constructors/point.md) in the [LineString](../../../sql-statements/geometry-constructors/geometry-constructors/linestring.md) value `ls`.\
-Points are numbered beginning with `1`.
+Returns the N-th [Point](../geometry-constructors/point.md) in the [LineString](../geometry-constructors/linestring.md) value `ls`. Points are numbered beginning with `1`.
 
 `ST_PointN()` and `PointN()` are synonyms.
 
@@ -27,6 +26,6 @@ SELECT AsText(PointN(GeomFromText(@ls),2));
 +-------------------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

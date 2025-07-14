@@ -137,7 +137,7 @@ It only affects normal connections to the replica, not changes from the\
 new primary.
 
 ```sql
-set @@global.read_only=1;
+SET @@global.read_only=1;
 STOP ALL SLAVES;
 RESET MASTER;
 RESET SLAVE ALL;

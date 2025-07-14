@@ -187,7 +187,7 @@ The special properties for sequence tables are:
 
 * [SHOW CREATE TABLE sequence\_name](../../sql-statements/administrative-sql-statements/show/show-create-table.md). This shows the table structure that is behind the `SEQUENCE` including the field names that can be used with [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) or even [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md).
 * [CREATE TABLE sequence-structure ... SEQUENCE=1](../../sql-statements/data-definition/create/create-table.md)
-* [ALTER TABLE sequence RENAME TO sequence2](../../sql-statements/data-definition/alter/alter-table.md)
+* [ALTER TABLE sequence RENAME TO sequence2](../../sql-statements/data-definition/alter/alter-table/)
 * [RENAME TABLE sequence\_name TO new\_sequence\_name](../../sql-statements/data-definition/rename-table.md)
 * [DROP TABLE sequence\_name](../../sql-statements/data-definition/drop/drop-table.md). This is allowed mainly to get old tools like [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) to work with sequence tables.
 * [SHOW TABLES](../../sql-statements/administrative-sql-statements/show/show-tables.md)

@@ -1,6 +1,6 @@
 # MariaDB 10.9.8 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-9-8-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-8-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
+[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-9-8-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-8-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.9.8/)
 
@@ -122,7 +122,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* Node never returns from Donor/Desynced to Synced when `wsrep_mode = BF_ABORT_MARIABACKUP` ([MDEV-31737](https://jira.mariadb.org/browse/MDEV-31737))
+* Node never returns from Donor/Desynced to Synced when `wsrep_mode = BF_ABORT_mariadb-backup` ([MDEV-31737](https://jira.mariadb.org/browse/MDEV-31737))
 * Node has been dropped from the cluster on Startup / Shutdown with async replica ([MDEV-31413](https://jira.mariadb.org/browse/MDEV-31413))
 * KILL QUERY maintains nodes data consistency but breaks GTID sequence ([MDEV-31075](https://jira.mariadb.org/browse/MDEV-31075))
 * Assertion failure `!lock.was_chosen_as_deadlock_victim in trx0trx.h:1065` ([MDEV-30963](https://jira.mariadb.org/browse/MDEV-30963))
@@ -141,16 +141,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.9.8](mariadb-10-9-8-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-8-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-8-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.9.8](mariadb-10-9-8-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-0-3-10-11-5-10-10-6-10-9-8-10-6-15-10-5-22-10-4-31-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

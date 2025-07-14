@@ -1,8 +1,8 @@
 # MariaDB Connector/Node.js 2.0.1 Changelog
 
-The most recent [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/?showall=1\&tab=connectors\&group=mariadbconnectors\&product=Node.js%20connector\&version=2.0.1)[Release Notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-201-release-notes.md)[Changelog](mariadb-connector-nodejs-201-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/?showall=1\&tab=connectors\&group=mariadbconnectors\&product=Node.js%20connector\&version=2.0.1) | [Release Notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-201-release-notes.md) | [Changelog](mariadb-connector-nodejs-201-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 15 Nov 2018
 
@@ -67,7 +67,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #3fbf6a5](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/3fbf6a5) - \[[CONJS-41](https://jira.mariadb.org/browse/CONJS-41)] update cluster promise documentation
 * [Revision #8a0a865](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/8a0a865) - Update package.json
 * [Revision #9989078](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/9989078) - lil dependency bump
-* [Revision #d146ce5](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/d146ce5) - \[[CONJS-41](https://jira.mariadb.org/browse/CONJS-41)] cluster promise promise documentation
+* [Revision #d146ce5](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/d146ce5) - \[[CONJS-41](https://jira.mariadb.org/browse/CONJS-41)] cluster promise documentation
 * [Revision #6769da5](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/6769da5) - \[[CONJS-41](https://jira.mariadb.org/browse/CONJS-41)] cluster promise implementation - part 2 - implementation of PoolCluster.of - failover handling
 * [Revision #c0115d8](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/c0115d8) - \[misc] correct logo/documentation link
 * [Revision #337e50d](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/337e50d) - \[[CONJS-41](https://jira.mariadb.org/browse/CONJS-41)] cluster promise implementation - part 1
@@ -80,10 +80,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #dbdbd4a](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/dbdbd4a) - \[[CONJS-39](https://jira.mariadb.org/browse/CONJS-39)] correcting MySQL geometry test ( ST\_\* commands not existing before 5.7)
 * [Revision #7c2bdcb](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/7c2bdcb) - \[[CONJS-39](https://jira.mariadb.org/browse/CONJS-39)] support geometry type : correction for MariaDB < 10.1.4 and MySQL < 8.0.0 geometry support report information isMariaDB() / hasMinVersion() to information level to permit use on internal function
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

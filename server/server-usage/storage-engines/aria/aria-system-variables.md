@@ -2,14 +2,14 @@
 
 This page documents system variables related to the [Aria storage engine](./). For options that are not system variables, see [Aria Options](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
 
-See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting system variables.
+See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for instructions on setting system variables.
 
-Also see the [Full list of MariaDB options, system and status variables](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+{% include "../../../.gitbook/includes/for-a-full-list-of-server-v....md" %}
 
 #### `aria_block_size`
 
 * Description: Block size to be used for Aria index pages. Changing this requires dumping, deleting old tables and deleting all log files, and then restoring your Aria tables. If key lookups take too long (and one has to search roughly 8192/2 by default to find each key), can be made smaller, e.g. `4096`.
-* Commandline: `--aria-block-size=#`
+* Command line: `--aria-block-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
@@ -21,7 +21,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_checkpoint_interval`
 
 * Description: Interval in seconds between automatic checkpoints. 0 means 'no automatic checkpoints' which makes sense only for testing.
-* Commandline: `--aria-checkpoint-interval=#`
+* Command line: `--aria-checkpoint-interval=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -31,7 +31,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_checkpoint_log_activity`
 
 * Description: Number of bytes that the transaction log has to grow between checkpoints before a new checkpoint is written to the log.
-* Commandline: `aria-checkpoint-log-activity=#`
+* Command line: `aria-checkpoint-log-activity=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -40,8 +40,8 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `aria_encrypt_tables`
 
-* Description: Enables automatic encryption of all user-created Aria tables that have the [ROW_FORMAT](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option set to [PAGE](aria-storage-formats.md#page). See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for User-created Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
-* Commandline: `aria-encrypt-tables={0|1}`
+* Description: Enables automatic encryption of all user-created Aria tables that have the [ROW\_FORMAT](../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option set to [PAGE](aria-storage-formats.md#page). See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for User-created Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
+* Command line: `aria-encrypt-tables={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -50,7 +50,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_force_start_after_recovery_failures`
 
 * Description: Number of consecutive log recovery failures after which logs will be automatically deleted to cure the problem; 0 (the default) disables the feature.
-* Commandline: `--aria-force-start-after-recovery-failures=#`
+* Command line: `--aria-force-start-after-recovery-failures=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
@@ -59,7 +59,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_group_commit`
 
 * Description: Specifies Aria [group commit mode](aria-group-commit.md).
-* Commandline: `--aria_group_commit="value"`
+* Command line: `--aria_group_commit="value"`
 * Alias: `maria_group_commit`
 * Scope: Global
 * Dynamic: No
@@ -79,7 +79,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_group_commit_interval`
 
 * Description: Interval between [Aria group commits](aria-group-commit.md) in microseconds (1/1000000 second) for other threads to come and do a commit in "hard" mode and sync()/commit at all in "soft" mode. Option only has effect if [aria\_group\_commit](aria-system-variables.md#aria_group_commit) is used.
-* Commandline: `--aria_group_commit_interval=#`
+* Command line: `--aria_group_commit_interval=#`
 * Alias: `maria_group_commit_interval`
 * Scope: Global
 * Dynamic: No
@@ -91,17 +91,17 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_log_dir_path`
 
 * Description: Path to the directory where transactional log should be stored
-* Commandline: `--aria-log-dir-path=value`
+* Command line: `--aria-log-dir-path=value`
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`
 * Default Value: Same as DATADIR
-* Introduced: [MariaDB 10.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-20-release-notes), [MariaDB 10.6.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-13-release-notes), [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-3-release-notes) (as a system variable, existed as an option only before that)
+* Introduced: [MariaDB 10.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10-5-20-release-notes), [MariaDB 10.6.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-13-release-notes), [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-3-release-notes) (as a system variable, existed as an option only before that)
 
 #### `aria_log_file_size`
 
 * Description: Limit for Aria transaction log size
-* Commandline: `--aria-log-file-size=#`
+* Command line: `--aria-log-file-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -110,7 +110,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_log_purge_type`
 
 * Description: Specifies how the Aria transactional log will be purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md);
-* Commandline: `--aria-log-purge-type=name`
+* Command line: `--aria-log-purge-type=name`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
@@ -120,7 +120,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_max_sort_file_size`
 
 * Description: Don't use the fast sort index method to created index if the temporary file would get bigger than this.
-* Commandline: `--aria-max-sort-file-size=#`
+* Command line: `--aria-max-sort-file-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -130,7 +130,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_page_checksum`
 
 * Description: Determines whether index and data should use page checksums for extra safety. Can be overridden per table with PAGE\_CHECKSUM clause in [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md).
-* Commandline: `--aria-page-checksum=#`
+* Command line: `--aria-page-checksum=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -139,7 +139,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_pagecache_age_threshold`
 
 * Description: This characterizes the number of hits a hot block has to be untouched until it is considered aged enough to be downgraded to a warm block. This specifies the percentage ratio of that number of hits to the total number of blocks in the page cache.
-* Commandline: `--aria-pagecache-age-threshold=#`
+* Command line: `--aria-pagecache-age-threshold=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -149,7 +149,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_pagecache_buffer_size`
 
 * Description: The size of the buffer used for index and data blocks for Aria tables. This can include explicit Aria tables, system tables, and temporary tables. Increase this to get better handling and measure by looking at [aria-status-variables/#aria\_pagecache\_reads](aria-status-variables.md#aria_pagecache_reads) (should be small) vs [aria-status-variables/#aria\_pagecache\_read\_requests](aria-status-variables.md#aria_pagecache_read_requests).
-* Commandline: `--aria-pagecache-buffer-size=#`
+* Command line: `--aria-pagecache-buffer-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
@@ -159,7 +159,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_pagecache_division_limit`
 
 * Description: The minimum percentage of warm blocks in the key cache.
-* Commandline: `--aria-pagecache-division-limit=#`
+* Command line: `--aria-pagecache-division-limit=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -169,16 +169,27 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_pagecache_file_hash_size`
 
 * Description: Number of hash buckets for open and changed files. If you have many Aria files open you should increase this for faster flushing of changes. A good value is probably 1/10th of the number of possible open Aria files.
-* Commandline: `--aria-pagecache-file-hash-size=#`
+* Command line: `--aria-pagecache-file-hash-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value: `512`
 * Range: `128` to `16384`
 
+#### `aria_pagecache_segments`
+
+* Description: The number of segments in the page\_cache. Each file is put in their own segments of size pagecache\_buffer\_size / segments. Having many segments improves parallel performance.
+* Command line: `--aria-pagecache-segments=#`
+* Scope: Global
+* Dynamic: No
+* Data Type: `numeric`
+* Default Value: `1`
+* Range: `1` to `128`
+* Introduced: [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)
+
 #### `aria_recover`
 
-* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
+* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
 
 #### `aria_recover_options`
 
@@ -188,7 +199,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
   * `QUICK`: Does not check rows in the table if there are no delete blocks.
   * `FORCE`: Runs the recovery even if it determines that more than one row from the data file will be lost.
   * `BACKUP`: Keeps a backup of the data files.
-* Commandline: `--aria-recover-options[=#]`
+* Command line: `--aria-recover-options[=#]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
@@ -196,12 +207,12 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
   * `BACKUP,QUICK` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
   * `NORMAL` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
 * Valid Values: `NORMAL`, `BACKUP`, `FORCE`, `QUICK`, `OFF`
-* Introduced: [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md)
+* Introduced: [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes)
 
 #### `aria_repair_threads`
 
 * Description: Number of threads to use when repairing Aria tables. The value of 1 disables parallel repair. Increasing from the default will usually result in faster repair, but will use more CPU and memory.
-* Commandline: `--aria-repair-threads=#`
+* Command line: `--aria-repair-threads=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -209,8 +220,8 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `aria_sort_buffer_size`
 
-* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../../reference/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md).
-* Commandline: `--aria-sort-buffer-size=#`
+* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../../reference/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/).
+* Command line: `--aria-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -219,7 +230,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_stats_method`
 
 * Description: Determines how NULLs are treated for Aria index statistics purposes. If set to `nulls_equal`, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the default, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. Statistics need to be recalculated after this method is changed. See also [Index Statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md), [myisam\_stats\_method](../myisam-storage-engine/myisam-system-variables.md) and [innodb\_stats\_method](../innodb/innodb-system-variables.md).
-* Commandline: `--aria-stats-method=#`
+* Command line: `--aria-stats-method=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -229,7 +240,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_sync_log_dir`
 
 * Description: Controls syncing directory after log file growth and new file creation.
-* Commandline: `--aria-sync-log-dir=#`
+* Command line: `--aria-sync-log-dir=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
@@ -239,7 +250,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `aria_used_for_temp_tables`
 
 * Description: Readonly variable indicating whether the [Aria](./) storage engine is used for temporary tables. If set to `ON`, the default, the Aria storage engine is used. If set to `OFF`, MariaDB reverts to using [MyISAM](../myisam-storage-engine/) for on-disk temporary tables. The [MEMORY](../memory-storage-engine.md) storage engine is used for temporary tables regardless of this variable's setting where appropriate. The default can be changed by not using the `--with-aria-tmp-tables` option when building MariaDB.
-* Commandline: No
+* Command line: No
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
@@ -248,7 +259,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `deadlock_search_depth_long`
 
 * Description: Long search depth for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](./) storage engine.
-* Commandline: `--deadlock-search-depth-long=#`
+* Command line: `--deadlock-search-depth-long=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -258,7 +269,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `deadlock_search_depth_short`
 
 * Description: Short search depth for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](./) storage engine.
-* Commandline: `--deadlock-search-depth-short=#`
+* Command line: `--deadlock-search-depth-short=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -268,7 +279,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `deadlock_timeout_long`
 
 * Description: Long timeout in microseconds for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](./) storage engine.
-* Commandline: `--deadlock-timeout-long=#`
+* Command line: `--deadlock-timeout-long=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -278,7 +289,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `deadlock_timeout_short`
 
 * Description: Short timeout in microseconds for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](./) storage engine.
-* Commandline: `--deadlock-timeout-short=#`
+* Command line: `--deadlock-timeout-short=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`

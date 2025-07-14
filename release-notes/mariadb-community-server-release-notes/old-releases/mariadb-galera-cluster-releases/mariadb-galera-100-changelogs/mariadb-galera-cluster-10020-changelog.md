@@ -474,11 +474,15 @@ modified in that revision.
   2015-05-07 16:59:25 +0200
   * Fix a bug in init\_table\_share that caused syntax error with Boolean options: oom|= sql->append(vull ? "ON" : "OFF"); replaced by: oom|= sql->append(vull ? "YES" : "NO");
 * [Revision #12bebce](https://github.com/MariaDB/server/commit/12bebce)\
-  2015-05-05 11:37:21 +0200
-  *
-    * Fix a regression bug on (XML) HTML tables.
+  2015-05-05 11:37:21 +0200\
+  \*
+  * Fix a regression bug on (XML) HTML tables.
 * [Revision #1b07ba5](https://github.com/MariaDB/server/commit/1b07ba5)\
   2015-05-02 15:36:33 +0200
   * Fix [MDEV-8090](https://jira.mariadb.org/browse/MDEV-8090) in tabmysql.cpp
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

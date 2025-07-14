@@ -1,6 +1,8 @@
 # MariaDB Connector/Node.js 3.4.2 Changelog
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)[Changelog](mariadb-connector-node-js-3-4-2-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
+
+[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector) | [Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md) | [Changelog](mariadb-connector-node-js-3-4-2-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 25 Apr 2025
 
@@ -18,5 +20,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #14fd834](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/14fd834) \[misc] Revised the buffer reading methods to increment `this.pos` once per function call when possible
 * [Revision #4cc791d](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/4cc791d) \[misc] Replaces repetitive `query[i]`
 * [Revision #990afe8](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/990afe8) \[[CONJS-318](https://jira.mariadb.org/browse/CONJS-318)] Repeated named placeholders causes "Placeholder is not defined" #311
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CHECK TABLE tbl_name [, tbl_name] ... [option] ...
 
 option = {FOR UPGRADE | QUICK | FAST | MEDIUM | EXTENDED | CHANGED}
@@ -10,39 +10,52 @@ option = {FOR UPGRADE | QUICK | FAST | MEDIUM | EXTENDED | CHANGED}
 
 ## Description
 
-`CHECK TABLE` checks a table or tables for errors. `CHECK TABLE` works for[Archive](../../../server-usage/storage-engines/archive.md), [Aria](../../../server-usage/storage-engines/aria/), [CSV](../../../server-usage/storage-engines/csv/), [InnoDB](../../../server-usage/storage-engines/innodb/) and [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) tables. For Aria and MyISAM tables, the\
-key statistics are updated as well. For CSV, see also [Checking and Repairing CSV Tables](../../../server-usage/storage-engines/csv/checking-and-repairing-csv-tables.md).
+`CHECK TABLE` checks a table or tables for errors. `CHECK TABLE` works for [Archive](../../../server-usage/storage-engines/archive.md), [Aria](../../../server-usage/storage-engines/aria/), [CSV](../../../server-usage/storage-engines/csv/), [InnoDB](../../../server-usage/storage-engines/innodb/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) and, from [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), [Sequence](../../../server-usage/storage-engines/sequence-storage-engine.md), tables. For Aria and MyISAM tables, the key statistics are updated as well. For CSV, see also [Checking and Repairing CSV Tables](../../../server-usage/storage-engines/csv/checking-and-repairing-csv-tables.md).
 
 As an alternative, [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) is a commandline tool for checking MyISAM tables when the tables are not being accessed. For Aria tables, there is a similar tool: [aria\_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md).
 
 For checking [dynamic columns](../../sql-structure/nosql/dynamic-columns.md) integrity, [COLUMN\_CHECK()](../../sql-structure/nosql/dynamic-columns-from-mariadb-10.md) can be used.
 
-`CHECK TABLE` can also check views for problems, such as tables\
-that are referenced in the view definition that no longer exist.
+`CHECK TABLE` can also check views for problems, such as tables that are referenced in the view definition that no longer exist.
 
-`CHECK TABLE` is also supported for partitioned tables. You can\
-use `[ALTER TABLE](../data-definition/alter/alter-table.md) ... CHECK PARTITION`\
-to check one or more partitions.
+`CHECK TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE ... CHECK PARTITION`](../data-definition/alter/alter-table/#check-partition) to check one or more partitions.
 
-The meaning of the different options are as follows - note that this can vary a bit between\
-storage engines:
+The meaning of the different options are as follows - note that this can vary a bit between storage engines:
 
-|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| FOR UPGRADE | Do a very quick check if the storage format for the table has changed so that one needs to do a REPAIR. This is only needed when one upgrades between major versions of MariaDB or MySQL. This is usually done by [running mariadb-upgrade](../../../server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| FAST        | Only check tables that has not been closed properly or are marked as corrupt. Only supported by the MyISAM and Aria engines. For other engines the table is checked normally                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| CHANGED     | Check only tables that has changed since last REPAIR / CHECK. Only supported by the MyISAM and Aria engines. For other engines the table is checked normally.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| QUICK       | Do a fast check. For MyISAM and Aria, this means skipping the check of the delete link chain, which may take some time.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| MEDIUM      | Scan also the data files. Checks integrity between data and index files with checksums. In most cases this should find all possible errors.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| EXTENDED    | Does a full check to verify every possible error. For InnoDB, Aria, and MyISAM, verify for each row that all its keys exists, and for those index keys, they point back to the primary clustered key. This may take a long time on large tables. This option was previously ignored by InnoDB before [MariaDB 10.6.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md), [MariaDB 10.7.7](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md), [MariaDB 10.8.6](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md) and [MariaDB 10.9.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md). From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118), also checks for referential integrity. |
+| Option      | Explanation                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| FOR UPGRADE | Do a very quick check if the storage format for the table has changed so that one needs to do a `REPAIR`. This is only needed when one upgrades between major versions of MariaDB or MySQL. This is usually done by [running mariadb-upgrade](../../../server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md). |
+| FAST        | Only check tables that has not been closed properly or are marked as corrupt. Only supported by the MyISAM and Aria engines. For other engines the table is checked normally                                                                                                                                                                                                                                                                   |
+| CHANGED     | Check only tables that has changed since last `REPAIR` / `CHECK`. Only supported by the MyISAM and Aria engines. For other engines the table is checked normally.                                                                                                                                                                                                                                                                              |
+| QUICK       | Do a fast check. For MyISAM and Aria, this means skipping the check of the delete link chain, which may take some time.                                                                                                                                                                                                                                                                                                                        |
+| MEDIUM      | Scan also the data files. Checks integrity between data and index files with checksums. In most cases this should find all possible errors.                                                                                                                                                                                                                                                                                                    |
+| EXTENDED    | Does a full check to verify every possible error. For InnoDB, Aria, and MyISAM, verify for each row that all its keys exists, and for those index keys, they point back to the primary clustered key. This may take a long time on large tables.                                                                                                                                                                                               |
 
-For most cases running `CHECK TABLE` without options or `MEDIUM` should be\
-good enough.
+{% tabs %}
+{% tab title="Current" %}
+The `EXTENDED` option is available to InnoDB, too.
+{% endtab %}
 
-The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md) for this statement.
+{% tab title="< 10.9.4 / 10.8.6 / 10.7.7 / 10.6.11" %}
+The `EXTENDED` option is ignored by InnoDB.
+{% endtab %}
+{% endtabs %}
 
-If you want to know if two tables are identical, take a look\
-at [CHECKSUM TABLE](checksum-table.md).
+{% tabs %}
+{% tab title="Current" %}
+When the `EXTENDED` option is given, MariaDB also checks for referential integrity.
+{% endtab %}
+
+{% tab title="< 11.8" %}
+MariaDB does not check for referential integrity, even if the `EXTENDED` option is given.
+{% endtab %}
+{% endtabs %}
+
+For most cases, running `CHECK TABLE` without options or `MEDIUM` should be good enough.
+
+The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](../administrative-sql-statements/show/show-processlist.md) for this statement.
+
+If you want to know if two tables are identical, take a look at [CHECKSUM TABLE](checksum-table.md).
 
 ## InnoDB
 
@@ -54,7 +67,7 @@ During the execution of `CHECK TABLE`, other threads may be blocked.
 
 ## Examples
 
-```
+```sql
 CHECK TABLE y EXTENDED;
 +--------+-------+----------+----------+
 | Table  | Op    | Msg_type | Msg_text |
@@ -63,9 +76,9 @@ CHECK TABLE y EXTENDED;
 +--------+-------+----------+----------+
 ```
 
-From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118):
+In newer MariaDB versions, the `EXTENDED` clause provides more information:
 
-```
+```sql
 CHECK TABLE t1 EXTENDED;
 +---------+-------+----------+----------------------------------------------------------------------+
 | Table   | Op    | Msg_type | Msg_text                                                             |

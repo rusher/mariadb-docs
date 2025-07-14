@@ -17,14 +17,11 @@ Patterns may use the following wildcard characters:
 * `_` matches any single character.
 
 Use `NOT LIKE` to test if a string does not match a pattern. This is equivalent to using\
-the [NOT](../../../operators/logical-operators/not.md) operator on the entire `LIKE` expression.
+the [NOT](../../sql-structure/operators/comparison-operators/) operator on the entire `LIKE` expression.
 
 If either the expression or the pattern is `NULL`, the result is `NULL`.
 
-`LIKE` performs case-insensitive substring matches if the collation for the\
-expression and pattern is case-insensitive. For case-sensitive matches, declare either argument\
-to use a binary collation using [collate](https://mariadb.com/kb/en/collate), or coerce either of them to a [BINARY](../../../../data-types/string-data-types/binary.md)\
-string using [CAST](cast.md). Use [SHOW COLLATION](../../administrative-sql-statements/show/show-collation.md) to get a list of\
+`LIKE` performs case-insensitive substring matches if the collation for the expression and pattern is case-insensitive. For case-sensitive matches, declare either argument to use a binary collation using collate, or coerce either of them to a [BINARY](../../data-types/string-data-types/binary.md) string using [CAST](cast.md). Use [SHOW COLLATION](../../sql-statements/administrative-sql-statements/show/show-collation.md) to get a list of\
 available collations. Collations ending in `_bin` are case-sensitive.
 
 Numeric arguments are coerced to binary strings.
@@ -34,21 +31,15 @@ if it is valid in the expression's character set. For example, `_` will match `_
 will not match `_latin1"€"` because the Euro sign is not a valid latin1 character. If necessary,\
 use [CONVERT](convert.md) to use the expression in a different character set.
 
-If you need to match the characters `_` or `%`, you must escape them. By default,\
-you can prefix the wildcard characters the backslash character `\` to escape them.\
-The backslash is used both to encode special characters like newlines when a string is\
-parsed as well as to escape wildcards in a pattern after parsing. Thus, to match an\
-actual backslash, you sometimes need to double-escape it as `"\``\``\``\"`.
+If you need to match the characters `_` or `%`, you must escape them. By default, you can prefix the wildcard characters the backslash character `\` to escape them. The backslash is used both to encode special characters like newlines when a string is parsed as well as to escape wildcards in a pattern after parsing. Thus, to match an actual backslash, you sometimes need to double-escape it as `"\``\``\``\"`.
 
-To avoid difficulties with the backslash character, you can change the wildcard escape\
-character using `ESCAPE` in a `LIKE` expression. The argument to `ESCAPE`\
-must be a single-character string.
+To avoid difficulties with the backslash character, you can change the wildcard escape character using `ESCAPE` in a `LIKE` expression. The argument to `ESCAPE` must be a single-character string.
 
 ## Examples
 
 Select the days that begin with "T":
 
-```
+```sql
 CREATE TABLE t1 (d VARCHAR(16));
 INSERT INTO t1 VALUES 
   ("Monday"), ("Tuesday"), ("Wednesday"), 
@@ -56,7 +47,7 @@ INSERT INTO t1 VALUES
 SELECT * FROM t1 WHERE d LIKE "T%";
 ```
 
-```
+```sql
 SELECT * FROM t1 WHERE d LIKE "T%";
 +----------+
 | d        |
@@ -68,11 +59,11 @@ SELECT * FROM t1 WHERE d LIKE "T%";
 
 Select the days that contain the substring "es":
 
-```
+```sql
 SELECT * FROM t1 WHERE d LIKE "%es%";
 ```
 
-```
+```sql
 SELECT * FROM t1 WHERE d LIKE "%es%";
 +-----------+
 | d         |
@@ -84,11 +75,11 @@ SELECT * FROM t1 WHERE d LIKE "%es%";
 
 Select the six-character day names:
 
-```
+```sql
 SELECT * FROM t1 WHERE d like "___day";
 ```
 
-```
+```sql
 SELECT * FROM t1 WHERE d like "___day";
 +---------+
 | d       |
@@ -101,11 +92,11 @@ SELECT * FROM t1 WHERE d like "___day";
 
 With the default collations, `LIKE` is case-insensitive:
 
-```
+```sql
 SELECT * FROM t1 where d like "t%";
 ```
 
-```
+```sql
 SELECT * FROM t1 where d like "t%";
 +----------+
 | d        |
@@ -115,22 +106,20 @@ SELECT * FROM t1 where d like "t%";
 +----------+
 ```
 
-Use [collate](collate) to specify a binary collation, forcing\
-case-sensitive matches:
+Use [collate](collate/) to specify a binary collation, forcing case-sensitive matches:
 
-```
+```sql
 SELECT * FROM t1 WHERE d like "t%" COLLATE latin1_bin;
 ```
 
-```
+```sql
 SELECT * FROM t1 WHERE d like "t%" COLLATE latin1_bin;
 Empty set (0.00 sec)
 ```
 
-You can include functions and operators in the expression to match. Select dates\
-based on their day name:
+You can include functions and operators in the expression to match. Select dates based on their day name:
 
-```
+```sql
 CREATE TABLE t2 (d DATETIME);
 INSERT INTO t2 VALUES
     ("2007-01-30 21:31:07"),
@@ -142,7 +131,7 @@ INSERT INTO t2 VALUES
 SELECT * FROM t2 WHERE DAYNAME(d) LIKE "T%";
 ```
 
-```
+```sql
 SELECT * FROM t2 WHERE DAYNAME(d) LIKE "T%";
 +------------------+
 | d                |
@@ -156,8 +145,8 @@ SELECT * FROM t2 WHERE DAYNAME(d) LIKE "T%";
 
 ## Optimizing LIKE
 
-* MariaDB can use indexes for LIKE on string columns in the case where the LIKE doesn't start with `%` or `_`.
-* Starting from [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), one can set the [optimizer\_use\_condition\_selectivity](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity) variable to 5. If this is done, then the optimizer will read [optimizer\_selectivity\_sampling\_limit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_selectivity_sampling_limit) rows to calculate the selectivity of the LIKE expression before starting to calculate the query plan. This can help speed up some LIKE queries by providing the optimizer with more information about your data.
+* MariaDB can use indexes for `LIKE` on string columns in the case where the LIKE doesn't start with `%` or `_`.
+* You can set the [optimizer\_use\_condition\_selectivity](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity) variable to 5. If this is done, then the optimizer will read [optimizer\_selectivity\_sampling\_limit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_selectivity_sampling_limit) rows to calculate the selectivity of the `LIKE` expression before starting to calculate the query plan. This can help speed up some `LIKE` queries by providing the optimizer with more information about your data.
 
 ## See Also
 
@@ -165,6 +154,6 @@ SELECT * FROM t2 WHERE DAYNAME(d) LIKE "T%";
 * For more complex searches and operations on strings, you can use [regular expressions](regular-expressions-functions/), which were enhanced in MariaDB 10 (see [PCRE Regular Expressions](regular-expressions-functions/pcre.md)).
 * [Operator Precedence](../../sql-structure/operators/operator-precedence.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

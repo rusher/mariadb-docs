@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.2)[Release Notes](mariadb-10-1-2-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10-1-2-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.2)[Release Notes](mariadb-10-1-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10-1-2-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 7 Dec 2014
 
@@ -27,7 +27,7 @@ Notable changes of this release include:
 * Support for Spatial Reference systems for the GIS data ([MDEV-60](https://jira.mariadb.org/browse/MDEV-60)), new `REF_SYSTEM_ID` column attribute can be used to specify Spatial Reference System ID for columns of spatial data types:
 
 ```sql
-create table t1(g GEOMETRY(9,4) REF_SYSTEM_ID=101);
+CREATE TABLE t1(g GEOMETRY(9,4) REF_SYSTEM_ID=101);
 ```
 
 It can be queried via the [INFORMATION\_SCHEMA.GEOMETRY\_COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-geometry_columns-table) table.
@@ -61,12 +61,10 @@ It can be queried via the [INFORMATION\_SCHEMA.GEOMETRY\_COLUMNS](https://app.gi
 Repositories exist for 10.1, but because 10.1 is still Alpha, they are not visible in the [repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/). To configure a 10.1 apt, yum, or zypper repository using the tool, simply select 10.0 and then when executing the instructions, manually change all occurrences of '10.0' to '10.1'.
 
 For a complete list of changes made in [MariaDB 10.1.2](mariadb-10-1-2-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10-1-2-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10-1-2-changelog.md).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

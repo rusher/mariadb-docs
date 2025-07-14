@@ -70,9 +70,9 @@ modified in that revision.
   2015-02-23 11:24:19 +0200
   * [MDEV-7620](https://jira.mariadb.org/browse/MDEV-7620): Transaction lock wait is missing number of lock waits and total wait time.
 * [Revision #a736e63](https://github.com/MariaDB/server/commit/a736e63)\
-  2015-02-22 17:53:02 +0100
-  *
-    * Add new Json UDF's Json\_Array\_Add, Json\_Array\_Grp and Json\_Object\_Grp. Handle longjmp's raised during json processing. modified: storage/connect/global.h storage/connect/ha\_connect.cc storage/connect/json.cpp storage/connect/jsonudf.cpp
+  2015-02-22 17:53:02 +0100\
+  \*
+  * Add new Json UDF's Json\_Array\_Add, Json\_Array\_Grp and Json\_Object\_Grp. Handle longjmp's raised during json processing. modified: storage/connect/global.h storage/connect/ha\_connect.cc storage/connect/json.cpp storage/connect/jsonudf.cpp
 * [Revision #3653de8](https://github.com/MariaDB/server/commit/3653de8)\
   2015-02-21 19:49:57 +0100
   * test failure on labrador: account for a different errno on Mac OS X
@@ -140,16 +140,16 @@ modified in that revision.
   2015-02-19 10:26:52 +0100
   * after merge: fix mroonga to compile and pass its tests
 * [Revision #d9175f3](https://github.com/MariaDB/server/commit/d9175f3)\
-  2015-02-19 01:25:31 +0100
-  *
-    * Remove GCC warnings modified: storage/connect/jsonudf.cpp storage/connect/tabutil.h
+  2015-02-19 01:25:31 +0100\
+  \*
+  * Remove GCC warnings modified: storage/connect/jsonudf.cpp storage/connect/tabutil.h
 * [Revision #fcc6e12](https://github.com/MariaDB/server/commit/fcc6e12)\
   2015-02-18 19:02:00 -0500
   * [MDEV-7544](https://jira.mariadb.org/browse/MDEV-7544): Update global\_suppressions to include warning related to "gvwstate.dat"
 * [Revision #564d41f](https://github.com/MariaDB/server/commit/564d41f)\
-  2015-02-19 00:59:02 +0100
-  *
-    * Work on JSON and JSON UDF's modified: storage/connect/json.cpp storage/connect/jsonudf.cpp storage/connect/tabjson.cpp
+  2015-02-19 00:59:02 +0100\
+  \*
+  * Work on JSON and JSON UDF's modified: storage/connect/json.cpp storage/connect/jsonudf.cpp storage/connect/tabjson.cpp
 * [Revision #a518cc4](https://github.com/MariaDB/server/commit/a518cc4)\
   2015-02-18 18:59:01 -0500
   * [MDEV-7544](https://jira.mariadb.org/browse/MDEV-7544): Update global\_suppressions to include warning related to "gvwstate.dat"
@@ -187,16 +187,16 @@ modified in that revision.
   2015-02-13 11:49:31 +0200
   * [MDEV-6288](https://jira.mariadb.org/browse/MDEV-6288) :Innodb causes server crash after disk full, then can't ALTER TABLE any more
 * [Revision #2201aa6](https://github.com/MariaDB/server/commit/2201aa6)\
-  2015-02-12 17:23:28 +0100
-  *
-    * Typo on the jsonudf.cpp name modified: storage/connect/CMakeLists.txt
+  2015-02-12 17:23:28 +0100\
+  \*
+  * Typo on the jsonudf.cpp name modified: storage/connect/CMakeLists.txt
 * [Revision #356ae62](https://github.com/MariaDB/server/commit/356ae62)\
   2015-02-12 15:44:44 +0200
   * Crash during configure without development SSL libraries installed
 * [Revision #dcfe068](https://github.com/MariaDB/server/commit/dcfe068)\
-  2015-02-11 21:39:41 +0100
-  *
-    * Adding json udf's. Making the second version of json tables. added: storage/connect/jsonudf.cpp modified: storage/connect/CMakeLists.txt storage/connect/json.cpp storage/connect/json.h storage/connect/tabjson.cpp storage/connect/tabjson.h
+  2015-02-11 21:39:41 +0100\
+  \*
+  * Adding json udf's. Making the second version of json tables. added: storage/connect/jsonudf.cpp modified: storage/connect/CMakeLists.txt storage/connect/json.cpp storage/connect/json.h storage/connect/tabjson.cpp storage/connect/tabjson.h
 * [Revision #13927f8](https://github.com/MariaDB/server/commit/13927f8)\
   2015-02-11 18:32:40 +0100
   * percona-server-5.5.41-37.0
@@ -240,23 +240,23 @@ modified in that revision.
   2015-02-09 16:14:27 +0200
   * [MDEV-7139](https://jira.mariadb.org/browse/MDEV-7139): Sporadic failure in innodb.innodb\_corrupt\_bit on P8
 * [Revision #3c097fd](https://github.com/MariaDB/server/commit/3c097fd)\
-  2015-02-08 19:47:26 +0100
-  *
-    * Remove some GCC warnings modified: storage/connect/ha\_connect.cc
+  2015-02-08 19:47:26 +0100\
+  \*
+  * Remove some GCC warnings modified: storage/connect/ha\_connect.cc
 * [Revision #919f40e](https://github.com/MariaDB/server/commit/919f40e)\
   2015-02-08 22:38:19 +0400
   * Audit plugin v1.2.0.
 * [Revision #96ba1f1](https://github.com/MariaDB/server/commit/96ba1f1)\
-  2015-02-08 18:17:29 +0100
-  *
-    * Handle the use of date/time values when making queries for MYSQL or ODBC. Was raised by 7549. modified: storage/connect/ha\_connect.cc storage/connect/odbconn.cpp storage/connect/tabodbc.cpp
+  2015-02-08 18:17:29 +0100\
+  \*
+  * Handle the use of date/time values when making queries for MYSQL or ODBC. Was raised by 7549. modified: storage/connect/ha\_connect.cc storage/connect/odbconn.cpp storage/connect/tabodbc.cpp
 * [Revision #0d73bc1](https://github.com/MariaDB/server/commit/0d73bc1)\
   2015-02-08 15:47:00 +0300
   * [MDEV-7519](https://jira.mariadb.org/browse/MDEV-7519) debian / ubuntu packaging creation of plugin table (if not exists)
 * [Revision #35548d5](https://github.com/MariaDB/server/commit/35548d5)\
-  2015-02-07 11:33:52 +0100
-  *
-    * Modify the connect\_type\_conv and connect\_conv\_size variables. They were global (read-only) now they are session (not read-only) modified: storage/connect/checklvl.h storage/connect/ha\_connect.cc storage/connect/myconn.cpp storage/connect/myutil.cpp storage/connect/tabutil.cpp
+  2015-02-07 11:33:52 +0100\
+  \*
+  * Modify the connect\_type\_conv and connect\_conv\_size variables. They were global (read-only) now they are session (not read-only) modified: storage/connect/checklvl.h storage/connect/ha\_connect.cc storage/connect/myconn.cpp storage/connect/myutil.cpp storage/connect/tabutil.cpp
 * [Revision #b9d616c](https://github.com/MariaDB/server/commit/b9d616c)\
   2015-02-06 15:49:45 +0400
   * [MDEV-7435](https://jira.mariadb.org/browse/MDEV-7435) Windows debug: Run-Time Check Failure #3 - The variable 'unused' is being used without being initialized. Fixed as it's done in 10.0.
@@ -279,28 +279,28 @@ modified in that revision.
   2015-02-04 09:29:54 +0200
   * [MDEV-7513](https://jira.mariadb.org/browse/MDEV-7513): ib\_warn\_row\_too\_big dereferences null thd
 * [Revision #22367ba](https://github.com/MariaDB/server/commit/22367ba)\
-  2015-02-02 19:34:35 +0100
-  *
-    * Add or correct some tracing code modified: storage/connect/odbconn.cpp storage/connect/tabodbc.cpp
+  2015-02-02 19:34:35 +0100\
+  \*
+  * Add or correct some tracing code modified: storage/connect/odbconn.cpp storage/connect/tabodbc.cpp
 * [Revision #82f2be6](https://github.com/MariaDB/server/commit/82f2be6)\
-  2015-02-02 15:35:58 +0100
-  *
-    * Fix a bug causing Insert into ODBC to fail when the column name is UTF8 encoded. modified: storage/connect/tabodbc.cpp
+  2015-02-02 15:35:58 +0100\
+  \*
+  * Fix a bug causing Insert into ODBC to fail when the column name is UTF8 encoded. modified: storage/connect/tabodbc.cpp
 * [Revision #6a78371](https://github.com/MariaDB/server/commit/6a78371)\
-  2015-02-01 12:16:30 +0100
-  *
-    * Fix a bug causing UseCnc not being initialized for ODBC catalog tables. This made errors by calling SQLConnect or SQLDriverConnect randomly with incorrect parameters. modified: storage/connect/tabodbc.cpp
+  2015-02-01 12:16:30 +0100\
+  \*
+  * Fix a bug causing UseCnc not being initialized for ODBC catalog tables. This made errors by calling SQLConnect or SQLDriverConnect randomly with incorrect parameters. modified: storage/connect/tabodbc.cpp
 * [Revision #180b2be](https://github.com/MariaDB/server/commit/180b2be)\
-  2015-01-31 15:05:43 +0100
-  *
-    * Add the possibility to establish an ODBC connection via SQLConnect (the default being still to use SQLDriverConnect) modified: storage/connect/ha\_connect.cc storage/connect/odbccat.h storage/connect/odbconn.cpp storage/connect/odbconn.h storage/connect/tabodbc.cpp storage/connect/tabodbc.h
+  2015-01-31 15:05:43 +0100\
+  \*
+  * Add the possibility to establish an ODBC connection via SQLConnect (the default being still to use SQLDriverConnect) modified: storage/connect/ha\_connect.cc storage/connect/odbccat.h storage/connect/odbconn.cpp storage/connect/odbconn.h storage/connect/tabodbc.cpp storage/connect/tabodbc.h
 * [Revision #dfc7e95](https://github.com/MariaDB/server/commit/dfc7e95)\
   2015-01-30 15:53:24 +0100
   * [MDEV-7531](https://jira.mariadb.org/browse/MDEV-7531) Update 10.0.15 to 10.0.16 -> Error 2003 (HY000) can't connect to MySql server.
 * [Revision #fd1ca70](https://github.com/MariaDB/server/commit/fd1ca70)\
-  2015-01-30 10:57:00 +0100
-  *
-    * Enhance JSON tables handling. modified: storage/connect/json.cpp storage/connect/json.h storage/connect/mysql-test/connect/r/json.result storage/connect/mysql-test/connect/t/json.test storage/connect/tabjson.cpp storage/connect/tabjson.h
+  2015-01-30 10:57:00 +0100\
+  \*
+  * Enhance JSON tables handling. modified: storage/connect/json.cpp storage/connect/json.h storage/connect/mysql-test/connect/r/json.result storage/connect/mysql-test/connect/t/json.test storage/connect/tabjson.cpp storage/connect/tabjson.h
 * [Revision #5c30901](https://github.com/MariaDB/server/commit/5c30901)\
   2015-01-29 21:10:45 +0100
   * increase the version
@@ -313,5 +313,9 @@ modified in that revision.
 * [Revision #9033aa0](https://github.com/MariaDB/server/commit/9033aa0)\
   2015-01-28 11:49:55 +0100
   * [MDEV-6128](https://jira.mariadb.org/browse/MDEV-6128):\[PATCH] mysqlcheck wrongly escapes '.' in table names
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

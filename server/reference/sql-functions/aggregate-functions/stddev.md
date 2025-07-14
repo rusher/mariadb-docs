@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 STDDEV(expr)
 ```
 
 ## Description
 
-Returns the population standard deviation of _`expr`_. This function is\
-provided for compatibility with Oracle. The standard SQL function[STDDEV_POP()](stddev_pop.md) can be used instead.
+Returns the population standard deviation of _`expr`_. This function is provided for compatibility with Oracle. The standard SQL function[STDDEV\_POP()](stddev_pop.md) can be used instead.
 
 It is an [aggregate function](./), and so can be used with the [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md) clause.
 
-STDDEV() can be used as a [window function](../special-functions/window-functions/).
+`STDDEV()` can be used as a [window function](../special-functions/window-functions/).
 
 This function returns `NULL` if there were no matching rows.
 
@@ -21,7 +20,7 @@ This function returns `NULL` if there were no matching rows.
 
 As an [aggregate function](./):
 
-```
+```sql
 CREATE OR REPLACE TABLE stats (category VARCHAR(2), x INT);
 
 INSERT INTO stats VALUES 
@@ -40,7 +39,7 @@ SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x)
 
 As a [window function](../special-functions/window-functions/):
 
-```
+```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
 
 INSERT INTO student_test VALUES 
@@ -71,6 +70,6 @@ SELECT name, test, score, STDDEV_POP(score)
 * [VAR\_POP](var_pop.md) (variance)
 * [STDDEV\_SAMP](stddev_samp.md) (sample standard deviation)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

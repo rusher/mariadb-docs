@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW FUNCTION CODE func_name
 ```
 

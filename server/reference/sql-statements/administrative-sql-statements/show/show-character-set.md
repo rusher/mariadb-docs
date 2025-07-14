@@ -2,15 +2,14 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CHARACTER SET
     [LIKE 'pattern' | WHERE expr]
 ```
 
 ## Description
 
-The `SHOW CHARACTER SET` statement shows all available [character sets](../../../data-types/string-data-types/character-sets/). The `LIKE` clause, if present on its own, indicates which character\
-set names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `SHOW CHARACTER SET` statement shows all available [character sets](../../../data-types/string-data-types/character-sets/). The `LIKE` clause, if present on its own, indicates which character set names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 The same information can be queried from the [Information Schema CHARACTER\_SETS](../system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md) table.
 
@@ -18,7 +17,7 @@ See [Setting Character Sets and Collations](../../../data-types/string-data-type
 
 ## Examples
 
-```
+```sql
 SHOW CHARACTER SET LIKE 'latin%';
 +---------+-----------------------------+-------------------+--------+
 | Charset | Description                 | Default collation | Maxlen |
@@ -30,7 +29,7 @@ SHOW CHARACTER SET LIKE 'latin%';
 +---------+-----------------------------+-------------------+--------+
 ```
 
-```
+```sql
 SHOW CHARACTER SET WHERE Maxlen LIKE '2';
 +---------+---------------------------+-------------------+--------+
 | Charset | Description               | Default collation | Maxlen |
@@ -51,6 +50,6 @@ SHOW CHARACTER SET WHERE Maxlen LIKE '2';
 * [Setting Character Sets and Collations](../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md)
 * [Information Schema CHARACTER\_SETS](../system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -118,7 +118,7 @@ sudo ./mariadb_repo_setup
 
 ## Repositories
 
-The script will will set up different repositories in a single repository configuration file. The primary two are the [MariaDB Server Repository](mariadb-package-repository-setup-and-usage.md#mariadb-server-repository), and the [MariaDB MaxScale Repository](mariadb-package-repository-setup-and-usage.md#mariadb-maxscale-repository).
+The script will set up different repositories in a single repository configuration file. The primary two are the [MariaDB Server Repository](mariadb-package-repository-setup-and-usage.md#mariadb-server-repository), and the [MariaDB MaxScale Repository](mariadb-package-repository-setup-and-usage.md#mariadb-maxscale-repository).
 
 The default repositories setup by `mariadb_es_repo_setup` are:
 
@@ -140,7 +140,7 @@ Ubuntu needs a separate debug repository for MariaDB Server debug packages. Othe
 
 ### MariaDB Server Repository
 
-The **MariaDB Repository** contains software packages related to MariaDB Server, including the server itself, [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+The **MariaDB Repository** contains software packages related to MariaDB Server, including the server itself, [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/).
 
 The binaries in MariaDB Corporation's **MariaDB Repository** are currently identical to the binaries in MariaDB Foundation's MariaDB Repository that is configured with the [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
 

@@ -15,7 +15,7 @@ Getting [replication](https://github.com/mariadb-corporation/docs-server/blob/te
 
 ### Setting up a Replication Replica with MariaDB-Backup
 
-If you would like to use [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) helpful.
+If you would like to use [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md) helpful.
 
 ### Versions
 
@@ -155,7 +155,7 @@ Slave_SQL_Running: Yes
 
 * [Differences between Statement-based, mixed and row logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md)
 * [Replication and Foreign Keys](replication-and-foreign-keys.md)
-* [Replication as a Backup Solution](../../server-usage/backing-up-and-restoring-databases/replication-as-a-backup-solution.md)
+* [Replication as a Backup Solution](../../server-usage/backup-and-restore/replication-as-a-backup-solution.md)
 * [Multi-source Replication](multi-source-replication.md)
 * [Global Transaction ID](gtid.md)
 * [Parallel Replication](parallel-replication.md)

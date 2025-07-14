@@ -7,7 +7,6 @@ It aggregates timer and byte count statistics for all socket I/O operations by s
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | EVENT_NAME | Socket instrument. |
 | COUNT_STAR | Number of summarized events |
 | SUM_TIMER_WAIT | Total wait time of the summarized events that are timed. |

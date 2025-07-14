@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 UNINSTALL PLUGIN [IF EXISTS] plugin_name
 ```
 
@@ -10,12 +10,7 @@ UNINSTALL PLUGIN [IF EXISTS] plugin_name
 
 This statement removes a single installed [plugin](../../../plugins/). To uninstall the whole library which contains the plugin, use [UNINSTALL SONAME](uninstall-soname.md). You cannot uninstall a plugin if any table that uses it is open.
 
-`plugin_name` must be the name of some plugin that is listed\
-in the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table. The server executes the plugin's deinitialization\
-function and removes the row for the plugin from the `mysql.plugin`\
-table, so that subsequent server restarts will not load and initialize\
-the plugin. `UNINSTALL PLUGIN` does not remove the plugin's\
-shared library file.
+`plugin_name` must be the name of some plugin that is listedin the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table. The server executes the plugin's deinitializationfunction and removes the row for the plugin from the `mysql.plugin`table, so that subsequent server restarts will not load and initializethe plugin. `UNINSTALL PLUGIN` does not remove the plugin'sshared library file.
 
 To use `UNINSTALL PLUGIN`, you must have the[DELETE](../../account-management-sql-statements/grant.md) privilege for the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
 
@@ -25,11 +20,11 @@ If the `IF EXISTS` clause is used, MariaDB will return a note instead of an erro
 
 ## Examples
 
-```
+```sql
 UNINSTALL PLUGIN example;
 ```
 
-```
+```sql
 UNINSTALL PLUGIN IF EXISTS example;
 Query OK, 0 rows affected (0.099 sec)
 
@@ -51,6 +46,6 @@ SHOW WARNINGS;
 * [INSTALL PLUGIN](install-plugin.md)
 * [List of Plugins](../../../plugins/information-on-plugins/list-of-plugins.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

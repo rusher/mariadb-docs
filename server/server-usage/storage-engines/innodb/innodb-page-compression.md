@@ -37,7 +37,6 @@ This system variable can be set to one of the following values:
 
 | System Variable Value | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| System Variable Value | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | none                  | Pages are not compressed. This is the default value in [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) and before, and [MariaDB 10.1.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10121-release-notes) and before.                                                                 |
 | zlib                  | Pages are compressed using the bundled [zlib](https://www.zlib.net/) compression algorithm. This is the default value in [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes) and later, and [MariaDB 10.1.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10122-release-notes) and later. |
 | lz4                   | Pages are compressed using the [lz4](https://code.google.com/p/lz4/) compression algorithm.                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -48,13 +47,13 @@ This system variable can be set to one of the following values:
 
 However, on many distributions, the standard MariaDB builds do not support all InnoDB page compression algorithms by default. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), algorithms can be [installed as a plugin](../../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md).
 
-This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```
 SET GLOBAL innodb_compression_algorithm='lzma';
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -162,17 +161,16 @@ This system variable can be set to one of the following values:
 
 | System Variable Value | Description                                                                      |
 | --------------------- | -------------------------------------------------------------------------------- |
-| System Variable Value | Description                                                                      |
 | OFF                   | New InnoDB tables do not use InnoDB page compression. This is the default value. |
 | ON                    | New InnoDB tables use InnoDB page compression.                                   |
 
-This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```
 SET GLOBAL innodb_compression_default=ON;
 ```
 
-This system variable's session value can be changed dynamically with [SET SESSION](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable's session value can be changed dynamically with [SET SESSION](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_file_per_table=ON;
@@ -186,14 +184,14 @@ SET GLOBAL innodb_compression_algorithm='lzma';
 SET SESSION  innodb_compression_default=ON;
 
 CREATE TABLE users (
-   user_id int not null, 
-   b varchar(200), 
-   primary key(user_id)
+   user_id INT NOT NULL, 
+   b VARCHAR(200), 
+   PRIMARY KEY(user_id)
 ) 
    ENGINE=InnoDB;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -203,7 +201,7 @@ innodb_compression_default=ON
 
 ### Enabling InnoDB Page Compression for Individual Tables
 
-InnoDB page compression can be enabled for individual tables by setting the [PAGE\_COMPRESSED](../../../reference/sql-statements/data-definition/create/create-table.md#page_compressed) table option to `1`. For example:
+InnoDB page compression can be enabled for individual tables by setting the [PAGE\_COMPRESSED](../../../reference/sql-statements/data-definition/create/create-table.md#page_compressed) table option to `1`:
 
 ```sql
 SET GLOBAL innodb_file_per_table=ON;
@@ -215,9 +213,9 @@ SET GLOBAL innodb_default_row_format='dynamic';
 SET GLOBAL innodb_compression_algorithm='lzma';
 
 CREATE TABLE users (
-   user_id int not null, 
-   b varchar(200), 
-   primary key(user_id)
+   user_id INT NOT NULL, 
+   b VARCHAR(200), 
+   PRIMARY KEY(user_id)
 ) 
    ENGINE=InnoDB
    PAGE_COMPRESSED=1;
@@ -242,13 +240,13 @@ The default compression level can be configured by setting the [innodb\_compress
 
 This system variable's default value is `6`.
 
-This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_compression_level=9;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -258,7 +256,7 @@ innodb_compression_level=9
 
 ### Configuring the Compression Level for Individual Tables
 
-The compression level for individual tables can also be configured by setting the [PAGE\_COMPRESSION\_LEVEL](../../../reference/sql-statements/data-definition/create/create-table.md#page_compression_level) table option for the table. For example:
+The compression level for individual tables can also be configured by setting the [PAGE\_COMPRESSION\_LEVEL](../../../reference/sql-statements/data-definition/create/create-table.md#page_compression_level) table option for the table:
 
 ```sql
 SET GLOBAL innodb_file_per_table=ON;
@@ -270,9 +268,9 @@ SET GLOBAL innodb_default_row_format='dynamic';
 SET GLOBAL innodb_compression_algorithm='lzma';
 
 CREATE TABLE users (
-   user_id int not null, 
-   b varchar(200), 
-   primary key(user_id)
+   user_id INT NOT NULL, 
+   b VARCHAR(200), 
+   PRIMARY KEY(user_id)
 ) 
    ENGINE=InnoDB
    PAGE_COMPRESSED=1
@@ -295,13 +293,13 @@ This system variable's supported values range from `0` to `100`.
 
 This system variable's default value is `5`.
 
-This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```
 SET GLOBAL innodb_compression_failure_threshold_pct=10;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -317,13 +315,13 @@ This system variable's supported values range from `0` to `75`.
 
 This system variable's default value is `50`.
 
-This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_compression_pad_pct_max=75;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -354,13 +352,13 @@ On Linux, the following file systems support sparse files:
 * `btrfs`
 * `nvmfs`
 
-On Linux, file systems need to support the [fallocate()](https://linux.die.net/man/2/fallocate) system call with the `FALLOC_FL_PUNCH_HOLE` and `FALLOC_FL_KEEP_SIZE` flags. For example:
+On Linux, file systems need to support the [fallocate()](https://linux.die.net/man/2/fallocate) system call with the `FALLOC_FL_PUNCH_HOLE` and `FALLOC_FL_KEEP_SIZE` flags:
 
 ```
 fallocate(file_handle, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, file_offset, remainder_len);
 ```
 
-Some Linux utilities may require special options in order to work with sparse files efficiently. For example:
+Some Linux utilities may require special options in order to work with sparse files efficiently:
 
 * The [ls](https://linux.die.net/man/1/ls) utility will report the non-sparse size of the tablespace file when executed with default behavior, but [ls -s](https://linux.die.net/man/1/ls) will report the actual amount of storage allocated for the tablespace file.
 * The [cp](https://linux.die.net/man/1/cp) utility is pretty good at auto-detecting sparse files, but it also provides the [cp --sparse=always](https://linux.die.net/man/1/cp) and [cp --sparse=never](https://linux.die.net/man/1/cp) options, if the auto-detection is not desired.
@@ -372,7 +370,7 @@ On Windows, the following file systems support sparse files:
 
 * `NTFS`
 
-On Windows, file systems need to support the [DeviceIoControl()](https://docs.microsoft.com/en-us/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) function with the [FSCTL\_SET\_SPARSE](https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-fsctl_set_sparse) and [FSCTL\_SET\_ZERO\_DATA](https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-fsctl_set_zero_data) control codes. For example:
+On Windows, file systems need to support the [DeviceIoControl()](https://docs.microsoft.com/en-us/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol) function with the [FSCTL\_SET\_SPARSE](https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-fsctl_set_sparse) and [FSCTL\_SET\_ZERO\_DATA](https://docs.microsoft.com/en-us/windows/win32/api/winioctl/ni-winioctl-fsctl_set_zero_data) control codes:
 
 ```
 DeviceIoControl(file_handle, FSCTL_SET_SPARSE, inbuf, inbuf_size, 
@@ -386,7 +384,7 @@ DeviceIoControl(file_handle, FSCTL_SET_ZERO_DATA, inbuf, inbuf_size,
 
 In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and later, InnoDB uses the _punch hole_ technique to create sparse files used automatically when the underlying file system supports sparse files.
 
-In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and before, InnoDB can be configured to use the _punch hole_ technique to create sparse files by configuring the [innodb\_use\_trim](innodb-system-variables.md#innodb_use_trim) and [innodb\_use\_fallocate](innodb-system-variables.md#innodb_use_fallocate) system variables. These system variables can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and before, InnoDB can be configured to use the _punch hole_ technique to create sparse files by configuring the [innodb\_use\_trim](innodb-system-variables.md#innodb_use_trim) and [innodb\_use\_fallocate](innodb-system-variables.md#innodb_use_fallocate) system variables. These system variables can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -429,12 +427,12 @@ InnoDB page compression can be monitored by querying the following status variab
 | [Innodb\_num\_pages\_page\_decompressed](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_decompressed)               | Number of pages decompressed    |
 | [Innodb\_num\_pages\_page\_compression\_error](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_compression_error)    | Number of compression errors    |
 
-With InnoDB page compression, a page is only compressed when it is flushed to disk. This means that if you are monitoring InnoDB page compression via these status variables, then the status variables values will only get incremented when the dirty pages are flushed to disk, which does not necessarily happen immediately. For example:
+With InnoDB page compression, a page is only compressed when it is flushed to disk. This means that if you are monitoring InnoDB page compression via these status variables, then the status variables values will only get incremented when the dirty pages are flushed to disk, which does not necessarily happen immediately:
 
 ```sql
 CREATE TABLE `tab` (
-     `id` int(11) NOT NULL,
-     `str` varchar(50) DEFAULT NULL,
+     `id` INT(11) NOT NULL,
+     `str` VARCHAR(50) DEFAULT NULL,
      PRIMARY KEY (`id`)
    ) ENGINE=InnoDB;
  
@@ -481,7 +479,7 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 
 ## Compatibility with Backup Tools
 
-[mariadb-backup](../../backing-up-and-restoring-databases/mariabackup/) supports InnoDB page compression.
+[mariadb-backup](../../backup-and-restore/mariadb-backup/mariadb-backup-overview.md) supports InnoDB page compression.
 
 [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) does not support InnoDB page compression.
 

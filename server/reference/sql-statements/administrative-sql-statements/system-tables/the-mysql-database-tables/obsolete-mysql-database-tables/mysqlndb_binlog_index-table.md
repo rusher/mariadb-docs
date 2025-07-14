@@ -8,7 +8,6 @@ The table contains the following fields:
 
 | Field     | Type                | Null | Key | Default |
 | --------- | ------------------- | ---- | --- | ------- |
-| Field     | Type                | Null | Key | Default |
 | Position  | bigint(20) unsigned | NO   |     | NULL    |
 | File      | varchar(255)        | NO   |     | NULL    |
 | epoch     | bigint(20) unsigned | NO   | PRI | NULL    |

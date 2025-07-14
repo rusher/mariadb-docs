@@ -1,8 +1,8 @@
 # Performance Schema events\_transactions\_current Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
-The events\_transactions\_current table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+The events\_transactions\_current table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
 
 The `events_transactions_current` table contains current transaction events for each thread.
 
@@ -12,7 +12,6 @@ The table contains the following columns:
 
 | Column                              | Type                                              | Description                                                                                                                                                                               |
 | ----------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                              | Type                                              | Description                                                                                                                                                                               |
 | THREAD\_ID                          | bigint(20) unsigned                               | The thread associated with the event.                                                                                                                                                     |
 | EVENT\_ID                           | bigint(20) unsigned                               | The event id associated with the event.                                                                                                                                                   |
 | END\_EVENT\_ID                      | bigint(20) unsigned                               | This column is set to NULL when the event starts and updated to the thread current event number when the event ends.                                                                      |

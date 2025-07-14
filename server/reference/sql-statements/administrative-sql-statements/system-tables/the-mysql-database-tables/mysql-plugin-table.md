@@ -24,7 +24,6 @@ The `mysql.plugin` table contains the following fields:
 
 | Field | Type         | Null | Key | Default | Description                 |
 | ----- | ------------ | ---- | --- | ------- | --------------------------- |
-| Field | Type         | Null | Key | Default | Description                 |
 | name  | varchar(64)  | NO   | PRI |         | Plugin name.                |
 | dl    | varchar(128) | NO   |     |         | Name of the plugin library. |
 

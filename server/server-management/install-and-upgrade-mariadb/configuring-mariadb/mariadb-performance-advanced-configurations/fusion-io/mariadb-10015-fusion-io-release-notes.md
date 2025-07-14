@@ -28,15 +28,10 @@ Since the [MariaDB 10.0.9 Fusion-io preview](https://blog.mariadb.org/significan
 
 ## Other Changes
 
-For a complete list of changes made in [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes), with links to detailed\
-information on each push, see the [changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/changelogs/changelogs-mariadb-100-series/mariadb-10015-changelog).
+For a complete list of changes made in MariaDB 10.0.15 Fustion-io, with links to detailed information on each push, see the [changelog](mariadb-10015-fusion-io-changelog.md).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
-
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
 
 {% @marketo/form formId="4316" %}

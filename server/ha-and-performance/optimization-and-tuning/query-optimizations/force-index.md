@@ -13,7 +13,7 @@ FORCE INDEX cannot force an [ignored index](../optimization-and-indexes/ignored-
 ```sql
 CREATE INDEX Name ON City (Name);
 EXPLAIN SELECT Name,CountryCode FROM City FORCE INDEX (Name)
-WHERE name>="A" and CountryCode >="A";
+WHERE name>="A" AND CountryCode >="A";
 ```
 
 This produces:

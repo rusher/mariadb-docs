@@ -141,7 +141,7 @@ int main(int argc, char **argv)
 The following query confirms the [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update) of the [example table](setup-for-connector-cpp-examples.md):
 
 ```sql
-SELECT * from test.contacts;
+SELECT * FROM test.contacts;
 ```
 
 ```

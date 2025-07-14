@@ -99,9 +99,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2015-03-03 14:30:46 +0100
   * Fixes for unresolved externals: Replase \_ito64a by longong2str Replace atoi64 by strtoll Bumped version number
 * [Revision #16355bd](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/16355bd)\
-  2015-03-02 18:28:55 +0100
-  *
-    * Removed WITH\_REVNO option - Removed iconv stuff - Bumped version number: Like on windows we will build without OpenSSL support in Connector/C
+  2015-03-02 18:28:55 +0100\
+  \*
+  * Removed WITH\_REVNO option - Removed iconv stuff - Bumped version number: Like on windows we will build without OpenSSL support in Connector/C
 * [Revision #4c54921](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/4c54921)\
   2015-02-27 20:01:35 +0100
   * Version bump - 2.0.1
@@ -249,5 +249,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #aaf494e](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/aaf494e)\
   2015-02-07 02:24:28 +0100
   * Stuff for linux - mostly charsets conversion
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

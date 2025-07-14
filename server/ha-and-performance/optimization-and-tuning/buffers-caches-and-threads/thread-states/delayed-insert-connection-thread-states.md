@@ -6,7 +6,6 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 
 | Value                      | Description                                                                                                                                                      |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value                      | Description                                                                                                                                                      |
 | allocating local table     | Preparing to allocate rows to the delayed-insert handler thread. Follows from the got handler lock state.                                                        |
 | Creating delayed handler   | Creating a handler for the delayed-inserts.                                                                                                                      |
 | got handler lock           | Lock to access the delayed-insert handler thread has been received. Follows from the waiting for handler lock state and before the allocating local table state. |

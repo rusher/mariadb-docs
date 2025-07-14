@@ -13,9 +13,9 @@ modified in that revision.
   2016-06-22 17:27:59 +0200
   * Windows fix: In case getaddrinfo() returns an error, we return the WSA Error code instead of gai error. (For more information please read [ms738520(v=vs.85).aspx](https://msdn.microsoft.com/en-us/library/windows/desktop/ms738520\(v=vs.85\).aspx))
 * [Revision #1aa8720](https://github.com/mariadb-corporation/mariadb-connector-c/commit/1aa8720)\
-  2016-06-22 05:33:07 +0200
-  *
-    * When connecting via TLS socket is now set to non blocking and we try to reexecuete SSL\_connect in case SSL\_get\_error return WANT\_READ or WANT\_WRITE - Fixed compiler warnings - In case getaddrinfo returned EAI\_SYSTEM errno will be returned in error message
+  2016-06-22 05:33:07 +0200\
+  \*
+  * When connecting via TLS socket is now set to non blocking and we try to reexecuete SSL\_connect in case SSL\_get\_error return WANT\_READ or WANT\_WRITE - Fixed compiler warnings - In case getaddrinfo returned EAI\_SYSTEM errno will be returned in error message
 * [Revision #f618639](https://github.com/mariadb-corporation/mariadb-connector-c/commit/f618639)\
   2016-06-17 16:10:58 +0200
   * Fixed compiler warnings
@@ -52,5 +52,7 @@ modified in that revision.
 * [Revision #794de93](https://github.com/mariadb-corporation/mariadb-connector-c/commit/794de93)\
   2016-05-30 15:24:15 +0200
   * Bumped version number to 2.3.0
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

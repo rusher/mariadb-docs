@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download 10.2.42](https://mariadb.org/download/?tab=mariadb\&release=10.2.42\&product=mariadb)[Release Notes](mariadb-10242-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10242-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download 10.2.42](https://mariadb.org/download/?tab=mariadb\&release=10.2.42\&product=mariadb)[Release Notes](mariadb-10242-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10242-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 9 Feb 2022
 
@@ -75,16 +75,14 @@ running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.42](mariadb-10242-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10242-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10242-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.2.42](mariadb-10242-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-8-1-rc-and-mariadb-10-7-2-10-6-6-10-5-14-10-4-23-10-3-33-and-10-2-42-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

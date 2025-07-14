@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 10.0](https://github.com/mariadb-corpora
 **Release date:** 7 Aug 2018
 
 For the highlights of this release, see the[release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10036-release-notes.md).\
-For changes made in MariaDB, see the [MariaDB 10.0.36 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10036-changelog.md).
+For changes made in MariaDB, see the [MariaDB 10.0.36 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10036-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
@@ -90,5 +90,9 @@ modified in that revision.
 * [Revision #ccd566af20](https://github.com/MariaDB/server/commit/ccd566af20)\
   2018-04-19 07:38:57 +1000
   * [MDEV-8743](https://jira.mariadb.org/browse/MDEV-8743): mysqld port/socket - FD\_CLOEXEC if no SOCK\_CLOEXEC
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -17,7 +17,6 @@ scripts that were used in the past such as `mysqld.exe` `--install`,`mysql_insta
 
 | Parameter                      | Description                                                                                                                                                                                               |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Parameter                      | Description                                                                                                                                                                                               |
 | -?, --help                     | Display help message and exit                                                                                                                                                                             |
 | -d, --datadir=name             | Data directory of the new database                                                                                                                                                                        |
 | -S, --service=name             | Name of the Windows service                                                                                                                                                                               |

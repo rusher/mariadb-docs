@@ -100,7 +100,6 @@ In alignment to the MariaDB Corporation Engineering Policy, MariaDB Enterprise C
 
 | Note | MariaDB Enterprise ColumnStore 1.5 has been superseded by MariaDB Enterprise ColumnStore 5 in MariaDB Enterprise Server 10.5. |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Note | MariaDB Enterprise ColumnStore 1.5 has been superseded by MariaDB Enterprise ColumnStore 5 in MariaDB Enterprise Server 10.5. |
 
 ## Installation Instructions
 
@@ -114,6 +113,6 @@ In alignment to the MariaDB Corporation Engineering Policy, MariaDB Enterprise C
 
 * [Major Release Upgrades for MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/columnstore-release-notes/README.md)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

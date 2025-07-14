@@ -6,7 +6,7 @@ Local package repository mirrors provide multiple benefits:
 
 * MariaDB Corporation's official package repositories are the source for the local mirror.
 * Tools provided by the operating system are used to create and maintain the local mirror.
-* After a local mirror is created, the mirror can be be used just like the MariaDB repositories to install MariaDB products using the operating system's package manager.
+* After a local mirror is created, the mirror can be used just like the MariaDB repositories to install MariaDB products using the operating system's package manager.
 
 If you want to deploy MariaDB database products without using a local package repository mirror, [alternative deployment methods](../../deployment-general-installing-and-upgrading-instructions/deployment-methods.md) are available. Available deployment methods are component-specific.
 
@@ -49,7 +49,6 @@ The package manager depends on the operating system:
 
 | Operating System                          | Package Manager |
 | ----------------------------------------- | --------------- |
-| Operating System                          | Package Manager |
 | CentOS 7                                  | YUM             |
 | Debian 9                                  | APT             |
 | Debian 10                                 | APT             |

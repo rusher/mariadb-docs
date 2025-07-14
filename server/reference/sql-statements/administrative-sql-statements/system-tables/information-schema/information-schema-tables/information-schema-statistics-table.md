@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column         | Description                                                                                                                                                                                                                                                                                                                                                                             |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                                                                                                                                                                                                                                                                             |
 | TABLE\_CATALOG | Always def.                                                                                                                                                                                                                                                                                                                                                                             |
 | TABLE\_SCHEMA  | Database name.                                                                                                                                                                                                                                                                                                                                                                          |
 | TABLE\_NAME    | Table name.                                                                                                                                                                                                                                                                                                                                                                             |
@@ -28,7 +27,7 @@ The [SHOW INDEX](../../../show/show-index.md) statement produces similar output.
 
 ## Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.STATISTICS\G
 ...
 *************************** 85. row ***************************

@@ -1,8 +1,8 @@
 # Information Schema KEYWORDS Table
 
-**MariaDB starting with** [**10.6.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1063-release-notes)
-
-The `KEYWORDS` table was added in [MariaDB 10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1063-release-notes).
+{% hint style="info" %}
+This table is available as of MariaDB [10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1063-release-notes).
+{% endhint %}
 
 ## Description
 
@@ -12,14 +12,13 @@ It contains a single column:
 
 | Column | Description |
 | ------ | ----------- |
-| Column | Description |
 | WORD   | Keyword     |
 
-The table is not a standard Information Schema table, and is a MariaDB extension.
+The table is not a standard Information Schema table, but a MariaDB extension.
 
 ## Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.KEYWORDS;
 +-------------------------------+
 | WORD                          |

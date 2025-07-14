@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.1) |**Release Notes** |[Changelog](../../../changelogs/) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.1) |**Release Notes** |[Changelog](../../changelogs/) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 06 Feb 2013
 
@@ -18,7 +18,7 @@ be pushed in future releases.**Do not use alpha releases on production systems.*
 **For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **see the**[**What is MariaDB 10.0?**](changes-improvements-in-mariadb-10-0.md) **page.**
 
 For a list of changes made in [MariaDB 10.0.1](mariadb-1001-release-notes.md), with links to detailed\
-information on each push, see the [Changelog](../../../changelogs/) .
+information on each push, see the [Changelog](../../changelogs/) .
 
 ## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md),
 
@@ -60,7 +60,7 @@ This release includes fixes for the following security vulnerabilities:
 * A buffer overflow that can cause a server crash or arbitrary code execution (a variant of [CVE-2012-5611](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5611))
 * [CVE-2012-5627](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5627)/[MDEV-3915](https://jira.mariadb.org/browse/MDEV-3915) fast password brute-forcing using the "change user" command
 * [CVE-2012-5615](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5615)/[MDEV-3909](https://jira.mariadb.org/browse/MDEV-3909) information leakage about existing user accounts via the protocol handshake
-* fixes for DoS attacks - crashes and server lockups (see the [Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md))
+* fixes for DoS attacks - crashes and server lockups (see the [Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md))
 
 Additionally, it includes all security fixes from MySQL 5.5.29, such as fix for [CVE-2012-5612](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5612)/[MDEV-3908](https://jira.mariadb.org/browse/MDEV-3908) and others, such as:
 
@@ -130,10 +130,8 @@ but don't worry, they haven't been deleted, they're just being moved!
 
 Thanks, and enjoy MariaDB!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -13,12 +13,12 @@ indexes to compute a union (formed from multiple condition disjunctions) and/or 
 Consider a table
 
 ```sql
-create table t1 (
-  key1 int,
-  key2 varchar(100),
+CREATE TABLE t1 (
+  key1 INT,
+  key2 VARCHAR(100),
   ...
-  index(key1),
-  index(key2)
+  INDEX(key1),
+  INDEX(key2)
 );
 ```
 
@@ -26,9 +26,9 @@ and query
 
 ```sql
 -- Turn on optimizer trace so we can see the ranges:
-set optimizer_trace=1; 
-explain select * from t1 where key1<10 and key2='foo';
-select * from information_schema.optimizer_trace\G
+SET optimizer_trace=1; 
+EXPLAIN SELECT * FROM t1 WHERE key1<10 AND key2='foo';
+SELECT * FROM information_schema.optimizer_trace\G
 ```
 
 This shows the ranges that the optimizer was able to infer:
@@ -53,8 +53,8 @@ This shows the ranges that the optimizer was able to infer:
 Range optimizer produces a list of ranges without overlaps. Consider this WHERE clause where conditions do have overlaps:
 
 ```sql
-select * from t1 where (key1 between 10 and 20  and key1 > 14)  or key1 in (17, 22, 33);
-select * from information_schema.optimizer_trace\G
+SELECT * FROM t1 WHERE (key1 BETWEEN 10 AND 20  AND key1 > 14)  OR key1 IN (17, 22, 33);
+SELECT * FROM information_schema.optimizer_trace\G
 ```
 
 We get
@@ -77,11 +77,11 @@ We get
 Let's consider an index with multiple key parts. (note: due to [Extended Keys](extended-keys.md) optimization, an index may have more key parts than you've explicitly defined)
 
 ```sql
-create table t2 (
-  keypart1 int,
-  keypart2 varchar(100),
-  keypart3 int,
-  index idx(keypart1, keypart2, keypart3)
+CREATE TABLE t2 (
+  keypart1 INT,
+  keypart2 VARCHAR(100),
+  keypart3 INT,
+  INDEX idx(keypart1, keypart2, keypart3)
 );
 ```
 
@@ -90,8 +90,8 @@ Range optimizer will generate a _finite_ set of ranges over lexicographical orde
 Example:
 
 ```sql
-select * from t2 where keypart1 in (1,2,3) and keypart2 between 'bar' and 'foo';
-select * from information_schema.optimizer_trace\G
+SELECT * FROM t2 WHERE keypart1 IN (1,2,3) AND keypart2 BETWEEN 'bar' AND 'foo';
+SELECT * FROM information_schema.optimizer_trace\G
 ```
 
 gives
@@ -110,8 +110,8 @@ gives
 Compare with a similar query:
 
 ```sql
-select * from t2 where keypart1 between 1 and 3 and keypart2 between 'bar' and 'foo';
-select * from information_schema.optimizer_trace\G
+SELECT * FROM t2 WHERE keypart1 BETWEEN 1 AND 3 AND keypart2 BETWEEN 'bar' AND 'foo';
+SELECT * FROM information_schema.optimizer_trace\G
 ```
 
 this will generate just one bigger range:
@@ -134,7 +134,7 @@ The governing rule is the same: the conditions together must produce an interval
 Some examples:
 
 ```sql
-where keypart1<= 10 and keypart2<'foo'
+WHERE keypart1<= 10 AND keypart2<'foo'
 ```
 
 can use the second keypart:
@@ -148,7 +148,7 @@ but the interval will still include rows like `(keypart1, keypart2) = (8, 'zzzz'
 Non-inclusive bound on keypart1 prevents any use of keypart2. For
 
 ```sql
-where keypart1< 10 keypart2<'foo';
+WHERE keypart1< 10 keypart2<'foo';
 ```
 
 we get
@@ -160,7 +160,7 @@ we get
 Non-agreeing comparison (less than and greater than) do not produce a multi-part range:
 
 ```sql
-where keypart1<= 10 and keypart2>'foo';
+WHERE keypart1<= 10 AND keypart2>'foo';
 ```
 
 gives
@@ -172,7 +172,7 @@ gives
 A "Hole" in keyparts means higher keypart cannot be used.
 
 ```sql
-where keypart1= 10 and keypart3<='foo';
+WHERE keypart1= 10 AND keypart3<='foo';
 ```
 
 gives

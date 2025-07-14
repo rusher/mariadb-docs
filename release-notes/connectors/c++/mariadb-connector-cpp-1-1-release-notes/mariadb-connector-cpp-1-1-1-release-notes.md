@@ -27,7 +27,6 @@ std::unique_ptr<sql::Connection> conn2(ds.getConnection());
 
 | Property          | Description                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Property          | Description                                                                                                                                                                                                                                                                                                                                                                                                        |
 | minPoolSize       | The minimum number of connections to be kept in the pool (defaults to maxPoolSize value)                                                                                                                                                                                                                                                                                                                           |
 | maxPoolSize       | The maximum number of physical connections that the pool can contain (defaults to 8)                                                                                                                                                                                                                                                                                                                               |
 | maxIdleTime       | The maximum amount of time in seconds that connections above minPoolSize can stay in the pool if not used. This value must always be at least 45 seconds lower than the [@wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value. Default: 600 in seconds(=10 minutes), minimum value is 60 seconds |
@@ -50,6 +49,6 @@ MariaDB Connector/C++ 1.1 will always try to connect to the first host in the li
 
 [Install MariaDB Connector/C++](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp/install-mariadb-connector-cpp)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

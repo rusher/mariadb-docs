@@ -12,7 +12,6 @@ For example, if a user `x` has `SELECT` privilege granted `ON db.*`, this view w
 
 | Column        | Description                                                                                                                                                                          |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Column        | Description                                                                                                                                                                          |
 | TABLE\_SCHEMA | Database name.                                                                                                                                                                       |
 | TABLE\_NAME   | Table name.                                                                                                                                                                          |
 | GRANTEE       | [Account name](../../../../account-management-sql-statements/create-user.md#account-names) that was [granted](../../../../account-management-sql-statements/grant.md) the privilege. |

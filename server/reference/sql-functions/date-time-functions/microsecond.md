@@ -1,27 +1,20 @@
-
 # MICROSECOND
 
 ## Syntax
 
-
-```
+```sql
 MICROSECOND(expr)
 ```
 
-
 ## Description
 
+Returns the microseconds from the time or datetime expression _expr_ as a number in the range from 0 to 999999.
 
-Returns the microseconds from the time or datetime expression *expr* as a number in the range from 0 to 999999.
-
-
-If *expr* is a time with no microseconds, zero is returned, while if *expr* is a date with no time, zero with a warning is returned.
-
+If _expr_ is a time with no microseconds, zero is returned, while if _expr_ is a date with no time, zero with a warning is returned.
 
 ## Examples
 
-
-```
+```sql
 SELECT MICROSECOND('12:00:00.123456');
 +--------------------------------+
 | MICROSECOND('12:00:00.123456') |
@@ -61,11 +54,8 @@ SHOW WARNINGS;
 
 ## See Also
 
-
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

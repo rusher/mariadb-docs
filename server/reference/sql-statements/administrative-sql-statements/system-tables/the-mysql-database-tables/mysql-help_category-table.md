@@ -2,13 +2,12 @@
 
 `mysql.help_category` is one of the four tables used by the [HELP command](../../help-command.md). It is populated when the server is installed by the `fill_help_tables.sql` script. The other help tables are [help\_relation](mysql-help_relation-table.md), [help\_topic](mysql-help_topic-table.md) and [help\_keyword](mysql-help_keyword-table.md).
 
-This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine. Prior to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/broken-reference/README.md) it used the [MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) engine.
+This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.&#x20;
 
 The `mysql.help_category` table contains the following fields:
 
 | Field                | Type                 | Null | Key | Default | Description |
 | -------------------- | -------------------- | ---- | --- | ------- | ----------- |
-| Field                | Type                 | Null | Key | Default | Description |
 | help\_category\_id   | smallint(5) unsigned | NO   | PRI | NULL    |             |
 | name                 | char(64)             | NO   | UNI | NULL    |             |
 | parent\_category\_id | smallint(5) unsigned | YES  |     | NULL    |             |

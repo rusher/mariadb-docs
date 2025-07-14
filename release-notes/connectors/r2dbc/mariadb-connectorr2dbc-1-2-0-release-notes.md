@@ -29,7 +29,7 @@ r2dbc:mariadb://user:pwd@localhost:3306/db?timezone=+5:00r2dbc:mariadb://user:pw
 * Example for enabling the redirection:
 
 ```sql
-set @@global.redirect_url="mariadb://somehost:3306/"
+SET @@global.redirect_url="mariadb://somehost:3306/"
 ```
 
 * The redirection feature is enabled by default. It can be disabled by setting the new option permitRedirect to FALSE, which will result in ignoring the redirection URL.
@@ -52,6 +52,6 @@ set @@global.redirect_url="mariadb://somehost:3306/"
 * [Report Issues](https://jira.mariadb.org/browse/R2DBC)
 * [Source code](https://github.com/mariadb-corporation/mariadb-connector-r2dbc/)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

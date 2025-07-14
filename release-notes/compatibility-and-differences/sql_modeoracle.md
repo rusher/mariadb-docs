@@ -170,6 +170,8 @@ There are a number of [extra reserved words](https://app.gitbook.com/s/SsmexDFPv
 
 The [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table) statement will not display MariaDB-specific table options, such as AUTO\_INCREMENT or CHARSET, when Oracle mode is set.
 
+&nbsp;
+
 ## See Also
 
 * [mariadb\_schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/mariadb_schema)
@@ -180,5 +182,7 @@ The [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference
 * [A user story: migrating from Oracle to MariaDB - Lixun Peng - MariaDB Server Fest 2020](https://www.youtube.com/watch?v=5pqEZ91zHsA) (video)
 * [Curious case of the disappearing commercial databases (13 minute offset) - Monty Widenius - MariaDB Server Fest 2021](https://www.youtube.com/watch?v=0nysJV3pozg) (video)
 * [Sqlines - Oracle to MariaDB migration tool](https://sqlines.com/oracle-to-mariadb)
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

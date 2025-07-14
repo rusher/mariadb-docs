@@ -1,6 +1,8 @@
 # Information Schema TEMP\_TABLES\_INFO Table
 
-The `TEMP_TABLES_INFO` table was removed and is no longer a part of MariaDB. See [MDEV-12459](https://jira.mariadb.org/browse/MDEV-12459) progress on an alternative.
+{% hint style="info" %}
+This table was removed and is no longer a part of MariaDB. See [MDEV-12459](https://jira.mariadb.org/browse/MDEV-12459) for an alternative.
+{% endhint %}
 
 The [Information Schema](../../) `TEMP_TABLES_INFO` table contains information about active InnoDB temporary tables. All user and system-created temporary tables are reported when querying this table, with the exception of optimized internal temporary tables. The data is stored in memory.
 
@@ -10,7 +12,6 @@ It has the following columns:
 
 | Column                 | Description                                                                                                                                                                                                                                                                                                                                                          |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                 | Description                                                                                                                                                                                                                                                                                                                                                          |
 | TABLE\_ID              | Table ID.                                                                                                                                                                                                                                                                                                                                                            |
 | NAME                   | Table name.                                                                                                                                                                                                                                                                                                                                                          |
 | N\_COLS                | Number of columns in the temporary table, including three hidden columns that InnoDB creates (DB\_ROW\_ID, DB\_TRX\_ID, and DB\_ROLL\_PTR).                                                                                                                                                                                                                          |
@@ -22,7 +23,7 @@ The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant
 
 ## Examples
 
-```
+```sql
 CREATE TEMPORARY TABLE t (i INT) ENGINE=INNODB;
 
 SELECT * FROM INFORMATION_SCHEMA.INNODB_TEMP_TABLE_INFO;
@@ -35,7 +36,7 @@ SELECT * FROM INFORMATION_SCHEMA.INNODB_TEMP_TABLE_INFO;
 
 Adding a compressed table:
 
-```
+```sql
 SET GLOBAL innodb_file_format="Barracuda";
 
 CREATE TEMPORARY TABLE t2 (i INT) ROW_FORMAT=COMPRESSED ENGINE=INNODB;

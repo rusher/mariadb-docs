@@ -17,8 +17,8 @@ MariaDB supports both the UTF8MB3 and UTF8MB4 [character sets](../../../referenc
 Suppose, we have the table _'users_ that uses UTF8MB4:
 
 ```sql
-create table users (
-  user_name_mb4 varchar(100) collate utf8mb4_general_ci,
+CREATE TABLE users (
+  user_name_mb4 VARCHAR(100) COLLATE utf8mb4_general_ci,
   ...
 );
 ```
@@ -26,8 +26,8 @@ create table users (
 and table _orders_ that uses UTF8MB3:
 
 ```sql
-create table orders (
-  user_name_mb3 varchar(100) collate utf8mb3_general_ci,
+CREATE TABLE orders (
+  user_name_mb3 VARCHAR(100) COLLATE utf8mb3_general_ci,
   ...,
   INDEX idx1(user_name_mb3)
 );
@@ -36,13 +36,13 @@ create table orders (
 One can join _users_ to _orders_ on user\_name:
 
 ```sql
-select * from orders, users where orders.user_name_mb3=users.user_name_mb4;
+SELECT * FROM orders, users WHERE orders.user_name_mb3=users.user_name_mb4;
 ```
 
 Internally the optimizer will handle the equality by converting the UTF8MB3 value into UTF8MB4 and then doing the comparison. One can see the call to `CONVERT` in EXPLAIN FORMAT=JSON output or Optimizer Trace:
 
 ```sql
-convert(orders.user_name_mb3 using utf8mb4) = users.user_name_mb4
+CONVERT(orders.user_name_mb3 USING utf8mb4) = users.user_name_mb4
 ```
 
 This produces the expected result but the query optimizer is not able to use the index over `orders.user_name_mb3` to find matches for values of `users.user_name_mb4`.
@@ -50,7 +50,7 @@ This produces the expected result but the query optimizer is not able to use the
 The EXPLAIN of the above query looks like this:
 
 ```sql
-explain select * from orders, users where orders.user_name_mb3=users.user_name_mb4;
+EXPLAIN SELECT * FROM orders, users WHERE orders.user_name_mb3=users.user_name_mb4;
 +------+-------------+--------+------+---------------+------+---------+------+-------+-------------------------------------------------+
 | id   | select_type | table  | type | possible_keys | key  | key_len | ref  | rows  | Extra                                           |
 +------+-------------+--------+------+---------------+------+---------+------+-------+-------------------------------------------------+
@@ -62,9 +62,9 @@ explain select * from orders, users where orders.user_name_mb3=users.user_name_m
 The Charset Narrowing optimization enables the optimizer to perform the comparison between UTF8MB3 and UTF8MB4 values by "narrowing" the value in UTF8MB4 to UTF8MB3. The `CONVERT` call is no longer needed, and the optimizer is able to use the equality to construct ref access:
 
 ```sql
-set optimizer_switch='cset_narrowing=on';
+SET optimizer_switch='cset_narrowing=ON';
 
-explain select * from orders, users where orders.user_name_mb3=users.user_name_mb4;
+EXPLAIN SELECT * FROM orders, users WHERE orders.user_name_mb3=users.user_name_mb4;
 +------+-------------+--------+------+---------------+------+---------+---------------------+------+-----------------------+
 | id   | select_type | table  | type | possible_keys | key  | key_len | ref                 | rows | Extra                 |
 +------+-------------+--------+------+---------------+------+---------+---------------------+------+-----------------------+
@@ -78,7 +78,7 @@ explain select * from orders, users where orders.user_name_mb3=users.user_name_m
 The optimization is controlled by an [optimizer\_switch](../system-variables/server-system-variables.md#optimizer_switch) flag. Specify:
 
 ```sql
-set optimizer_switch='cset_narrowing=on';
+SET optimizer_switch='cset_narrowing=ON';
 ```
 
 to enable the optimization.

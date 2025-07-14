@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.28)[Release Notes](mariadb-10128-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10128-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.28)[Release Notes](mariadb-10128-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10128-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 28 Sep 2017
 
@@ -33,7 +33,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-12988](https://jira.mariadb.org/browse/MDEV-12988): mariadb-backup fails if innodb\_undo\_tablespaces>0
 * [MDEV-13471](https://jira.mariadb.org/browse/MDEV-13471): Test failure on innodb.log\_file\_size,4k (fixes Galera when using innodb\_page\_size=4k)
 * [MDEV-13814](https://jira.mariadb.org/browse/MDEV-13814): Extra logging when innodb\_log\_archive=ON (XtraDB only)
-* [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807): mariabackup --apply-log-only does generate redo log by performing rollback and possibly other tasks
+* [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807): mariadb-backup --apply-log-only does generate redo log by performing rollback and possibly other tasks
 * [MDEV-13684](https://jira.mariadb.org/browse/MDEV-13684): InnoDB race condition between fil\_crypt\_thread and btr\_scrub\_init
 
 ### Encryption
@@ -48,15 +48,13 @@ Thanks, and enjoy MariaDB!
 ## Notes
 
 For a complete list of changes made in [MariaDB 10.1.28](mariadb-10128-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10128-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10128-changelog.md).
 
 A file format compatibility bug that was introduced in [MariaDB 10.1.0](mariadb-10-1-0-release-notes.md) was fixed in [MariaDB 10.1.21](mariadb-10121-release-notes.md).\
 Using [page\_compression](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-page-compression) or non-default [innodb\_page\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) created files that were incompatible with [MariaDB 10.0](../release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) or MySQL 5.6. [MariaDB 10.1.21](mariadb-10121-release-notes.md) and higher will convert affected files from earlier [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) releases to a compatible format.**This prevents a downgrade to earlier** [**MariaDB 10.1**](changes-improvements-in-mariadb-10-1.md) **versions.**[See the commit for details.](https://github.com/MariaDB/server/commit/ab1e6fefd869242d962cb91a006f37bb9ad534a7)
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -8,7 +8,6 @@ It has the following columns:
 
 | Column         | Description                                                                                                                                    |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                                    |
 | WORD           | Word from the text of a column with a fulltext index. Words can appear multiple times in the table, once per DOC\_ID and POSITION combination. |
 | FIRST\_DOC\_ID | First document ID where this word appears in the index.                                                                                        |
 | LAST\_DOC\_ID  | Last document ID where this word appears in the index.                                                                                         |
@@ -16,11 +15,11 @@ It has the following columns:
 | DOC\_ID        | Document ID of the newly added row, either an appropriate ID column or an internal InnoDB value.                                               |
 | POSITION       | Position of this word instance within the DOC\_ID, as an offset added to the previous POSITION instance.                                       |
 
-Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innodb\_optimize\_fulltext\_only](https://mariadb.com/kb/en/innodb-server-system-variables#innodb_optimize_fulltext_only) system variable needs to be set to `1`. When this is done, and an `OPTIMIZE TABLE` statement run, the [INNODB\_FT\_INDEX\_CACHE](information-schema-innodb_ft_index_cache-table.md) table will be emptied, and the `INNODB_FT_INDEX_TABLE` table will be updated.
+Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innodb\_optimize\_fulltext\_only](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only) system variable needs to be set to `1`. When this is done, and an `OPTIMIZE TABLE` statement run, the [INNODB\_FT\_INDEX\_CACHE](information-schema-innodb_ft_index_cache-table.md) table will be emptied, and the `INNODB_FT_INDEX_TABLE` table will be updated.
 
 ## Examples
 
-```
+```sql
 SELECT * FROM INNODB_FT_INDEX_TABLE;
 Empty set (0.00 sec)
 

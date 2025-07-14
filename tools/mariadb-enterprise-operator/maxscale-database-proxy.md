@@ -10,6 +10,8 @@ MaxScale is a sophisticated database proxy, router, and load balancer designed s
 * Replay pending transactions when a server goes down.
 * Support for Galera and Replication.
 
+&nbsp;
+
 To better understand what MaxScale is capable of you may check the [product page](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) and the [documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/).
 
 ## MaxScale resources
@@ -18,29 +20,29 @@ Prior to configuring MaxScale within Kubernetes, it's essential to have a basic 
 
 #### Servers
 
-A server defines the backend database servers that MaxScale forwards traffic to. For more detailed information, please consult the [server reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-configuration-settings#server).
+A server defines the backend database servers that MaxScale forwards traffic to. For more detailed information, please consult the [server reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-server-resource).
 
 #### Monitors
 
-A monitor is an agent that queries the state of the servers and makes it available to the services in order to route traffic based on it. For more detailed information, please consult the [monitor reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-monitors).
+A monitor is an agent that queries the state of the servers and makes it available to the services in order to route traffic based on it. For more detailed information, please consult the [monitor reference](broken-reference).
 
 Depending on which highly available configuration your servers have, you will need to choose betweeen the following modules:
 
-* [Galera Monitor](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor): Detects whether servers are part of the cluster, ensuring synchronization among them, and assigning primary and replica roles as needed.
-* [MariaDB Monitor](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor): Probes the state of the cluster, assigns roles to the servers, and executes failover, switchover, and rejoin operations as necessary.
+* [Galera Monitor](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor): Detects whether servers are part of the cluster, ensuring synchronization among them, and assigning primary and replica roles as needed.
+* [MariaDB Monitor](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor): Probes the state of the cluster, assigns roles to the servers, and executes failover, switchover, and rejoin operations as necessary.
 
 #### Services
 
-A service defines how the traffic is routed to the servers based on a routing algorithm that takes into account the state of the servers and its role. For more detailed information, please consult the [service reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-configuration-settings#service_1).
+A service defines how the traffic is routed to the servers based on a routing algorithm that takes into account the state of the servers and its role. For more detailed information, please consult the [service reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-service-resource).
 
 Depending on your requirements to route traffic, you may choose between the following routers:
 
-* [Readwritesplit](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit): Route write queries to the primary server and read queries to the replica servers.
-* [Readconnroute](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readconnroute): Load balance connections between multiple servers.
+* [Readwritesplit](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit): Route write queries to the primary server and read queries to the replica servers.
+* [Readconnroute](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readconnroute): Load balance connections between multiple servers.
 
 #### Listeners
 
-A listener specifies a port where MaxScale listens for incoming connections. It is associated with a service that handles the requests received on that port. For more detailed information, please consult the [listener reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-configuration-settings#listener).
+A listener specifies a port where MaxScale listens for incoming connections. It is associated with a service that handles the requests received on that port. For more detailed information, please consult the [listener reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource).
 
 ## `MaxScale` CR
 
@@ -277,7 +279,7 @@ spec:
 
 Both this global configuration and the resources created by the operator using the [MaxScale API](maxscale-database-proxy.md#maxscale-api) are stored under a volume provisioned by the `spec.config.volumeClaimTemplate`.
 
-Refer to the [MaxScale reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-configuration-settings) for more details about the supported parameters.
+Refer to the [MaxScale reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/mariadb-maxscale-2501-maxscale-2501-configuration-settings) for more details about the supported parameters.
 
 ## Authentication
 
@@ -413,7 +415,7 @@ Note that, the `Connection` uses the `Service` described in the [Kubernetes Serv
 
 To synchronize the configuration state across multiple replicas, MaxScale stores the configuration externally in a MariaDB table and conducts periodic polling across all replicas. By default, the table `mysql.maxscale_config` is used, but this can be configured by the user as well as the synchronization interval.
 
-Another crucial aspect to consider regarding HA is that only one monitor can be running at any given time to avoid conflicts. This can be achieved via cooperative locking, which can be configured by the user. Refer to [MaxScale docs](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-mariadb-monitor/using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor#using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor) for more information.
+Another crucial aspect to consider regarding HA is that only one monitor can be running at any given time to avoid conflicts. This can be achieved via cooperative locking, which can be configured by the user. Refer to [MaxScale docs](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-mariadb-monitor/using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor#using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor) for more information.
 
 ```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -504,7 +506,7 @@ The GUI is exposed via a dedicated Kubernetes `Service` in the same port as the 
 
 ## MaxScale API
 
-MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-25-01/maxscale-25-01-rest-api) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
+MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/maxscale-25-01-rest-api) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
 
 ## Troubleshooting
 
@@ -583,6 +585,6 @@ spec:
 
 This enables the `CSIDriver` and the kubelet to recursively set the ownership ofr the `/var/lib/maxscale` folder to the group `999`, which is the one expected by MaxScale. It is important to note that not all the `CSIDrivers` implementations support this feature, see the [CSIDriver documentation](https://kubernetes-csi.github.io/docs/support-fsgroup.html) for further information.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

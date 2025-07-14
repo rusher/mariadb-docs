@@ -30,7 +30,7 @@ available in the [**Galera**](https://github.com/mariadb-corporation/docs-releas
   MariaDB Galera Cluster can be used with either a 25.2.x or 25.3.x\
   Galera `wsrep` provider. A 25.3.x `wsrep` provider is included in the\
   MariaDB repositories and is also available from the[downloads](https://downloads.mariadb.org/mariadb-galera/5.5) page.
-* See the [MariaDB 5.5.50 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5550-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5550-changelog.md) for more information on the changes in\
+* See the [MariaDB 5.5.50 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5550-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5550-changelog.md) for more information on the changes in\
   MariaDB.
 
 Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\
@@ -44,10 +44,8 @@ A full list of all changes is in the [changelog](../mariadb-galera-55-changelogs
 
 Thanks, and enjoy MariaDB Galera Cluster!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

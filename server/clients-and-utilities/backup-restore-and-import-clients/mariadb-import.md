@@ -4,7 +4,7 @@
 
 `mariadb-import` loads tables from text files in various formats.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlimport`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlimport`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 `mariadb-import` loads tables from text files in various formats. The base name\
 of the text file must be the name of the table that should be used. If one\
@@ -98,19 +98,19 @@ The following options relate to how MariaDB command-line tools handles option fi
 | --defaults-file=#       | Only read default options from the given file #. |
 | --defaults-extra-file=# | Read this file after the global files are read.  |
 
-`mariadb-import` is linked with [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-c/README.md). Therefore, it may be helpful to see [Configuring MariaDB Connector/C with Option Files](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files) for more information on how MariaDB Connector/C handles option files.
+`mariadb-import` is linked with MariaDB Connector/C. Therefore, it may be helpful to see [Configuring MariaDB Connector/C with Option Files](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files) for more information on how MariaDB Connector/C handles option files.
 
 **Option Groups**
 
 `mariadb-import` reads options from the following [option groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group             | Description                                                                                                                                                                                                                                                                |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| \[mysqlimport]    | Options read by mysqlimport, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                          |
-| \[mariadb-import] | Options read by mysqlimport.                                                                                                                                                                                                                                               |
-| \[client]         | Options read by all MariaDB and MySQL [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), which includes both MariaDB and MySQL clients. For example, mysqldump.                                            |
-| \[client-server]  | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
-| \[client-mariadb] | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md).                                                                                                                             |
+| Group             | Description                                                                                                                                                                     |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \[mysqlimport]    | Options read by mysqlimport, which includes both MariaDB Server and MySQL Server.                                                                                               |
+| \[mariadb-import] | Options read by mysqlimport.                                                                                                                                                    |
+| \[client]         | Options read by all MariaDB and MySQL client programs, which includes both MariaDB and MySQL clients. For example, mysqldump.                                                   |
+| \[client-server]  | Options read by all MariaDB [client programs](../) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
+| \[client-mariadb] | Options read by all MariaDB client programs.                                                                                                                                    |
 
 #### Default Values
 

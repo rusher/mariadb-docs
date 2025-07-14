@@ -11,19 +11,19 @@ Before [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-comm
 Consider a query: we want to find countries in Europe, that have more than one million people living in cities. This is accomplished with this query:
 
 ```sql
-select * 
-from
+SELECT * 
+FROM
    Country, 
    (select 
-       sum(City.Population) as urban_population, 
+       sum(City.Population) AS urban_population, 
        City.Country 
-    from City 
-    group by City.Country 
-    having 
+    FROM City 
+    GROUP BY City.Country 
+    HAVING 
     urban_population > 1*1000*1000
-   ) as cities_in_country
-where 
-  Country.Code=cities_in_country.Country and Country.Continent='Europe';
+   ) AS cities_in_country
+WHERE 
+  Country.Code=cities_in_country.Country AND Country.Continent='Europe';
 ```
 
 The EXPLAIN output for it will show:
@@ -52,7 +52,7 @@ One can see here that
 * The optimization is ON by default, it can be switched off like so:
 
 ```sql
-set optimizer_switch='derived_with_keys=off'
+SET optimizer_switch='derived_with_keys=off'
 ```
 
 ## See Also

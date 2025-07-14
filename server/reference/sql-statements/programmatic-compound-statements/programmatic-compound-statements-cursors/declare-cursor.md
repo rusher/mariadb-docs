@@ -2,23 +2,25 @@
 
 ## Syntax
 
-Until [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
-
-```
-DECLARE cursor_name CURSOR [(cursor_formal_parameter[,...])] FOR select_statement
-
-cursor_formal_parameter:
-    name type [collate clause]
-```
-
-From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
-
-```
+{% tabs %}
+{% tab title="Current" %}
+```sql
 DECLARE cursor_name CURSOR [(cursor_formal_parameter[,...])] FOR select_statement
 
 cursor_formal_parameter:
     [IN] name type [collate clause]
 ```
+{% endtab %}
+
+{% tab title="< 10.8" %}
+```sql
+DECLARE cursor_name CURSOR [(cursor_formal_parameter[,...])] FOR select_statement
+
+cursor_formal_parameter:
+    name type [collate clause]
+```
+{% endtab %}
+{% endtabs %}
 
 ## Description
 
@@ -32,13 +34,19 @@ Cursors must be declared before [HANDLERs](../declare-handler.md), but after loc
 
 ### Parameters
 
-Cursors can have parameters. This is a non-standard SQL extension. Cursor parameters can appear in any part of the DECLARE CURSOR select\_statement where a stored procedure variable is allowed (select list, WHERE, HAVING, LIMIT etc).
+Cursors can have parameters. This is a non-standard SQL extension. Cursor parameters can appear in any part of the `DECLARE CURSOR` `select_statement` where a stored procedure variable is allowed (select list, `WHERE`, `HAVING`, `LIMIT` , and so forth).
 
 ### IN
 
-**MariaDB starting with** [**10.8.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+The `IN` qualifier is supported in the `cursor_formal_parameter` part of the syntax.
+{% endtab %}
 
-From [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes) preview release, the `IN` qualifier is supported in the `cursor_formal_parameter` part of the syntax.
+{% tab title="< 10.8" %}
+The `IN` qualifier is **not** supported in the `cursor_formal_parameter` part of the syntax.
+{% endtab %}
+{% endtabs %}
 
 See [Cursor Overview](cursor-overview.md) for an example.
 
@@ -48,7 +56,7 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [OPEN cursor\_name](open.md)
 * [FETCH cursor\_name](fetch.md)
 * [CLOSE cursor\_name](close.md)
-* [Cursors in Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/programmatic-compound-statements/programmatic-compound-statements-cursors/broken-reference/README.md)
+* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

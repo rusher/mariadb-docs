@@ -6,7 +6,7 @@ MariaDB Enterprise Server 10.2.25-1 was released on 2019-07-08.
 
 ## New Features
 
-* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) with support of non-blocking Backups
+* [MariaDB Enterprise Backup](broken-reference) with support of non-blocking Backups
 * Backup Stages for non-blocking Backups
 * Maximum number of secondary indexes increased to 128 per table
 

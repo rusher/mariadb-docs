@@ -14,7 +14,6 @@ They contain the following columns:
 
 | Column          | Description                                                                    |
 | --------------- | ------------------------------------------------------------------------------ |
-| Column          | Description                                                                    |
 | user            | The account associated with a foreground thread, or the background thread name |
 | total           | Total number of I/O events allocated for the thread.                           |
 | total\_latency  | Total wait time of timed I/O events for the thread.                            |

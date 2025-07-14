@@ -517,7 +517,7 @@ modified in that revision.
   * Merge pull request #41 from MariaDB/5.5-[MDEV-7820](https://jira.mariadb.org/browse/MDEV-7820)
 * [Revision #eb47b22](https://github.com/MariaDB/server/commit/eb47b22)\
   2015-04-15 16:23:43 +0300
-  * [MDEV-7820](https://jira.mariadb.org/browse/MDEV-7820) Server crashes in in my\_strcasecmp\_utf8 on subquery in ORDER BY clause of GROUP\_CONCAT
+  * [MDEV-7820](https://jira.mariadb.org/browse/MDEV-7820) Server crashes in my\_strcasecmp\_utf8 on subquery in ORDER BY clause of GROUP\_CONCAT
 * [Revision #59d847b](https://github.com/MariaDB/server/commit/59d847b)\
   2015-04-15 12:08:37 +0400
   * [MDEV-7814](https://jira.mariadb.org/browse/MDEV-7814) Assertion \`args\[0]->fixed' fails in Item\_func\_conv\_charset::Item\_func\_conv\_charset Removing a wrong assertion.
@@ -906,5 +906,9 @@ modified in that revision.
 * [Revision #b5d6aa5](https://github.com/MariaDB/server/commit/b5d6aa5)\
   2015-02-23 13:27:51 +0100
   * [MDEV-7310](https://jira.mariadb.org/browse/MDEV-7310): last\_commit\_pos\_offset set to wrong value after binlog rotate in group commit
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

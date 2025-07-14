@@ -1,6 +1,6 @@
 # Catalogs Overview
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120) **—** Catalog support is planned for 12.0.
+**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120) **—** Catalog support is planned for 12.0.
 
 [Catalogs](./) are an upcoming feature that will be included in a future release of MariaDB. The MariaDB catalogs will be a multi-tenancy feature where a single instance MariaDB server handles multiple independent tenants (customers), who have their own users, schemas etc.\
 See [MDEV-31542](https://jira.mariadb.org/browse/MDEV-31542) "Add multi-tenancy catalogs to MariaDB" for details.
@@ -136,7 +136,7 @@ Client changes:
 * Add --catalog option to all standard MariaDB clients
 * Add support for looping over all existing catalogs to:
   * [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md)
-  * [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/)
+  * [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/)
   * [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md)
 
 Changes to [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md):
@@ -271,7 +271,7 @@ Create a migration tool set / procedure that does the following
 * Execute [FLUSH TABLES FOR EXPORT](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) for all tables in a catalog.
 * Take a copy of the catalog directory
 * Copy the data to a new catalog directory to the new server
-* Run [ALTER TABLE ... IMPORT TABLESPACE](../../../reference/sql-statements/data-definition/alter/alter-table.md#import-tablespace) on each InnoDB table
+* Run [ALTER TABLE ... IMPORT TABLESPACE](../../../reference/sql-statements/data-definition/alter/alter-table/#import-tablespace) on each InnoDB table
 
 Note that for partitioned tables the process will be a bit more complex, see above link.
 

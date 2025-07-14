@@ -3,7 +3,7 @@
 ## Description
 
 MariaDB provides a standard way of creating spatial columns for geometry types,\
-for example, with [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md).\
+for example, with [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/).\
 Currently, spatial columns are supported for [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/) and [ARCHIVE](../../../server-usage/storage-engines/archive.md)\
 tables. See also [SPATIAL INDEX](spatial-index.md).
 
@@ -11,7 +11,6 @@ The basic geometry type is `GEOMETRY`. But the type can be more specific. The fo
 
 | Geometry Types                                                                                               |
 | ------------------------------------------------------------------------------------------------------------ |
-| Geometry Types                                                                                               |
 | [POINT](../../sql-statements/geometry-constructors/geometry-constructors/point.md)                           |
 | [LINESTRING](../../sql-statements/geometry-constructors/geometry-constructors/linestring.md)                 |
 | [POLYGON](../../sql-statements/geometry-constructors/geometry-constructors/polygon.md)                       |
@@ -142,13 +141,13 @@ INSERT INTO gis_geometrycollection VALUES
 ```sql
 CREATE TABLE gis_geometry (g GEOMETRY);
 SHOW FIELDS FROM gis_geometry;
-INSERT into gis_geometry SELECT * FROM gis_point;
-INSERT into gis_geometry SELECT * FROM gis_line;
-INSERT into gis_geometry SELECT * FROM gis_polygon;
-INSERT into gis_geometry SELECT * FROM gis_multi_point;
-INSERT into gis_geometry SELECT * FROM gis_multi_line;
-INSERT into gis_geometry SELECT * FROM gis_multi_polygon;
-INSERT into gis_geometry SELECT * FROM gis_geometrycollection;
+INSERT INTO gis_geometry SELECT * FROM gis_point;
+INSERT INTO gis_geometry SELECT * FROM gis_line;
+INSERT INTO gis_geometry SELECT * FROM gis_polygon;
+INSERT INTO gis_geometry SELECT * FROM gis_multi_point;
+INSERT INTO gis_geometry SELECT * FROM gis_multi_line;
+INSERT INTO gis_geometry SELECT * FROM gis_multi_polygon;
+INSERT INTO gis_geometry SELECT * FROM gis_geometrycollection;
 ```
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)

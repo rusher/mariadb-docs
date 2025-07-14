@@ -151,7 +151,7 @@ up a slave database to replicate the data, and provide access (eg.\
 remote database accounts) to members of the community with interesting\
 ideas about how to present or mine this data, or who are just curious\
 to play with it. If anyone has an interest in this, or wants to\
-volunteer a slave host for this purpose, please send a mail to[developers@lists.mariadb.org](https://mariadb.com/kb/en/mailto:developers@lists.mariadb.org).\
+volunteer a slave host for this purpose, please send a [developers@lists.mariadb.org](mailto:developers@lists.mariadb.org).\
 The more people show interest in this, the faster it is likely to happen!
 
 ## Reports

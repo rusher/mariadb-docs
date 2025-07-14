@@ -8,7 +8,7 @@ When [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup prior to upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup). For more information about backing up and restoring the database, please see the [Recovery Guide](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server).
+The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-usage/backup-and-restore/mariadb-backup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../../server-usage/backup-and-restore/backup-and-restore-with-mariadb-enterprise-server/).
 
 1.  Take a full backup.
 
@@ -16,17 +16,17 @@ The instructions below show how to perform a backup using [MariaDB Backup](https
 
     ```bash
     $ sudo mariadb-backup --backup \
-          --user=mariabackup_user \
-          --password=mariabackup_passwd \
+          --user=mariadb-backup_user \
+          --password=mariadb-backup_passwd \
           --target-dir=/data/backup/preupgrade_backup
     ```
 
     On MariaDB Community Server 10.3 and earlier:
 
     ```bash
-    $ sudo mariabackup --backup \
-          --user=mariabackup_user \
-          --password=mariabackup_passwd \
+    $ sudo mariadb-backup --backup \
+          --user=mariadb-backup_user \
+          --password=mariadb-backup_passwd \
           --target-dir=/data/backup/preupgrade_backup
     ```
 
@@ -43,7 +43,7 @@ The instructions below show how to perform a backup using [MariaDB Backup](https
     On MariaDB Community Server 10.3 and earlier:
 
     ```bash
-    $ sudo mariabackup --prepare \
+    $ sudo mariadb-backup --prepare \
           --target-dir=/data/backup/preupgrade_backup
     ```
 
@@ -52,9 +52,9 @@ The instructions below show how to perform a backup using [MariaDB Backup](https
 
 ### Audit Plugin Considerations
 
-If you have the [MariaDB Audit Plugin](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the MariaDB Enterprise Audit Plugin that is present in MariaDB Enterprise Server 10.4 or later.
+If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin/) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the MariaDB Enterprise Audit Plugin that is present in MariaDB Enterprise Server 10.4 or later.
 
-It can be removed by using the [UNINSTALL SONAME](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) statement:
+It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
 
 ```sql
 UNINSTALL SONAME 'server_audit';
@@ -199,7 +199,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 **Install via YUM (RHEL, AlmaLinux, CentOS, Rocky Linux)**
 
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
-2.  Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup). The following directions reference `10.3`.
+2.  Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#mariadb_es_repo_setup). The following directions reference `10.3`.
 
     To configure YUM package repositories:
 
@@ -242,7 +242,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 2.  Configure the APT package repository.
 
-    Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup). The following directions reference `10.3`.
+    Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#mariadb_es_repo_setup). The following directions reference `10.3`.
 
     To configure APT package repositories:
 
@@ -289,7 +289,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 2.  Configure the ZYpp package repository.
 
-    Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup). The following directions reference `10.3`.
+    Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#mariadb_es_repo_setup). The following directions reference `10.3`.
 
     To configure ZYpp package repositories:
 
@@ -402,7 +402,7 @@ When MariaDB Enterprise Server is up and running on your system, you should test
 
     MariaDB [(none)]>
     ```
-2.  You can also verify the server version by checking the value of the [version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/version) system variable with the [SHOW GLOBAL STATUS](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status) statement:
+2.  You can also verify the server version by checking the value of the [version](../../../../reference/sql-functions/secondary-functions/information-functions/version.md) system variable with the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement:
 
     ```sql
     SHOW GLOBAL VARIABLES LIKE 'version';

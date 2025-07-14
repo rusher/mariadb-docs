@@ -1,18 +1,8 @@
 ---
 description: >-
-  The following articles list the differences between the system variables
-  available in MariaDB and in MySQL for each of the major releases
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
+  Explore system variable differences between MariaDB Rolling Release and MySQL
+  8.0. This section details how configuration options vary, aiding in
+  compatibility and migration planning.
 ---
 
 # System Variable Differences between MariaDB and MySQL

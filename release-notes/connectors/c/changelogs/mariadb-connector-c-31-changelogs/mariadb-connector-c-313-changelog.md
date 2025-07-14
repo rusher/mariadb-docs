@@ -1,43 +1,43 @@
-# MariaDB Connector/C 3.1.3 Changelog
+    # MariaDB Connector/C 3.1.3 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+    The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-c-31-release-notes/mariadb-connector-c-313-release-notes.md)[Changelog](mariadb-connector-c-313-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
+    [Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-c-31-release-notes/mariadb-connector-c-313-release-notes.md)[Changelog](mariadb-connector-c-313-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
 
-**Release date:** 1 Aug 2019
+    **Release date:** 1 Aug 2019
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-c-31-release-notes/mariadb-connector-c-313-release-notes.md).
+    For the highlights of this release, see the[release notes](../../mariadb-connector-c-31-release-notes/mariadb-connector-c-313-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-c/) you can view more\
-details of the revision and view diffs of the code modified in that revision.
+    The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-c/) you can view more\
+    details of the revision and view diffs of the code modified in that revision.
 
-* [Revision #ed3a91c](https://github.com/mariadb-corporation/mariadb-connector-c/commit/ed3a91c)\
-  2019-07-25 11:50:31 +0200
-  * [CONC-429](https://jira.mariadb.org/browse/CONC-429): Don't allow to load unknown authentication plugins
-* [Revision #59780f9](https://github.com/mariadb-corporation/mariadb-connector-c/commit/59780f9)\
-  2019-07-25 11:27:25 +0200
-  * Revert "[CONC-429](https://jira.mariadb.org/browse/CONC-429): Don't allow to load unknown authentication plugins"
-* [Revision #783fd10](https://github.com/mariadb-corporation/mariadb-connector-c/commit/783fd10)\
-  2019-07-24 15:22:24 +0200
-  * ed25519
-* [Revision #59d214e](https://github.com/mariadb-corporation/mariadb-connector-c/commit/59d214e)\
-  2019-07-23 17:51:55 +0200
-  * Merge branch '3.1' of [mariadb-connector-c](https://github.com/MariaDB/mariadb-connector-c) into 3.1
-* [Revision #158a2d7](https://github.com/mariadb-corporation/mariadb-connector-c/commit/158a2d7)\
-  2019-07-22 09:40:53 +0200
-  * \[MENT-26] Adding Azure CI testing
-* [Revision #73c4cde](https://github.com/mariadb-corporation/mariadb-connector-c/commit/73c4cde)\
-  2019-07-23 17:49:59 +0200
-  * Fixed typo in CMakeLists.txt
-* [Revision #acc270b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/acc270b)\
-  2019-07-22 07:27:48 +0200
-  * [CONC-429](https://jira.mariadb.org/browse/CONC-429): Don't allow to load unknown authentication plugins
-* [Revision #5fa9c46](https://github.com/mariadb-corporation/mariadb-connector-c/commit/5fa9c46)\
-  2019-07-18 13:51:03 +0200
-  * Merge branch '3.0' into 3.1
-* [Revision #0c20765](https://github.com/mariadb-corporation/mariadb-connector-c/commit/0c20765)\
-  2019-07-18 13:42:29 +0200
-  * Fix of memory leack in the test and end spaces.
+    * [Revision #ed3a91c](https://github.com/mariadb-corporation/mariadb-connector-c/commit/ed3a91c)\
+      2019-07-25 11:50:31 +0200
+      * [CONC-429](https://jira.mariadb.org/browse/CONC-429): Don't allow to load unknown authentication plugins
+    * [Revision #59780f9](https://github.com/mariadb-corporation/mariadb-connector-c/commit/59780f9)\
+      2019-07-25 11:27:25 +0200
+      * Revert "[CONC-429](https://jira.mariadb.org/browse/CONC-429): Don't allow to load unknown authentication plugins"
+    * [Revision #783fd10](https://github.com/mariadb-corporation/mariadb-connector-c/commit/783fd10)\
+      2019-07-24 15:22:24 +0200
+      * ed25519
+    * [Revision #59d214e](https://github.com/mariadb-corporation/mariadb-connector-c/commit/59d214e)\
+      2019-07-23 17:51:55 +0200
+      * Merge branch '3.1' of [mariadb-connector-c](https://github.com/MariaDB/mariadb-connector-c) into 3.1
+    * [Revision #158a2d7](https://github.com/mariadb-corporation/mariadb-connector-c/commit/158a2d7)\
+      2019-07-22 09:40:53 +0200
+      * \[MENT-26] Adding Azure CI testing
+    * [Revision #73c4cde](https://github.com/mariadb-corporation/mariadb-connector-c/commit/73c4cde)\
+      2019-07-23 17:49:59 +0200
+      * Fixed typo in CMakeLists.txt
+    * [Revision #acc270b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/acc270b)\
+      2019-07-22 07:27:48 +0200
+      * [CONC-429](https://jira.mariadb.org/browse/CONC-429): Don't allow to load unknown authentication plugins
+    * [Revision #5fa9c46](https://github.com/mariadb-corporation/mariadb-connector-c/commit/5fa9c46)\
+      2019-07-18 13:51:03 +0200
+      * Merge branch '3.0' into 3.1
+    * [Revision #0c20765](https://github.com/mariadb-corporation/mariadb-connector-c/commit/0c20765)\
+      2019-07-18 13:42:29 +0200
+      * Fix of memory leack in the test and end spaces.
 * [Revision #07f6f95](https://github.com/mariadb-corporation/mariadb-connector-c/commit/07f6f95)\
   2019-07-17 08:22:19 +0200
   * Fix for Windows OpenSSL build: Link crypt and ws2\_32 in case OpenSSL is a newer version which was build with capi engine support
@@ -146,5 +146,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #690f74a](https://github.com/mariadb-corporation/mariadb-connector-c/commit/690f74a)\
   2019-06-20 15:29:02 +0200
   * Fix for [MDEV-19807](https://jira.mariadb.org/browse/MDEV-19807)
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

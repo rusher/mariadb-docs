@@ -18,13 +18,13 @@ The most recent release of [MariaDB 10.11](mariadb-community-server-release-note
 
 The most recent release of [MariaDB 10.6](mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
 
-The most recent release of [MariaDB 10.5](mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
+The most recent release of [MariaDB 10.5](mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
 ### MariaDB Connectors
 
 The most recent [_**Stable**_](mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](connectors/c/mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
-The most recent [_**Stable**_](mariadb-release-criteria.md) _**(GA)**_ release of [MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j) is:[**MariaDB Connector/J 3.5.3**](connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes.md)
+The most recent [_**Stable**_](mariadb-release-criteria.md) _**(GA)**_ release of [MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j) is:[**MariaDB Connector/J 3.5.3**](connectors/java/3.5/mariadb-connector-j-3-5-3-release-notes.md)
 
 The most recent [_**Stable (GA)**_](mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) is:[**MariaDB Connector/Node.js 3.4.2**](connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
 
@@ -35,5 +35,7 @@ The most recent [_**Stable**_](mariadb-release-criteria.md) _**(GA)**_ release o
 ## See Also
 
 * [MariaDB server release schedule](https://jira.mariadb.org/secure/Dashboard.jspa). The table on the right contains dates for the next MariaDB server releases
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

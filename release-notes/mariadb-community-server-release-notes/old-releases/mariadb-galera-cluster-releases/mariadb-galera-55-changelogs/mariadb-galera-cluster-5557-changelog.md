@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 **Release date:** 26 Jul 2017
 
 For the highlights of this release, see the[release notes](../mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes.md). For changes in\
-MariaDB, see the [MariaDB 5.5.57 Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5557-changelog.md).
+MariaDB, see the [MariaDB 5.5.57 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5557-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
@@ -65,5 +65,9 @@ modified in that revision.
 * [Revision #9df17790f2](https://github.com/MariaDB/server/commit/9df17790f2)\
   2017-05-03 13:10:17 -0400
   * bump the VERSION
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

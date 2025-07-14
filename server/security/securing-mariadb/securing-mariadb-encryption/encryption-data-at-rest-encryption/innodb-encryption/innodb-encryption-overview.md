@@ -36,7 +36,7 @@ For more information on system variables for encryption and other features, see 
 To create encrypted tables, specify the table options `ENCRYPTED=YES` and `ENCRYPTION_KEY_ID=` with a corresponding key id;
 
 ```sql
-CREATE TABLE t (i int primary key) ENGINE=InnoDB ENCRYPTED=YES ENCRYPTION_KEY_ID=2;
+CREATE TABLE t (i INT PRIMARY KEY) ENGINE=InnoDB ENCRYPTED=YES ENCRYPTION_KEY_ID=2;
 ```
 
 ## Finding Encrypted Tables

@@ -2,20 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 YEAR(date)
 ```
 
 ## Description
 
-Returns the year for the given date, in the range 1000 to 9999, or 0 for the\
-"zero" date.
+Returns the year for the given date, in the range 1000 to 9999, or 0 for the "zero" date.
 
 `SQL_TSI_YEAR` is a synonym for `YEAR`:
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (d DATETIME);
 INSERT INTO t1 VALUES
     ("2007-01-30 21:31:07"),
@@ -26,7 +25,7 @@ INSERT INTO t1 VALUES
     ("2004-10-07 11:19:34");
 ```
 
-```
+```sql
 SELECT * FROM t1;
 +---------------------+
 | d                   |
@@ -49,7 +48,7 @@ SELECT * FROM t1 WHERE YEAR(d) = 2011;
 +---------------------+
 ```
 
-```
+```sql
 SELECT YEAR('1987-01-01');
 +--------------------+
 | YEAR('1987-01-01') |
@@ -60,14 +59,14 @@ SELECT YEAR('1987-01-01');
 
 ### YEAR Format
 
-```
+```sql
 CREATE TABLE year_format_example (
   description VARCHAR(30),
   example YEAR
 );
 ```
 
-```
+```sql
 INSERT INTO year_format_example VALUES
   ('4-digit numeric year', 1966),
   ('2-digit numeric year', 66),
@@ -77,7 +76,7 @@ INSERT INTO year_format_example VALUES
 
 The resulting output would look like this:
 
-```
+```sql
 SELECT * FROM year_format_example;
 
 +----------------------+---------+
@@ -92,14 +91,14 @@ SELECT * FROM year_format_example;
 
 ### YEAR Range
 
-```
+```sql
 CREATE TABLE year_range_example (
   description VARCHAR(30),
   example YEAR
 );
 ```
 
-```
+```sql
 INSERT INTO year_range_example VALUES
   ('minimum', 1901),
   ('maximum', 2155),
@@ -107,21 +106,21 @@ INSERT INTO year_range_example VALUES
   ('above maximum', 2156);
 ```
 
-If SQL\_MODE is strict (the default), the example above generates the following error and no values are inserted:
+If `SQL_MODE` is strict (the default), the example above generates the following error and no values are inserted:
 
-```
+```sql
 ERROR 1264 (22003): Out of range value for column 'example' at row 3
 ```
 
-If SQL\_MODE is not strict, the example above generates a warning and (possibly modified) values are inserted:
+If `SQL_MODE` is not strict, the example above generates a warning and (possibly modified) values are inserted:
 
-```
+```sql
 Warning (sql 1264): Out of range value for column 'example' at row 3
 Warning (sql 1264): Out of range value for column 'example' at row 4
 The resulting data would look like this:
 ```
 
-```
+```sql
 SELECT * FROM year_range_example;
 
 +---------------+---------+
@@ -136,14 +135,14 @@ SELECT * FROM year_range_example;
 
 ### Zero YEAR
 
-```
+```sql
 CREATE TABLE year_zero_example (
   description VARCHAR(30),
   example YEAR
 );
 ```
 
-```
+```sql
 INSERT INTO year_zero_example VALUES
   ('4-digit numeric zero', 0000),
   ('3-digit numeric zero', 000),
@@ -157,7 +156,7 @@ INSERT INTO year_zero_example VALUES
 
 The resulting data would look like this:
 
-```
+```sql
 SELECT * FROM year_zero_example;
 
 +----------------------+---------+
@@ -178,6 +177,6 @@ SELECT * FROM year_zero_example;
 
 * [YEAR data type](../../data-types/date-and-time-data-types/year-data-type.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

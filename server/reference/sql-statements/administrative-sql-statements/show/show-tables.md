@@ -2,14 +2,22 @@
 
 ## Syntax
 
-```
+```sql
 SHOW [FULL] TABLES [FROM db_name]
     [LIKE 'pattern' | WHERE expr]
 ```
 
 ## Description
 
-`SHOW TABLES` lists the tables (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-`TEMPORARY` tables are shown), [sequences](../../../sql-structure/sequences/) and [views](../../../../server-usage/views/) in a given database.
+{% tabs %}
+{% tab title="Current" %}
+`SHOW TABLES` lists the tables, [sequences](../../../sql-structure/sequences/) and [views](../../../../server-usage/views/) in a given database.
+{% endtab %}
+
+{% tab title="< 11.2.0" %}
+`SHOW TABLES` lists the tables (only non-`TEMPORARY` tables are shown), [sequences](../../../sql-structure/sequences/) and [views](../../../../server-usage/views/) in a given database.
+{% endtab %}
+{% endtabs %}
 
 The `LIKE` clause, if present on its own, indicates which table names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md). For example, when searching for tables in the `test` database, the column name for use in the `WHERE` and `LIKE` clauses will be `Tables_in_test`
 
@@ -17,7 +25,7 @@ The `FULL` modifier is supported such that `SHOW FULL TABLES` displays a second 
 
 You can also get this information using:
 
-```
+```bash
 mariadb-show db_name
 ```
 
@@ -29,7 +37,7 @@ The [information\_schema.TABLES](../system-tables/information-schema/information
 
 ## Examples
 
-```
+```sql
 SHOW TABLES;
 +----------------------+
 | Tables_in_test       |
@@ -45,7 +53,7 @@ SHOW TABLES;
 
 Showing the tables beginning with _a_ only.
 
-```
+```sql
 SHOW TABLES WHERE Tables_in_test LIKE 'a%';
 +----------------------+
 | Tables_in_test       |
@@ -59,7 +67,7 @@ SHOW TABLES WHERE Tables_in_test LIKE 'a%';
 
 Showing tables and table types:
 
-```
+```sql
 SHOW FULL TABLES;
 +----------------+------------+
 | Tables_in_test | Table_type |
@@ -70,13 +78,12 @@ SHOW FULL TABLES;
 +----------------+------------+
 ```
 
-Showing temporary tables:\
-<= [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111)
+Showing temporary tables: <= [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111)
 
-```
-CREATE TABLE t (t int(11));
-CREATE TEMPORARY TABLE t (t int(11));
-CREATE TEMPORARY TABLE te (t int(11));
+```sql
+CREATE TABLE t (t INT(11));
+CREATE TEMPORARY TABLE t (t INT(11));
+CREATE TEMPORARY TABLE te (t INT(11));
 
 SHOW TABLES;
 +----------------+
@@ -88,10 +95,10 @@ SHOW TABLES;
 
 From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes):
 
-```
-CREATE TABLE t (t int(11));
-CREATE TEMPORARY TABLE t (t int(11));
-CREATE TEMPORARY TABLE te (t int(11));
+```sql
+CREATE TABLE t (t INT(11));
+CREATE TEMPORARY TABLE t (t INT(11));
+CREATE TEMPORARY TABLE te (t INT(11));
 
 SHOW TABLES;
 +----------------+
@@ -108,6 +115,6 @@ SHOW TABLES;
 * [SHOW TABLE STATUS](show-table-status.md)
 * The [information\_schema.TABLES](../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

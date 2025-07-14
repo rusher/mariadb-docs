@@ -33,7 +33,7 @@ can use`[ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-sta
 to optimize one or more partitions.
 
 You can use `OPTIMIZE TABLE` to reclaim the unused\
-space and to defragment the data file. With other storage engines, `OPTIMIZE TABLE` does nothing by default, and returns this message: " The storage engine for the table doesn't support optimize". However, if the server has been started with the `--skip-new` option, `OPTIMIZE TABLE` is linked to [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md), and recreates the table. This operation frees the unused space and updates index statistics.
+space and to defragment the data file. With other storage engines, `OPTIMIZE TABLE` does nothing by default, and returns this message: " The storage engine for the table doesn't support optimize". However, if the server has been started with the `--skip-new` option, `OPTIMIZE TABLE` is linked to [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/), and recreates the table. This operation frees the unused space and updates index statistics.
 
 The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/optimizing-tables/broken-reference/README.md) for this statement.
 

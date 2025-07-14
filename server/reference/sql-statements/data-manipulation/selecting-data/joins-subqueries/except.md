@@ -1,12 +1,22 @@
-# except
+# EXCEPT
 
 ## EXCEPT
 
-The result of `EXCEPT` is all records of the left `SELECT` result set except records which are in right `SELECT` result set, i.e. it is subtraction of two result sets. From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), `MINUS` is a synonym when [SQL\_MODE=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md) is set.
+The result of `EXCEPT` contains all records of the left `SELECT` result set except records which are in right `SELECT` result set. In other words, it is the subtraction of two result sets.
+
+{% tabs %}
+{% tab title="Current" %}
+`MINUS` is a synonym when [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set.
+{% endtab %}
+
+{% tab title="< 10.6.1" %}
+`MINUS` is a synonym is not available.
+{% endtab %}
+{% endtabs %}
 
 ## Syntax
 
-```
+```sql
 SELECT ...
 (INTERSECT [ALL | DISTINCT] | EXCEPT [ALL | DISTINCT] | UNION [ALL | DISTINCT]) 
   SELECT ...
@@ -19,9 +29,9 @@ SELECT ...
 | FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } { ONLY | WITH TIES } ]
 ```
 
-Please note:
-
-* Brackets for explicit operation precedence are not supported; use a subquery in the `FROM` clause as a workaround).
+{% hint style="warning" %}
+Brackets for explicit operation precedence are not supported; use a subquery in the `FROM` clause as a workaround.
+{% endhint %}
 
 ### Description
 
@@ -41,25 +51,33 @@ The result of `EXCEPT` is all records of the left `SELECT` result except records
 
 Parentheses can be used to specify precedence. Before this, a syntax error would be returned.
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
 #### ALL/DISTINCT
 
-`EXCEPT ALL` and `EXCEPT DISTINCT` were introduced in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes). The `ALL` operator leaves duplicates intact, while the `DISTINCT` operator removes duplicates. `DISTINCT` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105).
+{% tabs %}
+{% tab title="Current" %}
+`EXCEPT ALL` and `EXCEPT DISTINCT` . The `ALL` operator leaves duplicates intact, while the `DISTINCT` operator removes duplicates. `DISTINCT` is the default behavior if neither operator is supplied.
+{% endtab %}
+
+{% tab title="< 10.5" %}
+Only `EXCEPT DISTINCT` is available.
+{% endtab %}
+{% endtabs %}
 
 ### Examples
 
 Show customers which are not employees:
 
-```
+```sql
 (SELECT e_name AS name, email FROM customers)
 EXCEPT
 (SELECT c_name AS name, email FROM employees);
 ```
 
-Difference between [UNION](union.md), EXCEPT and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes).
+Difference between [UNION](union.md), EXCEPT and [INTERSECT](intersect.md):
 
-```
+```sql
 CREATE TABLE seqs (i INT);
 INSERT INTO seqs VALUES (1),(2),(2),(3),(3),(4),(5),(6);
 
@@ -124,9 +142,9 @@ SELECT i FROM seqs WHERE i <= 3 INTERSECT ALL SELECT i FROM seqs WHERE i>=3;
 +------+
 ```
 
-Parentheses for specifying precedence
+Parentheses for specifying precedence:
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (a INT);
 CREATE OR REPLACE TABLE t2 (b INT);
 CREATE OR REPLACE TABLE t3 (c INT);
@@ -159,7 +177,7 @@ INSERT INTO t3 VALUES (1),(6);
 
 Here is an example that makes use of the [SEQUENCE](../../../../../server-usage/storage-engines/sequence-storage-engine.md) storage engine and the [VALUES](../../../../sql-structure/sql-language-structure/table-value-constructors.md) statement, to generate a numeric sequence and remove some arbitrary numbers from it:
 
-```
+```sql
 (SELECT seq FROM seq_1_to_10) EXCEPT VALUES (2), (3), (4);
 +-----+
 | seq |

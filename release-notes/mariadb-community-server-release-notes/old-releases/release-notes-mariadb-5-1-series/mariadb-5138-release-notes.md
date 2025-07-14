@@ -2,21 +2,17 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.38) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5138-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.38) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5138-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 29 Oct 2009
 
-See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md) page for a high-level\
-overview of the differences between MariaDB and MySQL.
+See the [MariaDB versus MySQL](https://mariadb.com/docs/release-notes/compatibility-and-differences/mariadb-vs-mysql-compatibility) page for a high-level overview of the differences between MariaDB and MySQL.
 
-[MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) 5.1.38 Beta is based on [MySQL](https://mysql.com) 5.1.38\
-and XtraDB 1.0.3-6.
+[MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) 5.1.38 Beta is based on [MySQL](https://mysql.com) 5.1.38 and XtraDB 1.0.3-6.
 
-MariaDB will be kept up to date with the latest MySQL release from the same\
-branch.
+MariaDB will be kept up to date with the latest MySQL release from the same branch.
 
-In most respects MariaDB will work exactly as MySQL; all commands, interfaces,\
-libraries and APIs that exist in MySQL also exist in MariaDB.
+In most respects MariaDB will work exactly as MySQL; all commands, interfaces,libraries and APIs that exist in MySQL also exist in MariaDB.
 
 For 5.1.38, the main differences between MariaDB and MySQL are:
 
@@ -124,6 +120,8 @@ patch from [Percona](https://www.percona.com/).
 
 See [TIME\_MS column in INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist) for details.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

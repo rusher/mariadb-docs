@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 RANK() OVER (
   [ PARTITION BY partition_expression ]
   [ ORDER BY order_list ]
@@ -17,7 +17,7 @@ RANK() is a [window function](./) that displays the number of a given row, start
 
 The distinction between [DENSE\_RANK()](dense_rank.md), RANK() and [ROW\_NUMBER()](row_number.md):
 
-```
+```sql
 CREATE TABLE student(course VARCHAR(10), mark int, name varchar(10));
 
 INSERT INTO student VALUES 

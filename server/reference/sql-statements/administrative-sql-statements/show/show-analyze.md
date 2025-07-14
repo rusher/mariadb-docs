@@ -1,20 +1,18 @@
 # SHOW ANALYZE
 
-**MariaDB starting with** [**10.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
-
-SHOW ANALYZE was added in [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109).
+`SHOW ANALYZE` was added in [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109).
 
 ## Syntax
 
-```
+```sql
 SHOW ANALYZE [FORMAT=JSON] FOR <connection_id>;
 ```
 
 ## Description
 
-`SHOW ANALYZE` allows one to retrieve [ANALYZE](../analyze-and-explain-statements/analyze-statement.md)-like output from a currently running statement. The command
+`SHOW ANALYZE` allows one to retrieve [ANALYZE](../analyze-and-explain-statements/analyze-statement.md)-like output from a currently running statement. The statement
 
-```
+```sql
 SHOW ANALYZE [FORMAT=JSON] FOR <connection_id>;
 ```
 
@@ -22,9 +20,9 @@ connects to the query running in connection `connection_id`, gets information ab
 
 This is similar to the [SHOW EXPLAIN](show-explain.md) command, the difference being that `SHOW ANALYZE` also produces runtime statistics information.
 
-## Intended Usage
+## Use Case
 
-Imagine you're trying to troubleshoot a query that never finishes. Since it doesn't finish, it is not possible to get [ANALYZE](../analyze-and-explain-statements/analyze-statement.md) output for it. With `SHOW ANALYZE`, you can get the runtime statistics without waiting for the query to finish.
+You're trying to troubleshoot a query that never finishes. Since it doesn't finish, it is not possible to get [ANALYZE](../analyze-and-explain-statements/analyze-statement.md) output for it. With `SHOW ANALYZE`, you can get the runtime statistics without waiting for the query to finish.
 
 ## Examples
 
@@ -32,16 +30,16 @@ Imagine you're trying to troubleshoot a query that never finishes. Since it does
 
 Consider the tables `orders` and `customer` and a join query finding the total amount of orders from customers with Gold status:
 
-```
-explain format=json
-select sum(orders.amount)
-from
-  customer join orders on customer.cust_id=orders.cust_id
-where
+```sql
+EXPLAIN format=json
+SELECT sum(orders.amount)
+FROM
+  customer JOIN orders ON customer.cust_id=orders.cust_id
+WHERE
   customer.status='GOLD';
 ```
 
-The EXPLAIN for this query looks like this:
+The output of this query looks like this:
 
 ```
 +------+-------------+----------+------+---------------+---------+---------+------------------+--------+-------------+
@@ -52,18 +50,17 @@ The EXPLAIN for this query looks like this:
 +------+-------------+----------+------+---------------+---------+---------+------------------+--------+-------------+
 ```
 
-We run the SELECT, and it has been running for 30 seconds.\
-Let's try `SHOW ANALYZE`:
+We run the SELECT, and it has been running for 30 seconds. Let's try `SHOW ANALYZE`:
 
-```
-show analyze format=json for 3;
+```sql
+SHOW ANALYZE format=json FOR 3;
 | {
   "r_query_time_in_progress_ms": 32138,
 ```
 
-^ this shows how long the query has been running.
+The statement shows how long the query has been running.
 
-```
+```json
 "query_block": {
     "select_id": 1,
     "r_loops": 1,
@@ -78,9 +75,9 @@ show analyze format=json for 3;
           "r_rows": 110544,
 ```
 
-^ `rows` shows the number of rows expected. `r_rows` in this example shows how many rows were processed so far (110K out of expected 200K). `r_loops` above shows we're doing the first table scan (which is obvious for this query plan).
+`rows` shows the number of rows expected. `r_rows` in shows how many rows were processed so far (110K out of expected 200K). `r_loops` shows we're doing the first table scan (which is obvious for this query plan).
 
-```
+```json
 "filtered": 100,
           "r_filtered": 9.538283398,
           "attached_condition": "customer.`status` = 'GOLD'"
@@ -100,11 +97,11 @@ show analyze format=json for 3;
           "r_rows": 99.99222307,
 ```
 
-^ here, `rows: 1` shows the optimizer was expecting 1 order per customer. But `r_rows: 99.9` shows that execution has found on average 100 orders per customer. This may be the reason the query is slower than expected!
+`rows: 1` shows the optimizer was expecting 1 order per customer. But `r_rows: 99.9` shows that it has found on average 100 orders per customer. This may be the reason the query is slower than expected.
 
 The final chunk of the output doesn't have anything interesting but here it is:
 
-```
+```json
 "filtered": 100,
           "r_filtered": 100
         }
@@ -119,11 +116,11 @@ The final chunk of the output doesn't have anything interesting but here it is:
 Regular SELECT queries collect row count information, so `SHOW ANALYZE` can display it. However, detailed timing information is not collected, as collecting it may have CPU overhead. But if the target query is collecting timing information, `SHOW ANALYZE` will display it. How does one get the target query to collect timing information? Currently there is one way: if the target is running `ANALYZE`, it IS collecting timing information.\
 Re-running the previous example:
 
-```
+```sql
 Connection 1> ANALYZE SELECT ... ;
 ```
 
-```
+```sql
 Connection 2> SHOW ANALYZE FORMAT=JSON FOR <connection_id>;
 ANALYZE
 {
@@ -144,10 +141,10 @@ ANALYZE
           "r_other_time_ms": 46.355,
 ```
 
-^ Now, `ANALYZE` prints timing information in members named `r_..._time_ms`.\
-One can see that so far, out of 30 seconds, only 232 millisecond were spent in reading the customer table. The bottleneck is elsewhere...
+`ANALYZE` prints timing information in members named `r_..._time_ms`.\
+You can see that, so far, out of 30 seconds, only 232 millisecond were spent in reading the customer table. The bottleneck is elsewhere...
 
-```
+```json
 "filtered": 100,
           "r_filtered": 9.085950143,
           "attached_condition": "customer.`status` = 'GOLD'"
@@ -169,10 +166,10 @@ One can see that so far, out of 30 seconds, only 232 millisecond were spent in r
           "r_other_time_ms": 986.842,
 ```
 
-^ 29.4 seconds were spent reading the orders table (and 0.986 seconds in processing the obtained rows).\
+29.4 seconds were spent reading the orders table (and 0.986 seconds in processing the obtained rows).\
 Now we can see where the query is spending time.
 
-```
+```json
 "filtered": 100,
           "r_filtered": 100
         }

@@ -1,11 +1,8 @@
-
-# FIRST_VALUE
-
+# FIRST\_VALUE
 
 ## Syntax
 
-
-```
+```sql
 FIRST_VALUE(expr) OVER (
   [ PARTITION BY partition_expression ]
   [ ORDER BY order_list ]
@@ -14,14 +11,11 @@ FIRST_VALUE(expr) OVER (
 
 ## Description
 
-
 `FIRST_VALUE` returns the first result from an ordered set, or NULL if no such result exists.
-
 
 ## Examples
 
-
-```
+```sql
 CREATE TABLE t1 (
   pk int primary key,
   a int,
@@ -68,7 +62,7 @@ ORDER BY pk DESC;
 +----+-----------+----------+------------+-----------+
 ```
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (i int);
 INSERT INTO t1 VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10);
 
@@ -101,11 +95,8 @@ FROM t1;
 
 ## See Also
 
-
-* [LAST_VALUE](../../secondary-functions/information-functions/last_value.md)
-
+* [LAST\_VALUE](../../secondary-functions/information-functions/last_value.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

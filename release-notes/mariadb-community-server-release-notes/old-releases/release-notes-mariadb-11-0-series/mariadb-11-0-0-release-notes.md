@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.0](what-is-mariadb-110.md) is:[**MariaDB 11.0.6**](mariadb-11-0-6-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.0.6/)
 
-[Download](https://downloads.mariadb.org/mariadb/11.0.0)[Release Notes](mariadb-11-0-0-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-0-series/)[Overview of 11.0](what-is-mariadb-110.md)
+[Download](https://downloads.mariadb.org/mariadb/11.0.0)[Release Notes](mariadb-11-0-0-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-0-series/)[Overview of 11.0](what-is-mariadb-110.md)
 
 **Release date:** 27 Dec 2022
 
@@ -20,8 +20,7 @@ Thanks, and enjoy MariaDB!
 
 ## New optimizer cost model
 
-This is the main change that practically defines this release. Read about new optimizer cost model\
-on [its own page](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/broken-reference/README.md).
+This is the main change that practically defines this release. Read about new optimizer cost model on its own page
 
 ## Galera
 
@@ -45,10 +44,8 @@ on [its own page](https://github.com/mariadb-corporation/docs-server/blob/test/r
 * [MDEV-30153](https://jira.mariadb.org/browse/MDEV-30153) ad hoc client versions are confusing
 * [MDEV-29986](https://jira.mariadb.org/browse/MDEV-29986) Set [innodb\_undo\_tablespaces=3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_undo_tablespaces) by default
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

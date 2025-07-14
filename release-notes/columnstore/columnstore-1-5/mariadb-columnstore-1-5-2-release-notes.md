@@ -92,4 +92,6 @@ In alignment to the MariaDB Corporation Engineering Policy, MariaDB Enterprise C
 
 **Note:** MariaDB Enterprise ColumnStore 1.5 has been superseded by MariaDB Enterprise ColumnStore 5 in MariaDB Enterprise Server 10.5.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

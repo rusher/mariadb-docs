@@ -26,6 +26,7 @@ MariaDB Enterprise Server 11.4.7-4 was released on 11 Jun 2025.
 * my\_getopt compares option names case sensitively ([MDEV-27126](https://jira.mariadb.org/browse/MDEV-27126))
 * Systemd: Restart on OOM ([MDEV-36009](https://jira.mariadb.org/browse/MDEV-36009))
 * [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.22
+* Support has been added for Oracle Linux 8 and 9
 
 ### Issues Fixed <a href="#issues-fixed" id="issues-fixed"></a>
 
@@ -182,3 +183,7 @@ Some components of MariaDB Enterprise Server are supported on a subset of platfo
 ### Upgrade Instructions <a href="#upgrade-instructions" id="upgrade-instructions"></a>
 
 [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrades/upgrade-to-mariadb-enterprise-server-11.4)
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formid="4316" formId="4316" %}

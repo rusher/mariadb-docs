@@ -75,7 +75,7 @@ MariaDB Enterprise Server 10.6.22-18 was released on 11 Jun 2025.
 * ([MDEV-36478](https://jira.mariadb.org/browse/MDEV-36478)) spider basic\_sql tests with view protocol fail with mismatching found\_rows() output
 * ([MDEV-36633](https://jira.mariadb.org/browse/MDEV-36633)) spider/bugfix.mdev\_33434 fails with --view-protocol
 * ([MDEV-36476](https://jira.mariadb.org/browse/MDEV-36476)) Spider tests hanging with --view-protocol
-* ([MDEV-36304](https://jira.mariadb.org/browse/MDEV-36304)) mariabackup.partial test fails with InnoDB: Missing FILE\_CREATE, FILE\_DELETE or FILE\_MODIFY before FILE\_CHECKPOINT
+* ([MDEV-36304](https://jira.mariadb.org/browse/MDEV-36304)) mariadb-backup.partial test fails with InnoDB: Missing FILE\_CREATE, FILE\_DELETE or FILE\_MODIFY before FILE\_CHECKPOINT
 * ([MDEV-36078](https://jira.mariadb.org/browse/MDEV-36078)) PCRE2 10.45 breaks main.func\_regexp\_pcre due to change in PCRE
 * ([MDEV-35727](https://jira.mariadb.org/browse/MDEV-35727)) main.mysql-interactive fails in buildbot on debian
 * ([MDEV-35653](https://jira.mariadb.org/browse/MDEV-35653)) Assertion \`commit\_trx' failed in int innobase\_commit(handlerton\*, THD\*, bool)
@@ -109,7 +109,7 @@ MariaDB Enterprise Server 10.6.22-18 was released on 11 Jun 2025.
 * ([MDEV-36217](https://jira.mariadb.org/browse/MDEV-36217)) New MY\_RELAX\_CPU dependency on riscv\_pause breaks riscv64 build (Regression from [MDEV-35827](https://jira.mariadb.org/browse/MDEV-35827))
 * ([MDEV-33295](https://jira.mariadb.org/browse/MDEV-33295)) The test innodb.doublewrite occasionally fails
 * ([MDEV-36208](https://jira.mariadb.org/browse/MDEV-36208)) dbug\_print\_table\_row is broken: prints empty rows in debugger
-* ([MDEV-36270](https://jira.mariadb.org/browse/MDEV-36270)) mariabackup.incremental\_compressed fails in 10.11+
+* ([MDEV-36270](https://jira.mariadb.org/browse/MDEV-36270)) mariadb-backup.incremental\_compressed fails in 10.11+
 * ([MDEV-34489](https://jira.mariadb.org/browse/MDEV-34489)) innodb.innodb\_row\_lock\_time\_ms fails
 * ([MDEV-36156](https://jira.mariadb.org/browse/MDEV-36156)) building MSAN -stdlib=libc++ test requires -fsanitize=memory
 * ([MDEV-26652](https://jira.mariadb.org/browse/MDEV-26652)) xa transactions binlogged in wrong order
@@ -127,3 +127,7 @@ MariaDB Enterprise Server 10.6.22-18 was released on 11 Jun 2025.
 * ([MDEV-35874](https://jira.mariadb.org/browse/MDEV-35874)) Unexpected error 1264 'Out of Range Value for Column' when inserting into ... select ... from a spider table
 * ([MDEV-36307](https://jira.mariadb.org/browse/MDEV-36307)) group by handler missing constant fields when selecting from a view
 * ([MDEV-36335](https://jira.mariadb.org/browse/MDEV-36335)) Tests calling the udf spider\_copy\_tables fail with --view-protocol
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formid="4316" formId="4316" %}

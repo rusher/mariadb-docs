@@ -1,6 +1,6 @@
 # MariaDB 11.4.7 Release Notes
 
-[Download](https://mariadb.com/downloads/community/)Release NotesChangelogOverview of 11.4
+<a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="mariadb-11.4.7-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11.4.7-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.7/)
 
@@ -10,7 +10,7 @@ MariaDB 11.4 is the current long-term series of MariaDB and will be maintained u
 
 MariaDB 11.4.7 is a _**Stable (GA)**_ release.
 
-**For an overview of MariaDB 11.4 see theWhat is MariaDB 11.4? page.**
+**For an overview of MariaDB 11.4 see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -18,7 +18,7 @@ Thanks, and enjoy MariaDB!
 
 #### Storage Engines
 
-[**InnoDB**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/)
+[**InnoDB**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb)
 
 * Huge performance drop after update ([MDEV-36759](https://jira.mariadb.org/browse/MDEV-36759))
 * InnoDB buffer pool reserves all assigned memory even with no/minimum load ([MDEV-36780](https://jira.mariadb.org/browse/MDEV-36780))
@@ -36,26 +36,13 @@ Thanks, and enjoy MariaDB!
 
 * As per the MariaDB Deprecation Policy, this will be the last release of MariaDB 11.4 for Ubuntu 20.04 Focal
 
-#### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/security):
-  * CVE-\`-\`\`\`
-
 ### Changelog
 
 For a complete list of changes made in MariaDB 11.4.7, with links to detailed\
-information on each push, see the changelog.
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11.4.7-changelog.md).
 
-### Contributors
+{% include "../../.gitbook/includes/announce.md" %}
 
-For a full list of contributors to MariaDB 11.4.7, see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-4-5-10-11-11-10-6-21-and-10-5-28-now-available/).
-
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-which-include-mariadb)\
-page.
-
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

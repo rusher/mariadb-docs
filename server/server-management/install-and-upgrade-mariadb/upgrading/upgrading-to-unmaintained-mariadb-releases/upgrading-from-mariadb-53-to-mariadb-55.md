@@ -3,7 +3,7 @@
 ## What you need to know
 
 There are no changes in table or index formats between [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and [MariaDB\
-5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/broken-reference/README.md), so on most servers the upgrade should be painless.
+5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), so on most servers the upgrade should be painless.
 
 ### How to upgrade
 
@@ -33,27 +33,27 @@ However, there are some things that have changed which could affect an upgrade:
 
 #### XtraDB options that have changed default values
 
-| Option                                                                                                                                                            | Old value | New value |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------- |
-| [innodb\_change\_buffering](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)      | inserts   | all       |
-| [innodb\_flush\_neighbor\_pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) | 1         | area      |
+| Option                                                                                                                                   | Old value | New value |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------- |
+| [innodb\_change\_buffering](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering)          | inserts   | all       |
+| [innodb\_flush\_neighbor\_pages](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages) | 1         | area      |
 
 #### Options that have been removed or renamed
 
-Percona, the provider of [XtraDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md), does not provide all earlier XtraDB features in the 5.5 code base. Because of that, [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) can't provide them either. The following options are not supported by XtraDB 5.5. If you are using them in any of your my.cnf files, you should remove them before upgrading to 5.5.
+Percona, the provider of [XtraDB](../../../../server-usage/storage-engines/innodb/innodb-unmaintained/about-xtradb.md), does not provide all earlier XtraDB features in the 5.5 code base. Because of that, [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) can't provide them either. The following options are not supported by XtraDB 5.5. If you are using them in any of your my.cnf files, you should remove them before upgrading to 5.5.
 
-* [innodb\_adaptive\_checkpoint](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use[innodb\_adaptive\_flushing\_method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb\_auto\_lru\_dump](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb\_buffer\_pool\_restore\_at\_startup](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) instead (and [innodb\_buffer\_pool\_load\_at\_startup](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)).
-* [innodb\_blocking\_lru\_restore](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use[innodb\_blocking\_buffer\_pool\_restore](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb\_enable\_unsafe\_group\_commit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb\_expand\_import](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use[innodb\_import\_table\_from\_xtrabackup](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb\_extra\_rsegments](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb\_rollback\_segments](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb\_extra\_undoslots](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
+* [innodb\_adaptive\_checkpoint](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint); Use [innodb\_adaptive\_flushing\_method](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method) instead.
+* [innodb\_auto\_lru\_dump](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump); Use [innodb\_buffer\_pool\_restore\_at\_startup](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup) instead (and [innodb\_buffer\_pool\_load\_at\_startup](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)).
+* [innodb\_blocking\_lru\_restore](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use[innodb\_blocking\_buffer\_pool\_restore](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore) instead.
+* [innodb\_enable\_unsafe\_group\_commit](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit)
+* [innodb\_expand\_import](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb\_import\_table\_from\_xtrabackup](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup) instead.
+* [innodb\_extra\_rsegments](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments); Use [innodb\_rollback\_segments](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) instead.
+* [innodb\_extra\_undoslots](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots)
 * [innodb\_fast\_recovery](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
 * [innodb\_flush\_log\_at\_trx\_commit\_session](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
 * [innodb\_overwrite\_relay\_log\_info](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb\_pass\_corrupt\_table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use[innodb\_corrupt\_table\_action](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb\_use\_purge\_thread](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
+* [innodb\_pass\_corrupt\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table); Use [innodb\_corrupt\_table\_action](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action) instead.
+* [innodb\_use\_purge\_thread](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread)
 * [xtradb\_enhancements](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
 
 ## Notes
@@ -96,7 +96,7 @@ yum update
 
 ## See also
 
-* [The features in MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/broken-reference/README.md)
+* [The features in MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 * [Perconas guide of how to upgrade to 5.5](https://www.percona.com/doc/percona-server/5.5/upgrading_guide_51_55.html)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

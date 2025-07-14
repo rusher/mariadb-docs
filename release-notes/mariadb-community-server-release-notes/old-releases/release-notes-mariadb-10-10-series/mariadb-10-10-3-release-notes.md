@@ -1,6 +1,6 @@
 # MariaDB 10.10.3 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.10.3)[Release Notes](mariadb-10-10-3-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-10-series/mariadb-10-10-3-changelog.md)[Overview of 10.10](what-is-mariadb-1010.md)
+[Download](https://downloads.mariadb.org/mariadb/10.10.3)[Release Notes](mariadb-10-10-3-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-10-series/mariadb-10-10-3-changelog.md)[Overview of 10.10](what-is-mariadb-1010.md)
 
 **Release date:** 6 Feb 2023
 
@@ -15,7 +15,7 @@ Thanks, and enjoy MariaDB!
 
 ## Notable Items
 
-* As mentioned in the [10.10.2 release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/broken-reference/README.md), our Yum/DNF/Zypper repositories for Red Hat Enterprise Linux, CentOS, Fedora, openSUSE, and SUSE are changing with this release to being signed with a new GPG key with SHA2 digest algorithms instead of SHA1. See [this blog post](https://mariadb.org/new-gpg-release-key-rpms/) and the [GPG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/gpg) page for more details.
+* As mentioned in the [10.10.2 release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-2-release-notes), our Yum/DNF/Zypper repositories for Red Hat Enterprise Linux, CentOS, Fedora, openSUSE, and SUSE are changing with this release to being signed with a new GPG key with SHA2 digest algorithms instead of SHA1. See [this blog post](https://mariadb.org/new-gpg-release-key-rpms/) and the [GPG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/gpg) page for more details.
 
 ### InnoDB
 
@@ -66,16 +66,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.10.3](mariadb-10-10-3-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-10-series/mariadb-10-10-3-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-10-series/mariadb-10-10-3-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.10.3](mariadb-10-10-3-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-10-3-10-9-5-10-8-7-10-7-8-10-6-12-10-5-19-10-4-28-and-10-3-38-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

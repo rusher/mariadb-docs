@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 MultiLineString(ls1,ls2,...)
 ```
 

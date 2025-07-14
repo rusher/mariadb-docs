@@ -29,7 +29,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 16 | 10.0.28 (inbuilt) | Antelope | - | - | => | 10.2.7 (inbuilt) |  | - | - | - | OK |  |
 | 2 | normal | 16 | 10.0.28 (inbuilt) | Barracuda | - | - | => | 10.2.7 (inbuilt) |  | - | - | - | OK |  |
 | 3 | normal | 16 | 10.0.28 (inbuilt) | Antelope | - | - | => | 10.2.7 (inbuilt) |  | on | - | - | OK |  |
@@ -72,7 +71,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 64 | 10.1.24 (inbuilt) | Antelope | - | zlib | => | 10.2.7 (inbuilt) |  | - | zlib | - | OK |  |
 | 2 | normal | 64 | 10.1.24 (inbuilt) | Barracuda | - | zlib | => | 10.2.7 (inbuilt) |  | - | zlib | - | OK |  |
 | 3 | normal | 64 | 10.1.24 (inbuilt) | Barracuda | on | zlib | => | 10.2.7 (inbuilt) |  | on | zlib | - | OK |  |
@@ -183,7 +181,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 64 | 10.2.6 (inbuilt) |  | - | zlib | => | 10.2.7 (inbuilt) |  | - | zlib | - | FAIL | KNOWN_BUGS [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094)(1) |
 | 2 | crash | 64 | 10.2.6 (inbuilt) |  | on | zlib | => | 10.2.7 (inbuilt) |  | on | zlib | - | FAIL | KNOWN_BUGS [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103)(1) |
 | 3 | crash | 64 | 10.2.6 (inbuilt) |  | - | - | => | 10.2.7 (inbuilt) |  | - | - | - | FAIL | KNOWN_BUGS [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094)(2) |
@@ -254,7 +251,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 16 | 5.6.35 (inbuilt) | Antelope | - | - | => | 10.2.7 (inbuilt) |  | - | - | - | OK |  |
 | 2 | normal | 16 | 5.6.35 (inbuilt) | Barracuda | - | - | => | 10.2.7 (inbuilt) |  | - | - | - | OK |  |
 | 3 | normal | 16 | 5.6.35 (inbuilt) | Antelope | - | - | => | 10.2.7 (inbuilt) |  | on | - | - | OK |  |
@@ -297,7 +293,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 64 | 5.7.17 (inbuilt) |  | - | - | => | 10.2.7 (inbuilt) |  | on | - | - | OK |  |
 | 2 | crash | 64 | 5.7.17 (inbuilt) |  | - | - | => | 10.2.7 (inbuilt) |  | - | - | - | OK |  |
 | 3 | crash | 8 | 5.7.17 (inbuilt) |  | - | - | => | 10.2.7 (inbuilt) |  | - | - | - | OK |  |
@@ -348,7 +343,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 16 | 10.2.7 (inbuilt) |  | on | - | => | 10.2.7 (inbuilt) |  | on | - | - | FAIL | KNOWN_BUGS [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094)(1) |
 | 2 | crash | 16 | 10.2.7 (inbuilt) |  | - | - | => | 10.2.7 (inbuilt) |  | - | - | - | FAIL | KNOWN_BUGS [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094)(3) |
 | 3 | crash | 16 | 10.2.7 (inbuilt) |  | - | zlib | => | 10.2.7 (inbuilt) |  | - | zlib | - | FAIL | KNOWN_BUGS [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094)(1) |

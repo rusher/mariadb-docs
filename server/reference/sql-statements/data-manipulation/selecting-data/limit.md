@@ -2,36 +2,46 @@
 
 ## Description
 
-Use the `LIMIT` clause to restrict the number of returned rows. When you use a single\
-integer _n_ with `LIMIT`, the first _n_ rows will be returned. Use the [ORDER BY](order-by.md)\
-clause to control which rows come first. You can also select a number of rows after an offset\
-using either of the following:
+Use the `LIMIT` clause to restrict the number of returned rows. When you use a single integer _n_ with `LIMIT`, the first _n_ rows will be returned. Use the [ORDER BY](order-by.md) clause to control which rows come first. You can also select a number of rows after an offset using either of the following:
 
-```
+```sql
 LIMIT offset, row_count
 LIMIT row_count OFFSET offset
 ```
 
-When you provide an offset _m_ with a limit _n_, the first _m_ rows will be ignored, and the\
-following _n_ rows will be returned.
+When you provide an offset _m_ with a limit _n_, the first _m_ rows will be ignored, and the following _n_ rows will be returned.
 
 Executing an [UPDATE](../changing-deleting-data/update.md) with the `LIMIT` clause is not safe for replication. `LIMIT 0` is an exception to this rule (see [MDEV-6170](https://jira.mariadb.org/browse/MDEV-6170)).
 
-There is a [LIMIT ROWS EXAMINED](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined.md) optimization which provides the\
-means to terminate the execution of [SELECT](select.md) statements which examine too\
-many rows, and thus use too many resources. See [LIMIT ROWS EXAMINED](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined.md).
+There is a [LIMIT ROWS EXAMINED](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined.md) optimization which provides the means to terminate the execution of [SELECT](select.md) statements which examine too many rows, and thus use too many resources. See [LIMIT ROWS EXAMINED](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined.md).
 
 ### Multi-Table Updates
 
-Until [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), it was not possible to use `LIMIT` (or [ORDER BY](order-by.md)) in a multi-table [UPDATE](../changing-deleting-data/update.md) statement. This restriction was lifted in [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes).
+{% tabs %}
+{% tab title="Current" %}
+It is possible to use `LIMIT` (or [ORDER BY](order-by.md)) in a multi-table [UPDATE](../changing-deleting-data/update.md) statement.
+{% endtab %}
+
+{% tab title="< 10.3.1" %}
+It is **not** possible to use `LIMIT` (or [ORDER BY](order-by.md)) in a multi-table [UPDATE](../changing-deleting-data/update.md) statement.
+{% endtab %}
+{% endtabs %}
 
 ### GROUP\_CONCAT
 
-Starting from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), it is possible to use `LIMIT` with [GROUP\_CONCAT()](../../../sql-functions/aggregate-functions/group_concat.md).
+{% tabs %}
+{% tab title="Current" %}
+It is possible to use `LIMIT` with [GROUP\_CONCAT()](../../../sql-functions/aggregate-functions/group_concat.md).
+{% endtab %}
+
+{% tab title="< 10.3.3" %}
+It is **not** possible to use `LIMIT` with [GROUP\_CONCAT()](../../../sql-functions/aggregate-functions/group_concat.md).
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
-```
+```sql
 CREATE TABLE members (name VARCHAR(20));
 INSERT INTO members VALUES('Jagdish'),('Kenny'),('Rokurou'),('Immaculada');
 
@@ -48,7 +58,7 @@ SELECT * FROM members;
 
 Select the first two names (no ordering specified):
 
-```
+```sql
 SELECT * FROM members LIMIT 2;
 +---------+
 | name    |
@@ -60,7 +70,7 @@ SELECT * FROM members LIMIT 2;
 
 All the names in alphabetical order:
 
-```
+```sql
 SELECT * FROM members ORDER BY name;
 +------------+
 | name       |
@@ -74,7 +84,7 @@ SELECT * FROM members ORDER BY name;
 
 The first two names, ordered alphabetically:
 
-```
+```sql
 SELECT * FROM members ORDER BY name LIMIT 2;
 +------------+
 | name       |
@@ -86,7 +96,7 @@ SELECT * FROM members ORDER BY name LIMIT 2;
 
 The third name, ordered alphabetically (the first name would be offset zero, so the third is offset two):
 
-```
+```sql
 SELECT * FROM members ORDER BY name LIMIT 2,1;
 +-------+
 | name  |
@@ -97,7 +107,7 @@ SELECT * FROM members ORDER BY name LIMIT 2,1;
 
 From [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), `LIMIT` can be used in a multi-table update:
 
-```
+```sql
 CREATE TABLE warehouse (product_id INT, qty INT);
 INSERT INTO warehouse VALUES (1,100),(2,100),(3,100),(4,100);
 
@@ -129,9 +139,9 @@ SELECT * FROM store;
 +------------+------+
 ```
 
-From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), `LIMIT` can be used with [GROUP\_CONCAT](../../../sql-functions/aggregate-functions/group_concat.md), so, for example, given the following table:
+When using `LIMIT`  with [GROUP\_CONCAT](../../../sql-functions/aggregate-functions/group_concat.md), you can simplify certain queries. Consider this table:
 
-```
+```sql
 CREATE TABLE d (dd DATE, cc INT);
 
 INSERT INTO d VALUES ('2017-01-01',1);
@@ -139,10 +149,11 @@ INSERT INTO d VALUES ('2017-01-02',2);
 INSERT INTO d VALUES ('2017-01-04',3);
 ```
 
-the following query:
+The following query works fine, but is rather complex:
 
-```
-SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC),",",1) FROM d;
+```sql
+SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) 
+ORDER BY cc DESC),",",1) FROM d;
 +----------------------------------------------------------------------------+
 | SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC),",",1) |
 +----------------------------------------------------------------------------+
@@ -150,10 +161,11 @@ SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC),",",1
 +----------------------------------------------------------------------------+
 ```
 
-can be more simply rewritten as:
+It can be simplified to this:
 
-```
-SELECT GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;
+```sql
+SELECT GROUP_CONCAT(CONCAT_WS(":",dd,cc) 
+ORDER BY cc DESC LIMIT 1) FROM d;
 +-------------------------------------------------------------+
 | GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) |
 +-------------------------------------------------------------+

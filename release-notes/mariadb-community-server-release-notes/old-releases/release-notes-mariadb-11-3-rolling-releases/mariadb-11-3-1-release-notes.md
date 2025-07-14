@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 11.3.2**](mariadb-11-3-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.3.2/)
 
-[Download 11.3.1](https://downloads.mariadb.org/mariadb/11.3.1/)[Release Notes](mariadb-11-3-1-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md)[Overview of 11.3](what-is-mariadb-113.md)
+[Download 11.3.1](https://downloads.mariadb.org/mariadb/11.3.1/)[Release Notes](mariadb-11-3-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md)[Overview of 11.3](what-is-mariadb-113.md)
 
 **Release date:** 21 Nov 2023
 
@@ -91,7 +91,7 @@ Thanks, and enjoy MariaDB!
 
 * Assertion \`\`state() == s\_executing || state() == s\_prepared || state() == s\_committing || state() == s\_must\_abort || state() == s\_replaying'\` failed. ([MDEV-24912](https://jira.mariadb.org/browse/MDEV-24912))
 * Assertion \`\`state() == s\_executing || state() == s\_preparing || state() == s\_prepared || state() == s\_must\_abort || state() == s\_aborting || state() == s\_cert\_failed || state() == s\_must\_replay'\` failed ([MDEV-31285](https://jira.mariadb.org/browse/MDEV-31285))
-* wsrep\_sst\_mariabackup not working on FreeBSD ([MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467))
+* wsrep\_sst\_mariadb-backup not working on FreeBSD ([MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467))
 * Galera library 26.4.16 fails with every server version ([MDEV-32024](https://jira.mariadb.org/browse/MDEV-32024))
 * Galera node remains paused after interleaving FTWRLs ([MDEV-32282](https://jira.mariadb.org/browse/MDEV-32282))
 * Failed to insert streaming client ([MDEV-32051](https://jira.mariadb.org/browse/MDEV-32051))
@@ -189,7 +189,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.3.1](mariadb-11-3-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md).
 
 ## Contributors
 
@@ -197,10 +197,8 @@ For a full list of contributors to [MariaDB 11.3.1](mariadb-11-3-1-release-notes
 
 **Do not use non-stable (non-GA) releases in production!**
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

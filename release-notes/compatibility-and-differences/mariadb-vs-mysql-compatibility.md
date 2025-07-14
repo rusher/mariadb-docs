@@ -72,7 +72,7 @@ See [Replication Compatibility Between MariaDB and MySQL](replication-compatibil
 * [Function Differences Between MariaDB 10.6 and MySQL 8.0](function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-6-and-mysql-8-0.md)
 * [System Variable Differences Between MariaDB 10.6 and MySQL 8.0](system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-10-6-and-mysql-8-0.md)
 
-### Incompatibilities between [MariaDB 10.5](../mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md) and MySQL 8.0
+### Incompatibilities between [MariaDB 10.5](../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md) and MySQL 8.0
 
 * See [Incompatibilities and Feature Differences Between MariaDB 10.5 and MySQL 8.0](incompatibilities-and-feature-differences-between-mariadb-10-5-and-mysql-8.md) for details.
 * [Function Differences Between MariaDB 10.5 and MySQL 8.0](function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-5-and-mysql-8-0.md)
@@ -106,7 +106,7 @@ For unmaintained versions, see:
 * [MariaDB 10.1](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) does not support MySQL 5.7's `STACKED` operation for [GET DIAGNOSTICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics) statements.
 * [MariaDB 10.1](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) does not support MySQL 5.7's `{WITH|WITHOUT} VALIDATION` syntax for `ALTER TABLE.. EXCHANGE PARTITION` statements.
 * MariaDB does not support the optional init\_vector argument for [AES\_ENCRYPT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_encrypt) and [AES\_DECRYPT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_decrypt) or the block\_encryption\_mode variable - [MDEV-9069](https://jira.mariadb.org/browse/MDEV-9069)
-* MariaDB does not support the `--initialize` option. Use [mysql_install_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_install_db) instead. - [MDEV-19010](https://jira.mariadb.org/browse/MDEV-19010)
+* MariaDB does not support the `--initialize` option. Use [mysql\_install\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_install_db) instead. - [MDEV-19010](https://jira.mariadb.org/browse/MDEV-19010)
 * Also see Incompatibilities between [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and MySQL 5.6.
 * Also see a detailed breakdown of [System variable differences between MariaDB 10.1and MySQL 5.7](system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-and-mysql-unmaintained-series/system-variable-differences-between-mariadb-10-1-and-mysql-5-7.md).
 
@@ -250,6 +250,6 @@ Another option is to use the [MariaDB MaxScale proxy](https://app.gitbook.com/s/
 * [Troubleshooting Installation Issues](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues)
 * [Projects and applications that work with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/applications-supporting-mariadb)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

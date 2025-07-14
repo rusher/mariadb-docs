@@ -8,7 +8,7 @@ In addition to this there are Enterprise Features and some backported features. 
 
 Enterprise Features:
 
-* [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)
+* [MariaDB Backup](broken-reference)
 * [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit)
 * Index limit increased to 128 indexes
 * Slow master shutdown as default
@@ -33,6 +33,6 @@ Backported Features:
 * Extending timestamp range to 2106
 * Limit size of created disk temporary files and tables
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

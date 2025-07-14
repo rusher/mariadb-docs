@@ -2,19 +2,27 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE PACKAGE BODY  [ db_name . ] package_name
 ```
 
 ## Description
 
-The `SHOW CREATE PACKAGE BODY` statement shows the `CREATE PACKAGE BODY` statement that creates the given package body (i.e. the implementation of the package). `CREATE PACKAGE BODY` can be used when [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md) is set, or from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114).
+{% tabs %}
+{% tab title="Current" %}
+The `SHOW CREATE PACKAGE BODY` statement shows the `CREATE PACKAGE BODY` statement that creates the given package body (that is, the implementation of the package).
+{% endtab %}
+
+{% tab title="< 11.4" %}
+The `SHOW CREATE PACKAGE BODY` statement shows the `CREATE PACKAGE BODY` statement that creates the given package body (that is, the implementation of the package). `CREATE PACKAGE BODY` can be used when [Oracle SQL\_MODE](https://kb-archive.mariadb.net/kb/en/sql_modeoracle-from-mariadb-103/) is set.
+{% endtab %}
+{% endtabs %}
 
 `SHOW CREATE PACKAGE BODY` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 ## Examples
 
-```
+```sql
 SHOW CREATE PACKAGE BODY employee_tools\G
 *************************** 1. row ***************************
         Package body: employee_tools
@@ -71,7 +79,7 @@ collation_connection: utf8_general_ci
 * [DROP PACKAGE](../../data-definition/drop/drop-package.md)
 * [CREATE PACKAGE BODY](../../data-definition/create/create-package-body.md)
 * [DROP PACKAGE BODY](../../data-definition/drop/drop-package-body.md)
-* [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md)
+* [Oracle SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -4,11 +4,11 @@
 
 The strategy applied when implementing data backups depends on business needs.
 
-Data backup strategy depends on business needs. Business needs can be evaluated by performing a data inventory, determining data [recovery objectives](forming-a-backup-strategy.md#recovery-objectives), considering the [replication environment](forming-a-backup-strategy.md#replication-considerations), and considering [encryption requirements](forming-a-backup-strategy.md#encryption-considerations). Also critical is a [backup storage strategy](forming-a-backup-strategy.md#backup-storage-considerations) and [testing backup and recovery procedures](https://mariadb.com/kb/en/orming-a-backup-strategy/#backup-testing).
+Data backup strategy depends on business needs. Business needs can be evaluated by performing a data inventory, determining data [recovery objectives](forming-a-backup-strategy.md#recovery-objectives), considering the [replication environment](forming-a-backup-strategy.md#replication-considerations), and considering [encryption requirements](forming-a-backup-strategy.md#encryption-considerations). Also critical is a [backup storage strategy](forming-a-backup-strategy.md#backup-storage-considerations) and [testing backup and recovery procedures](forming-a-backup-strategy.md#backup-testing).
 
 ## Data Inventory
 
-Backup strategy requirements flow from the understanding you build by performing a [data inventory](forming-a-backup-strategy.md#data-inventory). A data inventory is established by asking questions such as:
+Backup strategy requirements flow from the understanding you build by performing a data inventory. A data inventory is established by asking questions such as:
 
 1. What data is housed in the databases?
 2. What business purpose does this data serve?
@@ -63,9 +63,9 @@ MariaDB Enterprise Backup copies tablespaces from disk. When data-at-rest encryp
 MariaDB Enterprise Backup supports TLS encryption for communications with MariaDB Enterprise Server. To enable TLS encryption, set TLS options from the command-line or in the configuration file:
 
 ```bash
-# mariabackup --backup \
+mariadb-backup --backup \
       --target-dir=/data/backups/full \
-      --user=mariabackup \
+      --user=mariadb-backup \
       --password=mbu_passwd \
       --ssl-ca=/etc/my.cnf.d/certs/ca.pem \
       --ssl-cert=/etc/my.cnf.d/certs/client-cert.pem \
@@ -80,6 +80,12 @@ How backups are stored can impact backup viability. Backup storage also presents
 * Backup data should be subject to equal or more controls than data in production databases. For example, backup data should generally be encrypted even where a decision has bee made that a production database will not use data-at-rest encryption.
 * Business requirements may define a need for offsite storage of backups as a means of guaranteeing delivery on RPO. In these cases you should also consider onsite storage of backups as a means of guaranteeing delivery on RTO.
 * Retention requirements and the run-rate of new data production can aid in capacity planning.
+
+## Backup Testing
+
+Testing has been identified as a critical success factor for the successful operation of data systems.
+
+Backups should be tested. Recovery using backups and recovery procedures should be tested.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

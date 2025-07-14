@@ -23,7 +23,7 @@ The goals are:
    marked with '/\* purecov: deadcode \*/' so that we have a chance to notice if\
    the code is ever executed.
 
-The reason we are using 'purecov' to mark lines is an attribution to the[purecov](https://mariadb.com/kb/en/ftp://ftp.software.ibm.com/software/rational/docs/v2002/dev_tools/purecov/html/ht_intro_pc.htm)\
+The reason we are using 'purecov' to mark lines is an attribution to the [purecov](https://public.dhe.ibm.com/software/rational/docs/v2002/)\
 tool we originally used for code coverage in the early years of MySQL.
 
 ## Markers
@@ -80,7 +80,7 @@ following:
 
 ## Tools
 
-* You can use the [code-coverage-with-dgcov/dgcov tool](https://mariadb.com/kb/en/code-coverage-with-dgcov/dgcov_tool) to check the coverage for the new code. This is especially written and maintained for MariaDB.
+* You can use the [code-coverage-with-dgcov/dgcov tool](dgcov.md) to check the coverage for the new code. This is especially written and maintained for MariaDB.
 * For code coverage you also use the [lcov](https://fedora13.selfip.org/lcov/) tool.
 
 ## Code coverage in buildbot

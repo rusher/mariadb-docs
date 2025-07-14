@@ -2,11 +2,11 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.50) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5150-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.50) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5150-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 09 Sep 2010
 
-For a list of every change made in this release, see the[Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5150-changelog.md). For a description of this release see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
+For a list of every change made in this release, see the[Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5150-changelog.md). For a description of this release see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -35,6 +35,8 @@ Like [previous releases](https://github.com/mariadb-corporation/docs-release-not
 * [Bug #605798](https://bugs.launchpad.net/bugs/605798) RQG: Table corruption after Maria engine recovery - "Wrong data in bitmap"
 * [Bug #613418](https://bugs.launchpad.net/bugs/613418) (M)aria recovery failure: ma\_key\_recover.c:981: \_ma\_apply\_redo\_index: Assertion \`check\_page\_length == page\_length' failed
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

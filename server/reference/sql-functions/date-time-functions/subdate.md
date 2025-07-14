@@ -1,29 +1,20 @@
-
 # SUBDATE
 
 ## Syntax
 
-
-```
+```sql
 SUBDATE(date,INTERVAL expr unit), SUBDATE(expr,days)
 ```
 
 ## Description
 
+When invoked with the `INTERVAL` form of the second argument, `SUBDATE()` is a synonym for [DATE\_SUB()](date_sub.md). See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
 
-When invoked with the `INTERVAL` form of the second argument, `SUBDATE()`
-is a synonym for [DATE_SUB()](date_sub.md). See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
-
-
-The second form allows the use of an integer value for days. In such
-cases, it is interpreted as the number of days to be subtracted from
-the date or datetime expression expr.
-
+The second form allows the use of an integer value for days. In such cases, it is interpreted as the number of days to be subtracted from the date or datetime expression expr.
 
 ## Examples
 
-
-```
+```sql
 SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);
 +-----------------------------------------+
 | DATE_SUB('2008-01-02', INTERVAL 31 DAY) |
@@ -39,7 +30,7 @@ SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);
 +----------------------------------------+
 ```
 
-```
+```sql
 SELECT SUBDATE('2008-01-02 12:00:00', 31);
 +------------------------------------+
 | SUBDATE('2008-01-02 12:00:00', 31) |
@@ -48,7 +39,7 @@ SELECT SUBDATE('2008-01-02 12:00:00', 31);
 +------------------------------------+
 ```
 
-```
+```sql
 CREATE TABLE t1 (d DATETIME);
 INSERT INTO t1 VALUES
     ("2007-01-30 21:31:07"),
@@ -59,7 +50,7 @@ INSERT INTO t1 VALUES
     ("2004-10-07 11:19:34");
 ```
 
-```
+```sql
 SELECT d, SUBDATE(d, 10) from t1;
 +---------------------+---------------------+
 | d                   | SUBDATE(d, 10)      |
@@ -85,8 +76,6 @@ SELECT d, SUBDATE(d, INTERVAL 10 MINUTE) from t1;
 +---------------------+--------------------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

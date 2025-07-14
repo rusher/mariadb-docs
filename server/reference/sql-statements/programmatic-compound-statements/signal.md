@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SIGNAL error_condition
     [SET error_property
     [, error_property] ...]
@@ -41,27 +41,27 @@ The error properties, their type and their default values are explained in the [
 
 ## Errors
 
-If the SQLSTATE is not valid, the following error like this will be produced:
+If the `SQLSTATE` is not valid, the following error like this will be produced:
 
-```
+```sql
 ERROR 1407 (42000): Bad SQLSTATE: '123456'
 ```
 
 If a property is specified more than once, an error like this will be produced:
 
-```
+```sql
 ERROR 1641 (42000): Duplicate condition information item 'MESSAGE_TEXT'
 ```
 
 If you specify a condition name which is not declared, an error like this will be produced:
 
-```
+```sql
 ERROR 1319 (42000): Undefined CONDITION: cond_name
 ```
 
-If MYSQL\_ERRNO is out of range, you will get an error like this:
+If `MYSQL_ERRNO` is out of range, you will get an error like this:
 
-```
+```sql
 ERROR 1231 (42000): Variable 'MYSQL_ERRNO' can't be set to the value of '0'
 ```
 
@@ -69,7 +69,7 @@ ERROR 1231 (42000): Variable 'MYSQL_ERRNO' can't be set to the value of '0'
 
 Here's what happens if [SIGNAL](signal.md) is used in the client to generate errors:
 
-```
+```sql
 SIGNAL SQLSTATE '01000';
 Query OK, 0 rows affected, 1 warning (0.00 sec)
 
@@ -86,18 +86,18 @@ SIGNAL SQLSTATE '02000';
 ERROR 1643 (02000): Unhandled user-defined not found condition
 ```
 
-How to specify MYSQL\_ERRNO and MESSAGE\_TEXT properties:
+How to specify `MYSQL_ERRNO` and `MESSAGE_TEXT` properties:
 
-```
+```sql
 SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=30001, MESSAGE_TEXT='H
 ello, world!';
 
 ERROR 30001 (45000): Hello, world!
 ```
 
-The following code shows how to use user variables, local variables and character set conversion with SIGNAL:
+The following code shows how to use user variables, local variables and character set conversion with `SIGNAL`:
 
-```
+```sql
 CREATE PROCEDURE test_error(x INT)
 BEGIN
    DECLARE errno SMALLINT UNSIGNED DEFAULT 31001;
@@ -116,7 +116,7 @@ END;
 
 How to use named error conditions:
 
-```
+```sql
 CREATE PROCEDURE test_error(n INT)
 BEGIN
    DECLARE `too_big` CONDITION FOR SQLSTATE '45000';
@@ -128,7 +128,7 @@ END;
 
 In this example, we'll define a [HANDLER](../../sql-structure/nosql/handler/) for an error code. When the error occurs, we [SIGNAL](signal.md) a more informative error which makes sense for our procedure:
 
-```
+```sql
 CREATE PROCEDURE test_error()
 BEGIN
    DECLARE EXIT HANDLER
@@ -148,7 +148,7 @@ END;
 * [RESIGNAL](resignal.md)
 * [DECLARE HANDLER](declare-handler.md)
 * [Stored Routines](../../../server-usage/stored-routines/)
-* [MariaDB Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/programmatic-compound-statements/broken-reference/README.md)
+* [MariaDB Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

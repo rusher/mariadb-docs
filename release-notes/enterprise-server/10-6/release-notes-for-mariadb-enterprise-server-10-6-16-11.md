@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.6.16-11 was released on 2023-12-12.
 
 | CVE  link)                    | CVSS base score |
 | ------------------------------------------------------------------------------- | --------------- |
-| CVE  link)                    | CVSS base score |
 | [CVE-2023-22084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22084) | 4.9             |
 
 ## Changes in Storage Engines
@@ -88,7 +87,7 @@ SET @@note_verbosity=ALL
 * Lock wait timeout with INSERT-SELECT, autoinc, and statement-based replication ([MDEV-31482](https://jira.mariadb.org/browse/MDEV-31482))
 * Too strict assertion which leads to a problem since with the BINLOG statement we can execute binlog events on master also (not only in applier). ([MDEV-31651](https://jira.mariadb.org/browse/MDEV-31651))
 * Galera cannot support wsrep\_forced\_binlog\_format=\[MIXED|STATEMENT] during CREATE TABLE AS SELECT. But a crash in the form of an assertion is an overreaction. Now a warning is issued instead. ([MDEV-31660](https://jira.mariadb.org/browse/MDEV-31660))
-* The MariaDB Enterprise Cluster node does not return from donor/desynced state to synced state with wsrep\_mode=BF\_ABORT\_MARIABACKUP ([MDEV-31737](https://jira.mariadb.org/browse/MDEV-31737))
+* The MariaDB Enterprise Cluster node does not return from donor/desynced state to synced state with wsrep\_mode=BF\_ABORT\_mariadb-backup ([MDEV-31737](https://jira.mariadb.org/browse/MDEV-31737))
 * When a MariaDB Enterprise Cluster node is a replica of another MariaDB Enterprise Cluster and optimistic replication is used, a node can hang. To support optimistic parallel replication the replication slave abort needs to be skipped if a node remains in the cluster (wsrep\_ready==ON) and replication is configured for optimistic or aggressive retry logic. ([MDEV-31833](https://jira.mariadb.org/browse/MDEV-31833))
 * After crash recovery, the server crashes with error "InnoDB: Checksum mismatch in the first page of file" in the server log ([MDEV-31851](https://jira.mariadb.org/browse/MDEV-31851))
 * Possible server crash when setting SPIDER option spider\_delete\_all\_rows to 0 and delete all rows of a spider table ([MDEV-31996](https://jira.mariadb.org/browse/MDEV-31996))
@@ -110,7 +109,7 @@ SET @@note_verbosity=ALL
 
 ## Can result in unexpected behavior
 
-* When ssl-mode=CA\_VERIFY is used and mariabackup is selected as the SST method an incremental state transfer(IST) may be rejected (MENT-2016)
+* When ssl-mode=CA\_VERIFY is used and mariadb-backup is selected as the SST method an incremental state transfer(IST) may be rejected (MENT-2016)
   * The following error will be shown in the server log
 
 ```
@@ -206,6 +205,6 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 * [Upgrade to MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

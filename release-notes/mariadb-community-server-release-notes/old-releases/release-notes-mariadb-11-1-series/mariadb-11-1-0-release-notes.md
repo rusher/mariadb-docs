@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.1](what-is-mariadb-111.md) is:[**MariaDB 11.1.6**](mariadb-11-1-6-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.1.6/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.1.6/)
 
-[Download](https://downloads.mariadb.org/mariadb/11.1.0)[Release Notes](../release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md)[Overview of 11.1](what-is-mariadb-111.md)
+[Download](https://downloads.mariadb.org/mariadb/11.1.0)[Release Notes](../release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md)[Overview of 11.1](what-is-mariadb-111.md)
 
 **Release date:** 27 Mar 2023
 
@@ -37,12 +37,10 @@ Thanks, and enjoy MariaDB!
 
 ## mariadb-backup
 
-* Rename [mariadb-backup’s](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931))
+* Rename [mariadb-backup’s](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931))
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

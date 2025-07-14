@@ -1,11 +1,10 @@
 # RESET MASTER
 
-```
+```sql
 RESET MASTER [TO #]
 ```
 
-Deletes all [binary log](../../../../server-management/server-monitoring-logs/binary-log/) files listed in the index file, resets the\
-binary log index file to be empty, and creates a new binary log file with a suffix of .000001.
+Deletes all [binary log](../../../../server-management/server-monitoring-logs/binary-log/) files listed in the index file, resets the binary log index file to be empty, and creates a new binary log file with a suffix of .000001.
 
 If `TO #` is given, then the first new binary log file will start from number #.
 

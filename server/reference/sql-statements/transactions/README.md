@@ -1,8 +1,8 @@
 ---
 description: >-
-  An SQL transaction is a sequence of executions of SQL statements that is
-  atomic with respect to recovery. The InnoDB storage engine supports
-  ACID-compliant transactions.
+  Learn about transactions in MariaDB Server. This section covers SQL statements
+  for managing atomic operations (START TRANSACTION, COMMIT, ROLLBACK), ensuring
+  data integrity and consistency.
 ---
 
 # Transactions

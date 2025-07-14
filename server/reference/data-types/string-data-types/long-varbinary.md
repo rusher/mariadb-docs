@@ -1,24 +1,22 @@
-# long-varbinary
-
-## LONG VARBINARY
+# LONG VARBINARY
 
 ## Overview
 
-See [MEDIUMBLOB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/data-types-mediumblob/README.md).
+See [MEDIUMBLOB](mediumblob.md).
 
 ## EXAMPLES
 
-```
+```sql
 CREATE TABLE long_varbinary_example (
   example LONG VARBINARY
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE long_varbinary_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: long_varbinary_example
 Create Table: CREATE TABLE `long_varbinary_example` (

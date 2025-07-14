@@ -21,23 +21,23 @@ layout:
 
 * MariaDB Connector/J 1.1.9 was released on 18 Jun 2015.
 * Please note: Newer releases exist within the MariaDB Connector/J 1.1 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-11-release-notes/mariadb-connector-j-119-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.1/mariadb-connector-j-119-release-notes)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j).
 
 ## Release History
 
 * This release (MariaDB Connector/J 1.1.9) was released on 18 Jun 2015.
-* The latest release in this series is MariaDB Connector/J 1.1.10, released on 9 Nov 2016.
+
+{% include "../.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 
 * [MariaDB Server Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/)
-* [MariaDB Connector Documentation](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors)
+* [MariaDB Connectors Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/)
 * [Contact Us](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/about/contact-us)
 * [Learn about the MariaDB Community](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community)
 
-
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

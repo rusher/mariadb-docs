@@ -1,20 +1,20 @@
 # MariaDB 10.4.23 Release Notes
 
-The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download 10.4.23](https://mariadb.org/download/?tab=mariadb\&release=10.4.23\&product=mariadb|)[Release Notes](mariadb-10423-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10423-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download 10.4.23](https://mariadb.org/download/?tab=mariadb\&release=10.4.23\&product=mariadb|)[Release Notes](mariadb-10423-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10423-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 **Release date:** 9 Feb 2022
 
 This release is no longer available for download after a problem was noticed when manually running mariadb-upgrade. See [MDEV-27789](https://jira.mariadb.org/browse/MDEV-27789) for more details.**Please use a later release.**
 
-[MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is a previous _stable_ series of MariaDB. It is an evolution\
+[MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is a previous _stable_ series of MariaDB. It is an evolution\
 of [MariaDB 10.3](../release-notes-mariadb-10-3-series/what-is-mariadb-103.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.4.23](mariadb-10423-release-notes.md) is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.4**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **see the**[**What is MariaDB 10.4?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **page.**
+**For an overview of** [**MariaDB 10.4**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) **see the**[**What is MariaDB 10.4?**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -42,7 +42,7 @@ Thanks, and enjoy MariaDB!
 ### Packaging & Misc
 
 * prohibition running two upgrades in parallel ([MDEV-27068](https://jira.mariadb.org/browse/MDEV-27068), [MDEV-27107](https://jira.mariadb.org/browse/MDEV-27107), [MDEV-27279](https://jira.mariadb.org/browse/MDEV-27279))
-* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) for Ubuntu 21.04 Hirsute, CentOS 8, and Fedora 33
+* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) for Ubuntu 21.04 Hirsute, CentOS 8, and Fedora 33
 * [mariadb\_repo\_setup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) script updated to version 2022-02-08, with the following fixes and enhancements:
   * Default location of the script has been moved to: [mariadb\_repo\_setup](https://r.mariadb.com/downloads/mariadb_repo_setup) (old location is deprecated, but still works)
   * The GPG keyring file, used with Debian and Ubuntu repositories, has moved to: [mariadb-keyring-2019.gpg](https://supplychain.mariadb.com/mariadb-keyring-2019.gpg) and the checksum for the file can be found at: [mariadb-keyring-2019.gpg.sha256](https://supplychain.mariadb.com/mariadb-keyring-2019.gpg.sha256)
@@ -76,16 +76,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.4.23](mariadb-10423-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10423-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10423-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.4.23](mariadb-10423-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-8-1-rc-and-mariadb-10-7-2-10-6-6-10-5-14-10-4-23-10-3-33-and-10-2-42-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

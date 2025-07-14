@@ -1,8 +1,8 @@
 # MariaDB Connector/Node.js 3.4.1 Changelog
 
-The most recent [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-1-release-notes.md)[Changelog](mariadb-connector-node-js-3-4-1-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector) | [Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-1-release-notes.md) | [Changelog](mariadb-connector-node-js-3-4-1-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 2 Apr 2025
 
@@ -62,5 +62,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #017837d](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/017837d) Update MaxScale versions
 * [Revision #5b4eae7](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/5b4eae7) \[misc] bulk ending with "Got a packet bigger than 'max\_allowed\_packet' bytes" error #297
 * [Revision #4f9be98](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/4f9be98) \[misc] changing capability name EXTENDED\_TYPE\_INFO to EXTENDED\_METADATA, in order to correspond to server and other connectors
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

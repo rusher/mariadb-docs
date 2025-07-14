@@ -36,4 +36,6 @@ details of the revision and view diffs of the code modified in that revision.
   2019-07-22 10:32:28 +0200
   * MENT-27 Adding Azure CI testing
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

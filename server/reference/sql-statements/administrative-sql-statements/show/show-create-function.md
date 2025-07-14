@@ -2,19 +2,27 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE FUNCTION func_name
 ```
 
 ## Description
 
-This statement is similar to [SHOW CREATE PROCEDURE](show-create-procedure.md) but for[stored functions](../../../../server-usage/stored-routines/stored-functions/).
+This statement is similar to [SHOW CREATE PROCEDURE](show-create-procedure.md) but for [stored functions](../../../../server-usage/stored-routines/stored-functions/).
 
-`SHOW CREATE FUNCTION` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1065-release-notes), [MariaDB 10.5.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10513-release-notes) and [MariaDB 10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes), the output of this statement was unreliably affected by the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
+{% tabs %}
+{% tab title="Current" %}
+`SHOW CREATE FUNCTION` quotes identifiers, according to the value of the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable.
+{% endtab %}
+
+{% tab title="< 10.6.5 / 10.5.13 / 10.4.22" %}
+`SHOW CREATE FUNCTION` quotes identifiers, according to the value of the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable. However, the output of this statement is unreliably affected by the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable.
+{% endtab %}
+{% endtabs %}
 
 ## Example
 
-```
+```sql
 SHOW CREATE FUNCTION VatCents\G
 *************************** 1. row ***************************
             Function: VatCents
@@ -36,6 +44,6 @@ collation_connection: utf8_general_ci
 * [Stored Functions](../../../../server-usage/stored-routines/stored-functions/)
 * [CREATE FUNCTION](../../data-definition/create/create-function.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

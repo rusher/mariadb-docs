@@ -25,7 +25,7 @@ DriverManager.getConnection("jdbc:mariadb://db.example.com:3306/db?user=one");
 
 Since the user account is configured to use the [gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugin on the server, the Java connector will use GSSAPI authentication when connecting.
 
-The service principal name must be the one defined for the user account on the database server unless a different one is specified with the [servicePrincipalName](https://mariadb.com/kb/en/about-mariadb-connector-j/#infrequently-used) parameter in the connection URL.
+The service principal name must be the one defined for the user account on the database server unless a different one is specified with the [servicePrincipalName](about-mariadb-connector-j.md#infrequently-used-parameters) parameter in the connection URL.
 
 Database server will wait for a ticket associated for the principal defined in user ('userOne@EXAMPLE').\
 That mean on client, user must have obtained a TGT beforehand.
@@ -149,6 +149,5 @@ klist must show the same principal (userTwo@EXAMPLE.COM in this example)
 
 and server to match: if the system clocks of the client does not match that of the KDC server, authentication will fail with this kind of error.\
 The simplest way to synchronize the system clocks is to use a Network Time Protocol (NTP) server.
-
 
 {% @marketo/form formId="4316" %}

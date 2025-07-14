@@ -26,17 +26,17 @@ The buffer pool can be set dynamically. See [Setting Innodb Buffer Pool Size Dyn
 
 ## innodb\_buffer\_pool\_instances
 
-The functionality described below was disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), as the original reasons for for splitting the buffer pool have mostly gone away.
+The functionality described below was disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), as the original reasons for splitting the buffer pool have mostly gone away.
 
 ## innodb\_old\_blocks\_pct and innodb\_old\_blocks\_time
 
-The default 37% reserved for the old list can be adjusted by changing the value of [innodb\_old\_blocks\_pct](innodb-system-variables.md#innodb_old_blocks_pct). It can accept anything between between 5% and 95%.
+The default 37% reserved for the old list can be adjusted by changing the value of [innodb\_old\_blocks\_pct](innodb-system-variables.md#innodb_old_blocks_pct). It can accept anything between 5% and 95%.
 
 The [innodb\_old\_blocks\_time](innodb-system-variables.md#innodb_old_blocks_time) variable specifies the delay before a block can be moved from the old to the new sublist. `0` means no delay, while the default has been set to `1000`.
 
 Before changing either of these values from their defaults, make sure you understand the impact and how your system currently uses the buffer. Their main reason for existence is to reduce the impact of full table scans, which are usually infrequent, but large, and previously could clear everything from the buffer. Setting a non-zero delay could help in situations where full table scans are performed in quick succession.
 
-Temporarily changing these values can also be useful to avoid the negative impact of a full table scan, as explained in [InnoDB logical backups](../../backing-up-and-restoring-databases/backup-and-restore-overview.md#innodb-logical-backups).
+Temporarily changing these values can also be useful to avoid the negative impact of a full table scan, as explained in [InnoDB logical backups](../../backup-and-restore/backup-and-restore-overview.md#innodb-logical-backups).
 
 ## Dumping and Restoring the Buffer Pool
 

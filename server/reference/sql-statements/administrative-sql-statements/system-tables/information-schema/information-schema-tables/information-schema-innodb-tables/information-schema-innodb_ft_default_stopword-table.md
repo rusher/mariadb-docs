@@ -2,18 +2,17 @@
 
 The [Information Schema](../../) `INNODB_FT_DEFAULT_STOPWORD` table contains a list of default [stopwords](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) used when creating an InnoDB [fulltext index](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
 
-The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
+The [PROCESS](../../../../../account-management-sql-statements/grant.md#process) privilege is required to view the table.
 
 It has the following column:
 
 | Column | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | VALUE  | Default [stopword](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) for an InnoDB [fulltext index](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). Setting either the [innodb\_ft\_server\_stopword\_table](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) or the [innodb\_ft\_user\_stopword\_table](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) system variable will override this. |
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_FT_DEFAULT_STOPWORD\G
 *************************** 1. row ***************************
 value: a

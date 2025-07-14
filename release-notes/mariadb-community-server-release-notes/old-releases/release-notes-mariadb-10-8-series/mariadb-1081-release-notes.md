@@ -1,6 +1,6 @@
 # MariaDB 10.8.1 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.8.1/)[Release Notes](mariadb-1081-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-8-series/mariadb-1081-changelog.md)[Overview of 10.8](what-is-mariadb-108.md)
+[Download](https://downloads.mariadb.org/mariadb/10.8.1/)[Release Notes](mariadb-1081-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-8-series/mariadb-1081-changelog.md)[Overview of 10.8](what-is-mariadb-108.md)
 
 [_Alternate download from mariadb.org_](https://mariadb.org/download/?tab=mariadb\&release=10.8.1\&product=mariadb)
 
@@ -27,7 +27,7 @@ Thanks, and enjoy MariaDB!
 * Indexed [CHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/char) columns are broken with NO\_PAD [collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) ([MDEV-25440](https://jira.mariadb.org/browse/MDEV-25440))
 * insert-intention lock conflicts with waiting ORDINARY lock ([MDEV-27025](https://jira.mariadb.org/browse/MDEV-27025))
 * Crash recovery improvements ([MDEV-26784](https://jira.mariadb.org/browse/MDEV-26784), [MDEV-27022](https://jira.mariadb.org/browse/MDEV-27022), [MDEV-27183](https://jira.mariadb.org/browse/MDEV-27183), [MDEV-27610](https://jira.mariadb.org/browse/MDEV-27610))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) skips valid .ibd file ([MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326))
+* [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) skips valid .ibd file ([MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326))
 * Allow seamless upgrade despite [ROW\_FORMAT=COMPRESSED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) ([MDEV-27736](https://jira.mariadb.org/browse/MDEV-27736))
 * Change the [InnoDB redo log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-redo-log) format to reduce write amplification ([MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425))
 * Remove FIL\_PAGE\_FILE\_FLUSH\_LSN from the [InnoDB redo log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-redo-log) ([MDEV-27199](https://jira.mariadb.org/browse/MDEV-27199)).
@@ -80,7 +80,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.8.1](mariadb-1081-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-8-series/mariadb-1081-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-8-series/mariadb-1081-changelog.md).
 
 ## Contributors
 
@@ -88,10 +88,8 @@ For a full list of contributors to [MariaDB 10.8.1](mariadb-1081-release-notes.m
 
 **Do not use non-stable (non-GA) releases in production!**
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

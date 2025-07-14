@@ -2,16 +2,16 @@
 
 ## Syntax
 
-```
+```sql
 SHOW EVENTS [{FROM | IN} schema_name]
     [LIKE 'pattern' | WHERE expr]
 ```
 
 ## Description
 
-Shows information about Event Manager [events](../../../../server-usage/triggers-events/event-scheduler/events.md) (created with [CREATE EVENT](../../data-definition/create/create-event.md)). Requires the [EVENT](../../account-management-sql-commands/grant.md#database-privileges) privilege. Without any arguments, `SHOW EVENTS` lists all of the events in the current schema:
+Shows information about Event Manager [events](../../../../server-usage/triggers-events/event-scheduler/events.md) (created with [CREATE EVENT](../../data-definition/create/create-event.md)). Requires the [EVENT](../../account-management-sql-statements/grant.md) privilege. Without any arguments, `SHOW EVENTS` lists all of the events in the current schema:
 
-```
+```sql
 SELECT CURRENT_USER(), SCHEMA();
 +----------------+----------+
 | CURRENT_USER() | SCHEMA() |
@@ -38,19 +38,16 @@ collation_connection: latin1_swedish_ci
   Database Collation: latin1_swedish_ci
 ```
 
-To see the event action, use [SHOW CREATE EVENT](show-create-event.md) instead, or look at the [information_schema.EVENTS](../system-tables/information-schema/information-schema-tables/information-schema-events-table.md) table.
+To see the event action, use [SHOW CREATE EVENT](show-create-event.md) instead, or look at the [information\_schema.EVENTS](../system-tables/information-schema/information-schema-tables/information-schema-events-table.md) table.
 
-To see events for a specific schema, use the `FROM` clause.\
-For example, to see events for the test schema, use the following statement:
+To see events for a specific schema, use the `FROM` clause. For example, to see events for the test schema, use the following statement:
 
-```
+```sql
 SHOW EVENTS FROM test;
 ```
 
-The `LIKE` clause, if present, indicates which event names to\
-match. The `WHERE` clause can be given to select rows using\
-more general conditions, as discussed in [Extended Show](extended-show.md).
+The `LIKE` clause, if present, indicates which event names to match. The `WHERE` clause can be given to select rows using more general conditions, as discussed in [Extended Show](extended-show.md).
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

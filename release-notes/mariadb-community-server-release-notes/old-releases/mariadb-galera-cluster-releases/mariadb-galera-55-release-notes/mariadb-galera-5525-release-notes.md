@@ -7,8 +7,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 **Release date:** 4 Sep 2012
 
 [MariaDB Galera 5.5.25](mariadb-galera-5525-release-notes.md) is an [_**Alpha**_](mariadb-release-criteria.md) release. It is a\
-merge of [MariaDB 5.5.25](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/broken-reference/README.md) and Galera Cluster with some\
-limited additional bug fixes. This is the first MariaDB Galera release, and we\
+merge of [MariaDB 5.5.25](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5525-release-notes) and Galera Cluster with some limited additional bug fixes. This is the first MariaDB Galera release, and we\
 are releasing it now to get it into the hands of any who might want to test it.**Do not use alpha releases on production systems.**
 
 Various articles about MariaDB Galera Cluster, including [known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and [how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are available in the [**Galera**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md) section of the Knowledgebase.
@@ -21,16 +20,14 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 ## Includes [MariaDB 5.5.25](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md) and Galera Cluster
 
-[MariaDB Galera 5.5.25](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-galera-cluster-5525-release-notes/README.md) includes [MariaDB 5.5.25](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md) and[Galera Cluster](https://codership.com/content/using-galera-cluster). See the[MariaDB 5.5.25](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md) [Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md) for more information on the changes in[MariaDB 5.5.25](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md).
+[MariaDB Galera 5.5.25](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-galera-cluster-5525-release-notes/README.md) includes [MariaDB 5.5.25](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md) and[Galera Cluster](https://codership.com/content/using-galera-cluster). See the[MariaDB 5.5.25](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md) [Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md) for more information on the changes in[MariaDB 5.5.25](../../release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md).
 
-See the [MariaDB 5.5.25 Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md) for full details.
+See the [MariaDB 5.5.25 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md) for full details.
 
 Thanks, and enjoy MariaDB Galera Cluster!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

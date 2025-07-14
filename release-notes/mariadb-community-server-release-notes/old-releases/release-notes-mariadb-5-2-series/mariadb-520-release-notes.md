@@ -2,13 +2,13 @@
 
 The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mariadb-5-2.md) is:[**MariaDB 5.2.14**](mariadb-5214-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.2.0-beta) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-520-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.2.0-beta) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-520-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
 
 **Release date:** 10 Apr 2010
 
 ### Release Notes
 
-See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md) page for a high-level overview of the differences between MariaDB and MySQL. For a description of this release see the [MariaDB 5.1 overview](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md).
+See the [MariaDB versus MySQL](https://mariadb.com/docs/release-notes/compatibility-and-differences/mariadb-vs-mysql-compatibility) page for a high-level overview of the differences between MariaDB and MySQL. For a description of this release see the [MariaDB 5.1 overview](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md).
 
 This is a beta release of MariaDB. We believe it to be relatively bug-free, and want to get it out so everyone can try it. Development is ongoing, see [MariaDB 5.2 TODO](https://askmonty.org/wiki/MariaDB_5.2_TODO) for a list of features that are planned for future [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) releases.
 
@@ -53,7 +53,7 @@ New features and changes in this version include:
 * We've added two new columns to the[INFORMATION\_SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema).
 * For plugin authors: As part of this change, the MariaDB plugin declaration\
   now differs slightly from the MySQL plugin declaration (the MySQL plugin\
-  declaration is still supported for dynamically loaded plugins). See:[Writing Plugins](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md) for details.
+  declaration is still supported for dynamically loaded plugins). See:[Writing Plugins](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/development-writing-plugins-for-mariadb) for details.
 
 #### Segmented Key Cache for MyISAM [MWL#85](https://askmonty.org/worklog/?tid=85)
 
@@ -66,6 +66,8 @@ New features and changes in this version include:
   introduces. See: [Extending CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes) for more\
   information.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

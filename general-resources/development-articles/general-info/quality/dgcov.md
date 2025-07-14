@@ -23,7 +23,6 @@ It's recommended that a developer [runs dgcov on their new code](code-coverage.m
 
 | Short Option | Long Option | Description                                                               |
 | ------------ | ----------- | ------------------------------------------------------------------------- |
-| Short Option | Long Option | Description                                                               |
 | -h           | --help      | Print help and exit                                                       |
 | -v           | --verbose   | Show commands run.                                                        |
 | -p           | --purge     | Delete all test coverage information, to prepare for a new coverage test. |
@@ -71,7 +70,7 @@ Checking the coverage for a specific commit 1234567:
 dgcov.pl 1234567^ 1234567
 ```
 
-[mariadb-test-run](https://mariadb.com/kb/en/mariadb-test-run) can invoke dgcov automatically:
+[mariadb-test-run](../../mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) can invoke dgcov automatically:
 
 ```
 ./mtr --gcov

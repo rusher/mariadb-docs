@@ -50,7 +50,7 @@ SELECT * FROM t
 Is different from :
 
 ```sql
-SELECT * from t
+SELECT * FROM t
 ```
 
 Comments are also considered and can make the queries differ, so :
@@ -73,9 +73,9 @@ When the space allocated to query cache is exhausted, the oldest results will be
 
 When using `query_cache_type=ON`, and the query specifies `SQL_NO_CACHE` (case-insensitive), the server will not cache the query and will not fetch results from the query cache.
 
-When using `query_cache_type=DEMAND` (after [MDEV-6631](https://jira.mariadb.org/browse/MDEV-6631) feature request) and the query specifies `SQL_CACHE`, the server will cache the query.
+When using `query_cache_type=DEMAND` and the query specifies `SQL_CACHE`, the server will cache the query.
 
-One important point of [MDEV-6631](https://jira.mariadb.org/browse/MDEV-6631) is : switching between `query_cache_type=ON` and `query_cache_type=DEMAND` can "turn off" query cache of old queries without the `SQL_CACHE` string, that's not yet defined if we should include another `query_cache_type` (DEMAND\_NO\_PRUNE) value or not to allow use of old queries
+
 
 ## Queries Stored in the Query Cache
 
@@ -194,7 +194,7 @@ SHOW STATUS LIKE 'Qcache%';
 
 The above example could indicate a poorly performing cache. More queries have been added, and more queries have been dropped, than have actually been used.
 
-Note that before [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/broken-reference/README.md), queries returned from the query cache did not increment the [Com\_select](../system-variables/server-status-variables.md#com_select) status variable, so to find the total number of valid queries run on the server, add [Com\_select](../system-variables/server-status-variables.md#com_select) to [Qcache\_hits](../system-variables/server-status-variables.md#qcache_hits). Starting from [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/broken-reference/README.md), results returned by the query cache count towards `Com_select` (see [MDEV-4981](https://jira.mariadb.org/browse/MDEV-4981)).
+Note that before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), queries returned from the query cache did not increment the [Com\_select](../system-variables/server-status-variables.md#com_select) status variable, so to find the total number of valid queries run on the server, add [Com\_select](../system-variables/server-status-variables.md#com_select) to [Qcache\_hits](../system-variables/server-status-variables.md#qcache_hits). Starting from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), results returned by the query cache count towards `Com_select` (see [MDEV-4981](https://jira.mariadb.org/browse/MDEV-4981)).
 
 The [QUERY\_CACHE\_INFO plugin](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) creates the [QUERY\_CACHE\_INFO](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_cache_info-table.md) table in the [INFORMATION\_SCHEMA](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/), allowing you to examine the contents of the query cache.
 
@@ -234,7 +234,7 @@ Setting either [query\_cache\_type](../system-variables/server-system-variables.
 
 * The query cache needs to be disabled in order to use [OQGRAPH](../../../server-usage/storage-engines/oqgraph-storage-engine/).
 * The query cache is not used by the [Spider](../../../server-usage/storage-engines/spider/) storage engine (amongst others).
-* The query cache also needs to be disabled for MariaDB [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
+* The query cache also needs to be disabled for MariaDB [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
 
 ## LOCK TABLES and the Query Cache
 
@@ -269,14 +269,14 @@ The query cache can be used when tables have a write lock (which may seem confus
 
 ## Transactions and the Query Cache
 
-The query cache handles transactions. Internally a flag (FLAGS\_IN\_TRANS) is set to 0 when a query was executed outside a transaction, and to 1 when the query was inside a transaction ([begin](https://mariadb.com/kb/en/begin) / [COMMIT](../../../reference/sql-statements/transactions/commit.md) / [ROLLBACK](../../../reference/sql-statements/transactions/rollback.md)). This flag is part of the "query cache hash", in others words one query inside a transaction is different from a query outside a transaction.
+The query cache handles transactions. Internally a flag (FLAGS\_IN\_TRANS) is set to 0 when a query was executed outside a transaction, and to 1 when the query was inside a transaction ([begin](../../../reference/sql-statements/programmatic-compound-statements/begin-end.md) / [COMMIT](../../../reference/sql-statements/transactions/commit.md) / [ROLLBACK](../../../reference/sql-statements/transactions/rollback.md)). This flag is part of the "query cache hash", in others words one query inside a transaction is different from a query outside a transaction.
 
 Queries that change rows ([INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) / [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) / [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) / [TRUNCATE](../../../reference/sql-functions/numeric-functions/truncate.md)) inside a transaction will invalidate all queries from the table, and turn off the query cache to the changed table. Transactions that don't end with COMMIT / ROLLBACK check that even without COMMIT / ROLLBACK, the query cache is turned off to allow row level locking and consistency level.
 
 Examples:
 
 ```sql
-SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
+SELECT * FROM T1 <first INSERT TO query cache, USING FLAGS_IN_TRANS=0>
 +---+
 | a |
 +---+
@@ -286,7 +286,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
 
 ```sql
 BEGIN;
-SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=1>
+SELECT * FROM T1 <first INSERT TO query cache, USING FLAGS_IN_TRANS=1>
 +---+
 | a |
 +---+
@@ -295,7 +295,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=1>
 ```
 
 ```sql
-SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=1>
+SELECT * FROM T1 <result FROM query cache, USING FLAGS_IN_TRANS=1>
 +---+
 | a |
 +---+
@@ -304,21 +304,11 @@ SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=1>
 ```
 
 ```sql
-INSERT INTO T1 VALUES(2);  <invalidate queries from table T1 and disable query cache to table T1>
+INSERT INTO T1 VALUES(2);  <invalidate queries FROM TABLE T1 AND disable query cache TO TABLE T1>
 ```
 
 ```sql
-SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
-+---+
-| a |
-+---+
-| 1 |
-| 2 |
-+---+
-```
-
-```sql
-SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
+SELECT * FROM T1 <don't USE query cache, a normal query FROM innodb TABLE>
 +---+
 | a |
 +---+
@@ -328,11 +318,21 @@ SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
 ```
 
 ```sql
-COMMIT;  <query cache is now turned on to T1 table>
+SELECT * FROM T1 <don't USE query cache, a normal query FROM innodb TABLE>
++---+
+| a |
++---+
+| 1 |
+| 2 |
++---+
 ```
 
 ```sql
-SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
+COMMIT;  <query cache IS now turned ON TO T1 TABLE>
+```
+
+```sql
+SELECT * FROM T1 <first INSERT TO query cache, USING FLAGS_IN_TRANS=0>
 +---+
 | a |
 +---+
@@ -341,7 +341,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
 ```
 
 ```sql
-SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=0>
+SELECT * FROM T1 <result FROM query cache, USING FLAGS_IN_TRANS=0>
 +---+
 | a |
 +---+
@@ -376,10 +376,7 @@ Some fields that differentiate queries are (from "Query\_cache\_query\_flags" in
 * div\_precision\_increment ([div\_precision\_increment](../system-variables/server-system-variables.md#div_precision_increment) session variable)
 * lc\_time\_names ([lc\_time\_names](../system-variables/server-system-variables.md#lc_time_names) session variable)
 
-More information can be found by viewing the source code ([MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)) :
 
-* [sql\_cache.cc](https://github.com/MariaDB/server/blob/10.1/sql/sql_cache.cc)
-* [sql\_cache.h](https://github.com/MariaDB/server/blob/10.1/sql/sql_cache.h)
 
 ## Timeout and Mutex Contention
 

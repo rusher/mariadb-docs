@@ -85,4 +85,8 @@ modified in that revision.
   Wed 2014-04-30 15:40:00 -0400
   * [MDEV-6192](https://jira.mariadb.org/browse/MDEV-6192) \[Warning] Failed to load slave replication state from table mysql.gtid\_slave\_pos: 1286: Unknown storage engine 'InnoDB'
 
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

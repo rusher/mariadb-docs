@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download 10.2.38](https://downloads.mariadb.org/mariadb/10.2.38/)[Release Notes](mariadb-10238-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10238-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download 10.2.38](https://downloads.mariadb.org/mariadb/10.2.38/)[Release Notes](mariadb-10238-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10238-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 7 May 2021
 
@@ -23,7 +23,7 @@ Thanks, and enjoy MariaDB!
 * Incorrect name resolution for subqueries in ON expressions ([MDEV-25362](https://jira.mariadb.org/browse/MDEV-25362))
 * Complex query in Store procedure corrupts results ([MDEV-25182](https://jira.mariadb.org/browse/MDEV-25182))
 
-### mariabackup
+### mariadb-backup
 
 * RENAME TABLE causes "Ignoring data file" messages ([MDEV-25568](https://jira.mariadb.org/browse/MDEV-25568))
 
@@ -70,16 +70,14 @@ If you want to use [CONNECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/serv
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.38](mariadb-10238-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10238-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10238-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.2.38](mariadb-10238-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-5-10-10-4-19-10-3-29-and-10-2-38-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

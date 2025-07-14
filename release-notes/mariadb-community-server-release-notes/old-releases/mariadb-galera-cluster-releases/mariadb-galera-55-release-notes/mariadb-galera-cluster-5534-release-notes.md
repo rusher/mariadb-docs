@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 **Release date:** 18 Dec 2013
 
 MariaDB Galera Cluster 5.5.34 is a [_**Stable**_](../../../../mariadb-release-criteria.md) (GA) release.\
-It is a merge of [MariaDB 5.5.34](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/broken-reference/README.md) and[Galera Cluster](https://codership.com/content/using-galera-cluster) with\
+It is a merge of [MariaDB 5.5.34](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5534-release-notes) and[Galera Cluster](https://codership.com/content/using-galera-cluster) with\
 additional bug fixes.
 
 Various articles about MariaDB Galera Cluster, including[known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and[how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are\
@@ -18,7 +18,7 @@ information on each push, see the[MariaDB Galera Cluster 5.5.34 Changelog](../ma
 
 ## Includes [MariaDB 5.5.34](../../release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md) and Galera Cluster
 
-MariaDB Galera Cluster 5.5.34 includes [MariaDB 5.5.34](../../release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md) with Codership additions (`lp:codership-mysql/5.5-23` till revision `3942`) and[Galera Cluster 23.2.7](https://codership.com/content/using-galera-cluster). See the[MariaDB 5.5.34 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5534-changelog.md) for more information on the changes in\
+MariaDB Galera Cluster 5.5.34 includes [MariaDB 5.5.34](../../release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md) with Codership additions (`lp:codership-mysql/5.5-23` till revision `3942`) and[Galera Cluster 23.2.7](https://codership.com/content/using-galera-cluster). See the[MariaDB 5.5.34 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5534-changelog.md) for more information on the changes in\
 MariaDB.
 
 ## Bug Fixes
@@ -47,10 +47,8 @@ A list of all the bugs fixed can be found in the [changelog](../mariadb-galera-5
 
 Thanks, and enjoy MariaDB Galera Cluster!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

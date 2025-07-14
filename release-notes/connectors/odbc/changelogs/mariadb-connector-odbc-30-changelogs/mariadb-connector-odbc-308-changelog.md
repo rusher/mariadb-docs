@@ -50,4 +50,6 @@ details of the revision and view diffs of the code modified in that revision.
   2018-11-16 12:06:49 +0100
   * Version bump -> 3.0.8 + new logo in README.md
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

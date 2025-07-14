@@ -1,8 +1,8 @@
 # MariaDB 11.4.1 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download 11.4.1](https://downloads.mariadb.org/mariadb/11.4.1)[Release Notes](mariadb-11-4-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-1-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://downloads.mariadb.org/mariadb/11.4.1/" class="button primary">Download</a> <a href="mariadb-11-4-1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-1-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 16 Feb 2024
 
@@ -12,7 +12,7 @@ The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 
 
 [MariaDB 11.4.1](mariadb-11-4-1-release-notes.md) is a [_**Release Candidate (RC)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -51,8 +51,8 @@ Thanks, and enjoy MariaDB!
 
 #### Backup
 
-* mariabackup has wrong or missing plugin-dir default? ([MDEV-29110](https://jira.mariadb.org/browse/MDEV-29110))
-* mariabackup fails when `innodb_max_dirty_pages_pct` contains a fraction (is not an integer) ([MDEV-20286](https://jira.mariadb.org/browse/MDEV-20286))
+* mariadb-backup has wrong or missing plugin-dir default? ([MDEV-29110](https://jira.mariadb.org/browse/MDEV-29110))
+* mariadb-backup fails when `innodb_max_dirty_pages_pct` contains a fraction (is not an integer) ([MDEV-20286](https://jira.mariadb.org/browse/MDEV-20286))
 * Missing required privilege `CONNECTION ADMIN` ([MDEV-33006](https://jira.mariadb.org/browse/MDEV-33006))
 * If tables are frequently created, renamed, dropped, a backup cannot be restored ([MDEV-32939](https://jira.mariadb.org/browse/MDEV-32939))
 * New [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) option, `-j`, `--parallel=`
@@ -208,7 +208,7 @@ Thanks, and enjoy MariaDB!
 ### Changelog
 
 For a complete list of changes made in [MariaDB 11.4.1](mariadb-11-4-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-1-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-1-changelog.md).
 
 ### Contributors
 
@@ -216,10 +216,8 @@ For a full list of contributors to [MariaDB 11.4.1](mariadb-11-4-1-release-notes
 
 **Do not use non-stable (non-GA) releases in production!**
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

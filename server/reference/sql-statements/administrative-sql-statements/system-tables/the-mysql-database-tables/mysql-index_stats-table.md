@@ -12,7 +12,6 @@ The `mysql.index_stats` table contains the following fields:
 
 | Field          | Type             | Null | Key | Default | Description                                                                                                                           |
 | -------------- | ---------------- | ---- | --- | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Field          | Type             | Null | Key | Default | Description                                                                                                                           |
 | db\_name       | varchar(64)      | NO   | PRI | NULL    | Database the table is in.                                                                                                             |
 | table\_name    | varchar(64)      | NO   | PRI | NULL    | Table name                                                                                                                            |
 | index\_name    | varchar(64)      | NO   | PRI | NULL    | Name of the index                                                                                                                     |

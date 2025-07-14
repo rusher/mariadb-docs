@@ -23,6 +23,7 @@ MariaDB Enterprise Server 10.6.22-18 was released on 11 Jun 2025.
 * MariaDB effectively running as root CAP\_DAC\_OVERRIDE ([MDEV-36229](https://jira.mariadb.org/browse/MDEV-36229))
 * my\_getopt compares option names case sensitively ([MDEV-27126](https://jira.mariadb.org/browse/MDEV-27126))
 * [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.22
+* Support has been added for Oracle Linux 8 and 9
 
 ## Issues Fixed <a href="#issues-fixed" id="issues-fixed"></a>
 
@@ -116,3 +117,7 @@ In alignment to the [enterprise lifecycle](../enterprise-server-lifecycle.md), M
   * Red Hat UBI 8 is part of the Enterprise Server Docker Image. It does not support MariaDB Enterprise Cluster (Galera) or MariaDB ColumnStore.
 
 Some components of MariaDB Enterprise Server are supported on a subset of platforms. See [MariaDB Engineering Policies](https://mariadb.com/engineering-policies) for details.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formid="4316" formId="4316" %}

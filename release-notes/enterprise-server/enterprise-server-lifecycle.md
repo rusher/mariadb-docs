@@ -14,9 +14,9 @@ MariaDB Enterprise Server incorporates enhancements that are not present in Mari
 
 For details on features added to enhance, harden, and secure MariaDB Enterprise Server, see the following pages:
 
-* [What's New in MariaDB Enterprise Server 10.6](10-6/whats-new-in-mariadb-enterprise-server-10-6.md)
-* [What's New in MariaDB Enterprise Server 11.4](11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
 * [What's New in MariaDB Enterprise Server 11.8](11.8/whats-new-in-mariadb-enterprise-server-11.8.md)
+* [What's New in MariaDB Enterprise Server 11.4](11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
+* [What's New in MariaDB Enterprise Server 10.6](10-6/whats-new-in-mariadb-enterprise-server-10-6.md)
 
 ## Enterprise Server Releases <a href="#enterprise-server-releases" id="enterprise-server-releases"></a>
 
@@ -63,5 +63,7 @@ MariaDB Corporation offers vendor support for MariaDB Enterprise Server, includi
 * Customer communications, managed via the [MariaDB Customer Portal](https://customers.mariadb.com/)
 * [Training](https://mariadb.com/services/training)
 * [Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/gmXC0YXB3rRhXvpg5mb1/)
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

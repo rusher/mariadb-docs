@@ -237,9 +237,9 @@ modified in that revision.
       Thu 2013-06-27 10:08:30 +0200
       * Updated copyright year in the spec file
     * [Revision #3077.188.68](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3077.188.68)\
-      Thu 2013-06-27 09:18:48 +0200
-      *
-        * Spec file cleanup for 5.5.33 release to resolve rpm dependencies bugs
+      Thu 2013-06-27 09:18:48 +0200\
+      \*
+      * Spec file cleanup for 5.5.33 release to resolve rpm dependencies bugs
     * [Revision #3077.188.67](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3077.188.67)\
       Wed 2013-06-26 11:43:44 +0200
       * Cleaned up spec file for 5.5.33 release
@@ -746,5 +746,9 @@ modified in that revision.
   * [Revision #3334.1.505](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3334.1.505)\
     Thu 2013-07-18 11:16:18 +0300
     * Fix of using uninitialized variadle.
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

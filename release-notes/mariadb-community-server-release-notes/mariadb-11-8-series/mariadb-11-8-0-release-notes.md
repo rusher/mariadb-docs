@@ -1,12 +1,12 @@
 # MariaDB 11.8.0 Release Notes
 
-The most recent release of [MariaDB 11.8](what-is-mariadb-118.md) is: [**MariaDB 11.8.1**](mariadb-11-8-1-release-notes.md) RC [Download Alternate](https://mariadb.com/downloads)[ _download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.1)
+{% include "../../.gitbook/includes/latest-11-8.md" %}
 
-[Download](https://downloads.mariadb.org/mariadb/11.8.0) [Release Notes](mariadb-11-8-0-release-notes.md) [Overview of 11.8](what-is-mariadb-118.md)
+<a href="https://downloads.mariadb.org/mariadb/11.8.0/" class="button primary">Download</a> <a href="mariadb-11-8-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 **Release date:** 18 Dec 2024
 
-**Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
+{% include "../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.8](what-is-mariadb-118.md) is a long-term development series of MariaDB. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 
@@ -69,10 +69,8 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 
 * When querying the [information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema), [stored functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-functions) that have the same name as a native function no longer generate a warning ([MDEV-35437](https://jira.mariadb.org/browse/MDEV-35437))
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

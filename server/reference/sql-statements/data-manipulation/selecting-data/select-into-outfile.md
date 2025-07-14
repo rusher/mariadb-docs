@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SELECT ... INTO OUTFILE 'file_name'
         [CHARACTER SET charset_name]
         [export_options]
@@ -27,7 +27,7 @@ The file must not exist. It cannot be overwritten. A user needs the [FILE](../..
 
 The [LOAD DATA INFILE](../inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement complements `SELECT INTO OUTFILE`.
 
-### Character-sets
+### Character Sets
 
 The `CHARACTER SET` clause specifies the [character set](../../../data-types/string-data-types/character-sets/) in which the results are to be written. Without the clause, no conversion takes place (the binary character set). In this case, if there are multiple character sets, the output will contain these too, and may not easily be able to be reloaded.
 
@@ -37,16 +37,16 @@ In cases where you have two servers using different character-sets, using `SELEC
 
 The following example produces a file in the CSV format:
 
-```
+```sql
 SELECT customer_id, firstname, surname from customer
   INTO OUTFILE '/exportdata/customers.txt'
   FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
   LINES TERMINATED BY '\n';
 ```
 
-The following ANSI syntax is also supported for simple `SELECT` without `UNION`
+The following ANSI syntax is also supported for simple `SELECT` without `UNION` :
 
-```
+```sql
 SELECT customer_id, firstname, surname INTO OUTFILE '/exportdata/customers.txt'
   FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
   LINES TERMINATED BY '\n'
@@ -55,8 +55,9 @@ SELECT customer_id, firstname, surname INTO OUTFILE '/exportdata/customers.txt'
 
 If you want to use the ANSI syntax with `UNION` or similar construct you have to use the syntax:
 
-```
-SELECT  * INTO OUTFILE "/tmp/skr3" FROM (SELECT * FROM t1 UNION SELECT * FROM t1);
+```sql
+SELECT  * INTO OUTFILE "/tmp/skr3" 
+FROM (SELECT * FROM t1 UNION SELECT * FROM t1);
 ```
 
 ## See Also

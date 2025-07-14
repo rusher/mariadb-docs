@@ -15,7 +15,7 @@ SELECT *
 FROM
   customer, orders, ...
 WHERE 
-  customer.id = orders.customer_id and ...
+  customer.id = orders.customer_id AND ...
 ```
 
 Suppose, table orders has an index `IDX` on `orders.customer_id`.
@@ -27,7 +27,7 @@ output cardinality as if customer was cross-joined with orders.
 
 ## Hash Join
 
-MariaDB supports [Block Hash Join](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md). It is not enabled by default, one needs to set it [join\_cache\_level](../system-variables/server-system-variables.md#join_cache_level) to 3 or a bigger value to enable it.
+MariaDB supports [Block Hash Join](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms#block-hash-join). It is not enabled by default, one needs to set it [join\_cache\_level](../system-variables/server-system-variables.md#join_cache_level) to 3 or a bigger value to enable it.
 
 Before [MDEV-30812](https://jira.mariadb.org/browse/MDEV-30812), Query optimization for Block Hash Join would work as described in the above example: It would assume that the join operation is a cross join.
 

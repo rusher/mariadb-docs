@@ -1,17 +1,12 @@
-
 # Window Functions Overview
-
 
 ## Introduction
 
-
 Window functions allow calculations to be performed across a set of rows related to the current row.
-
 
 ### Syntax
 
-
-```
+```sql
 function (expression) OVER (
   [ PARTITION BY expression_list ]
   [ ORDER BY order_list [ frame_clause ] ] ) 
@@ -39,55 +34,47 @@ frame_border:
 
 ### Description
 
-
 Window functions perform calculations across a set of rows (in a defined window).
-
 
 Dedicated window functions include
 
-
-* [CUME_DIST](cume_dist.md)
-* [DENSE_RANK](dense_rank.md)
-* [FIRST_VALUE](first_value.md)
+* [CUME\_DIST](cume_dist.md)
+* [DENSE\_RANK](dense_rank.md)
+* [FIRST\_VALUE](first_value.md)
 * [LAG](lag.md)
-* [LAST_VALUE](../../secondary-functions/information-functions/last_value.md)
+* [LAST\_VALUE](../../secondary-functions/information-functions/last_value.md)
 * [LEAD](lead.md)
 * [MEDIAN](median.md)
-* [NTH_VALUE](nth_value.md)
+* [NTH\_VALUE](nth_value.md)
 * [NTILE](ntile.md)
-* [PERCENT_RANK](percent_rank.md)
-* [PERCENTILE_CONT](percentile_cont.md)
-* [PERCENTILE_DISC](percentile_disc.md)
-* [RANK](rank.md), [ROW_NUMBER](row_number.md)
+* [PERCENT\_RANK](percent_rank.md)
+* [PERCENTILE\_CONT](percentile_cont.md)
+* [PERCENTILE\_DISC](percentile_disc.md)
+* [RANK](rank.md), [ROW\_NUMBER](row_number.md)
 
-
-[Aggregate functions](../../aggregate-functions/README.md) that can also be used as window functions include
-
+[Aggregate functions](../../aggregate-functions/) that can also be used as window functions include
 
 * [AVG](../../aggregate-functions/avg.md)
-* [BIT_AND](../../aggregate-functions/bit_and.md)
-* [BIT_OR](../../aggregate-functions/bit_or.md)
-* [BIT_XOR](../../aggregate-functions/bit_xor.md)
+* [BIT\_AND](../../aggregate-functions/bit_and.md)
+* [BIT\_OR](../../aggregate-functions/bit_or.md)
+* [BIT\_XOR](../../aggregate-functions/bit_xor.md)
 * [COUNT](../../aggregate-functions/count.md)
 * [MAX](../../aggregate-functions/max.md)
 * [MIN](../../aggregate-functions/min.md)
 * [STD](../../aggregate-functions/std.md)
 * [STDDEV](../../aggregate-functions/stddev.md)
-* [STDDEV_POP](../../aggregate-functions/stddev_pop.md)
-* [STDDEV_SAMP](../../aggregate-functions/stddev_samp.md)
+* [STDDEV\_POP](../../aggregate-functions/stddev_pop.md)
+* [STDDEV\_SAMP](../../aggregate-functions/stddev_samp.md)
 * [SUM](../../aggregate-functions/sum.md)
-* [VAR_POP](../../aggregate-functions/var_pop.md)
-* [VAR_SAMP](../../aggregate-functions/var_samp.md)
+* [VAR\_POP](../../aggregate-functions/var_pop.md)
+* [VAR\_SAMP](../../aggregate-functions/var_samp.md)
 * [VARIANCE](../../aggregate-functions/variance.md)
-
 
 Window function queries are characterised by the OVER keyword, following which the set of rows used for the calculation is specified. By default, the set of rows used for the calculation (the "window) is the entire dataset, which can be ordered with the ORDER BY clause. The PARTITION BY clause is used to reduce the window to a particular group within the dataset.
 
+Consider the following data:
 
-For example, given the following data:
-
-
-```
+```sql
 CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); 
 
 INSERT INTO student VALUES 
@@ -97,10 +84,9 @@ INSERT INTO student VALUES
   ('Tatiana', 'SQL', 87), ('Tatiana', 'Tuning', 83);
 ```
 
-the following two queries return the average partitioned by test and by name respectively:
+The following two queries return the average partitioned by test and by name respectively:
 
-
-```
+```sql
 SELECT name, test, score, AVG(score) OVER (PARTITION BY test) 
   AS average_by_test FROM student;
 +---------+--------+-------+-----------------+
@@ -134,56 +120,38 @@ SELECT name, test, score, AVG(score) OVER (PARTITION BY name)
 
 It is also possible to specify which rows to include for the window function (for example, the current row and all preceding rows). See [Window Frames](window-frames.md) for more details.
 
-
 ## Scope
-
 
 Window functions were introduced in SQL:2003, and their definition was expanded in subsequent versions of the standard. The last expansion was in the latest version of the standard, SQL:2011.
 
-
 Most database products support a subset of the standard, they implement some functions defined as late as in SQL:2011, and at the same time leave some parts of SQL:2008 unimplemented.
-
 
 MariaDB:
 
-
 * Supports ROWS and RANGE-type frames
-
   * All kinds of frame bounds are supported, including `RANGE PRECEDING|FOLLOWING n` frame bounds (unlike PostgreSQL or MS SQL Server)
-  * Does not yet support DATE[TIME] datatype and arithmetic for RANGE-type frames ([MDEV-9727](https://jira.mariadb.org/browse/MDEV-9727))
+  * Does not yet support DATE\[TIME] datatype and arithmetic for RANGE-type frames ([MDEV-9727](https://jira.mariadb.org/browse/MDEV-9727))
 * Does not support GROUPS-type frames (it seems that no popular database supports it, either)
-
-
 * Does not support frame exclusion (no other database seems to support it, either) ([MDEV-9724](https://jira.mariadb.org/browse/MDEV-9724))
 * Does not support explicit `NULLS FIRST` or `NULLS LAST`.
 * Does not support nested navigation in window functions (this is `VALUE_OF(expr AT row_marker [, default_value)` syntax)
-
-
 * The following window functions are supported:
-
-  * "Streamable" window functions: [ROW_NUMBER](row_number.md), [RANK](rank.md), [DENSE_RANK](dense_rank.md),
-  * Window functions that can be streamed once the number of rows in partition is known: [PERCENT_RANK](percent_rank.md), [CUME_DIST](cume_dist.md), [NTILE](ntile.md)
-
-
-* Aggregate functions that are currently supported as window functions are: [COUNT](../../aggregate-functions/count.md), [SUM](../../aggregate-functions/sum.md), [AVG](../../aggregate-functions/avg.md), [BIT_OR](../../aggregate-functions/bit_or.md), [BIT_AND](../../aggregate-functions/bit_and.md), [BIT_XOR](../../aggregate-functions/bit_xor.md).
+  * "Streamable" window functions: [ROW\_NUMBER](row_number.md), [RANK](rank.md), [DENSE\_RANK](dense_rank.md),
+  * Window functions that can be streamed once the number of rows in partition is known: [PERCENT\_RANK](percent_rank.md), [CUME\_DIST](cume_dist.md), [NTILE](ntile.md)
+* Aggregate functions that are currently supported as window functions are: [COUNT](../../aggregate-functions/count.md), [SUM](../../aggregate-functions/sum.md), [AVG](../../aggregate-functions/avg.md), [BIT\_OR](../../aggregate-functions/bit_or.md), [BIT\_AND](../../aggregate-functions/bit_and.md), [BIT\_XOR](../../aggregate-functions/bit_xor.md).
 * Aggregate functions with the `DISTINCT` specifier (e.g. `COUNT( DISTINCT x)`) are not supported as window functions.
-
 
 ## Links
 
-
-* [MDEV-6115](https://jira.mariadb.org/browse/MDEV-6115) is the main jira task for window functions development. Other tasks are are attached as sub-tasks
+* [MDEV-6115](https://jira.mariadb.org/browse/MDEV-6115) is the main jira task for window functions development. Other tasks are attached as sub-tasks.
 * [bb-10.2-mdev9543](https://github.com/MariaDB/server/commits/bb-10.2-mdev9543) is the feature tree for window functions. Development is ongoing, and this tree has the newest changes.
-* Testcases are in `mysql-test/t/win*.test`
-
+* Test cases are in `mysql-test/t/win*.test` .
 
 ## Examples
 
-
 Given the following sample data:
 
-
-```
+```sql
 CREATE TABLE users (
   email VARCHAR(30), 
   first_name VARCHAR(30), 
@@ -199,10 +167,9 @@ INSERT INTO users VALUES
   ('root@boss.org', 'Root', 'Chief', 'admin')
 ```
 
-First, let's order the records by email alphabetically, giving each an ascending *rnum* value starting with 1. This will make use of the [ROW_NUMBER](row_number.md) window function:
+First, let's order the records by email alphabetically, giving each an ascending _rnum_ value starting with 1. This will make use of the [ROW\_NUMBER](row_number.md) window function:
 
-
-```
+```sql
 SELECT row_number() OVER (ORDER BY email) AS rnum,
     email, first_name, last_name, account_type
 FROM users ORDER BY email;
@@ -217,10 +184,9 @@ FROM users ORDER BY email;
 +------+------------------------+------------+-----------+--------------
 ```
 
-We can generate separate sequences based on account type, using the PARTITION BY clause:
+We can generate separate sequences based on account type, using the `PARTITION BY` clause:
 
-
-```
+```sql
 SELECT row_number() OVER (PARTITION BY account_type ORDER BY email) AS rnum, 
   email, first_name, last_name, account_type 
 FROM users ORDER BY account_type,email;
@@ -237,8 +203,7 @@ FROM users ORDER BY account_type,email;
 
 Given the following structure and data, we want to find the top 5 salaries from each department.
 
-
-```
+```sql
 CREATE TABLE employee_salaries (dept VARCHAR(20), name VARCHAR(20), salary INT(11));
 
 INSERT INTO employee_salaries VALUES
@@ -258,8 +223,7 @@ INSERT INTO employee_salaries VALUES
 
 We could do this without using window functions, as follows:
 
-
-```
+```sql
 select dept, name, salary
 from employee_salaries as t1
 where (select count(t2.salary)
@@ -287,19 +251,16 @@ order by dept, salary desc;
 
 This has a number of disadvantages:
 
-
-* if there is no index, the query could take a long time if the employee_salary_table is large
-* Adding and maintaining indexes adds overhead, and even with indexes on dept and salary, each subquery execution adds overhead by performing a lookup through the index.
-
+* If there is no index, the query could take a long time if the `employee_salary_table` is large.
+* Adding and maintaining indexes adds overhead, and even with indexes on `dept` and `salary`, each subquery execution adds overhead by performing a lookup through the index.
 
 Let's try achieve the same with window functions. First, generate a rank for all employees, using the [RANK](rank.md) function.
 
-
-```
-select rank() over (partition by dept order by salary desc) as ranking,
+```sql
+SELECT rank() OVER (PARTITION BY dept ORDER BY salary DESC) AS ranking,
     dept, name, salary
-    from employee_salaries
-    order by dept, ranking;
+    FROM employee_salaries
+    ORDER BY dept, ranking;
 +---------+-------------+--------------+--------+
 | ranking | dept        | name         | salary |
 +---------+-------------+--------------+--------+
@@ -318,13 +279,11 @@ select rank() over (partition by dept order by salary desc) as ranking,
 +---------+-------------+--------------+--------+
 ```
 
-Each department has a separate sequence of ranks due to the *PARTITION BY* clause. This particular sequence of values for *rank()* is given by the *ORDER BY* clause inside the window function’s *OVER* clause. Finally, to get our results in a readable format we order the data by *dept* and the newly generated *ranking* column.
-
+Each department has a separate sequence of ranks due to the _PARTITION BY_ clause. This particular sequence of values for `rank()` is given by the `ORDER BY` clause inside the window function’s _OVER_ clause. Finally, to get our results in a readable format we order the data by _dept_ and the newly generated `ranking` column.
 
 Now, we need to reduce the results to find only the top 5 per department. Here is a common mistake:
 
-
-```
+```sql
 select
 rank() over (partition by dept order by salary desc) as ranking,
 dept, name, salary
@@ -335,13 +294,11 @@ order by dept, ranking;
 ERROR 1054 (42S22): Unknown column 'ranking' in 'where clause'
 ```
 
-Trying to filter only the first 5 values per department by putting a where clause in the statement does not work, due to the way window functions are computed. The computation of window functions happens after all WHERE, GROUP BY and HAVING clauses have been completed, right before ORDER BY, so the WHERE clause has no idea that the ranking column exists. It is only present after we have filtered and grouped all the rows.
-
+Trying to filter only the first 5 values per department by putting a where clause in the statement does not work, due to the way window functions are computed. The computation of window functions happens after all `WHERE`, `GROUP BY` and `HAVING` clauses have been completed, right before `ORDER BY`, so the `WHERE` clause has no idea that the ranking column exists. It is only present after we have filtered and grouped all the rows.
 
 To counteract this problem, we need to wrap our query into a derived table. We can then attach a where clause to it:
 
-
-```
+```sql
 select *from (select rank() over (partition by dept order by salary desc) as ranking,
   dept, name, salary
 from employee_salaries) as salary_ranks
@@ -365,12 +322,9 @@ where (salary_ranks.ranking <= 5)
 
 ## See Also
 
-
 * [Window Frames](window-frames.md)
 * [Introduction to Window Functions in MariaDB Server 10.2](https://mariadb.com/resources/blog/introduction-window-functions-mariadb-server-102)
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

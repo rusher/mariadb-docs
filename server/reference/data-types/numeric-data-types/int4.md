@@ -1,10 +1,8 @@
-
 # INT4
 
 `INT4` is a synonym for [INT](int.md).
 
-
-```
+```sql
 CREATE TABLE t1 (x INT4);
 
 DESC t1;
@@ -17,14 +15,13 @@ DESC t1;
 
 ## EXAMPLES
 
-
-```
+```sql
 CREATE TABLE int4_example (
   example INT4
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE int4_example\G
 
 *************************** 1. row ***************************
@@ -34,8 +31,6 @@ Create Table: CREATE TABLE `int4_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

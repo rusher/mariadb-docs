@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.3](what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.3.0)[Release Notes](mariadb-1030-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-1030-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
+[Download](https://downloads.mariadb.org/mariadb/10.3.0)[Release Notes](mariadb-1030-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1030-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
 
 **Release date:** 16 Apr 2017
 
@@ -40,7 +40,7 @@ Connections with idle transactions can be automatically killed after a specified
 
 ### Compatibility
 
-When running with [sql\_mode=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/broken-reference/README.md), the server now understands a subset of Oracle's PL/SQL language instead of the traditional MariaDB syntax for stored routines. This work is in progress. See [MDEV-10142](https://jira.mariadb.org/browse/MDEV-10142) and [MDEV-10764](https://jira.mariadb.org/browse/MDEV-10764)\
+When running with [sql\_mode=ORACLE](https://mariadb.com/docs/release-notes/compatibility-and-differences/sql_modeoracle), the server now understands a subset of Oracle's PL/SQL language instead of the traditional MariaDB syntax for stored routines. This work is in progress. See [MDEV-10142](https://jira.mariadb.org/browse/MDEV-10142) and [MDEV-10764](https://jira.mariadb.org/browse/MDEV-10764)\
 for the current status and subtasks. The 10.3.0 release includes:
 
 * Providing compatibility for basic PL/SQL constructs - [MDEV-10411](https://jira.mariadb.org/browse/MDEV-10411)
@@ -118,12 +118,10 @@ See the [What is MariaDB 10.3?](what-is-mariadb-103.md) page for an overview of 
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
 
 For a complete list of changes made in [MariaDB 10.3.0](mariadb-1030-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-1030-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1030-changelog.md).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

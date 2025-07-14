@@ -1,14 +1,16 @@
 # MariaDB Connector/Node.js 3.0.2 Release Notes
 
-The most recent [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector)[Release Notes](mariadb-connector-node-js-3-0-2-release-notes.md)[Changelog](../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-0-2-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector) | [Release Notes](mariadb-connector-node-js-3-0-2-release-notes.md) | [Changelog](../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-0-2-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 27 Oct 2022
 
 MariaDB Connector/Node.js 3.0.2 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
 
-**For an overview of MariaDB Connector/Node.js see the**[**About MariaDB Connector/Node.js**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connectornodejs/README.md) **page**
+{% hint style="success" %}
+**For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**
+{% endhint %}
 
 ## Notable Changes
 
@@ -46,5 +48,7 @@ prepare.close();
 * [CONJS-214](https://jira.mariadb.org/browse/CONJS-214) missing pool.closed typescript definition
 * [CONJS-216](https://jira.mariadb.org/browse/CONJS-216) remove please-upgrade-node dependency
 * [CONJS-224](https://jira.mariadb.org/browse/CONJS-224) missing typescript checkNumberRange option definition
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

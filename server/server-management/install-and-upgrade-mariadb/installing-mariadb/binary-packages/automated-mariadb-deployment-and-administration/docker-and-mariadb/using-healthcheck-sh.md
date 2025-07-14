@@ -6,11 +6,11 @@ The healthcheck.sh script is part of the Docker Official Images of MariaDB Serve
 
 The script processes a number of argument and tests, together, in strict order. Arguments pertaining to a test must occur before the test name. If a test fails, no further processing is performed. Both arguments and tests begin with a double-hyphen.
 
-By default, (since 2023-06-27), official images will create healthcheck@localhost, healthcheck@127.0.0.1, healthcheck@::1 users with a random password and USAGE privileges. [MARIADB_HEALTHCHECK_GRANTS](mariadb-server-docker-official-image-environment-variables.md#mariadb_healthcheck_grants) can be used for `--replication` where additional grants are required. This is stored in .my-healthcheck.cnf in the datadir of the container and passed as the `--defaults-extra-file` to the healthcheck.sh script if it exists. The `.my-healthcheck.cnf` also sets `protocol=tcp` for the `mariadb` so `--connect` is effectively there on all tests.
+By default, (since 2023-06-27), official images will create healthcheck@localhost, healthcheck@127.0.0.1, healthcheck@::1 users with a random password and USAGE privileges. [MARIADB\_HEALTHCHECK\_GRANTS](mariadb-server-docker-official-image-environment-variables.md#mariadb_healthcheck_grants) can be used for `--replication` where additional grants are required. This is stored in .my-healthcheck.cnf in the datadir of the container and passed as the `--defaults-extra-file` to the healthcheck.sh script if it exists. The `.my-healthcheck.cnf` also sets `protocol=tcp` for the `mariadb` so `--connect` is effectively there on all tests.
 
 The `[MARIADB_AUTO_UPGRADE=1](mariadb-server-docker-official-image-environment-variables.md#mariadb_auto_upgrade) will regenerate the .my-healthcheck.cnf file if missing and recreate the healthcheck users of the database with a new random password. The current port configuration of the MariaDB container is written into this file.`
 
-The [MARIADB_MYSQL_LOCALHOST_USER=1, MARIADB_MYSQL_LOCALHOST_GRANTS](mariadb-server-docker-official-image-environment-variables.md#mariadb_mysql_localhost_user-mariadb_mysql_localhost_grants) environment variables can also be used, but with the creation of the healthcheck user, these are backwards compatible.
+The [MARIADB\_MYSQL\_LOCALHOST\_USER=1, MARIADB\_MYSQL\_LOCALHOST\_GRANTS](mariadb-server-docker-official-image-environment-variables.md#mariadb_mysql_localhost_user-mariadb_mysql_localhost_grants) environment variables can also be used, but with the creation of the healthcheck user, these are backwards compatible.
 
 ## Compose File Example
 
@@ -81,7 +81,7 @@ This tests a replica based on the `--replication_*` parameters. The replica test
 
 These are tested for all connections, if `--replication_all` is set (default), or `--replication_name`.
 
-The connecting user must have [REPLICATION\_CLIENT](../../../../../../reference/sql-statements/account-management-sql-statements/grant.md#replication-client) if using a version less than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), or [REPLICA MONITOR](../../../../../../reference/sql-statements/account-management-sql-statements/grant.md#replica-monitor) for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) or later.
+The connecting user must have [REPLICATION\_CLIENT](../../../../../../reference/sql-statements/account-management-sql-statements/grant.md#replication-client) if using a version less than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), or [REPLICA MONITOR](../../../../../../reference/sql-statements/account-management-sql-statements/grant.md#replica-monitor) for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) or later.
 
 ### --mariadbupgrade
 
@@ -119,7 +119,7 @@ Change to this user. Can only be done once as the root user is default for healt
 
 ### --su-mysql
 
-Change to the `mysql` unix user. Like `--su` this respawns the script so will reset all parameters. Should be the first argument. The [MARIADB_MYSQL_LOCALHOST_USER=1](mariadb-server-docker-official-image-environment-variables.md#mariadb_mysql_localhost_user-mariadb_mysql_localhost_grants) environment variable is designed around usage here.
+Change to the `mysql` unix user. Like `--su` this respawns the script so will reset all parameters. Should be the first argument. The [MARIADB\_MYSQL\_LOCALHOST\_USER=1](mariadb-server-docker-official-image-environment-variables.md#mariadb_mysql_localhost_user-mariadb_mysql_localhost_grants) environment variable is designed around usage here.
 
 ### --datadir=n
 

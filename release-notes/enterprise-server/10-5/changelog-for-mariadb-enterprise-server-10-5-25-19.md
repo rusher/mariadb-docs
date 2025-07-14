@@ -17,14 +17,14 @@ MariaDB Enterprise Server 10.5.25-19 was released on 2024-06-11.
 * ([MDEV-34088](https://jira.mariadb.org/browse/MDEV-34088)) The TIMESTAMP value of '1970-01-01 00:00:00' can be indirectly inserted in strict mode
 * ([MDEV-18590](https://jira.mariadb.org/browse/MDEV-18590)) galera.versioning\_trx\_id: Test failure: mysqltest: Result content mismatch
 * ([MDEV-30046](https://jira.mariadb.org/browse/MDEV-30046)) wrong row targeted with "insert ... on duplicate" and "replace", leading to data corruption
-* ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251)) [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) breaks running mariabackup on older mariadb (opendir(NULL))
+* ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251)) [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) breaks running mariadb-backup on older mariadb (opendir(NULL))
 * ([MDEV-33332](https://jira.mariadb.org/browse/MDEV-33332)) SIGSEGV in buf\_read\_ahead\_linear() when bpage is in buf\_pool.watch
 * ([MDEV-33383](https://jira.mariadb.org/browse/MDEV-33383)) fts query crashes in fts\_query\_calculate\_ranking()
 * ([MDEV-33770](https://jira.mariadb.org/browse/MDEV-33770)) Alter operation hangs when encryption thread works on the same tablespace
 * ([MDEV-21102](https://jira.mariadb.org/browse/MDEV-21102)) Server crashes in JOIN\_CACHE::write\_record\_data upon EXPLAIN with subqueries and constant tables
 * ([MDEV-33731](https://jira.mariadb.org/browse/MDEV-33731)) Server crashes when deleting partitions from a table with spider engine
 * ([MDEV-31779](https://jira.mariadb.org/browse/MDEV-31779)) Server crash in Rows\_log\_event::update\_sequence upon replaying binary log
-* ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540)) mariabackup --prepare: \[ERROR] InnoDB: Crash recovery is broken due to insufficient innodb\_log\_file\_size
+* ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540)) mariadb-backup --prepare: \[ERROR] InnoDB: Crash recovery is broken due to insufficient innodb\_log\_file\_size
 * ([MDEV-32787](https://jira.mariadb.org/browse/MDEV-32787)) Assertion `!wsrep_has_changes(thd) || (thd->lex->sql_command == SQLCOM_CREATE_TABLE && !thd->is_current_stmt_binlog_format_row()) || thd->wsrep_cs().transaction().state() == wsrep::transaction::s_aborted` failed in void wsrep\_commit\_empty(THD\*, bool)
 * ([MDEV-33495](https://jira.mariadb.org/browse/MDEV-33495)) Graceful node shutdown can crash Garbd and Cluster can go non-Primary when SSL is used
 * ([MDEV-31361](https://jira.mariadb.org/browse/MDEV-31361)) Wrong result on 2nd execution of PS for query with derived table
@@ -51,7 +51,7 @@ MariaDB Enterprise Server 10.5.25-19 was released on 2024-06-11.
 * ([MDEV-24507](https://jira.mariadb.org/browse/MDEV-24507)) Server Crash using UDF in WHERE clause of VIEW
 * ([MDEV-32935](https://jira.mariadb.org/browse/MDEV-32935)) Parameter 'CMAKE\_SYSTEM\_PROCESSOR=$(DEB\_HOST\_ARCH)' is not needed anymore to crosscompile Debian packages
 * ([MDEV-33301](https://jira.mariadb.org/browse/MDEV-33301)) memlock with systemd still not working even with [MDEV-9095](https://jira.mariadb.org/browse/MDEV-9095) fix
-* ([MDEV-33636](https://jira.mariadb.org/browse/MDEV-33636)) CentOS 7 [MariaDB 10.5](../../mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md) build jobs failing "Invalid capability: cap "%caps(cap\_ipc\_lock=pe"
+* ([MDEV-33636](https://jira.mariadb.org/browse/MDEV-33636)) CentOS 7 [MariaDB 10.5](../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md) build jobs failing "Invalid capability: cap "%caps(cap\_ipc\_lock=pe"
 * ([MDEV-33631](https://jira.mariadb.org/browse/MDEV-33631)) Ubuntu/Debian MYSQL\_SERVER\_SUFFIX is version+suffix on MariaDB packaged versions
 * ([MDEV-33400](https://jira.mariadb.org/browse/MDEV-33400)) Adaptive hash index corruption after ALTER TABLE…DISCARD TABLESPACE
 * ([MDEV-30528](https://jira.mariadb.org/browse/MDEV-30528)) Assertion !mbmaxlen || !(prefix\_len % mbmaxlen) failed in dtype\_get\_at\_most\_n\_mbchars
@@ -75,7 +75,7 @@ MariaDB Enterprise Server 10.5.25-19 was released on 2024-06-11.
 * ([MDEV-33928](https://jira.mariadb.org/browse/MDEV-33928)) Assertion failure on wsrep\_thd\_is\_aborting
 * (MENT-2042) Assertion `bf_aborted()` failed in void wsrep::transaction::xa\_replay\_common(wsrep::unique\_lock[wsrep::mutex](wsrep::mutex)&)
 * ([MDEV-31402](https://jira.mariadb.org/browse/MDEV-31402)) SIGSEGV in json\_get\_path\_next | Item\_func\_json\_extract::read\_json
-* ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011)) mariabackup --backup: FATAL ERROR: ... Can't open datafile cool\_down/t3
+* ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011)) mariadb-backup --backup: FATAL ERROR: ... Can't open datafile cool\_down/t3
 * ([MDEV-18288](https://jira.mariadb.org/browse/MDEV-18288)) Transportable Tablespaces leave AUTO\_INCREMENT in mismatched state, causing INSERT errors in newly imported tables when .cfg is not used.
 * ([MDEV-19044](https://jira.mariadb.org/browse/MDEV-19044)) Alter table corrupts while applying the modification log
 * ([MDEV-33434](https://jira.mariadb.org/browse/MDEV-33434)) UBSAN null pointer passed as argument 2, which is declared to never be null in spider\_udf\_direct\_sql\_create\_conn
@@ -85,7 +85,7 @@ MariaDB Enterprise Server 10.5.25-19 was released on 2024-06-11.
 * ([MDEV-33584](https://jira.mariadb.org/browse/MDEV-33584)) sql plugin init failure with traditional sql\_mode
 * ([MDEV-33802](https://jira.mariadb.org/browse/MDEV-33802)) Weird read view after ROLLBACK of other transactions.
 * ([MDEV-32489](https://jira.mariadb.org/browse/MDEV-32489)) Change buffer index fails to delete the records
-* ([MDEV-33777](https://jira.mariadb.org/browse/MDEV-33777)) Spider: ERROR 12710 (HY000): Invalid information from remote table when using [MariaDB 10.5](../../mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md) local and [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) remote
+* ([MDEV-33777](https://jira.mariadb.org/browse/MDEV-33777)) Spider: ERROR 12710 (HY000): Invalid information from remote table when using [MariaDB 10.5](../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md) local and [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) remote
 * ([MDEV-32454](https://jira.mariadb.org/browse/MDEV-32454)) JSON test has problem in view protocol
 * (MENT-1555) Spider: Set proper remote isolation based on information obtained by SQLGetInfo
 * ([MDEV-34003](https://jira.mariadb.org/browse/MDEV-34003)) ASAN: heap-use-after-free in memcpy from sql/protocol.cc on SELECT
@@ -194,6 +194,6 @@ MariaDB Enterprise Server 10.5.25-19 was released on 2024-06-11.
 * ([MDEV-33214](https://jira.mariadb.org/browse/MDEV-33214)) Table is getting rebuild with ALTER TABLE ADD COLUMN
 * ([MDEV-30660](https://jira.mariadb.org/browse/MDEV-30660)) Aggregation functions fail to leverage uniqueness property
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

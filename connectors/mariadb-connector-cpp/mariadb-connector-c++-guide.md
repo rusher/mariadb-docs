@@ -16,7 +16,6 @@ Using MariaDB Connector/C++ in C++ applications enables design with an object-or
 
 | Feature             | Connector/C++ | [Connector/C](../mariadb-connector-c/) |
 | ------------------- | ------------- | -------------------------------------- |
-| Feature             | Connector/C++ | [Connector/C](../mariadb-connector-c/) |
 | Executes SQL        | Yes           | Yes                                    |
 | Object-Oriented     | Yes           | No                                     |
 | Smart Pointers      | Yes           | No                                     |

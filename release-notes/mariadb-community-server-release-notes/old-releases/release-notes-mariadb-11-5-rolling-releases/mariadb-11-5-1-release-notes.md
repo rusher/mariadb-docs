@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.5](what-is-mariadb-115.md) is:[**MariaDB 11.5.2**](mariadb-11-5-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.5.2/)
 
-[Download 11.5.1](https://downloads.mariadb.org/mariadb/11.5.1/)[Release Notes](mariadb-11-5-1-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-1-changelog.md)[Overview of 11.5](what-is-mariadb-115.md)
+[Download 11.5.1](https://downloads.mariadb.org/mariadb/11.5.1/)[Release Notes](mariadb-11-5-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-1-changelog.md)[Overview of 11.5](what-is-mariadb-115.md)
 
 **Release date:** 30 May 2024
 
@@ -22,7 +22,7 @@ Thanks, and enjoy MariaDB!
 
 * [Limit size of created disk temporary files and tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview) ([MDEV-9101](https://jira.mariadb.org/browse/MDEV-9101))
 * There are two system variables used for controlling this feature:
-  * [max\_tmp\_session\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable): Limits the the temporary space allowance per user.
+  * [max\_tmp\_session\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable): Limits the temporary space allowance per user.
   * [max\_tmp\_total\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_total_space_usage-system-variable): Limits the temporary space allowance for all users.
 
 ### Data Types
@@ -46,7 +46,6 @@ Thanks, and enjoy MariaDB!
 * Add QUERIES column to Information Schema [INDEX\_STATISTICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table) table ([MDEV-33152](https://jira.mariadb.org/browse/MDEV-33152))
 * Add [FLUSH GLOBAL STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush#flush-status) ([MDEV-33145](https://jira.mariadb.org/browse/MDEV-33145))
 * Provide InnoDB async IO statistics ([MDEV-32841](https://jira.mariadb.org/browse/MDEV-32841))
-* Show variable deprecation for [mariadbd --help](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#-help) output ([MDEV-28671](https://jira.mariadb.org/browse/MDEV-28671))
 * Extend [Query Response Time plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/query-response-time-plugin) to be compatible with Percona server ([MDEV-33501](https://jira.mariadb.org/browse/MDEV-33501))
 
 ### [Sequences](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences)
@@ -74,16 +73,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.5.1](mariadb-11-5-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-1-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-1-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 11.5.1](mariadb-11-5-1-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-4-2-and-mariadb-11-5-1-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

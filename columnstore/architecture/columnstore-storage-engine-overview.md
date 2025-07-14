@@ -11,7 +11,6 @@ The ColumnStore storage engine has the following features:
 
 | Feature                | Detail             | Resources                                                                                                                                                               |
 | ---------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Feature                | Detail             | Resources                                                                                                                                                               |
 | Storage Engine         | ColumnStore        |                                                                                                                                                                         |
 | Availability           | ES 10.5+, CS 10.5+ | [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md)                                        |
 | Workload Optimization  | OLAP and Hybrid    | [OLAP Workloads ](columnstore-storage-architecture.md#olap-workloads)[Hybrid Workload](columnstore-storage-architecture.md#hybrid-workloads)s                           |

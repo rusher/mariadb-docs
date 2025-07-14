@@ -2,39 +2,26 @@
 
 ## Syntax
 
-```
+```sql
 [NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name]
 ```
 
 ## Description
 
-A variable-length string. M represents the maximum column length in\
-characters. The range of M is 0 to 65,532. The effective maximum\
-length of a VARCHAR is subject to the maximum row size and the character set used. For\
-example, utf8 characters can require up to three bytes per character,\
-so a VARCHAR column that uses the utf8 character set can be declared\
-to be a maximum of 21,844 characters.
+A variable-length string. M represents the maximum column length in characters. The range of M is 0 to 65,532. The effective maximum length of a `VARCHAR` is subject to the maximum row size and the character set used. For example, utf8 characters can require up to three bytes per character, so a `VARCHAR` column that uses the utf8 character set can be declared to be a maximum of 21,844 characters.
 
 #### Note:
 
-For the [ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore) engine, M represents the maximum column length in\
-bytes.
+For the [ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore) engine, M represents the maximum column length in bytes.
 
-MariaDB stores VARCHAR values as a one-byte or two-byte length prefix\
-plus data. The length prefix indicates the number of bytes in the\
-value. A VARCHAR column uses one length byte if values require no more\
-than 255 bytes, two length bytes if values may require more than 255\
-bytes.
+MariaDB stores `VARCHAR` values as a one-byte or two-byte length prefix plus data. The length prefix indicates the number of bytes in the value. A `VARCHAR` column uses one length byte if values require no more than 255 bytes, two length bytes if values may require more than 255 bytes.
 
-MariaDB follows the standard SQL specification, and does not remove trailing spaces from VARCHAR values.
+MariaDB follows the standard SQL specification, and does not remove trailing spaces from `VARCHAR` values.
 
-VARCHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../../server-usage/storage-engines/connect/) storage engine does not support VARCHAR(0).
+`VARCHAR(0)` columns can contain 2 values: an empty string or `NULL`. Such columns cannot be part of an index. The [CONNECT](../../../server-usage/storage-engines/connect/) storage engine does not support `VARCHAR(0)`.
 
-VARCHAR is shorthand for CHARACTER VARYING. NATIONAL VARCHAR is the\
-standard SQL way to define that a VARCHAR column should use some\
-predefined character set. MariaDB uses utf8 as this\
-predefined character set, as does MySQL 4.1 and up.\
-NVARCHAR is shorthand for NATIONAL VARCHAR.
+VARCHAR is shorthand for `CHARACTER VARYING`. `NATIONAL VARCHAR` is the standard SQL way to define that a `VARCHAR` column should use some predefined character set. MariaDB uses utf8 as this\
+predefined character set, as does MySQL. `NVARCHAR` is shorthand for `NATIONAL VARCHAR`.
 
 For MariaDB, a number of [NO PAD collations](character-sets/supported-character-sets-and-collations.md#no-pad-collations) are available.
 
@@ -42,7 +29,7 @@ If a unique index consists of a column where trailing pad characters are strippe
 
 ### SYNONYMS
 
-The following are synonyms for VARCHAR:
+The following are synonyms for `VARCHAR`:
 
 * CHAR VARYING
 * CHARACTER VARYING
@@ -53,7 +40,7 @@ The following are synonyms for VARCHAR:
 
 The following are equivalent:
 
-```
+```sql
 VARCHAR(30) CHARACTER SET utf8
 NATIONAL VARCHAR(30)
 NVARCHAR(30)
@@ -64,7 +51,7 @@ NATIONAL CHAR VARYING(30)
 
 ### Trailing spaces
 
-```
+```sql
 CREATE TABLE strtest (v VARCHAR(10));
 INSERT INTO strtest VALUES('Maria   ');
 
@@ -85,18 +72,18 @@ SELECT v LIKE 'Maria',v LIKE 'Maria   ' FROM strtest;
 
 ### VARCHAR
 
-For our example of VARCHAR we picked a maximum size that avoids overflowing the maximum row size (65535). Keep in mind that a multi-byte character set would need more space in the row than a single-byte character set. We also avoid the auto-conversion of a VARCHAR into a TEXT, MEDIUMTEXT, or LONGTEXT that can happen when STRICT\_TRANS\_TABLES is not set in the SQL\_MODE.
+For our example of `VARCHAR`, we picked a maximum size that avoids overflowing the maximum row size (65535). Keep in mind that a multi-byte character set would need more space in the row than a single-byte character set. We also avoid the auto-conversion of a `VARCHAR` into a `TEXT`, `MEDIUMTEXT`, or `LONGTEXT` that can happen when `STRICT_TRANS_TABLES` is not set in the `SQL_MODE`.
 
 The example:
 
-```
+```sql
 CREATE TABLE varchar_example (
    description VARCHAR(20),
    example VARCHAR(65511)
 ) DEFAULT CHARSET=latin1; -- One byte per char makes the examples clearer
 ```
 
-```
+```sql
 INSERT INTO varchar_example VALUES
    ('Normal foo', 'foo'),
    ('Trailing spaces foo', 'foo      '),
@@ -105,12 +92,12 @@ INSERT INTO varchar_example VALUES
    ('Maximum', RPAD('', 65511, 'x'));
 ```
 
-```
+```sql
 SELECT description, LENGTH(example) AS length
    FROM varchar_example;
 ```
 
-```
+```sql
 +---------------------+--------+
 | description         | length |
 +---------------------+--------+
@@ -122,39 +109,39 @@ SELECT description, LENGTH(example) AS length
 +---------------------+--------+
 ```
 
-### Data Too Long
+### Data too Long
 
-When SQL\_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
+When `SQL_MODE` is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
 
-Example of data too long behavior for VARCHAR:
+Example of data too long behavior for `VARCHAR`:
 
-```
+```sql
 TRUNCATE varchar_example;
 
 INSERT INTO varchar_example VALUES
    ('Overflow', RPAD('', 65512, 'x'));
 ```
 
-```
+```sql
 ERROR 1406 (22001): Data too long for column 'example' at row 1
 ```
 
 ## Truncation
 
-* Depending on whether or not [strict sql mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is set, you will either get a warning or an error if you try to insert a string that is too long into a VARCHAR column. If the extra characters are spaces, the spaces that can't fit will be removed and you will always get a warning, regardless of the [sql mode](../../../server-management/variables-and-modes/sql-mode.md) setting.
+* Depending on whether or not [strict sql mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is set, you will either get a warning or an error if you try to insert a string that is too long into a `VARCHAR` column. If the extra characters are spaces, the spaces that can't fit will be removed and you will always get a warning, regardless of the [sql mode](../../../server-management/variables-and-modes/sql-mode.md) setting.
 
-## Difference Between VARCHAR and [TEXT](text.md)
+## Difference Between VARCHAR and TEXT
 
-* VARCHAR columns can be fully indexed. [TEXT](text.md) columns can only be indexed over a specified length.
+* `VARCHAR` columns can be fully indexed. [TEXT](text.md) columns can only be indexed over a specified length.
 * Using [TEXT](text.md) or [BLOB](blob.md) in a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../../server-usage/storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria\_pagecache\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
 
 ## Oracle Mode
 
-In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md), `VARCHAR2` is a synonym.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `VARCHAR2` is a synonym.
 
 ### For Storage Engine Developers
 
-* Internally the full length of the VARCHAR column is allocated inside each TABLE objects record\[] structure. As there are three such buffers, each open table will allocate 3 times max-length-to-store-varchar bytes of memory.
+* Internally, the full length of the `VARCHAR` column is allocated inside each `TABLE` objects record\[] structure. As there are three such buffers, each open table will allocate 3 times max-length-to-store-varchar bytes of memory.
 * [TEXT](text.md) and [BLOB](blob.md) columns are stored with a pointer (4 or 8 bytes) + a 1-4 bytes length. The [TEXT](text.md) data is only stored once. This means that internally `TEXT` uses less memory for each open table but instead has the additional overhead that each `TEXT` object needs to be allocated and freed for each row access (with some caching in between).
 
 ## See Also

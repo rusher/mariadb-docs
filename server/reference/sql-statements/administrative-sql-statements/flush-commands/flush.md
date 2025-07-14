@@ -2,14 +2,14 @@
 
 ## Syntax
 
-```
+```sql
 FLUSH [NO_WRITE_TO_BINLOG | LOCAL]
     flush_option [, flush_option] ...
 ```
 
 or when flushing tables:
 
-```
+```sql
 FLUSH [NO_WRITE_TO_BINLOG | LOCAL] TABLES [table_list]  [table_flush_option]
 ```
 
@@ -17,11 +17,9 @@ where `table_list` is a list of tables separated by `,` (comma).
 
 ## Description
 
-The `FLUSH` statement clears or reloads various internal caches used by\
-MariaDB. To execute `FLUSH`, you must have the `RELOAD`\
-privilege. See [GRANT](../../account-management-sql-statements/grant.md).
+The `FLUSH` statement clears or reloads various internal caches used by MariaDB. To execute `FLUSH`, you must have the `RELOAD` privilege. See [GRANT](../../account-management-sql-statements/grant.md).
 
-The `RESET` statement is similar to `FLUSH`. See[RESET](../reset.md).
+The `RESET` statement is similar to `FLUSH`. See [RESET](../reset.md).
 
 You cannot issue a FLUSH statement from within a [stored function](../../../../server-usage/stored-routines/stored-functions/) or a [trigger](../../../../server-usage/triggers-events/triggers/). Doing so within a stored procedure is permitted, as long as it is not called by a stored function or trigger. See [Stored Routine Limitations](../../../../server-usage/stored-routines/stored-routine-limitations.md), [Stored Function Limitations](../../../../server-usage/stored-routines/stored-functions/stored-function-limitations.md) and [Trigger Limitations](../../../../server-usage/triggers-events/triggers/trigger-limitations.md).
 
@@ -37,7 +35,6 @@ The different flush options are:
 
 | Option                                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | CHANGED\_PAGE\_BITMAPS                                  | [XtraDB](../../../../server-usage/storage-engines/innodb/innodb-unmaintained/about-xtradb.md) only. Internal command used for backup purposes. See the [Information Schema CHANGED\_PAGE\_BITMAPS Table](../system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-changed_page_bitmaps-table.md).                                                                                                                                                                                                                                                                                                                                                                                              |
 | CLIENT\_STATISTICS                                      | Reset client statistics (see [SHOW CLIENT\_STATISTICS](../show/show-client-statistics.md)).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | DES\_KEY\_FILE                                          | Reloads the DES key file (Specified with the [--des-key-file startup option](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md)).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -69,38 +66,46 @@ You can also use the [mariadb-admin](../../../../clients-and-utilities/administr
 
 ## `FLUSH RELAY LOGS`
 
-```
-FLUSH RELAY LOGS 'connection_name';
+```sql
+FLUSH RELAY LOGS 'connection_name'
 ```
 
 ### Compatibility with MySQL
 
-**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to using the channel\_name directly after the `FLUSH command`. For example, one can now use:
 
-The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to\
-using the channel\_name directly after the `FLUSH command`.\
-For example, one can now use:
-
-```
+```sql
 FLUSH RELAY LOGS FOR CHANNEL 'connection_name';
 ```
+{% endtab %}
+
+{% tab title="< 10.7.0" %}
+`FOR CHANNEL` isn't available.
+{% endtab %}
+{% endtabs %}
 
 ## FLUSH STATUS
 
 [Server status variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) can be reset by executing the following:
 
+```sql
+FLUSH STATUS
 ```
-FLUSH STATUS;
-```
 
-This requires the [RELOAD](../../account-management-sql-statements/grant.md#reload) privilege
+This statement requires the [RELOAD](../../account-management-sql-statements/grant.md#reload) privilege.
 
-Until [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the variables flushed are mainly session, but also some global. Not all session (or global) variables are flushed - the decision was made per variable.
+{% tabs %}
+{% tab title="Current" %}
+Specify FLUSH GLOBAL or FLUSH SESSION. Flushing of global status variables has been moved to `FLUSH GLOBAL STATUS` which is a synonym for `FLUSH STATUS`.\
+You can use `old-mode=OLD_FLUSH_STATUS` to restore the old behavior of the `FLUSH STATUS` statement.
+{% endtab %}
 
-**MariaDB starting with** [**11.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
-
-From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) it is possible to specify FLUSH GLOBAL or FLUSH SESSION. Flushing of global status variables has been moved to `FLUSH GLOBAL STATUS` (in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), this flushes only the global variables previously flushed by `FLUSH STATUS`. In a future release, it is intended for this to reset all global summary variables.) `FLUSH SESSION STATUS` is a synonym for `FLUSH STATUS`.\
-One can use `old-mode=OLD_FLUSH_STATUS` to restore the old behavior of the `FLUSH STATUS`.
+{% tab title="< 11.5" %}
+The variables flushed are mainly session, but some are global. Not all session (or global) variables are flushed - the decision was made per variable.
+{% endtab %}
+{% endtabs %}
 
 ### Global Status Variables that Support `FLUSH STATUS`
 
@@ -185,50 +190,40 @@ Not all global status variables support being reset by `FLUSH STATUS`. Currently
 
 **MariaDB starting with** [**10.11.12**](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-101112-release-notes/README.md)
 
-Prior to [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md), [MariaDB 11.4.6](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md) and [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/mariadb-11-8-2-release-notes), FLUSH TABLES caused [InnoDB statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) to be reloaded or recalculated. From [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md), [MariaDB 11.4.6](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md) and [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/mariadb-11-8-2-release-notes), this is no longer the case. [RENAME TABLE](../../data-definition/rename-table.md) is unaffected, and will continue to trigger a reload of the statistics.
+{% tabs %}
+{% tab title="Current" %}
+`FLUSH TABLES` doesn't cause [InnoDB statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) to be reloaded or recalculated. [RENAME TABLE](../../data-definition/rename-table.md), however, triggers a reload of the statistics.
+{% endtab %}
+
+{% tab title="< 11.8.2 / 11.4.6" %}
+`FLUSH TABLES` causes [InnoDB statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) to be reloaded or recalculated.
+{% endtab %}
+
+{% tab title="< 10.11.12" %}
+`FLUSH TABLES` causes [InnoDB statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) to be reloaded or recalculated.
+{% endtab %}
+{% endtabs %}
 
 ### Purpose of FLUSH TABLES
 
-The purpose of `FLUSH TABLES` is to clean up the open table cache and\
-table definition cache of tables that are not in use. This frees up memory\
-and file descriptors. Normally this is not needed as the caches works\
-on a first-in, first-out basis, but can be useful if the server seems to use too\
-much memory for some reason.
+The purpose of `FLUSH TABLES` is to clean up the open table cache and table definition cache of tables that are not in use. This frees up memory and file descriptors. Normally this is not needed as the caches works on a first-in, first-out basis, but can be useful if the server seems to use too much memory for some reason.
 
 ### Purpose of FLUSH TABLES WITH READ LOCK
 
-`FLUSH TABLES WITH READ LOCK` is useful if you want to take a backup\
-of some tables. When `FLUSH TABLES WITH READ LOCK` returns, all\
-write access to tables is blocked and all tables are marked as\
-'properly closed' on disk. The tables can still be used for read\
-operations.
+`FLUSH TABLES WITH READ LOCK` is useful if you want to take a backup of some tables. When `FLUSH TABLES WITH READ LOCK` returns, all write access to tables is blocked and all tables are marked as\
+'properly closed' on disk. The tables can still be used for read operations.
 
 ### Purpose of FLUSH TABLES table\_list
 
-`FLUSH TABLES` table\_list is useful if you want to copy a table\
-object or files to or from the server. This command puts a lock that\
-stops new users of the table and will wait until everyone has stopped\
-using the table. The table is then removed from the table definition\
-and table cache.
+`FLUSH TABLES` table\_list is useful if you want to copy a table object or files to or from the server. This command puts a lock that stops new users of the table and will wait until everyone has stopped using the table. The table is then removed from the table definition and table cache.
 
-Note that it's up to the user to ensure that no one is accessing the\
-table between `FLUSH TABLES` and the table is copied to or from the\
-server. This can be secured by using [LOCK TABLES](../../transactions/lock-tables.md).
+Note that it's up to the user to ensure that no one is accessing the table between `FLUSH TABLES` and the table is copied to or from the server. This can be secured by using [LOCK TABLES](../../transactions/lock-tables.md).
 
-If there are any tables locked by the connection that is using `FLUSH TABLES` all the locked tables will be closed as part of the flush and\
-reopened and relocked before `FLUSH TABLES` returns. This allows one\
-to copy the table after `FLUSH TABLES` returns without having any\
-writes on the table. For now this works works with most tables,\
-except InnoDB as InnoDB may do background purges on the table even\
-while it's write locked.
+If there are any tables locked by the connection that is using `FLUSH TABLES` all the locked tables will be closed as part of the flush and reopened and relocked before `FLUSH TABLES` returns. This allows one to copy the table after `FLUSH TABLES` returns without having any writes on the table. For now this works with most tables, except InnoDB as InnoDB may do background purges on the table even while it's write locked.
 
 ### Purpose of FLUSH TABLES table\_list WITH READ LOCK
 
-`FLUSH TABLES table_list WITH READ LOCK` should work as `FLUSH TABLES WITH READ LOCK`, but only those tables that are listed will be\
-properly closed. However in practice this works exactly like `FLUSH TABLES WITH READ LOCK` as the `FLUSH` command has anyway to wait\
-for all WRITE operations to end because we are depending on a global\
-read lock for this code. In the future we should consider fixing this\
-to instead use meta data locks.
+`FLUSH TABLES table_list WITH READ LOCK` should work as `FLUSH TABLES WITH READ LOCK`, but only those tables that are listed will be properly closed. However in practice this works exactly like `FLUSH  TABLES WITH READ LOCK` as the `FLUSH` command has anyway to wait for all WRITE operations to end because we are depending on a global read lock for this code. In the future we should consider fixing this to instead use meta data locks.
 
 ### Implementation of FLUSH TABLES
 
@@ -251,13 +246,13 @@ Instead of using `FLUSH TABLE WITH READ LOCK` one should in most cases instead u
 
 ### Implementation of FLUSH TABLES table\_list FOR EXPORT
 
-* Free memory and file descriptors for tables not in use from table list
+* Free memory and file descriptors for tables not in use from table list.
 * Lock given tables as read.
 * Wait until all background writes are suspended and tables are marked as closed.
-* Check that all tables supports `FOR EXPORT`
-* No changes to these tables allowed until `UNLOCK TABLES`
+* Check that all tables supports `FOR EXPORT`.
+* No changes to these tables allowed until `UNLOCK TABLES`.
 
-This is basically the same behavior as in old MariaDB version if one first lock the tables, then do`FLUSH TABLES`. The tables will be copyable until `UNLOCK TABLES`.
+This is basically the same behavior as in older MariaDB versions if you first lock the tables, then do `FLUSH TABLES`. The tables will be copyable until you issue `UNLOCK TABLES`.
 
 ## FLUSH SSL
 
@@ -280,7 +275,7 @@ If you want to dynamically reinitialize the server's [TLS](../../../../security/
 
 To flush some of the global caches that take up memory, you could execute the following command:
 
-```
+```sql
 FLUSH LOCAL HOSTS,
    QUERY CACHE, 
    TABLE_STATISTICS, 

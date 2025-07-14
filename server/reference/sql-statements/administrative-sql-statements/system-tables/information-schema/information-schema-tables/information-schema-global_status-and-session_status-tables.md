@@ -6,13 +6,12 @@ They contain the following columns:
 
 | Column          | Description              |
 | --------------- | ------------------------ |
-| Column          | Description              |
 | VARIABLE\_NAME  | Status variable name.    |
 | VARIABLE\_VALUE | Global or session value. |
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.GLOBAL_STATUS;
 +-----------------------------------------------+--------------------+
 | VARIABLE_NAME                                 | VARIABLE_VALUE     |

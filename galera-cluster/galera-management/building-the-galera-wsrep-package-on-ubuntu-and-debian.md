@@ -1,6 +1,6 @@
 # Building the Galera wsrep Package on Ubuntu and Debian
 
-The instructions on this page were used to create the _galera_ package on the Ubuntu and Debian Linux distributions. This package contains the wsrep provider for [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md).
+The instructions on this page were used to create the _galera_ package on the Ubuntu and Debian Linux distributions. This package contains the wsrep provider for [MariaDB Galera Cluster](../).
 
 The version of the wsrep provider is **25.3.5**. We also provide **25.2.9** for those that need or want it. Prior to that, the wsrep version was 23.2.7.
 

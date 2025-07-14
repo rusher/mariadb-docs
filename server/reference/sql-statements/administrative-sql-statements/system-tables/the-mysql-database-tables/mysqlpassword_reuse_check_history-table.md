@@ -10,7 +10,6 @@ It contains the following fields:
 
 | Field | Type       | Null | Key | Default              | Description |
 | ----- | ---------- | ---- | --- | -------------------- | ----------- |
-| Field | Type       | Null | Key | Default              | Description |
 | hash  | binary(64) | NO   | PRI | NULL                 |             |
 | time  | timestamp  | NO   | MUL | current\_timestamp() |             |
 

@@ -1,22 +1,21 @@
 # Information Schema INNODB\_SYS\_DATAFILES Table
 
-**MariaDB until** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+{% hint style="info" %}
+This table is deprecated and was removed in MariaDB 10.6.0.
+{% endhint %}
 
-The `INNODB_SYS_DATAFILES` table was removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes).
-
-The [Information Schema](../../) `INNODB_SYS_DATAFILES` table contains information about InnoDB datafile paths. It was intended to provide metadata for tablespaces inside InnoDB tables, which was never implemented in MariaDB and was removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106). The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
+The [Information Schema](../../) `INNODB_SYS_DATAFILES` table contains information about InnoDB datafile paths. It was intended to provide metadata for tablespaces inside InnoDB tables, which was never implemented in MariaDB and was removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106). The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) was required to view the table.
 
 It contains the following columns:
 
 | Column | Description                                                                                                       |
 | ------ | ----------------------------------------------------------------------------------------------------------------- |
-| Column | Description                                                                                                       |
 | SPACE  | Numeric tablespace. Matches the [INNODB\_SYS\_TABLES.SPACE](information-schema-innodb_sys_tables-table.md) value. |
 | PATH   | Tablespace datafile path.                                                                                         |
 
 ## Example
 
-```
+```sql
 SELECT * FROM INNODB_SYS_DATAFILES;
 +-------+--------------------------------+
 | SPACE | PATH                           |

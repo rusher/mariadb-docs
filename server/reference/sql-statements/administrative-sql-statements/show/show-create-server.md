@@ -1,12 +1,10 @@
 # SHOW CREATE SERVER
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
-
-The SHOW CREATE SERVER statement was introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).
-
+{% tabs %}
+{% tab title="Current" %}
 ## Syntax
 
-```
+```sql
 SHOW CREATE SERVER server_name
 ```
 
@@ -16,18 +14,23 @@ Shows the [CREATE SERVER](../../data-definition/create/create-server.md) stateme
 
 ## Example
 
-```
+```sql
 SHOW CREATE SERVER srv1\G
 *************************** 1. row ***************************
        Server: srv1
 Create Server: CREATE SERVER `srv1` FOREIGN DATA WRAPPER mysql 
   OPTIONS (HOST '172.30.0.58', DATABASE 'db1', USER 'maxscale', PASSWORD 'password');
 ```
+{% endtab %}
+
+{% tab title="< 11.7" %}
+The `SHOW CREATE SERVER` statement is not available.
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 
 * [CREATE SERVER](../../data-definition/create/create-server.md)
-* [SHOW](./)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

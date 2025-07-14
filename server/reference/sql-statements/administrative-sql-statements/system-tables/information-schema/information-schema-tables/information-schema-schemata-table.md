@@ -4,19 +4,35 @@ The [Information Schema](../) `SCHEMATA` table stores information about database
 
 It contains the following columns:
 
-| Column                        | Description                                                                                                                                                                    |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Column                        | Description                                                                                                                                                                    |
-| CATALOG\_NAME                 | Always def.                                                                                                                                                                    |
-| SCHEMA\_NAME                  | Database name.                                                                                                                                                                 |
-| DEFAULT\_CHARACTER\_SET\_NAME | Default [character set](../../../../../data-types/string-data-types/character-sets/) for the database.                                                                         |
-| DEFAULT\_COLLATION\_NAME      | Default [collation](../../../../../data-types/string-data-types/character-sets/).                                                                                              |
-| SQL\_PATH                     | Always NULL.                                                                                                                                                                   |
-| SCHEMA\_COMMENT               | Database comment. From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes). |
+| Column                        | Description                                                                                                                                                                                 |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CATALOG\_NAME                 | Always def.                                                                                                                                                                                 |
+| SCHEMA\_NAME                  | Database name.                                                                                                                                                                              |
+| DEFAULT\_CHARACTER\_SET\_NAME | Default [character set](../../../../../data-types/string-data-types/character-sets/) for the database.                                                                                      |
+| DEFAULT\_COLLATION\_NAME      | Default [collation](../../../../../data-types/string-data-types/character-sets/).                                                                                                           |
+| SQL\_PATH                     | Always NULL.                                                                                                                                                                                |
+| SCHEMA\_COMMENT               | Database comment. From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes). |
 
 ## Example
 
+{% tabs %}
+{% tab title="Current" %}
+```sql
+SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
+...
+*************************** 2. row ***************************
+              CATALOG_NAME: def
+               SCHEMA_NAME: presentations
+DEFAULT_CHARACTER_SET_NAME: latin1
+    DEFAULT_COLLATION_NAME: latin1_swedish_ci
+                  SQL_PATH: NULL
+            SCHEMA_COMMENT: Presentations for conferences
+...
 ```
+{% endtab %}
+
+{% tab title="< 10.5.0" %}
+```sql
 SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
 *************************** 1. row ***************************
               CATALOG_NAME: def
@@ -44,21 +60,8 @@ DEFAULT_CHARACTER_SET_NAME: latin1
                   SQL_PATH: NULL
 ...
 ```
-
-From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes):
-
-```
-SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
-...
-*************************** 2. row ***************************
-              CATALOG_NAME: def
-               SCHEMA_NAME: presentations
-DEFAULT_CHARACTER_SET_NAME: latin1
-    DEFAULT_COLLATION_NAME: latin1_swedish_ci
-                  SQL_PATH: NULL
-            SCHEMA_COMMENT: Presentations for conferences
-...
-```
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 

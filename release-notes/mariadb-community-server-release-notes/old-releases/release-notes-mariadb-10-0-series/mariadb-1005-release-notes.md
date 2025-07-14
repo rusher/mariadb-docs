@@ -4,7 +4,7 @@ The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10
 
 There was a packaging issue with 10.0.5 on Debian & Ubuntu that prevented TokuDB from installing. This was fixed in 10.0.6.
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.5) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.5) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 7 Nov 2013
 
@@ -22,7 +22,7 @@ release. This is still a beta however, not a final, production-ready, release.
 **For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **see the**[**What is MariaDB 10.0?**](changes-improvements-in-mariadb-10-0.md) **page.**
 
 For a list of changes made in [MariaDB 10.0.5](mariadb-1005-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md).
 
 ## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
@@ -68,7 +68,7 @@ This release includes fixes for the following security vulnerabilities:
 
 * New [reserved word](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/reserved-words): RETURNING. This can no longer be used as an [identifier](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-names) without being quoted.
 
-For full details, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md).
+For full details, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md).
 
 ## Fedora 17
 
@@ -76,10 +76,8 @@ As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-po
 
 Thanks, and enjoy MariaDB!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

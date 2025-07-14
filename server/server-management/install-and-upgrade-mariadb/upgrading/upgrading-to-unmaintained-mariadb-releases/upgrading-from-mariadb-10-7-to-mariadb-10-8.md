@@ -4,7 +4,7 @@
 
 For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.md).
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/).
 
 The suggested upgrade procedure is:
 
@@ -43,7 +43,6 @@ On most servers upgrading from 10.7 should be painless. However, there are some 
 
 | Option                                                                                                                                        | Old default value | New default value |
 | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----------------- |
-| Option                                                                                                                                        | Old default value | New default value |
 | [innodb\_buffer\_pool\_chunk\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) | 134217728         | Autosized         |
 | [spider\_semi\_table\_lock](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                                       | 1                 | 0                 |
 
@@ -53,7 +52,6 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option                                                                                                                                    | Reason                                                                                                |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                    | Reason                                                                                                |
 | [innodb\_log\_write\_ahead\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size) | On Linux and Windows, the physical block size of the underlying storage is instead detected and used. |
 
 #### Deprecated Options
@@ -62,7 +60,6 @@ The following options have been deprecated. They have not yet been removed, but 
 
 | Option                                                                                                                                             | Reason                                                                       |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Option                                                                                                                                             | Reason                                                                       |
 | [keep\_files\_on\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#keep_files_on_create) | MariaDB now deletes orphan files, so this setting should never be necessary. |
 
 ### Major New Features To Consider

@@ -4,31 +4,30 @@ The [Information Schema](../) `CHECK_CONSTRAINTS` table stores metadata about th
 
 It contains the following columns:
 
-| Column              | Description                                                                                                                                                                                                 |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column              | Description                                                                                                                                                                                                 |
-| CONSTRAINT\_CATALOG | Always contains the string 'def'.                                                                                                                                                                           |
-| CONSTRAINT\_SCHEMA  | Database name.                                                                                                                                                                                              |
-| CONSTRAINT\_NAME    | Constraint name.                                                                                                                                                                                            |
-| TABLE\_NAME         | Table name.                                                                                                                                                                                                 |
-| LEVEL               | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10510-release-notes) |
-| CHECK\_CLAUSE       | Constraint clause.                                                                                                                                                                                          |
+| Column              | Description                                                                                                                                                                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CONSTRAINT\_CATALOG | Always contains the string 'def'.                                                                                                                                                                                         |
+| CONSTRAINT\_SCHEMA  | Database name.                                                                                                                                                                                                            |
+| CONSTRAINT\_NAME    | Constraint name.                                                                                                                                                                                                          |
+| TABLE\_NAME         | Table name.                                                                                                                                                                                                               |
+| LEVEL               | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10510-release-notes). |
+| CHECK\_CLAUSE       | Constraint clause.                                                                                                                                                                                                        |
 
 ## Example
 
 A table with a numeric table check constraint and with a default check constraint name:
 
-```
-CREATE TABLE t ( a int, CHECK (a>10));
+```sql
+CREATE TABLE t ( a INT, CHECK (a>10));
 ```
 
 To see check constraint call `check_constraints` table from [information schema](../).
 
-```
-SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
+```sql
+SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
 CONSTRAINT_CATALOG: def
  CONSTRAINT_SCHEMA: test
@@ -39,15 +38,15 @@ CONSTRAINT_CATALOG: def
 
 A new table check constraint called `a_upper`:
 
-```
+```sql
 ALTER TABLE t ADD CONSTRAINT a_upper CHECK (a<100);
 ```
 
-```
-SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
+```sql
+SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
 CONSTRAINT_CATALOG: def
  CONSTRAINT_SCHEMA: test
@@ -64,10 +63,10 @@ CONSTRAINT_CATALOG: def
 
 A new table `tt` with a field check constraint called `b` , as well as a table check constraint called `b_upper`:
 
-```
-CREATE TABLE tt(b int CHECK(b>0),CONSTRAINT b_upper CHECK(b<50));
+```sql
+CREATE TABLE tt(b INT CHECK(b>0),CONSTRAINT b_upper CHECK(b<50));
 
-SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
+SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 +--------------------+-------------------+-----------------+------------+--------------+
 | CONSTRAINT_CATALOG | CONSTRAINT_SCHEMA | CONSTRAINT_NAME | TABLE_NAME | CHECK_CLAUSE |
 +--------------------+-------------------+-----------------+------------+--------------+
@@ -82,10 +81,10 @@ _Note:_ The name of the field constraint is the same as the field name.
 
 After dropping the default table constraint called `CONSTRAINT_1`:
 
-```
+```sql
 ALTER TABLE t DROP CONSTRAINT CONSTRAINT_1;
 
-SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
+SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 +--------------------+-------------------+-----------------+------------+--------------+
 | CONSTRAINT_CATALOG | CONSTRAINT_SCHEMA | CONSTRAINT_NAME | TABLE_NAME | CHECK_CLAUSE |
 +--------------------+-------------------+-----------------+------------+--------------+
@@ -97,7 +96,7 @@ SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 
 Trying to insert invalid arguments into table `t` and `tt` generates an error.
 
-```
+```sql
 INSERT INTO t VALUES (10),(20),(100);
 ERROR 4025 (23000): CONSTRAINT `a_upper` failed for `test`.`t`
 
@@ -108,14 +107,14 @@ INSERT INTO tt VALUES (10),(20),(100);
 ERROR 4025 (23000): CONSTRAINT `b_upper` failed for `test`.`tt`
 ```
 
-From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10510-release-notes):
+From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10510-release-notes):
 
-```
-create table majra(check(x>0), x int, y int check(y < 0), z int,
-                              constraint z check(z>0), constraint xyz check(x<10 and y<10 and z<10));
+```sql
+CREATE TABLE majra(CHECK(x>0), x INT, y INT CHECK(y < 0), z INT,
+                              CONSTRAINT z CHECK(z>0), CONSTRAINT xyz CHECK(x<10 AND y<10 AND z<10));
 Query OK, 0 rows affected (0.036 sec)
 
-show create table majra;
+SHOW CREATE TABLE majra;
 +-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Table | Create Table                                                                                                                                                                                                                                                                                                   |
 +-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -125,13 +124,13 @@ show create table majra;
   `z` int(11) DEFAULT NULL,
   CONSTRAINT `CONSTRAINT_1` CHECK (`x` > 0),
   CONSTRAINT `z` CHECK (`z` > 0),
-  CONSTRAINT `xyz` CHECK (`x` < 10 and `y` < 10 and `z` < 10)
+  CONSTRAINT `xyz` CHECK (`x` < 10 AND `y` < 10 AND `z` < 10)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
 +-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 1 row in set (0.000 sec)
 
 
-select * from information_schema.check_constraints where table_name='majra';
+SELECT * FROM information_schema.check_constraints WHERE table_name='majra';
 +--------------------+-------------------+------------+-----------------+--------+------------------------------------+
 | CONSTRAINT_CATALOG | CONSTRAINT_SCHEMA | TABLE_NAME | CONSTRAINT_NAME | LEVEL  | CHECK_CLAUSE                       |
 +--------------------+-------------------+------------+-----------------+--------+------------------------------------+

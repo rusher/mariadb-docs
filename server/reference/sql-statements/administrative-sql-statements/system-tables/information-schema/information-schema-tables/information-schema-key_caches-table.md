@@ -1,12 +1,11 @@
 # Information Schema KEY\_CACHES Table
 
-The [Information Schema](../) `KEY_CACHES` table shows statistics about the [segmented key cache](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache.md),.
+The [Information Schema](../) `KEY_CACHES` table shows statistics about the [segmented key cache](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache.md).
 
 It contains the following columns:
 
 | Column Name      | Description                                                                                                                     |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Column Name      | Description                                                                                                                     |
 | KEY\_CACHE\_NAME | The name of the key cache                                                                                                       |
 | SEGMENTS         | total number of segments (set to NULL for regular key caches)                                                                   |
 | SEGMENT\_NUMBER  | segment number (set to NULL for any regular key caches and for rows containing aggregation statistics for segmented key caches) |
@@ -22,7 +21,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.KEY_CACHES \G
 ********************** 1. row **********************
 KEY_CACHE_NAME: default

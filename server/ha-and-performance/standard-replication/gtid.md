@@ -221,7 +221,7 @@ such as InnoDB. When MariaDB is first installed (or upgraded to 10.0.2+) the\
 table is created using the default storage engine - which itself defaults to\
 InnoDB. If there is a need to change the storage engine for this table (to\
 make it transactional on a system configured with [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) as the default\
-storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md):
+storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/):
 
 `ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
 
@@ -333,7 +333,7 @@ correct GTID position stored in the [mysql.gtid\_slave\_pos](../../reference/sql
 
 #### Setting up a New Replica with mariadb-backup
 
-A new replica can easily be set up with [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/), which is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/). See [Setting up a Replica with mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
+A new replica can easily be set up with [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/), which is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/). See [Setting up a Replica with mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md) for more information.
 
 #### Setting up a New Replica with mariadb-dump
 
@@ -526,7 +526,7 @@ The old domains will still appear in [gtid\_io\_pos](../../reference/sql-stateme
 stop the replica and execute on the replica:
 
 ```sql
-SET gtid_slave_pos="<position with domains removed>"
+SET gtid_slave_pos="<position WITH domains removed>"
 ```
 
 ## Additional Syntax For Global Transaction ID
@@ -660,15 +660,15 @@ There are two status variables that can be used to monitor the effectiveness of 
 
 ## System Variables
 
-#### [binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)
+#### [binlog\_gtid\_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)
 
 Enables/disables [binlog indexing](gtid.md#binlog-indexing).
 
-#### [binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)
+#### [binlog\_gtid\_index\_page\_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)
 
 Adjusts the size of the pages
 
-#### [binlog_gtid_index_span_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)
+#### [binlog\_gtid\_index\_span\_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)
 
 Adjusts the sparseness of the index
 

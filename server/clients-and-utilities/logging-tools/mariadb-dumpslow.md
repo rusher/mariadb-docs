@@ -1,8 +1,8 @@
 # mariadb-dumpslow
 
-`mariadb-dumpslow` is a tool to examine the [slow query log](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-management/server-monitoring-logs/slow-query-log/README.md).
+`mariadb-dumpslow` is a tool to examine the [slow query log](../../server-management/server-monitoring-logs/slow-query-log/).
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqldumpslow`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqldumpslow`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 It parses the slow query log files, printing a summary result. Normally, mariadb-dumpslow groups queries that are similar except for the particular values of number and string data values. It “abstracts” these values to N and ´S´ when displaying summary output. The `-a` and `-n` options can be used to modify value abstracting behavior.
 
@@ -16,7 +16,6 @@ mariadb-dumpslow [ options... ] [ logs... ]
 
 | Option        | Description                                                                                                                                                                                                                                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option        | Description                                                                                                                                                                                                                                                                        |
 | -a            | Don't abstract all numbers to N and strings to 'S'                                                                                                                                                                                                                                 |
 | -d, --debug   | Debug                                                                                                                                                                                                                                                                              |
 | -g PATTERN    | Grep: only consider statements that include this string                                                                                                                                                                                                                            |

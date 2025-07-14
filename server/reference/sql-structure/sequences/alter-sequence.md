@@ -27,7 +27,6 @@ The following options may be used:
 
 | Option    | Default value                                                | Description                                                                                                                                                                 |
 | --------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option    | Default value                                                | Description                                                                                                                                                                 |
 | INCREMENT | 1                                                            | Increment to use for values. May be negative.                                                                                                                               |
 | MINVALUE  | 1 if INCREMENT > 0 and -9223372036854775807 if INCREMENT < 0 | Minimum value for the sequence.                                                                                                                                             |
 | MAXVALUE  | 9223372036854775806 if INCREMENT > 0 and -1 if INCREMENT < 0 | Max value for sequence.                                                                                                                                                     |
@@ -88,7 +87,7 @@ correctly. If you only want to set the next sequence value to a\
 higher value than current, then you should use [SETVAL()](sequence-functions/setval.md)\
 instead, as this is not blocking.
 
-If you want to change storage engine, sequence comment or rename the sequence, you can use [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) for this.
+If you want to change storage engine, sequence comment or rename the sequence, you can use [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) for this.
 
 ### See Also
 
@@ -99,7 +98,7 @@ If you want to change storage engine, sequence comment or rename the sequence, y
 * [PREVIOUS VALUE FOR](sequence-functions/previous-value-for-sequence_name.md)
 * [SETVAL()](sequence-functions/setval.md). Set next value for the sequence.
 * [AUTO INCREMENT](../../data-types/auto_increment.md)
-* [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md)
+* [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/)
 * [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

@@ -8,7 +8,6 @@ It contains the following columns:
 
 | Column | Description                                           |
 | ------ | ----------------------------------------------------- |
-| Column | Description                                           |
 | TIME   | Time interval                                         |
 | COUNT  | Count of queries falling into the time interval       |
 | TOTAL  | Total execution time of all queries for this interval |
@@ -21,7 +20,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.QUERY_RESPONSE_TIME;
 +----------------+-------+----------------+
 | TIME           | COUNT | TOTAL          |

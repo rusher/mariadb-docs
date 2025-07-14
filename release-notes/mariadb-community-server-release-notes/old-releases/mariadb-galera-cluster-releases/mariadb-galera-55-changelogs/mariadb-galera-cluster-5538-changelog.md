@@ -80,4 +80,8 @@ modified in that revision.
   Mon 2014-04-28 10:33:22 -0400
   * [MDEV-6148](https://jira.mariadb.org/browse/MDEV-6148) : Updating auto\_increment\_offset\_func.result.
 
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -10,21 +10,19 @@ BINARY(M)
 
 ## Description
 
-The `BINARY` type is similar to the [CHAR](char.md) type, but stores binary\
-byte strings rather than non-binary character strings. `M` represents the\
-column length in bytes.
+The `BINARY` type is similar to the [CHAR](char.md) type, but stores binary byte strings rather than non-binary character strings. `M` represents the column length in bytes.
 
 It contains no character set, and comparison and sorting are based on the numeric value of the bytes.
 
 If the maximum length is exceeded, and [SQL strict mode](../../../server-management/variables-and-modes/sql-mode.md) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
 
-BINARY values are right-padded with `0x00` (the zero byte) to the specified length when inserted. The padding is _not_ removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, `0x00` is less than a space for comparison purposes.
+`BINARY` values are right-padded with `0x00` (the zero byte) to the specified length when inserted. The padding is _not_ removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, `0x00` is less than a space for comparison purposes.
 
 ## Examples
 
 Inserting too many characters, first with strict mode off, then with it on:
 
-```
+```sql
 CREATE TABLE bins (a BINARY(10));
 
 INSERT INTO bins VALUES('12345678901');
@@ -45,7 +43,7 @@ ERROR 1406 (22001): Data too long for column 'a' at row 1
 
 Sorting is performed with the byte value:
 
-```
+```sql
 TRUNCATE bins;
 
 INSERT INTO bins VALUES('A'),('B'),('a'),('b');
@@ -63,7 +61,7 @@ SELECT * FROM bins ORDER BY a;
 
 Using [CAST](../../sql-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
 
-```
+```sql
 SELECT * FROM bins ORDER BY CAST(a AS CHAR);
 +------+
 | a    |
@@ -75,9 +73,9 @@ SELECT * FROM bins ORDER BY CAST(a AS CHAR);
 +------+
 ```
 
-The field is a BINARY(10), so padding of two '\0's are inserted, causing comparisons that don't take this into account to fail:
+The field is a `BINARY(10)`, so padding of two '\0's are inserted, causing comparisons that don't take this into account to fail:
 
-```
+```sql
 TRUNCATE bins;
 
 INSERT INTO bins VALUES('12345678');
@@ -90,9 +88,9 @@ SELECT a = '12345678', a = '12345678\0\0' from bins;
 +----------------+--------------------+
 ```
 
-Example of BINARY:
+Example of `BINARY`:
 
-```
+```sql
 CREATE TABLE binary_example (
    description VARCHAR(20),
    example BINARY(255)
@@ -121,11 +119,11 @@ SELECT description, LENGTH(example) AS length
 
 ### Data Too Long
 
-When SQL\_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
+When `SQL_MODE` is strict (the default), a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
 
-Example of data too long behavior for BINARY:
+Example of data too long behavior for `BINARY`:
 
-```
+```sql
 TRUNCATE binary_example;
 
 INSERT INTO binary_example VALUES
@@ -139,6 +137,6 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 * [CHAR](char.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

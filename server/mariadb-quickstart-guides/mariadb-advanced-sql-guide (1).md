@@ -255,7 +255,7 @@ See [User-defined Variables](../reference/sql-structure/sql-language-structure/u
 Returns a list of all tables in the database, ordered by size:
 
 ```sql
-SELECT table_schema as `DB`, table_name AS `Table`, 
+SELECT table_schema AS `DB`, table_name AS `TABLE`, 
   ROUND(((data_length + index_length) / 1024 / 1024), 2) `Size (MB)` 
   FROM information_schema.TABLES 
   ORDER BY (data_length + index_length) DESC;

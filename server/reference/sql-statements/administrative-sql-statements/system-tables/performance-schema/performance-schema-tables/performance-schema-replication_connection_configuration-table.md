@@ -1,6 +1,6 @@
 # Performance Schema replication\_connection\_configuration Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
 The `replication_connection_configuration` table was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes).
 
@@ -10,7 +10,6 @@ It contains the following fields.
 
 | Column                           | Type                                     | Null | Description                                                                                                                                     |
 | -------------------------------- | ---------------------------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                           | Type                                     | Null | Description                                                                                                                                     |
 | CHANNEL\_NAME                    | varchar(256)                             | NO   | The replication channel used.                                                                                                                   |
 | HOST                             | char(60)                                 | NO   | The host name of the source that the replica is connected to.                                                                                   |
 | PORT                             | int(11)                                  | NO   | The port used to connect to the source.                                                                                                         |

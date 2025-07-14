@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Essential Queries Guide
 
 The Essential Queries Guide offers a concise collection of commonly-used SQL queries. It's designed to help developers and database administrators quickly find syntax and examples for typical database operations, from table creation and data insertion to effective data retrieval and manipulation.
@@ -356,7 +342,7 @@ See [User-defined Variables](https://mariadb.net/docs/server/reference/sql-struc
 To list all tables in the current database, ordered by their size (data + index) in megabytes:
 
 ```sql
-SELECT table_schema as `DB`, table_name AS `Table`,
+SELECT table_schema AS `DB`, table_name AS `TABLE`,
   ROUND(((data_length + index_length) / 1024 / 1024), 2) `Size (MB)`
   FROM information_schema.TABLES
   WHERE table_schema = DATABASE() -- This clause restricts results to the current database

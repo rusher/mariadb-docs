@@ -25,13 +25,13 @@ In [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
 ```sql
 INSTALL SONAME 'ha_federatedx';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) options. This can be specified as a command-line argument to [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) options. This can be specified as a command-line argument to [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -41,7 +41,7 @@ plugin_load_add = ha_federatedx
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
 ```sql
 UNINSTALL SONAME 'ha_federatedx';
@@ -106,7 +106,7 @@ connection=mysql://username:password@hostname:port/database/tablename
 Or, using a Federated server, first a server is created:
 
 ```sql
-create server 'server_one' foreign data wrapper 'mysql' options
+CREATE server 'server_one' FOREIGN data wrapper 'mysql' options
   (HOST '127.0.0.1',
   DATABASE 'db1',
   USER 'root',
@@ -116,7 +116,7 @@ create server 'server_one' foreign data wrapper 'mysql' options
   OWNER 'root');
 ```
 
-**MariaDB starting with** [**10.11.12**](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-101112-release-notes/README.md)
+**MariaDB starting with** [**10.11.12**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-12-release-notes)
 
 You can also use 'mariadb' as a wrapper.
 
@@ -125,8 +125,8 @@ The following statements creates a federated table, `federated.t1` against the t
 
 ```sql
 CREATE TABLE federated.t1 (
-  `id` int(20) NOT NULL,
-  `name` varchar(64) NOT NULL default ''
+  `id` INT(20) NOT NULL,
+  `name` VARCHAR(64) NOT NULL DEFAULT ''
   )
 ENGINE="FEDERATED" DEFAULT CHARSET=latin1
 CONNECTION='server_one';
@@ -220,7 +220,7 @@ ha_federatedx::reset
 * There is no way for the handler to know if the foreign database or table has changed. The reason for this is that this database has to work like a data file that would never be written to by anything other than the database. The integrity of the data in the local table could be breached if there was any change to the foreign database.
 * Support for SELECT, INSERT, UPDATE, DELETE indexes.
 * No ALTER TABLE, DROP TABLE or any other Data Definition Language calls.
-* Prepared statements will not be used in the first implementation, it remains to to be seen whether the limited subset of the client API for the server supports this.
+* Prepared statements will not be used in the first implementation, it remains to be seen whether the limited subset of the client API for the server supports this.
 * This uses SELECT, INSERT, UPDATE, DELETE and not HANDLER for its implementation.
 * This will not work with the query cache.
 * FederatedX does not support [GEOMETRY](../../../reference/sql-structure/geometry/geometry-types.md) types. Such tables cannot be created explicitly, nor discovered.
@@ -233,9 +233,9 @@ First, on the foreign database you create a table, for example:
 
 ```sql
 CREATE TABLE federated.test_table (
-  id     int(20) NOT NULL auto_increment,
-  name   varchar(32) NOT NULL default '',
-  other  int(20) NOT NULL default '0',
+  id     INT(20) NOT NULL auto_increment,
+  name   VARCHAR(32) NOT NULL DEFAULT '',
+  other  INT(20) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id),
   KEY name (name),
   KEY other_key (other))
@@ -262,9 +262,9 @@ Alternatively (or if you're using MariaDB before version 10.0.2) you specify the
 
 ```sql
 CREATE TABLE federated_test_table (
-  id     int(20) NOT NULL auto_increment,
-  name   varchar(32) NOT NULL default '',
-  other  int(20) NOT NULL default '0',
+  id     INT(20) NOT NULL auto_increment,
+  name   VARCHAR(32) NOT NULL DEFAULT '',
+  other  INT(20) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id),
   KEY name (name),
   KEY other_key (other))
@@ -322,7 +322,7 @@ Another thing to look for is 'show variables' to show you that you have\
 support for FederatedX handler support:
 
 ```sql
-SHOW variables like '%federat%'
+SHOW variables LIKE '%federat%'
 ```
 
 and:
@@ -347,7 +347,7 @@ CREATE TABLE federated_test_table ENGINE=FEDERATED
 You could instead create this with a server:
 
 ```sql
-CREATE SERVER 'server_one' foreign data wrapper 'mysql' options
+CREATE SERVER 'server_one' FOREIGN data wrapper 'mysql' options
   (HOST '192.168.1.123',		
   DATABASE 'first_db',		
   USER 'patg',

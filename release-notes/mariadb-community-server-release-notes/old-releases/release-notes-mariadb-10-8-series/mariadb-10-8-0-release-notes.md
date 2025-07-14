@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.8](what-is-mariadb-108.md) is:[**MariaDB 10.8.8**](mariadb-10-8-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.8.8/)
 
-[Download 10.8.0](https://downloads.mariadb.org/mariadb/10.8.0/)[Release Notes](mariadb-10-8-0-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1008-changelog.md)[Overview of 10.8](what-is-mariadb-108.md)
+[Download 10.8.0](https://downloads.mariadb.org/mariadb/10.8.0/)[Release Notes](mariadb-10-8-0-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1008-changelog.md)[Overview of 10.8](what-is-mariadb-108.md)
 
 **Release date:** 21 Dec 2021
 
@@ -74,5 +74,9 @@ Be notified of new MariaDB Server releases automatically by [subscribing](https:
 MariaDB may already be included in your favorite OS distribution. More\
 information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
+
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

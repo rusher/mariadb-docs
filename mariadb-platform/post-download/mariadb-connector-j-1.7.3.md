@@ -21,7 +21,7 @@ layout:
 
 * MariaDB Connector/J 1.7.3 was released on 14 Mar 2018.
 * Please note: Newer releases exist within the MariaDB Connector/J 1.7 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connectorj-17-release-notes/mariadb-connector-j-173-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.7/mariadb-connector-j-173-release-notes)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j).
 
@@ -30,16 +30,16 @@ layout:
 * The prior release in this series was MariaDB Connector/J 1.7.2, released on 20 Feb 2018.
 * This release (MariaDB Connector/J 1.7.3) was released on 14 Mar 2018.
 * The next release in this series is MariaDB Connector/J 1.7.4, released on 30 May 2018.
-* The latest release in this series is MariaDB Connector/J 1.7.6, released on 10 Dec 2020.
+
+{% include "../.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 
 * [MariaDB Server Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/)
-* [MariaDB Connector Documentation](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors)
+* [MariaDB Connectors Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/)
 * [Contact Us](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/about/contact-us)
 * [Learn about the MariaDB Community](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community)
 
-
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

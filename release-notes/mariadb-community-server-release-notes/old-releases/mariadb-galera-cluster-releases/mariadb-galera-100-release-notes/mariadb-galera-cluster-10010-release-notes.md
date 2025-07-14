@@ -29,7 +29,7 @@ detailed information on each push, see the[MariaDB Galera Cluster 10.0.10 Change
 * New: This release includes a new method for snapshot state transfer, `wsrep_sst_xtrabackup-v2`. This method of state snapshot transfer can be configured using the `--wsrep_sst_method=xtrabackup-v2` option. Its use requires Xtrabackup (>= 2.1.6) and other software packages like socat, nc, and tar.
 * Note: Completely uninstall broken/partially installed 10.0.7-galera deb packages prior to installing this version, as they may conflict with 10.0.10-galera packages.
 
-See the [MariaDB 10.0.10 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10010-changelog.md) for more information on the changes in\
+See the [MariaDB 10.0.10 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10010-changelog.md) for more information on the changes in\
 MariaDB.
 
 Note: If Galera v2 and v3 are both being used in the cluster, MariaDB with\
@@ -43,5 +43,9 @@ Be notified of new MariaDB Server releases automatically by [subscribing](https:
 MariaDB may already be included in your favorite OS distribution. More\
 information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

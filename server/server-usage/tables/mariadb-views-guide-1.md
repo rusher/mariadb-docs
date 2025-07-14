@@ -4,7 +4,7 @@
 
 **Up-front warning:** This is the beginning of a very basic tutorial on views,\
 based on my experimentation with them. This tutorial assumes that you've read\
-the appropriate tutorials up to and including [More Advanced Joins](https://mariadb.com/kb/en/More_Advanced_Joins) (or that\
+the appropriate tutorials up to and including [More Advanced Joins](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) (or that\
 you understand the concepts behind them). This page is intended to give you a\
 general idea of how views work and what they do, as well as some examples of\
 when you could use them.

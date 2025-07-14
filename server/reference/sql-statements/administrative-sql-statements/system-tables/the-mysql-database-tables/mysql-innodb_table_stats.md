@@ -10,7 +10,6 @@ It contains the following fields:
 
 | Field                        | Type                | Null | Key | Default              | Description                             |
 | ---------------------------- | ------------------- | ---- | --- | -------------------- | --------------------------------------- |
-| Field                        | Type                | Null | Key | Default              | Description                             |
 | database\_name               | varchar(64)         | NO   | PRI | NULL                 | Database name.                          |
 | table\_name                  | varchar(64)         | NO   | PRI | NULL                 | Table, partition or subpartition name.  |
 | last\_update                 | timestamp           | NO   |     | current\_timestamp() | Time that this row was last updated.    |

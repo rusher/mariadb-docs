@@ -1,6 +1,6 @@
 # CONSTRAINT
 
-MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](create/create-table.md) or [ALTER TABLE](alter/alter-table.md) statements. A table constraint restricts the data you can add to the table. If you attempt to insert invalid data on a column, MariaDB throws an error.
+MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](create/create-table.md) or [ALTER TABLE](alter/alter-table/) statements. A table constraint restricts the data you can add to the table. If you attempt to insert invalid data on a column, MariaDB throws an error.
 
 ## Syntax
 
@@ -42,7 +42,6 @@ There are four types of table constraints:
 
 | Constraint  | Description                                                               |
 | ----------- | ------------------------------------------------------------------------- |
-| Constraint  | Description                                                               |
 | PRIMARY KEY | Sets the column for referencing rows. Values must be unique and not null. |
 | FOREIGN KEY | Sets the column to reference the primary key on another table.            |
 | UNIQUE      | Requires values in column or columns only occur once in the table.        |
@@ -55,7 +54,7 @@ The [Information Schema TABLE\_CONSTRAINTS Table](../administrative-sql-statemen
 [InnoDB](../../../server-usage/storage-engines/innodb/) supports [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key\
 constraint definition in InnoDB looks like this:
 
-```
+```sql
 [CONSTRAINT [symbol]] FOREIGN KEY
     [index_name] (index_col_name, ...)
     REFERENCES tbl_name (index_col_name,...)
@@ -80,11 +79,11 @@ You can define constraints in 2 different ways:
 Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint expression returns false, then the row will not be inserted or updated.\
 One can use most deterministic functions in a constraint, including [UDFs](../../../server-usage/user-defined-functions/).
 
-```
+```sql
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 ```
 
-If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](alter/alter-table.md).
+If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](alter/alter-table/).
 
 One can disable all constraint expression checks by setting the [check\_constraint\_checks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) variable to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
 
@@ -98,17 +97,17 @@ In [row-based](../../../server-management/server-monitoring-logs/binary-log/bina
 
 ## Examples
 
-```
+```sql
 CREATE TABLE product (category INT NOT NULL, id INT NOT NULL,
                       price DECIMAL,
                       PRIMARY KEY(category, id)) ENGINE=INNODB;
 CREATE TABLE customer (id INT NOT NULL,
                        PRIMARY KEY (id)) ENGINE=INNODB;
-CREATE TABLE product_order (no INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE product_order (NO INT NOT NULL AUTO_INCREMENT,
                             product_category INT NOT NULL,
                             product_id INT NOT NULL,
                             customer_id INT NOT NULL,
-                            PRIMARY KEY(no),
+                            PRIMARY KEY(NO),
                             INDEX (product_category, product_id),
                             FOREIGN KEY (product_category, product_id)
                               REFERENCES product(category, id)
@@ -122,7 +121,7 @@ The following examples will work from [MariaDB 10.2.1](https://app.gitbook.com/s
 
 Numeric constraints and comparisons:
 
-```
+```sql
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 
 INSERT INTO t1(a) VALUES (1);
@@ -137,19 +136,19 @@ Query OK, 1 row affected (0.04 sec)
 
 Dropping a constraint:
 
-```
+```sql
 ALTER TABLE t1 DROP CONSTRAINT a_greater;
 ```
 
 Adding a constraint:
 
-```
+```sql
 ALTER TABLE t1 ADD CONSTRAINT a_greater CHECK (a>b);
 ```
 
 Date comparisons and character length:
 
-```
+```sql
 CREATE TABLE t2 (name VARCHAR(30) CHECK (CHAR_LENGTH(name)>2), start_date DATE, 
   end_date DATE CHECK (start_date IS NULL OR end_date IS NULL OR start_date<end_date));
 
@@ -168,7 +167,7 @@ ERROR 4022 (23000): CONSTRAINT `end_date` failed for `test`.`t2`
 
 A misplaced parenthesis:
 
-```
+```sql
 CREATE TABLE t3 (name VARCHAR(30) CHECK (CHAR_LENGTH(name>2)), start_date DATE, 
   end_date DATE CHECK (start_date IS NULL OR end_date IS NULL OR start_date<end_date));
 Query OK, 0 rows affected (0.32 sec)

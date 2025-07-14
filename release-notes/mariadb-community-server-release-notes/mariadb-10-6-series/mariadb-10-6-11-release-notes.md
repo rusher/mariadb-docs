@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
 
-[Download 10.6.11](https://downloads.mariadb.org/mariadb/10.6.11/)[Release Notes](mariadb-10-6-11-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+[Download 10.6.11](https://downloads.mariadb.org/mariadb/10.6.11/)[Release Notes](mariadb-10-6-11-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
 
 **Release date:** 7 Nov 2022
 
-[MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable series of MariaDB, maintained until July 2026. It is an evolution of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
+[MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable series of MariaDB, maintained until July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.11](mariadb-10-6-11-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -61,7 +61,7 @@ sudo rpm --import https://supplychain.mariadb.com/MariaDB-Server-GPG-KEY
 
 The following changes have been made to the `docker.io/library/mariadb` container image.
 
-* The number of gpg packages packages has been removed, leaving enough to `apt-get update`, but `dirmngr` that would fetch keys has been removed. (inspired by [issue #469](https://github.com/MariaDB/mariadb-docker/issues/469))
+* The number of gpg packages has been removed, leaving enough to `apt-get update`, but `dirmngr` that would fetch keys has been removed. (inspired by [issue #469](https://github.com/MariaDB/mariadb-docker/issues/469))
 * The environment variable `LANG=C.UTF-8` has been added for those that exec into containers and copy paste UTF8 characters (fixes [issue #468](https://github.com/MariaDB/mariadb-docker/issues/468)).
 * Adds OCI labels to image (fixes [issue 436](https://github.com/MariaDB/mariadb-docker/issues/436) and [users need for version](https://github.com/MariaDB/mariadb-docker/commit/942cd5347b86c84cc4d493147b17c3e3b93fbee3))
 * MariaDB config: skip-host-cache and skip-name-resolve moved to `/etc/mysql/mariadb.conf.d/05-skipcache.cnf`
@@ -74,16 +74,14 @@ The following changes have been made to the `docker.io/library/mariadb` containe
 ## Changelog
 
 For a complete list of changes and bugfixes made in [MariaDB 10.6.11](mariadb-10-6-11-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.6.11](mariadb-10-6-11-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-9-4-10-8-6-10-7-7-10-6-11-10-5-18-10-4-27-and-10-3-37-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.3 series](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
 
-[Download](https://downloads.mariadb.org/mariadb/5.3.9) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-539-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.3.9) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-539-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
 
 **Release date:** 02 Oct 2012
 
@@ -15,7 +15,7 @@ general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **see the**[**What is MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.3.9](mariadb-539-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.3.9 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-539-changelog.md).
+information on each push, see the[MariaDB 5.3.9 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-539-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -33,7 +33,7 @@ for what changed between this and previous MySQL versions.
 This MariaDB release also includes several other bug fixes and improvements. It is\
 recommended for all users of [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md).
 
-See the [MariaDB 5.3.9 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-539-changelog.md) for a list of every\
+See the [MariaDB 5.3.9 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-539-changelog.md) for a list of every\
 change made in [MariaDB 5.3.9](mariadb-539-release-notes.md), with links to detailed information on each push.
 
 ## Alternative Linux binaries
@@ -44,13 +44,8 @@ GLIBC\_2.14. For continuity, we are still providing binaries built with the same
 toolchain (and on the same builder) as previous releases. The alternative\
 binaries have a "(GLIBC\_2.14)" label to distinguish them from the others.
 
-Be notified of new releases automatically by adding the[releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
-your favorite feed reader or by [subscribing](https://mariadb.org) to the\
-announce 'at' mariadb.org announcement list (this is a low traffic,\
-announce-only list).
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

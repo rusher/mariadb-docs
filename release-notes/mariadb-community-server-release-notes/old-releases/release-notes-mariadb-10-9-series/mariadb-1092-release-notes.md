@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.9](what-is-mariadb-109.md) is:[**MariaDB 10.9.8**](mariadb-10-9-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.9.8/)
 
-[Download 10.9.2](https://downloads.mariadb.org/mariadb/10.9.2/)[Release Notes](mariadb-1092-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-1092-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
+[Download 10.9.2](https://downloads.mariadb.org/mariadb/10.9.2/)[Release Notes](mariadb-1092-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-1092-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
 
 **Release date:** 22 Aug 2022
 
@@ -65,7 +65,7 @@ Thanks, and enjoy MariaDB!
 * Optimizer uses all partitions after upgrade to 10.3 ([MDEV-28246](https://jira.mariadb.org/browse/MDEV-28246))
   * For multi-table UPDATE or DELETE queries, the optimizer failed to apply Partition Pruning optimization for the table that is updated or deleted from.
 * Range optimizer regression for key IN (const, ....) ([MDEV-25020](https://jira.mariadb.org/browse/MDEV-25020))
-  * The issue can be observed on [MariaDB 10.5.9](../../mariadb-10-5-series/mariadb-1059-release-notes.md) and later versions which have the fix for [MDEV-9750](https://jira.mariadb.org/browse/MDEV-9750). That fix introduceds optimizer\_max\_sel\_arg\_weight.
+  * The issue can be observed on [MariaDB 10.5.9](../mariadb-10-5-series/mariadb-1059-release-notes.md) and later versions which have the fix for [MDEV-9750](https://jira.mariadb.org/browse/MDEV-9750). That fix introduceds optimizer\_max\_sel\_arg\_weight.
   * If one sets optimizer\_max\_sel\_arg\_weight to a very high value or zero (which means "unlimited") and runs queries that produce heavy-weight graphs, they can observe a performance slowdown, e.g.:
 
 ```sql
@@ -115,16 +115,14 @@ table.keyXpartY [NOT] IN ( ... )
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.9.2](mariadb-1092-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-1092-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-1092-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.9.2](mariadb-1092-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-10-1-rc-and-10-9-2-ga-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

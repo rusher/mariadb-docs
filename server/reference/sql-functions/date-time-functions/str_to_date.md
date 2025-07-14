@@ -2,14 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 STR_TO_DATE(str,format)
 ```
 
 ## Description
 
-This is the inverse of the [DATE\_FORMAT](date_format.md)() function. It takes\
-a string `str` and a format string `format`. `STR_TO_DATE()` returns a`DATETIME` value if the format string contains both date and time parts, or a`DATE` or `TIME` value if the string contains only date or time parts.
+This is the inverse of the [DATE\_FORMAT](date_format.md)() function. It takes a string `str` and a format string `format`. `STR_TO_DATE()` returns a`DATETIME` value if the format string contains both date and time parts, or a`DATE` or `TIME` value if the string contains only date or time parts.
 
 The date, time, or datetime values contained in `str` should be given in the format indicated by format. If str contains an illegal date, time, or datetime value, `STR_TO_DATE()` returns `NULL`. An illegal value also produces a warning.
 
@@ -23,7 +22,6 @@ The options that can be used by STR\_TO\_DATE(), as well as its inverse [DATE\_F
 
 | Option | Description                                                                                                                                                                       |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option | Description                                                                                                                                                                       |
 | %a     | Short weekday name in current locale (Variable [lc\_time\_names](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names)). |
 | %b     | Short form month name in current locale. For locale en\_US this is one of: Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov or Dec.                                                    |
 | %c     | Month with 1 or 2 digits.                                                                                                                                                         |
@@ -62,7 +60,7 @@ The options that can be used by STR\_TO\_DATE(), as well as its inverse [DATE\_F
 
 ## Examples
 
-```
+```sql
 SELECT STR_TO_DATE('Wednesday, June 2, 2014', '%W, %M %e, %Y');
 +---------------------------------------------------------+
 | STR_TO_DATE('Wednesday, June 2, 2014', '%W, %M %e, %Y') |
@@ -99,6 +97,6 @@ SELECT STR_TO_DATE('Wednesday23423, June 2, 2014', '%W%#, %M %e, %Y');
 * [DATE\_FORMAT()](date_format.md)
 * [FROM\_UNIXTIME()](from_unixtime.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

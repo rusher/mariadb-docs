@@ -1,36 +1,26 @@
-
 # SHOW AUTHORS
 
 ## Syntax
 
-
-```
+```sql
 SHOW AUTHORS
 ```
 
 ## Description
 
-
-The `SHOW AUTHORS` statement displays information about the
-people who work on MariaDB. For each author, it displays Name, Location, and
-Comment values. All columns are encoded as latin1.
-
+The `SHOW AUTHORS` statement displays information about the people who work on MariaDB. For each author, it displays Name, Location, and Comment values. All columns are encoded as latin1.
 
 These include:
-
 
 * First the active people in MariaDB are listed.
 * Then the active people in MySQL.
 * Last the people that have contributed to MariaDB/MySQL in the past.
 
-
 The order is somewhat related to importance of the contribution given to the MariaDB project, but this is not 100% accurate. There is still room for improvement and debate...
-
 
 ## Example
 
-
-```
+```sql
 SHOW AUTHORS\G
 *************************** 1. row ***************************
     Name: Michael (Monty) Widenius
@@ -169,11 +159,8 @@ Location: Helsinki, Finland
 
 ### See Also
 
-
 * [SHOW CONTRIBUTORS](show-contributors.md). This list [all members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) and other sponsors.
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

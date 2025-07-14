@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.3](what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.3.8)[Release Notes](mariadb-1038-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-1038-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
+[Download](https://downloads.mariadb.org/mariadb/10.3.8)[Release Notes](mariadb-1038-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1038-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
 
 **Release date:** 2 Jul 2018
 
@@ -39,22 +39,20 @@ Notable changes of this release include:
 * [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) - Allow instant change of WITH SYSTEM VERSIONING column attribute
 * [MDEV-16365](https://jira.mariadb.org/browse/MDEV-16365) - Setting a column NOT NULL fails to return error for NULL values when there is no DEFAULT
 * [MDEV-15953](https://jira.mariadb.org/browse/MDEV-15953) - Alter InnoDB Partitioned Table Moves Files (which were originally not in the datadir) to the datadir
-* [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122): [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) now supports [MyRocks storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks)
+* [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122): [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) now supports [MyRocks storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks)
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.3](what-is-mariadb-103.md) for Ubuntu 17.10 Artful
 
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.3.8](mariadb-1038-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-1038-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1038-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.3.8](mariadb-1038-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-3-8-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

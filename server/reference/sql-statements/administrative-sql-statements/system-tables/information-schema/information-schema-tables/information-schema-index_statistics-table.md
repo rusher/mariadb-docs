@@ -8,7 +8,6 @@ It contains the following columns:
 
 | Field         | Type         | Notes                                                                                                                                                                                                                                                                                        |
 | ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field         | Type         | Notes                                                                                                                                                                                                                                                                                        |
 | TABLE\_SCHEMA | VARCHAR(192) | The schema (database) name.                                                                                                                                                                                                                                                                  |
 | TABLE\_NAME   | VARCHAR(192) | The table name.                                                                                                                                                                                                                                                                              |
 | INDEX\_NAME   | VARCHAR(192) | The index name (as visible in [SHOW CREATE TABLE](../../../show/show-create-table.md)).                                                                                                                                                                                                      |
@@ -17,7 +16,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INDEX_STATISTICS 
 WHERE TABLE_NAME = "author";
 +--------------+------------+------------+-----------+

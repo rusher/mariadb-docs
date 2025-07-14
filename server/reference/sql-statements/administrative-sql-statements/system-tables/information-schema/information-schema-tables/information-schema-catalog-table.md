@@ -1,8 +1,8 @@
 # Information Schema CATALOG Table
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120)
-
-Catalog support is planned for 12.0.
+{% hint style="info" %}
+This table is available as of MariaDB 12.0.
+{% endhint %}
 
 The [Information Schema](../) `CATALOG` table stores information about [catalogs](../../../../../../security/user-account-management/catalogs/) on the server.
 
@@ -10,7 +10,6 @@ It contains the following columns:
 
 | Column                        | Description                                                                                            |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Column                        | Description                                                                                            |
 | CATALOG\_NAME                 | Catalog name.                                                                                          |
 | DEFAULT\_CHARACTER\_SET\_NAME | Default [character set](../../../../../data-types/string-data-types/character-sets/) for the database. |
 | DEFAULT\_COLLATION\_NAME      | Default [collation](../../../../../data-types/string-data-types/character-sets/).                      |
@@ -18,7 +17,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 MariaDB [def.test]> SELECT * FROM INFORMATION_SCHEMA.CATALOGS\G
 *************************** 1. row ***************************
               CATALOG_NAME: c1

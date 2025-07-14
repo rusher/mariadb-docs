@@ -1,6 +1,8 @@
 # MariaDB 12.0.1 Release Notes
 
-<a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="mariadb-12.0.1-release-notes.md" class="button secondary">Release Notes</a>  <a href="../../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md" class="button secondary">Changelog</a>  <a href="what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
+<a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="mariadb-12.0.1-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md" class="button secondary">Changelog</a>  <a href="what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
+
+[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/12.0.1/)
 
 **Release date:** 5 Jun 2025
 
@@ -78,7 +80,7 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 
 ### Replication <a href="#replication" id="replication"></a>
 
-* Add option to check whether a server was started with skip-slave-start option ([MDEV-27669](https://jira.mariadb.org/browse/MDEV-27669))
+* Server now displays if it was started with [skip-slave-start](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#skip-slave-start) option ([MDEV-27669](https://jira.mariadb.org/browse/MDEV-27669))
 
 ### Galera <a href="#galera" id="galera"></a>
 
@@ -107,6 +109,8 @@ For a full list of contributors to MariaDB 12.0.1, see the [MariaDB Foundation r
 
 ***
 
-{% include "../../../.gitbook/includes/announce.md" %}
+{% include "../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

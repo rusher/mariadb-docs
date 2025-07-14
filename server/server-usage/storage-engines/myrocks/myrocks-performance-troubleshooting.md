@@ -13,7 +13,7 @@ the contents slightly overlap, but each source has its own unique information, s
 Check the output of
 
 ```sql
-SHOW STATUS like 'Rocksdb%'
+SHOW STATUS LIKE 'Rocksdb%'
 ```
 
 See [MyRocks Status Variables](myrocks-status-variables.md) for more information.

@@ -1,6 +1,6 @@
 # MariaDB 10.2.44 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.44/)[Release Notes](mariadb-10244-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10244-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.44/)[Release Notes](mariadb-10244-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10244-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 20 May 2022
 
@@ -28,10 +28,10 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* Incorrect binlogs after Galera SST using rsync and [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* Incorrect binlogs after Galera SST using rsync and [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * Useless warning "InnoDB: Allocated tablespace ID for , old maximum was 0" during backup stage ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
+* [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 
 ### Optimizer
 
@@ -69,16 +69,14 @@ running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.44](mariadb-10244-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10244-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10244-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.2.44](mariadb-10244-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-9-1-10-8-3-10-7-4-10-6-8-10-5-16-10-4-25-10-3-35-and-10-2-44-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -96,9 +96,9 @@ modified in that revision.
   2015-07-14 06:11:09 +0200
   * Merge remote-tracking branch 'origin/connector\_c\_2.2'
 * [Revision #318257b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/318257b)\
-  2015-07-14 06:07:36 +0200
-  *
-    * Fix for [CONC-136](https://jira.mariadb.org/browse/CONC-136): mysql\_select\_db\_start/cont aren't declared in mysql.h - ma\_dyncol.h no longer requires longlong declaration from my\_global.h
+  2015-07-14 06:07:36 +0200\
+  \*
+  * Fix for [CONC-136](https://jira.mariadb.org/browse/CONC-136): mysql\_select\_db\_start/cont aren't declared in mysql.h - ma\_dyncol.h no longer requires longlong declaration from my\_global.h
 * [Revision #bdb3c65](https://github.com/mariadb-corporation/mariadb-connector-c/commit/bdb3c65)\
   2015-07-06 17:27:54 +0200
   * Bump minor version number
@@ -136,16 +136,16 @@ modified in that revision.
   2015-06-17 09:54:31 +0200
   * added missing fingerprint white list
 * [Revision #28dadb0](https://github.com/mariadb-corporation/mariadb-connector-c/commit/28dadb0)\
-  2015-06-11 13:21:25 +0200
-  *
-    * OpenSSL security: report an error if client requires SSL but server doesn't support SSL (MTM attack) new options MARIADB\_OPT\_SSL\_FP for fingerprint of server certificate MARIADB\_OPT\_SSL\_FP\_LIST for white list of finger prints.
+  2015-06-11 13:21:25 +0200\
+  \*
+  * OpenSSL security: report an error if client requires SSL but server doesn't support SSL (MTM attack) new options MARIADB\_OPT\_SSL\_FP for fingerprint of server certificate MARIADB\_OPT\_SSL\_FP\_LIST for white list of finger prints.
 * [Revision #8680b57](https://github.com/mariadb-corporation/mariadb-connector-c/commit/8680b57)\
   2015-04-07 17:06:35 +0200
   * Minor windows fixes
 * [Revision #ec631f3](https://github.com/mariadb-corporation/mariadb-connector-c/commit/ec631f3)\
-  2015-03-19 20:42:16 +0100
-  *
-    * Don't include curl.h if LIBCURL is not installed - Export utf16le charset
+  2015-03-19 20:42:16 +0100\
+  \*
+  * Don't include curl.h if LIBCURL is not installed - Export utf16le charset
 * [Revision #bf33a4e](https://github.com/mariadb-corporation/mariadb-connector-c/commit/bf33a4e)\
   2015-03-18 20:03:02 +0100
   * Added missing file ma\_io.c:
@@ -176,5 +176,7 @@ modified in that revision.
 * [Revision #fed2447](https://github.com/mariadb-corporation/mariadb-connector-c/commit/fed2447)\
   2015-02-03 21:35:53 +0100
   * removed SQLLite option
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

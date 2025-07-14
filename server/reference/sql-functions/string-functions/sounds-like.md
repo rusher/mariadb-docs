@@ -1,23 +1,18 @@
-
 # SOUNDS LIKE
 
 ## Syntax
 
-
-```
+```sql
 expr1 SOUNDS LIKE expr2
 ```
 
 ## Description
 
-
-This is the same as [SOUNDEX](soundex.md)(expr1) = SOUNDEX(expr2).
-
+This is the same as [SOUNDEX](soundex.md)(expr1) = `SOUNDEX(expr2)`.
 
 ## Example
 
-
-```
+```sql
 SELECT givenname, surname FROM users WHERE givenname SOUNDS LIKE "robert";
 +-----------+---------+
 | givenname | surname |
@@ -26,8 +21,6 @@ SELECT givenname, surname FROM users WHERE givenname SOUNDS LIKE "robert";
 +-----------+---------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

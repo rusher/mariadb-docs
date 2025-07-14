@@ -6,8 +6,9 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 
 ## Syntax
 
-```
-STOP { SLAVE | REPLICA } ["connection_name"] [thread_type [, thread_type] ... ] [FOR CHANNEL "connection_name"]
+```sql
+STOP { SLAVE | REPLICA } ["connection_name"] [thread_type [, thread_type] ... ] 
+[FOR CHANNEL "connection_name"]
 
 STOP ALL { SLAVES | REPLICAS } [thread_type [, thread_type]]
 
@@ -20,13 +21,11 @@ thread_type: IO_THREAD | SQL_THREAD
 
 ## Description
 
-Stops the replica threads. `STOP REPLICA` requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-statements/grant.md#replication-slave-admin) privilege.
+Stops the replica threads. `STOP REPLICA` requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-statements/grant.md#replication-slave-admin) privilege.
 
 Like [START REPLICA](start-replica.md), this statement may be used with the `IO_THREAD` and`SQL_THREAD` options to name the thread or threads to be stopped. In almost all cases, one never need to use the `thread_type` options.
 
-`STOP REPLICA` waits until any current replication event group affecting\
-one or more non-transactional tables has finished executing (if there\
-is any such replication group), or until the user issues a [KILL QUERY](../kill.md) or [KILL CONNECTION](../kill.md) statement.
+`STOP REPLICA` waits until any current replication event group affecting one or more non-transactional tables has finished executing (if there is any such replication group), or until the user issues a [KILL QUERY](../kill.md) or [KILL CONNECTION](../kill.md) statement.
 
 Note that `STOP REPLICA` doesn't delete the connection permanently. Next time you execute [START REPLICA](start-replica.md) or the MariaDB server restarts, the replica connection is restored with it's [original arguments](change-master-to.md). If you want to delete a connection, you should execute [RESET REPLICA](reset-replica.md).
 
@@ -42,8 +41,15 @@ If there is only one nameless master, or the default master (as specified by the
 
 **MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
-The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as\
-using the channel\_name directly after `STOP REPLICA`.
+{% tabs %}
+{% tab title="Current" %}
+The `FOR CHANNEL` keyword is available for MySQL compatibility. This is identical as using the channel\_name directly after `STOP REPLICA`.
+{% endtab %}
+
+{% tab title="< 10.7.0" %}
+The `FOR CHANNEL` keyword is not available.
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 
@@ -51,6 +57,6 @@ using the channel\_name directly after `STOP REPLICA`.
 * [START REPLICA](start-replica.md) is used to start a predefined connection.
 * [RESET REPLICA](reset-replica.md) is used to reset parameters for a connection and also to permanently delete a master connection.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

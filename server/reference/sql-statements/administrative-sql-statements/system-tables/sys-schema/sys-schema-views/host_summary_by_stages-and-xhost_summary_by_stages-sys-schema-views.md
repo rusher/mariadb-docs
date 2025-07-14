@@ -12,7 +12,6 @@ They contain the following columns:
 
 | Column         | Description                                                                                                                                           |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                                           |
 | host           | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
 | event\_name    | Stage event name.                                                                                                                                     |
 | total          | Total number of occurrences of the file stage event for the host.                                                                                     |

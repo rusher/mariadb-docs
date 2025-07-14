@@ -1,8 +1,8 @@
 # MariaDB Connector/Node.js 2.3.0 Changelog
 
-The most recent [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-230-release-notes.md)[Changelog](mariadb-connector-nodejs-230-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-230-release-notes.md) | [Changelog](mariadb-connector-nodejs-230-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 20 Mar 2020
 
@@ -28,10 +28,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #0aaaa19](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0aaaa19) fix undefined localTz param closes #92
 * [Revision #7b31e1f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7b31e1f) \[[CONJS-121](https://jira.mariadb.org/browse/CONJS-121)] Connection.escapeId must always quote value
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

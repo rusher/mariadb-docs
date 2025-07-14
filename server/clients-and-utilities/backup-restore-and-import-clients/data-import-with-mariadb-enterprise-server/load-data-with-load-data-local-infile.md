@@ -11,7 +11,7 @@ MariaDB Enterprise Server users can import data into a database using the `LOAD 
 
 ## Import Schema
 
-1. Determine the [connection parameters](https://mariadb.com/kb/en/connection_parameters) for your MariaDB Enterprise Server database.
+1. Determine the [connection parameters](../../../mariadb-quickstart-guides/mariadb-connecting-guide.md#connection-parameters) for your MariaDB Enterprise Server database.
 2. Use [mariadb client](../../mariadb-client/) with the connection information to import your schema into your MariaDB Enterprise Server database:
 
 ```
@@ -85,13 +85,13 @@ unsigned int enable_local_infile = 1;
 mysql_optionsv(mysql, MYSQL_OPT_LOCAL_INFILE, (void *) &enable_local_infile);
 ```
 
-If you are using [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-server/blob/test/en/about-mariadb-connector-j/README.md), the allowLocalInfile parameter can be set for the connection:
+If you are using [MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), the allowLocalInfile parameter can be set for the connection:
 
 ```
 Connection connection = DriverManager.getConnection("jdbc:mariadb://FULLY_QUALIFIED_DOMAIN_NAME:TCP_PORT/test?user=DATABASE_USER&password=DATABASE_PASSWORD&allowLocalInfile=true");
 ```
 
-If you are using [MariaDB Connector/Node.js](https://mariadb.com/kb/en/nodejs-connector/), the permitLocalInfile parameter can be set for the connection:
+If you are using [MariaDB Connector/Node.js](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/node-js-connection-options), the permitLocalInfile parameter can be set for the connection:
 
 ```
 mariadb.createConnection({
@@ -103,7 +103,7 @@ mariadb.createConnection({
  });
 ```
 
-If you are using [MariaDB Connector/Python](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-connector-python/README.md), the `local_infile` parameter can be set for the connection:
+If you are using [MariaDB Connector/Python](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide), the `local_infile` parameter can be set for the connection:
 
 ```
 conn = mariadb.connect(

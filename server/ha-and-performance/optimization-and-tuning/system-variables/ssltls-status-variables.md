@@ -10,19 +10,19 @@ Some of these status values are not under the control of the server, but are rep
 
 #### `Ssl_accept_renegotiates`
 
-* Description: Number of negotiations needed to establish the TLS connection. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of negotiations needed to establish the TLS connection. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_accepts`
 
-* Description: Number of accepted TLS handshakes. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of accepted TLS handshakes. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_callback_cache_hits`
 
-* Description: Number of sessions retrieved from the session cache. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of sessions retrieved from the session cache. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -41,25 +41,25 @@ Some of these status values are not under the control of the server, but are rep
 
 #### `Ssl_client_connects`
 
-* Description: Number of TLS handshakes started in client mode. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of TLS handshakes started in client mode. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_connect_renegotiates`
 
-* Description: Number of negotiations needed to establish the connection to a TLS-enabled master. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of negotiations needed to establish the connection to a TLS-enabled master. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_ctx_verify_depth`
 
-* Description: Number of tested TLS certificates in the chain. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of tested TLS certificates in the chain. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_ctx_verify_mode`
 
-* Description: Mode used for TLS context verification.The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Mode used for TLS context verification.The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -71,13 +71,13 @@ Some of these status values are not under the control of the server, but are rep
 
 #### `Ssl_finished_accepts`
 
-* Description: Number of successful TLS sessions in server mode. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of successful TLS sessions in server mode. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_finished_connects`
 
-* Description: Number of successful TLS sessions in client mode. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of successful TLS sessions in client mode. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -97,13 +97,13 @@ Some of these status values are not under the control of the server, but are rep
 
 #### `Ssl_session_cache_hits`
 
-* Description: Number of TLS sessions found in the session cache. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of TLS sessions found in the session cache. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_session_cache_misses`
 
-* Description: Number of TLS sessions not found in the session cache. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of TLS sessions not found in the session cache. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -115,31 +115,31 @@ Some of these status values are not under the control of the server, but are rep
 
 #### `Ssl_session_cache_overflows`
 
-* Description: Number of sessions removed from the session cache because it was full. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of sessions removed from the session cache because it was full. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_session_cache_size`
 
-* Description: Size of the session cache. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Size of the session cache. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_session_cache_timeouts`
 
-* Description: Number of sessions which have timed out. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of sessions which have timed out. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Ssl_sessions_reused`
 
-* Description: Number of sessions reused. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of sessions reused. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Ssl_used_session_cache_entries`
 
-* Description: Current number of sessions in the session cache. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Current number of sessions in the session cache. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 

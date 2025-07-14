@@ -2,20 +2,20 @@
 
 ## Syntax
 
-```
+```sql
 UTC_TIME
 UTC_TIME([precision])
 ```
 
 ## Description
 
-Returns the current [UTC time](../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md) as a value in 'HH:MM:SS' or HHMMSS.uuuuuu format, depending on whether the function is used in a string or numeric context.
+Returns the current [UTC time](../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md) as a value in `HH:MM:SS` or `HHMMSS.uuuuuu` format, depending on whether the function is used in a string or numeric context.
 
 The optional _precision_ determines the microsecond precision. See [Microseconds in MariaDB](microseconds-in-mariadb.md).
 
 ## Examples
 
-```
+```sql
 SELECT UTC_TIME(), UTC_TIME() + 0;
 +------------+----------------+
 | UTC_TIME() | UTC_TIME() + 0 |
@@ -26,7 +26,7 @@ SELECT UTC_TIME(), UTC_TIME() + 0;
 
 With precision:
 
-```
+```sql
 SELECT UTC_TIME(5);
 +----------------+
 | UTC_TIME(5)    |
@@ -39,6 +39,6 @@ SELECT UTC_TIME(5);
 
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

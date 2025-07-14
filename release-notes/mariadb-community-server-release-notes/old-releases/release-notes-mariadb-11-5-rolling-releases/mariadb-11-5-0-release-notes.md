@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.5](what-is-mariadb-115.md) is:[**MariaDB 11.5.2**](mariadb-11-5-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.5.2/)
 
-[Download 11.5.0](https://downloads.mariadb.org/mariadb/11.5.0/)[Release Notes](mariadb-11-5-0-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-5-series/)[Overview of 11.5](what-is-mariadb-115.md)
+[Download 11.5.0](https://downloads.mariadb.org/mariadb/11.5.0/)[Release Notes](mariadb-11-5-0-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-5-series/)[Overview of 11.5](what-is-mariadb-115.md)
 
 **Release date:** 18 March 2024
 
@@ -24,7 +24,7 @@ Thanks, and enjoy MariaDB!
 
 * [Limit size of created disk temporary files and tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview) ([MDEV-9101](https://jira.mariadb.org/browse/MDEV-9101))
 * There are two system variables used for controlling this feature:
-  * [max\_tmp\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable): Limits the the temporary space allowance per user
+  * [max\_tmp\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable): Limits the temporary space allowance per user
   * [max\_total\_tmp\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_total_space_usage-system-variable): Limits the temporary space allowance for all users.
 
 ### Data Types
@@ -68,10 +68,8 @@ Thanks, and enjoy MariaDB!
 * Parallel dump of multiple databases via [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) with the `--dir` option ([MDEV-33625](https://jira.mariadb.org/browse/MDEV-33625))
 * Deprecate [spider\_casual\_read](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-system-variables#spider_casual_read) ([MDEV-31789](https://jira.mariadb.org/browse/MDEV-31789))
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

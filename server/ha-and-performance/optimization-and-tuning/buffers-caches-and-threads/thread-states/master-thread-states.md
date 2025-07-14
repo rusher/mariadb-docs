@@ -4,7 +4,6 @@ This article documents thread states that are related to [replication](https://g
 
 | Value                                                                 | Description                                                                                                                                             |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value                                                                 | Description                                                                                                                                             |
 | Finished reading one binlog; switching to next binlog                 | After completing one [binary log](../../../../server-management/server-monitoring-logs/binary-log/), the next is being opened for sending to the slave. |
 | Master has sent all binlog to slave; waiting for binlog to be updated | All events have been read from the binary logs and sent to the slave. Now waiting for the binary log to be updated with new events.                     |
 | Sending binlog event to slave                                         | An event has been read from the [binary log](../../../../server-management/server-monitoring-logs/binary-log/), and is now being sent to the slave.     |

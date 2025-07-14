@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SET [SESSION] sql_log_bin = {0|1}
 ```
 
@@ -12,8 +12,16 @@ Sets the [sql\_log\_bin](../../../../ha-and-performance/standard-replication/rep
 
 Note that setting `sql_log_bin=1` has no effect if [log\_bin](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin) variable, which enables global binary logging, is not set.
 
-Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and before MySQL 5.6 one could also set `sql_log_bin` as a global variable. This was disabled as this was too dangerous as it could damage replication.
+{% tabs %}
+{% tab title="Current" %}
+You cannot set `sql_log_bin` as a global variable.&#x20;
+{% endtab %}
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+{% tab title="< 5.6 / 5.5" %}
+You can set `sql_log_bin` as a global variable. This is considered dangerous, though, as it can damage replication.
+{% endtab %}
+{% endtabs %}
+
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

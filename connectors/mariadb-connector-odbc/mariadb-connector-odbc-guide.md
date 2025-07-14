@@ -23,7 +23,6 @@ The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/ma
 
 | Date        | Release                       | Status      | Release Notes                                                                                                                                                        | Changelog                                                                                                                                                           |
 | ----------- | ----------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Date        | Release                       | Status      | Release Notes                                                                                                                                                        | Changelog                                                                                                                                                           |
 | 24 Feb 2025 | MariaDB Connector/ODBC 3.2.5  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-5-changelog) |
 | 14 Nov 2024 | MariaDB Connector/ODBC 3.2.4  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-4-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-4-changelog) |
 | 26 Aug 2024 | MariaDB Connector/ODBC 3.2.3  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-3-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-3-changelog) |
@@ -138,13 +137,13 @@ sudo apt-get install unixodbc odbcinst
 
 If you plan to compile an application from source against MariaDB Connector/ODBC and UnixODBC, then you also need the development header files that define the ODBC API function prototypes, ODBC data types, etc. In most Linux distributions, you can install these UnixODBC development files by using your Linux distribution's package manager.
 
-For example, the following command would install the `unixODBC-devel` package on on RHEL, CentOS, and similar Linux distributions:
+For example, the following command would install the `unixODBC-devel` package on RHEL, CentOS, and similar Linux distributions:
 
 ```bash
 sudo yum install unixODBC-devel
 ```
 
-And the following command would install the `unixodbc-dev` package on on Debian, Ubuntu, and similar Linux distributions:
+And the following command would install the `unixodbc-dev` package on Debian, Ubuntu, and similar Linux distributions:
 
 ```bash
 sudo apt-get update

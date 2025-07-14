@@ -16,7 +16,7 @@ The following tables indicate the approximate data storage requirements for each
 | [DECIMAL](numeric-data-types/decimal.md)     | See table below                       |
 | [BIT](numeric-data-types/bit.md)(M)          | (M+7)/8 bytes                         |
 
-Note that MEDIUMINT columns will require 4 bytes in memory (for example, in InnoDB buffer pool).
+Note that `MEDIUMINT` columns will require 4 bytes in memory (for example, in InnoDB buffer pool).
 
 ### Decimal
 
@@ -52,17 +52,16 @@ In the descriptions below, `M` is the declared column length (in characters or i
 | [INET6](string-data-types/inet6.md)                                                          | 16 bytes                                                                                                   |
 | [UUID](string-data-types/uuid-data-type.md)                                                  | 16 bytes                                                                                                   |
 
-In some [character sets](string-data-types/character-sets/), not all characters use the same number of bytes. utf8 encodes characters with one to three bytes per character, while utf8mb4 requires one to four bytes per character.
+In some [character sets](string-data-types/character-sets/), not all characters use the same number of bytes. utf8 encodes characters with one to three bytes per character, while `utf8mb4` requires one to four bytes per character.
 
-When using field the COMPRESSED attribute, 1 byte is reserved for metadata. For example, VARCHAR(255) will use +2 bytes instead of +1.
+When using field the `COMPRESSED` attribute, 1 byte is reserved for metadata. For example, `VARCHAR(255)` will use +2 bytes instead of +1.
 
 ### Examples
 
 Assuming a single-byte character-set:
 
-|       |         |                  |            |                  |
-| ----- | ------- | ---------------- | ---------- | ---------------- |
 | Value | CHAR(2) | Storage Required | VARCHAR(2) | Storage Required |
+| ----- | ------- | ---------------- | ---------- | ---------------- |
 | ''    | ' '     | 2 bytes          | ''         | 1 byte           |
 | '1'   | '1 '    | 2 bytes          | '1'        | 2 bytes          |
 | '12'  | '12'    | 2 bytes          | '12'       | 3 bytes          |
@@ -79,9 +78,7 @@ Assuming a single-byte character-set:
 
 ### Microseconds
 
-[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and MySQL 5.6 introduced [microseconds](../sql-functions/date-time-functions/microseconds-in-mariadb.md). The underlying storage implementations were different, but from [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB defaults to the MySQL format (by means of the [mysql56\_temporal\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
-
-#### MySQL 5.6+ and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)+
+MariaDB defaults to the MySQL format (by means of the [mysql56\_temporal\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
 
 | Precision | Storage Requirement |
 | --------- | ------------------- |
@@ -90,22 +87,13 @@ Assuming a single-byte character-set:
 | 3,4       | 2 bytes             |
 | 5,6       | 3 bytes             |
 
-#### [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) - [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+## NULL Values
 
-| Precision | Storage Requirement |
-| --------- | ------------------- |
-| 0         | 0 bytes             |
-| 1,2       | 1 byte              |
-| 3,4,5     | 2 bytes             |
-| 6         | 3 bytes             |
+For the InnoDB [COMPACT](../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format.md), [DYNAMIC](../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format.md) and [COMPRESSED](../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md) row formats, a number of bytes will be allocated in the record header for the nullable fields. If there are between 1 and 8 nullable fields, 1 such byte will be allocated. In the record payload area, no space will be reserved for values that are `NULL`.
 
-## NULLs
+For the [InnoDB REDUNDANT row format](../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format.md), the overhead is 1 bit in the record header (as a part of the 1-byte or 2-byte "end of field" pointer). In that format, a `NULL` fixed-length field will consume the same amount of space as any `NOT NULL` value in the record payload area. The motivation is that it is possible to update in place between `NOT NULL` and `NULL` values.
 
-For the InnoDB [COMPACT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format.md), [DYNAMIC](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format.md) and [COMPRESSED](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md) row formats, a number of bytes will be allocated in the record header for the nullable fields. If there are between 1 and 8 nullable fields, 1 such byte will be allocated. In the record payload area, no space will be reserved for values that are NULL.
-
-For the [InnoDB REDUNDANT row format](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format.md), the overhead is 1 bit in the record header (as a part of the 1-byte or 2-byte "end of field" pointer). In that format, a NULL fixed-length field will consume the same amount of space as any NOT NULL value in the record payload area. The motivation is that it is possible to update in place between NOT NULL and NULL values.
-
-In other formats, NULL values usually require 1 bit in the data file, 1 byte in the index file.
+In other formats, `NULL` values usually require 1 bit in the data file, 1 byte in the index file.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

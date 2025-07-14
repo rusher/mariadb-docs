@@ -11,7 +11,6 @@ After converting to first normal form, the following table structure was achieve
 
 | Plant location table |
 | --- |
-| Plant location table |
 | Location code |
 | Location name |
 | Plant code |
@@ -43,7 +42,6 @@ Let's examine all the fields. *Location name* is only dependent on *location cod
 
 | Plant location table |
 | --- |
-| Plant location table |
 | Plant code |
 | Location code |
 
@@ -55,7 +53,6 @@ Let's examine all the fields. *Location name* is only dependent on *location cod
 
 | Plant table |
 | --- |
-| Plant table |
 | Plant code |
 | Plant name |
 | Soil category |
@@ -69,7 +66,6 @@ Let's examine all the fields. *Location name* is only dependent on *location cod
 
 | Location table |
 | --- |
-| Location table |
 | Location code |
 | Location name |
 

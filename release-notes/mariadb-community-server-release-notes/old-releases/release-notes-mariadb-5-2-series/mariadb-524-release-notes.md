@@ -2,14 +2,14 @@
 
 The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mariadb-5-2.md) is:[**MariaDB 5.2.14**](mariadb-5214-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.2.4) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-524-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.2.4) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-524-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
 
 **Release date:** 6 Dec 2010
 
 This is a [stable release](../../../mariadb-release-criteria.md). In general this means there are\
 no known serious bugs and we believe the code is ready for general usage. For a high-level description of [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) see the [MariaDB 5.2 overview](changes-improvements-in-mariadb-5-2.md).
 
-See the [Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-524-changelog.md) for a list of all changes included in this release.
+See the [Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-524-changelog.md) for a list of all changes included in this release.
 
 ## Includes [MariaDB 5.1.53](../release-notes-mariadb-5-1-series/mariadb-5153-release-notes.md)
 
@@ -42,6 +42,8 @@ fixes and other improvements. Specific bugs fixed in [MariaDB 5.2.4](mariadb-524
   * [Bug #616307](https://bugs.launchpad.net/bugs/616307) Upgrade failure on Debian 6 "Squeeze"
 * and others...
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

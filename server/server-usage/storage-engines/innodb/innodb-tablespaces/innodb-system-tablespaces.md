@@ -1,8 +1,8 @@
 # InnoDB System Tablespaces
 
-When InnoDB needs to store general information relating to the system as a whole, rather than a specific table, the specific file it writes to is the system tablespace. By default, this is the `ibdata1` file located in the data directory, (as defined by either the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) or [innodb_data_home_dir](../innodb-system-variables.md#innodb_data_home_dir) system variables). InnoDB uses the system tablespace to store the data dictionary, change buffer, and undo logs.
+When InnoDB needs to store general information relating to the system as a whole, rather than a specific table, the specific file it writes to is the system tablespace. By default, this is the `ibdata1` file located in the data directory, (as defined by either the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) or [innodb\_data\_home\_dir](../innodb-system-variables.md#innodb_data_home_dir) system variables). InnoDB uses the system tablespace to store the data dictionary, change buffer, and undo logs.
 
-You can define the system tablespace filename or filenames, size and other options by setting the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable. This system variable can be specified as a command-line argument to [mariadbd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+You can define the system tablespace filename or filenames, size and other options by setting the [innodb\_data\_file\_path](../innodb-system-variables.md#innodb_data_file_path) system variable. This system variable can be specified as a command-line argument to [mariadbd](../../../../server-management/starting-and-stopping-mariadb/mariadbd.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -18,7 +18,7 @@ InnoDB defaults to allocating 12M to the `ibdata1` file for the system tablespac
 
 ### Increasing the Size
 
-When setting the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable, you can define a size for each file given. In cases where you need a larger system tablespace, add the `autoextend` option to the last value.
+When setting the [innodb\_data\_file\_path](../innodb-system-variables.md#innodb_data_file_path) system variable, you can define a size for each file given. In cases where you need a larger system tablespace, add the `autoextend` option to the last value.
 
 ```
 [mariadb]
@@ -26,13 +26,13 @@ When setting the [innodb_data_file_path](../innodb-system-variables.md#innodb_da
 innodb_data_file_path=ibdata1:12M;ibdata2:50M:autoextend
 ```
 
-Under this configuration, when the last system tablespace grows beyond the size allocation, InnoDB increases the size of the file by increments. To control the allocation increment, set the [innodb_autoextend_increment](../innodb-system-variables.md#innodb_autoextend_increment) system variable.
+Under this configuration, when the last system tablespace grows beyond the size allocation, InnoDB increases the size of the file by increments. To control the allocation increment, set the [innodb\_autoextend\_increment](../innodb-system-variables.md#innodb_autoextend_increment) system variable.
 
 ### Decreasing the Size
 
 **MariaDB starting with** [**11.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112)
 
-From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), when MariaDB starts up, unused InnoDB tablespace can be reclaimed, reducing the file size ([MDEV-14795](https://jira.mariadb.org/browse/MDEV-14795)). This is disabled by default and is enabled by adding the `:autoshrink` attribute to the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable, e.g.:
+From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), when MariaDB starts up, unused InnoDB tablespace can be reclaimed, reducing the file size ([MDEV-14795](https://jira.mariadb.org/browse/MDEV-14795)). This is disabled by default and is enabled by adding the `:autoshrink` attribute to the [innodb\_data\_file\_path](../innodb-system-variables.md#innodb_data_file_path) system variable, e.g.:
 
 ```
 [mariadb]
@@ -51,7 +51,7 @@ Technically, how this works is:
 6. Update the FSP\_SIZE and FSP\_FREE\_LIMIT in header page.
 7. In case of multiple files, calculate the truncated last file size and do the truncation in last file.
 
-**MariaDB until** [**11.2.0**](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-1120-release-notes/README.md)
+**MariaDB until** [**11.2.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes)
 
 In cases where the InnoDB system tablespace has grown too large, before [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), the process to reduce it in size is a little more complicated than increasing the size. MariaDB does not allow you to remove data from the tablespace file itself. Instead you need to delete the tablespace files themselves, then restore the database from backups.\
 The backup utility [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) produces backup files containing the SQL statements needed to recreate the database. As a result, it restores a database with the bare minimum data rather than any additional information that might have built up in the tablespace file.\
@@ -79,7 +79,7 @@ $ mysql -u root -p < full-backup.sql
 
 Instead of having InnoDB write to the file system, you can set it to use raw disk partitions. On Windows and some Linux distributions, this allows you to perform non-buffered I/O without the file system overhead. Note that in many use cases this may not actually improve performance. Run tests to verify if there are any real gains for your application usage.
 
-To enable a raw disk partition, first start MariaDB with the `newraw` option set on the tablespace. For example:
+To enable a raw disk partition, first start MariaDB with the `newraw` option set on the tablespace:
 
 ```
 [mariadb]
@@ -99,7 +99,7 @@ When you start MariaDB again, it'll read and write InnoDB data to the given disk
 
 ### Raw Disk Partitions on Windows
 
-When defining a raw disk partition for InnoDB on the Windows operating system, use the same procedure as defined above, but when defining the path for the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable, use `./` at the start. For example:
+When defining a raw disk partition for InnoDB on the Windows operating system, use the same procedure as defined above, but when defining the path for the [innodb\_data\_file\_path](../innodb-system-variables.md#innodb_data_file_path) system variable, use `./` at the start:
 
 ```
 [mariadb]

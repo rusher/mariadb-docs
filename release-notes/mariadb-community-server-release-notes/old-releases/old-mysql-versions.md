@@ -19,7 +19,7 @@ This page lists the main features that were added in very old MySQL trees, befor
 
 ## MySQL 3.23
 
-* [Replication](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/broken-reference/README.md) (only statement-based, no SSL).
+* [Replication](https://mariadb.com/docs/server/server-usage/storage-engines/myrocks/myrocks-and-replication) (only statement-based, no SSL).
 * Temporary tables
 * Portable tables through different machines
 * [SQL\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode)
@@ -74,5 +74,7 @@ This page lists the main features that were added in very old MySQL trees, befor
 * Storage engines API.
 * Plugins API.
 * [Row-based and mixed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats) replication.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

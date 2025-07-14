@@ -8,7 +8,6 @@ It contains the following columns:
 
 | Field                          | Type        | Notes                                                                                                                                                                                                                                                                                                 |
 | ------------------------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field                          | Type        | Notes                                                                                                                                                                                                                                                                                                 |
 | USER                           | varchar(48) | The username. The value '#mysql\_system\_user#' appears when there is no username (such as for the slave SQL thread).                                                                                                                                                                                 |
 | TOTAL\_CONNECTIONS             | int(11)     | The number of connections created for this user.                                                                                                                                                                                                                                                      |
 | CONCURRENT\_CONNECTIONS        | int(11)     | The number of concurrent connections for this user.                                                                                                                                                                                                                                                   |
@@ -39,7 +38,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.USER_STATISTICS\G
 *************************** 1. row ***************************
                   USER: root

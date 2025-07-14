@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 10.0](https://github.com/mariadb-corpora
 **Release date:** 26 Feb 2016
 
 For the highlights of this release, see the[release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10024-release-notes.md).\
-For changes made in MariaDB, see the [MariaDB 10.0.24 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10024-changelog.md).
+For changes made in MariaDB, see the [MariaDB 10.0.24 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10024-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
@@ -17,13 +17,13 @@ modified in that revision.
   2016-02-24 17:40:12 -0500
   * Skip galera\_sync\_wait\_show.test on non-debug builds.
 * [Revision #f67d6fc](https://github.com/MariaDB/server/commit/f67d6fc)\
-  2015-12-04 15:09:08 +0530
-  *
-    * PXC#480: xtrabackup-v2 SST fails with multiple log\_bin directives in my.cnf
+  2015-12-04 15:09:08 +0530\
+  \*
+  * PXC#480: xtrabackup-v2 SST fails with multiple log\_bin directives in my.cnf
 * [Revision #0cf66e4](https://github.com/MariaDB/server/commit/0cf66e4)\
-  2015-10-22 14:56:29 +0530
-  *
-    * PXC#460: wsrep\_sst\_auth don't work in Percona-XtraDB-Cluster-56-5.6.25-25.12.1.el7
+  2015-10-22 14:56:29 +0530\
+  \*
+  * PXC#460: wsrep\_sst\_auth don't work in Percona-XtraDB-Cluster-56-5.6.25-25.12.1.el7
 * [Revision #0fd9d5a](https://github.com/MariaDB/server/commit/0fd9d5a)\
   2016-02-23 21:24:00 -0500
   * Update WSREP\_PATCH\_REVNO.
@@ -210,5 +210,9 @@ modified in that revision.
 * [Revision #8a71fde](https://github.com/MariaDB/server/commit/8a71fde)\
   2015-10-20 17:54:14 +0200
   * refs codership/mysql-wsrep#201
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

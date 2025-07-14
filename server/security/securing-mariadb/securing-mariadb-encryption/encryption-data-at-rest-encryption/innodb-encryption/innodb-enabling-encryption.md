@@ -12,7 +12,6 @@ The [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb
 
 | Option | Description                                                                                                                                                                                                                                                                 |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option | Description                                                                                                                                                                                                                                                                 |
 | OFF    | Disables table encryption.                                                                                                                                                                                                                                                  |
 | ON     | Enables table encryption, but allows unencrypted tables to be created.                                                                                                                                                                                                      |
 | FORCE  | Enables table encryption, and doesn't allow unencrypted tables to be created. Added in [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes). |
@@ -27,8 +26,8 @@ SET GLOBAL innodb_encrypt_tables=ON;
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 );
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -51,8 +50,8 @@ SET GLOBAL innodb_encrypt_tables=ON;
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=NO;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -75,8 +74,8 @@ SET GLOBAL innodb_encrypt_tables='FORCE';
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=NO;
 ERROR 1005 (HY000): Can't create table `db1`.`tab1` (errno: 140 "Wrong create options")
 
@@ -96,11 +95,10 @@ When [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innod
 
 ### Enabling Encryption for Manually Encrypted Tablespaces
 
-If you do not want to automatically encrypt every InnoDB table, then it is possible to manually enable encryption for just the subset of InnoDB tables that you would like to encrypt. MariaDB provides the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) and [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table options that can be used to manually enable encryption for specific InnoDB tables. These table options can be used with [CREATE TABLE](../../../../../reference/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statements. These table options can only be used with InnoDB tables that have their own [InnoDB's file-per-table tablespaces](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md), meaning that tables that were created with [innodb\_file\_per\_table=ON](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) set.
+If you do not want to automatically encrypt every InnoDB table, then it is possible to manually enable encryption for just the subset of InnoDB tables that you would like to encrypt. MariaDB provides the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) and [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table options that can be used to manually enable encryption for specific InnoDB tables. These table options can be used with [CREATE TABLE](../../../../../reference/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statements. These table options can only be used with InnoDB tables that have their own [InnoDB's file-per-table tablespaces](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md), meaning that tables that were created with [innodb\_file\_per\_table=ON](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) set.
 
 | Table Option        | Value          | Description                                          |
 | ------------------- | -------------- | ---------------------------------------------------- |
-| Table Option        | Value          | Description                                          |
 | ENCRYPTED           | Boolean        | Defines whether to encrypt the table                 |
 | ENCRYPTION\_KEY\_ID | 32-bit integer | Defines the identifier for the encryption key to use |
 
@@ -112,8 +110,8 @@ You can also manually specify a [encryption key](innodb-encryption-overview.md) 
 
 ```sql
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=YES ENCRYPTION_KEY_ID=100;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -132,8 +130,8 @@ If the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-defini
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=YES;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -146,12 +144,12 @@ WHERE NAME='db1/tab1';
 +----------+-------------------+----------------+
 ```
 
-In the event that you have an existing table and you want to manually enable encryption for that table, then you can do the same with an [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement. For example:
+In the event that you have an existing table and you want to manually enable encryption for that table, then you can do the same with an [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement. For example:
 
 ```sql
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=NO;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -176,7 +174,7 @@ WHERE NAME='db1/tab1';
 +----------+-------------------+----------------+
 ```
 
-InnoDB does not permit manual encryption changes to tables in the [system](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace using [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md). Encryption of the [system](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace can only be configured by setting the value of the [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable. This means that when you want to encrypt or decrypt the [system](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace, you must also set a non-zero value for the [innodb\_encryption\_threads](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) system variable, and you must also set the [innodb\_system\_rotate\_key\_age](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `1` to ensure that the system tablespace is properly encrypted or decrypted by the background threads. See [MDEV-14398](https://jira.mariadb.org/browse/MDEV-14398) for more information.
+InnoDB does not permit manual encryption changes to tables in the [system](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace using [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/). Encryption of the [system](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace can only be configured by setting the value of the [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable. This means that when you want to encrypt or decrypt the [system](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) tablespace, you must also set a non-zero value for the [innodb\_encryption\_threads](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) system variable, and you must also set the [innodb\_system\_rotate\_key\_age](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `1` to ensure that the system tablespace is properly encrypted or decrypted by the background threads. See [MDEV-14398](https://jira.mariadb.org/browse/MDEV-14398) for more information.
 
 ### Enabling Encryption for Temporary Tablespaces
 
@@ -184,7 +182,6 @@ The [innodb\_encrypt\_temporary\_tables](../../../../../server-usage/storage-eng
 
 | Option | Description                          |
 | ------ | ------------------------------------ |
-| Option | Description                          |
 | OFF    | Disables temporary table encryption. |
 | ON     | Enables temporary table encryption.  |
 

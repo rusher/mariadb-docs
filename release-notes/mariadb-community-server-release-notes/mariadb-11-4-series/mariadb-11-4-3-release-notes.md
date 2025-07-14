@@ -1,8 +1,8 @@
 # MariaDB 11.4.3 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download 11.4.3](https://downloads.mariadb.org/mariadb/11.4.3/)[Release Notes](mariadb-11-4-3-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://downloads.mariadb.org/mariadb/11.4.3/" class="button primary">Download</a> <a href="mariadb-11-4-3-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 8 Aug 2024
 
@@ -10,7 +10,7 @@ The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 
 
 [MariaDB 11.4.3](mariadb-11-4-3-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -85,13 +85,13 @@ Thanks, and enjoy MariaDB!
 ### Galera
 
 * [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.19
-  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
+  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 * `galera_gtid_2_cluster`: Assertion \`\`thd->wsrep\_next\_trx\_id() != (0x7fffffffffffffffLL \* 2ULL + 1)'\` ([MDEV-32633](https://jira.mariadb.org/browse/MDEV-32633))
 * table `gtid_slave_pos` entries never been deleted with `wsrep_gtid_mode = 0` ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))
 * Deadlock found when trying to get lock during applying ([MDEV-31658](https://jira.mariadb.org/browse/MDEV-31658))
 * Change error code for Galera unkillable threads ([MDEV-12008](https://jira.mariadb.org/browse/MDEV-12008))
 * 10.11.8 cluster becomes inconsistent when using composite primary key and partitioning ([MDEV-34269](https://jira.mariadb.org/browse/MDEV-34269))
-* `wsrep_sst_mariabackup` use `/tmp` dir during SST rather then user defined `tmpdir` ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
+* `wsrep_sst_mariadb-backup` use `/tmp` dir during SST rather then user defined `tmpdir` ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
 
 ### Error Log
 
@@ -111,24 +111,17 @@ Thanks, and enjoy MariaDB!
 * Fix assertion \`\`table->field\[0]->ptr >= table->record\[0] && table->field\[0]->ptr <= table->record\[0] + table->s->reclength'`failed in`void handler::assert\_icp\_limitations(uchar\*)\` ([MDEV-34632](https://jira.mariadb.org/browse/MDEV-34632))
 * [sandbox mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-sandbox) - now compatible with [--binary-mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-binary-mode) ([MDEV-34203](https://jira.mariadb.org/browse/MDEV-34203))
 
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.4.3](mariadb-11-4-3-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 11.4.3](mariadb-11-4-3-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-6-1-11-5-2-11-4-3-11-2-5-11-1-6-10-11-9-10-6-19-and-10-5-26-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

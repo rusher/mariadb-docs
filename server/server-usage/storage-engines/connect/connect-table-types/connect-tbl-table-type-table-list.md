@@ -53,7 +53,6 @@ Can reply:
 
 | NAME     | SEX  | TITLE         | SALARY   |
 | -------- | ---- | ------------- | -------- |
-| NAME     | SEX  | TITLE         | SALARY   |
 | BARBOUD  | NULL | VENDEUR       | 9700.00  |
 | MARCHANT | NULL | VENDEUR       | 8800.00  |
 | MINIARD  | NULL | ADMINISTRATIF | 7500.00  |
@@ -117,7 +116,6 @@ The result returned by the SELECT statement is:
 
 | tabname | a | message |
 | ------- | - | ------- |
-| tabname | a | message |
 | xt1     | 1 | Testing |
 | xt1     | 2 | table   |
 | xt1     | 3 | t1      |
@@ -145,7 +143,6 @@ Additional options available for this table type:
 
 | Option | Description                                                                                  |
 | ------ | -------------------------------------------------------------------------------------------- |
-| Option | Description                                                                                  |
 | Maxerr | The max number of missing tables in the table list before an error is raised. Defaults to 0. |
 | Accept | If true, missing columns are accepted and return null values. Defaults to false.             |
 | Thread | If true, enables parallel execution of remote sub-tables.                                    |

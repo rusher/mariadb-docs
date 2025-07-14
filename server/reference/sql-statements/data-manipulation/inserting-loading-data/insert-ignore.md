@@ -10,14 +10,21 @@ Invalid values are changed to the closest valid value and inserted, with a warni
 
 The IGNORE and DELAYED options are ignored when you use [ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md).
 
-Prior to MySQL and [MariaDB 5.5.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes), no warnings were issued for duplicate key errors when using `IGNORE`.\
-You can get the old behavior if you set [OLD\_MODE](../../../../server-management/variables-and-modes/old-mode.md) to `NO_DUP_KEY_WARNINGS_WITH_IGNORE`.
+{% tabs %}
+{% tab title="Current" %}
+Warnings are issued for duplicate key errors when using `IGNORE`. You can get the old behavior if you set [OLD\_MODE](../../../../server-management/variables-and-modes/old-mode.md) to `NO_DUP_KEY_WARNINGS_WITH_IGNORE`.
+{% endtab %}
+
+{% tab title="< 5.5.28" %}
+No warnings are issued for duplicate key errors when using `IGNORE`.
+{% endtab %}
+{% endtabs %}
 
 See [IGNORE](ignore.md) for a full description of effects.
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (x INT UNIQUE);
 
 INSERT INTO t1 VALUES(1),(2);
@@ -54,7 +61,7 @@ SELECT * FROM t1;
 
 Converting values:
 
-```
+```sql
 CREATE OR REPLACE TABLE t2(id INT, t VARCHAR(2) NOT NULL, n INT NOT NULL);
 
 INSERT INTO t2(id) VALUES (1),(2);

@@ -29,7 +29,7 @@ MariaDB Enterprise Server 10.5 uses the "MariaDB" name in more places:
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | mysql                         | [mariadb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client)                                          |
 | mysqld                        | [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd)                     |
-| mariabackup                   | [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)            |
+| mariadb-backup                | [mariadb-backup](broken-reference/)                                                                                                     |
 | mysql\_plugin                 | [mariadb-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-plugin)              |
 | mysql\_upgrade                | [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade)                |
 | mysql\_waitpid                | [mariadb-waitpid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-waitpid)            |
@@ -118,7 +118,7 @@ The [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-
 
 MariaDB Enterprise Server 10.5 contains several enhancements for the [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria):
 
-* It handles the [BACKUP STAGE BLOCK\_COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) statement by blocking commits to Aria tables, which allows for safer backups with [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup).
+* It handles the [BACKUP STAGE BLOCK\_COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) statement by blocking commits to Aria tables, which allows for safer backups with [MariaDB Backup](broken-reference/).
 * It increases the index length limit for Aria tables from 1000 bytes to 2000 bytes.
 
 ### S3 Storage Engine
@@ -953,7 +953,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 
 **Granted Operations:**
 
-* Allows the user to execute [PURGE BINARY LOGS](https://app.gitbook.com/s/rfK8h3eGTK4lYdomGpGT/readme/mariadb-server/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs) statements
+* Allows the user to execute [PURGE BINARY LOGS](broken-reference) statements
 * Allows the user to set system variables:
   * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
   * [binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
@@ -1215,6 +1215,6 @@ MariaDB Enterprise Server 10.5 includes some internal improvements:
 
 For a complete list of changes, see [MariaDB Enterprise Server 10.5.4-2 release notes](release-notes-for-mariadb-enterprise-server-10-5-4-2.md).
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

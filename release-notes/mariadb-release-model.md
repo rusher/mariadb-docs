@@ -1,8 +1,8 @@
-# MariaDB Release Model
+# MariaDB Community Server Release Model
 
-## Current MariaDB Release Model (from [MariaDB 11.3](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
+## Current Release Model (from [MariaDB 11.3](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
 
-* [MariaDB Server releases](enterprise-server/) happen four times a year.
+* [MariaDB Community Server releases](mariadb-community-server-release-notes/) happen four times a year.
 * There is a new innovation release with new features every time. It is an RC release.
 * Additionally, all maintained release series get a new patch version maintenance release, a release that was RC last time, becomes GA.
 * There are no patch version releases of an innovation release after GA (except for emergency releases), instead users are supposed to upgrade to the next minor innovation release. In other words, innovation releases are rolling releases, one upgrades 11.3.2→11.4.2→11.5.2→11.6.2→11.7.2
@@ -21,11 +21,11 @@ The release schedule looks about the same every year:
 
 References:
 
-*
-*
-*
+* [https://mariadb.org/challenges-visions/](https://mariadb.org/challenges-visions/)
+* [https://mariadb.org/preview-releases/](https://mariadb.org/preview-releases/)
+* [https://mariadb.org/new-innovation-release-model/](https://mariadb.org/new-innovation-release-model/)
 
-## Historical MariaDB Release Models
+## Historical Release Models
 
 ### From [MariaDB 10.7](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md) to [MariaDB 11.2](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112.md)
 
@@ -52,5 +52,7 @@ Almost the same as above, except that
 * No fixed or predictable schedule
   * 10.0 took 2.75 years (first commit was in August 2011, GA in May 2014)
   * 10.1 took 1.83 years (first commit was in December 2013, GA in October 2015)
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

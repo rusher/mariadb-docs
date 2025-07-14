@@ -1,8 +1,8 @@
 # MariaDB 11.4.4 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download 11.4.4](https://downloads.mariadb.org/mariadb/11.4.4/)[Release Notes](mariadb-11-4-4-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://downloads.mariadb.org/mariadb/11.4.4/" class="button primary">Download</a> <a href="mariadb-11-4-4-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 1 Nov 2024
 
@@ -10,7 +10,7 @@ The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 
 
 [MariaDB 11.4.4](mariadb-11-4-4-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -94,16 +94,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.4.4](mariadb-11-4-4-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 11.4.4](mariadb-11-4-4-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-4-4-11-2-6-10-11-10-10-6-20-and-10-5-27-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

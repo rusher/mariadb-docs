@@ -2,12 +2,12 @@
 
 The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
 
-[Download 10.6.9](https://downloads.mariadb.org/mariadb/10.6.9/)[Release Notes](mariadb-1069-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1069-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+[Download 10.6.9](https://downloads.mariadb.org/mariadb/10.6.9/)[Release Notes](mariadb-1069-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-1069-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
 
 **Release date:** 15 Aug 2022
 
 [MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable series of MariaDB. It is an evolution\
-of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
+of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.8](mariadb-1068-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -71,7 +71,7 @@ Unfortunately, some bugs have been found post release, so this is updated to hel
 * Optimizer uses all partitions after upgrade to 10.3 ([MDEV-28246](https://jira.mariadb.org/browse/MDEV-28246))
   * For multi-table UPDATE or DELETE queries, the optimizer failed to apply Partition Pruning optimization for the table that is updated or deleted from.
 * Range optimizer regression for key IN (const, ....) ([MDEV-25020](https://jira.mariadb.org/browse/MDEV-25020))
-  * The issue can be observed on [MariaDB 10.5.9](../mariadb-10-5-series/mariadb-1059-release-notes.md) and later versions which have the fix for [MDEV-9750](https://jira.mariadb.org/browse/MDEV-9750). That fix introduceds optimizer\_max\_sel\_arg\_weight.
+  * The issue can be observed on [MariaDB 10.5.9](../old-releases/mariadb-10-5-series/mariadb-1059-release-notes.md) and later versions which have the fix for [MDEV-9750](https://jira.mariadb.org/browse/MDEV-9750). That fix introduceds optimizer\_max\_sel\_arg\_weight.
   * If one sets optimizer\_max\_sel\_arg\_weight to a very high value or zero (which means "unlimited") and runs queries that produce heavy-weight graphs, they can observe a performance slowdown, e.g.:
 
 ```
@@ -121,16 +121,14 @@ table.keyXpartY [NOT] IN ( ... )
 ## Changelog
 
 For a complete list of changes and bugfixes made in [MariaDB 10.6.9](mariadb-1069-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1069-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-1069-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.6.9](mariadb-1069-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-8-4-10-7-5-10-6-9-10-5-17-10-4-26-and-10-3-36-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

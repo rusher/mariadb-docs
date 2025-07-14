@@ -20,7 +20,6 @@ The following table outlines the minimum recommended production server specifica
 
 | Item            | Development Environment  | Production Environment     |
 | --------------- | ------------------------ | -------------------------- |
-| Item            | Development Environment  | Production Environment     |
 | Physical Server | 8 Core CPU, 32 GB Memory | 64 Core CPU, 128 GB Memory |
 | Storage         | Local disk               | StorageManager (S3)        |
 

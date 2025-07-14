@@ -31,7 +31,8 @@ connection.query("INSERT INTO BASKET(customerId) values (?)", [1], (err, res) =>
 
 ## Network Exchanges
 
-![pipelining](../.gitbook/assets/pipelining.png)\
+![pipelining](../.gitbook/assets/pipelining.png)
+
 Using the standard client-server protocol, the Connector communicates with the database following a request-response messaging pattern. The Connector sends a command, then doesn't send another until it receives a response from the input socket.
 
 When using Pipelining, the Connector sends commands in bulk, reducing network latency. The catch is that the process is optimistic, meaning that if an error occurs on the first or second command, the following commands have already been sent to the database.

@@ -1,6 +1,8 @@
 # MariaDB Connector/Node.js 3.0.0-ga Changelog
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-0-0-release-notes.md)[Changelog](mariadb-connector-nodejs-300-ga-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
+
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-0-0-release-notes.md) | [Changelog](mariadb-connector-nodejs-300-ga-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 1 Mar 2022
 
@@ -45,5 +47,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #341189a](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/341189a) \[misc] correct changelog
 * [Revision #c9f5302](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/c9f5302) \[misc] test reliability improvement
 * [Revision #46d3215](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/46d3215) \[misc] correct travis link
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

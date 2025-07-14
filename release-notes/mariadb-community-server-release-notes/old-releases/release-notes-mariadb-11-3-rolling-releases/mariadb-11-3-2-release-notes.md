@@ -1,6 +1,6 @@
 # MariaDB 11.3.2 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/11.3.2)[Release Notes](mariadb-11-3-2-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-2-changelog.md)[Overview of 11.3](what-is-mariadb-113.md)
+[Download](https://downloads.mariadb.org/mariadb/11.3.2)[Release Notes](mariadb-11-3-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-2-changelog.md)[Overview of 11.3](what-is-mariadb-113.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.3.2/)
 
@@ -66,8 +66,8 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* mariabackup has wrong or missing plugin-dir default? ([MDEV-29110](https://jira.mariadb.org/browse/MDEV-29110))
-* mariabackup fails when `innodb_max_dirty_pages_pct` contains a fraction (is not an integer) ([MDEV-20286](https://jira.mariadb.org/browse/MDEV-20286))
+* mariadb-backup has wrong or missing plugin-dir default? ([MDEV-29110](https://jira.mariadb.org/browse/MDEV-29110))
+* mariadb-backup fails when `innodb_max_dirty_pages_pct` contains a fraction (is not an integer) ([MDEV-20286](https://jira.mariadb.org/browse/MDEV-20286))
 * Missing required privilege `CONNECTION ADMIN` ([MDEV-33006](https://jira.mariadb.org/browse/MDEV-33006))
 * If tables are frequently created, renamed, dropped, a backup cannot be restored ([MDEV-32939](https://jira.mariadb.org/browse/MDEV-32939))
 * [BACKUP LOCKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-lock) on table to be accessible to those with [database LOCK TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#database-privileges) privileges ([MDEV-28367](https://jira.mariadb.org/browse/MDEV-28367))
@@ -176,7 +176,7 @@ Thanks, and enjoy MariaDB!
 
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 11.3](what-is-mariadb-113.md) for Fedora 37 and Ubuntu 23.04 "Lunar"
 * [s3\_debug](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables#s3_debug) is now dynamic, and [s3\_protocol\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables#s3_protocol_version) contains new options, and old options have been deprecated ([MDEV-32884](https://jira.mariadb.org/browse/MDEV-32884))
-* It is now possible to create [partitions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177))
+* It is now possible to create [partitions](https://mariadb.com/docs/server/reference/sql-statements/data-definition/alter/alter-table#partitions) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177))
 * New [OLD\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old-mode) value, `NO_NULL_COLLATION_IDS`, a compatibility setting to support connectors (in particular MySQL Connector/NET) that give an exception when collation ids returned by [SHOW COLLATION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-collation) are NULL. It is automatically set when a MySQL Connector/NET connection is determined.
 * Upgrade [HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) to 12.6.
 * Using two temporary tables in `OPTIMIZE TABLE` lead to crash ([MDEV-31523](https://jira.mariadb.org/browse/MDEV-31523))
@@ -213,16 +213,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.3.1](mariadb-11-3-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 11.3.1](mariadb-11-3-1-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-2-1-11-1-2-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

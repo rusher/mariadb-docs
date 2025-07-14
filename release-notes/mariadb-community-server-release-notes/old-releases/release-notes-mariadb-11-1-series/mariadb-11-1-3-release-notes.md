@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.1](what-is-mariadb-111.md) is:[**MariaDB 11.1.6**](mariadb-11-1-6-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.1.6/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.1.6/)
 
-[Download 11.1.3](https://downloads.mariadb.org/mariadb/11.1.3/)[Release Notes](mariadb-11-1-3-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-1-series/mariadb-11-1-3-changelog.md)[Overview of 11.1](what-is-mariadb-111.md)
+[Download 11.1.3](https://downloads.mariadb.org/mariadb/11.1.3/)[Release Notes](mariadb-11-1-3-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-1-series/mariadb-11-1-3-changelog.md)[Overview of 11.1](what-is-mariadb-111.md)
 
 **Release date:** 13 Nov 2023
 
@@ -88,7 +88,7 @@ Thanks, and enjoy MariaDB!
 * [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.16
 * Assertion \`state() == s\_executing || state() == s\_prepared || state() == s\_committing || state() == s\_must\_abort || state() == s\_replaying' failed. ([MDEV-24912](https://jira.mariadb.org/browse/MDEV-24912))
 * Assertion \`state() == s\_executing || state() == s\_preparing || state() == s\_prepared || state() == s\_must\_abort || state() == s\_aborting || state() == s\_cert\_failed || state() == s\_must\_replay' failed ([MDEV-31285](https://jira.mariadb.org/browse/MDEV-31285))
-* wsrep\_sst\_mariabackup not working on FreeBSD ([MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467))
+* wsrep\_sst\_mariadb-backup not working on FreeBSD ([MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467))
 * Galera library 26.4.16 fails with every server version ([MDEV-32024](https://jira.mariadb.org/browse/MDEV-32024))
 * Galera node remains paused after interleaving FTWRLs ([MDEV-32282](https://jira.mariadb.org/browse/MDEV-32282))
 * Failed to insert streaming client ([MDEV-32051](https://jira.mariadb.org/browse/MDEV-32051))
@@ -193,7 +193,7 @@ Thanks, and enjoy MariaDB!
 
 * Invert single and double quotes for sql command definitions in [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) due to failure under [sql\_mode=ANSI\_QUOTES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode#ansi_quotes) - contribution by Dominik Häckel
 * [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) --no-defaults behaviour was corrected - reported by Dominik Häckel
-* Added /docker-entrypoint-init.d for tar{,compression} from [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) - [instructions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/docker-official-image-frequently-asked-questions#how-do-i-create-a-mariadb-backup-of-the-data)
+* Added /docker-entrypoint-init.d for tar{,compression} from [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) - [instructions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/docker-official-image-frequently-asked-questions#how-do-i-create-a-mariadb-backup-of-the-data)
 * Refactor `docker_mariadb_init` in the entrypoint for extending the MariaDB image
 * CIS failure due to world-writable directory /var/run/mysqld, added sticky bit - reported by @ollie1
 * Add [PROXY privileges](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#proxy-privileges) for root@MARIADB\_ROOT\_HOST - reported by Matthieu Gusmini
@@ -201,7 +201,7 @@ Thanks, and enjoy MariaDB!
 
 ### Variables
 
-* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/broken-reference/README.md).
+* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used).
 
 ### Security
 
@@ -211,16 +211,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.1.3](mariadb-11-1-3-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-1-series/mariadb-11-1-3-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-1-series/mariadb-11-1-3-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 11.1.3](mariadb-11-1-3-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-1-3-11-0-4-10-11-6-10-10-7-10-6-16-10-5-23-10-4-32-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

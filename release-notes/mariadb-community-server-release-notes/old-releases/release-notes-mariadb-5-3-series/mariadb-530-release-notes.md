@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.3 series](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.3.0) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-530-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
+[Download](https://downloads.askmonty.org/mariadb/5.3.0) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-530-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
 
 **Release date:** 26 July 2011
 
@@ -10,7 +10,7 @@ The most recent release in the [MariaDB 5.3 series](https://github.com/mariadb-c
 
 **For a detailed description of** [**MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **see the** [**What is MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **page.**
 
-For a list of every change made in [MariaDB 5.3.0](mariadb-530-release-notes.md), including the various bugs that were fixed and links to detailed information on each push, see the [MariaDB 5.3.0 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-530-changelog.md). These changes are compared against [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md), and it is worth noting that [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) is based on the MySQL 5.1 releases.
+For a list of every change made in [MariaDB 5.3.0](mariadb-530-release-notes.md), including the various bugs that were fixed and links to detailed information on each push, see the [MariaDB 5.3.0 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-530-changelog.md). These changes are compared against [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md), and it is worth noting that [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) is based on the MySQL 5.1 releases.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -45,5 +45,9 @@ NoSQL is all the rage these days and [MariaDB 5.3.0](mariadb-530-release-notes.m
 ## Microsoft Windows performance improvements
 
 Microsoft Windows performance improvements from MySQL 5.5 have been backported, including benefits to the XtraDB storage engine.
+
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

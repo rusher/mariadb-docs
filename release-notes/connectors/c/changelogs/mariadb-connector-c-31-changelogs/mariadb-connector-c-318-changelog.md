@@ -30,9 +30,9 @@ details of the revision and view diffs of the code modified in that revision.
   2020-04-25 07:18:06 +0200
   * Updatei matrix of DB version numbers
 * [Revision #b4ac056](https://github.com/mariadb-corporation/mariadb-connector-c/commit/b4ac056)\
-  2020-04-25 07:03:38 +0200
-  *
-    * Fixed archive host - Download via curl
+  2020-04-25 07:03:38 +0200\
+  \*
+  * Fixed archive host - Download via curl
 * [Revision #8ff27a4](https://github.com/mariadb-corporation/mariadb-connector-c/commit/8ff27a4)\
   2020-04-25 06:59:33 +0200
   * Revert "Fix host for msi download"
@@ -189,5 +189,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #84dc415](https://github.com/mariadb-corporation/mariadb-connector-c/commit/84dc415)\
   2020-01-22 16:20:50 +0100
   * ssl unit test fixes
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

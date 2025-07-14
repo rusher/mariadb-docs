@@ -8,7 +8,6 @@ It has the following columns:
 
 | Column    | Description                                           |
 | --------- | ----------------------------------------------------- |
-| Column    | Description                                           |
 | ID        | Database name and foreign key name.                   |
 | FOR\_NAME | Database and table name of the foreign key child.     |
 | REF\_NAME | Database and table name of the foreign key parent.    |
@@ -19,7 +18,6 @@ The `TYPE` column provides a bit flag with information about the foreign key. Th
 
 | Bit Flag | Description         |
 | -------- | ------------------- |
-| Bit Flag | Description         |
 | 1        | ON DELETE CASCADE   |
 | 2        | ON UPDATE SET NULL  |
 | 4        | ON UPDATE CASCADE   |
@@ -29,7 +27,7 @@ The `TYPE` column provides a bit flag with information about the foreign key. Th
 
 ## Example
 
-```
+```sql
 SELECT * FROM INNODB_SYS_FOREIGN\G
 *************************** 1. row ***************************
       ID: mysql/innodb_index_stats_ibfk_1

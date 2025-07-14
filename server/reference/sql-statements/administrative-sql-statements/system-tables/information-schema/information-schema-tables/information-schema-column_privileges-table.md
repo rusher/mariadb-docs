@@ -6,7 +6,6 @@ It has the following columns:
 
 | Column          | Description                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column          | Description                                                                                                                                    |
 | GRANTEE         | In the format user\_name@host\_name.                                                                                                           |
 | TABLE\_CATALOG  | Always def.                                                                                                                                    |
 | TABLE\_SCHEMA   | Database name.                                                                                                                                 |
@@ -25,9 +24,9 @@ For a description of the privileges that are shown in this table, see [column pr
 
 In the following example, no column-level privilege has been explicitly assigned:
 
-```
+```sql
 SELECT * FROM information_schema.COLUMN_PRIVILEGES;
-Empty set
+Empty SET
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

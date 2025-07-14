@@ -13,7 +13,15 @@ A custom resource adds an API endpoint, so the resource can be managed via the A
 
 A custom controller implements the checks that must be performed against the resource to check if its state should be corrected using the API. In the case of MariaDB, some reasonable checks would be verifying that it accepts connections, replication is running, and a server is (or is not) read only.
 
-## MariaDB Operator
+## MariaDB Enterprise Operator
+
+MariaDB Enterprise Operator provides a seamless way to run and operate containerized versions of MariaDB Enterprise Server and MaxScale on Kubernetes, allowing you to leverage Kubernetes orchestration and automation capabilities. This document outlines the features and advantages of using Kubernetes and the MariaDB Enterprise Operator to streamline the deployment and management of MariaDB and MaxScale instances.
+
+{% hint style="success" %}
+Find the [documentation here](https://app.gitbook.com/s/kuTXWg0NDbRx6XUeYpGD/mariadb-enterprise-operator).
+{% endhint %}
+
+## MariaDB Community Operator
 
 [mariadb-operator](https://github.com/mariadb-operator/mariadb-operator) is a Kubernetes operator that allows you to run and operate MariaDB in a cloud native way. It aims to declaratively manage MariaDB instances using Kubernetes CRDs instead of imperative commands.
 

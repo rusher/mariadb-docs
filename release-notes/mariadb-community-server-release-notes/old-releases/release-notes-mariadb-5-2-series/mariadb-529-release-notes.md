@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mariadb-5-2.md) is:[**MariaDB 5.2.14**](mariadb-5214-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.2.9) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-529-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
+[Download](https://downloads.askmonty.org/mariadb/5.2.9) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-529-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
 
 **Release date:** 22 Sep 2011
 
@@ -16,7 +16,7 @@ Compared to [MariaDB 5.2.8](mariadb-528-release-notes.md), [MariaDB 5.2.9](maria
 bug-fix release.
 
 For a list of every change made in [MariaDB 5.2.9](mariadb-529-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.2.9 Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-529-changelog.md).
+information on each push, see the[MariaDB 5.2.9 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-529-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -42,5 +42,9 @@ future breakage when they decide to change something else, we have decided to\
 include an empty profile in our packages. If you have customized your`/etc/apparmor.d/usr.sbin.mysqld` file you will be given the option to keep\
 or remove it during the upgrade. If you haven't customized the default profile,\
 the profile will be removed.
+
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

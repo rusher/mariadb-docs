@@ -157,8 +157,8 @@ Case 1: PRIMARY KEY (dy, foo) and summarization is in lock step with, say, chang
 
 ```sql
 INSERT INTO Summary (dy, foo, ct, blah_total)
-        SELECT  DATE(dt) as dy, foo,
-                COUNT(*) as ct, SUM(blah) as blah_total)
+        SELECT  DATE(dt) AS dy, foo,
+                COUNT(*) AS ct, SUM(blah) AS blah_total)
             FROM Staging
             GROUP BY 1, 2;
 ```
@@ -176,8 +176,8 @@ INSERT INTO Summary (dy, foo, ct, blah_total)
         ON DUPLICATE KEY UPDATE
             ct = ct + VALUE(ct),
             blah_total = blah_total + VALUE(bt)
-        SELECT  DATE(dt) as dy, foo,
-                COUNT(*) as ct, SUM(blah) as bt)
+        SELECT  DATE(dt) AS dy, foo,
+                COUNT(*) AS ct, SUM(blah) AS bt)
             FROM Staging
             GROUP BY 1, 2;
 ```
@@ -204,7 +204,7 @@ For "read scaling", backup, and failover, use master-slave replication or someth
 
 ## Sharding
 
-"Sharding" is the splitting of data across multiple servers. (In contrast, [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md) and [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) have the same data on all servers, requiring all data to be written to all servers.)
+"Sharding" is the splitting of data across multiple servers. (In contrast, [replication](../../standard-replication/replication-overview.md) and [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) have the same data on all servers, requiring all data to be written to all servers.)
 
 With the non-sharding techniques described here, terabyte(s) of data can be handled by a single machine. Tens of terabytes probably requires sharding.
 
@@ -267,7 +267,7 @@ Let's design and analyse a "simple ingestion scheme" for 10 rows/second, without
 ```sql
 # Normalize:
     $foo_id = SELECT foo_id FROM Foos WHERE foo = $foo;
-    if no $foo_id, then
+    IF NO $foo_id, THEN
         INSERT IGNORE INTO Foos ...
 
     # Inserts:
@@ -275,7 +275,7 @@ Let's design and analyse a "simple ingestion scheme" for 10 rows/second, without
         INSERT INTO Fact ...;
         INSERT INTO Summary ... ON DUPLICATE KEY UPDATE ...;
     COMMIT;
-    # (plus code to deal with errors on INSERTs or COMMIT)
+    # (plus code TO deal WITH errors ON INSERTs OR COMMIT)
 ```
 
 Depending on the number and randomness of your indexes, etc, 10 Fact rows may (or may not) take less than 100 IOPs.

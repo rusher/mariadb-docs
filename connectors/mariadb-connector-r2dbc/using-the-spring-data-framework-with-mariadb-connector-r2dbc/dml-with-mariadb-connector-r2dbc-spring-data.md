@@ -12,7 +12,6 @@ With Spring Data, DML operations can be performed by invoking the following meth
 
 | Method                             | Description                 |
 | ---------------------------------- | --------------------------- |
-| Method                             | Description                 |
 | DatabaseClient.execute(String sql) | Execute any DML statement.  |
 | DatabaseClient.select()            | Execute a SELECT statement. |
 | DatabaseClient.insert()            | Execute a INSERT statement. |
@@ -100,7 +99,7 @@ Confirm the data was properly inserted by using MariaDB Client to execute a SELE
 Example output:
 
 ```sql
-SELECT * from test.contact;
+SELECT * FROM test.contact;
 ```
 
 ```

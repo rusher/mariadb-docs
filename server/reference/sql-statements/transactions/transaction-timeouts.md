@@ -4,11 +4,19 @@ MariaDB has always had the [wait\_timeout](../../../ha-and-performance/optimizat
 
 However, these are by default set to a long wait period. In situations where transactions may be started, but not committed or rolled back, more granular control and a shorter timeout may be desirable so as to avoid locks being held for too long.
 
-[MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) introduced three new variables to handle this situation.
+{% tabs %}
+{% tab title="Current" %}
+These variables help handle this situation:
 
 * [idle\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout) (all transactions)
-* [idle\_write\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_write_transaction_timeout) (write transactions - called `idle_readwrite_transaction_timeout` until [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes))
+* [idle\_write\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_write_transaction_timeout) (write transactions)
 * [idle\_readonly\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_readonly_transaction_timeout) (read transactions)
+{% endtab %}
+
+{% tab title="< 10.3" %}
+There is no variables for more granular control.
+{% endtab %}
+{% endtabs %}
 
 These accept a time in seconds to time out, by closing the connection, transactions that are idle for longer than this period. By default all are set to zero, or no timeout.
 
@@ -16,7 +24,7 @@ These accept a time in seconds to time out, by closing the connection, transacti
 
 ## Examples
 
-```
+```sql
 SET SESSION idle_transaction_timeout=2;
 BEGIN;
 SELECT * FROM t;
@@ -26,7 +34,7 @@ SELECT * FROM t;
 ERROR 2006 (HY000): MySQL server has gone away
 ```
 
-```
+```sql
 SET SESSION idle_write_transaction_timeout=2;
 BEGIN;
 SELECT * FROM t;
@@ -40,7 +48,7 @@ SELECT * FROM t;
 ERROR 2006 (HY000): MySQL server has gone away
 ```
 
-```
+```sql
 SET SESSION idle_transaction_timeout=2, SESSION idle_readonly_transaction_timeout=10;
 BEGIN;
 SELECT * FROM t;

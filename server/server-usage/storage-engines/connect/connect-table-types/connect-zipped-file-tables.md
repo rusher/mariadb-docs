@@ -8,7 +8,6 @@ The specific options used when creating tables based on zip files are:
 
 | Table Option | Type    | Description                                                                                                                                                                                                                                               |
 | ------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Table Option | Type    | Description                                                                                                                                                                                                                                               |
 | ZIPPED       | Boolean | Required to be set as true.                                                                                                                                                                                                                               |
 | ENTRY\*      | String  | The optional name or pattern of the zip entry or entries to be used with the table. If not specified, all entries or only the first one will be used depending on the mulentries option setting.                                                          |
 | MULENTRIES\* | Boolean | True if several entries are part of the table. If not specified, it defaults to false if the entry option is not specified. If the entry option is specified, it defaults to true if the entry name contains wildcard characters or false if it does not. |
@@ -125,7 +124,7 @@ The last ALTER is needed to display all the entries.
 
 #### File Zipping Method
 
-This method enables to make the zip file from another file when creating the table. It applies to all table types including DBF, XML and JSON. It is specified in the create table statement with the load option. For example:
+This method enables to make the zip file from another file when creating the table. It applies to all table types including DBF, XML and JSON. It is specified in the create table statement with the load option:
 
 ```
 create table XSERVZIP (

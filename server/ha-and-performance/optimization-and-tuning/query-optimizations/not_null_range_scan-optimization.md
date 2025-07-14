@@ -2,7 +2,7 @@
 
 The NOT NULL range scan optimization enables the optimizer to construct range scans from NOT NULL conditions that it was able to infer from the WHERE clause.
 
-The optimization appeared in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes). It is not enabled by default; one needs to set an `optimizer_switch` flag to enable it.
+The optimization appeared in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes). It is not enabled by default; one needs to set an `optimizer_switch` flag to enable it.
 
 ## Description
 
@@ -10,18 +10,18 @@ A basic (but slightly artificial) example:
 
 ```sql
 CREATE TABLE items (
-  price  decimal(8,2),
-  weight decimal(8,2),
+  price  DECIMAL(8,2),
+  weight DECIMAL(8,2),
   ...
-  index(weight)
+  INDEX(weight)
 );
 ```
 
 ```sql
 -- Find items that cost more than 1000 $currency_units per kg:
-set optimizer_switch='not_null_range_scan=on';
-explain
-SELECT * from items where items.price > items.weight / 1000;
+SET optimizer_switch='not_null_range_scan=ON';
+EXPLAIN
+SELECT * FROM items WHERE items.price > items.weight / 1000;
 ```
 
 The WHERE condition in this form cannot be used for range scans. However, one can infer that it will reject rows that NULL for `weight`. That is, infer an additional condition that
@@ -56,7 +56,7 @@ Here, the optimizer can infer the condition "return\_id IS NOT NULL". If most of
 The optimization is not enabled by default. One can enable it like so
 
 ```sql
-SET optimizer_switch='not_null_range_scan=on';
+SET optimizer_switch='not_null_range_scan=ON';
 ```
 
 ## Optimizer Trace

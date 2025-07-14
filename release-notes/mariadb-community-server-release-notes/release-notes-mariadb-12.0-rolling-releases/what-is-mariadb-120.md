@@ -1,4 +1,4 @@
-# Changes and Improvements in MariaDB 12.0
+# MariaDB 12.0 Changes & Improvements
 
 MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an evolution of [MariaDB 11.8](../mariadb-11-8-series/what-is-mariadb-118.md) with several entirely new features.
 
@@ -7,7 +7,7 @@ MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an ev
 ### Security <a href="#security" id="security"></a>
 
 * Support for passphrase protected keys ([MDEV-14091](https://jira.mariadb.org/browse/MDEV-14091))
-* New SET SESSION AUTHORIZATION ([MDEV-20299](https://jira.mariadb.org/browse/MDEV-20299))
+* New statement [SET SESSION AUTHORIZATION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/set-session-authorization) for performing actions as another user ([MDEV-20299](https://jira.mariadb.org/browse/MDEV-20299))
 * Implement SHA2 support for file\_key\_management.so plugin (TDE) ([MDEV-34712](https://jira.mariadb.org/browse/MDEV-34712))
 
 ### Data types <a href="#data-types" id="data-types"></a>
@@ -21,7 +21,7 @@ MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an ev
 ### Server <a href="#server" id="server"></a>
 
 * TO\_CHAR FM format not recognized in SQL\_MODE=Oracle ([MDEV-36216](https://jira.mariadb.org/browse/MDEV-36216))
-* Support mariadb-check and CHECK TABLE with SEQUENCE ([MDEV-22491](https://jira.mariadb.org/browse/MDEV-22491))
+* [mariadb-check](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/table-tools/mariadb-check) and [CHECK TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/check-table) now support [SEQUENCE tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/sequence-storage-engine) ([MDEV-22491](https://jira.mariadb.org/browse/MDEV-22491))
 
 ### Optimizer <a href="#optimizer" id="optimizer"></a>
 
@@ -64,7 +64,7 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 
 ### Replication <a href="#replication" id="replication"></a>
 
-* Add option to check whether a server was started with skip-slave-start option ([MDEV-27669](https://jira.mariadb.org/browse/MDEV-27669))
+* Server displays if it was started with the [skip-slave-start](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#skip-slave-start) option ([MDEV-27669](https://jira.mariadb.org/browse/MDEV-27669))
 
 ### Galera <a href="#galera" id="galera"></a>
 
@@ -83,16 +83,13 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 
 * Can set an alternative directory path for searching scripts invoked via the source command, with the [--script-dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-script-dir) mariadb client option ([MDEV-23818](https://jira.mariadb.org/browse/MDEV-23818))
 
-## Security Vulnerabilities Fixed in MariaDB 12.0
-
-For a complete list of security vulnerabilities (CVEs) fixed across all\
-versions of MariaDB, see the [Security Vulnerabilities Fixed in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security)\
-page.
-
 ## List of All MariaDB 12.0 Releases
 
-| Date       | Release                                           | Status | Release Notes                                    | Changelog                                                                                |
-| ---------- | ------------------------------------------------- | ------ | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| 5 Jun 2025 | [MariaDB 12.0.1](mariadb-12.0.1-release-notes.md) | RC     | [Release Notes](mariadb-12.0.1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md) |
+| Date        | Release                                           | Status  | Release Notes                                    | Changelog                                                                             |
+| ----------- | ------------------------------------------------- | ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 5 Jun 2025  | [MariaDB 12.0.1](mariadb-12.0.1-release-notes.md) | RC      | [Release Notes](mariadb-12.0.1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md) |
+| 26 May 2025 | MariaDB 12.0.0                                    | Preview |                                                  |                                                                                       |
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -1,6 +1,8 @@
-# Changes and Improvements in MariaDB 11.7
+# MariaDB 11.7 Changes & Improvements
 
-The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is:[**MariaDB 11.7.2**](mariadb-11-7-2-release-notes.md) [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2)
+MariaDB 11.7 is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
+
+The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is: [**MariaDB 11.7.2**](mariadb-11-7-2-release-notes.md) [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2)
 
 [MariaDB 11.7](what-is-mariadb-117.md) is a [rolling release](../../../mariadb-release-model.md).
 
@@ -77,11 +79,14 @@ Add listcve macro here - removed for performance reasons
 
 ## List of All [MariaDB 11.7](what-is-mariadb-117.md) Releases
 
-| Date        | Release                                           | Status | Release Notes                                    | Changelog                                                                                   |
-| ----------- | ------------------------------------------------- | ------ | ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status | Release Notes                                    | Changelog                                                                                   |
-| 21 Nov 2024 | [MariaDB 11.7.2](mariadb-11-7-2-release-notes.md) | RC     | [Release Notes](mariadb-11-7-1-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
-| 21 Nov 2024 | [MariaDB 11.7.1](mariadb-11-7-1-release-notes.md) | RC     | [Release Notes](mariadb-11-7-1-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
-| 25 Sep 2024 | [MariaDB 11.7.0](mariadb-11-7-0-release-notes.md) | Alpha  | [Release Notes](mariadb-11-7-0-release-notes.md) |                                                                                             |
+| Date        | Release                                           | Status | Release Notes                                    | Changelog                                                                                |
+| ----------- | ------------------------------------------------- | ------ | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| 21 Nov 2024 | [MariaDB 11.7.2](mariadb-11-7-2-release-notes.md) | RC     | [Release Notes](mariadb-11-7-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
+| 21 Nov 2024 | [MariaDB 11.7.1](mariadb-11-7-1-release-notes.md) | RC     | [Release Notes](mariadb-11-7-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
+| 25 Sep 2024 | [MariaDB 11.7.0](mariadb-11-7-0-release-notes.md) | Alpha  | [Release Notes](mariadb-11-7-0-release-notes.md) |                                                                                          |
+
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

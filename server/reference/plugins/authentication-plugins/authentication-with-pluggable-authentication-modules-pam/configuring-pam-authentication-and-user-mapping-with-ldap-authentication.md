@@ -25,7 +25,7 @@ sudo yum install openldap openldap-servers openldap-clients nss-pam-ldapd
 
 ### Configuring the OpenLDAP Server
 
-Next, let's to configure the OpenLDAP Server. The easiest way to do that is to copy the template configuration file that is included with the installation. In many installations, that will be at `/usr/share/openldap-servers/DB_CONFIG.example`. For example:
+Next, let's to configure the OpenLDAP Server. The easiest way to do that is to copy the template configuration file that is included with the installation. In many installations, that will be at `/usr/share/openldap-servers/DB_CONFIG.example`:
 
 ```
 sudo cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
@@ -177,7 +177,7 @@ ldapmodify -a -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -f ~/setupDirecto
 
 Let's go ahead and create the LDAP users and groups that we are using for this hypothetical scenario.
 
-First, let's create the the `foo` user:
+First, let's create the `foo` user:
 
 ```
 tee ~/createFooUser.ldif <<EOF

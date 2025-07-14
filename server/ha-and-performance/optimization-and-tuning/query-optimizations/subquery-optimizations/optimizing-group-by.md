@@ -6,14 +6,14 @@ A DISTINCT clause and a GROUP BY without a corresponding HAVING clause have no m
 
 ```sql
 SELECT * FROM t1
-WHERE t1.a > ALL(select distinct b from t2 where t2.c > 100)
+WHERE t1.a > ALL(SELECT DISTINCT b FROM t2 WHERE t2.c > 100)
 ```
 
 is transformed to:
 
 ```sql
 SELECT * FROM t1
-WHERE t1.a > ALL(select b from t2 where t2.c > 100)
+WHERE t1.a > ALL(SELECT b FROM t2 WHERE t2.c > 100)
 ```
 
 Removing these unnecessary clauses allows the optimizer to find more efficient query plans because it doesn't need to take care of post-processing the subquery result to satisfy DISTINCT / GROUP BY.

@@ -20,12 +20,12 @@ We believe the code is ready for general usage (based on bug inflow).
 
 ### Plugins
 
-Plugins generally follow the same rules, but they have [their own maturity levels](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/information-on-plugins/list-of-plugins). That is, a plugin is declared Gamma when it becomes feature complete. This happens independently from the server being Alpha, Beta, RC, or GA.
+Plugins generally follow the same rules, but they have [their own maturity levels](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/list-of-plugins). That is, a plugin is declared Gamma when it becomes feature complete. This happens independently from the server being Alpha, Beta, RC, or GA.
 
 ### Security Releases
 
 See our [security policy](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/bug-tracking/mariadb-security-bug-fixing-policy) page for information of how and when emergency security releases are done.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

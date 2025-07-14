@@ -8,7 +8,6 @@ The table contains the following columns:
 
 | Column               | Description                                                                   |
 | -------------------- | ----------------------------------------------------------------------------- |
-| Column               | Description                                                                   |
 | VARIABLE\_NAME       | Variable name.                                                                |
 | VARIABLE\_VALUE      | Variable value.                                                               |
 | VARIABLE\_TYPE       | Variable [type](../../../../../data-types/).                                  |
@@ -18,7 +17,7 @@ User variables are reset and the table emptied with the [FLUSH USER\_VARIABLES](
 
 ## Example
 
-```
+```sql
 SET @v1 = 0;
 SET @v2 = 'abc';
 SET @v3 = CAST(123 AS CHAR(5));

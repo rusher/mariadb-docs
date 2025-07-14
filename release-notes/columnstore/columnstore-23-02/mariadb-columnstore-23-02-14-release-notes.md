@@ -4,7 +4,7 @@
 
 [MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) 23.02.14 is a maintenance release of [MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md). MariaDB Enterprise ColumnStore is a columnar storage engine that is included with the [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/columnstore/mariadb-columnstore-23-02-release-notes/MariaDB_Enterprise_Server/README.md).
 
-MariaDB Enterprise ColumnStore 23.02.14 was released on DATE.\
+MariaDB Enterprise ColumnStore 23.02.14 was released on 7 May 2025.\
 This release is of General Availability (GA) maturity.\
 MariaDB Enterprise ColumnStore 23.02.14 is a GA release in the 23.02 series.
 
@@ -41,6 +41,6 @@ In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-
 * Upgrade Multi-Node MariaDB Enterprise ColumnStore from 6 to 23.10
 * [Major Release Upgrades for MariaDB Enterprise ColumnStore](../)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

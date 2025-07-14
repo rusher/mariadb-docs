@@ -24,9 +24,9 @@ modified in that revision.
   2017-01-04 16:34:15 +0100
   * fixed output for --plugindir: plugindir option now prints PLUGIN\_DIR instead of PLUGINDIR (merge from master)
 * [Revision #2d26dd1](https://github.com/mariadb-corporation/mariadb-connector-c/commit/2d26dd1)\
-  2016-10-11 13:55:01 +0200
-  *
-    * Fix for bug [MDEV-10894](https://jira.mariadb.org/browse/MDEV-10894): fixed conversion for big-endian platforms (back ported from 3.0) - fixed test case
+  2016-10-11 13:55:01 +0200\
+  \*
+  * Fix for bug [MDEV-10894](https://jira.mariadb.org/browse/MDEV-10894): fixed conversion for big-endian platforms (back ported from 3.0) - fixed test case
 * [Revision #e56b8d4](https://github.com/mariadb-corporation/mariadb-connector-c/commit/e56b8d4)\
   2016-12-23 16:53:14 +0100
   * Fix for debian Bug#849125: fix include of my\_stmt.h
@@ -57,5 +57,7 @@ modified in that revision.
 * [Revision #5debd70](https://github.com/mariadb-corporation/mariadb-connector-c/commit/5debd70)\
   2016-08-05 07:29:11 +0200
   * bumped version number fixed license header for plugin\_auth\_common.h
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

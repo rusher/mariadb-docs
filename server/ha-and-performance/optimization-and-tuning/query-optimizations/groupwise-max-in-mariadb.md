@@ -215,7 +215,7 @@ EXPLAIN EXTENDED gives
 
 Explanation, shown in the same order as the EXPLAIN, but numbered chronologically:\
 3\. Get the subquery id=2 (init)\
-4\. Scan the the output from subquery id=3 (x)\
+4\. Scan the output from subquery id=3 (x)\
 2\. Subquery id=3 -- the table scan of Canada
 
 1. Subquery id=2 -- `init` for simply initializing the two @variables\
@@ -302,7 +302,7 @@ Main Handler values:
 | British Columbia          |   3 | Abbotsford       |     151685 |
 | Manitoba                  |  ...
 
-SELECT for CREATE:
+SELECT FOR CREATE:
 +----+-------------+--------+------+---------------+------+---------+------+------+----------------+
 | id | select_type | table  | type | possible_keys | key  | key_len | ref  | rows | Extra          |
 +----+-------------+--------+------+---------------+------+---------+------+------+----------------+

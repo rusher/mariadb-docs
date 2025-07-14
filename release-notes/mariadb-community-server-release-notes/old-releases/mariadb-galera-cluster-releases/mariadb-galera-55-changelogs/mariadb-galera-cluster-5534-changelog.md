@@ -22,9 +22,9 @@ modified in that revision.
   Wed 2013-12-11 09:38:21 +0200
   * [MDEV-5428](https://jira.mariadb.org/browse/MDEV-5428): Debian MariaDB-Galera packages do not get built in buildbot \[Part 3]
 * [Revision #3454](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3454)\
-  Tue 2013-12-10 22:11:42 -0500
-  *
-    * Updated auto\_increment\_xxx\_func.result to reflect the changes made by [587170](https://bugs.launchpad.net/codership-mysql/+bug/587170)
+  Tue 2013-12-10 22:11:42 -0500\
+  \*
+  * Updated auto\_increment\_xxx\_func.result to reflect the changes made by [587170](https://bugs.launchpad.net/codership-mysql/+bug/587170)
 * [Revision #3453](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3453)\
   Tue 2013-12-10 11:30:23 -0500
   * [MDEV-5407](https://jira.mariadb.org/browse/MDEV-5407), [MDEV-5386](https://jira.mariadb.org/browse/MDEV-5386), MVED#4222
@@ -87,10 +87,10 @@ modified in that revision.
   * Merge with [MariaDB 5.5.34](../../release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md)
 * [Revision #3433](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3433)\
   Mon 2013-11-25 14:04:49 +0200
-  * Merged revisions 3931-3942 from from lp:codership/codership-mysql/5.5-23.
+  * Merged revisions 3931-3942 from lp:codership/codership-mysql/5.5-23.
 * [Revision #3432](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3432)\
   Mon 2013-11-25 11:09:48 +0200
-  * Merged revisions 2925-3929 from from lp:codership/codership-mysql/5.5-23
+  * Merged revisions 2925-3929 from lp:codership/codership-mysql/5.5-23
 * [Revision #3431](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3431)\
   Fri 2013-11-22 14:30:00 -0500
   * [MDEV-3895](https://jira.mariadb.org/browse/MDEV-3895) Version naming for MariaDB-Galera builds
@@ -100,5 +100,9 @@ modified in that revision.
 * [Revision #3429](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3429)\
   Mon 2013-09-30 23:14:31 +0300
   * References: [Bug #1233353](https://bugs.launchpad.net/bugs/1233353) - releasing explicit MDL locks for BF aborted transactions
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

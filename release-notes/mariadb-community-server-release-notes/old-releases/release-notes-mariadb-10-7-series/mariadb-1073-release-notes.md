@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.7](what-is-mariadb-107.md) is:[**MariaDB 10.7.8**](mariadb-10-7-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.7.8/)
 
-[Download 10.7.3](https://downloads.mariadb.org/mariadb/10.7.3/)[Release Notes](mariadb-1073-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-7-series/mariadb-1073-changelog.md)[Overview of 10.7](what-is-mariadb-107.md)
+[Download 10.7.3](https://downloads.mariadb.org/mariadb/10.7.3/)[Release Notes](mariadb-1073-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-1073-changelog.md)[Overview of 10.7](what-is-mariadb-107.md)
 
 **Release date:** 12 Feb 2022
 
@@ -36,16 +36,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.7.3](mariadb-1073-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-7-series/mariadb-1073-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-1073-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.7.3](mariadb-1073-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-8-2-rc-and-mariadb-10-7-3-10-6-7-10-5-15-10-4-24-10-3-34-and-10-2-43-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -18,12 +18,11 @@ SELECT @@SQL_MODE, @@GLOBAL.SQL_MODE;
 
 | From version                                                                                                                                                                           | Default sql\_mode setting                                                                                |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| From version                                                                                                                                                                           | Default sql\_mode setting                                                                                |
 | [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)      | STRICT\_TRANS\_TABLES, ERROR\_FOR\_DIVISION\_BY\_ZERO , NO\_AUTO\_CREATE\_USER, NO\_ENGINE\_SUBSTITUTION |
 | [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes)    | NO\_ENGINE\_SUBSTITUTION, NO\_AUTO\_CREATE\_USER                                                         |
 | <= [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes) | No value                                                                                                 |
 
-You can set the `SQL_MODE` either from the[command line](../starting-and-stopping-mariadb/mariadbd-options.md) (the `--sql-mode` option) or by setting the [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
+You can set the `SQL_MODE` either from the [command line](../starting-and-stopping-mariadb/mariadbd-options.md) (the `--sql-mode` option) or by setting the [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
 
 ```sql
 SET sql_mode = 'modes';
@@ -92,7 +91,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-st
 
 Additionally implies the following: [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space), [NO\_KEY\_OPTIONS](sql-mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options).
 
-Additionally from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes), implements a limited subset of Microsoft SQL Server's language. See [SQL\_MODE=MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/broken-reference/README.md) for more.
+Additionally from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes), implements a limited subset of Microsoft SQL Server's language. See [SQL\_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql) for more.
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
@@ -110,7 +109,7 @@ Don't automatically create users with `GRANT` unless authentication information 
 
 #### NO\_AUTO\_VALUE\_ON\_ZERO
 
-If set, don't generate an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) on [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) attribute with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
+If set, don't generate an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) on [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) attribute with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
 
 #### NO\_BACKSLASH\_ESCAPES
 
@@ -118,7 +117,7 @@ Disables using the backslash character `\` as an escape character within strings
 
 #### NO\_DIR\_IN\_CREATE
 
-Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. Can be useful on slave [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/broken-reference/README.md) servers.
+Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. Can be useful on [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) servers.
 
 #### NO\_ENGINE\_SUBSTITUTION
 
@@ -156,7 +155,7 @@ For [SELECT ... GROUP BY](../../reference/sql-statements/data-manipulation/selec
 
 In all versions of MariaDB up to [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), this sets `sql_mode` that is equivalent to: [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space), [NO\_KEY\_OPTIONS](sql-mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options), [NO\_AUTO\_CREATE\_USER](sql-mode.md#no_auto_create_user)
 
-From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), this mode also sets [SIMULTANEOUS\_ASSIGNMENT](sql-mode.md#simultaneous_assignment) and configures the server to understand a large subset of Oracle's PL/SQL language instead of MariaDB's traditional syntax for stored routines. See [SQL\_MODE=ORACLE From MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/broken-reference/README.md).
+From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), this mode also sets [SIMULTANEOUS\_ASSIGNMENT](sql-mode.md#simultaneous_assignment) and configures the server to understand a large subset of Oracle's PL/SQL language instead of MariaDB's traditional syntax for stored routines. See [SQL\_MODE=ORACLE From MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
@@ -296,8 +295,8 @@ Query OK, 1 row affected, 2 warnings (0.15 sec)
 
 ## See Also
 
-* [SQL\_MODE=MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/broken-reference/README.md)
-* [SQL\_MODE=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/broken-reference/README.md)
+* [SQL\_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql)
+* [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -1,8 +1,6 @@
-
 # INTERVAL
 
 ## Syntax
-
 
 ```
 INTERVAL(N,N1,N2,N3,...)
@@ -10,18 +8,14 @@ INTERVAL(N,N1,N2,N3,...)
 
 ## Description
 
-
 Returns the index of the last argument that is less than the first argument or is NULL.
 
-
-Returns 0 if N < N1, 1 if N < N2, 2 if N < N3 and so on or -1 if N is NULL. All
-arguments are treated as integers. It is required that N1 < N2 < N3 <
-... < Nn for this function to work correctly. This is because a fast binary
+Returns 0 if N < N1, 1 if N < N2, 2 if N < N3 and so on or -1 if N is NULL. All\
+arguments are treated as integers. It is required that N1 < N2 < N3 <\
+... < Nn for this function to work correctly. This is because a fast binary\
 search is used.
 
-
 ## Examples
-
 
 ```
 SELECT INTERVAL(23, 1, 15, 17, 30, 44, 200);
@@ -53,8 +47,6 @@ SELECT INTERVAL(10, 2, NULL);
 +-----------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

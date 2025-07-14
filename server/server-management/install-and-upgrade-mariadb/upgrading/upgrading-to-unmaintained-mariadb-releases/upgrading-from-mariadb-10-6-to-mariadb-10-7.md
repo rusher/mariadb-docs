@@ -8,7 +8,7 @@ For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.
 
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.6 to MariaDB 10.7 with Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/getting-installing-and-upgrading-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-106-to-mariadb-107-with-galera-cluster/README.md) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/).
 
 The suggested upgrade procedure is:
 
@@ -55,7 +55,6 @@ If a non-zlib compression algorithm was used in [InnoDB](../../../../server-usag
 
 | Option                                                                                                              | Old default | New default         |
 | ------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------- |
-| Option                                                                                                              | Old default | New default         |
 | [spider\_auto\_increment\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)         | -1          | 0                   |
 | [spider\_bgs\_first\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)              | -1          | 2                   |
 | [spider\_bgs\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                     | -1          | 0                   |
@@ -110,7 +109,6 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option                                                                                                                                      | Reason                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                      | Reason                                                                                                                          |
 | [wsrep\_replicate\_myisam](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_replicate_myisam) | Use [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) instead. |
 | [wsrep\_strict\_ddl](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_strict_ddl)             | Use [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) instead. |
 

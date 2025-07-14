@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.6.9-5 was released on 2022-09-12.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/cve.org) link) | CVSS base score |
 | [CVE-2023-5157](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5157)                                                                                                 | 7.5             |
 | [CVE-2018-25032](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032)                                                                                               | 7.5             |
 | [CVE-2022-32091](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32091)                                                                                               | 6.5             |
@@ -37,8 +36,8 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 
 ### Can result in data loss
 
-* When [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) is executed with the `--rsync` command-line option, the backup tries to copy the InnoDB buffer pool dump file, which is located at the path defined by the [innodb\_buffer\_pool\_filename system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename). ([MDEV-28781](https://jira.mariadb.org/browse/MDEV-28781))
-  * Starting with this release, [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) only copies the InnoDB buffer pool dump file during State Snapshot Transfers (SSTs) for MariaDB Enterprise Cluster, powered by Galera.
+* When [mariadb-backup](broken-reference) is executed with the `--rsync` command-line option, the backup tries to copy the InnoDB buffer pool dump file, which is located at the path defined by the [innodb\_buffer\_pool\_filename system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename). ([MDEV-28781](https://jira.mariadb.org/browse/MDEV-28781))
+  * Starting with this release, [mariadb-backup](broken-reference) only copies the InnoDB buffer pool dump file during State Snapshot Transfers (SSTs) for MariaDB Enterprise Cluster, powered by Galera.
 * With MariaDB Enterprise Cluster, when [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) is enabled on a node, users without the [SUPER privilege](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super) can still write to the node. ([MDEV-28546](https://jira.mariadb.org/browse/MDEV-28546))
 * With MariaDB Enterprise Cluster, when a value is retrieved from an InnoDB sequence using the [NEXTVAL() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences/sequence-functions/nextval), the change is not replicated. ([MDEV-27862](https://jira.mariadb.org/browse/MDEV-27862))
   * Starting with this release, InnoDB sequences are properly replicated when they are defined with `NOCACHE`.
@@ -56,7 +55,7 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 * When a query uses the `DISTINCT` keyword and calls an aggregate function as an argument for an always-constant function, the server can crash. ([MDEV-23809](https://jira.mariadb.org/browse/MDEV-23809))
   * An always-constant function is a function that always returns a constant value, even if the function's arguments are not constant.
   * For example, the [COLLATION() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/collation) is an always-constant function.
-* When [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) is executed with the [--compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-compress) and [--parallel](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-parallel) options, the backup can hang due to a race condition between threads. ([MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043))
+* When [mariadb-backup](broken-reference) is executed with the [--compress](broken-reference) and [--parallel](broken-reference) options, the backup can hang due to a race condition between threads. ([MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043))
 * When an `EXISTS` predicate or an `IN`, `ALL`, or `ANY` predicand is used in an eliminated GROUP BY clause, the server can crash. (MENT-1606, [MDEV-29350](https://jira.mariadb.org/browse/MDEV-29350))
 * When an `IN` subquery is used outside the context of a regular query (such as in a stored procedure), the server can crash. ([MDEV-22001](https://jira.mariadb.org/browse/MDEV-22001))
 * When MariaDB Enterprise Cluster is used and the Galera replication TCP port receives non-Galera network traffic, the server can crash. ([MDEV-25068](https://jira.mariadb.org/browse/MDEV-25068))
@@ -90,7 +89,7 @@ Last_SQL_Error	The incident LOST_EVENTS occurred on the master. Message: error w
 
 * Starting with this release, a `LOST_EVENTS` incident is only written to the binary log when safe rollback is not possible.
 * When a replica server replicates an incident event, the details about the failure are not in the primary server's error log, the replica server's error log, or the output of [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status). ([MDEV-21087](https://jira.mariadb.org/browse/MDEV-21087))
-* When a backup is performed with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup), the backup includes binary logs. ([MDEV-28758](https://jira.mariadb.org/browse/MDEV-28758))
+* When a backup is performed with [mariadb-backup](broken-reference), the backup includes binary logs. ([MDEV-28758](https://jira.mariadb.org/browse/MDEV-28758))
 * When a table is created from a [SELECT statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) that uses a recursive CTE, the table can use unexpected data types and contain truncated data if the calculated values from the recursive part of the CTE do not fit in the column types that are taken from the non-recursive part of the CTE. ([MDEV-12325](https://jira.mariadb.org/browse/MDEV-12325))
   * Starting with this release, the CTE calculation is aborted when the calculated values do not fit in the column types. When this occurs, a warning or error (depending on `sql_mode` is raised with the [ER\_WARN\_DATA\_OUT\_OF\_RANGE error code](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-6/broken-reference/README.md) and the following error message:
 
@@ -116,7 +115,7 @@ ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try AL
 * When a `UUID` or `INET6` column is referenced in a `WHERE col IN(SELECT ..)` subquery of an [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) statement, the query does not affect the correct number of rows. ([MDEV-28491](https://jira.mariadb.org/browse/MDEV-28491))
 * When a [BINARY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/binary) column is used to store `UUID`s and a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) statement filters the column with an `IN` clause, the query can be very slow if the `UUID`s are specified in hexadecimal. ([MDEV-25020](https://jira.mariadb.org/browse/MDEV-25020))
 * [DROP DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-database) is case-insensitive. ([MDEV-28802](https://jira.mariadb.org/browse/MDEV-28802))
-* When [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) is used to prepare a backup, the operation can fail if the backup contains DDL. ([MDEV-28974](https://jira.mariadb.org/browse/MDEV-28974))
+* When [mariadb-backup](broken-reference) is used to prepare a backup, the operation can fail if the backup contains DDL. ([MDEV-28974](https://jira.mariadb.org/browse/MDEV-28974))
   * In previous releases, when the backup failed, the output could contain messages like the following:
 
 ```
@@ -128,7 +127,7 @@ ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try AL
 ##mariadb-backup##: srv_start() returned 11 (Generic error).
 ```
 
-* When [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) is used to perform a backup while DDL is being executed, the output can contain excessive messages about DDL tracking. ([MDEV-29137](https://jira.mariadb.org/browse/MDEV-29137))
+* When [mariadb-backup](broken-reference) is used to perform a backup while DDL is being executed, the output can contain excessive messages about DDL tracking. ([MDEV-29137](https://jira.mariadb.org/browse/MDEV-29137))
   * In previous releases, the output could contain many messages like the following:
 
 ```
@@ -202,6 +201,6 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 * [Upgrade to MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

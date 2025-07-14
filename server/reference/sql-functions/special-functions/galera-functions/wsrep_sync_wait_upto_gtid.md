@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 WSREP_SYNC_WAIT_UPTO_GTID(gtid[,timeout])
 ```
 
@@ -14,7 +14,7 @@ The optional _timeout_ argument can be used to specify a block timeout in second
 
 Returns the node that applied and committed the Global Transaction ID, `ER_LOCAL_WAIT_TIMEOUT` if the function is timed out before this, or `ER_WRONG_ARGUMENTS` if the function is given an invalid GTID.
 
-The result from [WSREP\_LAST\_SEEN\_GTID](wsrep_last_seen_gtid.md) can be useful to determine the transaction to provide to WSREP\_SYNC\_WAIT\_UPTO\_GTID for waiting and unblocking purposes.
+The result from [WSREP\_LAST\_SEEN\_GTID](wsrep_last_seen_gtid.md) can be useful to determine the transaction to provide to `WSREP_SYNC_WAIT_UPTO_GTID` for waiting and unblocking purposes.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

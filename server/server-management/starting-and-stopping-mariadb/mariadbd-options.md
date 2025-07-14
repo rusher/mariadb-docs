@@ -1,6 +1,6 @@
-# mariadbd Options
+# mariadbd Option
 
-This page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+This page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 In many cases, the entry here is a summary, and links to the full description.
 
@@ -8,7 +8,7 @@ By convention, [server variables](../../ha-and-performance/optimization-and-tuni
 
 See [Configuring MariaDB with Option Files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) for which files and groups mariadbd reads for it's default options.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 ## Option Prefixes
 
@@ -87,7 +87,7 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 
 #### `--safe-mode`
 
-* Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam\_recover\_options](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) is disabled. For [Aria](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/README.md) tables, disable bulk insert optimization to enable one to use [aria\_read\_log](../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
+* Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam\_recover\_options](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) is disabled. For [Aria](../../server-usage/storage-engines/aria/) tables, disable bulk insert optimization to enable one to use [aria\_read\_log](../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
 
 #### `--skip-new`
 
@@ -118,7 +118,7 @@ Options that are also system variables are listed after:
 #### `--language`
 
 * Description: This option can be used to set the server's language for error messages. This option can be specified either as a language name or as the path to the directory storing the language's [error message file](../server-monitoring-logs/error-log.md#error-messages-file). See [Server Locales](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a list of supported locales and their associated languages.
-  * This option is deprecated. Use the [lc_messages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) and [lc_messages_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variables instead.
+  * This option is deprecated. Use the [lc\_messages](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) and [lc\_messages\_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variables instead.
   * See [Setting the Language for Error Messages](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more information.
 
 ### Locale Options and System Variables
@@ -152,20 +152,20 @@ Options that are also system variables are listed after:
 #### `--install`
 
 * Description: Windows-only option that installs the `mariadbd` process as a Windows service.
-  * The Windows service created with this option [auto-starts](https://docs.microsoft.com/en-us/windows/desktop/Services/automatically-starting-services). If you want a service that is [started on demand](https://docs.microsoft.com/en-us/windows/desktop/Services/starting-services-on-demand), then use the [--install-manual](#install-manual) option.
+  * The Windows service created with this option [auto-starts](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md#auto-start-of-mariadbd). If you want a service that is started on demand, then use the [--install-manual](mariadbd-options.md#install-manual) option.
   * This option takes a service name as an argument. If this option is provided without a service name, then the service name defaults to "MARIADB".
   * This option is deprecated and may be removed in a future version. See [MDEV-19358](https://jira.mariadb.org/browse/MDEV-19358) for more information.
 
 #### `--install-manual`
 
 * Description: Windows-only option that installs the `mariadbd` process as a Windows service.
-  * The Windows service created with this option is [started on demand](https://docs.microsoft.com/en-us/windows/desktop/Services/starting-services-on-demand). If you want a service that [auto-starts](https://docs.microsoft.com/en-us/windows/desktop/Services/automatically-starting-services), use the [--install](#install) option.
+  * The Windows service created with this option is started on demand. If you want a service that [auto-starts](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md#auto-start-of-mariadbd), use the [--install](mariadbd-options.md#install) option.
   * This option takes a service name as an argument. If this option is provided without a service name, then the service name defaults to "MARIADB".
   * This option is deprecated and may be removed in a future version. See [MDEV-19358](https://jira.mariadb.org/browse/MDEV-19358) for more information.
 
 #### `--remove`
 
-* Description: Windows-only option that removes the Windows service created by the [--install](#install) or [--install-manual](#install-manual) options.
+* Description: Windows-only option that removes the Windows service created by the [--install](mariadbd-options.md#install) or [--install-manual](mariadbd-options.md#install-manual) options.
   * This option takes a service name as an argument. If this option is provided without a service name, then the service name defaults to "MARIADB".
   * This option is deprecated and may be removed in a future version. See [MDEV-19358](https://jira.mariadb.org/browse/MDEV-19358) for more information.
 
@@ -181,11 +181,11 @@ Options that are also system variables are listed after:
 
 The following options and system variables are related to using MariaDB on Windows:
 
-* [--named-pipe](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe)
+* [--named-pipe](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-filters/mariadb-maxscale-2302-transaction-performance-monitoring-filter#named_pipe)
 
 ## Replication and Binary Logging Options
 
-The following options are related to [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) and the [binary log](../server-monitoring-logs/binary-log/). Options that are also system variables are listed after:
+The following options are related to [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) and the [binary log](../server-monitoring-logs/binary-log/). Options that are also system variables are listed after:
 
 #### `--abort-slave-event-count`
 
@@ -195,7 +195,7 @@ The following options are related to [replication](https://github.com/mariadb-co
 #### `--binlog-do-db`
 
 * Commandline: `--binlog-do-db=name`
-* Description: This option allows you to configure a [replication master](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication master](../../ha-and-performance/standard-replication/replication-overview.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_do_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
   * When setting it on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
@@ -204,7 +204,7 @@ The following options are related to [replication](https://github.com/mariadb-co
 #### `--binlog-ignore-db`
 
 * Commandline: `--binlog-ignore-db=name`
-* Description: This option allows you to configure a [replication master](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication master](../../ha-and-performance/standard-replication/replication-overview.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
   * When setting it on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
@@ -235,7 +235,7 @@ The following options are related to [replication](https://github.com/mariadb-co
 #### `--log-basename`
 
 * Commandline: `--log-basename=name`
-* Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../server-monitoring-logs/binary-log/), [relay log](../server-monitoring-logs/binary-log/relay-log.md), [general query log](../server-monitoring-logs/general-query-log.md), [slow query log](../server-monitoring-logs/slow-query-log/) and [error log](../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log\_slow\_query\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow\_query\_log\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `--log-basename` in the config files. Later settings override earlier settings, so `log-basename` will override any earlier log file name settings.
+* Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../server-monitoring-logs/binary-log/), [relay log](../server-monitoring-logs/binary-log/relay-log.md), [general query log](../server-monitoring-logs/general-query-log.md), [slow query log](../server-monitoring-logs/slow-query-log/) and [error log](../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log\_slow\_query\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow\_query\_log\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `--log-basename` in the config files. Later settings override earlier settings, so `log-basename` will override any earlier log file name settings.
 
 #### `--log-bin-trust-routine-creators`
 
@@ -324,11 +324,11 @@ The following options are related to [replication](https://github.com/mariadb-co
 #### `--sysdate-is-now`
 
 * Commandline: `--sysdate-is-now`
-* Description: Non-default option to alias [SYSDATE()](../../reference/sql-functions/date-time-functions/sysdate.md) to [NOW()](../../reference/sql-functions/date-time-functions/now.md) to make it safe for [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
+* Description: Non-default option to alias [SYSDATE()](../../reference/sql-functions/date-time-functions/sysdate.md) to [NOW()](../../reference/sql-functions/date-time-functions/now.md) to make it safe for [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
 
 ### Replication and Binary Logging Options and System Variables
 
-The following options and system variables are related to [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) and the [binary log](../server-monitoring-logs/binary-log/):
+The following options and system variables are related to [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) and the [binary log](../server-monitoring-logs/binary-log/):
 
 * [auto-increment-increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
 * [auto-increment-offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
@@ -434,7 +434,7 @@ Options that are also system variables are listed after:
 
 * Commandline: `--table-open-cache=#`
 * Description: Removed; use [--table-open-cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache) instead.
-* Removed: [MariaDB 5.1.3](https://mariadb.com/kb/en/mariadb-513-release-notes/)
+* Removed: [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes)
 
 ### Optimizer Options and System Variables
 
@@ -482,16 +482,16 @@ Options that are also system variables are listed after:
 
 * Commandline: `----skip-bdb`
 * Description: Deprecated option; Exists only for compatibility with very old my.cnf files.
-* Removed: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)
+* Removed: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)
 
 #### `--external-locking`
 
 * Commandline: `--external-locking`
-* Description: Use system (external) locking (disabled by default). With this option enabled you can run [myisamchk](../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) to test (not repair) tables while the server is running. Disable with [--skip-external-locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking). From [MariaDB 10.2.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10240-release-notes), [MariaDB 10.3.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10331-release-notes), [MariaDB 10.4.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10421-release-notes), [MariaDB 10.5.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10512-release-notes), [MariaDB 10.6.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1064-release-notes) and all later version, this effects InnoDB and can be used to prevent multiple instances running on the same data.
+* Description: Use system (external) locking (disabled by default). With this option enabled you can run [myisamchk](../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) to test (not repair) tables while the server is running. Disable with [--skip-external-locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking). From [MariaDB 10.2.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10240-release-notes), [MariaDB 10.3.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10331-release-notes), [MariaDB 10.4.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10421-release-notes), [MariaDB 10.5.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10512-release-notes), [MariaDB 10.6.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1064-release-notes) and all later version, this effects InnoDB and can be used to prevent multiple instances running on the same data.
 
 ### MyISAM Storage Engine Options
 
-The options related to the [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) storage engine are described below. Options that are also system variables are listed after:
+The options related to the [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) storage engine are described below. Options that are also system variables are listed after:
 
 #### `--log-isam`
 
@@ -500,32 +500,32 @@ The options related to the [MyISAM](https://github.com/mariadb-corporation/docs-
 
 #### MyISAM Storage Engine Options and System Variables
 
-Some options and system variables related to the [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) storage engine can be found [here](../../server-usage/storage-engines/myisam-storage-engine/myisam-storage-formats.md). Direct links to many of them can be found below.
 
 * [concurrent-insert](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert)
 * [delayed-insert-limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_limit)
 * [delayed-insert-timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_timeout)
 * [delayed-queue-size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_queue_size)
 * [keep-files-on-create](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#keep_files_on_create)
-* [key-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)
-* [key-cache-age-threshold](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold)
-* [key-cache-block-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size)
-* [key-cache-division-limit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit)
-* [key-cache-file-hash-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_file_hash_size)
-* [key-cache-segments](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments)
-* [myisam-block-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-data-pointer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-max-sort-file-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-mmap-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-recover-options](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-repair-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-sort-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-stats-method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-use-mmap](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [key-buffer-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)
+* [key-cache-age-threshold](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold)
+* [key-cache-block-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size)
+* [key-cache-division-limit](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit)
+* [key-cache-file-hash-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit)
+* [key-cache-segments](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments)
+* [myisam-block-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_block_size)
+* [myisam-data-pointer-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_data_pointer_size)
+* [myisam-max-sort-file-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_max_sort_file_size)
+* [myisam-mmap-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_mmap_size)
+* [myisam-recover-options](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options)
+* [myisam-repair-threads](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_repair_threads)
+* [myisam-sort-buffer-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size)
+* [myisam-stats-method](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_stats_method)
+* [myisam-use-mmap](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_use_mmap)
 
 ### InnoDB Storage Engine Options
 
-The options related to the [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md) storage engine are described below. Options that are also system variables are listed after:
+The options related to the [InnoDB](../../server-usage/storage-engines/innodb/innodb-storage-engine-introduction.md) storage engine are described below. Options that are also system variables are listed after:
 
 #### `--innodb`
 
@@ -629,322 +629,322 @@ The options related to the [InnoDB](https://github.com/mariadb-corporation/docs-
 
 #### InnoDB Storage Engine Options and System Variables
 
-Some options and system variables related to the [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [InnoDB](../../server-usage/storage-engines/innodb/innodb-storage-engine-introduction.md) storage engine can be found [here](../../server-usage/storage-engines/innodb/innodb-storage-engine-introduction.md). Direct links to many of them can be found below.
 
-* [ignore-builtin-innodb](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb)
-* [innodb-adaptive-checkpoint](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint)
-* [innodb-adaptive-flushing](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing)
-* [innodb-adaptive-flushing-lwm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm)
-* [innodb-adaptive-flushing-method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method)
-* [innodb-adaptive-hash-index](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index)
-* [innodb-adaptive-hash-index-partitions](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions)
-* [innodb-adaptive-hash-index-parts](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts)
-* [innodb-adaptive-max-sleep-delay](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay)
-* [innodb-additional-mem-pool-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size)
-* [innodb-alter-copy-bulk](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk)
-* [innodb-api-bk-commit-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_bk_commit_interval)
-* [innodb-api-disable-rowlock](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_disable_rowlock)
-* [innodb-api-enable-binlog](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog)
-* [innodb-api-enable-mdl](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_mdl)
-* [innodb-api-trx-level](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level)
-* [innodb-auto-lru-dump](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump)
-* [innodb-autoextend-increment](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoextend_increment)
-* [innodb-autoinc-lock-mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode)
-* [innodb-background-scrub-data-check-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval)
-* [innodb-background-scrub-data-compressed](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed)
-* [innodb-background-scrub-data-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval)
-* [innodb-background-scrub-data-uncompressed](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed)
-* [innodb-blocking-buffer-pool-restore](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore)
-* [innodb-buf-dump-status-frequency](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buf_dump_status_frequency)
-* [innodb-buffer-pool-chunk-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size)
-* [innodb-buffer-pool-dump-at-shutdown](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_at_shutdown)
-* [innodb-buffer-pool-dump-now](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_now)
-* [innodb-buffer-pool-dump-pct](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_pct)
-* [innodb-buffer-pool-evict](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_evict)
-* [innodb-buffer-pool-filename](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_filename)
-* [innodb-buffer-pool-instances](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances)
-* [innodb-buffer-pool-load-abort](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_abort)
-* [innodb-buffer-pool-load-at-startup](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup)
-* [innodb-buffer-pool-load-now](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_now)
-* [innodb-buffer-pool-load-pages-abort](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_pages_abort)
-* [innodb-buffer-pool-populate](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_populate)
-* [innodb-buffer-pool-restore-at-startup](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup)
-* [innodb-buffer-pool-shm-checksum](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_checksum)
-* [innodb-buffer-pool-shm-key](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_key)
-* [innodb-buffer-pool-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size)
-* [innodb-change-buffer-max-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_max_size)
-* [innodb-change-buffering](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering)
-* [innodb-change-buffering-debug](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering_debug)
-* [innodb-checkpoint-age-target](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target)
-* [innodb-checksum-algorithm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)
-* [innodb-checksums](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)
-* [innodb-cleaner-lsn-age-factor](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor)
-* [innodb-cmp-per-index-enabled](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled)
-* [innodb-commit-concurrency](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency)
-* [innodb-compression-algorithm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_algorithm)
-* [innodb-compression-failure-threshold-pct](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_failure_threshold_pct)
-* [innodb-compression-level](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_level)
-* [innodb-compression-pad-pct-max](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max)
-* [innodb-concurrency-tickets](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets)
-* [innodb-corrupt-table-action](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action)
-* [innodb-data-file-buffering](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering)
-* [innodb-data-file-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path)
-* [innodb-data-file-write-through](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through)
-* [innodb-data-home-dir](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir)
-* [innodb-deadlock-detect](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect)
-* [innodb-deadlock-report](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report)
-* [innodb-default-encryption-key-id](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)
-* [innodb-default-page-encryption-key](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key)
-* [innodb-default-row-format](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format)
-* [innodb-defragment](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment)
-* [innodb-defragment-fill-factor](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor)
-* [innodb-defragment-fill-factor-n-recs](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs)
-* [innodb-defragment-frequency](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency)
-* [innodb-defragment-n-pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)
-* [innodb-defragment-stats-accuracy](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy)
-* [innodb-dict-size-limit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit)
-* [innodb\_disable\_sort\_file\_cache](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache)
-* [innodb-doublewrite](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)
-* [innodb-doublewrite-file](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file)
-* [innodb-empty-free-list-algorithm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_empty_free_list_algorithm)
-* [innodb-enable-unsafe-group-commit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit)
-* [innodb-encrypt-log](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)
-* [innodb-encrypt-tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables)
-* [innodb-encrypt-temporary-tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables)
-* [innodb-encryption-rotate-key-age](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age)
-* [innodb-encryption-rotation\_iops](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops)
-* [innodb-encryption-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads)
-* [innodb-extra-rsegments](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments)
-* [innodb-extra-undoslots](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots)
-* [innodb-fake-changes](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_fake_changes)
-* [innodb-fast-checksum](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_checksum)
-* [innodb-fast-shutdown](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
-* [innodb-fatal-semaphore-wait-threshold](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_fatal_semaphore_wait_threshold)
-* [innodb-file-format](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format)
-* [innodb-file-format-check](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_check)
-* [innodb-file-format-max](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_max)
-* [innodb-file-per-table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table)
-* [innodb-fill-factor](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_fill_factor)
-* [innodb-flush-log-at-trx-commit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit)
-* [innodb-flush-method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method)
-* [innodb-flush-neighbor-pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages)
-* [innodb-flush-neighbors](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors)
-* [innodb-flush-sync](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_sync)
-* [innodb-flushing-avg-loops](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_flushing_avg_loops)
-* [innodb-force-load-corrupted](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_load_corrupted)
-* [innodb-force-primary-key](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_primary_key)
-* [innodb-force-recovery](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery)
-* [innodb-foreground-preflush](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush)
-* [innodb-ft-aux-table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table)
-* [innodb-ft-cache-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_cache_size)
-* [innodb-ft-enable-diag-print](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_diag_print)
-* [innodb-ft-enable-stopword](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_stopword)
-* [innodb-ft-max-token-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size)
-* [innodb-ft-min-token-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size)
-* [innodb-ft-num-word-optimize](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_num_word_optimize)
-* [innodb-ft-result-cache-limit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_result_cache_limit)
-* [innodb-ft-server-stopword-table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table)
-* [innodb-ft-sort-pll-degree](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree)
-* [innodb-ft-total-cache-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size)
-* [innodb-ft-user-stopword-table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_user_stopword_table)
-* [innodb-ibuf-accel-rate](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate)
-* [innodb-ibuf-active-contract](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract)
-* [innodb-ibuf-max-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size)
-* [innodb-idle-flush-pct](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct)
-* [innodb-immediate-scrub-data-uncompressed](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_immediate_scrub_data_uncompressed)
-* [innodb-import-table-from-xtrabackup](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup)
-* [innodb-instant-alter-column-allowed](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)
-* [innodb-instrument-semaphores](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_instrument_semaphores)
-* [innodb-io-capacity](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity)
-* [innodb-io-capacity-max](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity_max)
-* [innodb-large-prefix](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix)
-* [innodb-lazy-drop-table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_lazy_drop_table)
-* [innodb-lock-schedule-algorithm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_schedule_algorithmt)
-* [innodb-locking-fake-changes](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_locking_fake_changes)
-* [innodb-locks-unsafe-for-binlog](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog)
-* [innodb-log-arch-dir](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_dir)
-* [innodb-log-arch-expire-sec](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_expire_sec)
-* [innodb-log-archive](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_archive)
-* [innodb-log-block-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_block_size)
-* [innodb-log-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_buffer_size)
-* [innodb-log-checksum-algorithm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksum_algorithm)
-* [innodb-log-checksums](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums)
-* [innodb-log-compressed-pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_compressed_pages)
-* [innodb-log-file-buffering](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering)
-* [innodb-log-file-mmap](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_mmap)
-* [innodb-log-file-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_size)
-* [innodb-log-file-write-through](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_write_through)
-* [innodb-log-files-in-group](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group)
-* [innodb-log-group-home-dir](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_group_home_dir)
-* [innodb-log-optimize-ddl](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl)
-* [innodb-log-spin-wait-delay](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb-log_spin_wait_delay)
-* [innodb-log-write-ahead-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size)
-* [innodb-lru-flush-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_lru_flush_size)
-* [innodb-lru-scan-depth](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_lru_scan_depth)
-* [innodb-max-bitmap-file-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size)
-* [innodb-max-changed-pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages)
-* [innodb-max-dirty-pages-pct](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct)
-* [innodb-max-dirty-pages-pct-lwm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
-* [innodb-max-purge-lag](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag)
-* [innodb-max-purge-lag-delay](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay)
-* [innodb-max-purge-lag-wait](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait)
-* [innodb-max-undo-log-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size)
-* [innodb-merge-sort-block-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size)
-* [innodb-mirrored-log-groups](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups)
-* [innodb-monitor-disable](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable)
-* [innodb-monitor-enable](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable)
-* [innodb-monitor-reset](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset)
-* [innodb-monitor-reset-all](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all)
-* [innodb-mtflush-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads)
-* [innodb-numa-interleave](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave)
-* [innodb-old-blocks-pct](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct)
-* [innodb-old-blocks-time](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time)
-* [innodb-online-alter-log-max-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size)
-* [innodb-open-files](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_open_files)
-* [innodb-optimize-fulltext-only](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only)
-* [innodb-page-cleaners](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners)
-* [innodb-page-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)
-* [innodb-pass-corrupt-table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table)
-* [innodb-prefix-index-cluster-optimization](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_prefix_index_cluster_optimization)
-* [innodb-print-all-deadlocks](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks)
-* [innodb-purge-batch-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size)
-* [innodb-purge-rseg-truncate-frequency](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency)
-* [innodb-purge-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_threads)
-* [innodb-random-read-ahead](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_random_read_ahead)
-* [innodb-read-ahead](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead)
-* [innodb-read-ahead-threshold](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
-* [innodb-read-io-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_io_threads)
-* [innodb-read-only](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_only)
-* [innodb-recovery-update-relay-log](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log)
-* [innodb-replication-delay](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay)
-* [innodb-rollback-on-timeout](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_on_timeout)
-* [innodb-rollback-segments](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments)
-* [innodb-safe-truncate](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate)
-* [innodb-sched-priority-cleaner](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_sched_priority_cleaner)
-* [innodb-scrub-log](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log)
-* [innodb-scrub-log-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_interval)
-* [innodb-scrub-log-speed](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed)
-* [innodb-show-locks-held](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_show_locks_held)
-* [innodb-show-verbose-locks](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_show_verbose_locks)
-* [innodb-snapshot-isolation](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation)
-* [innodb-sort-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size)
-* [innodb-spin-wait-delay](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_spin_wait_delay)
-* [innodb-stats-auto-recalc](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc)
-* [innodb-stats-auto-update](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_update)
-* [innodb-stats-include-delete-marked](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_include_delete_marked)
-* [innodb-stats-method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_method)
-* [innodb-stats-modified-counter](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_modified_counter)
-* [innodb-stats-on-metadata](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_on_metadata)
-* [innodb-stats-persistent](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent)
-* [innodb-stats-persistent-sample-pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent_sample_pages)
-* [innodb-stats-sample-pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages)
-* [innodb-stats-transient-sample-pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages)
-* [innodb-stats-traditional](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_traditional)
-* [innodb-stats-update-need-lock](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_update_need_lock)
-* [innodb-status-output](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_status_output)
-* [innodb-status-output-locks](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_status_output_locks)
-* [innodb-strict-mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode)
-* [innodb-support-xa](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_support_xa)
-* [innodb-sync-array-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_sync_array_size)
-* [innodb-sync-spin-loops](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops)
-* [innodb-table-locks](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_table_locks)
-* [innodb-temp-data-file-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_temp_data_file_path)
-* [innodb-thread-concurrency](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency)
-* [innodb-thread-concurrency-timer-based](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency_timer_based)
-* [innodb-thread-sleep-delay](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay)
-* [innodb-tmpdir](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_tmpdir)
-* [innodb-track-changed-pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_track_changed_pages)
-* [innodb-track-redo-log-now](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_track_redo_log_now)
-* [innodb-truncate-temporary-tablespace-now](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_truncate_temporary_tablespace_now)
-* [innodb-undo-directory](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_directory)
-* [innodb-undo-log-truncate](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate)
-* [innodb-undo-logs](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs)
-* [innodb-undo-tablespaces](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_tablespaces)
-* [innodb-use-atomic-writes](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_atomic_writes)
-* [innodb-use-fallocate](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_fallocate)
-* [innodb-use-global-flush-log-at-trx-commit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_global_flush_log_at_trx_commit)
-* [innodb-use-mtflush](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_mtflush)
-* [innodb-use-native\_aio](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio)
-* [innodb-use-purge-thread](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread)
-* [innodb-use-stacktrace](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_stacktrace)
-* [innodb-use-sys-malloc](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_malloc)
-* [innodb-use-sys-stats-table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_stats_table)
-* [innodb-use-trim](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_trim)
-* [innodb-write-io-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_write_io_threads)
-* [skip-innodb](mariadbd-options.md#-innodb)
-* [skip-innodb-checksums](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)
-* [skip-innodb-doublewrite](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)
+* [ignore-builtin-innodb](../../server-usage/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb)
+* [innodb-adaptive-checkpoint](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint)
+* [innodb-adaptive-flushing](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing)
+* [innodb-adaptive-flushing-lwm](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm)
+* [innodb-adaptive-flushing-method](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method)
+* [innodb-adaptive-hash-index](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index)
+* [innodb-adaptive-hash-index-partitions](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions)
+* [innodb-adaptive-hash-index-parts](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts)
+* [innodb-adaptive-max-sleep-delay](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay)
+* [innodb-additional-mem-pool-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size)
+* [innodb-alter-copy-bulk](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk)
+* [innodb-api-bk-commit-interval](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_bk_commit_interval)
+* [innodb-api-disable-rowlock](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_disable_rowlock)
+* [innodb-api-enable-binlog](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog)
+* [innodb-api-enable-mdl](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level)
+* [innodb-api-trx-level](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level)
+* [innodb-auto-lru-dump](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump)
+* [innodb-autoextend-increment](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_autoextend_increment)
+* [innodb-autoinc-lock-mode](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode)
+* [innodb-background-scrub-data-check-interval](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval)
+* [innodb-background-scrub-data-compressed](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed)
+* [innodb-background-scrub-data-interval](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval)
+* [innodb-background-scrub-data-uncompressed](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed)
+* [innodb-blocking-buffer-pool-restore](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore)
+* [innodb-buf-dump-status-frequency](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buf_dump_status_frequency)
+* [innodb-buffer-pool-chunk-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size)
+* [innodb-buffer-pool-dump-at-shutdown](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_at_shutdown)
+* [innodb-buffer-pool-dump-now](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_now)
+* [innodb-buffer-pool-dump-pct](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_pct)
+* [innodb-buffer-pool-evict](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_evict)
+* [innodb-buffer-pool-filename](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_filename)
+* [innodb-buffer-pool-instances](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances)
+* [innodb-buffer-pool-load-abort](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_abort)
+* [innodb-buffer-pool-load-at-startup](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup)
+* [innodb-buffer-pool-load-now](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_now)
+* [innodb-buffer-pool-load-pages-abort](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_pages_abort)
+* [innodb-buffer-pool-populate](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_populate)
+* [innodb-buffer-pool-restore-at-startup](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup)
+* [innodb-buffer-pool-shm-checksum](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_checksum)
+* [innodb-buffer-pool-shm-key](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_key)
+* [innodb-buffer-pool-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size)
+* [innodb-change-buffer-max-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_max_size)
+* [innodb-change-buffering](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering)
+* [innodb-change-buffering-debug](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering_debug)
+* [innodb-checkpoint-age-target](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target)
+* [innodb-checksum-algorithm](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)
+* [innodb-checksums](../../clients-and-utilities/administrative-tools/innochecksum.md)
+* [innodb-cleaner-lsn-age-factor](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor)
+* [innodb-cmp-per-index-enabled](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled)
+* [innodb-commit-concurrency](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency)
+* [innodb-compression-algorithm](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_compression_algorithm)
+* [innodb-compression-failure-threshold-pct](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_compression_failure_threshold_pct)
+* [innodb-compression-level](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_compression_level)
+* [innodb-compression-pad-pct-max](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max)
+* [innodb-concurrency-tickets](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets)
+* [innodb-corrupt-table-action](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action)
+* [innodb-data-file-buffering](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering)
+* [innodb-data-file-path](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path)
+* [innodb-data-file-write-through](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through)
+* [innodb-data-home-dir](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir)
+* [innodb-deadlock-detect](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect)
+* [innodb-deadlock-report](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report)
+* [innodb-default-encryption-key-id](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)
+* [innodb-default-page-encryption-key](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key)
+* [innodb-default-row-format](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format)
+* [innodb-defragment](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment)
+* [innodb-defragment-fill-factor](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor)
+* [innodb-defragment-fill-factor-n-recs](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs)
+* [innodb-defragment-frequency](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency)
+* [innodb-defragment-n-pages](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)
+* [innodb-defragment-stats-accuracy](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy)
+* [innodb-dict-size-limit](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit)
+* [innodb\_disable\_sort\_file\_cache](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache)
+* [innodb-doublewrite](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)
+* [innodb-doublewrite-file](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file)
+* [innodb-empty-free-list-algorithm](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_empty_free_list_algorithm)
+* [innodb-enable-unsafe-group-commit](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit)
+* [innodb-encrypt-log](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)
+* [innodb-encrypt-tables](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables)
+* [innodb-encrypt-temporary-tables](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables)
+* [innodb-encryption-rotate-key-age](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age)
+* [innodb-encryption-rotation\_iops](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops)
+* [innodb-encryption-threads](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads)
+* [innodb-extra-rsegments](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments)
+* [innodb-extra-undoslots](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots)
+* [innodb-fake-changes](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fake_changes)
+* [innodb-fast-checksum](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_checksum)
+* [innodb-fast-shutdown](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
+* [innodb-fatal-semaphore-wait-threshold](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fatal_semaphore_wait_threshold)
+* [innodb-file-format](../../server-usage/storage-engines/innodb/innodb-file-format.md)
+* [innodb-file-format-check](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_check)
+* [innodb-file-format-max](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_format_max)
+* [innodb-file-per-table](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table)
+* [innodb-fill-factor](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fill_factor)
+* [innodb-flush-log-at-trx-commit](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit)
+* [innodb-flush-method](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method)
+* [innodb-flush-neighbor-pages](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages)
+* [innodb-flush-neighbors](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors)
+* [innodb-flush-sync](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_sync)
+* [innodb-flushing-avg-loops](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flushing_avg_loops)
+* [innodb-force-load-corrupted](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_force_load_corrupted)
+* [innodb-force-primary-key](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_force_primary_key)
+* [innodb-force-recovery](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery)
+* [innodb-foreground-preflush](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush)
+* [innodb-ft-aux-table](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table)
+* [innodb-ft-cache-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_cache_size)
+* [innodb-ft-enable-diag-print](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_diag_print)
+* [innodb-ft-enable-stopword](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_enable_stopword)
+* [innodb-ft-max-token-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size)
+* [innodb-ft-min-token-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size)
+* [innodb-ft-num-word-optimize](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_num_word_optimize)
+* [innodb-ft-result-cache-limit](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_result_cache_limit)
+* [innodb-ft-server-stopword-table](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table)
+* [innodb-ft-sort-pll-degree](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree)
+* [innodb-ft-total-cache-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size)
+* [innodb-ft-user-stopword-table](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_user_stopword_table)
+* [innodb-ibuf-accel-rate](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate)
+* [innodb-ibuf-active-contract](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract)
+* [innodb-ibuf-max-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size)
+* [innodb-idle-flush-pct](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct)
+* [innodb-immediate-scrub-data-uncompressed](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_immediate_scrub_data_uncompressed)
+* [innodb-import-table-from-xtrabackup](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup)
+* [innodb-instant-alter-column-allowed](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)
+* [innodb-instrument-semaphores](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_instrument_semaphores)
+* [innodb-io-capacity](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity)
+* [innodb-io-capacity-max](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity_max)
+* [innodb-large-prefix](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix)
+* [innodb-lazy-drop-table](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_lazy_drop_table)
+* [innodb-lock-schedule-algorithm](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_lock_schedule_algorithm)
+* [innodb-locking-fake-changes](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_locking_fake_changes)
+* [innodb-locks-unsafe-for-binlog](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog)
+* [innodb-log-arch-dir](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_dir)
+* [innodb-log-arch-expire-sec](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_expire_sec)
+* [innodb-log-archive](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_archive)
+* [innodb-log-block-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_block_size)
+* [innodb-log-buffer-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_buffer_size)
+* [innodb-log-checksum-algorithm](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksum_algorithm)
+* [innodb-log-checksums](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums)
+* [innodb-log-compressed-pages](../../server-usage/storage-engines/innodb/innodb-system-variables.md)
+* [innodb-log-file-buffering](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering)
+* [innodb-log-file-mmap](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_mmap)
+* [innodb-log-file-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_size)
+* [innodb-log-file-write-through](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group)
+* [innodb-log-files-in-group](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group)
+* [innodb-log-group-home-dir](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_group_home_dir)
+* [innodb-log-optimize-ddl](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl)
+* [innodb-log-spin-wait-delay](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_spin_wait_delay)
+* [innodb-log-write-ahead-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size)
+* [innodb-lru-flush-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_lru_flush_size)
+* [innodb-lru-scan-depth](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_lru_scan_depth)
+* [innodb-max-bitmap-file-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size)
+* [innodb-max-changed-pages](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages)
+* [innodb-max-dirty-pages-pct](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct)
+* [innodb-max-dirty-pages-pct-lwm](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
+* [innodb-max-purge-lag](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag)
+* [innodb-max-purge-lag-delay](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay)
+* [innodb-max-purge-lag-wait](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait)
+* [innodb-max-undo-log-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size)
+* [innodb-merge-sort-block-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size)
+* [innodb-mirrored-log-groups](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups)
+* [innodb-monitor-disable](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable)
+* [innodb-monitor-enable](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable)
+* [innodb-monitor-reset](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset)
+* [innodb-monitor-reset-all](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all)
+* [innodb-mtflush-threads](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads)
+* [innodb-numa-interleave](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave)
+* [innodb-old-blocks-pct](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct)
+* [innodb-old-blocks-time](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time)
+* [innodb-online-alter-log-max-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size)
+* [innodb-open-files](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_open_files)
+* [innodb-optimize-fulltext-only](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only)
+* [innodb-page-cleaners](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners)
+* [innodb-page-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)
+* [innodb-pass-corrupt-table](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table)
+* [innodb-prefix-index-cluster-optimization](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_prefix_index_cluster_optimization)
+* [innodb-print-all-deadlocks](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks)
+* [innodb-purge-batch-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size)
+* [innodb-purge-rseg-truncate-frequency](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency)
+* [innodb-purge-threads](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_purge_threads)
+* [innodb-random-read-ahead](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_random_read_ahead)
+* [innodb-read-ahead](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead)
+* [innodb-read-ahead-threshold](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
+* [innodb-read-io-threads](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_read_io_threads)
+* [innodb-read-only](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_read_only)
+* [innodb-recovery-update-relay-log](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log)
+* [innodb-replication-delay](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay)
+* [innodb-rollback-on-timeout](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_on_timeout)
+* [innodb-rollback-segments](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments)
+* [innodb-safe-truncate](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate)
+* [innodb-sched-priority-cleaner](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sched_priority_cleaner)
+* [innodb-scrub-log](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log)
+* [innodb-scrub-log-interval](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_interval)
+* [innodb-scrub-log-speed](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed)
+* [innodb-show-locks-held](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_show_locks_held)
+* [innodb-show-verbose-locks](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_show_verbose_locks)
+* [innodb-snapshot-isolation](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation)
+* [innodb-sort-buffer-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size)
+* innodb-spin-wait-delay
+* [innodb-stats-auto-recalc](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc)
+* [innodb-stats-auto-update](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_update)
+* [innodb-stats-include-delete-marked](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_include_delete_marked)
+* [innodb-stats-method](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_method)
+* [innodb-stats-modified-counter](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_modified_counter)
+* [innodb-stats-on-metadata](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_on_metadata)
+* [innodb-stats-persistent](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent)
+* [innodb-stats-persistent-sample-pages](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent_sample_pages)
+* [innodb-stats-sample-pages](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages)
+* [innodb-stats-transient-sample-pages](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages)
+* [innodb-stats-traditional](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_traditional)
+* [innodb-stats-update-need-lock](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_update_need_lock)
+* [innodb-status-output](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_status_output)
+* [innodb-status-output-locks](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_status_output_locks)
+* [innodb-strict-mode](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode)
+* [innodb-support-xa](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_support_xa)
+* [innodb-sync-array-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sync_array_size)
+* [innodb-sync-spin-loops](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops)
+* [innodb-table-locks](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_table_locks)
+* [innodb-temp-data-file-path](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_temp_data_file_path)
+* [innodb-thread-concurrency](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency)
+* [innodb-thread-concurrency-timer-based](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency_timer_based)
+* [innodb-thread-sleep-delay](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_sleep_delay)
+* [innodb-tmpdir](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_tmpdir)
+* [innodb-track-changed-pages](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_track_changed_pages)
+* [innodb-track-redo-log-now](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_track_redo_log_now)
+* [innodb-truncate-temporary-tablespace-now](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_truncate_temporary_tablespace_now)
+* [innodb-undo-directory](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_undo_directory)
+* [innodb-undo-log-truncate](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate)
+* [innodb-undo-logs](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs)
+* [innodb-undo-tablespaces](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_undo_tablespaces)
+* [innodb-use-atomic-writes](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_atomic_writes)
+* [innodb-use-fallocate](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_fallocate)
+* [innodb-use-global-flush-log-at-trx-commit](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_global_flush_log_at_trx_commit)
+* [innodb-use-mtflush](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_mtflush)
+* [innodb-use-native\_aio](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio)
+* [innodb-use-purge-thread](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread)
+* [innodb-use-stacktrace](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_stacktrace)
+* [innodb-use-sys-malloc](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_malloc)
+* [innodb-use-sys-stats-table](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_sys_stats_table)
+* [innodb-use-trim](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_trim)
+* [innodb-write-io-threads](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_write_io_threads)
+* skip-innodb
+* [skip-innodb-checksums](../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options.md#skip-innodb-log-checksums)
+* [skip-innodb-doublewrite](../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options.md#skip-innodb-doublewrite)
 
 ### Aria Storage Engine Options
 
-Options related to the [Aria](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/README.md) storage engine are listed below:
+Options related to the [Aria](../../server-usage/storage-engines/aria/) storage engine are listed below:
 
 #### Aria Storage Engine Options and System Variables
 
-Some options and system variables related to the [Aria](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [Aria](../../server-usage/storage-engines/aria/) storage engine can be found [here](../../server-usage/storage-engines/aria/aria-system-variables.md). Direct links to many of them can be found below.
 
-* [aria-block-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_block_size)
-* [aria-checkpoint-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_checkpoint_interval)
-* [aria-checkpoint-log-activity](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_checkpoint_log_activity)
-* [aria-encrypt-tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)
-* [aria-force-start-after-recovery-failures](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_force_start_after_recovery_failures)
-* [aria-group-commit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_group_commit)
-* [aria-group-commit-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_group_commit_interval)
-* [aria-log-dir-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_log_dir_path)
-* [aria-log-file-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_log_file_size)
-* [aria-log-purge-type](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_log_purge_type)
-* [aria-max-sort-file-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_max_sort_file_size)
-* [aria-page-checksum](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_page_checksum)
-* [aria-pagecache-age-threshold](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_age_threshold)
-* [aria-pagecache-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)
-* [aria-pagecache-division-limit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_division_limit)
-* [aria-pagecache-file-hash-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_file_hash_size)
-* [aria-recover](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_recover)
-* [aria-recover-options](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_recover_options)
-* [aria-repair-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_repair_threads)
-* [aria-sort-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
-* [aria-stats-method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_stats_method)
-* [aria-sync-log-dir](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_sync_log_dir)
-* [aria-used-for-temp-tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)
-* [deadlock-search-depth-long](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_long)
-* [deadlock-search-depth-short](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_short)
-* [deadlock-timeout-long](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#deadlock_timeout_long)
-* [deadlock-timeout-short](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#deadlock_timeout_short)
+* [aria-block-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_block_size)
+* [aria-checkpoint-interval](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_checkpoint_interval)
+* [aria-checkpoint-log-activity](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_checkpoint_log_activity)
+* [aria-encrypt-tables](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)
+* [aria-force-start-after-recovery-failures](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_force_start_after_recovery_failures)
+* [aria-group-commit](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_group_commit)
+* [aria-group-commit-interval](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_group_commit_interval)
+* [aria-log-dir-path](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_log_dir_path)
+* [aria-log-file-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_log_file_size)
+* [aria-log-purge-type](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_log_purge_type)
+* [aria-max-sort-file-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_max_sort_file_size)
+* [aria-page-checksum](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_page_checksum)
+* [aria-pagecache-age-threshold](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_age_threshold)
+* [aria-pagecache-buffer-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)
+* [aria-pagecache-division-limit](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_division_limit)
+* [aria-pagecache-file-hash-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_file_hash_size)
+* [aria-recover](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_recover)
+* [aria-recover-options](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_recover_options)
+* [aria-repair-threads](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_repair_threads)
+* [aria-sort-buffer-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
+* [aria-stats-method](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_stats_method)
+* [aria-sync-log-dir](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_sync_log_dir)
+* [aria-used-for-temp-tables](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)
+* [deadlock-search-depth-long](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_long)
+* [deadlock-search-depth-short](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_short)
+* [deadlock-timeout-long](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_timeout_long)
+* [deadlock-timeout-short](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_timeout_short)
 
 ### MyRocks Storage Engine Options
 
-The options and system variables related to the [MyRocks](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myrocks/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myrocks/myrocks-system-variables.md).
+The options and system variables related to the [MyRocks](../../server-usage/storage-engines/myrocks/) storage engine can be found [here](../../server-usage/storage-engines/myrocks/myrocks-system-variables.md).
 
 ### S3 Storage Engine Options
 
-The options and system variables related to the [S3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/s3-storage-engine/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md).
+The options and system variables related to the [S3](../../server-usage/storage-engines/s3-storage-engine/) storage engine can be found [here](../../server-usage/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md).
 
 ### CONNECT Storage Engine Options
 
-The options related to the [CONNECT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/README.md) storage engine are described below.
+The options related to the [CONNECT](../../server-usage/storage-engines/connect/) storage engine are described below.
 
 #### CONNECT Storage Engine Options and System Variables
 
-Some options and system variables related to the [CONNECT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [CONNECT](../../server-usage/storage-engines/connect/) storage engine can be found [here](../../server-usage/storage-engines/connect/connect-system-variables.md). Direct links to many of them can be found below.
 
-* [connect-class-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_class_path)
-* [connect-cond-push](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_cond_push)
-* [connect-conv-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_conv_size)
-* [connect-default-depth](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_default_depth)
-* [connect-default-prec](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_default_prec)
-* [connect-enable-mongo](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_enable_mongo)
-* [connect-exact-info](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_exact_info)
-* [connect-force\_bson](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_force_bson)
-* [connect-indx-map](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_indx_map)
-* [connect-java-wrapper](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_java_wrapper)
-* [connect-json-all-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_json_all_path)
-* [connect-json-grp-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_json_grp_size)
-* [connect-json-null](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_json_null)
-* [connect-jvm-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_jvm_path)
-* [connect-type-conv](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_type_conv)
-* [connect-use-tempfile](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_use_tempfile)
-* [connect-work-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_work_size)
-* [connect-xtrace](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_xtrace)
+* [connect-class-path](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_class_path)
+* [connect-cond-push](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_cond_push)
+* [connect-conv-size](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_conv_size)
+* [connect-default-depth](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_default_depth)
+* [connect-default-prec](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_default_prec)
+* [connect-enable-mongo](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_enable_mongo)
+* [connect-exact-info](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_exact_info)
+* [connect-force\_bson](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_force_bson)
+* [connect-indx-map](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_indx_map)
+* [connect-java-wrapper](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_java_wrapper)
+* [connect-json-all-path](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_json_all_path)
+* [connect-json-grp-size](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_json_grp_size)
+* [connect-json-null](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_json_null)
+* [connect-jvm-path](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_jvm_path)
+* [connect-type-conv](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_type_conv)
+* [connect-use-tempfile](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_use_tempfile)
+* [connect-work-size](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_work_size)
+* [connect-xtrace](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_xtrace)
 
 ### Spider Storage Engine Options
 
@@ -1253,7 +1253,7 @@ Options that are also system variables are listed after:
 #### `--log-tc`
 
 * Commandline: `--log-tc=name`
-* Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the the [log_tc_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size) system variable and the [--tc-heuristic-recover](#-tc-heuristic-recover) option.
+* Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the [log\_tc\_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size) system variable and the [--tc-heuristic-recover](mariadbd-options.md#-tc-heuristic-recover) option.
 * Default Value: `tc.log`
 
 #### `--master-connect-retry`
@@ -1337,7 +1337,7 @@ Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler
 #### `--skip-slave-start`
 
 * Commandline: `--skip-slave-start`
-* Description: If set, replica is not autostarted.
+* Description: If set, replica is not autostarted. From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), server will display in the log if this option is set.
 
 #### `--skip-ssl`
 
@@ -1380,13 +1380,13 @@ Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler
 #### `--tc-heuristic-recover`
 
 * Commandline: `--tc-heuristic-recover=name`
-* Description: If [manual heuristic recovery](../server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log.md) is needed, this option defines the decision to use in the heuristic recovery process. Manual heuristic recovery may be needed if the [transaction coordination log](../server-monitoring-logs/transaction-coordinator-log/) is missing or if it doesn't contain all prepared transactions. This option can be set to `OFF`, `COMMIT`, or `ROLLBACK`. The default is `OFF`. See also the [--log-tc](mariadbd-options.md#-log-tc) server option and the [log_tc_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size) system variable.
+* Description: If [manual heuristic recovery](../server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log.md) is needed, this option defines the decision to use in the heuristic recovery process. Manual heuristic recovery may be needed if the [transaction coordination log](../server-monitoring-logs/transaction-coordinator-log/) is missing or if it doesn't contain all prepared transactions. This option can be set to `OFF`, `COMMIT`, or `ROLLBACK`. The default is `OFF`. See also the [--log-tc](mariadbd-options.md#-log-tc) server option and the [log\_tc\_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size) system variable.
 
 #### `--temp-pool`
 
 * Commandline: `--temp-pool`
 * Description: Using this option will cause most temporary files created to use a small set of names, rather than a unique name for each new file. This behavior works around a bug in old Linux kernels where the kernel appeared to "leak" memory. In a Docker environment it might look like an unbounded working-set memory growth.\
-  Defaults to `1` until [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1056-release-notes), use `--skip-temp-pool` to disable. Defaults to `0` from [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1057-release-notes), as benchmarking shows it causes a heavy mutex contention.
+  Defaults to `1` until [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1056-release-notes), use `--skip-temp-pool` to disable. Defaults to `0` from [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), as benchmarking shows it causes a heavy mutex contention.
 
 #### `--test-expect-abort`
 
@@ -1623,7 +1623,7 @@ The options related to the [gssapi](../../../reference/plugins/authentication-pl
 
 ### Authentication Plugin - `named_pipe`
 
-The options related to the [named_pipe](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md#options).
+The options related to the [named\_pipe](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md#options).
 
 ### Authentication Plugin - `pam`
 
@@ -1633,41 +1633,41 @@ The options related to the [pam](../../../reference/plugins/authentication-plugi
 
 ### Authentication Plugin - `unix_socket`
 
-The options related to the [unix_socket](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#options).
+The options related to the [unix\_socket](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#options).
 
 ## Encryption Plugins - Options and System Variables
 
 ### Encryption Plugin - `aws_key_management`
 
-The system variables related to the [aws_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#system-variables).
+The system variables related to the [aws\_key\_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#system-variables).
 
-The options elated to the [aws_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#options).
+The options elated to the [aws\_key\_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#options).
 
 ### Encryption Plugin - `file_key_management`
 
-The system variables related to the [file_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#system-variables).
+The system variables related to the [file\_key\_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#system-variables).
 
-The options related to the [file_key_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#options).
+The options related to the [file\_key\_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#options).
 
 ## Password Validation Plugins - Options and System Variables
 
 ### Password Validation Plugin - `simple_password_check`
 
-The system variables related to the [simple_password_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
+The system variables related to the [simple\_password\_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
-The options related to the [simple_password_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
+The options related to the [simple\_password\_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
 ### Password Validation Plugin - `cracklib_password_check`
 
-The system variables related to the [cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The system variables related to the [cracklib\_password\_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
-The options related to the [cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The options related to the [cracklib\_password\_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
 ## Audit Plugins - Options and System Variables
 
 ### Audit Plugin - `server_audit`
 
-Options and system variables related to the [server_audit](../../../reference/plugins/mariadb-audit-plugin/README.md) audit plugin can be found [here](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
+Options and system variables related to the [server\_audit](../../../reference/plugins/mariadb-audit-plugin/) audit plugin can be found [here](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
 
 ### Audit Plugin - `SQL_ERROR_LOG`
 
@@ -1675,7 +1675,7 @@ The options and system variables related to the [SQL\_ERROR\_LOG](../server-moni
 
 ### Audit Plugin - QUERY\_RESPONSE\_TIME\_AUDIT
 
-The options related to the [QUERY_RESPONSE_TIME_AUDIT](../../../reference/plugins/other-plugins/query-response-time-plugin.md) audit plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
+The options related to the [QUERY\_RESPONSE\_TIME\_AUDIT](../../../reference/plugins/other-plugins/query-response-time-plugin.md) audit plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
 
 ## Daemon Plugins - Options and System Variables
 
@@ -1701,43 +1701,43 @@ The options related to the [LOCALES](../../../reference/data-types/string-data-t
 
 ### Information Schema Plugin - `METADATA_LOCK_INFO`
 
-The options related to the [METADATA_LOCK_INFO](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/metadata-lock-info-plugin.md).
+The options related to the [METADATA\_LOCK\_INFO](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/metadata-lock-info-plugin.md).
 
 ### Information Schema Plugin - `QUERY_CACHE_INFO`
 
-The options related to the [QUERY_CACHE_INFO](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-cache-information-plugin.md#options).
+The options related to the [QUERY\_CACHE\_INFO](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-cache-information-plugin.md#options).
 
 ### Information Schema Plugin - `QUERY_RESPONSE_TIME`
 
-The system variables related to the [QUERY_RESPONSE_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#system-variables).
+The system variables related to the [QUERY\_RESPONSE\_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#system-variables).
 
-The options related to the [QUERY_RESPONSE_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
+The options related to the [QUERY\_RESPONSE\_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
 
 ### Information Schema Plugin - `user_variables`
 
-The options related to the [user_variables](../../../reference/plugins/other-plugins/user-variables-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/user-variables-plugin.md#options).
+The options related to the [user\_variables](../../../reference/plugins/other-plugins/user-variables-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/user-variables-plugin.md#options).
 
 ### Information Schema Plugin - `WSREP_MEMBERSHIP`
 
-The options related to the [WSREP_MEMBERSHIP](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md) information schema plugin can be found [here](../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
+The options related to the [WSREP\_MEMBERSHIP](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md) information schema plugin can be found [here](../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
 
 ### Information Schema Plugin - `WSREP_STATUS`
 
-The options related to the [WSREP_STATUS](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md) information schema plugin can be found [here](../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
+The options related to the [WSREP\_STATUS](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md) information schema plugin can be found [here](../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
 
 ## Replication Plugins - Options and System Variables
 
 ### Replication Plugin - `rpl_semi_sync_master`
 
-The system variables related to the [rpl_semi_sync_master](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#system-variables).
+The system variables related to the [rpl\_semi\_sync\_master](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#system-variables).
 
-The options related to the [rpl_semi_sync_master](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#options).
+The options related to the [rpl\_semi\_sync\_master](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#options).
 
 ### Replication Plugin - `rpl_semi_sync_slave`
 
-The system variables related to the [rpl_semi_sync_slave](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#system-variables).
+The system variables related to the [rpl\_semi\_sync\_slave](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#system-variables).
 
-The options related to the [rpl_semi_sync_slave](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#options).
+The options related to the [rpl\_semi\_sync\_slave](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#options).
 
 ## Default Values
 

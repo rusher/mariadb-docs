@@ -32,4 +32,6 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2016-07-25 23:01:24 +0200
   * The testcase for [ODBC-47](https://jira.mariadb.org/browse/ODBC-47)(The bug itself has been fixed in the Connector/C)
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

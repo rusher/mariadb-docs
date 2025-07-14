@@ -2,17 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 GOTO label
 ```
 
 ## Description
 
-The `GOTO` statement causes the code to jump to the specified label, and continue operating from there. It is only accepted when in [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/programmatic-compound-statements/broken-reference/README.md).
+The `GOTO` statement causes the code to jump to the specified label, and continue operating from there. It is only accepted when in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
 
 ## Example
 
-```
+```sql
 SET sql_mode=ORACLE;
 
 DELIMITER //

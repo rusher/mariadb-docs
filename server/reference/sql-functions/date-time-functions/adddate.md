@@ -1,31 +1,20 @@
-
 # ADDDATE
 
 ## Syntax
 
-
-```
+```sql
 ADDDATE(date,INTERVAL expr unit), ADDDATE(expr,days)
 ```
 
 ## Description
 
+When invoked with the `INTERVAL` form of the second argument, `ADDDATE()` is a synonym for [DATE\_ADD()](date_add.md). The related function[SUBDATE()](subdate.md) is a synonym for [DATE\_SUB()](date_sub.md). For information on the `INTERVAL` unit argument, see the discussion for[DATE\_ADD()](date_add.md).
 
-When invoked with the `INTERVAL` form of the second argument, `ADDDATE()`
-is a synonym for [DATE_ADD()](date_add.md). The related function
-[SUBDATE()](subdate.md) is a synonym for [DATE_SUB()](date_sub.md). For
-information on the `INTERVAL` unit argument, see the discussion for
-[DATE_ADD()](date_add.md).
-
-
-When invoked with the days form of the second argument, MariaDB treats it as an
-integer number of days to be added to *expr*.
-
+When invoked with the days form of the second argument, MariaDB treats it as an integer number of days to be added to _expr_.
 
 ## Examples
 
-
-```
+```sql
 SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);
 +-----------------------------------------+
 | DATE_ADD('2008-01-02', INTERVAL 31 DAY) |
@@ -41,7 +30,7 @@ SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);
 +----------------------------------------+
 ```
 
-```
+```sql
 SELECT ADDDATE('2008-01-02', 31);
 +---------------------------+
 | ADDDATE('2008-01-02', 31) |
@@ -50,7 +39,7 @@ SELECT ADDDATE('2008-01-02', 31);
 +---------------------------+
 ```
 
-```
+```sql
 CREATE TABLE t1 (d DATETIME);
 INSERT INTO t1 VALUES
     ("2007-01-30 21:31:07"),
@@ -61,7 +50,7 @@ INSERT INTO t1 VALUES
     ("2004-10-07 11:19:34");
 ```
 
-```
+```sql
 SELECT d, ADDDATE(d, 10) from t1;
 +---------------------+---------------------+
 | d                   | ADDDATE(d, 10)      |
@@ -87,8 +76,6 @@ SELECT d, ADDDATE(d, INTERVAL 10 HOUR) from t1;
 +---------------------+------------------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

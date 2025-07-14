@@ -17,14 +17,14 @@ Sargable means that the optimizer is able to use such conditions to construct ac
 
 ```sql
 CREATE TABLE t1 (
-  key1 varchar(32) collate utf8mb4_general_ci,
+  key1 VARCHAR(32) COLLATE utf8mb4_general_ci,
   ...
-  key(key1)
+  KEY(key1)
 );
 ```
 
 ```sql
-EXPLAIN SELECT * from t1 where UPPER(key1)='ABC'
+EXPLAIN SELECT * FROM t1 WHERE UPPER(key1)='ABC'
 +------+-------------+-------+------+---------------+------+---------+-------+------+--------------------------+
 | id   | select_type | table | type | possible_keys | key  | key_len | ref   | rows | Extra                    |
 +------+-------------+-------+------+---------------+------+---------+-------+------+--------------------------+
@@ -37,7 +37,7 @@ Note that `ref` access is used.
 An example with join:
 
 ```sql
-EXPLAIN SELECT * from t0,t1 where upper(t1.key1)=t0.col;
+EXPLAIN SELECT * FROM t0,t1 WHERE upper(t1.key1)=t0.col;
 +------+-------------+-------+------+---------------+------+---------+-------------+------+-------------+
 | id   | select_type | table | type | possible_keys | key  | key_len | ref         | rows | Extra       |
 +------+-------------+-------+------+---------------+------+---------+-------------+------+-------------+

@@ -16,7 +16,7 @@ Note that if you are using [MariaDB Galera Cluster](https://app.gitbook.com/o/di
 ## Requirements for Doing an Upgrade Between Major Versions
 
 * Go through the individual version upgrade notes (listed below) to look for any major changes or configuration options that have changed.
-* Ensure that the target MariaDB version supports the storage engines you are using. For example, in 10.5 [TokuDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/tokudb/README.md) is not supported.
+* Ensure that the target MariaDB version supports the storage engines you are using. For example, in 10.5 [TokuDB](../../../server-usage/storage-engines/tokudb/) is not supported.
 * Back up the database (just in case). At least, take a copy of the `mysql` system database directory under the data directory with [mariadb-dump --add-drop-table mysql](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (called mysqldump in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and earlier) as most of the upgrade changes are done there (adding new fields and new system tables etc).
 * Cleanly shutdown the server. This is necessary because even if data files are compatible between versions, recovery logs may not be.
   * Ensure that the [innodb\_fast\_shutdown](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
@@ -27,7 +27,7 @@ Note that rpms don't support upgrading between major versions, only minor like 1
 ## Recommended Steps
 
 * If you have a [primary-replica setup](../../../ha-and-performance/standard-replication/), first upgrade one replica and when you have verified that the replica works well, upgrade the rest of the replicas (if any). Then [upgrade one replica to primary](../../../ha-and-performance/standard-replication/changing-a-replica-to-become-the-primary.md), upgrade the primary, and change the replica to a primary.
-* If you don't have a primary-replica setup, then [take a backup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/), [shutdown MariaDB](../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md) and do the upgrade.
+* If you don't have a primary-replica setup, then [take a backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/), [shutdown MariaDB](../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md) and do the upgrade.
 
 ### Step by Step Instructions for Upgrades
 
@@ -51,7 +51,7 @@ The common warnings/errors are:
 
 * Using obsolete options. If this is the case, remove them from your [my.cnf files](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 * Check the manual for [new features](./) that have been added since your last MariaDB version.
-* Test that your application works as before. The main difference from before is that because of optimizer improvements your application should work better than before, but in some rare cases the optimizer may get something wrong. In this case, you can try to use [explain](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md), [optimizer trace](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/upgrading/broken-reference/README.md) or [optimizer\_switch](../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) to fix the queries.
+* Test that your application works as before. The main difference from before is that because of optimizer improvements your application should work better than before, but in some rare cases the optimizer may get something wrong. In this case, you can try to use [explain](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md), [optimizer trace](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace) or [optimizer\_switch](../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) to fix the queries.
 
 ## If Something Goes Wrong
 
@@ -75,7 +75,7 @@ In the unlikely event something goes wrong, you can try the following:
 
 ## Downgrading
 
-MariaDB server is not designed for downgrading. That said, in most cases, as long as you haven't run any [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) or [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statements and you have a [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) of your old `mysql` database , you should be able to downgrade to your previous version by doing the following:
+MariaDB server is not designed for downgrading. That said, in most cases, as long as you haven't run any [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) or [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statements and you have a [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) of your old `mysql` database , you should be able to downgrade to your previous version by doing the following:
 
 * Do a clean shutdown. For this special case you have to set [innodb\_fast\_shutdown](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) to 0,before taking down the new MariaDB server, to ensure there are no redo or undo logs that need to be applied on the downgraded server.
 * Delete the tables in the `mysql` database (if you didn't use the option `--add-drop-table` to [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md))

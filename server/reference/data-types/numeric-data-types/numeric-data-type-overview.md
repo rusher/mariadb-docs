@@ -2,17 +2,17 @@
 
 There are a number of numeric data types:
 
-* [TINYINT](tinyint.md)
 * [BOOLEAN](boolean.md) - Synonym for TINYINT(1)
 * [INT1](int1.md) - Synonym for TINYINT
-* [SMALLINT](smallint.md)
 * [INT2](int2.md) - Synonym for SMALLINT
-* [MEDIUMINT](mediumint.md)
 * [INT3](int3.md) - Synonym for MEDIUMINT
 * [INT](int.md), INTEGER
 * [INT4](int4.md) - Synonym for INT
-* [BIGINT](bigint.md)
 * [INT8](int8.md) - Synonym for BIGINT
+* [TINYINT](tinyint.md)
+* [SMALLINT](smallint.md)
+* [MEDIUMINT](mediumint.md)
+* [BIGINT](bigint.md)
 * [DECIMAL](decimal.md), DEC, NUMERIC, FIXED
 * [FLOAT](float.md)
 * [DOUBLE](double.md), DOUBLE PRECISION, REAL
@@ -25,24 +25,19 @@ See the specific articles for detailed information on each.
 
 Most numeric types can be defined as `SIGNED`, `UNSIGNED` or `ZEROFILL`, for example:
 
-```
+```sql
 TINYINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
-If `SIGNED`, or no attribute, is specified, a portion of the numeric type will be reserved for the sign (plus or minus). For example, a TINYINT SIGNED can range from -128 to 127.
+If `SIGNED`, or no attribute, is specified, a portion of the numeric type will be reserved for the sign (plus or minus). For example, a `TINYINT SIGNED` can range from -128 to 127.
 
-If `UNSIGNED` is specified, no portion of the numeric type is reserved for the sign, so for integer types range can be larger. For example, a TINYINT UNSIGNED can range from 0 to 255. Floating point and fixed-point types also can be `UNSIGNED`, but this only prevents negative values from being stored and doesn't alter the range.
+If `UNSIGNED` is specified, no portion of the numeric type is reserved for the sign, so for integer types range can be larger. For example, a `TINYINT UNSIGNED` can range from 0 to 255. Floating point and fixed-point types also can be `UNSIGNED`, but this only prevents negative values from being stored and doesn't alter the range.
 
-If `ZEROFILL` is specified, the column will be set to UNSIGNED and the spaces used by default to pad the field are replaced with zeros. `ZEROFILL` is ignored in expressions or as part of a [UNION](../../sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md). `ZEROFILL` is a non-standard MySQL and MariaDB enhancement.
+If `ZEROFILL` is specified, the column will be set to `UNSIGNED` and the spaces used by default to pad the field are replaced with zeros. `ZEROFILL` is ignored in expressions or as part of a [UNION](../../sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md). `ZEROFILL` is a non-standard MySQL and MariaDB enhancement.
 
 Note that although the preferred syntax indicates that the attributes are exclusive, more than one attribute can be specified.
 
-Until [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes) ([MDEV-8659](https://jira.mariadb.org/browse/MDEV-8659)), any combination of the attributes could be used in any order, with duplicates. In this case:
-
-* the presence of `ZEROFILL` makes the column `UNSIGNED ZEROFILL`.
-* the presence of `UNSIGNED` makes the column `UNSIGNED`.
-
-From [MariaDB 10.2.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1028-release-notes), only the following combinations are supported:
+Only the following combinations are supported:
 
 * `SIGNED`
 * `UNSIGNED`
@@ -54,7 +49,7 @@ The latter two should be replaced with simply `ZEROFILL`, but are still accepted
 
 ### Examples
 
-```
+```sql
 CREATE TABLE zf (
   i1 TINYINT SIGNED,
   i2 TINYINT UNSIGNED,
@@ -75,15 +70,15 @@ SELECT * FROM zf;
 
 When attempting to add a value that is out of the valid range for the numeric type, MariaDB will react depending on the [strict SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) setting.
 
-If [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has been set (the default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)), MariaDB will return an error.
+If [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has been set (the default), MariaDB will return an error.
 
-If [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has not been set (the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)), MariaDB will adjust the number to fit in the field, returning a warning.
+If [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has not been set, MariaDB will adjust the number to fit in the field, returning a warning.
 
 ### Examples
 
-With strict\_mode set:
+With `strict_mode` set:
 
-```
+```sql
 SHOW VARIABLES LIKE 'sql_mode';
 +---------------+-------------------------------------------------------------------------------------------+
 | Variable_name | Value                                                                                     |
@@ -100,9 +95,9 @@ SELECT * FROM ranges;
 Empty set (0.10 sec)
 ```
 
-With strict\_mode unset:
+With `strict_mode` unset:
 
-```
+```sql
 SHOW VARIABLES LIKE 'sql_mode%';
 +---------------+-------+
 | Variable_name | Value |
@@ -132,7 +127,7 @@ SELECT * FROM ranges;
 +------+------+------+
 ```
 
-## Auto\_increment
+## AUTO\_INCREMENT
 
 The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. For more details, see [auto\_increment](../auto_increment.md).
 

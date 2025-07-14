@@ -1,8 +1,6 @@
-
 # MariaDB for DirectAdmin Using RPMs
 
 If you are using DirectAdmin and you encounter any issues with [Installing MariaDB with YUM](yum.md), then the directions below may help. The process is very straightforward.
-
 
 **Note:** Installing with YUM is preferable to installing the MariaDB RPM packages manually, so only do this if you are having issues such as:
 
@@ -14,6 +12,7 @@ Starting httpd:
       Cannot load /usr/lib/apache/libphp5.so into server:
         libmysqlclient.so.18: cannot open shared object file: No such file or directory
 ```
+
 Or:
 
 ```
@@ -25,25 +24,18 @@ Starting httpd:
         /usr/lib/apache/libphp5.so: undefined symbol: client_errors
 ```
 
-
 ## RPM Installation
-
 
 To install the RPMs, there is a quick and easy guide to [Installing MariaDB with the RPM Tool](installing-mariadb-with-the-rpm-tool.md). Follow the instructions there.
 
-
 ## Necessary Edits
 
-
-We do not want DirectAdmin's custombuild to remove/overwrite our MariaDB
+We do not want DirectAdmin's custombuild to remove/overwrite our MariaDB\
 installation whenever an update is performed. To rectify this, disable automatic MySQL installation.
-
 
 Edit `/usr/local/directadmin/custombuild/options.conf`
 
-
 Change:
-
 
 ```
 mysql_inst=yes
@@ -51,18 +43,14 @@ mysql_inst=yes
 
 To:
 
-
 ```
 mysql_inst=no
 ```
 
-**Note:**
-When MariaDB is installed manually (i.e. not using YUM), updates are not
+**Note:**\
+When MariaDB is installed manually (i.e. not using YUM), updates are not\
 automatic. You will need to update the RPMs yourself.
 
-
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -1,12 +1,12 @@
 # JSON\_OBJECT\_FILTER\_KEYS
 
-**MariaDB starting with** [**11.2.0**](https://mariadb.com/kb/en/mariadb-1120-release-notes/)
-
-JSON\_OBJECT\_FILTER\_KEYS was added in [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
+{% hint style="info" %}
+JSON\_OBJECT\_FILTER\_KEYS is available from MariaDB 11.2.
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 JSON_OBJECT_FILTER_KEYS(obj, array_keys)
 ```
 
@@ -16,7 +16,7 @@ JSON_OBJECT_FILTER_KEYS(obj, array_keys)
 
 ## Example
 
-```
+```sql
 SET @obj1= '{ "a": 1, "b": 2, "c": 3}';
 SET @obj2= '{"b" : 10, "c": 20, "d": 30}';
 SELECT JSON_OBJECT_FILTER_KEYS (@obj1, JSON_ARRAY_INTERSECT(JSON_KEYS(@obj1), JSON_KEYS(@obj2)));

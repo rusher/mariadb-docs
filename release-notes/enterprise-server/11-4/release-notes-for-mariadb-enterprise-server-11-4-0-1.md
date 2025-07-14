@@ -42,7 +42,7 @@ CREATE TABLE myVectorSearch (
 Example:
 
 ```sql
-select hex(vec_fromtext('[1,2,3]'));
+SELECT hex(vec_fromtext('[1,2,3]'));
 ```
 
 ```
@@ -157,7 +157,7 @@ In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5Wsb
 
 Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see [MariaDB Corporation Engineering Policies".](https://mariadb.com/engineering-policies)
 
-## IInstallation Instructions
+## Installation Instructions
 
 [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
 
@@ -169,6 +169,8 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 
 [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrades/upgrade-to-mariadb-enterprise-server-11.4)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -26,10 +26,10 @@ and restart the server.
 Check if the column family actually uses the bloom filter:
 
 ```sql
-select * 
-from information_schema.rocksdb_cf_options 
-where 
-  cf_name='cf1' and
+SELECT * 
+FROM information_schema.rocksdb_cf_options 
+WHERE 
+  cf_name='cf1' AND
   option_type IN ('TABLE_FACTORY::FILTER_POLICY','PREFIX_EXTRACTOR');
 ```
 
@@ -47,7 +47,7 @@ where
 Watch these status variables:
 
 ```sql
-show status like '%bloom%';
+SHOW status LIKE '%bloom%';
 +-------------------------------------+-------+
 | Variable_name                       | Value |
 +-------------------------------------+-------+

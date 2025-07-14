@@ -73,20 +73,20 @@ this process, you may crash the server.
 ### Examples
 
 ```sql
-CREATE FUNCTION jsoncontains_path RETURNS integer SONAME 'ha_connect.so';
+CREATE FUNCTION jsoncontains_path RETURNS INTEGER SONAME 'ha_connect.so';
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 OR REPLACE and IF NOT EXISTS:
 
 ```sql
-CREATE FUNCTION jsoncontains_path RETURNS integer SONAME 'ha_connect.so';
+CREATE FUNCTION jsoncontains_path RETURNS INTEGER SONAME 'ha_connect.so';
 ERROR 1125 (HY000): Function 'jsoncontains_path' already exists
 
-CREATE OR REPLACE FUNCTION jsoncontains_path RETURNS integer SONAME 'ha_connect.so';
+CREATE OR REPLACE FUNCTION jsoncontains_path RETURNS INTEGER SONAME 'ha_connect.so';
 Query OK, 0 rows affected (0.00 sec)
 
-CREATE FUNCTION IF NOT EXISTS jsoncontains_path RETURNS integer SONAME 'ha_connect.so';
+CREATE FUNCTION IF NOT EXISTS jsoncontains_path RETURNS INTEGER SONAME 'ha_connect.so';
 Query OK, 0 rows affected, 1 warning (0.00 sec)
 
 SHOW WARNINGS;

@@ -13,7 +13,6 @@ In addition to MariaDB Server [reserved words](https://app.gitbook.com/s/SsmexDF
 
 | Keyword         |
 | --------------- |
-| Keyword         |
 | ACTION          |
 | ADD             |
 | ALTER           |

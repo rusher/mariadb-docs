@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/cve.org) link) | CVSS base score |
 | [CVE-2021-2022](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2022)                                                                                                 | 4.4             |
 
 ## Notable Changes
@@ -51,7 +50,7 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 * [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) can fail with privilege error when [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) privilege exists at database level but [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) privilege exists at table level. ([MDEV-23010](https://jira.mariadb.org/browse/MDEV-23010))
 * Latency and throughput regression identified in write-heavy benchmarks for latest releases in MariaDB Server 10.2, 10.3, and 10.4. (MENT-909)
 * `START SLAVE UNTIL .. file ..` pos stops at an earlier position earlier than defined if the transaction that spans over the given stop position has to roll back due to conflicts. ([MDEV-15152](https://jira.mariadb.org/browse/MDEV-15152))
-* `mariabackup` [--prepare](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) does not stop on errors while applying [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) redo log. ([MDEV-22354](https://jira.mariadb.org/browse/MDEV-22354))
+* `mariadb-backup` [--prepare](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) does not stop on errors while applying [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) redo log. ([MDEV-22354](https://jira.mariadb.org/browse/MDEV-22354))
 * Point in time recovery of binary log fails with syntax error when [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode). ([MDEV-23108](https://jira.mariadb.org/browse/MDEV-23108))
 * Replication aborts with [ER\_SLAVE\_CONVERSION\_FAILED](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) upon `CREATE .. SELECT` when [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode). ([MDEV-19632](https://jira.mariadb.org/browse/MDEV-19632))
 * Regression in Audit Plugin Performance. (MENT-700)
@@ -63,7 +62,7 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 
 ## Interface Changes
 
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--tls-version](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) command-line option added
+* [mariadb-backup](broken-reference) [--tls-version](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) command-line option added
 * [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) system variable minimum value changed from 4 to 8
 * [mysql\_upgrade --tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) command-line option added
 * [mysql --tls-version](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) command-line option added

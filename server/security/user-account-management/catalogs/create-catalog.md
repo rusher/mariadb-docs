@@ -1,6 +1,6 @@
 # CREATE CATALOG
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120)
+**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
 
 Catalog support is planned for 12.0.
 
@@ -30,7 +30,7 @@ Note that no users are created.
 CREATE catalog cat1;
 USE catalog cat1;
 CREATE USER root@localhost;
-GRANT all privileges on *.* to root@localhost;
+GRANT ALL privileges ON *.* TO root@localhost;
 CREATE DATABASE test;
 ```
 

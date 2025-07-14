@@ -10,7 +10,6 @@ MariaDB Enterprise Server 10.3.20-4 was released on 2019-11-18.
 
 | CVE (with cve.org link)                                                       | CVSS base score |
 | ----------------------------------------------------------------------------- | --------------- |
-| CVE (with cve.org link)                                                       | CVSS base score |
 | [CVE-2020-2780](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2780) | 6.5             |
 | [CVE-2019-2974](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2974) | 6.5             |
 | [CVE-2019-2938](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2938) | 4.4             |
@@ -24,11 +23,11 @@ MariaDB Enterprise Server 10.3.20-4 was released on 2019-11-18.
 
 #### Can result in data loss
 
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-prepare) [--export](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-export) ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703)) Conditions which must be present to trigger this bug:
-  * mariabackup is executed on the MariaDB Server host, and
+* [mariadb-backup](broken-reference) [--prepare](broken-reference) [--export](broken-reference) ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703)) Conditions which must be present to trigger this bug:
+  * mariadb-backup is executed on the MariaDB Server host, and
   * Configuration files from the master are used, and
   * Configuration files enable binary logging
-* If unable to upgrade to MariaDB Enterprise Server 10.3.20-4, where this bug is fixed, a workaround is available: use the `--defaults` option to [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) to avoid the bug-triggering conditions by specifying a different configuration file.
+* If unable to upgrade to MariaDB Enterprise Server 10.3.20-4, where this bug is fixed, a workaround is available: use the `--defaults` option to [mariadb-backup](broken-reference) to avoid the bug-triggering conditions by specifying a different configuration file.
 
 #### Can result in a hang or crash
 
@@ -55,7 +54,7 @@ MariaDB Enterprise Server 10.3.20-4 was released on 2019-11-18.
 
 ## index on [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) tables can fail to return some data. ([MDEV-19073](https://jira.mariadb.org/browse/MDEV-19073))\`
 
-* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) and MariaDB Backup, when using `mbstream`, recreated `xtrabackup_info` in the same directory as the backup file. Repeated extract of the backup could fail. ([MDEV-18438](https://jira.mariadb.org/browse/MDEV-18438))
+* [MariaDB Enterprise Backup](broken-reference) and MariaDB Backup, when using `mbstream`, recreated `xtrabackup_info` in the same directory as the backup file. Repeated extract of the backup could fail. ([MDEV-18438](https://jira.mariadb.org/browse/MDEV-18438))
 * `mysqld_multi.sh` script could not be launched and returned a syntax error. (MENT-433)
 * Though not supported on Microsoft Windows, the server\_audit\_output\_type system variable for the Audit plugin accepted a SYSLOG value. ([MDEV-19851](https://jira.mariadb.org/browse/MDEV-19851))
 * `FOREIGN KEY` constraints have been ignored during DELETE when parent table is [System-Versioned](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables). ([MDEV-16210](https://jira.mariadb.org/browse/MDEV-16210))

@@ -10,7 +10,6 @@ After converting to second normal form, the following table structure was achiev
 
 | Plant location table |
 | --- |
-| Plant location table |
 | Plant code |
 | Location code |
 
@@ -19,7 +18,6 @@ After converting to second normal form, the following table structure was achiev
 
 | Plant table |
 | --- |
-| Plant table |
 | Plant code |
 | Plant name |
 | Soil category |
@@ -30,7 +28,6 @@ After converting to second normal form, the following table structure was achiev
 
 | Location table |
 | --- |
-| Location table |
 | Location code |
 | Location name |
 
@@ -61,7 +58,6 @@ However, *soil description* is dependent on *soil category*. You use the same pr
 
 | Plant location table |
 | --- |
-| Plant location table |
 | Plant code |
 | Location code |
 
@@ -73,7 +69,6 @@ However, *soil description* is dependent on *soil category*. You use the same pr
 
 | Plant table |
 | --- |
-| Plant table |
 | Plant code |
 | Plant name |
 | Soil category |
@@ -86,7 +81,6 @@ However, *soil description* is dependent on *soil category*. You use the same pr
 
 | Soil table |
 | --- |
-| Soil table |
 | Soil category |
 | Soil description |
 
@@ -98,7 +92,6 @@ However, *soil description* is dependent on *soil category*. You use the same pr
 
 | Location table |
 | --- |
-| Location table |
 | Location code |
 | Location name |
 

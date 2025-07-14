@@ -1,8 +1,8 @@
 # MariaDB Connector/Node.js 3.0.1 Changelog
 
-The most recent [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-0-1-release-notes.md)[Changelog](mariadb-connector-nodejs-301-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-0-1-release-notes.md) | [Changelog](mariadb-connector-nodejs-301-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 26 Jul 2022
 
@@ -86,5 +86,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #b9d008a](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/b9d008a) - Merge branch 'release/3.0.0-main'
 * [Revision #42cafe5](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/42cafe5) - Update pool-base.js
 * [Revision #6e78dde](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/6e78dde) - Update pool-base.js
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

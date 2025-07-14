@@ -16,7 +16,7 @@ The most recent release of [MariaDB 11.5](what-is-mariadb-115.md) is:[**MariaDB 
 
 * [Limit size of created disk temporary files and tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview) ([MDEV-9101](https://jira.mariadb.org/browse/MDEV-9101))
 * There are two system variables used for controlling this feature:
-  * [max\_tmp\_session\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable): Limits the the temporary space allowance per user
+  * [max\_tmp\_session\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable): Limits the temporary space allowance per user
   * [max\_tmp\_total\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_total_space_usage-system-variable): Limits the temporary space allowance for all users.
 
 ### Data Types
@@ -41,7 +41,6 @@ The most recent release of [MariaDB 11.5](what-is-mariadb-115.md) is:[**MariaDB 
 * Add [FLUSH GLOBAL STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush#flush-status) ([MDEV-33145](https://jira.mariadb.org/browse/MDEV-33145))
 * Provide [InnoDB async IO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-asynchronous-io) statistics ([MDEV-32841](https://jira.mariadb.org/browse/MDEV-32841))
   * Including a number of [status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/status-variables-added-in-mariadb-11-5).
-* Show variable deprecation for [mariadbd --help](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#-help) output ([MDEV-28671](https://jira.mariadb.org/browse/MDEV-28671))
 * Extend [Query Response Time plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/query-response-time-plugin) to be compatible with Percona server ([MDEV-33501](https://jira.mariadb.org/browse/MDEV-33501))
 
 ### [Sequences](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences)
@@ -82,11 +81,14 @@ Add listcve macro here - removed for performance reasons
 
 ## List of All [MariaDB 11.5](what-is-mariadb-115.md) Releases
 
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                   |
-| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                   |
-| 14 Aug 2024 | [MariaDB 11.5.2](mariadb-11-5-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-5-2-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md) |
-| 30 May 2024 | [MariaDB 11.5.1](mariadb-11-5-1-release-notes.md) | RC          | [Release Notes](mariadb-11-5-1-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-1-changelog.md) |
-| 18 Mar 2024 | [MariaDB 11.5.0](mariadb-11-5-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-5-0-release-notes.md) |                                                                                             |
+| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
+| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| 14 Aug 2024 | [MariaDB 11.5.2](mariadb-11-5-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-5-2-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md) |
+| 30 May 2024 | [MariaDB 11.5.1](mariadb-11-5-1-release-notes.md) | RC          | [Release Notes](mariadb-11-5-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-1-changelog.md) |
+| 18 Mar 2024 | [MariaDB 11.5.0](mariadb-11-5-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-5-0-release-notes.md) |                                                                                          |
+
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

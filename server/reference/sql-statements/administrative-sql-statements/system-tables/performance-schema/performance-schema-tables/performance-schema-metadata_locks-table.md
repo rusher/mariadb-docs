@@ -1,8 +1,8 @@
 # Performance Schema metadata\_locks Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
-The metadata\_locks table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+The metadata\_locks table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
 
 The `metadata_locks` table contains [metadata lock](../../../../transactions/metadata-locking.md) information.
 
@@ -27,7 +27,6 @@ The table contains the following columns:
 
 | Field                   | Type                | Null | Default | Description                                                                                                                                                                                                                                                                                         |
 | ----------------------- | ------------------- | ---- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field                   | Type                | Null | Default | Description                                                                                                                                                                                                                                                                                         |
 | OBJECT\_TYPE            | varchar(64)         | NO   | NULL    | Object type. One of BACKUP, COMMIT, EVENT, FUNCTION, GLOBAL, LOCKING SERVICE, PROCEDURE, SCHEMA, TABLE, TABLESPACE, TRIGGER (unused) or USER LEVEL LOCK.                                                                                                                                            |
 | OBJECT\_SCHEMA          | varchar(64)         | YES  | NULL    | Object schema.                                                                                                                                                                                                                                                                                      |
 | OBJECT\_NAME            | varchar(64)         | YES  | NULL    | Object name.                                                                                                                                                                                                                                                                                        |

@@ -90,5 +90,5 @@ SELECT COUNT(DISTINCT product_name) FROM sales_data;
 #### Further Resources:
 
 * [MariaDB ColumnStore Overview](https://mariadb.com/products/columnstore/)
-* [MariaDB documentation: MariaDB ColumnStore](https://mariadb.com/kb/en/mariadb-columnstore/)
+* [MariaDB documentation: MariaDB ColumnStore](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/)
 * [DigitalOcean: How to Install MariaDB ColumnStore on Ubuntu 20.04](https://www.google.com/search?q=https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-columnstore-on-ubuntu-20-04\&authuser=1)

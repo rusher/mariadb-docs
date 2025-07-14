@@ -79,9 +79,9 @@ details of the revision and view diffs of the code modified in that revision.
   2019-01-18 20:50:13 +0900
   * Don't install pdb files for Release build
 * [Revision #cb08739](https://github.com/mariadb-corporation/mariadb-connector-c/commit/cb08739)\
-  2019-02-03 16:28:38 +0100
-  *
-    * Changed return code for mysql\_optionv/mysql\_get\_optionv to 1 (was -1) and added CR\_NOT\_IMPLEMENTED error message. if a options is unknown or not supported. This will fix possible error when setting connection attributes. Kudos to Coray Hickey for providing this patch!
+  2019-02-03 16:28:38 +0100\
+  \*
+  * Changed return code for mysql\_optionv/mysql\_get\_optionv to 1 (was -1) and added CR\_NOT\_IMPLEMENTED error message. if a options is unknown or not supported. This will fix possible error when setting connection attributes. Kudos to Coray Hickey for providing this patch!
 * [Revision #4964fae](https://github.com/mariadb-corporation/mariadb-connector-c/commit/4964fae)\
   2019-01-25 08:13:57 +0100
   * Fix for [CONC-271](https://jira.mariadb.org/browse/CONC-271):
@@ -109,5 +109,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #2fcebab](https://github.com/mariadb-corporation/mariadb-connector-c/commit/2fcebab)\
   2019-01-11 19:11:24 +0100
   * Fix CMake warning CMP0077
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

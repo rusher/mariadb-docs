@@ -20,7 +20,7 @@ Please read and understand this procedure before executing.
 
 ## Support
 
-Customers can obtain support by [submitting a support case](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage/broken-reference/README.md).
+Customers can obtain support by [submitting a support case](https://mariadb.com/support/).
 
 ## Components
 

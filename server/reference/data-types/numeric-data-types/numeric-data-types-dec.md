@@ -4,17 +4,17 @@ See [DECIMAL](https://github.com/mariadb-corporation/docs-server/blob/test/serve
 
 ## EXAMPLES
 
-```
+```sql
 CREATE TABLE dec_example (
   example DEC
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE dec_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: dec_example
 Create Table: CREATE TABLE `dec_example` (

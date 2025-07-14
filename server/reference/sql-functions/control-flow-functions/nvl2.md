@@ -1,24 +1,18 @@
-
 # NVL2
 
 ## Syntax
 
-
-```
+```sql
 NVL2(expr1,expr2,expr3)
 ```
 
-
 ## Description
 
-
-The `NVL2` function returns a value based on whether a specified expression is NULL or not. If *expr1* is not NULL, then NVL2 returns *expr2*. If *expr1* is NULL, then NVL2 returns *expr3*.
-
+The `NVL2` function returns a value based on whether a specified expression is `NULL` or not. If _expr1_ is not `NULL`, then `NVL2` returns _expr2_. If _expr1_ is `NULL`, then `NVL2` returns _expr3_.
 
 ## Examples
 
-
-```
+```sql
 SELECT NVL2(NULL,1,2);
 +----------------+
 | NVL2(NULL,1,2) |
@@ -36,11 +30,8 @@ SELECT NVL2('x',1,2);
 
 ## See Also
 
-
 * [IFNULL (or NVL)](ifnull.md)
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -1,16 +1,5 @@
 ---
 description: 'Quickstart Guide: Installing MariaDB Server'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Installing MariaDB Server Guide
@@ -114,7 +103,7 @@ For Windows, MariaDB provides an `.msi` installer for a straightforward graphica
 #### Additional Resources:
 
 * [Get Started with MariaDB](https://mariadb.com/get-started-with-mariadb/)
-* [How To Install MariaDB on Ubuntu 20.04 - DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04-quickstart)
+* [How To Install MariaDB on Ubuntu 22.04 - DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-22-04)
 * [Install MariaDB - MariaDBTutorial.com](https://www.mariadbtutorial.com/getting-started/install-mariadb/)
 
 {% @marketo/form formId="4316" %}

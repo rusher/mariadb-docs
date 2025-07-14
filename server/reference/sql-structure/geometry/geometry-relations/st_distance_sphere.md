@@ -17,8 +17,8 @@ Returns the spherical distance in meters between two geometries (point or multip
 ## Example
 
 ```sql
-set @zenica   = ST_GeomFromText('POINT(17.907743 44.203438)');
-set @sarajevo = ST_GeomFromText('POINT(18.413076 43.856258)');
+SET @zenica   = ST_GeomFromText('POINT(17.907743 44.203438)');
+SET @sarajevo = ST_GeomFromText('POINT(18.413076 43.856258)');
 SELECT ST_Distance_Sphere(@zenica, @sarajevo);
 +----------------------------------------+
 | ST_Distance_Sphere(@zenica, @sarajevo) |

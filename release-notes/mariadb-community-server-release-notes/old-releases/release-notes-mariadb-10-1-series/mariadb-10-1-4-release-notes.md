@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.4)[Release Notes](mariadb-10-1-4-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10-1-4-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.4)[Release Notes](mariadb-10-1-4-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10-1-4-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 13 Apr 2015
 
@@ -26,7 +26,7 @@ Thanks, and enjoy MariaDB!
   * The command-line option [innodb-encrypt-tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) can take the value of `FORCE`. In this case XtraDB/InnoDB will refuse to create unencrypted tables (`CREATE TABLE ... ENCRYPTED=NO` will fail).
   * XtraDB/InnoDB on disk format for encrypted tablespaces and logs was changed. Tables encrypted in 10.1.3 may fail to open.
   * Key management plugins were renamed not to have “plugin” in the name, for example, “file\_key\_management\_plugin” is now “file\_key\_management”.
-  * “Key management plugin” type was expanded and renamed to match the new broader set of responsibilities. It is now called [encryption plugin](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/broken-reference/README.md).
+  * “Key management plugin” type was expanded and renamed to match the new broader set of responsibilities. It is now called [encryption plugin](https://mariadb.com/docs/release-notes/enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins).
 * Command-line option `innodb-scrub-log-interval` was renamed to [innodb-scrub-log-speed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables) and now sets the log scrubbing speed in bytes per second.
 * Command-line option `innodb-scrub-force-testing` was renamed to `innodb-debug-force-scrubbing`.
 * Consistent support for `IF EXISTS`, `IF NOT EXISTS`, and `OR REPLACE` clauses was added to:
@@ -47,12 +47,10 @@ Thanks, and enjoy MariaDB!
 Repositories exist for 10.1, but because 10.1 is still Beta, they are not visible in the [repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/). To configure a 10.1 apt, yum, or zypper repository using the tool, simply select 10.0 and then when executing the instructions, manually change all occurrences of '10.0' to '10.1'.
 
 For a complete list of changes made in [MariaDB 10.1.4](mariadb-10-1-4-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10-1-4-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10-1-4-changelog.md).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

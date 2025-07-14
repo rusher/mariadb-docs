@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 **Release date:** 26 Apr 2016
 
 For the highlights of this release, see the[release notes](../mariadb-galera-55-release-notes/mariadb-galera-cluster-5549-release-notes.md). For changes in\
-MariaDB, see the [MariaDB 5.5.49 Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5549-changelog.md).
+MariaDB, see the [MariaDB 5.5.49 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5549-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
@@ -20,5 +20,9 @@ modified in that revision.
 * [Revision #9c89b84](https://github.com/MariaDB/server/commit/9c89b84)\
   2016-03-18 11:27:32 -0400
   * [MDEV-9401](https://jira.mariadb.org/browse/MDEV-9401): wsrep\_forced\_binlog\_format with binlog causes crash
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

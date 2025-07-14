@@ -1,8 +1,8 @@
 # Using the S3 Storage Engine
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
-The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1054-release-notes).
+The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1054-release-notes).
 
 The [S3 storage engine](./) is read only and allows one to archive MariaDB\
 tables in Amazon S3, or any third-party public or private cloud that\
@@ -11,7 +11,7 @@ accessible for reading in MariaDB.
 
 ## Installing the Plugin
 
-As of [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1057-release-notes), the S3 storage engine is currently [gamma maturity](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria), so the following step can be omitted.
+As of [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), the S3 storage engine is currently [gamma maturity](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria), so the following step can be omitted.
 
 On earlier releases, when it was [alpha maturity](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria), it will not load by default on a stable release of the server due to the default value of the [plugin\_maturity](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity) variable. Set to `alpha` (or below) in your config file to permit installation of the plugin:
 
@@ -68,12 +68,12 @@ To get data back to a 'normal' table one can do:
 ALTER TABLE s3_table ENGINE=INNODB
 ```
 
-## New Options for [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md)
+## New Options for [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/)
 
 * `S3_BLOCK_SIZE` : Set to 4M as default. This is the block size for all index and data pages stored in S3.
 * `COMPRESSION_ALGORITHM` : Set to 'none' as default. Which compression algorithm to use for block stored in S3. Options are: `none` or `zlib`.
 
-[ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) can be used on S3 tables as normal to add columns or change column definitions.
+[ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) can be used on S3 tables as normal to add columns or change column definitions.
 
 ## mariadbd Startup Options for S3
 
@@ -177,7 +177,7 @@ The main benefit of storing things in an S3 compatible storage is that the cost 
 
 ## Operations Allowed on S3 Tables
 
-* [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) S3 supports all types, keys and other options that are supported by the [Aria](../aria/aria-storage-engine.md) engine. One can also perform [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) on an S3 table to add or modify columns etc.
+* [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) S3 supports all types, keys and other options that are supported by the [Aria](../aria/aria-storage-engine.md) engine. One can also perform [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) on an S3 table to add or modify columns etc.
 * [DROP TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md)
 * [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) Any SELECT operations you can perform on a normal table should work with an S3 table.
 * [SHOW TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-tables.md) will show all tables that exist in the current defined S3 location.
@@ -196,7 +196,7 @@ and there is a local .frm file, the S3 engine will check if it's still\
 relevant, and if not, update or delete the .frm file.
 
 This means that if the table definition changes on S3 and it's in the\
-local cache, one has to execute [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) to\
+local cache, one has to execute [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to\
 get MariaDB to notice the change and update the .frm file.
 
 If partitioning S3 tables are used, the partition definitions will also be stored on S3 storage and will be discovered by other servers.
@@ -220,13 +220,13 @@ S3 works with [replication](../../../ha-and-performance/standard-replication/rep
 
 ## ANALYZE TABLE
 
-As of [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10514-release-notes), [ANALYZE TABLE](../../../reference/sql-statements/table-statements/analyze-table.md) is supported for S3 tables.\
+As of [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10514-release-notes), [ANALYZE TABLE](../../../reference/sql-statements/table-statements/analyze-table.md) is supported for S3 tables.\
 As the S3 tables are read-only, a normal `ANALYZE TABLE` will not do anything. However\
 using `ANALYZE TABLE table_name PERSISTENT FOR...` will now work.
 
 ## CHECK TABLE
 
-As of [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10514-release-notes), [CHECK TABLE](../../../reference/sql-statements/table-statements/check-table.md) will work. As S3 tables are read only\
+As of [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10514-release-notes), [CHECK TABLE](../../../reference/sql-statements/table-statements/check-table.md) will work. As S3 tables are read only\
 it is very unlikely that they can become corrupted. The only known way an S3 table could be corrupted if either the original table copied to S3 was corrupted or the process of copying the original table to S3 was somehow interrupted.
 
 ## Current Limitations
@@ -234,9 +234,9 @@ it is very unlikely that they can become corrupted. The only known way an S3 tab
 * [mysql-test-run](../../../clients-and-utilities/testing-tools/mariadb-test/) doesn't by default test the S3 engine as we can't embed AWS keys into mysql-test-run.
 * Replicas should not access S3 tables while they are ALTERed! This is because there is no locking implemented to S3 between servers. However, after a table (either the original S3 table or the partitioned S3 table) is changed on the primary, the replica will notice this on the next access and update its local definition.
 
-### Limitations in [ALTER .. PARTITION](../../../reference/sql-statements/data-definition/alter/alter-table.md)
+### Limitations in [ALTER .. PARTITION](../../../reference/sql-statements/data-definition/alter/alter-table/)
 
-All [ALTER PARTITION](../../../reference/sql-statements/data-definition/alter/alter-table.md) operations are supported on S3 partitioning tables except:
+All [ALTER PARTITION](../../../reference/sql-statements/data-definition/alter/alter-table/) operations are supported on S3 partitioning tables except:
 
 * REBUILD PARTITION
 * TRUNCATE PARTITION

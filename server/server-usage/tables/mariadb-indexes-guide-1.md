@@ -1,6 +1,6 @@
 # Indexes
 
-For a basic overview, see [The Essentials of an Index](../../mariadb-quickstart-guides/essentials-of-an-index-guide.md).
+For a basic overview, see [The Essentials of an Index](mariadb-indexes-guide-1.md).
 
 There are four main kinds of indexes; primary keys (unique and not null), unique indexes (unique and can be null), plain indexes (not necessarily unique) and full-text indexes (for full-text searching).
 
@@ -28,7 +28,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-You cannot create a primary key with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), for example:
+You cannot create a primary key with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/), for example:
 
 ```sql
 ALTER TABLE Employees ADD PRIMARY KEY(ID);
@@ -55,7 +55,7 @@ WHERE t.TABLE_SCHEMA != 'information_schema'
 
 A Unique Index must be unique, but it can have columns that may be NULL. So each key value identifies only one record, but not each record needs to be represented.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
 Unique, if index type is not specified, is normally a BTREE index that can also be used by the optimizer to find rows. If the key is longer than the max key length for the used storage engine and the storage engine supports long unique index, a HASH key will be created. This enables MariaDB to enforce uniqueness for any type or number of columns.
 
@@ -75,7 +75,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-Unique keys can also be added after the table is created with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) command, for example:
+Unique keys can also be added after the table is created with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) command, for example:
 
 ```sql
 ALTER TABLE Employees ADD UNIQUE `EmpCode`(`Employee_Code`);
@@ -94,7 +94,7 @@ Take another example:
 ```sql
 CREATE TABLE t1 (a INT NOT NULL, b INT, UNIQUE (a,b));
 
-INSERT INTO t1 values (1,1), (2,2);
+INSERT INTO t1 VALUES (1,1), (2,2);
 
 SELECT * FROM t1;
 +---+------+
@@ -108,7 +108,7 @@ SELECT * FROM t1;
 Since the index is defined as unique over both columns _a_ and _b_, the following row is valid, as while neither _a_ nor _b_ are unique on their own, the combination is unique:
 
 ```sql
-INSERT INTO t1 values (2,1);
+INSERT INTO t1 VALUES (2,1);
 
 SELECT * FROM t1;
 +---+------+
@@ -123,7 +123,7 @@ SELECT * FROM t1;
 The fact that a `UNIQUE` constraint can be `NULL` is often overlooked. In SQL any `NULL` is never equal to anything, not even to another `NULL`. Consequently, a `UNIQUE` constraint will not prevent one from storing duplicate rows if they contain null values:
 
 ```sql
-INSERT INTO t1 values (3,NULL), (3, NULL);
+INSERT INTO t1 VALUES (3,NULL), (3, NULL);
 
 SELECT * FROM t1;
 +---+------+
@@ -154,10 +154,10 @@ enforce uniqueness over a subset of rows in a table:
 
 ```sql
 CREATE TABLE Table_1 (
-  user_name varchar(10),
-  status enum('Active', 'On-Hold', 'Deleted'),
-  del char(0) as (if(status in ('Active', 'On-Hold'),'', NULL)) persistent,
-  unique(user_name,del)
+  user_name VARCHAR(10),
+  status ENUM('Active', 'ON-Hold', 'Deleted'),
+  del CHAR(0) AS (IF(status IN ('Active', 'ON-Hold'),'', NULL)) persistent,
+  UNIQUE(user_name,del)
 )
 ```
 
@@ -167,24 +167,24 @@ uniqueness constraint, and another user may get the same name.
 
 If a unique index consists of a column where trailing pad characters are stripped or ignored, inserts into that column where values differ only by the number of trailing pad characters will result in a duplicate-key error.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
 For some engines, like InnoDB, `UNIQUE` can be used with any type of columns or any number of columns.
 
 ```sql
-CREATE TABLE t1 (a int primary key,
-b blob,
-c1 varchar(1000),
-c2 varchar(1000),
-c3 varchar(1000),
-c4 varchar(1000),
-c5 varchar(1000),
-c6 varchar(1000),
-c7 varchar(1000),
-c8 varchar(1000),
-c9 varchar(1000),
-unique key `b` (b),
-unique key `all_c` (c1,c2,c3,c4,c6,c7,c8,c9)) engine=myisam;
+CREATE TABLE t1 (a INT PRIMARY KEY,
+b BLOB,
+c1 VARCHAR(1000),
+c2 VARCHAR(1000),
+c3 VARCHAR(1000),
+c4 VARCHAR(1000),
+c5 VARCHAR(1000),
+c6 VARCHAR(1000),
+c7 VARCHAR(1000),
+c8 VARCHAR(1000),
+c9 VARCHAR(1000),
+UNIQUE KEY `b` (b),
+UNIQUE KEY `all_c` (c1,c2,c3,c4,c6,c7,c8,c9)) engine=myisam;
 ```
 
 If the key length is longer than the max key length supported by the engine, a HASH key will be created.\
@@ -193,19 +193,19 @@ This can be seen with `SHOW CREATE TABLE table_name` or `SHOW INDEX FROM table_n
 ```sql
 SHOW CREATE TABLE t1\G
 *************************** 1. row ***************************
-       Table: t1
-Create Table: CREATE TABLE `t1` (
-  `a` int(11) NOT NULL,
-  `b` blob DEFAULT NULL,
-  `c1` varchar(1000) DEFAULT NULL,
-  `c2` varchar(1000) DEFAULT NULL,
-  `c3` varchar(1000) DEFAULT NULL,
-  `c4` varchar(1000) DEFAULT NULL,
-  `c5` varchar(1000) DEFAULT NULL,
-  `c6` varchar(1000) DEFAULT NULL,
-  `c7` varchar(1000) DEFAULT NULL,
-  `c8` varchar(1000) DEFAULT NULL,
-  `c9` varchar(1000) DEFAULT NULL,
+       TABLE: t1
+CREATE TABLE: CREATE TABLE `t1` (
+  `a` INT(11) NOT NULL,
+  `b` BLOB DEFAULT NULL,
+  `c1` VARCHAR(1000) DEFAULT NULL,
+  `c2` VARCHAR(1000) DEFAULT NULL,
+  `c3` VARCHAR(1000) DEFAULT NULL,
+  `c4` VARCHAR(1000) DEFAULT NULL,
+  `c5` VARCHAR(1000) DEFAULT NULL,
+  `c6` VARCHAR(1000) DEFAULT NULL,
+  `c7` VARCHAR(1000) DEFAULT NULL,
+  `c8` VARCHAR(1000) DEFAULT NULL,
+  `c9` VARCHAR(1000) DEFAULT NULL,
   PRIMARY KEY (`a`),
   UNIQUE KEY `b` (`b`) USING HASH,
   UNIQUE KEY `all_c` (`c1`,`c2`,`c3`,`c4`,`c6`,`c7`,`c8`,`c9`) USING HASH
@@ -219,7 +219,7 @@ Indexes do not necessarily need to be unique. For example:
 ```sql
 CREATE TABLE t2 (a INT NOT NULL, b INT, INDEX (a,b));
 
-INSERT INTO t2 values (1,1), (2,2), (2,2);
+INSERT INTO t2 VALUES (1,1), (2,2), (2,2);
 
 SELECT * FROM t2;
 +---+------+

@@ -1,6 +1,6 @@
 ---
-description: Table commands that have been removed from MariaDB
+description: Table commands that were removed from MariaDB.
 ---
 
-# Obsolete Table Commands
+# Obsolete Table Statements
 

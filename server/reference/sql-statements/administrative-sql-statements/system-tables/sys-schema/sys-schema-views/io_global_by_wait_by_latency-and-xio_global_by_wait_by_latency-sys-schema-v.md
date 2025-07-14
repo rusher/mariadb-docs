@@ -14,7 +14,6 @@ They contain the following columns:
 
 | Column           | Description                                                     |
 | ---------------- | --------------------------------------------------------------- |
-| Column           | Description                                                     |
 | event\_name      | I/O event name. The wait/io/file prefix is stripped.            |
 | total            | Total number of occurrences of the I/O event.                   |
 | total\_latency   | Total wait time of timed occurrences of the I/O event.          |

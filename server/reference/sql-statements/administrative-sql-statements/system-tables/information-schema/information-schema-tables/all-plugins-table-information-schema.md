@@ -8,7 +8,6 @@ It contains the following columns:
 
 | Column                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | PLUGIN\_NAME             | Name of the plugin.                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | PLUGIN\_VERSION          | Version from the plugin's general type descriptor.                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | PLUGIN\_STATUS           | Plugin status, one of ACTIVE, INACTIVE, DISABLED, DELETED or NOT INSTALLED.                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -29,7 +28,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.all_plugins\G
 *************************** 1. row ***************************
            PLUGIN_NAME: binlog

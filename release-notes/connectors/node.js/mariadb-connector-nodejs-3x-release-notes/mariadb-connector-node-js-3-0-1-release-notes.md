@@ -1,21 +1,23 @@
 # MariaDB Connector/Node.js 3.0.1 Release Notes
 
-The most recent [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector)[Release Notes](mariadb-connector-node-js-3-0-1-release-notes.md)[Changelog](../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-nodejs-301-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector) | [Release Notes](mariadb-connector-node-js-3-0-1-release-notes.md) | [Changelog](../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-nodejs-301-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 26 Jul 2022
 
 MariaDB Connector/Node.js 3.0.1 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
 
-**For an overview of MariaDB Connector/Node.js see the**[**About MariaDB Connector/Node.js**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connectornodejs/README.md) **page**
+{% hint style="success" %}
+**For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**
+{% endhint %}
 
 ## Notable Changes
 
 ### Error description improvement
 
 * Pool might return a common error ‘retrieve connection from pool timeout after XXXms’ in place of real error.\[[CONJS-200](https://jira.mariadb.org/browse/CONJS-200)]
-* Trace option now works when using pool/cluster. It is recommended to activate the trace option in development Since driver is asynchronous, enabling this option to save initial stack when calling any driver methods. This allows having the caller method and line in the error stack, permitting error easy debugging. The problem is this error stack is created using Error.captureStackTrace that is very very slow. To give an idea, this slows down by 10% a query like 'select \* from mysql.user LIMIT 1', so not recommended in production. \[[CONJS-209](https://jira.mariadb.org/browse/CONJS-209)]
+* Trace option now works when using pool/cluster. It is recommended to activate the trace option in development Since driver is asynchronous, enabling this option to save initial stack when calling any driver methods. This allows having the caller method and line in the error stack, permitting error easy debugging. The problem is this error stack is created using Error.captureStackTrace that is very slow. To give an idea, this slows down by 10% a query like 'select \* from mysql.user LIMIT 1', so not recommended in production. \[[CONJS-209](https://jira.mariadb.org/browse/CONJS-209)]
 
 ```js
 const pool = mariadb.createPool({
@@ -75,5 +77,7 @@ SqlError: (conn=-1, no: 45028, SQLState: HY000) retrieve connection from pool ti
 
 For a complete list of changes made in this release, with links to detailed information\
 on each push, see the [changelog](../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-nodejs-300-ga-changelog.md).
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

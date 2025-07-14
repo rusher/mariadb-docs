@@ -10,7 +10,6 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | EVENT_NAME | Event name. |
 | COUNT_STAR | Number of summarized events, which includes all timed and untimed events. |
 | SUM_TIMER_WAIT | Total wait time of the timed summarized events. |

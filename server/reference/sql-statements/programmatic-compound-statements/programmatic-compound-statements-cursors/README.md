@@ -1,5 +1,8 @@
 ---
-description: A cursor is a structure that allows you to go over records sequentially, and perform processing based on the result
+description: >-
+  Learn about cursors in MariaDB Server's programmatic compound statements. This
+  section details how to iterate over result sets row-by-row within stored
+  procedures and functions.
 ---
 
 # Cursors

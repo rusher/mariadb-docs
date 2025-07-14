@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column                     | Description                                                                                                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Column                     | Description                                                                                                                                                                    |
 | SPECIFIC\_CATALOG          | Always def.                                                                                                                                                                    |
 | SPECIFIC\_SCHEMA           | Database name containing the stored routine parameter.                                                                                                                         |
 | SPECIFIC\_NAME             | Stored routine name.                                                                                                                                                           |
@@ -30,7 +29,7 @@ To obtain information about the routine itself, you can query the [Information S
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.PARAMETERS
 LIMIT 1 \G
 ********************** 1. row **********************

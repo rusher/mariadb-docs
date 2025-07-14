@@ -1,8 +1,8 @@
 # aria\_s3\_copy
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
-The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1054-release-notes).
+The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1054-release-notes).
 
 `aria_s3_copy` is a tool for copying an [Aria](../aria/) table to and from [S3](./).
 
@@ -13,7 +13,7 @@ For `aria_s3_copy` to work reliably, the table should not be changed by the Mari
 Example of properly created Aria table:
 
 ```sql
-create table test1 (a int) transactional=0 row_format=PAGE engine=aria;
+CREATE TABLE test1 (a INT) transactional=0 row_format=PAGE engine=aria;
 ```
 
 Note that [ALTER TABLE table\_name ENGINE=S3](using-the-s3-storage-engine.md) will work for any kind of table. This internally converts the table to an Aria table and then moves it to S3 storage.
@@ -22,7 +22,6 @@ Note that [ALTER TABLE table\_name ENGINE=S3](using-the-s3-storage-engine.md) wi
 
 | Option                         | Description                                                                                      |
 | ------------------------------ | ------------------------------------------------------------------------------------------------ |
-| Option                         | Description                                                                                      |
 | -?, --help                     | Display this help and exit.                                                                      |
 | -k, --s3-access-key=name       | AWS access key ID                                                                                |
 | -r, --s3-region=name           | AWS region                                                                                       |

@@ -1,8 +1,8 @@
 # Testing Connections
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
-The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1054-release-notes).
+The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1054-release-notes).
 
 If you can't get the S3 storage engine to work, here are some steps to help verify where the problem could be.
 
@@ -29,9 +29,9 @@ There are several ways to ensure you get them right:
 Execute the following sql commands to create a trivial sql table:
 
 ```sql
-use test;
-create table s3_test (a int) engine=aria row_format=page transactional=0;
-insert into s3_test values (1),(2);
+USE test;
+CREATE TABLE s3_test (a INT) engine=aria row_format=page transactional=0;
+INSERT INTO s3_test VALUES (1),(2);
 flush tables s3_test;
 ```
 
@@ -107,12 +107,12 @@ One can use the `s3_debug` variable to get a trace of the S3 engines interaction
 Here follows one example on can use to get a trace if `ALTER TABLE .. ENGINE=S3` fails:
 
 ```sql
-use test;
-create table s3_test (a int) engine=aria row_format=page transactional=0;
-insert into s3_test values (1),(2);
-set @@global.s3_debug=1;
+USE test;
+CREATE TABLE s3_test (a INT) engine=aria row_format=page transactional=0;
+INSERT INTO s3_test VALUES (1),(2);
+SET @@global.s3_debug=1;
 ALTER TABLE s3_test ENGINE=S3;
-set @@global.s3_debug=0;
+SET @@global.s3_debug=0;
 ```
 
 If you have problems deciper the trace, you can always create a ticket on [MariaDB Jira](https://jira.mariadb.org/) and explain the problem you have, including any errors. Don't forget to include the trace!

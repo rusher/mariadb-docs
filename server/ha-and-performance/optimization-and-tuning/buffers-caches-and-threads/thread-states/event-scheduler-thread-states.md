@@ -6,7 +6,6 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 
 | Value                         | Description                                                                            |
 | ----------------------------- | -------------------------------------------------------------------------------------- |
-| Value                         | Description                                                                            |
 | Clearing                      | Thread is terminating.                                                                 |
 | Initialized                   | Thread has be initialized.                                                             |
 | Waiting for next activation   | The event queue contains items, but the next activation is at some time in the future. |

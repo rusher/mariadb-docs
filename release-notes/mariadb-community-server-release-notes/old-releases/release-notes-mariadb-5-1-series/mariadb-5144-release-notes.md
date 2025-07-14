@@ -2,11 +2,11 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.44) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5144-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.44) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5144-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 24 Mar 2010
 
-See the [MariaDB 5.1.44 Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5144-changelog.md) for a more detailed\
+See the [MariaDB 5.1.44 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5144-changelog.md) for a more detailed\
 list of the changes in this release.
 
 In most respects MariaDB will work exactly as MySQL: all commands, interfaces,\
@@ -46,7 +46,7 @@ Another improvement we made was to not take a mutex when accessing compiled-in\
 plugin code. (The fewer mutexes you take, the better off you are.)
 
 [MariaDB 5.1.44](mariadb-5144-release-notes.md) also includes fixes for the following bugs: [MySQL Bug #44987](https://bugs.mysql.com/bug.php?id=44987),[Bug #524025](https://bugs.launchpad.net/bugs/524025), [Bug #524679](https://bugs.launchpad.net/bugs/524679), [Bug #523593](https://bugs.launchpad.net/bugs/523593), [Bug #516148](https://bugs.launchpad.net/bugs/516148), [Bug #520243](https://bugs.launchpad.net/bugs/520243), and\
-others. See the [5.1.44 Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5144-changelog.md) for a detailed list\
+others. See the [5.1.44 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5144-changelog.md) for a detailed list\
 of the various bugs and warnings that were fixed.
 
 ## Test Suite Improvements
@@ -57,6 +57,8 @@ adding the ability to send extra commands to the server to setup the\
 environment prior to starting tests, adding new benchmark tests, and fixing\
 some tests that were failing because of time zone issues.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

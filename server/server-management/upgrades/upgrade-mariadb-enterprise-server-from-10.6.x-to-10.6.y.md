@@ -10,7 +10,7 @@ For example, it would be a minor release upgrade to upgrade from MariaDB Enterpr
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup prior to upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../server-usage/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
+The instructions below show how to perform a backup using [MariaDB Backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../server-usage/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
 
 1.  Take a full backup.
 
@@ -18,17 +18,17 @@ The instructions below show how to perform a backup using [MariaDB Backup](../..
 
     ```bash
     $ sudo mariadb-backup --backup \
-          --user=mariabackup_user \
-          --password=mariabackup_passwd \
+          --user=mariadb-backup_user \
+          --password=mariadb-backup_passwd \
           --target-dir=/data/backup/preupgrade_backup
     ```
 
     On MariaDB Enterprise Server 10.3 and earlier:
 
     ```
-    $ sudo mariabackup --backup \
-          --user=mariabackup_user \
-          --password=mariabackup_passwd \
+    $ sudo mariadb-backup --backup \
+          --user=mariadb-backup_user \
+          --password=mariadb-backup_passwd \
           --target-dir=/data/backup/preupgrade_backup
     ```
 
@@ -45,7 +45,7 @@ The instructions below show how to perform a backup using [MariaDB Backup](../..
     On MariaDB Enterprise Server 10.3 and earlier:
 
     ```bash
-    $ sudo mariabackup --prepare \
+    $ sudo mariadb-backup --prepare \
           --target-dir=/data/backup/preupgrade_backup
     ```
 

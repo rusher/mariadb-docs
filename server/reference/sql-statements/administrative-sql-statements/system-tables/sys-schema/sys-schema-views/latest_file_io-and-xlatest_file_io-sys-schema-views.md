@@ -14,7 +14,6 @@ They contain the following columns:
 
 | Column | Description                                                                                                                                          |
 | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column | Description                                                                                                                                          |
 | thread | Account associated with the thread for foreground threads (port number for TCP/IP connections), or thread name and thread ID for background threads. |
 
 |           |                                                   |

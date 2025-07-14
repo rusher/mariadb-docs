@@ -127,4 +127,6 @@ When moving from MySQL 8.0 to [MariaDB 11.4](../mariadb-community-server-release
 
 For protocol differences, see [MariaDB protocol difference with MySQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/mariadb-protocol-differences-with-mysql).
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

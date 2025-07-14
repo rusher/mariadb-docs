@@ -6,10 +6,10 @@ This article describes the different methods MariaDB provides to limit/timeout a
 
 ```sql
 SELECT ... LIMIT row_count
-or
-SELECT ... LIMIT offset, row_count
-or
-SELECT ... LIMIT row_count OFFSET offset
+OR
+SELECT ... LIMIT OFFSET, row_count
+OR
+SELECT ... LIMIT row_count OFFSET OFFSET
 ```
 
 The [LIMIT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause restricts the number of returned rows.
@@ -40,7 +40,7 @@ UPDATE tbl_name SET not_key_column=val;
 
 ```sql
 SET @@SQL_SELECT_LIMIT=1000
-SELECT * from big_table;
+SELECT * FROM big_table;
 ```
 
 The above is the same as:
@@ -56,9 +56,9 @@ any SELECT statements that probably need to examine more than`MAX_JOIN_SIZE` row
 
 ```sql
 SET @@MAX_JOIN_SIZE=1000;
-SELECT count(null_column) from big_table;
-->ERROR 1104 (42000): The SELECT would examine more than MAX_JOIN_SIZE rows; 
-  check your WHERE and use SET SQL_BIG_SELECTS=1 or SET MAX_JOIN_SIZE=# if the SELECT is okay
+SELECT count(null_column) FROM big_table;
+->ERROR 1104 (42000): The SELECT would examine more than MAX_JOIN_SIZE ROWS; 
+  CHECK your WHERE AND USE SET SQL_BIG_SELECTS=1 OR SET MAX_JOIN_SIZE=# IF the SELECT IS okay
 ```
 
 ## max\_statement\_time

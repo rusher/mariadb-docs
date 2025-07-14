@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 REGEXP_SUBSTR(subject,pattern)
 ```
 
@@ -20,7 +20,7 @@ The [default\_regex\_flags](../../../../ha-and-performance/optimization-and-tuni
 
 ## Examples
 
-```
+```sql
 SELECT REGEXP_SUBSTR('ab12cd','[0-9]+');
 -> 12
 
@@ -30,7 +30,7 @@ SELECT REGEXP_SUBSTR(
 -> https://mariadb.org
 ```
 
-```
+```sql
 SELECT REGEXP_SUBSTR('ABC','b');
 -> B
 

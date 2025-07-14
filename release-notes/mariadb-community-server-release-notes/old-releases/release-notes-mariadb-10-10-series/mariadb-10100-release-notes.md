@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.10](what-is-mariadb-1010.md) is:[**MariaDB 10.10.7**](mariadb-10-10-7-release-notes.md) **Stable (GA)** [Download Now](https://downloads.mariadb.org/mariadb/10.10.7)
 
-[Download 10.10.0](https://downloads.mariadb.org/mariadb/10.10.0)[Release Notes](mariadb-10100-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-10-series/)[Overview of 10.10](what-is-mariadb-1010.md)
+[Download 10.10.0](https://downloads.mariadb.org/mariadb/10.10.0)[Release Notes](mariadb-10100-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-10-series/)[Overview of 10.10](what-is-mariadb-1010.md)
 
 **Release date:** 23 Jun 2022
 
@@ -43,8 +43,8 @@ Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-uca14
 
 ### DDL
 
-* [ALTER ONLINE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#alter-online-table) ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329)) (not included in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/broken-reference/README.md))
-* Atomic CREATE OR REPLACE TABLE ([MDEV-25292](https://jira.mariadb.org/browse/MDEV-25292)) (not included in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/broken-reference/README.md))
+* [ALTER ONLINE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#alter-online-table) ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329) not included in [MariaDB 10.10.1](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes)
+* Atomic CREATE OR REPLACE TABLE ([MDEV-25292](https://jira.mariadb.org/browse/MDEV-25292)) (not included in [MariaDB 10.10.1](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes))
 
 Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-ddl
 
@@ -67,10 +67,8 @@ Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-misc
 For a complete list of changes made in [MariaDB 10.10.0](mariadb-10100-release-notes.md), with links to detailed\
 information on each push, see the [changelog](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10100-changelog/README.md).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

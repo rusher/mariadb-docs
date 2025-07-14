@@ -33,12 +33,16 @@ detailed information on each push, see the[MariaDB Galera Cluster 10.0.11 Change
 ## Notes
 
 * Compatibility: Wsrep providers (Galera libraries) other than version 25.x.xx are not supported.
-* See the [MariaDB 10.0.11 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/broken-reference/README.md) and[Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10011-changelog.md) for more information on the changes in\
+* See the [MariaDB 10.0.11 Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10011-release-notes) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10011-changelog.md) for more information on the changes in\
   MariaDB.
 * If Galera v2 and v3 are both being used in the cluster, MariaDB with\
   Galera v3 must be started with [wsrep\_provider\_options='socket.checksum=1'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#socketchecksum)\
   in order to make it backward compatible with Galera v2.
 
 Thanks, and enjoy MariaDB Galera Cluster!
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

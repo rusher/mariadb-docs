@@ -1,12 +1,12 @@
 # RELEASE\_ALL\_LOCKS
 
-**MariaDB until** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
-
-RELEASE\_ALL\_LOCKS was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+{% hint style="info" %}
+`RELEASE_ALL_LOCKS` is available from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 RELEASE_ALL_LOCKS()
 ```
 
@@ -18,7 +18,7 @@ Statements using the `RELEASE_ALL_LOCKS` function are [not safe for statement-ba
 
 ## Examples
 
-```
+```sql
 SELECT RELEASE_ALL_LOCKS();
 +---------------------+
 | RELEASE_ALL_LOCKS() | 

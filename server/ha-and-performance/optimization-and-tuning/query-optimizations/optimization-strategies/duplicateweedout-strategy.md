@@ -1,4 +1,4 @@
-# DuplicateWeedout Strategy
+# Duplicate Weedout Strategy
 
 `DuplicateWeedout` is an execution strategy for [Semi-join subqueries](../subquery-optimizations/semi-join-subquery-optimizations.md).
 
@@ -9,13 +9,13 @@ The idea is to run the semi-join (a query with uses `WHERE X IN (SELECT Y FROM .
 Suppose, you have a query where you're looking for countries which have more than 33% percent of their population in one big city:
 
 ```sql
-select * 
-from Country 
-where 
-   Country.code IN (select City.Country
-                    from City 
-                    where 
-                      City.Population > 0.33 * Country.Population and 
+SELECT * 
+FROM Country 
+WHERE 
+   Country.code IN (SELECT City.Country
+                    FROM City 
+                    WHERE 
+                      City.Population > 0.33 * Country.Population AND 
                       City.Population > 1*1000*1000);
 ```
 
@@ -35,31 +35,31 @@ Here one can see that a temporary table with a primary key was used to avoid pro
 The `Start temporary` and `End temporary` from the last diagram are shown in the `EXPLAIN` output:
 
 ```sql
-explain select * from Country where Country.code IN 
+EXPLAIN SELECT * FROM Country WHERE Country.code IN 
   (select City.Country from City where City.Population > 0.33 * Country.Population 
-   and City.Population > 1*1000*1000)\G
+   AND City.Population > 1*1000*1000)\G
 *************************** 1. row ***************************
            id: 1
   select_type: PRIMARY
-        table: City
-         type: range
+        TABLE: City
+         type: RANGE
 possible_keys: Population,Country
-          key: Population
+          KEY: Population
       key_len: 4
           ref: NULL
-         rows: 238
-        Extra: Using index condition; Start temporary
+         ROWS: 238
+        Extra: USING INDEX CONDITION; Start temporary
 *************************** 2. row ***************************
            id: 1
   select_type: PRIMARY
-        table: Country
+        TABLE: Country
          type: eq_ref
 possible_keys: PRIMARY
-          key: PRIMARY
+          KEY: PRIMARY
       key_len: 3
           ref: world.City.Country
-         rows: 1
-        Extra: Using where; End temporary
+         ROWS: 1
+        Extra: USING WHERE; End temporary
 2 rows in set (0.00 sec)
 ```
 
@@ -68,31 +68,31 @@ This query will read 238 rows from the `City` table, and for each of them will m
 If we run the same query with semi-join optimizations disabled, we'll get:
 
 ```sql
-explain select * from Country where Country.code IN 
+EXPLAIN SELECT * FROM Country WHERE Country.code IN 
   (select City.Country from City where City.Population > 0.33 * Country.Population 
-    and City.Population > 1*1000*1000)\G
+    AND City.Population > 1*1000*1000)\G
 *************************** 1. row ***************************
            id: 1
   select_type: PRIMARY
-        table: Country
+        TABLE: Country
          type: ALL
 possible_keys: NULL
-          key: NULL
+          KEY: NULL
       key_len: NULL
           ref: NULL
-         rows: 239
-        Extra: Using where
+         ROWS: 239
+        Extra: USING WHERE
 *************************** 2. row ***************************
            id: 2
   select_type: DEPENDENT SUBQUERY
-        table: City
+        TABLE: City
          type: index_subquery
 possible_keys: Population,Country
-          key: Country
+          KEY: Country
       key_len: 3
           ref: func
-         rows: 18
-        Extra: Using where
+         ROWS: 18
+        Extra: USING WHERE
 2 rows in set (0.00 sec)
 ```
 
@@ -108,7 +108,6 @@ This plan will read `(239 + 239*18) = 4541` rows, which is much slower.
 
 ## See Also
 
-* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/broken-reference/README.md)
 * [Subquery Optimizations Map](../subquery-optimizations/subquery-optimizations-map.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

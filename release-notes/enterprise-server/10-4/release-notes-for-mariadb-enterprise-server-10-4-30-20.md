@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.4.30-20 was released on 2023-06-13.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score                                                               |
 | [CVE-2022-47015](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-47015)                                                                                               | N/A (Medium)[#1](release-notes-for-mariadb-enterprise-server-10-4-30-20.md#1) |
 
 `#1`:\
@@ -48,7 +47,7 @@ innodb_buffer_pool_filename=SOME_FILE_PATH
 
 * When an `UPDATE` or `DELETE` is rolled back from an InnoDB table with `ROW_FORMAT=COMPRESSED`, the server can crash. ([MDEV-30882](https://jira.mariadb.org/browse/MDEV-30882))
 * When the `LEFT()` function is called on a string that has no character set defined, the server can crash. ([MDEV-30351](https://jira.mariadb.org/browse/MDEV-30351))
-* With Galera, when `wsrep_sst_method=mariabackup` is set and `encrypt=4` is enabled for State Snapshot Transfers (SSTs), SSTs can fail if the version of socat installed on the donor node is 1.7.4.0 or later. ([MDEV-30402](https://jira.mariadb.org/browse/MDEV-30402))
+* With Galera, when `wsrep_sst_method=mariadb-backup` is set and `encrypt=4` is enabled for State Snapshot Transfers (SSTs), SSTs can fail if the version of socat installed on the donor node is 1.7.4.0 or later. ([MDEV-30402](https://jira.mariadb.org/browse/MDEV-30402))
   * In previous releases, SSTs could fail with the following error in the donor node's MariaDB error log if the version of `socat` installed is 1.7.4.0 or later:`E Failed to set SNI host ""`
   * Starting with this release, when the SST script starts the socat listener on the donor node, the error is prevented by setting `no-sni=1` if the version of `socat` installed is 1.7.4.0 or later.
 * When optimizer trace is enabled, if a view is part of a multi-table update, the server can crash. ([MDEV-31085](https://jira.mariadb.org/browse/MDEV-31085))
@@ -153,7 +152,7 @@ When a view's definition contains an aggregate function in an uncorrelated subqu
 When `UNIX_TIMESTAMP(CURRENT_TIME())` is executed, the incorrect value is returned. ([MDEV-26765](https://jira.mariadb.org/browse/MDEV-26765))\
 In previous releases, `NULL` is returned.
 
-* With Galera, when `wsrep_sst_method='mariabackup'` is set, systemd raises an error about a mismatched PID. ([MDEV-25887](https://jira.mariadb.org/browse/MDEV-25887))
+* With Galera, when `wsrep_sst_method='mariadb-backup'` is set, systemd raises an error about a mismatched PID. ([MDEV-25887](https://jira.mariadb.org/browse/MDEV-25887))
   * In previous releases, systemd could raise the following error, where `BACKUP_PID` is the PID of MariaDB Enterprise Backup and SERVER\_PID is the PID of MariaDB Enterprise Server:`Got notification message from PID BACKUP_PID, but reception only permitted for main PID SERVER_PID`
 * When an `UPDATE` contains a `WHERE` clause that contains a range condition over a non-indexed VARCHAR column, an error is raised. ([MDEV-20773](https://jira.mariadb.org/browse/MDEV-20773))
   * In previous releases, an error with the `ER_DATA_TOO_LONG` error code is raised with the following error message:\
@@ -171,7 +170,7 @@ In previous releases, `NULL` is returned.
 * aria\_log\_dir\_path system variable added.
 * core\_file system variable default value changed from `None` to `OFF`
 * innodb\_buffer\_pool\_filename system variable dynamic changed from `Yes` to `No`
-* `mariabackup` --aria-log-dir-path command-line option added.
+* `mariadb-backup` --aria-log-dir-path command-line option added.
 
 ## Platforms
 
@@ -202,6 +201,6 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 * [Upgrade to MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

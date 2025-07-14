@@ -14,7 +14,7 @@ Example:
 ```sql
 SET @array1= '[1,2,3]';
 SET @array2= '[1,2,4]';
-SELECT json_array_intersect(@array1, @array2) as result;
+SELECT json_array_intersect(@array1, @array2) AS result;
 ```
 
 ```
@@ -28,7 +28,7 @@ SELECT json_array_intersect(@array1, @array2) as result;
 ```sql
 SET @json1= '[[1,2,3],[4,5,6],[1,1,1]]';
 SET @json2= '[[1,2,3],[4,5,6],[1,3,2]]';
-SELECT json_array_intersect(@json1, @json2) as result;
+SELECT json_array_intersect(@json1, @json2) AS result;
 ```
 
 ```
@@ -43,7 +43,7 @@ SELECT json_array_intersect(@json1, @json2) as result;
 
 ```sql
 SET @json1= '{ "a" : [1,2,3] , "b": {"key1": "val1", "key2": {"key3": "val3"}} }';
-SELECT JSON_OBJECT_TO_ARRAY(@json1) as result;
+SELECT JSON_OBJECT_TO_ARRAY(@json1) AS result;
 ```
 
 ```
@@ -59,9 +59,9 @@ Resulting arrays can be compared using JSON\_ARRAY\_INTERSECT():
 ```sql
 SET @json1='{"a":[1,2,3],"b":{"key1":"val1","key2":{"key3":"val3"}}}';
 SET @json2='{"a":[1,2,3]}';
-SELECT JSON_OBJECT_TO_ARRAY(@json1) into @array1;
-SELECT JSON_OBJECT_TO_ARRAY(@json2) into @array2;
-SELECT JSON_ARRAY_INTERSECT(@array1,@array2) as result;
+SELECT JSON_OBJECT_TO_ARRAY(@json1) INTO @array1;
+SELECT JSON_OBJECT_TO_ARRAY(@json2) INTO @array2;
+SELECT JSON_ARRAY_INTERSECT(@array1,@array2) AS result;
 ```
 
 ```
@@ -77,7 +77,7 @@ SELECT JSON_ARRAY_INTERSECT(@array1,@array2) as result;
 
 ```sql
 SET @json1= '{ "a": 1, "b": 2, "c": 3}';
-SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') as result;
+SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') AS result;
 ```
 
 ```
@@ -94,7 +94,7 @@ Example (only show key/value pairs of json1 where the key exists in json2):
 ```sql
 SET @json1= '{ "a": 1, "b": 2, "c": 3}';
 SET @json2= '{"b" : 10, "c": 20, "d": 30}';
-SELECT JSON_OBJECT_FILTER_KEYS (@json1, json_array_intersect(json_keys(@json1), json_keys(@json2))) as result;
+SELECT JSON_OBJECT_FILTER_KEYS (@json1, json_array_intersect(json_keys(@json1), json_keys(@json2))) AS result;
 ```
 
 ```
@@ -128,7 +128,7 @@ Example:
 SELECT jt.* FROM JSON_TABLE(
 JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]'),'$[*]'
 COLUMNS (
-k VARCHAR(20) PATH '$.key',
+k VARCHAR(20) PATH '$.KEY',
 v VARCHAR(20) PATH '$.value',
 id FOR ORDINALITY )) AS jt;
 ```
@@ -189,7 +189,7 @@ id FOR ORDINALITY )) AS jt;
     * Command-line option 'defaults-group-suffix=' cannot be used with the script mariadb-secure-installation ([MDEV-33265](https://jira.mariadb.org/browse/MDEV-33265))
     * Grouping operators referring to column aliases in unions inside derived tables can cause name resolution problems with prepared statements. ([MDEV-34506](https://jira.mariadb.org/browse/MDEV-34506))
     * Table mysql.gtid\_slave\_pos is replicated between two MariaDB Enterprise Cluster although wsrep\_gtid\_mode=OFF is set. ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))
-    * wsrep\_sst\_mariabackup is using /tmp dir during SST instead of an user defined tmpdir ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
+    * wsrep\_sst\_mariadb-backup is using /tmp dir during SST instead of an user defined tmpdir ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
     * The following misleading error message is shown with MariaDB Enterprise Cluster. Galera can mark user threads as high priority and so they can't be killed: ([MDEV-12008](https://jira.mariadb.org/browse/MDEV-12008))
 
     ```
@@ -208,14 +208,14 @@ id FOR ORDINALITY )) AS jt;
     **Related to performance**
 
     * Slower query performance on some Linux systems because of a performance difference of the system call ftruncate'() to truncate data files, as ftruncate() causes a flush. MariaDB used "ftruncate" to periodically empty its temporary tables. Query plans with Split Materialized optimization are affected the most. (MENT-2125)
-    * `ALTER TABLE ... IMPORT TABLESPACE` can take unnecessarily long if a database uses a large number of tablespaces and and the value inndb\_open\_files is lower than the number of existing table\_spaces ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
+    * `ALTER TABLE ... IMPORT TABLESPACE` can take unnecessarily long if a database uses a large number of tablespaces and the value inndb\_open\_files is lower than the number of existing table\_spaces ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
     * Rowid Filter optimization cannot work with backward index scans. An attempt to run such a query plan will make the query perform very slowly. Fixed by disabling use of Rowid Filter if the optimizer decides to use a backward index scan. ([MDEV-33875](https://jira.mariadb.org/browse/MDEV-33875))
 
-    #### Changelog
+    **Changelog**
 
     For the complete list of changes in this release, see the [changelog](changelog-for-mariadb-enterprise-server-10-5-26-20.md).
 
-    #### Platforms
+    **Platforms**
 
     In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.5.26-20 is provided for:
 
@@ -236,22 +236,22 @@ id FOR ORDINALITY )) AS jt;
 
 ## Installation Instructions
 
-* [MariaDB Enterprise Server ](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.5](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [MariaDB Enterprise Server ](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)[10](broken-reference)[.5](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](broken-reference)[.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
 * [ColumnStore Object Storage Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage) [and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
 * [ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)
 * [HTAP Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)
 * [Single-Node Enterprise ColumnStore 23.02 with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)[and Object Storage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)
 * [Single-Node Enterprise ColumnStore 23.02 with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.5](broken-reference)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.5](broken-reference)
 
 ## Upgrade Instructions
 
 * [Upgrade to MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

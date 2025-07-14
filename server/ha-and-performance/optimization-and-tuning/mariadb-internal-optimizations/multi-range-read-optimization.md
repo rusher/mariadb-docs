@@ -5,7 +5,7 @@ Multi Range Read is an optimization aimed at improving performance for IO-bound 
 Multi Range Read can be used with
 
 * `range` access
-* `ref` and `eq_ref` access, when they are using [Batched Key Access](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/mariadb-internal-optimizations/broken-reference/README.md)
+* `ref` and `eq_ref` access, when they are using [Batched Key Access](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms#batch-key-access-join)
 
 as shown in this diagram:
 
@@ -18,7 +18,7 @@ as shown in this diagram:
 Consider a range query:
 
 ```sql
-EXPLAIN SELECT * from tbl where tbl.key1 between 1000 and 2000;
+EXPLAIN SELECT * FROM tbl WHERE tbl.key1 BETWEEN 1000 AND 2000;
 +----+-------------+-------+-------+---------------+------+---------+------+------+-----------------------+
 | id | select_type | table | type  | possible_keys | key  | key_len | ref  | rows | Extra                 |
 +----+-------------+-------+-------+---------------+------+---------+------+------+-----------------------+
@@ -39,10 +39,10 @@ SSD drives do not need to do disk seeks, so they will not be hurt as badly, howe
 Multi-Range-Read optimization aims to make disk access faster by sorting record read requests and then doing one ordered disk sweep. If one enables Multi Range Read, `EXPLAIN` will show that a "`Rowid-ordered scan`" is used:
 
 ```sql
-SET optimizer_switch='mrr=on';
+SET optimizer_switch='mrr=ON';
 Query OK, 0 rows affected (0.06 sec)
 
-EXPLAIN select * from tbl where tbl.key1 between 1000 and 2000;
+EXPLAIN SELECT * FROM tbl WHERE tbl.key1 BETWEEN 1000 AND 2000;
 +----+-------------+-------+-------+---------------+------+---------+------+------+-------------------------------------------+
 | id | select_type | table | type  | possible_keys | key  | key_len | ref  | rows | Extra                                     |
 +----+-------------+-------+-------+---------------+------+---------+------+------+-------------------------------------------+
@@ -71,7 +71,7 @@ The above can make a huge difference on performance. There is also a catch, thou
 Batched Key Access can benefit from rowid sorting in the same way as range access does. If one has a join that uses index lookups:
 
 ```sql
-EXPLAIN select * from t1,t2 where t2.key1=t1.col1;
+EXPLAIN SELECT * FROM t1,t2 WHERE t2.key1=t1.col1;
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref          | rows | Extra       |
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
@@ -81,16 +81,16 @@ EXPLAIN select * from t1,t2 where t2.key1=t1.col1;
 2 rows in set (0.00 sec)
 ```
 
-Execution of this query will cause table `t2` to be hit in random locations by lookups made through `t2.key1=t1.col`. If you enable Multi Range and and Batched Key Access, you will get table `t2` to be accessed using a `Rowid-ordered scan`:
+Execution of this query will cause table `t2` to be hit in random locations by lookups made through `t2.key1=t1.col`. If you enable Multi Range and Batched Key Access, you will get table `t2` to be accessed using a `Rowid-ordered scan`:
 
 ```sql
-SET optimizer_switch='mrr=on';
+SET optimizer_switch='mrr=ON';
 Query OK, 0 rows affected (0.06 sec)
 
-set join_cache_level=6;
+SET join_cache_level=6;
 Query OK, 0 rows affected (0.00 sec)
 
-explain select * from t1,t2 where t2.key1=t1.col1;
+EXPLAIN SELECT * FROM t1,t2 WHERE t2.key1=t1.col1;
 +----+-------------+-------+------+---------------+------+---------+--------------+------+--------------------------------------------------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref          | rows | Extra                                                  |
 +----+-------------+-------+------+---------------+------+---------+--------------+------+--------------------------------------------------------+
@@ -109,7 +109,7 @@ An additional source of speedup is this property: if there are multiple records 
 Let us consider again the nested loop join example, with `ref` access on the second table:
 
 ```sql
-EXPLAIN select * from t1,t2 where t2.key1=t1.col1;
+EXPLAIN SELECT * FROM t1,t2 WHERE t2.key1=t1.col1;
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref          | rows | Extra       |
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
@@ -129,34 +129,34 @@ In particular, on step #5 we'll read the same index page that we've read on step
 This is roughly what `Key-ordered scan` optimization does. In EXPLAIN, it looks as follows:
 
 ```sql
-SET optimizer_switch='mrr=on,mrr_sort_keys=on';
+SET optimizer_switch='mrr=ON,mrr_sort_keys=ON';
 Query OK, 0 rows affected (0.00 sec)
 
 SET join_cache_level=6;
 Query OK, 0 rows affected (0.02 sec)
-explain select * from t1,t2 where t2.key1=t1.col1\G
+EXPLAIN SELECT * FROM t1,t2 WHERE t2.key1=t1.col1\G
 *************************** 1. row ***************************
            id: 1
   select_type: SIMPLE
-        table: t1
+        TABLE: t1
          type: ALL
 possible_keys: a
-          key: NULL
+          KEY: NULL
       key_len: NULL
           ref: NULL
-         rows: 1000
-        Extra: Using where
+         ROWS: 1000
+        Extra: USING WHERE
 *************************** 2. row ***************************
            id: 1
   select_type: SIMPLE
-        table: t2
+        TABLE: t2
          type: ref
 possible_keys: key1
-          key: key1
+          KEY: key1
       key_len: 5
           ref: test.t1.col1
-         rows: 1
-        Extra: Using join buffer (flat, BKA join); Key-ordered Rowid-ordered scan
+         ROWS: 1
+        Extra: USING JOIN buffer (flat, BKA JOIN); KEY-ordered Rowid-ordered scan
 2 rows in set (0.00 sec)
 ```
 
@@ -183,7 +183,6 @@ There are three status variables related to Multi Range Read:
 
 | Variable name                                                                                            | Meaning                                                                   |
 | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Variable name                                                                                            | Meaning                                                                   |
 | [Handler\_mrr\_init](../system-variables/server-status-variables.md#handler_mrr_init)                    | Counts how many Multi Range Read scans were performed                     |
 | [Handler\_mrr\_key\_refills](../system-variables/server-status-variables.md#handler_mrr_key_refills)     | Number of times key buffer was refilled (not counting the initial fill)   |
 | [Handler\_mrr\_rowid\_refills](../system-variables/server-status-variables.md#handler_mrr_rowid_refills) | Number of times rowid buffer was refilled (not counting the initial fill) |
@@ -229,10 +228,7 @@ Multi Range Read will make separate calls for steps #1 and #2, causing TWO incre
 * MariaDB uses [mrr\_buffer\_size](../system-variables/server-system-variables.md#mrr_buffer_size) as a limit of MRR buffer size for `range` access, while MySQL uses [read\_rnd\_buffer\_size](../system-variables/server-system-variables.md#read_rnd_buffer_size).
 * MariaDB has three MRR counters: [Handler\_mrr\_init](../system-variables/server-status-variables.md#handler_mrr_init), `Handler_mrr_extra_rowid_sorts`, `Handler_mrr_extra_key_sorts`, while MySQL has only `Handler_mrr_init`, and it will only count MRR scans that were used by BKA. MRR scans used by range access are not counted.
 
-## See Also
-
-* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/mariadb-internal-optimizations/broken-reference/README.md)
-* [Multi-Range Read Optimization](https://dev.mysql.com/doc/refman/5.6/en/mrr-optimization.html) page in MySQL manual
+##
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

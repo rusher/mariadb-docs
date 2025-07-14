@@ -2,11 +2,11 @@
 
 ## Syntax
 
-```
+```sql
 LAST_VALUE(expr,[expr,...])
 ```
 
-```
+```sql
 LAST_VALUE(expr) OVER (
   [ PARTITION BY partition_expression ]
   [ ORDER BY order_list ]
@@ -15,17 +15,15 @@ LAST_VALUE(expr) OVER (
 
 ## Description
 
-`LAST_VALUE()` evaluates all expressions and returns the last.
+`LAST_VALUE()` evaluates all expressions and returns the last. This is useful together with [setting user variables to a value with @var:=expr](../../../sql-statements/administrative-sql-statements/set-commands/set.md), for example when you want to get data of rows updated/deleted without having to do two queries against the table.
 
-This is useful together with [setting user variables to a value with @var:=expr](../../../sql-statements/administrative-sql-statements/set-commands/set.md), for example when you want to get data of rows updated/deleted without having to do two queries against the table.
+`LAST_VALUE` can be used as a [window function](../../special-functions/window-functions/).
 
-LAST\_VALUE can be used as a [window function](../../special-functions/window-functions/).
-
-Returns NULL if no last value exists.
+Returns `NULL` if no last value exists.
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (a int, b int);
 INSERT INTO t1 VALUES(1,10),(2,20);
 DELETE FROM t1 WHERE a=1 AND last_value(@a:=a,@b:=b,1);
@@ -39,7 +37,7 @@ SELECT @a,@b;
 
 As a [window function](../../special-functions/window-functions/):
 
-```
+```sql
 CREATE TABLE t1 (
   pk int primary key,
   a int,
@@ -86,7 +84,7 @@ ORDER BY pk DESC;
 +----+-----------+----------+------------+-----------+
 ```
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (i int);
 INSERT INTO t1 VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10);
 

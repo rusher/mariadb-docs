@@ -12,7 +12,7 @@ Some features are meant to improve syntax and semantics compatibility between Ma
 
 SQL semantics and syntax, in MariaDB, are affected by the [sql\_mode](../../../variables-and-modes/sql-mode.md) variable. Its value is a comma-separated list of flags, and each of them, if specified, affects a different aspect of SQL syntax and semantics.
 
-A particularly important flag for users familiar with SQL Server is [MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/broken-reference/README.md).
+A particularly important flag for users familiar with SQL Server is [MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql).
 
 sql\_mode can be changed locally, in which case it only affects the current session; or globally, in which case it will affect all new connections (but not the connections already established). sql\_mode must be assigned a comma-separated list of flags.
 
@@ -125,7 +125,7 @@ SQL Server also allows to use double quotes (`"`) to quote strings. This works b
 
 The default semantics of [NULL](../../../../reference/data-types/null-values.md) in SQL Server and MariaDB is the same, by default.
 
-However, SQL Server allows one to change it globally with [SET ANSI\_NULLS OFF](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-nulls-transact-sql), or at database level with [ALTER DATABASE](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql).
+However, SQL Server allows one to change it globally with [SET ANSI\_NULLS OFF](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-nulls-transact-sql), or at database level with [ALTER DATABASE](../../../../reference/sql-statements/data-definition/alter/alter-database.md).
 
 There is no way to achieve exactly the same result in MariaDB. To perform NULL-safe comparisons in MariaDB, one should replace the [=](../../../../reference/sql-structure/operators/comparison-operators/equal.md) operator with the [<=>](../../../../reference/sql-structure/operators/comparison-operators/null-safe-equal.md) operator.
 
@@ -149,8 +149,8 @@ Altering tables online can be a problem, especially when the tables are big and 
 
 MariaDB offers the following solutions to help:
 
-* The [ALTER TABLE ... ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) clause allows one to specify which algorithm should be used to run a certain operation. For example `INPLACE` tells MariaDB not to create a table copy (perhaps because we don't have enough disk space), and `INSTANT` tells MariaDB to execute the operation instantaneously. Not all algorithms are supported for certain operations. If the algorithm we've chosen cannot be used, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error.
-* The [ALTER TABLE ... LOCK](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alock) clause allows one to specify which lock type should be used. For example `NONE` tells MariaDB to avoid any lock on the table, and `SHARED` only allows one to acquire a share lock. If the operation requires a lock that is more strict than the one we are requesting, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error. Sometimes this happens because the `LOCK` level we want is not available for the specified `ALGORITHM`.
+* The [ALTER TABLE ... ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause allows one to specify which algorithm should be used to run a certain operation. For example `INPLACE` tells MariaDB not to create a table copy (perhaps because we don't have enough disk space), and `INSTANT` tells MariaDB to execute the operation instantaneously. Not all algorithms are supported for certain operations. If the algorithm we've chosen cannot be used, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement will fail with an error.
+* The [ALTER TABLE ... LOCK](../../../../reference/sql-statements/data-definition/alter/alter-table/#alock) clause allows one to specify which lock type should be used. For example `NONE` tells MariaDB to avoid any lock on the table, and `SHARED` only allows one to acquire a share lock. If the operation requires a lock that is more strict than the one we are requesting, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement will fail with an error. Sometimes this happens because the `LOCK` level we want is not available for the specified `ALGORITHM`.
 
 To find out which operations require a table copy and which lock levels are necessary, see [InnoDB Online DDL Overview](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md).
 
@@ -160,7 +160,7 @@ SQL Server `WITH ONLINE = ON` is equivalent to MariaDB `LOCK = NONE`. However, n
 
 ### IF EXISTS, IF NOT EXISTS, OR REPLACE
 
-Most DDL statements, including [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md), support the following syntax:
+Most DDL statements, including [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/), support the following syntax:
 
 * `DROP IF EXISTS`: A warning (not an error) is produced if the object does not exist.
 * `OR REPLACE`: If the object exists, it is dropped and recreated; otherwise it is created. This operation is atomic, so at no point in time does the object not exist.
@@ -182,12 +182,12 @@ go
 
 ### Altering Columns
 
-With SQL Server, the only syntax to alter a table column is `ALTER TABLE ... ALTER COLUMN`. MariaDB provides more [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) commands to obtain the same result:
+With SQL Server, the only syntax to alter a table column is `ALTER TABLE ... ALTER COLUMN`. MariaDB provides more [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) commands to obtain the same result:
 
-* [CHANGE COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table.md#change-column) allows one to perform any change by specifying a new column definition, including the name.
-* [MODIFY COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table.md#modify-column) allows any change, except renaming the column. This is a slightly simpler syntax that we can use when we don't want to change a column name.
-* [ALTER COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alter-column) allows one to change or drop the `DEFAULT` value.
-* [RENAME COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table.md#rename-column) allows one to only change the column name.
+* [CHANGE COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table/#change-column) allows one to perform any change by specifying a new column definition, including the name.
+* [MODIFY COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table/#modify-column) allows any change, except renaming the column. This is a slightly simpler syntax that we can use when we don't want to change a column name.
+* [ALTER COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table/#alter-column) allows one to change or drop the `DEFAULT` value.
+* [RENAME COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table/#rename-column) allows one to only change the column name.
 
 Using a more specific syntax is less error-prone. For example, by using `ALTER TABLE ... ALTER COLUMN` we will not accidentally change the data type.
 
@@ -274,7 +274,7 @@ See also [How to Quickly Insert Data Into MariaDB](../../../../ha-and-performanc
 
 * [SQL Server and MariaDB Types Comparison](sql-server-and-mariadb-types-comparison.md)
 * [MariaDB Transactions and Isolation Levels for SQL Server Users](mariadb-transactions-and-isolation-levels-for-sql-server-users.md)
-* [SQL\_MODE=MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/broken-reference/README.md)
+* [SQL\_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

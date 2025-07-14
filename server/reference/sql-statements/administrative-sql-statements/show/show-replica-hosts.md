@@ -2,16 +2,16 @@
 
 ## Syntax
 
-```
-SHOW { SLAVE | REPLICA } HOSTS
+```sql
+SHOW { REPLICA | SLAVE } HOSTS
 ```
 
 ## Description
 
 This command is run on the primary and displays a list of replicas that are currently registered with it. The output looks like this:
 
-```
-SHOW SLAVE HOSTS;
+```sql
+SHOW REPLICA HOSTS;
 +------------+-----------+------+-----------+
 | Server_id  | Host      | Port | Master_id |
 +------------+-----------+------+-----------+
@@ -20,21 +20,43 @@ SHOW SLAVE HOSTS;
 +------------+-----------+------+-----------+
 ```
 
-* `Server_id`: The unique server ID of the replica server, as configured in the server's option file, or on the command line with [--server-id=value](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md).
-* `Host`: The host name of the replica server, as configured in the server's option file, or on the command line with `--report-host=host_name` (note that this can differ from the machine name as configured in the operating system). Starting in [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes), if a replica doesn't configure `--report-host` explicitly, the value for the `Host` column is automatically extracted using the network connection's host name or IP address. Prior to 10.5, the Host value is left blank if a replica's `--report-host` parameter is not configured.
-* `Port`: The port the replica server is listening on.
-* `Master_id`: The unique server ID of the primary server that the replica server is replicating from.
+`Server_id`: The unique server ID of the replica server, as configured in the server's option file, or on the command line with [--server-id=value](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md).
 
-Some MariaDB and MySQL versions report another variable, [rpl\_recovery\_rank](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank). This\
-variable was never used, and was eventually removed in [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md) .
+{% tabs %}
+{% tab title="Current" %}
+`Host`: The host name of the replica server, as configured in the server's option file, or on the command line with `--report-host=host_name` (note that this can differ from the machine name as configured in the operating system). If a replica doesn't configure `--report-host` explicitly, the value for the `Host` column is automatically extracted using the network connection's host name or IP address.
+{% endtab %}
 
-Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-statements/grant.md#replication-master-admin) privilege (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)) or the [REPLICATION SLAVE](../../account-management-sql-statements/grant.md#replication-slave) privilege (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)).
+{% tab title="< 10.5" %}
+`Host`: The host name of the replica server, as configured in the server's option file, or on the command line with `--report-host=host_name` (note that this can differ from the machine name as configured in the operating system). If a replica doesn't configure `--report-host` explicitly, the value for the `Host` column is automatically extracted using the network connection's host name or IP address. The Host value is left blank if a replica's `--report-host` parameter is not configured.
+{% endtab %}
+{% endtabs %}
 
-#### SHOW REPLICA HOSTS
+`Port`: The port the replica server is listening on.
 
-**MariaDB starting with** [**10.5.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)
+`Master_id`: The unique server ID of the primary server that the replica server is replicating from.
 
-`SHOW REPLICA HOSTS` is an alias for `SHOW SLAVE HOSTS` from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes).
+{% tabs %}
+{% tab title="Current" %}
+Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-statements/grant.md#replication-master-admin) privilege.
+{% endtab %}
+
+{% tab title="< 10.5.1" %}
+Requires the [REPLICATION SLAVE](../../account-management-sql-statements/grant.md#replication-slave) privilege.
+{% endtab %}
+{% endtabs %}
+
+### SHOW REPLICA HOSTS
+
+{% tabs %}
+{% tab title="Current" %}
+`SHOW REPLICA HOSTS` is an alias for `SHOW SLAVE HOSTS` .
+{% endtab %}
+
+{% tab title="< 10.5.1" %}
+`SHOW REPLICA HOSTS` is not available, use `SHOW SLAVE HOSTS` instead.
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 

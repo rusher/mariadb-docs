@@ -1,20 +1,19 @@
 # Silent Column Changes
 
-When a [CREATE TABLE](create-table.md) or [ALTER TABLE](../alter/alter-table.md) command is issued, MariaDB will silently change a column specification in the following cases:
+When a [CREATE TABLE](create-table.md) or [ALTER TABLE](../alter/alter-table/) command is issued, MariaDB silently changes a column specification in the following cases:
 
 * [PRIMARY KEY](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) columns are always NOT NULL.
 * Any trailing spaces from [SET](../../../data-types/string-data-types/set-data-type.md) and [ENUM](../../../data-types/string-data-types/enum.md) values are discarded.
-* [TIMESTAMP](../../../data-types/date-and-time-data-types/timestamp.md) columns are always NOT NULL, and display sizes are discarded
-* A row-size limit of 65535 bytes applies
-* If [strict SQL mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not enabled (it is enabled by default from [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)), a [VARCHAR](../../../data-types/string-data-types/varchar.md) column longer than 65535 become [TEXT](../../../data-types/string-data-types/text.md), and a [VARBINARY](../../../data-types/string-data-types/varbinary.md) columns longer than 65535 becomes a [BLOB](../../../data-types/string-data-types/blob.md). If strict mode is enabled the silent changes will not be made, and an error will occur.
+* [TIMESTAMP](../../../data-types/date-and-time-data-types/timestamp.md) columns are always NOT NULL, and display sizes are discarded.
+* A row-size limit of 65535 bytes applies.
+* If [strict SQL mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not enabled (by default, it is), a [VARCHAR](../../../data-types/string-data-types/varchar.md) column longer than 65535 become [TEXT](../../../data-types/string-data-types/text.md), and a [VARBINARY](../../../data-types/string-data-types/varbinary.md) columns longer than 65535 becomes a [BLOB](../../../data-types/string-data-types/blob.md). If strict mode is enabled the silent changes will not be made, and an error will occur.
 * If a USING clause specifies an index that's not permitted by the storage engine, the engine will instead use another available index type that can be applied without affecting results.
 * If the CHARACTER SET binary attribute is specified, the column is created as the matching binary data type. A TEXT becomes a BLOB, CHAR a BINARY and VARCHAR a VARBINARY. ENUMs and SETs are created as defined.
 
-To ease imports from other RDBMSs, MariaDB will also silently map the following data types:
+To ease imports from other RDBMSs, MariaDB also silently maps the following data types:
 
 | Other Vendor Type    | MariaDB Type                                                      |
 | -------------------- | ----------------------------------------------------------------- |
-| Other Vendor Type    | MariaDB Type                                                      |
 | BOOL                 | [TINYINT](../../../data-types/numeric-data-types/tinyint.md)      |
 | BOOLEAN              | [TINYINT](../../../data-types/numeric-data-types/tinyint.md)      |
 | CHARACTER VARYING(M) | [VARCHAR](../../../data-types/string-data-types/varchar.md)(M)    |
@@ -40,13 +39,13 @@ For type mapping between Cassandra and MariaDB, see [Cassandra storage engine](.
 
 Silent changes in action:
 
-```
+```sql
 CREATE TABLE SilenceIsGolden
    (
-    f1 TEXT CHARACTER SET binary,
-    f2 VARCHAR(15) CHARACTER SET binary,
-    f3 CHAR CHARACTER SET binary,
-    f4 ENUM('x','y','z') CHARACTER SET binary,
+    f1 TEXT CHARACTER SET BINARY,
+    f2 VARCHAR(15) CHARACTER SET BINARY,
+    f3 CHAR CHARACTER SET BINARY,
+    f4 ENUM('x','y','z') CHARACTER SET BINARY,
     f5 VARCHAR (65536),
     f6 VARBINARY (65536),
     f7 INT1

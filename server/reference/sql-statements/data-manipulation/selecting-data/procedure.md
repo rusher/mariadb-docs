@@ -4,7 +4,7 @@ The `PROCEDURE` clause of [SELECT](select.md) passes the whole result set to a P
 
 Currently, the only available procedure is [ANALYSE](../../../sql-functions/secondary-functions/information-functions/procedure-analyse.md), which examines the resultset and suggests the optimal datatypes for each column. It is defined in the `sql/sql_analyse.cc` file, and can be used as an example to create more Procedures.
 
-This clause cannot be used in a [view](../../../../server-usage/views/)'s definition.
+This clause cannot be used in a [view](../../../../server-usage/views/) definition.
 
 ## See Also
 

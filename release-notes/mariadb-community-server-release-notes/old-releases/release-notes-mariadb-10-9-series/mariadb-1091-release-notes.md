@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.9](what-is-mariadb-109.md) is:[**MariaDB 10.9.8**](mariadb-10-9-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.9.8/)
 
-[Download 10.9.1](https://downloads.mariadb.org/mariadb/10.9.1)[Release Notes](mariadb-1091-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-1091-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
+[Download 10.9.1](https://downloads.mariadb.org/mariadb/10.9.1)[Release Notes](mariadb-1091-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-1091-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
 
 **Release date:** 20 May 2022
 
@@ -51,10 +51,10 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* Incorrect binlogs after Galera SST using rsync and [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* Incorrect binlogs after Galera SST using rsync and [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * Useless warning "InnoDB: Allocated tablespace ID for , old maximum was 0" during backup stage ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
+* [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 
 ### Optimizer
 
@@ -80,7 +80,7 @@ Thanks, and enjoy MariaDB!
 * Server [error messages](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/broken-reference/README.md) are [now available in Chinese](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) ([MDEV-28227](https://jira.mariadb.org/browse/MDEV-28227))
 * For RHEL/CentOS 7, non x86\_64 architectures are no longer supported upstream and so our support will also be dropped with this release
 * Packages for Ubuntu 22.04 LTS "Jammy" and Fedora 36 are now available in this release
-* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.5](../../mariadb-10-5-series/what-is-mariadb-105.md) for Debian 9 "Stretch", Ubuntu 21.10 "Impish", and Fedora 34
+* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) for Debian 9 "Stretch", Ubuntu 21.10 "Impish", and Fedora 34
 
 ### Security
 
@@ -90,7 +90,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.9.1](mariadb-1091-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-1091-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-1091-changelog.md).
 
 ## Contributors
 
@@ -98,10 +98,8 @@ For a full list of contributors to [MariaDB 10.9.1](mariadb-1091-release-notes.m
 
 **Do not use non-stable (non-GA) releases in production!**
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

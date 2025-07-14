@@ -8,8 +8,7 @@ It has the following columns:
 
 | Column               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| POOL\_ID             | Buffer Pool identifier. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes) returns a value of 0, since multiple InnoDB buffer pool instances has been removed.                                                                                                                                                                                                                                   |
+| POOL\_ID             | Buffer Pool identifier. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes) returns a value of 0, since multiple InnoDB buffer pool instances has been removed.                                                                                                                                                                                                                      |
 | LRU\_POSITION        | LRU (Least recently-used), for determining eviction order from the buffer pool.                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | SPACE                | Tablespace identifier. Matches the SPACE value on the [INNODB\_SYS\_TABLES](information-schema-innodb_sys_tables-table.md) table.                                                                                                                                                                                                                                                                                                                                                                         |
 | PAGE\_NUMBER         | Buffer pool page number.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -34,7 +33,7 @@ The related [INFORMATION\_SCHEMA.INNODB\_BUFFER\_PAGE](information-schema-innodb
 
 ## Example
 
-```
+```sql
 DESC information_schema.innodb_buffer_page_lru;
 +---------------------+---------------------+------+-----+---------+-------+
 | Field               | Type                | Null | Key | Default | Extra |
@@ -62,7 +61,7 @@ DESC information_schema.innodb_buffer_page_lru;
 +---------------------+---------------------+------+-----+---------+-------+
 ```
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.INNODB_BUFFER_PAGE_LRU\G
 ...
 *************************** 6. row ***************************

@@ -10,6 +10,7 @@ MariaDB Vector has integrations in several frameworks.
 * [LangChain.js, MariaDB Vector Store](https://js.langchain.com/docs/integrations/vectorstores/mariadb/) - Node.js
 * [LangChain4j, MariaDB Embedding Store](https://docs.langchain4j.dev/integrations/embedding-stores/mariadb/) - Java
 * [LlamaIndex, MariaDB Vector Store](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/mariadb/) - Python
+* [MCP (Model Context Protocol), MariaDB MCP server](https://github.com/mariadb/mcp) - Python
 * [Spring AI, MariaDB Vector Store](https://docs.spring.io/spring-ai/reference/api/vectordbs/mariadb.html) - Java
 * [VectorDBBench](https://github.com/zilliztech/VectorDBBench/pull/375) - benchmarking for vector databases
 
@@ -19,7 +20,6 @@ MariaDB Vector has integrations in several frameworks.
 * [DSPy](https://github.com/stanfordnlp/dspy) - workflow
 * [Feast](https://github.com/feast-dev/feast) - machine learning (not GenAI)
 * [LangGraph](https://github.com/langchain-ai/langgraph) - agentic workflow
-* [MCP (Model Context Protocol)](https://github.com/modelcontextprotocol) - integration to external data sources and tools
 * [Open WebUI](https://github.com/open-webui/open-webui) - AI Interface
 * [Firebase Studio template for MariaDB Vector](https://firebasestudio.uservoice.com/forums/953956-general/suggestions/49702310-mariadb-vector) - visit link to vote for suggestion
 

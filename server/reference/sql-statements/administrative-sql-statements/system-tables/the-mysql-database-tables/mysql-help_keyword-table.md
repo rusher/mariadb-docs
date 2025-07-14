@@ -8,7 +8,6 @@ The `mysql.help_keyword` table contains the following fields:
 
 | Field             | Type             | Null | Key | Default | Description |
 | ----------------- | ---------------- | ---- | --- | ------- | ----------- |
-| Field             | Type             | Null | Key | Default | Description |
 | help\_keyword\_id | int(10) unsigned | NO   | PRI | NULL    |             |
 | name              | char(64)         | NO   | UNI | NULL    |             |
 

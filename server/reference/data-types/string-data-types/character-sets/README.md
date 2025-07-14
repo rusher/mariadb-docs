@@ -1,8 +1,21 @@
+---
+description: >-
+  Learn about character sets in MariaDB Server. This section details how
+  different character sets and collations impact string storage, comparison, and
+  sorting within your database.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
 # Character Sets and Collations
-
-Simply put, a character set defines how and which characters are stored to
-support a particular language or languages. A collation, on the other hand,
-defines the order used when comparing strings (i.e. the position of any given
-character within the alphabet of that language)
 

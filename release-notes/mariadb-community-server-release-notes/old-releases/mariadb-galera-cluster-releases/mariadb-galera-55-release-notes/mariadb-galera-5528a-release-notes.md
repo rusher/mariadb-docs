@@ -54,15 +54,13 @@ If MariaDB is already installed on the server the package manager will\
 uninstall the appropriate packages prior to installing the MariaDB Galera\
 Cluster packages.
 
-See the [MariaDB 5.5.28a Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5528a-changelog.md) for full details\
+See the [MariaDB 5.5.28a Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5528a-changelog.md) for full details\
 of the many packaging and other fixes.
 
 Thanks, and enjoy MariaDB Galera Cluster!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

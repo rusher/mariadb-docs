@@ -8,15 +8,14 @@ The Spider storage engine is a [storage engine](../) with built-in sharding feat
 
 When a table is created with the Spider storage engine, the table links to the table on a remote server. The remote table can be of any storage engine. The table link is concretely achieved by the establishment of the connection from a local MariaDB server to a remote MariaDB server. The link is shared for all tables that are part of a the same transaction.
 
-The Spider documentation on the MariaDB documentation is currently incomplete. See the Spider website for more:, as well as the [spider-1.0-doc](https://bazaar.launchpad.net/~kentokushiba/spiderformysql/spider-1.0-doc/files) and [spider-2.0-doc](https://bazaar.launchpad.net/~kentokushiba/spiderformysql/spider-2.0-doc/files) repositories.
+The Spider documentation on the MariaDB documentation is currently incomplete. See the Spider website for more:, as well as the spider-1.0-doc and spider-2.0-doc repositories.
 
 ## Spider Versions in MariaDB
 
 | Spider Version | Introduced                                                                                                                                                                                                                                                                                                                                                               | Maturity |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
-| Spider Version | Introduced                                                                                                                                                                                                                                                                                                                                                               | Maturity |
-| Spider 3.3.15  | [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes)                                | Stable   |
-| Spider 3.3.15  | [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1054-release-notes)                                                                                                                                                                                                                   | Gamma    |
+| Spider 3.3.15  | [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes)                   | Stable   |
+| Spider 3.3.15  | [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1054-release-notes)                                                                                                                                                                                                      | Gamma    |
 | Spider 3.3.14  | [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes)   | Stable   |
 | Spider 3.3.13  | [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes)                                                                                                                                                                                        | Stable   |
 | Spider 3.3.13  | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)                                                                                                                                                                                        | Gamma    |
@@ -25,7 +24,7 @@ The Spider documentation on the MariaDB documentation is currently incomplete. S
 | Spider 3.2.18  | [MariaDB 10.0.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.2.11  | [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.2.4   | [MariaDB 10.0.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes)                                                                                                                                                                                      | Gamma    |
-| Spider 3.2     | [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)                                                                                                                                                                                                                       | Gamma    |
+| Spider 3.2     | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.0     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)                                                                                                                                                                                        | Beta     |
 
 ## Usage
@@ -157,10 +156,10 @@ Create the empty tables to hold the data and repeat for all available backend no
 backend1 << EOF 
 CREATE DATABASE backend;
 CREATE TABLE backend.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
@@ -169,10 +168,10 @@ EOF
 backend2 << EOF 
 CREATE DATABASE backend;
 CREATE TABLE backend.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
@@ -197,10 +196,10 @@ OPTIONS(
 
 CREATE  TABLE test.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=spider COMMENT='wrapper "mysql",srv "backend"';
@@ -241,13 +240,13 @@ OPTIONS(
 CREATE DATABASE IF NOT EXISTS backend;
 CREATE  TABLE backend.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
-) ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1"',
@@ -261,13 +260,13 @@ Copy the data from the original sysbench table to the spider table
 ```sql
 #/usr/local/skysql/mariadb/bin/mysqldump  --user=skysql --password=skyvodka --host=192.168.0.202 --port=5054 --no-create-info test sbtest | spider1 backend 
 
-#backend2 -e"select count(*) from backend.sbtest;"
+#backend2 -e"SELECT count(*) FROM backend.sbtest;"
 +----------+
 | count(*) |
 +----------+
 |  3793316 |
 +----------+
-#backend1 -e"select count(*) from backend.sbtest;"
+#backend1 -e"SELECT count(*) FROM backend.sbtest;"
 +----------+
 | count(*) |
 +----------+
@@ -332,34 +331,34 @@ CREATE DATABASE bsbackend2;
 CREATE DATABASE bsbackend3;
 CREATE DATABASE bsbackend4;
 CREATE TABLE bsbackend1.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend2.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend3.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend4.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
@@ -375,34 +374,34 @@ CREATE DATABASE bsbackend6;
 CREATE DATABASE bsbackend7;
 CREATE DATABASE bsbackend8;
 CREATE TABLE bsbackend5.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend6.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend7.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend8.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
@@ -425,13 +424,13 @@ CREATE SERVER bsbackend8 FOREIGN DATA WRAPPER mysql OPTIONS( HOST '192.168.0.203
 CREATE DATABASE IF NOT EXISTS bsbackend;
 CREATE  TABLE bsbackend.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
-) ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "bsbackend1"',
@@ -450,50 +449,50 @@ INSERT INTO  bsbackend.sbtest SELECT * FROM backend.sbtest;
 Now test the following query :
 
 ```sql
-select count(*) from sbtest;
+SELECT count(*) FROM sbtest;
 +----------+
 | count(*) |
 +----------+
 | 10000001 |
 +----------+
-1 row in set (8,38 sec)
+1 row IN SET (8,38 sec)
 
-set spider_casual_read=1;
-set spider_bgs_mode=2;
+SET spider_casual_read=1;
+SET spider_bgs_mode=2;
 
-select count(*) from sbtest;
+SELECT count(*) FROM sbtest;
 +----------+
 | count(*) |
 +----------+
 | 10000001 |
 +----------+
-1 row in set (4,25 sec)
+1 row IN SET (4,25 sec)
 
-mysql> select sum(k) from sbtest;
+mysql> SELECT sum(k) FROM sbtest;
 +--------+
 | sum(k) |
 +--------+
 |      0 |
 +--------+
-1 row in set (5,67 sec)
+1 row IN SET (5,67 sec)
 
-mysql> set spider_casual_read=0;
-mysql> select sum(k) from sbtest;
+mysql> SET spider_casual_read=0;
+mysql> SELECT sum(k) FROM sbtest;
 +--------+
 | sum(k) |
 +--------+
 |      0 |
 +--------+
-1 row in set (12,56 sec)
+1 row IN SET (12,56 sec)
 ```
 
 ![spbench8](../../../.gitbook/assets/spbench8.png)
 
 #### High Availability Setup
 
-**MariaDB starting with** [**10.7.5**](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)
+**MariaDB starting with** [**10.7.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes)
 
-Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md) or [galera-cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md).
+Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../myrocks/myrocks-and-replication.md) or [galera-cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide).
 
 ![spider9](../../../.gitbook/assets/spider9.png)
 
@@ -526,19 +525,19 @@ OPTIONS(
 );
 CREATE  TABLE backend.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
-) ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1 backend2_rpl"',
  PARTITION pt2 COMMENT = 'srv "backend2 backend1_rpl"' 
 ) ;
-INSERT INTO backend.sbtest select 10000001, 0, '' ,'replicas test';
+INSERT INTO backend.sbtest SELECT 10000001, 0, '' ,'replicas test';
 EOF
 #backend1 -e "SELECT * FROM backend.sbtest WHERE id=10000001";
 +----------+---+---+---------------+
@@ -546,8 +545,8 @@ EOF
 +----------+---+---+---------------+
 | 10000001 | 0 |   | replicas test |
 +----------+---+---+---------------+
-# backend2 -e "SELECT * FROM backend.sbtest where id=10000001";
-# backend2 -e "SELECT * FROM backend_rpl.sbtest where id=10000001";
+# backend2 -e "SELECT * FROM backend.sbtest WHERE id=10000001";
+# backend2 -e "SELECT * FROM backend_rpl.sbtest WHERE id=10000001";
 +----------+---+---+---------------+
 | id       | k | c | pad           |
 +----------+---+---+---------------+
@@ -558,7 +557,7 @@ EOF
 What is happening if we stop one backend?
 
 ```sql
-#spider1 -e "SELECT * FROM backend.sbtest where id=10000001";
+#spider1 -e "SELECT * FROM backend.sbtest WHERE id=10000001";
 ERROR 1429 (HY000) at line 1: Unable to connect to foreign data source: backend1
 ```
 
@@ -569,13 +568,13 @@ Let's fix this with spider monitoring. Note that msi is the list of spider nodes
 DROP  TABLE backend.sbtest;
 CREATE  TABLE backend.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
-) ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1 backend2_rpl",  mbk "2", mkd "2", msi "5054", link_status "0 0"',
@@ -626,7 +625,7 @@ Checking the state of the nodes:
 No change has been made to cluster, so let's create a divergence:
 
 ```sql
-# spider1 -e "INSERT INTO backend.sbtest select 10000003, 0, '' ,'replicas test';"
+# spider1 -e "INSERT INTO backend.sbtest SELECT 10000003, 0, '' ,'replicas test';"
 # backend1 -e "SELECT * FROM backend.sbtest WHERE id=10000003"
 # backend2 -e "SELECT * FROM backend_rpl.sbtest WHERE id=10000003"
 +----------+---+---+---------------+
@@ -641,16 +640,16 @@ Reintroducing the failed backend1 in the cluster:
 ```sql
 #spider1 << EOF
 ALTER TABLE backend.sbtest 
-ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1 backend2_rpl"  mbk "2", mkd "2", msi "5054", link_status "2 0"',
  PARTITION pt2 COMMENT = 'srv "backend2 backend1_rpl"  mbk "2", mkd "2", msi "5054", link_status "0 2" ' 
 ) ;
-select spider_copy_tables('backend.sbtest#P#pt1','0','1');
-select spider_copy_tables('backend.sbtest#P#pt2','1','0');
+SELECT spider_copy_tables('backend.sbtest#P#pt1','0','1');
+SELECT spider_copy_tables('backend.sbtest#P#pt2','1','0');
 ALTER TABLE backend.sbtest 
-ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1 backend2_rpl"  mbk "2", mkd "2", msi "5054", link_status "1 0"',

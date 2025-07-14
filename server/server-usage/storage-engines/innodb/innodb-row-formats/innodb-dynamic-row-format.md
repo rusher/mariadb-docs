@@ -10,14 +10,13 @@ The limit for indexing column values depends on the [innodb\_page\_size](../inno
 
 | Page Size   | Index Prefix Limit |
 | ----------- | ------------------ |
-| Page Size   | Index Prefix Limit |
 | 16k 32k 16k | 3072 bytes         |
 | 8k          | 1536 bytes         |
 | 4k          | 768 bytes          |
 
 ## Using the DYNAMIC Row Format
 
-The default row format is `DYNAMIC`, as long as the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable has not been modified. Therefore, in these versions, the easiest way to create an InnoDB table that uses the `DYNAMIC` row format is by **not** setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option at all in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement.
+The default row format is `DYNAMIC`, as long as the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable has not been modified. Therefore, in these versions, the easiest way to create an InnoDB table that uses the `DYNAMIC` row format is by **not** setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option at all in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 It is recommended to set the [innodb\_strict\_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `ON` when using this row format.
 
@@ -29,8 +28,8 @@ SET SESSION innodb_strict_mode=ON;
 SET GLOBAL innodb_default_row_format='dynamic';
 
 CREATE TABLE tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE=InnoDB;
 ```
 
@@ -114,7 +113,7 @@ WHERE NAME='hq_sales/invoices';
 
 ### Create an InnoDB Table with the Dynamic Row Format using `ROW_FORMAT`
 
-An InnoDB table that uses the Dynamic row format can be created using the the `ROW_FORMAT` table option.
+An InnoDB table that uses the Dynamic row format can be created using the `ROW_FORMAT` table option.
 
 Let's create an InnoDB table after confirming that the default storage engine is InnoDB and that InnoDB's default row format is not Dynamic:
 
@@ -219,7 +218,7 @@ AND ROW_FORMAT != 'Dynamic';
 +-------------------+------------+
 ```
 
-3. Alter the table using the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
+3. Alter the table using the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
 
 ```sql
 ALTER TABLE hq_sales.invoices

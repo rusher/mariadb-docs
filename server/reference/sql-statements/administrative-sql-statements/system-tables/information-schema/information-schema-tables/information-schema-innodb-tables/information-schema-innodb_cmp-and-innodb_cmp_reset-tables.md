@@ -2,13 +2,12 @@
 
 The `INNODB_CMP` and `INNODB_CMP_RESET` tables contain status information on compression operations related to [compressed XtraDB/InnoDB tables](../../../../../../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md).
 
-The [PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges) privilege is required to query this table.
+The [PROCESS](../../../../../account-management-sql-statements/grant.md#process) privilege is required to query this table.
 
 These tables contain the following columns:
 
 | Column Name       | Description                                                                                                                                                                                                                                                           |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column Name       | Description                                                                                                                                                                                                                                                           |
 | PAGE\_SIZE        | Compressed page size, in bytes. This value is unique in the table; other values are totals which refer to pages of this size.                                                                                                                                         |
 | COMPRESS\_OPS     | How many times a page of the size PAGE\_SIZE has been compressed. This happens when a new page is created because the compression log runs out of space. This value includes both successful operations and compression failures.                                     |
 | COMPRESS\_OPS\_OK | How many times a page of the size PAGE\_SIZE has been successfully compressed. This value should be as close as possible to COMPRESS\_OPS. If it is notably lower, either avoid compressing some tables, or increase the KEY\_BLOCK\_SIZE for some compressed tables. |
@@ -22,7 +21,7 @@ These tables can be used to measure the effectiveness of XtraDB/InnoDB table com
 
 ## Examples
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_CMP\G
 **************************** 1. row *****************************
       page_size: 1024

@@ -93,7 +93,7 @@ wsrep::transaction::before_rollback(): Assertion state() == s_executing || state
 * `wsrep_provider_options` can be truncated on deep and long directory paths with diagnostics like: "Warning 1265 Data truncated for column 'VARIABLE\_VALUE' at row 1" in the server log ([MDEV-32634](https://jira.mariadb.org/browse/MDEV-32634))
 * Mariadb-dump option `--delete-master-logs` is ignored ([MDEV-32953](https://jira.mariadb.org/browse/MDEV-32953))
 * multi source replication filters breaking GTID semantic ([MDEV-26632](https://jira.mariadb.org/browse/MDEV-26632))
-* If `wsrep_gtid_mode=ON` is used and `wsrep_gtid_domain`\_id is non-zero, after SST using mariabackup GTIDs will become inconsistent both at the domain level, and at the seq\_no level ([MDEV-31905](https://jira.mariadb.org/browse/MDEV-31905))
+* If `wsrep_gtid_mode=ON` is used and `wsrep_gtid_domain`\_id is non-zero, after SST using mariadb-backup GTIDs will become inconsistent both at the domain level, and at the seq\_no level ([MDEV-31905](https://jira.mariadb.org/browse/MDEV-31905))
 * `wsrep_gtid_domain_id` is ignored on any node other than bootstrapped node when the wsrep\_gtid\_mode is set to ON ([MDEV-32740](https://jira.mariadb.org/browse/MDEV-32740))
 * `LONG UNIQUE ... USING HASH` can result in an error when used with REPLACE ([MDEV-32839](https://jira.mariadb.org/browse/MDEV-32839))
 * `JSON_ARRAYAGG()` doesn't evaluate correct charset which can lead to an unexpected result ([MDEV-24784](https://jira.mariadb.org/browse/MDEV-24784))
@@ -148,22 +148,22 @@ if the table includes an `AUTO_INCREMENT` column ([MDEV-32984](https://jira.mari
 
 ## Installation Instructions
 
-* [MariaDB Enterprise Server ](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.5](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [MariaDB Enterprise Server ](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)[10](broken-reference)[.5](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](broken-reference)[.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
 * [ColumnStore Object Storage Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage) [and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
 * [ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)
 * [HTAP Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)
 * [Single-Node Enterprise ColumnStore 23.02 with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)[and Object Storage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)
 * [Single-Node Enterprise ColumnStore 23.02 with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.5](broken-reference)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.5](broken-reference)
 
 ## Upgrade Instructions
 
 * [Upgrade to MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

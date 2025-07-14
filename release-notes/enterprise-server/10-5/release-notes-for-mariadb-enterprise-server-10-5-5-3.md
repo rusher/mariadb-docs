@@ -12,7 +12,6 @@ With MariaDB Enterprise Server 10.5 "mysql" command names are replaced with "mar
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/cve.org) link) | CVSS base score |
 | [CVE-2021-2022](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2022)                                                                                                 | 4.4             |
 
 ## Notable Changes
@@ -65,7 +64,7 @@ With MariaDB Enterprise Server 10.5 "mysql" command names are replaced with "mar
 * Rounding functions return wrong datatype. ([MDEV-23366](https://jira.mariadb.org/browse/MDEV-23366), [MDEV-23367](https://jira.mariadb.org/browse/MDEV-23367), [MDEV-23368](https://jira.mariadb.org/browse/MDEV-23368), [MDEV-23350](https://jira.mariadb.org/browse/MDEV-23350), [MDEV-23351](https://jira.mariadb.org/browse/MDEV-23351), [MDEV-23337](https://jira.mariadb.org/browse/MDEV-23337), [MDEV-23323](https://jira.mariadb.org/browse/MDEV-23323))
 * PAM v2 plugin produces zombie processes. ([MDEV-21385](https://jira.mariadb.org/browse/MDEV-21385))
 * Performance regression when using [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin). (MENT-870)
-* Fixes to performance regressions introduced in [MariaDB 10.5.4](../../mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1054-release-notes.md). ([MDEV-23369](https://jira.mariadb.org/browse/MDEV-23369), [MDEV-23410](https://jira.mariadb.org/browse/MDEV-23410))
+* Fixes to performance regressions introduced in [MariaDB 10.5.4](../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1054-release-notes.md). ([MDEV-23369](https://jira.mariadb.org/browse/MDEV-23369), [MDEV-23410](https://jira.mariadb.org/browse/MDEV-23410))
 * Change in [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) I/O thread count is not reflected in system variables. (MENT-866)
 
 ### Related to install and upgrade
@@ -128,6 +127,6 @@ MariaDB Enterprise Server 10.5 removes support for Red Hat Enterprise Linux (RHE
 * [Upgrade to MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

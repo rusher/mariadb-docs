@@ -1,6 +1,6 @@
 # Index Condition Pushdown
 
-Index Condition Pushdown is an optimization that is applied for access methods that access table data through indexes: `range`, `ref`, `eq_ref`, `ref_or_null`, and [Batched Key Access](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md).
+Index Condition Pushdown is an optimization that is applied for access methods that access table data through indexes: `range`, `ref`, `eq_ref`, `ref_or_null`, and [Batched Key Access](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms#batch-key-access-join).
 
 The idea is to check part of the WHERE condition that refers to index fields (we call it _Pushed Index Condition_) as soon as we've accessed the index. If the _Pushed Index Condition_ is not satisfied, we won't need to read the whole table record.
 
@@ -13,7 +13,7 @@ SET optimizer_switch='index_condition_pushdown=off'
 When Index Condition Pushdown is used, EXPLAIN will show "Using index condition":
 
 ```sql
-MariaDB [test]> EXPLAIN SELECT * from tbl where key_col1 between 10 and 11 and key_col2 like '%foo%';
+MariaDB [test]> EXPLAIN SELECT * FROM tbl WHERE key_col1 BETWEEN 10 AND 11 AND key_col2 LIKE '%foo%';
 +----+-------------+-------+-------+---------------+----------+---------+------+------+-----------------------+
 | id | select_type | table | type  | possible_keys | key      | key_len | ref  | rows | Extra                 |
 +----+-------------+-------+-------+---------------+----------+---------+------+------+-----------------------+
@@ -43,16 +43,16 @@ The former depends on the query and the dataset. The latter is generally bigger 
 I used DBT-3 benchmark data, with scale factor=1. Since the benchmark defines very few indexes, we've added a multi-column index (index condition pushdown is usually useful with multi-column indexes: the first component(s) is what index access is done for, the subsequent have columns that we read and check conditions on).
 
 ```sql
-alter table lineitem add index s_r (l_shipdate, l_receiptdate);
+ALTER TABLE lineitem ADD INDEX s_r (l_shipdate, l_receiptdate);
 ```
 
 The query was to find big (l\_quantity > 40) orders that were made in January 1993 that took more than 25 days to ship:
 
 ```sql
-select count(*) from lineitem
-where
-  l_shipdate between '1993-01-01' and '1993-02-01' and
-  datediff(l_receiptdate,l_shipdate) > 25 and
+SELECT count(*) FROM lineitem
+WHERE
+  l_shipdate BETWEEN '1993-01-01' AND '1993-02-01' AND
+  datediff(l_receiptdate,l_shipdate) > 25 AND
   l_quantity > 40;
 ```
 
@@ -87,7 +87,6 @@ There are two server status variables:
 
 | Variable name                                                                                 | Meaning                                             |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| Variable name                                                                                 | Meaning                                             |
 | [Handler\_icp\_attempts](../system-variables/server-status-variables.md#handler_icp_attempts) | Number of times pushed index condition was checked. |
 | [Handler\_icp\_match](../system-variables/server-status-variables.md#handler_icp_match)       | Number of times the condition was matched.          |
 

@@ -102,7 +102,6 @@ orary";
 
 | New Table Option | Old COMMENT Option | Description                                                                    |
 | ---------------- | ------------------ | ------------------------------------------------------------------------------ |
-| New Table Option | Old COMMENT Option | Description                                                                    |
 | REMOTE\_DATABASE | database           | The remote database that contains the remote table                             |
 | REMOTE\_SERVER   | srv                | The IP address or hostname of the remote server that contains the remote table |
 | REMOTE\_TABLE    | tbl                | The remote table                                                               |
@@ -129,11 +128,11 @@ orary";
 
 ## Operational Enhancements
 
-* Online Schema Change (OSC) is new server internal functionality which makes all schema changes ([ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) commands) non-blocking. ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329))
+* [Online Schema Change (OSC)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table/online-schema-change) is new server internal functionality which makes all schema changes ([ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) commands) non-blocking. ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329))
   * OSC targets a problem previously solvable using third-party solutions, in a way which reduces operational impact. Some aspects of the OSC implementation are operationally significant:
     * OSC performs internal Copy-Apply-Replace: First, the altered table gets copied, then the online changes get applied. A short table lock occurs when applying last changes and renaming the tables. The binary log is not used in this process. This is significant because some third-party approaches to this problem depend on client connections which can be subject to connection timeouts and similar factors.
     * OSC is asynchronous: Changes from applications are first stored in an online change buffer. This is significant because some third-party approaches to this problem are synchronous and as result impact the execution of other transactions.
-    * OSC is trigger-less: Only server internal handlers for a DML-side check if ALTER TABLE is in progress are used. INSERT, UPDATE, or DELETE triggers based on stored routines are not used. This is significant because some third-party approaches to this problem depend on triggers.
+    * OSC is trigger-less: Only server internal handlers for a DML-side check if `ALTER TABLE` is in progress are used. `INSERT`, `UPDATE`, or `DELETE` triggers based on stored routines are not used. This is significant because some third-party approaches to this problem depend on triggers.
   * By default, when an `ALTER` operation cannot be executed `INSTANT`, OSC will be used. If OSC cannot be used, another algorithm will be used.
   * If the `LOCK=NONE` option is explicitly specified in the `ALTER` statement, or if the equivalent statement `ALTER ONLINE TABLE` is used, the operation will be performed if it can be done as OSC and fails otherwise.
   * As an override to this new behavior, if the `old_mode` system variable is set with `LOCK_ALTER_TABLE_COPY`, the old behavior is preferred when `LOCK=NON`E is not explicitly set. ([MDEV-31812](https://jira.mariadb.org/browse/MDEV-31812))
@@ -204,8 +203,8 @@ CALL p1;
 ```sql
 CREATE DATABASE test;
 USE test;
-CREATE TABLE t1 (id int);
-CREATE TEMPORARY TABLE t2_temp (id int);
+CREATE TABLE t1 (id INT);
+CREATE TEMPORARY TABLE t2_temp (id INT);
 SHOW FULL TABLE;
 ```
 
@@ -232,7 +231,7 @@ SELECT table_schema, table_name, table_type FROM information_schema.TABLES WHERE
 ```
 
 * For [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) operations that insert multiple rows, error reporting has been improved: ([MDEV-10075](https://jira.mariadb.org/browse/MDEV-10075))
-  * In [GET DIAGNOSTICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics), the ROW\_NUMBER property allows retrieval of the row number that caused the error or warning:
+  * In [GET DIAGNOSTICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics), the `ROW_NUMBER` property allows retrieval of the row number that caused the error or warning:
 
 ```sql
 GET DIAGNOSTICS CONDITION 1 @failed_row=ROW_NUMBER;
@@ -270,14 +269,14 @@ $ mariadb-dump \
 * The [transaction\_isolation system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#transaction_isolation) can now be used to set the transaction isolation: ([MDEV-21921](https://jira.mariadb.org/browse/MDEV-21921))
   * The `tx_isolation` system variable is still available as an alias, but it has been deprecated and will be removed in a later release.
 * The [transaction\_read\_only system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#transaction_read_only) can now be used to set a transaction to read-only. ([MDEV-21921](https://jira.mariadb.org/browse/MDEV-21921))
-* Process list now includes the number of rows sent by the statement. The new value SENT\_ROWS in the information schema table PROCESSLIST includes the number of rows sent by the current statement, shown in the processlist.
-  * SELECTS with functions show the total number of rows sent by the main statement and all functions
+* Process list now includes the number of rows sent by the statement. The new value `SENT_ROWS` in the information schema table `PROCESSLIST` includes the number of rows sent by the current statement, shown in the processlist.
+  * `SELECTS` with functions show the total number of rows sent by the main statement and all functions
   * Stored procedures show the total number of rows sent per stored procedure statement
   * `INSERT RETURNING` and `DELETE RETURNING` show the total number of rows sent for the returning data set
   * Example:
 
 ```sql
-select * from processlist\G
+SELECT * FROM processlist\G
 ```
 
 ```
@@ -305,7 +304,7 @@ MAX_MEMORY_USED: 392544
             TID: 100
 ```
 
-* The SQL Error Log Plugin, used to log errors sent to clients for later analysis, has been enhanced. When option `sql_error_log_with_db_and_thread_info=ON` is set, the log file is now also showing thread id and the current default schema for the error.
+* The `SQL Error Log Plugin`, used to log errors sent to clients for later analysis, has been enhanced. When option `sql_error_log_with_db_and_thread_info=ON` is set, the log file is now also showing thread id and the current default schema for the error.
 * When mariadb-dump is used with the option `-T / --tab=` to produce tab-separated text-format data files per table, the new option `--parallel` (synonym `--use-threads`) can be used to use several threads in parallel to dump the table data to their .txt files.
   * Parallelism also works if the option `--single-transaction` is used.
 * The option `--parallel` has been added to mariadb-import as a synonym to `--use-threads`, which has been available before.
@@ -318,7 +317,6 @@ MAX_MEMORY_USED: 392544
 
 | System Variable                     | Type    | Description                                                                                                                                                                    |
 | ----------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| System Variable                     | Type    | Description                                                                                                                                                                    |
 | optimizer\_disk\_read\_cost         | Engine  | Sets the time in microseconds required to read a 4K block from storage. The default value is tuned for an SSD reading at 400 MB/second.                                        |
 | optimizer\_index\_block\_copy\_cost | Engine  | Sets the cost to lock a block in the global cache and copy it to the local cache. The cost applies to every block accessed, regardless of whether the block is already cached. |
 | optimizer\_key\_compare\_cost       | Engine  | Sets the cost to compare two key values.                                                                                                                                       |
@@ -369,7 +367,7 @@ ALTER TABLE partitioned_tab
 
 ```sql
 CREATE TABLE partitioned_tab (
- col1 int
+ col1 INT
 )
 PARTITION BY RANGE(col1) (
  part1 VALUES LESS THAN (1000000),
@@ -397,7 +395,7 @@ PARTITION BY RANGE(id) (
 
 * Exchanging partition or converting a table is now possible without a validation of the partitioning expression
   * This new feature should be used with care, as it can lead to inconsistencies if the partitioning rules are not met.
-  * The new addition to ALTER TABLE is:
+  * The new addition to `ALTER TABLE` is:
 
 ```sql
 EXCHANGE PARTITION partition_name WITH TABLE tbl_name [{WITH | WITHOUT} VALIDATION]
@@ -410,8 +408,8 @@ CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
 * History partition creation can be automated using the `AUTO` keyword when partitioned by `INTERVAL` or `LIMIT`: ([MDEV-17554](https://jira.mariadb.org/browse/MDEV-17554))
 
 ```sql
-CREATE TABLE t1 (x int) WITH SYSTEM VERSIONING
- PARTITION BY system_time INTERVAL 1 months AUTO;
+CREATE TABLE t1 (x INT) WITH SYSTEM VERSIONING
+ PARTITION BY SYSTEM_TIME INTERVAL 1 months AUTO;
 ```
 
 * In the above example, a new history partition to store historical row versions is created on a monthly basis.
@@ -441,7 +439,7 @@ CREATE TABLE t1 (x int) WITH SYSTEM VERSIONING
 ## SQL Level Enhancements
 
 * General Support of Packages for Stored Routines has been added
-  * Before MariaDB Enterprise Server 11.4, the CREATE PACKAGE feature, as well as CREATE PACKAGE BODY, were only supported with sql\_mode = ORACLE. They can now be used with any SQL mode.
+  * Before MariaDB Enterprise Server 11.4, the `CREATE PACKAGE` feature, as well as `CREATE PACKAGE BODY`, were only supported with `sql_mode = ORACLE`. They can now be used with any SQL mode.
   * Example:
 
 ```sql
@@ -510,12 +508,12 @@ CALL myPkg.p1();
 
 ```sql
 CREATE TABLE sections (
-   top_level int,
-   sub_level int,
-   index top_asc_sub_asc (top_level ASC, sub_level ASC),
-   index top_asc_sub_desc (top_level ASC, sub_level DESC),
-   index top_desc_sub_asc (top_level DESC, sub_level ASC),
-   index top_desc_sub_desc (top_level DESC, sub_level DESC)
+   top_level INT,
+   sub_level INT,
+   INDEX top_asc_sub_asc (top_level ASC, sub_level ASC),
+   INDEX top_asc_sub_desc (top_level ASC, sub_level DESC),
+   INDEX top_desc_sub_asc (top_level DESC, sub_level ASC),
+   INDEX top_desc_sub_desc (top_level DESC, sub_level DESC)
 );
 INSERT INTO sections VALUES
    (1, 1), (1, 2), (2, 1), (2, 2),
@@ -570,13 +568,13 @@ SELECT JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]
 +-----------------------------------------------------------------------------+
 ```
 
-• JSON\_KEY\_VALUE() can be used as an argument to JSON\_TABLE(), adding the key to a result set. For example:
+• `JSON_KEY_VALUE()` can be used as an argument to `JSON_TABLE(`), adding the key to a result set. For example:
 
 ```sql
 SELECT jt.* FROM JSON_TABLE(
   JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]'),'$[*]'
       COLUMNS (
-         k VARCHAR(20) PATH '$.key',
+         k VARCHAR(20) PATH '$.KEY',
          v VARCHAR(20) PATH '$.value',
         id FOR ORDINALITY )) AS jt;
 ```
@@ -607,7 +605,7 @@ SELECT json_array_intersect(@array1, @array2) as result;
 ```sql
 SET @json1= '[[1,2,3],[4,5,6],[1,1,1]]';
 SET @json2= '[[1,2,3],[4,5,6],[1,3,2]]';
-SELECT json_array_intersect(@json1, @json2) as result;
+SELECT json_array_intersect(@json1, @json2) AS result;
 ```
 
 ```
@@ -624,7 +622,7 @@ SELECT json_array_intersect(@json1, @json2) as result;
 
 ```sql
 SET @json1= '{ "a" : [1,2,3] , "b": {"key1": "val1", "key2": {"key3": "val3"}} }';
-SELECT JSON_OBJECT_TO_ARRAY(@json1) as result;
+SELECT JSON_OBJECT_TO_ARRAY(@json1) AS result;
 ```
 
 ```
@@ -635,14 +633,14 @@ SELECT JSON_OBJECT_TO_ARRAY(@json1) as result;
 +-----------------------------------------------------------------------+
 ```
 
-* Resulting arrays can be compared using JSON\_ARRAY\_INTERSECT(). For example:
+* Resulting arrays can be compared using `JSON_ARRAY_INTERSECT()`. For example:
 
 ```sql
 SET @json1='{"a":[1,2,3],"b":{"key1":"val1","key2":{"key3":"val3"}}}';
 SET @json2='{"a":[1,2,3]}';
-SELECT JSON_OBJECT_TO_ARRAY(@json1) into @array1;
-SELECT JSON_OBJECT_TO_ARRAY(@json2) into @array2;
-SELECT JSON_ARRAY_INTERSECT(@array1,@array2) as result;
+SELECT JSON_OBJECT_TO_ARRAY(@json1) INTO @array1;
+SELECT JSON_OBJECT_TO_ARRAY(@json2) INTO @array2;
+SELECT JSON_ARRAY_INTERSECT(@array1,@array2) AS result;
 ```
 
 ```
@@ -653,13 +651,13 @@ SELECT JSON_ARRAY_INTERSECT(@array1,@array2) as result;
 +--------------------+
 ```
 
-* JSON\_OBJECT\_FILTER\_KEYS() returns key/value pairs from a JSON string for keys in an array. ([MDEV-26182](https://jira.mariadb.org/browse/MDEV-26182))
-* Syntax: JSON\_OBJECT\_FILTER\_KEYS(\<json\_doc>,\<array\_keys>)\\
+* `JSON_OBJECT_FILTER_KEYS()` returns key/value pairs from a JSON string for keys in an array. ([MDEV-26182](https://jira.mariadb.org/browse/MDEV-26182))
+* Syntax: JSON\_OBJECT\_FILTER\_KEYS`(<json_doc>,<array_keys>)\`
 * For example:
 
 ```sql
 SET @json1= '{ "a": 1, "b": 2, "c": 3}';
-SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') as result;
+SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') AS result;
 ```
 
 ```
@@ -675,7 +673,7 @@ SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') as result;
 ```sql
 SET @json1= '{ "a": 1, "b": 2, "c": 3}';
 SET @json2= '{"b" : 10, "c": 20, "d": 30}';
-SELECT JSON_OBJECT_FILTER_KEYS (@json1, json_array_intersect(json_keys(@json1), json_keys(@json2))) as result;
+SELECT JSON_OBJECT_FILTER_KEYS (@json1, json_array_intersect(json_keys(@json1), json_keys(@json2))) AS result;
 ```
 
 ```
@@ -722,7 +720,7 @@ SELECT JSON_REMOVE(@json, '$.A[last]');
 * A range of indexes can be used to access the values in that range in a JSON array when a JSON Path expression is used as a parameter to a JSON function. ([MDEV-27911](https://jira.mariadb.org/browse/MDEV-27911))
 
 ```sql
-SELECT JSON_REMOVE(@json, '$.A[1 to 3]');
+SELECT JSON_REMOVE(@json, '$.A[1 TO 3]');
 ```
 
 #### Data Types
@@ -744,11 +742,11 @@ Functions like `CAST()`
 
 #### Functions
 
-* New time zone options for function DATE\_FORMAT()
+* New time zone options for function `DATE_FORMAT()`
   * The new options %Z and %z can be used for the format string of the function
 
 ```sql
-DATE_FORMAT(date, format)
+DATE_FORMAT(DATE, format)
 ```
 
 for adding time zone information to the date string.
@@ -770,7 +768,7 @@ SELECT DATE_FORMAT(NOW(), '%W %d %M %Y %H:%i:%s %Z %z');
 ```
 
 * SQL function KDF() for key derivation
-  * A possible use case is to generate encryption keys from a user provided password or a passphrase. It can be used to generate encryption keys for encryption functions such as AES\_ENCRYPT.
+  * A possible use case is to generate encryption keys from a user provided password or a passphrase. It can be used to generate encryption keys for encryption functions such as `AES_ENCRYPT`.
 
 ```sql
 KDF(key_str, salt [, {info | iterations} [, kdf_name [, width ]]])
@@ -786,7 +784,7 @@ KDF(key_str, salt [, {info | iterations} [, kdf_name [, width ]]])
 * Example:
 
 ```sql
-select hex(kdf('foo', 'bar', 'info', 'hkdf'));
+SELECT hex(kdf('foo', 'bar', 'info', 'hkdf'));
 ```
 
 ```
@@ -798,7 +796,7 @@ select hex(kdf('foo', 'bar', 'info', 'hkdf'));
 ```
 
 ```sql
-insert into tbl values (aes_encrypt(@secret_data, kdf("Passw0rd", "NaCl", "info", 'hkdf'), "iv"));
+INSERT INTO tbl VALUES (aes_encrypt(@secret_data, kdf("Passw0rd", "NaCl", "info", 'hkdf'), "iv"));
 ```
 
 * Function `CONV()` now supports conversions up to base 62
@@ -852,7 +850,7 @@ SELECT @@block_encryption_mode;
 ```
 
 ```sql
-SELECT HEX(AES_ENCRYPT('MariaDB','mykey','vector')) as result;
+SELECT HEX(AES_ENCRYPT('MariaDB','mykey','VECTOR')) AS result;
 ```
 
 ```
@@ -864,7 +862,7 @@ SELECT HEX(AES_ENCRYPT('MariaDB','mykey','vector')) as result;
 ```
 
 ```sql
-SELECT AES_DECRYPT(x'CD0352A4B2FB18A592C04FF8CDA6C2F2','mykey','vector') as result;
+SELECT AES_DECRYPT(x'CD0352A4B2FB18A592C04FF8CDA6C2F2','mykey','VECTOR') AS result;
 ```
 
 ```
@@ -886,7 +884,7 @@ SELECT AES_DECRYPT(x'CD0352A4B2FB18A592C04FF8CDA6C2F2','mykey','vector') as resu
 ```
 
 ```sql
-SELECT AES_DECRYPT(x'CD6C47183B89A813557BFD639A893CE3','mykey','thisismy256vector','aes-256-cbc') as result;
+SELECT AES_DECRYPT(x'CD6C47183B89A813557BFD639A893CE3','mykey','thisismy256vector','aes-256-cbc') AS result;
 ```
 
 ```
@@ -963,7 +961,7 @@ SELECT SCHEMA_NAME,DEFAULT_COLLATION_NAME FROM SCHEMATA WHERE SCHEMA_NAME LIKE "
   * Example without privilege `SHOW CREATE ROUTINE`:
 
 ```sql
-show grants;
+SHOW grants;
 ```
 
 ```
@@ -976,7 +974,7 @@ show grants;
 ```
 
 ```sql
-show create procedure myProc \G
+SHOW CREATE PROCEDURE myProc \G
 ```
 
 ```
@@ -992,7 +990,7 @@ collation_connection: utf8mb3_general_ci
 * Example with the new privilege SHOW CREATE ROUTINE:
 
 ```sql
-show grants;
+SHOW grants;
 ```
 
 ```
@@ -1005,7 +1003,7 @@ show grants;
 ```
 
 ```sql
-show create procedure myProc \G
+SHOW CREATE PROCEDURE myProc \G
 ```
 
 ```
@@ -1027,8 +1025,8 @@ collation_connection: utf8mb3_general_ci
 
 ```sql
 CREATE DATABASE test;
-use test;
-CREATE TABLE t1 (id int);
+USE test;
+CREATE TABLE t1 (id INT);
 CREATE USER user1;
 GRANT SELECT, UPDATE ON *.* TO user1;
 CREATE USER user2;
@@ -1073,7 +1071,7 @@ CREATE USER 'MariaDBUser'@'%' IDENTIFIED VIA PARSEC USING PASSWORD('MyPassword12
 
 ```sql
 SHOW GRANTS FOR MariaDBUser@'%';
-Grants for MariaDBUser@%
+Grants FOR MariaDBUser@%
 GRANT USAGE ON *.* TO `MariaDBUser`@`%` IDENTIFIED VIA parsec USING 'P0:lhXyNv1cIxpB8EnTxR7ON7S7:1l3rWRW1/jw45yrvYXB8eh02wzk7lcJcz4CMcWw2b+8'
 ```
 
@@ -1198,7 +1196,6 @@ $ mariadb-binlog --do-domain-ids='0,1' \
 
 | Connection State                | Description                                                                                                                                                                                                                                                                                                      |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection State                | Description                                                                                                                                                                                                                                                                                                      |
 | waiting to execute in isolation | The connection is executing a DDL statement with [wsrep\_osu\_method=TOI](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method), but the operation requires other concurrent operations to finish first, so the DDL statement can be executed in isolation. |
 | waiting for TOI DDL             | Another connection is executing a DDL statement with [wsrep\_osu\_method=TOI](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method), so this connection must wait for the DDL statement to finish.                                                          |
 | waiting for flow control        | The connection is committing a transaction, but transactions are currently paused due to flow control, so the connection is waiting for the cluster to catch up and unpause transactions.                                                                                                                        |
@@ -1218,14 +1215,14 @@ wsrep_status_file=galera_status.json
 
 ```
 [mariadb]
-wsrep_sst_method=mariabackup
+wsrep_sst_method=mariadb-backup
 wsrep_debug=1
 [sst]
 progress=1
 rlimit=100m
 ```
 
-* Progress reporting is only supported for MariaDB Enterprise Backup-based SST, so [wsrep\_sst\_method=mariabackup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) must be set.
+* Progress reporting is only supported for MariaDB Enterprise Backup-based SST, so [wsrep\_sst\_method=mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) must be set.
 * Progress reporting is only enabled when [wsrep\_debug=1](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug) is set.
 * When `progress=1` is set, progress reporting goes to standard error (`stderr`).
 * When `progress` is set to a path, progress reporting is written to the specified file.
@@ -1238,14 +1235,14 @@ rlimit=100m
 
 ```
 [mariadb]
-wsrep_sst_method=mariabackup
+wsrep_sst_method=mariadb-backup
 wsrep_debug=1
 [sst]
 progress=1
 rlimit=100m
 ```
 
-* Progress reporting is only supported for MariaDB Enterprise Backup-based SST, so [wsrep\_sst\_method=mariabackup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) must be set.
+* Progress reporting is only supported for MariaDB Enterprise Backup-based SST, so [wsrep\_sst\_method=mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) must be set.
 * Progress reporting is only enabled when [wsrep\_debug=1](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug) is set.
 * When `progress=1` is set, progress reporting goes to standard error (`stderr`).
 * When `progress` is set to a path, progress reporting is written to the specified file.
@@ -1302,6 +1299,6 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 
 [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrades/upgrade-to-mariadb-enterprise-server-11.4)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

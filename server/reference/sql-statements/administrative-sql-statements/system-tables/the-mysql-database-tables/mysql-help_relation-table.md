@@ -8,7 +8,6 @@ The `mysql.help_relation` table contains the following fields:
 
 | Field             | Type             | Null | Key | Default | Description |
 | ----------------- | ---------------- | ---- | --- | ------- | ----------- |
-| Field             | Type             | Null | Key | Default | Description |
 | help\_topic\_id   | int(10) unsigned | NO   | PRI | NULL    |             |
 | help\_keyword\_id | int(10) unsigned | NO   | PRI | NULL    |             |
 

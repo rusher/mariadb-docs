@@ -1,8 +1,8 @@
 # MariaDB 10.11.2 Release Notes
 
-The most recent release of [MariaDB 10.11](what-is-mariadb-1011.md) is:[**MariaDB 10.11.11**](mariadb-10-11-11-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
+{% include "../../../.gitbook/includes/latest-10.11 (2).md" %}
 
-[Download](https://downloads.mariadb.org/mariadb/10.11.2)[Release Notes](mariadb-10-11-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-2-changelog.md)[Overview of 10.11](what-is-mariadb-1011.md)
+<a href="https://downloads.mariadb.org/mariadb/10.11.2/" class="button primary">Download</a> <a href="mariadb-10-11-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 **Release date:** 16 Feb 2023
 
@@ -10,7 +10,7 @@ The most recent release of [MariaDB 10.11](what-is-mariadb-1011.md) is:[**MariaD
 
 [MariaDB 10.11.2](mariadb-10-11-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the**[**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
+**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the** [**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -34,7 +34,7 @@ Thanks, and enjoy MariaDB!
 * Fixed hangs and error handling in B-tree operations ([MDEV-29603](https://jira.mariadb.org/browse/MDEV-29603), [MDEV-30400](https://jira.mariadb.org/browse/MDEV-30400))
 * InnoDB bulk insert fixes ([MDEV-30047](https://jira.mariadb.org/browse/MDEV-30047), [MDEV-30321](https://jira.mariadb.org/browse/MDEV-30321))
 * InnoDB fails to start on `innodb_undo_tablespaces` mismatch ([MDEV-30158](https://jira.mariadb.org/browse/MDEV-30158))
-* `mariabackup.skip_innodb` crashes when `innodb_undo_tablespaces > 0` ([MDEV-30122](https://jira.mariadb.org/browse/MDEV-30122))
+* `mariadb-backup.skip_innodb` crashes when `innodb_undo_tablespaces > 0` ([MDEV-30122](https://jira.mariadb.org/browse/MDEV-30122))
 
 ### Galera
 
@@ -64,16 +64,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.11.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-11-series/broken-reference/README.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-1-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-1-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.11.2](mariadb-10-11-2-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-7-1-rc-and-mariadb-10-6-5-10-5-13-10-4-22-10-3-32-and-10-2-41-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

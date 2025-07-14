@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP PACKAGE [IF EXISTS]  [ db_name . ] package_name
 ```
 
@@ -21,7 +21,7 @@ The `DROP PACKAGE` statement drops a stored package entirely:
 * [CREATE PACKAGE](../create/create-package.md)
 * [CREATE PACKAGE BODY](../create/create-package-body.md)
 * [DROP PACKAGE BODY](drop-package-body.md)
-* [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/drop/broken-reference/README.md)
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

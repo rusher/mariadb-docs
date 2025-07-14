@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 11.3.2**](mariadb-11-3-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.3.2/)
 
-[Download](https://downloads.mariadb.org/mariadb/11.3.0)[Release Notes](mariadb-11-3-0-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-3-series/)[Overview of 11.3](what-is-mariadb-113.md)
+[Download](https://downloads.mariadb.org/mariadb/11.3.0)[Release Notes](mariadb-11-3-0-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-3-series/)[Overview of 11.3](what-is-mariadb-113.md)
 
 **Release date:** 20 September 2023
 
@@ -83,7 +83,7 @@ Thanks, and enjoy MariaDB!
 
 ## mariadb-backup
 
-* [mariabackup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
+* [mariadb-backup --innobackupex](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#innobackupex) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
 
 ## Spider
 
@@ -100,10 +100,8 @@ The following deprecated features and system variables have been removed ([MDEV-
 * [wsrep\_causal\_reads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_causal_reads) (deprecated since [MariaDB 10.1.3](../release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md))
 * "parser" in [mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/mroonga) table comment (deprecated since [MariaDB 10.2.11](../release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md))
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

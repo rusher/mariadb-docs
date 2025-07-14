@@ -10,7 +10,6 @@ The `mysql.proxies_priv` table contains the following fields:
 
 | Field         | Type       | Null | Key | Default            | Description |
 | ------------- | ---------- | ---- | --- | ------------------ | ----------- |
-| Field         | Type       | Null | Key | Default            | Description |
 | Host          | char(60)   | NO   | PRI |                    |             |
 | User          | char(80)   | NO   | PRI |                    |             |
 | Proxied\_host | char(60)   | NO   | PRI |                    |             |

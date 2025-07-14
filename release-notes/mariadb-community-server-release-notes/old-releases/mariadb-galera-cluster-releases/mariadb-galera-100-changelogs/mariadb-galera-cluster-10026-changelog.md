@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 10.0](https://github.com/mariadb-corpora
 **Release date:** 1 Jul 2016
 
 For the highlights of this release, see the[release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10026-release-notes.md).\
-For changes made in MariaDB, see the [MariaDB 10.0.26 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10026-changelog.md).
+For changes made in MariaDB, see the [MariaDB 10.0.26 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10026-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
@@ -31,5 +31,9 @@ modified in that revision.
 * [Revision #868c2ce](https://github.com/MariaDB/server/commit/868c2ce)\
   2016-06-12 19:28:56 -0400
   * [MDEV-9083](https://jira.mariadb.org/browse/MDEV-9083): Slave IO thread does not handle autoreconnect to restarting Galera Cluster node
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

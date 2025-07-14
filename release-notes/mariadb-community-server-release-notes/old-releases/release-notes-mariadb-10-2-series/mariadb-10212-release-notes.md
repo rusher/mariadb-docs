@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.12)[Release Notes](mariadb-10212-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10212-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.12)[Release Notes](mariadb-10212-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10212-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 4 Jan 2018
 
@@ -32,7 +32,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-14714](https://jira.mariadb.org/browse/MDEV-14714) / [MDEV-14488](https://jira.mariadb.org/browse/MDEV-14488) / [MDEV-14644](https://jira.mariadb.org/browse/MDEV-14644) - data corruption caused by error log messages ending up in database files or binary logs
 * [MDEV-14511](https://jira.mariadb.org/browse/MDEV-14511) - Use fewer transactions for updating InnoDB persistent statistics
 * [MDEV-13670](https://jira.mariadb.org/browse/MDEV-13670) / [MDEV-14550](https://jira.mariadb.org/browse/MDEV-14550) - Error log flood : "InnoDB: page\_cleaner: 1000ms intended loop took N ms. The settings might not be optimal."
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup): [MDEV-14536](https://jira.mariadb.org/browse/MDEV-14536) - during backup, retry read of log blocks, if there is (possibly intermittent) checksum mismatch
+* [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup): [MDEV-14536](https://jira.mariadb.org/browse/MDEV-14536) - during backup, retry read of log blocks, if there is (possibly intermittent) checksum mismatch
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.2](what-is-mariadb-102.md) for Ubuntu 17.04 "Zesty".
 
 ### Updates
@@ -44,12 +44,10 @@ Thanks, and enjoy MariaDB!
 ## Notes
 
 For a complete list of changes made in [MariaDB 10.2.12](mariadb-10212-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10212-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10212-changelog.md).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

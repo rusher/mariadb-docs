@@ -1,4 +1,4 @@
-# MariaDB Connector/C++ 1.0.1 Release Notes
+# Connector/C++ 1.0.1 Release Notes
 
 The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C++ is:[**MariaDB Connector/C++ 1.1.6**](../mariadb-connector-cpp-1-1-release-notes/mariadb-connector-cpp-1-1-6-release-notes.md)
 
@@ -10,7 +10,7 @@ This is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of M
 
 **For a description of this library see the**[**MariaDB Connector/C++**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp) **page.**
 
-[MariaDB Connector/C++](https://app.gitbook.com/s/rfK8h3eGTK4lYdomGpGT/readme/mariadb-connectors/mariadb-connector-c++) is the interface between C++ applications and MariaDB Server. MariaDB Connector/C++ enables development of C++ applications using a JDBC-based API, which is also used by MariaDB Connector/J.
+[MariaDB Connector/C++](broken-reference) is the interface between C++ applications and MariaDB Server. MariaDB Connector/C++ enables development of C++ applications using a JDBC-based API, which is also used by MariaDB Connector/J.
 
 MariaDB Connector/C++ implements the MySQL protocol using the MariaDB Connector/C API. This release depends on MariaDB Connector/C 3.1.13.
 
@@ -30,6 +30,6 @@ MariaDB Connector/C++ implements the MySQL protocol using the MariaDB Connector/
 
 [Install MariaDB Connector/C++](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp/install-mariadb-connector-cpp)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

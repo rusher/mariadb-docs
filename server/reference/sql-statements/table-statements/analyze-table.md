@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 ANALYZE [NO_WRITE_TO_BINLOG | LOCAL] TABLE tbl_name [,tbl_name ...]
   [PERSISTENT FOR 
     { ALL
@@ -13,42 +13,46 @@ ANALYZE [NO_WRITE_TO_BINLOG | LOCAL] TABLE tbl_name [,tbl_name ...]
 
 ## Description
 
-`ANALYZE TABLE` analyzes and stores the key distribution for a\
-table ([index statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md)). This statement works with [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [Aria](../../../server-usage/storage-engines/aria/) and [InnoDB](../../../server-usage/storage-engines/innodb/) tables. During the analysis, InnoDB will allow reads/writes, and MyISAM/Aria reads/inserts. For MyISAM tables, this statement is equivalent to using [myisamchk --analyze](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md).
+`ANALYZE TABLE` analyzes and stores the key distribution for a table ([index statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md)). This statement works with [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [Aria](../../../server-usage/storage-engines/aria/) and [InnoDB](../../../server-usage/storage-engines/innodb/) tables. During the analysis, InnoDB will allow reads/writes, and MyISAM/Aria reads/inserts. For MyISAM tables, this statement is equivalent to using [myisamchk --analyze](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md).
 
-ANALYZE uses histograms, which can provide a better selectivity than InnoDB statistics offer. InnoDB statistics work with a limited sample set and is therefore not as accurate as persistent statistics can be. For more information on how the analysis works within InnoDB, see[InnoDB Limitations](../../../server-usage/storage-engines/innodb/innodb-limitations.md#table-analysis).
+`ANALYZE` uses histograms, which can provide a better selectivity than InnoDB statistics offer. InnoDB statistics work with a limited sample set and is therefore not as accurate as persistent statistics can be. For more information on how the analysis works within InnoDB, see[InnoDB Limitations](../../../server-usage/storage-engines/innodb/innodb-limitations.md#table-analysis).
 
-MariaDB uses the stored key distribution to decide the order in which\
-tables should be joined when you perform a join on something other than\
-a constant. In addition, key distributions can be used when deciding\
-which indexes to use for a specific table within a query.
+MariaDB uses the stored key distribution to decide the order in which tables should be joined when you perform a join on something other than a constant. In addition, key distributions can be used when deciding which indexes to use for a specific table within a query.
 
 This statement requires [SELECT and INSERT privileges](../account-management-sql-statements/grant.md) for the table.
 
 By default, ANALYZE TABLE statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
-From [MariaDB 10.3.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10319-release-notes), `ANALYZE TABLE` statements are not logged to the binary log if [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../ha-and-performance/standard-replication/read-only-replicas.md).
+`ANALYZE TABLE` statements are not logged to the binary log if [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../ha-and-performance/standard-replication/read-only-replicas.md).
 
-From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-16-release-notes) `ANALYZE TABLE` is non-blocking and non-intrusive. A connection will start using new statistics for the query following the completion of the `ANALYZE TABLE`.
+{% tabs %}
+{% tab title="Current" %}
+`ANALYZE TABLE` is non-blocking and non-intrusive. A connection will start using new statistics for the query following the completion of the `ANALYZE TABLE`.
+{% endtab %}
 
-`ANALYZE TABLE` is also supported for partitioned tables. You\
-can use `[ALTER TABLE](../data-definition/alter/alter-table.md) ... ANALYZE PARTITION` to analyze one or\
-more partitions.
+{% tab title="< 10.6.16" %}
+`ANALYZE TABLE` is blocking and intrusive.
+{% endtab %}
+{% endtabs %}
 
-The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md) for the `ANALYZE TABLE` statement.
+`ANALYZE TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE`](../data-definition/alter/alter-table/#analyze-partition) `... ANALYZE PARTITION` to analyze one or more partitions.
+
+The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](../administrative-sql-statements/show/show-processlist.md) for the `ANALYZE TABLE` statement.
 
 ## Performance Impact
 
-Note that analyzing tables with ANALYZE can have a performance impact and can use a lot of disk space for big tables. As column statistics usually do not change much over time, even when the table grows, there is no benefit to running ANALYZE very often.
+Note that analyzing tables with `ANALYZE` can have a performance impact and can use a lot of disk space for big tables. As column statistics usually do not change much over time, even when the table grows, there is no benefit to running `ANALYZE` very often.
 
-Running ANALYZE is indicated:
+Running `ANALYZE` is indicated:
 
 * for newly populated tables,
 * for tables that have additional columns added that are used in WHERE clauses,
 * when a table has doubled in size,
 * when you note that a query becomes slow because the table order has changed and you can see from [EXPLAIN](../administrative-sql-statements/analyze-and-explain-statements/explain.md) or [ANALYZE FORMAT=JSON](../administrative-sql-statements/analyze-and-explain-statements/analyze-format-json.md) that the selectivity is wrong for a table.
 
-ANALYZE isn’t useful for table columns of type UNIQUE, PRIMARY KEY, TIME, or CURRENT\_TIME. In ANALYZE queries, you should omit columns of those types.
+{% hint style="warning" %}
+`ANALYZE` isn’t useful for table columns of type `UNIQUE`, `PRIMARY KEY`, `TIME`, or `CURRENT_TIME`. In `ANALYZE` queries, you should omit columns of those types.
+{% endhint %}
 
 ## Engine-Independent Statistics / PERSISTENT FOR
 
@@ -64,7 +68,6 @@ The following overview indicates when a particular variable was introduced. When
 
 | Variable                                                                                                                                                  | Introduced in MariaDB version | Description                                                                                                                                                                                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Variable                                                                                                                                                  | Introduced in MariaDB version | Description                                                                                                                                                                                                                                                                                                         |
 | [analyze\_sample\_percentage](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_sample_percentage)  | 10.4.3                        | Percentage of rows from the table ANALYZE TABLE will sample to collect table statistics. Set to 0 to let MariaDB decide what percentage of rows to sample.                                                                                                                                                          |
 | [histogram\_type](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_type)                         | 10.4.3-11.0                   | Specifies the type of histograms created by ANALYZE. Options are #SINGLE\_PREC\_HB,DOUBLE\_PREC\_HB or JSON\_HB.                                                                                                                                                                                                    |
 | [histogram\_size](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_size)                         | 10.7                          | Number of bytes or buckets (in case of JSON\_HB) used for storing the histogram. If set to 0, no histograms are created by ANALYZE.]]                                                                                                                                                                               |
@@ -74,7 +77,7 @@ The following overview indicates when a particular variable was introduced. When
 
 ## Examples
 
-```
+```sql
 -- update all engine-independent statistics for all columns and indexes
 ANALYZE TABLE tbl PERSISTENT FOR ALL;
 
@@ -99,7 +102,7 @@ ANALYZE TABLE tbl;
 * [This one trick can make MariaDB 30x faster!](https://mariadb.org/mariadb-30x-faster/) (mariadb.org blog)
 * [Index Statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md)
 * [InnoDB Persistent Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md)
-* [Progress Reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md)
+* [Progress Reporting](../administrative-sql-statements/show/show-processlist.md)
 * [Engine-independent Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md)
 * [Histogram-based Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md)
 * [ANALYZE Statement](../administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md)

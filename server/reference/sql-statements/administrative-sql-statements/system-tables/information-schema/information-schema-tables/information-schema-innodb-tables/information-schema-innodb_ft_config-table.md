@@ -8,13 +8,12 @@ It has the following columns:
 
 | Column | Description         |
 | ------ | ------------------- |
-| Column | Description         |
 | KEY    | Metadata item name. |
 | VALUE  | Associated value.   |
 
 ## Example
 
-```
+```sql
 SELECT * FROM INNODB_FT_CONFIG;
 +---------------------------+-------+
 | KEY                       | VALUE |

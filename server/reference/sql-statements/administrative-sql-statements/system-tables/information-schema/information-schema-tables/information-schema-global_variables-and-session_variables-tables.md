@@ -6,13 +6,12 @@ It contains the following columns:
 
 | Column          | Description              |
 | --------------- | ------------------------ |
-| Column          | Description              |
 | VARIABLE\_NAME  | System variable name.    |
 | VARIABLE\_VALUE | Global or session value. |
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.GLOBAL_VARIABLES ORDER BY VARIABLE_NAME\G
 *************************** 1. row *****************************
  VARIABLE_NAME: ARIA_BLOCK_SIZE

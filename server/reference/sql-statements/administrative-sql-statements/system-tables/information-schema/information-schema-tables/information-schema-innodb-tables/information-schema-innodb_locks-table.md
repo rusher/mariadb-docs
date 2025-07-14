@@ -6,7 +6,6 @@ It has the following columns:
 
 | Column        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | LOCK\_ID      | Lock ID number - the format is not fixed, so do not rely upon the number for information.                                                                                                                                                                                                                                                                                                                                                                                   |
 | LOCK\_TRX\_ID | Lock's transaction ID. Matches the [INNODB\_TRX.TRX\_ID](information-schema-innodb_trx-table.md) column.                                                                                                                                                                                                                                                                                                                                                                    |
 | LOCK\_MODE    | [Lock mode](../../../../../../../server-usage/storage-engines/innodb/innodb-lock-modes.md). One of S (shared), X (exclusive), IS (intention shared), IX (intention exclusive row lock), S\_GAP (shared gap lock), X\_GAP (exclusive gap lock), IS\_GAP (intention shared gap lock), IX\_GAP (intention exclusive gap lock) or AUTO\_INC ([auto-increment table level lock](../../../../../../../server-usage/storage-engines/innodb/auto_increment-handling-in-innodb.md)). |
@@ -22,7 +21,7 @@ The table is often used in conjunction with the [INNODB\_LOCK\_WAITS](informatio
 
 ## Example
 
-```
+```sql
 -- session 1
 START TRANSACTION;
 UPDATE t SET id = 15 WHERE id = 10;

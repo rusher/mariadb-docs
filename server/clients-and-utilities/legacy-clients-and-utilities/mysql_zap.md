@@ -1,43 +1,31 @@
-
-# mysql_zap
+# mysql\_zap
 
 {% hint style="danger" %}
-mysql_zap was removed from MariaDB. pkill can be used  [as an alternative](#pkill-as-an-alternative).
+mysql\_zap was removed from MariaDB. pkill can be used [as an alternative](mysql_zap.md#pkill-as-an-alternative).
 {% endhint %}
 
+_mysql\_zap_ kills processes that match a pattern. It uses the _ps_ command and Unix signals, so it runs on Unix and Unix-like systems.
 
-*mysql_zap* kills processes that match a pattern. It uses the *ps* command and Unix signals, so it runs on Unix and Unix-like systems.
-
-
-Invoke mysql_zap like this:
-
+Invoke mysql\_zap like this:
 
 ```
 shell> mysql_zap [-signal] [-?Ift]
 ```
 
-A process matches if its output line from the *ps* command contains the pattern. By default, mysql_zap asks for confirmation for each process. Respond *y* to kill the process, or *q* to exit mysql_zap. For any other response, mysql_zap does not attempt to kill the process.
+A process matches if its output line from the _ps_ command contains the pattern. By default, mysql\_zap asks for confirmation for each process. Respond _y_ to kill the process, or _q_ to exit mysql\_zap. For any other response, mysql\_zap does not attempt to kill the process.
 
+If the _-signal_ option is given, it specifies the name or number of the signal to send to each\
+process. Otherwise, mysql\_zap tries first with TERM (signal 15) and then with KILL (signal 9).
 
-If the *-signal* option is given, it specifies the name or number of the signal to send to each
-process. Otherwise, mysql_zap tries first with TERM (signal 15) and then with KILL (signal 9).
+mysql\_zap supports the following additional options:
 
-
-mysql_zap supports the following additional options:
-
-
-
-| Option | Description |
-| --- | --- |
-| Option | Description |
-| --help, -?, -I | Display a help message and exit. |
-| -f | Force mode. mysql_zap attempts to kill each process without confirmation. |
-| -t | Test mode. Display information about each process but do not kill it. |
-
-
+| Option         | Description                                                                |
+| -------------- | -------------------------------------------------------------------------- |
+| --help, -?, -I | Display a help message and exit.                                           |
+| -f             | Force mode. mysql\_zap attempts to kill each process without confirmation. |
+| -t             | Test mode. Display information about each process but do not kill it.      |
 
 ## Example
-
 
 ```
 localhost:~# mysql_zap -t mysql
@@ -49,14 +37,10 @@ mysql     4258  3.3 15.7 939740 81236 ?        Sl   08:51  30:18 /usr/sbin/mysql
 
 ## pkill as an Alternative
 
-
-*pkill* can be used as an alternative to *mysql_zap*, although an important distinction between pkill and mysql_zap is that mysql_zap kills the server 'gently' first (with signal 15) and only if the server doesn't die in a limited time then tries -9.
-
+_pkill_ can be used as an alternative to _mysql\_zap_, although an important distinction between pkill and mysql\_zap is that mysql\_zap kills the server 'gently' first (with signal 15) and only if the server doesn't die in a limited time then tries -9.
 
 To use pkill in the same way, one must run it twice; `pkill --signal 15 mysqld ; sleep(10) ; pkill -f --signal 9 pattern`
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

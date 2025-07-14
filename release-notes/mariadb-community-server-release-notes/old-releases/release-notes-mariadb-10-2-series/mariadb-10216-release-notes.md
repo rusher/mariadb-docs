@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.16)[Release Notes](mariadb-10216-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10216-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.16)[Release Notes](mariadb-10216-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10216-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 26 Jun 2018
 
@@ -21,7 +21,7 @@ Thanks, and enjoy MariaDB!
 ## Notable Changes
 
 * [MyRocks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks) is now [Stable (GA)](../../../mariadb-release-criteria.md)
-* [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122): [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) now supports MyRocks
+* [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122): [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) now supports MyRocks
 * [MDEV-13779](https://jira.mariadb.org/browse/MDEV-13779) - InnoDB fails to shut down purge workers, causing hang
 * [MDEV-16267](https://jira.mariadb.org/browse/MDEV-16267) - Wrong INFORMATION\_SCHEMA.INNODB\_BUFFER\_PAGE.TABLE\_NAME
 * [MDEV-13834](https://jira.mariadb.org/browse/MDEV-13834) - Upgrade failure from 10.1 innodb\_encrypt\_log
@@ -43,16 +43,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.16](mariadb-10216-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10216-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10216-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.2.16](mariadb-10216-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-2-16-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

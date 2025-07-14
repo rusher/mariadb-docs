@@ -1,4 +1,4 @@
-# MariaDB Connector/C 3.3.2 Changelog
+# Connector/C 3.3.2 Changelog
 
 The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
@@ -187,7 +187,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Merge branch '3.1' of [mariadb-connector-c](https://github.com/mariadb-corporation/mariadb-connector-c) into 3.1
 * [Revision #18ae382](https://github.com/mariadb-corporation/mariadb-connector-c/commit/18ae382)\
   2022-05-25 12:06:46 -0400
-  * update MARIADB\_CLIENT\_VERSION\_PATCH to next [MariaDB 10.5](../../../../mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md)
+  * update MARIADB\_CLIENT\_VERSION\_PATCH to next [MariaDB 10.5](../../../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md)
 * [Revision #96bbb2b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/96bbb2b)\
   2022-05-25 12:02:26 -0400
   * bump the VERSION
@@ -215,5 +215,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #fcce4a8](https://github.com/mariadb-corporation/mariadb-connector-c/commit/fcce4a8)\
   2022-05-23 14:05:06 +0200
   * [CONC-592](https://jira.mariadb.org/browse/CONC-592): Register replica with host and port
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

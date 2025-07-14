@@ -20,8 +20,8 @@ With tables that use [manually](innodb-enabling-encryption.md#enabling-encryptio
 
 ```sql
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=YES ENCRYPTION_KEY_ID=100;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -40,8 +40,8 @@ If the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-defini
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=YES;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -66,8 +66,8 @@ SET GLOBAL innodb_encrypt_tables=ON;
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 );
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -90,8 +90,8 @@ SET GLOBAL innodb_encryption_threads=4;
 SET GLOBAL innodb_encrypt_tables=ON;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTION_KEY_ID=100;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID

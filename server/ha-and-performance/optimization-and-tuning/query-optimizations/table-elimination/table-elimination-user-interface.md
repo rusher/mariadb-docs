@@ -1,11 +1,9 @@
 # Table Elimination User Interface
 
-One can check that table elimination is working by looking at the\
-output of `EXPLAIN [EXTENDED]` and not finding there the\
-tables that were eliminated:
+One can check that table elimination is working by looking at the output of `EXPLAIN [EXTENDED]` and not finding there the tables that were eliminated:
 
 ```sql
-explain select ACRAT_rating from actors where ACNAM_name=’Gary Oldman’;
+EXPLAIN SELECT ACRAT_rating FROM actors WHERE ACNAM_name=’Gary Oldman’;
 +----+--------------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
 | id | select_type        | table     | type   | possible_keys | key     | key_len | ref                  | rows | Extra       |
 +----+--------------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
@@ -16,11 +14,10 @@ explain select ACRAT_rating from actors where ACNAM_name=’Gary Oldman’;
 +----+--------------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
 ```
 
-Note that `ac_dob` table is not in the output. Now let's try\
-getting birthdate instead:
+Note that `ac_dob` table is not in the output. Now let's try getting birthdate instead:
 
 ```sql
-explain select ACDOB_birthdate from actors where ACNAM_name=’Gary Oldman’;
+EXPLAIN SELECT ACDOB_birthdate FROM actors WHERE ACNAM_name=’Gary Oldman’;
 +----+-------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
 | id | select_type | table     | type   | possible_keys | key     | key_len | ref                  | rows | Extra       |
 +----+-------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
@@ -31,11 +28,10 @@ explain select ACDOB_birthdate from actors where ACNAM_name=’Gary Oldman’;
 3 rows in set (0.01 sec)
 ```
 
-The `ac_dob` table is there while `ac_rating`\
-and the subquery are gone. Now, if we just want to check the name of the actor:
+The `ac_dob` table is there while `ac_rating` and the subquery are gone. Now, if we just want to check the name of the actor:
 
 ```sql
-explain select count(*) from actors where ACNAM_name=’Gary Oldman’;
+EXPLAIN SELECT count(*) FROM actors WHERE ACNAM_name=’Gary Oldman’;
 +----+-------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
 | id | select_type | table     | type   | possible_keys | key     | key_len | ref                  | rows | Extra       |
 +----+-------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
@@ -47,12 +43,9 @@ explain select count(*) from actors where ACNAM_name=’Gary Oldman’;
 
 In this case it will eliminate both the `ac_dob` and`ac_rating` tables.
 
-Removing tables from a query does not make the query slower, and it does not\
-cut off any optimization opportunities, so table elimination is unconditional\
-and there are no plans on having any kind of query hints for it.
+Removing tables from a query does not make the query slower, and it does not cut off any optimization opportunities, so table elimination is unconditional and there are no plans on having any kind of query hints for it.
 
-For debugging purposes there is a `table_elimination=on|off`\
-switch in debug builds of the server.
+For debugging purposes there is a `table_elimination=on|off` switch in debug builds of the server.
 
 ## See Also
 

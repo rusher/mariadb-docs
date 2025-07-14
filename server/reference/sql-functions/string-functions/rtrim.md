@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 RTRIM(str)
 ```
 
@@ -10,13 +10,13 @@ RTRIM(str)
 
 Returns the string `str` with trailing space characters removed.
 
-Returns NULL if given a NULL argument. If the result is empty, returns either an empty string, or, from [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes) with [SQL\_MODE=Oracle](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), NULL.
+Returns NULL if given a NULL argument. If the result is empty, returns either an empty string, or, with [SQL\_MODE=Oracle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `NULL`.
 
 The Oracle mode version of the function can be accessed outside of Oracle mode by using `RTRIM_ORACLE` as the function name.
 
 ## Examples
 
-```
+```sql
 SELECT QUOTE(RTRIM('MariaDB    '));
 +-----------------------------+
 | QUOTE(RTRIM('MariaDB    ')) |
@@ -25,9 +25,9 @@ SELECT QUOTE(RTRIM('MariaDB    '));
 +-----------------------------+
 ```
 
-Oracle mode version from [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes):
+Oracle mode:
 
-```
+```sql
 SELECT RTRIM(''),RTRIM_ORACLE('');
 +-----------+------------------+
 | RTRIM('') | RTRIM_ORACLE('') |

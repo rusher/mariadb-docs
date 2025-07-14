@@ -21,7 +21,7 @@ The build process is not fully streamlined yet. It is
 The build process is as follows
 
 * Install Cassandra (we tried 1.1.3 ... 1.1.5, 1.2 beta versions should work but haven't been tested)
-* Install the Thrift library (we used 0.8.0 and [0.9.0-trunk](https://dist.apache.org/repos/dist/release/thrift/0.9.0/thrift-0.9.0.tar.gz)), only the C++ backend is needed.
+* Install the Thrift library (we used 0.8.0 and [0.9.0-trunk](https://thrift.apache.org/download)), only the C++ backend is needed.
   * we have installed it by compiling the source tarball downloaded from [thrift.apache.org](https://thrift.apache.org/)
 * edit `storage/cassandra/CMakeLists.txt` and modify the `INCLUDE_DIRECTORIES` directive to point to Thrift's include directory.
 * `export LIBS="-lthrift"`, on another machine it was "-lthrift -ldl"

@@ -1,6 +1,6 @@
 # MariaDB 11.0.1 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/11.0.1)[Release Notes](mariadb-11-0-1-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md)[Overview of 11.0](what-is-mariadb-110.md)
+[Download](https://downloads.mariadb.org/mariadb/11.0.1)[Release Notes](mariadb-11-0-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md)[Overview of 11.0](what-is-mariadb-110.md)
 
 **Release date:** 22 Feb 2023
 
@@ -40,7 +40,7 @@ Thanks, and enjoy MariaDB!
 * Fixed hangs and error handling in B-tree operations ([MDEV-29603](https://jira.mariadb.org/browse/MDEV-29603), [MDEV-30400](https://jira.mariadb.org/browse/MDEV-30400))
 * InnoDB bulk insert fixes ([MDEV-30047](https://jira.mariadb.org/browse/MDEV-30047), [MDEV-30321](https://jira.mariadb.org/browse/MDEV-30321))
 * InnoDB fails to start on `innodb_undo_tablespaces` mismatch ([MDEV-30158](https://jira.mariadb.org/browse/MDEV-30158))
-* `mariabackup.skip_innodb` crashes when `innodb_undo_tablespaces > 0` ([MDEV-30122](https://jira.mariadb.org/browse/MDEV-30122))
+* `mariadb-backup.skip_innodb` crashes when `innodb_undo_tablespaces > 0` ([MDEV-30122](https://jira.mariadb.org/browse/MDEV-30122))
 
 ### Galera
 
@@ -77,7 +77,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.0.1](mariadb-11-0-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md).
 
 ## Contributors
 
@@ -85,10 +85,8 @@ For a full list of contributors to [MariaDB 11.0.1](mariadb-11-0-1-release-notes
 
 **Do not use non-stable (non-GA) releases in production!**
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

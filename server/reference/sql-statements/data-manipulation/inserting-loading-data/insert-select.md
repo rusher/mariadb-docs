@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
     [INTO] tbl_name [(col_name,...)]
     SELECT ...
@@ -11,10 +11,9 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 
 ## Description
 
-With `INSERT ... SELECT`, you can quickly insert many rows\
-into a table from one or more other tables. For example:
+With `INSERT ... SELECT`, you can quickly insert many rows into a table from one or more other tables. For example:
 
-```
+```sql
 INSERT INTO tbl_temp2 (fld_id)
   SELECT tbl_temp1.fld_order_id
   FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
@@ -38,6 +37,6 @@ If the new table has a primary key or UNIQUE indexes, you can use [IGNORE](ignor
 * [INSERT IGNORE](insert-ignore.md)
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

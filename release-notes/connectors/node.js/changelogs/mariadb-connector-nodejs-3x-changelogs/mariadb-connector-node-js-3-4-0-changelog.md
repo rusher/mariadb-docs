@@ -1,6 +1,8 @@
 # MariaDB Connector/Node.js 3.4.0 Changelog
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-0-release-notes.md)[Changelog](mariadb-connector-node-js-3-4-0-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
+
+[Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector) | [Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-0-release-notes.md) | [Changelog](mariadb-connector-node-js-3-4-0-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 24 Oct 2024
 
@@ -22,5 +24,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #4beb07d](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/4beb07d) - Merge branch 'master' into develop
 * [Revision #390da84](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/390da84) - \[[CONJS-303](https://jira.mariadb.org/browse/CONJS-303)] DMLs are not returning any output when streaming #293
 * [Revision #8393c01](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/8393c01) - \[[CONJS-299](https://jira.mariadb.org/browse/CONJS-299)] Parsec authentication implementation
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

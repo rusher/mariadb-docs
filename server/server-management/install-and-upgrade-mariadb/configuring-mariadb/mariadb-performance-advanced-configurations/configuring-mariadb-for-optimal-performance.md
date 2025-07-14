@@ -1,8 +1,8 @@
 # Configuring MariaDB for Optimal Performance
 
-This article is to help you configure MariaDB for optimal performance.
+This article will help you configure MariaDB for optimal performance.
 
-Note that by default MariaDB is configured to work on a desktop system and should because of this not take a lot of resources. To get things to work for a dedicated server, you have to do a few minutes of work.
+By default, MariaDB is configured to work on a desktop system and therefore use relatively few resources. To optimize installation for a dedicated server, you have to do a few minutes of work.
 
 For this article we assume that you are going to run MariaDB on a dedicated server.
 
@@ -10,7 +10,7 @@ Feel free to update this article if you have more ideas.
 
 ## [my.cnf](../configuring-mariadb-with-option-files.md) Files
 
-MariaDB is normally configured by editing the [my.cnf](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/broken-reference/README.md) file. In the next section you have a list of variables that you may want to configure for dedicated MariaDB servers.
+MariaDB is normally configured by editing the [my.cnf](../configuring-mariadb-with-option-files.md) file. In the next section you have a list of variables that you may want to configure for dedicated MariaDB servers.
 
 ## [InnoDB](../../../../server-usage/storage-engines/innodb/) Storage Engine
 
@@ -28,9 +28,9 @@ Some other important InnoDB variables:
 
 * [innodb\_max\_dirty\_pages\_pct\_lwm](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
 * [innodb\_read\_ahead\_threshold](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
-* [innodb\_buffer\_pool\_instances](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances). Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes).
-* [innodb\_adaptive\_max\_sleep\_delay](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1055-release-notes).
-* [innodb\_thread\_concurrency](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1055-release-notes).
+* [innodb\_buffer\_pool\_instances](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances). Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes).
+* [innodb\_adaptive\_max\_sleep\_delay](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1055-release-notes).
+* [innodb\_thread\_concurrency](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1055-release-notes).
 
 ## [Aria](../../../../server-usage/storage-engines/aria/aria-storage-engine.md) Storage Engine
 
@@ -58,7 +58,7 @@ If `Aria_pagecache_reads` is much smaller than `Aria_pagecache_read_request` and
 
 ## [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/)
 
-* If you don't use MyISAM tables explicitly (true for most [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/broken-reference/README.md)+ users), you can set [key\_buffer\_size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
+* If you don't use MyISAM tables explicitly (true for most [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)+ users), you can set [key\_buffer\_size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
 
 ## Using in memory temporary tables
 

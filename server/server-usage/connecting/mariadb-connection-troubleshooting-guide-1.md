@@ -47,15 +47,15 @@ telnet: connect to address 192.168.0.11: Connection refused
 OS error code 115:  Operation now in progress
 ```
 
-To solve this, see [Configuring MariaDB for Remote Client Access](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/configuring-mariadb-for-remote-client-access/README.md)
+To solve this, see [Configuring MariaDB for Remote Client Access](../../mariadb-quickstart-guides/mariadb-remote-connection-guide.md)
 
 ### Authentication Problems
 
-Note that from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), the [unix\_socket authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is enabled by default on Unix-like systems. This uses operating system credentials when connecting to MariaDB via the local Unix socket file. See [unix\_socket authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) for instructions on connecting and on switching to password-based authentication as well as [Authentication from MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md) for an overview of the [MariaDB 10.4](broken-reference) changes..
+The [unix\_socket authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is enabled by default on Unix-like systems. This uses operating system credentials when connecting to MariaDB via the local Unix socket file. See [unix\_socket authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) for instructions on connecting and on switching to password-based authentication as well as [Authentication](../../security/user-account-management/authentication-from-mariadb-10-4.md) for an overview.
 
 Authentication is granted to a particular username/host combination. `user1'@'localhost'`, for example, is not the same as `user1'@'166.78.144.191'`. See the [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md) article for details on granting permissions.
 
-Passwords are hashed with [PASSWORD](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. If you have set a password with the [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) statement, the [PASSWORD](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function must be used at the same time. For example, `SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass')` rather than just `SET PASSWORD FOR 'bob'@'%.loc.gov' = 'newpass'`;
+Passwords are hashed with [PASSWORD](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. If you have set a password with the [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) statement, the `PASSWORD` function must be used at the same time. For example, `SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass')` rather than just `SET PASSWORD FOR 'bob'@'%.loc.gov' = 'newpass'` .
 
 #### Problems Exporting Query Results
 
@@ -84,20 +84,20 @@ mariadb-import --no-defaults ...
 
 #### Unable to Connect to a Running Server / Lost root Password
 
-If you are unable to connect to a server, for example because you have lost the root password, you can start the server without using the privilege tables by running the [--skip-grant-tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/mariadb-quickstart-guides/mariadb-options/README.md#-skip-grant-tables) option, which gives users full access to all tables. You can then run [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables, followed by [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) to change the password for an account.
+If you are unable to connect to a server, for example because you have lost the root password, you can start the server without using the privilege tables by running the [--skip-grant-tables](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#skip-grant-tables) option, which gives users full access to all tables. You can then run [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables, followed by [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) to change the password for an account.
 
 #### localhost and %
 
 You may have created a user with something like:
 
 ```sql
-CREATE USER melisa identified by 'password';
+CREATE USER melisa identified BY 'password';
 ```
 
 This creates a user with the '%' wildcard host.
 
 ```sql
-SELECT user,host from mysql.user where user='melisa';
+SELECT user,host FROM mysql.user WHERE user='melisa';
 +--------+------+
 | user   | host |
 +--------+------+
@@ -108,7 +108,7 @@ SELECT user,host from mysql.user where user='melisa';
 However, you may still be failing to login from localhost. Some setups create anonymous users, including localhost. So the following records exist in the user table:
 
 ```sql
-SELECT user,host from mysql.user where user='melisa' or user='';
+SELECT user,host FROM mysql.user WHERE user='melisa' OR user='';
 +--------+-----------+
 | user   | host      |
 +--------+-----------+
@@ -123,8 +123,8 @@ Since you are connecting from localhost, the anonymous credentials, rather than 
 
 * [CREATE USER](../../reference/sql-statements/account-management-sql-statements/create-user.md)
 * [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md)
-* [Authentication from MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md)
+* [Authentication](../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
-* [Error 1698: Access denied for user](broken-reference)
+* [Error 1698: Access denied for user](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1600-to-1699/e1698)
 
 CC BY-SA / Gnu FDL

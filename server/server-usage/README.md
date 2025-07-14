@@ -4,17 +4,6 @@ description: >-
   statements, built-in functions, client utilities, and best practices for daily
   database operations.
 icon: tv
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Server Usage
@@ -33,8 +22,8 @@ layout:
 [data-handling](data-handling/)
 {% endcontent-ref %}
 
-{% content-ref url="backing-up-and-restoring-databases/" %}
-[backing-up-and-restoring-databases](backing-up-and-restoring-databases/)
+{% content-ref url="backup-and-restore/" %}
+[backup-and-restore](backup-and-restore/)
 {% endcontent-ref %}
 
 {% content-ref url="tables/" %}

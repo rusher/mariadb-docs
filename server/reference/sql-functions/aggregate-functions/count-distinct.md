@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 COUNT(DISTINCT expr,[expr...])
 ```
 
@@ -12,11 +12,9 @@ Returns a count of the number of different non-NULL values.
 
 COUNT(DISTINCT) returns 0 if there were no matching rows.
 
-Although, from [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/aggregate-functions/broken-reference/README.md), [COUNT](count.md) can be used as a [window function](../special-functions/window-functions/), COUNT DISTINCT cannot be.
-
 ## Examples
 
-```
+```sql
 CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); 
 
 INSERT INTO student VALUES 

@@ -1,6 +1,6 @@
 # MariaDB 11.5.2 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/11.5.2/)[Release Notes](mariadb-11-5-2-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md)[Overview of 11.5](what-is-mariadb-115.md)
+[Download](https://downloads.mariadb.org/mariadb/11.5.2/)[Release Notes](mariadb-11-5-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md)[Overview of 11.5](what-is-mariadb-115.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.5.2/)
 
@@ -90,7 +90,7 @@ Thanks, and enjoy MariaDB!
 * Deadlock found when trying to get lock during applying ([MDEV-31658](https://jira.mariadb.org/browse/MDEV-31658))
 * Change error code for Galera unkillable threads ([MDEV-12008](https://jira.mariadb.org/browse/MDEV-12008))
 * 10.11.8 cluster becomes inconsistent when using composite primary key and partitioning ([MDEV-34269](https://jira.mariadb.org/browse/MDEV-34269))
-* `wsrep_sst_mariabackup` use `/tmp` dir during SST rather then user defined `tmpdir` ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
+* `wsrep_sst_mariadb-backup` use `/tmp` dir during SST rather then user defined `tmpdir` ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
 
 ### Error Log
 
@@ -118,16 +118,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.5.2](mariadb-11-5-2-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 11.5.2](mariadb-11-5-2-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-6-1-11-5-2-11-4-3-11-2-5-11-1-6-10-11-9-10-6-19-and-10-5-26-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

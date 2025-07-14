@@ -31,7 +31,7 @@ information on each push, see the[MariaDB Galera Cluster 5.5.40 Changelog](../ma
   will be the last release of MariaDB Galera Cluster 5.5 for both Ubuntu 13.10\
   "Saucy" and Mint 16 "Petra".
 
-See the [MariaDB 5.5.40 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5540-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5540-changelog.md) for more information on the changes in\
+See the [MariaDB 5.5.40 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5540-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5540-changelog.md) for more information on the changes in\
 MariaDB.
 
 Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\
@@ -41,10 +41,8 @@ are not supported.
 
 Thanks, and enjoy MariaDB Galera Cluster!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

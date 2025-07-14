@@ -18,7 +18,6 @@ The example application contains the following classes:
 
 | Class                                                                                                                      | Description                                                                    |
 | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Class                                                                                                                      | Description                                                                    |
 | [springdata.ApplicationConfig](repositories-with-mariadb-connector-r2dbc-spring-data.md#create-a-javaconfig-configuration) | The JavaConfig configuration class that enables Spring Data repositories.      |
 | [springdata.Contact](repositories-with-mariadb-connector-r2dbc-spring-data.md#adapting-the-entity)                         | The Entity class that models the table.                                        |
 | [springdata.ContactRepository](repositories-with-mariadb-connector-r2dbc-spring-data.md#create-a-repository)               | The Repository interface.                                                      |
@@ -107,7 +106,6 @@ The ReactiveCrudRepository interface provides methods listed in following table:
 
 | Method                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Method                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                            |
 | save(S entity)                                  | Saves a given entity. Returns a Mono for the saved entity. Use the returned instance for further operations as the save operation might have changed the entity instance completely. The save(S entity) method updates an existing entity if the Entity object arguments include the identifier field. The save(S entity) method adds a new entity if the Entity object arguments do not include the identifier field. |
 | saveAll(Iterable ~~entities)~~                  | Saves all given entities. It returns a Flux emitting the saved entities.                                                                                                                                                                                                                                                                                                                                               |
 | saveAll(Publisher ~~entityStream)~~             | Saves all given entities. It returns a Flux emitting the saved entities..                                                                                                                                                                                                                                                                                                                                              |
@@ -332,7 +330,7 @@ Contact [id=1, first_name=John, last_name=Smith, email=johnsmith@example.com]
 Run a SQL query to verify the test.contact table data we started with got deleted and three new contacts are added:
 
 ```sql
-SELECT * from test.contact;
+SELECT * FROM test.contact;
 ```
 
 ```

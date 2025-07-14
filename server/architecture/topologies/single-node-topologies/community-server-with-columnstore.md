@@ -171,7 +171,7 @@ S3-compatible object storage is:
 
 Many S3-compatible object storage services exist. MariaDB Corporation cannot make guarantees about all S3-compatible object storage services, because different services provide different functionality.
 
-If you have any questions about using specific S3-compatible object storage with MariaDB ColumnStore, [contact us](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/topologies/single-node-topologies/broken-reference/README.md).
+If you have any questions about using specific S3-compatible object storage with MariaDB ColumnStore, [contact us](https://mariadb.com/contact/).
 
 ### Create an S3 Bucket
 
@@ -346,7 +346,7 @@ And on Debian and Ubuntu, custom configuration files from the following director
 
 ### Configuring MariaDB for ColumnStore
 
-1.  Determine which [system variables](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables) and [options](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) you need to configure.
+1.  Determine which [system variables](../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) you need to configure.
 
     Mandatory system variables and options for single-node MariaDB ColumnStore include:
 
@@ -361,7 +361,7 @@ We recommend **not** making custom changes to one of the bundled configuration f
 
 3.  Set your system variables and options in the configuration file.\
     \
-    They need to be set in a group that will be read by [mariadbd](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd), such as `[mariadb]` or `[server]`.\
+    They need to be set in a group that will be read by [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd.md), such as `[mariadb]` or `[server]`.\
     \
     For example:
 
@@ -451,14 +451,14 @@ For single-node ColumnStore deployments, only a single user account needs to be 
 
 ### Create the Cross Engine Join User
 
-The credentials for cross engine joins were previously configured in the [Cross Engine Joins](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/management/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins) section. The user account must also be created and granted the necessary privileges to access data.
+The credentials for cross engine joins were previously configured in the [Cross Engine Joins](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/management/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins) section. The user account must also be created and granted the necessary privileges to access data.
 
-1.  Connect to the server using [MariaDB Client](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/connect-and-query#mariadb-client) using the `root@localhost` user account:
+1.  Connect to the server using [MariaDB Client](../../../clients-and-utilities/server-client-software/client-libraries/connect-and-query.md#mariadb-client) using the `root@localhost` user account:
 
     ```bash
     $ sudo mariadb
     ```
-2.  Create the user account with the [CREATE USER](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rfK8h3eGTK4lYdomGpGT/readme/mariadb-server/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user) statement:
+2.  Create the user account with the [CREATE USER](broken-reference) statement:
 
     ```sql
     CREATE USER 'cross_engine'@'127.0.0.1'
@@ -508,10 +508,10 @@ Before data can be imported into the tables, the schema needs to be created.
 
     ```sql
     CREATE TABLE inventory.products (
-       product_name varchar(11) NOT NULL DEFAULT '',
-       supplier varchar(128) NOT NULL DEFAULT '',
-       quantity varchar(128) NOT NULL DEFAULT '',
-       unit_cost varchar(128) NOT NULL DEFAULT ''
+       product_name VARCHAR(11) NOT NULL DEFAULT '',
+       supplier VARCHAR(128) NOT NULL DEFAULT '',
+       quantity VARCHAR(128) NOT NULL DEFAULT '',
+       unit_cost VARCHAR(128) NOT NULL DEFAULT ''
     ) ENGINE=Columnstore DEFAULT CHARSET=utf8;
     ```
 
@@ -527,7 +527,7 @@ $ sudo cpimport -s '\t' inventory products /tmp/inventory-products.tsv
 
 ### LOAD DATA INFILE
 
-When data is loaded with the [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, MariaDB ColumnStore loads the data using [cpimport](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview#cpimport), which is a command-line utility that is designed to efficiently load data in bulk.
+When data is loaded with the [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, MariaDB ColumnStore loads the data using [cpimport](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview#cpimport), which is a command-line utility that is designed to efficiently load data in bulk.
 
 To import your data from a TSV (tab-separated values) file with [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement:
 

@@ -1,15 +1,14 @@
 # MariaDB 10.11.12 Release Notes
 
-**Note:** This page describes features in the source repository for [**MariaDB 10.11**](what-is-mariadb-1011.md). There are currently no official packages or binaries available for download which contain the features. If you want to try out any of the new features described here you will need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
-code yourself.
+{% include "../../../.gitbook/includes/latest-10.11 (2).md" %}
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-11-12-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md)[Overview of 10.11](what-is-mariadb-1011.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.12/)**Release date:** ?
+&#x20;<a href="mariadb-10-11-12-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 [MariaDB 10.11](what-is-mariadb-1011.md) is a stable long term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028. It is an evolution of [MariaDB 10.10](../old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010.md) with several entirely new features.
 
 [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the**[**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
+**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the** [**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -154,16 +153,14 @@ could cause a crash in the optimizer. The essential part is that ON expression h
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-11-3-10-10-4-10-9-6-10-8-8-10-6-13-10-5-20-10-4-29-and-10-3-39-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

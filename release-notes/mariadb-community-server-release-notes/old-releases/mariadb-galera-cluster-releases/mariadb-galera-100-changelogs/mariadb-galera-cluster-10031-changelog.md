@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 10.0](https://github.com/mariadb-corpora
 **Release date:** 2 Jun 2017
 
 For the highlights of this release, see the[release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10031-release-notes.md).\
-For changes made in MariaDB, see the [MariaDB 10.0.31 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10031-changelog.md).
+For changes made in MariaDB, see the [MariaDB 10.0.31 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10031-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
@@ -48,5 +48,9 @@ modified in that revision.
 * [Revision #4eb29ecfab](https://github.com/MariaDB/server/commit/4eb29ecfab)\
   2017-03-22 09:40:57 +0530
   * [MDEV-12319](https://jira.mariadb.org/browse/MDEV-12319) Test added to disabled.def
+
+{% include "../../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

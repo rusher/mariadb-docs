@@ -8,14 +8,13 @@ It has the following columns:
 
 | Column    | Description                                                                                                                 |
 | --------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Column    | Description                                                                                                                 |
 | INDEX\_ID | Index identifier, matching the value from [INNODB\_SYS\_INDEXES.INDEX\_ID](information-schema-innodb_sys_indexes-table.md). |
 | NAME      | Field name, matching the value from [INNODB\_SYS\_COLUMNS.NAME](information-schema-innodb_sys_columns-table.md).            |
 | POS       | Ordinal position of the field within the index, starting from 0. This is adjusted as columns are removed.                   |
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_SYS_FIELDS LIMIT 3\G
 *************************** 1. row ***************************
 INDEX_ID: 11

@@ -8,7 +8,6 @@ It has the following columns:
 
 | Column         | Description                                                                                                                       |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                       |
 | WORD           | Word from the text of a newly added row. Words can appear multiple times in the table, once per DOC\_ID and POSITION combination. |
 | FIRST\_DOC\_ID | First document ID where this word appears in the index.                                                                           |
 | LAST\_DOC\_ID  | Last document ID where this word appears in the index.                                                                            |
@@ -20,7 +19,7 @@ Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innod
 
 ## Examples
 
-```
+```sql
 SELECT * FROM INNODB_FT_INDEX_CACHE;
 +------------+--------------+-------------+-----------+--------+----------+
 | WORD       | FIRST_DOC_ID | LAST_DOC_ID | DOC_COUNT | DOC_ID | POSITION |
@@ -59,7 +58,7 @@ SELECT * FROM INNODB_FT_INDEX_CACHE;
 +------------+--------------+-------------+-----------+--------+----------+
 ```
 
-```
+```sql
 OPTIMIZE TABLE test.ft_innodb\G
 *************************** 1. row ***************************
    Table: test.ft_innodb
@@ -94,9 +93,9 @@ SELECT * FROM INNODB_FT_INDEX_CACHE;
 13 rows in set (0.00 sec)
 ```
 
-The `OPTIMIZE TABLE` statement has no effect, because the [innodb\_optimize\_fulltext\_only](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/innodb-server-system-variables/README.md#innodb_optimize_fulltext_only) variable wasn't set:
+The `OPTIMIZE TABLE` statement has no effect, because the [innodb\_optimize\_fulltext\_only](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only) variable wasn't set:
 
-```
+```sql
 SHOW VARIABLES LIKE 'innodb_optimize_fulltext_only';
 +-------------------------------+-------+
 | Variable_name                 | Value |

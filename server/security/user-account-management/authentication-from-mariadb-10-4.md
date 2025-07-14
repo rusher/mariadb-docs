@@ -81,7 +81,7 @@ If you've forgotten your root password, no problem — you can still connect usi
 To view inside privilege tables, the old mysql.user table still exists. You can select from it as before, although you cannot update it anymore. It doesn’t show alternative authentication plugins and this was one of the reasons for switching to the mysql.global\_priv table — complex authentication rules did not fit into rigid structure of a relational table. You can select from the new table, for example:
 
 ```sql
-SELECT CONCAT(user, '@', host, ' => ', json_detailed(priv)) from mysql.global_priv;
+SELECT CONCAT(user, '@', host, ' => ', json_detailed(priv)) FROM mysql.global_priv;
 ```
 
 ## Reverting to the Previous Authentication Method for root@localhost

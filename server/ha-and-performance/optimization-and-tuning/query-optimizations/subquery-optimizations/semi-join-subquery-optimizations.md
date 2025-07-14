@@ -19,8 +19,8 @@ Let's see why this is important. Consider a semi-join subquery:
 ```sql
 SELECT * FROM Country 
 WHERE 
-  Continent='Europe' and 
-  Country.Code in (SELECT City.country 
+  Continent='Europe' AND 
+  Country.Code IN (SELECT City.country 
                    FROM City 
                    WHERE City.Population>1*1000*1000);
 ```
@@ -76,7 +76,6 @@ MariaDB has five different semi-join execution strategies:
 
 ## See Also
 
-* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/subquery-optimizations/broken-reference/README.md)
 * [Subquery Optimizations Map](subquery-optimizations-map.md)
 * ["Observations about subquery use cases"](https://s.petrunia.net/blog/?p=35) blog post
 * [http:en.wikipedia.org/wiki/Semijoin](https://en.wikipedia.org/wiki/Semijoin)

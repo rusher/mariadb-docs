@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # MariaDB Containers
 
 Containers are an OCI standard format for software images and their specified time all bundled up into a single distributable time. They can be used for production, development or testing.

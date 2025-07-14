@@ -2,13 +2,12 @@
 
 ## Description
 
-The [Information Schema](../) `OPTIMIZER_TRACE` table contains [Optimizer Trace](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/broken-reference/README.md) information.
+The [Information Schema](../) `OPTIMIZER_TRACE` table contains [Optimizer Trace](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace) information.
 
 It contains the following columns:
 
 | Column                                 | Description                                                                                                                                                    |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                                 | Description                                                                                                                                                    |
 | QUERY                                  | Displays the query that was asked to be traced.                                                                                                                |
 | TRACE                                  | A JSON document displaying the stats we collected when the query was run.                                                                                      |
 | MISSING\_BYTES\_BEYOND\_MAX\_MEM\_SIZE | For huge trace, where the trace is truncated due to the optimizer\_trace\_max\_mem\_size limit being reached, displays the bytes that are missing in the trace |
@@ -16,7 +15,7 @@ It contains the following columns:
 
 Structure:
 
-```
+```sql
 SHOW CREATE TABLE INFORMATION_SCHEMA.OPTIMIZER_TRACE \G
 *************************** 1. row ***************************
        Table: OPTIMIZER_TRACE

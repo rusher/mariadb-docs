@@ -6,7 +6,7 @@ This page includes details for upgrading from [MariaDB 11.2](https://app.gitbook
 
 For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.md).
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/).
 
 The suggested upgrade procedure is:
 
@@ -45,7 +45,6 @@ On most servers upgrading from 11.2 should be painless. However, there are some 
 
 | Option                                                                                                                                                                 | Old default                                                                                         | New default                                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                                                 | Old default                                                                                         | New default                                                                                                             |
 | [optimizer\_switch](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch)                               |                                                                                                     | See [optimizer-switch](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md). |
 | [session\_track\_system\_variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_system_variables) | autocommit, character\_set\_client, character\_set\_connection, character\_set\_results, time\_zone | autocommit, character\_set\_client, character\_set\_connection, character\_set\_results, redirect\_url, time\_zone      |
 
@@ -55,7 +54,6 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option                                                                                                                                 | Reason                                                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                 | Reason                                                                                                                                         |
 | [date\_format](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#date_format)         | Unused.                                                                                                                                        |
 | [datetime\_format](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datetime_format) | Unused.                                                                                                                                        |
 | [max\_tmp\_tables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_tmp_tables)  | Unused.                                                                                                                                        |

@@ -160,7 +160,7 @@ UPDATE t SET x = ... WHERE ...;
 
 There are too many variables to say whether it is better to keep the index or to toss it.
 
-In this case, shortening the index may may be beneficial:
+In this case, shortening the index may be beneficial:
 
 ```sql
 INDEX(z, x)
@@ -435,7 +435,7 @@ The optimizer usually starts with one table and extracts the data needed from it
 
 The optimizer usually picks the "first" table based on these hints:
 
-* STRAIGHT\_JOIN forces the the table order.
+* STRAIGHT\_JOIN forces the table order.
 * The WHERE clause limits which rows needed (whether indexed or not).
 * The table to the "left" in a LEFT JOIN usually comes before the "right" table. (By looking at the table definitions, the optimizer may decide that "LEFT" is irrelevant.)
 * The current INDEXes will encourage an order.
@@ -478,10 +478,10 @@ The published table (see Wikipedia) is
 
 ```sql
 CREATE TABLE wp_postmeta (
-      meta_id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-      post_id bigint(20) unsigned NOT NULL DEFAULT '0',
-      meta_key varchar(255) DEFAULT NULL,
-      meta_value longtext,
+      meta_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+      post_id BIGINT(20) UNSIGNED NOT NULL DEFAULT '0',
+      meta_key VARCHAR(255) DEFAULT NULL,
+      meta_value LONGTEXT,
       PRIMARY KEY (meta_id),
       KEY post_id (post_id),
       KEY meta_key (meta_key)

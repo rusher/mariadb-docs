@@ -44,7 +44,7 @@ First notice that the `--databases` option has not been included in the line abo
 
 ### Conclusion
 
-As you can see from this article, [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) is easy to use and very powerful. In fact, it can clobber your data if you're not careful. Therefore, you should practice using it on a test database—a test server even—a few times until you're comfortable with making backups and restoring them. Don't wait until you've lost your data and in a panic to restore your data to find out that you haven't been backing up your data properly or that you don't know how to fine tune data restoration. Develop some skills in advance and in a safe and controlled way. To learn how to restore dump files, see [Restoring Data From Dump Files](https://mariadb.com/kb/en/restoring-data-from-dump-files/).
+As you can see from this article, [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) is easy to use and very powerful. In fact, it can clobber your data if you're not careful. Therefore, you should practice using it on a test database—a test server even—a few times until you're comfortable with making backups and restoring them. Don't wait until you've lost your data and in a panic to restore your data to find out that you haven't been backing up your data properly or that you don't know how to fine tune data restoration. Develop some skills in advance and in a safe and controlled way. To learn how to restore dump files, see [Restoring Data From Dump Files](../../mariadb-quickstart-guides/mariadb-restore-guide.md).
 
 ### Other References
 

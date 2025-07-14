@@ -73,7 +73,7 @@ CREATE DATABASE spider_test;
 USE spider_test;
 CREATE OR REPLACE TABLE spider_test.contacts
 (
-  CONTACT_ID bigint NOT NULL primary key,
+  CONTACT_ID BIGINT NOT NULL PRIMARY KEY,
   FIRST_NAME  VARCHAR( 255 ) NOT NULL,
   LAST_NAME   VARCHAR( 255 ) NOT NULL,
   EMAIL       VARCHAR( 255 ) NOT NULL,
@@ -87,11 +87,11 @@ CREATE OR REPLACE TABLE spider_test.contacts
 
 10. You should now be able to select data from `spider_test.contacts` table, which is coming from the remote Oracle database
 
-**Note:** Currently Spider ODBC to Oracle tables does not support INSERT SELECT statements, where the Spider table is the source of the data. ([MENT-1588](https://mariadb.com/kb/en/MENT-1588)).
+**Note:** Currently Spider ODBC to Oracle tables does not support INSERT SELECT statements, where the Spider table is the source of the data. (MENT-1588).
 
-**Warning:** If the version of MariaDB does not have the spider\_direct\_aggregate variable, then you will not be able to use a few aggregate functions on their own. ([MENT-1558](https://mariadb.com/kb/en/MENT-1558)).
+**Warning:** If the version of MariaDB does not have the spider\_direct\_aggregate variable, then you will not be able to use a few aggregate functions on their own. (MENT-1558).
 
-**Note:** If you get the following error message: Error from ODBC 0 01004 \[Oracle]\[ODBC]String data, right truncated., you need to set a larger value for the variable spider\_buffer\_size. ([MENT-1557](https://mariadb.com/kb/en/MENT-1557)).
+**Note:** If you get the following error message: Error from ODBC 0 01004 \[Oracle]\[ODBC]String data, right truncated., you need to set a larger value for the variable spider\_buffer\_size. (MENT-1557).
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

@@ -6,7 +6,21 @@
 
 [Vector search](./) was added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).
 
-MariaDB has a dedicated [VECTOR(N)](../../data-types/numeric-data-types/vector.md) data type with a built-in data validation. N is the number of dimensions that all vector values in the column will have. For example,
+MariaDB has a dedicated [VECTOR(N)](../../data-types/numeric-data-types/vector.md) data type with a built-in data validation. N is the number of dimensions that all vector values in the column will have.
+
+{% tabs %}
+{% tab title="Note" %}
+
+
+* Vector indexes are dimensionality-specific.
+* All vectors inserted into an indexed column must match the index's target dimensionality.
+* Inserting vectors with different dimensionalities will result in an error.
+{% endtab %}
+{% endtabs %}
+
+
+
+&#x20;For example,
 
 ```
 CREATE TABLE embeddings (

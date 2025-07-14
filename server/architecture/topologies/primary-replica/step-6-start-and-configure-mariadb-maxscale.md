@@ -21,7 +21,7 @@ admin_host       = 0.0.0.0
 admin_secure_gui = false
 ```
 
-For additional information, see "[Global Settings](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide#global-settings)".
+For additional information, see "[Global Settings](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide#global-settings)".
 
 ## Restart MaxScale
 
@@ -75,7 +75,7 @@ In this example:
 
 Routers control how MaxScale balances the load between Enterprise Server nodes. Each router uses a different approach to routing queries. Consider the specific use case of your application and database load and select the router that best suits
 
-<table><thead><tr><th width="168.4073486328125" valign="top">Router</th><th width="241.5926513671875" valign="top">Configuration Procedure</th><th>Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readconnroute">Read Connection (readconnroute)</a></td><td valign="top"><a href="step-6-start-and-configure-mariadb-maxscale.md#configure-read-connection-router">Configure Read Connection Router</a></td><td><p><strong>Connection-based load balancing</strong></p><ul><li>Routes connections to Enterprise ColumnStore nodes designated as replica servers for a read-only pool</li><li>Routes connections to an Enterprise ColumnStore node designated as the primary server for a read-write pool.</li></ul></td></tr><tr><td valign="top"><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit">Read/Write Split (readwritesplit)</a></td><td valign="top"><a href="step-6-start-and-configure-mariadb-maxscale.md#configure-read-write-split-router-for-queries">Configure Read/Write Split</a></td><td><p><strong>Query-based load balancing</strong></p><ul><li>Routes write queries to an Enterprise ColumnStore node designated as the primary server</li><li>Routes read queries to Enterprise ColumnStore node designated as replica servers</li><li>Automatically reconnects after node failures </li><li>Automatically replays transactions after node failures</li><li>Optionally enforces causal reads</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="168.4073486328125" valign="top">Router</th><th width="241.5926513671875" valign="top">Configuration Procedure</th><th>Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readconnroute">Read Connection (readconnroute)</a></td><td valign="top"><a href="step-6-start-and-configure-mariadb-maxscale.md#configure-read-connection-router">Configure Read Connection Router</a></td><td><p><strong>Connection-based load balancing</strong></p><ul><li>Routes connections to Enterprise ColumnStore nodes designated as replica servers for a read-only pool</li><li>Routes connections to an Enterprise ColumnStore node designated as the primary server for a read-write pool.</li></ul></td></tr><tr><td valign="top"><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit">Read/Write Split (readwritesplit)</a></td><td valign="top"><a href="step-6-start-and-configure-mariadb-maxscale.md#configure-read-write-split-router-for-queries">Configure Read/Write Split</a></td><td><p><strong>Query-based load balancing</strong></p><ul><li>Routes write queries to an Enterprise ColumnStore node designated as the primary server</li><li>Routes read queries to Enterprise ColumnStore node designated as replica servers</li><li>Automatically reconnects after node failures</li><li>Automatically replays transactions after node failures</li><li>Optionally enforces causal reads</li></ul></td></tr></tbody></table>
 
 ## Configure Read Connection Router
 
@@ -97,7 +97,7 @@ In this example:
 * `readconnroute` is the name of the module that implements the Read Connection Router.
 * `user=MAXSCALE_USER` sets the `user` parameter to the database user account that MaxScale uses to connect to the ES nodes.
 * `password=MAXSCALE_USER_PASSWORD` sets the password parameter to the password used by the database user account that MaxScale uses to connect to the ES nodes.
-* `router_options=slave` sets the `router_options` parameter parameter to `slave`, so that MaxScale only routes connections to the replica nodes.
+* `router_options=slave` sets the `router_options` parameter to `slave`, so that MaxScale only routes connections to the replica nodes.
 * `--servers sets the servers` parameter to the set of nodes to which MaxScale should route connections. All non-option arguments after `--servers`are interpreted as server names.
 * Other Module Parameters supported by `readconnroute` in MaxScale 25.01 can also be specified.
 

@@ -1,16 +1,16 @@
 # NUMBER
 
-```
+```sql
 NUMBER[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
-In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/numeric-data-types/broken-reference/README.md), `NUMBER` is a synonym for [DECIMAL](decimal.md).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `NUMBER` is a synonym for [DECIMAL](decimal.md).
 
 ## EXAMPLES
 
 Number\_Example
 
-```
+```sql
 SET sql_mode='oracle';
 ```
 
@@ -20,11 +20,11 @@ CREATE TABLE number_example (
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE number_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: number_example
 Create Table: CREATE TABLE "number_example" (

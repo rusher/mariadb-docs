@@ -97,9 +97,9 @@ details of the revision and view diffs of the code modified in that revision.
   2020-06-06 16:00:57 +0200
   * Updated link for documentation
 * [Revision #f6984c9](https://github.com/mariadb-corporation/mariadb-connector-python/commit/f6984c9)\
-  2020-06-06 08:48:27 +0200
-  *
-    * removed debug printf - changed location for documentation
+  2020-06-06 08:48:27 +0200\
+  \*
+  * removed debug printf - changed location for documentation
 * [Revision #8f7243d](https://github.com/mariadb-corporation/mariadb-connector-python/commit/8f7243d)\
   2020-06-06 07:20:58 +0200
   * Merge branch 'master' of [mariadb-connector-python](https://github.com/mariadb-corporation/mariadb-connector-python)
@@ -272,5 +272,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e58caef](https://github.com/mariadb-corporation/mariadb-connector-python/commit/e58caef)\
   2020-05-27 10:40:35 +0200
   * Fix for [CONPY-67](https://jira.mariadb.org/browse/CONPY-67): If no rows were fetched from an unbuffered cursor (resultset) rowcount now returns -1 instead of 0.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

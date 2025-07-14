@@ -26,7 +26,7 @@ information on each push, see the[MariaDB Galera Cluster 5.5.38 Changelog](../ma
 * wsrep\_sst\_rsync (sst script) in MariaDB Galera Cluster 5.5.38 uses `lsof` which might not be installed by default on some linux distributions. It has to be installed if the `wsrep_sst_method` is set to `rsync` (default). Package managers should be able to automatically resolve this dependency ([MDEV-6264](https://jira.mariadb.org/browse/MDEV-6264)).
 * Galera rpm packages had a file conflicting with Filesystem package ([MDEV-4218](https://jira.mariadb.org/browse/MDEV-4218)), which caused installation to fail. Fixed Galera packages are now available for the following flavors : Fedora 19, Fedora 20 and CentOS 6.
 
-See the [MariaDB 5.5.38 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5538-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5538-changelog.md) for more information on the changes in\
+See the [MariaDB 5.5.38 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5538-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5538-changelog.md) for more information on the changes in\
 MariaDB.
 
 Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\
@@ -43,10 +43,8 @@ A list of all the bugs fixed can be found in the[changelog](../mariadb-galera-55
 
 Thanks, and enjoy MariaDB Galera Cluster!
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

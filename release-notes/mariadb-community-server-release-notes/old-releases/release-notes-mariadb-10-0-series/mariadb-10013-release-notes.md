@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is: [**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.13)[Release Notes](mariadb-10013-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10013-changelog.md)[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.13)[Release Notes](mariadb-10013-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10013-changelog.md)[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 11 Aug 2014
 
@@ -42,19 +42,17 @@ Thanks, and enjoy MariaDB!
 * [filesort-with-small-limit-optimization](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/filesort-with-small-limit-optimization) is now visible through the [slow query log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log) and a new status variable, [sort\_priority\_queue\_sorts](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#sort_priority_queue_sorts).
 * New variables [aria\_pagecache\_file\_hash\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_pagecache_file_hash_size) and [key\_cache\_file\_hash\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine/myisam-system-variables#key_cache_file_hash_size) for determining the number of hash buckets for open and changed files for Aria and MyISAM respectively.
 * [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect) engine supports partitioning.
-* Many plugins have had their [maturity level](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/information-on-plugins/list-of-plugins) increased (from beta to gamma or from gamma to stable).
+* Many plugins have had their [maturity level](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/list-of-plugins) increased (from beta to gamma or from gamma to stable).
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) upgraded to 7.1.7
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) upgraded to 5.6.19-67.0
 * [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) upgraded to 5.6.19
 * [Performance\_Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) upgraded to 5.6.20
 
 For a complete list of changes made in [MariaDB 10.0.13](mariadb-10013-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10013-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10013-changelog.md).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

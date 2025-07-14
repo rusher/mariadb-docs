@@ -34,9 +34,9 @@ modified in that revision.
   Mon 2013-07-15 10:47:05 +0200
   * DBUG update and fixes Fixed net\_read crash in debug version
 * [Revision #70](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/70)\
-  Wed 2013-07-03 07:37:10 +0200
-  *
-    * More OS/X fixes - Fixed wrong error message in mysql\_real\_connect
+  Wed 2013-07-03 07:37:10 +0200\
+  \*
+  * More OS/X fixes - Fixed wrong error message in mysql\_real\_connect
 * [Revision #69](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/69)\
   Mon 2013-07-01 05:27:17 +0200
   * Fixed compiler warnings
@@ -62,9 +62,9 @@ modified in that revision.
   Wed 2013-05-29 11:59:01 +0200
   * Fixed crash when calling mysql\_close\_options twice (pointer weren't adjusted to NULL) Fixed wrong behaviour when using stored procedures inside prepared statements Fixed identiation in my\_stmt.h
 * [Revision #61](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/61)\
-  Mon 2013-05-20 18:00:08 +0200
-  *
-    * Fixed memory overrun in mysql\_stmt\_execute due to wrong length calculation. - Fixed bug in mysql\_stmt\_next\_result - Fixed mysql\_stmt\_reset: multi result sets weren't flushed properly - Fixed several test cases
+  Mon 2013-05-20 18:00:08 +0200\
+  \*
+  * Fixed memory overrun in mysql\_stmt\_execute due to wrong length calculation. - Fixed bug in mysql\_stmt\_next\_result - Fixed mysql\_stmt\_reset: multi result sets weren't flushed properly - Fixed several test cases
 * [Revision #60](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/60)\
   Mon 2013-05-20 10:50:58 +0200
   * Fix for prepared statment multi results: Reallocate buffers (fields and binds) for new resultsets
@@ -195,9 +195,9 @@ modified in that revision.
   Fri 2012-11-30 13:47:24 +0100
   * Fix for mariadb\_config: lib output was not correct cleanup fixed ps\_test (warning\_count differs on MariaDB servers)
 * [Revision #17](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/17)\
-  Thu 2012-11-29 17:27:56 +0100
-  *
-    * Fix for mysql\_stmt\_next\_result: obtain number of fields from mysql structure added test case (ps\_new.c) - Added additional parameter cipher for mysql\_ssl\_set - some cosmetics for test cases
+  Thu 2012-11-29 17:27:56 +0100\
+  \*
+  * Fix for mysql\_stmt\_next\_result: obtain number of fields from mysql structure added test case (ps\_new.c) - Added additional parameter cipher for mysql\_ssl\_set - some cosmetics for test cases
 * [Revision #16](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/16) \[merge]\
   Thu 2012-11-29 11:25:44 +0100
   * merge georg's fixes
@@ -241,9 +241,9 @@ modified in that revision.
   Tue 2012-11-27 09:57:10 +0100
   * Fixed crash when trying to call mysql\_close twice Fixed mysql\_config Header changes
 * [Revision #4](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/4)\
-  Mon 2012-11-26 11:23:56 +0100
-  *
-    * Added documentation (docbook based) - To build the documentation use cmake . -DBUILD\_DOCS=yes - minor fixes in tests
+  Mon 2012-11-26 11:23:56 +0100\
+  \*
+  * Added documentation (docbook based) - To build the documentation use cmake . -DBUILD\_DOCS=yes - minor fixes in tests
 * [Revision #3](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/3)\
   Mon 2012-11-26 08:32:41 +0100
   * Added openssl layer support Imported libmysql unittests Added simple ssl tests minor cleanup
@@ -253,5 +253,7 @@ modified in that revision.
 * [Revision #1](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/1)\
   Mon 2011-10-10 14:01:17 +0300
   * Initial import
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

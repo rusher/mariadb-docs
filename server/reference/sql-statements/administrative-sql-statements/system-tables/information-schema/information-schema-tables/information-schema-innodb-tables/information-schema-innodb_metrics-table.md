@@ -8,7 +8,6 @@ It has the following columns:
 
 | Column            | Description                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column            | Description                                                                                                                                                                                                                                                                                                                                                                                                      |
 | NAME              | Unique counter name.                                                                                                                                                                                                                                                                                                                                                                                             |
 | SUBSYSTEM         | InnoDB subsystem. See below for the matching module to use to enable/disable monitoring this subsytem with the [innodb\_monitor\_enable](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable) and [innodb\_monitor\_disable](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) system variables. |
 | COUNT             | Count since being enabled.                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -27,13 +26,13 @@ It has the following columns:
 | TYPE              | Item type; one of counter, value, status\_counter, set\_owner, set\_member.                                                                                                                                                                                                                                                                                                                                      |
 | COMMENT           | Counter description.                                                                                                                                                                                                                                                                                                                                                                                             |
 
-Note: In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/broken-reference/README.md) and earlier the `ENABLED` column was called `STATUS`.
+Note: In MariaDB 10.4 and earlier the `ENABLED` column was called `STATUS`.
 
 ## Enabling and Disabling Counters
 
 Most of the counters are disabled by default. To enable them, use the [innodb\_monitor\_enable](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable) system variable. You can either enable a variable by its name, for example:
 
-```
+```sql
 SET GLOBAL innodb_monitor_enable = icp_match;
 ```
 
@@ -41,7 +40,6 @@ or enable a number of counters grouped by module. The `SUBSYSTEM` field indicate
 
 | Module Name            | Subsytem Field                                                                                                                                                                                                                                                                                                                                                                                              |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Module Name            | Subsytem Field                                                                                                                                                                                                                                                                                                                                                                                              |
 | module\_metadata       | metadata                                                                                                                                                                                                                                                                                                                                                                                                    |
 | module\_lock           | lock                                                                                                                                                                                                                                                                                                                                                                                                        |
 | module\_buffer         | buffer                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -62,7 +60,7 @@ or enable a number of counters grouped by module. The `SUBSYSTEM` field indicate
 
 There are four counters in the `icp` subsystem:
 
-```
+```sql
 SELECT NAME, SUBSYSTEM FROM INNODB_METRICS WHERE SUBSYSTEM='icp';
 +------------------+-----------+
 | NAME             | SUBSYSTEM |
@@ -76,13 +74,13 @@ SELECT NAME, SUBSYSTEM FROM INNODB_METRICS WHERE SUBSYSTEM='icp';
 
 To enable them all, use the associated module name from the table above, `module_icp`.
 
-```
+```sql
 SET GLOBAL innodb_monitor_enable = module_icp;
 ```
 
 The `%` wildcard, used to represent any number of characters, can also be used when naming counters, for example:
 
-```
+```sql
 SET GLOBAL innodb_monitor_enable = 'buffer%'
 ```
 
@@ -98,7 +96,7 @@ Counters can also be reset. Resetting sets all the `*_COUNT_RESET` values to zer
 
 **MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), the interface was simplified by removing the following:
+From MariaDB 10.6, the interface was simplified by removing the following:
 
 * buffer\_LRU\_batches\_flush
 * buffer\_LRU\_batch\_flush\_pages
@@ -114,9 +112,7 @@ The intention is to eventually remove the interface entirely (see [MDEV-15706](h
 
 ## Examples
 
-[MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108):
-
-```
+```sql
 SELECT name,subsystem,type,comment FROM INFORMATION_SCHEMA.INNODB_METRICS\G
 *************************** 1. row ***************************
      name: metadata_table_handles_opened

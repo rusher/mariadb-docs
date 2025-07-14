@@ -43,7 +43,7 @@ You can read more about [SecurityContextConstraints in the OpenShift documentati
 
 ## Installation in all namespaces
 
-To install the operator watching resources on all namespaces, you need to to create a `Subscription` object for `mariadb-enterprise-operator` using the `stable` channel in the `openshift-operators` namespace:
+To install the operator watching resources on all namespaces, you need to create a `Subscription` object for `mariadb-enterprise-operator` using the `stable` channel in the `openshift-operators` namespace:
 
 ```yaml
 apiVersion: operators.coreos.com/v1alpha1
@@ -139,6 +139,6 @@ As you can see in the previous screenshot, the form view that the OpenShift cons
 
 ![](../../.gitbook/assets/openshift-console-yaml.png)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

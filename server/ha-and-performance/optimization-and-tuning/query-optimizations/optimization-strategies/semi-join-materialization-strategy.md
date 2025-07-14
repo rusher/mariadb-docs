@@ -10,11 +10,11 @@ Semi-join Materialization is a special kind of subquery materialization used for
 Consider a query that finds countries in Europe which have big cities:
 
 ```sql
-select * from Country 
-where Country.code IN (select City.Country 
-                       from City 
-                       where City.Population > 7*1000*1000)
-      and Country.continent='Europe'
+SELECT * FROM Country 
+WHERE Country.code IN (SELECT City.Country 
+                       FROM City 
+                       WHERE City.Population > 7*1000*1000)
+      AND Country.continent='Europe'
 ```
 
 The subquery is uncorrelated, that is, we can run it independently of the upper query. The idea of semi-join materialization is to do just that, and fill a temporary table with possible values of the City.country field of big cities, and then do a join with countries in Europe:
@@ -37,7 +37,7 @@ If you run a join from Countries to the materialized table, the cheapest way to 
 If we chose to look for cities with a population greater than 7 million, the optimizer will use Materialization-Scan and `EXPLAIN` will show this:
 
 ```sql
-MariaDB [world]> explain select * from Country where Country.code IN 
+MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
   (select City.Country from City where  City.Population > 7*1000*1000);
 +----+--------------+-------------+--------+--------------------+------------+---------+--------------------+------+-----------------------+
 | id | select_type  | table       | type   | possible_keys      | key        | key_len | ref                | rows | Extra                 |
@@ -62,7 +62,7 @@ As for execution costs, we're going to read 15 rows from table City, write 15 ro
 By comparison, if you run the `EXPLAIN` with semi-join optimizations disabled, you'll get this:
 
 ```sql
-MariaDB [world]> explain select * from Country where Country.code IN 
+MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
   (select City.Country from City where  City.Population > 7*1000*1000);
 +----+--------------------+---------+-------+--------------------+------------+---------+------+------+------------------------------------+
 | id | select_type        | table   | type  | possible_keys      | key        | key_len | ref  | rows | Extra                              |
@@ -79,7 +79,7 @@ MariaDB [world]> explain select * from Country where Country.code IN
 Let's modify the query slightly and look for countries which have cities with a population over one millon (instead of seven):
 
 ```sql
-MariaDB [world]> explain select * from Country where Country.code IN 
+MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
   (select City.Country from City where  City.Population > 1*1000*1000) ;
 +----+--------------+-------------+--------+--------------------+--------------+---------+------+------+-----------------------+
 | id | select_type  | table       | type   | possible_keys      | key          | key_len | ref  | rows | Extra                 |
@@ -101,7 +101,7 @@ This means that the optimizer is planning to do index lookups into the materiali
 With `optimizer_switch='semijoin=off,materialization=off'`), one will get this `EXPLAIN`:
 
 ```sql
-MariaDB [world]> explain select * from Country where Country.code IN 
+MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
   (select City.Country from City where  City.Population > 1*1000*1000) ;
 +----+--------------------+---------+----------------+--------------------+---------+---------+------+------+-------------+
 | id | select_type        | table   | type           | possible_keys      | key     | key_len | ref  | rows | Extra       |
@@ -124,11 +124,11 @@ This allows for efficient execution of queries that search for the best/last ele
 For example, let's find cities that have the biggest population on their continent:
 
 ```sql
-explain 
-select * from City 
-where City.Population in (select max(City.Population) from City, Country 
-                          where City.Country=Country.Code 
-                          group by Continent)
+EXPLAIN 
+SELECT * FROM City 
+WHERE City.Population IN (SELECT max(City.Population) FROM City, Country 
+                          WHERE City.Country=Country.Code 
+                          GROUP BY Continent)
 +------+--------------+-------------+------+---------------+------------+---------+----------------------------------+------+-----------------+
 | id   | select_type  | table       | type | possible_keys | key        | key_len | ref                              | rows | Extra           |
 +------+--------------+-------------+------+---------------+------------+---------+----------------------------------+------+-----------------+

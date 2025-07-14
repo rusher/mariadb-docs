@@ -2,11 +2,11 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.53) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5153-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.53) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5153-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 6 Dec 2010
 
-For a list of every change made in this release, see the[Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5153-changelog.md). For a description of this release see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
+For a list of every change made in this release, see the[Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5153-changelog.md). For a description of this release see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -44,6 +44,8 @@ fixes and other improvements. Specific bugs fixed in [MariaDB 5.1.53](mariadb-51
   * [Bug #616307](https://bugs.launchpad.net/bugs/616307) Upgrade failure on Debian 6 "Squeeze"
 * and others...
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

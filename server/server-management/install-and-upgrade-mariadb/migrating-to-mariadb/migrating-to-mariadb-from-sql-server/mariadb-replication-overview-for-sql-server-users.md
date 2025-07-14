@@ -8,9 +8,9 @@ MariaDB supports the following types of replication:
 * Semi-synchronous replication.
 * Galera Cluster.
 
-**MariaDB starting with** [**10.5.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)
+**MariaDB starting with** [**10.5.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)
 
-Note: in the snippets in this page, several SQL statements use the keyword `SLAVE`. This word is considered inappropriate by some persons or cultures, so from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) it is possible to use the `REPLICA` keyword, as a synonym.\
+Note: in the snippets in this page, several SQL statements use the keyword `SLAVE`. This word is considered inappropriate by some persons or cultures, so from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) it is possible to use the `REPLICA` keyword, as a synonym.\
 Similar synonyms will be created in the future for status variables and system variables. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to track the status of these changes.
 
 ## Asynchronous Replication
@@ -65,7 +65,7 @@ However, if there is at least one existing replica, it is better to use it to pr
 * A backup from the existing replica must be restored in the new replica;
 * The backup should include the system tables. In this way it will not be necessary to set the correct coordinates manually.
 
-For more information see [Setting Up Replication](../../../../ha-and-performance/standard-replication/setting-up-replication.md) and [Setting up a Replica with mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md).
+For more information see [Setting Up Replication](../../../../ha-and-performance/standard-replication/setting-up-replication.md) and [Setting up a Replica with mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md).
 
 ### Replication and Permissions
 
@@ -99,7 +99,7 @@ There are different parallel replication styles available: in-order and out-of-o
 
 Out-of-order replication cannot be enabled automatically by changing a variable in the replica. Instead, it must be enabled by the applications that run transactions in the primary. They can do this if the GTID is enabled. They can set different values for the [gtid\_domain\_id](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#gtid_domain_id) variable in different transactions. This shifts a lot of responsibility to the application layer; however, if the application is aware of which transactions are not going to conflict and this information allows one to sensibly increase the parallelism, and using out-of-order replication can be a good idea.
 
-Even if out-of-order replication is not normally used, it can be a good idea to use it for long running transactions or [ALTER TABLEs](../../../../reference/sql-statements/data-definition/alter/alter-table.md), so they can be applied at the same time as normal operations that are not conflicting.
+Even if out-of-order replication is not normally used, it can be a good idea to use it for long running transactions or [ALTER TABLEs](../../../../reference/sql-statements/data-definition/alter/alter-table/), so they can be applied at the same time as normal operations that are not conflicting.
 
 The impact of the number of threads and mode on performance can be partly seen with [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md), which shows the state of all threads. This includes the replication worker threads, and shows if they are blocking each other.
 
@@ -248,7 +248,7 @@ If a single transaction is bigger than half of the Galera cache, it needs to be 
 
 When a node is restarted (after a crash or for maintenance reasons), it will need to receive all the changes that were written by other nodes since the moment it was unreachable. A node is therefore chosen as a donor, possibly using the [gcssync\_donor](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#gcssync_donor) wsrep\_provider\_options flag.
 
-If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariabackup method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method).
+If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariadb-backup method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method).
 
 ### Flow Control
 

@@ -10,22 +10,21 @@ The Purge Threads perform garbage collection of various items:
 
 * The Purge Threads perform garbage collection of the [InnoDB Undo Log](innodb-undo-log.md). When a row is updated in the clustered index, InnoDB updates the values in the clustered index, and the old row version is added to the Undo Log. The Purge Threads scan the Undo Log for row versions that are not needed by open transactions and permanently delete them. In ES 10.5 and later, if the remaining clustered index record is the oldest possible row version, the Purge Thread resets the record's hidden `DB_TRX_ID` field to 0.
 * The Purge Threads perform garbage collection of index records. When an indexed column is updated, InnoDB creates a new index record for the updated value in each affected index, and the old index records are delete-marked. When the primary key column is updated, InnoDB creates a new index record for the updated value in every index, and each old index record is delete-marked. The Purge Threads scan for delete-marked index records and permanently delete them.
-* The Purge Threads perform garbage collection of freed overflow pages. [BLOB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/data-types-blob/README.md), [CHAR](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/data-types-char/README.md), [TEXT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/data-types-text/README.md), [VARCHAR](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/data-types-varchar/README.md), [VARBINARY](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/data-types-varbinary/README.md), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
+* The Purge Threads perform garbage collection of freed overflow pages. [BLOB](../../../reference/data-types/string-data-types/blob.md), [CHAR](../../../reference/data-types/string-data-types/char.md), [TEXT](../../../reference/data-types/string-data-types/text.md), [VARCHAR](../../../reference/data-types/string-data-types/varchar.md), [VARBINARY](../../../reference/data-types/string-data-types/varbinary.md), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
 
 ### Feature Summary
 
-| Feature        | Detail                                                                                                  | Resources                                                                                                                           |
-| -------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Feature        | Detail                                                                                                  | Resources                                                                                                                           |
-| Thread         | InnoDB Purge Threads                                                                                    |                                                                                                                                     |
-| Storage Engine | InnoDB                                                                                                  |                                                                                                                                     |
-| Purpose        | Garbage Collection of: • InnoDB Undo Log • Delete-marked secondary index records • Freed overflow pages |                                                                                                                                     |
-| Availability   | All ES and CS versions                                                                                  | [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-enterprise-server/README.md) |
-| Quantity       | Set by [innodb\_purge\_threads](innodb-system-variables.md#innodb_purge_threads)                        | [Configure the InnoDB Purge Threads](mariadb-enterprise-server-innodb-operations/configure-the-innodb-purge-threads.md)             |
+| Feature        | Detail                                                                                                  | Resources                                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Thread         | InnoDB Purge Threads                                                                                    |                                                                                                                         |
+| Storage Engine | InnoDB                                                                                                  |                                                                                                                         |
+| Purpose        | Garbage Collection of: • InnoDB Undo Log • Delete-marked secondary index records • Freed overflow pages |                                                                                                                         |
+| Availability   | All ES and CS versions                                                                                  | [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/)                     |
+| Quantity       | Set by [innodb\_purge\_threads](innodb-system-variables.md#innodb_purge_threads)                        | [Configure the InnoDB Purge Threads](mariadb-enterprise-server-innodb-operations/configure-the-innodb-purge-threads.md) |
 
 ### Configuring the Purge Threads
 
-The number of purge threads can be set by configuring the [innodb\_purge\_threads](innodb-system-variables.md#innodb_purge_threads) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The number of purge threads can be set by configuring the [innodb\_purge\_threads](innodb-system-variables.md#innodb_purge_threads) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -52,7 +51,7 @@ SHOW GLOBAL VARIABLES
 
 ### Configuring the Purge Batch Size
 
-The purge batch size is defined as the number of [InnoDB redo log](innodb-redo-log.md) records that must be written before triggering purge. The purge batch size can be set by configuring the [innodb\_purge\_batch\_size](innodb-system-variables.md#innodb_purge_batch_size) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The purge batch size is defined as the number of [InnoDB redo log](innodb-redo-log.md) records that must be written before triggering purge. The purge batch size can be set by configuring the [innodb\_purge\_batch\_size](innodb-system-variables.md#innodb_purge_batch_size) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -64,13 +63,13 @@ innodb_purge_batch_size = 50
 
 If purge operations are lagging on a busy server, then this can be a tough situation to recover from. As a solution, InnoDB allows you to set the max purge lag. The max purge lag is defined as the maximum number of [InnoDB undo log](innodb-undo-log.md) that can be waiting to be purged from the history until InnoDB begins delaying DML statements.
 
-The max purge lag can be set by configuring the [innodb\_max\_purge\_lag](innodb-system-variables.md#innodb_max_purge_lag) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The max purge lag can be set by configuring the [innodb\_max\_purge\_lag](innodb-system-variables.md#innodb_max_purge_lag) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_max_purge_lag=1000;
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -78,13 +77,13 @@ This system variable can also be specified as a command-line argument to [mysqld
 innodb_max_purge_lag = 1000
 ```
 
-The maximum delay can be set by configuring the [innodb\_max\_purge\_lag\_delay](innodb-system-variables.md#innodb_max_purge_lag_delay) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The maximum delay can be set by configuring the [innodb\_max\_purge\_lag\_delay](innodb-system-variables.md#innodb_max_purge_lag_delay) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_max_purge_lag_delay=100;
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -94,13 +93,13 @@ innodb_max_purge_lag_delay = 100
 
 ### Configuring the Purge Rollback Segment Truncation Frequency
 
-The purge rollback segment truncation frequency is defined as the number of purge loops that are run before unnecessary rollback segments are truncated. The purge rollback segment truncation frequency can be set by configuring the [innodb\_purge\_rseg\_truncate\_frequency](innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The purge rollback segment truncation frequency is defined as the number of purge loops that are run before unnecessary rollback segments are truncated. The purge rollback segment truncation frequency can be set by configuring the [innodb\_purge\_rseg\_truncate\_frequency](innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_purge_rseg_truncate_frequency=64;
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -112,13 +111,13 @@ innodb_purge_rseg_truncate_frequency = 64
 
 Purge undo log truncation occurs when InnoDB truncates an entire [InnoDB undo log](innodb-undo-log.md) tablespace, rather than deleting individual [InnoDB undo log](innodb-undo-log.md) records.
 
-Purge undo log truncation can be enabled by configuring the [innodb\_undo\_log\_truncate](innodb-system-variables.md#innodb_undo_log_truncate) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+Purge undo log truncation can be enabled by configuring the [innodb\_undo\_log\_truncate](innodb-system-variables.md#innodb_undo_log_truncate) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_undo_log_truncate=ON;
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -126,13 +125,13 @@ This system variable can also be specified as a command-line argument to [mysqld
 innodb_undo_log_truncate = ON
 ```
 
-An [InnoDB undo log](innodb-undo-log.md) tablespace is truncated when it exceeds the maximum size that is configured for [InnoDB undo log](innodb-undo-log.md) tablespaces. The maximum size can be set by configuring the [innodb\_max\_undo\_log\_size](innodb-system-variables.md#innodb_max_undo_log_size) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+An [InnoDB undo log](innodb-undo-log.md) tablespace is truncated when it exceeds the maximum size that is configured for [InnoDB undo log](innodb-undo-log.md) tablespaces. The maximum size can be set by configuring the [innodb\_max\_undo\_log\_size](innodb-system-variables.md#innodb_max_undo_log_size) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_max_undo_log_size='64M';
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]

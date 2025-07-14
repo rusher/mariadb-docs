@@ -13,7 +13,7 @@
 * Start/stop replicas
 * Check if the server is alive (ping)
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqladmin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqladmin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 ### Using mariadb-admin
 
@@ -85,19 +85,19 @@ The following options relate to how MariaDB command-line tools handles option fi
 | --defaults-extra-file=#   | Read this file after the global files are read.                                     |
 | --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. |
 
-`mariadb-admin` is linked with [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-c/README.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-admin` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 **Option Groups**
 
 `mariadb-admin` reads options from the following [option groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group             | Description                                                                                                                                                                                                                                                                |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| \[mysqladmin]     | Options read by mysqladmin, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                           |
-| \[mariadb-admin]  | Options read by mariadb-admin. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes).                                  |
-| \[client]         | Options read by all MariaDB and MySQL [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), which includes both MariaDB and MySQL clients. For example, mysqldump.                                            |
-| \[client-server]  | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
-| \[client-mariadb] | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md).                                                                                                                             |
+| Group             | Description                                                                                                                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \[mysqladmin]     | Options read by mysqladmin, which includes both MariaDB Server and MySQL Server.                                                                                                                                                          |
+| \[mariadb-admin]  | Options read by mariadb-admin. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| \[client]         | Options read by all MariaDB and MySQL [client programs](../), which includes both MariaDB and MySQL clients. For example, mysqldump.                                                                                                      |
+| \[client-server]  | Options read by all MariaDB [client programs](../) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients.                                                           |
+| \[client-mariadb] | Options read by all MariaDB [client programs](../).                                                                                                                                                                                       |
 
 ### mariadb-admin Variables
 
@@ -185,7 +185,7 @@ _Command_ is one or more of the following. Commands may be shortened to a unique
 
 The `--wait-for-all-slaves` option was first added in [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes). When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../../ha-and-performance/standard-replication/semisynchronous-replication.md) is being used.
 
-In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/broken-reference/README.md) and later, this problem can be solved by shutting down the server with the mariadb-admin utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility. For example:
+In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes) and later, this problem can be solved by shutting down the server with the mariadb-admin utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility. For example:
 
 ```
 mariadb-admin --wait-for-all-slaves shutdown
@@ -271,7 +271,7 @@ You can use the [SHUTDOWN](../../reference/sql-statements/administrative-sql-sta
 * [SHUTDOWN command](../../reference/sql-statements/administrative-sql-statements/shutdown.md)
 * [mytop](https://www.mysqlfanboy.com/mytop-3/), a 'top' like program for\
   MariaDB/MySQL that allows you to see what the server is doing. A mytop\
-  optimized for MariaDB is included in [MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/broken-reference/README.md)
+  optimized for MariaDB is included in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

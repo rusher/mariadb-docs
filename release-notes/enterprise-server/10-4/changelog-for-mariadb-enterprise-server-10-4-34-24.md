@@ -14,10 +14,10 @@ MariaDB Enterprise Server 10.4.34-24 was released on 2024-06-11.
 * ([MDEV-33475](https://jira.mariadb.org/browse/MDEV-33475)) --gtid-ignore-duplicate can double-apply event in case of parallel replication retry
 * ([MDEV-33334](https://jira.mariadb.org/browse/MDEV-33334)) mariadb-backup fails to preserve innodb\_encrypt\_tables
 * ([MDEV-18590](https://jira.mariadb.org/browse/MDEV-18590)) galera.versioning\_trx\_id: Test failure: mysqltest: Result content mismatch
-* ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251)) [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) breaks running mariabackup on older mariadb (opendir(NULL))
+* ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251)) [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) breaks running mariadb-backup on older mariadb (opendir(NULL))
 * ([MDEV-33770](https://jira.mariadb.org/browse/MDEV-33770)) Alter operation hangs when encryption thread works on the same tablespace
 * ([MDEV-21102](https://jira.mariadb.org/browse/MDEV-21102)) Server crashes in JOIN\_CACHE::write\_record\_data upon EXPLAIN with subqueries and constant tables
-* ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540)) mariabackup --prepare: \[ERROR] InnoDB: Crash recovery is broken due to insufficient innodb\_log\_file\_size
+* ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540)) mariadb-backup --prepare: \[ERROR] InnoDB: Crash recovery is broken due to insufficient innodb\_log\_file\_size
 * (MENT-958) Spider/ODBC passed double quotes for names, in ANSI style
 * ([MDEV-32975](https://jira.mariadb.org/browse/MDEV-32975)) Default charset doesn't work with PHP MySQLi extension
 * ([MDEV-33679](https://jira.mariadb.org/browse/MDEV-33679)) spider returns parsing failure on valid left join select by translating the on expression to ()
@@ -40,7 +40,7 @@ MariaDB Enterprise Server 10.4.34-24 was released on 2024-06-11.
 * ([MDEV-19044](https://jira.mariadb.org/browse/MDEV-19044)) Alter table corrupts while applying the modification log
 * ([MDEV-33584](https://jira.mariadb.org/browse/MDEV-33584)) sql plugin init failure with traditional sql\_mode
 * ([MDEV-33802](https://jira.mariadb.org/browse/MDEV-33802)) Weird read view after ROLLBACK of other transactions.
-* ([MDEV-33777](https://jira.mariadb.org/browse/MDEV-33777)) Spider: ERROR 12710 (HY000): Invalid information from remote table when using [MariaDB 10.5](../../mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md) local and [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) remote
+* ([MDEV-33777](https://jira.mariadb.org/browse/MDEV-33777)) Spider: ERROR 12710 (HY000): Invalid information from remote table when using [MariaDB 10.5](../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md) local and [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) remote
 * ([MDEV-32454](https://jira.mariadb.org/browse/MDEV-32454)) JSON test has problem in view protocol
 * (MENT-1555) Spider: Set proper remote isolation based on information obtained by SQLGetInfo
 * ([MDEV-34003](https://jira.mariadb.org/browse/MDEV-34003)) ASAN: heap-use-after-free in memcpy from sql/protocol.cc on SELECT

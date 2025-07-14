@@ -1,8 +1,8 @@
 # MariaDB Connector/Node.js 3.2.2 Changelog
 
-The most recent [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-2-2-release-notes.md)[Changelog](mariadb-connector-node-js-3-2-2-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-2-2-release-notes.md) | [Changelog](mariadb-connector-node-js-3-2-2-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 16 Oct 2023
 
@@ -34,5 +34,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #9e074f0](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9e074f0) - \[misc] test improvement
 * [Revision #704ede6](https://github.com/mariadb-corporation/mariadb-connector-j/commit/704ede6) - \[[CONJS-268](https://jira.mariadb.org/browse/CONJS-268)] importFile method doesn't always throw error when imported commands fails #253
 * [Revision #499dcc2](https://github.com/mariadb-corporation/mariadb-connector-j/commit/499dcc2) - \[[CONJS-267](https://jira.mariadb.org/browse/CONJS-267)] Ensure that option collation with id > 255 are respected
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

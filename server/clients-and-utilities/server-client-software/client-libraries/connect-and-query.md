@@ -44,7 +44,7 @@ Tools and utilities listed here are included with distributions of MariaDB datab
 | Command-Line Executable     | Purpose                                                                       |
 | --------------------------- | ----------------------------------------------------------------------------- |
 | mariadb-admin, mysqladmin   | Check configuration and current status                                        |
-| mariadb-backup, mariabackup | Create and restore physical backups (including Aria, InnoDB, MyISAM, MyRocks) |
+| mariadb-backup, mariadb-backup | Create and restore physical backups (including Aria, InnoDB, MyISAM, MyRocks) |
 | mariadb-binlog, mysqlbinlog | Read binary logs or relay logs                                                |
 | mariadb-check, mysqlcheck   | Perform table maintenance operations                                          |
 | mariadb-dump, mysqldump     | Create logical backups                                                        |

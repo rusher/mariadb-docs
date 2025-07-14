@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.4.7-2 was released on 2019-08-19.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score |
 | [CVE-2019-2805](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2805)                                                                                                 | 6.5             |
 | [CVE-2019-2740](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2740)                                                                                                 | 6.5             |
 | [CVE-2019-2758](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2758)                                                                                                 | 5.5             |
@@ -42,7 +41,7 @@ MariaDB Enterprise Server 10.4.7-2 was released on 2019-08-19.
 * Failing tests in buildbot related to `FULLTEXT INDEX` ([MDEV-14154](https://jira.mariadb.org/browse/MDEV-14154))
 * Server startup bug with encrypted [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table ([MDEV-19914](https://jira.mariadb.org/browse/MDEV-19914))
 * Possible crash when [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) and foreign key is used, if the referenced record is deleted at the same time ([MDEV-19660](https://jira.mariadb.org/browse/MDEV-19660))
-* Recovery with [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) crash related to [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) with custom [innodb\_data\_file\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_data_file_path) ([MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978))
+* Recovery with [mariadb-backup](broken-reference) crash related to [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) with custom [innodb\_data\_file\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_data_file_path) ([MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978))
 * Add page-id matching check in [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) tool ([MDEV-19871](https://jira.mariadb.org/browse/MDEV-19871))
 * `DROP TEMPORARY` table is logged despite no `CREATE` was logged in binary log ([MDEV-20091](https://jira.mariadb.org/browse/MDEV-20091))
 * `mysql_upgrade_service` throws exception upgrading from 10.0 to 10.3 ([MDEV-19427](https://jira.mariadb.org/browse/MDEV-19427))
@@ -63,7 +62,7 @@ MariaDB Enterprise Server 10.4.7-2 was released on 2019-08-19.
 
 ## Interface Changes
 
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) --rsync option removed
+* [mariadb-backup](broken-reference) --rsync option removed
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--innodb-encrypt-temporary-tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_temporary_tables) option added
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--rocksdb-cache-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/myrocks-system-variables#rocksdb_cache_dump) option added
 * [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--rocksdb-cache-high-pri-pool-ratio](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/myrocks-system-variables#rocksdb_cache_index_and_filter_with_high_priority) option added
@@ -121,6 +120,6 @@ CentOS 6, Debian 8, and Red Hat Enterprise Linux 6 are no longer supported as pe
 * [Upgrade to MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.4.18-11 was released on 2021-03-15.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score                                                                 |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score                                                                 |
 | [CVE-2021-27928](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27928)                                                                                               | N/A (Critical)[#1](release-notes-for-mariadb-enterprise-server-10-4-18-11.md#1) |
 
 1. 1:\
@@ -19,8 +18,8 @@ MariaDB Enterprise Server 10.4.18-11 was released on 2021-03-15.
 * The new [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) `--system={all, users, plugins, udfs, servers, stats`, timezones}`command-line option allows dumping system information in logical form. ([MDEV-23630](https://jira.mariadb.org/browse/MDEV-23630))`
 * Added primary host and port info to replica stop messages. ([MDEV-10272](https://jira.mariadb.org/browse/MDEV-10272))
 * Parameter [innodb\_idle\_flush\_pct](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_idle_flush_pct) has no effect and is defined as deprecated. ([MDEV-24536](https://jira.mariadb.org/browse/MDEV-24536))
-* New [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) to continue the backup process when corruption is encountered. Corrupted pages are logged in `backup_corrupted` file in the backup destination directory. ([MDEV-22929](https://jira.mariadb.org/browse/MDEV-22929))
-* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) adds `completed with Error`! to the end of the log file if the backup is started with parameter [--log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) and completed with corrupted tables. The new log entry `canceled with Error!` will be used when the backup could not be completed. (MENT-1059)
+* New [MariaDB Enterprise Backup](broken-reference) [--log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) to continue the backup process when corruption is encountered. Corrupted pages are logged in `backup_corrupted` file in the backup destination directory. ([MDEV-22929](https://jira.mariadb.org/browse/MDEV-22929))
+* [MariaDB Enterprise Backup](broken-reference) adds `completed with Error`! to the end of the log file if the backup is started with parameter [--log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) and completed with corrupted tables. The new log entry `canceled with Error!` will be used when the backup could not be completed. (MENT-1059)
 * [wsrep\_provider](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_provider) and [wsrep\_notify\_cmd](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_notify_cmd) system variables are read-only. ([MDEV-25179](https://jira.mariadb.org/browse/MDEV-25179))
 * Galera `wsrep` library updated to 26.4.7 in [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md).
 * Encryption Plugin for [HashiCorp Vault](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin) added. (MENT-852)
@@ -30,7 +29,7 @@ MariaDB Enterprise Server 10.4.18-11 was released on 2021-03-15.
 
 ### Can result in data loss
 
-* In a very unlikely event, corruption of system tablespace or last recovered page can occur on recovery or a [MariaDB Backup prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup). (MENT-1124, [MDEV-24449](https://jira.mariadb.org/browse/MDEV-24449))
+* In a very unlikely event, corruption of system tablespace or last recovered page can occur on recovery or a [MariaDB Backup prepare](broken-reference). (MENT-1124, [MDEV-24449](https://jira.mariadb.org/browse/MDEV-24449))
 * Crash on recovery after server kill during instant `ADD COLUMN` ([MDEV-24323](https://jira.mariadb.org/browse/MDEV-24323))
 
 ### Can result in a hang or crash
@@ -94,7 +93,7 @@ MariaDB Enterprise Server 10.4.18-11 was released on 2021-03-15.
 * [events\_waits\_summary\_by\_account\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_summary_by_account_by_event_name-table) performance schema table schema changed
 * [events\_waits\_summary\_by\_user\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_summary_by_user_by_event_name-table) performance schema table schema changed
 * [group\_concat\_max\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#group_concat_max_len) system variable maximum value changed from `18446744073709551615` to `4294967295`
-* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) command-line option added
+* [mariadb-backup](broken-reference) [--log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) command-line option added
 * [mariadb-dump --system](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) command-line option added
 * [mariadb\_es\_repo\_setup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup) --include-unsupported command-line option added
 * [mariadb\_es\_repo\_setup](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/mariadb_es_repo_setup/README.md) --skip-check-installed command-line option added
@@ -138,6 +137,6 @@ In alignment with the [MariaDB Engineering Policy](https://mariadb.com/engineeri
 * [Upgrade to MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

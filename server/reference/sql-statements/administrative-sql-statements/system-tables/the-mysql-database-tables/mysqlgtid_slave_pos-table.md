@@ -1,6 +1,6 @@
 # mysql.gtid\_slave\_pos Table
 
-The `mysql.gtid_slave_pos` table is used in [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/broken-reference/README.md) by replica servers to keep track of their current position (the [global transaction ID](../../../../../ha-and-performance/standard-replication/gtid.md) of the last transaction applied). Using the table allows the replica to maintain a consistent value for the [gtid\_slave\_pos](../../../../../ha-and-performance/standard-replication/gtid.md) system variable across server restarts. See [Global Transaction ID](../../../../../ha-and-performance/standard-replication/gtid.md).
+The `mysql.gtid_slave_pos` table is used in [replication](../../../../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) by replica servers to keep track of their current position (the [global transaction ID](../../../../../ha-and-performance/standard-replication/gtid.md) of the last transaction applied). Using the table allows the replica to maintain a consistent value for the [gtid\_slave\_pos](../../../../../ha-and-performance/standard-replication/gtid.md) system variable across server restarts. See [Global Transaction ID](../../../../../ha-and-performance/standard-replication/gtid.md).
 
 You should never attempt to modify the table directly. If you do need to change the global gtid\_slave\_pos value, use `SET GLOBAL gtid_slave_pos = ...` instead.
 
@@ -11,7 +11,7 @@ transaction, since otherwise a multi-engine transaction is needed that can\
 reduce performance.
 
 Starting from [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), multiple versions of this table are supported,\
-each using a different storage engine. This is selected with the[gtid\_pos\_auto\_engines option](../../../../../ha-and-performance/standard-replication/gtid.md), by giving a comma-separated list of engine\
+each using a different storage engine. This is selected with the [gtid\_pos\_auto\_engines option](../../../../../ha-and-performance/standard-replication/gtid.md), by giving a comma-separated list of engine\
 names. The server will then on-demand create an extra version of the table\
 using the appropriate storage engine, and select the table version using the\
 same engine as the rest of the transaction, avoiding multi-engine\
@@ -51,7 +51,6 @@ The table `mysql.gtid_slave_pos` contains the following fields
 
 | Field      | Type                | Null | Key | Default | Description                                                                                                                                                                                                              |
 | ---------- | ------------------- | ---- | --- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Field      | Type                | Null | Key | Default | Description                                                                                                                                                                                                              |
 | domain\_id | int(10) unsigned    | NO   | PRI | NULL    | Domain id (see [Global Transaction ID domain ID](../../../../../ha-and-performance/standard-replication/gtid.md).                                                                                                        |
 | sub\_id    | bigint(20) unsigned | NO   | PRI | NULL    | This field enables multiple parallel transactions within same domain\_id to update this table without contention. At any instant, the replication state corresponds to records with largest sub\_id for each domain\_id. |
 | server\_id | int(10) unsigned    | NO   |     | NULL    | [Server id](../../../../../ha-and-performance/standard-replication/gtid.md).                                                                                                                                             |

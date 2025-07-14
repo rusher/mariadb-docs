@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 label: <construct>
 [label]
 ```
@@ -13,7 +13,7 @@ Labels have a start part and an end part. The start part must precede the portio
 
 Labels need not be unique in the stored program they belong to. However, a label for an inner loop cannot be identical to a label for an outer loop. In this case, the following error would be produced:
 
-```
+```sql
 ERROR 1309 (42000): Redefining label <label_name>
 ```
 
@@ -21,7 +21,7 @@ ERROR 1309 (42000): Redefining label <label_name>
 
 Below is an example using a simple label that is used to exit a [LOOP](loop.md):
 
-```
+```sql
 CREATE PROCEDURE `test_sp`()
 BEGIN
    `my_label`:
@@ -35,7 +35,7 @@ END;
 
 The following label is used to exit a procedure, and has an end part:
 
-```
+```sql
 CREATE PROCEDURE `test_sp`()
 `my_label`:
 BEGIN

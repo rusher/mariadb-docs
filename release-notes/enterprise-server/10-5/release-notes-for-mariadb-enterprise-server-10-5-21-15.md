@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.5.21-15 was released on 2023-06-13.
 
 | CVE (with cve.org link)                                                         | CVSS base score                                                               |
 | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| CVE (with cve.org link)                                                         | CVSS base score                                                               |
 | [CVE-2022-47015](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-47015) | N/A (Medium)[#1](release-notes-for-mariadb-enterprise-server-10-5-21-15.md#1) |
 
 `#1`:\
@@ -36,20 +35,20 @@ innodb_buffer_pool_filename=SOME_FILE_PATH
 
 * The [aria\_log\_dir\_path system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria/aria-system-variables) is added as read-only. ([MDEV-26153](https://jira.mariadb.org/browse/MDEV-26153))
   * The `--aria-log-dir-path` command-line option is added to `mariadb-backup`.
-* By default, [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) no longer prints messages about log scanning. ([MDEV-25765](https://jira.mariadb.org/browse/MDEV-25765))
+* By default, [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) no longer prints messages about log scanning. ([MDEV-25765](https://jira.mariadb.org/browse/MDEV-25765))
   * In previous releases, messages like the following could be printed excessively:
 
 ```
 log scanned up to (LSN)
 ```
 
-* Starting with this release, the messages about log scanning are only printed when [--verbose](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-verbose) is enabled.
+* Starting with this release, the messages about log scanning are only printed when [--verbose](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-verbose) is enabled.
 
 ## Issues Fixed
 
 ### Can result in data loss
 
-* When a backup is created with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) and [aria\_log\_dir\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria/aria-system-variables) is configured, the Aria logs are not copied to the backup. ([MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968))
+* When a backup is created with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) and [aria\_log\_dir\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria/aria-system-variables) is configured, the Aria logs are not copied to the backup. ([MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968))
 * When system versioning is enabled for a table without a primary key, changes to the table are not properly replicated. ([MDEV-30430](https://jira.mariadb.org/browse/MDEV-30430))
 * When a partitioned table contains a prefix index on a column that uses a `NOPAD` collation, queries with `ORDER BY` can return rows in the wrong order. ([MDEV-30072](https://jira.mariadb.org/browse/MDEV-30072))
 * For some collations, when a unique constraint is defined with `UNIQUE(..) USING HASH`, duplicate values are accepted. ([MDEV-30034](https://jira.mariadb.org/browse/MDEV-30034))
@@ -70,7 +69,7 @@ Last_Error: Error 'An attempt was made to binlog GTID 0-1-100 which would create
 
 * When an `UPDATE` or `DELETE` is rolled back from an InnoDB table with ROW\_FORMAT=COMPRESSED, the server can crash. ([MDEV-30882](https://jira.mariadb.org/browse/MDEV-30882))
 * When the [LEFT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/left) function is called on a string that has no character set defined, the server can crash. ([MDEV-30351](https://jira.mariadb.org/browse/MDEV-30351))
-* With Galera, when [wsrep\_sst\_method=mariabackup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set and `encrypt=4` is enabled for State Snapshot Transfers (SSTs), SSTs can fail if the version of socat installed on the donor node is 1.7.4.0 or later. ([MDEV-30402](https://jira.mariadb.org/browse/MDEV-30402))
+* With Galera, when [wsrep\_sst\_method=mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set and `encrypt=4` is enabled for State Snapshot Transfers (SSTs), SSTs can fail if the version of socat installed on the donor node is 1.7.4.0 or later. ([MDEV-30402](https://jira.mariadb.org/browse/MDEV-30402))
   * In previous releases, SSTs could fail with the following error in the donor node's MariaDB error log if the version of `socat` installed is 1.7.4.0 or later:
 
 ```
@@ -164,7 +163,7 @@ void wsrep::server_state::state(wsrep::unique_lock<wsrep::mutex>&, wsrep::server
 * With Galera, a hang can occur in "starting" commit state due a deadlock between a KILL command and an abort issued by an applier. (MENT-1855)
   * Starting with this release, Total Order Isolation (TOI) is not used for the KILL command.
 * When [binlog\_row\_image=FULL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is set and [slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is greater than 0, replica servers can hang if data is inserted into tables with a sequence. ([MDEV-29621](https://jira.mariadb.org/browse/MDEV-29621))
-* When a backup is prepared with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup), the utility can hang due to a race condition between the thread flushing the buffer pool and the thread deleting the redo log file. ([MDEV-30860](https://jira.mariadb.org/browse/MDEV-30860))
+* When a backup is prepared with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup), the utility can hang due to a race condition between the thread flushing the buffer pool and the thread deleting the redo log file. ([MDEV-30860](https://jira.mariadb.org/browse/MDEV-30860))
 * With Galera, when a transaction changes multiple tables that use different storage engines, some of which support the server's internal 2-phase commit protocol and some of which don't support it, the node crashes with an assertion failure. ([MDEV-30804](https://jira.mariadb.org/browse/MDEV-30804))
   * In previous releases, the following assertion failure is written to the MariaDB error log during the crash in this scenario:
 
@@ -229,12 +228,12 @@ ERROR 1105 (HY000): Unknown error
 ```
 
 * Starting with this release, no error is returned, and the results contain `NULL` for the `PAGE_NO` and `SPACE` columns for discarded tablespaces.
-* When [innodb\_undo\_directory](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_undo_directory) is set to a relative path, the path is not properly used by [mariadb-backup --copy-back](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-copy-back). ([MDEV-28187](https://jira.mariadb.org/browse/MDEV-28187))
+* When [innodb\_undo\_directory](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_undo_directory) is set to a relative path, the path is not properly used by [mariadb-backup --copy-back](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-copy-back). ([MDEV-28187](https://jira.mariadb.org/browse/MDEV-28187))
   * In previous releases, the undo logs would be copied to the relative path compared to the current working directory.
   * Starting with this release, the undo logs are copied to the relative path compared to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir).
 * When `UNIX_TIMESTAMP(CURRENT_TIME())` is executed, the incorrect value is returned. ([MDEV-26765](https://jira.mariadb.org/browse/MDEV-26765))
   * In previous releases, `NULL` is returned.
-* With Galera, when [wsrep\_sst\_method='mariabackup'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set, systemd raises an error about a mismatched PID. ([MDEV-25887](https://jira.mariadb.org/browse/MDEV-25887))
+* With Galera, when [wsrep\_sst\_method='mariadb-backup'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set, systemd raises an error about a mismatched PID. ([MDEV-25887](https://jira.mariadb.org/browse/MDEV-25887))
   * In previous releases, systemd could raise the following error, where `BACKUP_PID` is the PID of MariaDB Enterprise Backup and `SERVER_PID` is the PID of MariaDB Enterprise Server:
 
 ```
@@ -262,7 +261,7 @@ ERROR 1406 (22001): Data too long for column 'COLUMN_NAME' at row 1
 * With `optimizer_switch='not_null_range_scan=on'`, when a `LEFT JOIN` is executed on an empty table, the results can be incorrect. ([MDEV-30333](https://jira.mariadb.org/browse/MDEV-30333))
 * When a query contains a `GROUP BY` clause and the query calls an aggregate function on a table's primary key, the results can be incorrect if the `GROUP BY` clause is evaluated using an index. ([MDEV-30605](https://jira.mariadb.org/browse/MDEV-30605))
 * With Galera, when a cluster node has the query cache enabled and the node has regular MariaDB replication configured, query cache entries are not properly invalidated when tables are changed due to replication. ([MDEV-28641](https://jira.mariadb.org/browse/MDEV-28641))
-* When a backup is created with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup), the utility opens the `aria_log_control` file in read/write mode instead of in read-only mode. (MENT-1794)
+* When a backup is created with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup), the utility opens the `aria_log_control` file in read/write mode instead of in read-only mode. (MENT-1794)
 
 ## Changes in Storage Engines
 
@@ -313,6 +312,6 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 * [Upgrade to MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

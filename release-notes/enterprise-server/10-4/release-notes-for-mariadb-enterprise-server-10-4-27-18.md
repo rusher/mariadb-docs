@@ -7,7 +7,7 @@ MariaDB Enterprise Server 10.4.27-18 was released on 2022-12-21.
 ## Notable Changes
 
 * The [information\_schema.INNODB\_SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table) view shows details about the InnoDB temporary tablespace, which is the tablespace where InnoDB temporary tables are stored. ([MDEV-29479](https://jira.mariadb.org/browse/MDEV-29479))
-  * Starting with this release, the details details about the InnoDB temporary tablespace can be shown by querying for the name `innodb_temporary`:
+  * Starting with this release, the details about the InnoDB temporary tablespace can be shown by querying for the name `innodb_temporary`:
 
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLESPACES
@@ -85,7 +85,7 @@ ERROR 1615 (HY000): Prepared statement needs to be re-prepared
 When a column has both a `UNIQUE` index and a `FULLTEXT` index, full-text search using `MATCH(..) AGAINST(..)` does not work properly. ([MDEV-29778](https://jira.mariadb.org/browse/MDEV-29778))
 
 * If the server is started with the [--ssl option](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#-ssl) enabled, but the TLS certificates and keys are not configured, the server will advertise the TLS support in the handshake, but will not actually be able to use it. ([MDEV-29811](https://jira.mariadb.org/browse/MDEV-29811))
-* With MariaDB Enterprise Cluster, when [wsrep\_sst\_method='mariabackup'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is configured, the joiner node ignores custom values for the [innodb\_buffer\_pool\_filename system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename), and the SST copies the buffer pool file to the default location instead. ([MDEV-28968](https://jira.mariadb.org/browse/MDEV-28968))
+* With MariaDB Enterprise Cluster, when [wsrep\_sst\_method='mariadb-backup'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is configured, the joiner node ignores custom values for the [innodb\_buffer\_pool\_filename system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename), and the SST copies the buffer pool file to the default location instead. ([MDEV-28968](https://jira.mariadb.org/browse/MDEV-28968))
 * When a `TIMESTAMP` column is filtered in a subquery inside the `ALL` operator, the results can be incorrect. ([MDEV-27101](https://jira.mariadb.org/browse/MDEV-27101))
 * When the [wsrep\_node\_incoming\_address system variable](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_incoming_address) does not contain a port number, the [wsrep\_incoming\_addresses](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_incoming_addresses) status variable shows `0` as the port number. ([MDEV-28868](https://jira.mariadb.org/browse/MDEV-28868))
 * When [optimizer\_switch='rowid\_filter=on'](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_switch) is enabled, performance is impacted if the rowid filter contains no elements. ([MDEV-28846](https://jira.mariadb.org/browse/MDEV-28846))
@@ -93,7 +93,7 @@ When a column has both a `UNIQUE` index and a `FULLTEXT` index, full-text search
 ### Related to install and upgrade
 
 * When MyRocks is installed from a Debian package, the `rocksdb.cnf` configuration file gets installed to `/etc/mysql/mariadb.conf.d/` instead of `/etc/mysql/conf.d/.` ([MDEV-28605](https://jira.mariadb.org/browse/MDEV-28605))
-* When [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) is executed, spurious errors about table rebuilds are logged. ([MDEV-29481](https://jira.mariadb.org/browse/MDEV-29481))
+* When [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) is executed, spurious errors about table rebuilds are logged. ([MDEV-29481](https://jira.mariadb.org/browse/MDEV-29481))
   * In previous releases, the following messages would be logged, even though the tool already mitigated the issues itself:
 
 ```
@@ -119,16 +119,16 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 ## Installation Instructions
 
 * [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](broken-reference)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](broken-reference)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](broken-reference)
 
 ## Upgrade Instructions
 
 * [Upgrade to MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

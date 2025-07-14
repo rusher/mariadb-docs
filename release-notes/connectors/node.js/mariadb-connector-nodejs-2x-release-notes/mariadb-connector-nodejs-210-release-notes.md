@@ -1,14 +1,16 @@
 # MariaDB Connector/Node.js 2.1.0 Release Notes
 
-The most recent [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-nodejs-210-release-notes.md)[Changelog](../changelogs/mariadb-connector-nodejs-2x-changelogs/mariadb-connector-nodejs-210-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](mariadb-connector-nodejs-210-release-notes.md) | [Changelog](../changelogs/mariadb-connector-nodejs-2x-changelogs/mariadb-connector-nodejs-210-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide.md)
 
 **Release date:** 12 Jul 2019
 
 MariaDB Connector/Node.js 2.1.0 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
 
-**For an overview of MariaDB Connector/Node.js see the**[**About MariaDB Connector/Node.js**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connectornodejs/README.md) **page**
+{% hint style="success" %}
+**For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**
+{% endhint %}
 
 ## Notable Changes
 
@@ -30,7 +32,6 @@ New Options
 
 | Option                        | Description                                                                                                                                                                                                                                           | Type      | Default              |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------------------- |
-| Option                        | Description                                                                                                                                                                                                                                           | Type      | Default              |
 | `collation`                   | (used in replacement of charset) Permit to defined collation used for connection. This will defined the charset encoding used for exchanges with database and defines the order used when comparing strings. It's mainly used for micro-optimizations | _string_  | UTF8MB4\_UNICODE\_CI |
 | `permitConnectionWhenExpired` | Permit a user with expired password to connect. Only possible operation in this case will be to change password ('SET PASSWORD=PASSWORD('XXX')')                                                                                                      | _boolean_ | false                |
 
@@ -42,7 +43,6 @@ Pools now emits events.
 
 | event        | Description                                                                                               |
 | ------------ | --------------------------------------------------------------------------------------------------------- |
-| event        | Description                                                                                               |
 | `acquire`    | This event emits a connection is acquired from pool.                                                      |
 | `connection` | This event is emitted when a new connection is added to the pool. Has a connection object parameter       |
 | `enqueue`    | This event is emitted when a command cannot be satisfied immediately by the pool and is queued.           |
@@ -55,10 +55,6 @@ pool.on('connection', (conn) => console.log(`connection ${conn.threadId} has bee
 Pool
 ```
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

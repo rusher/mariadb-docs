@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW PLUGINS;
 ```
 
@@ -12,11 +12,11 @@ SHOW PLUGINS;
 
 The [PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table in the `information_schema` database contains more detailed information.
 
-For specific information about storage engines (a particular type of plugin), see the [information_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md) table and the [SHOW ENGINES](show-engines.md) statement.
+For specific information about storage engines (a particular type of plugin), see the [information\_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md) table and the [SHOW ENGINES](show-engines.md) statement.
 
 ## Examples
 
-```
+```sql
 SHOW PLUGINS;
 +----------------------------+----------+--------------------+-------------+---------+
 | Name                       | Status   | Type               | Library     | License |
@@ -56,6 +56,6 @@ SHOW PLUGINS;
 * [UNINSTALL PLUGIN](../plugin-sql-statements/uninstall-plugin.md)
 * [UNINSTALL SONAME](../plugin-sql-statements/uninstall-soname.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

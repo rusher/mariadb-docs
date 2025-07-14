@@ -1,8 +1,8 @@
 # MariaDB Connector/Node.js 3.0.2 Changelog
 
-The most recent [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-0-2-release-notes.md)[Changelog](mariadb-connector-node-js-3-0-2-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-0-2-release-notes.md) | [Changelog](mariadb-connector-node-js-3-0-2-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 27 Oct 2022
 
@@ -57,5 +57,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #10c7660](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/10c7660) \[[CONJS-213](https://jira.mariadb.org/browse/CONJS-213)] update error codes with recent mariadb version
 * [Revision #f8189f1](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/f8189f1) \[[CONJS-212](https://jira.mariadb.org/browse/CONJS-212)] regression causing error "Cannot read properties of null (reading 'leaked')" #206
 * [Revision #8bdbdd5](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/8bdbdd5) \[misc] correcting benchmark description
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

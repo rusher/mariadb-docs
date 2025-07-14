@@ -8,12 +8,12 @@ If it doesn't already exist, you can use the sample configuration file, `sphinx.
 
 `mysql -u test < /usr/local/sphinx/etc/example.sql` (Red Hat, CentOS)`mysql -u test < /usr/share/doc/sphinxsearch/example-conf/example.sql` (Debian/Ubuntu)
 
-The sample configuration file documents the available options. You will need to make at least a few changes. A MariaDB user with permission to access the database must be created. For example:
+The sample configuration file documents the available options. You will need to make at least a few changes. A MariaDB user with permission to access the database must be created:
 
 ```sql
 CREATE USER 'sphinx'@localhost 
   IDENTIFIED BY 'sphinx_password';
-GRANT SELECT on test.* to 'sphinx'@localhost;
+GRANT SELECT ON test.* TO 'sphinx'@localhost;
 ```
 
 Add these details to the `mysql` section of the config file:

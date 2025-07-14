@@ -16,7 +16,6 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | HOST | Host name used by the client to connect, NULL for internal threads or user sessions that failed to authenticate. |
 | CURRENT_CONNECTIONS | Current number of the host's connections. |
 | TOTAL_CONNECTIONS | Total number of the host's connections |

@@ -11,9 +11,17 @@ DROP USER [IF EXISTS] user_name [, user_name] ...
 The `DROP USER` statement removes one or more MariaDB accounts. It removes privilege rows for the account from all grant tables. To use this statement, you must have the global [CREATE USER](grant.md#create-user) privilege\
 or the [DELETE](grant.md#table-privileges) privilege for the mysql database. Each account is named using the same format as for the `CREATE USER`statement; for example, `'jeffrey'@'localhost'`. If you specify only the user name part of the account name, a host name part of `'%'` is used. For additional information about specifying account names, see [CREATE USER](create-user.md).
 
-{% hint style="info" %}
-If you specify an account that is currently connected, it will not be deleted until the connection is closed. The connection will not be automatically closed.
-{% endhint %}
+{% tabs %}
+{% tab title="Current" %}
+From [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1), by default, if you specify an account that is currently connected, it will not be deleted until the connection is closed. The connection will not automatically be closed. The statement will complete, and a warning, "Dropped users 'user'@'host\[,...]' have active connections. Use KILL CONNECTION if they should not be used anymore" issued.
+
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), if a user is connected, the DROP USER statement will fail with an error "Operation DROP USER failed for 'foo'@'localhost'".
+{% endtab %}
+
+{% tab title="< MariaDB 12.1" %}
+If you specify an account that is currently connected, it will not be deleted until the connection is closed. The connection will not automatically be closed.
+{% endtab %}
+{% endtabs %}
 
 If any of the specified user accounts do not exist, `ERROR 1396 (HY000)`results. If an error occurs, `DROP USER` will still drop the accounts that do not result in an error. Only one error is produced for all users which have not been dropped:
 
@@ -26,6 +34,12 @@ Failed `CREATE` or `DROP` operations, for both users and roles, produce the same
 #### IF EXISTS
 
 If the `IF EXISTS` clause is used, MariaDB will return a note instead of an error if the user does not exist.
+
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database.
+
+
+
+If any of the specified accounts, or any permissions f
 
 ## Examples
 

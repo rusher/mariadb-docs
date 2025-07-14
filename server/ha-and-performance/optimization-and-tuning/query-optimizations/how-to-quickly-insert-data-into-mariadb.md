@@ -26,7 +26,7 @@ inserting data.
 ```sql
 ALTER TABLE table_name DISABLE KEYS;
 BEGIN;
-... inserting data with INSERT or LOAD DATA ....
+... inserting data WITH INSERT OR LOAD DATA ....
 COMMIT;
 ALTER TABLE table_name ENABLE KEYS;
 ```
@@ -36,7 +36,7 @@ sorting them, and then creating the index blocks. This is an order of magnitude\
 faster than creating the index one row at a time and it also uses less key\
 buffer memory.
 
-**Note:** When you insert into an **empty table** with [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) or[LOAD DATA](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a[DISABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table.md) before and an [ENABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table.md)\
+**Note:** When you insert into an **empty table** with [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) or[LOAD DATA](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a[DISABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table/) before and an [ENABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table/)\
 afterwards.
 
 When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `UNIQUE` indexes and the [foreign keys](../optimization-and-indexes/foreign-keys.md) checks using the [unique\_checks](../system-variables/server-system-variables.md#unique_checks) and the [foreign\_key\_checks](../system-variables/server-system-variables.md#foreign_key_checks) system variables:
@@ -95,7 +95,7 @@ You will also get [progress reporting](https://github.com/mariadb-corporation/do
 
 ### mariadb-import
 
-You can import many files in parallel with [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)). For example:
+You can import many files in parallel with [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)). For example:
 
 ```
 mariadb-import --use-threads=10 database text-file-name [text-file-name...]
@@ -133,7 +133,7 @@ just one is that the former will use up less transaction log space.
 You can insert many rows at once with multi-value row inserts:
 
 ```sql
-INSERT INTO table_name values(1,"row 1"),(2, "row 2"),...;
+INSERT INTO table_name VALUES(1,"row 1"),(2, "row 2"),...;
 ```
 
 The limit for how much data you can have in one statement is controlled by the[max\_allowed\_packet](../system-variables/server-system-variables.md#max_allowed_packet) server variable.
@@ -145,7 +145,7 @@ is to enable multi-row statements and send many inserts to the server at once:
 
 ```sql
 INSERT INTO table_name_1 (auto_increment_key, data) VALUES (NULL,"row 1");
-INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_INSERT_ID(), "row 2");
+INSERT INTO table_name_2 (auto_increment, reference, data) VALUES (NULL, LAST_INSERT_ID(), "row 2");
 ```
 
 [LAST\_INSERT\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last`auto_increment` value inserted.
@@ -157,7 +157,7 @@ To test this in the `mariadb` client you have to do:
 
 ```sql
 delimiter ;;
-select 1; select 2;;
+SELECT 1; SELECT 2;;
 delimiter ;
 ```
 
@@ -167,7 +167,6 @@ delimiter ;
 
 | Option                                                                                                                        | Description                                                    |
 | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Option                                                                                                                        | Description                                                    |
 | [innodb\_buffer\_pool\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) | Increase this if you have many indexes in InnoDB/XtraDB tables |
 | [key\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)   | Increase this if you have many indexes in MyISAM tables        |
 | [max\_allowed\_packet](../system-variables/server-system-variables.md#max_allowed_packet)                                     | Increase this to allow bigger multi-insert statements          |

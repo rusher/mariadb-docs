@@ -1,8 +1,8 @@
 # MariaDB 11.4.2 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download 11.4.2](https://downloads.mariadb.org/mariadb/11.4.2)[Release Notes](mariadb-11-4-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://downloads.mariadb.org/mariadb/11.4.2/" class="button primary">Download</a> <a href="mariadb-11-4-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 29 May 2024
 
@@ -10,7 +10,7 @@ The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 
 
 [MariaDB 11.4.2](mariadb-11-4-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -33,7 +33,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 * Fix MariaDB segfault on rowid filter query involving generated column ([MDEV-33795](https://jira.mariadb.org/browse/MDEV-33795))
 * Fix discard/import tablespace, restart, index corruption ([MDEV-33512](https://jira.mariadb.org/browse/MDEV-33512))
 * Fix server hang on DROP INDEX or RENAME INDEX ([MDEV-33993](https://jira.mariadb.org/browse/MDEV-33993))
-* Fix mariabackup --backup hang ([MDEV-33669](https://jira.mariadb.org/browse/MDEV-33669))
+* Fix mariadb-backup --backup hang ([MDEV-33669](https://jira.mariadb.org/browse/MDEV-33669))
 * Fix server hang caused by InnoDB change buffer ([MDEV-33543](https://jira.mariadb.org/browse/MDEV-33543))
 * Fix assertion failures upon adding a too long key to table with COMPRESSED row format ([MDEV-31161](https://jira.mariadb.org/browse/MDEV-31161))
 * IMPORT TABLESPACE no longer fails with column count or index count mismatch ([MDEV-30655](https://jira.mariadb.org/browse/MDEV-30655))
@@ -71,19 +71,19 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 * spider plugin init failure with no\_zero\_date sql\_mode ([MDEV-33494](https://jira.mariadb.org/browse/MDEV-33494))
 * sql plugin init failure with traditional sql\_mode ([MDEV-33584](https://jira.mariadb.org/browse/MDEV-33584))
 * spider returns parsing failure on valid left join select by translating the on expression to () ([MDEV-33679](https://jira.mariadb.org/browse/MDEV-33679))
-* Spider: ERROR 12710 (HY000): Invalid information from remote table when using [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) local and [MariaDB 10.6](../mariadb-10-6-series/what-is-mariadb-106.md) remote ([MDEV-33777](https://jira.mariadb.org/browse/MDEV-33777))
+* Spider: ERROR 12710 (HY000): Invalid information from remote table when using [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) local and [MariaDB 10.6](../mariadb-10-6-series/what-is-mariadb-106.md) remote ([MDEV-33777](https://jira.mariadb.org/browse/MDEV-33777))
 * Fix bug where [Spider variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-system-variables) were not available if Spider was loaded upon server startup ([MDEV-33441](https://jira.mariadb.org/browse/MDEV-33441))
 
 ### Backup
 
-* Port backup features from Enterprise Server. This adds support for [BACKUP STAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) to [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup), and obsoletes the [no-backup-locks](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) and [rsync](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) options ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932))
-* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) now preserves [innodb\_encrypt\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_tables) ([MDEV-33334](https://jira.mariadb.org/browse/MDEV-33334))
-* Fix [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) problem on older mariadb (opendir(NULL)) caused by [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251))
-* Fix [mariabackup --backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) FATAL ERROR: ... Can't open datafile cool\_down/t3 ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011))
-* [mariadb-backup --backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) now includes retry logic for undo tablespaces ([MDEV-33980](https://jira.mariadb.org/browse/MDEV-33980))
-* Fix crash recovery in [mariabackup --prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) due to insufficient [innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_file_size) ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540))
-* Fix crash in [mariadb-backup --prepare --export](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) after `--prepare` ([MDEV-33023](https://jira.mariadb.org/browse/MDEV-33023))
-* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) now considers O/S user when `--user` option is omitted ([MDEV-32893](https://jira.mariadb.org/browse/MDEV-32893))
+* Port backup features from Enterprise Server. This adds support for [BACKUP STAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) to [mariadb-backup](broken-reference/), and obsoletes the [no-backup-locks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#no-backup-locks) and [rsync](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#rsync) options ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932))
+* [mariadb-backup](broken-reference/) now preserves [innodb\_encrypt\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_tables) ([MDEV-33334](https://jira.mariadb.org/browse/MDEV-33334))
+* Fix [mariadb-backup](broken-reference/) problem on older mariadb (opendir(NULL)) caused by [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251))
+* Fix [mariadb-backup --backup](broken-reference/) FATAL ERROR: ... Can't open datafile cool\_down/t3 ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011))
+* [mariadb-backup --backup](broken-reference/) now includes retry logic for undo tablespaces ([MDEV-33980](https://jira.mariadb.org/browse/MDEV-33980))
+* Fix crash recovery in [mariadb-backup --prepare](broken-reference/) due to insufficient [innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_file_size) ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540))
+* Fix crash in [mariadb-backup --prepare --export](broken-reference/) after `--prepare` ([MDEV-33023](https://jira.mariadb.org/browse/MDEV-33023))
+* [mariadb-backup](broken-reference/) now considers O/S user when `--user` option is omitted ([MDEV-32893](https://jira.mariadb.org/browse/MDEV-32893))
 
 ### [Character Sets](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets), [Data Types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types)
 
@@ -174,7 +174,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 
 #### Server
 
-* Moving from [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) to 10.6 mysql\_upgrade is not updating some system tables ([MDEV-33726](https://jira.mariadb.org/browse/MDEV-33726))
+* Moving from [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) to 10.6 mysql\_upgrade is not updating some system tables ([MDEV-33726](https://jira.mariadb.org/browse/MDEV-33726))
 * Original IP not shown in network related error messages when proxy\_protocol is in use ([MDEV-33506](https://jira.mariadb.org/browse/MDEV-33506))
 * Server incorrectly describes known variables as UNKNOWN if invalid values are specified at startup ([MDEV-33469](https://jira.mariadb.org/browse/MDEV-33469))
 * update case insensitive (large) unique key with insensitive change of value - duplicate key ([MDEV-29345](https://jira.mariadb.org/browse/MDEV-29345))
@@ -189,16 +189,14 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.4.2](mariadb-11-4-2-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 11.4.2](mariadb-11-4-2-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-4-2-and-mariadb-11-5-1-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

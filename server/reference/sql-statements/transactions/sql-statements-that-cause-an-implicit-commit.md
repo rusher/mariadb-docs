@@ -4,7 +4,7 @@ Some SQL statements cause an implicit commit. As a rule of thumb, such statement
 
 Here is the list:
 
-```
+```sql
 ALTER DATABASE ... UPGRADE DATA DIRECTORY NAME
 ALTER EVENT
 ALTER FUNCTION
@@ -76,7 +76,6 @@ These statements do not cause an implicit commit in the following cases:
   * However, [TRUNCATE TABLE](../table-statements/truncate-table.md) causes an implicit commit even when used on a temporary table.
 * [CREATE FUNCTION](../data-definition/create/create-function.md) and [DROP FUNCTION](../../../server-usage/stored-routines/stored-functions/drop-function.md), when used to create a UDF (instead of a stored function). However, [CREATE INDEX](../data-definition/create/create-index.md) and [DROP INDEX](../data-definition/drop/drop-index.md) cause commits even when used with temporary tables.
 * [UNLOCK TABLES](lock-tables.md) causes a commit only if a [LOCK TABLES](lock-tables.md) was used on non-transactional tables.
-* [START SLAVE](../administrative-sql-statements/replication-statements/start-replica.md), [STOP SLAVE](../administrative-sql-statements/replication-statements/stop-replica.md), [RESET SLAVE](../administrative-sql-statements/replication-statements/reset-replica.md) and [CHANGE MASTER TO](../administrative-sql-statements/replication-statements/change-master-to.md) did not cause implicit commits prior to [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

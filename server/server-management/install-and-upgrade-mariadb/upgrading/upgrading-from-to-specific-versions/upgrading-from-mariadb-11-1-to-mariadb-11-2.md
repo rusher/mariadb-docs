@@ -8,7 +8,7 @@ For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.
 
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.6 to MariaDB 10.7 with Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-106-to-mariadb-107-with-galera-cluster/README.md) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/).
 
 The suggested upgrade procedure is:
 
@@ -47,7 +47,6 @@ On most servers upgrading from 11.1 should be painless. However, there are some 
 
 | Option                                                                                                                                   | Old default | New default                                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                   | Old default | New default                                                                                                             |
 | [optimizer\_switch](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) |             | See [optimizer-switch](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md). |
 | [innodb\_purge\_batch\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size)         | 300         | 1000                                                                                                                    |
 
@@ -57,7 +56,6 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option                                                                                                                                  | Reason                                                                                                                                                |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                  | Reason                                                                                                                                                |
 | [old\_alter\_table](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table) | Superceded by [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm). |
 
 #### Deprecated Options
@@ -66,7 +64,6 @@ The following options have been deprecated. They have not yet been removed, but 
 
 | Option                                                                                                                                                      | Reason                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                                      | Reason                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | [innodb\_purge\_rseg\_truncate\_frequency](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) | The motivation for introducing this in MySQL seems to have been to avoid stalls due to freeing undo log pages or truncating undo log tablespaces. In MariaDB, [innodb\_undo\_log\_truncate=ON](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate) should be a much lighter operation because it will not involve any log checkpoint, hence this is deprecated and ignored |
 
 ### See Also

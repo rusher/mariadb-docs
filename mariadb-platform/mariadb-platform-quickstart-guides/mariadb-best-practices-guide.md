@@ -60,6 +60,6 @@ Adhering to best practices is crucial for ensuring the performance, stability, a
 
 * **Utilize Commercial Support:** For comprehensive technical support and services, consider engaging with MariaDB Corporation's commercial support. Existing customers can access assistance via the MariaDB Customer Portal.
 
-This guide provides a high-level overview. For more in-depth information, refer to the official MariaDB documentation on best practices: [MariaDB Best Practices](mariadb-best-practices-guide.md)
+This guide provides a high-level overview. For more in-depth information, refer to the official MariaDB documentation on best practices.
 
 {% @marketo/form formId="4316" %}

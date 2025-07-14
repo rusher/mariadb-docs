@@ -1,6 +1,6 @@
 # MariaDB 11.7.2 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-7-2-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-2-changelog.md)[Overview of 11.7](what-is-mariadb-117.md)
+[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-7-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-2-changelog.md)[Overview of 11.7](what-is-mariadb-117.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2/)
 
@@ -66,7 +66,7 @@ Thanks, and enjoy MariaDB!
 * NULL-aware materialization with IN predicate and single column no longer skips building sorted Ordered\_key structures ([MDEV-34665](https://jira.mariadb.org/browse/MDEV-34665))
 * Fix possibly wrong result using a degenerated subquery (SELECT ) with window function ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869))
 
-### [Partitioning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/broken-reference/README.md)
+### [Partitioning](https://mariadb.com/docs/columnstore/high-availability/mariadb-columnstore-performance-concepts#partitioning)
 
 * History is now stored on the same partitions on different Galera nodes when system versioning is enabled ([MDEV-35096](https://jira.mariadb.org/browse/MDEV-35096))
 * Fix possible hang or crash during InnoDB purge with HASH indexes during ALTER TABLE ([MDEV-25654](https://jira.mariadb.org/browse/MDEV-25654))
@@ -76,7 +76,7 @@ Thanks, and enjoy MariaDB!
 ### [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/)
 
 * [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.21
-  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
+  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 * Fix streaming replication transaction crash with innodb\_snapshot\_isolation ([MDEV-35281](https://jira.mariadb.org/browse/MDEV-35281))
 * Fix sporadic failure of async replication on Galera async replica nodes with parallel replication enabled ([MDEV-35465](https://jira.mariadb.org/browse/MDEV-35465))
 * Fix possible failure of wsrep\_sst\_rsync SST script if user specified aria\_log\_dir\_path different from default data directory ([MDEV-35387](https://jira.mariadb.org/browse/MDEV-35387))
@@ -89,8 +89,8 @@ Thanks, and enjoy MariaDB!
 * Fix issue where DROP TABLE on child and UPDATE of parent table can cause a metadata lock BF-BF\
   conflict when applied concurrently. ([MDEV-35018](https://jira.mariadb.org/browse/MDEV-35018))
 * Galera protocol versions are now shown by show status - change available with installation of galera library 26.4.21+ ([MDEV-35505](https://jira.mariadb.org/browse/MDEV-35505))
-* Fix possible crash in wsrep\_sst\_mariabackup script when upgrading node in cluster from 10.11.9 to 10.11.10. ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526))
-* wsrep\_sst\_mariabackup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
+* Fix possible crash in wsrep\_sst\_mariadb-backup script when upgrading node in cluster from 10.11.9 to 10.11.10. ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526))
+* wsrep\_sst\_mariadb-backup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
 
 ### [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin)
 
@@ -145,16 +145,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.7.2](mariadb-11-7-2-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-2-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-2-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 11.7.2](mariadb-11-7-2-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-7-2-and-mariadb-11-8-1-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

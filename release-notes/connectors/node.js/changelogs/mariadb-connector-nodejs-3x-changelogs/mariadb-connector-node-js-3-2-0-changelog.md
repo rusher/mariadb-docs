@@ -1,8 +1,8 @@
 # MariaDB Connector/Node.js 3.2.0 Changelog
 
-The most recent [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-2-0-release-notes.md)[Changelog](mariadb-connector-node-js-3-2-0-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-2-0-release-notes.md) | [Changelog](mariadb-connector-node-js-3-2-0-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 19 Jun 2023
 
@@ -37,5 +37,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #dd9cacc](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/dd9cacc) - \[[CONJS-250](https://jira.mariadb.org/browse/CONJS-250)] permit using undefined as parameter like null
 * [Revision #fab1585](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/fab1585) - \[misc] correct UTC timezone for auto timezone setting
 * [Revision #f56bd14](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/f56bd14) - Merge tag '3.1.2' into develop
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

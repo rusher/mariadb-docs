@@ -10,7 +10,6 @@ The `mysql.time_zone_leap_second` table contains the following fields:
 
 | Field            | Type       | Null | Key | Default | Description |
 | ---------------- | ---------- | ---- | --- | ------- | ----------- |
-| Field            | Type       | Null | Key | Default | Description |
 | Transition\_time | bigint(20) | NO   | PRI | NULL    |             |
 | Correction       | int(11)    | NO   |     | NULL    |             |
 

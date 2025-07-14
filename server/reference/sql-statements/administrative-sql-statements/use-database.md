@@ -18,9 +18,9 @@ The `'USE db_name'` statement tells MariaDB to use the`db_name` database as the 
 
 ```sql
 USE db1;
-SELECT COUNT(*) FROM mytable;   # selects from db1.mytable
+SELECT COUNT(*) FROM mytable;   # selects FROM db1.mytable
 USE db2;
-SELECT COUNT(*) FROM mytable;   # selects from db2.mytable
+SELECT COUNT(*) FROM mytable;   # selects FROM db2.mytable
 ```
 
 The [DATABASE()](../../sql-functions/secondary-functions/information-functions/database.md) function ([SCHEMA()](../../sql-functions/secondary-functions/information-functions/schema.md) is a synonym) returns the default database.

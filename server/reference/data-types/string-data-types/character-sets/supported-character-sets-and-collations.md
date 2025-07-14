@@ -4,13 +4,20 @@
 
 You can see which character sets are available in a particular version by running the [SHOW CHARACTER SET](../../../sql-statements/administrative-sql-statements/show/show-character-set.md) statement or by querying the [Information Schema CHARACTER\_SETS Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md).
 
-From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), it is possible to change the default collation associated with a character set. See [Changing Default Collation](setting-character-sets-and-collations.md#changing-default-collation)
+{% tabs %}
+{% tab title="Current" %}
+It is possible to change the default collation associated with a character set. See [Changing Default Collation](setting-character-sets-and-collations.md#changing-default-collation).
+{% endtab %}
+
+{% tab title="< 11.2" %}
+It is **not** possible to change the default collation associated with a character set. See [Changing Default Collation](setting-character-sets-and-collations.md#changing-default-collation)
+{% endtab %}
+{% endtabs %}
 
 MariaDB supports the following character sets:
 
 | Charset  | Description                 | Default collation                                                                                                                                                                                                                                                                                                                                                                                                   | Maxlen                                                                               |
 | -------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Charset  | Description                 | Default collation                                                                                                                                                                                                                                                                                                                                                                                                   | Maxlen                                                                               |
 | armscii8 | ARMSCII-8 Armenian          | armscii8\_general\_ci                                                                                                                                                                                                                                                                                                                                                                                               | 1                                                                                    |
 | ascii    | US ASCII                    | ascii\_general\_ci                                                                                                                                                                                                                                                                                                                                                                                                  | 1                                                                                    |
 | big5     | Big5 Traditional Chinese    | big5\_chinese\_ci                                                                                                                                                                                                                                                                                                                                                                                                   | 2                                                                                    |
@@ -53,13 +60,15 @@ MariaDB supports the following character sets:
 | utf8mb3  | UTF-8 Unicode               | utf8mb3\_general\_ci (<= [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114))utf8mb3\_uca1400\_ai\_ci (>=[MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115))                              | 3                                                                                    |
 | utf8mb4  | UTF-8 Unicode               | utf8mb4\_general\_ci (<= [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114))utf8mb4\_uca1400\_ai\_ci (>=[MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115))                              | 4                                                                                    |
 
+{% hint style="warning" %}
 Note that the [Mroonga Storage Engine](../../../../server-usage/storage-engines/mroonga/) only supports a limited number of character sets. See [Mroonga available character sets](../../../../server-usage/storage-engines/mroonga/about-mroonga.md#available-character-sets).
+{% endhint %}
 
 ## Collations
 
 MariaDB supports the following collations (from [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-5-release-notes)):
 
-```
+```sql
 SELECT collation_name, character_set_name as cs_name, id, is_default AS def, is_compiled AS com, 
   sortlen, comment FROM information_schema.collations ORDER BY collation_name;
 +--------------------------------+----------+------+------+-----+---------+--------------------------------------------------+
@@ -619,27 +628,28 @@ SELECT collation_name, character_set_name as cs_name, id, is_default AS def, is_
 550 rows in set (0.005 sec)
 ```
 
-The UCA-14.0.0 collations were added in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/character-sets/broken-reference/README.md).
+:information\_source: The UCA-14.0.0 collations were added in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/character-sets/broken-reference/README.md).
 
-Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), the `utf8mb3*` collations listed above were named `utf8*`.
+:information\_source: Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), the `utf8mb3*` collations listed above were named `utf8*`.
 
-[MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-5-release-notes) added UCA-9.0.0 collations, as well as a Comment column to information\_schema.collations, to make it clear that the UCA-9.0.0 collations are mapped to the UCA-14.0.0 collations. The UCA-9.0.0 collations have mainly been added to make it easy to replicate from MySQL 8.0 to [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-5-release-notes) and newer.
+:information\_source: [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-5-release-notes) added UCA-9.0.0 collations, as well as a Comment column to `information_schema.collations`, to make it clear that the UCA-9.0.0 collations are mapped to the UCA-14.0.0 collations. The UCA-9.0.0 collations have mainly been added to make it easy to replicate from MySQL 8.0 to MariaDB 11.4.5 and newer.
 
-Note that some of the collations are used with several different character sets. In this case the `Charset` and `Id` columns are `NULL`.
+{% hint style="info" %}
+Note that some of the collations are used with several different character sets. In this case, the `Charset` and `Id` columns are `NULL`.
+{% endhint %}
 
-You can find all combinations of supported character set and collation in the[information\_schema.COLLATION\_CHARACTER\_SET\_APPLICABILITY](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collation_character_set_applicability-table.md) table.
+You can find all combinations of supported character set and collation in the [information\_schema.COLLATION\_CHARACTER\_SET\_APPLICABILITY](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collation_character_set_applicability-table.md) table.
 
 ## Case Sensitivity
 
-A '`ci`' at the end of a collation name indicates the\
-collation is case insensitive. A '`cs`' at the end of a\
+A '`ci`' at the end of a collation name indicates the collation is case insensitive. A '`cs`' at the end of a\
 collation name indicates the collation is case sensitive.
 
 ## NO PAD Collations
 
 `NO PAD` collations regard trailing spaces as normal characters. You can get a list of all of these by querying the [Information Schema COLLATIONS Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) as follows:
 
-```
+```sql
 SELECT collation_name FROM information_schema.COLLATIONS
 WHERE collation_name LIKE "%nopad%";  
 +------------------------------+
@@ -654,9 +664,9 @@ WHERE collation_name LIKE "%nopad%";
 
 An accent insensitive collation is one where the accented and unaccented versions of a letter are considered to be identical for sorting purposes.
 
-[MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010) added the accent insensitivity flag, and new collations are marked with '\_ai' or '\_as' in the name to indicate this, for example:
+:information\_source: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010) added the accent insensitivity flag, and new collations are marked with '\_ai' or '\_as' in the name to indicate this, for example:
 
-```
+```sql
 ...
 | uca1400_spanish2_ai_ci         |
 | uca1400_spanish2_ai_cs         |
@@ -673,9 +683,7 @@ An accent insensitive collation is one where the accented and unaccented version
 * [MariaDB 10.1.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes) added the `utf8_thai_520_w2`, `utf8mb4_thai_520_w2`, `ucs2_thai_520_w2`, `utf16_thai_520_w2` and `utf32_thai_520_w2` collations.
 * [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) added the `utf8_myanmar_ci`, `ucs2_myanmar_ci`, `utf8mb4_myanmar_ci`, `utf16_myanmar_ci` and `utf32_myanmar_ci` collations.
 * [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) added the `utf8_german2_ci`, `utf8mb4_german2_ci`, `ucs2_german2_ci`, `utf16_german2_ci` and `utf32_german2_ci` collations.
-* [MariaDB 5.1.41](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5141-release-notes) added a Croatian collation patch from[Alexander Barkov](https://www.collation-charts.org/) to fix some problems with the\
-  Croatian character set and `LIKE` queries. This patch added`utf8_croatian_ci` and `ucs2_croatian_ci`\
-  collations to MariaDB.
+* [MariaDB 5.1.41](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5141-release-notes) added a Croatian collation patch from[Alexander Barkov](https://www.collation-charts.org/) to fix some problems with the Croatian character set and `LIKE` queries. This patch added`utf8_croatian_ci` and `ucs2_croatian_ci` collations to MariaDB.
 
 ## See Also
 

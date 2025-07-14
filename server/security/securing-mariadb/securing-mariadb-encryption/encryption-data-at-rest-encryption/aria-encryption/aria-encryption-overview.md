@@ -40,7 +40,7 @@ SELECT * FROM db1.aria_tab LIMIT 1;
 +----+------+
 |  1 | str1 |
 +----+------+
-1 row in set (0.00 sec
+1 row IN SET (0.00 sec
 ```
 
 Then, we could search the data file that belongs to `db1.aria_tab` for `str1` using a command-line tool, such as [strings](https://linux.die.net/man/1/strings):

@@ -2,10 +2,10 @@
 
 ### Wrong Create Options
 
-With InnoDB tables using encryption, there are several cases where a [CREATE TABLE](../../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement can throw Error 1005, due to the InnoDB error 140, `Wrong create options`. For instance,
+With InnoDB tables using encryption, there are several cases where a [CREATE TABLE](../../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement can throw Error 1005, due to the InnoDB error 140, `Wrong create options`. For instance,
 
 ```sql
-CREATE TABLE `test`.`table1` ( `id` int(4) primary key , `name` varchar(50));
+CREATE TABLE `test`.`table1` ( `id` INT(4) PRIMARY KEY , `name` VARCHAR(50));
 ERROR 1005 (HY000): Can't create table `test`.`table1` (errno: 140 "Wrong create options")
 ```
 
@@ -105,7 +105,7 @@ SHOW WARNINGS;
 1 row in set (0.00 sec)
 ```
 
-However, in this case, if you change the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `YES` or `DEFAULT` with [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md), then it will actually use the proper key. For example:
+However, in this case, if you change the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `YES` or `DEFAULT` with [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/), then it will actually use the proper key. For example:
 
 ```sql
 SET GLOBAL innodb_encrypt_tables=ON;

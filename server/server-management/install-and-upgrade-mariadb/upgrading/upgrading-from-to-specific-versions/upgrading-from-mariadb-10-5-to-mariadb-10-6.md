@@ -6,7 +6,7 @@ For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.
 
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.5 to MariaDB 10.6 with Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10-5-to-mariadb-10-6-with-galera-cluster).
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/).
 
 The suggested upgrade procedure is:
 
@@ -64,7 +64,6 @@ From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 | Option                                                                                                                                                    | Old default value | New default value |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----------------- |
-| Option                                                                                                                                                    | Old default value | New default value |
 | [character\_set\_client](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client)         | utf8              | utf8mb3           |
 | [character\_set\_connection](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection) | utf8              | utf8mb3           |
 | [character\_set\_results](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_results)       | utf8              | utf8mb3           |
@@ -78,7 +77,6 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option                                                                                                                                                                     | Reason                                                                                                                                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                                                     | Reason                                                                                                                                                                                                                                                                            |
 | [innodb\_adaptive\_max\_sleep\_delay](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay)                          |                                                                                                                                                                                                                                                                                   |
 | [innodb\_background\_scrub\_data\_check\_interval](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval) |                                                                                                                                                                                                                                                                                   |
 | [innodb\_background\_scrub\_data\_compressed](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed)          |                                                                                                                                                                                                                                                                                   |
@@ -110,7 +108,6 @@ The following options have been deprecated. They have not yet been removed, but 
 
 | Option                                                                                                                                      | Reason                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                      | Reason                                                                                                                          |
 | [wsrep\_replicate\_myisam](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_replicate_myisam) | Use [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) instead. |
 | [wsrep\_strict\_ddl](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_strict_ddl)             | Use [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) instead. |
 

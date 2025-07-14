@@ -2,25 +2,18 @@
 
 ## Syntax
 
-```
+```sql
 SHOW [GLOBAL | SESSION] STATUS
     [LIKE 'pattern' | WHERE expr]
 ```
 
 ## Description
 
-`SHOW STATUS` provides server status information. This\
-information also can be obtained using the [mariadb-admin extended-status](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.\
-The `LIKE` clause, if present, indicates which variable names\
-to match. The `WHERE` clause can be given to select rows using\
-more general conditions.
+`SHOW STATUS` provides server status information. This information also can be obtained using the [mariadb-admin extended-status](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables. The `LIKE` clause, if present, indicates which variable names to match. The `WHERE` clause can be given to select rows using more general conditions.
 
-With the `GLOBAL` modifier, `SHOW STATUS`\
-displays the status values for all connections to MariaDB. With`SESSION`, it displays the status values\
-for the current connection. If no modifier is present, the default is`SESSION`. `LOCAL` is a synonym for`SESSION`. If you see a lot of 0 values, the reason is probably that you have used `SHOW STATUS` with a new connection instead of `SHOW GLOBAL STATUS`.
+With the `GLOBAL` modifier, `SHOW STATUS` displays the status values for all connections to MariaDB. With`SESSION`, it displays the status values for the current connection. If no modifier is present, the default is`SESSION`. `LOCAL` is a synonym for`SESSION`. If you see a lot of 0 values, the reason is probably that you have used `SHOW STATUS` with a new connection instead of `SHOW GLOBAL STATUS`.
 
-Some status variables have only a global value. For these, you get the\
-same value for both `GLOBAL` and `SESSION`.
+Some status variables have only a global value. For these, you get the same value for both `GLOBAL` and `SESSION`.
 
 See [Server Status Variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) for a full list, scope and description of the variables that can be viewed with `SHOW STATUS`.
 
@@ -30,7 +23,7 @@ The `WHERE` and `LIKE` clauses can be given to select rows using more general co
 
 ## Examples
 
-```
+```sql
 SHOW GLOBAL STATUS;
 +--------------------------------------------------------------+----------------------------------------+
 | Variable_name                                                | Value                                  |
@@ -62,7 +55,7 @@ SHOW GLOBAL STATUS;
 
 Example of filtered output:
 
-```
+```sql
 SHOW STATUS LIKE 'Key%';
 +------------------------+--------+
 | Variable_name          | Value  |

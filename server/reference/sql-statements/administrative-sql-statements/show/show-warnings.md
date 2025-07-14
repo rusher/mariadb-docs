@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW WARNINGS [LIMIT [offset,] row_count]
 SHOW ERRORS [LIMIT row_count OFFSET offset]
 SHOW COUNT(*) WARNINGS
@@ -10,30 +10,22 @@ SHOW COUNT(*) WARNINGS
 
 ## Description
 
-`SHOW WARNINGS` shows the error, warning, and note messages\
-that resulted from the last statement that generated messages in the\
-current session. It shows nothing if the last statement used a table\
-and generated no messages. (That is, a statement that uses a table but\
-generates no messages clears the message list.) Statements that do not\
-use tables and do not generate messages have no effect on the message\
-list.
+`SHOW WARNINGS` shows the error, warning, and note messages that resulted from the last statement that generated messages in the current session. It shows nothing if the last statement used a table and generated no messages. (That is, a statement that uses a table but generates no messages clears the message list.) Statements that do not use tables and do not generate messages have no effect on the message list.
 
 A note is different to a warning in that it only appears if the [sql\_notes](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) variable is set to 1 (the default), and is not converted to an error if [strict mode](../../../../server-management/variables-and-modes/sql-mode.md) is enabled.
 
 A related statement, [SHOW ERRORS](show-errors.md), shows only the errors.
 
-The `SHOW COUNT(*) WARNINGS` statement displays the total\
-number of errors, warnings, and notes. You can also retrieve this number from\
-the [warning\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) variable:
+The `SHOW COUNT(*) WARNINGS` statement displays the total number of errors, warnings, and notes. You can also retrieve this number from the [warning\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) variable:
 
-```
+```sql
 SHOW COUNT(*) WARNINGS;
 SELECT @@warning_count;
 ```
 
 The value of [warning\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) might be greater than the number of messages displayed by `SHOW WARNINGS` if the [max\_error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) system variable is set so low that not all messages are stored.
 
-The `LIMIT` clause has the same syntax as for the[SELECT statement](../../data-manipulation/selecting-data/select.md).
+The `LIMIT` clause has the same syntax as for the [SELECT statement](../../data-manipulation/selecting-data/select.md).
 
 `SHOW WARNINGS` can be used after [EXPLAIN EXTENDED](../analyze-and-explain-statements/explain.md) to see how a query is internally rewritten by MariaDB.
 
@@ -41,15 +33,13 @@ If the [sql\_notes](../../../../ha-and-performance/optimization-and-tuning/syste
 
 The results of `SHOW WARNINGS` and `SHOW COUNT(*) WARNINGS` are directly sent to the client. If you need to access those information in a stored program, you can use the [GET DIAGNOSTICS](../../programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) statement instead.
 
-For a list of MariaDB error codes, see [MariaDB Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md).
-
 The [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client also has a number of options related to warnings. The `\W` command will show warnings after every statement, while `\w` will disable this. Starting the client with the `--show-warnings` option will show warnings after every statement.
 
 MariaDB implements a stored routine error stack trace. `SHOW WARNINGS` can also be used to show more information. See the example below.
 
 ## Examples
 
-```
+```sql
 SELECT 1/0;
 +------+
 | 1/0  |
@@ -76,7 +66,7 @@ SHOW WARNINGS;
 
 Displaying a stack trace:
 
-```
+```sql
 DELIMITER $$
 CREATE OR REPLACE PROCEDURE p1()
   BEGIN
@@ -106,7 +96,7 @@ SHOW WARNINGS;
 
 `SHOW WARNINGS` displays a stack trace, showing where the error actually happened:
 
-* Line 4 in test.p1 is the OPEN command which actually raised the error
+* Line 4 in test.p1 is the OPEN command which actually raised the error.
 * Line 3 in test.p2 is the CALL statement, calling p1 from p2.
 
 ## See Also

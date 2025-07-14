@@ -218,7 +218,7 @@ This version is based on scaling "Deg\*10000 (MEDIUMINT)".
 ```sql
 DELIMITER //
 
-drop function if exists GCDist //
+DROP function IF EXISTS GCDist //
 CREATE FUNCTION GCDist (
         _lat1 DOUBLE,  -- Scaled Degrees north for one point
         _lon1 DOUBLE,  -- Scaled Degrees west for one point
@@ -254,7 +254,7 @@ DELIMITER ;
 
 DELIMITER //
 -- FindNearest (about my 6th approach)
-drop procedure if exists FindNearest6 //
+DROP PROCEDURE IF EXISTS FindNearest6 //
 CREATE
 PROCEDURE FindNearest (
         IN _my_lat DOUBLE,  -- Latitude of me [-90..90] (not scaled)
@@ -427,7 +427,7 @@ FLUSH STATUS;
 CALL...
 SHOW SESSION STATUS LIKE 'Handler%';
 
-show session status like 'Handler%';
+SHOW session status LIKE 'Handler%';
 +----------------------------+-------+
 | Variable_name              | Value |
 +----------------------------+-------+

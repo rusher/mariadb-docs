@@ -10,7 +10,6 @@ It contains the following columns:
 
 | Column                     | Description                                                                                                                                                                                                                            |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                     | Description                                                                                                                                                                                                                            |
 | STATEMENT\_SCHEMA          | Database used when query was included                                                                                                                                                                                                  |
 | STATEMENT\_TEXT            | Query text                                                                                                                                                                                                                             |
 | RESULT\_BLOCKS\_COUNT      | Number of result blocks                                                                                                                                                                                                                |
@@ -38,7 +37,7 @@ It contains the following columns:
 
 For example:
 
-```
+```sql
 SELECT * FROM information_schema.QUERY_CACHE_INFO;
 +------------------+-----------------+---------------------+--------------------+-------------------------+
 | STATEMENT_SCHEMA | STATEMENT_TEXT  | RESULT_BLOCKS_COUNT | RESULT_BLOCKS_SIZE | RESULT_BLOCKS_SIZE_USED |

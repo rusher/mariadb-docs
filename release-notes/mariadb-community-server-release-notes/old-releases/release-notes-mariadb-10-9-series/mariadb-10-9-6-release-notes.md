@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.9](what-is-mariadb-109.md) is:[**MariaDB 10.9.8**](mariadb-10-9-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.9.8/)
 
-[Download 10.9.6](https://downloads.mariadb.org/mariadb/10.9.6/)[Release Notes](mariadb-10-9-6-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-6-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
+[Download 10.9.6](https://downloads.mariadb.org/mariadb/10.9.6/)[Release Notes](mariadb-10-9-6-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-6-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
 
 **Release date:** 10 May 2023
 
@@ -38,7 +38,7 @@ Thanks, and enjoy MariaDB!
 ## Backup
 
 * mariadb-backup doesn't utilise innodb-undo-log-directory (if specified as a relative path) during copy-back operation ([MDEV-28187](https://jira.mariadb.org/browse/MDEV-28187))
-* mariabackup issues error messages during InnoDB tablespaces export on partial backup preparing ([MDEV-29050](https://jira.mariadb.org/browse/MDEV-29050))
+* mariadb-backup issues error messages during InnoDB tablespaces export on partial backup preparing ([MDEV-29050](https://jira.mariadb.org/browse/MDEV-29050))
 * mariadb-backup does not copy Aria logs if aria\_log\_dir\_path is used ([MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968))
 * Race condition between buffer pool flush and log file deletion in mariadb-backup --prepare ([MDEV-30860](https://jira.mariadb.org/browse/MDEV-30860))
 
@@ -58,7 +58,7 @@ Thanks, and enjoy MariaDB!
 * [Split Materialized](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/lateral-derived-optimization) optimization is improved to re-fill the materialized table only if necessary. The fewer number of table refills is taken into account when choosing query plan, too ([MDEV-26301](https://jira.mariadb.org/browse/MDEV-26301)).
 * New optimizer\_switch option, [hash\_join\_cardinality](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/hash_join_cardinality-optimizer_switch-flag), is added. It is off by default. When set to ON, the optimizer will produce tighter bounds for hash join output cardinality. ([MDEV-30812](https://jira.mariadb.org/browse/MDEV-30812))
 * Queries using `SELECT DISTINCT some_expression(aggregate_function())` could produce wrong query result. ([MDEV-20057](https://jira.mariadb.org/browse/MDEV-20057))
-* [ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json) now prints more information about [Block Nested Loop joins](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/broken-reference/README.md): `block-nl-join` element now has `r_loops`, `r_effective_rows` and `r_other_time_ms` fields ([MDEV-30806](https://jira.mariadb.org/browse/MDEV-30806), [MDEV-30972](https://jira.mariadb.org/browse/MDEV-30972)).
+* [ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json) now prints more information about [Block Nested Loop joins](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms#block-nested-loop-join): `block-nl-join` element now has `r_loops`, `r_effective_rows` and `r_other_time_ms` fields ([MDEV-30806](https://jira.mariadb.org/browse/MDEV-30806), [MDEV-30972](https://jira.mariadb.org/browse/MDEV-30972)).
 * A GROUP BY query with `MIN(primary_key)` in select list and `primary_key<>const` in the WHERE could produce wrong result when executed with "Using index for group-by" strategy ([MDEV-30605](https://jira.mariadb.org/browse/MDEV-30605))
 * EXPLAIN could erroneously report that [Rowid Filter optimization](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/rowid-filtering-optimization) is used for partitioned tables. Partitioned tables do not support it. ([MDEV-30596](https://jira.mariadb.org/browse/MDEV-30596))
 * A bug in selectivity computations for SINGLE/DOUBLE\_PREC\_HB histograms could cause wrong estimates to be produced. This could cause the optimizer to pick sub-optimal query plans ([MDEV-31067](https://jira.mariadb.org/browse/MDEV-31067)).
@@ -80,16 +80,14 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.9.6](mariadb-10-9-6-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-6-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-6-changelog.md).
 
 ## Contributors
 
 For a full list of contributors to [MariaDB 10.9.6](mariadb-10-9-6-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-11-3-10-10-4-10-9-6-10-8-8-10-6-13-10-5-20-10-4-29-and-10-3-39-now-available/).
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+{% include "../../../.gitbook/includes/announce.md" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}
