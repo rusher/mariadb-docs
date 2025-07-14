@@ -1,8 +1,8 @@
-# Changes and Improvements in MariaDB 10.11
+# MariaDB 10.11 Changes & Improvements
 
-The most recent release of [MariaDB 10.11](what-is-mariadb-1011.md) is:[**MariaDB 10.11.11**](mariadb-10-11-11-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
+{% include "../../../.gitbook/includes/latest-10.11 (2).md" %}
 
-[MariaDB 10.11](what-is-mariadb-1011.md) is the previous long-term maintenance release series, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028.
+[MariaDB 10.11](what-is-mariadb-1011.md) is a long-term maintenance release series, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028.
 
 ## Upgrading
 
@@ -170,13 +170,13 @@ For a complete list of security vulnerabilities (CVEs) fixed across all\
 versions of MariaDB, see the [Security Vulnerabilities Fixed in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security)\
 page.
 
-* [CVE-2025-30722](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30722): [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-11-series/broken-reference/README.md)
-* [CVE-2025-30693](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30693): [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-11-series/broken-reference/README.md)
+* [CVE-2025-30722](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30722): [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md)
+* [CVE-2025-30693](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30693): [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md)
 * [CVE-2025-21490](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21490): [MariaDB 10.11.11](mariadb-10-11-11-release-notes.md)
 * [CVE-2024-21096](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21096): [MariaDB 10.11.8](mariadb-10-11-8-release-notes.md)
-* [CVE-2023-52971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52971): [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-11-series/broken-reference/README.md)
-* [CVE-2023-52970](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52970): [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-11-series/broken-reference/README.md)
-* [CVE-2023-52969](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52969): [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-11-series/broken-reference/README.md)
+* [CVE-2023-52971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52971): [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md)
+* [CVE-2023-52970](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52970): [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md)
+* [CVE-2023-52969](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52969): [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md)
 * [CVE-2023-22084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22084): [MariaDB 10.11.6](mariadb-10-11-6-release-notes.md)
 * [CVE-2022-47015](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-47015): [MariaDB 10.11.3](mariadb-10-11-3-release-notes.md)
 
