@@ -46,11 +46,10 @@ Note that [MariaDB 10.6.8](mariadb-1068-release-notes.md) is not yet available f
 
 ### Backup
 
-* Incorrect binlogs after Galera SST using rsync and [mariadb-backup](broken-reference/) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
-* [mariadb-backup](broken-reference/) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* Incorrect binlogs after Galera SST using rsync and [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * Useless warning "InnoDB: Allocated tablespace ID for , old maximum was 0" during backup stage ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
-* [mariadb-backup](broken-reference/) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))\
-  )
+* [mariadb-backup](broken-reference/) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 
 ### Optimizer
 
