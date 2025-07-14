@@ -61,7 +61,7 @@ For more information, refer to, [Online Schema Change](https://app.gitbook.com/s
 
 #### Data Types
 
-* It is now possible to create [partitions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
+* It is now possible to create [partitions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
 * [INET4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet4) data types can now be cast into [INET6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet6) types ([MDEV-31626](https://jira.mariadb.org/browse/MDEV-31626), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
 * This means INET4 values can be compared with INET6 values and can be inserted into INET6 columns;\
   the server can automatically convert INET4 value into INET6 as needed ([MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
@@ -85,7 +85,7 @@ For more information, refer to, [Online Schema Change](https://app.gitbook.com/s
 
 #### Partitioning
 
-* [ALTER TABLE … EXCHANGE PARTITION](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) and [ALTER TABLE … CONVERT TABLE … TO](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) now support the `WITH VALIDATION` and `WITHOUT VALIDATION` clauses. If neither is specified, the default behavior is `WITH VALIDATION` ([MDEV-22164](https://jira.mariadb.org/browse/MDEV-22164))
+* [ALTER TABLE … EXCHANGE PARTITION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables/partitioning-overview#exchanging-partitions) and [ALTER TABLE … CONVERT TABLE … TO](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) now support the `WITH VALIDATION` and `WITHOUT VALIDATION` clauses. If neither is specified, the default behavior is `WITH VALIDATION` ([MDEV-22164](https://jira.mariadb.org/browse/MDEV-22164))
 
 #### Collations
 
