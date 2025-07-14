@@ -23,14 +23,13 @@ Alternatively, MariaDB Enterprise Server can use [sequences](../../reference/sql
 
 When designing a schema, `AUTO_INCREMENT` columns should use integer data types. The following types can be used:
 
-| Data Type                                                                                                                                                                                                  | Signed Range                               | Unsigned Range           |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------ |
-| Data Type                                                                                                                                                                                                  | Signed Range                               | Unsigned Range           |
-| [TINYINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-tinyint/README.md)     | -128 - 127                                 | 0 - 255                  |
-| [SMALLINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-smallint/README.md)   | -32768 - 32767                             | 0 - 65535                |
-| [MEDIUMINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-mediumint/README.md) | -8388608 - 8388607                         | 0 - 16777215             |
-| [INT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-int/README.md)             | -2147483648 - 2147483647                   | 0 - 4294967295           |
-| [BIGINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-bigint/README.md)       | -9223372036854775808 - 9223372036854775807 | 0 - 18446744073709551615 |
+| Data Type                                                                                                                                                                                            | Signed Range                               | Unsigned Range           |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------ |
+| [TINYINT](../../reference/data-types/numeric-data-types/tinyint.md)                                                                                                                                  | -128 - 127                                 | 0 - 255                  |
+| [SMALLINT](../../reference/data-types/numeric-data-types/smallint.md)                                                                                                                                | -32768 - 32767                             | 0 - 65535                |
+| [MEDIUMINT](../../reference/data-types/numeric-data-types/mediumint.md)                                                                                                                              | -8388608 - 8388607                         | 0 - 16777215             |
+| [INT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-int/README.md)       | -2147483648 - 2147483647                   | 0 - 4294967295           |
+| [BIGINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-bigint/README.md) | -9223372036854775808 - 9223372036854775807 | 0 - 18446744073709551615 |
 
 To determine which type to use, consider the following points:
 
@@ -42,14 +41,13 @@ InnoDB can't generate negative `AUTO_INCREMENT` values, so it is only beneficial
 
 If your `AUTO_INCREMENT` column is being used as the table's primary key, then the maximum value for the chosen data type should be considered the maximum number of rows that can fit in the table:
 
-| Data Type                                                                                                                                                                                                  | Signed Range        | Unsigned Range       |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------------- |
-| Data Type                                                                                                                                                                                                  | Signed Range        | Unsigned Range       |
-| [TINYINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-tinyint/README.md)     | 127                 | 255                  |
-| [SMALLINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-smallint/README.md)   | 32767               | 65535                |
-| [MEDIUMINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-mediumint/README.md) | 8388607             | 16777215             |
-| [INT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-int/README.md)             | 2147483647          | 4294967295           |
-| [BIGINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-bigint/README.md)       | 9223372036854775807 | 18446744073709551615 |
+| Data Type                                                                                                                                                                                            | Signed Range        | Unsigned Range       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------------- |
+| [TINYINT](../../reference/data-types/numeric-data-types/tinyint.md)                                                                                                                                  | 127                 | 255                  |
+| [SMALLINT](../../reference/data-types/numeric-data-types/smallint.md)                                                                                                                                | 32767               | 65535                |
+| [MEDIUMINT](../../reference/data-types/numeric-data-types/mediumint.md)                                                                                                                              | 8388607             | 16777215             |
+| [INT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-int/README.md)       | 2147483647          | 4294967295           |
+| [BIGINT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/data-types-bigint/README.md) | 9223372036854775807 | 18446744073709551615 |
 
 If you want to give your table the most room to grow, then it would be best to choose BIGINT UNSIGNED.
 
@@ -294,7 +292,6 @@ InnoDB's `AUTO_INCREMENT` lock mode is configured with the [innodb\_autoinc\_loc
 
 | Value | Description                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value | Description                                                                                                                                                                                                                                                                                                                                                                                                      |
 | 0     | • This value configures Traditional Lock Mode. • Don't use traditional lock mode. • Traditional lock mode performs very poorly. • In traditional lock mode, InnoDB holds a table-level lock while generating AUTO\_INCREMENT values.                                                                                                                                                                             |
 | 1     | • This value configures Consecutive Lock Mode. • Consecutive lock mode is the default lock mode. • In consecutive lock mode, InnoDB holds a table-level lock while generating AUTO\_INCREMENT values for statements that insert multiple new rows. However, InnoDB uses a lightweight internal lock to improve performance when generating an AUTO\_INCREMENT value for statements that insert a single new row. |
 | 2     | • This value configures Interleaved Lock Mode. • Interleaved lock mode is the recommended lock mode for best performance. • If Galera Cluster is being used, then interleaved lock mode must be configured.                                                                                                                                                                                                      |
@@ -315,7 +312,6 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
-| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
@@ -338,7 +334,7 @@ $ sudo systemctl restart mariadb
 
 ## Setting a Table's Next AUTO\_INCREMENT Value
 
-A table's next `AUTO_INCREMENT` value can be set with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement. The value is set using the `AUTO_INCREMENT` table option.
+A table's next `AUTO_INCREMENT` value can be set with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement. The value is set using the `AUTO_INCREMENT` table option.
 
 Let's alter the `AUTO_INCREMENT` value for the table created in the [Creating an InnoDB Table with an AUTO\_INCREMENT Column](auto_increment-constraints.md#creating-an-innodb-table-with-an-auto_increment-column) section and then insert a row into the table, so we can confirm that it uses the new value:
 
@@ -348,7 +344,7 @@ Let's alter the `AUTO_INCREMENT` value for the table created in the [Creating an
 $ mariadb --user=root
 ```
 
-2. Alter the table's next `AUTO_INCREMENT` value with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement:
+2. Alter the table's next `AUTO_INCREMENT` value with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement:
 
 ```
 ALTER TABLE hq_sales.invoices

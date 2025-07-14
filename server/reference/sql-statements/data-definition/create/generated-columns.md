@@ -58,7 +58,7 @@ Using the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) column option
 {% endtab %}
 
 {% tab title="< 10.2.25" %}
-Using the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) column option is supported when defining generated columns.&#x20;
+Using the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) column option is supported when defining generated columns.
 
 {% hint style="warning" %}
 It does not work correctly, though. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
@@ -118,13 +118,13 @@ The [CREATE TABLE](create-table.md) statement has limited support for generated 
 * It supports using generated columns to [partition tables](../../../../server-usage/partitioning-tables/).
 * It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
 
-The [ALTER TABLE](../alter/alter-table.md) statement has limited support for generated columns.
+The [ALTER TABLE](../alter/alter-table/) statement has limited support for generated columns.
 
 * It supports the `MODIFY` and `CHANGE` clauses for `PERSISTENT` generated columns.
-* It does not support the `MODIFY` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-15476](https://jira.mariadb.org/browse/MDEV-15476) for more information.
-* It does not support the `CHANGE` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-17035](https://jira.mariadb.org/browse/MDEV-17035) for more information.
-* It does not support altering a table if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY` if the table has a `VIRTUAL` generated column that is indexed. See [MDEV-14046](https://jira.mariadb.org/browse/MDEV-14046) for more information.
-* It does not support adding a `VIRTUAL` generated column with the `ADD` clause if the same statement is also adding other columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-17468](https://jira.mariadb.org/browse/MDEV-17468) for more information.
+* It does not support the `MODIFY` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table/#algorithm) is not set to `COPY`. See [MDEV-15476](https://jira.mariadb.org/browse/MDEV-15476) for more information.
+* It does not support the `CHANGE` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table/#algorithm) is not set to `COPY`. See [MDEV-17035](https://jira.mariadb.org/browse/MDEV-17035) for more information.
+* It does not support altering a table if [ALGORITHM](../alter/alter-table/#algorithm) is not set to `COPY` if the table has a `VIRTUAL` generated column that is indexed. See [MDEV-14046](https://jira.mariadb.org/browse/MDEV-14046) for more information.
+* It does not support adding a `VIRTUAL` generated column with the `ADD` clause if the same statement is also adding other columns if [ALGORITHM](../alter/alter-table/#algorithm) is not set to `COPY`. See [MDEV-17468](https://jira.mariadb.org/browse/MDEV-17468) for more information.
 * It also does not support altering an existing column into a `VIRTUAL` generated column.
 * It supports using generated columns to [partition tables](../../../../server-usage/partitioning-tables/).
 * It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.

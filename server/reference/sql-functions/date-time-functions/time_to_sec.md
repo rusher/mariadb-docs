@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 TIME_TO_SEC(time)
 ```
 
@@ -10,11 +10,11 @@ TIME_TO_SEC(time)
 
 Returns the time argument, converted to seconds.
 
-The value returned by `TIME_TO_SEC` is of type [DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md). Before [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) (and MySQL 5.6), the type was [INT](../../../../data-types/data-types-numeric-data-types/int.md). The returned value preserves microseconds of the argument. See also [Microseconds in MariaDB](microseconds-in-mariadb.md).
+The value returned by `TIME_TO_SEC` is of type [DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md). The returned value preserves microseconds of the argument. See also [Microseconds in MariaDB](microseconds-in-mariadb.md).
 
 ## Examples
 
-```
+```sql
 SELECT TIME_TO_SEC('22:23:00');
 +-------------------------+
 | TIME_TO_SEC('22:23:00') |
@@ -23,7 +23,7 @@ SELECT TIME_TO_SEC('22:23:00');
 +-------------------------+
 ```
 
-```
+```sql
 SELECT TIME_TO_SEC('00:39:38');
 +-------------------------+
 | TIME_TO_SEC('00:39:38') |
@@ -32,7 +32,7 @@ SELECT TIME_TO_SEC('00:39:38');
 +-------------------------+
 ```
 
-```
+```sql
 SELECT TIME_TO_SEC('09:12:55.2355');
 +------------------------------+
 | TIME_TO_SEC('09:12:55.2355') |
@@ -42,6 +42,6 @@ SELECT TIME_TO_SEC('09:12:55.2355');
 1 row in set (0.000 sec)
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

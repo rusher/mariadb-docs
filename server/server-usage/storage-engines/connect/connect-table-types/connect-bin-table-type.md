@@ -34,7 +34,6 @@ by default:
 
 | Column type | File default format             |
 | ----------- | ------------------------------- |
-| Column type | File default format             |
 | Char(n)     | Text of n characters.           |
 | Date        | Integer (4 bytes)               |
 | Int(n)      | Integer (4 bytes)               |
@@ -55,7 +54,6 @@ in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/creat
 
 | Field\_format         | Internal representation                                                           |
 | --------------------- | --------------------------------------------------------------------------------- |
-| Field\_format         | Internal representation                                                           |
 | \[n]{L or B or H}\[n] | n bytes binary number in little endian, big endian or host endian representation. |
 | C                     | Characters string (n bytes)                                                       |
 | I                     | integer (4 bytes)                                                                 |
@@ -125,7 +123,6 @@ returns:
 
 | fig  | name      | birth      | id    | salary  | dept |
 | ---- | --------- | ---------- | ----- | ------- | ---- |
-| fig  | name      | birth      | id    | salary  | dept |
 | 5500 | ARCHIBALD | 1980-01-25 | 3789  | 4380.50 | 318  |
 | 123  | OLIVER    | 1953-08-10 | 23456 | 3400.68 | 2158 |
 | 3123 | FOO       | 2002-07-23 | 888   | 0.00    | 318  |

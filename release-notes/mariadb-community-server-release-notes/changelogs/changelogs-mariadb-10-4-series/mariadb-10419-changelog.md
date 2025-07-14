@@ -92,7 +92,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21402](https://jira.mariadb.org/browse/MDEV-21402) : sql\_safe\_updates breaks Galera 4
 * [Revision #f8488370d6](https://github.com/MariaDB/server/commit/f8488370d6)\
   2021-03-31 14:59:50 +0200
-  * [MDEV-24956](https://jira.mariadb.org/browse/MDEV-24956): ALTER TABLE not replicated with Galera in [MariaDB 10.5.9](../../mariadb-10-5-series/mariadb-1059-release-notes.md)
+  * [MDEV-24956](https://jira.mariadb.org/browse/MDEV-24956): ALTER TABLE not replicated with Galera in [MariaDB 10.5.9](../../old-releases/mariadb-10-5-series/mariadb-1059-release-notes.md)
 * [Revision #915983e1cc](https://github.com/MariaDB/server/commit/915983e1cc)\
   2021-03-24 10:55:27 +0100
   * [MDEV-25226](https://jira.mariadb.org/browse/MDEV-25226) Assertion when wsrep\_on set OFF with SR transaction

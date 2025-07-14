@@ -27,13 +27,13 @@ The `pam` authentication plugin's library is provided in [binary packages](../..
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
 ```
 INSTALL SONAME 'auth_pam';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -61,7 +61,7 @@ plugin_load_add = auth_pam_v1
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
 ```
 UNINSTALL SONAME 'auth_pam';
@@ -71,7 +71,7 @@ If you installed the plugin by providing the [--plugin-load](../../../../server-
 
 ### Uninstalling the v1 Plugin
 
-If you installed version `1.0` of the authentication plugin, then you can uninstall that by executing a similar statement for `auth_pam_v1`. For example:
+If you installed version `1.0` of the authentication plugin, then you can uninstall that by executing a similar statement for `auth_pam_v1`:
 
 ```
 UNINSTALL SONAME 'auth_pam_v1';
@@ -142,19 +142,19 @@ The `pam` authentication plugin uses a [setuid](https://linux.die.net/man/2/setu
 
 ## Creating Users
 
-Similar to all other [authentication plugins](../), to create a user in MariaDB which uses the `pam` authentication plugin, you would execute [CREATE USER](../../../sql-statements/account-management-sql-statements/create-user.md) while specifying the name of the plugin in the [IDENTIFIED VIA](../../../sql-statements/account-management-sql-statements/create-user.md#identified-viawith-authentication_plugin) clause. For example:
+Similar to all other [authentication plugins](../), to create a user in MariaDB which uses the `pam` authentication plugin, you would execute [CREATE USER](../../../sql-statements/account-management-sql-statements/create-user.md) while specifying the name of the plugin in the [IDENTIFIED VIA](../../../sql-statements/account-management-sql-statements/create-user.md#identified-viawith-authentication_plugin) clause:
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA pam;
 ```
 
-If [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user this way with [GRANT](../../../sql-statements/account-management-sql-statements/grant.md). For example:
+If [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user this way with [GRANT](../../../sql-statements/account-management-sql-statements/grant.md):
 
 ```
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA pam;
 ```
 
-You can also specify a [PAM service name](authentication-plugin-pam.md#configuring-the-pam-service) for MariaDB to use by providing it with the `USING` clause. For example:
+You can also specify a [PAM service name](authentication-plugin-pam.md#configuring-the-pam-service) for MariaDB to use by providing it with the `USING` clause:
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA pam USING 'mariadb';
@@ -171,7 +171,7 @@ For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.g
 * `dialog`
 * `mysql_clear_password`
 
-When connecting with a [client or utility](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) to a server as a user account that authenticates with the `pam` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) to a server as a user account that authenticates with the `pam` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option:
 
 ```
 mariadb --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
@@ -197,7 +197,7 @@ The `dialog` client authentication plugin transmits the password to the server i
 
 ### `mysql_clear_password`
 
-Users can instruct the `pam` authentication plugin to use the `mysql_clear_password` client authentication plugin instead of the [dialog](authentication-plugin-pam.md#dialog) client authentication plugin by configuring the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable on the server. It can be set in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+Users can instruct the `pam` authentication plugin to use the `mysql_clear_password` client authentication plugin instead of the [dialog](authentication-plugin-pam.md#dialog) client authentication plugin by configuring the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable on the server. It can be set in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -219,7 +219,7 @@ The `mysql_clear_password` client authentication plugin is similar to MySQL's [m
 
 The `mysql_clear_password` client authentication plugin is compatible with MySQL clients and most MySQL client libraries, while the [dialog](authentication-plugin-pam.md#dialog) client authentication plugin is not always compatible with them. Therefore, the `mysql_clear_password` client authentication plugin is most useful if you need some kind of MySQL compatibility in your environment, but you still want to use the `pam` authentication plugin.
 
-Even though the `mysql_clear_password` client authentication plugin is compatible with MySQL clients and most MySQL client libraries, the `mysql_clear_password` client authentication plugin may be disabled by default by these clients and client libraries. For example, MySQL's version of the [mysql](https://dev.mysql.com/doc/refman/5.7/en/mysql.html) command-line client has the [--enable-cleartext-plugin](https://dev.mysql.com/doc/refman/5.7/en/mysql-command-options.html#option_mysql_enable-cleartext-plugin) option that must be set in order to use the `mysql_clear_password` client authentication plugin. For example:
+Even though the `mysql_clear_password` client authentication plugin is compatible with MySQL clients and most MySQL client libraries, the `mysql_clear_password` client authentication plugin may be disabled by default by these clients and client libraries. For example, MySQL's version of the [mysql](https://dev.mysql.com/doc/refman/5.7/en/mysql.html) command-line client has the [--enable-cleartext-plugin](https://dev.mysql.com/doc/refman/5.7/en/mysql-command-options.html#option_mysql_enable-cleartext-plugin) option that must be set in order to use the `mysql_clear_password` client authentication plugin:
 
 ```
 mysql --enable-cleartext-plugin --user=alice -p
@@ -227,7 +227,7 @@ mysql --enable-cleartext-plugin --user=alice -p
 
 Other clients may require other methods to enable the authentication plugin. For example, [MySQL Workbench](https://www.mysql.com/products/workbench/) has a checkbox titled **Enable Cleartext Authentication Plugin** under the **Advanced** tab on the connection configuration screen.
 
-For applications that use MySQL's `libmysqlclient`, the authentication plugin can be enabled by setting the `MYSQL_ENABLE_CLEARTEXT_PLUGIN` option with the `mysql_options()` function. For example:
+For applications that use MySQL's `libmysqlclient`, the authentication plugin can be enabled by setting the `MYSQL_ENABLE_CLEARTEXT_PLUGIN` option with the `mysql_options()` function:
 
 ```
 mysql_options(mysql, MYSQL_ENABLE_CLEARTEXT_PLUGIN, 1);
@@ -306,7 +306,7 @@ EOF
 chmod 0775 /tmp/pam_log_script.sh
 ```
 
-And then change the [PAM service configuration](authentication-plugin-pam.md#configuring-the-pam-service) to execute the script using the [pam\_exec](https://linux.die.net/man/8/pam_exec) PAM module. For example:
+And then change the [PAM service configuration](authentication-plugin-pam.md#configuring-the-pam-service) to execute the script using the [pam\_exec](https://linux.die.net/man/8/pam_exec) PAM module:
 
 ```
 auth optional pam_exec.so log=/tmp/pam_output.txt /tmp/pam_log_script.sh
@@ -382,7 +382,7 @@ This can be configured for [Active Directory](https://en.wikipedia.org/wiki/Acti
 
 ### pam\_google\_authenticator
 
-The `pam_google_authenticator` PAM module provides two-factor identification with Google Authenticator. It is from Google's [google-authenticator-libpam](https://github.com/google/google-authenticator-libpam) open-source project. The PAM module should work with the open-source mobile apps built by Google's [google-authenticator](https://github.com/google/google-authenticator) and [google-authenticator-android](https://github.com/google/google-authenticator-android) projects as well as the the closed source Google Authenticator mobile apps that are present in each mobile app store.
+The `pam_google_authenticator` PAM module provides two-factor identification with Google Authenticator. It is from Google's [google-authenticator-libpam](https://github.com/google/google-authenticator-libpam) open-source project. The PAM module should work with the open-source mobile apps built by Google's [google-authenticator](https://github.com/google/google-authenticator) and [google-authenticator-android](https://github.com/google/google-authenticator-android) projects as well as the closed source Google Authenticator mobile apps that are present in each mobile app store.
 
 For an example of how to use this PAM module, see the blog post: [MariaDB: Improve Security with Two-Step Verification](https://mariadb.org/improve-security-with-two-step-verification/).
 
@@ -473,7 +473,7 @@ pam: cannot exec /usr/lib64/mysql/plugin/auth_pam_tool_dir/auth_pam_tool (errno:
 
 This can happen on operating system setups that are configured to prevent memory overcommit. When the MariaDB server process spawns the `auth_pam_tool` helper process there's a brief period where the new process inherits the memory of the MariaDB process before releasing that memory and executing the new command. When having a MariaDB server configured to use more than 50% of the server machnines RAM -- which is common for dedicated database servers -- this duplication would lead to an over-commit situation.
 
-Starting with [MariaDB 10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10516-release-notes), [MariaDB 10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1068-release-notes), and [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes), we changed to use `posix_spawn()` instead of the classic `fork();exec()` to prevent this, but systems with older glibc versions prior to 2.26 still use `fork();exec()` to implement `posix_spawn()` internally and so are still affected; this is for example still the case on RedHat Enterprise Linux 7.
+Starting with [MariaDB 10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10516-release-notes), [MariaDB 10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1068-release-notes), and [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes), we changed to use `posix_spawn()` instead of the classic `fork();exec()` to prevent this, but systems with older glibc versions prior to 2.26 still use `fork();exec()` to implement `posix_spawn()` internally and so are still affected; this is for example still the case on RedHat Enterprise Linux 7.
 
 To solve this you can either:
 
@@ -493,7 +493,6 @@ You may find the following PAM-related tutorials helpful:
 
 | Version | Status | Introduced                                                                                                                                                                                                         |
 | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Version | Status | Introduced                                                                                                                                                                                                         |
 | 2.0     | Beta   | [MariaDB 10.4.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/broken-reference/README.md) |
 | 1.0     | Stable | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes)                                |
 | 1.0     | Beta   | [MariaDB 5.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-5210-release-notes)                                   |
@@ -504,7 +503,7 @@ You may find the following PAM-related tutorials helpful:
 
 * Description: Enables verbose debug logging to the [error log](../../../../server-management/server-monitoring-logs/error-log.md) for all authentication handled by the plugin.
   * This system variable is only available when the plugin is a [debug build](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/debugging-mariadb/compiling-mariadb-for-debugging).
-* Commandline: `--pam-debug`
+* Command line: `--pam-debug`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
@@ -514,7 +513,7 @@ You may find the following PAM-related tutorials helpful:
 ### `pam_use_cleartext_plugin`
 
 * Description: Use the [mysql\_clear\_password](authentication-plugin-pam.md#mysql_clear_password) client authentication plugin instead of the [dialog](authentication-plugin-pam.md#dialog) client authentication plugin. This may be needed for compatibility reasons, but it only supports simple PAM configurations that don't require any input besides a password.
-* Commandline: `--pam-use-cleartext-plugin`
+* Command line: `--pam-use-cleartext-plugin`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
@@ -524,7 +523,7 @@ You may find the following PAM-related tutorials helpful:
 ### `pam_winbind_workaround`
 
 * Description: Configures the authentication plugin to compare the user name provided by the client with the user name returned by the PAM module in a case insensitive manner. This may be needed if you use the [pam\_winbind](authentication-plugin-pam.md#pam_winbind) PAM module, which is known to convert all user names to lowercase, and which does not allow this behavior to be disabled.
-* Commandline: `--pam-winbind-workaround`
+* Command line: `--pam-winbind-workaround`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -542,7 +541,7 @@ You may find the following PAM-related tutorials helpful:
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `--pam=value`
+* Command line: `--pam=value`
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`

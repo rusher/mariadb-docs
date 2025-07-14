@@ -80,7 +80,7 @@ Plan C: "As needed". That is, when someone asks for a report, the code first upd
 Plan D: "Hybrid" of B and C. C, by itself, can led to long delays for the report. By also doing B, those delays can be kept low.
 
 Plan E: (This is not advised.) "Rebuild" the entire summary table from the entire Fact table. The cost of this is prohibitive for large tables. However, Plan E may be needed when you decide to change the columns of a Summary Table, or discover a flaw in the computations.\
-To lessen the impact of an entire build, adapt the chunking techniques in[Deleting in chunks](big-deletes.md#deleting_in_chunks) .
+To lessen the impact of an entire build, adapt the chunking techniques in [Deleting in chunks](big-deletes.md#deleting_in_chunks) .
 
 Plan F: "Staging table". This is primarily for very high speed ingestion. It is mentioned briefly in this blog, and discussed more thoroughly in the companion blog: High Speed Ingestion
 
@@ -274,7 +274,7 @@ How fast should you flip-flop? Probably the best scheme is to
 
 If Staging is 'big', an iteration will take longer, but run more efficiently. Hence, it is self-regulating.
 
-In a [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) (or InnoDB Cluster?) environment, each node could be receiving input. If can afford to loose a few rows, have `Staging` be a non-replicated MEMORY table. Otherwise, have one `Staging` per node and be InnoDB; it will be more secure, but slower and not without problems. In particular, if a node dies completely, you somehow need to process its `Staging` table.
+In a [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) (or InnoDB Cluster?) environment, each node could be receiving input. If can afford to loose a few rows, have `Staging` be a non-replicated MEMORY table. Otherwise, have one `Staging` per node and be InnoDB; it will be more secure, but slower and not without problems. In particular, if a node dies completely, you somehow need to process its `Staging` table.
 
 ## Multiple summary tables
 
@@ -290,7 +290,7 @@ To look at what a report needs, look at the WHERE clause that would provide the 
 3. WHERE service\_type = ? GROUP BY make, model, service\_date
 4. WHERE service\_date between ? and ? GROUP BY make, model, model\_year
 
-You need to allow for 'ad hoc' queries? Well, look at all the ad hoc queries -- they all have a date range, plus nail down one or two other things. (I rarely see something as ugly as '%CL%' for nailing down another dimension.) So, start by thinking of date plus one or two other dimensions as the 'key' into a new summary table. Then comes the question of what data might be desired -- counts, sums, etc. Eventually you have a small set of summary tables. Then build a front end to allow them to pick only from those possibilities. It should encourage use of the existing summary tables, not not be truly 'open ended'.
+You need to allow for 'ad hoc' queries? Well, look at all the ad hoc queries -- they all have a date range, plus nail down one or two other things. (I rarely see something as ugly as '%CL%' for nailing down another dimension.) So, start by thinking of date plus one or two other dimensions as the 'key' into a new summary table. Then comes the question of what data might be desired -- counts, sums, etc. Eventually you have a small set of summary tables. Then build a front end to allow them to pick only from those possibilities. It should encourage use of the existing summary tables, not be truly 'open ended'.
 
 Later, another 'requirement' may surface. So, build another summary table. Of course, it may take a day to initially populate it.
 

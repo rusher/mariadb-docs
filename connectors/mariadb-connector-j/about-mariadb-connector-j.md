@@ -3,7 +3,7 @@
 ## What is MariaDB Connector/J?
 
 {% hint style="info" %}
-The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes)
+The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-4-release-notes)
 {% endhint %}
 
 [Download MariaDB Connector/J](https://mariadb.com/downloads/connector)
@@ -42,11 +42,9 @@ MariaDB Connector/J can be installed using [Maven](https://maven.apache.org/what
 
 MariaDB Connector/J `.jar` files and source code tarballs can be downloaded from the following URL:
 
-*
-
-MariaDB Connector/J `.jar` files can also be downloaded from the following URL:
-
-* [#connectors](https://mariadb.com/downloads/#connectors)
+* [#jar](https://mariadb.com/downloads/#connectors) 
+* [#source tar](https://github.com/mariadb-corporation/mariadb-connector-j/releases)
+* [#github](https://github.com/mariadb-corporation/mariadb-connector-j/)
 
 ### Installing Dependencies
 
@@ -344,7 +342,7 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 
 #### **minPoolSize**
 
-* Description: When connections are removed due to not being used for longer than than "maxIdleTime", connections are closed and removed from the pool. "minPoolSize" indicates the number of physical connections the pool should keep available at all times. Should be less or equal to maxPoolSize.
+* Description: When connections are removed due to not being used for longer than "maxIdleTime", connections are closed and removed from the pool. "minPoolSize" indicates the number of physical connections the pool should keep available at all times. Should be less or equal to maxPoolSize.
 * Data Type: `integer`
 * Default Value: `maxPoolSize value`
 * Introduced: 2.2.0
@@ -988,7 +986,7 @@ Statement stmt = sharedConn.createStatement();
     System.out.println(rs.getInt(1));
 ```
 
-Only the the first generated key will be returned, meaning that for multi-insert the generated key retrieved will correspond to the first generated value of the command.
+Only the first generated key will be returned, meaning that for multi-insert the generated key retrieved will correspond to the first generated value of the command.
 
 If retrieving all generated values for multiple insert is needed, please use [INSERT...RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning) command (since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)).
 

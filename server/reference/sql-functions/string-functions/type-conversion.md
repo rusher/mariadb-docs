@@ -11,7 +11,7 @@ It is best practice not to rely upon implicit conversion; rather use [CAST](cast
 * If both arguments are strings, they are compared as strings.
 * If one argument is decimal and the other argument is decimal or integer, they are compared as decimals.
 * If one argument is decimal and the other argument is a floating point, they are compared as floating point values.
-* If one argument is string and the other argument is integer, they are compared as decimals. This conversion was added in [MariaDB 10.3.36](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md). Prior to 10.3.36, this combination was compared as floating point values, which did not always work well for huge 64-bit integers because of a possible precision loss on conversion to double.
+* If one argument is string and the other argument is integer, they are compared as decimals.
 * If a hexadecimal argument is not compared to a number, it is treated as a binary string.
 * If a constant is compared to a TIMESTAMP or DATETIME, the constant is converted to a timestamp, unless used as an argument to the [IN](../../sql-structure/operators/comparison-operators/in.md) function.
 * In other cases, arguments are compared as floating point, or real, numbers.
@@ -22,7 +22,7 @@ Note that if a string column is being compared with a numeric value, MariaDB wil
 
 Converting a string to a number:
 
-```
+```sql
 SELECT 15+'15';
 +---------+
 | 15+'15' |
@@ -33,7 +33,7 @@ SELECT 15+'15';
 
 Converting a number to a string:
 
-```
+```sql
 SELECT CONCAT(15,'15');
 +-----------------+
 | CONCAT(15,'15') |
@@ -44,7 +44,7 @@ SELECT CONCAT(15,'15');
 
 Floating point number errors:
 
-```
+```sql
 SELECT '9746718491924563214' = 9746718491924563213;
 +---------------------------------------------+
 | '9746718491924563214' = 9746718491924563213 |
@@ -55,7 +55,7 @@ SELECT '9746718491924563214' = 9746718491924563213;
 
 Numeric equivalence with strings:
 
-```
+```sql
 SELECT '5' = 5;
 +---------+
 | '5' = 5 |
@@ -88,7 +88,7 @@ SHOW WARNINGS;
 
 As a result of the above, MariaDB cannot use the index when comparing a string with a numeric value in the example below:
 
-```
+```sql
 CREATE TABLE t (a VARCHAR(10), b VARCHAR(10), INDEX idx_a (a));
 
 INSERT INTO t VALUES 
@@ -145,7 +145,7 @@ For [division (/)](../numeric-functions/division-operator.md), the result data t
 
 Note, the above rules mean that when an argument of a temporal data type appears in addition or subtraction, it's treated as a number by default.
 
-```
+```sql
 SELECT TIME'10:20:30' + 1;
 +--------------------+
 | TIME'10:20:30' + 1 |
@@ -156,7 +156,7 @@ SELECT TIME'10:20:30' + 1;
 
 In order to do temporal addition or subtraction instead, use the [DATE\_ADD()](../date-time-functions/date_add.md) or [DATE\_SUB()](../date-time-functions/date_sub.md) functions, or an [INTERVAL](../date-time-functions/date-and-time-units.md) expression as the second argument:
 
-```
+```sql
 SELECT TIME'10:20:30' + INTERVAL 1 SECOND;
 +------------------------------------+
 | TIME'10:20:30' + INTERVAL 1 SECOND |
@@ -165,7 +165,7 @@ SELECT TIME'10:20:30' + INTERVAL 1 SECOND;
 +------------------------------------+
 ```
 
-```
+```sql
 SELECT "2.2" + 3;
 +-----------+
 | "2.2" + 3 |
@@ -194,10 +194,6 @@ SELECT "2.2" / 3;
 | 0.7333333333333334 |
 +--------------------+
 ```
-
-## See also
-
-* [Notes when an index cannot be used because of type conversions](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

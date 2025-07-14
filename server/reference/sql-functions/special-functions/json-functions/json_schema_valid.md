@@ -1,12 +1,12 @@
 # JSON\_SCHEMA\_VALID
 
-**MariaDB starting with** [**11.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111)
-
-`JSON_SCHEMA_VALID` was introduced in [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111).
+{% hint style="info" %}
+`JSON_SCHEMA_VALID` is available from MariaDB 11.1.
+{% endhint %}
 
 ### Syntax
 
-```
+```sql
 JSON_SCHEMA_VALID(schema, json);
 ```
 
@@ -16,15 +16,15 @@ JSON_SCHEMA_VALID(schema, json);
 
 The function supports [JSON Schema Draft 2020](https://json-schema.org/draft/2020-12/release-notes.html) with a few exceptions:
 
-* External resources are not supported
-* Hyper schema keywords are not supported
+* External resources are not supported.
+* Hyper schema keywords are not supported.
 * Formats like date, email etc are treated as annotations.
 
 ## Examples
 
-To create validation rules for json field
+To create validation rules for json field, do this:
 
-```
+```sql
 CREATE TABLE obj_table(val_obj JSON CHECK(JSON_SCHEMA_VALID('{
   "type":"object",
     "properties": {

@@ -2,20 +2,18 @@
 
 ## Syntax
 
-```
+```sql
 GET_FORMAT({DATE|DATETIME|TIME}, {'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'})
 ```
 
 ## Description
 
-Returns a format string. This function is useful in combination with\
-the [DATE\_FORMAT()](date_format.md) and the [STR\_TO\_DATE()](str_to_date.md) functions.
+Returns a format string. This function is useful in combination with the [DATE\_FORMAT()](date_format.md) and the [STR\_TO\_DATE()](str_to_date.md) functions.
 
 Possible result formats are:
 
 | Function Call                    | Result Format       |
 | -------------------------------- | ------------------- |
-| Function Call                    | Result Format       |
 | GET\_FORMAT(DATE,'EUR')          | '%d.%m.%Y'          |
 | GET\_FORMAT(DATE,'USA')          | '%m.%d.%Y'          |
 | GET\_FORMAT(DATE,'JIS')          | '%Y-%m-%d'          |
@@ -36,7 +34,7 @@ Possible result formats are:
 
 Obtaining the string matching to the standard European date format:
 
-```
+```sql
 SELECT GET_FORMAT(DATE, 'EUR');
 +-------------------------+
 | GET_FORMAT(DATE, 'EUR') |
@@ -47,7 +45,7 @@ SELECT GET_FORMAT(DATE, 'EUR');
 
 Using the same string to format a date:
 
-```
+```sql
 SELECT DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR'));
 +--------------------------------------------------+
 | DATE_FORMAT('2003-10-03',GET_FORMAT(DATE,'EUR')) |

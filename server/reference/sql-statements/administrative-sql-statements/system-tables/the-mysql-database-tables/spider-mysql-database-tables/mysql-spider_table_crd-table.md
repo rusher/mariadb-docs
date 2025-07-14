@@ -8,7 +8,6 @@ It contains the following fields:
 
 | Field       | Type             | Null | Key | Default | Description |
 | ----------- | ---------------- | ---- | --- | ------- | ----------- |
-| Field       | Type             | Null | Key | Default | Description |
 | db\_name    | char(64)         | NO   | PRI |         |             |
 | table\_name | char(199)        | NO   | PRI |         |             |
 | key\_seq    | int(10) unsigned | NO   | PRI | 0       |             |

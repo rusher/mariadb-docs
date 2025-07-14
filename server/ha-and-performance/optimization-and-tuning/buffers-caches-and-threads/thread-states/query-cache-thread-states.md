@@ -4,12 +4,11 @@ This article documents thread states that are related to the [Query Cache](../qu
 
 | Value                               | Description                                                                     |
 | ----------------------------------- | ------------------------------------------------------------------------------- |
-| Value                               | Description                                                                     |
 | checking privileges on cached query | Checking whether the user has permission to access a result in the query cache. |
 | checking query cache for query      | Checking whether the current query exists in the query cache.                   |
 | invalidating query cache entries    | Marking query cache entries as invalid as the underlying tables have changed.   |
 | sending cached result to client     | A result found in the query cache is being sent to the client.                  |
-| storing result in query cache       | Saving the the result of a query into the query cache.                          |
+| storing result in query cache       | Saving the result of a query into the query cache.                          |
 | Waiting for query cache lock        | Waiting to take a query cache lock.                                             |
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

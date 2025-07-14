@@ -17,7 +17,7 @@ As a general rule, there is no reason why a table that is corrupted on a master 
 
 [Partitioned tables](../../../../server-usage/partitioning-tables/) are normally split into multiple physical files (one per partition). Even if one of the partitions is corrupted, in most cases other partitions are healthy.
 
-For this reason, `CHECK TABLE` and `REPAIR TABLE` don't work on partitioned tables. Instead, use [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) to check or repair a single partition.
+For this reason, `CHECK TABLE` and `REPAIR TABLE` don't work on partitioned tables. Instead, use [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) to check or repair a single partition.
 
 For example:
 
@@ -28,7 +28,7 @@ ALTER TABLE orders REPAIR PARTITION p_2019, p_2020;
 
 ## Indexes
 
-Indexes can get corrupted. However, as long as data is not corrupted, indexes can always be dropped and rebuilt with [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md):
+Indexes can get corrupted. However, as long as data is not corrupted, indexes can always be dropped and rebuilt with [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/):
 
 ```
 ALTER TABLE customer DROP INDEX idx_email;

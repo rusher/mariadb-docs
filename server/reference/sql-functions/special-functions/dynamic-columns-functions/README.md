@@ -1,3 +1,21 @@
+---
+description: >-
+  Learn about dynamic column functions in MariaDB Server. This section details
+  SQL functions for manipulating and querying dynamic columns, enabling flexible
+  schema design and data storage.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Dynamic Columns Functions
 
-[Dynamic columns](../../../sql-structure/nosql/dynamic-columns.md) is a feature that allows one to store different sets of columns for each row in a table. It works by storing a set of columns in a blob and having a small set of functions to manipulate it.

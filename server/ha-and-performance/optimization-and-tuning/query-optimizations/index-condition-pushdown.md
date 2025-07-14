@@ -1,6 +1,6 @@
 # Index Condition Pushdown
 
-Index Condition Pushdown is an optimization that is applied for access methods that access table data through indexes: `range`, `ref`, `eq_ref`, `ref_or_null`, and [Batched Key Access](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md).
+Index Condition Pushdown is an optimization that is applied for access methods that access table data through indexes: `range`, `ref`, `eq_ref`, `ref_or_null`, and [Batched Key Access](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms#batch-key-access-join).
 
 The idea is to check part of the WHERE condition that refers to index fields (we call it _Pushed Index Condition_) as soon as we've accessed the index. If the _Pushed Index Condition_ is not satisfied, we won't need to read the whole table record.
 
@@ -87,7 +87,6 @@ There are two server status variables:
 
 | Variable name                                                                                 | Meaning                                             |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| Variable name                                                                                 | Meaning                                             |
 | [Handler\_icp\_attempts](../system-variables/server-status-variables.md#handler_icp_attempts) | Number of times pushed index condition was checked. |
 | [Handler\_icp\_match](../system-variables/server-status-variables.md#handler_icp_match)       | Number of times the condition was matched.          |
 

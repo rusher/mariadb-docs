@@ -27,7 +27,8 @@ layout:
 ## Release History
 
 * This release (MariaDB Connector/J 1.8.0) was released on 11 Feb 2019.
-* The latest release in this series is MariaDB Connector/J 1.8.0, released on 11 Feb 2019.
+
+{% include "../.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 

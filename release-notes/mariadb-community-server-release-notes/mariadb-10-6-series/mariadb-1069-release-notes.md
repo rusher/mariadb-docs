@@ -7,7 +7,7 @@ The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 
 **Release date:** 15 Aug 2022
 
 [MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable series of MariaDB. It is an evolution\
-of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
+of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.8](mariadb-1068-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -71,7 +71,7 @@ Unfortunately, some bugs have been found post release, so this is updated to hel
 * Optimizer uses all partitions after upgrade to 10.3 ([MDEV-28246](https://jira.mariadb.org/browse/MDEV-28246))
   * For multi-table UPDATE or DELETE queries, the optimizer failed to apply Partition Pruning optimization for the table that is updated or deleted from.
 * Range optimizer regression for key IN (const, ....) ([MDEV-25020](https://jira.mariadb.org/browse/MDEV-25020))
-  * The issue can be observed on [MariaDB 10.5.9](../mariadb-10-5-series/mariadb-1059-release-notes.md) and later versions which have the fix for [MDEV-9750](https://jira.mariadb.org/browse/MDEV-9750). That fix introduceds optimizer\_max\_sel\_arg\_weight.
+  * The issue can be observed on [MariaDB 10.5.9](../old-releases/mariadb-10-5-series/mariadb-1059-release-notes.md) and later versions which have the fix for [MDEV-9750](https://jira.mariadb.org/browse/MDEV-9750). That fix introduceds optimizer\_max\_sel\_arg\_weight.
   * If one sets optimizer\_max\_sel\_arg\_weight to a very high value or zero (which means "unlimited") and runs queries that produce heavy-weight graphs, they can observe a performance slowdown, e.g.:
 
 ```

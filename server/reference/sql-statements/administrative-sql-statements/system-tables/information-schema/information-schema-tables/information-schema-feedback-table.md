@@ -6,7 +6,6 @@ It contains two columns:
 
 | Column          | Description                                          |
 | --------------- | ---------------------------------------------------- |
-| Column          | Description                                          |
 | VARIABLE\_NAME  | Name of the item of information being collected.     |
 | VARIABLE\_VALUE | Contents of the item of information being collected. |
 

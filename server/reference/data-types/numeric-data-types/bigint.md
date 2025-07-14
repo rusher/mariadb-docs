@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 BIGINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
@@ -10,7 +10,7 @@ BIGINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 
 A large integer. The signed range is `-9223372036854775808` to`9223372036854775807`. The unsigned range is `0` to`18446744073709551615`.
 
-If a column has been set to ZEROFILL, all values will be prepended by zeros so that the BIGINT value contains a number of M digits.
+If a column has been set to `ZEROFILL`, all values will be prepended by zeros so that the `BIGINT` value contains a number of M digits.
 
 **Note:** If the `ZEROFILL` attribute has been specified, the column will automatically become `UNSIGNED`.
 
@@ -18,7 +18,7 @@ For more details on the attributes, see [Numeric Data Type Overview](numeric-dat
 
 `SERIAL` is an alias for:
 
-```
+```sql
 BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE
 ```
 
@@ -28,7 +28,7 @@ BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE
 
 ### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
 
-```
+```sql
 CREATE TABLE bigints (a BIGINT,b BIGINT UNSIGNED,c BIGINT ZEROFILL);
 
 
@@ -56,18 +56,18 @@ SELECT * FROM bigints;
 
 ### SIGNED and UNSIGNED
 
-The BIGINT data type may be SIGNED (allowing negative values) or UNSIGNED (not allowing negative values).
+The `BIGINT` data type may be `SIGNED` (allowing negative values) or `UNSIGNED` (not allowing negative values).
 
-Example of BIGINT SIGNED (the default):
+Example of `BIGINT SIGNED` (the default):
 
-```
+```sql
 CREATE TABLE bigint_signed_example (
    description VARCHAR(20),
    example BIGINT SIGNED
 );
 ```
 
-```
+```sql
 INSERT INTO bigint_signed_example VALUES
    ('Zero', 0),
    ('Forty-Two', 42),
@@ -77,14 +77,14 @@ INSERT INTO bigint_signed_example VALUES
 
 Example of BIGINT UNSIGNED:
 
-```
+```sql
 CREATE TABLE bigint_unsigned_example (
    description VARCHAR(20),
    example BIGINT UNSIGNED
 );
 ```
 
-```
+```sql
 INSERT INTO bigint_unsigned_example VALUES
    ('Zero', 0),
    ('Forty-Two', 42),
@@ -92,13 +92,13 @@ INSERT INTO bigint_unsigned_example VALUES
    ('Maximum', 18446744073709551615);
 ```
 
-### Out-of-Range
+### Out of Range
 
-A value is considered "out-of-range" when it is too small or too large to be stored in a data type. When `sql_mode=STRICT_TRANS_TABLES` (the default) is set, an out-of-range value generates an error. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
+A value is considered "out of range" when it is too small or too large to be stored in a data type. When `sql_mode=STRICT_TRANS_TABLES` (the default) is set, an out-of-range value generates an error. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
 
 An example of non-strict out-of-range behavior:
 
-```
+```sql
 TRUNCATE bigint_signed_example;
 
 -- Disable strict mode or the inserts will fail
@@ -144,11 +144,11 @@ SELECT * FROM bigint_unsigned_example;
 
 ### BIGINT ZEROFILL
 
-A special type of `BIGINT UNSIGNED is BIGINT ZEROFILL`, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's maximum unsigned value, but the zeros are not included in an expression result or in a `UNION SELECT` column.
+A special type of `BIGINT UNSIGNED is BIGINT ZEROFILL`, which pads out the values with leading zeros in `SELECT` results. The number of leading zeros are just enough to pad the field out to the length of the type's maximum unsigned value, but the zeros are not included in an expression result or in a `UNION SELECT` column.
 
 Using `BIGINT ZEROFILL` works the same way as `BIGINT UNSIGNED` for most operations except a simple `SELECT`. For example, with the following test table setup:
 
-```
+```sql
 CREATE TABLE bigint_zerofill_example (
    description VARCHAR(20),
    example BIGINT ZEROFILL
@@ -173,7 +173,7 @@ Warning (Code 1264): Out of range value for column 'example' at row 2
 
 The resulting data would look like this:
 
-```
+```sql
 SELECT *, example + 0 FROM bigint_zerofill_example;
 
 +-------------+----------------------+----------------------+

@@ -31,7 +31,6 @@ Thanks, and enjoy MariaDB!
 
 | Variable name                                                                                                                                                                 | Old value | New value                                       |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------- |
-| Variable name                                                                                                                                                                 | Old value | New value                                       |
 | [join\_buffer\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#join_buffer_size)     | 128K      | 256K                                            |
 | [max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_allowed_packet) | 1M        | 4M                                              |
 | [query\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_cache_size)     | 0         | 1M                                              |

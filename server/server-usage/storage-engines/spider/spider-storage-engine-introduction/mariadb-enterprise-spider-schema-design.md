@@ -128,7 +128,6 @@ The following connection options are supported in the COMMENT table option for F
 
 | Option      | Data Type | Definition                                                                                                             |
 | ----------- | --------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Option      | Data Type | Definition                                                                                                             |
 | database    | String    | The database to select when connecting to the Data Node.                                                               |
 | host        | String    | The hostname or IP address for the Data Node. This option is mutually exclusive with socket.                           |
 | password    | String    | The password to use when connecting to the Data Node.                                                                  |

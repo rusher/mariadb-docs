@@ -42,7 +42,7 @@ SELECT x, ROW_START, ROW_END FROM t;
 
 ### Adding or Removing System Versioning To/From a Table
 
-An existing table can be [altered](../../sql-statements/data-definition/alter/alter-table.md) to enable system versioning for it.
+An existing table can be [altered](../../sql-statements/data-definition/alter/alter-table/) to enable system versioning for it.
 
 ```
 CREATE TABLE t(
@@ -350,9 +350,9 @@ CREATE TABLE t (x INT) WITH SYSTEM VERSIONING
 
 #### Default Partitions
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
-Since partitioning by current and historical data is such a typical usecase, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), it is possible to use a simplified statement to do so. For example, instead of
+Since partitioning by current and historical data is such a typical usecase, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), it is possible to use a simplified statement to do so. For example, instead of
 
 ```
 CREATE TABLE t (x INT) WITH SYSTEM VERSIONING 
@@ -506,7 +506,7 @@ CREATE TABLE t (
 );
 ```
 
-Changes in other sections:[create-table.md](../../sql-statements/data-definition/create/create-table.md)[alter-table.md](../../sql-statements/data-definition/alter/alter-table.md)[join-syntax.md](../../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)[partitioning-types-overview.md](../../../server-usage/partitioning-tables/partitioning-types/partitioning-types-overview.md)[date-and-time-units.md](../../sql-functions/date-time-functions/date-and-time-units.md)[delete.md](../../sql-statements/data-manipulation/changing-deleting-data/delete.md)[grant.md](../../sql-statements/account-management-sql-statements/grant.md)\
+Changes in other sections:[create-table.md](../../sql-statements/data-definition/create/create-table.md)[alter-table.md](../../sql-statements/data-definition/alter/alter-table/)[join-syntax.md](../../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)[partitioning-types-overview.md](../../../server-usage/partitioning-tables/partitioning-types/partitioning-types-overview.md)[date-and-time-units.md](../../sql-functions/date-time-functions/date-and-time-units.md)[delete.md](../../sql-statements/data-manipulation/changing-deleting-data/delete.md)[grant.md](../../sql-statements/account-management-sql-statements/grant.md)\
 they all reference back to this page\
 Also, TODO:
 
@@ -518,7 +518,7 @@ There are a number of system variables related to system-versioned tables:
 
 #### system\_versioning\_alter\_history
 
-* Description: SQL:2011 does not allow [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not set).
+* Description: SQL:2011 does not allow [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not set).
 * Commandline: `--system-versioning-alter-history=value`
 * Scope: Global, Session
 * Dynamic: Yes

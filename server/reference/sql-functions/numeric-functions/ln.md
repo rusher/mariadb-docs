@@ -2,20 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 LN(X)
 ```
 
 ## Description
 
-Returns the natural logarithm of X; that is, the base-e logarithm of X.\
-If X is less than or equal to 0, or `NULL`, then NULL is returned.
+Returns the natural logarithm of X; that is, the base-e logarithm of X. If X is less than or equal to 0, or `NULL`, then `NULL` is returned.
 
 The inverse of this function is [EXP()](exp.md).
 
 ## Examples
 
-```
+```sql
 SELECT LN(2);
 +-------------------+
 | LN(2)             |

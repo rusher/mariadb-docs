@@ -4,7 +4,7 @@ Before using mariadbd-multi be sure that you understand the meanings of the opti
 
 The `mariadbd-multi` startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that is designed to manage several `mariadbd` processes running on the same host.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqld_multi`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqld_multi`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 In order for multiple `mariadbd` processes to work on the same host, these processes must:
 
@@ -49,7 +49,6 @@ mariadbd-multi stop 8,10-13
 
 | Option                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | --example               | Give an example of a config file with extra information.                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | --help                  | Display help and exit.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | --log=filename          | Specify the path and name of the log file. If the file exists, log output is appended to it.                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -72,7 +71,6 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |
-| Option                    | Description                                                                         |
 | --print-defaults          | Print the program argument list and exit.                                           |
 | --no-defaults             | Don't read default options from any option file.                                    |
 | --defaults-file=#         | Only read default options from the given file #.                                    |
@@ -85,14 +83,12 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 | Group            | Description                                                                         |
 | ---------------- | ----------------------------------------------------------------------------------- |
-| Group            | Description                                                                         |
 | \[mysqld\_multi] | Options read by mysqld\_multi, which includes both MariaDB Server and MySQL Server. |
 
 `mariadbd-multi` also searches [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) for [option groups](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) with names like `[mariadbdN]`, where `N` can be any positive integer. This number is referred to in the following discussion as the option group number, or `GNR`:
 
 | Group      | Description                                                                                                                                          |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Group      | Description                                                                                                                                          |
 | \[mysqldN] | Options read by a mysqld instance managed by mysqld\_multi, which includes both MariaDB Server and MySQL Server. The N refers to the instance's GNR. |
 
 `GNR` values distinguish option groups from one another and are used as arguments to `mariadbd-multi` to specify which servers you want to start, stop, or obtain a status report for. The `GNR` value should be the number at the end of the option group name in the option file. For example, the `GNR` for an option group named `[mariadbd17]` is `17`.
@@ -105,7 +101,6 @@ The regular server [option groups](../install-and-upgrade-mariadb/configuring-ma
 
 | Group            | Description                                                                                                                                                                                                                                                                |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Group            | Description                                                                                                                                                                                                                                                                |
 | \[mysqld]        | Options read by mysqld, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                               |
 | \[server]        | Options read by MariaDB Server.                                                                                                                                                                                                                                            |
 | \[mysqld-X.Y]    | Options read by a specific version of mysqld, which includes both MariaDB Server and MySQL Server. For example, \[mysqld-5.5].                                                                                                                                             |
@@ -135,7 +130,7 @@ Change the connection parameters appropriately when connecting to each one. Note
 
 ## User Account
 
-Make sure that the data directory for each server is fully accessible to the Unix account that the specific `mariadbd` process is started as. If you run the `mariadbd-multi` script as the Unix `root` account, and if you want the `mariadbd` process to be started with another Unix account, then you can use use the `--user` option with `mariadbd`. If you specify the `--user` option in an option file, and if you did not run the `mariadbd-multi` script as the Unix `root` account, then it will just log a warning and the `mariadbd` processes are started under the original Unix account.
+Make sure that the data directory for each server is fully accessible to the Unix account that the specific `mariadbd` process is started as. If you run the `mariadbd-multi` script as the Unix `root` account, and if you want the `mariadbd` process to be started with another Unix account, then you can use the `--user` option with `mariadbd`. If you specify the `--user` option in an option file, and if you did not run the `mariadbd-multi` script as the Unix `root` account, then it will just log a warning and the `mariadbd` processes are started under the original Unix account.
 
 Do not run the `mariadbd` process as the Unix `root` account, unless you know what you are doing.
 

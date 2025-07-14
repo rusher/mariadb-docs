@@ -1,8 +1,8 @@
 # mariadb-convert-table-format
 
-`mariadb-convert-table-format` converts the tables in a database to use a particular storage engine ([MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/reference/storage-engines/myisam-storage-engine/README.md) by default).
+`mariadb-convert-table-format` converts the tables in a database to use a particular storage engine ([MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) by default).
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_convert_table_format`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_convert_table_format`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 ## Usage
 
@@ -26,19 +26,18 @@ The `db_name` argument indicates the database containing the tables to be conver
 
 `mariadb-convert-table-format` supports the options described in the following list:
 
-| Option                  | Description                                                                                                                                                                                                                                                                      |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                  | Description                                                                                                                                                                                                                                                                      |
-| -?, --help              | Display help and exit.                                                                                                                                                                                                                                                           |
-| -e, --engine=ENGINE     | Specify the storage engine that the tables should be converted to use. The default is [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/reference/storage-engines/myisam-storage-engine/README.md) if this option is not given. |
-| -f, --force             | Continue even if errors occur.                                                                                                                                                                                                                                                   |
-| -h, --host=host\_name   | Connect to the MariaDB server on the given host. Default localhost.                                                                                                                                                                                                              |
-| -p, --password=password | The password to use when connecting to the server. Note that the password value is not optional for this option, unlike for other client programs. Specifying the password on the command-line is generally considered insecure.                                                 |
-| -P, --port=port\_num    | The TCP/IP port number to use for the connection.                                                                                                                                                                                                                                |
-| -S, --socket=path       | For connections to localhost, the Unix socket file to use.                                                                                                                                                                                                                       |
-| -u, --user=user\_name   | The MariaDB user name to use when connecting to the server.                                                                                                                                                                                                                      |
-| -v, --verbose           | Verbose mode. Print more information about what the program does.                                                                                                                                                                                                                |
-| -V, --version           | Display version information and exit.                                                                                                                                                                                                                                            |
+| Option                  | Description                                                                                                                                                                                                                      |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -?, --help              | Display help and exit.                                                                                                                                                                                                           |
+| -e, --engine=ENGINE     | Specify the storage engine that the tables should be converted to use. The default is [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) if this option is not given.                                           |
+| -f, --force             | Continue even if errors occur.                                                                                                                                                                                                   |
+| -h, --host=host\_name   | Connect to the MariaDB server on the given host. Default localhost.                                                                                                                                                              |
+| -p, --password=password | The password to use when connecting to the server. Note that the password value is not optional for this option, unlike for other client programs. Specifying the password on the command-line is generally considered insecure. |
+| -P, --port=port\_num    | The TCP/IP port number to use for the connection.                                                                                                                                                                                |
+| -S, --socket=path       | For connections to localhost, the Unix socket file to use.                                                                                                                                                                       |
+| -u, --user=user\_name   | The MariaDB user name to use when connecting to the server.                                                                                                                                                                      |
+| -v, --verbose           | Verbose mode. Print more information about what the program does.                                                                                                                                                                |
+| -V, --version           | Display version information and exit.                                                                                                                                                                                            |
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

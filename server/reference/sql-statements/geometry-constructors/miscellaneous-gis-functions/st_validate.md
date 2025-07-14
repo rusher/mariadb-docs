@@ -1,6 +1,8 @@
 # ST\_Validate
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)**.**
+{% hint style="info" %}
+MariaDB startiis available from MariaDB [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
+{% endhint %}
 
 ## Syntax
 

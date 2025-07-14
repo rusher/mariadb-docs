@@ -1,8 +1,8 @@
 # MariaDB 11.4.2 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download 11.4.2](https://downloads.mariadb.org/mariadb/11.4.2)[Release Notes](mariadb-11-4-2-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://downloads.mariadb.org/mariadb/11.4.2/" class="button primary">Download</a> <a href="mariadb-11-4-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 29 May 2024
 
@@ -10,7 +10,7 @@ The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 
 
 [MariaDB 11.4.2](mariadb-11-4-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -71,7 +71,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 * spider plugin init failure with no\_zero\_date sql\_mode ([MDEV-33494](https://jira.mariadb.org/browse/MDEV-33494))
 * sql plugin init failure with traditional sql\_mode ([MDEV-33584](https://jira.mariadb.org/browse/MDEV-33584))
 * spider returns parsing failure on valid left join select by translating the on expression to () ([MDEV-33679](https://jira.mariadb.org/browse/MDEV-33679))
-* Spider: ERROR 12710 (HY000): Invalid information from remote table when using [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) local and [MariaDB 10.6](../mariadb-10-6-series/what-is-mariadb-106.md) remote ([MDEV-33777](https://jira.mariadb.org/browse/MDEV-33777))
+* Spider: ERROR 12710 (HY000): Invalid information from remote table when using [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) local and [MariaDB 10.6](../mariadb-10-6-series/what-is-mariadb-106.md) remote ([MDEV-33777](https://jira.mariadb.org/browse/MDEV-33777))
 * Fix bug where [Spider variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-system-variables) were not available if Spider was loaded upon server startup ([MDEV-33441](https://jira.mariadb.org/browse/MDEV-33441))
 
 ### Backup
@@ -174,7 +174,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 
 #### Server
 
-* Moving from [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) to 10.6 mysql\_upgrade is not updating some system tables ([MDEV-33726](https://jira.mariadb.org/browse/MDEV-33726))
+* Moving from [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) to 10.6 mysql\_upgrade is not updating some system tables ([MDEV-33726](https://jira.mariadb.org/browse/MDEV-33726))
 * Original IP not shown in network related error messages when proxy\_protocol is in use ([MDEV-33506](https://jira.mariadb.org/browse/MDEV-33506))
 * Server incorrectly describes known variables as UNKNOWN if invalid values are specified at startup ([MDEV-33469](https://jira.mariadb.org/browse/MDEV-33469))
 * update case insensitive (large) unique key with insensitive change of value - duplicate key ([MDEV-29345](https://jira.mariadb.org/browse/MDEV-29345))

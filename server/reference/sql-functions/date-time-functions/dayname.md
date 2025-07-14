@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DAYNAME(date)
 ```
 
@@ -13,7 +13,7 @@ of the [lc\_time\_names](../../../ha-and-performance/optimization-and-tuning/sys
 
 ## Examples
 
-```
+```sql
 SELECT DAYNAME('2007-02-03');
 +-----------------------+
 | DAYNAME('2007-02-03') |
@@ -22,7 +22,7 @@ SELECT DAYNAME('2007-02-03');
 +-----------------------+
 ```
 
-```
+```sql
 CREATE TABLE t1 (d DATETIME);
 INSERT INTO t1 VALUES
     ("2007-01-30 21:31:07"),
@@ -33,7 +33,7 @@ INSERT INTO t1 VALUES
     ("2004-10-07 11:19:34");
 ```
 
-```
+```sql
 SELECT d, DAYNAME(d) FROM t1;
 +---------------------+------------+
 | d                   | DAYNAME(d) |
@@ -49,7 +49,7 @@ SELECT d, DAYNAME(d) FROM t1;
 
 Changing the locale:
 
-```
+```sql
 SET lc_time_names = 'fr_CA';
 
 SELECT DAYNAME('2013-04-01');
@@ -60,6 +60,6 @@ SELECT DAYNAME('2013-04-01');
 +-----------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

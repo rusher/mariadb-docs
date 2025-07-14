@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 MultiPolygon(poly1,poly2,...)
 ```
 

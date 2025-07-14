@@ -109,7 +109,7 @@ Don't automatically create users with `GRANT` unless authentication information 
 
 #### NO\_AUTO\_VALUE\_ON\_ZERO
 
-If set, don't generate an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) on [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) attribute with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
+If set, don't generate an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) on [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) attribute with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
 
 #### NO\_BACKSLASH\_ESCAPES
 

@@ -18,7 +18,7 @@ COUNT() can be used as a [window function](../special-functions/window-functions
 
 ## Examples
 
-```
+```sql
 CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); 
 
 INSERT INTO student VALUES 
@@ -37,7 +37,7 @@ SELECT COUNT(*) FROM student;
 
 [COUNT(DISTINCT)](count-distinct.md) example:
 
-```
+```sql
 SELECT COUNT(DISTINCT (name)) FROM student;
 +------------------------+
 | COUNT(DISTINCT (name)) |
@@ -48,7 +48,7 @@ SELECT COUNT(DISTINCT (name)) FROM student;
 
 As a [window function](../special-functions/window-functions/)
 
-```
+```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
 
 INSERT INTO student_test VALUES 
@@ -78,6 +78,6 @@ SELECT name, test, score, COUNT(score) OVER (PARTITION BY name)
 * [COUNT DISTINCT](count-distinct.md)
 * [Window Functions](../special-functions/window-functions/)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

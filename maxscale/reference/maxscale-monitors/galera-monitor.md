@@ -75,7 +75,7 @@ password=mypwd
 
 ### Common Monitor Settings
 
-For a list of optional parameters that all monitors support, read the[Monitor Common](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md) document.
+For a list of optional parameters that all monitors support, read the[Monitor Common](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md) document.
 
 ### Settings
 
@@ -148,7 +148,7 @@ same node for writes.
 
 If the `root_node_as_master` option is disabled for galeramon, the node with the\
 lowest index will always be chosen as the primary. If it is enabled, only the\
-node with a a _wsrep\_local\_index_ value of 0 can be chosen as the primary.
+node with a _wsrep\_local\_index_ value of 0 can be chosen as the primary.
 
 This parameter can work with `disable_master_failback` but using them together\
 is not advisable: the intention of `root_node_as_master` is to make sure that\

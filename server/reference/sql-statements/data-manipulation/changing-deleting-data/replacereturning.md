@@ -1,7 +1,7 @@
 # REPLACE...RETURNING
 
 {% hint style="info" %}
-`REPLACE ... RETURNING` was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), and returns a result set of the replaced rows.
+`REPLACE ... RETURNING` was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes), and returns a result set of the replaced rows.
 {% endhint %}
 
 ## Syntax

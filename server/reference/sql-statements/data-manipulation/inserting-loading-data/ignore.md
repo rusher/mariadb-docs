@@ -8,7 +8,7 @@ The `IGNORE` option tells the server to ignore some common errors.
 * [INSERT](insert.md) (see also [INSERT IGNORE](insert-ignore.md))
 * [LOAD DATA INFILE](load-data-into-tables-or-index/load-data-infile.md)
 * [UPDATE](../changing-deleting-data/update.md)
-* [ALTER TABLE](../../data-definition/alter/alter-table.md)
+* [ALTER TABLE](../../data-definition/alter/alter-table/)
 * [CREATE TABLE ... SELECT](../../data-definition/create/create-table.md#create-select)
 * [INSERT ... SELECT](insert-select.md)
 
@@ -23,7 +23,6 @@ The following errors are ignored:
 
 | Error number | Symbolic error name                              | Description                                                           |
 | ------------ | ------------------------------------------------ | --------------------------------------------------------------------- |
-| Error number | Symbolic error name                              | Description                                                           |
 | 1022         | ER\_DUP\_KEY                                     | Can't write; duplicate key in table '%s'                              |
 | 1048         | ER\_BAD\_NULL\_ERROR                             | Column '%s' cannot be null                                            |
 | 1062         | ER\_DUP\_ENTRY                                   | Duplicate entry '%s' for key %d                                       |

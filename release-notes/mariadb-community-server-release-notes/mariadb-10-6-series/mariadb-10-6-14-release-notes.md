@@ -8,7 +8,7 @@ The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 
 
 Warning: This version can cause InnoDB file corruption under high I/O-bound load. Stick to an earlier release, or upgrade to a more recent release, if possible. See [MDEV-31767](https://jira.mariadb.org/browse/MDEV-31767).
 
-[MariaDB 10.6](what-is-mariadb-106.md) is the current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
+[MariaDB 10.6](what-is-mariadb-106.md) is the current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.14](mariadb-10-6-14-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 

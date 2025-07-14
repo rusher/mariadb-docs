@@ -777,10 +777,10 @@ least the following fields.
 * `data.type`
 * Type of the object, must be `servers`
 * `data.attributes.parameters.address` OR `data.attributes.parameters.socket`
-* The [address](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) or[socket](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use. Only\
+* The [address](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) or[socket](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use. Only\
   one of the fields can be defined.
 * `data.attributes.parameters.port`
-* The [port](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use. Needs\
+* The [port](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use. Needs\
   to be defined if the `address` field is defined.
 
 The following is the minimal required JSON object for defining a new server.
@@ -840,7 +840,7 @@ new servers to be created and immediately taken into use.
 }
 ```
 
-Refer to the [Configuration Guide](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+Refer to the [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 for a full list of server parameters.
 
 **Response**
@@ -864,7 +864,7 @@ server.
 
 #### Modifiable Fields
 
-In addition to the server[parameters](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md), the _services_\
+In addition to the server[parameters](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md), the _services_\
 and _monitors_ fields of the _relationships_ object can be modified. Removal,\
 addition and modification of the links will change which service and monitors\
 use this server.
@@ -1005,7 +1005,6 @@ request. The value of `state` must be one of the following values.
 
 | Value       | State Description                |
 | ----------- | -------------------------------- |
-| Value       | State Description                |
 | master      | Server is a Master               |
 | slave       | Server is a Slave                |
 | maintenance | Server is put into maintenance   |

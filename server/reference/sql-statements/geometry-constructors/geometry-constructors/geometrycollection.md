@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 GeometryCollection(g1,g2,...)
 ```
 

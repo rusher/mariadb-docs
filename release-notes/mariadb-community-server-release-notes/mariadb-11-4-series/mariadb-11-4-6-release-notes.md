@@ -3,7 +3,9 @@
 **Note:** This page describes features in the source repository for [**MariaDB 11.4**](what-is-mariadb-114.md). There are currently no official packages or binaries available for download which contain the features. If you want to try out any of the new features described here you will need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
 code yourself.
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-4-6-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-6-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.6/)**Release date:** ?
+{% include "../../.gitbook/includes/latest-11-4.md" %}
+
+&#x20;<a href="mariadb-11-4-5-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 [MariaDB 11.4](what-is-mariadb-114.md) is the current long-term series of MariaDB and will be maintained until May 2029. It is an evolution of [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md) with several entirely new features.
 

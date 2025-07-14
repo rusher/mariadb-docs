@@ -1,20 +1,6 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
+# Enterprise Server Release Notes
 
-# MariaDB Enterprise Server Release Notes
-
-This section contains release notes for MariaDB Enterprise Server releases divided into the major MariaDB series. The latest long-term stable series is [MariaDB Enterprise Server 11.4](11-4/) (maintained for five years), and the current development release is [MariaDB Enterprise Server 11.8](11.8/).
+This section contains release notes for MariaDB Enterprise Server releases divided into the major MariaDB series. The latest long-term stable series is [MariaDB Enterprise Server 11.4](11-4/) (maintained for five years), and the current development release is [MariaDB Enterprise Server 11.8](11.8).
 
 {% content-ref url="enterprise-server-lifecycle.md" %}
 [enterprise-server-lifecycle.md](enterprise-server-lifecycle.md)
@@ -26,8 +12,8 @@ This section contains release notes for MariaDB Enterprise Server releases divid
 
 ## Current Releases
 
-{% content-ref url="11.8/" %}
-[11.8](11.8/)
+{% content-ref url="11.8" %}
+[11.8](11.8)
 {% endcontent-ref %}
 
 {% content-ref url="11-4/" %}

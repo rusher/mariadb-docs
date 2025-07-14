@@ -16,7 +16,7 @@ The most recent release of [MariaDB 11.5](what-is-mariadb-115.md) is:[**MariaDB 
 
 * [Limit size of created disk temporary files and tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview) ([MDEV-9101](https://jira.mariadb.org/browse/MDEV-9101))
 * There are two system variables used for controlling this feature:
-  * [max\_tmp\_session\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable): Limits the the temporary space allowance per user
+  * [max\_tmp\_session\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable): Limits the temporary space allowance per user
   * [max\_tmp\_total\_space\_usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_total_space_usage-system-variable): Limits the temporary space allowance for all users.
 
 ### Data Types
@@ -83,7 +83,6 @@ Add listcve macro here - removed for performance reasons
 
 | Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
 | ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
 | 14 Aug 2024 | [MariaDB 11.5.2](mariadb-11-5-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-5-2-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md) |
 | 30 May 2024 | [MariaDB 11.5.1](mariadb-11-5-1-release-notes.md) | RC          | [Release Notes](mariadb-11-5-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-1-changelog.md) |
 | 18 Mar 2024 | [MariaDB 11.5.0](mariadb-11-5-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-5-0-release-notes.md) |                                                                                          |

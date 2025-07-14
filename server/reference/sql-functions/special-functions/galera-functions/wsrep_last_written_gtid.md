@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 WSREP_LAST_WRITTEN_GTID()
 ```
 

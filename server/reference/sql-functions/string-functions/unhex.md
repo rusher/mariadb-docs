@@ -2,22 +2,20 @@
 
 ## Syntax
 
-```
+```sql
 UNHEX(str)
 ```
 
 ## Description
 
-Performs the inverse operation of [HEX](hex.md)(str). That is, it interprets\
-each pair of hexadecimal digits in the argument as a number and\
-converts it to the character represented by the number. The resulting\
+Performs the inverse operation of [HEX](hex.md)(str). That is, it interprets each pair of hexadecimal digits in the argument as a number and converts it to the character represented by the number. The resulting\
 characters are returned as a binary string.
 
 If `str` is `NULL`, `UNHEX()` returns `NULL`.
 
 ## Examples
 
-```
+```sql
 SELECT HEX('MariaDB');
 +----------------+
 | HEX('MariaDB') |
@@ -60,6 +58,6 @@ SELECT HEX(UNHEX('1267'));
 * [HEX()](hex.md)
 * [CONV()](../numeric-functions/conv.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

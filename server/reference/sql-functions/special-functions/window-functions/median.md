@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 MEDIAN(median expression) OVER (
   [ PARTITION BY partition_expression ] 
 )
@@ -10,24 +10,24 @@ MEDIAN(median expression) OVER (
 
 ## Description
 
-MEDIAN() is a [window function](./) that returns the median value of a range of values.
+`MEDIAN()` is a [window function](./) that returns the median value of a range of values.
 
 It is a specific case of [PERCENTILE\_CONT](percentile_cont.md), with an argument of 0.5 and the [ORDER BY](../../../sql-statements/data-manipulation/selecting-data/order-by.md) column the one in `MEDIAN`'s argument.
 
-```
+```sql
 MEDIAN(<median-arg>) OVER ( [ PARTITION BY partition_expression] )
 ```
 
 Is equivalent to:
 
-```
+```sql
 PERCENTILE_CONT(0.5) WITHIN 
   GROUP (ORDER BY <median-arg>) OVER ( [ PARTITION BY partition_expression ])
 ```
 
 ## Examples
 
-```
+```sql
 CREATE TABLE book_rating (name CHAR(30), star_rating TINYINT);
 
 INSERT INTO book_rating VALUES ('Lord of the Ladybirds', 5);

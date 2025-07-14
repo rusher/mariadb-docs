@@ -10,7 +10,6 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | THREAD_ID | Thread associated with the event. Together with EVENT_NAME uniquely identifies the row. |
 | EVENT_NAME | Event name. Used together with THREAD_ID for grouping events. |
 | COUNT_STAR | Number of summarized events, which includes all timed and untimed events. |

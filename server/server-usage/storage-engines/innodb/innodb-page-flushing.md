@@ -22,7 +22,7 @@ To make flushing more eager, set to a higher value, for example `SET GLOBAL inno
 
 The [innodb\_page\_cleaners](innodb-system-variables.md#innodb_page_cleaners) system variable makes it possible to use multiple InnoDB page cleaner threads. It is deprecated and ignored now as the original reasons for splitting the buffer pool have mostly gone away.
 
-The number of InnoDB page cleaner threads can be configured by setting the [innodb\_page\_cleaners](innodb-system-variables.md#innodb_page_cleaners) system variable. The system variable can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+The number of InnoDB page cleaner threads can be configured by setting the [innodb\_page\_cleaners](innodb-system-variables.md#innodb_page_cleaners) system variable. The system variable can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -30,7 +30,7 @@ The number of InnoDB page cleaner threads can be configured by setting the [inno
 innodb_page_cleaners=8
 ```
 
-The system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_page_cleaners=8;
@@ -44,7 +44,7 @@ Since the original reasons for splitting the buffer pool have mostly gone away, 
 
 ## Page Flushing with Multi-threaded Flush Threads
 
-InnoDB's multi-thread flush feature can be enabled by setting the [innodb\_use\_mtflush](innodb-system-variables.md#innodb_use_mtflush) system variable. The number of threads cane be configured by setting the [innodb\_mtflush\_threads](innodb-system-variables.md#innodb_mtflush_threads) system variable. This system variable can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+InnoDB's multi-thread flush feature can be enabled by setting the [innodb\_use\_mtflush](innodb-system-variables.md#innodb_use_mtflush) system variable. The number of threads cane be configured by setting the [innodb\_mtflush\_threads](innodb-system-variables.md#innodb_mtflush_threads) system variable. This system variable can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -63,13 +63,13 @@ InnoDB's multi-thread flush feature is deprecated. Use multiple InnoDB page clea
 
 Increasing the amount of I/O capacity available to InnoDB can also help increase the performance of page flushing.
 
-The amount of I/O capacity available to InnoDB can be configured by setting the [innodb\_io\_capacity](innodb-system-variables.md#innodb_io_capacity) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The amount of I/O capacity available to InnoDB can be configured by setting the [innodb\_io\_capacity](innodb-system-variables.md#innodb_io_capacity) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_io_capacity=20000;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -77,13 +77,13 @@ This system variable can also be set in a server [option group](../../../server-
 innodb_io_capacity=20000
 ```
 
-The maximum amount of I/O capacity available to InnoDB in an emergency defaults to either `2000` or twice [innodb\_io\_capacity](innodb-system-variables.md#innodb_io_capacity), whichever is higher, or can be directly configured by setting the [innodb\_io\_capacity\_max](innodb-system-variables.md#innodb_io_capacity_max) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The maximum amount of I/O capacity available to InnoDB in an emergency defaults to either `2000` or twice [innodb\_io\_capacity](innodb-system-variables.md#innodb_io_capacity), whichever is higher, or can be directly configured by setting the [innodb\_io\_capacity\_max](innodb-system-variables.md#innodb_io_capacity_max) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_io_capacity_max=20000;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]

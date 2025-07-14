@@ -8,7 +8,6 @@ It contains the following columns:
 
 | Column     | Description |
 | ---------- | ----------- |
-| Column     | Description |
 | STAT\_TYPE |             |
 | VALUE      |             |
 

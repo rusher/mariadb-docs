@@ -14,7 +14,6 @@ This table shows when different spatial features were introduced into MySQL and 
 
 |                                                                                                 | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | ----------------------------------------------------------------------------------------------- | -------- | ------ | -------- | -------- | -------- | -------- | ------- | --------- | ---------- | -------- |
-|                                                                                                 | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | InnoDB Spatial Indexes                                                                          | -        | -      | -        | -        | x        | x        | -       | -         | -          | x        |
 | [MyISAM Spatial Indexes](spatial-index.md)                                                      | x        | x      | x        | x        | x        | x        | x       | x         | x          | x        |
 | [Aria Spatial Indexes](spatial-index.md)                                                        | -        | -      | -        | -        | -        | -        | x       | x         | x          | x        |
@@ -38,7 +37,6 @@ This table shows when different spatial features were introduced into MySQL and 
 
 |                                                                                                              | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | ------------------------------------------------------------------------------------------------------------ | -------- | ------ | -------- | -------- | -------- | -------- | ------- | --------- | ---------- | -------- |
-|                                                                                                              | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [ExteriorRing](../../sql-statements/geometry-constructors/polygon-properties/st_exteriorring.md)             | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
 | [GeomCollFromText](../../sql-statements/geometry-constructors/wkt/st_geomcollfromtext.md)                    | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
 | [GeomCollFromWKB](../../sql-statements/geometry-constructors/wkb/st_geomcollfromwkb.md)                      | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
@@ -62,7 +60,6 @@ This table shows when different spatial features were introduced into MySQL and 
 
 |                                                                                                             | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | ----------------------------------------------------------------------------------------------------------- | -------- | ------ | -------- | -------- | -------- | -------- | ------- | --------- | ---------- | -------- |
-|                                                                                                             | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [LineFromWKB](../../sql-statements/geometry-constructors/wkb/st_linefromwkb.md)                             | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
 | [LineString](../../sql-statements/geometry-constructors/geometry-constructors/linestring.md)                | x        | x      | x        | x        | x        | x        | x       | x         | x          | x        |
 | [LineStringFromText](../../sql-statements/geometry-constructors/wkt/st_linefromtext.md)                     | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
@@ -86,7 +83,6 @@ This table shows when different spatial features were introduced into MySQL and 
 
 |                                                                                                          | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | -------------------------------------------------------------------------------------------------------- | -------- | ------ | -------- | -------- | -------- | -------- | ------- | --------- | ---------- | -------- |
-|                                                                                                          | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [MultiLineStringFromText](../../sql-statements/geometry-constructors/wkt/mlinefromtext.md)               | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
 | [MultiLineStringFromWKB](../../sql-statements/geometry-constructors/wkb/mlinefromwkb.md)                 | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
 | [MultiPoint](../../sql-statements/geometry-constructors/geometry-constructors/multipoint.md)             | x        | x      | x        | x        | x        | x        | x       | x         | x          | x        |
@@ -110,7 +106,6 @@ This table shows when different spatial features were introduced into MySQL and 
 
 |                                                                                                           | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | --------------------------------------------------------------------------------------------------------- | -------- | ------ | -------- | -------- | -------- | -------- | ------- | --------- | ---------- | -------- |
-|                                                                                                           | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [PolygonFromText](../../sql-statements/geometry-constructors/wkt/st_polyfromtext.md)                      | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
 | [PolygonFromWKB](../../sql-statements/geometry-constructors/wkb/st_polyfromwkb.md)                        | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
 | [SRID](../../sql-statements/geometry-constructors/geometry-properties/st_srid.md)                         | x        | x      | x        | x        | x        | d        | x       | x         | x          | x        |
@@ -207,7 +202,6 @@ This table shows when different spatial features were introduced into MySQL and 
 
 |   | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | - | -------- | ------ | -------- | -------- | -------- | -------- | ------- | --------- | ---------- | -------- |
-|   | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

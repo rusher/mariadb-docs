@@ -1,27 +1,22 @@
-
 # NCHAR VARCHAR
 
-
-# Overview
-
+## Overview
 
 See [NATIONAL VARCHAR](national-varchar.md).
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 CREATE TABLE nchar_varchar_example (
   example NCHAR VARCHAR(32)
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE nchar_varchar_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: nchar_varchar_example
 Create Table: CREATE TABLE `nchar_varchar_example` (
@@ -29,8 +24,6 @@ Create Table: CREATE TABLE `nchar_varchar_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

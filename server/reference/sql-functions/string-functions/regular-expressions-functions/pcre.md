@@ -1,13 +1,10 @@
-# pcre
-
-## PCRE - Perl Compatible Regular Expressions
+# PCRE - Perl Compatible Regular Expressions
 
 ### PCRE Versions
 
 | PCRE Version                         | Introduced                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Maturity |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| PCRE Version                         | Introduced                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Maturity |
-| [PCRE2](https://www.pcre.org/) 10.34 | [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                        | Stable   |
+| [PCRE2](https://www.pcre.org/) 10.34 | [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)                                                                                                                                                                                                                                                                                                                                                                                           | Stable   |
 | PCRE 8.43                            | [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes)                                                                                                                                                                                                                                                                                                                                                                           | Stable   |
 | PCRE 8.42                            | [MariaDB 10.2.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10215-release-notes), [MariaDB 10.1.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10133-release-notes), [MariaDB 10.0.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10035-release-notes) | Stable   |
 | PCRE 8.41                            | [MariaDB 10.2.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1028-release-notes), [MariaDB 10.1.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10126-release-notes), [MariaDB 10.0.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10032-release-notes)   | Stable   |
@@ -21,13 +18,13 @@
 
 ### PCRE Enhancements
 
-[MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) switched to the PCRE library, which significantly improved the power of the [REGEXP/RLIKE](regexp.md) operator.
+MariaDB uses the PCRE library, which significantly improves the power of the [REGEXP/RLIKE](regexp.md) operator.
 
 The switch to PCRE added a number of features, including recursive patterns, named capture, look-ahead and look-behind assertions, non-capturing groups, non-greedy quantifiers, Unicode character properties, extended syntax for characters and character classes, multi-line matching, and many other.
 
-Additionally, [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) introduced three new functions that work with regular expressions: [REGEXP\_REPLACE()](regexp_replace.md), [REGEXP\_INSTR()](regexp_instr.md) and [REGEXP\_SUBSTR()](regexp_substr.md).
+These functions work with regular expressions: [REGEXP\_REPLACE()](regexp_replace.md), [REGEXP\_INSTR()](regexp_instr.md), and [REGEXP\_SUBSTR()](regexp_substr.md).
 
-Also, REGEXP/RLIKE, and the new functions, now work correctly with all multi-byte [character sets](../../../data-types/string-data-types/character-sets/) supported by MariaDB, including East-Asian character sets (big5, gb2313, gbk, eucjp, eucjpms, cp932, ujis, euckr), and Unicode character sets (utf8, utf8mb4, ucs2, utf16, utf16le, utf32). In earlier versions of MariaDB (and all MySQL versions) REGEXP/RLIKE works correctly only with 8-bit character sets.
+Also, `REGEXP/RLIKE`, and the new functions, work correctly with all multi-byte [character sets](../../../data-types/string-data-types/character-sets/) supported by MariaDB, including East-Asian character sets (big5, gb2313, gbk, eucjp, eucjpms, cp932, ujis, euckr), and Unicode character sets (utf8, utf8mb4, ucs2, utf16, utf16le, utf32).
 
 ### New Regular Expression Functions
 
@@ -41,8 +38,6 @@ See the individual articles for more details and examples.
 
 In most cases PCRE is backward compatible with the old POSIX 1003.2 compliant regexp library (see [Regular Expressions Overview](regular-expressions-overview.md)), so you won't need to change your applications that use SQL queries with the REGEXP/RLIKE predicate.
 
-[MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/regular-expressions-functions/broken-reference/README.md) introduced the [default\_regex\_flags](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags) variable to address the remaining compatibilities between PCRE and the old regex library.
-
 This section briefly describes the most important extended PCRE features. For more details please refer to the documentation on the [PCRE site](https://www.pcre.org/), or to the documentation which is bundled in the /pcre/doc/html/ directory of a MariaDB sources distribution. The pages pcresyntax.html and pcrepattern.html should be a good start. [Regular-Expressions.Info](https://www.regular-expressions.info/tutorial.html) is another good resource to learn about PCRE and regular expressions generally.
 
 #### Special Characters
@@ -51,7 +46,6 @@ PCRE supports the following escape sequences to match special characters:
 
 | Sequence  | Description                                 |
 | --------- | ------------------------------------------- |
-| Sequence  | Description                                 |
 | \a        | 0x07 (BEL)                                  |
 | \cx       | "control-x", where x is any ASCII character |
 | \e        | 0x1B (escape)                               |
@@ -67,7 +61,7 @@ Note, the backslash characters (here, and in all examples in the sections below)
 
 This example tests if a character has hex code 0x61:
 
-```
+```sql
 SELECT 'a' RLIKE '\\x{61}';
 -> 1
 ```
@@ -78,7 +72,6 @@ PCRE supports the standard POSIX character classes such as `alnum`, `alpha`, `bl
 
 | Class | Description                                                |
 | ----- | ---------------------------------------------------------- |
-| Class | Description                                                |
 | ascii | any ASCII character (0x00..0x7F)                           |
 | word  | any "word" character (a letter, a digit, or an underscore) |
 
@@ -95,7 +88,6 @@ Generic character types complement the POSIX character classes and serve to simp
 
 | Class | Description                                                |
 | ----- | ---------------------------------------------------------- |
-| Class | Description                                                |
 | \d    | a decimal digit (same as \[:digit:])                       |
 | \D    | a character that is not a decimal digit                    |
 | \h    | a horizontal white space character                         |
@@ -111,7 +103,7 @@ Generic character types complement the POSIX character classes and serve to simp
 
 This example checks if the string consists of "word" characters only:
 
-```
+```sql
 SELECT 'abc' RLIKE '^\\w+$';
 -> 1
 ```
@@ -126,7 +118,6 @@ The property names represented by `xx` above are limited to the Unicode script n
 
 | Property | Description           |
 | -------- | --------------------- |
-| Property | Description           |
 | C        | Other                 |
 | Cc       | Control               |
 | Cf       | Format                |
@@ -168,7 +159,7 @@ The property names represented by `xx` above are limited to the Unicode script n
 
 This example checks if the string consists only of characters with property N (number):
 
-```
+```sql
 SELECT '1¼①' RLIKE '^\\p{N}+$';
 -> 1
 ```
@@ -177,7 +168,6 @@ SELECT '1¼①' RLIKE '^\\p{N}+$';
 
 | Property | Description                                                       |
 | -------- | ----------------------------------------------------------------- |
-| Property | Description                                                       |
 | Xan      | Alphanumeric: union of properties L and N                         |
 | Xps      | POSIX space: property Z or tab, NL, VT, FF, CR                    |
 | Xsp      | Perl space: property Z or tab, NL, FF, CR                         |
@@ -192,7 +182,7 @@ Arabic, Armenian, Avestan, Balinese, Bamum, Batak, Bengali, Bopomofo, Brahmi, Br
 
 This example checks if the string consists only of Greek characters:
 
-```
+```sql
 SELECT 'ΣΦΩ' RLIKE '^\\p{Greek}+$';
 -> 1
 ```
@@ -203,7 +193,7 @@ The `\X` escape sequence matches a character sequence that makes an "extended gr
 
 One of the examples of a composite character can be a letter followed by non-spacing accent marks. This example demonstrates that `U+0045 LATIN CAPITAL LETTER E` followed by `U+0302 COMBINING CIRCUMFLEX ACCENT` followed by `U+0323 COMBINING DOT BELOW` together form an extended grapheme cluster:
 
-```
+```sql
 SELECT _ucs2 0x004503020323 RLIKE '^\\X$';
 -> 1
 ```
@@ -216,7 +206,6 @@ An assertion specifies a certain condition that must match at a particular point
 
 | Assertion | Description                                                                                |
 | --------- | ------------------------------------------------------------------------------------------ |
-| Assertion | Description                                                                                |
 | \b        | matches at a word boundary                                                                 |
 | \B        | matches when not at a word boundary                                                        |
 | \A        | matches at the start of the subject                                                        |
@@ -226,7 +215,7 @@ An assertion specifies a certain condition that must match at a particular point
 
 This example cuts a word that consists only of 3 characters from a string:
 
-```
+```sql
 SELECT REGEXP_SUBSTR('---abcd---xyz---', '\\b\\w{3}\\b');
 -> xyz
 ```
@@ -235,7 +224,7 @@ Notice that the two `\b` assertions checked the word boundaries but did not get 
 
 The `\b` assertions work well in the beginning and the end of the subject string:
 
-```
+```sql
 SELECT REGEXP_SUBSTR('xyz', '\\b\\w{3}\\b');
 -> xyz
 ```
@@ -248,7 +237,6 @@ A number of options that control the default match behavior can be changed withi
 
 | Option  | Description                                                              |
 | ------- | ------------------------------------------------------------------------ |
-| Option  | Description                                                              |
 | (?i)    | case insensitive match                                                   |
 | (?m)    | multiline mode                                                           |
 | (?s)    | dotall mode (dot matches newline characters)                             |
@@ -268,7 +256,7 @@ If an option is set outside of subpattern parentheses, the option applies to the
 
 In this example the pattern `(?i)m((?-i)aria)db` matches the words `MariaDB`, `Mariadb`, `mariadb`, but not `MARIADB`:
 
-```
+```sql
 SELECT 'MariaDB' RLIKE '(?i)m((?-i)aria)db';
 -> 1
 
@@ -284,7 +272,7 @@ SELECT 'MARIADB' RLIKE '(?i)m((?-i)aria)db';
 
 This example demonstrates that the `(?x)` option makes the regexp engine ignore all white spaces in the pattern (other than in a class).
 
-```
+```sql
 SELECT 'ab' RLIKE '(?x)a b';
 -> 1
 ```
@@ -297,7 +285,7 @@ Multiline matching changes the meaning of `^` and `$` from "the beginning of the
 
 This example checks if the subject string contains two consequent lines that fully consist of digits:
 
-```
+```sql
 SELECT 'abc\n123\n456\nxyz\n' RLIKE '(?m)^\\d+\\R\\d+$';
 -> 1
 ```
@@ -318,7 +306,6 @@ By default, the newline convention is set to any Unicode newline sequence, which
 
 | Sequence | Description                                |
 | -------- | ------------------------------------------ |
-| Sequence | Description                                |
 | LF       | (U+000A, carriage return)                  |
 | CR       | (U+000D, carriage return)                  |
 | CRLF     | (a carriage return followed by a linefeed) |
@@ -332,7 +319,6 @@ The newline convention can be set by starting a pattern with one of the followin
 
 | Sequence    | Description                          |
 | ----------- | ------------------------------------ |
-| Sequence    | Description                          |
 | (\*CR)      | carriage return                      |
 | (\*LF)      | linefeed                             |
 | (\*CRLF)    | carriage return followed by linefeed |
@@ -345,7 +331,7 @@ Note, the new line convention does not affect the meaning of .
 
 This example demonstrates that the dot metacharacter matches , because it is not a newline sequence anymore:
 
-```
+```sql
 SELECT 'a\nb' RLIKE '(*CR)a.b';
 -> 1
 ```
@@ -358,7 +344,6 @@ The meaning of can be set by starting a pattern with one of the following sequen
 
 | Sequence         | Description                  |
 | ---------------- | ---------------------------- |
-| Sequence         | Description                  |
 | (\*BSR\_ANYCRLF) | any of CR, LF or CRLF        |
 | (\*BSR\_UNICODE) | any Unicode newline sequence |
 
@@ -368,7 +353,7 @@ It's possible to include comments inside a pattern. Comments do not participate 
 
 ## sequence and continue up to the next closing parenthesis:
 
-```
+```sql
 SELECT 'ab12' RLIKE 'ab(?#expect digits)12';
 -> 1
 ```
@@ -379,7 +364,7 @@ POSIX uses the backslash to remove a special meaning from a character. PCRE intr
 
 This example checks if the string matches a dollar sign followed by a parenthesized name (a variable reference in some languages):
 
-```
+```sql
 SELECT '$(abc)' RLIKE '^\\Q$(\\E\\w+\\Q)\\E$';
 -> 1
 ```
@@ -390,7 +375,7 @@ Note that the leftmost dollar sign and the parentheses are used literally, while
 
 The escape sequence `\K` causes any previously matched characters to be excluded from the final matched sequence. For example, the pattern: `(foo)\Kbar` matches `foobar`, but reports that it has matched `bar`. This feature is similar to a look-behind assertion. However, in this case, the part of the subject before the real match does not have to be of fixed length:
 
-```
+```sql
 SELECT REGEXP_SUBSTR('aaa123', '[a-z]*\\K[0-9]*');
 -> 123
 ```
@@ -401,7 +386,7 @@ The question mark and the colon after the opening parenthesis create a non-captu
 
 This example removes an optional article from a word, for example for better sorting of the results.
 
-```
+```sql
 SELECT REGEXP_REPLACE('The King','(?:the|an|a)[^a-z]([a-z]+)','\\1');
 -> King
 ```
@@ -414,7 +399,7 @@ By default, the repetition quantifiers `?`, `*`, `+` and `{n,m}` are "greedy", t
 
 This example cuts C comments from a line:
 
-```
+```sql
 SELECT REGEXP_REPLACE('/* Comment1 */ i+= 1; /* Comment2 */', '/[*].*?[*]/','');
 ->  i+= 1;
 ```
@@ -429,7 +414,7 @@ Consider the pattern `\d+foo` applied to the subject string `123bar`. Once the e
 
 Atomic groups produce faster false results (i.e. in case when a long subject string does not match the pattern), because the regexp engine saves performance on backtracking. However, don't hurry to put everything into atomic groups. This example demonstrates the difference between atomic and non-atomic match:
 
-```
+```sql
 SELECT 'abcc' RLIKE 'a(?>bc|b)c' AS atomic1;
 -> 1
 
@@ -449,7 +434,7 @@ The atomic group `(?>bc|b)` in the above example can be "translated" as "if ther
 
 Atomic groups are not capturing. To make an atomic group capturing, put it into parentheses:
 
-```
+```sql
 SELECT REGEXP_REPLACE('abcc','a((?>bc|b))c','\\1');
 -> bc
 ```
@@ -476,14 +461,14 @@ The following backreferences are identical and refer to the first capturing grou
 
 This example demonstrates a pattern that matches "sense and sensibility" and "response and responsibility", but not "sense and responsibility":
 
-```
+```sql
 SELECT 'sense and sensibility' RLIKE '(sens|respons)e and \\1ibility';
 -> 1
 ```
 
 This example removes doubled words that can unintentionally creep in when you edit a text in a text editor:
 
-```
+```sql
 SELECT REGEXP_REPLACE('using using the the regexp regexp',
  '\\b(\\w+)\\s+\\1\\b','\\1');
 -> using the regexp
@@ -495,7 +480,7 @@ A negative number in a `\g` sequence means a relative reference. Relative refere
 
 In this example `\g{-1}` is equivalent to `\2`:
 
-```
+```sql
 SELECT 'abc123def123' RLIKE '(abc(123)def)\\g{-1}';     
 -> 1
 
@@ -513,7 +498,7 @@ Backreferences to a named subpattern can be written using the .NET syntax `\k{na
 
 This example tests if the string is a correct HTML tag:
 
-```
+```sql
 SELECT '<a href="../">Up</a>' RLIKE '<(?<tag>[a-z][a-z0-9]*)[^>]*>[^<]*</(?P=tag)>';
 -> 1
 ```
@@ -524,35 +509,35 @@ Look-ahead and look-behind assertions serve to specify the context for the searc
 
 This example finds the letter which is not followed by another letter (negative look-ahead):
 
-```
+```sql
 SELECT REGEXP_SUBSTR('ab1','[a-z](?![a-z])');
 -> b
 ```
 
 This example finds the letter which is followed by a digit (positive look-ahead):
 
-```
+```sql
 SELECT REGEXP_SUBSTR('ab1','[a-z](?=[0-9])');
 -> b
 ```
 
 This example finds the letter which does not follow a digit character (negative look-behind):
 
-```
+```sql
 SELECT REGEXP_SUBSTR('1ab','(?<![0-9])[a-z]');
 -> b
 ```
 
 This example finds the letter which follows another letter character (positive look-behind):
 
-```
+```sql
 SELECT REGEXP_SUBSTR('1ab','(?<=[a-z])[a-z]');
 -> b
 ```
 
 Note that look-behind assertions can only be of fixed length; you cannot have repetition operators or alternations with different lengths:
 
-```
+```sql
 SELECT 'aaa' RLIKE '(?<=(a|bc))a';
 ERROR 1139 (42000): Got error 'lookbehind assertion is not fixed length at offset 10' from regexp
 ```
@@ -563,7 +548,6 @@ PCRE supports a special syntax to recourse the entire pattern or its individual 
 
 | Syntax    | Description                                    |
 | --------- | ---------------------------------------------- |
-| Syntax    | Description                                    |
 | (?R)      | Recourse the entire pattern                    |
 | (?n)      | call subpattern by absolute number             |
 | (?+n)     | call subpattern by relative number             |
@@ -581,7 +565,7 @@ PCRE supports a special syntax to recourse the entire pattern or its individual 
 
 This example checks for a correct additive arithmetic expression consisting of numbers, unary plus and minus, binary plus and minus, and parentheses:
 
-```
+```sql
 SELECT '1+2-3+(+(4-1)+(-2)+(+1))' RLIKE  '^(([+-]?(\\d+|[(](?1)[)]))(([+-](?1))*))$';
 -> 1
 ```
@@ -601,14 +585,14 @@ Use the `(?(DEFINE)`...`)` syntax to define subpatterns that can be referenced f
 
 This example defines a subpattern with the name `letters` that matches one or more letters, which is further reused two times:
 
-```
+```sql
 SELECT 'abc123xyz' RLIKE '^(?(DEFINE)(?<letters>[a-z]+))(?&letters)[0-9]+(?&letters)$';
 -> 1
 ```
 
 The above example can also be rewritten to define the digit part as a subpattern as well:
 
-```
+```sql
 SELECT 'abc123xyz' RLIKE
  '^(?(DEFINE)(?<letters>[a-z]+)(?<digits>[0-9]+))(?&letters)(?&digits)(?&letters)$';
 -> 1
@@ -618,7 +602,7 @@ SELECT 'abc123xyz' RLIKE
 
 There are two forms of conditional subpatterns:
 
-```
+```sql
 (?(condition)yes-pattern)
 (?(condition)yes-pattern|no-pattern)
 ```
@@ -631,7 +615,7 @@ If a condition consists of a number, it makes a condition with a subpattern refe
 
 This example finds an optionally parenthesized number in a string:
 
-```
+```sql
 SELECT REGEXP_SUBSTR('a(123)b', '([(])?[0-9]+(?(1)[)])');
 -> (123)
 ```
@@ -646,25 +630,21 @@ The other possible condition kinds are: recursion references and assertions. See
 
 PCRE correctly works with zero bytes in the subject strings:
 
-```
+```sql
 SELECT 'a\0b' RLIKE '^a.b$';
 -> 1
 ```
 
 Zero bytes, however, are not supported literally in the pattern strings and should be escaped using the `\xhh` or `\x{hh}` syntax:
 
-```
+```sql
 SELECT 'a\0b' RLIKE '^a\\x{00}b$';
 -> 1
 ```
 
 #### Other PCRE Features
 
-PCRE provides other extended features that were not covered in this document,\
-such as duplicate subpattern numbers, backtracking control, breaking utf-8\
-sequences into individual bytes, setting the match limit, setting the recursion\
-limit, optimization control, recursion conditions, assertion conditions and\
-more types of extended grapheme clusters. Please refer to the[PCRE documentation](https://www.pcre.org) for details.
+PCRE provides other extended features that were not covered in this document, such as duplicate subpattern numbers, backtracking control, breaking utf-8 sequences into individual bytes, setting the match limit, setting the recursion limit, optimization control, recursion conditions, assertion conditions and more types of extended grapheme clusters. Please refer to the[PCRE documentation](https://www.pcre.org) for details.
 
 Enhanced regex was implemented as a GSoC 2013 project by Sudheera Palihakkara.
 
@@ -674,7 +654,7 @@ The [default\_regex\_flags](../../../../ha-and-performance/optimization-and-tuni
 
 The default behaviour (multiline match is off)
 
-```
+```sql
 SELECT 'a\nb\nc' RLIKE '^b$';
 +---------------------------+
 | '(?m)a\nb\nc' RLIKE '^b$' |
@@ -685,7 +665,7 @@ SELECT 'a\nb\nc' RLIKE '^b$';
 
 Enabling the multiline option using the PCRE option syntax:
 
-```
+```sql
 SELECT 'a\nb\nc' RLIKE '(?m)^b$';
 +---------------------------+
 | 'a\nb\nc' RLIKE '(?m)^b$' |
@@ -696,7 +676,7 @@ SELECT 'a\nb\nc' RLIKE '(?m)^b$';
 
 Enabling the miltiline option using default\_regex\_flags
 
-```
+```sql
 SET default_regex_flags='MULTILINE';
 SELECT 'a\nb\nc' RLIKE '^b$';
 +-----------------------+

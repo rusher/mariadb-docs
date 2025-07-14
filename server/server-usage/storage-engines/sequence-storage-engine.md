@@ -185,7 +185,7 @@ SELECT DAYNAME('1980-12-05' + INTERVAL (seq) YEAR) day,
 +-----------+------------+
 ```
 
-Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](../../reference/sql-functions/string-functions/cast.md) statement. For example:
+Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](../../reference/sql-functions/string-functions/cast.md) statement:
 
 ```sql
 SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;

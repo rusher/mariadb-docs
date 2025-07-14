@@ -7,7 +7,6 @@ while working on the [DBT3 Automation Scripts](dbt3-automation-scripts.md).
 
 | Setup                                                                                                                                                                                                          | Time                                 | Size on Disk |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------ |
-| Setup                                                                                                                                                                                                          | Time                                 | Size on Disk |
 | Postgre s30 on pitbull                                                                                                                                                                                         | 758 min = 12 h 38 min.               | 75 GB        |
 | MariaDB + MyISAM s10 on 4CPU 4GB RAM developer machine                                                                                                                                                         | 96 m 22s = 1h 36m 22s                | 17 GB        |
 | MariaDB + MyISAM s100 on facebook-maria2:                                                                                                                                                                      | 424m 4s = 7h 4m 4s.                  | 162 GB       |
@@ -23,7 +22,6 @@ while working on the [DBT3 Automation Scripts](dbt3-automation-scripts.md).
 
 | Setup                                      | Time            | Size on Disk                      |
 | ------------------------------------------ | --------------- | --------------------------------- |
-| Setup                                      | Time            | Size on Disk                      |
 | Scale 10 on 4CPU 4GB RAM developer machine | 8 min 44 sec.   | 10.4 GB                           |
 | Scale 30 on pitbull.askmonty.org           | 20 min 28 sec.  | 32 GB (with limited RAM to 11 GB) |
 | Scale 100 on facebook-maria2               | 78 min 27.601s. | 106 GB                            |

@@ -28,13 +28,11 @@ New Option :
 
 | keyPassword |
 | ----------- |
-| keyPassword |
 
 Some options which names where confusing have been renamed (the old names still works):
 
 | Old option name                   | new option name    | change                                                  |
 | --------------------------------- | ------------------ | ------------------------------------------------------- |
-| Old option name                   | new option name    | change                                                  |
 | clientCertificateKeyStoreUrl      | keyStore           | like system property "javax.net.ssl.keyStore"           |
 | clientCertificateKeyStorePassword | keyStorePassword   | like system property "javax.net.ssl.keyStorePassword"   |
 | trustCertificateKeyStoreUrl       | trustStore         | like system property "javax.net.ssl.trustStore"         |

@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 WEEKOFYEAR(date)
 ```
 
 ## Description
 
-Returns the calendar week of the date as a number in the range from 1\
-to 53. `WEEKOFYEAR()` is a compatibility function that is equivalent to[WEEK(date,3)](week.md).
+Returns the calendar week of the date as a number in the range from 1 sqto 53. `WEEKOFYEAR()` is a compatibility function that is equivalent to[WEEK(date,3)](week.md).
 
 ## Examples
 
-```
+```sql
 SELECT WEEKOFYEAR('2008-02-20');
 +--------------------------+
 | WEEKOFYEAR('2008-02-20') |
@@ -22,7 +21,7 @@ SELECT WEEKOFYEAR('2008-02-20');
 +--------------------------+
 ```
 
-```
+```sql
 CREATE TABLE t1 (d DATETIME);
 INSERT INTO t1 VALUES
     ("2007-01-30 21:31:07"),
@@ -33,8 +32,8 @@ INSERT INTO t1 VALUES
     ("2004-10-07 11:19:34");
 ```
 
-```
-select * from t1;
+```sql
+SELECT * FROM t1;
 +---------------------+
 | d                   |
 +---------------------+
@@ -47,7 +46,7 @@ select * from t1;
 +---------------------+
 ```
 
-```
+```sql
 SELECT d, WEEKOFYEAR(d), WEEK(d,3) from t1;
 +---------------------+---------------+-----------+
 | d                   | WEEKOFYEAR(d) | WEEK(d,3) |

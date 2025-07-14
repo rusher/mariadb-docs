@@ -28,7 +28,8 @@ layout:
 
 * The prior release in this series was MariaDB Connector/J 1.4.5, released on 24 May 2016.
 * This release (MariaDB Connector/J 1.4.6) was released on 15 Jun 2016.
-* The latest release in this series is MariaDB Connector/J 1.4.6, released on 15 Jun 2016.
+
+{% include "../.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 

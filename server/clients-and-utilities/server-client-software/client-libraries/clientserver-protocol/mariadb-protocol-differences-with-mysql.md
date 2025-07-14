@@ -9,7 +9,7 @@ MariaDB/MySQL servers can advertise feature support using capabilities. To expan
 Enhanced Capabilities
 
 * MARIADB\_CLIENT\_CACHE\_METADATA: Enables clients to cache metadata and avoid repeated network transmissions. (since [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes))
-* MARIADB\_CLIENT\_EXTENDED\_METADATA : Provides more detailed column metadata information for specific data types. (since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes))
+* MARIADB\_CLIENT\_EXTENDED\_METADATA : Provides more detailed column metadata information for specific data types. (since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes))
 * MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS: Introduces a dedicated command, [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md), for efficient batch execution of statements. (since [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes))
 * MARIADB\_CLIENT\_BULK\_UNIT\_RESULTS: Allows for individual result sets for each bulk operation. (since [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes))
 
@@ -111,7 +111,7 @@ OK_Packet with a 0xFE header:
 
 ### Extended Column Information
 
-_since_ [_MariaDB 10.5.2_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+_since_ [_MariaDB 10.5.2_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
 When the MARIADB\_CLIENT\_EXTENDED\_METADATA capability is set, [column definition packet](4-server-response-packets/result-set-packets.md#column-definition-packet) can include additional type and format information.
 

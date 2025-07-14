@@ -22,7 +22,7 @@ Examples are available in the MariaDB Server source code, at `mysql-test/suite/p
 
 ### Adding and Removing Time Periods
 
-The [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause.
+The [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause.
 
 For example:
 
@@ -183,9 +183,9 @@ The `UPDATE FOR PORTION` statement has the following limitations:
 
 ### WITHOUT OVERLAPS
 
-**MariaDB starting with** [**10.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1053-release-notes)
+**MariaDB starting with** [**10.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1053-release-notes)
 
-[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) introduced a new clause, `WITHOUT OVERLAPS`, which allows one to create an index specifying that application time periods should not overlap.\
+[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) introduced a new clause, `WITHOUT OVERLAPS`, which allows one to create an index specifying that application time periods should not overlap.\
 An index constrained by `WITHOUT OVERLAPS` is required to be either a primary key or a unique index.
 
 Take the following example, an application time period table for a booking system:

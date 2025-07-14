@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 COLUMN_JSON(dyncol_blob)
 ```
 
@@ -12,8 +12,8 @@ Returns a JSON representation of data in `dyncol_blob`. Can also be used to disp
 
 ## Example
 
-```
-select item_name, COLUMN_JSON(dynamic_cols) from assets;
+```sql
+SELECT item_name, COLUMN_JSON(dynamic_cols) FROM assets;
 +-----------------+----------------------------------------+
 | item_name       | COLUMN_JSON(dynamic_cols)              |
 +-----------------+----------------------------------------+
@@ -22,7 +22,9 @@ select item_name, COLUMN_JSON(dynamic_cols) from assets;
 +-----------------+----------------------------------------+
 ```
 
-Limitation: `COLUMN_JSON` will decode nested dynamic columns at a nesting level of not more than 10 levels deep. Dynamic columns that are nested deeper than 10 levels will be shown as BINARY string, without encoding.
+{% hint style="warning" %}
+Limitation: `COLUMN_JSON` decodes nested dynamic columns at a nesting level of not more than 10 levels deep. Dynamic columns that are nested deeper than 10 levels are shown as `BINARY` string, without encoding.
+{% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

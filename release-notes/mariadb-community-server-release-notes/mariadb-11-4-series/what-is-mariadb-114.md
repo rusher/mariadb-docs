@@ -1,6 +1,6 @@
-# Changes and Improvements in MariaDB 11.4
+# MariaDB 11.4 Changes & Improvements
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
 [MariaDB 11.4](what-is-mariadb-114.md) is a current long-term series, maintained until May 2029.
 
@@ -28,6 +28,8 @@ This list includes all features since the previous long-term release, [MariaDB 1
 #### Online Schema Change
 
 * [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) can now do most operations with `ALGORITHM=COPY, LOCK=NONE`, that is, in most cases, unless the algorithm and lock level are explicitly specified, `ALTER TABLE` will be performed using the [COPY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#algorithmcopy) algorithm while simultaneously allowing concurrent [DML statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation) on the altered table. ([MariaDB 11.2](../old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112.md))
+
+For more information, refer to, [Online Schema Change](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table/online-schema-change).
 
 #### Replication and Binary Log
 
@@ -59,7 +61,7 @@ This list includes all features since the previous long-term release, [MariaDB 1
 
 #### Data Types
 
-* It is now possible to create [partitions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
+* It is now possible to create [partitions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
 * [INET4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet4) data types can now be cast into [INET6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet6) types ([MDEV-31626](https://jira.mariadb.org/browse/MDEV-31626), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
 * This means INET4 values can be compared with INET6 values and can be inserted into INET6 columns;\
   the server can automatically convert INET4 value into INET6 as needed ([MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
@@ -68,7 +70,7 @@ This list includes all features since the previous long-term release, [MariaDB 1
 
 * New [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) option, `-j`, `--parallel=` for increased parallelism, specifies the number of dump table jobs executed in parallel (only for use with the `--tab` option). Also added to [mariadb-import](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import), with `--use-threads` as a synonym. ([MDEV-32216](https://jira.mariadb.org/browse/MDEV-32216))
 * [mariadb-backup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
-* Rename [mariadb-backup’s](broken-reference) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931), [MariaDB 11.1](../old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111.md))
+* Rename [mariadb-backup’s](broken-reference/) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931), [MariaDB 11.1](../old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111.md))
 
 #### Application-Time Periods
 
@@ -83,7 +85,7 @@ This list includes all features since the previous long-term release, [MariaDB 1
 
 #### Partitioning
 
-* [ALTER TABLE … EXCHANGE PARTITION](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) and [ALTER TABLE … CONVERT TABLE … TO](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) now support the `WITH VALIDATION` and `WITHOUT VALIDATION` clauses. If neither is specified, the default behavior is `WITH VALIDATION` ([MDEV-22164](https://jira.mariadb.org/browse/MDEV-22164))
+* [ALTER TABLE … EXCHANGE PARTITION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables/partitioning-overview#exchanging-partitions) and [ALTER TABLE … CONVERT TABLE … TO](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) now support the `WITH VALIDATION` and `WITHOUT VALIDATION` clauses. If neither is specified, the default behavior is `WITH VALIDATION` ([MDEV-22164](https://jira.mariadb.org/browse/MDEV-22164))
 
 #### Collations
 
@@ -162,7 +164,6 @@ page.
 
 | Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                             |
 | ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                             |
 | 4 Feb 2025  | [MariaDB 11.4.5](mariadb-11-4-5-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-5-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md) |
 | 1 Nov 2024  | [MariaDB 11.4.4](mariadb-11-4-4-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-4-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md) |
 | 8 Aug 2024  | [MariaDB 11.4.3](mariadb-11-4-3-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-3-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md) |

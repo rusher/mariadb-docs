@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DENSE_RANK() OVER (
   [ PARTITION BY partition_expression ]
   [ ORDER BY order_list ]
@@ -11,13 +11,13 @@ DENSE_RANK() OVER (
 
 ## Description
 
-DENSE\_RANK() is a [window function](./) that displays the number of a given row, starting at one and following the [ORDER BY](../../../sql-statements/data-manipulation/selecting-data/order-by.md) sequence of the window function, with identical values receiving the same result. Unlike the [RANK()](rank.md) function, there are no skipped values if the preceding results are identical. It is also similar to the [ROW\_NUMBER()](row_number.md) function except that in that function, identical values will receive a different row number for each result.
+`DENSE_RANK()` is a [window function](./) that displays the number of a given row, starting at one and following the [ORDER BY](../../../sql-statements/data-manipulation/selecting-data/order-by.md) sequence of the window function, with identical values receiving the same result. Unlike the [RANK()](rank.md) function, there are no skipped values if the preceding results are identical. It is also similar to the [ROW\_NUMBER()](row_number.md) function except that in that function, identical values will receive a different row number for each result.
 
 ## Examples
 
-The distinction between DENSE\_RANK(), [RANK()](rank.md) and [ROW\_NUMBER()](row_number.md):
+The distinction between `DENSE_RANK()`, [RANK()](rank.md) and [ROW\_NUMBER()](row_number.md):
 
-```
+```sql
 CREATE TABLE student(course VARCHAR(10), mark int, name varchar(10));
 
 INSERT INTO student VALUES 

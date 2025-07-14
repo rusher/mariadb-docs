@@ -10,7 +10,6 @@ It contains the following columns:
 
 | Column | Description                                                                                                       |
 | ------ | ----------------------------------------------------------------------------------------------------------------- |
-| Column | Description                                                                                                       |
 | SPACE  | Numeric tablespace. Matches the [INNODB\_SYS\_TABLES.SPACE](information-schema-innodb_sys_tables-table.md) value. |
 | PATH   | Tablespace datafile path.                                                                                         |
 

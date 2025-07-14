@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DECODE_HISTOGRAM(hist_type,histogram)
 ```
 
@@ -14,7 +14,7 @@ See [Histogram Based Statistics](../../../../ha-and-performance/optimization-and
 
 ## Examples
 
-```
+```sql
 CREATE TABLE origin (
   i INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   v INT UNSIGNED NOT NULL

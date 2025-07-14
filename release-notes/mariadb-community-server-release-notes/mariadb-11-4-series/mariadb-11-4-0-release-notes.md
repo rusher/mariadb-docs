@@ -1,8 +1,8 @@
 # MariaDB 11.4.0 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download](https://downloads.mariadb.org/mariadb/11.4.0)[Release Notes](mariadb-11-4-0-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-4-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://downloads.mariadb.org/mariadb/11.4.0/" class="button primary">Download</a> <a href="mariadb-11-4-0-release-notes.md" class="button secondary">Release Notes</a>  <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 24 December 2023
 
@@ -14,13 +14,13 @@ The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 
 
 The preview is available as a container **quay.io/mariadb-foundation/mariadb-devel:11.4**.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
 ## Partitioning
 
-* [ALTER TABLE … EXCHANGE PARTITION](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) and [ALTER TABLE … CONVERT TABLE … TO](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) now support the `WITH VALIDATION` and `WITHOUT VALIDATION` clauses. If neither is specified, the default behavior is `WITH VALIDATION` ([MDEV-22164](https://jira.mariadb.org/browse/MDEV-22164))
+* [ALTER TABLE … EXCHANGE PARTITION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables/partitioning-overview#exchanging-partitions) and [ALTER TABLE … CONVERT TABLE … TO](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) now support the `WITH VALIDATION` and `WITHOUT VALIDATION` clauses. If neither is specified, the default behavior is `WITH VALIDATION` ([MDEV-22164](https://jira.mariadb.org/browse/MDEV-22164))
 
 ## Sys Schema
 

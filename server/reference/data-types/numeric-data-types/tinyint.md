@@ -1,34 +1,26 @@
-
 # TINYINT
-
 
 ## Syntax
 
-
-```
+```sql
 TINYINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
 ## Description
 
-
 A very small [integer](int.md). The signed range is -128 to 127. The unsigned range is 0 to 255. For details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
-
 
 [INT1](int1.md), [BOOL, and BOOLEAN](boolean.md) are synonyms for `TINYINT`.
 
-
 ## Examples
 
-
-```
+```sql
 CREATE TABLE tinyints (a TINYINT,b TINYINT UNSIGNED,c TINYINT ZEROFILL);
 ```
 
-### With [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
+### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
 
-
-```
+```sql
 INSERT INTO tinyints VALUES (-10,-10,-10);
 ERROR 1264 (22003): Out of range value for column 'b' at row 1
 
@@ -60,21 +52,18 @@ SELECT * FROM tinyints;
 
 ### SIGNED and UNSIGNED
 
-
 The `TINYINT` data type may be `SIGNED` (allowing negative values) or `UNSIGNED` (not allowing negative values).
 
+Example of `TINYINT SIGNED` (the default):
 
-Example of TINYINT SIGNED (the default):
-
-
-```
+```sql
 CREATE TABLE tinyint_signed_example (
    description VARCHAR(20),
    example TINYINT SIGNED
 );
 ```
 
-```
+```sql
 INSERT INTO tinyint_signed_example VALUES
    ('Zero', 0),
    ('Forty-Two', 42),
@@ -82,17 +71,16 @@ INSERT INTO tinyint_signed_example VALUES
    ('Maximum', 127);
 ```
 
-Example of TINYINT UNSIGNED:
+Example of `TINYINT UNSIGNED`:
 
-
-```
+```sql
 CREATE TABLE tinyint_unsigned_example (
    description VARCHAR(20),
    example TINYINT UNSIGNED
 );
 ```
 
-```
+```sql
 INSERT INTO tinyint_unsigned_example VALUES
    ('Zero', 0),
    ('Forty-Two', 42),
@@ -100,16 +88,13 @@ INSERT INTO tinyint_unsigned_example VALUES
    ('Maximum', 255);
 ```
 
-### Out-of-Range
+### Out of Range
 
-
-A value is considered "out-of-range" when it is too small or too large to be stored in a data type. When `sql_mode=STRICT_TRANS_TABLES` (the default) is set, an out-of-range value generates an error. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
-
+A value is considered "out of range" when it is too small or too large to be stored in a data type. When `sql_mode=STRICT_TRANS_TABLES` (the default) is set, an out-of-range value generates an error. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
 
 An example of non-strict out-of-range behavior:
 
-
-```
+```sql
 TRUNCATE tinyint_signed_example;
 
 -- Disable strict mode or the inserts will fail
@@ -120,16 +105,16 @@ INSERT INTO tinyint_signed_example VALUES
    ('Overflow', 128);
 ```
 
-```
+```sql
 Warning (sql 1264): Out of range value for column 'example' at row 1
 Warning (sql 1264): Out of range value for column 'example' at row 2
 ```
 
-```
+```sql
 SELECT * FROM tinyint_signed_example;
 ```
 
-```
+```sql
 +-------------+---------+
 | description | example |
 +-------------+---------+
@@ -138,7 +123,7 @@ SELECT * FROM tinyint_signed_example;
 +-------------+---------+
 ```
 
-```
+```sql
 TRUNCATE tinyint_unsigned_example;
 
 -- Disable strict mode or the inserts will fail
@@ -149,16 +134,16 @@ INSERT INTO tinyint_unsigned_example VALUES
    ('Overflow', 256);
 ```
 
-```
+```sql
 Warning (sql 1264): Out of range value for column 'example' at row 1
 Warning (sql 1264): Out of range value for column 'example' at row 2
 ```
 
-```
+```sql
 SELECT * FROM tinyint_unsigned_example;
 ```
 
-```
+```sql
 +-------------+---------+
 | description | example |
 +-------------+---------+
@@ -169,14 +154,11 @@ SELECT * FROM tinyint_unsigned_example;
 
 ### TINYINT ZEROFILL
 
-
 A special type of `TINYINT UNSIGNED` is `TINYINT ZEROFILL`, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's maximum unsigned value, but the zeros are not included in an expression result or in a UNION `SELECT` column.
-
 
 Using `TINYINT ZEROFILL` works the same way as `TINYINT UNSIGNED` for most operations except a simple `SELECT`. For example, with the following test table setup:
 
-
-```
+```sql
 CREATE TABLE tinyint_zerofill_example (
    description VARCHAR(20),
    example TINYINT ZEROFILL
@@ -188,30 +170,29 @@ INSERT INTO tinyint_zerofill_example VALUES
    ('Maximum', 255);
 ```
 
-```
+```sql
 -- Turn off strict mode or the inserts will fail
 SET sql_mode=(SELECT REPLACE(@@sql_mode, 'STRICT_TRANS_TABLES', ''));
 ```
 
-```
+```sql
 INSERT INTO tinyint_zerofill_example VALUES
    ('Underflow', -1),
    ('Overflow', 256);
 ```
 
-```
+```sql
 Warning (sql 1264): Out of range value for column 'example' at row 1
 Warning (sql 1264): Out of range value for column 'example' at row 2
 ```
 
 The resulting data would look like this:
 
-
-```
+```sql
 SELECT *, example + 0 FROM tinyint_zerofill_example;
 ```
 
-```
+```sql
 +-------------+---------+-------------+
 | description | example | example + 0 |
 +-------------+---------+-------------+
@@ -226,7 +207,6 @@ SELECT *, example + 0 FROM tinyint_zerofill_example;
 
 ## See Also
 
-
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
 * [SMALLINT](smallint.md)
 * [MEDIUMINT](mediumint.md)
@@ -234,8 +214,6 @@ SELECT *, example + 0 FROM tinyint_zerofill_example;
 * [BIGINT](bigint.md)
 * [BOOLEAN](boolean.md)
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

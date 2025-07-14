@@ -1,8 +1,8 @@
 # MariaDB 11.4.3 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is: [**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/) [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download 11.4.3](https://downloads.mariadb.org/mariadb/11.4.3/) [Release Notes](mariadb-11-4-3-release-notes.md) [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md) [Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://downloads.mariadb.org/mariadb/11.4.3/" class="button primary">Download</a> <a href="mariadb-11-4-3-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 8 Aug 2024
 
@@ -10,7 +10,7 @@ The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is: [**MariaDB
 
 [MariaDB 11.4.3](mariadb-11-4-3-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -85,7 +85,7 @@ Thanks, and enjoy MariaDB!
 ### Galera
 
 * [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.19
-  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
+  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 * `galera_gtid_2_cluster`: Assertion \`\`thd->wsrep\_next\_trx\_id() != (0x7fffffffffffffffLL \* 2ULL + 1)'\` ([MDEV-32633](https://jira.mariadb.org/browse/MDEV-32633))
 * table `gtid_slave_pos` entries never been deleted with `wsrep_gtid_mode = 0` ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))
 * Deadlock found when trying to get lock during applying ([MDEV-31658](https://jira.mariadb.org/browse/MDEV-31658))

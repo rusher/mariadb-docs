@@ -1,8 +1,8 @@
 # MariaDB 11.8.0 Release Notes
 
-The most recent release of [MariaDB 11.8](what-is-mariadb-118.md) is: [**MariaDB 11.8.1**](mariadb-11-8-1-release-notes.md) RC [Download Alternate](https://mariadb.com/downloads)[ _download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.1)
+{% include "../../.gitbook/includes/latest-11-8.md" %}
 
-[Download](https://downloads.mariadb.org/mariadb/11.8.0) [Release Notes](mariadb-11-8-0-release-notes.md) [Overview of 11.8](what-is-mariadb-118.md)
+<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-11-8-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 **Release date:** 18 Dec 2024
 

@@ -13,7 +13,6 @@ The maximum number of conditions stored in the performance schema is determined 
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | NAME | Client user name for the connection, or NULL if an internal thread. |
 | OBJECT_INSTANCE_BEGIN | Address in memory of the instrumented condition. |
 

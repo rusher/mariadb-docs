@@ -2,23 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 DATE_SUB(date,INTERVAL expr unit)
 ```
 
 ## Description
 
-Performs date arithmetic. The _date_ argument specifies the\
-starting date or datetime value. _expr_ is an expression specifying the\
-interval value to be subtracted from the starting date. _expr_ is a\
-string; it may start with a "`-`" for negative intervals. _unit_ is a\
-keyword indicating the units in which the expression should be interpreted. See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
+Performs date arithmetic. The _date_ argument specifies the starting date or datetime value. _expr_ is an expression specifying the interval value to be subtracted from the starting date. _expr_ is a string; it may start with a "`-`" for negative intervals. _unit_ is a keyword indicating the units in which the expression should be interpreted. See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
 
 See also [DATE\_ADD()](date_add.md).
 
 ## Examples
 
-```
+```sql
 SELECT DATE_SUB('1998-01-02', INTERVAL 31 DAY);
 +-----------------------------------------+
 | DATE_SUB('1998-01-02', INTERVAL 31 DAY) |
@@ -27,7 +23,7 @@ SELECT DATE_SUB('1998-01-02', INTERVAL 31 DAY);
 +-----------------------------------------+
 ```
 
-```
+```sql
 SELECT DATE_SUB('2005-01-01 00:00:00', INTERVAL '1 1:1:1' DAY_SECOND);
 +----------------------------------------------------------------+
 | DATE_SUB('2005-01-01 00:00:00', INTERVAL '1 1:1:1' DAY_SECOND) |

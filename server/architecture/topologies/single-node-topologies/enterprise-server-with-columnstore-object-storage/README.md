@@ -22,7 +22,7 @@ Please read and understand this procedure before executing.
 
 ## Support
 
-Customers can obtain support by [submitting a support case](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage/broken-reference/README.md).
+Customers can obtain support by [submitting a support case](https://mariadb.com/support/).
 
 ## Components
 
@@ -120,7 +120,7 @@ For the preferred S3-compatible object storage providers that provide cloud and 
 
 The use of non-cloud and non-hardware providers is at your own risk.
 
-If you have any questions about using specific S3-compatible object storage with MariaDB Enterprise ColumnStore, [contact us](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage/broken-reference/README.md).
+If you have any questions about using specific S3-compatible object storage with MariaDB Enterprise ColumnStore, [contact us](https://mariadb.com/contact).
 
 ### Preferred Object Storage Providers: Cloud
 

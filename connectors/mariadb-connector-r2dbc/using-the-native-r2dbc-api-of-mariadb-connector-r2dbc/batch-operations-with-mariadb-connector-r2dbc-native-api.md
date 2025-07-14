@@ -10,7 +10,6 @@ With R2DBC, batch operations are performed using the following class:
 
 | Class              | Description                |
 | ------------------ | -------------------------- |
-| Class              | Description                |
 | io.r2dbc.spi.Batch | Executes batch operations. |
 
 ## Code Example: Batching DML

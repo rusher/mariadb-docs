@@ -4,17 +4,6 @@ description: >-
   comprehensive documentation covers installation, deployment, usage, security,
   and advanced topics to help you master MariaDB.
 icon: server
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # MariaDB Server Documentation

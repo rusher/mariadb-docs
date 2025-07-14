@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHA2(str,hash_len)
 ```
 
@@ -12,13 +12,15 @@ Given a string _`str`_, calculates an SHA-2 checksum, which is considered more c
 
 The return value is a nonbinary string in the connection [character set and collation](../../../data-types/string-data-types/character-sets/), determined by the values of the [character\_set\_connection](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection) and [collation\_connection](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variables.
 
-NULL is returned if the hash length is not valid, or the string `str` is NULL.
+`NULL` is returned if the hash length is not valid, or the string `str` is `NULL`.
 
-SHA2 will only work if MariaDB was has been configured with [TLS support](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md).
+{% hint style="warning" %}
+`SHA2` only works if MariaDB is configured with [TLS support](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md).
+{% endhint %}
 
 ## Examples
 
-```
+```sql
 SELECT SHA2('Maria',224);
 +----------------------------------------------------------+
 | SHA2('Maria',224)                                        |

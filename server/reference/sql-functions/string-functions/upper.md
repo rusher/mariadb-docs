@@ -2,20 +2,18 @@
 
 ## Syntax
 
-```
+```sql
 UPPER(str)
 UCASE(str)
 ```
 
 ## Description
 
-Returns the string `str` with all characters changed to uppercase\
-according to the current character set mapping. The default is latin1\
-(cp1252 West European).
+Returns the string `str` with all characters changed to uppercase according to the current character set mapping. The default is latin1 (cp1252 West European).
 
 `UCASE` is a synonym.
 
-```
+```sql
 SELECT UPPER(surname), givenname FROM users ORDER BY surname;
 +----------------+------------+
 | UPPER(surname) | givenname  |
@@ -29,8 +27,6 @@ SELECT UPPER(surname), givenname FROM users ORDER BY surname;
 
 `UPPER()` is ineffective when applied to binary strings ([BINARY](../../data-types/string-data-types/binary.md), [VARBINARY](../../data-types/string-data-types/varbinary.md), [BLOB](../../data-types/string-data-types/blob.md)). The description of [LOWER](lower.md)() shows how to perform lettercase conversion of binary strings.
 
-Prior to [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), the query optimizer did not handle queries of the format `UCASE(varchar_col)=...`. An [optimizer\_switch](../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) option, `sargable_casefold=ON`, was added in [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes) to handle this case. ([MDEV-31496](https://jira.mariadb.org/browse/MDEV-31496))
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

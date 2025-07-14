@@ -1,24 +1,22 @@
-# long-character-varying
-
-## LONG CHARACTER VARYING
+# LONG CHARACTER VARYING
 
 ## Overview
 
-See [MEDIUMTEXT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/data-types-mediumtext/README.md).
+See [MEDIUMTEXT](mediumtext.md).
 
 ## EXAMPLES
 
-```
+```sql
 CREATE TABLE long_character_varying_example (
   example LONG CHARACTER VARYING
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE long_character_varying_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: long_character_varying_example
 Create Table: CREATE TABLE `long_character_varying_example` (

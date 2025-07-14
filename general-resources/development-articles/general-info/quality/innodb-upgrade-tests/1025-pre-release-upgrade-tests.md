@@ -29,7 +29,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 4 | 10.0.29 (InnoDB plugin) | - | - | => | 10.2.5 (inbuilt) | - | - | - | OK |  |
 | 2 | normal | 4 | 10.0.29 (InnoDB plugin) | - | - | => | 10.2.5 (inbuilt) | on | - | - | OK |  |
 | 3 | normal | 8 | 10.0.29 (InnoDB plugin) | - | - | => | 10.2.5 (inbuilt) | - | - | - | OK |  |
@@ -72,7 +71,6 @@ One test failed: [MDEV-12388](https://jira.mariadb.org/browse/MDEV-12388)
 
 | # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 64 | 10.1.20 (InnoDB plugin) | on | - | => | 10.2.5 (inbuilt) | on | - | - | OK |  |
 | 2 | normal | 64 | 10.1.20 (InnoDB plugin) | - | - | => | 10.2.5 (inbuilt) | - | - | - | OK |  |
 | 3 | normal | 64 | 10.1.20 (InnoDB plugin) | on | - | => | 10.2.5 (inbuilt) | - | - | - | OK |  |
@@ -263,7 +261,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 16 | 5.6.35 (inbuilt) | - | - | => | 10.2.5 (inbuilt) | - | - | - | OK |  |
 | 2 | normal | 16 | 5.6.35 (inbuilt) | - | - | => | 10.2.5 (inbuilt) | on | - | - | OK |  |
 | 3 | normal | 4 | 5.6.35 (inbuilt) | - | - | => | 10.2.5 (inbuilt) | on | - | - | OK |  |
@@ -300,7 +297,6 @@ All tests passed
 
 | # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 8 | 5.7.17 (inbuilt) | - | - | => | 10.2.5 (inbuilt) | - | - | - | OK |  |
 | 2 | normal | 8 | 5.7.17 (inbuilt) | - | - | => | 10.2.5 (inbuilt) | on | - | - | OK |  |
 | 3 | normal | 64 | 5.7.17 (inbuilt) | - | - | => | 10.2.5 (inbuilt) | - | - | - | OK |  |

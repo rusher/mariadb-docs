@@ -102,7 +102,7 @@ in that revision.
   * Remove test that where only applicable for MySQL
 * [Revision #2d85714448](https://github.com/MariaDB/server/commit/2d85714448)\
   2019-08-30 16:07:26 +0300
-  * Updated BUILD/SETUP from [MariaDB 10.5](../../mariadb-10-5-series/what-is-mariadb-105.md)
+  * Updated BUILD/SETUP from [MariaDB 10.5](../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md)
 * [Revision #d5a11a1f02](https://github.com/MariaDB/server/commit/d5a11a1f02)\
   2019-09-01 13:27:32 +0200
   * C/C

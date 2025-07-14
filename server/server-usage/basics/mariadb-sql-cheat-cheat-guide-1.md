@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
 
-This page lists the most important SQL statements and contains links to their documentation pages. If you need a basic tutorial on how to use the MariaDB database server and how to execute simple commands, see [A MariaDB Primer](https://github.com/mariadb-corporation/docs-server/blob/test/en/a-mariadb-primer/README.md).
+This page lists the most important SQL statements and contains links to their documentation pages. If you need a basic tutorial on how to use the MariaDB database server and how to execute simple commands, see [A MariaDB Primer](mariadb-usage-guide-1.md).
 
 Also see [Common MariaDB Queries](../../mariadb-quickstart-guides/mariadb-advanced-sql-guide.md) for examples of commonly-used queries.
 
@@ -12,7 +12,7 @@ Also see [Common MariaDB Queries](../../mariadb-quickstart-guides/mariadb-advanc
 * [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md) is used to completely destroy an existing database.
 * [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) is used to select a default database.
 * [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) is used to create a new table, which is where your data is actually stored.
-* [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) is used to modify an existing table's definition.
+* [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) is used to modify an existing table's definition.
 * [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) is used to completely destroy an existing table.
 * [DESCRIBE](../../reference/sql-statements/administrative-sql-statements/describe.md) shows the structure of a table.
 

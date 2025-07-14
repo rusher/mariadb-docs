@@ -1,8 +1,8 @@
 # MariaDB 11.4.5 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-4-5-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+<a href="https://downloads.mariadb.org/mariadb/11.4.5/" class="button primary">Download</a> <a href="mariadb-11-4-5-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 4 Feb 2025
 
@@ -75,7 +75,7 @@ Thanks, and enjoy MariaDB!
 ### [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/)
 
 * [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.21
-  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
+  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 * Fix streaming replication transaction crash with innodb\_snapshot\_isolation ([MDEV-35281](https://jira.mariadb.org/browse/MDEV-35281))
 * Fix sporadic failure of async replication on Galera async replica nodes with parallel replication enabled ([MDEV-35465](https://jira.mariadb.org/browse/MDEV-35465))
 * Fix possible failure of wsrep\_sst\_rsync SST script if user specified aria\_log\_dir\_path different from default data directory ([MDEV-35387](https://jira.mariadb.org/browse/MDEV-35387))

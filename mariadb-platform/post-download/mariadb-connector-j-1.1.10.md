@@ -1,16 +1,5 @@
 ---
 noIndex: true
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # MariaDB Connector/J 1.1.10
@@ -28,7 +17,8 @@ layout:
 
 * The prior release in this series was MariaDB Connector/J 1.1.9, released on 18 Jun 2015.
 * This release (MariaDB Connector/J 1.1.10) was released on 9 Nov 2016.
-* The latest release in this series is MariaDB Connector/J 1.1.10, released on 9 Nov 2016.
+
+{% include "../.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 

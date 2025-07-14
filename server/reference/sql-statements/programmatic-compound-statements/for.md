@@ -20,7 +20,7 @@ DO statement_list
 END FOR [ end_label ]
 ```
 
-Explicit cursor `FOR` loop ([Oracle mode](broken-reference)):
+Explicit cursor `FOR` loop ([Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)):
 
 ```sql
 [begin_label:]
@@ -106,7 +106,7 @@ SELECT * FROM t1;
 +------+
 ```
 
-Explicit cursor in [Oracle mode](broken-reference):
+Explicit cursor in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle):
 
 ```sql
 SET sql_mode=ORACLE;

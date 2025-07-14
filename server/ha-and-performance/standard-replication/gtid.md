@@ -221,7 +221,7 @@ such as InnoDB. When MariaDB is first installed (or upgraded to 10.0.2+) the\
 table is created using the default storage engine - which itself defaults to\
 InnoDB. If there is a need to change the storage engine for this table (to\
 make it transactional on a system configured with [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) as the default\
-storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md):
+storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/):
 
 `ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
 
@@ -660,15 +660,15 @@ There are two status variables that can be used to monitor the effectiveness of 
 
 ## System Variables
 
-#### [binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)
+#### [binlog\_gtid\_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)
 
 Enables/disables [binlog indexing](gtid.md#binlog-indexing).
 
-#### [binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)
+#### [binlog\_gtid\_index\_page\_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)
 
 Adjusts the size of the pages
 
-#### [binlog_gtid_index_span_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)
+#### [binlog\_gtid\_index\_span\_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)
 
 Adjusts the sparseness of the index
 

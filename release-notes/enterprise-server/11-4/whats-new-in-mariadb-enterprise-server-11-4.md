@@ -19,8 +19,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
 
 * New JSON function `JSON_SCHEMA_VALID` to validate a JSON document against a JSON schema, as documented by the JSON Schema Draft 2020. This function can also be used in a CHECK constraint to verify that only JSON documents are stored in the database which include required items and that the values are within a given range, length, etcetera.
 * New JSON functions `JSON_EQUALS()` and `JSON_NORMALIZE()` for easier comparison of two JSON documents and for normalizing JSON objects to be comparable, for example when a unique key based on JSON data is needed.
-*   New function `JSON_OVERLAPS()`, which compares JSON documents to determine if they have any key-value pairs or array elements in common.\
-
+*   New function `JSON_OVERLAPS()`, which compares JSON documents to determine if they have any key-value pairs or array elements in common.\\
 
     ```sql
     SELECT JSON_OVERLAPS('{"A": 1, "B": {"C":2}}', '{"A": 2, "B": {"C":2}}') AS is_overlap;
@@ -35,8 +34,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
     +---------------------+
     ```
 * New function `JSON_KEY_VALUE(<json_doc>,<json_path>)`, which extracts key/value pairs from a JSON object. The JSON path parameter is used to only return key/value pairs for matching JSON objects.
-  *   Example:\
-
+  *   Example:\\
 
       ```sql
       SELECT JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]');
@@ -50,8 +48,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
       +-----------------------------------------------------------------------------+
       ```
 * The function `JSON_KEY_VALUE()` can be used as an argument to `JSON_TABLE()`, which allows adding the key to a result set.\\
-*   Example:\
-
+*   Example:\\
 
     ```sql
     SELECT jt.* FROM JSON_TABLE(
@@ -71,8 +68,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
     +------+------+------+
     ```
 * New function `JSON_ARRAY_INTERSECT(<array1>, <array2>)`, used to find the intersection between two JSON arrays.
-  *   Example:\
-
+  *   Example:\\
 
       ```sql
       SET @array1= '[1,2,3]';
@@ -80,8 +76,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
       SELECT json_array_intersect(@array1, @array2) AS result;
       ```
 
-      \
-
+      \\
 
       ```
       +--------+
@@ -91,8 +86,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
       +--------+
       ```
 
-      \
-
+      \\
 
       ```sql
       SET @json1= '[[1,2,3],[4,5,6],[1,1,1]]';
@@ -100,8 +94,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
       SELECT json_array_intersect(@json1, @json2) AS result;
       ```
 
-      \
-
+      \\
 
       ```
       +------------------------+
@@ -111,16 +104,14 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
       +------------------------+
       ```
 * The new JSON function `JSON_OBJECT_TO_ARRAY(<json_doc>)` is used to convert all JSON objects found in a JSON document to JSON arrays where each item in the outer array represents a single key-value pair from the object.
-*   Example:\
-
+*   Example:\\
 
     ```sql
     SET @json1= '{ "a" : [1,2,3] , "b": {"key1": "val1", "key2": {"key3": "val3"}} }';
     SELECT JSON_OBJECT_TO_ARRAY(@json1) AS result;
     ```
 
-    \
-
+    \\
 
     ```
     +-----------------------------------------------------------------------+
@@ -381,7 +372,7 @@ MariaDB Enterprise Server now supports descending indexes. Composite indexes can
 ### Schema and Partitioning Management / DDL
 
 {% hint style="success" %}
-* New server internal Online Schema Change (OSC) which makes all schema changes (`ALTER TABLE` commands) non-blocking.
+* New server internal [Online Schema Change (OSC)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table/online-schema-change) which makes all schema changes (`ALTER TABLE` commands) non-blocking.
   * For instant `ALTER TABLE` operations (e.g., where `ALGORITHM=INSTANT` is used) OSC is not needed. However, for all other `ALTER` operations OSC provides significant benefits in reducing the locking time to a bare minimum.
   * The OSC feature works by creating a change buffer for storing changes during the copying of data from the old format to the new one. While data is copied from the old table structure to the new one all changes are stored in the change buffer and the table is fully accessible. Once the copying process is complete the change buffer is applied to the new data structure only requiring a very short locking period.
   * Having an internal OSC in the server eliminates the need for using external command line tools in order to reduce table locks. These external tools often need to create complicated structures in the database (like triggers and stored procedures) and certain race conditions can lead to the operations never finishing.
@@ -635,7 +626,7 @@ DATE(datetime_column) = const
 ## MariaDB Replication
 
 * _Incompatibility change:_ Replication is now using Global Transaction IDs (GTID) by default to make replicas crash safe
-  * The default of `CHANGE MASTER TO` for `master_use_gtid` changes from `no` to `slave_pos`&#x20;
+  * The default of `CHANGE MASTER TO` for `master_use_gtid` changes from `no` to `slave_pos`
   * A fresh slave start, a `RESET SLAVE`, or a `CHANGE MASTER TO` without the defining `master_use_gtid` is replicating in the GTID based mode using `gtid_slave_pos` as the position to start downloading transactions from the primary
 * Global Limitation of Space Used by Binary Logs
   * The new system variable `max_binlog_total_size` (alias `binlog_space_limit`) enables binary log purging when the total size of all binary logs exceeds the specified threshold. The default for `max_binlog_total_size` is `0`, meaning that there is no limit. The system variable can be changed without restarting the server.

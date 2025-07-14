@@ -24,7 +24,7 @@ Since MariaDB's user and group mapping is performed by an external PAM module, M
 
 ### Installing the pam\_user\_map PAM Module
 
-The `pam_user_map` PAM module gets installed as part of all our MariaDB server packages since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and was added since 10.2.31, 10.3.22, and 10.4.12 in previous MariaDB major releases where it was not present from the beginning.
+The `pam_user_map` PAM module gets installed as part of all our MariaDB server packages since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), and was added since 10.2.31, 10.3.22, and 10.4.12 in previous MariaDB major releases where it was not present from the beginning.
 
 Some Linux distributions have not picked up this change in their own packages yet, so when e.g. installing MariaDB server from stock Ubuntu packages on Ubuntu 20.04LTS you still won't have the `pam_user_map` module installed even though the MariaDB server installed is more recent than [MariaDB 10.3.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10322-release-notes).
 
@@ -36,13 +36,13 @@ When using such an installation, and not being able to switch to our own MariaDB
 
 Before the module can be compiled from source, you may need to install some dependencies.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), you need to install `gcc`, `pam-devel` and `MariaDB-devel`. For example:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), you need to install `gcc`, `pam-devel` and `MariaDB-devel`:
 
 ```
 sudo yum install gcc pam-devel MariaDB-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md), you need to install `gcc`, `libpam0g-dev`. For example:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md), you need to install `gcc`, `libpam0g-dev`:
 
 ```
 sudo apt-get install gcc libpam0g-dev libmariadb-dev
@@ -94,7 +94,7 @@ top:  accounting
 
 ### Configuring PAM
 
-With user and group mapping, configuring PAM is done similar to how it is [normally done with the pam authentication plugin](authentication-plugin-pam.md#configuring-pam). However, when configuring the PAM service, you will have to add an `auth` line for the `pam_user_map` PAM module to the service's PAM configuration file. For example:
+With user and group mapping, configuring PAM is done similar to how it is [normally done with the pam authentication plugin](authentication-plugin-pam.md#configuring-pam). However, when configuring the PAM service, you will have to add an `auth` line for the `pam_user_map` PAM module to the service's PAM configuration file:
 
 ```
 auth required pam_unix.so audit
@@ -133,7 +133,7 @@ Also note that you might not be able to create the `''@'%'` anonymous account by
 
 ### Verifying that Mapping is Occurring
 
-In case any user mapping is performed, the original user name is returned by the SQL function [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), while the authenticated user name is returned by the SQL function [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md). The latter actually defines what privileges are available to a connected user.
+In case any user mapping is performed, the original user name is returned by the SQL function [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), while the authenticated user name is returned by the SQL function [CURRENT\_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md). The latter actually defines what privileges are available to a connected user.
 
 For example, if we have the following configured:
 
@@ -163,11 +163,11 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
+We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT\_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
 
 ### Logging
 
-By default, the `pam_user_map` PAM module does not perform any logging. However, if you want to enable debug logging, then you can add the `debug` module argument to the service's PAM configuration file. For example:
+By default, the `pam_user_map` PAM module does not perform any logging. However, if you want to enable debug logging, then you can add the `debug` module argument to the service's PAM configuration file:
 
 ```
 auth required pam_unix.so audit
@@ -236,7 +236,7 @@ In the above log snippet, notice that both the `pam_unix` and the `pam_sss` PAM 
 
 This can be fixed by creating a PAM user with the same name as the mapped MariaDB user account, which is `dba` in this case.
 
-You may also be able to work around this problem by essentially disabling PAM's account verification for the service with the [pam_permit](https://linux.die.net/man/8/pam_permit) PAM module. For example, in the above case, that would be:
+You may also be able to work around this problem by essentially disabling PAM's account verification for the service with the [pam\_permit](https://linux.die.net/man/8/pam_permit) PAM module. For example, in the above case, that would be:
 
 ```
 auth required pam_sss.so

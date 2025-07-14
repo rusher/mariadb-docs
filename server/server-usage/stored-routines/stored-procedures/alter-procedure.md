@@ -17,7 +17,7 @@ This statement can be used to change the characteristics of a [stored\
 procedure](./). More than one change may be specified in an `ALTER PROCEDURE`\
 statement. However, you cannot change the parameters or body of a\
 stored procedure using this statement. To make such changes, you must\
-drop and re-create the procedure using either [CREATE OR REPLACE PROCEDURE](create-procedure.md) (since [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)) or [DROP PROCEDURE](drop-procedure.md) and [CREATE PROCEDURE](create-procedure.md) ([MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/stored-routines/stored-procedures/broken-reference/README.md) and before).
+drop and re-create the procedure using either [CREATE OR REPLACE PROCEDURE](create-procedure.md) (since [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)) or [DROP PROCEDURE](drop-procedure.md) and [CREATE PROCEDURE](create-procedure.md) ([MariaDB 10.1.2](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/mariadb-installation-version-10121-via-rpms-on-centos-7.md) and before).
 
 You must have the `ALTER ROUTINE` privilege for the procedure. By default, that privilege is granted automatically to the procedure creator. See [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 

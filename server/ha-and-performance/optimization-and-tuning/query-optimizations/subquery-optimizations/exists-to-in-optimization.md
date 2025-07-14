@@ -33,9 +33,7 @@ outer_col IN (SELECT inner_col FROM ... WHERE inner_where)
 
 That is, converting trivially-correlated `EXISTS` into uncorrelated `IN` gives query optimizer an option to use Materialization strategy for the subquery.
 
-Currently, EXISTS->IN conversion works only for subqueries that are at top\
-level of the WHERE clause, or are under NOT operation which is directly at top\
-level of the WHERE clause.
+Currently, EXISTS->IN conversion works only for subqueries that are at top level of the WHERE clause, or are under NOT operation which is directly at top level of the WHERE clause.
 
 ## Semi-join EXISTS subqueries
 
@@ -49,17 +47,11 @@ then it satisfies the main property of [semi-join subqueries](semi-join-subquery
 
 _with semi-join subquery, we're only interested in records of outer\_tables that have matches in the subquery_
 
-Semi-join optimizer offers a rich set of execution strategies for both\
-correlated and uncorrelated subqueries. The set includes FirstMatch strategy\
-which is an equivalent of how EXISTS suqueries are executed, so we do not lose\
-any opportunities when converting an EXISTS subquery into a semi-join.
+Semi-join optimizer offers a rich set of execution strategies for both correlated and uncorrelated subqueries. The set includes FirstMatch strategy which is an equivalent of how EXISTS suqueries are executed, so we do not lose any opportunities when converting an EXISTS subquery into a semi-join.
 
-In theory, it makes sense to convert all kinds of EXISTS subqueries: convert both\
-correlated and uncorrelated ones, convert irrespectively of whether the\
-subquery has inner=outer equality.
+In theory, it makes sense to convert all kinds of EXISTS subqueries: convert both correlated and uncorrelated ones, convert irrespectively of whether the subquery has inner=outer equality.
 
-In practice, the subquery will be converted only if it has inner=outer equality.\
-Both correlated and uncorrelated subqueries are converted.
+In practice, the subquery will be converted only if it has inner=outer equality. Both correlated and uncorrelated subqueries are converted.
 
 ## Handling of NULL values
 

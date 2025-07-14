@@ -66,7 +66,7 @@ From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 #### `default_file`
 
-* Description: Configuration file used when connecting to remote servers. When the [default_group](#default_group) table variable is set, this variable defaults to the values of the `--defaults-extra-file` or `--defaults-file` options. When the [default_group](#default_group) table variable is not set, it defaults to `none`.
+* Description: Configuration file used when connecting to remote servers. When the [default\_group](spider-table-parameters.md#default_group) table variable is set, this variable defaults to the values of the `--defaults-extra-file` or `--defaults-file` options. When the [default\_group](spider-table-parameters.md#default_group) table variable is not set, it defaults to `none`.
 * Default Table Value: `none`
 * DSN Parameter Name: `dff`
 * Table Option Name: `DEFAULT_FILE`
@@ -111,7 +111,7 @@ From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 #### `idx000`
 
-* Description: When using an index on Spider tables for searching, Spider uses this hint to search the remote table. The remote table index is related to the Spider table index by this hint. The number represented by `000` is the index ID, which is the number of the index shown by the [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) statement. `000` is the Primary Key. For instance, `idx000 "force index(PRIMARY)"` (in abbreviated format `idx000 "f PRIMARY"`).
+* Description: When using an index on Spider tables for searching, Spider uses this hint to search the remote table. The remote table index is related to the Spider table index by this hint. The number represented by `000` is the index ID, which is the number of the index shown by the [SHOW CREATE TABLE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) statement. `000` is the Primary Key. For instance, `idx000 "force index(PRIMARY)"` (in abbreviated format `idx000 "f PRIMARY"`).
   * `f` force index
   * `u` use index
   * `ig` ignore index
@@ -161,7 +161,7 @@ From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 #### `monitoring_limit`
 
-* Description: Limits the number of records in the monitoring table. This is only effective when Spider monitors the state of a table, which occurs when the [monitoring_kind](#monitoring_kind) table variable is set to a value greater than `1`.
+* Description: Limits the number of records in the monitoring table. This is only effective when Spider monitors the state of a table, which occurs when the [monitoring\_kind](spider-table-parameters.md#monitoring_kind) table variable is set to a value greater than `1`.
 * Default Table Value: `1`
 * Range: `0` upwards
 * DSN Parameter Name: `mlt`
@@ -218,10 +218,10 @@ From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 #### `query_cache`
 
-* Description: Uses the option for the [Query Cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) when issuing [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statements to the remote server.
+* Description: Uses the option for the [Query Cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) when issuing [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements to the remote server.
   * `0` No option used.
-  * `1` Uses the [SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache) option.
-  * `2` Uses the [SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache) option.
+  * `1` Uses the [SQL\_CACHE](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md#sql_no_cache-and-sql_cache) option.
+  * `2` Uses the [SQL\_NO\_CACHE](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md#sql_no_cache-and-sql_cache) option.
 * Default Table Value: `0`
 * DSN Parameter Name: `qch`
 * Table Option Name: `QUERY_CACHE`
@@ -229,11 +229,11 @@ From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 #### `query_cache_sync`
 
-* Description: A two-bit bitmap. Whether to pass the option for the [Query Cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) (if any) when issuing [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statements to the remote server.
+* Description: A two-bit bitmap. Whether to pass the option for the [Query Cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) (if any) when issuing [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements to the remote server.
   * `0` No option passed.
-  * `1` Passes the [SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache) option, if specified in the query to the spider table.
-  * `2` Passes the [SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache) option, if specified in the query to the spider table.
-  * `3` Passes both the [SQL_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache) option and the [SQL_NO_CACHE](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_cache-sql_no_cache) option, if specified in the query to the spider table.
+  * `1` Passes the [SQL\_CACHE](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md#sql_no_cache-and-sql_cache) option, if specified in the query to the spider table.
+  * `2` Passes the [SQL\_NO\_CACHE](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) option, if specified in the query to the spider table.
+  * `3` Passes both the [SQL\_CACHE](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md#sql_no_cache-and-sql_cache) option and the [SQL\_NO\_CACHE](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) option, if specified in the query to the spider table.
 * Default Table Value: `3`
 * Table Option Name: `QUERY_CACHE_SYNC`
 * Table Option Introduced: [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)
@@ -254,7 +254,7 @@ From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 #### `server`
 
-* Description: Server name. Used when generating connection information with [CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md) statements.
+* Description: Server name. Used when generating connection information with [CREATE SERVER](../../../reference/sql-statements/data-definition/create/create-server.md) statements.
 * Default Table Value: `none`
 * DSN Parameter Name: `srv`
 * Table Option Name: `REMOTE_SERVER`

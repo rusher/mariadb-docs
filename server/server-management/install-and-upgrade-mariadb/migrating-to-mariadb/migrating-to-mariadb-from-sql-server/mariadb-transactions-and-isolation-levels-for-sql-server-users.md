@@ -19,7 +19,7 @@ In MariaDB, transactions are optionally implemented by [storage engines](../../.
 
 Most of the information in this page refers to generic MariaDB server behaviors or InnoDB. For [MyRocks](../../../../server-usage/storage-engines/myrocks/) and [TokuDB](../../../../server-usage/storage-engines/tokudb/) please check the proper KnowledgeBase sections.
 
-Writing into a non-transactional table in a transaction can still be useful. The reason is that a [metadata lock](../../../../reference/sql-statements/transactions/metadata-locking.md) is acquired on the table for the duration of the transaction, so that [ALTER TABLEs](../../../../reference/sql-statements/data-definition/alter/alter-table.md) are queued.
+Writing into a non-transactional table in a transaction can still be useful. The reason is that a [metadata lock](../../../../reference/sql-statements/transactions/metadata-locking.md) is acquired on the table for the duration of the transaction, so that [ALTER TABLEs](../../../../reference/sql-statements/data-definition/alter/alter-table/) are queued.
 
 It is possible to write into transactional and non-transactional tables within a single transaction. It is important to remember that non-transactional engines will have the following limitations:
 
@@ -271,7 +271,7 @@ The first classification is the following:
 Lock modes are the following:
 
 * Exclusive Locks (X) are generally acquired on writes, e.g. immediately before deleting a row. Only one exclusive lock can be acquired on a resource simultaneously.
-* Shared Locks (S) can be acquired acquired on reads. Multiple shared locks can be acquired at the same time (because the rows are not supposed to change when shared-locked) but are incompatible with exclusive locks.
+* Shared Locks (S) can be acquired on reads. Multiple shared locks can be acquired at the same time (because the rows are not supposed to change when shared-locked) but are incompatible with exclusive locks.
 * Intention locks (IS, XS) are acquired when it is not possible to acquire an exclusive lock or a shared lock. When a lock on a row or gap is released, the oldest intention lock on that resource (if any) is converted to an X or S lock.
 
 For more information see [InnoDB Lock Modes](../../../../server-usage/storage-engines/innodb/innodb-lock-modes.md).

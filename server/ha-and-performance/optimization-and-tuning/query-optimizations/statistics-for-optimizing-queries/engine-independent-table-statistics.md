@@ -23,7 +23,6 @@ Use or update of data from these tables is controlled by [use\_stat\_tables](../
 
 | Value                         | Meaning                                                                                                                                                                         |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value                         | Meaning                                                                                                                                                                         |
 | 'never'                       | The optimizer doesn't use data from statistics tables.                                                                                                                          |
 | 'complementary'               | The optimizer uses data from statistics tables if the same kind of data is not provided by the storage engine.                                                                  |
 | 'preferably'                  | Prefer the data from statistics tables, if it's not available there, use the data from the storage engine.                                                                      |

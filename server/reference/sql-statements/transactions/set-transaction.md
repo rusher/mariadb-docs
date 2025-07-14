@@ -26,11 +26,11 @@ This statement sets the transaction isolation level or the transaction access mo
 * With the `SESSION` keyword, the statement sets the default transaction level for all subsequent transactions performed within the current session.
 * Without any `SESSION` or `GLOBAL` keyword, the statement sets the isolation level for only the next (not started) transaction performed within the current session. After that it reverts to using the session value.
 
-A change to the global default isolation level requires the [SUPER](../account-management-sql-commands/grant.md) privilege. Any session is free to change its session isolation level (even in the middle of a transaction), or the isolation level for its next transaction.
+A change to the global default isolation level requires the [SUPER](../account-management-sql-statements/grant.md#super) privilege. Any session is free to change its session isolation level (even in the middle of a transaction), or the isolation level for its next transaction.
 
 ### Isolation Level
 
-To set the global default isolation level at server startup, use the[--transaction-isolation=level](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_isolation) option on the command line or in an option file. Values of level for this option use dashes rather than spaces, so the allowable values are [READ\_UNCOMMITTED](set-transaction.md#read-uncommitted),[READ-COMMITTED](set-transaction.md#read-committed), [REPEATABLE-READ](set-transaction.md#repeatable-read), or[SERIALIZABLE](set-transaction.md#serializable). For example, to set the default isolation level to `REPEATABLE READ`, use these lines in the `[mariadb]` section of an option file:
+To set the global default isolation level at server startup, use the[--transaction-isolation=level](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_isolation) option on the command line or in an option file. Values of level for this option use dashes rather than spaces, so the allowable values are [READ\_UNCOMMITTED](set-transaction.md#read-uncommitted),[READ-COMMITTED](set-transaction.md#read-committed), [REPEATABLE-READ](set-transaction.md#repeatable-read), or [SERIALIZABLE](set-transaction.md#serializable). For example, to set the default isolation level to `REPEATABLE READ`, use these lines in the `[mariadb]` section of an option file:
 
 ```ini
 [mariadb]

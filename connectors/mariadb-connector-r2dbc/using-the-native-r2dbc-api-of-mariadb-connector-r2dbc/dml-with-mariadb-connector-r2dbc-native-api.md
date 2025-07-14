@@ -10,7 +10,6 @@ With R2DBC, DML operations are performed with the following classes:
 
 | Class                    | Description                                   |
 | ------------------------ | --------------------------------------------- |
-| Class                    | Description                                   |
 | io.r2dbc.spi.Statement   | Creates a statement to execute on the server. |
 | io.r2dbc.spi.Result      | Contains the result-set from the server.      |
 | io.r2dbc.spi.Row         | Contains a single row.                        |
@@ -101,7 +100,7 @@ Alternatively, the bind(String name, Object value) method could be used to bind 
 
 The `execute()` method executes the statement, and returns the results as a `Publisher<? extends Result>` instance.
 
-Result instances must be fully consumed to ensure full execution of the the corresponding Statement instance.
+Result instances must be fully consumed to ensure full execution of the corresponding Statement instance.
 
 Confirm the data was properly inserted by using MariaDB Client to execute a SELECT statement:
 

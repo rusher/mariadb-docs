@@ -76,7 +76,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 {% endtab %}
 
 {% tab title="< 10.6" %}
-if the [mariadbd process](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) is killed during an [ALTER TABLE](../alter/alter-table.md), you may find a table named #sql-... in your data directory. These temporary tables will always be deleted automatically.
+if the [mariadbd process](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) is killed during an [ALTER TABLE](../alter/alter-table/), you may find a table named #sql-... in your data directory. These temporary tables will always be deleted automatically.
 
 If you want to delete one of these tables explicitly you can do so by using the following syntax:
 
@@ -114,7 +114,7 @@ WHERE TABLE_SCHEMA = 'mydb';
 {% endtab %}
 
 {% tab title="< 10.6.1" %}
-There is a small chance that, during a server crash happening in the middle of `DROP TABLE`, some storage engines that were using multiple storage files, like [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), could have only a part of its internal files dropped. In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), `DROP TABLE` was extended to be able to delete a table that was only partly dropped ([MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412)) as explained above. Atomic `DROP TABLE` is the final piece to make `DROP TABLE` fully reliable. Dropping multiple tables is crash-safe. See [Atomic DDL](../atomic-ddl.md) for more information.
+There is a small chance that, during a server crash happening in the middle of `DROP TABLE`, some storage engines that were using multiple storage files, like [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), could have only a part of its internal files dropped. In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), `DROP TABLE` was extended to be able to delete a table that was only partly dropped ([MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412)) as explained above. Atomic `DROP TABLE` is the final piece to make `DROP TABLE` fully reliable. Dropping multiple tables is crash-safe. See [Atomic DDL](../atomic-ddl.md) for more information.
 {% endtab %}
 {% endtabs %}
 
@@ -131,7 +131,7 @@ Beware that `DROP TABLE` can drop both tables and [sequences](../../../sql-struc
 ## See Also
 
 * [CREATE TABLE](../create/create-table.md)
-* [ALTER TABLE](../alter/alter-table.md)
+* [ALTER TABLE](../alter/alter-table/)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
 * [DROP SEQUENCE](../../../sql-structure/sequences/drop-sequence.md)
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md).

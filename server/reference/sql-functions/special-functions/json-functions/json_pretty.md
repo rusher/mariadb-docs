@@ -1,6 +1,10 @@
 # JSON\_PRETTY
 
-`JSON_PRETTY` was added as an alias for [JSON\_DETAILED](json_detailed.md) in [MariaDB 10.10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-3-release-notes), [MariaDB 10.9.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-5-release-notes), [MariaDB 10.8.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-7-release-notes), [MariaDB 10.7.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-10-7-8-release-notes), [MariaDB 10.6.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-12-release-notes), [MariaDB 10.5.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-19-release-notes) and [MariaDB 10.4.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-28-release-notes).
+{% hint style="info" %}
+JSON\_PRETTY is available from MariaDB 10.10.3, 10.9.5, 10.8.7, 10.7.8, 10.6.12, 10.5.19, and 10.4.28.
+{% endhint %}
+
+`JSON_PRETTY` is an alias for [JSON\_DETAILED](json_detailed.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

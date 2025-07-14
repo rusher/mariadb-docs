@@ -9,7 +9,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `key_buffer_size`
 
 * Description: Size of the buffer for the index blocks used by MyISAM tables and shared for all threads. See [Optimizing key\_buffer\_size](../../../ha-and-performance/optimization-and-tuning/system-variables/optimizing-key_buffer_size.md) for more on selecting the best value.
-* Commandline: `--key-buffer-size=#`
+* Command line: `--key-buffer-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -19,7 +19,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `key_cache_age_threshold`
 
 * Description: The lower the setting, the more quickly buffers move from the hot key cache sublist to the warm sublist.
-* Commandline: `--key-cache-age-threshold=#`
+* Command line: `--key-cache-age-threshold=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -29,7 +29,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `key_cache_block_size`
 
 * Description: [MyISAM](./) key cache block size in bytes .
-* Commandline: `--key-cache-block-size=#`
+* Command line: `--key-cache-block-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -39,7 +39,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `key_cache_division_limit`
 
 * Description: Percentage to use for the warm key cache buffer list (the remainder is allocated between the hot and cold caches).
-* Commandline: `--key-cache-division-limit=#`
+* Command line: `--key-cache-division-limit=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -49,7 +49,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `key_cache_file_hash_size`
 
 * Description: Number of hash buckets for open and changed files. If you have many MyISAM files open you should increase this for faster flushing of changes. A good value is probably 1/10th of the number of possible open MyISAM files.
-* Commandline: `--key-cache-file-hash-size=#`
+* Command line: `--key-cache-file-hash-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -59,7 +59,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `key_cache_segments`
 
 * Description: The number of segments in a key cache. See [Segmented Key Cache](../../../ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache.md).
-* Commandline: `--key-cache-segments=#`
+* Command line: `--key-cache-segments=#`
 * Scope: Global
 * Dynamic: Yes
 * Type: numeric
@@ -69,7 +69,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_block_size`
 
 * Description: Block size to be used for MyISAM index pages.
-* Commandline: `--myisam-block-size=#`
+* Command line: `--myisam-block-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
@@ -78,7 +78,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_data_pointer_size`
 
 * Description: Size in bytes of the default pointer, used in a [MyISAM](./) [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) with no MAX\_ROWS option.
-* Commandline: `--myisam-data-pointer-size=#`
+* Command line: `--myisam-data-pointer-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -93,7 +93,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_max_sort_file_size`
 
 * Description: Maximum size in bytes of the temporary file used while recreating a MyISAM index. If the this size is exceeded, the slower process of using the key cache is done instead.
-* Commandline: `--myisam-max-sort-file-size=#`
+* Command line: `--myisam-max-sort-file-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -103,7 +103,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_mmap_size`
 
 * Description: Maximum memory in bytes that can be used for memory mapping compressed MyISAM files. Too high a value may result in swapping if there are many compressed MyISAM tables.
-* Commandline: `--myisam-mmap-size=#`
+* Command line: `--myisam-mmap-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -121,7 +121,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
   * DEFAULT: Recovers without backing up, forcing, or quick checking.
   * FORCE: Runs the recovery even if it determines that more than one row from the data file will be lost.
   * QUICK: Does not check rows in the table if there are no delete blocks.
-* Commandline: `--myisam-recover-options[=name]`
+* Command line: `--myisam-recover-options[=name]`
 * Scope: Global
 * Dynamic: No
 * Data Type: `enumeration`
@@ -134,7 +134,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_repair_threads`
 
 * Description: If set to more than `1`, the default, MyISAM table indexes each have their own thread during repair and sorting. Increasing from the default will usually result in faster repair, but will use more CPU and memory.
-* Commandline: `--myisam-repair-threads=#`
+* Command line: `--myisam-repair-threads=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -145,7 +145,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_sort_buffer_size`
 
 * Description: Size in bytes of the buffer allocated when creating or sorting indexes on a MyISAM table. Increase for better [myisamchk -r, --recover](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md#repairing-tables) performance.
-* Commandline: `--myisam-sort-buffer-size=#`
+* Command line: `--myisam-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -155,7 +155,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_stats_method`
 
 * Description: Determines how NULLs are treated for [MyISAM](./) index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md), [aria\_stats\_method](../aria/aria-system-variables.md), [innodb\_stats\_method](../innodb/innodb-system-variables.md).
-* Commandline: `--myisam-stats-method=name`
+* Command line: `--myisam-stats-method=name`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `enumeration`
@@ -165,7 +165,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_use_mmap`
 
 * Description: If set to `1` (0 is default), memory mapping will be used to reading and writing MyISAM tables.
-* Commandline: `--myisam-use-mmap`
+* Command line: `--myisam-use-mmap`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`

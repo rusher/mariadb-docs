@@ -1,24 +1,24 @@
 # TO\_CHAR
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
-
-The TO\_CHAR function was introduced in [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes) to enhance Oracle compatibility.
+{% hint style="info" %}
+`TO_CHAR` is available from [MariaDB 10.6.](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 TO_CHAR(expr[, fmt])
 ```
 
 ## Description
 
-The `TO_CHAR` function converts an _expr_ of type [date](../../data-types/date-and-time-data-types/date.md), [datetime](../../data-types/date-and-time-data-types/datetime.md), [time](../../data-types/date-and-time-data-types/time.md) or [timestamp](../../data-types/date-and-time-data-types/timestamp.md) to a string. The optional _fmt_ argument supports YYYY/YYY/YY/RRRR/RR/MM/MON/MONTH/MI/DD/DY/HH/HH12/HH24/SS and special characters. The default value is "YYYY-MM-DD HH24:MI:SS".
+The `TO_CHAR` function converts an _expr_ of type [date](../../data-types/date-and-time-data-types/date.md), [datetime](../../data-types/date-and-time-data-types/datetime.md), [time](../../data-types/date-and-time-data-types/time.md) or [timestamp](../../data-types/date-and-time-data-types/timestamp.md) to a string. The optional _fmt_ argument supports `YYY/YYY/YY/RRRR/RR/MM/MON/MONTH/MI/DD/DY/HH/HH12/HH24/SS` and special characters. The default value is `YYYY-MM-DD HH24:MI:SS`.
 
-In Oracle, TO\_CHAR can also be used to convert numbers to strings, but this is not supported in MariaDB and will give an error.
+In Oracle, `TO_CHAR` can also be used to convert numbers to strings, but this is not supported in MariaDB and will give an error.
 
 ## Examples
 
-```
+```sql
 SELECT TO_CHAR('1980-01-11 04:50:39', 'YYYY-MM-DD');
 +----------------------------------------------+
 | TO_CHAR('1980-01-11 04:50:39', 'YYYY-MM-DD') |
@@ -64,7 +64,7 @@ SELECT TO_CHAR('21-01-03 08:30:00', 'Y-MONTH-DY HH:MI:SS');
 
 ## See Also
 
-* [SQL\_MODE=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md)
+* [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

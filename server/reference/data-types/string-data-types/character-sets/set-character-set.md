@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SET {CHARACTER SET | CHARSET}
     {charset_name | DEFAULT}
 ```
@@ -15,7 +15,7 @@ This maps all strings sent between the current client and the server with the gi
 
 ## Example
 
-```
+```sql
 SHOW VARIABLES LIKE 'character_set\_%';
 +--------------------------+--------+
 | Variable_name            | Value  |

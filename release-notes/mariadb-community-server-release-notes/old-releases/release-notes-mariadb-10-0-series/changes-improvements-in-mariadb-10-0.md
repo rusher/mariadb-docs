@@ -112,7 +112,6 @@ See [System Variable Differences Between MariaDB 10.0 and MySQL 5.6](../../../co
 
 | Date        | Release                                           | Status            | Release Notes                                   | Changelog                                                                              |
 | ----------- | ------------------------------------------------- | ----------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status            | Release Notes                                   | Changelog                                                                              |
 | 31 Jan 2019 | [MariaDB 10.0.38](mariadb-10038-release-notes.md) | Stable (GA)       | [Release Notes](mariadb-10038-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10038-changelog.md) |
 | 1 Nov 2018  | [MariaDB 10.0.37](mariadb-10037-release-notes.md) | Stable (GA)       | [Release Notes](mariadb-10037-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10037-changelog.md) |
 | 1 Aug 2018  | [MariaDB 10.0.36](mariadb-10036-release-notes.md) | Stable (GA)       | [Release Notes](mariadb-10036-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10036-changelog.md) |

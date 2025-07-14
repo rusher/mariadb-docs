@@ -24,15 +24,23 @@ The forms that use _`FROM`_ are standard SQL syntax.
 
 It is also possible to use a negative value for _`pos`_. In this case, the beginning of the substring is _`pos`_ characters from the end of the string, rather than the beginning. A negative value may be used for _`pos`_ in any of the forms of this function.
 
-By default, the position of the first character in the string from which the substring is to be extracted is reckoned as 1. For [Oracle-compatibility](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), when sql\_mode is set to 'oracle', position zero is treated as position 1 (although the first character is still reckoned as 1).
+By default, the position of the first character in the string from which the substring is to be extracted is reckoned as 1. For [Oracle compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), when `sql_mode` is set to '`oracle`', position zero is treated as position 1 (although the first character is still reckoned as 1).
 
 If any argument is `NULL`, returns `NULL`.
 
-Prior to [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118), the optimizer could not take advantage of queries of the format [SUBSTR(col, 1, n) = const\_str](substring.md).
+{% tabs %}
+{% tab title="Current" %}
+The optimizer can take advantage of queries of the format [SUBSTR(col, 1, n) = const\_str](substring.md).
+{% endtab %}
+
+{% tab title="< 11.8" %}
+The optimizer **cannot** take advantage of queries of the format [SUBSTR(col, 1, n) = const\_str](substring.md).
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
-```
+```sql
 SELECT SUBSTRING('Knowledgebase',5);
 +------------------------------+
 | SUBSTRING('Knowledgebase',5) |
@@ -76,9 +84,9 @@ SELECT SUBSTRING('Knowledgebase' FROM -8 FOR 4);
 +------------------------------------------+
 ```
 
-[Oracle mode from MariaDB 10.3.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md):
+Oracle mode:
 
-```
+```sql
 SELECT SUBSTR('abc',0,3);
 +-------------------+
 | SUBSTR('abc',0,3) |

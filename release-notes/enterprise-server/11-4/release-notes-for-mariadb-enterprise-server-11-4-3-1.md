@@ -102,7 +102,6 @@ orary";
 
 | New Table Option | Old COMMENT Option | Description                                                                    |
 | ---------------- | ------------------ | ------------------------------------------------------------------------------ |
-| New Table Option | Old COMMENT Option | Description                                                                    |
 | REMOTE\_DATABASE | database           | The remote database that contains the remote table                             |
 | REMOTE\_SERVER   | srv                | The IP address or hostname of the remote server that contains the remote table |
 | REMOTE\_TABLE    | tbl                | The remote table                                                               |
@@ -129,7 +128,7 @@ orary";
 
 ## Operational Enhancements
 
-* Online Schema Change (OSC) is new server internal functionality which makes all schema changes (`ALTER TABLE` commands) non-blocking. ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329))
+* [Online Schema Change (OSC)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table/online-schema-change) is new server internal functionality which makes all schema changes (`ALTER TABLE` commands) non-blocking. ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329))
   * OSC targets a problem previously solvable using third-party solutions, in a way which reduces operational impact. Some aspects of the OSC implementation are operationally significant:
     * OSC performs internal Copy-Apply-Replace: First, the altered table gets copied, then the online changes get applied. A short table lock occurs when applying last changes and renaming the tables. The binary log is not used in this process. This is significant because some third-party approaches to this problem depend on client connections which can be subject to connection timeouts and similar factors.
     * OSC is asynchronous: Changes from applications are first stored in an online change buffer. This is significant because some third-party approaches to this problem are synchronous and as result impact the execution of other transactions.
@@ -318,7 +317,6 @@ MAX_MEMORY_USED: 392544
 
 | System Variable                     | Type    | Description                                                                                                                                                                    |
 | ----------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| System Variable                     | Type    | Description                                                                                                                                                                    |
 | optimizer\_disk\_read\_cost         | Engine  | Sets the time in microseconds required to read a 4K block from storage. The default value is tuned for an SSD reading at 400 MB/second.                                        |
 | optimizer\_index\_block\_copy\_cost | Engine  | Sets the cost to lock a block in the global cache and copy it to the local cache. The cost applies to every block accessed, regardless of whether the block is already cached. |
 | optimizer\_key\_compare\_cost       | Engine  | Sets the cost to compare two key values.                                                                                                                                       |
@@ -1237,7 +1235,6 @@ mariadb-bin.000001
 
 | Connection State                | Description                                                                                                                                                                                                                                                                                                      |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection State                | Description                                                                                                                                                                                                                                                                                                      |
 | waiting to execute in isolation | The connection is executing a DDL statement with [wsrep\_osu\_method=TOI](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method), but the operation requires other concurrent operations to finish first, so the DDL statement can be executed in isolation. |
 | waiting for TOI DDL             | Another connection is executing a DDL statement with [wsrep\_osu\_method=TOI](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method), so this connection must wait for the DDL statement to finish.                                                          |
 | waiting for flow control        | The connection is committing a transaction, but transactions are currently paused due to flow control, so the connection is waiting for the cluster to catch up and unpause transactions.                                                                                                                        |

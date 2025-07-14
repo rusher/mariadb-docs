@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 ADDTIME(expr1,expr2)
 ```
 
 ## Description
 
-`ADDTIME()` adds _expr2_ to _expr1_ and returns the result. _expr1_ is a time\
-or datetime expression, and _expr2_ is a time expression.
+`ADDTIME()` adds _expr2_ to _expr1_ and returns the result. _expr1_ is a time or datetime expression, and _expr2_ is a time expression.
 
 ## Examples
 
-```
+```sql
 SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');
 +---------------------------------------------------------+
 | ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002') |

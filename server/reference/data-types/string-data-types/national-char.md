@@ -1,27 +1,22 @@
-
 # NATIONAL CHAR
 
-
-# Overview
-
+## Overview
 
 Fixed-length string of specific character set with limit up to 255 bytes.
 
+## Examples
 
-EXAMPLES
-
-
-```
+```sql
 CREATE TABLE national_char_example (
   example NATIONAL CHAR(32)
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE national_char_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: national_char_example
 Create Table: CREATE TABLE `national_char_example` (
@@ -29,13 +24,10 @@ Create Table: CREATE TABLE `national_char_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-# EXTERNAL REFERENCES
-
+## External References
 
 Additional information is available [here](varchar.md).
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

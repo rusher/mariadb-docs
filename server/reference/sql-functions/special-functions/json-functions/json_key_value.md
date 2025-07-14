@@ -1,12 +1,12 @@
 # JSON\_KEY\_VALUE
 
-**MariaDB starting with** [**11.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112)
-
-JSON\_KEY\_VALUE was added in [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112).
+{% hint style="info" %}
+JSON\_KEY\_VALUE is available from MariaDB 11.2.
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 JSON_KEY_VALUE(obj, json_path)
 ```
 
@@ -16,7 +16,7 @@ JSON_KEY_VALUE(obj, json_path)
 
 ## Example
 
-```
+```sql
 SELECT JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]');
 +-----------------------------------------------------------------------------+
 | JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]') |
@@ -25,9 +25,9 @@ SELECT JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]
 +-----------------------------------------------------------------------------+
 ```
 
-JSON\_KEY\_VALUE() can be used as an argument to JSON\_TABLE(), which allows adding the key to a result set.
+`JSON_KEY_VALUE()` can be used as an argument to JSON\_TABLE(), which allows adding the key to a result set.
 
-```
+```sql
 SELECT jt.* FROM JSON_TABLE(
 JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]'),'$[*]'
 COLUMNS (

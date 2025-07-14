@@ -1,27 +1,22 @@
-
 # LONG VARCHARACTER
 
-
-# Overview
-
+## Overview
 
 See [MEDIUMTEXT](mediumtext.md).
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 CREATE TABLE long_varcharacter_example (
   example LONG VARCHARACTER
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE long_varcharacter_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: long_varcharacter_example
 Create Table: CREATE TABLE `long_varcharacter_example` (
@@ -29,8 +24,6 @@ Create Table: CREATE TABLE `long_varcharacter_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

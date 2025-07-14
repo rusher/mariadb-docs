@@ -39,7 +39,7 @@ MariaDB Enterprise Server 10.5.27-21 was released on 2024-12-10.
 
 * When a user runs mariadb-binlog with `--stop-position`, they would expect the output to contain events up to that event. If the output did not contain events up to that event, this may result in various unexpected behaviors, e.g., an incomplete database state if they piped the output to the mariadb client and expected certain transactions to have executed in the database, yet never were run ([MDEV-27037](https://jira.mariadb.org/browse/MDEV-27037))
 * Changing a data type of a field used in a foreign key constraint fails with Error "Cannot change column '...': used in a foreign key constraint '...'" ([MDEV-34392](https://jira.mariadb.org/browse/MDEV-34392))
-  * This ALTER only fails if the type of field is changed in a multi-ALTER statement, where types of of other fields are changed with the ALTER
+  * This ALTER only fails if the type of field is changed in a multi-ALTER statement, where types of other fields are changed with the ALTER
 * Creation of a view with UNION and SELECT ... FOR UPDATE in the definition fails with error "ER\_PARSE\_ERROR (1064): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near..." ([MDEV-29537](https://jira.mariadb.org/browse/MDEV-29537))
 * INSERT...SELECT on MyISAM or ARIA tables are replicated by MariaDB Enterprise Cluster (Galera) ([MDEV-34647](https://jira.mariadb.org/browse/MDEV-34647))
 * SELECT MIN on Spider table returns more rows than expected ([MDEV-26345](https://jira.mariadb.org/browse/MDEV-26345))
@@ -83,16 +83,16 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 
 ## nstallation Instructions
 
-* [MariaDB Enterprise Server ](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.5](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [MariaDB Enterprise Server ](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)[10](broken-reference)[.5](../11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](broken-reference)[.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
 * [ColumnStore Object Storage Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage) [and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
 * [ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)
 * [HTAP Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)
 * [Single-Node Enterprise ColumnStore 23.02 with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)[and Object Storage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)
 * [Single-Node Enterprise ColumnStore 23.02 with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.5](broken-reference)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.5](broken-reference)
 
 ## Upgrade Instructions
 

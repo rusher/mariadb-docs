@@ -2,16 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 MAX([DISTINCT] expr)
 ```
 
 ## Description
 
-Returns the largest, or maximum, value of _`expr`_. `MAX()` can also take a string\
-argument in which case it returns the maximum string value. The `DISTINCT`\
-keyword can be used to find the maximum of the distinct values of _`expr`_,\
-however, this produces the same result as omitting `DISTINCT`.
+Returns the largest, or maximum, value of _`expr`_. `MAX()` can also take a string argument in which case it returns the maximum string value. The `DISTINCT` keyword can be used to find the maximum of the distinct values of _`expr`_, however, this produces the same result as omitting `DISTINCT`.
 
 Note that [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) and [ENUM](../../data-types/string-data-types/enum.md) fields are currently compared by their string value rather than their relative position in the set, so MAX() may produce a different highest result than ORDER BY DESC.
 
@@ -21,11 +18,19 @@ MAX() can be used as a [window function](../special-functions/window-functions/)
 
 `MAX()` returns `NULL` if there were no matching rows.
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), not only ascending but also [descending indexes](../../sql-statements/data-definition/create/create-table.md#index-types) can be used to optimize MAX.
+{% tabs %}
+{% tab title="Current" %}
+Not only ascending, but also [descending indexes](../../sql-statements/data-definition/create/create-table.md#index-types) can be used to optimize `MAX`.
+{% endtab %}
+
+{% tab title="< 11.4" %}
+Only ascending indexes can be used to optimize `MAX`.
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
-```
+```sql
 CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); 
 
 INSERT INTO student VALUES 
@@ -45,9 +50,9 @@ SELECT name, MAX(score) FROM student GROUP BY name;
 +---------+------------+
 ```
 
-MAX string:
+`MAX` string:
 
-```
+```sql
 SELECT MAX(name) FROM student;
 +-----------+
 | MAX(name) |
@@ -58,7 +63,7 @@ SELECT MAX(name) FROM student;
 
 Be careful to avoid this common mistake, not grouping correctly and returning mismatched data:
 
-```
+```sql
 SELECT name,test,MAX(SCORE) FROM student;
 +------+------+------------+
 | name | test | MAX(SCORE) |
@@ -67,9 +72,9 @@ SELECT name,test,MAX(SCORE) FROM student;
 +------+------+------------+
 ```
 
-Difference between ORDER BY DESC and MAX():
+Difference between `ORDER BY DESC` and `MAX()`:
 
-```
+```sql
 CREATE TABLE student2(name CHAR(10),grade ENUM('b','c','a'));
 
 INSERT INTO student2 VALUES('Chun','b'),('Esben','c'),('Kaolin','a');
@@ -91,7 +96,7 @@ SELECT grade FROM student2 ORDER BY grade DESC LIMIT 1;
 
 As a [window function](../special-functions/window-functions/):
 
-```
+```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
 INSERT INTO student_test VALUES 
     ('Chun', 'SQL', 75), ('Chun', 'Tuning', 73), 
@@ -119,7 +124,6 @@ SELECT name, test, score, MAX(score)
 * [AVG](avg.md) (average)
 * [MIN](min.md) (minimum)
 * [SUM](sum.md) (sum total)
-* [MIN/MAX optimization](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/aggregate-functions/broken-reference/README.md) used by the optimizer
 * [GREATEST()](../../sql-structure/operators/comparison-operators/greatest.md) returns the largest value from a list
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)

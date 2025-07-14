@@ -10,9 +10,9 @@ The Purge Threads perform garbage collection of the [InnoDB Undo Log](../innodb-
 
 The Purge Threads perform garbage collection of index records. When an indexed column is updated, InnoDB creates a new index record for the updated value in each affected index, and the old index records are delete-marked. When the primary key column is updated, InnoDB creates a new index record for the updated value in every index, and each old index record is delete-marked. The Purge Threads scan for delete-marked index records and permanently delete them.
 
-The Purge Threads perform garbage collection of freed overflow pages. [BLOB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-blob/README.md), [CHAR](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-char/README.md), [TEXT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-text/README.md), [VARCHAR](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-varchar/README.md), [VARBINARY](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-varbinary/README.md), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
+The Purge Threads perform garbage collection of freed overflow pages. [BLOB](../../../../reference/data-types/string-data-types/blob.md), [CHAR](../../../../reference/data-types/string-data-types/char.md), [TEXT](../../../../reference/data-types/string-data-types/text.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
 
-For additional information, see "[InnoDB Purge Threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/mariadb-enterprise-server-innodb-purge-threads/README.md)".
+For additional information, see "[InnoDB Purge Threads](../innodb-purge.md#innodb-purge-threads)".
 
 This page describes how to configure the InnoDB Purge Threads.
 
@@ -24,7 +24,6 @@ The method to configure the number of Purge Threads depends on the server versio
 
 | Product Versions  | Server Restart? | Method                                                                                                                                                                        |
 | ----------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Product Versions  | Server Restart? | Method                                                                                                                                                                        |
 | ES 10.5 and Later | No              | [Configure maximum number of asynchronous I/O requests with SET GLOBAL](configure-the-innodb-io-threads.md#configure-the-number-of-innodb-io-threads-in-a-configuration-file) |
 | Any ES Any CS     | Yes.            | [Configure number of I/O threads in configuration file](configure-the-innodb-io-threads.md#configure-the-number-of-innodb-io-threads)                                         |
 
@@ -59,7 +58,6 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
-| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
@@ -89,7 +87,6 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
-| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 

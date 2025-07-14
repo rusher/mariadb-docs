@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 BINLOG_GTID_POS(binlog_filename,binlog_offset)
 ```
 
@@ -12,7 +12,7 @@ The BINLOG\_GTID\_POS() function takes as input an old-style [binary log](../../
 
 ## Examples
 
-```
+```sql
 SELECT BINLOG_GTID_POS("master-bin.000001", 600);
 ```
 

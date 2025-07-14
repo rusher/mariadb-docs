@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 NOW([precision])
 CURRENT_TIMESTAMP
 CURRENT_TIMESTAMP([precision])
@@ -13,32 +13,38 @@ LOCALTIMESTAMP([precision])
 
 ## Description
 
-Returns the current date and time as a value in `'YYYY-MM-DD HH:MM:SS'`\
-or `YYYYMMDDHHMMSS.uuuuuu` format, depending on whether the function is\
-used in a string or numeric context. The value is expressed in the\
-current [time zone](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).
+Returns the current date and time as a value in `YYYY-MM-DD HH:MM:SS` or `YYYYMMDDHHMMSS.uuuuuu` format, depending on whether the function is used in a string or numeric context. The value is expressed in the current [time zone](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).
 
 **MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-Starting from [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), these functions return SQL standard compliant types:
+{% tabs %}
+{% tab title="Current" %}
+These functions return SQL standard compliant types:
 
-* `NOW()` and `CURRENT_TIMESTAMP()` return a `TIMESTAMP` value\
-  (analogous to the standard type `TIMESTAMP WITH LOCAL TIME ZONE`)\
-  which corresponds to the curent point in time and is unambiguous around DST changes.
-* `LOCALTIMESTAMP` still returns a `DATETIME` value as before\
-  (analogous to the standard type `TIMESTAMP WITHOUT TIME ZONE`). Storing its result in a `TIMESTAMP` column can result in a data loss around DST changes.
+* `NOW()` and `CURRENT_TIMESTAMP()` return a `TIMESTAMP` value (analogous to the standard type `TIMESTAMP WITH LOCAL TIME ZONE`) which corresponds to the current point in time and is unambiguous around DST changes.
+* `LOCALTIMESTAMP` returns a `DATETIME` value (analogous to the standard type `TIMESTAMP WITHOUT TIME ZONE`). Storing its result in a `TIMESTAMP` column can result in a data loss around DST changes.
+{% endtab %}
+
+{% tab title="< 11.7" %}
+These functions do **not** return SQL standard compliant types:
+
+* `NOW()`&#x20;
+* `CURRENT_TIMESTAMP()`&#x20;
+* `LOCALTIMESTAMP`&#x20;
+{% endtab %}
+{% endtabs %}
 
 The optional _precision_ determines the microsecond precision. See [Microseconds in MariaDB](microseconds-in-mariadb.md).
 
-`NOW()` (or its synonyms) can be used as the default value for [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md) columns as well as, since [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes), [DATETIME](../../data-types/date-and-time-data-types/datetime.md) columns. Before [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes), it was only possible for a single TIMESTAMP column per table to contain the CURRENT\_TIMESTAMP as its default.
+`NOW()` (or its synonyms) can be used as the default value for [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md) columns as well as.
 
-When displayed in the [INFORMATION\_SCHEMA.COLUMNS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table, a default [CURRENT TIMESTAMP](current_timestamp.md) is displayed as `CURRENT_TIMESTAMP` up until [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes), and as `current_timestamp()` from [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), due to to [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) accepting expressions in the DEFAULT clause.
+When displayed in the [INFORMATION\_SCHEMA.COLUMNS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table, a default [CURRENT TIMESTAMP](current_timestamp.md) is displayed as `current_timestamp()` .
 
-Changing the [timestamp system variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp) with a [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) `timestamp` statement affects the value returned by NOW(), but not by [SYSDATE()](sysdate.md).
+Changing the [timestamp system variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp) with a [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) `timestamp` statement affects the value returned by `NOW()`, but not by [SYSDATE()](sysdate.md).
 
 ## Examples
 
-```
+```sql
 SELECT NOW();
 +---------------------+
 | NOW()               |
@@ -56,7 +62,7 @@ SELECT NOW() + 0;
 
 With precision:
 
-```
+```sql
 SELECT CURRENT_TIMESTAMP(2);
 +------------------------+
 | CURRENT_TIMESTAMP(2)   |
@@ -67,13 +73,11 @@ SELECT CURRENT_TIMESTAMP(2);
 
 Used as a default TIMESTAMP:
 
-```
+```sql
 CREATE TABLE t (createdTS TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 ```
 
-From [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes):
-
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='test'
   AND COLUMN_NAME LIKE '%ts%'\G
 *************************** 1. row ***************************
@@ -83,21 +87,6 @@ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='test'
              COLUMN_NAME: ts
         ORDINAL_POSITION: 1
           COLUMN_DEFAULT: current_timestamp()
-...
-```
-
-<= [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes)
-
-```
-SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='test'
-  AND COLUMN_NAME LIKE '%ts%'\G
-*************************** 1. row ***************************
-           TABLE_CATALOG: def
-            TABLE_SCHEMA: test
-              TABLE_NAME: t
-             COLUMN_NAME: createdTS
-        ORDINAL_POSITION: 1
-          COLUMN_DEFAULT: CURRENT_TIMESTAMP
 ...
 ```
 

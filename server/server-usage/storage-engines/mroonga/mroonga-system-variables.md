@@ -11,7 +11,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
   * `ERROR_AND_LOG`: Report an error with logging (the default)
   * `IGNORE`: No logging or reporting - the error is ignored.
   * `IGNORE_AND_LOG`: Log the error without reporting it.
-* Commandline: `--mroonga-action-on-fulltext-query-error=value`
+* Command line: `--mroonga-action-on-fulltext-query-error=value`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `enum`
@@ -26,7 +26,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
   * `ALLOW_UPDATE`: Permits updating values with the `COLUMN:=NEW_VALUE` syntax in the query syntax.
   * `SYNTAX_QUERY`: Mroonga will use Groonga's query syntax, compatible with MariaDB's BOOLEAN MODE syntax. Unless `SYNTAX_SCRIPT` is specified, this mode is always in use.
   * `SYNTAX_SCRIPT`: Mroonga will use Groonga's script syntax, a JavaScript-like syntax. If both `SYNTAX_QUERY` and `SYNTAX_SCRIPT` are specified, `SYNTAX_SCRIPT` will take precedence..
-* Commandline: `--mroonga-boolean-mode-syntax-flags=value`
+* Command line: `--mroonga-boolean-mode-syntax-flags=value`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `enum`
@@ -35,7 +35,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_database_path_prefix`
 
 * Description: The database path prefix.
-* Commandline: `--mroonga-database-path-prefix=value`
+* Command line: `--mroonga-database-path-prefix=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
@@ -44,7 +44,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_default_parser`
 
 * Description: The fulltext default parser, for example `TokenBigramSplitSymbolAlphaDigit` or `TokenBigram` (the default). See the list of options at [Mroonga Overview:Parser](mroonga-overview.md#parser). Deprecated since Mroonga 5.04, use [mroonga\_default\_tokenizer](mroonga-system-variables.md#mroonga_default_tokenizer) instead.
-* Commandline: `--mroonga-default-parser=value`
+* Command line: `--mroonga-default-parser=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
@@ -54,7 +54,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_default_tokenizer`
 
 * Description: The fulltext default parser, for example `TokenBigramSplitSymbolAlphaDigit` or `TokenBigram` (the default). See the list of options at [Mroonga Overview:Parser](mroonga-overview.md#parser).
-* Commandline: `--mroonga-default-tokenizer=value`
+* Command line: `--mroonga-default-tokenizer=value`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
@@ -64,7 +64,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_default_wrapper_engine`
 
 * Description: The default engine for wrapper mode.
-* Commandline: `--mroonga-default-wrapper-engine=value`
+* Command line: `--mroonga-default-wrapper-engine=value`
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`
@@ -73,7 +73,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_dry_write`
 
 * Description: If set to `on`, (`off` is default), data is not actually written to the Groonga database. Only really useful to change for benchmarking.
-* Commandline: `--mroonga-dry-write[={0|1}]`
+* Command line: `--mroonga-dry-write[={0|1}]`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -82,7 +82,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_enable_operations_recording`
 
 * Description: Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) after changing the variable.
-* Commandline: `--mroonga-enable-operations-recording={0|1}`
+* Command line: `--mroonga-enable-operations-recording={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -92,7 +92,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_enable_optimization`
 
 * Description: If set to `on` (the default), optimization is enabled. Only really useful to change for benchmarking.
-* Commandline: `--mroonga-enable-optimization={0|1}`
+* Command line: `--mroonga-enable-optimization={0|1}`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -101,7 +101,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_libgroonga_embedded`
 
 * Description: Whether libgroonga is embedded or not.
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
@@ -111,7 +111,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_libgroonga_support_lz4`
 
 * Description: Whether libgroonga supports lz4 or not.
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
@@ -120,7 +120,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_libgroonga_support_zlib`
 
 * Description: Whether libgroonga supports zlib or not.
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
@@ -129,7 +129,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_libgroonga_support_zstd`
 
 * Description: Whether libgroonga supports Zstandard or not.
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
@@ -139,7 +139,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_libgroonga_version`
 
 * Description: Groonga library version.
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`
@@ -147,7 +147,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_lock_timeout`
 
 * Description: Lock timeout used in Groonga.
-* Commandline: `--mroonga-lock-timeout=#`
+* Command line: `--mroonga-lock-timeout=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -157,7 +157,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_log_file`
 
 * Description: Name and path of the Mroonga log file.
-* Commandline: `--mroonga-log-file=value`
+* Command line: `--mroonga-log-file=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
@@ -176,7 +176,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
   * `INFO`: Information messages, such as file system operations.
   * `DEBUG`: Debug messages, suggested for developers or testers.
   * `DUMP`: Dump messages.
-* Commandline: `--mroonga-log-level=value`
+* Command line: `--mroonga-log-level=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enum`
@@ -185,7 +185,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_match_escalation_threshold`
 
 * Description: The threshold to determine whether the match method is escalated. `-1` means never escalate.
-* Commandline: `--mroonga-match-escalation-threshold=#`
+* Command line: `--mroonga-match-escalation-threshold=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -195,7 +195,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_max_n_records_for_estimate`
 
 * Description: The max number of records to estimate the number of matched records
-* Commandline: `--mroonga-max-n-records-for-estimate=#`
+* Command line: `--mroonga-max-n-records-for-estimate=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -205,7 +205,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_query_log_file`
 
 * Description: Query log file for Mroonga.
-* Commandline: `--mroonga-query-log-file=filename`
+* Command line: `--mroonga-query-log-file=filename`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
@@ -215,7 +215,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_vector_column_delimiter`
 
 * Description: Delimiter to use when outputting a vector column. The default is a white space.
-* Commandline: `--mroonga-vector-column-delimiter=value`
+* Command line: `--mroonga-vector-column-delimiter=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
@@ -224,7 +224,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_version`
 
 * Description: Mroonga version
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`

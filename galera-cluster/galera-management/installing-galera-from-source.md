@@ -5,7 +5,7 @@ There are binary installation packages available for RPM and Debian-based distri
 If these are not available, you will need to build Galera from source.
 
 The wsrep API for Galera Cluster is included by default. Follow\
-the usual [compiling-mariadb-from-source](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source) instructions
+the usual [compiling -mariadb-from-source](http://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) instructions
 
 ## Preparation
 
@@ -23,7 +23,7 @@ Debian-based:
 apt-get build-dep mariadb-server
 ```
 
-If running on an alternative system, or the commands are available, the following packages are required. You will need to check the repositories for the correct package names on your distribution - these may differ between distributions, or require additional packages:
+If running on an alternative system, or the commands are available, the following packages are required. You will need to check the repositories for the correct package names on your distribution—these may differ between distributions or require additional packages:
 
 #### MariaDB Database Server with wsrep API
 
@@ -38,7 +38,7 @@ Clone the repository:
 git clone https://github.com/mariadb/server mariadb
 ```
 
-1. Checkout the branch (e.g. 10.5-galera or 11.1-galera), for example:
+1. Check out the branch (e.g., 10.5-galera or 11.1-galera), for example:
 
 ```
 cd mariadb
@@ -47,7 +47,7 @@ git checkout 10.5-galera
 
 ### Building the Database Server
 
-The standard and Galera cluster database servers are the same, except that for Galera Cluster, the wsrep API patch is included. Enable the patch with the CMake configuration options `WITH_WSREP` and `WITH_INNODB_DISALLOW_WRITES`. To build the database server, run the following commands:
+The standard and Galera Cluster database servers are the same, except that for Galera Cluster, the wsrep API patch is included. Enable the patch with the CMake configuration options. `WITH_WSREP` and `WITH_INNODB_DISALLOW_WRITES`. To build the database server, run the following commands:
 
 ```
 cmake -DWITH_WSREP=ON -DWITH_INNODB_DISALLOW_WRITES=ON .
@@ -55,7 +55,7 @@ make
 make install
 ```
 
-There are also some build scripts in the \*BUILD/\*directory which may be more convenient to use. For example, the following pre-configures the build options discussed above:
+There are also some build scripts in the \*BUILD/\* directory, which may be more convenient to use. For example, the following pre-configures the build options discussed above:
 
 ```
 ./BUILD/compile-pentium64-wsrep
@@ -65,7 +65,7 @@ There are several others as well, so you can select the most convenient.
 
 <>
 
-Besides the server with the Galera support, you will also need a galera provider.
+Besides the server with the Galera support, you will also need a Galera provider.
 
 ## Preparation
 
@@ -141,7 +141,7 @@ chmod +x /etc/init.d/mysql
 chkconfig --add mysql
 ```
 
-* Galera Cluster can now be started using the service command, and is set to start at boot.
+* Galera Cluster can now be started using the service command and is set to start at boot.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

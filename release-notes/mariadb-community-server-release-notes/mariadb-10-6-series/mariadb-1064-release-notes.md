@@ -9,7 +9,7 @@ The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 
 Warning: This version can cause InnoDB file corruption on FreeBSD and on AIX. Stick to an earlier release, or upgrade to a more recent release, if you are running either of these environments. See [MDEV-26537](https://jira.mariadb.org/browse/MDEV-26537).
 
 [MariaDB 10.6](what-is-mariadb-106.md) is the current stable series of MariaDB. It is an evolution\
-of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
+of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.4](mariadb-1064-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 

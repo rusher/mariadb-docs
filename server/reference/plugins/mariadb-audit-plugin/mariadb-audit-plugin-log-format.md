@@ -1,22 +1,21 @@
-# MariaDB Audit Plugin - Log Format
+# Log Format
 
 The audit plugin logs user access to MariaDB and its objects. The audit trail (i.e., audit log) is a set of records, written as a list of fields to a file in a plain‐text format. The fields in the log are separated by commas. The format used for the plugin's own log file is slightly different from the format used if it logs to the system log because it has its own standard format. The general format for the logging to the plugin's own file is defined like the following:
 
-```
+```ini
 [timestamp],[serverhost],[username],[host],[connectionid],
 [queryid],[operation],[database],[object],[retcode]
 ```
 
 If the [server\_audit\_output\_type](mariadb-audit-plugin-options-and-system-variables.md) variable is set to `syslog` instead of the default, `file`, the audit log file format will be as follows:
 
-```
+```ini
 [timestamp][syslog_host][syslog_ident]:[syslog_info][serverhost],[username],[host],
 [connectionid],[queryid],[operation],[database],[object],[retcode]
 ```
 
 | Item logged   | Description                                                                                                                                     |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Item logged   | Description                                                                                                                                     |
 | timestamp     | Time at which the event occurred. If syslog is used, the format is defined by syslogd.                                                          |
 | syslog\_host  | Host from which the syslog entry was received.                                                                                                  |
 | syslog\_ident | For identifying a system log entry, including the MariaDB server.                                                                               |
@@ -35,7 +34,7 @@ Various events will result in different audit records. Some events will not retu
 
 Below is a generic example of the output for connect events, with placeholders representing data. These are events in which a user connected, disconnected, or tried unsuccessfully to connect to the server.
 
-```
+```ini
 [timestamp],[serverhost],[username],[host],[connectionid],0,CONNECT,[database],,0 
 [timestamp],[serverhost],[username],[host],[connectionid],0,DISCONNECT,,,0 
 [timestamp],[serverhost],[username],[host],[connectionid],0,FAILED_CONNECT,,,[retcode]
@@ -43,13 +42,13 @@ Below is a generic example of the output for connect events, with placeholders r
 
 Here is the one audit record generated for each query event:
 
-```
+```ini
 [timestamp],[serverhost],[username],[host],[connectionid],[queryid],QUERY,[database],[object], [retcode]
 ```
 
 Below are generic examples of records that are entered in the audit log for each type of table event:
 
-```
+```ini
 [timestamp],[serverhost],[username],[host],[connectionid],[queryid],CREATE,[database],[object], 
 [timestamp],[serverhost],[username],[host],[connectionid],[queryid],READ,[database],[object], 
 [timestamp],[serverhost],[username],[host],[connectionid],[queryid],WRITE,[database],[object], 
@@ -59,7 +58,7 @@ Below are generic examples of records that are entered in the audit log for each
 [timestamp],[serverhost],[username],[host],[connectionid],[queryid],DROP,[database],[object],
 ```
 
-Starting in version 1.2.0, passwords are hidden in the log for certain types of queries. They are replaced with asterisks for `GRANT`, `CREATE USER`, `CREATE MASTER`, `CREATE SERVER`, and `ALTER SERVER` statements. Passwords, however, are not replaced for the `PASSWORD()` and `OLD_PASSWORD()` functions when they are used inside other SQL statements (i.e., SET PASSWORD`).`
+Passwords are hidden in the log for certain types of queries. They are replaced with asterisks for `GRANT`, `CREATE USER`, `CREATE MASTER`, `CREATE SERVER`, and `ALTER SERVER` statements. Passwords, however, are not replaced for the `PASSWORD()` and `OLD_PASSWORD()` functions when they are used inside other SQL statements (i.e., `SET PASSWORD`).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

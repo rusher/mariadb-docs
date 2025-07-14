@@ -1,16 +1,5 @@
 ---
-description: Release notes for MariaDB Community Server 11.7 rolling releases
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
+description: MariaDB 11.7 was a rolling release, and is no longer maintained.
 ---
 
 # Release Notes - MariaDB 11.7 Rolling Releases

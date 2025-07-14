@@ -1,18 +1,4 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
-# MariaDB ColumnStore Release Notes
+# ColumnStore Release Notes
 
 Release notes and other documentation for ColumnStore.
 

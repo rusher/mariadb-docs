@@ -141,31 +141,27 @@ FLUSH TABLE_STATISTICS
 
 | Version | Status | Introduced                                                                                                                                                                          |
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                                          |
 | 2.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
 | 2.0     | Gamma  | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) |
 
 ### CLIENT\_STATISTICS
 
-| Version | Status | Introduced                                                                                                                                                                                                         |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Version | Status | Introduced                                                                                                                                                                                                         |
-| 2.0     | Stable | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/broken-reference/README.md) |
-| 2.0     | Gamma  | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)                                |
+| Version | Status | Introduced                                                                                                                                                                          |
+| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2.0     | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 2.0     | Gamma  | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) |
 
 ### INDEX\_STATISTICS
 
-| Version | Status | Introduced                                                                                                                                                                                                         |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Version | Status | Introduced                                                                                                                                                                                                         |
-| 2.0     | Stable | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/broken-reference/README.md) |
-| 2.0     | Gamma  | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)                                |
+| Version | Status | Introduced                                                                                                                                                                          |
+| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2.0     | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 2.0     | Gamma  | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) |
 
 ### TABLE\_STATISTICS
 
 | Version | Status | Introduced                                                                                                                                                                          |
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                                          |
 | 2.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
 | 2.0     | Gamma  | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) |
 

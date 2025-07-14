@@ -13,18 +13,18 @@ A high-level overview of the main reasons for choosing a particular storage engi
 
 ### Scaling, Partitioning
 
-When you want to split your database load on several servers or optimize for scaling. We also suggest looking at [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md), a synchronous multi-master cluster.
+When you want to split your database load on several servers or optimize for scaling. We also suggest looking at [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide), a synchronous multi-master cluster.
 
 * [Spider](spider/) uses partitioning to provide data sharding through multiple servers.
 * [ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore) utilizes a massively parallel distributed data architecture and is designed for big data scaling to process petabytes of data.
 * The [MERGE](merge.md) storage engine is a collection of identical [MyISAM](myisam-storage-engine/) tables that can be used as one. "Identical" means that all tables have identical column and index information.
-* [TokuDB](tokudb/) is a transactional storage engine which is optimized for workloads that do not fit in memory, and provides a good compression ratio. TokuDB has been deprecated by its upstream developers, and is disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
+* [TokuDB](tokudb/) is a transactional storage engine which is optimized for workloads that do not fit in memory, and provides a good compression ratio. TokuDB has been deprecated by its upstream developers, and is disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
 
 ### Compression / Archive
 
 * [MyRocks](myrocks/) enables greater compression than InnoDB, as well as less write amplification giving better endurance of flash storage and improving overall throughput.
 * The [Archive](archive.md) storage engine is, unsurprisingly, best used for archiving.
-* [TokuDB](tokudb/) is a transactional storage engine which is optimized for workloads that do not fit in memory, and provides a good compression ratio. TokuDB has been deprecated by its upstream developers, and is disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
+* [TokuDB](tokudb/) is a transactional storage engine which is optimized for workloads that do not fit in memory, and provides a good compression ratio. TokuDB has been deprecated by its upstream developers, and is disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
 
 ### Connecting to Other Data Sources
 
@@ -50,14 +50,14 @@ Search engines optimized for search.
 
 * [S3 Storage Engine](s3-storage-engine/) is a read-only storage engine that stores its data in Amazon S3.
 * [Sequence](sequence-storage-engine.md) allows the creation of ascending or descending sequences of numbers (positive integers) with a given starting value, ending value and increment, creating virtual, ephemeral tables automatically when you need them.
-* The [BLACKHOLE](blackhole.md) storage engine accepts data but does not store it and always returns an empty result. This can be useful in [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/broken-reference/README.md) environments, for example, if you want to run complex filtering rules on a slave without incurring any overhead on a master.
+* The [BLACKHOLE](blackhole.md) storage engine accepts data but does not store it and always returns an empty result. This can be useful in [replication](../../ha-and-performance/standard-replication/replication-overview.md) environments, for example, if you want to run complex filtering rules on a slave without incurring any overhead on a master.
 * [OQGRAPH](oqgraph-storage-engine/) allows you to handle hierarchies (tree structures) and complex graphs (nodes having many connections in several directions).
 
 ## Alphabetical List
 
 * The [Archive](archive.md) storage engine is, unsurprisingly, best used for archiving.
 * [Aria](aria/), MariaDB's more modern improvement on MyISAM, has a small footprint and allows for easy copy between systems.
-* The [BLACKHOLE](blackhole.md) storage engine accepts data but does not store it and always returns an empty result. This can be useful in [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/broken-reference/README.md) environments, for example, if you want to run complex filtering rules on a slave without incurring any overhead on a master.
+* The [BLACKHOLE](blackhole.md) storage engine accepts data but does not store it and always returns an empty result. This can be useful in [replication](../../ha-and-performance/standard-replication/replication-overview.md) environments, for example, if you want to run complex filtering rules on a slave without incurring any overhead on a master.
 * [CassandraSE](legacy-storage-engines/cassandra/) is a storage engine allowing access to an older version of Apache Cassandra NoSQL DBMS. It was relatively experimental, is no longer being actively developed and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
 * [ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore) utilizes a massively parallel distributed data architecture and is designed for big data scaling to process petabytes of data.
 * [CONNECT](connect/) allows access to different kinds of text files and remote resources as if they were regular MariaDB tables.
@@ -74,7 +74,7 @@ Search engines optimized for search.
 * [Sequence](sequence-storage-engine.md) allows the creation of ascending or descending sequences of numbers (positive integers) with a given starting value, ending value and increment, creating virtual, ephemeral tables automatically when you need them.
 * [SphinxSE](sphinx-storage-engine/) is used as a proxy to run statements on a remote Sphinx database server (mainly useful for advanced fulltext searches).
 * [Spider](spider/) uses partitioning to provide data sharding through multiple servers.
-* [TokuDB](tokudb/) is a transactional storage engine which is optimized for workloads that do not fit in memory, and provides a good compression ratio. TokuDB has been deprecated by its upstream developers, and is disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
+* [TokuDB](tokudb/) is a transactional storage engine which is optimized for workloads that do not fit in memory, and provides a good compression ratio. TokuDB has been deprecated by its upstream developers, and is disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
 * [XtraDB](innodb/) is no longer available. It was a performance-enhanced fork of InnoDB and was MariaDB's default engine until [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

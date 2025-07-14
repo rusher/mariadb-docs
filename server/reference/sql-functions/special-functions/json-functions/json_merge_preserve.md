@@ -1,29 +1,22 @@
-
-# JSON_MERGE_PRESERVE
+# JSON\_MERGE\_PRESERVE
 
 ## Syntax
 
-
-```
+```sql
 JSON_MERGE_PRESERVE(json_doc, json_doc[, json_doc] ...)
 ```
 
 ## Description
 
+Merges the given JSON documents, returning the merged result, or `NULL` if any argument is `NULL`.
 
-Merges the given JSON documents, returning the merged result, or NULL if any argument is NULL.
+`JSON_MERGE_PRESERVE` is a synonym for [JSON\_MERGE](json_merge.md), which has been deprecated.
 
-
-`JSON_MERGE_PRESERVE` was introduced as a synonym for [JSON_MERGE](json_merge.md), which has been deprecated.
-
-
-Unlike [JSON_MERGE_PATCH](json_merge_patch.md), members with duplicate keys are preserved.
-
+Unlike [JSON\_MERGE\_PATCH](json_merge_patch.md), members with duplicate keys are preserved.
 
 ## Example
 
-
-```
+```sql
 SET @json1 = '[1, 2]';
 SET @json2 = '[2, 3]';
 SELECT JSON_MERGE_PATCH(@json1,@json2),JSON_MERGE_PRESERVE(@json1,@json2);
@@ -36,11 +29,8 @@ SELECT JSON_MERGE_PATCH(@json1,@json2),JSON_MERGE_PRESERVE(@json1,@json2);
 
 ## See Also
 
-
-* [JSON_MERGE_PATCH](json_merge_patch.md)
-
+* [JSON\_MERGE\_PATCH](json_merge_patch.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

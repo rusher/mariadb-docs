@@ -1,5 +1,7 @@
 # Documentation Style Guide
 
+## Style Guide
+
 **We adhere to the** [**Google developer documentation style guide**](https://developers.google.com/style/)**.** Here are some links to particularly important resources from that style guide:
 
 * [Word list](https://developers.google.com/style/word-list) – an alphabetically ordered list that allows you to quickly find words to use, or not to use, and recommendations of words and terms to use.
@@ -13,5 +15,9 @@
 * [Code samples](https://developers.google.com/style/code-samples) – how to write and format code blocks.
 * [Example domain names, IP numbers, and person names](https://developers.google.com/style/examples) – and how to use filenames and trademarks.
 
+## Additional Information
+
+**Version-specific information:** We refer to software versions (like "MariaDB 10.6") only for products (like MariaDB Server or MaxScale) or features (like replication or authentication) that follow the **`N-1` rule**, where `N` is the last version still under maintenance. (At the time of writing, that's MariaDB 10.6 for the Server.) In other words, we'd mention MariaDB 10.5, but not versions older than that.\
+This is the principle, from which we will deviate if there's a valid reason to do so.
 
 {% @marketo/form formId="4316" %}

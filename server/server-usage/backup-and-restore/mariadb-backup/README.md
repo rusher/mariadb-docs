@@ -1,16 +1,8 @@
 ---
-description: The mariadb-backup tool is the
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
+description: >-
+  Get an overview of MariaDB Backup. This section introduces the hot physical
+  backup tool, explaining its capabilities for efficient and consistent backups
+  of your MariaDB Server.
 ---
 
 # mariadb-backup

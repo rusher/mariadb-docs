@@ -1,8 +1,8 @@
 # Performance Schema events\_transactions\_summary\_by\_host\_by\_event\_name Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
-The events\_transactions\_summary\_by\_host\_by\_event\_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+The events\_transactions\_summary\_by\_host\_by\_event\_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
 
 The `events_transactions_summary_by_host_by_event_name` table contains information on transaction events aggregated by host and event name.
 
@@ -10,7 +10,6 @@ The table contains the following columns:
 
 | Column                  | Type                | Description                                                                                                                                                                                                  |
 | ----------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Column                  | Type                | Description                                                                                                                                                                                                  |
 | HOST                    | char(60)            | Host for which summary is generated.                                                                                                                                                                         |
 | EVENT\_NAME             | varchar(128)        | Event name for which summary is generated.                                                                                                                                                                   |
 | COUNT\_STAR             | bigint(20) unsigned | The number of summarized events. This value includes all events, whether timed or nontimed.                                                                                                                  |

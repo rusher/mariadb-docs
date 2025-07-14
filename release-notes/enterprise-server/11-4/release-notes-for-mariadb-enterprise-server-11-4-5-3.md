@@ -8,7 +8,6 @@ MariaDB Enterprise Server 11.4.5-3 was released on 19 Mar 2025.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-11-4/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-11-4/cve.org) link) | CVSS base score |
 | [CVE-2025-21490](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21490)                                                                                               | 4.9             |
 
 ## Changes in Storage Engines
@@ -150,7 +149,7 @@ The vector search feature requires some [new system variables](https://app.gitbo
 * MariaDB now supports MySQL 8.0 binlog events, including `PARTIAL_UPDATE_ROWS_EVENT`, `TRANSACTION_PAYLOAD_EVENT`, and `HEARTBEAT_LOG_EVENT_V2`. ([MDEV-35643](https://jira.mariadb.org/browse/MDEV-35643))
 * InnoDB deadlock output query length increased to improve visibility of deadlocked statements. ([MDEV-32576](https://jira.mariadb.org/browse/MDEV-32576))
 * [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.21
-  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
+  * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 
 ## Issues Fixed
 

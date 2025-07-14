@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CONVERT(expr,type), CONVERT(expr USING transcoding_name)
 ```
 
@@ -18,13 +18,13 @@ The type can be one of the following values:
 * [DATETIME](../../data-types/date-and-time-data-types/datetime.md)
 * \[DECIMAL[(M\[,D\])](../../data-types/numeric-data-types/decimal.md)]
 * [DOUBLE](../../data-types/numeric-data-types/double.md)
-* [FLOAT](../../data-types/numeric-data-types/float.md) (from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes))
+* [FLOAT](../../data-types/numeric-data-types/float.md)
 * [INTEGER](../../data-types/numeric-data-types/int.md)
   * Short for `SIGNED INTEGER`
 * SIGNED \[INTEGER]
 * UNSIGNED \[INTEGER]
 * [TIME](../../data-types/date-and-time-data-types/time.md)
-* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
+* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle))
 
 Note that in MariaDB, `INT` and `INTEGER` are the same thing.
 
@@ -34,25 +34,22 @@ Note that in MariaDB, `INT` and `INTEGER` are the same thing.
 
 The main difference between the [CAST()](cast.md) and `CONVERT()` is that `CONVERT(expr,type)` is ODBC syntax while [CAST(expr as type)](cast.md) and `CONVERT(... USING ...)` are SQL92 syntax.
 
-`CONVERT()` with `USING` is used to convert data between different [character sets](../../data-types/string-data-types/character-sets/). In MariaDB, transcoding names are the same as the\
-corresponding character set names. For example, this statement\
-converts the string 'abc' in the default character set to the\
-corresponding string in the utf8 character set:
+`CONVERT()` with `USING` is used to convert data between different [character sets](../../data-types/string-data-types/character-sets/). In MariaDB, transcoding names are the same as the corresponding character set names. For example, this statement converts the string 'abc' in the default character set to the corresponding string in the utf8 character set:
 
-```
+```sql
 SELECT CONVERT('abc' USING utf8);
 ```
 
 ## Examples
 
-```
+```sql
 SELECT enum_col FROM tbl_name 
 ORDER BY CAST(enum_col AS CHAR);
 ```
 
 Converting a [BINARY](../../data-types/string-data-types/binary.md) to string to permit the [LOWER](lower.md) function to work:
 
-```
+```sql
 SET @x = 'AardVark';
 
 SET @x = BINARY 'AardVark';

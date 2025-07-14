@@ -47,13 +47,13 @@ SELECT plugin_status FROM information_schema.plugins
 
 In some releases, the plugin's shared library is distributed with MariaDB by default, but the plugin is not actually installed by MariaDB. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
 ```
 INSTALL SONAME 'feedback';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -63,7 +63,7 @@ plugin_load_add = feedback
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
 ```
 UNINSTALL SONAME 'feedback';
@@ -73,7 +73,7 @@ If you installed the plugin by providing the [`--plugin-load`](../../../server-m
 
 ## Enabling the Plugin
 
-You can enable the plugin by setting the [`feedback`](#feedback) option to `ON` in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+You can enable the plugin by setting the [`feedback`](#feedback) option to `ON` in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -139,7 +139,7 @@ First, generate the report file with the MariaDB command-line [mariadb](../../..
 $ mariadb -e 'select * from information_schema.feedback' > report.txt
 ```
 
-Then you can upload the generated `report.txt` [here](https://feedback.mariadb.org/rest/v1/post) from the command line with tools such as [curl](https://curl.haxx.se/docs/manpage.html). For example:
+Then you can upload the generated `report.txt` [here](https://feedback.mariadb.org/rest/v1/post) from the command line with tools such as [curl](https://curl.haxx.se/docs/manpage.html):
 
 ```
 $ curl -F data=@report.txt https://feedback.mariadb.org/rest/v1/post
@@ -151,7 +151,6 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 
 | Version | Status | Introduced                                                                                                                                                                                                                                                                                                                                                       |
 | ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                                                                                                                                                                                                                       |
 | 1.1     | Stable | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes)                                                                                                                                                                              |
 | 1.1     | Beta   | [MariaDB 5.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5520-release-notes), [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) |
 
@@ -160,7 +159,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 ### `feedback_http_proxy`
 
 * Description: Proxy server for use when http calls cannot be made, such as in a firewall environment. The format is `host:port`.
-* Commandline: `--feedback-http=proxy=value`
+* Command line: `--feedback-http=proxy=value`
 * Read-only: Yes
 * Data Type: string
 * Default Value: `''` (empty)
@@ -168,7 +167,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 ### `feedback_send_retry_wait`
 
 * Description: Time in seconds before retrying if the plugin failed to send the data for any reason.
-* Commandline: `--feedback-send-retry-wait=#`
+* Command line: `--feedback-send-retry-wait=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: numeric
@@ -178,7 +177,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 ### `feedback_send_timeout`
 
 * Description: An attempt to send the data times out and fails after this many seconds.
-* Commandline: `--feedback-send-timeout=#`
+* Command line: `--feedback-send-timeout=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: numeric
@@ -195,7 +194,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 ### `feedback_url`
 
 * Description: URL to which the data is sent. More than one URL, separated by spaces, can be specified. Set it to an empty string to disable data sending.
-* Commandline: `--feedback-url=url`
+* Command line: `--feedback-url=url`
 * Scope: Global
 * Dynamic: No
 * Data Type: string
@@ -204,7 +203,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 ### `feedback_user_info`
 
 * Description: The value of this option is not used by the plugin, but it is included in the feedback data. It can be used to add any user-specified string to the report. This could be used to help to identify it. For example, a support contract number, or a computer name (if you collect reports internally by specifying your own `feedback-url`).
-* Commandline: `--feedback-user-info=string`
+* Command line: `--feedback-user-info=string`
 * Scope: Global
 * Dynamic: No
 * Data Type: string
@@ -221,7 +220,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `--feedback=value`
+* Command line: `--feedback=value`
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`

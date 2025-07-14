@@ -6,7 +6,7 @@ The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 
 
 **Release date:** 7 Nov 2022
 
-[MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable series of MariaDB, maintained until July 2026. It is an evolution of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
+[MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable series of MariaDB, maintained until July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.11](mariadb-10-6-11-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -61,7 +61,7 @@ sudo rpm --import https://supplychain.mariadb.com/MariaDB-Server-GPG-KEY
 
 The following changes have been made to the `docker.io/library/mariadb` container image.
 
-* The number of gpg packages packages has been removed, leaving enough to `apt-get update`, but `dirmngr` that would fetch keys has been removed. (inspired by [issue #469](https://github.com/MariaDB/mariadb-docker/issues/469))
+* The number of gpg packages has been removed, leaving enough to `apt-get update`, but `dirmngr` that would fetch keys has been removed. (inspired by [issue #469](https://github.com/MariaDB/mariadb-docker/issues/469))
 * The environment variable `LANG=C.UTF-8` has been added for those that exec into containers and copy paste UTF8 characters (fixes [issue #468](https://github.com/MariaDB/mariadb-docker/issues/468)).
 * Adds OCI labels to image (fixes [issue 436](https://github.com/MariaDB/mariadb-docker/issues/436) and [users need for version](https://github.com/MariaDB/mariadb-docker/commit/942cd5347b86c84cc4d493147b17c3e3b93fbee3))
 * MariaDB config: skip-host-cache and skip-name-resolve moved to `/etc/mysql/mariadb.conf.d/05-skipcache.cnf`

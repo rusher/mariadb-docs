@@ -13,7 +13,6 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | TIMER_NAME | Time name, used in the [setup_timers](performance-schema-setup_timers-table.md) table. |
 | TIMER_FREQUENCY | Number of timer units per second. Dependent on the processor speed. |
 | TIMER_RESOLUTION | Number of timer units by which timed values increase each time. |
@@ -21,7 +20,7 @@ It contains the following columns:
 
 
 
-Any `NULL` values indicate that that particular timer is not available on your platform, Any timer names with a non-NULL value can be used in the [setup_timers](performance-schema-setup_timers-table.md) table.
+Any `NULL` values indicate that particular timer is not available on your platform, Any timer names with a non-NULL value can be used in the [setup_timers](performance-schema-setup_timers-table.md) table.
 
 
 ## Example

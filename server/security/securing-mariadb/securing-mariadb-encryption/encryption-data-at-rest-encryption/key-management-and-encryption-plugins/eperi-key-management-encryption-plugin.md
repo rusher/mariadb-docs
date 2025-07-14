@@ -86,7 +86,6 @@ The Eperi Key Management plugin supports [key rotation](encryption-key-managemen
 
 | Version | Status  | Introduced                                                                  |
 | ------- | ------- | --------------------------------------------------------------------------- |
-| Version | Status  | Introduced                                                                  |
 | 1.0     | Unknown | [eperi Gateway for Databases](https://eperi.com/database-encryption/) 3.4.0 |
 
 ## System Variables

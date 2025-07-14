@@ -2,20 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 BLOB[(M)]
 ```
 
 ## Description
 
-A `BLOB` column with a maximum length of `65,535` (`216 - 1`) bytes. Each`BLOB` value is stored using a two-byte length prefix that indicates the\
-number of bytes in the value.
+A `BLOB` column with a maximum length of `65,535` (`216 - 1`) bytes. Each`BLOB` value is stored using a two-byte length prefix that indicates the number of bytes in the value.
 
-An optional length `M` can be given for this type. If this is done,\
-MariaDB creates the column as the smallest `BLOB` type large enough to\
-hold values _`M`_ bytes long.
+An optional length `M` can be given for this type. If this is done, MariaDB creates the column as the smallest `BLOB` type large enough to hold values _`M`_ bytes long.
 
-BLOBS can also be used to store [dynamic columns](../../sql-structure/nosql/dynamic-columns.md).
+`BLOB` values can also be used to store [dynamic columns](../../sql-structure/nosql/dynamic-columns.md).
 
 `BLOB` and `TEXT` columns can both be assigned a [DEFAULT](../../sql-statements/data-definition/create/create-table.md#default) value.
 
@@ -29,22 +26,22 @@ In previous releases, setting a unique index on a column that uses the `BLOB` da
 
 ### Oracle Mode
 
-In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md), `BLOB` is a synonym for `LONGBLOB`.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `BLOB` is a synonym for `LONGBLOB`.
 
 ## EXAMPLES
 
 ### BLOB
 
-Example of BLOB:
+Example of `BLOB`:
 
-```
+```sql
 CREATE TABLE blob_example (
    description VARCHAR(20),
    example BLOB
 ) DEFAULT CHARSET=latin1; -- One byte per char makes the examples clearer
 ```
 
-```
+```sql
 INSERT INTO blob_example VALUES
    ('Normal foo', 'foo'),
    ('Trailing spaces foo', 'foo      '),
@@ -53,7 +50,7 @@ INSERT INTO blob_example VALUES
    ('Maximum', RPAD('', 65535, CHAR(7)));
 ```
 
-```
+```sql
 SELECT description, LENGTH(example) AS length
    FROM blob_example;
 
@@ -70,11 +67,11 @@ SELECT description, LENGTH(example) AS length
 
 ## Data Too Long
 
-When SQL\_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
+When `SQL_MODE` is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
 
-Example of data too long behavior for BLOB:
+Example of data too long behavior for `BLOB`:
 
-```
+```sql
 TRUNCATE blob_example;
 
 INSERT INTO blob_example VALUES
@@ -87,7 +84,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

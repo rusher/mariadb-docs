@@ -10,7 +10,6 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | HOST | Host. Used together with EVENT_NAME for grouping events. |
 | EVENT_NAME | Event name. Used together with HOST for grouping events. |
 | COUNT_STAR | Number of summarized events, which includes all timed and untimed events. |

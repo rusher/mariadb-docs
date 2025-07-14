@@ -4,7 +4,7 @@
 
 Before upgrading to MariaDB MaxScale, it is critical to review the changes. This guide outlines new features, altered parameters, and deprecated functionality to ensure a smooth transition.
 
-For more information about what has changed, please refer to the[ChangeLog](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
+For more information about what has changed, please refer to the[ChangeLog](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
 
 Before starting the upgrade, any existing configuration files should be backed up.
 
@@ -14,7 +14,7 @@ Before starting the upgrade, any existing configuration files should be backed u
 
 #### `reuse_prepared_statements`
 
-The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md) filter module.
+The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -40,7 +40,7 @@ filters=PsReuse
 
 #### `optimistic_trx`
 
-The `optimistic_trx` parameter has been replaced with the use of the[OptimisticTrx](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
+The `optimistic_trx` parameter has been replaced with the use of the[OptimisticTrx](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -81,7 +81,7 @@ To downgrade from MaxScale 24.02 to an older MaxScale major release:
 ## Upgrading MariaDB MaxScale from 23.02 to 23.08
 
 MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5\
-and later. See [Cluster Manipulation Grants](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) for more information.
+and later. See [Cluster Manipulation Grants](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) for more information.
 
 ## Upgrading MariaDB MaxScale from 22.08 to 23.02
 
@@ -164,7 +164,7 @@ no longer be used.
 ### Authentication
 
 The credentials used by services now require additional grants. For a full list\
-of required grants, refer to the [protocol documentation](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/).
+of required grants, refer to the [protocol documentation](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/).
 
 ### MariaDB-Monitor
 
@@ -473,7 +473,7 @@ GRANT SELECT ON mysql.tables_priv TO 'username'@'maxscalehost';
 
 MaxScale 1.4 upgrades the used password encryption algorithms to more secure ones.\
 This requires that the password files are recreated with the `maxkeys` tool.\
-For more information about how to do this, please read the installation guide:[MariaDB MaxScale Installation Guide](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-installation-guide.md)
+For more information about how to do this, please read the installation guide:[MariaDB MaxScale Installation Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-installation-guide.md)
 
 ### SSL
 

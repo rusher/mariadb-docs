@@ -2,9 +2,9 @@
 
 ## Syntax
 
-```
-COLUMN_GET(dyncol_blob, column_nr as type);
-COLUMN_GET(dyncol_blob, column_name as type);
+```sql
+COLUMN_GET(dyncol_blob, column_nr as type)
+COLUMN_GET(dyncol_blob, column_name as type)
 ```
 
 ## Description
@@ -19,13 +19,13 @@ The answer is: SQL is a statically-typed language. The SQL interpreter needs to 
 
 ### Lengths
 
-If you're running queries like:
+Suppose running a query like this:
 
-```
+```sql
 SELECT COLUMN_GET(blob, 'colname' as CHAR) ...
 ```
 
-without specifying a maximum length (i.e. using `as CHAR`, not `as CHAR(n)`), MariaDB will report the maximum length of the resultset column to be 16,777,216. This may cause excessive memory usage in some client libraries, because they try to pre-allocate a buffer of maximum resultset width. To avoid this problem, use CHAR(n) whenever you're using COLUMN\_GET in the select list.
+Without specifying a maximum length (i.e. using `as CHAR`, not `as CHAR(n)`), MariaDB will report the maximum length of the result set column to be 16,777,216. This may cause excessive memory usage in some client libraries, because they try to pre-allocate a buffer of maximum result set width. To avoid this problem, use CHAR(n) whenever you're using COLUMN\_GET in the select list.
 
 See [Dynamic Columns:Datatypes](../../../sql-structure/nosql/dynamic-columns.md#datatypes) for more information about datatypes.
 

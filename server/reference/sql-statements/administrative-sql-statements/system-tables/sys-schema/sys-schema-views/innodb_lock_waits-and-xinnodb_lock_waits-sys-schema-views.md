@@ -14,7 +14,6 @@ They contain the following columns:
 
 | Column                          | Description                                                                                                             |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Column                          | Description                                                                                                             |
 | wait\_started                   | Time that lock wait began.                                                                                              |
 | wait\_age                       | TIME value for the length of the lock wait.                                                                             |
 | wait\_age\_secs                 | Seconds value for the length of the lock wait.                                                                          |

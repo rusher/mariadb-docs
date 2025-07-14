@@ -14,7 +14,6 @@ They contain the following columns:
 
 | Column         | Description                                          |
 | -------------- | ---------------------------------------------------- |
-| Column         | Description                                          |
 | file           | File path name.                                      |
 | count\_read    | Total number of read events for the file.            |
 | total\_read    | Total number of bytes read from the file.            |

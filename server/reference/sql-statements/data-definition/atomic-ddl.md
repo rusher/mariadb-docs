@@ -37,7 +37,7 @@ Before 10.6, in case of a crash, there was a small possibility that one of the f
 * [CREATE TRIGGER](../../../server-usage/triggers-events/triggers/create-trigger.md)
 * [DROP TRIGGER](drop/drop-trigger.md)
 * [DROP TABLE](drop/drop-table.md) and [DROP VIEW](../../../server-usage/views/drop-view.md). Dropping multiple tables is only crash safe.
-* [ALTER TABLE](alter/alter-table.md)
+* [ALTER TABLE](alter/alter-table/)
 * [ALTER SEQUENCE](../../sql-structure/sequences/alter-sequence.md) is not listed above as it is internally implemented as a DML.
 
 ## Which DDL Operations are Now Crash Safe

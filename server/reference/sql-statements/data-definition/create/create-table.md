@@ -75,7 +75,7 @@ Use the `TEMPORARY` keyword to create a temporary table that is only available t
 
 {% tabs %}
 {% tab title="Current" %}
-[ROCKSDB](../../../../server-usage/storage-engines/myrocks/) temporary tables cannot be created by setting the [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) system variable, or using `CREATE TEMPORARY TABLE LIKE`.  If you try, an error is returned. Explicitly creating a temporary table with `ENGINE=ROCKSDB` has never been permitted.
+[ROCKSDB](../../../../server-usage/storage-engines/myrocks/) temporary tables cannot be created by setting the [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) system variable, or using `CREATE TEMPORARY TABLE LIKE`. If you try, an error is returned. Explicitly creating a temporary table with `ENGINE=ROCKSDB` has never been permitted.
 {% endtab %}
 
 {% tab title="< 10.7" %}
@@ -168,8 +168,6 @@ constraint_definition:
 
 {% hint style="info" %}
 **Note:**
-
-
 {% endhint %}
 
 {% tabs %}
@@ -226,7 +224,7 @@ You can also use DEFAULT ([NEXT VALUE FOR sequence](../../../sql-structure/seque
 
 ### AUTO\_INCREMENT Column Option
 
-Use [AUTO\_INCREMENT](../../../data-types/auto_increment.md) to create a column whose value can can be set automatically from a simple counter. You can only use `AUTO_INCREMENT` on a column with an integer type. The column must be a key, and there can only be one `AUTO_INCREMENT` column in a table. If you insert a row without specifying a value for that column (or if you specify `0`, `NULL`, or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md) as the value), the actual value will be taken from the counter, with each insertion incrementing the counter by one. You can still insert a value explicitly. If you insert a value that is greater than the current counter value, the counter is\
+Use [AUTO\_INCREMENT](../../../data-types/auto_increment.md) to create a column whose value can be set automatically from a simple counter. You can only use `AUTO_INCREMENT` on a column with an integer type. The column must be a key, and there can only be one `AUTO_INCREMENT` column in a table. If you insert a row without specifying a value for that column (or if you specify `0`, `NULL`, or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md) as the value), the actual value will be taken from the counter, with each insertion incrementing the counter by one. You can still insert a value explicitly. If you insert a value that is greater than the current counter value, the counter is\
 set based on the new value. An `AUTO_INCREMENT` column is implicitly `NOT NULL`. Use [LAST\_INSERT\_ID](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) to get the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) value most recently used by an [INSERT](../../data-manipulation/inserting-loading-data/insert.md) statement.
 
 ### ZEROFILL Column Option
@@ -243,7 +241,54 @@ Specifying a column as a unique key creates a unique index on that column. See t
 
 Use `UNIQUE KEY` (or just `UNIQUE`) to specify that all values in the column must be distinct from each other. Unless the column is `NOT NULL`, there may be multiple rows with `NULL` in the column.
 
+```sql
+CREATE TABLE t_long_keys (   a INT PRIMARY KEY,   b  VARCHAR(4073),   UNIQUE KEY `uk_b` (b) ) ENGINE=InnoDB;
+Query OK, 0 rows affected (0.022 sec)
+
+show create table t_long_keys\G
+*************************** 1. row ***************************
+       Table: t_long_keys
+Create Table: CREATE TABLE `t_long_keys` (
+  `a` int(11) NOT NULL,
+  `b` varchar(4073) DEFAULT NULL,
+  PRIMARY KEY (`a`),
+  UNIQUE KEY `uk_b` (`b`) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
+1 row in set (0.001 sec)
+
+select * from information_schema.INNODB_SYS_TABLES where name like '%t_long_keys%';;
++----------+----------------------+------+--------+-------+------------+---------------+------------+
+| TABLE_ID | NAME                 | FLAG | N_COLS | SPACE | ROW_FORMAT | ZIP_PAGE_SIZE | SPACE_TYPE |
++----------+----------------------+------+--------+-------+------------+---------------+------------+
+|       64 | securedb/t_long_keys |   33 |      5 |    43 | Dynamic    |             0 | Single     |
++----------+----------------------+------+--------+-------+------------+---------------+------------+
+1 row in set (0.003 sec)
+
+
+select * from information_schema.INNODB_SYS_COLUMNS where TABLE_ID=64;
++----------+---------------+-------+-------+--------+------+
+| TABLE_ID | NAME          | POS   | MTYPE | PRTYPE | LEN  |
++----------+---------------+-------+-------+--------+------+
+|       64 | a             |     0 |     6 |   1283 |    4 |
+|       64 | b             |     1 |     1 | 528399 | 4073 |
+|       64 | DB_ROW_HASH_1 | 65538 |     6 |   9736 |    8 |
++----------+---------------+-------+-------+--------+------+
+
+```
+
 Specifying a column as a unique key creates a unique index on that column.
+
+When any inserts or updates occur in the table, reading the binlog shows the hidden column (@3). it causes confusion for the user; we can document these behaviours.
+
+```sql
+### INSERT INTO `securedb`.`t_long_keys`
+### SET
+###   @1=1 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='a' /* VARSTRING(4073) meta=4073 nullable=1 is_null=0 */
+###   @3=580 /* LONGINT meta=0 nullable=1 is_null=0 */
+```
+
+
 
 See the [Index Definitions](create-table.md#index-definitions) section below for more information.
 
@@ -486,7 +531,7 @@ One can use most deterministic functions in a constraint, including [UDFs](../..
 CREATE TABLE t1 (a INT CHECK(a>0) ,b INT CHECK (b> 0), CONSTRAINT abc CHECK (a>b));
 ```
 
-If you use the second format and you don't give a name to the constraint, then the constraint will get a auto generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](../alter/alter-table.md).
+If you use the second format and you don't give a name to the constraint, then the constraint will get a auto generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](../alter/alter-table/).
 
 One can disable all constraint expression checks by setting the variable `check_constraint_checks` to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
 
@@ -578,7 +623,7 @@ MyISAM uses `MAX_ROWS` and `AVG_ROW_LENGTH` to decide the maximum size of a tabl
 
 ### DATA DIRECTORY/INDEX DIRECTORY
 
-`DATA DIRECTORY` and `INDEX DIRECTORY` are supported for MyISAM and Aria, and DATA DIRECTORY is also supported by InnoDB if the [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) server system variable is enabled, but only in CREATE TABLE, not in [ALTER TABLE](../alter/alter-table.md). So, carefully choose a path for InnoDB tables at creation time, because it cannot be changed without dropping and re-creating the table. These options specify the paths for data files and index files, respectively. If these options are omitted, the database's directory will be used to store data files and index files. Note that these table options do not work for [partitioned](../../../../server-usage/partitioning-tables/) tables (use the partition options instead), or if the server has been invoked with the [--skip-symbolic-links startup option](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md). To avoid the overwriting of old files with the same name that could be present in the directories, you can use [the --keep\_files\_on\_create option](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) (an error will be issued if files already exist). These options are ignored if the `NO_DIR_IN_CREATE` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled (useful for replicas). Also note that symbolic links cannot be used for InnoDB tables.
+`DATA DIRECTORY` and `INDEX DIRECTORY` are supported for MyISAM and Aria, and DATA DIRECTORY is also supported by InnoDB if the [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) server system variable is enabled, but only in CREATE TABLE, not in [ALTER TABLE](../alter/alter-table/). So, carefully choose a path for InnoDB tables at creation time, because it cannot be changed without dropping and re-creating the table. These options specify the paths for data files and index files, respectively. If these options are omitted, the database's directory will be used to store data files and index files. Note that these table options do not work for [partitioned](../../../../server-usage/partitioning-tables/) tables (use the partition options instead), or if the server has been invoked with the [--skip-symbolic-links startup option](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md). To avoid the overwriting of old files with the same name that could be present in the directories, you can use [the --keep\_files\_on\_create option](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) (an error will be issued if files already exist). These options are ignored if the `NO_DIR_IN_CREATE` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled (useful for replicas). Also note that symbolic links cannot be used for InnoDB tables.
 
 `DATA DIRECTORY` works by creating symlinks from where the table would normally have been (inside the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir)) to where the option specifies. For security reasons, to avoid bypassing the privilege system, the server does not permit symlinks inside the datadir. Therefore, `DATA DIRECTORY` cannot be used to specify a location inside the datadir. An attempt to do so will result in an error `1210 (HY000) Incorrect arguments to DATA DIRECTORY`.
 
@@ -879,7 +924,7 @@ CREATE TABLE t1(
 ## See Also
 
 * [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md)
-* [ALTER TABLE](../alter/alter-table.md)
+* [ALTER TABLE](../alter/alter-table/)
 * [DROP TABLE](../drop/drop-table.md)
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)

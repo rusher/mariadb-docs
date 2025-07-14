@@ -269,16 +269,10 @@ See [Account Locking](../../../security/user-account-management/account-locking.
 The _lock\_option_ and _password\_option_ clauses can occur in either order.
 {% endtab %}
 
-{% tab title="< 10.5.8" %}
-The _lock\_option_ and _password\_option_ clauses **cannot** occur in either order.
-{% endtab %}
-
-{% tab title="< 10.4.7" %}
-The _lock\_option_ and _password\_option_ clauses **cannot** occur in either order.
+{% tab title="< 10.5.8, < 10.4.7" %}
+The _lock\_option_ must be placed before the _password\_option_.
 {% endtab %}
 {% endtabs %}
-
-## See Also
 
 * [Authentication from MariaDB 10.4](../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [GRANT](grant.md)

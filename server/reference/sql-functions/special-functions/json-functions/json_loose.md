@@ -1,23 +1,18 @@
-
-# JSON_LOOSE
+# JSON\_LOOSE
 
 ## Syntax
 
-
-```
+```sql
 JSON_LOOSE(json_doc)
 ```
 
 ## Description
 
-
 Adds spaces to a JSON document to make it look more readable.
-
 
 ## Example
 
-
-```
+```sql
 SET @j = '{ "A":1,"B":[2,3]}';
 
 SELECT JSON_LOOSE(@j), @j;
@@ -28,8 +23,6 @@ SELECT JSON_LOOSE(@j), @j;
 +-----------------------+--------------------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

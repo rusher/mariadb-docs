@@ -28,9 +28,9 @@ Some other important InnoDB variables:
 
 * [innodb\_max\_dirty\_pages\_pct\_lwm](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
 * [innodb\_read\_ahead\_threshold](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
-* [innodb\_buffer\_pool\_instances](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances). Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes).
-* [innodb\_adaptive\_max\_sleep\_delay](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1055-release-notes).
-* [innodb\_thread\_concurrency](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1055-release-notes).
+* [innodb\_buffer\_pool\_instances](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances). Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes).
+* [innodb\_adaptive\_max\_sleep\_delay](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1055-release-notes).
+* [innodb\_thread\_concurrency](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1055-release-notes).
 
 ## [Aria](../../../../server-usage/storage-engines/aria/aria-storage-engine.md) Storage Engine
 

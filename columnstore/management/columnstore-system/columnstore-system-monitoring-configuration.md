@@ -55,7 +55,7 @@ To disable a threshold alarm, set it to 0.
 
 ### Memory utilization
 
-A couple of mcsadmin commands provide convenience functions for monitoring memory utilization across nodes. _getSystemMemory_ returns server level memory statistics and _getSystemMemoryUsers_ shows the the top 5 processes by server. The following examples are for a 2 server combined setup:
+A couple of mcsadmin commands provide convenience functions for monitoring memory utilization across nodes. _getSystemMemory_ returns server level memory statistics and _getSystemMemoryUsers_ shows the top 5 processes by server. The following examples are for a 2 server combined setup:
 
 ```
 mcsadmin> getSystemMemory
@@ -125,7 +125,6 @@ For each module (PM and UM), the following resource monitoring parameters can be
 
 | Resource Monitoring Parameter  | mcsadmin command                                                                                                         |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| Resource Monitoring Parameter  | mcsadmin command                                                                                                         |
 | CPU thresholds                 | setModuleTypeConfig (module name) ModuleCPU(Clear/ Minor/Major/Critical)Threshold n (where n= percentage of CPU usage)   |
 | Disk file system use threshold | setModuleTypeConfig (module name) ModuleDisk(Minor/ Major/Critical)Threshold n (where n= percentage of disk system used) |
 | Module swap thresholds         | setModuleTypeConfig (module name) ModuleSwap(Minor/ Major/Crictical)Threshold n (where n= percentage of swap space used) |

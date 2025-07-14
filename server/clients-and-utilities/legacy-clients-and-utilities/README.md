@@ -1,16 +1,8 @@
 ---
-description: Category for removed, deprecated or unmaintained MariaDB clients and utilities
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
+description: >-
+  Explore legacy clients and utilities. This section provides information on
+  older tools and their use cases, useful for understanding historical contexts
+  or working with specific deployments.
 ---
 
 # Legacy Clients and Utilities

@@ -847,7 +847,7 @@ spec:
     galeraServerSSLMode: SERVER_X509
 ```
 
-The following values are supported: `SERVER_X509`, `SERVER` and `PROVIDER`. Refer to the [Galera Enterprise docs](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) for further detail about these modes.
+The following values are supported: `SERVER_X509`, `SERVER` and `PROVIDER`. Refer to the [MariaDB Enterprise Cluster documentation](https://mariadb.com/docs/galera-cluster/galera-security/mariadb-enterprise-cluster-security#wsrep-tls-modes) for further detail about these modes.
 
 You may also configure the SSL enforcement level used during Snapshot State Transfers(SST) by setting:
 
@@ -863,7 +863,7 @@ spec:
     galeraClientSSLMode: VERIFY_IDENTITY
 ```
 
-The following values are supported: `VERIFY_IDENTITY`, `VERIFY`, `REQUIRED` and `DISABLED`. Refer to the [Galera Enterprise docs](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) for further detail about these modes.
+The following values are supported: `VERIFY_IDENTITY`, `VERIFY`, `REQUIRED` and `DISABLED`. Refer to the [MariaDB Enterprise Cluster documentation](https://mariadb.com/docs/galera-cluster/galera-security/mariadb-enterprise-cluster-security#sst-tls-modes) for further detail about these modes.
 
 If you are willing to increase the enforcement level in an existing instance, make sure you follow the migration guide provided in the [Enabling TLS in existing instances](migrations/enabling-tls-in-existing-instances.md) section.
 
