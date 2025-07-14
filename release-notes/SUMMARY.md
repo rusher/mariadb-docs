@@ -2168,6 +2168,7 @@
       * [Connector/Python 0.9.52-alpha Release Notes](connectors/python/mariadb-connector-python-0-9-release-notes/mariadb-connector-python-0-9-52-release-notes.md)
     * [Connector/Python Changelogs](connectors/python/changelogs/README.md)
       * [Connector/Python 1.1 Changelogs](connectors/python/changelogs/mariadb-connector-python-11-changelogs/README.md)
+        * [Connector/Python 1.1.13 Changelog](connectors/python/changelogs/mariadb-connector-python-11-changelogs/connector-python-1.1.13-changelog.md)
         * [Connector/Python 1.1.12 Changelog](connectors/python/changelogs/mariadb-connector-python-11-changelogs/mariadb-connector-python-1-1-12-changelog.md)
         * [Connector/Python 1.1.11 Changelog](connectors/python/changelogs/mariadb-connector-python-11-changelogs/mariadb-connector-python-1-1-11-changelog.md)
         * [Connector/Python 1.1.10 Changelog](connectors/python/changelogs/mariadb-connector-python-11-changelogs/mariadb-connector-python-1-1-10-changelog.md)
