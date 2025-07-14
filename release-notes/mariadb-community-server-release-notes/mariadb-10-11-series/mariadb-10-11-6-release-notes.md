@@ -12,7 +12,7 @@ This version of MariaDB Server can cause InnoDB to hang on systems with very int
 
 [MariaDB 10.11.6](mariadb-10-11-6-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the**[**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
+**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the** [**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
 
 Thanks, and enjoy MariaDB!
 

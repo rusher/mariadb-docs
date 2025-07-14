@@ -10,7 +10,7 @@
 
 [MariaDB 10.11.4](mariadb-10-11-4-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the**[**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
+**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the** [**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
