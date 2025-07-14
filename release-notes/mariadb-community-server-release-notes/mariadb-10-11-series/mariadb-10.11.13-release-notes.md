@@ -1,8 +1,8 @@
 # MariaDB 10.11.13 Release Notes
 
-[Download](https://mariadb.com/downloads/community/)Release NotesChangelogOverview of 10.11
+<a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="mariadb-10.11.13-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10.11.13-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.13/)
+[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.7/)
 
 **Release date:** 22 May 2025
 
