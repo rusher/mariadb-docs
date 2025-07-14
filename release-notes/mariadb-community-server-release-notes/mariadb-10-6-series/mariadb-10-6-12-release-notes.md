@@ -10,8 +10,6 @@
 
 [MariaDB 10.6.12](mariadb-10-6-12-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
-
 Thanks, and enjoy MariaDB!
 
 ## Notable Items
