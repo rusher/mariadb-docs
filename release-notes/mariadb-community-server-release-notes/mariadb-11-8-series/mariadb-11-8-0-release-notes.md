@@ -6,7 +6,7 @@
 
 **Release date:** 18 Dec 2024
 
-**Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
+{% include "../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.8](what-is-mariadb-118.md) is a long-term development series of MariaDB. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 
