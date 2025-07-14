@@ -1,8 +1,9 @@
-# Changes and Improvements in MariaDB 10.6
+# MariaDB 10.6 Changes & Improvements
 
-The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is: [**MariaDB 10.6.22**](mariadb-10-6-22-release-notes.md) Stable (GA) <a href="https://mariadb.com/downloads/community" class="button primary">Download Now</a>\
+[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/10.6.22/)
 
-[MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable version. The first stable release was in July 2021, and it will be [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026.
+[MariaDB 10.6](what-is-mariadb-106.md) is a long-term maintenance stable version. The first stable release was in July 2021, and it will be [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026.
 
 ## Upgrading
 
