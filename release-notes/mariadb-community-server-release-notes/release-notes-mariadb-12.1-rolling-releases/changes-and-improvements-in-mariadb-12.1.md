@@ -32,7 +32,12 @@ MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an ev
 * Remove depth limit from JSON functions ([MDEV-32854](https://jira.mariadb.org/browse/MDEV-32854))
 * Support for functional indexes in GROUP/ORDER BY ([MDEV-36132](https://jira.mariadb.org/browse/MDEV-36132))
 * Include definitions of tables and views in the optimizer trace ([MDEV-36483](https://jira.mariadb.org/browse/MDEV-36483))
+* 
+## List of All MariaDB 12.1 Releases
 
+| Date        | Release                                           | Status  | Release Notes                                    | Changelog                                                                             |
+| ----------- | ------------------------------------------------- | ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 26 June 2025 | MariaDB 12.1.0                                    | Preview |                                                  |                                                                                       |
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}
