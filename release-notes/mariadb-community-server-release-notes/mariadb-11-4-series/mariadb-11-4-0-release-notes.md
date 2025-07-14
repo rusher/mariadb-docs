@@ -2,9 +2,7 @@
 
 {% include "../../.gitbook/includes/latest-11-4.md" %}
 
-<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-11-4-0-release-notes.md" class="button secondary">Release Notes</a>  <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
-
-[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.4.5/)
+<a href="https://downloads.mariadb.org/mariadb/11.4.0/" class="button primary">Download</a> <a href="mariadb-11-4-0-release-notes.md" class="button secondary">Release Notes</a>  <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 24 December 2023
 
