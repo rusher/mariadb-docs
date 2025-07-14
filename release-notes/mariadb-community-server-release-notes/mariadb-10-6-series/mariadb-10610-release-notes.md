@@ -1,16 +1,14 @@
 # MariaDB 10.6.10 Release Notes
 
-The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
 
-[Download 10.6.10](https://downloads.mariadb.org/mariadb/10.6.10/)[Release Notes](mariadb-10610-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10610-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+<a href="https://downloads.mariadb.org/mariadb/10.6.10/" class="button primary">Download</a> <a href="mariadb-10610-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10610-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 19 Sep 2022
 
 [MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable series of MariaDB, maintained until July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.10](mariadb-10610-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -25,11 +23,6 @@ Thanks, and enjoy MariaDB!
 * Full text index corruption if shutdown before changes are fully flushed ([MDEV-29342](https://jira.mariadb.org/browse/MDEV-29342))
 * [JSON\_VALUE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_value) does not parse NULL properties properly ([MDEV-27151](https://jira.mariadb.org/browse/MDEV-27151))
 * InnoDB hangs on multiple concurrent requests of a cold ROW\_FORMAT=COMPRESSED page ([MDEV-27983](https://jira.mariadb.org/browse/MDEV-27983))
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
 
 ## Changelog
 
