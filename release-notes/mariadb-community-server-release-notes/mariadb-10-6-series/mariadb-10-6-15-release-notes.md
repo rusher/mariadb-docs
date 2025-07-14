@@ -1,16 +1,14 @@
 # MariaDB 10.6.15 Release Notes
 
-The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
 
-[Download 10.6.15](https://downloads.mariadb.org/mariadb/10.6.15/)[Release Notes](mariadb-10-6-15-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-15-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+<a href="https://downloads.mariadb.org/mariadb/10.6.15/" class="button primary">Download</a> <a href="mariadb-10-6-15-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-15-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 14 Aug 2023
 
 [MariaDB 10.6](what-is-mariadb-106.md) is a previous long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.15](mariadb-10-6-15-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -126,11 +124,6 @@ Thanks, and enjoy MariaDB!
 * Server crashes when wsrep\_sst\_donor and wsrep\_cluster\_address set to NULL ([MDEV-28433](https://jira.mariadb.org/browse/MDEV-28433))
 * Create temporary sequence can cause inconsistency ([MDEV-31335](https://jira.mariadb.org/browse/MDEV-31335))
 * Galera 4 unable to query cluster state if not primary component ([MDEV-21479](https://jira.mariadb.org/browse/MDEV-21479))
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-`-``#`
 
 ## Changelog
 
