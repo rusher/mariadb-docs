@@ -1,8 +1,23 @@
+---
+description: >-
+  Explore vector data types. This section details how to store and manage
+  numerical arrays, enabling efficient vector similarity search and machine
+  learning applications within your database.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Vectors
-
-Vectors were introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
-
-Vectors are a feature that allow MariaDB Server to perform as a relational vector database.
 
 {% content-ref url="vector-overview.md" %}
 [vector-overview.md](vector-overview.md)

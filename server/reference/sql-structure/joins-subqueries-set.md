@@ -1,3 +1,10 @@
+---
+description: >-
+  Explore joins, subqueries, and set operations in MariaDB SQL. This section
+  details how to combine data from multiple tables, nest queries, and perform
+  set-based operations for complex data retrieval.
+---
+
 # Joins, Subqueries, and Set
 
 SQL (Structured Query Language) is a highly potent language used in the realm of databases and data analytics. It allows us to create, manipulate, and retrieve data stored in relational databases. While simple SQL commands can handle straightforward tasks, one must delve into advanced aspects such as multiple joins, subqueries, and set operations to unravel the full potential of SQL.
