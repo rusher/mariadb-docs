@@ -1197,7 +1197,6 @@
       * [GIS Features](reference/sql-structure/geometry/gis-features-in-533.md)
       * [GIS Resources](reference/sql-structure/geometry/gis-resources.md)
       * [SPATIAL INDEX](reference/sql-structure/geometry/spatial-index.md)
-      * [MySQL/MariaDB Spatial Support Matrix](reference/sql-structure/geometry/mysqlmariadb-spatial-support-matrix.md)
     * [NoSQL](reference/sql-structure/nosql/README.md)
       * [Dynamic Columns](reference/sql-structure/nosql/dynamic-columns.md)
       * [Dynamic Column API](reference/sql-structure/nosql/dynamic-column-api.md)

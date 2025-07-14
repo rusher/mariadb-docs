@@ -41,7 +41,7 @@ Note: Every project we know of which works with MySQL also works with MariaDB. T
 * [Jelastic - Java in the cloud](https://jelastic.com/docs/connection-to-mariadb)
 * [Kajona³ - Open Source Content Management Framework](https://www.kajona.de/) ([support announcement](https://www.kajona.de/newsdetails.Kajona-running-with-MariaDB.newsDetail.20ba9f14ce4227452730.en.html))
 * [MediaWiki](https://www.mediawiki.org/) ([installation guide](https://www.mediawiki.org/wiki/Manual:Installation_guide))
-* [MicroStrategy](https://microstrategyhelp.atlassian.net/wiki/display/README102/MicroStrategy+10.2+Certified+and+Supported+Configurations)
+* [MicroStrategy](https://www2.microstrategy.com/producthelp/current/FunctionsRef/Content/FuncRef/Maria_DB.htm)
 * [Moodle](https://docs.moodle.org/dev/Moodle_architecture#Requirements)
 * [Moon Modeler](https://www.datensen.com) - database design tool for MariaDB
 * [Mroonga](https://mroonga.org/en/blog/2016/10/29/mroonga-6.10.html)

@@ -449,13 +449,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 `mariadb` reads options from the following [option groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group             | Description                                                                                                                                                                                                                                                                |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| \[mysql]          | Options read by mysql, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                                |
-| \[mariadb-client] | Options read by mariadb. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes).                                        |
-| \[client]         | Options read by all MariaDB and MySQL [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), which includes both MariaDB and MySQL clients. For example, mysqldump.                                            |
-| \[client-server]  | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
-| \[client-mariadb] | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md).                                                                                                                             |
+| Group             | Description                                                                                                                                                                                                                         |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \[mysql]          | Options read by mysql, which includes both MariaDB Server and MySQL Server.                                                                                                                                                         |
+| \[mariadb-client] | Options read by mariadb. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| \[client]         | Options read by all MariaDB and MySQL client programs, which includes both MariaDB and MySQL clients. For example, mysqldump.                                                                                                       |
+| \[client-server]  | Options read by all MariaDB [client programs](./) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients.                                                      |
+| \[client-mariadb] | Options read by all MariaDB client programs.                                                                                                                                                                                        |
 
 ### How to Specify Which Protocol to Use When Connecting to the Server
 
@@ -710,7 +710,7 @@ the `--skip-reconnect` option.
 ### See Also
 
 * [Troubleshooting Connection Issues](../../mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md)
-* [Readline commands and configuration](https://docs.freebsd.org/info/readline/readline.pdf)
+* [Readline commands and configuration](https://man.freebsd.org/cgi/man.cgi?query=readline)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

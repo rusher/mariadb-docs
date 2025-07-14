@@ -121,7 +121,7 @@ When the MARIADB\_CLIENT\_EXTENDED\_METADATA capability is set, [column definiti
 
 ### Bulk
 
-_since_ [_MariaDB 10.2.0_](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/broken-reference/README.md) _-_ [_MariaDB 11.5.1_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes) _for unit results_
+_since_ [_MariaDB 10.2.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes) _-_ [_MariaDB 11.5.1_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes) _for unit results_
 
 The MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS capability enables the [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md) command for efficient batch processing. However, note that only one result (OK or ERROR) is returned per batch, containing the total affected rows and the first auto-generated ID. For individual results, the MARIADB\_CLIENT\_BULK\_UNIT\_RESULTS capability can be set. The server will then return a resultset containing for each unitary results (containing auto generated ids and affected rows)
 

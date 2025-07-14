@@ -1,6 +1,6 @@
 # EXECUTE\_LOAD\_QUERY\_EVENT
 
-This event is written into the binary log file for [LOAD DATA INFILE](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/LOAD_DATA_INFILE/README.md) events. The event format is similar to a [QUERY\_EVENT](query_event.md) except that it has extra static fields.
+This event is written into the binary log file for [LOAD DATA INFILE](../../../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) events. The event format is similar to a [QUERY\_EVENT](query_event.md) except that it has extra static fields.
 
 ### Header
 
