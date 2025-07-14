@@ -1,6 +1,6 @@
 # MariaDB Connector/Python 1.0.11 Release Notes
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/)[Release Notes](mariadb-connector-python-1-0-11-release-notes.md)[Changelog](../changelogs/mariadb-connector-python-10-changelogs/mariadb-connector-python-1011-changelog.md)[Connector/Python Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-connector-python/README.md)
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/" class="button primary">Download</a>  <a href="mariadb-connector-python-1-0-11-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/mariadb-connector-python-10-changelogs/mariadb-connector-python-1011-changelog.md" class="button secondary">Changelog</a>  <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide" class="button secondary">Connector/Python Overview</a>
 
 **Release date:** 12 Apr 2022
 
