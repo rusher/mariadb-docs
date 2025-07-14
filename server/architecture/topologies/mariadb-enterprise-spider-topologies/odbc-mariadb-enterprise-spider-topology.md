@@ -1,7 +1,5 @@
 # ODBC MariaDB Enterprise Spider Topology
 
-## ODBC MariaDB Enterprise Spider Topology
-
 ## Overview
 
 In the ODBC MariaDB Enterprise Spider topology, a Spider Node contains one or more "virtual" Spider Tables. A Spider Table does not store data. When the Spider Table is queried in this topology, the Enterprise Spider storage engine uses an ODBC foreign data wrapper to read from and write to an ODBC Data Source.
@@ -117,19 +115,20 @@ SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 
 ### Create ODBC Spider Table (with an Oracle remote server)
 
-```sql
-INSTALL SONAME 'ha_spider';
-CREATE DATABASE spider_test;
-USE spider_test;
-CREATE OR REPLACE TABLE spider_test.contacts
-(
-  CONTACT_ID BIGINT NOT NULL PRIMARY KEY,
-  FIRST_NAME  VARCHAR( 255 ) NOT NULL,
-  LAST_NAME   VARCHAR( 255 ) NOT NULL,
-  EMAIL       VARCHAR( 255 ) NOT NULL,
-  PHONE       VARCHAR( 20 )          ,
-  CUSTOMER_ID bigint) ENGINE=SPIDER COMMENT='wrapper "odbc", dsn "ORARDS", table "CONTACTS"';
-```
+
+
+````sql
+modified   server/architecture/topologies/mariadb-enterprise-spider-topologies/odbc-mariadb-enterprise-spider-topology.md
+@@ -117,6 +117,9 @@ 
+SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
+ 
++Follow the link under [Operations](#Operations) for further
++information on the setup.
++
+ ```sql
+ INSTALL SONAME 'ha_spider';
+ CREATE DATABASE spider_test;
+````
 
 ## Resources
 
