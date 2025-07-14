@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # MariaDB Connector/Python 1.1.13 Release Notes
 
 [Download](https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/)[Release Notes](mariadb-connector-python-1-1-13-release-notes.md)[Changelog](../changelogs/mariadb-connector-python-11-changelogs/mariadb-connector-python-1-1-13-changelog.md)[Connector/Python Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-connector-python/README.md)
@@ -46,5 +50,7 @@ on each push, see the [changelog](../changelogs/mariadb-connector-python-11-chan
 * [Documentation](https://mariadb-corporation.github.io/mariadb-connector-python/index.htmli)
 * [Bug tracker](https://jira.mariadb.org)
 * Sources are hosted on [Github](https://github.com/mariadb-corporation/mariadb-connector-python)
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}
