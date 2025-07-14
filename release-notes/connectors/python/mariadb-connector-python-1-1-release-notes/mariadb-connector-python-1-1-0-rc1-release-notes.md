@@ -6,11 +6,13 @@
 
 **Release date:** 7 Apr 2022
 
-This is an [_**rc**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/Python.
+This is a [_**Release Candidate (RC)**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/Python.
 
+{% hint style="danger" %}
 **Do not use non-stable (non-GA) releases in production!**
+{% endhint %}
 
-**For a description of this library see the**[**MariaDB Connector/Python documentation**](https://mariadb-corporation.github.io/mariadb-connector-python/index.html) **.**
+**For a description of this library see the** [**MariaDB Connector/Python documentation**](https://mariadb-corporation.github.io/mariadb-connector-python/index.html) **.**
 
 MariaDB Connector/Python enables python programs to access MariaDB and MySQL databases, using an API which is compliant with the Python DB API 2.0 (PEP-249). It is written in C and uses MariaDB Connector/C client library for client server communication.
 
