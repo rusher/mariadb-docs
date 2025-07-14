@@ -164,6 +164,7 @@ page.
 
 | Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                             |
 | ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 22 May 2025 | [MariaDB 11.4.7](mariadb-11.4.7-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11.4.7-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11.4.7-changelog.md) |
 | 6 May 2025  | [MariaDB 11.4.6](mariadb-11-4-6-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-6-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-6-changelog.md) |
 | 4 Feb 2025  | [MariaDB 11.4.5](mariadb-11-4-5-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-5-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md) |
 | 1 Nov 2024  | [MariaDB 11.4.4](mariadb-11-4-4-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-4-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md) |
