@@ -1,12 +1,12 @@
 # Percona XtraBackup Overview
 
 {% hint style="danger" %}
-Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. mariadb-backup is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
 {% endhint %}
 
-Percona XtraBackup is an open source tool for performing hot backups of MariaDB, MySQL and Percona Server databases. Percona XtraBackup can perform compressed, incremental and streaming backups. It was designed to back up [XtraDB/InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md) tables but can also back up other [storage engines](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/README.md).
+Percona XtraBackup is an open source tool for performing hot backups of MariaDB, MySQL and Percona Server databases. Percona XtraBackup can perform compressed, incremental and streaming backups. It was designed to back up [XtraDB/InnoDB](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/) tables but can also back up other [storage engines](../../../server-usage/storage-engines/storage-engines-storage-engines-overview.md).
 
-[mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) is a fork of Percona XtraBackup designed to work with encrypted and compressed tables and other MariaDB enhancements. There are many bug fixes, such as [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807), and some unsafe or redundant options have been removed. [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) is the recommended backup method for MariaDB servers.
+[mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md) is a fork of Percona XtraBackup designed to work with encrypted and compressed tables and other MariaDB enhancements. There are many bug fixes, such as [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807), and some unsafe or redundant options have been removed. [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md) is the recommended backup method for MariaDB servers.
 
 ## Installing Percona XtraBackup
 
@@ -22,7 +22,7 @@ You can also configure your package manager to install it from Percona's reposit
 #### Installing with yum/dnf
 
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's\
-repository using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md) or [dnf](https://en.wikipedia.org/wiki/DNF_(software)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example, to install Percona XtraBackup 2.3:
+repository using [yum](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum.md) or [dnf](https://en.wikipedia.org/wiki/DNF_\(software\)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example, to install Percona XtraBackup 2.3:
 
 ```
 sudo yum install percona-xtrabackup
@@ -51,7 +51,7 @@ sudo apt-get install percona-xtrabackup-24
 
 #### Installing with zypper
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's repository using [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md). For example, to install Percona XtraBackup 2.3:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's repository using [zypper](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md). For example, to install Percona XtraBackup 2.3:
 
 ```
 sudo zypper install percona-xtrabackup
@@ -108,19 +108,19 @@ The following options relate to how MariaDB/MySQL command-line tools handles opt
 
 Percona XtraBackup reads server options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group         | Description                                                                                                                  |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| \[xtrabackup] | Options read by [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) and Percona XtraBackup. |
-| \[mysqld]     | Options read by mysqld, which includes both MariaDB Server and MySQL Server.                                                 |
+| Group         | Description                                                                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| \[xtrabackup] | Options read by [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md) and Percona XtraBackup. |
+| \[mysqld]     | Options read by mysqld, which includes both MariaDB Server and MySQL Server.                                                                 |
 
 #### Client Option Groups
 
 Percona XtraBackup reads client options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group         | Description                                                                                                                                                                                                                     |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| \[xtrabackup] | Options read by [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) and Percona XtraBackup.                                                                                                    |
-| \[client]     | Options read by all MariaDB and MySQL [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), which includes both MariaDB and MySQL clients. For example, mysqldump. |
+| Group         | Description                                                                                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| \[xtrabackup] | Options read by [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md) and Percona XtraBackup.           |
+| \[client]     | Options read by all MariaDB and MySQL [client programs](../../mariadb-client/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
 
 ### Authentication and Privileges
 
@@ -160,7 +160,7 @@ If you are using Linux and if you installed MariaDB with a package manager, then
 ### Compatibility with [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and Later
 
 {% hint style="success" %}
-In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and later, [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) is the recommended backup method to use instead of Percona XtraBackup.
+In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and later, [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md) is the recommended backup method to use instead of Percona XtraBackup.
 {% endhint %}
 
 In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and later, Percona XtraBackup is not supported.
@@ -170,12 +170,12 @@ This limitation is being tracked by Percona XtraBackup bug [PXB-1550](https://ji
 ### Compatibility with [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 {% hint style="success" %}
-In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) is the recommended backup method to use instead of Percona XtraBackup.
+In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md) is the recommended backup method to use instead of Percona XtraBackup.
 {% endhint %}
 
-In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), Percona XtraBackup 2.4 is supported in some cases if [InnoDB page compression](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-page-compression.md) is not used, and if [data at rest encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) is not used, and if [innodb\_page\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) is set to `16k`.
+In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), Percona XtraBackup 2.4 is supported in some cases if [InnoDB page compression](../../../server-usage/storage-engines/innodb/innodb-page-compression.md) is not used, and if [data at rest encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) is not used, and if [innodb\_page\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) is set to `16k`.
 
-However, users should be aware that problems are likely due to the MySQL 5.7 undo log format incompatibility bug that was fixed in [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) in [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289). Due to this bug, backups prepared with Percona XtraBackup 2.4 may fail to recover some transactions. Only if you ran the server with the setting [innodb\_undo\_logs](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)=1 this would not be a problem. Percona XtraBackup 2.4 may also fail to work entirely with [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) and later if [innodb\_safe\_truncate=ON](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) is set due to changes in the redo log format introduced by [MDEV-14717](https://jira.mariadb.org/browse/MDEV-14717). In that case, you may see the following error:
+However, users should be aware that problems are likely due to the MySQL 5.7 undo log format incompatibility bug that was fixed in [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) in [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289). Due to this bug, backups prepared with Percona XtraBackup 2.4 may fail to recover some transactions. Only if you ran the server with the setting [innodb\_undo\_logs](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs)=1 this would not be a problem. Percona XtraBackup 2.4 may also fail to work entirely with [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) and later if [innodb\_safe\_truncate=ON](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) is set due to changes in the redo log format introduced by [MDEV-14717](https://jira.mariadb.org/browse/MDEV-14717). In that case, you may see the following error:
 
 ```
 InnoDB: Unsupported redo log format. The redo log was created with MariaDB 10.2.19. Please follow the instructions at http://dev.mysql.com/doc/refman/5.7/en/upgrading-downgrading.html
@@ -184,10 +184,10 @@ InnoDB: Unsupported redo log format. The redo log was created with MariaDB 10.2.
 ### Compatibility with [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
 
 {% hint style="success" %}
-In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) is the recommended backup method to use instead of Percona XtraBackup.
+In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md) is the recommended backup method to use instead of Percona XtraBackup.
 {% endhint %}
 
-In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), Percona XtraBackup 2.3 is supported if [InnoDB page compression](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-page-compression.md) is not used, and if [data at rest encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) is not used, and if [innodb\_page\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) is set to `16k`.
+In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), Percona XtraBackup 2.3 is supported if [InnoDB page compression](../../../server-usage/storage-engines/innodb/innodb-page-compression.md) is not used, and if [data at rest encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) is not used, and if [innodb\_page\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) is set to `16k`.
 
 ### Compatibility with [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and Before
 
@@ -199,7 +199,7 @@ The `xtrabackup-v2` SST method uses the [Percona XtraBackup](./) utility for per
 
 ## See Also
 
-* [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/)
+* [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md)
 * [mysqldump](../mysqldump.md)
 * [Percona XtraBackup documentation](https://www.percona.com/doc/percona-xtrabackup/)
 * [Percona JIRA](https://jira.percona.com/secure/Dashboard.jspa)
