@@ -37,7 +37,7 @@ Thanks, and enjoy MariaDB!
 ## Miscellaneous
 
 * [CONV()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/numeric-functions/conv) function now supports conversion up to base 62 ([MDEV-30879](https://jira.mariadb.org/browse/MDEV-30879))
-* Added support for packages ([CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package)) outside of [ORACLE sql\_mode](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) ([MDEV-32101](https://jira.mariadb.org/browse/MDEV-32101))
+* Added support for packages ([CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package)) outside of [ORACLE sql\_mode](../../compatibility-and-differences/sql_modeoracle.md) ([MDEV-32101](https://jira.mariadb.org/browse/MDEV-32101))
 * Remove thr\_alarm from server codebase
   * Includes removal of the [debug\_no\_thread\_alarm](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#debug_no_thread_alarm) system variable ([MDEV-32567](https://jira.mariadb.org/browse/MDEV-32567))
 
