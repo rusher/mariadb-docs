@@ -4,8 +4,6 @@
 
 <a href="https://downloads.mariadb.org/mariadb/10.11.10/" class="button primary">Download</a> <a href="mariadb-10-11-10-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-10-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.7/)
-
 **Release date:** 1 Nov 2024
 
 [MariaDB 10.11](what-is-mariadb-1011.md) is a stable long term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028. It is an evolution of [MariaDB 10.10](../old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010.md) with several entirely new features.
