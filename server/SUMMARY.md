@@ -2568,7 +2568,6 @@
         * [Configuring PAM Authentication and User Mapping with LDAP Authentication](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication.md)
         * [Configuring PAM Authentication and User Mapping with Unix Authentication](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication.md)
         * [User and Group Mapping with PAM](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md)
-    * [Creating and Building Plugins](reference/plugins/creating-and-building-plugins.md)
     * [MariaDB Replication & Cluster Plugins](reference/plugins/mariadb-replication-cluster-plugins/README.md)
       * [WSREP\_INFO Plugin](reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)
     * [Other Plugins](reference/plugins/other-plugins/README.md)
@@ -2584,3 +2583,4 @@
       * [Password Reuse Check Plugin](reference/plugins/password-validation-plugins/password-reuse-check-plugin.md)
       * [password\_reuse\_check\_interval](reference/plugins/password-validation-plugins/password_reuse_check_interval.md)
       * [Simple Password Check Plugin](reference/plugins/password-validation-plugins/simple-password-check-plugin.md)
+    * [Creating and Building Plugins](reference/plugins/creating-and-building-plugins.md)
