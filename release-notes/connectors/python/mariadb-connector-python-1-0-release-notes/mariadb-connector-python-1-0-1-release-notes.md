@@ -1,13 +1,12 @@
-# MariaDB Connector/Python 1.0.1 Release Notes
+# Connector/Python 1.0.1 Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/Python is:[**MariaDB Connector/Python 1.1.12**](../mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-12-release-notes.md)
+{% include "../../../.gitbook/includes/latest-python.md" %}
 
-<a href="https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/" class="button primary">Download</a>  <a href="mariadb-connector-python-1-0-1-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/mariadb-connector-python-10-changelogs/mariadb-connector-python-101-changelog.md" class="button secondary">Changelog</a>  <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide" class="button secondary">Connector/Python Overview</a>
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/" class="button primary">Download</a> <a href="mariadb-connector-python-1-0-1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/mariadb-connector-python-10-changelogs/mariadb-connector-python-101-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide" class="button secondary">Connector/Python Overview</a>
 
 **Release date:** 18 August 2020
 
-This is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of the MariaDB\
-Connector/Python.
+This is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/Python.
 
 MariaDB Connector/Python enables python programs to access MariaDB and MySQL\
 databases, using an API which is compliant with the Python DB API 2.0\

@@ -1,13 +1,12 @@
-# MariaDB Connector/Python 1.1.0 Alpha1 Release Notes
+# Connector/Python 1.1.0 Alpha1 Release Notes
 
 The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/Python is:[**MariaDB Connector/Python 1.1.12**](mariadb-connector-python-1-1-12-release-notes.md)
 
-<a href="https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/" class="button primary">Download</a>  <a href="mariadb-connector-python-1-1-0-alpha1-release-notes.md" class="button secondary">Release Notes</a>  <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide" class="button secondary">Connector/Python Overview</a>
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/" class="button primary">Download</a> <a href="mariadb-connector-python-1-1-0-alpha1-release-notes.md" class="button secondary">Release Notes</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide" class="button secondary">Connector/Python Overview</a>
 
 **Release date:** 18 Aug 2021
 
-This is an [_**alpha**_](../../../mariadb-release-criteria.md) release of the MariaDB\
-Connector/Python and not intended for production use.
+This is an [_**alpha**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/Python and not intended for production use.
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
 
