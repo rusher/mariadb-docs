@@ -1,15 +1,14 @@
 # MariaDB 10.11.12 Release Notes
 
-**Note:** This page describes features in the source repository for [**MariaDB 10.11**](what-is-mariadb-1011.md). There are currently no official packages or binaries available for download which contain the features. If you want to try out any of the new features described here you will need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
-code yourself.
+{% include "../../../.gitbook/includes/latest-10.11 (2).md" %}
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-11-12-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md)[Overview of 10.11](what-is-mariadb-1011.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.12/)**Release date:** ?
+<a href="https://downloads.mariadb.org/mariadb/10.11.12/" class="button primary">Download</a> <a href="../mariadb-11-4-series/mariadb-11.4.7-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11.4.7-changelog.md" class="button secondary">Changelog</a> <a href="../mariadb-11-4-series/what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 [MariaDB 10.11](what-is-mariadb-1011.md) is a stable long term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028. It is an evolution of [MariaDB 10.10](../old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010.md) with several entirely new features.
 
 [MariaDB 10.11.12](mariadb-10-11-12-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the**[**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
+**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the** [**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
