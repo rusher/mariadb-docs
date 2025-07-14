@@ -1,33 +1,20 @@
 # GIS Features
 
-Basic information about the existing spatial features can be found in the[Geographic Features](./) section of the Knowlegebase. The [Spatial Extensions page of the MySQL manual](https://dev.mysql.com/doc/refman/5.6/en/spatial-extensions.html)\
-also applies to MariaDB.
+GIS stands for [Geographic Information System](https://en.wikipedia.org/wiki/Geographic_information_system).
 
-The [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) release , contains code improving the spatial functionality in MariaDB.
+MySQL operates on spatial data based on the OpenGIS standards, particularly the [OpenGIS SFS](https://www.opengeospatial.org/standards/sfs) (Simple feature access, SQL option).
 
-MySQL operates on spatial data based on the OpenGIS standards, particularly the[OpenGIS SFS](https://www.opengeospatial.org/standards/sfs) (Simple feature access, SQL option).
+Initial support was based on version 05-134 of the standard. MariaDB implements a subset of the 'SQL with Geometry Types' environment proposed by the OGC. And the SQL environment was extended with a set of geometry types.
 
-Initial support was based on version 05-134 of the standard. MariaDB implements\
-a subset of the 'SQL with Geometry Types' environment proposed by the OGC. And\
-the SQL environment was extended with a set of geometry types.
+MariaDB supports spatial extensions to operate on spatial features. These features are available for [Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/), NDB, and [ARCHIVE](../../../server-usage/storage-engines/archive.md) tables.
 
-MariaDB supports spatial extensions to operate on spatial features.\
-These features are available for [Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/), NDB, and [ARCHIVE](../../../server-usage/storage-engines/archive.md) tables.
+For spatial columns, Aria and MyISAM supports both [SPATIAL](spatial-index.md) and non-SPATIAL indexes. Other storage engines support non-SPATIAL indexes.
 
-For spatial columns, Aria and MyISAM supports both [SPATIAL](spatial-index.md) and non-SPATIAL\
-indexes. Other storage engines support non-SPATIAL indexes.
+We aim at meeting the OpenGIS requirements. One thing missed in previous MariaDB versions is that the functions which check spatial relations didn't consider the actual shape of an object, instead they operate only on their bounding rectangles. These legacy functions have been left as they are and new, properly-working functions are named with an '`ST_`' prefix, in accordance with the latest OpenGIS requirements. Also, operations over geometry features were added.
 
-The most recent changes in the code are aimed at meeting the OpenGIS\
-requirements. One thing missed in previous versions is that the functions\
-which check spatial relations didn't consider the actual shape of an object,\
-instead they operate only on their bounding rectangles. These legacy functions\
-have been left as they are and new, properly-working functions are named with\
-an '`ST_`' prefix, in accordance with the latest OpenGIS requirements. Also,\
-operations over geometry features were added.
+## Spatial Operators
 
-The list of new functions:
-
-Spatial operators. They produce new geometries.
+Spatial operators produce new geometries.
 
 | Name                                                                                                            | Description                                                                    |
 | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
@@ -36,7 +23,9 @@ Spatial operators. They produce new geometries.
 | [ST\_SYMDIFFERENCE(A, B)](../../sql-statements/geometry-constructors/geometry-constructors/st_symdifference.md) | symdifference, notintersecting parts of A and B                                |
 | [ST\_BUFFER(A, radius)](../../sql-statements/geometry-constructors/geometry-constructors/st_buffer.md)          | returns the shape of the area that lies in 'radius' distance from the shape A. |
 
-Predicates, return boolean result of the relationship
+## Predicates
+
+Predicates return a boolean result of the relationship.
 
 | Name                                                                                                   | Description                     |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------- |
