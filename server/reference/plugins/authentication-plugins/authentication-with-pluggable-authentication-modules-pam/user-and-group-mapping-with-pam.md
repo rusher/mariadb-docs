@@ -1,6 +1,6 @@
-# user-and-group-mapping-with-pam
+# User and Group Mapping with PAM
 
-## User and Group Mapping with PAM
+## Overview
 
 Even when using the [pam](authentication-plugin-pam.md) authentication plugin, the authenticating PAM user account still needs to exist in MariaDB, and the account needs to have privileges in the database. Creating these MariaDB accounts and making sure the privileges are correct can be a lot of work. To decrease the amount of work involved, some users would like to be able to map a PAM user to a different MariaDB user. For example, let’s say that `alice` and `bob` are both DBAs. It would be nice if each of them could log into MariaDB with their own PAM username and password, while MariaDB sees both of them as the same `dba` user. That way, there is only one MariaDB account to keep track of.
 

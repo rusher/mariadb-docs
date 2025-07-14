@@ -2567,7 +2567,7 @@
         * [Authentication Plugin - PAM](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)
         * [Configuring PAM Authentication and User Mapping with LDAP Authentication](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication.md)
         * [Configuring PAM Authentication and User Mapping with Unix Authentication](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication.md)
-        * [user-and-group-mapping-with-pam](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md)
+        * [User and Group Mapping with PAM](reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md)
     * [Creating and Building Plugins](reference/plugins/creating-and-building-plugins.md)
     * [MariaDB Replication & Cluster Plugins](reference/plugins/mariadb-replication-cluster-plugins/README.md)
       * [WSREP\_INFO Plugin](reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md)
