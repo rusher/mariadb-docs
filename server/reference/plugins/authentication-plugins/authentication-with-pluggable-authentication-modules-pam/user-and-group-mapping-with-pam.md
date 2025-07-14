@@ -12,9 +12,9 @@ Rather than building user and group mapping into the `pam` authentication plugin
 
 #### Lack of Support for MySQL/Percona Group Mapping Syntax
 
-Unlike MariaDB, MySQL and Percona implemented group mapping in their PAM authentication plugins. If you've read through [MySQL's PAM authentication documentation on group mapping](https://dev.mysql.com/doc/refman/8.0/en/pam-pluggable-authentication.html#pam-authentication-unix-with-proxy) or [Percona's PAM authentication documentation on group mapping](https://www.percona.com/doc/percona-server/8.0/management/pam_plugin.html#supplementary-groups-support), you've probably seen syntax where the group mappings are provided in the [CREATE USER](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) statement like this:
+Unlike MariaDB, MySQL and Percona implemented group mapping in their PAM authentication plugins. If you've read through [MySQL's PAM authentication documentation on group mapping](https://dev.mysql.com/doc/refman/8.0/en/pam-pluggable-authentication.html#pam-authentication-unix-with-proxy) or [Percona's PAM authentication documentation on group mapping](https://www.percona.com/doc/percona-server/8.0/management/pam_plugin.html#supplementary-groups-support), you've probably seen syntax where the group mappings are provided in the [CREATE USER](../../../sql-statements/account-management-sql-statements/create-user.md) statement like this:
 
-```
+```sql
 CREATE USER ''@''
   IDENTIFIED WITH authentication_pam
   AS 'mysql, root=developer, users=data_entry';
@@ -24,11 +24,9 @@ Since MariaDB's user and group mapping is performed by an external PAM module, M
 
 ### Installing the pam\_user\_map PAM Module
 
-The `pam_user_map` PAM module gets installed as part of all our MariaDB server packages since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), and was added since 10.2.31, 10.3.22, and 10.4.12 in previous MariaDB major releases where it was not present from the beginning.
+The `pam_user_map` PAM module gets installed as part of all our MariaDB server packages.
 
-Some Linux distributions have not picked up this change in their own packages yet, so when e.g. installing MariaDB server from stock Ubuntu packages on Ubuntu 20.04LTS you still won't have the `pam_user_map` module installed even though the MariaDB server installed is more recent than [MariaDB 10.3.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10322-release-notes).
-
-When using such an installation, and not being able to switch to our own MariaDB package repositories, it may be necessary to compile the PAM module from source as described in the next section, or to manually extract it from one of our server packages and copy it to the target system.
+Some Linux distributions have not picked up this change in their own packages yet. When using such an installation, it may be necessary to compile the PAM module from source as described in the next section, or to manually extract it from one of our server packages and copy it to the target system.
 
 #### Installing the pam\_user\_map PAM Module from Source
 
@@ -38,32 +36,28 @@ Before the module can be compiled from source, you may need to install some depe
 
 On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), you need to install `gcc`, `pam-devel` and `MariaDB-devel`:
 
-```
+```bash
 sudo yum install gcc pam-devel MariaDB-devel
 ```
 
 On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md), you need to install `gcc`, `libpam0g-dev`:
 
-```
+```bash
 sudo apt-get install gcc libpam0g-dev libmariadb-dev
 ```
 
 **Compiling and Installing the pam\_user\_map PAM Module**
 
-The `pam_user_map` PAM module can be built by downloading `plugin/auth_pam/mapper/pam_user_map.c` file from the MariaDB source tree and compiling it after minor adjustments. Once it is built, it can be installed to the system's PAM module directory, which is typically `/lib64/security/`.
+The `pam_user_map` PAM module can be built by downloading `plugin/auth_pam/mapper/pam_user_map.c` file from the MariaDB source tree and compiling it after minor adjustments. Once it is built, it can be installed to the system's PAM module directory, which is typically `/lib64/security/`:
 
-For example: (replace 10.4 in the URL with the actual server versions)
-
-```
+```bash
 wget https://raw.githubusercontent.com/MariaDB/server/10.4/plugin/auth_pam/mapper/pam_user_map.c
 sed -ie 's/config_auth_pam/plugin_auth_common/' pam_user_map.c
 gcc -I/usr/include/mysql/ pam_user_map.c -shared -lpam -fPIC -o pam_user_map.so
 sudo install --mode=0755 pam_user_map.so /lib64/security/
 ```
 
-You will also need to adjust the major version number in the URL on the first line to match your installed MariaDB version, and the #-I
-
-## include path argument on the `gcc` line, as depending on operating system and MariaDB server version the plugin\_auth\_common.h file may be installed in different directories than `/usr/include/mysql/`
+You also need to adjust the major version number in the URL on the first line to match your installed MariaDB version, and the `#-I` include path argument on the `gcc` line, as depending on operating system and MariaDB server version, the `plugin_auth_common.h` file may be installed in a directory other than `/usr/include/mysql/` .
 
 ### Configuring the pam\_user\_map PAM Module
 
@@ -104,9 +98,9 @@ account required pam_unix.so audit
 
 ### Creating Users
 
-With user and group mapping, creating users is done similar to how it is [normally done with the pam authentication plugin](authentication-plugin-pam.md#creating-users). However, one major difference is that you will need to [GRANT](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) the [PROXY](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#proxy-privileges) privilege on the mapped user to the original user.
+With user and group mapping, creating users is done similar to how it is [normally done with the pam authentication plugin](authentication-plugin-pam.md#creating-users). However, one major difference is that you will need to [GRANT](../../../sql-statements/account-management-sql-statements/grant.md) the [PROXY](../../../sql-statements/account-management-sql-statements/grant.md#proxy-privileges) privilege on the mapped user to the original user.
 
-For example, if you have the following configured in `/etc/security/user_map.conf`:
+Consider having the following configured in `/etc/security/user_map.conf`:
 
 ```
 foo: bar
@@ -115,7 +109,7 @@ foo: bar
 
 Then you could execute the following to grant the relevant privileges:
 
-```
+```sql
 CREATE USER 'bar'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'bar'@'%' ;
 
@@ -133,9 +127,9 @@ Also note that you might not be able to create the `''@'%'` anonymous account by
 
 ### Verifying that Mapping is Occurring
 
-In case any user mapping is performed, the original user name is returned by the SQL function [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), while the authenticated user name is returned by the SQL function [CURRENT\_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md). The latter actually defines what privileges are available to a connected user.
+In case any user mapping is performed, the original user name is returned by the SQL function [USER()](../../../sql-functions/secondary-functions/information-functions/user.md), while the authenticated user name is returned by the SQL function [CURRENT\_USER()](../../../sql-functions/secondary-functions/information-functions/current_user.md). The latter actually defines what privileges are available to a connected user.
 
-For example, if we have the following configured:
+Consider having the following configured:
 
 ```
 foo: bar
@@ -143,7 +137,7 @@ foo: bar
 
 Then the following output would verify that it is working properly:
 
-```
+```bash
 $ mysql -u foo -h 172.30.0.198
 [mariadb] Password:
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
@@ -163,7 +157,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT\_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
+We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of `CURRENT_USER()`.
 
 ### Logging
 
@@ -204,7 +198,7 @@ Jan  9 06:08:36 ip-172-30-0-198 mysqld: pam_user_map(mariadb:auth): User mapped 
 
 With user and group mapping, any PAM user or any PAM user in a given PAM group can be mapped to a specific MariaDB user account. However, due to the way PAM works, a PAM user with the same name as the mapped MariaDB user account must exist.
 
-For example, if the configuration file for the PAM service file contained the following:
+Consider the configuration file for the PAM service file containing the following:
 
 ```
 auth required pam_sss.so
@@ -213,13 +207,13 @@ account sufficient pam_unix.so
 account sufficient pam_sss.so
 ```
 
-And if `/etc/security/user_map.conf` contained the following:
+Consider `etc/security/user_map.conf` containing the following:
 
 ```
 @dba: dba
 ```
 
-Then any PAM user in the PAM group `dba` would be mapped to the MariaDB user account `dba`. But if a PAM user with the name `dba` did not also exist, then the `pam_user_map` PAM module's debug logging would write errors to the syslog like the following:
+In that case, any PAM user in the PAM group `dba` are mapped to the MariaDB user account `dba`. But if a PAM user with the name `dba` doesn't exist, the `pam_user_map` PAM module's debug logging writes errors to the syslog, like the following:
 
 ```
 Sep 27 17:17:05 dbserver1 mysqld: pam_user_map(mysql:auth): Opening file '/etc/security/user_map.conf'.
