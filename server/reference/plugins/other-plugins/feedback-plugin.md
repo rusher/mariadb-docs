@@ -5,19 +5,14 @@ configuration and usage information to [MariaDB.org](https://mariadb.org/) or to
 
 See the [MariaDB User Feedback](https://mariadb.org/feedback-plugin/) page on MariaDB.org to see collected MariaDB usage statistics.
 
-The `feedback` plugin exists in all MariaDB versions.
-
 MariaDB is usually distributed with this plugin included, but it is not enabled by default.\
-On Windows, this plugin is part of the server and has a special checkbox in the installer window. Either\
-way, you need to explicitly install and enable it in order for feedback data to be sent.
+On Windows, this plugin is part of the server and has a special checkbox in the installer window. Either way, you need to explicitly install and enable it in order for feedback data to be sent.
 
 ## Verifying the Plugin's Status
 
-To verify whether the `feedback` plugin is installed and enabled, execute the [SHOW PLUGINS](../../sql-statements/administrative-sql-statements/show/show-plugins.md) statement or query the [information\_schema.plugins](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
+To verify whether the `feedback` plugin is installed and enabled, execute the [SHOW PLUGINS](../../sql-statements/administrative-sql-statements/show/show-plugins.md) statement or query the [information\_schema.plugins](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table:
 
-Usually, the plugin is installed in MariaDB by default:
-
-```
+```sql
 SELECT plugin_status FROM information_schema.plugins 
   WHERE plugin_name = 'feedback';
 +---------------+
@@ -27,13 +22,11 @@ SELECT plugin_status FROM information_schema.plugins
 +---------------+
 ```
 
-See [Enabling the Plugin](feedback-plugin.md#enabling-the-plugin).
-
-If that `SELECT` returns no rows, then you still need to [install the plugin](feedback-plugin.md#installing-the-plugin).
+If that `SELECT` returns no rows, then you still need to install the plugin.
 
 When the plugin is installed and enabled, you will see:
 
-```
+```sql
 SELECT plugin_status FROM information_schema.plugins 
   WHERE plugin_name = 'feedback';
 +---------------+
@@ -53,9 +46,9 @@ The first method can be used to install the plugin without restarting the server
 INSTALL SONAME 'feedback';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load-add) options. This can be specified as a command-line argument to mariadbd, or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = feedback
@@ -65,7 +58,7 @@ plugin_load_add = feedback
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
-```
+```sql
 UNINSTALL SONAME 'feedback';
 ```
 
@@ -73,21 +66,21 @@ If you installed the plugin by providing the [`--plugin-load`](../../../server-m
 
 ## Enabling the Plugin
 
-You can enable the plugin by setting the [`feedback`](#feedback) option to `ON` in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
+You can enable the plugin by setting the [`feedback`](feedback-plugin.md#feedback) option to `ON` in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 feedback=ON
 ```
 
-In Windows, the plugin can also be enabled during a new [MSI](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) installation. The MSI GUI installation provides the "Enable feedback plugin" checkbox to enable the plugin. The MSI command-line installation provides the FEEDBACK=1 command-line option to enable the plugin.
+In Windows, the plugin can also be enabled during a new [MSI](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) installation. The MSI GUI installation provides the "Enable feedback plugin" checkbox to enable the plugin. The MSI command-line installation provides the `FEEDBACK=1` command-line option to enable the plugin.
 
 See the next section for how to verify the plugin is installed and active and (if needed) install the plugin.
 
 ## Collecting Data
 
-The `feedback` plugin will collect:
+The `feedback` plugin collects the following data:
 
 * Certain rows from [SHOW STATUS](../../sql-statements/administrative-sql-statements/show/show-status.md) and [SHOW VARIABLES](../../sql-statements/administrative-sql-statements/show/show-variables.md).
 * All installed [plugins](../) and their versions.
@@ -96,14 +89,14 @@ The `feedback` plugin will collect:
 
 The `feedback` plugin creates the [FEEDBACK](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. To see the data that has been collected by the plugin, you can execute:
 
-```
+```sql
 SELECT * FROM information_schema.feedback;
 ```
 
 Only the contents of this table are sent to the [feedback\_url](feedback-plugin.md#feedback_url).
 
 MariaDB stores collation usage statistics. Each collation that has been used by the server\
-will have a record in "SELECT \* FROM information\_schema.feedback" output, for example:
+will have a record in output of `SELECT * FROM information_schema.feedback` , for example:
 
 ```
 +----------------------------------------+---------------------+
@@ -114,7 +107,7 @@ will have a record in "SELECT \* FROM information\_schema.feedback" output, for 
 +----------------------------------------+---------------------+
 ```
 
-Collations that have not been used will not be included into the result.
+Collations that have not been used will not be included in the result.
 
 ## Sending Data
 
@@ -135,24 +128,17 @@ plugin will **not** automatically send any data. This may be necessary if outbou
 
 First, generate the report file with the MariaDB command-line [mariadb](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client:
 
-```
+```bash
 $ mariadb -e 'select * from information_schema.feedback' > report.txt
 ```
 
-Then you can upload the generated `report.txt` [here](https://feedback.mariadb.org/rest/v1/post) from the command line with tools such as [curl](https://curl.haxx.se/docs/manpage.html):
+Then, you can upload the generated `report.txt` [here](https://feedback.mariadb.org/rest/v1/post) from the command line with tools such as [curl](https://curl.haxx.se/docs/manpage.html):
 
-```
+```bash
 $ curl -F data=@report.txt https://feedback.mariadb.org/rest/v1/post
 ```
 
 Manual uploading allows you to be absolutely sure that we receive only the data shown in the [INFORMATION\_SCHEMA.FEEDBACK](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table and that no private or sensitive information is being sent.
-
-## Versions
-
-| Version | Status | Introduced                                                                                                                                                                                                                                                                                                                                                       |
-| ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.1     | Stable | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes)                                                                                                                                                                              |
-| 1.1     | Beta   | [MariaDB 5.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5520-release-notes), [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) |
 
 ## System Variables
 

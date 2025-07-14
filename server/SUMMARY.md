@@ -2581,6 +2581,6 @@
     * [Password Validation Plugins](reference/plugins/password-validation-plugins/README.md)
       * [Cracklib Password Check Plugin](reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)
       * [Password Reuse Check Plugin](reference/plugins/password-validation-plugins/password-reuse-check-plugin.md)
-      * [password\_reuse\_check\_interval](reference/plugins/password-validation-plugins/password_reuse_check_interval.md)
+      * [password\_reuse\_check\_interval Variable](reference/plugins/password-validation-plugins/password_reuse_check_interval.md)
       * [Simple Password Check Plugin](reference/plugins/password-validation-plugins/simple-password-check-plugin.md)
     * [Creating and Building Plugins](reference/plugins/creating-and-building-plugins.md)

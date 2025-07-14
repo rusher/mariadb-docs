@@ -1,8 +1,8 @@
 # Password Reuse Check Plugin
 
-**MariaDB starting with** [**10.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
-
-`password_reuse_check` is a [password validation](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/password-validation-plugins/broken-reference/README.md) plugin introduced in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
+{% hint style="info" %}
+`password_reuse_check` is available from [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
+{% endhint %}
 
 ## Description
 
@@ -16,13 +16,13 @@ Although the plugin's shared library is distributed with MariaDB by default, the
 
 You can install the plugin dynamically, without restarting the server, by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
-```
+```sql
 INSTALL SONAME 'password_reuse_check';
 ```
 
 The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = password_reuse_check
@@ -32,7 +32,7 @@ plugin_load_add = password_reuse_check
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
-```
+```sql
 UNINSTALL SONAME 'password_reuse_check';
 ```
 
@@ -40,7 +40,7 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 
 ## Example
 
-```
+```sql
 INSTALL SONAME 'password_reuse_check';
 
 GRANT SELECT ON *.* TO user1@localhost identified by 'pwd1';
@@ -65,12 +65,14 @@ ERROR 1819 (HY000): Your password does not satisfy the current policy requiremen
 | 1.0     | Gamma  | [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | 2.0     | Stable | [MariaDB 10.7.7](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/password-validation-plugins/broken-reference/README.md), [MariaDB 10.8.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-7-release-notes), [MariaDB 10.9.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-5-release-notes), [MariaDB 10.10.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/password-validation-plugins/broken-reference/README.md) |
 
+{% hint style="warning" %}
 The bump to version 2.0 required the change of the stored format to mitigate an implementation weakness ([MDEV-28838](https://jira.mariadb.org/browse/MDEV-28838)) and as such the bump from 1.0 to 2.0 will invalidate previously saved password reuse protections.
+{% endhint %}
 
 ## See Also
 
-* [Password Validation](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/password-validation-plugins/broken-reference/README.md)
-* [10.7 preview feature: Password Reuse Check plugin](https://mariadb.org/10-7-preview-feature-password-reuse-check-plugin/) (mariadb.org blog post)
+* [Password Validation](./)
+* [10.7 preview feature: Password Reuse Check plugin](https://mariadb.org/10-7-preview-feature-password-reuse-check-plugin/) (MariaDB Foundation blog post)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
