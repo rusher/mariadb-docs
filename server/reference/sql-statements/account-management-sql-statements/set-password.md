@@ -40,7 +40,7 @@ The [unix\_socket](../../plugins/authentication-plugins/authentication-plugin-un
 If you attempt to run `SET PASSWORD` on an account that authenticates with one of these authentication plugins that doesn't store a password in the [mysql.global\_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, then MariaDB Server will issue an error like the following:
 
 ```sql
-SET PASSWORD is ignored for users authenticating via unix_socket plugin
+SET PASSWORD IS ignored FOR users authenticating via unix_socket plugin
 ```
 
 {% hint style="info" %}

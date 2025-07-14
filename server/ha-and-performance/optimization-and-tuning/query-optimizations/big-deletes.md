@@ -99,8 +99,8 @@ If there are big gaps in `id` values (and there will after the first purge), the
 @a = SELECT MIN(id) FROM tbl
    LOOP
       SELECT @z := id FROM tbl WHERE id >= @a ORDER BY id LIMIT 1000,1
-      If @z is null
-         exit LOOP  -- last chunk
+      IF @z IS NULL
+         EXIT LOOP  -- last chunk
       DELETE FROM tbl
          WHERE id >= @a
            AND id <  @z
@@ -119,7 +119,7 @@ That code works whether id is numeric or character, and it mostly works even if 
 ```sql
 ...
       SELECT @z := id FROM tbl WHERE id >= @a ORDER BY id LIMIT 1000,1
-      If @z == @a
+      IF @z == @a
          SELECT @z := id FROM tbl WHERE id > @a ORDER BY id LIMIT 1
    ...
 ```

@@ -394,7 +394,7 @@ You can also access some of the variables directly from status variables:
 
 ```sql
 SET @@default_master_connection="test" ;
-show status like "%slave%"
+SHOW status like "%slave%"
 
 Variable_name   Value
 Com_show_slave_hosts    0

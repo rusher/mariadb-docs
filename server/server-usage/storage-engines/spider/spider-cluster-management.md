@@ -176,7 +176,7 @@ The [Performance schema](../../../reference/sql-statements/administrative-sql-st
 To activate the performance schema, use the [performance\_schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ```sql
-performance_schema=on
+performance_schema=ON
 ```
 
 Activate the Spider probes to be monitored.

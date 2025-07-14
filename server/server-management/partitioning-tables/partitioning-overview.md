@@ -207,7 +207,7 @@ Create Table: CREATE TABLE `t2` (
 `CONVERT TABLE` does the reverse, converting a table into a partition:
 
 ```sql
-ALTER TABLE t1 CONVERT TABLE t2 to PARTITION p3 VALUES LESS THAN (2016);
+ALTER TABLE t1 CONVERT TABLE t2 TO PARTITION p3 VALUES LESS THAN (2016);
 
 SELECT * FROM t1;
 +--------------+
@@ -492,7 +492,7 @@ INSERT INTO t1 VALUES ('2012-02-02'),('2013-03-03');
 
 INSERT INTO t2 VALUES ('2015-05-05');
 
-ALTER TABLE t1 EXCHANGE PARTITION p1 with TABLE t2;
+ALTER TABLE t1 EXCHANGE PARTITION p1 WITH TABLE t2;
 ERROR 1526 (HY000): Table has no partition for value 0
 ```
 
@@ -504,7 +504,7 @@ This validation is performed for each row, and can be very slow in the case of l
 From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
 
 ```sql
-ALTER TABLE t1 EXCHANGE PARTITION p1 with TABLE t2 WITHOUT VALIDATION;
+ALTER TABLE t1 EXCHANGE PARTITION p1 WITH TABLE t2 WITHOUT VALIDATION;
 Query OK, 0 rows affected (0.048 sec)
 ```
 

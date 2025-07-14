@@ -789,7 +789,7 @@ ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);
 \{% tabs %\} \{% tab title="Current" %\} An `ALTER` query can be replicated faster with this statement, which must be run before the `ALTER` statement:
 
 ```sql
-SET @@SESSION.binlog_alter_two_phase = true;
+SET @@SESSION.binlog_alter_two_phase = TRUE;
 ```
 
 Binlog would contain two event groups, of which the first one gets delivered to replicas before ALTER is taken to actual execution on the primary:

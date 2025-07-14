@@ -44,7 +44,7 @@ SELECT id, name FROM mytable;
 DELETE FROM mytable WHERE id = 1;
 SELECT id, name FROM mytable;
 DROP DATABASE mydb;
-SELECT count(1) from mytable; gives the number of records in the table
+SELECT count(1) FROM mytable; gives the number of records IN the TABLE
 ```
 
 _The first version of this article was copied, with permission, from_ [_Basic\_SQL\_Statements_](https://hashmysql.org/wiki/Basic_SQL_Statements) _on 2012-10-05._

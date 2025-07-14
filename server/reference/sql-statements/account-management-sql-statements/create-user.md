@@ -344,8 +344,8 @@ commands:
 ```sql
 CREATE USER 'joffrey'@'192.168.0.3';
 CREATE USER 'joffrey'@'%';
-GRANT SELECT ON test.t1 to 'joffrey'@'192.168.0.3';
-GRANT SELECT ON test.t2 to 'joffrey'@'%';
+GRANT SELECT ON test.t1 TO 'joffrey'@'192.168.0.3';
+GRANT SELECT ON test.t2 TO 'joffrey'@'%';
 ```
 
 If you connect as joffrey from `192.168.0.3`, you will have the `SELECT`\

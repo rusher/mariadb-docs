@@ -46,7 +46,7 @@ Next, execute the recursive part of the query:
 ### Summary
 
 ```sql
-WITH recursive R AS (
+WITH RECURSIVE R AS (
   SELECT anchor_data
   UNION [all]
   SELECT recursive_part

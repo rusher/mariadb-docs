@@ -25,7 +25,7 @@ MariaDB Connector/C++ implements the MySQL protocol using the MariaDB Connector/
 * When using the `rewriteBatchedStatements` connection option, for `INSERT` queries the connector will construct a single query using batch parameter sets. For example:
 
 ```sql
-INSERT INTO ab (i) VALUES (?) with first batch values = 1, second = 2
+INSERT INTO ab (i) VALUES (?) WITH first batch values = 1, second = 2
 ```
 
 will be rewritten as:

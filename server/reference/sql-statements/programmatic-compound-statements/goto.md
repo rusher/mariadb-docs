@@ -33,7 +33,7 @@ END;
 
 DELIMITER 
 
-call p1();
+CALL p1();
 +---+
 | 1 |
 +---+

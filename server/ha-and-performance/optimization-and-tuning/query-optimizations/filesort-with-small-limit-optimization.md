@@ -26,7 +26,7 @@ The second way is to check the slow query log. When one uses [Extended statistic
 # Full_scan: Yes  Full_join: No  Tmp_table: No  Tmp_table_on_disk: No
 # Filesort: Yes  Filesort_on_disk: No  Merge_passes: 0  Priority_queue: Yes
 SET timestamp=1405348239;SET timestamp=1405348239;
-select * from t1 where col1 between 10 and 20 order by col2 limit 100;
+SELECT * FROM t1 where col1 between 10 and 20 order by col2 LIMIT 100;
 ```
 
 Note the "Priority\_queue: Yes" on the last comment line. (`pt-query-digest` is able to parse slow query logs with the Priority\_queue field)
