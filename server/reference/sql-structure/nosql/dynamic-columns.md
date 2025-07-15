@@ -286,7 +286,7 @@ SELECT COLUMN_GET(blob, 'colname' as CHAR) ...
 
 ### Client-side API
 
-It is also possible to create or parse dynamic columns blobs on the client side. `libmysql` client library now includes an API for writing/reading dynamic column blobs. See [dynamic-columns-api](dynamic-columns-api.md) for details.
+It is also possible to create or parse dynamic columns blobs on the client side. `libmysql` client library now includes an API for writing/reading dynamic column blobs. See [dynamic-columns-api](broken-reference) for details.
 
 ### Limitations
 

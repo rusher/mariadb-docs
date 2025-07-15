@@ -1200,7 +1200,6 @@
     * [NoSQL](reference/sql-structure/nosql/README.md)
       * [Dynamic Columns](reference/sql-structure/nosql/dynamic-columns.md)
       * [Dynamic Column API](reference/sql-structure/nosql/dynamic-column-api.md)
-      * [Dynamic Columns API](reference/sql-structure/nosql/dynamic-columns-api.md)
       * [Dynamic Columns from MariaDB 10](reference/sql-structure/nosql/dynamic-columns-from-mariadb-10.md)
       * [HANDLER](reference/sql-structure/nosql/handler/README.md)
         * [HANDLER Commands](reference/sql-structure/nosql/handler/handler-commands.md)

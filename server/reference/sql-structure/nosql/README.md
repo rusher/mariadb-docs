@@ -23,6 +23,10 @@ layout:
 [dynamic-columns.md](dynamic-columns.md)
 {% endcontent-ref %}
 
+{% content-ref url="dynamic-column-api.md" %}
+[dynamic-column-api.md](dynamic-column-api.md)
+{% endcontent-ref %}
+
 {% content-ref url="handler/" %}
 [handler](handler/)
 {% endcontent-ref %}
