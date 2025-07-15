@@ -1,14 +1,14 @@
 # MariaDB 10.6.6 Changelog
 
-The most recent release of [MariaDB 10.6](../../mariadb-10-6-series/what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](../../mariadb-10-6-series/mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+{% include "../../../.gitbook/includes/latest-10-6.md" %}
 
-[Download 10.6.6](https://mariadb.com/downloads)[Release Notes](../../mariadb-10-6-series/mariadb-1066-release-notes.md)[Changelog](mariadb-1066-changelog.md)[Overview of 10.6](../../mariadb-10-6-series/what-is-mariadb-106.md)
+<a href="https://downloads.mariadb.org/mariadb/10.6.6/" class="button primary">Download</a> <a href="../../mariadb-10-6-series/mariadb-1066-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-1066-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-6-series/what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 9 Feb 2022
 
-For the highlights of this release, see the[release notes](../../mariadb-10-6-series/mariadb-1066-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-10-6-series/mariadb-1066-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.6) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.6) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.5.14](../changelogs-mariadb-105-series/mariadb-10514-changelog.md)
