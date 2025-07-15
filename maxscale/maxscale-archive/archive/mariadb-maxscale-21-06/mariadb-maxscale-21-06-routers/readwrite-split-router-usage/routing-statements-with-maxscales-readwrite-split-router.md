@@ -107,7 +107,7 @@ For example, the following queries would be routed to a replica:
 
 ```
 SELECT @@global.alter_algorithm;
-select @@my_user_var;
+SELECT @@my_user_var;
 SHOW statements
 ```
 

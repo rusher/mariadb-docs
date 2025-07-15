@@ -304,7 +304,7 @@ This optional parameter specifies how the masking filter should\
 behave with respect to UNIONs. If true, then a statement like
 
 ```
-SELECT a FROM t1 UNION select b from t2;
+SELECT a FROM t1 UNION SELECT b FROM t2;
 ```
 
 will be rejected if `b` is a column that should be masked.
@@ -324,7 +324,7 @@ This optional parameter specifies how the masking filter should\
 behave with respect to subqueries. If true, then a statement like
 
 ```
-SELECT * FROM (SELECT a as b FROM t1) as t2;
+SELECT * FROM (SELECT a AS b FROM t1) AS t2;
 ```
 
 will be rejected if `a` is a column that should be masked.

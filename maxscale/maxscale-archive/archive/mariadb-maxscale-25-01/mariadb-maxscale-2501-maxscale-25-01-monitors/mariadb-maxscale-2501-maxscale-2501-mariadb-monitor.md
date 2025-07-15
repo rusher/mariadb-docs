@@ -1526,7 +1526,7 @@ does not contain expected columns, the monitor (re)creates it. The table is\
 created with a query like
 
 ```
-create or replace table mxs.maxscale_write_test
+CREATE OR REPLACE TABLE mxs.maxscale_write_test
 (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
 `date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 `gtid` TEXT NULL);
