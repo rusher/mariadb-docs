@@ -39,6 +39,8 @@ The different `SQL_MODE` values are:
 
 Allow any day between 1-31 in the day part. This is convenient when you want to read in all (including wrong data) into the database and then manipulate it there.
 
+Note, that MariaDB assumes that table content matches the current setting of this mode. If you enable it, insert some invalid dates into the table and then disable it for a session, the result will be not well defined — some queries might return invalid dates, while other will not.
+
 #### ANSI
 
 Changes the SQL syntax to be closer to ANSI SQL.
