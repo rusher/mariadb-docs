@@ -115,20 +115,22 @@ SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 
 ### Create ODBC Spider Table (with an Oracle remote server)
 
+Follow the link under [Operations](#Operations) for further
+information on the setup.
 
-
-````sql
-modified   server/architecture/topologies/mariadb-enterprise-spider-topologies/odbc-mariadb-enterprise-spider-topology.md
-@@ -117,6 +117,9 @@ 
-SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
- 
-+Follow the link under [Operations](#Operations) for further
-+information on the setup.
-+
- ```sql
- INSTALL SONAME 'ha_spider';
- CREATE DATABASE spider_test;
-````
+```sql
+INSTALL SONAME 'ha_spider';
+CREATE DATABASE spider_test;
+USE spider_test;
+CREATE OR REPLACE TABLE spider_test.contacts
+(
+  CONTACT_ID BIGINT NOT NULL PRIMARY KEY,
+  FIRST_NAME  VARCHAR( 255 ) NOT NULL,
+  LAST_NAME   VARCHAR( 255 ) NOT NULL,
+  EMAIL       VARCHAR( 255 ) NOT NULL,
+  PHONE       VARCHAR( 20 )          ,
+  CUSTOMER_ID bigint) ENGINE=SPIDER COMMENT='wrapper "odbc", dsn "ORARDS", table "CONTACTS"';
+```
 
 ## Resources
 
