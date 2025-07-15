@@ -3,9 +3,9 @@
 Exporting data from MariaDB is obviously possible with CONNECT in particular for all formats not supported by the [SELECT INTO OUTFILE](../../../../reference/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) statement. Let us consider the query:
 
 ```
-select plugin_name handler, plugin_version version, plugin_author
+SELECT plugin_name handler, plugin_version VERSION, plugin_author
 author, plugin_description description, plugin_maturity maturity
-from information_schema.plugins where plugin_type = 'STORAGE ENGINE';
+FROM information_schema.plugins WHERE plugin_type = 'STORAGE ENGINE';
 ```
 
 Supposing you want to get the result of this query into a file handlers.htm in XML/HTML format, allowing displaying it on an Internet browser, this is how you can do it:

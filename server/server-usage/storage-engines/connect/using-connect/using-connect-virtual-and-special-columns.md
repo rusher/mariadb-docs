@@ -5,16 +5,16 @@ being a CONNECT special column. Let us see on an example how this can be done. T
 have seen previously can be recreated as:
 
 ```
-create table boys (
-  linenum int(6) not null default 0 special=rowid,
-  name char(12) not null,
-  city char(12) not null,
-  birth date not null date_format='DD/MM/YYYY',
-  hired date not null date_format='DD/MM/YYYY' flag=36,
-  agehired int(3) as (floor(datediff(hired,birth)/365.25))
+CREATE TABLE boys (
+  linenum INT(6) NOT NULL DEFAULT 0 special=ROWID,
+  name CHAR(12) NOT NULL,
+  city CHAR(12) NOT NULL,
+  birth DATE NOT NULL date_format='DD/MM/YYYY',
+  hired DATE NOT NULL date_format='DD/MM/YYYY' flag=36,
+  agehired INT(3) AS (floor(datediff(hired,birth)/365.25))
   virtual,
-  fn char(100) not null default '' special=FILEID)
-engine=CONNECT table_type=FIX file_name='boys.txt' mapped=YES lrecl=47;
+  fn CHAR(100) NOT NULL DEFAULT '' special=FILEID)
+ENGINE=CONNECT table_type=FIX file_name='boys.txt' mapped=YES lrecl=47;
 ```
 
 We have defined two CONNECT special columns. You can give them any name; it is\
@@ -29,7 +29,7 @@ For the definition of the _agehired_ virtual column, no CONNECT options can be s
 The command:
 
 ```
-select * from boys where city = 'boston';
+SELECT * FROM boys WHERE city = 'boston';
 ```
 
 will return:

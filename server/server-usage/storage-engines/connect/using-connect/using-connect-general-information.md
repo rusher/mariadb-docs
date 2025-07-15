@@ -14,7 +14,7 @@ Performances vary a great deal depending on the table type. For instance, ODBC t
 retrieved as fast as the other DBMS can do. If you have a lot of queries to execute, the best way to optimize your work can be sometime to translate the data from one type to another. Fortunately this is very simple with CONNECT. Fixed formats like FIX, BIN or VEC tables can be created from slower ones by commands such as:
 
 ```
-Create table fastable table_specs select * from slowtable;
+CREATE TABLE fastable table_specs SELECT * FROM slowtable;
 ```
 
 `FIX` and `BIN` are often the better choice because the I/O functions are\

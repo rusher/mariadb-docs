@@ -18,19 +18,19 @@ All this is targeted at running joins which touch small fraction of the tables. 
 * The user accesses data in MariaDB (think of a website and a query like:
 
 ```
-select * from user_accounts where username='joe')
+SELECT * FROM user_accounts WHERE username='joe')
 ```
 
 Cassandra SE allows to grab some Cassandra data, as well. One can write things like this:
 
 ```
-select 
+SELECT 
   user_accounts.*, 
   cassandra_table.some_more_fields
-from 
+FROM 
   user_accounts, cassandra_data 
-where 
-  user_accounts.username='joe' and
+WHERE 
+  user_accounts.username='joe' AND
   user_accounts.user_id= cassandra_table.user_id
 ```
 
