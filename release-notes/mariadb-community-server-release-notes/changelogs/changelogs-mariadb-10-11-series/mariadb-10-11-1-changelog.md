@@ -4,8 +4,6 @@
 
 <a href="https://downloads.mariadb.org/mariadb/10.11.1/" class="button primary">Download</a> <a href="../../mariadb-10-11-series/mariadb-10-11-1-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-10-11-1-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-11-series/what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.1/)
-
 **Release date:** 17 Nov 2022
 
 For the highlights of this release, see the [release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-11-series).
