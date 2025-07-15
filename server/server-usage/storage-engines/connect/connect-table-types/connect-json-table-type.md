@@ -72,23 +72,23 @@ This file contains the different items existing in JSON.
 A first try to create a table on this file will be to take the outer array as the table:
 
 ```
-create table jsample (
-ISBN char(15),
-LANG char(2),
-SUBJECT char(32),
-AUTHOR char(128),
-TITLE char(32),
-TRANSLATED char(80),
-PUBLISHER char(20),
-DATEPUB int(4))
-engine=CONNECT table_type=JSON
+CREATE TABLE jsample (
+ISBN CHAR(15),
+LANG CHAR(2),
+SUBJECT CHAR(32),
+AUTHOR CHAR(128),
+TITLE CHAR(32),
+TRANSLATED CHAR(80),
+PUBLISHER CHAR(20),
+DATEPUB INT(4))
+ENGINE=CONNECT table_type=JSON
 File_name='biblio3.json';
 ```
 
 If we execute the query:
 
 ```
-select isbn, author, title, publisher from jsample;
+SELECT isbn, author, title, publisher FROM jsample;
 ```
 
 We get the result:
@@ -109,58 +109,58 @@ Here is an example of a new table that can be created on the same file, allowing
 Until Connect 1.5:
 
 ```
-create table jsampall (
-ISBN char(15),
-Language char(2) field_format='LANG',
-Subject char(32) field_format='SUBJECT',
-Author char(128) field_format='AUTHOR:[" and "]',
-Title char(32) field_format='TITLE',
-Translation char(32) field_format='TRANSLATOR:PREFIX',
-Translator char(80) field_format='TRANSLATOR',
-Publisher char(20) field_format='PUBLISHER:NAME',
-Location char(16) field_format='PUBLISHER:PLACE',
-Year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=JSON File_name='biblio3.json';
+CREATE TABLE jsampall (
+ISBN CHAR(15),
+LANGUAGE CHAR(2) field_format='LANG',
+Subject CHAR(32) field_format='SUBJECT',
+Author CHAR(128) field_format='AUTHOR:[" and "]',
+Title CHAR(32) field_format='TITLE',
+TRANSLATION CHAR(32) field_format='TRANSLATOR:PREFIX',
+Translator CHAR(80) field_format='TRANSLATOR',
+Publisher CHAR(20) field_format='PUBLISHER:NAME',
+LOCATION CHAR(16) field_format='PUBLISHER:PLACE',
+YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json';
 ```
 
 From Connect 1.6:
 
 ```
-create table jsampall (
-ISBN char(15),
-Language char(2) field_format='LANG',
-Subject char(32) field_format='SUBJECT',
-Author char(128) field_format='AUTHOR.[" and "]',
-Title char(32) field_format='TITLE',
-Translation char(32) field_format='TRANSLATOR.PREFIX',
-Translator char(80) field_format='TRANSLATOR',
-Publisher char(20) field_format='PUBLISHER.NAME',
-Location char(16) field_format='PUBLISHER.PLACE',
-Year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=JSON File_name='biblio3.json';
+CREATE TABLE jsampall (
+ISBN CHAR(15),
+LANGUAGE CHAR(2) field_format='LANG',
+Subject CHAR(32) field_format='SUBJECT',
+Author CHAR(128) field_format='AUTHOR.[" and "]',
+Title CHAR(32) field_format='TITLE',
+TRANSLATION CHAR(32) field_format='TRANSLATOR.PREFIX',
+Translator CHAR(80) field_format='TRANSLATOR',
+Publisher CHAR(20) field_format='PUBLISHER.NAME',
+LOCATION CHAR(16) field_format='PUBLISHER.PLACE',
+YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json';
 ```
 
 From Connect 1.07.0002
 
 ```
-create table jsampall (
-ISBN char(15),
-Language char(2) jpath='$.LANG',
-Subject char(32) jpath='$.SUBJECT',
-Author char(128) jpath='$.AUTHOR[" and "]',
-Title char(32) jpath='$.TITLE',
-Translation char(32) jpath='$.TRANSLATOR.PREFIX',
-Translator char(80) jpath='$.TRANSLATOR',
-Publisher char(20) jpath='$.PUBLISHER.NAME',
-Location char(16) jpath='$.PUBLISHER.PLACE',
-Year int(4) jpath='$.DATEPUB')
-engine=CONNECT table_type=JSON File_name='biblio3.json';
+CREATE TABLE jsampall (
+ISBN CHAR(15),
+LANGUAGE CHAR(2) jpath='$.LANG',
+Subject CHAR(32) jpath='$.SUBJECT',
+Author CHAR(128) jpath='$.AUTHOR[" and "]',
+Title CHAR(32) jpath='$.TITLE',
+TRANSLATION CHAR(32) jpath='$.TRANSLATOR.PREFIX',
+Translator CHAR(80) jpath='$.TRANSLATOR',
+Publisher CHAR(20) jpath='$.PUBLISHER.NAME',
+LOCATION CHAR(16) jpath='$.PUBLISHER.PLACE',
+YEAR INT(4) jpath='$.DATEPUB')
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json';
 ```
 
 Given the query:
 
 ```
-select title, author, publisher, location from jsampall;
+SELECT title, author, publisher, LOCATION FROM jsampall;
 ```
 
 The result is:
@@ -177,49 +177,49 @@ Here is another example showing that one can choose what to extract from the fil
 Until Connect 1.5:
 
 ```
-create table jsampex (
-ISBN char(15),
-Title char(32) field_format='TITLE',
-AuthorFN char(128) field_format='AUTHOR:[X]:FIRSTNAME',
-AuthorLN char(128) field_format='AUTHOR:[X]:LASTNAME',
-Year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=JSON File_name='biblio3.json';
+CREATE TABLE jsampex (
+ISBN CHAR(15),
+Title CHAR(32) field_format='TITLE',
+AuthorFN CHAR(128) field_format='AUTHOR:[X]:FIRSTNAME',
+AuthorLN CHAR(128) field_format='AUTHOR:[X]:LASTNAME',
+YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json';
 ```
 
 From Connect 1.6:
 
 ```
-create table jsampex (
-ISBN char(15),
-Title char(32) field_format='TITLE',
-AuthorFN char(128) field_format='AUTHOR.[X].FIRSTNAME',
-AuthorLN char(128) field_format='AUTHOR.[X].LASTNAME',
-Year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=JSON File_name='biblio3.json';
+CREATE TABLE jsampex (
+ISBN CHAR(15),
+Title CHAR(32) field_format='TITLE',
+AuthorFN CHAR(128) field_format='AUTHOR.[X].FIRSTNAME',
+AuthorLN CHAR(128) field_format='AUTHOR.[X].LASTNAME',
+YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json';
 ```
 
 From Connect 1.06.006:
 
 ```
-create table jsampex (
-ISBN char(15),
-Title char(32) field_format='TITLE',
-AuthorFN char(128) field_format='AUTHOR[*].FIRSTNAME',
-AuthorLN char(128) field_format='AUTHOR[*].LASTNAME',
-Year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=JSON File_name='biblio3.json';
+CREATE TABLE jsampex (
+ISBN CHAR(15),
+Title CHAR(32) field_format='TITLE',
+AuthorFN CHAR(128) field_format='AUTHOR[*].FIRSTNAME',
+AuthorLN CHAR(128) field_format='AUTHOR[*].LASTNAME',
+YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json';
 ```
 
 From Connect 1.07.0002
 
 ```
-create table jsampex (
-ISBN char(15),
-Title char(32) jpath='TITLE',
-AuthorFN char(128) jpath='AUTHOR[*].FIRSTNAME',
-AuthorLN char(128) jpath='AUTHOR[*].LASTNAME',
-Year int(4) jpath='DATEPUB')
-engine=CONNECT table_type=JSON File_name='biblio3.json';
+CREATE TABLE jsampex (
+ISBN CHAR(15),
+Title CHAR(32) jpath='TITLE',
+AuthorFN CHAR(128) jpath='AUTHOR[*].FIRSTNAME',
+AuthorLN CHAR(128) jpath='AUTHOR[*].LASTNAME',
+YEAR INT(4) jpath='DATEPUB')
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json';
 ```
 
 It is displayed as:
@@ -287,34 +287,34 @@ The table jexpall expands all under and including the week array:
 From Connect 1.07.0002
 
 ```
-create table jexpall (
-WHO char(12),
-WEEK int(2) jpath='$.WEEK[*].NUMBER',
-WHAT char(32) jpath='$.WEEK[*].EXPENSE[*].WHAT',
-AMOUNT double(8,2) jpath='$.WEEK[*].EXPENSE[*].AMOUNT')
-engine=CONNECT table_type=JSON File_name='expense.json';
+CREATE TABLE jexpall (
+WHO CHAR(12),
+WEEK INT(2) jpath='$.WEEK[*].NUMBER',
+WHAT CHAR(32) jpath='$.WEEK[*].EXPENSE[*].WHAT',
+AMOUNT DOUBLE(8,2) jpath='$.WEEK[*].EXPENSE[*].AMOUNT')
+ENGINE=CONNECT table_type=JSON File_name='expense.json';
 ```
 
 From Connect.1.6
 
 ```
-create table jexpall (
-WHO char(12),
-WEEK int(2) field_format='$.WEEK[*].NUMBER',
-WHAT char(32) field_format='$.WEEK[*].EXPENSE[*].WHAT',
-AMOUNT double(8,2) field_format='$.WEEK[*].EXPENSE[*].AMOUNT')
-engine=CONNECT table_type=JSON File_name='expense.json';
+CREATE TABLE jexpall (
+WHO CHAR(12),
+WEEK INT(2) field_format='$.WEEK[*].NUMBER',
+WHAT CHAR(32) field_format='$.WEEK[*].EXPENSE[*].WHAT',
+AMOUNT DOUBLE(8,2) field_format='$.WEEK[*].EXPENSE[*].AMOUNT')
+ENGINE=CONNECT table_type=JSON File_name='expense.json';
 ```
 
 Until Connect 1.5:
 
 ```
-create table jexpall (
-WHO char(12),
-WEEK int(2) field_format='WEEK:[x]:NUMBER',
-WHAT char(32) field_format='WEEK:[x]:EXPENSE:[x]:WHAT',
-AMOUNT double(8,2) field_format='WEEK:[x]:EXPENSE:[x]:AMOUNT')
-engine=CONNECT table_type=JSON File_name='expense.json';
+CREATE TABLE jexpall (
+WHO CHAR(12),
+WEEK INT(2) field_format='WEEK:[x]:NUMBER',
+WHAT CHAR(32) field_format='WEEK:[x]:EXPENSE:[x]:WHAT',
+AMOUNT DOUBLE(8,2) field_format='WEEK:[x]:EXPENSE:[x]:AMOUNT')
+ENGINE=CONNECT table_type=JSON File_name='expense.json';
 ```
 
 | WHO   | WEEK | WHAT | AMOUNT |
@@ -349,37 +349,37 @@ The table `jexpw` shows what was bought and the sum and average of amounts for e
 From Connect 1.07.0002
 
 ```
-create table jexpw (
-WHO char(12) not null,
-WEEK int(2) not null jpath='$.WEEK[*].NUMBER',
-WHAT char(32) not null jpath='$.WEEK[].EXPENSE[", "].WHAT',
-SUM double(8,2) not null jpath='$.WEEK[].EXPENSE[+].AMOUNT',
-AVERAGE double(8,2) not null jpath='$.WEEK[].EXPENSE[!].AMOUNT')
-engine=CONNECT table_type=JSON File_name='expense.json';
+CREATE TABLE jexpw (
+WHO CHAR(12) NOT NULL,
+WEEK INT(2) NOT NULL jpath='$.WEEK[*].NUMBER',
+WHAT CHAR(32) NOT NULL jpath='$.WEEK[].EXPENSE[", "].WHAT',
+SUM DOUBLE(8,2) NOT NULL jpath='$.WEEK[].EXPENSE[+].AMOUNT',
+AVERAGE DOUBLE(8,2) NOT NULL jpath='$.WEEK[].EXPENSE[!].AMOUNT')
+ENGINE=CONNECT table_type=JSON File_name='expense.json';
 ```
 
 From Connect 1.6:
 
 ```
-create table jexpw (
-WHO char(12) not null,
-WEEK int(2) not null field_format='$.WEEK[*].NUMBER',
-WHAT char(32) not null field_format='$.WEEK[].EXPENSE[", "].WHAT',
-SUM double(8,2) not null field_format='$.WEEK[].EXPENSE[+].AMOUNT',
-AVERAGE double(8,2) not null field_format='$.WEEK[].EXPENSE[!].AMOUNT')
-engine=CONNECT table_type=JSON File_name='expense.json';
+CREATE TABLE jexpw (
+WHO CHAR(12) NOT NULL,
+WEEK INT(2) NOT NULL field_format='$.WEEK[*].NUMBER',
+WHAT CHAR(32) NOT NULL field_format='$.WEEK[].EXPENSE[", "].WHAT',
+SUM DOUBLE(8,2) NOT NULL field_format='$.WEEK[].EXPENSE[+].AMOUNT',
+AVERAGE DOUBLE(8,2) NOT NULL field_format='$.WEEK[].EXPENSE[!].AMOUNT')
+ENGINE=CONNECT table_type=JSON File_name='expense.json';
 ```
 
 Until Connect 1.5:
 
 ```
-create table jexpw (
-WHO char(12) not null,
-WEEK int(2) not null field_format='WEEK:[x]:NUMBER',
-WHAT char(32) not null field_format='WEEK::EXPENSE:[", "]:WHAT',
-SUM double(8,2) not null field_format='WEEK::EXPENSE:[+]:AMOUNT',
-AVERAGE double(8,2) not null field_format='WEEK::EXPENSE:[!]:AMOUNT')
-engine=CONNECT table_type=JSON File_name='expense.json';
+CREATE TABLE jexpw (
+WHO CHAR(12) NOT NULL,
+WEEK INT(2) NOT NULL field_format='WEEK:[x]:NUMBER',
+WHAT CHAR(32) NOT NULL field_format='WEEK::EXPENSE:[", "]:WHAT',
+SUM DOUBLE(8,2) NOT NULL field_format='WEEK::EXPENSE:[+]:AMOUNT',
+AVERAGE DOUBLE(8,2) NOT NULL field_format='WEEK::EXPENSE:[!]:AMOUNT')
+ENGINE=CONNECT table_type=JSON File_name='expense.json';
 ```
 
 | WHO   | WEEK | WHAT                         | SUM   | AVERAGE |
@@ -399,46 +399,46 @@ Let us see what the table `jexpz` does:
 From Connect 1.6:
 
 ```
-create table jexpz (
-WHO char(12) not null,
-WEEKS char(12) not null field_format='WEEK[", "].NUMBER',
-SUMS char(64) not null field_format='WEEK["+"].EXPENSE[+].AMOUNT',
-SUM double(8,2) not null field_format='WEEK[+].EXPENSE[+].AMOUNT',
-AVGS char(64) not null field_format='WEEK["+"].EXPENSE[!].AMOUNT',
-SUMAVG double(8,2) not null field_format='WEEK[+].EXPENSE[!].AMOUNT',
-AVGSUM double(8,2) not null field_format='WEEK[!].EXPENSE[+].AMOUNT',
-AVERAGE double(8,2) not null field_format='WEEK[!].EXPENSE[*].AMOUNT')
-engine=CONNECT table_type=JSON File_name='expense.json';
+CREATE TABLE jexpz (
+WHO CHAR(12) NOT NULL,
+WEEKS CHAR(12) NOT NULL field_format='WEEK[", "].NUMBER',
+SUMS CHAR(64) NOT NULL field_format='WEEK["+"].EXPENSE[+].AMOUNT',
+SUM DOUBLE(8,2) NOT NULL field_format='WEEK[+].EXPENSE[+].AMOUNT',
+AVGS CHAR(64) NOT NULL field_format='WEEK["+"].EXPENSE[!].AMOUNT',
+SUMAVG DOUBLE(8,2) NOT NULL field_format='WEEK[+].EXPENSE[!].AMOUNT',
+AVGSUM DOUBLE(8,2) NOT NULL field_format='WEEK[!].EXPENSE[+].AMOUNT',
+AVERAGE DOUBLE(8,2) NOT NULL field_format='WEEK[!].EXPENSE[*].AMOUNT')
+ENGINE=CONNECT table_type=JSON File_name='expense.json';
 ```
 
 From Connect 1.07.0002
 
 ```
-create table jexpz (
-WHO char(12) not null,
-WEEKS char(12) not null jpath='WEEK[", "].NUMBER',
-SUMS char(64) not null jpath='WEEK["+"].EXPENSE[+].AMOUNT',
-SUM double(8,2) not null jpath='WEEK[+].EXPENSE[+].AMOUNT',
-AVGS char(64) not null jpath='WEEK["+"].EXPENSE[!].AMOUNT',
-SUMAVG double(8,2) not null jpath='WEEK[+].EXPENSE[!].AMOUNT',
-AVGSUM double(8,2) not null jpath='WEEK[!].EXPENSE[+].AMOUNT',
-AVERAGE double(8,2) not null jpath='WEEK[!].EXPENSE[*].AMOUNT')
-engine=CONNECT table_type=JSON File_name='expense.json';
+CREATE TABLE jexpz (
+WHO CHAR(12) NOT NULL,
+WEEKS CHAR(12) NOT NULL jpath='WEEK[", "].NUMBER',
+SUMS CHAR(64) NOT NULL jpath='WEEK["+"].EXPENSE[+].AMOUNT',
+SUM DOUBLE(8,2) NOT NULL jpath='WEEK[+].EXPENSE[+].AMOUNT',
+AVGS CHAR(64) NOT NULL jpath='WEEK["+"].EXPENSE[!].AMOUNT',
+SUMAVG DOUBLE(8,2) NOT NULL jpath='WEEK[+].EXPENSE[!].AMOUNT',
+AVGSUM DOUBLE(8,2) NOT NULL jpath='WEEK[!].EXPENSE[+].AMOUNT',
+AVERAGE DOUBLE(8,2) NOT NULL jpath='WEEK[!].EXPENSE[*].AMOUNT')
+ENGINE=CONNECT table_type=JSON File_name='expense.json';
 ```
 
 Until Connect 1.5:
 
 ```
-create table jexpz (
-WHO char(12) not null,
-WEEKS char(12) not null field_format='WEEK:[", "]:NUMBER',
-SUMS char(64) not null field_format='WEEK:["+"]:EXPENSE:[+]:AMOUNT',
-SUM double(8,2) not null field_format='WEEK:[+]:EXPENSE:[+]:AMOUNT',
-AVGS char(64) not null field_format='WEEK:["+"]:EXPENSE:[!]:AMOUNT',
-SUMAVG double(8,2) not null field_format='WEEK:[+]:EXPENSE:[!]:AMOUNT',
-AVGSUM double(8,2) not null field_format='WEEK:[!]:EXPENSE:[+]:AMOUNT',
-AVERAGE double(8,2) not null field_format='WEEK:[!]:EXPENSE:[x]:AMOUNT')
-engine=CONNECT table_type=JSON
+CREATE TABLE jexpz (
+WHO CHAR(12) NOT NULL,
+WEEKS CHAR(12) NOT NULL field_format='WEEK:[", "]:NUMBER',
+SUMS CHAR(64) NOT NULL field_format='WEEK:["+"]:EXPENSE:[+]:AMOUNT',
+SUM DOUBLE(8,2) NOT NULL field_format='WEEK:[+]:EXPENSE:[+]:AMOUNT',
+AVGS CHAR(64) NOT NULL field_format='WEEK:["+"]:EXPENSE:[!]:AMOUNT',
+SUMAVG DOUBLE(8,2) NOT NULL field_format='WEEK:[+]:EXPENSE:[!]:AMOUNT',
+AVGSUM DOUBLE(8,2) NOT NULL field_format='WEEK:[!]:EXPENSE:[+]:AMOUNT',
+AVERAGE DOUBLE(8,2) NOT NULL field_format='WEEK:[!]:EXPENSE:[x]:AMOUNT')
+ENGINE=CONNECT table_type=JSON
 File_name='E:/Data/Json/expense2.json';
 ```
 
@@ -486,21 +486,21 @@ When doing so, nulls do not appear in object text or array lists. However, this 
 It is possible to let the MariaDB discovery process do the job of column specification. When columns are not defined in the create table statement, CONNECT endeavors to analyze the JSON file and to provide the column specifications. This is possible only for tables represented by an array of objects because CONNECT retrieves the column names from the object pair keys and their definition from the object pair values. For instance, the jsample table could be created saying:
 
 ```
-create table jsample engine=connect table_type=JSON file_name='biblio3.json';
+CREATE TABLE jsample ENGINE=CONNECT table_type=JSON file_name='biblio3.json';
 ```
 
 Let’s check how it was actually specified using the show create table statement:
 
 ```
 CREATE TABLE `jsample` (
-  `ISBN` char(13) NOT NULL,
-  `LANG` char(2) NOT NULL,
-  `SUBJECT` char(12) NOT NULL,
-  `AUTHOR` varchar(256) DEFAULT NULL,
-  `TITLE` char(30) NOT NULL,
-  `TRANSLATED` varchar(256) DEFAULT NULL,
-  `PUBLISHER` varchar(256) DEFAULT NULL,
-  `DATEPUB` int(4) NOT NULL
+  `ISBN` CHAR(13) NOT NULL,
+  `LANG` CHAR(2) NOT NULL,
+  `SUBJECT` CHAR(12) NOT NULL,
+  `AUTHOR` VARCHAR(256) DEFAULT NULL,
+  `TITLE` CHAR(30) NOT NULL,
+  `TRANSLATED` VARCHAR(256) DEFAULT NULL,
+  `PUBLISHER` VARCHAR(256) DEFAULT NULL,
+  `DATEPUB` INT(4) NOT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON' `FILE_NAME`='biblio3.json';
 ```
 
@@ -511,7 +511,7 @@ If a more complex definition is desired, you can ask CONNECT to analyse the JPAT
 For instance:
 
 ```
-create table jsampall2 engine=connect table_type=JSON 
+CREATE TABLE jsampall2 ENGINE=CONNECT table_type=JSON 
   file_name='biblio3.json' option_list='level=1';
 ```
 
@@ -521,17 +521,17 @@ From Connect 1.07.0002
 
 ```
 CREATE TABLE `jsampall2` (
-  `ISBN` char(13) NOT NULL,
-  `LANG` char(2) NOT NULL,
-  `SUBJECT` char(12) NOT NULL,
-  `AUTHOR_FIRSTNAME` char(15) NOT NULL `JPATH`='$.AUTHOR.[0].FIRSTNAME',
-  `AUTHOR_LASTNAME` char(8) NOT NULL `JPATH`='$.AUTHOR.[0].LASTNAME',
-  `TITLE` char(30) NOT NULL,
-  `TRANSLATED_PREFIX` char(23) DEFAULT NULL `JPATH`='$.TRANSLATED.PREFIX',
-  `TRANSLATED_TRANSLATOR` varchar(256) DEFAULT NULL `JPATH`='$.TRANSLATED.TRANSLATOR',
-  `PUBLISHER_NAME` char(15) NOT NULL `JPATH`='$.PUBLISHER.NAME',
-  `PUBLISHER_PLACE` char(5) NOT NULL `JPATH`='$.PUBLISHER.PLACE',
-  `DATEPUB` int(4) NOT NULL
+  `ISBN` CHAR(13) NOT NULL,
+  `LANG` CHAR(2) NOT NULL,
+  `SUBJECT` CHAR(12) NOT NULL,
+  `AUTHOR_FIRSTNAME` CHAR(15) NOT NULL `JPATH`='$.AUTHOR.[0].FIRSTNAME',
+  `AUTHOR_LASTNAME` CHAR(8) NOT NULL `JPATH`='$.AUTHOR.[0].LASTNAME',
+  `TITLE` CHAR(30) NOT NULL,
+  `TRANSLATED_PREFIX` CHAR(23) DEFAULT NULL `JPATH`='$.TRANSLATED.PREFIX',
+  `TRANSLATED_TRANSLATOR` VARCHAR(256) DEFAULT NULL `JPATH`='$.TRANSLATED.TRANSLATOR',
+  `PUBLISHER_NAME` CHAR(15) NOT NULL `JPATH`='$.PUBLISHER.NAME',
+  `PUBLISHER_PLACE` CHAR(5) NOT NULL `JPATH`='$.PUBLISHER.PLACE',
+  `DATEPUB` INT(4) NOT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON' 
   `FILE_NAME`='biblio3.json' `OPTION_LIST`='depth=1';
 ```
@@ -540,17 +540,17 @@ From Connect 1.6:
 
 ```
 CREATE TABLE `jsampall2` (
-  `ISBN` char(13) NOT NULL,
-  `LANG` char(2) NOT NULL,
-  `SUBJECT` char(12) NOT NULL,
-  `AUTHOR_FIRSTNAME` char(15) NOT NULL `FIELD_FORMAT`='AUTHOR..FIRSTNAME',
-  `AUTHOR_LASTNAME` char(8) NOT NULL `FIELD_FORMAT`='AUTHOR..LASTNAME',
-  `TITLE` char(30) NOT NULL,
-  `TRANSLATED_PREFIX` char(23) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED.PREFIX',
-  `TRANSLATED_TRANSLATOR` varchar(256) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED.TRANSLATOR',
-  `PUBLISHER_NAME` char(15) NOT NULL `FIELD_FORMAT`='PUBLISHER.NAME',
-  `PUBLISHER_PLACE` char(5) NOT NULL `FIELD_FORMAT`='PUBLISHER.PLACE',
-  `DATEPUB` int(4) NOT NULL
+  `ISBN` CHAR(13) NOT NULL,
+  `LANG` CHAR(2) NOT NULL,
+  `SUBJECT` CHAR(12) NOT NULL,
+  `AUTHOR_FIRSTNAME` CHAR(15) NOT NULL `FIELD_FORMAT`='AUTHOR..FIRSTNAME',
+  `AUTHOR_LASTNAME` CHAR(8) NOT NULL `FIELD_FORMAT`='AUTHOR..LASTNAME',
+  `TITLE` CHAR(30) NOT NULL,
+  `TRANSLATED_PREFIX` CHAR(23) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED.PREFIX',
+  `TRANSLATED_TRANSLATOR` VARCHAR(256) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED.TRANSLATOR',
+  `PUBLISHER_NAME` CHAR(15) NOT NULL `FIELD_FORMAT`='PUBLISHER.NAME',
+  `PUBLISHER_PLACE` CHAR(5) NOT NULL `FIELD_FORMAT`='PUBLISHER.PLACE',
+  `DATEPUB` INT(4) NOT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON' 
   `FILE_NAME`='biblio3.json' `OPTION_LIST`='level=1';
 ```
@@ -559,17 +559,17 @@ Until Connect 1.5:
 
 ```
 CREATE TABLE `jsampall2` (
-  `ISBN` char(13) NOT NULL,
-  `LANG` char(2) NOT NULL,
-  `SUBJECT` char(12) NOT NULL,
-  `AUTHOR_FIRSTNAME` char(15) NOT NULL `FIELD_FORMAT`='AUTHOR::FIRSTNAME',
-  `AUTHOR_LASTNAME` char(8) NOT NULL `FIELD_FORMAT`='AUTHOR::LASTNAME',
-  `TITLE` char(30) NOT NULL,
-  `TRANSLATED_PREFIX` char(23) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED:PREFIX',
-  `TRANSLATED_TRANSLATOR` varchar(256) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED:TRANSLATOR',
-  `PUBLISHER_NAME` char(15) NOT NULL `FIELD_FORMAT`='PUBLISHER:NAME',
-  `PUBLISHER_PLACE` char(5) NOT NULL `FIELD_FORMAT`='PUBLISHER:PLACE',
-  `DATEPUB` int(4) NOT NULL
+  `ISBN` CHAR(13) NOT NULL,
+  `LANG` CHAR(2) NOT NULL,
+  `SUBJECT` CHAR(12) NOT NULL,
+  `AUTHOR_FIRSTNAME` CHAR(15) NOT NULL `FIELD_FORMAT`='AUTHOR::FIRSTNAME',
+  `AUTHOR_LASTNAME` CHAR(8) NOT NULL `FIELD_FORMAT`='AUTHOR::LASTNAME',
+  `TITLE` CHAR(30) NOT NULL,
+  `TRANSLATED_PREFIX` CHAR(23) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED:PREFIX',
+  `TRANSLATED_TRANSLATOR` VARCHAR(256) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED:TRANSLATOR',
+  `PUBLISHER_NAME` CHAR(15) NOT NULL `FIELD_FORMAT`='PUBLISHER:NAME',
+  `PUBLISHER_PLACE` CHAR(5) NOT NULL `FIELD_FORMAT`='PUBLISHER:PLACE',
+  `DATEPUB` INT(4) NOT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON' `
   FILE_NAME`='biblio3.json' `OPTION_LIST`='level=1';
 ```
@@ -592,8 +592,8 @@ Note: Since version 1.6.4, CONNECT eliminates columns that are “void” or who
 Previously, when using discovery, creating the table by:
 
 ```
-create table sjr0
-engine=connect table_type=JSON file_name='sresto.json'
+CREATE TABLE sjr0
+ENGINE=CONNECT table_type=JSON file_name='sresto.json'
 option_list='Pretty=0,Depth=1' lrecl=128;
 ```
 
@@ -602,10 +602,10 @@ The table was previously created as:
 ```
 CREATE TABLE `sjr0` (
   `_id` bigint(1) NOT NULL,
-  `name` char(26) NOT NULL,
-  `cuisine` char(8) NOT NULL,
-  `grades` char(1) DEFAULT NULL,
-  `grades_grade` char(1) DEFAULT NULL `JPATH`='$.grades[0].grade',
+  `name` CHAR(26) NOT NULL,
+  `cuisine` CHAR(8) NOT NULL,
+  `grades` CHAR(1) DEFAULT NULL,
+  `grades_grade` CHAR(1) DEFAULT NULL `JPATH`='$.grades[0].grade',
   `grades_score` bigint(1) DEFAULT NULL `JPATH`='$.grades[0].score'
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON'
   `FILE_NAME`='sresto.json' 
@@ -619,9 +619,9 @@ The column “grades” was added because of the void array in line 2. Now this 
 Another way to see JSON table column specifications is to use a catalogue table. For instance:
 
 ```
-create table bibcol engine=connect table_type=JSON file_name='biblio3.json' 
+CREATE TABLE bibcol ENGINE=CONNECT table_type=JSON file_name='biblio3.json' 
   option_list='level=2' catfunc=columns;
-select column_name, type_name type, column_size size, jpath from bibcol;
+SELECT COLUMN_NAME, type_name TYPE, column_size SIZE, jpath FROM bibcol;
 ```
 
 which returns:
@@ -735,49 +735,49 @@ The table we want to analyze is represented by the array value of the “data”
 From Connect 1.07.0002:
 
 ```
-create table jfacebook (
-`ID` char(10) jpath='id',
-`Name` char(32) jpath='from.name',
-`MyID` char(16) jpath='from.id',
-`Message` varchar(256) jpath='message',
-`Action` char(16) jpath='actions..name',
-`Link` varchar(256) jpath='actions..link',
-`Type` char(16) jpath='type',
+CREATE TABLE jfacebook (
+`ID` CHAR(10) jpath='id',
+`Name` CHAR(32) jpath='from.name',
+`MyID` CHAR(16) jpath='from.id',
+`Message` VARCHAR(256) jpath='message',
+`Action` CHAR(16) jpath='actions..name',
+`Link` VARCHAR(256) jpath='actions..link',
+`Type` CHAR(16) jpath='type',
 `Created` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' jpath='created_time',
 `Updated` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' jpath='updated_time')
-engine=connect table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
+ENGINE=CONNECT table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
 ```
 
 From Connect 1.6:
 
 ```
-create table jfacebook (
-`ID` char(10) field_format='id',
-`Name` char(32) field_format='from.name',
-`MyID` char(16) field_format='from.id',
-`Message` varchar(256) field_format='message',
-`Action` char(16) field_format='actions..name',
-`Link` varchar(256) field_format='actions..link',
-`Type` char(16) field_format='type',
+CREATE TABLE jfacebook (
+`ID` CHAR(10) field_format='id',
+`Name` CHAR(32) field_format='from.name',
+`MyID` CHAR(16) field_format='from.id',
+`Message` VARCHAR(256) field_format='message',
+`Action` CHAR(16) field_format='actions..name',
+`Link` VARCHAR(256) field_format='actions..link',
+`Type` CHAR(16) field_format='type',
 `Created` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='created_time',
 `Updated` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='updated_time')
-engine=connect table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
+ENGINE=CONNECT table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
 ```
 
 Until Connect 1.5:
 
 ```
-create table jfacebook (
-`ID` char(10) field_format='id',
-`Name` char(32) field_format='from:name',
-`MyID` char(16) field_format='from:id',
-`Message` varchar(256) field_format='message',
-`Action` char(16) field_format='actions::name',
-`Link` varchar(256) field_format='actions::link',
-`Type` char(16) field_format='type',
+CREATE TABLE jfacebook (
+`ID` CHAR(10) field_format='id',
+`Name` CHAR(32) field_format='from:name',
+`MyID` CHAR(16) field_format='from:id',
+`Message` VARCHAR(256) field_format='message',
+`Action` CHAR(16) field_format='actions::name',
+`Link` VARCHAR(256) field_format='actions::link',
+`Type` CHAR(16) field_format='type',
 `Created` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='created_time',
 `Updated` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='updated_time')
-engine=connect table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
+ENGINE=CONNECT table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
 ```
 
 This is the object option that gives the Jpath of the table. Note also an alternate way to declare the array to be expanded by the expand option of the option\_list.
@@ -809,40 +809,40 @@ The original file, “cities.json”, has 29352 records. To base a table on this
 From Connect 1.07.0002:
 
 ```
-create table cities (
-`_id` char(5) key,
-`city` char(32),
-`lat` double(12,6) jpath='loc.0',
-`long` double(12,6) jpath='loc.1',
-`pop` int(8),
-`state` char(2) distrib='clustered')
-engine=CONNECT table_type=JSON file_name='cities.json' lrecl=128 option_list='pretty=0';
+CREATE TABLE cities (
+`_id` CHAR(5) KEY,
+`city` CHAR(32),
+`lat` DOUBLE(12,6) jpath='loc.0',
+`long` DOUBLE(12,6) jpath='loc.1',
+`pop` INT(8),
+`state` CHAR(2) distrib='clustered')
+ENGINE=CONNECT table_type=JSON file_name='cities.json' lrecl=128 option_list='pretty=0';
 ```
 
 From Connect 1.6:
 
 ```
-create table cities (
-`_id` char(5) key,
-`city` char(32),
-`lat` double(12,6) field_format='loc.0',
-`long` double(12,6) field_format='loc.1',
-`pop` int(8),
-`state` char(2) distrib='clustered')
-engine=CONNECT table_type=JSON file_name='cities.json' lrecl=128 option_list='pretty=0';
+CREATE TABLE cities (
+`_id` CHAR(5) KEY,
+`city` CHAR(32),
+`lat` DOUBLE(12,6) field_format='loc.0',
+`long` DOUBLE(12,6) field_format='loc.1',
+`pop` INT(8),
+`state` CHAR(2) distrib='clustered')
+ENGINE=CONNECT table_type=JSON file_name='cities.json' lrecl=128 option_list='pretty=0';
 ```
 
 Until Connect 1.5:
 
 ```
-create table cities (
-`_id` char(5) key,
-`city` char(32),
-`long` double(12,6) field_format='loc:[0]',
-`lat` double(12,6) field_format='loc:[1]',
-`pop` int(8),
-`state` char(2) distrib='clustered')
-engine=CONNECT table_type=JSON file_name='cities.json' lrecl=128 option_list='pretty=0';
+CREATE TABLE cities (
+`_id` CHAR(5) KEY,
+`city` CHAR(32),
+`long` DOUBLE(12,6) field_format='loc:[0]',
+`lat` DOUBLE(12,6) field_format='loc:[1]',
+`pop` INT(8),
+`state` CHAR(2) distrib='clustered')
+ENGINE=CONNECT table_type=JSON file_name='cities.json' lrecl=128 option_list='pretty=0';
 ```
 
 Note the use of \[n] (until Connect 1.5) or n (from Connect 1.6) array specifications for the longitude and latitude columns.
@@ -875,31 +875,31 @@ A table can be created on this file as:
 From Connect 1.07.0002:
 
 ```
-create table xjson (
-`a` int(6) jpath='1',
-`b` char(32) jpath='2',
-`c` double(10,4) jpath='3')
-engine=connect table_type=JSON file_name='test.json' option_list='Pretty=1,Jmode=1,Base=1' lrecl=128;
+CREATE TABLE xjson (
+`a` INT(6) jpath='1',
+`b` CHAR(32) jpath='2',
+`c` DOUBLE(10,4) jpath='3')
+ENGINE=CONNECT table_type=JSON file_name='test.json' option_list='Pretty=1,Jmode=1,Base=1' lrecl=128;
 ```
 
 From Connect 1.6:
 
 ```
-create table xjson (
-`a` int(6) field_format='1',
-`b` char(32) field_format='2',
-`c` double(10,4) field_format='3')
-engine=connect table_type=JSON file_name='test.json' option_list='Pretty=1,Jmode=1,Base=1' lrecl=128;
+CREATE TABLE xjson (
+`a` INT(6) field_format='1',
+`b` CHAR(32) field_format='2',
+`c` DOUBLE(10,4) field_format='3')
+ENGINE=CONNECT table_type=JSON file_name='test.json' option_list='Pretty=1,Jmode=1,Base=1' lrecl=128;
 ```
 
 Until Connect 1.5:
 
 ```
-create table xjson (
-`a` int(6) field_format='[1]',
-`b` char(32) field_format='[2]',
-`c` double(10,4) field_format='[3]')
-engine=connect table_type=JSON file_name='test.json'
+CREATE TABLE xjson (
+`a` INT(6) field_format='[1]',
+`b` CHAR(32) field_format='[2]',
+`c` DOUBLE(10,4) field_format='[3]')
+ENGINE=CONNECT table_type=JSON file_name='test.json'
 option_list='Pretty=1,Jmode=1,Base=1' lrecl=128;
 ```
 
@@ -913,7 +913,7 @@ It indicates what type of table this is. The Jmode values are:
 When reading, this is not required as the type of the array items is specified for the columns; however, it is required when inserting new rows so CONNECT knows what to insert. For instance:
 
 ```
-insert into xjson values(25, 'Breakfast', 1.414);
+INSERT INTO xjson VALUES(25, 'Breakfast', 1.414);
 ```
 
 After this, it is displayed as:
@@ -941,43 +941,43 @@ For instance:
 From Connect 1.07.0002:
 
 ```
-create table jsample2 (
-ISBN char(15),
-Lng char(2) jpath='LANG',
-json_Author char(255) jpath='AUTHOR.*',
-Title char(32) jpath='TITLE',
-Year int(4) jpath='DATEPUB')
-engine=CONNECT table_type=JSON file_name='biblio3.json';
+CREATE TABLE jsample2 (
+ISBN CHAR(15),
+Lng CHAR(2) jpath='LANG',
+json_Author CHAR(255) jpath='AUTHOR.*',
+Title CHAR(32) jpath='TITLE',
+YEAR INT(4) jpath='DATEPUB')
+ENGINE=CONNECT table_type=JSON file_name='biblio3.json';
 ```
 
 From Connect 1.6:
 
 ```
-create table jsample2 (
-ISBN char(15),
-Lng char(2) field_format='LANG',
-json_Author char(255) field_format='AUTHOR.*',
-Title char(32) field_format='TITLE',
-Year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=JSON file_name='biblio3.json';
+CREATE TABLE jsample2 (
+ISBN CHAR(15),
+Lng CHAR(2) field_format='LANG',
+json_Author CHAR(255) field_format='AUTHOR.*',
+Title CHAR(32) field_format='TITLE',
+YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=JSON file_name='biblio3.json';
 ```
 
 Until Connect 1.5:
 
 ```
-create table jsample2 (
-ISBN char(15),
-Lng char(2) field_format='LANG',
-json_Author char(255) field_format='AUTHOR:*',
-Title char(32) field_format='TITLE',
-Year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=JSON file_name='biblio3.json';
+CREATE TABLE jsample2 (
+ISBN CHAR(15),
+Lng CHAR(2) field_format='LANG',
+json_Author CHAR(255) field_format='AUTHOR:*',
+Title CHAR(32) field_format='TITLE',
+YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=JSON file_name='biblio3.json';
 ```
 
 Now the query:
 
 ```
-select json_Author from jsample2;
+SELECT json_Author FROM jsample2;
 ```
 
 will return and display :
@@ -1006,13 +1006,13 @@ New problems are raised when trying to modify the values of an array. Only updat
 For instance, to modify the authors of the `biblio.json` based table, the `jsampex` table must be used. Doing so, updating and deleting authors is possible using standard SQL commands. For example, to change the first name of Knab from François to John:
 
 ```
-update jsampex set authorfn = 'John' where authorln = 'Knab';
+UPDATE jsampex SET authorfn = 'John' WHERE authorln = 'Knab';
 ```
 
 However It would be wrong to do:
 
 ```
-update jsampex set authorfn = 'John' where isbn = '9782212090819';
+UPDATE jsampex SET authorfn = 'John' WHERE isbn = '9782212090819';
 ```
 
 Because this would change the first name of both authors as they share the same ISBN.
@@ -1020,8 +1020,8 @@ Because this would change the first name of both authors as they share the same 
 Where things become more difficult is when trying to delete or insert an author of a book. Indeed, a delete command will delete the whole book and an insert command will add a new complete row instead of adding a new author in the same array. Here we are penalized by the SQL language that cannot give us a way to specify this. Something like:
 
 ```
-update jsampex add authorfn = 'Charles', authorln = 'Dickens'
-where title = 'XML en Action';
+UPDATE jsampex ADD authorfn = 'Charles', authorln = 'Dickens'
+WHERE title = 'XML en Action';
 ```
 
 However this does not exist in SQL. Does this mean that it is impossible to do it? No, but it requires us to use a table specified on the same file but adapted to this task. One way to do it is to specify a table for which the authors are no more an expanded array. Supposing we want to add an author to the “XML en Action” book. We will do it on a table containing just the author(s) of that book, which is the second book of the table.
@@ -1029,25 +1029,25 @@ However this does not exist in SQL. Does this mean that it is impossible to do i
 From Connect 1.6:
 
 ```
-create table jauthor (
-FIRSTNAME char(64),
-LASTNAME char(64))
-engine=CONNECT table_type=JSON File_name='biblio3.json' option_list='Object=1.AUTHOR';
+CREATE TABLE jauthor (
+FIRSTNAME CHAR(64),
+LASTNAME CHAR(64))
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json' option_list='Object=1.AUTHOR';
 ```
 
 Until Connect 1.5
 
 ```
-create table jauthor (
-FIRSTNAME char(64),
-LASTNAME char(64))
-engine=CONNECT table_type=JSON File_name='biblio3.json' option_list='Object=[1]:AUTHOR';
+CREATE TABLE jauthor (
+FIRSTNAME CHAR(64),
+LASTNAME CHAR(64))
+ENGINE=CONNECT table_type=JSON File_name='biblio3.json' option_list='Object=[1]:AUTHOR';
 ```
 
 The command:
 
 ```
-select * from jauthor;
+SELECT * FROM jauthor;
 ```
 
 replies:
@@ -1059,13 +1059,13 @@ replies:
 It is a standard JSON table that is an array of objects in which we can freely insert or delete rows.
 
 ```
-insert into jauthor values('Charles','Dickens');
+INSERT INTO jauthor VALUES('Charles','Dickens');
 ```
 
 We can check that this was done correctly by:
 
 ```
-select * from jsampex;
+SELECT * FROM jsampex;
 ```
 
 This will display:
@@ -1082,10 +1082,10 @@ Note: If this table were a big table with many books, it would be difficult to k
 However, an alternate way to do it is by using direct JSON column representation as in the `JSAMPLE2` table. This can be done by:
 
 ```
-update jsample2 set json_Author =
+UPDATE jsample2 SET json_Author =
 '[{"FIRSTNAME":"William J.","LASTNAME":"Pardi"},
   {"FIRSTNAME":"Charles","LASTNAME":"Dickens"}]'
-where isbn = '9782840825685';
+WHERE isbn = '9782840825685';
 ```
 
 Here, we didn't have to find the index of the sub array to modify. However, this is not quite satisfying because we had to manually write the whole JSON value to set to the json\_Author column.
@@ -1162,313 +1162,313 @@ Json function names are often written on this page with leading upper case lette
 On Unix systems (from Connect 1.7.02):
 
 ```
-create function jsonvalue returns string soname 'ha_connect.so';
-create function json_make_array returns string soname 'ha_connect.so';
-create function json_array_add_values returns string soname 'ha_connect.so';
-create function json_array_add returns string soname 'ha_connect.so';
-create function json_array_delete returns string soname 'ha_connect.so';
-create function json_make_object returns string soname 'ha_connect.so';
-create function json_object_nonull returns string soname 'ha_connect.so';
-create function json_object_key returns string soname 'ha_connect.so';
-create function json_object_add returns string soname 'ha_connect.so';
-create function json_object_delete returns string soname 'ha_connect.so';
-create function json_object_list returns string soname 'ha_connect.so';
-create function json_object_values returns string soname 'ha_connect.so';
-create function jsonset_grp_size returns integer soname 'ha_connect.so';
-create function jsonget_grp_size returns integer soname 'ha_connect.so';
-create aggregate function json_array_grp returns string soname 'ha_connect.so';
-create aggregate function json_object_grp returns string soname 'ha_connect.so';
-create function jsonlocate returns string soname 'ha_connect.so';
-create function json_locate_all returns string soname 'ha_connect.so';
-create function jsoncontains returns integer soname 'ha_connect.so';
-create function jsoncontains_path returns integer soname 'ha_connect.so';
-create function json_item_merge returns string soname 'ha_connect.so';
-create function json_get_item returns string soname 'ha_connect.so';
-create function jsonget_string returns string soname 'ha_connect.so';
-create function jsonget_int returns integer soname 'ha_connect.so';
-create function jsonget_real returns real soname 'ha_connect.so';
-create function json_set_item returns string soname 'ha_connect.so';
-create function json_insert_item returns string soname 'ha_connect.so';
-create function json_update_item returns string soname 'ha_connect.so';
-create function json_file returns string soname 'ha_connect.so';
-create function jfile_make returns string soname 'ha_connect.so';
-create function jfile_convert returns string soname 'ha_connect.so';
-create function jfile_bjson returns string soname 'ha_connect.so';
-create function json_serialize returns string soname 'ha_connect.so';
-create function jbin_array returns string soname 'ha_connect.so';
-create function jbin_array_add_values returns string soname 'ha_connect.so';
-create function jbin_array_add returns string soname 'ha_connect.so';
-create function jbin_array_delete returns string soname 'ha_connect.so';
-create function jbin_object returns string soname 'ha_connect.so';
-create function jbin_object_nonull returns string soname 'ha_connect.so';
-create function jbin_object_key returns string soname 'ha_connect.so';
-create function jbin_object_add returns string soname 'ha_connect.so';
-create function jbin_object_delete returns string soname 'ha_connect.so';
-create function jbin_object_list returns string soname 'ha_connect.so';
-create function jbin_item_merge returns string soname 'ha_connect.so';
-create function jbin_get_item returns string soname 'ha_connect.so';
-create function jbin_set_item returns string soname 'ha_connect.so';
-create function jbin_insert_item returns string soname 'ha_connect.so';
-create function jbin_update_item returns string soname 'ha_connect.so';
-create function jbin_file returns string soname 'ha_connect.so';
+CREATE FUNCTION jsonvalue RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_make_array RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_add_values RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_make_object RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_nonull RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_key RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_list RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_values RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonset_grp_size RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsonget_grp_size RETURNS INTEGER soname 'ha_connect.so';
+CREATE AGGREGATE FUNCTION json_array_grp RETURNS STRING soname 'ha_connect.so';
+CREATE AGGREGATE FUNCTION json_object_grp RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonlocate RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_locate_all RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsoncontains RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsoncontains_path RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION json_item_merge RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_get_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonget_string RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonget_int RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsonget_real RETURNS REAL soname 'ha_connect.so';
+CREATE FUNCTION json_set_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_insert_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_update_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_file RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jfile_make RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jfile_convert RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jfile_bjson RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_serialize RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_add_values RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_nonull RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_key RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_list RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_item_merge RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_get_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_set_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_insert_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_update_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_file RETURNS STRING soname 'ha_connect.so';
 ```
 
 On Unix systems (from Connect 1.6):
 
 ```
-create function jsonvalue returns string soname 'ha_connect.so';
-create function json_make_array returns string soname 'ha_connect.so';
-create function json_array_add_values returns string soname 'ha_connect.so';
-create function json_array_add returns string soname 'ha_connect.so';
-create function json_array_delete returns string soname 'ha_connect.so';
-create function json_make_object returns string soname 'ha_connect.so';
-create function json_object_nonull returns string soname 'ha_connect.so';
-create function json_object_key returns string soname 'ha_connect.so';
-create function json_object_add returns string soname 'ha_connect.so';
-create function json_object_delete returns string soname 'ha_connect.so';
-create function json_object_list returns string soname 'ha_connect.so';
-create function jsonset_grp_size returns integer soname 'ha_connect.so';
-create function jsonget_grp_size returns integer soname 'ha_connect.so';
-create aggregate function json_array_grp returns string soname 'ha_connect.so';
-create aggregate function json_object_grp returns string soname 'ha_connect.so';
-create function jsonlocate returns string soname 'ha_connect.so';
-create function json_locate_all returns string soname 'ha_connect.so';
-create function jsoncontains returns integer soname 'ha_connect.so';
-create function jsoncontains_path returns integer soname 'ha_connect.so';
-create function json_item_merge returns string soname 'ha_connect.so';
-create function json_get_item returns string soname 'ha_connect.so';
-create function jsonget_string returns string soname 'ha_connect.so';
-create function jsonget_int returns integer soname 'ha_connect.so';
-create function jsonget_real returns real soname 'ha_connect.so';
-create function json_set_item returns string soname 'ha_connect.so';
-create function json_insert_item returns string soname 'ha_connect.so';
-create function json_update_item returns string soname 'ha_connect.so';
-create function json_file returns string soname 'ha_connect.so';
-create function jfile_make returns string soname 'ha_connect.so';
-create function json_serialize returns string soname 'ha_connect.so';
-create function jbin_array returns string soname 'ha_connect.so';
-create function jbin_array_add_values returns string soname 'ha_connect.so';
-create function jbin_array_add returns string soname 'ha_connect.so';
-create function jbin_array_delete returns string soname 'ha_connect.so';
-create function jbin_object returns string soname 'ha_connect.so';
-create function jbin_object_nonull returns string soname 'ha_connect.so';
-create function jbin_object_key returns string soname 'ha_connect.so';
-create function jbin_object_add returns string soname 'ha_connect.so';
-create function jbin_object_delete returns string soname 'ha_connect.so';
-create function jbin_object_list returns string soname 'ha_connect.so';
-create function jbin_item_merge returns string soname 'ha_connect.so';
-create function jbin_get_item returns string soname 'ha_connect.so';
-create function jbin_set_item returns string soname 'ha_connect.so';
-create function jbin_insert_item returns string soname 'ha_connect.so';
-create function jbin_update_item returns string soname 'ha_connect.so';
-create function jbin_file returns string soname 'ha_connect.so';
+CREATE FUNCTION jsonvalue RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_make_array RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_add_values RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_make_object RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_nonull RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_key RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_list RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonset_grp_size RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsonget_grp_size RETURNS INTEGER soname 'ha_connect.so';
+CREATE AGGREGATE FUNCTION json_array_grp RETURNS STRING soname 'ha_connect.so';
+CREATE AGGREGATE FUNCTION json_object_grp RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonlocate RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_locate_all RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsoncontains RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsoncontains_path RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION json_item_merge RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_get_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonget_string RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonget_int RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsonget_real RETURNS REAL soname 'ha_connect.so';
+CREATE FUNCTION json_set_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_insert_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_update_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_file RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jfile_make RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_serialize RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_add_values RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_nonull RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_key RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_list RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_item_merge RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_get_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_set_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_insert_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_update_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_file RETURNS STRING soname 'ha_connect.so';
 ```
 
 On Unix systems (until Connect 1.5):
 
 ```
-create function jsonvalue returns string soname 'ha_connect.so';
-create function json_array returns string soname 'ha_connect.so';
-create function json_array_add_values returns string soname 'ha_connect.so';
-create function json_array_add returns string soname 'ha_connect.so';
-create function json_array_delete returns string soname 'ha_connect.so';
-create function json_object returns string soname 'ha_connect.so';
-create function json_object_nonull returns string soname 'ha_connect.so';
-create function json_object_key returns string soname 'ha_connect.so';
-create function json_object_add returns string soname 'ha_connect.so';
-create function json_object_delete returns string soname 'ha_connect.so';
-create function json_object_list returns string soname 'ha_connect.so';
-create function jsonset_grp_size returns integer soname 'ha_connect.so';
-create function jsonget_grp_size returns integer soname 'ha_connect.so';
-create aggregate function json_array_grp returns string soname 'ha_connect.so';
-create aggregate function json_object_grp returns string soname 'ha_connect.so';
-create function jsonlocate returns string soname 'ha_connect.so';
-create function json_locate_all returns string soname 'ha_connect.so';
-create function jsoncontains returns integer soname 'ha_connect.so';
-create function jsoncontains_path returns integer soname 'ha_connect.so';
-create function json_item_merge returns string soname 'ha_connect.so';
-create function json_get_item returns string soname 'ha_connect.so';
-create function jsonget_string returns string soname 'ha_connect.so';
-create function jsonget_int returns integer soname 'ha_connect.so';
-create function jsonget_real returns real soname 'ha_connect.so';
-create function json_set_item returns string soname 'ha_connect.so';
-create function json_insert_item returns string soname 'ha_connect.so';
-create function json_update_item returns string soname 'ha_connect.so';
-create function json_file returns string soname 'ha_connect.so';
-create function jfile_make returns string soname 'ha_connect.so';
-create function json_serialize returns string soname 'ha_connect.so';
-create function jbin_array returns string soname 'ha_connect.so';
-create function jbin_array_add_values returns string soname 'ha_connect.so';
-create function jbin_array_add returns string soname 'ha_connect.so';
-create function jbin_array_delete returns string soname 'ha_connect.so';
-create function jbin_object returns string soname 'ha_connect.so';
-create function jbin_object_nonull returns string soname 'ha_connect.so';
-create function jbin_object_key returns string soname 'ha_connect.so';
-create function jbin_object_add returns string soname 'ha_connect.so';
-create function jbin_object_delete returns string soname 'ha_connect.so';
-create function jbin_object_list returns string soname 'ha_connect.so';
-create function jbin_item_merge returns string soname 'ha_connect.so';
-create function jbin_get_item returns string soname 'ha_connect.so';
-create function jbin_set_item returns string soname 'ha_connect.so';
-create function jbin_insert_item returns string soname 'ha_connect.so';
-create function jbin_update_item returns string soname 'ha_connect.so';
-create function jbin_file returns string soname 'ha_connect.so';
+CREATE FUNCTION jsonvalue RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_add_values RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_array_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_nonull RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_key RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_object_list RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonset_grp_size RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsonget_grp_size RETURNS INTEGER soname 'ha_connect.so';
+CREATE AGGREGATE FUNCTION json_array_grp RETURNS STRING soname 'ha_connect.so';
+CREATE AGGREGATE FUNCTION json_object_grp RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonlocate RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_locate_all RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsoncontains RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsoncontains_path RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION json_item_merge RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_get_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonget_string RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jsonget_int RETURNS INTEGER soname 'ha_connect.so';
+CREATE FUNCTION jsonget_real RETURNS REAL soname 'ha_connect.so';
+CREATE FUNCTION json_set_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_insert_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_update_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_file RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jfile_make RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION json_serialize RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_add_values RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_array_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_nonull RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_key RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_add RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_delete RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_object_list RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_item_merge RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_get_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_set_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_insert_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_update_item RETURNS STRING soname 'ha_connect.so';
+CREATE FUNCTION jbin_file RETURNS STRING soname 'ha_connect.so';
 ```
 
 On WIndows (from Connect 1.7.02):
 
 ```
-create function jsonvalue returns string soname 'ha_connect';
-create function json_make_array returns string soname 'ha_connect';
-create function json_array_add_values returns string soname 'ha_connect';
-create function json_array_add returns string soname 'ha_connect';
-create function json_array_delete returns string soname 'ha_connect';
-create function json_make_object returns string soname 'ha_connect';
-create function json_object_nonull returns string soname 'ha_connect';
-create function json_object_key returns string soname 'ha_connect';
-create function json_object_add returns string soname 'ha_connect';
-create function json_object_delete returns string soname 'ha_connect';
-create function json_object_list returns string soname 'ha_connect';
-create function json_object_values returns string soname 'ha_connect';
-create function jsonset_grp_size returns integer soname 'ha_connect';
-create function jsonget_grp_size returns integer soname 'ha_connect';
-create aggregate function json_array_grp returns string soname 'ha_connect';
-create aggregate function json_object_grp returns string soname 'ha_connect';
-create function jsonlocate returns string soname 'ha_connect';
-create function json_locate_all returns string soname 'ha_connect';
-create function jsoncontains returns integer soname 'ha_connect';
-create function jsoncontains_path returns integer soname 'ha_connect';
-create function json_item_merge returns string soname 'ha_connect';
-create function json_get_item returns string soname 'ha_connect';
-create function jsonget_string returns string soname 'ha_connect';
-create function jsonget_int returns integer soname 'ha_connect';
-create function jsonget_real returns real soname 'ha_connect';
-create function json_set_item returns string soname 'ha_connect';
-create function json_insert_item returns string soname 'ha_connect';
-create function json_update_item returns string soname 'ha_connect';
-create function json_file returns string soname 'ha_connect';
-create function jfile_make returns string soname 'ha_connect';
-create function jfile_convert returns string soname 'ha_connect';
-create function jfile_bjson returns string soname 'ha_connect';
-create function json_serialize returns string soname 'ha_connect';
-create function jbin_array returns string soname 'ha_connect';
-create function jbin_array_add_values returns string soname 'ha_connect';
-create function jbin_array_add returns string soname 'ha_connect';
-create function jbin_array_delete returns string soname 'ha_connect';
-create function jbin_object returns string soname 'ha_connect';
-create function jbin_object_nonull returns string soname 'ha_connect';
-create function jbin_object_key returns string soname 'ha_connect';
-create function jbin_object_add returns string soname 'ha_connect';
-create function jbin_object_delete returns string soname 'ha_connect';
-create function jbin_object_list returns string soname 'ha_connect';
-create function jbin_item_merge returns string soname 'ha_connect';
-create function jbin_get_item returns string soname 'ha_connect';
-create function jbin_set_item returns string soname 'ha_connect';
-create function jbin_insert_item returns string soname 'ha_connect';
-create function jbin_update_item returns string soname 'ha_connect';
-create function jbin_file returns string soname 'ha_connect';
+CREATE FUNCTION jsonvalue RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_make_array RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_add_values RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_make_object RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_nonull RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_key RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_list RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_values RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonset_grp_size RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsonget_grp_size RETURNS INTEGER soname 'ha_connect';
+CREATE AGGREGATE FUNCTION json_array_grp RETURNS STRING soname 'ha_connect';
+CREATE AGGREGATE FUNCTION json_object_grp RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonlocate RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_locate_all RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsoncontains RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsoncontains_path RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION json_item_merge RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_get_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonget_string RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonget_int RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsonget_real RETURNS REAL soname 'ha_connect';
+CREATE FUNCTION json_set_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_insert_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_update_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_file RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jfile_make RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jfile_convert RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jfile_bjson RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_serialize RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_add_values RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_nonull RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_key RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_list RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_item_merge RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_get_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_set_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_insert_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_update_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_file RETURNS STRING soname 'ha_connect';
 ```
 
 On WIndows (from Connect 1.6):
 
 ```
-create function jsonvalue returns string soname 'ha_connect';
-create function json_make_array returns string soname 'ha_connect';
-create function json_array_add_values returns string soname 'ha_connect';
-create function json_array_add returns string soname 'ha_connect';
-create function json_array_delete returns string soname 'ha_connect';
-create function json_make_object returns string soname 'ha_connect';
-create function json_object_nonull returns string soname 'ha_connect';
-create function json_object_key returns string soname 'ha_connect';
-create function json_object_add returns string soname 'ha_connect';
-create function json_object_delete returns string soname 'ha_connect';
-create function json_object_list returns string soname 'ha_connect';
-create function jsonset_grp_size returns integer soname 'ha_connect';
-create function jsonget_grp_size returns integer soname 'ha_connect';
-create aggregate function json_array_grp returns string soname 'ha_connect';
-create aggregate function json_object_grp returns string soname 'ha_connect';
-create function jsonlocate returns string soname 'ha_connect';
-create function json_locate_all returns string soname 'ha_connect';
-create function jsoncontains returns integer soname 'ha_connect';
-create function jsoncontains_path returns integer soname 'ha_connect';
-create function json_item_merge returns string soname 'ha_connect';
-create function json_get_item returns string soname 'ha_connect';
-create function jsonget_string returns string soname 'ha_connect';
-create function jsonget_int returns integer soname 'ha_connect';
-create function jsonget_real returns real soname 'ha_connect';
-create function json_set_item returns string soname 'ha_connect';
-create function json_insert_item returns string soname 'ha_connect';
-create function json_update_item returns string soname 'ha_connect';
-create function json_file returns string soname 'ha_connect';
-create function jfile_make returns string soname 'ha_connect';
-create function json_serialize returns string soname 'ha_connect';
-create function jbin_array returns string soname 'ha_connect';
-create function jbin_array_add_values returns string soname 'ha_connect';
-create function jbin_array_add returns string soname 'ha_connect';
-create function jbin_array_delete returns string soname 'ha_connect';
-create function jbin_object returns string soname 'ha_connect';
-create function jbin_object_nonull returns string soname 'ha_connect';
-create function jbin_object_key returns string soname 'ha_connect';
-create function jbin_object_add returns string soname 'ha_connect';
-create function jbin_object_delete returns string soname 'ha_connect';
-create function jbin_object_list returns string soname 'ha_connect';
-create function jbin_item_merge returns string soname 'ha_connect';
-create function jbin_get_item returns string soname 'ha_connect';
-create function jbin_set_item returns string soname 'ha_connect';
-create function jbin_insert_item returns string soname 'ha_connect';
-create function jbin_update_item returns string soname 'ha_connect';
-create function jbin_file returns string soname 'ha_connect';
+CREATE FUNCTION jsonvalue RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_make_array RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_add_values RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_make_object RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_nonull RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_key RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_list RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonset_grp_size RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsonget_grp_size RETURNS INTEGER soname 'ha_connect';
+CREATE AGGREGATE FUNCTION json_array_grp RETURNS STRING soname 'ha_connect';
+CREATE AGGREGATE FUNCTION json_object_grp RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonlocate RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_locate_all RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsoncontains RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsoncontains_path RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION json_item_merge RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_get_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonget_string RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonget_int RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsonget_real RETURNS REAL soname 'ha_connect';
+CREATE FUNCTION json_set_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_insert_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_update_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_file RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jfile_make RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_serialize RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_add_values RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_nonull RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_key RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_list RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_item_merge RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_get_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_set_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_insert_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_update_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_file RETURNS STRING soname 'ha_connect';
 ```
 
 On WIndows (until Connect 1.5):
 
 ```
-create function jsonvalue returns string soname 'ha_connect';
-create function json_array returns string soname 'ha_connect';
-create function json_array_add_values returns string soname 'ha_connect';
-create function json_array_add returns string soname 'ha_connect';
-create function json_array_delete returns string soname 'ha_connect';
-create function json_object returns string soname 'ha_connect';
-create function json_object_nonull returns string soname 'ha_connect';
-create function json_object_key returns string soname 'ha_connect';
-create function json_object_add returns string soname 'ha_connect';
-create function json_object_delete returns string soname 'ha_connect';
-create function json_object_list returns string soname 'ha_connect';
-create function jsonset_grp_size returns integer soname 'ha_connect';
-create function jsonget_grp_size returns integer soname 'ha_connect';
-create aggregate function json_array_grp returns string soname 'ha_connect';
-create aggregate function json_object_grp returns string soname 'ha_connect';
-create function jsonlocate returns string soname 'ha_connect';
-create function json_locate_all returns string soname 'ha_connect';
-create function jsoncontains returns integer soname 'ha_connect';
-create function jsoncontains_path returns integer soname 'ha_connect';
-create function json_item_merge returns string soname 'ha_connect';
-create function json_get_item returns string soname 'ha_connect';
-create function jsonget_string returns string soname 'ha_connect';
-create function jsonget_int returns integer soname 'ha_connect';
-create function jsonget_real returns real soname 'ha_connect';
-create function json_set_item returns string soname 'ha_connect';
-create function json_insert_item returns string soname 'ha_connect';
-create function json_update_item returns string soname 'ha_connect';
-create function json_file returns string soname 'ha_connect';
-create function jfile_make returns string soname 'ha_connect';
-create function json_serialize returns string soname 'ha_connect';
-create function jbin_array returns string soname 'ha_connect';
-create function jbin_array_add_values returns string soname 'ha_connect';
-create function jbin_array_add returns string soname 'ha_connect';
-create function jbin_array_delete returns string soname 'ha_connect';
-create function jbin_object returns string soname 'ha_connect';
-create function jbin_object_nonull returns string soname 'ha_connect';
-create function jbin_object_key returns string soname 'ha_connect';
-create function jbin_object_add returns string soname 'ha_connect';
-create function jbin_object_delete returns string soname 'ha_connect';
-create function jbin_object_list returns string soname 'ha_connect';
-create function jbin_item_merge returns string soname 'ha_connect';
-create function jbin_get_item returns string soname 'ha_connect';
-create function jbin_set_item returns string soname 'ha_connect';
-create function jbin_insert_item returns string soname 'ha_connect';
-create function jbin_update_item returns string soname 'ha_connect';
-create function jbin_file returns string soname 'ha_connect';
+CREATE FUNCTION jsonvalue RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_add_values RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_array_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_nonull RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_key RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_object_list RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonset_grp_size RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsonget_grp_size RETURNS INTEGER soname 'ha_connect';
+CREATE AGGREGATE FUNCTION json_array_grp RETURNS STRING soname 'ha_connect';
+CREATE AGGREGATE FUNCTION json_object_grp RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonlocate RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_locate_all RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsoncontains RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsoncontains_path RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION json_item_merge RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_get_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonget_string RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jsonget_int RETURNS INTEGER soname 'ha_connect';
+CREATE FUNCTION jsonget_real RETURNS REAL soname 'ha_connect';
+CREATE FUNCTION json_set_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_insert_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_update_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_file RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jfile_make RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION json_serialize RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_add_values RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_array_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_nonull RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_key RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_add RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_delete RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_object_list RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_item_merge RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_get_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_set_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_insert_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_update_item RETURNS STRING soname 'ha_connect';
+CREATE FUNCTION jbin_file RETURNS STRING soname 'ha_connect';
 ```
 
 ### Jfile\_Bjson
@@ -1512,7 +1512,7 @@ The returned string value is the created file name. If not specified as an argum
 This function can be used to create or format a json file. For instance, supposing we want to format the file tb.json, this can be done with the query:
 
 ```
-select Jfile_Make('tb.json' jfile_, 2);
+SELECT Jfile_Make('tb.json' jfile_, 2);
 ```
 
 The tb.json file will be changed to:
@@ -1548,8 +1548,8 @@ Json_Array_Add(arg1, arg2, [arg3][, arg4][, ...])
 Note: The following describes this function for CONNECT version 1.4 only. The first argument must be a JSON array. The second argument is added as member of this array:
 
 ```
-select Json_Array_Add(Json_Array(56,3.1416,'machin',NULL),
-'One more') Array;
+SELECT Json_Array_Add(Json_Array(56,3.1416,'machin',NULL),
+'One more') ARRAY;
 ```
 
 | Array                                   |
@@ -1561,9 +1561,9 @@ Note: The first array is not escaped, its (alias) name beginning with ‘json\_�
 Now we can see how adding an author to the JSAMPLE2 table can alternatively be done:
 
 ```
-update jsample2 set 
+UPDATE jsample2 SET 
   json_author = json_array_add(json_author, json_object('Charles' FIRSTNAME, 'Dickens' LASTNAME)) 
-  where isbn = '9782840825685';
+  WHERE isbn = '9782840825685';
 ```
 
 Note: Calling a column returning JSON a name prefixed by json\_ (like json\_author here) is good practice and removes the need to give it an alias to prevent escaping when used as an argument.
@@ -1572,7 +1572,7 @@ Additional arguments:\
 If a third integer argument is given, it specifies the position (zero based) of the added value:
 
 ```
-select Json_Array_Add('[5,3,8,7,9]' json_, 4, 2) Array;
+SELECT Json_Array_Add('[5,3,8,7,9]' json_, 4, 2) ARRAY;
 ```
 
 | Array          |
@@ -1582,7 +1582,7 @@ select Json_Array_Add('[5,3,8,7,9]' json_, 4, 2) Array;
 If a string argument is added, it specifies the Json path to the array to be modified. For instance:
 
 ```
-select Json_Array_Add('{"a":1,"b":2,"c":[3,4]}' json_, 5, 1, 'c');
+SELECT Json_Array_Add('{"a":1,"b":2,"c":[3,4]}' json_, 5, 1, 'c');
 ```
 
 | Json\_Array\_Add('{"a":1,"b":2,"c":\[3, 4]}' json\_, 5, 1, 'c') |
@@ -1600,8 +1600,8 @@ Json_Array_Add_Values(arg, arglist)
 The first argument must be a JSON array string. Then all other arguments are added as members of this array:
 
 ```
-select Json_Array_Add_Values
-  (Json_Array(56, 3.1416, 'machin', NULL), 'One more', 'Two more') Array;
+SELECT Json_Array_Add_Values
+  (Json_Array(56, 3.1416, 'machin', NULL), 'One more', 'Two more') ARRAY;
 ```
 
 | Array                                              |
@@ -1617,7 +1617,7 @@ Json_Array_Delete(arg1, arg2 [,arg3] [...])
 The first argument should be a JSON array. The second argument is an integer indicating the rank (0 based conforming to general json usage) of the element to delete:
 
 ```
-select Json_Array_Delete(Json_Array(56,3.1416,'foo',NULL),1) Array;
+SELECT Json_Array_Delete(Json_Array(56,3.1416,'foo',NULL),1) ARRAY;
 ```
 
 | Array            |
@@ -1627,8 +1627,8 @@ select Json_Array_Delete(Json_Array(56,3.1416,'foo',NULL),1) Array;
 Now we can see how to delete the second author from the JSAMPLE2 table:
 
 ```
-update jsample2 set json_author = json_array_delete(json_author, 1) 
-  where isbn = '9782840825685';
+UPDATE jsample2 SET json_author = json_array_delete(json_author, 1) 
+  WHERE isbn = '9782840825685';
 ```
 
 A Json path can be specified as a third string argument
@@ -1656,7 +1656,7 @@ This is an aggregate function that makes an array filled from values coming from
 The query:
 
 ```
-select name, json_array_grp(race) from pet group by name;
+SELECT name, json_array_grp(race) FROM pet GROUP BY name;
 ```
 
 will return:
@@ -1710,7 +1710,7 @@ This function is chiefly used to get the json item argument of other json functi
 Extracting a value from it can be done with a query such as:
 
 ```
-select JsonGet_String(Json_File('tb.json', 0), '$[1].type') "Type";
+SELECT JsonGet_String(Json_File('tb.json', 0), '$[1].type') "Type";
 ```
 
 This query returns:
@@ -1732,8 +1732,8 @@ Json_Get_Item(arg1, arg2, …)
 This function returns a subset of the json document passed as first argument. The second argument is the json path of the item to be returned and should be one returning a json item (terminated by a ‘\*’). If not, the function will try to make it right but this is not foolproof. For instance:
 
 ```
-select Json_Get_Item(Json_Object('foo' as "first", Json_Array('a', 33) 
-  as "json_second"), 'second') as "item";
+SELECT Json_Get_Item(Json_Object('foo' AS "first", Json_Array('a', 33) 
+  AS "json_second"), 'second') AS "item";
 ```
 
 The correct path should have been ‘second.\*’), but in this simple case the function was able to make it right. The returned item:
@@ -1765,7 +1765,7 @@ JsonGet_Real(arg1, arg2, [arg3] …)
 The first argument should be a JSON item. If it is a string with no alias, it will be converted as a json item. The second argument is the path of the item to be located in the first argument and returned, eventually converted according to the used function:
 
 ```
-select 
+SELECT 
 JsonGet_String('{"qty":7,"price":29.50,"garanty":null}','price') "String",
 JsonGet_Int('{"qty":7,"price":29.50,"garanty":null}','price') "Int",
 JsonGet_Real('{"qty":7,"price":29.50,"garanty":null}','price') "Real";
@@ -1780,7 +1780,7 @@ This query returns:
 The function _JsonGet\_Real_ can be given a third argument to specify the number of decimal digits of the returned value. For instance:
 
 ```
-select 
+SELECT 
 JsonGet_Real('{"qty":7,"price":29.50,"garanty":null}','price',4) "Real";
 ```
 
@@ -1793,7 +1793,7 @@ This query returns:
 The given path can specify all operators for arrays except the “expand” \[\*] operator). For instance:
 
 ```
-select 
+SELECT 
 JsonGet_Int(Json_Array(45,28,36,45,89), '[4]') "Rank",
 JsonGet_Int(Json_Array(45,28,36,45,89), '[#]') "Number",
 JsonGet_String(Json_Array(45,28,36,45,89), '[","]') "Concat",
@@ -1816,7 +1816,7 @@ Json_Item_Merge(arg1, arg2, …)
 This function merges two arrays or two objects. For arrays, this is done by adding to the first array all the values of the second array. For instance:
 
 ```
-select Json_Item_Merge(Json_Array('a','b','c'), Json_Array('d','e','f')) as "Result";
+SELECT Json_Item_Merge(Json_Array('a','b','c'), Json_Array('d','e','f')) AS "Result";
 ```
 
 The function returns:
@@ -1828,8 +1828,8 @@ The function returns:
 For objects, the pairs of the second object are added to the first object if the key does not yet exist in it; otherwise the pair of the first object is set with the value of the matching pair of the second object. For instance:
 
 ```
-select Json_Item_Merge(Json_Object(1 "a", 2 "b", 3 "c"), Json_Object(4 "d",5 "b",6 "f")) 
-  as "Result";
+SELECT Json_Item_Merge(Json_Object(1 "a", 2 "b", 3 "c"), Json_Object(4 "d",5 "b",6 "f")) 
+  AS "Result";
 ```
 
 The function returns:
@@ -1849,8 +1849,8 @@ The first argument must be a JSON tree. The second argument is the item to be lo
 This function returns the json path to the located item or null if it is not found:
 
 ```
-select JsonLocate('{"AUTHORS":[{"FN":"Jules", "LN":"Verne"}, 
-  {"FN":"Jack", "LN":"London"}]}' json_, 'Jack') Path;
+SELECT JsonLocate('{"AUTHORS":[{"FN":"Jules", "LN":"Verne"}, 
+  {"FN":"Jack", "LN":"London"}]}' json_, 'Jack') PATH;
 ```
 
 This query returns:
@@ -1864,11 +1864,11 @@ The path syntax is the same used in JSON CONNECT tables.
 By default, the path of the first occurrence of the item is returned. The third parameter can be used to specify the occurrence whose path is to be returned. For instance:
 
 ```
-select 
-JsonLocate('[45,28,[36,45],89]',45) first,
-JsonLocate('[45,28,[36,45],89]',45,2) second,
+SELECT 
+JsonLocate('[45,28,[36,45],89]',45) FIRST,
+JsonLocate('[45,28,[36,45],89]',45,2) SECOND,
 JsonLocate('[45,28,[36,45],89]',45.0) `wrong type`,
-JsonLocate('[45,28,[36,45],89]','[36,45]' json_) json;
+JsonLocate('[45,28,[36,45],89]','[36,45]' json_) JSON;
 ```
 
 | first | second    | wrong type | json  |
@@ -1878,8 +1878,8 @@ JsonLocate('[45,28,[36,45],89]','[36,45]' json_) json;
 For string items, the comparison is case sensitive by default. However, it is possible to specify a string to be compared case insensitively by giving it an alias beginning by “ci”:
 
 ```
-select JsonLocate('{"AUTHORS":[{"FN":"Jules", "LN":"Verne"}, 
-  {"FN":"Jack", "LN":"London"}]}' json_, 'VERNE' ci) Path;
+SELECT JsonLocate('{"AUTHORS":[{"FN":"Jules", "LN":"Verne"}, 
+  {"FN":"Jack", "LN":"London"}]}' json_, 'VERNE' ci) PATH;
 ```
 
 | Path             |
@@ -1895,7 +1895,7 @@ Json_Locate_All(arg1, arg2, [arg3], …):
 The first argument must be a JSON item. The second argument is the item to be located. This function returns the paths to all locations of the item as an array of strings:
 
 ```
-select Json_Locate_All('[[45,28],[[36,45],89]]',45);
+SELECT Json_Locate_All('[[45,28],[[36,45],89]]',45);
 ```
 
 This query returns:
@@ -1907,7 +1907,7 @@ This query returns:
 The returned array can be applied other functions. For instance, to get the number of occurrences of an item in a json tree, you can do:
 
 ```
-select JsonGet_Int(Json_Locate_All('[[45,28],[[36,45],89]]',45), '$[#]') "Nb of occurs";
+SELECT JsonGet_Int(Json_Locate_All('[[45,28],[[36,45],89]]',45), '$[#]') "Nb of occurs";
 ```
 
 The displayed result:
@@ -1927,7 +1927,7 @@ Json_Make_Array(val1, …, valn)
 Json\_Make\_Array returns a string denoting a JSON array with all its arguments as members:
 
 ```
-select Json_Make_Array(56, 3.1416, 'My name is "Foo"', NULL);
+SELECT Json_Make_Array(56, 3.1416, 'My name is "Foo"', NULL);
 ```
 
 | Json\_Make\_Array(56, 3.1416, 'My name is "Foo"',N ULL) |
@@ -1945,7 +1945,7 @@ Json_Make_Object(arg1, …, argn)
 Json\_Make\_Object returns a string denoting a JSON object. For instance:
 
 ```
-select Json_Make_Object(56, 3.1416, 'machin', NULL);
+SELECT Json_Make_Object(56, 3.1416, 'machin', NULL);
 ```
 
 The object is filled with pairs corresponding to the given arguments. The key of each pair is made from the argument (default or specified) alias.
@@ -1957,7 +1957,7 @@ The object is filled with pairs corresponding to the given arguments. The key of
 When needed, it is possible to specify the keys by giving an alias to the arguments:
 
 ```
-select Json_Make_Object(56 qty, 3.1416 price, 'machin' truc, NULL garanty);
+SELECT Json_Make_Object(56 qty, 3.1416 price, 'machin' truc, NULL garanty);
 ```
 
 | Json\_Make\_Object(56 qty,3.1416 price,'machin' truc, NULL garanty) |
@@ -1969,7 +1969,7 @@ If the alias is prefixed by ‘json\_’ (to prevent escaping) the key name is s
 This function is chiefly useful when entering values retrieved from a table, the key being by default the column name:
 
 ```
-select Json_Make_Object(matricule, nom, titre, salaire) from connect.employe where nom = 'PANTIER';
+SELECT Json_Make_Object(matricule, nom, titre, salaire) FROM connect.employe WHERE nom = 'PANTIER';
 ```
 
 | Json\_Make\_Object(matricule, nom, titre, salaire)                             |
@@ -1985,7 +1985,7 @@ Json_Object_Add(arg1, arg2, [arg3] …)
 The first argument must be a JSON object. The second argument is added as a pair to this object:
 
 ```
-select Json_Object_Add
+SELECT Json_Object_Add
   ('{"item":"T-shirt","qty":27,"price":24.99}' json_old,'blue' color) newobj;
 ```
 
@@ -2006,7 +2006,7 @@ Json_Object_Delete(arg1, arg2, [arg3] …):
 The first argument must be a JSON object. The second argument is the key of the pair to delete:
 
 ```
-select Json_Object_Delete('{"item":"T-shirt","qty":27,"price":24.99}' json_old, 'qty') newobj;
+SELECT Json_Object_Delete('{"item":"T-shirt","qty":27,"price":24.99}' json_old, 'qty') newobj;
 ```
 
 | newobj                           |
@@ -2026,7 +2026,7 @@ This function works like Json\_Array\_Grp. It makes a JSON object filled with va
 This can be seen with the query:
 
 ```
-select name, json_object_grp(number,race) from pet group by name;
+SELECT name, json_object_grp(NUMBER,race) FROM pet GROUP BY name;
 ```
 
 This query returns:
@@ -2049,7 +2049,7 @@ Json_Object_Key([key1, val1 [, …, keyn, valn]])
 Return a string denoting a JSON object. For instance:
 
 ```
-select Json_Object_Key('qty', 56, 'price', 3.1416, 'truc', 'machin', 'garanty', NULL);
+SELECT Json_Object_Key('qty', 56, 'price', 3.1416, 'truc', 'machin', 'garanty', NULL);
 ```
 
 The object is filled with pairs made from each key/value arguments.
@@ -2067,7 +2067,7 @@ Json_Object_List(arg1, …):
 The first argument must be a JSON object. This function returns an array containing the list of all keys existing in the object:
 
 ```
-select Json_Object_List(Json_Object(56 qty,3.1416 price,'machin' truc, NULL garanty))
+SELECT Json_Object_List(Json_Object(56 qty,3.1416 price,'machin' truc, NULL garanty))
   "Key List";
 ```
 
@@ -2095,7 +2095,7 @@ Json_Object_Values(json_object)
 The first argument must be a JSON object. This function returns an array containing the list of all values existing in the object:
 
 ```
-select Json_Object_Values('{"One":1,"Two":2,"Three":3}') "Value List";
+SELECT Json_Object_Values('{"One":1,"Two":2,"Three":3}') "Value List";
 ```
 
 | Value List |
@@ -2125,10 +2125,10 @@ These functions insert or update data in a JSON document and return the result. 
 Example:
 
 ```
-set @j = Json_Array(1, 2, 3, Json_Object_Key('quatre', 4));
-select Json_Set_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') as "Set",
-Json_Insert_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') as "Insert",
-Json_Update_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') as "Update";
+SET @j = Json_Array(1, 2, 3, Json_Object_Key('quatre', 4));
+SELECT Json_Set_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') AS "Set",
+Json_Insert_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') AS "Insert",
+Json_Update_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') AS "Update";
 ```
 
 This query returns:
@@ -2146,7 +2146,7 @@ JsonValue (val)
 Returns a JSON value as a string, for instance:
 
 ```
-select JsonValue(3.1416);
+SELECT JsonValue(3.1416);
 ```
 
 | JsonValue(3.1416) |
@@ -2164,7 +2164,7 @@ If the json document is large, this can take up a large amount of time and stora
 To avoid multiple serializing and parsing, the Jbin functions should be used as parameters to other functions. Indeed, they do not serialize the memory document tree, but return a structure allowing the receiving function to have direct access to the memory tree. This saves the serialize-parse steps otherwise needed to pass the argument and removes the need to reallocate the memory of the binary tree, which by the way is 6 to 7 times the size of the json string. For instance:
 
 ```
-select Json_Object(Jbin_Array_Add(Jbin_Array('a','b','c'), 'd') as "Jbin_foo") as "Result";
+SELECT Json_Object(Jbin_Array_Add(Jbin_Array('a','b','c'), 'd') AS "Jbin_foo") AS "Result";
 ```
 
 This query returns:
@@ -2180,7 +2180,7 @@ Note that Jbin results are recognized as such because they are aliased beginning
 What happens if it is not recognized as such? These functions are declared as returning a string and to take care of this, the returned structure begins with a zero-terminated string. For instance:
 
 ```
-select Jbin_Array('a','b','c');
+SELECT Jbin_Array('a','b','c');
 ```
 
 This query replies:
@@ -2192,7 +2192,7 @@ This query replies:
 Note: When testing, the tree returned by a “Jbin” function can be seen using the _Json\_Serialize_ function whose unique parameter must be a “Jbin” result. For instance:
 
 ```
-select Json_Serialize(Jbin_Array('a','b','c'));
+SELECT Json_Serialize(Jbin_Array('a','b','c'));
 ```
 
 This query returns:
@@ -2215,8 +2215,8 @@ The json item is created by extracting the required part from the file. This can
 It doesn’t make any difference when the _Jbin\_File_ is used but it does with _Json\_File_. For instance:
 
 ```
-select Jfile_Make('{"a":1, "b":[44, 55]}' json_, 'test.json');
-select Json_Array_Add(Json_File('test.json', 'b'), 66);
+SELECT Jfile_Make('{"a":1, "b":[44, 55]}' json_, 'test.json');
+SELECT Json_Array_Add(Json_File('test.json', 'b'), 66);
 ```
 
 The second query returns:
@@ -2228,7 +2228,7 @@ The second query returns:
 It just returns the – modified -- subset returned by the Json\_File function, while the query:
 
 ```
-select Json_Array_Add(Json_File('test.json'), 66, 'b');
+SELECT Json_Array_Add(Json_File('test.json'), 66, 'b');
 ```
 
 returns what was received from _Json\_File_ with the modification made on the subset.
@@ -2242,7 +2242,7 @@ Note that in both case the test.json file is not modified. This is because the _
 However, to have the file modified, use the _Jbin\_File_ function or directly give the file name. _Jbin\_File_ returns a structure containing the file name, a pointer to the file parsed tree and eventually a pointer to the subset when a path is given as a second argument:
 
 ```
-select Json_Array_Add(Jbin_File('test.json', 'b'), 66);
+SELECT Json_Array_Add(Jbin_File('test.json', 'b'), 66);
 ```
 
 This query returns:
@@ -2254,7 +2254,7 @@ This query returns:
 This time the file is modified. This can be checked with:
 
 ```
-select Json_File('test.json', 3);
+SELECT Json_File('test.json', 3);
 ```
 
 | Json\_File('test.json', 3) |
@@ -2264,23 +2264,23 @@ select Json_File('test.json', 3);
 The reason why the first argument is returned by such a query is because of tables such as:
 
 ```
-create table tb (
-n int key,
-jfile_cols char(10) not null);
-insert into tb values(1,'test.json');
+CREATE TABLE tb (
+n INT KEY,
+jfile_cols CHAR(10) NOT NULL);
+INSERT INTO tb VALUES(1,'test.json');
 ```
 
 In this table, the _jfile\_cols_ column just contains a file name. If we update it by:
 
 ```
-update tb set jfile_cols = select Json_Array_Add(Jbin_File('test.json', 'b'), 66)
-where n = 1;
+UPDATE tb SET jfile_cols = SELECT Json_Array_Add(Jbin_File('test.json', 'b'), 66)
+WHERE n = 1;
 ```
 
 This is the test.json file that must be modified, not the jfile\_cols column. This can be checked by:
 
 ```
-select JsonGet_String(jfile_cols, '[1]:*') from tb;
+SELECT JsonGet_String(jfile_cols, '[1]:*') FROM tb;
 ```
 
 | JsonGet\_String(jfile\_cols, '\[1]:\*') |
@@ -2298,15 +2298,15 @@ However, the “Jbin” counterpart of these functions does not serialize the bi
 /\* First query \*/
 
 ```
-select Json_Object(Jbin_Object_Add(Jbin_File('bt2.json'), 4 as "d") as "Jbin_bt1")
-  as "Result";
+SELECT Json_Object(Jbin_Object_Add(Jbin_File('bt2.json'), 4 AS "d") AS "Jbin_bt1")
+  AS "Result";
 ```
 
 /\* Second query \*/
 
 ```
-select Json_Object(Json_Object_Add(Jbin_File('bt2.json'), 4 as "d") as "Jfile_bt1")
-  as "Result";
+SELECT Json_Object(Json_Object_Add(Jbin_File('bt2.json'), 4 AS "d") AS "Jfile_bt1")
+  AS "Result";
 ```
 
 Both queries return:
@@ -2350,7 +2350,7 @@ SELECT item_name, COLUMN_GET(dynamic_cols, 'color' as char) AS color FROM assets
 
 ```
 UPDATE assets SET dynamic_cols=COLUMN_DELETE(dynamic_cols, "price")
-  WHERE COLUMN_GET(dynamic_cols, 'color' as char)='black';
+  WHERE COLUMN_GET(dynamic_cols, 'color' AS CHAR)='black';
 ```
 
 /\* Add a column: \*/
@@ -2461,25 +2461,25 @@ The JSON UDF’s and the direct Jpath “\*” facility are powerful tools to co
 From Connect 1.07.0002
 
 ```
-create table xj1 (row varchar(500) jpath='*') engine=connect table_type=JSON file_name='biblio3.json' option_list='jmode=2';
+CREATE TABLE xj1 (ROW VARCHAR(500) jpath='*') ENGINE=CONNECT table_type=JSON file_name='biblio3.json' option_list='jmode=2';
 ```
 
 Before Connect 1.07.0002
 
 ```
-create table xj1 (row varchar(500) field_format='*') 
- engine=connect table_type=JSON file_name='biblio3.json' option_list='jmode=2';
+CREATE TABLE xj1 (ROW VARCHAR(500) field_format='*') 
+ ENGINE=CONNECT table_type=JSON file_name='biblio3.json' option_list='jmode=2';
 ```
 
 And then :
 
 ```
-insert into xj1
-  select json_object_nonull(ISBN, language LANG, SUBJECT, 
+INSERT INTO xj1
+  SELECT json_object_nonull(ISBN, LANGUAGE LANG, SUBJECT, 
     json_array_grp(json_object(authorfn FIRSTNAME, authorln LASTNAME)) json_AUTHOR, TITLE,
     json_object(translated PREFIX, json_object(tranfn FIRSTNAME, tranln LASTNAME) json_TRANSLATOR) 
-    json_TRANSLATED, json_object(publisher NAME, location PLACE) json_PUBLISHER, date DATEPUB) 
-from xsampall2 group by isbn;
+    json_TRANSLATED, json_object(publisher NAME, LOCATION PLACE) json_PUBLISHER, DATE DATEPUB) 
+FROM xsampall2 GROUP BY isbn;
 ```
 
 The xj1 table rows will directly receive the Json object made by the select statement used in the insert statement and the table file will be made as shown (xj1 is pretty=2 by default) Its mode is Jmode=2 because the values inserted are strings even if they denote json objects.
@@ -2489,65 +2489,65 @@ Another way to do this is to create a table describing the file format we want b
 From Connect 1.07.0002
 
 ```
-create table jsampall3 (
-ISBN char(15),
-LANGUAGE char(2) jpath='LANG',
-SUBJECT char(32),
-AUTHORFN char(128) jpath='AUTHOR:[X]:FIRSTNAME',
-AUTHORLN char(128) jpath='AUTHOR:[X]:LASTNAME',
-TITLE char(32),
-TRANSLATED char(32) jpath='TRANSLATOR:PREFIX',
-TRANSLATORFN char(128) jpath='TRANSLATOR:FIRSTNAME',
-TRANSLATORLN char(128) jpath='TRANSLATOR:LASTNAME',
-PUBLISHER char(20) jpath='PUBLISHER:NAME',
-LOCATION char(20) jpath='PUBLISHER:PLACE',
-DATE int(4) jpath='DATEPUB')
-engine=CONNECT table_type=JSON file_name='biblio3.json';
+CREATE TABLE jsampall3 (
+ISBN CHAR(15),
+LANGUAGE CHAR(2) jpath='LANG',
+SUBJECT CHAR(32),
+AUTHORFN CHAR(128) jpath='AUTHOR:[X]:FIRSTNAME',
+AUTHORLN CHAR(128) jpath='AUTHOR:[X]:LASTNAME',
+TITLE CHAR(32),
+TRANSLATED CHAR(32) jpath='TRANSLATOR:PREFIX',
+TRANSLATORFN CHAR(128) jpath='TRANSLATOR:FIRSTNAME',
+TRANSLATORLN CHAR(128) jpath='TRANSLATOR:LASTNAME',
+PUBLISHER CHAR(20) jpath='PUBLISHER:NAME',
+LOCATION CHAR(20) jpath='PUBLISHER:PLACE',
+DATE INT(4) jpath='DATEPUB')
+ENGINE=CONNECT table_type=JSON file_name='biblio3.json';
 ```
 
 Before Connect 1.07.0002
 
 ```
-create table jsampall3 (
-ISBN char(15),
-LANGUAGE char(2) field_format='LANG',
-SUBJECT char(32),
-AUTHORFN char(128) field_format='AUTHOR:[X]:FIRSTNAME',
-AUTHORLN char(128) field_format='AUTHOR:[X]:LASTNAME',
-TITLE char(32),
-TRANSLATED char(32) field_format='TRANSLATOR:PREFIX',
-TRANSLATORFN char(128) field_format='TRANSLATOR:FIRSTNAME',
-TRANSLATORLN char(128) field_format='TRANSLATOR:LASTNAME',
-PUBLISHER char(20) field_format='PUBLISHER:NAME',
-LOCATION char(20) field_format='PUBLISHER:PLACE',
-DATE int(4) field_format='DATEPUB')
-engine=CONNECT table_type=JSON file_name='biblio3.json';
+CREATE TABLE jsampall3 (
+ISBN CHAR(15),
+LANGUAGE CHAR(2) field_format='LANG',
+SUBJECT CHAR(32),
+AUTHORFN CHAR(128) field_format='AUTHOR:[X]:FIRSTNAME',
+AUTHORLN CHAR(128) field_format='AUTHOR:[X]:LASTNAME',
+TITLE CHAR(32),
+TRANSLATED CHAR(32) field_format='TRANSLATOR:PREFIX',
+TRANSLATORFN CHAR(128) field_format='TRANSLATOR:FIRSTNAME',
+TRANSLATORLN CHAR(128) field_format='TRANSLATOR:LASTNAME',
+PUBLISHER CHAR(20) field_format='PUBLISHER:NAME',
+LOCATION CHAR(20) field_format='PUBLISHER:PLACE',
+DATE INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=JSON file_name='biblio3.json';
 ```
 
 and to populate it by:
 
 ```
-insert into jsampall3 select * from xsampall;
+INSERT INTO jsampall3 SELECT * FROM xsampall;
 ```
 
 This is a simpler method. However, the issue is that this method cannot handle the multiple column values. This is why we inserted from `xsampall` not from `xsampall2`. How can we add the missing multiple authors in this table? Here again we must create a utility table able to handle JSON strings.\
 From Connect 1.07.0002
 
 ```
-create table xj2 (ISBN char(15), author varchar(150) jpath='AUTHOR:*') engine=connect table_type=JSON file_name='biblio3.json' option_list='jmode=1';
+CREATE TABLE xj2 (ISBN CHAR(15), author VARCHAR(150) jpath='AUTHOR:*') ENGINE=CONNECT table_type=JSON file_name='biblio3.json' option_list='jmode=1';
 ```
 
 Before Connect 1.07.0002
 
 ```
-create table xj2 (ISBN char(15), author varchar(150) field_format='AUTHOR:*') 
-  engine=connect table_type=JSON file_name='biblio3.json' option_list='jmode=1';
+CREATE TABLE xj2 (ISBN CHAR(15), author VARCHAR(150) field_format='AUTHOR:*') 
+  ENGINE=CONNECT table_type=JSON file_name='biblio3.json' option_list='jmode=1';
 ```
 
 ```
-update xj2 set author =
-(select json_array_grp(json_object(authorfn FIRSTNAME, authorln LASTNAME)) 
-  from xsampall2 where isbn = xj2.isbn);
+UPDATE xj2 SET author =
+(SELECT json_array_grp(json_object(authorfn FIRSTNAME, authorln LASTNAME)) 
+  FROM xsampall2 WHERE isbn = xj2.isbn);
 ```
 
 Voilà !
@@ -2563,7 +2563,7 @@ Jfile_Make(json_document, [file_name], [pretty]);
 The file name is optional when the json document comes from a Jbin\_File function because the returned structure makes it available. For instance, to convert back the json file tb.json to pretty= 0, this can be simply done by:
 
 ```
-select Jfile_Make(Jbin_File('tb.json'), 0);
+SELECT Jfile_Make(Jbin_File('tb.json'), 0);
 ```
 
 ## Performance Consideration
@@ -2577,7 +2577,7 @@ Then, the file should be formatted or converted to _pretty=0_.
 From Connect 1.7.002, this easily done using the Jfile\_Convert function, for instance:
 
 ```
-select jfile_convert('bibdoc.json','bibdoc0.json',350);
+SELECT jfile_convert('bibdoc.json','bibdoc0.json',350);
 ```
 
 Such a json file should not be used directly by JSON UDFs because they parse the whole file, even when only a subset is used. Instead, it should be used by a JSON table created on it. Indeed, JSON tables do not parse the whole document but just the item corresponding to the row they are working on. In addition, indexing can be used by the table as explained previously on this page.
@@ -2589,7 +2589,7 @@ Generally speaking, the maximum flexibility offered by CONNECT is by using JSON 
 Starting with Connect 1.7.002, _pretty=0_ json files can be converted to a binary format that is a pre-parsed representation of json. This can be done with the Jfile\_Bjson UDF function, for instance:
 
 ```
-select jfile_bjson('bigfile.json','binfile.json',3500);
+SELECT jfile_bjson('bigfile.json','binfile.json',3500);
 ```
 
 Here the third argument, the record length, must 6 to 10 times larger than the lrecl of the initial json file because the parsed representation is bigger than the original json text representation.
@@ -2617,23 +2617,23 @@ It is achieved by specifying the MongoDB connection URI while creating the table
 From Connect 1.7.002
 
 ```
-create or replace table jinvent (
-_id char(24) not null, 
-item char(12) not null,
-instock varchar(300) not null jpath='instock.*')
-engine=connect table_type=JSON tabname='inventory' lrecl=512
-connection='mongodb://localhost:27017';
+CREATE OR REPLACE TABLE jinvent (
+_id CHAR(24) NOT NULL, 
+item CHAR(12) NOT NULL,
+instock VARCHAR(300) NOT NULL jpath='instock.*')
+ENGINE=CONNECT table_type=JSON tabname='inventory' lrecl=512
+CONNECTION='mongodb://localhost:27017';
 ```
 
 Before Connect 1.7.002
 
 ```
-create or replace table jinvent (
-_id char(24) not null, 
-item char(12) not null,
-instock varchar(300) not null field_format='instock.*')
-engine=connect table_type=JSON tabname='inventory' lrecl=512
-connection='mongodb://localhost:27017';
+CREATE OR REPLACE TABLE jinvent (
+_id CHAR(24) NOT NULL, 
+item CHAR(12) NOT NULL,
+instock VARCHAR(300) NOT NULL field_format='instock.*')
+ENGINE=CONNECT table_type=JSON tabname='inventory' lrecl=512
+CONNECTION='mongodb://localhost:27017';
 ```
 
 In this statement, the _file\_name_ option was replaced by the _connection_ option. It is the URI enabling to retrieve data from a local or remote MongoDB server. The _tabname_ option is the name of the MongoDB collection that will be used and the _dbname_ option could have been used to indicate the database containing the collection (it defaults to the current database).

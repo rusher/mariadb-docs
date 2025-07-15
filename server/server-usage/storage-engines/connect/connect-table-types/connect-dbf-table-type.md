@@ -11,7 +11,7 @@ particular the column description, it is possible to create a table based on an\
 existing `DBF` file without giving the column description, for instance:
 
 ```
-create table cust engine=CONNECT table_type=DBF file_name='cust.dbf';
+CREATE TABLE cust ENGINE=CONNECT table_type=DBF file_name='cust.dbf';
 ```
 
 To see what CONNECT has done, you can use the `DESCRIBE`\
@@ -25,8 +25,8 @@ header does not take care of soft deleted lines. This is why if you execute\
 these two commands applied to a DBF table named _tabdbf_:
 
 ```
-select count(*) from tabdbf;
-select count(*) from tabdbf where 1;
+SELECT COUNT(*) FROM tabdbf;
+SELECT COUNT(*) FROM tabdbf WHERE 1;
 ```
 
 They can give a different result, the (fast) first one giving the number of\
@@ -78,7 +78,7 @@ is specified by an option `READMODE` that can take the values:
 For example, to read all lines of the tabdbf table, you can do:
 
 ```
-alter table tabdbf option_list='Readmode=1';
+ALTER TABLE tabdbf option_list='Readmode=1';
 ```
 
 To come back to normal mode, specify READMODE=0.

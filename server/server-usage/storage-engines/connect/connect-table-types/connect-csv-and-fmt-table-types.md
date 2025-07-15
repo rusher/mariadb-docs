@@ -23,10 +23,10 @@ You can create the corresponding table by:
 
 ```
 create table people (
-  name char(12) not null,
-  birth date not null date_format='DD/MM/YY',
-  children smallint(2) not null)
-engine=CONNECT table_type=CSV file_name='people.csv'
+  name CHAR(12) NOT NULL,
+  birth DATE NOT NULL date_format='DD/MM/YY',
+  children smallint(2) NOT NULL)
+ENGINE=CONNECT table_type=CSV file_name='people.csv'
 header=1 sep_char=';' quoted=1;
 ```
 
@@ -34,7 +34,7 @@ Alternatively the engine can attempt to automatically detect the column names, d
 
 ```
 create table people
-engine=CONNECT table_type=CSV file_name='people.csv'
+ENGINE=CONNECT table_type=CSV file_name='people.csv'
 header=1 sep_char=';' quoted=1;
 ```
 
@@ -45,17 +45,17 @@ specifying only some columns of the CSV file. For instance:
 
 ```
 create table people (
-  name char(12) not null,
-  children smallint(2) not null flag=3,
-  birth date not null flag=2 date_format='DD/MM/YY')
-engine=CONNECT table_type=CSV file_name='people.csv'
+  name CHAR(12) NOT NULL,
+  children smallint(2) NOT NULL flag=3,
+  birth DATE NOT NULL flag=2 date_format='DD/MM/YY')
+ENGINE=CONNECT table_type=CSV file_name='people.csv'
 header=1 sep_char=';' quoted=1;
 ```
 
 In this case the command:
 
 ```
-select * from people;
+SELECT * FROM people;
 ```
 
 will display the table as:
@@ -149,12 +149,12 @@ You can make a table _fmtsample_ with 4 columns ID, NAME, DEPNO and SALARY, usin
 Table statement and column formats:
 
 ```
-create table FMTSAMPLE (
-  ID Integer(5) not null field_format=' %n%d%n',
-  NAME Char(16) not null field_format=' , ''%n%[^'']%n''',
-  DEPNO Integer(4) not null field_format=' , #%n%d%n',
-  SALARY Double(12,2) not null field_format=' ; %n%f%n')
-Engine=CONNECT table_type=FMT file_name='funny.txt';
+CREATE TABLE FMTSAMPLE (
+  ID INTEGER(5) NOT NULL field_format=' %n%d%n',
+  NAME CHAR(16) NOT NULL field_format=' , ''%n%[^'']%n''',
+  DEPNO INTEGER(4) NOT NULL field_format=' , #%n%d%n',
+  SALARY DOUBLE(12,2) NOT NULL field_format=' ; %n%f%n')
+ENGINE=CONNECT table_type=FMT file_name='funny.txt';
 ```
 
 **Field 1** is an integer (`%d`) with eventual leading blanks.
@@ -201,12 +201,12 @@ format must be terminated by `%m` (instead of the second `%n`). A statement\
 such as this can do the table creation:
 
 ```
-create table FMTAMPLE (
-  ID Integer(5) not null field_format=' %n%d%n',
-  NAME Char(16) not null field_format=' , ''%n%[^'']%m',
-  DEPNO Integer(4) field_format=''' , #%n%d%m',
-  SALARY Double(12,2) field_format=' ; %n%f%n')
-Engine=CONNECT table_type=FMT file_name='funny.txt';
+CREATE TABLE FMTAMPLE (
+  ID INTEGER(5) NOT NULL field_format=' %n%d%n',
+  NAME CHAR(16) NOT NULL field_format=' , ''%n%[^'']%m',
+  DEPNO INTEGER(4) field_format=''' , #%n%d%m',
+  SALARY DOUBLE(12,2) field_format=' ; %n%f%n')
+ENGINE=CONNECT table_type=FMT file_name='funny.txt';
 ```
 
 Note that, because the statement must be terminated by `%m` with no\
@@ -300,14 +300,14 @@ such as:
 The create table statement shall be like this:
 
 ```
-create table WEBSAMP (
-  IP char(15) not null field_format='%n%s%n',
-  DATE datetime not null field_format=' - - [%n%s%n -0400]'
+CREATE TABLE WEBSAMP (
+  IP CHAR(15) NOT NULL field_format='%n%s%n',
+  DATE datetime NOT NULL field_format=' - - [%n%s%n -0400]'
   date_format='DD/MMM/YYYY:hh:mm:ss' field_length=20,
-  FILE char(128) not null field_format=' - "GET %n%s%n',
-  HTTP double(4,2) not null field_format=' HTTP/%n%f%n"',
-  NBONE int(5) not null field_format=' %n%d%n')
-Engine=CONNECT table_type=FMT lrecl=400
+  FILE CHAR(128) NOT NULL field_format=' - "GET %n%s%n',
+  HTTP DOUBLE(4,2) NOT NULL field_format=' HTTP/%n%f%n"',
+  NBONE INT(5) NOT NULL field_format=' %n%d%n')
+ENGINE=CONNECT table_type=FMT lrecl=400
 file_name='e:\\data\\token\\Websamp.dat';
 ```
 

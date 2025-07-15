@@ -18,11 +18,11 @@ generated from one row of the object table. For example, supposing we have &#x61
 We can create an occur table by:
 
 ```
-create table xpet (
-  name varchar(12) not null,
-  race char(6) not null,
-  number int not null)
-engine=connect table_type=occur tabname=pets
+CREATE TABLE xpet (
+  name VARCHAR(12) NOT NULL,
+  race CHAR(6) NOT NULL,
+  NUMBER INT NOT NULL)
+ENGINE=CONNECT table_type=occur tabname=pets
 option_list='OccurCol=number,RankCol=race'
 Colist='dog,cat,rabbit,bird,fish';
 ```
@@ -30,7 +30,7 @@ Colist='dog,cat,rabbit,bird,fish';
 When displaying it by
 
 ```
-select * from xpet;
+SELECT * FROM xpet;
 ```
 
 We will get the result:
@@ -62,7 +62,7 @@ on the original tables. For instance to know who as more than 1 pet of a kind,\
 you can simply ask:
 
 ```
-select * from xpet where number > 1;
+SELECT * FROM xpet WHERE NUMBER > 1;
 ```
 
 You will get the result:
@@ -87,7 +87,7 @@ Occur tables can be also defined from views or source definition. Also, CONNECT\
 is able to generate the column definitions if not specified:
 
 ```
-create table ocsrc engine=connect table_type=occur
+CREATE TABLE ocsrc ENGINE=CONNECT table_type=occur
 colist='january,february,march,april,may,june,july,august,september,
 october,november,december' option_list='rankcol=month,occurcol=day'
 srcdef='select ''Foo'' name, 8 january, 7 february, 2 march, 1 april,

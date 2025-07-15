@@ -8,11 +8,11 @@ differences.
 Currently the Federated-like syntax can be used to create such a table, for instance:
 
 ```
-create table essai (
-  num integer(4) not null,
-  line char(15) not null)
-engine=CONNECT table_type=MYSQL
-connection='mysql://root@localhost/test/people';
+CREATE TABLE essai (
+  num INTEGER(4) NOT NULL,
+  LINE CHAR(15) NOT NULL)
+ENGINE=CONNECT table_type=MYSQL
+CONNECTION='mysql://root@localhost/test/people';
 ```
 
 The connection string can have the same syntax as that used by FEDERATED
@@ -27,11 +27,11 @@ scheme://username:password@hostname/database/tablename
 However, it can also be mixed with connect standard options. For instance:
 
 ```
-create table essai (
-  num integer(4) not null,
-  line char(15) not null)
-engine=CONNECT table_type=MYSQL dbname=test tabname=people
-connection='mysql://root@localhost';
+CREATE TABLE essai (
+  num INTEGER(4) NOT NULL,
+  LINE CHAR(15) NOT NULL)
+ENGINE=CONNECT table_type=MYSQL dbname=test tabname=people
+CONNECTION='mysql://root@localhost';
 ```
 
 It can also be specified as a reference to a federated server:
@@ -44,10 +44,10 @@ connection="connection_one/table_foo"
 The pure (deprecated) CONNECT syntax is also accepted:
 
 ```
-create table essai (
-  num integer(4) not null,
-  line char(15) not null)
-engine=CONNECT table_type=MYSQL dbname=test tabname=people
+CREATE TABLE essai (
+  num INTEGER(4) NOT NULL,
+  LINE CHAR(15) NOT NULL)
+ENGINE=CONNECT table_type=MYSQL dbname=test tabname=people
 option_list='user=root,host=localhost';
 ```
 
@@ -72,7 +72,7 @@ MYSQL table can refer to the current server as well as to another server. Views\
 can be referred by name or directly giving a source definition, for instance:
 
 ```
-create table grp engine=connect table_type=mysql
+CREATE TABLE grp ENGINE=CONNECT table_type=mysql
 CONNECTION='mysql://root@localhost/test/people'
 SRCDEF='select title, count(*) as cnt from employees group by title';
 ```
@@ -84,8 +84,8 @@ Note: For columns prone to be targeted by a where clause, keep the column type c
 If you do not want to restrict or change the column definition, do not provide it and leave CONNECT get the column definition from the remote server. For instance:
 
 ```
-create table essai engine=CONNECT table_type=MYSQL
-connection='mysql://root@localhost/test/people';
+CREATE TABLE essai ENGINE=CONNECT table_type=MYSQL
+CONNECTION='mysql://root@localhost/test/people';
 ```
 
 This will create the _essai_ table with the same columns than the people table. If the target table contains CONNECT incompatible type columns, see [Data type conversion](../connect-data-types.md#data-type-conversion) to know how these columns can be converted or skipped.
@@ -104,13 +104,13 @@ Indexes are rarely useful with MYSQL tables. This is because CONNECT tries to ac
 requested rows. For instance if you ask:
 
 ```
-select * from essai where num = 23;
+SELECT * FROM essai WHERE num = 23;
 ```
 
 CONNECT will construct and send to the server the query:
 
 ```
-SELECT num, line FROM people WHERE num = 23
+SELECT num, LINE FROM people WHERE num = 23
 ```
 
 If the _people_ table is indexed on _num_, indexing will be used on the remote server. This, in all cases,\
@@ -120,9 +120,9 @@ However, an index can be specified for columns that are prone to be used to join
 MYSQL table. For instance:
 
 ```
-select d.id, d.name, f.dept, f.salary
-from loc_tab d straight_join cnc_tab f on d.id = f.id
-where f.salary > 10000;
+SELECT d.id, d.name, f.dept, f.salary
+FROM loc_tab d STRAIGHT_JOIN cnc_tab f ON d.id = f.id
+WHERE f.salary > 10000;
 ```
 
 If the _id_ column of the remote table addressed by the _cnc\_tab_ MYSQL table is indexed (which is likely\
@@ -154,8 +154,8 @@ However, there is still an issue on multi-table statements. Let us suppose you\
 have a _t1_ table on the remote server and want to execute a query such as:
 
 ```
-update essai as x set line = (select msg from t1 where id = x.num)
-where num = 2;
+UPDATE essai AS x SET LINE = (SELECT msg FROM t1 WHERE id = x.num)
+WHERE num = 2;
 ```
 
 When parsed locally, you will have errors if no _t1_ table exists or if it\
@@ -163,7 +163,7 @@ does not have the referenced columns. When _t1_ does not exist, you can\
 overcome this issue by creating a local dummy _t1_ table:
 
 ```
-create table t1 (id int, msg char(1)) engine=BLACKHOLE;
+CREATE TABLE t1 (id INT, msg CHAR(1)) ENGINE=BLACKHOLE;
 ```
 
 This will make the local parser happy and permit to execute the command on the\
@@ -208,7 +208,7 @@ their function coming from the FLAG value:
 How to use this table and specify the command to send? By executing a command such as:
 
 ```
-select * from send where command = 'a command';
+SELECT * FROM send WHERE command = 'a command';
 ```
 
 This will send the command specified in the WHERE clause to the data source and\
@@ -216,7 +216,7 @@ return the result of its execution. The syntax of the WHERE clause must be\
 exactly as shown above. For instance:
 
 ```
-select * from send where command =
+SELECT * FROM send WHERE command =
 'CREATE TABLE people (
 num integer(4) primary key autoincrement,
 line char(15) not null';
@@ -234,7 +234,7 @@ It can be faster to execute because there will be only one connection for all\
 of them. To send several commands in one call, use the following syntax:
 
 ```
-select * from send where command in (
+SELECT * FROM send WHERE command IN (
 "update people set line = 'Two' where id = 2",
 "update people set line = 'Three' where id = 3");
 ```
@@ -276,7 +276,7 @@ commands are:
 Note that they must be spelled (case insensitive) exactly as above, no final “s”. For instance:
 
 ```
-select * from send where command in ('Warning','Note',
+SELECT * FROM send WHERE command IN ('Warning','Note',
 'drop table if exists try',
 'create table try (id int key auto_increment, msg varchar(32) not
 null) engine=aria',

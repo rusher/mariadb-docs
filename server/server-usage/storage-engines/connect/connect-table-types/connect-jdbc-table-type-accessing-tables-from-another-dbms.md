@@ -105,8 +105,8 @@ Remaining are the paths of all the installed JDBC drivers that you intend to use
 If the CLASSPATH variable actually exists and if it is available inside MariaDB, so far so good. You can check this using an UDF function provided by CONNECT that returns environment variable values:
 
 ```
-create function envar returns string soname 'ha_connect.so';
-select envar('CLASSPATH');
+CREATE FUNCTION envar RETURNS STRING soname 'ha_connect.so';
+SELECT envar('CLASSPATH');
 ```
 
 Most of the time, this will return null or some required files are missing. This is why CONNECT introduced a global variable to store this information. The paths specified in this variable will be added and have precedence to the ones, if any, of the CLASSPATH environment variable. As for the jvm path, this variable connect\_class\_path should be specified when starting the server but can also be set before using the JDBC table type for the first time.
@@ -124,18 +124,18 @@ olivier@olivier-Aspire-8920:~$ sudo /usr/local/mysql/bin/mysqld -u root --consol
 These tables are given the type JDBC. For instance, supposing you want to access the boys table located on and external local or remote database management system providing a JDBC connector:
 
 ```
-create table boys (
-name char(12),
-city char(12),
-birth date,
-hired date);
+CREATE TABLE boys (
+name CHAR(12),
+city CHAR(12),
+birth DATE,
+hired DATE);
 ```
 
 To access this table via JDBC you can create a table such as:
 
 ```
-create table jboys engine=connect table_type=JDBC tabname=boys
-connection='jdbc:mysql://localhost/dbname?user=root';
+CREATE TABLE jboys ENGINE=CONNECT table_type=JDBC tabname=boys
+CONNECTION='jdbc:mysql://localhost/dbname?user=root';
 ```
 
 The CONNECTION option is the URL used to establish the connection with the remote server. Its syntax depends on the external DBMS and in this example is the one used to connect as root to a MySQL or MariaDB local database using the MySQL JDBC connector.
@@ -149,14 +149,14 @@ Note: The dbname indicated in the URL corresponds for many DBMS to the catalog i
 Alternatively, a JDBC table can specify its connection options via a Federated server. For instance, supposing you have a table accessing an external Postgresql table defined as:
 
 ```
-create table juuid engine=connect table_type=JDBC tabname=testuuid
-connection='jdbc:postgresql:test?user=postgres&password=pwd';
+CREATE TABLE juuid ENGINE=CONNECT table_type=JDBC tabname=testuuid
+CONNECTION='jdbc:postgresql:test?user=postgres&password=pwd';
 ```
 
 You can create a Federated server:
 
 ```
-create server 'post1' foreign data wrapper 'postgresql' options (
+CREATE server 'post1' FOREIGN DATA wrapper 'postgresql' OPTIONS (
 HOST 'localhost',
 DATABASE 'test',
 USER 'postgres',
@@ -169,13 +169,13 @@ OWNER 'postgres');
 Now the JDBC table can be created by:
 
 ```
-create table juuid engine=connect table_type=JDBC connection='post1' tabname=testuuid;
+CREATE TABLE juuid ENGINE=CONNECT table_type=JDBC CONNECTION='post1' tabname=testuuid;
 ```
 
 or by:
 
 ```
-create table juuid engine=connect table_type=JDBC connection='post1/testuuid';
+CREATE TABLE juuid ENGINE=CONNECT table_type=JDBC CONNECTION='post1/testuuid';
 ```
 
 In any case, the location of the remote table can be changed in the Federated server without having to alter all the tables using this server.
@@ -183,7 +183,7 @@ In any case, the location of the remote table can be changed in the Federated se
 JDBC needs a URL to establish a connection. CONNECT was able to construct that URL from the information contained in such Federated server definition when the URL syntax is similar to the one of MySQL, MariaDB or Postgresql. However, other DBMSs such as Oracle use a different URL syntax. In this case, simply replace the HOST information by the required URL in the Federated server definition. For instance:
 
 ```
-create server 'oracle' foreign data wrapper 'oracle' options (
+CREATE server 'oracle' FOREIGN DATA wrapper 'oracle' OPTIONS (
 HOST 'jdbc:oracle:thin:@localhost:1521:xe',
 DATABASE 'SYSTEM',
 USER 'system',
@@ -196,7 +196,7 @@ OWNER 'SYSTEM');
 Now you can create an Oracle table with something like this:
 
 ```
-create table empor engine=connect table_type=JDBC connection='oracle/HR.EMPLOYEES';
+CREATE TABLE empor ENGINE=CONNECT table_type=JDBC CONNECTION='oracle/HR.EMPLOYEES';
 ```
 
 Note: Oracle, as Postgresql, does not seem to understand the DATABASE setting as the table schema that must be specified in the Create Table statement.
@@ -218,8 +218,8 @@ Beware that the database name in the URL can be interpreted differently dependin
 For instance a table accessing a Postgresql table via JDBC can be created with a create statement such as:
 
 ```
-create table jt1 engine=connect table_type=JDBC
-connection='jdbc:postgresql://localhost/mtr' dbname=public tabname=t1
+CREATE TABLE jt1 ENGINE=CONNECT table_type=JDBC
+CONNECTION='jdbc:postgresql://localhost/mtr' dbname=PUBLIC tabname=t1
 option_list='User=mtr,Password=mtr';
 ```
 
@@ -243,7 +243,7 @@ To avoid this, when accessing a big table and expecting large result sets, you s
 Suppose you execute a query such as:
 
 ```
-select id, name, phone from jbig limit 10;
+SELECT id, name, phone FROM jbig LIMIT 10;
 ```
 
 Not knowing the limit clause, CONNECT sends to the remote DBMS the query:
@@ -265,9 +265,9 @@ CONNECT provide additional wrappers whose files are located in the CONNECT sourc
 It can also be specified for a table in the option list by setting the option wrapper to its name. For instance:
 
 ```
-create table jboys 
-engine=CONNECT table_type=JDBC tabname='boys'
-connection='jdbc:mariadb://localhost/connect?user=root&useSSL=false'
+CREATE TABLE jboys 
+ENGINE=CONNECT table_type=JDBC tabname='boys'
+CONNECTION='jdbc:mariadb://localhost/connect?user=root&useSSL=false'
 option_list='Wrapper=MariadbInterface,Scrollable=1';
 ```
 
@@ -331,14 +331,14 @@ Table « public.testuuid »
 Its column definitions can be queried by:
 
 ```
-create or replace table juuidcol engine=connect table_type=JDBC tabname=testuuid catfunc=columns
-connection='jdbc:postgresql:test?user=postgres&password=pwd';
+CREATE OR REPLACE TABLE juuidcol ENGINE=CONNECT table_type=JDBC tabname=testuuid catfunc=columns
+CONNECTION='jdbc:postgresql:test?user=postgres&password=pwd';
 ```
 
 ```
-select table_name "Table", column_name "Column", data_type "Type", 
+SELECT TABLE_NAME "Table", COLUMN_NAME "Column", data_type "Type", 
   type_name "Name", column_size "Size" 
- from juuidcol;
+ FROM juuidcol;
 ```
 
 This query returns:
@@ -353,7 +353,7 @@ Note: PostgreSQL, when a column size is undefined, returns 2147483647, which is 
 Accessing this table via JDBC by:
 
 ```
-CREATE TABLE juuid ENGINE=connect TABLE_TYPE=JDBC TABNAME=testuuid
+CREATE TABLE juuid ENGINE=CONNECT TABLE_TYPE=JDBC TABNAME=testuuid
 CONNECTION='jdbc:postgresql:test?user=postgres&password=pwd';
 ```
 
@@ -361,8 +361,8 @@ it will be created by discovery as:
 
 ```
 CREATE TABLE `juuid` (
-  `id` char(36) DEFAULT NULL,
-  `msg` varchar(8192) DEFAULT NULL
+  `id` CHAR(36) DEFAULT NULL,
+  `msg` VARCHAR(8192) DEFAULT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 CONNECTION='jdbc:postgresql:test?user=postgres&password=pwd' `TABLE_TYPE`='JDBC' `TABNAME`='testuuid';
 ```
 
@@ -371,9 +371,9 @@ Note: 8192 being here the _connect\_conv\_size_ value.
 Let's populate it:
 
 ```
-insert into juuid(msg) values('First');
-insert into juuid(msg) values('Second');
-select * from juuid;
+INSERT INTO juuid(msg) VALUES('First');
+INSERT INTO juuid(msg) VALUES('Second');
+SELECT * FROM juuid;
 ```
 
 Result:
@@ -388,11 +388,11 @@ Here the id column values come from the DEFAULT of the PostgreSQL column that wa
 It can be set from MariaDB. For instance:
 
 ```
-insert into juuid
-  values('2f835fb8-73b0-42f3-a1d3-8a532b38feca','inserted');
-insert into juuid values(NULL,'null');
-insert into juuid values('','random');
-select * from juuid;
+INSERT INTO juuid
+  VALUES('2f835fb8-73b0-42f3-a1d3-8a532b38feca','inserted');
+INSERT INTO juuid VALUES(NULL,'null');
+INSERT INTO juuid VALUES('','random');
+SELECT * FROM juuid;
 ```
 
 Result:
@@ -410,14 +410,14 @@ The first insert specifies a valid UUID character representation. The second one
 These commands both work:
 
 ```
-select * from juuid where id = '2f835fb8-73b0-42f3-a1d3-8a532b38feca';
-delete from juuid where id = '2f835fb8-73b0-42f3-a1d3-8a532b38feca';
+SELECT * FROM juuid WHERE id = '2f835fb8-73b0-42f3-a1d3-8a532b38feca';
+DELETE FROM juuid WHERE id = '2f835fb8-73b0-42f3-a1d3-8a532b38feca';
 ```
 
 However, this one fails:
 
 ```
-select * from juuid where id like '%42f3%';
+SELECT * FROM juuid WHERE id like '%42f3%';
 ```
 
 Returning:

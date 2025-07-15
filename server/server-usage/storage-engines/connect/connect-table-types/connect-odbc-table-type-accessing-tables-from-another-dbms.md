@@ -9,21 +9,21 @@ contained in an Access™ database you can define it\
 with a command such as:
 
 ```
-create table Customer (
-  CustomerID varchar(5),
-  CompanyName varchar(40),
-  ContactName varchar(30),
-  ContactTitle varchar(30),
-  Address varchar(60),
-  City varchar(15),
-  Region varchar(15),
-  PostalCode varchar(10),
-  Country varchar(15),
-  Phone varchar(24),
-  Fax varchar(24))
-engine=connect table_type=ODBC block_size=10
+CREATE TABLE Customer (
+  CustomerID VARCHAR(5),
+  CompanyName VARCHAR(40),
+  ContactName VARCHAR(30),
+  ContactTitle VARCHAR(30),
+  Address VARCHAR(60),
+  City VARCHAR(15),
+  Region VARCHAR(15),
+  PostalCode VARCHAR(10),
+  Country VARCHAR(15),
+  Phone VARCHAR(24),
+  Fax VARCHAR(24))
+ENGINE=CONNECT table_type=ODBC block_size=10
 tabname='Customers'
-Connection='DSN=MS Access Database;DBQ=C:/Program
+CONNECTION='DSN=MS Access Database;DBQ=C:/Program
 Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
@@ -35,9 +35,9 @@ functions, the column definitions can be unspecified. For instance this table\
 can be simply created as:
 
 ```
-create table Customer engine=connect table_type=ODBC
+CREATE TABLE Customer ENGINE=CONNECT table_type=ODBC
   block_size=10 tabname='Customers'
-  Connection='DSN=MS Access Database;DBQ=C:/Program Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
+  CONNECTION='DSN=MS Access Database;DBQ=C:/Program Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
 The `BLOCK_SIZE` specification will be used later to set the RowsetSize when\
@@ -51,16 +51,16 @@ conversion can also be done if appropriate. For instance, to access the\
 FireBird sample table EMPLOYEE, you could define your table as:
 
 ```
-create table empodbc (
-  EMP_NO smallint(5) not null,
-  FULL_NAME varchar(37) not null),
-  PHONE_EXT varchar(4) not null,
-  HIRE_DATE date,
-  DEPT_NO smallint(3) not null,
-  JOB_COUNTRY varchar(15),
-  SALARY double(12,2) not null)
-engine=CONNECT table_type=ODBC tabname='EMPLOYEE'
-connection='DSN=firebird';
+CREATE TABLE empodbc (
+  EMP_NO smallint(5) NOT NULL,
+  FULL_NAME VARCHAR(37) NOT NULL),
+  PHONE_EXT VARCHAR(4) NOT NULL,
+  HIRE_DATE DATE,
+  DEPT_NO smallint(3) NOT NULL,
+  JOB_COUNTRY VARCHAR(15),
+  SALARY DOUBLE(12,2) NOT NULL)
+ENGINE=CONNECT table_type=ODBC tabname='EMPLOYEE'
+CONNECTION='DSN=firebird';
 ```
 
 This definition ignores the FIRST\_NAME, LAST\_NAME, JOB\_CODE, and JOB\_GRADE\
@@ -112,8 +112,8 @@ a fixed formatted DOS table containing the CUSTOMER table data, create the\
 table as
 
 ```
-create table Custfix engine=connect File_name='customer.txt'
-  table_type=fix block_size=20 as select * from customer;
+CREATE TABLE Custfix ENGINE=CONNECT File_name='customer.txt'
+  table_type=fix block_size=20 AS SELECT * FROM customer;
 ```
 
 Now you can use _custfix_ for fast database operations on the copie&#x64;_&#x63;ustomer_ table data.
@@ -124,9 +124,9 @@ ODBC can also be used to create tables based on tabular data belonging to an\
 Excel spreadsheet:
 
 ```
-create table XLCONT
-engine=CONNECT table_type=ODBC tabname='CONTACT'
-Connection='DSN=Excel Files;DBQ=D:/Ber/Doc/Contact_BP.xls;';
+CREATE TABLE XLCONT
+ENGINE=CONNECT table_type=ODBC tabname='CONTACT'
+CONNECTION='DSN=Excel Files;DBQ=D:/Ber/Doc/Contact_BP.xls;';
 ```
 
 This supposes that a tabular zone of the sheet including column headers is\
@@ -134,7 +134,7 @@ defined as a table named CONTACT or using a “named reference”. Refer to the 
 specify tables inside sheets. Once done, you can ask:
 
 ```
-select * from xlcont;
+SELECT * FROM xlcont;
 ```
 
 This will extract the data from Excel and display:
@@ -167,11 +167,11 @@ Excel files CA200401.xls, CA200402.xls, ...CA200412.xls can be created by a\
 command such as:
 
 ```
-create table ca04mul (Date char(19), Operation varchar(64),
-  Debit double(15,2), Credit double(15,2))
-engine=CONNECT table_type=ODBC multiple=1
+CREATE TABLE ca04mul (DATE CHAR(19), OPERATION VARCHAR(64),
+  Debit DOUBLE(15,2), Credit DOUBLE(15,2))
+ENGINE=CONNECT table_type=ODBC multiple=1
 qchar= '"' tabname='bank account'
-connection='DSN=Excel Files;DBQ=D:/Ber/CA/CA2004*.xls;';
+CONNECTION='DSN=Excel Files;DBQ=D:/Ber/CA/CA2004*.xls;';
 ```
 
 Providing that in each file the applying information is internally set for\
@@ -226,8 +226,8 @@ option SRCDEF. For instance:
 
 ```
 CREATE TABLE custnum (
-  country varchar(15) NOT NULL,
-  customers int(6) NOT NULL)
+  country VARCHAR(15) NOT NULL,
+  customers INT(6) NOT NULL)
 ENGINE=CONNECT TABLE_TYPE=ODBC BLOCK_SIZE=10
 CONNECTION='DSN=MS Access Database;DBQ=C:/Program Files/Microsoft Office/Office/1033/FPNWIND.MDB;'
 SRCDEF='select country, count(*) as customers from customers group by country';
@@ -244,7 +244,7 @@ SRCDEF='select country, count(*) as customers from customers group by country';
 Then, when executing for instance:
 
 ```
-select * from custnum where customers > 3;
+SELECT * FROM custnum WHERE customers > 3;
 ```
 
 The processing of the group by is done by the data source, which returns only\
@@ -279,7 +279,7 @@ ODBC table. This does not make any difference when the values are constant but\
 in a query such as:
 
 ```
-insert into t1 select * from t2;
+INSERT INTO t1 SELECT * FROM t2;
 ```
 
 Where t1 is an ODBC table, t2 is a locally defined table that must exist on the\
@@ -289,7 +289,7 @@ local data.
 CONNECT does not directly support INSERT commands such as:
 
 ```
-insert into t1 values(2,'Deux') on duplicate key update msg = 'Two';
+INSERT INTO t1 VALUES(2,'Deux') ON duplicate KEY UPDATE msg = 'Two';
 ```
 
 Sure enough, the “on duplicate key update” part of it is ignored, and will\
@@ -302,11 +302,11 @@ These commands are just rephrased to correspond to the data source syntax and se
 data source for execution. Let us suppose we created the table:
 
 ```
-create table tolite (
-  id int(9) not null,
-  nom varchar(12) not null,
-  nais date default null,
-  rem varchar(32) default null)
+CREATE TABLE tolite (
+  id INT(9) NOT NULL,
+  nom VARCHAR(12) NOT NULL,
+  nais DATE DEFAULT NULL,
+  rem VARCHAR(32) DEFAULT NULL)
 ENGINE=CONNECT TABLE_TYPE=ODBC tabname='lite'
 CONNECTION='DSN=SQLite3 Datasource;Database=test.sqlite3'
 CHARSET=utf8 DATA_CHARSET=utf8;
@@ -315,7 +315,7 @@ CHARSET=utf8 DATA_CHARSET=utf8;
 We can populate it by:
 
 ```
-insert into tolite values(1,'Toto',now(),'First'),
+INSERT INTO tolite VALUES(1,'Toto',NOW(),'First'),
 (2,'Foo','2012-07-14','Second'),(4,'Machin','1968-05-30','Third');
 ```
 
@@ -325,13 +325,13 @@ to the ODBC table.
 Let us see what happens when updating the table. If we use the query:
 
 ```
-update tolite set nom = 'Gillespie' where id = 10;
+UPDATE tolite SET nom = 'Gillespie' WHERE id = 10;
 ```
 
 CONNECT will rephrase the command as:
 
 ```
-update lite set nom = 'Gillespie' where id = 10;
+UPDATE lite SET nom = 'Gillespie' WHERE id = 10;
 ```
 
 What it did is just to replace the local table name with the remote table name\
@@ -358,7 +358,7 @@ Scalar function names also can be different, which severely restrict the use of\
 them. For instance:
 
 ```
-update tolite set nais = now() where id = 2;
+UPDATE tolite SET nais = NOW() WHERE id = 2;
 ```
 
 This will not work with SQLite3, the data source returning an “unknown scalar\
@@ -366,7 +366,7 @@ function” error message. Note that in this particular case, you can rephrase i
 to:
 
 ```
-update tolite set nais = date('now') where id = 2;
+UPDATE tolite SET nais = DATE('now') WHERE id = 2;
 ```
 
 This understood by both parsers, and even if this function would return NULL\
@@ -381,12 +381,12 @@ This can be done using a special subtype of ODBC table. Let us see this in an\
 example:
 
 ```
-create table crlite (
-  command varchar(128) not null,
-  number int(5) not null flag=1,
-  message varchar(255) flag=2)
-engine=connect table_type=odbc
-connection='Driver=SQLite3 ODBC Driver;Database=test.sqlite3;NoWCHAR=yes'
+CREATE TABLE crlite (
+  command VARCHAR(128) NOT NULL,
+  NUMBER INT(5) NOT NULL flag=1,
+  message VARCHAR(255) flag=2)
+ENGINE=CONNECT table_type=odbc
+CONNECTION='Driver=SQLite3 ODBC Driver;Database=test.sqlite3;NoWCHAR=yes'
 option_list='Execsrc=1';
 ```
 
@@ -409,7 +409,7 @@ How to use this table and specify the command to send? By executing a command\
 such as:
 
 ```
-select * from crlite where command = 'a command';
+SELECT * FROM crlite WHERE command = 'a command';
 ```
 
 This will send the command specified in the WHERE clause to the data source and\
@@ -417,7 +417,7 @@ return the result of its execution. The syntax of the WHERE clause must be\
 exactly as shown above. For instance:
 
 ```
-select * from crlite where command =
+SELECT * FROM crlite WHERE command =
 'CREATE TABLE lite (
 ID integer primary key autoincrement,
 name char(12) not null,
@@ -443,16 +443,16 @@ CHARSET=utf8 DATA_CHARSET=utf8;
 We can populate it directly using the supported [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
 ```
-insert into tlite(name,birth) values('Toto','2005-06-12');
-insert into tlite(name,birth,rem) values('Foo',NULL,'No ID');
-insert into tlite(name,birth) values('Truc','1998-10-27');
-insert into tlite(name,birth,rem) values('John','1968-05-30','Last');
+INSERT INTO tlite(name,birth) VALUES('Toto','2005-06-12');
+INSERT INTO tlite(name,birth,rem) VALUES('Foo',NULL,'No ID');
+INSERT INTO tlite(name,birth) VALUES('Truc','1998-10-27');
+INSERT INTO tlite(name,birth,rem) VALUES('John','1968-05-30','Last');
 ```
 
 And see the result:
 
 ```
-select * from tlite;
+SELECT * FROM tlite;
 ```
 
 | ID | name | birth      | rem   |
@@ -465,7 +465,7 @@ select * from tlite;
 Any command, for instance [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md), can be executed from the _crlite_ table:
 
 ```
-select * from crlite where command =
+SELECT * FROM crlite WHERE command =
 'update lite set birth = ''2012-07-14'' where ID = 2';
 ```
 
@@ -478,7 +478,7 @@ This command returns:
 Let us verify it:
 
 ```
-select * from tlite where ID = 2;
+SELECT * FROM tlite WHERE ID = 2;
 ```
 
 | ID | name | birth      | rem   |
@@ -489,9 +489,9 @@ The syntax to send a command is rather strange and may seem unnatural. It is pos
 syntax by defining a stored procedure such as:
 
 ```
-create procedure send_cmd(cmd varchar(255))
+CREATE PROCEDURE send_cmd(cmd VARCHAR(255))
 MODIFIES SQL DATA
-select * from crlite where command = cmd;
+SELECT * FROM crlite WHERE command = cmd;
 ```
 
 Now you can send commands like this:
@@ -509,7 +509,7 @@ connection is made for the all of them. To send several commands in one call,\
 use the following syntax:
 
 ```
-select * from crlite where command in (
+SELECT * FROM crlite WHERE command IN (
   'update lite set birth = ''2012-07-14'' where ID = 2',
   'update lite set birth = ''2009-08-10'' where ID = 3');
 ```

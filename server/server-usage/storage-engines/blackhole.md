@@ -77,8 +77,8 @@ The maximum key size is:
 
 ```
 CREATE TABLE table_name (
-   id int unsigned primary key not null,
-   v varchar(30)
+   id INT UNSIGNED PRIMARY KEY NOT NULL,
+   v VARCHAR(30)
 ) ENGINE=BLACKHOLE;
 
 INSERT INTO table_name VALUES (1, 'bob'),(2, 'jane');
