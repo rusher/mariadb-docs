@@ -1,8 +1,8 @@
 # MariaDB 10.11.10 Release Notes
 
-The most recent release of [MariaDB 10.11](what-is-mariadb-1011.md) is:[**MariaDB 10.11.11**](mariadb-10-11-11-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
+{% include "../../../.gitbook/includes/latest-10.11 (2).md" %}
 
-[Download 10.11.10](https://downloads.mariadb.org/mariadb/10.11.10/)[Release Notes](mariadb-10-11-10-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-10-changelog.md)[Overview of 10.11](what-is-mariadb-1011.md)
+<a href="https://downloads.mariadb.org/mariadb/10.11.10/" class="button primary">Download</a> <a href="mariadb-10-11-10-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-10-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 **Release date:** 1 Nov 2024
 

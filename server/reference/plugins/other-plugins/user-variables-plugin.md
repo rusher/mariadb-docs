@@ -12,7 +12,7 @@ User-defined variables are reset and the Information Schema table emptied with t
 
 ## Examples
 
-```
+```sql
 SET @v1 = 0;
 SET @v2 = 'abc';
 SET @v3 = CAST(123 AS CHAR(5));
@@ -43,19 +43,21 @@ Empty set (0.000 sec)
 
 ## Installing the Plugin
 
-In current versions, the `user_variables` plugin is statically linked into the server by default, so it does not need to be installed, and the following steps are unnecessary.
+{% hint style="info" %}
+In current versions, the `user_variables` plugin is statically linked into the server by default, so it does not need to be installed.
+{% endhint %}
 
-Prior to [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), although the plugin's shared library is distributed with MariaDB by default, the plugin was not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
+If it is not installed, however, here are two methods that can be used to install the plugin with MariaDB.
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
-```
+```sql
 INSTALL SONAME 'user_variables';
 ```
 
 The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = user_variables
@@ -65,19 +67,11 @@ plugin_load_add = user_variables
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
-```
+```sql
 UNINSTALL SONAME 'user_variables';
 ```
 
 If you installed the plugin by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
-
-## Versions
-
-| Version | Status | Introduced                                                                                                                                                                          |
-| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0     | Stable | [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes) |
-| 1.0     | Gamma  | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)   |
-| 1.0     | Alpha  | [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/other-plugins/broken-reference/README.md)                                    |
 
 ## Options
 

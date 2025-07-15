@@ -128,7 +128,7 @@ This extended column type information can be used to find out more specific deta
 
 For example:
 
-* For a [POINT](../../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-constructors/point.md) column, the column type field will be `MYSQL_TYPE_GEOMETRY`, but the extended type will indicate 'point'.
+* For a [POINT](../../../../../reference/sql-statements/geometry-constructors/geometry-constructors/point.md) column, the column type field will be `MYSQL_TYPE_GEOMETRY`, but the extended type will indicate 'point'.
 * For a [JSON](../../../../../reference/data-types/string-data-types/json.md) column, the column type field will be `MYSQL_TYPE_STRING`, but the extended type will indicate 'json'.
 * while string has data
   * [int<1>](../protocol-data-types.md#fixed-length-integers) data type: 0x00:type, 0x01: format

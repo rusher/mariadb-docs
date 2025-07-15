@@ -1,6 +1,6 @@
 # Configuring PAM Authentication and User Mapping with Unix Authentication
 
-In this article, we will walk through the configuration of PAM authentication using the [pam](authentication-plugin-pam.md) authentication plugin and user and group mapping with the [pam_user_map](user-and-group-mapping-with-pam.md) PAM module. The primary authentication will be handled by the [pam_unix](https://linux.die.net/man/8/pam_unix) PAM module, which performs standard Unix password authentication.
+We walk through the configuration of PAM authentication using the [pam](authentication-plugin-pam.md) authentication plugin and user and group mapping with the [pam\_user\_map](user-and-group-mapping-with-pam.md) PAM module. The primary authentication will be handled by the [pam\_unix](https://linux.die.net/man/8/pam_unix) PAM module, which performs standard Unix password authentication.
 
 ## Hypothetical Requirements
 
@@ -15,7 +15,7 @@ Let's go ahead and create the Unix users and groups that we are using for this h
 
 First, let's create the `foo` user and a couple users to go into the `dba` group. Note that each of these users needs a password.
 
-```
+```bash
 sudo useradd foo
 sudo passwd foo
 sudo useradd alice
@@ -24,9 +24,9 @@ sudo useradd bob
 sudo passwd bob
 ```
 
-And then let's create our `dba` group and add our two users to it:
+Next, let's create the `dba` group and add our two users to it:
 
-```
+```bash
 sudo groupadd dba
 sudo usermod -a -G dba alice 
 sudo usermod -a -G dba bob
@@ -34,7 +34,7 @@ sudo usermod -a -G dba bob
 
 We also need to create Unix users with the same name as the `bar` and `dba` MariaDB users. See [here](user-and-group-mapping-with-pam.md#pam-user-with-same-name-as-mapped-mariadb-user-must-exist) to read more about why. No one will be logging in as these users, so they do not need passwords.
 
-```
+```bash
 sudo useradd bar
 sudo useradd dba -g dba
 ```
@@ -47,7 +47,7 @@ Before the module can be compiled from source, we may need to install some depen
 
 On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), we need to install `gcc` and `pam-devel`:
 
-```
+```bash
 sudo yum install gcc pam-devel
 ```
 
@@ -59,7 +59,7 @@ sudo apt-get install gcc libpam0g-dev
 
 And then we can build and install the library with the following:
 
-```
+```bash
 wget https://raw.githubusercontent.com/MariaDB/server/10.4/plugin/auth_pam/mapper/pam_user_map.c 
 gcc pam_user_map.c -shared -lpam -fPIC -o pam_user_map.so 
 sudo install --mode=0755 pam_user_map.so /lib64/security/
@@ -92,7 +92,7 @@ Next, let's [configure the PAM service](authentication-plugin-pam.md#configuring
 
 Since we are only doing Unix authentication with the `pam_unix` PAM module and group mapping with the `pam_user_map` PAM module, our configuration file would look like this:
 
-```
+```ini
 auth required pam_unix.so audit
 auth required pam_user_map.so
 account required pam_unix.so audit
@@ -104,47 +104,43 @@ The `pam_unix` PAM module adds [some additional configuration steps](authenticat
 
 If the `mysql` user is running `mysqld`, then we can do that by executing the following:
 
-```
+```bash
 sudo groupadd shadow
 sudo usermod -a -G shadow mysql
 sudo chown root:shadow /etc/shadow
 sudo chmod g+r /etc/shadow
 ```
 
-The [server needs to be restarted](https://mariadb.com/kb/en/) for this change to take affect.
+The server needs to be restarted for this change to take affect.
 
 ## Creating MariaDB Users
 
 Next, let's [create the MariaDB users](authentication-plugin-pam.md#creating-users). Remember that our PAM service is called `mariadb`.
 
-First, let's create the MariaDB user for the user mapping: `foo: bar`
+First, let's create the MariaDB user for the user mapping: `foo: bar` . This means we need to create a `bar` user:
 
-That means that we need to create a `bar` user:
-
-```
+```sql
 CREATE USER 'bar'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'bar'@'%' ;
 ```
 
-And then let's create the MariaDB user for the group mapping: `@dba: dba`
+Next, let's create the MariaDB user for the group mapping: `@dba: dba` . This means that we need to create a `dba` user:
 
-That means that we need to create a `dba` user:
-
-```
+```sql
 CREATE USER 'dba'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dba'@'%' ;
 ```
 
-And then to allow for the user and group mapping, we need to [create an anonymous user that authenticates with the pam authentication plugin](user-and-group-mapping-with-pam.md#creating-users) that is also able to `PROXY` as the `bar` and `dba` users. Before we can create the proxy user, we might need to [clean up some defaults](../../../sql-statements/account-management-sql-statements/create-user.md#fixing-a-legacy-default-anonymous-account):
+Next, to allow for the user and group mapping, we need to [create an anonymous user that authenticates with the pam authentication plugin](user-and-group-mapping-with-pam.md#creating-users) that is also able to `PROXY` as the `bar` and `dba` users. Before we can create the proxy user, we might need to [clean up some defaults](../../../sql-statements/account-management-sql-statements/create-user.md#fixing-a-legacy-default-anonymous-account):
 
-```
+```sql
 DELETE FROM mysql.db WHERE User='' AND Host='%';
 FLUSH PRIVILEGES;
 ```
 
-And then let's create the anonymous proxy user:
+Finally, let's create the anonymous proxy user:
 
-```
+```sql
 CREATE USER ''@'%' IDENTIFIED VIA pam USING 'mariadb';
 GRANT PROXY ON 'bar'@'%' TO ''@'%';
 GRANT PROXY ON 'dba'@'%' TO ''@'%';
@@ -152,11 +148,11 @@ GRANT PROXY ON 'dba'@'%' TO ''@'%';
 
 ## Testing our Configuration
 
-Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), which is the original user name and the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md), which is the authenticated user name.
+Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of [USER()](../../../sql-functions/secondary-functions/information-functions/user.md), which is the original user name and the return value of [CURRENT\_USER()](../../../sql-functions/secondary-functions/information-functions/current_user.md), which is the authenticated user name.
 
-First, let's test out our `foo` user:
+First, let's test our `foo` user:
 
-```
+```bash
 $ mysql -u foo -h 172.30.0.198
 [mariadb] Password:
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
@@ -176,11 +172,11 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` Unix user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
+We can verify that our `foo` Unix user was properly mapped to the `bar` MariaDB user by looking at the return value of `CURRENT_USER()`.
 
-Then let's test out our `alice` user in the `dba` group:
+Next, let's test our `alice` user in the `dba` group:
 
-```
+```bash
 $ mysql -u alice -h 172.30.0.198
 [mariadb] Password:
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
@@ -200,9 +196,9 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-And then let's test out our `bob` user in the `dba` group:
+Finally, let's test our `bob` user in the `dba` group:
 
-```
+```bash
 $ mysql -u bob -h 172.30.0.198
 [mariadb] Password:
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
@@ -222,7 +218,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `alice` and `bob` Unix users in the `dba` Unix group were properly mapped to the `dba` MariaDB user by looking at the return values of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
+We can verify that our `alice` and `bob` Unix users in the `dba` Unix group were properly mapped to the `dba` MariaDB user by looking at the return values of `CURRENT_USER()`.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

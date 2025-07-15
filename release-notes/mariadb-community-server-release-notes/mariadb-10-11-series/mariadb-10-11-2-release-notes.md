@@ -1,8 +1,8 @@
 # MariaDB 10.11.2 Release Notes
 
-The most recent release of [MariaDB 10.11](what-is-mariadb-1011.md) is:[**MariaDB 10.11.11**](mariadb-10-11-11-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
+{% include "../../../.gitbook/includes/latest-10.11 (2).md" %}
 
-[Download](https://downloads.mariadb.org/mariadb/10.11.2)[Release Notes](mariadb-10-11-2-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-2-changelog.md)[Overview of 10.11](what-is-mariadb-1011.md)
+<a href="https://downloads.mariadb.org/mariadb/10.11.2/" class="button primary">Download</a> <a href="mariadb-10-11-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 **Release date:** 16 Feb 2023
 
@@ -10,7 +10,7 @@ The most recent release of [MariaDB 10.11](what-is-mariadb-1011.md) is:[**MariaD
 
 [MariaDB 10.11.2](mariadb-10-11-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the**[**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
+**For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the** [**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
 
 Thanks, and enjoy MariaDB!
 

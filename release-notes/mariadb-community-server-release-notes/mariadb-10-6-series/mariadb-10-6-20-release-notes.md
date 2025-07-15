@@ -1,16 +1,14 @@
 # MariaDB 10.6.20 Release Notes
 
-The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
 
-[Download 10.6.20](https://downloads.mariadb.org/mariadb/10.6.20/)[Release Notes](mariadb-10-6-20-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-20-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+<a href="https://downloads.mariadb.org/mariadb/10.6.20/" class="button primary">Download</a> <a href="mariadb-10-6-20-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-20-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 1 Nov 2024
 
 [MariaDB 10.6](what-is-mariadb-106.md) is a current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.20](mariadb-10-6-20-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -53,7 +51,7 @@ Thanks, and enjoy MariaDB!
 * Modification of the column now correctly checks foreign key constraint ([MDEV-34392](https://jira.mariadb.org/browse/MDEV-34392))
 * Fix incorrect NULL value handling for instantly dropped BLOB columns ([MDEV-35122](https://jira.mariadb.org/browse/MDEV-35122))
 
-### [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md)
+### [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/)
 
 * Galera updated to 26.4.20
 * Fix server crash when setting wsrep\_cluster\_address after adding invalid value to wsrep\_allowlist table ([MDEV-31173](https://jira.mariadb.org/browse/MDEV-31173))
@@ -84,11 +82,6 @@ Thanks, and enjoy MariaDB!
 * Trigger now works correctly with bulk update ([MDEV-34718](https://jira.mariadb.org/browse/MDEV-34718))
 * Fix assertion failure in find\_producing\_item upon a query from a view ([MDEV-35276](https://jira.mariadb.org/browse/MDEV-35276))
 * Add new setting, [--quick-max-column-width](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-quick-max-column-widthn) to the mariadb client for use in --quick mode ([MDEV-34704](https://jira.mariadb.org/browse/MDEV-34704))
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-`-``#`
 
 ## Changelog
 

@@ -1,8 +1,8 @@
 # MariaDB 10.6.2 Release Notes
 
-The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
 
-[Download 10.6.2](https://downloads.mariadb.org/mariadb/10.6.2/)[Release Notes](mariadb-1062-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-1062-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+<a href="https://downloads.mariadb.org/mariadb/10.6.2/" class="button primary">Download</a> <a href="mariadb-1062-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-1062-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 18 Jun 2021
 
@@ -11,11 +11,7 @@ of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) wi
 
 [MariaDB 10.6.2](mariadb-1062-release-notes.md) is a [_**Release Candidate (RC)**_](../../mariadb-release-criteria.md) release.
 
-**Do not use non-stable (non-GA) releases in production!**
-
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
-
-[Register now for our MariaDB Community Server 10.6 webinar to be held 2021-06-29](https://go.mariadb.com/21Q3-WBN-GLBL-OSSG-Community-Server-10.6-2021-06-22_Registration-LP.html?utm_source=KB) and be one of the first to see the biggest features coming in MariaDB Community Server 10.6, with an exclusive opportunity to have your questions answered by MariaDB engineering and product leads.
+{% include "../../.gitbook/includes/non-stable.md" %}
 
 Thanks, and enjoy MariaDB!
 
@@ -35,7 +31,7 @@ Thanks, and enjoy MariaDB!
 
 * Error messages now use "MariaDB" instead of "MySQL" ([MDEV-22189](https://jira.mariadb.org/browse/MDEV-22189))
 * Implement `FLUSH TABLES tbl_name [, tbl_name] ... WITH READ LOCK` for views ([MDEV-15888](https://jira.mariadb.org/browse/MDEV-15888))
-* All statements can be prepared, except [PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement), [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement), and [DEALLOCATE / DROP PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/deallocate-drop-prepare) ([MDEV-16708](https://jira.mariadb.org/browse/MDEV-16708))
+* All statements can be prepared, except [PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement), [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-statement), and [DEALLOCATE / DROP PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/deallocate-drop-prepare) ([MDEV-16708](https://jira.mariadb.org/browse/MDEV-16708))
 
 ## Changelog
 

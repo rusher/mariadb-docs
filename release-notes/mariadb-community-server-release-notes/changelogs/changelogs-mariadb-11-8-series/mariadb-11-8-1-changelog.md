@@ -1,14 +1,14 @@
 # MariaDB 11.8.1 Changelog
 
-[Download](https://mariadb.com/downloads/)[Release Notes](../../mariadb-11-8-series/mariadb-11-8-1-release-notes.md)[Changelog](mariadb-11-8-1-changelog.md)[Overview of 11.8](../../mariadb-11-8-series/what-is-mariadb-118.md)
+{% include "../../../.gitbook/includes/latest-11-8.md" %}
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.1/)
+<a href="https://downloads.mariadb.org/mariadb/11.8.1/" class="button primary">Download</a> <a href="../../mariadb-11-8-series/mariadb-11-8-1-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-11-8-1-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-11-8-series/what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 **Release date:** 13 Feb 2025
 
-For the highlights of this release, see the[release notes](../../mariadb-11-8-series/mariadb-11-8-1-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-11-8-series/mariadb-11-8-1-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/11.8) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/11.8) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Changes from [11.8.0](../../mariadb-11-8-series/mariadb-11-8-0-release-notes.md) are also included in this changelog

@@ -8,13 +8,13 @@ Although the plugin's shared library is distributed with MariaDB by default, the
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
-```
+```sql
 INSTALL SONAME 'metadata_lock_info';
 ```
 
 The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = metadata_lock_info
@@ -24,7 +24,7 @@ plugin_load_add = metadata_lock_info
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
-```
+```sql
 UNINSTALL SONAME 'metadata_lock_info';
 ```
 
@@ -34,7 +34,7 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 
 ### Viewing all Metadata Locks
 
-```
+```sql
 SELECT * FROM information_schema.metadata_lock_info;  
 +-----------+--------------------------+---------------+----------------------+-----------------+-------------+
 | THREAD_ID | LOCK_MODE                | LOCK_DURATION | LOCK_TYPE            | TABLE_SCHEMA    | TABLE_NAME  |  
@@ -49,7 +49,7 @@ SELECT * FROM information_schema.metadata_lock_info;
 
 ### Matching Metadata Locks with Threads and Queries
 
-```
+```sql
 SELECT 
 CONCAT('Thread ',P.ID,' executing "',P.INFO,'" IS LOCKED BY Thread ',
 M.THREAD_ID) WhoLocksWho 
@@ -73,14 +73,6 @@ SHOW PROCESSLIST;
 +----+------+-----------+------+---------+------+------------------------------+----------------------------------------+----------+
 3 rows in set (0.00 sec)
 ```
-
-## Versions
-
-| Version | Status | Introduced                                                                                                                                                                          |
-| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0.1     | Stable | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/other-plugins/broken-reference/README.md)                                   |
-| 0.1     | Beta   | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
-| 0.1     | Alpha  | [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes)   |
 
 ## Options
 

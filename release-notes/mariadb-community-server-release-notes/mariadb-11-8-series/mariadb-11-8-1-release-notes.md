@@ -1,8 +1,8 @@
 # MariaDB 11.8.1 Release Notes
 
-<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-11-8-1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-8-series/mariadb-11-8-1-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
+{% include "../../.gitbook/includes/latest-11-8.md" %}
 
-[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.8.1/)
+<a href="https://downloads.mariadb.org/mariadb/11.8.1/" class="button primary">Download</a> <a href="mariadb-11-8-1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-8-series/mariadb-11-8-1-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 **Release date:** 13 Feb 2025
 
@@ -12,7 +12,7 @@
 
 [MariaDB 11.8.1](mariadb-11-8-1-release-notes.md) is a [_**Release Candidate (RC)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.8**](what-is-mariadb-118.md) **see the**[**What is MariaDB 11.8?**](what-is-mariadb-118.md) **page.**
+**For an overview of** [**MariaDB 11.8**](what-is-mariadb-118.md) **see the** [**What is MariaDB 11.8?**](what-is-mariadb-118.md) **page.**
 
 Thanks, and enjoy MariaDB!
 

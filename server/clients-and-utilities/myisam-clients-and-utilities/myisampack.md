@@ -25,7 +25,7 @@ allowing for quicker reading.
 Once a table has been packed, use [myisamchk -rq](myisamchk.md) (the quick\
 and recover options) to rebuild its indexes.
 
-`myisampack` does not support partitioned tables.
+`myisampack` does not support partitioned tables or vector indexes.
 
 {% hint style="danger" %}
 Do not run myisampack if the tables could be updated during the operation, and[skip\_external\_locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking) has been set.

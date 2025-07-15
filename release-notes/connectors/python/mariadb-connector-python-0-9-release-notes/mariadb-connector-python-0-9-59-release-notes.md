@@ -1,20 +1,18 @@
-# MariaDB Connector/Python 0.9.59-beta Release Notes
+# Connector/Python 0.9.59-beta Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/Python is:[**MariaDB Connector/Python 1.1.12**](../mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-12-release-notes.md)
+{% include "../../../.gitbook/includes/latest-python.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-python-0-9-59-release-notes.md)[Changelog](../changelogs/mariadb-connector-python-09-changelogs/mariadb-connector-python-0959-changelog.md)[Connector/Python Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-connector-python/README.md)
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/" class="button primary">Download</a> <a href="mariadb-connector-python-0-9-59-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/mariadb-connector-python-09-changelogs/mariadb-connector-python-0959-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide" class="button secondary">Connector/Python Overview</a>
 
 **Release date:** 26 May 2020
 
-This is a [_**beta**_](../../../mariadb-release-criteria.md) release of the MariaDB\
-Connector/Python and not intended for production use.
+This is a [_**beta**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/Python and not intended for production use.
 
+{% hint style="danger" %}
 **Do not use&#x20;**_**beta**_**&#x20;releases in production!**
+{% endhint %}
 
-MariaDB Connector/Python enables python programs to access MariaDB and MySQL\
-databases, using an API which is compliant with the Python DB API 2.0\
-(PEP-249). It is written in C and uses MariaDB Connector/C client library for\
-client server communication.
+MariaDB Connector/Python enables python programs to access MariaDB and MySQL databases, using an API which is compliant with the Python DB API 2.0 (PEP-249). It is written in C and uses MariaDB Connector/C client library for client server communication.
 
 ## Notable Updates
 

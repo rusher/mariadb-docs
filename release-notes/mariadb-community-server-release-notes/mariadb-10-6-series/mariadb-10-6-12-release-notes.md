@@ -1,6 +1,8 @@
 # MariaDB 10.6.12 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.6.12)[Release Notes](mariadb-10-6-12-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-12-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
+
+<a href="https://downloads.mariadb.org/mariadb/10.6.12/" class="button primary">Download</a> <a href="mariadb-10-6-12-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-12-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 6 Feb 2023
 
@@ -8,13 +10,11 @@
 
 [MariaDB 10.6.12](mariadb-10-6-12-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
-
 Thanks, and enjoy MariaDB!
 
 ## Notable Items
 
-* As mentioned in the [10.6.11 release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-6-series/broken-reference/README.md), our Yum/DNF/Zypper repositories for Red Hat Enterprise Linux, CentOS, Fedora, openSUSE, and SUSE are changing with this release to being signed with a new GPG key with SHA2 digest algorithms instead of SHA1. See [this blog post](https://mariadb.org/new-gpg-release-key-rpms/) and the [GPG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/gpg) page for more details.
+* As mentioned in the [10.6.11 release notes](mariadb-10-6-11-release-notes.md), our Yum/DNF/Zypper repositories for Red Hat Enterprise Linux, CentOS, Fedora, openSUSE, and SUSE are changing with this release to being signed with a new GPG key with SHA2 digest algorithms instead of SHA1. See [this blog post](https://mariadb.org/new-gpg-release-key-rpms/) and the [GPG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/gpg) page for more details.
 
 ### InnoDB
 
@@ -33,7 +33,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.14
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.14
 * Fixes for cluster wide write conflict resolving ([MDEV-29684](https://jira.mariadb.org/browse/MDEV-29684))
 
 ### Replication
@@ -54,11 +54,6 @@ Thanks, and enjoy MariaDB!
 * Major performance regression with 10.6.11 ([MDEV-29988](https://jira.mariadb.org/browse/MDEV-29988))
 * As per the [MariaDB Deprecation Policy](../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.6](what-is-mariadb-106.md) for Fedora 35.
 * In this release repositories for Fedora 37 and Ubuntu 22.10 Kinetic have been added.
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
 
 ## Changelog
 

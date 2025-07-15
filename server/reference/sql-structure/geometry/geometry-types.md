@@ -2,28 +2,23 @@
 
 ## Description
 
-MariaDB provides a standard way of creating spatial columns for geometry types,\
-for example, with [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/).\
-Currently, spatial columns are supported for [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/) and [ARCHIVE](../../../server-usage/storage-engines/archive.md)\
+MariaDB provides a standard way of creating spatial columns for geometry types, for example, with [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/). Spatial columns are supported for [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/) and [ARCHIVE](../../../server-usage/storage-engines/archive.md)\
 tables. See also [SPATIAL INDEX](spatial-index.md).
 
-The basic geometry type is `GEOMETRY`. But the type can be more specific. The following types are supported:
+The basic geometry type is `GEOMETRY`, but the type can be more specific. The following types are supported:
 
-| Geometry Types                                                                                               |
-| ------------------------------------------------------------------------------------------------------------ |
-| [POINT](../../sql-statements/geometry-constructors/geometry-constructors/point.md)                           |
-| [LINESTRING](../../sql-statements/geometry-constructors/geometry-constructors/linestring.md)                 |
-| [POLYGON](../../sql-statements/geometry-constructors/geometry-constructors/polygon.md)                       |
-| [MULTIPOINT](../../sql-statements/geometry-constructors/geometry-constructors/multipoint.md)                 |
-| [MULTILINESTRING](../../sql-statements/geometry-constructors/geometry-constructors/multilinestring.md)       |
-| [MULTIPOLYGON](../../sql-statements/geometry-constructors/geometry-constructors/multipolygon.md)             |
-| [GEOMETRYCOLLECTION](../../sql-statements/geometry-constructors/geometry-constructors/geometrycollection.md) |
-| GEOMETRY                                                                                                     |
+* [POINT](../../sql-statements/geometry-constructors/geometry-constructors/point.md)
+* [LINESTRING](../../sql-statements/geometry-constructors/geometry-constructors/linestring.md)
+* [POLYGON](../../sql-statements/geometry-constructors/geometry-constructors/polygon.md)
+* [MULTIPOINT](../../sql-statements/geometry-constructors/geometry-constructors/multipoint.md)
+* [MULTILINESTRING](../../sql-statements/geometry-constructors/geometry-constructors/multilinestring.md)
+* [MULTIPOLYGON](../../sql-statements/geometry-constructors/geometry-constructors/multipolygon.md)
+* [GEOMETRYCOLLECTION](../../sql-statements/geometry-constructors/geometry-constructors/geometrycollection.md)
+* GEOMETRY
 
 ## Examples
 
-**Note:** For clarity, only one type is listed per table in the examples below, but a table\
-row can contain multiple types. For example:
+**Note:** For clarity, only one type is listed per table in the examples below, but a table row can contain multiple types.
 
 ```sql
 CREATE TABLE object (shapeA POLYGON, shapeB LINESTRING);

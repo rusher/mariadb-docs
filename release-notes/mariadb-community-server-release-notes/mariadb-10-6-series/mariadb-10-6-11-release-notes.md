@@ -1,16 +1,14 @@
 # MariaDB 10.6.11 Release Notes
 
-The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
 
-[Download 10.6.11](https://downloads.mariadb.org/mariadb/10.6.11/)[Release Notes](mariadb-10-6-11-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+<a href="https://downloads.mariadb.org/mariadb/10.6.11/" class="button primary">Download</a> <a href="mariadb-10-6-11-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 7 Nov 2022
 
 [MariaDB 10.6](what-is-mariadb-106.md) is the current long-term maintenance stable series of MariaDB, maintained until July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.11](mariadb-10-6-11-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -36,7 +34,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.13
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.13
 * Galera server crashes after 10.3 > 10.4 upgrade ([MDEV-29375](https://jira.mariadb.org/browse/MDEV-29375))
 * [wsrep\_incoming\_addresses](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_incoming_addresses) status variable prints 0 as port number if the port is not mentioned in [wsrep\_node\_incoming\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_incoming_address) system variable ([MDEV-28868](https://jira.mariadb.org/browse/MDEV-28868))
 
@@ -65,11 +63,6 @@ The following changes have been made to the `docker.io/library/mariadb` containe
 * The environment variable `LANG=C.UTF-8` has been added for those that exec into containers and copy paste UTF8 characters (fixes [issue #468](https://github.com/MariaDB/mariadb-docker/issues/468)).
 * Adds OCI labels to image (fixes [issue 436](https://github.com/MariaDB/mariadb-docker/issues/436) and [users need for version](https://github.com/MariaDB/mariadb-docker/commit/942cd5347b86c84cc4d493147b17c3e3b93fbee3))
 * MariaDB config: skip-host-cache and skip-name-resolve moved to `/etc/mysql/mariadb.conf.d/05-skipcache.cnf`
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
 
 ## Changelog
 

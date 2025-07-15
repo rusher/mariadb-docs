@@ -1,3 +1,10 @@
+---
+description: >-
+  Understand operator precedence in MariaDB Server SQL. This section details the
+  order in which operators are evaluated within expressions, crucial for writing
+  accurate and predictable queries.
+---
+
 # Operator Precedence
 
 The precedence is the order in which the SQL operators are evaluated.
@@ -10,7 +17,7 @@ The following list shows the SQL operator precedence. Operators that appear firs
 * [-](arithmetic-operators/subtraction-operator-.md) (unary minus), [bitwise not](../../sql-functions/secondary-functions/bit-functions-and-operators/bitwise-not.md) () (unary bit inversion)
 * `||` (string concatenation)
 * [^](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise-xor.md)
-* [*](../sql-statements/built-in-functions/numeric-functions/multiplication-operator.md), [/](../sql-statements/built-in-functions/numeric-functions/division-operator.md), [DIV](../sql-statements/built-in-functions/numeric-functions/div.md), [%](arithmetic-operators/modulo-operator.md), [MOD](../sql-statements/built-in-functions/numeric-functions/mod.md)
+* [\*](../sql-statements/built-in-functions/numeric-functions/multiplication-operator.md), [/](../sql-statements/built-in-functions/numeric-functions/division-operator.md), [DIV](../sql-statements/built-in-functions/numeric-functions/div.md), [%](arithmetic-operators/modulo-operator.md), [MOD](../sql-statements/built-in-functions/numeric-functions/mod.md)
 * [-](arithmetic-operators/subtraction-operator-.md), [+](../sql-statements/built-in-functions/numeric-functions/addition-operator.md)
 * [<<](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/shift-left.md), [>>](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/shift-right.md)
 * [&](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise_and.md)

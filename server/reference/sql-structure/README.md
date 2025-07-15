@@ -1,5 +1,21 @@
+---
+description: >-
+  Explore the SQL structure in MariaDB Server. This section provides a
+  fundamental overview of SQL syntax, components, and concepts that form the
+  basis for interacting with your database.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
-# SQL Statements & Structure
-
-The letters *SQL* stand for Structured Query Language. As with all languages—even computer languages—there are grammar rules. This includes a certain structure to statements, acceptable punctuation (i.e., operators and delimiters), and a vocabulary (i.e., reserve words).
+# SQL Structure
 

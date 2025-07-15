@@ -1,6 +1,23 @@
-# Temporal Tables
+---
+description: >-
+  Explore temporal tables in MariaDB Server. This section details how to manage
+  data with system-versioning and application-time periods, enabling historical
+  data tracking and time-aware queries.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
-MariaDB supports temporal data tables in the form of system-versioned tables (allowing you to query and operate on historic data), application-time periods (allow you to query and operate on a temporal range of data), and bitemporal tables (which combine both system-versioning and application-time periods).
+# Temporal Tables
 
 {% content-ref url="system-versioned-tables.md" %}
 [system-versioned-tables.md](system-versioned-tables.md)

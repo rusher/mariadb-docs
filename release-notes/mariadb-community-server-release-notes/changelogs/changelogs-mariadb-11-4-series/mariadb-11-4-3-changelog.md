@@ -1,14 +1,14 @@
 # MariaDB 11.4.3 Changelog
 
-The most recent release of [MariaDB 11.4](../../mariadb-11-4-series/what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](../../mariadb-11-4-series/mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../../.gitbook/includes/latest-11-4.md" %}
 
-[Download 11.4.3](https://downloads.mariadb.org/mariadb/11.4.3/)[Release Notes](../../mariadb-11-4-series/mariadb-11-4-3-release-notes.md)[Changelog](mariadb-11-4-3-changelog.md)[Overview of 11.4](../../mariadb-11-4-series/what-is-mariadb-114.md)
+<a href="https://downloads.mariadb.org/mariadb/11.4.3/" class="button primary">Download</a> <a href="../../mariadb-11-4-series/mariadb-11-4-3-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-11-4-3-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-11-4-series/what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 **Release date:** 8 Aug 2024
 
-For the highlights of this release, see the[release notes](../../mariadb-11-4-series/mariadb-11-4-3-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-11-4-series/mariadb-11-4-3-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/11.4) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/11.4) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 11.3.2](../changelogs-mariadb-11-3-series/mariadb-11-3-2-changelog.md)

@@ -1,12 +1,10 @@
 # Disks Plugin
 
-The `DISKS` plugin creates the [DISKS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-disks-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. This table shows metadata about disks on the system.
+The `DISKS` plugin creates the [DISKS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-disks-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. This table shows metadata about disks on the system. It required the [FILE privilege](../../sql-statements/account-management-sql-statements/grant.md).
 
-Before [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes) and [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes), this plugin did **not** check [user privileges](../../sql-statements/account-management-sql-statements/grant.md). When it is enabled, **any** user can query the `INFORMATION_SCHEMA.DISKS` table and see all the information it provides.
-
-Since [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes) and [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes) , it required the [FILE privilege](../../sql-statements/account-management-sql-statements/grant.md).
-
+{% hint style="info" %}
 The plugin only works on Linux.
+{% endhint %}
 
 ## Installing the Plugin
 
@@ -14,13 +12,13 @@ Although the plugin's shared library is distributed with MariaDB by default, the
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
-```
+```sql
 INSTALL SONAME 'disks';
 ```
 
 The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = disks
@@ -30,7 +28,7 @@ plugin_load_add = disks
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
-```
+```sql
 UNINSTALL SONAME 'disks';
 ```
 
@@ -38,7 +36,7 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.DISKS;
 
 +-----------+-------+----------+---------+-----------+

@@ -8,13 +8,13 @@ Although the plugin's shared library is distributed with MariaDB by default, the
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
-```
+```sql
 INSTALL SONAME 'query_cache_info';
 ```
 
 The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = query_cache_info
@@ -24,7 +24,7 @@ plugin_load_add = query_cache_info
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
-```
+```sql
 UNINSTALL SONAME 'query_cache_info';
 ```
 
@@ -32,24 +32,15 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 
 ## Example
 
-```
-select statement_schema, statement_text, result_blocks_count, 
-  result_blocks_size from information_schema.query_cache_info;
+```sql
+SELECT statement_schema, statement_text, result_blocks_count, 
+  result_blocks_size FROM information_schema.query_cache_info;
 +------------------+------------------+---------------------+--------------------+
 | statement_schema | statement_text   | result_blocks_count | result_blocks_size |
 +------------------+------------------+---------------------+--------------------+
-| test             | select * from t1 |                   1 |                512 |
+| test             | SELECT * FROM t1 |                   1 |                512 |
 +------------------+------------------+---------------------+--------------------+
 ```
-
-## Versions
-
-| Version | Status | Introduced                                                                                                                                                                          |
-| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.1     | Stable | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/other-plugins/broken-reference/README.md)                                   |
-| 1.1     | Gamma  | [MariaDB 10.1.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-8-release-notes) |
-| 1.0     | Gamma  | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
-| 1.0     | Alpha  | [MariaDB 5.5.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes)    |
 
 ## Options
 

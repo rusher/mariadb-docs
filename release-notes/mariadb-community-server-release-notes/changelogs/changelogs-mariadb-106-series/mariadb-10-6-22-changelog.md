@@ -1,15 +1,14 @@
 # MariaDB 10.6.22 Changelog
 
-**Note:** This page describes features in the source repository for [**MariaDB 10.6**](../../mariadb-10-6-series/what-is-mariadb-106.md). There are currently no official packages or\
-binaries available for download which contain the features. If you want to try out any of the new features described here you will\
-need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
-code yourself.
+<a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="../../mariadb-10-6-series/mariadb-10-6-22-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-10-6-22-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-6-series/what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
-[Download](https://mariadb.com/downloads/)[Release Notes](../../mariadb-10-6-series/mariadb-10-6-22-release-notes.md)[Changelog](mariadb-10-6-22-changelog.md)[Overview of 10.6](../../mariadb-10-6-series/what-is-mariadb-106.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.22/)**Release date:** ?
+[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.22/)
 
-For the highlights of this release, see the[release notes](../../mariadb-10-6-series/mariadb-10-6-22-release-notes.md).
+**Release date:** 8 May 2025
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.6) you can view more\
+For the highlights of this release, see the [release notes](../../mariadb-10-6-series/mariadb-10-6-22-release-notes.md).
+
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.6) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.5.29](../changelogs-mariadb-105-series/mariadb-10-5-29-changelog.md)

@@ -1,16 +1,14 @@
 # MariaDB 10.6.19 Release Notes
 
-The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
 
-[Download 10.6.19](https://downloads.mariadb.org/mariadb/10.6.19/)[Release Notes](mariadb-10-6-19-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-19-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+<a href="https://downloads.mariadb.org/mariadb/10.6.19/" class="button primary">Download</a> <a href="mariadb-10-6-19-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-19-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 8 Aug 2024
 
 [MariaDB 10.6](what-is-mariadb-106.md) is a current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.19](mariadb-10-6-19-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -82,7 +80,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.19
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.19
   * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 * `galera_gtid_2_cluster`: Assertion \`\`thd->wsrep\_next\_trx\_id() != (0x7fffffffffffffffLL \* 2ULL + 1)'\` ([MDEV-32633](https://jira.mariadb.org/browse/MDEV-32633))
 * table `gtid_slave_pos` entries never been deleted with `wsrep_gtid_mode = 0` ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))
@@ -107,11 +105,6 @@ Thanks, and enjoy MariaDB!
 * [Triggers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/triggers-events/triggers) now work correctly with bulk insert ([MDEV-24411](https://jira.mariadb.org/browse/MDEV-24411))
 * Fix assertion \`\`table->field\[0]->ptr >= table->record\[0] && table->field\[0]->ptr <= table->record\[0] + table->s->reclength'`failed in`void handler::assert\_icp\_limitations(uchar\*)\` ([MDEV-34632](https://jira.mariadb.org/browse/MDEV-34632))
 * [sandbox mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-sandbox) - now compatible with [--binary-mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-binary-mode) ([MDEV-34203](https://jira.mariadb.org/browse/MDEV-34203))
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-`-``#`
 
 ## Changelog
 

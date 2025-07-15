@@ -1,16 +1,14 @@
 # MariaDB 10.6.18 Release Notes
 
-The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
 
-[Download 10.6.18](https://downloads.mariadb.org/mariadb/10.6.18/)[Release Notes](mariadb-10-6-18-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-18-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+<a href="https://downloads.mariadb.org/mariadb/10.6.18/" class="button primary">Download</a> <a href="mariadb-10-6-18-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-18-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 16 May 2024
 
 [MariaDB 10.6](what-is-mariadb-106.md) is a current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.18](mariadb-10-6-18-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -71,13 +69,13 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 
 ### Backup
 
-* [mariadb-backup](broken-reference/) now preserves [innodb\_encrypt\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_tables) ([MDEV-33334](https://jira.mariadb.org/browse/MDEV-33334))
-* Fix [mariadb-backup](broken-reference/) problem on older mariadb (opendir(NULL)) caused by [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251))
-* Fix [mariadb-backup --backup](broken-reference/) FATAL ERROR: ... Can't open datafile cool\_down/t3 ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011))
-* [mariadb-backup --backup](broken-reference/) now includes retry logic for undo tablespaces ([MDEV-33980](https://jira.mariadb.org/browse/MDEV-33980))
-* Fix crash recovery in [mariadb-backup --prepare](broken-reference/) due to insufficient [innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_file_size) ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540))
-* Fix crash in [mariadb-backup --prepare --export](broken-reference/) after `--prepare` ([MDEV-33023](https://jira.mariadb.org/browse/MDEV-33023))
-* [mariadb-backup](broken-reference/) now considers O/S user when `--user` option is omitted ([MDEV-32893](https://jira.mariadb.org/browse/MDEV-32893))
+* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) now preserves [innodb\_encrypt\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_tables) ([MDEV-33334](https://jira.mariadb.org/browse/MDEV-33334))
+* Fix [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) problem on older mariadb (opendir(NULL)) caused by [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251))
+* Fix [mariadb-backup --backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#backup) FATAL ERROR: ... Can't open datafile cool\_down/t3 ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011))
+* [mariadb-backup --backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#backup) now includes retry logic for undo tablespaces ([MDEV-33980](https://jira.mariadb.org/browse/MDEV-33980))
+* Fix crash recovery in [mariadb-backup --prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#prepare) due to insufficient [innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_file_size) ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540))
+* Fix crash in mariadb-backup [--prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#prepare) [--export](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#export) after `--prepare` ([MDEV-33023](https://jira.mariadb.org/browse/MDEV-33023))
+* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) now considers O/S user when `--user` option is omitted ([MDEV-32893](https://jira.mariadb.org/browse/MDEV-32893))
 
 ### [Character Sets](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets), [Data Types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types)
 
@@ -129,7 +127,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 
 #### Galera
 
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.18
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.18
   * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 * Disallow bulk insert operation during partition update statement ([MDEV-33979](https://jira.mariadb.org/browse/MDEV-33979))
 

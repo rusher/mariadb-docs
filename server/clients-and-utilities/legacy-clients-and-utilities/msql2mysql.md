@@ -26,7 +26,7 @@ client-prog.c converted
 After conversion, examine `client-prog.c` and make any necessary\
 post-conversion revisions.
 
-`msql2mysql` uses the [replace](replace-utility.md) utility to make the function name\
+`msql2mysql` uses the [replace](../administrative-tools/replace-utility.md#options) utility to make the function name\
 substitutions.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

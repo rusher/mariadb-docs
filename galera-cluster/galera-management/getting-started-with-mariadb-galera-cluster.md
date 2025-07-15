@@ -1,11 +1,11 @@
 # Getting Started with MariaDB Galera Cluster
 
-The most recent release of [MariaDB 10.11](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) is: [**MariaDB 10.11.11**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes) Stable (GA) [Download Now](https://mariadb.com/downloads/), [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
+The most recent release of [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) is: [**MariaDB 10.11.11**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-11-release-notes) Stable (GA) [Download Now](https://mariadb.com/downloads/), [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
 
-The current [versions](../readme/mariadb-galera-cluster-guide.md#galera-versions) of the Galera wsrep provider library are 26.4.21 for [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) 4._For convenience, packages containing these libraries are included in the MariaDB_ [_YUM and APT repositories_](https://downloads.mariadb.org/mariadb/repositories/)_._
+The current [versions](../readme/mariadb-galera-cluster-guide.md#galera-versions) of the Galera wsrep provider library are 26.4.21 for [Galera](../) 4. _For convenience, packages containing these libraries are included in the MariaDB_ [_YUM and APT repositories_](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum)_._
 
-Currently, MariaDB Galera Cluster only supports the [InnoDB](https://mariadb.com/docs/server/server-usage/storage-engines/innodb) storage engine (although there is\
-experimental support for [MyISAM](https://mariadb.com/docs/server/server-usage/storage-engines/myisam-storage-engine) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria)).
+Currently, MariaDB Galera Cluster only supports the [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) storage engine (although there is\
+experimental support for [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria)).
 
 A great resource for Galera users is the mailing list run by the developers at Codership. It can be found at [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team). If you use Galera, then it is recommended you subscribe.
 
@@ -17,13 +17,13 @@ MariaDB Galera Cluster is powered by:
 * The [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch for MySQL Server and MariaDB Server developed by [Codership](https://www.codership.com). The patch currently supports only Unix-like operating systems.
 * The [Galera wsrep provider library](https://github.com/codership/galera/).
 
-The [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch has been merged into MariaDB Server. This means that the functionality of MariaDB Galera Cluster can be obtained by installing the standard MariaDB Server packages and the [Galera wsrep provider library](https://github.com/codership/galera/) package. The following [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) version corresponds to each MariaDB Server version:
+The [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch has been merged into MariaDB Server. This means that the functionality of MariaDB Galera Cluster can be obtained by installing the standard MariaDB Server packages and the [Galera wsrep provider library](https://github.com/codership/galera/) package. The following [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) version corresponds to each MariaDB Server version:
 
-* MariaDB Galera Cluster uses [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) 4. This means that the [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch is version 26 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 4.
+* MariaDB Galera Cluster uses [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 4. This means that the [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch is version 26 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 4.
 
 See [Deciphering Galera Version Numbers](https://mariadb.com/resources/blog/deciphering-galera-version-numbers/) for more information about how to interpret these version numbers.
 
-See [What is MariaDB Galera Cluster?: Galera Versions](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md#galera-versions) for more information about which specific [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) version is included in each release of MariaDB Server.
+See [What is MariaDB Galera Cluster: Galera Versions](../) for more information about which specific [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) version is included in each release of MariaDB Server.
 
 In supported builds, Galera Cluster functionality can be enabled by setting some configuration options that are mentioned below. Galera Cluster functionality is not enabled in a standard MariaDB Server installation unless explicitly enabled with these configuration options.
 
@@ -31,20 +31,19 @@ In supported builds, Galera Cluster functionality can be enabled by setting some
 
 ### Swap Size Requirements
 
-During normal operation a MariaDB Galera node does not consume much more memory\
-than a regular MariaDB server. Additional memory is consumed for the\
-certification index and uncommitted writesets, but normally this should not be\
-noticeable in a typical application. There is one exception though:
+During normal operation, a MariaDB Galera node consumes no more memory than a regular MariaDB server. Additional memory is consumed for the\
+certification index and uncommitted write sets, but normally, this should not be\
+noticeable in a typical application. There is one exception, though:
 
 1. Writeset caching during state transfer. When a node is receiving a state\
-   transfer it cannot process and apply incoming writesets because it has no\
+   transfer, it cannot process and apply incoming writesets because it has no\
    state to apply them to yet. Depending on a state transfer mechanism (e.g.[mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump)) the node that sends the state transfer may not be able to\
-   apply writesets as well. Thus they need to cache those writesets for a\
+   apply writesets as well. Thus, they need to cache those writesets for a\
    catch-up phase. Currently the writesets are cached in memory and, if the\
    system runs out of memory either the state transfer will fail or the cluster\
    will block waiting for the state transfer to end.
 
-To control memory usage for writeset caching, check the [Galera parameters](https://galeracluster.com/library/documentation/galera-parameters.html): `gcs.recv_q_hard_limit`, `gcs.recv_q_soft_limit`, and `gcs.max_throttle`.
+To control memory usage for writeset caching, check the [Galera parameters](../reference/galera-cluster-system-variables.md): `gcs.recv_q_hard_limit`, `gcs.recv_q_soft_limit`, and `gcs.max_throttle`.
 
 ### Limitations
 
@@ -59,20 +58,20 @@ To use MariaDB Galera Cluster, there are two primary packages that you need to i
 
 As mentioned in the previous section, Galera Cluster support is actually included in the standard MariaDB Server packages. That means that installing MariaDB Galera Cluster package is the same as installing standard MariaDB Server package in those versions. However, you will also have to install an additional package to obtain the Galera wsrep provider library.
 
-Some [SST](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) methods may also require additional packages to be installed. The [mariadb-backup](state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md) SST method is generally the best option for large clusters that expect a lot of load.
+Some [SST](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) methods may also require additional packages to be installed. The [mariadb-backup](state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md) SST method is generally the best option for large clusters that expect a lot of loads.
 
 ### Installing MariaDB Galera Cluster with a Package Manager
 
 MariaDB Galera Cluster can be installed via a package manager on Linux. In order to do so, your system needs to be configured to install from one of the MariaDB repositories.
 
-You can configure your package manager to install it from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage).
+You can configure your package manager to install it from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage).
 
-You can also configure your package manager to install it from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/).
+You can also configure your package manager to install it from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options).
 
 #### Installing MariaDB Galera Cluster with yum/dnf
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm) from MariaDB's\
-repository using [yum](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) or [dnf](https://en.wikipedia.org/wiki/DNF_\(software\)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`.
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/mariadb-rpm-packages) from MariaDB's\
+repository using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) or [dnf](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum#adding-the-mariadb-yum-repository). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`.
 
 To install MariaDB Galera Cluster with `yum` or `dnf`, follow the instructions at [Installing MariaDB Galera Cluster with yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum).
 
@@ -85,7 +84,7 @@ To install MariaDB Galera Cluster with `apt-get`, follow the instructions at [In
 
 #### Installing MariaDB Galera Cluster with zypper
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm) from MariaDB's repository using [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper).
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/mariadb-rpm-packages) from MariaDB's repository using [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper).
 
 To install MariaDB Galera Cluster with `zypper`, follow the instructions at [Installing MariaDB Galera Cluster with ZYpp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper#installing-mariadb-galera-cluster-with-zypp).
 

@@ -6,7 +6,7 @@
 
 **Release date:** 24 December 2023
 
-**Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
+{% include "../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.4](what-is-mariadb-114.md) is a long-term development series of MariaDB. It is an evolution of [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md) with several entirely new features.
 
@@ -20,7 +20,7 @@ Thanks, and enjoy MariaDB!
 
 ## Partitioning
 
-* [ALTER TABLE … EXCHANGE PARTITION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables/partitioning-overview#exchanging-partitions) and [ALTER TABLE … CONVERT TABLE … TO](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) now support the `WITH VALIDATION` and `WITHOUT VALIDATION` clauses. If neither is specified, the default behavior is `WITH VALIDATION` ([MDEV-22164](https://jira.mariadb.org/browse/MDEV-22164))
+* [ALTER TABLE … EXCHANGE PARTITION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables/partitioning-overview#exchanging-partitions) and [ALTER TABLE … CONVERT TABLE … TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables/partitioning-overview#converting-partitions-to-from-tables) now support the `WITH VALIDATION` and `WITHOUT VALIDATION` clauses. If neither is specified, the default behavior is `WITH VALIDATION` ([MDEV-22164](https://jira.mariadb.org/browse/MDEV-22164))
 
 ## Sys Schema
 
@@ -37,7 +37,7 @@ Thanks, and enjoy MariaDB!
 ## Miscellaneous
 
 * [CONV()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/numeric-functions/conv) function now supports conversion up to base 62 ([MDEV-30879](https://jira.mariadb.org/browse/MDEV-30879))
-* Added support for packages ([CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package)) outside of [ORACLE sql\_mode](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) ([MDEV-32101](https://jira.mariadb.org/browse/MDEV-32101))
+* Added support for packages ([CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package)) outside of [ORACLE sql\_mode](../../compatibility-and-differences/sql_modeoracle.md) ([MDEV-32101](https://jira.mariadb.org/browse/MDEV-32101))
 * Remove thr\_alarm from server codebase
   * Includes removal of the [debug\_no\_thread\_alarm](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#debug_no_thread_alarm) system variable ([MDEV-32567](https://jira.mariadb.org/browse/MDEV-32567))
 

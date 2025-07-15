@@ -197,7 +197,7 @@ The server can send one or many requests. For each of them, the client must disp
 
 First authentication format (from authentication switch packet) can be empty since 10.4.
 
-This end when server send an [EOF\_Packet](../4-server-response-packets/eof_packet.md), [OK\_Packet](../4-server-response-packets/ok_packet.md) or [ERROR\_packet](https://mariadb.com/kb/en/ERROR_packet).
+This end when server send an [EOF\_Packet](../4-server-response-packets/eof_packet.md), [OK\_Packet](../4-server-response-packets/ok_packet.md) or [ERROR\_packet](../4-server-response-packets/err_packet.md).
 
 #### auth\_gssapi\_client Plugin
 

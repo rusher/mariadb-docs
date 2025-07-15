@@ -948,15 +948,15 @@ Some options and system variables related to the [CONNECT](../../server-usage/st
 
 ### Spider Storage Engine Options
 
-The options and system variables related to the [Spider](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/spider-system-variables.md).
+The options and system variables related to the [Spider](../../server-usage/storage-engines/spider/) storage engine can be found [here](../../server-usage/storage-engines/spider/spider-system-variables.md).
 
 ### Mroonga Storage Engine Options
 
-The options and system variables related to the [Mroonga](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/mroonga/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/mroonga/mroonga-system-variables.md).
+The options and system variables related to the [Mroonga](../../server-usage/storage-engines/mroonga/) storage engine can be found [here](../../server-usage/storage-engines/mroonga/mroonga-system-variables.md).
 
 ### TokuDB Storage Engine Options
 
-The options and system variables related to the [TokuDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/tokudb/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/tokudb/tokudb-system-variables.md).
+The options and system variables related to the [TokuDB](../../server-usage/storage-engines/tokudb/) storage engine can be found [here](../../server-usage/storage-engines/tokudb/tokudb-system-variables.md).
 
 ### Vector Options
 
@@ -1077,7 +1077,7 @@ Some options and system variables related to the [Performance Schema](../../refe
 
 ## Galera Cluster Options
 
-The options related to [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) are described below. Options that are also system variables are listed after:
+The options related to [Galera Cluster](../../architecture/topologies/galera-cluster/) are described below. Options that are also system variables are listed after:
 
 #### `--wsrep-new-cluster`
 
@@ -1253,7 +1253,7 @@ Options that are also system variables are listed after:
 #### `--log-tc`
 
 * Commandline: `--log-tc=name`
-* Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the [log\_tc\_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size) system variable and the [--tc-heuristic-recover](mariadbd-options.md#-tc-heuristic-recover) option.
+* Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the [log\_tc\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size) system variable and the [--tc-heuristic-recover](mariadbd-options.md#-tc-heuristic-recover) option.
 * Default Value: `tc.log`
 
 #### `--master-connect-retry`
@@ -1424,10 +1424,10 @@ Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler
 * [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir)
 * [date-format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#date_format)
 * [datetime-format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datetime_format)
-* [deadlock-search-depth-long](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md)
-* [deadlock-search-depth-short](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md)
-* [deadlock-timeout-long](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md)
-* [deadlock-timeout-short](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md)
+* [deadlock-search-depth-long](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_long)
+* [deadlock-search-depth-short](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_short)
+* [deadlock-timeout-long](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_timeout_long)
+* [deadlock-timeout-short](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_timeout_short)
 * [default-password-lifetime](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime)
 * [default-regex-flags](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags)
 * [default-storage-engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine)
@@ -1613,61 +1613,61 @@ Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler
 
 ### Authentication Plugin - `ed25519`
 
-The options related to the [ed25519](../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md#options).
+The options related to the [ed25519](../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md#options).
 
 ### Authentication Plugin - `gssapi`
 
-The system variables related to the [gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#system-variables).
+The system variables related to the [gssapi](../../security/authentication-with-enterprise-server/authentication-with-gssapi.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#system-variables).
 
-The options related to the [gssapi](../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#options).
+The options related to the [gssapi](../../security/authentication-with-enterprise-server/authentication-with-gssapi.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#options).
 
 ### Authentication Plugin - `named_pipe`
 
-The options related to the [named\_pipe](../../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md#options).
+The options related to the [named\_pipe](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-named-pipe.md#options).
 
 ### Authentication Plugin - `pam`
 
-The system variables related to the [pam](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#system-variables).
+The system variables related to the [pam](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#system-variables).
 
-The options related to the [pam](../../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#options).
+The options related to the [pam](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#options).
 
 ### Authentication Plugin - `unix_socket`
 
-The options related to the [unix\_socket](../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#options).
+The options related to the [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin can be found [here](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#options).
 
 ## Encryption Plugins - Options and System Variables
 
 ### Encryption Plugin - `aws_key_management`
 
-The system variables related to the [aws\_key\_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#system-variables).
+The system variables related to the [aws\_key\_management](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#system-variables).
 
-The options elated to the [aws\_key\_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#options).
+The options elated to the [aws\_key\_management](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#options).
 
 ### Encryption Plugin - `file_key_management`
 
-The system variables related to the [file\_key\_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#system-variables).
+The system variables related to the [file\_key\_management](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#system-variables).
 
-The options related to the [file\_key\_management](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#options).
+The options related to the [file\_key\_management](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) encryption plugin can be found [here](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#options).
 
 ## Password Validation Plugins - Options and System Variables
 
 ### Password Validation Plugin - `simple_password_check`
 
-The system variables related to the [simple\_password\_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
+The system variables related to the c password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
 The options related to the [simple\_password\_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
 ### Password Validation Plugin - `cracklib_password_check`
 
-The system variables related to the [cracklib\_password\_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The system variables related to the [cracklib\_password\_check](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
-The options related to the [cracklib\_password\_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The options related to the [cracklib\_password\_check](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
 ## Audit Plugins - Options and System Variables
 
 ### Audit Plugin - `server_audit`
 
-Options and system variables related to the [server\_audit](../../../reference/plugins/mariadb-audit-plugin/) audit plugin can be found [here](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
+Options and system variables related to the [server\_audit](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit) audit plugin can be found [here](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
 
 ### Audit Plugin - `SQL_ERROR_LOG`
 
@@ -1675,7 +1675,7 @@ The options and system variables related to the [SQL\_ERROR\_LOG](../server-moni
 
 ### Audit Plugin - QUERY\_RESPONSE\_TIME\_AUDIT
 
-The options related to the [QUERY\_RESPONSE\_TIME\_AUDIT](../../../reference/plugins/other-plugins/query-response-time-plugin.md) audit plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
+The options related to the [QUERY\_RESPONSE\_TIME\_AUDIT](../../reference/plugins/other-plugins/query-response-time-plugin.md#query_response_time_audit) audit plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
 
 ## Daemon Plugins - Options and System Variables
 
@@ -1687,57 +1687,57 @@ The options for the HandlerSocket plugin are all described on the [HandlerSocket
 
 ### Information Schema Plugin - `DISKS`
 
-The options related to the [DISKS](../../../reference/plugins/other-plugins/disks-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/disks-plugin.md#options).
+The options related to the [DISKS](../../reference/plugins/other-plugins/disks-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/disks-plugin.md#options).
 
 ### Information Schema Plugin - `feedback`
 
-The system variables related to the [feedback](../../../reference/plugins/other-plugins/feedback-plugin.md) plugin can be found [here](../../reference/plugins/other-plugins/feedback-plugin.md#system-variables).
+The system variables related to the [feedback](../../reference/plugins/other-plugins/feedback-plugin.md) plugin can be found [here](../../reference/plugins/other-plugins/feedback-plugin.md#system-variables).
 
-The options related to the [feedback](../../../reference/plugins/other-plugins/feedback-plugin.md) plugin can be found [here](../../reference/plugins/other-plugins/feedback-plugin.md#options).
+The options related to the [feedback](../../reference/plugins/other-plugins/feedback-plugin.md) plugin can be found [here](../../reference/plugins/other-plugins/feedback-plugin.md#options).
 
 ### Information Schema Plugin - `LOCALES`
 
-The options related to the [LOCALES](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md) information schema plugin can be found [here](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md#options).
+The options related to the [LOCALES](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md) information schema plugin can be found [here](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md#options).
 
 ### Information Schema Plugin - `METADATA_LOCK_INFO`
 
-The options related to the [METADATA\_LOCK\_INFO](../../../reference/plugins/other-plugins/metadata-lock-info-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/metadata-lock-info-plugin.md).
+The options related to the [METADATA\_LOCK\_INFO](../../reference/plugins/other-plugins/metadata-lock-info-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/metadata-lock-info-plugin.md).
 
 ### Information Schema Plugin - `QUERY_CACHE_INFO`
 
-The options related to the [QUERY\_CACHE\_INFO](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-cache-information-plugin.md#options).
+The options related to the [QUERY\_CACHE\_INFO](../../reference/plugins/other-plugins/query-cache-information-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-cache-information-plugin.md#options).
 
 ### Information Schema Plugin - `QUERY_RESPONSE_TIME`
 
-The system variables related to the [QUERY\_RESPONSE\_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#system-variables).
+The system variables related to the [QUERY\_RESPONSE\_TIME](../../reference/plugins/other-plugins/query-response-time-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#system-variables).
 
-The options related to the [QUERY\_RESPONSE\_TIME](../../../reference/plugins/other-plugins/query-response-time-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
+The options related to the [QUERY\_RESPONSE\_TIME](../../reference/plugins/other-plugins/query-response-time-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/query-response-time-plugin.md#options).
 
 ### Information Schema Plugin - `user_variables`
 
-The options related to the [user\_variables](../../../reference/plugins/other-plugins/user-variables-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/user-variables-plugin.md#options).
+The options related to the [user\_variables](../../reference/plugins/other-plugins/user-variables-plugin.md) information schema plugin can be found [here](../../reference/plugins/other-plugins/user-variables-plugin.md#options).
 
 ### Information Schema Plugin - `WSREP_MEMBERSHIP`
 
-The options related to the [WSREP\_MEMBERSHIP](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md) information schema plugin can be found [here](../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
+The options related to the [WSREP\_MEMBERSHIP](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table.md) information schema plugin can be found [here](../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
 
 ### Information Schema Plugin - `WSREP_STATUS`
 
-The options related to the [WSREP\_STATUS](../../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md) information schema plugin can be found [here](../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
+The options related to the [WSREP\_STATUS](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) information schema plugin can be found [here](../../reference/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md#options).
 
 ## Replication Plugins - Options and System Variables
 
 ### Replication Plugin - `rpl_semi_sync_master`
 
-The system variables related to the [rpl\_semi\_sync\_master](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#system-variables).
+The system variables related to the [rpl\_semi\_sync\_master](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl-semi-sync_master) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#system-variables).
 
-The options related to the [rpl\_semi\_sync\_master](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#options).
+The options related to the [rpl\_semi\_sync\_master](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl-semi-sync_master) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#options).
 
 ### Replication Plugin - `rpl_semi_sync_slave`
 
-The system variables related to the [rpl\_semi\_sync\_slave](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#system-variables).
+The system variables related to the [rpl\_semi\_sync\_slave](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl-semi-sync_slave) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#system-variables).
 
-The options related to the [rpl\_semi\_sync\_slave](../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#options).
+The options related to the [rpl\_semi\_sync\_slave](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl-semi-sync_slave) replication plugin can be found [here](../../ha-and-performance/standard-replication/semisynchronous-replication.md#options).
 
 ## Default Values
 

@@ -1,14 +1,14 @@
 # MariaDB 10.6.12 Changelog
 
-[Download](https://mariadb.com/downloads/)[Release Notes](../../mariadb-10-6-series/mariadb-10-6-12-release-notes.md)[Changelog](mariadb-10-6-12-changelog.md)[Overview of 10.6](../../mariadb-10-6-series/what-is-mariadb-106.md)
+{% include "../../../.gitbook/includes/latest-10-6.md" %}
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.12/)
+<a href="https://downloads.mariadb.org/mariadb/10.6.12/" class="button primary">Download</a> <a href="../../mariadb-10-6-series/mariadb-10-6-12-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-10-6-12-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-6-series/what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 6 Feb 2023
 
-For the highlights of this release, see the[release notes](../../mariadb-10-6-series/mariadb-10-6-12-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-10-6-series/mariadb-10-6-12-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.6) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.6) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.5.19](../changelogs-mariadb-105-series/mariadb-10-5-19-changelog.md)

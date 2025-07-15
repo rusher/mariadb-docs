@@ -493,6 +493,9 @@ INSERT INTO t1 VALUES ('2012-02-02'),('2013-03-03');
 INSERT INTO t2 VALUES ('2015-05-05');
 
 ALTER TABLE t1 EXCHANGE PARTITION p1 WITH TABLE t2;
+```
+
+```
 ERROR 1526 (HY000): Table has no partition for value 0
 ```
 
@@ -505,6 +508,9 @@ From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 ```sql
 ALTER TABLE t1 EXCHANGE PARTITION p1 WITH TABLE t2 WITHOUT VALIDATION;
+```
+
+```
 Query OK, 0 rows affected (0.048 sec)
 ```
 

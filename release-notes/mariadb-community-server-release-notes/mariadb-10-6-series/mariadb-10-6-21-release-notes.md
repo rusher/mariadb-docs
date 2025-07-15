@@ -1,16 +1,14 @@
 # MariaDB 10.6.21 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-6-21-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-21-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+{% include "../../.gitbook/includes/latest-10-6.md" %}
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
+<a href="https://downloads.mariadb.org/mariadb/10.6.21/" class="button primary">Download</a> <a href="mariadb-10-6-21-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-21-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 **Release date:** 4 Feb 2025
 
 [MariaDB 10.6](what-is-mariadb-106.md) is a current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
 [MariaDB 10.6.21](mariadb-10-6-21-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -66,9 +64,9 @@ Thanks, and enjoy MariaDB!
 * Fix possible runtime error caused by XA RECOVER applying a zero offset to a null pointer ([MDEV-35549](https://jira.mariadb.org/browse/MDEV-35549))
 * Fix issue where functions in default values in tables with certain character sets could break SHOW CREATE and mariadb-dump ([MDEV-29968](https://jira.mariadb.org/browse/MDEV-29968))
 
-### [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md)
+### [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/)
 
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.21
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.21
   * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 * Fix streaming replication transaction crash with innodb\_snapshot\_isolation ([MDEV-35281](https://jira.mariadb.org/browse/MDEV-35281))
 * Fix sporadic failure of async replication on Galera async replica nodes with parallel replication enabled ([MDEV-35465](https://jira.mariadb.org/browse/MDEV-35465))

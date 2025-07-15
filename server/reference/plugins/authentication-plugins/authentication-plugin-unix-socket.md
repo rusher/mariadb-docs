@@ -1,6 +1,6 @@
 # Authentication Plugin - Unix Socket
 
-The `unix_socket` authentication plugin is installed by default, and it is used by the `'root'@'localhost'` user account by default. See [Authentication from MariaDB 10.4](../../../security/user-account-management/authentication-from-mariadb-10-4.md) for more information.
+The `unix_socket` authentication plugin is installed by default, and it is used by the `'root'@'localhost'` user account by default. See [Authentication](../../../security/user-account-management/authentication-from-mariadb-10-4.md) for more information.
 
 The `unix_socket` authentication plugin allows the user to use operating system credentials when connecting to MariaDB via the local Unix socket file. This Unix socket file is defined by the [socket](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable.
 
@@ -10,22 +10,26 @@ The `unix_socket` authentication plugin is not suited to multiple Unix users acc
 
 ## Security
 
-A `unix_socket` authentication plugin is a passwordless security mechanism. Its security is in the strength of the access to the Unix user rather than the complexity and the secrecy of the password. As the security is different from passwords, the strengths and weaknesses need to be considered, and these aren't the same in every installation.
+A `unix_socket` authentication plugin is a passwordless security mechanism. Its security lies in the strength of the access to the Unix user, rather than the complexity and the secrecy of the password.&#x20;
+
+{% hint style="warning" %}
+As  security differs from password security, the strengths and weaknesses need to be considered, and those can differ depending on the specific installation.
+{% endhint %}
 
 ### Strengths
 
 * Access is limited to the Unix user so, for example, a `www-data` user cannot access `root` with the `unix_socket` authentication plugin.
-* There is no password to brute force.
+* There is no password which can be cracked by brute force.
 * There is no password that can be accidentally exposed by user accident, poor security on backups, or poor security on passwords in configuration files.
 * Default Unix user security is usually strong on preventing remote access and password brute force attempts.
 
 ### Weaknesses
 
-The strength of a `unix_socket` authentication plugin is effectively the strength of the security of the Unix users on the system. The Unix user default installation in most cases is sufficiently secure, however, business requirements or unskilled management may expose risks. The following is a non-exhaustive list of potential Unix user security issues that may arise.
+The strength of a `unix_socket` authentication plugin is effectively the strength of the security of the Unix users on the system. In most cases, the Unix user default installation is sufficiently secure. However, the following is a non-exhaustive list of potential Unix user security issues that may arise.
 
 * Common access areas without screen locks, where an unauthorized user accesses the logged in Unix user of an authorized user.
 * Extensive sudo access grants that provide users with access to execute commands of a different Unix user.
-* Scripts writable by Unix users other than the Unix user that are executed (cron or directly) by the unix user.
+* Scripts writable by Unix users other than the Unix user that are executed (via cron or directly) by the Unix user.
 * Web pages that are susceptible to command injection, where the Unix user running the web page has elevated privileges in the database that weren't intended to be used.
 * Poor Unix user password practices including weak user passwords, password exposure and password reuse accompanied by an access vulnerability/mechanism of an unauthorized user to exploit this weakness.
 * Weak remote access mechanisms and network file system privileges.
@@ -35,13 +39,17 @@ In some of these scenarios a database password may prevent these security exploi
 
 ## Disabling the Plugin
 
-The `unix_socket` authentication plugin is installed by default, so **if you do not want it to be available by default on those versions, then you will need to disable it**.
+The `unix_socket` authentication plugin is installed by default.
 
-The `unix_socket` authentication plugin is also installed by default in **new installations** that use the [.deb](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md) packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later, so **if you do not want it to be available by default on those systems when those packages are used, then you will need to disable it**. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
+{% hint style="warning" %}
+If you do not want it to be available by default, you must disable it.
+{% endhint %}
+
+The `unix_socket` authentication plugin is also installed by default in new installations that use the [.deb](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md) packages provided by Debian's default repositories and Ubuntu's default repositories. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
 
 The `unix_socket` authentication plugin can be disabled by starting the server with the [unix\_socket](authentication-plugin-unix-socket.md#unix_socket) option set to `OFF`. This can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 unix_socket=OFF
@@ -49,7 +57,7 @@ unix_socket=OFF
 
 As an alternative, the [unix\_socket](authentication-plugin-unix-socket.md#unix_socket) option can also be set to `OFF` by pairing the option with the `disable` [option prefix](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-prefixes):
 
-```
+```ini
 [mariadb]
 ...
 disable_unix_socket
@@ -57,21 +65,17 @@ disable_unix_socket
 
 ## Installing the Plugin
 
-The `unix_socket` authentication plugin is installed by default, so **this step can be skipped on those versions**.
+The `unix_socket` authentication plugin is installed by default in almost all MariaDB server versions. If you work with a version that doesn't have the plugin installed, you can install it as described in one of the following ways.
 
-The `unix_socket` authentication plugin is also installed by default in **new installations** that use the [.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md) packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later, so **this step can be skipped on those systems when those packages are used**. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
+* Install the plugin without restarting the server. You can install the plugin dynamically, by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
-In other systems, although the plugin's shared library is distributed with MariaDB by default as `auth_socket.so`, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
-
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
-
-```
+```sql
 INSTALL SONAME 'auth_socket';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load-add) options. This can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
+* Instruct the server to load the plugin at startup. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load-add) options. This can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = auth_socket
@@ -81,71 +85,85 @@ plugin_load_add = auth_socket
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md):
 
-```
+```sql
 UNINSTALL SONAME 'auth_socket';
 ```
 
-If you installed the plugin by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load-add) options in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load-add) options in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Creating Users
 
 To create a user account via [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md), specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/create-user.md#identified-via-or-with-authentication_plugin) clause:
 
-```
+```sql
 CREATE USER username@hostname IDENTIFIED VIA unix_socket;
 ```
 
 If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](../../sql-statements/account-management-sql-statements/grant.md):
 
-```
+```sql
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA unix_socket;
 ```
 
-**MariaDB starting with** [**11.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
+{% tabs %}
+{% tab title="Current" %}
 
-Prior to [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the plugin only checked whether the OS socket user id matched the MariaDB user name, and ignored the authentication string.\
-From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the authentication string, if present, will be compared with the socket's user name, and authentication can proceed if there's a match. The [external\_user](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#external_user) system variable will contain the OS user in this case.\
-For example, assuming an OS user of 'bob':
+
+The authentication string (if present) is compared with the socket's user name. Authentication proceeds if there's a match. In this case, the [external\_user](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#external_user) system variable contains the OS user.
+
+Consider an OS user named 'bob' that has been created like this:
+
+```sql
+CREATE USER A identified via unix_socket as 'bob';
+
+
+
 
 ```
-CREATE USER A IDENTIFIED via unix_socket AS 'bob';
-```
 
-To connect:
+That user can connect like this:
 
-```
+```bash
 mariadb -uA
 ```
 
-or, to access the sock file directly, something like:
+Alternatively, accessing the sock file directly, the user can connect like this:
 
-```
+```bash
 mariadb -uA -S /var/run/mysqld/mysqld.sock
 ```
 
-Once connected:
+Once connected, you can view that user like this:
 
-```
-select user(),@@external_user;
+```sql
+SELECT USER(),@@external_user;
 +-------------+-----------------+
 | user()      | @@external_user |
 +-------------+-----------------+
 | A@localhost | bob             |
 +-------------+-----------------+
 ```
+{% endtab %}
 
-## Switching to Password-based Authentication
+{% tab title="< 11.6" %}
+The plugin only checks whether the OS socket user id matches the MariaDB user name. It ignores the authentication string.
+{% endtab %}
+{% endtabs %}
 
-Sometimes Unix socket authentication does not meet your needs, so it can be desirable to switch a user account back to password-based authentication. This can easily be done by telling MariaDB to use another [authentication plugin](./) for the account by executing the [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) statement. The specific authentication plugin is specified with the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/alter-user.md#identified-via-or-with-authentication_plugin) clause. For example, if you wanted to switch to the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin, then you could execute:
+## Switching to Password-Based Authentication
 
-```
+If Unix socket authentication does not meet your needs, you can switch a user account back to password-based authentication, by telling MariaDB to use a different [authentication plugin](./) for the account. The specific authentication plugin is specified with the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/alter-user.md#identified-via-or-with-authentication_plugin) clause. To switch to the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin, you need to do this:
+
+```sql
 ALTER USER root@localhost IDENTIFIED VIA mysql_native_password;
 SET PASSWORD = PASSWORD('foo');
 ```
 
-Note that if your operating system has scripts that require password-less access to MariaDB, then this may break those scripts. You may be able to fix that by setting a password in the `[client]` [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in your /root/.my.cnf [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
+{% hint style="warning" %}
+If you use scripts that require passwordless access to MariaDB, this would cause them to break. You may be able to fix that by setting a password in the `[client]` [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in your /root/.my.cnf [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
+{% endhint %}
 
-```
+```ini
 [client]
 password=foo
 ```
@@ -160,7 +178,7 @@ The `unix_socket` authentication plugin does not require any special support in 
 
 ## Example
 
-```
+```bash
 $ mysql -uroot
 MariaDB []> CREATE USER serg IDENTIFIED VIA unix_socket;
 MariaDB []> CREATE USER monty IDENTIFIED VIA unix_socket;
@@ -178,14 +196,7 @@ $ mysql --user=monty
 ERROR 1045 (28000): Access denied for user 'monty'@'localhost' (using password: NO)
 ```
 
-In this example, a user `serg` is already logged into the operating system and has full shell access. He has already authenticated with the operating system and his MariaDB account is configured to use the `unix_socket` authentication plugin, so he does not need to authenticate again for the database. MariaDB accepts his operating system credentials and allows him to connect. However, any attempt to connect to the database as another operating system user will be denied.
-
-## Versions
-
-| Version | Status | Introduced                                                                                                                                                                          |
-| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0     | Stable | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) |
-| 1.0     | Beta   | [MariaDB 5.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes)      |
+In this example, user `serg` is already logged into the operating system and has full shell access. The user has already authenticated with the operating system and the MariaDB account is configured to use the `unix_socket` authentication plugin, so there is no need to authenticate again for the database. MariaDB accepts the operating system credentials and allows the user to connect. However, any attempt to connect to the database as another operating system is denied.
 
 ## Options
 
@@ -206,7 +217,7 @@ In this example, a user `serg` is already logged into the operating system and h
 ## See Also
 
 * [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md)
-* [Authentication from MariaDB 10.4](../../../security/user-account-management/authentication-from-mariadb-10-4.md)
+* [Authentication](../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

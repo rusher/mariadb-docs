@@ -1,8 +1,8 @@
 # MariaDB 10.11.11 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-11-11-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-11-changelog.md)[Overview of 10.11](what-is-mariadb-1011.md)
+{% include "../../../.gitbook/includes/latest-10.11 (2).md" %}
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
+<a href="https://downloads.mariadb.org/mariadb/10.11.11/" class="button primary">Download</a> <a href="mariadb-10-11-11-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-11-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 **Release date:** 4 Feb 2025
 
