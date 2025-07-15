@@ -66,9 +66,9 @@ Example:
 ```sql
 START TRANSACTION;
 SELECT next_val(hibernate_sequence);
-INSERT INTO myCar(id, name) VALUE (?, ?) //WITH parameters: 1, 'car1'
-INSERT INTO myCarDetail(id, carId, name) VALUE (?, ?, ?) //WITH parameters: 2, 1, 'detail1'
-INSERT INTO myCarDetail(id, carId, name) VALUE (?, ?, ?) //WITH parameters: 3, 2, 'detail2'
+INSERT INTO myCar(id, name) VALUE (?, ?) //WITH PARAMETERS: 1, 'car1'
+INSERT INTO myCarDetail(id, carId, name) VALUE (?, ?, ?) //WITH PARAMETERS: 2, 1, 'detail1'
+INSERT INTO myCarDetail(id, carId, name) VALUE (?, ?, ?) //WITH PARAMETERS: 3, 2, 'detail2'
 COMMIT;
 ```
 

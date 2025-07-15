@@ -41,11 +41,11 @@ MariaDB Enterprise Server 10.6.20-16 was released on 2024-12-10.
 SELECT *
  FROM
 json_table('{"a": "123"}',
- '$' columns(col1 INT path '$.a' DEFAULT 1 ON empty)) AS T;
+ '$' columns(col1 INT PATH '$.a' DEFAULT 1 ON empty)) AS T;
 SELECT *
  FROM
 json_table('{"a": "123"}',
- '$' columns(col1 DATE path '$.DATE' DEFAULT DATE '2020-01-01' ON empty)) AS T;
+ '$' columns(col1 DATE PATH '$.DATE' DEFAULT DATE '2020-01-01' ON empty)) AS T;
 ```
 
 * A new option `--skip-freed-pages` has been added to the innochecksum tool (MENT-2183)
