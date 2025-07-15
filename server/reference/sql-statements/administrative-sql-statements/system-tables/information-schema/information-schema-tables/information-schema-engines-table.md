@@ -100,7 +100,7 @@ Check if a given storage engine is available:
 
 ```sql
 SELECT SUPPORT FROM information_schema.ENGINES WHERE ENGINE LIKE 'tokudb';
-Empty set
+Empty SET
 ```
 
 Check which storage engine supports XA transactions:

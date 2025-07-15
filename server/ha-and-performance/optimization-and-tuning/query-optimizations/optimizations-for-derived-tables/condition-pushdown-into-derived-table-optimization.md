@@ -9,7 +9,7 @@ In that case, the Condition Pushdown optimization is applicable.
 Consider an example
 
 ```sql
-CREATE view OCT_TOTALS AS
+CREATE VIEW OCT_TOTALS AS
 SELECT
   customer_id,
   SUM(amount) AS TOTAL_AMT

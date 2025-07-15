@@ -32,7 +32,7 @@ column_definition:
       [COMMENT '[compression=0|1];']
 
 table_options:
-    table_option [[,] table_option] ...  (see CREATE TABLE options)
+    table_option [[,] table_option] ...  (see CREATE TABLE OPTIONS)
 ```
 
 images here
@@ -57,8 +57,8 @@ We have also provided the following workaround. This workaround is intended for 
 Scenario: Add an INT column named col7 to the existing table foo:
 
 ```
-select calonlinealter('alter table foo add column col7 int;');
-alter table foo add column col7 int comment 'schema sync only';
+SELECT calonlinealter('alter table foo add column col7 int;');
+ALTER TABLE foo ADD COLUMN col7 INT COMMENT 'schema sync only';
 ```
 
 The select statement may take several tens of seconds to run, depending on how many rows are currently in the table. Regardless, other sessions can select against the table during this time (but they won’t be able to see the new column yet). The ALTER TABLE statement will take less than 1 second (depending on how busy MariaDB is), and during this brief time interval, other table reads will be held off.

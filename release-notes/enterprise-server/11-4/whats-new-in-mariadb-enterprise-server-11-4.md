@@ -125,8 +125,8 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
 ```sql
 SET @json1='{"a":[1,2,3],"b":{"key1":"val1","key2":{"key3":"val3"}}}';
 SET @json2='{"a":[1,2,3]}';
-SELECT JSON_OBJECT_TO_ARRAY(@json1) into @array1;
-SELECT JSON_OBJECT_TO_ARRAY(@json2) into @array2;
+SELECT JSON_OBJECT_TO_ARRAY(@json1) INTO @array1;
+SELECT JSON_OBJECT_TO_ARRAY(@json2) INTO @array2;
 SELECT JSON_ARRAY_INTERSECT(@array1,@array2) as result;
 ```
 
@@ -742,7 +742,7 @@ CREATE USER 'MariaDBUser'@'%' IDENTIFIED VIA PARSEC USING PASSWORD('MyPassword12
 ```sql
 SHOW GRANTS FOR MariaDBUser@'%';
 
-Grants for MariaDBUser@%
+Grants FOR MariaDBUser@%
 GRANT USAGE ON *.* TO `MariaDBUser`@`%` IDENTIFIED VIA parsec USING 'P0:lhXyNv1cIxpB8EnTxR7ON7S7:1l3rWRW1/jw45yrvYXB8eh02wzk7lcJcz4CMcWw2b+8'
 ```
 

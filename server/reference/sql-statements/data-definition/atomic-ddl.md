@@ -63,8 +63,8 @@ If the table was not re-created, the binary log will contain the`DROP TABLE`.
 [DROP DATABASE](drop/drop-database.md) is implemented as:
 
 ```sql
-loop over all tables
   DROP TABLE table
+LOOP OVER ALL tables
 ```
 
 Each [DROP TABLE](drop/drop-table.md) is atomic, but in case of a crash, things will work the same way as [DROP TABLE](drop/drop-table.md) with multiple tables.

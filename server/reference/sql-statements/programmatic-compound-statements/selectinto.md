@@ -30,7 +30,7 @@ Another way to set a variable's value is the [SET](set-variable.md) statement.
 ```sql
 SELECT id, data INTO @x,@y 
 FROM test.t1 LIMIT 1;
-SELECT * from t1 where t1.a=@x and t1.b=@y
+SELECT * FROM t1 WHERE t1.a=@x AND t1.b=@y
 ```
 
 If you want to use this construct with `UNION` you have to use the syntax:

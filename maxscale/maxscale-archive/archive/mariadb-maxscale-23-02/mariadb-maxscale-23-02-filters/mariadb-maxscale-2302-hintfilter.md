@@ -226,7 +226,7 @@ to the query.
 
 ```
 INSERT INTO table1 VALUES ("John","Doe",1);
-SELECT * from table1; -- maxscale route to master
+SELECT * FROM table1; -- maxscale route to master
 ```
 
 The first INSERT query will be routed to the primary. The following SELECT query\

@@ -14,8 +14,8 @@ Consider a query: we want to find countries in Europe, that have more than one m
 SELECT * 
 FROM
    Country, 
-   (select 
-       sum(City.Population) AS urban_population, 
+   (SELECT 
+       SUM(City.Population) AS urban_population, 
        City.Country 
     FROM City 
     GROUP BY City.Country 

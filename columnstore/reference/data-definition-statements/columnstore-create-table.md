@@ -10,7 +10,7 @@ A database consists of tables that store user data. You can create multiple colu
 ```
 CREATE TABLE [IF NOT EXISTS] tbl_name
     (create_definition,...)  
-engine=columnstore  [ DEFAULT CHARSET=character-set] 
+ENGINE=columnstore  [ DEFAULT CHARSET=character-set] 
 [COMMENT '[compression=0|1][;]
 CREATE TABLE [IF NOT EXISTS] tbl_name
    { LIKE old_table_name | (LIKE old_table_name) }

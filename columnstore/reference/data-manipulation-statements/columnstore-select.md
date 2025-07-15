@@ -57,7 +57,7 @@ SELECT * FROM region WHERE name = ’ASIA’;
 GROUP BY groups data based on values in one or more specific columns. The following statement returns rows from the _lineitem_ table where /orderke&#x79;_&#x69;s less than 1 000 000 and groups them by the quantity._
 
 ```
-SELECT quantity, count(*) FROM lineitem WHERE orderkey < 1000000 GROUP BY quantity;
+SELECT quantity, COUNT(*) FROM lineitem WHERE orderkey < 1000000 GROUP BY quantity;
 ```
 
 ## HAVING
@@ -65,7 +65,7 @@ SELECT quantity, count(*) FROM lineitem WHERE orderkey < 1000000 GROUP BY quanti
 HAVING is used in combination with the GROUP BY clause. It can be used in a SELECT statement to filter the records that a GROUP BY returns.The following statement returns shipping dates, and the respective quantity where the quantity is 2500 or more.
 
 ```
-SELECT shipdate, count(*) FROM lineitem GROUP BYshipdate HAVING count(*) >= 2500;
+SELECT shipdate, COUNT(*) FROM lineitem GROUP BYshipdate HAVING COUNT(*) >= 2500;
 ```
 
 ## ORDER BY
@@ -73,13 +73,13 @@ SELECT shipdate, count(*) FROM lineitem GROUP BYshipdate HAVING count(*) >= 2500
 The ORDER BY clause presents results in a specific order. Note that the ORDER BY clause represents a statement that is post-processed by MariaDB. The following statement returns an ordered _quantity_ column from the _lineitem_ table.
 
 ```
-SELECT quantity FROM lineitem WHERE orderkey < 1000000 order by quantity;
+SELECT quantity FROM lineitem WHERE orderkey < 1000000 ORDER BY quantity;
 ```
 
 The following statement returns an ordered _shipmode_ column from the _lineitem_ table.
 
 ```
-Select shipmode from lineitem where orderkey < 1000000 order by 1;
+SELECT shipmode FROM lineitem WHERE orderkey < 1000000 ORDER BY 1;
 ```
 
 **NOTE: When ORDER BY is used in an inner query and LIMIT on an outer query, LIMIT is applied first and then ORDER BY is applied when returning results.**
@@ -89,13 +89,13 @@ Select shipmode from lineitem where orderkey < 1000000 order by 1;
 Used to combine the result from multiple SELECT statements into a single result set.The UNION or UNION DISTINCT clause returns query results from multiple queries into one display and discards duplicate results. The UNION ALL clause displays query results from multiple queries and does not discard the duplicates. The following statement returns the _p\_name_ rows in the _part_ table and the _partno_ table and discards the duplicate results:
 
 ```
-SELECT p_name FROM part UNION select p_name FROM  partno;
+SELECT p_name FROM part UNION SELECT p_name FROM  partno;
 ```
 
 The following statement returns all the _p\_name rows_ in the _part_ table and the _partno_ table:
 
 ```
-SELECT p_name FROM part UNION ALL select p_name FROM  partno;
+SELECT p_name FROM part UNION ALL SELECT p_name FROM  partno;
 ```
 
 ## LIMIT
@@ -104,13 +104,13 @@ A limit is used to constrain the number of rows returned by the SELECT statement
 The following statement returns 5 customer keys from the customer table:
 
 ```
-SELECT custkey from customer limit 5;
+SELECT custkey FROM customer LIMIT 5;
 ```
 
 The following statement returns 5 customer keys from the customer table beginning at offset 1000:
 
 ```
-SELECT custkey from customer limit 1000,5;
+SELECT custkey FROM customer LIMIT 1000,5;
 ```
 
 **NOTE: When LIMIT is applied on a nested query's results, and the inner query contains ORDER BY, LIMIT is applied first, and then ORDER BY is applied.**

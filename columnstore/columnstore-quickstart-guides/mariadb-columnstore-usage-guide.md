@@ -236,13 +236,13 @@ IMPORTANT - If there is no MariaDB Root user password set, make sure there is no
 Once logged into mcsmysql:
 
 ```
-create database mcs;
-use mcs;
-create table idbtest(col1 int, col2 int) engine=columnstore;
-show create table idbtest;
-insert into idbtest values (1, 2);
-insert into idbtest values (3, 4);
-select * from idbtest;
+CREATE DATABASE mcs;
+USE mcs;
+CREATE TABLE idbtest(col1 INT, col2 INT) ENGINE=columnstore;
+SHOW CREATE TABLE idbtest;
+INSERT INTO idbtest VALUES (1, 2);
+INSERT INTO idbtest VALUES (3, 4);
+SELECT * FROM idbtest;
 ```
 
 ## Importing data into MariaDB ColumnStore
@@ -309,15 +309,15 @@ Alternatively, you can set the value as follows
 Any tables containing UTF-8 data must have the default character set specified as 'utf8', for example:
 
 ```
-create table airports (
-code char(3),
-airport varchar(100),
-city varchar(50),
-state char(50),
-country char(100),
-latitude float,
-longitude float
-) engine=columnstore default character set=utf8;
+CREATE TABLE airports (
+code CHAR(3),
+airport VARCHAR(100),
+city VARCHAR(50),
+state CHAR(50),
+country CHAR(100),
+latitude FLOAT,
+longitude FLOAT
+) ENGINE=columnstore DEFAULT CHARACTER SET=utf8;
 ```
 
 ## Importing UTF-8 data

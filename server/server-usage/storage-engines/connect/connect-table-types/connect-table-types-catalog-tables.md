@@ -16,11 +16,11 @@ this data source. To get it, we will create a catalog table that will return it\
 extracted from the result set of the SQLTables ODBC function:
 
 ```
-create table tabinfo (
-  table_name varchar(128) not null,
-  table_type varchar(16) not null)
-engine=connect table_type=ODBC catfunc=tables
-Connection='DSN=MS Access Database;DBQ=C:/Program
+CREATE TABLE tabinfo (
+  table_name VARCHAR(128) NOT NULL,
+  table_type VARCHAR(16) NOT NULL)
+ENGINE=CONNECT table_type=ODBC catfunc=TABLES
+CONNECTION='DSN=MS Access Database;DBQ=C:/Program
 Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
@@ -48,7 +48,7 @@ specification.
 For instance, to get the tables we want to use we can ask:
 
 ```
-select table_name from tabinfo where table_type = 'TABLE';
+SELECT TABLE_NAME FROM tabinfo WHERE table_type = 'TABLE';
 ```
 
 This will return:
@@ -67,8 +67,8 @@ can retrieve the column description of ODBC tables, it not necessary to specify\
 them in the create table statement:
 
 ```
-create table Customers engine=connect table_type=ODBC
-Connection='DSN=MS Access Database;DBQ=C:/Program
+CREATE TABLE Customers ENGINE=CONNECT table_type=ODBC
+CONNECTION='DSN=MS Access Database;DBQ=C:/Program
 Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
@@ -77,9 +77,9 @@ what the column definitions of that table are. We can get this information with\
 a catalog table. This is how to do it:
 
 ```
-create table custinfo engine=connect table_type=ODBC
+CREATE TABLE custinfo ENGINE=CONNECT table_type=ODBC
 tabname=customers catfunc=columns
-Connection='DSN=MS Access Database;DBQ=C:/Program
+CONNECTION='DSN=MS Access Database;DBQ=C:/Program
 Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
@@ -87,22 +87,22 @@ Alternatively it is possible to specify what columns of the catalog table we\
 want:
 
 ```
-create table custinfo (
-  column_name char(128) not null,
-  type_name char(20) not null,
-  length int(10) not null flag=7,
-  prec smallint(6) not null flag=9)
-  nullable smallint(6) not null)
-engine=connect table_type=ODBC tabname=customers
+CREATE TABLE custinfo (
+  column_name CHAR(128) NOT NULL,
+  type_name CHAR(20) NOT NULL,
+  LENGTH INT(10) NOT NULL flag=7,
+  prec SMALLINT(6) NOT NULL flag=9)
+  NULLABLE SMALLINT(6) NOT NULL)
+ENGINE=CONNECT table_type=ODBC tabname=customers
 catfunc=columns
-Connection='DSN=MS Access Database;DBQ=C:/Program
+CONNECTION='DSN=MS Access Database;DBQ=C:/Program
 Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
 To get the column info:
 
 ```
-select * from custinfo;
+SELECT * FROM custinfo;
 ```
 
 which results in this table:
@@ -124,20 +124,20 @@ which results in this table:
 Now you can create the CUSTOMERS table as:
 
 ```
-create table Customers (
-  CustomerID varchar(5),
-  CompanyName varchar(40),
-  ContactName varchar(30),
-  ContactTitle varchar(30),
-  Address varchar(60),
-  City varchar(15),
-  Region varchar(15),
-  PostalCode varchar(10),
-  Country varchar(15),
-  Phone varchar(24),
-  Fax varchar(24))
-engine=connect table_type=ODBC block_size=10
-Connection='DSN=MS Access Database;DBQ=C:/Program
+CREATE TABLE Customers (
+  CustomerID VARCHAR(5),
+  CompanyName VARCHAR(40),
+  ContactName VARCHAR(30),
+  ContactTitle VARCHAR(30),
+  Address VARCHAR(60),
+  City VARCHAR(15),
+  Region VARCHAR(15),
+  PostalCode VARCHAR(10),
+  Country VARCHAR(15),
+  Phone VARCHAR(24),
+  Fax VARCHAR(24))
+ENGINE=CONNECT table_type=ODBC block_size=10
+CONNECTION='DSN=MS Access Database;DBQ=C:/Program
 Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
@@ -211,8 +211,8 @@ The SQLDataSources function returns a result set having the following columns:
 To get the data source, you can do for instance:
 
 ```
-create table datasources (
-engine=CONNECT table_type=ODBC catfunc=DSN;
+CREATE TABLE datasources (
+ENGINE=CONNECT table_type=ODBC catfunc=DSN;
 ```
 
 The SQLDrivers function returns a result set having the following columns:
@@ -225,8 +225,8 @@ The SQLDrivers function returns a result set having the following columns:
 You can get the driver list with:
 
 ```
-create table drivers
-engine=CONNECT table_type=ODBC catfunc=drivers;
+CREATE TABLE drivers
+ENGINE=CONNECT table_type=ODBC catfunc=drivers;
 ```
 
 ### Another example, WMI table
@@ -251,19 +251,19 @@ For example, before creating the "csprod" table, you could have created the\
 info table:
 
 ```
-create table CSPRODCOL (
-  Column_name char(64) not null,
-  Data_Type int(3) not null,
-  Type_name char(16) not null,
-  Length int(6) not null,
-  Prec int(2) not null flag=6)
-engine=CONNECT table_type='WMI' catfunc=col;
+CREATE TABLE CSPRODCOL (
+  Column_name CHAR(64) NOT NULL,
+  Data_Type INT(3) NOT NULL,
+  Type_name CHAR(16) NOT NULL,
+  LENGTH INT(6) NOT NULL,
+  Prec INT(2) NOT NULL flag=6)
+ENGINE=CONNECT table_type='WMI' catfunc=col;
 ```
 
 Now the query:
 
 ```
-select * from csprodcol;
+SELECT * FROM csprodcol;
 ```
 
 will display the result:
@@ -312,8 +312,8 @@ If this happens, it is possible to increase the default limit using the MAXRES\
 option, for instance:
 
 ```
-create table allcols engine=connect table_type=odbc
-connection='DSN=ORACLE_TEST;UID=system;PWD=manager'
+CREATE TABLE allcols ENGINE=CONNECT table_type=odbc
+CONNECTION='DSN=ORACLE_TEST;UID=system;PWD=manager'
 option_list='Maxres=110000' catfunc=columns;
 ```
 
@@ -321,7 +321,7 @@ Indeed, because the entire table result is memorized before the query is\
 executed; the returned value would be limited even on a query such as:
 
 ```
-select count(*) from allcols;
+SELECT COUNT(*) FROM allcols;
 ```
 
 <sub>_This page is licensed: GPLv2_</sub>

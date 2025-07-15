@@ -260,7 +260,7 @@ Since the partitioning scheme is system maintained the min and max values are no
 A bulk delete statement can be used to delete the remaining rows that do not fall exactly within partition ranges. The partition drops will be fastest, however the system optimizes bulk delete statements to delete by block internally so are still relatively fast.
 
 ```
-delete from orders where orderdate <= '1998-12-31';
+DELETE FROM orders WHERE orderdate <= '1998-12-31';
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

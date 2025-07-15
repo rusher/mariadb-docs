@@ -4,14 +4,14 @@ A `PROXY` table is a table that accesses and reads the data of another table or 
 For instance, to create a table based on the boys `FIX` table:
 
 ```
-create table xboy engine=connect 
+CREATE TABLE xboy ENGINE=CONNECT 
   table_type=PROXY tabname=boys;
 ```
 
 Simply, `PROXY` being the default type when `TABNAME` is specified:
 
 ```
-create table xboy engine=connect tabname=boys;
+CREATE TABLE xboy ENGINE=CONNECT tabname=boys;
 ```
 
 Because the boys table can be directly used, what can be the use of a proxy\
@@ -57,12 +57,12 @@ table. It is also possible to define its columns with different names or type,\
 to use only some of them or to changes their order. For instance:
 
 ```
-create table city (
-  city varchar(11),
-  boy char(12) flag=1,
-  birth date)
-engine=CONNECT tabname=boys;
-select * from city;
+CREATE TABLE city (
+  city VARCHAR(11),
+  boy CHAR(12) flag=1,
+  birth DATE)
+ENGINE=CONNECT tabname=boys;
+SELECT * FROM city;
 ```
 
 This will display:

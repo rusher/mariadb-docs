@@ -37,7 +37,7 @@ ON
 AND
  B.fromDate = (
    SELECT
-     max(sub.fromDate)
+     MAX(sub.fromDate)
    FROM
      tableB sub
    WHERE

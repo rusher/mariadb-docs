@@ -38,7 +38,7 @@ In cases where you have two servers using different character-sets, using `SELEC
 The following example produces a file in the CSV format:
 
 ```sql
-SELECT customer_id, firstname, surname from customer
+SELECT customer_id, firstname, surname FROM customer
   INTO OUTFILE '/exportdata/customers.txt'
   FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
   LINES TERMINATED BY '\n';

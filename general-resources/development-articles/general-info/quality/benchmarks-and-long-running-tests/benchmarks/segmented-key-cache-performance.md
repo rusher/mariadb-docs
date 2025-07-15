@@ -116,10 +116,10 @@ Table definition:
 
 ```
 CREATE TABLE sbtest (
-  id  int unsigned NOT NULL AUTO_INCREMENT,
-  k   int unsigned NOT NULL DEFAULT '0',
-  c   char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id  INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  k   INT UNSIGNED NOT NULL DEFAULT '0',
+  c   CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=MyISAM

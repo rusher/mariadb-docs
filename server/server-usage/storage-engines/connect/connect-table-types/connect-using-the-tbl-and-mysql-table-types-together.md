@@ -42,7 +42,7 @@ centralized database. Let us suppose we have on some remote network machine&#x73
 Suppose we want to execute on all servers a query such as:
 
 ```
-select c1, sum(c2) from t1 a, t2 b where a.id = b.id group by c1;
+SELECT c1, SUM(c2) FROM t1 a, t2 b WHERE a.id = b.id GROUP BY c1;
 ```
 
 This raises many problems. Returning the column values of the _t1_ and _t2_\
@@ -58,7 +58,7 @@ queries. Here is how to do it. For each remote machine, create a table that\
 will retrieve the locally executed query. For instance for m1:
 
 ```
-create table rt1 engine=connect option_list='host=m1'
+CREATE TABLE rt1 ENGINE=CONNECT option_list='host=m1'
 srcdef='select c1, sum(c2) as sc2 from t1 a, t2 b where a.id = b.id group by c1';
 ```
 
@@ -71,14 +71,14 @@ named c1 and sc2\[[1](connect-using-the-tbl-and-mysql-table-types-together.md#_n
 Then create the table that will retrieve the result of all these tables:
 
 ```
-create table rtall engine=connect table_type=tbl
+CREATE TABLE rtall ENGINE=CONNECT table_type=tbl
 table_list='rt1,rt2,…,rtn' option_list='thread=yes';
 ```
 
 Now you can retrieve the desired result by:
 
 ```
-select c1, sum(sc2) from rtall;
+SELECT c1, SUM(sc2) FROM rtall;
 ```
 
 Almost all the work will be done on the remote machines, simultaneously thanks\
@@ -99,16 +99,16 @@ created for all remote servers, it will be possible to create a tbl table\
 allowing getting the result of a query executed on all of them by:
 
 ```
-create table qall [column definition]
-engine=connect table_type=TBL srcdef='a query'
+CREATE TABLE qall [column definition]
+ENGINE=CONNECT table_type=TBL srcdef='a query'
 table_list='srv1,srv2,…,srvn' [option_list='thread=yes'];
 ```
 
 For instance:
 
 ```
-create table verall engine=connect table_type=TBL srcdef='select @@version' table_list=',server_one';
-select * from verall;
+CREATE TABLE verall ENGINE=CONNECT table_type=TBL srcdef='select @@version' table_list=',server_one';
+SELECT * FROM verall;
 ```
 
 This reply:

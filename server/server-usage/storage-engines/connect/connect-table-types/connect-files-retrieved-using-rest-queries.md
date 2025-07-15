@@ -14,14 +14,14 @@ To do so, specify the HTTP of the web client and eventually the URI of the reque
 
 ```
 CREATE TABLE webusers (
-  id bigint(2) NOT NULL,
-  name char(24) NOT NULL,
-  username char(16) NOT NULL,
-  email char(25) NOT NULL,
-  address varchar(256) DEFAULT NULL,
-  phone char(21) NOT NULL,
-  website char(13) NOT NULL,
-  company varchar(256) DEFAULT NULL
+  id BIGINT(2) NOT NULL,
+  name CHAR(24) NOT NULL,
+  username CHAR(16) NOT NULL,
+  email CHAR(25) NOT NULL,
+  address VARCHAR(256) DEFAULT NULL,
+  phone CHAR(21) NOT NULL,
+  website CHAR(13) NOT NULL,
+  company VARCHAR(256) DEFAULT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=utf8
 TABLE_TYPE=JSON FILE_NAME='users.json' HTTP='http://jsonplaceholder.typicode.com' URI='/users';
 ```
@@ -61,21 +61,21 @@ Then the table will be created as:
 
 ```
 CREATE TABLE `webusers3` (
-  `id` bigint(2) NOT NULL,
-  `name` char(24) NOT NULL,
-  `username` char(16) NOT NULL,
-  `email` char(25) NOT NULL,
-  `address_street` char(17) NOT NULL `JPATH`='$.address.street',
-  `address_suite` char(9) NOT NULL `JPATH`='$.address.suite',
-  `address_city` char(14) NOT NULL `JPATH`='$.address.city',
-  `address_zipcode` char(10) NOT NULL `JPATH`='$.address.zipcode',
-  `address_geo_lat` char(8) NOT NULL `JPATH`='$.address.geo.lat',
-  `address_geo_lng` char(9) NOT NULL `JPATH`='$.address.geo.lng',
-  `phone` char(21) NOT NULL,
-  `website` char(13) NOT NULL,
-  `company_name` char(18) NOT NULL `JPATH`='$.company.name',
-  `company_catchPhrase` char(40) NOT NULL `JPATH`='$.company.catchPhrase',
-  `company_bs` varchar(36) NOT NULL `JPATH`='$.company.bs'
+  `id` BIGINT(2) NOT NULL,
+  `name` CHAR(24) NOT NULL,
+  `username` CHAR(16) NOT NULL,
+  `email` CHAR(25) NOT NULL,
+  `address_street` CHAR(17) NOT NULL `JPATH`='$.address.street',
+  `address_suite` CHAR(9) NOT NULL `JPATH`='$.address.suite',
+  `address_city` CHAR(14) NOT NULL `JPATH`='$.address.city',
+  `address_zipcode` CHAR(10) NOT NULL `JPATH`='$.address.zipcode',
+  `address_geo_lat` CHAR(8) NOT NULL `JPATH`='$.address.geo.lat',
+  `address_geo_lng` CHAR(9) NOT NULL `JPATH`='$.address.geo.lng',
+  `phone` CHAR(21) NOT NULL,
+  `website` CHAR(13) NOT NULL,
+  `company_name` CHAR(18) NOT NULL `JPATH`='$.company.name',
+  `company_catchPhrase` CHAR(40) NOT NULL `JPATH`='$.company.catchPhrase',
+  `company_bs` VARCHAR(36) NOT NULL `JPATH`='$.company.bs'
 ) ENGINE=CONNECT DEFAULT CHARSET=utf8 `TABLE_TYPE`='JSON' `FILE_NAME`='users.json' `OPTION_LIST`='Depth=2' `HTTP`='http://jsonplaceholder.typicode.com' `URI`='/users';
 ```
 

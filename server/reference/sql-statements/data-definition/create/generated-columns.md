@@ -182,7 +182,7 @@ Non-deterministic [built-in functions](../../../sql-functions/) are not supporte
 Defining a generated column based on other generated columns defined before it in the table definition is supported. For example:
 
 ```sql
-CREATE TABLE t1 (a int as (1), b int as (a));
+CREATE TABLE t1 (a INT AS (1), b INT AS (a));
 ```
 
 However, defining a generated column based on other generated columns defined after in the table definition is not supported in expressions for generation columns because generated columns are calculated in the order they are defined.

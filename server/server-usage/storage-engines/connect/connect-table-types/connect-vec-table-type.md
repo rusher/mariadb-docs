@@ -42,10 +42,10 @@ shared among several users.
 For instance:
 
 ```
-create table vtab (
-a int not null,
-b char(10) not null)
-engine=CONNECT table_type=VEC file_name='vt.vec';
+CREATE TABLE vtab (
+a INT NOT NULL,
+b CHAR(10) NOT NULL)
+ENGINE=CONNECT table_type=VEC file_name='vt.vec';
 ```
 
 This table, split by default, will have the column values in files vt1.vec and vt2.vec.

@@ -17,13 +17,13 @@ table is DOS. For instance, having the file _dept.dat_ formatted like:
 You can define a table based on it with:
 
 ```
-create table department (
-  number char(4) not null,
-  location char(15) not null flag=5,
-  director char(5) not null flag=20,
-  function char(12) not null flag=26,
-  name char(22) not null flag=38)
-engine=CONNECT table_type=DOS file_name='dept.dat';
+CREATE TABLE department (
+  NUMBER CHAR(4) NOT NULL,
+  LOCATION CHAR(15) NOT NULL flag=5,
+  director CHAR(5) NOT NULL flag=20,
+  FUNCTION CHAR(12) NOT NULL flag=26,
+  name CHAR(22) NOT NULL flag=38)
+ENGINE=CONNECT table_type=DOS file_name='dept.dat';
 ```
 
 Here the flag column option represents the offset of this column inside the\
@@ -72,12 +72,12 @@ Bill      Boston      11/09/1986  10/02/2008
 You can for instance use the command:
 
 ```
-create table boys (
-  name char(12) not null,
-  city char(12) not null,
-  birth date not null date_format='DD/MM/YYYY',
-  hired date not null date_format='DD/MM/YYYY' flag=36)
-engine=CONNECT table_type=FIX file_name='boys.txt' lrecl=48;
+CREATE TABLE boys (
+  name CHAR(12) NOT NULL,
+  city CHAR(12) NOT NULL,
+  birth DATE NOT NULL date_format='DD/MM/YYYY',
+  hired DATE NOT NULL date_format='DD/MM/YYYY' flag=36)
+ENGINE=CONNECT table_type=FIX file_name='boys.txt' lrecl=48;
 ```
 
 Here some _flag_ options were not specified because the fields have no\
@@ -133,7 +133,7 @@ After checking that the LRECL default or specified specification is correct,\
 you can indicate to ignore that extra EOF character by:
 
 ```
-alter table xtab option_list='eof=1';
+ALTER TABLE xtab option_list='eof=1';
 ```
 
 Of course, you can specify this option directly in the Create statement. All\
@@ -176,20 +176,20 @@ Let us see how it works in the following example. We define a table based on\
 the file xfmt.txt having eight fields of 12 characters:
 
 ```
-create table xfmt (
-  col1 double(12,3) not null,
-  col2 double(12,3) not null field_format='4',
-  col3 double(12,2) not null field_format='N3',
-  col4 double(12,3) not null field_format='Z',
-  col5 double(12,3) not null field_format='Z3',
-  col6 double(12,5) not null field_format='ZN5',
-  col7 int(12) not null field_format='N3',
-  col8 smallint(12) not null field_format='N3')
-engine=CONNECT table_type=FIX file_name='xfmt.txt';
+CREATE TABLE xfmt (
+  col1 DOUBLE(12,3) NOT NULL,
+  col2 DOUBLE(12,3) NOT NULL field_format='4',
+  col3 DOUBLE(12,2) NOT NULL field_format='N3',
+  col4 DOUBLE(12,3) NOT NULL field_format='Z',
+  col5 DOUBLE(12,3) NOT NULL field_format='Z3',
+  col6 DOUBLE(12,5) NOT NULL field_format='ZN5',
+  col7 INT(12) NOT NULL field_format='N3',
+  col8 smallint(12) NOT NULL field_format='N3')
+ENGINE=CONNECT table_type=FIX file_name='xfmt.txt';
 
-insert into xfmt values(4567.056,4567.056,4567.056,4567.056,-23456.8,
+INSERT INTO xfmt VALUES(4567.056,4567.056,4567.056,4567.056,-23456.8,
     3.14159,4567,4567);
-select * from xfmt;
+SELECT * FROM xfmt;
 ```
 
 The first row is displayed as:
@@ -204,17 +204,17 @@ More interesting is the file layout. To see it let us define another table\
 based on the same file but whose columns are all characters:
 
 ```
-create table cfmt (
-  col1 char(12) not null,
-  col2 char(12) not null,
-  col3 char(12) not null,
-  col4 char(12) not null,
-  col5 char(12) not null,
-  col6 char(12) not null,
-  col7 char(12) not null,
-  col8 char(12) not null)
-engine=CONNECT table_type=FIX file_name='xfmt.txt';
-select * from cfmt;
+CREATE TABLE cfmt (
+  col1 CHAR(12) NOT NULL,
+  col2 CHAR(12) NOT NULL,
+  col3 CHAR(12) NOT NULL,
+  col4 CHAR(12) NOT NULL,
+  col5 CHAR(12) NOT NULL,
+  col6 CHAR(12) NOT NULL,
+  col7 CHAR(12) NOT NULL,
+  col8 CHAR(12) NOT NULL)
+ENGINE=CONNECT table_type=FIX file_name='xfmt.txt';
+SELECT * FROM cfmt;
 ```
 
 The (transposed) display of the select command shows the file text layout for\

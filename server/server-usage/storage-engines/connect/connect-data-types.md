@@ -224,7 +224,7 @@ columns declared as nullable.
 For instance:
 
 ```sql
-CREATE TABLE t1 (a INT, b CHAR(10)) engine=connect;
+CREATE TABLE t1 (a INT, b CHAR(10)) ENGINE=CONNECT;
 INSERT INTO t1 VALUES (0,'zero'),(1,'one'),(2,'two'),(NULL,'???');
 SELECT * FROM t1 WHERE a IS NULL;
 ```
@@ -248,7 +248,7 @@ This will return no line because a NULL is not equal to 0 in an SQL where clause
 Now let us see what happens with not null columns:
 
 ```sql
-CREATE TABLE t1 (a INT NOT NULL, b CHAR(10) NOT NULL) engine=connect;
+CREATE TABLE t1 (a INT NOT NULL, b CHAR(10) NOT NULL) ENGINE=CONNECT;
 INSERT INTO t1 VALUES (0,'zero'),(1,'one'),(2,'two'),(NULL,'???');
 ```
 
@@ -261,8 +261,8 @@ The insert statement will produce a warning saying:
 It is replaced by a pseudo null `0` on the fourth row. Let us see the result:
 
 ```
-select * from t1 where a is null;
-select * from t1 where a = 0;
+SELECT * FROM t1 WHERE a IS NULL;
+SELECT * FROM t1 WHERE a = 0;
 ```
 
 The first query returns no rows, 0 are valid values and not NULL. The second query replies:

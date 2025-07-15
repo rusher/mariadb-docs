@@ -209,9 +209,9 @@ The MariaDB optimizer has a complex part called the Range Optimizer. This is a m
 An example: Consider a table
 
 ```
-create table some_events ( 
-  start_date date, 
-  end_date date, 
+CREATE TABLE some_events ( 
+  start_date DATE, 
+  end_date DATE, 
   ...
   key (start_date, end_date)
 );
@@ -266,7 +266,7 @@ The join optimizer's node is named `considered_execution_plans`.
 The optimizer constructs the join orders in a left-to-right fashion. That is, if the query is a join of three tables:
 
 ```
-select * from t1, t2, t3 where ...
+SELECT * FROM t1, t2, t3 WHERE ...
 ```
 
 then the optimizer will

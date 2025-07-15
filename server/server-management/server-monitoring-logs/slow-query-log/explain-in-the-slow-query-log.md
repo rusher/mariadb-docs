@@ -26,8 +26,8 @@ When explain recording is on, slow query log entries look like this:
 # explain: 1    SIMPLE  customer        ref     PRIMARY,i_c_nationkey   i_c_nationkey   5       dbt3sf1.nation.n_nationkey      3145    Using index
 # explain: 1    SIMPLE  orders  ref     i_o_custkey     i_o_custkey     5       dbt3sf1.customer.c_custkey      7       Using index
 #
-SET timestamp=1384261412;
-select count(*) from customer, orders, nation where c_custkey=o_custkey and c_nationkey=n_nationkey and n_name='GERMANY';
+SET TIMESTAMP=1384261412;
+SELECT COUNT(*) FROM customer, orders, nation WHERE c_custkey=o_custkey AND c_nationkey=n_nationkey AND n_name='GERMANY';
 ```
 
 EXPLAIN lines start with \`

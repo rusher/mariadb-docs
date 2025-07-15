@@ -50,8 +50,8 @@ CREATE OR REPLACE TABLE table_name (a int);
 is basically the same as:
 
 ```sql
-DROP TABLE IF EXISTS table_name;
-CREATE TABLE table_name (a int);
+DROP TABLE IF EXISTS TABLE_NAME;
+CREATE TABLE TABLE_NAME (a INT);
 ```
 
 with the following exceptions:
@@ -212,8 +212,8 @@ The default value will be used if you [INSERT](../../data-manipulation/inserting
 You can use most functions in `DEFAULT`. Expressions should have parentheses around them. If you use a non deterministic function in `DEFAULT` then all inserts to the table will be [replicated](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md) in [row mode](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based). You can even refer to earlier columns in the `DEFAULT` expression (excluding `AUTO_INCREMENT` columns):
 
 ```sql
-CREATE TABLE t1 (a int DEFAULT (1+1), b int DEFAULT (a+1));
-CREATE TABLE t2 (a bigint primary key DEFAULT UUID_SHORT());
+CREATE TABLE t1 (a INT DEFAULT (1+1), b INT DEFAULT (a+1));
+CREATE TABLE t2 (a BIGINT PRIMARY KEY DEFAULT UUID_SHORT());
 ```
 
 The `DEFAULT` clause cannot contain any [stored functions](../../../../server-usage/stored-routines/stored-functions/) or [subqueries](../../data-manipulation/selecting-data/joins-subqueries/subqueries/), and a column used in the clause must already have been defined earlier in the statement.
@@ -887,12 +887,12 @@ The `PARTITION` keyword is optional as part of the partition definition. Instead
 ```sql
 CREATE OR REPLACE TABLE t1 (x INT)
   PARTITION BY RANGE(x) (
-    partition p1 values less than (10),
-    partition p2 values less than (20),
-    partition p3 values less than (30),
-    partition p4 values less than (40),
-    partition p5 values less than (50),
-    partition pn values less than maxvalue);
+    PARTITION p1 VALUES LESS THAN (10),
+    PARTITION p2 VALUES LESS THAN (20),
+    PARTITION p3 VALUES LESS THAN (30),
+    PARTITION p4 VALUES LESS THAN (40),
+    PARTITION p5 VALUES LESS THAN (50),
+    PARTITION pn VALUES LESS THAN MAXVALUE);
 ```
 
 The following can be used:
@@ -900,12 +900,12 @@ The following can be used:
 ```sql
 CREATE OR REPLACE TABLE t1 (x INT)
   PARTITION BY RANGE(x) (
-    p1 values less than (10),
-    p2 values less than (20),
-    p3 values less than (30),
-    p4 values less than (40),
-    p5 values less than (50),
-    pn values less than maxvalue);
+    p1 VALUES LESS THAN (10),
+    p2 VALUES LESS THAN (20),
+    p3 VALUES LESS THAN (30),
+    p4 VALUES LESS THAN (40),
+    p5 VALUES LESS THAN (50),
+    pn VALUES LESS THAN MAXVALUE);
 ```
 {% endtab %}
 
@@ -915,12 +915,12 @@ The `PARTITION` keyword is not optional as part of the partition definition. You
 ```sql
 CREATE OR REPLACE TABLE t1 (x INT)
   PARTITION BY RANGE(x) (
-    partition p1 values less than (10),
-    partition p2 values less than (20),
-    partition p3 values less than (30),
-    partition p4 values less than (40),
-    partition p5 values less than (50),
-    partition pn values less than maxvalue);
+    PARTITION p1 VALUES LESS THAN (10),
+    PARTITION p2 VALUES LESS THAN (20),
+    PARTITION p3 VALUES LESS THAN (30),
+    PARTITION p4 VALUES LESS THAN (40),
+    PARTITION p5 VALUES LESS THAN (50),
+    PARTITION pn VALUES LESS THAN MAXVALUE);
 ```
 {% endtab %}
 {% endtabs %}
@@ -945,10 +945,10 @@ MariaDB supports [Atomic DDL](../atomic-ddl.md). `CREATE TABLE` is atomic, excep
 
 ```sql
 CREATE TABLE IF NOT EXISTS test (
-a BIGINT auto_increment PRIMARY KEY,
-name VARCHAR(128) charset utf8,
+a BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(128) CHARSET utf8,
 KEY name (name(32))
-) engine=InnoDB default charset latin1;
+) ENGINE=InnoDB DEFAULT CHARSET latin1;
 ```
 
 This example shows a couple of things:
@@ -962,8 +962,8 @@ The following clauses will work:
 
 ```sql
 CREATE TABLE t1(
-  a int DEFAULT (1+1),
-  b int DEFAULT (a+1),
+  a INT DEFAULT (1+1),
+  b INT DEFAULT (a+1),
   expires DATETIME DEFAULT(NOW() + INTERVAL 1 YEAR),
   x BLOB DEFAULT USER()
 );

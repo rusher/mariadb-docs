@@ -9,14 +9,14 @@ These tables are “virtual tables”, meaning they have no physical data but ra
 A table of type DIR returns a list of file name and description as a result set. To create a DIR table, use a Create Table statement such as:
 
 ```
-create table source (
-  DRIVE char(2) NOT NULL,
-  PATH varchar(256) NOT NULL,
-  FNAME varchar(256) NOT NULL,
-  FTYPE char(4) NOT NULL,
-  SIZE double(12,0) NOT NULL flag=5,
-  MODIFIED datetime NOT NULL)
-engine=CONNECT table_type=DIR file_name='..\\*.cc';
+CREATE TABLE SOURCE (
+  DRIVE CHAR(2) NOT NULL,
+  PATH VARCHAR(256) NOT NULL,
+  FNAME VARCHAR(256) NOT NULL,
+  FTYPE CHAR(4) NOT NULL,
+  SIZE DOUBLE(12,0) NOT NULL flag=5,
+  MODIFIED DATETIME NOT NULL)
+ENGINE=CONNECT table_type=DIR file_name='..\\*.cc';
 ```
 
 When used in a query, the table returns the same file information listing than the system "DIR `*.cc`" statement would return if executed in the same current directory (here supposedly ..)
@@ -24,8 +24,8 @@ When used in a query, the table returns the same file information listing than t
 For instance, the query:
 
 ```
-select fname, size, modified from source
-  where fname like '%handler%';
+SELECT fname, SIZE, modified FROM SOURCE
+  WHERE fname like '%handler%';
 ```
 
 Displays:
@@ -54,15 +54,15 @@ Displays:
 When specified in the create table statement, the subdir option indicates to list, in addition to the files contained in the specified directory, all the files verifying the filename pattern that are contained in sub-directories of the specified directory. For instance, using:
 
 ```
-create table data (
-  PATH varchar(256) NOT NULL flag=1,
-  FNAME varchar(256) NOT NULL,
-  FTYPE char(4) NOT NULL,
-  SIZE double(12,0) NOT NULL flag=5)
-engine=CONNECT table_type=DIR file_name='*.frm'
+CREATE TABLE DATA (
+  PATH VARCHAR(256) NOT NULL flag=1,
+  FNAME VARCHAR(256) NOT NULL,
+  FTYPE CHAR(4) NOT NULL,
+  SIZE DOUBLE(12,0) NOT NULL flag=5)
+ENGINE=CONNECT table_type=DIR file_name='*.frm'
 option_list='subdir=1';
 
-select path, count(*), sum(size) from data group by path;
+SELECT PATH, COUNT(*), SUM(SIZE) FROM DATA GROUP BY PATH;
 ```
 
 You will get the following result set showing how many tables are created in the MariaDB databases and what is the total length of the FRM files:
@@ -96,10 +96,10 @@ To create a WMI table displaying information coming from a WMI provider, you mus
 The column names of the tables must be the names (case insensitive) of the properties you want to retrieve. For instance:
 
 ```
-create table alias (
-  friendlyname char(32) not null,
-  target char(50) not null)
-engine=CONNECT table_type='WMI'
+CREATE TABLE ALIAS (
+  friendlyname CHAR(32) NOT NULL,
+  target CHAR(50) NOT NULL)
+ENGINE=CONNECT table_type='WMI'
 option_list='Namespace=root\\cli,Class=Msft_CliAlias';
 ```
 
@@ -121,14 +121,14 @@ effectively use class ‘Win32\_Product’.
 For example if you define a table as:
 
 ```
-create table CSPROD engine=CONNECT table_type='WMI';
+CREATE TABLE CSPROD ENGINE=CONNECT table_type='WMI';
 ```
 
 It will return the information on the current machine, using the class\
 ComputerSystemProduct of the CIMV2 namespace. For instance:
 
 ```
-select * from csprod;
+SELECT * FROM csprod;
 ```
 
 Will return a result such as:
@@ -181,7 +181,7 @@ cause the computer to stop responding."
 Sure enough, even a simple query such as:
 
 ```
-select count(*) from cim where drive = 'D:' and path like '\\MariaDB\\%';
+SELECT COUNT(*) FROM cim WHERE drive = 'D:' AND PATH like '\\MariaDB\\%';
 ```
 
 is prone to last almost forever (probably due to the LIKE clause). This is why,\
@@ -206,17 +206,17 @@ except in the case of CIM\_Datafile class for the reason given above.
 However, there is one point that is not covered yet, the syntax used to specify dates in queries. WQL does not recognize dates as number items but translates them to its internal format dates specified as text. Many formats are recognized as described in the Microsoft documentation but only one is useful because common to WQL and MariaDB SQL. Here is an example of a query on a table named "cim" created by:
 
 ```
-create table cim (
-  Name varchar(255) not null,
-  LastModified datetime not null)
-engine=CONNECT table_type='WMI'
+CREATE TABLE cim (
+  Name VARCHAR(255) NOT NULL,
+  LastModified DATETIME NOT NULL)
+ENGINE=CONNECT table_type='WMI'
 option_list='class=CIM_DataFile,estimate=5000';
 ```
 
 The date must be specified with the format in which CIM DATETIME values are stored (WMI uses the date and time formats defined by the Distributed Management Task Force).
 
 ```
-select * from cim where drive = 'D:' and path = '\\PlugDB\\Bin\\'
+SELECT * FROM cim WHERE drive = 'D:' AND PATH = '\\PlugDB\\Bin\\'
      and lastmodified > '20120415000000.000000+120';
 ```
 
@@ -243,8 +243,8 @@ It is: year, month, day, hour, minute, second, millisecond, and signed minute de
 This type is used to display various general information about the computer and, in particular, about its network cards. To create such a table, the syntax to use is:
 
 ```
-create table tabname (column definition)
-engine=CONNECT table_type=MAC;
+CREATE TABLE tabname (COLUMN definition)
+ENGINE=CONNECT table_type=MAC;
 ```
 
 Column names can be freely chosen because their signification, i.e. the values they will display, comes from the specified Flag option. The valid values for Flag are:
@@ -279,20 +279,20 @@ Column names can be freely chosen because their signification, i.e. the values t
 For instance, you can define the table _macaddr_ as:
 
 ```
-create table macaddr (
-  Host varchar(132) flag=1,
-  Card varchar(132) flag=11,
-  Address char(24) flag=12,
-  IP char(16) flag=15,
-  Gateway char(16) flag=17,
-  Lease datetime flag=23)
-engine=CONNECT table_type=MAC;
+CREATE TABLE MACADDR (
+  Host VARCHAR(132) flag=1,
+  Card VARCHAR(132) flag=11,
+  Address CHAR(24) flag=12,
+  IP CHAR(16) flag=15,
+  Gateway CHAR(16) flag=17,
+  Lease DATETIME flag=23)
+ENGINE=CONNECT table_type=MAC;
 ```
 
 If you execute the query:
 
 ```
-select host, address, ip, gateway, lease from macaddr;
+SELECT host, address, ip, gateway, lease FROM MACADDR;
 ```
 
 It will return, for example:

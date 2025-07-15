@@ -60,7 +60,7 @@ OR Processing has the following restrictions:
 
 
 ```
-SELECT count(*) FROM orders, lineitem 
+SELECT COUNT(*) FROM orders, lineitem 
   WHERE (lineitem.l_orderkey < 100 OR lineitem.l_linenumber > 10) 
     AND lineitem.l_orderkey =orders.o_orderkey;
 ```

@@ -45,17 +45,17 @@ sudo apt-get install cassandra
 1. in the VM, launch the `cassandra-cli` program and test the Cassandra installation:
 
 ```
-create keyspace DEMO; 
-use DEMO; 
+CREATE keyspace DEMO; 
+USE DEMO; 
 
-create column family Users 
-with key_validation_class = 'UTF8Type' 
-and comparator = 'UTF8Type' 
-and default_validation_class = 'UTF8Type'; 
+CREATE COLUMN family Users 
+WITH key_validation_class = 'UTF8Type' 
+AND comparator = 'UTF8Type' 
+AND default_validation_class = 'UTF8Type'; 
 
-set Users[1234][name] = scott; 
-set Users[1234][password] = tiger; 
-get Users[1234]; 
+SET Users[1234][name] = scott; 
+SET Users[1234][password] = tiger; 
+GET Users[1234]; 
 quit;
 ```
 

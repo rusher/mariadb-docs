@@ -46,7 +46,7 @@ will null value for the French table.
 For instance, the query:
 
 ```
-select name, sex, title, salary from allemp where department = 318;
+SELECT name, sex, title, salary FROM allemp WHERE department = 318;
 ```
 
 Can reply:
@@ -91,25 +91,25 @@ Let us see the following example where t1 and t2 are MyISAM tables similar to\
 the ones given in the `MERGE` description:
 
 ```
-create table xt1 (
-  a int(11) not null,
-  message char(20))
-engine=CONNECT table_type=MYSQL tabname='t1'
+CREATE TABLE xt1 (
+  a INT(11) NOT NULL,
+  message CHAR(20))
+ENGINE=CONNECT table_type=MYSQL tabname='t1'
 option_list='database=test,user=root';
 
-create table xt2 (
-  a int(11) not null,
-  message char(20))
-engine=CONNECT table_type=MYSQL tabname='t2'
+CREATE TABLE xt2 (
+  a INT(11) NOT NULL,
+  message CHAR(20))
+ENGINE=CONNECT table_type=MYSQL tabname='t2'
 option_list='database=test,user=root';
 
-create table toto (
-  tabname char(8) not null special='TABID',
-  a int(11) not null,
-  message char(20))
-engine=CONNECT table_type=TBL table_list='xt1,xt2';
+CREATE TABLE toto (
+  tabname CHAR(8) NOT NULL special='TABID',
+  a INT(11) NOT NULL,
+  message CHAR(20))
+ENGINE=CONNECT table_type=TBL table_list='xt1,xt2';
 
-select * from total;
+SELECT * FROM total;
 ```
 
 The result returned by the SELECT statement is:
@@ -126,7 +126,7 @@ The result returned by the SELECT statement is:
 Now if you send the query:
 
 ```
-select * from total where tabname = 'xt2';
+SELECT * FROM total WHERE tabname = 'xt2';
 ```
 
 CONNECT will analyze the where clause and only read the _xt1_ table. This can\

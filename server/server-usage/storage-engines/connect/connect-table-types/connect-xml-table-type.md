@@ -93,13 +93,13 @@ document, displaying the node contents.
 For this, you can define a table _xsamptag_ as:
 
 ```
-create table xsamptag (
-  AUTHOR char(50),
-  TITLE char(32),
-  TRANSLATOR char(40),
-  PUBLISHER char(40),
-  DATEPUB int(4))
-engine=CONNECT table_type=XML file_name='Xsample.xml';
+CREATE TABLE xsamptag (
+  AUTHOR CHAR(50),
+  TITLE CHAR(32),
+  TRANSLATOR CHAR(40),
+  PUBLISHER CHAR(40),
+  DATEPUB INT(4))
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml';
 ```
 
 It will be displayed as:
@@ -128,11 +128,11 @@ column names match attribute names. Therefore, we can retrieve them by creating\
 a table such as:
 
 ```
-create table xsampattr (
-  ISBN char(15),
-  LANG char(2),
-  SUBJECT char(32))
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsampattr (
+  ISBN CHAR(15),
+  LANG CHAR(2),
+  SUBJECT CHAR(32))
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 option_list='Coltype=@';
 ```
 
@@ -151,39 +151,39 @@ indicate which columns are attributes:
 From Connect 1.7.0002
 
 ```
-create table xsamp (
-ISBN char(15) xpath='@',
-LANG char(2) xpath='@',
-SUBJECT char(32) xpath='@',
-AUTHOR char(50),
-TITLE char(32),
-TRANSLATOR char(40),
-PUBLISHER char(40),
-DATEPUB int(4))
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsamp (
+ISBN CHAR(15) xpath='@',
+LANG CHAR(2) xpath='@',
+SUBJECT CHAR(32) xpath='@',
+AUTHOR CHAR(50),
+TITLE CHAR(32),
+TRANSLATOR CHAR(40),
+PUBLISHER CHAR(40),
+DATEPUB INT(4))
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO' option_list='rownode=BOOK';
 ```
 
 Before Connect 1.7.0002
 
 ```
-create table xsamp (
-  ISBN char(15) field_format='@',
-  LANG char(2) field_format='@',
-  SUBJECT char(32) field_format='@',
-  AUTHOR char(50),
-  TITLE char(32),
-  TRANSLATOR char(40),
-  PUBLISHER char(40),
-  DATEPUB int(4))
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsamp (
+  ISBN CHAR(15) field_format='@',
+  LANG CHAR(2) field_format='@',
+  SUBJECT CHAR(32) field_format='@',
+  AUTHOR CHAR(50),
+  TITLE CHAR(32),
+  TRANSLATOR CHAR(40),
+  PUBLISHER CHAR(40),
+  DATEPUB INT(4))
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO' option_list='rownode=BOOK';
 ```
 
 Once done, we can enter the query:
 
 ```
-select subject, lang, title, author from xsamp;
+SELECT subject, lang, title, author FROM xsamp;
 ```
 
 This will return the following result:
@@ -211,40 +211,40 @@ syntax. For instance:
 From Connect 1.7.0002
 
 ```
-create table xsampall (
-isbn char(15) xpath='@ISBN',
-language char(2) xpath='@LANG',
-subject char(32) xpath='@SUBJECT',
-authorfn char(20) xpath='AUTHOR/FIRSTNAME',
-authorln char(20) xpath='AUTHOR/LASTNAME',
-title char(32) xpath='TITLE',
-translated char(32) xpath='TRANSLATOR/@PREFIX',
-tranfn char(20) xpath='TRANSLATOR/FIRSTNAME',
-tranln char(20) xpath='TRANSLATOR/LASTNAME',
-publisher char(20) xpath='PUBLISHER/NAME',
-location char(20) xpath='PUBLISHER/PLACE',
-year int(4) xpath='DATEPUB')
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsampall (
+isbn CHAR(15) xpath='@ISBN',
+LANGUAGE CHAR(2) xpath='@LANG',
+subject CHAR(32) xpath='@SUBJECT',
+authorfn CHAR(20) xpath='AUTHOR/FIRSTNAME',
+authorln CHAR(20) xpath='AUTHOR/LASTNAME',
+title CHAR(32) xpath='TITLE',
+translated CHAR(32) xpath='TRANSLATOR/@PREFIX',
+tranfn CHAR(20) xpath='TRANSLATOR/FIRSTNAME',
+tranln CHAR(20) xpath='TRANSLATOR/LASTNAME',
+publisher CHAR(20) xpath='PUBLISHER/NAME',
+LOCATION CHAR(20) xpath='PUBLISHER/PLACE',
+YEAR INT(4) xpath='DATEPUB')
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO' option_list='rownode=BOOK';
 ```
 
 Before Connect 1.7.0002
 
 ```
-create table xsampall (
-  isbn char(15) field_format='@ISBN',
-  language char(2) field_format='@LANG',
-  subject char(32) field_format='@SUBJECT',
-  authorfn char(20) field_format='AUTHOR/FIRSTNAME',
-  authorln char(20) field_format='AUTHOR/LASTNAME',
-  title char(32) field_format='TITLE',
-  translated char(32) field_format='TRANSLATOR/@PREFIX',
-  tranfn char(20) field_format='TRANSLATOR/FIRSTNAME',
-  tranln char(20) field_format='TRANSLATOR/LASTNAME',
-  publisher char(20) field_format='PUBLISHER/NAME',
-  location char(20) field_format='PUBLISHER/PLACE',
-  year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsampall (
+  isbn CHAR(15) field_format='@ISBN',
+  LANGUAGE CHAR(2) field_format='@LANG',
+  subject CHAR(32) field_format='@SUBJECT',
+  authorfn CHAR(20) field_format='AUTHOR/FIRSTNAME',
+  authorln CHAR(20) field_format='AUTHOR/LASTNAME',
+  title CHAR(32) field_format='TITLE',
+  translated CHAR(32) field_format='TRANSLATOR/@PREFIX',
+  tranfn CHAR(20) field_format='TRANSLATOR/FIRSTNAME',
+  tranln CHAR(20) field_format='TRANSLATOR/LASTNAME',
+  publisher CHAR(20) field_format='PUBLISHER/NAME',
+  LOCATION CHAR(20) field_format='PUBLISHER/PLACE',
+  YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO' option_list='rownode=BOOK';
 ```
 
@@ -263,8 +263,8 @@ therefore using '`//`' is not allowed.
 The query:
 
 ```
-select isbn, title, translated, tranfn, tranln, location from
-    xsampall where translated is not null;
+SELECT isbn, title, translated, tranfn, tranln, LOCATION FROM
+    xsampall WHERE translated IS NOT NULL;
 ```
 
 replies:
@@ -324,17 +324,17 @@ and the defined CONNECT table:
 
 ```
 CREATE TABLE xgns (
-`lon` double(21,16) NOT NULL `xpath`='@',
-`lat` double(20,16) NOT NULL `xpath`='@',
-`ele` double(21,16) NOT NULL `xpath`='gns:ele',
-`time` datetime date_format="YYYY-MM-DD 'T' hh:mm:ss '.000Z'"
+`lon` DOUBLE(21,16) NOT NULL `xpath`='@',
+`lat` DOUBLE(20,16) NOT NULL `xpath`='@',
+`ele` DOUBLE(21,16) NOT NULL `xpath`='gns:ele',
+`time` DATETIME date_format="YYYY-MM-DD 'T' hh:mm:ss '.000Z'"
 ) 
   ENGINE=CONNECT DEFAULT CHARSET=latin1 `table_type`=XML 
   `file_name`='gns.xml' tabname='gns:trkseg' option_list='xmlsup=domdoc';
 ```
 
 ```
-select * from xgns;
+SELECT * FROM xgns;
 ```
 
 Displays:
@@ -351,10 +351,10 @@ However, this does not work with the libxml2 support. The solution is then to us
 
 ```
 CREATE TABLE xgns2 (
-`lon` double(21,16) NOT NULL `xpath`='@',
-`lat` double(20,16) NOT NULL `xpath`='@',
-`ele` double(21,16) NOT NULL `xpath`="*[local-name()='ele']",
-`time` datetime date_format="YYYY-MM-DD 'T' hh:mm:ss '.000Z'"
+`lon` DOUBLE(21,16) NOT NULL `xpath`='@',
+`lat` DOUBLE(20,16) NOT NULL `xpath`='@',
+`ele` DOUBLE(21,16) NOT NULL `xpath`="*[local-name()='ele']",
+`time` DATETIME date_format="YYYY-MM-DD 'T' hh:mm:ss '.000Z'"
 ) 
   ENGINE=CONNECT DEFAULT CHARSET=latin1 `table_type`=XML 
   `file_name`='gns.xml' tabname="*[local-name()='trkseg']" option_list='xmlsup=libxml2';
@@ -363,7 +363,7 @@ CREATE TABLE xgns2 (
 Then :
 
 ```
-select * from xgns2;
+SELECT * FROM xgns2;
 ```
 
 Displays:
@@ -383,8 +383,8 @@ It is possible to let the MariaDB discovery process do the job of column specifi
 For instance, the _xsamp_ table could have been created specifying:
 
 ```
-create table xsamp
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsamp
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO' option_list='rownode=BOOK';
 ```
 
@@ -392,14 +392,14 @@ Let’s check how it was actually specified using the SHOW CREATE TABLE statemen
 
 ```
 CREATE TABLE `xsamp` (
-  `ISBN` char(13) NOT NULL `FIELD_FORMAT`='@',
-  `LANG` char(2) NOT NULL `FIELD_FORMAT`='@',
-  `SUBJECT` char(12) NOT NULL `FIELD_FORMAT`='@',
-  `AUTHOR` char(24) NOT NULL,
-  `TRANSLATOR` char(12) DEFAULT NULL,
-  `TITLE` char(30) NOT NULL,
-  `PUBLISHER` char(21) NOT NULL,
-  `DATEPUB` char(4) NOT NULL
+  `ISBN` CHAR(13) NOT NULL `FIELD_FORMAT`='@',
+  `LANG` CHAR(2) NOT NULL `FIELD_FORMAT`='@',
+  `SUBJECT` CHAR(12) NOT NULL `FIELD_FORMAT`='@',
+  `AUTHOR` CHAR(24) NOT NULL,
+  `TRANSLATOR` CHAR(12) DEFAULT NULL,
+  `TITLE` CHAR(30) NOT NULL,
+  `PUBLISHER` CHAR(21) NOT NULL,
+  `DATEPUB` CHAR(4) NOT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='XML' 
   `FILE_NAME`='E:/Data/Xml/Xsample.xml' `TABNAME`='BIBLIO' `OPTION_LIST`='rownode=BOOK';
 ```
@@ -409,8 +409,8 @@ It is equivalent except for the column sizes that have been calculated from the 
 If a more complex definition is desired, you can ask CONNECT to analyse the XPATH up to a given level using the level option in the option list. The level value is the number of nodes that are taken in the XPATH. For instance:
 
 ```
-create table xsampall
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsampall
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO' option_list='rownode=BOOK,Level=1';
 ```
 
@@ -420,61 +420,61 @@ From Connect 1.7.0002
 
 ```
 CREATE TABLE `xsampall` (
-  `ISBN` char(13) NOT NULL `XPATH`='@',
-  `LANG` char(2) NOT NULL `XPATH`='@',
-  `SUBJECT` char(12) NOT NULL `XPATH`='@',
-  `AUTHOR_FIRSTNAME` char(15) NOT NULL `XPATH`='AUTHOR/FIRSTNAME',
-  `AUTHOR_LASTNAME` char(8) NOT NULL `XPATH`='AUTHOR/LASTNAME',
-  `TRANSLATOR_PREFIX` char(24) DEFAULT NULL `XPATH`='TRANSLATOR/@PREFIX',
-  `TRANSLATOR_FIRSTNAME` char(7) DEFAULT NULL `XPATH`='TRANSLATOR/FIRSTNAME',
-  `TRANSLATOR_LASTNAME` char(6) DEFAULT NULL `XPATH`='TRANSLATOR/LASTNAME',
-  `TITLE` char(30) NOT NULL,
-  `PUBLISHER_NAME` char(15) NOT NULL `XPATH`='PUBLISHER/NAME',
-  `PUBLISHER_PLACE` char(5) NOT NULL `XPATH`='PUBLISHER/PLACE',
-  `DATEPUB` char(4) NOT NULL
+  `ISBN` CHAR(13) NOT NULL `XPATH`='@',
+  `LANG` CHAR(2) NOT NULL `XPATH`='@',
+  `SUBJECT` CHAR(12) NOT NULL `XPATH`='@',
+  `AUTHOR_FIRSTNAME` CHAR(15) NOT NULL `XPATH`='AUTHOR/FIRSTNAME',
+  `AUTHOR_LASTNAME` CHAR(8) NOT NULL `XPATH`='AUTHOR/LASTNAME',
+  `TRANSLATOR_PREFIX` CHAR(24) DEFAULT NULL `XPATH`='TRANSLATOR/@PREFIX',
+  `TRANSLATOR_FIRSTNAME` CHAR(7) DEFAULT NULL `XPATH`='TRANSLATOR/FIRSTNAME',
+  `TRANSLATOR_LASTNAME` CHAR(6) DEFAULT NULL `XPATH`='TRANSLATOR/LASTNAME',
+  `TITLE` CHAR(30) NOT NULL,
+  `PUBLISHER_NAME` CHAR(15) NOT NULL `XPATH`='PUBLISHER/NAME',
+  `PUBLISHER_PLACE` CHAR(5) NOT NULL `XPATH`='PUBLISHER/PLACE',
+  `DATEPUB` CHAR(4) NOT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='XML' `FILE_NAME`='Xsample.xml' `TABNAME`='BIBLIO' `OPTION_LIST`='rownode=BOOK,Depth=1';
-<</sql>>
+<</SQL>>
 
 
-Before Connect 1.7.0002
-<<sql>>
+BEFORE CONNECT 1.7.0002
+<<SQL>>
 CREATE TABLE `xsampall` (
-  `ISBN` char(13) NOT NULL `FIELD_FORMAT`='@',
-  `LANG` char(2) NOT NULL `FIELD_FORMAT`='@',
-  `SUBJECT` char(12) NOT NULL `FIELD_FORMAT`='@',
-  `AUTHOR_FIRSTNAME` char(15) NOT NULL `FIELD_FORMAT`='AUTHOR/FIRSTNAME',
-  `AUTHOR_LASTNAME` char(8) NOT NULL `FIELD_FORMAT`='AUTHOR/LASTNAME',
-  `TRANSLATOR_PREFIX` char(24) DEFAULT NULL `FIELD_FORMAT`='TRANSLATOR/@PREFIX',
-  `TRANSLATOR_FIRSTNAME` char(7) DEFAULT NULL `FIELD_FORMAT`='TRANSLATOR/FIRSTNAME',
-  `TRANSLATOR_LASTNAME` char(6) DEFAULT NULL `FIELD_FORMAT`='TRANSLATOR/LASTNAME',
-  `TITLE` char(30) NOT NULL,
-  `PUBLISHER_NAME` char(15) NOT NULL `FIELD_FORMAT`='PUBLISHER/NAME',
-  `PUBLISHER_PLACE` char(5) NOT NULL `FIELD_FORMAT`='PUBLISHER/PLACE',
-  `DATEPUB` char(4) NOT NULL
+  `ISBN` CHAR(13) NOT NULL `FIELD_FORMAT`='@',
+  `LANG` CHAR(2) NOT NULL `FIELD_FORMAT`='@',
+  `SUBJECT` CHAR(12) NOT NULL `FIELD_FORMAT`='@',
+  `AUTHOR_FIRSTNAME` CHAR(15) NOT NULL `FIELD_FORMAT`='AUTHOR/FIRSTNAME',
+  `AUTHOR_LASTNAME` CHAR(8) NOT NULL `FIELD_FORMAT`='AUTHOR/LASTNAME',
+  `TRANSLATOR_PREFIX` CHAR(24) DEFAULT NULL `FIELD_FORMAT`='TRANSLATOR/@PREFIX',
+  `TRANSLATOR_FIRSTNAME` CHAR(7) DEFAULT NULL `FIELD_FORMAT`='TRANSLATOR/FIRSTNAME',
+  `TRANSLATOR_LASTNAME` CHAR(6) DEFAULT NULL `FIELD_FORMAT`='TRANSLATOR/LASTNAME',
+  `TITLE` CHAR(30) NOT NULL,
+  `PUBLISHER_NAME` CHAR(15) NOT NULL `FIELD_FORMAT`='PUBLISHER/NAME',
+  `PUBLISHER_PLACE` CHAR(5) NOT NULL `FIELD_FORMAT`='PUBLISHER/PLACE',
+  `DATEPUB` CHAR(4) NOT NULL
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='XML' `FILE_NAME`='Xsample.xml' 
   `TABNAME`='BIBLIO' `OPTION_LIST`='rownode=BOOK,Level=1';
-<</sql>>
+<</SQL>>
 
-This method can be used as a quick way to make a “template” table definition that can later be edited to make the desired definition. In particular, column names are constructed from all the nodes of their path in order to have distinct column names. This can be manually edited to have the desired names, provided their XPATH is not modified.
+This METHOD can be used AS a quick way TO make a “TEMPLATE” TABLE definition that can later be edited TO make the desired definition. IN particular, COLUMN NAMES ARE constructed FROM ALL the nodes OF their PATH IN ORDER TO have DISTINCT COLUMN names. This can be manually edited TO have the desired NAMES, provided their XPATH IS NOT modified.
 
-To have a preview of how columns will be defined, you can use a catalog table like this:
+TO have a preview OF how columns will be DEFINED, you can USE a CATALOG TABLE like this:
 
-<<sql>>
-create table xsacol
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+<<SQL>>
+CREATE TABLE xsacol
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO' option_list='rownode=BOOK,Level=1' catfunc=col;
-<</sql>>
+<</SQL>>
 
-And when asking:
+AND WHEN asking:
 
-<<sql>>
-select column_name Name, type_name Type, column_size Size, nullable, xpath from xsacol;
-<</sql>>
+<<SQL>>
+SELECT COLUMN_NAME Name, type_name TYPE, column_size SIZE, NULLABLE, xpath FROM xsacol;
+<</SQL>>
 
-You get the description of what the table columns will be:
+You GET the description OF what the TABLE columns will be:
 
-<<style class="darkheader-nospace-borders">>
-|= Name |= Type |= Size |= nullable |= xpath |
+<<style CLASS="darkheader-nospace-borders">>
+|= Name |= TYPE |= SIZE |= NULLABLE |= xpath |
 | ISBN | CHAR | 13 | 0 | @ | 
 | LANG | CHAR | 2 | 0 | @ |
 | SUBJECT | CHAR | 12 | 0 | @ |
@@ -489,24 +489,24 @@ You get the description of what the table columns will be:
 | DATEPUB | CHAR | 4 | 0 | |
 <</style>>
 
-== Write operations on XML tables
-You can freely use the Update, Delete and Insert commands with XML tables.
-However, you must understand that the format of the updated or inserted data
-follows the specifications of the table you created, not the ones of the
-original source file. For instance, let us suppose we insert a new book using
-the //xsamp// table (not the //xsampall// table) with the command:
+== WRITE operations ON XML TABLES
+You can freely USE the UPDATE, DELETE AND INSERT commands WITH XML tables.
+However, you must understand that the format OF the updated OR inserted DATA
+follows the specifications OF the TABLE you created, NOT the ones OF the
+original SOURCE file. FOR INSTANCE, let us suppose we INSERT a NEW book USING
+the //xsamp// TABLE (NOT the //xsampall// TABLE) WITH the command:
 
-<<code lang=mysql inline=false>>
-insert into xsamp
+<<code lang=mysql INLINE=FALSE>>
+INSERT INTO xsamp
   (isbn, lang, subject, author, title, publisher,datepub)
-  values ('9782212090529','fr','général','Alain Michard',
+  VALUES ('9782212090529','fr','général','Alain Michard',
          'XML, Langage et Applications','Eyrolles Paris',1998);
 ```
 
 Then if we ask:
 
 ```
-select subject, author, title, translator, publisher from xsamp;
+SELECT subject, author, title, translator, publisher FROM xsamp;
 ```
 
 Everything seems correct when we get the result:
@@ -521,10 +521,10 @@ However if we enter the apparently equivalent query on the _xsampall_ table,\
 based on the same file:
 
 ```
-select subject,
+SELECT subject,
 concat(authorfn, ' ', authorln) author , title,
 concat(tranfn, ' ', tranln) translator,
-concat(publisher, ' ', location) publisher from xsampall;
+concat(publisher, ' ', LOCATION) publisher FROM xsampall;
 ```
 
 this returns an apparently wrong answer:
@@ -557,11 +557,11 @@ file is to use the _xsampall_ table, the only one that addresses all the\
 components of the original document:
 
 ```
-delete from xsamp where isbn = '9782212090529';
+DELETE FROM xsamp WHERE isbn = '9782212090529';
 
-insert into xsampall (isbn, language, subject, authorfn, authorln,
-      title, publisher, location, year)
-   values('9782212090529','fr','général','Alain','Michard',
+INSERT INTO xsampall (isbn, LANGUAGE, subject, authorfn, authorln,
+      title, publisher, LOCATION, YEAR)
+   VALUES('9782212090529','fr','général','Alain','Michard',
       'XML, Langage et Applications','Eyrolles','Paris',1998);
 ```
 
@@ -600,16 +600,16 @@ author column and the rest of the table. To achieve this, simply specify the\
 instance, we can create the _xsamp2_ table like this:
 
 ```
-create table xsamp2 (
-  ISBN char(15) field_format='@',
-  LANG char(2) field_format='@',
-  SUBJECT char(32) field_format='@',
-  AUTHOR char(40),
-  TITLE char(32),
-  TRANSLATOR char(32),
-  PUBLISHER char(32),
-  DATEPUB int(4))
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsamp2 (
+  ISBN CHAR(15) field_format='@',
+  LANG CHAR(2) field_format='@',
+  SUBJECT CHAR(32) field_format='@',
+  AUTHOR CHAR(40),
+  TITLE CHAR(32),
+  TRANSLATOR CHAR(32),
+  PUBLISHER CHAR(32),
+  DATEPUB INT(4))
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO'
 option_list='rownode=BOOK,Expand=1,Mulnode=AUTHOR,Limit=2';
 ```
@@ -617,7 +617,7 @@ option_list='rownode=BOOK,Expand=1,Mulnode=AUTHOR,Limit=2';
 In this statement, the Limit option specifies the maximum number of values that will be expanded. If not specified, it defaults to `10`. Any values above the limit will be ignored and a warning message issued\[[3](connect-xml-table-type.md#_note-2)]. Now you can enter a query such as:
 
 ```
-select isbn, subject, author, title from xsamp2;
+SELECT isbn, subject, author, title FROM xsamp2;
 ```
 
 This will retrieve and display the following result:
@@ -632,7 +632,7 @@ This will retrieve and display the following result:
 In this case, this is as if the table had four rows. However if we enter the query:
 
 ```
-select isbn, subject, title, publisher from xsamp2;
+SELECT isbn, subject, title, publisher FROM xsamp2;
 ```
 
 this time the result will be:
@@ -651,10 +651,10 @@ closer to the relational model for which there should not be two identical rows\
 behavior. For instance:
 
 ```
-select count(*) from xsamp2;                /* Replies 3 */
-select count(author) from xsamp2;           /* Replies 4 */
-select count(isbn) from xsamp2;             /* Replies 3 */
-select isbn, subject, title, publisher from xsamp2 where author <> '';
+SELECT COUNT(*) FROM xsamp2;                /* Replies 3 */
+SELECT COUNT(author) FROM xsamp2;           /* Replies 4 */
+SELECT COUNT(isbn) FROM xsamp2;             /* Replies 3 */
+SELECT isbn, subject, title, publisher FROM xsamp2 WHERE author <> '';
 ```
 
 This last query replies:
@@ -677,40 +677,40 @@ expanding with the _xsampall_ table, there will be nothing more to do. Th&#x65;_
 From Connect 1.7.0002
 
 ```
-create table xsampall2 (
-isbn char(15) xpath='@ISBN',
-language char(2) xpath='@LANG',
-subject char(32) xpath='@SUBJECT',
-authorfn char(20) xpath='AUTHOR/FIRSTNAME',
-authorln char(20) xpath='AUTHOR/LASTNAME',
-title char(32) xpath='TITLE',
-translated char(32) xpath='TRANSLATOR/@PREFIX',
-tranfn char(20) xpath='TRANSLATOR/FIRSTNAME',
-tranln char(20) xpath='TRANSLATOR/LASTNAME',
-publisher char(20) xpath='PUBLISHER/NAME',
-location char(20) xpath='PUBLISHER/PLACE',
-year int(4) xpath='DATEPUB')
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsampall2 (
+isbn CHAR(15) xpath='@ISBN',
+LANGUAGE CHAR(2) xpath='@LANG',
+subject CHAR(32) xpath='@SUBJECT',
+authorfn CHAR(20) xpath='AUTHOR/FIRSTNAME',
+authorln CHAR(20) xpath='AUTHOR/LASTNAME',
+title CHAR(32) xpath='TITLE',
+translated CHAR(32) xpath='TRANSLATOR/@PREFIX',
+tranfn CHAR(20) xpath='TRANSLATOR/FIRSTNAME',
+tranln CHAR(20) xpath='TRANSLATOR/LASTNAME',
+publisher CHAR(20) xpath='PUBLISHER/NAME',
+LOCATION CHAR(20) xpath='PUBLISHER/PLACE',
+YEAR INT(4) xpath='DATEPUB')
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO' option_list='rownode=BOOK,Expand=1,Mulnode=AUTHOR,Limit=2';
 ```
 
 Before Connect 1.7.0002
 
 ```
-create table xsampall2 (
-  isbn char(15) field_format='@ISBN',
-  language char(2) field_format='@LANG',
-  subject char(32) field_format='@SUBJECT',
-  authorfn char(20) field_format='AUTHOR/FIRSTNAME',
-  authorln char(20) field_format='AUTHOR/LASTNAME',
-  title char(32) field_format='TITLE',
-  translated char(32) field_format='TRANSLATOR/@PREFIX',
-  tranfn char(20) field_format='TRANSLATOR/FIRSTNAME',
-  tranln char(20) field_format='TRANSLATOR/LASTNAME',
-  publisher char(20) field_format='PUBLISHER/NAME',
-  location char(20) field_format='PUBLISHER/PLACE',
-  year int(4) field_format='DATEPUB')
-engine=CONNECT table_type=XML file_name='Xsample.xml'
+CREATE TABLE xsampall2 (
+  isbn CHAR(15) field_format='@ISBN',
+  LANGUAGE CHAR(2) field_format='@LANG',
+  subject CHAR(32) field_format='@SUBJECT',
+  authorfn CHAR(20) field_format='AUTHOR/FIRSTNAME',
+  authorln CHAR(20) field_format='AUTHOR/LASTNAME',
+  title CHAR(32) field_format='TITLE',
+  translated CHAR(32) field_format='TRANSLATOR/@PREFIX',
+  tranfn CHAR(20) field_format='TRANSLATOR/FIRSTNAME',
+  tranln CHAR(20) field_format='TRANSLATOR/LASTNAME',
+  publisher CHAR(20) field_format='PUBLISHER/NAME',
+  LOCATION CHAR(20) field_format='PUBLISHER/PLACE',
+  YEAR INT(4) field_format='DATEPUB')
+ENGINE=CONNECT table_type=XML file_name='Xsample.xml'
 tabname='BIBLIO'
 option_list='rownode=BOOK,Expand=1,Mulnode=AUTHOR,Limit=2';
 ```
@@ -719,8 +719,8 @@ The only difference is that the "multiple" node is an intermediate node in the\
 path. The resulting table can be seen with a query such as:
 
 ```
-select subject, language lang, title, authorfn first, authorln
-    last, year from xsampall2;
+SELECT subject, LANGUAGE lang, title, authorfn FIRST, authorln
+    LAST, YEAR FROM xsampall2;
 ```
 
 This query displays:
@@ -740,9 +740,9 @@ and all its children nodes even if specified against only one author. Update is\
 more complicated:
 
 ```
-update xsampall2 set authorfn = 'Simon' where authorln = 'Knab';
-update xsampall2 set year = 2002 where authorln = 'Bernadac';
-update xsampall2 set authorln = 'Mercier' where year = 2002;
+UPDATE xsampall2 SET authorfn = 'Simon' WHERE authorln = 'Knab';
+UPDATE xsampall2 SET YEAR = 2002 WHERE authorln = 'Bernadac';
+UPDATE xsampall2 SET authorln = 'Mercier' WHERE YEAR = 2002;
 ```
 
 After these three updates, the first two responding "Affected rows: 1" and the\
@@ -765,14 +765,14 @@ list of the multiple node values. This time, it can only be done if the\
 table definition by:
 
 ```
-alter table xsamp2 option_list='rownode=BOOK,Mulnode=AUTHOR,Limit=3';
+ALTER TABLE xsamp2 option_list='rownode=BOOK,Mulnode=AUTHOR,Limit=3';
 ```
 
 This time 'Expand' is not specified, and Limit gives the maximum number of\
 items in the list. Now if we enter the query:
 
 ```
-select isbn, subject, author "AUTHOR(S)", title from xsamp2;
+SELECT isbn, subject, author "AUTHOR(S)", title FROM xsamp2;
 ```
 
 We will get the following result:
@@ -835,22 +835,22 @@ tags, for example:
 From Connect 1.7.0002
 
 ```
-create table beers (
-`Name` char(16) xpath='brandName',
-`Origin` char(16) xpath='origin',
-`Description` char(32) xpath='details')
-engine=CONNECT table_type=XML file_name='beers.xml'
+CREATE TABLE beers (
+`Name` CHAR(16) xpath='brandName',
+`Origin` CHAR(16) xpath='origin',
+`Description` CHAR(32) xpath='details')
+ENGINE=CONNECT table_type=XML file_name='beers.xml'
 tabname='table' option_list='rownode=tr,colnode=td';
 ```
 
 Before Connect 1.7.0002
 
 ```
-create table beers (
-  `Name` char(16) field_format='brandName',
-  `Origin` char(16) field_format='origin',
-  `Description` char(32) field_format='details')
-engine=CONNECT table_type=XML file_name='beers.xml'
+CREATE TABLE beers (
+  `Name` CHAR(16) field_format='brandName',
+  `Origin` CHAR(16) field_format='origin',
+  `Description` CHAR(32) field_format='details')
+ENGINE=CONNECT table_type=XML file_name='beers.xml'
 tabname='table' option_list='rownode=tr,colnode=td';
 ```
 
@@ -896,12 +896,12 @@ their name but by their position within the row. Here is how to declare such a\
 table to CONNECT:
 
 ```
-create table coffee (
-  `Name` char(16),
-  `Cups` int(8),
-  `Type` char(16),
-  `Sugar` char(4))
-engine=connect table_type=XML file_name='coffee.htm'
+CREATE TABLE coffee (
+  `Name` CHAR(16),
+  `Cups` INT(8),
+  `Type` CHAR(16),
+  `Sugar` CHAR(4))
+ENGINE=CONNECT table_type=XML file_name='coffee.htm'
 tabname='TABLE' header=1 option_list='Coltype=HTML';
 ```
 
@@ -948,13 +948,13 @@ Some new list-options are used in this context:
 Let us see for instance, the following create statement:
 
 ```
-create table handlers (
-  handler char(64),
-  version char(20),
-  author char(64),
-  description char(255),
-  maturity char(12))
-engine=CONNECT table_type=XML file_name='handlers.htm'
+CREATE TABLE handlers (
+  handler CHAR(64),
+  VERSION CHAR(20),
+  author CHAR(64),
+  description CHAR(255),
+  maturity CHAR(12))
+ENGINE=CONNECT table_type=XML file_name='handlers.htm'
 tabname='TABLE' header=yes
 option_list='coltype=HTML,encoding=ISO-8859-1,
 attribute=border=1;cellpadding=5,headattr=bgcolor=yellow';
@@ -964,9 +964,9 @@ Supposing the table file does not exist yet, the first insert into that table,\
 for instance by the following statement:
 
 ```
-insert into handlers select plugin_name, plugin_version,
-  plugin_author, plugin_description, plugin_maturity from
-  information_schema.plugins where plugin_type = 'DAEMON';
+INSERT INTO handlers SELECT plugin_name, plugin_version,
+  plugin_author, plugin_description, plugin_maturity FROM
+  information_schema.plugins WHERE plugin_type = 'DAEMON';
 ```
 
 will generate the following file:

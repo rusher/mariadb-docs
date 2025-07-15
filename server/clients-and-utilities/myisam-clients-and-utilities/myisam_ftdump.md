@@ -16,13 +16,13 @@ The index number refers to the number of the index when the table was defined, s
 
 ```
 CREATE TABLE IF NOT EXISTS `employees_example` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(30) NOT NULL,
-  `last_name` varchar(40) NOT NULL,
-  `position` varchar(25) NOT NULL,
-  `home_address` varchar(50) NOT NULL,
-  `home_phone` varchar(12) NOT NULL,
-  `employee_code` varchar(25) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(30) NOT NULL,
+  `last_name` VARCHAR(40) NOT NULL,
+  `position` VARCHAR(25) NOT NULL,
+  `home_address` VARCHAR(50) NOT NULL,
+  `home_phone` VARCHAR(12) NOT NULL,
+  `employee_code` VARCHAR(25) NOT NULL,
   `bio` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `employee_code` (`employee_code`),

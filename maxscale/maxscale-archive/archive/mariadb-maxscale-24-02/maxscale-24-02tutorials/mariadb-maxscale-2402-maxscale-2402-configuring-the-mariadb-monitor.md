@@ -29,7 +29,7 @@ monitoring. To create a user with the proper grants, execute the following SQL.
 
 ```
 CREATE USER 'monitor_user'@'%' IDENTIFIED BY 'my_password';
-GRANT REPLICATION CLIENT on *.* to 'monitor_user'@'%';
+GRANT REPLICATION CLIENT ON *.* TO 'monitor_user'@'%';
 ```
 
 **Note:** If the automatic failover of the MariaDB Monitor will used, the user\

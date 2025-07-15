@@ -129,15 +129,15 @@ straightforward:
 Parsing the procedure:
 
 ```
-create procedure a(s char(16))
-      begin
-        declare x int;
-        set x = 3;
-        while x > 0 do
-          set x = x-1;
-          insert into db.tab values (x, s);
-        end while;
-      end
+CREATE PROCEDURE a(s CHAR(16))
+      BEGIN
+        DECLARE x INT;
+        SET x = 3;
+        WHILE x > 0 DO
+          SET x = x-1;
+          INSERT INTO db.tab VALUES (x, s);
+        END WHILE;
+      END
 ```
 
 would generate the following structures:
@@ -451,17 +451,17 @@ Pos.  Instruction
 CONTINUE handler:
 
 ```
-create procedure hndlr1(val int)
-      begin
-        declare x int default 0;
-        declare foo condition for 1146;
-        declare continue handler for foo set x = 1;
+CREATE PROCEDURE hndlr1(val INT)
+      BEGIN
+        DECLARE x INT DEFAULT 0;
+        DECLARE foo CONDITION FOR 1146;
+        DECLARE CONTINUE HANDLER FOR foo SET x = 1;
 
-        insert into t3 values ("hndlr1", val);     # Non-existing table?
-        if x>0 then
-          insert into t1 values ("hndlr1", val);   # This instead then
-        end if;
-      end|
+        INSERT INTO t3 VALUES ("hndlr1", val);     # Non-existing table?
+        IF x>0 THEN
+          INSERT INTO t1 VALUES ("hndlr1", val);   # This instead then
+        END IF;
+      END|
 ```
 
 ```

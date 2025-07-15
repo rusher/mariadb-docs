@@ -5,7 +5,7 @@ This article explains how to use [HANDLER commands](handler-commands.md) efficie
 If you want to scan a table for over different key values, not just search for exact key values, you should create your keys with 'USING BTREE':
 
 ```
-CREATE TABLE t1 (a INT, b INT, KEY(a), KEY b USING BTREE (b)) engine=memory;
+CREATE TABLE t1 (a INT, b INT, KEY(a), KEY b USING BTREE (b)) ENGINE=memory;
 ```
 
 In the above table, `a` is a [HASH](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#hash-indexes) key that only supports exact matches (=) while `b` is a [BTREE](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#b-tree-indexes) key that you can use to scan the table in key order, starting from start or from a given key value.

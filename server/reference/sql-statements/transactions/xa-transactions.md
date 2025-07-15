@@ -200,7 +200,7 @@ Human-readable:
 ```sql
 xa start '12\r34\t67\v78', 'abc\ndef', 3;
 
-insert t1 values (40);
+INSERT t1 values (40);
 
 xa end '12\r34\t67\v78', 'abc\ndef', 3;
 

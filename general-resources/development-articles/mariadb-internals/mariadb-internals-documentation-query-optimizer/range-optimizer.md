@@ -189,7 +189,7 @@ On the other hand, some SQL constructs can produce very large (combinatorial) am
 Consider a query
 
 ```
-select * from t2 where keypart1 in (1,2,3,4) and keypart2 in ('a','b', 'c')
+SELECT * FROM t2 WHERE keypart1 IN (1,2,3,4) AND keypart2 IN ('a','b', 'c')
 ```
 
 two IN-lists produce 3\*4 =12 ranges:

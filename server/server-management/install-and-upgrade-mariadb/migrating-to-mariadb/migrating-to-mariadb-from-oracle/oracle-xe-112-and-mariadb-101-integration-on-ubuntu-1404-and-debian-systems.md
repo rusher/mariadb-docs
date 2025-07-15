@@ -319,12 +319,12 @@ Password        = <your-password>
 ```
 isql -v XE SYSTEM <your-password>
 
-create table t1 (i int);
-insert into t1 (i) values (1);
-insert into t1 (i) values (3);
-insert into t1 (i) values (5);
-insert into t1 (i) values (8);
-select i from t1;
+CREATE TABLE t1 (i INT);
+INSERT INTO t1 (i) VALUES (1);
+INSERT INTO t1 (i) VALUES (3);
+INSERT INTO t1 (i) VALUES (5);
+INSERT INTO t1 (i) VALUES (8);
+SELECT i FROM t1;
 ```
 
 And you should see the rows. You can test the\
@@ -365,7 +365,7 @@ USE mdb;
 INSTALL SONAME 'ha_connect';
 CREATE TABLE t1 ENGINE=CONNECT TABLE_TYPE=ODBC tabname='T1' CONNECTION='DSN=XE;UID=SYSTEM;PWD=<your-password>';
 
-select I from t1;
+SELECT I FROM t1;
 ```
 
 You should see the previously inserted values 1,3,5 and 8.\

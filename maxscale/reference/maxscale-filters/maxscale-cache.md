@@ -617,9 +617,9 @@ The purpose of this variable is make it possible for an application to decide\
 statement by statement whether the cache should be populated.
 
 ```
-SET @maxscale.cache.populate=true;
+SET @maxscale.cache.populate=TRUE;
 SELECT a, b FROM tbl;
-SET @maxscale.cache.populate=false;
+SET @maxscale.cache.populate=FALSE;
 SELECT a, b FROM tbl;
 ```
 
@@ -648,9 +648,9 @@ The purpose of this variable is make it possible for an application to decide\
 statement by statement whether the cache should be used.
 
 ```
-SET @maxscale.cache.use=true;
+SET @maxscale.cache.use=TRUE;
 SELECT a, b FROM tbl;
-SET @maxscale.cache.use=false;
+SET @maxscale.cache.use=FALSE;
 SELECT a, b FROM tbl;
 ```
 
@@ -684,9 +684,9 @@ The purpose of this variable is make it possible for an application to decide\
 statement by statement what _soft ttl_ should be applied.
 
 ```
-set @maxscale.cache.soft_ttl=600;
+SET @maxscale.cache.soft_ttl=600;
 SELECT a, b FROM unimportant;
-set @maxscale.cache.soft_ttl=60;
+SET @maxscale.cache.soft_ttl=60;
 SELECT c, d FROM important;
 ```
 
@@ -722,9 +722,9 @@ is is important to ensure that the former is at least as large as the latter\
 and for best overall performance that it is larger.
 
 ```
-set @maxscale.cache.soft_ttl=600, @maxscale.cache.hard_ttl=610;
+SET @maxscale.cache.soft_ttl=600, @maxscale.cache.hard_ttl=610;
 SELECT a, b FROM unimportant;
-set @maxscale.cache.soft_ttl=60, @maxscale.cache.hard_ttl=65;
+SET @maxscale.cache.soft_ttl=60, @maxscale.cache.hard_ttl=65;
 SELECT c, d FROM important;
 ```
 
@@ -755,11 +755,11 @@ enabled=false
 Now, in order to _mark_ statements that should be cached, set`@maxscale.cache.populate` to `true`, and perform those `SELECT`s.
 
 ```
-SET @maxscale.cache.populate=true;
+SET @maxscale.cache.populate=TRUE;
 SELECT a, b FROM tbl1;
 SELECT c, d FROM tbl2;
 SELECT e, f FROM tbl3;
-SET @maxscale.cache.populate=false;
+SET @maxscale.cache.populate=FALSE;
 ```
 
 Note that those `SELECT`s must return something in order for the\
@@ -769,9 +769,9 @@ After this, the value of `@maxscale.cache.use` will decide whether\
 or not the cache is considered.
 
 ```
-SET @maxscale.cache.use=true;
+SET @maxscale.cache.use=TRUE;
 SELECT a, b FROM tbl1;
-SET @maxscale.cache.use=false;
+SET @maxscale.cache.use=FALSE;
 ```
 
 With `@maxscale.cache.use` being `true`, the cache is considered\
@@ -784,9 +784,9 @@ cause the cache to be updated when needed.
 
 ```
 UPDATE tbl1 SET a = ...;
-SET @maxscale.cache.populate=true;
+SET @maxscale.cache.populate=TRUE;
 SELECT a, b FROM tbl1;
-SET @maxscale.cache.populate=false;
+SET @maxscale.cache.populate=FALSE;
 ```
 
 ### Threads, Users and Invalidation
@@ -906,27 +906,27 @@ Note that as the query itself is used as the key, although the following\
 queries
 
 ```
-select * from db1.tbl
+SELECT * FROM db1.tbl
 ```
 
 and
 
 ```
-use db1;
-select * from tbl
+USE db1;
+SELECT * FROM tbl
 ```
 
 target the same table and produce the same results, they will be cached\
 separately. The same holds for queries like
 
 ```
-select * from tbl where a = 2 and b = 3;
+SELECT * FROM tbl WHERE a = 2 AND b = 3;
 ```
 
 and
 
 ```
-select * from tbl where b = 3 and a = 2;
+SELECT * FROM tbl WHERE b = 3 AND a = 2;
 ```
 
 as well. Although they conceptually are identical, there will be two\
@@ -939,13 +939,13 @@ to the column _a_ should be cached, then the following statement will\
 match
 
 ```
-select a from tbl;
+SELECT a FROM tbl;
 ```
 
 and so will
 
 ```
-select b from tbl where a > 5;
+SELECT b FROM tbl WHERE a > 5;
 ```
 
 **Qualified Names**
@@ -976,8 +976,8 @@ The string used for matching the regular expression contains as much\
 information as there is available. For instance, in a situation like
 
 ```
-use somedb;
-select fld from tbl;
+USE somedb;
+SELECT fld FROM tbl;
 ```
 
 the string matched against the regular expression will be `somedb.tbl.fld`.

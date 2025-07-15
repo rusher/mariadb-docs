@@ -78,7 +78,7 @@ CREATE OR REPLACE TABLE spider_test.contacts
   LAST_NAME   VARCHAR( 255 ) NOT NULL,
   EMAIL       VARCHAR( 255 ) NOT NULL,
   PHONE       VARCHAR( 20 )          ,
-  CUSTOMER_ID bigint) ENGINE=SPIDER COMMENT='wrapper "odbc", dsn "ORARDS", table "CONTACTS"';
+  CUSTOMER_ID BIGINT) ENGINE=SPIDER COMMENT='wrapper "odbc", dsn "ORARDS", table "CONTACTS"';
 ```
 
 * This will create a new database, and a table that should be able to connect to an Oracle server via ODBC

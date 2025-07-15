@@ -240,10 +240,10 @@ With the infinidb\_local\_query variable set to 0 (default with local PM Query):
 Create a script (i.e., extract\_query\_script.sql in our example) similar to the following:
 
 ```
-set infinidb_local_query=0;
-select fact.column1, dim.column2 
-from fact join dim using (key) 
-where idbPm(fact.key) = idbLocalPm();
+SET infinidb_local_query=0;
+SELECT fact.column1, dim.column2 
+FROM fact JOIN dim USING (KEY) 
+WHERE idbPm(fact.KEY) = idbLocalPm();
 ```
 
 The infinidb\_local\_query is set to 0 to allow query across all PMs.

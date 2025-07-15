@@ -134,15 +134,15 @@ RANGE/ROWS:
 The examples are all based on the following simplified sales opportunity table:
 
 ```
-create table opportunities (
-id int,
-accountName varchar(20),
-name varchar(128),
-owner varchar(7),
-amount decimal(10,2),
-closeDate date,
-stageName varchar(11)
-) engine=columnstore;
+CREATE TABLE opportunities (
+id INT,
+accountName VARCHAR(20),
+name VARCHAR(128),
+owner VARCHAR(7),
+amount DECIMAL(10,2),
+closeDate DATE,
+stageName VARCHAR(11)
+) ENGINE=columnstore;
 ```
 
 Some example values are (thanks to [www.mockaroo.com](https://www.mockaroo.com) for sample data generation):
@@ -167,16 +167,16 @@ The schema, sample data, and queries are available as an attachment to this arti
 Window functions can be used to achieve cumulative / running calculations on a detail report. In this case a won opportunity report for a 7 day period adds columns to show the accumulated won amount as well as the current highest opportunity amount in preceding rows.
 
 ```
-select owner, 
+SELECT owner, 
 accountName, 
 CloseDate, 
 amount, 
-sum(amount) over (order by CloseDate rows between unbounded preceding and current row) cumeWon, 
-max(amount) over (order by CloseDate rows between unbounded preceding and current row) runningMax
-from opportunities 
-where stageName='ClosedWon' 
-and closeDate >= '2016-10-02' and closeDate <= '2016-10-09' 
-order by CloseDate;
+SUM(amount) OVER (ORDER BY CloseDate ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) cumeWon, 
+MAX(amount) OVER (ORDER BY CloseDate ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) runningMax
+FROM opportunities 
+WHERE stageName='ClosedWon' 
+AND closeDate >= '2016-10-02' AND closeDate <= '2016-10-09' 
+ORDER BY CloseDate;
 ```
 
 with example results:
@@ -196,16 +196,16 @@ with example results:
 The above example can be partitioned, so that the window functions are over a particular field grouping such as owner and accumulate within that grouping. This is achieved by adding the syntax "partition by " in the window function clause.
 
 ```
-select owner,  
+SELECT owner,  
 accountName,  
 CloseDate,  
 amount,  
-sum(amount) over (partition by owner order by CloseDate rows between unbounded preceding and current row) cumeWon,  
-max(amount) over (partition by owner order by CloseDate rows between unbounded preceding and current row) runningMax 
-from opportunities  
-where stageName='ClosedWon' 
-and closeDate >= '2016-10-02' and closeDate <= '2016-10-09'  
-order by owner, CloseDate;
+SUM(amount) OVER (PARTITION BY owner ORDER BY CloseDate ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) cumeWon,  
+MAX(amount) OVER (PARTITION BY owner ORDER BY CloseDate ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) runningMax 
+FROM opportunities  
+WHERE stageName='ClosedWon' 
+AND closeDate >= '2016-10-02' AND closeDate <= '2016-10-09'  
+ORDER BY owner, CloseDate;
 ```
 
 with example results:
@@ -225,18 +225,18 @@ with example results:
 The rank window function allows for ranking or assigning a numeric order value based on the window function definition. Using the Rank() function will result in the same value for ties / equal values and the next rank value skipped. The Dense\_Rank() function behaves similarly except the next consecutive number is used after a tie rather than skipped. The Row\_Number() function will provide a unique ordering value. The example query shows the Rank() function being applied to rank sales reps by the number of opportunities for Q4 2016.
 
 ```
-select owner, 
+SELECT owner, 
 wonCount, 
-rank() over (order by wonCount desc) rank 
-from (
-  select owner, 
-  count(*) wonCount 
-  from opportunities 
-  where stageName='ClosedWon' 
-  and closeDate >= '2016-10-01' and closeDate < '2016-12-31'  
-  group by owner
+rank() OVER (ORDER BY wonCount DESC) rank 
+FROM (
+  SELECT owner, 
+  COUNT(*) wonCount 
+  FROM opportunities 
+  WHERE stageName='ClosedWon' 
+  AND closeDate >= '2016-10-01' AND closeDate < '2016-12-31'  
+  GROUP BY owner
 ) t
-order by rank;
+ORDER BY rank;
 ```
 
 with example results (note the query is technically incorrect by using closeDate < '2016-12-31' however this creates a tie scenario for illustrative purposes):
@@ -256,7 +256,7 @@ If the dense\_rank function is used the rank values would be 1,2,3,3,4 and for t
 The first\_value and last\_value functions allow determining the first and last values of a given range. Combined with a group by this allows summarizing opening and closing values. The example shows a more complex case where detailed information is presented for first and last opportunity by quarter.
 
 ```
-select a.year, 
+SELECT a.YEAR, 
 a.quarter, 
 f.accountName firstAccountName, 
 f.owner firstOwner, 
@@ -264,23 +264,23 @@ f.amount firstAmount,
 l.accountName lastAccountName, 
 l.owner lastOwner, 
 l.amount lastAmount 
-from (
-  select year, 
-  quarter, 
-  min(firstId) firstId, 
-  min(lastId) lastId 
-  from (
-    select year(closeDate) year, 
-    quarter(closeDate) quarter, 
-    first_value(id) over (partition by year(closeDate), quarter(closeDate) order by closeDate rows between unbounded preceding and current row) firstId, 
-    last_value(id) over (partition by year(closeDate), quarter(closeDate) order by closeDate rows between current row and unbounded following) lastId 
-    from opportunities  where stageName='ClosedWon'
+FROM (
+  SELECT YEAR, 
+  QUARTER, 
+  MIN(firstId) firstId, 
+  MIN(lastId) lastId 
+  FROM (
+    SELECT YEAR(closeDate) YEAR, 
+    quarter(closeDate) QUARTER, 
+    first_value(id) OVER (PARTITION BY YEAR(closeDate), quarter(closeDate) ORDER BY closeDate ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) firstId, 
+    last_value(id) OVER (PARTITION BY YEAR(closeDate), quarter(closeDate) ORDER BY closeDate ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) lastId 
+    FROM opportunities  WHERE stageName='ClosedWon'
   ) t 
-  group by year, quarter order by year,quarter
+  GROUP BY YEAR, QUARTER ORDER BY YEAR,QUARTER
 ) a 
-join opportunities f on a.firstId = f.id 
-join opportunities l on a.lastId = l.id 
-order by year, quarter;
+JOIN opportunities f ON a.firstId = f.id 
+JOIN opportunities l ON a.lastId = l.id 
+ORDER BY YEAR, QUARTER;
 ```
 
 with example results:
@@ -296,13 +296,13 @@ with example results:
 Sometimes it useful to understand the previous and next values in the context of a given row. The lag and lead window functions provide this capability. By default the offset is one providing the prior or next value but can also be provided to get a larger offset. The example query is a report of opportunities by account name showing the opportunity amount, and the prior and next opportunity amount for that account by close date.
 
 ```
-select accountName, 
+SELECT accountName, 
 closeDate,  
 amount currentOppAmount, 
-lag(amount) over (partition by accountName order by closeDate) priorAmount, lead(amount) over (partition by accountName order by closeDate) nextAmount 
-from opportunities 
-order by accountName, closeDate 
-limit 9;
+lag(amount) OVER (PARTITION BY accountName ORDER BY closeDate) priorAmount, lead(amount) OVER (PARTITION BY accountName ORDER BY closeDate) nextAmount 
+FROM opportunities 
+ORDER BY accountName, closeDate 
+LIMIT 9;
 ```
 
 with example results:
@@ -324,17 +324,17 @@ with example results:
 The NTile window function allows for breaking up a data set into portions assigned a numeric value to each portion of the range. NTile(4) breaks the data up into quartiles (4 sets). The example query produces a report of all opportunities summarizing the quartile boundaries of amount values.
 
 ```
-select t.quartile, 
-min(t.amount) min, 
-max(t.amount) max 
-from (
-  select amount, 
-  ntile(4) over (order by amount asc) quartile 
-  from opportunities 
-  where closeDate >= '2016-10-01' and closeDate <= '2016-12-31'
+SELECT t.quartile, 
+MIN(t.amount) MIN, 
+MAX(t.amount) MAX 
+FROM (
+  SELECT amount, 
+  ntile(4) OVER (ORDER BY amount ASC) quartile 
+  FROM opportunities 
+  WHERE closeDate >= '2016-10-01' AND closeDate <= '2016-12-31'
   ) t 
-group by quartile 
-order by quartile;
+GROUP BY quartile 
+ORDER BY quartile;
 ```
 
 With example results:
@@ -351,16 +351,16 @@ With example results:
 The percentile functions have a slightly different syntax from other window functions as can be seen in the example below. These functions can be only applied against numeric values. The argument to the function is the percentile to evaluate. Following 'within group' is the sort expression which indicates the sort column and optionally order. Finally after 'over' is an optional partition by clause, for no partition clause use 'over ()'. The example below utilizes the value 0.5 to calculate the median opportunity amount in the rows. The values differ sometimes because percentile\_cont will return the average of the 2 middle rows for an even data set while percentile\_desc returns the first encountered in the sort.
 
 ```
-select owner,  
+SELECT owner,  
 accountName,  
 CloseDate,  
 amount,
-percentile_cont(0.5) within group (order by amount) over (partition by owner) pct_cont,
-percentile_disc(0.5) within group (order by amount) over (partition by owner) pct_disc
-from opportunities  
-where stageName='ClosedWon' 
-and closeDate >= '2016-10-02' and closeDate <= '2016-10-09'  
-order by owner, CloseDate;
+percentile_cont(0.5) within GROUP (ORDER BY amount) OVER (PARTITION BY owner) pct_cont,
+percentile_disc(0.5) within GROUP (ORDER BY amount) OVER (PARTITION BY owner) pct_disc
+FROM opportunities  
+WHERE stageName='ClosedWon' 
+AND closeDate >= '2016-10-02' AND closeDate <= '2016-10-09'  
+ORDER BY owner, CloseDate;
 ```
 
 With example results:

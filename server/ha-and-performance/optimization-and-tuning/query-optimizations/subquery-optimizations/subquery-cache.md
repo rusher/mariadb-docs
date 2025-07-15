@@ -73,9 +73,9 @@ Here are some examples that show the performance impact of the subquery cache (t
 Dataset from DBT-3 benchmark, a query to find customers with balance near top in their nation:
 
 ```sql
-SELECT count(*) FROM customer 
+SELECT COUNT(*) FROM customer 
 WHERE 
-   c_acctbal > 0.8 * (SELECT max(c_acctbal) 
+   c_acctbal > 0.8 * (SELECT MAX(c_acctbal) 
                       FROM customer C 
                       WHERE C.c_nationkey=customer.c_nationkey
                       GROUP BY c_nationkey);
@@ -86,12 +86,12 @@ WHERE
 DBT-3 benchmark, Query #17
 
 ```sql
-SELECT sum(l_extendedprice) / 7.0 AS avg_yearly 
+SELECT SUM(l_extendedprice) / 7.0 AS avg_yearly 
 FROM lineitem, part 
 WHERE 
   p_partkey = l_partkey AND 
   p_brand = 'Brand#42' AND p_container = 'JUMBO BAG' AND 
-  l_quantity < (SELECT 0.2 * avg(l_quantity) FROM lineitem 
+  l_quantity < (SELECT 0.2 * AVG(l_quantity) FROM lineitem 
                 WHERE l_partkey = p_partkey);
 ```
 
@@ -110,7 +110,7 @@ WHERE
         AND n_regionkey = r_regionkey AND r_name = 'MIDDLE EAST'
         AND ps_supplycost = (
                 SELECT
-                        min(ps_supplycost)
+                        MIN(ps_supplycost)
                 FROM
                         partsupp, supplier, nation, region
                 WHERE
@@ -142,14 +142,14 @@ WHERE
                         AND p_name LIKE 'indian%'
                         AND ps_availqty > (
                                 SELECT
-                                        0.5 * sum(l_quantity)
+                                        0.5 * SUM(l_quantity)
                                 FROM
                                         lineitem
                                 WHERE
                                         l_partkey = ps_partkey
                                         AND l_suppkey = ps_suppkey
                                         AND l_shipdate >= '1995-01-01'
-                                        AND l_shipdate < date_ADD('1995-01-01',INTERVAL 1 year)
+                                        AND l_shipdate < date_ADD('1995-01-01',INTERVAL 1 YEAR)
                                 )
         )
         AND s_nationkey = n_nationkey AND n_name = 'JAPAN'

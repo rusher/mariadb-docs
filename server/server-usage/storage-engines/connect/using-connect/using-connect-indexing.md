@@ -35,11 +35,11 @@ locking to prevent indexes to be reconstructed after each statement. The\
 indexes will be reconstructed when unlocking the table. For instance:
 
 ```
-lock table t1 write;
-insert into t1 values(...);
-insert into t1 values(...);
+LOCK TABLE t1 WRITE;
+INSERT INTO t1 VALUES(...);
+INSERT INTO t1 VALUES(...);
 ...
-unlock tables;
+UNLOCK TABLES;
 ```
 
 If a table was modified by an external application that does not handle indexing, the indexes must be\
@@ -179,17 +179,17 @@ columns used for joining the table. How to declare an index to be dynamic is by 
 DYNAM index option. For instance, the query:
 
 ```
-select d.diag, count(*) cnt from diag d, patients p where d.pnb =
-p.pnb and ageyears < 17 and county = 30 and drg <> 11 and d.diag
-between 4296 and 9434 group by d.diag order by cnt desc;
+SELECT d.diag, COUNT(*) cnt FROM diag d, patients p WHERE d.pnb =
+p.pnb AND ageyears < 17 AND county = 30 AND drg <> 11 AND d.diag
+BETWEEN 4296 AND 9434 GROUP BY d.diag ORDER BY cnt DESC;
 ```
 
 Such a query joining the diag table to the patients table may last a very long time if the tables are big.\
 To declare the primary key on the pnb column of the patients table to be dynamic:
 
 ```
-alter table patients drop primary key;
-alter table patients add primary key (pnb) comment 'DYNAMIC' dynam=1;
+ALTER TABLE patients DROP PRIMARY KEY;
+ALTER TABLE patients ADD PRIMARY KEY (pnb) COMMENT 'DYNAMIC' dynam=1;
 ```
 
 Note 1: The comment is not mandatory here but useful to see that the index is dynamic if you use the[SHOW INDEX](../../../../reference/sql-statements/administrative-sql-statements/show/show-index.md) command.

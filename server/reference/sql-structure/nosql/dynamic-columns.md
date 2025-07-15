@@ -13,6 +13,7 @@ A typical use case is when one needs to store items that may have many different
 The table should have a blob column which will be used as storage for dynamic columns:
 
 ```sql
+main
 CREATE TABLE assets (
   item_name VARCHAR(32) PRIMARY KEY, -- A common attribute for all items
   dynamic_cols  BLOB  -- Dynamic columns will be stored here
@@ -53,7 +54,7 @@ It is possible to add and remove dynamic columns from a row:
 ```sql
 -- Remove a column:
 UPDATE assets SET dynamic_cols=COLUMN_DELETE(dynamic_cols, "price") 
-WHERE COLUMN_GET(dynamic_cols, 'color' as char)='black'; 
+WHERE COLUMN_GET(dynamic_cols, 'color' AS CHAR)='black'; 
 
 -- Add a column:
 UPDATE assets SET dynamic_cols=COLUMN_ADD(dynamic_cols, 'warranty', '3 years')
@@ -253,7 +254,7 @@ If you are trying to get a nested dynamic column as a string, use `AS BINARY` as
 SELECT column_json( column_get(
   column_create('test1', 
     column_create('key1','value1','key2','value2','key3','value3')),
-  'test1' as BINARY));
+  'test1' AS BINARY));
 ```
 
 ### Datatypes

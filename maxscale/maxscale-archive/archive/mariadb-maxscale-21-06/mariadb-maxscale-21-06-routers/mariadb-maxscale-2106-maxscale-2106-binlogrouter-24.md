@@ -156,7 +156,7 @@ The user that is used for replication must be granted replication privileges on\
 the database server.
 
 ```
-CREATE USER 'repl'@'maxscalehost' IDENTIFIED by 'password';
+CREATE USER 'repl'@'maxscalehost' IDENTIFIED BY 'password';
 GRANT REPLICATION SLAVE ON *.* TO 'repl'@'maxscalehost';
 ```
 

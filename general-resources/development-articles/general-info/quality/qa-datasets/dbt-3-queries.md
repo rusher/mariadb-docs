@@ -9,25 +9,25 @@ Optimizer seems to make a good choice here.
 
 
 ```
-select
+SELECT
         l_returnflag,
         l_linestatus,
-        sum(l_quantity) as sum_qty,
-        sum(l_extendedprice) as sum_base_price,
-        sum(l_extendedprice * (1 - l_discount)) as sum_disc_price,
-        sum(l_extendedprice * (1 - l_discount) * (1 + l_tax)) as sum_charge,
-        avg(l_quantity) as avg_qty,
-        avg(l_extendedprice) as avg_price,
-        avg(l_discount) as avg_disc,
-        count(*) as count_order
-from
+        SUM(l_quantity) AS sum_qty,
+        SUM(l_extendedprice) AS sum_base_price,
+        SUM(l_extendedprice * (1 - l_discount)) AS sum_disc_price,
+        SUM(l_extendedprice * (1 - l_discount) * (1 + l_tax)) AS sum_charge,
+        AVG(l_quantity) AS avg_qty,
+        AVG(l_extendedprice) AS avg_price,
+        AVG(l_discount) AS avg_disc,
+        COUNT(*) AS count_order
+FROM
         lineitem
-where
-        l_shipdate <= date_sub('1998-12-01', interval 63 day)
-group by
+WHERE
+        l_shipdate <= date_sub('1998-12-01', INTERVAL 63 DAY)
+GROUP BY
         l_returnflag,
         l_linestatus
-order by
+ORDER BY
         l_returnflag,
         l_linestatus
 ```
@@ -54,26 +54,26 @@ Comments on query plan choice
 
 
 ```
-select
+SELECT
 	o_orderpriority,
-	count(*) as order_count
-from
+	COUNT(*) AS order_count
+FROM
 	orders
-where
+WHERE
 	o_orderdate >= '1995-06-06'
-	and o_orderdate < date_add('1995-06-06', interval 3 month)
-	and exists (
-		select
+	AND o_orderdate < date_add('1995-06-06', INTERVAL 3 MONTH)
+	AND EXISTS (
+		SELECT
 			*
-		from
+		FROM
 			lineitem
-		where
+		WHERE
 			l_orderkey = o_orderkey
-			and l_commitdate < l_receiptdate
+			AND l_commitdate < l_receiptdate
 	)
-group by
+GROUP BY
 	o_orderpriority
-order by
+ORDER BY
 	o_orderpriority;
 ```
 

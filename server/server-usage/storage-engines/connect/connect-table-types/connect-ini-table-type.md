@@ -43,16 +43,16 @@ columns being the keys you want to display. In this case, the CREATE statement\
 could be:
 
 ```
-create table contact (
-  contact char(16) flag=1,
-  name char(20),
-  forename char(32),
-  hired date date_format='DD/MM/YYYY',
-  address char(64),
-  city char(20),
-  zipcode char(8),
-  tel char(16))
-engine=CONNECT table_type=INI file_name='contact.ini';
+CREATE TABLE contact (
+  contact CHAR(16) flag=1,
+  name CHAR(20),
+  forename CHAR(32),
+  hired DATE date_format='DD/MM/YYYY',
+  address CHAR(64),
+  city CHAR(20),
+  zipcode CHAR(8),
+  tel CHAR(16))
+ENGINE=CONNECT table_type=INI file_name='contact.ini';
 ```
 
 The column that will contain the section name can have any name but must\
@@ -62,7 +62,7 @@ the key value type, and the length is the maximum expected length for the key\
 value. Once done, the statement:
 
 ```
-select contact, name, hired, city, tel from contact;
+SELECT contact, name, hired, city, tel FROM contact;
 ```
 
 This statement will display the file in tabular format.
@@ -87,8 +87,8 @@ created but the new values will be added or replace those of the existing\
 section. Thus, the following two commands are equivalent:
 
 ```
-update contact set forename = 'Harry' where contact = 'UK1';
-insert into contact (contact,forename) values('UK1','Harry');
+UPDATE contact SET forename = 'Harry' WHERE contact = 'UK1';
+INSERT INTO contact (contact,forename) VALUES('UK1','Harry');
 ```
 
 **Note 2:** Because sections represent one line, a DELETE statement on a\
@@ -123,7 +123,7 @@ name. Otherwise, the column will contain the key value.
 Once done, the command:
 
 ```
-select * from xcont;
+SELECT * FROM xcont;
 ```
 
 Will display the following result:

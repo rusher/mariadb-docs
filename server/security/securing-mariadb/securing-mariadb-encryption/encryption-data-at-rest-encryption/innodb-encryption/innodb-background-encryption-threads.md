@@ -58,7 +58,7 @@ WITH tablespace_ids AS (
    /* information_schema.INNODB_SYS_TABLESPACES doesn't have a row for the system tablespace (MDEV-20802) */
    SELECT 0 AS SPACE
 )
-SELECT NOW() as 'time', 
+SELECT NOW() AS 'time', 
    'tablespaces', COUNT(*) AS 'tablespaces', 
    'encrypted', SUM(IF(ite.ENCRYPTION_SCHEME IS NOT NULL, ite.ENCRYPTION_SCHEME, 0)) AS 'encrypted', 
    'encrypting', SUM(IF(ite.ROTATING_OR_FLUSHING IS NOT NULL, ite.ROTATING_OR_FLUSHING, 0)) AS 'encrypting'

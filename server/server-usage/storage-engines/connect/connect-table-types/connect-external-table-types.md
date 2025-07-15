@@ -76,7 +76,7 @@ This is specified by the alias option, to be used in the option list. It is made
 With this information, CONNECT will be able to make the query sent to the remote data source:
 
 ```
-select pays as country, count(*) as customers from custnum where (pays = 'UK' OR pays = 'USA') group by country having count(*) > 5
+SELECT pays AS country, COUNT(*) AS customers FROM custnum WHERE (pays = 'UK' OR pays = 'USA') GROUP BY country HAVING COUNT(*) > 5
 ```
 
 Note: Some data sources, including MySQL and MariaDB, accept aliases in the having clause. In that case, the alias option could have been specified as:

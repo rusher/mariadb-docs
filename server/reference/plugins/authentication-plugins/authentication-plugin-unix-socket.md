@@ -115,6 +115,10 @@ Consider an OS user named 'bob' that has been created like this:
 
 ```sql
 CREATE USER A identified via unix_socket as 'bob';
+
+
+
+
 ```
 
 That user can connect like this:

@@ -28,7 +28,7 @@ SELECT * FROM t1 WHERE _rowid=1;
 
 ```sql
 UPDATE t1 SET b="three" WHERE _rowid=2;
-SELECT * FROM t1 WHERE _rowid>=1 and _rowid<=10;
+SELECT * FROM t1 WHERE _rowid>=1 AND _rowid<=10;
 ```
 
 ```

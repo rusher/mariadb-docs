@@ -85,7 +85,7 @@ SHOW PLUGINS;
 SELECT LOAD_OPTION 
 FROM INFORMATION_SCHEMA.PLUGINS 
 WHERE PLUGIN_NAME LIKE 'tokudb';
-Empty set
+Empty SET
 ```
 
 The equivalent [SELECT](../../../../data-manipulation/selecting-data/select.md) query would be:
@@ -173,7 +173,7 @@ Check if a given plugin is available:
 SELECT LOAD_OPTION 
 FROM INFORMATION_SCHEMA.PLUGINS 
 WHERE PLUGIN_NAME LIKE 'tokudb';
-Empty set
+Empty SET
 ```
 
 Show authentication plugins:

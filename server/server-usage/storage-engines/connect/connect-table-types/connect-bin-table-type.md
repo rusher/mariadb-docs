@@ -85,14 +85,14 @@ date in numeric format.
 The table could be created by:
 
 ```
-create table testbal (
-fig int(4) not null field_format='C',
-name char(10) not null,
-birth date not null field_format='L',
-id char(5) not null field_format='L2',
-salary double(9,2) not null default 0.00 field_format='F',
-dept int(4) not null field_format='L2')
-engine=CONNECT table_type=BIN block_size=5 file_name='Testbal.dat';
+CREATE TABLE testbal (
+fig INT(4) NOT NULL field_format='C',
+name CHAR(10) NOT NULL,
+birth DATE NOT NULL field_format='L',
+id CHAR(5) NOT NULL field_format='L2',
+salary DOUBLE(9,2) NOT NULL DEFAULT 0.00 field_format='F',
+dept INT(4) NOT NULL field_format='L2')
+ENGINE=CONNECT table_type=BIN block_size=5 file_name='Testbal.dat';
 ```
 
 Specifying the little-endian representation for binary values is not useful on most machines, but makes the create table statement portable on a machine using big endian, as well as the table file.
@@ -104,7 +104,7 @@ ending is desired, specify the ending option or specify the `lrecl` option addin
 can be filled by:
 
 ```
-insert into testbal values
+INSERT INTO testbal VALUES
   (5500,'ARCHIBALD','1980-01-25','3789',4380.50,318),
   (123,'OLIVER','1953-08-10','23456',3400.68,2158),
   (3123,'FOO','2002-07-23','888',default,318);
@@ -116,7 +116,7 @@ field format type.
 The query:
 
 ```
-select * from testbal;
+SELECT * FROM testbal;
 ```
 
 returns:

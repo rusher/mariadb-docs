@@ -233,7 +233,7 @@ First, on the foreign database you create a table, for example:
 
 ```sql
 CREATE TABLE federated.test_table (
-  id     INT(20) NOT NULL auto_increment,
+  id     INT(20) NOT NULL AUTO_INCREMENT,
   name   VARCHAR(32) NOT NULL DEFAULT '',
   other  INT(20) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id),
@@ -262,7 +262,7 @@ Alternatively (or if you're using MariaDB before version 10.0.2) you specify the
 
 ```sql
 CREATE TABLE federated_test_table (
-  id     INT(20) NOT NULL auto_increment,
+  id     INT(20) NOT NULL AUTO_INCREMENT,
   name   VARCHAR(32) NOT NULL DEFAULT '',
   other  INT(20) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id),

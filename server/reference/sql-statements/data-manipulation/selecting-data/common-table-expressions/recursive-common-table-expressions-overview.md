@@ -46,7 +46,7 @@ Next, execute the recursive part of the query:
 ### Summary
 
 ```sql
-WITH recursive R AS (
+WITH RECURSIVE R AS (
   SELECT anchor_data
   UNION [all]
   SELECT recursive_part
@@ -72,7 +72,7 @@ Sample data:
 ![tc\_1](../../../../../.gitbook/assets/tc_1.png)
 
 ```sql
-CREATE TABLE bus_routes (origin varchar(50), dst varchar(50));
+CREATE TABLE bus_routes (origin VARCHAR(50), dst VARCHAR(50));
 INSERT INTO bus_routes VALUES 
   ('New York', 'Boston'), 
   ('Boston', 'New York'), 

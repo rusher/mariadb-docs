@@ -35,7 +35,7 @@ SELECT x FROM t2 WHERE y= (SELECT MIN(b) FROM t1 WHERE a=const)
 Cross joins, where there is no join condition for a table, can also be optimized to a few key lookups:
 
 ```sql
-SELECT min(t1.key_part_1), max(t2.key_part_1) FROM t1, t2
+SELECT MIN(t1.key_part_1), MAX(t2.key_part_1) FROM t1, t2
 ```
 
 ## Min/Max optimization with GROUP BY

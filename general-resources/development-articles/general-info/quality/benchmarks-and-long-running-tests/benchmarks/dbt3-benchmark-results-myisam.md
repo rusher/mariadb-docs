@@ -261,11 +261,11 @@ Queries 2-opt.sql and 18-opt.sql are tested only for [MariaDB 5.3.2](https://app
 * Additional modifications for 17-opt1:
 
 ```
-select
-sum(l_extendedprice) / 7.0 as avg_yearly
-from
- part straight_join lineitem
-where
+SELECT
+SUM(l_extendedprice) / 7.0 AS avg_yearly
+FROM
+ part STRAIGHT_JOIN lineitem
+WHERE
 p_partkey = l_partkey
 ...
 ```
@@ -273,11 +273,11 @@ p_partkey = l_partkey
 * Additional modifications for 17-opt2:
 
 ```
-select
- 	sum(l_extendedprice) / 7.0 as avg_yearly
-from
- 	lineitem straight_join part
-where
+SELECT
+ 	SUM(l_extendedprice) / 7.0 AS avg_yearly
+FROM
+ 	lineitem STRAIGHT_JOIN part
+WHERE
  	p_partkey = l_partkey
 ...
 ```
@@ -285,11 +285,11 @@ where
 * Additional modifications for 19-opt1:
 
 ```
-select
- 	sum(l_extendedprice* (1 - l_discount)) as revenue
-from
- 	part straight_join lineitem
-where
+SELECT
+ 	SUM(l_extendedprice* (1 - l_discount)) AS revenue
+FROM
+ 	part STRAIGHT_JOIN lineitem
+WHERE
  	(
  		p_partkey = l_partkey
 ...
@@ -298,11 +298,11 @@ where
 * Additional modifications for 19-opt2:
 
 ```
-select
- 	sum(l_extendedprice* (1 - l_discount)) as revenue
-from
- 	lineitem straight_join part
-where
+SELECT
+ 	SUM(l_extendedprice* (1 - l_discount)) AS revenue
+FROM
+ 	lineitem STRAIGHT_JOIN part
+WHERE
  	(
  		p_partkey = l_partkey
 ...
@@ -330,11 +330,11 @@ The benchmark for q20 compares the following cases:
   The join order is:
 
 ```
-select s_name, s_address
- from supplier, nation
- where s_suppkey in (select distinct (ps_suppkey)
- from '''part straight_join partsupp'''
- where ps_partkey = p_partkey ...
+SELECT s_name, s_address
+ FROM supplier, nation
+ WHERE s_suppkey IN (SELECT DISTINCT (ps_suppkey)
+ FROM '''part straight_join partsupp'''
+ WHERE ps_partkey = p_partkey ...
 ```
 
 * Since the IN-TO-EXISTS strategy is essentially the same for both MariaDB\
@@ -344,11 +344,11 @@ select s_name, s_address
   * enforces an optimal JOIN order via straight\_join as follows:
 
 ```
-select s_name, s_address
- from supplier, nation
- where s_suppkey in (select distinct (ps_suppkey)
- from '''part straight_join partsupp'''
- where ps_partkey = p_partkey ...
+SELECT s_name, s_address
+ FROM supplier, nation
+ WHERE s_suppkey IN (SELECT DISTINCT (ps_suppkey)
+ FROM '''part straight_join partsupp'''
+ WHERE ps_partkey = p_partkey ...
 ```
 
 q20-opt1.sql uses the following optimizer switches for\
