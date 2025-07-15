@@ -72,7 +72,7 @@ Notable changes of this release include:
 ### Galera
 
 * [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) variable for turning on WSREP features which are not part of default behavior.
-* [wsrep\_strict\_ddl](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_strict_ddl) has been deprecated. Use [wsrep\_mode=STRICT\_REPLICATION](mariadb-1060-release-notes.md#wsrep_mode) instead.
+* [wsrep\_strict\_ddl](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_strict_ddl) has been deprecated. Use [wsrep\_mode=STRICT\_REPLICATION](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) instead.
 
 ### InnoDB Variables
 
