@@ -33,7 +33,7 @@ The following statement deletes customer records with a customer key identificat
 
 ```
 DELETE FROM customer 
-  WHERE custkey > 1000 and custkey <2000
+  WHERE custkey > 1000 AND custkey <2000
 ```
 
 

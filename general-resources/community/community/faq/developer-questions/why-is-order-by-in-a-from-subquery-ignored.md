@@ -4,7 +4,7 @@ Query with ORDER BY in a FROM subquery produces unordered result. Is this a bug?
 Below is an example of this:
 
 ```sql
-SELECT field1, field2 FROM ( SELECT field1, field2 FROM table1 ORDER BY field2 ) alias
+SELECT field1, field2 FROM ( SELECT field1, field2 FROM table1 ORDER BY field2 ) ALIAS
 ```
 
 returns a result set that is not necessarily ordered by field2. This is not a bug.

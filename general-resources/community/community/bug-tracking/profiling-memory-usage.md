@@ -26,7 +26,7 @@ if the MariaDB allocated memory grows.
 One can also check memory usage per user with the [information\_schema.processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table):
 
 ```
-select id, MEMORY_USED, MAX_MEMORY_USED from information_schema.processlist;
+SELECT id, MEMORY_USED, MAX_MEMORY_USED FROM information_schema.processlist;
 ```
 
 This shows the current memory used per connection and the maximum memory they have\

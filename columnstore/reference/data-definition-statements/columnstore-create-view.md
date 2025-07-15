@@ -29,9 +29,9 @@ The following statement creates a customer view of orders with status:
 
 
 ```
-CREATE VIEW v_cust_orders (cust_name, order_number, order_status) as
-select c.cust_name, o.ordernum, o.status from customer c, orders o
-where c.custnum = o.custnum;
+CREATE VIEW v_cust_orders (cust_name, order_number, order_status) AS
+SELECT c.cust_name, o.ordernum, o.status FROM customer c, orders o
+WHERE c.custnum = o.custnum;
 ```
 
 

@@ -227,15 +227,15 @@ Now this task would deal with extending that feature and make custom aggregate f
 An example of a creating a custom aggregate function is given below:
 
 ```
-create aggregate function agg_sum(x INT) returns double
-begin
-  declare z double default 0;
-  declare continue handler for not found return z;
-  loop
-    fetch group next row;
-    set z = z + x;
-  end loop;
-end|
+CREATE AGGREGATE FUNCTION agg_sum(x INT) RETURNS DOUBLE
+BEGIN
+  DECLARE z DOUBLE DEFAULT 0;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND RETURN z;
+  LOOP
+    FETCH GROUP NEXT ROW;
+    SET z = z + x;
+  END LOOP;
+END|
 ```
 
 | Details: | Mentor:                                                  |

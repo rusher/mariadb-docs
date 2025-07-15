@@ -54,7 +54,7 @@ This scheme allows for large queries to use all available resources when not oth
 How many Queries are running and how many queries are currently in the queue can be checked with
 
 ```
-select calgetsqlcount();
+SELECT calgetsqlcount();
 ```
 
 ## Join tuning - PmMaxMemorySmallSide
@@ -69,10 +69,10 @@ ColumnStore maintains statistics for table and utilizes this to determine which 
 The above logic for a single table join extrapolates out to multi table joins where the small table values are precalculated and performed as one single scan against the large table. This works well for the typical star schema case joining multiple dimension tables with a large fact table. For some join scenarios it may be necessary to sequence joins to create the intermediate datasets for joining, this would happen for instance with a snowflake schema structure. In some extreme cases it may be hard for the optimizer to be able to determine the most optimal join path. In this case a hint is available to force a join ordering. The `INFINIDB_ORDERED` hint will force the first table in the from clause to be considered the largest table and override any statistics based decision, for example:
 
 ```
-select /*! INFINIDB_ORDERED */ r_regionkey     
-from region r, customer c, nation n    
-where r.r_regionkey = n.n_regionkey      
-and n.n_nationkey = c.c_nationkey
+SELECT /*! INFINIDB_ORDERED */ r_regionkey     
+FROM region r, customer c, nation n    
+WHERE r.r_regionkey = n.n_regionkey      
+AND n.n_nationkey = c.c_nationkey
 ```
 
 {% hint style="danger" %}

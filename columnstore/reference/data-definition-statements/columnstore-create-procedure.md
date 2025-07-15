@@ -43,18 +43,18 @@ The following statements create and call the sp_complex_variable stored procedur
 
 
 ```
-CREATE PROCEDURE sp_complex_variable(in arg_key int, in arg_date date)
-  begin
-    Select *
-    from lineitem, orders
-    where o_custkey < arg_key
-    and l_partkey < 10000
-    and l_shipdate>arg_date
-    and l_orderkey = o_orderkey
-    order by l_orderkey, l_linenumber;
-  end
+CREATE PROCEDURE sp_complex_variable(IN arg_key INT, IN arg_date DATE)
+  BEGIN
+    SELECT *
+    FROM lineitem, orders
+    WHERE o_custkey < arg_key
+    AND l_partkey < 10000
+    AND l_shipdate>arg_date
+    AND l_orderkey = o_orderkey
+    ORDER BY l_orderkey, l_linenumber;
+  END
 
-call sp_complex_variable(1000, '1998-10-10');
+CALL sp_complex_variable(1000, '1998-10-10');
 ```
 
 

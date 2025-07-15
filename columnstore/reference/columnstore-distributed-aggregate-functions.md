@@ -42,13 +42,13 @@ An example group by query using aggregate functions is:
 
 
 ```
-select year(o_orderdate) order_year, 
-avg(o_totalprice) avg_totalprice, 
-max(o_totalprice) max_totalprice, 
-count(*) order_count 
-from orders 
-group by order_year 
-order by order_year;
+SELECT year(o_orderdate) order_year, 
+AVG(o_totalprice) avg_totalprice, 
+MAX(o_totalprice) max_totalprice, 
+COUNT(*) order_count 
+FROM orders 
+GROUP BY order_year 
+ORDER BY order_year;
 ```
 
 

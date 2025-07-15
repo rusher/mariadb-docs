@@ -308,7 +308,7 @@ In the event that you would like to see how users are defined, you can find this
 ```sql
 SELECT ssl_type, ssl_cipher, x509_subject 
 FROM mysql.user
-WHERE User = 'johnSmith';
+WHERE USER = 'johnSmith';
 ```
 
 You can test it by creating a user with `REQUIRE X509` for testing:

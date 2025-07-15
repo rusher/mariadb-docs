@@ -94,10 +94,10 @@ For each table that you are importing, create the table with the [CREATE TABLE](
 
 ```
 CREATE TABLE inventory.products (
-   product_name varchar(11) NOT NULL DEFAULT '',
-   supplier varchar(128) NOT NULL DEFAULT '',
-   quantity varchar(128) NOT NULL DEFAULT '',
-   unit_cost varchar(128) NOT NULL DEFAULT ''
+   product_name VARCHAR(11) NOT NULL DEFAULT '',
+   supplier VARCHAR(128) NOT NULL DEFAULT '',
+   quantity VARCHAR(128) NOT NULL DEFAULT '',
+   unit_cost VARCHAR(128) NOT NULL DEFAULT ''
 ) ENGINE=Columnstore DEFAULT CHARSET=utf8;
 ```
 

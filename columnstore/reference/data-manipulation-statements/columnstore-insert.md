@@ -42,10 +42,10 @@ With INSERT ... SELECT, you can quickly insert many rows into a table from one o
 Example
 
 ```
-create table autoinc_test(
-id int,
-name varchar(10))
-engine=columnstore comment 'autoincrement=id';
+CREATE TABLE autoinc_test(
+id INT,
+name VARCHAR(10))
+ENGINE=columnstore COMMENT 'autoincrement=id';
 
 INSERT INTO autoinc_test (name) VALUES ('John');
 INSERT INTO autoinc_test (name) VALUES ('Doe');

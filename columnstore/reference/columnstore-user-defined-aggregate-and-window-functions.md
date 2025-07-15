@@ -20,16 +20,16 @@ Similar to built-in functions, the SDK supports distributed aggregate execution 
 The reference examples above are included in the standard build of MariaDB ColumnStore and so can be used by registering them as user defined aggregate functions. The same can be done for new functions assuming the instance has the updated libraries included. From a mcsmysql prompt:
 
 ```
-CREATE AGGREGATE FUNCTION median returns REAL soname 'libudf_mysql.so';
-CREATE AGGREGATE FUNCTION avg_mode returns REAL soname 'libudf_mysql.so';
-CREATE AGGREGATE FUNCTION ssq returns REAL soname 'libudf_mysql.so';
+CREATE AGGREGATE FUNCTION median RETURNS REAL soname 'libudf_mysql.so';
+CREATE AGGREGATE FUNCTION avg_mode RETURNS REAL soname 'libudf_mysql.so';
+CREATE AGGREGATE FUNCTION ssq RETURNS REAL soname 'libudf_mysql.so';
 ```
 
 After this these may be used in the same way as any other aggregate or window function like sum:
 
 ```
 SELECT grade, 
-AVG(loan_amnt) avg, 
+AVG(loan_amnt) AVG, 
 MEDIAN(loan_amnt) median 
 FROM loanstats 
 GROUP BY grade 

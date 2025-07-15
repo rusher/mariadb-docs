@@ -176,10 +176,10 @@ CREATE DATABASE `json_columnstore`;
 USE `json_columnstore`;
 
 CREATE TABLE `products` (
-  `product_name` varchar(11) NOT NULL DEFAULT '',
-  `supplier` varchar(128) NOT NULL DEFAULT '',
-  `quantity` varchar(128) NOT NULL DEFAULT '',
-  `unit_cost` varchar(128) NOT NULL DEFAULT ''
+  `product_name` VARCHAR(11) NOT NULL DEFAULT '',
+  `supplier` VARCHAR(128) NOT NULL DEFAULT '',
+  `quantity` VARCHAR(128) NOT NULL DEFAULT '',
+  `unit_cost` VARCHAR(128) NOT NULL DEFAULT ''
 ) ENGINE=Columnstore DEFAULT CHARSET=utf8;
 ```
 
@@ -350,12 +350,12 @@ In this case run the colxml utility (the -t argument can be useful for producing
 Consider the following simple table example:
 
 ```
-create table emp (
-emp_id int, 
- dept_id int,
-name varchar(30), 
-salary int, 
-hire_date date) engine=columnstore;
+CREATE TABLE emp (
+emp_id INT, 
+ dept_id INT,
+name VARCHAR(30), 
+salary INT, 
+hire_date DATE) ENGINE=columnstore;
 ```
 
 This would produce a colxml file with the following table element:
