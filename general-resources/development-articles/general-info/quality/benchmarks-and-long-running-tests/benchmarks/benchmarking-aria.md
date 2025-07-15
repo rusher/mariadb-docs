@@ -8,9 +8,9 @@ By default Aria (instead of MyISAM) is used for the internal temporary tables wh
 In most cases Aria should give you better performance than using MyISAM, but this is not always the case.
 
 ```
-CREATE TABLE `t1` (`id` int(11) DEFAULT NULL, `tea` text) 
+CREATE TABLE `t1` (`id` INT(11) DEFAULT NULL, `tea` TEXT) 
   ENGINE=MyISAM DEFAULT CHARSET=latin1;
-insert t1 select rand()*2e8, repeat(rand(), rand()*64) from t1;
+INSERT t1 SELECT rand()*2e8, repeat(rand(), rand()*64) FROM t1;
 ```
 
 Repeat the last row until you get 2097152 rows.

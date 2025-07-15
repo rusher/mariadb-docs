@@ -74,15 +74,15 @@ Add support for FULL OUTER JOIN[sql\_join\_full.asp](https://www.w3schools.com/s
 One of the way how to implement is to re-write the query
 
 ```
-select t1.*, t2.* from t1 full outer join t2 on P(t1,t2)
+SELECT t1.*, t2.* FROM t1 FULL OUTER JOIN t2 ON P(t1,t2)
 ```
 
 into the following union all:
 
 ```
-select t1.*, t2.* from t1 left outer join t2 on P(t1,t2) 
-union all 
-select t1.*,t2.* from t2 left outer join t1 on P(t1,t2) where t1.a is null
+SELECT t1.*, t2.* FROM t1 LEFT OUTER JOIN t2 ON P(t1,t2) 
+UNION ALL 
+SELECT t1.*,t2.* FROM t2 LEFT OUTER JOIN t1 ON P(t1,t2) WHERE t1.a IS NULL
 ```
 
 Here t1.a is some non-nullable column of t1 (e.g. the column of single column primary key).
@@ -116,7 +116,7 @@ CREATE TABLE tree (
      WITH RECURSIVE prev AS (
      SELECT * FROM tree WHERE ParentNode IS NULL
      UNION
-     SELECT t.Node,t.ParentNode,t.EmployeeID,p.Depth + 1 as Depth, CONCAT(p.Lineage, t.ParentNode, '/')
+     SELECT t.Node,t.ParentNode,t.EmployeeID,p.Depth + 1 AS Depth, CONCAT(p.Lineage, t.ParentNode, '/')
      FROM tree t JOIN prev p ON t.ParentNode = p.Node
      )
      SELECT * FROM prev;
@@ -124,7 +124,7 @@ CREATE TABLE tree (
      WITH RECURSIVE prev AS (
      SELECT * FROM tree WHERE ParentNode IS NULL
      UNION
-     SELECT t.Node,t.ParentNode,t.EmployeeID,p.Depth + 1 as Depth, CONCAT(p.Lineage, t.ParentNode, '/')
+     SELECT t.Node,t.ParentNode,t.EmployeeID,p.Depth + 1 AS Depth, CONCAT(p.Lineage, t.ParentNode, '/')
      FROM prev p JOIN tree t ON t.ParentNode = p.Node
      )
      UPDATE tree t, prev p SET t.Depth=p.Depth, t.Lineage=p.Lineage WHERE t.Node=p.Node; 
@@ -190,30 +190,30 @@ This task proposes to extend that feature and allow custom aggregate functions t
 An example of a creating a custom aggregate function is given below:
 
 ```
-create aggregate function agg_sum(x INT) returns double
-begin
-  declare z double default 0;
-  declare continue handler for not found return z;
-  loop
-    fetch group next row;
-    set z = z + x;
-  end loop;
-end|
+CREATE AGGREGATE FUNCTION agg_sum(x INT) RETURNS DOUBLE
+BEGIN
+  DECLARE z DOUBLE DEFAULT 0;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND RETURN z;
+  LOOP
+    FETCH GROUP NEXT ROW;
+    SET z = z + x;
+  END LOOP;
+END|
 ```
 
 This functions can be used in the following query:
 
 ```
-create table balances (id int, amount int);
-insert into balances values (1, 10), (2, 20), (3, 30);
+CREATE TABLE balances (id INT, amount INT);
+INSERT INTO balances VALUES (1, 10), (2, 20), (3, 30);
  
-select agg_sum(amount) from balances;
+SELECT agg_sum(amount) FROM balances;
 ```
 
 After this task is complete the following must also work:
 
 ```
-select agg_sum(amount) over (order by id);
+SELECT agg_sum(amount) OVER (ORDER BY id);
 ```
 
 | Details: | Mentor:                                                  |
@@ -446,7 +446,7 @@ CREATE TABLE mysql.column_stats (
   min_value varbinary(255) DEFAULT NULL, 
   max_value varbinary(255) DEFAULT NULL, 
   ...
-  hist_size tinyint unsigned, 
+  hist_size TINYINT UNSIGNED, 
   hist_type enum('SINGLE_PREC_HB','DOUBLE_PREC_HB'), 
   histogram varbinary(255), 
   ...

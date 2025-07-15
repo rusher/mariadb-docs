@@ -183,9 +183,9 @@ Represents JSON in the most understandable way emphasizing nested structures.
 We now got a use case for it: Optimizer Trace output. Optimizer trace is too large to be copied in full, instead we use expressions like
 
 ```
-select 
+SELECT 
 JSON_DETAILED(JSON_EXTRACT(trace, '$**.analyzing_range_alternatives')) 
-from INFORMATION_SCHEMA.OPTIMIZER_TRACE;
+FROM INFORMATION_SCHEMA.OPTIMIZER_TRACE;
 ```
 
 Our experience is that `JSON_DETAILED` has some room for improvement when it comes to the quality of automatic JSON formatting.\
@@ -250,7 +250,7 @@ CREATE TABLE mysql.column_stats (
   min_value varbinary(255) DEFAULT NULL, 
   max_value varbinary(255) DEFAULT NULL, 
   ...
-  hist_size tinyint unsigned, 
+  hist_size TINYINT UNSIGNED, 
   hist_type enum('SINGLE_PREC_HB','DOUBLE_PREC_HB'), 
   histogram varbinary(255), 
   ...
@@ -275,9 +275,9 @@ If we do that, it will:
 that is, the following should work:
 
 ```
-set histogram_type='json';
-analyze table t1 persisent for all;
-select histogram from mysql.column_stats where table_name='t1' ;
+SET histogram_type='json';
+ANALYZE TABLE t1 persisent FOR ALL;
+SELECT histogram FROM mysql.column_stats WHERE TABLE_NAME='t1' ;
 ```
 
 this should produce {"hello":"world"}.\
@@ -335,7 +335,7 @@ INSERT INTO mysql.column_stats VALUES('test','t1','column1', .... '[invalid, jso
 FLUSH TABLES;
 # this should print some descriptive test
 --error NNNN
-select * from test.t1;
+SELECT * FROM test.t1;
 ```
 
 h2. Milestone-5: Parse the JSON data into a structure that allows lookups.\

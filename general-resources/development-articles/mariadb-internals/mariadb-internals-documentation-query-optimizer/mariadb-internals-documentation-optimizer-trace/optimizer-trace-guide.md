@@ -209,9 +209,9 @@ The MariaDB optimizer has a complex part called the Range Optimizer. This is a m
 An example: Consider a table
 
 ```
-create table some_events ( 
-  start_date date, 
-  end_date date, 
+CREATE TABLE some_events ( 
+  start_date DATE, 
+  end_date DATE, 
   ...
   key (start_date, end_date)
 );

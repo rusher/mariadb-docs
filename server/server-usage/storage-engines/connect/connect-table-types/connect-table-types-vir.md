@@ -18,9 +18,9 @@ syntax where no table is specified. With CONNECT, you can achieve the same purpo
 table, with the noticeable advantage of being able to display several lines:
 
 ```
-create table virt engine=connect table_type=VIR block_size=10;
-select concat('The square root of ', n, ' is') what,
-round(sqrt(n),16) value from virt;
+CREATE TABLE virt ENGINE=CONNECT table_type=VIR block_size=10;
+SELECT concat('The square root of ', n, ' is') what,
+round(sqrt(n),16) value FROM virt;
 ```
 
 This will return:
@@ -42,7 +42,7 @@ What happened here? First of all, unlike Oracle “dual” tableS that have no c
 
 ```
 CREATE TABLE `virt` (
-`n` int(11) NOT NULL `SPECIAL`=ROWID,
+`n` INT(11) NOT NULL `SPECIAL`=ROWID,
 PRIMARY KEY (`n`)
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='VIR'
 `BLOCK_SIZE`=10
@@ -54,12 +54,12 @@ It is possible to specify the columns of a VIR table but they must be CONNECT sp
 virtual columns. For instance:
 
 ```
-create table virt2 (
-n int key not null special=rowid,
-sig1 bigint as ((n*(n+1))/2) virtual,
-sig2 bigint as(((2*n+1)*(n+1)*n)/6) virtual)
-engine=connect table_type=VIR block_size=10000000;
-select * from virt2 limit 995, 5;
+CREATE TABLE virt2 (
+n INT KEY NOT NULL special=ROWID,
+sig1 BIGINT AS ((n*(n+1))/2) virtual,
+sig2 BIGINT AS(((2*n+1)*(n+1)*n)/6) virtual)
+ENGINE=CONNECT table_type=VIR block_size=10000000;
+SELECT * FROM virt2 LIMIT 995, 5;
 ```
 
 This table shows the sum and the sum of the square of the n first integers:
@@ -76,7 +76,7 @@ Note that the size of the table can be made very big as there no physical data. 
 should be limited in the queries. For instance:
 
 ```
-select * from virt2 where n = 1664510;
+SELECT * FROM virt2 WHERE n = 1664510;
 ```
 
 Such a query could last very long if the rowid column were not indexed. Note that by default,\
@@ -90,18 +90,18 @@ generate a table containing constant values.\
 This is easily done with a virtual table. Let us define the table FILLER as:
 
 ```
-create table filler engine=connect table_type=VIR block_size=5000000;
+CREATE TABLE filler ENGINE=CONNECT table_type=VIR block_size=5000000;
 ```
 
 Here we choose a size larger than the biggest table we want to generate. Later if we need a table pre-\
 filled with default and/or null values, we can do for example:
 
 ```
-create table tp (
-id int(6) key not null,
-name char(16) not null,
-salary float(8,2));
-insert into tp select n, 'unknown', NULL from filler where n <= 10000;
+CREATE TABLE tp (
+id INT(6) KEY NOT NULL,
+name CHAR(16) NOT NULL,
+salary FLOAT(8,2));
+INSERT INTO tp SELECT n, 'unknown', NULL FROM filler WHERE n <= 10000;
 ```
 
 This will generate a table having 10000 rows that can be updated later when needed. Note that a [SEQUENCE](../../sequence-storage-engine.md) table could have been used here instead of FILLING .
@@ -111,13 +111,13 @@ This will generate a table having 10000 rows that can be updated later when need
 With just its default column, a VIR table is almost equivalent to a [SEQUENCE](../../sequence-storage-engine.md) table. The syntax used is the main difference, for instance:
 
 ```
-select * from seq_100_to_150_step_10;
+SELECT * FROM seq_100_to_150_step_10;
 ```
 
 can be obtained with a VIR table (of size >= 15) by:
 
 ```
-select n*10 from vir where n between 10 and 15;
+SELECT n*10 FROM vir WHERE n BETWEEN 10 AND 15;
 ```
 
 Therefore, the main difference is to be able to define the columns of VIR tables. Unfortunately, there are currently many limitations to virtual columns that hopefully should be removed in the future.

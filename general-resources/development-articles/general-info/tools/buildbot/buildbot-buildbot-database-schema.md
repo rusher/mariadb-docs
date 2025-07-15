@@ -110,44 +110,44 @@ Show all platforms that failed for a particular revision of a particular branch:
 
 
 ```
-select platform
-  from test_run r
-where branch = 'mysql-6.0-testing2'
-  and revision = '2819'
-  and (exists (select * from test_failure f where f.test_run_id = r.id)
-    or exists (select * from test_warnings w where w.test_run_id = r.id));
+SELECT platform
+  FROM test_run r
+WHERE branch = 'mysql-6.0-testing2'
+  AND revision = '2819'
+  AND (EXISTS (SELECT * FROM test_failure f WHERE f.test_run_id = r.id)
+    OR EXISTS (SELECT * FROM test_warnings w WHERE w.test_run_id = r.id));
 ```
 
 Find failures similar to a given failure being investigated:
 
 
 ```
-select branch, revision, platform, test_name, test_variant, failure_text
-  from  test_failure f
-  inner join test_run r on (f.test_run_id = r.id)
-  where failure_text LIKE "%--protocol=TCP' failed%";
+SELECT branch, revision, platform, test_name, test_variant, failure_text
+  FROM  test_failure f
+  INNER JOIN test_run r ON (f.test_run_id = r.id)
+  WHERE failure_text LIKE "%--protocol=TCP' failed%";
 ```
 
 Check which branches a specific kind of failure has occured in:
 
 
 ```
-select branch, count(*)
-  from test_failure f
-  inner join test_run r on (f.test_run_id = r.id)
-  where failure_text LIKE "%--protocol=TCP' failed%"
-  group by branch;
+SELECT branch, COUNT(*)
+  FROM test_failure f
+  INNER JOIN test_run r ON (f.test_run_id = r.id)
+  WHERE failure_text LIKE "%--protocol=TCP' failed%"
+  GROUP BY branch;
 ```
 
 Find all test runs where a given test was run against a server that later had warnings in the error log, and also count the number of occurences of this event in each run:
 
 
 ```
-select branch, revision, platform, count(*)
-  from test_warnings w
-  inner join test_run r on (w.test_run_id = r.id)
-  where test_name = 'rpl.rpl_plugin_load'
-  group by r.id;
+SELECT branch, revision, platform, COUNT(*)
+  FROM test_warnings w
+  INNER JOIN test_run r ON (w.test_run_id = r.id)
+  WHERE test_name = 'rpl.rpl_plugin_load'
+  GROUP BY r.id;
 ```
 
 
