@@ -6,7 +6,7 @@ hidden: true
 
 <a href="https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/" class="button primary">Download</a>  <a href="../../mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-13-release-notes.md" class="button secondary">Release Notes</a>  <a href="connector-python-1.1.13-changelog.md" class="button secondary">Changelog</a>  <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide" class="button secondary">Connector/Python Overview</a>
 
-**Release date:** ?
+**Release date:** Jul 15 2025
 
 For the highlights of this release, see the [release notes](../../mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-13-release-notes.md).
 
