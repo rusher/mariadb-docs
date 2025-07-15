@@ -251,7 +251,7 @@ When this option is specified as true (by YES or 1) the Colist option contains a
 CREATE TABLE resto2 (
 name VARCHAR(64) NOT NULL,
 borough CHAR(16) NOT NULL,
-DATE datetime NOT NULL,
+DATE DATETIME NOT NULL,
 grade CHAR(1) NOT NULL,
 score INT(4) NOT NULL)
 ENGINE=CONNECT table_type=MONGO tabname='restaurants' data_charset=utf8

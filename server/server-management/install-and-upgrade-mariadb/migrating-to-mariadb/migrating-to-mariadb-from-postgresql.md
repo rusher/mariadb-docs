@@ -20,16 +20,16 @@ Once the remote table is setup, you can migrate the data to local tables very si
 
 ```
 CREATE TABLE psql_tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE = CONNECT
 table_type=ODBC
 tabname='tab'
-connection='DSN=psql_server';
+CONNECTION='DSN=psql_server';
 
 CREATE TABLE tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE = InnoDB;
 
 INSERT INTO tab SELECT * FROM psql_tab;
@@ -45,16 +45,16 @@ Once the remote table is setup, you can migrate the data to local tables very si
 
 ```
 CREATE TABLE psql_tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE = CONNECT
 table_type=JDBC
 tabname='tab'
-connection='jdbc:postgresql://psql_server/db1';
+CONNECTION='jdbc:postgresql://psql_server/db1';
 
 CREATE TABLE tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE = InnoDB;
 
 INSERT INTO tab SELECT * FROM psql_tab;
@@ -72,7 +72,7 @@ The foreign data wrapper also supports writes, so you should be able to write to
 
 ```
 CREATE TABLE tab (
-   id int,
+   id INT,
    str text
 );
 
@@ -87,7 +87,7 @@ CREATE USER MAPPING FOR postgres
    OPTIONS (username 'foo', password 'bar');
 
 CREATE FOREIGN TABLE mariadb_tab (
-   id int,
+   id INT,
    str text
 )
 SERVER mariadb_server

@@ -601,12 +601,12 @@ The table was previously created as:
 
 ```
 CREATE TABLE `sjr0` (
-  `_id` bigint(1) NOT NULL,
+  `_id` BIGINT(1) NOT NULL,
   `name` CHAR(26) NOT NULL,
   `cuisine` CHAR(8) NOT NULL,
   `grades` CHAR(1) DEFAULT NULL,
   `grades_grade` CHAR(1) DEFAULT NULL `JPATH`='$.grades[0].grade',
-  `grades_score` bigint(1) DEFAULT NULL `JPATH`='$.grades[0].score'
+  `grades_score` BIGINT(1) DEFAULT NULL `JPATH`='$.grades[0].score'
 ) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON'
   `FILE_NAME`='sresto.json' 
   `OPTION_LIST`='Pretty=0,Depth=1,Accept=1' `LRECL`=128;
@@ -743,8 +743,8 @@ CREATE TABLE jfacebook (
 `Action` CHAR(16) jpath='actions..name',
 `Link` VARCHAR(256) jpath='actions..link',
 `Type` CHAR(16) jpath='type',
-`Created` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' jpath='created_time',
-`Updated` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' jpath='updated_time')
+`Created` DATETIME date_format='YYYY-MM-DD\'T\'hh:mm:ss' jpath='created_time',
+`Updated` DATETIME date_format='YYYY-MM-DD\'T\'hh:mm:ss' jpath='updated_time')
 ENGINE=CONNECT table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
 ```
 
@@ -759,8 +759,8 @@ CREATE TABLE jfacebook (
 `Action` CHAR(16) field_format='actions..name',
 `Link` VARCHAR(256) field_format='actions..link',
 `Type` CHAR(16) field_format='type',
-`Created` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='created_time',
-`Updated` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='updated_time')
+`Created` DATETIME date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='created_time',
+`Updated` DATETIME date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='updated_time')
 ENGINE=CONNECT table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
 ```
 
@@ -775,8 +775,8 @@ CREATE TABLE jfacebook (
 `Action` CHAR(16) field_format='actions::name',
 `Link` VARCHAR(256) field_format='actions::link',
 `Type` CHAR(16) field_format='type',
-`Created` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='created_time',
-`Updated` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='updated_time')
+`Created` DATETIME date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='created_time',
+`Updated` DATETIME date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='updated_time')
 ENGINE=CONNECT table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
 ```
 

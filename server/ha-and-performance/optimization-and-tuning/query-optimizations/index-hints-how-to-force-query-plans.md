@@ -156,7 +156,7 @@ Example:
 
 ```sql
 CREATE INDEX Name ON City (Name);
-EXPLAIN SELECT Name,Count(*) FROM City
+EXPLAIN SELECT Name,COUNT(*) FROM City
 FORCE INDEX FOR GROUP BY (Name)
 WHERE population >= 10000000 GROUP BY Name;
 ```
@@ -232,7 +232,7 @@ You can do this with the `SQL_BUFFER_RESULT` option:
 
 ```sql
 CREATE INDEX Name ON City (Name);
-EXPLAIN SELECT SQL_BUFFER_RESULT Name,Count(*) AS Cities FROM City
+EXPLAIN SELECT SQL_BUFFER_RESULT Name,COUNT(*) AS Cities FROM City
 GROUP BY Name HAVING Cities > 2;
 ```
 

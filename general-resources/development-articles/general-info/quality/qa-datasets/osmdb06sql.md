@@ -35,15 +35,15 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 DROP TABLE IF EXISTS `changesets`;
 CREATE TABLE IF NOT EXISTS `changesets` (
-  `id` bigint(20) NOT NULL auto_increment,
-  `user_id` bigint(20) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `min_lat` int(11) default NULL,
-  `max_lat` int(11) default NULL,
-  `min_lon` int(11) default NULL,
-  `max_lon` int(11) default NULL,
-  `closed_at` datetime NOT NULL,
-  `num_changes` int(11) NOT NULL default '0',
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT(20) NOT NULL,
+  `created_at` DATETIME NOT NULL,
+  `min_lat` INT(11) DEFAULT NULL,
+  `max_lat` INT(11) DEFAULT NULL,
+  `min_lon` INT(11) DEFAULT NULL,
+  `max_lon` INT(11) DEFAULT NULL,
+  `closed_at` DATETIME NOT NULL,
+  `num_changes` INT(11) NOT NULL DEFAULT '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20103 ;
 
@@ -55,9 +55,9 @@ CREATE TABLE IF NOT EXISTS `changesets` (
 
 DROP TABLE IF EXISTS `changeset_tags`;
 CREATE TABLE IF NOT EXISTS `changeset_tags` (
-  `id` bigint(64) NOT NULL,
-  `k` varchar(255) NOT NULL default '',
-  `v` varchar(255) NOT NULL default '',
+  `id` BIGINT(64) NOT NULL,
+  `k` VARCHAR(255) NOT NULL DEFAULT '',
+  `v` VARCHAR(255) NOT NULL DEFAULT '',
   KEY `changeset_tags_id_idx` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -69,14 +69,14 @@ CREATE TABLE IF NOT EXISTS `changeset_tags` (
 
 DROP TABLE IF EXISTS `current_nodes`;
 CREATE TABLE IF NOT EXISTS `current_nodes` (
-  `id` bigint(64) NOT NULL auto_increment,
-  `latitude` int(11) NOT NULL,
-  `longitude` int(11) NOT NULL,
-  `changeset_id` bigint(20) NOT NULL,
-  `visible` tinyint(1) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `tile` int(10) unsigned NOT NULL,
-  `version` bigint(20) NOT NULL,
+  `id` BIGINT(64) NOT NULL AUTO_INCREMENT,
+  `latitude` INT(11) NOT NULL,
+  `longitude` INT(11) NOT NULL,
+  `changeset_id` BIGINT(20) NOT NULL,
+  `visible` TINYINT(1) NOT NULL,
+  `timestamp` DATETIME NOT NULL,
+  `tile` INT(10) UNSIGNED NOT NULL,
+  `version` BIGINT(20) NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `current_nodes_timestamp_idx` (`timestamp`),
   KEY `current_nodes_tile_idx` (`tile`),
@@ -91,9 +91,9 @@ CREATE TABLE IF NOT EXISTS `current_nodes` (
 
 DROP TABLE IF EXISTS `current_node_tags`;
 CREATE TABLE IF NOT EXISTS `current_node_tags` (
-  `id` bigint(64) NOT NULL,
-  `k` varchar(255) NOT NULL default '',
-  `v` varchar(255) NOT NULL default '',
+  `id` BIGINT(64) NOT NULL,
+  `k` VARCHAR(255) NOT NULL DEFAULT '',
+  `v` VARCHAR(255) NOT NULL DEFAULT '',
   PRIMARY KEY  (`id`,`k`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -105,11 +105,11 @@ CREATE TABLE IF NOT EXISTS `current_node_tags` (
 
 DROP TABLE IF EXISTS `current_relations`;
 CREATE TABLE IF NOT EXISTS `current_relations` (
-  `id` bigint(64) NOT NULL auto_increment,
-  `changeset_id` bigint(20) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `visible` tinyint(1) NOT NULL,
-  `version` bigint(20) NOT NULL,
+  `id` BIGINT(64) NOT NULL AUTO_INCREMENT,
+  `changeset_id` BIGINT(20) NOT NULL,
+  `timestamp` DATETIME NOT NULL,
+  `visible` TINYINT(1) NOT NULL,
+  `version` BIGINT(20) NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `current_relations_timestamp_idx` (`timestamp`),
   KEY `changeset_id` (`changeset_id`)
@@ -123,11 +123,11 @@ CREATE TABLE IF NOT EXISTS `current_relations` (
 
 DROP TABLE IF EXISTS `current_relation_members`;
 CREATE TABLE IF NOT EXISTS `current_relation_members` (
-  `id` bigint(64) NOT NULL,
-  `member_type` enum('node','way','relation') NOT NULL default 'node',
-  `member_id` bigint(11) NOT NULL,
-  `member_role` varchar(255) NOT NULL default '',
-  `sequence_id` int(11) NOT NULL default '0',
+  `id` BIGINT(64) NOT NULL,
+  `member_type` ENUM('node','way','relation') NOT NULL DEFAULT 'node',
+  `member_id` BIGINT(11) NOT NULL,
+  `member_role` VARCHAR(255) NOT NULL DEFAULT '',
+  `sequence_id` INT(11) NOT NULL DEFAULT '0',
   PRIMARY KEY  (`id`,`member_type`,`member_id`,`member_role`,`sequence_id`),
   KEY `current_relation_members_member_idx` (`member_type`,`member_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -140,9 +140,9 @@ CREATE TABLE IF NOT EXISTS `current_relation_members` (
 
 DROP TABLE IF EXISTS `current_relation_tags`;
 CREATE TABLE IF NOT EXISTS `current_relation_tags` (
-  `id` bigint(64) NOT NULL,
-  `k` varchar(255) NOT NULL default '',
-  `v` varchar(255) NOT NULL default '',
+  `id` BIGINT(64) NOT NULL,
+  `k` VARCHAR(255) NOT NULL DEFAULT '',
+  `v` VARCHAR(255) NOT NULL DEFAULT '',
   PRIMARY KEY  (`id`,`k`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -154,11 +154,11 @@ CREATE TABLE IF NOT EXISTS `current_relation_tags` (
 
 DROP TABLE IF EXISTS `current_ways`;
 CREATE TABLE IF NOT EXISTS `current_ways` (
-  `id` bigint(64) NOT NULL auto_increment,
-  `changeset_id` bigint(20) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `visible` tinyint(1) NOT NULL,
-  `version` bigint(20) NOT NULL,
+  `id` BIGINT(64) NOT NULL AUTO_INCREMENT,
+  `changeset_id` BIGINT(20) NOT NULL,
+  `timestamp` DATETIME NOT NULL,
+  `visible` TINYINT(1) NOT NULL,
+  `version` BIGINT(20) NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `current_ways_timestamp_idx` (`timestamp`),
   KEY `changeset_id` (`changeset_id`)
@@ -172,9 +172,9 @@ CREATE TABLE IF NOT EXISTS `current_ways` (
 
 DROP TABLE IF EXISTS `current_way_nodes`;
 CREATE TABLE IF NOT EXISTS `current_way_nodes` (
-  `id` bigint(64) NOT NULL,
-  `node_id` bigint(64) NOT NULL,
-  `sequence_id` bigint(11) NOT NULL,
+  `id` BIGINT(64) NOT NULL,
+  `node_id` BIGINT(64) NOT NULL,
+  `sequence_id` BIGINT(11) NOT NULL,
   PRIMARY KEY  (`id`,`sequence_id`),
   KEY `current_way_nodes_node_idx` (`node_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -187,9 +187,9 @@ CREATE TABLE IF NOT EXISTS `current_way_nodes` (
 
 DROP TABLE IF EXISTS `current_way_tags`;
 CREATE TABLE IF NOT EXISTS `current_way_tags` (
-  `id` bigint(64) NOT NULL,
-  `k` varchar(255) NOT NULL default '',
-  `v` varchar(255) NOT NULL default '',
+  `id` BIGINT(64) NOT NULL,
+  `k` VARCHAR(255) NOT NULL DEFAULT '',
+  `v` VARCHAR(255) NOT NULL DEFAULT '',
   PRIMARY KEY  (`id`,`k`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -201,12 +201,12 @@ CREATE TABLE IF NOT EXISTS `current_way_tags` (
 
 DROP TABLE IF EXISTS `diary_comments`;
 CREATE TABLE IF NOT EXISTS `diary_comments` (
-  `id` bigint(20) NOT NULL auto_increment,
-  `diary_entry_id` bigint(20) NOT NULL,
-  `user_id` bigint(20) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `diary_entry_id` BIGINT(20) NOT NULL,
+  `user_id` BIGINT(20) NOT NULL,
   `body` text NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `diary_comments_entry_id_idx` (`diary_entry_id`,`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -219,15 +219,15 @@ CREATE TABLE IF NOT EXISTS `diary_comments` (
 
 DROP TABLE IF EXISTS `diary_entries`;
 CREATE TABLE IF NOT EXISTS `diary_entries` (
-  `id` bigint(20) NOT NULL auto_increment,
-  `user_id` bigint(20) NOT NULL,
-  `title` varchar(255) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT(20) NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
   `body` text NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `latitude` double default NULL,
-  `longitude` double default NULL,
-  `language` varchar(3) default NULL,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NOT NULL,
+  `latitude` DOUBLE DEFAULT NULL,
+  `longitude` DOUBLE DEFAULT NULL,
+  `language` VARCHAR(3) DEFAULT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -239,9 +239,9 @@ CREATE TABLE IF NOT EXISTS `diary_entries` (
 
 DROP TABLE IF EXISTS `friends`;
 CREATE TABLE IF NOT EXISTS `friends` (
-  `id` bigint(20) NOT NULL auto_increment,
-  `user_id` bigint(20) NOT NULL,
-  `friend_user_id` bigint(20) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT(20) NOT NULL,
+  `friend_user_id` BIGINT(20) NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `user_id_idx` (`friend_user_id`),
   KEY `friends_user_id_idx` (`user_id`)
@@ -255,13 +255,13 @@ CREATE TABLE IF NOT EXISTS `friends` (
 
 DROP TABLE IF EXISTS `gps_points`;
 CREATE TABLE IF NOT EXISTS `gps_points` (
-  `altitude` float default NULL,
-  `trackid` int(11) NOT NULL,
-  `latitude` int(11) NOT NULL,
-  `longitude` int(11) NOT NULL,
-  `gpx_id` bigint(64) NOT NULL,
-  `timestamp` datetime default NULL,
-  `tile` int(10) unsigned NOT NULL,
+  `altitude` FLOAT DEFAULT NULL,
+  `trackid` INT(11) NOT NULL,
+  `latitude` INT(11) NOT NULL,
+  `longitude` INT(11) NOT NULL,
+  `gpx_id` BIGINT(64) NOT NULL,
+  `timestamp` DATETIME DEFAULT NULL,
+  `tile` INT(10) UNSIGNED NOT NULL,
   KEY `points_gpxid_idx` (`gpx_id`),
   KEY `points_tile_idx` (`tile`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -274,17 +274,17 @@ CREATE TABLE IF NOT EXISTS `gps_points` (
 
 DROP TABLE IF EXISTS `gpx_files`;
 CREATE TABLE IF NOT EXISTS `gpx_files` (
-  `id` bigint(64) NOT NULL auto_increment,
-  `user_id` bigint(20) NOT NULL,
-  `visible` tinyint(1) NOT NULL default '1',
-  `name` varchar(255) NOT NULL default '',
-  `size` bigint(20) default NULL,
-  `latitude` double default NULL,
-  `longitude` double default NULL,
-  `timestamp` datetime NOT NULL,
-  `public` tinyint(1) NOT NULL default '1',
-  `description` varchar(255) NOT NULL default '',
-  `inserted` tinyint(1) NOT NULL,
+  `id` BIGINT(64) NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT(20) NOT NULL,
+  `visible` TINYINT(1) NOT NULL DEFAULT '1',
+  `name` VARCHAR(255) NOT NULL DEFAULT '',
+  `size` BIGINT(20) DEFAULT NULL,
+  `latitude` DOUBLE DEFAULT NULL,
+  `longitude` DOUBLE DEFAULT NULL,
+  `timestamp` DATETIME NOT NULL,
+  `public` TINYINT(1) NOT NULL DEFAULT '1',
+  `description` VARCHAR(255) NOT NULL DEFAULT '',
+  `inserted` TINYINT(1) NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `gpx_files_timestamp_idx` (`timestamp`),
   KEY `gpx_files_visible_public_idx` (`visible`,`public`),
@@ -299,9 +299,9 @@ CREATE TABLE IF NOT EXISTS `gpx_files` (
 
 DROP TABLE IF EXISTS `gpx_file_tags`;
 CREATE TABLE IF NOT EXISTS `gpx_file_tags` (
-  `gpx_id` bigint(64) NOT NULL default '0',
-  `tag` varchar(255) NOT NULL,
-  `id` bigint(20) NOT NULL auto_increment,
+  `gpx_id` BIGINT(64) NOT NULL DEFAULT '0',
+  `tag` VARCHAR(255) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY  (`id`),
   KEY `gpx_file_tags_gpxid_idx` (`gpx_id`),
   KEY `gpx_file_tags_tag_idx` (`tag`)
@@ -315,13 +315,13 @@ CREATE TABLE IF NOT EXISTS `gpx_file_tags` (
 
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE IF NOT EXISTS `messages` (
-  `id` bigint(20) NOT NULL auto_increment,
-  `from_user_id` bigint(20) NOT NULL,
-  `title` varchar(255) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `from_user_id` BIGINT(20) NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
   `body` text NOT NULL,
-  `sent_on` datetime NOT NULL,
-  `message_read` tinyint(1) NOT NULL default '0',
-  `to_user_id` bigint(20) NOT NULL,
+  `sent_on` DATETIME NOT NULL,
+  `message_read` TINYINT(1) NOT NULL DEFAULT '0',
+  `to_user_id` BIGINT(20) NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `messages_to_user_id_idx` (`to_user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -334,14 +334,14 @@ CREATE TABLE IF NOT EXISTS `messages` (
 
 DROP TABLE IF EXISTS `nodes`;
 CREATE TABLE IF NOT EXISTS `nodes` (
-  `id` bigint(64) NOT NULL,
-  `latitude` int(11) NOT NULL,
-  `longitude` int(11) NOT NULL,
-  `changeset_id` bigint(20) NOT NULL,
-  `visible` tinyint(1) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `tile` int(10) unsigned NOT NULL,
-  `version` bigint(20) NOT NULL,
+  `id` BIGINT(64) NOT NULL,
+  `latitude` INT(11) NOT NULL,
+  `longitude` INT(11) NOT NULL,
+  `changeset_id` BIGINT(20) NOT NULL,
+  `visible` TINYINT(1) NOT NULL,
+  `timestamp` DATETIME NOT NULL,
+  `tile` INT(10) UNSIGNED NOT NULL,
+  `version` BIGINT(20) NOT NULL,
   PRIMARY KEY  (`id`,`version`),
   KEY `nodes_timestamp_idx` (`timestamp`),
   KEY `nodes_tile_idx` (`tile`),
@@ -356,10 +356,10 @@ CREATE TABLE IF NOT EXISTS `nodes` (
 
 DROP TABLE IF EXISTS `node_tags`;
 CREATE TABLE IF NOT EXISTS `node_tags` (
-  `id` bigint(64) NOT NULL,
-  `version` bigint(20) NOT NULL,
-  `k` varchar(255) NOT NULL default '',
-  `v` varchar(255) NOT NULL default '',
+  `id` BIGINT(64) NOT NULL,
+  `version` BIGINT(20) NOT NULL,
+  `k` VARCHAR(255) NOT NULL DEFAULT '',
+  `v` VARCHAR(255) NOT NULL DEFAULT '',
   PRIMARY KEY  (`id`,`version`,`k`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -371,11 +371,11 @@ CREATE TABLE IF NOT EXISTS `node_tags` (
 
 DROP TABLE IF EXISTS `relations`;
 CREATE TABLE IF NOT EXISTS `relations` (
-  `id` bigint(64) NOT NULL default '0',
-  `changeset_id` bigint(20) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `version` bigint(20) NOT NULL,
-  `visible` tinyint(1) NOT NULL default '1',
+  `id` BIGINT(64) NOT NULL DEFAULT '0',
+  `changeset_id` BIGINT(20) NOT NULL,
+  `timestamp` DATETIME NOT NULL,
+  `version` BIGINT(20) NOT NULL,
+  `visible` TINYINT(1) NOT NULL DEFAULT '1',
   PRIMARY KEY  (`id`,`version`),
   KEY `relations_timestamp_idx` (`timestamp`),
   KEY `changeset_id` (`changeset_id`)
@@ -389,12 +389,12 @@ CREATE TABLE IF NOT EXISTS `relations` (
 
 DROP TABLE IF EXISTS `relation_members`;
 CREATE TABLE IF NOT EXISTS `relation_members` (
-  `id` bigint(64) NOT NULL default '0',
-  `member_type` enum('node','way','relation') NOT NULL default 'node',
-  `member_id` bigint(11) NOT NULL,
-  `member_role` varchar(255) NOT NULL default '',
-  `version` bigint(20) NOT NULL default '0',
-  `sequence_id` int(11) NOT NULL default '0',
+  `id` BIGINT(64) NOT NULL DEFAULT '0',
+  `member_type` ENUM('node','way','relation') NOT NULL DEFAULT 'node',
+  `member_id` BIGINT(11) NOT NULL,
+  `member_role` VARCHAR(255) NOT NULL DEFAULT '',
+  `version` BIGINT(20) NOT NULL DEFAULT '0',
+  `sequence_id` INT(11) NOT NULL DEFAULT '0',
   PRIMARY KEY  (`id`,`version`,`member_type`,`member_id`,`member_role`,`sequence_id`),
   KEY `relation_members_member_idx` (`member_type`,`member_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -407,10 +407,10 @@ CREATE TABLE IF NOT EXISTS `relation_members` (
 
 DROP TABLE IF EXISTS `relation_tags`;
 CREATE TABLE IF NOT EXISTS `relation_tags` (
-  `id` bigint(64) NOT NULL default '0',
-  `k` varchar(255) NOT NULL default '',
-  `v` varchar(255) NOT NULL default '',
-  `version` bigint(20) NOT NULL,
+  `id` BIGINT(64) NOT NULL DEFAULT '0',
+  `k` VARCHAR(255) NOT NULL DEFAULT '',
+  `v` VARCHAR(255) NOT NULL DEFAULT '',
+  `version` BIGINT(20) NOT NULL,
   PRIMARY KEY  (`id`,`version`,`k`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -422,7 +422,7 @@ CREATE TABLE IF NOT EXISTS `relation_tags` (
 
 DROP TABLE IF EXISTS `schema_migrations`;
 CREATE TABLE IF NOT EXISTS `schema_migrations` (
-  `version` varchar(255) NOT NULL,
+  `version` VARCHAR(255) NOT NULL,
   UNIQUE KEY `unique_schema_migrations` (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -434,11 +434,11 @@ CREATE TABLE IF NOT EXISTS `schema_migrations` (
 
 DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE IF NOT EXISTS `sessions` (
-  `id` int(11) NOT NULL auto_increment,
-  `session_id` varchar(255) default NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `session_id` VARCHAR(255) DEFAULT NULL,
   `data` text,
-  `created_at` datetime default NULL,
-  `updated_at` datetime default NULL,
+  `created_at` DATETIME DEFAULT NULL,
+  `updated_at` DATETIME DEFAULT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `sessions_session_id_idx` (`session_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
@@ -451,25 +451,25 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `email` varchar(255) NOT NULL,
-  `id` bigint(20) NOT NULL auto_increment,
-  `active` int(11) NOT NULL default '0',
-  `pass_crypt` varchar(255) NOT NULL,
-  `creation_time` datetime NOT NULL,
-  `display_name` varchar(255) NOT NULL default '',
-  `data_public` tinyint(1) NOT NULL default '0',
+  `email` VARCHAR(255) NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `active` INT(11) NOT NULL DEFAULT '0',
+  `pass_crypt` VARCHAR(255) NOT NULL,
+  `creation_time` DATETIME NOT NULL,
+  `display_name` VARCHAR(255) NOT NULL DEFAULT '',
+  `data_public` TINYINT(1) NOT NULL DEFAULT '0',
   `description` text NOT NULL,
-  `home_lat` double default NULL,
-  `home_lon` double default NULL,
-  `home_zoom` smallint(6) default '3',
-  `nearby` int(11) default '50',
-  `pass_salt` varchar(255) default NULL,
+  `home_lat` DOUBLE DEFAULT NULL,
+  `home_lon` DOUBLE DEFAULT NULL,
+  `home_zoom` SMALLINT(6) DEFAULT '3',
+  `nearby` INT(11) DEFAULT '50',
+  `pass_salt` VARCHAR(255) DEFAULT NULL,
   `image` text,
-  `administrator` tinyint(1) NOT NULL default '0',
-  `email_valid` tinyint(1) NOT NULL default '0',
-  `new_email` varchar(255) default NULL,
-  `visible` tinyint(1) NOT NULL default '1',
-  `creation_ip` varchar(255) default NULL,
+  `administrator` TINYINT(1) NOT NULL DEFAULT '0',
+  `email_valid` TINYINT(1) NOT NULL DEFAULT '0',
+  `new_email` VARCHAR(255) DEFAULT NULL,
+  `visible` TINYINT(1) NOT NULL DEFAULT '1',
+  `creation_ip` VARCHAR(255) DEFAULT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `users_email_idx` (`email`),
   UNIQUE KEY `users_display_name_idx` (`display_name`)
@@ -483,9 +483,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 DROP TABLE IF EXISTS `user_preferences`;
 CREATE TABLE IF NOT EXISTS `user_preferences` (
-  `user_id` bigint(20) NOT NULL,
-  `k` varchar(255) NOT NULL,
-  `v` varchar(255) NOT NULL,
+  `user_id` BIGINT(20) NOT NULL,
+  `k` VARCHAR(255) NOT NULL,
+  `v` VARCHAR(255) NOT NULL,
   PRIMARY KEY  (`user_id`,`k`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -497,10 +497,10 @@ CREATE TABLE IF NOT EXISTS `user_preferences` (
 
 DROP TABLE IF EXISTS `user_tokens`;
 CREATE TABLE IF NOT EXISTS `user_tokens` (
-  `id` bigint(20) NOT NULL auto_increment,
-  `user_id` bigint(20) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `expiry` datetime NOT NULL,
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT(20) NOT NULL,
+  `token` VARCHAR(255) NOT NULL,
+  `expiry` DATETIME NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `user_tokens_token_idx` (`token`),
   KEY `user_tokens_user_id_idx` (`user_id`)
@@ -514,11 +514,11 @@ CREATE TABLE IF NOT EXISTS `user_tokens` (
 
 DROP TABLE IF EXISTS `ways`;
 CREATE TABLE IF NOT EXISTS `ways` (
-  `id` bigint(64) NOT NULL default '0',
-  `changeset_id` bigint(20) NOT NULL,
-  `timestamp` datetime NOT NULL,
-  `version` bigint(20) NOT NULL,
-  `visible` tinyint(1) NOT NULL default '1',
+  `id` BIGINT(64) NOT NULL DEFAULT '0',
+  `changeset_id` BIGINT(20) NOT NULL,
+  `timestamp` DATETIME NOT NULL,
+  `version` BIGINT(20) NOT NULL,
+  `visible` TINYINT(1) NOT NULL DEFAULT '1',
   PRIMARY KEY  (`id`,`version`),
   KEY `ways_timestamp_idx` (`timestamp`),
   KEY `changeset_id` (`changeset_id`)
@@ -532,10 +532,10 @@ CREATE TABLE IF NOT EXISTS `ways` (
 
 DROP TABLE IF EXISTS `way_nodes`;
 CREATE TABLE IF NOT EXISTS `way_nodes` (
-  `id` bigint(64) NOT NULL,
-  `node_id` bigint(64) NOT NULL,
-  `version` bigint(20) NOT NULL,
-  `sequence_id` bigint(11) NOT NULL,
+  `id` BIGINT(64) NOT NULL,
+  `node_id` BIGINT(64) NOT NULL,
+  `version` BIGINT(20) NOT NULL,
+  `sequence_id` BIGINT(11) NOT NULL,
   PRIMARY KEY  (`id`,`version`,`sequence_id`),
   KEY `way_nodes_node_idx` (`node_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -548,10 +548,10 @@ CREATE TABLE IF NOT EXISTS `way_nodes` (
 
 DROP TABLE IF EXISTS `way_tags`;
 CREATE TABLE IF NOT EXISTS `way_tags` (
-  `id` bigint(64) NOT NULL default '0',
-  `k` varchar(255) NOT NULL,
-  `v` varchar(255) NOT NULL,
-  `version` bigint(20) NOT NULL,
+  `id` BIGINT(64) NOT NULL DEFAULT '0',
+  `k` VARCHAR(255) NOT NULL,
+  `v` VARCHAR(255) NOT NULL,
+  `version` BIGINT(20) NOT NULL,
   PRIMARY KEY  (`id`,`version`,`k`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

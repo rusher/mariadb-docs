@@ -12,8 +12,8 @@ To create such a table on an existing handler, use a Create Table statement as\
 shown below.
 
 ```
-create table xtab (column definitions)
-engine=CONNECT table_type=OEM module='libname'
+CREATE TABLE xtab (COLUMN definitions)
+ENGINE=CONNECT table_type=OEM MODULE='libname'
 subtype='MYTYPE' [standard table options]
 Option_list='Myopt=foo';
 ```

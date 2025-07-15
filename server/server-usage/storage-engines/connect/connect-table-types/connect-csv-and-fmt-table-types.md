@@ -22,10 +22,10 @@ Name;birth;children
 You can create the corresponding table by:
 
 ```
-create table people (
+CREATE TABLE people (
   name CHAR(12) NOT NULL,
   birth DATE NOT NULL date_format='DD/MM/YY',
-  children smallint(2) NOT NULL)
+  children SMALLINT(2) NOT NULL)
 ENGINE=CONNECT table_type=CSV file_name='people.csv'
 header=1 sep_char=';' quoted=1;
 ```
@@ -33,7 +33,7 @@ header=1 sep_char=';' quoted=1;
 Alternatively the engine can attempt to automatically detect the column names, data types and widths using:
 
 ```
-create table people
+CREATE TABLE people
 ENGINE=CONNECT table_type=CSV file_name='people.csv'
 header=1 sep_char=';' quoted=1;
 ```
@@ -44,9 +44,9 @@ displayed in a different order than in the file and/or to define the table\
 specifying only some columns of the CSV file. For instance:
 
 ```
-create table people (
+CREATE TABLE people (
   name CHAR(12) NOT NULL,
-  children smallint(2) NOT NULL flag=3,
+  children SMALLINT(2) NOT NULL flag=3,
   birth DATE NOT NULL flag=2 date_format='DD/MM/YY')
 ENGINE=CONNECT table_type=CSV file_name='people.csv'
 header=1 sep_char=';' quoted=1;
@@ -302,7 +302,7 @@ The create table statement shall be like this:
 ```
 CREATE TABLE WEBSAMP (
   IP CHAR(15) NOT NULL field_format='%n%s%n',
-  DATE datetime NOT NULL field_format=' - - [%n%s%n -0400]'
+  DATE DATETIME NOT NULL field_format=' - - [%n%s%n -0400]'
   date_format='DD/MMM/YYYY:hh:mm:ss' field_length=20,
   FILE CHAR(128) NOT NULL field_format=' - "GET %n%s%n',
   HTTP DOUBLE(4,2) NOT NULL field_format=' HTTP/%n%f%n"',

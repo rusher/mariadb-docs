@@ -50,8 +50,8 @@ CREATE OR REPLACE TABLE table_name (a int);
 is basically the same as:
 
 ```sql
-DROP TABLE IF EXISTS table_name;
-CREATE TABLE table_name (a int);
+DROP TABLE IF EXISTS TABLE_NAME;
+CREATE TABLE TABLE_NAME (a INT);
 ```
 
 with the following exceptions:
@@ -212,8 +212,8 @@ The default value will be used if you [INSERT](../../data-manipulation/inserting
 You can use most functions in `DEFAULT`. Expressions should have parentheses around them. If you use a non deterministic function in `DEFAULT` then all inserts to the table will be [replicated](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md) in [row mode](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based). You can even refer to earlier columns in the `DEFAULT` expression (excluding `AUTO_INCREMENT` columns):
 
 ```sql
-CREATE TABLE t1 (a int DEFAULT (1+1), b int DEFAULT (a+1));
-CREATE TABLE t2 (a bigint primary key DEFAULT UUID_SHORT());
+CREATE TABLE t1 (a INT DEFAULT (1+1), b INT DEFAULT (a+1));
+CREATE TABLE t2 (a BIGINT PRIMARY KEY DEFAULT UUID_SHORT());
 ```
 
 The `DEFAULT` clause cannot contain any [stored functions](../../../../server-usage/stored-routines/stored-functions/) or [subqueries](../../data-manipulation/selecting-data/joins-subqueries/subqueries/), and a column used in the clause must already have been defined earlier in the statement.

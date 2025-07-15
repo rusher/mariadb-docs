@@ -46,7 +46,7 @@ SELECT * FROM big_table;
 The above is the same as:
 
 ```
-SELECT * from big_table LIMIT 1000;
+SELECT * FROM big_table LIMIT 1000;
 ```
 
 ## max\_join\_size

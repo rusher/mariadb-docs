@@ -20,7 +20,7 @@ SET PASSWORD FOR `user`@`host` = PASSWORD('plain-text password');
 SET PASSWORD = OLD_PASSWORD('plain-text password');
 SET PASSWORD FOR `user`@`host` = OLD_PASSWORD('plain-text password');
 CREATE USER `user`@`host` IDENTIFIED BY 'plain-text password';
-GRANT privileges TO `user`@`host` IDENTIFIED BY 'plain-text password';
+GRANT PRIVILEGES TO `user`@`host` IDENTIFIED BY 'plain-text password';
 ```
 
 These statements are subject to password validation. If at least one password validation plugin is loaded, plain-text passwords specified in these statements will be validated.
@@ -33,9 +33,9 @@ SET PASSWORD FOR `user`@`host` = 'password hash';
 CREATE USER `user`@`host` IDENTIFIED BY PASSWORD 'password hash';
 CREATE USER `user`@`host` IDENTIFIED VIA mysql_native_password USING 'password hash';
 CREATE USER `user`@`host` IDENTIFIED VIA mysql_old_password USING 'password hash';
-GRANT privileges TO `user`@`host` IDENTIFIED BY PASSWORD 'password hash';
-GRANT privileges TO `user`@`host` IDENTIFIED VIA mysql_native_password USING 'password hash';
-GRANT privileges TO `user`@`host` IDENTIFIED VIA mysql_old_password USING 'password hash';
+GRANT PRIVILEGES TO `user`@`host` IDENTIFIED BY PASSWORD 'password hash';
+GRANT PRIVILEGES TO `user`@`host` IDENTIFIED VIA mysql_native_password USING 'password hash';
+GRANT PRIVILEGES TO `user`@`host` IDENTIFIED VIA mysql_old_password USING 'password hash';
 ```
 
 These statements can not possibly use password validation — there is nothing to validate, the original plain-text password is not available.\

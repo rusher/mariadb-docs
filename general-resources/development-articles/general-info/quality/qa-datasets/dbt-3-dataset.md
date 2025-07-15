@@ -64,7 +64,7 @@ CREATE TABLE partsupp (
   PRIMARY KEY (ps_partkey, ps_suppkey)) Engine ${ENGINE};
 
 CREATE TABLE customer (
-  c_custkey INTEGER primary key,
+  c_custkey INTEGER PRIMARY KEY,
   c_name VARCHAR(25),
   c_address VARCHAR(40),
   c_nationkey INTEGER,
@@ -74,7 +74,7 @@ CREATE TABLE customer (
   c_comment VARCHAR(117))  Engine ${ENGINE};
 
 CREATE TABLE orders (
-  o_orderkey INTEGER primary key,
+  o_orderkey INTEGER PRIMARY KEY,
   o_custkey INTEGER,
   o_orderstatus CHAR(1),
   o_totalprice REAL,
@@ -104,13 +104,13 @@ CREATE TABLE lineitem (
   PRIMARY KEY (l_orderkey, l_linenumber)) Engine ${ENGINE};
 
 CREATE TABLE nation (
-  n_nationkey INTEGER primary key,
+  n_nationkey INTEGER PRIMARY KEY,
   n_name CHAR(25),
   n_regionkey INTEGER,
   n_comment VARCHAR(152)) Engine ${ENGINE};
 
 CREATE TABLE region (
-  r_regionkey INTEGER primary key,
+  r_regionkey INTEGER PRIMARY KEY,
   r_name CHAR(25),
   r_comment VARCHAR(152)) Engine ${ENGINE};
 

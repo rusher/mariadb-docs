@@ -14,7 +14,7 @@ To do so, specify the HTTP of the web client and eventually the URI of the reque
 
 ```
 CREATE TABLE webusers (
-  id bigint(2) NOT NULL,
+  id BIGINT(2) NOT NULL,
   name CHAR(24) NOT NULL,
   username CHAR(16) NOT NULL,
   email CHAR(25) NOT NULL,
@@ -61,7 +61,7 @@ Then the table will be created as:
 
 ```
 CREATE TABLE `webusers3` (
-  `id` bigint(2) NOT NULL,
+  `id` BIGINT(2) NOT NULL,
   `name` CHAR(24) NOT NULL,
   `username` CHAR(16) NOT NULL,
   `email` CHAR(25) NOT NULL,

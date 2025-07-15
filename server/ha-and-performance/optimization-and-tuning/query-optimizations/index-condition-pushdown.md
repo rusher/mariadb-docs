@@ -49,7 +49,7 @@ ALTER TABLE lineitem ADD INDEX s_r (l_shipdate, l_receiptdate);
 The query was to find big (l\_quantity > 40) orders that were made in January 1993 that took more than 25 days to ship:
 
 ```sql
-SELECT count(*) FROM lineitem
+SELECT COUNT(*) FROM lineitem
 WHERE
   l_shipdate BETWEEN '1993-01-01' AND '1993-02-01' AND
   datediff(l_receiptdate,l_shipdate) > 25 AND

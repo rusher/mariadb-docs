@@ -327,7 +327,7 @@ CREATE TABLE xgns (
 `lon` DOUBLE(21,16) NOT NULL `xpath`='@',
 `lat` DOUBLE(20,16) NOT NULL `xpath`='@',
 `ele` DOUBLE(21,16) NOT NULL `xpath`='gns:ele',
-`time` datetime date_format="YYYY-MM-DD 'T' hh:mm:ss '.000Z'"
+`time` DATETIME date_format="YYYY-MM-DD 'T' hh:mm:ss '.000Z'"
 ) 
   ENGINE=CONNECT DEFAULT CHARSET=latin1 `table_type`=XML 
   `file_name`='gns.xml' tabname='gns:trkseg' option_list='xmlsup=domdoc';
@@ -354,7 +354,7 @@ CREATE TABLE xgns2 (
 `lon` DOUBLE(21,16) NOT NULL `xpath`='@',
 `lat` DOUBLE(20,16) NOT NULL `xpath`='@',
 `ele` DOUBLE(21,16) NOT NULL `xpath`="*[local-name()='ele']",
-`time` datetime date_format="YYYY-MM-DD 'T' hh:mm:ss '.000Z'"
+`time` DATETIME date_format="YYYY-MM-DD 'T' hh:mm:ss '.000Z'"
 ) 
   ENGINE=CONNECT DEFAULT CHARSET=latin1 `table_type`=XML 
   `file_name`='gns.xml' tabname="*[local-name()='trkseg']" option_list='xmlsup=libxml2';

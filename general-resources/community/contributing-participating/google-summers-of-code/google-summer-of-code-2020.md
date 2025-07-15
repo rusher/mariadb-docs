@@ -447,7 +447,7 @@ CREATE TABLE mysql.column_stats (
   max_value varbinary(255) DEFAULT NULL, 
   ...
   hist_size TINYINT UNSIGNED, 
-  hist_type enum('SINGLE_PREC_HB','DOUBLE_PREC_HB'), 
+  hist_type ENUM('SINGLE_PREC_HB','DOUBLE_PREC_HB'), 
   histogram varbinary(255), 
   ...
 ```

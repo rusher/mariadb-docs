@@ -180,13 +180,13 @@ described now.
 This can be done like for ODBC or JDBC tables by defining a specific table that will be used to send commands and get the result of their execution..
 
 ```
-create table send (
-  command varchar(128) not null,
-  warnings int(4) not null flag=3,
   number int(5) not null flag=1,
-  message varchar(255) flag=2)
-engine=connect table_type=mysql
-connection='mysql://user@host/database'
+CREATE TABLE send (
+  command VARCHAR(128) NOT NULL,
+  warnings INT(4) NOT NULL flag=3,
+  message VARCHAR(255) flag=2)
+ENGINE=CONNECT table_type=mysql
+CONNECTION='mysql://user@host/database'
 option_list='Execsrc=1,Maxerr=2';
 ```
 

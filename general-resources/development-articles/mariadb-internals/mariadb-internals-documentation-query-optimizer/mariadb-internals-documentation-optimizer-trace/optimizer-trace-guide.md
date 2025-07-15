@@ -266,7 +266,7 @@ The join optimizer's node is named `considered_execution_plans`.
 The optimizer constructs the join orders in a left-to-right fashion. That is, if the query is a join of three tables:
 
 ```
-select * from t1, t2, t3 where ...
+SELECT * FROM t1, t2, t3 WHERE ...
 ```
 
 then the optimizer will
