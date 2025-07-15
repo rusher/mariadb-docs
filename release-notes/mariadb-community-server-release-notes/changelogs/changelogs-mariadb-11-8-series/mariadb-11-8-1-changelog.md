@@ -6,9 +6,9 @@
 
 **Release date:** 13 Feb 2025
 
-For the highlights of this release, see the[release notes](../../mariadb-11-8-series/mariadb-11-8-1-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-11-8-series/mariadb-11-8-1-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/11.8) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/11.8) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Changes from [11.8.0](../../mariadb-11-8-series/mariadb-11-8-0-release-notes.md) are also included in this changelog
