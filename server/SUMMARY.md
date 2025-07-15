@@ -1201,7 +1201,7 @@
       * [Dynamic Columns](reference/sql-structure/nosql/dynamic-columns.md)
       * [Dynamic Column API](reference/sql-structure/nosql/dynamic-column-api.md)
       * [HANDLER](reference/sql-structure/nosql/handler/README.md)
-        * [HANDLER Commands](reference/sql-structure/nosql/handler/handler-commands.md)
+        * [HANDLER](reference/sql-structure/nosql/handler/handler-commands.md)
         * [HANDLER for MEMORY Tables](reference/sql-structure/nosql/handler/handler-for-memory-tables.md)
       * [HandlerSocket](reference/sql-structure/nosql/handlersocket/README.md)
         * [HandlerSocket Client Libraries](reference/sql-structure/nosql/handlersocket/handlersocket-client-libraries.md)

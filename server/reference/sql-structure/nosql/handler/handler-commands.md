@@ -1,8 +1,8 @@
-# HANDLER Commands
+# HANDLER
 
 ## Syntax
 
-```
+```sql
 HANDLER tbl_name OPEN [ [AS] alias]
 HANDLER tbl_name READ index_name { = | >= | <= | < } (value1,value2,...)
     [ WHERE where_condition ] [LIMIT ... ]
