@@ -1,8 +1,8 @@
 # MariaDB 11.8.1 Changelog
 
-[Download](https://mariadb.com/downloads/)[Release Notes](../../mariadb-11-8-series/mariadb-11-8-1-release-notes.md)[Changelog](mariadb-11-8-1-changelog.md)[Overview of 11.8](../../mariadb-11-8-series/what-is-mariadb-118.md)
+{% include "../../../.gitbook/includes/latest-11-8.md" %}
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.1/)
+<a href="https://downloads.mariadb.org/mariadb/11.8.1/" class="button primary">Download</a> <a href="../../mariadb-11-8-series/mariadb-11-8-1-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-11-8-1-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-11-8-series/what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 **Release date:** 13 Feb 2025
 
