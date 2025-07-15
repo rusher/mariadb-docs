@@ -152,7 +152,7 @@ Here is an example:
 dynamic_cols blob DYNAMIC_COLUMN_STORAGE=yes
 ```
 
-Once define, one can access individual columns with the[new variant](../../../../reference/sql-structure/nosql/dynamic-columns-from-mariadb-10.md) of the Dynamic Column functions,\
+Once define, one can access individual columns with the[new variant](broken-reference) of the Dynamic Column functions,\
 which now support string names (they used to support integers only).
 
 ### Super columns

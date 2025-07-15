@@ -14,7 +14,7 @@ option = {FOR UPGRADE | QUICK | FAST | MEDIUM | EXTENDED | CHANGED}
 
 As an alternative, [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) is a commandline tool for checking MyISAM tables when the tables are not being accessed. For Aria tables, there is a similar tool: [aria\_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md).
 
-For checking [dynamic columns](../../sql-structure/nosql/dynamic-columns.md) integrity, [COLUMN\_CHECK()](../../sql-structure/nosql/dynamic-columns-from-mariadb-10.md) can be used.
+For checking [dynamic columns](../../sql-structure/nosql/dynamic-columns.md) integrity, [COLUMN\_CHECK()](broken-reference) can be used.
 
 `CHECK TABLE` can also check views for problems, such as tables that are referenced in the view definition that no longer exist.
 

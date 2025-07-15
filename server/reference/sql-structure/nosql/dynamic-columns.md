@@ -1,5 +1,7 @@
 # Dynamic Columns
 
+## Overview
+
 Dynamic columns allow one to store different sets of columns for each row in a table. It works by storing a set of columns in a blob and having a small set of functions to manipulate it.
 
 Dynamic columns should be used when it is not possible to use regular columns.
@@ -80,15 +82,18 @@ SELECT item_name, COLUMN_JSON(dynamic_cols) FROM assets;
 
 ## Dynamic Columns Reference
 
-The rest of this page is a complete reference of dynamic columns in MariaDB
+This is a complete reference of dynamic columns in MariaDB.
+
+{% hint style="success" %}
+**Column can be referred to by name (column\_name in the following code blocks). This is the preferred method.**\
+If you need support for old (< 10.0) MariaDB versions, you have to refer to columns by number. In that case, replace _column\_name_ with _column\_nr_. This method is not recommended.
+{% endhint %}
 
 ### Dynamic Columns Functions
 
 #### COLUMN\_CREATE
 
 ```sql
-COLUMN_CREATE(column_nr, value [as type], [column_nr, value 
-  [as type]]...);
 COLUMN_CREATE(column_name, value [as type], [column_name, value 
   [as type]]...);
 ```
@@ -109,8 +114,6 @@ INSERT INTO tbl SET dyncol_blob=COLUMN_CREATE("column_name", "value");
 #### COLUMN\_ADD
 
 ```sql
-COLUMN_ADD(dyncol_blob, column_nr, value [as type], 
-  [column_nr, value [as type]]...);
 COLUMN_ADD(dyncol_blob, column_name, value [as type], 
   [column_name, value [as type]]...);
 ```
@@ -136,7 +139,6 @@ Note: `COLUMN_ADD()` is a regular function (just like[CONCAT()](../sql-statement
 #### COLUMN\_GET
 
 ```sql
-COLUMN_GET(dyncol_blob, column_nr as type);
 COLUMN_GET(dyncol_blob, column_name as type);
 ```
 
@@ -153,7 +155,6 @@ See the [Datatypes](dynamic-columns.md#datatypes) section for more information a
 #### COLUMN\_DELETE
 
 ```sql
-COLUMN_DELETE(dyncol_blob, column_nr, column_nr...);
 COLUMN_DELETE(dyncol_blob, column_name, column_name...);
 ```
 
@@ -164,7 +165,6 @@ The return value is a dynamic column blob after the modification.
 #### COLUMN\_EXISTS
 
 ```sql
-COLUMN_EXISTS(dyncol_blob, column_nr);
 COLUMN_EXISTS(dyncol_blob, column_name);
 ```
 
@@ -297,7 +297,7 @@ It is also possible to create or parse dynamic columns blobs on the client side.
 
 ## See Also
 
-* [Dynamic Columns](dynamic-columns-from-mariadb-10.md)
+* [Dynamic Columns](broken-reference)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
