@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Connector/Python 1.1.13 Release Notes
 
 <a href="https://mariadb.com/downloads/connectors/connectors-data-access/python-connector/" class="button primary">Download</a>  <a href="mariadb-connector-python-1-1-13-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/mariadb-connector-python-11-changelogs/connector-python-1.1.13-changelog.md" class="button secondary">Changelog</a>  <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-python-guide" class="button secondary">Connector/Python Overview</a>
