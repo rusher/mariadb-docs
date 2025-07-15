@@ -4,8 +4,6 @@
 
 &#x20;<a href="../../mariadb-11-4-series/mariadb-11-4-6-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-11-4-6-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-11-4-series/what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
-**Release date:** ?
-
 For the highlights of this release, see the [release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series).
 
 The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/11.4) you can view more\
