@@ -21,7 +21,8 @@ Using the ColumnStore storage engine interface (ha\_columnstore), MariaDB Server
 
 The ExeMgr analyzes the query plan and translates it into a distributed ColumnStore execution plan. It determines the necessary query steps and the execution order, including any required parallelization.
 
-The ExeMgr then references the extent map to identify which PrimProc instances hold the relevant data segments. It applies extent elimination to exclude any PrimProc nodes whose extents do not match the query’s filter criteria.\\
+The ExeMgr then references the extent map to identify which PrimProc instances hold the relevant data segments. It applies extent elimination to exclude any PrimProc nodes whose extents do not match the query’s filter criteria.
+\\
 
 The ExeMgr dispatches commands to the selected PrimProc instances to perform data block I/O operations.
 

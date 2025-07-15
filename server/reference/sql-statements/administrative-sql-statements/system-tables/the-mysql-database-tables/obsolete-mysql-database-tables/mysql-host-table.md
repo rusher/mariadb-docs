@@ -44,8 +44,8 @@ The `mysql.host` table contains the following fields:
 If you need the functionality to only allow access to your database from a given set of hosts, you can create the host table with the following command:
 
 ```
-CREATE TABLE IF NOT EXISTS mysql.host (Host char(60) binary DEFAULT '' NOT NULL,
-Db char(64) binary DEFAULT '' NOT NULL,
+CREATE TABLE IF NOT EXISTS mysql.host (HOST CHAR(60) BINARY DEFAULT '' NOT NULL,
+Db CHAR(64) BINARY DEFAULT '' NOT NULL,
 Select_priv enum('N','Y') COLLATE utf8_general_ci DEFAULT 'N' NOT NULL,
 Insert_priv enum('N','Y') COLLATE utf8_general_ci DEFAULT 'N' NOT NULL,
 Update_priv enum('N','Y') COLLATE utf8_general_ci DEFAULT 'N' NOT NULL,
@@ -64,9 +64,9 @@ Create_routine_priv enum('N','Y') COLLATE utf8_general_ci DEFAULT 'N' NOT NULL,
 Alter_routine_priv enum('N','Y') COLLATE utf8_general_ci DEFAULT 'N' NOT NULL,
 Execute_priv enum('N','Y') COLLATE utf8_general_ci DEFAULT 'N' NOT NULL,
 Trigger_priv enum('N','Y') COLLATE utf8_general_ci DEFAULT 'N' NOT NULL,
-PRIMARY KEY /*Host*/ (Host,Db) )
-engine=MyISAM CHARACTER SET utf8 COLLATE utf8_bin
-comment='Host privileges;  Merged with database privileges';
+PRIMARY KEY /*Host*/ (HOST,Db) )
+ENGINE=MyISAM CHARACTER SET utf8 COLLATE utf8_bin
+COMMENT='Host privileges;  Merged with database privileges';
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

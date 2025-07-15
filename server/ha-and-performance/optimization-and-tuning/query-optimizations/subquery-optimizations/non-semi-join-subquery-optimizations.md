@@ -43,7 +43,7 @@ Example:
 ```sql
 SELECT Country.Name
 FROM Country, CountryLanguage 
-WHERE Code NOT IN (SELECT Country FROM CountryLanguage WHERE Language = 'English')
+WHERE Code NOT IN (SELECT Country FROM CountryLanguage WHERE LANGUAGE = 'English')
   AND CountryLanguage.Language = 'French'
   AND Code = Country;
 ```
@@ -208,7 +208,7 @@ Both columns are prefixed with the percent NULL values in the column, that is, c
 Consider the query "Find all customers that didn't buy from a preferred country, and from a preferred brand withing some date ranges":
 
 ```sql
-SELECT count(*)
+SELECT COUNT(*)
 FROM customer
 WHERE (c_custkey, c_pref_nationkey_05, c_pref_brand_05) NOT IN
   (SELECT o_custkey, s_nationkey, p_brand

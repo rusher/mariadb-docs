@@ -17,9 +17,9 @@ The table should have a blob column which will be used as storage for dynamic\
 columns:
 
 ```
-create table assets (
-  item_name varchar(32) primary key, -- A common attribute for all items
-  dynamic_cols  blob  -- Dynamic columns will be stored here
+CREATE TABLE assets (
+  item_name VARCHAR(32) PRIMARY KEY, -- A common attribute for all items
+  dynamic_cols  BLOB  -- Dynamic columns will be stored here
 );
 ```
 
@@ -57,7 +57,7 @@ It is possible to add and remove dynamic columns from a row:
 ```
 -- Remove a column:
 UPDATE assets SET dynamic_cols=COLUMN_DELETE(dynamic_cols, "price") 
-WHERE COLUMN_GET(dynamic_cols, 'color' as char)='black'; 
+WHERE COLUMN_GET(dynamic_cols, 'color' AS CHAR)='black'; 
 
 -- Add a column:
 UPDATE assets SET dynamic_cols=COLUMN_ADD(dynamic_cols, 'warranty', '3 years')
@@ -294,10 +294,10 @@ SELECT column_get(column_get(@tmp, 'parent_column' AS char),
 If you are trying to get a nested dynamic column as a string use 'as BINARY' as the last argument of COLUMN\_GET (otherwise problems with character set conversion and illegal symbols are possible):
 
 ```
-select column_json( column_get(
+SELECT column_json( column_get(
   column_create('test1', 
     column_create('key1','value1','key2','value2','key3','value3')),
-  'test1' as BINARY));
+  'test1' AS BINARY));
 ```
 
 ### Datatypes
@@ -327,7 +327,7 @@ The set of possible datatypes is mostly the same as that used by the SQL[CAST](.
 If you're running queries like
 
 ```
-SELECT COLUMN_GET(blob, 'colname' as CHAR) ...
+SELECT COLUMN_GET(BLOB, 'colname' AS CHAR) ...
 ```
 
 without specifying a maximum length (i.e. using #as CHAR#, not `as CHAR(n)`),\

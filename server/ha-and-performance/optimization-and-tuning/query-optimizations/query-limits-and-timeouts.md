@@ -56,8 +56,8 @@ any SELECT statements that probably need to examine more than`MAX_JOIN_SIZE` row
 
 ```sql
 SET @@MAX_JOIN_SIZE=1000;
-SELECT count(null_column) FROM big_table;
 ->ERROR 1104 (42000): The SELECT would examine more than MAX_JOIN_SIZE ROWS; 
+SELECT COUNT(null_column) FROM big_table;
   CHECK your WHERE AND USE SET SQL_BIG_SELECTS=1 OR SET MAX_JOIN_SIZE=# IF the SELECT IS okay
 ```
 

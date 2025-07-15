@@ -49,7 +49,7 @@ INSTALL SONAME 'auth_parsec';
 ### Example
 
 ```sql
-CREATE USER test1@'%' IDENTIFIED VIA parsec using PASSWORD('pwd');
+CREATE USER test1@'%' IDENTIFIED VIA parsec USING PASSWORD('pwd');
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

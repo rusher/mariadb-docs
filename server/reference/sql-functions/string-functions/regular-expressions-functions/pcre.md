@@ -471,7 +471,7 @@ This example removes doubled words that can unintentionally creep in when you ed
 ```sql
 SELECT REGEXP_REPLACE('using using the the regexp regexp',
  '\\b(\\w+)\\s+\\1\\b','\\1');
--> using the regexp
+-> USING the regexp
 ```
 
 Note that all double words were removed, in the beginning, in the middle and in the end of the subject string.

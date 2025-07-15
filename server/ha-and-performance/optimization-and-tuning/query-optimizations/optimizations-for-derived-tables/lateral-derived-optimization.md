@@ -13,7 +13,7 @@ The optimization's use case is
 An example of this: consider a VIEW that computes totals for each customer in October:
 
 ```sql
-CREATE view OCT_TOTALS AS
+CREATE VIEW OCT_TOTALS AS
 SELECT
   customer_id,
   SUM(amount) AS TOTAL_AMT

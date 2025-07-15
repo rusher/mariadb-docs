@@ -93,7 +93,7 @@ SELECT * FROM t1 WHERE d like "___day";
 With the default collations, `LIKE` is case-insensitive:
 
 ```sql
-SELECT * FROM t1 where d like "t%";
+SELECT * FROM t1 WHERE d like "t%";
 ```
 
 ```sql
@@ -114,7 +114,7 @@ SELECT * FROM t1 WHERE d like "t%" COLLATE latin1_bin;
 
 ```sql
 SELECT * FROM t1 WHERE d like "t%" COLLATE latin1_bin;
-Empty set (0.00 sec)
+Empty SET (0.00 sec)
 ```
 
 You can include functions and operators in the expression to match. Select dates based on their day name:

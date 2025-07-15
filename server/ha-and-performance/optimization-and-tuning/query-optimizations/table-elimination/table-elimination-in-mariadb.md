@@ -11,7 +11,7 @@ FROM
   LEFT JOIN ac_dob ON ac_anchor.AC_ID=ac_dob.AC_ID
   LEFT JOIN ac_rating ON (ac_anchor.AC_ID=ac_rating.AC_ID AND
                           ac_rating.ACRAT_fromdate = 
-                            (select max(sub.ACRAT_fromdate)
+                            (SELECT MAX(sub.ACRAT_fromdate)
                              FROM ac_rating sub WHERE sub.AC_ID = ac_rating.AC_ID))
 WHERE
  ACNAM_name='Gary Oldman'

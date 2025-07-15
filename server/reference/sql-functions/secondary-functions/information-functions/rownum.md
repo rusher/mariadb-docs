@@ -21,21 +21,21 @@ The main difference between using `LIMIT` and`ROWNUM()` to limit the rows in the
 The following queries will return the same results:
 
 ```sql
-SELECT * from t1 LIMIT 10;
-SELECT * from t1 WHERE ROWNUM() <= 10;
+SELECT * FROM t1 LIMIT 10;
+SELECT * FROM t1 WHERE ROWNUM() <= 10;
 ```
 
 While the following may return different results based on in which orders the rows are found:
 
 ```sql
-SELECT * from t1 ORDER BY a LIMIT 10;
-SELECT * from t1 ORDER BY a WHERE ROWNUM() <= 10;
+SELECT * FROM t1 ORDER BY a LIMIT 10;
+SELECT * FROM t1 ORDER BY a WHERE ROWNUM() <= 10;
 ```
 
 The recommended way to use `ROWNUM` to limit the number of returned rows and get predictable results is to have the query in a subquery and test for `ROWNUM()` in the outer query:
 
 ```sql
-SELECT * FROM (select * from t1 ORDER BY a) WHERE ROWNUM() <= 10;
+SELECT * FROM (SELECT * FROM t1 ORDER BY a) WHERE ROWNUM() <= 10;
 ```
 
 `ROWNUM()` can be used in the following contexts:
@@ -53,14 +53,14 @@ Used in other contexts, `ROWNUM()` will return 0.
 ```sql
 INSERT INTO t1 VALUES (1,ROWNUM()),(2,ROWNUM()),(3,ROWNUM());
 
-INSERT INTO t1 VALUES (1),(2) returning a, ROWNUM();
+INSERT INTO t1 VALUES (1),(2) RETURNING a, ROWNUM();
 
 UPDATE t1 SET row_num_column=ROWNUM();
 
 DELETE FROM t1 WHERE a < 10 AND ROWNUM() < 2;
 
-LOAD DATA INFILE 'filename' into table t1 fields terminated by ',' 
-  lines terminated by "\r\n" (a,b) set c=ROWNUM();
+LOAD DATA INFILE 'filename' INTO TABLE t1 fields terminated BY ',' 
+  lines terminated BY "\r\n" (a,b) SET c=ROWNUM();
 ```
 
 ## Optimizations
@@ -80,13 +80,13 @@ following cases:
 * For the current subquery when the `ROWNUM` comparison is done on the top level:
 
 ```sql
-SELECT * from t1 WHERE ROWNUM() <= 2 AND t1.a > 0
+SELECT * FROM t1 WHERE ROWNUM() <= 2 AND t1.a > 0
 ```
 
 * For an inner subquery, when the upper level has only a `ROWNUM()` comparison in the `WHERE` clause:
 
 ```sql
-SELECT * from (select * from t1) as t WHERE ROWNUM() <= 2
+SELECT * FROM (SELECT * FROM t1) AS t WHERE ROWNUM() <= 2
 ```
 
 ## Other Changes Related to ROWNUM

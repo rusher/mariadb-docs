@@ -22,7 +22,7 @@ A datetime precision can be specified wherever a type name is used. For example:
 CREATE FUNCTION example(x datetime(5)) RETURNS time(4)
 BEGIN
  DECLARE y TIMESTAMP(6);
- RETURN CAST(x as time(2));
+ RETURN CAST(x AS time(2));
 END;
 ```
 
@@ -72,7 +72,7 @@ SELECT TIME('10:10:10') + INTERVAL 100 MICROSECOND;
 **Note:** When you convert a temporal value to a value with a smaller precision, it will be truncated, not rounded. This is done to guarantee that the date part is not changed. For example:
 
 ```sql
-SELECT CAST('2009-12-31 23:59:59.998877' as DATETIME(3));
+SELECT CAST('2009-12-31 23:59:59.998877' AS DATETIME(3));
 -> 2009-12-31 23:59:59.998
 ```
 

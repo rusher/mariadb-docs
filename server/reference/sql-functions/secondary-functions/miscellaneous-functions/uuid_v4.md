@@ -33,7 +33,7 @@ SELECT UUID(),UUID_v4(),UUID_v7()\G
 UUID_v4(): a2443495-1b94-415b-b6fa-fe8e79ba4812
 UUID_v7(): 01921e85-f198-7490-9b89-7dd0d468543b
 
-CREATE TABLE t1 (a int primary key not null, u UUID DEFAULT UUID_v4(), unique key(u));
+CREATE TABLE t1 (a INT PRIMARY KEY NOT NULL, u UUID DEFAULT UUID_v4(), UNIQUE KEY(u));
 ```
 
 ## See Also

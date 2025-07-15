@@ -215,8 +215,8 @@ CREATE USER usr1@hostname IDENTIFIED VIA gssapi;
 On Windows only, it is possible to login using a AD or local group-membership. This is achieved by using the `GROUP` prefix in `IDENTIFIED ... AS`:
 
 ```sql
-CREATE USER root IDENTIFIED VIA gssapi as 'GROUP:Administrators'
-CREATE USER root IDENTIFIED VIA gssapi as 'GROUP:BUILTIN\\Administrators'
+CREATE USER root IDENTIFIED VIA gssapi AS 'GROUP:Administrators'
+CREATE USER root IDENTIFIED VIA gssapi AS 'GROUP:BUILTIN\\Administrators'
 ```
 
 The effect of the above definition is that every user that identifies as a member of group `Administrators` can log in using the user name `root` without a password.
@@ -224,7 +224,7 @@ The effect of the above definition is that every user that identifies as a membe
 User can also login using own or group [SID](https://en.wikipedia.org/wiki/Security_Identifier) (Security Identifier):
 
 ```sql
-CREATE USER root IDENTIFIED VIA gssapi as 'SID:S-1-5-32-544'
+CREATE USER root IDENTIFIED VIA gssapi AS 'SID:S-1-5-32-544'
 ```
 
 Using SIDs will perform slightly faster than using name (since it will spare translation between SID and name which is otherwise done). SIDs are immune against user or group renaming.

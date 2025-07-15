@@ -22,7 +22,7 @@ The answer is: SQL is a statically-typed language. The SQL interpreter needs to 
 Suppose running a query like this:
 
 ```sql
-SELECT COLUMN_GET(blob, 'colname' as CHAR) ...
+SELECT COLUMN_GET(BLOB, 'colname' AS CHAR) ...
 ```
 
 Without specifying a maximum length (i.e. using `as CHAR`, not `as CHAR(n)`), MariaDB will report the maximum length of the result set column to be 16,777,216. This may cause excessive memory usage in some client libraries, because they try to pre-allocate a buffer of maximum result set width. To avoid this problem, use CHAR(n) whenever you're using COLUMN\_GET in the select list.

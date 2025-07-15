@@ -44,9 +44,9 @@ Basically it works like this:
 
 ```sql
 BEGIN;
-SELECT 1 FROM t1 WHERE key=# FOR UPDATE;
-IF found-row
-  DELETE FROM t1 WHERE key=# ;
+SELECT 1 FROM t1 WHERE KEY=# FOR UPDATE;
+IF FOUND-ROW
+  DELETE FROM t1 WHERE KEY=# ;
 ENDIF
 INSERT INTO t1 VALUES (...);
 END;

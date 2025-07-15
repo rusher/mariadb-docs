@@ -45,8 +45,8 @@ biggest one will have an effect.
 
 ```
 SELECT setval(foo, 42);           -- Next nextval will return 43
-SELECT setval(foo, 42, true);     -- Same as above
-SELECT setval(foo, 42, false);    -- Next nextval will return 42
+SELECT setval(foo, 42, TRUE);     -- Same as above
+SELECT setval(foo, 42, FALSE);    -- Next nextval will return 42
 ```
 
 SETVAL setting higher and lower values on a sequence with an increment of 10:

@@ -54,14 +54,14 @@ FROM
   LEFT JOIN ac_dob ON ac_anchor.AC_ID=ac_dob.AC_ID
   LEFT JOIN ac_rating ON (ac_anchor.AC_ID=ac_rating.AC_ID AND
                           ac_rating.ACRAT_fromdate = 
-                            (select max(sub.ACRAT_fromdate)
+                            (SELECT MAX(sub.ACRAT_fromdate)
                              FROM ac_rating sub WHERE sub.AC_ID = ac_rating.AC_ID))
 ```
 
 We don't want to write the joins every time we need to access an actor's properties, so we’ll create a view:
 
 ```sql
-CREATE view actors AS
+CREATE VIEW actors AS
   SELECT  ac_anchor.AC_ID, ACNAM_Name,  ACDOB_birthdate, ACRAT_rating
   FROM <see the SELECT above>
 ```

@@ -154,7 +154,7 @@ SELECT
   `Employees`.`Last_Name`,
   `Hours`.`Clock_In`,
   `Hours`.`Clock_Out`,
-  (TIMESTAMPDIFF(MINUTE,`Hours`.`Clock_Out`,`Hours`.`Clock_In`) + 601) as Difference
+  (TIMESTAMPDIFF(MINUTE,`Hours`.`Clock_Out`,`Hours`.`Clock_In`) + 601) AS Difference
 FROM `Employees`
 INNER JOIN `Hours` USING (`ID`)
 WHERE DATE_FORMAT(`Hours`.`Clock_In`, '%Y-%m-%d') >= '2005-08-08'
@@ -203,7 +203,7 @@ SELECT
   `Employees`.`Last_Name`,
   `Hours`.`Clock_In`,
   `Hours`.`Clock_Out`,
-(TIMESTAMPDIFF(MINUTE,`Hours`.`Clock_Out`,`Hours`.`Clock_In`) + 601) as Difference
+(TIMESTAMPDIFF(MINUTE,`Hours`.`Clock_Out`,`Hours`.`Clock_In`) + 601) AS Difference
 FROM `Employees`
 INNER JOIN `Hours` USING (`ID`)
 WHERE DATE_FORMAT(`Hours`.`Clock_In`, '%Y-%m-%d') >= '2005-08-08'

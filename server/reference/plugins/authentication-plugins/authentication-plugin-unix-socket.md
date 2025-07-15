@@ -108,7 +108,7 @@ From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 For example, assuming an OS user of 'bob':
 
 ```
-CREATE USER A identified via unix_socket as 'bob';
+CREATE USER A IDENTIFIED via unix_socket AS 'bob';
 ```
 
 To connect:

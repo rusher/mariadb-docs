@@ -91,7 +91,7 @@ If you are unable to connect to a server, for example because you have lost the 
 You may have created a user with something like:
 
 ```sql
-CREATE USER melisa identified BY 'password';
+CREATE USER melisa IDENTIFIED BY 'password';
 ```
 
 This creates a user with the '%' wildcard host.

@@ -72,7 +72,7 @@ Sample data:
 ![tc\_1](../../../../../.gitbook/assets/tc_1.png)
 
 ```sql
-CREATE TABLE bus_routes (origin varchar(50), dst varchar(50));
+CREATE TABLE bus_routes (origin VARCHAR(50), dst VARCHAR(50));
 INSERT INTO bus_routes VALUES 
   ('New York', 'Boston'), 
   ('Boston', 'New York'), 
