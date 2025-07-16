@@ -2,19 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 NEXT VALUE FOR sequence
 ```
 
 or
 
-```
+```sql
 NEXTVAL(sequence_name)
 ```
 
 or in Oracle mode ([SQL\_MODE=ORACLE](../../../../server-management/variables-and-modes/sql-mode.md))
 
-```
+```sql
 sequence_name.nextval
 ```
 
@@ -32,11 +32,11 @@ Generate next value for a `SEQUENCE`.
 * `NEXT VALUE` requires the `INSERT` [privilege](../../../sql-statements/account-management-sql-statements/grant.md).
 * You can also use `NEXT VALUE FOR sequence` for column `DEFAULT`.
 
-Once the sequence is complete, unless the sequence has been created with the [CYCLE](../create-sequence.md#cycle-nocycle) attribute (not the default), calling the function will result in [Error 4084: Sequence has run out](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/sequences/sequence-functions/broken-reference/README.md).
+Once the sequence is complete, unless the sequence has been created with the [CYCLE](../create-sequence.md#cycle-nocycle) attribute (not the default), calling the function will result in [Error 4084: Sequence has run out](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084).
 
 ## Examples
 
-```
+```sql
 CREATE OR REPLACE SEQUENCE s MAXVALUE=2;
 
 SELECT NEXTVAL(s);
