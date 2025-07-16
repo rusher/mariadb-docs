@@ -77,7 +77,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
     ```sql
     SET @@system_versioning_alter_history= keep;
-    ALTER TABLE contracts ADD COLUMN rs timestamp(6) AS ROW START, ADD COLUMN re timestamp(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re);
+    ALTER TABLE contracts ADD COLUMN rs TIMESTAMP(6) AS ROW START, ADD COLUMN re TIMESTAMP(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re);
     ```
 
 ### Security <a href="#security" id="security"></a>

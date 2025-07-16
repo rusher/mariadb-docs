@@ -28,11 +28,11 @@ If the Spider user on the data note is not configured with the SUPER privilege, 
 
 Spider needs a remote connection to the backend server to actually perform the remote query. So this should be setup on each backend server. In this case 172.21.21.2 is the ip address of the spider node limiting access to just that server.
 
-```
+```sql
 backend1> mysql
-grant all on test.* to spider@'172.21.21.2' identified by 'spider';
+GRANT ALL ON test.* TO spider@'172.21.21.2' IDENTIFIED BY 'spider';
 backend2> mysql
-grant all on test.* to spider@'172.21.21.2' identified by 'spider';
+GRANT ALL ON test.* TO spider@'172.21.21.2' IDENTIFIED BY 'spider';
 ```
 
 Now verify that these connections can be used from the spider node (here 172.21.21.3 = backend1 and 172.21.21.4 = backend2):
@@ -57,7 +57,7 @@ closeDate DATE,
 stageName VARCHAR(11),
 PRIMARY KEY (id),
 KEY (accountName)
-) engine=InnoDB;
+) ENGINE=InnoDB;
 ```
 
 ### Create server entries on spider server
@@ -65,23 +65,23 @@ KEY (accountName)
 While the connection information can also be specified inline in the comment or (from [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)) as table options, it is cleaner to define a server object representing each remote backend server connection:
 
 ```sql
-CREATE server backend1 FOREIGN data wrapper mysql options 
-(host '172.21.21.3', database 'test', user 'spider', password 'spider', port 3306);
-CREATE server backend2 FOREIGN data wrapper mysql options 
-(host '172.21.21.4', database 'test', user 'spider', password 'spider', port 3306);
+CREATE SERVER backend1 FOREIGN DATA WRAPPER MYSQL OPTIONS 
+(HOST '172.21.21.3', DATABASE 'test', USER 'spider', PASSWORD 'spider', PORT 3306);
+CREATE SERVER backend2 FOREIGN DATA WRAPPER MYSQL OPTIONS 
+(HOST '172.21.21.4', DATABASE 'test', USER 'spider', PASSWORD 'spider', PORT 3306);
 ```
 
 #### Unable to Connect Errors
 
 Bear in mind, if you ever need to remove, recreate or otherwise modify the server definition for any reason, you need to also execute a [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement. Otherwise, Spider continues to use the old server definition, which can result in queries raising the error
 
-```sql
+```
 Error 1429: Unable to connect to foreign data source
 ```
 
 If you encounter this error when querying Spider tables, issue a [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to update the server definitions.
 
-```
+```sql
 FLUSH TABLES;
 ```
 
@@ -100,7 +100,7 @@ closeDate DATE,
 stageName VARCHAR(11),
 PRIMARY KEY (id),
 KEY (accountName)
-) engine=spider comment='wrapper "mysql", srv "backend1" , TABLE "opportunities"';
+) ENGINE=spider comment='wrapper "mysql", srv "backend1" , TABLE "opportunities"';
 ```
 
 ## Use case 2: sharding by hash
@@ -120,7 +120,7 @@ closeDate DATE,
 stageName VARCHAR(11),
 PRIMARY KEY (id),
 KEY (accountName)
-) engine=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
  PARTITION BY HASH (id)
 (
  PARTITION pt1 COMMENT = 'srv "backend1"',
@@ -145,7 +145,7 @@ closeDate DATE,
 stageName VARCHAR(11),
 PRIMARY KEY (id, accountName),
 KEY(accountName)
-) engine=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
  PARTITION BY RANGE columns (accountName)
 (
  PARTITION pt1 VALUES less than ('M') COMMENT = 'srv "backend1"',
@@ -170,7 +170,7 @@ closeDate DATE,
 stageName VARCHAR(11),
 PRIMARY KEY (id, owner),
 KEY(accountName)
-) engine=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
  PARTITION BY list columns (owner)
 (
  PARTITION pt1 VALUES IN ('Bill', 'Bob', 'Chris') COMMENT = 'srv "backend1"',

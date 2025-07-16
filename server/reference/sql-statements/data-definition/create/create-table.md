@@ -44,7 +44,7 @@ If the `OR REPLACE` clause is used and the table already exists, then instead of
 This syntax was originally added to make [replication](../../../../ha-and-performance/standard-replication/) more robust if it has to rollback and repeat statements such as `CREATE ... SELECT` on replicas.
 
 ```sql
-CREATE OR REPLACE TABLE table_name (a int);
+CREATE OR REPLACE TABLE table_name (a INT);
 ```
 
 is basically the same as:
@@ -136,7 +136,7 @@ If the columns in the new table are more than the rows returned by the query, th
 
 If the table already exists, an error similar to the following will be returned:
 
-```sql
+```
 ERROR 1050 (42S01): Table 't' already exists
 ```
 
@@ -243,9 +243,15 @@ Use `UNIQUE KEY` (or just `UNIQUE`) to specify that all values in the column mus
 
 ```sql
 CREATE TABLE t_long_keys (   a INT PRIMARY KEY,   b  VARCHAR(4073),   UNIQUE KEY `uk_b` (b) ) ENGINE=InnoDB;
+```
+```
 Query OK, 0 rows affected (0.022 sec)
+```
 
-show create table t_long_keys\G
+```sql
+SHOW CREATE TABLE t_long_keys\G
+```
+```
 *************************** 1. row ***************************
        Table: t_long_keys
 Create Table: CREATE TABLE `t_long_keys` (
@@ -255,17 +261,22 @@ Create Table: CREATE TABLE `t_long_keys` (
   UNIQUE KEY `uk_b` (`b`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 1 row in set (0.001 sec)
-
-select * from information_schema.INNODB_SYS_TABLES where name like '%t_long_keys%';;
+```
+```sql
+SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
+```
+```
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 | TABLE_ID | NAME                 | FLAG | N_COLS | SPACE | ROW_FORMAT | ZIP_PAGE_SIZE | SPACE_TYPE |
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 |       64 | securedb/t_long_keys |   33 |      5 |    43 | Dynamic    |             0 | Single     |
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 1 row in set (0.003 sec)
-
-
-select * from information_schema.INNODB_SYS_COLUMNS where TABLE_ID=64;
+```
+```sql
+SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
+```
+```
 +----------+---------------+-------+-------+--------+------+
 | TABLE_ID | NAME          | POS   | MTYPE | PRTYPE | LEN  |
 +----------+---------------+-------+-------+--------+------+
@@ -290,11 +301,16 @@ When any inserts or updates occur in the table, reading the binlog shows the hid
 
 
 
-```
+```sql
 CREATE TABLE t_long_keys (   a INT PRIMARY KEY,   b  VARCHAR(4073),   UNIQUE KEY `uk_b` (b) ) ENGINE=InnoDB;
+```
+```
 Query OK, 0 rows affected (0.022 sec)
-
-show create table t_long_keys\G
+```
+```sql
+SHOW CREATE TABLE t_long_keys\G
+```
+```
 *************************** 1. row ***************************
        Table: t_long_keys
 Create Table: CREATE TABLE `t_long_keys` (
@@ -304,18 +320,22 @@ Create Table: CREATE TABLE `t_long_keys` (
   UNIQUE KEY `uk_b` (`b`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 1 row in set (0.001 sec)
-
-select * from information_schema.INNODB_SYS_TABLES where name like '%t_long_keys%';;
+```
+```sql
+SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
+```
+```
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 | TABLE_ID | NAME                 | FLAG | N_COLS | SPACE | ROW_FORMAT | ZIP_PAGE_SIZE | SPACE_TYPE |
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 |       64 | securedb/t_long_keys |   33 |      5 |    43 | Dynamic    |             0 | Single     |
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 1 row in set (0.003 sec)
-
-
-
-select * from information_schema.INNODB_SYS_COLUMNS where TABLE_ID=64;
+```
+```sql
+SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
+```
+```
 +----------+---------------+-------+-------+--------+------+
 | TABLE_ID | NAME          | POS   | MTYPE | PRTYPE | LEN  |
 +----------+---------------+-------+-------+--------+------+
