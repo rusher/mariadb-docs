@@ -35,8 +35,8 @@ MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an ev
   * [BKA, NO\_BKA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints#bka-and-no_bka)
   * [BNL, NO\_BNL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints#bnl-and-no_bnl)
 * Add support for subquery optimizer hints ([MDEV-34888](https://jira.mariadb.org/browse/MDEV-34888))
-  * SEMIJOIN()
-  * SUBQUERY()
+  * [SEMIJOIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints#semijoin-and-no_semijoin)
+  * [SUBQUERY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints#subquery-hint)
 * Add support for join order hints ([MDEV-34870](https://jira.mariadb.org/browse/MDEV-34870))
   * JOIN\_FIXED\_ORDER similar to existing STRAIGHT\_JOIN hint
   * JOIN\_ORDER to apply the specified table order
