@@ -2,22 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 expr BETWEEN min AND max
 ```
 
 ## Description
 
-If expr is greater than or equal to min and expr is less than or equal\
-to max, BETWEEN returns 1, otherwise it returns 0. This is equivalent\
-to the expression (min <= expr AND expr <= max) if all the arguments\
-are of the same type. Otherwise type conversion takes place according\
-to the rules described at [Type Conversion](../../../sql-functions/string-functions/type-conversion.md), but\
-applied to all the three arguments.
+If `expr` is greater than or equal to `min` and `expr` is less than or equal to `max`, `BETWEEN` returns `1`, otherwise it returns `0`. This is equivalent to the expression (`min <= expr AND expr <= max`) if all the arguments are of the same type. Otherwise type conversion takes place according to the rules described at [Type Conversion](../../../sql-functions/string-functions/type-conversion.md), but applied to all the three arguments.
 
 ## Examples
 
-```
+```sql
 SELECT 1 BETWEEN 2 AND 3;
 +-------------------+
 | 1 BETWEEN 2 AND 3 |
@@ -26,7 +21,7 @@ SELECT 1 BETWEEN 2 AND 3;
 +-------------------+
 ```
 
-```
+```sql
 SELECT 'b' BETWEEN 'a' AND 'c';
 +-------------------------+
 | 'b' BETWEEN 'a' AND 'c' |
@@ -35,7 +30,7 @@ SELECT 'b' BETWEEN 'a' AND 'c';
 +-------------------------+
 ```
 
-```
+```sql
 SELECT 2 BETWEEN 2 AND '3';
 +---------------------+
 | 2 BETWEEN 2 AND '3' |
@@ -44,7 +39,7 @@ SELECT 2 BETWEEN 2 AND '3';
 +---------------------+
 ```
 
-```
+```sql
 SELECT 2 BETWEEN 2 AND 'x-3';
 +-----------------------+
 | 2 BETWEEN 2 AND 'x-3' |
@@ -56,9 +51,9 @@ SELECT 2 BETWEEN 2 AND 'x-3';
 Warning (Code 1292): Truncated incorrect DOUBLE value: 'x-3'
 ```
 
-NULL:
+`NULL`:
 
-```
+```sql
 SELECT 1 BETWEEN 1 AND NULL;
 +----------------------+
 | 1 BETWEEN 1 AND NULL |
@@ -67,9 +62,9 @@ SELECT 1 BETWEEN 1 AND NULL;
 +----------------------+
 ```
 
-DATE, DATETIME and TIMESTAMP examples. Omitting the time component compares against `00:00`, so later times on the same date are not returned:
+`DATE`, `DATETIME` and `TIMESTAMP` examples. Omitting the time component compares against `00:00`, so later times on the same date are not returned:
 
-```
+```sql
 CREATE TABLE `x` (
   a date ,
   b datetime,
@@ -107,6 +102,6 @@ SELECT * FROM x WHERE c BETWEEN '2018-11-11' AND '2018-11-12';
 
 * [Operator Precedence](../operator-precedence.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

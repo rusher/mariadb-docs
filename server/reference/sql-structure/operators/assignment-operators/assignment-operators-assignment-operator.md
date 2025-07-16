@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 identifier = expr
 ```
 
@@ -16,11 +16,11 @@ This operator works with both [user-defined variables](../../sql-language-struct
 
 ## Examples
 
-```
+```sql
 UPDATE table_name SET x = 2 WHERE x > 100;
 ```
 
-```
+```sql
 SET @x = 1, @y := 2;
 ```
 
