@@ -135,4 +135,3 @@ result2.each { |row| puts row.inspect }
 
 * [mysql2 gem on RubyGems.org](https://rubygems.org/gems/mysql2)
 * [mysql2 gem Documentation (Rubydoc.info)](https://www.rubydoc.info/gems/mysql2/)
-* [MariaDB Connector/Ruby Guide (MariaDB.net)](https://mariadb.net/docs/connectors/connectors-quickstart-guides/mariadb-connector-ruby-guide)
