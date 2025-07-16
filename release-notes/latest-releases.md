@@ -1,12 +1,8 @@
 # Download Latest Releases
 
-### You can also download the latest MariaDB Server from the [MariaDB Foundation](https://mariadb.org/download)
-
 ### MariaDB Server Development Release
 
 {% include ".gitbook/includes/latest-12-1.md" %}
-
-### MariaDB Server Rolling Release
 
 
 
