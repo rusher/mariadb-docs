@@ -19,10 +19,10 @@ SELECT
     select_expr [, select_expr ...]
     [ FROM table_references
       [WHERE where_condition]
-      [GROUP BY {col_name | expr | position} [ASC | DESC], ... [WITH ROLLUP]]
+      [GROUP BY {col_name | expr | POSITION} [ASC | DESC], ... [WITH ROLLUP]]
       [HAVING where_condition]
-      [ORDER BY {col_name | expr | position} [ASC | DESC], ...]
-      [LIMIT {[offset,] row_count | row_count OFFSET offset}]
+      [ORDER BY {col_name | expr | POSITION} [ASC | DESC], ...]
+      [LIMIT {[offset,] ROW_COUNT | ROW_COUNT OFFSET OFFSET}]
       [PROCEDURE procedure_name(argument_list)]
       [INTO OUTFILE 'file_name' [CHARACTER SET charset_name] [export_options]
          | INTO DUMPFILE 'file_name' | INTO var_name [, var_name] ]

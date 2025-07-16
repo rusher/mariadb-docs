@@ -129,15 +129,3 @@ Use `ExecuteNonQueryAsync` for operations that do not return a result set (like 
         Console.WriteLine($"\nRows inserted: {rowsAffected}");
     }
 ```
-
-**Before Running:**
-
-1. Replace `your_database_name`, `your_username`, `your_password`, and `your_table_name` with your actual MariaDB server details.
-2. Ensure you have a MariaDB server running and a database/table set up.
-3. Add the `System.Data` namespace in your C# file: `using System.Data;`.
-
-#### Further Resources:
-
-* [MySqlConnector NuGet Package](https://www.nuget.org/packages/MySqlConnector/)
-* [MySqlConnector Documentation (How to Connect to MySQL from .NET Core)](https://mysqlconnector.net/tutorials/connect-to-mysql/)
-* [MariaDB Connector/NET Documentation](https://mariadb.net/docs/connectors/connectors-quickstart-guides/mariadb-connector-net-guide)

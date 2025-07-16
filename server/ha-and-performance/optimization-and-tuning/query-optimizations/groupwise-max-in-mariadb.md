@@ -107,7 +107,7 @@ SELECT
     FROM
       ( SELECT  @prev := '' ) init
     JOIN
-      ( SELECT  province != @prev AS first,  -- `province` is the 'GROUP BY'
+      ( SELECT  province != @prev AS FIRST,  -- `province` is the 'GROUP BY'
                 @prev := province,           -- The 'GROUP BY'
                 province, city, population   -- Also the desired columns
             FROM  Canada           -- The table
@@ -115,7 +115,7 @@ SELECT
                 province,          -- The 'GROUP BY'
                 population DESC    -- ASC for MIN(population), DESC for MAX
       ) x
-    WHERE  first
+    WHERE  FIRST
     ORDER BY  province;     -- Whatever you like
 ```
 

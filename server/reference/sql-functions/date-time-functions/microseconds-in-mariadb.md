@@ -19,7 +19,7 @@ A datetime precision can be specified wherever a type name is used. For example:
 * in a `CAST` function.
 
 ```sql
-CREATE FUNCTION example(x datetime(5)) RETURNS time(4)
+CREATE FUNCTION example(x DATETIME(5)) RETURNS TIME(4)
 BEGIN
  DECLARE y TIMESTAMP(6);
  RETURN CAST(x AS time(2));

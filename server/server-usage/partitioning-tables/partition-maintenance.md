@@ -96,7 +96,7 @@ CREATE TABLE tbl (
         ...
     )
     PARTITION BY RANGE (TO_DAYS(dt)) (
-        PARTITION start        VALUES LESS THAN (0),
+        PARTITION START        VALUES LESS THAN (0),
         PARTITION from20120315 VALUES LESS THAN (TO_DAYS('2012-03-16')),
         PARTITION from20120316 VALUES LESS THAN (TO_DAYS('2012-03-17')),
         ...

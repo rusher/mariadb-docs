@@ -436,7 +436,7 @@ In that syntax one passes formatting options within the curly braces:
 
 ```
 -- Print 'arg1: col1, arg2: col2'  where col1 from table is of datetime type and should be printed as: 'Sunday November 2021'
-SELECT sformat('arg1: {%W %M %Y}, arg2: {}', col1, col2) from table;
+SELECT sformat('arg1: {%W %M %Y}, arg2: {}', col1, col2) FROM TABLE;
 ```
 
 Ideally, this new function should use, behind the scenes, the existing builtin formatting functions in MariaDB (e.g. `date_format()`, `format()`) and even future formatting functions (e.g. MySQL's `format_bytes()`, `format_pico_time()`), so the syntax has to be designed in a smart way to accommodate easily future additions.
