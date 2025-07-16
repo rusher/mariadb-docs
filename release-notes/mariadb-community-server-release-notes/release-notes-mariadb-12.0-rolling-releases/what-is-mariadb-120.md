@@ -27,8 +27,8 @@ MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an ev
 
 * find\_order\_in\_list mismatch when order item needs fixing() ([MDEV-36607](https://jira.mariadb.org/browse/MDEV-36607))
 * If the join\_condition is specified via USING (column\_list), the query plan depends on the sequence of tables in the query ([MDEV-36592](https://jira.mariadb.org/browse/MDEV-36592))
-* Add support for optimizer hints ([MDEV-35504](https://jira.mariadb.org/browse/MDEV-35504))
-  * QB\_NAME()
+* Add support for [optimizer hints](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints) ([MDEV-35504](https://jira.mariadb.org/browse/MDEV-35504))
+  * [QB\_NAME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints#query-block-naming)()
   * NO\_RANGE\_OPTIMIZATION()
   * NO\_ICP()
   * MRR(), NO\_MRR()
