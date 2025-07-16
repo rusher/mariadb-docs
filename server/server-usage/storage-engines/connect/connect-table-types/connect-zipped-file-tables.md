@@ -22,7 +22,7 @@ Examples of use:
 
 Let's suppose you have a CSV file from which you would create a table by:
 
-```
+```sql
 engine=connect table_type=CSV file_name='E:/Data/employee.csv'
 CREATE TABLE emp
 ... optional COLUMN definition
@@ -31,10 +31,10 @@ sep_char=';' header=1;
 
 If the CSV file is included in a ZIP file, the CREATE TABLE becomes:
 
-```
-create table empzip
+```sql
+CREATE TABLE empzip
 ... optional column definition
-engine=connect table_type=CSV file_name='E:/Data/employee.zip'
+ENGINE=connect table_type=CSV file_name='E:/Data/employee.zip'
 sep_char=';' header=1 zipped=1 option_list='Entry=emp.csv';
 ```
 
@@ -44,19 +44,19 @@ The _file\_name_ option is the name of the zip file. The _entry_ option is the n
 
 If the table is made from several files such as emp01.csv, emp02.csv, etc., the standard create table would be:
 
-```
-create table empmul (
+```sql
+CREATE TABLE empmul (
 ... required column definition
-) engine=connect table_type=CSV file_name='E:/Data/emp*.csv' 
+) ENGINE=connect table_type=CSV file_name='E:/Data/emp*.csv' 
 sep_char=';' header=1 multiple=1;
 ```
 
 But if these files are all zipped inside a unique zip file, it becomes:
 
-```
-create table empzmul
+```sql
+CREATE TABLE empzmul
 ... required column definition
-engine=connect table_type=CSV file_name='E:/Data/emp.zip'
+ENGINE=connect table_type=CSV file_name='E:/Data/emp.zip'
 sep_char=';' header=1 zipped=1 option_list='Entry=emp*.csv';
 ```
 
@@ -66,10 +66,10 @@ Here the _entry_ option is the pattern that the files inside the zip file must m
 
 If the table is created on several zip files, it is specified as for all other multiple tables:
 
-```
-create table zempmul (
+```sql
+CREATE TABLE zempmul (
 ... required column definition
-) engine=connect table_type=CSV file_name='E:/Data/emp*.zip' 
+) ENGINE=connect table_type=CSV file_name='E:/Data/emp*.zip' 
 sep_char=';' header=1 multiple=1 zipped=yes 
 option_list='Entry=employee.csv';
 ```
@@ -104,20 +104,20 @@ insert can be used to make the table file for table types based on records (this
 
 To add a new entry in an existing zip file, specify “append=YES” in the option list. When inserting several entries, use ALTER to specify the required options, for instance:
 
-```
-create table znumul (
-Chiffre int(3) not null,
-Lettre char(16) not null)
-engine=CONNECT table_type=CSV
+```sql
+CREATE TABLE znumul (
+Chiffre INT(3) NOT NULL,
+Lettre CHAR(16) NOT NULL)
+ENGINE=CONNECT table_type=CSV
 file_name='C:/Data/FMT/mnum.zip' header=1 lrecl=20 zipped=1
 option_list='Entry=Num1';
-insert into znumul select * from num1;
-alter table znumul option_list='Entry=Num2,Append=YES';
-insert into znumul select * from num2;
-alter table znumul option_list='Entry=Num3,Append=YES';
-insert into znumul select * from num3;
-alter table znumul option_list='Entry=Num*,Append=YES';
-select * from znumul;
+INSERT INTO znumul SELECT * FROM num1;
+ALTER TABLE znumul option_list='Entry=Num2,Append=YES';
+INSERT INTO znumul SELECT * FROM num2;
+ALTER TABLE znumul option_list='Entry=Num3,Append=YES';
+INSERT INTO znumul SELECT * FROM num3;
+ALTER TABLE znumul option_list='Entry=Num*,Append=YES';
+SELECT * FROM znumul;
 ```
 
 The last ALTER is needed to display all the entries.
@@ -126,14 +126,14 @@ The last ALTER is needed to display all the entries.
 
 This method enables to make the zip file from another file when creating the table. It applies to all table types including DBF, XML and JSON. It is specified in the create table statement with the load option:
 
-```
-create table XSERVZIP (
-NUMERO varchar(4) not null,
-LIEU varchar(15) not null,
-CHEF varchar(5) not null,
-FONCTION varchar(12) not null,
-NOM varchar(21) not null)
-engine=CONNECT table_type=XML file_name='E:/Xml/perso.zip' zipped=1
+```sql
+CREATE TABLE XSERVZIP (
+NUMERO VARCHAR(4) NOT NULL,
+LIEU VARCHAR(15) NOT NULL,
+CHEF VARCHAR(5) NOT NULL,
+FONCTION VARCHAR(12) NOT NULL,
+NOM VARCHAR(21) NOT NULL)
+ENGINE=CONNECT table_type=XML file_name='E:/Xml/perso.zip' zipped=1
 option_list='entry=services,load=E:/Xml/serv2.xml';
 ```
 
@@ -141,27 +141,29 @@ When executing this statement, the _serv2.xml_ file will be zipped as /perso.zip
 
 If the column descriptions are specified, the table can be used later to read from the zipped table, but they are not used when creating the zip file. Thus, a fake column (there must be one) can be specified and another table created to read the zip file. This one can take advantage of the discovery process to avoid providing the columns description for table types allowing it. For instance:
 
-```
-create table mkzq (whatever int)
-engine=connect table_type=DBF zipped=1
+```sql
+CREATE TABLE mkzq (whatever INT)
+ENGINE=connect table_type=DBF zipped=1
 file_name='C:/Data/EAUX/dbf/CQUART.ZIP'
 option_list='Load=C:/Data/EAUX/dbf/CQUART.DBF';
+``` 
 
-create table zquart
-engine=connect table_type=DBF zipped=1
+```sql
+CREATE TABLE zquart
+ENGINE=connect table_type=DBF zipped=1
 file_name='C:/Data/EAUX/dbf/CQUART.ZIP';
 ```
 
 It is also possible to create a multi-entries table from several files:
 
-```
+```sql
 CREATE TABLE znewcities (
-  _id char(5) NOT NULL,
-  city char(16) NOT NULL,
-  lat double(18,6) NOT NULL `FIELD_FORMAT`='loc:[0]',
-  lng double(18,6) NOT NULL `FIELD_FORMAT`='loc:[1]',
-  pop int(6) NOT NULL,
-  state char(2) NOT NULL
+  _id CHAR(5) NOT NULL,
+  city CHAR(16) NOT NULL,
+  lat DOUBLE(18,6) NOT NULL `FIELD_FORMAT`='loc:[0]',
+  lng DOUBLE(18,6) NOT NULL `FIELD_FORMAT`='loc:[1]',
+  pop INT(6) NOT NULL,
+  state CHAR(2) NOT NULL
 ) ENGINE=CONNECT TABLE_TYPE=JSON FILE_NAME='E:/Json/newcities.zip' ZIPPED=1 LRECL=1000 OPTION_LIST='Load=E:/Json/city_*.json,mulentries=YES,pretty=0';
 ```
 
@@ -171,29 +173,29 @@ Here the files to load are specified with wildcard characters and the _mulentrie
 
 A ZIP table type is also available. It is not meant to read the inside files but to display information about the zip file contents. For instance:
 
-```
-create table xzipinfo2 (
-entry varchar(256)not null,
-cmpsize bigint not null flag=1,
-uncsize bigint not null flag=2,
-method int not null flag=3,
-date datetime not null flag=4)
-engine=connect table_type=ZIP file_name='E:/Data/Json/cities.zip';
+```sql
+CREATE TABLE xzipinfo2 (
+entry VARCHAR(256)NOT NULL,
+cmpsize BIGINT NOT NULL flag=1,
+uncsize BIGINT NOT NULL flag=2,
+method INT NOT NULL flag=3,
+date DATETIME NOT NULL flag=4)
+ENGINE=connect table_type=ZIP file_name='E:/Data/Json/cities.zip';
 ```
 
 This will display the name, compressed size, uncompressed size, and compress method of all entries inside the zip file. Column names are irrelevant; these are flag values that mean what information to retrieve.
 
 It is possible to retrieve this information from several zip files by specifying the multiple option:
 
-```
-create table TestZip1 (
-entry varchar(260)not null,
-cmpsize bigint not null flag=1,
-uncsize bigint not null flag=2,
-method int not null flag=3,
-date datetime not null flag=4,
-zipname varchar(256) special='FILEID')
-engine=connect table_type=ZIP multiple=1
+```sql
+CREATE TABLE TestZip1 (
+entry VARCHAR(260)NOT NULL,
+cmpsize BIGINT NOT NULL flag=1,
+uncsize BIGINT NOT NULL flag=2,
+method INT NOT NULL flag=4,
+date DATETIME NOT NULL flag=4,
+zipname VARCHAR(256) special='FILEID')
+ENGINE=connect table_type=ZIP multiple=1
 file_name='C:/Data/Ziptest/CCAM06300_DBF_PART*.zip';
 ```
 
