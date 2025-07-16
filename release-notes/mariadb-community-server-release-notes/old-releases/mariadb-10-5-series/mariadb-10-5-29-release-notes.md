@@ -1,9 +1,6 @@
 # MariaDB 10.5.29 Release Notes
 
-{% hint style="info" %}
-The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is: [**MariaDB 10.5.29**](mariadb-10-5-29-release-notes.md) Stable (GA) <a href="https://downloads.mariadb.org/mariadb/10.5.29/" class="button primary">Download Now</a>\
-
-{% endhint %}
+{% include "../../../.gitbook/includes/latest-10-5.md" %}
 
 <a href="https://downloads.mariadb.org/mariadb/10.5.29/" class="button primary">Download</a> <a href="mariadb-10-5-29-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-28-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
 
