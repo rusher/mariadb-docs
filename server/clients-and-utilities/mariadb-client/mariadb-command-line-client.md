@@ -369,7 +369,7 @@ For connections to localhost, the Unix socket file to use, or, on Windows, the n
 
 {% tabs %}
 {% tab title="Current" %}
-Enables [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). TLS is also enabled even without setting this option when certain other TLS options are set. The `--ssl` option does not enable [verifying the server certificate](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the `--ssl-verify-server-cert` option.&#x20;
+Enables [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). TLS is also enabled even without setting this option when certain other TLS options are set. The `--ssl` option does not enable [verifying the server certificate](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the `--ssl-verify-server-cert` option.
 
 TLS with `--ssl` is enabled by default.
 {% endtab %}
@@ -429,7 +429,7 @@ Append everything into outfile. See interactive help (\h) also. Does not work in
 
 #### `--tls-version=name`
 
-This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. See [Secure Connections Overview: TLS Protocol Versions](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions) for more information.&#x20;
+This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. See [Secure Connections Overview: TLS Protocol Versions](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions) for more information.
 
 #### `--ssl-fp=name`
 
@@ -495,6 +495,53 @@ The following options relate to how MariaDB command-line tools handles option fi
 | \[client-server]  | Options read by all MariaDB [client programs](./) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | \[client-mariadb] | Options read by all MariaDB client programs.                                                                                                                                   |
 
+## Delimiters
+
+The default delimiter in the [mariadb](./) client is the semicolon.
+
+When creating [stored programs](../../server-usage/stored-routines/) from the command-line, it is likely you will need to differentiate between the regular delimiter and a delimiter inside a [BEGIN END](../../reference/sql-statements/programmatic-compound-statements/begin-end.md) block. Consider the following example:
+
+```sql
+CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC
+BEGIN
+ DECLARE x TINYINT;
+ SET x = 42;
+ RETURN x;
+END;
+```
+
+If you enter the above line by line, the mariadb client will treat the first semicolon, at the end of the `DECLARE x TINYINT` line, as the end of the statement. Since that's only a partial definition, it will throw a syntax error, as follows:
+
+```sql
+CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC
+BEGIN
+DECLARE x TINYINT;
+ERROR 1064 (42000): You have an error in your SQL syntax; 
+check the manual that corresponds to your MariaDB server version
+ for the right syntax to use near '' at line 3
+```
+
+The solution is to specify a distinct delimiter for the duration of the process, using the `DELIMITER` [command](mariadb-command-line-client.md#mariadb-commands). The delimiter can be any set of characters you choose, but it needs to be a distinctive set of characters that won't cause further confusion. `//` is a common choice, and used throughout the documentation.
+
+Here's how the function can be entered, using the new delimiter:
+
+```sql
+DELIMITER //
+
+CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC
+BEGIN
+  DECLARE x TINYINT;
+  SET x = 42;
+  RETURN x;
+END 
+
+//
+
+DELIMITER ;
+```
+
+At the end, the delimiter is restored to the default semicolon. The `\g` and `\G` delimiters can always be used, even when a custom delimiter is specified.
+
 ## How to Specify Which Protocol to Use When Connecting to the Server
 
 You can force which protocol are used to connect to the `mariadbd` server, by giving the `protocol` option one of the following values: `tcp`, `socket`, `pipe` or `memory`.
@@ -509,7 +556,7 @@ If `protocol` is not specified, command-line connection properties that do not f
 {% endtab %}
 {% endtabs %}
 
-If multiple or no connection properties are specified via the command line,  the following happens on Unix and Windows systems:
+If multiple or no connection properties are specified via the command line, the following happens on Unix and Windows systems:
 
 Unix
 
