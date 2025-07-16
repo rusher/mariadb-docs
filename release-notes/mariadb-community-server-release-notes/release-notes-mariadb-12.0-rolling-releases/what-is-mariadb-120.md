@@ -12,7 +12,7 @@ MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an ev
 
 ### Data types <a href="#data-types" id="data-types"></a>
 
-* Comparison ROW(stored\_func(),1)=ROW(1,1) erroneously called stored\_func() twice per row. It led to a performance degradation, as well as to a double execution of the possible stored function side effects. ([MDEV-36322](https://jira.mariadb.org/browse/MDEV-36322))
+* Comparison [ROW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/row)(stored\_func(),1)=ROW(1,1) erroneously called stored\_func() twice per row. It led to a performance degradation, as well as to a double execution of the possible stored function side effects. ([MDEV-36322](https://jira.mariadb.org/browse/MDEV-36322))
 
 ### Stored Routines <a href="#stored-routines" id="stored-routines"></a>
 
@@ -20,7 +20,7 @@ MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an ev
 
 ### Server <a href="#server" id="server"></a>
 
-* TO\_CHAR FM format not recognized in SQL\_MODE=Oracle ([MDEV-36216](https://jira.mariadb.org/browse/MDEV-36216))
+* [TO\_CHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/to_char) FM format not recognized in SQL\_MODE=Oracle ([MDEV-36216](https://jira.mariadb.org/browse/MDEV-36216))
 * [mariadb-check](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/table-tools/mariadb-check) and [CHECK TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/check-table) now support [SEQUENCE tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/sequence-storage-engine) ([MDEV-22491](https://jira.mariadb.org/browse/MDEV-22491))
 
 ### Optimizer <a href="#optimizer" id="optimizer"></a>
@@ -46,7 +46,7 @@ MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an ev
 
 ### GIS <a href="#gis" id="gis"></a>
 
-New GIS functions. These functions improve compatibility with MySQL 8.
+New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/gis-features-in-533) functions. These functions improve compatibility with MySQL 8.
 
 * [ST\_Validate](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_validate) ([MDEV-34137](https://jira.mariadb.org/browse/MDEV-34137))
 * [MBRCoveredBy](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/mbr-minimum-bounding-rectangle/mbrcoveredby) ([MDEV-34138](https://jira.mariadb.org/browse/MDEV-34138))
