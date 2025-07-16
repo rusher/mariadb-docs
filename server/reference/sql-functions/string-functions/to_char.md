@@ -15,6 +15,11 @@ TO_CHAR(expr[, fmt])
 {% tabs %}
 {% tab title="Current" %}
 The `TO_CHAR` function converts an _expr_ of type [date](../../data-types/date-and-time-data-types/date.md), [datetime](../../data-types/date-and-time-data-types/datetime.md), [time](../../data-types/date-and-time-data-types/time.md) or [timestamp](../../data-types/date-and-time-data-types/timestamp.md) to a string. The optional _fmt_ argument supports `YYY/YYY/YY/RRRR/RR/MM/MON/MONTH/MI/DD/DY/HH/HH12/HH24/SS` and special characters. The default value is `YYYY-MM-DD HH24:MI:SS`. From MariaDB 12.0, `TO_CHAR` also accepts `FM` in the format string, which disables padding of all components following it.
+
+FM can be specified multiple times, with each time disabling the previous state:
+
+* an odd number of FMs disables padding
+* an even number of FMs enables padding
 {% endtab %}
 
 {% tab title="< MariaDB 12.0" %}
