@@ -282,6 +282,8 @@ Disallow commands that access the file system (except `\P` without an argument a
 
 **`--script-dir`**
 
+#### --script-dir
+
 Sets an alternative directory path for searching scripts invoked via the source command. From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
 
 **`--secure-auth`**
