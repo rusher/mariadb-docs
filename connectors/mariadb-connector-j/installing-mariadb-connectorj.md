@@ -1,7 +1,7 @@
 # Installing MariaDB Connector/J
 
 {% hint style="info" %}
-The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes)
+The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/3.5/mariadb-connector-j-3-5-3-release-notes)
 {% endhint %}
 
 [Download MariaDB Connector/J](https://mariadb.com/downloads/connectors/)

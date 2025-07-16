@@ -42,7 +42,7 @@ MariaDB Connector/J can be installed using [Maven](https://maven.apache.org/what
 
 MariaDB Connector/J `.jar` files and source code tarballs can be downloaded from the following URL:
 
-* [#jar](https://mariadb.com/downloads/#connectors) 
+* [#jar](https://mariadb.com/downloads/#connectors)
 * [#source tar](https://github.com/mariadb-corporation/mariadb-connector-j/releases)
 * [#github](https://github.com/mariadb-corporation/mariadb-connector-j/)
 
@@ -988,7 +988,7 @@ Statement stmt = sharedConn.createStatement();
 
 Only the first generated key will be returned, meaning that for multi-insert the generated key retrieved will correspond to the first generated value of the command.
 
-If retrieving all generated values for multiple insert is needed, please use [INSERT...RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning) command (since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)).
+If retrieving all generated values for multiple insert is needed, please use [INSERT...RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning) command (since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)).
 
 ### Optional JDBC Classes
 

@@ -1,16 +1,5 @@
 ---
 description: Quickstart Guide for Connector/C
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # MariaDB Connector/C Guide
