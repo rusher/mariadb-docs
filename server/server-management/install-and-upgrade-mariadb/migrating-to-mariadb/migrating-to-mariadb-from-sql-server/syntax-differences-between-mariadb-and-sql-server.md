@@ -85,7 +85,7 @@ END;
 
 If we enter this procedure in this way in the `mariadb` client, as soon as we type the first `;` (after the first `SELECT`) and press enter, the statement will be sent. MariaDB will try to parse it, and will return an error.
 
-To avoid this, `mariadb` implements the [DELIMITER](../../../../clients-and-utilities/mariadb-client/delimiters.md) statement. This client statement is never sent to MariaDB. Instead, the client uses it to find out when the typed query should be sent. Let's correct the above example:
+To avoid this, `mariadb` implements the [DELIMITER](broken-reference) statement. This client statement is never sent to MariaDB. Instead, the client uses it to find out when the typed query should be sent. Let's correct the above example:
 
 ```
 DELIMITER ||

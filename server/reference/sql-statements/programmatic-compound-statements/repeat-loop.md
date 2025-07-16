@@ -14,7 +14,7 @@ terminated by a semicolon (i.e., `;`) statement delimiter.
 
 A `REPEAT` statement can be [labeled](labels.md). end\_label cannot be given unless begin\_label also is present. If both are present, they must be the same.
 
-See [Delimiters](../../../clients-and-utilities/mariadb-client/delimiters.md) in the [mariadb](../../../clients-and-utilities/mariadb-client/) client for more on client delimiter usage.
+See [Delimiters](broken-reference) in the [mariadb](../../../clients-and-utilities/mariadb-client/) client for more on client delimiter usage.
 
 ```sql
 DELIMITER //

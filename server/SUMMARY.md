@@ -838,7 +838,6 @@
   * [mariadb Client](clients-and-utilities/mariadb-client/README.md)
     * [mariadb Command-Line Client](clients-and-utilities/mariadb-client/mariadb-command-line-client.md)
     * [mysql Command-Line Client](clients-and-utilities/mariadb-client/mysql-command-line-client.md)
-    * [Delimiters](clients-and-utilities/mariadb-client/delimiters.md)
   * [Networking Tools](clients-and-utilities/networking-tools/README.md)
     * [resolveip](clients-and-utilities/networking-tools/resolveip.md)
   * [Table Tools](clients-and-utilities/table-tools/README.md)
