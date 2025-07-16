@@ -15,8 +15,7 @@ HANDLER tbl_name CLOSE
 
 ## Description
 
-The `HANDLER` statement provides direct access to table\
-storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](../../../../server-usage/storage-engines/aria/), [Memory](../../../../server-usage/storage-engines/memory-storage-engine.md), [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [InnoDB](../../../../server-usage/storage-engines/innodb/) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](../../../../server-usage/storage-engines/merge.md) or [views](../../../../server-usage/views/)).
+The `HANDLER` statement provides direct access to table storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](../../../../server-usage/storage-engines/aria/), [Memory](../../../../server-usage/storage-engines/memory-storage-engine.md), [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [InnoDB](../../../../server-usage/storage-engines/innodb/) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](../../../../server-usage/storage-engines/merge.md) or [views](../../../../server-usage/views/)).
 
 `HANDLER ... OPEN` opens a table, allowing it to be accessible to subsequent `HANDLER ... READ` statements. The table can either be opened using an alias, or a table name. If opened with an alias, references to this table by further HANDLER statements must use this alias, and not the table name. If opened with a table name qualified by database name, further references to this table must use the unqualified table name. For example, if a table is opened with `db1.t1`, further references must use `t1`.
 
@@ -24,70 +23,70 @@ The table object is only closed when `HANDLER ... CLOSE` is called by the sessio
 
 [Prepared statements](../../../sql-statements/prepared-statements/) work with `HANDLER READ`, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).
 
-The HANDLER command does not work with [partitioned tables](../../../../server-usage/partitioning-tables/).
+The `HANDLER` command does not work with [partitioned tables](../../../../server-usage/partitioning-tables/).
 
 ## Key Lookup
 
 A key lookup is started with:
 
-```
+```sql
 HANDLER tbl_name READ index_name { = | >= | <= | < }  (value,value) [LIMIT...]
 ```
 
-The values stands for the value of each of the key columns. For most key types (except for HASH keys in MEMORY storage engine) you can use a prefix subset of it's columns.
+The values stands for the value of each of the key columns. For most key types, except for `HASH` keys in `MEMORY` storage engine, you can use a prefix subset of its columns.
 
 If you are using LIMIT, then in case of >= or > then there is an implicit NEXT implied, while if you are using <= or < then there is an implicit PREV implied.
 
-After the initial read, you can use
+After the initial read, you can use the following to scan rows in key order:
 
-```
+```sql
 HANDLER tbl_name READ index_name NEXT [ LIMIT ... ]
 or
 HANDLER tbl_name READ index_name PREV [ LIMIT ... ]
 ```
 
-to scan the rows in key order.
-
-Note that the row order is not defined for keys with duplicated values and will vary from engine to engine.
+{% hint style="warning" %}
+Note that the row order is not defined for keys with duplicated values, and will vary from engine to engine.
+{% endhint %}
 
 ## Key Scans
 
-You can scan a table in key order by doing:
+You can scan a table in key order by doing this:
 
-```
+```sql
 HANDLER tbl_name READ index_name FIRST [ LIMIT ... ]
 HANDLER tbl_name READ index_name NEXT  [ LIMIT ... ]
 ```
 
-or, if the handler supports backwards key scans (most do):
+Alternatively, if the handler supports backwards key scans (which most do), you can use this:
 
-```
+```sql
 HANDLER tbl_name READ index_name LAST [ LIMIT ... ]
 HANDLER tbl_name READ index_name PREV [ LIMIT ... ]
 ```
 
 ## Table Scans
 
-You can scan a table in row order by doing:
+You can scan a table in row order by doing this:
 
-```
+```sql
 HANDLER tbl_name READ FIRST [ LIMIT ... ]
 HANDLER tbl_name READ NEXT  [ LIMIT ... ]
 ```
 
 ## Limitations
 
-As this is a direct interface to the storage engine, some limitations may apply for what you can do and what happens if the table changes. Here follows some of the common limitations:
+As this is a direct interface to the storage engine, some limitations may apply for what you can do and what happens if the table changes. Here are some of the common limitations.
 
 ### Finding 'Old Rows'
 
-HANDLER READ is not transaction safe, consistent or atomic. It's ok for the storage engine to returns rows that existed when you started the scan but that were later deleted. This can happen as the storage engine may cache rows as part of the scan from a previous read.
+`HANDLER READ` is not transaction-safe, consistent or atomic. It's okay for the storage engine to return rows that existed when you started the scan, but that were later deleted. This can happen as the storage engine may cache rows as part of the scan from a previous read.
 
 You may also find rows committed since the scan originally started.
 
 ### Invisible Columns
 
-`HANDLER ... READ` also reads the data of [invisible-columns](../../../sql-statements/data-definition/create/invisible-columns.md).
+`HANDLER ... READ` also reads the data of [invisible columns](../../../sql-statements/data-definition/create/invisible-columns.md).
 
 ### System-Versioned Tables
 
@@ -95,23 +94,23 @@ You may also find rows committed since the scan originally started.
 
 ### Other Limitations
 
-* If you do an [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table/), all your HANDLERs for that table are automatically closed.
-* If you do an ALTER TABLE for a table that is used by some other connection with HANDLER, the ALTER TABLE will wait for the HANDLER to be closed.
-* For HASH keys, you must use all key parts when searching for a row.
-* For HASH keys, you can't do a key scan of all values. You can only find all rows with the same key value.
-* While each HANDLER READ command is atomic, if you do a scan in many steps, then some engines may give you [error 1020](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/nosql/handler/broken-reference/README.md) if the table changed between the commands. Please refer to the [specific engine handler page](./) if this happens.
+* If you do an [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table/), all your `HANDLER`s for that table are automatically closed.
+* If you do an `ALTER TABLE` for a table that is used by some other connection with `HANDLER`, the `ALTER TABLE` query waits for the `HANDLER` to be closed.
+* For `HASH` keys, you must use all key parts when searching for a row.
+* For `HASH` keys, you can't do a key scan of all values. You can only find all rows with the same key value.
+* While each `HANDLER READ` command is atomic, if you do a scan in many steps, some engines may give you [error 1020](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1000-to-1099/e1020) if the table changed between the commands. Please refer to the [specific engine handler page](./) if this happens.
 
 ## Error Codes
 
-* [Error 1031](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/nosql/handler/broken-reference/README.md) (ER\_ILLEGAL\_HA) Table storage engine for 't1' doesn't have this option
-  * If you get this for HANDLER OPEN it means the storage engine doesn't support HANDLER calls.
-  * If you get this for HANDLER READ it means you are trying to use an incomplete HASH key.
-* [Error 1020](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/nosql/handler/broken-reference/README.md) (ER\_CHECKREAD) Record has changed since last read in table '...'
-  * This means that the table changed between two reads and the handler can't handle this case for the given scan.
+* [Error 1031](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1000-to-1099/e1031) (`ER_ILLEGAL_HA`) Table storage engine for 't1' doesn't have this option
+  * If you get this for `HANDLER OPEN` it means the storage engine doesn't support `HANDLER` calls.
+  * If you get this for `HANDLER READ` , it means you are trying to use an incomplete `HASH` key.
+* [Error 1020](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1000-to-1099/e1020) (`ER_CHECKREAD`) Record has changed since last read in table '...'
+  * This means that the table changed between two reads, and the handler can't handle this case for the given scan.
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (f1 INT);
 
 INSERT INTO t1 VALUES (1),(2),(3);
@@ -133,9 +132,9 @@ HANDLER t1 READ NEXT;
 +------+
 ```
 
-In the previous example, the HANDLER was opened with the t1 table name. Since HANDLERs use unqualified table names, trying to access another table with this same name, even though it's in another database, will result in ambiguity. An alias needs to be used to avoid the ambiguity, resulting in [Error 1066: Not unique table/alias](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/nosql/handler/broken-reference/README.md):
+In the previous example, the `HANDLER` was opened with the `t1` table name. Since `HANDLER`s use unqualified table names, trying to access another table with this same name, even though it's in another database, will result in ambiguity. An alias needs to be used to avoid the ambiguity, resulting in [Error 1066: Not unique table/alias](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1000-to-1099/e1066):
 
-```
+```sql
 CREATE DATABASE db_new;
 
 CREATE TABLE db_new.t1 (id INT);
@@ -156,10 +155,6 @@ HANDLER db_new_t1 READ NEXT LIMIT 3;
 |    6 |
 +------+
 ```
-
-## See Also
-
-* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/nosql/handler/broken-reference/README.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
