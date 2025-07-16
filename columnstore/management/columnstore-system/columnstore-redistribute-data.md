@@ -39,7 +39,7 @@ While the system is working, "redistributeData status" can be called to see what
 
 To see how much data resides on any given DBRoot for a table, you can use a query like:
 
-sql```
+```sql
 SELECT COUNT(*) FROM <table> WHERE idbdbroot(<any column>) = <dbrootnum>;
 ```
 

@@ -13,9 +13,9 @@ The SELECT statement is used to query the database and display table data. You c
 
 ## Syntax
 
-```
+```sql
 SELECT
-    [ALL | DISTINCT ]
+[ALL | DISTINCT ]
     select_expr [, select_expr ...]
     [ FROM table_references
       [WHERE where_condition]
