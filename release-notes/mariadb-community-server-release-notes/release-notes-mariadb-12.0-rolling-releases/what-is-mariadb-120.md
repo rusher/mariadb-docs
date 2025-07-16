@@ -85,10 +85,10 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 
 ## List of All MariaDB 12.0 Releases
 
-| Date        | Release                                           | Status  | Release Notes                                    | Changelog                                                                             |
-| ----------- | ------------------------------------------------- | ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
-| 5 Jun 2025  | [MariaDB 12.0.1](mariadb-12.0.1-release-notes.md) | RC      | [Release Notes](mariadb-12.0.1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md) |
-| 26 May 2025 | MariaDB 12.0.0                                    | Preview |                                                  |                                                                                       |
+| Date          | Release                                           | Status  | Release Notes                                    | Changelog                                                                             |
+| ------------- | ------------------------------------------------- | ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 5 Jun 2025    | [MariaDB 12.0.1](mariadb-12.0.1-release-notes.md) | RC      | [Release Notes](mariadb-12.0.1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md) |
+| 26 March 2025 | MariaDB 12.0.0                                    | Preview |                                                  |                                                                                       |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
