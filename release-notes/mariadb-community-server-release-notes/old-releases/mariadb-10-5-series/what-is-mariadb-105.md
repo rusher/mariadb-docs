@@ -2,11 +2,9 @@
 
 MariaDB 10.5 is no longer maintained. Please use a [more recent release](../../../latest-releases.md).&#x20;
 
+{% include "../../../.gitbook/includes/latest-10-5.md" %}
 
-
-The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is: [**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/) [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
-
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous major stable version The first stable release was in June 2020, and it was [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025.
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous major release series. The first stable release was in June 2020, and it was [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025.
 
 ## Upgrading
 
