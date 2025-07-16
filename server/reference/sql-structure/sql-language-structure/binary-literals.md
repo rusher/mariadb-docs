@@ -4,13 +4,13 @@ Binary literals can be written in one of the following formats: `b'value'`, `B'v
 
 Binary literals are interpreted as binary strings, and are convenient to represent [VARBINARY](../../data-types/string-data-types/varbinary.md), [BINARY](../../data-types/string-data-types/binary.md) or [BIT](../../data-types/numeric-data-types/bit.md) values.
 
-To convert a binary literal into an integer, just add 0.
+To convert a binary literal into an integer, just add `0`.
 
 ## Examples
 
 Printing the value as a binary string:
 
-```
+```sql
 SELECT 0b1000001;
 +-----------+
 | 0b1000001 |
@@ -21,7 +21,7 @@ SELECT 0b1000001;
 
 Converting the same value into a number:
 
-```
+```sql
 SELECT 0b1000001+0;
 +-------------+
 | 0b1000001+0 |

@@ -1,16 +1,16 @@
 # String Literals
 
-Strings are sequences of characters and are enclosed with quotes.
+Strings are sequences of characters and enclosed with quotes.
 
 The syntax is:
 
-```
+```sql
 [_charset_name]'string' [COLLATE collation_name]
 ```
 
 For example:
 
-```
+```sql
 'The MariaDB Foundation'
 _utf8 'Foundation' COLLATE utf8_unicode_ci;
 ```
@@ -19,35 +19,31 @@ Strings can either be enclosed in single quotes or in double quotes (the same ch
 
 The ANSI SQL-standard does not permit double quotes for enclosing strings, and although MariaDB does by default, if the MariaDB server has enabled the [ANSI\_QUOTES\_SQL](../../../server-management/variables-and-modes/sql-mode.md#ansi_quotes) [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md), double quotes will be treated as being used for [identifiers](identifier-names.md) instead of strings.
 
-Strings that are next to each other are automatically concatenated. For example:
+Strings that are next to each other are automatically concatenated. The following are equivalent:
 
 ```
 'The ' 'MariaDB ' 'Foundation'
 ```
 
-and
-
 ```
 'The MariaDB Foundation'
 ```
 
-are equivalent.
-
-The `\` (backslash character) is used to escape characters (unless the [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) hasn't been set to [NO\_BACKSLASH\_ESCAPES](../../../server-management/variables-and-modes/sql-mode.md#no_backslash_escapes)). For example:
+The `\` (backslash character) is used to escape characters (unless the [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) hasn't been set to [NO\_BACKSLASH\_ESCAPES](../../../server-management/variables-and-modes/sql-mode.md#no_backslash_escapes)):
 
 ```
 'MariaDB's new features'
 ```
 
-is not a valid string because of the single quote in the middle of the string, which is treated as if it closes the string, but is actually meant as part of the string, an apostrophe. The backslash character helps in situations like this:
+That is not a valid string because of the single quote in the middle of the string, which is treated as if it closes the string, but is actually meant as part of the string, an apostrophe. The backslash character helps in situations like this:
 
 ```
 'MariaDB\'s new features'
 ```
 
-is now a valid string, and if displayed, will appear without the backslash.
+That is now a valid string, and if displayed, will appear without the backslash.
 
-```
+```sql
 SELECT 'MariaDB\'s new features';
 +------------------------+
 | MariaDB's new features |
@@ -58,7 +54,7 @@ SELECT 'MariaDB\'s new features';
 
 Another way to escape the quoting character is repeating it twice:
 
-```
+```sql
 SELECT 'I''m here', """Double""";
 +----------+----------+
 | I'm here | "Double" |
@@ -69,7 +65,7 @@ SELECT 'I''m here', """Double""";
 
 ## Escape Sequences
 
-There are other escape sequences also. Here is a full list:
+There are other escape sequences:
 
 | Escape sequence | Character                                           |
 | --------------- | --------------------------------------------------- |
