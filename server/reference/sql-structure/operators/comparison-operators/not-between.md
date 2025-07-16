@@ -1,26 +1,20 @@
-
 # NOT BETWEEN
 
 ## Syntax
 
-
-```
+```sql
 expr NOT BETWEEN min AND max
 ```
 
 ## Description
 
+This is the same as `NOT` (`expr` [BETWEEN](between-and.md) `min` `AND` `max`).
 
-This is the same as NOT (expr [BETWEEN](between-and.md) min AND max).
-
-
-Note that the meaning of the alternative form `NOT expr BETWEEN min AND max` is affected by the `HIGH_NOT_PRECEDENCE` [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) flag.
-
+Note that the meaning of the alternative form `NOT expr BETWEEN min AND max` is affected by the `HIGH_NOT_PRECEDENCE` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) flag.
 
 ## Examples
 
-
-```
+```sql
 SELECT 1 NOT BETWEEN 2 AND 3;
 +-----------------------+
 | 1 NOT BETWEEN 2 AND 3 |
@@ -29,7 +23,7 @@ SELECT 1 NOT BETWEEN 2 AND 3;
 +-----------------------+
 ```
 
-```
+```sql
 SELECT 'b' NOT BETWEEN 'a' AND 'c';
 +-----------------------------+
 | 'b' NOT BETWEEN 'a' AND 'c' |
@@ -38,10 +32,9 @@ SELECT 'b' NOT BETWEEN 'a' AND 'c';
 +-----------------------------+
 ```
 
-NULL:
+`NULL`:
 
-
-```
+```sql
 SELECT 1 NOT BETWEEN 1 AND NULL;
 +--------------------------+
 | 1 NOT BETWEEN 1 AND NULL |
@@ -50,8 +43,6 @@ SELECT 1 NOT BETWEEN 1 AND NULL;
 +--------------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

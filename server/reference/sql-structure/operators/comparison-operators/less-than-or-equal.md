@@ -1,24 +1,18 @@
-
 # <=
 
 ## Syntax
 
-
-```
+```sql
 <=
 ```
 
-
 ## Description
 
-
-Less than or equal operator. Evaluates both SQL expressions and returns 1 if the left value is less than or equal to the right value and 0 if it is not, or `NULL` if either expression is NULL. If the expressions return different data types, (for instance, a number and a string), performs type conversion.
-
+Less than or equal operator. Evaluates both SQL expressions and returns `1` if the left value is less than or equal to the right value and `0` if it is not, or `NULL` if either expression is `NULL`. If the expressions return different data types, (for instance, a number and a string), performs type conversion.
 
 When used in row comparisons these two queries return the same results:
 
-
-```
+```sql
 SELECT (t1.a, t1.b) <= (t2.x, t2.y) 
 FROM t1 INNER JOIN t2;
 
@@ -28,8 +22,7 @@ FROM t1 INNER JOIN t2;
 
 ## Examples
 
-
-```
+```sql
 SELECT 0.1 <= 2;
 +----------+
 | 0.1 <= 2 |
@@ -38,7 +31,7 @@ SELECT 0.1 <= 2;
 +----------+
 ```
 
-```
+```sql
 SELECT 'a'<='A';
 +----------+
 | 'a'<='A' |
@@ -49,11 +42,8 @@ SELECT 'a'<='A';
 
 ## See Also
 
-
 * [Operator Precedence](../operator-precedence.md)
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

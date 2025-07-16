@@ -2,20 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 AND, &&
 ```
 
 ## Description
 
-Logical AND. Evaluates to 1 if all operands are non-zero and not NULL,\
-to 0 if one or more operands are 0, otherwise NULL is returned.
+Logical `AND`. Evaluates to `1` if all operands are non-zero and not `NULL`, to `0` if one or more operands are `0`, otherwise `NULL` is returned.
 
 For this operator, [short-circuit evaluation](../operator-precedence.md#short-circuit-evaluation) can be used.
 
 ## Examples
 
-```
+```sql
 SELECT 1 && 1;
 +--------+
 | 1 && 1 |
