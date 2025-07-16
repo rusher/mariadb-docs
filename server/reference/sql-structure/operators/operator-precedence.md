@@ -19,7 +19,7 @@ The following list shows the SQL operator precedence. **Operators that appear fi
 * [^](../../sql-functions/aggregate-functions/bit_xor.md) (bitwise XOR)
 * [\*](../../sql-functions/numeric-functions/multiplication-operator.md), [/](../../sql-functions/numeric-functions/division-operator.md), [DIV](../../sql-functions/numeric-functions/div.md), [%](arithmetic-operators/modulo-operator.md), [MOD](../../sql-functions/numeric-functions/mod.md) (multiplication, division, modulo)
 * [-](arithmetic-operators/subtraction-operator.md), [+](../../sql-functions/numeric-functions/addition-operator.md) (subtraction, addition)
-* [<<](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/shift-left.md), [>>](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/shift-right.md)
+* [<<](../../sql-functions/secondary-functions/bit-functions-and-operators/shift-left.md), [>>](../../sql-functions/secondary-functions/bit-functions-and-operators/shift-right.md)
 * [&](../../sql-functions/aggregate-functions/bit_and.md) (bitwise AND)
 * [|](../../sql-functions/aggregate-functions/bit_or.md) (bitwise OR)
 * [LIKE](../../sql-functions/string-functions/like.md), [REGEXP](../../sql-functions/string-functions/regular-expressions-functions/regexp.md), [IN](comparison-operators/in.md)
