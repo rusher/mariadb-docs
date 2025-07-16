@@ -81,7 +81,7 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 
 ### mariadb Client
 
-* Can set an alternative directory path for searching scripts invoked via the source command, with the [--script-dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-script-dir) mariadb client option ([MDEV-23818](https://jira.mariadb.org/browse/MDEV-23818))
+* Can set an alternative directory path for searching scripts invoked via the source command, with the [--script-dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#script-dir) mariadb client option ([MDEV-23818](https://jira.mariadb.org/browse/MDEV-23818))
 
 ## List of All MariaDB 12.0 Releases
 
