@@ -1,5 +1,7 @@
 # MariaDB 12.0 Changes & Improvements
 
+{% include "../../.gitbook/includes/latest-12-0.md" %}
+
 MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an evolution of [MariaDB 11.8](../mariadb-11-8-series/what-is-mariadb-118.md) with several entirely new features.
 
 ## New Features
