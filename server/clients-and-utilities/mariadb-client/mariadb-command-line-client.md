@@ -52,211 +52,211 @@ mariadb <options>
 
 `mariadb` supports the following options:
 
-### `-?, --help`
+#### `-?, --help`
 
 Display help and exit.
 
-### `-I, --help`
+#### `-I, --help`
 
 Synonym for `-?`
 
-### `--abort-source-on-error`
+#### `--abort-source-on-error`
 
 Abort 'source filename' operations in case of errors.
 
-### `--auto-rehash`
+#### `--auto-rehash`
 
 Enable automatic rehashing. This option is on by default, which enables database, table, and column name completion. Use `--disable-auto-rehash`, `--no-auto-rehash` or `skip-auto-rehash` to disable rehashing. That causes mariadb to start faster, but you must issue the rehash command if you want to use name completion. To complete a name, enter the first part and press Tab. If the name is unambiguous, mariadb completes it. Otherwise, you can press Tab again to see the possible names that begin with what you have typed so far. Completion does not occur if there is no default database.
 
-### `-A, --no-auto-rehash`
+#### `-A, --no-auto-rehash`
 
 No automatic rehashing. One has to use 'rehash' to get table and field completion. This gives a quicker start of mariadb and disables rehashing on reconnect.
 
-### `--auto-vertical-output`
+#### `--auto-vertical-output`
 
 Automatically switch to vertical output mode if the result is wider than the terminal width.
 
-### `-B, --batch`
+#### `-B, --batch`
 
 Print results using tab as the column separator, with each row on a new line. With this option, mariadb does not use the history file. Batch mode results in nontabular output format and escaping of special characters. Escaping may be disabled by using raw mode; see the description for the `--raw` option. (Enables `--silent`.)
 
-### `--binary-mode`
+#### `--binary-mode`
 
 By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This switch turns off both features, and also turns off parsing of all client commands except \C and DELIMITER, in non-interactive mode (for input piped to mariadb or loaded using the 'source' command). This is necessary when processing output from [mariadb-binlog](../logging-tools/mariadb-binlog/) that may contain blobs.
 
-### `--character-sets-dir=name`
+#### `--character-sets-dir=name`
 
 Directory for [character set](../../reference/data-types/string-data-types/character-sets/) files.
 
-### `--column-names`
+#### `--column-names`
 
 Write column names in results. (Defaults to on; use `--skip-column-names` to disable.)
 
-### `--column-type-info`
+#### `--column-type-info`
 
 Display column type information.
 
-### `-c, --comments`
+#### `-c, --comments`
 
 Preserve comments. Send comments to the server. The default is `--skip-comments` (discard comments), enable with `--comments`.
 
-### `-C, --compress`
+#### `-C, --compress`
 
 Compress all information sent between the client and the server if both support compression.
 
-### `--connect-expired-password`
+#### `--connect-expired-password`
 
 Notify the server that this client is prepared to handle [expired password sandbox mode](../../security/user-account-management/user-password-expiry.md) even if `--batch` was specified. From [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes).
 
-### `--connect-timeout=num`
+#### `--connect-timeout=num`
 
 Number of seconds before connection timeout. Defaults to zero.
 
-### `-D, --database=name`
+#### `-D, --database=name`
 
 Database to use.
 
-### `-``[options], --debug[=options]`
+#### `-``[options], --debug[=options]`
 
 On debugging builds, write a debugging log. A typical debug\_options string is `d:t:o,file_name`. The default is `d:t:o,/tmp/mysql.trace`.
 
-### `--debug-check`
+#### `--debug-check`
 
 Check memory and open file usage at exit.
 
-### `-T, --debug-info`
+#### `-T, --debug-info`
 
 Print some debug info at exit.
 
-### `--default-auth=plugin`
+#### `--default-auth=plugin`
 
 Default authentication client-side plugin to use.
 
-### `--default-character-set=name`
+#### `--default-character-set=name`
 
 Set the default [character set](../../reference/data-types/string-data-types/character-sets/). A common issue that can occur when the operating system uses utf8 or another multibyte character set is that output from the mariadb client is formatted incorrectly, due to the fact that the MariaDB client uses the latin1 character set by default. You can usually fix such issues by using this option to force the client to use the system character set instead. If set to `auto` the character set is taken from the client environment (`LC_CTYPE` on Unix).
 
-### `--defaults-extra-file=file`
+#### `--defaults-extra-file=file`
 
 Read this file after the global files are read. Must be given as the first option.
 
-### `--defaults-file=file`
+#### `--defaults-file=file`
 
 Only read default options from the given _file_. Must be given as the first option.
 
-### `--defaults-group-suffix=suffix`
+#### `--defaults-group-suffix=suffix`
 
 In addition to the given groups, also read groups with this suffix.
 
-### `--delimiter=name`
+#### `--delimiter=name`
 
 Delimiter to be used. The default is the semicolon character (“;”).
 
-### `--enable-cleartext-plugin`
+#### `--enable-cleartext-plugin`
 
 Obsolete option. Exists only for MySQL compatibility.
 
-### `-e, --execute=name`
+#### `-e, --execute=name`
 
 Execute statement and quit. Disables `--force` and history file. The default output format is like that produced with `--batch`.
 
-### `-f, --force`
+#### `-f, --force`
 
 Continue even if we get an SQL error. Sets `--abort-source-on-error` to 0.
 
-### `-h, --host=name`
+#### `-h, --host=name`
 
 Connect to host.
 
-### `-H, --html`
+#### `-H, --html`
 
 Produce HTML output.
 
-### `-U, --i-am-a-dummy`
+#### `-U, --i-am-a-dummy`
 
 Synonym for option `--safe-updates`, `-U`.
 
-### `-i, --ignore-spaces`
+#### `-i, --ignore-spaces`
 
 Ignore space after function names. Allows one to have spaces (including tab characters and new line characters) between function name and '('. The drawback is that this causes built in functions to become reserved words.
 
-### `--init-command=str`
+#### `--init-command=str`
 
 SQL Command to execute when connecting to the MariaDB server. Will automatically be re-executed when reconnecting.
 
-### `--line-numbers`
+#### `--line-numbers`
 
 Write line numbers for errors. (Defaults to on; use `--skip-line-numbers` to disable.)
 
-### `--local-infile`
+#### `--local-infile`
 
 Enable or disable LOCAL capability for [LOAD DATA INFILE](../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md). With no value, the option enables LOCAL. The option may be given as`--local-infile=0` or `--local-infile=1` to explicitly disable or enable LOCAL. Enabling LOCAL has no effect if the server does not also support it.
 
-### `--max-allowed-packet=num`
+#### `--max-allowed-packet=num`
 
 The maximum packet length to send to or receive from server. The default is 16MB, the maximum 1GB.
 
-### `--max-join-size=num`
+#### `--max-join-size=num`
 
 Automatic limit for rows in a join when using `--safe-updates`. Default is 1000000.
 
-### `-G, --named-commands`
+#### `-G, --named-commands`
 
 Enable named commands. Named commands mean mariadb's internal commands (see below) . When enabled, the named commands can be used from any line of the query, otherwise only from the first line, before an enter. Long-format commands are allowed, not just short-format commands. For example, `quit` and `\q` are both recognized. Disable with `--disable-named-commands`. This option is disabled by default.
 
-### `--net-buffer-length=num`
+#### `--net-buffer-length=num`
 
 The buffer size for TCP/IP and socket communication. Default is 16KB.
 
-### `-b, --no-beep`
+#### `-b, --no-beep`
 
 Turn off beep on error.
 
-### `--no-defaults`
+#### `--no-defaults`
 
 Don't read default options from any option file. Must be given as the first option.
 
-### `-o, --one-database`
+#### `-o, --one-database`
 
 Ignore statements except those that occur while the default database is the one named on the command line. This filtering is limited, and based only on [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) statements. This is useful for skipping updates to other databases in the binary log.
 
-### `--pager[=name]`
+#### `--pager[=name]`
 
 Pager to use to display results (Unix only). If you don't supply an option, the default pager is taken from your ENV variable PAGER. Valid pagers are _less_, _more_, _cat \[> filename]_, etc. See interactive help (\h) also. This option does not work in batch mode. Disable with `--disable-pager`. This option is disabled by default.
 
-### `-p, --password[=name]`
+#### `-p, --password[=name]`
 
 Password to use when connecting to server. If you use the short option form (-p), you cannot have a space between the option and the password. If you omit the password value following the `--password` or `-p` option on the command line, mariadb prompts for one. Specifying a password on the command line should be considered insecure. You can use an option file to avoid giving the password on the command line.
 
-### `--plugin-dir=name`
+#### `--plugin-dir=name`
 
 Directory for client-side plugins.
 
-### `-P, --port=num`
+#### `-P, --port=num`
 
 Port number to use for connection or 0 for default to, in order of preference, my.cnf, $MYSQL\_TCP\_PORT, /etc/services, built-in default (3306).
 
-### `--print-defaults`
+#### `--print-defaults`
 
 Print the program argument list and exit. Must be given as the first option.
 
-### `--progress-reports`
+#### `--progress-reports`
 
 Get [progress reports](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting) for long running commands (such as [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/)). (Defaults to on; use `--skip-progress-reports` to disable.)
 
-### `--prompt=name`
+#### `--prompt=name`
 
 Set the mariadb prompt to this value. See [prompt command](mariadb-command-line-client.md#prompt-command) for options.
 
-### `--protocol=name`
+#### `--protocol=name`
 
 The protocol to use for connection (tcp, socket, pipe, memory).
 
-### `-q, --quick`
+#### `-q, --quick`
 
 Don't cache result, print it row by row. This may slow down the server if the output is suspended. Doesn't use history file.
 
-### `--quick-max-column-width=N`
+#### `--quick-max-column-width=N`
 
 {% tabs %}
 {% tab title="Current" %}
@@ -268,19 +268,19 @@ This option is not available.
 {% endtab %}
 {% endtabs %}
 
-### `-r, --raw`
+#### `-r, --raw`
 
 For tabular output, the “boxing” around columns enables one column value to be distinguished from another. For nontabular output (such as is produced in batch mode or when the `--batch` or `--silent` option is given), special characters are escaped in the output so they can be identified easily. Newline, tab, NUL, and backslash are written as , , `\0`, and \`\`. The `--raw` option disables this character escaping.
 
-### `--reconnect`
+#### `--reconnect`
 
 Reconnect if the connection is lost. This option is enabled by default. Disable with `--disable-reconnect` or `skip-reconnect`.
 
-### `-U, --safe-updates`
+#### `-U, --safe-updates`
 
 Allow only those [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements that specify which rows to modify by using key values. If you have set this option in an option file, you can override it by using `--safe-updates` on the command line. See [using the --safe-updates option](mariadb-command-line-client.md#using-the-safe-updates-option) for more.
 
-### `--sandbox`
+#### `--sandbox`
 
 {% tabs %}
 {% tab title="Current" %}
@@ -292,7 +292,7 @@ This option is not available.
 {% endtab %}
 {% endtabs %}
 
-### `--script-dir`
+#### `--script-dir`
 
 {% tabs %}
 {% tab title="Current" %}
@@ -304,59 +304,59 @@ This option is not available.
 {% endtab %}
 {% endtabs %}
 
-### `--secure-auth`
+#### `--secure-auth`
 
 Refuse client connecting to server if it uses old (pre-MySQL4.1.1) protocol. Defaults to false.
 
-### `--select-limit=num`
+#### `--select-limit=num`
 
 Automatic limit for `SELECT` when using --safe-updates. Default 1000.
 
-### `--server-arg=name`
+#### `--server-arg=name`
 
 Send embedded server this as a parameter.
 
-### `--shared-memory-base-name=name`
+#### `--shared-memory-base-name=name`
 
 Shared-memory name to use for Windows connections using shared memory to a local server (started with the --shared-memory option). Case-sensitive.
 
-### `--show-warnings`
+#### `--show-warnings`
 
 Show warnings after every statement. Applies to interactive and batch mode.
 
-### `--sigint-ignore`
+#### `--sigint-ignore`
 
 Ignore SIGINT signals (usually CTRL-C).
 
-### `-s, --silent`
+#### `-s, --silent`
 
 Be more silent. This option can be given multiple times to produce less and less output. This option results in nontabular output format and escaping of special characters. Escaping may be disabled by using raw mode; see the description for the `--raw` option.
 
-### `--skip-auto-rehash`
+#### `--skip-auto-rehash`
 
 Disable automatic rehashing. See `--auto-rehash`.
 
-### `-N, --skip-column-names`
+#### `-N, --skip-column-names`
 
 Don't write column names in results. See `--column-names`.
 
-### `--skip-comments`
+#### `--skip-comments`
 
 Discard comments. Set by default, see `--comments` to enable.
 
-### `-L`, `--skip-line-numbers`
+#### `-L`, `--skip-line-numbers`
 
 Don't write line number for errors. See `--line-numbers`.
 
-### `--skip-progress-reports`
+#### `--skip-progress-reports`
 
 Disables getting [progress reports](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting) for long running commands. See `--progress-reports`.
 
-### `--skip-reconnect`
+#### `--skip-reconnect`
 
 Don't reconnect if the connection is lost. See `--reconnect`.
 
-### `-S, --socket=name`
+#### `-S, --socket=name`
 
 For connections to localhost, the Unix socket file to use, or, on Windows, the name of the named pipe to use. The socket file can exist in different locations depending on setup. Common locations include:
 
@@ -365,7 +365,7 @@ For connections to localhost, the Unix socket file to use, or, on Windows, the n
 * Red Hat: /var/lib/mysql/mysql.sock
 * Other: /tmp/mysql.sock
 
-### `--ssl`
+#### `--ssl`
 
 {% tabs %}
 {% tab title="Current" %}
@@ -379,35 +379,35 @@ Enables [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-i
 {% endtab %}
 {% endtabs %}
 
-### `--ssl-ca=name`
+#### `--ssl-ca=name`
 
 Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Authorities (CAs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option implies the `--ssl` option.
 
-### `--ssl-capath=name`
+#### `--ssl-capath=name`
 
 Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Authorities (CAs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option is only supported if the client was built with OpenSSL or yaSSL. If the client was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. This option implies the `--ssl` option.
 
-### `--ssl-cert=name`
+#### `--ssl-cert=name`
 
 Defines a path to the X509 certificate file to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. This option implies the `--ssl` option.
 
-### `--ssl-cipher=name`
+#### `--ssl-cipher=name`
 
 List of permitted ciphers or cipher suites to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option implies the `--ssl` option.
 
-### `--ssl-crl=name`
+#### `--ssl-crl=name`
 
 Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL or Schannel. If the client was built with yaSSL or GnuTLS, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
 
-### `--ssl-crlpath=name`
+#### `--ssl-crlpath=name`
 
 Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL. If the client was built with yaSSL, GnuTLS, or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
 
-### `--ssl-key=name`
+#### `--ssl-key=name`
 
 Defines a path to a private key file to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. This option implies the `--ssl` option.
 
-### `--ssl-verify-server-cert`
+#### `--ssl-verify-server-cert`
 
 {% tabs %}
 {% tab title="Current" %}
@@ -419,51 +419,51 @@ Enables [server certificate verification](../../security/securing-mariadb/securi
 {% endtab %}
 {% endtabs %}
 
-### `-t, --table`
+#### `-t, --table`
 
 Display output in table format. This is the default for interactive use, but can be used to produce table output in batch mode.
 
-### `--tee=name`
+#### `--tee=name`
 
 Append everything into outfile. See interactive help (\h) also. Does not work in batch mode. Disable with `--disable-tee`. This option is disabled by default.
 
-### `--tls-version=name`
+#### `--tls-version=name`
 
 This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. See [Secure Connections Overview: TLS Protocol Versions](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions) for more information.&#x20;
 
-### `--ssl-fp=name`
+#### `--ssl-fp=name`
 
 Server certificate fingerprint (implies --ssl).
 
-### `--ssl-fplist=name`
+#### `--ssl-fplist=name`
 
 File with accepted server certificate fingerprints, one per line (implies --ssl).
 
-### `-n, --unbuffered`
+#### `-n, --unbuffered`
 
 Flush buffer after each query.
 
-### `-u`, `--user=name`
+#### `-u`, `--user=name`
 
 User for login if not current user.
 
-### `-v, --verbose`
+#### `-v, --verbose`
 
 Write more. (-v -v -v gives the table output format).
 
-### `-V, --version`
+#### `-V, --version`
 
 Output version information and exit.
 
-### `-E, --vertical`
+#### `-E, --vertical`
 
 Print the output of a query (rows) vertically. Use the `\G` delimiter to apply to a particular statement if this option is not enabled.
 
-### `-w, --wait`
+#### `-w, --wait`
 
 If the connection cannot be established, wait and retry instead of aborting.
 
-### `-X`, `--xml`
+#### `-X`, `--xml`
 
 Produce XML output. See the [mariadb-dump --xml option](../backup-restore-and-import-clients/mariadb-dump.md#null-null-and-empty-values-in-xml) for more.
 
