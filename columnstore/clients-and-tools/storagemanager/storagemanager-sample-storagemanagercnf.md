@@ -1,6 +1,6 @@
 # Sample storagemanager.cnf
 
-```
+```sql
 # Sample storagemanager.cnf
 
 [ObjectStorage]
