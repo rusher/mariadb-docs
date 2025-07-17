@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 ALTER USER [IF EXISTS] 
  user_specification [,user_specification] ...
   [REQUIRE {NONE | tls_option [[AND] tls_option] ...}]
@@ -84,6 +84,9 @@ CREATE USER 'bob'@'localhost'
   OR unix_socket;
 
 SHOW CREATE USER 'bob'@'localhost'\G
+```
+
+```
 *************************** 1. row ***************************
 CREATE USER for bob@localhost: CREATE USER `bob`@`localhost` 
   IDENTIFIED VIA mysql_native_password 
@@ -98,6 +101,9 @@ ALTER USER 'bob'@'localhost' IDENTIFIED VIA mysql_native_password
   USING PASSWORD('pwd2');
 
 SHOW CREATE USER 'bob'@'localhost'\G
+```
+
+```
 *************************** 1. row ***************************
 CREATE USER for bob@localhost: CREATE USER `bob`@`localhost` 
   IDENTIFIED BY PASSWORD '*38366FDA01695B6A5A9DD4E428D9FB8F7EB75512'
@@ -128,6 +134,9 @@ For example, if our password is `mariadb`, then we can find the hash with:
 
 ```sql
 SELECT PASSWORD('mariadb');
+```
+
+```
 +-------------------------------------------+
 | PASSWORD('mariadb')                       |
 +-------------------------------------------+
