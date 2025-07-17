@@ -56,7 +56,7 @@
   * [StorageManager](clients-and-tools/storagemanager/README.md)
     * [Certified S3 Object Storage Providers](clients-and-tools/storagemanager/certified-s3-object-storage-providers.md)
     * [Sample storagemanager.cnf](clients-and-tools/storagemanager/storagemanager-sample-storagemanagercnf.md)
-    * [Using StorageManager With IAM Role](clients-and-tools/storagemanager/using-storagemanager-with-iam-role.md)
+    * [Using StorageManager with IAM Role](clients-and-tools/storagemanager/using-storagemanager-with-iam-role.md)
   * [Data Ingestion Methods & Tools](clients-and-tools/data-ingestion/README.md)
     * [ColumnStore Batch Insert Mode](clients-and-tools/data-ingestion/columnstore-batch-insert-mode.md)
     * [ColumnStore Bulk Data Loading](clients-and-tools/data-ingestion/columnstore-bulk-data-loading.md)

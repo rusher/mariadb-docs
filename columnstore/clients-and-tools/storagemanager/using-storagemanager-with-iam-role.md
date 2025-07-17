@@ -1,4 +1,4 @@
-# Using StorageManager With IAM Role
+# Using StorageManager with IAM Role
 
 ## AWS IAM Role Configuration
 
@@ -12,9 +12,9 @@ For a complete list of AWS service endpoints, please visit the AWS [reference gu
 
 ### Sample configuration
 
-Edit your **Storage Manager** configuration file located at _/etc/columnstore/storagemanager.cnf_ in order to look similar to the example below (replacing those in the \[S3] section with your own custom variables):
+Edit your **Storage Manager** configuration file located at _`/etc/columnstore/storagemanager.cnf`_ in order to look similar to the example below (replacing those in the \[S3] section with your own custom variables):
 
-```
+```sql
 [ObjectStorage]
 service = S3
 object_size = 5M
