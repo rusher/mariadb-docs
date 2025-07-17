@@ -8,13 +8,13 @@ Enterprise ColumnStore only reads the columns that are necessary to resolve a qu
 
 For example, the following query selects every column in the table:
 
-```
+```sql
 SELECT * FROM tab;
 ```
 
 Whereas the following query only selects two columns in the table, so it requires less I/O:
 
-```
+```sql
 SELECT col1, col2 FROM tab;
 ```
 
@@ -30,13 +30,13 @@ When Enterprise ColumnStore 5 performs aggregations (i.e., `DISTINCT, GROUP BY, 
 
 For example, the following query could require a lot of memory in Enterprise ColumnStore 5, since it has to calculate many distinct values in memory:
 
-```
+```sql
 SELECT DISTINCT col1 FROM tab LIMIT 10000;
 ```
 
 Whereas the following query could require much less memory in Enterprise ColumnStore 5, since it has to calculate fewer distinct values:
 
-```
+```sql
 SELECT DISTINCT col1 FROM tab LIMIT 100;
 ```
 
@@ -80,14 +80,14 @@ For best performance, load ordered data in proper order.
 
 ## Enable Decimal Overflow Checks
 
-When Enterprise ColumnStore performs mathematical operations with very big values using the [DECIMAL](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-performance-tuning/columnstore-query-tuning/data-types-decimal/README.md), [NUMERIC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/numeric), and [FIXED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/fixed) data types, the operation can sometimes overflow ColumnStore's maximum precision or scale. The maximum precision and scale depends on the version of Enterprise ColumnStore:
+When Enterprise ColumnStore performs mathematical operations with very big values using the [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal), [NUMERIC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric), and [FIXED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/fixed) data types, the operation can sometimes overflow ColumnStore's maximum precision or scale. The maximum precision and scale depend on the version of Enterprise ColumnStore:
 
 * In Enterprise ColumnStore 6, the maximum precision (M) is 38, and the maximum scale (D) is 38.
 * In Enterprise ColumnStore 5, the maximum precision (M) is 18, and the maximum scale (D) is 18.
 
-In Enterprise ColumnStore 6, applications can configure Enterprise ColumnStore to check for decimal overflows by setting the columnstore\_decimal\_overflow\_check system variable, but only when the column has a decimal precision that is 18 or more:
+In Enterprise ColumnStore 6, applications can configure Enterprise ColumnStore to check for decimal overflows by setting the `columnstore_decimal_overflow_check` system variable, but only when the column has a decimal precision that is 18 or more:
 
-```
+```sql
 SET SESSION columnstore_decimal_overflow_check=ON;
 
 SELECT (big_decimal1 * big_decimal2) AS product
@@ -96,13 +96,13 @@ FROM columnstore_tab;
 
 When decimal overflow checks are enabled, math operations have extra overhead.
 
-When the decimal overflow check fails, MariaDB Enterprise ColumnStore raises an error with the [ER\_INTERNAL\_ERROR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1800-to-1899/e1815) error sql, and it writes detailed information about the overflow check failure to the ColumnStore system logs.
+When the decimal overflow check fails, MariaDB Enterprise ColumnStore raises an error with the `ER_INTERNAL_ERROR` error SQL, and it writes detailed information about the overflow check failure to the ColumnStore system logs.
 
 ## User-Defined Aggregate Function (UDAF) C++ API
 
 MariaDB Enterprise ColumnStore supports Enterprise Server's standard User-Defined Function (UDF) API. However, UDFs developed using that API cannot be executed in a distributed manner.
 
-To support distributed execution of custom sql, MariaDB Enterprise ColumnStore supports a Distributed User Defined Aggregate Functions (UDAF) C++ API:
+To support distributed execution of custom SQL, MariaDB Enterprise ColumnStore supports a Distributed User Defined Aggregate Functions (UDAF) C++ API:
 
 * The Distributed User Defined Aggregate Functions (UDAF) C++ API allows anyone to create aggregate functions of arbitrary complexity for distributed execution in the ColumnStore storage engine.
 * These functions can also be used as Analytic (Window) functions just like any built-in aggregate function.
