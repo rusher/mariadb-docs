@@ -20,7 +20,7 @@ MariaDB Enterprise ColumnStore provides horizontal scalability by executing some
 
 When Enterprise ColumnStore is evaluating a job step, the ExeMgr process or facility on the initiator/aggregator node requests the PrimProc process on each node to perform the job step on different extents in parallel. As more nodes are added, Enterprise ColumnStore can perform more work in parallel.
 
-Enterprise ColumnStore also uses massively parallel processing (MPP) techniques to speed up some types of job steps. For some types of aggregation operations, each node can perform an initial local aggregation, and then the initiator/aggregator node only needs to combine the local results and perform a final aggregation. This technique can be very efficient for some types of aggregation operations, such as for queries that use the AVG(), COUNT(), or SUM() aggregate functions.
+Enterprise ColumnStore also uses massively parallel processing (MPP) techniques to speed up some types of job steps. For some types of aggregation operations, each node can perform an initial local aggregation, and then the initiator/aggregator node only needs to combine the local results and perform a final aggregation. This technique can be very efficient for some types of aggregation operations, such as for queries that use the `AVG(), COUNT(), or SUM()` aggregate functions.
 
 ### Vertical Scalability
 
@@ -36,7 +36,7 @@ MariaDB Enterprise ColumnStore uses extent elimination to scale query evaluation
 
 Most databases are row-based databases that use manually-created indexes to achieve high performance on large tables. This works well for transactional workloads. However, analytical queries tend to have very low selectivity, so traditional indexes are not typically effective for analytical queries.
 
-Enterprise ColumnStore uses extent elimination to achieve high performance, without requiring manually created indexes. Enterprise ColumnStore automatically partitions all data into [extents](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/README.md#extents). Enterprise ColumnStore stores the minimum and maximum values for each extent in the [extent map](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/README.md#extent-map). Enterprise ColumnStore uses the minimum and maximum values in the extent map to perform extent elimination.
+Enterprise ColumnStore uses extent elimination to achieve high performance, without requiring manually created indexes. Enterprise ColumnStore automatically partitions all data into [extents](columnstore-storage-architecture.md#extents). Enterprise ColumnStore stores the minimum and maximum values for each extent in the [extent map](columnstore-storage-architecture.md#extent-map). Enterprise ColumnStore uses the minimum and maximum values in the extent map to perform extent elimination.
 
 When Enterprise ColumnStore performs extent elimination, it compares the query's join conditions and filter conditions (i.e., WHERE clause) to the minimum and maximum values for each extent in the extent map. If the extent's minimum and maximum values fall outside the bounds of the query's conditions, Enterprise ColumnStore skips that extent for the query.
 
@@ -52,7 +52,7 @@ For select statements, the handler API transforms each query into a `SELECT_LEX`
 
 The generic select handler is not optimal for Enterprise ColumnStore, because:
 
-* Enterprise ColumnStore selects data by column, but the generic select handler selects data by row
+* Enterprise ColumnStore selects data by column, but the generic selects handler selects data by row
 * Enterprise ColumnStore supports parallel query evaluation, but the generic select handler does not
 * Enterprise ColumnStore supports distributed aggregations, but the generic select handler does not
 * Enterprise ColumnStore supports distributed functions, but the generic select handler does not
@@ -69,13 +69,13 @@ As a smart storage engine, the ColumnStore storage engine plugin tightly integra
 
 ### Configure the Select Handler
 
-The ColumnStore storage engine can use either the custom select handler or the generic select handler. The select handler can be configured using the columnstore\_select\_handler system variable:
+The ColumnStore storage engine can use either the custom select handler or the generic select handler. The select handler can be configured using the `columnstore_select_handler` system variable:
 
-| Value | Description                                                                                                                                                                         |
-| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| AUTO  | • When set to AUTO, Enterprise ColumnStore automatically chooses the best select handler for a given SELECT query. • AUTO was added in Enterprise ColumnStore 6.                    |
-| OFF   | • When set to OFF, Enterprise ColumnStore uses the generic select handler for all SELECT queries. • It is not recommended to use this value, unless recommended by MariaDB Support. |
-| ON    | • When set to ON, Enterprise ColumnStore uses the custom select handler for all SELECT queries. • ON is the default in Enterprise ColumnStore 5 and Enterprise ColumnStore 6.       |
+| Value | Description                                                                                                                                                                          |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AUTO  | • When set to AUTO, Enterprise ColumnStore automatically chooses the best select handler for a given SELECT query. • AUTO was added in Enterprise ColumnStore 6.                     |
+| OFF   | • When set to OFF, Enterprise ColumnStore uses the generic select handlers for all SELECT queries. • It is not recommended to use this value, unless recommended by MariaDB Support. |
+| ON    | • When set to ON, Enterprise ColumnStore uses the custom select handlers for all SELECT queries. • ON is the default in Enterprise ColumnStore 5 and Enterprise ColumnStore 6.       |
 
 ## Joins
 
@@ -96,7 +96,7 @@ The relevant configuration options are:
 
 For example, to configure Enterprise ColumnStore to use more memory for hash joins using the mcsSetConfig utility:
 
-```
+```sql
 $ mcsSetConfig HashJoin PmMaxMemorySmallSide 2G
 $ mcsSetConfig HashJoin TotalUmMemory '40%'
 ```
@@ -113,9 +113,9 @@ The relevant configuration options are:
 | HashJoin     | TempFileCompression | • Enables compression for temporary files used by disk-based joins. • Valid values are Y and N • Default value is N.                        |
 | SystemConfig | SystemTempFileDir   | Configures the directory used for temporary files used by disk-based joins and aggregations • Default value is /tmp/columnstore\_tmp\_files |
 
-For example, to configure Enterprise ColumnStore to perform disk-based joins using the mcsSetConfig utility:
+For example, to configure Enterprise ColumnStore to perform disk-based joins using the `mcsSetConfig` utility:
 
-```
+```sql
 $ mcsSetConfig HashJoin AllowDiskBasedJoin Y
 $ mcsSetConfig HashJoin TempFileCompression Y
 $ mcsSetConfig SystemConfig SystemTempFileDir /mariadb/tmp
@@ -139,9 +139,9 @@ The relevant configuration options are:
 | RowAggregation | Compression               | • Enables compression for temporary files used by disk-based joins. • Valid values are Y and N • Default value is N.                        |
 | SystemConfig   | SystemTempFileDir         | Configures the directory used for temporary files used by disk-based joins and aggregations • Default value is /tmp/columnstore\_tmp\_files |
 
-For example, to configure Enterprise ColumnStore to perform disk-based aggregations using the mcsSetConfig utility:
+For example, to configure Enterprise ColumnStore to perform disk-based aggregations using the `mcsSetConfig` utility:
 
-```
+```sql
 $ mcsSetConfig RowAggregation AllowDiskBasedAggregation Y
 $ mcsSetConfig RowAggregation Compression SNAPPY
 $ mcsSetConfig SystemConfig SystemTempFileDir /mariadb/tmp

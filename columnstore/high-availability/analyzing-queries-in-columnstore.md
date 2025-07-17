@@ -38,7 +38,7 @@ Oct 7 08:38:30    00:00:03       73 select c_name,sum(lo_revenue) from customer,
 
 ### Query statistics
 
-The _calGetStats_ function provides statistics about resources used on the [User Module](../architecture/columnstore-user-module/) (UM) node, PM node, and network by the last run query.\
+The _calGetStats_ function provides statistics about resources used on the [User Module](../architecture/columnstore-user-module.md) (UM) node, PM node, and network by the last run query.\
 Example:
 
 ```
@@ -61,7 +61,7 @@ MariaDB [test]> select calGetStats();
 
 The output contains information on:
 
-* MaxMemPct - Peak memory utilization on the [User Module](../architecture/columnstore-user-module/), likely in support of a large (User Module) based hash join operation.
+* MaxMemPct - Peak memory utilization on the [User Module](../architecture/columnstore-user-module.md), likely in support of a large (User Module) based hash join operation.
 * NumTempFiles - Report on any temporary files created in support of query operations larger than available memory, typically for unusual join operations where the smaller table join cardinality exceeds some configurable threshold.
 * TempFileSpace - Report on space used by temporary files created in support of query operations larger than available memory, typically for unusual join operations where the smaller table join cardinality exceeds some configurable threshold.
 * PhyI/O - Number of 8k blocks read from disk, SSD, or other persistent storage.
@@ -75,7 +75,7 @@ The output is useful to determine how much physical I/O was required, how much d
 ## Query plan / trace
 
 While the MariaDB Server's [EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) utility can be used to look at the query plan, it is somewhat less helpful for ColumnStore tables as ColumnStore does not use indexes or make use of MariaDB I/O functionality.\
-The execution plan for a query on a ColumnStore table is made up of multiple steps. Each step in the query plan performs a set of operations that are issued from the [User Module](../architecture/columnstore-user-module/) to the set of [Performance Modules](../architecture/columnstore-performance-module.md) in support of a given step in a query.
+The execution plan for a query on a ColumnStore table is made up of multiple steps. Each step in the query plan performs a set of operations that are issued from the [User Module](../architecture/columnstore-user-module.md) to the set of [Performance Modules](../architecture/columnstore-performance-module.md) in support of a given step in a query.
 
 * Full Column Scan - an operation that scans each entry in a column using all available threads on the Performance Modules. Speed of operation is generally related to the size of the data type and the total number of rows in the column. The closest analogy for a traditional system is an index scan operation.
 * Partitioned Column Scan - an operation that uses the Extent Map to identify that certain portions of the column do not contain any matching values for a given set of filters. The closest analogy for a traditional row-based DBMS is a partitioned index scan, or partitioned table scan operation.
@@ -85,7 +85,7 @@ These operations are automatically executed together in order to execute appropr
 
 ### Viewing the ColumnStore query plan
 
-In MariaDB ColumnStore there is a set of SQL tracing stored functions provided to see the distributed query execution plan between the [UM](../architecture/columnstore-user-module/) and the [PM](../architecture/columnstore-performance-module.md).
+In MariaDB ColumnStore there is a set of SQL tracing stored functions provided to see the distributed query execution plan between the [UM](../architecture/columnstore-user-module.md) and the [PM](../architecture/columnstore-performance-module.md).
 
 The basic steps to using these SQL tracing stored functions are:
 
@@ -242,9 +242,9 @@ The columns of this table are:
 * Cache I/O (cacheIO) - The number of blocks that the query accessed from the cache. This statistic is only valid for queries that are processed by ExeMgr, i.e. SELECT, DML with WHERE clause, and INSERT SELECT.
 * Blocks Touched (blocksTouched) - The total number of blocks that the query accessed physically and from the cache. This should be equal or less than the sum of physical I/O and cache I/O. This statistic is only valid for queries that are processed by ExeMgr, i.e. SELECT, DML with WHERE clause, and INSERT SELECT.
 * Partition Blocks Eliminated (CPBlocksSkipped) - The number of blocks being eliminated by the extent map casual partition. This statistic is only valid for queries that are processed by ExeMgr, i.e. SELECT, DML with WHERE clause, and INSERT SELECT.
-* Messages from [UM](../architecture/columnstore-user-module/) and the [PM](../architecture/columnstore-performance-module.md) (msgOutUM) - The number of messages in bytes that ExeMgr sends to the PrimProc. If a message needs to be distributed to all the PMs, the sum of all the distributed messages will be counted. Only valid for queries that are processed by ExeMgr, i.e. SELECT, DML with WHERE clause, and INSERT SELECT.
+* Messages from [UM](../architecture/columnstore-user-module.md) and the [PM](../architecture/columnstore-performance-module.md) (msgOutUM) - The number of messages in bytes that ExeMgr sends to the PrimProc. If a message needs to be distributed to all the PMs, the sum of all the distributed messages will be counted. Only valid for queries that are processed by ExeMgr, i.e. SELECT, DML with WHERE clause, and INSERT SELECT.
 * Messages from PM to UM (msgInUM) - The number of messages in bytes that PrimProc sends to the ExeMgr. Only valid for queries that are processed by ExeMgr, i.e. SELECT, DML with where clause, and INSERT SELECT.
-* Memory Utilization (maxMemPct) - This field shows memory utilization for the [User Module](../architecture/columnstore-user-module/) (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
+* Memory Utilization (maxMemPct) - This field shows memory utilization for the [User Module](../architecture/columnstore-user-module.md) (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
 * Blocks Changed (blocksChanged) - Total number of blocks that queries physically changed on disk. This is only for delete/update statements.
 * Temp Files (numTempFiles) - This field shows any temporary file utilization for the User Module (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
 * Temp File Space (tempFileSpace) - This shows the size of any temporary file utilization for the User Module (UM) in support of any UM join, group by, aggregation, distinct, or other operation.

@@ -4,17 +4,6 @@ description: >-
   analytical workloads. Learn about its architecture, features, and how it
   enables high-performance data warehousing and analytics.
 icon: table-columns
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # MariaDB ColumnStore
