@@ -11,7 +11,9 @@ The [ColumnStore Bulk Data API](columnstore-bulk-data-loading.md) enables the cr
 The MaxScale CDC Data Adapter has been deprecated.
 {% endhint %}
 
-The MaxScale CDC Data Adapter allows to stream change data events(binary log events) from MariaDB Master hosting non-columnstore engines(InnoDB, MyRocks, MyISAM) to MariaDB ColumnStore. In another words replicate data from MariaDB Master to MariaDB ColumnStore. It acts as a CDC Client for MaxScale and uses the events received from MaxScale as input to MariaDB ColumnStore Bulk Data API to push the data to MariaDB ColumnStore.![maxscale-cdc-adapter](../../.gitbook/assets/maxscale-cdc-adapter.jpg)\
+The MaxScale CDC Data Adapter allows streaming change data events (binary log events) from MariaDB Master hosting non-columnstore engines (InnoDB, MyRocks, MyISAM) to MariaDB ColumnStore. In another words replicate data from MariaDB Master to MariaDB ColumnStore. It acts as a CDC Client for MaxScale and uses the events received from MaxScale as input to MariaDB ColumnStore Bulk Data API to push the data to MariaDB ColumnStore.![maxscale-cdc-adapter](../../.gitbook/assets/maxscale-cdc-adapter.jpg)
+
+\
 It registers with MariaDB MaxScale as a CDC Client using the [MaxScale CDC Connector API](https://mariadb.com/downloads/mariadb-ax/connector), receiving change data records from MariaDB MaxScale (that are converted from binlog events received from the Master on MariaDB TX) in a JSON format. Then, using the MariaDB ColumnStore bulk write SDK, converts the JSON data into API calls and streams it to a MariaDB PM node. The adapter has options to insert all the events in the same schema as the source database table or insert each event with metadata as well as table data. The event meta data includes the event timestamp, the GTID, event sequence and event type (insert, update, delete).
 
 ### Installation
@@ -23,14 +25,14 @@ It registers with MariaDB MaxScale as a CDC Client using the [MaxScale CDC Conne
 
 #### CentOS 7
 
-```
+```sql
 sudo yum -y install epel-release
 sudo yum -y install <data adapter>.rpm
 ```
 
 #### Debian 9/Ubuntu Xenial:
 
-```
+```sql
 sudo apt-get update
 sudo dpkg -i <data adapter>.deb
 sudo apt-get -f install
@@ -38,7 +40,7 @@ sudo apt-get -f install
 
 #### Debian 8:
 
-```
+```sql
 sudo echo "deb http://httpredir.debian.org/debian jessie-backports main contrib non-free" >> /etc/apt/sources.list
 sudo apt-get update
 sudo dpkg -i <data adapter>.deb
@@ -47,7 +49,7 @@ sudo apt-get -f install
 
 ### Usage
 
-```
+```sql
 Usage: mxs_adapter [OPTION]... DATABASE TABLE
 
  -f FILE      TSV file with database and table names to stream (must be in `database TAB table NEWLINE` format)
@@ -74,14 +76,14 @@ To stream multiple tables, use the -f parameter to define a path to a TSV format
 
 Here is an example file with two tables, t1 and t2 both in the test database.
 
-```
+```sql
 test	t1
 test	t2
 ```
 
 #### Automated Table Creation on ColumnStore
 
-You can have the adapter automatically create the tables on the ColumnStore instance with the -a option. In this case, the user used for cross-engine queries will be used to create the table (the values in Columnstore.CrossEngineSupport). This user will require CREATE privileges on all streamed databases and tables.
+You can have the adapter automatically create the tables on the ColumnStore instance with the -an option. In this case, the user used for cross-engine queries will be used to create the table (the values in `Columnstore.CrossEngineSupport`). This user will require `CREATE` privileges on all streamed databases and tables.
 
 #### Data Transformation Mode
 
@@ -101,13 +103,13 @@ Configure MaxScale according to the [CDC tutorial](https://app.gitbook.com/s/0pS
 
 Create a CDC user by executing the following MaxAdmin command on the MaxScale server. Replace the `<service>` with the name of the avrorouter service and `<user>` and `<password>` with the credentials that are to be created.
 
-```
+```sql
 maxadmin call command cdc add_user <service> <user> <password>
 ```
 
 Then we can start the adapter by executing the following command.
 
-```
+```sql
 mxs_adapter -u <user> -p <password> -h <host> -P <port> -c <path to Columnstore.xml> <database><table>
 ```
 
@@ -119,7 +121,9 @@ The `-c` flag is optional if you are running the adapter on the server where Col
 
 ## Kafka to ColumnStore Adapter
 
-The Kafka data adapter streams all messages published to Apache Kafka topics in Avro format to MariaDB AX automatically and continuously - enabling data from many sources to be streamed and collected for analysis without complex code. The Kafka adapter is built using [librdkafka](https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-C/C++) and the MariaDB ColumnStore bulk write SDK![kafka-data-adapter](../../.gitbook/assets/kafka-data-adapter.jpg)
+The Kafka data adapter streams all messages published to Apache Kafka topics in Avro format to MariaDB AX automatically and continuously - enabling data from many sources to be streamed and collected for analysis without complex code. The Kafka adapter is built using [librdkafka](https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-C/C++) and the MariaDB ColumnStore bulk write SDK
+
+![kafka-data-adapter](../../.gitbook/assets/kafka-data-adapter.jpg)
 
 A tutorial for the Kafka adapter for ingesting Avro formatted data can be found in the [kafka-to-columnstore-data-adapter](columnstore-streaming-data-adapters.md#kafka-to-columnstore-adapter) document.
 
@@ -137,9 +141,7 @@ The plugin was designed for the following software composition:
 * MariaDB ColumnStore >= 1.1.4
 * MariaDB Java Database client\* >= 2.2.1
 * Java >= 8
-* Pentaho Data Integration >= 7
-
-+not officially supported by Pentaho.
+* Pentaho Data Integration >= 7 +not officially supported by Pentaho.
 
 \*Only needed if you want to execute DDL.
 
@@ -154,13 +156,13 @@ The following steps are necessary to install the ColumnStore Data adapter (bulk 
 
 #### Ubuntu dependencies
 
-```
+```sql
 sudo apt-get install libuv1 libxml2 libsnappy1v5
 ```
 
 #### CentOS dependencies
 
-```
+```sql
 sudo yum install epel-release
 sudo yum install libuv libxml2 snappy
 ```
@@ -179,9 +181,9 @@ Both configurations can be set in each block’s settings tab.
 
 The database connection configuration follows PDI’s default schema.
 
-By default the plugin tries to use ColumnStore's default configuration _/usr/local/mariadb/columnstore/etc/Columnstore.xml_ to connect to the ColumnStore instance through the Bulk Write SDK. In addition, individual paths or variables can be used too.
+By default, the plugin tries to use ColumnStore's default configuration _`/usr/local/mariadb/columnstore/etc/Columnstore.xml`_ to connect to the ColumnStore instance through the `Bulk Write SDK`. In addition, individual paths or variables can be used too.
 
-Information on how to prepare the _Columnstore.xml_ configuration file can be found here.
+Information on how to prepare the _`Columnstore.xml`_ configuration file can be found here.
 
 ### Usage
 
