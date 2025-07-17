@@ -157,7 +157,7 @@ A subset of Oracle's PL/SQL language is supported in addition to the traditional
 ## Examples
 
 The following example shows a simple stored procedure that uses an `OUT`\
-parameter. It uses the DELIMITER command to set a new delimiter for the duration of the process — see [Delimiters in the mariadb client](../../../clients-and-utilities/mariadb-client/delimiters.md).
+parameter. It uses the DELIMITER command to set a new delimiter for the duration of the process — see [Delimiters in the mariadb client](broken-reference).
 
 ```sql
 DELIMITER //

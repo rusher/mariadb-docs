@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 IS NOT boolean_value
 ```
 
 ## Description
 
-Tests a value against a boolean value, where boolean\_value can be\
-TRUE, FALSE, or UNKNOWN.
+Tests a value against a boolean value, where `boolean_value` can be `TRUE`, `FALSE`, or `UNKNOWN`.
 
 ## Examples
 
-```
+```sql
 SELECT 1 IS NOT UNKNOWN, 0 IS NOT UNKNOWN, NULL IS NOT UNKNOWN;
 +------------------+------------------+---------------------+
 | 1 IS NOT UNKNOWN | 0 IS NOT UNKNOWN | NULL IS NOT UNKNOWN |
@@ -22,7 +21,7 @@ SELECT 1 IS NOT UNKNOWN, 0 IS NOT UNKNOWN, NULL IS NOT UNKNOWN;
 +------------------+------------------+---------------------+
 ```
 
-```
+```sql
 SELECT NULL IS NOT TRUE, NULL IS NOT FALSE;
 +------------------+-------------------+
 | NULL IS NOT TRUE | NULL IS NOT FALSE |

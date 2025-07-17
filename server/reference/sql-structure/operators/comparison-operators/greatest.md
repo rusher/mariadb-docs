@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 GREATEST(value1,value2,...)
 ```
 

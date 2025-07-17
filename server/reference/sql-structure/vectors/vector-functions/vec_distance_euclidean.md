@@ -2,13 +2,11 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/pBQsCgBA6SJpi0m3pZuk/" %}
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
-
-Vectors were introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).
+{% include "../../../../.gitbook/includes/vectors-are-available-from-....md" %}
 
 ## Syntax
 
-```
+```sql
 VEC_DISTANCE_EUCLIDEAN(v, s)
 ```
 
@@ -16,13 +14,13 @@ VEC_DISTANCE_EUCLIDEAN(v, s)
 
 `VEC_Distance_Euclidean` is an SQL function that calculates a Euclidean (L2) distance between two points.
 
-Vectors must be of the same length, a distance between two vectors of different lengths is not defined and `VEC_Distance_Euclidean` will return `NULL` in such a case.
+Vectors must be of the same length, a distance between two vectors of different lengths is not defined and `VEC_Distance_Euclidean` returns  `NULL` in such cases.
 
-If the vector index was not built for the euclidean function (see [CREATE TABLE with Vectors](../create-table-with-vectors.md)), the index will not be used, and a full table scan performed instead. The [VEC\_DISTANCE](vector-functions-vec_distance.md) function is a generic function that behaves either as VEC\_DISTANCE\_EUCLIDEAN or [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md), depending on the underlying index type.
+If the vector index was not built for the euclidean function (see [CREATE TABLE with Vectors](../create-table-with-vectors.md)), the index is not used, and a full table scan performed instead. The [VEC\_DISTANCE](vector-functions-vec_distance.md) function is a generic function that behaves either as `VEC_DISTANCE_EUCLIDEAN` or [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md), depending on the underlying index type.
 
 ## Example
 
-```
+```sql
 INSERT INTO v VALUES 
      (1, x'e360d63ebe554f3fcdbc523f4522193f5236083d'),
      (2, x'f511303f72224a3fdd05fe3eb22a133ffae86a3f'),

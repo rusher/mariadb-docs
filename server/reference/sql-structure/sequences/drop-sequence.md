@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP [TEMPORARY] SEQUENCE [IF EXISTS] [/*COMMENT TO SAVE*/]
     sequence_name [, sequence_name] ...
 ```
@@ -17,13 +17,13 @@ If another connection is using the sequence, a metadata lock is active, and this
 
 For each referenced sequence, DROP SEQUENCE drops a temporary sequence with that name, if it exists. If it does not exist, and the `TEMPORARY` keyword is not used, it drops a non-temporary sequence with the same name, if it exists. The `TEMPORARY` keyword ensures that a non-temporary sequence will not accidentally be dropped.
 
-Use `IF EXISTS` to prevent an error from occurring for sequences that do not exist. A NOTE is generated for each non-existent sequence when using `IF EXISTS`. See [SHOW WARNINGS](../../sql-statements/administrative-sql-statements/show/show-warnings.md).
+Use `IF EXISTS` to prevent an error from occurring for sequences that do not exist. A `NOTE` is generated for each non-existent sequence when using `IF EXISTS`. See [SHOW WARNINGS](../../sql-statements/administrative-sql-statements/show/show-warnings.md).
 
-DROP SEQUENCE requires the [DROP privilege](../../sql-statements/account-management-sql-statements/grant.md).
+`DROP SEQUENCE` requires the [DROP privilege](../../sql-statements/account-management-sql-statements/grant.md).
 
 ## Notes
 
-DROP SEQUENCE only removes sequences, not tables. However, [DROP TABLE](../../sql-statements/data-definition/drop/drop-table.md) can remove both sequences and tables.
+`DROP SEQUENCE` only removes sequences, not tables. However, [DROP TABLE](../../sql-statements/data-definition/drop/drop-table.md) can remove both sequences and tables.
 
 ## See Also
 

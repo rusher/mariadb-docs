@@ -24,16 +24,16 @@ The conversion rules are as follows: if the identifier is made up only of basic 
 
 Code Range values are UCS-2.
 
-All of this encoding happens transparently at the filesystem level with one exception. Until MySQL 5.1.6, an old encoding was used. Identifiers created in a version before MySQL 5.1.6, and which haven't been updated to the new encoding, the server prefixes `mysql50` to their name.
+All of this encoding happens transparently at the filesystem level with one exception.
 
 ### Examples
 
 Find the file name for a table with a non-Latin1 name:
 
-```
-select cast(convert("this_is_таблица" USING filename) as binary);
+```sql
+SELECT CAST(CONVERT("this_is_таблица" USING filename) AS BINARY);
 +------------------------------------------------------------------+
-| cast(convert("this_is_таблица" USING filename) as binary)        |
+| CAST(CONVERT("this_is_таблица" USING filename) AS BINARY)        |
 +------------------------------------------------------------------+
 | this_is_@y0@g0@h0@r0@o0@i1@g0                                    |
 +------------------------------------------------------------------+
@@ -41,38 +41,13 @@ select cast(convert("this_is_таблица" USING filename) as binary);
 
 Find the table name for a file name:
 
-```
-select convert(_filename "this_is_@y0@g0@h0@r0@o0@i1@g0" USING utf8);
+```sql
+SELECT CONVERT(_filename "this_is_@y0@g0@h0@r0@o0@i1@g0" USING utf8);
 +---------------------------------------------------------------+
-| convert(_filename "this_is_@y0@g0@h0@r0@o0@i1@g0" USING utf8) |
+| CONVERT(_filename "this_is_@y0@g0@h0@r0@o0@i1@g0" USING utf8) |
 +---------------------------------------------------------------+
 | this_is_таблица                                               |
 +---------------------------------------------------------------+
-```
-
-An old table created before MySQL 5.1.6, with the old encoding:
-
-```
-SHOW TABLES;
-+--------------------+
-| Tables_in_test     |
-+--------------------+
-| #mysql50#table@1   |
-+--------------------+
-```
-
-The prefix needs to be supplied to reference this table:
-
-```
-SHOW COLUMNS FROM `table@1`;
-ERROR 1146 (42S02): Table 'test.table@1' doesn't exist
-
-SHOW COLUMNS FROM `#mysql50#table@1`;
-+-------+---------+------+-----+---------+-------+
-| Field | Type    | Null | Key | Default | Extra |
-+-------+---------+------+-----+---------+-------+
-| i     | int(11) | YES  |     | NULL    |       |
-+-------+---------+------+-----+---------+-------+
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

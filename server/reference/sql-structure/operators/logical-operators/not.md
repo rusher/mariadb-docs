@@ -2,20 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 NOT, !
 ```
 
 ## Description
 
-Logical NOT. Evaluates to 1 if the operand is 0, to 0 if the operand\
-is non-zero, and NOT NULL returns NULL.
+Logical `NOT`. Evaluates to `1` if the operand is `0`, to `0` if the operand is non-zero, and `NOT NULL` returns `NULL`.
 
 By default, the `!` operator has a [higher precedence](../operator-precedence.md). If the `HIGH_NOT_PRECEDENCE` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) flag is set, `NOT` and `!` have the same precedence.
 
 ## Examples
 
-```
+```sql
 SELECT NOT 10;
 +--------+
 | NOT 10 |

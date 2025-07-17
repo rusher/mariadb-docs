@@ -2,7 +2,7 @@
 
 ### Syntax
 
-```
+```sql
 ALTER SEQUENCE [IF EXISTS] sequence_name
 [ INCREMENT [ BY | = ] number ]
 [ MINVALUE [=] number | NO MINVALUE | NOMINVALUE ]
@@ -21,9 +21,7 @@ The options for `ALTER SEQUENCE` can be given in any order.
 
 `ALTER SEQUENCE` requires the [ALTER privilege](../../sql-statements/account-management-sql-statements/grant.md).
 
-#### Arguments to `ALTER SEQUENCE`
-
-The following options may be used:
+#### Options to `ALTER SEQUENCE`
 
 | Option    | Default value                                                | Description                                                                                                                                                                 |
 | --------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,16 +32,11 @@ The following options may be used:
 | CACHE     | 1000                                                         | Number of values that should be cached. 0 if no CACHE. The underlying table will be updated first time a new sequence number is generated and each time the cache runs out. |
 | CYCLE     | 0 (= NO CYCLE)                                               | 1 if the sequence should start again from MINVALUE                                                                                                                          |
 
-## after it has run out of values. |
+The optional clause `RESTART [ WITH restart ]` sets the next value for the sequence. This is equivalent to calling the [SETVAL()](sequence-functions/setval.md) function with the `is_used` argument as `0`. The specified value will be returned by the next call of `nextval`. Using `RESTART` with no restart value is equivalent to supplying the start value that was recorded by [CREATE SEQUENCE](create-sequence.md) or last set by `ALTER SEQUENCE START WITH`.
 
-\| RESTART | START if restart value not is given | If RESTART option is used, NEXT VALUE will return the restart value. |
+`ALTER SEQUENCE` does not allow to change the sequence so that it's inconsistent:
 
-The optional clause `RESTART [ WITH restart ]` sets the next value for the sequence. This is equivalent to calling the [SETVAL()](sequence-functions/setval.md) function with the `is_used` argument as 0. The specified value will be returned by the next call of nextval. Using `RESTART` with no restart value is\
-equivalent to supplying the start value that was recorded by[CREATE SEQUENCE](create-sequence.md) or last set by `ALTER SEQUENCE START WITH`.
-
-`ALTER SEQUENCE` will not allow you to change the sequence so that it's inconsistent. For example:
-
-```
+```sql
 CREATE SEQUENCE s1;
 ALTER SEQUENCE s1 MINVALUE 10;
 ERROR 4061 (HY000): Sequence 'test.t1' values are conflicting
@@ -58,7 +51,7 @@ ALTER SEQUENCE s1 MINVALUE 10 START 10 RESTART 10;
 
 To allow `SEQUENCE` objects to be backed up by old tools, like [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), one can use `SELECT` to read the current state of a `SEQUENCE` object and use an `INSERT` to update the `SEQUENCE` object. `INSERT` is only allowed if all fields are specified:
 
-```
+```sql
 CREATE SEQUENCE s1;
 INSERT INTO s1 VALUES(1000,10,2000,1005,1,1000,0,0);
 SELECT * FROM s1;
@@ -81,13 +74,9 @@ SHOW CREATE SEQUENCE s1;
 
 `ALTER SEQUENCE` will instantly affect all future `SEQUENCE` operations. This is in contrast to some other databases where the changes requested by `ALTER SEQUENCE` will not be seen until the sequence cache has run out.
 
-`ALTER SEQUENCE` will take a full table lock of the sequence object during\
-its (brief) operation. This ensures that `ALTER SEQUENCE` is replicated\
-correctly. If you only want to set the next sequence value to a\
-higher value than current, then you should use [SETVAL()](sequence-functions/setval.md)\
-instead, as this is not blocking.
+`ALTER SEQUENCE` will take a full table lock of the sequence object during its (brief) operation. This ensures that `ALTER SEQUENCE` is replicated correctly. If you only want to set the next sequence value to a higher value than current, then you should use [SETVAL()](sequence-functions/setval.md) instead, as this is not blocking.
 
-If you want to change storage engine, sequence comment or rename the sequence, you can use [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) for this.
+If you want to change the storage engine or sequence comment, or rename the sequence, you can use [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) for this.
 
 ### See Also
 

@@ -1,11 +1,11 @@
 # Identifier Qualifiers
 
-Qualifiers are used within SQL statements to reference data structures, such as databases, tables, or columns. For example, typically a SELECT query contains references to some columns and at least one table.
+Qualifiers are used within SQL statements to reference data structures, such as databases, tables, or columns. For example, typically a `SELECT` query contains references to some columns and at least one table.
 
 Qualifiers can be composed by one or more [identifiers](identifier-names.md), where the initial parts affect the context within which the final identifier is interpreted:
 
 * For a database, only the database identifier needs to be specified.
-* For objects which are contained in a database (like tables, views, functions, etc) the database identifier can be specified. If no database is specified, the current database is assumed (see [USE](../../sql-statements/administrative-sql-statements/use-database.md) and [DATABASE()](../../sql-functions/secondary-functions/information-functions/database.md) for more details). If there is no default database and no database is specified, an error is issued.
+* For objects which are contained in a database (like tables, views, functions, etc.) the database identifier can be specified. If no database is specified, the current database is assumed (see [USE](../../sql-statements/administrative-sql-statements/use-database.md) and [DATABASE()](../../sql-functions/secondary-functions/information-functions/database.md) for more details). If there is no default database and no database is specified, an error is issued.
 * For column names, the table and the database are generally obvious from the context of the statement. It is however possible to specify the table identifier, or the database identifier plus the table identifier.
 * An identifier is fully-qualified if it contains all possible qualifiers, for example, the following column is fully qualified: `db_name.tbl_name.col_name`.
 

@@ -1,7 +1,5 @@
 # Installation
 
-<a id="id1"></a>
-
 ## Prerequisites
 
 The current MariaDB Connector/Python implementation supports
@@ -14,8 +12,7 @@ The current MariaDB Connector/Python implementation supports
 
 ### Microsoft Windows
 
-To install MariaDB Connector/Python on Microsoft Windows, you first have to install a recent version of MariaDB Connector/C. MSI installer for
-both 32-bit and 64-bit operating systems are available from [MariaDB Connector Download page](https://mariadb.com/downloads/connectors/).
+To install MariaDB Connector/Python on Microsoft Windows, you first have to install a recent version of MariaDB Connector/C. MSI installer for both 32-bit and 64-bit operating systems are available from [MariaDB Connector Download page](https://mariadb.com/downloads/connectors/).
 
 After installation of MariaDB Connector/C download and install MariaDB Connector/Python with the following command:
 
@@ -23,8 +20,7 @@ After installation of MariaDB Connector/C download and install MariaDB Connector
 pip3 install mariadb
 ```
 
-On success, you should see a message at the end “Successfully installed mariadb-x.y.z”, where x.y.z is
-the recent version of MariaDB Connector/Python.
+On success, you should see a message at the end “Successfully installed mariadb-x.y.z”, where x.y.z is the recent version of MariaDB Connector/Python.
 
 ```console
 Collecting mariadb
@@ -38,23 +34,18 @@ Successfully installed mariadb-1.1.5
 
 ### Build prerequisites
 
-The following build prerequisites are required to install or build MariaDB Connector/Python from source code, github or from
-pypi.org.
+The following build prerequisites are required to install or build MariaDB Connector/Python from source code, github or from pypi.org.
 
 To install MariaDB Connector/Python from sources you will need:
 
-- C compiler
-- Python development files (Usually they are installed with package **python3-dev**). The minimum supported version of Python is 3.7.
-- MariaDB Connector/C libraries and header files (Either from MariaDB server package or
-  from  MariaDB Connector/C package). Minimum required version for MariaDB Connector/Python < 1.1.0 is 3.1.5, for later versions 3.3.1.
-  If your distribution doesn’t provide a recent version of MariaDB Connector/C you can either download binary packages from [MariaDB Connector Download page](https://mariadb.com/downloads/connectors/) or build
-  the package from source.
-- The mariadb_config program from MariaDB Connector/C, which should be in your PATH directory.
-- For Posix systems: TLS libraries, e.g. GnuTLS or OpenSSL (default)
-- Since MariaDB Connector/Python 1.1.5: Python’s “packaging” module.
+* C compiler
+* Python development files (Usually they are installed with package **python3-dev**). The minimum supported version of Python is 3.7.
+* MariaDB Connector/C libraries and header files (Either from MariaDB server package or from MariaDB Connector/C package). Minimum required version for MariaDB Connector/Python < 1.1.0 is 3.1.5, for later versions 3.3.1. If your distribution doesn’t provide a recent version of MariaDB Connector/C you can either download binary packages from [MariaDB Connector Download page](https://mariadb.com/downloads/connectors/) or build the package from source.
+* The mariadb\_config program from MariaDB Connector/C, which should be in your PATH directory.
+* For Posix systems: TLS libraries, e.g. GnuTLS or OpenSSL (default)
+* Since MariaDB Connector/Python 1.1.5: Python’s “packaging” module.
 
-On Posix systems make sure that the path environment variable contains the directory which
-contains the mariadb_config utility.
+On Posix systems make sure that the path environment variable contains the directory which contains the mariadb\_config utility.
 
 Once everything is in place, run
 
@@ -73,8 +64,7 @@ For troubleshooting please also check the chapter [Installation](faq.md#installa
 
 ## Test suite
 
-If you have installed the sources, after successful build you can run the test suite
-from the source directory.
+If you have installed the sources, after successful build you can run the test suite from the source directory.
 
 ```console
 cd testing
@@ -83,10 +73,12 @@ python3 -m unittest discover -v
 
 You can configure the connection parameters by using the following environment variables
 
-* TEST_DB_USER (default root)
-* TEST_DB_PASSWORD
-* TEST_DB_DATABASE (default ‘testp’)
-* TEST_DB_HOST (default ‘localhost’)
-* TEST_DB_PORT (default 3306)
+* TEST\_DB\_USER (default root)
+* TEST\_DB\_PASSWORD
+* TEST\_DB\_DATABASE (default ‘testp’)
+* TEST\_DB\_HOST (default ‘localhost’)
+* TEST\_DB\_PORT (default 3306)
+
+<sub>_This page is_</sub> [<sub>_covered_</sub>](license.md) <sub>_by the_</sub> [<sub>_Creative Commons Attribution 3.0 license_</sub>](https://creativecommons.org/licenses/by/3.0/legalcode)<sub>_._</sub>
 
 {% @marketo/form formId="4316" %}

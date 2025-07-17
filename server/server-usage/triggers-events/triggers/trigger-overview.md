@@ -110,7 +110,7 @@ The [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-s
 
 ## More Complex Triggers
 
-Triggers can consist of multiple statements enclosed by a [BEGIN and END](../../../reference/sql-statements/programmatic-compound-statements/begin-end.md). If you're entering multiple statements on the command line, you'll want to temporarily set a new delimiter so that you can use a semicolon to delimit the statements inside your trigger. See [Delimiters in the mariadb client](../../../clients-and-utilities/mariadb-client/delimiters.md) for more.
+Triggers can consist of multiple statements enclosed by a [BEGIN and END](../../../reference/sql-statements/programmatic-compound-statements/begin-end.md). If you're entering multiple statements on the command line, you'll want to temporarily set a new delimiter so that you can use a semicolon to delimit the statements inside your trigger. See [Delimiters in the mariadb client](broken-reference) for more.
 
 ```sql
 DROP TABLE animals;
