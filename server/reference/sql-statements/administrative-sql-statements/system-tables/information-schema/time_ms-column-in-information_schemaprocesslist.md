@@ -1,6 +1,6 @@
 # TIME\_MS column in INFORMATION\_SCHEMA.PROCESSLIST
 
-In MariaDB, an extra column `TIME_MS` has been added to the[INFORMATION\_SCHEMA.PROCESSLIST](information-schema-tables/information-schema-processlist-table.md) table. This column shows the same information as the column '`TIME`', but in units of milliseconds with microsecond precision (the unit and precision of the`TIME` column is one second).
+In MariaDB, an extra column `TIME_MS` was added to the[INFORMATION\_SCHEMA.PROCESSLIST](information-schema-tables/information-schema-processlist-table.md) table. This column shows the same information as the column '`TIME`', but in units of milliseconds with microsecond precision (the unit and precision of the`TIME` column is one second).
 
 For details about microseconds support in MariaDB, see [microseconds in MariaDB](../../../../sql-functions/date-time-functions/microseconds-in-mariadb.md).
 
@@ -20,7 +20,7 @@ Note that as a difference to MySQL, in MariaDB the `TIME` column (and also the `
 
 As a consequence of this, the `TIME` column of`SHOW FULL PROCESSLIST` and`INFORMATION_SCHEMA.PROCESSLIST` can not be used to determine if a slave is lagging behind. For this, use instead the`Seconds_Behind_Master` column in the output of[SHOW SLAVE STATUS](../../show/show-replica-status.md).
 
-The addition of the TIME\_MS column is based on the microsec\_process patch, developed by [Percona](https://www.percona.com/).
+The addition of the `TIME_MS` column is based on the microsec\_process patch, developed by [Percona](https://www.percona.com/).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

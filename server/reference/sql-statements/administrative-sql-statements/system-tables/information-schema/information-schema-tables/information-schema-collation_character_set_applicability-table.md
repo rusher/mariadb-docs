@@ -12,7 +12,7 @@ It contains the following columns:
 | ID                    | The unique identifier of this character set/collation combination. |
 | IS\_DEFAULT           | If the collation is the default for this character set.            |
 
-The [COLLATIONS](information-schema-collations-table.md) table is table of the base `COLLATION_NAMES` in the same way that [CHARACTER\_SETS](https://mariadb.com/kb/en/information-schema-character-sets-table) table is table of the base `CHARACTER_SET_NAMES`. The `COLLATION_CHARACTER_SET_APPLICABILITY` table is the mapping between collations and character sets.
+The [COLLATIONS](information-schema-collations-table.md) table is table of the base `COLLATION_NAMES` in the same way that [CHARACTER\_SETS](information-schema-character_sets-table.md) table is table of the base `CHARACTER_SET_NAMES`. The `COLLATION_CHARACTER_SET_APPLICABILITY` table is the mapping between collations and character sets.
 
 When joining the [information\_schema.TABLES](information-schema-tables-table.md) table with its field `TABLE_COLLATIONS`, this should be joined to `FULL_COLLATION_NAME` in the `COLLATION_CHARACTER_SET_APPLICABILITY` table.
 

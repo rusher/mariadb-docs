@@ -1,7 +1,7 @@
 # Information Schema USERS Table
 
 {% hint style="info" %}
-This table is available as of MariaDB [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115).
+This table is available from MariaDB 11.5.
 {% endhint %}
 
 The [Information Schema](../) `USERS` table contains information about users, [password expiry](../../../../../../security/user-account-management/user-password-expiry.md), and the limits set by [max\_password\_errors](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors). Unprivileged users can access their own data, which is different to what [mysql.global\_priv](../../the-mysql-database-tables/mysql-global_priv-table.md) provides.

@@ -28,8 +28,8 @@ It contains the following columns:
 | COLUMN\_COMMENT                 | Column comments.                                                                                                                                                                                                                                                                                                                              |
 | IS\_GENERATED                   | Indicates whether the column value is [generated (virtual, or computed)](../../../../data-definition/create/generated-columns.md). Can be ALWAYS or NEVER.                                                                                                                                                                                    |
 | GENERATION\_EXPRESSION          | The expression used for computing the column value in a [generated (virtual, or computed)](../../../../data-definition/create/generated-columns.md) column.                                                                                                                                                                                   |
-| IS\_SYSTEM\_TIME\_PERIOD\_START | From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-1-release-notes).                                                                                                                                                                                |
-| IS\_SYSTEM\_TIME\_PERIOD\_END   | From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-1-release-notes).                                                                                                                                                                                |
+| IS\_SYSTEM\_TIME\_PERIOD\_START | From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-1-release-notes).                                                                                                                                                                                                      |
+| IS\_SYSTEM\_TIME\_PERIOD\_END   | From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-1-release-notes).                                                                                                                                                                                                      |
 
 It provides information similar to, but more complete, than [SHOW COLUMNS](../../../show/show-columns.md) and [mariadb-show](../../../../../../clients-and-utilities/administrative-tools/mariadb-show.md).
 
@@ -99,9 +99,11 @@ AND TABLE_NAME='t';
 +------------+-------------+------------------+-----------------------+------------------------+
 ```
 
-In the results above, the two single quotes in `concat(''A'',''B'')` indicate an escaped single quote - see [string-literals](../../../../../sql-structure/sql-language-structure/string-literals.md). Note that while [mariadb client](../../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) appears to show the same default value for columns `s5` and `s6`, the first is a 4-character string "NULL", while the second is the SQL NULL value.
+In the results above, the two single quotes in `concat(''A'',''B'')` indicate an escaped single quote - see [string-literals](../../../../../sql-structure/sql-language-structure/string-literals.md). Note that while [mariadb client](../../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) appears to show the same default value for columns `s5` and `s6`, the first is a 4-character string "NULL", while the second is the SQL `NULL` value.
 
-From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113):
+{% hint style="info" %}
+The following statement is available from MariaDB 11.3.
+{% endhint %}
 
 ```sql
 CREATE TABLE t(

@@ -1,7 +1,7 @@
 # Information Schema KEYWORDS Table
 
 {% hint style="info" %}
-This table is available as of MariaDB [10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1063-release-notes).
+This table is available as of MariaDB 10.6.3.
 {% endhint %}
 
 ## Description

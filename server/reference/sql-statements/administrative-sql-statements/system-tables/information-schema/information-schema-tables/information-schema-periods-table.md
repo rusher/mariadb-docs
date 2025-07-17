@@ -1,7 +1,7 @@
 # Information Schema PERIODS Table
 
 {% hint style="info" %}
-This table is available as of MariaDB [11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-1-release-notes).
+This table is available as of MariaDB 11.4.
 {% endhint %}
 
 The [Information Schema](../) `PERIODS` table provides information about [Application-Time Periods](../../../../../sql-structure/temporal-tables/application-time-periods.md).

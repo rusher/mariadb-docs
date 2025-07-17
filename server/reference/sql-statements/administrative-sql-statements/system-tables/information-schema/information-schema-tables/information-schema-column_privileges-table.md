@@ -1,6 +1,6 @@
 # Information Schema COLUMN\_PRIVILEGES Table
 
-The [Information Schema](../) `COLUMN_PRIVILEGES` table contains column privilege information derived from the [mysql.columns_priv](../../the-mysql-database-tables/mysql-columns_priv-table.md) grant table.
+The [Information Schema](../) `COLUMN_PRIVILEGES` table contains column privilege information derived from the [mysql.columns\_priv](../../the-mysql-database-tables/mysql-columns_priv-table.md) grant table.
 
 It has the following columns:
 
@@ -14,9 +14,9 @@ It has the following columns:
 | PRIVILEGE\_TYPE | One of SELECT, INSERT, UPDATE or REFERENCES.                                                                                                   |
 | IS\_GRANTABLE   | Whether the user has the [GRANT OPTION](../../../../account-management-sql-statements/grant.md#the-grant-option-privilege) for this privilege. |
 
-Similar information can be accessed with the [SHOW FULL COLUMNS](../../../show/show-columns.md) and [SHOW GRANTS](../../../show/show-grants.md) statements. See the [GRANT](../../../../account-management-sql-commands/grant.md) article for more about privileges.
+Similar information can be accessed with the [SHOW FULL COLUMNS](../../../show/show-columns.md) and [SHOW GRANTS](../../../show/show-grants.md) statements. See the [GRANT](../../../../account-management-sql-statements/grant.md) statement for details about privileges.
 
-This information is also stored in the [columns_priv](../../the-mysql-database-tables/mysql-columns_priv-table.md) table, in the `mysql` system database.
+This information is also stored in the [columns\_priv](../../the-mysql-database-tables/mysql-columns_priv-table.md) table, in the `mysql` system database.
 
 For a description of the privileges that are shown in this table, see [column privileges](../../../../account-management-sql-statements/grant.md#column-privileges).
 
