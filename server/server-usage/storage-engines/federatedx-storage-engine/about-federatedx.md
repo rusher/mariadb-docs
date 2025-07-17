@@ -146,7 +146,7 @@ CONNECTION="mysql://root@127.0.0.1:3306/db1/t1"
 You can also change the server to point to a new schema:
 
 ```sql
-ALTER SERVER 'server_one' options(DATABASE 'db2');
+ALTER SERVER 'server_one' OPTIONS(DATABASE 'db2');
 ```
 
 All subsequent calls to any FederatedX table using the 'server\_one' will now be against tables in `db2`! Guess what? You no longer have to perform an alter table in order to point one or more FederatedX tables to a new server!

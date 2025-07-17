@@ -23,7 +23,7 @@ Examples of use:
 Let's suppose you have a CSV file from which you would create a table by:
 
 ```sql
-engine=connect table_type=CSV file_name='E:/Data/employee.csv'
+ENGINE=connect table_type=CSV file_name='E:/Data/employee.csv'
 CREATE TABLE emp
 ... optional COLUMN definition
 sep_char=';' header=1;

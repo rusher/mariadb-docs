@@ -100,7 +100,7 @@ closeDate DATE,
 stageName VARCHAR(11),
 PRIMARY KEY (id),
 KEY (accountName)
-) ENGINE=spider comment='wrapper "mysql", srv "backend1" , TABLE "opportunities"';
+) ENGINE=spider COMMENT='wrapper "mysql", srv "backend1" , TABLE "opportunities"';
 ```
 
 ## Use case 2: sharding by hash
@@ -146,10 +146,10 @@ stageName VARCHAR(11),
 PRIMARY KEY (id, accountName),
 KEY(accountName)
 ) ENGINE=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
- PARTITION BY RANGE columns (accountName)
+ PARTITION BY RANGE COLUMNS (accountName)
 (
- PARTITION pt1 VALUES less than ('M') COMMENT = 'srv "backend1"',
- PARTITION pt2 VALUES less than (MAXVALUE) COMMENT = 'srv "backend2"'
+ PARTITION pt1 VALUES LESS THAN ('M') COMMENT = 'srv "backend1"',
+ PARTITION pt2 VALUES LESS THAN (MAXVALUE) COMMENT = 'srv "backend2"'
 ) ;
 ```
 
@@ -171,7 +171,7 @@ stageName VARCHAR(11),
 PRIMARY KEY (id, owner),
 KEY(accountName)
 ) ENGINE=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
- PARTITION BY list columns (owner)
+ PARTITION BY LIST COLUMNS (owner)
 (
  PARTITION pt1 VALUES IN ('Bill', 'Bob', 'Chris') COMMENT = 'srv "backend1"',
  PARTITION pt2 VALUES IN ('Maria', 'Olivier') COMMENT = 'srv "backend2"'

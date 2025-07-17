@@ -108,7 +108,7 @@ Here follows one example on can use to get a trace if `ALTER TABLE .. ENGINE=S3`
 
 ```sql
 USE test;
-CREATE TABLE s3_test (a INT) engine=aria row_format=page transactional=0;
+CREATE TABLE s3_test (a INT) ENGINE=aria row_format=page transactional=0;
 INSERT INTO s3_test VALUES (1),(2);
 SET @@global.s3_debug=1;
 ALTER TABLE s3_test ENGINE=S3;
