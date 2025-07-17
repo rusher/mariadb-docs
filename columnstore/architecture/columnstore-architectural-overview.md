@@ -200,8 +200,8 @@ MariaDB Enterprise ColumnStore can use shared local storage.
 
 Shared local storage is required for high availability. The specific [Shared Local Storage requirements](columnstore-architectural-overview.md#shared-local-storage) depend on whether Enterprise ColumnStore is configured to use [S3-compatible object storage](columnstore-architectural-overview.md#s3-compatible-object-storage):
 
-* When S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory) to use shared local storage for high availability.
-* When S3-compatible object storage is not used, Enterprise ColumnStore requires the [DB Root directories](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/README.md#db-root-directories) to use shared local storage for high availability.
+* When S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](columnstore-storage-architecture.md#storage-manager-directory) to use shared local storage for high availability.
+* When S3-compatible object storage is not used, Enterprise ColumnStore requires the [DB Root directories](columnstore-storage-architecture.md#db-root-directories) to use shared local storage for high availability.
 
 The most common shared local storage options for on-premises and cloud deployments are:
 
