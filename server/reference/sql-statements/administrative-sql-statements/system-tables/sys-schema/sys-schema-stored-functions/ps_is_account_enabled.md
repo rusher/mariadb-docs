@@ -1,5 +1,7 @@
 # ps\_is\_account\_enabled
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -14,7 +16,7 @@ It takes _host_ and _user_ arguments, and returns an ENUM('YES','NO') depending 
 
 ## Examples
 
-```
+```sql
 SELECT sys.ps_is_account_enabled('localhost', 'root');
 +------------------------------------------------+
 | sys.ps_is_account_enabled('localhost', 'root') |

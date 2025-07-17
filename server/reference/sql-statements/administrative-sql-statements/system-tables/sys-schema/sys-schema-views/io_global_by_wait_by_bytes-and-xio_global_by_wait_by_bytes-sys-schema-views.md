@@ -1,8 +1,6 @@
 # io\_global\_by\_wait\_by\_bytes and x$io\_global\_by\_wait\_by\_bytes Sys Schema Views
 
-**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
-
-These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
+{% include "../../../../../../.gitbook/includes/sys-schema-views-are-availa....md" %}
 
 ## Description
 
@@ -30,7 +28,7 @@ They contain the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM sys.io_global_by_wait_by_bytes\G
 *************************** 1. row ***************************
      event_name: innodb/innodb_data_file

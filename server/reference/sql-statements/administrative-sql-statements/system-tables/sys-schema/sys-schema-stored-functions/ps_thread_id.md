@@ -1,5 +1,7 @@
 # ps\_thread\_id
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -8,11 +10,11 @@ sys.ps_thread_id(connection_id)
 
 ## Description
 
-`ps_thread_id` is a [stored function](../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../) that returns the thread\_id associated with the given _connection\_id_. If the _connection\_id_ is NULL, returns the thread\_id for the current connection.
+`ps_thread_id` is a [stored function](../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../) that returns the thread\_id associated with the given _connection\_id_. If the _connection\_id_ is `NULL`, returns the thread\_id for the current connection.
 
 ## Examples
 
-```
+```sql
 SELECT * FROM performance_schema.threads\G
 *************************** 13. row ***************************
           THREAD_ID: 13

@@ -1,5 +1,7 @@
 # extract\_schema\_from\_file\_name
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -16,7 +18,7 @@ The function does not examine anything on disk. The return value, a VARCHAR(64),
 
 ## Examples
 
-```
+```sql
 SELECT sys.extract_schema_from_file_name('/usr/local/mysql/data/db/t1.ibd');
 +----------------------------------------------------------------------+
 | sys.extract_schema_from_file_name('/usr/local/mysql/data/db/t1.ibd') |

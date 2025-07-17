@@ -1,8 +1,6 @@
 # io\_global\_by\_wait\_by\_latency and x$io\_global\_by\_wait\_by\_latency Sys Schema Views
 
-**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
-
-These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
+{% include "../../../../../../.gitbook/includes/sys-schema-views-are-availa....md" %}
 
 ## Description
 
@@ -30,7 +28,7 @@ They contain the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM sys.io_global_by_wait_by_latency\G
 *************************** 1. row ***************************
    event_name: sql/global_ddl_log

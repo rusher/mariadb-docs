@@ -1,5 +1,7 @@
 # ps\_is\_instrument\_default\_enabled
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -14,7 +16,7 @@ It returns `YES` if the given Performance Schema _instrument_ is enabled by defa
 
 ## Examples
 
-```
+```sql
 SELECT sys.ps_is_instrument_default_enabled('statement/sql/select');
 +--------------------------------------------------------------+
 | sys.ps_is_instrument_default_enabled('statement/sql/select') |

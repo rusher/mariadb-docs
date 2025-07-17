@@ -19,7 +19,7 @@ Returns an error if the source database doesn't exist, or the synonym already ex
 
 ## Example
 
-```
+```sql
 SHOW DATABASES;
 +--------------------+
 | Database           |

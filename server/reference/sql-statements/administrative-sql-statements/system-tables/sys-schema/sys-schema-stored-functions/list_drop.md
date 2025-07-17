@@ -1,5 +1,7 @@
 # list\_drop
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -16,7 +18,7 @@ The related function [list\_add](list_add.md) can be used to add a value to a li
 
 ## Examples
 
-```
+```sql
 SELECT @@sql_mode;
 +-----------------------------------------------------------------------+
 | @@sql_mode                                                            |

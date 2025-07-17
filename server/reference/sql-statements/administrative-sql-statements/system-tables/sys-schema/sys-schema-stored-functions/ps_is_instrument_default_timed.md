@@ -1,5 +1,7 @@
 # ps\_is\_instrument\_default\_timed
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -10,11 +12,11 @@ sys.ps_is_instrument_default_timed(instrument)
 
 `ps_is_instrument_default_timed` is a [stored function](../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../).
 
-It returns `YES` if the given Performance Schema _instrument_ is timed by default, and `NO` if it is not, does not exist, or is a NULL value.
+It returns `YES` if the given Performance Schema _instrument_ is timed by default, and `NO` if it is not, does not exist, or is a `NULL` value.
 
 ## Examples
 
-```
+```sql
 SELECT sys.ps_is_instrument_default_timed('statement/sql/select');
 +------------------------------------------------------------+
 | sys.ps_is_instrument_default_timed('statement/sql/select') |

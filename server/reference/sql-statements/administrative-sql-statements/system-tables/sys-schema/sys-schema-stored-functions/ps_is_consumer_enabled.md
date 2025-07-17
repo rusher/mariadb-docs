@@ -1,5 +1,7 @@
 # ps\_is\_consumer\_enabled
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -14,7 +16,7 @@ It returns an ENUM('YES','NO') depending on whether Performance Schema instrumen
 
 ## Examples
 
-```
+```sql
 SELECT sys.ps_is_consumer_enabled('global_instrumentation');
 +------------------------------------------------------+
 | sys.ps_is_consumer_enabled('global_instrumentation') |

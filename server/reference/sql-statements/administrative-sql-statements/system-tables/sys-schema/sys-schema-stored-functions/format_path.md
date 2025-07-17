@@ -1,5 +1,7 @@
 # format\_path
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -22,7 +24,7 @@ The system variables that are matched are, in order:
 
 ## Examples
 
-```
+```sql
 SELECT @@tmpdir;
 +------------------------------------+
 | @@tmpdir                           |

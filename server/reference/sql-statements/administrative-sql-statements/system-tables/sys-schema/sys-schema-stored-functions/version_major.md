@@ -1,5 +1,7 @@
 # version\_major
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -14,7 +16,7 @@ It returns the MariaDB Server major release version.
 
 ## Examples
 
-```
+```sql
 SELECT VERSION(),
  sys.version_major() AS major, 
  sys.version_minor() AS minor,

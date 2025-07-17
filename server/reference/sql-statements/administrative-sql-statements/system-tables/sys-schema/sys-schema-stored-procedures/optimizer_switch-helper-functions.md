@@ -10,13 +10,12 @@ optimizer_switch_choice("on" | "off")
 
 ## Description
 
-The above procedures can be used to check which [optimizer\_switch](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) options are `on` or `off`.\
-The result set is sorted according to [optimizer\_switch](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) option name.
+The above procedures can be used to check which [optimizer\_switch](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) options are `on` or `off`. The result set is sorted according to [optimizer\_switch](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) option name.
 
 ## Example
 
-```
-select @@optimizer_switch\G
+```sql
+SELECT @@optimizer_switch\G
 *************************** 1. row ***************************
 index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,
 index_merge_sort_intersection=off,engine_condition_pushdown=off,index_condition_pushdown=on,
@@ -81,7 +80,9 @@ call sys.optimizer_switch_off();
 
 ## Notes
 
-`sys.optimizer_switch_on()` is a shortcut for `sys.optimizer_switch_choice("on")`;`sys.optimizer_switch_off()` is a shortcut for `sys.optimizer_switch_choice("off")`;
+`sys.optimizer_switch_on()` is a shortcut for `sys.optimizer_switch_choice("on")` .
+
+`sys.optimizer_switch_off()` is a shortcut for `sys.optimizer_switch_choice("off")` .
 
 ## See Also
 

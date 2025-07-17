@@ -1,8 +1,6 @@
 # innodb\_buffer\_stats\_by\_schema and x$innodb\_buffer\_stats\_by\_schema Sys Schema Views
 
-**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
-
-These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
+{% include "../../../../../../.gitbook/includes/sys-schema-views-are-availa....md" %}
 
 Querying these views can have a noticeable performance impact on a production server.
 
@@ -26,7 +24,7 @@ They contain the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM sys.innodb_buffer_stats_by_schema\G
 *************************** 1. row ***************************
 object_schema: InnoDB System

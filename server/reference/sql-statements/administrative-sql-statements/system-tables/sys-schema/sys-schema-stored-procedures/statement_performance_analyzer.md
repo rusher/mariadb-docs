@@ -19,10 +19,10 @@ statement_performance_analyzer(in_action,in_table, in_views)
 
 The following options from the [sys\_config](../sys-schema-sys_config-table.md) table impact the output:
 
-* statement\_performance\_analyzer.limit - maximum number of rows (default 100) returned for views that have no built-in limit.
-* statement\_performance\_analyzer.view - custom query/view to be used (default NULL). If the statement\_performance\_analyzer.limit configuration option is greater than 0, there can't be a LIMIT clause in the query/view definition
+* statement\_performance\_analyzer.limit - maximum number of rows (default `100`) returned for views that have no built-in limit.
+* statement\_performance\_analyzer.view - custom query/view to be used (default `NULL`). If the statement\_performance\_analyzer.limit configuration option is greater than 0, there can't be a `LIMIT` clause in the query/view definition.
 
-If the debug option is set (default OFF), the procedure will also produce debugging output.
+If the debug option is set (default `OFF`), the procedure will also produce debugging output.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

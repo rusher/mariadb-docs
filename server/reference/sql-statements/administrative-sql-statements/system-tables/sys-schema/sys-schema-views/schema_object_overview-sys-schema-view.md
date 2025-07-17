@@ -1,8 +1,6 @@
 # schema\_object\_overview Sys Schema View
 
-**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
-
-The [Sys Schema](../) was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
+{% include "../../../../../../.gitbook/includes/sys-schema-views-are-availa....md" %}
 
 ## Description
 
@@ -18,7 +16,7 @@ Contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM sys.schema_object_overview;
 +--------------------+---------------+-------+
 | db                 | object_type   | count |

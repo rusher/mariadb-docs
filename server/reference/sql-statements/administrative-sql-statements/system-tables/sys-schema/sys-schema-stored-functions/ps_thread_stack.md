@@ -1,5 +1,7 @@
 # ps\_thread\_stack
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -14,7 +16,7 @@ The boolean _verbose_ argument specifies whether or not to include `file:lineno`
 
 ## Examples
 
-```
+```sql
 SELECT sys.ps_thread_stack(13, FALSE) AS thread_stack\G
 *************************** 1. row ***************************
 thread_stack: {"rankdir": "LR","nodesep": "0.10",

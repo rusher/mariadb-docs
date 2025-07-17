@@ -1,8 +1,10 @@
 # privileges\_by\_table\_by\_level Sys Schema View
 
-**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114)
+{% include "../../../../../../.gitbook/includes/sys-schema-views-are-availa....md" %}
 
-This [Sys Schema](../) view was introduced in [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-0-release-notes).
+{% hint style="info" %}
+This view is available from MariaDB 11.4.
+{% endhint %}
 
 ## Description
 
@@ -20,7 +22,7 @@ For example, if a user `x` has `SELECT` privilege granted `ON db.*`, this view w
 
 ## Example
 
-```
+```sql
 SELECT * FROM sys.privileges_by_table_by_level;
 +--------------+------------+---------------------------+----------------+--------+
 | TABLE_SCHEMA | TABLE_NAME | GRANTEE                   | PRIVILEGE      | LEVEL  |

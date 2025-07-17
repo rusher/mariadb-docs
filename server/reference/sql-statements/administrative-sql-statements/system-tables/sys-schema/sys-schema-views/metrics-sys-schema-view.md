@@ -1,8 +1,6 @@
 # metrics Sys Schema View
 
-**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
-
-The [Sys Schema](../) was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
+{% include "../../../../../../.gitbook/includes/sys-schema-views-are-availa....md" %}
 
 ## Description
 
@@ -19,7 +17,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM sys.metrics\G
 *************************** 1. row ***************************
  Variable_name: aborted_clients

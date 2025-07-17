@@ -14,7 +14,7 @@ The procedure resets all aggregated instrumentation as a snapshot, producing a r
 
 ## Examples
 
-```
+```sql
 CALL sys.ps_truncate_all_tables(false);
 +---------------------+
 | summary             |
@@ -23,7 +23,7 @@ CALL sys.ps_truncate_all_tables(false);
 +---------------------+
 ```
 
-```
+```sql
 CALL sys.ps_truncate_all_tables(true);
 +------------------------------------------------------------------+
 | status                                                           |

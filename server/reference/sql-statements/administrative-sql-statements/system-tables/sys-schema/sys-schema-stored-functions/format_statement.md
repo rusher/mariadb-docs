@@ -1,8 +1,8 @@
+# format\_statement
 
-# format_statement
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
 
 ## Syntax
-
 
 ```
 sys.format_statement(statement)
@@ -10,20 +10,15 @@ sys.format_statement(statement)
 
 ## Description
 
-
-Returns a reduced length string. The length is specified by the [statement_truncate_len configuration option](../sys-schema-sys_config-table.md) (default 64), and the removed part of the string (if any) is replaced with an ellipsis (three dots).
-
+Returns a reduced length string. The length is specified by the [statement\_truncate\_len configuration option](../sys-schema-sys_config-table.md) (default 64), and the removed part of the string (if any) is replaced with an ellipsis (three dots).
 
 The function is intended for use in formatting lengthy SQL statements to a fixed length.
 
-
 ## Examples
-
 
 Default truncation length 64:
 
-
-```
+```sql
 SELECT sys.format_statement(
   'SELECT field1, field2, field3, field4, field5, field6 FROM table1'
   ) AS formatted_statement;
@@ -36,8 +31,7 @@ SELECT sys.format_statement(
 
 Reducing the truncation length to 48:
 
-
-```
+```sql
 SET @sys.statement_truncate_len = 48;
 
 SELECT sys.format_statement( 
@@ -50,8 +44,6 @@ SELECT sys.format_statement(
 +---------------------------------------------------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -1,5 +1,7 @@
 # version\_patch
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -14,7 +16,7 @@ It returns the MariaDB Server patch release version.
 
 ## Examples
 
-```
+```sql
 SELECT VERSION(),
  sys.version_major() AS major, 
  sys.version_minor() AS minor,

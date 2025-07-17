@@ -1,5 +1,7 @@
 # ps\_thread\_account
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -14,7 +16,7 @@ Returns `NULL` if the thread\_id is not found.
 
 ## Examples
 
-```
+```sql
 SELECT sys.ps_thread_account(sys.ps_thread_id(CONNECTION_ID()));
 +----------------------------------------------------------+
 | sys.ps_thread_account(sys.ps_thread_id(CONNECTION_ID())) |

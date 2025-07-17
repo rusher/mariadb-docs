@@ -1,12 +1,10 @@
 # schema\_auto\_increment\_columns Sys Schema View
 
-**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
-
-The [Sys Schema](../) was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
+{% include "../../../../../../.gitbook/includes/sys-schema-views-are-availa....md" %}
 
 ## Description
 
-Information about [AUTO\_INCREMENT](../../../../../data-types/auto_increment.md) columns, sorted by descending usage ratio and maximum column value. Does not include columns in the mysql, sys, information\_schema and performance\_schema schemas.
+Information about [AUTO\_INCREMENT](../../../../../data-types/auto_increment.md) columns, sorted by descending usage ratio and maximum column value. Does not include columns in the `mysql`, `sys`, `information_schema` and `performance_schema` schemas.
 
 Contains the following columns:
 
@@ -25,7 +23,7 @@ Contains the following columns:
 
 ## Example
 
-```
+```sql
 CREATE OR REPLACE TABLE animals (
     id TINYINT NOT NULL AUTO_INCREMENT,
     name CHAR(30) NOT NULL,

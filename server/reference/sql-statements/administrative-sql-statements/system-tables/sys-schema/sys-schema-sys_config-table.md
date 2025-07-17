@@ -1,8 +1,6 @@
 # Sys Schema sys\_config Table
 
-**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
-
-The Sys Schema _sys\_config_ table was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes). The _sys\_config_ table is also backported to [MariaDB-10.5-enterprise](https://mariadb.com/kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/).
+{% include "../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
 
 The _sys.sys\_config_ table holds configuration options for the [Sys Schema](./).
 
@@ -12,7 +10,7 @@ The table also has two related triggers, which maintain the user that INSERTs or
 
 Its structure is as follows:
 
-```
+```sql
 +----------+--------------+------+-----+-------------------+-----------------------------+
 | Field    | Type         | Null | Key | Default           | Extra                       |
 +----------+--------------+------+-----+-------------------+-----------------------------+
@@ -23,7 +21,9 @@ Its structure is as follows:
 +----------+--------------+------+-----+-------------------+-----------------------------+
 ```
 
-Note, when functions check for configuration options, they first check whether a similar named user variable exists with a value, and if this is not set then pull the configuration option from this table in to that named user variable. This is done for performance reasons (to not continually SELECT from the table), however this comes with the side effect that once inited, the values last with the session, somewhat like how session variables are inited from global variables. If the values within this table are changed, they will not take effect until the user logs in again.
+{% hint style="warning" %}
+Note, when functions check for configuration options, they first check whether a similar named user variable exists with a value, and if this is not set then pull the configuration option from this table in to that named user variable. This is done for performance reasons (to not continually `SELECT` from the table), however this comes with the side effect that once inited, the values last with the session, somewhat like how session variables are inited from global variables. If the values within this table are changed, they will not take effect until the user logs in again.
+{% endhint %}
 
 ### Options Included
 

@@ -1,5 +1,7 @@
 # format\_time
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -20,14 +22,14 @@ sys.format_time(picoseconds)
 * d - days
 * w - weeks
 
-This function is very similar to the [FORMAT\_PICO\_TIME](../../../../../sql-functions/date-time-functions/format_pico_time.md) function introduced in [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes), but with the following differences:
+This function is very similar to the [FORMAT\_PICO\_TIME](../../../../../sql-functions/date-time-functions/format_pico_time.md) function introduced in [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes), but with the following differences:
 
 * Represents minutes as `m` rather than `min`.
 * Represent weeks.
 
 ## Examples
 
-```
+```sql
 SELECT
     sys.format_time(43) AS ps,
     sys.format_time(4321) AS ns, 

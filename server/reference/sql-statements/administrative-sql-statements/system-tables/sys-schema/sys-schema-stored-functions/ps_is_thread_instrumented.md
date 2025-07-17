@@ -1,5 +1,7 @@
 # ps\_is\_thread\_instrumented
 
+{% include "../../../../../../.gitbook/includes/sys-schema-is-available-fro....md" %}
+
 ## Syntax
 
 ```
@@ -13,11 +15,11 @@ sys.ps_is_thread_instrumented(connection_id)
 * `YES` - instrumentation is enabled
 * `NO` - instrumentation is not enabled
 * `UNKNOWN` - the connection ID is unknown
-* `NULL` - NULL value
+* `NULL` - `NULL` value
 
 ## Examples
 
-```
+```sql
 SELECT sys.ps_is_thread_instrumented(CONNECTION_ID());
 +------------------------------------------------+
 | sys.ps_is_thread_instrumented(CONNECTION_ID()) |
