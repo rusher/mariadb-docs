@@ -2,7 +2,7 @@
 
 {% include "../../../.gitbook/includes/latest-10-5.md" %}
 
-<a href="https://downloads.mariadb.org/mariadb/10.5.22/" class="button primary">Download</a> <a href="mariadb-10-5-22-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-23-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
+<a href="https://downloads.mariadb.org/mariadb/10.5.22/" class="button primary">Download</a> <a href="mariadb-10-5-22-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-22-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
 
 **Release date:** 14 Aug 2023
 
