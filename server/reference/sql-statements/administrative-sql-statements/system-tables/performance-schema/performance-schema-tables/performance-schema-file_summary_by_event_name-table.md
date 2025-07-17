@@ -1,48 +1,40 @@
+# Performance Schema file\_summary\_by\_event\_name Table
 
-# Performance Schema file_summary_by_event_name Table
+The [Performance Schema](../) `file_summary_by_event_name` table contains file events summarized by event name. It contains the following columns:
 
-The [Performance Schema](../README.md) `file_summary_by_event_name` table contains file events summarized by event name. It contains the following columns:
-
-
-
-| Column | Description |
-| --- | --- |
-| EVENT_NAME | Event name. |
-| COUNT_STAR | Number of summarized events |
-| SUM_TIMER_WAIT | Total wait time of the summarized events that are timed. |
-| MIN_TIMER_WAIT | Minimum wait time of the summarized events that are timed. |
-| AVG_TIMER_WAIT | Average wait time of the summarized events that are timed. |
-| MAX_TIMER_WAIT | Maximum wait time of the summarized events that are timed. |
-| COUNT_READ | Number of all read operations, including FGETS, FGETC, FREAD, and READ. |
-| SUM_TIMER_READ | Total wait time of all read operations that are timed. |
-| MIN_TIMER_READ | Minimum wait time of all read operations that are timed. |
-| AVG_TIMER_READ | Average wait time of all read operations that are timed. |
-| MAX_TIMER_READ | Maximum wait time of all read operations that are timed. |
-| SUM_NUMBER_OF_BYTES_READ | Bytes read by read operations. |
-| COUNT_WRITE | Number of all write operations, including FPUTS, FPUTC, FPRINTF, VFPRINTF, FWRITE, and PWRITE. |
-| SUM_TIMER_WRITE | Total wait time of all write operations that are timed. |
-| MIN_TIMER_WRITE | Minimum wait time of all write operations that are timed. |
-| AVG_TIMER_WRITE | Average wait time of all write operations that are timed. |
-| MAX_TIMER_WRITE | Maximum wait time of all write operations that are timed. |
-| SUM_NUMBER_OF_BYTES_WRITE | Bytes written by write operations. |
-| COUNT_MISC | Number of all miscellaneous operations not counted above, including CREATE, DELETE, OPEN, CLOSE, STREAM_OPEN, STREAM_CLOSE, SEEK, TELL, FLUSH, STAT, FSTAT, CHSIZE, RENAME, and SYNC. |
-| SUM_TIMER_MISC | Total wait time of all miscellaneous operations that are timed. |
-| MIN_TIMER_MISC | Minimum wait time of all miscellaneous operations that are timed. |
-| AVG_TIMER_MISC | Average wait time of all miscellaneous operations that are timed. |
-| MAX_TIMER_MISC | Maximum wait time of all miscellaneous operations that are timed. |
-
-
+| Column                        | Description                                                                                                                                                                             |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EVENT\_NAME                   | Event name.                                                                                                                                                                             |
+| COUNT\_STAR                   | Number of summarized events                                                                                                                                                             |
+| SUM\_TIMER\_WAIT              | Total wait time of the summarized events that are timed.                                                                                                                                |
+| MIN\_TIMER\_WAIT              | Minimum wait time of the summarized events that are timed.                                                                                                                              |
+| AVG\_TIMER\_WAIT              | Average wait time of the summarized events that are timed.                                                                                                                              |
+| MAX\_TIMER\_WAIT              | Maximum wait time of the summarized events that are timed.                                                                                                                              |
+| COUNT\_READ                   | Number of all read operations, including FGETS, FGETC, FREAD, and READ.                                                                                                                 |
+| SUM\_TIMER\_READ              | Total wait time of all read operations that are timed.                                                                                                                                  |
+| MIN\_TIMER\_READ              | Minimum wait time of all read operations that are timed.                                                                                                                                |
+| AVG\_TIMER\_READ              | Average wait time of all read operations that are timed.                                                                                                                                |
+| MAX\_TIMER\_READ              | Maximum wait time of all read operations that are timed.                                                                                                                                |
+| SUM\_NUMBER\_OF\_BYTES\_READ  | Bytes read by read operations.                                                                                                                                                          |
+| COUNT\_WRITE                  | Number of all write operations, including FPUTS, FPUTC, FPRINTF, VFPRINTF, FWRITE, and PWRITE.                                                                                          |
+| SUM\_TIMER\_WRITE             | Total wait time of all write operations that are timed.                                                                                                                                 |
+| MIN\_TIMER\_WRITE             | Minimum wait time of all write operations that are timed.                                                                                                                               |
+| AVG\_TIMER\_WRITE             | Average wait time of all write operations that are timed.                                                                                                                               |
+| MAX\_TIMER\_WRITE             | Maximum wait time of all write operations that are timed.                                                                                                                               |
+| SUM\_NUMBER\_OF\_BYTES\_WRITE | Bytes written by write operations.                                                                                                                                                      |
+| COUNT\_MISC                   | Number of all miscellaneous operations not counted above, including CREATE, DELETE, OPEN, CLOSE, STREAM\_OPEN, STREAM\_CLOSE, SEEK, TELL, FLUSH, STAT, FSTAT, CHSIZE, RENAME, and SYNC. |
+| SUM\_TIMER\_MISC              | Total wait time of all miscellaneous operations that are timed.                                                                                                                         |
+| MIN\_TIMER\_MISC              | Minimum wait time of all miscellaneous operations that are timed.                                                                                                                       |
+| AVG\_TIMER\_MISC              | Average wait time of all miscellaneous operations that are timed.                                                                                                                       |
+| MAX\_TIMER\_MISC              | Maximum wait time of all miscellaneous operations that are timed.                                                                                                                       |
 
 I/O operations can be avoided by caching, in which case they will not be recorded in this table.
 
-
 You can [TRUNCATE](../../../../table-statements/truncate-table.md) the table, which will reset all counters to zero.
-
 
 ## Example
 
-
-```
+```sql
 SELECT * FROM file_summary_by_event_name\G
 ...
 *************************** 49. row ***************************
@@ -95,8 +87,6 @@ SUM_NUMBER_OF_BYTES_WRITE: 0
            MAX_TIMER_MISC: 27262208
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

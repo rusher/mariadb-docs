@@ -1,8 +1,8 @@
 # Performance Schema memory\_summary\_by\_thread\_by\_event\_name Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
-
-The memory\_summary\_by\_thread\_by\_event\_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
+{% hint style="info" %}
+The `memory_summary_by_thread_by_event_name` table is available from MariaDB 10.5.2.
+{% endhint %}
 
 There are five memory summary tables in the Performance Schema that share a number of fields in common. These include:
 

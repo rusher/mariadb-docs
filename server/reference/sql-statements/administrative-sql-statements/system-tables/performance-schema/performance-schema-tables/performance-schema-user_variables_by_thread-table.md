@@ -1,8 +1,8 @@
 # Performance Schema user\_variables\_by\_thread Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
-
-The `user_variables_by_thread` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
+{% hint style="info" %}
+The `user_variables_by_thread` table is available from MariaDB 10.5.2.
+{% endhint %}
 
 The `user_variables_by_thread` table contains information about [user-defined variables](../../../../../sql-structure/sql-language-structure/user-defined-variables.md) and the threads that defined them.
 
@@ -18,7 +18,7 @@ The table contains the following columns:
 
 ## Example
 
-```
+```sql
 SET @var = 0;
 
 SELECT * FROM user_variables_by_thread;

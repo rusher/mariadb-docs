@@ -1,31 +1,22 @@
-
 # Performance Schema hosts Table
 
 ## Description
 
-
 The `hosts` table contains a row for each host used by clients to connect to the server, containing current and total connections.
 
-
-The size is determined by the [performance_schema_hosts_size](../performance-schema-system-variables.md#performance_schema_hosts_size) system variable, which, if set to zero, will disable connection statistics in the hosts table.
-
+The size is determined by the [performance\_schema\_hosts\_size](../performance-schema-system-variables.md#performance_schema_hosts_size) system variable, which, if set to zero, will disable connection statistics in the hosts table.
 
 It contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| HOST | Host name used by the client to connect, NULL for internal threads or user sessions that failed to authenticate. |
-| CURRENT_CONNECTIONS | Current number of the host's connections. |
-| TOTAL_CONNECTIONS | Total number of the host's connections |
-
-
+| Column               | Description                                                                                                      |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| HOST                 | Host name used by the client to connect, NULL for internal threads or user sessions that failed to authenticate. |
+| CURRENT\_CONNECTIONS | Current number of the host's connections.                                                                        |
+| TOTAL\_CONNECTIONS   | Total number of the host's connections                                                                           |
 
 ## Example
 
-
-```
+```sql
 SELECT * FROM hosts;
 +-----------+---------------------+-------------------+
 | HOST      | CURRENT_CONNECTIONS | TOTAL_CONNECTIONS |
@@ -35,8 +26,6 @@ SELECT * FROM hosts;
 +-----------+---------------------+-------------------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

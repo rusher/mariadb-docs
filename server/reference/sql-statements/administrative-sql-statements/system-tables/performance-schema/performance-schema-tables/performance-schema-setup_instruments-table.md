@@ -12,9 +12,9 @@ It contains the following columns:
 
 ## Example
 
-From [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), default settings with the Performance Schema enabled:
+Default settings with the Performance Schema enabled:
 
-```
+```sql
 SELECT * FROM setup_instruments ORDER BY name;
 +--------------------------------------------------------------------------------+---------+-------+
 | NAME                                                                           | ENABLED | TIMED |

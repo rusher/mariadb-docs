@@ -1,8 +1,8 @@
 # Performance Schema status\_by\_account Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
-
-The `status_by_account` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
+{% hint style="info" %}
+The `status_by_account` table is available from MariaDB 10.5.2.
+{% endhint %}
 
 The `status_by_account` table contains status variable information by user/host account. The table does not collect statistics for `Com_xxx` variables.
 
@@ -17,7 +17,7 @@ The table contains the following columns:
 
 If [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) is run, will aggregate the status from terminated sessions to user and host status, then reset the account status.
 
-If [FLUSH STATUS](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/flush-status/README.md) is run, session status from all active sessions are added to the global status variables, the status of all active sessions are reset, and values aggregated from disconnected sessions are reset.
+If [FLUSH STATUS](../../../flush-commands/) is run, session status from all active sessions are added to the global status variables, the status of all active sessions are reset, and values aggregated from disconnected sessions are reset.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

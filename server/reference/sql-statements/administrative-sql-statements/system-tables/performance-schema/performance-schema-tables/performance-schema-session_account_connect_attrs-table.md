@@ -19,7 +19,7 @@ The C API functions [mysql\_options()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3
 
 ## Example
 
-```
+```sql
 SELECT * FROM performance_schema.session_account_connect_attrs;
 +----------------+-----------------+------------------+------------------+
 | PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE       | ORDINAL_POSITION |

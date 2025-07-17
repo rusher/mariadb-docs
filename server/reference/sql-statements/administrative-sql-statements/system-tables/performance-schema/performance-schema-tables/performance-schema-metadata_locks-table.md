@@ -1,25 +1,25 @@
 # Performance Schema metadata\_locks Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
-
-The metadata\_locks table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
+{% hint style="info" %}
+The `metadata_locks` table is available from MariaDB 10.5.2.
+{% endhint %}
 
 The `metadata_locks` table contains [metadata lock](../../../../transactions/metadata-locking.md) information.
 
 To enable metadata lock instrumention, at runtime:
 
-```
+```sql
 UPDATE performance_schema.setup_instruments SET enabled='YES', timed='YES' 
   WHERE name LIKE 'wait/lock/metadata%';
 ```
 
-or in the [configuration file](../../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
+Or in the [configuration file](../../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 performance-schema-instrument='wait/lock/metadata/sql/mdl=ON'
 ```
 
-The table is by default autosized, but the size can be configured with the [performance\_schema\_max\_metadata\_locks](../performance-schema-system-variables.md#performance_schema_max_metadata_locks) system variabe.
+The table is by default autosized, but the size can be configured with the [performance\_schema\_max\_metadata\_locks](../performance-schema-system-variables.md#performance_schema_max_metadata_locks) system variable.
 
 The table is read-only, and [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) cannot be used to empty the table.
 

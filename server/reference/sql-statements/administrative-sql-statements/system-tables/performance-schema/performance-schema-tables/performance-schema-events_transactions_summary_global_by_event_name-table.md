@@ -1,14 +1,14 @@
 # Performance Schema events\_transactions\_summary\_global\_by\_event\_name Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
-
-The events\_transactions\_summary\_global\_by\_event\_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
+{% hint style="info" %}
+The `events_transactions_summary_global_by_event_name` table is available from MariaDB 10.5.2.
+{% endhint %}
 
 The `events_transactions_summary_global_by_event_name` table contains information on transaction events aggregated by event name.
 
 The table contains the following columns:
 
-```
+```sql
 +----------------------+---------------------+------+-----+---------+-------+
 | Field                | Type                | Null | Key | Default | Extra |
 +----------------------+---------------------+------+-----+---------+-------+

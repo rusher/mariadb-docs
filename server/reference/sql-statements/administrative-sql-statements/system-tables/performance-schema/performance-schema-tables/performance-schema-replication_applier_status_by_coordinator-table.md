@@ -1,8 +1,8 @@
 # Performance Schema replication\_applier\_status\_by\_coordinator Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
-
-The `replication_applier_status_by_coordinator` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
+{% hint style="info" %}
+The `replication_applier_status_by_coordinator` table is available from MariaDB 10.5.2.
+{% endhint %}
 
 The [Performance Schema](../) replication\_applier\_status\_by\_coordinator table displays the status of the coordinator thread used in multi-threaded replicas to manage multiple worker threads.
 

@@ -1,31 +1,23 @@
-
-# Performance Schema setup_consumers Table
+# Performance Schema setup\_consumers Table
 
 Lists the types of consumers for which event information is available.
 
-
 The `setup_consumers` table contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| NAME | Consumer name |
+| Column  | Description                                                                                                                                  |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| NAME    | Consumer name                                                                                                                                |
 | ENABLED | YES or NO for whether or not the consumer is enabled. You can modify this column to ensure that event information is added, or is not added. |
-
-
 
 The table can be modified directly, or the server started with the option enabled, for example:
 
-
-```
+```ini
 performance-schema-consumer-events-waits-history=ON
 ```
 
 ## Example
 
-
-```
+```sql
 SELECT * FROM performance_schema.setup_consumers;
 
 +--------------------------------+---------+
@@ -48,11 +40,8 @@ SELECT * FROM performance_schema.setup_consumers;
 
 ## See Also
 
-
-* [Sys Schema ps_is_consumer_enabled function](../../sys-schema/sys-schema-stored-functions/ps_is_consumer_enabled.md)
-
+* [Sys Schema ps\_is\_consumer\_enabled function](../../sys-schema/sys-schema-stored-functions/ps_is_consumer_enabled.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

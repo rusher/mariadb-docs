@@ -1,29 +1,20 @@
-
-# Performance Schema file_instances Table
+# Performance Schema file\_instances Table
 
 ## Description
 
-
 The `file_instances` table lists instances of instruments seen by the Performance Schema when executing file I/O instrumentation, and the associated files. Only files that have been opened, and that have not been deleted, will be listed in the table.
 
+The [performance\_schema\_max\_file\_instances](../performance-schema-system-variables.md#performance_schema_max_file_instances) system variable specifies the maximum number of instrumented file objects.
 
-The [performance_schema_max_file_instances](../performance-schema-system-variables.md#performance_schema_max_file_instances) system variable specifies the maximum number of instrumented file objects.
-
-
-
-| Column | Description |
-| --- | --- |
-| FILE_NAME | File name. |
-| EVENT_NAME | Instrument name associated with the file. |
-| OPEN_COUNT | Open handles on the file. A value of greater than zero means that the file is currently open. |
-
-
+| Column      | Description                                                                                   |
+| ----------- | --------------------------------------------------------------------------------------------- |
+| FILE\_NAME  | File name.                                                                                    |
+| EVENT\_NAME | Instrument name associated with the file.                                                     |
+| OPEN\_COUNT | Open handles on the file. A value of greater than zero means that the file is currently open. |
 
 ## Example
 
-
-
-```
+```sql
 SELECT * FROM performance_schema.file_instances WHERE OPEN_COUNT>0;
 +----------------------------------------------------+--------------------------------------+------------+
 | FILE_NAME                                          | EVENT_NAME                           | OPEN_COUNT |
@@ -38,9 +29,6 @@ SELECT * FROM performance_schema.file_instances WHERE OPEN_COUNT>0;
 ...
 ```
 
-
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

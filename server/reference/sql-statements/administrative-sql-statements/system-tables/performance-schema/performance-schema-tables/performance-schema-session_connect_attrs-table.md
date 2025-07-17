@@ -21,7 +21,7 @@ The C API functions [mysql\_options()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3
 
 Returning the current connection's attributes:
 
-```
+```sql
 SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=CONNECTION_ID();
 +----------------+-----------------+------------------+------------------+
 | PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE       | ORDINAL_POSITION |
@@ -39,11 +39,11 @@ SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=CONN
 
 ### JDBC
 
-Connection attributes values are set using the option [connectionAttributes](https://mariadb.com/kb/en/about-mariadb-connector-j/#infrequently-used-parameters).
+Connection attributes values are set using the option [connectionAttributes](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide).
 
-Example using connection string `jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3`
+Example using connection string `jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3` :
 
-```
+```sql
 SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=17;
 +----------------+-----------------+---------------------+------------------+
 | PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE          | ORDINAL_POSITION |
@@ -63,11 +63,11 @@ SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=17;
 
 ### Node.js
 
-Connection attributes values are set using the option [connectAttributes](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/node-js-connection-options)
+Connection attributes values are set using the option [connectAttributes](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/node-js-connection-options).
 
 Example using connection
 
-```
+```javascript
 const conn = await mariadb.createConnection({
   host: 'localhost',
   user: 'root',
@@ -75,7 +75,7 @@ const conn = await mariadb.createConnection({
  });
 ```
 
-```
+```sql
 SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=30;
 +----------------+-----------------+------------------------+------------------+
 | PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE             | ORDINAL_POSITION |
@@ -94,11 +94,11 @@ SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=30;
 
 ### R2DBC
 
-Connection attributes values are set using the option [connectionAttributes](https://github.com/mariadb-corporation/mariadb-connector-r2dbc#connection-options).
+Connection attributes values are set using the option [connectionAttributes](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-r2dbc/mariadb-connector-r2dbc-guide).
 
 Example using connection string `jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3`
 
-```
+```java
 TreeMap<String, String> connectionAttributes = new TreeMap<>();
     connectionAttributes.put("entry1", "val1");
     connectionAttributes.put("entry2", "val2");
@@ -114,7 +114,7 @@ TreeMap<String, String> connectionAttributes = new TreeMap<>();
      MariadbConnection connection = connFactory.create().block();
 ```
 
-```
+```sql
 SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=34;
 +----------------+-----------------+--------------------+------------------+
 | PROCESSLIST_ID | ATTR_NAME       | ATTR_VALUE         | ORDINAL_POSITION |

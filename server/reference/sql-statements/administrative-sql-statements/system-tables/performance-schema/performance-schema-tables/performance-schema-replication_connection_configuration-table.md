@@ -1,8 +1,8 @@
 # Performance Schema replication\_connection\_configuration Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
-
-The `replication_connection_configuration` table was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes).
+{% hint style="info" %}
+The `replication_connection_configuration` table is available from MariaDB 10.6.0.
+{% endhint %}
 
 The [Performance Schema](../) replication\_connection\_configuration table displays replica's configuration settings used for connecting to the primary.
 

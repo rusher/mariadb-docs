@@ -1,8 +1,8 @@
 # Performance Schema prepared\_statements\_instances Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
-
-The prepared\_statements\_instances table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
+{% hint style="info" %}
+The `prepared_statements_instances` table is available from MariaDB 10.5.2.
+{% endhint %}
 
 The `prepared_statements_instances` table contains aggregated statistics of prepared statements.
 
@@ -10,7 +10,7 @@ The maximum number of rows in the table is determined by the [performance\_schem
 
 The table contains the following columns:
 
-```
+```sql
 +-----------------------------+--------------------------------------------------------+------+-----+---------+-------+
 | Field                       | Type                                                   | Null | Key | Default | Extra |
 +-----------------------------+--------------------------------------------------------+------+-----+---------+-------+

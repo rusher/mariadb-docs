@@ -1,29 +1,22 @@
+# Performance Schema events\_waits\_summary\_by\_instance Table
 
-# Performance Schema events_waits_summary_by_instance Table
+The [Performance Schema](../) `events_waits_summary_by_instance` table contains wait events summarized by instance. It contains the following columns:
 
-The [Performance Schema](../README.md) `events_waits_summary_by_instance` table contains wait events summarized by instance. It contains the following columns:
-
-
-
-| Column | Description |
-| --- | --- |
-| EVENT_NAME | Event name. Used together with OBJECT_INSTANCE_BEGIN for grouping events. |
-| OBJECT_INSTANCE_BEGIN | If an instrument creates multiple instances, each instance has a unique OBJECT_INSTANCE_BEGIN value to allow for grouping by instance. |
-| COUNT_STAR | Number of summarized events |
-| SUM_TIMER_WAIT | Total wait time of the summarized events that are timed. |
-| MIN_TIMER_WAIT | Minimum wait time of the summarized events that are timed. |
-| AVG_TIMER_WAIT | Average wait time of the summarized events that are timed. |
-| MAX_TIMER_WAIT | Maximum wait time of the summarized events that are timed. |
-
-
+| Column                  | Description                                                                                                                              |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| EVENT\_NAME             | Event name. Used together with OBJECT\_INSTANCE\_BEGIN for grouping events.                                                              |
+| OBJECT\_INSTANCE\_BEGIN | If an instrument creates multiple instances, each instance has a unique OBJECT\_INSTANCE\_BEGIN value to allow for grouping by instance. |
+| COUNT\_STAR             | Number of summarized events                                                                                                              |
+| SUM\_TIMER\_WAIT        | Total wait time of the summarized events that are timed.                                                                                 |
+| MIN\_TIMER\_WAIT        | Minimum wait time of the summarized events that are timed.                                                                               |
+| AVG\_TIMER\_WAIT        | Average wait time of the summarized events that are timed.                                                                               |
+| MAX\_TIMER\_WAIT        | Maximum wait time of the summarized events that are timed.                                                                               |
 
 The `*_TIMER_WAIT` columns only calculate results for timed events, as non-timed events have a `NULL` wait time.
 
-
 ## Example
 
-
-```
+```sql
 SELECT * FROM events_waits_summary_by_instance\G
 ...
 *************************** 202. row ***************************
@@ -52,8 +45,6 @@ OBJECT_INSTANCE_BEGIN: 140578961971264
        MAX_TIMER_WAIT: 21026400404
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

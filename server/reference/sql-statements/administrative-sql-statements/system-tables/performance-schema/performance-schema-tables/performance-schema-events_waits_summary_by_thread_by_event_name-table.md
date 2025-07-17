@@ -1,29 +1,22 @@
+# Performance Schema events\_waits\_summary\_by\_thread\_by\_event\_name Table
 
-# Performance Schema events_waits_summary_by_thread_by_event_name Table
+The [Performance Schema](../) `events_waits_summary_by_thread_by_event_name` table contains wait events summarized by thread and event name. It contains the following columns:
 
-The [Performance Schema](../README.md) `events_waits_summary_by_thread_by_event_name` table contains wait events summarized by thread and event name. It contains the following columns:
-
-
-
-| Column | Description |
-| --- | --- |
-| THREAD_ID | Thread associated with the event. Together with EVENT_NAME uniquely identifies the row. |
-| EVENT_NAME | Event name. Used together with THREAD_ID for grouping events. |
-| COUNT_STAR | Number of summarized events |
-| SUM_TIMER_WAIT | Total wait time of the summarized events that are timed. |
-| MIN_TIMER_WAIT | Minimum wait time of the summarized events that are timed. |
-| AVG_TIMER_WAIT | Average wait time of the summarized events that are timed. |
-| MAX_TIMER_WAIT | Maximum wait time of the summarized events that are timed. |
-
-
+| Column           | Description                                                                              |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| THREAD\_ID       | Thread associated with the event. Together with EVENT\_NAME uniquely identifies the row. |
+| EVENT\_NAME      | Event name. Used together with THREAD\_ID for grouping events.                           |
+| COUNT\_STAR      | Number of summarized events                                                              |
+| SUM\_TIMER\_WAIT | Total wait time of the summarized events that are timed.                                 |
+| MIN\_TIMER\_WAIT | Minimum wait time of the summarized events that are timed.                               |
+| AVG\_TIMER\_WAIT | Average wait time of the summarized events that are timed.                               |
+| MAX\_TIMER\_WAIT | Maximum wait time of the summarized events that are timed.                               |
 
 The `*_TIMER_WAIT` columns only calculate results for timed events, as non-timed events have a `NULL` wait time.
 
-
 ## Example
 
-
-```
+```sql
 SELECT * FROM events_waits_summary_by_thread_by_event_name\G
 ...
 *************************** 6424. row ***************************
@@ -52,8 +45,6 @@ AVG_TIMER_WAIT: 301441810000000
 MAX_TIMER_WAIT: 4912417573000000
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}
