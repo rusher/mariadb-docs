@@ -1,48 +1,41 @@
+# Performance Schema events\_statements\_summary\_by\_host\_by\_event\_name Table
 
-# Performance Schema events_statements_summary_by_host_by_event_name Table
+The [Performance Schema](../) events\_statements\_summary\_by\_host\_by\_event\_name table contains statement events summarized by host and event name. It contains the following columns:
 
-The [Performance Schema](../README.md) events_statements_summary_by_host_by_event_name table contains statement events summarized by host and event name. It contains the following columns:
-
-
-
-| Column | Description |
-| --- | --- |
-| HOST | Host. Used together with EVENT_NAME for grouping events. |
-| EVENT_NAME | Event name. Used together with HOST for grouping events. |
-| COUNT_STAR | Number of summarized events |
-| SUM_TIMER_WAIT | Total wait time of the summarized events that are timed. |
-| MIN_TIMER_WAIT | Minimum wait time of the summarized events that are timed. |
-| AVG_TIMER_WAIT | Average wait time of the summarized events that are timed. |
-| MAX_TIMER_WAIT | Maximum wait time of the summarized events that are timed. |
-| SUM_LOCK_TIME | Sum of the LOCK_TIME column in the events_statements_currentd table. |
-| SUM_ERRORS | Sum of the ERRORS column in the events_statements_current table. |
-| SUM_WARNINGS | Sum of the WARNINGS column in the events_statements_current table. |
-| SUM_ROWS_AFFECTED | Sum of the ROWS_AFFECTED column in the events_statements_current table. |
-| SUM_ROWS_SENT | Sum of the ROWS_SENT column in the events_statements_current table. |
-| SUM_ROWS_EXAMINED | Sum of the ROWS_EXAMINED column in the events_statements_current table. |
-| SUM_CREATED_TMP_DISK_TABLES | Sum of the CREATED_TMP_DISK_TABLES column in the events_statements_current table. |
-| SUM_CREATED_TMP_TABLES | Sum of the CREATED_TMP_TABLES column in the events_statements_current table. |
-| SUM_SELECT_FULL_JOIN | Sum of the SELECT_FULL_JOIN column in the events_statements_current table. |
-| SUM_SELECT_FULL_RANGE_JOIN | Sum of the SELECT_FULL_RANGE_JOINW column in the events_statements_current table. |
-| SUM_SELECT_RANGE | Sum of the SELECT_RANGE column in the events_statements_current table. |
-| SUM_SELECT_RANGE_CHECK | Sum of the SELECT_RANGE_CHECK column in the events_statements_current table. |
-| SUM_SELECT_SCAN | Sum of the SELECT_SCAN column in the events_statements_current table. |
-| SUM_SORT_MERGE_PASSES | Sum of the SORT_MERGE_PASSES column in the events_statements_current table. |
-| SUM_SORT_RANGE | Sum of the SORT_RANGE column in the events_statements_current table. |
-| SUM_SORT_ROWS | Sum of the SORT_ROWS column in the events_statements_current table. |
-| SUM_SORT_SCAN | Sum of the SORT_SCAN column in the events_statements_current table. |
-| SUM_NO_INDEX_USED | Sum of the NO_INDEX_USED column in the events_statements_current table. |
-| SUM_NO_GOOD_INDEX_USED | Sum of the NO_GOOD_INDEX_USED column in the events_statements_current table. |
-
-
+| Column                          | Description                                                                            |
+| ------------------------------- | -------------------------------------------------------------------------------------- |
+| HOST                            | Host. Used together with EVENT\_NAME for grouping events.                              |
+| EVENT\_NAME                     | Event name. Used together with HOST for grouping events.                               |
+| COUNT\_STAR                     | Number of summarized events                                                            |
+| SUM\_TIMER\_WAIT                | Total wait time of the summarized events that are timed.                               |
+| MIN\_TIMER\_WAIT                | Minimum wait time of the summarized events that are timed.                             |
+| AVG\_TIMER\_WAIT                | Average wait time of the summarized events that are timed.                             |
+| MAX\_TIMER\_WAIT                | Maximum wait time of the summarized events that are timed.                             |
+| SUM\_LOCK\_TIME                 | Sum of the LOCK\_TIME column in the events\_statements\_currentd table.                |
+| SUM\_ERRORS                     | Sum of the ERRORS column in the events\_statements\_current table.                     |
+| SUM\_WARNINGS                   | Sum of the WARNINGS column in the events\_statements\_current table.                   |
+| SUM\_ROWS\_AFFECTED             | Sum of the ROWS\_AFFECTED column in the events\_statements\_current table.             |
+| SUM\_ROWS\_SENT                 | Sum of the ROWS\_SENT column in the events\_statements\_current table.                 |
+| SUM\_ROWS\_EXAMINED             | Sum of the ROWS\_EXAMINED column in the events\_statements\_current table.             |
+| SUM\_CREATED\_TMP\_DISK\_TABLES | Sum of the CREATED\_TMP\_DISK\_TABLES column in the events\_statements\_current table. |
+| SUM\_CREATED\_TMP\_TABLES       | Sum of the CREATED\_TMP\_TABLES column in the events\_statements\_current table.       |
+| SUM\_SELECT\_FULL\_JOIN         | Sum of the SELECT\_FULL\_JOIN column in the events\_statements\_current table.         |
+| SUM\_SELECT\_FULL\_RANGE\_JOIN  | Sum of the SELECT\_FULL\_RANGE\_JOINW column in the events\_statements\_current table. |
+| SUM\_SELECT\_RANGE              | Sum of the SELECT\_RANGE column in the events\_statements\_current table.              |
+| SUM\_SELECT\_RANGE\_CHECK       | Sum of the SELECT\_RANGE\_CHECK column in the events\_statements\_current table.       |
+| SUM\_SELECT\_SCAN               | Sum of the SELECT\_SCAN column in the events\_statements\_current table.               |
+| SUM\_SORT\_MERGE\_PASSES        | Sum of the SORT\_MERGE\_PASSES column in the events\_statements\_current table.        |
+| SUM\_SORT\_RANGE                | Sum of the SORT\_RANGE column in the events\_statements\_current table.                |
+| SUM\_SORT\_ROWS                 | Sum of the SORT\_ROWS column in the events\_statements\_current table.                 |
+| SUM\_SORT\_SCAN                 | Sum of the SORT\_SCAN column in the events\_statements\_current table.                 |
+| SUM\_NO\_INDEX\_USED            | Sum of the NO\_INDEX\_USED column in the events\_statements\_current table.            |
+| SUM\_NO\_GOOD\_INDEX\_USED      | Sum of the NO\_GOOD\_INDEX\_USED column in the events\_statements\_current table.      |
 
 The `*_TIMER_WAIT` columns only calculate results for timed events, as non-timed events have a `NULL` wait time.
 
-
 ## Example
 
-
-```
+```sql
 SELECT * FROM events_statements_summary_by_host_by_event_name\G
 ...
 *************************** 347. row ***************************
@@ -101,8 +94,6 @@ SUM_CREATED_TMP_DISK_TABLES: 0
      SUM_NO_GOOD_INDEX_USED: 0
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

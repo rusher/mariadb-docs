@@ -6,7 +6,7 @@ The Performance Schema is a feature for monitoring server performance.
 
 It is implemented as a storage engine, and so will appear in the list of storage engines available.
 
-```
+```sql
 SHOW ENGINES;
 +--------------------+---------+----------------------------------+--------------+------+------------+
 | Engine             | Support | Comment                          | Transactions | XA   | Savepoints |
@@ -21,11 +21,11 @@ However, `performance_schema` is not a regular storage engine for storing data, 
 
 The storage engine contains a database called `performance_schema`, which in turn consists of a number of tables that can be queried with regular SQL statements, returning specific performance information.
 
-```
+```sql
 USE performance_schema
 ```
 
-```
+```sql
 SHOW TABLES;
 +----------------------------------------------------+
 | Tables_in_performance_schema                       |
@@ -37,13 +37,13 @@ SHOW TABLES;
 80 rows in set (0.00 sec)
 ```
 
-See [List of Performance Schema Tables](performance-schema-tables/list-of-performance-schema-tables.md) for a full list and links to detailed descriptions of each table. From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), there are 80 Performance Schema tables.
+See [List of Performance Schema Tables](performance-schema-tables/list-of-performance-schema-tables.md) for a full list and links to detailed descriptions of each table. From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), there are 80 Performance Schema tables.
 
 ## Activating the Performance Schema
 
 The performance schema is disabled by default for performance reasons. You can check its current status by looking at the value of the [performance\_schema](performance-schema-system-variables.md#performance_schema) system variable.
 
-```
+```sql
 SHOW VARIABLES LIKE 'performance_schema';
 +--------------------+-------+
 | Variable_name      | Value |
@@ -54,17 +54,17 @@ SHOW VARIABLES LIKE 'performance_schema';
 
 The performance schema cannot be activated at runtime - it must be set when the server starts by adding the following line in your `my.cnf` configuration file.
 
-```
+```ini
 performance_schema=ON
 ```
 
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), some memory is allocated dynamically, depending on load, number of connections, number of tables open etc.
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), some memory is allocated dynamically, depending on load, number of connections, number of tables open etc.
 
 ## Enabling the Performance Schema
 
 You need to set up all consumers (starting collection of data) and instrumentations (what to collect):
 
-```
+```sql
 UPDATE performance_schema.setup_consumers SET ENABLED = 'YES';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'YES';
 ```
@@ -75,7 +75,7 @@ You can disable instrumentations by setting `ENABLED` to `"NO"`.
 You can also do this in your my.cnf file.\
 The following enables all instrumentation of all stages (computation units) in MariaDB:
 
-```
+```sql
 [mysqld]
 performance_schema=ON
 performance-schema-instrument='stage/%=ON'
@@ -86,7 +86,7 @@ performance-schema-consumer-events-stages-history-long=ON
 
 ## Listing Performance Schema Variables
 
-```
+```sql
 SHOW VARIABLES LIKE "perf%";
 +--------------------------------------------------------+-------+
 | Variable_name                                          | Value |
@@ -103,11 +103,9 @@ Note that the "consumer" events are not shown on this list, as they are only ava
 
 ## Column Comments
 
-**MariaDB starting with** [**10.7.1**](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/broken-reference/README.md)
+From MariaDB 10.7.1, comments have been added to table columns in the Performance Schema. These can be viewed with, for example:
 
-From [MariaDB 10.7.1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/broken-reference/README.md), comments have been added to table columns in the Performance Schema. These can be viewed with, for example:
-
-```
+```sql
 SELECT column_name, column_comment FROM information_schema.columns 
   WHERE table_schema='performance_schema' AND table_name='file_instances';
 ...

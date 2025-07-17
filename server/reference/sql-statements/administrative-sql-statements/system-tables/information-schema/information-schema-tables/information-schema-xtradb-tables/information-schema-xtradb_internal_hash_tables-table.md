@@ -1,9 +1,5 @@
 # Information Schema XTRADB\_INTERNAL\_HASH\_TABLES Table
 
-**MariaDB starting with** [**10.0.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes)
-
-The `XTRADB_INTERNAL_HASH_TABLES` table was added in [MariaDB 10.0.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes).
-
 The [Information Schema](../../) `XTRADB_INTERNAL_HASH_TABLES` table contains InnoDB/XtraDB hash table memory usage information.
 
 The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
