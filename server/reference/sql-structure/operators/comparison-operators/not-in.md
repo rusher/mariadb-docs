@@ -1,23 +1,18 @@
-
 # NOT IN
 
 ## Syntax
 
-
-```
+```sql
 expr NOT IN (value,...)
 ```
 
 ## Description
 
-
-This is the same as NOT (expr [IN](in.md) (value,...)).
-
+This is the same as `NOT` (`expr` [IN](in.md) (value,...)).
 
 ## Examples
 
-
-```
+```sql
 SELECT 2 NOT IN (0,3,5,7);
 +--------------------+
 | 2 NOT IN (0,3,5,7) |
@@ -26,7 +21,7 @@ SELECT 2 NOT IN (0,3,5,7);
 +--------------------+
 ```
 
-```
+```sql
 SELECT 'wefwf' NOT IN ('wee','wefwf','weg');
 +--------------------------------------+
 | 'wefwf' NOT IN ('wee','wefwf','weg') |
@@ -35,7 +30,7 @@ SELECT 'wefwf' NOT IN ('wee','wefwf','weg');
 +--------------------------------------+
 ```
 
-```
+```sql
 SELECT 1 NOT IN ('1', '2', '3');
 +--------------------------+
 | 1 NOT IN ('1', '2', '3') |
@@ -44,10 +39,9 @@ SELECT 1 NOT IN ('1', '2', '3');
 +--------------------------+
 ```
 
-NULL:
+`NULL`:
 
-
-```
+```sql
 SELECT NULL NOT IN (1, 2, 3);
 +-----------------------+
 | NULL NOT IN (1, 2, 3) |
@@ -70,8 +64,6 @@ SELECT 5 NOT IN (1, 2, NULL);
 +-----------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

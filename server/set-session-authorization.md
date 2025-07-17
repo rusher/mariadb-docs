@@ -10,23 +10,28 @@ From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 ### Examples
 
+```sql
+SELECT USER(), CURRENT_USER(), DATABASE();
 ```
-select user(), current_user(), database(); 
+
+```
 +--------------------+--------------------+------------+
 | user()             | current_user()     | database() |
 +--------------------+--------------------+------------+
 | msandbox@localhost | msandbox@localhost | test       |
 +--------------------+--------------------+------------+
 1 row in set (0.000 sec)
+```
 
-set session authorization foo@localhost; 
+```sql
+SET SESSION AUTHORIZATION foo@localhost;
+SELECT USER(), CURRENT_USER(), DATABASE();
+```
 
-select user(), current_user(), database(); 
+```
 +---------------+----------------+------------+
 | user()        | current_user() | database() |
 +---------------+----------------+------------+
 | foo@localhost | foo@%          | NULL       |
 +---------------+----------------+------------+
-
 ```
-

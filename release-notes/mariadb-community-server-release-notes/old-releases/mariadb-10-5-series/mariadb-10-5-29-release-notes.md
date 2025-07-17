@@ -1,17 +1,14 @@
 # MariaDB 10.5.29 Release Notes
 
-**Note:** This page describes features in the source repository for [**MariaDB 10.5**](what-is-mariadb-105.md). There are currently no official packages or\
-binaries available for download which contain the features. If you want to try out any of the new features described here you will\
-need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
-code yourself.
+{% include "../../../.gitbook/includes/latest-10-5.md" %}
 
-[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-10-5-29-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-29-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.29/)**Release date:** ?
+<a href="https://downloads.mariadb.org/mariadb/10.5.29/" class="button primary">Download</a> <a href="mariadb-10-5-29-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-29-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
 
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
+**Release date:** 8 May 2025
+
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](../release-notes-mariadb-10-4-series/what-is-mariadb-104.md) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.29](mariadb-10-5-29-release-notes.md) is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.5**](what-is-mariadb-105.md) **see the**[**What is MariaDB 10.5?**](what-is-mariadb-105.md) **page.**
 
 Thanks, and enjoy MariaDB!
 

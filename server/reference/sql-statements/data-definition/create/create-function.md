@@ -214,7 +214,7 @@ SELECT hello('world');
 +----------------+
 ```
 
-You can use a compound statement in a function to manipulate data with statements like `INSERT` and `UPDATE`. The following example creates a counter function that uses a temporary table to store the current value. Because the compound statement contains statements terminated with semicolons, you have to first change the statement delimiter with the `DELIMITER` statement to allow the semicolon to be used in the function body. See [Delimiters in the mariadb client](../../../../clients-and-utilities/mariadb-client/delimiters.md) for more.
+You can use a compound statement in a function to manipulate data with statements like `INSERT` and `UPDATE`. The following example creates a counter function that uses a temporary table to store the current value. Because the compound statement contains statements terminated with semicolons, you have to first change the statement delimiter with the `DELIMITER` statement to allow the semicolon to be used in the function body. See [Delimiters in the mariadb client](broken-reference) for more.
 
 ```sql
 CREATE TEMPORARY TABLE counter (c INT);

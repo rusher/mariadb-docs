@@ -1,16 +1,14 @@
 # MariaDB 10.5.26 Release Notes
 
-The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
+{% include "../../../.gitbook/includes/latest-10-5.md" %}
 
-[Download 10.5.26](https://downloads.mariadb.org/mariadb/10.5.26/)[Release Notes](mariadb-10-5-26-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-26-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+<a href="https://downloads.mariadb.org/mariadb/10.5.26/" class="button primary">Download</a> <a href="mariadb-10-5-26-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-26-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
 
 **Release date:** 8 Aug 2024
 
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](../release-notes-mariadb-10-4-series/what-is-mariadb-104.md) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.26](mariadb-10-5-26-release-notes.md) is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.5**](what-is-mariadb-105.md) **see the**[**What is MariaDB 10.5?**](what-is-mariadb-105.md) **page.**
 
 Thanks, and enjoy MariaDB!
 

@@ -1,17 +1,12 @@
-
 # Bitemporal Tables
 
 Bitemporal tables are tables that use versioning both at the [system](system-versioned-tables.md) and [application-time period](application-time-periods.md) levels.
 
-
-
 ## Using Bitemporal Tables
-
 
 To create a bitemporal table, use:
 
-
-```
+```sql
 CREATE TABLE test.t3 (
    date_1 DATE,
    date_2 DATE,
@@ -22,10 +17,9 @@ CREATE TABLE test.t3 (
 WITH SYSTEM VERSIONING;
 ```
 
-Note that, while `system_time` here is also a time period, it cannot be used in `DELETE FOR PORTION` or `UPDATE FOR PORTION` statements.
+Note that, while `system_time` here is also a time period, it cannot be used in `DELETE FOR PORTION` or `UPDATE FOR PORTION` statements:
 
-
-```
+```sql
 DELETE FROM test.t3 
 FOR PORTION OF system_time 
     FROM '2000-01-01' TO '2018-01-01';
@@ -36,12 +30,9 @@ ERROR 42000: You have an error in your SQL syntax; check the manual that corresp
 
 ## See Also
 
-
 * [System-versioned Tables](system-versioned-tables.md)
 * [Application-time Periods](application-time-periods.md)
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

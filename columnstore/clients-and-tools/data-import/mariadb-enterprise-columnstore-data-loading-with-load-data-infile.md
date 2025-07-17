@@ -1,5 +1,6 @@
 ---
 layout:
+  width: default
   title:
     visible: true
   description:
@@ -135,30 +136,30 @@ If you are loading a file located on the client, you can use the [LOAD DATA LOCA
 
 If you are using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) the `--local-infile` option can be used:
 
-```
+```sql
 $ mariadb --host 192.168.0.1 \
       --user db_user --password \
       --default-character-set=utf8 \
       --local-infile
 ```
 
-If you are using [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/en/about-mariadb-connector-c/README.md), the `MYSQL_OPT_LOCAL_INFILE` option can be set with the `mysql_optionsv()` function:
+If you are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connector-c-guide), the `MYSQL_OPT_LOCAL_INFILE` option can be set with the `mysql_optionsv()` function:
 
-```
+```sql
 /* enable local infile */
 unsigned int enable_local_infile = 1;
 mysql_optionsv(mysql, MYSQL_OPT_LOCAL_INFILE, (void *) &enable_local_infile);
 ```
 
-If you are using [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-server/blob/test/en/about-mariadb-connector-j/README.md), the `allowLocalInfile` parameter can be set for the connection:
+If you are using [MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/mariadb-connector-j-guide), the `allowLocalInfile` parameter can be set for the connection:
 
-```
+```sql
 Connection connection = DriverManager.getConnection("jdbc:mariadb://192.168.0.1/test?user=test_user&password=myPassword&allowLocalInfile=true");
 ```
 
-If you are using [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-server/blob/test/en/about-mariadb-connector-nodejs/README.md), the `permitLocalInfile` parameter can be set for the connection:
+If you are using [MariaDB Connector/Node.js](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs), the `permitLocalInfile` parameter can be set for the connection:
 
-```
+```sql
 mariadb.createConnection({
    host: '192.168.0.1',
    user:'test_user',
@@ -167,9 +168,9 @@ mariadb.createConnection({
  });
 ```
 
-If you are using [MariaDB Connector/Python](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-connector-python/README.md), the `local_infile` parameter can be set for the connection:
+If you are using [MariaDB Connector/Python](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-python/mariadb-connector-python-guide), the `local_infile` parameter can be set for the connection:
 
-```
+```sql
 conn = mariadb.connect(
    user="test_user",
    password="myPassword",
@@ -185,13 +186,13 @@ If your data file uses a different field delimiter, you can specify the field de
 
 To load a `TSV (tab-separated values)` file:
 
-```
+```sql
 LOAD DATA INFILE 'inventory-products.tsv'
 INTO TABLE inventory.products;
 To load a CSV (comma-separated values) file:
 ```
 
-```
+```sql
 LOAD DATA LOCAL INFILE 'inventory-products.csv'
 INTO TABLE accounts.contacts
 FIELDS TERMINATED BY ',';
@@ -205,14 +206,14 @@ If your data file uses quotes around fields, you can specify the quote character
 
 To load a `TSV (tab-separated values)` file that uses double quotes:
 
-```
+```sql
 LOAD DATA INFILE 'inventory-products.tsv'
 INTO TABLE inventory.products
 FIELDS ENCLOSED BY '"';
 To load a CSV (comma-separated values) file that uses optional single quotes:
 ```
 
-```
+```sql
 LOAD DATA LOCAL INFILE 'inventory-products.csv'
 INTO TABLE accounts.contacts
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\'';

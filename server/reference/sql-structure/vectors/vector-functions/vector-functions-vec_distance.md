@@ -2,29 +2,27 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/pBQsCgBA6SJpi0m3pZuk/" %}
 
-**MariaDB starting with** [**11.8**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118)
-
-VEC\_DISTANCE was introduced in [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118).
+{% include "../../../../.gitbook/includes/vectors-are-available-from-....md" %}
 
 ## Syntax
 
-```
+```sql
 VEC_DISTANCE(v, s)
 ```
 
 ## Description
 
-`VEC_DISTANCE` is a generic function that will behave either as [VEC\_DISTANCE\_EUCLIDEAN](vec_distance_euclidean.md), calculating the Euclidean (L2) distance between two points. or [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md), calculating the Cosine distance between two vectors, depending on the underlying index type.
+`VEC_DISTANCE` is a generic function that behaves either as [VEC\_DISTANCE\_EUCLIDEAN](vec_distance_euclidean.md), calculating the Euclidean (L2) distance between two points. Or [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md), calculating the Cosine distance between two vectors, depending on the underlying index type.
 
-If the underlying index cannot be determined, an [error 4206](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/vectors/vector-functions/broken-reference/README.md) is returned:
+If the underlying index cannot be determined, an [error 4206](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4200-to-4299/e4206) is returned:
 
-```
+```sql
 ERROR 4206 (HY000): Cannot determine distance type for VEC_DISTANCE, index is not found
 ```
 
 ## Example
 
-```
+```sql
 INSERT INTO v VALUES 
      (1, x'e360d63ebe554f3fcdbc523f4522193f5236083d'),
      (2, x'f511303f72224a3fdd05fe3eb22a133ffae86a3f'),

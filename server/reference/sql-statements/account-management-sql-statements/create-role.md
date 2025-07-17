@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 CREATE [OR REPLACE] ROLE [IF NOT EXISTS] role 
   [WITH ADMIN 
     {CURRENT_USER | CURRENT_ROLE | user | role}]
@@ -14,7 +14,7 @@ The `CREATE ROLE` statement creates one or more MariaDB [roles](../../../securit
 
 If any of the specified roles already exist, `ERROR 1396 (HY000)` results. If an error occurs, `CREATE ROLE` will still create the roles that do not result in an error. The maximum length for a role is 128 characters. Role names can be quoted, as explained in the [Identifier names](../../sql-structure/sql-language-structure/identifier-names.md) page. Only one error is produced for all roles which have not been created:
 
-```sql
+```
 ERROR 1396 (HY000): Operation CREATE ROLE failed for 'a','b','c'
 ```
 
@@ -53,22 +53,38 @@ Granting the role to another user. Only user `lorinda@localhost` has permission 
 
 ```sql
 SELECT USER();
+```
+
+```
 +-------------------+
 | USER()            |
 +-------------------+
 | henning@localhost |
 +-------------------+
 ...
-GRANT developer TO ian@localhost;
-Access denied for user 'henning'@'localhost'
+```
 
- SELECT USER();
+```sql
+GRANT developer TO ian@localhost;
+```
+
+```
+Access denied for user 'henning'@'localhost'
+```
+
+```sql
+SELECT USER();
+```
+
+```
 +-------------------+
 | USER()            |
 +-------------------+
 | lorinda@localhost |
 +-------------------+
+```
 
+```sql
 GRANT m_role TO ian@localhost;
 ```
 
@@ -87,12 +103,14 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 
 ```sql
 SHOW WARNINGS;
-+-------+------+---------------------------------------------------+
-| Level | Code | Message                                           |
+```
+
+<pre><code><strong>+-------+------+---------------------------------------------------+
+</strong>| Level | Code | Message                                           |
 +-------+------+---------------------------------------------------+
 | Note  | 1975 | Can't create role 'journalist'; it already exists |
 +-------+------+---------------------------------------------------+
-```
+</code></pre>
 
 ## See Also
 

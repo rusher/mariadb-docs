@@ -104,7 +104,7 @@ where _n_ is the amount of precision desired for calculations.
 
 ### Introduction
 
-Joins are performed in-memory on the [UM](../architecture/columnstore-user-module/) node. When a join operation exceeds the memory allocated on the UM for query joins, the query is aborted with an error code IDB-2001.\
+Joins are performed in-memory on the [UM](../architecture/columnstore-user-module.md) node. When a join operation exceeds the memory allocated on the UM for query joins, the query is aborted with an error code IDB-2001.\
 Disk-based joins enable such queries to use disk for intermediate join data in case when the memory needed for join exceeds the memory limit on the UM. Although slower in performance as compared to a fully in-memory join, and bound by the temporary space on disk, it does allow such queries to complete.
 
 {% hint style="info" %}
@@ -189,7 +189,7 @@ The VersionBufferFileSize setting is updated in the ColumnStore.xml typically lo
 
 ## Local PM query mode
 
-MariaDB ColumnStore has the ability to query data from just a single [PM](../architecture/columnstore-performance-module.md) instead of the whole database through the [UM](../architecture/columnstore-user-module/). In order to accomplish this, the infinidb\_local\_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
+MariaDB ColumnStore has the ability to query data from just a single [PM](../architecture/columnstore-performance-module.md) instead of the whole database through the [UM](../architecture/columnstore-user-module.md). In order to accomplish this, the infinidb\_local\_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
 
 `<<toc title='' layout=standalone>>`
 
@@ -221,7 +221,7 @@ where n is:
 * 1 (enabled)
 ```
 
-At the session level, this variable applies only to executing a query on an individual [PM](../architecture/columnstore-performance-module.md) and will error if executed on the [UM](../architecture/columnstore-user-module/). The PM must be set up with the local query option during installation.
+At the session level, this variable applies only to executing a query on an individual [PM](../architecture/columnstore-performance-module.md) and will error if executed on the [UM](../architecture/columnstore-user-module.md). The PM must be set up with the local query option during installation.
 
 ### Local PM Query Examples
 

@@ -1,8 +1,6 @@
 # HandlerSocket Client Libraries
 
-In order to make use of the [HandlerSocket](./) plugin in your\
-applications, you will need to use the appropriate client library. The\
-following client libraries are available:
+In order to make use of the [HandlerSocket](./) plugin in your applications, you will need to use the appropriate client library. The following client libraries are available:
 
 * C++
   * libhsclient (included with the HandlerSocket plugin source)

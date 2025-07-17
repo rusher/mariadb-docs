@@ -3,17 +3,6 @@ description: >-
   Managing MariaDB ColumnStore means deploying its architecture, scaling
   modules, and maintaining performance through monitoring, optimization, and
   backups.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Managing ColumnStore Database Environment

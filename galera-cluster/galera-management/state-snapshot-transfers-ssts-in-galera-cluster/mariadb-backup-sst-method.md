@@ -14,7 +14,7 @@ SET GLOBAL wsrep_sst_method='mariadbbackup';
 
 It can be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
-```sql
+```ini
 [mariadb]
 ...
 wsrep_sst_method = mariadbbackup
@@ -24,13 +24,15 @@ For an SST to work properly, the donor and joiner node must use the same SST met
 
 ## Major Version Upgrades <a href="#major-version-upgrades" id="major-version-upgrades"></a>
 
-The InnoDB redo log format has been changed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) and [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) in a way that will not allow the crash recovery or the preparation of a backup from an older major version. Because of this, the `mariabackup` SST method cannot be used for some major version upgrades, unless you temporarily edit the `wsrep_sst_mariadbbackup` script so that the `--prepare` step on the newer-major-version joiner will be executed using the older-major-version mariadb-backup tool.
+{% hint style="warning" %}
+The InnoDB redo log format has been changed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) and [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) in a way that will not allow the crash recovery or the preparation of a backup from an older major version. Because of this, the `mariabackup` SST method cannot be used for some major-version upgrades, unless you temporarily edit the `wsrep_sst_mariadbbackup` script so that the `--prepare` step on the newer-major-version joiner will be executed using the older-major-version `mariadb-backup` tool.
+{% endhint %}
 
-The default method `wsrep_sst_method=rsync` will work for major version upgrades; see [MDEV-27437](https://jira.mariadb.org/browse/MDEV-27437).
+The default method `wsrep_sst_method=rsync` works for major-version upgrades; see [MDEV-27437](https://jira.mariadb.org/browse/MDEV-27437).
 
 ## Authentication and Privileges <a href="#authentication-and-privileges" id="authentication-and-privileges"></a>
 
-To use the mariadb-backup SST method, [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) needs to be able to authenticate locally on the donor node, so that it can create a backup to stream to the joiner. You can tell the donor node what username and password to use by setting the [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md) system variable. It can be changed dynamically with [`SET GLOBAL`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) on the node that you intend to be an SST donor. For example:
+To use the mariadb-backup SST method, [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) needs to be able to authenticate locally on the donor node, so that it can create a backup to stream to the joiner. You can tell the donor node what username and password to use by setting the [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md) system variable. It can be changed dynamically with [`SET GLOBAL`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) on the node that you intend to be an SST donor:
 
 ```sql
 SET GLOBAL wsrep_sst_auth = 'mariadbbackup:mypassword';
@@ -38,7 +40,7 @@ SET GLOBAL wsrep_sst_auth = 'mariadbbackup:mypassword';
 
 It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
-```sql
+```ini
 [mariadb]
 ...
 wsrep_sst_auth = mariadbbackup:mypassword
@@ -46,13 +48,13 @@ wsrep_sst_auth = mariadbbackup:mypassword
 
 Some [authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) do not require a password. For example, the [`unix_socket`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) and [`gssapi`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/authentication-with-enterprise-server/authentication-with-gssapi) authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md) empty. For example:
 
-```
+```ini
 [mariadb]
 ...
 wsrep_sst_auth = mariadbbackup:
 ```
 
-The user account that performs the backup for the SST needs to have the same privileges as mariadb-backup, which are the `RELOAD`, `PROCESS`, `LOCK TABLES` and `BINLOG MONITOR`, `REPLICA MONITOR` [global privileges](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-privileges). To be safe, you should ensure that these privileges are set on each node in your cluster. mariadb-backup connects locally on the donor node to perform the backup, so the following user should be sufficient:
+The user account that performs the backup for the SST needs to have the same privileges as mariadb-backup, which are the `RELOAD`, `PROCESS`, `LOCK TABLES` and `BINLOG MONITOR`, `REPLICA MONITOR` [global privileges](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-privileges). To be safe, ensure that these privileges are set on each node in your cluster. `mariadb-backup` connects locally on the donor node to perform the backup, so the following user should be sufficient:
 
 ```sql
 CREATE USER 'mariadbbackup'@'localhost' IDENTIFIED BY 'mypassword';
@@ -74,9 +76,9 @@ GRANT RELOAD, PROCESS, LOCK TABLES,
 REPLICATION CLIENT ON *.* TO 'mysql'@'localhost';
 ```
 
-And then to configure [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md), you could set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+To configure [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md), set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
-```
+```ini
 [mariadb]
 ...
 wsrep_sst_auth = mysql:
@@ -103,9 +105,9 @@ GRANT RELOAD, PROCESS, LOCK TABLES,
 BINLOG MONITOR ON *.* TO 'mariadbbackup'@'localhost';
 ```
 
-And then to configure [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md), you could set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+To configure [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md), set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
-```
+```ini
 [mariadb]
 ...
 wsrep_sst_auth = mariadbbackup:
@@ -119,7 +121,7 @@ If a specific node in your cluster is acting as the _primary_ node by receiving 
 
 For example, let's say that we have a 5-node cluster with the nodes `node1`, `node2`, `node3`, `node4`, and `node5`, and let's say that `node1` is acting as the _primary_ node. The preferred donor nodes for `node2` could be configured by setting the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
-```
+```ini
 [mariadb]
 ...
 wsrep_sst_donor=node3,node4,node5,
@@ -146,17 +148,17 @@ This SST method supports two different TLS methods. The specific method can be s
 * TLS using OpenSSL encryption built into `socat` (`encrypt=2`)
 * TLS using OpenSSL encryption with Galera-compatible certificates and keys (`encrypt=3`)
 
+{% hint style="warning" %}
 Note that `encrypt=1` refers to a TLS encryption method that has been deprecated and removed. `encrypt=4` refers to a TLS encryption method in `xtrabackup-v2` that has not yet been ported to `mariadb-backup`. See [MDEV-18050](https://jira.mariadb.org/browse/MDEV-18050) about that.
+{% endhint %}
 
 ### TLS Using OpenSSL Encryption Built into Socat <a href="#tls-using-openssl-encryption-built-into-socat" id="tls-using-openssl-encryption-built-into-socat"></a>
 
-To generate keys compatible with this encryption method, you can follow [these directions](http://www.dest-unreach.org/socat/doc/socat-openssltunnel.html).
+To generate keys compatible with this encryption method, follow [these directions](http://www.dest-unreach.org/socat/doc/socat-openssltunnel.html).
 
-For example:
+First, generate the keys and certificates:
 
-* First, generate the keys and certificates:
-
-```sql
+```bash
 FILENAME=sst
 openssl genrsa -out $FILENAME.key 1024
 openssl req -new -key $FILENAME.key -x509 -days 3653 -out $FILENAME.crt
@@ -164,34 +166,35 @@ cat $FILENAME.key $FILENAME.crt >$FILENAME.pem
 chmod 600 $FILENAME.key $FILENAME.pem
 ```
 
-* On some systems, you may also have to add dhparams to the certificate:
+On some systems, you may also have to add `dhparams` to the certificate:
 
-```sql
+```bash
 openssl dhparam -out dhparams.pem 2048
 cat dhparams.pem >> sst.pem
 ```
 
-* Then, copy the certificate and keys to all nodes in the cluster.
-* Then, configure the following on all nodes in the cluster:
+Next, copy the certificate and keys to all nodes in the cluster.
 
-```sql
+When done, configure the following on all nodes in the cluster:
+
+```ini
 [sst]
 encrypt=2
 tca=/etc/my.cnf.d/certificates/sst.crt
 tcert=/etc/my.cnf.d/certificates/sst.pem
 ```
 
-But replace the paths with whatever is relevant on your system. This should allow your SSTs to be encrypted.
+{% hint style="warning" %}
+Make sure to replace the paths with whatever is relevant on your system. This should allow your SSTs to be encrypted.
+{% endhint %}
 
-### TLS Using OpenSSL Encryption with Galera-compatible Certificates and Keys <a href="#tls-using-openssl-encryption-with-galera-compatible-certificates-and-keys" id="tls-using-openssl-encryption-with-galera-compatible-certificates-and-keys"></a>
+### TLS Using OpenSSL Encryption With Galera-Compatible Certificates and Keys <a href="#tls-using-openssl-encryption-with-galera-compatible-certificates-and-keys" id="tls-using-openssl-encryption-with-galera-compatible-certificates-and-keys"></a>
 
-To generate keys compatible with this encryption method, you can follow [these directions](https://galeracluster.com/library/documentation/ssl-cert.html).
+To generate keys compatible with this encryption method, follow [these directions](https://galeracluster.com/library/documentation/ssl-cert.html).
 
-For example:
+First, generate the keys and certificates:
 
-* First, generate the keys and certificates:
-
-```sql
+```bash
 # CA
 openssl genrsa 2048 > ca-key.pem
 openssl req -new -x509 -nodes -days 365000 \
@@ -206,19 +209,20 @@ openssl x509 -req -in server1-req.pem -days 365000 \
 -out server1-cert.pem
 ```
 
-* Then, copy the certificate and keys to all nodes in the cluster.
-* Then, configure the following on all nodes in the cluster:
+Next, copy the certificate and keys to all nodes in the cluster.
 
-```sql
+When done, configure the following on all nodes in the cluster:
+
+```ini
 [sst]
 encrypt=3
 tkey=/etc/my.cnf.d/certificates/server1-key.pem
 tcert=/etc/my.cnf.d/certificates/server1-cert.pem
 ```
 
-But replace the paths with whatever is relevant on your system.
-
-This should allow your SSTs to be encrypted.
+{% hint style="warning" %}
+Make sure to replace the paths with whatever is relevant on your system. This should allow your SSTs to be encrypted.
+{% endhint %}
 
 ## Logs <a href="#logs" id="logs"></a>
 
@@ -232,48 +236,46 @@ By default, on the donor node, it logs to `mariadb-backup.backup.log`. This log 
 
 By default, on the joiner node, it logs to `mariadb-backup.prepare.log` and `mariadb-backup.move.log` These log files are also located in the `datadir`.
 
-By default, before a new SST is started, existing `mariadb-backup` SST log files are compressed and moved to `/tmp/sst_log_archive`. This behavior can be disabled by setting `sst-log-archive=0` in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files). Similarly, the archive directory can be changed by setting `sst-log-archive-dir`. For example:
+By default, before a new SST is started, existing `mariadb-backup` SST log files are compressed and moved to `/tmp/sst_log_archive`. This behavior can be disabled by setting `sst-log-archive=0` in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files). Similarly, the archive directory can be changed by setting `sst-log-archive-dir`:
 
-```sql
+```ini
 [sst]
 sst-log-archive=1
 sst-log-archive-dir=/var/log/mysql/sst/
 ```
 
-See [MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973) for more information. <\</product>>
+See [MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973) for more information.
 
 ### Logging to Syslog <a href="#logging-to-syslog" id="logging-to-syslog"></a>
 
-You can redirect the SST logs to the syslog instead by setting the following in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files):
+Redirect the SST logs to the syslog instead, by setting the following in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files):
 
-```sql
+```ini
 [sst]
 sst-syslog=1
 ```
 
 You can also redirect the SST logs to the syslog by setting the following in the `[mysqld_safe]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files):
 
-```
+```ini
 [mysqld_safe]
 syslog
 ```
 
-## Performing SSTs with IPv6 Addresses <a href="#performing-ssts-with-ipv6-addresses" id="performing-ssts-with-ipv6-addresses"></a>
+## Performing SSTs With IPv6 Addresses <a href="#performing-ssts-with-ipv6-addresses" id="performing-ssts-with-ipv6-addresses"></a>
 
-If you are performing [mariadb-backup ](mariadb-backup-sst-method.md)SSTs with IPv6 addresses, then the `socat` utility needs to be passed the `pf=ip6` option. This can be done by setting the `sockopt` option in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files). For example:
+If you are performing [mariadb-backup ](mariadb-backup-sst-method.md)SSTs with IPv6 addresses, then the `socat` utility needs to be passed the `pf=ip6` option. This can be done by setting the `sockopt` option in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files):
 
-```
+```ini
 [sst]
 sockopt=",pf=ip6"
 ```
 
 See [MDEV-18797](https://jira.mariadb.org/browse/MDEV-18797) for more information.
 
-## Manual SST with mariadb-backup <a href="#manual-sst-with-mariabackup" id="manual-sst-with-mariabackup"></a>
+## Manual SST With mariadb-backup <a href="#manual-sst-with-mariabackup" id="manual-sst-with-mariabackup"></a>
 
-In some cases, if Galera Cluster's automatic SSTs repeatedly fail, then it can be helpful to perform a "manual SST". See the following page on how to do that:
-
-* [Manual SST of Galera Cluster node with ](manual-sst-of-galera-cluster-node-with-mariadb-backup.md)[mariadb-backup ](mariadb-backup-sst-method.md)
+If Galera Cluster's automatic SSTs repeatedly fail, it can be helpful to perform a "manual SST"; see: [Manual SST of Galera Cluster node with ](manual-sst-of-galera-cluster-node-with-mariadb-backup.md)[mariadb-backup ](mariadb-backup-sst-method.md)
 
 ## See Also <a href="#see-also" id="see-also"></a>
 

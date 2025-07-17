@@ -2,13 +2,13 @@
 
 ## Standard syntaxes
 
-MariaDB supports the SQL standard and ODBC syntaxes for [DATE](../../data-types/date-and-time-data-types/date.md), [TIME](../../data-types/date-and-time-data-types/time.md) and [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md) literals.
+MariaDB supports the SQL standard and ODBC syntaxes for [DATE](../../data-types/date-and-time-data-types/date.md), [TIME](../../data-types/date-and-time-data-types/time.md), and [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md) literals.
 
 SQL standard syntax:
 
-* DATE 'string'
-* TIME 'string'
-* TIMESTAMP 'string'
+* `DATE` 'string'
+* `TIME` 'string'
+* `TIMESTAMP` 'string'
 
 ODBC syntax:
 
@@ -58,7 +58,7 @@ All the following `DATE` literals are valid, and they all represent the same val
 
 ## `TIME` literals
 
-A `TIME` string is a string in one of the following formats: `'D HH:MM:SS'`, `'HH:MM:SS`, `'D HH:MM'`, `'HH:MM'`, `'D HH'`, or `'SS'`. `D` is a value from 0 to 34 which represents days. `:` is the only allowed delimiter for `TIME` literals. Delimiters are mandatory, with an exception: the `'HHMMSS'` format is allowed. When delimiters are used, each part of the literal can consist of one character.
+A `TIME` string is a string in one of the following formats: `'D HH:MM:SS'`, `'HH:MM:SS`, `'D HH:MM'`, `'HH:MM'`, `'D HH'`, or `'SS'`. `D` is a value from `0` to `34` which represents days. `:` is the only allowed delimiter for `TIME` literals. Delimiters are mandatory, with an exception: the `'HHMMSS'` format is allowed. When delimiters are used, each part of the literal can consist of one character.
 
 A `TIME` literal can also be a number in one of the following formats: `HHMMSS`, `MMSS`, or `SS`.
 
@@ -95,7 +95,7 @@ Unless the [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.m
 
 If the `ALLOW_INVALID_DATES` flag is set, the invalid dates (for example, 30th February) are allowed. If not, if the `NO_ZERO_DATE` is set, an error is produced; otherwise, a zero-date is returned.
 
-Unless the `NO_ZERO_IN_DATE` flag is set, each subpart of a date or time value (years, hours...) can be set to 0.
+Unless the `NO_ZERO_IN_DATE` flag is set, each subpart of a date or time value (years, hours...) can be set to `0`.
 
 ## See also
 

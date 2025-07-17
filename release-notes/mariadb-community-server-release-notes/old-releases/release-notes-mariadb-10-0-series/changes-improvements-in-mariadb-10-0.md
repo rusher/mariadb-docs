@@ -1,4 +1,4 @@
-# Changes & Improvements in MariaDB 10.0
+# MariaDB 10.0 Changes & Improvements
 
 [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
 
@@ -51,7 +51,7 @@ Features that are in a release.
 * IF (NOT) EXISTS clauses for [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) ([MDEV-318](https://jira.mariadb.org/browse/MDEV-318))
 * [CREATE OR REPLACE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table#create-or-replace) ([MDEV-5491](https://jira.mariadb.org/browse/MDEV-5491))
   * [slave-ddl-exec-mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) variable to specify how `CREATE TABLE` and `DROP TABLE` is replicated.
-* [Dynamic columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/dynamic-columns) now support names ([MDEV-377](https://jira.mariadb.org/browse/MDEV-377), [summary of changes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/dynamic-columns-from-mariadb-10))
+* [Dynamic columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/dynamic-columns) now support names ([MDEV-377](https://jira.mariadb.org/browse/MDEV-377))
 * multiple use locks ([GET\_LOCK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock)) in one connection ([MDEV-3917](https://jira.mariadb.org/browse/MDEV-3917))
 * Better error messages (all error numbers now include descriptive text explaining what the number means)
 * [table attributes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes) with sysvar as a default value ([MDEV-4022](https://jira.mariadb.org/browse/MDEV-4022))

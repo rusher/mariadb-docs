@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
     (<a data-footnote-ref href="#user-content-fn-1">create_definition</a>,...) [<a data-footnote-ref href="#user-content-fn-2">table_options</a>    ]... [<a data-footnote-ref href="#user-content-fn-3">partition_options</a>]
 CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
@@ -146,7 +146,7 @@ To insert rows from a query into an existing table, [INSERT ... SELECT](../../da
 
 ## Column Definitions
 
-<pre class="language-sql"><code class="lang-sql">create_definition:
+<pre class="language-bnf"><code class="lang-bnf">create_definition:
   { col_name column_definition | <a data-footnote-ref href="#user-content-fn-1">index_definition</a> | <a data-footnote-ref href="#user-content-fn-2">period_definition</a> | CHECK (expr) }
 
 column_definition:
@@ -241,9 +241,11 @@ Specifying a column as a unique key creates a unique index on that column. See t
 
 Use `UNIQUE KEY` (or just `UNIQUE`) to specify that all values in the column must be distinct from each other. Unless the column is `NOT NULL`, there may be multiple rows with `NULL` in the column.
 
+{% code overflow="wrap" %}
 ```sql
 CREATE TABLE t_long_keys (   a INT PRIMARY KEY,   b  VARCHAR(4073),   UNIQUE KEY `uk_b` (b) ) ENGINE=InnoDB;
 ```
+
 ```
 Query OK, 0 rows affected (0.022 sec)
 ```
@@ -265,6 +267,13 @@ Create Table: CREATE TABLE `t_long_keys` (
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
 ```
+
+{% code overflow="wrap" %}
+```sql
+SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
+```
+{% endcode %}
+
 ```
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 | TABLE_ID | NAME                 | FLAG | N_COLS | SPACE | ROW_FORMAT | ZIP_PAGE_SIZE | SPACE_TYPE |
@@ -276,6 +285,11 @@ SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
 ```
+
+```sql
+SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
+```
+
 ```
 +----------+---------------+-------+-------+--------+------+
 | TABLE_ID | NAME          | POS   | MTYPE | PRTYPE | LEN  |
@@ -284,7 +298,6 @@ SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
 |       64 | b             |     1 |     1 | 528399 | 4073 |
 |       64 | DB_ROW_HASH_1 | 65538 |     6 |   9736 |    8 |
 +----------+---------------+-------+-------+--------+------+
-
 ```
 
 Specifying a column as a unique key creates a unique index on that column.
@@ -299,7 +312,11 @@ When any inserts or updates occur in the table, reading the binlog shows the hid
 ###   @3=580 /* LONGINT meta=0 nullable=1 is_null=0 */
 ```
 
-
+{% code overflow="wrap" %}
+```sql
+CREATE TABLE t_long_keys (a INT PRIMARY KEY, b VARCHAR(4073), UNIQUE KEY `uk_b` (b)) ENGINE=InnoDB;
+```
+{% endcode %}
 
 ```sql
 CREATE TABLE t_long_keys (   a INT PRIMARY KEY,   b  VARCHAR(4073),   UNIQUE KEY `uk_b` (b) ) ENGINE=InnoDB;
@@ -324,6 +341,12 @@ Create Table: CREATE TABLE `t_long_keys` (
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
 ```
+{% code overflow="wrap" %}
+```sql
+SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
+```
+{% endcode %}
+
 ```
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 | TABLE_ID | NAME                 | FLAG | N_COLS | SPACE | ROW_FORMAT | ZIP_PAGE_SIZE | SPACE_TYPE |
@@ -335,6 +358,10 @@ SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
 ```
+
+<pre class="language-sql"><code class="lang-sql"><strong>SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
+</strong></code></pre>
+
 ```
 +----------+---------------+-------+-------+--------+------+
 | TABLE_ID | NAME          | POS   | MTYPE | PRTYPE | LEN  |
@@ -343,7 +370,6 @@ SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
 |       64 | b             |     1 |     1 | 528399 | 4073 |
 |       64 | DB_ROW_HASH_1 | 65538 |     6 |   9736 |    8 |
 +----------+---------------+-------+-------+--------+------+
-
 ```
 
 Specifying a column as a unique key creates a unique index on that column.
@@ -403,7 +429,7 @@ Columns may be explicitly marked as excluded from system versioning. See [System
 
 ## Index Definitions
 
-```sql
+```bnf
 index_definition:
     {INDEX|KEY} [index_name] [index_type] (index_col_name,...) [index_option] ...
   {{{|}}} {FULLTEXT|SPATIAL} [INDEX|KEY] [index_name] (index_col_name,...) [index_option] ...
@@ -578,7 +604,7 @@ Indexes can be specified to be ignored by the optimizer. See [Ignored Indexes](.
 
 ## Periods
 
-```sql
+```bnf
 period_definition:
     PERIOD FOR [time_period_name | SYSTEM_TIME] (start_column_name, end_column_name)
 ```
@@ -595,9 +621,11 @@ MariaDB introduced two ways to define a constraint:
 Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraints fails, then the row will not be updated.\
 One can use most deterministic functions in a constraint, including [UDFs](../../../../server-usage/user-defined-functions/).
 
+{% code overflow="wrap" %}
 ```sql
 CREATE TABLE t1 (a INT CHECK(a>0) ,b INT CHECK (b> 0), CONSTRAINT abc CHECK (a>b));
 ```
+{% endcode %}
 
 If you use the second format and you don't give a name to the constraint, then the constraint will get a auto generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](../alter/alter-table/).
 
@@ -609,7 +637,7 @@ See [CONSTRAINT](../constraint.md) for more information.
 
 For each individual table you create (or alter), you can set some table options. The general syntax for setting options is:
 
-```sql
+```bnf
 <OPTION_NAME> = <option_value>, [<OPTION_NAME> = <option_value> ...]
 ```
 
@@ -619,7 +647,7 @@ Some options are supported by the server and can be used for all tables, no matt
 
 If the `IGNORE_BAD_TABLE_OPTIONS` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled, wrong table options generate a warning; otherwise, they generate an error.
 
-```sql
+```bnf
 table_option:    
     [STORAGE] ENGINE [=] engine_name
   | AUTO_INCREMENT [=] number
@@ -833,7 +861,7 @@ If set to `1`, statistics will be recalculated when more than 10% of the data ha
 
 ## Partitions
 
-```sql
+```bnf
 partition_options:
     PARTITION BY
         { [LINEAR] HASH(expr)

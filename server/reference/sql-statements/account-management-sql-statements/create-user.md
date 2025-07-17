@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 CREATE [OR REPLACE] USER [IF NOT EXISTS] 
  user_specification [,user_specification ...] 
   [REQUIRE {NONE | tls_option [[AND] tls_option ...] }]
@@ -64,7 +64,7 @@ For each account, `CREATE USER` creates a new row in [mysql.user](../administrat
 
 If any of the specified accounts, or any permissions for the specified accounts, already exist, then the server returns `ERROR 1396 (HY000)`. If an error occurs, `CREATE USER` will still create the accounts that do not result in an error. Only one error is produced for all users which have not been created:
 
-```sql
+```
 ERROR 1396 (HY000): 
   Operation CREATE USER failed for 'u1'@'%','u2'@'%'
 ```
@@ -154,9 +154,11 @@ SELECT PASSWORD('mariadb');
 
 And then we can create a user with the hash:
 
+{% code overflow="wrap" %}
 ```sql
 CREATE USER foo2@test IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
+{% endcode %}
 
 If you do not specify a password with the `IDENTIFIED BY` clause, the user will be able to connect without a password. A blank password is not a wildcard to match any password. The user must connect without providing a password if no password is set.
 

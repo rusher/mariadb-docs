@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 var_name := expr
 ```
 
@@ -18,7 +18,7 @@ When assigning the same value to several variables, [LAST\_VALUE()](../../../sql
 
 ## Examples
 
-```
+```sql
 SELECT @x := 10;
 +----------+
 | @x := 10 |

@@ -2,7 +2,7 @@
 
 Databases, tables, indexes, columns, aliases, views, stored routines, triggers, events, variables, partitions, tablespaces, savepoints, labels, users, roles, are collectively known as identifiers, and have certain rules for naming.
 
-Identifiers may be quoted using the backtick character - \`\`\`. Quoting is optional for identifiers that don't contain special characters, or for identifiers that are not [reserved words](reserved-words.md). If the `ANSI_QUOTES` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) flag is set, double quotes (`"`) can also be used to quote identifiers. If the [MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql) flag is set, square brackets (`[` and `]`) can be used for quoting.
+Identifiers may be quoted using the backtick character (`` ` ``). Quoting is optional for identifiers that don't contain special characters, or for identifiers that are not [reserved words](reserved-words.md). If the `ANSI_QUOTES` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) flag is set, double quotes (`"`) can also be used to quote identifiers. If the [MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql) flag is set, square brackets (`[` and `]`) can be used for quoting.
 
 Even when using reserved words as names, [fully qualified names](identifier-qualifiers.md) do not need to be quoted. For example, `test.select` has only one possible meaning, so it is correctly parsed even without quotes.
 
@@ -43,7 +43,7 @@ The backtick character can be used as part of an identifier. In that case the id
 ### Maximum Length
 
 * Databases, tables, columns, indexes, constraints, stored routines, triggers, events, views, tablespaces, servers and log file groups have a maximum length of 64 characters.
-* Compound statement [labels](../../sql-statements/programmatic-compound-statements/labels.md) have a maximum length of 16 characters
+* Compound statement [labels](../../sql-statements/programmatic-compound-statements/labels.md) have a maximum length of 16 characters.
 * Aliases have a maximum length of 256 characters, except for column aliases in [CREATE VIEW](../../../server-usage/views/create-view.md) statements, which are checked against the maximum column length of 64 characters (not the maximum alias length of 256 characters).
 * Users have a maximum length of 80 characters.
 * [Roles](../../../security/user-account-management/roles/) have a maximum length of 128 characters.
@@ -57,7 +57,7 @@ MariaDB allows the column name to be used on its own if the reference will be un
 
 Using the period to separate identifiers:
 
-```
+```sql
 CREATE TABLE t1 (i int);
 
 INSERT INTO t1(i) VALUES (10);
@@ -86,7 +86,7 @@ SELECT test.t1.i FROM t1;
 
 The period can be separated by spaces:
 
-```
+```sql
 SELECT test . t1 . i FROM t1;
 +------+
 | i    |
@@ -97,7 +97,7 @@ SELECT test . t1 . i FROM t1;
 
 Resolving ambiguity:
 
-```
+```sql
 CREATE TABLE t2 (i int);
 
 SELECT i FROM t1 LEFT JOIN t2 ON t1.i=t2.i;
@@ -113,7 +113,7 @@ SELECT t1.i FROM t1 LEFT JOIN t2 ON t1.i=t2.i;
 
 Creating a table with characters that require quoting:
 
-```
+```sql
 CREATE TABLE 123% (i int);
 ERROR 1064 (42000): You have an error in your SQL syntax; 
   check the manual that corresponds to your MariaDB server version for the right syntax 
@@ -128,7 +128,7 @@ Query OK, 0 rows affected (0.36 sec)
 
 Using double quotes as a quoting character:
 
-```
+```sql
 CREATE TABLE "SELECT" (i int);
 ERROR 1064 (42000): You have an error in your SQL syntax; 
   check the manual that corresponds to your MariaDB server version for the right syntax 
@@ -143,7 +143,7 @@ Query OK, 0 rows affected (0.46 sec)
 
 Using an identifier quote as part of an identifier name:
 
-```
+```sql
 SHOW VARIABLES LIKE 'sql_mode';
 +---------------+-------------+
 | Variable_name | Value       |
@@ -157,13 +157,13 @@ Query OK, 0 rows affected (0.34 sec)
 
 Creating the table named `*` (Unicode number: U+002A) requires quoting.
 
-```
+```sql
 CREATE TABLE `*` (a INT);
 ```
 
 Floating point ambiguity:
 
-```
+```sql
 CREATE TABLE 8984444cce5d (x INT);
 Query OK, 0 rows affected (0.38 sec)
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 DROP USER [IF EXISTS] user_name [, user_name] ...
 ```
 
@@ -25,7 +25,7 @@ If you specify an account that is currently connected, it will not be deleted un
 
 If any of the specified user accounts do not exist, `ERROR 1396 (HY000)`results. If an error occurs, `DROP USER` will still drop the accounts that do not result in an error. Only one error is produced for all users which have not been dropped:
 
-```sql
+```bnf
 ERROR 1396 (HY000): Operation DROP USER failed for 'u1'@'%','u2'@'%'
 ```
 
