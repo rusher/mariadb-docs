@@ -1,5 +1,6 @@
 ---
 layout:
+  width: default
   title:
     visible: true
   description:
@@ -56,7 +57,7 @@ Before data can be imported into the tables, the schema must be created.
 
 1. Connect to the primary server using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client):
 
-```
+```sql
 $ mariadb --host 192.168.0.100 --port 5001 \
       --user db_user --password \
       --default-character-set=utf8
@@ -66,13 +67,13 @@ After the command is executed, it will prompt you for a password.
 
 2. For each database that you are importing, create the database with the [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database) statement:
 
-```
+```sql
 CREATE DATABASE inventory;
 ```
 
 3. For each table that you are importing, create the table with the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) statement:
 
-```
+```sql
 CREATE TABLE inventory.products (
    product_name VARCHAR(11) NOT NULL DEFAULT '',
    supplier VARCHAR(128) NOT NULL DEFAULT '',
@@ -115,7 +116,7 @@ The cpimport tool can import data from a text file if a file is provided as an a
 
 For example, to import the file `inventory-products.txt` into the products table in the inventory database:
 
-```
+```sql
 $ sudo cpimport \
    inventory products \
    inventory-products.txt
@@ -127,7 +128,7 @@ The cpimport tool can import data from a binary file if the `-I1 or -I2` option 
 
 For example, to import the file `inventory-products.bin` into the products table in the inventory database:
 
-```
+```sql
 $ sudo cpimport -I1 \
    inventory products \
    inventory-products.bin
@@ -160,7 +161,7 @@ The binary file should use the following format for data:
 
 In binary input files, the cpimport tool expects [DATE](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/data-import-with-mariadb-enterprise-columnstore/data-types-date/README.md) columns to be in the following format:
 
-```
+```sql
 struct Date
 {
   unsigned spare : 6;
@@ -174,7 +175,7 @@ struct Date
 
 In binary input files, the cpimport tool expects [DATETIME](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/data-import-with-mariadb-enterprise-columnstore/data-types-datetime/README.md) columns to be in the following format:
 
-```
+```sql
 struct DateTime
 {
   unsigned msecond : 20;
@@ -195,7 +196,7 @@ Importing from standard input is useful in many scenarios.
 
 One scenario is when you want to import data from a remote database. You can use [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) to query the table using the [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) statement, and then pipe the results into the standard input of the cpimport tool:
 
-```
+```sql
 $ mariadb --quick \
    --skip-column-names \
    --execute="SELECT * FROM inventory.products" \
@@ -208,7 +209,7 @@ The cpimport tool can import data from a file stored in a remote S3 bucket.
 
 You can use the AWS CLI to copy the file from S3, and then pipe the contents into the standard input of the cpimport tool:
 
-```
+```sql
 $ aws s3 cp --quiet s3://columnstore-test/inventory-products.csv - \
    | cpimport -s ',' inventory products
 ```
@@ -223,7 +224,7 @@ If your data file uses a different field delimiter, you can specify the field de
 
 For a TSV (tab-separated values) file:
 
-```
+```sql
 $ sudo cpimport -s '\t' \
    inventory products \
    inventory-products.tsv
@@ -231,7 +232,7 @@ $ sudo cpimport -s '\t' \
 
 For a CSV (comma-separated values) file:
 
-```
+```sql
 $ sudo cpimport -s ',' \
    inventory products \
    inventory-products.csv
@@ -245,7 +246,7 @@ If your data file uses quotes around fields, you can specify the quote character
 
 To load a TSV (tab-separated values) file that uses double quotes:
 
-```
+```sql
 $ sudo cpimport -s '\t' -E '"' \
    inventory products \
    inventory-products.tsv
@@ -253,7 +254,7 @@ $ sudo cpimport -s '\t' -E '"' \
 
 To load a CSV (comma-separated values) file that uses optional single quotes:
 
-```
+```sql
 $ sudo cpimport -s ',' -E "'" \
    inventory products \
    inventory-products.csv
@@ -263,9 +264,9 @@ $ sudo cpimport -s ',' -E "'" \
 
 The cpimport tool writes logs to different directories, depending on the Enterprise ColumnStore version:
 
-* In Enterprise ColumnStore 5.5.2 and later, logs are written to /var/log/mariadb/columnstore/bulk/
-* In Enterprise ColumnStore 5 releases before 5.5.2, logs are written to /var/lib/columnstore/data/bulk/
-* In Enterprise ColumnStore 1.4, logs are written to /usr/local/mariadb/columnstore/bulk/
+* In Enterprise ColumnStore 5.5.2 and later, logs are written to `/var/log/mariadb/columnstore/bulk/`
+* In Enterprise ColumnStore 5 releases before 5.5.2, logs are written to `/var/lib/columnstore/data/bulk/`
+* In Enterprise ColumnStore 1.4, logs are written to `/usr/local/mariadb/columnstore/bulk/`
 
 ## Special Handling
 
