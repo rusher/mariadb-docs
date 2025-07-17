@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 DROP ROLE [IF EXISTS] role_name [,role_name ...]
 ```
 
@@ -14,7 +14,7 @@ The `DROP ROLE` statement removes one or more MariaDB [roles](../../../security/
 
 If any of the specified user accounts do not exist, `ERROR 1396 (HY000)`results. If an error occurs, `DROP ROLE` will still drop the roles that do not result in an error. Only one error is produced for all roles which have not been dropped:
 
-```sql
+```bnf
 ERROR 1396 (HY000): Operation DROP ROLE failed for 'a','b','c'
 ```
 

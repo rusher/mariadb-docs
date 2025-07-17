@@ -4,7 +4,7 @@
 
 ### Syntax
 
-```sql
+```bnf
 REVOKE 
     priv_type [(column_list)]
       [, priv_type [(column_list)]] ...
@@ -39,7 +39,7 @@ REVOKE SUPER ON *.* FROM 'alexander'@'localhost';
 
 ### Syntax
 
-```sql
+```bnf
 REVOKE role  [, role ...]
     FROM grantee [, grantee2 ... ]
 

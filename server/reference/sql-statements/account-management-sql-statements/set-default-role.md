@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 SET DEFAULT ROLE { role | NONE } [ FOR user@host ]
 ```
 
@@ -47,6 +47,9 @@ Viewing mysql.user:
 
 ```sql
 SELECT * FROM mysql.user WHERE user='taniel'\G
+```
+
+```
 *************************** 1. row ***************************
                   Host: %
                   User: taniel

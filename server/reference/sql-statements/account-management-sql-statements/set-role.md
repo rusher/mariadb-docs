@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```
 SET ROLE { role | NONE }
 ```
 
@@ -18,24 +18,35 @@ An automatic SET ROLE is implicitly performed when a user connects if that user 
 
 ```sql
 SELECT CURRENT_ROLE;
+```
+
+```
 +--------------+
 | CURRENT_ROLE |
 +--------------+
 | NULL         |
 +--------------+
+```
 
+```sql
 SET ROLE staff;
-
 SELECT CURRENT_ROLE;
+```
+
+```
 +--------------+
 | CURRENT_ROLE |
 +--------------+
 | staff        |
 +--------------+
+```
 
+```sql
 SET ROLE NONE;
-
 SELECT CURRENT_ROLE();
+```
+
+```
 +----------------+
 | CURRENT_ROLE() |
 +----------------+

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 GRANT
     priv_type [(column_list)]
       [, priv_type [(column_list)]] ...
@@ -93,21 +93,34 @@ If the `NO_AUTO_CREATE_USER` [SQL\_MODE](../../../server-management/variables-an
 
 ```sql
 SHOW VARIABLES LIKE '%sql_mode%' ;
-+---------------+--------------------------------------------+
-| Variable_name | Value                                      |
+```
+
+<pre><code><strong>+---------------+--------------------------------------------+
+</strong>| Variable_name | Value                                      |
 +---------------+--------------------------------------------+
 | sql_mode      | NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
 +---------------+--------------------------------------------+
+</code></pre>
 
+```sql
 GRANT USAGE ON *.* TO 'user123'@'%' IDENTIFIED BY '';
-ERROR 1133 (28000): Can't find any matching row in the user table
+```
 
+```
+ERROR 1133 (28000): Can't find any matching row in the user table
+```
+
+```sql
 GRANT USAGE ON *.* TO 'user123'@'%' 
   IDENTIFIED VIA PAM using 'mariadb' require ssl ;
 Query OK, 0 rows affected (0.00 sec)
- 
-SELECT host, user FROM mysql.user WHERE user='user123' ;
+```
 
+```sql
+SELECT host, user FROM mysql.user WHERE user='user123' ;
+```
+
+```
 +------+----------+
 | host | user     |
 +------+----------+
@@ -117,7 +130,7 @@ SELECT host, user FROM mysql.user WHERE user='user123' ;
 
 ## Privilege Levels
 
-Privileges can be set globally, for an entire database, for a table or routine, or for individual columns in a table. Certain privileges can only be set at certain levels.
+Privileges can be set globally, for anentire database, for a table or routine, or for individual columns in a table. Certain privileges can only be set at certain levels.
 
 Global privileges do not take effect immediately and are only applied to connections created after the `GRANT` statement was executed.
 
@@ -556,19 +569,29 @@ A user account can only grant the `PROXY` privilege for a specific user account 
 
 ```sql
 SELECT USER(), CURRENT_USER();
+```
+
+```
 +-----------------+-----------------+
 | USER()          | CURRENT_USER()  |
 +-----------------+-----------------+
 | alice@localhost | alice@localhost |
 +-----------------+-----------------+
+```
 
-SHOW GRANTS;
+```sql
+SHOW GRANTS
+```
+
+```
 +-----------------------------------------------------------------------------------------------------------------------+
 | Grants for alice@localhost                                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------+
 | GRANT ALL PRIVILEGES ON *.* TO 'alice'@'localhost' IDENTIFIED BY PASSWORD '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19' |
 +-----------------------------------------------------------------------------------------------------------------------+
+```
 
+```sql
 GRANT PROXY ON 'dba'@'localhost' TO 'bob'@'localhost';
 ERROR 1698 (28000): Access denied for user 'alice'@'localhost'
 ```
@@ -577,20 +600,29 @@ And the following example fails because the granter does have the `PROXY` privil
 
 ```sql
 SELECT USER(), CURRENT_USER();
+```
+
+```
 +-----------------+-----------------+
 | USER()          | CURRENT_USER()  |
 +-----------------+-----------------+
 | alice@localhost | alice@localhost |
 +-----------------+-----------------+
+```
 
+```sql
 SHOW GRANTS;
-+-----------------------------------------------------------------------------------------------------------------------+
-| Grants for alice@localhost                                                                                            |
+```
+
+<pre><code><strong>+-----------------------------------------------------------------------------------------------------------------------+
+</strong>| Grants for alice@localhost                                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------+
 | GRANT ALL PRIVILEGES ON *.* TO 'alice'@'localhost' IDENTIFIED BY PASSWORD '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19' |
 | GRANT PROXY ON 'dba'@'localhost' TO 'alice'@'localhost'                                                               |
 +-----------------------------------------------------------------------------------------------------------------------+
+</code></pre>
 
+```sql
 GRANT PROXY ON 'dba'@'localhost' TO 'bob'@'localhost';
 ERROR 1698 (28000): Access denied for user 'alice'@'localhost'
 ```
@@ -599,26 +631,36 @@ But the following example succeeds because the granter does have the `PROXY` pri
 
 ```sql
 SELECT USER(), CURRENT_USER();
+```
+
+```
 +-----------------+-----------------+
 | USER()          | CURRENT_USER()  |
 +-----------------+-----------------+
 | alice@localhost | alice@localhost |
 +-----------------+-----------------+
+```
 
+```sql
 SHOW GRANTS;
+```
+
+```
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | Grants for alice@localhost                                                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | GRANT ALL PRIVILEGES ON *.* TO 'alice'@'localhost' IDENTIFIED BY PASSWORD '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19' WITH GRANT OPTION |
 | GRANT PROXY ON 'dba'@'localhost' TO 'alice'@'localhost' WITH GRANT OPTION                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
+```
 
+```sql
 GRANT PROXY ON 'dba'@'localhost' TO 'bob'@'localhost';
 ```
 
 A user account can grant the `PROXY` privilege for any other user account if the granter has the `PROXY` privilege for the `''@'%'` anonymous user account, like this:
 
-```
+```sql
 GRANT PROXY ON ''@'%' TO 'dba'@'localhost' WITH GRANT OPTION;
 ```
 
@@ -626,23 +668,35 @@ For example, the following example succeeds because the user can grant the `PROX
 
 ```sql
 SELECT USER(), CURRENT_USER();
+```
+
+```
 +-----------------+-----------------+
 | USER()          | CURRENT_USER()  |
 +-----------------+-----------------+
 | alice@localhost | alice@localhost |
 +-----------------+-----------------+
+```
 
+```sql
 SHOW GRANTS;
+```
+
+```
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | Grants for alice@localhost                                                                                                              |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | GRANT ALL PRIVILEGES ON *.* TO 'alice'@'localhost' IDENTIFIED BY PASSWORD '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19' WITH GRANT OPTION |
 | GRANT PROXY ON ''@'%' TO 'alice'@'localhost' WITH GRANT OPTION                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
+```
 
+```sql
 GRANT PROXY ON 'app1_dba'@'localhost' TO 'bob'@'localhost';
 Query OK, 0 rows affected (0.004 sec)
+```
 
+```sql
 GRANT PROXY ON 'app2_dba'@'localhost' TO 'carol'@'localhost';
 Query OK, 0 rows affected (0.004 sec)
 ```
@@ -684,6 +738,9 @@ For example, if our password is `mariadb`, then we can find the hash with:
 
 ```sql
 SELECT PASSWORD('mariadb');
+```
+
+```
 +-------------------------------------------+
 | PASSWORD('mariadb')                       |
 +-------------------------------------------+
@@ -810,7 +867,7 @@ See [Securing Connections for Client and Server](../../../security/securing-mari
 
 ### Syntax
 
-```sql
+```bnf
 GRANT role TO grantee [, grantee ... ]
 [ WITH ADMIN OPTION ]
 

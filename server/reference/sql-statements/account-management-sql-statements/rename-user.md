@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```sql
+```bnf
 RENAME USER old_user TO new_user
     [, old_user TO new_user] ...
 ```
