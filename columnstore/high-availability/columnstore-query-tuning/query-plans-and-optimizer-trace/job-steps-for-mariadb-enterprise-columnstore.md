@@ -1,5 +1,6 @@
 ---
 layout:
+  width: default
   title:
     visible: true
   description:
@@ -45,7 +46,7 @@ Cross-engine steps are evaluated locally by the ExeMgr process on the initiator/
 
 Enterprise ColumnStore can perform cross-engine joins when the mandatory utility user is properly configured.
 
-For additional information, refer to the "Mandatory Utility User Account."
+For additional information, refer to the "[Mandatory Utility User Account](../../../architecture/columnstore-storage-engine-overview.md#configure-the-mandatory-utility-user-account)"
 
 ## Dictionary Structure Step (DSS)
 
@@ -70,7 +71,7 @@ Enterprise ColumnStore defines a **hash join** step to perform a hash join betwe
 
 In `calGetTrace()` output, a hash join step is abbreviated HJS.
 
-Hash join steps are evaluated locally by the ExeMgr process on the initiator/aggregator node.
+Hash join steps are evaluated locally by the `ExeMgr` process on the initiator/aggregator node.
 
 Enterprise ColumnStore performs the hash join in memory by default. If you perform large joins, you may be able get better performance by changing some configuration defaults with mcsSetConfig:
 
@@ -81,7 +82,7 @@ For additional information, see "[Configure in-memory joins](../../../architectu
 
 ## Having Step (HVS)
 
-Enterprise ColumnStore defines a **having step** to evaluate a HAVING clause on a result set.
+Enterprise ColumnStore defines a **having step** to evaluate a `HAVING` clause on a result set.
 
 In `calGetTrace()` output, a having step is abbreviated HVS.
 
@@ -89,7 +90,7 @@ In `calGetTrace()` output, a having step is abbreviated HVS.
 
 Enterprise ColumnStore defines a subquery step to evaluate a subquery.
 
-In calGetTrace() output, a subquery step is abbreviated SQS.
+In `calGetTrace()` output, a subquery step is abbreviated SQS.
 
 ## Tuple Aggregation Step (TAS)
 
@@ -105,7 +106,7 @@ Enterprise ColumnStore defines a **tuple annexation** step to perform the final 
 
 In `calGetTrace()` output, a tuple annexation step is abbreviated TNS.
 
-Tuple annexation steps are evaluated locally by the ExeMgr process on the initiator/aggregator node.
+Tuple annexation steps are evaluated locally by the `ExeMgr` process on the initiator/aggregator node.
 
 Enterprise ColumnStore 5 performs aggregation operations in memory. As a consequence, more complex aggregation operations require more memory in that version.
 
@@ -119,15 +120,15 @@ Enterprise ColumnStore defines a **tuple union** step to perform a union of two 
 
 In `calGetTrace()` output, a tuple union step is abbreviated TUS.
 
-Tuple union steps are evaluated locally by the ExeMgr process on the initiator/aggregator node.
+Tuple union steps are evaluated locally by the `ExeMgr` process on the initiator/aggregator node.
 
 ## Tuple Constant Step (TCS)
 
 Enterprise ColumnStore defines a tuple constant step to evaluate constant values.
 
-In calGetTrace() output, a tuple constant step is abbreviated TCS.
+In `calGetTrace()` output, a tuple constant step is abbreviated TCS.
 
-Tuple constant steps are evaluated locally by the ExeMgr process on the initiator/aggregator node.
+Tuple constant steps are evaluated locally by the `ExeMgr` process on the initiator/aggregator node.
 
 ## Window Function Step (WFS)
 
