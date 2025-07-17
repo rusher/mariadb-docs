@@ -2,8 +2,6 @@
 
 To enhance your understanding of MariaDB and MySQL, explore these tutorials. For MariaDB, resources include detailed guides from Tutorialspoint, Tech on the Net, Tecmint, Javatpoint, MariaDBTutorial, and Devart. These are designed for hands-on practice and introductory learning. MySQL tutorials are also compatible with MariaDB, providing versatile learning opportunities.
 
-
-
 ## MariaDB-Focused Tutorials
 
 * [Tutorialspoint MariaDB tutorial for beginners](https://www.tutorialspoint.com/mariadb/index.htm)
@@ -15,7 +13,7 @@ To enhance your understanding of MariaDB and MySQL, explore these tutorials. For
 
 ## MySQL-Focused Tutorials
 
-&#x20;These tutorials should work for MariaDB, too.
+These tutorials should work for MariaDB, too.
 
 * [mysqltutorial](https://www.mysqltutorial.org). Site with a lot of MySQL usage information and also how to connect to MySQL from different programming languages.
 * [MySQL Tutorial for Beginners Learn in 7 Days](https://www.guru99.com/mysql-tutorial.htm)
@@ -32,10 +30,6 @@ To enhance your understanding of MariaDB and MySQL, explore these tutorials. For
 
 * [w3schools general SQL tutorial](https://www.w3schools.com/sql)
 * [sqltutorial](https://www.sqltutorial.org/). Helps you get started with SQL quickly and effectively through many practical examples.
-
-## See Also
-
-* [MariaDB documentation Training and Tutorials](https://mariadb.com/kb/en/training-tutorials/)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
