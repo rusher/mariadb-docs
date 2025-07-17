@@ -1,5 +1,6 @@
 ---
 layout:
+  width: default
   title:
     visible: true
   description:
@@ -53,7 +54,7 @@ Before data can be imported into the tables, the schema must be created.
 
 1. Connect to the primary server using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client):
 
-```
+```sql
 $ mariadb --host 192.168.0.100 --port 5001 \
       --user db_user --password \
       --default-character-set=utf8
@@ -63,13 +64,13 @@ After the command is executed, it will prompt you for a password.
 
 2. For each database that you are importing, create the database with the [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database) statement:
 
-```
+```sql
 CREATE DATABASE inventory;
 ```
 
 3. For each table that you are importing, create the table with the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) statement:
 
-```
+```sql
 CREATE TABLE inventory.products (
    product_name VARCHAR(11) NOT NULL DEFAULT '',
    supplier VARCHAR(128) NOT NULL DEFAULT '',
@@ -98,7 +99,7 @@ The order of data can have a significant effect on performance with Enterprise C
 
 For example:
 
-```
+```sql
 # Perform import from other table
 # and insert in sorted order
 INSERT INTO inventory.orders
@@ -127,7 +128,7 @@ Set the field delimiter by setting the `columnstore_import_for_batchinsert_delim
 
 For example, if you want to use a comma (,) as the field delimiter, you would set `columnstore_import_for_batchinsert_delimiter` to 44:
 
-```
+```sql
 # Set field delimiter
 SET SESSION columnstore_import_for_batchinsert_delimiter=44;
 
@@ -147,7 +148,7 @@ Set the quote character by setting the `columnstore_import_for_batchinsert_enclo
 
 For example, if you want to use a double quote (") as the quote character, you would set `columnstore_import_for_batchinsert_enclosed_by` to 34:
 
-```
+```sql
 # Set quote character
 SET SESSION columnstore_import_for_batchinsert_enclosed_by=34;
 
