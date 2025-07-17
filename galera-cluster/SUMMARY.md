@@ -17,7 +17,7 @@
   * [Getting Started with MariaDB Galera Cluster](galera-management/getting-started-with-mariadb-galera-cluster.md)
   * [Installing Galera from Source](galera-management/installing-galera-from-source.md)
   * [Installing MariaDB Galera on IBM Cloud](galera-management/installing-mariadb-galera-on-ibm-cloud.md)
-  * [MariaDB Galera Cluster - Known Limitations](galera-management/mariadb-galera-cluster-known-limitations.md)
+  * [Known Limitations](galera-management/mariadb-galera-cluster-known-limitations.md)
   * [Tips on Converting to Galera](galera-management/tips-on-converting-to-galera.md)
   * [State Snapshot Transfers (SSTs) in Galera Cluster](galera-management/state-snapshot-transfers-ssts-in-galera-cluster/README.md)
     * [Introduction to State Snapshot Transfers (SSTs)](galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md)
