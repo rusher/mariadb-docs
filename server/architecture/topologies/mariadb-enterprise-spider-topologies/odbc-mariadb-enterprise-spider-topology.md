@@ -115,7 +115,7 @@ SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 
 ### Create ODBC Spider Table (with an Oracle remote server)
 
-Follow the link under [Operations](odbc-mariadb-enterprise-spider-topology.md#Operations) for further information on the setup.
+Follow the link under [Operations](odbc-mariadb-enterprise-spider-topology.md#operations) for further information on the setup.
 
 ```sql
 INSTALL PLUGIN spider SONAME 'ha_spider.so';
