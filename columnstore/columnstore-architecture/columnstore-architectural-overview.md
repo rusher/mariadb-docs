@@ -42,7 +42,7 @@ MariaDB products can be deployed to form other topologies that leverage advanced
 
 ### Enterprise ColumnStore with Object Storage
 
-![columnstore-topology-s3](../.gitbook/assets/columnstore-architectural-overview/+image/columnstore-topology-s3.png)
+![columnstore-topology-s3](../.gitbook/assets/columnstore-topology-s3.png)
 
 The MariaDB Enterprise ColumnStore topology with Object Storage delivers production analytics with high availability, fault tolerance, and limitless data storage by leveraging S3-compatible storage.
 
@@ -66,7 +66,7 @@ The ColumnStore nodes:
 
 ### Enterprise ColumnStore with Shared Local Storage
 
-![es-columnstore-topology-nfs-no-title](../.gitbook/assets/columnstore-architectural-overview/+image/es-columnstore-topology-nfs-no-title.png)
+![es-columnstore-topology-nfs-no-title](../.gitbook/assets/es-columnstore-topology-nfs-no-title.png)
 
 The MariaDB Enterprise ColumnStore topology with Shared Local Storage delivers production analytics with high availability and fault tolerance by leveraging shared local storage, such as NFS.
 
