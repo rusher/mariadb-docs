@@ -1,4 +1,4 @@
-# MariaDB Connector/J 2.0.1 Release Notes
+# Connector/J 2.0.1 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 11 May 2017
 
-MariaDB Connector/J 2.0.1 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_\
+MariaDB Connector/J 2.0.1 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
 release.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
@@ -53,9 +53,6 @@ try (PreparedStatement p = connection.prepareStatement("SELECT * from mysql.user
 
 New Option :[CONJ-465](https://jira.mariadb.org/browse/CONJ-465) - new option "enablePacketDebug"
 
-| enablePacketDebug |
-| ----------------- |
-
 ## Change version 2.0.0 release candidate
 
 ### Handle CLIENT\_DEPRECATE\_EOF flag
@@ -67,7 +64,7 @@ Implement some protocol changes that permit saving some bytes.\
 ### Handle SERVER\_SESSION\_STATE\_CHANGE status flag
 
 [CONJ-341](https://jira.mariadb.org/browse/CONJ-341)\
-With a [MariaDB 10.2](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md) or MySQL 5.7 server, ensure driver state:
+With a [MariaDB 10.2](../../../community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md) or MySQL 5.7 server, ensure driver state:
 
 * driver now always gets the current database, even when the database is changed by a query.
 * when using rewriteBatchedStatements, return the correct autoincrement ids even when the session variable @auto\_increment\_increment has changed during the session.
@@ -79,7 +76,7 @@ The previous implementation of query timeout handling (using Statement.setQueryT
 When timeout is reached, a temporary connection will be created to permit executing "KILL QUERY ", then closing the temporary connection.\
 When the query ends before timeout, the scheduled task will be canceled.
 
-For servers > [MariaDB 10.1.2](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md), the query timeout will be handled server side using the "SET MAX\_STATEMENT\_TIME FOR" command.
+For servers > [MariaDB 10.1.2](../../../community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md), the query timeout will be handled server side using the "SET MAX\_STATEMENT\_TIME FOR" command.
 
 ### Real cancelling streaming result sets
 
@@ -98,9 +95,6 @@ Faster connection: bundle first commands in authentication packet\
 The driver executes different commands on connection. Those queries are now sent using pipeline (all queries are sent, only then are all results read).
 
 New Options:
-
-| usePipelineAuth |
-| --------------- |
 
 ### Performance improvement storing data in resultset
 

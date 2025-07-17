@@ -6,7 +6,7 @@
 
 **Release date:** 18 Dec 2019
 
-This is an [_**alpha**_](../../../mariadb-release-criteria.md) release of the MariaDB Connector/Python and not intended for production use.
+This is an [_**alpha**_](../../../community-server/about/release-criteria.md) release of the MariaDB Connector/Python and not intended for production use.
 
 {% hint style="danger" %}
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**

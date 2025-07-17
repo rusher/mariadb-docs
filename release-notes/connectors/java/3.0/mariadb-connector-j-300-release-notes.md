@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.0.0 Release Notes
+# Connector/J 3.0.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 04 May 2021
 
-MariaDB Connector/J 3.0.0 is a [_**Alpha**_](../../../mariadb-release-criteria.md) _**(Alpha)**_ release.
+MariaDB Connector/J 3.0.0 is a [_**Alpha**_](../../../community-server/about/release-criteria.md) _**(Alpha)**_ release.
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
 
@@ -25,14 +25,11 @@ more performant, easy to read, extendable, small driver.
   more than 90% coverage tested.
 * Performance Improvements:
   * Prepare and execution are now using pipelining when using option `useServerPrepStmts`
-  * Performance enhancement with [MariaDB 10.6](../../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) server when using option `useServerPrepStmts`, skipping metadata (see [MDEV-19237](https://jira.mariadb.org/browse/MDEV-19237))
+  * Performance enhancement with [MariaDB 10.6](../../../community-server/mariadb-10-6-series/what-is-mariadb-106.md) server when using option `useServerPrepStmts`, skipping metadata (see [MDEV-19237](https://jira.mariadb.org/browse/MDEV-19237))
 
 ### SSL configuration
 
 New Options :
-
-| sslMode |
-| ------- |
 
 The options `useSsl`, `trustServerCertificate`, and `disableSslHostnameVerification` still exist, but `sslMode` allows for easier configuration.
 
@@ -81,9 +78,6 @@ Because these are available only with Java 11, setting these options with java <
 ### permit authentication plugin restriction
 
 New Options :
-
-| restrictedAuth |
-| -------------- |
 
 example setting `restrictedAuth` to "mysql\_native\_password,client\_ed25519,auth\_gssapi\_client", only those plugins can be use. If server return ask for an authentication plugin not listed in `restrictedAuth`, driver will throw an exception.
 

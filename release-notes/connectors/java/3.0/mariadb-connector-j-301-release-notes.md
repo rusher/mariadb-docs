@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.0.1 Release Notes
+# Connector/J 3.0.1 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 11 Aug 2021
 
-MariaDB Connector/J 3.0.1 is a [_**Beta**_](../../../mariadb-release-criteria.md) _**(Beta)**_ release.
+MariaDB Connector/J 3.0.1 is a [_**Beta**_](../../../community-server/about/release-criteria.md) _**(Beta)**_ release.
 
 **Do not use&#x20;**_**beta**_**&#x20;releases in production!**
 

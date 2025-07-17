@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.4.0 Release Notes
+# Connector/J 3.4.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 17 May 2024
 
-MariaDB Connector/J 3.4.0 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release, and replaces 3.3 as the maintenance releases.
+MariaDB Connector/J 3.4.0 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release, and replaces 3.3 as the maintenance releases.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
 
@@ -41,7 +41,7 @@ While remaining compatible with previous versions, this permits more flexibility
 
 ### [CONJ-981](https://jira.mariadb.org/browse/CONJ-981) Add support for connection redirection
 
-Since [MariaDB 10.3.1](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), the server has a new system variable redirect\_url to provide a connection string using the forma `mariadb/mysql://[<user>[:<password>]@]<host>[:<port>]/[<db>[?<opt1>=<value1>[&<opt2>=<value2>]]]`.
+Since [MariaDB 10.3.1](../../../community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), the server has a new system variable redirect\_url to provide a connection string using the forma `mariadb/mysql://[<user>[:<password>]@]<host>[:<port>]/[<db>[?<opt1>=<value1>[&<opt2>=<value2>]]]`.
 
 When set, all existing connections will be redirected to the designated URL values when appropriate. A connection will only be redirected when no transaction is active.
 

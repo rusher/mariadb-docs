@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.4.0 Changelog
+# Connector/J 1.4.0 Changelog
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
@@ -55,7 +55,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #a3dbf61](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a3dbf61)
   * Correction for better integration tests
 * [Revision #d019529](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d019529)
-  * Correction for test due to server error [MDEV-8984](https://jira.mariadb.org/browse/MDEV-8984) on [mariadb 10.1.11](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md)
+  * Correction for test due to server error [MDEV-8984](https://jira.mariadb.org/browse/MDEV-8984) on [mariadb 10.1.11](../../../../community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md)
 * [Revision #1689a86](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1689a86)
   * New CallableStatement implementation
 * [Revision #28b1811](https://github.com/mariadb-corporation/mariadb-connector-j/commit/28b1811)

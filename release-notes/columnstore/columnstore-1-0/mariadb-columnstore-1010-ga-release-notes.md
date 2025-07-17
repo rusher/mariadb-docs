@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.10](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) is a maintenance GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.9 GA release.
 
-MariaDB ColumnStore 1.0.10 is a [_**GA**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.10 is a [_**GA**_](../../community-server/about/release-criteria.md) release.
 
 For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview)
 
@@ -35,7 +35,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-773](https://jira.mariadb.org/browse/MCOL-773) - system not startup up via postConfigure/startsSystem - remote\_command issue
 * [MCOL-793](https://jira.mariadb.org/browse/MCOL-793) - ORDER BY NULL breaks subsequent query
 * [MCOL-794](https://jira.mariadb.org/browse/MCOL-794) - query cache not work with all engine with columnstore
-* [MCOL-802](https://jira.mariadb.org/browse/MCOL-802) - Merge [MariaDB 10.1.25](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10125-release-notes.md) into 1.0
+* [MCOL-802](https://jira.mariadb.org/browse/MCOL-802) - Merge [MariaDB 10.1.25](../../community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10125-release-notes.md) into 1.0
 * [MCOL-811](https://jira.mariadb.org/browse/MCOL-811) - Logs going to system journal in Ubuntu instead of log files
 * [MCOL-814](https://jira.mariadb.org/browse/MCOL-814) - PrimProc could not open file for OID after a outage recover from pm2 PrimProc
 * [MCOL-829](https://jira.mariadb.org/browse/MCOL-829) - Implement stored procedure INSERT...SELECT

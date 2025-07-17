@@ -1,12 +1,12 @@
-# MariaDB Connector/C 2.1.0 Release Notes
+# Connector/C 2.1.0 Release Notes
 
-The most recent [_**Stable**_](../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+The most recent [_**Stable**_](../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-c/2.1.0)[Release Notes](mariadb-connector-c-210-release-notes.md)[Changelog](changelogs/mariadb-connector-c-210-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-c/README.md)
 
 **Release date:** 29 Jan 2015
 
-This is a [_**Stable**_](../../mariadb-release-criteria.md) _**(GA)**_ release of the MariaDB\
+This is a [_**Stable**_](../../community-server/about/release-criteria.md) _**(GA)**_ release of the MariaDB\
 Connector/C, formerly known as MariaDB Client Library for C. In general,\
 marking this release as _stable_ means that there are no known serious bugs,\
 except for those marked as feature requests, that no bugs were fixed since last\

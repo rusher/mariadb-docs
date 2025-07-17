@@ -1,12 +1,12 @@
-# MariaDB Connector/C 3.0.1 Release Notes
+# Connector/C 3.0.1 Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-c/3.0.1)[Release Notes](mariadb-connector-c-301-release-notes.md)[Changelog](../changelogs/mariadb-connector-c-30-changelogs/mariadb-connector-c-301-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
 
 **Release date:** 18 Jan 2017
 
-This is a [_Beta_](../../../mariadb-release-criteria.md) release of MariaDB Connector/C,\
+This is a [_Beta_](../../../community-server/about/release-criteria.md) release of MariaDB Connector/C,\
 formerly known as the MariaDB Client Library for C. As with any other\
 pre-production release, cautions should be taken when installing on production\
 systems or systems with critical data.
@@ -22,7 +22,7 @@ as source code packages are available from the[MariaDB download page](https://do
 
 * [Indicator variables](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/connector-c-data-structures-and-definitions/mysql_bind) for prepared statements
 * [MDEV-9114](https://jira.mariadb.org/browse/MDEV-9114) bulk operations (array binding) for prepared statements (insert, update, delete).
-* support for extended client/server capabilities (requires [MariaDB 10.2](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md) or newer)
+* support for extended client/server capabilities (requires [MariaDB 10.2](../../../community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md) or newer)
 * The DBUG library was removed from Connector/C 3.0
 * Connector/C 2.3.2 now supports client plugins from MariaDB Server and Connector/C 3.0, for example GSSAPI plugin for kerberos authentication. Older plugins from previous versions of Connector/C can't be used anymore and might crash.
 

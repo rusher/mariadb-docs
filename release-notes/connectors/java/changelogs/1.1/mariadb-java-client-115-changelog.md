@@ -1,4 +1,4 @@
-# MariaDB Java Client 1.1.5 Changelog
+# Connector/J 1.1.5 Changelog
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
@@ -17,7 +17,7 @@ modified in that revision.
   * bump version
 * [Revision #485](https://bazaar.launchpad.net/~maria-captains/mariadb-java-client/trunk/revision/485)\
   Wed 2013-09-18 00:40:00 +0200
-  * [CONJ-64](https://jira.mariadb.org/browse/CONJ-64) - can't connect to MySQL 5.5 (while connection to [MariaDB 5.5](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) works\
+  * [CONJ-64](https://jira.mariadb.org/browse/CONJ-64) - can't connect to MySQL 5.5 (while connection to [MariaDB 5.5](../../../../community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) works\
     ok)
   * The regression is caused by erroneously set `CLIENT_PLUGIN` flag in the\
     client authentication packet.

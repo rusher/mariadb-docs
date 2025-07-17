@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.12](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) is a maintenance GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.11 GA release.
 
-MariaDB ColumnStore 1.0.12 is a [_**GA**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.12 is a [_**GA**_](../../community-server/about/release-criteria.md) release.
 
 For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview)
 
@@ -13,7 +13,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 
 ## Notable changes
 
-* [MCOL-1032](https://jira.mariadb.org/browse/MCOL-1032) - The base MariaDB server version is now [10.1.29](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes.md) which include several maintenance and security fixes.
+* [MCOL-1032](https://jira.mariadb.org/browse/MCOL-1032) - The base MariaDB server version is now [10.1.29](../../community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes.md) which include several maintenance and security fixes.
 
 ## Bugs and issues fixed
 

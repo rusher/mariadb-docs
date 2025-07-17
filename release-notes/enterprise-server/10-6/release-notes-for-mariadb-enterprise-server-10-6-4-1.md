@@ -221,7 +221,7 @@ FETCH NEXT 10 ROWS ONLY;
 }
 ```
 
-* The [gssapi](broken-reference) authentication plugin can now authenticate a user account by checking if the user belongs to an Active Directory group. ([MDEV-23959](https://jira.mariadb.org/browse/MDEV-23959))
+* The [gssapi](broken-reference/) authentication plugin can now authenticate a user account by checking if the user belongs to an Active Directory group. ([MDEV-23959](https://jira.mariadb.org/browse/MDEV-23959))
   * The group is specified in the authentication string using the [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/create-user) statement. The group can be specified using the group name or the SID.
   * Example syntax using a group name without specifying the domain:
 
@@ -297,7 +297,7 @@ MariaDB Enterprise Cluster is powered by Galera. New in this release:
   * For additional information, see "Certificate Expiration Warnings".
 *
   * Communication between nodes can be changed from unencrypted to TLS without cluster downtime. ([MDEV-22131](https://jira.mariadb.org/browse/MDEV-22131))
-  * Enabling TLS without downtime relies on two new options implemented for the [wsrep\_provider\_options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options) system variable: `socket.dynamic` and `socket.ssl_reload`.
+  * Enabling TLS without downtime relies on two new options implemented for the [wsrep\_provider\_options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep-variable-details/wsrep_provider_options) system variable: `socket.dynamic` and `socket.ssl_reload`.
   * For additional information, see "[Enable TLS without Downtime](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md)".
 * Galera Cluster nodes can be configured to refuse statements that would generate local GTIDs. ([MDEV-20715](https://jira.mariadb.org/browse/MDEV-20715))
   * When Galera Cluster is used with MariaDB Replication, local GTIDs can cause replication errors when the primary or replica has to failover to a different cluster node. By configuring Galera Cluster nodes to refuse statements that would generate local GTIDs, replication is more likely to succeed against any available cluster node.

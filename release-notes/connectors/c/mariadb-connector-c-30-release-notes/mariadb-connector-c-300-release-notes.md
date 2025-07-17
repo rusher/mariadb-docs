@@ -1,12 +1,12 @@
-# MariaDB Connector/C 3.0.0 Release Notes
+# Connector/C 3.0.0 Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-c/3.0.0)[Release Notes](mariadb-connector-c-300-release-notes.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
 
 **Release date:** 20 Jan 2016
 
-This is an [_Alpha_](../../../mariadb-release-criteria.md) release of MariaDB Connector/C,\
+This is an [_Alpha_](../../../community-server/about/release-criteria.md) release of MariaDB Connector/C,\
 formerly known as the MariaDB Client Library for C. As with any other\
 pre-production release, cautions should be taken when installing on production\
 systems or systems with critical data. Not all of the features, planned for the\

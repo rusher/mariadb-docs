@@ -1,4 +1,4 @@
-# MariaDB Connector/Node.js 3.0.0-rc Release Notes
+# Connector/Node.js 3.0.0-rc Release Notes
 
 {% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 20 Oct 2021
 
-MariaDB Connector/Node.js 3.0.0-rc is an [_**RC**_](../../../mariadb-release-criteria.md) release.
+MariaDB Connector/Node.js 3.0.0-rc is an [_**RC**_](../../../community-server/about/release-criteria.md) release.
 
 **Do not use non-stable (non-GA) releases in production!**
 

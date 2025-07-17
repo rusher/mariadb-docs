@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.7.0 Release Notes
+# Connector/J 1.7.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 9 Nov 2017
 
-MariaDB Connector/J 1.7.0 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_\
+MariaDB Connector/J 1.7.0 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
 release.
 
 This is the pendant of 2.2.0 changes for java 6-7.

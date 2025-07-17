@@ -1,12 +1,12 @@
-# MariaDB Connector/ODBC 1.0.5 Release Notes
+# Connector/ODBC 1.0.5 Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
+The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-odbc/1.0.5)[Release Notes](mariadb-connector-odbc-105-release-notes.md)[Changelog](../changelogs/mariadb-connector-odbc-10-changelogs/mariadb-connector-odbc-105-changelog.md)[About MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-odbc/README.md)
 
 **Release date:** 10 Sep 2015
 
-This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB\
+This is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB\
 Connector/ODBC. In general, marking this release as _stable_ means that\
 there are no known serious bugs, except for those marked as feature requests,\
 that no bugs were fixed since last release that caused a notable code changes,\

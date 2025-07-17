@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.6.3 Release Notes
+# Connector/J 1.6.3 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 31 July 2017
 
-MariaDB Connector/J 1.6.3 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_\
+MariaDB Connector/J 1.6.3 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
 release compatible with java 6, 7, 8.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**

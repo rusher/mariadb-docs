@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.2.1 Release notes
+# Connector/J 1.2.1 Release notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 04 September 2015
 
-MariaDB Connector/J 1.2.1 is a [_**Beta**_](../../../mariadb-release-criteria.md) _**(Beta)**_\
+MariaDB Connector/J 1.2.1 is a [_**Beta**_](../../../community-server/about/release-criteria.md) _**(Beta)**_\
 release
 
 \*\*Because of a new automatic deployment implementation, this beta version was intentionally not released.\

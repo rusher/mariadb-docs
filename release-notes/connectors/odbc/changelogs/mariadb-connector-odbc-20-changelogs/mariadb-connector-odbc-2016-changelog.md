@@ -1,6 +1,6 @@
-# MariaDB Connector/ODBC 2.0.16 Changelog
+# Connector/ODBC 2.0.16 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
+The most recent [_**Stable**_](../../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-odbc/2.0.16)[Release Notes](../../mariadb-connector-odbc-20-release-notes/mariadb-connector-odbc-2016-release-notes.md)[Changelog](mariadb-connector-odbc-2016-changelog.md)[About MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-odbc/README.md)
 
@@ -57,7 +57,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Fixed connection procedure call in couple of tests, since 1 parameter type was changed in previous commit, and these references were overlooked. Skipping connstring in Travis. Fixed SQL\_API SQLTablePrivilegesW - it would always return empty resultset if CatalogName is NULL. That was not intended, and its ANSI counterpart doesn't behave like that.
 * [Revision #d9c0ff4](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/d9c0ff4)\
   2017-12-03 16:25:51 +0100
-  * Adding [MariaDB 5.5](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) server to Travis tests. Skipping one tests with 5.5 servers(and MySQL <5.7), since it doesn't make sense there.
+  * Adding [MariaDB 5.5](../../../../community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) server to Travis tests. Skipping one tests with 5.5 servers(and MySQL <5.7), since it doesn't make sense there.
 * [Revision #27daadc](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/27daadc)\
   2017-11-27 22:32:02 +0100
   * Fixing remaining issues in Travis Made (most of) tests framework global variables static, as one of them clashed with variable in connector's env, and that caused problems in some cases. Also fixed few tests in connstring, that expected test connection to use password. Skipped one of tests there(in connstring) on travis.

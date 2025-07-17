@@ -1,4 +1,4 @@
-# MariaDB Connector/J 2.4.2 Release Notes
+# Connector/J 2.4.2 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 17 Jun 2019
 
-MariaDB Connector/J 2.4.2 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_\
+MariaDB Connector/J 2.4.2 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
 release.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
@@ -16,9 +16,6 @@ release.
 ### Evolutions
 
 New option `defaultFetchSize` to set default fetch size. When set, all statements will be initialized with the indicated fetch size.
-
-| defaultFetchSize |
-| ---------------- |
 
 ### Bugs
 

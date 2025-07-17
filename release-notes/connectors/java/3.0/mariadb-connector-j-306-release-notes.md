@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.0.6 Release Notes
+# Connector/J 3.0.6 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 29 Jun 2022
 
-MariaDB Connector/J 3.0.6 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+MariaDB Connector/J 3.0.6 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
 

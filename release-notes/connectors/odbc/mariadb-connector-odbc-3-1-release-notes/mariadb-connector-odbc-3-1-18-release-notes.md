@@ -1,10 +1,10 @@
-# MariaDB Connector/ODBC 3.1.18 Release Notes
+# Connector/ODBC 3.1.18 Release Notes
 
 [Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-odbc-3-1-18-release-notes.md)[Changelog](../changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3-1-18-changelog.md)[About MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-odbc/README.md)
 
 **Release date:** 13 Apr 2023
 
-This is a [Stable (GA)](../../../mariadb-release-criteria.md) release of MariaDB Connector/ODBC 3.1.
+This is a [Stable (GA)](../../../community-server/about/release-criteria.md) release of MariaDB Connector/ODBC 3.1.
 
 MariaDB Connector/ODBC 3.1.18 is built on top of[MariaDB Connector/C v.3.3.2](../../c/mariadb-connector-c-33-release-notes/mariadb-connector-c-332-release-notes.md).
 

@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.4](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) is a beta release of MariaDB ColumnStore. This is the first beta release of MariaDB ColumnStore with improvements over the previous 1.0.3 alpha release.
 
-MariaDB ColumnStore 1.0.4 is a [_**Beta**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.4 is a [_**Beta**_](../../community-server/about/release-criteria.md) release.
 
 **Do not use&#x20;**_**beta**_**&#x20;releases on production systems!**
 

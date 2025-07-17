@@ -1,4 +1,4 @@
-# MariaDB Connector/Node.js 3.3.0 Release Notes
+# Connector/Node.js 3.3.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 21 Mar 2024
 
-MariaDB Connector/Node.js 3.3.0 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+MariaDB Connector/Node.js 3.3.0 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
 {% hint style="success" %}
 **For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**
@@ -22,7 +22,7 @@ In order to have SSL connections, there was 3 solutions:
 * Configure connector with server certificate like:`ssl: { ca: [ fs.readFileSync('server-cert.pem') ] }`
 * disable certificate ssl verification (not secured!) like:`ssl: { rejectUnauthorized: true }`
 
-Since [MariaDB 11.4.1](../../../mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-1-release-notes.md) ([MDEV-31855](https://jira.mariadb.org/browse/MDEV-31855)), enabling SSL is super easy, with simple configuration like:`ssl: true`, even if server has not configure ssl certificates. The connector doesn't need to know server certificate anymore, if password is not empty. This is part of mission [impossible zero configuration](https://mariadb.org/mission-impossible-zero-configuration-ssl/), client validating ssl certificates using client password.
+Since [MariaDB 11.4.1](../../../community-server/mariadb-11-4-series/mariadb-11-4-1-release-notes.md) ([MDEV-31855](https://jira.mariadb.org/browse/MDEV-31855)), enabling SSL is super easy, with simple configuration like:`ssl: true`, even if server has not configure ssl certificates. The connector doesn't need to know server certificate anymore, if password is not empty. This is part of mission [impossible zero configuration](https://mariadb.org/mission-impossible-zero-configuration-ssl/), client validating ssl certificates using client password.
 
 ### [CONJS-284](https://jira.mariadb.org/browse/CONJS-284) pipeline PREPARE and EXECUTE
 

@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.5.2 Release Notes
+# Connector/J 1.5.2 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 1 Sep 2016
 
-MariaDB Connector/J 1.5.2 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_\
+MariaDB Connector/J 1.5.2 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
 release.
 
 **For a description of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
@@ -90,7 +90,7 @@ When using MySQL/MariaDB prepared statements, there are 3 exchanges with server 
 
 See [Server prepare documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement) for more information.
 
-Since [MariaDB 10.2.2](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), the last PREPARE statement id can be identified with value "-1".\
+Since [MariaDB 10.2.2](../../../community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), the last PREPARE statement id can be identified with value "-1".\
 The driver uses this functionality to PREPARE and EXECUTE in one client-server round-trip.
 
 ### Client logging

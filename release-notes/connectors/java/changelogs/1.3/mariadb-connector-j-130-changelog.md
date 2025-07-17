@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.3.0 Changelog
+# Connector/J 1.3.0 Changelog
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 16 Nov 2015
 
-MariaDB Connector/J 1.3.0 is a [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release.
+MariaDB Connector/J 1.3.0 is a [_**Stable (GA)**_](../../../../community-server/about/release-criteria.md) release.
 
 For the highlights of this release, see the[release notes](../../1.3/mariadb-connector-j-130-release-notes.md).
 

@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.6](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) is a GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.5 RC release.
 
-MariaDB ColumnStore 1.0.6 is a [_**GA**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.6 is a [_**GA**_](../../community-server/about/release-criteria.md) release.
 
 For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview)
 

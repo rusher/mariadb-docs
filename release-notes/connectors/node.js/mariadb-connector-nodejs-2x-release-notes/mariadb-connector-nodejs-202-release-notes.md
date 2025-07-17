@@ -1,4 +1,4 @@
-# MariaDB Connector/Node.js 2.0.2 Release Notes
+# Connector/Node.js 2.0.2 Release Notes
 
 {% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 13 Dec 2018
 
-MariaDB Connector/Node.js 2.0.2 is a [_**Release Candidate (RC)**_](../../../mariadb-release-criteria.md) release.
+MariaDB Connector/Node.js 2.0.2 is a [_**Release Candidate (RC)**_](../../../community-server/about/release-criteria.md) release.
 
 {% hint style="success" %}
 **For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**
@@ -15,9 +15,6 @@ MariaDB Connector/Node.js 2.0.2 is a [_**Release Candidate (RC)**_](../../../mar
 ## Notable Updates
 
 New options:
-
-| noControlAfterUse |
-| ----------------- |
 
 ### correction
 

@@ -6,7 +6,7 @@
 
 **Release date:** 7 Apr 2022
 
-This is a [_**Release Candidate (RC)**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/Python.
+This is a [_**Release Candidate (RC)**_](../../../community-server/about/release-criteria.md) release of MariaDB Connector/Python.
 
 {% hint style="danger" %}
 **Do not use non-stable (non-GA) releases in production!**

@@ -6,7 +6,7 @@
 
 **Release date:** 30 Mar 2020
 
-This is a [_**beta**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/Python and not intended for production use.
+This is a [_**beta**_](../../../community-server/about/release-criteria.md) release of MariaDB Connector/Python and not intended for production use.
 
 {% hint style="danger" %}
 **Do not use&#x20;**_**beta**_**&#x20;releases in production!**

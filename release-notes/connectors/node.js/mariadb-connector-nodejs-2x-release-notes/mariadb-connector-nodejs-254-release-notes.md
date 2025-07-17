@@ -1,4 +1,4 @@
-# MariaDB Connector/Node.js 2.5.4 Release Notes
+# Connector/Node.js 2.5.4 Release Notes
 
 {% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 14 Jun 2021
 
-MariaDB Connector/Node.js 2.5.4 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+MariaDB Connector/Node.js 2.5.4 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
 {% hint style="success" %}
 **For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**

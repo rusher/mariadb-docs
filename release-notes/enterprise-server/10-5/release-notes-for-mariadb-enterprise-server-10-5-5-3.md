@@ -64,7 +64,7 @@ With MariaDB Enterprise Server 10.5 "mysql" command names are replaced with "mar
 * Rounding functions return wrong datatype. ([MDEV-23366](https://jira.mariadb.org/browse/MDEV-23366), [MDEV-23367](https://jira.mariadb.org/browse/MDEV-23367), [MDEV-23368](https://jira.mariadb.org/browse/MDEV-23368), [MDEV-23350](https://jira.mariadb.org/browse/MDEV-23350), [MDEV-23351](https://jira.mariadb.org/browse/MDEV-23351), [MDEV-23337](https://jira.mariadb.org/browse/MDEV-23337), [MDEV-23323](https://jira.mariadb.org/browse/MDEV-23323))
 * PAM v2 plugin produces zombie processes. ([MDEV-21385](https://jira.mariadb.org/browse/MDEV-21385))
 * Performance regression when using [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin). (MENT-870)
-* Fixes to performance regressions introduced in [MariaDB 10.5.4](../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1054-release-notes.md). ([MDEV-23369](https://jira.mariadb.org/browse/MDEV-23369), [MDEV-23410](https://jira.mariadb.org/browse/MDEV-23410))
+* Fixes to performance regressions introduced in [MariaDB 10.5.4](../../community-server/old-releases/mariadb-10-5-series/mariadb-1054-release-notes.md). ([MDEV-23369](https://jira.mariadb.org/browse/MDEV-23369), [MDEV-23410](https://jira.mariadb.org/browse/MDEV-23410))
 * Change in [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) I/O thread count is not reflected in system variables. (MENT-866)
 
 ### Related to install and upgrade

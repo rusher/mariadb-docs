@@ -45,7 +45,7 @@ Error 'Invalid default value for 'TABLE_NAME'' on query. Default database: 'test
 
 * When an [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) statement changes the order of indexes in a MyISAM or Aria table using the INPLACE algorithm, the table can become corrupt. ([MDEV-25803](https://jira.mariadb.org/browse/MDEV-25803))
 * When [CREATE OR REPLACE SEQUENCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences/create-sequence) is written to the binary log, the statement is not flagged as DDL, which causes the replica servers to execute the statement in an unsafe way if parallel replication is enabled. ([MDEV-27365](https://jira.mariadb.org/browse/MDEV-27365))
-* After upgrading from [MariaDB 10.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md) or earlier, the names of some triggers can appear empty, and the trigger can't be dropped. ([MDEV-25659](https://jira.mariadb.org/browse/MDEV-25659))
+* After upgrading from [MariaDB 10.3](../../community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md) or earlier, the names of some triggers can appear empty, and the trigger can't be dropped. ([MDEV-25659](https://jira.mariadb.org/browse/MDEV-25659))
 
 ### Can result in a hang or crash
 

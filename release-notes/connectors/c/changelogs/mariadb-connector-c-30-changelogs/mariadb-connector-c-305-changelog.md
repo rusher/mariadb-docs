@@ -1,6 +1,6 @@
-# MariaDB Connector/C 3.0.5 Changelog
+# Connector/C 3.0.5 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+The most recent [_**Stable**_](../../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-c/3.0.5)[Release Notes](../../mariadb-connector-c-30-release-notes/mariadb-connector-c-305-release-notes.md)[Changelog](mariadb-connector-c-305-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
 
@@ -59,7 +59,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix for [CONC-334](https://jira.mariadb.org/browse/CONC-334): Copy all members of MYSQL\_FIELD from mysql->fields to stmt->fields.
 * [Revision #8455b6e](https://github.com/mariadb-corporation/mariadb-connector-c/commit/8455b6e)\
   2018-05-24 12:10:02 +0200
-  * Changed default character set from utf8 (see fix for [CONC-315](https://jira.mariadb.org/browse/CONC-315)) to latin1, which is also default behavior in [MariaDB 10.1](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) To use another default character set, MariaDB Connector/C has to be build with CMake parameter -DDEFAUT\_CHARSET=name.
+  * Changed default character set from utf8 (see fix for [CONC-315](https://jira.mariadb.org/browse/CONC-315)) to latin1, which is also default behavior in [MariaDB 10.1](../../../../community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) To use another default character set, MariaDB Connector/C has to be build with CMake parameter -DDEFAUT\_CHARSET=name.
 * [Revision #407ca36](https://github.com/mariadb-corporation/mariadb-connector-c/commit/407ca36)\
   2018-05-28 15:51:58 +0200
   * Fixed string conversion to MYSQL\_TIME\_TYPE:

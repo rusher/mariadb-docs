@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.5.0 Release Notes
+# Connector/J 3.5.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 24 Oct 2024
 
-MariaDB Connector/J 3.5.0 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+MariaDB Connector/J 3.5.0 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
 
@@ -29,7 +29,7 @@ Those options permit the use of a specific truststore that differs from the Java
 
 The Connector is using the utf8mb4 charset per default when establishing a connection. ‘connectionCollation’ can be used to define which utf8mb4 collation should be used. If not set the server default collation for utf8mb4 will be used.
 
-Starting with [MariaDB 11.4](../../../mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114.md) we recommend to instead set [character\_set\_collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#character_set_collations)
+Starting with [MariaDB 11.4](../../../community-server/mariadb-11-4-series/what-is-mariadb-114.md) we recommend to instead set [character\_set\_collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#character_set_collations)
 
 ### Support for methods setObject/getObject and setArray/getArray - [CONJ-1205](https://jira.mariadb.org/browse/CONJ-1205)
 

@@ -1,4 +1,4 @@
-# MariaDB Connector/ODBC 3.1.22 Release Notes
+# Connector/ODBC 3.1.22 Release Notes
 
 {% include "../../../../.gitbook/includes/latest-odbc.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:**
 
-This is a [Stable (GA)](../../../mariadb-release-criteria.md) release of MariaDB Connector/ODBC 3.1.
+This is a [Stable (GA)](../../../community-server/about/release-criteria.md) release of MariaDB Connector/ODBC 3.1.
 
 MariaDB Connector/ODBC 3.1.22 is built on top of[MariaDB Connector/C v.3.3.15](../../c/mariadb-connector-c-33-release-notes/mariadb-connector-c-3-3-15-release-notes.md).
 

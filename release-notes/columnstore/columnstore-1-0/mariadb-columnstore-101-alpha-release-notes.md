@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.1](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) is the development version of MariaDB ColumnStore. It is built by porting InfiniDB 4.6.2 on [MariaDB 10.1.14](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md).
 
-MariaDB ColumnStore 1.0.1 is an [_**Alpha**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.1 is an [_**Alpha**_](../../community-server/about/release-criteria.md) release.
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases on production systems!**
 

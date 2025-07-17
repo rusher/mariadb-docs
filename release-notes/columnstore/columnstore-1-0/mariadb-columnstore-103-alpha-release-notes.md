@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.3](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) is an alpha release of MariaDB ColumnStore. This is the third alpha release of MariaDB ColumnStore with improvements over previous alpha release of 1.0.2.
 
-MariaDB ColumnStore 1.0.3 is an [_**Alpha**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.3 is an [_**Alpha**_](../../community-server/about/release-criteria.md) release.
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases on production systems!**
 

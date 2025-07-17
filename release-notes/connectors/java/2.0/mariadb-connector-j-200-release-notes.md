@@ -1,4 +1,4 @@
-# MariaDB Connector/J 2.0.0 Release Notes
+# Connector/J 2.0.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 20 April 2017
 
-MariaDB Connector/J 2.0.0-RC is a [_**RC**_](../../../mariadb-release-criteria.md) _**(Release candidate)**_\
+MariaDB Connector/J 2.0.0-RC is a [_**RC**_](../../../community-server/about/release-criteria.md) _**(Release candidate)**_\
 release.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
@@ -24,7 +24,7 @@ Implement some protocol changes that permit to save some bytes.\
 ### handle SERVER\_SESSION\_STATE\_CHANGE status flag
 
 [CONJ-341](https://jira.mariadb.org/browse/CONJ-341)\
-With server with version [MariaDB 10.2](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md), MySQL 5.7, ensure driver state :
+With server with version [MariaDB 10.2](../../../community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md), MySQL 5.7, ensure driver state :
 
 * driver does now always get current database, even when database is changed by query.
 * when using rewriteBatchedStatements does return correct autoincrement ids even when session variable @auto\_increment\_increment has change during session.
@@ -55,9 +55,6 @@ Faster connection : bundle first commands in authentication packet\
 Driver execute different command on connection. Those queries are now send using pipeline (all queries are send, then only all results are reads).
 
 New Options :
-
-| usePipelineAuth |
-| --------------- |
 
 ### Performance improvement storing data in resultset
 

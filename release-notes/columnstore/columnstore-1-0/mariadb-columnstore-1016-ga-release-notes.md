@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.16](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) is a maintenance GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.15 GA release.
 
-MariaDB ColumnStore 1.0.16 is a [_**GA**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.16 is a [_**GA**_](../../community-server/about/release-criteria.md) release.
 
 For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview)
 
@@ -13,7 +13,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 
 ## Notable changes
 
-* [MCOL-2115](https://jira.mariadb.org/browse/MCOL-2115) - The base MariaDB server version is now [10.1.38](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes.md) which include several maintenance and security fixes.
+* [MCOL-2115](https://jira.mariadb.org/browse/MCOL-2115) - The base MariaDB server version is now [10.1.38](../../community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes.md) which include several maintenance and security fixes.
 * [MCOL-2136](https://jira.mariadb.org/browse/MCOL-2136) - Use jemalloc as the main memory allocator. Please ensure jemalloc is installed on each ColumnStore node prior to installation or upgrade.
 
 ## Bugs and issues fixed
@@ -23,7 +23,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-2136](https://jira.mariadb.org/browse/MCOL-2136) - Use jemalloc as the main memory allocator
 * [MCOL-2149](https://jira.mariadb.org/browse/MCOL-2149) - Regression in decimal saturation handling in cpimport
 * [MCOL-1974](https://jira.mariadb.org/browse/MCOL-1974) - Bug verification for [MCOL-1844](https://jira.mariadb.org/browse/MCOL-1844) for 1.1.7 and 1.0.16
-* [MCOL-2115](https://jira.mariadb.org/browse/MCOL-2115) - Merge [MariaDB 10.1.38](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes.md) into server tree
+* [MCOL-2115](https://jira.mariadb.org/browse/MCOL-2115) - Merge [MariaDB 10.1.38](../../community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes.md) into server tree
 * [MCOL-2120](https://jira.mariadb.org/browse/MCOL-2120) - Check NUMA devel package is installed on BuildBot instances
 
 ## Upgrade

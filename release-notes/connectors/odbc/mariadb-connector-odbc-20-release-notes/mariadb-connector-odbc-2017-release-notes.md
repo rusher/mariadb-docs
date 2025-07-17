@@ -1,12 +1,12 @@
-# MariaDB Connector/ODBC 2.0.17 Release Notes
+# Connector/ODBC 2.0.17 Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
+The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-odbc/2.0.17)[Release Notes](mariadb-connector-odbc-2017-release-notes.md)[Changelog](../changelogs/mariadb-connector-odbc-20-changelogs/mariadb-connector-odbc-2017-changelog.md)[About MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-odbc/README.md)
 
 **Release date:** 12 Jun 2018
 
-This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB\
+This is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB\
 Connector/ODBC.
 
 MariaDB Connector/ODBC 2.0.17 is built on top of[MariaDB Connector/C v.2.3.6](../../c/mariadb-connector-c-23-release-notes/mariadb-connector-c-236-release-notes.md) and uses the\

@@ -1,10 +1,10 @@
-# MariaDB Connector/C 3.2.5 Release Notes
+# Connector/C 3.2.5 Release Notes
 
 [Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-c-325-release-notes.md)[Changelog](../changelogs/mariadb-connector-c-32-changelogs/mariadb-connector-c-325-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
 
 **Release date:** 10 Nov 2021
 
-This is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of MariaDB\
+This is a [_**Stable (GA)**_](../../../community-server/about/release-criteria.md) release of MariaDB\
 Connector/C, formerly known as MariaDB Client Library for C.
 
 **For a description of this library see the**[**MariaDB Connector/C**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) **page.**

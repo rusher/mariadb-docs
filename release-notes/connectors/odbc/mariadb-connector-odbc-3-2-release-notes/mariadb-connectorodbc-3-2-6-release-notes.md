@@ -1,10 +1,10 @@
-# MariaDB Connector/ODBC 3.2.6 Release Notes
+# Connector/ODBC 3.2.6 Release Notes
 
 <a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a> <a href="mariadb-connectorodbc-3-2-6-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3.2.6-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
 
 **Release date:**
 
-This is a [Stable (GA)](../../../mariadb-release-criteria.md) release of MariaDB Connector/ODBC 3.2.
+This is a [Stable (GA)](../../../community-server/about/release-criteria.md) release of MariaDB Connector/ODBC 3.2.
 
 MariaDB Connector/ODBC 3.2.6 is built on top of[MariaDB Connector/C v.3.4.5](../../c/mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md).
 

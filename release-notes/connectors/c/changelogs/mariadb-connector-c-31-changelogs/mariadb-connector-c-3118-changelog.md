@@ -1,6 +1,6 @@
 # Connector/C 3.1.18 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+The most recent [_**Stable**_](../../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
 [Download](https://mariadb.com/downloads/#connectors)[Release Notes](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/list-of-mariadb-connector-c-releases)[Changelog](mariadb-connector-c-3118-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
 
@@ -73,7 +73,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Merge branch '3.1' of [mariadb-connector-c](https://github.com/mariadb-corporation/mariadb-connector-c) into 3.1
 * [Revision #18ae382](https://github.com/mariadb-corporation/mariadb-connector-c/commit/18ae382)\
   2022-05-25 12:06:46 -0400
-  * update MARIADB\_CLIENT\_VERSION\_PATCH to next [MariaDB 10.5](../../../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md)
+  * update MARIADB\_CLIENT\_VERSION\_PATCH to next [MariaDB 10.5](../../../../community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105.md)
 * [Revision #96bbb2b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/96bbb2b)\
   2022-05-25 12:02:26 -0400
   * bump the VERSION

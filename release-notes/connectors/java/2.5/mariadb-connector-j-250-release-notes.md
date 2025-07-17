@@ -1,4 +1,4 @@
-# MariaDB Connector/J 2.5.0 Release Notes
+# Connector/J 2.5.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 3 Oct 2019
 
-MariaDB Connector/J 2.5.0 is a [_**Release Candidate (RC)**_](../../../mariadb-release-criteria.md) release.
+MariaDB Connector/J 2.5.0 is a [_**Release Candidate (RC)**_](../../../community-server/about/release-criteria.md) release.
 
 **NOTE:** MariaDB Connector/J 2.5.0 is fully compatible with the latest release of\
 version 2.4. Further maintenance releases will not be provided for version 2.4.

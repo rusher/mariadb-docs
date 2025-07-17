@@ -1,4 +1,4 @@
-# MariaDB Connector/Node.js 0.7.0 Release Notes
+# Connector/Node.js 0.7.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 19 Jul 2018
 
-MariaDB Connector/Node.js 0.7.0 is an [_**Alpha**_](../../../mariadb-release-criteria.md)\
+MariaDB Connector/Node.js 0.7.0 is an [_**Alpha**_](../../../community-server/about/release-criteria.md)\
 release.
 
 {% hint style="success" %}

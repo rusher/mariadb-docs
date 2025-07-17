@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.5.9 Release Notes
+# Connector/J 1.5.9 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 20 Mar 2017
 
-MariaDB Connector/J 1.5.9 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_\
+MariaDB Connector/J 1.5.9 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
 release.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
@@ -30,9 +30,6 @@ This version is a bug-fix release.
 ### Password encoding.
 
 [CONJ-212](https://jira.mariadb.org/browse/CONJ-212) : Implement password encoding charset option to permit connecting using a password created with a connection that had a different charset
-
-| passwordCharacterEncoding |
-| ------------------------- |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

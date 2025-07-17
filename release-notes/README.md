@@ -6,8 +6,8 @@ Release dates for all upcoming MariaDB Server releases can be found [on Jira](ht
 [enterprise-server](enterprise-server/)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-community-server-release-notes/" %}
-[mariadb-community-server-release-notes](mariadb-community-server-release-notes/)
+{% content-ref url="community-server/" %}
+[community-server](community-server/)
 {% endcontent-ref %}
 
 {% content-ref url="columnstore/" %}
@@ -30,28 +30,28 @@ Release dates for all upcoming MariaDB Server releases can be found [on Jira](ht
 [latest-releases.md](latest-releases.md)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-release-criteria.md" %}
-[mariadb-release-criteria.md](mariadb-release-criteria.md)
+{% content-ref url="community-server/about/release-criteria.md" %}
+[release-criteria.md](community-server/about/release-criteria.md)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-release-model.md" %}
-[mariadb-release-model.md](mariadb-release-model.md)
+{% content-ref url="community-server/about/release-model.md" %}
+[release-model.md](community-server/about/release-model.md)
 {% endcontent-ref %}
 
-{% content-ref url="compatibility-and-differences/" %}
-[compatibility-and-differences](compatibility-and-differences/)
+{% content-ref url="community-server/about/compatibility-and-differences/" %}
+[compatibility-and-differences](community-server/about/compatibility-and-differences/)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-platform-deprecation-policy.md" %}
-[mariadb-platform-deprecation-policy.md](mariadb-platform-deprecation-policy.md)
+{% content-ref url="community-server/about/platform-deprecation-policy.md" %}
+[platform-deprecation-policy.md](community-server/about/platform-deprecation-policy.md)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-maintenance-policy.md" %}
-[mariadb-maintenance-policy.md](mariadb-maintenance-policy.md)
+{% content-ref url="community-server/about/maintenance-policy.md" %}
+[maintenance-policy.md](community-server/about/maintenance-policy.md)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-feature-deprecation-policy.md" %}
-[mariadb-feature-deprecation-policy.md](mariadb-feature-deprecation-policy.md)
+{% content-ref url="community-server/about/feature-deprecation-policy.md" %}
+[feature-deprecation-policy.md](community-server/about/feature-deprecation-policy.md)
 {% endcontent-ref %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}

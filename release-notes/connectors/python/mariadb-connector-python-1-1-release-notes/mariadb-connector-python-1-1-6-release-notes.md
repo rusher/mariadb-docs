@@ -6,7 +6,7 @@
 
 **Release date:** 1 Mar 2023
 
-This is a [_**stable**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/Python.
+This is a [_**stable**_](../../../community-server/about/release-criteria.md) release of MariaDB Connector/Python.
 
 **For a description of this library see the** [**MariaDB Connector/Python documentation**](https://mariadb-corporation.github.io/mariadb-connector-python/index.html) **.**
 

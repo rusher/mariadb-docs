@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.3.0 Release notes
+# Connector/J 1.3.0 Release notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 16 Nov 2015
 
-MariaDB Connector/J 1.3.0 is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release.
+MariaDB Connector/J 1.3.0 is a [_**Stable (GA)**_](../../../community-server/about/release-criteria.md) release.
 
 **For a description of the MariaDB Connector/J see the**[**About the MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-the-mariadb-connector-j/README.md) **page.**
 
@@ -68,9 +68,6 @@ prepared statements.
 
 A new parameter is added :
 
-| useLegacyDatetimeCode |
-| --------------------- |
-
 There is no change when the parameter `useLegacyDatetimeCode` is not specified\
 or is `true` (it is `true` by default). When this parameter is set to`false` in the JDBC connection string, the new implementation is used.\
 Therefore, the time zone of the server will be used, taking into account the\
@@ -125,9 +122,6 @@ with `useLegacyDatetimeCode=true`:
 #### AssureReadOnly parameter
 
 A new parameter is added :
-
-| assureReadOnly |
-| -------------- |
 
 When switching host to a slave (by using "connection.setReadOnly(true);" for\
 example), if the database permit it, the connector was always setting the\

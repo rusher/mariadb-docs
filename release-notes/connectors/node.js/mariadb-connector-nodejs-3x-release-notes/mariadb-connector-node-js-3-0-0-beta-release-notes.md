@@ -1,4 +1,4 @@
-# MariaDB Connector/Node.js 3.0.0-beta Release Notes
+# Connector/Node.js 3.0.0-beta Release Notes
 
 {% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 30 Jun 2021
 
-MariaDB Connector/Node.js 3.0.0 is a [_**Beta**_](../../../mariadb-release-criteria.md) release.
+MariaDB Connector/Node.js 3.0.0 is a [_**Beta**_](../../../community-server/about/release-criteria.md) release.
 
 **Do not use&#x20;**_**beta**_**&#x20;releases in production!**
 
@@ -23,7 +23,7 @@ This methods are compatible with mysql2 with some differences:
 
 * permit streaming parameters
 * execute use by default a prepared cache that hasn't infinite length (option ‘prepareCacheLength’ with default to 256)
-* Implement [mariadb 10.6](../../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) new feature, skipping metadata when possible for better performance
+* Implement [mariadb 10.6](../../../community-server/mariadb-10-6-series/what-is-mariadb-106.md) new feature, skipping metadata when possible for better performance
 
 New Connection methods:
 
@@ -44,7 +44,7 @@ Or directly :
 await conn.execute('INSERT INTO mytable(id,val) VALUES (?,?)', [1, 'val1']);
 ```
 
-If reusing query multiple time, this permits to perform better, specifically using [mariadb 10.6](../../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md). Performance comparison with mysql2 driver show up to 20% performance gain. More info will follow before GA release.
+If reusing query multiple time, this permits to perform better, specifically using [mariadb 10.6](../../../community-server/mariadb-10-6-series/what-is-mariadb-106.md). Performance comparison with mysql2 driver show up to 20% performance gain. More info will follow before GA release.
 
 ### Exact Number implementation
 

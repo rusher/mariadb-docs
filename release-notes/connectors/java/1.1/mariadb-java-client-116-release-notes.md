@@ -1,4 +1,4 @@
-# MariaDB Java Client 1.1.6 Release Notes
+# Connector/J 1.1.6 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 18 Feb 2014
 
-MariaDB Java Client 1.1.6 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_\
+MariaDB Java Client 1.1.6 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
 release. In general this means that there are no known serious bugs,\
 except for those marked as feature requests, that no bugs were fixed\
 since last release that caused notable code changes, and that we\

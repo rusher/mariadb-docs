@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.5.1 Release Notes
+# Connector/J 1.5.1 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 16 Aug 2016
 
-MariaDB Connector/J 1.5.1 is a [_**Release candidate**_](../../../mariadb-release-criteria.md) _**(RC)**_\
+MariaDB Connector/J 1.5.1 is a [_**Release candidate**_](../../../community-server/about/release-criteria.md) _**(RC)**_\
 release.
 
 **For a description of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**

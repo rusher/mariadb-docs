@@ -1,12 +1,12 @@
-# MariaDB ODBC Driver 0.9.1 Release Notes
+# Connector/ODBC 0.9.1 Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
+The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-odbc/0.9.1/) |**Release Notes** |[Changelog](../changelogs/mariadb-connector-odbc-10-changelogs/mariadb-odbc-driver-091-changelog.md) |[MariaDB ODBC Driver Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc)
 
 **Release date:** 2 Apr 2014
 
-MariaDB ODBC Driver 0.9.1 is a [Beta](../../../mariadb-release-criteria.md) release. In general\
+MariaDB ODBC Driver 0.9.1 is a [Beta](../../../community-server/about/release-criteria.md) release. In general\
 this means that there are no known serious bugs, except for those marked as\
 feature requests, but we feel it needs further testing and development before\
 we call it _stable_.

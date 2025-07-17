@@ -48,7 +48,7 @@ Error 'Invalid default value for 'TABLE_NAME'' on query. Default database: 'test
 
 * When an [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) statement changes the order of indexes in a MyISAM or Aria table using the `INPLACE` algorithm, the table can become corrupt. ([MDEV-25803](https://jira.mariadb.org/browse/MDEV-25803))
 * When [CREATE OR REPLACE SEQUENCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences/create-sequence) is written to the binary log, the statement is not flagged as DDL, which causes the replica servers to execute the statement in an unsafe way if parallel replication is enabled. ([MDEV-27365](https://jira.mariadb.org/browse/MDEV-27365))
-* After upgrading from [MariaDB 10.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md) or earlier, the names of some triggers can appear empty, and the trigger can't be dropped. ([MDEV-25659](https://jira.mariadb.org/browse/MDEV-25659))
+* After upgrading from [MariaDB 10.3](../../community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md) or earlier, the names of some triggers can appear empty, and the trigger can't be dropped. ([MDEV-25659](https://jira.mariadb.org/browse/MDEV-25659))
 
 ### Can result in a hang or crash
 
@@ -62,7 +62,7 @@ mariadb-backup: The option "innodb_force_recovery" should only be used with "--p
 mariadb-backup: innodb_init_param(): Error occurred.
 ```
 
-* When [--stream=xbstream](broken-reference) is set, MariaDB Enterprise Backup can hang on lock acquisitions due to a deadlock. ([MDEV-26558](https://jira.mariadb.org/browse/MDEV-26558))
+* When [--stream=xbstream](broken-reference/) is set, MariaDB Enterprise Backup can hang on lock acquisitions due to a deadlock. ([MDEV-26558](https://jira.mariadb.org/browse/MDEV-26558))
 * When a stored procedure is defined with a query that contains a set function, and the set function's only argument is an outer reference to a column of a mergeable view, a derived table, or a CTE, the second execution of the stored procedure can cause the server to crash. ([MDEV-25086](https://jira.mariadb.org/browse/MDEV-25086))
 * When a derived table is created for certain queries that use subqueries over Views or CTEs, the server can crash with a segmentation fault (signal 11). ([MDEV-25631](https://jira.mariadb.org/browse/MDEV-25631))
 * When a stored procedure uses a cursor to run a query that requires an internal temporary table (such as queries containing an ORDER BY clause), the server can crash due to a segmentation fault (signal 11). ([MDEV-24827](https://jira.mariadb.org/browse/MDEV-24827))
@@ -182,7 +182,7 @@ ERROR 1253 (42000): COLLATION ' …' is not valid for CHARACTER SET 'latin1'
 
 ### Related to install and upgrade
 
-* When the `mysql.AddGeometryColumn` and `mysql.DropGeometryColumn` stored procedures use the old default `DEFINER = 'root@localhost',` [mariadb-upgrade](broken-reference) does not alter them to use the new default `DEFINER = 'mariadb.sys@localhost'`. ([MDEV-27124](https://jira.mariadb.org/browse/MDEV-27124))
+* When the `mysql.AddGeometryColumn` and `mysql.DropGeometryColumn` stored procedures use the old default `DEFINER = 'root@localhost',` [mariadb-upgrade](broken-reference/) does not alter them to use the new default `DEFINER = 'mariadb.sys@localhost'`. ([MDEV-27124](https://jira.mariadb.org/browse/MDEV-27124))
 * When MariaDB Server is upgraded from 10.2, 10.3, or 10.4, InnoDB upgrades the redo log format in a manner that is not crash-safe. ([MDEV-27190](https://jira.mariadb.org/browse/MDEV-27190))
 
 ## Changes in Storage Engines
@@ -201,7 +201,7 @@ ERROR 1253 (42000): COLLATION ' …' is not valid for CHARACTER SET 'latin1'
 * `mariadbd` --hashicorp-key-management-cache-timeout command-line option added
 * `mariadbd` --hashicorp-key-management-cache-version-timeout command-line option added
 * `mariadbd` --rocksdb-ignore-datadic-errors command-line option added
-* [brocksdb\_ignore\_datadic\_errors](broken-reference) system variable added
+* [brocksdb\_ignore\_datadic\_errors](broken-reference/) system variable added
 
 ## Platforms
 

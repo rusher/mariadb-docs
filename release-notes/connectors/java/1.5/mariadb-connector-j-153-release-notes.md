@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.5.3 Release Notes
+# Connector/J 1.5.3 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 4 Oct 2016
 
-MariaDB Connector/J 1.5.3 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_\
+MariaDB Connector/J 1.5.3 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
 release.
 
 **For a description of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
@@ -25,9 +25,6 @@ This version is a bug-fix release.
 * [CONJ-350](https://jira.mariadb.org/browse/CONJ-350) : make prepare fallback to client prepare if query cannot be prepare
 
 New Option :
-
-| keyPassword |
-| ----------- |
 
 Some options which names where confusing have been renamed (the old names still works):
 

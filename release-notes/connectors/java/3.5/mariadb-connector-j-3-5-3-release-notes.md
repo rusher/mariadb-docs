@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.5.3 Release Notes
+# Connector/J 3.5.3 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 27 Mar 2025
 
-MariaDB Connector/J 3.5.3 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+MariaDB Connector/J 3.5.3 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
 {% hint style="info" %}
 **For an overview of MariaDB Connector/J see the** [**About MariaDB Connector/J**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j) **page**

@@ -1,6 +1,6 @@
-# MariaDB Connector/ODBC 3.0.3 Changelog
+# Connector/ODBC 3.0.3 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
+The most recent [_**Stable**_](../../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-odbc/3.0.3)[Release Notes](../../mariadb-connector-odbc-30-release-notes/mariadb-connector-odbc-303-release-notes.md)[Changelog](mariadb-connector-odbc-303-changelog.md)[About MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-odbc/README.md)
 
@@ -48,7 +48,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * correct include guard
 * [Revision #7d5f4fa](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/7d5f4fa)\
   2017-12-03 16:25:51 +0100
-  * Adding [MariaDB 5.5](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) server to Travis tests. Skipping one test with 5.5 servers(and MySQL <5.7), since it doesn't make sense there.
+  * Adding [MariaDB 5.5](../../../../community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) server to Travis tests. Skipping one test with 5.5 servers(and MySQL <5.7), since it doesn't make sense there.
 * [Revision #050ebc8](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/050ebc8)\
   2017-12-19 19:16:55 +0100
   * Fix of warning from recent pull request

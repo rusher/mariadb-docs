@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.5](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) is a Release Candidate release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.4 beta release.
 
-MariaDB ColumnStore 1.0.5 is a [_**Release Candidate**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.5 is a [_**Release Candidate**_](../../community-server/about/release-criteria.md) release.
 
 **Do not use&#x20;**_**Release Candidate**_**&#x20;releases on production systems!**
 

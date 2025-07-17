@@ -1,4 +1,4 @@
-# MariaDB Connector/J 2.6.2 Release Notes
+# Connector/J 2.6.2 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 23 Jul 2020
 
-MariaDB Connector/J 2.6.2 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+MariaDB Connector/J 2.6.2 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
 **NOTE:** [MariaDB Connector/J 2.7.0](../2.7/mariadb-connector-j-270-release-notes.md) is fully\
 compatible with this release of version 2.6.\

@@ -1,15 +1,15 @@
-# MariaDB Connector/C 3.3.13 Release Notes
+# Connector/C 3.3.13 Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
 [Download](https://mariadb.com/downloads/connectors)[Release Notes](mariadb-connector-c-3-3-13-release-notes.md)[Changelog](../changelogs/mariadb-connector-c-33-changelogs/mariadb-connector-c-3-3-13-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
 
 **Release date:** 12 Nov 2024
 
-This is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of MariaDB\
+This is a [_**Stable (GA)**_](../../../community-server/about/release-criteria.md) release of MariaDB\
 Connector/C, formerly known as MariaDB Client Library for C.
 
-MariaDB Connector/C 3.3.12 was not released separately but is included in [MariaDB Community Server 10.6.20](../../../mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-20-release-notes.md), [10.11.10](../../../mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-10-release-notes.md), and [11.2.6](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes.md). MariaDB Connector/C 3.3.13 includes additional bug fixes for the Connector.
+MariaDB Connector/C 3.3.12 was not released separately but is included in [MariaDB Community Server 10.6.20](../../../community-server/mariadb-10-6-series/mariadb-10-6-20-release-notes.md), [10.11.10](../../../community-server/mariadb-10-11-series/mariadb-10-11-10-release-notes.md), and [11.2.6](../../../community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes.md). MariaDB Connector/C 3.3.13 includes additional bug fixes for the Connector.
 
 **For a description of this library see the**[**MariaDB Connector/C**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) **page.**
 

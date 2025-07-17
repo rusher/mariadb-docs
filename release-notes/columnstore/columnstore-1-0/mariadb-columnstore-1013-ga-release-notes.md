@@ -4,7 +4,7 @@
 
 [MariaDB ColumnStore 1.0.13](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) is a maintenance GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.12 GA release.
 
-MariaDB ColumnStore 1.0.13 is a [_**GA**_](../../mariadb-release-criteria.md) release.
+MariaDB ColumnStore 1.0.13 is a [_**GA**_](../../community-server/about/release-criteria.md) release.
 
 For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview)
 
@@ -13,14 +13,14 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 
 ## Notable changes
 
-* [MCOL-1206](https://jira.mariadb.org/browse/MCOL-1206) - The base MariaDB server version is now [10.1.31](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes.md) which include several maintenance and security fixes.
+* [MCOL-1206](https://jira.mariadb.org/browse/MCOL-1206) - The base MariaDB server version is now [10.1.31](../../community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes.md) which include several maintenance and security fixes.
 * [MCOL-1085](https://jira.mariadb.org/browse/MCOL-1085) - MariaDB ColumnStore will automatically generate and save stack traces if a process crashes
 
 ## Bugs and issues fixed
 
 * [MCOL-1085](https://jira.mariadb.org/browse/MCOL-1085) - Add automatic stack trace to ColumnStore binaries
 * [MCOL-1106](https://jira.mariadb.org/browse/MCOL-1106) - multi-node install fails, mysqld didnt startup in time
-* [MCOL-1206](https://jira.mariadb.org/browse/MCOL-1206) - Merge [MariaDB 10.1.31](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes.md)
+* [MCOL-1206](https://jira.mariadb.org/browse/MCOL-1206) - Merge [MariaDB 10.1.31](../../community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes.md)
 * [MCOL-1086](https://jira.mariadb.org/browse/MCOL-1086) - ssh certificates aren't used in postConfigure nonDistributed installation with DataRedundancy between PMs enabled.
 * [MCOL-1114](https://jira.mariadb.org/browse/MCOL-1114) - Set cpack deb minimum version to 3.4
 

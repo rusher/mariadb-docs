@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.3.0 Release Notes
+# Connector/J 3.3.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 08 Nov 2023
 
-MariaDB Connector/J 3.3.0 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release, and will replace 3.2 as the maintenance releases.
+MariaDB Connector/J 3.3.0 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release, and will replace 3.2 as the maintenance releases.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
 

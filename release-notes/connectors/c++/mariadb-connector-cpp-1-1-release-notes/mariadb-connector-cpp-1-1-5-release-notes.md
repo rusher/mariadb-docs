@@ -1,12 +1,12 @@
-# MariaDB Connector/C++ 1.1.5 Release Notes
+# Connector/C++ 1.1.5 Release Notes
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C++ is:[**MariaDB Connector/C++ 1.1.6**](mariadb-connector-cpp-1-1-6-release-notes.md)
+The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C++ is:[**MariaDB Connector/C++ 1.1.6**](mariadb-connector-cpp-1-1-6-release-notes.md)
 
 [Download Now](https://mariadb.com/downloads/connectors/connectors-data-access/cpp-connector)
 
 **Release date:** 2024-08-27
 
-This is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/C++.
+This is a [_**Stable (GA)**_](../../../community-server/about/release-criteria.md) release of MariaDB Connector/C++.
 
 This is a GA release of the [MariaDB Connector/C++ 1.1](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-cpp/README.md) series, the interface between C++ applications, and MariaDB Server. MariaDB Connector/C++ enables development of C++ applications using a JDBC-based API, which is also used by MariaDB Connector/JDBC.
 

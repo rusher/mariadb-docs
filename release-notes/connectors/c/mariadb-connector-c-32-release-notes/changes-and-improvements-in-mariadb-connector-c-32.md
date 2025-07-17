@@ -1,6 +1,6 @@
-# Changes and Improvements in MariaDB Connector/C 3.2
+# Connector/C 3.2 Changes & Improvements
 
-The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
 MariaDB Connector/C 3.2 is the current major development version. MariaDB Connector/C 3.1 is stable and feature-complete, so major new features to be developed are going into 3.2.
 

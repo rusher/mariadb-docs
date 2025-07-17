@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.1.2 Release Notes
+# Connector/J 3.1.2 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,13 +6,13 @@
 
 **Release date:** 24 Jan 2023
 
-MariaDB Connector/J 3.1.2 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+MariaDB Connector/J 3.1.2 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
 **For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
 
 ## Notable Changes
 
-* [CONJ-1042](https://jira.mariadb.org/browse/CONJ-1042) fix DatabaseMetaData.getColumns() on old server version (< MySQL 5.6.4 and < [MariaDB 5.3.0](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-530-release-notes.md))
+* [CONJ-1042](https://jira.mariadb.org/browse/CONJ-1042) fix DatabaseMetaData.getColumns() on old server version (< MySQL 5.6.4 and < [MariaDB 5.3.0](../../../community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-530-release-notes.md))
 
 ## Bug fixed
 

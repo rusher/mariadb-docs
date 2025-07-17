@@ -1,6 +1,6 @@
-# MariaDB Connector/ODBC 1.0.0 Changelog
+# Connector/ODBC 1.0.0 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
+The most recent [_**Stable**_](../../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
 
 [Download](https://downloads.mariadb.org/connector-odbc/1.0.0)[Release Notes](../../mariadb-connector-odbc-10-release-notes/mariadb-connector-odbc-100-release-notes.md)[Changelog](mariadb-connector-odbc-100-changelog.md)[Overview of MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/mariadb-connector-odbc-guide)
 

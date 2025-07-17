@@ -1,4 +1,4 @@
-# MariaDB Connector/Node.js 2.0.1 Release Notes
+# Connector/Node.js 2.0.1 Release Notes
 
 {% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 15 Nov 2018
 
-MariaDB Connector/Node.js 2.0.1 is a [_**Beta**_](../../../mariadb-release-criteria.md) release.
+MariaDB Connector/Node.js 2.0.1 is a [_**Beta**_](../../../community-server/about/release-criteria.md) release.
 
 {% hint style="success" %}
 **For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**

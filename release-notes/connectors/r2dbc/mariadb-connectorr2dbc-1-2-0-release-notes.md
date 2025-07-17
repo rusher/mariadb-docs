@@ -1,4 +1,4 @@
-# MariaDB Connector/R2DBC 1.2.0 Release Notes
+# Connector/R2DBC 1.2.0 Release Notes
 
 ## Overview
 
@@ -38,7 +38,7 @@ SET @@global.redirect_url="mariadb://somehost:3306/"
 
 * Properly end connection (in place of RST TCP packet) ([R2DBC-92](https://jira.mariadb.org/browse/R2DBC-92))
 * Failover High availability mode r2dbc:mariadb:\[sequential|loadbalancing]:... wrongly parsed ([R2DBC-86](https://jira.mariadb.org/browse/R2DBC-86))
-* Compatibility with [mariadb 11.1.1](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-1-release-notes.md) ([R2DBC-87](https://jira.mariadb.org/browse/R2DBC-87))
+* Compatibility with [mariadb 11.1.1](../../community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-1-release-notes.md) ([R2DBC-87](https://jira.mariadb.org/browse/R2DBC-87))
 * Java 8 compatibility regression ([R2DBC-88](https://jira.mariadb.org/browse/R2DBC-88))
 * Ensure respecting server collation ([R2DBC-91](https://jira.mariadb.org/browse/R2DBC-91))
 * Session tracking wrong implementation when multiple system variable changes ([R2DBC-94](https://jira.mariadb.org/browse/R2DBC-94))

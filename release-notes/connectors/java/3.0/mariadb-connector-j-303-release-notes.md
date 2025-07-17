@@ -1,4 +1,4 @@
-# MariaDB Connector/J 3.0.3 Release Notes
+# Connector/J 3.0.3 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -6,7 +6,7 @@
 
 **Release date:** 25 Jan 2022
 
-MariaDB Connector/J 3.0.3 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+MariaDB Connector/J 3.0.3 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
 **NOTE:** MariaDB Connector/J 3.0.3 is **NOT** fully compatible with the latest release\
 of version 2.7.

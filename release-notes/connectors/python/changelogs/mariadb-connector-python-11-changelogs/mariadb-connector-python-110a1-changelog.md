@@ -1,6 +1,6 @@
-# MariaDB Connector/Python 1.1.0 Alpha1 Changelog
+# Connector/Python 1.1.0 Alpha1 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/Python is:[**MariaDB Connector/Python 1.1.12**](../../mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-12-release-notes.md)
+The most recent [_**Stable**_](../../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/Python is:[**MariaDB Connector/Python 1.1.12**](../../mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-12-release-notes.md)
 
 [Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-0-alpha1-release-notes.md)[Changelog](mariadb-connector-python-110a1-changelog.md)[Connector/Python Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-connector-python/README.md)
 
