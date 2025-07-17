@@ -2,7 +2,7 @@
 
 ## Overview
 
-MariaDB Enterprise ColumnStore includes a stored procedure called columnstore\_info.load\_from\_s3, which can load data from a plain-text file containing delimiter-separated values (such as CSV or TSV) stored on S3-compatible cloud object storage.
+MariaDB Enterprise ColumnStore includes a stored procedure called `columnstore_info.load_from_s3`, which can load data from a plain-text file containing delimiter-separated values (such as `CSV or TSV`) stored on S3-compatible cloud object storage.
 
 ## Compatibility
 
@@ -10,7 +10,7 @@ MariaDB Enterprise ColumnStore 23.02
 
 ## System Variables
 
-Before you import data with the columnstore\_info.load\_from\_s3 stored procedure, the authentication credentials and the region can be configured using system variables:
+Before you import data with the `columnstore_info.load_from_s3` stored procedure, the authentication credentials and the region can be configured using system variables:
 
 * `columnstore_s3_key`
 * `columnstore_s3_secret`
@@ -18,7 +18,7 @@ Before you import data with the columnstore\_info.load\_from\_s3 stored procedur
 
 For example, the following statements show how to set the system variables for your current session:
 
-```
+```sql
 SET columnstore_s3_key='S3_KEY';
 SET columnstore_s3_secret='S3_SECRET';
 SET columnstore_s3_region='S3_REGION';
@@ -28,7 +28,7 @@ SET columnstore_s3_region='S3_REGION';
 
 To import data with the `columnstore_info.load_from_s3` stored procedure, use the `CALL` statement:
 
-```
+```sql
 CALL columnstore_info.load_from_s3('BUCKET_URL',
       'FILE_NAME',
       'DATABASE_NAME',
@@ -50,7 +50,7 @@ All parameters are mandatory.
 
 For example, to load a comma-separated values (CSV) file from AWS S3:
 
-```
+```sql
 CALL columnstore_info.load_from_s3('s3://mariadb-columnstore-test-data/',
    'test-data-db1-tab1.csv',
    'db1',
@@ -68,7 +68,7 @@ When the data file is stored in Amazon S3, the AWS user only requires the `s3:Ge
 
 For example, the AWS user can use a user policy like the following:
 
-```
+```sql
 {
     "Version": "2012-10-17",
     "Statement": [
