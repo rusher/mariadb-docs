@@ -2,12 +2,10 @@
 
 ## Overview
 
-cpimport is a high-speed bulk load utility that imports data into ColumnStore tables in a fast and efficient\
-manner. It accepts as input any flat file containing data that contains a delimiter between fields of\
-data (i.e. columns in a table). The default delimiter is the pipe (‘|’) character, but other delimiters such as\
+`cpimport` is a high-speed bulk load utility that imports data into ColumnStore tables in a fast and efficient manner. It accepts as input any flat file containing data that contains a delimiter between fields of data (i.e. columns in a table). The default delimiter is the pipe (‘|’) character, but other delimiters such as\
 commas may be used as well. The data values must be in the same order as the create table statement, i.e. column 1 matches the first column in the table and so on. Date values must be specified in the format 'yyyy-mm-dd'.
 
-cpimport – performs the following operations when importing data into a MariaDB ColumnStore database:
+`cpimport` – performs the following operations when importing data into a MariaDB ColumnStore database:
 
 * Data is read from specified flat files.
 * Data is transformed to fit ColumnStore’s column-oriented storage design.
@@ -16,9 +14,9 @@ cpimport – performs the following operations when importing data into a MariaD
 
 It is important to note that:
 
-* The bulk loads are an append operation to a table so they allow existing data to be read and remain unaffected during the process.
+* The bulk loads are an append operation to a table, so they allow existing data to be read and remain unaffected during the process.
 * The bulk loads do not write their data operations to the transaction log; they are not transactional in nature but are considered an atomic operation at this time. Information markers, however, are placed in the transaction log so the DBA is aware that a bulk operation did occur.
-* Upon completion of the load operation, a high water mark in each column file is moved in an atomic operation that allows for any subsequent queries to read the newly loaded data. This append operation provides for consistent read but does not incur the overhead of logging the data.
+* Upon completion of the load operation, a high-water mark in each column file is moved in an atomic operation that allows for any subsequent queries to read the newly loaded data. It appends operation provides for consistent read but does not incur the overhead of logging the data.
 
 There are two primary steps to using the cpimport utility:
 
@@ -29,13 +27,13 @@ There are two primary steps to using the cpimport utility:
 
 The simplest form of cpimport command is
 
-```
+```sql
 cpimport dbName tblName [loadFile]
 ```
 
 The full syntax is like this:
 
-```
+```sql
 cpimport dbName tblName [loadFile]
 [-h] [-m mode] [-f filepath] [-d DebugLevel]
 [-c readBufferSize] [-b numBuffers] [-r numReaders]
@@ -91,13 +89,13 @@ Options:
 
 ### Mode 1: Bulk Load from a central location with single data source file
 
-In this mode, you run the cpimport from your primary node (mcs1). The source file is located at this primary location and the data from cpimport is distributed across all the nodes. If no mode is specified, then this is the default.
+In this mode, you run the cpimport from your primary node (`mcs1`). The source file is located at this primary location and the data from cpimport is distributed across all the nodes. If no mode is specified, then this is the default.
 
 ![cpimport-mode1](../../.gitbook/assets/cpimport-mode1.png)
 
 Example:
 
-```
+```sql
 cpimport -m1 mytest mytable mytable.tbl
 ```
 
@@ -109,7 +107,7 @@ In this mode, you run the cpimport from your primary node (mcs1). The source dat
 
 Example:
 
-```
+```sql
 cpimport -m2 mytest mytable -l /home/mydata/mytable.tbl
 ```
 
@@ -121,18 +119,15 @@ In this mode, you run cpimport from the individual nodes independently, which wi
 
 Example:
 
-```
+```sql
 cpimport -m3 mytest mytable /home/mydata/mytable.tbl
 ```
 
 Note:
 
-* The bulk loads are an append operation to a table so they allow existing data to be read and remain\
-  unaffected during the process.
+* The bulk loads are an append operation to a table, so they allow existing data to be read and remain unaffected during the process.
 * The bulk loads do not write their data operations to the transaction log; they are not transactional in nature but are considered an atomic operation at this time. Information markers, however, are placed in the transaction log so the DBA is aware that a bulk operation did occur.
-* Upon completion of the load operation, a high water mark in each column file is moved in an atomic\
-  operation that allows for any subsequent queries to read the newly loaded data. This append operation\
-  provides for consistent read but does not incur the overhead of logging the data.
+* Upon completion of the load operation, a high-water mark in each column file is moved in an atomic operation that allows for any subsequent queries to read the newly loaded data. It appends operation provides for consistent read but does not incur the overhead of logging the data.
 
 ## Bulk loading data from STDIN
 
@@ -140,7 +135,7 @@ Data can be loaded from STDIN into ColumnStore by simply not including the loadF
 
 Example:
 
-```
+```sql
 cpimport db1 table1
 ```
 
@@ -150,7 +145,7 @@ Similarly the AWS cli utility can be utilized to read data from an s3 bucket and
 
 Example:
 
-```
+```sql
 aws s3 cp --quiet s3://dthompson-test/trades_bulk.csv - | cpimport test trades -s ","
 ```
 
@@ -158,11 +153,11 @@ For troubleshooting connectivity problems remove the --quiet option which suppre
 
 ## Bulk loading output of SELECT FROM Table(s)
 
-Standard in can also be used to directly pipe the output from an arbitrary SELECT statement into cpimport. The select statement may select from non-columnstore tables such as [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) or [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb). In the example below, the db2.source\_table is selected from, using the -N flag to remove non-data formatting. The -q flag tells the mysql client to not cache results which will avoid possible timeouts causing the load to fail.
+Standard in can also be used to directly pipe the output from an arbitrary `SELECT` statement into cpimport. The select statement may select from non-columnstore tables such as [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) or [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb). In the example below, the db2.source\_table is selected from, using the -N flag to remove non-data formatting. The -q flag tells the mysql client to not cache results which will avoid possible timeouts causing the load to fail.
 
 Example:
 
-```
+```sql
 mariadb -q -e 'select * from source_table;' -N <source-db> | cpimport -s '\t' <target-db> <target-table>
 ```
 
@@ -170,7 +165,7 @@ mariadb -q -e 'select * from source_table;' -N <source-db> | cpimport -s '\t' <t
 
 Let's create a sample ColumnStore table:
 
-```
+```sql
 CREATE DATABASE `json_columnstore`;
 
 USE `json_columnstore`;
@@ -183,9 +178,9 @@ CREATE TABLE `products` (
 ) ENGINE=Columnstore DEFAULT CHARSET=utf8;
 ```
 
-Now let's create a sample products.json file like this:
+Now let's create a sample `products.json` file like this:
 
-```
+```sql
 [{
   "_id": {
     "$oid": "5968dd23fc13ae04d9000001"
@@ -213,31 +208,31 @@ Now let's create a sample products.json file like this:
 }]
 ```
 
-We can then bulk load data from JSON into Columnstore by first piping the data to [jq](https://stedolan.github.io/jq/manual/v1.6/) and then to [cpimport](columnstore-bulk-data-loading.md) using a one line command.
+We can then bulk load data from JSON into Columnstore by first piping the data to [jq](https://stedolan.github.io/jq/manual/v1.6/) and then to [cpimport](columnstore-bulk-data-loading.md) using a one-line command.
 
 Example:
 
-```
+```sql
 cat products.json | jq -r '.[] | [.product_name,.supplier,.quantity,.unit_cost] | @csv' | cpimport json_columnstore products -s ',' -E '"'
 ```
 
-In this example, the JSON data is coming from a static JSON file but this same method will work for and output streamed from any datasource using JSON such as an API or NoSQL database. For more information on 'jq', please view the manual here [here](https://stedolan.github.io/jq/manual/v1.6/).
+In this example, the `JSON` data is coming from a static JSON file, but this same method will work for, and output streamed from any datasource using `JSON` such as an `API` or `NoSQL` database. For more information on 'jq', please view the manual here [here](https://stedolan.github.io/jq/manual/v1.6/).
 
 ## Bulk loading into multiple tables
 
 There are two ways multiple tables can be loaded:
 
 1. Run multiple cpimport jobs simultaneously. Tables per import should be unique or [PMs](../../architecture/columnstore-performance-module.md) for each import should be unique if using mode 3.
-2. Use colxml utility : colxml creates an XML job file for your database schema before you can import data. Multiple tables may be imported by either importing all tables within a schema or listing specific tables using the -t option in colxml. Then, using cpimport, that uses the job file generated by colxml. Here is an example of how to use colxml and cpimport to import data into all the tables in a database schema
+2. Use colxml utility: colxml creates an `XML` job file for your database schema before you can import data. Multiple tables may be imported by either importing all tables within a schema or listing specific tables using the -t option in colxml. Then, using cpimport, that uses the job file generated by colxml. Here is an example of how to use colxml and cpimport to import data into all the tables in a database schema
 
-```
+```sql
 colxml mytest -j299
 cpimport -m1 -j299
 ```
 
 ### colxml syntax
 
-```
+```sql
 Usage: colxml [options] dbName
 
 Options: 
@@ -264,7 +259,7 @@ Options:
 
 The following tables comprise a database name ‘tpch2’:
 
-```
+```sql
 MariaDB[tpch2]> show tables;
 +---------------+
 | Tables_in_tpch2 |
@@ -281,10 +276,10 @@ MariaDB[tpch2]> show tables;
 8 rows in set (0.00 sec)
 ```
 
-1. First, put delimited input data file for each table in /usr/local/mariadb/columnstore/data/bulk/data/import. Each file should be named .tbl.
-2. Run colxml for the load job for the ‘tpch2’ database as shown here:
+1. First, put delimited input data file for each table in `/usr/local/mariadb/columnstore/data/bulk/data/import`. Each file should be `named .tbl`.
+2. Run `colxml` for the load job for the ‘`tpch2`’ database as shown here:
 
-```
+```sql
 /usr/local/mariadb/columnstore/bin/colxml tpch2 -j500
 Running colxml with the following parameters:
 2015-10-07 15:14:20 (9481) INFO :
@@ -317,7 +312,7 @@ Normal exit.
 
 Now actually run cpimport to use the job file generated by the colxml execution
 
-```
+```sql
 /usr/local/mariadb/columnstore/bin/cpimport -j 500
 Bulkload root directory : /usr/local/mariadb/columnstore/data/bulk
 job description file : Job_500.xml
@@ -349,7 +344,7 @@ In this case run the colxml utility (the -t argument can be useful for producing
 
 Consider the following simple table example:
 
-```
+```sql
 CREATE TABLE emp (
 emp_id INT, 
  dept_id INT,
@@ -360,7 +355,7 @@ hire_date DATE) ENGINE=columnstore;
 
 This would produce a colxml file with the following table element:
 
-```
+```sql
 <Table tblName="test.emp" 
       loadName="emp.tbl" maxErrRow="10">
    <Column colName="emp_id"/>
@@ -373,7 +368,7 @@ This would produce a colxml file with the following table element:
 
 If your input file had the data such that hire\_date comes before salary then the following modification will allow correct loading of that data to the original table definition (note the last 2 Column elements are swapped):
 
-```
+```sql
 <Table tblName="test.emp" 
       loadName="emp.tbl" maxErrRow="10">
    <Column colName="emp_id"/>
@@ -386,7 +381,7 @@ If your input file had the data such that hire\_date comes before salary then th
 
 The following example would ignore the last entry in the file and default salary to it's default value (in this case null):
 
-```
+```sql
 <Table tblName="test.emp"        
            loadName="emp.tbl" maxErrRow="10">
       <Column colName="emp_id"/>
@@ -405,14 +400,12 @@ Both instructions can be used indepedently and as many times as makes sense for 
 
 ## Binary Source Import
 
-It is possible to import using a binary file instead of a CSV file using fixed length rows in binary data. This can be done using the '-I' flag which has two modes:
+It is possible to import using a binary file instead of a `CSV` file using fixed length rows in binary data. This can be done using the '-I' flag which has two modes:
 
-* -I1 - binary mode with NULLs accepted\
-  Numeric fields containing NULL will be treated as NULL unless the column has a default value
-* -I2 - binary mode with NULLs saturated\
-  NULLs in numeric fields will be saturated
+* -I1 - binary mode with NULLs accepted Numeric fields containing NULL will be treated as NULL unless the column has a default value
+* -I2 - binary mode with NULLs saturated NULLs in numeric fields will be saturated
 
-```
+```sql
 Example
 cpimport -I1 mytest mytable /home/mydata/mytable.bin
 ```
@@ -445,7 +438,7 @@ For NULL values the following table should be used:
 
 ### Date Struct
 
-```
+```sql
 struct Date
 {
   unsigned spare : 6;
@@ -459,7 +452,7 @@ The spare bits in the Date struct "must" be set to 0x3E.
 
 ### DateTime Struct
 
-```
+```sql
 struct DateTime
 {
   unsigned msecond : 20;
@@ -483,14 +476,14 @@ As of version 1.4, **cpimport** uses the `/var/lib/columnstore/bulk` folder for 
 
 The log folder typically contains:
 
-```
+```sql
 -rw-r--r--. 1 root  root        0 Dec 29 06:41 cpimport_1229064143_21779.err
 -rw-r--r--. 1 root  root     1146 Dec 29 06:42 cpimport_1229064143_21779.log
 ```
 
 A typical log might look like this:
 
-```
+```sql
 2020-12-29 06:41:44 (21779) INFO : Running distributed import (mode 1) on all PMs...
 2020-12-29 06:41:44 (21779) INFO2 : /usr/bin/cpimport.bin -s , -E " -R /tmp/columnstore_tmp_files/BrmRpt112906414421779.rpt -m 1 -P pm1-21779 -T SYSTEM -u388952c1-4ab8-46d6-9857-c44827b1c3b9 bts flights
 2020-12-29 06:41:58 (21779) INFO2 : Received a BRM-Report from 1
