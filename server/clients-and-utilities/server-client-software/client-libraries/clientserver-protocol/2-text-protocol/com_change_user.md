@@ -53,6 +53,9 @@ Server response is like [connection authentication](../1-connecting/connection.m
   * Authentication switch ends with server sending either [OK_Packet](../4-server-response-packets/ok_packet.md) or [ERR_Packet](../4-server-response-packets/err_packet.md).
 
 
+If the authentication fails more than three times, all future `COM_CHANGE_USER` commands on the connection will return
+the `#08S01 Unknown command` error. This is an anti-brute-force mechanism designed to prevent rapid guessing of passwords.
+
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
