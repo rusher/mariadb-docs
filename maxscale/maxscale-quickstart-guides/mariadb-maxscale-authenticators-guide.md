@@ -84,5 +84,5 @@ By configuring these authentication modules, you can control how clients connect
 
 #### Further Resources:
 
-* [MariaDB MaxScale Authentication Modules Documentation](https://mariadb.net/docs/maxscale/maxscale-quickstart-guides/mariadb-maxscale-authentication-modules-guide)
-* [MariaDB MaxScale Documentation](https://mariadb.com/kb/en/maxscale/)
+* [MariaDB MaxScale Authentication Modules Documentation](../maxscale-security/authentication-modules.md)
+* [MariaDB MaxScale Documentation](../maxscale-use-cases/maxscale-overview.md)
