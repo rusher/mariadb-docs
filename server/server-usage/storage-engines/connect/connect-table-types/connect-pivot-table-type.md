@@ -53,9 +53,9 @@ fields for each cell in the new table, gives the following desired result:
 Note that SQL enables you to get the same result presented differently by using\
 the “group by” clause, namely:
 
-```
-select who, week, what, sum(amount) from expenses
-       group by who, week, what;
+```sql
+SELECT who, week, what, SUM(amount) FROM expenses
+       GROUP BY who, week, what;
 ```
 
 However there is no way to get the pivoted layout shown above just using SQL.\
@@ -69,16 +69,16 @@ The Pivot table type of CONNECT makes doing this much simpler.
 To get the result shown in the example above, just define it as a new table\
 with the statement:
 
-```
-create table pivex
-engine=connect table_type=pivot tabname=expenses;
+```sql
+CREATE TABLE pivex
+ENGINE=connect table_type=pivot tabname=expenses;
 ```
 
 You can now use it as any other table, for instance to display the result shown\
 above, just say:
 
-```
-select * from pivex;
+```sql
+SELECT * FROM pivex;
 ```
 
 The CONNECT implementation of the PIVOT table type does much of the work\
@@ -101,16 +101,16 @@ the defaults used by Pivot. For instance if we want to display the average\
 expense for each person and product, spread in columns for each week, use the\
 following statement:
 
-```
-create table pivex2
-engine=connect table_type=pivot tabname=expenses
+```sql
+CREATE TABLE pivex2
+ENGINE=connect table_type=pivot tabname=expenses
 option_list='PivotCol=Week,Function=AVG';
 ```
 
 Now saying:
 
-```
-select * from pivex2;
+```sql
+SELECT * FROM pivex2;
 ```
 
 Will display the resulting table:
@@ -132,8 +132,8 @@ Let us suppose that we want a Pivot table from expenses summing the expenses\
 for all people and products whatever week it was bought. We can do this just by\
 removing from the pivex table the week column from the column list.
 
-```
-alter table pivex drop column week;
+```sql
+ALTER TABLE pivex DROP COLUMN week;
 ```
 
 The result we get from the new table is:
@@ -150,10 +150,10 @@ Note: Restricting columns is also needed when the source table contains extra co
 
 The Create Table statement for PIVOT tables uses the following syntax:
 
-```
-create table pivot_table_name
+```sql
+CREATE TABLE pivot_table_name
 [(column_definition)]
-engine=CONNECT table_type=PIVOT
+ENGINE=CONNECT table_type=PIVOT
 {tabname='source_table_name' | srcdef='source_table_def'}
 [option_list='pivot_table_option_list'];
 ```
@@ -225,16 +225,16 @@ To do this, use the **SrcDef** option, often replacing all other options. For\
 instance, suppose that in the first example we are only interested in weeks 4\
 and 5. We could of course display it by:
 
-```
-select * from pivex where week in (4,5);
+```sql
+SELECT * FROM pivex WHERE week IN (4,5);
 ```
 
 However, what if this table is a huge table? In this case, the correct way to\
 do it is to define the pivot table as this:
 
-```
-create table pivex4
-engine=connect table_type=pivot
+```sql
+CREATE TABLE pivex4
+ENGINE=connect table_type=pivot
 option_list='PivotCol=what,FncCol=amount'
 SrcDef='select who, week, what, sum(amount) from expenses
 where week in (4,5) group by who, week, what';
@@ -250,14 +250,14 @@ the correct format for the pivot processing.
 Using SrcDef also permits to use expressions and/or scalar functions. For\
 instance:
 
-```
-create table xpivot (
-Who char(10) not null,
-What char(12) not null,
-First double(8,2) flag=1,
-Middle double(8,2) flag=1,
-Last double(8,2) flag=1)
-engine=connect table_type=PIVOT
+```sql
+CREATE TABLE xpivot (
+Who CHAR(10) NOT NULL,
+What CHAR(12) NOT NULL,
+First DOUBLE(8,2) flag=1,
+Middle DOUBLE(8,2) flag=1,
+Last DOUBLE(8,2) flag=1)
+ENGINE=connect table_type=PIVOT
 option_list='PivotCol=wk,FncCol=amnt'
 Srcdef='select who, what, case when week=3 then ''First'' when
 week=5 then ''Last'' else ''Middle'' end as wk, sum(amount) *
@@ -266,8 +266,8 @@ week=5 then ''Last'' else ''Middle'' end as wk, sum(amount) *
 
 Now the statement:
 
-```
-select * from xpivot;
+```sql
+SELECT * FROM xpivot;
 ```
 
 Will display the result:
@@ -316,9 +316,9 @@ instance, supposing we have the following _pet_ table:
 
 Pivoting it using _race_ as the pivot column is done with:
 
-```
-create table pivet
-engine=connect table_type=pivot tabname=pet
+```sql
+CREATE TABLE pivet
+ENGINE=connect table_type=pivot tabname=pet
 option_list='PivotCol=race,groupby=1';
 ```
 
@@ -344,12 +344,12 @@ are three cases depending on the specified options and flags.
 
 **Second case:** The accept option was specified. For instance:
 
-```
-create table xpivet2 (
-name varchar(12) not null,
-dog int not null default 0 flag=1,
-cat int not null default 0 flag=1)
-engine=connect table_type=pivot tabname=pet
+```sql
+CREATE TABLE xpivet2 (
+name VARCHAR(12) NOT NULL,
+dog INT NOT NULL DEFAULT 0 flag=1,
+cat INT NOT NULL DEFAULT 0 flag=1)
+ENGINE=connect table_type=pivot tabname=pet
 option_list='PivotCol=race,groupby=1,Accept=1';
 ```
 
@@ -368,13 +368,13 @@ will be displayed as:
 **Third case:** A “dump” column was specified with the flag value equal to 2.\
 All non-matching values will be added in this column. For instance:
 
-```
-create table xpivet (
-name varchar(12) not null,
-dog int not null default 0 flag=1,
-cat int not null default 0 flag=1,
-other int not null default 0 flag=2)
-engine=connect table_type=pivot tabname=pet
+```sql
+CREATE TABLE xpivet (
+name VARCHAR(12) NOT NULL,
+dog INT NOT NULL DEFAULT 0 flag=1,
+cat INT NOT NULL DEFAULT 0 flag=1,
+other INT NOT NULL DEFAULT 0 flag=2)
+ENGINE=connect table_type=pivot tabname=pet
 option_list='PivotCol=race,groupby=1';
 ```
 

@@ -33,7 +33,7 @@ INSTALL SONAME 'ha_federatedx';
 
 The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) options. This can be specified as a command-line argument to [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = ha_federatedx
@@ -106,7 +106,7 @@ connection=mysql://username:password@hostname:port/database/tablename
 Or, using a Federated server, first a server is created:
 
 ```sql
-CREATE server 'server_one' FOREIGN data wrapper 'mysql' options
+CREATE SERVER 'server_one' FOREIGN DATA WRAPPER 'mysql' OPTIONS
   (HOST '127.0.0.1',
   DATABASE 'db1',
   USER 'root',
@@ -146,7 +146,7 @@ CONNECTION="mysql://root@127.0.0.1:3306/db1/t1"
 You can also change the server to point to a new schema:
 
 ```sql
-ALTER SERVER 'server_one' options(DATABASE 'db2');
+ALTER SERVER 'server_one' OPTIONS(DATABASE 'db2');
 ```
 
 All subsequent calls to any FederatedX table using the 'server\_one' will now be against tables in `db2`! Guess what? You no longer have to perform an alter table in order to point one or more FederatedX tables to a new server!
@@ -279,7 +279,7 @@ In this case the table structure must match exactly the table on the foreign ser
 
 When developing this handler, I compiled the FederatedX database with debugging:
 
-```
+```bash
 ./configure --with-federatedx-storage-engine \
   --prefix=/home/mysql/mysql-build/federatedx/ --with-debug
 ```
@@ -299,13 +299,13 @@ Then, I started the foreign server:
 
 Then, I went back to the directory containing the newly compiled mysqld`<builddir>/sql/`, started up gdb:
 
-```
+```bash
 gdb ./mysqld
 ```
 
 Then, within the (gdb) prompt:
 
-```
+```bash
 (gdb) run --gdb --port=5554 --socket=/tmp/mysqld.5554 --skip-innodb --debug
 ```
 
@@ -322,7 +322,7 @@ Another thing to look for is 'show variables' to show you that you have\
 support for FederatedX handler support:
 
 ```sql
-SHOW variables LIKE '%federat%'
+SHOW VARIABLES LIKE '%federat%';
 ```
 
 and:
@@ -347,13 +347,13 @@ CREATE TABLE federated_test_table ENGINE=FEDERATED
 You could instead create this with a server:
 
 ```sql
-CREATE SERVER 'server_one' FOREIGN data wrapper 'mysql' options
-  (HOST '192.168.1.123',		
-  DATABASE 'first_db',		
+CREATE SERVER 'server_one' FOREIGN DATA WRAPPER 'mysql' OPTIONS
+  (HOST '192.168.1.123',    
+  DATABASE 'first_db',    
   USER 'patg',
   PASSWORD '',
   PORT 3306,
-  SOCKET '',		
+  SOCKET '',    
   OWNER 'root');
 ```
 

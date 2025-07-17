@@ -173,12 +173,12 @@ You can also write more complex queries:
 
 ```sql
 SELECT c.count, c.time,
-(SELECT SUM(a.count) FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME as a 
-   WHERE a.count != 0) as query_count,
-(SELECT COUNT(*)     FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME as b 
-  WHERE b.count != 0) as not_zero_region_count,
-(SELECT COUNT(*)     FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME) as region_count
-FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME as c 
+(SELECT SUM(a.count) FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME AS a 
+   WHERE a.count != 0) AS query_count,
+(SELECT COUNT(*)     FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME AS b 
+  WHERE b.count != 0) AS not_zero_region_count,
+(SELECT COUNT(*)     FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME) AS region_count
+FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME AS c 
   WHERE c.count > 0;
 ```
 

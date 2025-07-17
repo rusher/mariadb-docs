@@ -228,7 +228,7 @@ ROUND(SUM(IF(HOUR(ts) = "5", enwh, 0))/1000) AS "5",
 ...
 ROUND(SUM(IF(HOUR(ts) = "20", enwh, 0))/1000) AS "20",
  ROUND(SUM(enwh)/1000) AS Total
- FROM details WHERE ts >= '2012-01-01' AND ts < '2012-01-01' + INTERVAL 1 year
+ FROM details WHERE ts >= '2012-01-01' AND ts < '2012-01-01' + INTERVAL 1 YEAR
  GROUP BY MONTH(ts)
  WITH ROLLUP;
 ```

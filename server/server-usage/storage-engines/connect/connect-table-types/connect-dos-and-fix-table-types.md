@@ -184,7 +184,7 @@ CREATE TABLE xfmt (
   col5 DOUBLE(12,3) NOT NULL field_format='Z3',
   col6 DOUBLE(12,5) NOT NULL field_format='ZN5',
   col7 INT(12) NOT NULL field_format='N3',
-  col8 smallint(12) NOT NULL field_format='N3')
+  col8 SMALLINT(12) NOT NULL field_format='N3')
 ENGINE=CONNECT table_type=FIX file_name='xfmt.txt';
 
 INSERT INTO xfmt VALUES(4567.056,4567.056,4567.056,4567.056,-23456.8,

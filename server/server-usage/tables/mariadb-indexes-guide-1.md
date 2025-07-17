@@ -184,7 +184,7 @@ c7 VARCHAR(1000),
 c8 VARCHAR(1000),
 c9 VARCHAR(1000),
 UNIQUE KEY `b` (b),
-UNIQUE KEY `all_c` (c1,c2,c3,c4,c6,c7,c8,c9)) engine=myisam;
+UNIQUE KEY `all_c` (c1,c2,c3,c4,c6,c7,c8,c9)) ENGINE=myisam;
 ```
 
 If the key length is longer than the max key length supported by the engine, a HASH key will be created.\

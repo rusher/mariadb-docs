@@ -464,7 +464,7 @@ from for the semi-synchronous replication to take place.
 
 ```
 mariadb -u USER -pPASSWORD -h maxscale-IP -P binlog-PORT
-CHANGE MASTER TO master_host="primary-IP", master_port=primary-PORT, master_user=USER, master_password="PASSWORD", master_use_gtid=slave_pos;
+CHANGE MASTER TO master_host="primary-IP", master_port=PRIMARY-PORT, master_user=USER, master_password="PASSWORD", master_use_gtid=slave_pos;
 START SLAVE;
 ```
 
@@ -587,7 +587,7 @@ else
 
 ```
 mariadb -u USER -pPASSWORD -h maxscale-IP -P binlog-PORT
-CHANGE MASTER TO master_host="primary-IP", master_port=primary-PORT, master_user=USER, master_password="PASSWORD", master_use_gtid=slave_pos;
+CHANGE MASTER TO master_host="primary-IP", master_port=PRIMARY-PORT, master_user=USER, master_password="PASSWORD", master_use_gtid=slave_pos;
 SET @@global.gtid_slave_pos = "gtid_state";
 START SLAVE;
 ```

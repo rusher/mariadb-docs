@@ -27,8 +27,8 @@ Note that no users are created.
 ## Example
 
 ```sql
-CREATE catalog cat1;
-USE catalog cat1;
+CREATE CATALOG cat1;
+USE CATALOG cat1;
 CREATE USER root@localhost;
 GRANT ALL PRIVILEGES ON *.* TO root@localhost;
 CREATE DATABASE test;

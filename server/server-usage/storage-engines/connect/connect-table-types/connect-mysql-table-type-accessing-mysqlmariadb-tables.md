@@ -7,10 +7,10 @@ differences.
 
 Currently the Federated-like syntax can be used to create such a table, for instance:
 
-```
+```sql
 CREATE TABLE essai (
   num INTEGER(4) NOT NULL,
-  LINE CHAR(15) NOT NULL)
+  line CHAR(15) NOT NULL)
 ENGINE=CONNECT table_type=MYSQL
 CONNECTION='mysql://root@localhost/test/people';
 ```
@@ -26,10 +26,10 @@ scheme://username:password@hostname/database/tablename
 
 However, it can also be mixed with connect standard options. For instance:
 
-```
+```sql
 CREATE TABLE essai (
   num INTEGER(4) NOT NULL,
-  LINE CHAR(15) NOT NULL)
+  line CHAR(15) NOT NULL)
 ENGINE=CONNECT table_type=MYSQL dbname=test tabname=people
 CONNECTION='mysql://root@localhost';
 ```
@@ -43,10 +43,10 @@ connection="connection_one/table_foo"
 
 The pure (deprecated) CONNECT syntax is also accepted:
 
-```
+```sql
 CREATE TABLE essai (
   num INTEGER(4) NOT NULL,
-  LINE CHAR(15) NOT NULL)
+  line CHAR(15) NOT NULL)
 ENGINE=CONNECT table_type=MYSQL dbname=test tabname=people
 option_list='user=root,host=localhost';
 ```
@@ -71,7 +71,7 @@ The specific connection items are:
 MYSQL table can refer to the current server as well as to another server. Views\
 can be referred by name or directly giving a source definition, for instance:
 
-```
+```sql
 CREATE TABLE grp ENGINE=CONNECT table_type=mysql
 CONNECTION='mysql://root@localhost/test/people'
 SRCDEF='select title, count(*) as cnt from employees group by title';
@@ -83,7 +83,7 @@ Note: For columns prone to be targeted by a where clause, keep the column type c
 
 If you do not want to restrict or change the column definition, do not provide it and leave CONNECT get the column definition from the remote server. For instance:
 
-```
+```sql
 CREATE TABLE essai ENGINE=CONNECT table_type=MYSQL
 CONNECTION='mysql://root@localhost/test/people';
 ```
@@ -103,14 +103,14 @@ This means that it is not possible to correctly retrieve a remote table if it co
 Indexes are rarely useful with MYSQL tables. This is because CONNECT tries to access only the\
 requested rows. For instance if you ask:
 
-```
+```sql
 SELECT * FROM essai WHERE num = 23;
 ```
 
 CONNECT will construct and send to the server the query:
 
-```
-SELECT num, LINE FROM people WHERE num = 23
+```sql
+SELECT num, line FROM people WHERE num = 23
 ```
 
 If the _people_ table is indexed on _num_, indexing will be used on the remote server. This, in all cases,\
@@ -153,8 +153,8 @@ as scalar functions in the SET and WHERE clauses.
 However, there is still an issue on multi-table statements. Let us suppose you\
 have a _t1_ table on the remote server and want to execute a query such as:
 
-```
-UPDATE essai AS x SET LINE = (SELECT msg FROM t1 WHERE id = x.num)
+```sql
+UPDATE essai AS x SET line = (SELECT msg FROM t1 WHERE id = x.num)
 WHERE num = 2;
 ```
 
@@ -179,7 +179,7 @@ described now.
 
 This can be done like for ODBC or JDBC tables by defining a specific table that will be used to send commands and get the result of their execution..
 
-```
+```sql
   number int(5) not null flag=1,
 CREATE TABLE send (
   command VARCHAR(128) NOT NULL,
@@ -207,7 +207,7 @@ their function coming from the FLAG value:
 
 How to use this table and specify the command to send? By executing a command such as:
 
-```
+```sql
 SELECT * FROM send WHERE command = 'a command';
 ```
 
@@ -215,7 +215,7 @@ This will send the command specified in the WHERE clause to the data source and\
 return the result of its execution. The syntax of the WHERE clause must be\
 exactly as shown above. For instance:
 
-```
+```sql
 SELECT * FROM send WHERE command =
 'CREATE TABLE people (
 num integer(4) primary key autoincrement,
@@ -233,7 +233,7 @@ This command returns:
 It can be faster to execute because there will be only one connection for all\
 of them. To send several commands in one call, use the following syntax:
 
-```
+```sql
 SELECT * FROM send WHERE command IN (
 "update people set line = 'Two' where id = 2",
 "update people set line = 'Three' where id = 3");
@@ -275,7 +275,7 @@ commands are:
 
 Note that they must be spelled (case insensitive) exactly as above, no final “s”. For instance:
 
-```
+```sql
 SELECT * FROM send WHERE command IN ('Warning','Note',
 'drop table if exists try',
 'create table try (id int key auto_increment, msg varchar(32) not
