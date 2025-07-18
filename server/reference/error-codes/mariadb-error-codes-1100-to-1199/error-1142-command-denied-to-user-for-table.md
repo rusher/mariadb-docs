@@ -6,11 +6,11 @@
 
 ## Possible Causes and Solutions
 
-The user is trying to access a table or a column from a table they do not have access to. See [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) for details on setting permissions.
+The user is trying to access a table or a column from a table they do not have access to. See [GRANT](../../sql-statements/account-management-sql-statements/grant.md) for details on setting permissions.
 
 ## See Also
 
-* [When access\_denied\_errors status variable is incremented](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/user-account-management/incrementing-of-the-access_denied_errors-status-variable)
+* [When access\_denied\_errors status variable is incremented](../../../security/user-account-management/incrementing-of-the-access_denied_errors-status-variable.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

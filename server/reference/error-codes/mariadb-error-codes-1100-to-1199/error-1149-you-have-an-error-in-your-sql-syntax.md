@@ -29,7 +29,7 @@ SELECT 2;
 
 ### Delimiters in Stored Programs
 
-When creating [stored programs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines) from the command-line, it is likely you will need to differentiate between the regular delimiter and a delimiter inside a [BEGIN END](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/begin-end) block. See [Delimiters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/delimiters).
+When creating [stored programs](../../../server-usage/stored-routines/) from the command-line, it is likely you will need to differentiate between the regular delimiter and a delimiter inside a [BEGIN END](../../sql-statements/programmatic-compound-statements/begin-end.md) block. See [Delimiters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/delimiters).
 
 For example, take the following, seemingly-valid declaration:
 
@@ -71,7 +71,7 @@ DELIMITER ;
 
 ### Reserved Words
 
-[Reserved words](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/reserved-words) cannot be used as [identifiers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-names) unless they are quoted. For example:
+[Reserved words](../../sql-structure/sql-language-structure/reserved-words.md) cannot be used as [identifiers](../../sql-structure/sql-language-structure/identifier-names.md) unless they are quoted. For example:
 
 ```
 CREATE TABLE accessible(id INT);
@@ -79,7 +79,7 @@ ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that 
   to your MariaDB server version for the right syntax to use near 'accessible(id INT)' at line 1
 ```
 
-The error was picked up after the `accessible` identifier, leading one to suspect that it's causing the problem. And indeed, it's a [reserved word](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/reserved-words). There are a number of possible solutions.
+The error was picked up after the `accessible` identifier, leading one to suspect that it's causing the problem. And indeed, it's a [reserved word](../../sql-structure/sql-language-structure/reserved-words.md). There are a number of possible solutions.
 
 Use a new, non-reserved, identifier:
 
@@ -93,7 +93,7 @@ or quote the identifier:
 CREATE TABLE `accessible`(id INT);
 ```
 
-or [fully qualify](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-qualifiers) the identifier:
+or [fully qualify](../../sql-structure/sql-language-structure/identifier-qualifiers.md) the identifier:
 
 ```
 CREATE TABLE test.accessible(id INT);
@@ -101,7 +101,7 @@ CREATE TABLE test.accessible(id INT);
 
 ### Syntax Doesn't Match SQL\_MODE
 
-Some syntax may be valid in a particular [SQL\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode), but not in others. There are too many to list here, but the [SQL\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) page provides a full list.\
+Some syntax may be valid in a particular [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md), but not in others. There are too many to list here, but the [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) page provides a full list.\
 For example:
 
 ```
@@ -110,7 +110,7 @@ ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that 
   to your MariaDB server version for the right syntax to use near '"t" (id INT)' at line 1
 ```
 
-The error message directs one to the identifier `t`. Double quotes cannot be used to [quote identifiers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-names#quote-character) unless ANSI\_MODE is set, which in this case it isn't:
+The error message directs one to the identifier `t`. Double quotes cannot be used to [quote identifiers](../../sql-structure/sql-language-structure/identifier-names.md#quote-character) unless ANSI\_MODE is set, which in this case it isn't:
 
 ```
 select @@sql_mode;

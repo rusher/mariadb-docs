@@ -186,7 +186,6 @@ For a complete list, see [ms681381.aspx](https://msdn.microsoft.com/en-us/librar
 | 123    | ERROR\_INVALID\_NAME             | The file name, directory name, or volume label syntax is incorrect.                          |
 | 1450   | ERROR\_NO\_SYSTEM\_RESOURCES     | Insufficient system resources exist to complete the requested service.                       |
 
-{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
-<!-- This page is licensed: CC BY-SA / Gnu FDL -->
+{% include "../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
 
 {% @marketo/form formId="4316" %}

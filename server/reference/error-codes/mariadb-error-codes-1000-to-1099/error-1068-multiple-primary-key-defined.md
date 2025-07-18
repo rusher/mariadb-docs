@@ -6,7 +6,7 @@
 
 ## Possible Causes and Solutions
 
-No more than one [primary key](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide#primary-key) can be defined per table. Attempting to define more in a single table will result in this error. For example:
+No more than one [primary key](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) can be defined per table. Attempting to define more in a single table will result in this error. For example:
 
 ```
 CREATE TABLE t1(

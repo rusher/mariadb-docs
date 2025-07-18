@@ -18,7 +18,7 @@ ERROR 1305 (42000): FUNCTION test.Reset_animal_count does not exist
 
 There are a number of possible causes:
 
-* The [stored procedure](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-procedures) or [stored function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-functions) has not yet been created. See [CREATE PROCEDURE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-procedures/create-procedure) or [CREATE FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-function). For example:
+* The [stored procedure](../../../server-usage/stored-routines/stored-procedures/) or [stored function](../../../server-usage/stored-routines/stored-functions/) has not yet been created. See [CREATE PROCEDURE](../../../server-usage/stored-routines/stored-procedures/create-procedure.md) or [CREATE FUNCTION](../../sql-statements/data-definition/create/create-function.md). For example:
 
 ```
 DELIMITER //
@@ -34,7 +34,7 @@ CALL Reset_animal_count();
 Query OK, 0 rows affected (0.001 sec)
 ```
 
-* There was a typo in the name. Check also that the case is correct. See [Identifier Case-sensitivity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-case-sensitivity). For example:
+* There was a typo in the name. Check also that the case is correct. See [Identifier Case-sensitivity](../../sql-structure/sql-language-structure/identifier-case-sensitivity.md). For example:
 
 ```
 CALL reset_animal_count();
@@ -52,7 +52,7 @@ CALL Reset_animal_count();
 ERROR 1305 (42000): PROCEDURE test2.Reset_animal_count does not exist
 ```
 
-Either change the default (current) database with the [USE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/use-database), or specify the database in the call, for example:
+Either change the default (current) database with the [USE statement](../../sql-statements/administrative-sql-statements/use-database.md), or specify the database in the call, for example:
 
 ```
 CALL test.Reset_animal_count(); 

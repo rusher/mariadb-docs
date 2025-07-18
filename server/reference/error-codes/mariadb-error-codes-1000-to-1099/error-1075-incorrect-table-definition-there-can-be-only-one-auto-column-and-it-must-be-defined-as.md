@@ -6,7 +6,7 @@
 
 ## Possible Causes and Solutions
 
-There can only be one [AUTO\_INCREMENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/auto_increment) column per table, and the column must be defined as a [key](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide). Not adhering to either of these restrictions will result in this error. For example:
+There can only be one [AUTO\_INCREMENT](../../data-types/auto_increment.md) column per table, and the column must be defined as a [key](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md). Not adhering to either of these restrictions will result in this error. For example:
 
 ```
 CREATE OR REPLACE TABLE animals (

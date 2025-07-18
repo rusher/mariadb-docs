@@ -6,7 +6,7 @@
 
 ## Possible Causes and Solutions
 
-This error occurs when a key that requires a unique value ([unique](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide#unique-index) or [primary](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide#primary-key)) instead receives a duplicate.\
+This error occurs when a key that requires a unique value ([unique](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) or [primary](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key)) instead receives a duplicate.\
 For example:
 
 ```
