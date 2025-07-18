@@ -1,2 +1,15 @@
 # Error 3056: The password provided for the replication user exceeds the maximum length of 32 characte
 
+| Error Code | SQLSTATE | Error                                | Description                                                                                |
+| ---------- | -------- | ------------------------------------ | ------------------------------------------------------------------------------------------ |
+| 3056       |          | ER\_CHANGE\_MASTER\_PASSWORD\_LENGTH | The password provided for the replication user exceeds the maximum length of 32 characters |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

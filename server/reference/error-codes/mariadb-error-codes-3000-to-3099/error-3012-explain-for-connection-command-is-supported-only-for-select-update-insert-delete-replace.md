@@ -1,2 +1,15 @@
 # Error 3012: EXPLAIN FOR CONNECTION command is supported only for SELECT/UPDATE/INSERT/DELETE/REPLACE
 
+| Error Code | SQLSTATE | Error                       | Description                                                                              |
+| ---------- | -------- | --------------------------- | ---------------------------------------------------------------------------------------- |
+| 3012       |          | ER\_EXPLAIN\_NOT\_SUPPORTED | EXPLAIN FOR CONNECTION command is supported only for SELECT/UPDATE/INSERT/DELETE/REPLACE |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
