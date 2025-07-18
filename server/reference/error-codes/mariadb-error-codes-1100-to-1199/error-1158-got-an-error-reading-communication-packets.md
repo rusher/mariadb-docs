@@ -1,2 +1,52 @@
 # Error 1158: Got an error reading communication packets
 
+| Error Code | SQLSTATE | Error                | Description                                |
+| ---------- | -------- | -------------------- | ------------------------------------------ |
+| 1158       | 08S01    | ER\_NET\_READ\_ERROR | Got an error reading communication packets |
+
+## Possible Causes
+
+This error tells us that the connection between the server and client was aborted.\
+The most common cause is that the client hard-aborted the connection, without calling mysql\_close().\
+It could also be a problem with the connection to the server, such as a wrong or lost package.
+
+## How to Find Out More
+
+The [error log](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/server-management/server-monitoring-logs/error-log.md) may have more information about the cause of the error.\
+Setting the MariaDB server option [log\_warnings](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) to a value of 4 or above can generate more diagnostic warnings in the error log when there is a problem reading packages:
+
+```
+2024-04-19 17:02:11 20090 [Warning] mariadbd: Could not read packet: fd: 4575  state: 1  read_length: 4  errno: 104  vio_errno: 1158  length: -1
+```
+
+How to interpret the above:
+
+* `20090` is the connection id that got the warning/error.
+* `fd: 4575` 4575 is the file descriptor that had a problem.
+* `state: 1` shows that the file is open. Anything else means the file is not active. Note that in some cases MariaDB will try to abort a read on a file descriptor by closing it.
+* `read_length: 4` is how many characters the server tried to read from the file.
+* `errno 104` is the system error code (more below).
+* `vio_errno: 1158` is our internal error code from the vio library, which stands for ER\_NET\_READ\_ERROR "Got an error reading communication packets".
+* `length: -1` is how many characters was reported to be read from the read() system call. -1 indicates failure. If `length` <= `read_length` then something broke in the communication.
+
+You can use the perror utility to get a description of system and storage engine errors:
+
+```
+shell> perror 104
+OS error code 104: Connection reset by peer
+```
+
+This means the connection was aborted by the application/user.
+
+## How to Fix
+
+* Ensure you have a stable internet connection.
+* Ensure that your applications calls mysql\_close() for all open connections before exiting.
+
+## See Also
+
+* [perror](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/clients-and-utilities/perror.md) Getting a description for an error number.
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

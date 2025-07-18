@@ -1,2 +1,15 @@
 # Error 1113: A table must have at least 1 column
 
+| Error Code | SQLSTATE | Error                          | Description                         |
+| ---------- | -------- | ------------------------------ | ----------------------------------- |
+| 1113       | 42000    | ER\_TABLE\_MUST\_HAVE\_COLUMNS | A table must have at least 1 column |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

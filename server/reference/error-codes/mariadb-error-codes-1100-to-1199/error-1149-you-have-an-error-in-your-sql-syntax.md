@@ -1,2 +1,158 @@
 # Error 1149: You have an error in your SQL syntax
 
+| Error Code | SQLSTATE | Error             | Description                                                                                                                        |
+| ---------- | -------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 1149       | 42000    | ER\_SYNTAX\_ERROR | You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use |
+
+## Possible Causes and Solutions
+
+This is one of the most common errors to see. It's caused by an SQL syntax error. The error message will give you a clue as to where the error could be, as MariaDB displays the text following where it picked up an error. There are a huge number of possible causes (and in most cases they're simple typos), but here are a few common ones;
+
+### Delimiters
+
+Delimiters need to be present at the end of each statement. See [Delimiters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/delimiters).\
+For example:
+
+```
+SELECT 1
+SELECT 2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds 
+  to your MariaDB server version for the right syntax to use near 'SELECT 2' at line 2
+```
+
+Here, there was no delimiter separating the first and the second line. MariaDB picked up the error at the start of the second line, pointing one to the end of the first line. The correct syntax is:
+
+```
+SELECT 1;
+SELECT 2;
+```
+
+### Delimiters in Stored Programs
+
+When creating [stored programs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines) from the command-line, it is likely you will need to differentiate between the regular delimiter and a delimiter inside a [BEGIN END](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/begin-end) block. See [Delimiters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/delimiters).
+
+For example, take the following, seemingly-valid declaration:
+
+```
+CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC
+BEGIN
+  DECLARE x TINYINT;
+  SET x = 42;
+  RETURN x;
+END;
+```
+
+Attempting to run will result in an error:
+
+```
+CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC
+    -> BEGIN
+    ->   DECLARE x TINYINT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds 
+  to your MariaDB server version for the right syntax to use near '' at line 3
+```
+
+The error was picked up at the end of the `DECLARE x TINYINT;` line, guiding one to the delimiter found there. The solution is to specify a distinct delimiter for the duration of the process, using the DELIMITER command, for example:
+
+```
+DELIMITER //
+
+CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC
+BEGIN
+  DECLARE x TINYINT;
+  SET x = 42;
+  RETURN x;
+END 
+
+//
+
+DELIMITER ;
+```
+
+### Reserved Words
+
+[Reserved words](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/reserved-words) cannot be used as [identifiers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-names) unless they are quoted. For example:
+
+```
+CREATE TABLE accessible(id INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds 
+  to your MariaDB server version for the right syntax to use near 'accessible(id INT)' at line 1
+```
+
+The error was picked up after the `accessible` identifier, leading one to suspect that it's causing the problem. And indeed, it's a [reserved word](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/reserved-words). There are a number of possible solutions.
+
+Use a new, non-reserved, identifier:
+
+```
+CREATE TABLE accessible_status(id INT);
+```
+
+or quote the identifier:
+
+```
+CREATE TABLE `accessible`(id INT);
+```
+
+or [fully qualify](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-qualifiers) the identifier:
+
+```
+CREATE TABLE test.accessible(id INT);
+```
+
+### Syntax Doesn't Match SQL\_MODE
+
+Some syntax may be valid in a particular [SQL\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode), but not in others. There are too many to list here, but the [SQL\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) page provides a full list.\
+For example:
+
+```
+CREATE TABLE "t" (id INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds 
+  to your MariaDB server version for the right syntax to use near '"t" (id INT)' at line 1
+```
+
+The error message directs one to the identifier `t`. Double quotes cannot be used to [quote identifiers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-names#quote-character) unless ANSI\_MODE is set, which in this case it isn't:
+
+```
+select @@sql_mode;
++-------------------------------------------------------------------------------------------+
+| @@sql_mode                                                                                |
++-------------------------------------------------------------------------------------------+
+| STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
++-------------------------------------------------------------------------------------------+
+```
+
+Either quote with the standard quote character, the backtick, or set the appropriate SQL\_MODE:
+
+```
+SET @@SQL_MODE = CONCAT(@@SQL_MODE, ',ANSI_QUOTES');
+CREATE TABLE "t" (id INT);
+```
+
+#### Oracle Mode
+
+[Oracle mode](e1149.md#oracle-mode) in particular has a large number of differences to the default [SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/server-management/variables-and-modes/sql-mode.md), for example:
+
+```
+CREATE TABLE t (id VARCHAR2(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds 
+  to your MariaDB server version for the right syntax to use near '(10))' at line 1
+```
+
+The error is identified just after the VARCHAR2 type is specified, and this type is not valid in the default mode:
+
+```
+SELECT @@sql_mode;
++--------------------------------------------------------------------+
+| @@sql_mode                                                         |
++--------------------------------------------------------------------+
+| STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER |
++--------------------------------------------------------------------+
+SET SQL_MODE='ORACLE';
+CREATE TABLE t (id VARCHAR2(10));
+```
+
+See [Oracle mode](e1149.md#oracle-mode) for a full list of syntax differences.
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

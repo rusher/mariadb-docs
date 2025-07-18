@@ -1,2 +1,15 @@
 # Error 1134: Rows matched Changed Warnings
 
+| Error Code | SQLSTATE | Error           | Description                                  |
+| ---------- | -------- | --------------- | -------------------------------------------- |
+| 1134       | HY000    | ER\_UPDATE\_INF | Rows matched: %ld Changed: %ld Warnings: %ld |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

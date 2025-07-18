@@ -1,2 +1,15 @@
 # Error 1129: Host is blocked because of many connection errors
 
+| Error Code | SQLSTATE | Error                 | Description                                                                                   |
+| ---------- | -------- | --------------------- | --------------------------------------------------------------------------------------------- |
+| 1129       | HY000    | ER\_HOST\_IS\_BLOCKED | Host '%s' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

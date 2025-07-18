@@ -1,2 +1,15 @@
 # Error 1115: Unknown character set
 
+| Error Code | SQLSTATE | Error                       | Description                 |
+| ---------- | -------- | --------------------------- | --------------------------- |
+| 1115       | 42000    | ER\_UNKNOWN\_CHARACTER\_SET | Unknown character set: '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1110: Column specified twice
 
+| Error Code | SQLSTATE | Error                       | Description                 |
+| ---------- | -------- | --------------------------- | --------------------------- |
+| 1110       | 42000    | ER\_FIELD\_SPECIFIED\_TWICE | Column '%s' specified twice |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

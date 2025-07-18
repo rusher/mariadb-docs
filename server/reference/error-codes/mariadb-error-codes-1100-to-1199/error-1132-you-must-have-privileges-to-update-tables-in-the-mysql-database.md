@@ -1,2 +1,15 @@
 # Error 1132: You must have privileges to update tables in the mysql database
 
+| Error Code | SQLSTATE | Error                      | Description                                                                                               |
+| ---------- | -------- | -------------------------- | --------------------------------------------------------------------------------------------------------- |
+| 1132       | 42000    | ER\_PASSWORD\_NOT\_ALLOWED | You must have privileges to update tables in the mysql database to be able to change passwords for others |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

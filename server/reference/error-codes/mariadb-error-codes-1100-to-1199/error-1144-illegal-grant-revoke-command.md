@@ -1,2 +1,15 @@
 # Error 1144: Illegal GRANT/REVOKE command
 
+| Error Code | SQLSTATE | Error                          | Description                                                                                 |
+| ---------- | -------- | ------------------------------ | ------------------------------------------------------------------------------------------- |
+| 1144       | 42000    | ER\_ILLEGAL\_GRANT\_FOR\_TABLE | Illegal GRANT/REVOKE command; please consult the manual to see which privileges can be used |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
