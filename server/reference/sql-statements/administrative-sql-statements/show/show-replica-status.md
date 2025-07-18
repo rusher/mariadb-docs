@@ -48,7 +48,7 @@ The rows are sorted according to `Connection_name`.
 
 If you specify a `connection_name`, you only get the information about that connection. If `connection_name` is not used, then the name set by `default_master_connection` is used. If the connection name doesn't exist you will get an error:`There is no master connection for 'xxx'`.
 
-**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to using the channel\_name directly after `SHOW SLAVE`.
 
@@ -144,24 +144,24 @@ These columns cannot be viewed/extracted from the [INFORMATION\_SCHEMA.SLAVE\_ST
 
 {% tabs %}
 {% tab title="Current" %}
-**Seconds\_Behind\_Master:** Difference between the timestamp logged on the master for the event that the replica is currently processing, and the current timestamp on the replica. Zero if the replica is not currently processing an event. With serial replication, seconds\_behind\_master is updated when the SQL thread begins executing a transaction. With [parallel replication](../../../../ha-and-performance/standard-replication/parallel-replication.md), seconds\_behind\_master is updated only after transactions commit. An exception is thrown on the parallel replica to additionally update `seconds_behind_master` when the first transaction received after idling is queued to a worker for execution, to provide a reliable initial value for the duration until a transaction commits.&#x20;
+**Seconds\_Behind\_Master:** Difference between the timestamp logged on the master for the event that the replica is currently processing, and the current timestamp on the replica. Zero if the replica is not currently processing an event. With serial replication, seconds\_behind\_master is updated when the SQL thread begins executing a transaction. With [parallel replication](../../../../ha-and-performance/standard-replication/parallel-replication.md), seconds\_behind\_master is updated only after transactions commit. An exception is thrown on the parallel replica to additionally update `seconds_behind_master` when the first transaction received after idling is queued to a worker for execution, to provide a reliable initial value for the duration until a transaction commits.
 
 Additional behavior to be aware of:
 
-1. `Seconds_Behind_Master` will update for ignored events, e.g. those skipped due to [sql\_slave\_skip\_counter](../replication-statements/set-global-sql_slave_skip_counter.md).&#x20;
-2. On the serial replica, transactions with prior timestamps can update `Seconds_Behind_Master` such that it can go backwards, though this is not true for the parallel replica.&#x20;
-3. When configured with [MASTER\_DELAY](../../../../ha-and-performance/standard-replication/delayed-replication.md), as a replicated transaction begins executing (i.e. on a serial or post-idle parallel replica), `Seconds_Behind_Master` will update before delaying, and while delaying occurs will grow to encompass the configured value.&#x20;
+1. `Seconds_Behind_Master` will update for ignored events, e.g. those skipped due to [sql\_slave\_skip\_counter](../replication-statements/set-global-sql_slave_skip_counter.md).
+2. On the serial replica, transactions with prior timestamps can update `Seconds_Behind_Master` such that it can go backwards, though this is not true for the parallel replica.
+3. When configured with [MASTER\_DELAY](../../../../ha-and-performance/standard-replication/delayed-replication.md), as a replicated transaction begins executing (i.e. on a serial or post-idle parallel replica), `Seconds_Behind_Master` will update before delaying, and while delaying occurs will grow to encompass the configured value.
 4. There is a known issue, tracked by [MDEV-17516](https://jira.mariadb.org/browse/MDEV-17516), such that `Seconds_Behind_Master` will initially present as 0 on replica restart until a replicated transaction begins executing, even if the last replica session was lagging behind when stopped.
 {% endtab %}
 
 {% tab title="< 10.11.12 / 10.10.3 / 10.9.5 / 10.8.7 / 10.6.12 / 10.5.19" %}
-**Seconds\_Behind\_Master:** Difference between the timestamp logged on the master for the event that the replica is currently processing, and the current timestamp on the replica. Zero if the replica is not currently processing an event. With serial replication, seconds\_behind\_master is updated when the SQL thread begins executing a transaction. With [parallel replication](../../../../ha-and-performance/standard-replication/parallel-replication.md), seconds\_behind\_master is updated only after transactions commit.&#x20;
+**Seconds\_Behind\_Master:** Difference between the timestamp logged on the master for the event that the replica is currently processing, and the current timestamp on the replica. Zero if the replica is not currently processing an event. With serial replication, seconds\_behind\_master is updated when the SQL thread begins executing a transaction. With [parallel replication](../../../../ha-and-performance/standard-replication/parallel-replication.md), seconds\_behind\_master is updated only after transactions commit.
 
 Additional behavior to be aware of:
 
-1. `Seconds_Behind_Master` will update for ignored events, e.g. those skipped due to [sql\_slave\_skip\_counter](../replication-statements/set-global-sql_slave_skip_counter.md).&#x20;
-2. On the serial replica, transactions with prior timestamps can update `Seconds_Behind_Master` such that it can go backwards, though this is not true for the parallel replica.&#x20;
-3. When configured with [MASTER\_DELAY](../../../../ha-and-performance/standard-replication/delayed-replication.md), as a replicated transaction begins executing (i.e. on a serial or post-idle parallel replica), `Seconds_Behind_Master` will update before delaying, and while delaying occurs will grow to encompass the configured value.&#x20;
+1. `Seconds_Behind_Master` will update for ignored events, e.g. those skipped due to [sql\_slave\_skip\_counter](../replication-statements/set-global-sql_slave_skip_counter.md).
+2. On the serial replica, transactions with prior timestamps can update `Seconds_Behind_Master` such that it can go backwards, though this is not true for the parallel replica.
+3. When configured with [MASTER\_DELAY](../../../../ha-and-performance/standard-replication/delayed-replication.md), as a replicated transaction begins executing (i.e. on a serial or post-idle parallel replica), `Seconds_Behind_Master` will update before delaying, and while delaying occurs will grow to encompass the configured value.
 4. There is a known issue, tracked by [MDEV-17516](https://jira.mariadb.org/browse/MDEV-17516), such that `Seconds_Behind_Master` will initially present as 0 on replica restart until a replicated transaction begins executing, even if the last replica session was lagging behind when stopped.
 {% endtab %}
 {% endtabs %}
@@ -244,16 +244,13 @@ Additional behavior to be aware of:
 
 {% tabs %}
 {% tab title="Current" %}
-**Connects\_Tried:** The number of attempts done to connect to the primary. It starts from 0 with [*START* REPLICA](../replication-statements/start-replica.md) (but not [STOP REPLICA](../replication-statements/stop-replica.md)), [RESET REPLICA](../replication-statements/reset-replica.md) or [`CHANGE MASTER TO MASTER_RETRY_COUNT`][], and increments after each connection attempt until one succeeds or, after this reaches `Master_Retry_Count`, aborts the connection.
+**Connects\_Tried:** The number of attempts done to connect to the primary. It starts from 0 with [_START_ REPLICA](../replication-statements/start-replica.md) (but not [STOP REPLICA](../replication-statements/stop-replica.md)), [RESET REPLICA](../replication-statements/reset-replica.md) or [`CHANGE MASTER TO MASTER_RETRY_COUNT`](../replication-statements/change-master-to.md#master_retry_count), and increments after each connection attempt until one succeeds or, after this reaches `Master_Retry_Count`, aborts the connection.
 
-**Master\_Retry\_Count:** The limit to `Connects_Tried` as configured by [`CHANGE MASTER TO MASTER_RETRY_COUNT`][].
-
-[`CHANGE MASTER TO MASTER_RETRY_COUNT`]: ../replication-statements/change-master-to.md#master_retry_count
+**Master\_Retry\_Count:** The limit to `Connects_Tried` as configured by [`CHANGE MASTER TO MASTER_RETRY_COUNT`](../replication-statements/change-master-to.md#master_retry_count).
 {% endtab %}
 
 {% tab title="< 12.0" %}
-**Connects\_Tried:** and **Master\_Retry\_Count:** are not available.
-If the Performance Schema is enabled, [`replication\_connection\_configuration`](../system-tables/performance-schema/performance-schema-tables/performance-schema-replication_connection_configuration-table.md) has `CONNECTION_RETRY_COUNT` available as an older alternative to `Master_Retry_Count`.
+**Connects\_Tried:** and **Master\_Retry\_Count:** are not available. If the Performance Schema is enabled, [`replication\_connection\_configuration`](../system-tables/performance-schema/performance-schema-tables/performance-schema-replication_connection_configuration-table.md) has `CONNECTION_RETRY_COUNT` available as an older alternative to `Master_Retry_Count`.
 {% endtab %}
 {% endtabs %}
 

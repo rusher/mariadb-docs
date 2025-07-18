@@ -6,15 +6,15 @@ If a subquery is used in this way, you must also use an AS clause to name the re
 
 ## ORACLE mode
 
-**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
+**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes)
 
 {% tabs %}
 {% tab title="Current" %}
-[Anonymous subqueries in a FROM clause](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md) (no AS clause) are permitted in [ORACLE mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
+[Anonymous subqueries in a FROM clause](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md) (no AS clause) are permitted in [ORACLE mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle).
 {% endtab %}
 
 {% tab title="< 10.6" %}
-[Anonymous subqueries in a FROM clause](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md) (no `AS` clause) are **not** permitted in [ORACLE mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
+[Anonymous subqueries in a FROM clause](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md) (no `AS` clause) are **not** permitted in [ORACLE mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle).
 {% endtab %}
 {% endtabs %}
 

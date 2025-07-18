@@ -1,7 +1,7 @@
 # UUID\_v4
 
 {% hint style="info" %}
-`UUID_v4` is available from MariaDB [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).
+`UUID_v4` is available from MariaDB [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).
 {% endhint %}
 
 It is possible to generate UUIDv4 and UUIDv7, in addition to UUIDv1.

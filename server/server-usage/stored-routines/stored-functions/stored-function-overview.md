@@ -52,7 +52,7 @@ This function takes an argument, `price` which is defined as a DECIMAL, and retu
 
 Take a look at the [CREATE FUNCTION](../../../reference/sql-statements/data-definition/create/create-function.md) page for more details.
 
-From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), it is also possible to create [stored aggregate functions](stored-aggregate-functions.md).
+From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), it is also possible to create [stored aggregate functions](stored-aggregate-functions.md).
 
 ## Stored Function listings and definitions
 

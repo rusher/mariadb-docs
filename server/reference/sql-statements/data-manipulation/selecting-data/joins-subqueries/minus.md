@@ -1,10 +1,10 @@
 # MINUS
 
 {% hint style="info" %}
-`MINUS` is available starting from [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)**.**
+`MINUS` is available starting from [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)**.**
 {% endhint %}
 
-`MINUS` is a synonym for [EXCEPT](except.md) when [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set.
+`MINUS` is a synonym for [EXCEPT](except.md) when [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) is set.
 
 ```sql
 CREATE TABLE seqs (i INT);

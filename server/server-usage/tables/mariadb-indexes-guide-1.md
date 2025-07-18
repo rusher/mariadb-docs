@@ -55,7 +55,7 @@ WHERE t.TABLE_SCHEMA != 'information_schema'
 
 A Unique Index must be unique, but it can have columns that may be NULL. So each key value identifies only one record, but not each record needs to be represented.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
 Unique, if index type is not specified, is normally a BTREE index that can also be used by the optimizer to find rows. If the key is longer than the max key length for the used storage engine and the storage engine supports long unique index, a HASH key will be created. This enables MariaDB to enforce uniqueness for any type or number of columns.
 
@@ -167,7 +167,7 @@ uniqueness constraint, and another user may get the same name.
 
 If a unique index consists of a column where trailing pad characters are stripped or ignored, inserts into that column where values differ only by the number of trailing pad characters will result in a duplicate-key error.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
 For some engines, like InnoDB, `UNIQUE` can be used with any type of columns or any number of columns.
 

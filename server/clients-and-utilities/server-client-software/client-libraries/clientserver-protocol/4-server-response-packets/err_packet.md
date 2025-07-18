@@ -7,7 +7,7 @@ ERR\_Packet indicates that an error occured.
 ### Fields
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) ERR\_Packet header = 0xFF
-* [int<2>](../protocol-data-types.md#fixed-length-integers) error code. see [error list](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference)
+* [int<2>](../protocol-data-types.md#fixed-length-integers) error code. see [error list](broken-reference)
 * if (errorcode == 0xFFFF) /\* progress reporting \*/
   * [int<1>](../protocol-data-types.md#fixed-length-integers) stage
   * [int<1>](../protocol-data-types.md#fixed-length-integers) max\_stage

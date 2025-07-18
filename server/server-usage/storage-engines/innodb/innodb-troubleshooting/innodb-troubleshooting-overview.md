@@ -12,7 +12,7 @@ For problems with the InnoDB Data Dictionary, see [InnoDB Data Dictionary Troubl
 
 * [InnoDB Data Dictionary Troubleshooting](innodb-data-dictionary-troubleshooting.md)
 * [InnoDB Recovery Modes](innodb-recovery-modes.md)
-* [Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes)
+* [Error Codes](broken-reference)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

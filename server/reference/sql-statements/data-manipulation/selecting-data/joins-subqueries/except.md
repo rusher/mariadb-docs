@@ -6,7 +6,7 @@ The result of `EXCEPT` contains all records of the left `SELECT` result set exce
 
 {% tabs %}
 {% tab title="Current" %}
-`MINUS` is a synonym when [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set.
+`MINUS` is a synonym when [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) is set.
 {% endtab %}
 
 {% tab title="< 10.6.1" %}
@@ -51,7 +51,7 @@ The result of `EXCEPT` is all records of the left `SELECT` result except records
 
 Parentheses can be used to specify precedence. Before this, a syntax error would be returned.
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
 #### ALL/DISTINCT
 

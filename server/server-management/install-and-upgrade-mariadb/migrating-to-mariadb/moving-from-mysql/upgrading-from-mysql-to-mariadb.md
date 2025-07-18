@@ -4,11 +4,11 @@
 
 For all practical purposes, you can view MariaDB as an upgrade of MySQL:
 
-* Before upgrading, please [check if there are any known incompatibilities](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility) between your MySQL release and the MariaDB release you want to move to.
+* Before upgrading, please [check if there are any known incompatibilities](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility) between your MySQL release and the MariaDB release you want to move to.
 * In particular, note that the [JSON type](../../../../reference/data-types/string-data-types/json.md) in MariaDB is a LONGTEXT, while in MySQL it's a binary type. See [Making MariaDB understand MySQL JSON](https://mariadb.org/making-mariadb-understand-mysql-json/).
 * If you are using MySQL 8.0 or above, you have to use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) to move your database to MariaDB.
 * For upgrading from very old MySQL versions, see [Upgrading to MariaDB from MySQL 5.0 (or older version)](migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md).
-* Within the same base version (for example MySQL 5.5 -> MariaDB 5.5, MySQL 5.6 -> [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and MySQL 5.7 -> [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)) you can in most cases just uninstall MySQL and install MariaDB and you are good to go. There is no need to dump and restore databases. As with any upgrade, we recommend making a backup of your data beforehand.
+* Within the same base version (for example MySQL 5.5 -> MariaDB 5.5, MySQL 5.6 -> [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and MySQL 5.7 -> [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)) you can in most cases just uninstall MySQL and install MariaDB and you are good to go. There is no need to dump and restore databases. As with any upgrade, we recommend making a backup of your data beforehand.
 * You should run [mariadb-upgrade](../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) (as you would with `mysql_upgrade` in MySQL) to finish the upgrade. This is needed to ensure that your mysql privilege and event tables are updated with the new fields MariaDB uses. Note that if you use a MariaDB package, `mariadb-upgrade` is usually run automatically.
 * All your old clients and connectors (PHP, Perl, Python, Java, etc.) will work unchanged (no need to recompile). This works because MariaDB and MySQL use the same client protocol and the client libraries are binary compatible. You can also use your old MySQL connector packages with MariaDB if you want.
 
@@ -87,7 +87,7 @@ create_options LIKE "%comp%";
 ### Config Files
 
 * Create configuration files for MariaDB that match the MySQL cluster option files.
-* There are some configuration options that differ. See [System Variable Differences between MariaDB and MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql).
+* There are some configuration options that differ. See [System Variable Differences between MariaDB and MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql).
 * You can use `[mariadb]` or `[mariadb-x.y.z]` (for the specific version) in the current config files for MariaDB-specific options.
 * You can also place MySQL-specific options inside a `[mysqld-5.7]` section. This includes all options that use mysql-specific directories for logging or replication (on other words, paths with `mysql` as part of the path).
 * With a combination of these, it's easy to create a config file that will work with both MariaDB and MySQL, no matter what options are present.
@@ -105,7 +105,7 @@ create_options LIKE "%comp%";
 * Install the MariaB packages or MariaDB tar distribution.
 * Change the `my.cnf` file to work with both MariaDB and MySQL.
 * When MariaDB is installed, test your configuration files with\
-  &#x20;`mariadbd --help --verbose > /tmp/log 2>&1` \
+  `mariadbd --help --verbose > /tmp/log 2>&1`\
   which will display all unsupported config options. It's also possible to use the script at [MDEV-32745](https://jira.mariadb.org/browse/MDEV-32745) to find all unsupported options.
 * Check the log for `ERROR` and change the configuration files if needed.
 
@@ -246,8 +246,8 @@ However, as MariaDB has more features than MySQL, there are a few things that yo
 
 ## See Also
 
-* MariaDB has a lot of [new features](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-features) that you should know about.
-* [MariaDB versus MySQL - Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility)
+* MariaDB has a lot of [new features](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-features) that you should know about.
+* [MariaDB versus MySQL - Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility)
 * [Migrating to MariaDB](../)
 * You can find general upgrading informations on the [MariaDB installation page](../../).
 * There is a [Screencast for upgrading MySQL to MariaDB](migrating-to-mariadb-from-mysql-obsolete-articles/screencast-for-upgrading-mysql-to-mariadb-obsolete.md).

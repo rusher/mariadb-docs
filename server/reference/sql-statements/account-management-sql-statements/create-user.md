@@ -309,7 +309,7 @@ Using `255.255.255.255` is equivalent to not using a netmask at all. Netmasks ca
 
 Note that the credentials added when creating a user with the `'%'` wildcard host will not grant access in all cases. For example, some systems come with an anonymous localhost user, and when connecting from localhost this will take precedence.
 
-Before [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), the host name component could be up to 60 characters in length. Starting from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), it can be up to 255 characters.
+Before [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), the host name component could be up to 60 characters in length. Starting from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), it can be up to 255 characters.
 
 ### User Name Component
 
@@ -428,7 +428,7 @@ Prior to [MariaDB 10.4.7](https://mariadb.com/docs/release-notes/mariadb-communi
 {% endtab %}
 {% endtabs %}
 
-From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) and [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1058-release-notes), the _lock\_option_ and _password\_option_ clauses can occur in either order.
+From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) and [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1058-release-notes), the _lock\_option_ and _password\_option_ clauses can occur in either order.
 
 ## See Also
 

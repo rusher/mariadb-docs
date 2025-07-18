@@ -59,7 +59,7 @@ and offset on a new primary.
 The replica keeps track of its current position (the global transaction ID of the last transaction applied) in the [mysql.gtid\_slave\_pos](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) system table. If this table is using a transactional storage engine (such as InnoDB, which is the default), then updates to the state are done in the same transaction as the updates to the data. This makes the state crash-safe; if the replica server crashes, crash recovery on restart will make sure that the recorded replication position matches the changes that were actually replicated. This is not the case for old-style replication, where the state is recorded in a file relay-log.info, which is updated independently of the actual data changes and can easily get out of sync if the replica server crashes. (This works for DML to transactional tables; non-transactional tables and DDL in general are not crash-safe in MariaDB.)
 
 Because of these two benefits, it is generally recommended to use global\
-transaction ID for any replication setups based on [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes) or later.\
+transaction ID for any replication setups based on [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes) or later.\
 However, old-style replication continues to work as always, so there is no\
 pressing need to change existing setups. Global transaction ID integrates\
 smoothly with old-style replication, and the two can be used freely together\
@@ -231,7 +231,7 @@ idea of the current GTID position; instead use
 
 `SET GLOBAL gtid_slave_pos = '0-1-1'`
 
-Starting from [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), the server variable [gtid\_pos\_auto\_engines](gtid.md#gtid_pos_auto_engines) can\
+Starting from [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), the server variable [gtid\_pos\_auto\_engines](gtid.md#gtid_pos_auto_engines) can\
 preferably be set to make the server handle this automatically. See the\
 description of the [mysql.gtid\_slave\_pos table](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) for details.
 
@@ -256,7 +256,7 @@ If [parallel replication](parallel-replication.md) is in use, then events that w
 
 ### Using GTIDs with MariaDB Galera Cluster
 
-Starting with [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes), MariaDB Galera Cluster has limited support for GTIDs. See [Using MariaDB GTIDs with MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster) for more information.
+Starting with [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes), MariaDB Galera Cluster has limited support for GTIDs. See [Using MariaDB GTIDs with MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster) for more information.
 
 ## Setting up a New Replica Server with Global Transaction ID
 
@@ -351,7 +351,7 @@ can be useful for upgrades for example, or where there are already tools to\
 setup new replica using old-style binlog positions.
 
 When a replica connects to a primary using old-style binlog positions, and the\
-primary supports GTID (i.e. is [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes) or later), then the replica\
+primary supports GTID (i.e. is [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes) or later), then the replica\
 automatically downloads the GTID position at connect and updates it during\
 replication. Thus, once a replica has connected to the GTID-aware primary at\
 least once, it can be switched to using GTID without any other actions needed;
@@ -608,7 +608,7 @@ set to replicate from it.
 
 #### SQL\_BEFORE\_GTIDS|SQL\_AFTER\_GTIDS
 
-[MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) extended the START SLAVE UNTIL command with the options `SQL_BEFORE_GTIDS` and `SQL_AFTER_GTIDS` to allow control of whether the replica stops before or after a provided GTID state. Its\
+[MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) extended the START SLAVE UNTIL command with the options `SQL_BEFORE_GTIDS` and `SQL_AFTER_GTIDS` to allow control of whether the replica stops before or after a provided GTID state. Its\
 syntax is:
 
 ```sql
@@ -644,9 +644,9 @@ The [MASTER\_GTID\_WAIT](../../reference/sql-functions/secondary-functions/misce
 
 ## Binlog Indexing
 
-**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114)
+**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
 
-Prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), when a replica connects, MariaDB needs to scan [binlog](../../server-management/server-monitoring-logs/binary-log/) files from the beginning in order to find the place to start replicating. If replica reconnects are frequent, this can be slow.[MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114) introduces indexing on the binlog files, allowing GTIDs to be quickly found. This also detects if old-style replication tries to connect at an incorrect file offset (eg. in the middle of an event), avoiding sending potentially corrupted events.\
+Prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), when a replica connects, MariaDB needs to scan [binlog](../../server-management/server-monitoring-logs/binary-log/) files from the beginning in order to find the place to start replicating. If replica reconnects are frequent, this can be slow.[MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114) introduces indexing on the binlog files, allowing GTIDs to be quickly found. This also detects if old-style replication tries to connect at an incorrect file offset (eg. in the middle of an event), avoiding sending potentially corrupted events.\
 The feature is enabled by default. The size of the binlog index file (`.idx`) is generally less than 1% the size of the binlog, so should not have any negative impacts and should not normally need tuning. However, the feature can be disabled or managed with the following system variables:
 
 * [binlog\_gtid\_index](replication-and-binary-log-system-variables.md#binlog_gtid_index) - enable/disable the feature
@@ -906,7 +906,7 @@ Removing a storage engine from the variable will have no effect once the new tab
 * Data Type: `numeric`
 * Default: `64`
 * Range: `0` to `2147483647`
-* Introduced: [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes)
+* Introduced: [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes)
 
 ## See Also
 

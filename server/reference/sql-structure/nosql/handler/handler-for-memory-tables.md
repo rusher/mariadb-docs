@@ -16,7 +16,7 @@ The limitations for `HANDLER READ` with `MEMORY|HEAP` tables are:
 
 * You must use all key parts when searching for a row.
 * You can't do a key scan of all values. You can only find all rows with the same key value.
-* `READ NEXT` gives an [error 1031](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1000-to-1099/e1031) if the tables changed since last read.
+* `READ NEXT` gives an [error 1031](broken-reference) if the tables changed since last read.
 
 ## Limitations for BTREE keys
 

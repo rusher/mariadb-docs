@@ -125,6 +125,6 @@ Since you are connecting from localhost, the anonymous credentials, rather than 
 * [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md)
 * [Authentication](../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
-* [Error 1698: Access denied for user](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1600-to-1699/e1698)
+* [Error 1698: Access denied for user](broken-reference)
 
 CC BY-SA / Gnu FDL

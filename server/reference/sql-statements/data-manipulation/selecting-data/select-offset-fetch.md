@@ -1,7 +1,7 @@
 # SELECT ... OFFSET ... FETCH
 
 {% hint style="info" %}
-`SELECT ... OFFSET ... FETCH` is available from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
+`SELECT ... OFFSET ... FETCH` is available from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 {% endhint %}
 
 ## Syntax

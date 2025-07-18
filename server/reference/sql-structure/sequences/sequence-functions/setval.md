@@ -147,7 +147,7 @@ SELECT NEXTVAL(s1);
 * [NEXT VALUE FOR](next-value-for-sequence_name.md)
 * [PREVIOUS VALUE FOR](previous-value-for-sequence_name.md)
 * [Information Schema SEQUENCES Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
-* [Error 4084: Sequence has run out](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084)
+* [Error 4084: Sequence has run out](broken-reference)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

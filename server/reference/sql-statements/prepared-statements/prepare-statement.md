@@ -46,12 +46,12 @@ ERROR 1461 (42000): Can't create more than max_prepared_stmt_count statements
 
 ### Oracle Mode
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `PREPARE stmt FROM 'SELECT :1, :2'` is used, instead of `?`.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle), `PREPARE stmt FROM 'SELECT :1, :2'` is used, instead of `?`.
 
 ## Permitted Statements
 
 {% hint style="info" %}
-The following is valid only from MariaDB [**10.6.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1062-release-notes)**.**
+The following is valid only from MariaDB [**10.6.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1062-release-notes)**.**
 {% endhint %}
 
 All statements can be prepared, except [PREPARE](prepare-statement.md), [EXECUTE](execute-statement.md), and [DEALLOCATE / DROP PREPARE](deallocate-drop-prepare.md).
@@ -202,7 +202,7 @@ DEALLOCATE PREPARE stmt;
 * [EXECUTE Statement](execute-statement.md)
 * [DEALLOCATE / DROP Prepared Statement](deallocate-drop-prepare.md)
 * [EXECUTE IMMEDIATE](execute-immediate.md)
-* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

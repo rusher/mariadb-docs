@@ -1,7 +1,7 @@
 # ADD\_MONTHS
 
 {% hint style="info" %}
-`ADD_MONTHS` is available from [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes).
+`ADD_MONTHS` is available from [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes).
 {% endhint %}
 
 The `ADD_MONTHS` function was introduced to enhance Oracle compatibility. Similar functionality can be achieved with the [DATE\_ADD](date_add.md) function.
@@ -94,7 +94,7 @@ SELECT ADD_MONTHS('2011-01-15', 2.1);
 
 ## See Also
 
-* [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

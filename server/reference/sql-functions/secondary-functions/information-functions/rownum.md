@@ -1,7 +1,7 @@
 # ROWNUM
 
 {% hint style="info" %}
-`ROWNUM()` is available from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes).
+`ROWNUM()` is available from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes).
 {% endhint %}
 
 ## Syntax
@@ -10,7 +10,7 @@
 ROWNUM()
 ```
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) one can just use `ROWNUM`, without the parentheses.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) one can just use `ROWNUM`, without the parentheses.
 
 ## Description
 

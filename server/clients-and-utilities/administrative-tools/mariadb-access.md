@@ -2,7 +2,7 @@
 
 `mariadb-access` is a tool for checking access privileges, developed by Yves Carlier.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqlaccess`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqlaccess`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 It checks the access privileges for a host name, user name, and database combination. Note that mariadb-access checks access using only the [user](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md), [db](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md), and host tables. It does not check table, column, or routine privileges specified in the [tables\_priv](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-tables_priv-table.md), [columns\_priv](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-columns_priv-table.md), or [procs\_priv](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) tables.
 

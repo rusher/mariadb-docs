@@ -55,7 +55,7 @@ If a [HANDLER](../../sql-structure/nosql/handler/) contains a [CALL](../stored-r
 {% endtab %}
 {% endtabs %}
 
-For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes).
+For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](broken-reference).
 
 The following procedure tries to query two tables which don't exist, producing a 1146 error in both cases. Those errors will trigger the [HANDLER](../../sql-structure/nosql/handler/). The first time the error will be ignored and the client will not receive it, but the second time, the error is re-signaled, so the client will receive it.
 
@@ -130,7 +130,7 @@ END;
 * [SIGNAL](signal.md)
 * [HANDLER](../../sql-structure/nosql/handler/)
 * [Stored Routines](../../../server-usage/stored-routines/)
-* [MariaDB Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes)
+* [MariaDB Error Codes](broken-reference)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -10,14 +10,14 @@ Foreign keys can only be used with storage engines that support them. The defaul
 
 ## Syntax
 
-**Note:** Until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
+**Note:** Until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
 
 ```
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
 ```
 
 MariaDB simply parses it without returning any error or warning, for compatibility with other DBMS's. However, only the syntax described below creates foreign keys.\
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), MariaDB will attempt to apply the constraint. See the [Examples](foreign-keys.md#references) below.
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), MariaDB will attempt to apply the constraint. See the [Examples](foreign-keys.md#references) below.
 
 Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). The definition must follow this syntax:
 
@@ -157,7 +157,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 
 ### REFERENCES
 
-Until  [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
+Until  [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 ```sql
 CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);
@@ -191,7 +191,7 @@ SELECT * FROM b;
 +---------+
 ```
 
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
 ```sql
 CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);

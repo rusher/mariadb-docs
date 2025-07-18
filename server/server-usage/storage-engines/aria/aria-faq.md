@@ -36,7 +36,7 @@ These are some of the goals for Aria 2.0:
 * Commit/Rollback
 * Concurrent updates/deletes
 * Row locking
-* Group commit (Already in [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2))
+* Group commit (Already in [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2))
 * Faster lookup in index pages (Page directory)
 
 Beginning in Aria 2.5, the plan is to focus on improving performance.
@@ -95,10 +95,10 @@ All except Guilhem Bichot are working for [MariaDB Corporation Ab](https://maria
 
 ### What is the release policy/schedule of Aria?
 
-Aria follows the same [release criteria](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) as for [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md). Some clarifications, unique for the Aria storage engine:
+Aria follows the same [release criteria](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/release-criteria) as for [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md). Some clarifications, unique for the Aria storage engine:
 
 * Aria index and data file formats should be backwards and forwards compatible to ensure easy upgrades and downgrades.
-* The [log file](aria-storage-engine.md#aria-log-files) format should also be compatible, but we don't make any guarantees yet. In some cases when upgrading, you must remove the old `aria_log.%` and `maria_log.%` files before restarting MariaDB. (So far, this has only occurred in the upgrade from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)).
+* The [log file](aria-storage-engine.md#aria-log-files) format should also be compatible, but we don't make any guarantees yet. In some cases when upgrading, you must remove the old `aria_log.%` and `maria_log.%` files before restarting MariaDB. (So far, this has only occurred in the upgrade from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)).
 
 #### Extended commitment for Beta 1.5
 
@@ -125,7 +125,7 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 * Supports both crash-safe (soon to be transactional) and not transactional tables. (Non-transactional tables are not logged and rows uses less space): `CREATE TABLE foo (...) TRANSACTIONAL=0|1 ENGINE=Aria`.
 * `PAGE` is the only crash-safe/transactional row format.
 * `PAGE` format should give a notable speed improvement on systems which have bad data caching. (For example Windows).
-* From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), max key length is 2000 bytes, compared to 1000 bytes in MyISAM.
+* From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), max key length is 2000 bytes, compared to 1000 bytes in MyISAM.
 
 ### Differences between Aria and MyISAM
 
@@ -147,12 +147,12 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 * Minimum data file size for PAGE format is 16K (with 8K pages).
 * Aria doesn't support indexes on virtual fields.
 
-### Differences between [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) release and the normal MySQL-5.1 release?
+### Differences between [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) release and the normal MySQL-5.1 release?
 
 See:
 
 * [Aria storage engine](aria-storage-engine.md)
-* [MariaDB versus MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility)
+* [MariaDB versus MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility)
 
 ### Why do you use the `TRANSACTIONAL` keyword now when Aria is not yet transactional?
 

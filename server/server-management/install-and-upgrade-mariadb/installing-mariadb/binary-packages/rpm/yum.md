@@ -41,7 +41,7 @@ The MariaDB Foundation provides a MariaDB repository for several Linux distribut
 
 Once you have the appropriate repository configuration section for your distribution, add it to a file named `MariaDB.repo` under `/etc/yum.repos.d/`.
 
-For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) on RHEL (any version), then you could use the following `yum` repository configuration in `/etc/yum.repos.d/MariaDB.repo`:
+For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on RHEL (any version), then you could use the following `yum` repository configuration in `/etc/yum.repos.d/MariaDB.repo`:
 
 ```
 [mariadb]
@@ -64,7 +64,7 @@ The MariaDB Foundation archives repositories all releases is at the following UR
 
 Note this isn't configured as a highly available server. For that purpose please use the main mirrors.
 
-For example, if you wanted to pin your repository to [MariaDB 10.8.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes) on CentOS 7, then you could use the following `yum` repository configuration in `/etc/yum.repos.d/MariaDB.repo`:
+For example, if you wanted to pin your repository to [MariaDB 10.8.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes) on CentOS 7, then you could use the following `yum` repository configuration in `/etc/yum.repos.d/MariaDB.repo`:
 
 ```
 [mariadb]
@@ -90,13 +90,13 @@ If you configured `yum` to install from MariaDB Corporation's MariaDB Package Re
 
 ### Updating the Major Release with the MariaDB Repository Configuration Tool
 
-If you configured `yum` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/), then you can update the major release that the repository uses by updating the `yum` repository configuration file in-place. For example, if you wanted to change the repository from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011), and if the repository configuration file was at `/etc/yum.repos.d/MariaDB.repo`, then you could execute the following:
+If you configured `yum` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/), then you can update the major release that the repository uses by updating the `yum` repository configuration file in-place. For example, if you wanted to change the repository from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), and if the repository configuration file was at `/etc/yum.repos.d/MariaDB.repo`, then you could execute the following:
 
 ```
 sudo sed -i 's/10.6/10.11/' /etc/yum.repos.d/MariaDB.repo
 ```
 
-After that, the repository should refer to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011).
+After that, the repository should refer to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011).
 
 If the `yum` repository is pinned to a specific minor release, then the above `sed` command can result in an invalid repository configuration. In that case, the recommended options are:
 
@@ -248,7 +248,7 @@ MariaDB-server.x86_64   10.3.12-1.el7.centos    mariadb
 mariadb-server.x86_64   1:5.5.60-1.el7_5         base
 ```
 
-The MariaDB `yum` repository in this example contains [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), [MariaDB 10.3.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10311-release-notes), and [MariaDB 10.3.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10312-release-notes). The CentOS base `yum` repository also contains [MariaDB 5.5.60](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5560-release-notes).
+The MariaDB `yum` repository in this example contains [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), [MariaDB 10.3.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10311-release-notes), and [MariaDB 10.3.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10312-release-notes). The CentOS base `yum` repository also contains [MariaDB 5.5.60](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5560-release-notes).
 
 To install an older version of a package instead of the latest version we just\
 need to specify the package name, a dash, and then the version number. And we\
@@ -258,7 +258,7 @@ other available versions.
 However, when installing an older version of a package, if `yum` has to install dependencies, then it will automatically choose to install the latest versions of those packages. To ensure that all MariaDB packages are on the same version in this scenario, it is necessary to specify them all.
 
 The packages that the MariaDB-server package depend on are: MariaDB-client,\
-MariaDB-shared, and MariaDB-common. Therefore, to install [MariaDB 10.3.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10311-release-notes) from this `yum`\
+MariaDB-shared, and MariaDB-common. Therefore, to install [MariaDB 10.3.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10311-release-notes) from this `yum`\
 repository, we would do the following:
 
 ```

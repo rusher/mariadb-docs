@@ -21,7 +21,7 @@ For user-defined conditions, MariaDB and MySQL recommend the '45000' `SQLSTATE` 
 
 'HY000' is called the "general error": it is the class used for builtin conditions which do not have a specific `SQLSTATE` class.
 
-A partial list of error codes and matching `SQLSTATE` values can be found under [MariaDB Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes).
+A partial list of error codes and matching `SQLSTATE` values can be found under [MariaDB Error Codes](broken-reference).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

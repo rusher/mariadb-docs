@@ -242,6 +242,10 @@ Specifying a column as a unique key creates a unique index on that column. See t
 Use `UNIQUE KEY` (or just `UNIQUE`) to specify that all values in the column must be distinct from each other. Unless the column is `NOT NULL`, there may be multiple rows with `NULL` in the column.
 
 {% code overflow="wrap" %}
+```
+```
+{% endcode %}
+
 ```sql
 CREATE TABLE t_long_keys (   a INT PRIMARY KEY,   b  VARCHAR(4073),   UNIQUE KEY `uk_b` (b) ) ENGINE=InnoDB;
 ```
@@ -253,6 +257,7 @@ Query OK, 0 rows affected (0.022 sec)
 ```sql
 SHOW CREATE TABLE t_long_keys\G
 ```
+
 ```
 *************************** 1. row ***************************
        Table: t_long_keys
@@ -264,6 +269,7 @@ Create Table: CREATE TABLE `t_long_keys` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 1 row in set (0.001 sec)
 ```
+
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
 ```
@@ -282,6 +288,7 @@ SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 1 row in set (0.003 sec)
 ```
+
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
 ```
@@ -321,12 +328,15 @@ CREATE TABLE t_long_keys (a INT PRIMARY KEY, b VARCHAR(4073), UNIQUE KEY `uk_b` 
 ```sql
 CREATE TABLE t_long_keys (   a INT PRIMARY KEY,   b  VARCHAR(4073),   UNIQUE KEY `uk_b` (b) ) ENGINE=InnoDB;
 ```
+
 ```
 Query OK, 0 rows affected (0.022 sec)
 ```
+
 ```sql
 SHOW CREATE TABLE t_long_keys\G
 ```
+
 ```
 *************************** 1. row ***************************
        Table: t_long_keys
@@ -338,9 +348,11 @@ Create Table: CREATE TABLE `t_long_keys` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 1 row in set (0.001 sec)
 ```
+
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
 ```
+
 {% code overflow="wrap" %}
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys%';;
@@ -355,6 +367,7 @@ SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name LIKE '%t_long_keys
 +----------+----------------------+------+--------+-------+------------+---------------+------------+
 1 row in set (0.003 sec)
 ```
+
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_COLUMNS WHERE TABLE_ID=64;
 ```
@@ -558,7 +571,7 @@ Index columns names are listed between parenthesis. After each column, a prefix 
 {% endtab %}
 
 {% tab title="< 11.4 / 10.8" %}
-Index columns names are listed between parenthesis. After each column, a prefix length can be specified. If no length is specified, the whole column will be indexed. `ASC` and `DESC` can be specified. Prior to [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), this was only for compatibility with other DBMSs, but had no meaning in MariaDB. From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), individual columns in the index can now be explicitly sorted in ascending or descending order. This can be useful for optimizing certain ORDER BY cases ([MDEV-13756](https://jira.mariadb.org/browse/MDEV-13756), [MDEV-26938](https://jira.mariadb.org/browse/MDEV-26938), [MDEV-26939](https://jira.mariadb.org/browse/MDEV-26939), [MDEV-26996](https://jira.mariadb.org/browse/MDEV-26996)). From [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-0-release-notes), not only ascending, but also descending, indexes can now be used to optimize [MIN()](../../../sql-functions/aggregate-functions/min.md) and [MAX()](../../../sql-functions/aggregate-functions/max.md) ([MDEV-27576](https://jira.mariadb.org/browse/MDEV-27576)).
+Index columns names are listed between parenthesis. After each column, a prefix length can be specified. If no length is specified, the whole column will be indexed. `ASC` and `DESC` can be specified. Prior to [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), this was only for compatibility with other DBMSs, but had no meaning in MariaDB. From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), individual columns in the index can now be explicitly sorted in ascending or descending order. This can be useful for optimizing certain ORDER BY cases ([MDEV-13756](https://jira.mariadb.org/browse/MDEV-13756), [MDEV-26938](https://jira.mariadb.org/browse/MDEV-26938), [MDEV-26939](https://jira.mariadb.org/browse/MDEV-26939), [MDEV-26996](https://jira.mariadb.org/browse/MDEV-26996)). From [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-0-release-notes), not only ascending, but also descending, indexes can now be used to optimize [MIN()](../../../sql-functions/aggregate-functions/min.md) and [MAX()](../../../sql-functions/aggregate-functions/max.md) ([MDEV-27576](https://jira.mariadb.org/browse/MDEV-27576)).
 {% endtab %}
 {% endtabs %}
 

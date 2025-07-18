@@ -24,7 +24,7 @@ Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNIO
 
 UNION queries cannot be used with [aggregate functions](../../../../sql-functions/aggregate-functions/).
 
-`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), in which case all three have the same precedence.
+`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle), in which case all three have the same precedence.
 
 ### ALL/DISTINCT
 

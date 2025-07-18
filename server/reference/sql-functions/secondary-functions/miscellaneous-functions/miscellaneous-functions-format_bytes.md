@@ -1,7 +1,7 @@
 # FORMAT\_BYTES
 
 {% hint style="info" %}
-`FORMAT_BYTES` is available from MariaDB [11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118).
+`FORMAT_BYTES` is available from MariaDB [11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118).
 {% endhint %}
 
 ## Syntax

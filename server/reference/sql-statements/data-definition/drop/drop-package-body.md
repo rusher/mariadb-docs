@@ -21,7 +21,7 @@ Note, `DROP PACKAGE BODY` drops only the package implementation, but does not dr
 * [DROP PACKAGE](drop-package.md)
 * [CREATE PACKAGE BODY](../create/create-package-body.md)
 * [SHOW CREATE PACKAGE BODY](../../administrative-sql-statements/show/show-create-package-body.md)
-* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -50,7 +50,7 @@ There are several ways to add the repository.
 
 One way to add an `apt` repository is by using the [add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html) command. This command will add the repository configuration to `/etc/apt/sources.list`.
 
-For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `apt` repository:
+For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `apt` repository:
 
 ```
 sudo apt-get install software-properties-common
@@ -67,7 +67,7 @@ sudo apt update
 
 Another way to add an `apt` repository is by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `/etc/apt/sources.list.d/`.
 
-For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could create the `MariaDB.list` file in `/etc/apt/sources.list.d/` with the following contents to add the MariaDB `apt` repository:
+For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could create the `MariaDB.list` file in `/etc/apt/sources.list.d/` with the following contents to add the MariaDB `apt` repository:
 
 ```
 # MariaDB 10.6 repository list - created 2019-01-27 09:50 UTC
@@ -110,9 +110,9 @@ The MariaDB Foundation archives repositories of old minor releases at the follow
 
 *
 
-Archives are only of the distros and architectures supported at the time of release. For example, [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-21-release-notes) exists for Ubuntu `bionic, focal, jammy, kinetic,` and #lunar`is obtained looking in [dists](https://archive.mariadb.org/mariadb-10.6.21/repo/ubuntu/dists).`
+Archives are only of the distros and architectures supported at the time of release. For example, [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes) exists for Ubuntu `bionic, focal, jammy, kinetic,` and #lunar`is obtained looking in [dists](https://archive.mariadb.org/mariadb-10.6.21/repo/ubuntu/dists).`
 
-For example, if you wanted to pin your repository to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes) on Ubuntu 20.04 LTS (Focal), then you would have to first remove any existing MariaDB repository source list file from `/etc/apt/sources.list.d/`. And then you could use the following commands to add the MariaDB `apt-get` repository:
+For example, if you wanted to pin your repository to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1059-release-notes) on Ubuntu 20.04 LTS (Focal), then you would have to first remove any existing MariaDB repository source list file from `/etc/apt/sources.list.d/`. And then you could use the following commands to add the MariaDB `apt-get` repository:
 
 ```
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el,s390x] http://archive.mariadb.org/mariadb-10.5.9/repo/ubuntu/ focal main main/debug'
@@ -150,13 +150,13 @@ If you added the `apt` repository by using the [add-apt-repository](https://manp
 
 First, look for the repository string for the old version in `/etc/apt/sources.list`.
 
-And then, you can remove the repository for the old version by executing the [add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html) command and providing the `--remove` option. For example, if you wanted to remove a [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) repository, then you could do so by executing something like the following:
+And then, you can remove the repository for the old version by executing the [add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html) command and providing the `--remove` option. For example, if you wanted to remove a [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) repository, then you could do so by executing something like the following:
 
 ```
 sudo add-apt-repository --remove 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic main'
 ```
 
-After that, you can add the repository for the new version with the [add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html) command. For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `apt` repository:
+After that, you can add the repository for the new version with the [add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html) command. For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `apt` repository:
 
 ```
 sudo apt-get install software-properties-common
@@ -169,11 +169,11 @@ And then you would have to update the package cache by executing the following c
 sudo apt update
 ```
 
-After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
+After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 
 **Updating a Source List File**
 
-If you added the `apt` repository by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `/etc/apt/sources.list.d/`, then you can update the major release that the repository uses by updating the source list file in-place. For example, if you wanted to change the repository from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), and if the source list file was at `/etc/apt/sources.list.d/MariaDB.list`, then you could execute the following:
+If you added the `apt` repository by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `/etc/apt/sources.list.d/`, then you can update the major release that the repository uses by updating the source list file in-place. For example, if you wanted to change the repository from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105) to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), and if the source list file was at `/etc/apt/sources.list.d/MariaDB.list`, then you could execute the following:
 
 ```
 sudo sed -i 's/10.5/10.6/' /etc/apt/sources.list.d/MariaDB.list
@@ -185,7 +185,7 @@ And then you would have to update the package cache by executing the following c
 sudo apt update
 ```
 
-After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
+After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 
 ### Importing the MariaDB GPG Public Key
 
@@ -356,7 +356,7 @@ In the output you will see the available versions.
 To install an older version of a package instead of the latest version we just\
 need to specify the package name, an equal sign, and then the version number.
 
-However, when installing an older version of a package, if `apt-get` has to install dependencies, then it will automatically choose to install the latest versions of those packages. To ensure that all MariaDB packages are on the same version in this scenario, it is necessary to specify them all. Therefore, to install [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). from this `apt` repository, we would do the following:
+However, when installing an older version of a package, if `apt-get` has to install dependencies, then it will automatically choose to install the latest versions of those packages. To ensure that all MariaDB packages are on the same version in this scenario, it is necessary to specify them all. Therefore, to install [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). from this `apt` repository, we would do the following:
 
 ```
 sudo apt-get install mariadb-server=10.6.21-1 mariadb-client=10.6.21-1 libmariadb3=10.6.21-1 mariadb-backup=10.6.21-1 mariadb-common=10.6.21-1
@@ -372,7 +372,7 @@ A tarball that contains the `.deb` packages can be downloaded from the following
 
 * [downloads.mariadb.com](https://downloads.mariadb.com)
 
-For example, to install the [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-21-release-notes) `.deb` packages on Ubuntu 18.04 LTS (Bionic), you could execute the following:
+For example, to install the [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes) `.deb` packages on Ubuntu 18.04 LTS (Bionic), you could execute the following:
 
 ```
 sudo apt-get update

@@ -51,6 +51,6 @@ layout:
 [show-tables.md](../../sql-statements/administrative-sql-statements/show/show-tables.md)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084" %}
-[Error 4084: Sequence has run out](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}

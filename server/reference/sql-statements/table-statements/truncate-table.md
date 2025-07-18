@@ -50,7 +50,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../transactions/wait-and-nowait
 
 ### Oracle-mode
 
-[Oracle-mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) permits the optional keywords `REUSE STORAGE` or `DROP STORAGE` to be used.
+[Oracle-mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) permits the optional keywords `REUSE STORAGE` or `DROP STORAGE` to be used.
 
 ```sql
 TRUNCATE [TABLE] tbl_name [{DROP | REUSE} STORAGE] [WAIT n | NOWAIT]
@@ -72,7 +72,7 @@ Setting [innodb\_adaptive\_hash\_index=OFF](../../../server-usage/storage-engine
 
 * [TRUNCATE function](../../sql-functions/numeric-functions/truncate.md)
 * [innodb\_safe\_truncate](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) system variable
-* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

@@ -105,7 +105,7 @@ SELECT * FROM members ORDER BY name LIMIT 2,1;
 +-------+
 ```
 
-From [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), `LIMIT` can be used in a multi-table update:
+From [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), `LIMIT` can be used in a multi-table update:
 
 ```sql
 CREATE TABLE warehouse (product_id INT, qty INT);

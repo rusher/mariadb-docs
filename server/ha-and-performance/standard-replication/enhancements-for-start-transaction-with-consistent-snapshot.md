@@ -46,7 +46,7 @@ SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 
 Then transaction T2 will always see the same value for `xtradb_table.a` and`pbxt_table.b`.
 
-(In [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and earlier, and MySQL at least up to 5.5, `START TRANSACTION WITH CONSISTENT SNAPSHOT` did not give any guarantees of consistency between\
+(In [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and earlier, and MySQL at least up to 5.5, `START TRANSACTION WITH CONSISTENT SNAPSHOT` did not give any guarantees of consistency between\
 different storage engines. So it is possible, even with a "consistent"\
 snapshot, to see the changes in a transaction only to InnoDB/XtraDB tables, not\
 PBXT tables, for example.)
@@ -92,7 +92,7 @@ mariadb-dump --single-transaction --master-data ...
 
 The dump will be fully non-blocking if both the mariadb-dump program and the\
 queried server include the necessary feature (eg. both are from [MariaDB\
-5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)-rpl, 5.3, or higher). In other cases, it will fall back to the old\
+5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)-rpl, 5.3, or higher). In other cases, it will fall back to the old\
 blocking method using `FLUSH TABLES WITH READ LOCK`.
 
 For more information on the design and implementation of this feature, see [MWL#136](https://askmonty.org/worklog/?tid=136).

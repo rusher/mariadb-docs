@@ -47,7 +47,7 @@ When one of these special options is provided, the server only kills its binary 
 
 In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) and later, it is still not possible to enable this behavior by default. This means that this behavior is currently inaccessible when shutting down the server using tools like [systemd](../../server-management/starting-and-stopping-mariadb/systemd.md) or [sysVinit](../../server-management/starting-and-stopping-mariadb/sysvinit.md).
 
-In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and before, it is recommended to manually switchover replicas to a new primary before shutting down the old primary.
+In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and before, it is recommended to manually switchover replicas to a new primary before shutting down the old primary.
 
 ### ACK Receiver Thread
 

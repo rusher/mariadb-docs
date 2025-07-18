@@ -30,8 +30,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value:
-  * > \= [MariaDB 10.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1048-release-notes): `1024`
-  * <= [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes): `8192`
+  * > \= [MariaDB 10.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1048-release-notes): `1024`
+  * <= [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes): `8192`
 * Range: `0` to `65500`
 
 #### `connect_default_depth`
@@ -43,7 +43,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value:`5`
 * Range: `-1` to `16`
-* Introduced: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes)
+* Introduced: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes)
 
 #### `connect_default_prec`
 
@@ -54,7 +54,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value:`6`
 * Range: `0` to `16`
-* Introduced: [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes), [MariaDB 10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes)
+* Introduced: [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1059-release-notes), [MariaDB 10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes)
 
 #### `connect_enable_mongo`
 
@@ -64,8 +64,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic:
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes)
-* Removed: [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)
+* Introduced: [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes)
+* Removed: [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)
 
 #### `connect_exact_info`
 
@@ -84,7 +84,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes), [MariaDB 10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes)
+* Introduced: [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1059-release-notes), [MariaDB 10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes)
 
 #### `connect_indx_map`
 
@@ -113,7 +113,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Data Type: `boolean`
 * Default Value: `ON`
-* Introduced: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes)
+* Introduced: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes)
 
 #### `connect_json_grp_size`
 
@@ -194,8 +194,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
   * `STMT` or `64`: Currently executing statement
   * `HANDLER` or `128`: Creating and dropping CONNECT handlers
   * `BLOCK` or `256`: Creating and dropping CONNECT objects
-  * `MONGO` or `512`: Mongo and REST (from [Connect 1.06.0010](./)) tracing
-:
+  * `MONGO` or `512`: Mongo and REST (from [Connect 1.06.0010](./)) tracing :
   * `set global connect_xtrace=0; No trace`
   * `set global connect_xtrace='YES'; By name`
   * `set global connect_xtrace=1; By value`

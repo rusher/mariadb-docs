@@ -12,7 +12,7 @@ A [BLOB](blob.md) column with a maximum length of 4,294,967,295 bytes (232<sup>-
 
 ### Oracle Mode
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `BLOB` is a synonym for `LONGBLOB`.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle), `BLOB` is a synonym for `LONGBLOB`.
 
 ## Examples
 
@@ -60,7 +60,7 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 * [BLOB](blob.md)
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

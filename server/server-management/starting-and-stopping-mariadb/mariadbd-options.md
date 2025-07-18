@@ -1,6 +1,6 @@
 # mariadbd Option
 
-This page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
+This page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 In many cases, the entry here is a summary, and links to the full description.
 
@@ -8,7 +8,7 @@ By convention, [server variables](../../ha-and-performance/optimization-and-tuni
 
 See [Configuring MariaDB with Option Files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) for which files and groups mariadbd reads for it's default options.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 ## Option Prefixes
 
@@ -113,7 +113,7 @@ Options that are also system variables are listed after:
 #### `--default-character-set`
 
 * Commandline: `--default-character-set=name`
-* Description: Still available as an option for setting the default character set for clients and their connections, it was deprecated and removed in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) as a server option. Use [character-set-server](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server) instead.
+* Description: Still available as an option for setting the default character set for clients and their connections, it was deprecated and removed in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) as a server option. Use [character-set-server](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server) instead.
 
 #### `--language`
 
@@ -197,7 +197,7 @@ The following options are related to [replication](../../server-usage/storage-en
 * Commandline: `--binlog-do-db=name`
 * Description: This option allows you to configure a [replication master](../../ha-and-performance/standard-replication/replication-overview.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
-  * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_do_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
+  * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_do_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
   * When setting it on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
   * See [Replication Filters](../../ha-and-performance/standard-replication/replication-filters.md) for more information.
 
@@ -206,14 +206,14 @@ The following options are related to [replication](../../server-usage/storage-en
 * Commandline: `--binlog-ignore-db=name`
 * Description: This option allows you to configure a [replication master](../../ha-and-performance/standard-replication/replication-overview.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
-  * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
+  * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
   * When setting it on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
   * See [Replication Filters](../../ha-and-performance/standard-replication/replication-filters.md) for more information.
 
 #### `--binlog-row-event-max-size`
 
 * Commandline: `--binlog-row-event-max-size=#`
-* Description: The maximum size of a row-based [binary log](../server-monitoring-logs/binary-log/) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_event_max_size) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
+* Description: The maximum size of a row-based [binary log](../server-monitoring-logs/binary-log/) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_event_max_size) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
 * Default value `8192`
 
 #### `--disconnect-slave-event-count`
@@ -229,7 +229,7 @@ The following options are related to [replication](../../server-usage/storage-en
 #### `--init-rpl-role`
 
 * Commandline: `--init-rpl-role=name`
-* Description: Set the replication role. From [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-19-release-notes), [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-3-release-notes) and [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes), changes the condition for [semi-sync recovery](../../ha-and-performance/standard-replication/semisynchronous-replication.md) to truncate the [binlog](../server-monitoring-logs/binary-log/) to instead use this option, when set to SLAVE. This allows for both [rpl\_semi\_sync\_master\_enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) and [rpl\_semi\_sync\_slave\_enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled) to be set for a primary that is restarted, and no transactions will be lost, so long as `--init-rpl-role` is not set to SLAVE. In earlier versions, for servers configured with both [rpl\_semi\_sync\_master\_enabled=1](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) and [rpl\_semi\_sync\_slave\_enabled=1](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled), if a primary is just re-started (i.e. retaining its role as primary), it can truncate its binlog to drop transactions which its replica(s) have already received and executed. If this happens, when the replica reconnects, its [gtid\_slave\_pos](../../ha-and-performance/standard-replication/gtid.md) can be ahead of the recovered primary’s [gtid\_binlog\_pos](../../ha-and-performance/standard-replication/gtid.md), resulting in an error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](mariadbd-options.md#-init-rpl-role).
+* Description: Set the replication role. From [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-19-release-notes), [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-3-release-notes) and [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes), changes the condition for [semi-sync recovery](../../ha-and-performance/standard-replication/semisynchronous-replication.md) to truncate the [binlog](../server-monitoring-logs/binary-log/) to instead use this option, when set to SLAVE. This allows for both [rpl\_semi\_sync\_master\_enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) and [rpl\_semi\_sync\_slave\_enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled) to be set for a primary that is restarted, and no transactions will be lost, so long as `--init-rpl-role` is not set to SLAVE. In earlier versions, for servers configured with both [rpl\_semi\_sync\_master\_enabled=1](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) and [rpl\_semi\_sync\_slave\_enabled=1](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled), if a primary is just re-started (i.e. retaining its role as primary), it can truncate its binlog to drop transactions which its replica(s) have already received and executed. If this happens, when the replica reconnects, its [gtid\_slave\_pos](../../ha-and-performance/standard-replication/gtid.md) can be ahead of the recovered primary’s [gtid\_binlog\_pos](../../ha-and-performance/standard-replication/gtid.md), resulting in an error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](mariadbd-options.md#-init-rpl-role).
 * Valid values: Empty, `MASTER` or `SLAVE`
 
 #### `--log-basename`
@@ -428,13 +428,13 @@ Options that are also system variables are listed after:
 
 * Commandline: `--record-buffer=#`
 * Description: Old alias for [read\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_buffer_size).
-* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `--table-cache`
 
 * Commandline: `--table-open-cache=#`
 * Description: Removed; use [--table-open-cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache) instead.
-* Removed: [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes)
+* Removed: [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes)
 
 ### Optimizer Options and System Variables
 
@@ -482,12 +482,12 @@ Options that are also system variables are listed after:
 
 * Commandline: `----skip-bdb`
 * Description: Deprecated option; Exists only for compatibility with very old my.cnf files.
-* Removed: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)
+* Removed: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)
 
 #### `--external-locking`
 
 * Commandline: `--external-locking`
-* Description: Use system (external) locking (disabled by default). With this option enabled you can run [myisamchk](../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) to test (not repair) tables while the server is running. Disable with [--skip-external-locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking). From [MariaDB 10.2.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10240-release-notes), [MariaDB 10.3.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10331-release-notes), [MariaDB 10.4.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10421-release-notes), [MariaDB 10.5.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10512-release-notes), [MariaDB 10.6.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1064-release-notes) and all later version, this effects InnoDB and can be used to prevent multiple instances running on the same data.
+* Description: Use system (external) locking (disabled by default). With this option enabled you can run [myisamchk](../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) to test (not repair) tables while the server is running. Disable with [--skip-external-locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking). From [MariaDB 10.2.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10240-release-notes), [MariaDB 10.3.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10331-release-notes), [MariaDB 10.4.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10421-release-notes), [MariaDB 10.5.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-10512-release-notes), [MariaDB 10.6.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1064-release-notes) and all later version, this effects InnoDB and can be used to prevent multiple instances running on the same data.
 
 ### MyISAM Storage Engine Options
 
@@ -530,7 +530,7 @@ The options related to the [InnoDB](../../server-usage/storage-engines/innodb/in
 #### `--innodb`
 
 * Commandline: `--innodb=value`, `--skip-innodb`
-* Description: This variable controls whether or not to load the InnoDB storage engine. Possible values are `ON`, `OFF`, `FORCE` or `FORCE_PLUS_PERMANENT` (from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)). If set to `OFF` (the same as --skip-innodb), since InnoDB is the default storage engine, the server will not start unless another storage engine has been chosen with [--default-storage-engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine). `FORCE` means that the storage engine must be successfully loaded, or else the server won't start. `FORCE_PLUS_PERMANENT` enables the plugin, but if plugin cannot initialize, the server will not start. In addition, the plugin cannot be uninstalled while the server is running.
+* Description: This variable controls whether or not to load the InnoDB storage engine. Possible values are `ON`, `OFF`, `FORCE` or `FORCE_PLUS_PERMANENT` (from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)). If set to `OFF` (the same as --skip-innodb), since InnoDB is the default storage engine, the server will not start unless another storage engine has been chosen with [--default-storage-engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine). `FORCE` means that the storage engine must be successfully loaded, or else the server won't start. `FORCE_PLUS_PERMANENT` enables the plugin, but if plugin cannot initialize, the server will not start. In addition, the plugin cannot be uninstalled while the server is running.
 
 #### `--innodb-cmp`
 
@@ -561,14 +561,14 @@ The options related to the [InnoDB](../../server-usage/storage-engines/innodb/in
 * Commandline: `--innodb-file-io-threads`
 * Description:
 * Default: `4`
-* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 #### `--innodb-index-stats`
 
 * Commandline: `--innodb-index-stats`
 * Description:
 * Default: `ON`
-* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 #### `--innodb-lock-waits`
 
@@ -587,7 +587,7 @@ The options related to the [InnoDB](../../server-usage/storage-engines/innodb/in
 * Commandline: `--innodb-rseg`
 * Description:
 * Default: `ON`
-* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 #### `--innodb-status-file`
 
@@ -606,7 +606,7 @@ The options related to the [InnoDB](../../server-usage/storage-engines/innodb/in
 * Commandline: `--innodb-sys-stats`
 * Description:
 * Default: `ON`
-* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 #### `--innodb-sys-tables`
 
@@ -619,7 +619,7 @@ The options related to the [InnoDB](../../server-usage/storage-engines/innodb/in
 * Commandline: `--innodb-table-stats`
 * Description:
 * Default: `ON`
-* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 #### `--innodb-trx`
 
@@ -1174,8 +1174,8 @@ Some options and system variables related to [Galera Cluster](https://github.com
 
 #### `--sync-sys`
 
-* Description: Enable/disable system sync calls. Syncs should only be turned off (`--disable-sync-sys`) when running tests or debugging! Replaced by [debug-no-sync](mariadbd-options.md#-debug-no-sync) from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
-* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Description: Enable/disable system sync calls. Syncs should only be turned off (`--disable-sync-sys`) when running tests or debugging! Replaced by [debug-no-sync](mariadbd-options.md#-debug-no-sync) from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `--thread-alarm`
 
@@ -1194,7 +1194,7 @@ Options that are also system variables are listed after:
 #### `--allow-suspicious-udfs`
 
 * Commandline: `--allow-suspicious-udfs`
-* Description: Allows use of [user-defined functions](../../server-usage/user-defined-functions/) consisting of only one symbol `x()` without corresponding `x_init()` or `x_deinit()`. That also means that one can load any function from any library, for example `exit()` from `libc.so`. Not recommended unless you require old UDFs with one symbol that cannot be recompiled. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs) as well.
+* Description: Allows use of [user-defined functions](../../server-usage/user-defined-functions/) consisting of only one symbol `x()` without corresponding `x_init()` or `x_deinit()`. That also means that one can load any function from any library, for example `exit()` from `libc.so`. Not recommended unless you require old UDFs with one symbol that cannot be recompiled. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs) as well.
 
 #### `--bootstrap`
 
@@ -1221,19 +1221,19 @@ Options that are also system variables are listed after:
 * Commandline: `--getopt-prefix-matching={0|1}`
 * Description: Makes it possible to disable historical "unambiguous prefix" matching in the command-line option parsing.
 * Default: TRUE
-* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
+* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 
 #### `--help`
 
 * Commandline: `--help`
-* Description: Displays help with many commandline options described, and exits. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), includes deprecation information.
+* Description: Displays help with many commandline options described, and exits. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), includes deprecation information.
 
 #### `--log-ddl-recovery`
 
 * Commandline: `--log-ddl-recovery=name`
 * Description: Path to file used for recovery of DDL statements after a crash.
 * Default Value: `ddl-recover.log`
-* Introduced: [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
+* Introduced: [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)
 
 #### `--log-short-format`
 
@@ -1275,7 +1275,7 @@ Options that are also system variables are listed after:
 
 * Commandline: `--one-thread`
 * Description: (Deprecated): Only use one thread (for debugging under Linux). Use [thread-handling=no-threads](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) instead.
-* Removed: [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)
+* Removed: [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)
 
 #### `--plugin-load`
 
@@ -1320,7 +1320,7 @@ Options that are also system variables are listed after:
 #### `--skip-grant-tables`
 
 * Commandline: `--skip-grant-tables`
-* Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../clients-and-utilities/administrative-tools/mariadb-admin.md), [mariadb-admin reload](../../clients-and-utilities/administrative-tools/mariadb-admin.md) or [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
+* Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../clients-and-utilities/administrative-tools/mariadb-admin.md), [mariadb-admin reload](../../clients-and-utilities/administrative-tools/mariadb-admin.md) or [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
 
 Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler/) also depends on the grant tables for its functionality, it is automatically disabled when running with `--skip-grant-tables`.
 
@@ -1337,7 +1337,7 @@ Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler
 #### `--skip-slave-start`
 
 * Commandline: `--skip-slave-start`
-* Description: If set, replica is not autostarted. From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), server will display in the log if this option is set.
+* Description: If set, replica is not autostarted. From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), server will display in the log if this option is set.
 
 #### `--skip-ssl`
 
@@ -1347,20 +1347,20 @@ Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler
 #### `--skip-symlink`
 
 * Commandline: `--skip-symlink`
-* Description: Don't allow symlinking of tables. Deprecated and removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). Use [symbolic-links](mariadbd-options.md#-symbolic-links) with the `skip` [option prefix](mariadbd-options.md#option-prefixes) instead.
-* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Description: Don't allow symlinking of tables. Deprecated and removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). Use [symbolic-links](mariadbd-options.md#-symbolic-links) with the `skip` [option prefix](mariadbd-options.md#option-prefixes) instead.
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `--skip-thread-priority`
 
 * Commandline: `--skip-thread-priority`
-* Description: Don't give threads different priorities. Deprecated and removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
-* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Description: Don't give threads different priorities. Deprecated and removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 #### `--sql-bin-update-same`
 
 * Commandline: `--sql-bin-update-same=#`
-* Description: The update log was deprecated in version 5.0 and replaced by the [binary log](../server-monitoring-logs/binary-log/), so this option did nothing since then. Deprecated and removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
-* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Description: The update log was deprecated in version 5.0 and replaced by the [binary log](../server-monitoring-logs/binary-log/), so this option did nothing since then. Deprecated and removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `--ssl`
 
@@ -1386,7 +1386,7 @@ Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler
 
 * Commandline: `--temp-pool`
 * Description: Using this option will cause most temporary files created to use a small set of names, rather than a unique name for each new file. This behavior works around a bug in old Linux kernels where the kernel appeared to "leak" memory. In a Docker environment it might look like an unbounded working-set memory growth.\
-  Defaults to `1` until [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1056-release-notes), use `--skip-temp-pool` to disable. Defaults to `0` from [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), as benchmarking shows it causes a heavy mutex contention.
+  Defaults to `1` until [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1056-release-notes), use `--skip-temp-pool` to disable. Defaults to `0` from [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), as benchmarking shows it causes a heavy mutex contention.
 
 #### `--test-expect-abort`
 

@@ -28,9 +28,9 @@ Some other important InnoDB variables:
 
 * [innodb\_max\_dirty\_pages\_pct\_lwm](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm)
 * [innodb\_read\_ahead\_threshold](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)
-* [innodb\_buffer\_pool\_instances](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances). Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes).
-* [innodb\_adaptive\_max\_sleep\_delay](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1055-release-notes).
-* [innodb\_thread\_concurrency](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1055-release-notes).
+* [innodb\_buffer\_pool\_instances](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances). Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1051-release-notes).
+* [innodb\_adaptive\_max\_sleep\_delay](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1055-release-notes).
+* [innodb\_thread\_concurrency](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_thread_concurrency). Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1055-release-notes).
 
 ## [Aria](../../../../server-usage/storage-engines/aria/aria-storage-engine.md) Storage Engine
 
@@ -58,7 +58,7 @@ If `Aria_pagecache_reads` is much smaller than `Aria_pagecache_read_request` and
 
 ## [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/)
 
-* If you don't use MyISAM tables explicitly (true for most [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)+ users), you can set [key\_buffer\_size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
+* If you don't use MyISAM tables explicitly (true for most [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)+ users), you can set [key\_buffer\_size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
 
 ## Using in memory temporary tables
 
@@ -86,7 +86,7 @@ You can increase the storage for internal temporary tables by setting [max\_heap
 
 ### A Lot of Fast Connections + Small Set of Queries + Disconnects
 
-* If you are doing a lot of fast connections / disconnects, you should increase [back\_log](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#back_log) and if you are running [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) or below [thread\_cache\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size).
+* If you are doing a lot of fast connections / disconnects, you should increase [back\_log](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#back_log) and if you are running [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) or below [thread\_cache\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size).
 * If you have a lot (> 128) of simultaneous running fast queries, you should consider setting [thread\_handling](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) to `pool_of_threads`.
 
 ### Connecting From a Lot of Different Machines

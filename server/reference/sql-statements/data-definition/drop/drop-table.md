@@ -106,7 +106,7 @@ WHERE TABLE_SCHEMA = 'mydb';
 
 ## Atomic DROP TABLE
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
+**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)
 
 {% tabs %}
 {% tab title="Current" %}
@@ -114,7 +114,7 @@ WHERE TABLE_SCHEMA = 'mydb';
 {% endtab %}
 
 {% tab title="< 10.6.1" %}
-There is a small chance that, during a server crash happening in the middle of `DROP TABLE`, some storage engines that were using multiple storage files, like [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), could have only a part of its internal files dropped. In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), `DROP TABLE` was extended to be able to delete a table that was only partly dropped ([MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412)) as explained above. Atomic `DROP TABLE` is the final piece to make `DROP TABLE` fully reliable. Dropping multiple tables is crash-safe. See [Atomic DDL](../atomic-ddl.md) for more information.
+There is a small chance that, during a server crash happening in the middle of `DROP TABLE`, some storage engines that were using multiple storage files, like [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), could have only a part of its internal files dropped. In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), `DROP TABLE` was extended to be able to delete a table that was only partly dropped ([MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412)) as explained above. Atomic `DROP TABLE` is the final piece to make `DROP TABLE` fully reliable. Dropping multiple tables is crash-safe. See [Atomic DDL](../atomic-ddl.md) for more information.
 {% endtab %}
 {% endtabs %}
 

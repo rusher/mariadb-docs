@@ -1,6 +1,6 @@
 # Aria Group Commit
 
-Since [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2), the [Aria storage engine](./) has included a feature to group commits to speed up concurrent threads doing many inserts into the same or different Aria tables.
+Since [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2), the [Aria storage engine](./) has included a feature to group commits to speed up concurrent threads doing many inserts into the same or different Aria tables.
 
 By default, group commit for Aria is turned off. It is controlled by the[aria\_group\_commit](aria-system-variables.md) and [aria\_group\_commit\_interval](aria-system-variables.md) system variables.
 

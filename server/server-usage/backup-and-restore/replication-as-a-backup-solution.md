@@ -22,7 +22,7 @@ Note that when backing up off a replica server, it is important to ensure that t
 ## See Also
 
 * [Replication](../../ha-and-performance/standard-replication/)
-* [Replication Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#replication-compatibility)
+* [Replication Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility#replication-compatibility)
 * [Backup & Restore](./)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

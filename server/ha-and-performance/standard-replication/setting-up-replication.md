@@ -59,7 +59,7 @@ log-bin
 server_id=1
 ```
 
-For replication from MySQL 8.0 to MariaDB [requires slight more configurations](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility).
+For replication from MySQL 8.0 to MariaDB [requires slight more configurations](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility).
 
 ### Settings to Check
 
@@ -149,7 +149,7 @@ Slave_SQL_Running: Yes
 * Replicating from MySQL 5.5 to MariaDB should just work. When using a MariaDB as a replica, it may be necessary to set [binlog\_checksum](replication-and-binary-log-system-variables.md) to NONE.
 * Replicating from MySQL 5.6 without GTID to MariaDB 10+ should work.
 * Replication from MySQL 5.6 with GTID, binlog\_rows\_query\_log\_events and ignorable events works. In this case MariaDB will remove the MySQL GTIDs and other unneeded events and instead adds its own GTIDs.
-* [Replication from MySQL 8 to MariaDB](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
+* [Replication from MySQL 8 to MariaDB](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
 
 ### See Also
 

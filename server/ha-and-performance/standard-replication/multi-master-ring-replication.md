@@ -164,7 +164,7 @@ Note that when one sets up a master->slave replication, all configurations are d
 Some other options:
 
 * For semi-sync setups, the old master1 can be re-used as slave3 if re-started with `--init-rpl-role=SLAVE` during recovery
-* For non-semi-synchronous setups, one can use option [CHANGE MASTER TO MASTER\_DEMOTE\_TO\_SLAVE=1](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_demote_to_slave) (requires [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011) or higher).
+* For non-semi-synchronous setups, one can use option [CHANGE MASTER TO MASTER\_DEMOTE\_TO\_SLAVE=1](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_demote_to_slave) (requires [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011) or higher).
 
 ### See also
 

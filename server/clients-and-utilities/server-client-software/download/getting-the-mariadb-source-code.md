@@ -206,7 +206,7 @@ $BZR branch $MARIA_REPO $MARIA_MASTER
 $BZR branch $MARIA_MASTER $MARIA_WORK
 ```
 
-Check out packaging sources (only for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and below):
+Check out packaging sources (only for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and below):
 
 ```
 $BZR branch $PACKAGING_REPO $PACKAGING_MASTER

@@ -38,9 +38,9 @@ Note that it is not necessary to use `DROP VIEW` to replace an existing view, be
 
 ### Atomic DDL
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
+**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)
 
-[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../../reference/sql-statements/data-definition/atomic-ddl.md) and `DROP VIEW` for a singular view is atomic. Dropping multiple views is crash-safe.
+[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../../reference/sql-statements/data-definition/atomic-ddl.md) and `DROP VIEW` for a singular view is atomic. Dropping multiple views is crash-safe.
 
 ## Examples
 
@@ -74,6 +74,6 @@ SHOW WARNINGS;
 * [SHOW CREATE VIEWS](../../reference/sql-statements/administrative-sql-statements/show/show-create-view.md)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

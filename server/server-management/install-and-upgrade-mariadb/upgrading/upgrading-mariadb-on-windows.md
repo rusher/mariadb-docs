@@ -16,7 +16,7 @@ First, check everything listed in the Incompatibilities section of the article r
 
 MariaDB (and also MySQL) allows different versions of the product to co-exist\
 on the same machine, as long as these versions are different either in major or\
-minor version numbers. For example, it is possible to have say [MariaDB 5.1.51](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5151-release-notes)\
+minor version numbers. For example, it is possible to have say [MariaDB 5.1.51](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5151-release-notes)\
 and 5.2.6 to be installed on the same machine.
 
 However only a single instance of 5.2 can exist. If for example 5.2.7 is\
@@ -25,11 +25,11 @@ just replace 5.2.6 executables with 5.2.7 ones.
 
 Now imagine, that both 5.1 and 5.2 are installed on the same machine and we\
 want to upgrade the database instance running on 5.1 to the new version. In\
-this case special tools are requied. Traditionally, [mysql_upgrade](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) is used\
+this case special tools are requied. Traditionally, [mysql\_upgrade](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) is used\
 to accomplish this. On Windows, the[MySQL\
 upgrade](https://dev.mysql.com/doc/refman/5.5/en/windows-upgrading.html) is a complicated multiple-step manual process.
 
-Since [MariaDB 5.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-526-release-notes), the Windows distribution includes tools that simplify\
+Since [MariaDB 5.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-526-release-notes), the Windows distribution includes tools that simplify\
 migration between different versions and also allow migration between MySQL and\
 MariaDB.
 

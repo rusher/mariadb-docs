@@ -13,9 +13,9 @@ or the [DELETE](grant.md#table-privileges) privilege for the mysql database. Eac
 
 {% tabs %}
 {% tab title="Current" %}
-From [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1), by default, if you specify an account that is currently connected, it will not be deleted until the connection is closed. The connection will not automatically be closed. The statement will complete, and a warning, "Dropped users 'user'@'host\[,...]' have active connections. Use KILL CONNECTION if they should not be used anymore" issued.
+From [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1), by default, if you specify an account that is currently connected, it will not be deleted until the connection is closed. The connection will not automatically be closed. The statement will complete, and a warning, "Dropped users 'user'@'host\[,...]' have active connections. Use KILL CONNECTION if they should not be used anymore" issued.
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), if a user is connected, the DROP USER statement will fail with an error "Operation DROP USER failed for 'foo'@'localhost'".
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle), if a user is connected, the DROP USER statement will fail with an error "Operation DROP USER failed for 'foo'@'localhost'".
 {% endtab %}
 
 {% tab title="< MariaDB 12.1" %}

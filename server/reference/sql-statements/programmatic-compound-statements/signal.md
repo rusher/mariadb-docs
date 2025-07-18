@@ -148,7 +148,7 @@ END;
 * [RESIGNAL](resignal.md)
 * [DECLARE HANDLER](declare-handler.md)
 * [Stored Routines](../../../server-usage/stored-routines/)
-* [MariaDB Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes)
+* [MariaDB Error Codes](broken-reference)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

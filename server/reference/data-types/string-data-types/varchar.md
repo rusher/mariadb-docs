@@ -137,7 +137,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 ## Oracle Mode
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `VARCHAR2` is a synonym.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle), `VARCHAR2` is a synonym.
 
 ### For Storage Engine Developers
 

@@ -22,7 +22,7 @@ The storage engine API also allows storage engines to set or limit the logging f
 
 ### Statement-Based Logging
 
-In [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) and before, statement-based logging was the default. [Mixed logging](binary-log-formats.md#mixed-logging) is now the default.
+In [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) and before, statement-based logging was the default. [Mixed logging](binary-log-formats.md#mixed-logging) is now the default.
 
 When statement-based logging is enabled, statements are logged to the [binary log](./) exactly as they were executed. Temporary tables created on the primary will also be created on the replica.\
 This mode is only recommended where one needs to keep the binary log as small as possible, the primary and replica have identical data (including using the same storage engines for all tables), and all functions being used are deterministic (repeatable with the same arguments).\
@@ -121,7 +121,7 @@ START SLAVE
 
 ## Effect of the Binary Log Format on Replicas
 
-In [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes) and later, a replica will apply any events it gets from the primary, regardless of the binary log format. The [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable only applies to normal (not replicated) updates.
+In [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes) and later, a replica will apply any events it gets from the primary, regardless of the binary log format. The [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable only applies to normal (not replicated) updates.
 
 If you are running MySQL or an older MariaDB than 10.0.22, you should be aware of that if you are running the replica in `binlog_format=STATEMENT` mode, the replica will stop if the primary is used with `binlog_format` set to anything else than `STATEMENT`.
 

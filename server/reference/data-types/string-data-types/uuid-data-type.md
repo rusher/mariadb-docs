@@ -36,7 +36,7 @@ nnnnnnnnnnnn-vsss-Vhhh-mmmm-llllllll
 
 This provides a sorting order, assuming a UUIDv1 (node and timestamp) is used, of the node, followed by the timestamp. The key aspect is the timestamps are sequential.
 
-**MariaDB starting with** [**10.10**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
+**MariaDB starting with** [**10.10**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 {% tabs %}
 {% tab title="Current" %}

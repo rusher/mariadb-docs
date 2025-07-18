@@ -1,6 +1,6 @@
 # mysql.global\_priv Table
 
-The `mysql.global_priv` table contains information about users that have permission to access the MariaDB server, and their global privileges. It was introduced in [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes) to replace the [mysql.user](mysql-user-table.md) table in earlier versions.
+The `mysql.global_priv` table contains information about users that have permission to access the MariaDB server, and their global privileges. It was introduced in [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes) to replace the [mysql.user](mysql-user-table.md) table in earlier versions.
 
 Note that the MariaDB privileges occur at many levels. A user may not be granted `create` privilege at the user level, but may still have `create` permission on certain tables or databases, for example. See [privileges](../../../account-management-sql-statements/grant.md) for a more complete view of the MariaDB privilege system.
 
@@ -12,7 +12,7 @@ The `mysql.global_priv` table contains the following fields:
 | User  | char(80) | NO   | PRI |         | User (together with Host makes up the unique identifier for this account). |
 | Priv  | longtext | NO   |     |         | Global privileges, granted to the account and other account properties     |
 
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), in order to help the server understand which version a privilege record was written by, the `priv` field contains a new JSON field, `version_id` ([MDEV-21704](https://jira.mariadb.org/browse/MDEV-21704)).
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), in order to help the server understand which version a privilege record was written by, the `priv` field contains a new JSON field, `version_id` ([MDEV-21704](https://jira.mariadb.org/browse/MDEV-21704)).
 
 ## Examples
 
@@ -71,7 +71,7 @@ SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv)) FROM mysql.global_pr
 +--------------------------------------------------------------------------------------+
 ```
 
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes):
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes):
 
 ```
 GRANT FILE ON *.* TO user1@localhost;

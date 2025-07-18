@@ -10,7 +10,7 @@ mariadb-setpermission [options]
 
 `mariadb-setpermission` is a Perl script that was originally written and contributed by Luuk de Boer. It requires the DBI and DBD::mysql Perl modules to be installed.`mariadb-setpermission` can help you add users or databases or change passwords in MariaDB.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_setpermission`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_setpermission`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 It interactively sets permissions in the MariaDB grant tables, but does not check permissions which have already been set in MariaDB. So if you can't connect to MariaDB using the permission you just added, take a look at the permissions which have already been set in MariaDB.
 

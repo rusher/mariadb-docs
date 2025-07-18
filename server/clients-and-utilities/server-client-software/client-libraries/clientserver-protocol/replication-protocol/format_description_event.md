@@ -25,7 +25,7 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 * [uint<1>](../protocol-data-types.md#fixed-length-integers) Checksum Algorithm Type
 * [uint<4>](../protocol-data-types.md#fixed-length-integers) CRC32 4 bytes (value matters only if checksum algo is CRC32)
 
-### Example FDE of [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) With CRC32
+### Example FDE of [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) With CRC32
 
 ```
 4d af 15 5a 0f 01 00 00  00 fc 00 00 00 00 01 00  M..Z............
@@ -65,7 +65,7 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 * checksum\_algo = 01 => 1 (CRC32)
 * CRC32 bytes = d6 ce 13 e2
 
-### Example FDE of [MariaDB 10.1.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes) With CRC32
+### Example FDE of [MariaDB 10.1.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes) With CRC32
 
 ```
 12 ad 26 5a 0f 84 27 00  00 f5 00 00 00 f9 00 00  ..&Z..'.........

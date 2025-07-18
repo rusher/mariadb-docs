@@ -46,7 +46,7 @@ sudo systemctl start mariadb.service
 
 MariaDB's `systemd` unit file has a default startup timeout of about 90 seconds on most systems. If certain startup tasks, such as crash recovery, take longer than this default startup timeout, then `systemd` will assume that `mariadbd` has failed to startup, which causes `systemd` to kill the `mariadbd` process. To work around this, you can reconfigure the MariaDB `systemd` unit to have an [infinite timeout](systemd.md#configuring-the-systemd-service-timeout).
 
-Note that [systemd 236 added the EXTEND\_TIMEOUT\_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10133-release-notes), [MariaDB 10.2.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10215-release-notes), and [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during certain startup processes that can run long. Therefore, if you are using `systemd` 236 or later, then you should not need to manually override `TimeoutStartSec`, even if your startup tasks, such as crash recovery, run for longer than the configured value. See [MDEV-14705](https://jira.mariadb.org/browse/MDEV-14705) for more information.
+Note that [systemd 236 added the EXTEND\_TIMEOUT\_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10133-release-notes), [MariaDB 10.2.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10215-release-notes), and [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during certain startup processes that can run long. Therefore, if you are using `systemd` 236 or later, then you should not need to manually override `TimeoutStartSec`, even if your startup tasks, such as crash recovery, run for longer than the configured value. See [MDEV-14705](https://jira.mariadb.org/browse/MDEV-14705) for more information.
 
 ### Stopping the MariaDB Server Process
 
@@ -82,7 +82,7 @@ This template unit file allows you to interact with multiple MariaDB instances o
 sudo systemctl start mariadb@node1.service
 ```
 
-MariaDB's build system cannot include the `mariadb@.service` template unit file in [RPM](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) packages on platforms that have [cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) versions older than 3.3.0, because these [cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) versions have a [bug](https://public.kitware.com/Bug/view.php?id=14782) that causes it to encounter errors when packaging a file in RPMs if the file name contains the `@` character. MariaDB's RHEL 7 and CentOS 7 RPM build hosts only got a new enough [cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) version starting with [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes), [MariaDB 10.2.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10223-release-notes), and [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10314-release-notes). To use this functionality on a MariaDB version that does not have the file, you can copy the file from a package that does have the file.
+MariaDB's build system cannot include the `mariadb@.service` template unit file in [RPM](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) packages on platforms that have [cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) versions older than 3.3.0, because these [cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) versions have a [bug](https://public.kitware.com/Bug/view.php?id=14782) that causes it to encounter errors when packaging a file in RPMs if the file name contains the `@` character. MariaDB's RHEL 7 and CentOS 7 RPM build hosts only got a new enough [cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) version starting with [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes), [MariaDB 10.2.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10223-release-notes), and [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10314-release-notes). To use this functionality on a MariaDB version that does not have the file, you can copy the file from a package that does have the file.
 
 #### Default configuration of Multiple Instances in 10.4 and Later
 
@@ -153,7 +153,7 @@ When using [Galera Cluster](https://github.com/mariadb-corporation/docs-server/b
 
 MariaDB's `systemd` unit file has a default startup timeout of about 90 seconds on most systems. If an SST takes longer than this default startup timeout on a joiner node, then `systemd` will assume that `mariadbd` has failed to startup, which causes `systemd` to kill the `mariadbd` process on the joiner node. To work around this, you can reconfigure the MariaDB `systemd` unit to have an [infinite timeout](systemd.md#configuring-the-systemd-service-timeout). See [Introduction to State Snapshot Transfers (SSTs): SSTs and Systemd](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts#ssts-and-systemd) for more information.
 
-Note that [systemd 236 added the EXTEND\_TIMEOUT\_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10135-release-notes), [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes), and [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during long SSTs. Therefore, if you are using `systemd` 236 or later, then you should not need to manually override `TimeoutStartSec`, even if your SSTs run for longer than the configured value. See [MDEV-15607](https://jira.mariadb.org/browse/MDEV-15607) for more information.
+Note that [systemd 236 added the EXTEND\_TIMEOUT\_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10135-release-notes), [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes), and [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during long SSTs. Therefore, if you are using `systemd` 236 or later, then you should not need to manually override `TimeoutStartSec`, even if your SSTs run for longer than the configured value. See [MDEV-15607](https://jira.mariadb.org/browse/MDEV-15607) for more information.
 
 ## Configuring the Systemd Service
 
@@ -248,7 +248,7 @@ Note that [systemd 236 added the EXTEND\_TIMEOUT\_USEC environment variable](htt
 
 ### Configuring the Open Files Limit
 
-When using `systemd`, rather than setting the open files limit by setting the [open-files-limit](mariadbd-safe.md#mariadbd-safe-options) option for `mariadbd-safe` or the [open_files_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit) system variable, the limit can be changed by configuring the [LimitNOFILE](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=) option for the MariaDB `systemd` service. The default is set to `LimitNOFILE=16364` in `mariadb.service`.
+When using `systemd`, rather than setting the open files limit by setting the [open-files-limit](mariadbd-safe.md#mariadbd-safe-options) option for `mariadbd-safe` or the [open\_files\_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit) system variable, the limit can be changed by configuring the [LimitNOFILE](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#LimitCPU=) option for the MariaDB `systemd` service. The default is set to `LimitNOFILE=16364` in `mariadb.service`.
 
 For example, you can reconfigure the MariaDB `systemd` service to have a larger limit for open files by executing the following commands:
 
@@ -296,7 +296,7 @@ LimitCORE=infinity
 
 When using `systemd`, if you would like to redirect the [error log](../server-monitoring-logs/error-log.md) to the [syslog](https://linux.die.net/man/8/rsyslogd), then that can easily be done by doing the following:
 
-* Ensure that [log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not set.
+* Ensure that [log\_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not set.
 * Set [StandardOutput=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=).
 * Set [StandardError=syslog](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardError=).
 * Set [SyslogFacility=daemon](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#SyslogFacility=).
@@ -319,7 +319,7 @@ If you have multiple instances of MariaDB, then you may also want to set [Syslog
 
 ### Configuring LimitMEMLOCK
 
-If using [--memlock](mariadbd-options.md#-memlock), or the io\_uring asyncronious IO in InnoDB in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) or above, with a Linux Kernel version < 5.12, you will need to raise the LimitMEMLOCK limit.
+If using [--memlock](mariadbd-options.md#-memlock), or the io\_uring asyncronious IO in InnoDB in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) or above, with a Linux Kernel version < 5.12, you will need to raise the LimitMEMLOCK limit.
 
 ```
 sudo systemctl edit mariadb.service
@@ -329,7 +329,7 @@ sudo systemctl edit mariadb.service
 LimitMEMLOCK=2M
 ```
 
-Note: Prior to [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes), the [--memlock](mariadbd-options.md#-memlock) option could not be used with the MariaDB `systemd` service.
+Note: Prior to [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes), the [--memlock](mariadbd-options.md#-memlock) option could not be used with the MariaDB `systemd` service.
 
 ### Configuring Access to Home Directories
 
@@ -387,7 +387,7 @@ ReadWritePaths=/usr/local/mysql/data
 
 ## Systemd Socket Activation
 
-**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
+**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes)
 
 MariaDB can use systemd's socket activation.
 
@@ -438,7 +438,7 @@ Changes to the default `mariadb.socket` can be made in the same way as services,
 
 ### Extra Port
 
-A systemd socket can be configured as an [extra_port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port), by using the`[FileDescriptorName=extra](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#FileDescriptorName=)in the`.socket`file.`
+A systemd socket can be configured as an [extra\_port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port), by using the`[FileDescriptorName=extra](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#FileDescriptorName=)in the`.socket`file.`
 
 The `mariadb-extra.socket` is already packaged and ready for use.
 

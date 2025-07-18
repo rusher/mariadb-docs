@@ -31,7 +31,7 @@ The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.co
 
 ### Installing from Source
 
-When [compiling MariaDB from source](../../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/), the AWS Key Management plugin is not built by default in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), but it is built by default in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, on systems that support it.
+When [compiling MariaDB from source](../../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/), the AWS Key Management plugin is not built by default in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), but it is built by default in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, on systems that support it.
 
 Compilation is controlled by the following [cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) arguments:
 
@@ -107,7 +107,7 @@ If you installed the plugin by providing the [--plugin-load](../../../../../serv
 
 ## Configuring the AWS Key Management Plugin
 
-To enable the AWS Key Management plugin, you also need to set the plugin's system variables. The [aws_key_management_master_key_id](#aws_key_management_master_key_id) system variable is the primary one to set. These system variables can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+To enable the AWS Key Management plugin, you also need to set the plugin's system variables. The [aws\_key\_management\_master\_key\_id](aws-key-management-encryption-plugin.md#aws_key_management_master_key_id) system variable is the primary one to set. These system variables can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -139,7 +139,7 @@ When [encrypting Aria tables](../aria-encryption/), the key that is used to encr
 
 ## Key Rotation
 
-The AWS Key Management plugin does support [key rotation](encryption-key-management.md#key-rotation). To rotate a key, set the [aws_key_management_rotate_key](#aws_key_management_rotate_key) system variable. For example, to rotate key with ID 2:
+The AWS Key Management plugin does support [key rotation](encryption-key-management.md#key-rotation). To rotate a key, set the [aws\_key\_management\_rotate\_key](aws-key-management-encryption-plugin.md#aws_key_management_rotate_key) system variable. For example, to rotate key with ID 2:
 
 ```sql
 SET GLOBAL aws_key_management_rotate_key=2;
@@ -153,11 +153,11 @@ SET GLOBAL aws_key_management_rotate_key=-1;
 
 ## Versions
 
-| Version | Status       | Introduced                                                                                                                                                                                                                                                                                                                                                             |
-| ------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0     | Stable       | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes) |
-| 1.0     | Beta         | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes)                                                                                                                                                                                    |
-| 1.0     | Experimental | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md)                                                                                                                       |
+| Version | Status       | Introduced                                                                                                                                                                                                                                                                                                                 |
+| ------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | Stable       | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes) |
+| 1.0     | Beta         | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes)                                                                                                                                                              |
+| 1.0     | Experimental | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md)                                                                           |
 
 ## System Variables
 

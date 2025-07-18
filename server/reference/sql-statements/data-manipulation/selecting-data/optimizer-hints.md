@@ -32,7 +32,7 @@ If the [query\_cache\_type](../../../../ha-and-performance/optimization-and-tuni
 
 `USE INDEX`, `FORCE INDEX` and `IGNORE INDEX` constrain the query planning to a specific index. For further information about some of these options, see [How to force query plans](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans.md).
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
+**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
 
 ## Expanded Optimizer Hints
 

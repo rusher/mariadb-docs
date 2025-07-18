@@ -1,6 +1,6 @@
 # SHOW ANALYZE
 
-`SHOW ANALYZE` was added in [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109).
+`SHOW ANALYZE` was added in [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109).
 
 ## Syntax
 

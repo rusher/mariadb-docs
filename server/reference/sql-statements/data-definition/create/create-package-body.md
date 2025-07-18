@@ -6,7 +6,7 @@ The `CREATE PACKAGE BODY` statement can be used in any mode.
 {% endtab %}
 
 {% tab title="< 11.4" %}
-The `CREATE PACKAGE BODY` statement can be used in [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
+The `CREATE PACKAGE BODY` statement can be used in [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle).
 {% endtab %}
 {% endtabs %}
 
@@ -176,7 +176,7 @@ DELIMITER ;
 * [CREATE PACKAGE](create-package.md)
 * [SHOW CREATE PACKAGE BODY](../../administrative-sql-statements/show/show-create-package-body.md)
 * [DROP PACKAGE BODY](../drop/drop-package-body.md)
-* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
