@@ -10,7 +10,7 @@ SHOW QUERY_RESPONSE_TIME
 
 It is possible to use `SHOW QUERY_RESPONSE_TIME` as an alternative for retrieving information from the [QUERY\_RESPONSE\_TIME](../../../plugins/other-plugins/query-response-time-plugin.md) plugin.
 
-This was introduced as part of the [Information Schema plugin extension](../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md).
+This was introduced as part of the [Information Schema plugin extension](../../../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md).
 
 ## Example
 

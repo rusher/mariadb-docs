@@ -346,7 +346,7 @@ SELECT * FROM t FOR SYSTEM_TIME AS OF TRANSACTION 12345;
 
 This shows the data, exactly as it was seen by the transaction with the identifier 12345.
 
-Data for this feature is stored in the [mysql.transaction\_registry table](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md).
+Data for this feature is stored in the [mysql.transaction\_registry table](../../system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md).
 
 ### Storing the History Separately
 
@@ -391,7 +391,7 @@ CREATE TABLE t (x INT) WITH SYSTEM VERSIONING
   );
 ```
 
-This means that the history for the first week after the table was created will be stored in `p0`. The history for the second week — in `p1`, and all later history will go into `p2`. One can see the exact rotation time for each partition in the [INFORMATION\_SCHEMA.PARTITIONS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) table.
+This means that the history for the first week after the table was created will be stored in `p0`. The history for the second week — in `p1`, and all later history will go into `p2`. One can see the exact rotation time for each partition in the [INFORMATION\_SCHEMA.PARTITIONS](../../system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) table.
 
 It is possible to combine partitioning by `SYSTEM_TIME` and subpartitions:
 
@@ -624,7 +624,7 @@ A number of system variables are related to system-versioned tables:
 
 * [Application-Time Periods](application-time-periods.md)
 * [Bitemporal Tables](bitemporal-tables.md)
-* [mysql.transaction\_registry Table](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md)
+* [mysql.transaction\_registry Table](../../system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md)
 * [MariaDB Temporal Tables](https://youtu.be/uBoUlTsU1Tk) (video)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

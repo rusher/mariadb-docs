@@ -13,7 +13,7 @@ This statement is a MariaDB extension. It returns characteristics of a stored pr
 
 The `LIKE` clause, if present, indicates which procedure or function names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-The [ROUTINES table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database contains more detailed information.
+The [ROUTINES table](../../../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database contains more detailed information.
 
 ## Examples
 
@@ -41,7 +41,7 @@ collation_connection: latin1_swedish_ci
 * [DROP PROCEDURE](../../../../server-usage/stored-routines/stored-procedures/drop-procedure.md)
 * [SHOW CREATE PROCEDURE](show-create-procedure.md)
 * [Stored Routine Privileges](../../../../server-usage/stored-routines/stored-functions/stored-routine-privileges.md)
-* [Information Schema ROUTINES Table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [Information Schema ROUTINES Table](../../../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

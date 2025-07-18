@@ -1,6 +1,6 @@
 # Query Response Time Plugin
 
-The `query_response_time` plugin creates the [QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. The plugin also adds the [SHOW QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/show/show-query_response_time.md) and [FLUSH QUERY\_RESPONSE\_TIME](query-response-time-plugin.md#flushing-plugin-data) statements.
+The `query_response_time` plugin creates the [QUERY\_RESPONSE\_TIME](../../system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database. The plugin also adds the [SHOW QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/show/show-query_response_time.md) and [FLUSH QUERY\_RESPONSE\_TIME](query-response-time-plugin.md#flushing-plugin-data) statements.
 
 The [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/) provides exact information about queries that take a long time to execute. However, sometimes there are a large number of queries that each take a very short amount of time to execute. This feature provides a tool for analyzing that information by counting and displaying the number of queries according to the length of time they took to execute.
 
@@ -163,7 +163,7 @@ This means there were:
 
 ### Using the Information Schema Table
 
-You can get the distribution by querying the [QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database:
+You can get the distribution by querying the [QUERY\_RESPONSE\_TIME](../../system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database:
 
 ```sql
 SELECT * FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME;
@@ -186,7 +186,7 @@ Note: If [query\_response\_time\_stats](query-response-time-plugin.md#query_resp
 
 ### Using the SHOW Statement
 
-As an alternative to the [QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database, you can also use the [SHOW QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/show/show-query_response_time.md) statement:
+As an alternative to the [QUERY\_RESPONSE\_TIME](../../system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database, you can also use the [SHOW QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/show/show-query_response_time.md) statement:
 
 ```sql
 SHOW QUERY_RESPONSE_TIME;
@@ -196,7 +196,7 @@ SHOW QUERY_RESPONSE_TIME;
 
 Flushing the plugin data does two things:
 
-* Clears the collected times from the [QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database.
+* Clears the collected times from the [QUERY\_RESPONSE\_TIME](../../system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database.
 * Reads the value of [query\_response\_time\_range\_base](query-response-time-plugin.md#query_response_time_range_base) and uses it to set the range base for the table.
 
 Plugin data can be flushed with the [FLUSH QUERY\_RESPONSE\_TIME](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement:
@@ -278,7 +278,7 @@ It is **not** possible to specify flushing read and/or write statements with the
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
@@ -292,7 +292,7 @@ It is **not** possible to specify flushing read and/or write statements with the
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.

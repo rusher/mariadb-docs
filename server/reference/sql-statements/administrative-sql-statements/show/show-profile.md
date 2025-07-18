@@ -29,7 +29,7 @@ Profiling is controlled by the [profiling](../../../../ha-and-performance/optimi
 SET profiling = 1;
 ```
 
-`SHOW PROFILES` displays a list of the most recent statements sent to the master. The size of the list is controlled by the [profiling\_history\_size](../system-tables/information-schema/information-schema-tables/information-schema-profiling-table.md) session variable, which has a default value of `15`. The maximum value is `100`. Setting the value to `0` has the practical effect of disabling profiling.
+`SHOW PROFILES` displays a list of the most recent statements sent to the master. The size of the list is controlled by the [profiling\_history\_size](../../../system-tables/information-schema/information-schema-tables/information-schema-profiling-table.md) session variable, which has a default value of `15`. The maximum value is `100`. Setting the value to `0` has the practical effect of disabling profiling.
 
 All statements are profiled except `SHOW PROFILES` and`SHOW PROFILE`, so you will find neither of those statements in the profile list. Malformed statements are profiled. For example,`SHOW PROFILING` is an illegal statement, and a syntax error occurs if you try to execute it, but it will show up in the profiling list.
 
@@ -53,7 +53,7 @@ Optional type values may be specified to display specific additional types of in
 
 Profiling is enabled per session. When a session ends, its profiling information is lost.
 
-The [information\_schema.PROFILING](../system-tables/information-schema/information-schema-tables/information-schema-profiling-table.md) table contains similar information.
+The [information\_schema.PROFILING](../../../system-tables/information-schema/information-schema-tables/information-schema-profiling-table.md) table contains similar information.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # METADATA\_LOCK\_INFO Plugin
 
-The `METADATA_LOCK_INFO` plugin creates the [METADATA\_LOCK\_INFO](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. This table shows active [metadata locks](../../sql-statements/transactions/metadata-locking.md). The table will be empty if there are no active metadata locks.
+The `METADATA_LOCK_INFO` plugin creates the [METADATA\_LOCK\_INFO](../../system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database. This table shows active [metadata locks](../../sql-statements/transactions/metadata-locking.md). The table will be empty if there are no active metadata locks.
 
 ## Installing the Plugin
 
@@ -80,7 +80,7 @@ SHOW PROCESSLIST;
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.

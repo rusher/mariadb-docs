@@ -82,7 +82,7 @@ If you do not see any rows in the output, then the MariaDB Audit plugin is not i
 
 The MariaDB Audit plugin has multiple uninstallation methods. You must choose the uninstallation method that corresponds to how the plugin was installed on your system.
 
-To determine the uninstallation method, query the [mysql.plugin](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) system table:
+To determine the uninstallation method, query the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) system table:
 
 ```sql
 SELECT *
@@ -104,7 +104,7 @@ If you do not see any rows in the output, then the MariaDB Audit plugin call be 
 
 To uninstall the MariaDB Audit Plugin with [UNINSTALL SONAME](mariadb-enterprise-audit.md#uninstall-with-uninstall-soname):
 
-1. Check the plugin load option by querying the [information\_schema.PLUGINS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table:
+1. Check the plugin load option by querying the [information\_schema.PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table:
 
 ```sql
 SELECT PLUGIN_STATUS, PLUGIN_LIBRARY, PLUGIN_DESCRIPTION, LOAD_OPTION
@@ -154,7 +154,7 @@ $ sudo systemctl restart mariadb
 UNINSTALL SONAME 'server_audit';
 ```
 
-6. Confirm the plugin is uninstalled by querying the [mysql.plugin](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) system table:
+6. Confirm the plugin is uninstalled by querying the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) system table:
 
 ```sql
 SELECT *
@@ -375,7 +375,7 @@ If you do not use mariadb-enterprise.cnf in your environment, you can configure 
 
 ### Confirm that Uninstallation is Forbidden
 
-To confirm that MariaDB Enterprise Audit is configured to forbid uninstallation, query the [information\_schema.PLUGINS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table:
+To confirm that MariaDB Enterprise Audit is configured to forbid uninstallation, query the [information\_schema.PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table:
 
 ```sql
 SELECT PLUGIN_STATUS, PLUGIN_LIBRARY, PLUGIN_DESCRIPTION, LOAD_OPTION
@@ -423,7 +423,7 @@ Additional audit practices should be established to cover:
 * System-level controls, including authentication, file system, and process execution.
 * Network-level controls.
 * Monitoring systems, including [monitoring for audit logging](mariadb-enterprise-audit.md#confirm-audit-logging-is-started).
-* Changes to user accounts (and the [mysql.global\_priv](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) system table), which can necessitate changes to Audit Filters.
+* Changes to user accounts (and the [mysql.global\_priv](../system-tables/the-mysql-database-tables/mysql-global_priv-table.md) system table), which can necessitate changes to Audit Filters.
 
 ## Audit Filters
 

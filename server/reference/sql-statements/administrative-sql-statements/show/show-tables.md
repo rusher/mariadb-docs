@@ -33,7 +33,7 @@ See [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariad
 
 If you have no privileges for a base table or view, it does not show up in the output from `SHOW TABLES` or `mariadb-show db_name`.
 
-The [information\_schema.TABLES](../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table, as well as the [SHOW TABLE STATUS](show-table-status.md) statement, provide extended information about tables.
+The [information\_schema.TABLES](../../../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table, as well as the [SHOW TABLE STATUS](show-table-status.md) statement, provide extended information about tables.
 
 ## Examples
 
@@ -113,7 +113,7 @@ SHOW TABLES;
 ## See Also
 
 * [SHOW TABLE STATUS](show-table-status.md)
-* The [information\_schema.TABLES](../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table
+* The [information\_schema.TABLES](../../../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

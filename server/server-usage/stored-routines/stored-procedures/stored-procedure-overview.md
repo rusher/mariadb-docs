@@ -86,7 +86,7 @@ collation_connection: utf8_general_ci
   Database Collation: latin1_swedish_ci
 ```
 
-or query the [routines table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database directly:
+or query the [routines table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database directly:
 
 ```sql
 SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES 

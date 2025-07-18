@@ -379,7 +379,7 @@ The `constraint_name` is optional. If you don't provide one in the `ALTER TABLE`
 
 You can disable all constraint expression checks by setting the variable [check\_constraint\_checks](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) to `OFF`. You may find this useful when loading a table that violates some constraints that you want to later find and fix in SQL.
 
-To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md):
+To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../../../system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md):
 
 ```sql
 SELECT CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE 
@@ -405,7 +405,7 @@ ALTER TABLE table_name
 DROP CONSTRAINT constraint_name;
 ```
 
-When you add a constraint to a table, whether through a [CREATE TABLE](../../create/create-table.md#constraint-expressions) or [ALTER TABLE...ADD CONSTRAINT](./#add-constraint) statement, you can either set a `constraint_name` yourself, or allow MariaDB to auto-generate one for you. To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md). For instance,
+When you add a constraint to a table, whether through a [CREATE TABLE](../../create/create-table.md#constraint-expressions) or [ALTER TABLE...ADD CONSTRAINT](./#add-constraint) statement, you can either set a `constraint_name` yourself, or allow MariaDB to auto-generate one for you. To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../../../system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md). For instance,
 
 ```sql
 CREATE TABLE t (
@@ -702,7 +702,7 @@ ALTER TABLE test ENGINE=Aria;
 Stage: 1 of 2 'copy to tmp table'    46% of stage
 ```
 
-The progress report is also shown in the output of the [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) statement and in the contents of the [information\_schema.PROCESSLIST](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
+The progress report is also shown in the output of the [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) statement and in the contents of the [information\_schema.PROCESSLIST](../../../../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
 See [Progress Reporting](./#progress-reporting) for more information.
 

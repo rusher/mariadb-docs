@@ -8,7 +8,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `have_innodb`
 
-* Description: If the server supports [InnoDB tables](./), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), use the [Information Schema PLUGINS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md) table or [SHOW ENGINES](../../../reference/sql-statements/administrative-sql-statements/show/show-engines.md) instead.
+* Description: If the server supports [InnoDB tables](./), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), use the [Information Schema PLUGINS](../../../reference/system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md) table or [SHOW ENGINES](../../../reference/sql-statements/administrative-sql-statements/show/show-engines.md) instead.
 * Scope: Global
 * Dynamic: No
 * Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
@@ -563,7 +563,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_cmp_per_index_enabled`
 
-* Description: If set to `ON` (`OFF` is default), per-index compression statistics are stored in the [INFORMATION\_SCHEMA.INNODB\_CMP\_PER\_INDEX](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md) table. These are expensive to record, so this setting should only be changed with care, such as for performance tuning on development or replica servers.
+* Description: If set to `ON` (`OFF` is default), per-index compression statistics are stored in the [INFORMATION\_SCHEMA.INNODB\_CMP\_PER\_INDEX](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md) table. These are expensive to record, so this setting should only be changed with care, such as for performance tuning on development or replica servers.
 * Command line: `--innodb-cmp-per-index-enabled={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -1186,7 +1186,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_flush_neighbors`
 
-* Description: Determines whether flushing a page from the [buffer pool](innodb-buffer-pool.md) will flush other dirty pages in the same group of pages (extent). In high write environments, if flushing is not aggressive enough, it can fall behind resulting in higher memory usage, or if flushing is too aggressive, cause excess I/O activity. SSD devices, with low seek times, would be less likely to require dirty neighbor flushing to be set. Since [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes) an attempt is made under Windows and Linux to determine SSD status which was exposed in [information\_schema.innodb\_tablespaces\_scrubbing\_table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_scrubbing-table.md). This variable is ignored for table spaces that are detected as stored on SSD (and the `0` behavior applies).
+* Description: Determines whether flushing a page from the [buffer pool](innodb-buffer-pool.md) will flush other dirty pages in the same group of pages (extent). In high write environments, if flushing is not aggressive enough, it can fall behind resulting in higher memory usage, or if flushing is too aggressive, cause excess I/O activity. SSD devices, with low seek times, would be less likely to require dirty neighbor flushing to be set. Since [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes) an attempt is made under Windows and Linux to determine SSD status which was exposed in [information\_schema.innodb\_tablespaces\_scrubbing\_table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_scrubbing-table.md). This variable is ignored for table spaces that are detected as stored on SSD (and the `0` behavior applies).
   * `1`: The default, flushes contiguous dirty pages in the same extent from the buffer pool.
   * `0`: No other dirty pages are flushed.
   * `2`: Flushes dirty pages in the same extent from the buffer pool.
@@ -1263,7 +1263,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_ft_aux_table`
 
-* Description: Diagnostic variable intended only to be set at runtime. It specifies the qualified name (for example `test/ft_innodb`) of an InnoDB table that has a [FULLTEXT index](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), and after being set the INFORMATION\_SCHEMA tables [INNODB\_FT\_INDEX\_TABLE](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_index_table-table.md), [INNODB\_FT\_INDEX\_CACHE](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_index_cache-table.md), INNODB\_FT\_CONFIG, [INNODB\_FT\_DELETED](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_deleted-table.md), and [INNODB\_FT\_BEING\_DELETED](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_being_deleted-table.md) will contain search index information for the specified table.
+* Description: Diagnostic variable intended only to be set at runtime. It specifies the qualified name (for example `test/ft_innodb`) of an InnoDB table that has a [FULLTEXT index](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), and after being set the INFORMATION\_SCHEMA tables [INNODB\_FT\_INDEX\_TABLE](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_index_table-table.md), [INNODB\_FT\_INDEX\_CACHE](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_index_cache-table.md), INNODB\_FT\_CONFIG, [INNODB\_FT\_DELETED](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_deleted-table.md), and [INNODB\_FT\_BEING\_DELETED](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_being_deleted-table.md) will contain search index information for the specified table.
 * Command line: `--innodb-ft-aux-table=value`
 * Scope: Global
 * Dynamic: Yes
@@ -1838,7 +1838,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_max_changed_pages`
 
-* Description: Limit to the number of changed page bitmap files (stored in the [Information Schema INNODB\_CHANGED\_PAGES table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_changed_pages-table.md)). Zero is unlimited. See [innodb\_max\_bitmap\_file\_size](innodb-system-variables.md#innodb_max_bitmap_file_size) and [innodb\_track\_changed\_pages](innodb-system-variables.md#innodb_track_changed_pages). Previously named `innodb_changed_pages_limit`. XtraDB only.
+* Description: Limit to the number of changed page bitmap files (stored in the [Information Schema INNODB\_CHANGED\_PAGES table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_changed_pages-table.md)). Zero is unlimited. See [innodb\_max\_bitmap\_file\_size](innodb-system-variables.md#innodb_max_bitmap_file_size) and [innodb\_track\_changed\_pages](innodb-system-variables.md#innodb_track_changed_pages). Previously named `innodb_changed_pages_limit`. XtraDB only.
   * Deprecated and ignored in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Command line: `innodb-max-changed-pages=#`
 * Scope: Global
@@ -1948,7 +1948,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_monitor_disable`
 
-* Description: Disables the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table.
+* Description: Disables the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table.
 * Command line: `--innodb-monitor-disable=string`
 * Scope: Global
 * Dynamic: Yes
@@ -1956,7 +1956,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_monitor_enable`
 
-* Description: Enables the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table.
+* Description: Enables the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table.
 * Command line: `--innodb-monitor-enable=string`
 * Scope: Global
 * Dynamic: Yes
@@ -1964,7 +1964,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_monitor_reset`
 
-* Description: Resets the count value of the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table to zero.
+* Description: Resets the count value of the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table to zero.
 * Command line: `--innodb-monitor-reset=string`
 * Scope: Global
 * Dynamic: Yes
@@ -1972,7 +1972,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_monitor_reset_all`
 
-* Description: Resets all values for the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table.
+* Description: Resets all values for the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table.
 * Command line: `---innodb-monitor-reset-all=string`
 * Scope: Global
 * Dynamic: Yes
@@ -2306,7 +2306,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_show_verbose_locks`
 
-* Description: If set to `1`, and [innodb\_status\_output\_locks](innodb-system-variables.md#innodb_status_output_locks) is also ON, the traditional InnoDB behavior is followed and locked records will be shown in [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) output. If set to `0`, the default, only high-level information about the lock is shown. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: If set to `1`, and [innodb\_status\_output\_locks](innodb-system-variables.md#innodb_status_output_locks) is also ON, the traditional InnoDB behavior is followed and locked records will be shown in [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) output. If set to `0`, the default, only high-level information about the lock is shown. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Command line: `innodb-show-verbose-locks=#`
 * Scope: Global
 * Dynamic: Yes
@@ -2657,7 +2657,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_undo_logs`
 
-* Description: Specifies the number of rollback segments that XtraDB/InnoDB will use within a transaction (or the number of active [undo logs](innodb-undo-log.md)). By default set to the maximum, `128`, it can be reduced to avoid allocating unneeded rollback segments. See the [Innodb\_available\_undo\_logs](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md) status variable for the number of undo logs available. See also [innodb\_undo\_directory](innodb-system-variables.md#innodb_undo_directory) and [innodb\_undo\_tablespaces](innodb-system-variables.md#innodb_undo_tablespaces). Replaced [innodb\_rollback\_segments](innodb-system-variables.md#innodb_rollback_segments) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). The [Information Schema XTRADB\_RSEG Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_rseg-table.md) contains information about the XtraDB rollback segments. Deprecated and ignored in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1050-release-notes), as it always makes sense to use the maximum number of rollback segments.
+* Description: Specifies the number of rollback segments that XtraDB/InnoDB will use within a transaction (or the number of active [undo logs](innodb-undo-log.md)). By default set to the maximum, `128`, it can be reduced to avoid allocating unneeded rollback segments. See the [Innodb\_available\_undo\_logs](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md) status variable for the number of undo logs available. See also [innodb\_undo\_directory](innodb-system-variables.md#innodb_undo_directory) and [innodb\_undo\_tablespaces](innodb-system-variables.md#innodb_undo_tablespaces). Replaced [innodb\_rollback\_segments](innodb-system-variables.md#innodb_rollback_segments) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). The [Information Schema XTRADB\_RSEG Table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_rseg-table.md) contains information about the XtraDB rollback segments. Deprecated and ignored in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1050-release-notes), as it always makes sense to use the maximum number of rollback segments.
 * Command line: `--innodb-undo-logs=#`
 * Scope: Global
 * Dynamic: Yes

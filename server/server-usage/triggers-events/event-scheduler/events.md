@@ -43,13 +43,13 @@ SET GLOBAL event_scheduler = ON;
 
 to activate it. If `event_scheduler` has been set to `Disabled`, you cannot change the value at runtime. Changing the value of the `event_scheduler` variable requires the SUPER privilege.
 
-Since [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes), setting the [event\_scheduler](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable will also try to reload the [mysql.event table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) if it was not properly loaded at startup.
+Since [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes), setting the [event\_scheduler](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable will also try to reload the [mysql.event table](../../../reference/system-tables/the-mysql-database-tables/mysql-event-table.md) if it was not properly loaded at startup.
 
 ## Viewing Current Events
 
-A list of current events can be obtained with the [SHOW EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-events.md) statement. This only shows the event name and interval - the full event details, including the SQL, can be seen by querying the [Information Schema EVENTS table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table.md), or with [SHOW CREATE EVENT](../../../reference/sql-statements/administrative-sql-statements/show/show-create-event.md).
+A list of current events can be obtained with the [SHOW EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-events.md) statement. This only shows the event name and interval - the full event details, including the SQL, can be seen by querying the [Information Schema EVENTS table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-events-table.md), or with [SHOW CREATE EVENT](../../../reference/sql-statements/administrative-sql-statements/show/show-create-event.md).
 
-If an event is currently being executed, it can be seen by querying the [Information Schema PROCESSLIST table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md), or with the [SHOW PROCESSLIST](../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) statement.
+If an event is currently being executed, it can be seen by querying the [Information Schema PROCESSLIST table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md), or with the [SHOW PROCESSLIST](../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) statement.
 
 ### Example
 

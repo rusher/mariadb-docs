@@ -96,7 +96,7 @@ The #sql-ib tables will be deleted automatically.
 
 The best way to drop all tables in a database is by executing [DROP DATABASE](drop-database.md), which will drop the database itself, and all tables in it.
 
-However, if you want to drop all tables in the database, but you also want to keep the database itself and any other non-table objects in it, then you would need to execute `DROP TABLE` to drop each individual table. You can construct these `DROP TABLE` commands by querying the [TABLES](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table in the [information\_schema](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/) database. For example:
+However, if you want to drop all tables in the database, but you also want to keep the database itself and any other non-table objects in it, then you would need to execute `DROP TABLE` to drop each individual table. You can construct these `DROP TABLE` commands by querying the [TABLES](../../../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table in the [information\_schema](../../../system-tables/information-schema/information-schema-tables/) database. For example:
 
 ```
 SELECT CONCAT('DROP TABLE IF EXISTS `', TABLE_SCHEMA, '`.`', TABLE_NAME, '`;')

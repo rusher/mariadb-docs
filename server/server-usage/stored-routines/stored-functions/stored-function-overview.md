@@ -75,7 +75,7 @@ collation_connection: utf8_general_ci
 1 row in set (0.00 sec)
 ```
 
-or query the [routines table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database directly:
+or query the [routines table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database directly:
 
 ```sql
 SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES WHERE
@@ -127,7 +127,7 @@ See the article [Stored Routine Privileges](stored-routine-privileges.md).
 * [DROP FUNCTION](drop-function.md)
 * [Stored Routine Privileges](stored-routine-privileges.md)
 * [SHOW FUNCTION STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-function-status.md)
-* [Information Schema ROUTINES Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [Information Schema ROUTINES Table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 * [Stored Aggregate Functions](stored-aggregate-functions.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

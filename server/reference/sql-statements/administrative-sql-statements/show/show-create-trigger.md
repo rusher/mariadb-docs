@@ -57,7 +57,7 @@ The `Created` column is unavailable.
 * [Trigger Overview](../../../../server-usage/triggers-events/triggers/trigger-overview.md)
 * [CREATE TRIGGER](../../../../server-usage/triggers-events/triggers/create-trigger.md)
 * [DROP TRIGGER](../../data-definition/drop/drop-trigger.md)
-* [information\_schema.TRIGGERS Table](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
+* [information\_schema.TRIGGERS Table](../../../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
 * [SHOW TRIGGERS](show-triggers.md)
 * [Trigger Limitations](../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 

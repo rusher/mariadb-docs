@@ -68,7 +68,7 @@ mariadb-show db_name tbl_name
 
 See the [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariadb-show.md) command for more details.
 
-The [DESCRIBE](../describe.md) statement provides information similar to `SHOW COLUMNS`. The [information\_schema.COLUMNS](../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table provides similar, but more complete, information.
+The [DESCRIBE](../describe.md) statement provides information similar to `SHOW COLUMNS`. The [information\_schema.COLUMNS](../../../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table provides similar, but more complete, information.
 
 The [SHOW CREATE TABLE](show-create-table.md), [SHOW TABLE STATUS](show-table-status.md), and [SHOW INDEX](show-index.md) statements also provide information about tables.
 

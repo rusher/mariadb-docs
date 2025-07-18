@@ -30,9 +30,9 @@ The description for [SHOW COLUMNS](show/show-columns.md) providesmore informatio
 ## See Also
 
 * [SHOW COLUMNS](show/show-columns.md)
-* [INFORMATION\_SCHEMA.COLUMNS Table](system-tables/information-schema/information-schema-tables/information-schema-columns-table.md)
+* [INFORMATION\_SCHEMA.COLUMNS Table](../../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md)
 * [mysqlshow](../../../clients-and-utilities/legacy-clients-and-utilities/mysqlshow.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

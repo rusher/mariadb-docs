@@ -233,9 +233,9 @@ Information Schema support for application time period tables is available from 
 
 Information Schema contains the following support for application time period tables:
 
-* [INFORMATION\_SCHEMA.PERIODS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-periods-table.md) view.
-* [INFORMATION\_SCHEMA.KEY\_PERIOD\_USAGE](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table.md) view.
-* Additional columns `IS_SYSTEM_TIME_PERIOD_START` and `IS_SYSTEM_TIME_PERIOD_END` in the [INFORMATION\_SCHEMA.COLUMNS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) view.
+* [INFORMATION\_SCHEMA.PERIODS](../../system-tables/information-schema/information-schema-tables/information-schema-periods-table.md) view.
+* [INFORMATION\_SCHEMA.KEY\_PERIOD\_USAGE](../../system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table.md) view.
+* Additional columns `IS_SYSTEM_TIME_PERIOD_START` and `IS_SYSTEM_TIME_PERIOD_END` in the [INFORMATION\_SCHEMA.COLUMNS](../../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) view.
 
 ### Further Examples
 

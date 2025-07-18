@@ -10,10 +10,10 @@ The `unix_socket` authentication plugin is not suited to multiple Unix users acc
 
 ## Security
 
-A `unix_socket` authentication plugin is a passwordless security mechanism. Its security lies in the strength of the access to the Unix user, rather than the complexity and the secrecy of the password.&#x20;
+A `unix_socket` authentication plugin is a passwordless security mechanism. Its security lies in the strength of the access to the Unix user, rather than the complexity and the secrecy of the password.
 
 {% hint style="warning" %}
-As  security differs from password security, the strengths and weaknesses need to be considered, and those can differ depending on the specific installation.
+As security differs from password security, the strengths and weaknesses need to be considered, and those can differ depending on the specific installation.
 {% endhint %}
 
 ### Strengths
@@ -107,8 +107,6 @@ GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA unix_socket;
 
 {% tabs %}
 {% tab title="Current" %}
-
-
 The authentication string (if present) is compared with the socket's user name. Authentication proceeds if there's a match. In this case, the [external\_user](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#external_user) system variable contains the OS user.
 
 Consider an OS user named 'bob' that has been created like this:
@@ -204,7 +202,7 @@ In this example, user `serg` is already logged into the operating system and has
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugin](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugin](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.

@@ -27,7 +27,7 @@ You can also list a table's indexes with the [mariadb-show](../../../../clients-
 mariadb-show -k db_name tbl_name
 ```
 
-The [information\_schema.STATISTICS](../system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) table stores similar information.
+The [information\_schema.STATISTICS](../../../system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) table stores similar information.
 
 The following fields are returned by `SHOW INDEX`.
 

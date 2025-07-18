@@ -60,7 +60,7 @@ INSTALL SONAME 'ha_sequence';
 * [UNINSTALL PLUGIN](uninstall-plugin.md)
 * [UNINSTALL SONAME](uninstall-soname.md)
 * [SHOW PLUGINS](../show/show-plugins.md)
-* [INFORMATION\_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
+* [INFORMATION\_SCHEMA.PLUGINS Table](../../../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mysql\_plugin](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_plugin.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

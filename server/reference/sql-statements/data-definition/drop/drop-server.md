@@ -8,7 +8,7 @@ DROP SERVER [ IF EXISTS ] server_name
 
 ## Description
 
-Drops the server definition for the server named _server\_name_. The corresponding row within the [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) will be deleted. This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-statements/grant.md#federated-admin) privilege.
+Drops the server definition for the server named _server\_name_. The corresponding row within the [mysql.servers table](../../../system-tables/the-mysql-database-tables/mysql-servers-table.md) will be deleted. This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-statements/grant.md#federated-admin) privilege.
 
 Dropping a server for a table does not affect any [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/), [FEDERATED](../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md), [Connect](../../../../server-usage/storage-engines/connect/) or [Spider](../../../../server-usage/storage-engines/spider/) tables that used this connection information when they were created.
 
@@ -42,7 +42,7 @@ Query OK, 0 rows affected (0.00 sec)
 * [Spider Storage Engine](../../../../server-usage/storage-engines/spider/)
 * [FederatedX Storage Engine](../../../../server-usage/storage-engines/federatedx-storage-engine/)
 * [Connect Storage Engine](../../../../server-usage/storage-engines/connect/)
-* [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
+* [mysql.servers table](../../../system-tables/the-mysql-database-tables/mysql-servers-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

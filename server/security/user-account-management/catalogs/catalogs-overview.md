@@ -45,15 +45,15 @@ For the end user, the MariaDB server will act as a normal a standalone server, w
 * [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) will show status data for the whole server, not only for the active catalog.
 * The server will handle legacy applications by extending the default database in the connection to contain the catalog in the form “catalog/database”. See Appendix for details.
 * Tables that are only read from the ‘def.mysql’ schema:
-  * [plugin](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)
-  * [help\_\*](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-help_category-table.md) tables
-  * [time\_zone\*](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md) tables
-  * [gtid\_slave\_pos](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) (replication state)
-  * [innodb\_index\_stats](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-innodb_index_stats.md) (innodb internal)
-  * [servers](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) (federated)
-  * [transaction\_registry](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md) (innodb internal)
-  * [func](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) (udf)
-  * [performance\_schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/)
+  * [plugin](../../../reference/system-tables/the-mysql-database-tables/mysql-plugin-table.md)
+  * [help\_\*](../../../reference/system-tables/the-mysql-database-tables/mysql-help_category-table.md) tables
+  * [time\_zone\*](../../../reference/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md) tables
+  * [gtid\_slave\_pos](../../../reference/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) (replication state)
+  * [innodb\_index\_stats](../../../reference/system-tables/the-mysql-database-tables/mysql-innodb_index_stats.md) (innodb internal)
+  * [servers](../../../reference/system-tables/the-mysql-database-tables/mysql-servers-table.md) (federated)
+  * [transaction\_registry](../../../reference/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md) (innodb internal)
+  * [func](../../../reference/system-tables/the-mysql-database-tables/mysql-func-table.md) (udf)
+  * [performance\_schema](../../../reference/system-tables/performance-schema/)
 
 ## New 'catalog root user'
 

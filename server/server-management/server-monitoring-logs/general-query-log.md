@@ -65,7 +65,7 @@ The [log-basename](../starting-and-stopping-mariadb/mariadbd-options.md#log-base
 
 ## Choosing the General Query Log Output Destination
 
-The general query log can either be written to a file on disk, or it can be written to the [general\_log](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. To choose the general query log output destination, set the [log\_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable.
+The general query log can either be written to a file on disk, or it can be written to the [general\_log](../../reference/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/system-tables/the-mysql-database-tables/) database. To choose the general query log output destination, set the [log\_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable.
 
 ### Writing the General Query Log to a File
 
@@ -87,7 +87,7 @@ general_log_file=queries.log
 
 ### Writing the General Query Log to a Table
 
-The general query log can either be written to the [general\_log](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database by setting the [log\_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The general query log can either be written to the [general\_log](../../reference/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/system-tables/the-mysql-database-tables/) database by setting the [log\_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL log_output='TABLE';

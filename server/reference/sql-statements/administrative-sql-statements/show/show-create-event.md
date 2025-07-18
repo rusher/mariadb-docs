@@ -20,7 +20,7 @@ This statement displays the [CREATE EVENT](../../data-definition/create/create-e
 {% endtab %}
 {% endtabs %}
 
-The [information\_schema.EVENTS](../system-tables/information-schema/information-schema-tables/information-schema-events-table.md) table provides similar, but more complete, information.
+The [information\_schema.EVENTS](../../../system-tables/information-schema/information-schema-tables/information-schema-events-table.md) table provides similar, but more complete, information.
 
 ## Examples
 

@@ -134,9 +134,9 @@ Privileges can be set globally, for anentire database, for a table or routine, o
 
 Global privileges do not take effect immediately and are only applied to connections created after the `GRANT` statement was executed.
 
-* [Global privileges priv\_type](grant.md#global-privileges) are granted using `*.*` for priv\_level. Global privileges include privileges to administer the database and manage user accounts, as well as privileges for all tables, functions, and procedures. Global privileges are stored in [mysql.global\_priv table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md).
+* [Global privileges priv\_type](grant.md#global-privileges) are granted using `*.*` for priv\_level. Global privileges include privileges to administer the database and manage user accounts, as well as privileges for all tables, functions, and procedures. Global privileges are stored in [mysql.global\_priv table](../../system-tables/the-mysql-database-tables/mysql-global_priv-table.md).
 * [Database privileges priv\_type](grant.md#database-privileges) are granted using `db_name.*` for priv\_level, or using just `*` to use default database. Database privileges include privileges to create tables and functions, as well as\
-  privileges for all tables, functions, and procedures in the database. Database privileges are stored in the [mysql.db table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md).
+  privileges for all tables, functions, and procedures in the database. Database privileges are stored in the [mysql.db table](../../system-tables/the-mysql-database-tables/mysql-db-table.md).
 * [Table privileges priv\_type](grant.md#table-privileges) are granted using `db_name.tbl_name`for priv\_level, or using just `tbl_name` to specify a table in the default database. The `TABLE` keyword is optional. Table privileges include the ability to select and change data in the table. Certain table privileges can be granted for individual columns.
 * [Column privileges priv\_type](grant.md#column-privileges) are granted by specifying a table for priv\_level and providing a column list after the privilege type. They allow you to control exactly which columns in a table users can select and change.
 * [Function privileges priv\_type](grant.md#function-privileges) are granted using `FUNCTION db_name.routine_name` for priv\_level, or using just `FUNCTION routine_name` to specify a function in the default database.
@@ -834,7 +834,7 @@ Users with the `CONNECTION ADMIN` privilege or the `SUPER` privilege are restric
 {% endtab %}
 {% endtabs %}
 
-Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
+Per account resource limits are stored in the [user](../../system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../../system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 ## TLS Options
 
@@ -933,8 +933,8 @@ GRANT ALL PRIVILEGES ON  *.* TO 'alexander'@'localhost' WITH GRANT OPTION;
 * [DROP USER](drop-user.md)
 * [SET PASSWORD](set-password.md)
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
-* [mysql.global\_priv table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md)
-* [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
+* [mysql.global\_priv table](../../system-tables/the-mysql-database-tables/mysql-global_priv-table.md)
+* [mysql.user table](../../system-tables/the-mysql-database-tables/mysql-user-table.md)
 * [Password Validation Plugins](../../plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 * [Authentication Plugins](../../plugins/authentication-plugins/) - allow various authentication methods to be used, and new ones to be developed.
 

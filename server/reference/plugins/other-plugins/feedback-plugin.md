@@ -10,7 +10,7 @@ On Windows, this plugin is part of the server and has a special checkbox in the 
 
 ## Verifying the Plugin's Status
 
-To verify whether the `feedback` plugin is installed and enabled, execute the [SHOW PLUGINS](../../sql-statements/administrative-sql-statements/show/show-plugins.md) statement or query the [information\_schema.plugins](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table:
+To verify whether the `feedback` plugin is installed and enabled, execute the [SHOW PLUGINS](../../sql-statements/administrative-sql-statements/show/show-plugins.md) statement or query the [information\_schema.plugins](../../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table:
 
 ```sql
 SELECT plugin_status FROM information_schema.plugins 
@@ -87,7 +87,7 @@ The `feedback` plugin collects the following data:
 * System information such as CPU count, memory, architecture, and OS/linux distribution.
 * The [feedback\_server\_uid](feedback-plugin.md#feedback_server_uid), which is a SHA1 hash of the MAC address of the first network interface and the TCP port that the server listens on.
 
-The `feedback` plugin creates the [FEEDBACK](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. To see the data that has been collected by the plugin, you can execute:
+The `feedback` plugin creates the [FEEDBACK](../../system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database. To see the data that has been collected by the plugin, you can execute:
 
 ```sql
 SELECT * FROM information_schema.feedback;
@@ -138,7 +138,7 @@ Then, you can upload the generated `report.txt` [here](https://feedback.mariadb.
 $ curl -F data=@report.txt https://feedback.mariadb.org/rest/v1/post
 ```
 
-Manual uploading allows you to be absolutely sure that we receive only the data shown in the [INFORMATION\_SCHEMA.FEEDBACK](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table and that no private or sensitive information is being sent.
+Manual uploading allows you to be absolutely sure that we receive only the data shown in the [INFORMATION\_SCHEMA.FEEDBACK](../../system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table and that no private or sensitive information is being sent.
 
 ## System Variables
 
@@ -201,7 +201,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.

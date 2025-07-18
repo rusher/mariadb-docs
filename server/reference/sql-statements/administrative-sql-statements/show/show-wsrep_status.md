@@ -10,7 +10,7 @@ SHOW WSREP_STATUS
 
 ## Description
 
-The `SHOW WSREP_STATUS` statement returns [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) node and cluster status information. It returns the same information as found in the [information\_schema.WSREP\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) table. Only users with the [SUPER](../../account-management-sql-statements/grant.md#super) privilege can access this information.
+The `SHOW WSREP_STATUS` statement returns [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) node and cluster status information. It returns the same information as found in the [information\_schema.WSREP\_STATUS](../../../system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) table. Only users with the [SUPER](../../account-management-sql-statements/grant.md#super) privilege can access this information.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # Disks Plugin
 
-The `DISKS` plugin creates the [DISKS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-disks-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. This table shows metadata about disks on the system. It required the [FILE privilege](../../sql-statements/account-management-sql-statements/grant.md).
+The `DISKS` plugin creates the [DISKS](../../system-tables/information-schema/information-schema-tables/information-schema-disks-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database. This table shows metadata about disks on the system. It required the [FILE privilege](../../sql-statements/account-management-sql-statements/grant.md).
 
 {% hint style="info" %}
 The plugin only works on Linux.
@@ -61,7 +61,7 @@ SELECT * FROM information_schema.DISKS;
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.

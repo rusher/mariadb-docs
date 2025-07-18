@@ -28,7 +28,7 @@ MariaDB also supports '`0000-00-00`' as a special _zero-date_ value, unless [NO\
 
 ## Oracle Mode
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle), `DATE` with a time portion is a synonym for `DATETIME`. See also [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle), `DATE` with a time portion is a synonym for `DATETIME`. See also [mariadb\_schema](../../system-tables/mariadb_schema.md).
 
 ## Internal Format
 
@@ -56,7 +56,7 @@ When MariaDB executes the [ALTER TABLE](../../sql-statements/data-definition/alt
 
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mysqldump`. The columns using relevant temporal data types are restored using the new temporal format.
 
-Columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION\_SCHEMA.COLUMNS Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
+Columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION\_SCHEMA.COLUMNS Table](../../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
 
 ```sql
 SHOW CREATE TABLE mariadb5312_datetime\G
@@ -191,7 +191,7 @@ SELECT description, CONVERT(example, DATETIME) AS example
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 * [CONVERT()](../../sql-functions/string-functions/convert.md)
 * [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
-* [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
+* [mariadb\_schema](../../system-tables/mariadb_schema.md) data type qualifier
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

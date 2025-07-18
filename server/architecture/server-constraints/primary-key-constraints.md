@@ -235,7 +235,7 @@ CREATE TABLE hq_sales.invoices (
 );
 ```
 
-5. Query the [information\_schema](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md).TABLES and [information\_schema.KEY\_COLUMN\_USAGE](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables to find InnoDB tables that do not have a primary key:
+5. Query the [information\_schema](../../reference/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md).TABLES and [information\_schema.KEY\_COLUMN\_USAGE](../../reference/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables to find InnoDB tables that do not have a primary key:
 
 ```sql
 SELECT t.TABLE_SCHEMA, t.TABLE_NAME

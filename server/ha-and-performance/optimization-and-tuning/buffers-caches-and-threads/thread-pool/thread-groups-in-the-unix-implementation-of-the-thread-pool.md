@@ -35,7 +35,7 @@ When a new client connection is created, its thread group is determined using th
 thread_group_id = connection_id %  thread_pool_size
 ```
 
-The `connection_id` value in the above calculation is the same monotonically increasing number that you can use to identify connections in [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) output or the [information\_schema.PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
+The `connection_id` value in the above calculation is the same monotonically increasing number that you can use to identify connections in [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) output or the [information\_schema.PROCESSLIST](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
 This calculation should assign client connections to each thread group in a round-robin manner. In general, this should result in an even distribution of client connections among thread groups.
 

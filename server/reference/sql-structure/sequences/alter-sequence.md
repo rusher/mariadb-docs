@@ -88,7 +88,7 @@ If you want to change the storage engine or sequence comment, or rename the sequ
 * [SETVAL()](sequence-functions/setval.md). Set next value for the sequence.
 * [AUTO INCREMENT](../../data-types/auto_increment.md)
 * [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/)
-* [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [Information Schema SEQUENCES Table](../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

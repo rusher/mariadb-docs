@@ -201,7 +201,7 @@ get MariaDB to notice the change and update the .frm file.
 
 If partitioning S3 tables are used, the partition definitions will also be stored on S3 storage and will be discovered by other servers.
 
-Discovery of S3 tables is not done for tables in the [mysql databases](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) to make mariadbd boot faster and more securely.
+Discovery of S3 tables is not done for tables in the [mysql databases](../../../reference/system-tables/the-mysql-database-tables/) to make mariadbd boot faster and more securely.
 
 ## Replication
 

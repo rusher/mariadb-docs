@@ -67,8 +67,8 @@ topics:
 
 Then you can enter a topic as the search string to see the help entry for that topic.
 
-The help is provided with the MariaDB server and makes use of four help tables found in the `mysql` database: [help\_relation](system-tables/the-mysql-database-tables/mysql-help_relation-table.md), [help\_topic](system-tables/the-mysql-database-tables/mysql-help_topic-table.md), [help\_category](system-tables/the-mysql-database-tables/mysql-help_category-table.md) and [help\_keyword](system-tables/the-mysql-database-tables/mysql-help_keyword-table.md). These tables are populated by the [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) or `fill_help_table.sql` scripts.
+The help is provided with the MariaDB server and makes use of four help tables found in the `mysql` database: [help\_relation](../../system-tables/the-mysql-database-tables/mysql-help_relation-table.md), [help\_topic](../../system-tables/the-mysql-database-tables/mysql-help_topic-table.md), [help\_category](../../system-tables/the-mysql-database-tables/mysql-help_category-table.md) and [help\_keyword](../../system-tables/the-mysql-database-tables/mysql-help_keyword-table.md). These tables are populated by the [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) or `fill_help_table.sql` scripts.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

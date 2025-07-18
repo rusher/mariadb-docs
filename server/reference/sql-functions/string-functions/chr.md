@@ -8,7 +8,7 @@ CHR(N)
 
 ## Description
 
-`CHR()` interprets each argument N as an integer and returns a [VARCHAR(1)](../../data-types/string-data-types/varchar.md) string consisting of the character given by the code values of the integer. The character set and collation of the string are set according to the values of the [character\_set\_database](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md) and [collation\_database](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) system variables.
+`CHR()` interprets each argument N as an integer and returns a [VARCHAR(1)](../../data-types/string-data-types/varchar.md) string consisting of the character given by the code values of the integer. The character set and collation of the string are set according to the values of the [character\_set\_database](../../system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md) and [collation\_database](../../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) system variables.
 
 `CHR()` is similar to the [CHAR()](char-function.md) function, but only accepts a single argument.
 

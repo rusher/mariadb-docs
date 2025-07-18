@@ -10,9 +10,9 @@ SHOW PLUGINS;
 
 `SHOW PLUGINS` displays information about installed [plugins](../../../plugins/). The `Library` column indicates the plugin library - if it is `NULL`, the plugin is built-in and cannot be uninstalled.
 
-The [PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table in the `information_schema` database contains more detailed information.
+The [PLUGINS](../../../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table in the `information_schema` database contains more detailed information.
 
-For specific information about storage engines (a particular type of plugin), see the [information\_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md) table and the [SHOW ENGINES](show-engines.md) statement.
+For specific information about storage engines (a particular type of plugin), see the [information\_schema.ENGINES](../../../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md) table and the [SHOW ENGINES](show-engines.md) statement.
 
 ## Examples
 
@@ -49,9 +49,9 @@ SHOW PLUGINS;
 
 * [List of Plugins](../../../plugins/information-on-plugins/list-of-plugins.md)
 * [Plugin Overview](../../../plugins/plugin-overview.md)
-* [INFORMATION\_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
+* [INFORMATION\_SCHEMA.PLUGINS Table](../../../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [INSTALL PLUGIN](../plugin-sql-statements/install-plugin.md)
-* [INFORMATION\_SCHEMA.ALL\_PLUGINS Table](../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md) (all plugins, installed or not)
+* [INFORMATION\_SCHEMA.ALL\_PLUGINS Table](../../../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md) (all plugins, installed or not)
 * [INSTALL SONAME](../plugin-sql-statements/install-soname.md)
 * [UNINSTALL PLUGIN](../plugin-sql-statements/uninstall-plugin.md)
 * [UNINSTALL SONAME](../plugin-sql-statements/uninstall-soname.md)

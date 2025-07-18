@@ -1,6 +1,6 @@
 # COM\_FIELD\_LIST
 
-**Warning**: This command is deprecated and not used by MariaDB connectors any more. Please use the SQL statements [SHOW COLUMNS](../../../../../reference/sql-statements/administrative-sql-statements/show/show-columns.md) or [SELECT FROM INFORMATION\_SCHEMA.COLUMNS](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) instead.
+**Warning**: This command is deprecated and not used by MariaDB connectors any more. Please use the SQL statements [SHOW COLUMNS](../../../../../reference/sql-statements/administrative-sql-statements/show/show-columns.md) or [SELECT FROM INFORMATION\_SCHEMA.COLUMNS](../../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) instead.
 
 #### Fields
 

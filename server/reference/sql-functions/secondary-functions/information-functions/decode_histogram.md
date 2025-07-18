@@ -8,7 +8,7 @@ DECODE_HISTOGRAM(hist_type,histogram)
 
 ## Description
 
-Returns a string of comma separated numeric values corresponding to a probability distribution represented by the histogram of type `hist_type` (`SINGLE_PREC_HB` or `DOUBLE_PREC_HB`). The `hist_type` and `histogram` would be commonly used from the [mysql.column\_stats table](../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md).
+Returns a string of comma separated numeric values corresponding to a probability distribution represented by the histogram of type `hist_type` (`SINGLE_PREC_HB` or `DOUBLE_PREC_HB`). The `hist_type` and `histogram` would be commonly used from the [mysql.column\_stats table](../../../system-tables/the-mysql-database-tables/mysql-column_stats-table.md).
 
 See [Histogram Based Statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md) for details.
 

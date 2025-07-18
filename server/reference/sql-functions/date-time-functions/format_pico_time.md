@@ -27,7 +27,7 @@ With the exception of results under one nanosecond, which are not rounded and ar
 
 Returns NULL if the argument is NULL.
 
-This function is very similar to the [Sys Schema](../../sql-statements/administrative-sql-statements/system-tables/sys-schema/) [FORMAT\_TIME](../../sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_time.md) function, but with the following differences:
+This function is very similar to the [Sys Schema](../../system-tables/sys-schema/) [FORMAT\_TIME](../../system-tables/sys-schema/sys-schema-stored-functions/format_time.md) function, but with the following differences:
 
 * Represents minutes as `min` rather than `m`.
 * Does not represent weeks.

@@ -115,7 +115,7 @@ Events are `ENABLE`d by default. If you want to stop MariaDB from executing an e
 
 #### COMMENT
 
-The `COMMENT` clause may be used to set a comment for the event. Maximum length for comments is 64 characters. The comment is a string, so it must be quoted. To see events comments, you can query the [INFORMATION\_SCHEMA.EVENTS table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table.md) (the column is named `EVENT_COMMENT`).
+The `COMMENT` clause may be used to set a comment for the event. Maximum length for comments is 64 characters. The comment is a string, so it must be quoted. To see events comments, you can query the [INFORMATION\_SCHEMA.EVENTS table](../../../system-tables/information-schema/information-schema-tables/information-schema-events-table.md) (the column is named `EVENT_COMMENT`).
 
 ## Examples
 

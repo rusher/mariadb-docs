@@ -15,7 +15,7 @@ The LIKE clause, if present on its own, indicates which function names to match.
 
 The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-The [information\_schema.ROUTINES](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) table contains more detailed information.
+The [information\_schema.ROUTINES](../../../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) table contains more detailed information.
 
 ## Examples
 

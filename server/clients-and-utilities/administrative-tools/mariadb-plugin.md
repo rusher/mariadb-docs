@@ -6,7 +6,7 @@ Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community
 
 It is a commandline alternative to the [INSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) statements, and the `--plugin-load option` to [mariadbd](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
 
-`mariadb-plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+`mariadb-plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](../../reference/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
 
 `mariadb-plugin` basically has two use cases:
 
@@ -60,7 +60,7 @@ The following options can be specified on the command line, while some can be sp
 
 * [List of Plugins](../../reference/plugins/information-on-plugins/list-of-plugins.md)
 * [Plugin Overview](../../reference/plugins/plugin-overview.md)
-* [INFORMATION\_SCHEMA.PLUGINS Table](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
+* [INFORMATION\_SCHEMA.PLUGINS Table](../../reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [INSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)
 * [INSTALL SONAME](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)
 * [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)

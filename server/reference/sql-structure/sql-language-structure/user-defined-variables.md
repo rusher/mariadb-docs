@@ -57,11 +57,11 @@ SELECT a, b, c, (@var:=@var+1) AS counter FROM my_table;
 
 ## Viewing
 
-User-defined variables can be viewed by either querying the [USER\_VARIABLES](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md), or by running `SHOW USER_VARIABLES`.
+User-defined variables can be viewed by either querying the [USER\_VARIABLES](../../system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md), or by running `SHOW USER_VARIABLES`.
 
 ## Flushing User-Defined Variables
 
-User-defined variables are reset and the [Information Schema table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) emptied with the [FLUSH USER\_VARIABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement.
+User-defined variables are reset and the [Information Schema table](../../system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) emptied with the [FLUSH USER\_VARIABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement.
 
 ## Examples
 
@@ -97,8 +97,8 @@ Empty set (0.000 sec)
 ## See Also
 
 * [DECLARE VARIABLE](../../sql-statements/programmatic-compound-statements/declare-variable.md)
-* [Performance Schema user\_variables\_by\_thread Table](../../sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
-* [Information Schema USER\_VARIABLES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md)
+* [Performance Schema user\_variables\_by\_thread Table](../../system-tables/performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
+* [Information Schema USER\_VARIABLES Table](../../system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

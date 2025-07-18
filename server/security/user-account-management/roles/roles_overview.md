@@ -20,9 +20,9 @@ Roles were implemented as a GSoC 2013 project by Vicentiu Ciorbaru.
 
 ## System Tables
 
-Information about roles and who they've been granted to can be found in the [Information Schema APPLICABLE\_ROLES table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table.md) as well as the [mysql.ROLES\_MAPPING table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md).
+Information about roles and who they've been granted to can be found in the [Information Schema APPLICABLE\_ROLES table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table.md) as well as the [mysql.ROLES\_MAPPING table](../../../reference/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md).
 
-The [Information Schema ENABLED\_ROLES table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md) shows the enabled roles for the current session.
+The [Information Schema ENABLED\_ROLES table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md) shows the enabled roles for the current session.
 
 ## Examples
 

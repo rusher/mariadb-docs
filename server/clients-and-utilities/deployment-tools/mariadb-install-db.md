@@ -10,13 +10,13 @@ For the Windows specific tool of similar name and purpose see [mysql\_install\_d
 The Windows version shares the common theme (creating system tables), yet has a lot of functionality specific to Windows systems, for example creating a Windows service. The Windows version does _not_ share command line parameters with the Unix shell script.
 {% endhint %}
 
-`mariadb-install-db` initializes the MariaDB data directory and creates the [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/) in the [mysql](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database, if they do not exist.
+`mariadb-install-db` initializes the MariaDB data directory and creates the [system tables](../../reference/system-tables/) in the [mysql](../../reference/system-tables/the-mysql-database-tables/) database, if they do not exist.
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 MariaDB uses these tables to manage [privileges](../../reference/sql-statements/account-management-sql-statements/grant.md#privilege-levels), [roles](../../security/user-account-management/roles/), and [plugins](../../reference/plugins/). It also uses them to provide the data for the [help](../../reference/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](../mariadb-client/) client.
 
-`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#bootstrap) mode and sending commands to create the [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/) and their content.
+`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#bootstrap) mode and sending commands to create the [system tables](../../reference/system-tables/) and their content.
 
 ## Using mariadb-install-db
 
@@ -190,13 +190,13 @@ data directory, which is the directory specified with `--datadir` option. This s
 
 ### Testing With mariadbd
 
-You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#skip-grant-tables) option will tell it to ignore the [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/). Enabling the [general query log](../../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
+You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#skip-grant-tables) option will tell it to ignore the [system tables](../../reference/system-tables/). Enabling the [general query log](../../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
 
 ```
 mariadbd --skip-grant-tables --general-log
 ```
 
-At this point, you can use the [mariadb](../mariadb-client/) client to connect to the [mysql](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database and look at the [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/). For example:
+At this point, you can use the [mariadb](../mariadb-client/) client to connect to the [mysql](../../reference/system-tables/the-mysql-database-tables/) database and look at the [system tables](../../reference/system-tables/). For example:
 
 ```
 $ /usr/local/mysql/bin/mysql -u root mysql
@@ -325,10 +325,10 @@ Create_tablespace_priv: N
     max_statement_time: 0.000000
 ```
 
-As seen above from the [mysql.user](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, the anonymous user doesn't have any global privileges.\
+As seen above from the [mysql.user](../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md) table, the anonymous user doesn't have any global privileges.\
 Still, the anonymous user can see databases, so there must be a way so that anonymous user can see the `test` and `test_electricity` databases.
 
-Let's check for grants on the database level. That information can be found in the [mysql.db](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table.\
+Let's check for grants on the database level. That information can be found in the [mysql.db](../../reference/system-tables/the-mysql-database-tables/mysql-db-table.md) table.\
 Looking at the `mysql.db` table, it already contains 2 rows created when the `mariadb-install-db` script was invoked.
 
 The anonymous user has database privileges (without `grant`, `alter_routine` and `execute`) on `test` and `test_%` databases:

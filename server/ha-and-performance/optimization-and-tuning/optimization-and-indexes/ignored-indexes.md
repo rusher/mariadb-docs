@@ -34,7 +34,7 @@ table's primary key cannot be ignored. This applies to both explicitly defined p
 The optimizer will treats ignored indexes as if they didn't exist. They will not be used in the query plans, or as a source of statistical information.\
 Also, an attempt to use an ignored index in a `USE INDEX`, `FORCE INDEX`, or `IGNORE INDEX` hint will result in an error - the same what would have if one used a name of a non-existent index.
 
-Information about whether or not indexes are ignored can be viewed in the IGNORED column in the [Information Schema STATISTICS table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) or the [SHOW INDEX](../../../reference/sql-statements/administrative-sql-statements/show/show-index.md) statement.
+Information about whether or not indexes are ignored can be viewed in the IGNORED column in the [Information Schema STATISTICS table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) or the [SHOW INDEX](../../../reference/sql-statements/administrative-sql-statements/show/show-index.md) statement.
 
 ## Intended Usage
 

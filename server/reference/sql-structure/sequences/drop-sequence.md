@@ -31,7 +31,7 @@ Use `IF EXISTS` to prevent an error from occurring for sequences that do not exi
 * [CREATE SEQUENCE](create-sequence.md)
 * [ALTER SEQUENCE](alter-sequence.md)
 * [DROP TABLE](../../sql-statements/data-definition/drop/drop-table.md)
-* [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [Information Schema SEQUENCES Table](../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

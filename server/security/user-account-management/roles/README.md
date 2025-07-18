@@ -39,14 +39,14 @@ description: >-
 [revoke.md](../../../reference/sql-statements/account-management-sql-statements/revoke.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md" %}
-[mysql-roles\_mapping-table.md](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md)
+{% content-ref url="../../../reference/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md" %}
+[mysql-roles\_mapping-table.md](../../../reference/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table.md" %}
-[information-schema-applicable\_roles-table.md](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table.md)
+{% content-ref url="../../../reference/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table.md" %}
+[information-schema-applicable\_roles-table.md](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md" %}
-[information-schema-enabled\_roles-table.md](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md)
+{% content-ref url="../../../reference/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md" %}
+[information-schema-enabled\_roles-table.md](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md)
 {% endcontent-ref %}

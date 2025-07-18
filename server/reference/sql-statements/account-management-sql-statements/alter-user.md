@@ -50,7 +50,7 @@ lock_option:
 
 ## Description
 
-The `ALTER USER` statement modifies existing MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#global-privileges) privilege or the [UPDATE](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database. The global [SUPER](grant.md#global-privileges) privilege is also required if the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable is enabled.
+The `ALTER USER` statement modifies existing MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#global-privileges) privilege or the [UPDATE](grant.md#table-privileges) privilege for the [mysql](../../system-tables/the-mysql-database-tables/) database. The global [SUPER](grant.md#global-privileges) privilege is also required if the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable is enabled.
 
 If any of the specified user accounts do not yet exist, an error results. If an error occurs, `ALTER USER` will still modify the accounts that do not result in an error. Only one error is produced for all users which have not been modified.
 
@@ -111,7 +111,7 @@ CREATE USER for bob@localhost: CREATE USER `bob`@`localhost`
 
 ### IDENTIFIED BY 'password'
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function prior to being stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) view.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function prior to being stored in the [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md) view.
 
 For example, if our password is `mariadb`, then we can set the account's password with:
 
@@ -128,7 +128,7 @@ The only [authentication plugins](../../plugins/authentication-plugins/) that th
 
 ### IDENTIFIED BY PASSWORD 'password\_hash'
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)#function. It will be stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) view as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)#function. It will be stored in the [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md) view as-is.
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
@@ -249,7 +249,7 @@ The resources are tracked per account, which means `'user'@'server'`; not per us
 
 The count can be reset for all users using [FLUSH USER\_RESOURCES](../administrative-sql-statements/flush-commands/flush.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md) or [mysqladmin reload](../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md).
 
-Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
+Per account resource limits are stored in the [user](../../system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../../system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 ## Password Expiry
 
@@ -289,7 +289,7 @@ The _lock\_option_ must be placed before the _password\_option_.
 * [DROP USER](drop-user.md)
 * [SET PASSWORD](set-password.md)
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
-* [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
+* [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md)
 * [Password Validation Plugins](../../plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 * [Authentication Plugins](../../plugins/authentication-plugins/) - allow various authentication methods to be used, and new ones to be developed.
 

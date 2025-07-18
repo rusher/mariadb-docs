@@ -95,7 +95,7 @@ CREATE TABLE hq_sales.invoices (
 );
 ```
 
-6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```sql
 SELECT NAME, ROW_FORMAT
@@ -173,7 +173,7 @@ CREATE TABLE hq_sales.invoices (
 ) ROW_FORMAT = DYNAMIC;
 ```
 
-6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```sql
 SELECT NAME, ROW_FORMAT
@@ -201,7 +201,7 @@ Let's convert some InnoDB tables to the Dynamic row format:
 $ mariadb --user=root
 ```
 
-2. Search for InnoDB tables that do not use the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+2. Search for InnoDB tables that do not use the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```sql
 SELECT NAME, ROW_FORMAT
@@ -225,7 +225,7 @@ ALTER TABLE hq_sales.invoices
    ROW_FORMAT = DYNAMIC;
 ```
 
-4. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table again:
+4. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table again:
 
 ```
 SELECT NAME, ROW_FORMAT

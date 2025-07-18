@@ -146,7 +146,7 @@ SELECT NEXTVAL(s1);
 * [CREATE SEQUENCE](../create-sequence.md)
 * [NEXT VALUE FOR](next-value-for-sequence_name.md)
 * [PREVIOUS VALUE FOR](previous-value-for-sequence_name.md)
-* [Information Schema SEQUENCES Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [Information Schema SEQUENCES Table](../../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 * [Error 4084: Sequence has run out](broken-reference)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

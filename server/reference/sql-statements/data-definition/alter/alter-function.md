@@ -30,7 +30,7 @@ ALTER FUNCTION hello SQL SECURITY INVOKER;
 * [SHOW CREATE FUNCTION](../../administrative-sql-statements/show/show-create-function.md)
 * [DROP FUNCTION](../../../../server-usage/stored-routines/stored-functions/drop-function.md)
 * [SHOW FUNCTION STATUS](../../administrative-sql-statements/show/show-function-status.md)
-* [Information Schema ROUTINES Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [Information Schema ROUTINES Table](../../../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

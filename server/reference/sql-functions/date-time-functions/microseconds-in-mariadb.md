@@ -40,7 +40,7 @@ SELECT STR_TO_DATE('20200809 020917076','%Y%m%d %H%i%s%f');
 ## Additional Information
 
 * When comparing anything to a temporal value (`DATETIME`, `TIME`, [DATE](../../data-types/date-and-time-data-types/date.md), or `TIMESTAMP`), both values are compared as temporal values, not as strings.
-* The [INFORMATION\_SCHEMA.COLUMNS table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) has a new column `DATETIME_PRECISION`
+* The [INFORMATION\_SCHEMA.COLUMNS table](../../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) has a new column `DATETIME_PRECISION`
 * [NOW()](now.md), [CURTIME()](curtime.md), [UTC\_TIMESTAMP()](utc_timestamp.md), [UTC\_TIME()](utc_time.md), [CURRENT\_TIME()](current_time.md), [CURRENT\_TIMESTAMP()](current_timestamp.md), [LOCALTIME()](localtime.md) and [LOCALTIMESTAMP()](localtimestamp.md) accept datetime precision as an optional argument. For example:
 
 ```sql
@@ -63,11 +63,11 @@ SELECT TIME('10:10:10') + INTERVAL 100 MICROSECOND;
 --> 10:10:10.000100
 ```
 
-* The `event_time` field in the [mysql.general\_log](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table and the `start_time`, `query_time`, and `lock_time` fields in the [mysql.slow\_log](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table now store values with microsecond precision.
+* The `event_time` field in the [mysql.general\_log](../../system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table and the `start_time`, `query_time`, and `lock_time` fields in the [mysql.slow\_log](../../system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table now store values with microsecond precision.
 * The old syntax `TIMESTAMP(N)`, where `N` is the display width, is no longer supported.
 * When a `DATETIME` value is compared to a `TIME` value, the latter is treated as a full datetime with a zero date part, similar to comparing `DATE` to a `DATETIME`, or to comparing `DECIMAL` numbers.\
   Earlier versions of MariaDB used to compare only the time part of both operands in such a case.
-* In MariaDB, an extra column [TIME\_MS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) has been added to the [INFORMATION\_SCHEMA.PROCESSLIST](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table, as well as to the output of [SHOW FULL PROCESSLIST](../../sql-statements/administrative-sql-statements/show/show-processlist.md).
+* In MariaDB, an extra column [TIME\_MS](../../system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) has been added to the [INFORMATION\_SCHEMA.PROCESSLIST](../../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table, as well as to the output of [SHOW FULL PROCESSLIST](../../sql-statements/administrative-sql-statements/show/show-processlist.md).
 
 **Note:** When you convert a temporal value to a value with a smaller precision, it will be truncated, not rounded. This is done to guarantee that the date part is not changed. For example:
 

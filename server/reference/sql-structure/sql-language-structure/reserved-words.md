@@ -306,7 +306,7 @@ If the `IGNORE_SPACE` [SQL\_MODE](../../../server-management/variables-and-modes
 
 ## See Also
 
-* [Information Schema KEYWORDS Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-keywords-table.md)
+* [Information Schema KEYWORDS Table](../../system-tables/information-schema/information-schema-tables/information-schema-keywords-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

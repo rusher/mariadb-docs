@@ -22,7 +22,7 @@ SHOW PLUGINS SONAME 'ha_example.so';
 +----------+---------------+----------------+---------------+---------+
 ```
 
-There is also a corresponding [information\_schema](../system-tables/information-schema/) table, called [ALL\_PLUGINS](../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md), which contains more complete information.
+There is also a corresponding [information\_schema](../../../system-tables/information-schema/) table, called [ALL\_PLUGINS](../../../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md), which contains more complete information.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

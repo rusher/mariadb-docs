@@ -8,9 +8,9 @@ Let's see how we can manage secrets.
 
 Most of the times, Ansible connects to the target hosts via SSH. It is common to use the system username and the SSH keys installed in `/.ssh`, which is the SSH clients default. In this case, nothing has to be done on the clients to be able to allow Ansible to use SSH, as long as they are already able to connect to the target hosts.
 
-It is also possible to specify a different username as [ANSIBLE_REMOTE_USER](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_REMOTE_USER) and an SSH configuration file as [ANSIBLE_NETCONF_SSH_CONFIG](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_NETCONF_SSH_CONFIG). These settings can be specified in Ansible configuration file or as environment variables.
+It is also possible to specify a different username as [ANSIBLE\_REMOTE\_USER](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_REMOTE_USER) and an SSH configuration file as [ANSIBLE\_NETCONF\_SSH\_CONFIG](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_NETCONF_SSH_CONFIG). These settings can be specified in Ansible configuration file or as environment variables.
 
-[ANSIBLE_ASK_PASS](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_ASK_PASS) can be specified. If this is the case, Ansible will prompt the user asking to type an SSH password.
+[ANSIBLE\_ASK\_PASS](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_ASK_PASS) can be specified. If this is the case, Ansible will prompt the user asking to type an SSH password.
 
 ## Avoiding Sharing Secrets
 
@@ -20,7 +20,7 @@ Once Ansible is able to connect remote hosts, it can also be used to install the
 
 MariaDB has a [UNIX\_SOCKET](../../../../../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) plugin that can be used to let some users avoid entering a password, as far as they're logged in the operating system. This authentication method is used by default for the root user. This is a good way to avoid having one more password and possibly writing to a `.my.cnf` file so that the user doesn't have to type it.
 
-Even for users who connect remotely, it is normally not necessary to insert passwords in an Ansible file. When we create a user with a password, a hash of the original password is stored in MariaDB. That hash can be found in the [mysql.user table](../../../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md). To know the hash of a password without even creating a user, we can use the [PASSWORD()](../../../../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function:
+Even for users who connect remotely, it is normally not necessary to insert passwords in an Ansible file. When we create a user with a password, a hash of the original password is stored in MariaDB. That hash can be found in the [mysql.user table](../../../../../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md). To know the hash of a password without even creating a user, we can use the [PASSWORD()](../../../../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function:
 
 ```
 SELECT PASSWORD('my_password12') AS hash;

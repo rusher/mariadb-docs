@@ -71,7 +71,7 @@ This is the same syntax used by MySQL 5.7, although MySQL 5.7 does not have mult
 `FOLLOWS` adds the new trigger after another trigger while `PRECEDES` adds the new trigger before another trigger. If neither option is used, the new trigger is added last for the given action and time.
 
 `FOLLOWS` and `PRECEDES` are not stored in the trigger definition. However the trigger order is guaranteed to not change over time. [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) and other backup methods will not change trigger order.\
-You can verify the trigger order from the `ACTION_ORDER` column in [INFORMATION\_SCHEMA.TRIGGERS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table.
+You can verify the trigger order from the `ACTION_ORDER` column in [INFORMATION\_SCHEMA.TRIGGERS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table.
 
 ```sql
 SELECT trigger_name, action_order FROM information_schema.triggers 
@@ -124,7 +124,7 @@ SHOW WARNINGS;
 * [Identifier Names](../../../reference/sql-structure/sql-language-structure/identifier-names.md)
 * [Trigger Overview](trigger-overview.md)
 * [DROP TRIGGER](../../../reference/sql-statements/data-definition/drop/drop-trigger.md)
-* [Information Schema TRIGGERS Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
+* [Information Schema TRIGGERS Table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
 * [SHOW TRIGGERS](../../../reference/sql-statements/administrative-sql-statements/show/show-triggers.md)
 * [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](trigger-limitations.md)

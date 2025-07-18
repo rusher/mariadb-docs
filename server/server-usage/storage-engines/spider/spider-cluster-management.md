@@ -150,7 +150,7 @@ A number of new [status variables](../../../ha-and-performance/optimization-and-
 
 ## Information Schema Tables
 
-* A new [Information Schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) table is installed - [SPIDER\_ALLOC\_MEM](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md).
+* A new [Information Schema](../../../reference/system-tables/information-schema/) table is installed - [SPIDER\_ALLOC\_MEM](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md).
 
 ```
 +-------------------+---------------------+------+-----+---------+-------+
@@ -171,9 +171,9 @@ From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-ser
 
 ## Performance Schema
 
-The [Performance schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
+The [Performance schema](../../../reference/system-tables/performance-schema/) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
 
-To activate the performance schema, use the [performance\_schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
+To activate the performance schema, use the [performance\_schema](../../../reference/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ```sql
 performance_schema=ON

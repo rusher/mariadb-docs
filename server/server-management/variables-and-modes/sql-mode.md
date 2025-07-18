@@ -215,7 +215,7 @@ Statements that don't modify data will return a warning when adjusted regardless
 
 It is possible to change session SQL\_MODE within a stored program. In this case, the new SQL\_MODE will be in effect only in the body of the current stored program. If it calls some stored procedures, they will not be affected by the change.
 
-Some Information Schema tables (such as [ROUTINES](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)) and SHOW CREATE statements such as [SHOW CREATE PROCEDURE](../../reference/sql-statements/administrative-sql-statements/show/show-create-procedure.md) show the SQL\_MODE used by the stored programs.
+Some Information Schema tables (such as [ROUTINES](../../reference/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)) and SHOW CREATE statements such as [SHOW CREATE PROCEDURE](../../reference/sql-statements/administrative-sql-statements/show/show-create-procedure.md) show the SQL\_MODE used by the stored programs.
 
 ## Examples
 

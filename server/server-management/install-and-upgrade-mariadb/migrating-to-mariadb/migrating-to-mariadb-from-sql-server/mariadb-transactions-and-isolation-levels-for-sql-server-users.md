@@ -278,13 +278,13 @@ For more information see [InnoDB Lock Modes](../../../../server-usage/storage-en
 
 ### Information Schema
 
-Querying the [information\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) is the best way to see which transactions have acquired some locks and which transactions are waiting for some locks to be released.
+Querying the [information\_schema](../../../../reference/system-tables/information-schema/) is the best way to see which transactions have acquired some locks and which transactions are waiting for some locks to be released.
 
 In particular, check the following tables:
 
-* [INNODB\_LOCKS](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_locks-table.md): requests for locks not yet fulfilled, or that are blocking another transaction.
-* [INNODB\_LOCK\_WAITS](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_lock_waits-table.md): queued requests to acquire a lock.
-* [INNODB\_TRX](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_trx-table.md): information about all currently executing InnoDB transactions, including SQL queries that are running.
+* [INNODB\_LOCKS](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_locks-table.md): requests for locks not yet fulfilled, or that are blocking another transaction.
+* [INNODB\_LOCK\_WAITS](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_lock_waits-table.md): queued requests to acquire a lock.
+* [INNODB\_TRX](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_trx-table.md): information about all currently executing InnoDB transactions, including SQL queries that are running.
 
 Here is an example of their usage.
 

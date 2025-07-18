@@ -149,7 +149,7 @@ This is as of [MariaDB 5.1.50](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/co
 * MariaDB will convert [InnoDB](../../server-usage/storage-engines/innodb/) tables (no need to do a dump/restore or [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/)).
 * MariaDB will convert old archive tables to the new 5.1 format.
 * "mysql\_upgrade --verbose" will run "mariadb-check --verbose" so that you get more information of what is happening. Running with 3 times --verbose will in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) print out all CHECK, RENAME and ALTER TABLE commands executed.
-* The [mysql.event table](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes) and [MariaDB 10.1.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-9-release-notes)).
+* The [mysql.event table](../../reference/system-tables/the-mysql-database-tables/mysql-event-table.md) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes) and [MariaDB 10.1.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-9-release-notes)).
 * More descriptive output.
 
 ### Speeding Up mariadb-upgrade
@@ -176,7 +176,7 @@ To fix issues like this, run `mariadb-upgrade`, [mariadb-check](../table-tools/m
 
 ### Other Uses
 
-* `mariadb-upgrade` will re-create any missing tables in the [mysql database](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/). It will not touch any data in existing tables.
+* `mariadb-upgrade` will re-create any missing tables in the [mysql database](../../reference/system-tables/the-mysql-database-tables/). It will not touch any data in existing tables.
 
 ### See Also
 

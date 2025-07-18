@@ -9,7 +9,7 @@ Most status variables are described on this page, but some are described elsewhe
 * [InnoDB Status Variables](innodb-status-variables.md)
 * [Mroonga Status Variables](../../../server-usage/storage-engines/mroonga/mroonga-status-variables.md)
 * [MyRocks Status Variables](../../../server-usage/storage-engines/myrocks/myrocks-status-variables.md)
-* [Performance Scheme Status Variables](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md)
+* [Performance Scheme Status Variables](../../../reference/system-tables/performance-schema/performance-schema-status-variables.md)
 * [Replication and Binary Log Status Variables](../../standard-replication/replication-and-binary-log-status-variables.md)
 * [S3 Storage Engine Status Variables](../../../server-usage/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md)
 * [Server\_Audit Status Variables](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md)
@@ -18,7 +18,7 @@ Most status variables are described on this page, but some are described elsewhe
 * [TokuDB Status Variables](../../../server-usage/storage-engines/tokudb/tokudb-status-variables.md)
 
 Use the [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement to view status variables. This\
-information also can be obtained using the [mariadb-admin extended-status](../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.
+information also can be obtained using the [mariadb-admin extended-status](../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.
 
 Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) will reset many status variables to zero.
 
@@ -50,19 +50,19 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Acl_column_grants`
 
-* Description: Number of column permissions granted (rows in the [mysql.columns\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-columns_priv-table.md)).
+* Description: Number of column permissions granted (rows in the [mysql.columns\_priv table](../../../reference/system-tables/the-mysql-database-tables/mysql-columns_priv-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_database_grants`
 
-* Description: Number of database permissions granted (rows in the [mysql.db table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md)).
+* Description: Number of database permissions granted (rows in the [mysql.db table](../../../reference/system-tables/the-mysql-database-tables/mysql-db-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_function_grants`
 
-* Description: Number of function permissions granted (rows in the [mysql.procs\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) with a routine type of `FUNCTION`).
+* Description: Number of function permissions granted (rows in the [mysql.procs\_priv table](../../../reference/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) with a routine type of `FUNCTION`).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -80,37 +80,37 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Acl_procedure_grants`
 
-* Description: Number of procedure permissions granted (rows in the [mysql.procs\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) with a routine type of `PROCEDURE`).
+* Description: Number of procedure permissions granted (rows in the [mysql.procs\_priv table](../../../reference/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) with a routine type of `PROCEDURE`).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_proxy_users`
 
-* Description: Number of proxy permissions granted (rows in the [mysql.proxies\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proxies_priv-table.md)).
+* Description: Number of proxy permissions granted (rows in the [mysql.proxies\_priv table](../../../reference/system-tables/the-mysql-database-tables/mysql-proxies_priv-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_role_grants`
 
-* Description: Number of role permissions granted (rows in the [mysql.roles\_mapping table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md)).
+* Description: Number of role permissions granted (rows in the [mysql.roles\_mapping table](../../../reference/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_roles`
 
-* Description: Number of roles (rows in the [mysql.user table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) where `is_role='Y'`).
+* Description: Number of roles (rows in the [mysql.user table](../../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md) where `is_role='Y'`).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_table_grants`
 
-* Description: Number of table permissions granted (rows in the [mysql.tables\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-tables_priv-table.md)).
+* Description: Number of table permissions granted (rows in the [mysql.tables\_priv table](../../../reference/system-tables/the-mysql-database-tables/mysql-tables_priv-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_users`
 
-* Description: Number of users (rows in the [mysql.user table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) where `is_role='N'`).
+* Description: Number of users (rows in the [mysql.user table](../../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md) where `is_role='N'`).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -777,7 +777,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_client_statistics`
 
-* Description: Number of [SHOW CLIENT STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/).
+* Description: Number of [SHOW CLIENT STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/system-tables/information-schema/information-schema-tables/).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -929,7 +929,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_index_statistics`
 
-* Description: Number of [SHOW INDEX\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/).
+* Description: Number of [SHOW INDEX\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/system-tables/information-schema/information-schema-tables/).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -1008,7 +1008,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_table_statistics`
 
-* Description: Number of [SHOW TABLE STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/).
+* Description: Number of [SHOW TABLE STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/system-tables/information-schema/information-schema-tables/).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -1033,7 +1033,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_user_statistics`
 
-* Description: Number of [SHOW USER STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/).
+* Description: Number of [SHOW USER STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/system-tables/information-schema/information-schema-tables/).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)

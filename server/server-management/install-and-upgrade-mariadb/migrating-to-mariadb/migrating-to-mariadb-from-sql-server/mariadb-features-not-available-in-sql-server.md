@@ -22,7 +22,7 @@ This page has a list of MariaDB features that are not supported in SQL Server. T
 * The [CREATE ... IF EXISTS, CREATE OR REPLACE, DROP ... IF NOT EXISTS](syntax-differences-between-mariadb-and-sql-server.md#if-exists-if-not-exists-or-replace) options are supported for most [DDL statements](../../../../reference/sql-statements/data-definition/).
 * [SHOW](syntax-differences-between-mariadb-and-sql-server.md#show-statements) statements.
 * [SHOW CREATE](syntax-differences-between-mariadb-and-sql-server.md#show-create-statements) statements.
-* [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) and [PERFORMANCE\_SCHEMA THREAD table](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) provide much richer information, compared to SQL Server `sp_who()` and `sp_who2()` procedures.
+* [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) and [PERFORMANCE\_SCHEMA THREAD table](../../../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) provide much richer information, compared to SQL Server `sp_who()` and `sp_who2()` procedures.
 * [CHECKSUM TABLE](../../../../reference/sql-statements/table-statements/checksum-table.md) statement.
 * [PL/SQL support](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) (only for stored procedures and stored functions).
 * Row constructors.

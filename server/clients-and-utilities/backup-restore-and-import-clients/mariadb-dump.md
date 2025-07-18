@@ -14,7 +14,7 @@ The `mariadb-dump` client can be used to dump a database or a collection of data
 
 If you are doing a backup on the server and your tables all are [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) tables, consider using [mariadb-hotcopy](mariadb-hotcopy.md) instead because it can accomplish faster backups and faster restores.
 
-mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/stored-routines/stored-procedures/), [views](../../server-usage/views/), and [events](../../server-usage/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](../../server-usage/stored-routines/stored-functions/) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
+mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/stored-routines/stored-procedures/), [views](../../server-usage/views/), and [events](../../server-usage/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](../../server-usage/stored-routines/stored-functions/) are however also part of the system tables (for example [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
 
 `mariadb-dump` supports the [enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md#mariadb-dump).
 
@@ -51,7 +51,7 @@ To see a list of the options your version of `mariadb-dump` supports, execute `m
 
 ### mariadb-dump and the mysql.transaction\_registry\_table
 
-`mariadb-dump` includes logic to cater for the [mysql.transaction\_registry table](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md).
+`mariadb-dump` includes logic to cater for the [mysql.transaction\_registry table](../../reference/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md).
 
 ### mariadb-dump and Old Versions of MySQL
 
@@ -245,7 +245,7 @@ Flush the MariaDB server log files before starting the dump. This option require
 
 #### --flush-privileges
 
-Send a [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to the server after dumping the [mysql database](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/). This option should be used any time the dump contains the mysql database and any other database that depends on the data in the mysql database for proper restoration.
+Send a [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to the server after dumping the [mysql database](../../reference/system-tables/the-mysql-database-tables/). This option should be used any time the dump contains the mysql database and any other database that depends on the data in the mysql database for proper restoration.
 
 #### -f, --force
 
@@ -407,7 +407,7 @@ Direct output to a given file. This option should be used on Windows to prevent 
 
 #### -R, --routines
 
-Include stored routines ([procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](../../server-usage/stored-routines/stored-functions/)) for the dumped databases in the output. Use of this option requires the SELECT privilege for the [mysql.proc](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md) table. The output generated using --routines contains [CREATE PROCEDURE](../../server-usage/stored-routines/stored-procedures/create-procedure.md) and [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md) statements to re-create the routines. However, these statements do not include attributes such as the routine creation and modification timestamps. This means that when the routines are reloaded, they will be created with the timestamps equal to the reload time.If you require routines to be re-created with their original timestamp attributes, do not use --routines. Instead, dump and reload the contents of the [mysql.proc](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md) table directly, using a MariaDB account which has appropriate privileges for the mysql database.
+Include stored routines ([procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](../../server-usage/stored-routines/stored-functions/)) for the dumped databases in the output. Use of this option requires the SELECT privilege for the [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md) table. The output generated using --routines contains [CREATE PROCEDURE](../../server-usage/stored-routines/stored-procedures/create-procedure.md) and [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md) statements to re-create the routines. However, these statements do not include attributes such as the routine creation and modification timestamps. This means that when the routines are reloaded, they will be created with the timestamps equal to the reload time.If you require routines to be re-created with their original timestamp attributes, do not use --routines. Instead, dump and reload the contents of the [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md) table directly, using a MariaDB account which has appropriate privileges for the mysql database.
 
 \| set-charset | Add 'SET NAMES default\_character\_set' to the output in order to set the [character set](../../reference/data-types/string-data-types/character-sets/). Enabled by default; suppress with --skip-set-charset. |
 
@@ -505,7 +505,7 @@ Enables [server certificate verification](../../security/securing-mariadb/securi
 
 #### --system=option\[,option]]
 
-Dump the database's system tables in a logical form. With this option, the [mysql database](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) tables are dumped as [CREATE USER](../../reference/sql-statements/account-management-sql-statements/create-user.md), [CREATE SERVER](../../reference/sql-statements/data-definition/create/create-server.md) and other forms of logical portable SQL statements. The option values here are from the set of all, users, plugins, udfs, servers, stats, timezones.
+Dump the database's system tables in a logical form. With this option, the [mysql database](../../reference/system-tables/the-mysql-database-tables/) tables are dumped as [CREATE USER](../../reference/sql-statements/account-management-sql-statements/create-user.md), [CREATE SERVER](../../reference/sql-statements/data-definition/create/create-server.md) and other forms of logical portable SQL statements. The option values here are from the set of all, users, plugins, udfs, servers, stats, timezones.
 
 #### -T, --tab=name
 

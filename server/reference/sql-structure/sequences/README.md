@@ -31,8 +31,8 @@ description: >-
 [sequence-functions](sequence-functions/)
 {% endcontent-ref %}
 
-{% content-ref url="../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md" %}
-[information-schema-sequences-table.md](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+{% content-ref url="../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md" %}
+[information-schema-sequences-table.md](../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../sql-statements/administrative-sql-statements/show/show-tables.md" %}

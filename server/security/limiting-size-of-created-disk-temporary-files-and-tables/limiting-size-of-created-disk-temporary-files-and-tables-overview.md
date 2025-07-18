@@ -30,7 +30,7 @@ There are two system variables used for controlling this feature:
 
 ## Information Schema
 
-* New field in [information\_schema.process\_list](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md): TMP\_SPACE\_USED
+* New field in [information\_schema.process\_list](../../reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md): TMP\_SPACE\_USED
 
 ## Noteworthy issue
 

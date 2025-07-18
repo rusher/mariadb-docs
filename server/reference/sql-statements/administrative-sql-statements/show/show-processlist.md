@@ -8,7 +8,7 @@ SHOW [FULL] PROCESSLIST
 
 ## Description
 
-`SHOW PROCESSLIST` shows you which threads are running. You can also get this information from the [information\_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table or the [mariadb-admin processlist](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command. If you have the [PROCESS privilege](show-privileges.md), you can see all threads. Otherwise, you can see only your own threads (that is, threads associated with the MariaDB account that you are using). If you do not use the`FULL` keyword, only the first 100 characters of each statement are shown in the Info field.
+`SHOW PROCESSLIST` shows you which threads are running. You can also get this information from the [information\_schema.PROCESSLIST](../../../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table or the [mariadb-admin processlist](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command. If you have the [PROCESS privilege](show-privileges.md), you can see all threads. Otherwise, you can see only your own threads (that is, threads associated with the MariaDB account that you are using). If you do not use the`FULL` keyword, only the first 100 characters of each statement are shown in the Info field.
 
 The columns shown in `SHOW PROCESSLIST` are:
 
@@ -24,13 +24,13 @@ The columns shown in `SHOW PROCESSLIST` are:
 | INFO     | The statement being executed.                                                                                                                                                                                                                                                                                                                                                                  |
 | PROGRESS | The total progress of the process (0-100%) (see [Progress Reporting](show-processlist.md)).                                                                                                                                                                                                                                                                                                    |
 
-The [information\_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table contains a number of additional columns. See `TIME_MS` column in [information\_schema.PROCESSLIST](../system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) for differences in the `TIME` column between MariaDB and MySQL.
+The [information\_schema.PROCESSLIST](../../../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table contains a number of additional columns. See `TIME_MS` column in [information\_schema.PROCESSLIST](../../../system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) for differences in the `TIME` column between MariaDB and MySQL.
 
 Note that the `PROGRESS` field from the information schema, and the `PROGRESS` field from `SHOW PROCESSLIST` display different results. `SHOW PROCESSLIST` shows the total progress, while the information schema shows the progress for the current stage only.
 
 Threads can be killed using their thread\_id or their query\_id, with the [KILL](../kill.md) statement.
 
-Since queries on this table are locking, if the [performance\_schema](../system-tables/performance-schema/) is enabled, you may want to query the [THREADS](../system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table instead.
+Since queries on this table are locking, if the [performance\_schema](../../../system-tables/performance-schema/) is enabled, you may want to query the [THREADS](../../../system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table instead.
 
 ## Examples
 

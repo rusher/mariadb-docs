@@ -47,7 +47,7 @@ There are four types of table constraints:
 | UNIQUE      | Requires values in column or columns only occur once in the table.        |
 | CHECK       | Checks whether the data meets the given condition.                        |
 
-The [Information Schema TABLE\_CONSTRAINTS Table](../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md) contains information about tables that have constraints.
+The [Information Schema TABLE\_CONSTRAINTS Table](../../system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md) contains information about tables that have constraints.
 
 ### FOREIGN KEY Constraints
 
@@ -65,7 +65,7 @@ reference_option:
     RESTRICT | CASCADE | SET NULL | NO ACTION
 ```
 
-The [Information Schema REFERENTIAL\_CONSTRAINTS](../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md) table has more information about foreign keys.
+The [Information Schema REFERENTIAL\_CONSTRAINTS](../../system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md) table has more information about foreign keys.
 
 ### CHECK Constraints
 

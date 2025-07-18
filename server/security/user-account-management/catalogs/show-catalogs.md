@@ -22,7 +22,7 @@ If the server was started with the [--skip-show-database](../../../ha-and-perfor
 
 The list of results returned by `SHOW CATALOGS` is based on directories in the data directory, which is how MariaDB implements catalogs. It only list directories that have a `mysql` directory.
 
-The [Information Schema Catalogs table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-catalog-table.md) also contains catalog information.
+The [Information Schema Catalogs table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-catalog-table.md) also contains catalog information.
 
 ## Examples
 
@@ -50,7 +50,7 @@ SHOW CATALOGS LIKE 'c%';
 
 * [CREATE CATALOG](create-catalog.md)
 * [Character Sets and Collations](../../../reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
-* [Information Schema CATALOG Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-catalog-table.md)
+* [Information Schema CATALOG Table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-catalog-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

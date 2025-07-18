@@ -8,7 +8,7 @@ The [time\_zone](../../../../../ha-and-performance/optimization-and-tuning/syste
 
 * The default value is `SYSTEM`, which indicates that the system time zone defined in the [system\_time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) system variable will be used. Note that if you are using `SYSTEM` with replication in either statement or mixed mode, you MUST use the same value for `system_time_zone` on all replicas (otherwise `TIMESTAMP` columns will not replicate correctly). See [System Time Zone](time-zones.md#system-time-zone) below for more information.
 * An offset from [Coordinated Universal Time (UTC)](coordinated-universal-time.md), such as `+5:00` or `-9:00`, can also be used.
-* If the time zone tables in the [mysql](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database were loaded, then a named time zone, such as `America/New_York`, `Africa/Johannesburg`, or `Europe/Helsinki`, is also permissible. See [mysql Time Zone Tables](time-zones.md#mysql-time-zone-tables) below for more information.
+* If the time zone tables in the [mysql](../../../../system-tables/the-mysql-database-tables/) database were loaded, then a named time zone, such as `America/New_York`, `Africa/Johannesburg`, or `Europe/Helsinki`, is also permissible. See [mysql Time Zone Tables](time-zones.md#mysql-time-zone-tables) below for more information.
 
 There are two time zone settings that can be set within MariaDB--the global server time zone, and the time zone for your current session. There is also a third time zone setting which may be relevant--the system time zone.
 
@@ -124,15 +124,15 @@ Some data types are affected by the time zone settings.
 
 ## mysql Time Zone Tables
 
-The [mysql](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database contains a number of time zone tables:
+The [mysql](../../../../system-tables/the-mysql-database-tables/) database contains a number of time zone tables:
 
-* [time\_zone](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone-table.md)
-* [time\_zone\_leap\_second](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_leap_second-table.md)
-* [time\_zone\_name](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md)
-* [time\_zone\_transition](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition-table.md)
-* [time\_zone\_transition\_type](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-time_zone_transition_type-table.md)
+* [time\_zone](../../../../system-tables/the-mysql-database-tables/mysql-time_zone-table.md)
+* [time\_zone\_leap\_second](../../../../system-tables/the-mysql-database-tables/mysql-time_zone_leap_second-table.md)
+* [time\_zone\_name](../../../../system-tables/the-mysql-database-tables/mysql-time_zone_name-table.md)
+* [time\_zone\_transition](../../../../system-tables/the-mysql-database-tables/mysql-time_zone_transition-table.md)
+* [time\_zone\_transition\_type](../../../../system-tables/the-mysql-database-tables/mysql-time_zone_transition_type-table.md)
 
-By default, these time zone tables in the [mysql](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are created, but not populated.
+By default, these time zone tables in the [mysql](../../../../system-tables/the-mysql-database-tables/) database are created, but not populated.
 
 If you are using a Unix-like operating system, then you can populate these tables using the [mariadb-tzinfo-to-sql](../../../../../clients-and-utilities/administrative-tools/mariadb-tzinfo-to-sql.md) utility, which uses the [zoneinfo](https://linux.die.net/man/5/tzfile) data available on Linux, Mac OS X, FreeBSD and Solaris.
 

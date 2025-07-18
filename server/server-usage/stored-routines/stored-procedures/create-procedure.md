@@ -236,7 +236,7 @@ Query OK, 0 rows affected (0.03 sec)
 * [SHOW CREATE PROCEDURE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
 * [SHOW PROCEDURE STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
 * [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md)
-* [Information Schema ROUTINES Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [Information Schema ROUTINES Table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

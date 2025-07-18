@@ -22,7 +22,7 @@ This page has a list of SQL Server features that MariaDB implements in a differe
   * The [InnoDB](../../../../server-usage/storage-engines/innodb/) storage engine has a feature called adaptive hash index, enabled by default. It means that in InnoDB all indexes are created as `BTREE`, and depending on how they are used, InnoDB could convert them from BTree to hash indexes, or the other way around. This happens in the background.
   * The [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) storage engine uses hash indexes by default, if we don't specify the `BTREE` keyword.
   * See [Storage Engine Index Types](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md) for more information.
-* Query store. MariaDB allows query performance analysis using the [slow log](../../../server-monitoring-logs/slow-query-log/) and [performance\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/). Some open source or commercial 3rd party tools read that information to produce statistics and make it easy to identify slow queries.
+* Query store. MariaDB allows query performance analysis using the [slow log](../../../server-monitoring-logs/slow-query-log/) and [performance\_schema](../../../../reference/system-tables/performance-schema/). Some open source or commercial 3rd party tools read that information to produce statistics and make it easy to identify slow queries.
 
 ## Tables
 

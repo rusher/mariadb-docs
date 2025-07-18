@@ -57,7 +57,7 @@ Note (Code 1008): Can't DROP DATABASE 'bufg'; DATABASE doesn't exist
 * [CREATE DATABASE](../create/create-database.md)
 * [ALTER DATABASE](../alter/alter-database.md)
 * [SHOW DATABASES](../../administrative-sql-statements/show/show-databases.md)
-* [Information Schema SCHEMATA Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
+* [Information Schema SCHEMATA Table](../../../system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 * [SHOW CREATE DATABASE](../../administrative-sql-statements/show/show-create-database.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)

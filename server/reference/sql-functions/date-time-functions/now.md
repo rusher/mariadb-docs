@@ -38,7 +38,7 @@ The optional _precision_ determines the microsecond precision. See [Microseconds
 
 `NOW()` (or its synonyms) can be used as the default value for [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md) columns as well as.
 
-When displayed in the [INFORMATION\_SCHEMA.COLUMNS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table, a default [CURRENT TIMESTAMP](current_timestamp.md) is displayed as `current_timestamp()` .
+When displayed in the [INFORMATION\_SCHEMA.COLUMNS](../../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table, a default [CURRENT TIMESTAMP](current_timestamp.md) is displayed as `current_timestamp()` .
 
 Changing the [timestamp system variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp) with a [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) `timestamp` statement affects the value returned by `NOW()`, but not by [SYSDATE()](sysdate.md).
 

@@ -321,7 +321,7 @@ Let's drop the foreign key constraint from the child table created in the [Creat
 $ mariadb --user=root
 ```
 
-2. Obtain the name of the foreign key constraint by querying the [information\_schema.TABLE\_CONSTRAINTS](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md) table:
+2. Obtain the name of the foreign key constraint by querying the [information\_schema.TABLE\_CONSTRAINTS](../../reference/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md) table:
 
 ```sql
 SELECT CONSTRAINT_NAME

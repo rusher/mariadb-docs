@@ -255,7 +255,7 @@ The `cycle_count` column is incremented every time the sequence wraps around.
 * [SETVAL()](sequence-functions/setval.md). Set next value for the sequence.
 * [AUTO INCREMENT](../../data-types/auto_increment.md)
 * [Sequence Storage Engine](../../../server-usage/storage-engines/sequence-storage-engine.md)
-* [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [Information Schema SEQUENCES Table](../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 * [Error 4084: Sequence has run out](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/sequences/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

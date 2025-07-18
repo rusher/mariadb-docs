@@ -21,7 +21,7 @@ SHOW TRIGGERS [FROM db_name]
 
 The `LIKE` clause, if present on its own, indicates which table names to match and causes the statement to display triggers for those tables. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-Similar information is stored in the [information\_schema.TRIGGERS](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table.
+Similar information is stored in the [information\_schema.TRIGGERS](../../../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table.
 
 If there are multiple triggers for the same action, then the triggers are shown in action order.
 
@@ -114,7 +114,7 @@ Old triggers created before MySQL 5.7 and MariaDB 10.2.3 have NULL in the `Creat
 * [Trigger Overview](../../../../server-usage/triggers-events/triggers/trigger-overview.md)
 * [CREATE TRIGGER](../../../../server-usage/triggers-events/triggers/create-trigger.md)
 * [DROP TRIGGER](../../data-definition/drop/drop-trigger.md)
-* [information\_schema.TRIGGERS](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table
+* [information\_schema.TRIGGERS](../../../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table
 * [SHOW CREATE TRIGGER](show-create-trigger.md)
 * [Trigger Limitations](../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 

@@ -246,7 +246,7 @@ CREATE FUNCTION hello2 (s CHAR(20))
 * [DROP FUNCTION](../../../../server-usage/stored-routines/stored-functions/drop-function.md)
 * [SHOW FUNCTION STATUS](../../administrative-sql-statements/show/show-function-status.md)
 * [Stored Routine Privileges](../../../../server-usage/stored-routines/stored-functions/stored-routine-privileges.md)
-* [Information Schema ROUTINES Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [Information Schema ROUTINES Table](../../../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

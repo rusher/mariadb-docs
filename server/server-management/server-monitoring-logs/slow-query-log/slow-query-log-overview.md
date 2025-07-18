@@ -67,7 +67,7 @@ The [log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md) cann
 
 ## Choosing the Slow Query Log Output Destination
 
-The slow query log can either be written to a file on disk, or it can be written to the [slow\_log](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table in the [mysql](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. To choose the slow query log output destination, set the [log\_output](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable.
+The slow query log can either be written to a file on disk, or it can be written to the [slow\_log](../../../reference/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table in the [mysql](../../../reference/system-tables/the-mysql-database-tables/) database. To choose the slow query log output destination, set the [log\_output](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable.
 
 ### Writing the Slow Query Log to a File
 
@@ -89,7 +89,7 @@ slow_query_log_file=slow-queries.log
 
 ### Writing the Slow Query Log to a Table
 
-The slow query log can either be written to the [slow\_log](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table in the [mysql](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database by setting the [log\_output](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The slow query log can either be written to the [slow\_log](../../../reference/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table in the [mysql](../../../reference/system-tables/the-mysql-database-tables/) database by setting the [log\_output](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL log_output='TABLE';
@@ -307,7 +307,7 @@ Queries that you find in the log are key queries to try to optimize by construct
 
 For queries that appear in the log that cannot be optimized in the above ways, perhaps because they are simply very large selects, due to slow hardware, or very high lock/cpu/io contention, using shard/clustering/load balancing solutions, better hardware, or stats tables may help to improve these queries.
 
-Slow query logs written to table can be viewed by querying the [slow\_log](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table.
+Slow query logs written to table can be viewed by querying the [slow\_log](../../../reference/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table.
 
 ## Variables Related to the Slow Query Log
 

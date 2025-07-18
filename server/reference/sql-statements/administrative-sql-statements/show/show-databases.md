@@ -17,7 +17,7 @@ If the server was started with the `--skip-show-database` option, you cannot use
 
 The list of results returned by `SHOW DATABASES` is based on directories in the data directory, which is how MariaDB implements databases. It's possible that output includes directories that do not correspond to actual databases.
 
-The [Information Schema SCHEMATA table](../system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md) also contains database information.
+The [Information Schema SCHEMATA table](../../../system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md) also contains database information.
 
 ## Examples
 
@@ -49,7 +49,7 @@ SHOW DATABASES LIKE 'm%';
 * [DROP DATABASE](../../data-definition/drop/drop-database.md)
 * [SHOW CREATE DATABASE](show-create-database.md)
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
-* [Information Schema SCHEMATA Table](../system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
+* [Information Schema SCHEMATA Table](../../../system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

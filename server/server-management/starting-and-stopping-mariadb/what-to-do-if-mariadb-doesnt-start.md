@@ -15,7 +15,7 @@ Common Locations:
 * C:\Program Files\MariaDB x.y\data (x.y refers to the version number)
 * C:\Program Files (x86)\MariaDB x.y\data (32bit version on 64bit Windows)
 
-It's also possible that the error log has been explicitly written to another location. This is often done by changing the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) or [log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variables in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). See [Option Files](what-to-do-if-mariadb-doesnt-start.md#option-files) below for more information about that.
+It's also possible that the error log has been explicitly written to another location. This is often done by changing the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) or [log\_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variables in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). See [Option Files](what-to-do-if-mariadb-doesnt-start.md#option-files) below for more information about that.
 
 A quick way to get the values of these system variables is to execute the following commands:
 
@@ -70,11 +70,11 @@ System error 1067 has occurred.
 Fatal error: Can't open privilege tables: Table 'mysql.host' doesn't exist
 ```
 
-If errors like this occur, then critical [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) set the [basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir) or [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) to a non-standard location, but the new server is using the default location. Therefore, make sure that the [basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir) and [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) variables are correctly set.
+If errors like this occur, then critical [system tables](../../reference/system-tables/) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) set the [basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir) or [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) to a non-standard location, but the new server is using the default location. Therefore, make sure that the [basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir) and [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) variables are correctly set.
 
 If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
-If the [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/) for more information.
+If the [system tables](../../reference/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/) for more information.
 
 ## Can't Create Test File
 
@@ -146,7 +146,7 @@ Generally, it is still possible to recover most of the corrupted data. To do so,
 
 ## MyISAM
 
-Most tables in the [mysql](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are MyISAM tables. These tables are necessary for MariaDB to properly work, or even start.
+Most tables in the [mysql](../../reference/system-tables/the-mysql-database-tables/) database are MyISAM tables. These tables are necessary for MariaDB to properly work, or even start.
 
 A MariaDB crash could cause system tables corruption. With the default settings, MariaDB will simply not start if the system tables are corrupted. With [myisam\_recover\_options](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options), we can force MyISAM to repair damaged tables.
 

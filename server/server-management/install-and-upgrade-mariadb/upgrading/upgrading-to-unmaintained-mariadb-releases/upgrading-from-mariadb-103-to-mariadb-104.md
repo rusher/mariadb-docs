@@ -34,7 +34,7 @@ The suggested upgrade procedure is:
 3. Run [mysql\_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md).
 
 * `mysql_upgrade` does two things:
-  1. Ensures that the system tables in the [mysql database](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) are fully compatible with the new version.
+  1. Ensures that the system tables in the [mysql database](../../../../reference/system-tables/the-mysql-database-tables/) are fully compatible with the new version.
   2. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 ### Incompatible Changes Between 10.3 and 10.4

@@ -30,7 +30,7 @@ MariaDB [(none)]>
 
 ## Test ColumnStore Plugin Status
 
-Query [information\_schema.PLUGINS](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) and confirm that the ColumnStore storage engine plugin is `ACTIVE`:
+Query [information\_schema.PLUGINS](../../../../reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) and confirm that the ColumnStore storage engine plugin is `ACTIVE`:
 
 ```sql
 SELECT PLUGIN_NAME, PLUGIN_STATUS

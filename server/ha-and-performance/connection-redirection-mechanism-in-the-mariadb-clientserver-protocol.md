@@ -38,7 +38,7 @@ This variable is appended to the default value of the [session\_track\_system\_v
   * use an sql script that selects a random row from it and sets @@redirect\_url to this value
   * specify this script in the --init-connect server parameter
 * dynamically redirect from the primary to one of the replicas
-  * same as above, but use [INFORMATION\_SCHEMA.PROCESSLIST](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) to get the list of active replicas.
+  * same as above, but use [INFORMATION\_SCHEMA.PROCESSLIST](../reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) to get the list of active replicas.
 
 ## Example
 

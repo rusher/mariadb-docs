@@ -35,7 +35,7 @@ See [SET](../set-commands/set.md) for information on setting server system varia
 
 See [Server System Variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a list of all the variables that can be set.
 
-You can also see the server variables by querying the [Information Schema GLOBAL\_VARIABLES and SESSION\_VARIABLES](../system-tables/information-schema/information-schema-tables/information-schema-global_variables-and-session_variables-tables.md) tables.
+You can also see the server variables by querying the [Information Schema GLOBAL\_VARIABLES and SESSION\_VARIABLES](../../../system-tables/information-schema/information-schema-tables/information-schema-global_variables-and-session_variables-tables.md) tables.
 
 ## Examples
 
@@ -119,6 +119,6 @@ SHOW VARIABLES LIKE 'innodb_sync_spin_loops';
 +------------------------+-------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -45,11 +45,11 @@ The statement displays the following output fields:
 
 Information from this statement can be used to diagnose system problems. For example, large values of spin\_waits and spin\_rounds may indicate scalability problems.
 
-The [information\_schema](../system-tables/information-schema/).[INNODB\_MUTEXES](../system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table.md) table provides similar information.
+The [information\_schema](../../../system-tables/information-schema/).[INNODB\_MUTEXES](../../../system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table.md) table provides similar information.
 
 ### SHOW ENGINE PERFORMANCE\_SCHEMA STATUS
 
-This statement shows how much memory is used for [performance\_schema](../system-tables/performance-schema/) tables and internal buffers.
+This statement shows how much memory is used for [performance\_schema](../../../system-tables/performance-schema/) tables and internal buffers.
 
 The output contains the following fields:
 

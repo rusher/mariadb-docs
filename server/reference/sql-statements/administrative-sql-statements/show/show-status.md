@@ -9,7 +9,7 @@ SHOW [GLOBAL | SESSION] STATUS
 
 ## Description
 
-`SHOW STATUS` provides server status information. This information also can be obtained using the [mariadb-admin extended-status](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables. The `LIKE` clause, if present, indicates which variable names to match. The `WHERE` clause can be given to select rows using more general conditions.
+`SHOW STATUS` provides server status information. This information also can be obtained using the [mariadb-admin extended-status](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../../../system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables. The `LIKE` clause, if present, indicates which variable names to match. The `WHERE` clause can be given to select rows using more general conditions.
 
 With the `GLOBAL` modifier, `SHOW STATUS` displays the status values for all connections to MariaDB. With`SESSION`, it displays the status values for the current connection. If no modifier is present, the default is`SESSION`. `LOCAL` is a synonym for`SESSION`. If you see a lot of 0 values, the reason is probably that you have used `SHOW STATUS` with a new connection instead of `SHOW GLOBAL STATUS`.
 
@@ -72,6 +72,6 @@ SHOW STATUS LIKE 'Key%';
 8 rows in set (0.00 sec)
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

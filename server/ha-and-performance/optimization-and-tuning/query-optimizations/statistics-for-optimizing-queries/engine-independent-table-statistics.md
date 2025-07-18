@@ -17,7 +17,7 @@ Engine-independent table statistics lift these limitations.
 
 [Histogram-based statistics](histogram-based-statistics.md) are a subset of engine-independent table statistics that can improve the query plan chosen by the optimizer in certain situations.
 
-Statistics are stored in three tables, [mysql.table\_stats](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column\_stats](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index\_stats](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
+Statistics are stored in three tables, [mysql.table\_stats](../../../../reference/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column\_stats](../../../../reference/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index\_stats](../../../../reference/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
 
 Use or update of data from these tables is controlled by [use\_stat\_tables](../../system-variables/server-system-variables.md#use_stat_tables) variable. Possible values are listed below:
 
@@ -80,7 +80,7 @@ ANALYZE TABLE tbl;
 
 ## Manual Updates to Statistics Tables
 
-Statistics are stored in three tables, [mysql.table\_stats](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column\_stats](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index\_stats](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
+Statistics are stored in three tables, [mysql.table\_stats](../../../../reference/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column\_stats](../../../../reference/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index\_stats](../../../../reference/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
 
 It is possible to update statistics tables manually. One should modify the table(s) with regular [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md)/[UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md)/[DELETE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements. Statistics data will be re-read when the tables are re-opened. One way to force all tables to be re-opened is to issue [FLUSH TABLES](../../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) command.
 

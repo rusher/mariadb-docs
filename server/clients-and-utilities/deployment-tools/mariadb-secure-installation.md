@@ -106,7 +106,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 ### Use With Galera Cluster
 
-This script is not 100% safe for use with [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) as it directly manipulates the [mysql.user](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which is not transported by Galera to the other nodes.
+This script is not 100% safe for use with [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) as it directly manipulates the [mysql.user](../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv](../../reference/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which is not transported by Galera to the other nodes.
 
 You should run this script on the first node in the cluster before adding more nodes.
 

@@ -85,7 +85,7 @@ A part of the buffer pool is called the [change buffer](../../../../server-usage
 
 InnoDB has background threads that take care of flushing dirty pages from the change buffer to the tablespaces. They don't directly affect the latency of queries, but they are very important for performance.
 
-[SHOW ENGINE InnoDB STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table, in the [performance\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/).
+[SHOW ENGINE InnoDB STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](../../../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table, in the [performance\_schema](../../../../reference/system-tables/performance-schema/).
 
 InnoDB flushing is similar to _lazy writes_ and _checkpoints_ in SQL Server. It has no equivalent for _eager writing_.
 
@@ -137,9 +137,9 @@ A database is a container for database objects like tables and views. A database
 
 MariaDB has the following system databases:
 
-* [mysql](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) is for internal use only, and should not be read or written directly.
-* [information\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) contains all information that can be found in SQL Server's information\_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
-* [performance\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable to 1 and restarting MariaDB.
+* [mysql](../../../../reference/system-tables/the-mysql-database-tables/) is for internal use only, and should not be read or written directly.
+* [information\_schema](../../../../reference/system-tables/information-schema/) contains all information that can be found in SQL Server's information\_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
+* [performance\_schema](../../../../reference/system-tables/performance-schema/) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance\_schema](../../../../reference/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable to 1 and restarting MariaDB.
 
 ### Default Database
 

@@ -37,7 +37,7 @@ The following table lists the various plugins included in MariaDB ordered by the
 | [pam](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)                                                                                    | 1.0     | Stable                                                       |
 | [password\_reuse\_check](../password-validation-plugins/password-reuse-check-plugin.md)                                                                                                                   | 2.0     | <p>Stable<br>(introduced in 10.10.2, 10.9.5, and 10.8.7)</p> |
 | partition                                                                                                                                                                                                 | 1.0     | Stable                                                       |
-| [Performance\_Schema](../../sql-statements/administrative-sql-statements/system-tables/performance-schema/)                                                                                               | 0.1     | Stable                                                       |
+| [Performance\_Schema](../../system-tables/performance-schema/)                                                                                                                                            | 0.1     | Stable                                                       |
 | [QUERY\_CACHE\_INFO](../other-plugins/query-cache-information-plugin.md)                                                                                                                                  | 1.1     | Stable                                                       |
 | [query\_response\_time](../other-plugins/query-response-time-plugin.md)                                                                                                                                   | 1.0     | Stable                                                       |
 | [S3](../../../server-usage/storage-engines/s3-storage-engine/)                                                                                                                                            | 1.0     | <p>Stable<br>(introduced in 10.5.12)</p>                     |
@@ -77,7 +77,7 @@ ORDER BY plugin_name;
 
 * [Plugin Overview](../plugin-overview.md)
 * [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)
-* [INFORMATION\_SCHEMA.PLUGINS Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
+* [INFORMATION\_SCHEMA.PLUGINS Table](../../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mysql\_plugin](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_plugin.md)
 * [SHOW PLUGINS](../../sql-statements/administrative-sql-statements/show/show-plugins.md)
 * [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)

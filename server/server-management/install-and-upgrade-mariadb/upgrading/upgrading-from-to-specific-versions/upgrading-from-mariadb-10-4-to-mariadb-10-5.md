@@ -34,7 +34,7 @@ The suggested upgrade procedure is:
 3. Run [mysql\_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md).
 
 * `mysql_upgrade` does two things:
-  1. Ensures that the system tables in the [mysql](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are fully compatible with the new version.
+  1. Ensures that the system tables in the [mysql](../../../../reference/system-tables/the-mysql-database-tables/) database are fully compatible with the new version.
   2. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 ### Incompatible Changes Between 10.4 and 10.5
@@ -60,18 +60,18 @@ A number of statements changed the privileges that they require. The old privile
 
 #### Options That Have Changed Default Values
 
-| Option                                                                                                                                                                                                                        | Old default value | New default value |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----------------- |
-| [innodb\_adaptive\_hash\_index](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index)                                   | ON                | OFF               |
-| [innodb\_checksum\_algorithm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)                                      | crc32             | full\_crc32       |
-| [innodb\_log\_optimize\_ddl](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl)                                         | ON                | OFF               |
-| [slave\_parallel\_mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#slave_parallel_mode)                                                                               | conservative      | optimistic        |
-| [performance\_schema\_max\_cond\_classes](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes)     | 80                | 90                |
-| [performance\_schema\_max\_file\_classes](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes)     | 50                | 80                |
-| [performance\_schema\_max\_mutex\_classes](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes)   | 200               | 210               |
-| [performance\_schema\_max\_rwlock\_classes](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes) | 40                | 50                |
-| [performance\_schema\_setup\_actors\_size](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size)   | 100               | -1                |
-| [performance\_schema\_setup\_objects\_size](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size) | 100               | -1                |
+| Option                                                                                                                                                                                      | Old default value | New default value |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----------------- |
+| [innodb\_adaptive\_hash\_index](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) | ON                | OFF               |
+| [innodb\_checksum\_algorithm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)    | crc32             | full\_crc32       |
+| [innodb\_log\_optimize\_ddl](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl)       | ON                | OFF               |
+| [slave\_parallel\_mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#slave_parallel_mode)                                             | conservative      | optimistic        |
+| [performance\_schema\_max\_cond\_classes](../../../../reference/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes)                | 80                | 90                |
+| [performance\_schema\_max\_file\_classes](../../../../reference/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes)                | 50                | 80                |
+| [performance\_schema\_max\_mutex\_classes](../../../../reference/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes)              | 200               | 210               |
+| [performance\_schema\_max\_rwlock\_classes](../../../../reference/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes)            | 40                | 50                |
+| [performance\_schema\_setup\_actors\_size](../../../../reference/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size)              | 100               | -1                |
+| [performance\_schema\_setup\_objects\_size](../../../../reference/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size)            | 100               | -1                |
 
 #### Options That Have Been Removed or Renamed
 

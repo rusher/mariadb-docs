@@ -10,9 +10,9 @@ UNINSTALL PLUGIN [IF EXISTS] plugin_name
 
 This statement removes a single installed [plugin](../../../plugins/). To uninstall the whole library which contains the plugin, use [UNINSTALL SONAME](uninstall-soname.md). You cannot uninstall a plugin if any table that uses it is open.
 
-`plugin_name` must be the name of some plugin that is listedin the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table. The server executes the plugin's deinitializationfunction and removes the row for the plugin from the `mysql.plugin`table, so that subsequent server restarts will not load and initializethe plugin. `UNINSTALL PLUGIN` does not remove the plugin'sshared library file.
+`plugin_name` must be the name of some plugin that is listedin the [mysql.plugin](../../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table. The server executes the plugin's deinitializationfunction and removes the row for the plugin from the `mysql.plugin`table, so that subsequent server restarts will not load and initializethe plugin. `UNINSTALL PLUGIN` does not remove the plugin'sshared library file.
 
-To use `UNINSTALL PLUGIN`, you must have the[DELETE](../../account-management-sql-statements/grant.md) privilege for the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+To use `UNINSTALL PLUGIN`, you must have the[DELETE](../../account-management-sql-statements/grant.md) privilege for the [mysql.plugin](../../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
 
 #### IF EXISTS
 

@@ -38,7 +38,7 @@ For other storage engines, `TRUNCATE TABLE` differs from`DELETE` in the followin
   from the beginning. This is true even for MyISAM and InnoDB, which normally do not reuse sequence values.
 * When used with partitioned tables, `TRUNCATE TABLE` preserves the partitioning; that is, the data and index files are dropped and re-created, while the partition definitions (.par) file is unaffected.
 * Since truncation of a table does not make any use of `DELETE`, the `TRUNCATE` statement does not invoke `ON DELETE` triggers.
-* `TRUNCATE TABLE` will only reset the values in the [Performance Schema summary tables](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables.md) to zero or null, and will not remove the rows.
+* `TRUNCATE TABLE` will only reset the values in the [Performance Schema summary tables](../../system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables.md) to zero or null, and will not remove the rows.
 
 For the purposes of binary logging and [replication](../../../server-usage/storage-engines/myrocks/myrocks-and-replication.md), `TRUNCATE TABLE` is treated as [DROP TABLE](../data-definition/drop/drop-table.md) followed by [CREATE TABLE](../data-definition/create/create-table.md) (DDL rather than DML).
 

@@ -38,7 +38,7 @@ collation_connection: latin1_swedish_ci
   Database Collation: latin1_swedish_ci
 ```
 
-To see the event action, use [SHOW CREATE EVENT](show-create-event.md) instead, or look at the [information\_schema.EVENTS](../system-tables/information-schema/information-schema-tables/information-schema-events-table.md) table.
+To see the event action, use [SHOW CREATE EVENT](show-create-event.md) instead, or look at the [information\_schema.EVENTS](../../../system-tables/information-schema/information-schema-tables/information-schema-events-table.md) table.
 
 To see events for a specific schema, use the `FROM` clause. For example, to see events for the test schema, use the following statement:
 

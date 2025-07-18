@@ -217,7 +217,7 @@ SELINT * FROM t1;
 * [SETVAL()](sequence-functions/setval.md). Set next value for the sequence.
 * [AUTO INCREMENT](../../data-types/auto_increment.md)
 * [SHOW CREATE SEQUENCE](../../sql-statements/administrative-sql-statements/show/show-create-sequence.md)
-* [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [Information Schema SEQUENCES Table](../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

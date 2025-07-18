@@ -63,7 +63,7 @@ The sudo command is used here to connect to the Enterprise Server node using the
 
 ## Test ColumnStore Storage Engine Plugin
 
-Query the [information\_schema.PLUGINS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table to confirm that the ColumnStore storage engine is loaded.
+Query the [information\_schema.PLUGINS](../../../reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table to confirm that the ColumnStore storage engine is loaded.
 
 Execute the following query:
 

@@ -35,7 +35,7 @@ Failed `CREATE` or `DROP` operations, for both users and roles, produce the same
 
 If the `IF EXISTS` clause is used, MariaDB will return a note instead of an error if the user does not exist.
 
-The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database.
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../../system-tables/the-mysql-database-tables/) database.
 
 
 
@@ -72,7 +72,7 @@ SHOW WARNINGS;
 * [ALTER USER](alter-user.md)
 * [GRANT](grant.md)
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
-* [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
+* [mysql.user table](../../system-tables/the-mysql-database-tables/mysql-user-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

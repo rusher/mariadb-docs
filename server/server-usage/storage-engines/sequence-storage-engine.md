@@ -202,7 +202,7 @@ SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
 
 [CAST](../../reference/sql-functions/string-functions/cast.md) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
 
-Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) command) to be able to query a Sequence table. The [information\_schema](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) database cannot be used as the default for a Sequence table.
+Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) command) to be able to query a Sequence table. The [information\_schema](../../reference/system-tables/information-schema/) database cannot be used as the default for a Sequence table.
 
 ## Table Name Conflicts
 

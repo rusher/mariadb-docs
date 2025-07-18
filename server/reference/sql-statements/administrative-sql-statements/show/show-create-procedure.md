@@ -14,12 +14,12 @@ Both statements require that:
 
 * you are the owner of the routine;
 * you have the [SHOW CREATE ROUTINE](../../account-management-sql-statements/grant.md#database-privileges) privilege (from [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)); or
-* you have the [SELECT](../../account-management-sql-statements/grant.md) privilege on the [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table.
+* you have the [SELECT](../../account-management-sql-statements/grant.md) privilege on the [mysql.proc](../../../system-tables/the-mysql-database-tables/mysql-proc-table.md) table.
 
 When none of the above statements are true, the statements display `NULL` for the `Create Procedure` or `Create Function` field.
 
 {% hint style="danger" %}
-Users with `SELECT` privileges on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) or `USAGE` privileges on `*.*` can view the text of routines, even when they do not have privileges for the function or procedure itself.
+Users with `SELECT` privileges on [mysql.proc](../../../system-tables/the-mysql-database-tables/mysql-proc-table.md) or `USAGE` privileges on `*.*` can view the text of routines, even when they do not have privileges for the function or procedure itself.
 
 
 {% endhint %}
@@ -71,7 +71,7 @@ Error 1370 (42000): execute command denied to
   user 'test_user'@'localhost' for routine 'test'.'prc1'
 ```
 
-If the user neither has privilege to the routine nor the [SELECT](../../account-management-sql-statements/grant.md) privilege on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table, it raises Error 1305, informing them that the procedure does not exist.
+If the user neither has privilege to the routine nor the [SELECT](../../account-management-sql-statements/grant.md) privilege on [mysql.proc](../../../system-tables/the-mysql-database-tables/mysql-proc-table.md) table, it raises Error 1305, informing them that the procedure does not exist.
 
 ```sql
 SHOW CREATE TABLES test.prc1\G
@@ -86,7 +86,7 @@ Error 1305 (42000): PROCEDURE prc1 does not exist
 * [DROP PROCEDURE](../../../../server-usage/stored-routines/stored-procedures/drop-procedure.md)
 * [SHOW PROCEDURE STATUS](show-procedure-status.md)
 * [Stored Routine Privileges](../../../../server-usage/stored-routines/stored-functions/stored-routine-privileges.md)
-* [Information Schema ROUTINES Table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [Information Schema ROUTINES Table](../../../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

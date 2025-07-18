@@ -58,11 +58,11 @@ The order in which the columns appear depends on the MariaDB version. This means
 
 {% tabs %}
 {% tab title="Current" %}
-These columns can also be viewed/extracted from the [INFORMATION\_SCHEMA.SLAVE\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-slave_status-table.md) table.
+These columns can also be viewed/extracted from the [INFORMATION\_SCHEMA.SLAVE\_STATUS](../../../system-tables/information-schema/information-schema-tables/information-schema-slave_status-table.md) table.
 {% endtab %}
 
 {% tab title="< 11.6.0" %}
-These columns cannot be viewed/extracted from the [INFORMATION\_SCHEMA.SLAVE\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-slave_status-table.md) table.
+These columns cannot be viewed/extracted from the [INFORMATION\_SCHEMA.SLAVE\_STATUS](../../../system-tables/information-schema/information-schema-tables/information-schema-slave_status-table.md) table.
 {% endtab %}
 {% endtabs %}
 
@@ -250,7 +250,7 @@ Additional behavior to be aware of:
 {% endtab %}
 
 {% tab title="< 12.0" %}
-**Connects\_Tried:** and **Master\_Retry\_Count:** are not available. If the Performance Schema is enabled, [`replication\_connection\_configuration`](../system-tables/performance-schema/performance-schema-tables/performance-schema-replication_connection_configuration-table.md) has `CONNECTION_RETRY_COUNT` available as an older alternative to `Master_Retry_Count`.
+**Connects\_Tried:** and **Master\_Retry\_Count:** are not available. If the Performance Schema is enabled, [`replication\_connection\_configuration`](../../../system-tables/performance-schema/performance-schema-tables/performance-schema-replication_connection_configuration-table.md) has `CONNECTION_RETRY_COUNT` available as an older alternative to `Master_Retry_Count`.
 {% endtab %}
 {% endtabs %}
 

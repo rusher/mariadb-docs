@@ -58,7 +58,7 @@ A client whose connection is killed receives the following error:
 ERROR 1317 (70100): Query execution was interrupted
 ```
 
-To obtain a list of existing sessions, use the [SHOW PROCESSLIST](show/show-processlist.md) statement or query the [Information Schema](system-tables/information-schema/) [PROCESSLIST](system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
+To obtain a list of existing sessions, use the [SHOW PROCESSLIST](show/show-processlist.md) statement or query the [Information Schema](../../system-tables/information-schema/) [PROCESSLIST](../../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
 **Note:** You cannot use `KILL` with the Embedded MariaDB Serverlibrary because the embedded server merely runs inside the threads of the hostapplication. It does not create any connection threads of its own.
 

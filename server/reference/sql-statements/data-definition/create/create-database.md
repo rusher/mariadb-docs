@@ -35,7 +35,7 @@ When the `IF NOT EXISTS` clause is used, MariaDB will return a warning instead o
 
 {% tabs %}
 {% tab title="Current" %}
-The maximum length of a comment is 1024 bytes. If the comment length exceeds this length, an error/warning code 4144 is thrown. The database comment is also added to the `db.opt` file, as well as to the [information\_schema.schemata table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md).
+The maximum length of a comment is 1024 bytes. If the comment length exceeds this length, an error/warning code 4144 is thrown. The database comment is also added to the `db.opt` file, as well as to the [information\_schema.schemata table](../../../system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md).
 {% endtab %}
 
 {% tab title="< 10.5.0" %}
@@ -86,7 +86,7 @@ CREATE DATABASE presentations COMMENT 'Presentations for conferences';
 * [ALTER DATABASE](../alter/alter-database.md)
 * [SHOW DATABASES](../../administrative-sql-statements/show/show-databases.md)
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
-* [Information Schema SCHEMATA Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
+* [Information Schema SCHEMATA Table](../../../system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

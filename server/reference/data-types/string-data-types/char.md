@@ -92,7 +92,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 ### NO PAD Collations
 
-`NO PAD` collations regard trailing spaces as normal characters. You can get a list of all `NO PAD` collations by querying the [Information Schema Collations table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md), for example:
+`NO PAD` collations regard trailing spaces as normal characters. You can get a list of all `NO PAD` collations by querying the [Information Schema Collations table](../../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md), for example:
 
 ```sql
 SELECT collation_name FROM information_schema.collations 

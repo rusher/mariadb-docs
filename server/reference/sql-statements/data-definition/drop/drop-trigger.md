@@ -50,7 +50,7 @@ SHOW WARNINGS;
 
 * [Trigger Overview](../../../../server-usage/triggers-events/triggers/trigger-overview.md)
 * [CREATE TRIGGER](../../../../server-usage/triggers-events/triggers/create-trigger.md)
-* [Information Schema TRIGGERS Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
+* [Information Schema TRIGGERS Table](../../../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
 * [SHOW TRIGGERS](../../administrative-sql-statements/show/show-triggers.md)
 * [SHOW CREATE TRIGGER](../../administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](../../../../server-usage/triggers-events/triggers/trigger-limitations.md)

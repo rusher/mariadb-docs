@@ -50,15 +50,15 @@ lock_option:
 
 ## Description
 
-The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database.
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../../system-tables/the-mysql-database-tables/) database.
 
 {% tabs %}
 {% tab title="Current" %}
-For each account, `CREATE USER` creates a new row in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) view (and the underlying [mysql.global\_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table) that has no privileges.
+For each account, `CREATE USER` creates a new row in the [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md) view (and the underlying [mysql.global\_priv](../../system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table) that has no privileges.
 {% endtab %}
 
 {% tab title="< 10.4" %}
-For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table that has no privileges.
+For each account, `CREATE USER` creates a new row in [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md) table that has no privileges.
 {% endtab %}
 {% endtabs %}
 
@@ -121,7 +121,7 @@ If more than one authentication mechanism is declared using the `OR` keyword, th
 
 ### IDENTIFIED BY 'password'
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function prior to being stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv\_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function prior to being stored in the [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv\_table](../../system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table.
 
 For example, if our password is `mariadb`, then we can create the user with:
 
@@ -138,7 +138,7 @@ The only [authentication plugins](../../plugins/authentication-plugins/) that th
 
 ### IDENTIFIED BY PASSWORD 'password\_hash'
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. It will be stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv\_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. It will be stored in the [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv\_table](../../system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table as-is.
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
@@ -266,7 +266,7 @@ The resources are tracked per account, which means `'user'@'server'`; not per us
 
 The count can be reset for all users using [FLUSH USER\_RESOURCES](../administrative-sql-statements/flush-commands/flush.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin reload](../../../clients-and-utilities/administrative-tools/mariadb-admin.md).
 
-Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
+Per account resource limits are stored in the [user](../../system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../../system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 ## Account Names
 
@@ -371,7 +371,7 @@ CREATE USER ''@'192.168.0.3';
 
 #### Fixing a Legacy Default Anonymous Account
 
-On some systems, the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv\_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
+On some systems, the [mysql.db](../../system-tables/the-mysql-database-tables/mysql-db-table.md) table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv\_table](../../system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
 
 This situation means that you will run into errors if you try to create a `''@'%'` account. For example:
 
@@ -380,7 +380,7 @@ CREATE USER ''@'%';
 ERROR 1396 (HY000): Operation CREATE USER failed for ''@'%'
 ```
 
-The fix is to [DELETE](../data-manipulation/changing-deleting-data/delete.md) the row in the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table and then execute [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md):
+The fix is to [DELETE](../data-manipulation/changing-deleting-data/delete.md) the row in the [mysql.db](../../system-tables/the-mysql-database-tables/mysql-db-table.md) table and then execute [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md):
 
 ```sql
 DELETE FROM mysql.db WHERE User='' AND Host='%';
@@ -442,8 +442,8 @@ From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-s
 * [Troubleshooting Connection Issues](../../../mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md)
 * [Authentication from MariaDB 10.4](../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Identifier Names](../../sql-structure/sql-language-structure/identifier-names.md)
-* [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
-* [mysql.global\_priv\_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md)
+* [mysql.user table](../../system-tables/the-mysql-database-tables/mysql-user-table.md)
+* [mysql.global\_priv\_table](../../system-tables/the-mysql-database-tables/mysql-global_priv-table.md)
 * [Password Validation Plugins](../../plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 * [Authentication Plugins](../../plugins/authentication-plugins/) - allow various authentication methods to be used, and new ones to be developed.
 

@@ -83,7 +83,7 @@ $ sudo systemctl restart mariadb
 
 **On the Spider Node**, execute the [INSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) statement with the library name `ha_spider`. The `INSTALL SONAME` statement configures MariaDB Enterprise Server to load the Enterprise Spider storage engine plugin. The `INSTALL SONAME` statement requires the SUPER privilege.
 
-The `INSTALL SONAME` statement adds the Enterprise Spider storage engine to the [mysql.plugin](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) system table. When the Spider Node is restarted, MariaDB Enterprise Server reads the system table and reloads the plugin, so the statement only needs to be executed once.
+The `INSTALL SONAME` statement adds the Enterprise Spider storage engine to the [mysql.plugin](../../../reference/system-tables/the-mysql-database-tables/mysql-plugin-table.md) system table. When the Spider Node is restarted, MariaDB Enterprise Server reads the system table and reloads the plugin, so the statement only needs to be executed once.
 
 1. Connect to the Spider Node using MariaDB Client:
 

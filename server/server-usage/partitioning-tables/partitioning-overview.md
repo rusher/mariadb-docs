@@ -795,7 +795,7 @@ See also: [Using CONNECT - Partitioning and Sharding](../storage-engines/connect
 ## See Also
 
 * [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/)
-* [INFORMATION\_SCHEMA.PARTITIONS](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
+* [INFORMATION\_SCHEMA.PARTITIONS](../../reference/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
 * [Partition Maintenance](partition-maintenance.md) for suggestions on using partitions
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

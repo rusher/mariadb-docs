@@ -10,9 +10,9 @@ SHOW [STORAGE] ENGINES
 
 `SHOW ENGINES` displays status information about the server's storage engines. This is particularly useful for checking whether a storage engine is supported, or to see what the default engine is.`SHOW TABLE TYPES` is a deprecated synonym.
 
-The [information_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md) table provides the same information.
+The [information\_schema.ENGINES](../../../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md) table provides the same information.
 
-Since storage engines are plugins, different information about them is also shown in the [information_schema.PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table and by the [SHOW PLUGINS](show-plugins.md) statement.
+Since storage engines are plugins, different information about them is also shown in the [information\_schema.PLUGINS](../../../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table and by the [SHOW PLUGINS](show-plugins.md) statement.
 
 Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../../server-usage/storage-engines/innodb/). The same applies to [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/).
 
@@ -100,6 +100,6 @@ Transactions: NO
 10 rows in set (0.00 sec)
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

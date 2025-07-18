@@ -2,7 +2,7 @@
 
 ## Character Sets
 
-You can see which character sets are available in a particular version by running the [SHOW CHARACTER SET](../../../sql-statements/administrative-sql-statements/show/show-character-set.md) statement or by querying the [Information Schema CHARACTER\_SETS Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md).
+You can see which character sets are available in a particular version by running the [SHOW CHARACTER SET](../../../sql-statements/administrative-sql-statements/show/show-character-set.md) statement or by querying the [Information Schema CHARACTER\_SETS Table](../../../system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md).
 
 {% tabs %}
 {% tab title="Current" %}
@@ -638,7 +638,7 @@ SELECT collation_name, character_set_name as cs_name, id, is_default AS def, is_
 Note that some of the collations are used with several different character sets. In this case, the `Charset` and `Id` columns are `NULL`.
 {% endhint %}
 
-You can find all combinations of supported character set and collation in the [information\_schema.COLLATION\_CHARACTER\_SET\_APPLICABILITY](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collation_character_set_applicability-table.md) table.
+You can find all combinations of supported character set and collation in the [information\_schema.COLLATION\_CHARACTER\_SET\_APPLICABILITY](../../../system-tables/information-schema/information-schema-tables/information-schema-collation_character_set_applicability-table.md) table.
 
 ## Case Sensitivity
 
@@ -647,7 +647,7 @@ collation name indicates the collation is case sensitive.
 
 ## NO PAD Collations
 
-`NO PAD` collations regard trailing spaces as normal characters. You can get a list of all of these by querying the [Information Schema COLLATIONS Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) as follows:
+`NO PAD` collations regard trailing spaces as normal characters. You can get a list of all of these by querying the [Information Schema COLLATIONS Table](../../../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) as follows:
 
 ```sql
 SELECT collation_name FROM information_schema.COLLATIONS
@@ -687,8 +687,8 @@ An accent insensitive collation is one where the accented and unaccented version
 
 ## See Also
 
-* [Information Schema CHARACTER\_SETS Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md)
-* [Information Schema COLLATIONS Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md)
+* [Information Schema CHARACTER\_SETS Table](../../../system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md)
+* [Information Schema COLLATIONS Table](../../../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -30,7 +30,7 @@ Once set, any InnoDB tablespaces that have the [ENCRYPTED](../../../../../refere
 
 #### Decryption Status
 
-You can [check the status](innodb-background-encryption-threads.md#checking-the-status-of-background-operations) of the decryption process using the [INNODB\_TABLESPACES\_ENCRYPTION](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md) table in the [information\_schema](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) database.
+You can [check the status](innodb-background-encryption-threads.md#checking-the-status-of-background-operations) of the decryption process using the [INNODB\_TABLESPACES\_ENCRYPTION](../../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md) table in the [information\_schema](../../../../../reference/system-tables/information-schema/) database.
 
 ```sql
 SELECT COUNT(*) AS "Number of Encrypted Tablespaces"
@@ -45,7 +45,7 @@ This query shows the number of InnoDB tablespaces that currently using backgroun
 
 In the case of manually encrypted InnoDB tablespaces, (that is, those where the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option is set to `YES`), you must issue an [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement to decrypt each tablespace before removing the encryption keys. Otherwise, the tablespace remains encrypted and becomes inaccessible without the keys.
 
-First, query the Information Schema [TABLES](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table to find the encrypted tables. This can be done with a `WHERE` clause filtering the `CREATE_OPTIONS` column.
+First, query the Information Schema [TABLES](../../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table to find the encrypted tables. This can be done with a `WHERE` clause filtering the `CREATE_OPTIONS` column.
 
 ```sql
 SELECT TABLE_SCHEMA AS "Database", TABLE_NAME AS "Table"

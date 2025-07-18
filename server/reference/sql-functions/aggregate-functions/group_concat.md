@@ -45,7 +45,7 @@ SELECT student_name,
        GROUP BY student_name;
 ```
 
-Get a readable list of MariaDB users from the [mysql.user](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
+Get a readable list of MariaDB users from the [mysql.user](../../system-tables/the-mysql-database-tables/mysql-user-table.md) table:
 
 ```sql
 SELECT GROUP_CONCAT(DISTINCT User ORDER BY User SEPARATOR '\n')

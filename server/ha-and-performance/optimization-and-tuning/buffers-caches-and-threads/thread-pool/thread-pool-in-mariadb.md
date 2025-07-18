@@ -167,10 +167,10 @@ Once you are connected to the extra port, you can solve the issue by increasing 
 
 The following Information Schema tables relate to the thread pool:
 
-* [Information Schema THREAD\_POOL\_GROUPS Table](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table.md)
-* [Information Schema THREAD\_POOL\_QUEUES Table](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md)
-* [Information Schema THREAD\_POOL\_STATS Table](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_stats-table.md)
-* [Information Schema THREAD\_POOL\_WAITS Table](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_waits-table.md)
+* [Information Schema THREAD\_POOL\_GROUPS Table](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table.md)
+* [Information Schema THREAD\_POOL\_QUEUES Table](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md)
+* [Information Schema THREAD\_POOL\_STATS Table](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_stats-table.md)
+* [Information Schema THREAD\_POOL\_WAITS Table](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_waits-table.md)
 
 ## MariaDB Thread Pool vs Oracle MySQL Enterprise Thread Pool
 

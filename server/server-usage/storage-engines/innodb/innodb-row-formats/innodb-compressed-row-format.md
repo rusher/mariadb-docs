@@ -136,7 +136,7 @@ CREATE TABLE hq_sales.invoices (
 ) ROW_FORMAT = Compressed;
 ```
 
-4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```sql
 SELECT NAME, ROW_FORMAT, ZIP_PAGE_SIZE
@@ -205,7 +205,7 @@ CREATE TABLE hq_sales.invoices (
 ) KEY_BLOCK_SIZE = 4;
 ```
 
-4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```sql
 SELECT NAME, ROW_FORMAT, ZIP_PAGE_SIZE
@@ -237,9 +237,9 @@ Before writing a compressed page into a data file, InnoDB writes it into the [re
 
 The following `INFORMATION_SCHEMA` tables can be used to monitor the performances of InnoDB compressed tables:
 
-* [INNODB\_CMP and INNODB\_CMP\_RESET](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_cmp-and-innodb_cmp_reset-tables.md)
-* [INNODB\_CMP\_PER\_INDEX and INNODB\_CMP\_PER\_INDEX\_RESET](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md)
-* [INNODB\_CMPMEM and INNODB\_CMPMEM\_RESET](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_cmpmem-and-innodb_cmpmem_reset-tables.md)
+* [INNODB\_CMP and INNODB\_CMP\_RESET](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_cmp-and-innodb_cmp_reset-tables.md)
+* [INNODB\_CMP\_PER\_INDEX and INNODB\_CMP\_PER\_INDEX\_RESET](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md)
+* [INNODB\_CMPMEM and INNODB\_CMPMEM\_RESET](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_cmpmem-and-innodb_cmpmem_reset-tables.md)
 
 ## Index Prefixes with the `COMPRESSED` Row Format
 

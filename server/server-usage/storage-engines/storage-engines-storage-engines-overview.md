@@ -134,8 +134,8 @@ HTAP can be implemented with MariaDB by using [InnoDB](innodb/) for transactiona
 ### MariaDB Server Reference
 
 * [Plugins](../../reference/plugins/).
-* [Information Schema ENGINES table](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-engines-table.md), which shows available storage engines.
-* [Information Schema TABLES table](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md), which shows storage engine by table.
+* [Information Schema ENGINES table](../../reference/system-tables/information-schema/information-schema-tables/information-schema-engines-table.md), which shows available storage engines.
+* [Information Schema TABLES table](../../reference/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md), which shows storage engine by table.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

@@ -13,11 +13,11 @@ The output from `SHOW COLLATION` includes all available[collations](../../../dat
 
 {% tabs %}
 {% tab title="Current" %}
-Similar information, including some extra information, can be queried from the [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
+Similar information, including some extra information, can be queried from the [Information Schema COLLATIONS](../../../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
 {% endtab %}
 
 {% tab title="< 11.4.5" %}
-No similar information or extra information can be queried from the [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
+No similar information or extra information can be queried from the [Information Schema COLLATIONS](../../../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
 {% endtab %}
 {% endtabs %}
 
@@ -83,7 +83,7 @@ SHOW COLLATION WHERE Sortlen LIKE '8' AND Charset LIKE 'utf8mb4';
 
 * [Supported Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [Setting Character Sets and Collations](../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md)
-* [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md)
+* [Information Schema COLLATIONS](../../../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

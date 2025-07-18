@@ -38,7 +38,7 @@ CREATE OR REPLACE TABLE t1 (c1 INT, c2 DATETIME)
   PARTITIONS 5;
 ```
 
-Using the [Information Schema PARTITIONS Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) for more information:
+Using the [Information Schema PARTITIONS Table](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) for more information:
 
 ```sql
 INSERT INTO t1 VALUES (1,'2023-11-15');

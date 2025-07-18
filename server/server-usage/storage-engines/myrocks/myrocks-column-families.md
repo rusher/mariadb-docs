@@ -56,7 +56,7 @@ Options that are frequently configured are:
 
 ## Examining Column Family Parameters
 
-See the [INFORMATION\_SCHEMA.ROCKSDB\_CF\_OPTIONS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_cf_options-table.md) table.
+See the [INFORMATION\_SCHEMA.ROCKSDB\_CF\_OPTIONS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_cf_options-table.md) table.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -12,8 +12,8 @@ These settings can be overwritten on a per-table basis by use of the [STATS\_PER
 
 Details of the statistics are stored in two system tables in the [mysql database](https://mariadb.com/kb/en/the-mysql-database-table):
 
-* [innodb\_table\_stats](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-innodb_table_stats.md)
-* [innodb\_index\_stats](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-innodb_index_stats.md)
+* [innodb\_table\_stats](../../../../reference/system-tables/the-mysql-database-tables/mysql-innodb_table_stats.md)
+* [innodb\_index\_stats](../../../../reference/system-tables/the-mysql-database-tables/mysql-innodb_index_stats.md)
 
 The [ANALYZE TABLE](../../../../reference/sql-statements/table-statements/analyze-table.md) statement can be used to recalculate InnoDB statistics.
 

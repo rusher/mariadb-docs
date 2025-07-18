@@ -56,7 +56,7 @@ next_not_cached_value: 50
           cycle_count: 0
 ```
 
-The [Information Schema SEQUENCES Table](../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md) also provides information about available sequences:
+The [Information Schema SEQUENCES Table](../../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md) also provides information about available sequences:
 
 ```sql
 SELECT * FROM INFORMATION_SCHEMA.SEQUENCES\G
@@ -79,7 +79,7 @@ NUMERIC_PRECISION_RADIX: 2
 
 * [CREATE SEQUENCE](../../../sql-structure/sequences/create-sequence.md)
 * [ALTER SEQUENCE](../../../sql-structure/sequences/alter-sequence.md)
-* [Information Schema SEQUENCES Table](../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [Information Schema SEQUENCES Table](../../../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

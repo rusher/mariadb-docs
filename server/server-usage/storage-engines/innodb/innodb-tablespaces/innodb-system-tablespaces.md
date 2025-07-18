@@ -121,7 +121,7 @@ InnoDB creates some system tables within the InnoDB System Tablespace:
 * `SYS_ZIP_DICT`
 * `SYS_ZIP_DICT_COLS`
 
-These tables cannot be queried. However, you might see references to them in some places, such as in the [INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table in the [information\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/) database.
+These tables cannot be queried. However, you might see references to them in some places, such as in the [INNODB\_SYS\_TABLES](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table in the [information\_schema](../../../../reference/system-tables/information-schema/information-schema-tables/) database.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

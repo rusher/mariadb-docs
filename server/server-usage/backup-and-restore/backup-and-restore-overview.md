@@ -30,7 +30,7 @@ For large datasets, the backup file can be large, and the restore time lengthy.
 
 `mariadb-dump` dumps the data into SQL format (it can also dump into other formats, such as CSV or XML) which can then easily be imported into another database. The data can be imported into other versions of MariaDB, MySQL, or even another DBMS entirely, assuming there are no version or DBMS-specific statements in the dump.
 
-mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../stored-routines/stored-procedures/), [views](../views/), and [events](../triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../stored-routines/stored-procedures/) and [functions](../../reference/sql-functions/) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
+mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../stored-routines/stored-procedures/), [views](../views/), and [events](../triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../stored-routines/stored-procedures/) and [functions](../../reference/sql-functions/) are however also part of the system tables (for example [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
 
 #### InnoDB Logical Backups
 

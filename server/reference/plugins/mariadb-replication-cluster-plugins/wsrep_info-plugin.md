@@ -5,9 +5,9 @@ The `WSREP_INFO` plugin library contains the following plugins:
 * `WSREP_MEMBERSHIP`
 * `WSREP_STATUS`
 
-The `WSREP_MEMBERSHIP` plugin creates the [WSREP\_MEMBERSHIP](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. The plugin also adds the [SHOW WSREP\_MEMBERSHIP](../../sql-statements/administrative-sql-statements/show/show-wsrep_membership.md) statement.
+The `WSREP_MEMBERSHIP` plugin creates the [WSREP\_MEMBERSHIP](../../system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database. The plugin also adds the [SHOW WSREP\_MEMBERSHIP](../../sql-statements/administrative-sql-statements/show/show-wsrep_membership.md) statement.
 
-The `WSREP_STATUS` plugin creates the [WSREP\_STATUS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. The plugin also adds the [SHOW WSREP\_STATUS](../../sql-statements/administrative-sql-statements/show/show-wsrep_status.md) statement.
+The `WSREP_STATUS` plugin creates the [WSREP\_STATUS](../../system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) table in the [INFORMATION\_SCHEMA](../../system-tables/information-schema/) database. The plugin also adds the [SHOW WSREP\_STATUS](../../sql-statements/administrative-sql-statements/show/show-wsrep_status.md) statement.
 
 These tables and statements provide information about [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/). Only users with the [SUPER](../../sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege can access this information.
 
@@ -57,7 +57,7 @@ SHOW TABLES FROM information_schema LIKE 'WSREP%';
 
 * Description: Controls how the server treats the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
@@ -71,7 +71,7 @@ SHOW TABLES FROM information_schema LIKE 'WSREP%';
 
 * Description: Controls how the server treats the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.

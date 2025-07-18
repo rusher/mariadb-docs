@@ -41,7 +41,7 @@ If a plugin's `Library` column has a `NULL` value, then the plugin is built-in, 
 
 ### Querying Plugin Information with information\_schema.PLUGINS
 
-The [information\_schema.PLUGINS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table can be queried to get more detailed information about plugins.
+The [information\_schema.PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table can be queried to get more detailed information about plugins.
 
 For example:
 
@@ -93,11 +93,11 @@ PLUGIN_LIBRARY_VERSION: NULL
 ...
 ```
 
-If a plugin's `PLUGIN_LIBRARY` column has the `NULL` value, the plugin is built-in and  cannot be uninstalled.
+If a plugin's `PLUGIN_LIBRARY` column has the `NULL` value, the plugin is built-in and cannot be uninstalled.
 
 ### Querying Plugin Information with `mysql.plugin`
 
-The [mysql.plugin](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table can be queried to get information about installed plugins.
+The [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table can be queried to get information about installed plugins.
 
 This table only contains information about plugins that have been installed via the following methods:
 
@@ -142,7 +142,7 @@ When you are installing a plugin, you also have to ensure that:
 
 A plugin can be installed dynamically by executing either the [INSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or the [INSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) statement.
 
-If a plugin is installed with one of these statements, a record will be added to the [mysql.plugins](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
+If a plugin is installed with one of these statements, a record will be added to the [mysql.plugins](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
 
 #### Installing a Plugin with `INSTALL SONAME`
 
@@ -168,7 +168,7 @@ INSTALL PLUGIN server_audit SONAME 'server_audit';
 
 A plugin can be installed with a [mariadbd](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option by providing either the [--plugin-load-add](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) or the [--plugin-load](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option.
 
-If a plugin is installed with one of these options, then a record will **not** be added to the [mysql.plugins](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table for the plugin. This means that if the server is restarted without the same option set, then the plugin will **not** automatically be loaded.
+If a plugin is installed with one of these options, then a record will **not** be added to the [mysql.plugins](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table for the plugin. This means that if the server is restarted without the same option set, then the plugin will **not** automatically be loaded.
 
 #### Installing a Plugin with `--plugin-load-add`
 
@@ -272,7 +272,7 @@ For example, to install the [server\_audit](mariadb-audit-plugin/) audit plugin,
 mariadb-plugin server_audit ENABLE
 ```
 
-If a plugin is installed with this utility, a record will be added to the [mysql.plugins](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
+If a plugin is installed with this utility, a record will be added to the [mysql.plugins](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
 
 ### Configuring the Plugin Directory
 
@@ -310,12 +310,12 @@ The possible values for these special options are:
 
 | Option Value           | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| OFF                    | Disables the plugin without removing it from the [mysql.plugins](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.                                                                                                                                                                                                                                    |
+| OFF                    | Disables the plugin without removing it from the [mysql.plugins](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.                                                                                                                                                                                                                                                                                 |
 | ON                     | Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.                                                                                                                                                                                                                                                                                |
 | FORCE                  | Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.                                                                                                                                                                                                                                                                                                                |
 | FORCE\_PLUS\_PERMANENT | Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running. |
 
-A plugin's status can be found by looking at the `PLUGIN_STATUS` column of the [information\_schema.PLUGINS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
+A plugin's status can be found by looking at the `PLUGIN_STATUS` column of the [information\_schema.PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
 
 ## Uninstalling Plugins
 
@@ -336,7 +336,7 @@ Plugins that were enabled as a `--plugin-load` option do not need to be uninstal
 * [UNINSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)
 * [UNINSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)
 * [SHOW PLUGINS](../sql-statements/administrative-sql-statements/show/show-plugins.md)
-* [INFORMATION\_SCHEMA.PLUGINS Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
+* [INFORMATION\_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
