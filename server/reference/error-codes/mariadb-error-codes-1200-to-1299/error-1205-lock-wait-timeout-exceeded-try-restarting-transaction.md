@@ -1,0 +1,2 @@
+# Error 1205: Lock wait timeout exceeded; try restarting transaction
+

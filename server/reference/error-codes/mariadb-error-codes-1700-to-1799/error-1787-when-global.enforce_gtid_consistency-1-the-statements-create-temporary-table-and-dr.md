@@ -1,0 +1,2 @@
+# Error 1787: When @@GLOBAL.ENFORCE\_GTID\_CONSISTENCY = 1, the statements CREATE TEMPORARY TABLE and DR
+

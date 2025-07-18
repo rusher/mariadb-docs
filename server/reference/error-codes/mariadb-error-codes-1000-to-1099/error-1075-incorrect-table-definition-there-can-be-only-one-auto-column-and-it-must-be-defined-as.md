@@ -1,0 +1,2 @@
+# Error 1075: Incorrect table definition; there can be only one auto column and it must be defined as
+

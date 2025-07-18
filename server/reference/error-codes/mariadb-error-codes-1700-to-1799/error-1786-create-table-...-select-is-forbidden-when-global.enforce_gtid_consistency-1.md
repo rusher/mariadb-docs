@@ -1,0 +1,2 @@
+# Error 1786: CREATE TABLE ... SELECT is forbidden when @@GLOBAL.ENFORCE\_GTID\_CONSISTENCY = 1
+

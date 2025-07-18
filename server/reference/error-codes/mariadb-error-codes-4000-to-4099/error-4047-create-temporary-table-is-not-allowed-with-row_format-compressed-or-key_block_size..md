@@ -1,0 +1,2 @@
+# Error 4047: CREATE TEMPORARY TABLE is not allowed with ROW\_FORMAT=COMPRESSED or KEY\_BLOCK\_SIZE.
+

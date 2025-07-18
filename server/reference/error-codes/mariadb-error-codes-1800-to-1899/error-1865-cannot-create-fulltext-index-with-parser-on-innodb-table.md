@@ -1,0 +1,2 @@
+# Error 1865: Cannot CREATE FULLTEXT INDEX WITH PARSER on InnoDB table
+

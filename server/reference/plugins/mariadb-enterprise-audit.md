@@ -438,27 +438,11 @@ There are two types of filters:
 
 ## Default Audit Filter
 
-The Default Audit Filter is used for all user accounts that are not assigned a Named Audit Filter.
-
-Only a single Default Audit Filter can be defined in the `mysql.server_audit_filters` system table, and it must be defined with the name default.
-
-```sql
-INSERT INTO mysql.server_audit_filters (filtername, rule)
-   VALUES (‘default’,
-      JSON_COMPACT(
-         ‘{
-    “logging”: “OFF”
-            }’
-      ));
-```
-
-{% hint style="danger" %}
-It is recommended to have full auditing added for such users instead and to only use named audit filters for relaxing the auditing level.
-{% endhint %}
+The Default Audit Filter applies to all user accounts that do not have a specific Named Audit Filter assigned. Only one Default Audit Filter is allowed in the `mysql.server_audit_filters` system table, and it must be named `default`.
 
 ### Create a Default Audit Filter
 
-If you want to create a Default Audit Filter, you need to insert the details into the mysql.server\_audit\_filters system table. The name for the Default Audit Filter must be default and the rule should be designed to meet your audit logging requirements.
+If you want to create a Default Audit Filter, you need to insert the details into the `mysql.server_audit_filters` system table. The name for the Default Audit Filter must be default and the rule should be designed to meet your audit logging requirements.
 
 To create a Default Audit Filter:
 
@@ -497,6 +481,22 @@ The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/spe
 
 ```sql
 SET GLOBAL server_audit_reload_filters=ON;
+```
+
+### Disable Logging with the Default Filter
+
+It is recommended to use the default filter to assure that any user is audited, also if not defined in the `mysql.server_audit_users` system table.
+
+In some special cases you might want audits only to be enabled for the users in `mysql.server_audit_users`. In this case you should use the following default filter to disable logging for all other users.
+
+```sql
+INSERT INTO mysql.server_audit_filters (filtername, rule)
+   VALUES (‘default’,
+      JSON_COMPACT(
+         ‘{
+    “logging”: “OFF”
+            }’
+      ));
 ```
 
 ## Named Audit Filters
@@ -918,7 +918,7 @@ MariaDB Enterprise Audit supports [Object Filters](mariadb-enterprise-audit.md#o
 {% endtab %}
 
 {% tab title="< 10.6 / 10.5.12 / 10.4.21" %}
-MariaDB Enterprise Audit does **not** support [Object Filters](mariadb-enterprise-audit.md#object-filters) for Table Events.&#x20;
+MariaDB Enterprise Audit does **not** support [Object Filters](mariadb-enterprise-audit.md#object-filters) for Table Events.
 {% endtab %}
 {% endtabs %}
 

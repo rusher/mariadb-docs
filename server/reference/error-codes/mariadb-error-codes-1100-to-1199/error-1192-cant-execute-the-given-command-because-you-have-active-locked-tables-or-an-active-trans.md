@@ -1,0 +1,2 @@
+# Error 1192: Can't execute the given command because you have active locked tables or an active trans
+
