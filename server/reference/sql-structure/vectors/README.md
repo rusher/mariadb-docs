@@ -3,18 +3,6 @@ description: >-
   Explore vector data types. This section details how to store and manage
   numerical arrays, enabling efficient vector similarity search and machine
   learning applications within your database.
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Vectors

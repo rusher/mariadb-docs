@@ -3,18 +3,6 @@ description: >-
   Learn about sequences in MariaDB Server. This section details how to create
   and manage sequences for generating unique numbers, often used for primary
   keys and other auto-incrementing values.
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Sequences

@@ -3,18 +3,6 @@ description: >-
   Explore temporal tables in MariaDB Server. This section details how to manage
   data with system-versioning and application-time periods, enabling historical
   data tracking and time-aware queries.
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Temporal Tables
