@@ -1,18 +1,16 @@
 # MariaDB 10.5.16 Release Notes
 
-The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
+{% include "../../../.gitbook/includes/latest-10-5.md" %}
 
-[Download 10.5.16](https://downloads.mariadb.org/mariadb/10.5.16/)[Release Notes](mariadb-10516-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10516-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+<a href="https://downloads.mariadb.org/mariadb/10.5.16/" class="button primary">Download</a> <a href="mariadb-10516-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-10516-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
 
 **Release date:** 20 May 2022
 
 [MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](../release-notes-mariadb-10-4-series/what-is-mariadb-104.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.16](mariadb-10516-release-notes.md) is a [_**Stable (GA)**_](../../about/release-criteria.md) release.
-
-**For an overview of** [**MariaDB 10.5**](what-is-mariadb-105.md) **see the**[**What is MariaDB 10.5?**](what-is-mariadb-105.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -39,10 +37,10 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* Incorrect binlogs after Galera SST using rsync and [mariadb-backup](../../../mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
-* [mariadb-backup](../../../mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* Incorrect binlogs after Galera SST using rsync and [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * Useless warning "InnoDB: Allocated tablespace ID for , old maximum was 0" during backup stage ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
-* [mariadb-backup](../../../mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
+* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 
 ### Optimizer
 
@@ -58,7 +56,7 @@ Thanks, and enjoy MariaDB!
 
 ### General
 
-* Server [error messages](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/README.md) are [now available in Chinese](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) ([MDEV-28227](https://jira.mariadb.org/browse/MDEV-28227))
+* Server [error messages](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/mariadb-fault-finding/mariadb-error-messages) are [now available in Chinese](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) ([MDEV-28227](https://jira.mariadb.org/browse/MDEV-28227))
 * For RHEL/CentOS 7, non x86\_64 architectures are no longer supported upstream and so our support will also be dropped with this release
 * As per the [MariaDB Deprecation Policy](../../about/platform-deprecation-policy.md), this will be the last release of [MariaDB 10.5](what-is-mariadb-105.md) for Debian 9 "Stretch", Ubuntu 21.10 "Impish", and Fedora 34
 
