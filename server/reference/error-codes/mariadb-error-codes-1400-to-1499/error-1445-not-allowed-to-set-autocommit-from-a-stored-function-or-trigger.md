@@ -1,2 +1,15 @@
 # Error 1445: Not allowed to set autocommit from a stored function or trigger
 
+| Error Code | SQLSTATE | Error                         | Description                                                     |
+| ---------- | -------- | ----------------------------- | --------------------------------------------------------------- |
+| 1445       | HY000    | ER\_SP\_CANT\_SET\_AUTOCOMMIT | Not allowed to set autocommit from a stored function or trigger |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

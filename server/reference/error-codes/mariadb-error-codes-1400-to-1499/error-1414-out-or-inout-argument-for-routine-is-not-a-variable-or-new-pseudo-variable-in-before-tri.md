@@ -1,2 +1,15 @@
 # Error 1414: OUT or INOUT argument for routine is not a variable or NEW pseudo-variable in BEFORE tri
 
+| Error Code | SQLSTATE | Error                 | Description                                                                                        |
+| ---------- | -------- | --------------------- | -------------------------------------------------------------------------------------------------- |
+| 1414       | 42000    | ER\_SP\_NOT\_VAR\_ARG | OUT or INOUT argument %d for routine %s is not a variable or NEW pseudo-variable in BEFORE trigger |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

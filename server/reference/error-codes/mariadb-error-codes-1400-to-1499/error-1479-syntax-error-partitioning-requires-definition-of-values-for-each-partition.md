@@ -1,2 +1,15 @@
 # Error 1479: Syntax error: PARTITIONING requires definition of VALUES for each partition
 
+| Error Code | SQLSTATE | Error                                  | Description                                                                       |
+| ---------- | -------- | -------------------------------------- | --------------------------------------------------------------------------------- |
+| 1479       | HY000    | ER\_PARTITION\_REQUIRES\_VALUES\_ERROR | Syntax error: %s PARTITIONING requires definition of VALUES %s for each partition |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

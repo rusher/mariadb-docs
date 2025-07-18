@@ -1,2 +1,15 @@
 # Error 1420: You can't execute a prepared statement which has an open cursor associated with it
 
+| Error Code | SQLSTATE | Error                              | Description                                                                                                               |
+| ---------- | -------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 1420       | HY000    | ER\_EXEC\_STMT\_WITH\_OPEN\_CURSOR | You can't execute a prepared statement which has an open cursor associated with it. Reset the statement to re-execute it. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

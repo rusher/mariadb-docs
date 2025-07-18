@@ -1,2 +1,15 @@
 # Error 1480: Only PARTITIONING can use VALUES in partition definition
 
+| Error Code | SQLSTATE | Error                               | Description                                                    |
+| ---------- | -------- | ----------------------------------- | -------------------------------------------------------------- |
+| 1480       | HY000    | ER\_PARTITION\_WRONG\_VALUES\_ERROR | Only %s PARTITIONING can use VALUES %s in partition definition |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1442: Can't update table in stored function/trigger because it is already used by statement wh
 
+| Error Code | SQLSTATE | Error                                          | Description                                                                                                                            |
+| ---------- | -------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 1442       | HY000    | ER\_CANT\_UPDATE\_USED\_TABLE\_IN\_SF\_OR\_TRG | Can't update table '%s' in stored function/trigger because it is already used by statement which invoked this stored function/trigger. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

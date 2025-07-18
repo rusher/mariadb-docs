@@ -1,2 +1,15 @@
 # Error 1438: Cannot drop default keycache
 
+| Error Code | SQLSTATE | Error                                   | Description                  |
+| ---------- | -------- | --------------------------------------- | ---------------------------- |
+| 1438       | HY000    | ER\_WARN\_CANT\_DROP\_DEFAULT\_KEYCACHE | Cannot drop default keycache |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

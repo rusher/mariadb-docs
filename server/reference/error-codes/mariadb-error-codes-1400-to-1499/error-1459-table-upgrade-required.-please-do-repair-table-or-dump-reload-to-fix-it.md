@@ -1,2 +1,15 @@
 # Error 1459: Table upgrade required. Please do "REPAIR TABLE" or dump/reload to fix it!
 
+| Error Code | SQLSTATE | Error                     | Description                                                                     |
+| ---------- | -------- | ------------------------- | ------------------------------------------------------------------------------- |
+| 1459       | HY000    | ER\_TABLE\_NEEDS\_UPGRADE | Table upgrade required. Please do "REPAIR TABLE `%s`" or dump/reload to fix it! |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

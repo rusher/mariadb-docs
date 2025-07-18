@@ -1,2 +1,15 @@
 # Error 1427: For float(M,D, double(M,D or decimal(M,D, M must be >= D
 
+| Error Code | SQLSTATE | Error                  | Description                                                             |
+| ---------- | -------- | ---------------------- | ----------------------------------------------------------------------- |
+| 1427       | 42000    | ER\_M\_BIGGER\_THAN\_D | For float(M,D, double(M,D or decimal(M,D, M must be >= D (column '%s'). |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

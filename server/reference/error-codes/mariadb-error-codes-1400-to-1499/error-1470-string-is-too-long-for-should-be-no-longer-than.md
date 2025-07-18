@@ -1,2 +1,15 @@
 # Error 1470: String is too long for (should be no longer than )
 
+| Error Code | SQLSTATE | Error                     | Description                                                  |
+| ---------- | -------- | ------------------------- | ------------------------------------------------------------ |
+| 1470       | HY000    | ER\_WRONG\_STRING\_LENGTH | String '%s' is too long for %s (should be no longer than %d) |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

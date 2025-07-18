@@ -1,2 +1,15 @@
 # Error 1491: The function returns the wrong type
 
+| Error Code | SQLSTATE | Error                                    | Description                            |
+| ---------- | -------- | ---------------------------------------- | -------------------------------------- |
+| 1491       | HY000    | ER\_PARTITION\_FUNC\_NOT\_ALLOWED\_ERROR | The %s function returns the wrong type |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
