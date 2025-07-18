@@ -1,2 +1,15 @@
 # Error 1813: Tablespace for table exists. Please DISCARD the tablespace before IMPORT
 
+| Error Code | SQLSTATE | Error                  | Description                                                                    |
+| ---------- | -------- | ---------------------- | ------------------------------------------------------------------------------ |
+| 1813       | HY000    | ER\_TABLESPACE\_EXISTS | Tablespace for table '%s' exists. Please DISCARD the tablespace before IMPORT. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

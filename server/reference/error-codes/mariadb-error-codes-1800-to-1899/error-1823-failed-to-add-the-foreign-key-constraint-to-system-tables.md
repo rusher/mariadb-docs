@@ -1,2 +1,15 @@
 # Error 1823: Failed to add the foreign key constraint to system tables
 
+| Error Code | SQLSTATE | Error                     | Description                                                    |
+| ---------- | -------- | ------------------------- | -------------------------------------------------------------- |
+| 1823       | HY000    | ER\_FK\_FAIL\_ADD\_SYSTEM | Failed to add the foreign key constraint '%s' to system tables |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

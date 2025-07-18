@@ -1,2 +1,15 @@
 # Error 1879: Upgrade index name failed, please use create index(alter table) algorithm copy to rebuil
 
+| Error Code | SQLSTATE | Error                             | Description                                                                                      |
+| ---------- | -------- | --------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 1879       | HY000    | ER\_INNODB\_FT\_AUX\_NOT\_HEX\_ID | Upgrade index name failed, please use create index(alter table) algorithm copy to rebuild index. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

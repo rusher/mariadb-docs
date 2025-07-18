@@ -1,2 +1,15 @@
 # Error 1877: Operation cannot be performed. The table is missing, corrupt or contains bad data
 
+| Error Code | SQLSTATE | Error              | Description                                                                                |
+| ---------- | -------- | ------------------ | ------------------------------------------------------------------------------------------ |
+| 1877       | HY000    | ER\_TABLE\_CORRUPT | Operation cannot be performed. The table '%s.%s' is missing, corrupt or contains bad data. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

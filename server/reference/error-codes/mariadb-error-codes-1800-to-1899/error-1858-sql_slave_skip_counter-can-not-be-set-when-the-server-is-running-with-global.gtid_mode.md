@@ -1,2 +1,15 @@
 # Error 1858: sql\_slave\_skip\_counter can not be set when the server is running with @@GLOBAL.GTID\_MODE
 
+| Error Code | SQLSTATE | Error                                                        | Description                                                                                                                                                                                                                 |
+| ---------- | -------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1858       | HY000    | ER\_SQL\_SLAVE\_SKIP\_COUNTER\_NOT\_SETTABLE\_IN\_GTID\_MODE | sql\_slave\_skip\_counter can not be set when the server is running with @@GLOBAL.GTID\_MODE = ON. Instead, for each transaction that you want to skip, generate an empty transaction with the same GTID as the transaction |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

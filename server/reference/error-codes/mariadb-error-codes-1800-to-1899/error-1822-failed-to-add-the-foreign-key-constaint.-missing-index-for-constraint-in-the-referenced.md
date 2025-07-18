@@ -1,2 +1,15 @@
 # Error 1822: Failed to add the foreign key constaint. Missing index for constraint in the referenced
 
+| Error Code | SQLSTATE | Error                     | Description                                                                                             |
+| ---------- | -------- | ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| 1822       | HY000    | ER\_FK\_NO\_INDEX\_PARENT | Failed to add the foreign key constaint. Missing index for constraint '%s' in the referenced table '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

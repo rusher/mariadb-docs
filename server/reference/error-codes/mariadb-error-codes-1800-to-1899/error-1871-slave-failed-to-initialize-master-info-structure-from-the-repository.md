@@ -1,2 +1,15 @@
 # Error 1871: Slave failed to initialize master info structure from the repository
 
+| Error Code | SQLSTATE | Error                           | Description                                                          |
+| ---------- | -------- | ------------------------------- | -------------------------------------------------------------------- |
+| 1871       | HY000    | ER\_SLAVE\_MI\_INIT\_REPOSITORY | Slave failed to initialize master info structure from the repository |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

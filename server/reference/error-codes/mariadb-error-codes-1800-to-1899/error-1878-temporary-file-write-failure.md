@@ -1,2 +1,15 @@
 # Error 1878: Temporary file write failure
 
+| Error Code | SQLSTATE | Error                          | Description                   |
+| ---------- | -------- | ------------------------------ | ----------------------------- |
+| 1878       | HY000    | ER\_TEMP\_FILE\_WRITE\_FAILURE | Temporary file write failure. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

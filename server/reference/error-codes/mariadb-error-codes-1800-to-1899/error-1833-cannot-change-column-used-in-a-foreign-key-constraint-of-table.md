@@ -1,2 +1,15 @@
 # Error 1833: Cannot change column: used in a foreign key constraint of table
 
+| Error Code | SQLSTATE | Error                                 | Description                                                                    |
+| ---------- | -------- | ------------------------------------- | ------------------------------------------------------------------------------ |
+| 1833       | HY000    | ER\_FK\_COLUMN\_CANNOT\_CHANGE\_CHILD | Cannot change column '%s': used in a foreign key constraint '%s' of table '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
