@@ -1,2 +1,15 @@
 # Error 4142: SYSTEM\_TIME partitions in table does not support historical query
 
+| Error Code | SQLSTATE | Error                          | Description                                                             |
+| ---------- | -------- | ------------------------------ | ----------------------------------------------------------------------- |
+| 4142       |          | ER\_VERS\_QUERY\_IN\_PARTITION | SYSTEM\_TIME partitions in table %\`s does not support historical query |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

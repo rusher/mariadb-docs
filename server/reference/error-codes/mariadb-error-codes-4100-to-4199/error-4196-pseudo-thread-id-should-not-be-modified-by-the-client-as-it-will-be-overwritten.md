@@ -1,2 +1,15 @@
 # Error 4196: Pseudo thread id should not be modified by the client as it will be overwritten
 
+| Error Code | SQLSTATE | Error                             | Description                                                                      |
+| ---------- | -------- | --------------------------------- | -------------------------------------------------------------------------------- |
+| 4196       |          | ER\_PSEUDO\_THREAD\_ID\_OVERWRITE | Pseudo thread id should not be modified by the client as it will be overwritten. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

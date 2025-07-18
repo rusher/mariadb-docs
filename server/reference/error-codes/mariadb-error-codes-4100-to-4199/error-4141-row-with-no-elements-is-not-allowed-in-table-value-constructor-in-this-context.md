@@ -1,2 +1,15 @@
 # Error 4141: Row with no elements is not allowed in table value constructor in this context
 
+| Error Code | SQLSTATE | Error                   | Description                                                                    |
+| ---------- | -------- | ----------------------- | ------------------------------------------------------------------------------ |
+| 4141       |          | ER\_EMPTY\_ROW\_IN\_TVC | Row with no elements is not allowed in table value constructor in this context |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 4128: Wrong partitions for: must have at least one HISTORY and exactly one last CURRENT
 
+| Error Code | SQLSTATE | Error                  | Description                                                                            |
+| ---------- | -------- | ---------------------- | -------------------------------------------------------------------------------------- |
+| 4128       |          | ER\_VERS\_WRONG\_PARTS | Wrong partitions for %\`s: must have at least one HISTORY and exactly one last CURRENT |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

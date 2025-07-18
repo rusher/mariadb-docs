@@ -1,2 +1,15 @@
 # Error 4132: System-versioned tables in the database are not supported
 
+| Error Code | SQLSTATE | Error                        | Description                                                    |
+| ---------- | -------- | ---------------------------- | -------------------------------------------------------------- |
+| 4132       |          | ER\_VERS\_DB\_NOT\_SUPPORTED | System-versioned tables in the %\`s database are not supported |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

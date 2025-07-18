@@ -1,2 +1,15 @@
 # Error 4138: Transaction-precise system-versioned tables do not support partitioning by ROW START or
 
+| Error Code | SQLSTATE | Error                                              | Description                                                                                     |
+| ---------- | -------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 4138       |          | ER\_VERS\_TRX\_PART\_HISTORIC\_ROW\_NOT\_SUPPORTED | Transaction-precise system-versioned tables do not support partitioning by ROW START or ROW END |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

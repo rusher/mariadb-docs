@@ -1,2 +1,15 @@
 # Error 4103: Argument to the function does not belong to the range \[0,1]
 
+| Error Code | SQLSTATE | Error                        | Description                                                     |
+| ---------- | -------- | ---------------------------- | --------------------------------------------------------------- |
+| 4103       |          | ER\_ARGUMENT\_OUT\_OF\_RANGE | Argument to the %s function does not belong to the range \[0,1] |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

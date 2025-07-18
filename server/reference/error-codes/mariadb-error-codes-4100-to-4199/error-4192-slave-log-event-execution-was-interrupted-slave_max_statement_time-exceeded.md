@@ -1,2 +1,15 @@
 # Error 4192: Slave log event execution was interrupted (slave\_max\_statement\_time exceeded)
 
+| Error Code | SQLSTATE | Error                         | Description                                                                      |
+| ---------- | -------- | ----------------------------- | -------------------------------------------------------------------------------- |
+| 4192       |          | ER\_SLAVE\_STATEMENT\_TIMEOUT | Slave log event execution was interrupted (slave\_max\_statement\_time exceeded) |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

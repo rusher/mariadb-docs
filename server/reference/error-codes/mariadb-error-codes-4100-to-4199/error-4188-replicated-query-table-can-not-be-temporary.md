@@ -1,2 +1,15 @@
 # Error 4188: Replicated query table can not be temporary
 
+| Error Code | SQLSTATE | Error                                | Description                                              |
+| ---------- | -------- | ------------------------------------ | -------------------------------------------------------- |
+| 4188       |          | ER\_INCONSISTENT\_SLAVE\_TEMP\_TABLE | Replicated query '%s' table `%s.%s` can not be temporary |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

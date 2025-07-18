@@ -1,2 +1,15 @@
 # Error 4193: Invalid value for keyword
 
+| Error Code | SQLSTATE | Error                                  | Description                  |
+| ---------- | -------- | -------------------------------------- | ---------------------------- |
+| 4193       |          | ER\_JSON\_INVALID\_VALUE\_FOR\_KEYWORD | Invalid value for keyword %s |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

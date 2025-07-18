@@ -1,2 +1,15 @@
 # Error 4167: No secure transports are configured, unable to set --require\_secure\_transport=ON
 
+| Error Code | SQLSTATE | Error                                  | Description                                                                        |
+| ---------- | -------- | -------------------------------------- | ---------------------------------------------------------------------------------- |
+| 4167       |          | ER\_NO\_SECURE\_TRANSPORTS\_CONFIGURED | No secure transports are configured, unable to set --require\_secure\_transport=ON |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

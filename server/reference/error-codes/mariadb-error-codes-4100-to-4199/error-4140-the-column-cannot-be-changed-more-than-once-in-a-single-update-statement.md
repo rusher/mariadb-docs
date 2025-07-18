@@ -1,2 +1,15 @@
 # Error 4140: The column cannot be changed more than once in a single UPDATE statement
 
+| Error Code | SQLSTATE | Error                           | Description                                                                      |
+| ---------- | -------- | ------------------------------- | -------------------------------------------------------------------------------- |
+| 4140       |          | ER\_UPDATED\_COLUMN\_ONLY\_ONCE | The column %`s.%`s cannot be changed more than once in a single UPDATE statement |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

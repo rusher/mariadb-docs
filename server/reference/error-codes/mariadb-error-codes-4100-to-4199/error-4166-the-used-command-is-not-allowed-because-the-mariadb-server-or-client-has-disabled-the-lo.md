@@ -1,2 +1,15 @@
 # Error 4166: The used command is not allowed because the MariaDB server or client has disabled the lo
 
+| Error Code | SQLSTATE | Error                                  | Description                                                                                                   |
+| ---------- | -------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 4166       | HY000    | ER\_LOAD\_INFILE\_CAPABILITY\_DISABLED | The used command is not allowed because the MariaDB server or client has disabled the local infile capability |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

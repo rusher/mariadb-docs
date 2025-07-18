@@ -1,2 +1,15 @@
 # Error 4178: Can't store an array or an object in the scalar column of JSON\_TABLE
 
+| Error Code | SQLSTATE | Error                             | Description                                                                      |
+| ---------- | -------- | --------------------------------- | -------------------------------------------------------------------------------- |
+| 4178       |          | ER\_JSON\_TABLE\_SCALAR\_EXPECTED | Can't store an array or an object in the scalar column '%s' of JSON\_TABLE '%s'. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

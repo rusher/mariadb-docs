@@ -1,2 +1,15 @@
 # Error 4191: CHANGE MASTER TO option is missing requirement
 
+| Error Code | SQLSTATE | Error                                | Description                                               |
+| ---------- | -------- | ------------------------------------ | --------------------------------------------------------- |
+| 4191       |          | ER\_CM\_OPTION\_MISSING\_REQUIREMENT | CHANGE MASTER TO option '%s=%s' is missing requirement %s |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

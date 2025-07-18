@@ -1,2 +1,15 @@
 # Error 4149: Unknown backup stage: Stage should be one of START, FLUSH, BLOCK\_DDL, BLOCK\_COMMIT or EN
 
+| Error Code | SQLSTATE | Error                      | Description                                                                                       |
+| ---------- | -------- | -------------------------- | ------------------------------------------------------------------------------------------------- |
+| 4149       |          | ER\_BACKUP\_UNKNOWN\_STAGE | Unknown backup stage: '%s'. Stage should be one of START, FLUSH, BLOCK\_DDL, BLOCK\_COMMIT or END |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

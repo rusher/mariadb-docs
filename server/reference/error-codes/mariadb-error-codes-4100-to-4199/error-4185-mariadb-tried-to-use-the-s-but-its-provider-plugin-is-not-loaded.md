@@ -1,2 +1,15 @@
 # Error 4185: MariaDB tried to use the %s, but its provider plugin is not loaded
 
+| Error Code | SQLSTATE | Error                     | Description                                                        |
+| ---------- | -------- | ------------------------- | ------------------------------------------------------------------ |
+| 4185       |          | ER\_PROVIDER\_NOT\_LOADED | MariaDB tried to use the %s, but its provider plugin is not loaded |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

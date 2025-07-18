@@ -1,2 +1,15 @@
 # Error 4173: Engine does not support rollback. Changes where commited during rollback call
 
+| Error Code | SQLSTATE | Error                                    | Description                                                                      |
+| ---------- | -------- | ---------------------------------------- | -------------------------------------------------------------------------------- |
+| 4173       |          | ER\_DATA\_WAS\_COMMITED\_UNDER\_ROLLBACK | Engine %s does not support rollback. Changes were committed during rollback call |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
