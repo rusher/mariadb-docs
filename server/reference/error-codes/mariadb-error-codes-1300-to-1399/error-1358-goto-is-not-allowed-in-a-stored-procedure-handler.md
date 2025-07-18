@@ -1,2 +1,15 @@
 # Error 1358: GOTO is not allowed in a stored procedure handler
 
+| Error Code | SQLSTATE | Error                   | Description                                       |
+| ---------- | -------- | ----------------------- | ------------------------------------------------- |
+| 1358       | HY000    | ER\_SP\_GOTO\_IN\_HNDLR | GOTO is not allowed in a stored procedure handler |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
