@@ -1,2 +1,15 @@
 # Error 4065: Column family flag is different from an existing flag
 
+| Error Code | SQLSTATE | Error             | Description                                                                                                                      |
+| ---------- | -------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 4065       |          | ER\_CF\_DIFFERENT | Column family ('%s') flag (%d) is different from an existing flag (%d). Assign a new CF flag, or do not change existing CF flag. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

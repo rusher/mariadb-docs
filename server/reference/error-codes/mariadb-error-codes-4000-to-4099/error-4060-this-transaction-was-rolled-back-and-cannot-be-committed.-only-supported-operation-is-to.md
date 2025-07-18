@@ -1,2 +1,15 @@
 # Error 4060: This transaction was rolled back and cannot be committed. Only supported operation is to
 
+| Error Code | SQLSTATE | Error              | Description                                                                                                                                                                          |
+| ---------- | -------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 4060       |          | ER\_ROLLBACK\_ONLY | This transaction was rolled back and cannot be committed. Only supported operation is to roll it back, so all pending changes will be discarded. Please restart another transaction. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

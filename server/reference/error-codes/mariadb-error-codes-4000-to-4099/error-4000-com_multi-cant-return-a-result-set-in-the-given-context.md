@@ -1,2 +1,15 @@
 # Error 4000: COM\_MULTI can't return a result set in the given context
 
+| Error Code | SQLSTATE | Error                    | Description                                               |
+| ---------- | -------- | ------------------------ | --------------------------------------------------------- |
+| 4000       | 0A000    | ER\_COMMULTI\_BADCONTEXT | COM\_MULTI can't return a result set in the given context |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

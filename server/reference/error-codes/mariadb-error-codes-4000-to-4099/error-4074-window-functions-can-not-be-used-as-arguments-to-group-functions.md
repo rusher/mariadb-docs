@@ -1,2 +1,15 @@
 # Error 4074: Window functions can not be used as arguments to group functions
 
+| Error Code | SQLSTATE | Error                                      | Description                                                       |
+| ---------- | -------- | ------------------------------------------ | ----------------------------------------------------------------- |
+| 4074       |          | ER\_SUM\_FUNC\_WITH\_WINDOW\_FUNC\_AS\_ARG | Window functions can not be used as arguments to group functions. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

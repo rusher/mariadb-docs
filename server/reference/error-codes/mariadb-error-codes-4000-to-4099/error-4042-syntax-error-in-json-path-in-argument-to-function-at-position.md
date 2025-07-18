@@ -1,2 +1,15 @@
 # Error 4042: Syntax error in JSON path in argument to function at position
 
+| Error Code | SQLSTATE | Error                  | Description                                                              |
+| ---------- | -------- | ---------------------- | ------------------------------------------------------------------------ |
+| 4042       |          | ER\_JSON\_PATH\_SYNTAX | Syntax error in JSON path in argument %d to function '%s' at position %d |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

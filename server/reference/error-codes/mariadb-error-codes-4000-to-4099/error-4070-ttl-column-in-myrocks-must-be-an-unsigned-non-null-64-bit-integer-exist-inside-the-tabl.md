@@ -1,2 +1,15 @@
 # Error 4070: TTL column in MyRocks must be an unsigned non-null 64-bit integer, exist inside the tabl
 
+| Error Code | SQLSTATE | Error                     | Description                                                                                                                            |
+| ---------- | -------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 4070       |          | ER\_RDB\_TTL\_COL\_FORMAT | TTL column (%s) in MyRocks must be an unsigned non-null 64-bit integer, exist inside the table, and have an accompanying ttl duration. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

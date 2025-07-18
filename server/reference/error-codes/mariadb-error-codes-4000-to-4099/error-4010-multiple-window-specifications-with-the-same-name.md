@@ -1,2 +1,15 @@
 # Error 4010: Multiple window specifications with the same name
 
+| Error Code | SQLSTATE | Error                 | Description                                            |
+| ---------- | -------- | --------------------- | ------------------------------------------------------ |
+| 4010       |          | ER\_DUP\_WINDOW\_NAME | Multiple window specifications with the same name '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

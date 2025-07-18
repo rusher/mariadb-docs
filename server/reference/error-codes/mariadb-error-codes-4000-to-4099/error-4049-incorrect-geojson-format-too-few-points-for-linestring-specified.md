@@ -1,2 +1,15 @@
 # Error 4049: Incorrect GeoJSON format - too few points for linestring specified
 
+| Error Code | SQLSTATE | Error                         | Description                                                         |
+| ---------- | -------- | ----------------------------- | ------------------------------------------------------------------- |
+| 4049       |          | ER\_GEOJSON\_TOO\_FEW\_POINTS | Incorrect GeoJSON format - too few points for linestring specified. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

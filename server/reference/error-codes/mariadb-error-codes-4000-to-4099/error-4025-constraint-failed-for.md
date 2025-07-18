@@ -1,2 +1,15 @@
 # Error 4025: CONSTRAINT failed for
 
+| Error Code | SQLSTATE | Error                  | Description                                  |
+| ---------- | -------- | ---------------------- | -------------------------------------------- |
+| 4025       | 23000    | ER\_CONSTRAINT\_FAILED | CONSTRAINT %`s failed for %`-.192s.%\`-.192s |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 4097: Compressed column can't be used in key specification
 
+| Error Code | SQLSTATE | Error                                 | Description                                                    |
+| ---------- | -------- | ------------------------------------- | -------------------------------------------------------------- |
+| 4097       |          | ER\_COMPRESSED\_COLUMN\_USED\_AS\_KEY | Compressed column '%-.192s' can't be used in key specification |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

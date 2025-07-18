@@ -1,2 +1,15 @@
 # Error 4075: OK packet too large
 
+| Error Code | SQLSTATE | Error                           | Description         |
+| ---------- | -------- | ------------------------------- | ------------------- |
+| 4075       |          | ER\_NET\_OK\_PACKET\_TOO\_LARGE | OK packet too large |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

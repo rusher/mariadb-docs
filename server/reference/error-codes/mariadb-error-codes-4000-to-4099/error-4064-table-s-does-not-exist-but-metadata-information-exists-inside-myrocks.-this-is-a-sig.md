@@ -1,2 +1,15 @@
 # Error 4064: Table '%s' does not exist, but metadata information exists inside MyRocks. This is a sig
 
+| Error Code | SQLSTATE | Error                       | Description                                                                                                                                                                                   |
+| ---------- | -------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 4064       |          | ER\_METADATA\_INCONSISTENCY | Table '%s' does not exist, but metadata information exists inside MyRocks. This is a sign of data inconsistency. Please check if '%s.frm' exists, and try to restore it if it does not exist. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

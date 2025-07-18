@@ -1,2 +1,15 @@
 # Error 4050: Incorrect GeoJSON format - polygon not closed
 
+| Error Code | SQLSTATE | Error                    | Description                                    |
+| ---------- | -------- | ------------------------ | ---------------------------------------------- |
+| 4050       |          | ER\_GEOJSON\_NOT\_CLOSED | Incorrect GeoJSON format - polygon not closed. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

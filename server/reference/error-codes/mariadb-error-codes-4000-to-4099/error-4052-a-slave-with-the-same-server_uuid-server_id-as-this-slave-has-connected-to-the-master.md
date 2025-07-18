@@ -1,2 +1,15 @@
 # Error 4052: A slave with the same server\_uuid/server\_id as this slave has connected to the master
 
+| Error Code | SQLSTATE | Error               | Description                                                                             |
+| ---------- | -------- | ------------------- | --------------------------------------------------------------------------------------- |
+| 4052       |          | ER\_SLAVE\_SAME\_ID | A slave with the same server\_uuid/server\_id as this slave has connected to the master |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

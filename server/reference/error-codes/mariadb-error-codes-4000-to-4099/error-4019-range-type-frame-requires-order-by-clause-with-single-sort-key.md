@@ -1,2 +1,15 @@
 # Error 4019: RANGE-type frame requires ORDER BY clause with single sort key
 
+| Error Code | SQLSTATE | Error                                    | Description                                                    |
+| ---------- | -------- | ---------------------------------------- | -------------------------------------------------------------- |
+| 4019       |          | ER\_RANGE\_FRAME\_NEEDS\_SIMPLE\_ORDERBY | RANGE-type frame requires ORDER BY clause with single sort key |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

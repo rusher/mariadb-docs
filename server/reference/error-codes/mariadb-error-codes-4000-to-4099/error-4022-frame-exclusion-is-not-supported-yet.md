@@ -1,2 +1,15 @@
 # Error 4022: Frame exclusion is not supported yet
 
+| Error Code | SQLSTATE | Error                                | Description                          |
+| ---------- | -------- | ------------------------------------ | ------------------------------------ |
+| 4022       |          | ER\_FRAME\_EXCLUSION\_NOT\_SUPPORTED | Frame exclusion is not supported yet |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

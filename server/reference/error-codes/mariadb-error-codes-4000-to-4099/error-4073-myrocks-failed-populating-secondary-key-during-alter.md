@@ -1,2 +1,15 @@
 # Error 4073: MyRocks failed populating secondary key during alter
 
+| Error Code | SQLSTATE | Error                           | Description                                           |
+| ---------- | -------- | ------------------------------- | ----------------------------------------------------- |
+| 4073       |          | ER\_SK\_POPULATE\_DURING\_ALTER | MyRocks failed populating secondary key during alter. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
