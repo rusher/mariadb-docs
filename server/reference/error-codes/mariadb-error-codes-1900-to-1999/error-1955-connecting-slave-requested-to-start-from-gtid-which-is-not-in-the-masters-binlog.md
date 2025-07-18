@@ -1,2 +1,15 @@
 # Error 1955: Connecting slave requested to start from GTID which is not in the master's binlog
 
+| Error Code | SQLSTATE | Error                                       | Description                                                                                                                                                                                                                                                        |
+| ---------- | -------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1955       |          | ER\_GTID\_POSITION\_NOT\_FOUND\_IN\_BINLOG2 | Connecting slave requested to start from GTID %u-%u-%llu, which is not in the master's binlog. Since the master's binlog contains GTIDs with higher sequence numbers, it probably means that the slave has diverged due to executing extra errorneous transactions |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

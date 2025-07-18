@@ -1,2 +1,15 @@
 # Error 1924: Query cache is disabled (resize or similar command in progress); repeat this command lat
 
+| Error Code | SQLSTATE | Error                          | Description                                                                                |
+| ---------- | -------- | ------------------------------ | ------------------------------------------------------------------------------------------ |
+| 1924       |          | ER\_QUERY\_CACHE\_IS\_DISABLED | Query cache is disabled (resize or similar command in progress); repeat this command later |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

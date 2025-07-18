@@ -1,2 +1,15 @@
 # Error 1952: Unexpected GTID received from master after reconnect
 
+| Error Code | SQLSTATE | Error                                 | Description                                                                                                                                                |
+| ---------- | -------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1952       |          | ER\_SLAVE\_UNEXPECTED\_MASTER\_SWITCH | Unexpected GTID received from master after reconnect. This normally indicates that the master server was replaced without restarting the slave threads. %s |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

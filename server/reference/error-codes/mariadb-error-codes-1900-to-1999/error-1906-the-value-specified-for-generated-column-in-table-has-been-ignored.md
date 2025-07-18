@@ -1,2 +1,15 @@
 # Error 1906: The value specified for generated column in table has been ignored
 
+| Error Code | SQLSTATE | Error                                                    | Description                                                                  |
+| ---------- | -------- | -------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| 1906       |          | ER\_WARNING\_NON\_DEFAULT\_VALUE\_FOR\_GENERATED\_COLUMN | The value specified for generated column '%s' in table '%s' has been ignored |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

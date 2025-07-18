@@ -1,2 +1,15 @@
 # Error 1903: Primary key cannot be defined upon a generated column
 
+| Error Code | SQLSTATE | Error                                          | Description                                           |
+| ---------- | -------- | ---------------------------------------------- | ----------------------------------------------------- |
+| 1903       |          | ER\_PRIMARY\_KEY\_BASED\_ON\_GENERATED\_COLUMN | Primary key cannot be defined upon a generated column |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

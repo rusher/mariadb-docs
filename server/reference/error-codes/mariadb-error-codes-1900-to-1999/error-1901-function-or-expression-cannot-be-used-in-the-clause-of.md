@@ -1,2 +1,15 @@
 # Error 1901: Function or expression cannot be used in the clause of
 
+| Error Code | SQLSTATE | Error                                             | Description                                                         |
+| ---------- | -------- | ------------------------------------------------- | ------------------------------------------------------------------- |
+| 1901       |          | ER\_GENERATED\_COLUMN\_FUNCTION\_IS\_NOT\_ALLOWED | Function or expression '%s' cannot be used in the %s clause of %\`s |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

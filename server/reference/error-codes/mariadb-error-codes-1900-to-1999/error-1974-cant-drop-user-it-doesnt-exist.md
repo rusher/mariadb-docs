@@ -1,2 +1,15 @@
 # Error 1974: Can't drop user; it doesn't exist
 
+| Error Code | SQLSTATE | Error                  | Description                                         |
+| ---------- | -------- | ---------------------- | --------------------------------------------------- |
+| 1974       |          | ER\_USER\_DROP\_EXISTS | Can't drop user '%-.64s'@'%-.64s'; it doesn't exist |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1912: Incorrect value for option
 
+| Error Code | SQLSTATE | Error                  | Description                                  |
+| ---------- | -------- | ---------------------- | -------------------------------------------- |
+| 1912       |          | ER\_BAD\_OPTION\_VALUE | Incorrect value '%-.64s' for option '%-.64s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

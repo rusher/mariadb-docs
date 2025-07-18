@@ -1,2 +1,15 @@
 # Error 1920: Dynamic column implementation limit reached
 
+| Error Code | SQLSTATE | Error                               | Description                                 |
+| ---------- | -------- | ----------------------------------- | ------------------------------------------- |
+| 1920       |          | ER\_DYN\_COL\_IMPLEMENTATION\_LIMIT | Dynamic column implementation limit reached |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

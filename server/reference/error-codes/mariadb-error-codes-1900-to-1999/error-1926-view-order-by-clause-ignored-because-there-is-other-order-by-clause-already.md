@@ -1,2 +1,15 @@
 # Error 1926: View ORDER BY clause ignored because there is other ORDER BY clause already
 
+| Error Code | SQLSTATE | Error                      | Description                                                                                      |
+| ---------- | -------- | -------------------------- | ------------------------------------------------------------------------------------------------ |
+| 1926       |          | ER\_VIEW\_ORDERBY\_IGNORED | View '%-.192s'.'%-.192s' ORDER BY clause ignored because there is other ORDER BY clause already. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

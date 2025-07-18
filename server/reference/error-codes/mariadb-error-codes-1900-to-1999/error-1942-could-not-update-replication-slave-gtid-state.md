@@ -1,2 +1,15 @@
 # Error 1942: Could not update replication slave gtid state
 
+| Error Code | SQLSTATE | Error                           | Description                                   |
+| ---------- | -------- | ------------------------------- | --------------------------------------------- |
+| 1942       |          | ER\_CANNOT\_UPDATE\_GTID\_STATE | Could not update replication slave gtid state |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
