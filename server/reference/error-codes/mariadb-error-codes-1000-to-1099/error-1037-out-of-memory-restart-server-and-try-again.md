@@ -1,2 +1,15 @@
 # Error 1037: Out of memory; restart server and try again
 
+| Error Code | SQLSTATE | Error                   | Description                                                     |
+| ---------- | -------- | ----------------------- | --------------------------------------------------------------- |
+| 1038       | HY001    | ER\_OUT\_OF\_SORTMEMORY | Out of sort memory, consider increasing server sort buffer size |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

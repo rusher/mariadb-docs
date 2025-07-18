@@ -1,2 +1,15 @@
 # Error 1054: Unknown column
 
+| Error Code | SQLSTATE | Error                 | Description                 |
+| ---------- | -------- | --------------------- | --------------------------- |
+| 1054       | 42S22    | ER\_BAD\_FIELD\_ERROR | Unknown column '%s' in '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

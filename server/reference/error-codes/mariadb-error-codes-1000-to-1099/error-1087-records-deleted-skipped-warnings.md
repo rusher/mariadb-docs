@@ -1,2 +1,15 @@
 # Error 1087: Records Deleted Skipped Warnings
 
+| Error Code | SQLSTATE | Error         | Description                                          |
+| ---------- | -------- | ------------- | ---------------------------------------------------- |
+| 1087       | HY000    | ER\_LOAD\_INF | Records: %ld Deleted: %ld Skipped: %ld Warnings: %ld |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
