@@ -1,2 +1,15 @@
 # Error 1240: Key reference and table reference don't match
 
+| Error Code | SQLSTATE | Error                                    | Description                                   |
+| ---------- | -------- | ---------------------------------------- | --------------------------------------------- |
+| 1240       | HY000    | ER\_KEY\_REF\_DO\_NOT\_MATCH\_TABLE\_REF | Key reference and table reference don't match |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1235: This version of MariaDB doesn't yet support
 
+| Error Code | SQLSTATE | Error                   | Description                                      |
+| ---------- | -------- | ----------------------- | ------------------------------------------------ |
+| 1235       | 42000    | ER\_NOT\_SUPPORTED\_YET | This version of MariaDB doesn't yet support '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

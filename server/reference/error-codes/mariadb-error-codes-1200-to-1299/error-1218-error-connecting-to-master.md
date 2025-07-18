@@ -1,2 +1,15 @@
 # Error 1218: Error connecting to master
 
+| Error Code | SQLSTATE | Error                   | Description                    |
+| ---------- | -------- | ----------------------- | ------------------------------ |
+| 1218       | 08S01    | ER\_CONNECT\_TO\_MASTER | Error connecting to master: %s |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

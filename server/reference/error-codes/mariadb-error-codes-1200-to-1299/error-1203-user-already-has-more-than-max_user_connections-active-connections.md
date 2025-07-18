@@ -1,2 +1,15 @@
 # Error 1203: User already has more than 'max\_user\_connections' active connections
 
+| Error Code | SQLSTATE | Error                            | Description                                                               |
+| ---------- | -------- | -------------------------------- | ------------------------------------------------------------------------- |
+| 1203       | 42000    | ER\_TOO\_MANY\_USER\_CONNECTIONS | User %s already has more than 'max\_user\_connections' active connections |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1260: Row was cut by GROUP\_CONCAT()
 
+| Error Code | SQLSTATE | Error                         | Description                       |
+| ---------- | -------- | ----------------------------- | --------------------------------- |
+| 1260       | HY000    | ER\_CUT\_VALUE\_GROUP\_CONCAT | Row %u was cut by GROUP\_CONCAT() |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

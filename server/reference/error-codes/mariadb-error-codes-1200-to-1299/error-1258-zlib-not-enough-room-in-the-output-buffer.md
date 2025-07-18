@@ -1,2 +1,15 @@
 # Error 1258: ZLIB: Not enough room in the output buffer
 
+| Error Code | SQLSTATE | Error                   | Description                                                                                      |
+| ---------- | -------- | ----------------------- | ------------------------------------------------------------------------------------------------ |
+| 1258       | HY000    | ER\_ZLIB\_Z\_BUF\_ERROR | ZLIB: Not enough room in the output buffer (probably, length of uncompressed data was corrupted) |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
