@@ -56,3 +56,6 @@
     * [ssl\_capath](reference/wsrep-variable-details/ssl_capath.md)
     * [ssl\_cert](reference/wsrep-variable-details/ssl_cert.md)
     * [ssl\_key](reference/wsrep-variable-details/ssl_key.md)
+    * [wsrep\_sst\_common](reference/wsrep-variable-details/wsrep_sst_common.md)
+    * [wsrep\_sst\_mariabackup](reference/wsrep-variable-details/wsrep_sst_mariabackup.md)
+    * [Page 1](reference/wsrep-variable-details/page-1.md)
