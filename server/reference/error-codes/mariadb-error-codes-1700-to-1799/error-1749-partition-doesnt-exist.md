@@ -1,2 +1,15 @@
 # Error 1749: partition doesn't exist
 
+| Error Code | SQLSTATE | Error                           | Description                  |
+| ---------- | -------- | ------------------------------- | ---------------------------- |
+| 1749       | HY000    | ER\_NO\_SUCH\_PARTITION\_UNUSED | partition '%s' doesn't exist |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

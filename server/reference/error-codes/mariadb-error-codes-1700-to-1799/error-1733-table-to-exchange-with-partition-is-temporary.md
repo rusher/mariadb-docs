@@ -1,2 +1,15 @@
 # Error 1733: Table to exchange with partition is temporary
 
+| Error Code | SQLSTATE | Error                                | Description                                         |
+| ---------- | -------- | ------------------------------------ | --------------------------------------------------- |
+| 1733       | HY000    | ER\_PARTITION\_EXCHANGE\_TEMP\_TABLE | Table to exchange with partition is temporary: '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
