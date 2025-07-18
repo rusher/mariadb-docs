@@ -24,7 +24,7 @@ It contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.slow_log\G
 ...
 *************************** 2. row ***************************

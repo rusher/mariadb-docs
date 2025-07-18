@@ -21,7 +21,7 @@ It contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.innodb_index_stats\G
 *************************** 1. row ***************************
    database_name: mysql

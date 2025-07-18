@@ -15,7 +15,7 @@ The `mysql.help_category` table contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM help_category;
 +------------------+-----------------------------------------------+--------------------+-----+
 | help_category_id | name                                          | parent_category_id | url |

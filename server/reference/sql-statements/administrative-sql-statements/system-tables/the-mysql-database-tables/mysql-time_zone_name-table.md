@@ -15,7 +15,7 @@ The `mysql.time_zone_name` table contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.time_zone_name;
 +--------------------+--------------+
 | Name               | Time_zone_id |

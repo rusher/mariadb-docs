@@ -24,7 +24,7 @@ The `mysql.servers` table contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.servers\G
 *************************** 1. row ***************************
 Server_name: s

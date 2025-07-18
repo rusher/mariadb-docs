@@ -29,7 +29,7 @@ The `mysql.plugin` table contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.plugin;
 +---------------------------+------------------------+
 | name                      | dl                     |

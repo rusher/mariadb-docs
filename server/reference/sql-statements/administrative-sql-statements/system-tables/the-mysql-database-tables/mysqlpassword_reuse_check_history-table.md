@@ -1,8 +1,12 @@
 # mysql.password\_reuse\_check\_history Table
 
+{% hint style="info" %}
+This table is available from MariaDB 10.7.
+{% endhint %}
+
 **MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
-The mysql.password\_reuse\_check\_history Table is installed as part of the [password\_reuse\_check plugin](../../../../plugins/password-validation-plugins/password-reuse-check-plugin.md), available from [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
+The mysql.password\_reuse\_check\_history Table is installed as part of the [password\_reuse\_check plugin](../../../../plugins/password-validation-plugins/password-reuse-check-plugin.md).
 
 The `mysql.password_reuse_check_history` table stores old passwords, so that when a user sets a new password, it can be checked for purposes of preventing password reuse.
 

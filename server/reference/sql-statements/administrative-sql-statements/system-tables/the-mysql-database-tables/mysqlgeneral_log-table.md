@@ -15,7 +15,7 @@ It contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.general_log\G
 *************************** 1. row ***************************
   event_time: 2014-11-11 08:40:04.117177

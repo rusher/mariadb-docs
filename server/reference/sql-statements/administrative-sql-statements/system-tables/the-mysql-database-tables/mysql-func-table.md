@@ -15,7 +15,7 @@ The `mysql.func` table contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.func;
 +------------------------------+-----+--------------+-----------+
 | name                         | ret | dl           | type      |

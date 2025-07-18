@@ -75,13 +75,13 @@ A specific authentication plugin can be used for an account by providing the `ID
 
 For example, the following statement would create an account that authenticates with the [PAM authentication plugin](../../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
 
-```
+```sql
 CREATE USER foo2@test IDENTIFIED VIA pam;
 ```
 
 If the specific authentication plugin uses the `authentication_string` column, then this value for the account can be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](../../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service) that would go into the `authentication_string` column for the account:
 
-```
+```sql
 CREATE USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 ```
 

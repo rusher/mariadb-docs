@@ -1,8 +1,8 @@
 # mysql.global\_priv Table
 
-The `mysql.global_priv` table contains information about users that have permission to access the MariaDB server, and their global privileges. It was introduced in [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes) to replace the [mysql.user](mysql-user-table.md) table in earlier versions.
+The `mysql.global_priv` table contains information about users that have permission to access the MariaDB server, and their global privileges.
 
-Note that the MariaDB privileges occur at many levels. A user may not be granted `create` privilege at the user level, but may still have `create` permission on certain tables or databases, for example. See [privileges](../../../account-management-sql-statements/grant.md) for a more complete view of the MariaDB privilege system.
+Note that the MariaDB privileges occur at many levels. A user may not be granted `CREATE` privilege at the user level, but may still have `CREATE` permission on certain tables or databases, for example. See [privileges](../../../account-management-sql-statements/grant.md) for a more complete view of the MariaDB privilege system.
 
 The `mysql.global_priv` table contains the following fields:
 
@@ -16,8 +16,8 @@ From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-s
 
 ## Examples
 
-```
-select * from mysql.global_priv;
+```sql
+SELECT * FROM mysql.global_priv;
 +-----------+-------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | Host      | User        | Priv                                                                                                                                  |
 +-----------+-------------+---------------------------------------------------------------------------------------------------------------------------------------+
@@ -34,7 +34,7 @@ select * from mysql.global_priv;
 
 Readable format:
 
-```
+```sql
 SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv)) FROM mysql.global_priv;
 
 +--------------------------------------------------------------------------------------+
@@ -55,7 +55,7 @@ SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv)) FROM mysql.global_pr
 
 A particular user:
 
-```
+```sql
 SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv)) FROM mysql.global_priv 
   WHERE user='marijn';
 +--------------------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv)) FROM mysql.global_pr
 
 From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes):
 
-```
+```sql
 GRANT FILE ON *.* TO user1@localhost;
 SELECT Host, User, JSON_DETAILED(Priv) FROM mysql.global_priv WHERE user='user1'\G
 

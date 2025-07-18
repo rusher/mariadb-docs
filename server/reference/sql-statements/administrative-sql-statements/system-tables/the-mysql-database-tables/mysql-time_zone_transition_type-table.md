@@ -18,7 +18,7 @@ The `mysql.time_zone_transition_type` table contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.time_zone_transition_type;
 +--------------+--------------------+--------+--------+--------------+
 | Time_zone_id | Transition_type_id | Offset | Is_DST | Abbreviation |

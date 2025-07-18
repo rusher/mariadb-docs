@@ -13,7 +13,7 @@ The `mysql.time_zone` table contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM mysql.time_zone;
 +--------------+------------------+
 | Time_zone_id | Use_leap_seconds |

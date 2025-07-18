@@ -17,7 +17,7 @@ The `mysql.help_topic` table contains the following fields:
 
 ## Example
 
-```
+```sql
 SELECT * FROM help_topic\G;
 ...
 *************************** 704. row ***************************
