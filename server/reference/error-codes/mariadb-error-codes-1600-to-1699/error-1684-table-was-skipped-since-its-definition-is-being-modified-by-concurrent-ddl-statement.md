@@ -1,2 +1,15 @@
 # Error 1684: Table was skipped since its definition is being modified by concurrent DDL statement
 
+| Error Code | SQLSTATE | Error                          | Description                                                                                    |
+| ---------- | -------- | ------------------------------ | ---------------------------------------------------------------------------------------------- |
+| 1684       | HY000    | ER\_WARN\_I\_S\_SKIPPED\_TABLE | Table '%s'.'%s' was skipped since its definition is being modified by concurrent DDL statement |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

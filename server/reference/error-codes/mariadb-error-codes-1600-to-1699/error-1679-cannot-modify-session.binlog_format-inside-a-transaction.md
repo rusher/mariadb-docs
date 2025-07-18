@@ -1,2 +1,15 @@
 # Error 1679: Cannot modify @@session.binlog\_format inside a transaction
 
+| Error Code | SQLSTATE | Error                                                      | Description                                                 |
+| ---------- | -------- | ---------------------------------------------------------- | ----------------------------------------------------------- |
+| 1679       | HY000    | ER\_INSIDE\_TRANSACTION \_PREVENTS\_SWITCH\_BINLOG\_FORMAT | Cannot modify @@session.binlog\_format inside a transaction |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

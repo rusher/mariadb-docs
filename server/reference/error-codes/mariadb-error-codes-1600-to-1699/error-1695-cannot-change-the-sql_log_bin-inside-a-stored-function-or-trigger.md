@@ -1,2 +1,15 @@
 # Error 1695: Cannot change the sql\_log\_bin inside a stored function or trigger
 
+| Error Code | SQLSTATE | Error                                                  | Description                                                         |
+| ---------- | -------- | ------------------------------------------------------ | ------------------------------------------------------------------- |
+| 1695       | HY000    | ER\_STORED\_FUNCTION\_ PREVENTS\_SWITCH\_SQL\_LOG\_BIN | Cannot change the sql\_log\_bin inside a stored function or trigger |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

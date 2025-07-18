@@ -1,2 +1,15 @@
 # Error 1646: SIGNAL/RESIGNAL can only use a CONDITION defined with SQLSTATE
 
+| Error Code | SQLSTATE | Error                            | Description                                                    |
+| ---------- | -------- | -------------------------------- | -------------------------------------------------------------- |
+| 1646       | HY000    | ER\_SIGNAL\_BAD\_CONDITION\_TYPE | SIGNAL/RESIGNAL can only use a CONDITION defined with SQLSTATE |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1691: A variable of a non-integer based type in LIMIT clause
 
+| Error Code | SQLSTATE | Error                             | Description                                            |
+| ---------- | -------- | --------------------------------- | ------------------------------------------------------ |
+| 1691       | HY000    | ER\_WRONG\_SPVAR\_TYPE\_IN\_LIMIT | A variable of a non-integer based type in LIMIT clause |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

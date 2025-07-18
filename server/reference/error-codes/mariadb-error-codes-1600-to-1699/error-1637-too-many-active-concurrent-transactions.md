@@ -1,2 +1,15 @@
 # Error 1637: Too many active concurrent transactions
 
+| Error Code | SQLSTATE | Error                           | Description                             |
+| ---------- | -------- | ------------------------------- | --------------------------------------- |
+| 1637       | HY000    | ER\_TOO\_MANY\_CONCURRENT\_TRXS | Too many active concurrent transactions |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

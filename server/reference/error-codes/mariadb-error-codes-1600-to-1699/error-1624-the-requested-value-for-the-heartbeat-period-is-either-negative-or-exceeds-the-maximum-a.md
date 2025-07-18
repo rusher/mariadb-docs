@@ -1,2 +1,15 @@
 # Error 1624: The requested value for the heartbeat period is either negative or exceeds the maximum a
 
+| Error Code | SQLSTATE | Error                                       | Description                                                                                                  |
+| ---------- | -------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 1624       | HY000    | ER\_SLAVE\_HEARTBEAT\_VALUE\_OUT\_OF\_RANGE | The requested value for the heartbeat period is either negative or exceeds the maximum allowed (%s seconds). |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

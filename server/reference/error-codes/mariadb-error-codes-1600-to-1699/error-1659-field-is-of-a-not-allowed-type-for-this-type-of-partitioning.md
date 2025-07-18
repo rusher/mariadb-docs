@@ -1,2 +1,15 @@
 # Error 1659: Field is of a not allowed type for this type of partitioning
 
+| Error Code | SQLSTATE | Error                                               | Description                                                       |
+| ---------- | -------- | --------------------------------------------------- | ----------------------------------------------------------------- |
+| 1659       | HY000    | ER\_FIELD\_TYPE\_NOT\_ALLOWED\_AS\_PARTITION\_FIELD | Field '%s' is of a not allowed type for this type of partitioning |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

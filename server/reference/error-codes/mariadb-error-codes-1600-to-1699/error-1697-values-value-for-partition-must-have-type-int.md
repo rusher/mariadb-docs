@@ -1,2 +1,15 @@
 # Error 1697: VALUES value for partition must have type INT
 
+| Error Code | SQLSTATE | Error                                 | Description                                        |
+| ---------- | -------- | ------------------------------------- | -------------------------------------------------- |
+| 1697       | HY000    | ER\_VALUES\_IS\_NOT\_INT\_TYPE\_ERROR | VALUES value for partition '%s' must have type INT |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
