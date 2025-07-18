@@ -192,6 +192,7 @@ Using an expression that exceeds 255 characters in length is supported in expres
 Using constant expressions is supported in expressions for generated columns. For example:
 
 ```sql
+CREATE TABLE t1 (a int as (1));
 ```
 
 ### Making Stored Values Consistent
