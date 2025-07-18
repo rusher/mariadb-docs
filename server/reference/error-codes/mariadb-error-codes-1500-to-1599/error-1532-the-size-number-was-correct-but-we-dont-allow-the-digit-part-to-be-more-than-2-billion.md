@@ -1,2 +1,15 @@
 # Error 1532: The size number was correct but we don't allow the digit part to be more than 2 billion
 
+| Error Code | SQLSTATE | Error                     | Description                                                                             |
+| ---------- | -------- | ------------------------- | --------------------------------------------------------------------------------------- |
+| 1532       | HY000    | ER\_SIZE\_OVERFLOW\_ERROR | The size number was correct but we don't allow the digit part to be more than 2 billion |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

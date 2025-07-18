@@ -1,2 +1,15 @@
 # Error 1513: Trying to Add partition(s) with wrong number of subpartitions
 
+| Error Code | SQLSTATE | Error                              | Description                                                   |
+| ---------- | -------- | ---------------------------------- | ------------------------------------------------------------- |
+| 1513       | HY000    | ER\_ADD\_PARTITION\_SUBPART\_ERROR | Trying to Add partition(s) with wrong number of subpartitions |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1569: ALTER TABLE causes auto\_increment resequencing, resulting in duplicate entry for key
 
+| Error Code | SQLSTATE | Error                               | Description                                                                                     |
+| ---------- | -------- | ----------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 1569       | HY000    | ER\_DUP\_ENTRY\_AUTOINCREMENT\_CASE | ALTER TABLE causes auto\_increment resequencing, resulting in duplicate entry '%s' for key '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

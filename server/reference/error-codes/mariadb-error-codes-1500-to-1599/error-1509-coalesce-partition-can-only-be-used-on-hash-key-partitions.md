@@ -1,2 +1,15 @@
 # Error 1509: COALESCE PARTITION can only be used on HASH/KEY partitions
 
+| Error Code | SQLSTATE | Error                                   | Description                                                |
+| ---------- | -------- | --------------------------------------- | ---------------------------------------------------------- |
+| 1509       | HY000    | ER\_COALESCE\_ONLY\_ON\_HASH\_PARTITION | COALESCE PARTITION can only be used on HASH/KEY partitions |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

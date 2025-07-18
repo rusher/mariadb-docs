@@ -1,2 +1,15 @@
 # Error 1588: Event execution time is in the past and ON COMPLETION NOT PRESERVE is set
 
+| Error Code | SQLSTATE | Error                                    | Description                                                                                                                  |
+| ---------- | -------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 1588       | HY000    | ER\_EVENT\_CANNOT\_CREATE\_IN\_THE\_PAST | Event execution time is in the past and ON COMPLETION NOT PRESERVE is set. The event was dropped immediately after creation. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

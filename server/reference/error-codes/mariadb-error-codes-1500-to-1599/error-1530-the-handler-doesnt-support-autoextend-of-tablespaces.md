@@ -1,2 +1,15 @@
 # Error 1530: The handler doesn't support autoextend of tablespaces
 
+| Error Code | SQLSTATE | Error                               | Description                                           |
+| ---------- | -------- | ----------------------------------- | ----------------------------------------------------- |
+| 1530       | HY000    | ER\_TABLESPACE\_AUTO\_EXTEND\_ERROR | The handler doesn't support autoextend of tablespaces |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1503: must include all columns in the table's partitioning function
 
+| Error Code | SQLSTATE | Error                                      | Description                                                        |
+| ---------- | -------- | ------------------------------------------ | ------------------------------------------------------------------ |
+| 1503       | HY000    | ER\_UNIQUE\_KEY\_NEED\_ALL\_FIELDS\_IN\_PF | A %s must include all columns in the table's partitioning function |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

@@ -1,2 +1,15 @@
 # Error 1547: Column count is wrong. Expected found. The table is probably corrupted
 
+| Error Code | SQLSTATE | Error                                    | Description                                                                               |
+| ---------- | -------- | ---------------------------------------- | ----------------------------------------------------------------------------------------- |
+| 1547       | HY000    | ER\_COL\_COUNT\_DOESNT\_MATCH\_CORRUPTED | Column count of mysql.%s is wrong. Expected %d, found %d. The table is probably corrupted |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}

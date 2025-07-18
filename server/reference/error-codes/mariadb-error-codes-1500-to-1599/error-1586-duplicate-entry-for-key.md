@@ -1,2 +1,15 @@
 # Error 1586: Duplicate entry for key
 
+| Error Code | SQLSTATE | Error                           | Description                       |
+| ---------- | -------- | ------------------------------- | --------------------------------- |
+| 1586       | 23000    | ER\_DUP\_ENTRY\_WITH\_KEY\_NAME | Duplicate entry '%s' for key '%s' |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
