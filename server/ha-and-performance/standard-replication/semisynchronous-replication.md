@@ -212,7 +212,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 
 #### `rpl_semi_sync_master_wait_no_slave`
 
-* Description: If set to `ON`, the default, the replica count (recorded by [Rpl\_semi\_sync\_master\_clients](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_clients)) may drop to zero, and the primary will still wait for the timeout period. If set to `OFF`, the primary will revert to asynchronous replication as soon as the replica count drops to zero.
+* Description: If all replicas have disconnected from the primary (i.e. [Rpl\_semi\_sync\_master\_clients](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_clients) is 0), this variable controls whether or not the primary will still suspend the next transaction's (and any others that commit within [Rpl\_semi\_sync\_master\_timeout](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_timeout) duration) commit phase to wait for a replica to (re-)connect and send an ACK. If set to `ON`, the default, the replica count may drop to zero, and the primary will still wait for the timeout period for the next transaction, and any more that commit after this transaction within the semi-sync timeout duration. If no ACK is received in this time, the primary will revert to asynchronous replication. If set to `OFF`, the primary will revert to asynchronous replication as soon as the replica count drops to zero.
 * Commandline: `--rpl-semi-sync-master-wait-no-slave[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
