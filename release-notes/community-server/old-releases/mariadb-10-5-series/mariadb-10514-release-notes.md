@@ -2,11 +2,11 @@
 
 {% include "../../../.gitbook/includes/latest-10-5.md" %}
 
-<a href="https://downloads.mariadb.org/mariadb/10.5.14/" class="button primary">Download</a> <a href="mariadb-10514-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-10514-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
+&#x20;<a href="mariadb-10514-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-10514-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
 
 **Release date:** 9 Feb 2022
 
-This release is no longer available for download after a problem was noticed when manually running mariadb-upgrade. See [MDEV-27789](https://jira.mariadb.org/browse/MDEV-27789) for more details.**Please use a later release.**
+This release is no longer available for download after a problem was noticed when manually running mariadb-upgrade. See [MDEV-27789](https://jira.mariadb.org/browse/MDEV-27789) for more details. **Please use a later release.**
 
 [MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB. It is an evolution\
 of [MariaDB 10.4](../release-notes-mariadb-10-4-series/what-is-mariadb-104.md) with several entirely new features not found anywhere else\
