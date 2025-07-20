@@ -3,10 +3,10 @@
 ## Current Release Model (from [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
 
 * [MariaDB Community Server releases](../) happen four times a year.
-* There is a new innovation release with new features every time. It is an RC release.
-* Additionally, all maintained release series get a new patch version maintenance release, a release that was RC last time, becomes GA.
+* There is a new innovation release with new features every time. It is a Release Candidate (RC) release.
+* Additionally, all maintained release series get a new patch version maintenance release, a release that was RC last time, becomes Generally Available (GA).
 * There are no patch version releases of an innovation release after GA (except for emergency releases), instead users are supposed to upgrade to the next minor innovation release. In other words, innovation releases are rolling releases, one upgrades 11.3.2→11.4.2→11.5.2→11.6.2→11.7.2
-* Approximately every fourth innovation release is a long-term support (LTS) release, maintained for five years after its first GA release.
+* Approximately every fourth innovation release is a long-term support (LTS) release, [maintained for three years](maintenance-policy.md) after the GA release, with additional Enterprise and Extended support available.
 * Between two innovation releases there is a preview, it is feature-complete, but has alpha maturity, its purpose is to showcase new upcoming features. Every feature that will be in a release must have been in a preview at some point
 * The opposite is not true, the feature from a preview will not necessarily be in the upcoming RC innovation release — this depends on whether the feature itself can be considered RC. If it isn't stable enough, it'll stay on internal testing and bug fixing until it is ready.
 
