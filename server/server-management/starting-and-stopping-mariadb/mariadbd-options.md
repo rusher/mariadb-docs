@@ -40,31 +40,31 @@ Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community
 
 #### `--defaults-extra-file`
 
-* Commandline: `--defaults-extra-file=name`
+* Command line: `--defaults-extra-file=name`
 * Description: Read this extra option file after all other option files are read.
   * See [Configuring MariaDB with Option Files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 #### `--defaults-file`
 
-* Commandline: `--defaults-file=name`
+* Command line: `--defaults-file=name`
 * Description: Only read options from the given option file.
   * See [Configuring MariaDB with Option Files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 #### `--defaults-group-suffix`
 
-* Commandline: `--defaults-group-suffix=name`
+* Command line: `--defaults-group-suffix=name`
 * Description: In addition to the default option groups, also read option groups with the given suffix.
   * See [Configuring MariaDB with Option Files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 #### `--no-defaults`
 
-* Commandline: `--no-defaults`
+* Command line: `--no-defaults`
 * Description: Don't read options from any option file.
   * See [Configuring MariaDB with Option Files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 #### `--print-defaults`
 
-* Commandline: `--print-defaults`
+* Command line: `--print-defaults`
 * Description: Read options from option files, print all option values, and then exit the program.
   * See [Configuring MariaDB with Option Files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
@@ -107,12 +107,12 @@ Options that are also system variables are listed after:
 
 #### `--character-set-client-handshake`
 
-* Commandline: `--character-set-client-handshake`
+* Command line: `--character-set-client-handshake`
 * Description: Don't ignore client side character set value sent during handshake. `--skip-character-set-client-handshake` will ignore the client value and use the default server value.
 
 #### `--default-character-set`
 
-* Commandline: `--default-character-set=name`
+* Command line: `--default-character-set=name`
 * Description: Still available as an option for setting the default character set for clients and their connections, it was deprecated and removed in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) as a server option. Use [character-set-server](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server) instead.
 
 #### `--language`
@@ -189,12 +189,12 @@ The following options are related to [replication](../../server-usage/storage-en
 
 #### `--abort-slave-event-count`
 
-* Commandline: `--abort-slave-event-count=#`
+* Command line: `--abort-slave-event-count=#`
 * Description: Option used by mysql-test for debugging and testing of replication.
 
 #### `--binlog-do-db`
 
-* Commandline: `--binlog-do-db=name`
+* Command line: `--binlog-do-db=name`
 * Description: This option allows you to configure a [replication master](../../ha-and-performance/standard-replication/replication-overview.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_do_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
@@ -203,7 +203,7 @@ The following options are related to [replication](../../server-usage/storage-en
 
 #### `--binlog-ignore-db`
 
-* Commandline: `--binlog-ignore-db=name`
+* Command line: `--binlog-ignore-db=name`
 * Description: This option allows you to configure a [replication master](../../ha-and-performance/standard-replication/replication-overview.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
@@ -212,60 +212,60 @@ The following options are related to [replication](../../server-usage/storage-en
 
 #### `--binlog-row-event-max-size`
 
-* Commandline: `--binlog-row-event-max-size=#`
+* Command line: `--binlog-row-event-max-size=#`
 * Description: The maximum size of a row-based [binary log](../server-monitoring-logs/binary-log/) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_event_max_size) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
 * Default value `8192`
 
 #### `--disconnect-slave-event-count`
 
-* Commandline: `--disconnect-slave-event-count=#`
+* Command line: `--disconnect-slave-event-count=#`
 * Description: Option used by mysql-test for debugging and testing of replication.
 
 #### `--flashback`
 
-* Commandline: `--flashback`
+* Command line: `--flashback`
 * Description: Setup the server to use flashback. This enables the [binary log](../server-monitoring-logs/binary-log/) and sets `binlog_format=ROW`.
 
 #### `--init-rpl-role`
 
-* Commandline: `--init-rpl-role=name`
+* Command line: `--init-rpl-role=name`
 * Description: Set the replication role. From [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-19-release-notes), [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-3-release-notes) and [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes), changes the condition for [semi-sync recovery](../../ha-and-performance/standard-replication/semisynchronous-replication.md) to truncate the [binlog](../server-monitoring-logs/binary-log/) to instead use this option, when set to SLAVE. This allows for both [rpl\_semi\_sync\_master\_enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) and [rpl\_semi\_sync\_slave\_enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled) to be set for a primary that is restarted, and no transactions will be lost, so long as `--init-rpl-role` is not set to SLAVE. In earlier versions, for servers configured with both [rpl\_semi\_sync\_master\_enabled=1](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) and [rpl\_semi\_sync\_slave\_enabled=1](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled), if a primary is just re-started (i.e. retaining its role as primary), it can truncate its binlog to drop transactions which its replica(s) have already received and executed. If this happens, when the replica reconnects, its [gtid\_slave\_pos](../../ha-and-performance/standard-replication/gtid.md) can be ahead of the recovered primary’s [gtid\_binlog\_pos](../../ha-and-performance/standard-replication/gtid.md), resulting in an error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](mariadbd-options.md#-init-rpl-role).
 * Valid values: Empty, `MASTER` or `SLAVE`
 
 #### `--log-basename`
 
-* Commandline: `--log-basename=name`
+* Command line: `--log-basename=name`
 * Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../server-monitoring-logs/binary-log/), [relay log](../server-monitoring-logs/binary-log/relay-log.md), [general query log](../server-monitoring-logs/general-query-log.md), [slow query log](../server-monitoring-logs/slow-query-log/) and [error log](../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log\_slow\_query\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow\_query\_log\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `--log-basename` in the config files. Later settings override earlier settings, so `log-basename` will override any earlier log file name settings.
 
 #### `--log-bin-trust-routine-creators`
 
-* Commandline: `--log-bin-trust-routine-creators`
+* Command line: `--log-bin-trust-routine-creators`
 * Description: Deprecated, use [log-bin-trust-function-creators](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md).
 
 #### `--master-host`
 
-* Commandline: `--master-host=name`
+* Command line: `--master-host=name`
 * Description: Primary hostname or IP address for replication. If not set, the replica thread will not be started. Note that the setting of master-host will be ignored if there exists a valid master.info file.
 
 #### `--master-info-file`
 
-* Commandline: `--master-info-file=name`
+* Command line: `--master-info-file=name`
 * Description: Name and location of the file on the replica where the `MASTER_LOG_FILE` and `MASTER_LOG_POS` options (i.e. the [binary log](../server-monitoring-logs/binary-log/) position on the primary) and most other [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written. The [replica's I/O thread](../../ha-and-performance/standard-replication/replication-threads.md#replica-io-thread) keeps this [binary log](../server-monitoring-logs/binary-log/) position updated as it downloads events.
   * See [CHANGE MASTER TO: Option Persistence](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
 
 #### `--master-password`
 
-* Commandline: `--master-password=name`
+* Command line: `--master-password=name`
 * Description: The password the replica thread will authenticate with when connecting to the primary. If not set, an empty password is assumed. The value in master.info will take precedence if it can be read.
 
 #### `--master-port`
 
-* Commandline: `--master-port=#`
+* Command line: `--master-port=#`
 * Description: The port the master is listening on. If not set, the compiled setting of MYSQL\_PORT is assumed. If you have not tinkered with configure options, this should be 3306. The value in master.info will take precedence if it can be read.
 
 #### `--master-retry-count`
 
-* Commandline: `--master-retry-count=#`
+* Command line: `--master-retry-count=#`
 * Description: Number of times a replica will attempt to connect to a primary before giving up. The retry interval is determined by the MASTER\_CONNECT\_RETRY option for the CHANGE MASTER statement. A value of 0 means the replica will not stop attempting to reconnect. Reconnects are triggered when a replica has timed out. See [slave\_net\_timeout](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md).
 * Default Value: `86400` through 10.5, `100000` as of 10.6
 * Range - 32 bit: `0 to 4294967295`
@@ -273,57 +273,57 @@ The following options are related to [replication](../../server-usage/storage-en
 
 #### `--master-ssl`
 
-* Commandline: `--master-ssl`
+* Command line: `--master-ssl`
 * Description: Enable the replica to [connect to the master using TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md).
 
 #### `--master-ssl-ca`
 
-* Commandline: `--master-ssl-ca[=name]`
+* Command line: `--master-ssl-ca[=name]`
 * Description: Master TLS CA file. Only applies if you have enabled [master-ssl](mariadbd-options.md#-master-ssl).
 
 #### `--master-ssl-capath`
 
-* Commandline: `--master-ssl-capath[=name]`
+* Command line: `--master-ssl-capath[=name]`
 * Description: Master TLS CA path. Only applies if you have enabled [master-ssl](mariadbd-options.md#-master-ssl).
 
 #### `--master-ssl-cert`
 
-* Commandline: `--master-ssl-cert[=name]`
+* Command line: `--master-ssl-cert[=name]`
 * Description: Master TLS certificate file name. Only applies if you have enabled [master-ssl](mariadbd-options.md#-master-ssl).
 
 #### `--master-ssl-cipher`
 
-* Commandline: `--master-ssl-cipher[=name]`
+* Command line: `--master-ssl-cipher[=name]`
 * Description: Master TLS cipher. Only applies if you have enabled [master-ssl](mariadbd-options.md#-master-ssl).
 
 #### `--master-ssl-key`
 
-* Commandline: `--master-ssl-key[=name]`
+* Command line: `--master-ssl-key[=name]`
 * Description: Master TLS keyfile name. Only applies if you have enabled [master-ssl](mariadbd-options.md#-master-ssl).
 
 #### `--master-user`
 
-* Commandline: `--master-user=name`
+* Command line: `--master-user=name`
 * Description: The username the replica thread will use for authentication when connecting to the primary. The user must have FILE privilege. If the primary user is not set, user test is assumed. The value in master.info will take precedence if it can be read.
 
 #### `--max-binlog-dump-events`
 
-* Commandline: `--max-binlog-dump-events=#`
+* Command line: `--max-binlog-dump-events=#`
 * Description: Option used by mysql-test for debugging and testing of replication.
 
 #### `--replicate-same-server-id`
 
-* Commandline: `--replicate-same-server-id`
+* Command line: `--replicate-same-server-id`
 * Description: In replication, if set to 1, do not skip events having our server id. Default value is 0 (to break infinite loops in circular replication). Can't be set to 1 if [log-slave-updates](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) is used.
 
 #### `--sporadic-binlog-dump-fail`
 
-* Commandline: `--sporadic-binlog-dump-fail`
+* Command line: `--sporadic-binlog-dump-fail`
 * Description: Option used by mysql-test for debugging and testing of replication.
 
 #### `--sysdate-is-now`
 
-* Commandline: `--sysdate-is-now`
+* Command line: `--sysdate-is-now`
 * Description: Non-default option to alias [SYSDATE()](../../reference/sql-functions/date-time-functions/sysdate.md) to [NOW()](../../reference/sql-functions/date-time-functions/now.md) to make it safe for [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
 
 ### Replication and Binary Logging Options and System Variables
@@ -426,13 +426,13 @@ Options that are also system variables are listed after:
 
 #### `--record-buffer`
 
-* Commandline: `--record-buffer=#`
+* Command line: `--record-buffer=#`
 * Description: Old alias for [read\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_buffer_size).
 * Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `--table-cache`
 
-* Commandline: `--table-open-cache=#`
+* Command line: `--table-open-cache=#`
 * Description: Removed; use [--table-open-cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache) instead.
 * Removed: [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes)
 
@@ -480,13 +480,13 @@ Options that are also system variables are listed after:
 
 #### `--skip-bdb`
 
-* Commandline: `----skip-bdb`
+* Command line: `----skip-bdb`
 * Description: Deprecated option; Exists only for compatibility with very old my.cnf files.
 * Removed: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)
 
 #### `--external-locking`
 
-* Commandline: `--external-locking`
+* Command line: `--external-locking`
 * Description: Use system (external) locking (disabled by default). With this option enabled you can run [myisamchk](../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) to test (not repair) tables while the server is running. Disable with [--skip-external-locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking). From [MariaDB 10.2.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10240-release-notes), [MariaDB 10.3.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10331-release-notes), [MariaDB 10.4.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10421-release-notes), [MariaDB 10.5.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-10512-release-notes), [MariaDB 10.6.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1064-release-notes) and all later version, this effects InnoDB and can be used to prevent multiple instances running on the same data.
 
 ### MyISAM Storage Engine Options
@@ -495,7 +495,7 @@ The options related to the [MyISAM](../../server-usage/storage-engines/myisam-st
 
 #### `--log-isam`
 
-* Commandline: `--log-isam[=file_name]`
+* Command line: `--log-isam[=file_name]`
 * Description: Enable the [MyISAM log](../server-monitoring-logs/myisam-log.md), which logs all MyISAM changes to file. If no filename is provided, the default, myisam.log is used.
 
 #### MyISAM Storage Engine Options and System Variables
@@ -529,101 +529,101 @@ The options related to the [InnoDB](../../server-usage/storage-engines/innodb/in
 
 #### `--innodb`
 
-* Commandline: `--innodb=value`, `--skip-innodb`
+* Command line: `--innodb=value`, `--skip-innodb`
 * Description: This variable controls whether or not to load the InnoDB storage engine. Possible values are `ON`, `OFF`, `FORCE` or `FORCE_PLUS_PERMANENT` (from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)). If set to `OFF` (the same as --skip-innodb), since InnoDB is the default storage engine, the server will not start unless another storage engine has been chosen with [--default-storage-engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine). `FORCE` means that the storage engine must be successfully loaded, or else the server won't start. `FORCE_PLUS_PERMANENT` enables the plugin, but if plugin cannot initialize, the server will not start. In addition, the plugin cannot be uninstalled while the server is running.
 
 #### `--innodb-cmp`
 
-* Commandline: `--innodb-cmp`
+* Command line: `--innodb-cmp`
 * Description:
 * Default: `ON`
 
 #### `--innodb-cmp-reset`
 
-* Commandline: `--innodb-cmp-reset`
+* Command line: `--innodb-cmp-reset`
 * Description:
 * Default: `ON`
 
 #### `--innodb-cmpmem`
 
-* Commandline: `--innodb-cmpmem`
+* Command line: `--innodb-cmpmem`
 * Description:
 * Default: `ON`
 
 #### `--innodb-cmpmem-reset`
 
-* Commandline: `--innodb-cmpmem-reset`
+* Command line: `--innodb-cmpmem-reset`
 * Description:
 * Default: `ON`
 
 #### `--innodb-file-io-threads`
 
-* Commandline: `--innodb-file-io-threads`
+* Command line: `--innodb-file-io-threads`
 * Description:
 * Default: `4`
 * Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 #### `--innodb-index-stats`
 
-* Commandline: `--innodb-index-stats`
+* Command line: `--innodb-index-stats`
 * Description:
 * Default: `ON`
 * Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 #### `--innodb-lock-waits`
 
-* Commandline: `--innodb-lock-waits`
+* Command line: `--innodb-lock-waits`
 * Description:
 * Default: `ON`
 
 #### `--innodb-locks`
 
-* Commandline: `--innodb-locks`
+* Command line: `--innodb-locks`
 * Description:
 * Default: `ON`
 
 #### `--innodb-rseg`
 
-* Commandline: `--innodb-rseg`
+* Command line: `--innodb-rseg`
 * Description:
 * Default: `ON`
 * Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 #### `--innodb-status-file`
 
-* Commandline: `--innodb-status-file`
+* Command line: `--innodb-status-file`
 * Description:
 * Default: `FALSE`
 
 #### `--innodb-sys-indexes`
 
-* Commandline: `--innodb-sys-indexes`
+* Command line: `--innodb-sys-indexes`
 * Description:
 * Default: `ON`
 
 #### `--innodb-sys-stats`
 
-* Commandline: `--innodb-sys-stats`
+* Command line: `--innodb-sys-stats`
 * Description:
 * Default: `ON`
 * Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 #### `--innodb-sys-tables`
 
-* Commandline: `--innodb-sys-tables`
+* Command line: `--innodb-sys-tables`
 * Description:
 * Default: `ON`
 
 #### `--innodb-table-stats`
 
-* Commandline: `--innodb-table-stats`
+* Command line: `--innodb-table-stats`
 * Description:
 * Default: `ON`
 * Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 #### `--innodb-trx`
 
-* Commandline: `--innodb-trx`
+* Command line: `--innodb-trx`
 * Description:
 * Default: `ON`
 
@@ -968,73 +968,73 @@ The options related to the [Performance Schema](../../reference/system-tables/pe
 
 #### `--performance-schema-consumer-events-stages-current`
 
-* Commandline: `--performance-schema-consumer-events-stages-current`
+* Command line: `--performance-schema-consumer-events-stages-current`
 * Description: Enable the [events-stages-current](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-stages-history`
 
-* Commandline: `--performance-schema-consumer-events-stages-history`
+* Command line: `--performance-schema-consumer-events-stages-history`
 * Description: Enable the [events-stages-history](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-stages-history-long`
 
-* Commandline: `--performance-schema-consumer-events-stages-history-long`
+* Command line: `--performance-schema-consumer-events-stages-history-long`
 * Description: Enable the [events-stages-history-long](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-statements-current`
 
-* Commandline: `--performance-schema-consumer-events-statements-current`
+* Command line: `--performance-schema-consumer-events-statements-current`
 * Description: Enable the [events-statements-current](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table.md) consumer. Use `--skip-performance-schema-consumer-events-statements-current` to disable.
 * Default: `ON`
 
 #### `--performance-schema-consumer-events-statements-history`
 
-* Commandline: `--performance-schema-consumer-events-statements-history`
+* Command line: `--performance-schema-consumer-events-statements-history`
 * Description: Enable the [events-statements-history](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-statements-history-long`
 
-* Commandline: `--performance-schema-consumer-events-statements-history-long`
+* Command line: `--performance-schema-consumer-events-statements-history-long`
 * Description: Enable the [events-statements-history-long](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-waits-current`
 
-* Commandline: `--performance-schema-consumer-events-waits-current`
+* Command line: `--performance-schema-consumer-events-waits-current`
 * Description: Enable the [events-waits-current](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-waits-history`
 
-* Commandline: `--performance-schema-consumer-events-waits-history`
+* Command line: `--performance-schema-consumer-events-waits-history`
 * Description: Enable the [events-waits-history](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-waits-history-long`
 
-* Commandline: `--performance-schema-consumer-events-waits-history-long`
+* Command line: `--performance-schema-consumer-events-waits-history-long`
 * Description: Enable the [events-waits-history-long](../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-global-instrumentation`
 
-* Commandline: `--performance-schema-consumer-global-instrumentation`
+* Command line: `--performance-schema-consumer-global-instrumentation`
 * Description: Enable the global-instrumentation consumer. Use `--skip-performance-schema-consumer-global-instrumentation` to disable.
 * Default: `ON`
 
 #### `--performance-schema-consumer-statements-digest`
 
-* Commandline: `--performance-schema-consumer-statements-digest`
+* Command line: `--performance-schema-consumer-statements-digest`
 * Description: Enable the statements-digest consumer. Use `--skip-performance-schema-consumer-statements-digest` to disable.
 * Default: `ON`
 
 #### `--performance-schema-consumer-thread-instrumentation`
 
-* Commandline: `--performance-schema-consumer-thread-instrumentation`
+* Command line: `--performance-schema-consumer-thread-instrumentation`
 * Description: Enable the statements-thread-instrumentation. Use `--skip-performance-schema-thread-instrumentation` to disable.
 * Default: `ON`
 
@@ -1081,7 +1081,7 @@ The options related to [Galera Cluster](../../architecture/topologies/galera-clu
 
 #### `--wsrep-new-cluster`
 
-* Commandline: `--wsrep-new-cluster`
+* Command line: `--wsrep-new-cluster`
 * Description: Bootstrap a cluster. It works by overriding the current value of wsrep\_cluster\_address. It is recommended not to add this option to the config file as this will trigger bootstrap on every server start.
 
 ### Galera Cluster Options and System Variables
@@ -1193,93 +1193,93 @@ Options that are also system variables are listed after:
 
 #### `--allow-suspicious-udfs`
 
-* Commandline: `--allow-suspicious-udfs`
+* Command line: `--allow-suspicious-udfs`
 * Description: Allows use of [user-defined functions](../../server-usage/user-defined-functions/) consisting of only one symbol `x()` without corresponding `x_init()` or `x_deinit()`. That also means that one can load any function from any library, for example `exit()` from `libc.so`. Not recommended unless you require old UDFs with one symbol that cannot be recompiled. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs) as well.
 
 #### `--bootstrap`
 
-* Commandline: `--bootstrap`
+* Command line: `--bootstrap`
 * Description: Used by mariadb installation scripts, such as [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md) to execute SQL scripts before any privilege or system tables exist. Do no use while an existing MariaDB instance is running.
 
 #### `--chroot`
 
-* Commandline: `--chroot=name`
+* Command line: `--chroot=name`
 * Description: Chroot mariadbd daemon during startup.
 
 #### `--des-key-file`
 
-* Commandline: `--des-key-file=name`
+* Command line: `--des-key-file=name`
 * Description: Load keys for [des\_encrypt()](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md) and des\_encrypt from given file.
 
 #### `--exit-info`
 
-* Commandline: `--exit-info[=#]`
+* Command line: `--exit-info[=#]`
 * Description: Used for debugging. Use at your own risk.
 
 #### `--getopt-prefix-matching`
 
-* Commandline: `--getopt-prefix-matching={0|1}`
+* Command line: `--getopt-prefix-matching={0|1}`
 * Description: Makes it possible to disable historical "unambiguous prefix" matching in the command-line option parsing.
 * Default: TRUE
 * Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 
 #### `--help`
 
-* Commandline: `--help`
+* Command line: `--help`
 * Description: Displays help with many commandline options described, and exits. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), includes deprecation information.
 
 #### `--log-ddl-recovery`
 
-* Commandline: `--log-ddl-recovery=name`
+* Command line: `--log-ddl-recovery=name`
 * Description: Path to file used for recovery of DDL statements after a crash.
 * Default Value: `ddl-recover.log`
 * Introduced: [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)
 
 #### `--log-short-format`
 
-* Commandline: `--log-short-format`
+* Command line: `--log-short-format`
 * Description: Don't log extra information to update and [slow-query](../server-monitoring-logs/slow-query-log/) logs.
 
 #### `--log-slow-file`
 
-* Commandline: `--log-slow-file=name`
+* Command line: `--log-slow-file=name`
 * Description: Log [slow queries](../server-monitoring-logs/slow-query-log/) to given log file. Defaults logging to hostname-slow.log
 
 #### `--log-slow-time`
 
-* Commandline: `--log-slow-time=#`
+* Command line: `--log-slow-time=#`
 * Description: Log all queries that have taken more than [long-query-time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#long_query_time) seconds to execute to the slow query log, if active. The argument will be treated as a decimal value with microsecond precision.
 
 #### `--log-tc`
 
-* Commandline: `--log-tc=name`
+* Command line: `--log-tc=name`
 * Description: Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](../server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the [log\_tc\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size) system variable and the [--tc-heuristic-recover](mariadbd-options.md#-tc-heuristic-recover) option.
 * Default Value: `tc.log`
 
 #### `--master-connect-retry`
 
-* Commandline: `--master-connect-retry=#`
+* Command line: `--master-connect-retry=#`
 * Description: Deprecated in 5.1.17 and removed in 5.5. The number of seconds the replica thread will sleep before retrying to connect to the master, in case the master goes down or the connection is lost.
 
 #### `--memlock`
 
-* Commandline: `--memlock`
+* Command line: `--memlock`
 * Description: Lock mariadbd in memory.
 
 #### `--ndb-use-copying-alter-table`
 
-* Commandline: `--ndb-use-copying-alter-table`
+* Command line: `--ndb-use-copying-alter-table`
 * Description: Force ndbcluster to always copy tables at alter table (should only be used if on-line alter table fails).
 
 #### `--one-thread`
 
-* Commandline: `--one-thread`
+* Command line: `--one-thread`
 * Description: (Deprecated): Only use one thread (for debugging under Linux). Use [thread-handling=no-threads](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) instead.
 * Removed: [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)
 
 #### `--plugin-load`
 
-* Commandline: `--plugin-load=name`
+* Command line: `--plugin-load=name`
 * Description: This option can be used to configure the server to load specific [plugins](../../reference/plugins/). This option uses the following format:
   * Plugins can be specified in the format `name=library`, where `name` is the plugin name and `library` is the plugin library. This format installs a single plugin from the given plugin library.
   * Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
@@ -1289,7 +1289,7 @@ Options that are also system variables are listed after:
 
 #### `--plugin-load-add`
 
-* Commandline: `--plugin-load-add=name`
+* Command line: `--plugin-load-add=name`
 * Description: This option can be used to configure the server to load specific [plugins](../../reference/plugins/). This option uses the following format:
   * Plugins can be specified in the format `name=library`, where `name` is the plugin name and `library` is the plugin library. This format installs a single plugin from the given plugin library.
   * Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
@@ -1299,113 +1299,113 @@ Options that are also system variables are listed after:
 
 #### `--port-open-timeout`
 
-* Commandline: `--port-open-timeout=#`
+* Command line: `--port-open-timeout=#`
 * Description: Maximum time in seconds to wait for the port to become free. (Default: No wait).
 
 #### `--safe-user-create`
 
-* Commandline: `--safe-user-create`
+* Command line: `--safe-user-create`
 * Description: Don't allow new user creation by the user who has no write privileges to the [mysql.user](../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
 
 #### `--safemalloc-mem-limit`
 
-* Commandline: `--safemalloc-mem-limit=#`
+* Command line: `--safemalloc-mem-limit=#`
 * Description: Simulate memory shortage when compiled with the `--with-debug=full` option.
 
 #### `--show-slave-auth-info`
 
-* Commandline: `--show-slave-auth-info`
+* Command line: `--show-slave-auth-info`
 * Description: Show user and password in SHOW SLAVE HOSTS on this primary.
 
 #### `--skip-grant-tables`
 
-* Commandline: `--skip-grant-tables`
+* Command line: `--skip-grant-tables`
 * Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../clients-and-utilities/administrative-tools/mariadb-admin.md), [mariadb-admin reload](../../clients-and-utilities/administrative-tools/mariadb-admin.md) or [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
 
 Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler/) also depends on the grant tables for its functionality, it is automatically disabled when running with `--skip-grant-tables`.
 
 #### `--skip-host-cache`
 
-* Commandline: `--skip-host-cache`
+* Command line: `--skip-host-cache`
 * Description: Don't cache host names.
 
 #### `--skip-partition`
 
-* Commandline: `--skip-partition`, `--disable-partition`
+* Command line: `--skip-partition`, `--disable-partition`
 * Description: Disables user-defined [partitioning](../../server-usage/partitioning-tables/). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](../../reference/sql-statements/administrative-sql-statements/show/show-tables.md) or by viewing the [INFORMATION\_SCHEMA.TABLES table](../../reference/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md). Tables can be dropped with [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
 
 #### `--skip-slave-start`
 
-* Commandline: `--skip-slave-start`
+* Command line: `--skip-slave-start`
 * Description: If set, replica is not autostarted. From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), server will display in the log if this option is set.
 
 #### `--skip-ssl`
 
-* Commandline: `--skip-ssl`
+* Command line: `--skip-ssl`
 * Description: Disable [TLS connections](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md).
 
 #### `--skip-symlink`
 
-* Commandline: `--skip-symlink`
+* Command line: `--skip-symlink`
 * Description: Don't allow symlinking of tables. Deprecated and removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). Use [symbolic-links](mariadbd-options.md#-symbolic-links) with the `skip` [option prefix](mariadbd-options.md#option-prefixes) instead.
 * Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `--skip-thread-priority`
 
-* Commandline: `--skip-thread-priority`
+* Command line: `--skip-thread-priority`
 * Description: Don't give threads different priorities. Deprecated and removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 * Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 #### `--sql-bin-update-same`
 
-* Commandline: `--sql-bin-update-same=#`
+* Command line: `--sql-bin-update-same=#`
 * Description: The update log was deprecated in version 5.0 and replaced by the [binary log](../server-monitoring-logs/binary-log/), so this option did nothing since then. Deprecated and removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 * Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `--ssl`
 
-* Commandline: `--ssl`
+* Command line: `--ssl`
 * Description: Enable [TLS for connection](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) (automatically enabled with other flags). Disable with '`--skip-ssl`'.
 
 #### `--stack-trace`
 
-* Commandline: `--stack-trace`, `--skip-stack-trace`
+* Command line: `--stack-trace`, `--skip-stack-trace`
 * Description: Print a stack trace on failure. Enabled by default, disable with `-skip-stack-trace`.
 
 #### `--symbolic-links`
 
-* Commandline: `--symbolic-links`
+* Command line: `--symbolic-links`
 * Description: Enables symbolic link support. When set, the [have\_symlink](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_symlink) system variable shows as `YES`. Silently ignored in Windows. Use `--skip-symbolic-links` to disable.
 
 #### `--tc-heuristic-recover`
 
-* Commandline: `--tc-heuristic-recover=name`
+* Command line: `--tc-heuristic-recover=name`
 * Description: If [manual heuristic recovery](../server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log.md) is needed, this option defines the decision to use in the heuristic recovery process. Manual heuristic recovery may be needed if the [transaction coordination log](../server-monitoring-logs/transaction-coordinator-log/) is missing or if it doesn't contain all prepared transactions. This option can be set to `OFF`, `COMMIT`, or `ROLLBACK`. The default is `OFF`. See also the [--log-tc](mariadbd-options.md#-log-tc) server option and the [log\_tc\_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size) system variable.
 
 #### `--temp-pool`
 
-* Commandline: `--temp-pool`
+* Command line: `--temp-pool`
 * Description: Using this option will cause most temporary files created to use a small set of names, rather than a unique name for each new file. This behavior works around a bug in old Linux kernels where the kernel appeared to "leak" memory. In a Docker environment it might look like an unbounded working-set memory growth.\
   Defaults to `1` until [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1056-release-notes), use `--skip-temp-pool` to disable. Defaults to `0` from [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1057-release-notes), as benchmarking shows it causes a heavy mutex contention.
 
 #### `--test-expect-abort`
 
-* Commandline: `--test-expect-abort`
+* Command line: `--test-expect-abort`
 * Description: Expect that server aborts with 'abort'; Don't write out server variables on 'abort'. Useful only for test scripts.
 
 #### `--test-ignore-wrong-options`
 
-* Commandline: `--test-ignore-wrong-options`
+* Command line: `--test-ignore-wrong-options`
 * Description: Ignore wrong enums values in command line arguments. Useful only for test scripts.
 
 #### `--user`
 
-* Commandline: `--user=name`
+* Command line: `--user=name`
 * Description: Run mariadbd daemon as user.
 
 #### `--verbose`
 
-* Commandline: `-v`, `--verbose`
+* Command line: `-v`, `--verbose`
 * Description: Used with [help](mariadbd-options.md#help) option for detailed help.
 
 ## Other Options and System Variables
