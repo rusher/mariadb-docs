@@ -1,5 +1,22 @@
 ---
-description: Text protocol commands are sent from client to server. The text protocol has a less comprehensive format than the binary protocol, which is used by prepared statements only
+description: >-
+  Understand the text protocol in the Server's client/server communication. This
+  section details how SQL commands and results are exchanged as plain text,
+  including command types and packet structures.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
 ---
 
 # 2 - Text Protocol
