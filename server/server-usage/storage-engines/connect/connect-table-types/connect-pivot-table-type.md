@@ -353,7 +353,7 @@ ENGINE=connect table_type=pivot tabname=pet
 option_list='PivotCol=race,groupby=1,Accept=1';
 ```
 
-No error will be raised and the non-matching values will be ignored. This table\
+No error will be raised and the non-matching values are ignored. This table\
 will be displayed as:
 
 | name    | dog | cat |
@@ -366,7 +366,7 @@ will be displayed as:
 | Donald  | 1   | 0   |
 
 **Third case:** A “dump” column was specified with the flag value equal to 2.\
-All non-matching values will be added in this column. For instance:
+All non-matching values are added in this column. For instance:
 
 ```sql
 CREATE TABLE xpivet (

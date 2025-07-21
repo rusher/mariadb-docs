@@ -40,7 +40,7 @@ This file is created by mariadb-backup to provide the binary log file name and p
 
 Whenever a transaction is committed inside InnoDB when the binary log is enabled, the corresponding binlog coordinates are written to the InnoDB redo log along with the transaction commit. This allows one to restore the binlog coordinates corresponding to the last commit done by InnoDB along with a backup.
 
-The limitation of using "xtrabackup\_binlog\_pos\_innodb" with the "--no-lock" option is that no DDL or modification of non-transactional tables should be done during the backup. If the last event in the binlog is a DDL/non-transactional update, the coordinates in the file "xtrabackup\_binlog\_pos\_innodb" will be too old. But as long as only InnoDB updates are done during the backup, the coordinates will be correct.
+The limitation of using "xtrabackup\_binlog\_pos\_innodb" with the "--no-lock" option is that no DDL or modification of non-transactional tables should be done during the backup. If the last event in the binlog is a DDL/non-transactional update, the coordinates in the file "xtrabackup\_binlog\_pos\_innodb" will be too old. But as long as only InnoDB updates are done during the backup, the coordinates are correct.
 
 ### `xtrabackup_checkpoints`
 

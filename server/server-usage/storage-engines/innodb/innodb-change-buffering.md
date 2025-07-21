@@ -7,7 +7,7 @@ INSERT, UPDATE and DELETE statements can be particularly heavy operations to per
 
 Pages are modified in the [buffer pool](innodb-buffer-pool.md), and not immediately on disk. After all the records that cover the changes to a data page have been written to the InnoDB redo log, the changed page may be written (''flushed'') to a data file. Pages that have been modified in memory and not yet flushed are called dirty pages.
 
-The Change Buffer is an optimization that allows some data to be modified even though the data page does not exist in the buffer pool. Instead of modifying the data in its final destination, we would insert a record into a special Change Buffer that resides in the system tablespace. When the page is read into the buffer pool for any reason, the buffered changes will be applied to it.
+The Change Buffer is an optimization that allows some data to be modified even though the data page does not exist in the buffer pool. Instead of modifying the data in its final destination, we would insert a record into a special Change Buffer that resides in the system tablespace. When the page is read into the buffer pool for any reason, the buffered changes are applied to it.
 
 The Change Buffer only contains changes to secondary index leaf pages.
 
@@ -21,7 +21,7 @@ ROLLBACK never makes use of the change buffer; it would force a merge of any cha
 
 The Change Buffer is an optimization because:
 
-* Some random-access page reads will be transformed into modifications of change buffer pages.
+* Some random-access page reads are transformed into modifications of change buffer pages.
 * A change buffer page can be modified several times in memory and be flushed to disk only once.
 * Dirty pages are flushed together, so the number of IO operations is lower.
 

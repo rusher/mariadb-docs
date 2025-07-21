@@ -65,7 +65,7 @@ SHOW GLOBAL VARIABLES
 4. Choose a configuration file for custom changes to system variables and options.\
    It is not recommended to make custom changes to Enterprise Server's default configuration files, because your custom changes can be overwritten by other default configuration files that are loaded after.
 
-Ensure that your custom changes will be read last by creating a custom configuration file in one of the included directories. Configuration files in included directories are read in alphabetical order. Ensure that your custom configuration file is read last by using the `z-` prefix in the file name.
+Ensure that your custom changes are read last by creating a custom configuration file in one of the included directories. Configuration files in included directories are read in alphabetical order. Ensure that your custom configuration file is read last by using the `z-` prefix in the file name.
 
 Some example configuration file paths for different distributions are shown in the following table:
 
@@ -106,7 +106,7 @@ To configure the InnoDB Redo Log in a configuration file, use the following proc
 
 It is not recommended to make custom changes to Enterprise Server's default configuration files, because your custom changes can be overwritten by other default configuration files that are loaded after.
 
-Ensure that your custom changes will be read last by creating a custom configuration file in one of the included directories. Configuration files in included directories are read in alphabetical order. Ensure that your custom configuration file is read last by using the `z-` prefix in the file name.
+Ensure that your custom changes are read last by creating a custom configuration file in one of the included directories. Configuration files in included directories are read in alphabetical order. Ensure that your custom configuration file is read last by using the `z-` prefix in the file name.
 
 Some example configuration file paths for different distributions are shown in the following table:
 

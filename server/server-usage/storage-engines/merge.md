@@ -17,7 +17,7 @@ Each index in a MERGE table must match an index in underlying MyISAM tables, but
 The following options are meaningful for MERGE tables:
 
 * `UNION`. This option specifies the list of the underlying MyISAM tables. The list is enclosed between parentheses and separated with commas.
-* `INSERT_METHOD`. This options specifies whether, and how, INSERTs are allowed for the table. Allowed values are: `NO` (INSERTs are not allowed), `FIRST` (new rows will be written into the first table specified in the `UNION` list), `LAST` (new rows will be written into the last table specified in the `UNION` list). The default value is `NO`.
+* `INSERT_METHOD`. This options specifies whether, and how, INSERTs are allowed for the table. Allowed values are: `NO` (INSERTs are not allowed), `FIRST` (new rows are written into the first table specified in the `UNION` list), `LAST` (new rows are written into the last table specified in the `UNION` list). The default value is `NO`.
 
 If you define a MERGE table with a definition which is different from the underlying MyISAM tables, or one of the underlying tables is not MyISAM, the CREATE TABLE statement will not return any error. But any statement which involves the table will produce an error like the following:
 
@@ -36,7 +36,7 @@ If you try to insert a new row into a MERGE table with INSERT\_METHOD=NO, you wi
 ERROR 1036 (HY000): Table 'tbl_name' is read only
 ```
 
-It is possible to build a MERGE table on MyISAM tables which have one or more [virtual columns](../../reference/sql-statements/data-definition/create/generated-columns.md). MERGE itself does not support virtual columns, thus such columns will be seen as regular columns. The data types and sizes will still need to be identical, and they cannot be NOT NULL.
+It is possible to build a MERGE table on MyISAM tables which have one or more [virtual columns](../../reference/sql-statements/data-definition/create/generated-columns.md). MERGE itself does not support virtual columns, thus such columns are seen as regular columns. The data types and sizes will still need to be identical, and they cannot be NOT NULL.
 
 ## Examples
 

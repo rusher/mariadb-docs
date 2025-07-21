@@ -35,7 +35,7 @@ rows from the table on the "left" (t1); the values for the columns in the other\
 table (t2) depend on whether or not a match was found. If no match is found,\
 all columns from that table are set to NULL for that row.
 
-The **RIGHT JOIN** is similar to the LEFT JOIN, though its resultset contains all rows from the right table, and the left table's columns will be filled with NULLs when needed.
+The **RIGHT JOIN** is similar to the LEFT JOIN, though its resultset contains all rows from the right table, and the left table's columns are filled with NULLs when needed.
 
 JOINs can be concatenated to read results from three or more tables.
 

@@ -921,7 +921,7 @@ These operations require the following non-canonical changes to the storage form
 
 * A hidden metadata record at the start of the clustered index is used to store each column's [DEFAULT](../../../../reference/sql-functions/secondary-functions/information-functions/default.md) value. This makes it possible to add new columns that have default values without rebuilding the table.
 * A [BLOB](../../../../reference/data-types/string-data-types/blob.md) in the hidden metadata record is used to store column mappings. This makes it possible to drop or reorder columns without rebuilding the table. This also makes it possible to add columns to any position or drop columns from any position in the table without rebuilding the table.
-* If a column is dropped, old records will contain garbage in that column's former position, and new records will be written with [NULL](../../../../reference/data-types/null-values.md) values, empty strings, or dummy values.
+* If a column is dropped, old records will contain garbage in that column's former position, and new records are written with [NULL](../../../../reference/data-types/null-values.md) values, empty strings, or dummy values.
 
 This non-canonical storage format has the potential to incur some performance or storage overhead for all subsequent DML operations. If you notice some issues like this and you want to normalize a table's storage format to avoid this problem, then you can do so by forcing a table rebuild by executing [ALTER TABLE ... FORCE](../../../../reference/sql-statements/data-definition/alter/alter-table/#force) with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) set to `INPLACE`:
 

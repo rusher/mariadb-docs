@@ -57,7 +57,7 @@ The output will be like:
 +---------+-----------------------------------------+---------------------------+
 ```
 
-Current column family settings will be used for the new SST files.
+Current column family settings are used for the new SST files.
 
 ### Modifying Compression Settings
 

@@ -70,7 +70,7 @@ Start a dedicated thread in mariadb-backup to copy InnoDB redo log (`ib_logfile*
 
 ### Notes
 
-* If FLUSH TABLE WITH READ LOCK is not used, then only InnoDB tables will be consistent (not the privilege tables in the mysql database or the binary log). The backup point depends on the content of the redo log within the backup itself.
+* If FLUSH TABLE WITH READ LOCK is not used, then only InnoDB tables are consistent (not the privilege tables in the mysql database or the binary log). The backup point depends on the content of the redo log within the backup itself.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -457,7 +457,7 @@ CREATE TABLE `xsampall` (
 
 This METHOD can be used AS a quick way TO make a “TEMPLATE” TABLE definition that can later be edited TO make the desired definition. IN particular, COLUMN NAMES ARE constructed FROM ALL the nodes OF their PATH IN ORDER TO have DISTINCT COLUMN names. This can be manually edited TO have the desired NAMES, provided their XPATH IS NOT modified.
 
-TO have a preview OF how columns will be DEFINED, you can USE a CATALOG TABLE like this:
+TO have a preview OF how columns are DEFINED, you can USE a CATALOG TABLE like this:
 
 <<SQL>>
 CREATE TABLE xsacol
@@ -471,7 +471,7 @@ AND WHEN asking:
 SELECT COLUMN_NAME Name, type_name TYPE, column_size SIZE, NULLABLE, xpath FROM xsacol;
 <</SQL>>
 
-You GET the description OF what the TABLE columns will be:
+You GET the description OF what the TABLE columns are:
 
 <<style CLASS="darkheader-nospace-borders">>
 |= Name |= TYPE |= SIZE |= NULLABLE |= xpath |
@@ -735,7 +735,7 @@ This query displays:
 These composite tables, half array half tree, reserve some surprises for us when\
 updating, deleting from or inserting into them. Insert just cannot generate\
 this structure; if two rows are inserted with just a different author, two book\
-nodes will be generated in the XML file. Delete always deletes one book node\
+nodes are generated in the XML file. Delete always deletes one book node\
 and all its children nodes even if specified against only one author. Update is\
 more complicated:
 

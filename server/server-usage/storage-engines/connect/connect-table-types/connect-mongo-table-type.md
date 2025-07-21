@@ -45,7 +45,7 @@ The following describes the MONGO table type.
 
 Creating and running MONGO tables requires a connection to a running local or remote MongoDB server.
 
-A MONGO table is defined to access a MongoDB collection. The table rows will be the collection documents. For instance, to create a table based on the MongoDB sample collection restaurants, you can do something such as the following:
+A MONGO table is defined to access a MongoDB collection. The table rows are the collection documents. For instance, to create a table based on the MongoDB sample collection restaurants, you can do something such as the following:
 
 ```
 CREATE TABLE resto (

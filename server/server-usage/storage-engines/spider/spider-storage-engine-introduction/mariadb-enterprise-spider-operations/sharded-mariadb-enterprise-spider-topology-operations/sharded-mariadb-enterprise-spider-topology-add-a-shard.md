@@ -14,7 +14,7 @@ On the Data Node hosting the new shard, create the Spider user account for the S
 CREATE USER spider_user@192.0.2.1 IDENTIFIED BY "password";
 ```
 
-Privileges will be granted to the user account in a later step.
+Privileges are granted to the user account in a later step.
 
 ## Test Spider User
 

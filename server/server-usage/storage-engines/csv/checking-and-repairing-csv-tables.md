@@ -54,7 +54,7 @@ CHECK TABLE csv_test;
 +---------------+-------+----------+----------+
 ```
 
-We can repair this, but all rows from the corrupt row onwards will be lost:
+We can repair this, but all rows from the corrupt row onwards are lost:
 
 ```sql
 REPAIR TABLE csv_test;

@@ -178,7 +178,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_fs_reserve_percent`
 
-* Description: If this percentage of the filesystem is not free, inserts will be prohibited. Recommended value is half the size of the available memory. Once disabled, inserts will be re-enabled once twice the reserve is available. TokuDB will freeze entirely if the disk becomes entirely full.
+* Description: If this percentage of the filesystem is not free, inserts are prohibited. Recommended value is half the size of the available memory. Once disabled, inserts are re-enabled once twice the reserve is available. TokuDB will freeze entirely if the disk becomes entirely full.
 * Scope: Global
 * Dynamic: No
 * Data Type: numeric
@@ -361,7 +361,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_rpl_check_readonly`
 
-* Description: By default, when the slave is in read only mode, row events will be run from the binary log using TokuDB's read-free replication (RFR). Setting this variable to `OFF` turns off the slave read only check, allowing RFR to run when the slave is not read-only. Be careful that you understand the consequences if setting this variable.
+* Description: By default, when the slave is in read only mode, row events are run from the binary log using TokuDB's read-free replication (RFR). Setting this variable to `OFF` turns off the slave read only check, allowing RFR to run when the slave is not read-only. Be careful that you understand the consequences if setting this variable.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: boolean

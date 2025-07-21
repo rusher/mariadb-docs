@@ -61,7 +61,7 @@ LOAD DATA LOW_PRIORITY INFILE '/tmp/prospects.txt'
 ...
 ```
 
-If the `LOW_PRIORITY` flag isn't included, the table will be locked temporarily during the import and other users will be prevented from accessing it.
+If the `LOW_PRIORITY` flag isn't included, the table will be locked temporarily during the import and other users are prevented from accessing it.
 
 #### Being Difficult
 
@@ -83,7 +83,7 @@ IGNORE 1 LINES;
 
 The number of lines for MariaDB to ignore can, of course, be more than one.
 
-Another difficulty arises when some Windows application wizards export data with each field surrounded by double-quotes, as well as around the start and end of records. This can be a problem when a field contains a double-quote. To deal with this, some applications use back-slash () to escape embedded double-quotes, to indicate that a particular double-quote is not a field ending but part of the field's content. However, some applications will use a different character (like a pound-sign) to escape embedded quotes. This can cause problems if MariaDB isn't prepared for the odd escape-character. MariaDB will think the escape character is actually text and the embedded quote-mark, although it's escaped, is a field ending. The unenclosed text that follows will be imported into the next column and the remaining columns will be one column off, leaving the last column not imported. As maddening as this can be, it's quite manageable in MariaDB by adding an `ENCLOSED BY` and an `ESCAPED BY` clause:
+Another difficulty arises when some Windows application wizards export data with each field surrounded by double-quotes, as well as around the start and end of records. This can be a problem when a field contains a double-quote. To deal with this, some applications use back-slash () to escape embedded double-quotes, to indicate that a particular double-quote is not a field ending but part of the field's content. However, some applications will use a different character (like a pound-sign) to escape embedded quotes. This can cause problems if MariaDB isn't prepared for the odd escape-character. MariaDB will think the escape character is actually text and the embedded quote-mark, although it's escaped, is a field ending. The unenclosed text that follows are imported into the next column and the remaining columns are one column off, leaving the last column not imported. As maddening as this can be, it's quite manageable in MariaDB by adding an `ENCLOSED BY` and an `ESCAPED BY` clause:
 
 ```sql
 LOAD DATA LOW_PRIORITY INFILE '/tmp/prospects.txt'

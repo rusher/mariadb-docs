@@ -78,7 +78,7 @@ Here again the _entry_ option is used to restrict the entry file(s) to be used i
 
 The column descriptions can be retrieved by the discovery process for table types allowing it. It cannot be done for multiple tables or multiple entries.
 
-A catalog table can be created by adding _catfunc=columns_. This can be used to show the column definitions of multiple tables. _Multiple_ must be set to false and the column definitions will be the ones of the first table or entry.
+A catalog table can be created by adding _catfunc=columns_. This can be used to show the column definitions of multiple tables. _Multiple_ must be set to false and the column definitions are the ones of the first table or entry.
 
 This first implementation has some restrictions:
 
@@ -167,7 +167,7 @@ CREATE TABLE znewcities (
 ) ENGINE=CONNECT TABLE_TYPE=JSON FILE_NAME='E:/Json/newcities.zip' ZIPPED=1 LRECL=1000 OPTION_LIST='Load=E:/Json/city_*.json,mulentries=YES,pretty=0';
 ```
 
-Here the files to load are specified with wildcard characters and the _mulentries_ options must be specified. However, the _entry_ option must not be specified, entry names will be made from the file names. Provide a fake column description if the files have different column layout, but specific tables will have to be created to read each of them.
+Here the files to load are specified with wildcard characters and the _mulentries_ options must be specified. However, the _entry_ option must not be specified, entry names are made from the file names. Provide a fake column description if the files have different column layout, but specific tables will have to be created to read each of them.
 
 ### ZIP Table Type
 

@@ -113,7 +113,7 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 ### Advantages of Aria compared to MyISAM
 
 * Data and indexes are crash safe.
-* On a crash, changes will be rolled back to state of the start of a statement or a last `LOCK TABLES` statement.
+* On a crash, changes are rolled back to state of the start of a statement or a last `LOCK TABLES` statement.
 * Aria can replay almost everything from the log. (Including `CREATE`, `DROP`, `RENAME`, `TRUNCATE` tables). Therefore, you make a backup of Aria by just copying the log. The things that can't be replayed (yet) are:
   * Batch `INSERT` into an empty table (This includes `LOAD DATA INFILE`, `SELECT... INSERT` and `INSERT` (many rows)).
   * `ALTER TABLE`. Note that `.frm` tables are NOT recreated!

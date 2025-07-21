@@ -44,13 +44,13 @@ Compressed tables have a number of characteristics:
 * while the data is read-only, DDL statements such as [DROP TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md) and [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md) will still function.
 * take much less space than fixed or dynamic tables. Each data has usually a 40-70% compression ratio
 * rows are compressed separately, reducing access overhead.
-* row headers will be from one to three bytes.
+* row headers are from one to three bytes.
 * rows can be compressed with different compression types, including
   * prefix space compression
   * suffix space compression
   * columns with small sets of values are converted to ENUM
   * numeric zeros are stored with only one bit
-  * integer columns will be reduced to the smallest int type that can hold the contents
+  * integer columns are reduced to the smallest int type that can hold the contents
 
 ## See Also
 

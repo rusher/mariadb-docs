@@ -32,7 +32,7 @@ Indexes are automatically reconstructed when the table is created, modified by\
 INSERT, UPDATE or DELETE commands, or when the SEPINDEX option is changed.\
 If you have a lot of changes to do on a table at one moment, you can use table\
 locking to prevent indexes to be reconstructed after each statement. The\
-indexes will be reconstructed when unlocking the table. For instance:
+indexes are reconstructed when unlocking the table. For instance:
 
 ```
 LOCK TABLE t1 WRITE;

@@ -8,11 +8,11 @@ Since date and time are only numeric strings, they can be stored in a regular ch
 
 {% tabs %}
 {% tab title="Current" %}
-The `TIMESTAMP` column is similar to `DATETIME`, but it's a little limited in its range of allowable time. It starts at the Unix epoch time (1970-01-01) and ends on 2106-02-07. Finally, the `YEAR` data type is for recording only the year in a column: `yy` or `yyyy`. For the examples in this article, `DATE`, `TIME`, and `DATETIME` columns will be used. The database that will be referenced is for a fictitious psychiatry practice that keeps track of its patients and billable hours in MariaDB.
+The `TIMESTAMP` column is similar to `DATETIME`, but it's a little limited in its range of allowable time. It starts at the Unix epoch time (1970-01-01) and ends on 2106-02-07. Finally, the `YEAR` data type is for recording only the year in a column: `yy` or `yyyy`. For the examples in this article, `DATE`, `TIME`, and `DATETIME` columns are used. The database that will be referenced is for a fictitious psychiatry practice that keeps track of its patients and billable hours in MariaDB.
 {% endtab %}
 
 {% tab title="< 11.5" %}
-The `TIMESTAMP` column is similar to `DATETIME`, but it's a little limited in its range of allowable time. It starts at the Unix epoch time (i.e., 1970-01-01) and ends on 2038-01-19. Finally, the `YEAR` data type is for recording only the year in a column: `yy` or `yyyy`. For the examples in this article, `DATE`, `TIME`, and `DATETIME` columns will be used. The database that will be referenced is for a fictitious psychiatry practice that keeps track of its patients and billable hours in MariaDB.
+The `TIMESTAMP` column is similar to `DATETIME`, but it's a little limited in its range of allowable time. It starts at the Unix epoch time (i.e., 1970-01-01) and ends on 2038-01-19. Finally, the `YEAR` data type is for recording only the year in a column: `yy` or `yyyy`. For the examples in this article, `DATE`, `TIME`, and `DATETIME` columns are used. The database that will be referenced is for a fictitious psychiatry practice that keeps track of its patients and billable hours in MariaDB.
 {% endtab %}
 {% endtabs %}
 

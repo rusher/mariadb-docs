@@ -163,9 +163,9 @@ specified. However, if the table type would have been DOS or FIX, these values c
 the actual field length within the file.
 
 A CONNECT format string consists of a series of elements that represent a\
-particular piece of information and define its format. The elements will be\
+particular piece of information and define its format. The elements are\
 recognized in the order they appear in the format string. Date and time format\
-elements will be replaced by the actual date and time as they appear in the\
+elements are replaced by the actual date and time as they appear in the\
 source string. They are defined by the following groups of characters:
 
 | Element | Description                                                                     |
@@ -215,7 +215,7 @@ can make no sense. The same for character columns; is a blank field a valid valu
 A special case is DATE columns with a DATE\_FORMAT specified. Any value not matching the format can be regarded as NULL.
 
 CONNECT leaves the decision to you. When declaring a column in the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md)\
-statement, if it is declared NOT NULL, blank or zero values will be considered\
+statement, if it is declared NOT NULL, blank or zero values are considered\
 as valid values. Otherwise they will be considered as NULL values. In all\
 cases, nulls are replaced on insert or update by pseudo null values, a zero-length character string for text types or a zero value for numeric types. Once\
 converted to pseudo null values, they will be recognized as NULL only for\

@@ -60,7 +60,7 @@ TRIM(col4)
 FROM table5;
 ```
 
-In the first [TRIM()](../../reference/sql-functions/string-functions/trim.md) clause, the padding component is specified; the leading dots are to be trimmed from the output of `col1`. The trailing spaces will be trimmed off of `col2`—space is the default. Both leading and trailing under-scores are trimmed from `col3` above. Unless specified, BOTH is the default. So leading and trailing spaces are trimmed from `col4` in the statement here.
+In the first [TRIM()](../../reference/sql-functions/string-functions/trim.md) clause, the padding component is specified; the leading dots are to be trimmed from the output of `col1`. The trailing spaces are trimmed off of `col2`—space is the default. Both leading and trailing under-scores are trimmed from `col3` above. Unless specified, BOTH is the default. So leading and trailing spaces are trimmed from `col4` in the statement here.
 
 #### Extracting
 

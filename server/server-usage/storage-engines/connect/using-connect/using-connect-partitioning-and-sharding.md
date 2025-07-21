@@ -301,7 +301,7 @@ INSERT INTO t3 VALUES
 (11,'eleven'),(1,'one'),(35,'thirty five'),(8,'eight');
 ```
 
-The rows will be distributed in the different sub-tables according to the partition function. This can be\
+The rows are distributed in the different sub-tables according to the partition function. This can be\
 seen by executing the query:
 
 ```sql

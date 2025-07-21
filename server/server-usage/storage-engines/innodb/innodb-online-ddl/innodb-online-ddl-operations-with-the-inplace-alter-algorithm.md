@@ -369,7 +369,7 @@ This applies to [ALTER TABLE ... CHANGE COLUMN](../../../../reference/sql-statem
 
 InnoDB supports adding a primary key to a table with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) set to `INPLACE`.
 
-If the new primary key column is not defined as [NOT NULL](../../../../reference/sql-statements/data-definition/create/create-table.md#null-and-not-null), then it is highly recommended for [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) to be enabled in [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md). Otherwise, `NULL` values will be silently converted to the default value for the given data type, which is probably not the desired behavior in this scenario.
+If the new primary key column is not defined as [NOT NULL](../../../../reference/sql-statements/data-definition/create/create-table.md#null-and-not-null), then it is highly recommended for [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) to be enabled in [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md). Otherwise, `NULL` values are silently converted to the default value for the given data type, which is probably not the desired behavior in this scenario.
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 

@@ -31,7 +31,7 @@ VALUES('id1','text','text'),
 ('id2','text','text');
 ```
 
-Notice that the keyword `VALUES` is used only once and each row is contained in its own set of parentheses and each set is separated by commas. We've added an intentional mistake to this example: We are attempting to insert three rows of data into table2 for which the first column happens to be a `UNIQUE` key field. The third row entered here has the same identification number for the key column as the second row. This would normally result in an error and none of the three rows would be inserted. However, since the statement has an `IGNORE` flag, duplicates will be ignored and not inserted, but the other rows will still be inserted. So, the first and second rows above will be inserted and the third one won't.
+Notice that the keyword `VALUES` is used only once and each row is contained in its own set of parentheses and each set is separated by commas. We've added an intentional mistake to this example: We are attempting to insert three rows of data into table2 for which the first column happens to be a `UNIQUE` key field. The third row entered here has the same identification number for the key column as the second row. This would normally result in an error and none of the three rows would be inserted. However, since the statement has an `IGNORE` flag, duplicates are ignored and not inserted, but the other rows will still be inserted. So, the first and second rows above will be inserted and the third one won't.
 
 #### Priority
 

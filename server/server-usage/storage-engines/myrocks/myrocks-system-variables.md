@@ -1108,7 +1108,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_seconds_between_stat_computes`
 
-* Description: Sets a number of seconds to wait between optimizer stats recomputation. Only changed indexes will be refreshed.
+* Description: Sets a number of seconds to wait between optimizer stats recomputation. Only changed indexes are refreshed.
 * Command line: `--rocksdb-seconds-between-stat-computes=#`
 * Scope: Global
 * Dynamic: Yes

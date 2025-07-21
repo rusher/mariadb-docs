@@ -55,7 +55,7 @@ The first problem is solved by preparing the srcdef view to receive clauses. The
 SRCDEF='select pays as country, count(*) as customers from custnum where %s group by pays having %s';
 ```
 
-The _%s_ in the srcdef are place holders for eventual compatible parts of the original query where clause. If the select query does not specify a where clause, or a gives an unacceptable where clause, place holders will be filled by dummy clauses (1=1).
+The _%s_ in the srcdef are place holders for eventual compatible parts of the original query where clause. If the select query does not specify a where clause, or a gives an unacceptable where clause, place holders are filled by dummy clauses (1=1).
 
 The other problems must be solved by adding to the create table a list of columns that must be translated because they are aliases or/and aliases on aggregate functions that must become a having clause. For example, in this case:
 

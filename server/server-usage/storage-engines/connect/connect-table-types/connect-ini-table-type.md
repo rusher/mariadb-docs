@@ -83,7 +83,7 @@ is that when inserting values, the section name must be the first in the list\
 of values.
 
 **Note 1:** When inserting, if a section already exists, no new section will be\
-created but the new values will be added or replace those of the existing\
+created but the new values are added or replace those of the existing\
 section. Thus, the following two commands are equivalent:
 
 ```

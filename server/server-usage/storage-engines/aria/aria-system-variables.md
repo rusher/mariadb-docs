@@ -49,7 +49,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `aria_force_start_after_recovery_failures`
 
-* Description: Number of consecutive log recovery failures after which logs will be automatically deleted to cure the problem; 0 (the default) disables the feature.
+* Description: Number of consecutive log recovery failures after which logs are automatically deleted to cure the problem; 0 (the default) disables the feature.
 * Command line: `--aria-force-start-after-recovery-failures=#`
 * Scope: Global
 * Dynamic: No

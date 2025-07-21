@@ -35,11 +35,11 @@ PARTITION BY LIST COLUMNS (partitioning_expression)
 
 ## Comparisons
 
-To determine which partition should contain a row, all specified columns will be compared to each partition definition.
+To determine which partition should contain a row, all specified columns are compared to each partition definition.
 
 With LIST COLUMNS, a row matches a partition if all row values are identical to the specified values. At most one partition can match the row.
 
-With RANGE COLUMNS, a row matches a partition if all row values are less than the specified values. The first partition that matches the row values will be used.
+With RANGE COLUMNS, a row matches a partition if all row values are less than the specified values. The first partition that matches the row values are used.
 
 The `DEFAULT` partition catches all records which do not fit in other partitions. Only one `DEFAULT` partition is allowed.
 

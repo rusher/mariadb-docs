@@ -81,7 +81,7 @@ Once configuration is done, we can [start the MariaDB Server process](https://ma
 
 At this point, we need to get the replication coordinates of the primary from the original backup directory.
 
-If we took the backup on the primary, then the coordinates will be in the xtrabackup\_binlog\_info file. If we took the backup on another replica and if we provided the --slave-info option, then the coordinates will be in the file xtrabackup\_slave\_info file.
+If we took the backup on the primary, then the coordinates are in the xtrabackup\_binlog\_info file. If we took the backup on another replica and if we provided the --slave-info option, then the coordinates are in the file xtrabackup\_slave\_info file.
 
 mariadb-backup dumps replication coordinates in two forms: GTID coordinates and binary log file and position coordinates, like the ones you would normally see from SHOW MASTER STATUS output. We can choose which set of coordinates we would like to use to set up replication.
 

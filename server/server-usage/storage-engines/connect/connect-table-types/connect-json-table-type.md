@@ -8,7 +8,7 @@ It is also possible to query, create or update such information in a database-li
 
 The CONNECT engine adds this facility to MariaDB by supporting tables based on JSON data files. This is done like for XML tables by creating tables describing what should be retrieved from the file and how it should be processed.
 
-Starting with 1.07.0002, the internal way JSON was parsed and handled was changed. The main advantage of the new way is to reduce the memory required to parse JSON. It was from 6 to 10 times the size of the JSON source and is now only 2 to 4 times. However, this is in Beta mode and JSON tables are still handled using the old mode. To use the new mode, tables should be created with TABLE\_TYPE=BSON. Another way is the set the [connect\_force\_bson](../connect-system-variables.md#connect_force_bson) session variable to 1 or ON. Then all JSON tables will be handled as BSON. Of course, this is temporary and when successfully tested, the new way will replace the old way and all tables be created as JSON.
+Starting with 1.07.0002, the internal way JSON was parsed and handled was changed. The main advantage of the new way is to reduce the memory required to parse JSON. It was from 6 to 10 times the size of the JSON source and is now only 2 to 4 times. However, this is in Beta mode and JSON tables are still handled using the old mode. To use the new mode, tables should be created with TABLE\_TYPE=BSON. Another way is the set the [connect\_force\_bson](../connect-system-variables.md#connect_force_bson) session variable to 1 or ON. Then all JSON tables are handled as BSON. Of course, this is temporary and when successfully tested, the new way will replace the old way and all tables be created as JSON.
 
 Let us start from the file “biblio3.json” that is the JSON equivalent of the XML Xsample file described in the XML table chapter:
 
@@ -2328,7 +2328,7 @@ The JSON nosql language has all the features to be used as an alternative to dyn
 ```
 create table assets (
    item_name varchar(32) primary key, /* A common attribute for all items */
-   dynamic_cols  blob  /* Dynamic columns will be stored here */
+   dynamic_cols  blob  /* Dynamic columns are stored here */
  );
 
 INSERT INTO assets VALUES
@@ -2388,7 +2388,7 @@ The same result can be obtained with json columns using the json UDF’s:
 ```
 create table jassets (
    item_name varchar(32) primary key, /* A common attribute for all items */
-   json_cols varchar(512)  /* Jason columns will be stored here */
+   json_cols varchar(512)  /* Jason columns are stored here */
  );
 
 INSERT INTO jassets VALUES

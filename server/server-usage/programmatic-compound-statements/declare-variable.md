@@ -33,7 +33,7 @@ The real data type of `TYPE OF` and `ROW TYPE OF table_name` will become known a
 
 The real data type of a `ROW TYPE OF cursor_name` variable will become known when execution enters into the block where the variable is declared. Data type instantiation will happen only once. In a cursor `ROW TYPE OF` variable that is declared inside a loop, its data type will become known on the very first iteration and won't change on further loop iterations.
 
-The tables referenced in `TYPE OF` and `ROW TYPE OF` declarations will be checked for existence at the beginning of the stored routine call. [CREATE PROCEDURE](../stored-routines/stored-procedures/create-procedure.md) or [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md) will not check the referenced tables for existence.
+The tables referenced in `TYPE OF` and `ROW TYPE OF` declarations are checked for existence at the beginning of the stored routine call. [CREATE PROCEDURE](../stored-routines/stored-procedures/create-procedure.md) or [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md) will not check the referenced tables for existence.
 
 ## Examples
 

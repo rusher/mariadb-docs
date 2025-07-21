@@ -42,7 +42,7 @@ If you installed the plugin by providing the [--plugin-load](../../server-manage
 
 ### Using with Replication
 
-If the binary log is enabled, all SQL statements will be logged as usual, and replicated to any slave servers. However, since rows are not stored, it is important to use statement-based rather than the row or mixed format, as [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements are neither logged nor replicated. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md).
+If the binary log is enabled, all SQL statements are logged as usual, and replicated to any slave servers. However, since rows are not stored, it is important to use statement-based rather than the row or mixed format, as [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements are neither logged nor replicated. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md).
 
 ### Using with Triggers
 

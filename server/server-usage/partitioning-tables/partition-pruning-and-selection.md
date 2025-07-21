@@ -2,7 +2,7 @@
 
 When a WHERE clause is related to the partitioning expression, the optimizer knows which partitions are relevant for the query. Other partitions will not be read. This optimization is called _partition pruning_.
 
-[EXPLAIN PARTITIONS](../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) can be used to know which partitions will be read for a given query. A column called `partitions` will contain a comma-separated list of the accessed partitions. For example:
+[EXPLAIN PARTITIONS](../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) can be used to know which partitions are read for a given query. A column called `partitions` will contain a comma-separated list of the accessed partitions. For example:
 
 ```sql
 EXPLAIN PARTITIONS SELECT * FROM orders WHERE id < 15000000;

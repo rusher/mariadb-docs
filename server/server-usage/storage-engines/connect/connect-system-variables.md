@@ -78,7 +78,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `connect_force_bson`
 
-* Description: Force using BSON for JSON tables. Starting with these releases, the internal way JSON was parsed and handled was changed. The main advantage of the new way is to reduce the memory required to parse JSON (from 6 to 10 times the size of the JSON source to now only 2 to 4 times). However, this is in Beta mode and JSON tables are still handled using the old mode. To use the new mode, tables should be created with TABLE\_TYPE=BSON, or by setting this session variable to 1 or ON. Then, all JSON tables will be handled as BSON. This is temporary until the new way replaces the old way by default.
+* Description: Force using BSON for JSON tables. Starting with these releases, the internal way JSON was parsed and handled was changed. The main advantage of the new way is to reduce the memory required to parse JSON (from 6 to 10 times the size of the JSON source to now only 2 to 4 times). However, this is in Beta mode and JSON tables are still handled using the old mode. To use the new mode, tables should be created with TABLE\_TYPE=BSON, or by setting this session variable to 1 or ON. Then, all JSON tables are handled as BSON. This is temporary until the new way replaces the old way by default.
 * Command line: `--connect-force-bson={0|1}`
 * Scope: Global, Session
 * Dynamic: Yes
