@@ -309,6 +309,17 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Range - 32 bit: `4096` to `4294967295`
 * Range - 64 bit: `4096` to `18446744073709547520`
 
+#### `create_tmp_table_binlog_formats`
+
+* Description: The [binary logging formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) under which the primary will log CREATE TEMPORARY statments to the [binary log](../../server-management/server-monitoring-logs/binary-log/). If CREATE TEMPORARY is not logged, all usage of the temporary table will be logged in ROW format. Allowed values are STATEMENT or MIXED,STATEMENT.
+* Commandline: `--create-tmp-table-binlog-formats=#`
+* Scope: Global, Session
+* Dynamic: Yes
+* Data Type: `enum`
+* Default Value: `STATEMENT`
+* Valid Values: `STATEMENT` or `MIXED,STATEMENT`
+* Introduced: [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
+
 #### `default_master_connection`
 
 * Description: In [multi-source replication](multi-source-replication.md), specifies which connection will be used for commands and variables if you don't specify a connection.
