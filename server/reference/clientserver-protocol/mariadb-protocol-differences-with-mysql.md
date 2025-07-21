@@ -2,34 +2,35 @@
 
 Here is a list of the differences between MariaDB and MySQL in terms of protocol, in order to help community driver maintainers.
 
-### MariaDB Capabilities Extension
+## MariaDB Capabilities Extension
 
-MariaDB/MySQL servers can advertise feature support using capabilities. To expand the capabilities beyond the original 4 bytes, MariaDB utilizes 4 bytes, unused by MySQL, in the [Initial handshake packet](1-connecting/connection.md#initial-handshake-packet) (server capabilities 3rd part). In order to avoid incompatibility in the future, those 4 bytes have to be read only if capability CLIENT\_MYSQL is not SET (server then being MariaDB).
+MariaDB/MySQL servers can advertise feature support using capabilities. To expand the capabilities beyond the original 4 bytes, MariaDB utilizes 4 bytes, unused by MySQL, in the [Initial handshake packet](1-connecting/connection.md#initial-handshake-packet) (server capabilities 3rd part). In order to avoid incompatibility in the future, those 4 bytes have to be read only if capability `CLIENT_MYSQL` is not set (server then being MariaDB).
 
-Enhanced Capabilities
+### Enhanced Capabilities
 
-* MARIADB\_CLIENT\_CACHE\_METADATA: Enables clients to cache metadata and avoid repeated network transmissions. (since [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes))
-* MARIADB\_CLIENT\_EXTENDED\_METADATA : Provides more detailed column metadata information for specific data types. (since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes))
-* MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS: Introduces a dedicated command, [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md), for efficient batch execution of statements. (since [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes))
-* MARIADB\_CLIENT\_BULK\_UNIT\_RESULTS: Allows for individual result sets for each bulk operation. (since [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes))
+* `MARIADB_CLIENT_CACHE_METADATA`: Enables clients to cache metadata and avoid repeated network transmissions (since [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes)).
+* `MARIADB_CLIENT_EXTENDED_METADATA` : Provides more detailed column metadata information for specific data types (since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)).
+* `MARIADB_CLIENT_STMT_BULK_OPERATIONS`: Introduces a dedicated command, [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md), for efficient batch execution of statements.
+* MARIADB\_CLIENT\_BULK\_UNIT\_RESULTS: Allows for individual result sets for each bulk operation (since [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes)).
 
 See [Connection Capabilities](1-connecting/connection.md#capabilities).
 
-### Prepare Statement Skipping Metadata
+## Prepare Statement Skipping Metadata
 
-_since_ [_MariaDB 10.6.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes)
+{% hint style="info" %}
+This feature is available from _MariaDB 10.6.0._
+{% endhint %}
 
-Prepared statement metadata, which typically remains unchanged except during table alterations, can be cached by clients when the MARIADB\_CLIENT\_CACHE\_METADATA capability is enabled. The server won't then send them again, unless they change. This significantly improves the performance of subsequent executions, especially for large metadata sets.
+Prepared statement metadata, which typically remains unchanged except during table alterations, can be cached by clients when the `MARIADB_CLIENT_CACHE_METADATA` capability is enabled. The server won't then send them again, unless they change. This significantly improves the performance of subsequent executions, especially for large metadata sets.
 
-When MARIADB\_CLIENT\_CACHE\_METADATA capability is set, the Resultset [Column count packet](4-server-response-packets/result-set-packets.md#column-count-packet) format indicates if metadata follows or is skipped:
+When `MARIADB_CLIENT_CACHE_METADATA` capability is set, the result set [Column count packet](4-server-response-packets/result-set-packets.md#column-count-packet) format indicates if metadata follows or is skipped:
 
-* int column count
-* if (MARIADB\_CLIENT\_CACHE\_METADATA capability set)\
-  int<1> metadata follows (0 / 1)
+* int column count,
+* if (`MARIADB_CLIENT_CACHE_METADATA` capability set) int<1> metadata follows (0 / 1).
 
 **Example**
 
-java code:
+Java code:
 
 ```java
 stmt.execute("CREATE TABLE test_table (id int, val varchar(32))");
@@ -64,7 +65,7 @@ OK_Packet with a 0xFE header:
 +------+--------------------------------------------------+------------------+
 ```
 
-same without metadata caching:
+The same, without metadata caching:
 
 ```
 Column count packet:
@@ -109,25 +110,29 @@ OK_Packet with a 0xFE header:
 +------+--------------------------------------------------+------------------+
 ```
 
-### Extended Column Information
+## Extended Column Information
 
-_since_ [_MariaDB 10.5.2_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
+{% hint style="info" %}
+This feature is available from MariaDB 10.5.2.
+{% endhint %}
 
-When the MARIADB\_CLIENT\_EXTENDED\_METADATA capability is set, [column definition packet](4-server-response-packets/result-set-packets.md#column-definition-packet) can include additional type and format information.
+When the `MARIADB_CLIENT_EXTENDED_METADATA` capability is set, [column definition packet](4-server-response-packets/result-set-packets.md#column-definition-packet) can include additional type and format information.
 
-* For geometric fields: Detailed geometric data type (e.g., 'point', 'polygon')
-* For JSON fields: Type 'json'
-* For UUID fields: Type 'uuid'
+* For geometric fields: Detailed geometric data type (e.g., 'point', 'polygon').
+* For JSON fields: Type 'json'.
+* For UUID fields: Type 'uuid'.
 
-### Bulk
+## Bulk
 
-_since_ [_MariaDB 10.2.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes) _-_ [_MariaDB 11.5.1_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes) _for unit results_
+{% hint style="info" %}
+This feature is available for unit results from [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes) or [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes), respectively.
+{% endhint %}
 
-The MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS capability enables the [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md) command for efficient batch processing. However, note that only one result (OK or ERROR) is returned per batch, containing the total affected rows and the first auto-generated ID. For individual results, the MARIADB\_CLIENT\_BULK\_UNIT\_RESULTS capability can be set. The server will then return a resultset containing for each unitary results (containing auto generated ids and affected rows)
+The `MARIADB_CLIENT_STMT_BULK_OPERATIONS` capability enables the [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md) command for efficient batch processing. However, note that only one result (`OK` or `ERROR`) is returned per batch, containing the total affected rows and the first auto-generated ID. For individual results, the `MARIADB_CLIENT_BULK_UNIT_RESULTS` capability can be set. The server will then return a result set containing for each unitary results (containing auto generated ids and affected rows).
 
 **Example**
 
-java code:
+Java code:
 
 ```java
 Statement stmt = connection.createStatement();
@@ -147,7 +152,7 @@ try (PreparedStatement prep = connection.prepareStatement("INSERT INTO test_tabl
 }
 ```
 
-client send :
+Client send :
 
 ```
 MARIADB_CLIENT_STMT_BULK_OPERATIONS:
@@ -159,7 +164,7 @@ MARIADB_CLIENT_STMT_BULK_OPERATIONS:
 +------+--------------------------------------------------+------------------+
 ```
 
-server response:
+Server response:
 
 ```
 OK_Packet:
@@ -173,17 +178,19 @@ OK_Packet:
 +------+--------------------------------------------------+------------------+
 ```
 
-### Authentication Plugins
+## Authentication Plugins
 
 MariaDB has specific authentication methods.
 
-* [ED25519 plugin](1-connecting/connection.md#client_ed25519-plugin) since [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
-* [PARSEC plugin](1-connecting/connection.md#parsec-plugin) since [MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes)
-* [GSSAPI plugin](1-connecting/connection.md#auth_gssapi_client-plugin) since [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes)
+* [ED25519 plugin](1-connecting/connection.md#client_ed25519-plugin)&#x20;
+* [PARSEC plugin](1-connecting/connection.md#parsec-plugin) (from MariaDB 11.6.1)
+* [GSSAPI plugin](1-connecting/connection.md#auth_gssapi_client-plugin)
 
-### Redirection
+## Redirection
 
-_since_ [_MariaDB 11.3.1_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-1-release-notes) _or Maxscale 25.08.0_
+{% hint style="info" %}
+This feature is available from MariaDB 11.3.1 or MaxScale 25.08.0, respectively.
+{% endhint %}
 
 MariaDB permits [connection redirection](../../ha-and-performance/connection-redirection-mechanism-in-the-mariadb-clientserver-protocol.md).
 
@@ -197,65 +204,71 @@ Connectors can support 2 different levels:
 * On Connection Creation only: The redirection information is included in the initial [OK\_Packet](4-server-response-packets/ok_packet.md#server-status-flag) sent by the server to the client. This allows the client to connect directly to the target server immediately.
 * Anytime Redirection: If redirection information becomes available later, the connector can handle it based on the existing transaction state.
   * No Transaction: If no transaction is in progress, the connector can redirect the connection directly.
-  * Transaction in Progress: If a transaction is ongoing, the redirection information is stored until the transaction is completed. The transaction state is determined using server status flags like SERVER\_STATUS\_IN\_TRANS in the "OK\_Packet," "ERR\_Packet," or "EOF\_Packet."
+  * Transaction in Progress: If a transaction is ongoing, the redirection information is stored until the transaction is completed. The transaction state is determined using server status flags like `SERVER_STATUS_IN_TRANS` in the "`OK_Packet`," "`ERR_Packet`," or "`EOF_Packet`."
 
-### Zero-Configuration SSL
+## Zero-Configuration SSL
 
-**Note**: This feature is available since [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-1-release-notes)
+{% hint style="info" %}
+This feature is available from MariaDB 11.4.1.
+{% endhint %}
 
 A feature that enables TLS certificate validation without requiring client-side certificate configuration.
 
-#### Limitations
+### Limitations
 
-* required a non empty password
+* Requires a nonempty password.
 * Only supports the following authentication methods:
   * `mysql_native_password`
   * `client_ed25519`
   * `parsec`
 
-#### Operational Mechanism
+### Operational Mechanism
 
-**Server-Side Process**
+#### **Server-Side Process**
 
-1. When no SSL certificates are pre-configured, the server automatically generates a temporary self-signed certificate
-2. During connection establishment, the server embeds a special validation hash in the connection's "OK\_Packet" information field
+1. When no SSL certificates are pre-configured, the server automatically generates a temporary self-signed certificate.
+2. During connection establishment, the server embeds a special validation hash in the connection's "OK\_Packet" information field.
 
-**Client-Side Process**
+#### **Client-Side Process**
 
-1. The client connector must postpone SSL error handling until the connection phase is complete
-2. The client captures and stores the SHA256 fingerprint of the server's certificate
-3. If SSL errors occur, the client can only use specific authentication plugins (mysql\_native\_password/ed25519/parsec) to prevent potential password exposure
-4. At connection conclusion, the server sends an OK\_Packet with a validation hash
+1. The client connector must postpone SSL error handling until the connection phase is complete.
+2. The client captures and stores the SHA256 fingerprint of the server's certificate.
+3. If SSL errors occur, the client can only use specific authentication plugins (`mysql_native_password`/`ed25519`/`parsec`) to prevent potential password exposure.
+4. At connection conclusion, the server sends an OK\_Packet with a validation hash.
 5. The client generates a hash using:
 
-* The password hash
-* The server's seed
-* Stored certificate fingerprint
+* The password hash;
+* The server's seed;
+* Stored certificate fingerprint.
 
-1. The SSL-error connection proceeds only if the client-generated hash matches the server-provided hash
+{% hint style="warning" %}
+The SSL-error connection proceeds only if the client-generated hash matches the server-provided hash.
+{% endhint %}
 
 #### Password Hash Generation Methods
 
-* mysql\_native\_password:
-  * Hash generation: SHA1(SHA1(password))
-* ed25519:
-  * Uses the Ed25519 cryptographic algorithm for hash generation
-* parsec:
+* `mysql_native_password`:
+  * Hash generation: `SHA1`(`SHA1`(password)).
+* `ed25519`:
+  * Uses the Ed25519 cryptographic algorithm for hash generation.
+* `parsec`:
   * Hash generation involves combining
-    * 'P' character
-    * Number of iterations
-    * Salt
-    * Raw public key
+    * 'P' character;
+    * Number of iterations;
+    * Salt;
+    * Raw public key.
 
-### Initial Session Tracking
+## Initial Session Tracking
 
-MySQL 5.7.0 and [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) support session tracking when the CLIENT\_SESSION\_TRACK capability is set.
+MySQL and MariaDB support session tracking when the `CLIENT_SESSION_TRACK` capability is set.
 
-One difference is that since [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes), connection ending OK\_Packet lists all the current variables of tracked variable.
+{% hint style="info" %}
+One difference is that, since MariaDB 11.5.1, connection ending `OK_Packet` lists all the current variables of tracked variable.
+{% endhint %}
 
-This is usefull for connector having method to set transaction type, retrieving database for example to always have the server current value when changed. This permit to avoid executing some queries when not needed
+This is useful for connectors which have a method to set the transaction type, retrieving database for example to always have the server current value when changed. This permit to avoid executing some queries when not needed
 
-Example of ending connection OK\_Packet :
+Example of ending connection `OK_Packet` :
 
 ```
 +--------------------------------------------------+
@@ -284,57 +297,55 @@ It indicates:
 * character\_set\_results = utf8mb4
 * redirect\_url =
 
-A connector knows that character\_set\_client set to utf8mb4, then could avoid executing a command like "SET NAMES utf8mb4" commands for example.
+A connector knows that `character_set_client` set to `utf8mb4`, then could avoid executing a command like "`SET NAMES utf8mb4`".
 
-### MySQL Features Not Supported
+## MySQL Features Not Supported
 
-* X protocol is not supported
+* The X protocol is not supported.
 
 Unsupported features and associate capabilities:
 
-* CLIENT\_OPTIONAL\_RESULTSET\_METADATA: permits setting no METADATA at all for a connection. See [Prepare statement skipping metadata](mariadb-protocol-differences-with-mysql.md#prepare-statement-skipping-metadata)'s MariaDB implementation choice.
-* CLIENT\_QUERY\_ATTRIBUTES adds some metadata attributes
-* CLIENT\_ZSTD\_COMPRESSION\_ALGORITHM permits zstd compression
-* MULTI\_FACTOR\_AUTHENTICATION Multifactor Authentication capability.
+* `CLIENT_OPTIONAL_RESULTSET_METADATA`: permits setting no `METADATA` at all for a connection. See [Prepare statement skipping metadata](mariadb-protocol-differences-with-mysql.md#prepare-statement-skipping-metadata)'s MariaDB implementation choice.
+* `CLIENT_QUERY_ATTRIBUTES` adds some metadata attributes
+* `CLIENT_ZSTD_COMPRESSION_ALGORITHM` permits zstd compression
+* `MULTI_FACTOR_AUTHENTICATION` Multifactor Authentication capability.
 
-### TIPS
+## TIPS
 
-#### Identifying MariaDB Server
+### Identifying MariaDB Server
 
 MariaDB connectors use specific criteria to determine if a server is a MariaDB instance during the initial handshake process.
 
 The two key indicators used are:
 
-* Missing CLIENT\_MYSQL Capability: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and newer versions do not set the CLIENT\_MYSQL capability flag in the initial handshake packet.
-* Server Version String: The server's version string is examined for the presence of the word "mariadb" (ignoring case sensitivity).
+* Missing `CLIENT_MYSQL` capability: MariaDB does not set the `CLIENT_MYSQL` capability flag in the initial handshake packet.
+* Server version string: The server's version string is examined for the presence of the word "mariadb" (ignoring case sensitivity).
 
-The reason is some features like using COM\_RESET\_CONNECTION has no capability, and depend on the MySQL or MariaDB server version.
+The reason is that some features like using `COM_RESET_CONNECTION` has no capability, and depend on the MySQL or MariaDB server version.
 
-#### Pipelining Prepare Execute
+### Pipelining Prepare Execute
 
 Connectors usually follow a two-step process for prepared statements:
 
-* Prepare: Send a [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) command to the server, receiving a statement ID in response.
-* Execute: Send a [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) command, using the statement ID obtained in the previous step.
+1. Prepare: Send a [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) command to the server, receiving a statement ID in response.
+2. Execute: Send a [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) command, using the statement ID obtained in the previous step.
 
-When the server support MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS capability (since [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)), a specific statement ID value of -1 (or 0xffffffff in hexadecimal) can be used to indicate that the previously prepared statement could be reused. This enables connectors to pipeline the preparation and execution steps into a single request:
+When the server support `MARIADB_CLIENT_STMT_BULK_OPERATIONS` capability, a specific statement ID value of `-1` (or 0xffffffff in hexadecimal) can be used to indicate that the previously prepared statement can be reused. This enables connectors to pipeline the preparation and execution steps into a single request:
 
-* Send a [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) then a [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) with statement ID -1 (0xffffffff) commands to the server.
-* Read the prepare and execute responses
+* Send a [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) then a [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) with statement ID `-1` (0xffffffff) commands to the server.
+* Read the prepare and execute responses.
 
-If the [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) command returns an error (ERR\_Packet), the subsequent [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) with statement ID -1 will also fail and return an error.
+If the [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) command returns an error (`ERR_Packet`), the subsequent [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) with statement ID `-1`  also fails and returns an error.
 
-By eliminating the round trip for the separate COM\_STMT\_EXECUTE command, this approach improves performance for the first execution.
+By eliminating the round trip for the separate `COM_STMT_EXECUTE` command, this approach improves performance for the first execution.
 
-Traditionally, connectors send [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md), wait for results, then execute [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) with statement\_id received from the prepare result.
+Traditionally, connectors send [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md), wait for results, then execute [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) with `statement_id` received from the prepare result.
 
-This description has been done for [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md), but [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md) works exactly the same way.
+This description is for [COM\_STMT\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md), but [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md) works exactly the same way.
 
-#### Query Timeout
+### Query Timeout
 
-_Since_ [_MariaDB 10.1.2_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes)
-
-Setting a timeout for all commands can be set using `SET max_statement_time=XXX` with XXX in seconds.
+A timeout for all commands can be set using `SET max_statement_time=XXX` with XXX in seconds.
 
 Setting it for a specific query can be done using `SET STATEMENT max_statement_time=XXX FOR ...`
 
@@ -342,11 +353,9 @@ Setting it for a specific query can be done using `SET STATEMENT max_statement_t
 
 Connectors don't care about collations, but normally want to ensure charset in connection exchanges.
 
-The only good solution is to use `SET NAMES utf8mb4` or `SET NAMES utf8mb4 COLLATE someUtf8mb4collation`
+The only good solution is to use `SET NAMES utf8mb4` or `SET NAMES utf8mb4 COLLATE someUtf8mb4collation` .
 
-If supporting session tracking, connectors can check if charset of initial tracked variable 'character\_set\_connection' corresponds to the expected value, then permit skipping this SET NAMES command.
-
-( 'server default collation' from [initial handshare packet](1-connecting/connection.md#initial-handshake-packet) cannot be trusted, since truncated to one byte. Recent mysql and mariadb collation can go on 2 bytes)
+If they support session tracking, connectors can check if the character set of initially tracked variable `character_set_connection` corresponds to the expected value, then permit skipping this `SET NAMES` statement ( 'server default collation' from [initial handshare packet](1-connecting/connection.md#initial-handshake-packet) cannot be trusted, since truncated to one byte. Recent mysql and mariadb collation can go on 2 bytes).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -28,23 +28,25 @@ String type:
 
 ### Fixed length bytes
 
-The notation is "byte"
+The notation is "byte".
 
-A fixed-length bytes stores the value in a series of n bytes.
+A fixed-length byte stores the value in a series of n bytes.
 
 ### Length encoded bytes
 
-The notation is "byte"\
+The notation is "byte".
+
 Length encoded bytes are prefixed by a length-encoded integer which describes the length of the byte value, followed by the bytes value.
 
 ### End of file length bytes
 
-The notation is "byte"\
+The notation is "byte".
+
 Bytes whose length will be calculated by the packet remaining length.
 
 ### Fixed length integers
 
-Notation is "int"
+Notation is "int".
 
 A fixed-length integer stores the value in a series of n bytes. The least significant byte is\
 always the first byte (little-endian format).
@@ -55,7 +57,8 @@ An int<4> with value 2 is stored as`02 00 00 00`
 
 ### Length encoded integers
 
-The notation is "int"\
+The notation is "int".
+
 An integer which depending on its value is represented by n bytes.
 
 The first byte represents the size of the integer:
@@ -70,36 +73,42 @@ If the value of first byte is
 
 ### Fixed-length strings
 
-The notation is "string"\
+The notation is "string".
+
 Fixed-length strings have a known hardcoded length.
 
 ### Null-terminated strings
 
-The notation is "string"\
+The notation is "string".
+
 Null-terminated strings have a variable size and are terminated by a 0x00 character
 
 ### Length-encoded strings
 
-The notation is "string"\
+The notation is "string".
+
 Length-encoded strings are prefixed by a length-encoded integer which describes the length of the string, followed by the string value.
 
 #### Example
 
-An string of 512 "a" will be encoded in 515 bytes :
+An string of 512 "a" is encoded in 515 bytes :
 
 |                                                 |                                |
 | ----------------------------------------------- | ------------------------------ |
 | fc 00 02 97 97 97 97 97 97 97 97 97 97 97 97 97 | ² .. a a a a a a a a a a a a a |
 
 ...\
-Null value will be encoded using null (0xfb) length.\
-Empty value will be encoded with a 0 (0x00) length.
+The NULL value is encoded using null (0xfb) length.
+
+An empty value is encoded with a 0 (0x00) length.
 
 ### End of file length strings
 
-The notation is "string"\
-Strings whose length will be calculated by the packet remaining length.\
-For an example see [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) packet.
+The notation is "string".
+
+Strings whose length is calculated by the packet remaining length.
+
+For an example, see the [COM\_STMT\_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) packet.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
