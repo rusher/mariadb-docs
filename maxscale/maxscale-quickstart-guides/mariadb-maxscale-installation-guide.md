@@ -4,11 +4,11 @@ description: MariaDB MaxScale installation quickstart guide
 
 # MariaDB MaxScale Installation Guide
 
-### Quickstart Guide: MariaDB MaxScale
+## Quickstart Guide: MariaDB MaxScale
 
 MariaDB MaxScale is an advanced, open-source database proxy that provides intelligent routing, load balancing, high availability, and security features for your MariaDB and MySQL deployments. It acts as an intermediary, forwarding database statements to one or more backend database servers based on configured rules and server roles, all transparently to your applications.
 
-#### 1. Key Concepts
+### 1. Key Concepts
 
 To understand MaxScale, familiarize yourself with these core components:
 
@@ -19,11 +19,11 @@ To understand MaxScale, familiarize yourself with these core components:
 * **Listeners:** Define how clients connect to MaxScale (port, protocol) and which service they connect to.
 * **Filters:** Optional components that can inspect, modify, or log queries as they pass through MaxScale (e.g., `qlafilter` for auditing).
 
-#### 2. Installation
+### 2. Installation
 
 MariaDB MaxScale is typically installed from the official MariaDB repositories.
 
-**a. Add MariaDB Repository:**
+#### **a. Add MariaDB Repository:**
 
 Use the MariaDB Repository Configuration Tool (search "MariaDB Repository Generator") to get specific instructions for your OS and MaxScale version.
 
@@ -43,11 +43,11 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
 sudo dnf install -y maxscale
 ```
 
-#### 3. Basic Configuration (`/etc/maxscale.cnf`)
+### 3. Basic Configuration
 
 MaxScale's configuration is primarily done in its main configuration file in `/etc/maxscale.cnf`.
 
-**a. Define Servers:**
+#### **a. Define Servers:**
 
 Add a section for each of your backend MariaDB servers.
 
@@ -65,7 +65,7 @@ address=192.168.1.102
 port=3307
 ```
 
-**b. Define a Monitor:**
+#### **b. Define a Monitor:**
 
 This section tells MaxScale how to monitor your backend servers' health and roles and groups them into a cluster of servers.
 
@@ -88,18 +88,18 @@ monitor_interval=5s
 ```sql
 CREATE USER 'maxscale_monitor'@'%' IDENTIFIED BY 'monitor_password';
 GRANT 
-BINLOG ADMIN, BINLOG MONITOR, 
-CONNECTION ADMIN, READ_ONLY ADMIN,
-REPLICATION SLAVE ADMIN, SLAVE MONITOR,
-RELOAD, PROCESS, SUPER, EVENT, SET USER,
-SHOW DATABASES
-ON *.* 
-TO `maxscale_monitor`@`%`
+  BINLOG ADMIN, BINLOG MONITOR, 
+  CONNECTION ADMIN, READ_ONLY ADMIN,
+  REPLICATION SLAVE ADMIN, SLAVE MONITOR,
+  RELOAD, PROCESS, SUPER, EVENT, SET USER,
+  SHOW DATABASES
+  ON *.* 
+  TO `maxscale_monitor`@`%`
 GRANT SELECT ON mysql.global_priv TO 'maxscale_monitor'@'%';
 GRANT SELECT ON mysql.global_priv TO 'maxscale_monitor'@'%';
 ```
 
-**c. Define a Service (e.g., Read-Write Split):**
+#### **c. Define a Service (e.g., Read-Write Split):**
 
 This configures how MaxScale routes queries. The readwritesplit router is very common for replication setups as it load balances read while routing writes to the primary node.
 
@@ -129,7 +129,7 @@ GRANT SELECT ON mysql.roles_mapping TO 'maxscale_user'@'%';
 GRANT SHOW DATABASES ON *.* TO 'maxscale_user'@'%';
 ```
 
-**d. Define a Listener:**
+#### **d. Define a Listener:**
 
 This specifies the port and protocol MaxScale will listen on for incoming client connections and which service to direct them to.
 
@@ -142,7 +142,7 @@ service=Read-Write-Service
 port=3306
 ```
 
-**e. Global MaxScale Configuration (usually at the top of `maxscale.cnf`):**
+#### **e. Global MaxScale Configuration (usually at the top of `maxscale.cnf`):**
 
 ```ini
 [maxscale]
@@ -150,7 +150,7 @@ port=3306
 threads=auto
 ```
 
-#### 4. Complete Configuration
+### 4. Complete Configuration
 
 Your `/etc/maxscale.cnf` should now look like this:
 
@@ -188,7 +188,7 @@ service=Read-Write-Service
 port=3306
 ```
 
-#### 5. Start and Enable MaxScale
+### 5. Start and Enable MaxScale
 
 After configuring `maxscale.cnf`, start and enable the MaxScale service.
 
@@ -198,7 +198,7 @@ sudo systemctl enable maxscale
 sudo systemctl status maxscale # Check status
 ```
 
-#### 6. Basic Usage and Verification
+### 6. Basic Usage and Verification
 
 Once MaxScale is running, configure your applications to connect to MaxScale's listener port instead of directly to a MariaDB server.
 
