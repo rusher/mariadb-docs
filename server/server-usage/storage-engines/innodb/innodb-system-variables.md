@@ -2417,7 +2417,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_stats_persistent`
 
-* Description: [ANALYZE TABLE](../../../reference/sql-statements/table-statements/analyze-table.md) produces index statistics, and this setting determines whether they will be stored on disk, or be required to be recalculated more frequently, such as when the server restarts. This information is stored for each table, and can be set with the STATS\_PERSISTENT clause when creating or altering tables (see [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md)). See [InnoDB Persistent Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
+* Description: [ANALYZE TABLE](../../../reference/sql-statements/table-statements/analyze-table.md) produces index statistics, and this setting determines whether they are stored on disk, or be required to be recalculated more frequently, such as when the server restarts. This information is stored for each table, and can be set with the STATS\_PERSISTENT clause when creating or altering tables (see [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md)). See [InnoDB Persistent Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
 * Command line: `--innodb-stats-persistent={0|1}`
 * Scope: Global
 * Dynamic: Yes

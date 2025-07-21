@@ -38,7 +38,7 @@ instance specifying `charset=UTF8`) in which some characters may be\
 represented with several bytes. Unlike the type size that MariaDB interprets as\
 a number of characters, the `lrecl` value is the record size in bytes and the\
 flag value represents the offset of the field in the record in bytes. If the\
-flag and/or the `lrecl` value are not specified, they will be calculated by\
+flag and/or the `lrecl` value are not specified, they are calculated by\
 the number of characters in the fields multiplied by a value that is the\
 maximum size in bytes of a character for the corresponding charset. For UTF-8\
 this value is 3 which is often far too much as there are very few characters\

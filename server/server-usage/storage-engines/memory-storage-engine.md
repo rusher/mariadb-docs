@@ -4,7 +4,7 @@ Contents of the MEMORY storage engine (previously known as HEAP) are stored in m
 
 It is best-used for read-only caches of data from other tables, or for temporary work areas.
 
-Since the data is stored in memory, it is highly vulnerable to power outages or hardware failure, and is unsuitable for permanent data storage. In fact, after a server restart, `MEMORY` tables are recreated (because the definition file is stored on disk), but they will be empty. It is possible to re-populate them with a query using the `--init-file` server startup option.
+Since the data is stored in memory, it is highly vulnerable to power outages or hardware failure, and is unsuitable for permanent data storage. In fact, after a server restart, `MEMORY` tables are recreated (because the definition file is stored on disk), but they are empty. It is possible to re-populate them with a query using the `--init-file` server startup option.
 
 Variable-length types like [VARCHAR](../../reference/data-types/string-data-types/varchar.md) can be used in MEMORY tables. [BLOB](../../reference/data-types/string-data-types/blob.md) or [TEXT](../../reference/data-types/string-data-types/text.md) columns are not supported for MEMORY tables.
 

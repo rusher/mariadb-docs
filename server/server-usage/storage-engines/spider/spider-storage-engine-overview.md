@@ -54,7 +54,7 @@ ENGINE=SPIDER
 COMMENT='host "127.0.0.1", user "msandbox", password "msandbox", port "8607"';
 ```
 
-Records can now be inserted on the local server, and they will be stored on the remote server:
+Records can now be inserted on the local server, and they are stored on the remote server:
 
 ```sql
 INSERT INTO s(code) VALUES ('a');

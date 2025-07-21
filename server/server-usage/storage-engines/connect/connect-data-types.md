@@ -216,9 +216,9 @@ A special case is DATE columns with a DATE\_FORMAT specified. Any value not matc
 
 CONNECT leaves the decision to you. When declaring a column in the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md)\
 statement, if it is declared NOT NULL, blank or zero values are considered\
-as valid values. Otherwise they will be considered as NULL values. In all\
+as valid values. Otherwise they are considered as NULL values. In all\
 cases, nulls are replaced on insert or update by pseudo null values, a zero-length character string for text types or a zero value for numeric types. Once\
-converted to pseudo null values, they will be recognized as NULL only for\
+converted to pseudo null values, they are recognized as NULL only for\
 columns declared as nullable.
 
 For instance:
