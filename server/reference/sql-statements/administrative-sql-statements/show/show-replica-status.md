@@ -222,7 +222,7 @@ Additional behavior to be aware of:
 
 **Executed\_log\_entries:** Number of binary log events that have been executed, irrespective of error outcome (i.e. if the event execution results in an error, this number will still increase). Returned with `SHOW ALL SLAVES STATUS` only.
 
-**Slave\_received\_heartbeats:** Number of [Heartbeat Log Events](../../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/heartbeat_log_event.md) that the slave has received. Note this counter does not reset when the slave is restarted; only when a new [CHANGE MASTER](../replication-statements/change-master-to.md) command has executed. Returned with `SHOW ALL SLAVES STATUS` only.
+**Slave\_received\_heartbeats:** Number of [Heartbeat Log Events](../../../clientserver-protocol/replication-protocol/heartbeat_log_event.md) that the slave has received. Note this counter does not reset when the slave is restarted; only when a new [CHANGE MASTER](../replication-statements/change-master-to.md) command has executed. Returned with `SHOW ALL SLAVES STATUS` only.
 
 **Slave\_heartbeat\_period:** Configured (by [CHANGE MASTER TO MASTER\_HEARTBEAT\_PERIOD](../replication-statements/change-master-to.md#master_heartbeat_period)) interval in seconds between replication heartbeats. Returned with `SHOW ALL SLAVES STATUS` only.
 

@@ -34,11 +34,11 @@ The first two fields together are called _ext-salt_, extended salt.
 
 #### Login Process, Packet Exchange
 
-1. The server sends an [Authentication Switch Request](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection.md#authentication-switch-request) with a 32-byte random scramble.
-2. The client sends an empty packet to the server to request the [ext-salt](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection.md#parsec-plugin).
-3. The server sends the [ext-salt](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection.md#parsec-plugin) to the client.
+1. The server sends an [Authentication Switch Request](../../clientserver-protocol/1-connecting/connection.md#authentication-switch-request) with a 32-byte random scramble.
+2. The client sends an empty packet to the server to request the [ext-salt](../../clientserver-protocol/1-connecting/connection.md#parsec-plugin).
+3. The server sends the [ext-salt](../../clientserver-protocol/1-connecting/connection.md#parsec-plugin) to the client.
 4. The client sends the random 32-byte scramble, and the `concat(server scramble, client scramble)` ed25519-signed by a secret key generated from the function `PBKDF2(password, ext-salt)`.
-5. The server replies with ["ok"](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/4-server-response-packets/ok_packet.md) or ["access denied"](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/4-server-response-packets/err_packet.md).
+5. The server replies with ["ok"](../../clientserver-protocol/4-server-response-packets/ok_packet.md) or ["access denied"](../../clientserver-protocol/4-server-response-packets/err_packet.md).
 
 ### Installing
 

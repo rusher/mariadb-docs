@@ -251,7 +251,7 @@ con.connect(function(err) {
 
 (need to map out a few other connectors here to make sure it’s supported well in this form).
 
-Ref: [connection.md#handshake-response-packet](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection.md#handshake-response-packet)
+Ref: [connection.md#handshake-response-packet](../../../reference/clientserver-protocol/1-connecting/connection.md#handshake-response-packet)
 
 ## Migration of Existing MariaDB Original Mode to the New Catalog Layout
 
