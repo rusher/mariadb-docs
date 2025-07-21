@@ -1,0 +1,15 @@
+# Error 1722: Statements writing to a table with an auto-increment column after selecting from another
+
+| Error Code | SQLSTATE | Error                                      | Description                                                                                                                                                                                                                                                                   |
+| ---------- | -------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1722       | HY000    | ER\_BINLOG\_UNSAFE\_WRITE\_AUTOINC\_SELECT | Statements writing to a table with an auto-increment column after selecting from another table are unsafe because the order in which rows are retrieved determines what (if any) rows will be written. This order cannot be predicted and may differ on master and the slave. |
+
+## Possible Causes and Solutions
+
+{% hint style="success" %}
+This article doesn't currently contain any content. [You can help!](../../../../about/readme/contributing-documentation.md)
+{% endhint %}
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+{% @marketo/form formId="4316" %}
