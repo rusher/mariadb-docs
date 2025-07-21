@@ -36,6 +36,7 @@
     * [Backup and Restore with Shared Local Storage](management/column-store-backup-and-restore/mariadb-enterprise-columnstore-backup-and-restore-with-shared-local-storage.md)
   * [Extent Map Backup & Recovery](management/extent-map-backup-recovery.md)
   * [System Troubleshooting MariaDB ColumnStore](management/system-troubleshooting-mariadb-columnstore.md)
+  * [ColumnStore and Recursive CTE Limitations](management/columnstore-and-recursive-cte-limitations.md)
 * [Security](security/README.md)
   * [ColumnStore Security Vulnerabilities](security/columnstore-security-vulnerabilities.md)
   * [Credentials Management](security/enterprise-columnstore-credentials-management.md)
