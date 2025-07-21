@@ -1676,7 +1676,6 @@
 * [Rpl\_semi\_sync\_master\_tx\_wait\_time](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_tx_wait_time)
 * [Rpl\_semi\_sync\_master\_tx\_waits](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_tx_waits)
 * [rpl\_semi\_sync\_master\_wait\_for\_slave\_count](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_for_slave_count)
-* [rpl\_semi\_sync\_master\_wait\_no\_slave](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_no_slave)
 * [rpl\_semi\_sync\_master\_wait\_point](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_point)
 * [Rpl\_semi\_sync\_master\_wait\_pos\_backtraverse](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_wait_pos_backtraverse)
 * [Rpl\_semi\_sync\_master\_wait\_sessions](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_wait_sessions)
