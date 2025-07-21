@@ -14,6 +14,8 @@ The server has insufficient free disk space to create the database. Free up spac
 
 There may be a file permission issue on the data directories. Check both the user and group permissions and set accordingly.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
+
+<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formId="4316" %}

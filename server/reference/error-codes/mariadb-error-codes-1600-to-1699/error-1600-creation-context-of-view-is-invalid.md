@@ -10,4 +10,6 @@
 
 {% include "../../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
 
+<!-- This page is licensed: CC BY-SA / Gnu FDL -->
+
 {% @marketo/form formId="4316" %}
