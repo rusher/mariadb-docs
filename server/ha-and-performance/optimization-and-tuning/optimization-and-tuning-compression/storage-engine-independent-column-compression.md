@@ -15,7 +15,7 @@ When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; f
 #### `column_compression_threshold`
 
 * Description: Minimum column data length eligible for compression.
-* Commandline: `--column-compression-threshold=#`
+* Command line: `--column-compression-threshold=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -25,7 +25,7 @@ When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; f
 #### `column_compression_zlib_level`
 
 * Description: zlib compression level (1 gives best speed, 9 gives best compression).
-* Commandline: `--column-compression-zlib-level=#`
+* Command line: `--column-compression-zlib-level=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -35,7 +35,7 @@ When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; f
 #### `column_compression_zlib_strategy`
 
 * Description: The strategy parameter is used to tune the compression algorithm. Use the value `DEFAULT_STRATEGY` for normal data, `FILTERED` for data produced by a filter (or predictor), `HUFFMAN_ONLY` to force Huffman encoding only (no string match), or `RLE` to limit match distances to one (run-length encoding). Filtered data consists mostly of small values with a somewhat random distribution. In this case, the compression algorithm is tuned to compress them better. The effect of `FILTERED` is to force more Huffman coding and less string matching; it is somewhat intermediate between `DEFAULT_STRATEGY` and `HUFFMAN_ONLY`. `RLE` is designed to be almost as fast as `HUFFMAN_ONLY`, but give better compression for PNG image data. The strategy parameter only affects the compression ratio but not the correctness of the compressed output even if it is not set appropriately. `FIXED` prevents the use of dynamic Huffman codes, allowing for a simpler decoder for special applications.
-* Commandline: `--column-compression-zlib-strategy=#`
+* Command line: `--column-compression-zlib-strategy=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `enum`
@@ -45,7 +45,7 @@ When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; f
 #### `column_compression_zlib_wrap`
 
 * Description: If set to `1` (`0` is default), generate zlib header and trailer and compute adler32 check value. It can be used with storage engines that don't provide data integrity verification to detect data corruption.
-* Commandline: `--column-compression-zlib-wrap{=0|1}`
+* Command line: `--column-compression-zlib-wrap{=0|1}`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`

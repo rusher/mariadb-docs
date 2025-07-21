@@ -8,7 +8,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 * Description: The number of connections on the [extra\_port](thread-pool-system-status-variables.md#extra_port).
   * See [Thread Pool in MariaDB: Configuring the Extra Port](thread-pool-in-mariadb.md#configuring-the-extra-port) for more information.
-* Commandline: `--extra-max-connections=#`
+* Command line: `--extra-max-connections=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -19,7 +19,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 * Description: Extra port number to use for TCP connections in a `one-thread-per-connection` manner. If set to `0`, then no extra port is used.
   * See [Thread Pool in MariaDB: Configuring the Extra Port](thread-pool-in-mariadb.md#configuring-the-extra-port) for more information.
-* Commandline: `--extra-port=#`
+* Command line: `--extra-port=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
@@ -31,7 +31,7 @@ This article describes the system and status variables used by the MariaDB threa
   * When the default `one-thread-per-connection` mode is enabled, the server uses one thread to handle each client connection.
   * When the `pool-of-threads` mode is enabled, the server uses the [thread pool](thread-pool-in-mariadb.md) for client connections.
   * When the `no-threads` mode is enabled, the server uses a single thread for all client connections, which is really only usable for debugging.
-* Commandline: `--thread-handling=name`
+* Command line: `--thread-handling=name`
 * Scope: Global
 * Dynamic: No
 * Data Type: `enumeration`
@@ -45,7 +45,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Description: If set to 1, then each group will have its own dedicated listener, and the listener thread will not pick up work items. As a result, the queueing time in the [Information Schema Threadpool\_Queues](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md) and the actual queue size in the [Information Schema Threadpool\_Groups](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table.md) table will be more exact, since\
   IO requests are immediately dequeued from poll, without delay.
   * This system variable is only meaningful on Unix.
-* Commandline: `thread-pool-dedicated-listener={0|1}`
+* Command line: `thread-pool-dedicated-listener={0|1}`
 * Scope:
 * Dynamic:
 * Data Type: `boolean`
@@ -57,7 +57,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Description: If set to 1, provides better queueing time statistics by using a high precision timestamp, at a small performance cost, for the time when the connection was added to the queue. This timestamp helps\
   calculate the queuing time shown in the [Information Schema Threadpool\_Queues](../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md) table.
   * This system variable is only meaningful on Unix.
-* Commandline: `thread-pool-exact-stats={0|1}`
+* Command line: `thread-pool-exact-stats={0|1}`
 * Scope:
 * Dynamic:
 * Data Type: `boolean`
@@ -69,7 +69,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Description: The number of seconds before an idle worker thread exits. The default value is `60`. If there is currently no work to do, how long should an idle thread wait before exiting?
   * This system variable is only meaningful on Unix.
   * The [thread\_pool\_min\_threads](thread-pool-system-status-variables.md#thread_pool_min_threads) system variable is comparable for Windows.
-* Commandline: `thread-pool-idle-timeout=#`
+* Command line: `thread-pool-idle-timeout=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -81,7 +81,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Description: The maximum number of threads in the [thread pool](thread-pool-in-mariadb.md). Once this limit is reached, no new threads will be created in most cases.
   * On Unix, in rare cases, the actual number of threads can slightly exceed this, because each [thread group](thread-groups-in-the-unix-implementation-of-the-thread-pool.md) needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
 * Scope:
-* Commandline: `thread-pool-max-threads=#`
+* Command line: `thread-pool-max-threads=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -97,7 +97,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Description: Minimum number of threads in the [thread pool](thread-pool-in-mariadb.md). In bursty environments, after a period of inactivity, threads would normally be retired. When the next burst arrives, it would take time to reach the optimal level. Setting this value higher than the default would prevent thread retirement even if inactive.
   * This system variable is only meaningful on Windows.
   * The [thread\_pool\_idle\_timeout](thread-pool-system-status-variables.md#thread_pool_idle_timeout) system variable is comparable for Unix.
-* Commandline: `thread-pool-min-threads=#`
+* Command line: `thread-pool-min-threads=#`
 * Data Type: `numeric`
 * Default Value: `1`
 * Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
@@ -119,7 +119,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 * Description: Time in milliseconds before a dequeued low-priority statement is moved to the high-priority queue.
   * This system variable is only meaningful on Unix.
-* Commandline: `thread-pool-kickup-timer=#`
+* Command line: `thread-pool-kickup-timer=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -132,7 +132,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 * Description: [Thread pool](thread-pool-in-mariadb.md) priority. High-priority connections usually start executing earlier than low-priority.\
   If set to 'auto' (the default), the actual priority (low or high) is determined by whether or not the connection is inside a transaction.
-* Commandline: `--thread-pool-priority=#`
+* Command line: `--thread-pool-priority=#`
 * Scope: Global,Connection
 * Data Type: `enum`
 * Default Value: `auto`
@@ -145,7 +145,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Description: The number of [thread groups](thread-groups-in-the-unix-implementation-of-the-thread-pool.md) in the [thread pool](thread-pool-in-mariadb.md), which determines how many statements can execute simultaneously. The default value is the number of CPUs on the system. When setting this system variable's value at system startup, the max value is 100000. However, it is not a good idea to set it that high. When setting this system variable's value dynamically, the max value is either 128 or the value that was set at system startup--whichever value is higher.
   * See [Thread Groups in the Unix Implementation of the Thread Pool](thread-groups-in-the-unix-implementation-of-the-thread-pool.md) for more information.
   * This system variable is only meaningful on Unix.
-* Commandline: `--thread-pool-size=#`
+* Command line: `--thread-pool-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -159,7 +159,7 @@ This article describes the system and status variables used by the MariaDB threa
   * See [Thread Groups in the Unix Implementation of the Thread Pool: Thread Group Stalls](thread-groups-in-the-unix-implementation-of-the-thread-pool.md#thread-group-stalls) for more information.
   * This system variable is only meaningful on Unix.
   * Note that if you are migrating from the MySQL Enterprise thread pool plugin, then the unit used in their implementation is 10ms, not 1ms.
-* Commandline: `--thread-pool-stall-limit=#`
+* Command line: `--thread-pool-stall-limit=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`

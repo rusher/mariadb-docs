@@ -170,7 +170,7 @@ FLUSH TABLE_STATISTICS
 ### `userstat`
 
 * Description: If set to `1`, user statistics will be activated.
-* Commandline: `--userstat=1`
+* Command line: `--userstat=1`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`

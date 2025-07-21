@@ -43,7 +43,7 @@ checksum computation outside of holding LOCK\_log, improving scalability. See [M
 `master_verify_checksum`
 
 * Description: Verify binlog checksums when reading events from the binlog on the primary.
-* Commandline: `--master_verify_checksum=[0|1]`
+* Command line: `--master_verify_checksum=[0|1]`
 * Scope: Global
 * Access Type: Can be changed dynamically
 * Data Type: `bool`
@@ -52,7 +52,7 @@ checksum computation outside of holding LOCK\_log, improving scalability. See [M
 `slave_sql_verify_checksum`
 
 * Description: Verify binlog checksums when the replica SQL thread reads events from the relay log.
-* Commandline: `--slave_sql_verify_checksum=[0|1]`
+* Command line: `--slave_sql_verify_checksum=[0|1]`
 * Scope: Global
 * Access Type: Can be changed dynamically
 * Data Type: `bool`

@@ -15,7 +15,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `--sql-error-log=value`
+* Command line: `--sql-error-log=value`
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
@@ -25,7 +25,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `sql_error_log_filename`
 
 * Description: The name (and optionally path) of the logfile containing the errors. Rotation will use a naming convention such as `sql_error_log_filename.001`. If no path is specified, the log file will be written to the [data directory](server-system-variables.md#datadir).
-* Commandline: `--sql-error-log-filename=value`
+* Command line: `--sql-error-log-filename=value`
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`
@@ -34,7 +34,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `sql_error_log_rate`
 
 * Description: The logging sampling rate. Setting to `10`, for example, means that one in ten errors will be logged. If set to zero, logging is disabled. The default, `1`, logs every error.
-* Commandline: `--sql-error-log-rate=#`
+* Command line: `--sql-error-log-rate=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -43,7 +43,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `sql_error_log_rotate`
 
 * Description: Setting to #1`forces log rotation.`
-* Commandline: `--sql-error-log-rate[={0|1}]`
+* Command line: `--sql-error-log-rate[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -52,7 +52,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `sql_error_log_rotations`
 
 * Description: Number of rotations before the log is removed. When rotated, the current log file is stored and a new, empty, log is created. Any rotations older than this setting are removed.
-* Commandline: `--sql-error-log-rotations=#`
+* Command line: `--sql-error-log-rotations=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -62,7 +62,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `sql_error_log_size_limit`
 
 * Description: The log file size limit in bytes. After reaching this size, the log file is rotated.
-* Commandline: `--sql-error-log-size-limit=#`
+* Command line: `--sql-error-log-size-limit=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
@@ -72,7 +72,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `sql_error_log_warnings`
 
 * Description: If set, log warnings in addition to errors.
-* Commandline: `--sql-error-log-warnings={0,1}`
+* Command line: `--sql-error-log-warnings={0,1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -82,7 +82,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `sql_error_log_with_db_and_thread_info`
 
 * Description: If enabled, it prints the database name and the thread ID in the log in addition to already existing columns.
-* Commandline: `--sql-error-log-with-db-and-thread-info=value`
+* Command line: `--sql-error-log-with-db-and-thread-info=value`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`

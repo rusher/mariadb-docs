@@ -178,7 +178,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 #### `rpl_semi_sync_master_enabled`
 
 * Description: Set to `ON` to enable semi-synchronous replication primary. Disabled by default.
-* Commandline: `--rpl-semi-sync-master-enabled[={0|1}]`
+* Command line: `--rpl-semi-sync-master-enabled[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -189,7 +189,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 * Description: The timeout value, in milliseconds, for semi-synchronous replication in the primary. If this timeout is exceeded in waiting on a commit for acknowledgement from a replica, the primary will revert to asynchronous replication.
   * When a timeout occurs, the [Rpl\_semi\_sync\_master\_status](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status) status variable will also be switched to `OFF`.
   * See [Configuring the Primary Timeout](semisynchronous-replication.md#configuring-the-primary-timeout) for more information.
-* Commandline: `--rpl-semi-sync-master-timeout[=#]`
+* Command line: `--rpl-semi-sync-master-timeout[=#]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -203,7 +203,7 @@ The effects of the `AFTER_COMMIT` wait point are:
   * `16`: More detailed level, with more verbose information.
   * `32`: Net wait level, including more information about network waits.
   * `64`: Function level, including information about function entries and exits.
-* Commandline: `--rpl-semi-sync-master-trace-level[=#]`
+* Command line: `--rpl-semi-sync-master-trace-level[=#]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -236,7 +236,7 @@ The effects of the `AFTER_COMMIT` wait point are:
     5. Returns an acknowledgement to the client.
   * In [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `AFTER_COMMIT`.
   * See [Configuring the Primary Wait Point](semisynchronous-replication.md#configuring-the-primary-wait-point) for more information.
-* Commandline: `--rpl-semi-sync-master-wait-point=value`
+* Command line: `--rpl-semi-sync-master-wait-point=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enum`
@@ -246,7 +246,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 #### `rpl_semi_sync_slave_delay_master`
 
 * Description: Only write primary info file when ack is needed.
-* Commandline: `--rpl-semi-sync-slave-delay-master[={0|1}]`
+* Command line: `--rpl-semi-sync-slave-delay-master[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -255,7 +255,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 #### `rpl_semi_sync_slave_enabled`
 
 * Description: Set to `ON` to enable semi-synchronous replication replica. Disabled by default.
-* Commandline: `--rpl-semi-sync-slave-enabled[={0|1}]`
+* Command line: `--rpl-semi-sync-slave-enabled[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -264,7 +264,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 #### `rpl_semi_sync_slave_kill_conn_timeout`
 
 * Description: Timeout for the mysql connection used to kill the replica io\_thread's connection on primary. This timeout comes into play when stop slave is executed.
-* Commandline: `--rpl-semi-sync-slave-kill-conn-timeout[={0|1}]`
+* Command line: `--rpl-semi-sync-slave-kill-conn-timeout[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -274,7 +274,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 #### `rpl_semi_sync_slave_trace_level`
 
 * Description: The tracing level for semi-sync replication. The levels are the same as for [rpl\_semi\_sync\_master\_trace\_level](semisynchronous-replication.md#rpl_semi_sync_master_trace_level).
-* Commandline: `--rpl-semi-sync-slave-trace_level[=#]`
+* Command line: `--rpl-semi-sync-slave-trace_level[=#]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -296,7 +296,7 @@ The effects of the `AFTER_COMMIT` wait point are:
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `--rpl-semi-sync-master=value`
+* Command line: `--rpl-semi-sync-master=value`
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
@@ -311,7 +311,7 @@ The effects of the `AFTER_COMMIT` wait point are:
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
     * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `--rpl-semi-sync-slave=value`
+* Command line: `--rpl-semi-sync-slave=value`
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`

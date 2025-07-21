@@ -700,7 +700,7 @@ This can help protect the user when the replica is configured to use [gtid\_curr
 
 The [mysql.gtid\_slave\_pos](../../reference/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) system table is used to store the contents of global.gtid\_slave\_pos and preserve it over restarts.
 
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
@@ -719,7 +719,7 @@ this case the value of `gtid_binlog_pos` will be the empty string.
 The value is read-only, but it is updated whenever a DML or DDL statement is\
 written to the binary log. The value can be reset by executing [RESET MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/reset-master.md), which will also delete all binary logs. However, note that [RESET MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) does not also reset [gtid\_slave\_pos](gtid.md#gtid_slave_pos). Since [gtid\_current\_pos](gtid.md#gtid_current_pos) is the union of [gtid\_slave\_pos](gtid.md#gtid_slave_pos) and `gtid_binlog_pos`, that means that new GTIDs added to `gtid_binlog_pos` can lag behind those in [gtid\_current\_pos](gtid.md#gtid_current_pos) if [gtid\_slave\_pos](gtid.md#gtid_slave_pos) contains GTIDs in the same domain with higher sequence numbers. If you want to reset [gtid\_current\_pos](gtid.md#gtid_current_pos) for a specific GTID domain in cases like this, then you will also have to change [gtid\_slave\_pos](gtid.md#gtid_slave_pos) in addition to executing [RESET MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/reset-master.md). See [gtid\_slave\_pos](gtid.md#gtid_slave_pos) for notes on how to change its value.
 
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: Read-only
 * Data Type: `string`
@@ -763,7 +763,7 @@ upgrading to MariaDB 10, it is possible that the binlog is non-empty but\
 without any GTID events, in which case all such events will be deleted, just\
 as if RESET MASTER had been run.
 
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
@@ -789,7 +789,7 @@ written to the binary log and/or replicated by a replica thread, and that transa
 
 If you need to reset the value, see the notes on resetting [gtid\_slave\_pos](gtid.md#gtid_slave_pos) and [gtid\_binlog\_pos](gtid.md#gtid_binlog_pos), since `gtid_current_pos` is formed from the values of those variables.
 
-* Commandline: None
+* Command line: None
 * Scope: Global
 * Dynamic: Read-only
 * Data Type: `string`
@@ -825,7 +825,7 @@ take corrective actions to avoid similar issues in the future. One way to\
 recover from such an error is to temporarily disable GTID strict mode on the\
 offending replica, to be able to replicate past the problem point (perhaps using`START SLAVE UNTIL master_gtid_pos=XXX`).
 
-* Commandline: `--gtid-strict-mode[={0|1}]`
+* Command line: `--gtid-strict-mode[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -834,7 +834,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 #### `gtid_domain_id`
 
 * Description: This variable is used to decide which replication domain new GTIDs are logged in for a primary server. See [Use with multi-source replication and other multi-primary setups](gtid.md#use-with-multi-source-replication-and-other-multi-primary-setups) for details. This variable can also be set on the session level by a user with the SUPER privilege. This is used by [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) to preserve the domain ID of GTID events.
-* Commandline: `--gtid-domain-id=#`
+* Command line: `--gtid-domain-id=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric (32-bit unsigned integer)`
@@ -858,7 +858,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 #### `gtid_seq_no`
 
 * Description: gtid\_seq\_no can be set on the session level to change which sequence number is logged in the following GTID event. The variable, along with [@@gtid\_domain\_id](gtid.md#gtid_domain_id) and [@@server\_id](gtid.md#server_id), is typically used by [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) to set up the gtid value of the transaction being decoded into the output.
-* Commandline: None
+* Command line: None
 * Scope: Session
 * Dynamic: Yes
 * Data Type: `numeric (64-bit unsigned integer)`
@@ -868,7 +868,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 
 * Description: When set, different primary connections in multi-source replication are allowed to receive and process event groups with the same GTID (when using GTID mode). Only one will be applied, any others will be ignored. Within a given replication domain, just the sequence number will be used to decide whether a given GTID has been already applied; this means it is the responsibility of the user to ensure that GTID sequence numbers are strictly increasing. With gtid\_ignore\_duplicates=OFF, a duplicate event based on domain id and sequence number, will be executed. When --gtid-ignore-duplicate is set, a replica is allowed to connect at a GTID position that does not exist on the primary. The replica will start receiving\
   events once a GTID with a higher sequence number is available on the primary (within that domain). This can be used to allow a replica to connect at a GTID position that was filtered on the primary, eg. using [--replicate-ignore-table](replication-and-binary-log-system-variables.md#replicate_ignore_table). See also [Multiple Redundant Replication Paths](gtid.md#multiple-redundant-replication-paths)
-* Commandline: `--gtid-ignore-duplicates=#`
+* Command line: `--gtid-ignore-duplicates=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -891,7 +891,7 @@ possible to specify engines that are not enabled in the server. The server will 
 
 Removing a storage engine from the variable will have no effect once the new tables have been created - as long as these tables are detected, they will be used.
 
-* Commandline: `--gtid-pos-auto-engines=value`
+* Command line: `--gtid-pos-auto-engines=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string` (comma-separated list of engine names)
@@ -900,7 +900,7 @@ Removing a storage engine from the variable will have no effect once the new tab
 #### `gtid_cleanup_batch_size`
 
 * Description: Normally does not need tuning. How many old rows must accumulate in the [mysql.gtid\_slave\_pos table](../../reference/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) before a background job will be run to delete them. Can be increased to reduce number of commits if using many different engines with [gtid\_pos\_auto\_engines](gtid.md#gtid_pos_auto_engines), or to reduce CPU overhead if using a huge number of different [gtid\_domain\_ids](gtid.md#gtid_domain_id). Can be decreased to reduce number of old rows in the table.
-* Commandline: `--gtid-cleanup-batch-size=#`
+* Command line: `--gtid-cleanup-batch-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`

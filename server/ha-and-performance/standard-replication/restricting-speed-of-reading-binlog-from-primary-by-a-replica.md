@@ -26,7 +26,7 @@ The option **read\_binlog\_speed\_limit** is available starting from [MariaDB 10
 #### `read_binlog_speed_limit`
 
 * Description: Maximum speed(KB/s) to read binlog from primary.
-* Commandline: `--read-binlog-speed-limit[=#]`
+* Command line: `--read-binlog-speed-limit[=#]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
