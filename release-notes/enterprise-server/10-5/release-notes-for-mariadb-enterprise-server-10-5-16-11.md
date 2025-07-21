@@ -119,7 +119,7 @@ You are using safe update mode and you tried to update a table without a WHERE t
 
 * When an [UPDATE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) uses a subquery inside an [IN() clause](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/comparison-operators/in), the optimizer could incorrectly choose to perform a full table scan (with `type: ALL`) when a range scan (with `type: range`) would be more efficient. ([MDEV-22377](https://jira.mariadb.org/browse/MDEV-22377))
 * When a table contains multiple `ENUM` columns with identical values, the values could become corrupt if multi-byte character sets are used. ([MDEV-28078](https://jira.mariadb.org/browse/MDEV-28078))
-* When [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) columns are read from [information\_schema.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table), the server could incorrectly raise an [ER\_BAD\_DATA warning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-5/broken-reference/README.md). ([MDEV-28131](https://jira.mariadb.org/browse/MDEV-28131))
+* When [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) columns are read from [information\_schema.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table), the server could incorrectly raise an [ER\_BAD\_DATA warning](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-5/broken-reference/README.md). ([MDEV-28131](https://jira.mariadb.org/browse/MDEV-28131))
   * The warning can appear on the client as the following after executing [SHOW WARNINGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-warnings):
 
 ```
@@ -137,14 +137,14 @@ View being updated does not have complete key of underlying table in it
 * When using [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options#options) with [--raw](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options) and [--stop-never](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options#options), events from the primary server's currently active log file are not written to their respective log file specified by [--result-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options#options). ([MDEV-14608](https://jira.mariadb.org/browse/MDEV-14608))
 * When a prepared statement is used to execute [EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain), a different query plan can be returned on the second execution. ([MDEV-19631](https://jira.mariadb.org/browse/MDEV-19631))
 * When [slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is enabled with semi-synchronous replication, the numbering on packet headers can become out of sync between the primary and replica servers, but the inconsistency does not have any negative impact with release builds of MariaDB Enterprise Server. ([MDEV-25580](https://jira.mariadb.org/browse/MDEV-25580))
-* The server and [MariaDB Enterprise Backup](broken-reference) can raise unnecessary warnings about tablespace IDs in some scenarios. ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
+* The server and [MariaDB Enterprise Backup](broken-reference/) can raise unnecessary warnings about tablespace IDs in some scenarios. ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
   * The warning can appear as the following:
 
 ```
 InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old maximum was 0
 ```
 
-* This warning can be written to standard output (`stdout`) when preparing a backup with [MariaDB Enterprise Backup](broken-reference).
+* This warning can be written to standard output (`stdout`) when preparing a backup with [MariaDB Enterprise Backup](broken-reference/).
 * This warning can be written to the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when InnoDB performs crash recovery at startup.
 * With MariaDB Enterprise Cluster, the joiner node fails to complete an SST when [innodb\_log\_group\_home\_dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_group_home_dir) specifies a directory different than [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir). ([MDEV-27740](https://jira.mariadb.org/browse/MDEV-27740))
 * When a non-partitioned table using the `DATA DIRECTORY` clause is converted to a partitioned table, the `DATA DIRECTORY` clause is silently ignored, and the partitioned table is moved to the default directory. ([MDEV-27065](https://jira.mariadb.org/browse/MDEV-27065))
@@ -207,7 +207,7 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 * `mariadbd` --password-reuse-check command-line option added
 * `mariadbd` --password-reuse-check-interval command-line option added
 * `password_reuse_check password_reuse_check.so` plugin added
-* [password\_reuse\_check\_history](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlpassword_reuse_check_history-table) system table added
+* [password\_reuse\_check\_history](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysqlpassword_reuse_check_history-table) system table added
 * [password\_reuse\_check\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/password_reuse_check_interval) system variable added
 
 ## Platforms

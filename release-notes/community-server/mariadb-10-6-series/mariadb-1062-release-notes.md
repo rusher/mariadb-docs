@@ -20,8 +20,8 @@ Thanks, and enjoy MariaDB!
 ### InnoDB
 
 * When [innodb\_adaptive\_hash\_index=OFF](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_adaptive_hash_index) (the default), the following counters (which reflect btr\_cur\_n\_non\_sea) will no longer be updated ([MDEV-25882](https://jira.mariadb.org/browse/MDEV-25882)):
-  * adaptive\_hash\_index in [INFORMATION\_SCHEMA.INNODB\_METRICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table)
-  * [Innodb\_adaptive\_hash\_non\_hash\_searches](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#innodb_adaptive_hash_non_hash_searches) in [INFORMATION\_SCHEMA.GLOBAL\_STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables)
+  * adaptive\_hash\_index in [INFORMATION\_SCHEMA.INNODB\_METRICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table)
+  * [Innodb\_adaptive\_hash\_non\_hash\_searches](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#innodb_adaptive_hash_non_hash_searches) in [INFORMATION\_SCHEMA.GLOBAL\_STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables)
 
 ### Replication
 

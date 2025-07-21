@@ -19,7 +19,7 @@ Thanks, and enjoy MariaDB!
 
 In addition to the [MariaDB-5.5.43](../release-notes-mariadb-5-5-series/mariadb-5543-release-notes.md) fixes and improvements, the following fixes and improvements have been made to [MariaDB 10.0.18](mariadb-10018-release-notes.md).
 
-* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updated to 5.6.24
+* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) updated to 5.6.24
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to XtraDB-5.6.23-72.1
 * [Innodb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to InnoDB-5.6.24
 * [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) updated to 3.2.21

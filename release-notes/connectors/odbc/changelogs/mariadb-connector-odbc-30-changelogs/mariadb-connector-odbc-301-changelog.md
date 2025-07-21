@@ -12,7 +12,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 
 * [Revision #e5dd744](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/e5dd744)\
   2017-07-31 02:30:34 +0200
-  * \[[ODBC-105](https://jira.mariadb.org/browse/ODBC-105)] Starting from v. 10.2.7, server encloses COLUMN\_DEFAULT in the [INFORMATION\_SCHEMA.COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table, in single quotes for literal strings. Connector now considers the server version, when constructing the query for SQLColumns .
+  * \[[ODBC-105](https://jira.mariadb.org/browse/ODBC-105)] Starting from v. 10.2.7, server encloses COLUMN\_DEFAULT in the [INFORMATION\_SCHEMA.COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table, in single quotes for literal strings. Connector now considers the server version, when constructing the query for SQLColumns .
 * [Revision #ee0a63d](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/ee0a63d)\
   2017-07-31 01:19:28 +0200
   * Fix of small error in CMakeLists.txt (addition to previous commit). Fix of possible memleak. Could occur if cursor was closed after a query that did not produce result-set or contain parameters. Pretty extravagant, but it looks like more likely to be the case with UnixODBC.

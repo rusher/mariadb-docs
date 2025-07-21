@@ -49,7 +49,7 @@ Notable changes of this release include:
 
 ### Thread Pool
 
-* Information Schema tables ([THREADPOOL\_GROUPS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table), [THREADPOOL\_QUEUES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table) and [THREADPOOL\_STATS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_stats-table)) for internals of generic threadpool ([MDEV-19313](https://jira.mariadb.org/browse/MDEV-19313))
+* Information Schema tables ([THREADPOOL\_GROUPS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table), [THREADPOOL\_QUEUES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table) and [THREADPOOL\_STATS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_stats-table)) for internals of generic threadpool ([MDEV-19313](https://jira.mariadb.org/browse/MDEV-19313))
 
 ### InnoDB
 
@@ -63,7 +63,7 @@ Notable changes of this release include:
 * [innodb\_rollback\_segments](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_rollback_segments) has been removed ([MDEV-19570](https://jira.mariadb.org/browse/MDEV-19570))
 * Set [innodb\_log\_files\_in\_group=1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_files_in_group) by default ([MDEV-20907](https://jira.mariadb.org/browse/MDEV-20907))
 * Extend [SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status) LIKE 'Innodb\_%' ([MDEV-18582](https://jira.mariadb.org/browse/MDEV-18582))
-* Clean up [INFORMATION\_SCHEMA.INNODB\_](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables) tables ([MDEV-19940](https://jira.mariadb.org/browse/MDEV-19940))
+* Clean up [INFORMATION\_SCHEMA.INNODB\_](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables) tables ([MDEV-19940](https://jira.mariadb.org/browse/MDEV-19940))
 * Doublewrite buffer is unnecessarily used for newly (re)initialized pages ([MDEV-19738](https://jira.mariadb.org/browse/MDEV-19738))
 * Defer change buffer merge until pages are requested ([MDEV-19514](https://jira.mariadb.org/browse/MDEV-19514))
 
@@ -89,7 +89,7 @@ Notable changes of this release include:
 
 ### General
 
-* The [Information Schema SYSTEM\_VARIABLES Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-system_variables-table) has a new column showing from which config file a variable derives its value ([MDEV-12684](https://jira.mariadb.org/browse/MDEV-12684))
+* The [Information Schema SYSTEM\_VARIABLES Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-system_variables-table) has a new column showing from which config file a variable derives its value ([MDEV-12684](https://jira.mariadb.org/browse/MDEV-12684))
 * Switch Perl DBI scripts from DBD::mysql to DBD::MariaDB driver ([MDEV-19755](https://jira.mariadb.org/browse/MDEV-19755))
 * The [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) max key length is now 2000 bytes, compared to 1000 bytes in [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine).
 

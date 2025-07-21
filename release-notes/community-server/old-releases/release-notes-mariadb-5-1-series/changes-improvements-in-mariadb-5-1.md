@@ -61,7 +61,7 @@ See also:
   to MariadB)
 * MariaDB can handle up to 32 key segments per key (up from 16)
 * Added `--abort-source-on-error` to the mysql client.
-* [Microsecond Precision in Processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist)
+* [Microsecond Precision in Processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist)
 * [mysqltest extensions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-test/new-features-for-mysqltest-in-mariadb)
 
 ### Easier to upgrade

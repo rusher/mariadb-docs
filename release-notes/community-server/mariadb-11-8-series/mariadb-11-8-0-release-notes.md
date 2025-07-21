@@ -67,7 +67,7 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 
 ### Information Schema
 
-* When querying the [information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema), [stored functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-functions) that have the same name as a native function no longer generate a warning ([MDEV-35437](https://jira.mariadb.org/browse/MDEV-35437))
+* When querying the [information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema), [stored functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-functions) that have the same name as a native function no longer generate a warning ([MDEV-35437](https://jira.mariadb.org/browse/MDEV-35437))
 
 {% include "../../.gitbook/includes/announce.md" %}
 

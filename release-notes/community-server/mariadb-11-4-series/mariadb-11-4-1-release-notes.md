@@ -164,9 +164,9 @@ Thanks, and enjoy MariaDB!
 #### Application-Time Periods
 
 * Add views for [periods](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods) in information\_schema ([MDEV-22597](https://jira.mariadb.org/browse/MDEV-22597)), in particular
-* New view [INFORMATION\_SCHEMA.PERIODS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-periods-table)
-* New view [INFORMATION\_SCHEMA.KEY\_PERIOD\_USAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table)
-* New columns `IS_SYSTEM_TIME_PERIOD_START` and `IS_SYSTEM_TIME_PERIOD_END` in the [INFORMATION\_SCHEMA.COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table) view
+* New view [INFORMATION\_SCHEMA.PERIODS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-periods-table)
+* New view [INFORMATION\_SCHEMA.KEY\_PERIOD\_USAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table)
+* New columns `IS_SYSTEM_TIME_PERIOD_START` and `IS_SYSTEM_TIME_PERIOD_END` in the [INFORMATION\_SCHEMA.COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-columns-table) view
 
 #### General
 

@@ -47,8 +47,8 @@ Notable changes of this release include:
 
 * Added system user for user view which allows to remove root ([MDEV-19650](https://jira.mariadb.org/browse/MDEV-19650))
 * WolfSSL updated
-* [ALTER USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/alter-user) doesn't remove excess authentication plugins from [mysql.global\_priv](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table) ([MDEV-21928](https://jira.mariadb.org/browse/MDEV-21928))
-* [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) creating empty [global\_priv table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table) ([MDEV-21244](https://jira.mariadb.org/browse/MDEV-21244))
+* [ALTER USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/alter-user) doesn't remove excess authentication plugins from [mysql.global\_priv](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-global_priv-table) ([MDEV-21928](https://jira.mariadb.org/browse/MDEV-21928))
+* [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) creating empty [global\_priv table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-global_priv-table) ([MDEV-21244](https://jira.mariadb.org/browse/MDEV-21244))
 
 ### Aria
 

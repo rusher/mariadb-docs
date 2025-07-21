@@ -66,7 +66,7 @@ Note that [MariaDB 10.6.8](mariadb-1068-release-notes.md) is not yet available f
 
 ### General
 
-* Server [error messages](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes) are [now available in Chinese](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) ([MDEV-28227](https://jira.mariadb.org/browse/MDEV-28227))
+* Server [error messages](broken-reference) are [now available in Chinese](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) ([MDEV-28227](https://jira.mariadb.org/browse/MDEV-28227))
 * For RHEL/CentOS 7, non x86\_64 architectures are no longer supported upstream and so our support will also be dropped with this release
 * Packages for Ubuntu 22.04 LTS "Jammy" and Fedora 36 are not yet available pending the resolution of [MDEV-28133](https://jira.mariadb.org/browse/MDEV-28133): Backport OpenSSL-3.0 compatibility to 10.6 branch
 * As per the [MariaDB Deprecation Policy](../about/platform-deprecation-policy.md), this will be the last release of [MariaDB 10.6](what-is-mariadb-106.md) for Debian 9 "Stretch", Ubuntu 21.10 "Impish", and Fedora 34

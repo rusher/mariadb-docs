@@ -51,11 +51,11 @@ This release includes fixes for the following security vulnerabilities:
 
 * [MDEV-330](https://jira.mariadb.org/browse/MDEV-330) - Support for MySQL-5.6 created tables (frm and data files) that have columns of types TIME(N), DATETIME(N) and TIMESTAMP(N). Previously, an attempt to open such a table in MariaDB would return an error.
 * [MDEV-3838](https://jira.mariadb.org/browse/MDEV-3838) - Support for standard SQL temporal literals
-* [MDEV-4058](https://jira.mariadb.org/browse/MDEV-4058) - Merge the [host\_cache P\_S table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table)
+* [MDEV-4058](https://jira.mariadb.org/browse/MDEV-4058) - Merge the [host\_cache P\_S table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table)
 * WL #5185 Remove deprecated 5.1 features
 * InnoDB from MySQL 5.6.10
-* [Performance schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updates, including new defaults.
-* [Information Schema updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema), including new defaults.
+* [Performance schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) updates, including new defaults.
+* [Information Schema updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema), including new defaults.
 * [InnoDB persistent statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics).
 * Online ALTER for InnoDB and thread information for in-place operations
 * EXCHANGE PARTITION

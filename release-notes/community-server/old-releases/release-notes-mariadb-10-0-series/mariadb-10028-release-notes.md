@@ -20,7 +20,7 @@ Thanks, and enjoy MariaDB!
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.33-79.0
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to 5.6.33-79.0
 * [Innodb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.33
-* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updated to 5.6.33
+* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) updated to 5.6.33
 * Packages for Ubuntu 16.10 Yakkety added. Use the [Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/) to add the MariaDB Ubuntu repository to your system.
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * [CVE-2016-5616](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5616) / [CVE-2016-6663](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6663) This vulnerability was discovered by [Dawid Golunski](https://legalhackers.com).

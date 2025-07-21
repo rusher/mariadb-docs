@@ -1,16 +1,5 @@
 ---
 description: Data-at-rest encryption secures data on the file system.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # MariaDB Enterprise Server - Data-at-Rest Encryption

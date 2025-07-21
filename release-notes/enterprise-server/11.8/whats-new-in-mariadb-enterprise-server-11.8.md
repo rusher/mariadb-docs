@@ -103,8 +103,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
       Ww2b+8'
       ```
 
-      \
-
+      \\
 * Unix Socket Enhancements:
   * Now supports explicit OS user mapping via `IDENTIFIED VIA UNIX_SOCKET AS` `'user'`.
   *   It is also possible to specify more than one OS user with the usual OR syntax:
@@ -116,8 +115,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 ### Replication & Clustering <a href="#replication-clustering" id="replication-clustering"></a>
 
 * Improved Replication Lag Monitoring:
-  *   [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) now includes:\
-
+  *   [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) now includes:\\
 
       ```
       Master_last_event_time
@@ -126,8 +124,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
       Master_Slave_time_diff
       ```
-*   [Information Schema Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables) for [Replication Status](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-slave_status-table):\
-
+*   [Information Schema Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables) for [Replication Status](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-slave_status-table):\\
 
     ```sql
     MariaDB [test]> SELECT Master_last_event_time,Slave_last_event_time,Master_Slave_time_diff FROM information_schema.slave_status\G
@@ -148,11 +145,10 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * Temporary File Disk Space Limits:
   * `max_tmp_session_space_usage` and `max_tmp_total_space_usage` prevent runaway disk usage.
 * New Status Variables: `tmp_space_used, max_tmp_space_used`.
-* New [Information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema) Views:
+* New [Information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema) Views:
   * `SLAVE_STATUS` to view replication lag via SQL.
-  * [USERS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-users-table) for password state and expiration monitoring.
-  *   [SEQUENCES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table) to introspect auto-generated sequences:\
-
+  * [USERS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-users-table) for password state and expiration monitoring.
+  *   [SEQUENCES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-sequences-table) to introspect auto-generated sequences:\\
 
       ```sql
       SELECT * FROM INFORMATION_SCHEMA.SEQUENCES\G

@@ -41,7 +41,7 @@ Notable changes of this release include:
 
 * Optimization to speed up inserts into an empty table ([MDEV-515](https://jira.mariadb.org/browse/MDEV-515))
 * Make [InnoDB's COMPRESSED row format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) [read-only by default](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format#read-only) ([MDEV-23497](https://jira.mariadb.org/browse/MDEV-23497))
-* [Information Schema SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table) now directly reflects the filesystem, and [SYS\_DATAFILES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_datafiles-table) has been removed ([MDEV-22343](https://jira.mariadb.org/browse/MDEV-22343))
+* [Information Schema SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table) now directly reflects the filesystem, and [SYS\_DATAFILES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_datafiles-table) has been removed ([MDEV-22343](https://jira.mariadb.org/browse/MDEV-22343))
 * `innodb_flush_method=O_DIRECT` is enabled by default ([MDEV-24854](https://jira.mariadb.org/browse/MDEV-24854)), and `liburing` replaces `libaio` on recent Linux kernels ([MDEV-24883](https://jira.mariadb.org/browse/MDEV-24883)).
 * The InnoDB transaction deadlock reporter was improved ([MDEV-24738](https://jira.mariadb.org/browse/MDEV-24738)).
 * The old [MariaDB 5.5](../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)-compatible `innodb` checksum is no longer supported, only `crc32` and `full_crc32`. Removed the `*innodb` and `*none` options from [innodb\_checksum\_algorithm](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm), and the `--strict-check`/`-C` and `--write`/`-w` options from [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) ([MDEV-25105](https://jira.mariadb.org/browse/MDEV-25105))
@@ -53,7 +53,7 @@ Notable changes of this release include:
 
 ### Sys Schema
 
-* Bundle [sys-schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema), a collection of views, functions and procedures to help administrators get insight into database usage. ([MDEV-9077](https://jira.mariadb.org/browse/MDEV-9077))
+* Bundle [sys-schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema), a collection of views, functions and procedures to help administrators get insight into database usage. ([MDEV-9077](https://jira.mariadb.org/browse/MDEV-9077))
 
 ### Performance Schema
 

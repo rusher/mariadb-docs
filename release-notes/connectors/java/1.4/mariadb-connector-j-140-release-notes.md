@@ -1,4 +1,4 @@
-# MariaDB Connector/J 1.4.0 Release Notes
+# Connector/J 1.4.0 Release Notes
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
@@ -46,7 +46,7 @@ See more details at: [GSSAPI/SSPI configuration](https://github.com/MariaDB/mari
 
 ### Connection attributes
 
-[CONJ-217](https://jira.mariadb.org/browse/CONJ-217) - Driver information is now sent to [connection attributes tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-session_connect_attrs-table) (performance\_schema must be activated).\
+[CONJ-217](https://jira.mariadb.org/browse/CONJ-217) - Driver information is now sent to [connection attributes tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-session_connect_attrs-table) (performance\_schema must be activated).\
 A new option "connectionAttributes" permits adding client-specific data.
 
 For example when connecting with the following connection string `"jdbc:mysql://localhost:3306/testj?user=root&connectionAttributes=myOption:1,mySecondOption:'jj'"`,\

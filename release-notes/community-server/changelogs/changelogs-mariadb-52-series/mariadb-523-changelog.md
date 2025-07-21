@@ -16,7 +16,7 @@ modified in that revision.
   * [Bug #674413](https://bugs.launchpad.net/bugs/674413): Misconfigured debian-sys-maint user, warnings from default my.cnf\
     Fix two problems reported in [Bug #674413](https://bugs.launchpad.net/bugs/674413):
     * The debian-sys-maint account was not created, due to new field auth\_string\
-      added in [mysql.user](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table) in 5.2 with no default value and postinst script\
+      added in [mysql.user](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-user-table) in 5.2 with no default value and postinst script\
       not updated.
     * Default my.cnf in 5.1+ uses log\_slow\_admin\_statements without enabling\
       the slow log, causing warnings. Fix by commenting out this by default.

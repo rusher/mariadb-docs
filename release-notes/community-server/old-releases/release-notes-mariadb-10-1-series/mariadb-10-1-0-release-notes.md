@@ -49,7 +49,7 @@ Notable changes of this release include:
   * Use single quotes for perl paths, in case of special symbols. Merged to 10.0.13.
   * Stop spawning dummy threads on client library initialization. Merged to 10.0.13.
 * Performance
-  * [MDEV-6249](https://jira.mariadb.org/browse/MDEV-6249), Disable [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) by default
+  * [MDEV-6249](https://jira.mariadb.org/browse/MDEV-6249), Disable [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) by default
   * [MDEV-6246](https://jira.mariadb.org/browse/MDEV-6246), Merge 10.0.10-FusionIO to 10.1 - [Atomic writes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/atomic-write-support), [multi-threaded flushing and page compression](https://blog.mariadb.org/significant-performance-boost-with-new-mariadb-page-compression-on-fusionio/) are available for Fusion-IO devices in 10.1.0
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases on production systems!**

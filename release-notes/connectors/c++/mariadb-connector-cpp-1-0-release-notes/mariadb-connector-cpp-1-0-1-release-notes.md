@@ -21,7 +21,7 @@ MariaDB Connector/C++ implements the MySQL protocol using the MariaDB Connector/
 
 ## Issues Fixed
 
-* Metadata retrieved from [mysql.proc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table) instead of using the Information Schema. ([CONCPP-69](https://jira.mariadb.org/browse/CONCPP-69))
+* Metadata retrieved from [mysql.proc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-proc-table) instead of using the Information Schema. ([CONCPP-69](https://jira.mariadb.org/browse/CONCPP-69))
 * CMake generates an error on nesting of flow control statements. ([CONCPP-79](https://jira.mariadb.org/browse/CONCPP-79))
 * CMake fails when called without the `-DWITH_SSL=OpenSSL` option. ([CONCPP-80](https://jira.mariadb.org/browse/CONCPP-80))
 * Sub-directory install paths include a dot (`./`) directory, which is not correct. ([CONCPP-81](https://jira.mariadb.org/browse/CONCPP-81))

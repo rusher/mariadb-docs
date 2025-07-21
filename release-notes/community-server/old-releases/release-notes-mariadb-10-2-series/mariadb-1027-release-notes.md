@@ -25,7 +25,7 @@ A file format compatibility bug that was introduced in [MariaDB 10.2.2](mariadb-
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to 5.6.36-82.0
 * [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) beta now included for Red Hat, CentOS, and Fedora packages. See [MDEV-13311](https://jira.mariadb.org/browse/MDEV-13311) for an important note about restoring with this version.
 * [MDEV-13125](https://jira.mariadb.org/browse/MDEV-13125): Core dumps can now be enabled dynamically
-* [MDEV-13132](https://jira.mariadb.org/browse/MDEV-13132): Literals in the `COLUMN_DEFAULT` column in the [Information Schema COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table are now quoted to distinguish them from expressions.
+* [MDEV-13132](https://jira.mariadb.org/browse/MDEV-13132): Literals in the `COLUMN_DEFAULT` column in the [Information Schema COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table are now quoted to distinguish them from expressions.
 * New variables:
   * [tmp\_disk\_table\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#tmp_disk_table_size)
   * [tmp\_memory\_table\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#tmp_memory_table_size)

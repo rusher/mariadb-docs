@@ -43,7 +43,7 @@ Starting with this release, the messages about log scanning are only printed whe
 
 * Performance schema instruments are now available to monitor mutex contention in InnoDB's internal thread pool that is used for asynchronous data page I/O. ([MDEV-31048](https://jira.mariadb.org/browse/MDEV-31048))
   * Starting with this release, the `wait/synch/mutex/innodb/tpool_cache_mutex` instrument can be enabled to track contention on the internal `tpool::cache::m_mtx mutex` in `read_slots` and `write_slots`.
-  * When [performance\_schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) is enabled, you can enable the `wait/synch/mutex/innodb/tpool_cache_mutex` instrument by changing the `ENABLED` column for the instrument in the [performance\_schema.setup\_instruments table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_instruments-table):
+  * When [performance\_schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) is enabled, you can enable the `wait/synch/mutex/innodb/tpool_cache_mutex` instrument by changing the `ENABLED` column for the instrument in the [performance\_schema.setup\_instruments table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_instruments-table):
 
 ```sql
 UPDATE performance_schema.setup_instruments
@@ -51,7 +51,7 @@ UPDATE performance_schema.setup_instruments
  WHERE NAME='wait/synch/mutex/innodb/tpool_cache_mutex';
 ```
 
-* When the instrument is enabled, details about mutex waits can be retrieved from other performance schema tables, such as [performance-schema.events\_waits\_current](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table), [performance-schema.events\_waits\_history](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table), and [performance-schema.events\_waits\_history\_long](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table).
+* When the instrument is enabled, details about mutex waits can be retrieved from other performance schema tables, such as [performance-schema.events\_waits\_current](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table), [performance-schema.events\_waits\_history](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table), and [performance-schema.events\_waits\_history\_long](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table).
 * Enabling performance schema instrumentation can result in performance overhead, so extra care should be taken when enabling performance schema on production systems.
 * InnoDB page flushing speed has been improved. ([MDEV-26827](https://jira.mariadb.org/browse/MDEV-26827))
 * The [Innodb\_buffer\_pool\_pages\_split status variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables) has been added to monitor page splits in the InnoDB buffer pool. ([MDEV-26827](https://jira.mariadb.org/browse/MDEV-26827))
@@ -250,7 +250,7 @@ View 'test.v1' references invalid table(s) or column(s) or function(s) or define
 ERROR 1111 (HY000): Invalid use of group function
 ```
 
-* When an InnoDB tablespace has been discarded, selecting from [information\_schema.INNODB\_SYS\_INDEXES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_indexes-table) fails with an error. ([MDEV-30615](https://jira.mariadb.org/browse/MDEV-30615))
+* When an InnoDB tablespace has been discarded, selecting from [information\_schema.INNODB\_SYS\_INDEXES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_indexes-table) fails with an error. ([MDEV-30615](https://jira.mariadb.org/browse/MDEV-30615))
   * In previous releases, an error with the [ER\_UNKNOWN\_ERROR error code](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1100-to-1199/e1105) is raised:
 
 ```
@@ -292,7 +292,7 @@ ERROR 1406 (22001): Data too long for column 'COLUMN_NAME' at row 1
 * With Galera, when a cluster node has the query cache enabled and the node has regular MariaDB replication configured, query cache entries are not properly invalidated when tables are changed due to replication. ([MDEV-28641](https://jira.mariadb.org/browse/MDEV-28641))
 * When a backup is created with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup), the utility opens the `aria_log_control` file in read/write mode instead of in read-only mode. (MENT-1794)
 * When `INSERT .. SELECT` is executed with a full-text index present, all other commits during the commit hang. ([MDEV-30996](https://jira.mariadb.org/browse/MDEV-30996))
-* In [information\_schema.INNODB\_SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table), undo tablespaces are shown with incorrect names. ([MDEV-30870](https://jira.mariadb.org/browse/MDEV-30870))
+* In [information\_schema.INNODB\_SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table), undo tablespaces are shown with incorrect names. ([MDEV-30870](https://jira.mariadb.org/browse/MDEV-30870))
   * In previous releases, the names would be `.undo00N`
   * Starting with this release, the names are `innodb_undo00N`
 * Incorrect memory management during a commit operation on tables that contain a full-text index. ([MDEV-30341](https://jira.mariadb.org/browse/MDEV-30341))

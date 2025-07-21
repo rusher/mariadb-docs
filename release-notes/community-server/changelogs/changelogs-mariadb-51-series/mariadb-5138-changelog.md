@@ -13,7 +13,7 @@ and bug fixes:
   continue later. See [mysql-test-run](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-test).
 * Improvements to Gcov support in testing.
 * New column [TIME\_MS in SHOW\
-  FULL PROCESSLIST and INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist), similar to the old\
+  FULL PROCESSLIST and INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist), similar to the old\
   TIME column, but with microsecond resolution. Also fixes old TIME column to\
   not be influenced by @TIMESTAMP. Patch by Percona.
 * Optimizer improvement: Table elimination ([MWL#17](https://askmonty.org/worklog/?tid=17)). See[Table Elimination](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination).

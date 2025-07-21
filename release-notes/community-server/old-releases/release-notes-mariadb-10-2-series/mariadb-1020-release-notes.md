@@ -39,7 +39,7 @@ Scripts:
 
 Information Schema:
 
-* Added an information schema plugin to report all user variables, which creates the [Information Schema USER\_VARIABLES Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table) - [MDEV-7331](https://jira.mariadb.org/browse/MDEV-7331).
+* Added an information schema plugin to report all user variables, which creates the [Information Schema USER\_VARIABLES Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table) - [MDEV-7331](https://jira.mariadb.org/browse/MDEV-7331).
 
 Variables:
 

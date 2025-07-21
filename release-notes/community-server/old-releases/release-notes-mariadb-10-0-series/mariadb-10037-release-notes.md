@@ -18,7 +18,7 @@ Thanks, and enjoy MariaDB!
 ## Notable changes
 
 * [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.42
-* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updated to 5.6.42
+* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) updated to 5.6.42
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.41-84.1
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to 5.6.41-84.1
 * Various fixes from MySQL 5.6.42: [MDEV-17533](https://jira.mariadb.org/browse/MDEV-17533), [MDEV-17532](https://jira.mariadb.org/browse/MDEV-17532), [MDEV-17531](https://jira.mariadb.org/browse/MDEV-17531)

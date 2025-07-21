@@ -1,4 +1,4 @@
-# Changes and Improvements in MariaDB 11.3
+# MariaDB 11.3 Changes & Improvements
 
 [MariaDB 11.3](what-is-mariadb-113.md) is an old rolling release and is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
 
@@ -51,7 +51,7 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 ### Processlist
 
-* Added a `SENT_ROWS` column to the [Information Schema PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) table, as well as extended the display size for the columns in processlist to ensure\
+* Added a `SENT_ROWS` column to the [Information Schema PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) table, as well as extended the display size for the columns in processlist to ensure\
   that most results will fit in display ([MDEV-3953](https://jira.mariadb.org/browse/MDEV-3953))
 
 ### OLD\_MODE

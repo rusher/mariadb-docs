@@ -20,7 +20,7 @@ Thanks, and enjoy MariaDB!
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.38-83.0
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to 5.6.38-83.0
 * [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.39
-* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updated to 5.6.39
+* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) updated to 5.6.39
 * [MDEV-12173](https://jira.mariadb.org/browse/MDEV-12173) - "Error: trying to do an operation on a dropped tablespace"
 * [MDEV-7049](https://jira.mariadb.org/browse/MDEV-7049) - MySQL#74585 - InnoDB: Failing assertion: \*mbmaxlen < 5 in file ha\_innodb.cc line 1904
 * [MDEV-14916](https://jira.mariadb.org/browse/MDEV-14916) - InnoDB reports warning for "Purge reached the head of the history list"

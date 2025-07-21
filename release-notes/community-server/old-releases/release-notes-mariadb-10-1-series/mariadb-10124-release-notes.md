@@ -23,7 +23,7 @@ Updating from [MariaDB 10.1.21](mariadb-10121-release-notes.md) to [MariaDB 10.1
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.36-82.0
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to 5.6.36-82.0
 * [Innodb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.36
-* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updated to 5.6.36
+* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) updated to 5.6.36
 * [MDEV-12674](https://jira.mariadb.org/browse/MDEV-12674): Innodb\_row\_lock\_current\_waits has overflow
 * [MDEV-12188](https://jira.mariadb.org/browse/MDEV-12188): information schema - errors populating fail to free memory, unlock mutexes
 * [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832): support for streaming in tar format in [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) has been removed

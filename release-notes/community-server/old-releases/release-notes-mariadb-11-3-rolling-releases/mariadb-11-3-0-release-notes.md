@@ -66,16 +66,16 @@ Thanks, and enjoy MariaDB!
 
 ## Processlist
 
-* Added a `SENT_ROWS` column to the [Information Schema PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) table, as well as extended the display size for the columns in processlist to ensure\
+* Added a `SENT_ROWS` column to the [Information Schema PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) table, as well as extended the display size for the columns in processlist to ensure\
   that most results will fit in display ([MDEV-3953](https://jira.mariadb.org/browse/MDEV-3953))
 
 ## Application-Time Periods
 
 * Note that this feature did not make it into [MariaDB 11.3](what-is-mariadb-113.md), but is in [MariaDB 11.4](../../mariadb-11-4-series/what-is-mariadb-114.md).
 * Add views for [periods](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods) in information\_schema ([MDEV-22597](https://jira.mariadb.org/browse/MDEV-22597)), in particular
-* New view [INFORMATION\_SCHEMA.PERIODS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-periods-table)
-* New view [INFORMATION\_SCHEMA.KEY\_PERIOD\_USAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table)
-* New columns `IS_SYSTEM_TIME_PERIOD_START` and `IS_SYSTEM_TIME_PERIOD_END` in the [INFORMATION\_SCHEMA.COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table) view
+* New view [INFORMATION\_SCHEMA.PERIODS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-periods-table)
+* New view [INFORMATION\_SCHEMA.KEY\_PERIOD\_USAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table)
+* New columns `IS_SYSTEM_TIME_PERIOD_START` and `IS_SYSTEM_TIME_PERIOD_END` in the [INFORMATION\_SCHEMA.COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-columns-table) view
 
 ## OLD\_MODE
 

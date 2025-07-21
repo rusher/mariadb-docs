@@ -46,7 +46,7 @@ Thanks, and enjoy MariaDB!
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) upgraded to 7.1.7
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) upgraded to 5.6.19-67.0
 * [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) upgraded to 5.6.19
-* [Performance\_Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) upgraded to 5.6.20
+* [Performance\_Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) upgraded to 5.6.20
 
 For a complete list of changes made in [MariaDB 10.0.13](mariadb-10013-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10013-changelog.md).

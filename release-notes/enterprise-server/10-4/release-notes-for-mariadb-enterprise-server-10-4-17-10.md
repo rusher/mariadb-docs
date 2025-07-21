@@ -23,7 +23,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * In alignment with the [MariaDB Engineering Policy](https://mariadb.com/engineering-policies), this release does not include CentOS 6.x and RHEL 6.x packages.
 * The audit plugin (not [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin)) did not log proxy users. The new plugin version 2.0.3 introduces an event sub-type `PROXY_CONNECT` for event type CONNECT. ([MDEV-19443](https://jira.mariadb.org/browse/MDEV-19443))
   * On connect, if a proxy user is used, an extra line will be logged: `TIME,HOSTNAME,user,localhost,ID,0,PROXY_CONNECT,test,plug_dest@%,0`
-* Better MariaDB GTID support for the [mariadb-backup](broken-reference) [--slave-info](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) option. ([MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264))
+* Better MariaDB GTID support for the [mariadb-backup](broken-reference/) [--slave-info](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) option. ([MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264))
 * New global [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) variable [innodb\_max\_purge\_lag\_wait](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_max_purge_lag_wait) ([MDEV-16952](https://jira.mariadb.org/browse/MDEV-16952))
 * The new parameter --include-unsupported for the script mariadb\_es\_repo\_setup can be used to enable a repository of unsupported packages in the repository configuration. The repository currently includes the `CONNECT` Storage Engine. The storage engine can be installed by `yum install MariaDB-connect-engine` or `apt-get install mariadb-plugin-connect-engine` (MENT-1003)
 * Back port of a MariaDB Server 10.5 feature to not acquire [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) record locks when covering table locks exist. (MENT-403)
@@ -94,8 +94,8 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 ### Can result in unexpected behavior
 
 * Defining a view with SQL syntax `ISNULL(ID)=0` incorrectly returns a syntax error. (MENT-1015)
-* [MariaDB Enterprise Backup](broken-reference) reports an error that it cannot find an Aria log file `'./aria_log.00000000'` (MENT-907)
-* [MariaDB Enterprise Backup](broken-reference) failure for incremental backups. ([MDEV-24026](https://jira.mariadb.org/browse/MDEV-24026))
+* [MariaDB Enterprise Backup](broken-reference/) reports an error that it cannot find an Aria log file `'./aria_log.00000000'` (MENT-907)
+* [MariaDB Enterprise Backup](broken-reference/) failure for incremental backups. ([MDEV-24026](https://jira.mariadb.org/browse/MDEV-24026))
 * Aborting a query on an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table with [KILL QUERY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/kill) does not show an SQL error message, if the query could not be aborted. ([MDEV-23938](https://jira.mariadb.org/browse/MDEV-23938))
 * Optimizer has chosen an inefficient plan, if a multi-component index, a second index, and a WHERE or ON clause with conditions over these indexes are used. ([MDEV-23811](https://jira.mariadb.org/browse/MDEV-23811))
 * Some rounding has been done in an unexpected way for decimal numbers. ([MDEV-23702](https://jira.mariadb.org/browse/MDEV-23702))
@@ -107,7 +107,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md) replication broken if only one timezone is loaded. ([MDEV-22626](https://jira.mariadb.org/browse/MDEV-22626))
 * [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md) SST donation fails, `FLUSH TABLES WITH READ LOCK` times out. ([MDEV-22543](https://jira.mariadb.org/browse/MDEV-22543))
 * Memory leaks possible after [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) with `FOREIGN KEY` ([MDEV-22277](https://jira.mariadb.org/browse/MDEV-22277))
-* [MariaDB Enterprise Backup](broken-reference) SST fails for [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) if data-directory has `lost+found` directory. ([MDEV-21951](https://jira.mariadb.org/browse/MDEV-21951))
+* [MariaDB Enterprise Backup](broken-reference/) SST fails for [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) if data-directory has `lost+found` directory. ([MDEV-21951](https://jira.mariadb.org/browse/MDEV-21951))
 * [SHOW BINLOG EVENTS FROM ...](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) caused a variety of non-determinism failures if the given position did not exist. ([MDEV-21839](https://jira.mariadb.org/browse/MDEV-21839))
 * Linux AIO returned OS `error 22` if parameters set to `innodb_flush_method O_DIRECT` and [innodb\_use\_native\_aio=1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_use_native_aio) (default). ([MDEV-21584](https://jira.mariadb.org/browse/MDEV-21584))
 * `CREATE OR REPLACE TRIGGER` in [Galera cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md) not replicating, if a trigger with the same name already exists. ([MDEV-21578](https://jira.mariadb.org/browse/MDEV-21578))
@@ -117,7 +117,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * The parentheses in a `VIEW` can be defined incorrectly for a combination of = and BETWEEN ([MDEV-17408](https://jira.mariadb.org/browse/MDEV-17408))
 * `ER_BASE64_DECODE_ERROR` upon replaying binary log. ([MDEV-16372](https://jira.mariadb.org/browse/MDEV-16372))
 * Several IPv6 issues with [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) powered by Galera. ([MDEV-21770](https://jira.mariadb.org/browse/MDEV-21770), [MDEV-23576](https://jira.mariadb.org/browse/MDEV-23576), [MDEV-23580](https://jira.mariadb.org/browse/MDEV-23580), [MDEV-23581](https://jira.mariadb.org/browse/MDEV-23581), [MDEV-23574](https://jira.mariadb.org/browse/MDEV-23574))
-* Subquery on [information\_schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema) fails with error message. (MENT-1016)
+* Subquery on [information\_schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema) fails with error message. (MENT-1016)
 * A `AUTO_INCREMENT` does not increment with compound primary key on partitioned table. (MENT-997)
 * `CREATE TEMPORARY TABLE .. LIKE` ([system versioned table|](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/system-versioned-table/README.md)) returns error if unique index is defined in the table. ([MDEV-23968](https://jira.mariadb.org/browse/MDEV-23968))
 * `CREATE .. SELECT` can result in empty result on join versioned table. ([MDEV-23799](https://jira.mariadb.org/browse/MDEV-23799))
@@ -140,7 +140,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * [innodb\_log\_optimize\_ddl](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_optimize_ddl) system variable default value changed from ON to OFF
 * [innodb\_max\_purge\_lag\_wait](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_max_purge_lag_wait) system variable added
 * [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--innodb-max-purge-lag-wait](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_max_purge_lag_wait) command-line option added
-* [performance\_schema\_digests\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables#performance_schema_digests_size) system variable maximum value changed from 200 to 1048576 to 1048576
+* [performance\_schema\_digests\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-system-variables#performance_schema_digests_size) system variable maximum value changed from 200 to 1048576 to 1048576
 
 ## Platforms
 

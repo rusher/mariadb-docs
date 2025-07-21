@@ -18,7 +18,7 @@ Thanks, and enjoy MariaDB!
 
 ## Notable Changes
 
-* [MDEV-14533](https://jira.mariadb.org/browse/MDEV-14533) - Added the [DISKS plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-disks-table), for monitoring disk space
+* [MDEV-14533](https://jira.mariadb.org/browse/MDEV-14533) - Added the [DISKS plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-disks-table), for monitoring disk space
 * [Galera wsrep library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/what-is-mariadb-galera-cluster/README.md) updated to 25.3.23
 * [MDEV-14611](https://jira.mariadb.org/browse/MDEV-14611) - [ALTER TABLE EXCHANGE PARTITION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) does not work properly when used with DATA DIRECTORY.
 * [MDEV-15333](https://jira.mariadb.org/browse/MDEV-15333) - MariaDB (still) slow start

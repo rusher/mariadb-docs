@@ -35,7 +35,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-12091](https://jira.mariadb.org/browse/MDEV-12091): Shutdown fails to wait for rollback of recovered transactions to finish
 * [MDEV-12219](https://jira.mariadb.org/browse/MDEV-12219): Discard temporary undo logs at transaction commit
 * [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289): compatibility fix for upgrading from 5.5 or 10.x
-* [MDEV-9255](https://jira.mariadb.org/browse/MDEV-9255): Two new columns added to the [Information Schema COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table, providing information about [generated (virtual, or computed)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns) columns.
+* [MDEV-9255](https://jira.mariadb.org/browse/MDEV-9255): Two new columns added to the [Information Schema COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table, providing information about [generated (virtual, or computed)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns) columns.
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * [CVE-2017-3313](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3313)
   * [CVE-2017-3302](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3302)

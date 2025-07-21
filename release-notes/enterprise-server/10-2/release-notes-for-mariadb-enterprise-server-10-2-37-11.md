@@ -18,15 +18,15 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * The new [mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) `--system={all, users, plugins, udfs, servers, stats, timezones}` command-line option allows dumping system information in logical form. ([MDEV-23630](https://jira.mariadb.org/browse/MDEV-23630))
 * Added primary host and port info to replica stop messages. ([MDEV-10272](https://jira.mariadb.org/browse/MDEV-10272))
 * Parameter [innodb\_idle\_flush\_pct](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#innodb_idle_flush_pct) has no effect and is defined as deprecated. ([MDEV-24536](https://jira.mariadb.org/browse/MDEV-24536))
-* New [MariaDB Enterprise Backup --log-innodb-page-corruption](broken-reference) to continue the backup process when corruption is encountered. Corrupted pages are logged in backup\_corrupted file in the backup destination directory. ([MDEV-22929](https://jira.mariadb.org/browse/MDEV-22929))
-* [MariaDB Enterprise Backup](broken-reference) adds `completed with Error!` to the end of the log file if the backup is started with parameter [--log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-2/broken-reference/README.md) and completed with corrupted tables. The new log entry `canceled with Error!` will be used when the backup could not be completed. (MENT-1059)
+* New [MariaDB Enterprise Backup --log-innodb-page-corruption](broken-reference/) to continue the backup process when corruption is encountered. Corrupted pages are logged in backup\_corrupted file in the backup destination directory. ([MDEV-22929](https://jira.mariadb.org/browse/MDEV-22929))
+* [MariaDB Enterprise Backup](broken-reference/) adds `completed with Error!` to the end of the log file if the backup is started with parameter [--log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-2/broken-reference/README.md) and completed with corrupted tables. The new log entry `canceled with Error!` will be used when the backup could not be completed. (MENT-1059)
 * [wsrep\_provider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wsrep_provider) and [wsrep\_notify\_cmd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wsrep_notify_cmd) system variables are read-only. ([MDEV-25179](https://jira.mariadb.org/browse/MDEV-25179))
 
 ## Issues Fixed
 
 ### Can result in data loss
 
-* In a very unlikely event, corruption of system tablespace or last recovered page can occur on recovery or a [MariaDB Backup prepare](broken-reference). (MENT-1124, [MDEV-24449](https://jira.mariadb.org/browse/MDEV-24449))
+* In a very unlikely event, corruption of system tablespace or last recovered page can occur on recovery or a [MariaDB Backup prepare](broken-reference/). (MENT-1124, [MDEV-24449](https://jira.mariadb.org/browse/MDEV-24449))
 
 ### Can result in a hang or crash
 
@@ -43,7 +43,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 
 * [SHOW GRANTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-grants) is missing the `WITH GRANT` privilege for roles. ([MDEV-24289](https://jira.mariadb.org/browse/MDEV-24289))
 * `mysqld_safe` log messages are missing in the error log file. ([MDEV-21367](https://jira.mariadb.org/browse/MDEV-21367))
-* `CHECK_CLAUSE` field in [INFORMATION\_SCHEMA.CHECK\_CONSTRAINTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-check_constraints-table) truncates check constraints expressions. ([MDEV-24139](https://jira.mariadb.org/browse/MDEV-24139))
+* `CHECK_CLAUSE` field in [INFORMATION\_SCHEMA.CHECK\_CONSTRAINTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-check_constraints-table) truncates check constraints expressions. ([MDEV-24139](https://jira.mariadb.org/browse/MDEV-24139))
 * Unexpected error message when selecting from view that uses mergeable derived table. ([MDEV-24314](https://jira.mariadb.org/browse/MDEV-24314))
 * Permission denied error message is returned on users with [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) permissions for nested CTEs. ([MDEV-20751](https://jira.mariadb.org/browse/MDEV-20751))
 * Regression: `SELECT .. UNION ..` with inconsistent column names fails. ([MDEV-19179](https://jira.mariadb.org/browse/MDEV-19179))
@@ -61,14 +61,14 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 
 ## Interface Changes
 
-* [accounts](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-accounts-table) performance schema table schema changed
-* [CHECK\_CONSTRAINTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-check_constraints-table) information schema table schema changed
-* [events\_stages\_summary\_by\_account\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_summary_by_account_by_event_name-table) performance schema table schema changed
-* [events\_stages\_summary\_by\_user\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_summary_by_user_by_event_name-table) performance schema table schema changed
-* [events\_statements\_summary\_by\_account\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_summary_by_account_by_event_name-table) performance schema table schema changed
-* [events\_statements\_summary\_by\_user\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_summary_by_user_by_event_name-table) performance schema table schema changed
-* [events\_waits\_summary\_by\_account\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_summary_by_user_by_event_name-table) performance schema table schema changed
-* [events\_waits\_summary\_by\_user\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_summary_by_user_by_event_name-table) performance schema table schema changed
+* [accounts](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-accounts-table) performance schema table schema changed
+* [CHECK\_CONSTRAINTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-check_constraints-table) information schema table schema changed
+* [events\_stages\_summary\_by\_account\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_summary_by_account_by_event_name-table) performance schema table schema changed
+* [events\_stages\_summary\_by\_user\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_summary_by_user_by_event_name-table) performance schema table schema changed
+* [events\_statements\_summary\_by\_account\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_summary_by_account_by_event_name-table) performance schema table schema changed
+* [events\_statements\_summary\_by\_user\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_summary_by_user_by_event_name-table) performance schema table schema changed
+* [events\_waits\_summary\_by\_account\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_summary_by_user_by_event_name-table) performance schema table schema changed
+* [events\_waits\_summary\_by\_user\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_summary_by_user_by_event_name-table) performance schema table schema changed
 * [group\_concat\_max\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#group_concat_max_len) system variable maximum value changed from 18446744073709551615 to 4294967295
 * [mariadb-backup --log-innodb-page-corruption](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-2/broken-reference/README.md) command-line option added
 * [mariadb\_es\_repo\_setup --include-unsupported](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup-2) command-line option added
@@ -77,9 +77,9 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * [mariadb\_repo\_setup --version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) command-line option added
 * [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) system variable minimum value changed from 8 to 64
 * [mysqldump --system](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) command-line option added
-* [setup\_actors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_actors-table) performance schema table schema changed
-* [threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table) performance schema table schema changed
-* [users](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-users-table) performance schema table schema changed
+* [setup\_actors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_actors-table) performance schema table schema changed
+* [threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table) performance schema table schema changed
+* [users](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-users-table) performance schema table schema changed
 
 ## Platforms
 

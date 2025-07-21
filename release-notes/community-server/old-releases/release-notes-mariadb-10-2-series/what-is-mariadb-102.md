@@ -74,8 +74,8 @@ The following lists the major new features in [MariaDB 10.2](what-is-mariadb-102
 
 ### Information Schema
 
-* An information schema plugin to report all user variables, which creates the [Information Schema USER\_VARIABLES Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table) ([MDEV-7331](https://jira.mariadb.org/browse/MDEV-7331))
-* Changes to the [Information Schema COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table. Literals are now quoted in the `COLUMN_DEFAULT` column to distinguish them from expressions ([MDEV-13132](https://jira.mariadb.org/browse/MDEV-13132)), and two new columns added providing information about [generated (virtual, or computed)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns) columns ([MDEV-9255](https://jira.mariadb.org/browse/MDEV-9255)).
+* An information schema plugin to report all user variables, which creates the [Information Schema USER\_VARIABLES Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table) ([MDEV-7331](https://jira.mariadb.org/browse/MDEV-7331))
+* Changes to the [Information Schema COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table. Literals are now quoted in the `COLUMN_DEFAULT` column to distinguish them from expressions ([MDEV-13132](https://jira.mariadb.org/browse/MDEV-13132)), and two new columns added providing information about [generated (virtual, or computed)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns) columns ([MDEV-9255](https://jira.mariadb.org/browse/MDEV-9255)).
 
 ### EXPLAIN
 

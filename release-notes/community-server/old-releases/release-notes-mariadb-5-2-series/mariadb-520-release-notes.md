@@ -17,7 +17,7 @@ New features and changes in this version include:
 #### [userstatv2](https://www.percona.com/docs/wiki/patches:userstatv2) patch from Percona
 
 * This patch enables the gathering of more detailed statistics in [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md).\
-  As part of this patch, several new [INFORMATION\_SCHEMA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema)\
+  As part of this patch, several new [INFORMATION\_SCHEMA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema)\
   tables (with corresponding new `FLUSH` and`SHOW` commands) have been added. See:[User Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics) for details.
 
 #### Virtual columns patch (Contribution)
@@ -50,7 +50,7 @@ New features and changes in this version include:
 
 #### Additional information added to engine description, new MariaDB plugin declaration [MWL#61](https://askmonty.org/worklog/?tid=61)
 
-* We've added two new columns to the[INFORMATION\_SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema).
+* We've added two new columns to the[INFORMATION\_SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema).
 * For plugin authors: As part of this change, the MariaDB plugin declaration\
   now differs slightly from the MySQL plugin declaration (the MySQL plugin\
   declaration is still supported for dynamically loaded plugins). See:[Writing Plugins](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/development-writing-plugins-for-mariadb) for details.

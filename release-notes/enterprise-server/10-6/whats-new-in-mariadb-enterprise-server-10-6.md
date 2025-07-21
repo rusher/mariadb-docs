@@ -62,7 +62,7 @@ With `JSON_TABLE()`:
 
 ## Sys Schema
 
-sys schema provides a set of views, functions, and stored procedures to aid DBA analysis of the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema).
+sys schema provides a set of views, functions, and stored procedures to aid DBA analysis of the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema).
 
 ## OFFSET Syntax
 

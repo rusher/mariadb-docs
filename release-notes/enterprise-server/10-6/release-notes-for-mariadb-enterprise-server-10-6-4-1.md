@@ -74,11 +74,11 @@ ALTER TABLE tab
  PAGE_COMPRESSED=1;
 ```
 
-* For additional information, see "[Convert InnoDB Tables to the Dynamic Row Format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables)" and "[Configure InnoDB Page Compression](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-page-compression)".
+* For additional information, see "[Convert InnoDB Tables to the Dynamic Row Format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables)" and "[Configure InnoDB Page Compression](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-page-compression)".
 * Information Schema changes for InnoDB
-  * Information Schema [INNODB\_SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table) directly reflects the filesystem. ([MDEV-22343](https://jira.mariadb.org/browse/MDEV-22343))
+  * Information Schema [INNODB\_SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table) directly reflects the filesystem. ([MDEV-22343](https://jira.mariadb.org/browse/MDEV-22343))
   * `INNODB_SYS_TABLESPACES.PAGE_SIZE` contains the physical page size of a page.
-  * `INNODB_SYS_TABLESPACES.FILENAME` added as a replacement for [SYS\_DATAFILES.PATH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_datafiles-table)
+  * `INNODB_SYS_TABLESPACES.FILENAME` added as a replacement for [SYS\_DATAFILES.PATH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_datafiles-table)
   * Information Schema `INNODB_SYS_DATAFILES` removed. ([MDEV-22343](https://jira.mariadb.org/browse/MDEV-22343))
 * Reduced global lock duration in InnoDB transaction deadlock checks ([MDEV-24738](https://jira.mariadb.org/browse/MDEV-24738))
 * InnoDB no longer acquires advisory file locks by default ([MDEV-24393](https://jira.mariadb.org/browse/MDEV-24393))
@@ -115,7 +115,7 @@ ALTER TABLE tab
 ## Operational Enhancements
 
 * sys Schema
-  * sys schema provides a set of views, functions, and stored procedures to aid DBA analysis of the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema). ([MDEV-9077](https://jira.mariadb.org/browse/MDEV-9077))
+  * sys schema provides a set of views, functions, and stored procedures to aid DBA analysis of the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema). ([MDEV-9077](https://jira.mariadb.org/browse/MDEV-9077))
 * Increase in host name length
   * Host names in [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/create-user), [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) and replication [CHANGE MASTER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) can be up to 255 bytes long. ([MDEV-24312](https://jira.mariadb.org/browse/MDEV-24312))
 * UTF8
@@ -271,7 +271,7 @@ CREATE USER everyone
 
 ## MariaDB Replication
 
-* Performance Schema [replication\_applier\_status\_by\_worker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-replication_applier_status_by_worker-table) table provides information on replica worker threads. ([MDEV-20220](https://jira.mariadb.org/browse/MDEV-20220))
+* Performance Schema [replication\_applier\_status\_by\_worker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-replication_applier_status_by_worker-table) table provides information on replica worker threads. ([MDEV-20220](https://jira.mariadb.org/browse/MDEV-20220))
 * Fine-grained binlog expiration
   * [binlog\_expire\_logs\_seconds](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) system variable defines the frequency in seconds of automated removal of binary logs. ([MDEV-19371](https://jira.mariadb.org/browse/MDEV-19371))
   * Prior to this release, expiration time was defined in days using binlog\_expire\_logs\_days.
@@ -309,8 +309,8 @@ MariaDB Enterprise Cluster is powered by Galera. New in this release:
 * The script `wsrep_sst_mariadb-backup` checks all server-related configuration groups when processing a configuration file. ([MDEV-25669](https://jira.mariadb.org/browse/MDEV-25669))
   * Prior to this release, only the \[`mysqld`] configuration group was checked when processing a configuration file.
 * Performance Schema for Enterprise Cluster
-  * Performance Schema table [galera\_group\_members](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables) logs information about the configuration of the cluster. ([MDEV-286](https://jira.mariadb.org/browse/MDEV-286))
-  * Performance Schema table [galera\_group\_member\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables) logs information about the performance characteristics of nodes in the cluster. ([MDEV-286](https://jira.mariadb.org/browse/MDEV-286))
+  * Performance Schema table [galera\_group\_members](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables) logs information about the configuration of the cluster. ([MDEV-286](https://jira.mariadb.org/browse/MDEV-286))
+  * Performance Schema table [galera\_group\_member\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables) logs information about the performance characteristics of nodes in the cluster. ([MDEV-286](https://jira.mariadb.org/browse/MDEV-286))
 
 ## Interface Changes
 
@@ -324,7 +324,7 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * columnstore\_decimal\_overflow\_check system variable added
 * [Com\_multi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#com_multi) status variable removed
 * [ER\_BINLOG\_UNSAFE\_SKIP\_LOCKED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4100-to-4199/e4175) error code added
-* [ER\_BLACKBOX\_ERROR](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4100-to-4199/e4174) error code error number changed from 4174 to 6000
+* [ER\_BLACKBOX\_ERROR](broken-reference) error code error number changed from 4174 to 6000
 * [ER\_JSON\_TABLE\_ALIAS\_REQUIRED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4100-to-4199/e4177) error code added
 * [ER\_JSON\_TABLE\_ERROR\_ON\_FIELD](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4100-to-4199/e4176) error code added
 * [ER\_JSON\_TABLE\_MULTIPLE\_MATCHES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4100-to-4199/e4179) error code added
@@ -338,14 +338,14 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * [ER\_UNUSED\_28](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes) error code replaces [ER\_TABLE\_IN\_FK\_CHECK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1700-to-1799/e1725)
 * [ER\_WITH\_TIES\_NEEDS\_ORDER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4100-to-4199/e4180) error code added
 * [expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#expire_logs_days) system variable default value changed from 0 to 0.000000
-* [galera\_group\_member\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables) performance schema table added
-* [galera\_group\_members](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables) performance schema table added
-* [host\_summary](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary-and-xhost_summary-sys-schema-views) sys table added
-* [host\_summary\_by\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary_by_file_io-and-xhost_summary_by_file_io-sys-schema-views) sys table added
-* [host\_summary\_by\_file\_io\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary_by_file_io_type-and-xhost_summary_by_file_io_type-sys-schema-v) sys table added
-* [host\_summary\_by\_stages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary_by_stages-and-xhost_summary_by_stages-sys-schema-views) sys table added
-* [host\_summary\_by\_statement\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta) sys table added
-* [host\_summary\_by\_statement\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary_by_statement_type-and-xhost_summary_by_statement_type-sys-sche) sys table added
+* [galera\_group\_member\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables) performance schema table added
+* [galera\_group\_members](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables) performance schema table added
+* [host\_summary](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary-and-xhost_summary-sys-schema-views) sys table added
+* [host\_summary\_by\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary_by_file_io-and-xhost_summary_by_file_io-sys-schema-views) sys table added
+* [host\_summary\_by\_file\_io\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary_by_file_io_type-and-xhost_summary_by_file_io_type-sys-schema-v) sys table added
+* [host\_summary\_by\_stages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary_by_stages-and-xhost_summary_by_stages-sys-schema-views) sys table added
+* [host\_summary\_by\_statement\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta) sys table added
+* [host\_summary\_by\_statement\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary_by_statement_type-and-xhost_summary_by_statement_type-sys-sche) sys table added
 * `innochecksum` --strict-check (-C) command-line option removed
 * `innochecksum` --write (-w) command-line option removed
 * [innodb\_adaptive\_max\_sleep\_delay](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_adaptive_max_sleep_delay) system variable removed
@@ -385,14 +385,14 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * [innodb\_thread\_concurrency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_thread_concurrency) system variable removed
 * [innodb\_thread\_sleep\_delay](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_thread_sleep_delay) system variable removed
 * [innodb\_undo\_logs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_undo_logs) system variable removed
-* [io\_by\_thread\_by\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/io_by_thread_by_latency-and-xio_by_thread_by_latency-sys-schema-views) sys table added
-* [io\_global\_by\_file\_by\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/io_global_by_file_by_bytes-and-xio_global_by_file_by_bytes-sys-schema-views) sys table added
-* [io\_global\_by\_file\_by\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/io_global_by_file_by_bytes-and-xio_global_by_file_by_bytes-sys-schema-views) sys table added
-* [io\_global\_by\_wait\_by\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/io_global_by_wait_by_bytes-and-xio_global_by_wait_by_bytes-sys-schema-views) sys table added
-* [io\_global\_by\_wait\_by\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/io_global_by_wait_by_bytes-and-xio_global_by_wait_by_bytes-sys-schema-views) sys table added
+* [io\_by\_thread\_by\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/io_by_thread_by_latency-and-xio_by_thread_by_latency-sys-schema-views) sys table added
+* [io\_global\_by\_file\_by\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/io_global_by_file_by_bytes-and-xio_global_by_file_by_bytes-sys-schema-views) sys table added
+* [io\_global\_by\_file\_by\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/io_global_by_file_by_bytes-and-xio_global_by_file_by_bytes-sys-schema-views) sys table added
+* [io\_global\_by\_wait\_by\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/io_global_by_wait_by_bytes-and-xio_global_by_wait_by_bytes-sys-schema-views) sys table added
+* [io\_global\_by\_wait\_by\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/io_global_by_wait_by_bytes-and-xio_global_by_wait_by_bytes-sys-schema-views) sys table added
 * [JSON\_TABLE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_table) function added
-* [KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) information schema table added
-* [latest\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/latest_file_io-and-xlatest_file_io-sys-schema-views) sys table added
+* [KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) information schema table added
+* [latest\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/latest_file_io-and-xlatest_file_io-sys-schema-views) sys table added
 * `mariadb-backup` [--debug-sleep-before-unlock](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-debug-sleep-before-unlock) command-line option removed
 * `mariadb-backup` [--debug-sync](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-debug-sync) command-line option removed
 * `mariadb-backup` [--innodb-log-files-in-group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-innodb-log-files-in-group) command-line option removed
@@ -415,15 +415,15 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * `mariadbd` [--innodb-log-compressed-pages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_compressed_pages) command-line option removed
 * `mariadbd` [--innodb-log-files-in-group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_files_in_group) command-line option removed
 * `mariadbd` [--innodb-log-optimize-ddl](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_optimize_ddl) command-line option removed
-* `mariadbd` [--innodb-mutexes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table) command-line option removed
+* `mariadbd` [--innodb-mutexes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table) command-line option removed
 * `mariadbd` [--innodb-page-cleaners](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_page_cleaners) command-line option removed
 * `mariadbd` [--innodb-read-only-compressed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_read_only_compressed) command-line option added
 * `mariadbd` [--innodb-replication-delay](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_replication_delay) command-line option removed
 * `mariadbd` [--innodb-scrub-log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_scrub_log) command-line option removed
 * `mariadbd` [--innodb-scrub-log-speed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_scrub_log_speed) command-line option removed
 * `mariadbd` [--innodb-sync-array-size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_sync_array_size) command-line option removed
-* `mariadbd` [--innodb-sys-datafiles](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_datafiles-table) command-line option removed
-* `mariadbd` [--innodb-sys-semaphore-waits](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_semaphore_waits-table) command-line option removed
+* `mariadbd` [--innodb-sys-datafiles](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_datafiles-table) command-line option removed
+* `mariadbd` [--innodb-sys-semaphore-waits](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_semaphore_waits-table) command-line option removed
 * `mariadbd` [--innodb-thread-concurrency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_thread_concurrency) command-line option removed
 * `mariadbd` [--innodb-thread-sleep-delay](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_thread_sleep_delay) command-line option removed
 * `mariadbd` [--innodb-undo-logs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-undo-log) command-line option removed
@@ -435,12 +435,12 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * `mariadbd` [--wsrep-mode command-line](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) option added
 * `mariadbd` wsrep-ssl-mode command-line option added
 * [max\_recursive\_iterations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_recursive_iterations) system variable default value changed from 4294967295 to 1000 ([MDEV-17239](https://jira.mariadb.org/browse/MDEV-17239))
-* [memory\_by\_host\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
-* [memory\_by\_thread\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
-* [memory\_by\_user\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
-* [memory\_global\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
-* [memory\_global\_total](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_global_by_event_name-table) sys table added
-* [metrics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/metrics-sys-schema-view) sys table added
+* [memory\_by\_host\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
+* [memory\_by\_thread\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
+* [memory\_by\_user\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
+* [memory\_global\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
+* [memory\_global\_total](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_global_by_event_name-table) sys table added
+* [metrics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/metrics-sys-schema-view) sys table added
 * `MINUS` reserved word added
 * `OFFSET` reserved word added
 * [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old_mode) system variable default value changed from "" (empty) to UTF8\_IS\_`UTF8MB3`
@@ -449,11 +449,11 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * Resultset\_metadata\_skipped status variable added
 * [ROWNUM()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/rownum) function added
 * `ROWNUM` reserved word added
-* [schema\_auto\_increment\_columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/schema_auto_increment_columns-sys-schema-view) sys table added
+* [schema\_auto\_increment\_columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/schema_auto_increment_columns-sys-schema-view) sys table added
 * schema\_index\_statistics sys table added
-* [schema\_object\_overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/schema_object_overview-sys-schema-view) sys table added
+* [schema\_object\_overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/schema_object_overview-sys-schema-view) sys table added
 * schema\_redundant\_indexes-sys-schema-view sys table added
-* [schema\_table\_lock\_waits](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_lock_waits_summary_by_table-table) sys table added
+* [schema\_table\_lock\_waits](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-table_lock_waits_summary_by_table-table) sys table added
 * schema\_table\_statistics-sys-schema-view sys table added
 * schema\_table\_statistics\_with\_buffer-sys-schema-viewsys table added
 * schema\_schema\_tables\_with\_full\_table\_scansobject\_overview-sys-schema-view sys table added
@@ -461,7 +461,7 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * server\_audit\_load\_on\_error system variable added
 * session sys table added
 * session\_ssl\_status sys table added
-* [SQL\_FUNCTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sql_functions-table) information schema table added
+* [SQL\_FUNCTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-sql_functions-table) information schema table added
 * `sql_mode` value EXTENDED\_ALIASES added
 * statement\_analysis sys table added
 * statements\_with\_errors\_or\_warnings sys table added
@@ -491,21 +491,21 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * wsrep\_certificate\_expiration\_hours\_warning system variable added
 * [wsrep\_mode system](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) variable added
 * wsrep\_ssl\_mode system variable added
-* [x$host\_summary](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary-and-xhost_summary-sys-schema-views) sys table added
-* [x$host\_summary\_by\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary_by_file_io-and-xhost_summary_by_file_io-sys-schema-views) sys table added
-* [x$host\_summary\_by\_file\_io\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary_by_file_io_type-and-xhost_summary_by_file_io_type-sys-schema-v) sys table added
-* [x$host\_summary\_by\_stages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/host_summary_by_stages-and-xhost_summary_by_stages-sys-schema-views) sys table added
-* [x$host\_summary\_by\_statement\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta) sys table added
-* [x$host\_summary\_by\_statement\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta) sys table added
+* [x$host\_summary](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary-and-xhost_summary-sys-schema-views) sys table added
+* [x$host\_summary\_by\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary_by_file_io-and-xhost_summary_by_file_io-sys-schema-views) sys table added
+* [x$host\_summary\_by\_file\_io\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary_by_file_io_type-and-xhost_summary_by_file_io_type-sys-schema-v) sys table added
+* [x$host\_summary\_by\_stages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/host_summary_by_stages-and-xhost_summary_by_stages-sys-schema-views) sys table added
+* [x$host\_summary\_by\_statement\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta) sys table added
+* [x$host\_summary\_by\_statement\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta) sys table added
 * hinnodb\_buffer\_stats\_by\_schema-and-xinnodb\_buffer\_stats\_by\_schema-sys-schema-views sys table added
-* [x$innodb\_buffer\_stats\_by\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/innodb_buffer_stats_by_table-and-xinnodb_buffer_stats_by_table-sys-schema-v) sys table added
-* [x$innodb\_lock\_waits](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/innodb_lock_waits-and-xinnodb_lock_waits-sys-schema-views) sys table added
-* [x$io\_by\_thread\_by\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/io_by_thread_by_latency-and-xio_by_thread_by_latency-sys-schema-views) sys table added
-* [x$io\_global\_by\_file\_by\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/io_global_by_file_by_bytes-and-xio_global_by_file_by_bytes-sys-schema-views) sys table added
+* [x$innodb\_buffer\_stats\_by\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/innodb_buffer_stats_by_table-and-xinnodb_buffer_stats_by_table-sys-schema-v) sys table added
+* [x$innodb\_lock\_waits](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/innodb_lock_waits-and-xinnodb_lock_waits-sys-schema-views) sys table added
+* [x$io\_by\_thread\_by\_latency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/io_by_thread_by_latency-and-xio_by_thread_by_latency-sys-schema-views) sys table added
+* [x$io\_global\_by\_file\_by\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/io_global_by_file_by_bytes-and-xio_global_by_file_by_bytes-sys-schema-views) sys table added
 * io\_global\_by\_file\_by\_latency-and-xio\_global\_by\_file\_by\_latency-sys-schema-views sys table added
-* [x$io\_global\_by\_wait\_by\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/io_global_by_wait_by_bytes-and-xio_global_by_wait_by_bytes-sys-schema-views) sys table added
+* [x$io\_global\_by\_wait\_by\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/io_global_by_wait_by_bytes-and-xio_global_by_wait_by_bytes-sys-schema-views) sys table added
 * io\_global\_by\_wait\_by\_latency-and-xio\_global\_by\_wait\_by\_latency-sys-schema-views sys table added
-* [x$latest\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/latest_file_io-and-xlatest_file_io-sys-schema-views) sys table added
+* [x$latest\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/latest_file_io-and-xlatest_file_io-sys-schema-views) sys table added
 * memory\_by\_host\_by\_current\_bytes-and-xmemory\_by\_host\_by\_current\_bytes-sys-schema-views sys table added
 * memory\_by\_thread\_by\_current\_bytes-and-xmemory\_by\_thread\_by\_current\_bytes-sys-schema-views sys table added
 * memory\_by\_user\_by\_current\_bytes-and-xmemory\_by\_user\_by\_current\_bytes-sys-schema-views sys table added

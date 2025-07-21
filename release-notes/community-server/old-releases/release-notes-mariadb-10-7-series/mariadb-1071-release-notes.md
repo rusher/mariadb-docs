@@ -23,7 +23,7 @@ This release includes all features from the [MariaDB 10.7.0](mariadb-1070-releas
 
 ### Performance Schema
 
-* Comments have been added for each table column in the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) to improve documentation ([MDEV-25325](https://jira.mariadb.org/browse/MDEV-25325)). For example:
+* Comments have been added for each table column in the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) to improve documentation ([MDEV-25325](https://jira.mariadb.org/browse/MDEV-25325)). For example:
 
 ```sql
 SELECT column_name, column_comment FROM information_schema.columns 

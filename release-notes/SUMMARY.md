@@ -869,6 +869,7 @@
         * [MariaDB Galera Cluster 5.5.61 Release Notes](community-server/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5561-release-notes.md)
         * [MariaDB Galera Cluster 5.5.62 Release Notes](community-server/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5562-release-notes.md)
         * [MariaDB Galera Cluster 5.5.63 Release Notes](community-server/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes.md)
+    * [MariaDB Audit Plugin Release Notes](community-server/old-releases/mariadb-audit-plugin-release-notes.md)
     * [Old MySQL Versions](community-server/old-releases/old-mysql-versions.md)
   * [Changelogs](community-server/changelogs/README.md)
     * [Changelogs - MariaDB 12.0 Series](community-server/changelogs/changelogs-mariadb-12.0-series/README.md)

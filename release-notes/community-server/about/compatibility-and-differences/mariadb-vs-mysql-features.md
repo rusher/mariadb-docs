@@ -120,7 +120,7 @@ every effort to include it in MariaDB. The most notable features are:
 * Added catchall for [list partitions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/broken-reference/README.md) — new in 10.2
 * Oracle-style [EXECUTE IMMEDIATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-immediate) statement — new in 10.2
 * Several new [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions) — new in 10.2
-* [Microsecond Precision in Processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist)
+* [Microsecond Precision in Processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist)
 * [Table Elimination](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination)
 * [Virtual Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns)\
   — new in 5.2
@@ -133,7 +133,7 @@ every effort to include it in MariaDB. The most notable features are:
   — new in 5.2
 * [Storage-engine-specific CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes)\
   — new in 5.2
-* [Enhancements to INFORMATION SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)\
+* [Enhancements to INFORMATION SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)\
   — new in 5.2
 * [Group commit for the binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log). This makes [replication notably faster!](https://www.facebook.com/note.php?note_id=10150261692455933) — new in 5.3
 * Added `--rewrite-db` [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) option to change the used database\

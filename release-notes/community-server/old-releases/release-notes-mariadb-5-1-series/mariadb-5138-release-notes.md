@@ -118,7 +118,7 @@ for details.
 This is based on the[microsec\_process](https://www.percona.com/mysql/5.0.77-b13/patches/microsec_process.patch)\
 patch from [Percona](https://www.percona.com/).
 
-See [TIME\_MS column in INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist) for details.
+See [TIME\_MS column in INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist) for details.
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

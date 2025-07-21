@@ -19,7 +19,7 @@ Thanks, and enjoy MariaDB!
 
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb) updated to XtraDB-5.6.29-76.2
 * [Innodb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb) updated to InnoDB-5.6.30
-* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updated to 5.6.30
+* [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) updated to 5.6.30
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * [CVE-2016-0655](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0655)
   * [CVE-2016-0647](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0647)

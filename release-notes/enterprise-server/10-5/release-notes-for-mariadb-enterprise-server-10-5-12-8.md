@@ -50,14 +50,14 @@ ARM64 is now supported for several [#platforms](release-notes-for-mariadb-enterp
 
 * The script `wsrep_sst_mariadb-backup` checks all server-related configuration groups when processing a configuration file. ([MDEV-25669](https://jira.mariadb.org/browse/MDEV-25669))
   * Prior to this release, only the \[`mysqld`] configuration group was checked when processing a configuration file.
-* MariaDB Enterprise Backup expects [--stream=mbstream](broken-reference) to stream a backup using the included `mbstream` utility. ([MDEV-15730](https://jira.mariadb.org/browse/MDEV-15730))
-  * Prior to this release, MariaDB Enterprise Backup expected [--stream=xbstream](broken-reference), even though the `xbstream` utility had been renamed to `mbstream`.
+* MariaDB Enterprise Backup expects [--stream=mbstream](broken-reference/) to stream a backup using the included `mbstream` utility. ([MDEV-15730](https://jira.mariadb.org/browse/MDEV-15730))
+  * Prior to this release, MariaDB Enterprise Backup expected [--stream=xbstream](broken-reference/), even though the `xbstream` utility had been renamed to `mbstream`.
 
 InnoDB no longer acquires advisory file locks by default. ([MDEV-24393](https://jira.mariadb.org/browse/MDEV-24393))
 
-The [information\_schema.KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) table has been added and can be used to view details about SQL keywords. ([MDEV-25129](https://jira.mariadb.org/browse/MDEV-25129))
+The [information\_schema.KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) table has been added and can be used to view details about SQL keywords. ([MDEV-25129](https://jira.mariadb.org/browse/MDEV-25129))
 
-The [information\_schema.SQL\_FUNCTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sql_functions-table) table has been added and can be used to view details about built-in functions. ([MDEV-25129](https://jira.mariadb.org/browse/MDEV-25129))
+The [information\_schema.SQL\_FUNCTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-sql_functions-table) table has been added and can be used to view details about built-in functions. ([MDEV-25129](https://jira.mariadb.org/browse/MDEV-25129))
 
 * When using data-at-rest encryption with the [file\_key\_management](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin) encryption plugin, InnoDB will automatically disable key rotation checks. ([MDEV-14180](https://jira.mariadb.org/browse/MDEV-14180))
   * The [file\_key\_management](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin) encryption plugin does not support key rotation, so key rotation checks are not required.
@@ -118,7 +118,7 @@ The [S3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-eng
 * Server hangs on Windows when [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) is executed and then the server is stopped. (MENT-1300)
 * Server crashes while executing [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) to set multiple variables at once. ([MDEV-25601](https://jira.mariadb.org/browse/MDEV-25601))
 * Server crashes while calling [SPIDER\_DIRECT\_SQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-functions/spider_direct_sql) without creating the required temporary table. (MENT-1318)
-* MariaDB Enterprise Backup crashes when executed with the [--backup](broken-reference) and [--databases-exclude](broken-reference) options. ([MDEV-25815](https://jira.mariadb.org/browse/MDEV-25815))
+* MariaDB Enterprise Backup crashes when executed with the [--backup](broken-reference/) and [--databases-exclude](broken-reference/) options. ([MDEV-25815](https://jira.mariadb.org/browse/MDEV-25815))
 
 ### Can result in unexpected behavior
 
@@ -181,10 +181,10 @@ InnoDB: WSREP: referenced FK check fail: Lock wait index `PRIMARY` table `schema
 ## Interface Changes
 
 * [ER\_BLACKBOX\_ERROR](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-5/broken-reference/README.md) error code error number changed from `4174` to `6000`
-* [KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) information schema table added
+* [KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) information schema table added
 * `mariadbd` --server-audit-load-on-error command-line option added
 * [server\_audit\_load\_on\_error](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables) system variable added
-* [SQL\_FUNCTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sql_functions-table) information schema table added
+* [SQL\_FUNCTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-sql_functions-table) information schema table added
 * [system\_versioning\_asof](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables#system_versioning_asof) system variable default value changed from DEFAULT to "" (empty)
 
 ## Platforms

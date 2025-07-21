@@ -39,7 +39,7 @@ NODE_NAME messagequeue[409]: 01.642554 |0|0|0| E 31 CAL0000: messageqcpp::hostna
 
 **Starting with this release, after the primary node is restarted, both CMAPI and MaxScale should failover to the same primary server.**
 
-* When a CTE contains a query that joins an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table and a [ColumnStore](../) table, if the CTE results contain a [TIMESTAMP column](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1200-to-1299/e1299), the column can sometimes be returned as a zero-date (which is 0000-00-00 00:00:00). ([MCOL-5311](https://jira.mariadb.org/browse/MCOL-5311))
+* When a CTE contains a query that joins an [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) table and a [ColumnStore](../) table, if the CTE results contain a [TIMESTAMP column](broken-reference), the column can sometimes be returned as a zero-date (which is 0000-00-00 00:00:00). ([MCOL-5311](https://jira.mariadb.org/browse/MCOL-5311))
 * When a [VARCHAR column](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/varchar) is NULL and is cast to INT, the conversion would fail, and PrimProc would excessively write log messages to its systemd journal. ([MCOL-5346](https://jira.mariadb.org/browse/MCOL-5346))
   * In previous releases, the systemd journal for PrimProc could contain many messages like the following:
 

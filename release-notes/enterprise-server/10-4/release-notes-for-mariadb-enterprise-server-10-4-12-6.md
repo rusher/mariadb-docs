@@ -64,7 +64,7 @@ MariaDB Enterprise Server 10.4.12-6 was released on 2020-03-02.
 
 ## Interface Changes
 
-* [performance\_schema\_max\_cond\_classes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables#performance_schema_max_cond_classes) system variable default value changed from 80 to 90
+* [performance\_schema\_max\_cond\_classes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-system-variables#performance_schema_max_cond_classes) system variable default value changed from 80 to 90
 
 ## Platforms
 

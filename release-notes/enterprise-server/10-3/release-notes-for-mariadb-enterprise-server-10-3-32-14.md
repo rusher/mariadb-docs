@@ -21,7 +21,7 @@ MariaDB Enterprise Server 10.3.32-14 was released on 2021-12-13.
   * The default value of [spider\_use\_pushdown\_udf](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-system-variables#spider_use_pushdown_udf) has changed from `-1` to `0`
   * In previous releases, Enterprise Spider pushed UDFs and Stored Functions down to the Data Node by default, which could cause query results to be inconsistent.
   * Starting with this release, all UDFs and stored functions are evaluated on the Spider Node by default. If desired, pushdown of UDFs and Stored Functions can be explicitly enabled by setting `spider_use_pushdown_udf=1`. Testing is recommended to confirm that query results are consistent.
-* [Performance Schema tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) provide descriptions of each column in the COMMENT column option. ([MDEV-25325](https://jira.mariadb.org/browse/MDEV-25325))
+* [Performance Schema tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) provide descriptions of each column in the COMMENT column option. ([MDEV-25325](https://jira.mariadb.org/browse/MDEV-25325))
 
 ## Issues Fixed
 
@@ -33,7 +33,7 @@ MariaDB Enterprise Server 10.3.32-14 was released on 2021-12-13.
 * Resolving aggregate functions that are used in a view can cause in a crash. ([MDEV-24454](https://jira.mariadb.org/browse/MDEV-24454))
 * Executing [CREATE OR REPLACE TABLE AS SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) under [LOCK TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/lock-tables) can cause in a crash. ([MDEV-23391](https://jira.mariadb.org/browse/MDEV-23391))
 * If two InnoDB tables have a [foreign key](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys) and an operation cascades from the parent table to the child table, an index on a virtual generated column in the child table can become corrupt. ([MDEV-26866](https://jira.mariadb.org/browse/MDEV-26866))
-* [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md), powered by Galera, crashes with errors like: [ERROR] WSREP: Trx 236236 tries to abort slave trx 236238 ([MDEV-25835](https://jira.mariadb.org/browse/MDEV-25835))
+* [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md), powered by Galera, crashes with errors like: \[ERROR] WSREP: Trx 236236 tries to abort slave trx 236238 ([MDEV-25835](https://jira.mariadb.org/browse/MDEV-25835))
 * Server crashes when a table uses a sequence as a column default `(DEFAULT NEXT_VALUE(my_seq))` and the table is used concurrently by both a prepared statement and a normal statement. ([MDEV-22785](https://jira.mariadb.org/browse/MDEV-22785))
 * MariaDB Enterprise Cluster can crash due to an incorrect conflict resolution on multi-master setup. ([MDEV-25992](https://jira.mariadb.org/browse/MDEV-25992), [MDEV-25114](https://jira.mariadb.org/browse/MDEV-25114))
 

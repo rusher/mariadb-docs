@@ -42,7 +42,7 @@ Thanks, and enjoy MariaDB!
 ### [Character Sets and Collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets)
 
 * 44 new [collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations#collations) added. These are aliases for MySQL collations to make it easier to replicate from MySQL to MariaDB ([MDEV-35256](https://jira.mariadb.org/browse/MDEV-35256))
-  * The [Information Schema Collations table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table) includes a new column, `COMMENT` which contains information about which collation the alias refers to.
+  * The [Information Schema Collations table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-collations-table) includes a new column, `COMMENT` which contains information about which collation the alias refers to.
 * Fix assertion falilure and possible index corruption with unique key and nopad collation without DESC or HASH keys ([MDEV-30111](https://jira.mariadb.org/browse/MDEV-30111))
 * Fix client crash the command after client sets character set to utf32 ([MDEV-34090](https://jira.mariadb.org/browse/MDEV-34090))
 * Fix possible runtime error caused by XA RECOVER applying a zero offset to a null pointer ([MDEV-35549](https://jira.mariadb.org/browse/MDEV-35549))

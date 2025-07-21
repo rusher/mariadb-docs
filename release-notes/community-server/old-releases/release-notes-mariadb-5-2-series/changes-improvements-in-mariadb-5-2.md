@@ -54,7 +54,7 @@ members in the MySQL community for a long time. Current versions of [MariaDB 5.2
 * [Storage-engine-specific CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes)
   * Allows one to specify additional attributes per field, index or table to the\
     storage engine.
-* [Enhancements to INFORMATION SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)
+* [Enhancements to INFORMATION SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)
   * We expose more information about the plugins, like maturity levels.
 * [Group commit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-group-commit) for the [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) engine.
   * Speeds up multi user inserts.

@@ -28,7 +28,7 @@ Thanks, and enjoy MariaDB!
 
 ### General
 
-* The views [INFORMATION\_SCHEMA.KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) and [INFORMATION\_SCHEMA.SQL\_FUNCTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sql_functions-table) have been added to the information schema ([MDEV-25129](https://jira.mariadb.org/browse/MDEV-25129))
+* The views [INFORMATION\_SCHEMA.KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) and [INFORMATION\_SCHEMA.SQL\_FUNCTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-sql_functions-table) have been added to the information schema ([MDEV-25129](https://jira.mariadb.org/browse/MDEV-25129))
 * Assertion \`\`thd->locked\_tables\_mode == LTM\_NONE'`failed in`Locked\_tables\_list::init\_locked\_tables\` ([MDEV-25837](https://jira.mariadb.org/browse/MDEV-25837))
 
 ### Security

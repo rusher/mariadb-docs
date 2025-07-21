@@ -31,7 +31,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-13328](https://jira.mariadb.org/browse/MDEV-13328) ALTER TABLE…DISCARD TABLESPACE takes a lot of time
 * [MDEV-14219](https://jira.mariadb.org/browse/MDEV-14219) Allow online table rebuild when encryption or compression parameters change
 * [MDEV-14051](https://jira.mariadb.org/browse/MDEV-14051) 'Undo log record is too big.' error occurring in very narrow range of string lengths
-* [MDEV-14076](https://jira.mariadb.org/browse/MDEV-14076) InnoDB: Failing assertion when accessing [INFORMATION\_SCHEMA.INNODB\_SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table) upon upgrade from 10.1.0 to 10.1.20
+* [MDEV-14076](https://jira.mariadb.org/browse/MDEV-14076) InnoDB: Failing assertion when accessing [INFORMATION\_SCHEMA.INNODB\_SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table) upon upgrade from 10.1.0 to 10.1.20
 * [MDEV-12676](https://jira.mariadb.org/browse/MDEV-12676) MySQL#78423 InnoDB FTS duplicate key error
 * [MDEV-13051](https://jira.mariadb.org/browse/MDEV-13051) MySQL#86607 InnoDB crash after failed ADD INDEX and table\_definition\_cache eviction
 * [MDEV-13838](https://jira.mariadb.org/browse/MDEV-13838): Wrong result after altering a partitioned table

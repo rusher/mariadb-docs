@@ -238,8 +238,8 @@ GET DIAGNOSTICS CONDITION 1 @failed_row=ROW_NUMBER;
 ```
 
 * Information Schema system table optimizations: ([MDEV-20609](https://jira.mariadb.org/browse/MDEV-20609))
-  * When [PARAMETERS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-parameters-table) is queried and the `WHERE` clause filters on `SPECIFIC_SCHEMA` and `SPECIFIC_NAME`, an index is used to avoid a full table scan.
-  * When [ROUTINES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table) is queried and the `WHERE` clause filters on `ROUTINE_SCHEMA` and `ROUTINE_NAME`, an index is used to avoid a full table scan.
+  * When [PARAMETERS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-parameters-table) is queried and the `WHERE` clause filters on `SPECIFIC_SCHEMA` and `SPECIFIC_NAME`, an index is used to avoid a full table scan.
+  * When [ROUTINES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-routines-table) is queried and the `WHERE` clause filters on `ROUTINE_SCHEMA` and `ROUTINE_NAME`, an index is used to avoid a full table scan.
 * [SHOW EXPLAIN FOR CONNECTION\_ID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-explain) can show the query plan for a query running in another connection: ([MDEV-25956](https://jira.mariadb.org/browse/MDEV-25956))
 
 ```sql

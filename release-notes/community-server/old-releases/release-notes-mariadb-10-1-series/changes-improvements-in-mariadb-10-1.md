@@ -15,7 +15,7 @@ The following lists the major new features in [MariaDB 10.1](changes-improvement
 ### Galera
 
 * [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md), a true multi-master solution, is a standard part of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md).
-* Two new Information Schema tables for examining wsrep information, [WSREP\_MEMBERSHIP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table) and [WSREP\_STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table) ([MDEV-7053](https://jira.mariadb.org/browse/MDEV-7053))
+* Two new Information Schema tables for examining wsrep information, [WSREP\_MEMBERSHIP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table) and [WSREP\_STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table) ([MDEV-7053](https://jira.mariadb.org/browse/MDEV-7053))
 
 ### Encryption
 
@@ -40,7 +40,7 @@ The following lists the major new features in [MariaDB 10.1](changes-improvement
 ### Roles
 
 * [SET DEFAULT ROLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/set-default-role) ([MDEV-5210](https://jira.mariadb.org/browse/MDEV-5210)).
-* New columns for the [INFORMATION\_SCHEMA.APPLICABLE\_ROLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table) table.
+* New columns for the [INFORMATION\_SCHEMA.APPLICABLE\_ROLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table) table.
 
 ### Optimization
 
@@ -50,7 +50,7 @@ The following lists the major new features in [MariaDB 10.1](changes-improvement
 * [UNION ALL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/union) works without usage of a temporary table ([MDEV-334](https://jira.mariadb.org/browse/MDEV-334)). The feature was backported from MySQL 5.7
 * Scalability fixes ([MDEV-7004](https://jira.mariadb.org/browse/MDEV-7004)). Up to 60% higher throughput in sysbench benchmarks on Power8.
 * Make simple queries faster as we call malloc() fewer times.
-* Automatic discovery of [performance schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) tables (simpler mysql\_install\_db code). ([MDEV-4262](https://jira.mariadb.org/browse/MDEV-4262)), [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) tables no longer use `.frm` files.
+* Automatic discovery of [performance schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) tables (simpler mysql\_install\_db code). ([MDEV-4262](https://jira.mariadb.org/browse/MDEV-4262)), [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) tables no longer use `.frm` files.
 * Other Webscale patches ([MDEV-6039](https://jira.mariadb.org/browse/MDEV-6039))
 * [MDEV-7728](https://jira.mariadb.org/browse/MDEV-7728) xid cache scalability was significantly improved (by using lock-free hash)
 
@@ -63,8 +63,8 @@ The following lists the major new features in [MariaDB 10.1](changes-improvement
   * [ST\_IsRing](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/geometry-properties/st_isring)
   * [ST\_PointOnSurface](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/geometry-constructors/st_pointonsurface)
   * [ST\_Relate](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/geometry-properties/st_relate)
-* [INFORMATION\_SCHEMA.GEOMETRY\_COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-geometry_columns-table) table.
-* [INFORMATION\_SCHEMA.SPATIAL\_REF\_SYS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spatial_ref_sys-table) table.
+* [INFORMATION\_SCHEMA.GEOMETRY\_COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-geometry_columns-table) table.
+* [INFORMATION\_SCHEMA.SPATIAL\_REF\_SYS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-spatial_ref_sys-table) table.
 
 ### Syntax
 
@@ -84,13 +84,13 @@ The following lists the major new features in [MariaDB 10.1](changes-improvement
   * [SHOW QUERY\_RESPONSE\_TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-query_response_time)
   * [FLUSH QUERY\_RESPONSE\_TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/query-response-time-plugin)
   * [SHOW LOCALES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-locales)
-* New columns for the [INFORMATION\_SCHEMA.APPLICABLE\_ROLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table) and [INFORMATION\_SCHEMA.VIEWS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/information-schema-views-table) tables.
+* New columns for the [INFORMATION\_SCHEMA.APPLICABLE\_ROLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table) and [INFORMATION\_SCHEMA.VIEWS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/information-schema-views-table) tables.
 * [ANALYZE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement) provides output that looks like EXPLAIN output, but also includes data from the query execution (how many rows were actually read, etc).
 * [EXPLAIN FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain-format-json) is a re-implementation of similar feature in MySQL 5.6
 * [ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json) produces detailed information about the statement execution
 * [GET\_LOCK()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock) now supports microseconds in the timeout, no longer rounding fractions to the nearest integer ([MDEV-4018](https://jira.mariadb.org/browse/MDEV-4018))
 * [Compound statements can be used outside of stored programs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/using-compound-statements-outside-of-stored-programs).
-* The number of rows affected by a slow UPDATE or DELETE is now recorded in the [slow query log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log) - see also [mysql.slow\_log Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table). ([MDEV-4412](https://jira.mariadb.org/browse/MDEV-4412))
+* The number of rows affected by a slow UPDATE or DELETE is now recorded in the [slow query log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log) - see also [mysql.slow\_log Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-slow_log-table). ([MDEV-4412](https://jira.mariadb.org/browse/MDEV-4412))
 * SQL standards-compliant behavior when dealing with [Primary Keys with Nullable Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/primary-keys-with-nullable-columns). Note that this could cause replication issues in certain edge cases when replicating from a [MariaDB 10.0](../release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) master to a [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) slave. using [statement-based replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats#statement-based). See [MDEV-12248](https://jira.mariadb.org/browse/MDEV-12248).
 * Explicit or implicit casts from MAX(string) to INT, DOUBLE or DECIMAL now produce warnings ([MDEV-8852](https://jira.mariadb.org/browse/MDEV-8852)).
 
@@ -107,7 +107,7 @@ The following lists the major new features in [MariaDB 10.1](changes-improvement
 
 For a list of all new variables, see [System Variables Added in MariaDB 10.1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-101) and [Status Variables Added in MariaDB 10.1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/status-variables-added-in-mariadb-101). Some of these, and other variable-related changes, include:
 
-* [INFORMATION\_SCHEMA.SYSTEM\_VARIABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-system_variables-table) gives information, like description and value origin, for system variables ([MDEV-6138](https://jira.mariadb.org/browse/MDEV-6138)).
+* [INFORMATION\_SCHEMA.SYSTEM\_VARIABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-system_variables-table) gives information, like description and value origin, for system variables ([MDEV-6138](https://jira.mariadb.org/browse/MDEV-6138)).
 * [MDEV-6858](https://jira.mariadb.org/browse/MDEV-6858) New server variable [enforce\_storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#enforce_storage_engine)
 * New status variables to show the number of grants on different objects (see [Status Variables Added in MariaDB 10.1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/status-variables-added-in-mariadb-101))
 * Default size of [query\_alloc\_block\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_alloc_block_size) changed from `8192` to `16384` and [query\_prealloc\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_prealloc_size) from `8192` to `24576` to avoid the need for simple queries with one join to call `my_malloc`.

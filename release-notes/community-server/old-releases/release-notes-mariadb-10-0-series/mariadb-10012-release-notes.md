@@ -31,7 +31,7 @@ Notable changes of this release include:
 * Updated [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect) engine.
 * Updated [pcre](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/pcre) to version 8.35
 * [Exists-to-IN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/subquery-optimizations/exists-to-in-optimization) optimization is now enabled by default.
-* The [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) is now disabled by default.
+* The [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) is now disabled by default.
 
 For a complete list of changes made in [MariaDB 10.0.12](mariadb-10012-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10012-changelog.md).

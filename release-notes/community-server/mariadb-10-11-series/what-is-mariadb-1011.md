@@ -70,8 +70,8 @@ This list includes features from the short-term releases [MariaDB 10.7](../old-r
 
 ### Information Schema
 
-* Performance Issues reading the [Information Schema Parameters table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-parameters-table) ([MDEV-29104](https://jira.mariadb.org/browse/MDEV-29104))
-* Full table scan in the [Information Schema Parameters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-parameters-table) and [Information Schema Routines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table) tables ([MDEV-20609](https://jira.mariadb.org/browse/MDEV-20609))
+* Performance Issues reading the [Information Schema Parameters table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-parameters-table) ([MDEV-29104](https://jira.mariadb.org/browse/MDEV-29104))
+* Full table scan in the [Information Schema Parameters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-parameters-table) and [Information Schema Routines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-routines-table) tables ([MDEV-20609](https://jira.mariadb.org/browse/MDEV-20609))
 
 ### System versioning
 

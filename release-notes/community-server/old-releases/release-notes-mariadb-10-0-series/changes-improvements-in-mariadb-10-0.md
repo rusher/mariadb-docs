@@ -39,7 +39,7 @@ Features that are in a release.
 * [SHOW EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-explain) command ([MDEV-165](https://jira.mariadb.org/browse/MDEV-165))
 * [EXPLAIN in the slow query log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log) ([MDEV-407](https://jira.mariadb.org/browse/MDEV-407))
 * Per thread memory usage ([MDEV-4011](https://jira.mariadb.org/browse/MDEV-4011)). — Original code from [Taobao, developed by Peng Lixun](https://mysql.taobao.org/index.php/Patch_source_code#per-thread_memory_usage_statistics).
-  * [information\_schema.processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) has two new columns: `MEMORY_USAGE` and `EXAMINED_ROWS`.
+  * [information\_schema.processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) has two new columns: `MEMORY_USAGE` and `EXAMINED_ROWS`.
   * [SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status) has a new variable: [Memory\_used](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#memory_used).
 * [SHOW PLUGINS SONAME 'XXX'](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-plugins-soname) ([MDEV-3807](https://jira.mariadb.org/browse/MDEV-3807))
 * [SHUTDOWN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/shutdown) statement ([MDEV-4660](https://jira.mariadb.org/browse/MDEV-4660))
@@ -59,7 +59,7 @@ Features that are in a release.
   * new regular expression library with modern features ([PCRE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/pcre))
   * new functions [REGEXP\_REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/regexp_replace), [REGEXP\_INSTR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/regexp_instr), [REGEXP\_SUBSTR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/regexp_substr).
 * [Roles](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/user-account-management/roles) ([MDEV-4397](https://jira.mariadb.org/browse/MDEV-4397))
-* [metadata\_lock\_info information schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table). Shows you which meta data locks are active.
+* [metadata\_lock\_info information schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table). Shows you which meta data locks are active.
 * [Adjustable hash size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine/myisam-system-variables#key_cache_file_hash_size) for MyISAM and Aria. This can greatly improve shutdown time (from hours to minutes) if you are using a lot of MyISAM/Aria tables with delayed keys.
 * [FLUSH TABLES ... FOR EXPORT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export)
 * The [Extended Keys](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/extended-keys) optimization is enabled by default
@@ -75,8 +75,8 @@ Features that are in a release.
 ### New Features Backported from MySQL 5.6
 
 * New InnoDB — from MySQL 5.6.14 in [MariaDB 10.0.8](mariadb-1008-release-notes.md) onwards
-* New [Performance schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) — from MySQL 5.6.10 in [MariaDB 10.0.4](mariadb-1004-release-notes.md) onwards
-* New [Information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema) tables, updates and defaults.
+* New [Performance schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) — from MySQL 5.6.10 in [MariaDB 10.0.4](mariadb-1004-release-notes.md) onwards
+* New [Information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema) tables, updates and defaults.
 * Optimized read only transaction (for InnoDB). This includes support for [TRANSACTION READ ONLY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/start-transaction#access-mode).
 * Filesort optimization for queries using the `ORDER BY ... LIMIT` optimization - A useful optimization for showing only a few rows of a bigger result set. ([MDEV-4026](https://jira.mariadb.org/browse/MDEV-4026))
 * backport [--plugin-load-add](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) ([MDEV-3860](https://jira.mariadb.org/browse/MDEV-3860))
