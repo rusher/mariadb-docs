@@ -92,11 +92,11 @@ If the --extra-lsndir option is provided, then an extra copy of this file will b
 
 #### `uuid`
 
-If a UUID was provided by the --incremental-history-uuid option, then it will be saved here. Otherwise, this will be the empty string.
+If a UUID was provided by the --incremental-history-uuid option, then it will be saved here. Otherwise, this is the empty string.
 
 #### `name`
 
-If a name was provided by the --history or the ---incremental-history-name options, then it will be saved here. Otherwise, this will be the empty string.
+If a name was provided by the --history or the ---incremental-history-name options, then it will be saved here. Otherwise, this is the empty string.
 
 #### `tool_name`
 

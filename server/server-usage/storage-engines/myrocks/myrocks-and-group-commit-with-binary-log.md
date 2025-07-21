@@ -10,7 +10,7 @@ MariaDB's group commit counters are:
 
 [Binlog\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_commits) - how many transactions were written to the binary log
 
-[Binlog\_group\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commits) - how many group commits happened. (e.g. if each group had two transactions, this will be twice as small as [Binlog\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_commits))
+[Binlog\_group\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commits) - how many group commits happened. (e.g. if each group had two transactions, this is twice as small as [Binlog\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_commits))
 
 On the RocksDB side, there is one relevant counter:[Rocksdb\_wal\_synced](myrocks-status-variables.md#rocksdb_wal_synced) - How many times RocksDB's WAL file was synced. (TODO: this is after group commit happened, right?)
 

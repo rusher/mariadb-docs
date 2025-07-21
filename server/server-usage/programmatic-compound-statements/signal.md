@@ -41,19 +41,19 @@ The error properties, their type and their default values are explained in the [
 
 ## Errors
 
-If the SQLSTATE is not valid, the following error like this will be produced:
+If the SQLSTATE is not valid, the following error like this is produced:
 
 ```
 ERROR 1407 (42000): Bad SQLSTATE: '123456'
 ```
 
-If a property is specified more than once, an error like this will be produced:
+If a property is specified more than once, an error like this is produced:
 
 ```
 ERROR 1641 (42000): Duplicate condition information item 'MESSAGE_TEXT'
 ```
 
-If you specify a condition name which is not declared, an error like this will be produced:
+If you specify a condition name which is not declared, an error like this is produced:
 
 ```
 ERROR 1319 (42000): Undefined CONDITION: cond_name

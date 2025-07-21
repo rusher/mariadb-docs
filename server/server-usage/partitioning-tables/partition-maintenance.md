@@ -210,7 +210,7 @@ Future (as envisioned in 2016):
 
 * MySQL 5.7.6 has "native partitioning for InnoDB".
 * FOREIGN KEY support, perhaps in a later 8.0.xx.
-* "GLOBAL INDEX" -- this would avoid the need for putting the partition key in every unique index, but make DROP PARTITION costly. This will be farther into the future.
+* "GLOBAL INDEX" -- this would avoid the need for putting the partition key in every unique index, but make DROP PARTITION costly. This is farther into the future.
 
 MySQL 8.0, released Sep, 2016, not yet GA)
 

@@ -128,7 +128,7 @@ WHERE f.salary > 10000;
 If the _id_ column of the remote table addressed by the _cnc\_tab_ MYSQL table is indexed (which is likely\
 if it is a key) you should also index the _id_ column of the MYSQL _cnc\_tab_ table. If so, using “remote”\
 indexing as does FEDERATED, only the useful rows of the remote table will be retrieved during the\
-join process. However, because these rows are retrieved by separate [SELECT](../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements, this will be\
+join process. However, because these rows are retrieved by separate [SELECT](../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements, this is\
 useful only when retrieving a few rows of a big table.
 
 In particular, you should not specify an index for columns not used for joining and above all DO NOT\

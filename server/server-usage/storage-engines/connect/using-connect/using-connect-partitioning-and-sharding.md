@@ -244,7 +244,7 @@ Everything works as if the city column was a real column contained in the table 
 
 Two cases are currently supported:\
 If a table is based on several zipped files, portioning is done the standard way as above. This is the _file\_name_ option specifying the name of the zip files that shall contain the ‘%s’ part used to generate the file names.\
-If a table is based on only one zip file containing several entries, this will be indicated by placing the ‘%s’ part in the entry option value.\
+If a table is based on only one zip file containing several entries, this is indicated by placing the ‘%s’ part in the entry option value.\
 Note: If a table is based on several zipped files each containing several entries, only the first case is possible. Using sub-partitioning to make partitions on each entries is not supported yet.
 
 ## Table Partitioning

@@ -381,7 +381,7 @@ PARTITION BY RANGE (graduating_year) (
 );
 ```
 
-2. Then create a second empty table matching the column specification, but without partitions. This will be your working table:
+2. Then create a second empty table matching the column specification, but without partitions. This is your working table:
 
 ```sql
 CREATE TABLE test.students_work AS

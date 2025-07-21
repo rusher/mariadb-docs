@@ -91,7 +91,7 @@ Thread is currently experimental. Use it only for test and report any malfunctio
 
 An interesting case is when the query to run on remote machines is the same for\
 all of them. It is then possible to avoid declaring all sub-tables. In this\
-case, the table list option will be used to specify the list of servers the`SRCDEF` query must be sent. This will be a list of URL’s and/or Federated\
+case, the table list option will be used to specify the list of servers the`SRCDEF` query must be sent. This is a list of URL’s and/or Federated\
 server names.
 
 For instance, supposing that federated servers srv1, srv2, … sr&#x76;_&#x6E;_ were\

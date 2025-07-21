@@ -34,4 +34,4 @@ particular files in various formats, data extracted from other DBMS or products\
 
 This storage engine supports table partitioning, MariaDB virtual columns and permits definin&#x67;_&#x73;pecial_ columns such as ROWID, FILEID, and SERVID.
 
-No precise definition of maturity exists. Because CONNECT handles many table types, each type has a different maturity depending on whether it is old and well-tested, less well-tested or newly implemented. This will be indicated for all data types.
+No precise definition of maturity exists. Because CONNECT handles many table types, each type has a different maturity depending on whether it is old and well-tested, less well-tested or newly implemented. This is indicated for all data types.

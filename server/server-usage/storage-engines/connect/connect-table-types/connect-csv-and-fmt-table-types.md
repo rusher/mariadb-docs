@@ -90,7 +90,7 @@ CONNECT analyze the file and make the column description. However, this is a\
 not an elaborate analysis of the file and, for instance, `DATE` fields will\
 not be recognized as such but will be regarded as string fields.
 
-**Note 4:** The CSV parser only reads and buffers up to 4KB per row by default, rows longer than this will be truncated when read from the file. If the rows are expected to be longer than this use `lrecl` to increase this. For example to set an 8KB maximum row read you would use `lrecl=8192`
+**Note 4:** The CSV parser only reads and buffers up to 4KB per row by default, rows longer than this is truncated when read from the file. If the rows are expected to be longer than this use `lrecl` to increase this. For example to set an 8KB maximum row read you would use `lrecl=8192`
 
 ### Restrictions on CSV Tables
 

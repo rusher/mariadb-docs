@@ -158,7 +158,7 @@ specific query. This happens in particular for some queries where two tables are
 key column. If the “from” table is big and the “to” big table reduced in size because of a where clause,\
 it can be worthwhile to reconstruct the index on this reduced table.
 
-Because of the time added by reconstructing the index, this will be valuable only if the time gained by\
+Because of the time added by reconstructing the index, this is valuable only if the time gained by\
 reducing the index size if more than this reconstruction time. This is why this should not be done if the\
 “from” table is small because there will not be enough row joining to compensate for the additional time.\
 Otherwise, the gain of using a dynamic index is:
