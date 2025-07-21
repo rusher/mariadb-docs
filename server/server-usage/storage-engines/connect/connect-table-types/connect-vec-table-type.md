@@ -15,22 +15,22 @@ adjacent.
 
 ## Integral vector formats
 
-In these true vertical formats, the VEC files are made of all the data of the first column, followed by all the data of the second column etc. All this can be in one physical file or each column data can be in a separate file. In the first case, the option max\_rows=m, where m is the estimate of the maximum size (number of rows) of the table, must be specified to be able to insert some new records. This leaves an empty space after each column area in which new data can be inserted. In the second case, the “Split” option can be specified\[[2](connect-vec-table-type.md#_note-1)] at table creation and each column will be stored in a file named sequentially from the table file name followed by the rank of the column. Inserting new lines can freely augment such a table.
+In these true vertical formats, the VEC files are made of all the data of the first column, followed by all the data of the second column etc. All this can be in one physical file or each column data can be in a separate file. In the first case, the option max\_rows=m, where m is the estimate of the maximum size (number of rows) of the table, must be specified to be able to insert some new records. This leaves an empty space after each column area in which new data can be inserted. In the second case, the “Split” option can be specified\[[2](connect-vec-table-type.md#_note-1)] at table creation and each column are stored in a file named sequentially from the table file name followed by the rank of the column. Inserting new lines can freely augment such a table.
 
 ## Differences between vector formats
 
 These formats correspond to different needs. The integral vector format\
-provides the best performance gain. It will be chosen when the speed of\
+provides the best performance gain. It are chosen when the speed of\
 decisional queries must be optimized.
 
-In the case of a unique file, inserting new data will be limited but there will\
+In the case of a unique file, inserting new data are limited but there will\
 be only one open and close to do. However, the size of the table cannot be\
 calculated from the file size because of the eventual unused space in the file.\
 It must be kept in a header containing the maximum number of rows and the\
 current number of valid rows in the table. To achieve this, specify the option\
-Header=_n_ when creating the table. If `n=1` the header will be placed at\
-the beginning of the file, if `n=2` it will be a separate file with the type\
-‘.blk’, and if `n=3` the header will be place at the end of the file. This\
+Header=_n_ when creating the table. If `n=1` the header are placed at\
+the beginning of the file, if `n=2` it are a separate file with the type\
+‘.blk’, and if `n=3` the header are place at the end of the file. This\
 last value is provided because batch inserting is sometimes slower when the\
 header is at the beginning of the file. If not specified, the header option\
 will default to 2 for this table type.

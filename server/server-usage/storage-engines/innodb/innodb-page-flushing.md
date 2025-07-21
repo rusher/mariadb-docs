@@ -10,7 +10,7 @@ The [innodb\_max\_dirty\_pages\_pct](innodb-system-variables.md#innodb_max_dirty
 
 ### innodb\_max\_dirty\_pages\_pct\_lwm
 
-The [innodb\_max\_dirty\_pages\_pct\_lwm](innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm) variable determines the low-water mark percentage of dirty pages that will enable preflushing to lower the dirty page ratio. The value 0 (the default) means that there will be no separate background flushing so long as:
+The [innodb\_max\_dirty\_pages\_pct\_lwm](innodb-system-variables.md#innodb_max_dirty_pages_pct_lwm) variable determines the low-water mark percentage of dirty pages that will enable preflushing to lower the dirty page ratio. The value 0 (the default) means that there are no separate background flushing so long as:
 
 * the share of dirty pages does not exceed [innodb\_max\_dirty\_pages\_pct](innodb-system-variables.md#innodb_max_dirty_pages_pct)
 * the last checkpoint age (LSN difference since the latest checkpoint) does not exceed [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_file_size) (minus some safety margin)

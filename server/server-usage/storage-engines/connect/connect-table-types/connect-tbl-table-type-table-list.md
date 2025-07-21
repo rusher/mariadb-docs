@@ -9,10 +9,10 @@ The list of the columns of the TBL table may not necessarily include all the\
 columns of the tables of the list. If the name of some columns is different in\
 the sub-tables, the column to use can be specified by its position given by the`FLAG` option of the column. If the `ACCEPT` option is set to true (Y or 1)\
 columns that do not exist in some of the sub-tables are accepted and their\
-value will be null or\
+value are null or\
 pseudo-null (this depends on the nullability of the column) for\
 the tables not having this column. The column types can also be different and\
-an automatic conversion will be done if necessary.
+an automatic conversion are done if necessary.
 
 **Note:** If not specified, the column definitions are retrieved from the first\
 table of the table list.

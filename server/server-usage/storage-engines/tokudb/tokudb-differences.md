@@ -20,11 +20,11 @@ On this page we list all the known differences between the TokuDB from [Tokutek]
 * No online [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md).
 * No `INSERT NOAR` or `UPDATE NOAR` commands.
 * No gdb stack trace on sigsegv
-* IMPORTANT: the compression type does not default to the [tokudb\_row\_format](tokudb-system-variables.md#tokudb_row_format) session variable as it does with Tokutek's builds. If `COMPRESSION=` is not included in `CREATE TABLE` or `ALTER TABLE ENGINE=TokuDB` then the TokuDB table will be uncompressed (before 5.5.37) or zlib-compressed (5.5.37 and later).
+* IMPORTANT: the compression type does not default to the [tokudb\_row\_format](tokudb-system-variables.md#tokudb_row_format) session variable as it does with Tokutek's builds. If `COMPRESSION=` is not included in `CREATE TABLE` or `ALTER TABLE ENGINE=TokuDB` then the TokuDB table are uncompressed (before 5.5.37) or zlib-compressed (5.5.37 and later).
 
 ## Features missing in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
-[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) (starting from 10.0.5) has online [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). So the features missing will be:
+[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) (starting from 10.0.5) has online [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). So the features missing are:
 
 * No `INSERT NOAR` or `UPDATE NOAR` commands.
   * We are working with Tokutek to improve this feature before adding it to MariaDB.

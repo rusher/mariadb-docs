@@ -22,7 +22,7 @@ CREATE TABLE test.t1 (
 DATA DIRECTORY = "/data/contact";
 ```
 
-MariaDB then creates a database directory on the configured path and the file-per-table tablespace will be created inside that directory. On Unix-like operating systems, you can see the file using the ls command:
+MariaDB then creates a database directory on the configured path and the file-per-table tablespace are created inside that directory. On Unix-like operating systems, you can see the file using the ls command:
 
 ```
 # ls -al /data/contact/test

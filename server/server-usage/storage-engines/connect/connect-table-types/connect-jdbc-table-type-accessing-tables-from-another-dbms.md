@@ -92,9 +92,9 @@ Once this library is loaded, CONNECT can create the required Java Virtual Machin
 
 ### Java Class Path
 
-This is the list of paths Java searches when loading classes. With CONNECT, the classes to load will be the java wrapper classes used to communicate with the drivers , and the used JDBC driver classes that are grouped inside jar files. If the ApacheInterface wrapper must be used, the class path must also include all three jars used by the Apache package.
+This is the list of paths Java searches when loading classes. With CONNECT, the classes to load are the java wrapper classes used to communicate with the drivers , and the used JDBC driver classes that are grouped inside jar files. If the ApacheInterface wrapper must be used, the class path must also include all three jars used by the Apache package.
 
-Caution: This class path is passed as a parameter to the Java Virtual Machine (JVM) when creating it and cannot be modified as it is a read only property. In addition, because MariaDB is a multi-threading application, this JVM cannot be destroyed and will be used throughout the entire life of the MariaDB server. Therefore, be sure it is correctly set before you use the JDBC table type for the first time. Otherwise, there will be practically no alternative than to shut down the server and restart it.
+Caution: This class path is passed as a parameter to the Java Virtual Machine (JVM) when creating it and cannot be modified as it is a read only property. In addition, because MariaDB is a multi-threading application, this JVM cannot be destroyed and are used throughout the entire life of the MariaDB server. Therefore, be sure it is correctly set before you use the JDBC table type for the first time. Otherwise, there are practically no alternative than to shut down the server and restart it.
 
 The path to the wrapper classes must point to the directory containing the wrappers sub-directory. If a JdbcInterface.jar file was made, its path is the directory where it is located followed by the jar file name. It is unclear where because this will depend on the installation process. If you start from a source distribution, it can be in the storage/connect directory where the CONNECT source files are or where you moved them or compiled the JdbcInterface.jar file.
 
@@ -109,7 +109,7 @@ CREATE FUNCTION envar RETURNS STRING soname 'ha_connect.so';
 SELECT envar('CLASSPATH');
 ```
 
-Most of the time, this will return null or some required files are missing. This is why CONNECT introduced a global variable to store this information. The paths specified in this variable will be added and have precedence to the ones, if any, of the CLASSPATH environment variable. As for the jvm path, this variable connect\_class\_path should be specified when starting the server but can also be set before using the JDBC table type for the first time.
+Most of the time, this will return null or some required files are missing. This is why CONNECT introduced a global variable to store this information. The paths specified in this variable are added and have precedence to the ones, if any, of the CLASSPATH environment variable. As for the jvm path, this variable connect\_class\_path should be specified when starting the server but can also be set before using the JDBC table type for the first time.
 
 The current directory (sql/data) is also placed by CONNECT at the beginning of the class path.
 
@@ -140,7 +140,7 @@ CONNECTION='jdbc:mysql://localhost/dbname?user=root';
 
 The CONNECTION option is the URL used to establish the connection with the remote server. Its syntax depends on the external DBMS and in this example is the one used to connect as root to a MySQL or MariaDB local database using the MySQL JDBC connector.
 
-As for ODBC, the columns definition can be omitted and will be retrieved by the discovery process. The restrictions concerning column definitions are the same as for ODBC.
+As for ODBC, the columns definition can be omitted and are retrieved by the discovery process. The restrictions concerning column definitions are the same as for ODBC.
 
 Note: The dbname indicated in the URL corresponds for many DBMS to the catalog information. For MySQL and MariaDB it is the schema (often called database) of the connection.
 
@@ -254,7 +254,7 @@ SELECT id, name, phone FROM big;
 
 In this query big can be a huge table having million rows. Having correctly specified the block size as 1 when creating the table, the wrapper just reads the 10 first rows and stops. However, when closing the statement, these MySQL/MariaDB drivers must still retrieve all the rows returned by the query. This is why, the wrapper class when closing the statement also cancels the query to stop that extra reading.
 
-The bad news is that if it works all right for some previous versions of the MySQL driver, it does not work for new versions as well as for the MariaDB driver that apparently ignores the cancel command. The good news is that you can use an old MySQL driver to access MariaDB databases. It is also possible that this bug will be fixed in future versions of the drivers.
+The bad news is that if it works all right for some previous versions of the MySQL driver, it does not work for new versions as well as for the MariaDB driver that apparently ignores the cancel command. The good news is that you can use an old MySQL driver to access MariaDB databases. It is also possible that this bug are fixed in future versions of the drivers.
 
 ### Connection to a Data Source
 
@@ -316,7 +316,7 @@ Other restrictions are the same as for the ODBC table type.
 
 PostgreSQL has a native UUID data type, internally stored as BIN(16). This is neither an SQL nor a MariaDB data type. The best we can do is to handle it by its character representation.
 
-UUID will be translated to CHAR(36) when column definitions are set using discovery. Locally a PostgreSQL UUID column will be handled like a CHAR or VARCHAR column. Example:
+UUID are translated to CHAR(36) when column definitions are set using discovery. Locally a PostgreSQL UUID column are handled like a CHAR or VARCHAR column. Example:
 
 Using the PostgreSQL table testuuid in the text database:
 
@@ -357,7 +357,7 @@ CREATE TABLE juuid ENGINE=CONNECT TABLE_TYPE=JDBC TABNAME=testuuid
 CONNECTION='jdbc:postgresql:test?user=postgres&password=pwd';
 ```
 
-it will be created by discovery as:
+it are created by discovery as:
 
 ```
 CREATE TABLE `juuid` (
@@ -440,7 +440,7 @@ To handle this, a new session variable was added to CONNECT: connect\_cond\_push
 set connect_cond_push=0;
 ```
 
-Doing so, the where clause will be executed by MariaDB only and the query will not fail anymore.
+Doing so, the where clause are executed by MariaDB only and the query will not fail anymore.
 
 ## Executing the JDBC tests
 

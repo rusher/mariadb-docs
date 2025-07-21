@@ -13,7 +13,7 @@ Suppose we have a _'children'_ table that can be displayed as:
 | Claude  | Marc                        |
 | Janet   | Arthur, Sandra, Peter, John |
 
-We can have a different view on these data, where each child will be associated\
+We can have a different view on these data, where each child are associated\
 with his/her mother by creating an `XCOL` table by:
 
 ```
@@ -49,7 +49,7 @@ The requested view:
 
 Several things should be noted here:
 
-* When the original children field is void, what happens depends on the NULL specification of the "multiple" column. If it is nullable, like here, a void string will generate a NULL value. However, if the column is not nullable, no row will be generated at all.
+* When the original children field is void, what happens depends on the NULL specification of the "multiple" column. If it is nullable, like here, a void string will generate a NULL value. However, if the column is not nullable, no row are generated at all.
 * Blanks after the separator are ignored.
 * No copy of the original data was done. Both tables use the same source data.
 * Specifying the column definitions in the `CREATE TABLE` statement is optional.
@@ -143,7 +143,7 @@ child CHAR(12) NOT NULL flag=2
 ) ENGINE=CONNECT table_type=XCOL tabname='chlist' option_list='colname=child';
 ```
 
-This table will be displayed as:
+This table are displayed as:
 
 | rank | mother  | child   |
 | ---- | ------- | ------- |

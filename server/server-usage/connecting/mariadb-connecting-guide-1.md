@@ -31,7 +31,7 @@ In this case:
 
 * `-h` specifies a host. Instead of using `localhost`, the IP `166.78.144.191` is used.
 * `-u` specifies a user name, in this case `username`
-* `-p` specifies a password, `password`. Note that for passwords, unlike the other parameters, there cannot be a space between the option (`-p`) and the value (`password`). It is also not secure to use a password in this way, as other users on the system can see it as part of the command that has been run. If you include the `-p` option, but leave out the password, you will be prompted for it, which is more secure.
+* `-p` specifies a password, `password`. Note that for passwords, unlike the other parameters, there cannot be a space between the option (`-p`) and the value (`password`). It is also not secure to use a password in this way, as other users on the system can see it as part of the command that has been run. If you include the `-p` option, but leave out the password, you are prompted for it, which is more secure.
 * The database name is provided as the first argument after all the options, in this case `database_name`.
 * It will connect with the default tcp\_ip port, 3306
 
@@ -53,7 +53,7 @@ Connect to the MariaDB server on the given host. The default host is `localhost`
 -p[passwd]
 ```
 
-The password of the MariaDB account. It is generally not secure to enter the password on the command line, as other users on the system can see it as part of the command that has been run. If you include the `-p` or `--password` option, but leave out the password, you will be prompted for it, which is more secure.
+The password of the MariaDB account. It is generally not secure to enter the password on the command line, as other users on the system can see it as part of the command that has been run. If you include the `-p` or `--password` option, but leave out the password, you are prompted for it, which is more secure.
 
 ### pipe
 
@@ -82,7 +82,7 @@ The TCP/IP port number to use for the connection. The default is `3306`.
 Specifies the protocol to be used for the connection for the connection. It can be one of `TCP`, `SOCKET`, `PIPE` or `MEMORY` (case-insensitive). Usually you would not want to change this from the default. For example on Unix, a Unix socket file (`SOCKET`) is the default protocol, and usually results in the quickest connection.
 
 * `TCP`: A TCP/IP connection to a server (either local or remote). Available on all operating systems.
-* `SOCKET`: A Unix socket file connection, available to the local server on Unix systems only. If socket is not specified with --socket, in a config file or with the environment variable `MYSQL_UNIX_PORT` then the default `/tmp/mysql.sock` will be used.
+* `SOCKET`: A Unix socket file connection, available to the local server on Unix systems only. If socket is not specified with --socket, in a config file or with the environment variable `MYSQL_UNIX_PORT` then the default `/tmp/mysql.sock` are used.
 * `PIPE`. A named-pipe connection (either local or remote). Available on Windows only.
 * `MEMORY`. Shared-memory connection to the local server on Windows systems only.
 

@@ -259,7 +259,7 @@ colist='{"pipeline":[{"$match":{"cuisine":"French"}},{"$unwind":"$grades"},{"$pr
 option_list='Pipeline=1';
 ```
 
-In this pipeline “$match” is an early filter, “$unwind” means that the grades array will be expanded (one Document for each array values) and “$project” eliminates the \_id and cuisine columns and gives the Jpath for the date, grade and score columns.
+In this pipeline “$match” is an early filter, “$unwind” means that the grades array are expanded (one Document for each array values) and “$project” eliminates the \_id and cuisine columns and gives the Jpath for the date, grade and score columns.
 
 ```
 SELECT name, grade, score, DATE FROM resto2
@@ -406,7 +406,7 @@ INSERT INTO testin VALUES
 (2014, 'Coucou', 'Foo','Bar',20, -1.0, 74, 81356);
 ```
 
-The result will be:
+The result are:
 
 | n    | m       | surname | name     | age | price\_1 | price\_2 | price\_3 |
 | ---- | ------- | ------- | -------- | --- | -------- | -------- | -------- |

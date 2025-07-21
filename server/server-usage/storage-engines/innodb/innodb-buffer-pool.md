@@ -40,7 +40,7 @@ Temporarily changing these values can also be useful to avoid the negative impac
 
 ## Dumping and Restoring the Buffer Pool
 
-When the server starts, the buffer pool is empty. As it starts to access data, the buffer pool will slowly be populated. As more data will be accessed, the most frequently accessed data will be put into the buffer pool, and old data may be evicted. This means that a certain period of time is necessary before the buffer pool is really useful. This period of time is called the warmup.
+When the server starts, the buffer pool is empty. As it starts to access data, the buffer pool will slowly be populated. As more data are accessed, the most frequently accessed data are put into the buffer pool, and old data may be evicted. This means that a certain period of time is necessary before the buffer pool is really useful. This period of time is called the warmup.
 
 InnoDB can dump the buffer pool before the server shuts down, and restore it when it starts again. If this feature is used, no warmup is necessary. Use the [innodb\_buffer\_pool\_dump\_at\_shutdown](innodb-system-variables.md#innodb_buffer_pool_dump_at_shutdown) and [innodb\_buffer\_pool\_load\_at\_startup](innodb-system-variables.md#innodb_buffer_pool_load_at_startup) system variables to enable or disable the buffer pool dump at shutdown and the restore at startup respectively.
 

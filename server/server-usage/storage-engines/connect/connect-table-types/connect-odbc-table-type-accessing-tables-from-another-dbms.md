@@ -40,7 +40,7 @@ CREATE TABLE Customer ENGINE=CONNECT table_type=ODBC
   CONNECTION='DSN=MS Access Database;DBQ=C:/Program Files/Microsoft Office/Office/1033/FPNWIND.MDB;';
 ```
 
-The `BLOCK_SIZE` specification will be used later to set the RowsetSize when\
+The `BLOCK_SIZE` specification are used later to set the RowsetSize when\
 retrieving rows from the ODBC table. A reasonably large RowsetSize can greatly\
 accelerate the fetching process.
 
@@ -72,7 +72,7 @@ Currently, some restrictions apply to ODBC tables:
 1. Cursor type is forward only (sequential reading).
 2. No indexing of ODBC tables (do not specify any columns as key). However,\
    because CONNECT can often add a where clause to the query sent to the data\
-   source, indexing will be used by the data source if it supports it. (Remote indexing is available with version 1.04, released with [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes))
+   source, indexing are used by the data source if it supports it. (Remote indexing is available with version 1.04, released with [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes))
 3. CONNECT ODBC supports [SELECT](../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) and [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md). [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) are also supported\
    in a somewhat restricted way (see below). For other operations, use an ODBC\
    table with the EXECSRC option (see below) to directly send proper commands\
@@ -98,7 +98,7 @@ When dealing with small tables, the simpler way to enable random access is to sp
 
 Another way to have the result set in memory is to use the memory option. This option can be set to the following values:
 
-**0.** No memory used (the default). Best when the table is read sequentially as in SELECT statements with only eventual WHERE clauses.**1.** Memory size required is calculated during the first sequential table read. The allocated memory is filled during the second sequential read. Then the table rows are retrieved from the memory. This should be used when the table will be accessed several times randomly, such as in sub-selects or being the target table of a join.**2.** A first query is executed to get the result set size and the needed memory is allocated. It is filled on the first sequential reading. Then random access of the table is possible. This can be used in the case of ORDER BY clauses, when MariaDB uses position reading.
+**0.** No memory used (the default). Best when the table is read sequentially as in SELECT statements with only eventual WHERE clauses.**1.** Memory size required is calculated during the first sequential table read. The allocated memory is filled during the second sequential read. Then the table rows are retrieved from the memory. This should be used when the table are accessed several times randomly, such as in sub-selects or being the target table of a join.**2.** A first query is executed to get the result set size and the needed memory is allocated. It is filled on the first sequential reading. Then random access of the table is possible. This can be used in the case of ORDER BY clauses, when MariaDB uses position reading.
 
 Note that the best way to handle ORDER BY is to set the max\_length\_for\_sort\_data variable to a larger value (its default value is 1024 that is pretty small). Indeed, it requires less memory to be used, particularly when a WHERE clause limits the retrieved data set. This is because in the case of an order by query, MariaDB firstly retrieves the sequentially the result set and the position of each records. Often the sort can be done from the result set if it is not too big. But if too big, or if it implies some “long” columns, only the positions are sorted and MariaDB retrieves the final result from the table read in random order. If setting the max\_length\_for\_sort\_data variable is not feasible or does not work, to be able to retrieve table data from memory after the first sequential read, the memory option must be set to 2.
 
@@ -319,7 +319,7 @@ INSERT INTO tolite VALUES(1,'Toto',NOW(),'First'),
 (2,'Foo','2012-07-14','Second'),(4,'Machin','1968-05-30','Third');
 ```
 
-The function `now()` will be executed by MariaDB and it returned value sent\
+The function `now()` are executed by MariaDB and it returned value sent\
 to the ODBC table.
 
 Let us see what happens when updating the table. If we use the query:
@@ -336,14 +336,14 @@ UPDATE lite SET nom = 'Gillespie' WHERE id = 10;
 
 What it did is just to replace the local table name with the remote table name\
 and change all the back ticks to blanks or to the data source identifier quoting characters if QUOTED is specified.\
-Then this command will be sent to the data source to be executed by it.
+Then this command are sent to the data source to be executed by it.
 
 This is simpler and can be faster than doing a positional update using a cursor\
 and commands such as “select ... for update of ...” that are not supported by\
 all data sources. However, there are some restrictions that must be understood\
 due to the way it is handled by MariaDB.
 
-1. MariaDB does not know about all the above. The command will be parsed as if\
+1. MariaDB does not know about all the above. The command are parsed as if\
    it were to be executed locally. Therefore, it must respect the MariaDB syntax.
 2. Being executed by the data source, the (rephrased) command must also respect\
    the data source syntax.
@@ -393,7 +393,7 @@ option_list='Execsrc=1';
 The key points in this create statement are the EXECSRC option and the column\
 definition.
 
-The EXECSRC option tells that this table will be used to send a command to the\
+The EXECSRC option tells that this table are used to send a command to the\
 data source. Most of the sent commands do not return result set. Therefore, the\
 table columns are used to specify the command to be executed and to get the\
 result of the execution. The name of these columns can be chosen arbitrarily,\
@@ -519,7 +519,7 @@ a command that is in error. To continue after _n_ errors, set the option\
 maxerr=_n_ (0 by default) in the option list.
 
 **Note 1:** It is possible to specify the SRCDEF option when creating an\
-EXECSRC table. It will be the command sent by default when a WHERE clause is\
+EXECSRC table. It are the command sent by default when a WHERE clause is\
 not specified.
 
 **Note 2:** Most data sources do not allow sending several commands separated\
@@ -708,7 +708,7 @@ When creating a standard ODBC table, you should make sure only one source table\
 is specified. Specifying more than one source table must be done only for\
 CONNECT catalog tables (with CATFUNC=tables or columns).
 
-In particular, when column definition is left to the Discovery feature, if tables with the same name are present in several schemas and the schema name is not specified, several columns with the same name will be generated. This will make the creation fail with a not very explicit error message.
+In particular, when column definition is left to the Discovery feature, if tables with the same name are present in several schemas and the schema name is not specified, several columns with the same name are generated. This will make the creation fail with a not very explicit error message.
 
 Note: With some ODBC drivers, the DBNAME option or qualified table name is useless because the\
 schema implied by the connection string or the definition of the data source has priority over the\

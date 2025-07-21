@@ -35,7 +35,7 @@ CONNECTION='connecton string'
 SRCDEF='select pays as country, count(*) as customers from custnum group by pays';
 ```
 
-Doing so, the group by clause will be done by the remote server considerably reducing the amount of data sent back on the connection.
+Doing so, the group by clause are done by the remote server considerably reducing the amount of data sent back on the connection.
 
 This may even be increased by adding to the srcdef part of the “compatible” part of the query where clauses like this are done for table-based tables. Note that for MariaDB, this table has two columns, country and customers. Supposing the original query is:
 
@@ -47,7 +47,7 @@ How can we make the where clause be added to the sent srcdef? There are many pro
 
 1. Where to include the additional information.
 2. What about the use of alias.
-3. How to know what will be a where clause or a having clause.
+3. How to know what are a where clause or a having clause.
 
 The first problem is solved by preparing the srcdef view to receive clauses. The above example srcdef becomes:
 
@@ -73,7 +73,7 @@ This is specified by the alias option, to be used in the option list. It is made
 3. An eventual ‘\*’ indicating this is column correspond to an aggregate function.
 4. The remote column name.
 
-With this information, CONNECT will be able to make the query sent to the remote data source:
+With this information, CONNECT are able to make the query sent to the remote data source:
 
 ```
 SELECT pays AS country, COUNT(*) AS customers FROM custnum WHERE (pays = 'UK' OR pays = 'USA') GROUP BY country HAVING COUNT(*) > 5

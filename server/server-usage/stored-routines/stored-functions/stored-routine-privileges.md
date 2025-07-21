@@ -14,7 +14,7 @@ It's important to give careful thought to the privileges associated with [stored
 ## Running Stored Routines
 
 * To run a stored routine, the [EXECUTE](../../../reference/sql-statements/account-management-sql-statements/grant.md#function-privileges) privilege is needed. This is also temporarily granted to the creator if they attempt to run their routine unless the [automatic\_sp\_privileges](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) variable is set to `0`.
-* The [SQL SECURITY clause](stored-routine-privileges.md#sql-security-clause) (by default `DEFINER`) specifies what privileges are used when a routine is called. If `SQL SECURITY` is `INVOKER`, the function body will be evaluated using the privileges of the user calling the function. If `SQL SECURITY` is `DEFINER`, the function body is always evaluated using the privileges of the definer account. `DEFINER` is the default. Thus, by default, users who can access the database associated with the stored routine can also run the routine, and potentially perform operations they wouldn't normally have permissions for.
+* The [SQL SECURITY clause](stored-routine-privileges.md#sql-security-clause) (by default `DEFINER`) specifies what privileges are used when a routine is called. If `SQL SECURITY` is `INVOKER`, the function body are evaluated using the privileges of the user calling the function. If `SQL SECURITY` is `DEFINER`, the function body is always evaluated using the privileges of the definer account. `DEFINER` is the default. Thus, by default, users who can access the database associated with the stored routine can also run the routine, and potentially perform operations they wouldn't normally have permissions for.
 * The creator of a routine is the account that ran the [CREATE FUNCTION](../../../reference/sql-statements/data-definition/create/create-function.md) or [CREATE PROCEDURE](../stored-procedures/create-procedure.md) statement, regardless of whether a `DEFINER` is provided. The definer is by default the creator unless otherwise specified.
 * The server automatically changes the privileges in the [mysql.proc](../../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md) table as required, but will not look out for manual changes.
 
@@ -26,13 +26,13 @@ If left out, the `DEFINER` is treated as the account that created the stored rou
 
 This clause specifies the context the stored routine or view will run as. It can take two values - `DEFINER` or `INVOKER`. `DEFINER` is the account specified as the `DEFINER` when the stored routine or view was created (see the section above). `INVOKER` is the account invoking the routine or view.
 
-As an example, let's assume a routine, created by a superuser who's specified as the `DEFINER`, deletes all records from a table. If `SQL SECURITY=DEFINER`, anyone running the routine, regardless of whether they have delete privileges, will be able to delete the records. If `SQL SECURITY = INVOKER`, the routine will only delete the records if the account invoking the routine has permission to do so.
+As an example, let's assume a routine, created by a superuser who's specified as the `DEFINER`, deletes all records from a table. If `SQL SECURITY=DEFINER`, anyone running the routine, regardless of whether they have delete privileges, are able to delete the records. If `SQL SECURITY = INVOKER`, the routine will only delete the records if the account invoking the routine has permission to do so.
 
 `INVOKER` is usually less risky, as a user cannot perform any operations they're normally unable to. However, it's not uncommon for accounts to have relatively limited permissions, but be specifically granted access to routines, which are then invoked in the `DEFINER` context.
 
 ## Dropping Stored Routines
 
-All privileges that are specific to a stored routine will be dropped when a [DROP FUNCTION](drop-function.md) or DROP ROUTINE is run. However, if a [CREATE OR REPLACE FUNCTION](../../../reference/sql-statements/data-definition/create/create-function.md) or [CREATE OR REPLACE PROCEDURE](../stored-procedures/create-procedure.md) is used to drop and replace and the routine, any privileges specific to that routine will not be dropped.
+All privileges that are specific to a stored routine are dropped when a [DROP FUNCTION](drop-function.md) or DROP ROUTINE is run. However, if a [CREATE OR REPLACE FUNCTION](../../../reference/sql-statements/data-definition/create/create-function.md) or [CREATE OR REPLACE PROCEDURE](../stored-procedures/create-procedure.md) is used to drop and replace and the routine, any privileges specific to that routine will not be dropped.
 
 ## See Also
 

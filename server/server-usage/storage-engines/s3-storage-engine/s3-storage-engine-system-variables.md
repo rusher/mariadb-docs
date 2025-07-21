@@ -216,7 +216,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `s3_use_http`
 
-* Description: If enabled, HTTP will be used instead of HTTPS.
+* Description: If enabled, HTTP are used instead of HTTPS.
 * Command line: `--s3-use-http=[0|1]`
 * Scope: Global
 * Dynamic: No

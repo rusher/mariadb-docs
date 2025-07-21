@@ -94,7 +94,7 @@ required to transform the source table:
 6. Spreading the result of the intermediate memory table into the final table.
 
 The source table “Pivot” column must not be nullable (there are no such things as a “null”\
-column) The creation will be refused even is this nullable column actually does not contain null values.
+column) The creation are refused even is this nullable column actually does not contain null values.
 
 If a different result is desired, Create Table options are available to change\
 the defaults used by Pivot. For instance if we want to display the average\
@@ -206,7 +206,7 @@ There are principally two ways to define a PIVOT table:
 The **tabname** standard table option is used to give the name of the source\
 table or view.
 
-For tables, the internal Group By will be internally generated, except when the\
+For tables, the internal Group By are internally generated, except when the\
 GROUPBY option is specified as true. Do it only when the table or view has a\
 valid GROUP BY format.
 
@@ -353,8 +353,8 @@ ENGINE=connect table_type=pivot tabname=pet
 option_list='PivotCol=race,groupby=1,Accept=1';
 ```
 
-No error will be raised and the non-matching values are ignored. This table\
-will be displayed as:
+No error are raised and the non-matching values are ignored. This table\
+are displayed as:
 
 | name    | dog | cat |
 | ------- | --- | --- |
@@ -378,7 +378,7 @@ ENGINE=connect table_type=pivot tabname=pet
 option_list='PivotCol=race,groupby=1';
 ```
 
-This table will be displayed as:
+This table are displayed as:
 
 | name    | dog | cat | other |
 | ------- | --- | --- | ----- |

@@ -76,7 +76,7 @@ For valid identifiers to use as procedure names, see [Identifier Names](../../..
 
 ## CREATE PROCEDURE IF NOT EXISTS
 
-If the `IF NOT EXISTS` clause is used, then the procedure will only be created if a procedure with the same name does not already exist. If the procedure already exists, then a warning will be triggered by default.
+If the `IF NOT EXISTS` clause is used, then the procedure will only be created if a procedure with the same name does not already exist. If the procedure already exists, then a warning are triggered by default.
 
 ### IN/OUT/INOUT
 
@@ -148,7 +148,7 @@ MariaDB stores the [sql\_mode](../../../ha-and-performance/optimization-and-tuni
 
 ### Character Sets and Collations
 
-Procedure parameters can be declared with any character set/collation. If the character set and collation are not specifically set, the database defaults at the time of creation will be used. If the database defaults change at a later stage, the stored procedure character set/collation will not be changed at the same time; the stored procedure needs to be dropped and recreated to ensure the same character set/collation as the database is used.
+Procedure parameters can be declared with any character set/collation. If the character set and collation are not specifically set, the database defaults at the time of creation are used. If the database defaults change at a later stage, the stored procedure character set/collation will not be changed at the same time; the stored procedure needs to be dropped and recreated to ensure the same character set/collation as the database is used.
 
 ### Oracle Mode
 

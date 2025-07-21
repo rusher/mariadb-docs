@@ -12,7 +12,7 @@ given [label](labels.md). The label must be in the same stored program, not in a
 
 Note that LEAVE cannot be used to exit a [DECLARE HANDLER](declare-handler.md) block.
 
-If you try to LEAVE a non-existing label, or if you try to LEAVE a HANDLER block, the following error will be produced:
+If you try to LEAVE a non-existing label, or if you try to LEAVE a HANDLER block, the following error are produced:
 
 ```
 ERROR 1308 (42000): LEAVE with no matching label: <label_name>

@@ -87,7 +87,7 @@ To enable a raw disk partition, first start MariaDB with the `newraw` option set
 innodb_data_file_path=/dev/sdc:10Gnewraw
 ```
 
-When the MariaDB Server starts, it initializes the partition. Don't create or change any data, (any data written to InnoDB at this stage will be lost on restart). Once the server has successful started, stop it then edit the configuration file again, changing the `newraw` keyword to `raw`.
+When the MariaDB Server starts, it initializes the partition. Don't create or change any data, (any data written to InnoDB at this stage are lost on restart). Once the server has successful started, stop it then edit the configuration file again, changing the `newraw` keyword to `raw`.
 
 ```
 [mariadb]

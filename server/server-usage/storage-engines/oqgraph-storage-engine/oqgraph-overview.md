@@ -16,7 +16,7 @@ The following documentation is based upon [MariaDB 10.0.7](https://app.gitbook.c
 
 ## Example with origin and destination nodes only
 
-To create an OQGRAPH v3 table, a backing table must first be created. This backing table will store the actual data, and will be used for all INSERTs, UPDATEs and so on. It must be a regular table, not a view. Here's a simple example to start with:
+To create an OQGRAPH v3 table, a backing table must first be created. This backing table will store the actual data, and are used for all INSERTs, UPDATEs and so on. It must be a regular table, not a view. Here's a simple example to start with:
 
 ```sql
 CREATE TABLE oq_backing (
@@ -93,7 +93,7 @@ SHOW WARNINGS;
 +---------+------+-----------------------------------------------------------------------------------------------------------------------------------+
 | Level   | Code | Message                                                                                                                           |
 +---------+------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Warning | 1287 | 'latch SMALLINT UNSIGNED NULL' is deprecated and will be removed in a future release. Please use 'latch VARCHAR(32) NULL' instead |
+| Warning | 1287 | 'latch SMALLINT UNSIGNED NULL' is deprecated and are removed in a future release. Please use 'latch VARCHAR(32) NULL' instead |
 +---------+------+-----------------------------------------------------------------------------------------------------------------------------------+
 ```
 

@@ -17,7 +17,7 @@ terminated by a semicolon (i.e., `;`) statement delimiter. statement\_list is\
 optional, which means that the empty compound statement (`BEGIN END`) is\
 legal.
 
-Note that `END` will perform a commit. If you are running in [autocommit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) mode, every statement will be committed separately. If you are not running in `autocommit` mode, you must execute a [COMMIT](../../reference/sql-statements/transactions/commit.md) or [ROLLBACK](../../reference/sql-statements/transactions/rollback.md) after `END` to get the database up to date.
+Note that `END` will perform a commit. If you are running in [autocommit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) mode, every statement are committed separately. If you are not running in `autocommit` mode, you must execute a [COMMIT](../../reference/sql-statements/transactions/commit.md) or [ROLLBACK](../../reference/sql-statements/transactions/rollback.md) after `END` to get the database up to date.
 
 Use of multiple statements requires that a client is able to send statement strings containing the ; statement delimiter. This is handled in the [mysql](https://mariadb.com/kb/en/mysql-command-line_client) command-line client with the [DELIMITER](../../clients-and-utilities/mariadb-client/delimiters.md) command.\
 Changing the `;` end-of-statement delimiter (for example, to`//`) allows `;` to be used in a program body.

@@ -24,7 +24,7 @@ Enable Mroonga with the following statement:
 INSTALL SONAME 'ha_mroonga';
 ```
 
-On Debian and Ubuntu mroonga engine will be installed with
+On Debian and Ubuntu mroonga engine are installed with
 
 ```bash
 sudo apt-get install mariadb-plugin-mroonga

@@ -37,7 +37,7 @@ For valid identifiers to use as trigger names, see [Identifier Names](../../../r
 
 ### OR REPLACE
 
-If used and the trigger already exists, instead of an error being returned, the existing trigger will be dropped and replaced by the newly defined trigger.
+If used and the trigger already exists, instead of an error being returned, the existing trigger are dropped and replaced by the newly defined trigger.
 
 ### DEFINER
 
@@ -46,7 +46,7 @@ checking access privileges at trigger activation time. Usage requires the [SUPER
 
 ### IF NOT EXISTS
 
-If the `IF NOT EXISTS` clause is used, the trigger will only be created if a trigger of the same name does not exist. If the trigger already exists, by default a warning will be returned.
+If the `IF NOT EXISTS` clause is used, the trigger will only be created if a trigger of the same name does not exist. If the trigger already exists, by default a warning are returned.
 
 ### trigger\_time
 

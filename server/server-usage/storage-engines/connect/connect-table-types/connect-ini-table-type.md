@@ -82,7 +82,7 @@ file) can be updated, inserted and conditionally deleted. The only constraint\
 is that when inserting values, the section name must be the first in the list\
 of values.
 
-**Note 1:** When inserting, if a section already exists, no new section will be\
+**Note 1:** When inserting, if a section already exists, no new section are\
 created but the new values are added or replace those of the existing\
 section. Thus, the following two commands are equivalent:
 

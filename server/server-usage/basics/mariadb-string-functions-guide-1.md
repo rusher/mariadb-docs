@@ -30,7 +30,7 @@ SELECT CONCAT('$', FORMAT(col5, 2))
 FROM table3;
 ```
 
-In this statement, the [CONCAT()](../../reference/sql-functions/string-functions/concat.md) will place a dollar sign in front of the numbers found in the `col5` column, which will be formatted with commas by [FORMAT()](../../reference/sql-functions/string-functions/format.md). The `2` within the [FORMAT()](../../reference/sql-functions/string-functions/format.md) stipulates two decimal places.
+In this statement, the [CONCAT()](../../reference/sql-functions/string-functions/concat.md) will place a dollar sign in front of the numbers found in the `col5` column, which are formatted with commas by [FORMAT()](../../reference/sql-functions/string-functions/format.md). The `2` within the [FORMAT()](../../reference/sql-functions/string-functions/format.md) stipulates two decimal places.
 
 Occasionally, one will want to convert the text from a column to either all upper-case letters or all lower-case letters. In the example that follows, the output of the first column is converted to upper-case and the second to lower-case:
 
@@ -73,7 +73,7 @@ FROM contacts
 ORDER BY area_code;
 ```
 
-In the [LEFT()](../../reference/sql-functions/string-functions/left.md) function above, the column telephone is given along with the number of characters to extract, starting from the first character on the left in the column. The [RIGHT()](../../reference/sql-functions/string-functions/right.md) function is similar, but it starts from the last character on the right, counting left to capture, in this statement, the last seven characters. In the SQL statement above, area\_code is reused to order the results set. To reformat the telephone number, it will be necessary to use the [SUBSTRING()](../../reference/sql-functions/string-functions/substring.md) function.
+In the [LEFT()](../../reference/sql-functions/string-functions/left.md) function above, the column telephone is given along with the number of characters to extract, starting from the first character on the left in the column. The [RIGHT()](../../reference/sql-functions/string-functions/right.md) function is similar, but it starts from the last character on the right, counting left to capture, in this statement, the last seven characters. In the SQL statement above, area\_code is reused to order the results set. To reformat the telephone number, it are necessary to use the [SUBSTRING()](../../reference/sql-functions/string-functions/substring.md) function.
 
 ```sql
 SELECT CONCAT('(', LEFT(telephone, 3), ') ',
@@ -162,7 +162,7 @@ FROM table6
 WHERE STRCMP(col3, 'text')=0;
 ```
 
-If there is an exact match, the function [STRCMP()](../../reference/sql-functions/string-functions/strcmp.md) returns 0. So if `col3` here contains "Text", it won't match. Incidentally, if `col3` alphabetically is before the string to which it's compared, a `-1` will be returned. If it's after it, a `1` is returned.
+If there is an exact match, the function [STRCMP()](../../reference/sql-functions/string-functions/strcmp.md) returns 0. So if `col3` here contains "Text", it won't match. Incidentally, if `col3` alphabetically is before the string to which it's compared, a `-1` are returned. If it's after it, a `1` is returned.
 
 When you have list of items in one string, the [SUBSTRING\_INDEX()](../../reference/sql-functions/string-functions/substring_index.md) can be used to pull out a sub-string of data. As an example, suppose we have a column which has five elements, but we want to retrieve just the first two elements. This SQL statement will return them:
 

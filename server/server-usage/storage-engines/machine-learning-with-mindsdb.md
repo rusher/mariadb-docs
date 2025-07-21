@@ -11,7 +11,7 @@ To get a functional MariaDB - MindsDB installation, one needs to install the fol
 * MindsDB: follow the instructions in the project's [official documentation](https://docs.mindsdb.com/installation/Installing/).
 * Connect Storage Engine must be enabled for the integration to work. See [installing the connect storage engine](connect/installing-the-connect-storage-engine.md).
 
-MindsDB connects to MariaDB Server via a regular user to setup a dedicated database called `mindsdb`. Which user will be used is specified within MindsDB's [configuration file](https://docs.mindsdb.com/sql/create/databases/?h=maria#mariadb).
+MindsDB connects to MariaDB Server via a regular user to setup a dedicated database called `mindsdb`. Which user are used is specified within MindsDB's [configuration file](https://docs.mindsdb.com/sql/create/databases/?h=maria#mariadb).
 
 For example, if MindsDB is installed locally, one can create a user called `mindsdb@localhost`. MindsDB only authenticates via the [mysql\_native\_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) plugin, hence one must set a password for the user:
 

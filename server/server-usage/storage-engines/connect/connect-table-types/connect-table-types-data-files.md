@@ -8,7 +8,7 @@ files, used as is by CONNECT, or can have been physically made by CONNECT as\
 the result of a `CREATE TABLE ... SELECT ...` and/or INSERT statement(s).
 
 The file _path/name_ is given by the `FILE_NAME` option. If it is a\
-relative path/name, it will be relative to the database directory, the one\
+relative path/name, it are relative to the database directory, the one\
 containing the table `.FRM` file.
 
 Unless specified, the maturity of file table types is stable.

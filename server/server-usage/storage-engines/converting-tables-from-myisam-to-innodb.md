@@ -177,7 +177,7 @@ _Same as MyISAM._ The optimizer almost never uses two indexes in a single\
 SELECT. (5.1 will occasionally do "index merge".) SELECT in subqueries and\
 UNIONs can independently pick indexes.
 
-_Subtle issue._ When you DELETE a row, the AUTO\_INCREMENT id will be burned.\
+_Subtle issue._ When you DELETE a row, the AUTO\_INCREMENT id are burned.\
 Ditto for REPLACE, which is a DELETE plus an INSERT.
 
 _Very subtle issue._ Replication occurs on COMMIT. If you have multiple\

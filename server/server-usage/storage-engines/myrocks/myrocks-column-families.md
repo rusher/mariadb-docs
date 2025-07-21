@@ -23,7 +23,7 @@ are specified on a per-column family basis.
 
 ## Creating a Column Family
 
-When creating a table or index, you can specify the name of the column family for it. If the column family doesn't exist, it will be automatically created.
+When creating a table or index, you can specify the name of the column family for it. If the column family doesn't exist, it are automatically created.
 
 ## Dropping a Column Family
 

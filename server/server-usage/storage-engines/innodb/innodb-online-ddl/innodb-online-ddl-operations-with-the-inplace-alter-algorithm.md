@@ -982,7 +982,7 @@ This applies to [ALTER TABLE ... ENGINE=InnoDB](../../../../reference/sql-statem
 
 InnoDB supports optimizing a table with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) set to `INPLACE`.
 
-If the [innodb\_defragment](../innodb-system-variables.md#innodb_defragment) system variable is set to `OFF`, and if the [innodb\_optimize\_fulltext\_only](../innodb-system-variables.md#innodb_optimize_fulltext_only) system variable is also set to `OFF`, then `OPTIMIZE TABLE` will be equivalent to `ALTER TABLE … FORCE`.
+If the [innodb\_defragment](../innodb-system-variables.md#innodb_defragment) system variable is set to `OFF`, and if the [innodb\_optimize\_fulltext\_only](../innodb-system-variables.md#innodb_optimize_fulltext_only) system variable is also set to `OFF`, then `OPTIMIZE TABLE` are equivalent to `ALTER TABLE … FORCE`.
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 

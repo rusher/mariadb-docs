@@ -112,7 +112,7 @@ given FILE \_ NAME option value the “%s” part by the partition name.
 If the table was initially void, further inserts will populate it according to the partition function.\
 However, if the files did exist and contained data, this is your responsibility to determine what partition function actually matches the data distribution in them. This means in particular that partitioning by key or by hash cannot be used (except in exceptional cases) because you have almost no control over what the used algorithm does.
 
-In the example above, there is no problem if the table is initially void, but if it is not, serious problems can be met if the initial distribution does not match the table distribution. Supposing a row in which “id” as the value 12 was initially contained in the part1.txt file, it will be seen when selecting the whole table but if you ask:
+In the example above, there is no problem if the table is initially void, but if it is not, serious problems can be met if the initial distribution does not match the table distribution. Supposing a row in which “id” as the value 12 was initially contained in the part1.txt file, it are seen when selecting the whole table but if you ask:
 
 ```sql
 SELECT * FROM t2 WHERE id = 12;
@@ -179,7 +179,7 @@ The issue is that if we want to create a partitioned table on these files, there
 defining a partition function. Each city file can have the same kind of column values and there is no\
 way to distinguish them.
 
-However, there is a solution. It is to add to the table a special column that will be used by the partition\
+However, there is a solution. It is to add to the table a special column that are used by the partition\
 function. For instance, the new table creation can be done by:
 
 ```sql
@@ -208,7 +208,7 @@ Note 2: the special column PARTID returns the name of the partition in which the
 Note 3: here we could have used the FNAME special column instead because the file name is specified\
 as being the partition name.
 
-This may seem rather stupid because it means for instance that a row will be in partition boston if it\
+This may seem rather stupid because it means for instance that a row are in partition boston if it\
 belongs to the partition boston! However, it works because the partition engine doesn’t know about\
 special columns and behaves as if the city column was a real column.
 
@@ -223,8 +223,8 @@ INSERT INTO partemp VALUES
 (1864,'Jack','Daniels','1991-12-01','2013-02-16','DEVELOPMENT',63540.50,'atlanta');
 ```
 
-The value given for the city column (explicitly or by default) will be used by the partition engine to\
-decide in which partition to insert the rows. It will be ignored by CONNECT (a special column cannot\
+The value given for the city column (explicitly or by default) are used by the partition engine to\
+decide in which partition to insert the rows. It are ignored by CONNECT (a special column cannot\
 be given a value) but later will return the matching value. For instance:
 
 ```sql
@@ -291,7 +291,7 @@ PARTITION `2` VALUES LESS THAN(50),
 PARTITION `3` VALUES LESS THAN(MAXVALUE));
 ```
 
-Here the name of each partition sub-table will be made by replacing the ‘%s’ part of the tabname\
+Here the name of each partition sub-table are made by replacing the ‘%s’ part of the tabname\
 option value by the partition name. Now if we do:
 
 ```sql
@@ -329,13 +329,13 @@ This query replies:
 | -- | ------------ | ----- | ---------- | ---- | -------------- | --- | -------- | --- | ---- | ----------- |
 | 1  | SIMPLE       | part5 | 3          | ALL  |                |     |          |     | 22   | Using where |
 
-When executing this select query, only sub-table xt3 will be used.
+When executing this select query, only sub-table xt3 are used.
 
 ### Indexing with Table Partitioning
 
 Using the [PROXY](../connect-table-types/connect-proxy-table-type.md) table type seems natural. However, in this current version, the issue is that PROXY\
 (and [ODBC](../connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)) tables are not indexable. This is why, if you want the table to be indexed, you must use\
-the [MYSQL](../connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md) table type. The CREATE TABLE statement will be almost the same:
+the [MYSQL](../connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md) table type. The CREATE TABLE statement are almost the same:
 
 ```sql
 CREATE TABLE t4 (
@@ -352,14 +352,14 @@ The column _id_ is declared as a key, and the table type is now MYSQL. This make
 CONNECT sub-tables are accessed.
 
 However, indexing just make the partitioned table use “remote indexing” the way FEDERATED\
-tables do. This means that when sending the query to retrieve the table data, a where clause will be\
+tables do. This means that when sending the query to retrieve the table data, a where clause are\
 added to the query. For instance, let’s suppose you ask:
 
 ```sql
 SELECT * FROM t4 WHERE id = 7;
 ```
 
-The query sent to the server will be:
+The query sent to the server are:
 
 ```sql
 SELECT `id`, `msg` FROM `xt1` WHERE `id` = 7
@@ -391,7 +391,7 @@ CREATE TABLE rt3 (id INT KEY NOT NULL, msg VARCHAR(32))
 ENGINE=federated connection='mysql://root@host3/test/sales';
 ```
 
-Creating the partition table accessing all these will be almost like what we did with the t4 table:
+Creating the partition table accessing all these are almost like what we did with the t4 table:
 
 ```sql
 CREATE TABLE t5 (

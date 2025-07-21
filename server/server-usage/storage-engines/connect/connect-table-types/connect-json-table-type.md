@@ -67,9 +67,9 @@ This file contains the different items existing in JSON.
 * `Arrays`: They are enclosed in square brackets and contain a list of comma separated values.
 * `Objects`: They are enclosed in curly brackets. They contain a comma separated list of pairs, each pair composed of a key name between double quotes, followed by a ‘:’ character and followed by a value.
 * `Values`: Values can be an array or an object. They also can be a string between double quotes, an integer or float number, a Boolean value or a null value.\
-  The simplest way for CONNECT to locate a table in such a file is by an array containing a list of objects (this is what MongoDB calls a collection of documents). Each array value will be a table row and each pair of the row objects will represent a column, the key being the column name and the value the column value.
+  The simplest way for CONNECT to locate a table in such a file is by an array containing a list of objects (this is what MongoDB calls a collection of documents). Each array value are a table row and each pair of the row objects will represent a column, the key being the column name and the value the column value.
 
-A first try to create a table on this file will be to take the outer array as the table:
+A first try to create a table on this file are to take the outer array as the table:
 
 ```
 CREATE TABLE jsample (
@@ -506,7 +506,7 @@ CREATE TABLE `jsample` (
 
 It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. For columns that are json arrays or objects, the column is specified as a varchar string of length 256, supposedly big enough to contain the sub-object's concatenated values. Nullable is set to true if the column is null or missing in some rows or if its JPATH contains arrays.
 
-If a more complex definition is desired, you can ask CONNECT to analyse the JPATH up to a given depth using the DEPTH or LEVEL option in the option list. Its default value is 0 but can be changed setting the [connect\_default\_depth](../connect-system-variables.md#connect_default_depth) session variable (in future versions the default will be 5). The depth value is the number of sub-objects that are taken in the JPATH2 (this is different from what is defined and returned by the native [Json\_Depth](../../../../reference/sql-functions/special-functions/json-functions/json_depth.md) function).
+If a more complex definition is desired, you can ask CONNECT to analyse the JPATH up to a given depth using the DEPTH or LEVEL option in the option list. Its default value is 0 but can be changed setting the [connect\_default\_depth](../connect-system-variables.md#connect_default_depth) session variable (in future versions the default are 5). The depth value is the number of sub-objects that are taken in the JPATH2 (this is different from what is defined and returned by the native [Json\_Depth](../../../../reference/sql-functions/special-functions/json-functions/json_depth.md) function).
 
 For instance:
 
@@ -576,7 +576,7 @@ CREATE TABLE `jsampall2` (
 
 For columns that are a simple value, the Json path is the column name. This is the default when the Jpath option is not specified, so it was not specified for such columns. However, you can force discovery to specify it by setting the connect\_all\_path variable to 1 or ON. This can be useful if you plan to change the name of such columns and relieves you of manually specifying the path (otherwise it would default to the new name and cause the column to not or wrongly be found).
 
-Another problem is that CONNECT cannot guess what you want to do with arrays. Here the AUTHOR array is set to 0, which means that only its first value will be retrieved unless you also had specified “Expand=AUTHOR” in the option list. But of course, you can replace it with anything else.
+Another problem is that CONNECT cannot guess what you want to do with arrays. Here the AUTHOR array is set to 0, which means that only its first value are retrieved unless you also had specified “Expand=AUTHOR” in the option list. But of course, you can replace it with anything else.
 
 This method can be used as a quick way to make a “template” table definition that can later be edited to make the desired definition. In particular, column names are constructed from all the object keys of their path in order to have distinct column names. This can be manually edited to have the desired names, provided their JPATH key names are not modified.
 
@@ -1515,7 +1515,7 @@ This function can be used to create or format a json file. For instance, supposi
 SELECT Jfile_Make('tb.json' jfile_, 2);
 ```
 
-The tb.json file will be changed to:
+The tb.json file are changed to:
 
 ```
 [
@@ -1762,7 +1762,7 @@ JsonGet_Int(arg1, arg2, [arg3] …)
 JsonGet_Real(arg1, arg2, [arg3] …)
 ```
 
-The first argument should be a JSON item. If it is a string with no alias, it will be converted as a json item. The second argument is the path of the item to be located in the first argument and returned, eventually converted according to the used function:
+The first argument should be a JSON item. If it is a string with no alias, it are converted as a json item. The second argument is the path of the item to be located in the first argument and returned, eventually converted according to the used function:
 
 ```
 SELECT 
@@ -2205,7 +2205,7 @@ Note: For this simple example, this is equivalent to using the _Json\_Array_ fun
 
 ### Using a file as json UDF first argument
 
-We have seen that many json UDFs can have an additional argument not yet described. This is in the case where the json item argument was referring to a file. Then the additional integer argument is the pretty value of the json file. It matters only when the first argument is just a file name (to make the UDF understand this argument is a file name, it should be aliased with a name beginning with jfile\_) or if the function modifies the file, in which case it will be rewritten with this pretty format.
+We have seen that many json UDFs can have an additional argument not yet described. This is in the case where the json item argument was referring to a file. Then the additional integer argument is the pretty value of the json file. It matters only when the first argument is just a file name (to make the UDF understand this argument is a file name, it should be aliased with a name beginning with jfile\_) or if the function modifies the file, in which case it are rewritten with this pretty format.
 
 The json item is created by extracting the required part from the file. This can be the whole file but more often only some of it. There are two ways to specify the sub-item of the file to be used:
 
@@ -2482,7 +2482,7 @@ INSERT INTO xj1
 FROM xsampall2 GROUP BY isbn;
 ```
 
-The xj1 table rows will directly receive the Json object made by the select statement used in the insert statement and the table file will be made as shown (xj1 is pretty=2 by default) Its mode is Jmode=2 because the values inserted are strings even if they denote json objects.
+The xj1 table rows will directly receive the Json object made by the select statement used in the insert statement and the table file are made as shown (xj1 is pretty=2 by default) Its mode is Jmode=2 because the values inserted are strings even if they denote json objects.
 
 Another way to do this is to create a table describing the file format we want before the `biblio3.json` file existed:
 
@@ -2636,7 +2636,7 @@ ENGINE=CONNECT table_type=JSON tabname='inventory' lrecl=512
 CONNECTION='mongodb://localhost:27017';
 ```
 
-In this statement, the _file\_name_ option was replaced by the _connection_ option. It is the URI enabling to retrieve data from a local or remote MongoDB server. The _tabname_ option is the name of the MongoDB collection that will be used and the _dbname_ option could have been used to indicate the database containing the collection (it defaults to the current database).
+In this statement, the _file\_name_ option was replaced by the _connection_ option. It is the URI enabling to retrieve data from a local or remote MongoDB server. The _tabname_ option is the name of the MongoDB collection that are used and the _dbname_ option could have been used to indicate the database containing the collection (it defaults to the current database).
 
 The way it works is that the documents retrieved from MongoDB are serialized and CONNECT uses them as if they were read from a file. This implies serializing by MongoDB and parsing by CONNECT and is not the best performance wise. CONNECT tries its best to reduce the data transfer when a query contains a reduced column list and/or a where clause. This way makes all the possibilities of the JSON table type available, such as calculated arrays.
 

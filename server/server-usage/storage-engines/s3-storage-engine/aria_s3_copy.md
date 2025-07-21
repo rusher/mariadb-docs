@@ -61,7 +61,7 @@ op=to
 ### Example Usage
 
 The following code will copy an existing Aria table named `test1` to S3.\
-If the `--database` option is not given, then the directory name where the table files exist will be used as the database.
+If the `--database` option is not given, then the directory name where the table files exist are used as the database.
 
 ```bash
 shell> aria_s3_copy --force --op=to --database=foo --compress --verbose --s3_block_size=4M test1

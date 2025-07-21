@@ -40,10 +40,10 @@ adding to it:
 However, it is often not advisable to write in clear a password that can be\
 seen by all user able to see the table declaration by show create table, in\
 particular, if the table is used when the current user is root. To avoid this,\
-a specific user should be created on the local host that will be used by proxy\
+a specific user should be created on the local host that are used by proxy\
 tables to retrieve local tables. This user can have minimum grant options, for\
 instance SELECT on desired directories, and needs no password. Supposing\
-‘proxy’ is such a user, the option list to add will be:
+‘proxy’ is such a user, the option list to add are:
 
 ```
 ... option_list='user=proxy';

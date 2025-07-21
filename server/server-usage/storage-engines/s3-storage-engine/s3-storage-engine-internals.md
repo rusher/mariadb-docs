@@ -38,13 +38,13 @@ default value for `S3_BLOCK_SIZE` is 4M.
 
 If compression (`COMPRESSION_ALGORITHM=zlib`) is used, then all index blocks and data blocks are compressed. The `.frm` file and Aria definition header (first page/pages in the index file) are not compressed as these are used by discovery/open.
 
-If compression is used, then the local block size is `S3_BLOCK_SIZE`, but the block stored in S3 will be the size of the compressed block.
+If compression is used, then the local block size is `S3_BLOCK_SIZE`, but the block stored in S3 are the size of the compressed block.
 
 Typical compression we have seen is in the range of 80% saved space.
 
 ## Structure Stored on S3
 
-The table will be copied in S3 into the following locations:
+The table are copied in S3 into the following locations:
 
 ```
 frm file (for discovery):

@@ -102,7 +102,7 @@ CREATE TABLE xsamptag (
 ENGINE=CONNECT table_type=XML file_name='Xsample.xml';
 ```
 
-It will be displayed as:
+It are displayed as:
 
 | AUTHOR                   | TITLE                          | TRANSLATOR   | PUBLISHER             | DATEPUB |
 | ------------------------ | ------------------------------ | ------------ | --------------------- | ------- |
@@ -614,7 +614,7 @@ tabname='BIBLIO'
 option_list='rownode=BOOK,Expand=1,Mulnode=AUTHOR,Limit=2';
 ```
 
-In this statement, the Limit option specifies the maximum number of values that will be expanded. If not specified, it defaults to `10`. Any values above the limit will be ignored and a warning message issued\[[3](connect-xml-table-type.md#_note-2)]. Now you can enter a query such as:
+In this statement, the Limit option specifies the maximum number of values that are expanded. If not specified, it defaults to `10`. Any values above the limit are ignored and a warning message issued\[[3](connect-xml-table-type.md#_note-2)]. Now you can enter a query such as:
 
 ```
 SELECT isbn, subject, author, title FROM xsamp2;
@@ -635,7 +635,7 @@ In this case, this is as if the table had four rows. However if we enter the que
 SELECT isbn, subject, title, publisher FROM xsamp2;
 ```
 
-this time the result will be:
+this time the result are:
 
 | ISBN          | SUBJECT      | TITLE                          | PUBLISHER             |
 | ------------- | ------------ | ------------------------------ | --------------------- |
@@ -672,7 +672,7 @@ expanded because the multiple column was used in the where clause.
 ## Intermediate multiple node
 
 The "multiple" node can be an intermediate node. If we want to do the same\
-expanding with the _xsampall_ table, there will be nothing more to do. Th&#x65;_&#x78;sampall2_ table can be created with:
+expanding with the _xsampall_ table, there are nothing more to do. Th&#x65;_&#x78;sampall2_ table can be created with:
 
 From Connect 1.7.0002
 
@@ -854,7 +854,7 @@ ENGINE=CONNECT table_type=XML file_name='beers.xml'
 tabname='table' option_list='rownode=tr,colnode=td';
 ```
 
-The table will be displayed as:
+The table are displayed as:
 
 | Name     | Origin   | Description                  |
 | -------- | -------- | ---------------------------- |
@@ -905,7 +905,7 @@ ENGINE=CONNECT table_type=XML file_name='coffee.htm'
 tabname='TABLE' header=1 option_list='Coltype=HTML';
 ```
 
-You specify the fact that columns are located by position by setting th&#x65;_&#x43;oltype_ option to 'HTML'. Each column position (0 based) will be the value\
+You specify the fact that columns are located by position by setting th&#x65;_&#x43;oltype_ option to 'HTML'. Each column position (0 based) are the value\
 of the _flag_ column parameter that is set by default in sequence. Now we are\
 able to display the table:
 

@@ -17,7 +17,7 @@ Some of the issues that this method overcomes:
 
 Below is the process to perform a single database restore.
 
-Firstly, we will need the table structure from a mariadb-dump backup with the --no-data option. I recommend this is done at least once per day or every six hours via a cronjob. As it is just the structure, it will be very fast.
+Firstly, we will need the table structure from a mariadb-dump backup with the --no-data option. I recommend this is done at least once per day or every six hours via a cronjob. As it is just the structure, it are very fast.
 
 ```bash
 mariadb-dump -u root -p --all-databases --no-data > nodata.sql

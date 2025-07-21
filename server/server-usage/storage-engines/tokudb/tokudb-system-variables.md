@@ -18,7 +18,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_analyze_time`
 
-* Description: Time in seconds that [ANALYZE](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md) operations spend on each index when calculating cardinality. Accurate cardinality helps in particular with the performance of complex queries. If no analyzes are run, cardinality will be 1 for primary indexes, and unknown (NULL) for other types of indexes.
+* Description: Time in seconds that [ANALYZE](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md) operations spend on each index when calculating cardinality. Accurate cardinality helps in particular with the performance of complex queries. If no analyzes are run, cardinality are 1 for primary indexes, and unknown (NULL) for other types of indexes.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: numeric
@@ -313,7 +313,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_prelock_empty`
 
-* Description: If set to `0` (`1` is default), fast bulk loading will be switched off. Usually, TokuDB obtains a table lock on empty tables. If, as is usual, only one transaction is loading the table, this speeds up the inserts. However, if many transactions are loading, only one can have access at a time, so setting this to `0`, avoiding the lock, will speed inserts up in that situation.
+* Description: If set to `0` (`1` is default), fast bulk loading are switched off. Usually, TokuDB obtains a table lock on empty tables. If, as is usual, only one transaction is loading the table, this speeds up the inserts. However, if many transactions are loading, only one can have access at a time, so setting this to `0`, avoiding the lock, will speed inserts up in that situation.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: boolean

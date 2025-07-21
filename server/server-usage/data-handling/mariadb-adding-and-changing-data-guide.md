@@ -31,7 +31,7 @@ VALUES('id1','text','text'),
 ('id2','text','text');
 ```
 
-Notice that the keyword `VALUES` is used only once and each row is contained in its own set of parentheses and each set is separated by commas. We've added an intentional mistake to this example: We are attempting to insert three rows of data into table2 for which the first column happens to be a `UNIQUE` key field. The third row entered here has the same identification number for the key column as the second row. This would normally result in an error and none of the three rows would be inserted. However, since the statement has an `IGNORE` flag, duplicates are ignored and not inserted, but the other rows will still be inserted. So, the first and second rows above will be inserted and the third one won't.
+Notice that the keyword `VALUES` is used only once and each row is contained in its own set of parentheses and each set is separated by commas. We've added an intentional mistake to this example: We are attempting to insert three rows of data into table2 for which the first column happens to be a `UNIQUE` key field. The third row entered here has the same identification number for the key column as the second row. This would normally result in an error and none of the three rows would be inserted. However, since the statement has an `IGNORE` flag, duplicates are ignored and not inserted, but the other rows will still be inserted. So, the first and second rows above are inserted and the third one won't.
 
 #### Priority
 
@@ -45,7 +45,7 @@ VALUES('text1','text2','text3');
 
 The `LOW_PRIORITY` flag will put the `INSERT` statement in queue, waiting for all current and pending requests to be completed before it's performed. If new requests are made while a low priority statement is waiting, then they are put ahead of it in the queue. MariaDB does not begin to execute a low priority statement until there are no other requests waiting. Once the transaction begins, though, the table is locked and any other requests for data from the table that come in after it starts must wait until it's completed. Because it locks the table, low priority statements will prevent simultaneous insertions from other clients even if you're dealing with a MyISAM table. Incidentally, notice that the `LOW_PRIORITY` flag comes before the `INTO`.
 
-One potential inconvenience with an `INSERT LOW_PRIORITY` statement is that the client will be tied up waiting for the statement to be completed successfully. So if you're inserting data into a busy server with a low priority setting using the mariadb client, your client could be locked up for minutes, maybe hours depending on how busy your server is at the time. As an alternative either to making other clients with read requests wait or to having your client wait, you can use the DELAYED flag instead of the `LOW_PRIORITY` flag:
+One potential inconvenience with an `INSERT LOW_PRIORITY` statement is that the client are tied up waiting for the statement to be completed successfully. So if you're inserting data into a busy server with a low priority setting using the mariadb client, your client could be locked up for minutes, maybe hours depending on how busy your server is at the time. As an alternative either to making other clients with read requests wait or to having your client wait, you can use the DELAYED flag instead of the `LOW_PRIORITY` flag:
 
 ```sql
 INSERT DELAYED
@@ -53,7 +53,7 @@ INTO table1
 VALUES('text1','text2','text3');
 ```
 
-MariaDB will take the request as a low priority one and put it on its list of tasks to perform when it has a break. However, it will immediately release the client so that the client can go on to enter other SQL statements or even exit. Another advantage of this method is that multiple `INSERT DELAYED` requests are batched together for block insertion when there is a gap, making the process potentially faster than `INSERT LOW_PRIORITY`. The flaw in this choice, however, is that the client is never told if a delayed insertion is successfully made or not. The client is informed of error messages when the statement is entered—the statement has to be valid before it will be queued—but it's not told of problems that occur after it's accepted. This brings up another flaw: delayed insertions are stored in the server's memory. So if the MariaDB daemon (mariadbd) dies or is manually killed, then the transactions are lost and the client is not notified of the failure. So [DELAYED](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is not always a good alternative.
+MariaDB will take the request as a low priority one and put it on its list of tasks to perform when it has a break. However, it will immediately release the client so that the client can go on to enter other SQL statements or even exit. Another advantage of this method is that multiple `INSERT DELAYED` requests are batched together for block insertion when there is a gap, making the process potentially faster than `INSERT LOW_PRIORITY`. The flaw in this choice, however, is that the client is never told if a delayed insertion is successfully made or not. The client is informed of error messages when the statement is entered—the statement has to be valid before it are queued—but it's not told of problems that occur after it's accepted. This brings up another flaw: delayed insertions are stored in the server's memory. So if the MariaDB daemon (mariadbd) dies or is manually killed, then the transactions are lost and the client is not notified of the failure. So [DELAYED](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is not always a good alternative.
 
 #### Contingent Additions
 
@@ -81,7 +81,7 @@ VALUES('id1','text','text'),
 ('id3','text','text');
 ```
 
-Notice that the syntax is the same as an `INSERT` statement. The flags all have the same effect, as well. Also, multiple rows may be inserted, but there's no need for the `IGNORE` flag since duplicates won't happen—the originals are just overwritten. Actually, when a row is replaced, it's first deleted completely and the new row is then inserted. Any columns without values in the new row will be given the default values for the columns. None of the values of the old row are kept. Incidentally, REPLACE will also allow you to combine it with a `SELECT` statement as we saw with the INSERT statement earlier.
+Notice that the syntax is the same as an `INSERT` statement. The flags all have the same effect, as well. Also, multiple rows may be inserted, but there's no need for the `IGNORE` flag since duplicates won't happen—the originals are just overwritten. Actually, when a row is replaced, it's first deleted completely and the new row is then inserted. Any columns without values in the new row are given the default values for the columns. None of the values of the old row are kept. Incidentally, REPLACE will also allow you to combine it with a `SELECT` statement as we saw with the INSERT statement earlier.
 
 #### Updating Data
 
@@ -139,7 +139,7 @@ ON DUPLICATE KEY
 UPDATE status = 'old';
 ```
 
-Because of the `IGNORE` flag, errors will not be generated, duplicates won't be inserted or replaced, but the rest will be added. Because of the [ON DUPLICATE KEY](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md), the column status of the original row will be set to old when there are duplicate entry attempts. The rest will be inserted and their status set to new.
+Because of the `IGNORE` flag, errors will not be generated, duplicates won't be inserted or replaced, but the rest are added. Because of the [ON DUPLICATE KEY](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md), the column status of the original row are set to old when there are duplicate entry attempts. The rest are inserted and their status set to new.
 
 #### Conclusion
 

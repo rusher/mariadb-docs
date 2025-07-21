@@ -130,7 +130,7 @@ This deletes `client_type` and its data, but not the whole table, obviously. Nev
 
 #### The Default
 
-You may have noticed that the results of the [DESCRIBE](../../reference/sql-statements/administrative-sql-statements/describe.md) statements shown before have a heading called 'Default' and just about all of the fields have a default value of NULL. This means that there are no default values and a null value is allowed and will be used if a value isn't specified when a row is created. To be able to specify a default value other than NULL, an [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement can be entered with a `SET` clause. Suppose we're located in Louisiana and we want a default value of 'LA' for state since that's where our clients are usually located. We would enter the following to set the default:
+You may have noticed that the results of the [DESCRIBE](../../reference/sql-statements/administrative-sql-statements/describe.md) statements shown before have a heading called 'Default' and just about all of the fields have a default value of NULL. This means that there are no default values and a null value is allowed and are used if a value isn't specified when a row is created. To be able to specify a default value other than NULL, an [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement can be entered with a `SET` clause. Suppose we're located in Louisiana and we want a default value of 'LA' for state since that's where our clients are usually located. We would enter the following to set the default:
 
 ```sql
 ALTER TABLE clients

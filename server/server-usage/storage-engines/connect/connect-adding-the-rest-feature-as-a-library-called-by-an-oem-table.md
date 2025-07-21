@@ -4,7 +4,7 @@ If you are using a version of MariaDB that does not support REST, this is how th
 
 Before making the REST OEM module, the Microsoft Casablanca package must be installed as for compiling MariaDB from source.
 
-Even if this module is to be used with a binary distribution, you need some CONNECT source files in order to successfully make it. It is made with four files existing in the version 1.06.0010 of CONNECT: tabrest.cpp, restget.cpp, tabrest.h and mini-global.h. It also needs the CONNECT header files that are included in tabrest.cpp and the ones they can include. This can be obtained by going to a recent download site of a version of MariaDB that includes the REST feature, downloading the MariaDB source file tar.gz and extracting from it the CONNECT sources files in a directory that will be added to the additional source directories if it is not the directory containing the above files.
+Even if this module is to be used with a binary distribution, you need some CONNECT source files in order to successfully make it. It is made with four files existing in the version 1.06.0010 of CONNECT: tabrest.cpp, restget.cpp, tabrest.h and mini-global.h. It also needs the CONNECT header files that are included in tabrest.cpp and the ones they can include. This can be obtained by going to a recent download site of a version of MariaDB that includes the REST feature, downloading the MariaDB source file tar.gz and extracting from it the CONNECT sources files in a directory that are added to the additional source directories if it is not the directory containing the above files.
 
 On Windows, use a recent version of Visual Studio. Make a new empty DLL project and add the source files tabrest.cpp and restget.cpp. Visual studio should automatically generate all necessary connections to the cpprest SDK. Just edit the properties of the project to add the additional include directory (the one where the CONNECT source was downloaded) et the link to the ha\_connect.lib of the binary version of MariaDB (in the same directory than ha\_connect.dll in your binary distribution). Add the preprocessor definition XML\_SUPPORT. Also set in the linker input page of the project property the Module definition File to the rest.def file (with its full path) also existing in the CONNECT source files. If you are making a debug configuration, make sure that in the C/C++ Code generation page the Runtime library line specifies Multi-threaded Debug DLL (/MDd) or your server will crash when using the feature.
 
@@ -75,7 +75,7 @@ The SD and CD variables are the directories of the CONNECT source files and the 
 
 A very important flag is -fno-rtti. Without it you would be in big trouble.
 
-The resulting module, for instance rest.so or rest.dll, must be placed in the plugin directory of the MariaDB server. Then, you will be able to use NoSQL tables simply replacing in the CREATE TABLE statement the TABLE\_TYPE option =JSON or XML by TABLE\_TYPE=OEM SUBTYPE=REST MODULE=’rest.(so|dll)’. Actually, the module name, here supposedly ‘rest’, can be anything you like.
+The resulting module, for instance rest.so or rest.dll, must be placed in the plugin directory of the MariaDB server. Then, you are able to use NoSQL tables simply replacing in the CREATE TABLE statement the TABLE\_TYPE option =JSON or XML by TABLE\_TYPE=OEM SUBTYPE=REST MODULE=’rest.(so|dll)’. Actually, the module name, here supposedly ‘rest’, can be anything you like.
 
 The file type is JSON by default. If not, it must be specified like this:
 

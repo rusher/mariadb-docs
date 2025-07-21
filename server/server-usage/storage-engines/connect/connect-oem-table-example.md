@@ -161,11 +161,11 @@ EXPORTS
 
 To compile this OEM module, first make the two or three required files by copy/pasting from the above listings.
 
-Even if this module is to be used with a binary distribution, you need some source files in order to successfully compile it. At least the CONNECT header files that are included in `jmgoem.cpp` and the ones they can include. This can be obtained by downloading the MariaDB source file tar.gz and extracting from it the CONNECT sources files in a directory that will be added to the additional source directories if it is not the directory containing the above files.
+Even if this module is to be used with a binary distribution, you need some source files in order to successfully compile it. At least the CONNECT header files that are included in `jmgoem.cpp` and the ones they can include. This can be obtained by downloading the MariaDB source file tar.gz and extracting from it the CONNECT sources files in a directory that are added to the additional source directories if it is not the directory containing the above files.
 
 The module must be linked to the `ha_connect.lib` of the binary version it will used with. Recent distributions add this lib in the plugin directory.
 
-The resulting module, for instance `mongo.so` or `mongo.dll`, must be placed in the plugin directory of the MariaDB server. Then, you will be able to use MONGO like tables simply replacing in the CREATE TABLE statement the option `TABLE_TYPE=MONGO` with `TABLE_TYPE=OEM SUBTYPE=MONGO MODULE=’mongo.(so|dll)’`. Actually, the module name, here supposedly ‘mongo’, can be anything you like.
+The resulting module, for instance `mongo.so` or `mongo.dll`, must be placed in the plugin directory of the MariaDB server. Then, you are able to use MONGO like tables simply replacing in the CREATE TABLE statement the option `TABLE_TYPE=MONGO` with `TABLE_TYPE=OEM SUBTYPE=MONGO MODULE=’mongo.(so|dll)’`. Actually, the module name, here supposedly ‘mongo’, can be anything you like.
 
 This will work with the last (not yet) distributed versions of [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and 10.1 because, even it is not enabled, the MONGO type is included in them. This is also the case for [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) but then, on Windows, you will have to define NOEXP and NOMGOCOL because these functions are not exported by this version.
 

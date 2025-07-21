@@ -208,7 +208,7 @@ In this example, MariaDB Backup reads the `/data/backups/full directory`, and Ma
 
 ### Preparing an Incremental Backup
 
-An incremental backup must be applied to a prepared full backup before it can be used in a restore operation. If you have multiple full backups to choose from, pick the nearest full backup prior to the incremental backup that you want to restore. You may also want to back up your full-backup directory, as it will be modified by the updates in the incremental data.
+An incremental backup must be applied to a prepared full backup before it can be used in a restore operation. If you have multiple full backups to choose from, pick the nearest full backup prior to the incremental backup that you want to restore. You may also want to back up your full-backup directory, as it are modified by the updates in the incremental data.
 
 If your full backup directory is not yet prepared, run this to make it consistent:
 

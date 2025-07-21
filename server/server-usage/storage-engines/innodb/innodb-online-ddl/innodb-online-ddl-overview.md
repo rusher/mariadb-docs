@@ -108,14 +108,14 @@ RENAME TABLE tmp_tab TO original_tab;
 
 This algorithm is very inefficient, but it is generic, so it works for all storage engines.
 
-If the `COPY` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable, then the `COPY` algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement, so that the table is only rebuilt once.
+If the `COPY` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable, then the `COPY` algorithm are used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement, so that the table is only rebuilt once.
 
 #### Using the COPY Algorithm with InnoDB
 
 If the `COPY` algorithm is used with an [InnoDB](../) table, then the following statements apply:
 
-* The table will be rebuilt using the current values of the [innodb\_file\_per\_table](../innodb-system-variables.md#innodb_file_per_table), [innodb\_file\_format](../innodb-system-variables.md#innodb_file_format), and [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variables.
-* The operation will have to create a temporary table to perform the table copy. This temporary table will be in the same directory as the original table, and it's file name will be in the format `#sql${PID}_${THREAD_ID}_${TMP_TABLE_COUNT}`, where `${PID}` is the process ID of `mysqld`, `${THREAD_ID}` is the connection ID, and `${TMP_TABLE_COUNT}` is the number of temporary tables that the connection has open. Therefore, the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `#sql1234_12_1.ibd`.
+* The table are rebuilt using the current values of the [innodb\_file\_per\_table](../innodb-system-variables.md#innodb_file_per_table), [innodb\_file\_format](../innodb-system-variables.md#innodb_file_format), and [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variables.
+* The operation will have to create a temporary table to perform the table copy. This temporary table are in the same directory as the original table, and it's file name are in the format `#sql${PID}_${THREAD_ID}_${TMP_TABLE_COUNT}`, where `${PID}` is the process ID of `mysqld`, `${THREAD_ID}` is the connection ID, and `${TMP_TABLE_COUNT}` is the number of temporary tables that the connection has open. Therefore, the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `#sql1234_12_1.ibd`.
 * The operation inserts one record at a time into each index, which is very inefficient.
 * InnoDB does not use a sort buffer.
 * The table copy operation creates a lot fewer [InnoDB undo log](../innodb-undo-log.md) writes. See [MDEV-11415](https://jira.mariadb.org/browse/MDEV-11415) for more information.
@@ -131,7 +131,7 @@ A more accurate name for the algorithm would have been the `ENGINE` algorithm, s
 
 If an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation supports the `INPLACE` algorithm, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
 
-If the `INPLACE` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `INPLACE` algorithm, then an error will be raised:
+If the `INPLACE` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `INPLACE` algorithm, then an error are raised:
 
 ```sql
 SET SESSION alter_algorithm='INPLACE';
@@ -151,7 +151,7 @@ If the `INPLACE` algorithm is used with an [InnoDB](../) table, then the followi
 * Some operations require the table to be rebuilt, even though the algorithm is inaccurately called "in-place". This includes operations such as adding or dropping columns, adding a primary key, changing a column to [NULL](../../../../reference/data-types/null-values.md), etc.
 * If the operation requires the table to be rebuilt, then the operation might have to create temporary tables.
   * It may have to create a temporary intermediate table for the actual table rebuild operation.
-    * This temporary table will be in the same directory as the original table, and it's file name will be in the format `#sql${PID}_${THREAD_ID}_${TMP_TABLE_COUNT}`, where `${PID}` is the process ID of `mysqld`, `${THREAD_ID}` is the connection ID, and `${TMP_TABLE_COUNT}` is the number of temporary tables that the connection has open. Therefore, the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `#sql1234_12_1.ibd`.
+    * This temporary table are in the same directory as the original table, and it's file name are in the format `#sql${PID}_${THREAD_ID}_${TMP_TABLE_COUNT}`, where `${PID}` is the process ID of `mysqld`, `${THREAD_ID}` is the connection ID, and `${TMP_TABLE_COUNT}` is the number of temporary tables that the connection has open. Therefore, the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `#sql1234_12_1.ibd`.
   * When it replaces the original table with the rebuilt table, it may also have to rename the original table using a temporary table name.
     * The [innodb\_safe\_truncate](../innodb-system-variables.md#innodb_safe_truncate) system variable is set to `OFF`, then the format will actually be `#sql-ib${TABLESPACE_ID}-${RAND}`, where `${TABLESPACE_ID}` is the table's tablespace ID within InnoDB and `${RAND}` is a randomly initialized number. Therefore, the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `#sql-ib230291-1363966925.ibd`.
 * The storage needed for the above items can add up to the size of the original table, or more in some cases.
@@ -169,7 +169,7 @@ The `NOCOPY` algorithm is supported. The `INPLACE` algorithm can sometimes be su
 
 If an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation supports the `NOCOPY` algorithm, then it can be performed without rebuilding the clustered index.
 
-If the `NOCOPY` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `NOCOPY` algorithm, then an error will be raised:
+If the `NOCOPY` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `NOCOPY` algorithm, then an error are raised:
 
 ```sql
 SET SESSION alter_algorithm='NOCOPY';
@@ -192,7 +192,7 @@ The `INSTANT` algorithm is supported. The `INPLACE` algorithm can sometimes be s
 
 If an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation supports the `INSTANT` algorithm, then it can be performed without modifying any data files.
 
-If the `INSTANT` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `INSTANT` algorithm, then an error will be raised:
+If the `INSTANT` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `INSTANT` algorithm, then an error are raised:
 
 ```sql
 SET SESSION alter_algorithm='INSTANT';

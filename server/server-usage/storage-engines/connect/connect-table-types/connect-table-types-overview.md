@@ -39,7 +39,7 @@ table:
 For all table types marked with a '\*' in the table above, CONNECT is able to\
 analyze the data source to retrieve the column definition. This can be used to\
 define a “catalog” table that display the column description of the source, or\
-to create a table without specifying the column definition that will be\
+to create a table without specifying the column definition that are\
 automatically constructed by CONNECT when creating the table.
 
 When marked with a ‘$’ the file can be the result returned by a REST query.

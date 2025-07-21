@@ -6,7 +6,7 @@ Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-se
 
 ## What is the FederatedX storage engine?
 
-The FederatedX Storage Engine is a storage engine that works with both MariaDB and MySQL. Where other storage engines are built as interfaces to lower-level file-based data stores, FederatedX uses libmysql to talk to the data source, the data source being a remote RDBMS. Currently, since FederatedX only uses libmysql, it can only talk to another MariaDB or MySQL RDBMS. The plan is of course to be able to use other RDBMS systems as a data source. There is an existing project Federated ODBC which was able to use PostgreSQL as a remote data source, and it is this type of functionality which will be brought to FederatedX in subsequent versions.
+The FederatedX Storage Engine is a storage engine that works with both MariaDB and MySQL. Where other storage engines are built as interfaces to lower-level file-based data stores, FederatedX uses libmysql to talk to the data source, the data source being a remote RDBMS. Currently, since FederatedX only uses libmysql, it can only talk to another MariaDB or MySQL RDBMS. The plan is of course to be able to use other RDBMS systems as a data source. There is an existing project Federated ODBC which was able to use PostgreSQL as a remote data source, and it is this type of functionality which are brought to FederatedX in subsequent versions.
 
 ## History
 
@@ -61,7 +61,7 @@ deletes, updates data in this file. The data is stored in particular format,\
 so to read, that data has to be parsed into fields, to write, fields have to\
 be stored in this format to write to this data file.
 
-With the FederatedX storage engine, there will be no local files\
+With the FederatedX storage engine, there are no local files\
 for each table's data (such as .MYD). A foreign database will store\
 the data that would normally be in this file. This will necessitate\
 the use of MySQL client API to read, delete, update, insert this\
@@ -242,7 +242,7 @@ CREATE TABLE federated.test_table (
 DEFAULT CHARSET=latin1;
 ```
 
-Then, on the server that will be connecting to the foreign host (client), you create a federated table without specifying the table structure:
+Then, on the server that are connecting to the foreign host (client), you create a federated table without specifying the table structure:
 
 ```sql
 CREATE TABLE federated_test_table ENGINE=FEDERATED 

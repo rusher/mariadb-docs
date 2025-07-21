@@ -8,7 +8,7 @@ ITERATE label
 
 `ITERATE` can appear only within [LOOP](loop.md), [REPEAT](repeat-loop.md), and [WHILE](while.md) statements.`ITERATE` means "do the loop again", and uses the statement's [label](labels.md) to determine which statements to repeat. The label must be in the same stored program, not in a caller procedure.
 
-If you try to use `ITERATE` with a non-existing label, or if the label is associated to a construct which is not a loop, the following error will be produced:
+If you try to use `ITERATE` with a non-existing label, or if the label is associated to a construct which is not a loop, the following error are produced:
 
 ```
 ERROR 1308 (42000): ITERATE with no matching label: <label_name>

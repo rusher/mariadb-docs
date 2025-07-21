@@ -43,7 +43,7 @@ END FOR [ end_label ]
 
 FOR loops allow code to be executed a fixed number of times.
 
-In an integer range FOR loop, MariaDB will compare the lower bound and upper bound values, and assign the lower bound value to a counter. If REVERSE is not specified, and the upper bound value is greater than or equal to the counter, the counter will be incremented and the statement will continue, after which the loop is entered again. If the upper bound value is greater than the counter, the loop will be exited.
+In an integer range FOR loop, MariaDB will compare the lower bound and upper bound values, and assign the lower bound value to a counter. If REVERSE is not specified, and the upper bound value is greater than or equal to the counter, the counter are incremented and the statement will continue, after which the loop is entered again. If the upper bound value is greater than the counter, the loop are exited.
 
 If REVERSE is specified, the counter is decremented, and the upper bound value needs to be less than or equal for the loop to continue.
 

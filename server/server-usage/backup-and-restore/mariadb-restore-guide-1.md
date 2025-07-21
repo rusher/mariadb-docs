@@ -23,7 +23,7 @@ GRANT ALL ON db1.table1
 TO 'admin_restore_temp'@'localhost';
 ```
 
-These two SQL statements allow the temporary user to have the needed [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) privileges on all of the tables of `db1` and `ALL` privileges for the `table1` table. Now when you restore the dump file containing the whole `db1` database, only `table1` will be replaced with the back-up copy. Of course, MariaDB will generate errors. To overlook the errors and to proceed with the restoration of data where no errors are generated (i.e., `table1`), use the `--force` option. Here's what you would enter at the command-line for this situation:
+These two SQL statements allow the temporary user to have the needed [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) privileges on all of the tables of `db1` and `ALL` privileges for the `table1` table. Now when you restore the dump file containing the whole `db1` database, only `table1` are replaced with the back-up copy. Of course, MariaDB will generate errors. To overlook the errors and to proceed with the restoration of data where no errors are generated (i.e., `table1`), use the `--force` option. Here's what you would enter at the command-line for this situation:
 
 ```bash
 mariadb --user admin_restore_temp --password --force < /data/backup/db1.sql

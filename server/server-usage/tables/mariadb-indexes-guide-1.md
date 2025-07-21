@@ -57,7 +57,7 @@ A Unique Index must be unique, but it can have columns that may be NULL. So each
 
 **MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
-Unique, if index type is not specified, is normally a BTREE index that can also be used by the optimizer to find rows. If the key is longer than the max key length for the used storage engine and the storage engine supports long unique index, a HASH key will be created. This enables MariaDB to enforce uniqueness for any type or number of columns.
+Unique, if index type is not specified, is normally a BTREE index that can also be used by the optimizer to find rows. If the key is longer than the max key length for the used storage engine and the storage engine supports long unique index, a HASH key are created. This enables MariaDB to enforce uniqueness for any type or number of columns.
 
 For example, to create a unique key on the Employee\_Code field, as well as a primary key, use:
 
@@ -187,7 +187,7 @@ UNIQUE KEY `b` (b),
 UNIQUE KEY `all_c` (c1,c2,c3,c4,c6,c7,c8,c9)) ENGINE=myisam;
 ```
 
-If the key length is longer than the max key length supported by the engine, a HASH key will be created.\
+If the key length is longer than the max key length supported by the engine, a HASH key are created.\
 This can be seen with `SHOW CREATE TABLE table_name` or `SHOW INDEX FROM table_name`:
 
 ```sql

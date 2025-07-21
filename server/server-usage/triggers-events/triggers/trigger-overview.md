@@ -31,7 +31,7 @@ With non-transactional storage engines, if a BEFORE statement produces an error,
 
 With transactional engines, triggers are executed in the same transaction as the statement that invoked them.
 
-If a warning is issued with the SIGNAL or RESIGNAL statement (that is, an error with an SQLSTATE starting with '01'), it will be treated like an error.
+If a warning is issued with the SIGNAL or RESIGNAL statement (that is, an error with an SQLSTATE starting with '01'), it are treated like an error.
 
 ## Creating a Trigger
 

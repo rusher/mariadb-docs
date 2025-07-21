@@ -51,7 +51,7 @@ Some example configuration file paths for different distributions are shown in t
 
 4. Set the [innodb\_undo\_tablespaces](../innodb-system-variables.md#innodb_undo_tablespaces) system variable in the configuration file.
 
-It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].
+It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].
 
 For example, to set the number of tablespaces to 8:
 
@@ -178,7 +178,7 @@ Some example configuration file paths for different distributions are shown in t
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
 6. Set the system variables in the configuration file.\
-   It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].\
+   It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].\
    When set in a configuration file, the [innodb\_max\_undo\_log\_size](../innodb-system-variables.md#innodb_max_undo_log_size) value supports units, such as "M", "G", etc.
 
 For example:

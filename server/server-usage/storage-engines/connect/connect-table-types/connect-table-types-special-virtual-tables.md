@@ -109,7 +109,7 @@ Because most of the useful classes belong to the 'root\cimv2' namespace, this\
 is the default value for WMI tables when the namespace is not specified. Some\
 classes have many properties whose name and type may not be known when creating\
 the table. To find them, you can use the WMI CMI Studio application but his\
-will be rarely required because CONNECT is able to retrieve them.
+are rarely required because CONNECT is able to retrieve them.
 
 Actually, the class specification also has default values for some namespaces.\
 For the ‘root\cli’ namespace the class name defaults to ‘Msft\_CliAlias’ and for\
@@ -192,7 +192,7 @@ table type instead.
 
 Queries to WMI providers are done using the WQL language, not the SQL language.\
 CONNECT does the job of making the WQL query. However, because of the\
-restriction of the WQL syntax, the WHERE clause will be generated only when\
+restriction of the WQL syntax, the WHERE clause are generated only when\
 respecting the following restrictions:
 
 1. No function.

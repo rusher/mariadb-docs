@@ -9,7 +9,7 @@ The specific options used when creating tables based on zip files are:
 | Table Option | Type    | Description                                                                                                                                                                                                                                               |
 | ------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ZIPPED       | Boolean | Required to be set as true.                                                                                                                                                                                                                               |
-| ENTRY\*      | String  | The optional name or pattern of the zip entry or entries to be used with the table. If not specified, all entries or only the first one will be used depending on the mulentries option setting.                                                          |
+| ENTRY\*      | String  | The optional name or pattern of the zip entry or entries to be used with the table. If not specified, all entries or only the first one are used depending on the mulentries option setting.                                                          |
 | MULENTRIES\* | Boolean | True if several entries are part of the table. If not specified, it defaults to false if the entry option is not specified. If the entry option is specified, it defaults to true if the entry name contains wildcard characters or false if it does not. |
 | APPEND\*     | Boolean | Used when creating new zipped tables (see below)                                                                                                                                                                                                          |
 | LOAD\*       | String  | Used when creating new zipped tables (see below)                                                                                                                                                                                                          |
@@ -137,7 +137,7 @@ ENGINE=CONNECT table_type=XML file_name='E:/Xml/perso.zip' zipped=1
 option_list='entry=services,load=E:/Xml/serv2.xml';
 ```
 
-When executing this statement, the _serv2.xml_ file will be zipped as /perso.zip\*. The entry name can be specified or defaults to the source file name.\*
+When executing this statement, the _serv2.xml_ file are zipped as /perso.zip\*. The entry name can be specified or defaults to the source file name.\*
 
 If the column descriptions are specified, the table can be used later to read from the zipped table, but they are not used when creating the zip file. Thus, a fake column (there must be one) can be specified and another table created to read the zip file. This one can take advantage of the discovery process to avoid providing the columns description for table types allowing it. For instance:
 

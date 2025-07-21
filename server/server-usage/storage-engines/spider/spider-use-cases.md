@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This article will cover simple working examples for some standard use cases for Spider. The example will be illustrated using a sales opportunities table to be consistent throughout. In some cases the actual examples are contrived but are used to illustrate the varying syntax options.
+This article will cover simple working examples for some standard use cases for Spider. The example are illustrated using a sales opportunities table to be consistent throughout. In some cases the actual examples are contrived but are used to illustrate the varying syntax options.
 
 ## Basic setup
 
@@ -132,7 +132,7 @@ KEY (accountName)
 
 See also [range-partitioning-type](../../../server-management/partitioning-tables/partitioning-types/range-partitioning-type.md).
 
-In this case a spider table is created to distribute data across backend1 and backend2 based on the first letter of the accountName field. All accountNames that start with the letter L and prior will be stored in backend1 and all other values stored in backend2. Note that the accountName column must be added to the primary key which is a requirement of MariaDB partitioning:
+In this case a spider table is created to distribute data across backend1 and backend2 based on the first letter of the accountName field. All accountNames that start with the letter L and prior are stored in backend1 and all other values stored in backend2. Note that the accountName column must be added to the primary key which is a requirement of MariaDB partitioning:
 
 ```sql
 CREATE TABLE opportunities (

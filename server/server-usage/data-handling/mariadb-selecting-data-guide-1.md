@@ -248,7 +248,7 @@ This will match any author last name starting with Dostoevsk. Notice that the wi
 
 There are many flags or parameters that can be used in a [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. To list and explain all of them with examples would make this a very lengthy article. The reality is that most people never use some of them anyway. So, let's take a look at a few that you may find useful as you get more involved with MariaDB or if you work with large tables on very active servers.
 
-The first flag that may be given, it goes immediately after the `SELECT` keyword, is `ALL`. By default, all rows that meet the requirements of the various clauses given are selected, so this isn't necessary. If instead we would only want the first occurrence of a particular criteria to be displayed, we could add the [DISTINCT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#distinct) option. For instance, for authors like Dostoevsky there will be several printings of a particular title. In the results shown earlier you may have noticed that there were two copies of _Crime & Punishment_ listed, however they have different ISBN numbers and different publishers. Suppose that for our search we only want one row displayed for each title. We could do that like so:
+The first flag that may be given, it goes immediately after the `SELECT` keyword, is `ALL`. By default, all rows that meet the requirements of the various clauses given are selected, so this isn't necessary. If instead we would only want the first occurrence of a particular criteria to be displayed, we could add the [DISTINCT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#distinct) option. For instance, for authors like Dostoevsky there are several printings of a particular title. In the results shown earlier you may have noticed that there were two copies of _Crime & Punishment_ listed, however they have different ISBN numbers and different publishers. Suppose that for our search we only want one row displayed for each title. We could do that like so:
 
 ```sql
 SELECT DISTINCT title
@@ -270,9 +270,9 @@ ORDER BY title;
 +------------------------+
 ```
 
-We've thinned out the ongoing SQL statement a bit for clarity. This statement will result in only one row displayed for _Crime & Punishment_ and it will be the first one found.
+We've thinned out the ongoing SQL statement a bit for clarity. This statement will result in only one row displayed for _Crime & Punishment_ and it are the first one found.
 
-If we're retrieving data from an extremely busy database, by default any other SQL statements entered simultaneously which are changing or updating data will be executed before a [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. `SELECT` statements are considered to be of lower priority. However, if we would like a particular `SELECT` statement to be given a higher priority, we can add the keyword HIGH\_PRIORITY. Modifying the previous SQL statement for this factor, we would enter it like this:
+If we're retrieving data from an extremely busy database, by default any other SQL statements entered simultaneously which are changing or updating data are executed before a [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. `SELECT` statements are considered to be of lower priority. However, if we would like a particular `SELECT` statement to be given a higher priority, we can add the keyword HIGH\_PRIORITY. Modifying the previous SQL statement for this factor, we would enter it like this:
 
 ```sql
 SELECT DISTINCT HIGH_PRIORITY title
@@ -332,7 +332,7 @@ SELECT FOUND_ROWS();
 1 row in set (0.000 sec
 ```
 
-This value is temporary and will be lost if the connection is terminated. It cannot be retrieved by any other client session. It relates only to the current session and the value for the variable when it was last calculated.
+This value is temporary and are lost if the connection is terminated. It cannot be retrieved by any other client session. It relates only to the current session and the value for the variable when it was last calculated.
 
 #### Conclusion
 

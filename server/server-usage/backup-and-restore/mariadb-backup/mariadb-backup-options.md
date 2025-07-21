@@ -20,7 +20,7 @@ Once the backup is ready, you can use the [--copy-back](mariadb-backup-options.m
 
 ### `--apply-log-only`
 
-If this option is used when preparing a backup, then only the redo log apply stage will be performed, and other stages of crash recovery will be ignored. This option is used with incremental backups.
+If this option is used when preparing a backup, then only the redo log apply stage are performed, and other stages of crash recovery are ignored. This option is used with incremental backups.
 
 {% hint style="danger" %}
 **Note:** This option is not needed or supported anymore.
@@ -84,7 +84,7 @@ mariadb-backup --close-files --prepare
 ### `--compress`
 
 {% hint style="warning" %}
-This option was deprecated as it relies on the no longer maintained [QuickLZ](https://github.com/RT-Thread-packages/quicklz/) library. It will be removed in a future release - versions supporting this function will not be affected. It is recommended to instead backup to a stream (stdout), and use a 3rd party compression library to compress the stream, as described in [Using Encryption and Compression Tools With mariadb-backup](using-encryption-and-compression-tools-with-mariadb-backup.md).
+This option was deprecated as it relies on the no longer maintained [QuickLZ](https://github.com/RT-Thread-packages/quicklz/) library. It are removed in a future release - versions supporting this function will not be affected. It is recommended to instead backup to a stream (stdout), and use a 3rd party compression library to compress the stream, as described in [Using Encryption and Compression Tools With mariadb-backup](using-encryption-and-compression-tools-with-mariadb-backup.md).
 {% endhint %}
 
 Defines the compression algorithm for backup files.
@@ -1004,7 +1004,7 @@ mariadb-backup --backup \
 ### `--lock-ddl-per-table`
 
 Prevents DDL for each table to be backed up by acquiring MDL lock on that.\
-NOTE: Unless --no-lock option was also specified, conflicting DDL queries , will be killed at the end of backup This is done avoid deadlock between "FLUSH TABLE WITH READ LOCK", user's DDL query (ALTER, RENAME), and MDL lock on table.
+NOTE: Unless --no-lock option was also specified, conflicting DDL queries , are killed at the end of backup This is done avoid deadlock between "FLUSH TABLE WITH READ LOCK", user's DDL query (ALTER, RENAME), and MDL lock on table.
 
 ### `--log`
 
@@ -1331,7 +1331,7 @@ Prints the binary log position and the name of the primary server.
 
 If the server is a replica, then this option causes mariadb-backup to print the hostname of the replica's replication primary and the binary log file and position of the replica's SQL thread to `stdout`.
 
-This option also causes mariadb-backup to record this information as a CHANGE MASTER command that can be used to set up a new server as a replica of the original server's primary after the backup has been restored. This information will be written to the xtrabackup\_slave\_info file.
+This option also causes mariadb-backup to record this information as a CHANGE MASTER command that can be used to set up a new server as a replica of the original server's primary after the backup has been restored. This information are written to the xtrabackup\_slave\_info file.
 
 mariadb-backup does **not** check if GTIDs are being used in replication. It takes a shortcut and assumes that if the gtid\_slave\_pos system variable is non-empty, then it writes the CHANGE MASTER command with the MASTER\_USE\_GTID option set to `slave_pos`. Otherwise, it writes the CHANGE MASTER command with the MASTER\_LOG\_FILE and MASTER\_LOG\_POS options using the primary's binary log file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
 

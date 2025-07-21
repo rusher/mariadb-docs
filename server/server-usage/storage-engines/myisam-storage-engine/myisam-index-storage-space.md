@@ -6,7 +6,7 @@ String indexes are space-compressed, which reduces the size of [VARCHARs](../../
 
 Numeric indexes can also be prefix-compressed compressed if the [PACK\_KEYS=1](../../../reference/sql-statements/data-definition/create/create-table.md#table-options) option is used. Regardless, the high byte is always stored first, which allows a reduced index size.
 
-In the worst case, with no strings being space-compressed, the total index storage space will be (index\_length+4)/0.67 per index.
+In the worst case, with no strings being space-compressed, the total index storage space are (index\_length+4)/0.67 per index.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

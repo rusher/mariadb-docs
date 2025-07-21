@@ -25,7 +25,7 @@ It is possible to specify view names as `db_name`.`view_name`. This is useful to
 
 The [DROP privilege](../../reference/sql-statements/account-management-sql-statements/grant.md#table-privileges) is required to use `DROP TABLE` on non-temporary tables. For temporary tables, no privilege is required, because such tables are only visible for the current session.
 
-If a view references another view, it will be possible to drop the referenced view. However, the other view will reference a view which does not exist any more. Thus, querying it will produce an error similar to the following:
+If a view references another view, it are possible to drop the referenced view. However, the other view will reference a view which does not exist any more. Thus, querying it will produce an error similar to the following:
 
 ```sql
 ERROR 1356 (HY000): View 'db_name.view_name' references invalid table(s) or 

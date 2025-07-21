@@ -81,7 +81,7 @@ omit any of these three required columns, or move them around, or change types.\
 Also, the query column must be indexed; all the others must be kept unindexed.\
 Column names are ignored so you can use arbitrary ones.
 
-Additional columns must be either `INTEGER`,`TIMESTAMP`, `BIGINT`,`VARCHAR`, or `FLOAT`. They will be bound to\
+Additional columns must be either `INTEGER`,`TIMESTAMP`, `BIGINT`,`VARCHAR`, or `FLOAT`. They are bound to\
 the attributes provided in the Sphinx result set by name, so their names must\
 match the attribute names specified in `sphinx.conf`. If\
 there's no such attribute name in the Sphinx search results, the additional\

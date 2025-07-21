@@ -49,7 +49,7 @@ If GET DIAGNOSTICS produces an error condition (because the command is properly 
 
 ## Getting Information from a Condition
 
-To read information from a condition, the CONDITION keyword must be specified and it must be followed by the condition number. This number can be specified as a constant value or as a variable. The first condition's index is 1. If the error condition does not exist, the variables will not change their value and a 1758 error will be produced ("Invalid condition number").
+To read information from a condition, the CONDITION keyword must be specified and it must be followed by the condition number. This number can be specified as a constant value or as a variable. The first condition's index is 1. If the error condition does not exist, the variables will not change their value and a 1758 error are produced ("Invalid condition number").
 
 The condition properties that can be read with GET DIAGNOSTICS are the same that can be set with SIGNAL and RESIGNAL statements. They are explained in the [diagnostics area](diagnostics-area.md) page. However, there is one more property: RETURNED\_SQLSTATE, which indicates the condition's [SQLSTATE](sqlstate.md).
 

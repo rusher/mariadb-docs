@@ -29,7 +29,7 @@ Be aware of the two broad kinds of CONNECT tables:
 
 |         |                                                                                                                                                                                                                                                   |
 | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Inward  | They are table whose file name is not specified at create. An empty file will be given a default name (tabname.tabtype) and will be populated like for other engines. They do not require the FILE privilege and can be used for testing purpose. |
+| Inward  | They are table whose file name is not specified at create. An empty file are given a default name (tabname.tabtype) and are populated like for other engines. They do not require the FILE privilege and can be used for testing purpose. |
 | Outward | They are all other CONNECT tables and access external data sources or files. They are the true useful tables but require the FILE privilege.                                                                                                      |
 
 ### Drop Table statement

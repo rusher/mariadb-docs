@@ -4,7 +4,7 @@
 
 This is a description of the different stages in mariadb-backup, what they do and why they are needed.
 
-Note that a few items are marked with `TODO`; these are things we are working on and will be in next version of mariadb-backup.
+Note that a few items are marked with `TODO`; these are things we are working on and are in next version of mariadb-backup.
 
 ### Execution Stages
 
@@ -30,7 +30,7 @@ Start a dedicated thread in mariadb-backup to copy InnoDB redo log (`ib_logfile*
 
 * This is needed to record all changes done while the backup is running. (The redo log logically is a single circular file, split into innodb\_log\_files\_in\_group files.)
 * The log is also used to see detect if any truncate or online alter tables are used.
-* The assumption is that the copy thread will be able to keep up with server. It should always be able keep up, if the redo log is big enough.
+* The assumption is that the copy thread are able to keep up with server. It should always be able keep up, if the redo log is big enough.
 
 #### Copy-phase for InnoDB Tablespaces
 
@@ -43,7 +43,7 @@ Start a dedicated thread in mariadb-backup to copy InnoDB redo log (`ib_logfile*
 #### Create a Consistent Backup Point
 
 * Execute FLUSH TABLE WITH READ LOCK. This is default, but may be omitted with the `-–no-lock` parameter. The reason why `FLUSH` is needed is to ensure that all tables are in a consistent state at the exact same point in time, independent of storage engine.
-* If `--lock-ddl-per-table` is used and there is a user query waiting for MDL, the user query will be killed to resolve a deadlock. Note that these are only queries of type ALTER, DROP, TRUNCATE or RENAME TABLE. ([MDEV-15636](https://jira.mariadb.org/browse/MDEV-15636))
+* If `--lock-ddl-per-table` is used and there is a user query waiting for MDL, the user query are killed to resolve a deadlock. Note that these are only queries of type ALTER, DROP, TRUNCATE or RENAME TABLE. ([MDEV-15636](https://jira.mariadb.org/browse/MDEV-15636))
 
 #### Last Copy Phase
 

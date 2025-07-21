@@ -18,7 +18,7 @@ The size of the InnoDB Redo Log is configurable. If your server writes data at a
 
 For the maximum capacity in the Redo Log, the Redo Log size should be the same as the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size), which is configured by the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size) system variable.
 
-The method to configure the Redo Log size depends on the server version and whether a server restart will be performed:
+The method to configure the Redo Log size depends on the server version and whether a server restart are performed:
 
 | Product Versions                    | Server Restart? | Method                               |
 | ----------------------------------- | --------------- | ------------------------------------ |
@@ -76,7 +76,7 @@ Some example configuration file paths for different distributions are shown in t
 
 5. Set the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable in the configuration file.
 
-It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].
+It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].
 
 When set in a configuration file, the value supports units, such as "M", "G", etc.
 
@@ -116,7 +116,7 @@ Some example configuration file paths for different distributions are shown in t
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
 2. Set the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable in the configuration file.\
-   It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].\
+   It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].\
    When set in a configuration file, the value supports units, such as "M", "G", etc.
 
 For example, to set the size to 512 MB:

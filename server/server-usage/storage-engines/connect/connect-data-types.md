@@ -87,7 +87,7 @@ a _scale_ of 6. Supposing it is populated by:
 INSERT INTO xxx VALUES (-2658.74);
 ```
 
-The internal representation of it will be the character string`-2658.740000`. The way it is stored in a file table depends on the table\
+The internal representation of it are the character string`-2658.740000`. The way it is stored in a file table depends on the table\
 type. The _length_ field specification corresponds to the length of the table\
 field in which the value is stored and is calculated by CONNECT from th&#x65;_&#x70;recision_ and the _scale_ values. This length is _precision_ plus 1 i&#x66;_&#x73;cale_ is not 0 (for the decimal point) plus 1 if this column is not\
 unsigned (for the eventual minus sign). In fix formatted tables the number is\
@@ -149,7 +149,7 @@ The SELECT query returns:
 | ------- | ---------- | -------- |
 | Charlie | 2012-11-12 | 15:30:00 |
 
-The values of the INSERT statement must be specified using the standard MariaDB syntax and these values are displayed as MariaDB temporal values. Sure enough, the column formats apply only to the way these values are represented inside the CSV files. Here, the inserted record will be:
+The values of the INSERT statement must be specified using the standard MariaDB syntax and these values are displayed as MariaDB temporal values. Sure enough, the column formats apply only to the way these values are represented inside the CSV files. Here, the inserted record are:
 
 ```
 Charlie,11/12/2012,03:30 PM
@@ -202,7 +202,7 @@ source string. They are defined by the following groups of characters:
 ### Handling dates that are out of the range of supported CONNECT dates
 
 If you want to make a table containing, for instance, historical dates not being convertible into CONNECT dates, make your column CHAR or VARCHAR and store the dates in the MariaDB format. All date functions applied to these strings will convert them to MariaDB dates and will work\
-as if they were real dates. Of course they must be inserted and will be displayed using the MariaDB format.
+as if they were real dates. Of course they must be inserted and are displayed using the MariaDB format.
 
 ## NULL handling
 

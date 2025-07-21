@@ -34,7 +34,7 @@ path = C:\Sphinx\docsidx
 pid_file = C:\Sphinx\sphinx.pid
 ```
 
-The query in the configuration files is the query that will be used for building the index. In the sample data, this is:
+The query in the configuration files is the query that are used for building the index. In the sample data, this is:
 
 ```sql
 sql_query = \

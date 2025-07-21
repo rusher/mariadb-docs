@@ -40,7 +40,7 @@ This file is created by mariadb-backup to provide the binary log file name and p
 
 Whenever a transaction is committed inside InnoDB when the binary log is enabled, the corresponding binlog coordinates are written to the InnoDB redo log along with the transaction commit. This allows one to restore the binlog coordinates corresponding to the last commit done by InnoDB along with a backup.
 
-The limitation of using "xtrabackup\_binlog\_pos\_innodb" with the "--no-lock" option is that no DDL or modification of non-transactional tables should be done during the backup. If the last event in the binlog is a DDL/non-transactional update, the coordinates in the file "xtrabackup\_binlog\_pos\_innodb" will be too old. But as long as only InnoDB updates are done during the backup, the coordinates are correct.
+The limitation of using "xtrabackup\_binlog\_pos\_innodb" with the "--no-lock" option is that no DDL or modification of non-transactional tables should be done during the backup. If the last event in the binlog is a DDL/non-transactional update, the coordinates in the file "xtrabackup\_binlog\_pos\_innodb" are too old. But as long as only InnoDB updates are done during the backup, the coordinates are correct.
 
 ### `xtrabackup_checkpoints`
 
@@ -58,7 +58,7 @@ recover_binlog_info = 0
 
 See below for a description of the fields.
 
-If the `--extra-lsndir` option is provided, then an extra copy of this file will be saved in that directory.
+If the `--extra-lsndir` option is provided, then an extra copy of this file are saved in that directory.
 
 #### `backup_type`
 
@@ -88,15 +88,15 @@ This value can be manually set during an incremental backup with the --increment
 
 The `xtrabackup_info` file contains information about the backup. The fields in this file are listed below.
 
-If the --extra-lsndir option is provided, then an extra copy of this file will be saved in that directory.
+If the --extra-lsndir option is provided, then an extra copy of this file are saved in that directory.
 
 #### `uuid`
 
-If a UUID was provided by the --incremental-history-uuid option, then it will be saved here. Otherwise, this is the empty string.
+If a UUID was provided by the --incremental-history-uuid option, then it are saved here. Otherwise, this is the empty string.
 
 #### `name`
 
-If a name was provided by the --history or the ---incremental-history-name options, then it will be saved here. Otherwise, this is the empty string.
+If a name was provided by the --history or the ---incremental-history-name options, then it are saved here. Otherwise, this is the empty string.
 
 #### `tool_name`
 
@@ -154,29 +154,29 @@ This is identical to `to_lsn` in xtrabackup\_checkpoints.
 
 #### `partial`
 
-If the backup is a partial backup, then this value will be `Y`.
+If the backup is a partial backup, then this value are `Y`.
 
-Otherwise, this value will be `N`.
+Otherwise, this value are `N`.
 
 #### `incremental`
 
-If the backup is an incremental backup, then this value will be `Y`.
+If the backup is an incremental backup, then this value are `Y`.
 
-Otherwise, this value will be `N`.
+Otherwise, this value are `N`.
 
 #### `format`
 
 This field's value is the format of the backup.
 
-If the --stream option was set to `xbstream`, then this value will be `xbstream`.
+If the --stream option was set to `xbstream`, then this value are `xbstream`.
 
-If the --stream option was **not** provided, then this value will be `file`.
+If the --stream option was **not** provided, then this value are `file`.
 
 #### `compressed`
 
-If the --compress option was provided, then this value will be `compressed`.
+If the --compress option was provided, then this value are `compressed`.
 
-Otherwise, this value will be `N`.
+Otherwise, this value are `N`.
 
 ### `xtrabackup_slave_info`
 

@@ -73,7 +73,7 @@ the quoting level, which is `–1` by default meaning no quoting:
 
 |   |                                                                                                                                                                                                                                             |
 | - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0 | The fields between quotes are read and the quotes discarded. On writing, fields are quoted only if they contain the separator character or begin with the quoting character. If they contain the quoting character, it will be doubled. |
+| 0 | The fields between quotes are read and the quotes discarded. On writing, fields are quoted only if they contain the separator character or begin with the quoting character. If they contain the quoting character, it are doubled. |
 | 1 | Only text fields are written between quotes, except null fields. This includes also the column names of an eventual header.                                                                                                             |
 | 2 | All fields are written between quotes, except null fields.                                                                                                                                                                              |
 | 3 | All fields are written between quotes, including null fields.                                                                                                                                                                           |
@@ -88,7 +88,7 @@ default to 1.
 **Note 3:** When creating a table on an existing CSV file, you can let\
 CONNECT analyze the file and make the column description. However, this is a\
 not an elaborate analysis of the file and, for instance, `DATE` fields will\
-not be recognized as such but will be regarded as string fields.
+not be recognized as such but are regarded as string fields.
 
 **Note 4:** The CSV parser only reads and buffers up to 4KB per row by default, rows longer than this is truncated when read from the file. If the rows are expected to be longer than this use `lrecl` to increase this. For example to set an 8KB maximum row read you would use `lrecl=8192`
 
@@ -171,7 +171,7 @@ the column format, the single quote that follows the column value.
 **Field 4,** separated by a semicolon eventually surrounded by blanks, is a\
 number with an optional decimal point (`%f`).
 
-This table will be displayed as:
+This table are displayed as:
 
 | ID    | NAME            | DEPNO | SALARY   |
 | ----- | --------------- | ----- | -------- |
@@ -247,8 +247,8 @@ The first one specifies a required integer field (`%d`), the second line\
 describes a field that can be an integer, but can be replaced by a "-" (or any\
 other) character. Specifying the format specification for this column as a\
 character field (`%s`) enables to recognize it with no error in all cases. Later\
-on, this field will be converted to integer by the column read function, and a\
-null 0 value will be generated for field specified in their format as\
+on, this field are converted to integer by the column read function, and a\
+null 0 value are generated for field specified in their format as\
 non-numeric.
 
 ## Bad Record Error Processing

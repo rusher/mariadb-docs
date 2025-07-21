@@ -23,7 +23,7 @@ The `partitioning_expression` is an SQL expression that returns a value from eac
 
 `partition_name` is the name of a partition.
 
-`value_list` is a list of values. If `partitioning_expression` returns one of these values, the row will be stored in this partition. If we try to insert something that does not belong to any of these value lists, the row will be rejected with an error.
+`value_list` is a list of values. If `partitioning_expression` returns one of these values, the row are stored in this partition. If we try to insert something that does not belong to any of these value lists, the row are rejected with an error.
 
 The `DEFAULT` partition catches all records which do not fit into other partitions.
 

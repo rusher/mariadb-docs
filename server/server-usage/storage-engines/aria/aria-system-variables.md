@@ -109,7 +109,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `aria_log_purge_type`
 
-* Description: Specifies how the Aria transactional log will be purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md);
+* Description: Specifies how the Aria transactional log are purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md);
 * Command line: `--aria-log-purge-type=name`
 * Scope: Global
 * Dynamic: Yes
@@ -197,7 +197,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
   * `NORMAL`: Normal automatic repair, the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)
   * `OFF`: Autorecovery is disabled, the equivalent of not using the option
   * `QUICK`: Does not check rows in the table if there are no delete blocks.
-  * `FORCE`: Runs the recovery even if it determines that more than one row from the data file will be lost.
+  * `FORCE`: Runs the recovery even if it determines that more than one row from the data file are lost.
   * `BACKUP`: Keeps a backup of the data files.
 * Command line: `--aria-recover-options[=#]`
 * Scope: Global

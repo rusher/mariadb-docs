@@ -31,7 +31,7 @@ error_property_name:
 
 ## Description
 
-The syntax of `RESIGNAL` and its semantics are very similar to [SIGNAL](signal.md). This statement can only be used within an error [HANDLER](declare-handler.md). It produces an error, like [SIGNAL](signal.md). `RESIGNAL` clauses are the same as SIGNAL, except that they all are optional, even [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md). All the properties which are not specified in `RESIGNAL`, will be identical to the properties of the error that was received by the error [HANDLER](../../reference/sql-structure/nosql/handler/). For a description of the clauses, see [diagnostics area](programmatic-compound-statements-diagnostics/diagnostics-area.md).
+The syntax of `RESIGNAL` and its semantics are very similar to [SIGNAL](signal.md). This statement can only be used within an error [HANDLER](declare-handler.md). It produces an error, like [SIGNAL](signal.md). `RESIGNAL` clauses are the same as SIGNAL, except that they all are optional, even [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md). All the properties which are not specified in `RESIGNAL`, are identical to the properties of the error that was received by the error [HANDLER](../../reference/sql-structure/nosql/handler/). For a description of the clauses, see [diagnostics area](programmatic-compound-statements-diagnostics/diagnostics-area.md).
 
 Note that `RESIGNAL` does not empty the diagnostics area: it just appends another error condition.
 
@@ -47,7 +47,7 @@ In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communit
 
 For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](broken-reference).
 
-The following procedure tries to query two tables which don't exist, producing a 1146 error in both cases. Those errors will trigger the [HANDLER](../../reference/sql-structure/nosql/handler/). The first time the error will be ignored and the client will not receive it, but the second time, the error is re-signaled, so the client will receive it.
+The following procedure tries to query two tables which don't exist, producing a 1146 error in both cases. Those errors will trigger the [HANDLER](../../reference/sql-structure/nosql/handler/). The first time the error are ignored and the client will not receive it, but the second time, the error is re-signaled, so the client will receive it.
 
 ```
 CREATE PROCEDURE test_error( )
@@ -60,7 +60,7 @@ BEGIN
    END IF;
    END;
    SET @hide_errors = TRUE;
-   SELECT 'Next error will be ignored' AS msg;
+   SELECT 'Next error are ignored' AS msg;
    SELECT `c` FROM `temptab_one`;
    SELECT 'Next error won''t be ignored' AS msg;
    SET @hide_errors = FALSE;
@@ -72,7 +72,7 @@ CALL test_error( );
 +----------------------------+
 | msg                        |
 +----------------------------+
-| Next error will be ignored |
+| Next error are ignored |
 +----------------------------+
 
 +-----------------------------+

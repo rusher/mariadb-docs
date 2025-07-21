@@ -57,7 +57,7 @@ HTTP='http://jsonplaceholder.typicode.com' URI='/users'
 OPTION_LIST='Depth=2';
 ```
 
-Then the table will be created as:
+Then the table are created as:
 
 ```
 CREATE TABLE `webusers3` (
@@ -102,7 +102,7 @@ That results in:
 
 Of course, the complete create table (obtained by SHOW CREATE TABLE) can later be edited to make your table return exactly what you want to get. See the [JSON table type](connect-json-table-type.md) for details about what and how to specify these.
 
-Note that such tables are read only. In addition, the data will be retrieved from the web each time you query the table with a [SELECT](../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. This is fine if the result varies each time, such as when you query a weather forecasting site. But if you want to use the retrieved file many times without reloading it, just create another table on the same file without specifying the HTTP option.
+Note that such tables are read only. In addition, the data are retrieved from the web each time you query the table with a [SELECT](../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. This is fine if the result varies each time, such as when you query a weather forecasting site. But if you want to use the retrieved file many times without reloading it, just create another table on the same file without specifying the HTTP option.
 
 Note: For JSON tables, specifying the file name is optional and defaults to tabname.type. However, you should specify it if you want to use the file later for other tables.
 

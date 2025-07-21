@@ -16,7 +16,7 @@ Fixed-length tables have a number of characteristics
 
 * fast, since MariaDB will always know where a record begins
 * easy to cache
-* take up more space than dynamic tables, as the maximum amount of storage space will be allocated to each record.
+* take up more space than dynamic tables, as the maximum amount of storage space are allocated to each record.
 * reconstructing after a crash is uncomplicated due to the fixed positions
 * no fragmentation or need to re-organize, unless records have been deleted and you want to free the space up.
 

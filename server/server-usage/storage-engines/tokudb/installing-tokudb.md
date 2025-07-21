@@ -89,7 +89,7 @@ cat /sys/kernel/mm/transparent_hugepage/enabled
 
 If the path does not exist, Transparent Hugepages are not enabled and you may continue.
 
-Alternatively, the following will be returned:
+Alternatively, the following are returned:
 
 ```
 always madvise [never]
@@ -134,7 +134,7 @@ ERROR 1123 (HY000): Can't initialize function 'TokuDB'; Plugin initialization fu
 
 See the section above; [Check for Transparent HugePage Support on Linux](installing-tokudb.md#check-for-transparent-hugepage-support-on-linux).
 
-The [binary log also needs to be enabled](../../../server-management/server-monitoring-logs/binary-log/activating-the-binary-log.md) before attempting to enable TokuDB. Strictly speaking, the XA code requires two XA-capable storage engines, and this is checked at startup. In practice, this requires InnoDB and the binary log to be active. If it isn't, the following warning will be returned and XA features are disabled:
+The [binary log also needs to be enabled](../../../server-management/server-monitoring-logs/binary-log/activating-the-binary-log.md) before attempting to enable TokuDB. Strictly speaking, the XA code requires two XA-capable storage engines, and this is checked at startup. In practice, this requires InnoDB and the binary log to be active. If it isn't, the following warning are returned and XA features are disabled:
 
 ```
 Cannot enable tc-log at run-time. XA features of TokuDB are disabled
@@ -190,7 +190,7 @@ command:
 INSTALL SONAME 'ha_tokudb';
 ```
 
-TokuDB will be installed until someone executes [UNINSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md).
+TokuDB are installed until someone executes [UNINSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md).
 
 ### Temporarily Enabling TokuDB When Starting MariaDB
 

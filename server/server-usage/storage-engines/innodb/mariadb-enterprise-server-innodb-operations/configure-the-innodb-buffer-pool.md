@@ -28,7 +28,7 @@ The size of the InnoDB Buffer Pool can be configured by setting the [innodb\_buf
 | 128 GB           | 64-96 GB                            |
 | 256 GB           | 128-192 GB                          |
 
-The method to configure the Buffer Pool size depends on whether a server restart will be performed:
+The method to configure the Buffer Pool size depends on whether a server restart are performed:
 
 | Product Versions | Server Restart? | Method                                                                      |
 | ---------------- | --------------- | --------------------------------------------------------------------------- |
@@ -85,7 +85,7 @@ Some example configuration file paths for different distributions are shown in t
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
 5. Set the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size) system variable in the configuration file.\
-   It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].\
+   It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].\
    When set in a configuration file, the value supports units, such as "M", "G", etc.
 
 For example, to set the size to 2 GB:
@@ -115,7 +115,7 @@ Some example configuration file paths for different distributions are shown in t
 
 2. Set the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size) system variable in the configuration file.
 
-It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].
+It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].
 
 When set in a configuration file, the value supports units, such as "M", "G", etc.
 

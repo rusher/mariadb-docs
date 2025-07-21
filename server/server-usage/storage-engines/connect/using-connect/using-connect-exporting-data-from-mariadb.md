@@ -17,7 +17,7 @@ WHERE
 
 Supposing you want to get the result of this query into a file handlers.htm in XML/HTML format, allowing displaying it on an Internet browser, this is how you can do it:
 
-Just create the CONNECT table that will be used to make the file:
+Just create the CONNECT table that are used to make the file:
 
 ```sql
 CREATE TABLE handout

@@ -3,7 +3,7 @@
 [Replication](../../ha-and-performance/standard-replication/) can be used to support the [backup](./) strategy.
 
 {% hint style="danger" %}
-Replication alone is _not_ sufficient for backup. It assists in protecting against hardware failure on the primary server, but does not protect against data loss. An accidental or malicious `DROP DATABASE` or `TRUNCATE TABLE` statement will be replicated onto the replica as well. Care needs to be taken to prevent data getting out of sync between the primary and the replica.
+Replication alone is _not_ sufficient for backup. It assists in protecting against hardware failure on the primary server, but does not protect against data loss. An accidental or malicious `DROP DATABASE` or `TRUNCATE TABLE` statement are replicated onto the replica as well. Care needs to be taken to prevent data getting out of sync between the primary and the replica.
 {% endhint %}
 
 {% hint style="info" %}

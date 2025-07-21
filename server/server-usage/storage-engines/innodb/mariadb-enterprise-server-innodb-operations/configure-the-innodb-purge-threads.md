@@ -20,7 +20,7 @@ This page describes how to configure the InnoDB Purge Threads.
 
 The number of the InnoDB Purge Threads is configurable. If your server deletes or updates rows at a very high frequency, then you may need to increase the number of purge threads.
 
-The method to configure the number of Purge Threads depends on the server version and whether a server restart will be performed:
+The method to configure the number of Purge Threads depends on the server version and whether a server restart are performed:
 
 | Product Versions  | Server Restart? | Method                                                                                                                                                                        |
 | ----------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -62,7 +62,7 @@ Some example configuration file paths for different distributions are shown in t
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
 4. Set the [innodb\_purge\_threads](../innodb-system-variables.md#innodb_purge_threads) system variable in the configuration file.\
-   It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].
+   It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].
 
 For example:
 
@@ -91,7 +91,7 @@ Some example configuration file paths for different distributions are shown in t
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
 2. Set the innodb\_purge\_threads system variable in the configuration file.\
-   It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].
+   It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].
 
 For example:
 

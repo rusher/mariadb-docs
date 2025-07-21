@@ -43,7 +43,7 @@ De-initialization function for x(). Used to de-allocate memory that was allocate
 
 Each time the SQL function _X()_ is called:
 
-* MariaDB will first call the C/C++ initialization function, x\_init(), assuming it exists. All setup will be performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
+* MariaDB will first call the C/C++ initialization function, x\_init(), assuming it exists. All setup are performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
 * If there is no x\_init() function, or it has been called and did not return an error, x() is then called once per row.
 * After all rows have finished processing, x\_deinit() is called, if present, to clean up by de-allocating any memory that was allocated in x\_init().
 * See [User-defined Functions Calling Sequences](user-defined-functions-calling-sequences.md) for more details on the functions.
@@ -68,10 +68,10 @@ Starting from [MariaDB 10.4](../../server-management/install-and-upgrade-mariadb
 
 Each time the aggregate SQL function _X()_ is called:
 
-* MariaDB will first call the C/C++ initialization function, x\_init(), assuming it exists. All setup will be performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
+* MariaDB will first call the C/C++ initialization function, x\_init(), assuming it exists. All setup are performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
 * If there is no x\_init() function, or it has been called and did not return an error, x() is then called once per row.
 * After all rows have finished processing, x\_deinit() is called, if present, to clean up by de-allocating any memory that was allocated in x\_init().
-* MariaDB will first call the C/C++ initialization function, x\_init(), assuming it exists. All setup will be performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
+* MariaDB will first call the C/C++ initialization function, x\_init(), assuming it exists. All setup are performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
 * The table is sorted according to the [GROUP BY](../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) expression.
 * x\_clear() is called for the first row of each new group.
 * x\_add() is called once per row for each row in the same group.

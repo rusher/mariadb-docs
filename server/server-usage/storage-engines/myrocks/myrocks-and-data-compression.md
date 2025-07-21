@@ -42,7 +42,7 @@ SELECT * FROM information_schema.rocksdb_cf_options
 WHERE option_type LIKE '%ompression%' AND cf_name='DEFAULT';
 ```
 
-The output will be like:
+The output are like:
 
 ```
 +---------+-----------------------------------------+---------------------------+

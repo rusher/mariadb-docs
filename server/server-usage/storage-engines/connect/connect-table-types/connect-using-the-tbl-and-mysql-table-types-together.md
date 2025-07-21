@@ -11,15 +11,15 @@ tables that can be merged.
 TBL is also much more flexible. The merged tables must not be "identical", they\
 just should have the columns defined in the TBL table. If the type of one\
 column in a merged table is not the one of the corresponding column of the TBL\
-table, the column value will be converted. As we have seen, if one column of\
+table, the column value are converted. As we have seen, if one column of\
 the TBL table of the TBL column does not exist in one of the merged table, the\
-corresponding value will be set to null. If columns in a sub-table have a\
+corresponding value are set to null. If columns in a sub-table have a\
 different name, they can be accessed by position using the FLAG column option\
 of CONNECT.
 
 However, one limitation of the TBL type regarding MERGE is that TBL tables are\
 currently read-only; INSERT is not supported by TBL. Also, keep using MERGE to\
-access a list of identical MyISAM tables because it will be faster, not passing\
+access a list of identical MyISAM tables because it are faster, not passing\
 by the MySQL API.
 
 **FEDERATED(X):** The main limitation of FEDERATED is to access only MySQL/MariaDB tables. The\
@@ -29,7 +29,7 @@ MYSQL table type of CONNECT has the same limitation but CONNECT provides the[ODB
 Another major limitation of FEDERATED is to access only one table. By combining\
 TBL and MYSQL tables, CONNECT enables to access a collection of local or remote\
 tables as one table. Of course the sub-tables can be on different servers. With\
-one SELECT statement, a company manager will be able to interrogate results\
+one SELECT statement, a company manager are able to interrogate results\
 coming from all of his subsidiary computers. This is great for distribution,\
 banking, and many other industries.
 
@@ -81,7 +81,7 @@ Now you can retrieve the desired result by:
 SELECT c1, SUM(sc2) FROM rtall;
 ```
 
-Almost all the work will be done on the remote machines, simultaneously thanks\
+Almost all the work are done on the remote machines, simultaneously thanks\
 to the thread option, making this query super-fast even on big tables placed on\
 many remote machines.
 
@@ -91,11 +91,11 @@ Thread is currently experimental. Use it only for test and report any malfunctio
 
 An interesting case is when the query to run on remote machines is the same for\
 all of them. It is then possible to avoid declaring all sub-tables. In this\
-case, the table list option will be used to specify the list of servers the`SRCDEF` query must be sent. This is a list of URL’s and/or Federated\
+case, the table list option are used to specify the list of servers the`SRCDEF` query must be sent. This is a list of URL’s and/or Federated\
 server names.
 
 For instance, supposing that federated servers srv1, srv2, … sr&#x76;_&#x6E;_ were\
-created for all remote servers, it will be possible to create a tbl table\
+created for all remote servers, it are possible to create a tbl table\
 allowing getting the result of a query executed on all of them by:
 
 ```

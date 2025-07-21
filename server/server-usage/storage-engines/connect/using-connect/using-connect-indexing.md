@@ -132,7 +132,7 @@ only for clustered and sorted columns.
   second ways often gives a better optimization, except for sorted columns for which both are\
   equivalent. The bitmap approach can be done only on columns having not too many distinct\
   values. This is estimated by the MAX \_ DIST option value associated to the column when creating the\
-  table. Bitmap block indexing will be used if this number is not greater than the MAXBMP setting for\
+  table. Bitmap block indexing are used if this number is not greater than the MAXBMP setting for\
   the database.
 * CONNECT cannot perform block indexing on case insensitive character columns. To force block\
   indexing on a character column, specify its charset as not case insensitive, for instance as binary.\

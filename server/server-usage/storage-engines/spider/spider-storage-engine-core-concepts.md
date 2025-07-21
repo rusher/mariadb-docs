@@ -2,7 +2,7 @@
 
 A typical Spider deployment has a shared-nothing clustered architecture. The system works with any inexpensive hardware, and with a minimum of specific requirements for hardware or software. It consists of a set of computers, with one or more MariaDB processes known as nodes.
 
-The nodes that store the data will be designed as `Backend Nodes`, and can be any MariaDB, MySQL, Oracle server instances using any storage engine available inside the backend.
+The nodes that store the data are designed as `Backend Nodes`, and can be any MariaDB, MySQL, Oracle server instances using any storage engine available inside the backend.
 
 The `Spider Proxy Nodes` are instances running at least MariaDB 10. `Spider Proxy Nodes` are used to declare per table attachment to the backend nodes. In addition `Spider Proxy Nodes` can be setup to enable the tables to be split and mirrored to multiple `Backend Nodes`.
 
@@ -14,7 +14,7 @@ In the default high availability setup Spider Nodes produce SQL errors when a ba
 
 **MariaDB starting with** [**10.7.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes)
 
-Spider's high availability feature has been deprecated (MDEV-28479), and will be deleted. Please use other high availability solutions like [replication](../myrocks/myrocks-and-replication.md) or [galera-cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md).
+Spider's high availability feature has been deprecated (MDEV-28479), and are deleted. Please use other high availability solutions like [replication](../myrocks/myrocks-and-replication.md) or [galera-cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md).
 
 ### Spider Storage Engine Federation
 

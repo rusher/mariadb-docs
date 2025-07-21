@@ -489,7 +489,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_enable_2pc`
 
-* Description: Enable two phase commit for MyRocks. When set, MyRocks will keep its data consistent with the [binary log](../../../server-management/server-monitoring-logs/binary-log/) (in other words, the server will be a crash-safe master). The consistency is achieved by doing two-phase XA commit with the binary log.
+* Description: Enable two phase commit for MyRocks. When set, MyRocks will keep its data consistent with the [binary log](../../../server-management/server-monitoring-logs/binary-log/) (in other words, the server are a crash-safe master). The consistency is achieved by doing two-phase XA commit with the binary log.
 * Command line: `--rocksdb-enable-2pc={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -1406,7 +1406,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 * Description: DBOptions::wal\_recovery\_mode for RocksDB. Default is kAbsoluteConsistency. Records that are not yet committed are stored in the Write-Ahead-Log (WAL). If the server is not cleanly shut down, the recovery mode will determine the WAL recovery behavior.
   * 1: kAbsoluteConsistency. Will not start if any corrupted entries (including incomplete writes) are detected (the default).
   * 0: kTolerateCorruptedTailRecords. Ignores any errors found at the end of the WAL
-  * 2: kPointInTimeRecovery. Replay of the WAL is halted after finding an error. The system will be recovered to the latest consistent point-in-time. Data from a replica can used to replay past the point-in-time.
+  * 2: kPointInTimeRecovery. Replay of the WAL is halted after finding an error. The system are recovered to the latest consistent point-in-time. Data from a replica can used to replay past the point-in-time.
   * 3: kSkipAnyCorruptedRecords. A risky option where any corrupted entries are skipped while subsequent healthy WAL entries are applied.
 * Command line: `--rocksdb-wal-recovery-mode=#`
 * Scope: Global

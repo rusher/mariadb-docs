@@ -26,7 +26,7 @@ If you would like to use a version of `mariadb-backup` that uses the [BACKUP STA
 * Copy some transactional tables.
   * InnoDB (i.e. `ibdataN` and file extensions `.ibd` and `.isl`)
 * Copy the tail of some transaction logs.
-  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) will be copied for InnoDB tables.
+  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) are copied for InnoDB tables.
 
 ### `BACKUP STAGE START` in MariaDB Community Server
 
@@ -55,7 +55,7 @@ mariadb-backup from MariaDB Community Server does not currently perform any task
   * CSV (i.e. file extensions `.CSM` and `.CSV`)
 * Create a MyRocks checkpoint using the rocksdb\_create\_checkpoint system variable.
 * Copy the tail of some transaction logs.
-  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) will be copied for InnoDB tables.
+  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) are copied for InnoDB tables.
 * Save the binary log position to xtrabackup\_binlog\_info.
 * Save the Galera Cluster state information to xtrabackup\_galera\_info.
 
@@ -77,8 +77,8 @@ mariadb-backup from MariaDB Enterprise Server performs the following tasks in th
   * InnoDB (i.e. `ibdataN` and file extensions `.ibd` and `.isl`)
   * Aria (i.e. `aria_log_control` and file extensions `.MAD` and `.MAI`)
 * Copy the tail of all transaction logs.
-  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) will be copied for InnoDB tables.
-  * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for Aria tables.
+  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) are copied for InnoDB tables.
+  * The tail of the Aria redo log (i.e. `aria_log.N` files) are copied for Aria tables.
 
 ### `BACKUP STAGE FLUSH` in MariaDB Enterprise Server
 
@@ -90,8 +90,8 @@ mariadb-backup from MariaDB Enterprise Server performs the following tasks in th
   * ARCHIVE (i.e. file extensions `.ARM` and `.ARZ`)
   * CSV (i.e. file extensions `.CSM` and `.CSV`)
 * Copy the tail of all transaction logs.
-  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) will be copied for InnoDB tables.
-  * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for Aria tables.
+  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) are copied for InnoDB tables.
+  * The tail of the Aria redo log (i.e. `aria_log.N` files) are copied for Aria tables.
 
 ### `BACKUP STAGE BLOCK_DDL` in MariaDB Enterprise Server
 
@@ -113,8 +113,8 @@ mariadb-backup from MariaDB Enterprise Server performs the following tasks in th
   * mysql.slow\_log
   * This is easy as these are append only.
 * Copy the tail of all transaction logs.
-  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) will be copied for InnoDB tables.
-  * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for Aria tables.
+  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) are copied for InnoDB tables.
+  * The tail of the Aria redo log (i.e. `aria_log.N` files) are copied for Aria tables.
 
 ### `BACKUP STAGE BLOCK_COMMIT` in MariaDB Enterprise Server
 
@@ -130,8 +130,8 @@ mariadb-backup from MariaDB Enterprise Server performs the following tasks in th
   * mysql.column\_stats
   * mysql.index\_stats
 * Copy the tail of all transaction logs.
-  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) will be copied for InnoDB tables.
-  * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for Aria tables.
+  * The tail of the InnoDB redo log (i.e. `ib_logfileN` files) are copied for InnoDB tables.
+  * The tail of the Aria redo log (i.e. `aria_log.N` files) are copied for Aria tables.
 * Save the binary log position to xtrabackup\_binlog\_info.
 * Save the Galera Cluster state information to xtrabackup\_galera\_info.
 

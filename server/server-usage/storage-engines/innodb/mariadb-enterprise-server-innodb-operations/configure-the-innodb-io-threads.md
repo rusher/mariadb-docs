@@ -14,7 +14,7 @@ This page describes how to configure the InnoDB I/O Threads.
 
 Starting with ES 10.5 and CS 10.5, the InnoDB I/O Threads have been replaced by the asynchronous I/O functionality in the InnoDB Background Thread Pool. In these versions, the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) and [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables have been repurposed. The value of each system variable is multiplied by 256 to determine the maximum number of concurrent asynchronous I/O requests that can be completed by the Background Thread Pool.
 
-For example, if `innodb_read_io_threads=2 and innodb_write_io_threads=4` are set, InnoDB will be restricted to a maximum of 512 concurrent asynchronous read I/O requests and 1024 concurrent asynchronous write I/O requests.
+For example, if `innodb_read_io_threads=2 and innodb_write_io_threads=4` are set, InnoDB are restricted to a maximum of 512 concurrent asynchronous read I/O requests and 1024 concurrent asynchronous write I/O requests.
 
 ## Interaction with Asynchronous I/O
 
@@ -37,7 +37,7 @@ The [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_t
 
 ## Configuration Procedure
 
-The method to configure the number of I/O threads depends on the server version and whether a server restart will be performed:
+The method to configure the number of I/O threads depends on the server version and whether a server restart are performed:
 
 | Product Versions  | Server Restart? | Method                                                                                                                                                                        |
 | ----------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -84,7 +84,7 @@ Some example configuration file paths for different distributions are shown in t
 
 4. Set the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) and [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables in the configuration file.
 
-It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].
+It needs to be set in a group that are read by MariaDB Server, such as \[mariadb] or \[server].
 
 For example:
 
@@ -116,7 +116,7 @@ Some example configuration file paths for different distributions are shown in t
 
 2. Set the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) and [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables in the configuration file.
 
-It needs to be set in a group that will be read by [MariaDB Server](../../../), such as `[mariadb]` or `[server]`.
+It needs to be set in a group that are read by [MariaDB Server](../../../), such as `[mariadb]` or `[server]`.
 
 For example:
 

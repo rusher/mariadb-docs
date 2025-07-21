@@ -2,7 +2,7 @@
 
 The [MyISAM](./) storage engine supports three different table storage formats.
 
-These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement, or will be chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
+These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement, or are chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
 
 The [SHOW TABLE STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table. Note that `COMPRESSED` tables are reported as `DYNAMIC` in that context.
 
@@ -10,14 +10,14 @@ The [SHOW TABLE STATUS](../../../reference/sql-statements/administrative-sql-sta
 
 Fixed-length (or static) tables contain records of a fixed-length. Each column is the same length for all records, regardless of the actual contents. It is the default format if a table has no [BLOB](../../../reference/data-types/string-data-types/blob.md), [TEXT](../../../reference/data-types/string-data-types/text.md), [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) or [VARBINARY](../../../reference/data-types/string-data-types/varbinary.md) fields, and no ROW FORMAT is provided. You can also specify a fixed table with ROW\_FORMAT=FIXED in the table definition.
 
-Tables containing BLOB or TEXT fields cannot be FIXED, as by design these are both dynamic fields. However, no error or warning will be raised if you specify FIXED.
+Tables containing BLOB or TEXT fields cannot be FIXED, as by design these are both dynamic fields. However, no error or warning are raised if you specify FIXED.
 
 Fixed-length tables have a number of characteristics
 
 * fast, since MariaDB will always know where a record begins
 * easy to repair: [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) is always able to recover all rows, except for the last one if it is not entirely written
 * easy to cache
-* take up more space than dynamic or compressed tables, as the maximum amount of storage space will be allocated to each record.
+* take up more space than dynamic or compressed tables, as the maximum amount of storage space are allocated to each record.
 * reconstructing after a crash is uncomplicated due to the fixed positions
 * no fragmentation or need to re-organize, unless records have been deleted and you want to free the space up.
 

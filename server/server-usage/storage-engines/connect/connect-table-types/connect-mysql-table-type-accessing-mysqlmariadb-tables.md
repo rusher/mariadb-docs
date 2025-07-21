@@ -113,7 +113,7 @@ CONNECT will construct and send to the server the query:
 SELECT num, line FROM people WHERE num = 23
 ```
 
-If the _people_ table is indexed on _num_, indexing will be used on the remote server. This, in all cases,\
+If the _people_ table is indexed on _num_, indexing are used on the remote server. This, in all cases,\
 will limit the amount of data to retrieve on the network.
 
 However, an index can be specified for columns that are prone to be used to join another table to the\
@@ -127,7 +127,7 @@ WHERE f.salary > 10000;
 
 If the _id_ column of the remote table addressed by the _cnc\_tab_ MYSQL table is indexed (which is likely\
 if it is a key) you should also index the _id_ column of the MYSQL _cnc\_tab_ table. If so, using “remote”\
-indexing as does FEDERATED, only the useful rows of the remote table will be retrieved during the\
+indexing as does FEDERATED, only the useful rows of the remote table are retrieved during the\
 join process. However, because these rows are retrieved by separate [SELECT](../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements, this is\
 useful only when retrieving a few rows of a big table.
 
@@ -144,7 +144,7 @@ The MYSQL type uses similar methods than the ODBC type to implement the [INSERT]
 concerning them.
 
 For the [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands, there are fewer restrictions because the\
-remote server being a MySQL server, the syntax of the command will be always\
+remote server being a MySQL server, the syntax of the command are always\
 acceptable by the remote server.
 
 For instance, you can freely use keywords like IGNORE or LOW\_PRIORITY as well\
@@ -177,7 +177,7 @@ described now.
 
 ## Sending commands to a MariaDB Server
 
-This can be done like for ODBC or JDBC tables by defining a specific table that will be used to send commands and get the result of their execution..
+This can be done like for ODBC or JDBC tables by defining a specific table that are used to send commands and get the result of their execution..
 
 ```sql
   number int(5) not null flag=1,
@@ -192,7 +192,7 @@ option_list='Execsrc=1,Maxerr=2';
 
 The key points in this create statement are the EXECSRC option and the column definition.
 
-The EXECSRC option tells that this table will be used to send commands to the\
+The EXECSRC option tells that this table are used to send commands to the\
 MariaDB server. Most of the sent commands do not return result set. Therefore,\
 the table columns are used to specify the command to be executed and to get the\
 result of the execution. The name of these columns can be chosen arbitrarily,\
@@ -230,7 +230,7 @@ This command returns:
 
 ### Sending several commands in one call
 
-It can be faster to execute because there will be only one connection for all\
+It can be faster to execute because there are only one connection for all\
 of them. To send several commands in one call, use the following syntax:
 
 ```sql
@@ -244,7 +244,7 @@ a command that is in error. To continue after n errors, set the option\
 maxerr=_n_ (0 by default) in the option list.
 
 **Note 1:** It is possible to specify the SRCDEF option when creating an\
-EXECSRC table. It will be the command sent by default when a WHERE clause is\
+EXECSRC table. It are the command sent by default when a WHERE clause is\
 not specified.
 
 **Note 2:** Backslashes inside commands must be escaped. Simple quotes must be\
@@ -347,7 +347,7 @@ table.
 
 However, there are cases where you can use MYSQL CONNECT tables yourself, for instance:
 
-1. When the table will be used by a [TBL](connect-tbl-table-type-table-list.md) table. This enables you to specify the connection parameters for each sub-table and is more efficient than using a\
+1. When the table are used by a [TBL](connect-tbl-table-type-table-list.md) table. This enables you to specify the connection parameters for each sub-table and is more efficient than using a\
    local FEDERATED sub-table.
 2. When the desired returned data is directly specified by the SRCDEF option.\
    This is great to let the remote server do most of the job, such as grouping\

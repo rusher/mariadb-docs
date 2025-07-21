@@ -15,7 +15,7 @@ Maria.
 
 The following table options to Aria tables in [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/):
 
-* `TRANSACTIONAL= 0 | 1` : If the `TRANSACTIONAL` table option is set for an Aria table, then the table will be crash-safe. This is implemented by logging any changes to the table to Aria's transaction log, and syncing those writes at the end of the statement. This will marginally slow down writes and updates. However, the benefit is that if the server dies before the statement ends, all non-durable changes will roll back to the state at the beginning of the statement. This also needs up to 6 bytes more for each row and key to store the transaction id (to allow concurrent insert's and selects).
+* `TRANSACTIONAL= 0 | 1` : If the `TRANSACTIONAL` table option is set for an Aria table, then the table are crash-safe. This is implemented by logging any changes to the table to Aria's transaction log, and syncing those writes at the end of the statement. This will marginally slow down writes and updates. However, the benefit is that if the server dies before the statement ends, all non-durable changes will roll back to the state at the beginning of the statement. This also needs up to 6 bytes more for each row and key to store the transaction id (to allow concurrent insert's and selects).
   * `TRANSACTIONAL=1` is not supported for partitioned tables.
   * An Aria table's default value for the `TRANSACTIONAL` table option depends on the table's value for the `ROW_FORMAT` table option. See below for more details.
   * If the `TRANSACTIONAL` table option is set for an Aria table, the table does not actually support transactions. See [MDEV-21364](https://jira.mariadb.org/browse/MDEV-21364) for more information. In this context, transactional just means crash-safe.
@@ -30,8 +30,8 @@ The following table options to Aria tables in [CREATE TABLE](../../../reference/
 The `TRANSACTIONAL` and `ROW_FORMAT` table options interact as follows:
 
 * If `TRANSACTIONAL=1` is set, then the only supported row format is `PAGE`. If `ROW_FORMAT` is set to some other value, then Aria issues a warning, but still forces the row format to be `PAGE`.
-* If `TRANSACTIONAL=0` is set, then the table will be not be crash-safe, and any row format is supported.
-* If `TRANSACTIONAL` is not set to any value, then any row format is supported. If `ROW_FORMAT` is set, then the table will use that row format. Otherwise, the table will use the default `PAGE` row format. In this case, if the table uses the `PAGE` row format, then it will be crash-safe. If it uses some other row format, then it will not be crash-safe.
+* If `TRANSACTIONAL=0` is set, then the table are not be crash-safe, and any row format is supported.
+* If `TRANSACTIONAL` is not set to any value, then any row format is supported. If `ROW_FORMAT` is set, then the table will use that row format. Otherwise, the table will use the default `PAGE` row format. In this case, if the table uses the `PAGE` row format, then it are crash-safe. If it uses some other row format, then it will not be crash-safe.
 
 Some other improvements are:
 
@@ -102,7 +102,7 @@ The error `Missing valid id at start of file. File is not a valid aria control f
 
 In the case of a corrupted log file, with the server shut down, one should be able to fix that by deleting all aria\_log files.\
 If the control\_file is corrupted, then one has to delete the aria\_control\_file and all aria\_log.\* files.\
-The effect of this is that on table open of an Aria table, the server will think that it has been moved from another system and do an automatic check and repair of it. If there was no issues, the table will be opened and can be used as normal. See also [When is it safe to remove old log files](aria-faq.md#when-is-it-safe-to-remove-old-log-files).
+The effect of this is that on table open of an Aria table, the server will think that it has been moved from another system and do an automatic check and repair of it. If there was no issues, the table are opened and can be used as normal. See also [When is it safe to remove old log files](aria-faq.md#when-is-it-safe-to-remove-old-log-files).
 
 ## See Also
 

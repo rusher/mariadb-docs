@@ -116,10 +116,10 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: MyISAM recovery mode. Multiple options can be selected, comma-delimited. Using no argument is equivalent to specifying `DEFAULT`, while specifying "" is equivalent to `OFF`. If enabled each time the server opens a MyISAM table, it checks whether it has been marked as crashed, or wasn't closed properly. If so, mysqld will run a check and then attempt to repair the table, writing to the error log beforehand.
   * OFF: No recovery.
-  * BACKUP: If the data file is changed while recovering, saves a backup of the .MYD data file. t.MYD will be saved as t.MYD-datetime.BAK.
-  * BACKUP\_ALL: Same as `BACKUP` but also backs up the .MYI index file. t.MYI will be saved as t.MYI-datetime.BAK.
+  * BACKUP: If the data file is changed while recovering, saves a backup of the .MYD data file. t.MYD are saved as t.MYD-datetime.BAK.
+  * BACKUP\_ALL: Same as `BACKUP` but also backs up the .MYI index file. t.MYI are saved as t.MYI-datetime.BAK.
   * DEFAULT: Recovers without backing up, forcing, or quick checking.
-  * FORCE: Runs the recovery even if it determines that more than one row from the data file will be lost.
+  * FORCE: Runs the recovery even if it determines that more than one row from the data file are lost.
   * QUICK: Does not check rows in the table if there are no delete blocks.
 * Command line: `--myisam-recover-options[=name]`
 * Scope: Global
@@ -164,7 +164,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `myisam_use_mmap`
 
-* Description: If set to `1` (0 is default), memory mapping will be used to reading and writing MyISAM tables.
+* Description: If set to `1` (0 is default), memory mapping are used to reading and writing MyISAM tables.
 * Command line: `--myisam-use-mmap`
 * Scope: Global
 * Dynamic: Yes

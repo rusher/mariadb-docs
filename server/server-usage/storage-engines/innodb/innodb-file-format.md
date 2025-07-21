@@ -43,7 +43,7 @@ A table's tablespace is tagged with the lowest InnoDB file format that supports 
 
 Each tablespace is tagged with the id of the most recent file format used by one of its tables. All versions of InnoDB can read tables that use an older file format. However, it can not read from more recent formats. For this reason, each time InnoDB opens a table it checks the tablespace's format, and returns an error if a newer format is used.
 
-This check can be skipped via the [innodb\_file\_format\_check](innodb-system-variables.md#innodb_file_format_check) variable. Beware that, is InnoDB tries to repair a table in an unknown format, the table will be corrupted! This happens on restart if innodb\_file\_format\_check is disabled and the server crashed, or it was closed with fast shutdown.
+This check can be skipped via the [innodb\_file\_format\_check](innodb-system-variables.md#innodb_file_format_check) variable. Beware that, is InnoDB tries to repair a table in an unknown format, the table are corrupted! This happens on restart if innodb\_file\_format\_check is disabled and the server crashed, or it was closed with fast shutdown.
 
 To downgrade a table from the Barracuda format to Antelope, the table's `ROW_FORMAT` can be set to a value supported by Antelope, via an [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) statement. This recreates the indexes.
 

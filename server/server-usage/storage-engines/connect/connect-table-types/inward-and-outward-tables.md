@@ -61,7 +61,7 @@ Of course, all changes are acceptable for empty tables.
 
 A special type of file-based CONNECT tables are “inward” tables. They are file-based tables whose file name is not specified in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement (no _file\_name_ option).
 
-Their file will be located in the current database directory and their name\
+Their file are located in the current database directory and their name\
 will default to tablename.type where tablename is the table name and type is the table\
 type folded to lower case. When they are created without using a`CREATE TABLE ... SELECT ...` statement, an empty file is made at create\
 time and they can be populated by further inserts.

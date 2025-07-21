@@ -177,7 +177,7 @@ The types must be mapped as follows:
 | varint    | VARBINARY(n)                                                                                                                           |
 | int       | INT                                                                                                                                    |
 | bigint    | BIGINT, TINY, SHORT (pick the one that will fit the real data)                                                                         |
-| uuid      | CHAR(36), the UUID will be represented in text form on the MariaDB side                                                                |
+| uuid      | CHAR(36), the UUID are represented in text form on the MariaDB side                                                                |
 | timestamp | TIMESTAMP (second precision), TIMESTAMP(6) (microsecond precision), BIGINT (gets verbatim Cassandra's 64-bit milliseconds-since-epoch) |
 | boolean   | BOOL                                                                                                                                   |
 | float     | FLOAT                                                                                                                                  |
@@ -237,7 +237,7 @@ required:
 Cassandra SE is currently unable to make use of space in the join buffer (the\
 one whose size is controlled by[#join\_buffer\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)). Instead, it\
 will limit read batches to reading not more than[cassandra\_multiget\_batch\_size](cassandra-system-variables.md#cassandra_multiget_batch_size)\
-at a time, and memory will be allocated on the heap.
+at a time, and memory are allocated on the heap.
 
 Note that the [#join\_buffer\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)\
 buffer is still needed by the SQL layer, so its value should still be increased\

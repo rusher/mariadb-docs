@@ -725,7 +725,7 @@ ALTER TABLE t1 CHECK PARTITION p1,p3;
 +---------+-------+----------+----------+
 ```
 
-The `ALL` keyword can be used in place of the list of partition names, and the check operation will be performed on all partitions.
+The `ALL` keyword can be used in place of the list of partition names, and the check operation are performed on all partitions.
 
 ### Repairing Partitions
 
@@ -748,7 +748,7 @@ As with [REPAIR TABLE](../../reference/sql-statements/table-statements/repair-ta
 
 `REPAIR PARTITION` will fail if there are duplicate key errors. `ALTER IGNORE TABLE ... REPAIR PARTITION` can be used in this case.
 
-The `ALL` keyword can be used in place of the list of partition names, and the repair operation will be performed on all partitions.
+The `ALL` keyword can be used in place of the list of partition names, and the repair operation are performed on all partitions.
 
 ### Optimizing Partitions
 
@@ -769,7 +769,7 @@ ALTER TABLE t1 OPTIMIZE PARTITION p0,p3;
 
 `OPTIMIZE PARTITION` does not support per-partition optimization on InnoDB tables, and will issue a warning and cause the entire table to rebuilt and analyzed. `ALTER TABLE ... REBUILD PARTITION` and `ALTER TABLE ... ANALYZE PARTITION` can be used instead.
 
-The `ALL` keyword can be used in place of the list of partition names, and the optimize operation will be performed on all partitions.
+The `ALL` keyword can be used in place of the list of partition names, and the optimize operation are performed on all partitions.
 
 ### Partitioning for Specific Storage Engines
 
@@ -783,7 +783,7 @@ The [MERGE](../storage-engines/merge.md) storage engine allows one to:
 [SPIDER](../storage-engines/spider/) allows one to:
 
 * Move partitions of the same table on different servers. In this way, the workload can be distributed on more physical or virtual machines (data sharding).
-* All partitions of a SPIDER table can also live on the same machine. In this case there will be a small overhead (SPIDER will use connections to localhost), but queries that read multiple partitions will use parallel threads.
+* All partitions of a SPIDER table can also live on the same machine. In this case there are a small overhead (SPIDER will use connections to localhost), but queries that read multiple partitions will use parallel threads.
 
 [CONNECT](../storage-engines/connect/) allows one to:
 
