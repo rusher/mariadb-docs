@@ -92,6 +92,16 @@ For compatibility reasons, the TLS system variables in MariaDB still use the `ss
 * Data Type: `string`
 * Default Value: None
 
+#### `ssl_passphrase`
+
+* Description: SSL certificate key passphrase.
+* Commandline: `--ssl-passphrase=val`
+* Scope: Global
+* Dynamic: No
+* Data Type: `string`
+* Default Value: None
+* Introduced: [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
+
 #### `tls_version`
 
 * Description: This system variable accepts a comma-separated list (with no whitespaces) of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted.
