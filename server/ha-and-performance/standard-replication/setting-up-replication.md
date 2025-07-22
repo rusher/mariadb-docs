@@ -11,17 +11,23 @@ description: >-
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 {% endhint %}
 
-Getting [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) working involves steps on both the master server/s and steps on the replica server/s.
+Getting [replication](./) working involves steps on both the master server/s and steps on the replica server/s.
 
-### Setting up a Replication Replica with MariaDB-Backup
+## Setting up a Replication Replica with MariaDB-Backup
 
-If you would like to use [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md) helpful.
+If you want to use [mariadb-backup](../../server-usage/backup-and-restore/mariadb-backup/) to set up a replication replica, review the information under [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backup-and-restore/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md).
 
-### Versions
+Setting up replication the "traditional" way is covered below.
+
+## Versions
 
 In general, when replicating across different versions of MariaDB, it is best that the master is an older version than the slave. MariaDB versions are usually backward compatible, while of course older versions cannot always be forward compatible. See also [Replicating from MySQL Master to MariaDB Replica](setting-up-replication.md#replicating-from-mysql-master-to-mariadb-slave).
 
-### Configuring the Master
+Follow these steps to set up MariaDB replication:
+
+{% stepper %}
+{% step %}
+## Configure the Master
 
 * Enable binary logging if it's not already enabled. See [Activating the Binary Log](../../server-management/server-monitoring-logs/binary-log/activating-the-binary-log.md) and [Binary log formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) for details.
 * Give the master a unique [server\_id](replication-and-binary-log-system-variables.md#server_id). All slaves must also be given a server\_id. This can be a number from 1 to 232-1, and must be unique for each server in the replicating group.
@@ -32,7 +38,7 @@ In general, when replicating across different versions of MariaDB, it is best th
 
 Add the following into your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file and restart the database.
 
-```
+```ini
 [mariadb]
 log-bin
 server_id=1
@@ -53,31 +59,39 @@ GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%';
 
 If you want to enable replication from MySQL 5.7 or earlier to MariaDB, you can do it in almost the same way as between MariaDB servers. The main difference is that MySQL doesn't support `log-basename`.
 
-```
+```ini
 [mysqld]
 log-bin
 server_id=1
 ```
 
-For replication from MySQL 8.0 to MariaDB [requires slight more configurations](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility).
+{% hint style="warning" %}
+Replication from MySQL 8.0 to MariaDB [requires more configuration](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility).
+{% endhint %}
+{% endstep %}
 
-### Settings to Check
+{% step %}
+## Check Settings
 
 There are a number of options that may impact or break replication. Check the following settings to avoid problems.
 
-* [skip-networking](../optimization-and-tuning/system-variables/server-system-variables.md#skip_networking). If `skip-networking=1`, the server will limit connections to localhost only, and prevent all remote slaves from connecting.
-* [bind-address](../optimization-and-tuning/system-variables/server-system-variables.md#bind_address). Similarly, if the address the server listens for TCP/IP connections is 127.0.0.1 (localhost), remote slaves connections will fail.
+* [skip-networking](../optimization-and-tuning/system-variables/server-system-variables.md#skip_networking). If `skip-networking=1`, the server will limit connections to localhost only, and prevent all remote replicas from connecting.
+* [bind-address](../optimization-and-tuning/system-variables/server-system-variables.md#bind_address). Similarly, if the address the server listens for TCP/IP connections is `127.0.0.1` (localhost), remote replica connections will fail.
+{% endstep %}
 
-### Configuring the Replica
+{% step %}
+## Configure the Replica
 
-* Give the slave a unique [server\_id](replication-and-binary-log-system-variables.md). All servers, whether masters or replicas, are given a server\_id. This can be a number from 1 to 232-1, and must be unique for each server in the replicating group. The server will need to be restarted in order for a change in this option to take effect.
+Give the replica a unique [server\_id](replication-and-binary-log-system-variables.md). All servers, whether masters or replicas, are given a server\_id. This can be a number from `1` to `232-1`, and must be unique for each server in the replicating group. The server will need to be restarted in order for a change in this option to take effect.
+{% endstep %}
 
-### Getting the Master's Binary Log Co-ordinates
+{% step %}
+## Get the Master's Binary Log Coordinates
 
-Now you need prevent any changes to the data while you view the binary log position. You'll use this to tell the slave at exactly which point it should start replicating from.
+Now you need prevent any changes to the data while you view the binary log position. You'll use this to tell the replica at exactly which point it should start replicating from.
 
 * On the master, flush and lock all tables by running `FLUSH TABLES WITH READ LOCK`. Keep this session running - exiting it will release the lock.
-* Get the current position in the binary log by running [SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md):
+* Get the current position in the binary log by running [SHOW MASTER STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md):
 
 ```sql
 SHOW MASTER STATUS;
@@ -89,17 +103,19 @@ SHOW MASTER STATUS;
 ```
 
 * Record the File and Position details. If binary logging has just been enabled, these will be blank.
-* Now, with the lock still in place, copy the data from the master to the slave. See [Backup, Restore and Import](../../clients-and-utilities/backup-restore-and-import-clients/) for details on how to do this.
-* Note for live databases: You just need to make a local copy of the data, you don't need to keep the master locked until the slave has imported the data.
+* Now, with the lock still in place, copy the data from the master to the replica. See [Backup, Restore and Import](../../clients-and-utilities/backup-restore-and-import-clients/) for details on how to do this.
+* Note for live databases: You just need to make a local copy of the data, you don't need to keep the master locked until the replica has imported the data.
 * Once the data has been copied, you can release the lock on the master by running [UNLOCK TABLES](../../reference/sql-statements/transactions/lock-tables.md).
 
 ```sql
 UNLOCK TABLES;
 ```
+{% endstep %}
 
-### Start the Slave
+{% step %}
+## Start the Replica
 
-* Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), making sure that MASTER\_LOG\_FILE matches the file and MASTER\_LOG\_POS the position returned by the earlier SHOW MASTER STATUS. For example:
+* Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), making sure that `MASTER_LOG_FILE` matches the file and `MASTER_LOG_POS` the position returned by the earlier `SHOW MASTER STATUS`:
 
 ```sql
 CHANGE MASTER TO
@@ -112,29 +128,28 @@ CHANGE MASTER TO
   MASTER_CONNECT_RETRY=10;
 ```
 
-If you are starting a slave against a fresh master that was configured for replication from the start, then you don't have to specify `MASTER_LOG_FILE` and `MASTER_LOG_POS`.
+If you are starting a replica against a fresh master that was configured for replication from the start, then you don't have to specify `MASTER_LOG_FILE` and `MASTER_LOG_POS`.
 
-#### Use Global Transaction Id (GTID)
+### Use Global Transaction ID (GTID)
 
-It is generally recommended to use (GTIDs), as it has a number of benefits. All that is needed is to add the `MASTER_USE_GTID` option to the `CHANGE MASTER` statement, for example:
+It is generally recommended to use (GTIDs), as it has a number of benefits. All that is needed is to add the `MASTER_USE_GTID` option to the `CHANGE MASTER` statement:
 
 ```sql
 CHANGE MASTER TO MASTER_USE_GTID = slave_pos
 ```
 
-See [Global Transaction ID](gtid.md) for a full description.\
-<>
+See [Global Transaction ID](gtid.md) for a full description.
 
-* Now start the slave with the [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command:
+* Now start the replica with the [START REPLICA](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement:
 
 ```sql
-START SLAVE;
+START REPLICA;
 ```
 
 * Check that the replication is working by executing the [SHOW SLAVE STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) command:
 
 ```sql
-SHOW SLAVE STATUS \G
+SHOW REPLICA STATUS \G
 ```
 
 * If replication is working correctly, both the values of `Slave_IO_Running` and `Slave_SQL_Running` should be `Yes`:
@@ -146,10 +161,15 @@ Slave_SQL_Running: Yes
 
 ### Replicating from MySQL Master to MariaDB Replica
 
-* Replicating from MySQL 5.5 to MariaDB should just work. When using a MariaDB as a replica, it may be necessary to set [binlog\_checksum](replication-and-binary-log-system-variables.md) to NONE.
+* Replicating from MySQL 5.5 to MariaDB should just work. When using a MariaDB as a replica, it may be necessary to set [binlog\_checksum](replication-and-binary-log-system-variables.md) to `NONE`.
 * Replicating from MySQL 5.6 without GTID to MariaDB 10+ should work.
 * Replication from MySQL 5.6 with GTID, binlog\_rows\_query\_log\_events and ignorable events works. In this case MariaDB will remove the MySQL GTIDs and other unneeded events and instead adds its own GTIDs.
-* [Replication from MySQL 8 to MariaDB](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
+
+{% hint style="warning" %}
+[Replication from MySQL 8 to MariaDB](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
+{% endhint %}
+{% endstep %}
+{% endstepper %}
 
 ### See Also
 
@@ -163,7 +183,6 @@ Slave_SQL_Running: Yes
 * [Replication and Binary Log Status Variables](replication-and-binary-log-status-variables.md)
 * [Semisynchronous Replication](semisynchronous-replication.md)
 * [Delayed Replication](delayed-replication.md)
-* [Replication Compatibility Between MariaDB and MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
