@@ -153,6 +153,8 @@ CREATE TABLE t (id VARCHAR2(10));
 
 See [Oracle mode](e1149.md#oracle-mode) for a full list of syntax differences.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
+
+<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formId="4316" %}

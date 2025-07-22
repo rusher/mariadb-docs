@@ -13,6 +13,8 @@ This error occurs, in particular to [MyISAM](https://github.com/mariadb-corporat
 
 Fixing the problem can usually be done by running a [REPAIR TABLE](../../sql-statements/table-statements/repair-table.md) statement, or one of the similar scripts, [aria\_chk](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/clients-and-utilities/aria-clients-and-utilities/aria_chk.md), [myisamchk](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) or [mariadb-check](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/clients-and-utilities/mariadb-check.md).
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
+
+<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formId="4316" %}

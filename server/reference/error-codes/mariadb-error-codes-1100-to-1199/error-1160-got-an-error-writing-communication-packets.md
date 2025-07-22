@@ -47,6 +47,8 @@ This means the connection was aborted by the application/user.
 
 * [perror](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/clients-and-utilities/perror.md) Getting a description for an error number.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
+
+<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formId="4316" %}
