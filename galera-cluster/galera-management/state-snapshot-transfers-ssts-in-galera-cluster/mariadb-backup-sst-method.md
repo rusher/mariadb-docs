@@ -1,6 +1,6 @@
 # mariadb-backup SST Method
 
-The `mariabackup` SST method uses the [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) utility for performing SSTs. It is one of the methods that does not block the donor node. `mariadb-backup` was originally forked from [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup), and similarly, the `mariadb-backup` SST method was originally forked from the xtrabackup-v2 SST method.
+The `mariabackup` SST method uses the [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) utility for performing SSTs. It is one of the methods that does not block the donor node. `mariadb-backup` was originally forked from [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup), and similarly, the `mariabackup` SST method was originally forked from the xtrabackup-v2 SST method.
 
 Note that if you use the `mariadb-backup` SST method, then you also need to have [socat](mariadb-backup-sst-method.md#socat-dependency) installed on the server. This is needed to stream the backup from the donor node to the joiner node. This is a limitation that was inherited from the xtrabackup-v2 SST method.
 
@@ -9,7 +9,7 @@ Note that if you use the `mariadb-backup` SST method, then you also need to have
 To use the mariadb-backup SST method, you must set the [`wsrep_sst_method=mariabackup`](../../reference/wsrep-variable-details/wsrep_sst_method.md) on both the donor and joiner node. It can be changed dynamically with [`SET GLOBAL`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) on the node that you intend to be an SST donor. For example:
 
 ```sql
-SET GLOBAL wsrep_sst_method='mariadbbackup';
+SET GLOBAL wsrep_sst_method='mariabackup';
 ```
 
 It can be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
@@ -17,7 +17,7 @@ It can be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2
 ```ini
 [mariadb]
 ...
-wsrep_sst_method = mariadbbackup
+wsrep_sst_method = mariabackup
 ```
 
 For an SST to work properly, the donor and joiner node must use the same SST method. Therefore, it is recommended to set [`wsrep_sst_method`](../../reference/wsrep-variable-details/wsrep_sst_method.md) to the same value on all nodes, since any node will usually be a donor or joiner node at some point.
@@ -25,10 +25,79 @@ For an SST to work properly, the donor and joiner node must use the same SST met
 ## Major Version Upgrades <a href="#major-version-upgrades" id="major-version-upgrades"></a>
 
 {% hint style="warning" %}
-The InnoDB redo log format has been changed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) and [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) in a way that will not allow the crash recovery or the preparation of a backup from an older major version. Because of this, the `mariabackup` SST method cannot be used for some major-version upgrades, unless you temporarily edit the `wsrep_sst_mariadbbackup` script so that the `--prepare` step on the newer-major-version joiner will be executed using the older-major-version `mariadb-backup` tool.
+The InnoDB redo log format has been changed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105) and [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) in a way that will not allow the crash recovery or the preparation of a backup from an older major version. Because of this, the `mariabackup` SST method cannot be used for some major-version upgrades, unless you temporarily edit the `wsrep_sst_mariadbbackup` script so that the `--prepare` step on the newer-major-version joiner will be executed using the older-major-version `mariadb-backup` tool.
 {% endhint %}
 
 The default method `wsrep_sst_method=rsync` works for major-version upgrades; see [MDEV-27437](https://jira.mariadb.org/browse/MDEV-27437).
+
+## Configuration Options
+
+The `mariabackup` SST method is configured by placing options in the `[sst]` section of a MariaDB configuration file (e.g., `/etc/my.cnf.d/server.cnf`). These settings are parsed by the `wsrep_sst_mariabackup` and `wsrep_sst_common` scripts.
+
+{% hint style="success" %}
+The command-line utility is `mariadb-backup`; this tool was previously called `mariabackup`. The SST method itself retains the original name `mariabackup` (as in `wsrep_sst_method=mariabackup`).
+{% endhint %}
+
+### Primary Transfer and Format Options
+
+These options control the core data transfer mechanism.
+
+| Option        | Default Value | Description                                                                                  |
+| ------------- | ------------- | -------------------------------------------------------------------------------------------- |
+| `streamfmt`   | `mbstream`    | Specifies the backup streaming format. `mbstream` is the native format for `mariadb-backup`. |
+| `transferfmt` | `socat`       | Defines the network utility for data transfer.                                               |
+| `sockopt`     |               | A string of socket options passed to the `socat` utility.                                    |
+| `rlimit`      |               | Throttles the data transfer rate in bytes per second. Supports `K`, `M`, and `G` suffixes.   |
+
+### Compression Options
+
+These options configure on-the-fly compression to reduce network bandwidth.
+
+| Option         | Description                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------- |
+| `compressor`   | The command-line string for compressing the data stream on the donor (e.g., `"lz4 -z"`).    |
+| `decompressor` | The command-line string for decompressing the data stream on the joiner (e.g., `"lz4 -d"`). |
+
+### Authentication and Security (TLS)
+
+These options manage user authentication and stream encryption.
+
+| Option           | Description                                                                                                                                     |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `wsrep-sst-auth` | The authentication string in `user:password` format. The user requires `RELOAD`, `PROCESS`, `LOCK TABLES`, and `REPLICATION CLIENT` privileges. |
+| `tcert`          | Path to the TLS certificate file for securing the transfer.                                                                                     |
+| `tkey`           | Path to the TLS private key file.                                                                                                               |
+| `tca`            | Path to the TLS Certificate Authority (CA) file.                                                                                                |
+
+### Logging and Miscellaneous Options
+
+| Option                | Default Value | Description                                                                     |
+| --------------------- | ------------- | ------------------------------------------------------------------------------- |
+| `progress`            |               | Set to `1` to show transfer progress (requires `pv` utility).                   |
+| `sst-initial-timeout` | `300`         | Timeout in seconds for the initial connection.                                  |
+| `sst-log-archive`     | `1`           | Set to `1` to archive the previous SST log.                                     |
+| `cpat`                |               | A space-separated list of extra files/directories to copy from donor to joiner. |
+
+### Pass-through `mariadb-backup` Options
+
+This feature allows `mariadb-backup` specific options to be passed through the SST script.
+
+| Option      | Default Value | Description                                              |
+| ----------- | ------------- | -------------------------------------------------------- |
+| `use-extra` | `0`           | Must be set to `1` to enable pass-through functionality. |
+
+### **Example: Using Native Encryption and Threading**
+
+```ini
+[sst]
+# Enable pass-through functionality
+use-extra=1
+
+# mariadb-backup native options
+encrypt=AES256
+encrypt-key-file=/etc/mysql/encrypt/keyfile.key
+compress-threads=4
+```
 
 ## Authentication and Privileges <a href="#authentication-and-privileges" id="authentication-and-privileges"></a>
 
