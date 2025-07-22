@@ -94,7 +94,13 @@ For compatibility reasons, the TLS system variables in MariaDB still use the `ss
 
 #### `ssl_passphrase`
 
-* Description: SSL certificate key passphrase.
+*   Description: SSL certificate key passphrase. Works similarly to the `--passout/--passin` openssl command line parameters. The pass phrase value can be formatted as follows.
+
+    * pass:password Provide the actual password after the pass: prefix.
+    * env:var Obtain the password from the environment variable 'var'
+    * file:pathname Read the password from the specified file given in pathname. Only the first line, up to the newline character, is read from the stream.
+
+    If ssl\_passphrase is set, [SHOW VARIABLE](../../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) shows one of "file:", "env:" or "pass:" and won't reveal sensitive data.
 * Commandline: `--ssl-passphrase=val`
 * Scope: Global
 * Dynamic: No
