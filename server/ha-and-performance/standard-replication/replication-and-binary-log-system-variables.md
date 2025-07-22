@@ -57,9 +57,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: boolean
-* Default Value:
-  * `ON` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
-  * `OFF` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
+* Default Value: `ON`
 
 #### `binlog_cache_size`
 
@@ -81,9 +79,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
-* Default Value:
-  * `CRC32` (>= [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes))
-  * `NONE` (<= [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md))
+* Default Value: `CRC32`
 * Valid Values: `NONE` (`0`), `CRC32` (`1`)
 
 #### `binlog_commit_wait_count`
@@ -160,7 +156,6 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Data Type: `numeric`
 * Default Value: `16384`
 * Range: `8192` to `18446744073709551615`
-* Introduced: [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)
 
 #### `binlog_format`
 
@@ -169,9 +164,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `enumeration`
-* Default Value:
-  * `MIXED` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
-  * `STATEMENT` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
+* Default Value: `MIXED`
 * Valid Values: `ROW`, `STATEMENT` or `MIXED`
 
 #### `binlog_gtid_index`
@@ -429,9 +422,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
-* Default Value:
-  * `ON` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
-  * `OFF` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
+* Default Value: `ON`
 
 #### `log_slave_updates`
 
@@ -587,9 +578,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
-* Default Value:
-  * `ON` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
-  * `OFF` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
+* Default Value: `ON`
 
 #### `replicate_do_db`
 
@@ -926,7 +915,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_skip_errors`
 
-* Description: When an error occurs on the replica, [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) usually halts. This option permits a list of [error codes](broken-reference) to ignore, and for which replication will continue. This option should never be needed in normal use, and careless use could lead to replica that are out of sync with primary's. Error codes are in the format of the number from the replica error log. Using `all` as an option permits the replica the keep replicating no matter what error it encounters, an option you would never normally need in production and which could rapidly lead to data inconsistencies. A count of these is kept in [slave\_skipped\_errors](replication-and-binary-log-status-variables.md#slave_skipped_errors).
+* Description: When an error occurs on the replica, [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) usually halts. This option permits a list of [error codes](broken-reference/) to ignore, and for which replication will continue. This option should never be needed in normal use, and careless use could lead to replica that are out of sync with primary's. Error codes are in the format of the number from the replica error log. Using `all` as an option permits the replica the keep replicating no matter what error it encounters, an option you would never normally need in production and which could rapidly lead to data inconsistencies. A count of these is kept in [slave\_skipped\_errors](replication-and-binary-log-status-variables.md#slave_skipped_errors).
 * Command line: `--slave-skip-errors=[error_code1,error_code2,...|all|ddl_exist_errors]`
 * Scope: Global
 * Dynamic: No
@@ -976,7 +965,6 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `3600`
-* Introduced: [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)
 
 #### `slave_type_conversions`
 
