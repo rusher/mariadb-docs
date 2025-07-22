@@ -2,25 +2,25 @@
 
 Closes a previously prepared statement.
 
-### Direction
+## Direction
 
 Client to server.
 
-### Implemented by
+## Implemented by
 
-* [mysql\_stmt\_close()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/mysql_stmt_close)
-* [mysql\_stmt\_prepare()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/mysql_stmt_prepare)
+* [mysql\_stmt\_close()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/mysql_stmt_close).
+* [mysql\_stmt\_prepare()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/mysql_stmt_prepare).
 
-### Fields
+## Fields
 
-* [int<1>](../protocol-data-types.md#fixed-length-integers) 0x19 COM\_STMT\_CLOSE header
-* [int<4>](../protocol-data-types.md#fixed-length-integers) Statement id
+* [int<1>](../protocol-data-types.md#fixed-length-integers) `0x19` `COM_STMT_CLOSE` header.
+* [int<4>](../protocol-data-types.md#fixed-length-integers) statement id.
 
-#### Example
+## Example
 
 05 00 00 00 19 04 00 00 00
 
-#### Response
+## Response
 
 No response from server.
 
