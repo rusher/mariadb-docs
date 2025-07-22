@@ -1,30 +1,19 @@
-
-# COM_SLEEP
+# COM\_SLEEP
 
 This command is used inside the server only.
 
+## Direction
 
-#### Direction
+Used inside server only.
 
+## Fields
 
-used inside server only
+* [int<1>](../protocol-data-types.md#fixed-length-integers) `0x00`: `COM_SLEEP` header.
 
+## Response
 
-#### Fields
-
-
-
-* [int<1>](../protocol-data-types.md#fixed-length-integers) 0x00 : COM_SLEEP header
-
-
-
-#### Response
-
-
-[ERR_Packet](../4-server-response-packets/err_packet.md)
-
+[ERR\_Packet](../4-server-response-packets/err_packet.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

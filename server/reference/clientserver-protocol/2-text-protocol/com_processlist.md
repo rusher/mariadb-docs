@@ -1,6 +1,8 @@
 # COM\_PROCESSLIST
 
-**Warning**: This command is deprecated and not used by MariaDB connectors any more. Please use the SQL statement [SHOW PROCESSLIST](../../sql-statements/administrative-sql-statements/show/show-processlist.md) instead.
+{% hint style="info" %}
+This command is deprecated and not used by MariaDB connectors any more. Use the SQL statement [SHOW PROCESSLIST](../../sql-statements/administrative-sql-statements/show/show-processlist.md) instead.
+{% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

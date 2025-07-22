@@ -1,38 +1,26 @@
+# COM\_RESET\_CONNECTION
 
-# COM_RESET_CONNECTION
+`COM_RESET_CONNECTION` resets a connection without reauthentication.
 
-COM_RESET_CONNECTION Resets a connection without re-authentication.
+The command does this:
 
+* Roll back any open transactions.
+* Reset transaction isolation level.
+* Rset session variables.
+* Delete user variables.
+* Remove temporary tables.
+* Remove all `PREPARE` statements.
 
-This will :
+Database will `NOT` be reset to initial value.
 
+## Fields
 
-* rollback any open transaction
-* reset transaction isolation level
-* reset session variables
-* delete user variables
-* remove temporary tables
-* remove all PREPARE statement
+* [int<1>](../protocol-data-types.md#fixed-length-integers) 0x1f : `COM_RESET_CONNECTION` Header
 
+## Response
 
-Database will NOT be reset to initial value.
-
-
-### Fields
-
-
-
-* [int<1>](../protocol-data-types.md#fixed-length-integers) 0x1f : COM_RESET_CONNECTION Header
-
-
-
-### Response
-
-
-[ERR_Packet](../4-server-response-packets/err_packet.md) or [OK_Packet](../4-server-response-packets/ok_packet.md)
-
+[ERR\_Packet](../4-server-response-packets/err_packet.md) or [OK\_Packet](../4-server-response-packets/ok_packet.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -1,14 +1,14 @@
 # COM\_DEBUG
 
-The COM\_DEBUG command forces the server to dump debug information to stdout. It requires super privileges.
+The `COM_DEBUG` command forces the server to dump debug information to stdout. It requires the [SUPER](../../sql-statements/account-management-sql-statements/grant.md#super) privilege.
 
-#### Fields
+## Fields
 
-* [int<1>](../protocol-data-types.md#fixed-length-integers) 0xOD : COM\_DEBUG Header
+* [int<1>](../protocol-data-types.md#fixed-length-integers) `0xOD` : `COM_DEBUG` header.
 
-#### Response
+## Response
 
-[EOF Packet](../4-server-response-packets/eof_packet.md)
+[EOF Packet](../4-server-response-packets/eof_packet.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -1,6 +1,8 @@
 # COM\_DROP\_DB
 
-**Warning**: This command is deprecated and not used by MariaDB connectors any more. Please use the SQL statements [DROP SCHEMA](../../sql-statements/data-definition/drop/drop-database.md) or [DROP DATABASE](../../sql-statements/data-definition/drop/drop-database.md) instead.
+{% hint style="info" %}
+This command is deprecated and not used by MariaDB connectors any more. Use the SQL statements [DROP SCHEMA](../../sql-statements/data-definition/drop/drop-database.md) or [DROP DATABASE](../../sql-statements/data-definition/drop/drop-database.md) instead.
+{% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
