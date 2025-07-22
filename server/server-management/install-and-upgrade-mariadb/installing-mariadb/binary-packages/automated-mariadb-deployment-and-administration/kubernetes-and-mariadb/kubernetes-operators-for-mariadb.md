@@ -27,39 +27,41 @@ Find the [documentation here](https://app.gitbook.com/s/kuTXWg0NDbRx6XUeYpGD/mar
 
 It's available in both [Artifact Hub](https://artifacthub.io/packages/helm/mariadb-operator/mariadb-operator) and [Operator Hub](https://operatorhub.io/operator/mariadb-operator) and supports the following features:
 
-* [Easily provision](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/mariadb_minimal.yaml) and [configure](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/mariadb_full.yaml) MariaDB servers in Kubernetes.
-* Multiple [HA modes](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/HA): Galera Cluster or MariaDB Replication.
-* Automated [primary failover](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/HA) and [cluster recovery](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/GALERA#galera-cluster-recovery).
-* Advanced HA with [MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/): a sophisticated database proxy, router, and load balancer for MariaDB.
-* Flexible [storage](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/STORAGE) configuration. [Volume expansion](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/STORAGE#volume-resize).
-* Take, restore, and schedule [backups](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/BACKUP).
-* Multiple [backup storage types](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/BACKUP#storage-types): S3 compatible, PVCs, and Kubernetes volumes.
-* Policy-driven [backup retention](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/BACKUP#retention-policy) with [compression options](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/BACKUP#compression): bzip2 and gzip.
-* [Target recovery time](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/BACKUP#target-recovery-time): restore the closest available backup to the specified time.
-* [Bootstrap new instances](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/BACKUP#bootstrap-new-mariadb-instances-from-backups) from: backups, S3, PVCs...
-* [Cluster-aware rolling update](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/UPDATES#replicasfirstprimarylast): roll out replica Pods one by one, wait for each of them to become ready, and then proceed with the primary Pod.
-* Multiple [update strategies](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/UPDATES#update-strategies): `ReplicasFirstPrimaryLast`, `OnDelete`, and `Never`.
-* Automated [data-plane updates](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/UPDATES#auto-update-data-plane).
-* [my.cnf change detection](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/CONFIGURATION#mycnf): automatically trigger [updates](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/UPDATES) when my.cnf changes.
-* [Suspend](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/SUSPEND) operator reconciliation for maintenance operations.
-* Issue, configure, and rotate [TLS certificates](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/TLS) and CAs.
-* Native integration with [cert-manager](https://github.com/cert-manager/cert-manager): automatically create `Certificate` resources.
-* [Prometheus metrics](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/METRICS) via [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) and maxscale-exporter.
-* Native integration with [prometheus-operator](https://github.com/prometheus-operator/prometheus-operator): automatically create `ServiceMonitor` resources.
-* Declaratively manage [SQL resources](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/SQL_RESOURCES): [users](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/user.yaml), [grants](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/grant.yaml), and logical [databases](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/database.yaml).
-* Configure [connections](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/connection.yaml) for your applications.
-* Orchestrate and schedule [SQL scripts](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/sqljobs).
-* Validation webhooks to provide CRD immutability.
-* Additional printer columns to report the current CRD status.
-* CRDs designed according to the Kubernetes [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions).
-* Install it using [helm](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/HELM), [OLM](https://operatorhub.io/operator/mariadb-operator), or [static manifests](https://github.com/mariadb-operator/mariadb-operator/tree/main/deploy/manifests).
-* Multiple [deployment modes](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/HELM#deployment-modes): cluster-wide and single namespace.
-* Multi-arch distroless [image](https://github.com/orgs/mariadb-operator/packages/container/package/mariadb-operator).
-* [GitOps](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/GITOPS) friendly.
+- [Easily provision](https://github.com/mariadb-operator/mariadb-operator/examples/manifests/mariadb_minimal.yaml) and [configure](https://github.com/mariadb-operator/mariadb-operator/examples/manifests/mariadb_full.yaml) MariaDB servers in Kubernetes.
+- Multiple [HA modes](https://github.com/mariadb-operator/mariadb-operator/docs/high_availability.md): Galera Cluster or MariaDB Replication.
+- Automated Galera [primary failover](https://github.com/mariadb-operator/mariadb-operator/docs/high_availability.md) and [cluster recovery](https://github.com/mariadb-operator/mariadb-operator/docs/galera.md#galera-cluster-recovery).
+- Advanced HA with [MaxScale](https://github.com/mariadb-operator/mariadb-operator/docs/maxscale.md): a sophisticated database proxy, router, and load balancer for MariaDB.
+- Flexible [storage](https://github.com/mariadb-operator/mariadb-operator/docs/storage.md) configuration. [Volume expansion](https://github.com/mariadb-operator/mariadb-operator/docs/storage.md#volume-resize).
+- [Physical backups](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md) based on [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/full-backup-and-restore-with-mariadb-backup) and [Kubernetes VolumeSnapshots](https://kubernetes.io/docs/concepts/storage/volume-snapshots/).
+- [Logical backups](https://github.com/mariadb-operator/mariadb-operator/docs/logical_backup.md) based on [mariadb-dump](https://mariadb.com/docs/server/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump). 
+- Multiple [backup storage types](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md#storage-types): S3 compatible, PVCs, Kubernetes volumes and `VolumeSnapshots`.
+- Flexible backup configuration: [scheduling](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md#scheduling), [compression](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md#compression), [retention policy](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md#retention-policy), [timeout](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md#timeout), [staging area](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md#staging-area)...
+- [Target recovery time](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md#target-recovery-time): restore the closest available backup to the specified time.
+- [Bootstrap new instances](https://github.com/mariadb-operator/mariadb-operator/docs/physical_backup.md#restoration) from: Physical backups, logical backups, S3, PVCs, `VolumeSnapshots`...
+- [Cluster-aware rolling update](https://github.com/mariadb-operator/mariadb-operator/docs/updates.md#replicasfirstprimarylast): roll out replica Pods one by one, wait for each of them to become ready, and then proceed with the primary Pod, using `ReplicasFirstPrimaryLast`.
+- Manual [update strategies](https://github.com/mariadb-operator/mariadb-operator/docs/updates.md#update-strategies): `OnDelete` and `Never`.
+- Automated [data-plane updates](https://github.com/mariadb-operator/mariadb-operator/docs/updates.md#auto-update-data-plane).
+- [my.cnf change detection](https://github.com/mariadb-operator/mariadb-operator/docs/configuration.md#mycnf). Automatically trigger [updates](https://github.com/mariadb-operator/mariadb-operator/docs/updates.md) when my.cnf changes.
+- [Suspend](https://github.com/mariadb-operator/mariadb-operator/docs/suspend.md) operator reconciliation for maintenance operations.
+- Issue, configure and rotate [TLS certificates](https://github.com/mariadb-operator/mariadb-operator/docs/tls.md) and CAs.
+- Native integration with [cert-manager](https://github.com/cert-manager/cert-manager). Automatically create `Certificate` resources.
+- [Prometheus metrics](https://github.com/mariadb-operator/mariadb-operator/docs/metrics.md) via [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) and maxscale-exporter.
+- Native integration with [prometheus-operator](https://github.com/prometheus-operator/prometheus-operator). Automatically create `ServiceMonitor` resources.
+- Declaratively manage [SQL resources](https://github.com/mariadb-operator/mariadb-operator/docs/sql_resources.md): [users](https://github.com/mariadb-operator/mariadb-operator/examples/manifests/user.yaml), [grants](https://github.com/mariadb-operator/mariadb-operator/examples/manifests/grant.yaml) and logical [databases](https://github.com/mariadb-operator/mariadb-operator/examples/manifests/database.yaml).
+- Configure [connections](https://github.com/mariadb-operator/mariadb-operator/examples/manifests/connection.yaml) for your applications.
+- Orchestrate and schedule [sql scripts](https://github.com/mariadb-operator/mariadb-operator/examples/manifests/sqljobs).
+- Validation webhooks to provide CRD immutability.
+- Additional printer columns to report the current CRD status.
+- CRDs designed according to the Kubernetes [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md).
+- Install it using [helm](https://github.com/mariadb-operator/mariadb-operator/docs/helm.md), [OLM](https://operatorhub.io/operator/mariadb-operator) or [static manifests](https://github.com/mariadb-operator/mariadb-operator/deploy/manifests).
+- Multiple [deployment modes](https://github.com/mariadb-operator/mariadb-operator/docs/helm.md#deployment-modes): cluster-wide and single namespace.
+- Helm chart to deploy [MariaDB clusters](https://github.com/mariadb-operator/mariadb-operator/docs/helm.md#mariadb-cluster-helm-chart) and its associated CRs.
+- Multi-arch distroless [image](https://github.com/orgs/mariadb-operator/packages/container/package/mariadb-operator).
+- [GitOps](#gitops) friendly.
 
-Please, refer to the [documentation](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/), the [API reference](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/API_REFERENCE) and the [example suite](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/) for further detail.
+Please, refer to the [documentation](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/README.md), the [API reference](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/api_reference.md) and the [example suite](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests) for further detail.
 
-Content initially contributed by [Vettabase Ltd](https://vettabase.com/). Updated 11/6/24 by MariaDB.
+Content initially contributed by [Vettabase Ltd](https://vettabase.com/). Updated 22/7/25 by MariaDB.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
