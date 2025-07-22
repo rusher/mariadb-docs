@@ -577,7 +577,7 @@
       * [MariaDB 10.1.17 Release Notes](community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10117-release-notes.md)
       * [MariaDB 10.1.16 Release Notes](community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes.md)
       * [MariaDB 10.1.15 Release Notes](community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes.md)
-      * [MariaDB 10.1.14 Release Notes](community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10114-release-notes.md)
+      * [MariaDB 10.1.14 Release Notes](community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-11-4-release-notes.md)
       * [MariaDB 10.1.13 Release Notes](community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md)
       * [MariaDB 10.1.12 Release Notes](community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10112-release-notes.md)
       * [MariaDB 10.1.11 Release Notes](community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md)

@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.14)[Release Notes](mariadb-10114-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10114-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.14)[Release Notes](mariadb-10-11-4-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10114-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 10 May 2016
 
@@ -10,7 +10,7 @@ The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.m
 of [MariaDB 10.0](../release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL 5.6 and 5.7.
 
-[MariaDB 10.1.14](mariadb-10114-release-notes.md) is a [_**Stable (GA)**_](../../about/release-criteria.md) release.
+[MariaDB 10.1.14](mariadb-10-11-4-release-notes.md) is a [_**Stable (GA)**_](../../about/release-criteria.md) release.
 
 **For an overview of** [**MariaDB 10.1**](changes-improvements-in-mariadb-10-1.md) **see the**[**What is MariaDB 10.1?**](changes-improvements-in-mariadb-10-1.md) **page.**
 
@@ -61,7 +61,7 @@ The Windows compiler used by MariaDB from this release drops Windows XP and Wind
 
 ## Changelog
 
-For a complete list of changes made in [MariaDB 10.1.14](mariadb-10114-release-notes.md), with links to detailed\
+For a complete list of changes made in [MariaDB 10.1.14](mariadb-10-11-4-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10114-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
