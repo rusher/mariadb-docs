@@ -57,7 +57,7 @@ It's available in both [Artifact Hub](https://artifacthub.io/packages/helm/maria
 - Multiple [deployment modes](https://github.com/mariadb-operator/mariadb-operator/docs/helm.md#deployment-modes): cluster-wide and single namespace.
 - Helm chart to deploy [MariaDB clusters](https://github.com/mariadb-operator/mariadb-operator/docs/helm.md#mariadb-cluster-helm-chart) and its associated CRs.
 - Multi-arch distroless [image](https://github.com/orgs/mariadb-operator/packages/container/package/mariadb-operator).
-- [GitOps](#gitops) friendly.
+- [GitOps](https://opengitops.dev/) friendly.
 
 Please, refer to the [documentation](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/README.md), the [API reference](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/api_reference.md) and the [example suite](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests) for further detail.
 
