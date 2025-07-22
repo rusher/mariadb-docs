@@ -730,6 +730,16 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Default Value: `1`
 * Range: `1` to `4294967295`
 
+#### `show_slave_auth_info`
+
+* Description: Show user and password in [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-show-slave-hosts.md) on this primary.
+* Command line: `--show-slave-auth-info[={0|1}]`
+* Scope: Global
+* Dynamic: No
+* Data Type: `boolean`
+* Default Value: `OFF`
+* Introduced: [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
+
 #### `skip_parallel_replication`
 
 * Description: If set when a transaction is written to the binlog, parallel apply of that transaction will be avoided on a replica where [slave\_parallel\_mode](replication-and-binary-log-system-variables.md#slave_parallel_mode) is not `aggressive`. Can be used to avoid unnecessary rollback and retry for transactions that are likely to cause a conflict if replicated in parallel. See [parallel replication](parallel-replication.md).
