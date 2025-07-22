@@ -6,25 +6,6 @@ The `wsrep_sst_mariabackup` script handles the actual data transfer and processi
 
 The `wsrep_sst_mariadbbackup` script parses the following options:
 
-```bash
-~/myh/instances/10622$ cat bin/wsrep_sst_mariabackup | grep "parse_cnf sst"
-    sfmt=$(parse_cnf sst streamfmt 'mbstream')
-    tfmt=$(parse_cnf sst transferfmt 'socat')
-    sockopt=$(parse_cnf sst sockopt)
-    progress=$(parse_cnf sst progress)
-    ttime=$(parse_cnf sst time 0)
-    cpat=$(parse_cnf sst cpat "$cpat")
-    scomp=$(parse_cnf sst compressor)
-    sdecomp=$(parse_cnf sst decompressor)
-    rlimit=$(parse_cnf sst rlimit)
-    uextra=$(parse_cnf sst use-extra 0)
-    speciald=$(parse_cnf sst 'sst-special-dirs' 1)
-    stimeout=$(parse_cnf sst 'sst-initial-timeout' 300)
-    ssyslog=$(parse_cnf sst 'sst-syslog' 0)
-    sstlogarchive=$(parse_cnf sst 'sst-log-archive' 1)
-    sstlogarchivedir=$(parse_cnf sst sst-log-archive-dir \
-```
-
 * `sfmt` (streamfmt)
   * Default: `mbstream`
   * Description: Defines the streaming format used by `mariabackup` for the SST. `mbstream` indicates that `mariabackup` will output a continuous stream of data. Other potential values (though not explicitly shown as defaults) might be related to different backup methods or tools.
