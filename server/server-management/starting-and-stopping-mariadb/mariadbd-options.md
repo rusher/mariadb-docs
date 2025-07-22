@@ -1,4 +1,4 @@
-# mariadbd Option
+# mariadbd Options
 
 This page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
@@ -1315,7 +1315,7 @@ Options that are also system variables are listed after:
 #### `--show-slave-auth-info`
 
 * Command line: `--show-slave-auth-info`
-* Description: Show user and password in SHOW SLAVE HOSTS on this primary.
+* Description: Show user and password in [SHOW REPLICA HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) (SHOW SLAVE HOSTS) on this primary. Also added as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#show_slave_auth_info) in [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
 
 #### `--skip-grant-tables`
 
