@@ -732,7 +732,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `show_slave_auth_info`
 
-* Description: Show user and password in [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-show-slave-hosts.md) on this primary.
+* Description: Show user and password in [SHOW REPLICA HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) (SHOW SLAVE HOSTS) on this primary.
 * Command line: `--show-slave-auth-info[={0|1}]`
 * Scope: Global
 * Dynamic: No
