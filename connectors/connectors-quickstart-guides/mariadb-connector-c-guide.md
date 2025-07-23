@@ -25,8 +25,8 @@ If you're using Linux, the simplest way to install MariaDB Connector/C is via yo
 
 You can set up your repository using:
 
-* MariaDB Corporation's [MariaDB Package Repository setup script](https://www.google.com/search?q=https://mariadb.com/kb/en/configuring-mariadb-package-repositories/\&authuser=1).
-* MariaDB Foundation's [MariaDB Repository Configuration Tool](https://www.google.com/search?q=https://mariadb.org/download/connector-c/\&authuser=1).
+* MariaDB Corporation's [MariaDB Package Repository setup script](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage).
+* MariaDB Foundation's [MariaDB Repository Configuration Tool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options).
 
 **Install with `yum`/`dnf` (RHEL, CentOS, Fedora)**
 
@@ -82,7 +82,7 @@ MariaDB Connector/C for Windows is distributed as MSI packages. The installation
 
 #### Install from Source
 
-If you prefer to build from source, refer to the [Building Connector/C From Source](https://www.google.com/search?q=https://mariadb.com/kb/en/building-connector-c-from-source/\&authuser=1) documentation.
+If you prefer to build from source, refer to the [Building Connector/C From Source](../mariadb-connector-c/building-connectorc-from-source/) documentation.
 
 ### API Reference
 
@@ -99,7 +99,7 @@ An HTML version is also available for download in `mariadb-client-doc.zip`.
 
 Similar to MariaDB Server, MariaDB Connector/C can read configuration options from client option groups in option files.
 
-For detailed information, see [Configuring MariaDB Connector/C with Option Files](https://www.google.com/search?q=https://mariadb.com/kb/en/configuring-mariadb-connector-c-with-option-files/\&authuser=1).
+For detailed information, see [Configuring MariaDB Connector/C with Option Files](../mariadb-connector-c/configuring-mariadb-connectorc-with-option-files.md).
 
 ### Known Issues
 
@@ -117,6 +117,6 @@ Be aware of these potential limitations:
 
 GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
 
-For licensing questions, see the [Licensing FAQ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/faq/licensing-questions/licensing-faq).
+For licensing questions, see the [Licensing FAQ](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/faq/licensing-questions/licensing-faq).
 
 {% @marketo/form formId="4316" %}
