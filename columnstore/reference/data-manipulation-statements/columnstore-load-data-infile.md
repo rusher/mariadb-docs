@@ -1,8 +1,8 @@
 # ColumnStore LOAD DATA INFILE
 
-The LOAD DATA INFILE statement reads rows from a text file into a table at a very high speed. The file name must be given as a literal string.
+The `LOAD DATA INFILE` statement reads rows from a text file into a table at a very high speed. The file name must be given as a literal string.
 
-```
+```sql
 LOAD DATA [LOCAL] INFILE 'file_name' 
   INTO TABLE tbl_name
   [CHARACTER SET charset_name]
@@ -17,14 +17,14 @@ LOAD DATA [LOCAL] INFILE 'file_name'
 ]
 ```
 
-* ColumnStore ignores the ON DUPLICATE KEY clause.
-* Non-transactional LOAD DATA INFILE is directed to ColumnStores cpimport tool by default, which significantly increases performance.
-* Transactional LOAD DATA INFILE statements (that is, with AUTOCOMMIT off or after a START TRANSACTION) are processed through normal DML processes.
-* Use cpimport for importing UTF-8 data that contains multi-byte values
+* ColumnStore ignores the `ON DUPLICATE KEY` clause.
+* Non-transactional `LOAD DATA INFILE` is directed to ColumnStores cpimport tool by default, which significantly increases performance.
+* Transactional `LOAD DATA INFILE` statements (that is, with `AUTOCOMMIT` off or after a `START TRANSACTION`) are processed through normal DML processes.
+* Use cpimport for importing `UTF-8` data that contains multi-byte values
 
-The following example loads data into a simple 5- column table: A file named /simpletable.tb&#x6C;_&#x68;as the following data in it._
+The following example loads data into a simple 5- column table: A file named `/simpletable.tbl`_`has` the following data in it._
 
-```
+```sql
 1|100|1000|10000|Test Number 1|
 2|200|2000|20000|Test Number 2|
 3|300|3000|30000|Test Number 3|
@@ -32,11 +32,11 @@ The following example loads data into a simple 5- column table: A file named /si
 
 The data can then be loaded into the simpletable table with the following syntax:
 
-```
+```sql
 LOAD DATA INFILE 'simpletable.tbl' INTO TABLE simpletable FIELDS TERMINATED BY '|'
 ```
 
-If the default mode is set to use cpimport internally, any output error files will be written to /var/log/mariadb/columnstore/cpimport/ directory. It can be consulted for troubleshooting any errors reported.
+If the default mode is set to use cpimport internally, any output error files will be written to `/var/log/mariadb/columnstore/cpimport/` directory. It can be consulted for troubleshooting any errors reported.
 
 ### See Also
 
