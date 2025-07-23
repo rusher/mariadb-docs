@@ -657,6 +657,16 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Default Value: `''` (empty)
 * Introduced: [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-0-release-notes)
 
+#### `replicate_same_server_id`
+
+* Description: In replication, if set to 1, do not skip events having our server id. Default value is 0 (to break infinite loops in circular replication). Can't be set to 1 if [--log-slave-updates](replication-and-binary-log-system-variables.md#log_slave_updates) is used
+* Command line: `--replicate-same-server-id[={0|1}]`
+* Scope: Global
+* Dynamic: No
+* Data Type: `boolean`
+* Default Value: `OFF`
+* Introduced: [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
+
 #### `replicate_wild_do_table`
 
 * Description: This system variable allows you to configure a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to apply statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator.
