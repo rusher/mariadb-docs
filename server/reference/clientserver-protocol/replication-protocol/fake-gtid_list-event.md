@@ -1,19 +1,19 @@
 # Fake GTID\_LIST event
 
-This event is sent by master server to the registering slave and it's sent only once, after[Format Description Event](format_description_event.md)
+This event is sent by master server to the registering replica. It is sent only once, after the [Format Description Event](format_description_event.md).
 
 {% hint style="info" %}
-**Note**: the fake GTID\_LIST event is not written in the binlog file. It's created by the master and sent to new connected slave before any "real" binlog event.
+The fake `GTID_LIST` event is not written in the binlog file. It's created by the master and sent to newly connected replica before any "real" binlog event.
 {% endhint %}
 
-#### Header
+## Header
 
-* Event type is set to 163 (0xa3)
-* Time stamp set to 0
-* NextPos tells which is the binlog position of next event
-* Flags are set to ARTIFICIAL (0x20)
+* Event type is set to `163` (`0xa3`).
+* Time stamp set to `0`.
+* NextPos tells which is the binlog position of next event.
+* Flags are set to `ARTIFICIAL` (`0x20`).
 
-#### Content
+## Content
 
 The content is the same as the "real" [GTID\_LIST](gtid_list_event.md).
 

@@ -1,33 +1,35 @@
 # 5-Replica Registration
 
-The replica server, when properly configured with CHANGE MASTER TO ... can start MariaDB replication with the [START REPLICA](../../sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command.
+## Overview
 
-After authentication, some [COM\_QUERY](../2-text-protocol/com_query.md) packets are exchanged before sending [COM\_REGISTER\_SLAVE](com_register_slave.md) and [COM\_BINLOG\_DUMP](com_binlog_dump.md)
+The replica server, when properly configured with `CHANGE MASTER TO ...` , can start MariaDB replication with the [START REPLICA](../../sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement.
 
-The following COM\_QUERY packets come from MariaDB 10.X slaves using [GTID](../../../ha-and-performance/standard-replication/gtid.md)
+After authentication, some [COM\_QUERY](../2-text-protocol/com_query.md) packets are exchanged before sending [COM\_REGISTER\_SLAVE](com_register_slave.md) and [COM\_BINLOG\_DUMP](com_binlog_dump.md).
 
-* SELECT UNIX\_TIMESTAMP()
-* SHOW VARIAB LES LIKE 'SERVER\_ID'
-* SET @master\_heartbeat\_period= 30000001024
-* SET @master\_binlog\_checksum= @@global.binlog\_checksum
-* SELECT @master\_binlog\_checksum
-* SET @mariadb\_slave\_capability=4
-* SELECT @@GLOBAL.gtid\_domain\_id GTID registration: domain ID
-* SET @slave\_connect\_state='0-10201-9868' GTID registration: the requested GTID
-* SET @slave\_gtid\_strict\_mode=0 GTID registration: strict\_mode
-* SET @slave\_gtid\_ignore\_duplicates=0 GTID registration: ignore\_duplicates
+The following `COM_QUERY` packets come from MariaDB 10.X replicas using [GTID](../../../ha-and-performance/standard-replication/gtid.md):
 
-Then COM\_REGISTER\_SLAVE completes the registration.
+* `SELECT UNIX_TIMESTAMP()`;
+* `SHOW VARIABLES LIKE 'SERVER_ID'`;
+* `SET @master_heartbeat_period`= 30000001024;
+* `SET @master_binlog_checksum`= `@@global.binlog_checksum`;
+* `SELECT @master_binlog_checksum`;
+* `SET @mariadb_slave_capability`=4;
+* `SELECT @@GLOBAL.gtid_domain_id GTID` registration: domain ID;
+* `SET @slave_connect_state`='0-10201-9868' GTID registration: the requested GTID;
+* `SET @slave_gtid_strict_mode`=0 GTID registration: strict\_mode;
+* `SET @slave_gtid_ignore_duplicates`=0 GTID registration: ignore\_duplicates.
 
-The COM\_BINLOG\_DUMP marks the request of binlog events stream.
+Then `COM_REGISTER_SLAVE` completes the registration.
+
+The `COM_BINLOG_DUMP` marks the request of binlog events stream.
 
 {% hint style="info" %}
-**Note**: If semi-sync is in use, the request for the network protocol change is sent between COM\_REGISTER\_SLAVE and COM\_BINLOG\_DUMP.
+If semi-sync is in use, the request for the network protocol change is sent between `COM_REGISTER_SLAVE` and `COM_BINLOG_DUMP`.
 {% endhint %}
 
-#### Example Using 'ngrep'
+## Example Using 'ngrep'
 
-[COM\_REGISTER\_SLAVE](com_register_slave.md), [Semi-Sync](4-semi-sync-replication.md) and [COM\_BINLOG\_DUMP](com_binlog_dump.md)
+[COM\_REGISTER\_SLAVE](com_register_slave.md), [Semi-Sync](4-semi-sync-replication.md) and [COM\_BINLOG\_DUMP](com_binlog_dump.md):
 
 ```
 T 127.0.0.1:42158 -> 127.0.0.1:23240 [AP]
@@ -74,14 +76,14 @@ T 127.0.0.1:42158 -> 127.0.0.1:23240 [AP]
   79 73 71 6c 2d 62 69 6e    2e 30 30 30 30 33 34       ysql-bin.000034
 ```
 
-In the example we clearly see that these two COM\_QUERY commands:
+In the example, we see that these two `COM_QUERY` commands are sent just after `COM_REGISTER_SLAVE` and before `COM_BINLOG_DUMP`:
 
-* SHOW VARIABLES LIKE 'rpl\_semi\_sync\_master\_enabled'
-* SET @rpl\_semi\_sync\_slave= 1
+* `SHOW VARIABLES LIKE` 'rpl\_semi\_sync\_master\_enabled';
+* `SET @rpl_semi_sync_slave`= 1.
 
-are sent just after COM\_REGISTER\_SLAVE and before COM\_BINLOG\_DUMP.
+## Complete Example with GTID Registration
 
-#### Complete Example with GTID Registration (Up to COM\_BINLOG\_DUMP Request), No Semi-Sync
+&#x20;The example shows output up to `COM_BINLOG_DUMP` request, No Semi-Sync:
 
 ```
 T 127.0.0.1:23240 -> 127.0.0.1:42367 [AP]
@@ -229,20 +231,17 @@ T 127.0.0.1:42367 -> 127.0.0.1:23240 [AP]
   79 73 71 6c 2d 62 69 6e    2e 30 30 30 30 33 34       ysql-bin.000034
 ```
 
-#### Events Transmission After COM\_BINLOG\_DUMP.
+## Events Transmission After COM\_BINLOG\_DUMP
 
-The MariaDB 10.x Master always sends, after the COM\_BINLOG\_DUMP:
+The MariaDB master always sends this, after the `COM_BINLOG_DUMP`:
 
-* [FAKE\_ROTATE\_EVENT](fake-rotate_event.md)
-* [FORMAT\_DESCRIPTION\_EVENT](format_description_event.md):\
-  Next Pos in the header is set to 0 if not requesting binlog file form the beginning and GTID is not in use\
-  otherwise Next Pos is related to next event after FDE
+* [FAKE\_ROTATE\_EVENT](fake-rotate_event.md);
+* [FORMAT\_DESCRIPTION\_EVENT](format_description_event.md): Next Pos in the header is set to 0 if not requesting binlog file from the beginning, and the GTID is not in use; otherwise, Next Pos is related to next event after FDE.
 * [FAKE\_GTID\_LIST\_EVENT](fake-gtid_list-event.md) with latest GTID information.
 
-After those first events, the master sends events related to changes in database to the connected replica binlog.\
-The replica is just waiting for new events from master.
+After those first events, the master sends events related to changes in database to the connected replica binlog. The replica is just waiting for new events from master.
 
-#### Complete Example of Event Transmission With CRC32
+## Complete Example of Event Transmission With CRC32
 
 ```
 T 127.0.0.1:23240 -> 127.0.0.1:42219 [AP]
@@ -288,15 +287,15 @@ T 127.0.0.1:23240 -> 127.0.0.1:42219 [AP]
 
 We can see:
 
-1. FAKE\_ROTATE\_EVENT packet: 30 00 00 01 ... d5 3f ea d7
-2. FORMAT\_DESCRIPTION\_EVENT packet: fd 00 00 02 00 ... 17 0b 12 63\
+1. `FAKE_ROTATE_EVENT` packet: 30 00 00 01 ... d5 3f ea d7
+2. `FORMAT_DESCRIPTION_EVENT` packet: fd 00 00 02 00 ... 17 0b 12 63\
    FDE size is fc 00 00 00 (252)\
    Next Pos in FDE is 00 01 00 00 = >256 = 4 + FDE size (252)
-3. FAKE GTID\_LIST\_EVENT packet : 3c 00 00 03 00 ... b6 33 8a 22
-4. BINLOG\_CHECKPOINT EVENT packet: 2c 00 00 04 ... 16 1f fe 3f
-5. GTID\_LIST\_EVENT packet: 2c 00 00 05 ... 4a 01 94 22
-6. GTID\_EVENT packet: 2b 00 00 06 ... 22 87 c0 61
-7. QUERY\_EVENT packet: 4c 00 00 07 ... 6e c8 89 60
+3. `FAKE_GTID_LIST_EVENT` packet : 3c 00 00 03 00 ... b6 33 8a 22
+4. `BINLOG_CHECKPOINT` EVENT packet: 2c 00 00 04 ... 16 1f fe 3f
+5. `GTID_LIST_EVENT` packet: 2c 00 00 05 ... 4a 01 94 22
+6. `GTID_EVENT` packet: 2b 00 00 06 ... 22 87 c0 61
+7. `QUERY_EVENT` packet: 4c 00 00 07 ... 6e c8 89 60
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -1,26 +1,26 @@
 # ANNOTATE\_ROWS\_EVENT
 
-ANNOTATE\_ROWS\_EVENT events accompany row events and describe the query which caused the row event.
+`ANNOTATE_ROWS_EVENT` events accompany row events and describe the query which caused the row event.
 
-You can enable this with [--binlog-annotate-row-events](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) (default on from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)).
+You can enable this with [--binlog-annotate-row-events](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) (default on).
 
-In the binary log, each Annotate\_rows event precedes the corresponding Table map event.
+In the binary log, each `ANNOTATE_ROWS` event precedes the corresponding Table map event.
 
 For additional information refer to the [annotate\_rows\_log\_event](../../../clients-and-utilities/logging-tools/mariadb-binlog/annotate_rows_log_event.md) documentation.
 
 {% hint style="info" %}
-**Note**: the master server sends ANNOTATE\_ROWS\_EVENT events only if the Slave server connects with the BINLOG\_SEND\_ANNOTATE\_ROWS\_EVENT flag (value is 2) in the COM\_BINLOG\_DUMP Slave Registration phase.
+The master server sends `ANNOTATE_ROWS_EVENT` events only if the replica server connects with the `BINLOG_SEND_ANNOTATE_ROWS_EVENT` flag (value is 2) in the `COM_BINLOG_DUMP` replica registration phase.
 {% endhint %}
 
-#### Header
+## Header
 
-* Event Type is 160 (0xa0)
+* Event Type is 160 (0xa0).
 
-#### Fields
+## Fields
 
-* [string](../protocol-data-types.md#fixed-length-bytes) The SQL statement (not null-terminated)
+* [string](../protocol-data-types.md#fixed-length-bytes) The SQL statement (not null-terminated).
 
-### Complete Example with CRC32
+## Complete Example with CRC32
 
 ```
 ee b7 15 5a a0 01 00 00  00 36 00 00 00 80 0b 00  ...Z.....6......

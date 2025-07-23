@@ -1,23 +1,22 @@
 # HEARTBEAT\_LOG\_EVENT
 
-This event does not appear in the [binary log](../../../server-management/server-monitoring-logs/binary-log/).\
-It's only sent over the network by a master to a slave server to let it know that the master is still alive, and is only sent when the master has no binlog events to send to slave servers.
+This event does not appear in the [binary log](../../../server-management/server-monitoring-logs/binary-log/). It's only sent over the network by a master to a replica server to let it know that the master is still alive, and is only sent when the master has no binlog events to send to replica servers.
 
 {% hint style="info" %}
-This event is never written into the binary log file
+This event is never written to the binary log file.
 {% endhint %}
 
-### Header
+## Header
 
-* Timestamp is set to 0
-* Next position is set to last pos
-* Type is set to HEARTBEAT\_EVENT (0x1b)
+* Timestamp is set to `0`.
+* Next position is set to last position.
+* Type is set to `HEARTBEAT_EVENT` (`0x1b`).
 
-### Fields
+## Fields
 
-* [string](../protocol-data-types.md#fixed-length-bytes) The current master binary log name
+* [string](../protocol-data-types.md#fixed-length-bytes) The current master binary log name.
 
-### Example of Transmission (Without CRC32)
+## Example of Transmission (Without CRC32)
 
 ```
 T 127.0.0.1:8808 -> 127.0.0.1:57157 [AP]
@@ -26,26 +25,26 @@ T 127.0.0.1:8808 -> 127.0.0.1:57157 [AP]
   31 30 30 30 31 33 39                                  1000139
 ```
 
-### Network Replication protocol, 5 bytes
+## Network Replication protocol, 5 bytes
 
-* packet size \[3] = 23 00 00 => 00 00 23 => 35 (ok byte + event size)
-* pkt sequence \[1] = 04
-* OK indicator \[1] = 0 (OK)
+* packet size \[3] = 23 00 00 => 00 00 23 => 35 (ok byte + event size).
+* pkt sequence \[1] = 04.
+* `OK` indicator \[1] = 0 (`OK`).
 
-### Heartbeat event
+## Heartbeat Event
 
-**Header**
+### **Header**
 
-* Timestamp \[4] = 00 00 00 00 => 0
-* Event Type \[1] = 1b => 27
-* Server\_id \[4] = 67 2b 00 00 => 00 00 2b 67 => 111111
-* Event Size \[4] = 22 00 00 00 => 00 00 00 26 => 34 (header + data)
-* Next\_pos \[4] = ed 01 00 00 => 00 00 01 ed => 493
-* Flags \[2] == 20 00 => 00 20 = > 32
+* Timestamp \[4] = 00 00 00 00 => 0.
+* Event Type \[1] = 1b => 27.
+* Server\_id \[4] = 67 2b 00 00 => 00 00 2b 67 => 111111.
+* Event Size \[4] = 22 00 00 00 => 00 00 00 26 => 34 (header + data).
+* Next\_pos \[4] = ed 01 00 00 => 00 00 01 ed => 493.
+* Flags \[2] == 20 00 => 00 20 = > 32.
 
-**Content, string**
+### **Content, String**
 
-* log-bin.1000139
+* log-bin.1000139.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

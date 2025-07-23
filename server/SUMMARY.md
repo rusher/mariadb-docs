@@ -3794,7 +3794,7 @@
       * [OK\_Packet](reference/clientserver-protocol/4-server-response-packets/ok_packet.md)
       * [EOF\_Packet](reference/clientserver-protocol/4-server-response-packets/eof_packet.md)
       * [ERR\_Packet](reference/clientserver-protocol/4-server-response-packets/err_packet.md)
-      * [LOCAL\_INFILE Packet](reference/clientserver-protocol/4-server-response-packets/packet_local_infile.md)
+      * [LOCAL\_INFILE\_Packet](reference/clientserver-protocol/4-server-response-packets/packet_local_infile.md)
     * [Replication Protocol](reference/clientserver-protocol/replication-protocol/README.md)
       * [1-Binlog Events](reference/clientserver-protocol/replication-protocol/1-binlog-events.md)
       * [2-Binlog Event Header](reference/clientserver-protocol/replication-protocol/2-binlog-event-header.md)
