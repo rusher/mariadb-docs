@@ -5,7 +5,7 @@
 
 ## Functions
 
-MariaDB ColumnStore Information Functions are selectable pseudo functions that return MariaDB ColumnStore specific “meta” information to ensure queries can be locally directed to a specific node. These functions can be specified in the projection (SELECT), WHERE, GROUP BY, HAVING and ORDER BY portions of the SQL statement and will be processed in a distributed manner.
+MariaDB ColumnStore Information Functions are selectable pseudo functions that return MariaDB ColumnStore specific “meta” information to ensure queries can be locally directed to a specific node. These functions can be specified in the projection (`SELECT`), `WHERE`, `GROUP BY`, `HAVING` and `ORDER BY` portions of the SQL statement and will be processed in a distributed manner.
 
 | Function                     | Description                                                                                                            |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -20,6 +20,5 @@ MariaDB ColumnStore Information Functions are selectable pseudo functions that r
 | idbPm(column)                | The PM where the physical row resides                                                                                  |
 | idbSegmentDir(column)        | The lowest level directory id for the column file containing the physical row                                          |
 | idbSegment(column)           | The number of the segment file containing the physical row                                                             |
-
 
 {% @marketo/form formId="4316" %}
