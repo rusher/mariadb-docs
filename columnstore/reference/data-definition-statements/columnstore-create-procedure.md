@@ -1,20 +1,12 @@
-
 # ColumnStore Create Procedure
 
- 
-1. [Syntax "Syntax"](#syntax)
-
-
-
-
+1. [Syntax "Syntax"](columnstore-create-procedure.md#syntax)
 
 Creates a stored routine in ColumnStore.
 
-
 ## Syntax
 
-
-```
+```sql
 CREATE
     [DEFINER = { user | CURRENT_USER }]
     PROCEDURE sp_name ([proc_parameter[,...]])
@@ -30,19 +22,15 @@ routine_body:
     Valid SQL procedure statement
 ```
 
-ColumnStore currently accepts definition of stored procedures with only input arguments and a single SELECT query while in Operating Mode = 1 (VTABLE mode). However, while in the Operating Mode = 0 (TABLE mode), ColumnStore will allow additional complex definition of stored procedures (i.e., OUT parameter, declare, cursors,etc.)
+ColumnStore currently accepts definition of stored procedures with only input arguments and a single `SELECT` query while in Operating Mode = 1 (VTABLE mode). However, while in the Operating Mode = 0 (TABLE mode), ColumnStore will allow additional complex definition of stored procedures (i.e., OUT parameter, declare, cursors, etc.)
 
-
-See Operating Mode for information on Operating Modes
-
+See Operating Mode for information on [Operating Modes](../columnstore-operating-mode.md)
 
 images here
 
+The following statements create and call the `sp_complex_variable` stored procedure:
 
-The following statements create and call the sp_complex_variable stored procedure:
-
-
-```
+```sql
 CREATE PROCEDURE sp_complex_variable(IN arg_key INT, IN arg_date DATE)
   BEGIN
     SELECT *
@@ -57,8 +45,6 @@ CREATE PROCEDURE sp_complex_variable(IN arg_key INT, IN arg_date DATE)
 CALL sp_complex_variable(1000, '1998-10-10');
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}
