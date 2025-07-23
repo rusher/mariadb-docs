@@ -3,11 +3,11 @@
 1. [Syntax "Syntax"](columnstore-create-table.md#syntax)
 2. [Notes: "Notes:"](columnstore-create-table.md#notes)
 
-A database consists of tables that store user data. You can create multiple columns with the CREATE TABLE statement. The data type follows the column name when adding columns.
+A database consists of tables that store user data. You can create multiple columns with the `CREATE TABLE` statement. The data type follows the column name when adding columns.
 
 ## Syntax
 
-```
+```sql
 CREATE TABLE [IF NOT EXISTS] tbl_name
     (create_definition,...)  
 ENGINE=columnstore  [ DEFAULT CHARSET=character-set] 
@@ -29,12 +29,12 @@ images here
 
 ## Notes:
 
-* ColumnStore tables should not be created in the mysql, information\_schema, calpontsys, or test databases.
+* ColumnStore tables should not be created in the mysql, `information_schema`, `calpontsys`, or test databases.
 * ColumnStore stores all object names in lowercase.
-* CREATE TABLE AS SELECT is not supported and will instead create the table in the default storage engine.
+* `CREATE TABLE AS SELECT` is not supported and will instead create the table in the default storage engine.
 * Compression level (0 for no compression, 1 for compression) is set at the system level. If a session default exists, it will override the system default. In turn, it can be overridden by the table-level compression comment and, finally, a compression comment at the column level.
 * A table is created in the front end only by using a ‘schema sync only’ comment.
-* The column DEFAULT value can be a maximum of 64 characters.
+* The column `DEFAULT` value can be a maximum of 64 characters.
 * For maximum compatibility with external tools, MariaDB ColumnStore will accept the following table attributes; however, these are not implemented within MariaDB ColumnStore:
   * MIN\_ROWS
   * MAX\_ROWS
@@ -42,7 +42,7 @@ images here
 
 All of these are ignored by ColumnStore. The following statement creates a table called "orders" with two columns: "orderkey" with datatype integer and "customer" with datatype varchar:
 
-```
+```sql
 CREATE TABLE orders (
   orderkey INTEGER, 
   customer VARCHAR(45)
