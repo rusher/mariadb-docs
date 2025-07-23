@@ -1538,11 +1538,21 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value:
-  * `16777216` (16M)
+* Default Value: `16777216` (16M)
 * Range: `1024` to `4294967295`
 * Deprecated: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 * Removed: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
+
+#### `max_open_cursors`
+
+* Description: The maximum number of open [cursors](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-cursors/) allowed per session.
+* Command line: `--max-open-cursors=#`
+* Scope: Global, Session
+* Dynamic: Yes
+* Data Type: `numeric`
+* Default Value: `50`
+* Range: `0` to 65536
+* Introduced: [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
 
 #### `max_password_errors`
 
