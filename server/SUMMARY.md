@@ -1029,7 +1029,7 @@
         * [Table Elimination in Other Databases](ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination/table-elimination-in-other-databases.md)
         * [Table Elimination User Interface](ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination/table-elimination-user-interface.md)
         * [What is Table Elimination?](ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination/what-is-table-elimination.md)
-    * [System Variables](ha-and-performance/optimization-and-tuning/system-variables/README.md)
+    * [System and Status Variables](ha-and-performance/optimization-and-tuning/system-variables/README.md)
       * [Big Query Settings](ha-and-performance/optimization-and-tuning/system-variables/big-query-settings.md)
       * [Handling Too Many Connections](ha-and-performance/optimization-and-tuning/system-variables/handling-too-many-connections.md)
       * [MariaDB Optimization for MySQL Users](ha-and-performance/optimization-and-tuning/system-variables/mariadb-optimization-for-mysql-users.md)
