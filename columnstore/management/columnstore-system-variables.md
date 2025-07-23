@@ -42,16 +42,14 @@ MariaDB ColumnStore has the ability to compress data and this is controlled thro
 
 To set the compression mode at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
-```
+```sql
 set infinidb_compression_type = n
 ```
 
 where n is:
 
-*
-  1. compression is turned off. Any subsequent table create statements run will have compression turned off for that table unless any statement overrides have been performed. Any alter statements run to add a column will have compression turned off for that column unless any statement override has been performed.
-*
-  2. compression is turned on. Any subsequent table create statements run will have compression turned on for that table unless any statement overrides have been performed. Any alter statements run to add a column will have compression turned on for that column unless any statement override has been performed. ColumnStore uses snappy compression in this mode.
+1. compression is `turned off`. Any subsequent table create statements run will have compression turned off for that table unless any statement overrides have been performed. Any alter statements run to add a column will have compression turned off for that column unless any statement override has been performed.
+2. compression is `turned on`. Any subsequent table create statements run will have compression turned on for that table unless any statement overrides have been performed. Any alter statements run to add a column will have compression turned on for that column unless any statement override has been performed. ColumnStore uses snappy compression in this mode.
 
 ## ColumnStore decimal to double math
 
@@ -65,7 +63,7 @@ The infinidb\_double\_for\_decimal\_math variable is used to control the data ty
 
 To enable/disable the use of the decimal to double math at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
-```
+```sql
 set infinidb_double_for_decimal_math = on
 ```
 
@@ -76,13 +74,15 @@ where n is:
 
 ### ColumnStore decimal scale
 
-ColumnStore has the ability to support varied internal precision on decimal calculations. _infinidb\_decimal\_scale_ is used internally by the ColumnStore engine to control how many significant digits to the right of the decimal point are carried through in suboperations on calculated columns. If, while running a query, you receive the message ‘aggregate overflow’, try reducing _infinidb\_decimal\_scale_ and running the query again. Note that,as you decrease _infinidb\_decimal\_scale_, you may see reduced accuracy in the least significant digit(s) of a returned calculated column. _infinidb\_use\_decimal\_scale_ is used internally by the ColumnStore engine to turn the use of this internal precision on and off. These two system variables may be set as a default for the instance or set at the session level.
+ColumnStore has the ability to support varied internal precision on decimal calculations. _`infinidb_decimal_scale`_ is used internally by the ColumnStore engine to control how many significant digits to the right of the decimal point are carried through in suboperations on calculated columns. If, while running a query, you receive the message ‘aggregate overflow’, try reducing _`infinidb_decimal_scale`_ and running the query again.&#x20;
+
+Note that, as you decrease _`infinidb_decimal_scale`_, you may see reduced accuracy in the least significant digit(s) of a returned calculated column. _`infinidb_use_decimal_scale`_ is used internally by the ColumnStore engine to turn the use of this internal precision on and off. These two system variables may be set as a default for the instance or set at the session level.
 
 #### Enable/disable decimal scale
 
 To enable/disable the use of the decimal scale at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
-```
+```sql
 set infinidb_use_decimal_scale = on
 ```
 
@@ -92,7 +92,7 @@ where _n_ is off (disabled) or on (enabled).
 
 To set the decimal scale at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
-```
+```sql
 set infinidb_decimal_scale = n
 ```
 
@@ -111,7 +111,7 @@ Disk-based joins enable such queries to use disk for intermediate join data in c
 **Note:Disk-based joins does not include aggregation and DML joins.**
 {% endhint %}
 
-The following variables in the _HashJoin_ element in the Columnstore.xml configuration file relate to disk-based joins. Columnstore.xml resides in the etc directory for your installation(/usr/local/mariadb/columnstore/etc).
+The following variables in the _HashJoin_ element in the Columnstore.xml configuration file relate to disk-based joins. Columnstore.xml resides in the etc. directory for your installation(/usr/local/mariadb/columnstore/etc).
 
 * AllowDiskBasedJoin – Option to use disk-based joins. Valid values are Y (enabled) or N (disabled). Default is disabled.
 * TempFileCompression – Option to use compression for disk join files. Valid values are Y (use compressed files) or N (use non-compressed files).
@@ -125,12 +125,12 @@ The following variables in the _HashJoin_ element in the Columnstore.xml configu
 
 In addition to the system wide flags, at SQL global and session level, the following system variables exists for managing per user memory limit for joins.
 
-* infinidb\_um\_mem\_limit - A value for memory limit in MB per user. When this limit is exceeded by a join, it will switch to a disk-based join. By default the limit is not set (value of 0).
+* infinidb\_um\_mem\_limit - A value for memory limit in MB per user. When this limit is exceeded by a join, it will switch to a disk-based join. By default, the limit is not set (value of 0).
 
 For modification at the global level:\
-In my.cnf file (typically /usr/local/mariadb/columnstore/mysql):
+In `my.cnf file` (typically /usr/local/mariadb/columnstore/mysql):
 
-```
+```sql
 [mysqld]
 ...
 infinidb_um_mem_limit = value
@@ -139,7 +139,7 @@ where value is the value in Mb for in memory limitation per user.
 
 For modification at the session level, before issuing your join query from the SQL client, set the session variable as follows.
 
-```
+```sql
 set infinidb_um_mem_limit = value
 ```
 
@@ -153,11 +153,11 @@ MariaDB ColumnStore has the ability to utilize the cpimport fast data import too
 
 ### Enable/disable using cpimport for batch insert
 
-The infinidb\_use\_import\_for\_batchinsert variable is used to control if cpimport is used for these statements. This variable may be set as a default for the instance, set at the session level, or at the statement level by toggling this variable on and off.
+The `infinidb_use_import_for_batchinsert` variable is used to control if cpimport is used for these statements. This variable may be set as a default for the instance, set at the session level, or at the statement level by toggling this variable on and off.
 
 To enable/disable the use of the use cpimport for batch insert at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
-```
+```sql
 set infinidb_use_import_for_batchinsert = n
 where n is:
 * 0 (disabled)
@@ -166,11 +166,11 @@ where n is:
 
 ### Changing default delimiter for INSERT SELECT
 
-* The infinidb\_import\_for\_batchinsert\_delimiter variable is used internally by MariaDB ColumnStore on a non-transactional INSERT INTO SELECT FROM statement as the default delimiter passed to the cpimport tool. With a default value ascii 7, there should be no need to change this value unless your data contains ascii 7 values.
+* The `infinidb_import_for_batchinsert_delimite`r variable is used internally by MariaDB ColumnStore on a non-transactional `INSERT INTO SELECT FROM` statement as the default delimiter passed to the cpimport tool. With a default value ascii 7, there should be no need to change this value unless your data contains ascii 7 values.
 
 To change this variable value at the at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
-```
+```sql
 set infinidb_import_for_batchinsert_delimiter = ascii_value
 where ascii_value is an ascii value representation of the delimiter desired.
 ```
@@ -179,25 +179,25 @@ Note that this setting may cause issues with multi byte character set data. It i
 
 ### Version buffer file management
 
-If the following error is received, most likely with a transaction LOAD DATA INFILE or INSERT INTO SELECT then it is recommended to break up the load into multiple smaller chunks, increase the VersionBufferFileSize setting, or consider a non transactional LOAD DATA INFILE or to use cpimport.
+If the following error is received, most likely with a transaction `LOAD DATA INFILE or INSERT INTO SELECT` then it is recommended to break up the load into multiple smaller chunks, increase the VersionBufferFileSize setting, or consider a non-transactional `LOAD DATA INFILE` or to use cpimport.
 
-```
+```sql
 ERROR 1815 (HY000) at line 1 in file: 'ldi.sql': Internal error: CAL0006: IDB-2008: The version buffer overflowed. Increase VersionBufferFileSize or limit the rows to be processed.
 ```
 
-The VersionBufferFileSize setting is updated in the ColumnStore.xml typically located under /usr/local/mariadb/columnstore/etc. This dictates the size of the version buffer file on disk which provides DML transactional consistency. The default value is '1GB' which reserves up to a 1 Gigabyte file size. Modify this on the PM1 node and restart the system if you require a larger value.
+The `VersionBufferFileSize` setting is updated in the `ColumnStore.xml` typically located under `/usr/local/mariadb/columnstore/etc`. This dictates the size of the version buffer file on disk which provides DML transactional consistency. The default value is '1GB' which reserves up to a 1 Gigabyte file size. Modify this on the PM1 node and restart the system if you require a larger value.
 
 ## Local PM query mode
 
-MariaDB ColumnStore has the ability to query data from just a single [PM](../architecture/columnstore-performance-module.md) instead of the whole database through the [UM](../architecture/columnstore-user-module.md). In order to accomplish this, the infinidb\_local\_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
+MariaDB ColumnStore has the ability to query data from just a single [PM](../architecture/columnstore-performance-module.md) instead of the whole database through the [UM](../architecture/columnstore-user-module.md). In order to accomplish this, the `infinidb_local_query` variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
 
 `<<toc title='' layout=standalone>>`
 
 ### Enable local PM query during installation
 
-Local PM query can be enabled system wide during the install process when running the install script postConfigure. Answer 'y' to this prompt during the install process.
+Local PM query can be enabled system wide during the install process when running the install script `postConfigure`. Answer 'y' to this prompt during the install process.
 
-```
+```sql
 NOTE: Local Query Feature allows the ability to query data from a single Performance
       Module. Check MariaDB ColumnStore Admin Guide for additional information.
 
@@ -208,13 +208,13 @@ installing-and-configuring-a-multi-server-columnstore-system-11x.md
 
 ### Enable local PM query systemwide
 
-To enable the use of the local PM Query at the instance level, specify `infinidb_local_query =1` (enabled) in the my.cnf configuration file at /usr/local/mariadb/columnstore/mysql. The default is 0 (disabled).
+To enable the use of the local PM Query at the instance level, specify `infinidb_local_query =1` (enabled) in the `my.cnf` configuration file at `/usr/local/mariadb/columnstore/mysql`. The default is 0 (disabled).
 
 ### Enable/disable local PM query at the session level
 
 To enable/disable the use of the local PM Query at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
-```
+```sql
 set infinidb_local_query = n
 where n is:
 * 0 (disabled)
@@ -227,32 +227,32 @@ At the session level, this variable applies only to executing a query on an indi
 
 #### Example 1 - SELECT from a single table on local PM to import back on local PM:
 
-With the infinidb\_local\_query variable set to 1 (default with local PM Query):
+With the `infinidb_local_query` variable set to 1 (default with local PM Query):
 
-```
+```sql
 mcsmysql -e 'select * from source_schema.source_table;' –N | /usr/local/Calpont/bin/cpimport target_schema target_table -s '\t' –n1
 ```
 
 #### Example 2 - SELECT involving a join between a fact table on the PM node and dimension table across all the nodes to import back on local PM:
 
-With the infinidb\_local\_query variable set to 0 (default with local PM Query):
+With the `infinidb_local_query` variable set to 0 (default with local PM Query):
 
-Create a script (i.e., extract\_query\_script.sql in our example) similar to the following:
+Create a script (i.e., `extract_query_script.sql` in our example) similar to the following:
 
-```
+```sql
 SET infinidb_local_query=0;
 SELECT fact.column1, dim.column2 
 FROM fact JOIN dim USING (KEY) 
 WHERE idbPm(fact.KEY) = idbLocalPm();
 ```
 
-The infinidb\_local\_query is set to 0 to allow query across all PMs.
+The `infinidb_local_query` is set to 0 to allow query across all PMs.
 
 The query is structured so that the UM process on the PM node gets the fact table data locally from the PM node (as indicated by the use of the [idbLocalPm()](../reference/columnstore-information-functions.md) function), while the dimension table data is extracted from all the PM nodes.
 
 Then you can execute the script to pipe it directly into cpimport:
 
-```
+```sql
 mcsmysql source_schema -N < extract_query_script.sql | /usr/local/mariadb/columnstore/bin/cpimport target_schema target_table -s '\t' –n1
 ```
 
@@ -260,18 +260,17 @@ mcsmysql source_schema -N < extract_query_script.sql | /usr/local/mariadb/column
 
 ColumnStore has the ability to support full MariaDB query syntax through an operating mode. This operating mode may be set as a default for the instance or set at the session level. To set the operating mode at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
-```
+```sql
 set infinidb_vtable_mode = n
 ```
 
 where n is:
 
-*
-  1. a generic, highly compatible row-by-row processing mode. Some WHERE clause components can be processed by ColumnStore, but joins are processed entirely by mysqld using a nested-loop join mechanism.
-*
-  1. (the default) query syntax is evaluated by ColumnStore for compatibility with distributed execution and incompatible queries are rejected. Queries executed in this mode take advantage of distributed execution and typically result in higher performance.
-*
-  2. auto-switch mode: ColumnStore will attempt to process the query internally, if it cannot, it will automatically switch the query to run in row-by-row mode.
+
+
+1. a generic, highly compatible row-by-row processing mode. Some WHERE clause components can be processed by ColumnStore, but joins are processed entirely by MySQL using a nested loop join mechanism.
+2. (the default) query syntax is evaluated by ColumnStore for compatibility with distributed execution and incompatible queries are rejected. Queries executed in this mode take advantage of distributed execution and typically result in higher performance.
+3. auto-switch mode: ColumnStore will attempt to process the query internally, if it cannot, it will automatically switch the query to run in row-by-row mode.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
