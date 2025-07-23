@@ -2,13 +2,13 @@
 
 ## Overview
 
-MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise ColumnStore uses S3-compatible object storage for data and shared local storage for the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory), the S3 bucket, the Storage Manager directory, and the MariaDB data directory must be backed up separately.
+MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise ColumnStore uses [S3-compatible object storage](../../architecture/columnstore-architectural-overview.md#s3-compatible-object-storage) for data and shared local storage for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory), the S3 bucket, the Storage Manager directory, and the MariaDB data directory must be backed up separately.
 
 ## Recovery Planning
 
 MariaDB Enterprise ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
 
-This page discusses how to backup and restores Enterprise ColumnStore when it uses [S3-compatible object storage](../../architecture/columnstore-architectural-overview.md#s3-compatible-object-storage) for data and shared local storage (such as NFS) for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory).
+This page discusses how to backup and restore Enterprise ColumnStore when it uses [S3-compatible object storage](../../architecture/columnstore-architectural-overview.md#s3-compatible-object-storage) for data and shared local storage (such as NFS) for the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory).
 
 Any file can become corrupt due to hardware issues, crashes, power loss, and other reasons. If the Enterprise ColumnStore data or metadata become corrupt, Enterprise ColumnStore could become unusable, resulting in data loss.
 
@@ -156,7 +156,7 @@ $ sudo rsync -av /backups/columnstore/202101291600/storagemanager/ /var/lib/colu
 $ sudo chown -R mysql:mysql /var/lib/columnstore/storagemanager
 ```
 
-4. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) to restore the backup of the MariaDB data directory:
+4. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) to restore the backup of the MariaDB data directory:
 
 ```bash
 $ sudo mariadb-backup --copy-back \
