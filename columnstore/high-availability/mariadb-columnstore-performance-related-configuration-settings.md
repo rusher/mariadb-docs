@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Performance Related Configuration Settings
 
 ## MariaDB ColumnStore
@@ -33,11 +19,11 @@ Convenience utility programs _getConfig_ and _setConfig_ are available to safely
 
 ## Memory management - NumBlocksPct and TotalUmMemory
 
-The _NumBlocksPct_ configuration parameter specifies the percentage of physical memory to utilize for disk block caching. For a Single Server or Combined Multi Server deployment the default value is 50 to ensure enough physical memory for the UM and for a non combined multi serve deployment the default value is 70.
+The _`NumBlocksPct`_ configuration parameter specifies the percentage of physical memory to utilize for disk block caching. For a Single Server or Combined Multi Server deployment, the default value is 50 to ensure enough physical memory for the UM and for a non-combined multi serve deployment the default value is 70.
 
-The _TotalUmMemory_ configuration parameter specifies the percentage of physical memory to utilize for joins, intermediate results and set operations on the UM. This specifies an upper limit for small table results in joins rather than a pre-allocation of memory.
+The _`TotalUmMemory`_ configuration parameter specifies the percentage of physical memory to utilize for joins, intermediate results and set operations on the UM. This specifies an upper limit for small table results in joins rather than a pre-allocation of memory.
 
-In a single server or combined deployment, the sum of _NumBlocksPct_ and _TotalUmMemory_ should typically not exceed 75% of physical memory. With very large memory servers this could be raised but the key point is to leave enough memory for other processes including mysqld.
+In a single server or combined deployment, the sum of _`NumBlocksPct`_ and _TotalUmMemory_ should typically not exceed 75% of physical memory. With very large memory servers this could be raised but the key point is to leave enough memory for other processes including mysqld.
 
 With version 1.2.2 onwards these can be set to static numeric limits instead of percentages by entering a number with 'M' or 'G' at the end to signify MiB or GiB.
 
@@ -53,7 +39,7 @@ This scheme allows for large queries to use all available resources when not oth
 
 How many Queries are running and how many queries are currently in the queue can be checked with
 
-```
+```sql
 SELECT calgetsqlcount();
 ```
 
@@ -68,7 +54,7 @@ ColumnStore maintains statistics for table and utilizes this to determine which 
 
 The above logic for a single table join extrapolates out to multi table joins where the small table values are precalculated and performed as one single scan against the large table. This works well for the typical star schema case joining multiple dimension tables with a large fact table. For some join scenarios it may be necessary to sequence joins to create the intermediate datasets for joining, this would happen for instance with a snowflake schema structure. In some extreme cases it may be hard for the optimizer to be able to determine the most optimal join path. In this case a hint is available to force a join ordering. The `INFINIDB_ORDERED` hint will force the first table in the from clause to be considered the largest table and override any statistics based decision, for example:
 
-```
+```sql
 SELECT /*! INFINIDB_ORDERED */ r_regionkey     
 FROM region r, customer c, nation n    
 WHERE r.r_regionkey = n.n_regionkey      
@@ -80,22 +66,22 @@ Note: `INFINIDB\_ORDERED` is deprecated and does not work anymore for ColumnStor
 {% endhint %}
 
 use\
-set infinidb\_ordered\_only=ON;
+`set infinidb_ordered_only=ON;`
 
 and for 1.4\
-set columnstore\_ordered\_only=ON;
+`set columnstore_ordered_only=ON;`
 
-## Disk based joins - AllowDiskBasedJoin
+## Disk-based joins - AllowDiskBasedJoin
 
-When a join is very large and exceeds the _PmMaxMemorySmallSide_ setting it is performed in memory in the UM server. For very large joins this could exceed the available memory in which case this is detected and a query error reported. A number of configuration parameters are available to enable and configure usage of disk overflow should this occur:
+When a join is very large and exceeds the _`PmMaxMemorySmallSide`_ setting, it is performed in memory in the UM server. For very large joins, this could exceed the available memory, in which case this is detected and a query error reported. Several configuration parameters are available to enable and configure usage of disk overflow should this occur:
 
 * AllowDiskBasedJoin – Controls the option to use disk Based joins or not. Valid values are Y (enabled) or N (disabled). By default, this option is disabled.
 * TempFileCompression – Controls whether the disk join files are compressed or noncompressed. Valid values are `Y` (use compressed files) or `N` (use non-compressed files).
-* TempFilePath – The directory path used for the disk joins. By default, this path is the tmp directory for your installation (i.e., `/usr/local/mariadb/columnstore/tmp`). Files (named `infinidb-join-data*`) in this directory will be created and cleaned on an as needed basis. The entire directory is removed and recreated by `ExeMgr` at startup. It is strongly recommended that this directory is stored on a dedicated partition.
+* TempFilePath – The directory path used for the disk joins. By default, this path is the tmp directory for your installation (i.e., `/usr/local/mariadb/columnstore/tmp`). Files (named `infinidb-join-data*`) in this directory will be created and cleaned on an as-needed basis. The entire directory is removed and recreated by `ExeMgr` at startup. It is strongly recommended that this directory be stored on a dedicated partition.
 
-A mariadb global or session variable is available to specify a memory limit at which point the query is switched over to disk based joins:
+A MariaDB global or session variable is available to specify a memory limit at which point the query is switched over to disk-based joins:
 
-* `infinidb_um_mem_limit` - Memory limit in MB per user (i.e. switch to disk based join if this limit is exceeded). By default, this limit is not set (value of 0).
+* `infinidb_um_mem_limit` - Memory limit in MB per user (i.e., switch to disk-based join if this limit is exceeded). By default, this limit is not set (value of 0).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
