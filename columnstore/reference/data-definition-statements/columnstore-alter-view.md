@@ -2,12 +2,11 @@
 
 1. [Syntax "Syntax"](columnstore-alter-view.md#syntax)
 
-Alters the definition of a view. CREATE OR REPLACE VIEW may also be used to alter the definition\
-of a view.
+Alters the definition of a view. `CREATE OR REPLACE VIEW` may also be used to alter the definition of a view.
 
 ## Syntax
 
-```
+```sql
 CREATE
     [OR REPLACE]
     VIEW view_name [(column_list)]
