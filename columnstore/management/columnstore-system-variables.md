@@ -34,8 +34,6 @@ hidden: true
 | infinidb\_varbin\_always\_hex                                                                                     | Yes      | Both  | enumeration | ON            | OFF, ON |
 | [infinidb\_vtable\_mode](columnstore-system-variables.md#operating-mode)                                          | Yes      | Both  | enumeration | 1             | 0,1,2   |
 
-`<<toc>>`
-
 ## Compression mode
 
 MariaDB ColumnStore has the ability to compress data and this is controlled through a compression mode. This compression mode may be set as a default for the instance or set at the session level.
