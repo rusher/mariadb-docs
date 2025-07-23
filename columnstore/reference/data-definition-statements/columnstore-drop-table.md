@@ -7,19 +7,19 @@ The [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-st
 
 ## Syntax
 
-```
+```sql
 DROP  TABLE [IF EXISTS] 
     tbl_name 
     [RESTRICT ]
 ```
 
-The RESTRICT clause limits the table to being dropped in the front end only. This could be useful when the table has been dropped on one user module, and needs to be synced to others.
+The `RESTRICT` clause limits the table to being dropped in the front end only. This could be useful when the table has been dropped on one user module and needs to be synced to others.
 
 images here
 
 The following statement drops the _orders_ table on the front end only:
 
-```
+```sql
 DROP TABLE orders RESTRICT;
 ```
 
