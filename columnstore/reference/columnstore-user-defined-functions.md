@@ -49,7 +49,7 @@ Three functions are required to be implemented (for more details see [user-defin
 
 The function name and class must be registered in order to be recognized and used by the ColumnStore primitive processor. This is done by adding a line to perform the registration in the _UDFSDK::UDFMap()_ function in the file **udfsdk.cpp**:
 
-```
+```sql
 FuncMap UDFSDK::UDFMap() const
 {
 	FuncMap fm;
@@ -84,9 +84,9 @@ containing the compiled code
 
 ### Deploying and using a UDF
 
-The 2 libraries created above must be deployed to the **/usr/local/mariadb/columnstore/lib** directory (or equivalent lib directory in a non root install) replacing the existing files. Symbolic links in the mariadb server directory point to these but should be validated. Run the following as root from the **utils/udfsdk** directory in the build tree (specifying a password to restartSystem if needed for a multi server cluster):
+The 2 libraries created above must be deployed to the **/usr/local/mariadb/columnstore/lib** directory (or equivalent lib directory in a non-root install) replacing the existing files. Symbolic links in the mariadb server directory point to these but should be validated. Run the following as root from the **utils/udfsdk** directory in the build tree (specifying a password to `restartSystem` if needed for a multi-server cluster):
 
-```
+```sql
 $ cp libudf_mysql.so.1.0.0 libudfsdk.so.1.0.0 /usr/local/mariadb/columnstore/lib/
 $ ls -l /usr/local/mariadb/columnstore/mysql/lib/plugin/libudf_mysql.so
 lrwxrwxrwx. 1 root root 56 Jul 19 09:47 /usr/local/mariadb/columnstore/mysql/lib/plugin/libudf_mysql.so -> /usr/local/mariadb/columnstore/lib/libudf_mysql.so.1.0.0
@@ -94,16 +94,16 @@ lrwxrwxrwx. 1 root root 56 Jul 19 09:47 /usr/local/mariadb/columnstore/mysql/lib
 
 Repeat this for each ColumnStore UM and PM node in the cluster and then restart ColumnStore to make the libraries available.
 
-After restarting the system the UDF must be registered with the MariaDB server to be usable:
+After restarting the system, the UDF must be registered with the MariaDB server to be usable:
 
-```
+```sql
 $ mcsmysql
     > create function mcs_add returns integer soname 'libudf_mysql.so';
 ```
 
-The function _mcs\_add_ can then be used. Verify that it can be used both in the select list and where clause for correct installation:
+The function _`mcs_add`_ can then be used. Verify that it can be used both in the select list and where clause for correct installation:
 
-```
+```sql
 MariaDB [test]> create function mcs_add returns integer soname 'libudf_mysql.so';
 Query OK, 0 rows affected (0.01 sec)
 
