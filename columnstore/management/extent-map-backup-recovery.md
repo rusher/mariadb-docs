@@ -22,31 +22,31 @@ To safeguard against potential Extent Map corruption, regularly back up the mast
 
 1. Lock Table:
 
-```
+```sql
 mariadb -e "FLUSH TABLES WITH READ LOCK;"
 ```
 
 2. Save BRM:
 
-```
+```sql
 save_brm
 ```
 
 3. Create Backup Directory:
 
-```
+```sql
 mkdir -p /extent_map_backup
 ```
 
 4. Copy Extent Map:
 
-```
+```sql
 cp -f /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /extent_map_backup
 ```
 
 5. Unlock Tables:
 
-```
+```sql
 mariadb -e "UNLOCK TABLES;"
 ```
 
@@ -56,37 +56,37 @@ mariadb -e "UNLOCK TABLES;"
 
 1. Stop ColumnStore:
 
-```
+```sql
 systemctl stop mariadb-columnstore
 ```
 
 2. Rename Corrupted Map:
 
-```
+```sql
 mv /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /tmp/BRM_saves_em.bad
 ```
 
 3. Clear Versioning Files:
 
-```
+```sql
 > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss
 ```
 
 1. Restore Backup:
 
-```
+```sql
 cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/
 ```
 
 4. Set Ownership:
 
-```
+```sql
 chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm/
 ```
 
 5. Start ColumnStore:
 
-```
+```sql
 systemctl start mariadb-columnstore
 ```
 
@@ -94,43 +94,45 @@ systemctl start mariadb-columnstore
 
 1. Shutdown Cluster:
 
-```
+```sql
 curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/shutdown \ --header 'Content-Type:application/json' \ --header 'x-api-key:your_api_key' \ --data '{"timeout":60}' -k
 ```
 
 2. Rename Corrupted Map:
 
-```
+```sql
 mv /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /tmp/BRM_saves_em.bad
 ```
 
 3. Clear Versioning Files:
 
-```
+```sql
 > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss
 ```
 
 4. Restore Backup:
 
-```
+```sql
 mv cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/
 ```
 
 5. Set Ownership:
 
-```
+```sql
 chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm
 ```
 
 6. Start Cluster:
 
-```
+```sql
 curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/start \ --header 'Content-Type:application/json' \ --header 'x-api-key:your_api_key' \ --data '{"timeout":60}' -k
 ```
 
 ## Automation Recommendation
 
-Incorporate the `save_brm` command into your data import scripts (e.g., those using `cpimport`) to automate Extent Map backups. This practice ensures regular backups without manual intervention. Refer to the MariaDB ColumnStore Backup Script for an example implementation.​
+Incorporate the `save_brm` command into your data import scripts (e.g., those using `cpimport`) to automate Extent Map backups. This practice ensures regular backups without manual intervention.&#x20;
+
+Refer to the MariaDB ColumnStore Backup Script for an example implementation.​
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
