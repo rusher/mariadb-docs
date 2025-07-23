@@ -37,7 +37,7 @@ Technically, you can use external links for links to docs content, you just put 
 Relative links are links to a page in the same space, relative to the page you are editing. For example a relative link to the [Joining the Community](../../community/joining-the-community.md) page, from this page, looks like this in Markdown:
 
 ```
-[Joining the Community](../community/joining-the-community.md)
+[Joining the Community](../../community/joining-the-community.md)
 ```
 
 One big limitation of relative links is that they cannot cross [_**Space**_](about-links.md#about-spaces) boundaries.&#x20;
