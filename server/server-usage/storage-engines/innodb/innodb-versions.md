@@ -43,21 +43,21 @@ Some examples of divergences between MariaDB's InnoDB and MySQL's InnoDB are:
 
 ### [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
 
-| InnoDB Version | Introduced                                                                                                                                                    |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| InnoDB 5.6.49  | [MariaDB 10.1.46](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10146-release-notes) |
-| InnoDB 5.6.47  | [MariaDB 10.1.44](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10144-release-notes) |
-| InnoDB 5.6.44  | [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes) |
-| InnoDB 5.6.42  | [MariaDB 10.1.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10137-release-notes) |
-| InnoDB 5.6.39  | [MariaDB 10.1.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes) |
-| InnoDB 5.6.37  | [MariaDB 10.1.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10126-release-notes) |
-| InnoDB 5.6.36  | [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes) |
-| InnoDB 5.6.35  | [MariaDB 10.1.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10121-release-notes) |
-| InnoDB 5.6.33  | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
-| InnoDB 5.6.32  | [MariaDB 10.1.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10117-release-notes) |
-| InnoDB 5.6.31  | [MariaDB 10.1.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes) |
-| InnoDB 5.6.30  | [MariaDB 10.1.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10114-release-notes) |
-| InnoDB 5.6.29  | [MariaDB 10.1.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10112-release-notes) |
+| InnoDB Version | Introduced                                                                                                                                                      |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| InnoDB 5.6.49  | [MariaDB 10.1.46](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10146-release-notes)   |
+| InnoDB 5.6.47  | [MariaDB 10.1.44](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10144-release-notes)   |
+| InnoDB 5.6.44  | [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes)   |
+| InnoDB 5.6.42  | [MariaDB 10.1.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10137-release-notes)   |
+| InnoDB 5.6.39  | [MariaDB 10.1.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes)   |
+| InnoDB 5.6.37  | [MariaDB 10.1.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10126-release-notes)   |
+| InnoDB 5.6.36  | [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes)   |
+| InnoDB 5.6.35  | [MariaDB 10.1.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10121-release-notes)   |
+| InnoDB 5.6.33  | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes)   |
+| InnoDB 5.6.32  | [MariaDB 10.1.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10117-release-notes)   |
+| InnoDB 5.6.31  | [MariaDB 10.1.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes)   |
+| InnoDB 5.6.30  | [MariaDB 10.1.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-11-4-release-notes) |
+| InnoDB 5.6.29  | [MariaDB 10.1.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10112-release-notes)   |
 
 ### [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
