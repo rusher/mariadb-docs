@@ -4,13 +4,13 @@ hidden: true
 
 # Configuring ColumnStore Cross-Engine Joins
 
-MariaDB ColumnStore allows columnstore tables to be joined with non-columnstore tables (e.g. [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) tables) within a query. The non-columnstore table may be on the MariaDB ColumnStore system OR on an external server that supports MariaDB client connections.
+MariaDB ColumnStore allows columnstore tables to be joined with non-columnstore tables (e.g. [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) tables) within a query. The non-columnstore table may be on the MariaDB ColumnStore system OR on an external server that supports MariaDB client connections.
 
-To enable this process, the section in Columnstore.xml is configured with connection information.
+To enable this process, the section in `Columnstore.xml` is configured with connection information.
 
-The following is an example entry in the Columnstore.XML configuration file to gain access to joined tables Single Server MariaDB ColumnStore install. The Host needs to be either 127.0.0.1 or 'localhost':
+The following is an example entry in the Columnstore.XML configuration file to gain access to joined tables, Single Server MariaDB ColumnStore install. The Host needs to be either 127.0.0.1 or 'localhost':
 
-```
+```sql
 <CrossEngineSupport>
        <Host>127.0.0.1</Host>
        <Port>3306</Port>
@@ -25,7 +25,7 @@ If the MariaDB Client is running on an external Server, then it would be the IP 
 
 For version 1.2.0 onwards the additional options in the section are supported to add SSL/TLS encryption to the connections:
 
-```
+```sql
 <TLSCA></TLSCA>
        <TLSClientCert></TLSClientCert>
        <TLSClientKey></TLSClientKey>
@@ -41,23 +41,23 @@ Check here on how to make changes via the command line to Columnstore.xml:
 
 **ERROR 1815 (HY000): Internal error: IDB-8001: CrossEngineSupport section in Columnstore.xml is not properly configured**
 
-* Confirm that Columnstore.xml was correctly updated on pm1 and the server restarted.
+* Confirm that `Columnstore.xml` was correctly updated on pm1 and the server restarted.
 
-**ERROR 1815 (HY000): Internal error: fatal error in drizzle\_con\_connect()(23)(23)**
+**ERROR 1815 (HY000): Internal error: fatal error in drizzle\_con\_connect() (23)(23)**
 
-* Confirm that the values specified for CrossEngineSupport in ColumnStore.xml are correct for the login to be used.
+* Confirm that the values specified for `CrossEngineSupport` in `ColumnStore.xml` are correct for the login to be used.
 
-**ERROR 1815 (HY000): Internal error: fatal error executing query in crossengine client lib(17)(17)**
+**ERROR 1815 (HY000): Internal error: fatal error executing query in crossengine client lib (17)(17)**
 
-* Confirm that the login used has create temporary tables permission on infinidb\_vtable:
+* Confirm that the login used has create temporary tables permission on `infinidb_vtable`:
 
-```
+```sql
 grant create temporary tables on infinidb_vtable.* to mydbuser@127.0.0.1;
 ```
 
-* Confirm that the login used has grant SELECT on the table referenced in the cross engine join. Verify by attempting to connect from each UM using mcsmysql and query the table you want to reference:
+* Confirm that the login used has grant `SELECT` on the table referenced in the cross-engine join. Verify by attempting to connect from each UM using mcsmysql and query the table you want to reference:
 
-```
+```sql
 mcsmysql -u mydbuser -p -h 127.0.0.1 
 > use mydb;
 > select * from innodb_table limit 10;
@@ -65,7 +65,7 @@ mcsmysql -u mydbuser -p -h 127.0.0.1
 
 ## Notes
 
-* Cross engine will not work against a MyISAM/Aria table that has 0 or 1 rows in it. This is due to MariaDB's optimizer shortcut for this specific condition. We recommend using InnoDB instead of MyISAM/Aria for this case.
+* Cross engine will not work against a `MyISAM/Aria` table that has 0 or 1 rows in it. This is due to MariaDB's optimizer shortcut for this specific condition. We recommend using InnoDB instead of `MyISAM/Aria` for this case.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
