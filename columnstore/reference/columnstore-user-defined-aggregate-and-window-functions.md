@@ -17,9 +17,11 @@ Similar to built-in functions, the SDK supports distributed aggregate execution 
 
 ## Using user defined aggregate functions
 
-The reference examples above are included in the standard build of MariaDB ColumnStore and so can be used by registering them as user defined aggregate functions. The same can be done for new functions assuming the instance has the updated libraries included. From a mcsmysql prompt:
+The reference examples above are included in the standard build of MariaDB ColumnStore and so can be used by registering them as user defined aggregate functions. The same can be done for new functions assuming the instance has the updated libraries included.
 
-```
+&#x20;From a `mcsmysql` prompt:
+
+```sql
 CREATE AGGREGATE FUNCTION median RETURNS REAL soname 'libudf_mysql.so';
 CREATE AGGREGATE FUNCTION avg_mode RETURNS REAL soname 'libudf_mysql.so';
 CREATE AGGREGATE FUNCTION ssq RETURNS REAL soname 'libudf_mysql.so';
@@ -27,7 +29,7 @@ CREATE AGGREGATE FUNCTION ssq RETURNS REAL soname 'libudf_mysql.so';
 
 After this these may be used in the same way as any other aggregate or window function like sum:
 
-```
+```sql
 SELECT grade, 
 AVG(loan_amnt) AVG, 
 MEDIAN(loan_amnt) median 
@@ -44,7 +46,7 @@ This requires a MariaDB ColumnStore source tree and necessary tools to compile C
 
 ## Limitations
 
-* The implementation of the median and avg\_mode functions will scale in memory consumption to the size of the set of unique values in the aggregation.
+* The implementation of the median and `avg_mode` functions will scale in memory consumption to the size of the set of unique values in the aggregation.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
