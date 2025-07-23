@@ -1293,13 +1293,13 @@ New error codes are being continually being added as new features are added. For
 
 | Error Code                                        | SQLSTATE | Error                                | Description                                                                                                                            |
 | ------------------------------------------------- | -------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [4200](mariadb-error-codes-4200-to-4299/e4200.md) |          | ER\_SEQUENCE\_TABLE\_ORDER\_BY       | ORDER BY                                                                                                                               |
-| [4201](mariadb-error-codes-4200-to-4299/e4201.md) |          | ER\_VARIABLE\_IGNORED                | The variable '%s' is ignored. It only exists for compatibility with old installations and will be removed in a future release          |
-| [4202](mariadb-error-codes-4200-to-4299/e4202.md) |          | ER\_INCORRECT\_COLUMN\_NAME\_COUNT   | Incorrect column name count for derived table.                                                                                         |
-| [4203](mariadb-error-codes-4200-to-4299/e4203.md) |          | WARN\_SORTING\_ON\_TRUNCATED\_LENGTH | Values were longer than max\_sort\_length. Sorting used only the first bytes.                                                          |
-| [4204](mariadb-error-codes-4200-to-4299/e4204.md) |          | ER\_VECTOR\_BINARY\_FORMAT\_INVALID  | Invalid binary vector format. Must use IEEE standard float representation in little-endian format. Use VEC\_FromText() to generate it. |
-| [4205](mariadb-error-codes-4200-to-4299/e4205.md) |          | ER\_VECTOR\_FORMAT\_INVALID          | Invalid vector format at offset: %d for '%-.100s'. Must be a valid JSON array of numbers.                                              |
-| [4206](mariadb-error-codes-4200-to-4299/e4206.md) |          | ER\_VEC\_DISTANCE\_TYPE              | Cannot determine distance type for VEC\_DISTANCE, index is not found                                                                   |
+| [4200](mariadb-error-codes-4200-to-4299/e4200.md) |          | `ER\_SEQUENCE\_TABLE\_ORDER\_BY`       | ORDER BY                                                                                                                               |
+| [4201](mariadb-error-codes-4200-to-4299/e4201.md) |          | `ER\_VARIABLE\_IGNORED`                | The variable '%s' is ignored. It only exists for compatibility with old installations and will be removed in a future release          |
+| [4202](mariadb-error-codes-4200-to-4299/e4202.md) |          | `ER\_INCORRECT\_COLUMN\_NAME\_COUNT`   | Incorrect column name count for derived table.                                                                                         |
+| [4203](mariadb-error-codes-4200-to-4299/e4203.md) |          | `WARN\_SORTING\_ON\_TRUNCATED\_LENGTH` | Values were longer than max\_sort\_length. Sorting used only the first bytes.                                                          |
+| [4204](mariadb-error-codes-4200-to-4299/e4204.md) |          | `ER\_VECTOR\_BINARY\_FORMAT\_INVALID`  | Invalid binary vector format. Must use IEEE standard float representation in little-endian format. Use VEC\_FromText() to generate it. |
+| [4205](mariadb-error-codes-4200-to-4299/e4205.md) |          | `ER\_VECTOR\_FORMAT\_INVALID`          | Invalid vector format at offset: %d for '%-.100s'. Must be a valid JSON array of numbers.                                              |
+| [4206](mariadb-error-codes-4200-to-4299/e4206.md) |          | `ER\_VEC\_DISTANCE\_TYPE`              | Cannot determine distance type for VEC\_DISTANCE, index is not found                                                                   |
 
 {% include "../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
 
