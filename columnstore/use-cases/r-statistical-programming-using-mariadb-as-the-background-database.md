@@ -10,22 +10,22 @@ hidden: true
 4. [R Installation "R Installation"](r-statistical-programming-using-mariadb-as-the-background-database.md#r-installation)
 5. [Data Transfer between R and MariaDB "Data Transfer between R and MariaDB"](r-statistical-programming-using-mariadb-as-the-background-database.md#data-transfer-between-r-and-mariadb)
 
-```
+```sql
 1. [Package: "odbc" "Package: "odbc""](#package-odbc)
 ```
 
-```
+```sql
 1. [Package: "RMariaDB" "Package: "RMariaDB""](#package-rmariadb)
 1. [Other Packages: "readr", "RODBC" "Other Packages: "readr", "RODBC""](#other-packages-readr-rodbc)
 ```
 
 1. [R Programming Resources "R Programming Resources"](r-statistical-programming-using-mariadb-as-the-background-database.md#r-programming-resources)
 
-```
+```sql
 1. [A) Programming "A) Programming"](#a-programming)
 ```
 
-```
+```sql
 1. [B) Statistics "B) Statistics"](#b-statistics)
 1. [C) Cheatsheets: Concept Summary "C) Cheatsheets: Concept Summary"](#c-cheatsheets-concept-summary)
 1. [D) Search Engine & R Package Spotlight "D) Search Engine & R Package Spotlight"](#d-search-engine-r-package-spotlight)
@@ -37,14 +37,16 @@ hidden: true
 
 ## Introduction to R
 
-R is a language and environment for statistical computing and graphics.\
-R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …), graphical techniques, machine learning packages and is highly extensible.
+`R` is a language and environment for statistical computing and graphics.\
+`R` provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …), graphical techniques, machine learning packages and is highly extensible.
 
-One of R’s strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. Great care has been taken over the defaults for the minor design choices in graphics, but the user retains full control.
+One of `R’s` strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. Great care has been taken over the defaults for the minor design choices in graphics, but the user retains full control.
 
 ## The R Environment
 
-R is an integrated suite of software facilities for data manipulation, calculation, and graphical display. It includes:
+`R` is an integrated suite of software facilities for data manipulation, calculation, and graphical display.&#x20;
+
+It includes:
 
 • an effective data handling and storage facility,
 
@@ -90,7 +92,7 @@ The "odbc" package requires to have previously installed the MariaDB or MySQL OD
 
 For installing the "odbc" package from CRAN, execute in R:
 
-```
+```sql
 install.packages("odbc")
 ```
 
@@ -100,13 +102,13 @@ install.packages("odbc")
 
 For installing RMariaDB package through CRAN, execute the following R statement:
 
-```
+```sql
 install.packages("RMariaDB")
 ```
 
 And for connecting to MariaDB:
 
-```
+```sql
 library(RMariaDB)
 
 con <- dbConnect(
@@ -170,7 +172,7 @@ The R Programming language has support for the H2O.ai library ([h2o](https://cra
 
 For installing H2O.ai through CRAN, execute:
 
-```
+```sql
 install.packages("h2o")
 ```
 
@@ -186,7 +188,7 @@ The following R Statements can be used for importing a MariaDB table to H2O.ai u
 * import\_sql\_table: "This function imports a SQL table to H2OFrame in memory".
 * import\_sql\_select: "This function imports the SQL table that is the result of the specified SQL query to H2OFrame in memory".
 
-```
+```sql
 connection_url <- "jdbc:mariadb://172.16.2.178:3306/ingestSQL?&useSSL=false"
 username <- "root"
 password <- "abc123"
@@ -202,7 +204,7 @@ my_citibike_data <- h2o.import_sql_select(connection_url, select_query, username
 
 NOTE: Be sure to start the h2o.jar in the terminal with your downloaded JDBC driver in the classpath:
 
-```
+```sql
 java -cp <path_to_h2o_jar>:<path_to_jdbc_driver_jar> water.H2OApp
 ```
 
