@@ -1,7 +1,5 @@
 # ColumnStore Window Functions
 
-
-
 1. [Introduction "Introduction"](columnstore-window-functions.md#introduction)
 2. [Syntax "Syntax"](columnstore-window-functions.md#syntax)
 3. [Supported Functions "Supported Functions"](columnstore-window-functions.md#supported-functions)
@@ -33,13 +31,13 @@ Window functions are applied after joins, group by, and having clauses are calcu
 
 A window function is applied in the select clause using the following syntax:
 
-```
+```sql
 function_name ([expression [, expression ... ]]) OVER ( window_definition )
 ```
 
 where _window\_definition_ is defined as:
 
-```
+```sql
 [ PARTITION BY expression [, ...] ]
 [ ORDER BY expression [ ASC | DESC ] [ NULLS { FIRST | LAST } ] [, ...] ]
 [ frame_clause ]
@@ -51,7 +49,7 @@ PARTITION BY:
 * An expression may be a constant, column, and non window function expressions.
 * A query is not limited to a single partition by clause. Different partition clauses can be used across different window function applications.
 * The partition by columns do not need to be in the select list but do need to be available from the query result set.
-* If there is no PARTITION BY clause, all rows of the result set define the group.
+* If there is no `PARTITION BY` clause, all rows of the result set define the group.
 
 ORDER BY
 
@@ -59,19 +57,19 @@ ORDER BY
 * Can be ordered by multiple keys which may be a constant, column or non window function expression.
 * The order by columns do not need to be in the select list but need to be available from the query result set.
 * Use of a select column alias from the query is not supported.
-* ASC (default) and DESC options allow for ordering ascending or descending.
-* NULLS FIRST and NULL\_LAST options specify whether null values come first or last in the ordering sequence. NULLS\_FIRST is the default for ASC order, and NULLS\_LAST is the default for DESC order.
+* ASC (default) and `DESC` options allow for ordering ascending or descending.
+* `NULLS FIRST` and `NULL_LAST` options specify whether null values come first or last in the ordering sequence. `NULLS_FIRST` is the default for `ASC` order, and `NULLS_LAST` is the default for `DESC` order.
 
-and the optional _frame\_clause_ is defined as:
+and the optional _`frame_clause`_ is defined as:
 
-```
+```sql
 { RANGE | ROWS } frame_start
 { RANGE | ROWS } BETWEEN frame_start AND frame_end
 ```
 
-and the optional _frame\_start_ and _frame\_end_ are defined as (value being a numeric expression):
+and the optional _`frame_start`_ and _`frame_end`_ are defined as (value being a numeric expression):
 
-```
+```sql
 UNBOUNDED PRECEDING
 value PRECEDING
 CURRENT ROW
@@ -82,13 +80,13 @@ UNBOUNDED FOLLOWING
 RANGE/ROWS:
 
 * Defines the windowing clause for calculating the set of rows that the function applies to for calculating a given rows window function result.
-* Requires an ORDER BY clause to define the row order for the window.
-* ROWS specify the window in physical units, i.e. result set rows and must be a constant or expression evaluating to a positive numeric value.
-* RANGE specifies the window as a logical offset. If the expression evaluates to a numeric value then the ORDER BY expression must be a numeric or DATE type. If the expression evaluates to an interval value then the ORDER BY expression must be a DATE data type.
-* UNBOUNDED PRECEDING indicates the window starts at the first row of the partition.
-* UNBOUNDED FOLLOWING indicates the window ends at the last row of the partition.
-* CURRENT ROW specifies the window start or ends at the current row or value.
-* If omitted, the default is ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW.
+* Requires an `ORDER BY` clause to define the row order for the window.
+* `ROWS` specify the window in physical units, i.e. result set rows and must be a constant or expression evaluating to a positive numeric value.
+* `RANGE` specifies the window as a logical offset. If the expression evaluates to a numeric value, then the `ORDER BY` expression must be a numeric or `DATE` type. If the expression evaluates to an interval value, then the `ORDER BY` expression must be a `DATE` data type.
+* `UNBOUNDED PRECEDING` indicates the window starts at the first row of the partition.
+* `UNBOUNDED FOLLOWING` indicates the window ends at the last row of the partition.
+* `CURRENT ROW` specifies the window start or ends at the current row or value.
+* If omitted, the default is `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.
 
 ## Supported Functions
 
@@ -125,15 +123,13 @@ RANGE/ROWS:
 | VARIANCE() VAR\_POP()             | Population variance of the input values (square of the population standard deviation).                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | VAR\_SAMP()                       | Sample variance of the input values (square of the sample standard deviation).                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
-
-
 ## Examples
 
 ### Example Schema
 
 The examples are all based on the following simplified sales opportunity table:
 
-```
+```sql
 CREATE TABLE opportunities (
 id INT,
 accountName VARCHAR(20),
@@ -166,7 +162,7 @@ The schema, sample data, and queries are available as an attachment to this arti
 
 Window functions can be used to achieve cumulative / running calculations on a detail report. In this case a won opportunity report for a 7 day period adds columns to show the accumulated won amount as well as the current highest opportunity amount in preceding rows.
 
-```
+```sql
 SELECT owner, 
 accountName, 
 CloseDate, 
@@ -195,7 +191,7 @@ with example results:
 
 The above example can be partitioned, so that the window functions are over a particular field grouping such as owner and accumulate within that grouping. This is achieved by adding the syntax "partition by " in the window function clause.
 
-```
+```sql
 SELECT owner,  
 accountName,  
 CloseDate,  
@@ -222,9 +218,9 @@ with example results:
 
 ### Ranking / Top Results
 
-The rank window function allows for ranking or assigning a numeric order value based on the window function definition. Using the Rank() function will result in the same value for ties / equal values and the next rank value skipped. The Dense\_Rank() function behaves similarly except the next consecutive number is used after a tie rather than skipped. The Row\_Number() function will provide a unique ordering value. The example query shows the Rank() function being applied to rank sales reps by the number of opportunities for Q4 2016.
+The rank window function allows for ranking or assigning a numeric order value based on the window function definition. Using the `Rank()` function will result in the same value for ties / equal values and the next rank value skipped. The `Dense_Rank()` function behaves similarly except the next consecutive number is used after a tie rather than skipped. The `Row_Number()` function will provide a unique ordering value. The example query shows the `Rank()` function being applied to rank sales reps by the number of opportunities for Q4 2016.
 
-```
+```sql
 SELECT owner, 
 wonCount, 
 rank() OVER (ORDER BY wonCount DESC) rank 
@@ -249,13 +245,13 @@ with example results (note the query is technically incorrect by using closeDate
 | Bob     | 14       | 3    |
 | Olivier | 10       | 5    |
 
-If the dense\_rank function is used the rank values would be 1,2,3,3,4 and for the row\_number function the values would be 1,2,3,4,5.
+If the `dense_rank` function is used the rank values would be 1,2,3,3,4 and for the `row_number` function the values would be 1,2,3,4,5.
 
 ### First and Last Values
 
-The first\_value and last\_value functions allow determining the first and last values of a given range. Combined with a group by this allows summarizing opening and closing values. The example shows a more complex case where detailed information is presented for first and last opportunity by quarter.
+The `first_value` and `last_value` functions allow determining the first and last values of a given range. Combined with a group by this allows summarizing opening and closing values. The example shows a more complex case where detailed information is presented for first and last opportunity by quarter.
 
-```
+```sql
 SELECT a.YEAR, 
 a.quarter, 
 f.accountName firstAccountName, 
@@ -293,9 +289,9 @@ with example results:
 
 ### Prior and Next Example
 
-Sometimes it useful to understand the previous and next values in the context of a given row. The lag and lead window functions provide this capability. By default the offset is one providing the prior or next value but can also be provided to get a larger offset. The example query is a report of opportunities by account name showing the opportunity amount, and the prior and next opportunity amount for that account by close date.
+Sometimes it useful to understand the previous and next values in the context of a given row. The lag and lead window functions provide this capability. By default, the offset is one providing the prior or next value but can also be provided to get a larger offset. The example query is a report of opportunities by account name showing the opportunity amount, and the prior and next opportunity amount for that account by close date.
 
-```
+```sql
 SELECT accountName, 
 closeDate,  
 amount currentOppAmount, 
@@ -323,7 +319,7 @@ with example results:
 
 The NTile window function allows for breaking up a data set into portions assigned a numeric value to each portion of the range. NTile(4) breaks the data up into quartiles (4 sets). The example query produces a report of all opportunities summarizing the quartile boundaries of amount values.
 
-```
+```sql
 SELECT t.quartile, 
 MIN(t.amount) MIN, 
 MAX(t.amount) MAX 
@@ -348,9 +344,9 @@ With example results:
 
 ### Percentile Example
 
-The percentile functions have a slightly different syntax from other window functions as can be seen in the example below. These functions can be only applied against numeric values. The argument to the function is the percentile to evaluate. Following 'within group' is the sort expression which indicates the sort column and optionally order. Finally after 'over' is an optional partition by clause, for no partition clause use 'over ()'. The example below utilizes the value 0.5 to calculate the median opportunity amount in the rows. The values differ sometimes because percentile\_cont will return the average of the 2 middle rows for an even data set while percentile\_desc returns the first encountered in the sort.
+The percentile functions have a slightly different syntax from other window functions as can be seen in the example below. These functions can be only applied against numeric values. The argument to the function is the percentile to evaluate. Following 'within group' is the sort expression which indicates the sort column and optionally order. Finally after 'over' is an optional partition by clause, for no partition clause use 'over ()'. The example below utilizes the value 0.5 to calculate the median opportunity amount in the rows. The values differ sometimes because `percentile_cont` will return the average of the 2 middle rows for an even data set while `percentile_desc` returns the first encountered in the sort.
 
-```
+```sql
 SELECT owner,  
 accountName,  
 CloseDate,  
