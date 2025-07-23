@@ -17,7 +17,7 @@ performance_schema=on
 performance-schema-instrument='memory/%=ON'
 ```
 
-This is available since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes). With this enabled, [performance\_schema.memory\_summary\_global\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_global_by_event_name-table) can start to show where the memory leak is occurring.
+This is available since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes). With this enabled, [performance\_schema.memory\_summary\_global\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_global_by_event_name-table) can start to show where the memory leak is occurring.
 
 ## Memleak
 

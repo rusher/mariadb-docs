@@ -1,8 +1,6 @@
-
 # Buildbot Setup for Virtual Machines - Debian 4 i386
 
 Create the VM:
-
 
 ```
 cd /kvm/vms
@@ -12,10 +10,8 @@ kvm -m 2047 -hda /kvm/vms/vm-debian4-i386-serial.qcow2 -cdrom /kvm/debian-40r8-i
 
 ## Serial console and account setup
 
-
-From base install, setup for serial port, and setup accounts for passwordless
+From base install, setup for serial port, and setup accounts for passwordless\
 ssh login and sudo:
-
 
 ```
 kvm -m 2047 -hda /kvm/vms/vm-debian4-i386-serial.qcow2 -cdrom /kvm/debian-40r8-i386-netinst.iso -redir 'tcp:2241::22' -boot c -smp 2 -cpu qemu32,-nx -net nic,model=e1000 -net user
@@ -35,7 +31,6 @@ S0:2345:respawn:/sbin/getty -L ttyS0 19200 vt100
 
 Add to /boot/grub/menu.lst:
 
-
 ```
 serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1
 terminal --timeout=3 serial console
@@ -43,13 +38,11 @@ terminal --timeout=3 serial console
 
 also add in menu.lst to kernel line:
 
-
 ```
 console=tty0 console=ttyS0,115200n8
 ```
 
 Do these steps:
-
 
 ```
 # Add user buildbot, with disabled password. Add as sudo, and add ssh key.
@@ -64,7 +57,6 @@ chmod -R go-rwx .ssh
 
 ## VM for build
 
-
 ```
 qemu-img create -b vm-debian4-i386-serial.qcow2 -f qcow2 vm-debian4-i386-build.qcow2
 kvm -m 2047 -hda /kvm/vms/vm-debian4-i386-build.qcow2 -cdrom /kvm/debian-40r8-i386-netinst.iso -redir 'tcp:2241::22' -boot c -smp 2 -cpu qemu32,-nx -net nic,model=e1000 -net user -nographic
@@ -78,15 +70,13 @@ sudo apt-get install devscripts doxygen texlive-latex-base gs lsb-release fakero
 
 ## VM for install testing
 
-
 ```
 qemu-img create -b vm-debian4-i386-serial.qcow2 -f qcow2 vm-debian4-i386-install.qcow2
 kvm -m 2047 -hda /kvm/vms/vm-debian4-i386-install.qcow2 -cdrom /kvm/debian-40r8-i386-netinst.iso -redir 'tcp:2241::22' -boot c -smp 2 -cpu qemu32,-nx -net nic,model=e1000 -net user -nographic
 ```
 
-See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) 
+See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md)\
 article for how to make the '`my.seed`' file.
-
 
 ```
 # No packages mostly!
@@ -102,7 +92,6 @@ sudo debconf-set-selections /tmp/my.seed
 
 ## VM for upgrade testing
 
-
 ```
 qemu-img create -b vm-debian4-i386-install.qcow2 -f qcow2 vm-debian4-i386-upgrade.qcow2
 kvm -m 2047 -hda /kvm/vms/vm-debian4-i386-upgrade.qcow2 -cdrom /kvm/debian-40r8-i386-netinst.iso -redir 'tcp:2241::22' -boot c -smp 2 -cpu qemu64 -net nic,model=e1000 -net user -nographic
@@ -111,8 +100,6 @@ sudo apt-get install mysql-server-5.0
 mysql -uroot -prootpass -e "create database mytest; use mytest; create table t(a int primary key); insert into t values (1); select * from t"
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -29,7 +29,7 @@ can be found on the [MariaDB Server Releases](https://app.gitbook.com/o/diTpXxF5
 
 ## Plans
 
-[MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118) is an upcoming major development release.
+[MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118) is an upcoming major development release.
 
 ### JIRA
 
@@ -44,7 +44,7 @@ to [JIRA](tools/jira.md).
 
 * [Current tasks for 11.8](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(11.8\)%20ORDER%20BY%20priority%20DESC)
 * [11.8 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(11.8\)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
-* [What is MariaDB 11.8?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118)
+* [What is MariaDB 11.8?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118)
 * [Plans for MariaDB 11.7](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/development-articles/general-info/broken-reference/README.md)
 * [Plans for MariaDB 11.6](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/development-articles/general-info/broken-reference/README.md)
 

@@ -1,18 +1,14 @@
-
 # Buildbot Setup for Virtual Machines - Fedora 18
 
-
 ## Base install
-
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-fedora18-i386-serial.qcow2 10G
 qemu-img create -f qcow2 /kvm/vms/vm-fedora18-amd64-serial.qcow2 10G
 ```
 
-Start each VM booting from the server install iso one at a time and perform
+Start each VM booting from the server install iso one at a time and perform\
 the following install steps:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-fedora18-i386-serial.qcow2 -cdrom /kvm/iso/fedora/Fedora-18-i386-DVD.iso -redir tcp:2277::22 -boot d -smp 2 -cpu qemu64 -net nic,model=virtio -net user
@@ -21,19 +17,15 @@ kvm -m 2048 -hda /kvm/vms/vm-fedora18-amd64-serial.qcow2 -cdrom /kvm/iso/fedora/
 
 Once running you can connect to the VNC server from your local host with:
 
-
 ```
 vncviewer -via ${remote-host} localhost
 ```
 
 Replace ${remote-host} with the host the vm is running on.
 
-
 **Note:** When you activate the install, vncviewer may disconnect with a complaint about the rect being too large. This is fine. The Fedora installer has just resized the vnc screen. Simply reconnect.
 
-
 Install, picking default options mostly, with the following notes:
-
 
 * Under "Network Configuration" set the hostnames to fedora18-amd64 and fedora18-i386
 * Change "Software Selection" to "Minimal Install" (default is "Gnome Desktop")
@@ -42,9 +34,7 @@ Install, picking default options mostly, with the following notes:
 * On "Installation Options" screen, expand the "Partition scheme configuration" box and select a "Partition type" of "Standard Partition"
 * While installing, set the root password
 
-
 When the install is finished, you will be prompted to reboot. Go ahead and do so, but it will fail. Kill the VM (after the reboot fails) and start it up again:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-fedora18-i386-serial.qcow2 -redir tcp:2277::22 -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user
@@ -53,14 +43,12 @@ kvm -m 2048 -hda /kvm/vms/vm-fedora18-amd64-serial.qcow2 -redir tcp:2278::22 -bo
 
 Until a non-root user is installed you must connect as root. SSH is preferred, so that's what we'll do first. Login as root.
 
-
 ```
 ssh -p 2277 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/buildbot.id_dsa root@localhost
 ssh -p 2278 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/buildbot.id_dsa root@localhost
 ```
 
 After logging in as root, install proper ssh and then create a local user:
-
 
 ```
 adduser ${username}
@@ -69,7 +57,6 @@ passwd ${username}
 ```
 
 Enable password-less sudo and serial console:
-
 
 ```
 visudo
@@ -80,9 +67,7 @@ visudo
 
 Still logged in as root, add to /boot/grub/menu.lst:
 
-
 Editing /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -97,9 +82,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Logout as root, and then, from the VM host server:
 
-
 Create a .ssh folder:
-
 
 ```
 ssh -t -p 2277 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/buildbot.id_dsa localhost "mkdir -v .ssh"
@@ -108,14 +91,12 @@ ssh -t -p 2278 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/
 
 Copy over the authorized keys file:
 
-
 ```
 scp -P 2277 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /kvm/vms/authorized_keys localhost:.ssh/
 scp -P 2278 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /kvm/vms/authorized_keys localhost:.ssh/
 ```
 
 Set permissions on the .ssh folder correctly:
-
 
 ```
 ssh -t -p 2277 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/buildbot.id_dsa localhost "chmod -R go-rwx .ssh"
@@ -124,17 +105,14 @@ ssh -t -p 2278 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/
 
 Create the buildbot user:
 
-
 ```
 ssh -p 2277 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no localhost 'chmod -R go-rwx .ssh; sudo adduser buildbot; sudo usermod -a -G wheel buildbot; sudo mkdir ~buildbot/.ssh; sudo cp -vi .ssh/authorized_keys ~buildbot/.ssh/; sudo chown -vR buildbot:buildbot ~buildbot/.ssh; sudo chmod -vR go-rwx ~buildbot/.ssh'
 ssh -p 2278 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no localhost 'chmod -R go-rwx .ssh; sudo adduser buildbot; sudo usermod -a -G wheel buildbot; sudo mkdir ~buildbot/.ssh; sudo cp -vi .ssh/authorized_keys ~buildbot/.ssh/; sudo chown -vR buildbot:buildbot ~buildbot/.ssh; sudo chmod -vR go-rwx ~buildbot/.ssh'
 ```
 
-su to the local buildbot user and ssh to the vm to put the key in known_hosts:
-
+su to the local buildbot user and ssh to the vm to put the key in known\_hosts:
 
 For i386:
-
 
 ```
 sudo su - buildbot
@@ -144,7 +122,6 @@ ssh -p 2277 buildbot@localhost
 
 For amd64:
 
-
 ```
 sudo su - buildbot
 ssh -p 2278 buildbot@localhost
@@ -152,7 +129,6 @@ ssh -p 2278 buildbot@localhost
 ```
 
 Upload the ttyS0 file and put it where it goes:
-
 
 ```
 scp -P 2277 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /kvm/vms/ttyS0 buildbot@localhost:
@@ -164,7 +140,6 @@ ssh -p 2278 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no buildbot
 
 Update the VM:
 
-
 ```
 ssh -p 2277 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no buildbot@localhost
 ssh -p 2278 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no buildbot@localhost
@@ -172,20 +147,17 @@ ssh -p 2278 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no buildbot
 
 Once logged in:
 
-
 ```
 sudo yum update
 ```
 
 After updating, shut down the VM:
 
-
 ```
 sudo shutdown -h now
 ```
 
 ## VMs for building .rpms
-
 
 ```
 for i in '/kvm/vms/vm-fedora18-i386-serial.qcow2 2277 qemu64' '/kvm/vms/vm-fedora18-amd64-serial.qcow2 2278 qemu64' ; do \
@@ -206,7 +178,6 @@ done
 
 ## VMs for install testing.
 
-
 ```
 for i in '/kvm/vms/vm-fedora18-i386-serial.qcow2 2277 qemu64' '/kvm/vms/vm-fedora18-amd64-serial.qcow2 2278 qemu64' ; do \
   set $i; \
@@ -217,7 +188,6 @@ done
 ```
 
 ## VMs for MySQL upgrade testing
-
 
 ```
 for i in '/kvm/vms/vm-fedora18-i386-serial.qcow2 2277 qemu64' '/kvm/vms/vm-fedora18-amd64-serial.qcow2 2278 qemu64' ; do \
@@ -232,7 +202,6 @@ done
 ```
 
 ## VMs for MariaDB upgrade testing
-
 
 ```
 for i in '/kvm/vms/vm-fedora18-amd64-serial.qcow2 2278 qemu64' '/kvm/vms/vm-fedora18-i386-serial.qcow2 2277 qemu64' ; do \
@@ -254,8 +223,6 @@ for i in '/kvm/vms/vm-fedora18-amd64-serial.qcow2 2278 qemu64' '/kvm/vms/vm-fedo
 done
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

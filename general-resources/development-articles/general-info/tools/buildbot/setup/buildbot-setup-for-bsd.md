@@ -1,11 +1,8 @@
-
 # Buildbot Setup for BSD
 
 Here are the steps I did when installing and configuring a buildbot slave on a PC-BSD 9 box.
 
-
 Add buildbot user:
-
 
 ```
 sudo adduser
@@ -15,15 +12,11 @@ sudo adduser
 
 Python was already installed.
 
-
 Bazaar was already installed.
-
 
 NTP was already installed.
 
-
 Install Zope3
-
 
 ```
 cd /usr/ports/www/zope3
@@ -35,7 +28,6 @@ sudo make install clean
 
 Install Twisted
 
-
 ```
 cd /usr/ports/devel/py-twisted
 sudo make install clean
@@ -44,7 +36,6 @@ sudo make install clean
 
 Install ccache
 
-
 ```
 cd /usr/ports/devel/ccache
 sudo make install clean
@@ -52,7 +43,6 @@ sudo make install clean
 ```
 
 Run a test compile of MariaDB
-
 
 ```
 cd
@@ -63,7 +53,6 @@ BUILD/compile-pentium64-max
 
 Install buildbot
 
-
 ```
 cd /usr/ports/devel/buildbot
 sudo make install clean
@@ -72,20 +61,16 @@ sudo make install clean
 
 Create the buildbot slave
 
-
 On the build master, add new entry to /etc/buildbot/maria-master-private.cfg
-
 
 ```
 slave-name=bsd9
 ```
 
-Remember the ${slave-name} and ${password} configured above, they're used in
+Remember the ${slave-name} and ${password} configured above, they're used in\
 the next step.
 
-
 Back on bsd9
-
 
 ```
 sudo su - buildbot
@@ -102,14 +87,12 @@ exit
 
 Start the buildslave
 
-
 ```
 sudo su - buildbot
 buildslave start maria-slave
 ```
 
 Make the archive dir
-
 
 ```
 sudo su - buildbot
@@ -120,7 +103,6 @@ sudo ln -s /home/buildbot/archive /archive
 
 Install Apache
 
-
 ```
 cd /usr/ports/www/apache22
 sudo make install clean
@@ -128,7 +110,6 @@ sudo make install clean
 ```
 
 Configure apache:
-
 
 ```
 sudo su -s
@@ -146,7 +127,6 @@ sudo /usr/local/etc/rc.d/apache22 start
 
 Install md5sum
 
-
 ```
 md5sum already installed at /compat/linux/usr/bin/md5sum
 edited /home/buildbot/.profile and added that dir to the path
@@ -155,8 +135,6 @@ cd /usr/local/bin/
 sudo ln -s /compat/linux/usr/bin/md5sum md5sum
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -85,7 +85,7 @@ in the frame. This is what the parser generates for local variables.
 **Utility Functions (sp.{cc,h})**
 
 This contains functions for creating, dropping and finding a stored\
-procedure in the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table) (or the internal cache).
+procedure in the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-proc-table) (or the internal cache).
 
 #### Parsing CREATE PROCEDURE
 
@@ -190,7 +190,7 @@ PROCEDURE" (or "FUNCTION") is kept. The procedure definition string is\
 stored in the table mysql.proc with the name and type as the key, the\
 type being one of the enum ("procedure","function").
 
-A PROCEDURE is just stored in the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table). A FUNCTION has an\
+A PROCEDURE is just stored in the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-proc-table). A FUNCTION has an\
 additional requirement. They will be called in expressions with the same\
 syntax as UDFs, so UDFs and stored FUNCTIONs share the namespace. Thus,\
 we must make sure that we do not have UDFs and FUNCTIONs with the same\
@@ -322,7 +322,7 @@ PROCEDURE is CALLed as statement by itself, a FUNCTION is invoked\
 "on-the-fly" during the execution of _another_ statement.\
 This makes things a lot more complicated compared to CALL:
 
-* We can't read and parse the FUNCTION from the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table) at the\
+* We can't read and parse the FUNCTION from the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-proc-table) at the\
   point of invocation; the server requires that all tables used are\
   opened and locked at the beginning of the query execution.\
   One "obvious" solution would be to simply push "mysql.proc" to the list\
@@ -331,7 +331,7 @@ This makes things a lot more complicated compared to CALL:
   table easily; since a privileged used might in fact want to search\
   the proc table).\
   Another solution would of course be to allow the opening and closing\
-  of the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table) during a query execution, but this it not\
+  of the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-proc-table) during a query execution, but this it not\
   possible at the present.
 
 So, the solution is to collect the names of the referred FUNCTIONs during\
@@ -1119,7 +1119,7 @@ class sp_instr_cfetch : public sp_instr
 
 ### The mysql.proc schema
 
-This is the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table) used in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
+This is the [mysql.proc table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-proc-table) used in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
 ```
 CREATE TABLE `proc` (

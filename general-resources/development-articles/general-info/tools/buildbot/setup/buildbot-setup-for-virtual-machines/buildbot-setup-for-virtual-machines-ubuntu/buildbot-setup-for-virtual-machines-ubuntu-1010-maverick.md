@@ -1,8 +1,6 @@
-
 # Buildbot Setup for Virtual Machines - Ubuntu 10.10 "maverick"
 
 ## Base install
-
 
 ```
 qemu-img create -f qcow2 vm-maverick-amd64-serial.qcow2 8G
@@ -34,14 +32,12 @@ ssh -p 2247 buildbot@localhost 'sudo cp ttyS0.conf /etc/init/; rm ttyS0.conf; su
 
 Enabling passwordless sudo:
 
-
 ```
 sudo VISUAL=vi visudo
 # Add line at end: `%sudo ALL=NOPASSWD: ALL'
 ```
 
 Editing /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -56,7 +52,6 @@ sudo update-grub
 
 ## VMs for building .debs
 
-
 ```
 for i in 'vm-maverick-amd64-serial.qcow2 2246 qemu64' 'vm-maverick-i386-serial.qcow2 2247 qemu32,-nx' ; do \
   set $i; \
@@ -69,10 +64,8 @@ done
 
 ## VMs for install testing.
 
-
-See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md)
+See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md)\
 article for how to make the '`my.seed`' and '`sources.append`' files.
-
 
 ```
 cat >sources.append <<END
@@ -95,7 +88,6 @@ done
 
 ## VMs for upgrade testing
 
-
 ```
 for i in 'vm-maverick-amd64-install.qcow2 2246 qemu64' 'vm-maverick-i386-install.qcow2 2247 qemu32,-nx' ; do \
   set $i; \
@@ -105,8 +97,6 @@ for i in 'vm-maverick-amd64-install.qcow2 2246 qemu64' 'vm-maverick-i386-install
 done
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

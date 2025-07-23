@@ -1,18 +1,14 @@
-
 # Buildbot Setup for Virtual Machines - Ubuntu 13.04 "raring"
 
-
 ## Base install
-
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-raring-amd64-serial.qcow2 15G
 qemu-img create -f qcow2 /kvm/vms/vm-raring-i386-serial.qcow2 15G
 ```
 
-Start each VM booting from the server install iso one at a time and perform
+Start each VM booting from the server install iso one at a time and perform\
 the following install steps:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-raring-amd64-serial.qcow2 -cdrom /kvm/iso/ubuntu/ubuntu-13.04-server-amd64.iso -boot d -smp 2 -cpu qemu64 -net nic,model=virtio -net user,hostfwd=tcp:127.0.0.1:2279-:22
@@ -21,31 +17,25 @@ kvm -m 2048 -hda /kvm/vms/vm-raring-i386-serial.qcow2 -cdrom /kvm/iso/ubuntu/ubu
 
 Once running you can connect to the VNC server from your local host with:
 
-
 ```
 vncviewer -via ${remote-host} localhost
 ```
 
 Replace ${remote-host} with the host the vm is running on.
 
-
-**Note:** When you activate the install, vncviewer may disconnect with a
-complaint about the rect being too large. This is fine. Ubuntu has just resized
+**Note:** When you activate the install, vncviewer may disconnect with a\
+complaint about the rect being too large. This is fine. Ubuntu has just resized\
 the vnc screen. Simply reconnect.
 
-
 Install, picking default options mostly, with the following notes:
-
 
 * Set the hostname to ubuntu-raring-amd64 or ubuntu-raring-i386
 * When partitioning disks, choose "Guided - use entire disk" (we do not want LVM)
 * No automatic updates
 * Choose software to install: OpenSSH server
 
-
-Now that the VM is installed, it's time to configure it.
+Now that the VM is installed, it's time to configure it.\
 If you have the memory you can do the following simultaneously:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-raring-amd64-serial.qcow2 -cdrom /kvm/iso/ubuntu/ubuntu-13.04-server-amd64.iso -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user,hostfwd=tcp:127.0.0.1:2279-:22 -nographic
@@ -78,14 +68,12 @@ ssh -p 2280 buildbot@localhost 'sudo cp -vi ttyS0.conf /etc/init/; rm -v ttyS0.c
 
 Enabling passwordless sudo:
 
-
 ```
 sudo VISUAL=vi visudo
 # Add line at end: `%sudo ALL=NOPASSWD: ALL'
 ```
 
 Editing /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -102,7 +90,6 @@ sudo update-grub
 ```
 
 ## VMs for building .debs
-
 
 ```
 for i in '/kvm/vms/vm-raring-amd64-serial.qcow2 2279 qemu64' '/kvm/vms/vm-raring-i386-serial.qcow2 2280 qemu64' ; do \
@@ -122,9 +109,7 @@ done
 
 ## VMs for install testing.
 
-
 See [Buildbot Setup for Virtual Machines - General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) for how to obtain `my.seed` and `sources.append`.
-
 
 ```
 for i in '/kvm/vms/vm-raring-amd64-serial.qcow2 2279 qemu64' '/kvm/vms/vm-raring-i386-serial.qcow2 2280 qemu64' ; do \
@@ -139,7 +124,6 @@ done
 ```
 
 ## VMs for MySQL upgrade testing
-
 
 ```
 for i in '/kvm/vms/vm-raring-amd64-serial.qcow2 2279 qemu64' '/kvm/vms/vm-raring-i386-serial.qcow2 2280 qemu64' ; do \
@@ -157,9 +141,7 @@ done
 
 ## VMs for MariaDB upgrade testing
 
-
- *The steps below are based on the Natty steps on [Installing VM images for testing .deb upgrade between versions](../buildbot-setup-for-virtual-machines-additional-steps/installing-vm-images-for-testing-deb-upgrade-between-versions.md).*
-
+_The steps below are based on the Natty steps on_ [_Installing VM images for testing .deb upgrade between versions_](../buildbot-setup-for-virtual-machines-additional-steps/installing-vm-images-for-testing-deb-upgrade-between-versions.md)_._
 
 ```
 for i in '/kvm/vms/vm-raring-amd64-serial.qcow2 2279 qemu64' '/kvm/vms/vm-raring-i386-serial.qcow2 2280 qemu64' ; do \
@@ -181,12 +163,10 @@ for i in '/kvm/vms/vm-raring-amd64-serial.qcow2 2279 qemu64' '/kvm/vms/vm-raring
 done
 ```
 
-## Add Key to known_hosts
+## Add Key to known\_hosts
 
-
-Do the following on each kvm host server (terrier, terrier2, i7, etc...) to add
-the VMs to known_hosts.
-
+Do the following on each kvm host server (terrier, terrier2, i7, etc...) to add\
+the VMs to known\_hosts.
 
 ```
 # raring-amd64
@@ -208,8 +188,6 @@ exit # the buildbot user
 rm -v /kvm/vms/vm-raring-i386-test.qcow2
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

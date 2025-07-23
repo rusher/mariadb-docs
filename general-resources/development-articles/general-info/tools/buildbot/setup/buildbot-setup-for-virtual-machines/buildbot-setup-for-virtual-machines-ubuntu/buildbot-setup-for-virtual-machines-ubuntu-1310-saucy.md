@@ -1,18 +1,14 @@
-
 # Buildbot Setup for Virtual Machines - Ubuntu 13.10 "saucy"
 
-
 ## Base install
-
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-saucy-amd64-serial.qcow2 20G
 qemu-img create -f qcow2 /kvm/vms/vm-saucy-i386-serial.qcow2 20G
 ```
 
-Start each VM booting from the server install iso one at a time and perform
+Start each VM booting from the server install iso one at a time and perform\
 the following install steps:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-saucy-amd64-serial.qcow2 -cdrom /kvm/iso/ubuntu/ubuntu-13.10-server-amd64.iso -boot d -smp 2 -cpu qemu64 -net nic,model=virtio -net user,hostfwd=tcp:127.0.0.1:2287-:22
@@ -21,21 +17,17 @@ kvm -m 2048 -hda /kvm/vms/vm-saucy-i386-serial.qcow2 -cdrom /kvm/iso/ubuntu/ubun
 
 Once running you can connect to the VNC server from your local host with:
 
-
 ```
 vncviewer -via ${remote_host} localhost
 ```
 
 Replace ${remote-host} with the host the vm is running on.
 
-
-**Note:** When you activate the install, vncviewer may disconnect with a
-complaint about the rect being too large. This is fine. Ubuntu has just resized
+**Note:** When you activate the install, vncviewer may disconnect with a\
+complaint about the rect being too large. This is fine. Ubuntu has just resized\
 the vnc screen. Simply reconnect.
 
-
 Install, picking default options mostly, with the following notes:
-
 
 * Set the hostname to ubuntu-saucy-amd64 or ubuntu-saucy-i386
 * do not encrypt the home directory
@@ -43,10 +35,8 @@ Install, picking default options mostly, with the following notes:
 * No automatic updates
 * Choose software to install: OpenSSH server
 
-
-Now that the VM is installed, it's time to configure it.
+Now that the VM is installed, it's time to configure it.\
 If you have the memory you can do the following simultaneously:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-saucy-amd64-serial.qcow2 -cdrom /kvm/iso/ubuntu/ubuntu-13.10-server-amd64.iso -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user,hostfwd=tcp:127.0.0.1:2287-:22 -nographic
@@ -82,14 +72,12 @@ ssh -p 2288 buildbot@localhost 'sudo cp -vi ttyS0.conf /etc/init/; rm -v ttyS0.c
 
 Enabling passwordless sudo:
 
-
 ```
 sudo VISUAL=vi visudo
 # Add line at end: `%sudo ALL=NOPASSWD: ALL'
 ```
 
 Editing /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -107,7 +95,6 @@ sudo update-grub
 
 ## VMs for building .debs
 
-
 ```
 for i in '/kvm/vms/vm-saucy-amd64-serial.qcow2 2287 qemu64' '/kvm/vms/vm-saucy-i386-serial.qcow2 2288 qemu64' ; do \
   set $i; \
@@ -124,9 +111,7 @@ done
 
 ## VMs for install testing.
 
-
 See [Buildbot Setup for Virtual Machines - General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) for how to obtain `my.seed` and `sources.append`.
-
 
 ```
 for i in '/kvm/vms/vm-saucy-amd64-serial.qcow2 2287 qemu64' '/kvm/vms/vm-saucy-i386-serial.qcow2 2288 qemu64' ; do \
@@ -141,7 +126,6 @@ done
 ```
 
 ## VMs for MySQL upgrade testing
-
 
 ```
 for i in '/kvm/vms/vm-saucy-amd64-serial.qcow2 2287 qemu64' '/kvm/vms/vm-saucy-i386-serial.qcow2 2288 qemu64' ; do \
@@ -158,7 +142,6 @@ done
 ```
 
 ## VMs for MariaDB upgrade testing
-
 
 ```
 for i in '/kvm/vms/vm-saucy-amd64-serial.qcow2 2287 qemu64' '/kvm/vms/vm-saucy-i386-serial.qcow2 2288 qemu64' ; do \
@@ -180,12 +163,10 @@ for i in '/kvm/vms/vm-saucy-amd64-serial.qcow2 2287 qemu64' '/kvm/vms/vm-saucy-i
 done
 ```
 
-## Add Key to known_hosts
+## Add Key to known\_hosts
 
-
-Do the following on each kvm host server (terrier, terrier2, i7, etc...) to add
-the VMs to known_hosts.
-
+Do the following on each kvm host server (terrier, terrier2, i7, etc...) to add\
+the VMs to known\_hosts.
 
 ```
 # saucy-amd64
@@ -207,8 +188,6 @@ exit # the buildbot user
 rm -v /kvm/vms/vm-saucy-i386-test.qcow2
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

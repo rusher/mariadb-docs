@@ -1,18 +1,14 @@
-
 # Buildbot Setup for Virtual Machines - Ubuntu 14.04 "trusty"
 
-
 ## Base install
-
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-trusty-amd64-serial.qcow2 20G
 qemu-img create -f qcow2 /kvm/vms/vm-trusty-i386-serial.qcow2 20G
 ```
 
-Start each VM booting from the server install iso one at a time and perform
+Start each VM booting from the server install iso one at a time and perform\
 the following install steps:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-trusty-amd64-serial.qcow2 \
@@ -30,41 +26,33 @@ kvm -m 2048 -hda /kvm/vms/vm-trusty-i386-serial.qcow2 \
 
 Once running you can connect to the VNC server from your local host with:
 
-
 ```
 vncviewer -via ${remote_host} localhost
 ```
 
 Replace ${remote-host} with the host the vm is running on.
 
-
-**Note:** When you activate the install, vncviewer may disconnect with a
-complaint about the rect being too large. This is fine. Ubuntu has just resized
+**Note:** When you activate the install, vncviewer may disconnect with a\
+complaint about the rect being too large. This is fine. Ubuntu has just resized\
 the vnc screen. Simply reconnect.
 
-
-During the install, pick default options for the most part, with the following
+During the install, pick default options for the most part, with the following\
 notes:
 
-
-* Set the hostname to `ubuntu-trusty-amd64` or `ubuntu-trusty-i386`
- (depending on which architecture we're installing)
+* Set the hostname to `ubuntu-trusty-amd64` or `ubuntu-trusty-i386`\
+  (depending on which architecture we're installing)
 * do not encrypt the home directory
-* When prompted if the timezone is correct, answer "No" and when the list comes
- up, scroll to the bottom and choose "UTC"
-* When partitioning disks, choose "Guided - use entire disk" (we do not want
- LVM)
+* When prompted if the timezone is correct, answer "No" and when the list comes\
+  up, scroll to the bottom and choose "UTC"
+* When partitioning disks, choose "Guided - use entire disk" (we do not want\
+  LVM)
 * No automatic updates
 * Choose software to install: OpenSSH server
 
+Reboot when prompted. It will fail, so just kill the kvm process with`^Ctrl+C`.
 
-Reboot when prompted. It will fail, so just kill the kvm process with
-`^Ctrl+C`.
-
-
-Now that the VM is installed, it's time to configure it.
+Now that the VM is installed, it's time to configure it.\
 If you have the memory you can do the following simultaneously:
-
 
 ```
 qemu-system-x86_64 -m 2048 -hda /kvm/vms/vm-trusty-amd64-serial.qcow2 \
@@ -82,7 +70,6 @@ qemu-system-x86_64 -m 2048 -hda /kvm/vms/vm-trusty-i386-serial.qcow2 \
 
 * set `vim` as the preferred editor
 
-
 ```
 ssh -t -p 2293 localhost sudo update-alternatives --config editor
 ssh -t -p 2294 localhost sudo update-alternatives --config editor
@@ -90,14 +77,12 @@ ssh -t -p 2294 localhost sudo update-alternatives --config editor
 
 * Enabling passwordless sudo:
 
-
 ```
 sudo VISUAL=vi visudo
 # Add line at end: `%sudo ALL=NOPASSWD: ALL'
 ```
 
 * edit /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -115,14 +100,12 @@ sudo update-grub
 
 * create the `.ssh` directory and the `sudo` group
 
-
 ```
 ssh -t -p 2293 localhost "mkdir -v .ssh; sudo addgroup $USER sudo"
 ssh -t -p 2294 localhost "mkdir -v .ssh; sudo addgroup $USER sudo"
 ```
 
 * copy the `authorized_keys` file up to the VMs
-
 
 ```
 scp -P 2293 /kvm/vms/authorized_keys localhost:.ssh/
@@ -131,13 +114,11 @@ scp -P 2294 /kvm/vms/authorized_keys localhost:.ssh/
 
 * create the buildbot user on the amd64 VM
 
-
 ```
 echo $'Buildbot\n\n\n\n\ny' | ssh -p 2293 localhost 'chmod -vR go-rwx .ssh; sudo adduser --disabled-password buildbot; sudo addgroup buildbot sudo; sudo mkdir -v ~buildbot/.ssh; sudo cp -vi .ssh/authorized_keys ~buildbot/.ssh/; sudo chown -vR buildbot:buildbot ~buildbot/.ssh; sudo chmod -vR go-rwx ~buildbot/.ssh'
 ```
 
 * create the buildbot user on the x86 VM
-
 
 ```
 echo $'Buildbot\n\n\n\n\ny' | ssh -p 2294 localhost 'chmod -vR go-rwx .ssh; sudo adduser --disabled-password buildbot; sudo addgroup buildbot sudo; sudo mkdir -v ~buildbot/.ssh; sudo cp -vi .ssh/authorized_keys ~buildbot/.ssh/; sudo chown -vR buildbot:buildbot ~buildbot/.ssh; sudo chmod -vR go-rwx ~buildbot/.ssh'
@@ -145,14 +126,12 @@ echo $'Buildbot\n\n\n\n\ny' | ssh -p 2294 localhost 'chmod -vR go-rwx .ssh; sudo
 
 * copy the ttyS0 file to the VMs
 
-
 ```
 scp -i -P 2293 /kvm/vms/ttyS0.conf buildbot@localhost:
 scp -i -P 2294 /kvm/vms/ttyS0.conf buildbot@localhost:
 ```
 
 * Apply all OS updates
-
 
 ```
 ssh -t -i -p 2293 buildbot@localhost \
@@ -164,7 +143,6 @@ ssh -t -i -p 2294 buildbot@localhost \
 
 * copy the ttyS0 file to its proper location and shut down the VM
 
-
 ```
 ssh -t -i -p 2293 buildbot@localhost \
   'sudo cp -vi ttyS0.conf /etc/init/; rm -v ttyS0.conf; sudo shutdown -h now'
@@ -174,7 +152,6 @@ ssh -t -i -p 2294 buildbot@localhost \
 ```
 
 ## VMs for building .debs
-
 
 ```
 for i in '/kvm/vms/vm-trusty-amd64-serial.qcow2 2293 qemu64' '/kvm/vms/vm-trusty-i386-serial.qcow2 2294 qemu64' ; do \
@@ -192,9 +169,7 @@ done
 
 ## VMs for install testing.
 
-
 See [Buildbot Setup for Virtual Machines - General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) for how to obtain `my.seed` and `sources.append`.
-
 
 ```
 for i in '/kvm/vms/vm-trusty-amd64-serial.qcow2 2293 qemu64' '/kvm/vms/vm-trusty-i386-serial.qcow2 2294 qemu64' ; do \
@@ -209,7 +184,6 @@ done
 ```
 
 ## VMs for MySQL upgrade testing
-
 
 ```
 for i in '/kvm/vms/vm-trusty-amd64-serial.qcow2 2293 qemu64' '/kvm/vms/vm-trusty-i386-serial.qcow2 2294 qemu64' ; do \
@@ -226,7 +200,6 @@ done
 ```
 
 ## VMs for MariaDB upgrade testing
-
 
 ```
 for i in '/kvm/vms/vm-trusty-amd64-serial.qcow2 2293 qemu64' '/kvm/vms/vm-trusty-i386-serial.qcow2 2294 qemu64' ; do \
@@ -248,12 +221,10 @@ for i in '/kvm/vms/vm-trusty-amd64-serial.qcow2 2293 qemu64' '/kvm/vms/vm-trusty
 done
 ```
 
-## Add Key to known_hosts
+## Add Key to known\_hosts
 
-
-Do the following on each kvm host server (terrier, terrier2, i7, etc...) to add
-the VMs to known_hosts.
-
+Do the following on each kvm host server (terrier, terrier2, i7, etc...) to add\
+the VMs to known\_hosts.
 
 ```
 # trusty-amd64
@@ -275,8 +246,6 @@ exit # the buildbot user
 rm -v /kvm/vms/vm-trusty-i386-test.qcow2
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

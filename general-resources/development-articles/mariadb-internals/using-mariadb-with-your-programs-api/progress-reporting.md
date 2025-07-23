@@ -9,7 +9,7 @@ Progress reporting means that:
 * There is a `Progress` column\
   in [SHOW PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-processlist) which shows the total progress\
   (0-100%)
-* [INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) has three columns which allow you to see in which process stage we are and how much of that stage is completed:
+* [INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) has three columns which allow you to see in which process stage we are and how much of that stage is completed:
   * `STAGE`
   * `MAX_STAGE`
   * `PROGRESS` (within current stage).

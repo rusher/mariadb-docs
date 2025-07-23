@@ -1,18 +1,14 @@
-
 # Buildbot Setup for Virtual Machines - Ubuntu 12.04 "precise"
 
-
 ## Base install
-
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-precise-amd64-serial.qcow2 8G
 qemu-img create -f qcow2 /kvm/vms/vm-precise-i386-serial.qcow2 8G
 ```
 
-Start each VM booting from the server install iso one at a time and perform
+Start each VM booting from the server install iso one at a time and perform\
 the following install steps:
-
 
 ```
 kvm -m 1024 -hda /kvm/vms/vm-precise-amd64-serial.qcow2 -cdrom /kvm/iso/ubuntu/ubuntu-12.04-server-amd64.iso -redir tcp:22255::22 -boot d -smp 2 -cpu qemu64 -net nic,model=virtio -net user
@@ -21,29 +17,23 @@ kvm -m 1024 -hda /kvm/vms/vm-precise-i386-serial.qcow2 -cdrom /kvm/iso/ubuntu/ub
 
 Once running you can connect to the VNC server from your local host with:
 
-
 ```
 vncviewer -via ${remote-host} localhost
 ```
 
 Replace ${remote-host} with the host the vm is running on.
 
-
 **Note:** When you activate the install, vncviewer may disconnect with a complaint about the rect being too large. This is fine. Ubuntu has just resized the vnc screen. Simply reconnect.
 
-
 Install, picking default options mostly, with the following notes:
-
 
 * Set the hostname to ubuntu-precise
 * When partitioning disks, choose "Guided - use entire disk" (we do not want LVM)
 * No automatic updates
 * Choose software to install: OpenSSH server
 
-
-Now that the VM is installed, it's time to configure it.
+Now that the VM is installed, it's time to configure it.\
 If you have the memory you can do the following simultaneously:
-
 
 ```
 kvm -m 1024 -hda /kvm/vms/vm-precise-amd64-serial.qcow2 -cdrom /kvm/iso/ubuntu/ubuntu-12.04-server-amd64.iso -redir tcp:22255::22 -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user -nographic
@@ -73,14 +63,12 @@ ssh -p 22256 buildbot@localhost 'sudo cp -vi ttyS0.conf /etc/init/; rm -v ttyS0.
 
 Enabling passwordless sudo:
 
-
 ```
 sudo VISUAL=vi visudo
 # Add line at end: `%sudo ALL=NOPASSWD: ALL'
 ```
 
 Editing /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -95,7 +83,6 @@ sudo update-grub
 
 ## VMs for building .debs
 
-
 ```
 for i in '/kvm/vms/vm-precise-amd64-serial.qcow2 22255 qemu64' '/kvm/vms/vm-precise-i386-serial.qcow2 22256 qemu64' ; do \
   set $i; \
@@ -108,15 +95,11 @@ done
 
 Also:
 
-
 * [Installing the Boost library needed for the OQGraph storage engine](../buildbot-setup-for-virtual-machines-additional-steps/installing-the-boost-library-needed-for-the-oqgraph-storage-engine.md)
-
 
 ## VMs for install testing.
 
-
 See [Buildbot Setup for Virtual Machines - General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) for how to obtain `my.seed` and `sources.append`.
-
 
 ```
 for i in '/kvm/vms/vm-precise-amd64-serial.qcow2 22255 qemu64' '/kvm/vms/vm-precise-i386-serial.qcow2 22256 qemu64' ; do \
@@ -132,7 +115,6 @@ done
 
 ## VMs for MySQL upgrade testing
 
-
 ```
 for i in '/kvm/vms/vm-precise-amd64-install.qcow2 22255 qemu64' '/kvm/vms/vm-precise-i386-install.qcow2 22256 qemu64' ; do \
   set $i; \
@@ -144,12 +126,9 @@ done
 
 ## VMs for MariaDB upgrade testing
 
-
-*The steps below are based on the Natty steps on [Installing VM images for testing .deb upgrade between versions](../buildbot-setup-for-virtual-machines-additional-steps/installing-vm-images-for-testing-deb-upgrade-between-versions.md).*
-
+_The steps below are based on the Natty steps on_ [_Installing VM images for testing .deb upgrade between versions_](../buildbot-setup-for-virtual-machines-additional-steps/installing-vm-images-for-testing-deb-upgrade-between-versions.md)_._
 
 64-bit Ubuntu precise:
-
 
 ```
 qemu-img create -b vm-precise-amd64-install.qcow2 -f qcow2 vm-precise-amd64-upgrade2.qcow2
@@ -174,7 +153,6 @@ sudo shutdown -h now
 
 32-bit Ubuntu precise:
 
-
 ```
 qemu-img create -b vm-precise-i386-install.qcow2 -f qcow2 vm-precise-i386-upgrade2.qcow2
 kvm -m 512 -hda vm-precise-i386-upgrade2.qcow2 -redir 'tcp:22200::22' -boot c -smp 1 -cpu qemu64 -net nic,model=virtio -net user -nographic
@@ -196,8 +174,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 sudo shutdown -h now
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

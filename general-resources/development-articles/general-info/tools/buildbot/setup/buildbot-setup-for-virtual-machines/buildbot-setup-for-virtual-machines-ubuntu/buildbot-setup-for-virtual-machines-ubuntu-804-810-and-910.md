@@ -1,14 +1,10 @@
-
 # Buildbot Setup for Virtual Machines - Ubuntu 8.04, 8.10, and 9.10
 
 These 6 platforms were installed together (i386 and amd64).
 
-
 ## Base installs
 
-
 Ubuntu 8.04 "Hardy" amd64:
-
 
 ```
 qemu-img create -f qcow2 vm-hardy-amd64-serial.qcow2 8G
@@ -28,7 +24,6 @@ ssh -p 2228 buildbot@localhost 'sudo cp ttyS0 /etc/event.d; rm ttyS0; sudo shutd
 
 Ubuntu 8.04 "Hardy" i386:
 
-
 ```
 qemu-img create -f qcow2 vm-hardy-i386-serial.qcow2 8G
 kvm -m 1024 -hda vm-hardy-i386-serial.qcow2 -cdrom /kvm/ubuntu-8.04.3-server-i386.iso -redir tcp:2229::22 -boot d -smp 2 -cpu qemu32,-nx -net nic,model=virtio -net user
@@ -44,7 +39,6 @@ ssh -p 2229 buildbot@localhost 'sudo cp ttyS0 /etc/event.d; rm ttyS0; sudo shutd
 ```
 
 Ubuntu 8.10 "Intrepid" amd64:
-
 
 ```
 qemu-img create -f qcow2 vm-intrepid-amd64-serial.qcow2 8G
@@ -62,7 +56,6 @@ ssh -p 2230 buildbot@localhost 'sudo cp ttyS0 /etc/event.d; rm ttyS0; sudo shutd
 
 Ubuntu 8.10 "Intrepid" i386:
 
-
 ```
 qemu-img create -f qcow2 vm-intrepid-i386-serial.qcow2 8G
 kvm -m 1024 -hda vm-intrepid-i386-serial.qcow2 -cdrom /kvm/ubuntu-8.10-server-i386.iso -redir tcp:2231::22 -boot d -smp 2 -cpu qemu32,-nx -net nic,model=virtio -net user
@@ -78,7 +71,6 @@ ssh -p 2231 buildbot@localhost 'sudo cp ttyS0 /etc/event.d; rm ttyS0; sudo shutd
 ```
 
 Ubuntu 9.10 "Karmic" amd64:
-
 
 ```
 qemu-img create -f qcow2 vm-karmic-amd64-serial.qcow2 8G
@@ -96,7 +88,6 @@ ssh -p 2232 buildbot@localhost 'sudo cp ttyS0.conf /etc/init/; rm ttyS0.conf; su
 
 Ubuntu 9.10 "Karmic" i386:
 
-
 ```
 qemu-img create -f qcow2 vm-karmic-i386-serial.qcow2 8G
 kvm -m 1024 -hda vm-karmic-i386-serial.qcow2 -cdrom /kvm/ubuntu-9.10-server-i386.iso -redir tcp:2233::22 -boot d -smp 2 -cpu qemu32,-nx -net nic,model=virtio -net user
@@ -113,7 +104,6 @@ ssh -p 2233 buildbot@localhost 'sudo cp ttyS0.conf /etc/init/; rm ttyS0.conf; su
 
 For visudo to enable passwordless sudo:
 
-
 ```
 sudo VISUAL=vi visudo
 
@@ -121,7 +111,6 @@ sudo VISUAL=vi visudo
 ```
 
 For 8.04/8.10/9.04, /boot/grub/menu.lst is edited as follows:
-
 
 ```
 sudo vi /boot/grub/menu.lst
@@ -136,7 +125,6 @@ sudo vi /boot/grub/menu.lst
 
 For 9.10, /boot/grub/menu.lst is edited as follows:
 
-
 ```
 sudo vi /etc/default/grub
 
@@ -149,7 +137,6 @@ sudo update-grub
 ```
 
 ## VMs for building .debs
-
 
 ```
 for i in 'vm-hardy-amd64-serial.qcow2 2228 qemu64' 'vm-hardy-i386-serial.qcow2 2229 qemu32,-nx' 'vm-intrepid-amd64-serial.qcow2 2230 qemu64' 'vm-intrepid-i386-serial.qcow2 2231 qemu32,-nx' ; do \
@@ -170,10 +157,8 @@ done
 
 ## VMs for install testing
 
-
-See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md) 
+See the [General Principles](../buildbot-setup-for-virtual-machines-general-principles.md)\
 article for how to make the '`my.seed`' and '`sources.append`' files.
-
 
 ```
 for i in 'vm-hardy-amd64-serial.qcow2 2228 qemu64' 'vm-hardy-i386-serial.qcow2 2229 qemu32,-nx' 'vm-intrepid-amd64-serial.qcow2 2230 qemu64' 'vm-intrepid-i386-serial.qcow2 2231 qemu32,-nx' 'vm-karmic-amd64-serial.qcow2 2232 qemu64' 'vm-karmic-i386-serial.qcow2 2233 qemu32,-nx' ; do \
@@ -188,7 +173,6 @@ done
 ```
 
 ## VMs for upgrade testing
-
 
 ```
 for i in 'vm-hardy-amd64-install.qcow2 2228 qemu64' 'vm-hardy-i386-install.qcow2 2229 qemu32,-nx' 'vm-intrepid-amd64-install.qcow2 2230 qemu64' 'vm-intrepid-i386-install.qcow2 2231 qemu32,-nx' ; do \
@@ -206,8 +190,6 @@ for i in 'vm-karmic-amd64-install.qcow2 2232 qemu64' 'vm-karmic-i386-install.qco
 done
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

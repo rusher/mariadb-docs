@@ -26,4 +26,6 @@ The source format of pages is Markdown. How to format text is [on this GitBook p
 
 Read our [style guide](documentation-style-guide.md), too. (It's short!)
 
+Also see the [About Links](about-links.md) page. It has useful information for when you are adding links to other pages.
+
 {% @marketo/form formId="4316" %}

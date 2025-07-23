@@ -16,7 +16,7 @@ taken by the optimizer and why some were rejected.
 
 ## INFORMATION\_SCHEMA.OPTIMIZER\_TRACE
 
-Each connection stores a trace from the last executed statement. One can view the trace by reading the [Information Schema OPTIMIZER\_TRACE table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-optimizer_trace-table).
+Each connection stores a trace from the last executed statement. One can view the trace by reading the [Information Schema OPTIMIZER\_TRACE table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-optimizer_trace-table).
 
 Structure of the optimizer trace table:
 

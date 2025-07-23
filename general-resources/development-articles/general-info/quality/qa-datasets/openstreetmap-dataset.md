@@ -1,23 +1,18 @@
-
 # OpenStreetMap Dataset
 
 This page describes how to use the OpenStreetMap dataset in testing.
 
-
 ## Database Schema
 
-
 The database schema is available [here](osmdb06sql.md). To import:
-
 
 ```
 mysqladmin create osm
 cat osmdb06.sql | mysql osm
 ```
 
-By default, this schema uses a mixture of InnoDB and MyISAM tables. To convert
+By default, this schema uses a mixture of InnoDB and MyISAM tables. To convert\
 all tables to Aria:
-
 
 ```
 sed -i -e 's/InnoDB/Aria/gi' osmdb06.sql
@@ -26,25 +21,18 @@ sed -i -e 's/MyISAM/Aria/gi' osmdb06.sql
 
 30 tables are created.
 
-
 ## Data
 
-
-The data is provided in the form of XML files (.OSM files) that require the
-Java-based [Osmosis](https://wiki.openstreetmap.org/wiki/Osmosis) tool to load
-into MariaDB. The tool is available from
-[dev.openstreetmap.org](https://dev.openstreetmap.org/~bretth/osmosis-build/osmosis-latest.tgz).
+The data is provided in the form of XML files (.OSM files) that require the\
+Java-based [Osmosis](https://wiki.openstreetmap.org/wiki/Osmosis) tool to load\
+into MariaDB. The tool is available from[dev.openstreetmap.org](https://dev.openstreetmap.org/~bretth/osmosis-build/osmosis-latest.tgz).\
 Version 0.36 is known to work.
 
-
-Various .OSM files are available, including the
-[entire world](https://wiki.openstreetmap.org/wiki/Planet.osm) (>200Gb unzipped)
+Various .OSM files are available, including the[entire world](https://wiki.openstreetmap.org/wiki/Planet.osm) (>200Gb unzipped)\
 and [individual countries](https://download.geofabrik.de/osm/).
 
-
-Data is loaded with the following command-line (in the example, we're using the
+Data is loaded with the following command-line (in the example, we're using the\
 bulgaria.osm file, replace with the file you choose):
-
 
 ```
 chmod +x bin/osmosis
@@ -52,7 +40,6 @@ bin/osmosis --read-xml file=bulgaria.osm --write-apidb dbType="mysql" host="loca
 ```
 
 Data is inserted into 19 tables, as follows:
-
 
 ```
 MariaDB [(none)]> use information_schema;
@@ -88,8 +75,6 @@ MariaDB [information_schema]> select TABLE_NAME, TABLE_ROWS from TABLES
 16 rows in set (0.00 sec)
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

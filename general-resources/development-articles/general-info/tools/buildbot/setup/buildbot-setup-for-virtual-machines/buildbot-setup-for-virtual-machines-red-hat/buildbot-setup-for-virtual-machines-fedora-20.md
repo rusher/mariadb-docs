@@ -1,18 +1,14 @@
-
 # Buildbot Setup for Virtual Machines - Fedora 20
 
-
 ## Base install
-
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-fedora20-i386-serial.qcow2 20G
 qemu-img create -f qcow2 /kvm/vms/vm-fedora20-amd64-serial.qcow2 20G
 ```
 
-Start each VM booting from the server install iso one at a time and perform
+Start each VM booting from the server install iso one at a time and perform\
 the following install steps:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-fedora20-i386-serial.qcow2 -cdrom /ds413/iso/fedora/Fedora-20-i386-DVD.iso -redir tcp:2291::22 -boot d -smp 2 -cpu qemu64 -net nic,model=virtio -net user
@@ -21,42 +17,34 @@ kvm -m 2048 -hda /kvm/vms/vm-fedora20-amd64-serial.qcow2 -cdrom /ds413/iso/fedor
 
 Once running you can connect to the VNC server from your local host with:
 
-
 ```
 vncviewer -via ${remote-host} localhost
 ```
 
 Replace ${remote-host} with the host the vm is running on.
 
-
-**Note:** When you activate the install, vncviewer may disconnect with a
-complaint about the rect being too large. This is fine. The Fedora installer
+**Note:** When you activate the install, vncviewer may disconnect with a\
+complaint about the rect being too large. This is fine. The Fedora installer\
 has just resized the vnc screen. Simply reconnect.
 
-
 Install, picking default options mostly, with the following notes:
-
 
 * Set the language to English(US)
 * Set the timezone to Etc/Greenwich Mean Time timezone
 * Change "Software Selection" to "Minimal Install" (default is "Gnome Desktop")
-* Under "Network Configuration" set the hostnames to fedora20-amd64 and
- fedora20-i386
+* Under "Network Configuration" set the hostnames to fedora20-amd64 and\
+  fedora20-i386
 * For "Installation Destination" select the disk then click continue.
-
-  * On "Installation Options" screen, select the "Partition scheme" drop-down
- menu and select "Standard Partition". We do not want LVM.
+  * On "Installation Options" screen, select the "Partition scheme" drop-down\
+    menu and select "Standard Partition". We do not want LVM.
   * do not check the encryption checkbox
 * Select the "Begin installation" button to start the install
 * While installing, set the root password and an initial user.
-
   * Be sure the initial user is an administrator
 
-
-When the install is finished, you will be prompted to reboot. Go ahead and do
-so, but it will fail. Kill the VM after the reboot fails and start it up again
+When the install is finished, you will be prompted to reboot. Go ahead and do\
+so, but it will fail. Kill the VM after the reboot fails and start it up again\
 with:
-
 
 ```
 kvm -m 2048 -hda /kvm/vms/vm-fedora20-i386-serial.qcow2 -redir tcp:2291::22 -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user
@@ -65,7 +53,6 @@ kvm -m 2048 -hda /kvm/vms/vm-fedora20-amd64-serial.qcow2 -redir tcp:2292::22 -bo
 
 Log in using the initial user created during the install:
 
-
 ```
 ssh -p 2291 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/buildbot.id_dsa localhost
 ssh -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/buildbot.id_dsa localhost
@@ -73,13 +60,11 @@ ssh -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ss
 
 After logging in, add the initial user to the "wheel" group.
 
-
 ```
 sudo usermod -a -G wheel ${username}
 ```
 
 Enable password-less sudo for the "wheel" group and serial console sudo:
-
 
 ```
 sudo visudo
@@ -89,7 +74,6 @@ sudo visudo
 ```
 
 Edit /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -104,9 +88,7 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Logout and then, from the VM host server:
 
-
 Create a .ssh folder:
-
 
 ```
 ssh -t -p 2291 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/buildbot.id_dsa localhost "mkdir -v .ssh"
@@ -115,14 +97,12 @@ ssh -t -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/
 
 Copy over the authorized keys file:
 
-
 ```
 scp -P 2291 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /kvm/vms/authorized_keys localhost:.ssh/
 scp -P 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /kvm/vms/authorized_keys localhost:.ssh/
 ```
 
 Set permissions on the .ssh folder correctly:
-
 
 ```
 ssh -t -p 2291 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/buildbot.id_dsa localhost "chmod -vR go-rwx .ssh"
@@ -131,17 +111,14 @@ ssh -t -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/
 
 Create the buildbot user:
 
-
 ```
 ssh -t -p 2291 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no localhost 'chmod -vR go-rwx .ssh; sudo adduser buildbot; sudo usermod -a -G wheel buildbot; sudo mkdir ~buildbot/.ssh; sudo cp -vi .ssh/authorized_keys ~buildbot/.ssh/; sudo chown -vR buildbot:buildbot ~buildbot/.ssh; sudo chmod -vR go-rwx ~buildbot/.ssh'
 ssh -t -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no localhost 'chmod -vR go-rwx .ssh; sudo adduser buildbot; sudo usermod -a -G wheel buildbot; sudo mkdir ~buildbot/.ssh; sudo cp -vi .ssh/authorized_keys ~buildbot/.ssh/; sudo chown -vR buildbot:buildbot ~buildbot/.ssh; sudo chmod -vR go-rwx ~buildbot/.ssh'
 ```
 
-su to the local buildbot user and ssh to the vm to put the key in known_hosts:
-
+su to the local buildbot user and ssh to the vm to put the key in known\_hosts:
 
 For i386:
-
 
 ```
 sudo su - buildbot
@@ -151,7 +128,6 @@ ssh -p 2291 buildbot@localhost
 
 For amd64:
 
-
 ```
 sudo su - buildbot
 ssh -p 2292 buildbot@localhost
@@ -159,7 +135,6 @@ ssh -p 2292 buildbot@localhost
 ```
 
 Upload the ttyS0 file and put it where it goes:
-
 
 ```
 scp -P 2291 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /kvm/vms/ttyS0 buildbot@localhost:
@@ -171,7 +146,6 @@ ssh -t -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no build
 
 Update the VM:
 
-
 ```
 ssh -t -p 2291 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no buildbot@localhost
 ssh -t -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no buildbot@localhost
@@ -179,20 +153,17 @@ ssh -t -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no build
 
 Once logged in:
 
-
 ```
 sudo yum -y update
 ```
 
 Change selinux policy to `permissive`:
 
-
 ```
 sudo sed -i 's/SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
 ```
 
 After updating, exit, then shut down the VM:
-
 
 ```
 exit
@@ -204,7 +175,6 @@ ssh -t -p 2292 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no build
 ```
 
 ## VMs for building .rpms
-
 
 ```
 for i in '/kvm/vms/vm-fedora20-i386-serial.qcow2 2291 qemu64' '/kvm/vms/vm-fedora20-amd64-serial.qcow2 2292 qemu64' ; do \
@@ -227,7 +197,6 @@ done
 
 ## VMs for install testing.
 
-
 ```
 for i in '/kvm/vms/vm-fedora20-i386-serial.qcow2 2291 qemu64' '/kvm/vms/vm-fedora20-amd64-serial.qcow2 2292 qemu64' ; do \
   set $i; \
@@ -238,7 +207,6 @@ done
 ```
 
 ## VMs for MariaDB upgrade testing (Fedora repo)
-
 
 ```
 for i in '/kvm/vms/vm-fedora20-i386-serial.qcow2 2291 qemu64' '/kvm/vms/vm-fedora20-amd64-serial.qcow2 2292 qemu64' ; do \
@@ -253,7 +221,6 @@ done
 ```
 
 ## VMs for MariaDB upgrade testing (MariaDB repo)
-
 
 ```
 for i in '/kvm/vms/vm-fedora20-amd64-serial.qcow2 2292 qemu64' '/kvm/vms/vm-fedora20-i386-serial.qcow2 2291 qemu64' ; do \
@@ -275,8 +242,6 @@ for i in '/kvm/vms/vm-fedora20-amd64-serial.qcow2 2292 qemu64' '/kvm/vms/vm-fedo
 done
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}
