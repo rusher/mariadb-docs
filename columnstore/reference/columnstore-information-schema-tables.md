@@ -13,11 +13,11 @@ MariaDB ColumnStore has four information schema tables that expose information a
 
 ## COLUMNSTORE\_TABLES
 
-The first table is the INFORMATION\_SCHEMA.COLUMNSTORE\_TABLES. It contains information about the tables inside ColumnStore.&#x20;
+The first table is the `INFORMATION_SCHEMA.COLUMNSTORE_TABLES`. It contains information about the tables inside ColumnStore.
 
 ## COLUMNSTORE\_COLUMNS
 
-The INFORMATION\_SCHEMA.COLUMNSTORE\_COLUMNS table contains information about every single column inside ColumnStore.&#x20;
+The `INFORMATION_SCHEMA.COLUMNSTORE_COLUMNS` table contains information about every single column inside ColumnStore.
 
 ## COLUMNSTORE\_EXTENTS
 
@@ -44,51 +44,51 @@ This table displays the extent map in a user-consumable form. An extent is a col
 
 **Notes:**
 
-1. The state is "Valid" for a normal state, "Invalid" if a cpimport has completed but the table has not yet been accessed (min/max values will be invalid)or "Updating" if there is a DML statement writing to the column
+1. The state is "Valid" for a normal state, "Invalid" if a cpimport has completed but the table has not yet been accessed (min/max values will be invalid) or "Updating" if there is a DML statement writing to the column
 2. In ColumnStore the block size is 8192 bytes
-3. By default, ColumnStore will write and create an extent file of 25&#x36;_&#x31;02&#x34;_&#x57;IDTH bytes for the first partition; if this is too small, then for uncompressed data, it will create a file of the maximum size for the extent (MAX\_BLOCKS \* BLOCK\_SIZE). Snappy always compression adds a header block.
+3. By default, ColumnStore will write and create an extent file of 25&#x36;_&#x31;02&#x34;_&#x57;IDTH bytes for the first partition; if this is too small, then for uncompressed data, it will create a file of the maximum size for the extent (`MAX_BLOCKS * BLOCK_SIZE`). Snappy always compression adds a header block.
 4. Object IDs of less than 3000 are for internal tables and will not appear in any of the information schema tables
-5. HWM is set to zero for the lower segments when there are multiple segments in an extent file; these can be observed when BLOCK\_OFFSET > 0
-6. When HWM is 0, the DATA\_SIZE will show 0 instead of 8192 to avoid confusion when there is multiple segments in an extent file
+5. HWM is set to zero for the lower segments when there are multiple segments in an extent file; these can be observed when `BLOCK_OFFSET > 0`
+6. When HWM is 0, the `DATA_SIZE` will show 0 instead of 8192 to avoid confusion when there are multiple segments in an extent file
 
 ## COLUMNSTORE\_FILES
 
-The columnstore\_files table provides information about each file associated with extensions. Each extension can reuse a file at different block offsets, so this is not a 1:1 relationship to the columnstore\_extents table.
+The `columnstore_files` table provides information about each file associated with extensions. Each extension can reuse a file at different block offsets, so this is not a 1:1 relationship to the `columnstore_extent`s table.
 
-| Column                 | Description                                                                                                                               |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| OBJECT\_ID             | The object ID for the extent                                                                                                              |
-| SEGMENT\_ID            | The segment ID for the extent                                                                                                             |
-| PARTITION\_ID          | The partition ID for the extent                                                                                                           |
-| FILENAME               | The full path and filename for the extent file, multiple extents for the same column can point to this file with different BLOCK\_OFFSETs |
-| FILE\_SIZE             | The disk file size for the extent                                                                                                         |
-| COMPRESSED\_DATA\_SIZE | The amount of the compressed file used, NULL if this is an uncompressed file                                                              |
+| Column                 | Description                                                                                                                                |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| OBJECT\_ID             | The object ID for the extent                                                                                                               |
+| SEGMENT\_ID            | The segment ID for the extent                                                                                                              |
+| PARTITION\_ID          | The partition ID for the extent                                                                                                            |
+| FILENAME               | The full path and filename for the extent file, multiple extents for the same column can point to this file with different `BLOCK_OFFSETs` |
+| FILE\_SIZE             | The disk file size for the extent                                                                                                          |
+| COMPRESSED\_DATA\_SIZE | The amount of the compressed file used, `NULL` if this is an uncompressed file                                                             |
 
 ## Stored Procedures
 
-The total\_usage() procedure gives a total disk usage summary for all the columns in ColumnStore except the columns used for internal maintenance. It is executed using the following query:
+The `total_usage()` procedure gives a total disk usage summary for all the columns in ColumnStore except the columns used for internal maintenance. It is executed using the following query:
 
-```
+```sql
 > call columnstore_info.total_usage();
 ```
 
 ### table\_usage()
 
-The table\_usage() procedure gives the total data disk usage, dictionary disk usage, and grand total disk usage per table. It can be called in several ways; the first gives a total for each table:
+The `table_usage()` procedure gives the total data disk usage, dictionary disk usage, and grand total disk usage per table. It can be called in several ways; the first gives a total for each table:
 
-```
+```sql
 > call columnstore_info.table_usage(NULL, NULL);
 ```
 
-Or for a specific table, my\_table in my\_schema in this example:
+Or for a specific table, `my_table` in `my_schema` in this example:
 
-```
+```sql
 > call columnstore_info.table_usage('my_schema', 'my_table');
 ```
 
 You can also request all tables for a specified schema:
 
-```
+```sql
 > call columnstore_info.table_usage('my_schema', NULL);
 ```
 
@@ -98,9 +98,9 @@ You can also request all tables for a specified schema:
 
 ### compression\_ratio()
 
-The compression\_ratio() procedure calculates the average compression ratio across all the compressed extents in ColumnStore. It is called using
+The `compression_ratio()` procedure calculates the average compression ratio across all the compressed extents in ColumnStore. It is called using
 
-```
+```sql
 > call columnstore_info.compression_ratio();
 ```
 
