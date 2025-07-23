@@ -16,19 +16,15 @@ int mariadb_get_infov(MYSQL * mysql,
 
 ## Description
 
-Retrieves generic or connection specific information.
-
-Returns zero on success, non zero if an error occurred (invalid option),
-
-This function was added in MariaDB Connector/C 3.0,
+Retrieves generic or connection specific information. Returns zero on success, non-zero if an error occurred (invalid option), This function was added in MariaDB Connector/C 3.0,
 
 ### Value types
 
 #### Generic information
 
-For these information types parameter mysql needs to be set to NULL.
+For these information types of parameters mysql needs to be set to NULL.
 
-* `MARIADB_CHARSET_NAME`: Retrieves the charset information for a character set by it's literal representation.Parameter type: `const MARIADB_CHARSET_INFO*`.
+* `MARIADB_CHARSET_NAME`: Retrieves the charset information for a character set by its literal representation.Parameter type: `const MARIADB_CHARSET_INFO*`.
 * `MARIADB_CLIENT_ERRORS`: Retrieve array of client errors. This can be used in plugins to set global error messages (which are not exported by MariaDB Connector/C).Parameter type: `const char **`.
 * `MARIADB_CLIENT_VERSION`: The client version in literal representation.Parameter type: `const char *`.
 * `MARIADB_CLIENT_VERSION_ID`: The client version in numeric format.Parameter type: `unsigned int`.
@@ -38,20 +34,20 @@ For these information types parameter mysql needs to be set to NULL.
 
 #### Connection related information
 
-* `MARIADB_CONNECTION_ASYNC_TIMEOUT`: Retrieves the timeout for non blocking calls in seconds.Parameter type: `unsigned int`.
-* `MARIADB_CONNECTION_ASYNC_TIMEOUT_MS`: Retrieves the timeout for non blocking calls in milliseconds.Parameter type: `unsigned int`.
+* `MARIADB_CONNECTION_ASYNC_TIMEOUT`: Retrieves the timeout for non-blocking calls in seconds.Parameter type: `unsigned int`.
+* `MARIADB_CONNECTION_ASYNC_TIMEOUT_MS`: Retrieves the timeout for non-blocking calls in milliseconds.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_MARIADB_CHARSET_INFO`: Retrieves character set information for given connection. Parameter type: `const MY_CHARSET_INFO *`.
 * `MARIADB_CONNECTION_CLIENT_CAPABILITIES`: Returns the capability flags of the client.Parameter type: `unsigned long`.
 * `MARIADB_CONNECTION_ERROR`: Retrieves error message for last used command. Parameter type: `const char *`.
 * `MARIADB_CONNECTION_ERROR_ID`: Retrieves error number for last used command. Parameter type: `unsigned int`.
-* `MARIADB_CONNECTION_EXTENDED_SERVER_CAPABILITIES`: Returns the extended [capability flags](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/mariadb-connectorc-api-functions/initial-handshake-packet/README.md) of the connected MariaDB server.Parameter type: `unsigned long`.
+* `MARIADB_CONNECTION_EXTENDED_SERVER_CAPABILITIES`: Returns the extended [capability flags](../../mariadb-connector-python/constants.md#capability) of the connected MariaDB server.Parameter type: `unsigned long`.
 * `MARIADB_CONNECTION_HOST`: Retrieves connection's host name. Parameter type: `const char *`.
 * `MARIADB_CONNECTION_INFO`: Retrieves generic info for last used command.Parameter type: `const char *`.
 * `MARIADB_CONNECTION_PORT`: Retrieves the port number of server host.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_PROTOCOL_VERSION_ID`: Retrieves the protocol version number.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_PVIO_TYPE`: Retrives the pvio plugin used for specified connection.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_SCHEMA`: Retrieves the current schema.Parameter type: `const char*`.
-* `MARIADB_CONNECTION_SERVER_CAPABILITIES`: Returns the [capability flags](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/mariadb-connectorc-api-functions/initial-handshake-packet/README.md) of the connected server.Parameter type: `unsigned long`.
+* `MARIADB_CONNECTION_SERVER_CAPABILITIES`: Returns the [capability flags](../../mariadb-connector-python/constants.md#capability) of the connected server.Parameter type: `unsigned long`.
 * `MARIADB_CONNECTION_SERVER_STATUS`: Returns server status after last operation. A list of possible flags can be found in the description OK packet.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_SERVER_TYPE`: Retrieves the type of the server.Parameter type: `const char*`.
 * `MARIADB_CONNECTION_SERVER_VERSION`: Retrieves the server version in literal format.Parameter type: `const char *`.
