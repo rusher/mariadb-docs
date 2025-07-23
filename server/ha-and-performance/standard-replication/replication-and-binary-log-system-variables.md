@@ -433,6 +433,16 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Data Type: `boolean`
 * Default Value: `OFF`
 
+#### `master_info_file`
+
+* Description: The location and name of the file that remembers the master and where the I/O replication thread is in the master's binlogs. Defaults to master.info.
+* Command line: `--master-info-file=val`
+* Scope: Global
+* Dynamic: No
+* Data Type: `string`
+* Default Value: `master.info`
+* Introduced: [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)  (as a system variable, previously just an option)
+
 #### `master_verify_checksum`
 
 * Description: Verify [binlog checksums](binlog-event-checksums.md) when reading events from the binlog on the primary.
