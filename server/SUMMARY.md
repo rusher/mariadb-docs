@@ -3754,7 +3754,7 @@
       * [Error 4205: Invalid vector format at offset](reference/error-codes/mariadb-error-codes-4200-to-4299/e4205.md)
       * [Error 4206: Cannot determine distance type for VEC\_DISTANCE, index is not found](reference/error-codes/mariadb-error-codes-4200-to-4299/e4206.md)
   * [Client/Server Protocol](reference/clientserver-protocol/README.md)
-    * [Protocol data types](reference/clientserver-protocol/protocol-data-types.md)
+    * [Protocol Data Types](reference/clientserver-protocol/protocol-data-types.md)
     * [MariaDB Protocol Differences with MySQL](reference/clientserver-protocol/mariadb-protocol-differences-with-mysql.md)
     * [0 - Packet](reference/clientserver-protocol/0-packet.md)
     * [1 - Connecting](reference/clientserver-protocol/1-connecting/README.md)

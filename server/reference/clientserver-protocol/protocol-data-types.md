@@ -1,6 +1,6 @@
-# Protocol data types
+# Protocol Data Types
 
-## List of possible types
+## List of Possible Types
 
 Unknown type:
 
@@ -98,11 +98,11 @@ An string of 512 "a" is encoded in 515 bytes :
 | fc 00 02 97 97 97 97 97 97 97 97 97 97 97 97 97 | ² .. a a a a a a a a a a a a a |
 
 ...\
-The NULL value is encoded using null (0xfb) length.
+The `NULL` value is encoded using null (0xfb) length.
 
 An empty value is encoded with a 0 (0x00) length.
 
-### End of file length strings
+### End of File Length Strings
 
 The notation is "string".
 
