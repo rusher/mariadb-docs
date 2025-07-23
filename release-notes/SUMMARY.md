@@ -253,7 +253,7 @@
   * [Release Notes - MariaDB 10.11 Series](community-server/mariadb-10-11-series/README.md)
     * [MariaDB 10.11 Changes & Improvements](community-server/mariadb-10-11-series/what-is-mariadb-1011.md)
     * [MariaDB 10.11.13 Release Notes](community-server/mariadb-10-11-series/mariadb-10.11.13-release-notes.md)
-    * [MariaDB 10.11.12 Release Notes](community-server/mariadb-10-11-series/mariadb-10-11-12-release-notes.md)
+    * [MariaDB 10.11.12 Release Notes](community-server/mariadb-10-11-series/mariadb-10.11.12-release-notes.md)
     * [MariaDB 10.11.11 Release Notes](community-server/mariadb-10-11-series/mariadb-10-11-11-release-notes.md)
     * [MariaDB 10.11.10 Release Notes](community-server/mariadb-10-11-series/mariadb-10-11-10-release-notes.md)
     * [MariaDB 10.11.9 Release Notes](community-server/mariadb-10-11-series/mariadb-10-11-9-release-notes.md)
