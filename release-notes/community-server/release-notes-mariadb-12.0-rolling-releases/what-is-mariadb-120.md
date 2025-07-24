@@ -95,7 +95,8 @@ For a list of all new variables, see [System Variables Added in MariaDB 12.0](ht
 
 #### Removed
 
-* Removed [storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#storage_engine), deprecated in [MariaDB 5.5](../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
+* [storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#storage_engine), deprecated in [MariaDB 5.5](../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
+* [large\_page\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#large_page_size), deprecated in [MariaDB 10.5.3](../old-releases/mariadb-10-5-series/mariadb-1053-release-notes.md).
 
 ## List of All MariaDB 12.0 Releases
 
