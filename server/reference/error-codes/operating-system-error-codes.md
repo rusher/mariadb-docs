@@ -4,7 +4,7 @@ Below is a partial list of more common Linux and Windows operating system error 
 
 ## Linux Error Codes
 
-The [perror](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/clients-and-utilities/perror.md) tool can be used to find the error message which is associated with a given error code.
+The [perror](../../clients-and-utilities/administrative-tools/perror.md) tool can be used to find the error message which is associated with a given error code.
 
 | Number | Error Code      | Description                                     |
 | ------ | --------------- | ----------------------------------------------- |
@@ -140,7 +140,9 @@ The [perror](https://github.com/mariadb-corporation/docs-server/blob/test/genera
 
 ## Windows Error Codes
 
+{% hint style="info" %}
 For a complete list, see [ms681381.aspx](https://msdn.microsoft.com/en-us/library/ms681381.aspx)
+{% endhint %}
 
 | Number | Error Code                       | Description                                                                                  |
 | ------ | -------------------------------- | -------------------------------------------------------------------------------------------- |
