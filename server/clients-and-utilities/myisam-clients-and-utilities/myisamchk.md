@@ -26,20 +26,19 @@ The following options can be set while passed as commandline options to myisamch
 
 | Option                            | Description                                                                                                                                                                                                              |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| -H, --HELP                        | Display help and exit. Options are presented in a single list.                                                                                                                                                           |
-| -?, --help                        | Display help and exit. Options are grouped by type of operation.                                                                                                                                                         |
-| -debug=options, -                 |                                                                                                                                                                                                                          |
-| ## options                        | Write a debugging log. A typical debug\_options string isd:t:o,file\_name´. The default isd:t:o,/tmp/myisamchk.trace´. (Available in debug builds only)                                                                  |
-| \| -t path, --tmpdir=path         | Path for temporary files. Multiple paths can be specified, separated by colon (:) on Unix and semicolon (;) on Windows. They will be used in a round-robin fashion. If not set, the TMPDIR environment variable is used. |
-| \| -s, --silent                   | Only print errors. One can use two -s (-ss) to make myisamchk very silent.                                                                                                                                               |
-| \| -v, --verbose                  | Print more information. This can be used with --description and --check. Use many -v for more verbosity.                                                                                                                 |
-| \| -V, --version                  | Print version and exit.                                                                                                                                                                                                  |
-| \| -w, --wait                     | If table is locked, wait instead of returning an error.                                                                                                                                                                  |
-| \| --print-defaults               | Print the program argument list and exit.                                                                                                                                                                                |
-| \| --no-defaults                  | Don't read default options from any option file.                                                                                                                                                                         |
-| \| --defaults-file=filename       | Only read default options from the given file filename, which can be the full path, or the path relative to the current directory.                                                                                       |
-| \| --defaults-extra-file=filename | Read the file filename, which can be the full path, or the path relative to the current directory, after the global files are read.                                                                                      |
-| \| --defaults-group-suffix=str    | Also read groups with a suffix of str. For example, --defaults-group-suffix=x would read the groups \[myisamchk] and \[myisamchk\_x]                                                                                     |
+| -H, --HELP                        | Display help and exit. Options are presented in a single list.
+| -?, --help                        | Display help and exit. Options are grouped by type of operation.
+| -# options, --debug=options        | Write a debugging log. A typical debug options string is `d:t:o,file_name`. The default is `d:t:o,/tmp/myisamchk.trace`. (Available in debug builds only)
+| -t path, --tmpdir=path         | Path for temporary files. Multiple paths can be specified, separated by colon (:) on Unix and semicolon (;) on Windows. They will be used in a round-robin fashion. If not set, the TMPDIR environment variable is used. |
+| -s, --silent                   | Only print errors. One can use two -s (-ss) to make myisamchk very silent.
+| -v, --verbose                  | Print more information. This can be used with --description and --check. Use many -v for more verbosity.
+| -V, --version                  | Print version and exit.
+| -w, --wait                     | If table is locked, wait instead of returning an error.
+| --print-defaults               | Print the program argument list and exit.
+| --no-defaults                  | Don't read default options from any option file.
+| --defaults-file=filename       | Only read default options from the given file filename, which can be the full path, or the path relative to the current directory.
+| --defaults-extra-file=filename | Read the file filename, which can be the full path, or the path relative to the current directory, after the global files are read.
+| --defaults-group-suffix=str    | Also read groups with a suffix of str. For example, --defaults-group-suffix=x would read the groups \[myisamchk] and \[myisamchk\_x]
 
 The following variables can also be set by using _--var\_name=value_, for example _--ft\_min\_word\_len=5_
 
