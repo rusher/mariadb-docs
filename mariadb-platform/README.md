@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # MariaDB Enterprise Platform
 
 ### What is MariaDB Enterprise Platform? <a href="#what-is-mariadb-enterprise-platform" id="what-is-mariadb-enterprise-platform"></a>
