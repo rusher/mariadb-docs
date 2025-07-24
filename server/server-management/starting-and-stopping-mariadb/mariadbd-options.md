@@ -75,7 +75,7 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 
 #### `-a, --ansi`
 
-* Description: Use ANSI SQL syntax instead of MariaDB syntax. This mode will also set [transaction isolation level](../../reference/sql-statements/transactions/set-transaction.md) [serializable](../../reference/sql-statements/transactions/set-transaction.md).
+* Description: Use ANSI SQL syntax instead of MariaDB syntax. This mode will also set [transaction isolation level](../../reference/sql-statements/transactions/set-transaction.md) [serializable](../../reference/sql-statements/transactions/set-transaction.md#serializable).
 
 #### `--new`
 
@@ -118,7 +118,7 @@ Options that are also system variables are listed after:
 #### `--language`
 
 * Description: This option can be used to set the server's language for error messages. This option can be specified either as a language name or as the path to the directory storing the language's [error message file](../server-monitoring-logs/error-log.md#error-messages-file). See [Server Locales](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a list of supported locales and their associated languages.
-  * This option is deprecated. Use the [lc\_messages](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) and [lc\_messages\_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variables instead.
+  * This option is deprecated. Use the [lc\_messages](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) and [lc\_messages\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variables instead.
   * See [Setting the Language for Error Messages](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more information.
 
 ### Locale Options and System Variables
