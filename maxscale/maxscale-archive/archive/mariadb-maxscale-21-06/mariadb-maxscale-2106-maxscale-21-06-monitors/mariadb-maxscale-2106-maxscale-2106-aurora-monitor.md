@@ -36,7 +36,7 @@ servers. Read the [Amazon RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/
 for more information about how to retrieve the unique endpoints of your cluster.
 
 The Aurora monitor requires no parameters apart from the standard monitor\
-parameters. It supports the monitor script functionality described in[Monitor Common](mariadb-maxscale-2106-maxscale-2106-common-monitor-parameters.md) documentation.
+parameters. It supports the monitor script functionality described in [Monitor Common](mariadb-maxscale-2106-maxscale-2106-common-monitor-parameters.md) documentation.
 
 Here is an example Aurora monitor configuration.
 

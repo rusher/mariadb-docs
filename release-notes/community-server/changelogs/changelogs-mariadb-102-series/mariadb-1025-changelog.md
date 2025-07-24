@@ -6,9 +6,9 @@ The most recent release of [MariaDB 10.2](../../old-releases/release-notes-maria
 
 **Release date:** 5 Apr 2017
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.2) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.2) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * Merge [Revision #ebce682557](https://github.com/MariaDB/server/commit/ebce682557) 2017-04-04 22:00:03 +0300 - Merge ../10.2-mariarocks into 10.2
 * [Revision #23b86a18e6](https://github.com/MariaDB/server/commit/23b86a18e6)\

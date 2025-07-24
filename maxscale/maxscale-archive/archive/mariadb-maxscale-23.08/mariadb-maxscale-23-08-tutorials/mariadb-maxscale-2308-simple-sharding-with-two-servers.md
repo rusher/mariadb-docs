@@ -12,7 +12,7 @@ database server.
 
 ### Environment
 
-This tutorial was written for Ubuntu 22.04, MaxScale 23.08 and[MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011). In addition to\
+This tutorial was written for Ubuntu 22.04, MaxScale 23.08 and [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011). In addition to\
 the MaxScale server, you'll need two MariaDB servers which will be used for the\
 sharding. The installation of MariaDB is not covered by this tutorial.
 
@@ -31,7 +31,7 @@ apt -y install maxscale
 ### Creating Users
 
 This tutorial uses a broader set of grants than is required for the sake of\
-brevity and backwards compatibility. For the minimal set of grants, refer to the[MaxScale Configuration Guide](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/).
+brevity and backwards compatibility. For the minimal set of grants, refer to the [MaxScale Configuration Guide](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/).
 
 All MaxScale configurations require at least two accounts: one for reading\
 authentication data and another for monitoring the state of the\
@@ -275,7 +275,7 @@ ERROR 1146 (42S02): Table 'customer_01.accounts' doesn't exist
 ```
 
 In most multi-tenant situations, this is an acceptable limitation. If you do\
-need cross-shard joins, the[Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-overview) storage\
+need cross-shard joins, the [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-overview) storage\
 engine will provide you this.
 
 CC BY-SA / Gnu FDL

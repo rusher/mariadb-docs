@@ -6,9 +6,9 @@
 
 **Release date:** 2 Jul 2020
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-241-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-241-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #38c49b1](https://github.com/mariadb-corporation/mariadb-connector-j/commit/38c49b1) Merge branch 'release/2.4.1'

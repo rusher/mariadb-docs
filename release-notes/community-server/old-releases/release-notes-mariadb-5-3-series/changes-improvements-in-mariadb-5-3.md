@@ -30,12 +30,12 @@ Some of the code was backported from MySQL 6.0 (a MySQL version that was never\
 released as GA by Oracle), some was re-engineered and enriched by new features,\
 and some code was written from scratch.
 
-Any new feature or combination of features can be switched on/off dynamically via the[optimizer\_switch](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch) system variable.
+Any new feature or combination of features can be switched on/off dynamically via the [optimizer\_switch](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch) system variable.
 
-The first stable (GA) release of [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) was[MariaDB 5.3.5](mariadb-535-release-notes.md), which was released on 29 Feb 2012.
+The first stable (GA) release of [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) was [MariaDB 5.3.5](mariadb-535-release-notes.md), which was released on 29 Feb 2012.
 
-You can download[the latest binaries of MariaDB 5.3 here](https://downloads.askmonty.org/MariaDB/5.3/),\
-or get the latest[source code from launchpad](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code).
+You can download [the latest binaries of MariaDB 5.3 here](https://downloads.askmonty.org/MariaDB/5.3/),\
+or get the latest [source code from launchpad](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code).
 
 ## Feature Comparison Matrix
 
@@ -167,7 +167,7 @@ The [Subquery Optimizations Map](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/
 
 ## Datatypes
 
-* [Microsecond](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/microseconds-in-mariadb) support for [NOW()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/now) and[timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/timestamp), [time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/time), and [datetime](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime) columns.
+* [Microsecond](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/microseconds-in-mariadb) support for [NOW()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/now) and [timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/timestamp), [time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/time), and [datetime](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime) columns.
 * [CAST()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/cast) now supports AS DECIMAL\[(M,D)] and AS INT.
 * [CAST()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/cast) and all other datetime/time functions now supports microsecond fully.
 
@@ -232,7 +232,7 @@ KILL [HARD | SOFT] [CONNECTION | QUERY] [thread_id | USER user_name]
   not affect users with the `SUPER` privilege.
 * The [IGNORE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/ignore) directive does not ignore all errors (like fatal errors), only things that are safe to ignore.
 
-You can access the [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) tree from[launchpad](https://launchpad.net/maria/5.3).
+You can access the [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) tree from [launchpad](https://launchpad.net/maria/5.3).
 
 ## Security Vulnerabilities Fixed in [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md)
 

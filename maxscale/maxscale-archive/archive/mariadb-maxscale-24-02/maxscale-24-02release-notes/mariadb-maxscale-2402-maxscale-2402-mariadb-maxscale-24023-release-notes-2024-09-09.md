@@ -5,7 +5,7 @@ Release 24.02.3 is a GA release.
 This document describes the changes in release 24.02.3, when compared to the\
 previous release in the same series.
 
-If you are upgrading from an older major version of MaxScale, please read the[upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-24.02) for\
+If you are upgrading from an older major version of MaxScale, please read the [upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-24.02) for\
 this MaxScale version.
 
 For any problems you encounter, please consider submitting a bug\

@@ -55,7 +55,7 @@ sudo ./postinst
 
 ### Required Packages
 
-For a definitive list of packages, consult the[install\_build\_deps.sh](https://mariadb.com/BUILD/install_build_deps.sh) script.
+For a definitive list of packages, consult the [install\_build\_deps.sh](https://mariadb.com/BUILD/install_build_deps.sh) script.
 
 ### Configuring the Build
 

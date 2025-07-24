@@ -6,9 +6,9 @@
 
 **Release date:** 16 Aug 2016
 
-For the highlights of this release, see the[release notes](../../1.5/mariadb-connector-j-151-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.5/mariadb-connector-j-151-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #0fcf874](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0fcf874) - \[misc] updating documentation - from kolzeq
 * [Revision #fc156f5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/fc156f5) - \[[CONJ-329](https://jira.mariadb.org/browse/CONJ-329)] & \[[CONJ-330](https://jira.mariadb.org/browse/CONJ-330)] rewriteBatchedStatements single query correction - from kolzeq

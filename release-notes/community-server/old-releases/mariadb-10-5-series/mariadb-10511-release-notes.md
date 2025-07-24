@@ -44,7 +44,7 @@ In addition to the above, this release also contains the following fixes:
   before any table has been processed ([MDEV-22530](https://jira.mariadb.org/browse/MDEV-22530))
 * Fix optimistic parallel applier to not deadlock on admin commands [OPTIMIZE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table),[REPAIR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/repair-table), and [ANALYZE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table) ([MDEV-17515](https://jira.mariadb.org/browse/MDEV-17515))
 * Backport [MDEV-20821](https://jira.mariadb.org/browse/MDEV-20821) parallel slave server shutdown hang ([MDEV-22370](https://jira.mariadb.org/browse/MDEV-22370))
-* Removed deprecated `--base64-output` to correct BINLOG clause in[mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) output ([MDEV-25222](https://jira.mariadb.org/browse/MDEV-25222))
+* Removed deprecated `--base64-output` to correct BINLOG clause in [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) output ([MDEV-25222](https://jira.mariadb.org/browse/MDEV-25222))
 
 ### Security
 

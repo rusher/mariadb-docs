@@ -43,7 +43,7 @@ user=maxscale
 password=96F99AA1315BDC3604B006F427DD9484
 ```
 
-If the key file is not in the default location, the[datadir](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) parameter must be\
+If the key file is not in the default location, the [datadir](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) parameter must be\
 set to the directory that contains it.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

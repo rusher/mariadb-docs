@@ -15,7 +15,7 @@ general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **see the**[**What is MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.3.6](mariadb-536-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.3.6 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md).
+information on each push, see the [MariaDB 5.3.6 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -30,7 +30,7 @@ recommend upgrading from older versions as soon as possible.
 
 This version of MariaDB includes [MariaDB 5.2.12](../release-notes-mariadb-5-2-series/mariadb-5212-release-notes.md), and, by extension, [MariaDB 5.1.62](../release-notes-mariadb-5-1-series/mariadb-5162-release-notes.md)\
 and MySQL 5.1.62. See the [MariaDB 5.2.12 Release Notes](../release-notes-mariadb-5-2-series/mariadb-5212-release-notes.md)\
-for the changes made in [MariaDB 5.2.12](../release-notes-mariadb-5-2-series/mariadb-5212-release-notes.md) and see[Changes in MySQL 5.1.62](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-62.html)\
+for the changes made in [MariaDB 5.2.12](../release-notes-mariadb-5-2-series/mariadb-5212-release-notes.md) and see [Changes in MySQL 5.1.62](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-62.html)\
 for what changed between this and previous MySQL versions.
 
 ## Performance Improvements

@@ -32,9 +32,9 @@ through MariaDB MaxScale. Filter are often used for logging queries or modifying
 server responses.
 
 A Google Group exists for MariaDB MaxScale. The Group is used to discuss ideas,\
-issues and communicate with the MariaDB MaxScale community. Send email to[maxscale@googlegroups.com](mailto:maxscale@googlegroups.com) or use the[forum](https://groups.google.com/forum/#!forum/maxscale) interface.
+issues and communicate with the MariaDB MaxScale community. Send email to [maxscale@googlegroups.com](mailto:maxscale@googlegroups.com) or use the [forum](https://groups.google.com/forum/#!forum/maxscale) interface.
 
-Bugs can be reported in the MariaDB Jira[jira.mariadb.org](https://jira.mariadb.org)
+Bugs can be reported in the MariaDB Jira [jira.mariadb.org](https://jira.mariadb.org)
 
 ### Installing MariaDB MaxScale
 
@@ -43,7 +43,7 @@ building from source code, is included in the [MariaDB MaxScale Installation\
 Guide](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-installation-guide.md).
 
 The same guide also provides basic information on running MariaDB MaxScale. More\
-detailed information about configuring MariaDB MaxScale can be found in the[Configuration Guide](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md).
+detailed information about configuring MariaDB MaxScale can be found in the [Configuration Guide](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

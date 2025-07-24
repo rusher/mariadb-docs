@@ -38,7 +38,7 @@ See also a detailed breakdown of [System variable differences between MariaDB 5.
     connection attempts).
 * The variables `replicate_do_*`, `replicate_ignore_*`,\
   and `replicate_wild_*` have been made dynamic, so they can be changed\
-  without requiring a server restart. See[Dynamic Replication Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters) for more\
+  without requiring a server restart. See [Dynamic Replication Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters) for more\
   information.
 * New [status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables) for checking if features are used. These are very useful in [user feedback](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/feedback-plugin) to tell developers how much a feature is used:
   * [Feature\_dynamic\_columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_dynamic_columns)

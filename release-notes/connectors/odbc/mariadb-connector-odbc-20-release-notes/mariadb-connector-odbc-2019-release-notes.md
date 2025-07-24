@@ -11,7 +11,7 @@ Connector/ODBC.
 
 ## Notes
 
-MariaDB Connector/ODBC 2.0.19 is built on top of[MariaDB Connector/C v.2.3.7](../../c/mariadb-connector-c-23-release-notes/mariadb-connector-c-237-release-notes.md) and uses the\
+MariaDB Connector/ODBC 2.0.19 is built on top of [MariaDB Connector/C v.2.3.7](../../c/mariadb-connector-c-23-release-notes/mariadb-connector-c-237-release-notes.md) and uses the\
 binary prepared statement protocol.
 
 ## Bug Fixes
@@ -48,7 +48,7 @@ binary prepared statement protocol.
 ## Changelog
 
 For a complete list of every change made in this release, with links to\
-detailed information on each push, see the[changelog](../changelogs/mariadb-connector-odbc-20-changelogs/mariadb-connector-odbc-2019-changelog.md).
+detailed information on each push, see the [changelog](../changelogs/mariadb-connector-odbc-20-changelogs/mariadb-connector-odbc-2019-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

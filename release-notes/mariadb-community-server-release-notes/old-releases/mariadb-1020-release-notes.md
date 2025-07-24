@@ -67,7 +67,7 @@ Code:
 **Do not use&#x20;**_**alpha**_**&#x20;releases on production systems!**
 
 * Repositories exist for 10.2, but because 10.2 is still alpha, it is not\
-  visible in the[repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/).\
+  visible in the [repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/).\
   To configure a 10.2 apt, yum, or zypper repository using the tool, simply\
   select 10.1 and then when executing the instructions, change all occurrences of\
   '10.1' to '10.2'.

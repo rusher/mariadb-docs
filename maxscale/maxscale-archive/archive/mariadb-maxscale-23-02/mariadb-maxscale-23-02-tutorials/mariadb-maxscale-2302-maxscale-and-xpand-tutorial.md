@@ -4,7 +4,7 @@ Since version 2.4, MaxScale has built-in support for Xpand. This\
 tutorial explains how to setup MaxScale in front of a Xpand\
 cluster.
 
-There is no Xpand specific router, but both the[readconnroute](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readconnroute.md) and\
+There is no Xpand specific router, but both the [readconnroute](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readconnroute.md) and\
 the [readwritesplit](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) routers can be\
 used.
 
@@ -13,7 +13,7 @@ used.
 With _readconnroute_ you get simple connection based routing, where\
 each new connection is created (by default) to the Xpand node with\
 the least amount of existing connections. That is, with readconnroute\
-the behaviour will be very similar to the behaviour when[HAProxy](https://www.haproxy.org) is used as the Xpand load\
+the behaviour will be very similar to the behaviour when [HAProxy](https://www.haproxy.org) is used as the Xpand load\
 balancer.
 
 #### Bootstrap servers

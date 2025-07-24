@@ -42,7 +42,7 @@ mariadb\_get\_infov now supports options MARIADB\_CONNECTION\_BYTES\_READ and MA
 
 #### Connection string support ([CONC-247](https://jira.mariadb.org/browse/CONC-247))
 
-A connection string contains key/value pairs, separated by a semicolon as used in ODBC. Supported keys are all configuration options which can be used in MariaDB configuration files. For a complete list check[config\_files#configuration-options](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/config_files#configuration-options).
+A connection string contains key/value pairs, separated by a semicolon as used in ODBC. Supported keys are all configuration options which can be used in MariaDB configuration files. For a complete list check [config\_files#configuration-options](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/config_files#configuration-options).
 
 The connection string must contain at least one semicolon, otherwise it wil be interpreted as hostname. Unknown or invalid keys will be ignored.
 

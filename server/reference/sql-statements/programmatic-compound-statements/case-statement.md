@@ -48,7 +48,7 @@ END;
 
 The indentation used here in the `ELSE` clause is for purposes of clarity only, and is not otherwise significant. See [Delimiters in the mariadb client](broken-reference) for more on the use of the delimiter command.
 
-**Note:** The syntax of the `CASE` statement used inside stored programs differs slightly from that of the SQL CASE expression described in[CASE OPERATOR](../../sql-functions/control-flow-functions/case-operator.md). The `CASE` statement cannot have an `ELSE NULL` clause, and it is terminated with `END CASE` instead of `END`.
+**Note:** The syntax of the `CASE` statement used inside stored programs differs slightly from that of the SQL CASE expression described in [CASE OPERATOR](../../sql-functions/control-flow-functions/case-operator.md). The `CASE` statement cannot have an `ELSE NULL` clause, and it is terminated with `END CASE` instead of `END`.
 
 ## See Also
 

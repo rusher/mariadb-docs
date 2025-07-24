@@ -52,28 +52,28 @@ that use functions in conjunction with columns that should be masked.\
 Allowing function usage provides a way for circumventing the masking,\
 unless a firewall filter is separately configured and installed.
 
-Please see the configuration parameter[prevent\_function\_usage](maxscale-masking-filter.md#prevent_function_usage)\
+Please see the configuration parameter [prevent\_function\_usage](maxscale-masking-filter.md#prevent_function_usage)\
 for how to change the default behaviour.
 
 From MaxScale 2.3.5 onwards, the masking filter will check the\
 definition of user variables and reject statements that define a user\
 variable using a statement that refers to columns that should be masked.
 
-Please see the configuration parameter[check\_user\_variables](maxscale-masking-filter.md#check_user_variables)\
+Please see the configuration parameter [check\_user\_variables](maxscale-masking-filter.md#check_user_variables)\
 for how to change the default behaviour.
 
 From MaxScale 2.3.5 onwards, the masking filter will examine unions\
 and if the second or subsequent SELECT refer to columns that should\
 be masked, the statement will be rejected.
 
-Please see the configuration parameter[check\_unions](maxscale-masking-filter.md#check_unions)\
+Please see the configuration parameter [check\_unions](maxscale-masking-filter.md#check_unions)\
 for how to change the default behaviour.
 
 From MaxScale 2.3.5 onwards, the masking filter will examine subqueries\
 and if a subquery refers to columns that should be masked, the statement\
 will be rejected.
 
-Please see the configuration parameter[check\_subqueries](maxscale-masking-filter.md#check_subqueries)\
+Please see the configuration parameter [check\_subqueries](maxscale-masking-filter.md#check_subqueries)\
 for how to change the default behaviour.
 
 Note that in order to ensure that it is not possible to get access to\
@@ -92,7 +92,7 @@ to get access to the cleartext version of a masked field `ssn`.
 From MaxScale 2.3.5 onwards, the masking filter will, if any of the`prevent_function_usage`, `check_user_variables`, `check_unions` or`check_subqueries` parameters is set to true, block statements that\
 cannot be fully parsed.
 
-Please see the configuration parameter[require\_fully\_parsed](maxscale-masking-filter.md#require_fully_parsed)\
+Please see the configuration parameter [require\_fully\_parsed](maxscale-masking-filter.md#require_fully_parsed)\
 for how to change the default behaviour.
 
 From MaxScale 2.3.7 onwards, the masking filter will treat any strings\

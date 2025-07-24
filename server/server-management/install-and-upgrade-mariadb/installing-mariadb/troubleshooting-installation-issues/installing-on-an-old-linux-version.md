@@ -25,7 +25,7 @@ is not compatible with your system.
 
 The options you have are:
 
-* Find another MariaDB package or tar from the[download page](https://downloads.mariadb.org/) that matches your\
+* Find another MariaDB package or tar from the [download page](https://downloads.mariadb.org/) that matches your\
   system.
 * or
 * [Download the source](../../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md) and [build it](../compiling-mariadb-from-source/generic-build-instructions.md).

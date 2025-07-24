@@ -6,9 +6,9 @@ The most recent [_**Stable**_](../../../../community-server/about/release-criter
 
 **Release date:** 12 Nov 2024
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-3-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-3-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-c/) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-c/) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Revisions for both Connector/C 3.4.2 and 3.4.3 are included here

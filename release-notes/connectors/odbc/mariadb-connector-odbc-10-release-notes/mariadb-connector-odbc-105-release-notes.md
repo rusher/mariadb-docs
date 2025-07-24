@@ -35,7 +35,7 @@ uses the binary prepared statement protocol.
 ## Changelog
 
 For a complete list of every change made in this release, with links to\
-detailed information on each push, see the[changelog](../changelogs/mariadb-connector-odbc-10-changelogs/mariadb-connector-odbc-105-changelog.md).
+detailed information on each push, see the [changelog](../changelogs/mariadb-connector-odbc-10-changelogs/mariadb-connector-odbc-105-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

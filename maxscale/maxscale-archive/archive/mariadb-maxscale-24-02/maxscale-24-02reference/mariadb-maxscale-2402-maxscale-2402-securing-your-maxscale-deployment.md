@@ -12,7 +12,7 @@ before you go into production:
 ### Encrypting Plaintext Passwords
 
 Ensuring the security of your MaxScale setup involves stringent control over\
-the key file permissions. Utilizing[maxkeys](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+the key file permissions. Utilizing [maxkeys](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
 is an effective approach to generate a secure key file.
 
 This generates a keyfile in `/var/lib/maxscale`
@@ -21,7 +21,7 @@ This generates a keyfile in `/var/lib/maxscale`
 $ maxkeys
 ```
 
-See[Encrypting Passwords](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+See [Encrypting Passwords](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
 for more information about `maxkeys`.
 
 Once generated, this key file can be relocated to a secure location. This\
@@ -95,7 +95,7 @@ transit. Follow these steps to configure SSL:
 
 **1. Set Up SSL Keys and Certificates:**
 
-* Generate SSL keys and certificates. See[Certificate Creation with OpenSSL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/certificate-creation-with-openssl)
+* Generate SSL keys and certificates. See [Certificate Creation with OpenSSL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/certificate-creation-with-openssl)
 * Add them to the MaxScale configuration file.
 
 **2. Update the MaxScale Configuration:**
@@ -196,7 +196,7 @@ MaxScale.
 **2. Audit File Management:**
 
 * Implement log rotation to manage the size and number of audit files. This\
-  can be achieved using standard Linux log rotation tools. See[Rotating Logs on Unix and Linux](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/rotating-logs-on-unix-and-linux)
+  can be achieved using standard Linux log rotation tools. See [Rotating Logs on Unix and Linux](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/rotating-logs-on-unix-and-linux)
 
 For manual log rotation, you can use the following MaxCtrl command:
 

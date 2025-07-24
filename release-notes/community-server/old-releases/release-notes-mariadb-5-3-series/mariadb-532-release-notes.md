@@ -18,18 +18,18 @@ third beta release of the 5.3 series and fixes bugs found in the initial 5.3.0 a
 5.3.1 beta releases.
 
 For a list of every change made in [MariaDB 5.3.2](mariadb-532-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.3.2 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-532-changelog.md). It is worth noting that[MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
+information on each push, see the [MariaDB 5.3.2 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-532-changelog.md). It is worth noting that [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-Be notified of new releases automatically by adding the[releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
+Be notified of new releases automatically by adding the [releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
 your favorite feed reader or by [subscribing](https://mariadb.org) to the\
 announce 'at' mariadb.org announcement list (this is a low traffic,\
 announce-only list).
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
+information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 ## User Feedback plugin

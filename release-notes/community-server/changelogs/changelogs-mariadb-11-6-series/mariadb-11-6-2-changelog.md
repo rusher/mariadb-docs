@@ -6,9 +6,9 @@
 
 **Release date:** 21 Nov 2024
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/11.1) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/11.1) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 11.4.4](../changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md)

@@ -581,7 +581,7 @@ headers to get a general idea of what services the core provides for plugins,\
 is also highly recommeded.
 
 Lastly, MariaDB MaxScale is an open-source project, so code contributions can be\
-accepted if they fulfill the[requirements](https://github.com/mariadb-corporation/MaxScale/wiki/Contributing).
+accepted if they fulfill the [requirements](https://github.com/mariadb-corporation/MaxScale/wiki/Contributing).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

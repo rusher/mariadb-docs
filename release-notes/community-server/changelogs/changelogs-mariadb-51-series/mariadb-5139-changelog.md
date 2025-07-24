@@ -7,9 +7,9 @@
 Generally: MariaDB-5.1.39 Beta is based on MySQL-5.1.39, but has these\
 additional changes and bug fixes.
 
-* Includes MySQL 5.1.39 (check[MySQL release notes](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-39.html)\
+* Includes MySQL 5.1.39 (check [MySQL release notes](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-39.html)\
   for details of changes since MySQL 5.1.38)
-* Includes XtraDB 1.0.3-8 (check[XtraDB release notes](https://www.percona.com/docs/wiki/percona-xtradb:info:xtradb_changelog#release_1.0.3-8)\
+* Includes XtraDB 1.0.3-8 (check [XtraDB release notes](https://www.percona.com/docs/wiki/percona-xtradb:info:xtradb_changelog#release_1.0.3-8)\
   for details of changes since XtraDB 1.0.3-6)
 * RPMs for Centos 5 [now available](https://downloads.askmonty.org/).
 * Includes [FederatedX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/federatedx-storage-engine) as replacement for\

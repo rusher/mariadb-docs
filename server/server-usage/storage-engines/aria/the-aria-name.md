@@ -25,10 +25,10 @@ heard it liked that idea. So the decision was made that the next best thing was\
 for the community to suggest and vote on names.
 
 This was done by running a contest in 2009 through the end of May 2010.\
-After that the best names were voted on by the community and Monty picked and[announced the winner](https://blogs.gnome.org/mneptok/2010/07/20/rename-maria-contest-winner/)\
+After that the best names were voted on by the community and Monty picked and [announced the winner](https://blogs.gnome.org/mneptok/2010/07/20/rename-maria-contest-winner/)\
 (Aria) at OSCon 2010 in Portland.
 
-The winning entry was submitted by Chris Tooley. He received a Linux-powered[System 76](https://www.system76.com) Meerkat NetTop\
+The winning entry was submitted by Chris Tooley. He received a Linux-powered [System 76](https://www.system76.com) Meerkat NetTop\
 as his prize for suggesting the winning name from Monty Program.
 
 ## See Also

@@ -15,7 +15,7 @@ CREATE TABLE xboy ENGINE=CONNECT tabname=boys;
 ```
 
 Because the boys table can be directly used, what can be the use of a proxy\
-table? Well, its main use is to be internally used by other table types such as[TBL](connect-tbl-table-type-table-list.md), [XCOL](connect-xcol-table-type.md), [OCCUR](connect-occur-table-type.md), or [PIVOT](connect-pivot-table-type.md). Sure enough, PROXY tables are CONNECT tables, meaning that\
+table? Well, its main use is to be internally used by other table types such as [TBL](connect-tbl-table-type-table-list.md), [XCOL](connect-xcol-table-type.md), [OCCUR](connect-occur-table-type.md), or [PIVOT](connect-pivot-table-type.md). Sure enough, PROXY tables are CONNECT tables, meaning that\
 they can be based on tables of any engines and accessed by table types that\
 need to access CONNECT tables.
 

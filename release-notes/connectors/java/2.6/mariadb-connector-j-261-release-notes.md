@@ -27,7 +27,7 @@ MariaDB Connector/J 2.6.1 is a [_**Stable**_](../../../community-server/about/re
 * [CONJ-779](https://jira.mariadb.org/browse/CONJ-779) - Logic error in stop() method of OSGi bundle activator
 * [CONJ-780](https://jira.mariadb.org/browse/CONJ-780) - Logic error in implementation of OSGi DataSourceFactory (MariaDbDataSourceFactory)
 * [CONJ-788](https://jira.mariadb.org/browse/CONJ-788) - resultset metadata always indicate that column is writable even if not
-* [CONJ-789](https://jira.mariadb.org/browse/CONJ-789) - ensure connection reference removal on (prepared)Statement close
+* [CONJ-789](https://jira.mariadb.org/browse/CONJ-789) - ensure connection reference removal on (prepared) Statement close
 * [CONJ-782](https://jira.mariadb.org/browse/CONJ-782) - SkySQL testing
 
 ## Changelog

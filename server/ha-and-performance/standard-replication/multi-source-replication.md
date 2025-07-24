@@ -19,7 +19,7 @@ replicates.
 ## New Syntax
 
 You specify which primary connection you want to work with by either specifying\
-the connection name in the command or setting[default\_master\_connection](replication-and-binary-log-system-variables.md) to the connection you want to work with.
+the connection name in the command or setting [default\_master\_connection](replication-and-binary-log-system-variables.md) to the connection you want to work with.
 
 The connection name may include any characters and should be less than 64\
 characters. Connection names are compared without regard to case (case\

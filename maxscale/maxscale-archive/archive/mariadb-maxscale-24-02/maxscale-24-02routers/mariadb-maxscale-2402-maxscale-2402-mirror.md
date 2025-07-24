@@ -17,7 +17,7 @@
 
 The `mirror` router is designed for data consistency and database behavior\
 verification during system upgrades. It allows statement duplication to multiple\
-servers in a manner similar to that of the[Tee filter](../maxscale-24-02filters/mariadb-maxscale-2402-maxscale-2402-tee-filter.md) with exporting of collected query metrics.
+servers in a manner similar to that of the [Tee filter](../maxscale-24-02filters/mariadb-maxscale-2402-maxscale-2402-tee-filter.md) with exporting of collected query metrics.
 
 For each executed query the router exports a JSON object that describes the\
 query results and has the following fields:
@@ -73,7 +73,7 @@ values are:
 * `file`
 * Exports metrics to a file. Configured with the [file](mariadb-maxscale-2402-maxscale-2402-mirror.md#file) parameter.
 * `kafka`
-* Exports metrics to a Kafka broker. Configured with the[kafka\_broker](mariadb-maxscale-2402-maxscale-2402-mirror.md#kafka_broker) and [kafka\_topic](mariadb-maxscale-2402-maxscale-2402-mirror.md#kafka_topic)\
+* Exports metrics to a Kafka broker. Configured with the [kafka\_broker](mariadb-maxscale-2402-maxscale-2402-mirror.md#kafka_broker) and [kafka\_topic](mariadb-maxscale-2402-maxscale-2402-mirror.md#kafka_topic)\
   parameters.
 
 #### `file`

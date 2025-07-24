@@ -51,7 +51,7 @@ For each option you must specify either a character literal or numeric literal. 
 
 **Note**: The `OWNER` option is currently not applied, and has no effect on the ownership or operation of the server connection that is created.
 
-The CREATE SERVER statement creates an entry in the[mysql.servers](../../../system-tables/the-mysql-database-tables/mysql-servers-table.md) table that can later be used with the CREATE TABLE statement when creating a [Spider](../../../../server-usage/storage-engines/spider/), [Connect](../../../../server-usage/storage-engines/connect/), [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/) or [FEDERATED](../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md) table. The options that you specify will be used to populate the columns in the mysql.servers table. The table columns are Server\_name, Host, Db, Username, Password, Port and Socket.
+The CREATE SERVER statement creates an entry in the [mysql.servers](../../../system-tables/the-mysql-database-tables/mysql-servers-table.md) table that can later be used with the CREATE TABLE statement when creating a [Spider](../../../../server-usage/storage-engines/spider/), [Connect](../../../../server-usage/storage-engines/connect/), [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/) or [FEDERATED](../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md) table. The options that you specify will be used to populate the columns in the mysql.servers table. The table columns are Server\_name, Host, Db, Username, Password, Port and Socket.
 
 [DROP SERVER](../drop/drop-server.md) removes a previously created server definition.
 

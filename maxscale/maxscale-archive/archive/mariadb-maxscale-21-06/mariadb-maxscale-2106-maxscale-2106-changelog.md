@@ -60,8 +60,8 @@ For more details, please refer to:
 * Synchronous mode for the Tee filter
 * New `list queries` command for MaxCtrl that lists all active queries
 * MaxScale can read client user accounts from a file and map them to backend\
-  users. See service setting[user\_accounts\_file](mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
-  and listener setting[user\_mapping\_file](mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
+  users. See service setting [user\_accounts\_file](mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
+  and listener setting [user\_mapping\_file](mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
   for more information.
 
 For more details, please refer to:
@@ -85,7 +85,7 @@ For more details, please refer to:
   user account manager connections. Normal port is used if the extra-port\
   connection fails due to too low extra\_max\_connections-setting on the backend.
 * The deprecated `required` and `disabled` values for the `ssl` parameter have been removed.
-* Backend connection multiplexing added. See[idle\_session\_pool\_time](mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
+* Backend connection multiplexing added. See [idle\_session\_pool\_time](mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
   for more information.
 * Defaults for `maxctrl` can now be specified in the file `~/maxctrl.cnf`
 * PAM Authenticator can map PAM users to MariaDB users.
@@ -112,18 +112,18 @@ For more details, please refer to:
   MaxScale is introduced.
 * MaxInfo-router and the related httpd-protocol have been removed.
 * Server weights have been removed.
-* Services can now directly route to other services with the help of the[target](mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) parameter.
+* Services can now directly route to other services with the help of the [target](mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) parameter.
 * Server parameters protocol and authenticator have been deprecated. Any\
   definitions are ignored.
 * Listeners support multiple authenticators.
-* The replication lag of a slave server must now be less than[max\_slave\_replication\_lag](mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md)\
+* The replication lag of a slave server must now be less than [max\_slave\_replication\_lag](mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md)\
   whereas in older versions the replication lag had to be less than or\
   equal to the configured limit.
 * The global settings auth\_read\_timeout and auth\_write\_timeout have been\
   deprecated. Any definitions are ignored.
 * The Columnstore monitor is now capable of monitoring Columnstore 1.5 in\
   addition to 1.0 and 1.2.
-* MariaDB-Monitor supports cooperative monitoring. See[cooperative monitoring](mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-maxscale-2106-maxscale-2106-mariadb-monitor.md)\
+* MariaDB-Monitor supports cooperative monitoring. See [cooperative monitoring](mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-maxscale-2106-maxscale-2106-mariadb-monitor.md)\
   for more information.
 * The MaxScale cache can now be shared between two MaxScale instances,\
   in which case either memcached or Redis can be used as cache storage.\
@@ -390,7 +390,7 @@ For more details, please refer to:
 * Firewall filter allows whitelisting.
 * Client side SSL works.
 
-For more details, please refer to[_MariaDB MaxScale 1.4.3 Release Notes_](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/Release-Notes/MaxScale-1.4.3-Release-Notes.md) [MariaDB MaxScale 1.4.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/Release-Notes/MaxScale-1.4.2-Release-Notes.md)[_MariaDB MaxScale 1.4.1 Release Notes_](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/Release-Notes/MaxScale-1.4.1-Release-Notes.md) [MariaDB MaxScale 1.4.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/Release-Notes/MaxScale-1.4.0-Release-Notes.md).
+For more details, please refer to [_MariaDB MaxScale 1.4.3 Release Notes_](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/Release-Notes/MaxScale-1.4.3-Release-Notes.md) [MariaDB MaxScale 1.4.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/Release-Notes/MaxScale-1.4.2-Release-Notes.md)[_MariaDB MaxScale 1.4.1 Release Notes_](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/Release-Notes/MaxScale-1.4.1-Release-Notes.md) [MariaDB MaxScale 1.4.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/Release-Notes/MaxScale-1.4.0-Release-Notes.md).
 
 ### MariaDB MaxScale 1.3
 

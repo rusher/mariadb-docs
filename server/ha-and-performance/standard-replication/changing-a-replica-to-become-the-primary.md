@@ -90,7 +90,7 @@ SHUTDOWN;
 ### Preparing the Replica to be a Primary
 
 Stop all old connections to the old primary(s) and reset **read only**\
-**mode**, if you had it enabled. You also want to save the values of[SHOW MASTER STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md) and `gtid_binlog_pos`, as\
+**mode**, if you had it enabled. You also want to save the values of [SHOW MASTER STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md) and `gtid_binlog_pos`, as\
 you may need these to setup new replicas.
 
 ```sql

@@ -644,7 +644,7 @@ SELECT 'a\0b' RLIKE '^a\\x{00}b$';
 
 #### Other PCRE Features
 
-PCRE provides other extended features that were not covered in this document, such as duplicate subpattern numbers, backtracking control, breaking utf-8 sequences into individual bytes, setting the match limit, setting the recursion limit, optimization control, recursion conditions, assertion conditions and more types of extended grapheme clusters. Please refer to the[PCRE documentation](https://www.pcre.org) for details.
+PCRE provides other extended features that were not covered in this document, such as duplicate subpattern numbers, backtracking control, breaking utf-8 sequences into individual bytes, setting the match limit, setting the recursion limit, optimization control, recursion conditions, assertion conditions and more types of extended grapheme clusters. Please refer to the [PCRE documentation](https://www.pcre.org) for details.
 
 Enhanced regex was implemented as a GSoC 2013 project by Sudheera Palihakkara.
 

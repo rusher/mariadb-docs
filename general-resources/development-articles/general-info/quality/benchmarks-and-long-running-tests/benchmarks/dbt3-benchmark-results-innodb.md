@@ -11,7 +11,7 @@ This page shows the results for benchmarking the following configuration:
 
 The test is performed using the automation script under`/mariadb-tools/dbt3_benchmark`.
 
-Details about this automation script could be found in[DBT3 automation scripts](dbt3-automation-scripts.md)
+Details about this automation script could be found in [DBT3 automation scripts](dbt3-automation-scripts.md)
 
 ## Hardware
 
@@ -43,7 +43,7 @@ to prepare the environment for the test.
 
 Before you run the test, reassure that the settings into the test configuration\
 files match your prepared environment. For more details on the test\
-configuration, please, refer to the[test configuration parameters](dbt3-automation-scripts.md#test-configuration).
+configuration, please, refer to the [test configuration parameters](dbt3-automation-scripts.md#test-configuration).
 
 For that test you should set the SCALE\_FACTOR parameter to 10 for the following\
 files before the test:

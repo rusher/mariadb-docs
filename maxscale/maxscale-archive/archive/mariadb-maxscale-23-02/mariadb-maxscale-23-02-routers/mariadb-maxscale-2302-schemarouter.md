@@ -18,7 +18,7 @@ ERROR 5000 (DUPDB): Error: duplicate tables found on two different shards.
 
 The exception to this rule are the system tables `mysql`, `information_schema`,`performance_schema`, `sys` that are never treated as duplicates.
 
-If duplicate tables are expected, use the[ignore\_tables\_regex](mariadb-maxscale-2302-schemarouter.md#ignore_tables_regex) parameter to controls which\
+If duplicate tables are expected, use the [ignore\_tables\_regex](mariadb-maxscale-2302-schemarouter.md#ignore_tables_regex) parameter to controls which\
 duplicate tables are allowed. To disable the duplicate database detection, use`ignore_tables_regex=.*`.
 
 Schemarouter compares table and database names case-insensitively. This means\
@@ -220,12 +220,12 @@ This parameter was once called `ignore_databases_regex`.
 
 #### `max_sescmd_history`
 
-This parameter has been moved to[the MaxScale core](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#max_sescmd_history)\
+This parameter has been moved to [the MaxScale core](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#max_sescmd_history)\
 in MaxScale 6.0.
 
 #### `disable_sescmd_history`
 
-This parameter has been moved to[the MaxScale core](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#disable_sescmd_history)\
+This parameter has been moved to [the MaxScale core](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#disable_sescmd_history)\
 in MaxScale 6.0.
 
 #### `refresh_databases`
@@ -252,7 +252,7 @@ to retain the same behavior as in older releases.
 The minimum interval between database map refreshes in seconds. The default\
 value is 300 seconds.
 
-The interval is specified as documented[here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations). If no explicit unit\
+The interval is specified as documented [here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the intervaltimeout is seconds, a timeout specified in milliseconds will be rejected,\

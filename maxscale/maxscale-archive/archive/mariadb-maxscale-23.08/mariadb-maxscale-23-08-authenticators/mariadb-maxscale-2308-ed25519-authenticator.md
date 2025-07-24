@@ -18,7 +18,7 @@ When a client authenticates via ed25519, MaxScale first sends them a random\
 message. The client signs the message using their password as private key and\
 sends the signature back. MaxScale then checks the signature using the public\
 key fetched from the _mysql.user_-table. The client password or an equivalent\
-token is never exposed. For more information, see[server documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-ed25519).
+token is never exposed. For more information, see [server documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-ed25519).
 
 The security of this authentication scheme presents a problem for a proxy such\
 as MaxScale since MaxScale needs to log in to backend servers on behalf of the\

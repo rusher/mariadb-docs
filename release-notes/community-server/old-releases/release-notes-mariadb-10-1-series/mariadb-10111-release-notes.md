@@ -24,7 +24,7 @@ Thanks, and enjoy MariaDB!
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
 
-This release includes all bug fixes from [MariaDB 5.5.47](../release-notes-mariadb-5-5-series/mariadb-5547-release-notes.md), [MariaDB 10.0.23](../release-notes-mariadb-10-0-series/mariadb-10023-release-notes.md), and[MariaDB Galera Cluster 10.0.23](../mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10023-release-notes.md)\
+This release includes all bug fixes from [MariaDB 5.5.47](../release-notes-mariadb-5-5-series/mariadb-5547-release-notes.md), [MariaDB 10.0.23](../release-notes-mariadb-10-0-series/mariadb-10023-release-notes.md), and [MariaDB Galera Cluster 10.0.23](../mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10023-release-notes.md)\
 releases.
 
 ### Deprecated Distributions

@@ -6,9 +6,9 @@ The most recent release of [MariaDB 10.7](../../old-releases/release-notes-maria
 
 **Release date:** 20 May 2022
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.7) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.7) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.6.8](../changelogs-mariadb-106-series/mariadb-1068-changelog.md)

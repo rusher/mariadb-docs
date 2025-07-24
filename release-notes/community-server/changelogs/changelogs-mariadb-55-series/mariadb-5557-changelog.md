@@ -6,9 +6,9 @@ The most recent release in the [MariaDB 5.5](../../old-releases/release-notes-ma
 
 **Release date:** 19 Jul 2017
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5557-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5557-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/5.5) you can view more details\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/5.5) you can view more details\
 of the revision and view diffs of the code modified in that revision.
 
 * Merge [Revision #59fca5806a](https://github.com/MariaDB/server/commit/59fca5806a) 2017-07-18 19:50:11 +0200 - Merge branch 'merge-xtradb-5.5' into 5.5

@@ -50,7 +50,7 @@ replication setup where replication is high-priority.
 #### Mandatory Router Parameters
 
 The binlogrouter requires the `user` and `password` parameters. These should be\
-configured according to the[Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#service).
+configured according to the [Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#service).
 
 In addition to these two parameters, the `server_id` and `binlogdir` parameters\
 needs to be defined.
@@ -149,7 +149,7 @@ This user is the only one available for MySQL connection to MaxScale Binlog\
 Server for administration when master connection is not done yet.
 
 In MaxScale 2.1, the service user injection is done by the MySQLAuth\
-authenticator module. Read the[MySQL Authenticator](../mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-mysql-authenticator.md)\
+authenticator module. Read the [MySQL Authenticator](../mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-mysql-authenticator.md)\
 documentation for more details.
 
 The user that is used for replication must be granted replication privileges on\
@@ -173,7 +173,7 @@ it is also possible to use the parameter `passwd`.
 **`heartbeat`**
 
 This defines the value of the heartbeat interval for the connection\
-to the master. The duration can be specified as documented[here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations). If no explicit\
+to the master. The duration can be specified as documented [here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations). If no explicit\
 unit is provided, the value is interpreted as seconds in MaxScale 2.4. In\
 subsequent versions a value without a unit may be rejected. Note that since\
 the granularity of the parameter is seconds, a value specified in milliseconds\
@@ -191,7 +191,7 @@ This parameter is used to define the maximum amount of data that will be sent to
 a slave by MariaDB MaxScale when that slave is lagging behind the master. The\
 default value is `1M`.
 
-The burst size can be provided as specified[here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#sizes), except that IEC binary\
+The burst size can be provided as specified [here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#sizes), except that IEC binary\
 prefixes can be used as suffixes only from MaxScale 2.1 onwards. MaxScale 2.0\
 and earlier only support `burstsize` defined in bytes.
 
@@ -391,7 +391,7 @@ Default value is 1000.
 **`connect_retry`**
 
 The option sets the time interval for a new connection retry to master server.\
-The duration can be specified as documented[here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations). If no explicit\
+The duration can be specified as documented [here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations). If no explicit\
 unit is provided, the value is interpreted as seconds in MaxScale 2.4. In\
 subsequent versions a value without a unit may be rejected. Note that since\
 the granularity of the parameter is seconds, a value specified in milliseconds\
@@ -428,7 +428,7 @@ the binlog router can use in case the connection to the default master fails.
 _Wsrep GTID mode_ is also imperfect, so this secondary master functionality is\
 only guaranteed to work if GTIDs have not become inconsistent within the cluster.
 
-See[Wsrep GTID Mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster)\
+See [Wsrep GTID Mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster)\
 for more information.
 
 The initial setup is performed exactly like when there is but one default master.

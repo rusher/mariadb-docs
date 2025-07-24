@@ -4,7 +4,7 @@
 
 **Release date:** 4 Feb 2019
 
-For the highlights of this release, see the[release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10038-release-notes.md).\
+For the highlights of this release, see the [release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10038-release-notes.md).\
 For changes made in MariaDB, see the [MariaDB 10.0.38 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10038-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\

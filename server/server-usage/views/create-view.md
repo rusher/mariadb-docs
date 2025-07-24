@@ -178,7 +178,7 @@ Within a view definition, CURRENT\_USER returns the view's DEFINER\
 value by default. For views\
 defined with the SQL SECURITY INVOKER characteristic, CURRENT\_USER\
 returns the account for the view's invoker. For information about user\
-auditing within views, see[account-activity-auditing.html](https://dev.mysql.com/doc/refman/5.1/en/account-activity-auditing.html).
+auditing within views, see [account-activity-auditing.html](https://dev.mysql.com/doc/refman/5.1/en/account-activity-auditing.html).
 
 Within a stored routine that is defined with the SQL SECURITY DEFINER\
 characteristic, CURRENT\_USER returns the routine's DEFINER value. This\
@@ -251,7 +251,7 @@ checks for underlying views to be evaluated as well. When neither\
 keyword is given, the default is CASCADED.
 
 For more information about updatable views and the WITH CHECK OPTION\
-clause, see[Inserting and Updating with Views](inserting-and-updating-with-views.md).
+clause, see [Inserting and Updating with Views](inserting-and-updating-with-views.md).
 
 ### IF NOT EXISTS
 

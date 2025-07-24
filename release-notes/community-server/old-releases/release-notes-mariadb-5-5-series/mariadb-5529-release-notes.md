@@ -15,7 +15,7 @@ inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.29 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md).
+information on each push, see the [MariaDB 5.5.29 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -51,7 +51,7 @@ Additionally, it includes all security fixes from MySQL 5.5.29, such as fix for 
 
 ## Includes [MariaDB 5.3.12](../release-notes-mariadb-5-3-series/mariadb-5312-release-notes.md) and MySQL 5.5.29
 
-This release includes [MariaDB 5.3.12](../release-notes-mariadb-5-3-series/mariadb-5312-release-notes.md) and MySQL 5.5.29. See[Changes in MySQL 5.5.29](https://dev.mysql.com/doc/relnotes/mysql/5.5/en/news-5-5-29.html)\
+This release includes [MariaDB 5.3.12](../release-notes-mariadb-5-3-series/mariadb-5312-release-notes.md) and MySQL 5.5.29. See [Changes in MySQL 5.5.29](https://dev.mysql.com/doc/relnotes/mysql/5.5/en/news-5-5-29.html)\
 for what changed in MySQL.
 
 ## Fedora 18 and Ubuntu 12.10 Packages
@@ -74,7 +74,7 @@ As of 1 Feb 2013, we will stop building packages for the following:
 * Ubuntu 11.04 "Natty"
 
 If your chosen Linux Distribution or Operating System is deprecated, packages\
-or support are not completely unavailable. Companies such as[SkySQL](https://skysql.com) and [Monty Program](https://montyprogram.com)\
+or support are not completely unavailable. Companies such as [SkySQL](https://skysql.com) and [Monty Program](https://montyprogram.com)\
 (and others) provide support for all versions of MariaDB back to even very old\
 MySQL versions. This includes packaged binaries. Contact them for more details.
 
@@ -94,7 +94,7 @@ mirror that they pull from will not.
 
 Old releases do have value, so for those that are interested in old releases,\
 we are setting up a simple, no frills, archive server which will host them.\
-Once the server is up and running, links to archived releases on[downloads.mariadb.org](https://downloads.mariadb.org) will point at the archive server. During the\
+Once the server is up and running, links to archived releases on [downloads.mariadb.org](https://downloads.mariadb.org) will point at the archive server. During the\
 transition period, links to some old releases may disappear for a short time,\
 but don't worry, they haven't been deleted, they're just being moved!
 

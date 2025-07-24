@@ -378,7 +378,7 @@ does not work. It gives a precision error from Oracle side.
 
 ## Connect to MariaDB via JDBC
 
-Download MySQL Connector from[5.0.html](https://dev.mysql.com/downloads/connector/j/5.0.html)
+Download MySQL Connector from [5.0.html](https://dev.mysql.com/downloads/connector/j/5.0.html)
 
 Select Version (for example 5.0.8)
 

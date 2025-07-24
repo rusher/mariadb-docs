@@ -33,7 +33,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 * [CONC-326](https://jira.mariadb.org/browse/CONC-326): ssl\_thread\_init() uses wrong openssl threadid callback
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-30-changelogs/mariadb-connector-c-304-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-30-changelogs/mariadb-connector-c-304-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

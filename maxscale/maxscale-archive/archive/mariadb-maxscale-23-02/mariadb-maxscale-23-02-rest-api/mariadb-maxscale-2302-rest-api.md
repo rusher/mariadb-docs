@@ -59,7 +59,7 @@ user is `admin:mariadb`.
 
 It is highly recommended to enable HTTPS on the MaxScale REST API to make the\
 communication between the client and MaxScale secure. Without it, the passwords\
-can be intercepted from the network traffic. Refer to the[Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_key) for more\
+can be intercepted from the network traffic. Refer to the [Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_key) for more\
 details on how to enable HTTPS for the MaxScale REST API.
 
 For more details on how administrative interface users are created and managed,\
@@ -68,7 +68,7 @@ documentation of the [users](mariadb-maxscale-2302-admin-user-resource.md) resou
 
 #### JSON Web Tokens
 
-MaxScale supports authentication via[JSON Web Tokens](https://tools.ietf.org/html/rfc7519).
+MaxScale supports authentication via [JSON Web Tokens](https://tools.ietf.org/html/rfc7519).
 
 ```
 GET /v1/auth
@@ -230,7 +230,7 @@ the resource documentation.
 
 ### Common Request Parameters
 
-All parameters that use boolean values use the same rules that are used for the[boolean values](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#booleans) in the\
+All parameters that use boolean values use the same rules that are used for the [boolean values](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#booleans) in the\
 MaxScale configuration. For example, both `pretty=off` and `pretty=false`\
 disable the `pretty` option.
 
@@ -263,8 +263,8 @@ parameters. Parameters are given in the HTTP query string:`https://localhost:898
   This parameter controls which rows are returned in a REST API response that\
   returns an array in the `data` member (i.e. a request to a resource\
   collection). Requests to individual resources are not filtered.\
-  The argument to the filter parameter must be a key-value pair with a valid[JSON Pointer](https://tools.ietf.org/html/rfc6901) as the key and either a\
-  valid JSON type as the value or a[filter-expression](mariadb-maxscale-2302-rest-api.md#filter-expressions). The comparison is done for each\
+  The argument to the filter parameter must be a key-value pair with a valid [JSON Pointer](https://tools.ietf.org/html/rfc6901) as the key and either a\
+  valid JSON type as the value or a [filter-expression](mariadb-maxscale-2302-rest-api.md#filter-expressions). The comparison is done for each\
   individual object in the `data` array of the result. If given only a JSON\
   value, the stored value is compared for equality. If an expression is used,\
   the expression is evaluated and only rows that match are returned.\
@@ -281,7 +281,7 @@ parameters. Parameters are given in the HTTP query string:`https://localhost:898
   Similar to the `filter` parameter that takes a JSON Pointer, this version of\
   the `filter` controls which rows are returned in a REST API response for a\
   resource collection. Requests to individual resources are never filtered.\
-  The value inside the brackets must be a valid[JSONPath](https://www.ietf.org/archive/id/draft-ietf-jsonpath-base-21.html)\
+  The value inside the brackets must be a valid [JSONPath](https://www.ietf.org/archive/id/draft-ietf-jsonpath-base-21.html)\
   expression that MaxScale supports. The currently supported syntax is:
   * dot notation: `$.store.book`
   * bracket notation: `$['store']['book']`
@@ -293,7 +293,7 @@ parameters. Parameters are given in the HTTP query string:`https://localhost:898
 
 The root object being optional is an extension to the JSONPath specification\
 that MaxScale implements.\
-The `expr` value must be a[filter-expression](mariadb-maxscale-2302-rest-api.md#filter-expressions). Similarly to the other `filter`\
+The `expr` value must be a [filter-expression](mariadb-maxscale-2302-rest-api.md#filter-expressions). Similarly to the other `filter`\
 parameter, the comparison is done for each individual object in the `data`\
 array of the result.\
 If the JSONPath expression returns multiple objects, the comparison is done\
@@ -421,7 +421,7 @@ If the content has not changed the server responds with a 304 status code. If\
 the content has changed the server responds with a 200 status code and the\
 requested resource.
 
-The value of this header must be a date value in the["HTTP-date"](https://www.ietf.org/rfc/rfc2822.txt) format.
+The value of this header must be a date value in the ["HTTP-date"](https://www.ietf.org/rfc/rfc2822.txt) format.
 
 **If-None-Match**
 
@@ -437,7 +437,7 @@ the same resource at an earlier point in time.
 The request is performed only if the requested resource has not been modified\
 since the provided date.
 
-The value of this header must be a date value in the["HTTP-date"](https://www.ietf.org/rfc/rfc2822.txt) format.
+The value of this header must be a date value in the ["HTTP-date"](https://www.ietf.org/rfc/rfc2822.txt) format.
 
 **X-HTTP-Method-Override**
 

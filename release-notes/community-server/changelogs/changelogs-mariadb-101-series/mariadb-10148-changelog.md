@@ -6,9 +6,9 @@
 
 **Release date:** 3 Nov 2020
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-1-series/mariadb-10148-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-1-series/mariadb-10148-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.1) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.1) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #e55bb16b04](https://github.com/MariaDB/server/commit/e55bb16b04)\

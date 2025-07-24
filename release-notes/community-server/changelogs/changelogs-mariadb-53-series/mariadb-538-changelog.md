@@ -4,7 +4,7 @@
 
 **Release date:** 28 Aug 2012
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-538-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-538-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\
@@ -526,7 +526,7 @@ modified in that revision.
     * Merge 5.2->5.3
     * [Revision #2643.153.6](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2643.153.6)\
       Sat 2012-05-12 11:53:14 +0400
-      * [Bug #997747](https://bugs.launchpad.net/bugs/997747): Assertion \`join->best\_read < ((double)1.79..5e+308L)' failed\
+      * [Bug #997747](https://bugs.launchpad.net/bugs/997747): Assertion \`join->best\_read < ((double) 1.79..5e+308L)' failed\
         in greedy\_search with LEFT JOINs and unique keys
       * Backport the fix for [Bug #806524](https://bugs.launchpad.net/bugs/806524) from [MariaDB 5.3](../../old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
 * [Revision #3520](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/3520) \[merge]\

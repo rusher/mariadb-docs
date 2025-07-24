@@ -6,9 +6,9 @@
 
 **Release date:** 15 Jun 2016
 
-For the highlights of this release, see the[release notes](../../1.4/mariadb-connector-j-146-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.4/mariadb-connector-j-146-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #f6c6c5e](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f6c6c5e) \[[CONJ-293](https://jira.mariadb.org/browse/CONJ-293)] Permit named pipe connection without host in connection string
 * [Revision #2216614](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2216614) \[[CONJ-309](https://jira.mariadb.org/browse/CONJ-309)] Possible NPE on aurora when failover occur during connection initialisation

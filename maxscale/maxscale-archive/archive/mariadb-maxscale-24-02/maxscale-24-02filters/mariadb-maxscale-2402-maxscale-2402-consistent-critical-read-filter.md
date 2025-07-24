@@ -64,7 +64,7 @@ The CCR filter has no mandatory parameters.
 * Default: `60s`
 
 The time window during which queries are routed to the primary. The duration\
-can be specified as documented[here](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+can be specified as documented [here](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
 but the value will always be rounded to the nearest second.\
 If no explicit unit has been specified, the value is interpreted as seconds\
 in MaxScale 2.4. In subsequent versions a value without a unit may be rejected.\

@@ -15,7 +15,7 @@ general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.1**](changes-improvements-in-mariadb-5-1.md) **see the**[**What is MariaDB 5.1**](changes-improvements-in-mariadb-5-1.md) **page.**
 
 For a list of changes made in [MariaDB 5.1.62](mariadb-5162-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.1.62 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md).
+information on each push, see the [MariaDB 5.1.62 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -36,7 +36,7 @@ This release includes fixes for the following security vulnerabilities:
 
 ## Includes MySQL 5.1.62
 
-This version of MariaDB includes MySQL 5.1.62. See[Changes in MySQL 5.1.62](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-62.html)\
+This version of MariaDB includes MySQL 5.1.62. See [Changes in MySQL 5.1.62](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-62.html)\
 for what changed between this and previous MySQL versions.
 
 {% include "../../../.gitbook/includes/announce.md" %}

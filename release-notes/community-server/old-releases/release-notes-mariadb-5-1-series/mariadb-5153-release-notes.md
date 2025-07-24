@@ -6,18 +6,18 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 **Release date:** 6 Dec 2010
 
-For a list of every change made in this release, see the[Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5153-changelog.md). For a description of this release see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
+For a list of every change made in this release, see the [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5153-changelog.md). For a description of this release see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-In addition to the differences noted in previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and[changelogs](../../../connectors/odbc/changelogs/), the main\
+In addition to the differences noted in previous [release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main\
 differences between MariaDB and MySQL are:
 
 ## Includes MySQL 5.1.53
 
 For [MariaDB 5.1.53](mariadb-5153-release-notes.md) we have merged in all of the upstream changes from MySQL\
-5.1.52 and 5.1.53. The MySQL[5.1.52](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-52.html) and[5.1.53](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-53.html) release\
+5.1.52 and 5.1.53. The MySQL [5.1.52](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-52.html) and [5.1.53](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-53.html) release\
 notes have details of what changes were made upstream by MySQL since 5.1.51.
 
 ## Includes [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-unmaintained/about-xtradb) 5.1.52-11.6

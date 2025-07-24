@@ -29,10 +29,10 @@ That is, in default mode the cache effectively causes the system to behave\
 as if the _isolation level_ would be `READ COMMITTED`, irrespective of what\
 the isolation level of the backends actually is.
 
-The default behaviour can be altered using the configuration parameter[cache\_in\_transactions](maxscale-cache.md#cache_in_transactions).
+The default behaviour can be altered using the configuration parameter [cache\_in\_transactions](maxscale-cache.md#cache_in_transactions).
 
 By default it is assumed that all `SELECT` statements are cacheable, which\
-means that also statements like `SELECT LOCALTIME` are cached. Please check[selects](maxscale-cache.md#selects) for how to change the default behaviour.
+means that also statements like `SELECT LOCALTIME` are cached. Please check [selects](maxscale-cache.md#selects) for how to change the default behaviour.
 
 ### Limitations
 
@@ -91,7 +91,7 @@ INSERT INTO t SET a=42;
 ```
 
 will cause the cache entry containing the result of that SELECT to be\
-invalidated even if the INSERT actually does not affect it. Please see[invalidate](maxscale-cache.md#invalidate) for how to enable the invalidation.
+invalidated even if the INSERT actually does not affect it. Please see [invalidate](maxscale-cache.md#invalidate) for how to enable the invalidation.
 
 When invalidation has been enabled MaxScale must be able to completely\
 parse a SELECT statement for its results to be stored in the cache. The\
@@ -107,15 +107,15 @@ entire cache. The reason is that unless MaxScale can completely parse\
 the statement it cannot know what tables are modified and hence not what\
 cache entries should be invalidated. Consequently, to prevent stale data\
 from being returned, the entire cache is cleared. The default behaviour\
-can be changed using the configuration parameter[clear\_cache\_on\_parse\_errors](maxscale-cache.md#clear_cache_on_parse_errors).
+can be changed using the configuration parameter [clear\_cache\_on\_parse\_errors](maxscale-cache.md#clear_cache_on_parse_errors).
 
 Note that what threading approach is used has a big impact on the\
-invalidation. Please see[Threads, Users and Invalidation](maxscale-cache.md#threads-users-and-invalidation)\
+invalidation. Please see [Threads, Users and Invalidation](maxscale-cache.md#threads-users-and-invalidation)\
 for how the threading approach affects the invalidation.
 
 Note also that since the invalidation may not, depending on how the\
 cache has been configured, be visible to all sessions of all users, it\
-is still important to configure a reasonable [soft](maxscale-cache.md#soft_ttl) and[hard](maxscale-cache.md#hard_ttl) TTL.
+is still important to configure a reasonable [soft](maxscale-cache.md#soft_ttl) and [hard](maxscale-cache.md#hard_ttl) TTL.
 
 #### Best Efforts
 
@@ -502,7 +502,7 @@ enabled=false
 
 The value affects the initial state of the MaxScale user\
 variables using which the behaviour of the cache can be modified\
-at runtime. Please see[Runtime Configuration](maxscale-cache.md#runtime-configuration)\
+at runtime. Please see [Runtime Configuration](maxscale-cache.md#runtime-configuration)\
 for details.
 
 #### `invalidate`
@@ -1435,7 +1435,7 @@ Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 **Authentication**
 
 If `password` is provided, MaxScale will authenticate against Redis when a connection\
-has been created. The authentication is performed using the[auth](https://redis.io/commands/auth/) command, with only the `password` as argument,\
+has been created. The authentication is performed using the [auth](https://redis.io/commands/auth/) command, with only the `password` as argument,\
 if no `username` was provided in the configuration, or `username` and `password` as\
 arguments, if both were.
 
@@ -1451,7 +1451,7 @@ in the communication with the Redis server, if `ssl` is set to `true`.
 
 Note that the SSL/TLS support is only available in Redis from version 6\
 onwards and that the support is not by default built into Redis, but has\
-to be specifically enabled at compile time as explained[here](https://redis.io/docs/management/security/encryption/).
+to be specifically enabled at compile time as explained [here](https://redis.io/docs/management/security/encryption/).
 
 **Example**
 
@@ -1588,7 +1588,7 @@ If the rule is instead expressed using a regular expression
 
 then the statement will not be parsed.
 
-However, when the[query classifier cache](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+However, when the [query classifier cache](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 was introduced, the parsing cost was significantly reduced and\
 currently the cost for parsing and regular expression matching\
 is roughly the same.

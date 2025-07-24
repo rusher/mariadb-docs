@@ -10,18 +10,18 @@ Get notified of new releases automatically by adding the [releases rss feed](htt
 
 MariaDB may already be included in your favorite OS distribution. More information can be found [here](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb).
 
-For a list of every change made in [MariaDB 5.1.55](mariadb-5155-release-notes.md), see the[Changelog](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1). For a high-level description of [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
+For a list of every change made in [MariaDB 5.1.55](mariadb-5155-release-notes.md), see the [Changelog](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1). For a high-level description of [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-In addition to the differences noted in previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and[changelogs](../../../connectors/odbc/changelogs/), the main\
+In addition to the differences noted in previous [release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main\
 differences between MariaDB and MySQL are:
 
 ## Includes MySQL 5.1.55
 
 For [MariaDB 5.1.55](mariadb-5155-release-notes.md) we have merged in all of the upstream changes from MySQL\
-5.1.54 and 5.1.55. The MySQL[5.1.54](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-54.html) and[5.1.55](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-55.html) release\
+5.1.54 and 5.1.55. The MySQL [5.1.54](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-54.html) and [5.1.55](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-55.html) release\
 notes have details of what changes were made upstream by MySQL since 5.1.53.
 
 ## Includes [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-unmaintained/about-xtradb) 5.1.54-12.5
@@ -44,12 +44,12 @@ repositories.
 
 ## RPM Package Signing
 
-As part of the new Debian and Ubuntu repositories we have also[signed the RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/checking-mariadb-rpm-package-signatures).\
+As part of the new Debian and Ubuntu repositories we have also [signed the RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/checking-mariadb-rpm-package-signatures).\
 All RPM package releases going forward will be signed.
 
 ## New Downloads System
 
-With this version of MariaDB we are also debuting a new[MariaDB downloads website](https://downloads.askmonty.org). This new site\
+With this version of MariaDB we are also debuting a new [MariaDB downloads website](https://downloads.askmonty.org). This new site\
 allows you to filter the various files to show only the ones you are interested\
 in and it will attempt to locate the nearest mirror to you based on your IP\
 address.

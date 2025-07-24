@@ -4,7 +4,7 @@ This article is about managing many different installed MariaDB versions\
 and running them one at a time. This is useful when doing benchmarking,\
 testing, or for when developing different MariaDB versions.
 
-This is most easily done using the tar files from[mariadb.org/download/](https://mariadb.org/download/).
+This is most easily done using the tar files from [mariadb.org/download/](https://mariadb.org/download/).
 
 ## Stopping a pre-installed MySQL/MariaDB from interfering with your tests
 
@@ -23,7 +23,7 @@ Note that you don't have to uninstall or otherwise remove MySQL!
 ## How to create a binary distribution (tar file)
 
 Here is a short description of how to generate a tar file from a source\
-distribution. If you have[downloaded](https://downloads.askmonty.org/mariadb/) a binary tar file, you\
+distribution. If you have [downloaded](https://downloads.askmonty.org/mariadb/) a binary tar file, you\
 can skip this section.
 
 The steps to create a binary tar file are:

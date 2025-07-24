@@ -4,7 +4,7 @@
 
 The `ANALYZE statement` is similar to the `EXPLAIN statement`. `ANALYZE statement` will invoke the optimizer, execute the statement, and then produce `EXPLAIN` output instead of the result set. The `EXPLAIN` output will be annotated with statistics from statement execution.
 
-This lets one check how close the optimizer's estimates about the query plan are to the reality. `ANALYZE` produces an overview, while the[ANALYZE FORMAT=JSON](analyze-format-json.md) command provides a more detailed view of the query plan and the query execution.
+This lets one check how close the optimizer's estimates about the query plan are to the reality. `ANALYZE` produces an overview, while the [ANALYZE FORMAT=JSON](analyze-format-json.md) command provides a more detailed view of the query plan and the query execution.
 
 The syntax is
 

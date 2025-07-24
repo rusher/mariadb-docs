@@ -6,9 +6,9 @@
 
 **Release date:** 4 Oct 2016
 
-For the highlights of this release, see the[release notes](../../1.5/mariadb-connector-j-153-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.5/mariadb-connector-j-153-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #ed1c4f5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/ed1c4f5) - \[misc] release 1.5.3
 * [Revision #236e935](https://github.com/mariadb-corporation/mariadb-connector-j/commit/236e935) - \[[CONJ-358](https://jira.mariadb.org/browse/CONJ-358)] correcting SSL certificates tests

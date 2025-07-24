@@ -6,7 +6,7 @@ The most recent release of [MariaDB 10.3](what-is-mariadb-103.md) is:[**MariaDB 
 
 **Release date:** 16 Apr 2017
 
-[MariaDB 10.3](what-is-mariadb-103.md) is the new development series of MariaDB. It is an evolution of[MariaDB 10.2](../release-notes-mariadb-10-2-series/what-is-mariadb-102.md) with several entirely new features not found anywhere else.
+[MariaDB 10.3](what-is-mariadb-103.md) is the new development series of MariaDB. It is an evolution of [MariaDB 10.2](../release-notes-mariadb-10-2-series/what-is-mariadb-102.md) with several entirely new features not found anywhere else.
 
 [MariaDB 10.3.0](mariadb-1030-release-notes.md) is an [_**Alpha**_](../../about/release-criteria.md) release.
 

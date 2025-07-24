@@ -6,9 +6,9 @@ The most recent [_**Stable**_](../../../../community-server/about/release-criter
 
 **Release date:** 26 Apr 2016
 
-For the highlights of this release, see the[release notes](../../1.4/mariadb-connector-j-143-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.4/mariadb-connector-j-143-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #b29543e](https://github.com/mariadb-corporation/mariadb-connector-j/commit/b29543e) \[[CONJ-284](https://jira.mariadb.org/browse/CONJ-284)] Cannot read autoincremented IDs bigger than Short.MAX\_VALUE
 * [Revision #22a2277](https://github.com/mariadb-corporation/mariadb-connector-j/commit/22a2277) , [Revision #b65cfea](https://github.com/mariadb-corporation/mariadb-connector-j/commit/b65cfea) , [Revision #f54d1a9](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f54d1a9) \[[CONJ-283](https://jira.mariadb.org/browse/CONJ-283)] Parsing correction on MariaDbClientPreparedStatement - syntax error on insert values

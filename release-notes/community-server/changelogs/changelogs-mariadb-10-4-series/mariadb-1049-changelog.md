@@ -10,9 +10,9 @@ After an upgrade MariaDB Server can crash if InnoDB tables exist with a `FULLTEX
 
 **Release date:** 5 Nov 2019
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-4-series/mariadb-1049-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-4-series/mariadb-1049-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.4) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.4) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.3.19](../changelogs-mariadb-10-3-series/mariadb-10319-changelog.md)

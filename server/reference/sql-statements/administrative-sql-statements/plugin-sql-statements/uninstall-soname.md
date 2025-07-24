@@ -12,7 +12,7 @@ This statement is a variant of [UNINSTALL PLUGIN](uninstall-plugin.md) statement
 
 `plugin_library` is the name of the shared library thatcontains the plugin code. The file name extension (forexample, `libmyplugin.so` or `libmyplugin.dll`) can be omitted (which makes the statement look the same on all architectures).
 
-To use `UNINSTALL SONAME`, you must have the[DELETE privilege](../../account-management-sql-statements/grant.md) for the `mysql.plugin` table.
+To use `UNINSTALL SONAME`, you must have the [DELETE privilege](../../account-management-sql-statements/grant.md) for the `mysql.plugin` table.
 
 #### IF EXISTS
 

@@ -6,9 +6,9 @@ The most recent release in the [MariaDB 10.0](../../old-releases/release-notes-m
 
 **Release date:** 7 Aug 2017
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10032-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10032-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.0) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.0) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Merge [Revision #a346a5613e](https://github.com/MariaDB/server/commit/a346a5613e) 2017-08-04 09:32:40 +0200 - Merge branch 'bb-10.0-vicentiu' into 10.0

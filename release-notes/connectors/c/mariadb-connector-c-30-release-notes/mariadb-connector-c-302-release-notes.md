@@ -56,7 +56,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 * [CONC-222](https://jira.mariadb.org/browse/CONC-222): Installation fixes for missing include files
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-30-changelogs/mariadb-connector-c-302-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-30-changelogs/mariadb-connector-c-302-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

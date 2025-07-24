@@ -24,7 +24,7 @@
 * MaxGUI Query Editor has changed the type of browser storage from local storage\
   to IndexedDB. As the result, query history, favorite, and configuration are reset.\
   Apart from that, query favorite was renamed to query snippets allowing to quickly\
-  insert the query to the editor by typing its prefix. See MaxGUI tutorial[Using-MaxGUI-Tutorial](https://mariadb.com/kb/en/using-maxgui-tutorial/)
+  insert the query to the editor by typing its prefix. See MaxGUI tutorial [Using-MaxGUI-Tutorial](https://mariadb.com/kb/en/using-maxgui-tutorial/)
 * The Xpand monitor now handles group change explicitly.
 * The `Maintenance|Drain` state of a server is now synchronized between multiple\
   MaxScale instances if configuration synchronization is enabled.
@@ -114,8 +114,8 @@ For more details, please refer to:
 * Synchronous mode for the Tee filter
 * New `list queries` command for MaxCtrl that lists all active queries
 * MaxScale can read client user accounts from a file and map them to backend\
-  users. See service setting[user\_accounts\_file](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#user_accounts_file)\
-  and listener setting[user\_mapping\_file](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#user_mapping_file)\
+  users. See service setting [user\_accounts\_file](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#user_accounts_file)\
+  and listener setting [user\_mapping\_file](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#user_mapping_file)\
   for more information.
 
 For more details, please refer to:
@@ -139,7 +139,7 @@ For more details, please refer to:
   user account manager connections. Normal port is used if the extra-port\
   connection fails due to too low extra\_max\_connections-setting on the backend.
 * The deprecated `required` and `disabled` values for the `ssl` parameter have been removed.
-* Backend connection multiplexing added. See[idle\_session\_pool\_time](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#idle_session_pool_time)\
+* Backend connection multiplexing added. See [idle\_session\_pool\_time](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#idle_session_pool_time)\
   for more information.
 * Defaults for `maxctrl` can now be specified in the file `~/maxctrl.cnf`
 * PAM Authenticator can map PAM users to MariaDB users.
@@ -166,18 +166,18 @@ For more details, please refer to:
   MaxScale is introduced.
 * MaxInfo-router and the related httpd-protocol have been removed.
 * Server weights have been removed.
-* Services can now directly route to other services with the help of the[target](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#target) parameter.
+* Services can now directly route to other services with the help of the [target](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#target) parameter.
 * Server parameters protocol and authenticator have been deprecated. Any\
   definitions are ignored.
 * Listeners support multiple authenticators.
-* The replication lag of a slave server must now be less than[max\_slave\_replication\_lag](mariadb-maxscale-2208-routers/mariadb-maxscale-2208-readwritesplit.md#max_slave_replication_lag)\
+* The replication lag of a slave server must now be less than [max\_slave\_replication\_lag](mariadb-maxscale-2208-routers/mariadb-maxscale-2208-readwritesplit.md#max_slave_replication_lag)\
   whereas in older versions the replication lag had to be less than or\
   equal to the configured limit.
 * The global settings auth\_read\_timeout and auth\_write\_timeout have been\
   deprecated. Any definitions are ignored.
 * The Columnstore monitor is now capable of monitoring Columnstore 1.5 in\
   addition to 1.0 and 1.2.
-* MariaDB-Monitor supports cooperative monitoring. See[cooperative monitoring](mariadb-maxscale-2208-monitors/mariadb-maxscale-2208-mariadb-monitor.md#cooperative-monitoring)\
+* MariaDB-Monitor supports cooperative monitoring. See [cooperative monitoring](mariadb-maxscale-2208-monitors/mariadb-maxscale-2208-mariadb-monitor.md#cooperative-monitoring)\
   for more information.
 * The MaxScale cache can now be shared between two MaxScale instances,\
   in which case either memcached or Redis can be used as cache storage.\

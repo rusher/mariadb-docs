@@ -50,7 +50,7 @@ Starting with [MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/aEnK0ZX
 
 The value of each system variable is multiplied by 256 to determine the maximum number of asynchronous I/O requests that can be performed by the Background Thread Pool. For example, if you want to allow a maximum of 1024 concurrent asynchronous write I/O requests, the [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variable should be set to 4 (since 1024/256=4).
 
-To ensure that the change survives server restarts, the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads)system variables should also be set in a configuration file.
+To ensure that the change survives server restarts, the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables should also be set in a configuration file.
 
 To configure InnoDB's maximum number of asynchronous I/O requests with the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
 

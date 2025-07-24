@@ -4,7 +4,7 @@
 
 **Release date:** 21 Dec 2011
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\
@@ -573,7 +573,7 @@ modified in that revision.
     * When there are constant tables only, evaluate only the conditions\
       that reference outer fields, because the constant conditions are\
       already checked, and the where clause doesn't have other conditions\
-      than constant ones, and outer referencing ones. The fix for[Bug #894397](https://bugs.launchpad.net/bugs/894397) also fixes [Bug #833777](https://bugs.launchpad.net/bugs/833777)
+      than constant ones, and outer referencing ones. The fix for [Bug #894397](https://bugs.launchpad.net/bugs/894397) also fixes [Bug #833777](https://bugs.launchpad.net/bugs/833777)
 * [Revision #3318](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/3318)\
   Mon 2011-11-28 12:42:14 +0200
   * Fixed [Bug #747278](https://bugs.launchpad.net/bugs/747278)

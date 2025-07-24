@@ -49,7 +49,7 @@ the next release they will be built on xenial builders.
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 ```
 
-The instructions in the[repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/)\
+The instructions in the [repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/)\
 for Ubuntu 16.04 "xenial" have been updated to refer to this new key.\
 Repositories for previous versions of Ubuntu will continue to use the old key.
 

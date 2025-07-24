@@ -6,9 +6,9 @@ The most recent release of [MariaDB 10.1](../../old-releases/release-notes-maria
 
 **Release date:** 17 Oct 2015
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-8-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-8-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.1) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.1) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #7e29f2d6](https://github.com/MariaDB/server/commit/7e29f2d6)\
   2015-10-15 18:25:54 +0400
@@ -509,7 +509,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-8466](https://jira.mariadb.org/browse/MDEV-8466) CAST works differently for DECIMAL/INT vs DOUBLE for empty strings [MDEV-8468](https://jira.mariadb.org/browse/MDEV-8468) CAST and INSERT work differently for DECIMAL/INT vs DOUBLE for a string with trailing spaces
 * [Revision #c69cf93](https://github.com/MariaDB/server/commit/c69cf93)\
   2015-09-16 17:24:34 +0400
-  * [MDEV-8673](https://jira.mariadb.org/browse/MDEV-8673) - \[PATCH] Missing Sanity Check for strndup() in [MariaDB 10.0.2](../../old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes.md)x
+  * [MDEV-8673](https://jira.mariadb.org/browse/MDEV-8673) - \[PATCH] Missing Sanity Check for strndup() in [MariaDB 10.0.2](../../old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes.md) x
 * [Revision #173e486](https://github.com/MariaDB/server/commit/173e486)\
   2015-09-16 13:01:04 +0300
   * [MDEV-8576](https://jira.mariadb.org/browse/MDEV-8576): Bootstrap should ignore --enforce-storage-engine option

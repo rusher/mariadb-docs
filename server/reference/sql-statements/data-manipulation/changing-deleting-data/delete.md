@@ -58,10 +58,10 @@ For the multiple-table syntax, `DELETE` deletes from each`tbl_name` the rows tha
 
 Currently, you cannot delete from a table and select from the same table in a subquery.
 
-You need the `DELETE` privilege on a table to delete rows from it. You need only the `SELECT` privilege for any columns that are only read, such as those named in the `WHERE` clause. See[GRANT](../../account-management-sql-statements/grant.md).
+You need the `DELETE` privilege on a table to delete rows from it. You need only the `SELECT` privilege for any columns that are only read, such as those named in the `WHERE` clause. See [GRANT](../../account-management-sql-statements/grant.md).
 
 As stated, a `DELETE` statement with no `WHERE` clause deletes all rows. A faster way to do this, when you do not need to know the number of deleted rows, is to use `TRUNCATE TABLE`. However,\
-within a transaction or if you have a lock on the table,`TRUNCATE TABLE` cannot be used whereas `DELETE` can. See [TRUNCATE TABLE](../../table-statements/truncate-table.md), and[LOCK](../../transactions/lock-tables.md).
+within a transaction or if you have a lock on the table,`TRUNCATE TABLE` cannot be used whereas `DELETE` can. See [TRUNCATE TABLE](../../table-statements/truncate-table.md), and [LOCK](../../transactions/lock-tables.md).
 
 ### AS
 

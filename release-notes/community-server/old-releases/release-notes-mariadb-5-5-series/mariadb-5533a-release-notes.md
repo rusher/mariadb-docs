@@ -15,7 +15,7 @@ inflow).
 **For a description of** [**MariaDB 5.5**](changes-improvements-in-mariadb-5-5.md) **see the**[**What is MariaDB 5.5?**](changes-improvements-in-mariadb-5-5.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.33 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5533-changelog.md).
+information on each push, see the [MariaDB 5.5.33 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5533-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.

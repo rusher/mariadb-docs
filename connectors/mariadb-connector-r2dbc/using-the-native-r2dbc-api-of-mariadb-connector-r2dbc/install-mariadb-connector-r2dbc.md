@@ -7,7 +7,7 @@ When downloading MariaDB Connector/R2DBC, you must manually add dependencies to 
 ## Install MariaDB Connector/R2DBC via JAR
 
 To download the JAR file manually:\
-Go to the[MariaDB Connector/R2DBC download page](https://mariadb.com/downloads/connectors/connectors-data-access/r2dbc-connector/)
+Go to the [MariaDB Connector/R2DBC download page](https://mariadb.com/downloads/connectors/connectors-data-access/r2dbc-connector/)
 
 1. Ensure the "Product" dropdown reads "R2DBC connector."
 2. In the "Version" dropdown, select the version you want to download.
@@ -39,7 +39,7 @@ To install the latest Connector/R2DBC 1.2 release, add the following:
 </dependency>
 ```
 
-1. If you plan to use[Connection Pools](connection-pools-with-mariadb-connector-r2dbc-native-api.md), add the [r2dbc-pool package](https://github.com/r2dbc/r2dbc-pool) as an additional dependency for your application to your application's pom.xml file.
+1. If you plan to use [Connection Pools](connection-pools-with-mariadb-connector-r2dbc-native-api.md), add the [r2dbc-pool package](https://github.com/r2dbc/r2dbc-pool) as an additional dependency for your application to your application's pom.xml file.
 
 For Connector/R2DBC 1.0:
 

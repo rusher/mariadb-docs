@@ -85,7 +85,7 @@ causes of indexing errors are:
   reflect this. If the column should really contain unique values, you must\
   manually remove or update the duplicate values.
 
-In both cases, after correcting the error, remake the indexes with the[OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) command.
+In both cases, after correcting the error, remake the indexes with the [OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) command.
 
 ### Index file mapping
 
@@ -192,7 +192,7 @@ ALTER TABLE patients DROP PRIMARY KEY;
 ALTER TABLE patients ADD PRIMARY KEY (pnb) COMMENT 'DYNAMIC' dynam=1;
 ```
 
-Note 1: The comment is not mandatory here but useful to see that the index is dynamic if you use the[SHOW INDEX](../../../../reference/sql-statements/administrative-sql-statements/show/show-index.md) command.
+Note 1: The comment is not mandatory here but useful to see that the index is dynamic if you use the [SHOW INDEX](../../../../reference/sql-statements/administrative-sql-statements/show/show-index.md) command.
 
 Note 2: There is currently no way to just change the DYNAM option without dropping and adding the\
 index. This is unfortunate because it takes time.

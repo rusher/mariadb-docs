@@ -4,7 +4,7 @@
 
 **Release date:** 6 Apr 2012
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-2-series/mariadb-5212-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-2-series/mariadb-5212-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\

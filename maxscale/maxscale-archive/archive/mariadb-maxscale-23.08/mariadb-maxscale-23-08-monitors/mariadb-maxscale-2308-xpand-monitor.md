@@ -35,7 +35,7 @@ cluster, and a username and a password to connect to the server. Note that\
 by default the Xpand monitor will only use that server in order to\
 dynamically find out the configuration of the cluster; after startup it\
 will completely rely upon information obtained at runtime. To change the\
-default behaviour, please see the parameter[dynamic\_node\_detection](mariadb-maxscale-2308-xpand-monitor.md#dynamic_node_detection).
+default behaviour, please see the parameter [dynamic\_node\_detection](mariadb-maxscale-2308-xpand-monitor.md#dynamic_node_detection).
 
 To ensure that the Xpand monitor will be able to start, it is adviseable\
 to provide _more_ than one server to cater for the case that not all nodes\
@@ -91,7 +91,7 @@ bootstrap server.
 
 ### Common Monitor Parameters
 
-For a list of optional parameters that all monitors support, read the[Monitor Common](mariadb-maxscale-2308-common-monitor-parameters.md) document.
+For a list of optional parameters that all monitors support, read the [Monitor Common](mariadb-maxscale-2308-common-monitor-parameters.md) document.
 
 ### Xpand Monitor optional parameters
 

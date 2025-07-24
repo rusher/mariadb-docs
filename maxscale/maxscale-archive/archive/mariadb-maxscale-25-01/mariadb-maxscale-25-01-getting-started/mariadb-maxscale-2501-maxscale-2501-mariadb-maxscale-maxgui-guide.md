@@ -31,7 +31,7 @@ configuration file. Once enabled, MaxGUI will be available on port 8989:`http://
 
 To make MaxGUI secure, set `admin_secure_gui=true` and configure both the`admin_ssl_key` and `admin_ssl_cert` parameters.
 
-See [Configuration Guide](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and[Configuration and Hardening](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-rest-api-tutorial.md)\
+See [Configuration Guide](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and [Configuration and Hardening](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-rest-api-tutorial.md)\
 for instructions on how to harden your MaxScale installation for production use.
 
 ## Authentication
@@ -58,10 +58,10 @@ By default, the refresh interval is 10 seconds.
 
 ### Detail
 
-This page shows information on each[MaxScale object](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and allow to edit its\
+This page shows information on each [MaxScale object](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and allow to edit its\
 parameter, relationships and perform other manipulation operations.
 
-Access this page by clicking on the MaxScale object name on the[dashboard page](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-maxgui-guide.md#dashboard)
+Access this page by clicking on the MaxScale object name on the [dashboard page](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-maxgui-guide.md#dashboard)
 
 ### Visualization
 
@@ -70,7 +70,7 @@ This page visualizes MaxScale configuration and clusters.
 * Configuration: Visualizing MaxScale configuration.
 * Cluster: Visualizing a replication cluster into a tree graph and provides\
   manual cluster manipulation operations such as`switchover, reset-replication, release-locks, failover, rejoin` . At the\
-  moment, it supports only servers monitored by Monitor using[mariadbmon](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) module.
+  moment, it supports only servers monitored by Monitor using [mariadbmon](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) module.
 
 Access this page by clicking the graph icon on the sidebar navigation.
 

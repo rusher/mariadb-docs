@@ -26,8 +26,8 @@ These packages are generated the same way as "official" MariaDB\
 releases. Please see the [main download pages](../../../clients-and-utilities/server-client-software/download/) for more detailed\
 instructions on installation etc.
 
-The instructions below use the mirror[ftp.osuosl.org](https://ftp.osuosl.org/), but any of the MariaDB\
-mirrors can be used by replacing the appropriate part of the URLs. See the[main download page](https://downloads.askmonty.org) for what\
+The instructions below use the mirror [ftp.osuosl.org](https://ftp.osuosl.org/), but any of the MariaDB\
+mirrors can be used by replacing the appropriate part of the URLs. See the [main download page](https://downloads.askmonty.org) for what\
 mirrors are available.
 
 ### Debian/Ubuntu
@@ -161,7 +161,7 @@ to not be visible.)
 * This preview also includes a small change to make mysqlbinlog omit\
   redundant `use` statements around `BEGIN`, `SAVEPOINT`, `COMMIT`,\
   and `ROLLBACK` events when reading MySQL 5.0 binlogs.
-* The preview included a feature[--innodb-release-locks-early](xtradb-option-innodb-release-locks-early.md). However we\
+* The preview included a feature [--innodb-release-locks-early](xtradb-option-innodb-release-locks-early.md). However we\
   decided to omit this feature from future MariaDB releases because of a\
   fundamental design bug, [lp:798213](https://bugs.launchpad.net/maria/+bug/798213).
 

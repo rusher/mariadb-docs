@@ -282,7 +282,7 @@ See the [TIMESTAMPDIFF()](https://mariadb.net/docs/server/reference/sql-function
 
 ### Using User-defined Variables
 
-[User-defined variables ](https://mariadb.net/docs/server/reference/sql-structure/sql-language-structure/user-defined-variables)can store values for use in subsequent queries within the same session.
+[User-defined variables ](https://mariadb.net/docs/server/reference/sql-structure/sql-language-structure/user-defined-variables) can store values for use in subsequent queries within the same session.
 
 Example: Set a variable for the average score and use it to filter results.
 

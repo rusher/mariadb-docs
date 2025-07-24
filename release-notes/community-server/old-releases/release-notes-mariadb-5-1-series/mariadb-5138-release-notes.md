@@ -34,7 +34,7 @@ replaces InnoDB in the [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) tre
 XtraDB is a drop in replacement of InnoDB (same table formats, no need to\
 convert any data).
 
-XtraDB gives you similar performance improvements for multi-cpu systems in[MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) that you can expect from using InnoDB in MySQL 5.4.
+XtraDB gives you similar performance improvements for multi-cpu systems in [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) that you can expect from using InnoDB in MySQL 5.4.
 
 See also [XtraDB storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb)
 
@@ -107,7 +107,7 @@ See [Table\_Elimination](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-p
 
 ### Slow Query Log Extended Statistics
 
-This is based on the[microslow](https://www.percona.com/mysql/5.1.26/patches/microslow.patch) patch\
+This is based on the [microslow](https://www.percona.com/mysql/5.1.26/patches/microslow.patch) patch\
 from [Percona](https://www.percona.com/).
 
 See [Slow Query Log Extended Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics)\
@@ -115,7 +115,7 @@ for details.
 
 ### Microsecond Precision in Processlist
 
-This is based on the[microsec\_process](https://www.percona.com/mysql/5.0.77-b13/patches/microsec_process.patch)\
+This is based on the [microsec\_process](https://www.percona.com/mysql/5.0.77-b13/patches/microsec_process.patch)\
 patch from [Percona](https://www.percona.com/).
 
 See [TIME\_MS column in INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist) for details.

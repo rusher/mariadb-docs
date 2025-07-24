@@ -36,7 +36,7 @@ four values:
 | 2 | The FILE\_NAME gives the name of a file that contains the path/names of all the table files. This file can be made using a DIR table.                          |
 | 3 | Like multiple=1 but also including eligible files from the directory sub-folders.                                                                              |
 
-The `FILEID` special column, described[here](../using-connect/using-connect-virtual-and-special-columns.md), allows query pruning by filtering the file\
+The `FILEID` special column, described [here](../using-connect/using-connect-virtual-and-special-columns.md), allows query pruning by filtering the file\
 list or doing some grouping on the files that make a multiple table.
 
 **Note:** Multiple was not initially implemented for XML tables. This\
@@ -57,7 +57,7 @@ enhanced under Windows(TM) and some flavors of UNIX or Linux by using the\
 technique of “file mapping”, in which a file is processed as if it were\
 entirely in memory. Mapping is specified when creating the table by the use of\
 the `MAPPED=YES` option. This does not apply to tables not handled by system\
-I/O functions ([XML](connect-xml-table-type.md) and[INI](connect-ini-table-type.md)).
+I/O functions ([XML](connect-xml-table-type.md) and [INI](connect-ini-table-type.md)).
 
 ## Big File Tables
 
@@ -73,7 +73,7 @@ cannot randomly access tables having more than 2G records.
 
 CONNECT can make and process some tables whose data file is compressed. The\
 only supported compression format is the gzlib format. Zip and zlib formats are\
-supported differently. The table types that can be compressed are[DOS](connect-dos-and-fix-table-types.md),[FIX](connect-dos-and-fix-table-types.md),[BIN](connect-bin-table-type.md),[CSV](connect-csv-and-fmt-table-types.md) and[FMT](connect-csv-and-fmt-table-types.md). This can save some disk space\
+supported differently. The table types that can be compressed are [DOS](connect-dos-and-fix-table-types.md),[FIX](connect-dos-and-fix-table-types.md),[BIN](connect-bin-table-type.md),[CSV](connect-csv-and-fmt-table-types.md) and [FMT](connect-csv-and-fmt-table-types.md). This can save some disk space\
 at the cost of a somewhat longer processing time.
 
 Some restrictions apply to compressed tables:

@@ -205,7 +205,7 @@ The project `dbt3_benchmark` has the following directories and files:
 
 ### Prepare benchmark workload and queries
 
-For the purpose of the benchmark from[DBT3-1.9](https://sourceforge.net/projects/osdldbt/files/dbt3/) we will only\
+For the purpose of the benchmark from [DBT3-1.9](https://sourceforge.net/projects/osdldbt/files/dbt3/) we will only\
 need **DBGEN** and **QGEN**. DBGEN is a tool that generates a workload for the\
 test and QGEN is a tool that generates the queries used for the test.
 

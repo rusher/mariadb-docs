@@ -8,7 +8,7 @@ The most recent [_**Stable**_](../../../community-server/about/release-criteria.
 
 This is an [RC](../../../community-server/about/release-criteria.md) release of MariaDB Connector/ODBC 3.1.
 
-MariaDB Connector/ODBC 3.1.0 is built on top of[MariaDB Connector/C v.3.0.8](../../c/mariadb-connector-c-30-release-notes/mariadb-connector-c-308-release-notes.md).
+MariaDB Connector/ODBC 3.1.0 is built on top of [MariaDB Connector/C v.3.0.8](../../c/mariadb-connector-c-30-release-notes/mariadb-connector-c-308-release-notes.md).
 
 ## Notable Changes
 
@@ -22,7 +22,7 @@ brew install openssl
 ## Changelog
 
 For a complete list of every change made in this release, with links to\
-detailed information on each push, see the[changelog](../changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-310-changelog.md).
+detailed information on each push, see the [changelog](../changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-310-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

@@ -29,7 +29,7 @@ Plugin API interface change: Changed the interface of authentication plugins, so
 * removed extra check for non binary result types in fetch\_bin (prepared statements)
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-232-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-232-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

@@ -15,14 +15,14 @@ believe the code is ready for general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.5.25](mariadb-5525-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.5.25 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md).
+information on each push, see the [MariaDB 5.5.25 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 ## Includes [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and MySQL 5.5.25
 
-[MariaDB 5.5.25](mariadb-5525-release-notes.md) includes [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and MySQL 5.5.25. See the [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and[Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-537-changelog.md) for more information on the changes in[MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md). See[Changes in MySQL 5.5.25](https://dev.mysql.com/doc/refman/5.5/en/news-5-5-25.html)\
+[MariaDB 5.5.25](mariadb-5525-release-notes.md) includes [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and MySQL 5.5.25. See the [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and [Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-537-changelog.md) for more information on the changes in [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md). See [Changes in MySQL 5.5.25](https://dev.mysql.com/doc/refman/5.5/en/news-5-5-25.html)\
 for what changed between this and previous MySQL versions.
 
 ## Includes XtraDB 1.1.8-20.1

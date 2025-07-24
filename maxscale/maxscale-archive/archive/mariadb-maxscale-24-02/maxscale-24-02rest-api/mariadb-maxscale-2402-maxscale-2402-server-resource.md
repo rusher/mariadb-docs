@@ -795,7 +795,7 @@ least the following fields.
 * `data.type`
 * Type of the object, must be `servers`
 * `data.attributes.parameters.address` OR `data.attributes.parameters.socket`
-* The [address](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) or[socket](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) to use. Only\
+* The [address](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) or [socket](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) to use. Only\
   one of the fields can be defined.
 * `data.attributes.parameters.port`
 * The [port](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) to use. Needs\
@@ -882,7 +882,7 @@ server.
 
 #### Modifiable Fields
 
-In addition to the server[parameters](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md), the _services_\
+In addition to the server [parameters](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md), the _services_\
 and _monitors_ fields of the _relationships_ object can be modified. Removal,\
 addition and modification of the links will change which service and monitors\
 use this server.

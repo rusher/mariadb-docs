@@ -6,7 +6,7 @@
 
 **Release date:** 18 Sep 2013
 
-For the highlights of this release, see the[release notes](../../1.1/mariadb-java-client-115-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.1/mariadb-java-client-115-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\

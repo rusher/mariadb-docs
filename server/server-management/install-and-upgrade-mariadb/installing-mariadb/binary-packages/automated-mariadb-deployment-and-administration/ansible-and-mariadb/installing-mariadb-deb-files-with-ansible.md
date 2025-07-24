@@ -122,9 +122,9 @@ If all your servers run on the same system, you will always use ansible.builtin.
 The variables you can use to run the tasks related to the proper system are:
 
 
-* [ansible_fact['distribution']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-distribution)
-* [ansible_fact['distribution_major_version']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-distribution-major-version)
-* [ansible_fact['os_family']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-os-family)
+* [ansible_fact ['distribution']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-distribution)
+* [ansible_fact ['distribution_major_version']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-distribution-major-version)
+* [ansible_fact ['os_family']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-os-family)
 
 
 There is also a system-independent [package module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html), but if the package names depend on the target system using it may be of very little benefit.

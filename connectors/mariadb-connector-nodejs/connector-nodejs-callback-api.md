@@ -189,18 +189,18 @@ The Connector with the Callback API is similar to the one using Promise, but wit
 * [`createConnection(options) → Connection`](#createconnectionoptions--connection): Creates a connection to a MariaDB Server.
 * [`createPool(options) → Pool`](#createpooloptions--pool) : Creates a new Pool.
 * [`createPoolCluster(options) → PoolCluster`](#createpoolclusteroptions--poolcluster) : Creates a new pool cluster.
-* [`importFile(options[, callback])`](#importfileoptions-callback) : import Sql file
+* [`importFile(options [, callback])`](#importfileoptions-callback) : import Sql file
 * [`version → String`](#version--string) : Return library version.
 * [`defaultOptions(options) → Json`](#defaultoptionsoptions--json) : list options with default values
 
 **Connection:**
 
-* [`connection.query(sql[, values][, callback]) → Emitter`](#connectionquerysql-values-callback---emitter): Executes a [query](#query).
-* [`connection.batch(sql, values[, callback])`](#connectionbatchsql-values--callback): fast batch processing.
+* [`connection.query(sql [, values][, callback]) → Emitter`](#connectionquerysql-values-callback---emitter): Executes a [query](#query).
+* [`connection.batch(sql, values [, callback])`](#connectionbatchsql-values--callback): fast batch processing.
 * [`connection.beginTransaction([callback])`](#connectionbegintransactioncallback): Begins a transaction
 * [`connection.commit([callback])`](#connectioncommitcallback): Commit the current transaction, if any.
 * [`connection.rollback([callback])`](#connectionrollbackcallback): Rolls back the current transaction, if any.
-* [`connection.changeUser(options[, callback])`](#connectionchangeuseroptions-callback): Changes the current connection user.
+* [`connection.changeUser(options [, callback])`](#connectionchangeuseroptions-callback): Changes the current connection user.
 * [`connection.ping([callback])`](#connectionpingcallback): Sends an empty packet to the server to check that connection is active.
 * [`connection.end([callback])`](#connectionendcallback): Gracefully closes the connection.
 * [`connection.reset([callback])`](#connectionreset): reset current connection state.
@@ -211,18 +211,18 @@ The Connector with the Callback API is similar to the one using Promise, but wit
 * [`connection.pause()`](#connectionpause): Pauses the socket output.
 * [`connection.resume()`](#connectionresume): Resumes the socket output.
 * [`connection.serverVersion()`](#connectionserverversion): Retrieves the current server version.
-* [`connection.importFile(options[, callback])`](#connectionimportfileoptions-callback) : import Sql file
+* [`connection.importFile(options [, callback])`](#connectionimportfileoptions-callback) : import Sql file
 * [`events`](#events): Subscribes to connection error events.
 
 **Pool:**
 
 * [`pool.getConnection([callback])`](#poolgetconnectioncallback) : Creates a new connection.
-* [`pool.query(sql[, values][, callback])`](#poolquerysql-values-callback): Executes a query.
-* [`pool.batch(sql, values[, callback])`](#poolbatchsql-values-callback): Executes a batch
+* [`pool.query(sql [, values][, callback])`](#poolquerysql-values-callback): Executes a query.
+* [`pool.batch(sql, values [, callback])`](#poolbatchsql-values-callback): Executes a batch
 * [`pool.end([callback])`](#poolendcallback): Gracefully closes the connection.
 * [`pool.escape(value) → String`](#poolescapevalue--string): escape parameter
 * [`pool.escapeId(value) → String`](#poolescapeidvalue--string): escape identifier
-* [`pool.importFile(options[, callback])`](#poolimportfileoptions-callback) : import Sql file
+* [`pool.importFile(options [, callback])`](#poolimportfileoptions-callback) : import Sql file
 * `pool.activeConnections() → Number`: Gets current active connection number.
 * `pool.totalConnections() → Number`: Gets current total connection number.
 * `pool.idleConnections() → Number`: Gets current idle connection number.
@@ -784,7 +784,7 @@ reset the connection. Reset will:
 This command is only available for MariaDB >=10.2.4 or MySQL >= 5.7.3.
 the function will be rejected with the error "Reset command not permitted for server XXX" if the server version doesn't permit reset.
 
-For previous MariaDB version, reset connection can be done using [`connection.changeUser(options[, callback])`](#connectionchangeuseroptions-callback) that do the same + redo authentication phase.
+For previous MariaDB version, reset connection can be done using [`connection.changeUser(options [, callback])`](#connectionchangeuseroptions-callback) that do the same + redo authentication phase.
 
 ## `connection.isValid() → boolean`
 
@@ -822,7 +822,7 @@ escape per type:
 * String: escaped value, (\u0000, ', ", \b, \n, \r, \t, \u001A, and \ characters are escaped with '\')
 
 Escape is done for [sql_mode](https://mariadb.com/kb/en/library/sql-mode/) value without NO_BACKSLASH_ESCAPES that disable \ escaping (default);
-Escaping API are meant to prevent [SQL injection](https://en.wikipedia.org/wiki/SQL_injection). However, privilege the use of [`connection.query(sql[, values][, callback])`](#connectionquerysql-values-callback---emitter) and avoid building the command manually.
+Escaping API are meant to prevent [SQL injection](https://en.wikipedia.org/wiki/SQL_injection). However, privilege the use of [`connection.query(sql [, values][, callback])`](#connectionquerysql-values-callback---emitter) and avoid building the command manually.
 
 ```javascript
 const myColVar = "let'go";

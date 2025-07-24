@@ -6,9 +6,9 @@
 
 **Release date:** 1 Aug 2016
 
-For the highlights of this release, see the[release notes](../../1.5/mariadb-connector-j-150-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.5/mariadb-connector-j-150-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #41910e8](https://github.com/mariadb-corporation/mariadb-connector-j/commit/41910e8) : Merge branch 'release/1.5.0-RC1'
 * [Revision #8297e37](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8297e37) : \[misc] update documentation

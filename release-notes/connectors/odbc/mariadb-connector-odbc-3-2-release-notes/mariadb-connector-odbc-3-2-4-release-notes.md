@@ -23,7 +23,7 @@ This is a [Stable (GA)](../../../community-server/about/release-criteria.md) rel
 ## Changelog
 
 For a complete list of every change made in this release, with links to\
-detailed information on each push, see the[changelog](../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-4-changelog.md).
+detailed information on each push, see the [changelog](../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-4-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

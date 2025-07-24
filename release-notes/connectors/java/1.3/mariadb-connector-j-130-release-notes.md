@@ -11,7 +11,7 @@ MariaDB Connector/J 1.3.0 is a [_**Stable (GA)**_](../../../community-server/abo
 **For a description of the MariaDB Connector/J see the**[**About the MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-the-mariadb-connector-j/README.md) **page.**
 
 For a list of all changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/1.3/mariadb-connector-j-130-changelog.md).
+information on each push, see the [changelog](../changelogs/1.3/mariadb-connector-j-130-changelog.md).
 
 ## Notable changes and additions
 
@@ -130,7 +130,7 @@ modification is done on a slave.
 
 To improve performance, this operation will not be performed if the parameter\
 is a assureReadOnly false (default). It's up to you to configure the slaves\
-servers in[read\_only mode](https://mariadb.com/blog/looking-slave-consistency-say-yes-read-only-and-no-super-and-slave-skip-errors).
+servers in [read\_only mode](https://mariadb.com/blog/looking-slave-consistency-say-yes-read-only-and-no-super-and-slave-skip-errors).
 
 #### Sequential failover parameter
 

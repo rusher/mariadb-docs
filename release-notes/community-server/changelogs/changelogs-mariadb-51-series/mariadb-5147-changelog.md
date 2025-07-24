@@ -4,7 +4,7 @@
 
 **Release date:** 01 Jun 2010
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5147-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5147-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\
@@ -37,7 +37,7 @@ modified in that revision.
 * [Revision #2849.1.8](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2849.1.8): 5.1.46 after-merge fixes: must FLUSH TABLES before copying .frm.
 * [Revision #2849.1.9](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2849.1.9): Fixed [MySQL Bug #53334](https://bugs.mysql.com/bug.php?id=53334). The fix actually reverts the change introduced by the patch for [MySQL Bug #51494](https://bugs.mysql.com/bug.php?id=51494). The fact is that the patch for [MySQL Bug #52177](https://bugs.mysql.com/bug.php?id=52177) fixes [MySQL Bug #51194](https://bugs.mysql.com/bug.php?id=51194) as well.
 * [Revision #2849.1.10](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2849.1.10): Suppress a safemutex warning pending fix of MBug#578117.
-* [Revision #2849.1.11](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2849.1.11): Automerge [MariaDB 5.1.44](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5144-release-notes.md)b release.
+* [Revision #2849.1.11](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2849.1.11): Automerge [MariaDB 5.1.44](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5144-release-notes.md) b release.
 * [Revision #2849.1.12](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2849.1.12): Merge PBXT 1.0.11 into MariaDB.
 * [Revision #2849.1.13](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2849.1.13): Result file update for main.subselect (the MySQL 5.1.46 version has buggy output in the .result, see BUG#47904 comments).
 * [Revision #2849.1.14](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2849.1.14): Merge to get PBXT's xstat program
@@ -61,7 +61,7 @@ modified in that revision.
 * [Revision #2851](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2851): Change commit mails to go to commits 'at' mariadb (dot) org
 * [Revision #2852](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2852): bugfix from mysql-5.1, apparently lost in a merge
 * [Revision #2853](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2853): Removed extra } that caused script to fail with syntax error
-* [Revision #2854](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2854): Automerge [MariaDB 5.1.44](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5144-release-notes.md)b into trunk.
+* [Revision #2854](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2854): Automerge [MariaDB 5.1.44](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5144-release-notes.md) b into trunk.
 * [Revision #2855](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2855): Build perl scripts in the correct directory
 * [Revision #2856](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2856): Add a -nobuild argument to the script. Useful for building the win32 zip file release with Express Edition which doesn't have the devenv command
 * [Revision #2857](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2857): fix includes in libevent to support vpath builds

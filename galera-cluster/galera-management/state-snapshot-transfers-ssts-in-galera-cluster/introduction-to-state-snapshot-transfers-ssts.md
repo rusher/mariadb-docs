@@ -66,7 +66,7 @@ Use of this SST method **could result in data corruption** when using [innodb\_u
 
 {% tabs %}
 {% tab title="Current" %}
-[stunnel ](https://www.stunnel.org/)can be used to encrypt data over the wire. Be sure to have `stunnel` installed. You will also need to generate certificates and keys. See [the stunnel documentation](https://www.stunnel.org/howto.html) for information on how to do that. Once you have the keys, you will need to add the `tkey` and `tcert` options to the `[sst]` option group in your MariaDB configuration file, such as:
+[stunnel ](https://www.stunnel.org/) can be used to encrypt data over the wire. Be sure to have `stunnel` installed. You will also need to generate certificates and keys. See [the stunnel documentation](https://www.stunnel.org/howto.html) for information on how to do that. Once you have the keys, you will need to add the `tkey` and `tcert` options to the `[sst]` option group in your MariaDB configuration file, such as:
 
 ```ini
 [sst]

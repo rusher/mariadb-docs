@@ -6,9 +6,9 @@
 
 **Release date:** 23 Mar 2016
 
-For the highlights of this release, see the[release notes](../../1.3/mariadb-connector-j-137-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.3/mariadb-connector-j-137-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 ### Major
 

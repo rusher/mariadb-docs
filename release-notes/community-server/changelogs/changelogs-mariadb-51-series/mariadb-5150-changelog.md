@@ -228,7 +228,7 @@ modified in that revision.
       * Ignore ENOLCK errno from FreeBSD (known problem in old FreeBSD releases)
     * [Revision #2891.1.5](https://bazaar.launchpad.net/~maria-captains/maria/5.1-release/revision/2891.1.5)
       * Added `--sync-sys=0` option for mysqld to skip sync() calls for faster testing
-      * Fixed [Bug #613418](https://bugs.launchpad.net/bugs/613418) (M)aria recovery failure: ma\_key\_recover.c:981:\
+      * Fixed [Bug #613418](https://bugs.launchpad.net/bugs/613418) (M) aria recovery failure: ma\_key\_recover.c:981:\
         \_ma\_apply\_redo\_index: Assertion \`check\_page\_length == page\_length' failed
 
 {% include "../../../.gitbook/includes/announce.md" %}

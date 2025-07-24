@@ -6,9 +6,9 @@
 
 **Release date:** 24 Oct 2024
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-0-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-0-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #d089e89](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/d089e89) - bump 3.4.0 version

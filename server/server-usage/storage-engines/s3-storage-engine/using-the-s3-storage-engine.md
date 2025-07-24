@@ -187,7 +187,7 @@ The main benefit of storing things in an S3 compatible storage is that the cost 
 
 The S3 storage engine supports full [MariaDB discovery](../storage-engines-storage-engine-development/table-discovery.md). This means that if\
 you have the S3 storage engine enabled and properly configured, the\
-table stored in S3 will automatically be discovered when it's accessed with[SHOW TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-tables.md), [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) or any other operation that\
+table stored in S3 will automatically be discovered when it's accessed with [SHOW TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-tables.md), [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) or any other operation that\
 tries to access it. In the case of SELECT, the .frm file from S3 will\
 be copied to the local storage to speed up future accesses.
 

@@ -14,7 +14,7 @@ REST API are the same that are used by the MaxAdmin network interface. This\
 means that any users created for the MaxAdmin network interface should work with\
 the MaxScale REST API and MaxCtrl.
 
-For more information about the MaxScale REST API, refer to the[REST API documentation](../mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md) and the[Configuration Guide](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+For more information about the MaxScale REST API, refer to the [REST API documentation](../mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md) and the [Configuration Guide](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
 
 * [MaxCtrl](mariadb-maxscale-2501-maxscale-2501-maxctrl.md#maxctrl)
 * [Limitations](mariadb-maxscale-2501-maxscale-2501-maxctrl.md#limitations)

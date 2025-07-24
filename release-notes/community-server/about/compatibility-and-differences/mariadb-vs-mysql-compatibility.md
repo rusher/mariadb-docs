@@ -200,7 +200,7 @@ when using [MariaDB 5.1](../../old-releases/release-notes-mariadb-5-1-series/cha
   compiled for exactly the same MariaDB version. (This is because the server\
   internal structure THD is different between MySQL and MariaDB. This is common\
   also between different MySQL versions). This should not be a problem as most\
-  people don't load new storage engines and MariaDB comes with[more storage engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines) than MySQL.
+  people don't load new storage engines and MariaDB comes with [more storage engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines) than MySQL.
 * `CHECKSUM TABLE` may give different result as MariaDB doesn't ignore NULL's\
   in the columns as MySQL 5.1 does (Future MySQL versions should calculate\
   checksums the same way as MariaDB). You can get the 'old style' checksum in\
@@ -208,14 +208,14 @@ when using [MariaDB 5.1](../../old-releases/release-notes-mariadb-5-1-series/cha
   the MyISAM and Aria storage engines in MariaDB are using the new checksum\
   internally, so if you are using `--old`, the `CHECKSUM` command will be\
   slower as it needs to calculate the checksum row by row.
-* The slow query log has[more information](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics) about the query,\
+* The slow query log has [more information](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics) about the query,\
   which may be a problem if you have a script which parses the slow query log.
 * MariaDB by default takes a bit more memory than MySQL because we have by\
   default enabled the [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria) for\
   handling internal temporary tables. If you need MariaDB to take very little\
   memory (at the expense of performance), you can set the value\
   of `aria_pagecache_buffer_size` to `1M` (the default is `128M`).
-* If you are using [new command options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files),[new features of MariaDB](mariadb-vs-mysql-features.md) or[new storage engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines), you can't move easily back\
+* If you are using [new command options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files),[new features of MariaDB](mariadb-vs-mysql-features.md) or [new storage engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines), you can't move easily back\
   and forth between MySQL and MariaDB anymore.
 
 ## Old, Unsupported Configuration Options

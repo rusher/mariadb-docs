@@ -170,7 +170,7 @@ replica.
 Since A was never a replica before, it does not have any prior replicated GTIDs,\
 and [gtid\_slave\_pos](gtid.md#gtid_slave_pos) will be empty.\
 To allow A to be added as a replica automatically,`master_use_gtid=current_pos` can be used. This will connect\
-using the value of the variable [gtid\_current\_pos](gtid.md#gtid_current_pos) instead of[gtid\_slave\_pos](gtid.md#gtid_slave_pos), which also takes into account GTIDs written\
+using the value of the variable [gtid\_current\_pos](gtid.md#gtid_current_pos) instead of [gtid\_slave\_pos](gtid.md#gtid_slave_pos), which also takes into account GTIDs written\
 into the binlog when the server was a primary.
 
 When using `master_use_gtid=current_pos` there is no need to consider whether a server was a primary or a replica prior to using [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md). But care must be taken not to\
@@ -314,7 +314,7 @@ obtained from [BINLOG\_GTID\_POS()](../../reference/sql-functions/secondary-func
 SELECT BINLOG_GTID_POS("master-bin.000001", 600);
 ```
 
-The new replica can then start replicating from the primary by setting the correct value for[gtid\_slave\_pos](gtid.md#gtid_slave_pos), and then executing [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) with the relevant values for the primary, and then starting the [replica threads](replication-threads.md#threads-on-the-slave) by executing [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md). For example:
+The new replica can then start replicating from the primary by setting the correct value for [gtid\_slave\_pos](gtid.md#gtid_slave_pos), and then executing [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) with the relevant values for the primary, and then starting the [replica threads](replication-threads.md#threads-on-the-slave) by executing [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md). For example:
 
 ```sql
 SET GLOBAL gtid_slave_pos = "0-1-2";
@@ -775,7 +775,7 @@ This system variable contains the GTID of the last transaction applied to the da
 
 The value of this system variable is constructed from the values of the [gtid\_binlog\_pos](gtid.md#gtid_binlog_pos) and [gtid\_slave\_pos](gtid.md#gtid_slave_pos) system variables. It gets GTIDs of transactions executed locally from the value of the [gtid\_binlog\_pos](gtid.md#gtid_binlog_pos) system variable. It gets GTIDs of replicated transactions from the value of the [gtid\_slave\_pos](gtid.md#gtid_slave_pos) system variable.
 
-For each replication domain, if the [server\_id](replication-and-binary-log-system-variables.md#server_id) of the corresponding GTID in[gtid\_binlog\_pos](gtid.md#gtid_binlog_pos) is equal to the servers own [server\_id](replication-and-binary-log-system-variables.md#server_id),_and_ the sequence number is higher than the corresponding GTID in[gtid\_slave\_pos](gtid.md#gtid_slave_pos), then the GTID from[gtid\_binlog\_pos](gtid.md#gtid_binlog_pos) will be used. Otherwise the GTID from[gtid\_slave\_pos](gtid.md#gtid_slave_pos) will be used for that domain.
+For each replication domain, if the [server\_id](replication-and-binary-log-system-variables.md#server_id) of the corresponding GTID in [gtid\_binlog\_pos](gtid.md#gtid_binlog_pos) is equal to the servers own [server\_id](replication-and-binary-log-system-variables.md#server_id),_and_ the sequence number is higher than the corresponding GTID in [gtid\_slave\_pos](gtid.md#gtid_slave_pos), then the GTID from [gtid\_binlog\_pos](gtid.md#gtid_binlog_pos) will be used. Otherwise the GTID from [gtid\_slave\_pos](gtid.md#gtid_slave_pos) will be used for that domain.
 
 GTIDs from [gtid\_binlog\_pos](gtid.md#gtid_binlog_pos) in which the [server\_id](replication-and-binary-log-system-variables.md#server_id) of the GTID is **not** equal to the server's own [server\_id](replication-and-binary-log-system-variables.md#server_id) are effectively ignored. If [gtid\_binlog\_pos](gtid.md#gtid_binlog_pos) contains a GTID for a given replication domain, but the [server\_id](replication-and-binary-log-system-variables.md#server_id) of the GTID is **not** equal to the server's own [server\_id](replication-and-binary-log-system-variables.md#server_id), and [gtid\_slave\_pos](gtid.md#gtid_slave_pos) does **not** contain a GTID for that given replication domain, then `gtid_current_pos` will **not** contain any GTID for that replication domain.
 

@@ -153,7 +153,7 @@ Please refer to the [systemd](../../../starting-and-stopping-mariadb/systemd.md)
 After this, remember to set proper passwords for all accounts accessible from\
 untrusted sources, to avoid exposing the host to security risks!
 
-Also consider using the [mysql.server](../../../starting-and-stopping-mariadb/mysql-server.md) to[start MariaDB automatically](../../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)\
+Also consider using the [mysql.server](../../../starting-and-stopping-mariadb/mysql-server.md) to [start MariaDB automatically](../../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)\
 when your system boots.
 
 On systems using systemd you can instead enable automatic startup during system boot with
@@ -164,7 +164,7 @@ systemctl enable mariadb.service
 
 instead.
 
-For details on the exact steps used to build the binaries, see the[compiling MariaDB section](../compiling-mariadb-from-source/) of the KB.
+For details on the exact steps used to build the binaries, see the [compiling MariaDB section](../compiling-mariadb-from-source/) of the KB.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

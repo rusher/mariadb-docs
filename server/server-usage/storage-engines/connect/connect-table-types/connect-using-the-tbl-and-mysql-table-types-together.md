@@ -23,7 +23,7 @@ access a list of identical MyISAM tables because it are faster, not passing\
 by the MySQL API.
 
 **FEDERATED(X):** The main limitation of FEDERATED is to access only MySQL/MariaDB tables. The\
-MYSQL table type of CONNECT has the same limitation but CONNECT provides the[ODBC table type](connect-odbc-table-type-accessing-tables-from-another-dbms.md) and [JDBC table type](connect-jdbc-table-type-accessing-tables-from-another-dbms.md) that can access tables of any RDBS providing an ODBC or JDBC driver\
+MYSQL table type of CONNECT has the same limitation but CONNECT provides the [ODBC table type](connect-odbc-table-type-accessing-tables-from-another-dbms.md) and [JDBC table type](connect-jdbc-table-type-accessing-tables-from-another-dbms.md) that can access tables of any RDBS providing an ODBC or JDBC driver\
 (including MySQL even it is not really useful!)
 
 Another major limitation of FEDERATED is to access only one table. By combining\

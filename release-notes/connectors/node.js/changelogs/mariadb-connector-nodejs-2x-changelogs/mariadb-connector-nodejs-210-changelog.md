@@ -6,9 +6,9 @@
 
 **Release date:** 12 Jul 2019
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-210-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-210-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #af51635](https://github.com/mariadb-corporation/mariadb-connector-j/commit/af51635) - bump 2.1.0 version
@@ -40,7 +40,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1c33d4c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1c33d4c) - \[[CONJS-61](https://jira.mariadb.org/browse/CONJS-61)] removing expired test for mysql, since doesn't have possibility to set expired user.
 * [Revision #4ed1737](https://github.com/mariadb-corporation/mariadb-connector-j/commit/4ed1737) - \[[CONJS-19](https://jira.mariadb.org/browse/CONJS-19)] removing ed25519 authentication plugin from roadmap
 * [Revision #ce0c57f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/ce0c57f) - \[[CONJS-61](https://jira.mariadb.org/browse/CONJS-61)] support connection with user having expired password. Connection is possible with user hacing expired password when enabling the option `permitConnectionWhenExpired`. Only possible oper
-* [Revision #a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a)tion in this case will be to change password ('SET PASSWORD=PASSWORD('XXX')') before issuing any other command.
+* [Revision #a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a) tion in this case will be to change password ('SET PASSWORD=PASSWORD('XXX')') before issuing any other command.
 * [Revision #464a7d9](https://github.com/mariadb-corporation/mariadb-connector-j/commit/464a7d9) - \[[CONJS-19](https://jira.mariadb.org/browse/CONJS-19)] implement ed25519 authentication plugin authentication \[[CONJS-57](https://jira.mariadb.org/browse/CONJS-57)] multiple alternative authentication methods for the same user
 * [Revision #a7d0b6f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a7d0b6f) - \[misc] adding test coverage
 * [Revision #6ca9467](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6ca9467) - \[misc] callback documentation link correction

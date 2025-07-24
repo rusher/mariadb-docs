@@ -6,9 +6,9 @@
 
 **Release date:** 12 Jan 2016
 
-For the highlights of this release, see the[release notes](../../1.3/mariadb-connector-j-134-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.3/mariadb-connector-j-134-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 ## Major
 
@@ -20,7 +20,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [CONJ-238](https://jira.mariadb.org/browse/CONJ-238) : PrepareStatement prepare exception handling [Revision #8cb011c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8cb011c) 2015-12-31
 * [CONJ-236](https://jira.mariadb.org/browse/CONJ-236) : Correction on using getInt on a signed smallInt negative value on prepareStatement [Revision #88c9f30](https://github.com/mariadb-corporation/mariadb-connector-j/commit/88c9f30) 2015-12-26
 * Failover improvement
-  * Fix race conditions around static 'blacklist' map : [Revision #06494a7](https://github.com/mariadb-corporation/mariadb-connector-j/commit/06494a7)2015-12-11
+  * Fix race conditions around static 'blacklist' map : [Revision #06494a7](https://github.com/mariadb-corporation/mariadb-connector-j/commit/06494a7) 2015-12-11
   * Switch from System.currentTimeMillis() to System.nanoTime() to avoid System timeclock dependency : [Revision #ce36085](https://github.com/mariadb-corporation/mariadb-connector-j/commit/ce36085) 2015-12-11
   * [Revision #e3900fa](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e3900fa) 2015-12-15
   * [Revision #e9a08c5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e9a08c5) 2015-12-17

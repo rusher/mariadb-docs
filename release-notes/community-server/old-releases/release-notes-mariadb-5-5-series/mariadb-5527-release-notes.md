@@ -15,19 +15,19 @@ believe the code is ready for general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.5.27](mariadb-5527-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.5.27 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5527-changelog.md).
+information on each push, see the [MariaDB 5.5.27 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5527-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 ## Includes [MariaDB 5.3.8](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md) and MySQL 5.5.27
 
-[MariaDB 5.5.27](mariadb-5527-release-notes.md) includes [MariaDB 5.3.8](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md) and MySQL 5.5.27. See the [MariaDB 5.3.8](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md) and[Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) for more information on the changes in[MariaDB 5.3.8](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md). See[Changes in MySQL 5.5.27](https://dev.mysql.com/doc/refman/5.5/en/news-5-5-27.html)\
+[MariaDB 5.5.27](mariadb-5527-release-notes.md) includes [MariaDB 5.3.8](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md) and MySQL 5.5.27. See the [MariaDB 5.3.8](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md) and [Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) for more information on the changes in [MariaDB 5.3.8](../release-notes-mariadb-5-3-series/mariadb-538-release-notes.md). See [Changes in MySQL 5.5.27](https://dev.mysql.com/doc/refman/5.5/en/news-5-5-27.html)\
 for what changed between this and previous MySQL versions.
 
 ## Includes XtraDB from Percona-Server-5.5.27-rel28.1
 
-For [MariaDB 5.5.27](mariadb-5527-release-notes.md), we've merged in XtraDB from Percona Server Percona-Server-5.5.27-rel28.0 and 5.5.27-rel28.1. See the Percona Server[5.5.27-28.0](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.27-28.0.html) and [5.5.27-28.1](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.27-28.1.html) release notes for more information.
+For [MariaDB 5.5.27](mariadb-5527-release-notes.md), we've merged in XtraDB from Percona Server Percona-Server-5.5.27-rel28.0 and 5.5.27-rel28.1. See the Percona Server [5.5.27-28.0](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.27-28.0.html) and [5.5.27-28.1](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.27-28.1.html) release notes for more information.
 
 ## Alternative Linux binaries
 

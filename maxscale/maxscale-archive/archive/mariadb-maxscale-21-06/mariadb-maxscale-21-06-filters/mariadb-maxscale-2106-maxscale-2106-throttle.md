@@ -15,7 +15,7 @@ This filter was added in MariaDB MaxScale 2.3
 
 ### Overview
 
-The throttle filter replaces and extends on the limit\_queries functionality of[the Database Firewall filter](mariadb-maxscale-2106-maxscale-2106-database-firewall-filter.md).
+The throttle filter replaces and extends on the limit\_queries functionality of [the Database Firewall filter](mariadb-maxscale-2106-maxscale-2106-database-firewall-filter.md).
 
 The throttle filter is used to limit the maximum query frequency (QPS - queries\
 per second) of a database session to a configurable value. The main use cases\

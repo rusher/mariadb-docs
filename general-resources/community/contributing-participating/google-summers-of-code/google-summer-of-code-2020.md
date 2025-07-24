@@ -70,7 +70,7 @@ Here:
 
 #### Add FULL OUTER JOIN to MariaDB
 
-Add support for FULL OUTER JOIN[sql\_join\_full.asp](https://www.w3schools.com/sql/sql_join_full.asp)\
+Add support for FULL OUTER JOIN [sql\_join\_full.asp](https://www.w3schools.com/sql/sql_join_full.asp)\
 One of the way how to implement is to re-write the query
 
 ```

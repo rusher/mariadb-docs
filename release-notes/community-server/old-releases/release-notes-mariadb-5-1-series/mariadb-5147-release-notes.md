@@ -6,29 +6,29 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 **Release date:** 01 Jun 2010
 
-For a list of every change made in this release, see the[changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md).
+For a list of every change made in this release, see the [changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-In addition to the differences noted in previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main\
+In addition to the differences noted in previous [release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main\
 differences between MariaDB and MySQL are:
 
 ## Includes MySQL 5.1.47
 
 For [MariaDB 5.1.47](mariadb-5147-release-notes.md) we have merged in all of the upstream changes from MySQL\
-5.1.45, 5.1.46, and 5.1.47. The MySQL[5.1.45](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-45.html),[5.1.46](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-46.html), and[5.1.47](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-47.html) release notes\
+5.1.45, 5.1.46, and 5.1.47. The MySQL [5.1.45](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-45.html),[5.1.46](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-46.html), and [5.1.47](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-47.html) release notes\
 have details of what changes were made upstream by MySQL since 5.1.44.
 
 ## Includes [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) 1.0.6-10
 
-We have included XtraDB 1.0.6-10 in this version of MariaDB. The[XtraDB 1.0.6-10 release notes](https://www.percona.com/docs/wiki/percona-server:release_notes_51#release_106-10)\
+We have included XtraDB 1.0.6-10 in this version of MariaDB. The [XtraDB 1.0.6-10 release notes](https://www.percona.com/docs/wiki/percona-server:release_notes_51#release_106-10)\
 page has details of the changes made to XtraDB since version 1.0.6-9 (the\
 version included since [MariaDB 5.1.42](mariadb-5142-release-notes.md)).
 
 ## Includes [PBXT](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/pbxt-storage-engine/README.md) 1.0.11
 
-We have included PBXT 1.0.11 in this version of MariaDB. The[PBXT ChangeLog](https://www.primebase.org/download/ChangeLog) has a list of\
+We have included PBXT 1.0.11 in this version of MariaDB. The [PBXT ChangeLog](https://www.primebase.org/download/ChangeLog) has a list of\
 all of the changes made since PBXT 1.0.09f (the version included in MariaDB\
 since 5.1.41).
 

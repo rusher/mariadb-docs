@@ -53,7 +53,7 @@ library code, but not the server, with their applications.
 ### Free software/open source applications
 
 If your application is Free software/open source and uses one of the\
-licenses listed in the[FLOSS exception](mariadb-licenses.md), the GPL\
+licenses listed in the [FLOSS exception](mariadb-licenses.md), the GPL\
 in the client library does not affect your application.
 
 In other cases we recommend you to use the new [LGPL client libraries](https://github.com/mariadb-corporation/docs-server/blob/test/clients-and-utilities/server-client-software/client-libraries/README.md).
@@ -99,7 +99,7 @@ driver for anything.
 
 ### Using the MariaDB client library for C
 
-If your application is using a license that is not covered by the[FLOSS exception](mariadb-licenses.md), then you\
+If your application is using a license that is not covered by the [FLOSS exception](mariadb-licenses.md), then you\
 should use the new [LGPL client libraries or C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c).
 
 The LGPL license allows you to distribute these MariaDB client library freely with any application. If you modify the client library, you need to publish the new source code.
@@ -114,10 +114,10 @@ the GPL if some of the following statements apply:
 * Your application requires the MariaDB server to work and without the MariaDB server it doesn't start or it has very limited functionality.
 
 The problem with the client library can be avoided by using one of the\
-solutions mentioned[earlier](licensing-faq.md#distributing-an-application-with-a-mariadb-connectorclient).
+solutions mentioned [earlier](licensing-faq.md#distributing-an-application-with-a-mariadb-connectorclient).
 
 If your application works with many databases, either natively or by\
-using one of the[database source independent frameworks](licensing-faq.md#using-a-database-source-independent-framework), then you can\
+using one of the [database source independent frameworks](licensing-faq.md#using-a-database-source-independent-framework), then you can\
 freely distribute the MariaDB server with your application without\
 being affected by the GPL. The reason for this is that MariaDB\
 would only be an optional, independent component in your software\

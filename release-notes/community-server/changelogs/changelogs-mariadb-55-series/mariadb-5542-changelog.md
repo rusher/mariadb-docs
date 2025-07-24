@@ -6,9 +6,9 @@ The most recent release in the [MariaDB 5.5](../../old-releases/release-notes-ma
 
 **Release date:** 19 Feb 2015
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5542-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5542-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/5.5) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/5.5) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #fdd6c11](https://github.com/MariaDB/server/commit/fdd6c11)\
   2015-02-13 12:57:11 +0100

@@ -36,7 +36,7 @@ SHOW ENGINES;
 
 This is a one-time step and will not need to be performed again.
 
-**Note:** SphinxSE is just the storage engine part of Sphinx. You will have to[install Sphinx](installing-sphinx.md) itself in order to make use of\
+**Note:** SphinxSE is just the storage engine part of Sphinx. You will have to [install Sphinx](installing-sphinx.md) itself in order to make use of\
 SphinxSE in MariaDB.
 
 Despite the name, SphinxSE does not actually store any data itself. It is\
@@ -289,7 +289,7 @@ SHOW ENGINE SPHINX STATUS;
 
 Starting with version 0.9.9-rc2, SphinxSE also includes a UDF function that\
 lets you create snippets through MariaDB. The functionality is fully similar to\
-the[BuildExcerprts](https://sphinxsearch.com/docs/current.html#api-func-buildexcerpts)\
+the [BuildExcerprts](https://sphinxsearch.com/docs/current.html#api-func-buildexcerpts)\
 API call but is accessible through MariaDB+SphinxSE.
 
 The function name must be '`sphinx_snippets`', you can not use an\
@@ -301,7 +301,7 @@ Prototype: function sphinx_snippets ( document, index, words, [options] );
 
 Document and words arguments can be either strings or table columns. Options\
 must be specified like this: `'value' AS option_name`. For a list of\
-supported options, refer to the[BuildExcerprts()](https://sphinxsearch.com/docs/current.html#api-func-buildexcerpts)\
+supported options, refer to the [BuildExcerprts()](https://sphinxsearch.com/docs/current.html#api-func-buildexcerpts)\
 API call. The only UDF-specific additional option is named 'sphinx' and lets\
 you specify searchd location (host and port).
 
@@ -320,7 +320,7 @@ SELECT title, sphinx_snippets(text, 'index', 'mysql php') AS text
 
 ## More Information
 
-More information on Sphinx and SphinxSE is available on the[Sphinx website](https://sphinxsearch.com/docs/current.html).
+More information on Sphinx and SphinxSE is available on the [Sphinx website](https://sphinxsearch.com/docs/current.html).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -46,7 +46,7 @@ This release includes fixes for the following security vulnerabilities:
 * [CVE-2013-2391](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2391)
 * [CVE-2013-1502](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1502)
 
-Also, several [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) bugs were fixed. For details, see the[changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1003-changelog.md).
+Also, several [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) bugs were fixed. For details, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1003-changelog.md).
 
 ## Ubuntu 13.04 "Raring" Repositories
 

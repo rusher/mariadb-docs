@@ -6,9 +6,9 @@
 
 **Release date:** 23 Jun 2020
 
-For the highlights of this release, see the[release notes](../../2.6/mariadb-connector-j-261-release-notes.md).
+For the highlights of this release, see the [release notes](../../2.6/mariadb-connector-j-261-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #fe21e66f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/fe21e66f) - version 2.6.1 bump
@@ -33,7 +33,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #eb6ce240](https://github.com/mariadb-corporation/mariadb-connector-j/commit/eb6ce240) - \[misc] code style correction
 * [Revision #30cb8c29](https://github.com/mariadb-corporation/mariadb-connector-j/commit/30cb8c29) - \[misc] small improvement - avoid skipping unread result-set when prepare is in cache - correct debug output format
 * [Revision #b271a747](https://github.com/mariadb-corporation/mariadb-connector-j/commit/b271a747) - \[[CONJ-786](https://jira.mariadb.org/browse/CONJ-786)] using option `assureReadOnly` Connection.setReadOnly set Session transaction in READ ONLY / READ WRITE mode
-* [Revision #d4282eac](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d4282eac) - \[[CONJ-789](https://jira.mariadb.org/browse/CONJ-789)] ensure connection reference removal on (prepared)Statement close
+* [Revision #d4282eac](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d4282eac) - \[[CONJ-789](https://jira.mariadb.org/browse/CONJ-789)] ensure connection reference removal on (prepared) Statement close
 * [Revision #0819dba4](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0819dba4) - \[misc] code style correction
 * [Revision #0e6dc646](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0e6dc646) - \[[CONJ-780](https://jira.mariadb.org/browse/CONJ-780)] OSGi DataSourceFactory implementation correction
 * [Revision #f0e4180f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f0e4180f) - \[[CONJ-779](https://jira.mariadb.org/browse/CONJ-779)] stop() correction of OSGi bundle activator

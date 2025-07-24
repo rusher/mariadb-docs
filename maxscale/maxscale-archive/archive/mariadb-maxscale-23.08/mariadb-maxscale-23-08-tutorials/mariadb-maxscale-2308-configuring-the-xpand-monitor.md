@@ -91,6 +91,6 @@ parameter as usually is the case, the service refers to the Xpand monitor\
 using the `cluster` parameter. This will cause the service to use the Xpand\
 nodes that the Xpand monitor discovers at runtime.
 
-For additional details, please consult the monitor[documentation](../mariadb-maxscale-23-08-monitors/mariadb-maxscale-2308-xpand-monitor.md).
+For additional details, please consult the monitor [documentation](../mariadb-maxscale-23-08-monitors/mariadb-maxscale-2308-xpand-monitor.md).
 
 CC BY-SA / Gnu FDL

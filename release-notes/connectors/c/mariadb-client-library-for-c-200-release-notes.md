@@ -45,12 +45,12 @@ and that we believe the code is ready for general usage (based on bug inflow).
 ## Bug fixes
 
 MariaDB client library for C 2.0.0 contains about 80 bug fixes. For a complete\
-list and description please check the[Jira bug system](https://jira.mariadb.org/browse/CONC-83?jql=project%20%3D%20CONC)
+list and description please check the [Jira bug system](https://jira.mariadb.org/browse/CONC-83?jql=project%20%3D%20CONC)
 
 ## Changelog
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](changelogs/mariadb-client-library-for-c-200-changelog.md).
+information on each push, see the [changelog](changelogs/mariadb-client-library-for-c-200-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

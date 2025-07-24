@@ -44,7 +44,7 @@ choice.
 
 ### Configuration
 
-For more details about the standard service parameters, refer to the[Configuration Guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/).
+For more details about the standard service parameters, refer to the [Configuration Guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/).
 
 #### `router_options`
 

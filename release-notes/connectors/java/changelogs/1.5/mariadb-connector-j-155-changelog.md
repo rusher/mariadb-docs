@@ -6,9 +6,9 @@
 
 **Release date:** 9 Nov 2016
 
-For the highlights of this release, see the[release notes](../../1.5/mariadb-connector-j-155-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.5/mariadb-connector-j-155-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #28d17a3](https://github.com/mariadb-corporation/mariadb-connector-j/commit/28d17a3) - Merge remote-tracking branch 'origin/master'

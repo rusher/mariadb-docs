@@ -36,7 +36,7 @@ sorting them, and then creating the index blocks. This is an order of magnitude\
 faster than creating the index one row at a time and it also uses less key\
 buffer memory.
 
-**Note:** When you insert into an **empty table** with [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) or[LOAD DATA](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a[DISABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table/) before and an [ENABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table/)\
+**Note:** When you insert into an **empty table** with [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) or [LOAD DATA](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a [DISABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table/) before and an [ENABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table/)\
 afterwards.
 
 When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `UNIQUE` indexes and the [foreign keys](../optimization-and-indexes/foreign-keys.md) checks using the [unique\_checks](../system-variables/server-system-variables.md#unique_checks) and the [foreign\_key\_checks](../system-variables/server-system-variables.md#foreign_key_checks) system variables:
@@ -56,7 +56,7 @@ Also, if the table has [INSERT triggers](../../../server-usage/triggers-events/t
 
 ## Loading Text Files
 
-The **fastest way** to insert data into MariaDB is through the[LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) command.
+The **fastest way** to insert data into MariaDB is through the [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) command.
 
 The simplest form of the command is:
 
@@ -136,7 +136,7 @@ You can insert many rows at once with multi-value row inserts:
 INSERT INTO table_name VALUES(1,"row 1"),(2, "row 2"),...;
 ```
 
-The limit for how much data you can have in one statement is controlled by the[max\_allowed\_packet](../system-variables/server-system-variables.md#max_allowed_packet) server variable.
+The limit for how much data you can have in one statement is controlled by the [max\_allowed\_packet](../system-variables/server-system-variables.md#max_allowed_packet) server variable.
 
 ## Inserting Data Into Several Tables at Once
 

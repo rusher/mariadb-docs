@@ -12,7 +12,7 @@ Issue resolution in MariaDB is visible through the corresponding ticket in Maria
 **For a description of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
 
 For a list of all changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/1.4/mariadb-connector-j-140-changelog.md).
+information on each push, see the [changelog](../changelogs/1.4/mariadb-connector-j-140-changelog.md).
 
 This version is a bugfix / performance improvement release.
 

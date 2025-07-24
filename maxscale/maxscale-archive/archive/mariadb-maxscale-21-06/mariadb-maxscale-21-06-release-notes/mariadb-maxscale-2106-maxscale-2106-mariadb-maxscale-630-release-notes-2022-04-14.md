@@ -5,7 +5,7 @@ Release 6.3.0 is a GA release.
 This document describes the changes in release 6.3.0, when compared to the\
 previous release in the same series.
 
-If you are upgrading from an older major version of MaxScale, please read the[upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-6) for\
+If you are upgrading from an older major version of MaxScale, please read the [upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-6) for\
 this MaxScale version.
 
 For any problems you encounter, please consider submitting a bug\

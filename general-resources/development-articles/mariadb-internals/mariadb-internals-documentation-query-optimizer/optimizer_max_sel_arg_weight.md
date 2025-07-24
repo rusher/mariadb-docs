@@ -64,7 +64,7 @@ Vertical black lines connect adjacent "intervals" on the same key part.\
 Red lines connect a key part to a subsequent key part.
 
 To produce ranges, one walks this graph by starting from left most corner.\
-Walking right "attaches" the ranges on one key part to another to form multi-part ranges. One must mind that[Not all combinations produce multi-part ranges](range-optimizer.md#not-all-comparisons-produce-ranges), though.
+Walking right "attaches" the ranges on one key part to another to form multi-part ranges. One must mind that [Not all combinations produce multi-part ranges](range-optimizer.md#not-all-comparisons-produce-ranges), though.
 
 Walking top-to-bottom produces adjacent ranges.
 

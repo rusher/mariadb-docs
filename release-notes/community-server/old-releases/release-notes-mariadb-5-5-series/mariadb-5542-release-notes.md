@@ -15,7 +15,7 @@ inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.42 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md).
+information on each push, see the [MariaDB 5.5.42 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -38,7 +38,7 @@ following new features:
 * It's now possible to filter logging to include only DDL (CREATE, ALTER, etc.)\
   or DML (INSERT, UPDATE, etc.) statements.
 
-For more information please refer to the[About the MariaDB Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-log-settings) page. The\
+For more information please refer to the [About the MariaDB Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-log-settings) page. The\
 plugin is disabled by default.
 
 ### Low-level network Client API

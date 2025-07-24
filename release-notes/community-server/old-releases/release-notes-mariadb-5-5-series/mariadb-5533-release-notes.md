@@ -15,7 +15,7 @@ inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.33 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5533-changelog.md).
+information on each push, see the [MariaDB 5.5.33 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5533-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -29,7 +29,7 @@ This release includes fixes for the following security vulnerabilities:
 
 ## Includes TokuDB Storage Engine
 
-With this release of MariaDB we are pleased to announce the addition of the[TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) storage engine from [Tokutek](https://www.tokutek.com/).
+With this release of MariaDB we are pleased to announce the addition of the [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) storage engine from [Tokutek](https://www.tokutek.com/).
 
 It is only available for the following distributions:
 

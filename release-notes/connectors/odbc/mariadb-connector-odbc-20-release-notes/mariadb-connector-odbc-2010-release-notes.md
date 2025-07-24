@@ -9,7 +9,7 @@ The most recent [_**Stable**_](../../../community-server/about/release-criteria.
 This is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB\
 Connector/ODBC.
 
-MariaDB Connector/ODBC 2.0.10 is built on top of[MariaDB Connector/C 2.2](../../c/mariadb-connector-c-22-release-notes/mariadb-connector-c-220-release-notes.md) and uses the\
+MariaDB Connector/ODBC 2.0.10 is built on top of [MariaDB Connector/C 2.2](../../c/mariadb-connector-c-22-release-notes/mariadb-connector-c-220-release-notes.md) and uses the\
 binary prepared statement protocol. It is basically MariaDB Connector/ODBC 1.0\
 up to version [1.0.6](../mariadb-connector-odbc-10-release-notes/mariadb-connector-odbc-106-release-notes.md), ported to work on Linux.
 
@@ -20,7 +20,7 @@ See the [MariaDB Connector/ODBC 1.0.6 Release Notes](../mariadb-connector-odbc-1
 ## Changelog
 
 For a complete list of every change made in this release, with links to\
-detailed information on each push, see the[changelog](../changelogs/mariadb-connector-odbc-20-changelogs/mariadb-connector-odbc-2010-changelog.md).
+detailed information on each push, see the [changelog](../changelogs/mariadb-connector-odbc-20-changelogs/mariadb-connector-odbc-2010-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

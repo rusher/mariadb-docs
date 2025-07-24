@@ -121,7 +121,7 @@ This will start the replication of binary logs from the primary server at\
 replicates is `binlog.000015`. This is the same file that was configured as the\
 starting file in the avrorouter.
 
-For more details about the SQL commands, refer to the[Binlogrouter](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md) documentation.
+For more details about the SQL commands, refer to the [Binlogrouter](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md) documentation.
 
 After the binary log streaming has started, the avrorouter will automatically\
 start processing the binlogs.

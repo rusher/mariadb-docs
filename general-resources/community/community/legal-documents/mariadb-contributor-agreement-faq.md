@@ -9,7 +9,7 @@
 
 #### What if I Don't Want to Submit Code to You Under the [MCA](mca.md)?
 
-If you don't like the [MCA](mca.md) for code that you want to contribute to[MariaDB](https://mariadb.org), the other option is to submit your code under\
+If you don't like the [MCA](mca.md) for code that you want to contribute to [MariaDB](https://mariadb.org), the other option is to submit your code under\
 the [BSD-new](https://en.wikipedia.org/wiki/BSD_licenses) license.
 
 #### What is the difference between MCA and BSD-new?
@@ -20,7 +20,7 @@ The main difference is that MCA is a **copyright assignment** agreement; you ass
 
 With MCA, the MariaDB Foundation becomes a copyright holder, and it can defend the GPL\
 and pursue violators, protecting its and your rights. This is the same reason why the\
-Free Software Foundation[requires copyright assignment](https://www.gnu.org/licenses/why-assign.html) too.
+Free Software Foundation [requires copyright assignment](https://www.gnu.org/licenses/why-assign.html) too.
 
 On the other hand, BSD-new is a well known FSF-approved Open Source license.
 
@@ -39,7 +39,7 @@ nor restrict how they use their own code.
 
 #### Where Did the [MCA](mca.md) Come From?
 
-The [MCA](mca.md) is based on[Sun's Contributor Agreement](https://www.netbeans.org/about/legal/ca.html).\
+The [MCA](mca.md) is based on [Sun's Contributor Agreement](https://www.netbeans.org/about/legal/ca.html).\
 We think it is one of the best contributor agreements around!
 
 #### What's the Difference Between Sun's SCA and the [MCA](mca.md)?
@@ -61,7 +61,7 @@ all existing signed contributor agreements to the Foundation.
 
 #### Other Questions?
 
-Question not answered? Subscribe to the[maria-developers mailing list](https://launchpad.net/~maria-developers)\
+Question not answered? Subscribe to the [maria-developers mailing list](https://launchpad.net/~maria-developers)\
 and ask there or visit us on our [Zulip channel](https://mariadb.zulipchat.com) or the **#maria** [IRC](https://github.com/mariadb-corporation/docs-server/blob/test/en/irc/README.md) channel on.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

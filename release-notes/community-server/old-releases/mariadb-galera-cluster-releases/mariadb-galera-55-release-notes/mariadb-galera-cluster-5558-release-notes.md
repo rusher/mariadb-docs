@@ -7,10 +7,10 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 **Release date:** 25 Oct 2017
 
 MariaDB Galera Cluster 5.5.58 is a [_**Stable**_](../../../about/release-criteria.md) (GA)\
-release. It is a merge of [MariaDB 5.5.58](../../release-notes-mariadb-5-5-series/mariadb-5558-release-notes.md) and[Galera Cluster](https://codership.com/content/using-galera-cluster) with\
+release. It is a merge of [MariaDB 5.5.58](../../release-notes-mariadb-5-5-series/mariadb-5558-release-notes.md) and [Galera Cluster](https://codership.com/content/using-galera-cluster) with\
 additional bug fixes.
 
-Various articles about MariaDB Galera Cluster, including[known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and[how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are\
+Various articles about MariaDB Galera Cluster, including [known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and [how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are\
 available in the [**Galera**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md) section of the documentation.
 
 ## Updates and fixes in this version
@@ -30,7 +30,7 @@ information on fixes in this version.
 
 ## Changelog
 
-A full list of all changes is in the[MariaDB Galera Cluster 5.5.58 Changelog](../mariadb-galera-55-changelogs/mariadb-galera-cluster-5558-changelog.md)\
+A full list of all changes is in the [MariaDB Galera Cluster 5.5.58 Changelog](../mariadb-galera-55-changelogs/mariadb-galera-cluster-5558-changelog.md)\
 and the [MariaDB 5.5.58 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5558-changelog.md).
 
 ## Notes

@@ -6,9 +6,9 @@ The most recent release of [MariaDB 10.2](../../old-releases/release-notes-maria
 
 **Release date:** 18 Apr 2016
 
-For the highlights of this release, see the[release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series).
+For the highlights of this release, see the [release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.2) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.2) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #9664240](https://github.com/MariaDB/server/commit/9664240) 2016-04-16 20:43:54 +0300 - Merge ../10.2-window-funcs-r10 into 10.2
 * [Revision #957809b](https://github.com/MariaDB/server/commit/957809b)\

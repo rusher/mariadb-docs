@@ -47,7 +47,7 @@ while a SELECT on TableTwo is suggested to be routed to the primary server of th
 service. Whether a list of server names is interpreted as a route-to-any or\
 route-to-all is up to the attached router. The HintRouter sees a list as a\
 suggestion to route-to-any. For additional information on hints and how they can\
-also be embedded into SQL-queries, see[Hint-Syntax](../../../../../en/mariadb-maxscale-2308-maxscale-2308-hint-syntax/).
+also be embedded into SQL-queries, see [Hint-Syntax](../../../../../en/mariadb-maxscale-2308-maxscale-2308-hint-syntax/).
 
 ```
 [NamedServerFilter]
@@ -78,7 +78,7 @@ NamedServerFilter requires at least one _matchXY_ - _targetXY_ pair.
 * Dynamic: Yes
 * Default: None
 
-_matchXY_ defines a[PCRE2 regular expression](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#regular-expressions)\
+_matchXY_ defines a [PCRE2 regular expression](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#regular-expressions)\
 against which the incoming SQL query is matched. _XY_ must be a number in the range\
 01 - 25. Each _match_-setting pairs with a similarly indexed _target_-setting. If one is\
 defined, the other must be defined as well. If a query matches the pattern, the filter\

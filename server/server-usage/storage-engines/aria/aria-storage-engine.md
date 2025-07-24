@@ -9,7 +9,7 @@ the [MyISAM](../myisam-storage-engine/) table format. This should speed up some 
 and [DISTINCT](../../../reference/sql-functions/aggregate-functions/count-distinct.md) queries because Aria has better caching than\
 MyISAM.
 
-Note: The _**Aria**_ storage engine was previously called _Maria_ (see[The Aria Name](the-aria-name.md) for details on the\
+Note: The _**Aria**_ storage engine was previously called _Maria_ (see [The Aria Name](the-aria-name.md) for details on the\
 rename) and in previous versions of [MariaDB](../storage-engines-storage-engines-overview.md) the engine was still called\
 Maria.
 

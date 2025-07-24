@@ -294,7 +294,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
    FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`))
 ```
 
-10. Attempt to insert a row into the child table for a non-existent row in the parent table using the[INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
+10. Attempt to insert a row into the child table for a non-existent row in the parent table using the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
 ```sql
 INSERT INTO hq_sales.invoices

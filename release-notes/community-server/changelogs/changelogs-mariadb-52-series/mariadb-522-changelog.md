@@ -81,7 +81,7 @@ modified in that revision.
 * [Revision #2843](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2843):
   * Fix of soft group commit (assigned LSN instead of file number). Found by Monty.
 * [Revision #2842](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2842): \[merge]
-  * Merge with 5.1 to get bug fix for [Bug #613408](https://bugs.launchpad.net/bugs/613408) Memory corruption with (M)aria storage engine and virtual columns
+  * Merge with 5.1 to get bug fix for [Bug #613408](https://bugs.launchpad.net/bugs/613408) Memory corruption with (M) aria storage engine and virtual columns
   * Fixed test case to test for virtual columns
 * [Revision #2841](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2841):
   * Added extra argument to longlong2str() to make it have same prototype is int2str()

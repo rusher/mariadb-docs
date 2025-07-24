@@ -50,7 +50,7 @@ Information about this key:
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 ```
 
-The instructions in the[repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/)\
+The instructions in the [repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/)\
 for Ubuntu 16.04 "Xenial" and Debian "Sid" have been updated to reference this\
 new key. Repositories for previous versions of Debian and Ubuntu still use the\
 old key, so no changes are needed there.

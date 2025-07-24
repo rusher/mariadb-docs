@@ -16,7 +16,7 @@ If the protocol specified by the version 1 header is "UNKNOWN", MariaDB server w
 
 To enable use of the proxy protocol, it is necessary to specify subnetworks that are allowed to send proxy headers, using the [proxy-protocol-networks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks) server variable.
 
-[proxy-protocol-networks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks) is a either comma-separated list of [(sub)networks](https://en.wikipedia.org/wiki/Subnetwork) or IP addresses. One also can use 'localhost' in this list, which means Unix domain socket/named pipe/shared memory connections are allowed as well. Or, proxy-protocol-networks can be set to \*, meaning that proxy headers are allowed from any client.
+[proxy-protocol-networks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks) is a either comma-separated list of [(sub) networks](https://en.wikipedia.org/wiki/Subnetwork) or IP addresses. One also can use 'localhost' in this list, which means Unix domain socket/named pipe/shared memory connections are allowed as well. Or, proxy-protocol-networks can be set to \*, meaning that proxy headers are allowed from any client.
 
 {% hint style="warning" %}
 Note that a client running on a host within an allowed proxy network or an IP address can itself pretend as being connected from any IP address whatsoever and thus can possibly impersonate other users. Generally, you should limit shell access to proxy hosts to a minimum. And remember, with `proxy-protocol-networks=*` every host is a proxy host.

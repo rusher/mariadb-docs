@@ -6,9 +6,9 @@
 
 **Release date:** 20 Oct 2021
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-255-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-255-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #bc9f6c7](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/bc9f6c7) Merge branch 'release/2.5.5'

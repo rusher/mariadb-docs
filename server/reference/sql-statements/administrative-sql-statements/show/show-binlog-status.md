@@ -30,7 +30,7 @@ This statement requires the [SUPER](../../account-management-sql-statements/gran
 {% endtab %}
 {% endtabs %}
 
-To see information about the current [GTIDs](../../../../ha-and-performance/standard-replication/gtid.md) in the binary log, use the[gtid\_binlog\_pos](../../../../ha-and-performance/standard-replication/gtid.md) variable.
+To see information about the current [GTIDs](../../../../ha-and-performance/standard-replication/gtid.md) in the binary log, use the [gtid\_binlog\_pos](../../../../ha-and-performance/standard-replication/gtid.md) variable.
 
 ## Example
 

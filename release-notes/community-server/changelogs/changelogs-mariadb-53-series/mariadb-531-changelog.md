@@ -4,7 +4,7 @@
 
 **Release date:** 10 Sep 2011
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\
@@ -43,7 +43,7 @@ modified in that revision.
         nested outer joins over views / derived tables.
 * [Revision #3179](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/3179)\
   Wed 2011-09-07 20:39:47 +0200
-  * [Bug #839387](https://bugs.launchpad.net/bugs/839387) Assertion \`(Item\_result)i != TIME\_RESULT' failed with CASE + datetime
+  * [Bug #839387](https://bugs.launchpad.net/bugs/839387) Assertion \`(Item\_result) i != TIME\_RESULT' failed with CASE + datetime
     * remove incorrect DBUG\_ASSERT().
     * Fix incorrectly used cmp\_item::get\_comparator() in Item\_func\_case and Item\_equal
 * [Revision #3178](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/3178) \[merge]\

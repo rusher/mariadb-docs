@@ -54,7 +54,7 @@ were removed as they were either redundant or not useful.
 The major differences between the new and old binlog router are:
 
 * The list of servers where the database users for authentication are loaded\
-  must be explicitly configured with the `cluster`, `servers` or`targets` parameter. Alternatively, the users can be read from a file. See[user\_accounts\_file](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#user_accounts_file)\
+  must be explicitly configured with the `cluster`, `servers` or`targets` parameter. Alternatively, the users can be read from a file. See [user\_accounts\_file](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#user_accounts_file)\
   for more information.
 * The old binlog router had both `server_id` and `master_id`, the new only`server_id`.
 * No need to configure heartbeat and burst interval anymore as they are\
@@ -67,7 +67,7 @@ The major differences between the new and old binlog router are:
   could happen when the master changes. This causes the binlog names to be\
   different in the binlogrouter when compared to the ones on the master.
 
-The documentation for the binlogrouter in MaxScale 2.4 is provided for reference[here](mariadb-maxscale-2208-binlogrouter-24.md).
+The documentation for the binlogrouter in MaxScale 2.4 is provided for reference [here](mariadb-maxscale-2208-binlogrouter-24.md).
 
 ### Supported SQL Commands
 
@@ -244,7 +244,7 @@ This allows the Monitor to perform failover, and more importantly, switchover.\
 It also allows the user to manually redirect the Binlogrouter. The current\
 master is "sticky", meaning that the same master will be chosen on reboot.
 
-**NOTE:** Do not use the `mariadbmon` parameter[auto\_rejoin](https://mariadb.com/kb/Monitor/MariaDB-Monitor#auto_rejoin) if the monitor is\
+**NOTE:** Do not use the `mariadbmon` parameter [auto\_rejoin](https://mariadb.com/kb/Monitor/MariaDB-Monitor#auto_rejoin) if the monitor is\
 monitoring a binlogrouter. The binlogrouter does not support all the SQL\
 commands that the monitor will send and the rejoin will fail. This restriction\
 will be lifted in a future version.
@@ -437,7 +437,7 @@ SHOW SLAVE STATUS \G
 ### Galera cluster
 
 When replicating from a Galera cluster, [select\_master](mariadb-maxscale-2208-binlogrouter.md#select_master) must be\
-set to true, and the servers must be monitored by the[Galera Monitor](../mariadb-maxscale-2208-monitors/mariadb-maxscale-2208-galera-monitor.md).\
+set to true, and the servers must be monitored by the [Galera Monitor](../mariadb-maxscale-2208-monitors/mariadb-maxscale-2208-galera-monitor.md).\
 Configuring binlogrouter is the same as described above.
 
 The Galera cluster must be configured to use [Wsrep GTID Mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).

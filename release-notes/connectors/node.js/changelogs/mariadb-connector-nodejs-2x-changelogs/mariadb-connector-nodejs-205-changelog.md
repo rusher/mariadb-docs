@@ -6,9 +6,9 @@
 
 **Release date:** 13 May 2019
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-205-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-205-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #143c763](https://github.com/mariadb-corporation/mariadb-connector-j/commit/143c763) \[misc] correcting non publication of typescript definition on npm adding last 2.0.4 missing pool options to typescript definition.

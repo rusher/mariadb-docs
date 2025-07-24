@@ -780,10 +780,10 @@ relationships: `servers` and `filters` relationships.
 
 If the request body defines a valid `relationships` object, the service is\
 linked to those resources. For servers, this is equivalent to adding the list of\
-server names into the[servers](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#servers) parameter. For\
-filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the[filters](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#filters) parameter in the\
+server names into the [servers](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#servers) parameter. For\
+filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the [filters](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#filters) parameter in the\
 order they appear. For other services, this is equivalent to adding the list of\
-server names into the[targets](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#targets) parameter.
+server names into the [targets](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#targets) parameter.
 
 The following example defines a new service with both a server and a filter\
 relationship.
@@ -844,7 +844,7 @@ they are allowed to gracefully close before the service is destroyed. This means
 that the destruction of a service can be acknowledged via the REST API before\
 the destruction process has fully completed.
 
-To find out whether a service is still in use after it has been destroyed, the[sessions](mariadb-maxscale-2308-session-resource.md) resource should be used. If a session for\
+To find out whether a service is still in use after it has been destroyed, the [sessions](mariadb-maxscale-2308-session-resource.md) resource should be used. If a session for\
 the service is still open, it has not yet been destroyed.
 
 This endpoint also supports the `force=yes` parameter that will unconditionally\
@@ -866,7 +866,7 @@ PATCH /v1/services/:name
 The request body must be a JSON object which represents a set of new definitions\
 for the service.
 
-All standard service parameters can be modified. Refer to the[service](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#service) documentation on\
+All standard service parameters can be modified. Refer to the [service](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#service) documentation on\
 the details of these parameters.
 
 In addition to the standard service parameters, router parameters can be updated\
@@ -1003,7 +1003,7 @@ Users are reloaded:
 GET /v1/services/:name/listeners
 ```
 
-This endpoint is deprecated, use the[this](mariadb-maxscale-2308-listener-resource.md#get-all-listeners) listeners endpoint instead.
+This endpoint is deprecated, use the [this](mariadb-maxscale-2308-listener-resource.md#get-all-listeners) listeners endpoint instead.
 
 #### Get a single service listener
 
@@ -1020,7 +1020,7 @@ listeners endpoint instead.
 POST /v1/services/:name/listeners
 ```
 
-This endpoint is deprecated, use the[this](mariadb-maxscale-2308-listener-resource.md#create-a-new-listener) listeners endpoint instead.
+This endpoint is deprecated, use the [this](mariadb-maxscale-2308-listener-resource.md#create-a-new-listener) listeners endpoint instead.
 
 #### Destroy a listener
 
@@ -1028,6 +1028,6 @@ This endpoint is deprecated, use the[this](mariadb-maxscale-2308-listener-resour
 DELETE /v1/services/:service/listeners/:name
 ```
 
-This endpoint is deprecated, use the[this](mariadb-maxscale-2308-listener-resource.md#destroy-a-listener) listeners endpoint instead.
+This endpoint is deprecated, use the [this](mariadb-maxscale-2308-listener-resource.md#destroy-a-listener) listeners endpoint instead.
 
 CC BY-SA / Gnu FDL

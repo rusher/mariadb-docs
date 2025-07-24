@@ -6,9 +6,9 @@
 
 **Release date:** 1 Apr 2016
 
-For the highlights of this release, see the[release notes](../../1.4/mariadb-connector-j-140-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.4/mariadb-connector-j-140-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #851578a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/851578a)
   * Temporary test openjdk7 deletion on travis due to [5227](https://github.com/travis-ci/travis-ci/issues/5227)

@@ -6,7 +6,7 @@ The most recent [MariaDB Galera Cluster 10.0](https://github.com/mariadb-corpora
 
 **Release date:** 6 Feb 2018
 
-For the highlights of this release, see the[release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10034-release-notes.md).\
+For the highlights of this release, see the [release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10034-release-notes.md).\
 For changes made in MariaDB, see the [MariaDB 10.0.34 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10034-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\

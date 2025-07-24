@@ -6,9 +6,9 @@
 
 **Release date:** 19 Jun 2023
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-2-0-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-2-0-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #bb5f90e](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/bb5f90e) - \[[CONJS-259](https://jira.mariadb.org/browse/CONJS-259)] adding SqlError sqlMessage property alias for text

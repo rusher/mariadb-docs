@@ -3,7 +3,7 @@
 `run-sql-bench.pl` is a perl script for automating runs of sql-bench\
 (You can find sql-bench in the [MariaDB source code](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code).)
 
-`run-sql-bench.pl` can be found in the[mariadb-tools](mariadb-tools.md) project on Launchpad. Once you have a copy of mariadb-tools,\
+`run-sql-bench.pl` can be found in the [mariadb-tools](mariadb-tools.md) project on Launchpad. Once you have a copy of mariadb-tools,\
 you'll find the script, and its configuration directories, in the `sql-bench` directory. For the purposes of this\
 article, wherever you located your local branch of `mariadb-tools` will be called `${BASE_DIR}`.
 

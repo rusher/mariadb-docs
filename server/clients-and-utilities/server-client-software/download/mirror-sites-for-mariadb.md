@@ -24,9 +24,9 @@ The only requirements for becoming a mirror are:
   Internet
 
 1. The ability to do directory listings on mirrored sub-directories on your\
-   mirror host (for some platforms the[download](https://mariadb.org/download) page links directly to mirrored\
+   mirror host (for some platforms the [download](https://mariadb.org/download) page links directly to mirrored\
    sub-directories)
-2. The mirror should update itself, preferably every 6 hours, but at the very least, twice a day. (See[Updating Notes](mirror-sites-for-mariadb.md)\
+2. The mirror should update itself, preferably every 6 hours, but at the very least, twice a day. (See [Updating Notes](mirror-sites-for-mariadb.md)\
    for more information)
 
 ### Updating Notes
@@ -80,7 +80,7 @@ see what it will do (without actually doing anything).
 As of June 2025, running the above command will use around 750GB of disk\
 space in total.
 
-See the[rsync documentation](https://rsync.samba.org/documentation.html) for details\
+See the [rsync documentation](https://rsync.samba.org/documentation.html) for details\
 on what each of the arguments in the command above does.
 
 ### Secondary rsync mirrors
@@ -139,7 +139,7 @@ Thank you for volunteering to mirror MariaDB!
 ## Credits
 
 The primary MariaDB mirrors have been generously provided by the [Oregon State\
-University Open Source Lab](https://osuosl.org) (at rsync.osuosl.org) and[NetCologne](https://www.netcologne.de) (at mirror.netcologne.de)
+University Open Source Lab](https://osuosl.org) (at rsync.osuosl.org) and [NetCologne](https://www.netcologne.de) (at mirror.netcologne.de)
 
 Other mirrors (list not necessarily complete) are listed below and can be selected on the [mariadb.org/download/](https://mariadb.org/download/) site:
 

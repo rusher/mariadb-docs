@@ -94,7 +94,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
   commit will complete immediately without further delay. This helps avoid\
   losing throughput when many transactions need conflicting locks. This often\
   makes it safe to use this option without losing\
-  throughput on a replica with [conservative mode of in-order parallel replication](parallel-replication.md#conservative-mode-of-in-order-parallel-replication), provided the value of[slave\_parallel\_threads](replication-and-binary-log-system-variables.md#slave_parallel_threads) is sufficiently high.
+  throughput on a replica with [conservative mode of in-order parallel replication](parallel-replication.md#conservative-mode-of-in-order-parallel-replication), provided the value of [slave\_parallel\_threads](replication-and-binary-log-system-variables.md#slave_parallel_threads) is sufficiently high.
 * Command line: `--binlog-commit-wait-count=#]`
 * Scope: Global
 * Dynamic: Yes
@@ -823,7 +823,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_domain_parallel_threads`
 
-* Description: When set to a non-zero value, each [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) domain in one primary connection can reserve at most that many worker threads at any one time, leaving the rest (up to the value of[slave\_parallel\_threads](replication-and-binary-log-system-variables.md#slave_parallel_threads)) free for other primary connections\
+* Description: When set to a non-zero value, each [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) domain in one primary connection can reserve at most that many worker threads at any one time, leaving the rest (up to the value of [slave\_parallel\_threads](replication-and-binary-log-system-variables.md#slave_parallel_threads)) free for other primary connections\
   or replication domains to use in parallel. See [Parallel Replication](parallel-replication.md#configuration-variable-slave_domain_parallel_threads) for details.
 * Command line: `--slave-domain-parallel-threads=#`
 * Scope: Global

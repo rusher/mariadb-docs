@@ -16,7 +16,7 @@ systems or systems with critical data.
 ## Download
 
 Binary packages for Windows (32 and 64-bit) and generic Linux packages as well\
-as source code packages are available from the[MariaDB download page](https://downloads.mariadb.org/connector-c/3.0.1)
+as source code packages are available from the [MariaDB download page](https://downloads.mariadb.org/connector-c/3.0.1)
 
 ## New features
 
@@ -33,7 +33,7 @@ as source code packages are available from the[MariaDB download page](https://do
 ### New API functions and enhancements
 
 * [mariadb\_stmt\_execute\_direct()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/mariadb_stmt_execute_direct) prepares and executes in one step (mainly used by MariaDB ODBC driver)
-* [mariadb\_cancel()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mariadb_cancel)aborts a connection immediately by making all subsequent read/write operations fail
+* [mariadb\_cancel()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mariadb_cancel) aborts a connection immediately by making all subsequent read/write operations fail
 * [mysql\_reset\_connection()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_reset_connection) resets the current connection and clears session state
 * [mariadb\_get\_infov](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mariadb_get_infov) returns generic or connection specific information
 * [mysql\_stmt\_warning\_count()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/mysql_stmt_warning_count) returns warnings per statement

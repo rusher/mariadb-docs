@@ -4,7 +4,7 @@
 
 ## Upgrading MariaDB MaxScale
 
-For more information about what has changed, please refer to the[ChangeLog](../../../../../en/mariadb-maxscale-2208-maxscale-2208-changelog/) and to the[release notes](https://mariadb.com/kb/Release-Notes/).
+For more information about what has changed, please refer to the [ChangeLog](../../../../../en/mariadb-maxscale-2208-maxscale-2208-changelog/) and to the [release notes](https://mariadb.com/kb/Release-Notes/).
 
 Before starting the upgrade, any existing configuration files should\
 be backed up.
@@ -162,7 +162,7 @@ no longer be used.
 ### Authentication
 
 The credentials used by services now require additional grants. For a full list\
-of required grants, refer to the[protocol documentation](https://mariadb.com/kb/en/mariadb-maxscale-2208-maxscale-2208-authentication-modules/#required-grants).
+of required grants, refer to the [protocol documentation](https://mariadb.com/kb/en/mariadb-maxscale-2208-maxscale-2208-authentication-modules/#required-grants).
 
 ### MariaDB-Monitor
 
@@ -289,7 +289,7 @@ if defined:
 * If a master server is placed into maintenance mode, all open transactions are\
   allowed to gracefully finish before the session is closed. To forcefully close\
   the connections, use the `--force` option for `maxctrl set server`.
-* The `lazy_connect` feature can be used as a workaround to[MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the\
+* The `lazy_connect` feature can be used as a workaround to [MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the\
   overall load on the system when connections are rapidly opened and closed.
 * Transaction replays now have a limit on how many times a replay is\
   attempted. The default values is five attempts and is controlled by the`transaction_replay_attempts` parameter.
@@ -391,7 +391,7 @@ add `address=0.0.0.0` to the listener definition.
 
 ### Persisted Configuration Files
 
-Starting with MaxScale 2.1, any changes made with the newly added[runtime configuration change](https://mariadb.com/kb/Reference/MaxAdmin#runtime-configuration-changes)\
+Starting with MaxScale 2.1, any changes made with the newly added [runtime configuration change](https://mariadb.com/kb/Reference/MaxAdmin#runtime-configuration-changes)\
 will be persisted in a configuration file. These files are located in `/var/lib/maxscale/maxscale.cnf.d/`.
 
 ### MaxScale Log Files

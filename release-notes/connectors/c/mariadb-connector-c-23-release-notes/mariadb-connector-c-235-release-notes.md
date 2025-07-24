@@ -23,7 +23,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 * [CONC-299](https://jira.mariadb.org/browse/CONC-299): Add support for new utf8mb4 collations
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-235-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-235-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

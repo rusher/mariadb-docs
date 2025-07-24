@@ -219,7 +219,7 @@ It's unfortunately been a little while since I wrote that code, but I think thos
 
 ### Aggregate Window Functions/
 
-Currently only a few aggregate function are supported as window functions, the list can be found here[aggregate-functions-as-window-functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/window-functions/aggregate-functions-as-window-functions)
+Currently only a few aggregate function are supported as window functions, the list can be found here [aggregate-functions-as-window-functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/window-functions/aggregate-functions-as-window-functions)
 
 So in MDEV-7773, support for creating of custom aggregate functions was added.\
 Now this task would deal with extending that feature and make custom aggregate functions behave as window functions

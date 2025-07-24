@@ -7,7 +7,7 @@
 This document describes particular issues to take into account when upgrading\
 MariaDB MaxScale from version 2.0 to 2.1.
 
-For more information about MariaDB MaxScale 2.1, please refer to the[ChangeLog](../mariadb-maxscale-2308-changelog.md).
+For more information about MariaDB MaxScale 2.1, please refer to the [ChangeLog](../mariadb-maxscale-2308-changelog.md).
 
 ### Installation
 
@@ -22,7 +22,7 @@ add `address=0.0.0.0` to the listener definition.
 
 ### Persisted Configuration Files
 
-Starting with MaxScale 2.1, any changes made with the newly added[runtime configuration change](https://mariadb.com/kb/Reference/MaxAdmin#runtime-configuration-changes)\
+Starting with MaxScale 2.1, any changes made with the newly added [runtime configuration change](https://mariadb.com/kb/Reference/MaxAdmin#runtime-configuration-changes)\
 will be persisted in a configuration file. These files are located in `/var/lib/maxscale/maxscale.cnf.d/`.
 
 ### MaxScale Log Files

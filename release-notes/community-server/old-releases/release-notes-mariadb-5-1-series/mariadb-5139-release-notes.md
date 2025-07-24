@@ -17,18 +17,18 @@ MariaDB is kept up to date with the latest MySQL release from the same branch.
 In most respects MariaDB will work exactly as MySQL; all commands, interfaces,\
 libraries and APIs that exist in MySQL also exist in MariaDB.
 
-In addition to the differences noted in the[MariaDB 5.1.38 Release Notes](mariadb-5138-release-notes.md), the main\
+In addition to the differences noted in the [MariaDB 5.1.38 Release Notes](mariadb-5138-release-notes.md), the main\
 differences between MariaDB and MySQL are:
 
 ### Includes MySQL 5.1.39
 
 For [MariaDB 5.1.39](mariadb-5139-release-notes.md) we have merged in all of the upstream changes from MySQL\
-5.1.39. The[MySQL 5.1.39 release notes](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-39.html)\
+5.1.39. The [MySQL 5.1.39 release notes](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-39.html)\
 have details of what changes were made upstream by MySQL since 5.1.38.
 
 ### Includes XtraDB 1.0.3-8
 
-We have included XtraDB 1.0.3-8 in this version of MariaDB. The[XtraDB 1.0.3-8 release notes](https://www.percona.com/docs/wiki/percona-xtradb:info:xtradb_changelog#release_1.0.3-8)\
+We have included XtraDB 1.0.3-8 in this version of MariaDB. The [XtraDB 1.0.3-8 release notes](https://www.percona.com/docs/wiki/percona-xtradb:info:xtradb_changelog#release_1.0.3-8)\
 have details of the changes made to XtraDB since version 1.0.3-6 (the version\
 included with [MariaDB 5.1.38](mariadb-5138-release-notes.md)).
 
@@ -76,7 +76,7 @@ compatible with various Linux systems.
 ### RPMs for CentOS 5
 
 One benefit of our change to using Ubuntu 8.04 and glibc 2.7 for our builds is\
-that we are now able to create CentOS 5 RPM packages. The[download](https://downloads.askmonty.org/) page has links to both the\
+that we are now able to create CentOS 5 RPM packages. The [download](https://downloads.askmonty.org/) page has links to both the\
 individual files and to a CentOS 5 YUM repository.
 
 {% include "../../../.gitbook/includes/announce.md" %}

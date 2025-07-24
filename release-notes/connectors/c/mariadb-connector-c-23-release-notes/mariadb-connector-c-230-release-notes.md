@@ -47,7 +47,7 @@ For a complete example check `test_local_infile_callback` in `misc.c`
 ## Changelog
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-230-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-230-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

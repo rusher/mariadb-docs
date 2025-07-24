@@ -6,9 +6,9 @@ The most recent release in the [MariaDB 10.0](../../old-releases/release-notes-m
 
 **Release date:** 6 Aug 2015
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10021-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10021-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.0) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.0) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #0403790](https://github.com/MariaDB/server/commit/0403790)\
   2015-08-05 20:07:46 +0200

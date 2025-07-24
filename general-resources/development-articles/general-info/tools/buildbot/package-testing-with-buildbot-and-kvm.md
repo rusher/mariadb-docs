@@ -23,7 +23,7 @@ At the time of writing, the builds done are these:
 * Debian, i386 and amd64, Debian 4 and Debian 5.
 * Centos 5, i386 and amd64.
 
-The builds use the packaging scripts from[OurDelta](https://launchpad.net/ourdelta).
+The builds use the packaging scripts from [OurDelta](https://launchpad.net/ourdelta).
 
 In all builds (except for source tarball), the binary package is built, and subsequently attempted installed. The build is done on a virtual machine with compilers and other necessary build tools installed.\
 The virtual machines are cloned from a reference image before each build (using the --base-image option to runvm). This way, the original images are not modified in any way, so there is no risk of "pollution" from previous builds, and no need to carefully clean up after a build or test.

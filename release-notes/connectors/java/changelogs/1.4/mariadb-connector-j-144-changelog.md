@@ -6,9 +6,9 @@ The most recent [_**Stable**_](../../../../community-server/about/release-criter
 
 **Release date:** 6 May 2016
 
-For the highlights of this release, see the[release notes](../../1.4/mariadb-connector-j-144-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.4/mariadb-connector-j-144-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #69c5997](https://github.com/mariadb-corporation/mariadb-connector-j/commit/69c5997) \[[CONJ-288](https://jira.mariadb.org/browse/CONJ-288)] using SHOW VARIABLES to replace SELECT on connection to permit connection on a galera non primary node
 * [Revision #58f90dc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/58f90dc) \[[CONJ-261](https://jira.mariadb.org/browse/CONJ-261)] add tests

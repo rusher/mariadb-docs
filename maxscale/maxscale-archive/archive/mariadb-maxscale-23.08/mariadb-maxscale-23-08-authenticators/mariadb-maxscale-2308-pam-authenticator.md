@@ -46,7 +46,7 @@ from the _authetication\_string_-column. The matching PAM service in the\
 operating system PAM config is used for authenticating the user. If th&#x65;_&#x61;uthetication\_string_ for a user is empty, the fallback service "mysql" is\
 used.
 
-PAM service configuration is out of the scope of this document, see[The Linux-PAM System Administrators' Guide](https://www.linux-pam.org/Linux-PAM-html/Linux-PAM_SAG.html)\
+PAM service configuration is out of the scope of this document, see [The Linux-PAM System Administrators' Guide](https://www.linux-pam.org/Linux-PAM-html/Linux-PAM_SAG.html)\
 for more information. A simple service definition used for testing this module\
 is below.
 
@@ -62,7 +62,7 @@ account         required        pam_unix.so
 * Dynamic: No
 * Default: `false`
 
-If enabled, MaxScale communicates with the client as if using[mysql\_clear\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection#mysql_clear_password-plugin).\
+If enabled, MaxScale communicates with the client as if using [mysql\_clear\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection#mysql_clear_password-plugin).\
 This setting has no effect on MaxScale-to-backend communication, which adapts to\
 either "dialog" or "mysql\_clear\_password", depeding on which one the backend\
 suggests. This setting is meant to be used with the similarly named MariaDB\
@@ -94,7 +94,7 @@ If set to _password\_2FA_, any users authenticating via PAM will be asked two\
 passwords ("Password" and "Verification code") during login. MaxScale uses the\
 normal password when either the local PAM api or a backend asks for "Password".\
 MaxScale answers any other password prompt (e.g. "Verification code") with the\
-second password. See[the limitations section](mariadb-maxscale-2308-pam-authenticator.md#implementation-details-and-limitations)\
+second password. See [the limitations section](mariadb-maxscale-2308-pam-authenticator.md#implementation-details-and-limitations)\
 for more details. Two-factor mode is incompatible wit&#x68;_&#x70;am\_use\_cleartext\_plugin_.
 
 If set to _suid_, MaxScale will launch a separate subprocess for every client to\
@@ -138,16 +138,16 @@ users cannot be used on the same listener.
 
 Because the client still needs to authenticate to MaxScale normally, an\
 anonymous user may be required. If the backends do not allow such a user, one\
-can be manually added using the service setting[user\_accounts\_file](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#user_accounts_file).
+can be manually added using the service setting [user\_accounts\_file](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#user_accounts_file).
 
 To map usernames, the PAM service needs to use a module such a&#x73;_&#x70;am\_user\_map.so_. This module is not a standard Linux component and needs to be\
 installed separately. It is included in recent MariaDB Server packages and can\
-also be compiled from source. See[user mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam)\
+also be compiled from source. See [user mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam)\
 for more information on how to configure the module. If the goal is to only map\
 users from PAM to MariaDB in MaxScale, then configuring user mapping\
 on just the machine running MaxScale is enough.
 
-Instead of using `pam_backend_mapping`, consider using the listener setting[user\_mapping\_file](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#user_mapping_file),\
+Instead of using `pam_backend_mapping`, consider using the listener setting [user\_mapping\_file](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#user_mapping_file),\
 as it is easier to configure. `pam_backend_mapping` should only be used when\
 the user mapping needs to be defined by pam.
 
@@ -199,7 +199,7 @@ An example file is below.
 
 When backend authenticator mapping is not in use\
 (`authenticator_options=pam_backend_mapping=none`), the PAM authenticator\
-supports a limited version of[user mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam).\
+supports a limited version of [user mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam).\
 It requires less configuration but is also less accurate than proper mapping.\
 Anonymous mapping is enabled in MaxScale if the following user exists:
 
@@ -231,7 +231,7 @@ outcome.
 
 Setting up PAM group mapping for the MariaDB server is a more involved process\
 as the server requires details on which Unix user or group is mapped to which\
-MariaDB user. See[this guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication)\
+MariaDB user. See [this guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication)\
 for more details. Performing all the steps in the guide also on the MaxScale\
 machine is not required, as the MaxScale PAM plugin only checks that the client\
 host matches an anonymous user and that the client (with the username and\

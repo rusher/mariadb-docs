@@ -85,7 +85,7 @@ The information below refers to the old Buildbot (), and not the new Buildbot ()
 ## Overview
 
 The current state of the MariaDB trees with respect to build or test failures\
-is always available from the[Buildbot setup](https://buildbot.askmonty.org/buildbot/) page.
+is always available from the [Buildbot setup](https://buildbot.askmonty.org/buildbot/) page.
 
 * [MariaDB-5.5 waterfall status page.](https://buildbot.askmonty.org/buildbot/waterfall?branch=5.5)
 * [MariaDB-10.0 waterfall status page.](https://buildbot.askmonty.org/buildbot/waterfall?branch=10.0)
@@ -101,7 +101,7 @@ it ASAP. If it was your push, then the someone who needs to look at it\
 is you!
 
 BuildBot is a generic, GPL'ed program providing a continuous\
-integration test framework. For more information on BuildBot, see the[the BuildBot project homepage](https://buildbot.net/trac).
+integration test framework. For more information on BuildBot, see the [the BuildBot project homepage](https://buildbot.net/trac).
 
 ## Volunteering to Run a Build Slave
 
@@ -157,8 +157,8 @@ The more people show interest in this, the faster it is likely to happen!
 ## Reports
 
 We are developing new reports fed off the test results in the\
-database. These reports will be located[here](https://buildbot.askmonty.org/buildbot/reports/). The first\
-report is the[Cross Reference](https://buildbot.askmonty.org/buildbot/reports/cross_reference)\
+database. These reports will be located [here](https://buildbot.askmonty.org/buildbot/reports/). The first\
+report is the [Cross Reference](https://buildbot.askmonty.org/buildbot/reports/cross_reference)\
 report. This report allows all test failures to be searched.
 
 ## Buildbot Maintenance
@@ -166,8 +166,8 @@ report. This report allows all test failures to be searched.
 Here is some information on how our Buildbot installation is set up\
 and maintained:
 
-* The configuration file is included in the[Tools for MariaDB](https://github.com/MariaDB/mariadb.org-tools) repository.
-* The building and testing of binary packages is documented on the[package-testing-with-buildbot-and-kvm](package-testing-with-buildbot-and-kvm.md) page.
+* The configuration file is included in the [Tools for MariaDB](https://github.com/MariaDB/mariadb.org-tools) repository.
+* The building and testing of binary packages is documented on the [package-testing-with-buildbot-and-kvm](package-testing-with-buildbot-and-kvm.md) page.
 * We developed a small tool, [runvm](runvm.md), which is used to do some\
   of the builds inside a virtual machine, mostly to test builds of binary\
   packages.

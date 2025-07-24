@@ -194,7 +194,7 @@ A temporary table will always be used if the fields which will be sorted are not
 
 ### Forcing/Disallowing TemporaryTables to be Used for GROUP BY:
 
-Using an in-memory table (as described above) is usually the fastest option for[GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) if the result set is small. It is not optimal if the result set is very big. You can tell the optimizer this by using`SELECT SQL_SMALL_RESULT` or `SELECT SQL_BIG_RESULT`.
+Using an in-memory table (as described above) is usually the fastest option for [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) if the result set is small. It is not optimal if the result set is very big. You can tell the optimizer this by using`SELECT SQL_SMALL_RESULT` or `SELECT SQL_BIG_RESULT`.
 
 For example:
 

@@ -235,7 +235,7 @@ If there are any tables locked by the connection that is using `FLUSH TABLES` al
 * All background writes are suspended and tables are marked as closed.
 * No statement requiring table changes are allowed for any user until `UNLOCK TABLES`.
 
-Instead of using `FLUSH TABLE WITH READ LOCK` one should in most cases instead use[BACKUP STAGE BLOCK\_COMMIT](../backup-commands/backup-stage.md).
+Instead of using `FLUSH TABLE WITH READ LOCK` one should in most cases instead use [BACKUP STAGE BLOCK\_COMMIT](../backup-commands/backup-stage.md).
 
 ### Implementation of FLUSH TABLES table\_list
 

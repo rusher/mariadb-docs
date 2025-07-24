@@ -5,12 +5,12 @@
 ## Authentication Modules
 
 This document describes general MySQL protocol authentication in MaxScale. For\
-REST-api authentication, see the[configuration guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/) and the[REST-api guide](../../../../../en/mariadb-maxscale-2208-maxscale-rest-api/).
+REST-api authentication, see the [configuration guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/) and the [REST-api guide](../../../../../en/mariadb-maxscale-2208-maxscale-rest-api/).
 
 Similar to the MariaDB Server, MaxScale uses authentication plugins to implement\
 different authentication schemes for incoming clients. The same plugins also\
 handle authenticating the clients to backend servers. The authentication plugins\
-available in MaxScale are[standard MySQL password](mariadb-maxscale-2208-mysql-authenticator.md),[GSSAPI](mariadb-maxscale-2208-gssapi-client-authenticator.md) and[pluggable authentication modules (PAM)](mariadb-maxscale-2208-pam-authenticator.md).
+available in MaxScale are [standard MySQL password](mariadb-maxscale-2208-mysql-authenticator.md),[GSSAPI](mariadb-maxscale-2208-gssapi-client-authenticator.md) and [pluggable authentication modules (PAM)](mariadb-maxscale-2208-pam-authenticator.md).
 
 Most of the authentication processing is performed on the protocol level, before\
 handing it over to one of the plugins. This shared part is described in this\
@@ -38,7 +38,7 @@ communicating the first failure to the client. This transparent user data update
 does not always work, in which case the client should try to log in again.
 
 As the UAM is shared between all listeners of a service, its settings are\
-defined in the service configuration. For more information, search the[configuration guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/)\
+defined in the service configuration. For more information, search the [configuration guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/)\
 for _users\_refresh\_time_, _users\_refresh\_interval_ an&#x64;_&#x61;uth\_all\_servers_. Other settings which affect how the UAM connects to backends\
 are the global settings _auth\_connect\_timeout_ and _local\_address_, and\
 the various server-level ssl-settings.
@@ -86,7 +86,7 @@ Option 1 limits the passwords for user accounts with shared usernames. Such\
 accounts must use the same password since they will effectively share the\
 MaxScale-to-backend user account. Option 2 requires server support.
 
-See[MaxScale Troubleshooting](../../../../maxscale-versions/maxscale-troubleshooting.md)\
+See [MaxScale Troubleshooting](../../../../maxscale-versions/maxscale-troubleshooting.md)\
 for additional information on how to solve authentication issues.
 
 #### Wildcard database grants
@@ -165,7 +165,7 @@ authenticator_options=match_host=false
 
 Controls database name matching for authentication\
 when an incoming client logs in to a non-empty database. The setting functions\
-similar to the MariaDB Server setting[lower\_case\_table\_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables)\
+similar to the MariaDB Server setting [lower\_case\_table\_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables)\
 and should be set to the value used by the backends.
 
 The setting accepts the values 0, 1 or 2:

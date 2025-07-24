@@ -6,9 +6,9 @@ The most recent release of [MariaDB 11.2](../../old-releases/release-notes-maria
 
 **Release date:** 21 Nov 2023
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/11.2) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/11.2) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 11.1.3](../changelogs-mariadb-11-1-series/mariadb-11-1-3-changelog.md)

@@ -22,7 +22,7 @@ You can check the variable's local and global value with:
 SELECT @@OLD_MODE, @@GLOBAL.OLD_MODE;
 ```
 
-You can set the `OLD_MODE` either from the[command line](../starting-and-stopping-mariadb/mariadbd-options.md) (option `--old-mode`) or by setting the [old\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
+You can set the `OLD_MODE` either from the [command line](../starting-and-stopping-mariadb/mariadbd-options.md) (option `--old-mode`) or by setting the [old\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
 
 Non-default old mode features are deprecated by design, and from [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), a warning will be issued when set.
 

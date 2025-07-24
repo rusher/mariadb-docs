@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
 
-For more information about what has changed, please refer to the[ChangeLog](../mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
+For more information about what has changed, please refer to the [ChangeLog](../mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
 
 Before starting the upgrade, any existing configuration files should\
 be backed up.
@@ -87,7 +87,7 @@ be backed up.
 
 #### `reuse_prepared_statements`
 
-The `reuse_prepared_statements` parameter has been replaced with the use of the[PsReuse](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md) filter module.
+The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -113,7 +113,7 @@ filters=PsReuse
 
 #### `optimistic_trx`
 
-The `optimistic_trx` parameter has been replaced with the use of the[OptimisticTrx](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
+The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -382,7 +382,7 @@ if defined:
 * If a master server is placed into maintenance mode, all open transactions are\
   allowed to gracefully finish before the session is closed. To forcefully close\
   the connections, use the `--force` option for `maxctrl set server`.
-* The `lazy_connect` feature can be used as a workaround to[MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the\
+* The `lazy_connect` feature can be used as a workaround to [MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the\
   overall load on the system when connections are rapidly opened and closed.
 * Transaction replays now have a limit on how many times a replay is\
   attempted. The default values is five attempts and is controlled by the`transaction_replay_attempts` parameter.

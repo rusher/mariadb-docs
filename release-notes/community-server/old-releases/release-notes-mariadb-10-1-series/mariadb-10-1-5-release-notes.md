@@ -42,7 +42,7 @@ Please [let us know](https://mariadb.org/jira) if you run into any issues with\
 them.
 
 Repositories exist for 10.1, but because 10.1 is still Beta, they are not\
-visible in the[repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/).\
+visible in the [repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/).\
 To configure a 10.1 apt, yum, or zypper repository using the tool, simply\
 select 10.0 and then when executing the instructions, change all occurrences of\
 '10.0' to '10.1'.

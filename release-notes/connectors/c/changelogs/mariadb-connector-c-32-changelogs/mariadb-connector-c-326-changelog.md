@@ -4,9 +4,9 @@
 
 **Release date:** 15 Feb 2022
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-c-32-release-notes/mariadb-connector-c-326-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-c-32-release-notes/mariadb-connector-c-326-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-c/) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-c/) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #2ab5a07](https://github.com/mariadb-corporation/mariadb-connector-c/commit/2ab5a07)\

@@ -4,9 +4,9 @@
 
 **Release date:** 24 Feb 2025
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #70b25c1](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/70b25c1)\
@@ -29,7 +29,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [ODBC-446](https://jira.mariadb.org/browse/ODBC-446) deb packages name follow the common pattern with other products
 * [Revision #cf391ac](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/cf391ac)\
   2025-02-04 15:00:52 +0100
-  * [ODBC-45](https://jira.mariadb.org/browse/ODBC-45)O The test
+  * [ODBC-45](https://jira.mariadb.org/browse/ODBC-45) O The test
 * [Revision #fe0f26f](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/fe0f26f)\
   2025-02-03 14:06:17 +0100
   * [ODBC-322](https://jira.mariadb.org/browse/ODBC-322) Testcase of it as not a bug

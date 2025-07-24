@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 **Release date:** 10 May 2010
 
-[MariaDB 5.1.44](mariadb-5144-release-notes.md)b fixes a buffer overflow that might potentially allow an\
+[MariaDB 5.1.44](mariadb-5144-release-notes.md) b fixes a buffer overflow that might potentially allow an\
 authenticated user to run arbitrary code inside the server. It also has a fix\
 for [MySQL Bug #53371](https://bugs.mysql.com/bug.php?id=53371): _"Security hole with bypassing grants using special path in_\
 \&#xNAN;_db/table names."_ In all other respects, it is the same\

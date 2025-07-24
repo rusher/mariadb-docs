@@ -6,11 +6,11 @@
 
 **Release date:** 15 Apr 2020
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-python-0-9-release-notes/mariadb-connector-python-0-9-57-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-python-0-9-release-notes/mariadb-connector-python-0-9-57-release-notes.md).
 
 **Do not use&#x20;**_**beta**_**&#x20;releases in production!**
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-python/) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-python/) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #0a05581](https://github.com/mariadb-corporation/mariadb-connector-python/commit/0a05581)\

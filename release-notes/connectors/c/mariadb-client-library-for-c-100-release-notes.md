@@ -15,7 +15,7 @@ believe the code is ready for general usage (based on bug inflow).
 **For a description of this library see the**[**MariaDB Client Library for C**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](changelogs/mariadb-client-library-for-c-100-changelog.md).
+information on each push, see the [changelog](changelogs/mariadb-client-library-for-c-100-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

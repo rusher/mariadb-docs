@@ -828,10 +828,10 @@ relationships: `servers` and `filters` relationships.
 
 If the request body defines a valid `relationships` object, the service is\
 linked to those resources. For servers, this is equivalent to adding the list of\
-server names into the[servers](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) parameter. For\
-filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the[filters](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) parameter in the\
+server names into the [servers](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) parameter. For\
+filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the [filters](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) parameter in the\
 order they appear. For other services, this is equivalent to adding the list of\
-server names into the[targets](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) parameter.
+server names into the [targets](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) parameter.
 
 The following example defines a new service with both a server and a filter\
 relationship.
@@ -892,7 +892,7 @@ they are allowed to gracefully close before the service is destroyed. This means
 that the destruction of a service can be acknowledged via the REST API before\
 the destruction process has fully completed.
 
-To find out whether a service is still in use after it has been destroyed, the[sessions](mariadb-maxscale-2402-maxscale-2402-session-resource.md) resource should be used. If a session for\
+To find out whether a service is still in use after it has been destroyed, the [sessions](mariadb-maxscale-2402-maxscale-2402-session-resource.md) resource should be used. If a session for\
 the service is still open, it has not yet been destroyed.
 
 This endpoint also supports the `force=yes` parameter that will unconditionally\
@@ -914,7 +914,7 @@ PATCH /v1/services/:name
 The request body must be a JSON object which represents a set of new definitions\
 for the service.
 
-All standard service parameters can be modified. Refer to the[service](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) documentation on\
+All standard service parameters can be modified. Refer to the [service](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) documentation on\
 the details of these parameters.
 
 In addition to the standard service parameters, router parameters can be updated\
@@ -1051,7 +1051,7 @@ Users are reloaded:
 GET /v1/services/:name/listeners
 ```
 
-This endpoint is deprecated, use the[this](mariadb-maxscale-2402-maxscale-2402-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the [this](mariadb-maxscale-2402-maxscale-2402-listener-resource.md) listeners endpoint instead.
 
 #### Get a single service listener
 
@@ -1068,7 +1068,7 @@ listeners endpoint instead.
 POST /v1/services/:name/listeners
 ```
 
-This endpoint is deprecated, use the[this](mariadb-maxscale-2402-maxscale-2402-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the [this](mariadb-maxscale-2402-maxscale-2402-listener-resource.md) listeners endpoint instead.
 
 #### Destroy a listener
 
@@ -1076,7 +1076,7 @@ This endpoint is deprecated, use the[this](mariadb-maxscale-2402-maxscale-2402-l
 DELETE /v1/services/:service/listeners/:name
 ```
 
-This endpoint is deprecated, use the[this](mariadb-maxscale-2402-maxscale-2402-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the [this](mariadb-maxscale-2402-maxscale-2402-listener-resource.md) listeners endpoint instead.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

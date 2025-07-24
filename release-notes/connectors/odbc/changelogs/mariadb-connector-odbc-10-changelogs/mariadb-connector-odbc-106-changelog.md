@@ -6,9 +6,9 @@ The most recent [_**Stable**_](../../../../community-server/about/release-criter
 
 **Release date:** 11 Apr 2016
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-odbc-10-release-notes/mariadb-connector-odbc-106-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-odbc-10-release-notes/mariadb-connector-odbc-106-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #ab1b3e7](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/ab1b3e7)\
   2016-04-09 01:12:39 +0200
@@ -68,7 +68,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Connection string options for SSL settings and their simplistic support in the GUI dialog.
 * [Revision #9b4a852](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/9b4a852)\
   2015-09-23 03:08:45 +0200
-  * ([ODBC-23](https://jira.mariadb.org/browse/ODBC-23))Added connection string option PLUGIN\_DIR for pointing to c/c plugins directory. Added support of this function to the gui dialog.
+  * ([ODBC-23](https://jira.mariadb.org/browse/ODBC-23)) Added connection string option PLUGIN\_DIR for pointing to c/c plugins directory. Added support of this function to the gui dialog.
 * [Revision #06d8df4](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/06d8df4)\
   2015-09-15 17:37:53 +0200
   * Version bump - 1.0.6

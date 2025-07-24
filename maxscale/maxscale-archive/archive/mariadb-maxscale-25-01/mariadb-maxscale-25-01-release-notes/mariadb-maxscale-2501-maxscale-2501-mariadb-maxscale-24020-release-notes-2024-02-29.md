@@ -21,7 +21,7 @@ it afterwards.
 `async-rebuild-server` and `async-restore-from-backup` now auto-detect server\
 data directory. Alternatively, the data directory can be specified manually when\
 launching the operations from command line. Also, mariadb-backup memory use and\
-thread count can be customized in monitor settings. See[MariaDB Monitor documentation](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
+thread count can be customized in monitor settings. See [MariaDB Monitor documentation](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
 for more information.
 
 ### Dropped Features
@@ -52,13 +52,13 @@ An option to purging binlogs is now to archive them to another file system or fo
 #### [MXS-4191](https://jira.mariadb.org/browse/MXS-4191) Restrict REST API user authentication to specific IPs
 
 Global settings `admin_readwrite_hosts` and `admin_readonly_hosts` limit the\
-hostnames/IPs from which admin (REST-API) clients can log in from. See[admin\_readonly\_hosts](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and[admin\_readwrite\_hosts](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+hostnames/IPs from which admin (REST-API) clients can log in from. See [admin\_readonly\_hosts](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and [admin\_readwrite\_hosts](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 for more information.
 
 #### [MXS-4705](https://jira.mariadb.org/browse/MXS-4705) Support multiple IPs for one server
 
 `private_address` is an alternative IP-address or hostname for a server. This is\
-used by MariaDB Monitor to detect and set up replication. See[MariaDB Monitor documentation](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
+used by MariaDB Monitor to detect and set up replication. See [MariaDB Monitor documentation](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
 for more information.
 
 #### [MXS-4764](https://jira.mariadb.org/browse/MXS-4764) KafkaCDC: Option to use the latest GTID

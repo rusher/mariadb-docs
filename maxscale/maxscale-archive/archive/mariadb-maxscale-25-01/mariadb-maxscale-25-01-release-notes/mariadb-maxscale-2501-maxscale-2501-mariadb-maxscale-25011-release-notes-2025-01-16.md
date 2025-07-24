@@ -50,15 +50,15 @@ for more information.
 
 #### [MXS-4897](https://jira.mariadb.org/browse/MXS-4897) Add admin\_ssl\_cipher setting
 
-Enabled REST-API TLS ciphers can be tuned with the global setting[admin\_ssl\_cipher](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+Enabled REST-API TLS ciphers can be tuned with the global setting [admin\_ssl\_cipher](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
 
 #### [MXS-4986](https://jira.mariadb.org/browse/MXS-4986) Add low overhead trace logging
 
-The new[trace\_file\_dir](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and[trace\_file\_size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+The new [trace\_file\_dir](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and [trace\_file\_size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 parameters can be used to enable a trace log that writes messages from all log\
 levels to a set of rotating log files.
 
-This feature is an alternative to enabling[log\_info](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) which is not\
+This feature is an alternative to enabling [log\_info](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) which is not\
 always feasible in a production system due to the high volume of log data that\
 it creates. This overhead of writing large amounts of trace logging data could\
 be mitigated by placing the log directory on a volatile in-memory filesystem but\
@@ -74,7 +74,7 @@ application problems.
 
 #### [MXS-5016](https://jira.mariadb.org/browse/MXS-5016) Add support for MongoDB Compass
 
-[NoSQL](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md) now implements the commands needed by[MongoDB Compass](https://www.mongodb.com/products/tools/compass), which\
+[NoSQL](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md) now implements the commands needed by [MongoDB Compass](https://www.mongodb.com/products/tools/compass), which\
 now can be used for browsing NoSQL collections.
 
 #### [MXS-5037](https://jira.mariadb.org/browse/MXS-5037) Track reads and writes at the server level
@@ -103,7 +103,7 @@ for more information.
 
 Similar to MariaDB, MaxScale now stores the last 128 hostnames returned by\
 reverse name lookups. This improves the performance of clusters where clients\
-are authenticated based on a hostname instead of a plain IP address. The new[host\_cache\_size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+are authenticated based on a hostname instead of a plain IP address. The new [host\_cache\_size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 parameter can be used to control the size of the cache and the cache can be\
 disabled with `host_cache_size=0`.
 
@@ -116,13 +116,13 @@ bulk execution of statements returns multiple results.
 
 MariaDB Monitor module command _switchover_ can now be called with key-value\
 arguments. This form also supports leaving the old primary in maintenance mode\
-instead of redirecting it. See[monitor documentation](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
+instead of redirecting it. See [monitor documentation](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
 for more information.
 
 #### [MXS-5136](https://jira.mariadb.org/browse/MXS-5136) Extend the number of supported aggregation stages and operations.
 
-[NoSQL](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md) now implements the command[aggregate](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)\
-and provides a number of aggregation pipe line[stages](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md) and[operators](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md).
+[NoSQL](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md) now implements the command [aggregate](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)\
+and provides a number of aggregation pipe line [stages](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md) and [operators](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md).
 
 #### MaxGUI
 

@@ -19,7 +19,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 * [CONC-226](https://jira.mariadb.org/browse/CONC-226): Fixed build for big-endian platforms
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-233-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-233-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

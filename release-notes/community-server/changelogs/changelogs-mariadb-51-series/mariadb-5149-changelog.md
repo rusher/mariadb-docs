@@ -10,7 +10,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
 
 * [Revision #2895](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2895) Ensure that xtradb & InnoDB plugin compiles if valgrind is installed but not valgrind debug libraries
 * [Revision #2894](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2894)\
-  This patch fixes [Bug #613408](https://bugs.launchpad.net/bugs/613408) Memory corruption with (M)aria storage engine and virtual columns in [MariaDB 5.2](../../old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md)\
+  This patch fixes [Bug #613408](https://bugs.launchpad.net/bugs/613408) Memory corruption with (M) aria storage engine and virtual columns in [MariaDB 5.2](../../old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md)\
   Fixed compiler warnings\
   Disabled some tests that doesn't work on windows (uses shell tools or strange characters)
 * [Revision #2893](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2893)\

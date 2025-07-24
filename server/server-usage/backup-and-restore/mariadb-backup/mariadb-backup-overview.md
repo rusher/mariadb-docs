@@ -180,7 +180,7 @@ mariadb-backup reads client options from the following option groups from option
 
 ### Authentication and Privileges
 
-`mariadb-backup` needs to authenticate with the database server when it performs a backup operation (i.e. when the [--backup ](mariadb-backup-options.md#backup)option is specified). For most use cases, the user account that performs the backup needs to have the following global privileges on the database server.
+`mariadb-backup` needs to authenticate with the database server when it performs a backup operation (i.e. when the [--backup ](mariadb-backup-options.md#backup) option is specified). For most use cases, the user account that performs the backup needs to have the following global privileges on the database server.
 
 {% tabs %}
 {% tab title="MariaDB 10.5 and Later" %}
@@ -415,7 +415,7 @@ InnoDB: and force InnoDB to continue crash recovery here.
 
 Prior to [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes), [MariaDB 10.2.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10224-release-notes), and [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10314-release-notes), `mariadb-backup` would actually ignore the error and continue the backup. In some of those cases, `mariadb-backup` would even report a successful completion of the backup to the user. In later versions, `mariadb-backup` will properly throw an error and abort when this error is encountered. See [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) for more information.
 
-When this error is encountered, one solution is to explicitly specify a value for the [--open-files-limit](mariadb-backup-options.md#open-files-limit) option either on the command line or in one of the supported [server option group](mariadb-backup-overview.md#server-option-groups)s in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+When this error is encountered, one solution is to explicitly specify a value for the [--open-files-limit](mariadb-backup-options.md#open-files-limit) option either on the command line or in one of the supported [server option group](mariadb-backup-overview.md#server-option-groups) s in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```bash
 [mariadb-backup]

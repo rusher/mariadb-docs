@@ -325,7 +325,7 @@ SHOW GLOBAL STATUS
 +---------------------+-------+
 ```
 
-When a system variable is dynamically changed with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement, the change does not survive server restarts. To ensure that audit logging is started when the server restarts, set the[server\_audit\_logging](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_logging) system variable in a configuration file too:
+When a system variable is dynamically changed with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement, the change does not survive server restarts. To ensure that audit logging is started when the server restarts, set the [server\_audit\_logging](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_logging) system variable in a configuration file too:
 
 ```ini
 [mariadb]

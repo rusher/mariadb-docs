@@ -40,7 +40,7 @@ You can get the 'old style' checksum in MariaDB by setting [old\_mode](../../../
 {% endtab %}
 
 {% tab title="< 10.9" %}
-You can get the 'old style' checksum in MariaDB by starting [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd.md) with the[--old](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old) option. Note, however, that the MyISAM and Aria storage engines in MariaDB are using the new checksum internally, so if you are using this old mode, the `CHECKSUM` command will be slower as it needs to calculate the checksum row by row.
+You can get the 'old style' checksum in MariaDB by starting [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd.md) with the [--old](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old) option. Note, however, that the MyISAM and Aria storage engines in MariaDB are using the new checksum internally, so if you are using this old mode, the `CHECKSUM` command will be slower as it needs to calculate the checksum row by row.
 {% endtab %}
 {% endtabs %}
 

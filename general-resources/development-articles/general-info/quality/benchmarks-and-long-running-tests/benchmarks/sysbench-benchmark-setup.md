@@ -3,7 +3,7 @@
 For our automated MariaDB/MySQL sysbench benchmark tests, we use sysbench from`lp:sysbench`. This page describes the basic parameters and configuration we\
 use.
 
-You can find the automation wrapper scripts we use for running sysbench in[lp:mariadb-tools](mariadb-tools.md)
+You can find the automation wrapper scripts we use for running sysbench in [lp:mariadb-tools](mariadb-tools.md)
 
 ## Current general parameters
 

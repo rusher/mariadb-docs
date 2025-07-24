@@ -15,7 +15,7 @@ general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.2**](changes-improvements-in-mariadb-5-2.md) **see the**[**What is MariaDB 5.2**](changes-improvements-in-mariadb-5-2.md) **page.**
 
 For a list of changes made in [MariaDB 5.2.12](mariadb-5212-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.2.12 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-5212-changelog.md).
+information on each push, see the [MariaDB 5.2.12 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-5212-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -30,7 +30,7 @@ recommend upgrading from older versions as soon as possible.
 
 This version of MariaDB includes [MariaDB 5.1.62](../release-notes-mariadb-5-1-series/mariadb-5162-release-notes.md), and by extension, MySQL\
 5.1.62. See the [MariaDB 5.1.62 Release Notes](../release-notes-mariadb-5-1-series/mariadb-5162-release-notes.md) for\
-the changes made in [MariaDB 5.1.62](../release-notes-mariadb-5-1-series/mariadb-5162-release-notes.md) and see[Changes in MySQL 5.1.62](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-62.html)\
+the changes made in [MariaDB 5.1.62](../release-notes-mariadb-5-1-series/mariadb-5162-release-notes.md) and see [Changes in MySQL 5.1.62](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-62.html)\
 for what changed between this and previous MySQL versions.
 
 {% include "../../../.gitbook/includes/announce.md" %}

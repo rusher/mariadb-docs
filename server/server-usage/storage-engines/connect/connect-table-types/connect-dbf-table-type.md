@@ -3,7 +3,7 @@
 ## Overview
 
 A table of type `DBF` is physically a dBASE III or IV formatted file (used by\
-many products like dBASE, Xbase, FoxPro etc.). This format is similar to the[FIX](connect-dos-and-fix-table-types.md) type format with in addition a prefix giving the characteristics of the\
+many products like dBASE, Xbase, FoxPro etc.). This format is similar to the [FIX](connect-dos-and-fix-table-types.md) type format with in addition a prefix giving the characteristics of the\
 file, describing in particular all the fields (columns) of the table.
 
 Because `DBF` files have a header that contains Meta data about the file, in\

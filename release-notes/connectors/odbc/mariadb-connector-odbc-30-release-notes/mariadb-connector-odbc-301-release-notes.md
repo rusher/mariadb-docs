@@ -12,7 +12,7 @@ As with any other pre-production release, caution should be taken when\
 installing this **beta** release on production systems or systems with\
 critical data.
 
-MariaDB Connector/ODBC 3.0.1 is built on top of[MariaDB Connector/C 3.0](../../c/mariadb-connector-c-30-release-notes/mariadb-connector-c-301-release-notes.md) and uses the\
+MariaDB Connector/ODBC 3.0.1 is built on top of [MariaDB Connector/C 3.0](../../c/mariadb-connector-c-30-release-notes/mariadb-connector-c-301-release-notes.md) and uses the\
 binary prepared statement protocol.
 
 For Parameter Arrays operations (column-wise) and for `SQLBulkOperations`/`SQLSetPos`(SQL\_ADD/SQL\_UPDATE) it uses the MariaDB bulk operations feature, which allows sending batches of parameter sets, instead of sending them row by row. This only works with a server version >= [MariaDB 10.2.7](../../../community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes.md).
@@ -32,7 +32,7 @@ Connector/C API.
 ## Changelog
 
 For a complete list of every change made in this release, with links to\
-detailed information on each push, see the[changelog](../changelogs/mariadb-connector-odbc-30-changelogs/mariadb-connector-odbc-301-changelog.md).
+detailed information on each push, see the [changelog](../changelogs/mariadb-connector-odbc-30-changelogs/mariadb-connector-odbc-301-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

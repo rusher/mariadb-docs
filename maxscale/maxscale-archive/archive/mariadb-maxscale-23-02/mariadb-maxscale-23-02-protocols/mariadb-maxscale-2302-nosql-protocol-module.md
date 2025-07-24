@@ -581,12 +581,12 @@ network traffic.
 
 However, when a user is created or added (or the password is changed),\
 the password will be transferred in _cleartext_. To prevent eavesdropping,\
-create/add users when connecting over a domain socket, or use[TLS/SSL](mariadb-maxscale-2302-nosql-protocol-module.md#tlsssl)
+create/add users when connecting over a domain socket, or use [TLS/SSL](mariadb-maxscale-2302-nosql-protocol-module.md#tlsssl)
 
 #### Implicit bootstrapping
 
 With implicit bootstrapping, you should first create the MariaDB\
-user that should appear as the initial NoSQL user. As explained[here](mariadb-maxscale-2302-nosql-protocol-module.md#nosql-and-mariadb-users), the concept of a user is somewhat\
+user that should appear as the initial NoSQL user. As explained [here](mariadb-maxscale-2302-nosql-protocol-module.md#nosql-and-mariadb-users), the concept of a user is somewhat\
 different in MariaDB and NoSQL, which means that certain factors\
 must be taken into account when creating the MariaDB user. Then\
 at first startup, nosqlprotocol will create the corresponding\
@@ -892,7 +892,7 @@ which means that only the `test` database can be accessed and modified.
 #### TLS/SSL
 
 Since `nosqlprotocol` is a regular protocol module used in a listener,\
-the TLS/SSL support of listeners is available. Please see[TSLSSL encryption](https://mariadb.com/kb/en/Getting-Started/Configuration-Guide#tsl-encryption)\
+the TLS/SSL support of listeners is available. Please see [TSLSSL encryption](https://mariadb.com/kb/en/Getting-Started/Configuration-Guide#tsl-encryption)\
 for details.
 
 ### NoSQL Account Database
@@ -1007,9 +1007,9 @@ management in MaxScale and to provide an authentication\
 key ID with [authentication\_key\_id](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_key_id) so\
 that the data will be encrypted.
 
-If shared authentication has been enabled with[authentication\_shared](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_shared) then[authentication\_user](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_user) and[authentication\_password](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_password) must also\
+If shared authentication has been enabled with [authentication\_shared](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_shared) then [authentication\_user](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_user) and [authentication\_password](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_password) must also\
 be provided. With [authentication\_db](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_db) the\
-database name can optionally be changed, and with[authentication\_key\_id](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_key_id) an\
+database name can optionally be changed, and with [authentication\_key\_id](mariadb-maxscale-2302-nosql-protocol-module.md#authentication_key_id) an\
 encryption key ID, using which the sensitive data is encrypted,\
 can optionally be provided.
 
@@ -1086,7 +1086,7 @@ Specifies whether the client always must authenticate. If authentication is requ
 it does not matter whether `user` and `password` have been specified, the client must\
 authenticate.
 
-Authentication should not be required before users have been created with[createUser](mariadb-maxscale-2302-nosql-protocol-module.md#createUser) or added with [mxsAddUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsAddUser),\
+Authentication should not be required before users have been created with [createUser](mariadb-maxscale-2302-nosql-protocol-module.md#createUser) or added with [mxsAddUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsAddUser),\
 with authentication being optional and authorization being disabled.
 
 NOTE: All client activity is _always_ subject to authorization performed by the\
@@ -1149,7 +1149,7 @@ Specifies the _password_ of `authentication_user`.
 * Default: `false`
 
 Specifies whether nosqlprotocol itself should perform authorization in the context\
-of the commands [mxsAddUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsAddUser), [mxsRemoveUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsRemoveUser) and[mxsUpdateUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsUpdateUser). Authorization should not be enabled before users\
+of the commands [mxsAddUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsAddUser), [mxsRemoveUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsRemoveUser) and [mxsUpdateUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsUpdateUser). Authorization should not be enabled before users\
 have been created with [createUser](mariadb-maxscale-2302-nosql-protocol-module.md#createUser) or added with [mxsAddUser](mariadb-maxscale-2302-nosql-protocol-module.md#mxsAddUser)\
 with authorization being disabled.
 
@@ -1244,7 +1244,7 @@ Enumeration values:
   the behavior is as in the `default` case.
 
 What combination of `ordered_insert_behavior` and `ordered` (in the insert command\
-document) is used, has an impact on the performance. Please see the discussion at[insert](mariadb-maxscale-2302-nosql-protocol-module.md#insert).
+document) is used, has an impact on the performance. Please see the discussion at [insert](mariadb-maxscale-2302-nosql-protocol-module.md#insert).
 
 ### `cursor_timeout`
 
@@ -1350,7 +1350,7 @@ The following operators are currently supported.
 
 **`$type`**
 
-When `$type` is used, it will be converted into a condition involving one or more[JSON\_TYPE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_type) comparisons. The following subset\
+When `$type` is used, it will be converted into a condition involving one or more [JSON\_TYPE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_type) comparisons. The following subset\
 of types can be used in `$type` queries:
 
 | Type           | Number | Alias    | MariaDB Type |
@@ -1657,7 +1657,7 @@ Currently only updating using _update operator expressions_ or with &#x61;_&#x72
 
 **Update with an Update Operator Expressions document**
 
-The update statement field `u` can accept a document that only contains[update operator](mariadb-maxscale-2302-nosql-protocol-module.md#update-operators) expressions. For example:
+The update statement field `u` can accept a document that only contains [update operator](mariadb-maxscale-2302-nosql-protocol-module.md#update-operators) expressions. For example:
 
 ```
 updates: [
@@ -2608,14 +2608,14 @@ integer.
 
 ## Compatibility
 
-Currently 30% of the tests in the[MongoDB® core](https://github.com/mongodb/mongo/tree/master/jstests/core)\
+Currently 30% of the tests in the [MongoDB® core](https://github.com/mongodb/mongo/tree/master/jstests/core)\
 test-suite pass.
 
 ## Example
 
 The following is a minimal setup for getting _nosqlprotocol_ up and\
 running. It is assumed the reader knows how to configure MaxScale for\
-normal use. If not, please start with the[MaxScale tutorial](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-setting-up-mariadb-maxscale.md).\
+normal use. If not, please start with the [MaxScale tutorial](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-setting-up-mariadb-maxscale.md).\
 Note that as _nosqlprotocol_ is the first component in the MaxScale\
 routing chain, it can be used with all routers and filters.
 
@@ -2725,7 +2725,7 @@ the value of the `_id` field of the document in the `doc` column.
 
 All MongoDB® commands that _mongdbprotocol_ support (but for the ones that\
 do not require database access), basically access or manipulate the\
-content in the `doc` column using the[JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions) of MariaDB.
+content in the `doc` column using the [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions) of MariaDB.
 
 From within the mongo shell itself it is easy to find out just what SQL\
 a particular MongoDB command is translated into.

@@ -1,6 +1,6 @@
 # Data Types
 
-Many data types make no or little sense when applied to plain files. This why[CONNECT](./) supports only a restricted set of data types. However, ODBC, JDBC\
+Many data types make no or little sense when applied to plain files. This why [CONNECT](./) supports only a restricted set of data types. However, ODBC, JDBC\
 or MYSQL source tables may contain data types not supported by CONNECT. In this\
 case, CONNECT makes an automatic conversion to a similar supported type when it\
 is possible.
@@ -305,7 +305,7 @@ When converted, MariaDB types are converted as:
 
 For [ENUM](../../../reference/data-types/string-data-types/enum.md), the length of the column is the length of the longest value of the enumeration. For [SET](../../../reference/data-types/string-data-types/set-data-type.md) the length is enough to contain all the set values concatenated with comma separator.
 
-In the case of [TEXT](../../../reference/data-types/string-data-types/text.md) columns, the handling depends on the values given to the [connect\_type\_conv](connect-system-variables.md#connect_type_conv) and[connect\_conv\_size](connect-system-variables.md#connect_conv_size) system variables.
+In the case of [TEXT](../../../reference/data-types/string-data-types/text.md) columns, the handling depends on the values given to the [connect\_type\_conv](connect-system-variables.md#connect_type_conv) and [connect\_conv\_size](connect-system-variables.md#connect_conv_size) system variables.
 
 Note: [BLOB](../../../reference/data-types/string-data-types/blob.md) is currently not converted by default until a TYPE\_BIN type is added to CONNECT. However, the FORCE option (from Connect 1.06.006) can be specified for blob columns containing text and the SKIP option also applies to ODBC BLOB columns.
 

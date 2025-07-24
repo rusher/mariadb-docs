@@ -12,7 +12,7 @@ RESET { SLAVE | REPLICA } ["connection_name"] [ALL]  [FOR CHANNEL "connection_na
 
 ## Description
 
-RESET REPLICA makes the replica forget its [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/replication-statements/broken-reference/README.md) position in the master's [binary log](../../../../server-management/server-monitoring-logs/binary-log/). This statement is meant to be used for a clean start. It deletes the master.info and relay-log.info files, all the[relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md) files, and starts a new relay log file. To use RESET REPLICA, the replica threads must be stopped (use [STOP REPLICA](stop-replica.md) if necessary).
+RESET REPLICA makes the replica forget its [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/replication-statements/broken-reference/README.md) position in the master's [binary log](../../../../server-management/server-monitoring-logs/binary-log/). This statement is meant to be used for a clean start. It deletes the master.info and relay-log.info files, all the [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md) files, and starts a new relay log file. To use RESET REPLICA, the replica threads must be stopped (use [STOP REPLICA](stop-replica.md) if necessary).
 
 Note: All relay log files are deleted, even if they have not been completely executed by the replica SQL thread. (This is a condition likely to exist on a replication replica if you have issued a STOP REPLICA statement or if the replica is highly loaded.)
 

@@ -33,11 +33,11 @@ New features and changes in this version include:
 
 #### Maria storage engine group commit
 
-* Two new system variables have been added:`maria_group_commit` and`maria_group_commit_interval`. See[Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables) for details.
+* Two new system variables have been added:`maria_group_commit` and`maria_group_commit_interval`. See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables) for details.
 
 #### Backport libservices [MWL#98](https://askmonty.org/worklog/?tid=98)
 
-* We've backported the[MySQL 5.5 Services for Plugins](https://dev.mysql.com/doc/refman/5.5/en/plugin-services.html)\
+* We've backported the [MySQL 5.5 Services for Plugins](https://dev.mysql.com/doc/refman/5.5/en/plugin-services.html)\
   to [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md).
 
 #### Fix the packaging scripts [MWL#88](https://askmonty.org/worklog/?tid=88)
@@ -50,7 +50,7 @@ New features and changes in this version include:
 
 #### Additional information added to engine description, new MariaDB plugin declaration [MWL#61](https://askmonty.org/worklog/?tid=61)
 
-* We've added two new columns to the[INFORMATION\_SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema).
+* We've added two new columns to the [INFORMATION\_SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema).
 * For plugin authors: As part of this change, the MariaDB plugin declaration\
   now differs slightly from the MySQL plugin declaration (the MySQL plugin\
   declaration is still supported for dynamically loaded plugins). See:[Writing Plugins](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/development-writing-plugins-for-mariadb) for details.

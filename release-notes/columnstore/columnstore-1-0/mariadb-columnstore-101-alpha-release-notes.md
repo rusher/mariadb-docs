@@ -57,7 +57,7 @@ There are some known security issues. They are listed here
   * Displaying the query results on a large number of columns without formatting the column works
   * Displaying the query results on a large number of columns with formatting causes error at MariaDB Server level
 * [MCOL-45](https://jira.mariadb.org/browse/MCOL-45) : CREATE PROCEDURE fails.
-  * Do not use stored procedure with this Alpha version[MCOL-16](https://jira.mariadb.org/browse/MCOL-16): LOAD DATA INFILE into datetime columns, data got saturated.
+  * Do not use stored procedure with this Alpha version [MCOL-16](https://jira.mariadb.org/browse/MCOL-16): LOAD DATA INFILE into datetime columns, data got saturated.
   * Do not use LOAD DATA INFILE when importing data into datetime columns
   * Use cpimport to bulk load data into MariaDB Columnstore instead. cpimports works correctly for datetime columns as well.
   * INSERT INTO works for datetime columns

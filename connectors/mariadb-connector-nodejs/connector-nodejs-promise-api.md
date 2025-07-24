@@ -259,10 +259,10 @@ BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global
 
 **Connection:**
 
-* [`connection.query(sql[, values]) → Promise`](#connectionquerysql-values---promise): Executes a query.
-* [`connection.queryStream(sql[, values]) → Emitter`](#connectionquerystreamsql-values--emitter): Executes a query, returning an emitter object to stream rows.
+* [`connection.query(sql [, values]) → Promise`](#connectionquerysql-values---promise): Executes a query.
+* [`connection.queryStream(sql [, values]) → Emitter`](#connectionquerystreamsql-values--emitter): Executes a query, returning an emitter object to stream rows.
 * [`connection.prepare(sql) → Promise`](#connectionpreparesql--promise): Prepares a query.
-* [`connection.execute(sql[, values]) → Promise`](#connectionexecutesql-values--promise): Prepare and Executes a query.
+* [`connection.execute(sql [, values]) → Promise`](#connectionexecutesql-values--promise): Prepare and Executes a query.
 * [`connection.batch(sql, values) → Promise`](#connectionbatchsql-values--promise): Fast batch processing.
 * [`connection.beginTransaction() → Promise`](#connectionbegintransaction--promise): Begins a transaction.
 * [`connection.commit() → Promise`](#connectioncommit--promise): Commits the current transaction, if any.
@@ -285,7 +285,7 @@ BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global
 **Pool:**
 
 * [`pool.getConnection() → Promise`](#poolgetconnection--promise): Creates a new connection.
-* [`pool.query(sql[, values]) → Promise`](#poolquerysql-values---promise): Executes a query.
+* [`pool.query(sql [, values]) → Promise`](#poolquerysql-values---promise): Executes a query.
 * [`pool.batch(sql, values) → Promise`](#poolbatchsql-values---promise): Executes a batch
 * [`pool.end() → Promise`](#poolend--promise): Gracefully closes the connection.
 * [`pool.escape(value) → String`](#poolescapevalue--string): Escape parameter
@@ -1064,7 +1064,7 @@ prepare.close();
 > * resolves with a JSON object for update/insert/delete or a [result-set](#result-set-array) object for a result-set.
 > * rejects with an [Error](#error).
 
-This is quite similar to [`connection.query(sql[, values]) → Promise`](#connectionquerysql-values---promise) method, with a few differences:
+This is quite similar to [`connection.query(sql [, values]) → Promise`](#connectionquerysql-values---promise) method, with a few differences:
 Execute will in fact [PREPARE](https://mariadb.com/kb/en/prepare-statement/) + [EXECUTE](https://mariadb.com/kb/en/execute-statement/) + [CLOSE](https://mariadb.com/kb/en/deallocate-drop-prepare/) command.
 
 It makes sense to use this only if the command often is used and if prepare cache is enabled (default).
@@ -1349,7 +1349,7 @@ escape per type:
 * String: escaped value, (\u0000, ', ", \b, \n, \r, \t, \u001A, and \ characters are escaped with '\')
 
 Escape is done for [sql_mode](https://mariadb.com/kb/en/library/sql-mode/) value without NO_BACKSLASH_ESCAPES that disable \ escaping (default);  
-Escaping API are meant to prevent [SQL injection](https://en.wikipedia.org/wiki/SQL_injection). However, privilege the use of [`connection.query(sql[, values]) → Promise`](#connectionquerysql-values---promise) and avoid building the command manually.
+Escaping API are meant to prevent [SQL injection](https://en.wikipedia.org/wiki/SQL_injection). However, privilege the use of [`connection.query(sql [, values]) → Promise`](#connectionquerysql-values---promise) and avoid building the command manually.
 
 ```javascript
 const myColVar = "let'go";

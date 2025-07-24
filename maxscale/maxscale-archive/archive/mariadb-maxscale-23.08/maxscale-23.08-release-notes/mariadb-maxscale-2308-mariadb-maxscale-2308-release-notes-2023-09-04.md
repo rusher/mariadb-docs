@@ -20,7 +20,7 @@ During switchover, MariaDB-Monitor creates a new connection to the master with\
 a long timeout, ignoring the limit of `backend_read_timeout`. This reduces the\
 probability of long commands such as `set global read_only=1` timing out. When\
 kicking out super and read-only admin users, monitor prevent writes with\
-"flush tables with read lock". See[monitor documentation](../mariadb-maxscale-23-08-monitors/mariadb-maxscale-2308-mariadb-monitor.md#operation-details)\
+"flush tables with read lock". See [monitor documentation](../mariadb-maxscale-23-08-monitors/mariadb-maxscale-2308-mariadb-monitor.md#operation-details)\
 for more information.
 
 #### [MXS-4385](https://jira.mariadb.org/browse/MXS-4385) No newlines in logged messages
@@ -66,13 +66,13 @@ e.g. `SELECT.*.*FROM.*.*t1`.
 The NoSQL protocol module now supports internal caching. Since this\
 cache uses keys created from NoSQL protocol requests and stores NoSQL\
 protocol responses, it is more efficient than the regular cache filter.\
-More information about this functionality can be found[here](../mariadb-maxscale-23-08-protocols/mariadb-maxscale-2308-nosql-protocol-module.md#caching).
+More information about this functionality can be found [here](../mariadb-maxscale-23-08-protocols/mariadb-maxscale-2308-nosql-protocol-module.md#caching).
 
 #### [MXS-3983](https://jira.mariadb.org/browse/MXS-3983) Add switchover-force command
 
 This version of switchover performs the switch even if the primary server is\
 unresponsive i.e. responds to pings but does not perform any commands in a\
-reasonable time. May lead to diverging replication on the old primary. See[monitor documentation](../mariadb-maxscale-23-08-monitors/mariadb-maxscale-2308-mariadb-monitor.md#operation-details)\
+reasonable time. May lead to diverging replication on the old primary. See [monitor documentation](../mariadb-maxscale-23-08-monitors/mariadb-maxscale-2308-mariadb-monitor.md#operation-details)\
 for more information.
 
 #### [MXS-4123](https://jira.mariadb.org/browse/MXS-4123) Fast universal causal reads
@@ -103,7 +103,7 @@ the client applications.
 When the service password is changed, MaxScale will remember and use the previous\
 password if the new does not work. This makes it easier to manage the changing of\
 the password, as the password in the backend and in MaxScale need not be changed\
-simultaneously. More information about this functionality can be found[here](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#user-and-password).
+simultaneously. More information about this functionality can be found [here](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#user-and-password).
 
 #### [MXS-4277](https://jira.mariadb.org/browse/MXS-4277) Configurable `iss` field in JWTs
 
@@ -116,7 +116,7 @@ issued the token.
 It is now possible to specify options in an _include_-section, to be included\
 by other sections. This is useful, for instance, if there are multiple monitors\
 that otherwise are identically configured, but for their list of servers. More\
-information about this functionality can be found[here](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#include-1).
+information about this functionality can be found [here](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#include-1).
 
 #### [MXS-4505](https://jira.mariadb.org/browse/MXS-4505) Safer replaying of about-to-commit transactions
 
@@ -127,7 +127,7 @@ when the connection to the server was lost.
 
 #### [MXS-4506](https://jira.mariadb.org/browse/MXS-4506) Add passthrough authentication support for Xpand LDAP
 
-Passthrough authentication mode for MariaDBAuth-module. See[authenticator documentation](../../../../../en/mariadbmysql-authenticator/#clear_pw_passthrough) for more information.
+Passthrough authentication mode for MariaDBAuth-module. See [authenticator documentation](../../../../../en/mariadbmysql-authenticator/#clear_pw_passthrough) for more information.
 
 #### [MXS-4549](https://jira.mariadb.org/browse/MXS-4549) Queries with partially returned results can be replayed
 

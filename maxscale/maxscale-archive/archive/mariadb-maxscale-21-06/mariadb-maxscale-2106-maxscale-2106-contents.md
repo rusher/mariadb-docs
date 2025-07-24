@@ -115,7 +115,7 @@ The MaxScale CDC Connector provides a C++ API for consuming data from a CDC syst
 
 ### Authenticators
 
-A short description of the authentication module type can be found in the[Authentication Modules](mariadb-maxscale-21-06-authenticators/mariadb-maxscale-2106-maxscale-2106-authentication-modules.md)\
+A short description of the authentication module type can be found in the [Authentication Modules](mariadb-maxscale-21-06-authenticators/mariadb-maxscale-2106-maxscale-2106-authentication-modules.md)\
 document.
 
 * [MariaDB/MySQL Authenticator](mariadb-maxscale-21-06-authenticators/mariadb-maxscale-2106-maxscale-2106-mariadbmysql-authenticator.md)

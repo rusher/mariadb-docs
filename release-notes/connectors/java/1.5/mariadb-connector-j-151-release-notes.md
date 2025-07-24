@@ -65,7 +65,7 @@ when a failover occurs.)
 ## Changelog
 
 For a list of all changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/1.5/mariadb-connector-j-151-changelog.md).
+information on each push, see the [changelog](../changelogs/1.5/mariadb-connector-j-151-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

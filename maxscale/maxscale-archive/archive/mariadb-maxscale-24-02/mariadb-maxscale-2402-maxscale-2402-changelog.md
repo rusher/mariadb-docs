@@ -11,9 +11,9 @@
 * MariaDB-Monitor now requires MariaDB Server 10.4 or newer for failover/\
   switchover. Server 10.3 is end of life.
 * Server setting `private_address` added. Used for detecting and setting up\
-  replication. See[MariaDB Monitor documentation](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
+  replication. See [MariaDB Monitor documentation](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   for more information.
-* MariaDB-Monitor allows customization of some mariadb-backup settings. See[mariadb-backup\_use\_memory](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
+* MariaDB-Monitor allows customization of some mariadb-backup settings. See [mariadb-backup\_use\_memory](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   and [mariadb-backup\_parallel](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   for more information.
 * MariaDB-Monitor setting `servers_no_promotion` now affects primary\
@@ -45,7 +45,7 @@
   * `average_session` replaced with `avg_session_lifetime`.
   * `shortest_session` has been removed.
 * `admin_readwrite_hosts` and `admin_readonly_hosts` added. These settings limit\
-  the allowed source addresses for admin (REST-API) connections. See[here](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+  the allowed source addresses for admin (REST-API) connections. See [here](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
   for more information.
 * The `alter` commands in MaxCtrl now allow modifications to the`targets`, `servers`, `filters` and `cluster` parameters for monitors\
   and services. This makes it easier to define the exact set of servers\
@@ -103,7 +103,7 @@ For more details, please refer to:
   switchover to work.
 * The NoSQL protocol now provides internal caching.
 * Additional metadata is sent in the connection handshake. For more information,\
-  refer to the[parameter](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+  refer to the [parameter](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
   documentation.
 * The `connection_timeout` parameter was renamed to `wait_timeout` to make the\
   naming of the parameters the same in MaxScale and MariaDB server. The old`connection_timeout` parameter is now an alias to `wait_timeout` and its use\
@@ -114,13 +114,13 @@ For more details, please refer to:
   do. Only broken legacy versions where the grants would be returned without\
   backslash escaping would require this parameter to work.
 * The Xpand monitor is now region aware.
-* Passthrough authentication mode added to MariaDBAuth-module. See[authenticator documentation](maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-mariadbmysql-authenticator.md) for more\
+* Passthrough authentication mode added to MariaDBAuth-module. See [authenticator documentation](maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-mariadbmysql-authenticator.md) for more\
   information.
 * Added `pam_mode=suid` option to PamAuth module. This option separates the\
-  pam system library calls to a separate executable. See[authenticator documentation](maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-pam-authenticator.md)\
+  pam system library calls to a separate executable. See [authenticator documentation](maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-pam-authenticator.md)\
   for more information. test\_pam\_login tool updated to support this mode.
 * Added `disk_space_ok` option to MariaDB Monitor settings `master_conditions`\
-  and `slave_conditions`. Enabled by default in `master_conditions`. See[monitor documentation](../mariadb-maxscale-21-06/)\
+  and `slave_conditions`. Enabled by default in `master_conditions`. See [monitor documentation](../mariadb-maxscale-21-06/)\
   for more information. Only available in MaxScale 23.08.5, 24.02.1 and later.
 
 For more details, please refer to:
@@ -156,15 +156,15 @@ For more details, please refer to:
 * The `csmon` and `auroramon` monitors that were deprecated in 22.08.2\
   have been removed.
 * The obsolete `maxctrl drain` command has been removed. Use `maxctrl set server <name> drain` to use the built-in draining mechanism.
-* The `maxctrl cluster` commands have been removed. Use the built-in[configuration synchronization](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+* The `maxctrl cluster` commands have been removed. Use the built-in [configuration synchronization](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
   to synchronize the configurations of multiple MaxScale instances.
 * The REST-API is now supports ODBC-type connections in the `/sql`\
-  endpoints. For more information, refer to the SQL resource[documentation](maxscale-24-02rest-api/mariadb-maxscale-2402-maxscale-2402-sql-resource.md).
+  endpoints. For more information, refer to the SQL resource [documentation](maxscale-24-02rest-api/mariadb-maxscale-2402-maxscale-2402-sql-resource.md).
 * The REST-API query endpoint now supports asynchronous query execution\
   using the `async=true` option.
 * The new `/sql/:id/etl` endpoints allow ETL operations to be done from\
   ODBC data sources into MariaDB servers. For more information on the\
-  new API functions, refer to the SQL resource[documentation](maxscale-24-02rest-api/mariadb-maxscale-2402-maxscale-2402-sql-resource.md).
+  new API functions, refer to the SQL resource [documentation](maxscale-24-02rest-api/mariadb-maxscale-2402-maxscale-2402-sql-resource.md).
 * The number of routing threads MaxScale uses can now be changed at runtime.
 * The Audit-Log allows all REST-API calls to be logged.
 * MaxScale now supports Xpand parallel replication streams that go through\
@@ -221,7 +221,7 @@ For more details, please refer to:
 * MaxGUI Query Editor has changed the type of browser storage from local storage\
   to IndexedDB. As the result, query history, favorite, and configuration are reset.\
   Apart from that, query favorite was renamed to query snippets allowing to quickly\
-  insert the query to the editor by typing its prefix. See MaxGUI tutorial[Using-MaxGUI-Tutorial](maxscale-24-02tutorials/mariadb-maxscale-2402-maxscale-2402-using-maxgui-tutorial.md)
+  insert the query to the editor by typing its prefix. See MaxGUI tutorial [Using-MaxGUI-Tutorial](maxscale-24-02tutorials/mariadb-maxscale-2402-maxscale-2402-using-maxgui-tutorial.md)
 * The Xpand monitor now handles group change explicitly.
 * The `Maintenance|Drain` state of a server is now synchronized between multiple\
   MaxScale instances if configuration synchronization is enabled.
@@ -309,8 +309,8 @@ For more details, please refer to:
 * Synchronous mode for the Tee filter
 * New `list queries` command for MaxCtrl that lists all active queries
 * MaxScale can read client user accounts from a file and map them to backend\
-  users. See service setting[user\_accounts\_file](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
-  and listener setting[user\_mapping\_file](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+  users. See service setting [user\_accounts\_file](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+  and listener setting [user\_mapping\_file](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
   for more information.
 
 For more details, please refer to:
@@ -334,7 +334,7 @@ For more details, please refer to:
   user account manager connections. Normal port is used if the extra-port\
   connection fails due to too low extra\_max\_connections-setting on the backend.
 * The deprecated `required` and `disabled` values for the `ssl` parameter have been removed.
-* Backend connection multiplexing added. See[idle\_session\_pool\_time](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
+* Backend connection multiplexing added. See [idle\_session\_pool\_time](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md)\
   for more information.
 * Defaults for `maxctrl` can now be specified in the file `~/maxctrl.cnf`
 * PAM Authenticator can map PAM users to MariaDB users.
@@ -361,18 +361,18 @@ For more details, please refer to:
   MaxScale is introduced.
 * MaxInfo-router and the related httpd-protocol have been removed.
 * Server weights have been removed.
-* Services can now directly route to other services with the help of the[target](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) parameter.
+* Services can now directly route to other services with the help of the [target](maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md) parameter.
 * Server parameters protocol and authenticator have been deprecated. Any\
   definitions are ignored.
 * Listeners support multiple authenticators.
-* The replication lag of a slave server must now be less than[max\_slave\_replication\_lag](maxscale-24-02routers/mariadb-maxscale-2402-maxscale-2402-readwritesplit.md)\
+* The replication lag of a slave server must now be less than [max\_slave\_replication\_lag](maxscale-24-02routers/mariadb-maxscale-2402-maxscale-2402-readwritesplit.md)\
   whereas in older versions the replication lag had to be less than or\
   equal to the configured limit.
 * The global settings auth\_read\_timeout and auth\_write\_timeout have been\
   deprecated. Any definitions are ignored.
 * The Columnstore monitor is now capable of monitoring Columnstore 1.5 in\
   addition to 1.0 and 1.2.
-* MariaDB-Monitor supports cooperative monitoring. See[cooperative monitoring](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
+* MariaDB-Monitor supports cooperative monitoring. See [cooperative monitoring](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   for more information.
 * The MaxScale cache can now be shared between two MaxScale instances,\
   in which case either memcached or Redis can be used as cache storage.\

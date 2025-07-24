@@ -8,7 +8,7 @@ This page contains general guidelines for the community for reporting bugs and f
 
 ## Known Issues
 
-First, check that the bug or feature request isn't already filed in the[MariaDB bugs database](https://jira.mariadb.org/browse/MDEV).
+First, check that the bug or feature request isn't already filed in the [MariaDB bugs database](https://jira.mariadb.org/browse/MDEV).
 
 For the MariaDB issue database, use JIRA search to check if a report you are going to submit already exists. You are not expected to be a JIRA search guru, but please at least make some effort.
 

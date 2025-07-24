@@ -7,7 +7,7 @@
 This document describes possible issues upgrading MariaDB MaxScale from version\
 2.1 to 2.2.
 
-For more information about MariaDB MaxScale 2.2, please refer to the[ChangeLog](../mariadb-maxscale-2308-changelog.md).
+For more information about MariaDB MaxScale 2.2, please refer to the [ChangeLog](../mariadb-maxscale-2308-changelog.md).
 
 Before starting the upgrade, we recommend you back up your current configuration\
 file.

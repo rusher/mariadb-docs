@@ -6,9 +6,9 @@
 
 **Release date:** 1 Sep 2016
 
-For the highlights of this release, see the[release notes](../../1.5/mariadb-connector-j-152-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.5/mariadb-connector-j-152-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #79a21e5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/79a21e5) - Release version 1.5.2
 * [Revision #4c5a143](https://github.com/mariadb-corporation/mariadb-connector-j/commit/4c5a143) - \[misc] checktyle correction

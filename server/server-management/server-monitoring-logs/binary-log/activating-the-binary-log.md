@@ -1,6 +1,6 @@
 # Activating the Binary Log
 
-To enable binary logging, start the server with the `[--log-bin[=name](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md)]` option.
+To enable binary logging, start the server with the `[--log-bin [=name](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md)]` option.
 
 If you specify a filename with an extension (for example `.log`), the extension will be silently ignored.
 
@@ -33,7 +33,7 @@ total 100
 -rw-rw---- 1 mysql adm  816 Apr 21 17:05 mariadb-bin.index
 ```
 
-The binary log index file will by default have the same name as the individual binary logs, with the extension .index. You can specify an alternative name with the `--log-bin-index[=filename]` [option](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin_index).
+The binary log index file will by default have the same name as the individual binary logs, with the extension .index. You can specify an alternative name with the `--log-bin-index [=filename]` [option](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin_index).
 
 Clients with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege (or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql\_log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) variable.
 

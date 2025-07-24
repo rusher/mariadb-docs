@@ -6,9 +6,9 @@
 
 **Release date:** 27 Jun 2017
 
-For the highlights of this release, see the[release notes](../../2.0/mariadb-connector-j-203-release-notes.md).
+For the highlights of this release, see the [release notes](../../2.0/mariadb-connector-j-203-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #bb70ae1c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/bb70ae1c) - bump 2.0.3 version

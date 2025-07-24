@@ -17,7 +17,7 @@ Further maintenance releases will not be provided for version 2.6.
 ## Notable Updates
 
 * [CONJ-804](https://jira.mariadb.org/browse/CONJ-804) - Automatic charset correction
-* [CONJ-809](https://jira.mariadb.org/browse/CONJ-809) - SelectResultSet's (ResultSet)MetaData always indicates all columns to be readonly
+* [CONJ-809](https://jira.mariadb.org/browse/CONJ-809) - SelectResultSet's (ResultSet) MetaData always indicates all columns to be readonly
 * [CONJ-802](https://jira.mariadb.org/browse/CONJ-802) - Version parsing depending on Classloader might result in connection Exception
 
 ## Changelog

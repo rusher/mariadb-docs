@@ -17,7 +17,7 @@ final MariaDB Connector/C 3.0 release are implemented yet.
 ## Download
 
 Binary packages for Windows (32 and 64-bit) and generic Linux packages as well\
-as source code packages are available from the[MariaDB download page](https://downloads.mariadb.org/connector-c/3.0.0)
+as source code packages are available from the [MariaDB download page](https://downloads.mariadb.org/connector-c/3.0.0)
 
 ## New features
 

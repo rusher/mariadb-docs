@@ -21,7 +21,7 @@ Thanks, and enjoy MariaDB!
 * [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) updated to 3.2.37
   * new variable, [spider\_connect\_error\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-system-variables)
 * [MDEV-7384](https://jira.mariadb.org/browse/MDEV-7384): [mysqlcheck](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqlcheck) now supports `--persistent` option, when used\
-  together with `--analyze` option, it will force[Engine-independent Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) for\
+  together with `--analyze` option, it will force [Engine-independent Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) for\
   this table to be updated.
 * [MDEV-9288](https://jira.mariadb.org/browse/MDEV-9288): On POWER8 architecture MariaDB now uses hardware accelerated\
   crc32.
@@ -45,7 +45,7 @@ Thanks, and enjoy MariaDB!
     the client-side hostname verification. This vulnerability was discovered by\
     Paul Kehrer and Alex Gaynor.
 
-This release includes all bug fixes from [MariaDB 5.5.47](../release-notes-mariadb-5-5-series/mariadb-5547-release-notes.md), [MariaDB 10.0.23](../release-notes-mariadb-10-0-series/mariadb-10023-release-notes.md), and[MariaDB Galera Cluster 10.0.23](../mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10023-release-notes.md)\
+This release includes all bug fixes from [MariaDB 5.5.47](../release-notes-mariadb-5-5-series/mariadb-5547-release-notes.md), [MariaDB 10.0.23](../release-notes-mariadb-10-0-series/mariadb-10023-release-notes.md), and [MariaDB Galera Cluster 10.0.23](../mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10023-release-notes.md)\
 releases.
 
 ### SLES 11 Support

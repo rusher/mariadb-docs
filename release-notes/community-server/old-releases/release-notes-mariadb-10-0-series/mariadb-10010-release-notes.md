@@ -29,7 +29,7 @@ Notable changes of this release include:
 * Improved [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) performance by fixing incorrect calculation of flushed pages ([MDEV-5949](https://jira.mariadb.org/browse/MDEV-5949))
 * Fix for [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) duplicate key multi-master corruption bug ([MDEV-5804](https://jira.mariadb.org/browse/MDEV-5804))
 * Default [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) compression is now `TOKUDB_ZLIB` (instead of `TOKUDB_UNCOMPRESSED`)
-* Various algorithm improvements for[engine-independent table statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics)\
+* Various algorithm improvements for [engine-independent table statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics)\
   (EITS) ([MDEV-5901](https://jira.mariadb.org/browse/MDEV-5901), [MDEV-5917](https://jira.mariadb.org/browse/MDEV-5917), [MDEV-5950](https://jira.mariadb.org/browse/MDEV-5950), [MDEV-5962](https://jira.mariadb.org/browse/MDEV-5962), [MDEV-5926](https://jira.mariadb.org/browse/MDEV-5926))
 
 For a complete list of changes made in [MariaDB 10.0.10](mariadb-10010-release-notes.md), with links to detailed\

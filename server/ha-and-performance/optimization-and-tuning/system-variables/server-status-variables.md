@@ -1256,7 +1256,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Delete_scan`
 
-* Description: Number of [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md)s that required a full table scan.
+* Description: Number of [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) s that required a full table scan.
 * Scope: Global
 * Data Type: `numeric`
 

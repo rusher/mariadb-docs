@@ -1,6 +1,6 @@
 # Configuring Git to Send Commit Notices
 
-Commit emails for MariaDB are sent to[commits@lists.mariadb.org](https://lists.mariadb.org/postorius/lists/commits.lists.mariadb.org/).\
+Commit emails for MariaDB are sent to [commits@lists.mariadb.org](https://lists.mariadb.org/postorius/lists/commits.lists.mariadb.org/).\
 You can find the archive [here](https://lists.mariadb.org/hyperkitty/list/commits@lists.mariadb.org/).
 
 To allow others to see what you are working on in your MariaDB tree, you should:

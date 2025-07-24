@@ -6,15 +6,15 @@ The most recent [MariaDB Galera Cluster 10.0](https://github.com/mariadb-corpora
 
 **Release date:** 28 Jun 2014
 
-This is the 4th release in the MariaDB Galera Cluster 10.0 series. It is a[_**Stable**_](../../../about/release-criteria.md) (GA) release. It is a merge of [MariaDB 10.0.12](../../release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md)\
+This is the 4th release in the MariaDB Galera Cluster 10.0 series. It is a [_**Stable**_](../../../about/release-criteria.md) (GA) release. It is a merge of [MariaDB 10.0.12](../../release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md)\
 and [Galera Cluster](https://codership.com/content/using-galera-cluster) with\
 additional bug fixes.
 
-Various articles about MariaDB Galera Cluster, including[known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and[how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are\
+Various articles about MariaDB Galera Cluster, including [known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and [how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are\
 available in the [**Galera**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) section of the documentation.
 
 For a list of changes made in MariaDB Galera Cluster 10.0.12, with links to\
-detailed information on each push, see the[MariaDB Galera Cluster 10.0.12 Changelog](../mariadb-galera-100-changelogs/mariadb-galera-cluster-10012-changelog.md).
+detailed information on each push, see the [MariaDB Galera Cluster 10.0.12 Changelog](../mariadb-galera-100-changelogs/mariadb-galera-cluster-10012-changelog.md).
 
 ## Updates and fixes in this version
 
@@ -35,10 +35,10 @@ detailed information on each push, see the[MariaDB Galera Cluster 10.0.12 Change
 * Compatibility: Wsrep providers (Galera libraries) other than version 25.x.xx\
   are not supported.
 * Compatibility: If Galera v2 and v3 are both being used in the cluster, MariaDB with\
-  Galera v3 must be started with[wsrep\_provider\_options='socket.checksum=1'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep-variable-details/wsrep_provider_options#socketchecksum)\
+  Galera v3 must be started with [wsrep\_provider\_options='socket.checksum=1'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep-variable-details/wsrep_provider_options#socketchecksum)\
   in order to make it backward compatible with Galera v2.
 * Installation: Galera rpm packages had a file conflicting with Filesystem package, which caused installation to fail. Fixed Galera packages are now available for the following flavors : Fedora 19, Fedora 20 and CentOS 6. ([MDEV-4218](https://jira.mariadb.org/browse/MDEV-4218))
-* See the [MariaDB 10.0.12 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10012-changelog.md) for more information on the changes in\
+* See the [MariaDB 10.0.12 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md) and [Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10012-changelog.md) for more information on the changes in\
   MariaDB.
 
 Thanks, and enjoy MariaDB Galera Cluster!

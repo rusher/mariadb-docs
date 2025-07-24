@@ -224,7 +224,7 @@ parameter will be ignored. To reset the recorded GTID position, delete the`curre
 * Dynamic: No
 * Default: `1234`
 
-The[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#server_id)\
+The [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#server_id)\
 used when replicating from the primary in direct replication mode. The default\
 value is 1234. This parameter was added in MaxScale 2.5.7.
 
@@ -258,7 +258,7 @@ password=maxpwd
 bootstrap_servers=127.0.0.1:9092
 topic=my-cdc-topic
 match=db1[.]
-exclude=db1[.](accounts|users)
+exclude=db1 [.](accounts|users)
 ```
 
 #### `exclude`
@@ -361,7 +361,7 @@ Path to the public certificate in PEM format.
 
 The client must provide a certificate if the Kafka server performs authentication\
 of the client certificates. This feature is enabled by default in Kafka and is\
-controlled by[ssl.endpoint.identification.algorithm](https://kafka.apache.org/documentation/#brokerconfigs_ssl.endpoint.identification.algorithm).
+controlled by [ssl.endpoint.identification.algorithm](https://kafka.apache.org/documentation/#brokerconfigs_ssl.endpoint.identification.algorithm).
 
 If `kafka_ssl_cert` is provided, `kafka_ssl_key` must also be provided.
 

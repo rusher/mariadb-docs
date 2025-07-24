@@ -21,7 +21,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 * [CONC-196](https://jira.mariadb.org/browse/CONC-196): When retrieving large result sets mysql\_stmt\_store\_result was 4 times slower than libmysql due to extra loops in alloc\_root() function. (see also [ODBC-31](https://jira.mariadb.org/browse/ODBC-31))
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-231-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-231-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

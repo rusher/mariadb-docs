@@ -6,9 +6,9 @@
 
 **Release date:** 25 Aug 2023
 
-For the highlights of this release, see the[release notes](../../2.7/mariadb-connector-j-2-7-10-release-notes.md).
+For the highlights of this release, see the [release notes](../../2.7/mariadb-connector-j-2-7-10-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #28f1269b](https://github.com/mariadb-corporation/mariadb-connector-j/commit/28f1269b) - \[misc] test suite update

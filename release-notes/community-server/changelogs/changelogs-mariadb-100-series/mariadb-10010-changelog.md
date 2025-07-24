@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 10.0](../../old-releases/release-notes-m
 
 **Release date:** 31 Mar 2014
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\

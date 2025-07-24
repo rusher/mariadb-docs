@@ -339,7 +339,7 @@ The following SQL queries are not supported
 
 ## CONNECT MYSQL versus FEDERATED
 
-The CONNECT MYSQL table type should not be regarded as a replacement for the[FEDERATED(X)](../../federatedx-storage-engine/) engine. The main use of the MYSQL type is to access other engine tables as if they were CONNECT tables. This was necessary when accessing tables\
+The CONNECT MYSQL table type should not be regarded as a replacement for the [FEDERATED(X)](../../federatedx-storage-engine/) engine. The main use of the MYSQL type is to access other engine tables as if they were CONNECT tables. This was necessary when accessing tables\
 from some CONNECT table types such as [TBL](connect-tbl-table-type-table-list.md), [XCOL](connect-xcol-table-type.md), [OCCUR](connect-occur-table-type.md), or [PIVOT](connect-pivot-table-type.md) that are\
 designed to access CONNECT tables only. When their target table is not a\
 CONNECT table, these types are silently using internally an intermediate MYSQL\

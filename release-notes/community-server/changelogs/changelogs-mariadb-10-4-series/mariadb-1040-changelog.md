@@ -6,9 +6,9 @@ The most recent release of [MariaDB 10.4](../../../mariadb-community-server-rele
 
 **Release date:** 9 Nov 2018
 
-For the highlights of this release, see the[release notes](../../../mariadb-community-server-release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/).
+For the highlights of this release, see the [release notes](../../../mariadb-community-server-release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.4) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.4) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Merge [Revision #c761b43451](https://github.com/MariaDB/server/commit/c761b43451) 2018-11-08 09:50:56 +0200 - Merge 10.3 into 10.4

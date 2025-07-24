@@ -8,9 +8,9 @@ The most recent release of [MariaDB 10.3](../../old-releases/release-notes-maria
 
 **Release date:** 21 Feb 2019
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #c8f9b3f915](https://github.com/MariaDB/server/commit/c8f9b3f915)\
@@ -222,7 +222,7 @@ details of the revision and view diffs of the code modified in that revision.
   2019-01-24 17:18:26 -0500
   * [MDEV-18372](https://jira.mariadb.org/browse/MDEV-18372): Minor [MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973)-related merge issue to 10.3
 * Merge [Revision #947b6b849d](https://github.com/MariaDB/server/commit/947b6b849d) 2019-01-24 16:14:12 +0200 - Merge 10.2 into 10.3
-* Merge [Revision #55be043c13](https://github.com/MariaDB/server/commit/55be043c13) 2019-01-23 12:07:36 +0200 - Merge pull request #1120 from tempesta-tech/sysprg/[MDEV-17835](https://jira.mariadb.org/browse/MDEV-17835)v2
+* Merge [Revision #55be043c13](https://github.com/MariaDB/server/commit/55be043c13) 2019-01-23 12:07:36 +0200 - Merge pull request #1120 from tempesta-tech/sysprg/[MDEV-17835](https://jira.mariadb.org/browse/MDEV-17835) v2
 * [Revision #0e89e90f42](https://github.com/MariaDB/server/commit/0e89e90f42)\
   2019-01-22 13:28:03 +0100
   * [MDEV-17835](https://jira.mariadb.org/browse/MDEV-17835): Remove wsrep-sst-method=xtrabackup

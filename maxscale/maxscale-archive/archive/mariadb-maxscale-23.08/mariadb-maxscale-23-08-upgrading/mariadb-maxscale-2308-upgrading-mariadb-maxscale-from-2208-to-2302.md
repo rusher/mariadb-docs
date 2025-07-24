@@ -7,7 +7,7 @@
 This document describes possible issues when upgrading MariaDB MaxScale from\
 version 22.08 to 23.02.
 
-For more information about MaxScale 23.02, refer to the[ChangeLog](../mariadb-maxscale-2308-changelog.md).
+For more information about MaxScale 23.02, refer to the [ChangeLog](../mariadb-maxscale-2308-changelog.md).
 
 Before starting the upgrade, any existing configuration files should be backed\
 up.

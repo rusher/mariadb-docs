@@ -33,7 +33,7 @@ be closed.
 
 ### Example
 
-Here is a simple example service definition that uses the servers from the[Configuring Servers](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-configuring-servers.md) tutorial and the\
+Here is a simple example service definition that uses the servers from the [Configuring Servers](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-configuring-servers.md) tutorial and the\
 credentials from the [MaxScale Tutorial](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-setting-up-mariadb-maxscale.md).
 
 ```

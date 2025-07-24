@@ -86,7 +86,7 @@ the effective update rate is reduced.
 monitor_interval=2s
 ```
 
-The interval is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The interval is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as milliseconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected.
 
@@ -98,7 +98,7 @@ versions a value without a unit may be rejected.
 * Default: `3s`
 
 This parameter controls the timeout for connecting to a monitored server.\
-The interval is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The interval is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,\
@@ -116,7 +116,7 @@ backend_connect_timeout=3s
 * Default: `3s`
 
 This parameter controls the timeout for writing to a monitored server.\
-The timeout is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The timeout is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,\
@@ -134,7 +134,7 @@ backend_write_timeout=3s
 * Default: `3s`
 
 This parameter controls the timeout for reading from a monitored server.\
-The timeout is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The timeout is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,\
@@ -267,7 +267,7 @@ at `/DbData` while both `server2` and `server3` have it mounted on`/data` and th
 * Default: `0s`
 
 With this parameter it can be specified the minimum amount of time\
-between disk space checks. The interval is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+between disk space checks. The interval is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as milliseconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected.\
 The default value is 0, which means that by default the disk space\
@@ -347,7 +347,7 @@ calls as they cause a deadlock:
 * Dynamic: Yes
 * Default: `90s`
 
-The timeout for the executed script. The interval is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The timeout for the executed script. The interval is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,\
@@ -396,7 +396,7 @@ descriptions.
 * Dynamic: Yes
 * Default: `28800s`
 
-The maximum journal file age. The interval is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The maximum journal file age. The interval is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the max age is seconds, a max age specified in milliseconds will be rejected,\

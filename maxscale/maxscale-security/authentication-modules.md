@@ -82,7 +82,7 @@ Option 1 limits the passwords for user accounts with shared usernames. Such\
 accounts must use the same password since they will effectively share the\
 MaxScale-to-backend user account. Option 2 requires server support.
 
-See[MaxScale Troubleshooting](../maxscale-management/maxscale-troubleshooting.md)\
+See [MaxScale Troubleshooting](../maxscale-management/maxscale-troubleshooting.md)\
 for additional information on how to solve authentication issues.
 
 #### Wildcard database grants
@@ -161,7 +161,7 @@ authenticator_options=match_host=false
 
 Controls database name matching for authentication\
 when an incoming client logs in to a non-empty database. The setting functions\
-similar to the MariaDB Server setting[lower\_case\_table\_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables)\
+similar to the MariaDB Server setting [lower\_case\_table\_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables)\
 and should be set to the value used by the backends.
 
 The setting accepts the values 0, 1 or 2:

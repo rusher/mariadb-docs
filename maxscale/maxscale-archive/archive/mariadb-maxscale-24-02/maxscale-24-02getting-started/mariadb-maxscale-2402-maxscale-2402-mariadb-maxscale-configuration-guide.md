@@ -289,7 +289,7 @@ is also possible to update the status of a server manually.
 | Slave of External Master | The server is a replica of a primary that is not being monitored.                                                                                                                                                                                                                                                          |
 | Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../mariadb-maxscale-21-06/) for more information.                                                                                                                                                           |
 
-For more information on how to manually set these states via MaxCtrl, read the[Administration Tutorial](../maxscale-24-02tutorials/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-administration-tutorial.md).
+For more information on how to manually set these states via MaxCtrl, read the [Administration Tutorial](../maxscale-24-02tutorials/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-administration-tutorial.md).
 
 #### Monitor
 
@@ -356,7 +356,7 @@ configuration sections.
 
 The administration of MaxScale can be divided in two parts:
 
-* Writing the MaxScale configuration file, which is described in the following[section](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#configuration).
+* Writing the MaxScale configuration file, which is described in the following [section](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#configuration).
 * Performing runtime modifications using [MaxCtrl](../maxscale-24-02reference/mariadb-maxscale-2402-maxscale-2402-maxctrl.md)
 
 For detailed information about _MaxCtrl_ please refer to the specific\
@@ -364,7 +364,7 @@ documentation referred to above. In the following it will only be explained how\
 MaxCtrl relate to each other, as far as user credentials go.
 
 **Note**: By default all runtime configuration changes are saved on disk and\
-loaded on startup. Refer to the[Dynamic Configuration](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#dynamic-configuration) section for more details\
+loaded on startup. Refer to the [Dynamic Configuration](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#dynamic-configuration) section for more details\
 on how it works and how to disable it.
 
 MaxCtrl can connect using TCP/IP sockets. When connecting with MaxCtrl using\
@@ -444,7 +444,7 @@ recursively reads all files with the ".cnf" suffix in the directory hierarchy.\
 Other files are ignored.
 
 After loading normal configuration files, MaxScale reads runtime-generated\
-configuration files, if any, from the[persisted configuration files directory](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#persistdir).
+configuration files, if any, from the [persisted configuration files directory](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#persistdir).
 
 Different configuration sections can be arranged with little restrictions.\
 Global path settings such as `logdir`, `piddir` and `datadir` are only read from\
@@ -452,7 +452,7 @@ the main configuration file. Other global settings are also best left in the\
 main file to ensure they are read before other configuration sections are\
 parsed.
 
-The configuration file format used is[INI](https://en.wikipedia.org/wiki/INI_file), similar to the\
+The configuration file format used is [INI](https://en.wikipedia.org/wiki/INI_file), similar to the\
 MariaDB Server. The files contain sections and each section can contain multiple\
 key-value pairs.
 
@@ -497,7 +497,7 @@ modifications done to `/etc/maxscale.cnf` after a runtime change has been made\
 are ignored for that object.
 
 To prevent the saving of runtime changes and to make all runtime changes\
-volatile, add [persist\_runtime\_changes=false](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#persist_runtime_changes) and[load\_persisted\_configs=false](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#load_persisted_configs) under the `[maxscale]`\
+volatile, add [persist\_runtime\_changes=false](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#persist_runtime_changes) and [load\_persisted\_configs=false](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#load_persisted_configs) under the `[maxscale]`\
 section. This will make MaxScale behave like the MariaDB server does: any\
 changes done with `SET GLOBAL` statements are lost if the process is restarted.
 
@@ -589,7 +589,7 @@ of MaxScale. Currently, _binlogfilter_, _ccrfilter_, _qlafilter_, _tee_ and _avr
 accept parameters in this type of regular expression form. Some other modules may not\
 handle the slashes yet correctly.
 
-PCRE2 supports a complicated regular expression[syntax](https://www.pcre.org/current/doc/html/pcre2syntax.html). MaxScale typically uses\
+PCRE2 supports a complicated regular expression [syntax](https://www.pcre.org/current/doc/html/pcre2syntax.html). MaxScale typically uses\
 regular expressions simply, only checking whether the pattern and subject match at some\
 point. For example, using the QLAFilter and setting `match=/SELECT/` causes the filter to\
 accept any query with the text "SELECT" somewhere within. To force the pattern to only\
@@ -608,7 +608,7 @@ values such as `ignorecase`, `case` and `extended`.
 
 These settings can also be defined in the pattern itself, so they can be\
 used even in modules without pattern compilation settings. The pattern\
-settings are `(?i)` for `ignorecase` and `(?x)` for `extended`. See the[PCRE2 syntax documentation](https://www.pcre.org/current/doc/html/pcre2syntax.html#SEC16)\
+settings are `(?i)` for `ignorecase` and `(?x)` for `extended`. See the [PCRE2 syntax documentation](https://www.pcre.org/current/doc/html/pcre2syntax.html#SEC16)\
 for more information.
 
 **Standard regular expression settings for filters**
@@ -3163,8 +3163,8 @@ using connection sharing. This means that the following should not be used:
 Several settings affect connection sharing and its effectiveness. Reusing a\
 connection is an expensive operation so its frequency should be minimized. The\
 important configuration settings in addition to _idle\_session\_pool\_time_ are\
-MaxScale server settings[persistpoolmax](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#persistpoolmax),[persistmaxtime](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#persistmaxtime) and[max\_routing\_connections](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#max_routing_connections).\
-The service settings [max\_sescmd\_history](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#max_sescmd_history),[prune\_sescmd\_history](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#prune_sescmd_history) and[multiplex\_timeout](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#multiplex_timeout) also have an effect. These\
+MaxScale server settings [persistpoolmax](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#persistpoolmax),[persistmaxtime](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#persistmaxtime) and [max\_routing\_connections](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#max_routing_connections).\
+The service settings [max\_sescmd\_history](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#max_sescmd_history),[prune\_sescmd\_history](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#prune_sescmd_history) and [multiplex\_timeout](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#multiplex_timeout) also have an effect. These\
 settings should be tuned according to the use case.
 
 _persistpoolmax_ limits how many connections can be kept in a pool for a given\
@@ -3305,7 +3305,7 @@ on.
 * Default: `""`
 
 Alternative IP-address or hostname for the server. This is currently only used\
-by MariaDB Monitor to detect and set up replication. See[MariaDB Monitor documentation](../maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
+by MariaDB Monitor to detect and set up replication. See [MariaDB Monitor documentation](../maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
 for more information.
 
 #### `monitoruser`
@@ -3364,7 +3364,7 @@ both monitor and user account manager to connect.
 If the connection to the extra-port fails due to connection number limit or if\
 the port is not open on the server, normal port is used.
 
-For more information, see[extra\_port](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)\
+For more information, see [extra\_port](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)\
 and [extra\_max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables#extra_max_connections).
 
 #### `persistpoolmax`
@@ -3427,7 +3427,7 @@ backend. The client can still connect to MaxScale, but queries will fail.
 
 If connection sharing is on, sessions exceeding the limit will be put on hold\
 until a connection is available. Such sessions will appear unresponsive, as\
-queries will hang, possibly for a long time. The timeout is controlled by[multiplex\_timeout](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#multiplex_timeout).
+queries will hang, possibly for a long time. The timeout is controlled by [multiplex\_timeout](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#multiplex_timeout).
 
 ```
 max_routing_connections=1234
@@ -3440,7 +3440,7 @@ max_routing_connections=1234
 * Dynamic: Yes
 * Default: `false`
 
-If `proxy_protocol` is enabled, MaxScale will send a[PROXY protocol](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)\
+If `proxy_protocol` is enabled, MaxScale will send a [PROXY protocol](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)\
 header when connecting client sessions to the server. The header contains the\
 original client IP address and port, as seen by MaxScale. The server will then\
 read the header and perform authentication as if the connection originated from\
@@ -3449,7 +3449,7 @@ accounts on the backend server can be simplified to only contain the actual\
 client hosts and not the MaxScale host.
 
 **NOTE**: If you use a cloud load balancer like AWS ELB that supports the proxy\
-protocol in front of a MaxScale, you need to configure[proxy\_protocol\_networks](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#proxy_protocol_networks) in MaxScale. This also needs\
+protocol in front of a MaxScale, you need to configure [proxy\_protocol\_networks](mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md#proxy_protocol_networks) in MaxScale. This also needs\
 to be done whenever one MaxScale may connect to another Maxscale and the\
 connecting MaxScale has `proxy_protocol` enabled.
 
@@ -3553,7 +3553,7 @@ Readconnroute will always use primary servers before secondary servers as long\
 as they match the configured server type.
 
 Readwritesplit will pick servers that have the same rank as the current\
-primary. Read the[readwritesplit documentation on server ranks](../maxscale-24-02routers/mariadb-maxscale-2402-maxscale-2402-readwritesplit.md)\
+primary. Read the [readwritesplit documentation on server ranks](../maxscale-24-02routers/mariadb-maxscale-2402-maxscale-2402-readwritesplit.md)\
 for a detailed description of the behavior.
 
 The following example server configuration demonstrates how `rank` can be used\
@@ -3592,7 +3592,7 @@ they are available. When they are no longer available, the `DR-site-primary` and
 * Default: 0
 
 Server priority. Currently only used by galeramon to choose the order in which\
-nodes are selected as the current primary server. Refer to the[Server Priorities](../maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-galera-monitor.md)\
+nodes are selected as the current primary server. Refer to the [Server Priorities](../maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-galera-monitor.md)\
 section of the galeramon documentation for more information on how to use it.
 
 Starting with MaxScale 2.5.21, this parameter also accepts negative values. In\
@@ -3632,7 +3632,7 @@ The network socket where the listener listens may have a backlog of\
 connections. The size of this backlog is controlled by th&#x65;_&#x6E;et.ipv4.tcp\_max\_syn\_backlog_ and _net.core.somaxconn_ kernel parameters.
 
 Increasing the size of the backlog by modifying the kernel parameters helps with\
-sudden connection spikes and rejected connections. For more information see[listen(2)](https://man7.org/linux/man-pages/man2/listen.2.html).
+sudden connection spikes and rejected connections. For more information see [listen(2)](https://man7.org/linux/man-pages/man2/listen.2.html).
 
 ```
 [MyListener1]
@@ -3737,7 +3737,7 @@ If both are used this setting will override the global setting for this listener
 
 #### `proxy_protocol_networks`
 
-Define an IP-address or a subnetwork which may send a[proxy protocol header](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)\
+Define an IP-address or a subnetwork which may send a [proxy protocol header](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)\
 when connecting. The proxy header contains the original client IP-address and\
 port, and MaxScale will use that information in its internal bookkeeping.\
 This means the client is authenticated as if it was connecting from the host\
@@ -3805,12 +3805,12 @@ empty, which disables the feature.
 user_mapping_file=/home/root/mapping.json
 ```
 
-Should not be used together with[PAM Authenticator](../maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-pam-authenticator.md)\
+Should not be used together with [PAM Authenticator](../maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-pam-authenticator.md)\
 settings `pam_backend_mapping` or `pam_mapped_pw_file`, as these may overwrite\
 the mapped credentials. Is most powerful when combined with service setting`user_accounts_file`, as then MaxScale can accept users that do not exist on\
 backends and map them to backend users.
 
-This file functions very similar to[PAM-based mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam).\
+This file functions very similar to [PAM-based mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam).\
 Both user-to-user and group-to-user mappings can be defined. Also, the password\
 and authentication plugin for the mapped users can be added. The file is only\
 read during listener creation (typically MaxScale start) or when a listener is\
@@ -3920,12 +3920,12 @@ the current number of connections to the service that the listener points to and
 for `connection_id` that contains the 64-bit connection ID value. The values can\
 be overridden by defining them with some value, for example,`connection_metadata=threads_connected=0,connection_id=0`.
 
-The metadata is implemented using[the session state information](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/4-server-response-packets/ok_packet#session-state-info)\
+The metadata is implemented using [the session state information](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/4-server-response-packets/ok_packet#session-state-info)\
 that is embedded in the OK packets that are generated by MaxScale. The values\
 are encoded as system variables changes. This information can be accessed by all\
 connectors that support reading the session state information. One example of\
-this is the MariaDB Connector/C that implements it with the[mysql\_session\_track\_get\_first](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_first)\
-and[mysql\_session\_track\_get\_next](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_next)\
+this is the MariaDB Connector/C that implements it with the [mysql\_session\_track\_get\_first](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_first)\
+and [mysql\_session\_track\_get\_next](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_next)\
 functions.
 
 The following example demonstrates the use of `connection_metadata`:
@@ -4216,7 +4216,7 @@ The interpretation changed again in MaxScale versions 6.4.16, 22.08.13,\
 23.02.10, 23.08.6, 24.02.2. In these versions the value of `ssl_version` is an\
 enumeration of accepted TLS protocol versions. This means that`admin_ssl_version=TLSv1.2` again only allows TLSv1.2. To retain the behavior\
 from the previous releases where the newer versions were automatically enabled,\
-the protocol versions must be explicitly listed, for example`admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the`ssl_version` behave identically to how the MariaDB[tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version)\
+the protocol versions must be explicitly listed, for example`admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the`ssl_version` behave identically to how the MariaDB [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version)\
 parameter works.
 
 #### `ssl_cipher`
@@ -5093,7 +5093,7 @@ query_classifier_cache_size=3100000000
 
 ## Troubleshooting
 
-For a list of common problems and their solutions, read the[MaxScale Troubleshooting](../../../../maxscale-management/maxscale-troubleshooting.md)\
+For a list of common problems and their solutions, read the [MaxScale Troubleshooting](../../../../maxscale-management/maxscale-troubleshooting.md)\
 article on the MariaDB documentation.
 
 ### Systemd Watchdog

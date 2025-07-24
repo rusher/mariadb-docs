@@ -516,7 +516,7 @@ Defines whether you want to take an increment backup, based on another backup. T
 mariadb-backup --innobackupex --incremental
 ```
 
-Using this option with the --backup command option makes the operation incremental rather than a complete overwrite. When this option is specified, either the --incremental-lsn or`[--incremental-basedir](mariadb-backup-options.md#-incremental-basedir)options can also be given. If neither option is given, option[--incremental-basedir](mariadb-backup-options.md#-incremental-basedir)is used by default, set to the first timestamped backup directory in the backup base directory.`
+Using this option with the --backup command option makes the operation incremental rather than a complete overwrite. When this option is specified, either the --incremental-lsn or`[--incremental-basedir](mariadb-backup-options.md#-incremental-basedir) options can also be given. If neither option is given, option [--incremental-basedir](mariadb-backup-options.md#-incremental-basedir) is used by default, set to the first timestamped backup directory in the backup base directory.`
 
 ```bash
 mariadb-backup --innobackupex --backup --incremental \

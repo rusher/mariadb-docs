@@ -11,7 +11,7 @@ The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.5.21](mariadb-5521-release-notes.md)-beta, with links to detailed\
-information on each push, see the[MariaDB 5.5.21 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5521-changelog.md).
+information on each push, see the [MariaDB 5.5.21 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5521-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -43,7 +43,7 @@ For our Windows users, pool-of-threads is now the default scheduler on Windows V
 In 5.5.21 there is a new `LIMIT ROWS EXAMINED` optimization which provides\
 the means to terminate the\
 execution of [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statements which examine too many rows, and\
-thus use too many resources. This is achieved through an extension of the[LIMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select#limit) clause —`LIMIT ROWS EXAMINED <number_of_rows>`. Whenever possible the\
+thus use too many resources. This is achieved through an extension of the [LIMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select#limit) clause —`LIMIT ROWS EXAMINED <number_of_rows>`. Whenever possible the\
 semantics of `LIMIT ROWS EXAMINED` is the same as that of normal `LIMIT`\
 (for instance for aggregate functions).
 

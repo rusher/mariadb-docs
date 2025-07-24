@@ -16,7 +16,7 @@ MariaDB includes a feature to include a checksum in [binary log](../../server-ma
 Checksums are enabled with the [binlog\_checksum option](replication-and-binary-log-system-variables.md). Until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes), this was disabled by default. From [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes), the option is set to `CRC32`.
 
 The variable can be changed dynamically without restarting the server. Setting\
-the variable in any way (even to the existing value) forces a rotation of the[binary log](../../server-management/server-monitoring-logs/binary-log/) (the intention is to avoid having a single binlog where some events\
+the variable in any way (even to the existing value) forces a rotation of the [binary log](../../server-management/server-monitoring-logs/binary-log/) (the intention is to avoid having a single binlog where some events\
 are checksummed and others are not).
 
 When checksums are enabled, replicas will check events received over\

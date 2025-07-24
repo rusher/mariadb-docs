@@ -36,7 +36,7 @@ configuration file. Once enabled, MaxGUI will be available on port 8989:`http://
 To make MaxGUI secure, set `admin_secure_gui=true` and configure both the`admin_ssl_key` and `admin_ssl_cert` parameters.
 
 Check the [Configuration Guide](mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) for the parameter\
-documentation and read the _Configuration and Hardening_ section of the[REST API tutorial](../mariadb-maxscale-21-06-tutorials/mariadb-maxscale-2106-maxscale-2106-rest-api-tutorial.md) for instructions on\
+documentation and read the _Configuration and Hardening_ section of the [REST API tutorial](../mariadb-maxscale-21-06-tutorials/mariadb-maxscale-2106-maxscale-2106-rest-api-tutorial.md) for instructions on\
 how to harden your MaxScale installation for production use.
 
 ## Authentication

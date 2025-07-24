@@ -15,7 +15,7 @@ believe the code is ready for general usage (based on bug inflow).
 **For a description of the MariaDB Java Client see the**[**About the MariaDB Java Client**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-the-mariadb-java-client/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/1.1/mariadb-java-client-115-changelog.md).
+information on each push, see the [changelog](../changelogs/1.1/mariadb-java-client-115-changelog.md).
 
 ## Regression Fix
 

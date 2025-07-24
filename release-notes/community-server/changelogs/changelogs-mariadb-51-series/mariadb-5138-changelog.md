@@ -16,14 +16,14 @@ and bug fixes:
   FULL PROCESSLIST and INFORMATION\_SCHEMA.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist), similar to the old\
   TIME column, but with microsecond resolution. Also fixes old TIME column to\
   not be influenced by @TIMESTAMP. Patch by Percona.
-* Optimizer improvement: Table elimination ([MWL#17](https://askmonty.org/worklog/?tid=17)). See[Table Elimination](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination).
+* Optimizer improvement: Table elimination ([MWL#17](https://askmonty.org/worklog/?tid=17)). See [Table Elimination](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination).
 * Enhancements to slow log. Includes details of execution plan and\
-  microsecond-precision resolution. Based on microslow patch by Percona. See[Slow Query Log Extended Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics).
+  microsecond-precision resolution. Based on microslow patch by Percona. See [Slow Query Log Extended Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics).
 * PBXT storage engine. PBXT is developed by [PrimeBase Technologies](https://www.primebase.org).
 * [XtraDB storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) version 6 as a replacement\
   for the MySQL built-in InnoDB. XtraDB is based on the Oracle/Innobase InnoDB\
   plugin version 1.0.3, with enhancements. XtraDB is developed by Percona.
-* Performance improvements for common cases of character set conversion. See[Character Sets and Collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations) for a list of\
+* Performance improvements for common cases of character set conversion. See [Character Sets and Collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations) for a list of\
   the character sets and collations included with MariaDB.
 * [Pool-of-threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53), allowing to map a high number of simultaneous connections\
   onto a lower number of operating system treads, to reduce overhead with using\
@@ -50,7 +50,7 @@ and bug fixes:
   ([Bug #429773](https://bugs.launchpad.net/bugs/429773)).
 * rpl\_do\_grant fails on PB-2 with a failing connect\
   ([MySQL Bug #47016](https://bugs.mysql.com/bug.php?id=47016)).
-* Windows: mysql-test-run `--log-error` fixed to not add `--console`. See[mysql-test-run](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-test).
+* Windows: mysql-test-run `--log-error` fixed to not add `--console`. See [mysql-test-run](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-test).
 * The myisam\_crash\_before\_flush\_keys test fails on Windows ([MySQL Bug #47455](https://bugs.mysql.com/bug.php?id=47455)).
 * rpl.rpl\_get\_master\_version\_and\_clock fails on hpux11.31 ([MySQL Bug #46931](https://bugs.mysql.com/bug.php?id=46931))
 * safe\_process: FATAL ERROR, Unknown option: `--nocore` ([MySQL Bug #46212](https://bugs.mysql.com/bug.php?id=46212)).

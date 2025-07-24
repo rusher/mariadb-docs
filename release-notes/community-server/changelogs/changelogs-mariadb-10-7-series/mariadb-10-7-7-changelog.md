@@ -8,7 +8,7 @@ The most recent release of [MariaDB 10.7](../../old-releases/release-notes-maria
 
 For the highlights of this release, see the [Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.7) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.7) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.6.11](../changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md)

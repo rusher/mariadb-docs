@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 5.5](../../old-releases/release-notes-ma
 
 **Release date:** 26 Feb 2012
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5520-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5520-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\
@@ -306,7 +306,7 @@ modified in that revision.
       rather than plugin's own. This causes the crash.
     * On Unix systems with gcc4 later this error was so far worked around using GCC's\
       visibility attribute. However, in our case, we're using gcc3.
-    * See related MySQL bug [bug.php?id=48524](https://bugs.mysql.com/bug.php?id=48524) and[bug.php?id=52263](https://bugs.mysql.com/bug.php?id=52263)
+    * See related MySQL bug [bug.php?id=48524](https://bugs.mysql.com/bug.php?id=48524) and [bug.php?id=52263](https://bugs.mysql.com/bug.php?id=52263)
     * The fix is to restrict symbol visibility in the plugin using version script\
       (called map file on Solaris).
 * [Revision #3258](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3258)\
@@ -841,7 +841,7 @@ modified in that revision.
     * mysql-5.5.18 merge
 * [Revision #3151](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3151)\
   Tue 2011-11-08 02:14:57 +0100
-  * For libmysqld.so, apply patch to the MySQL Bug#39288 found here[102373](https://lists.mysql.com/commits/102373)
+  * For libmysqld.so, apply patch to the MySQL Bug#39288 found here [102373](https://lists.mysql.com/commits/102373)
   * It is better than previous attempts to build the libmysqld,\
     as it also takes care of
     1. `-Wl`,`--no-undefined` for shared libraries and
@@ -898,7 +898,7 @@ modified in that revision.
 * [Revision #3136](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3136)\
   Tue 2011-10-25 01:12:16 +0200
   * Fix debug build on Windows.
-    * Checking for WITH\_DEBUG does not work, as described in CMake MySQL wiki[CMake#Debug-only\_options](https://forge.mysql.com/wiki/CMake#Debug-only_options)
+    * Checking for WITH\_DEBUG does not work, as described in CMake MySQL wiki [CMake#Debug-only\_options](https://forge.mysql.com/wiki/CMake#Debug-only_options)
     * Excluding directory completely for certain build types works for Makefiles only, but not for Visual Studio and not for Xcode.
 * [Revision #3135](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3135)\
   Mon 2011-10-24 15:22:17 +0400

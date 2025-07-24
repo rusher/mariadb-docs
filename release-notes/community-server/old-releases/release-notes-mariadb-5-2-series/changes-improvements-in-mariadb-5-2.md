@@ -47,7 +47,7 @@ members in the MySQL community for a long time. Current versions of [MariaDB 5.2
   * Client, User, Index and Table statistics.
 * [Segmented MyISAM key cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache)
   * The key cache's global mutex is split into several mutex which gives a\
-    notable speed improvement under multi user load. We have registered up to[250% more performance](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance) thanks to this.
+    notable speed improvement under multi user load. We have registered up to [250% more performance](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance) thanks to this.
 * [Pluggable Authentication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/pluggable-authentication-overview)
   * Authentication is done via an extensible plugin, which makes it easy to add\
     any kind of authentication to MariaDB.

@@ -9,7 +9,7 @@ SHOW COLLATION
 
 ## Description
 
-The output from `SHOW COLLATION` includes all available[collations](../../../data-types/string-data-types/character-sets/). The `LIKE` clause, if present on its own, indicates which collation names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The output from `SHOW COLLATION` includes all available [collations](../../../data-types/string-data-types/character-sets/). The `LIKE` clause, if present on its own, indicates which collation names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 {% tabs %}
 {% tab title="Current" %}

@@ -6,9 +6,9 @@ The most recent [_**Stable**_](../../../../community-server/about/release-criter
 
 **Release date:** 1 Aug 2017
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-odbc-30-release-notes/mariadb-connector-odbc-301-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-odbc-30-release-notes/mariadb-connector-odbc-301-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #e5dd744](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/e5dd744)\
   2017-07-31 02:30:34 +0200

@@ -6,9 +6,9 @@ The most recent release of [MariaDB 10.4](../../../mariadb-community-server-rele
 
 **Release date:** 29 Jan 2019
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.4) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.4) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #9c60535f86](https://github.com/MariaDB/server/commit/9c60535f86)\
@@ -181,7 +181,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #9f4d4f404f](https://github.com/MariaDB/server/commit/9f4d4f404f)\
   2019-01-22 18:23:47 +0400
   * [MDEV-12747](https://jira.mariadb.org/browse/MDEV-12747) - main.mysqld\_option\_err fails in buildbot with timeout
-* Merge [Revision #55be043c13](https://github.com/MariaDB/server/commit/55be043c13) 2019-01-23 12:07:36 +0200 - Merge pull request #1120 from tempesta-tech/sysprg/[MDEV-17835](https://jira.mariadb.org/browse/MDEV-17835)v2
+* Merge [Revision #55be043c13](https://github.com/MariaDB/server/commit/55be043c13) 2019-01-23 12:07:36 +0200 - Merge pull request #1120 from tempesta-tech/sysprg/[MDEV-17835](https://jira.mariadb.org/browse/MDEV-17835) v2
 * [Revision #0e89e90f42](https://github.com/MariaDB/server/commit/0e89e90f42)\
   2019-01-22 13:28:03 +0100
   * [MDEV-17835](https://jira.mariadb.org/browse/MDEV-17835): Remove wsrep-sst-method=xtrabackup

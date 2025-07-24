@@ -35,12 +35,12 @@ installed with the following commands.
 MaxScale can also be installed using a tarball.\
 That may be required if you are using a Linux distribution for which there\
 exist no installation package or if you want to install many different\
-MaxScale versions side by side. For instructions on how to do that, please refer to[Install MariaDB MaxScale using a Tarball](mariadb-maxscale-2208-installing-mariadb-maxscale-using-a-tarball.md).
+MaxScale versions side by side. For instructions on how to do that, please refer to [Install MariaDB MaxScale using a Tarball](mariadb-maxscale-2208-installing-mariadb-maxscale-using-a-tarball.md).
 
 ### Building MariaDB MaxScale From Source Code
 
 Alternatively you may download the MariaDB MaxScale source and build your own binaries.\
-To do this, refer to the separate document[Building MariaDB MaxScale from Source Code](mariadb-maxscale-2208-building-mariadb-maxscale-from-source-code.md)
+To do this, refer to the separate document [Building MariaDB MaxScale from Source Code](mariadb-maxscale-2208-building-mariadb-maxscale-from-source-code.md)
 
 ### Assumptions
 
@@ -48,7 +48,7 @@ To do this, refer to the separate document[Building MariaDB MaxScale from Source
 
 MaxScale assumes that memory allocations always succeed and in general does\
 not check for memory allocation failures. This assumption is compatible with\
-the Linux kernel parameter[vm.overcommit\_memory](https://www.kernel.org/doc/Documentation/vm/overcommit-accounting)\
+the Linux kernel parameter [vm.overcommit\_memory](https://www.kernel.org/doc/Documentation/vm/overcommit-accounting)\
 having the value `0`, which is also the default on most systems.
 
 With `vm.overcommit_memory` being `0`, memory _allocations_ made by an\
@@ -80,7 +80,7 @@ cat /proc/sys/vm/overcommit_memory
 steps in configuring your MariaDB MaxScale installation. Follow this tutorial\
 to learn how to configure and start using MaxScale.
 
-For a detailed list of all configuration parameters, refer to the[Configuration Guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/) and the module specific documents\
+For a detailed list of all configuration parameters, refer to the [Configuration Guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/) and the module specific documents\
 listed in the [Documentation Contents](https://mariadb.com/kb/en/mariadb-maxscale-2208-maxscale-2208-contents/#routers).
 
 ### Encrypting Passwords

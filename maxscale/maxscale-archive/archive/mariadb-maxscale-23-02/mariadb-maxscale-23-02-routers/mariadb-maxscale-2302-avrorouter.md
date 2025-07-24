@@ -4,7 +4,7 @@ The avrorouter is a MariaDB 10.0 binary log to Avro file converter. It consumes\
 binary logs from a local directory and transforms them into a set of Avro files.\
 These files can then be queried by clients for various purposes.
 
-This router is intended to be used in tandem with the[Binlog Server](mariadb-maxscale-2302-binlogrouter.md).\
+This router is intended to be used in tandem with the [Binlog Server](mariadb-maxscale-2302-binlogrouter.md).\
 The Binlog Server can connect to a primary server and request binlog records.\
 These records can then consumed by the avrorouter directly from the binlog cache\
 of the Binlog Server. This allows MariaDB MaxScale to automatically transform\
@@ -104,7 +104,7 @@ tables is not contained in the binlogs.
 
 ### Configuration
 
-For information about common service parameters, refer to the[Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md).
+For information about common service parameters, refer to the [Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md).
 
 #### Router Parameters
 
@@ -131,7 +131,7 @@ serves.
 * Dynamic: No
 * Default: `1234`
 
-The[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#server_id)\
+The [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#server_id)\
 used when replicating from the primary in direct replication mode.
 
 **`codec`**
@@ -258,7 +258,7 @@ been purged from the binary logs, the replication cannot continue.
 These options control how large the Avro file data blocks can get.\
 Increasing or lowering the block size could have a positive effect\
 depending on your use case. For more information about the Avro file\
-format and how it organizes data, refer to the[Avro documentation](https://avro.apache.org/docs/current/).
+format and how it organizes data, refer to the [Avro documentation](https://avro.apache.org/docs/current/).
 
 The avrorouter will flush a block and start a new one when either `group_trx`\
 transactions or `group_rows` row events have been processed. Changing these\
@@ -556,7 +556,7 @@ and `cdc_kafka_producer.py -h`.
 
 ### Building Avrorouter
 
-To build the avrorouter from source, you will need the[Avro C](https://avro.apache.org/docs/current/api/c/) library, liblzma,[the Jansson library](https://www.digip.org/jansson/) and sqlite3 development\
+To build the avrorouter from source, you will need the [Avro C](https://avro.apache.org/docs/current/api/c/) library, liblzma,[the Jansson library](https://www.digip.org/jansson/) and sqlite3 development\
 headers. When configuring MaxScale with CMake, you will need to add`-DBUILD_CDC=Y` to build the CDC module set.
 
 The Avro C library needs to be build with position independent code enabled. You\
@@ -567,7 +567,7 @@ configuring the Avro C library.
 -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC
 ```
 
-For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-building-mariadb-maxscale-from-source-code.md)\
+For more details about building MaxScale from source, please refer to the [Building MaxScale from Source Code](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-building-mariadb-maxscale-from-source-code.md)\
 document.
 
 ### Router Diagnostics

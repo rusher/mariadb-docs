@@ -12,23 +12,23 @@ overview of the differences between MariaDB and MySQL.
 See the [MariaDB 5.1.42 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5142-changelog.md) for a more detailed\
 list of the changes in this release.
 
-MariaDB is kept up to date with the latest MySQL release from the same branch.[MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) 5.1.42 is based on [MySQL](https://mysql.com) 5.1.42 and[XtraDB](https://www.percona.com/docs/wiki/percona-xtradb:start) 1.0.6-9.
+MariaDB is kept up to date with the latest MySQL release from the same branch.[MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) 5.1.42 is based on [MySQL](https://mysql.com) 5.1.42 and [XtraDB](https://www.percona.com/docs/wiki/percona-xtradb:start) 1.0.6-9.
 
 In most respects MariaDB will work exactly as MySQL: all commands, interfaces,\
 libraries and APIs that exist in MySQL also exist in MariaDB.
 
-In addition to the differences noted in previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/release-notes/README.md) and[changelogs](../../../connectors/odbc/changelogs/), the main differences between\
+In addition to the differences noted in previous [release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main differences between\
 MariaDB and MySQL are:
 
 ## Includes MySQL 5.1.42
 
 For [MariaDB 5.1.42](mariadb-5142-release-notes.md) we have merged in all of the upstream changes from\
-MySQL 5.1.42. The[MySQL 5.1.42 release notes](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-42.html)\
+MySQL 5.1.42. The [MySQL 5.1.42 release notes](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-42.html)\
 have details of what changes were made upstream by MySQL since 5.1.41.
 
 ## Includes [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) 1.0.6-9
 
-We have included XtraDB 1.0.6-9 in this version of MariaDB. The[XtraDB 1.0.6-9 release notes](https://www.percona.com/docs/wiki/percona-xtradb:info:xtradb_changelog#release_1.0.6-9)\
+We have included XtraDB 1.0.6-9 in this version of MariaDB. The [XtraDB 1.0.6-9 release notes](https://www.percona.com/docs/wiki/percona-xtradb:info:xtradb_changelog#release_1.0.6-9)\
 have details of the changes made to XtraDB since version 1.0.4-8 (the version\
 included with [MariaDB 5.1.41](mariadb-5141-release-notes.md) RC).
 
@@ -45,7 +45,7 @@ to offer Solaris binaries for download.
 
 ## Fewer warnings and bugs
 
-Like we did with our previous releases, various additional changes were made in[MariaDB 5.1.42](mariadb-5142-release-notes.md) in our desire to fix warnings and eliminate bugs.
+Like we did with our previous releases, various additional changes were made in [MariaDB 5.1.42](mariadb-5142-release-notes.md) in our desire to fix warnings and eliminate bugs.
 
 In [MariaDB 5.1.42](mariadb-5142-release-notes.md) these included fixing a bug where one connection didn't see\
 newly committed data from another connection and a crashing bug with\

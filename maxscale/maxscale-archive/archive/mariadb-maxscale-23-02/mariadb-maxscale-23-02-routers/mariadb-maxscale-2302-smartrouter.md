@@ -27,7 +27,7 @@ SmartRouter is configured as a service that either routes to other MaxScale\
 routers or plain servers. Although one can configure SmartRouter to use a plain\
 server directly, we refer to the configured "servers" as clusters.
 
-For details about the standard service parameters, refer to the[Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md).
+For details about the standard service parameters, refer to the [Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md).
 
 #### `master`
 

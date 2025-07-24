@@ -1,6 +1,6 @@
 # Creating a Debian Repository
 
-Below are instructions for creating your own Debian repository. The instructions are based on[repository-howto.en.html](https://www.debian.org/doc/manuals/repository-howto/repository-howto.en.html)
+Below are instructions for creating your own Debian repository. The instructions are based on [repository-howto.en.html](https://www.debian.org/doc/manuals/repository-howto/repository-howto.en.html)
 
 ```
 REPO_DIR={pick some location}

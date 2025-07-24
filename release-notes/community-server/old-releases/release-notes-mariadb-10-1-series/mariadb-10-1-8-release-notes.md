@@ -29,7 +29,7 @@ Thanks, and enjoy MariaDB!
   print Notes to log during startup.
 * Replication from MySQL 5.6 with GTID, binlog\_rows\_query\_log\_events and\
   ignorable events now works. In this case MariaDB will remove the MySQL GTIDs\
-  and other unneeded events and instead adds its own[GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid).
+  and other unneeded events and instead adds its own [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid).
 * New proxy server option for the [Feedback Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/feedback-plugin), [feedback\_http\_proxy](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/feedback-plugin#feedback_http_proxy), for use when http calls cannot be made, such as in a firewall environment.
 * Explicit or implicit casts from MAX(string) to INT, DOUBLE or DECIMAL now produce warnings ([MDEV-8852](https://jira.mariadb.org/browse/MDEV-8852)).
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):

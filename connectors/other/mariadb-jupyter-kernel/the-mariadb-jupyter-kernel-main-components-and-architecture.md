@@ -122,7 +122,7 @@ This magic command prints the list of magics supported by the kernel along with 
 #### Line
 
 The whole purpose of this magic command is to allow the user to display\
-the result of the last query (e.g. `SELECT`, `SHOW`,...) in a nice and simple[matplotlib](https://matplotlib.org/) plot.
+the result of the last query (e.g. `SELECT`, `SHOW`,...) in a nice and simple [matplotlib](https://matplotlib.org/) plot.
 
 Internally, the Line class receives the data of the last query from the kernel\
 as a [Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), it generates a plot `PNG` image, wraps the image into\
@@ -142,7 +142,7 @@ If no arguments are specified, the kernel writes the data into a`CSV` file named
 #### Bar
 
 The purpose of this magic command is to allow the user to display\
-the result of the last query (e.g. `SELECT`, `SHOW`,...) in a nice and simple[matplotlib](https://matplotlib.org/) plot.
+the result of the last query (e.g. `SELECT`, `SHOW`,...) in a nice and simple [matplotlib](https://matplotlib.org/) plot.
 
 Internally, the Bar class receives the data of the last query from the kernel\
 as a [Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), it generates a plot `PNG` image, wraps the image into\
@@ -151,7 +151,7 @@ a nice [display\_data](https://jupyter-client.readthedocs.io/en/stable/messaging
 #### Pie
 
 The purpose of this magic command is to allow the user to display\
-the result of the last query (e.g. `SELECT`, `SHOW`,...) in a nice and simple[matplotlib](https://matplotlib.org/) plot.
+the result of the last query (e.g. `SELECT`, `SHOW`,...) in a nice and simple [matplotlib](https://matplotlib.org/) plot.
 
 Internally, the Pie class receives the data of the last query from the kernel\
 as a [Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), it generates a plot `PNG` image, wraps the image into\

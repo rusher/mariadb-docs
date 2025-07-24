@@ -12,7 +12,7 @@ release.
 **For a description of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
 
 For a list of all changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/1.3/mariadb-connector-j-135-changelog.md).
+information on each push, see the [changelog](../changelogs/1.3/mariadb-connector-j-135-changelog.md).
 
 This version is a bugfix release
 

@@ -21,7 +21,7 @@ EXPLAIN [FORMAT=JSON] FOR CONNECTION <connection_id>
 
 ## Description
 
-The `EXPLAIN` statement can be used either as a synonym for[DESCRIBE](../describe.md) or as a way to obtain information about how MariaDB executes a `SELECT`, `UPDATE` or `DELETE` statement:
+The `EXPLAIN` statement can be used either as a synonym for [DESCRIBE](../describe.md) or as a way to obtain information about how MariaDB executes a `SELECT`, `UPDATE` or `DELETE` statement:
 
 * `'EXPLAIN tbl_name'` is synonymous with`'[DESCRIBE](../describe.md) tbl_name'` or`'[SHOW COLUMNS](../show/show-columns.md) FROM tbl_name'`.
 * When you precede a `SELECT`, `UPDATE` or a `DELETE` statement with the keyword`EXPLAIN`, MariaDB displays information from the optimizer about the query execution plan. That is, MariaDB explains how it would process the `SELECT`, `UPDATE` or `DELETE`, including information about how tables are joined and in which order. `EXPLAIN EXTENDED` can be used to provide additional information.

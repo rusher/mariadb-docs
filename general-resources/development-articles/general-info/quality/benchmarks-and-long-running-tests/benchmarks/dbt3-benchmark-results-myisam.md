@@ -40,7 +40,7 @@ Follow the instructions in [DBT3 automation scripts](dbt3-automation-scripts.md)
 
 Before you run the test, ensure that the settings in the test configuration\
 files match your prepared environment. For more details on the test\
-configuration, please, refer to the[Test configuration parameters](dbt3-automation-scripts.md#test-configuration).
+configuration, please, refer to the [Test configuration parameters](dbt3-automation-scripts.md#test-configuration).
 
 After the environment is prepared, the following command should be executed in the shell:
 

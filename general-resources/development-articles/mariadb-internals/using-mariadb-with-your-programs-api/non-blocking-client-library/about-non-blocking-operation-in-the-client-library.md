@@ -27,7 +27,7 @@ running servers for monitoring, or a map/reduce-like operation against a big\
 sharded database).
 
 Non-blocking operation is also very useful in applications that are already\
-written in a non-blocking style, for example using a framework like[libevent](https://libevent.org/), or, for example, a GUI-application using an\
+written in a non-blocking style, for example using a framework like [libevent](https://libevent.org/), or, for example, a GUI-application using an\
 event loop. Using the non-blocking client library allows the integrations of\
 database queries into such applications, without the risk of long-running\
 queries "hanging" the user interface or stalling the event loop, and without\

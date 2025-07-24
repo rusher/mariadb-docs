@@ -4,7 +4,7 @@ The `setup_actors` table contains information for determining whether monitoring
 
 The default size is 100 rows, which can be changed by modifying  the [performance\_schema\_setup\_actors\_size](../performance-schema-system-variables.md#performance_schema_setup_actors_size) system variable at server startup.
 
-If a row in the table matches a new foreground thread's client and host, the matching `INSTRUMENTED` column in the[threads](performance-schema-threads-table.md) table is set to either `YES` or`NO`, which allows selective application of instrumenting by host, by user, or combination thereof.
+If a row in the table matches a new foreground thread's client and host, the matching `INSTRUMENTED` column in the [threads](performance-schema-threads-table.md) table is set to either `YES` or`NO`, which allows selective application of instrumenting by host, by user, or combination thereof.
 
 | Column | Description                                                           |
 | ------ | --------------------------------------------------------------------- |

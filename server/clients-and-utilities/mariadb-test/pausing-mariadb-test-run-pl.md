@@ -1,6 +1,6 @@
 # Pausing mariadb-test-run.pl
 
-Sometimes you need to work when your computer is busy running[mariadb-test-run.pl](https://mariadb.com/kb/en/mariadb-test-runpl-options). The mariadb-test-run.pl script allows you to stop it temporarily so you can use\
+Sometimes you need to work when your computer is busy running [mariadb-test-run.pl](https://mariadb.com/kb/en/mariadb-test-runpl-options). The mariadb-test-run.pl script allows you to stop it temporarily so you can use\
 your computer and then restart the tests when you're ready.
 
 There are two ways to enable this:

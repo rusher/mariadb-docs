@@ -75,8 +75,8 @@ Additional command line options and other systemd configuration options\
 can be given to MariaDB MaxScale by creating a drop-in file for the\
 service unit file. You can do this with the `systemctl edit maxscale.service`\
 command. For more information about systemd drop-in\
-files, refer to[the systemctl man page](https://www.freedesktop.org/software/systemd/man/systemctl.html)\
-and[the systemd documentation](https://www.freedesktop.org/software/systemd/man/systemd.unit.html).
+files, refer to [the systemctl man page](https://www.freedesktop.org/software/systemd/man/systemctl.html)\
+and [the systemd documentation](https://www.freedesktop.org/software/systemd/man/systemd.unit.html).
 
 ### Checking The Status Of The MariaDB MaxScale Services
 
@@ -285,7 +285,7 @@ Modify global MaxScale parameters:
 maxctrl alter maxscale auth_connect_timeout 5s
 ```
 
-Some global parameters cannot be modified at runtime. Refer to the[Configuration Guide](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for a full list\
+Some global parameters cannot be modified at runtime. Refer to the [Configuration Guide](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for a full list\
 of parameters that can be modified at runtime.
 
 #### Managing Servers

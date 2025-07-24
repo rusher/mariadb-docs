@@ -17,7 +17,7 @@ ready for general usage (based on bug inflow).
 
 ## New features
 
-* Non blocking (asynchronous) API. For a detailed description see[Non-blocking Client Library](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/c/broken-reference/README.md).
+* Non blocking (asynchronous) API. For a detailed description see [Non-blocking Client Library](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/c/broken-reference/README.md).
 * New dialog and mysql\_clear\_text authentication plugins.
 
 ## New configuration options
@@ -50,12 +50,12 @@ CMake build now supports the following additional configuration options:
 * Windows version of libmariadb doesn't export all symbols ([CONC-114](https://jira.mariadb.org/browse/CONC-114))
 * Fixed memory leak when reconnecting ([CONC-118](https://jira.mariadb.org/browse/CONC-118))
 
-For a complete list and description please check the[Jira bug system](https://jira.mariadb.org/browse/CONC)
+For a complete list and description please check the [Jira bug system](https://jira.mariadb.org/browse/CONC)
 
 ## Changelog
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](changelogs/mariadb-connector-c-210-changelog.md).
+information on each push, see the [changelog](changelogs/mariadb-connector-c-210-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

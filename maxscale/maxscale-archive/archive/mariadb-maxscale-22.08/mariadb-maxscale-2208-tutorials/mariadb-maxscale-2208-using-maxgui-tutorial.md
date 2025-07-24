@@ -61,7 +61,7 @@ a new object.
 
 ### View Replication Status
 
-The replication status of a server monitored by[MariaDB-Monitor](../mariadb-maxscale-2208-monitors/mariadb-maxscale-2208-mariadb-monitor.md) can be viewed by mousing over\
+The replication status of a server monitored by [MariaDB-Monitor](../mariadb-maxscale-2208-monitors/mariadb-maxscale-2208-mariadb-monitor.md) can be viewed by mousing over\
 the server name. A tooltip will be displayed with the following information:\
 replication\_state, seconds\_behind\_master, slave\_io\_running, slave\_sql\_running.
 
@@ -123,7 +123,7 @@ This page visualizes MaxScale configuration as shown in the figure below.
 
 ### Clusters
 
-This page shows all monitor clusters using[mariadbmon](../mariadb-maxscale-2208-monitors/mariadb-maxscale-2208-mariadb-monitor.md) module in a card-like view.\
+This page shows all monitor clusters using [mariadbmon](../mariadb-maxscale-2208-monitors/mariadb-maxscale-2208-mariadb-monitor.md) module in a card-like view.\
 Clicking on the card will visualize the cluster into a tree graph as shown in\
 the figure below.
 
@@ -225,7 +225,7 @@ A SQL editor tool to run queries and perform other SQL operations.
 
 1. Refresh schema objects button. After deleting or creating schema object, the`Schemas sidebar` needs to be manually refreshed.
 2. Collapse the `Schemas sidebar` button.
-3. SQL editor. The editor is powered by[Monaco editor](https://microsoft.github.io/monaco-editor/) which means its\
+3. SQL editor. The editor is powered by [Monaco editor](https://microsoft.github.io/monaco-editor/) which means its\
    functionalities are similar to VS code. Available commands can be seen by\
    pressing F1 while the cursor is active on the editor. This is an intention\
    to prevent conflict between the browser's shortcut keys and the SQL\

@@ -38,7 +38,7 @@ For MariaDB Connector/C before 3.4 to establish an TLS/SSL encrypted connection,
 
 ## Issues fixed
 
-[CONC-605](https://jira.mariadb.org/browse/CONC-605): Don't allow to use unsupported client flags in mysql\_real\_connect[CONC-677](https://jira.mariadb.org/browse/CONC-677): Fix memory leak when setting default configuration directories[CONC-648](https://jira.mariadb.org/browse/CONC-648): Don't trust error packets received prior to TLS handshake completion. (Kudos to Daniel Lenski for his contribution[CONC-683](https://jira.mariadb.org/browse/CONC-683): Check pending results when closing statement[CONC-688](https://jira.mariadb.org/browse/CONC-688): mariadb\_rpl\_fetch() crashes if table is partitioned
+[CONC-605](https://jira.mariadb.org/browse/CONC-605): Don't allow to use unsupported client flags in mysql\_real\_connect [CONC-677](https://jira.mariadb.org/browse/CONC-677): Fix memory leak when setting default configuration directories [CONC-648](https://jira.mariadb.org/browse/CONC-648): Don't trust error packets received prior to TLS handshake completion. (Kudos to Daniel Lenski for his contribution [CONC-683](https://jira.mariadb.org/browse/CONC-683): Check pending results when closing statement [CONC-688](https://jira.mariadb.org/browse/CONC-688): mariadb\_rpl\_fetch() crashes if table is partitioned
 
 ## Contributions
 

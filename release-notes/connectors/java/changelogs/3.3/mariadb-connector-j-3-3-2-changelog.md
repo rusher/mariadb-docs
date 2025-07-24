@@ -6,9 +6,9 @@
 
 **Release date:** 19 Dec 2023
 
-For the highlights of this release, see the[release notes](../../3.3/mariadb-connector-j-3-3-2-release-notes.md).
+For the highlights of this release, see the [release notes](../../3.3/mariadb-connector-j-3-3-2-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #f9018f5c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f9018f5c) - \[[CONJ-1049](https://jira.mariadb.org/browse/CONJ-1049)] Metadata getTableTypes result was not ordered by TABLE\_TYPE

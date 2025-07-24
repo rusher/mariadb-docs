@@ -11,22 +11,22 @@ page.
 There are many open development projects for MariaDB which you can contribute\
 to (in addition to any ideas you may have yourself).
 
-* We are using [JIRA](../../development-articles/general-info/tools/jira.md) to manage the MariaDB project. Go to[jira.mariadb.org](https://jira.mariadb.org) and click on "Projects" to get to the MariaDB project.\
-  Browse around the[unresolved and unassigned](https://jira.mariadb.org/secure/IssueNavigator.jspa?reset=true\&jqlQuery=project+%3D+MDEV+AND+resolution+%3D+Unresolved+AND+assignee+is+EMPTY+ORDER+BY+priority+DESC\&mode=hide)\
+* We are using [JIRA](../../development-articles/general-info/tools/jira.md) to manage the MariaDB project. Go to [jira.mariadb.org](https://jira.mariadb.org) and click on "Projects" to get to the MariaDB project.\
+  Browse around the [unresolved and unassigned](https://jira.mariadb.org/secure/IssueNavigator.jspa?reset=true\&jqlQuery=project+%3D+MDEV+AND+resolution+%3D+Unresolved+AND+assignee+is+EMPTY+ORDER+BY+priority+DESC\&mode=hide)\
   issues to see if there is something that interests you. Some issues have\
   sponsors and you can be paid for doing them!
 * A list of [beginner friendly](https://jira.mariadb.org/issues/?jql=resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20beginner-friendly%20ORDER%20BY%20updated%20DESC) tasks is also available.
 * Check the [development plans](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md) for the next MariaDB\
   version.
 * Join [maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) and ask for suggestions of tasks you could do. Please include your programming experience and your knowledge of the MariaDB source and how much you know about using MySQL/MariaDB with the email so that we know which tasks we can suggest to you.
-* If this is your first project, check out the[Suggested Development](broken-reference) page. It lists\
+* If this is your first project, check out the [Suggested Development](broken-reference) page. It lists\
   projects that will make a good start.
 * Join MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com) and ask for suggestions.
-* Join #/maria on[IRC](https://github.com/mariadb-corporation/docs-server/blob/test/en/irc/README.md) and ask for suggestions.
+* Join #/maria on [IRC](https://github.com/mariadb-corporation/docs-server/blob/test/en/irc/README.md) and ask for suggestions.
 
 If you have your own ideas, please submit them to [JIRA](../../development-articles/general-info/tools/jira.md) so other\
 MariaDB developers can comment on them and suggest how to implement them. You\
-can of course also use the[maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) list for this.
+can of course also use the [maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) list for this.
 
 ## What to Expect From a MariaDB Server Developer
 
@@ -84,15 +84,15 @@ You do this by either:
 
 1. Signing the MariaDB Contributor Agreement\
    ([MCA](../community/legal-documents/mca.md)) and then scanning and sending it to the foundation.
-2. Sending an email to[maria-developers](https://launchpad.net/~maria-developers) where you say\
+2. Sending an email to [maria-developers](https://launchpad.net/~maria-developers) where you say\
    that your patch and all fixes to it are provided to the MariaDB Foundation under\
    the [MCA](../community/legal-documents/mca.md).
-3. Licensing your code using the[BSD license](https://opensource.org/licenses/bsd-license.html).
+3. Licensing your code using the [BSD license](https://opensource.org/licenses/bsd-license.html).
 
 We need shared copyright for the following reasons:
 
 1. to defend the copyright or GPL if someone breaks it (this is the same reason\
-   why the Free Software Foundation also[requires copyright assignment](https://www.gnu.org/licenses/why-assign.html)\
+   why the Free Software Foundation also [requires copyright assignment](https://www.gnu.org/licenses/why-assign.html)\
    for its code)
 2. to be able to donate code to MySQL (for example to fix security bugs or new\
    features)
@@ -100,7 +100,7 @@ We need shared copyright for the following reasons:
    MariaDB (the MCA/BSD allows us to give those companies the rights to all\
    changes between MySQL and MariaDB so they can use MariaDB instead of MySQL)
 
-More information about the MCA can be found on the[MCA FAQ](../community/legal-documents/mariadb-contributor-agreement-faq.md) page.
+More information about the MCA can be found on the [MCA FAQ](../community/legal-documents/mariadb-contributor-agreement-faq.md) page.
 
 ### Before Pushing Code to a Stable Branch
 

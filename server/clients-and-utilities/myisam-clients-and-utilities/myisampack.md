@@ -28,12 +28,12 @@ and recover options) to rebuild its indexes.
 `myisampack` does not support partitioned tables or vector indexes.
 
 {% hint style="danger" %}
-Do not run myisampack if the tables could be updated during the operation, and[skip\_external\_locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking) has been set.
+Do not run myisampack if the tables could be updated during the operation, and [skip\_external\_locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking) has been set.
 {% endhint %}
 
 ### Options
 
-The following variables can be set while passed as commandline options to`myisampack`, or set with a `[myisampack]` section in your[my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
+The following variables can be set while passed as commandline options to`myisampack`, or set with a `[myisampack]` section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
 
 | Option                    | Description                                                                             |
 | ------------------------- | --------------------------------------------------------------------------------------- |
@@ -53,7 +53,7 @@ The following variables can be set while passed as commandline options to`myisam
 
 ### Uncompressing
 
-To uncompress a table compressed with `myisampack`, use the[myisamchk -u](myisamchk.md) option.
+To uncompress a table compressed with `myisampack`, use the [myisamchk -u](myisamchk.md) option.
 
 ### Examples
 

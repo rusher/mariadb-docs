@@ -8,9 +8,9 @@
 
 MariaDB Connector/J 1.3.0 is a [_**Stable (GA)**_](../../../../community-server/about/release-criteria.md) release.
 
-For the highlights of this release, see the[release notes](../../1.3/mariadb-connector-j-130-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.3/mariadb-connector-j-130-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 Major change :
 

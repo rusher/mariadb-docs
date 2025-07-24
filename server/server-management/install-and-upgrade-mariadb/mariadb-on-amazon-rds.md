@@ -32,7 +32,7 @@ You will then move to step 4 where you can configure advanced settings,\
 including security settings, various options, backup settings, maintenance\
 defaults, and so on.
 
-Refer to[Amazon's RDS documentation](https://aws.amazon.com/documentation/rds/) for complete documentation\
+Refer to [Amazon's RDS documentation](https://aws.amazon.com/documentation/rds/) for complete documentation\
 on all the various settings and for information on connecting to and using\
 your RDS MariaDB instances.
 

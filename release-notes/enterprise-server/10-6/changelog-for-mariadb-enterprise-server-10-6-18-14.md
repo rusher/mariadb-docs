@@ -93,7 +93,7 @@ MariaDB Enterprise Server 10.6.18-14 was released on 2024-06-11.
 * ([MDEV-25089](https://jira.mariadb.org/browse/MDEV-25089)) Assertion `error.len > 0` failed in wsrep\_status\_t galera::ReplicatorSMM::handle\_apply\_error(galera::TrxHandleSlave&, const wsrep\_buf\_t&, const string&)
 * ([MDEV-25731](https://jira.mariadb.org/browse/MDEV-25731)) Assertion `mode_ == m_local` failed in void wsrep::client\_state::streaming\_params(wsrep::streaming\_context::fragment\_unit, size\_t)
 * ([MDEV-33928](https://jira.mariadb.org/browse/MDEV-33928)) Assertion failure on wsrep\_thd\_is\_aborting
-* (MENT-2042) Assertion `bf_aborted()` failed in void wsrep::transaction::xa\_replay\_common(wsrep::unique\_lock[wsrep::mutex](wsrep::mutex)&)
+* (MENT-2042) Assertion `bf_aborted()` failed in void wsrep::transaction::xa\_replay\_common(wsrep::unique\_lock [wsrep::mutex](wsrep::mutex)&)
 * ([MDEV-33769](https://jira.mariadb.org/browse/MDEV-33769)) Memory leak found in the test main.rownum run with --ps-protocol against a server built with the option -DWITH\_PROTECT\_STATEMENT\_MEMROOT
 * ([MDEV-33546](https://jira.mariadb.org/browse/MDEV-33546)) Rpl\_semi\_sync\_slave\_status is ON When Replication Is Not Configured
 * ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011)) mariadb-backup --backup: FATAL ERROR: ... Can't open datafile cool\_down/t3

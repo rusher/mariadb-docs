@@ -1,7 +1,7 @@
 # Buildbot Setup for VM host
 
 This page documents the general setup process for a server that is acting as\
-virtual machine host, like those documented in the[Buildbot Setup for Virtual Machines](buildbot-setup-for-virtual-machines/)\
+virtual machine host, like those documented in the [Buildbot Setup for Virtual Machines](buildbot-setup-for-virtual-machines/)\
 section.
 
 1. Provision hardware with most recent Ubuntu LTS release

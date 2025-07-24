@@ -33,7 +33,7 @@ match the names of server sections in the configuration file and not the hostnam
 addresses of the servers.
 
 The _user_ and _password_ parameters define the credentials the service uses to populate\
-user authentication data. These users were created at the start of the[MaxScale Tutorial](mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
+user authentication data. These users were created at the start of the [MaxScale Tutorial](mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
 
 For increased security, see [password encryption](mariadb-maxscale-2501-maxscale-2501-encrypting-passwords.md).
 

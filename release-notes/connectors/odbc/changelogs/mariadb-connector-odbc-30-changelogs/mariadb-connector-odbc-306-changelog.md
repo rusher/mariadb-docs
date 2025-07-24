@@ -6,9 +6,9 @@ The most recent [_**Stable**_](../../../../community-server/about/release-criter
 
 **Release date:** 2 Aug 2018
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-odbc-30-release-notes/mariadb-connector-odbc-306-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-odbc-30-release-notes/mariadb-connector-odbc-306-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #baf2287](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/baf2287)\
@@ -60,7 +60,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Changed version to 3.0 in README files.
 * [Revision #c6085eb](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/c6085eb)\
   2018-07-09 12:47:04 +0200
-  * [ODBC-157](https://jira.mariadb.org/browse/ODBC-157) The fix and the testcase. Display and column length did notinclude fractional part for (date)time\
+  * [ODBC-157](https://jira.mariadb.org/browse/ODBC-157) The fix and the testcase. Display and column length did notinclude fractional part for (date) time\
     types. Also octet length for those types was length of they string\
     representation, while specs say it should be size of corresponding ODBC data\
     structs.
@@ -69,7 +69,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [ODBC-154](https://jira.mariadb.org/browse/ODBC-154) Fix of build with dynamic C/C linking
 * [Revision #da0c41c](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/da0c41c)\
   2018-07-03 01:05:41 +0200
-  * [ODBC-155](https://jira.mariadb.org/browse/ODBC-155) Scale(DecimalDigits) IRD field wasn't set for (date)time/timestamp fields with second fractional part. Thus SQLDescribeCol retulrned 0 in DegitalDigitsPtr
+  * [ODBC-155](https://jira.mariadb.org/browse/ODBC-155) Scale(DecimalDigits) IRD field wasn't set for (date) time/timestamp fields with second fractional part. Thus SQLDescribeCol retulrned 0 in DegitalDigitsPtr
 * [Revision #1273ebd](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/1273ebd)\
   2018-07-02 01:19:59 +0200
   * [ODBC-149](https://jira.mariadb.org/browse/ODBC-149) The fix and the testcase. Date(time) types had numerous issues with bulk operations. We provided array of buffers, and C/C expects array of pointers to buffers.

@@ -240,7 +240,7 @@ If you decide the QC is right for you, then I recommend
 
 ### thread\_cache\_size
 
-It is not necessary to tune [thread\_cache\_size](optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size) from [MariaD](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)Previously, it was minor tunable variable. Zero will slow down thread (connection) creation. A small (say, 10), non-zero number is good. The setting has essentially no impact on RAM usage.
+It is not necessary to tune [thread\_cache\_size](optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size) from [MariaD](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) Previously, it was minor tunable variable. Zero will slow down thread (connection) creation. A small (say, 10), non-zero number is good. The setting has essentially no impact on RAM usage.
 
 It is the number of extra processes to hang onto. It does not restrict the number of threads; [max\_connections](optimization-and-tuning/system-variables/server-system-variables.md#max_connections) does.
 

@@ -9,18 +9,18 @@ This document is designed as a quick introduction to setting up MariaDB MaxScale
 The installation and configuration of the MariaDB Server is not covered in this document.\
 See the following MariaDB documentation articles for more information on setting up a\
 primary-replica-cluster or a Galera-cluster:[Setting Up Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/setting-up-replication)\
-and[Getting Started With MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster)\
+and [Getting Started With MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster)\
 .
 
 This tutorial assumes that one of the standard MaxScale binary distributions is used and\
 that MaxScale is installed using default options.
 
-Building from source code in GitHub is covered in[Building from Source](../mariadb-maxscale-23-08-getting-started/mariadb-maxscale-2308-building-mariadb-maxscale-from-source-code.md).
+Building from source code in GitHub is covered in [Building from Source](../mariadb-maxscale-23-08-getting-started/mariadb-maxscale-2308-building-mariadb-maxscale-from-source-code.md).
 
 ### Installing MaxScale
 
 The precise installation process varies from one distribution to another. Details on\
-package installation can be found in the[Installation Guide](../mariadb-maxscale-23-08-getting-started/mariadb-maxscale-2308-mariadb-maxscale-installation-guide.md).
+package installation can be found in the [Installation Guide](../mariadb-maxscale-23-08-getting-started/mariadb-maxscale-2308-mariadb-maxscale-installation-guide.md).
 
 ### Creating a user account for MaxScale
 
@@ -104,14 +104,14 @@ configuration instructions.
 ### Configuring the monitor
 
 The type of monitor used depends on the type of cluster used. For a primary-replica cluster\
-read[Configuring MariaDB Monitor](mariadb-maxscale-2308-configuring-the-mariadb-monitor.md).\
-For a Galera cluster read[Configuring Galera Monitor](mariadb-maxscale-2308-configuring-the-galera-monitor.md).
+read [Configuring MariaDB Monitor](mariadb-maxscale-2308-configuring-the-mariadb-monitor.md).\
+For a Galera cluster read [Configuring Galera Monitor](mariadb-maxscale-2308-configuring-the-galera-monitor.md).
 
 ### Configuring the services and listeners
 
 This part is covered in two different tutorials. For a fully automated\
-read-write-splitting setup, read the[Read Write Splitting Tutorial](mariadb-maxscale-2308-read-write-splitting-with-mariadb-maxscale.md).\
-For a simple connection based setup, read the[Connection Routing Tutorial](mariadb-maxscale-2308-connection-routing-with-mariadb-maxscale.md).
+read-write-splitting setup, read the [Read Write Splitting Tutorial](mariadb-maxscale-2308-read-write-splitting-with-mariadb-maxscale.md).\
+For a simple connection based setup, read the [Connection Routing Tutorial](mariadb-maxscale-2308-connection-routing-with-mariadb-maxscale.md).
 
 ### Starting MaxScale
 
@@ -170,8 +170,8 @@ when using a read-write-splitting configuration.
 MariaDB MaxScale is now ready to start accepting client connections and route queries to\
 the backend cluster.
 
-More options can be found in the[Configuration Guide](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/),[readwritesplit module documentation](../mariadb-maxscale-23-08-routers/mariadb-maxscale-2308-readwritesplit.md) and[readconnroute module documentation](../mariadb-maxscale-23-08-routers/mariadb-maxscale-2308-readconnroute.md).
+More options can be found in the [Configuration Guide](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/),[readwritesplit module documentation](../mariadb-maxscale-23-08-routers/mariadb-maxscale-2308-readwritesplit.md) and [readconnroute module documentation](../mariadb-maxscale-23-08-routers/mariadb-maxscale-2308-readconnroute.md).
 
-For more information about MaxCtrl and how to secure it, see the[REST-API Tutorial](mariadb-maxscale-2308-rest-api-tutorial.md).
+For more information about MaxCtrl and how to secure it, see the [REST-API Tutorial](mariadb-maxscale-2308-rest-api-tutorial.md).
 
 CC BY-SA / Gnu FDL

@@ -16,18 +16,18 @@ Compared to [MariaDB 5.2.8](mariadb-528-release-notes.md), [MariaDB 5.2.9](maria
 bug-fix release.
 
 For a list of every change made in [MariaDB 5.2.9](mariadb-529-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.2.9 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-529-changelog.md).
+information on each push, see the [MariaDB 5.2.9 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-529-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-Be notified of new releases automatically by adding the[releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
+Be notified of new releases automatically by adding the [releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
 your favorite feed reader or by [subscribing](https://mariadb.org) to the\
 announce 'at' mariadb.org announcement list (this is a low traffic,\
 announce-only list).
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
+information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 #### 2 Nov 2011 Update:
@@ -36,7 +36,7 @@ We've updated the Ubuntu packages for [MariaDB 5.2.9](mariadb-529-release-notes.
 packages for Ubuntu 11.10 "Oneiric" the only other change is to remove the\
 default apparmor profile.
 
-Ubuntu 11.10 "Oneiric" introduced some significant[directory changes](https://askubuntu.com/questions/57297/why-has-var-run-been-migrated-to-run).\
+Ubuntu 11.10 "Oneiric" introduced some significant [directory changes](https://askubuntu.com/questions/57297/why-has-var-run-been-migrated-to-run).\
 Rather than try to keep our apparmor profile in sync with Ubuntu and risk a\
 future breakage when they decide to change something else, we have decided to\
 include an empty profile in our packages. If you have customized your`/etc/apparmor.d/usr.sbin.mysqld` file you will be given the option to keep\

@@ -18,7 +18,7 @@ Compared to [MariaDB 5.3.0](mariadb-530-release-notes.md), 5.3.1, 5.3.2, and 5.3
 with a focus on stability, performance, and usability. It is the fourth release of the 5.3 series and fixes bugs found in the previous 5.3.x _beta_ and _rc_ releases.
 
 For a list of every change made in [MariaDB 5.3.4](mariadb-534-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.3.4 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-534-changelog.md). It is worth noting that[MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
+information on each push, see the [MariaDB 5.3.4 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-534-changelog.md). It is worth noting that [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.

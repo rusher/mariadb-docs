@@ -47,7 +47,7 @@ Sensitive security issues can be sent directly to the persons responsible for Ma
 
 You can find additional email address, email archives and ways to connect with MariaDB people [here](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md).
 
-All MariaDB contributors are expected to follow the[Ubuntu Code Of Conduct](https://www.ubuntu.com/community/conduct).
+All MariaDB contributors are expected to follow the [Ubuntu Code Of Conduct](https://www.ubuntu.com/community/conduct).
 
 ## Getting Started for Developers
 

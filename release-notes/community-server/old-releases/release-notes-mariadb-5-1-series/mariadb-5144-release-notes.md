@@ -12,13 +12,13 @@ list of the changes in this release.
 In most respects MariaDB will work exactly as MySQL: all commands, interfaces,\
 libraries and APIs that exist in MySQL also exist in MariaDB.
 
-In addition to the differences noted in previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main differences\
+In addition to the differences noted in previous [release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main differences\
 between MariaDB and MySQL are:
 
 ## Includes MySQL 5.1.44
 
 For [MariaDB 5.1.44](mariadb-5144-release-notes.md) we have merged in all of the upstream changes from MySQL\
-5.1.43 and 5.1.44. The MySQL[5.1.43](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-43.html) and[5.1.44](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-44.html) release\
+5.1.43 and 5.1.44. The MySQL [5.1.43](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-43.html) and [5.1.44](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-44.html) release\
 notes have details of what changes were made upstream by MySQL since 5.1.42.
 
 ## Performance Improvements
@@ -35,7 +35,7 @@ engine pages.
 
 ## Fewer warnings and bugs
 
-Like we did with our previous releases, various improvements were made in[MariaDB 5.1.44](mariadb-5144-release-notes.md) in our desire to fix warnings and eliminate bugs.
+Like we did with our previous releases, various improvements were made in [MariaDB 5.1.44](mariadb-5144-release-notes.md) in our desire to fix warnings and eliminate bugs.
 
 In [MariaDB 5.1.44](mariadb-5144-release-notes.md) these included a fix for [Bug #534626](https://bugs.launchpad.net/bugs/534626): "MyISAM table\
 created in MariaDB not readable by MySQL". With this fix, tables created\

@@ -114,7 +114,7 @@ This page visualizes MaxScale configuration as shown in the figure below.
 
 ### Clusters
 
-This page shows all monitor clusters using[mariadbmon](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) module in a card-like view.\
+This page shows all monitor clusters using [mariadbmon](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) module in a card-like view.\
 Clicking on the card will visualize the cluster into a tree graph as shown in the following figure.
 
 ![](<../.gitbook/assets/MaxGUI-cluster-visualization.png (3).png>)

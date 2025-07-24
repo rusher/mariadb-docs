@@ -179,7 +179,7 @@ modified in that revision.
       * Bug fix for [Bug #732124](https://bugs.launchpad.net/bugs/732124) union + limit returns wrong result
 * [Revision #2950](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2950)\
   Sun 2011-04-10 22:48:28 -0700
-  * Detect Boost installation and build OQGRAPH when possible. For now, disable oqgraph on x64 until[Bug #756966](https://bugs.launchpad.net/bugs/756966) is solved.
+  * Detect Boost installation and build OQGRAPH when possible. For now, disable oqgraph on x64 until [Bug #756966](https://bugs.launchpad.net/bugs/756966) is solved.
 * [Revision #2949](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2949) \[merge]\
   Fri 2011-04-08 02:58:14 +0200
   * merge

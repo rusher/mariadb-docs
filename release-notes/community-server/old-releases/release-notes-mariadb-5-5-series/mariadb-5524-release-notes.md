@@ -15,14 +15,14 @@ general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.5.24](mariadb-5524-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.5.24 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5524-changelog.md).
+information on each push, see the [MariaDB 5.5.24 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5524-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 ## Includes [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and MySQL 5.5.24
 
-[MariaDB 5.5.24](mariadb-5524-release-notes.md) includes [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and MySQL 5.5.24. See the [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and[Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-537-changelog.md) for more information on the changes in[MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md). See[Changes in MySQL 5.5.24](https://dev.mysql.com/doc/refman/5.5/en/news-5-5-24.html)\
+[MariaDB 5.5.24](mariadb-5524-release-notes.md) includes [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and MySQL 5.5.24. See the [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md) and [Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-537-changelog.md) for more information on the changes in [MariaDB 5.3.7](../release-notes-mariadb-5-3-series/mariadb-537-release-notes.md). See [Changes in MySQL 5.5.24](https://dev.mysql.com/doc/refman/5.5/en/news-5-5-24.html)\
 for what changed between this and previous MySQL versions.
 
 ## Security Fixes
@@ -40,16 +40,16 @@ This release includes fixes for the following security vulnerabilities:
 [MariaDB 5.5.24](mariadb-5524-release-notes.md) introduces new RPM packages and YUM repositories for RedHat,\
 Fedora, and CentOS.
 
-To get started with the repositories, head over to the[Installing MariaDB with yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) page. We've also\
-updated our[repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/)\
+To get started with the repositories, head over to the [Installing MariaDB with yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) page. We've also\
+updated our [repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/)\
 so that you can easily generate a custom MariaDB.repo for your distribution.
 
-If you don't want to use yum you can, of course, still[download and install the MariaDB rpm files manually](https://kb.askmonty.org/en/installing-mariadb-with-the-rpm-tool/).
+If you don't want to use yum you can, of course, still [download and install the MariaDB rpm files manually](https://kb.askmonty.org/en/installing-mariadb-with-the-rpm-tool/).
 
-Lastly, we've created a page describing[what is included in each RPM file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/about-the-mariadb-rpm-files), so you can\
+Lastly, we've created a page describing [what is included in each RPM file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/about-the-mariadb-rpm-files), so you can\
 easily determine which of the rpm packages you need or want.
 
-This is our first attempt at providing YUM repositories for MariaDB, so please[let us know](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) if you run into\
+This is our first attempt at providing YUM repositories for MariaDB, so please [let us know](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) if you run into\
 any issues.
 
 ## Ubuntu 12.04 "Precise"
@@ -62,7 +62,7 @@ If you've previously added MariaDB to your sources.list, use our [repository con
 
 [MariaDB 5.5.24](mariadb-5524-release-notes.md) also includes binaries for BSD 9 and MacOS X 10.5. As with the new\
 RPM packages, this is our first attempt at providing packages for these operating\
-systems. So please[let us know](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) if you run into\
+systems. So please [let us know](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) if you run into\
 any issues.
 
 Thanks, and enjoy MariaDB!

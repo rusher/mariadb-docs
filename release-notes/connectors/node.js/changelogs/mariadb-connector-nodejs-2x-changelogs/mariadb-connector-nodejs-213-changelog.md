@@ -6,9 +6,9 @@
 
 **Release date:** 19 Nov 2019
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-213-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-213-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #0761448](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0761448) \[[CONJS-104](https://jira.mariadb.org/browse/CONJS-104)] Pam authentication must permit to provide multiple passwords

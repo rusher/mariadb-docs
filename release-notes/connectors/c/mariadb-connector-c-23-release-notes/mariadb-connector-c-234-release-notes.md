@@ -20,7 +20,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
   * Don't check server ca unless verification flag was set. This will allow Connector/C to establish a tls/ssl connection without certificates.
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-234-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-23-changelogs/mariadb-connector-c-234-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

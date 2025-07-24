@@ -11,7 +11,7 @@ Cassandra storage engine is no longer a part of MariaDB.
 The Cassandra storage engine is included but is not installed/activated by\
 default.
 
-If using the[YUM repositories](https://downloads.mariadb.org/mariadb/repositories/)\
+If using the [YUM repositories](https://downloads.mariadb.org/mariadb/repositories/)\
 on Fedora, Red Hat, or CentOS, first install the Cassandra storage engine\
 package with:
 
@@ -139,7 +139,7 @@ MariaDB. The types must also match, they are covered below.
 Cassandra also allows individual rows to have their own sets of columns. In\
 other words, each row can have its own unique columns.
 
-These columns can be accessed through MariaDB's[Dynamic Columns](../../../../reference/sql-structure/nosql/dynamic-columns.md) feature. To do so, one must define a\
+These columns can be accessed through MariaDB's [Dynamic Columns](../../../../reference/sql-structure/nosql/dynamic-columns.md) feature. To do so, one must define a\
 column:
 
 * with an arbitrary name
@@ -152,7 +152,7 @@ Here is an example:
 dynamic_cols blob DYNAMIC_COLUMN_STORAGE=yes
 ```
 
-Once define, one can access individual columns with the[new variant](broken-reference) of the Dynamic Column functions,\
+Once define, one can access individual columns with the [new variant](broken-reference) of the Dynamic Column functions,\
 which now support string names (they used to support integers only).
 
 ### Super columns
@@ -200,7 +200,7 @@ data, if necessary.
 Batch size is controlled by the [cassandra\_insert\_batch\_size](cassandra-system-variables.md#cassandra_insert_batch_size) system\
 variable, which specifies the max. batch size in columns.
 
-The status variables [Cassandra\_row\_inserts](cassandra-status-variables.md#cassandra_row_inserts) and[Cassandra\_row\_insert\_batches](cassandra-status-variables.md#cassandra_row_insert_batches) allow one to see whether inserts are actually\
+The status variables [Cassandra\_row\_inserts](cassandra-status-variables.md#cassandra_row_inserts) and [Cassandra\_row\_insert\_batches](cassandra-status-variables.md#cassandra_row_insert_batches) allow one to see whether inserts are actually\
 batched.
 
 ### UPDATE
@@ -223,7 +223,7 @@ access Cassandra's rows with key lookups.
 #### Full table scan
 
 Full table scans are performed in a memory-efficient way. Cassandra SE performs\
-a full table scan as a series of batches, each of which reads not more than[cassandra\_rnd\_batch\_size](cassandra-system-variables.md#cassandra_rnd_batch_size) records.
+a full table scan as a series of batches, each of which reads not more than [cassandra\_rnd\_batch\_size](cassandra-system-variables.md#cassandra_rnd_batch_size) records.
 
 #### Batched Key Access support
 
@@ -235,8 +235,8 @@ required:
 * join\_cache\_level=7|8
 
 Cassandra SE is currently unable to make use of space in the join buffer (the\
-one whose size is controlled by[#join\_buffer\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)). Instead, it\
-will limit read batches to reading not more than[cassandra\_multiget\_batch\_size](cassandra-system-variables.md#cassandra_multiget_batch_size)\
+one whose size is controlled by [#join\_buffer\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)). Instead, it\
+will limit read batches to reading not more than [cassandra\_multiget\_batch\_size](cassandra-system-variables.md#cassandra_multiget_batch_size)\
 at a time, and memory are allocated on the heap.
 
 Note that the [#join\_buffer\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)\
@@ -280,7 +280,7 @@ The following [status variables](cassandra-status-variables.md) are available:
 
 ## A note about Cassandra 1.2
 
-Cassandra 1.2 has slightly changed its data model, as described at[thrift-to-cql3](https://www.datastax.com/dev/blog/thrift-to-cql3). This has caused some of\
+Cassandra 1.2 has slightly changed its data model, as described at [thrift-to-cql3](https://www.datastax.com/dev/blog/thrift-to-cql3). This has caused some of\
 Thrift-based clients to no longer work (for example, here's a problem\
 experienced by Pig:[CASSANDRA-5234](https://issues.apache.org/jira/browse/CASSANDRA-5234)).
 

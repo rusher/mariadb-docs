@@ -66,7 +66,7 @@ in both cases `SELECT f FROM t WHERE f = ?`. The latency information\
 of both of those statements will be collected under the same canonical\
 statement.
 
-Before starting to register histogram data, Diff will collect[samples](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#samples) from _main_ that will be used for defining the\
+Before starting to register histogram data, Diff will collect [samples](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#samples) from _main_ that will be used for defining the\
 edges and the number of bins of the histogram.
 
 #### Discrepancies
@@ -92,7 +92,7 @@ immediately after the original statement, but if the client is\
 streaming requests, an other statement may have been exceuted in\
 between.
 
-EXPLAINs are not always executed, but the frequency is controlled by[explain\_entries](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#explain_entries) and[explain\_period](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#explain_period). The EXPLAIN results are included in\
+EXPLAINs are not always executed, but the frequency is controlled by [explain\_entries](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#explain_entries) and [explain\_period](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#explain_period). The EXPLAIN results are included in\
 the [output](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#reporting) of Diff.
 
 #### QPS
@@ -104,9 +104,9 @@ window whose size is defined by [qps\_period](mariadb-maxscale-2402-maxscale-240
 
 Diff produces two kinds of output:
 
-* Output that is generated when Diff terminates or upon[request](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#summary). That output can be visualized as explained[here](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#visualizing).
+* Output that is generated when Diff terminates or upon [request](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#summary). That output can be visualized as explained [here](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#visualizing).
 * [Optionally](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#report) Diff can continuously report queries whose\
-  responses from _main_ and other _differ_ as described[here](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#discrepancies).
+  responses from _main_ and other _differ_ as described [here](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#discrepancies).
 
 When Diff starts it will create a directory `diff` in MaxScale's\
 data directory (typically `/var/lib/maxscale`). Under that it\
@@ -191,7 +191,7 @@ maxctrl call command diff create DiffMyService MyService MyServer1 MariaDB_112
 
 With this command, preparations for comparing the server `MariaDB_112`\
 against the server `MyServer1` of the service `MyService` will be made.\
-At this point it will be checked in what kind of replication relationship`MariaDB_112` is with respect to `MyServer1`. If the steps in[prerequisites](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#prerequisites) were followed, it will be detected that`MariaDB_112` replicates from `MyServer1`.
+At this point it will be checked in what kind of replication relationship`MariaDB_112` is with respect to `MyServer1`. If the steps in [prerequisites](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#prerequisites) were followed, it will be detected that`MariaDB_112` replicates from `MyServer1`.
 
 If everything seems to be in order, the service `DiffMyService` will be\
 created. Settings such as _user_ and _password_ that are needed by the\
@@ -360,7 +360,7 @@ MyServer1_2024-05-07_140323.json
 MariaDB_112_2024-05-07_140323.json
 ```
 
-The visualization of the results is done using the[maxvisualize](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#visualizing) program.
+The visualization of the results is done using the [maxvisualize](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#visualizing) program.
 
 **Stop**
 
@@ -499,7 +499,7 @@ deduced from the replication relationship between _main_ an&#x64;_&#x6F;ther_.
 If _other_ replicates from _main_, it is assumed that _main_ is\
 the primary. In this case Diff will, when started, stop the\
 replication from _main_ to _other_. When the comparison ends\
-Diff will, depending on the value of[reset\_replication](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#reset_replication)\
+Diff will, depending on the value of [reset\_replication](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#reset_replication)\
 either reset the replication from _main_ to _other_ or leave\
 the situation as it is.
 
@@ -520,7 +520,7 @@ is anything else, Diff will refuse to start.
 * Dynamic: No
 
 The main target from which results are returned to the client. Must be\
-a server and must be one of the servers listed in[targets](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md).
+a server and must be one of the servers listed in [targets](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-configuration-guide.md).
 
 If the connection to the main target cannot be created or is lost\
 mid-session, the client connection will be closed.
@@ -552,7 +552,7 @@ both _other_ and _main_ or neither.
 * Default: 2
 
 Specifies how many times at most a particular canonical statement\
-is EXPLAINed during the period specified by[explain\_period](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#explain_period).
+is EXPLAINed during the period specified by [explain\_period](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#explain_period).
 
 #### `explain_period`
 
@@ -561,7 +561,7 @@ is EXPLAINed during the period specified by[explain\_period](mariadb-maxscale-24
 * Dynamic: Yes
 * Default: 15m
 
-Specifies the length of the period during which at most[explain\_entries](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#explain_entries) number of EXPLAINs are executed\
+Specifies the length of the period during which at most [explain\_entries](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#explain_entries) number of EXPLAINs are executed\
 for a statement.
 
 #### `max_request_lag`

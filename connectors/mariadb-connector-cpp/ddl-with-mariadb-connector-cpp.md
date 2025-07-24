@@ -98,7 +98,7 @@ DESC contacts;
 +---------------+--------------+------+-----+---------+----------------+
 ```
 
-Code Example: TRUNCATE TABLE[TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table) is a DDL (Data Definition Language) operation that deletes all data from an existing table.
+Code Example: TRUNCATE TABLE [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table) is a DDL (Data Definition Language) operation that deletes all data from an existing table.
 
 The following code demonstrates how to execute [TRUNCATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate) on the [example table](setup-for-connector-cpp-examples.md):
 

@@ -6,18 +6,18 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 **Release date:** 19 Nov 2010
 
-For a list of every change made in this release, see the[Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5151-changelog.md). For a description of this release see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
+For a list of every change made in this release, see the [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5151-changelog.md). For a description of this release see the [MariaDB 5.1 overview](changes-improvements-in-mariadb-5-1.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-In addition to the differences noted in previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and[changelogs](../../../connectors/odbc/changelogs/), the main\
+In addition to the differences noted in previous [release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main\
 differences between MariaDB and MySQL are:
 
 ## Includes MySQL 5.1.51
 
 For [MariaDB 5.1.51](mariadb-5151-release-notes.md) we have merged in all of the upstream changes from MySQL\
-5.1.51. The MySQL[5.1.51](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-51.html) release\
+5.1.51. The MySQL [5.1.51](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-51.html) release\
 notes have details of what changes were made upstream by MySQL since 5.1.50.
 
 ## Includes [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) 5.1.51-12
@@ -45,7 +45,7 @@ Like [previous releases](https://github.com/mariadb-corporation/docs-release-not
 * [MySQL Bug #49322](https://bugs.mysql.com/bug.php?id=49322) Server is adding extra NULL row on processing a WHERE clause
 * [MySQL Bug #57024](https://bugs.mysql.com/bug.php?id=57024) Serious performance issue with an outer join
 * [Bug #618608](https://bugs.launchpad.net/bugs/618608) FederatedX is not the default on Windows
-* [Bug #608369](https://bugs.launchpad.net/bugs/608369) (M)Aria engine recovery failure: "Page: 1 Found wrong page type 0' on CHECK TABLE EXTENDED
+* [Bug #608369](https://bugs.launchpad.net/bugs/608369) (M) Aria engine recovery failure: "Page: 1 Found wrong page type 0' on CHECK TABLE EXTENDED
 * [Bug #640419](https://bugs.launchpad.net/bugs/640419) Wrong result with sort\_union/index\_merge in maria-5.1 and a large table
 * [Bug #634943](https://bugs.launchpad.net/bugs/634943) "marked as crashed", "zerofilling" and "wrong data in bitmap" when recovering Aria tables
 * [Bug #605798](https://bugs.launchpad.net/bugs/605798) RQG: Table corruption after Maria engine recovery - "Wrong data in bitmap"

@@ -8,7 +8,7 @@ GLength(ls)
 
 ## Description
 
-Returns as a double-precision number the length of the[LineString](../../../sql-statements/geometry-constructors/geometry-constructors/linestring.md) value _`ls`_ in its associated spatial reference.
+Returns as a double-precision number the length of the [LineString](../../../sql-statements/geometry-constructors/geometry-constructors/linestring.md) value _`ls`_ in its associated spatial reference.
 
 ## Examples
 

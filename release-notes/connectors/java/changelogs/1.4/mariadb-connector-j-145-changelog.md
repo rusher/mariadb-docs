@@ -6,9 +6,9 @@
 
 **Release date:** 24 May 2016
 
-For the highlights of this release, see the[release notes](../../1.4/mariadb-connector-j-145-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.4/mariadb-connector-j-145-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #4e8c715](https://github.com/mariadb-corporation/mariadb-connector-j/commit/4e8c715) \[[CONJ-218](https://jira.mariadb.org/browse/CONJ-218)] MariaDbDatabaseMetaData getTables() follow the jdbc recommendation TABLE\_TYPE "TABLE" replacing "BASE\_TABLE"
 * [Revision #fa6fd29](https://github.com/mariadb-corporation/mariadb-connector-j/commit/fa6fd29), [Revision #747d265](https://github.com/mariadb-corporation/mariadb-connector-j/commit/747d265) \[[CONJ-290](https://jira.mariadb.org/browse/CONJ-290)] Timestamps format error when using prepareStatement with options useFractionalSeconds and useServerPrepStmts

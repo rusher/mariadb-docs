@@ -8,7 +8,7 @@
 
 For the highlights of this release, see the [release notes](../../mariadb-connector-python-1-0-release-notes/mariadb-connector-python-1-0-1-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-python/) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-python/) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #16a3882](https://github.com/mariadb-corporation/mariadb-connector-python/commit/16a3882)\

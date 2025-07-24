@@ -12,7 +12,7 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 {% endhint %}
 
 Normally, all changes that are logged as events in the [binary log](../../server-management/server-monitoring-logs/binary-log/) are also\
-replicated to all replicas (though still subject to filtering by[replicate-do-db](replication-and-binary-log-system-variables.md#replicate_do_db), [replicate-ignore-db](replication-and-binary-log-system-variables.md#replicate_ignore_db),\
+replicated to all replicas (though still subject to filtering by [replicate-do-db](replication-and-binary-log-system-variables.md#replicate_do_db), [replicate-ignore-db](replication-and-binary-log-system-variables.md#replicate_ignore_db),\
 and similar options). However, sometimes it may be desirable to have certain\
 events be logged into the binlog, but not be replicated to all or a subset of\
 replicas, where the distinction between events that should be replicated or not\
@@ -103,7 +103,7 @@ and so are not replicated by any replica.
 
 When events in the binlog are marked with the `@@skip_replication` flag, the\
 flag will be preserved if the events are dumped by the [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/)\
-program and re-applied against a server with the[mariadb client](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) program. Similarly, the[BINLOG](../../reference/sql-statements/administrative-sql-statements/binlog.md) statement will preserve the flag from the\
+program and re-applied against a server with the [mariadb client](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) program. Similarly, the [BINLOG](../../reference/sql-statements/administrative-sql-statements/binlog.md) statement will preserve the flag from the\
 event being replayed. And a replica which runs with`--log-slave-updates` and does not filter events\
 (`--replicate-events-marked-for-skip=REPLICATE`) will also\
 preserve the flag in the events logged into the binlog on the replica.

@@ -44,7 +44,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 * [CONC-271](https://jira.mariadb.org/browse/CONC-271): installation layout fix for RPM
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-30-changelogs/mariadb-connector-c-303-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-30-changelogs/mariadb-connector-c-303-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

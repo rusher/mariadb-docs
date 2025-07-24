@@ -6,9 +6,9 @@
 
 **Release date:** 24 Oct 2024
 
-For the highlights of this release, see the[release notes](../../3.5/mariadb-connector-j-3-5-0-release-notes.md).
+For the highlights of this release, see the [release notes](../../3.5/mariadb-connector-j-3-5-0-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #8be57f3b](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8be57f3b) \[[CONJ-1205](https://jira.mariadb.org/browse/CONJ-1205)] permit setObject with ARRAY dataType

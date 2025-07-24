@@ -28,7 +28,7 @@ available:
 * The primary key is used, if there is one.
 * Else, the first unique index without NULL-able columns is used, if there is\
   one.
-* Else, a choice is made among any normal indexes on the table (e.g. a[FULLTEXT](../optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index is not considered).
+* Else, a choice is made among any normal indexes on the table (e.g. a [FULLTEXT](../optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index is not considered).
 
 The choice of which of several non-unique indexes to use is based on the\
 cardinality of indexes; the one that is most selective (has the smallest\

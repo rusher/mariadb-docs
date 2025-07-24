@@ -48,7 +48,7 @@ route a client connection to. For the write service we use the `master`-type and
 read service the `slave`-type.
 
 The _user_ and _password_ parameters define the credentials the service uses to populate\
-user authentication data. These users were created at the start of the[MaxScale Tutorial](mariadb-maxscale-2402-maxscale-2402-setting-up-mariadb-maxscale.md).
+user authentication data. These users were created at the start of the [MaxScale Tutorial](mariadb-maxscale-2402-maxscale-2402-setting-up-mariadb-maxscale.md).
 
 For increased security, see [password encryption](mariadb-maxscale-2402-maxscale-2402-encrypting-passwords.md).
 

@@ -26,18 +26,18 @@ changes in the cluster. In the configuration it is only specified\
 a node using which the monitor get in contact with the cluster, but\
 after that the monitor autonomously figures out the cluster configuration\
 and automatically adapts to any changes in the configuration. For more\
-details, please consult the[monitor](../mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-maxscale-2106-maxscale-2106-columnstore-monitor.md)\
+details, please consult the [monitor](../mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-maxscale-2106-maxscale-2106-columnstore-monitor.md)\
 documentation.
 
 #### [MXS-3499](https://jira.mariadb.org/browse/MXS-3499) `causal_reads` and Prepared Statements
 
 The `causal_reads` feature now supports binary protocol prepared statements. For\
-more information, refer to the[documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md) for `causal_reads`.
+more information, refer to the [documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md) for `causal_reads`.
 
 #### [MXS-2838](https://jira.mariadb.org/browse/MXS-2838) Hintfilter and Prepared Statements
 
 The hintfilter now supports routing hints in binary protocol prepared\
-statements. For more information, refer to the hintfilter[documentation](../mariadb-maxscale-21-06-filters/mariadb-maxscale-2106-maxscale-2106-hintfilter.md).
+statements. For more information, refer to the hintfilter [documentation](../mariadb-maxscale-21-06-filters/mariadb-maxscale-2106-maxscale-2106-hintfilter.md).
 
 #### [MXS-3219](https://jira.mariadb.org/browse/MXS-3219) Galera Server States
 
@@ -76,7 +76,7 @@ The filter is deprecated in MaxScale 6 and will be removed in MaxScale 22.08.
 
 #### Multi-line Configuration Parameters
 
-The ability to define a single configuration parameter[on multiple lines](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
+The ability to define a single configuration parameter [on multiple lines](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
 is deprecated and will be removed in MaxScale 22.08.
 
 ### New Features
@@ -111,7 +111,7 @@ API [documentation](../mariadb-maxscale-21-06-rest-api/mariadb-maxscale-2106-max
 
 #### [MXS-3108](https://jira.mariadb.org/browse/MXS-3108) Session Alteration
 
-The logging options for filters can be changed at runtime with `maxctrl alter filter` and the filters of a session can be modified with `maxctrl alter session-filters`. For more information, refer to the MaxCtrl[documentation](../mariadb-maxscale-21-06-reference/mariadb-maxscale-2106-maxscale-2106-maxctrl.md) as well as the REST API[documentation](../mariadb-maxscale-21-06-rest-api/mariadb-maxscale-2106-maxscale-2106-session-resource.md).
+The logging options for filters can be changed at runtime with `maxctrl alter filter` and the filters of a session can be modified with `maxctrl alter session-filters`. For more information, refer to the MaxCtrl [documentation](../mariadb-maxscale-21-06-reference/mariadb-maxscale-2106-maxscale-2106-maxctrl.md) as well as the REST API [documentation](../mariadb-maxscale-21-06-rest-api/mariadb-maxscale-2106-maxscale-2106-session-resource.md).
 
 #### [MXS-2806](https://jira.mariadb.org/browse/MXS-2806) Stopping of Individual Listeners
 
@@ -129,18 +129,18 @@ information, refer to the `config_sync_cluster`[documentation](../mariadb-maxsca
 #### [MXS-2588](https://jira.mariadb.org/browse/MXS-2588) Data Ingestion From Kafka
 
 The KafkaImporter module can be used to import JSON data from Kafka into\
-MariaDB. For more information, refer to the KafkaImporter[documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-kafkaimporter.md).
+MariaDB. For more information, refer to the KafkaImporter [documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-kafkaimporter.md).
 
 #### [MXS-2351](https://jira.mariadb.org/browse/MXS-2351) Prepared Statement Caching
 
 Readwritesplit is now capable of caching prepared statements for individual\
-sessions. For more information, refer to the[documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md) for the`reuse_prepared_statements` parameter.
+sessions. For more information, refer to the [documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-readwritesplit.md) for the`reuse_prepared_statements` parameter.
 
 #### [MXS-1687](https://jira.mariadb.org/browse/MXS-1687) KafkaCDC and Avrorouter Failover
 
 The KafkaCDC and Avrorouter modules now support automated failover of the\
 replication stream when configured to replicate from servers or from a\
-cluster. For more information, refer to the[KafkaCDC](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-kafkacdc.md) and[Avrorouter](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-avrorouter.md) documentation.
+cluster. For more information, refer to the [KafkaCDC](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-kafkacdc.md) and [Avrorouter](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-avrorouter.md) documentation.
 
 #### [MXS-2748](https://jira.mariadb.org/browse/MXS-2748) Session command history to RWS
 
@@ -172,12 +172,12 @@ See [documentation](../mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-max
 for more information.
 
 [MXS-3268](https://jira.mariadb.org/browse/MXS-3268)\
-Can disable _read\_only_ on master if it's set. See[documentation](../mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-maxscale-2106-maxscale-2106-mariadb-monitor.md)\
+Can disable _read\_only_ on master if it's set. See [documentation](../mariadb-maxscale-2106-maxscale-21-06-monitors/mariadb-maxscale-2106-maxscale-2106-mariadb-monitor.md)\
 for more information.
 
 #### [MXS-3475](https://jira.mariadb.org/browse/MXS-3475) PAM user mapping
 
-PAM-Authenticator supports mapping incoming PAM users to MariaDB users. See[documentation](../mariadb-maxscale-21-06-authenticators/mariadb-maxscale-2106-maxscale-2106-pam-authenticator.md) for\
+PAM-Authenticator supports mapping incoming PAM users to MariaDB users. See [documentation](../mariadb-maxscale-21-06-authenticators/mariadb-maxscale-2106-maxscale-2106-pam-authenticator.md) for\
 more information.
 
 ### Bug fixes

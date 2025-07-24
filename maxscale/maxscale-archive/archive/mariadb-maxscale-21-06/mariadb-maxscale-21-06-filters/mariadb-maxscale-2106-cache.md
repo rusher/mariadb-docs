@@ -92,10 +92,10 @@ That is, in default mode the cache effectively causes the system to behave\
 as if the _isolation level_ would be `READ COMMITTED`, irrespective of what\
 the isolation level of the backends actually is.
 
-The default behaviour can be altered using the configuration parameter[cache\_in\_transactions](mariadb-maxscale-2106-cache.md#cache_in_transactions).
+The default behaviour can be altered using the configuration parameter [cache\_in\_transactions](mariadb-maxscale-2106-cache.md#cache_in_transactions).
 
 By default it is assumed that all `SELECT` statements are cacheable, which\
-means that also statements like `SELECT LOCALTIME` are cached. Please check[selects](mariadb-maxscale-2106-cache.md#selects) for how to change the default behaviour.
+means that also statements like `SELECT LOCALTIME` are cached. Please check [selects](mariadb-maxscale-2106-cache.md#selects) for how to change the default behaviour.
 
 ### Limitations
 
@@ -154,7 +154,7 @@ INSERT INTO t SET a=42;
 ```
 
 will cause the cache entry containing the result of that SELECT to be\
-invalidated even if the INSERT actually does not affect it. Please see[invalidate](mariadb-maxscale-2106-cache.md#invalidate) for how to enable the invalidation.
+invalidated even if the INSERT actually does not affect it. Please see [invalidate](mariadb-maxscale-2106-cache.md#invalidate) for how to enable the invalidation.
 
 When invalidation has been enabled MaxScale must be able to completely\
 parse a SELECT statement for its results to be stored in the cache. The\
@@ -170,15 +170,15 @@ entire cache. The reason is that unless MaxScale can completely parse\
 the statement it cannot know what tables are modified and hence not what\
 cache entries should be invalidated. Consequently, to prevent stale data\
 from being returned, the entire cache is cleared. The default behaviour\
-can be changed using the configuration parameter[clear\_cache\_on\_parse\_errors](mariadb-maxscale-2106-cache.md#clear_cache_on_parse_errors).
+can be changed using the configuration parameter [clear\_cache\_on\_parse\_errors](mariadb-maxscale-2106-cache.md#clear_cache_on_parse_errors).
 
 Note that what threading approach is used has a big impact on the\
-invalidation. Please see[Threads, Users and Invalidation](mariadb-maxscale-2106-cache.md#threads-users-and-invalidation)\
+invalidation. Please see [Threads, Users and Invalidation](mariadb-maxscale-2106-cache.md#threads-users-and-invalidation)\
 for how the threading approach affects the invalidation.
 
 Note also that since the invalidation may not, depending on how the\
 cache has been configured, be visible to all sessions of all users, it\
-is still important to configure a reasonable [soft](mariadb-maxscale-2106-cache.md#soft_ttl) and[hard](mariadb-maxscale-2106-cache.md#hard_ttl) TTL.
+is still important to configure a reasonable [soft](mariadb-maxscale-2106-cache.md#soft_ttl) and [hard](mariadb-maxscale-2106-cache.md#hard_ttl) TTL.
 
 #### Best Efforts
 
@@ -391,7 +391,7 @@ max_count=1000
 
 The maximum size the cache may occupy. If the limit has been reached and a new\
 item should be stored, then some older item(s) will be evicted to make space.\
-The size can be specified as described[here](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md).
+The size can be specified as described [here](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md).
 
 Note that if `cached_data` is `thread_specific` then this limit will be\
 applied to each cache _separately_. That is, if a thread specific cache\
@@ -555,7 +555,7 @@ Default is `true`.
 
 The value affects the initial state of the MaxScale user\
 variables using which the behaviour of the cache can be modified\
-at runtime. Please see[Runtime Configuration](mariadb-maxscale-2106-cache.md#runtime-configuration)\
+at runtime. Please see [Runtime Configuration](mariadb-maxscale-2106-cache.md#runtime-configuration)\
 for details.
 
 **`invalidate`**
@@ -654,7 +654,7 @@ timeout=7000ms
 
 The default value is `5000ms`, that is 5 seconds.
 
-The duration can be specified as explained[here](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md).
+The duration can be specified as explained [here](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md).
 
 #### Runtime Configuration
 
@@ -1513,7 +1513,7 @@ If the rule is instead expressed using a regular expression
 
 then the statement will not be parsed.
 
-However, when the[query classifier cache](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
+However, when the [query classifier cache](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md)\
 was introduced, the parsing cost was significantly reduced and\
 currently the cost for parsing and regular expression matching\
 is roughly the same.

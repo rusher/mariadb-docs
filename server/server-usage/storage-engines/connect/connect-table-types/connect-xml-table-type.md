@@ -9,7 +9,7 @@ Currently two such systems are supported: libxml2, a part of the GNOME\
 framework, but which does not require GNOME and, on Windows, MS-DOM (DOMDOC), the Microsoft standard support of XML documents.
 
 DOMDOC is the default for the Windows version of CONNECT and libxml2 is always\
-used on other systems. On Windows the choice can be specified using the XMLSUP[CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) list option, for instance specifying`option_list='xmlsup=libxml2'`.
+used on other systems. On Windows the choice can be specified using the XMLSUP [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) list option, for instance specifying`option_list='xmlsup=libxml2'`.
 
 ## Creating XML tables
 

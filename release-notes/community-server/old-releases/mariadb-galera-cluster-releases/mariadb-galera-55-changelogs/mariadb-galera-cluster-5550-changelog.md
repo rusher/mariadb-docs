@@ -6,7 +6,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 
 **Release date:** 1 Jul 2016
 
-For the highlights of this release, see the[release notes](../mariadb-galera-55-release-notes/mariadb-galera-cluster-5550-release-notes.md). For changes in\
+For the highlights of this release, see the [release notes](../mariadb-galera-55-release-notes/mariadb-galera-cluster-5550-release-notes.md). For changes in\
 MariaDB, see the [MariaDB 5.5.50 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5550-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\

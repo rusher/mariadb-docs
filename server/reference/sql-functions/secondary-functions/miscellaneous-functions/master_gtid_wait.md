@@ -14,7 +14,7 @@ An optional second argument gives a timeout in seconds. If the timeout expires b
 
 If the wait completes without a timeout, 0 is returned. Passing `NULL` for the  gtid-list makes the function return `NULL` immediately, without waiting.
 
-The gtid-list may be the empty string, in which case `MASTER_GTID_WAIT()` returns immediately. If the gtid-list contains fewer domains than[gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md), then only those domains are waited upon. If gtid-list contains a domain that is not present in `@@gtid_slave_pos`, then `MASTER_GTID_WAIT()` will wait until an event containing such domain\_id arrives on the replica (or until timed out or killed).
+The gtid-list may be the empty string, in which case `MASTER_GTID_WAIT()` returns immediately. If the gtid-list contains fewer domains than [gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md), then only those domains are waited upon. If gtid-list contains a domain that is not present in `@@gtid_slave_pos`, then `MASTER_GTID_WAIT()` will wait until an event containing such domain\_id arrives on the replica (or until timed out or killed).
 
 `MASTER_GTID_WAIT()` can be useful to ensure that a replica has caught up to a master. Simply take the value of [gtid\_binlog\_pos](../../../../ha-and-performance/standard-replication/gtid.md) on the master, and use it in a `MASTER_GTID_WAIT()` call on the replica; when the call completes, the replica will have caught up with that master position.
 

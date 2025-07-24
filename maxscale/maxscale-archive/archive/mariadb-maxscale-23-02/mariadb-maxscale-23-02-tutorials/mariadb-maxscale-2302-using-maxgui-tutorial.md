@@ -74,7 +74,7 @@ a new object.
 
 ### View Replication Status
 
-The replication status of a server monitored by[MariaDB-Monitor](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-mariadb-monitor.md) can be viewed by mousing over\
+The replication status of a server monitored by [MariaDB-Monitor](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-mariadb-monitor.md) can be viewed by mousing over\
 the server name. A tooltip will be displayed with the following information:\
 replication\_state, seconds\_behind\_master, slave\_io\_running, slave\_sql\_running.
 
@@ -148,7 +148,7 @@ This page visualizes MaxScale configuration as shown in the figure below.
 
 ### Clusters
 
-This page shows all monitor clusters using[mariadbmon](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-mariadb-monitor.md) module in a card-like view.\
+This page shows all monitor clusters using [mariadbmon](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-mariadb-monitor.md) module in a card-like view.\
 Clicking on the card will visualize the cluster into a tree graph as shown in\
 the figure below.
 

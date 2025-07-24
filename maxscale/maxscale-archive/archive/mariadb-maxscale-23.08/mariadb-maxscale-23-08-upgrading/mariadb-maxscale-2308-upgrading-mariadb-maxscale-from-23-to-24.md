@@ -91,7 +91,7 @@ if defined:
 * If a master server is placed into maintenance mode, all open transactions are\
   allowed to gracefully finish before the session is closed. To forcefully close\
   the connections, use the `--force` option for `maxctrl set server`.
-* The `lazy_connect` feature can be used as a workaround to[MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the\
+* The `lazy_connect` feature can be used as a workaround to [MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the\
   overall load on the system when connections are rapidly opened and closed.
 * Transaction replays now have a limit on how many times a replay is\
   attempted. The default values is five attempts and is controlled by the`transaction_replay_attempts` parameter.

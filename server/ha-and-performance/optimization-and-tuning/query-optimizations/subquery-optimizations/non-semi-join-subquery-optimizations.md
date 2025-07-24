@@ -131,7 +131,7 @@ If the left argument of IN is the row: `(7, NULL, 9)`, and the result of the rig
 The the IN predicate matches the row `(7, 11, 9)`, and the result of IN is NULL. Matches where the differing values on either side of the IN arguments are matched by a NULL in the other IN argument, are\
 called _partial matches_.
 
-In order to efficiently compute the result of an IN predicate in the presence of NULLs, MariaDB implements two special algorithms for[partial matching, described here in detail](https://askmonty.org/worklog/Server-Sprint/?tid=68).
+In order to efficiently compute the result of an IN predicate in the presence of NULLs, MariaDB implements two special algorithms for [partial matching, described here in detail](https://askmonty.org/worklog/Server-Sprint/?tid=68).
 
 * Rowid-merge partial matching\
   This technique is used when the number of rows in the subquery result is above a certain limit. The technique creates special indexes on some of the columns of the temporary table, and merges them by alternative scanning of each index thus performing an operation similar to set-intersection.
@@ -147,7 +147,7 @@ In principle the subquery materialization strategy is universal, however, due to
 * Incomparable fields\
   TODO
 
-In the above cases, the server reverts to the[IN-TO-EXISTS](non-semi-join-subquery-optimizations.md#the-in-to-exists-transformation) transformation.
+In the above cases, the server reverts to the [IN-TO-EXISTS](non-semi-join-subquery-optimizations.md#the-in-to-exists-transformation) transformation.
 
 ## The IN-TO-EXISTS transformation
 
@@ -234,7 +234,7 @@ TODO
 
 In certain cases it may be necessary to override the choice of the optimizer. Typically this is needed for benchmarking or testing purposes, or to mimic the behavior of an older version of the server, or if the optimizer made a poor choice.
 
-All the above strategies can be controlled via the following switches in[optimizer\_switch](../../system-variables/server-system-variables.md#optimizer_switch) system variable.
+All the above strategies can be controlled via the following switches in [optimizer\_switch](../../system-variables/server-system-variables.md#optimizer_switch) system variable.
 
 * materialization=on/off\
   In some very special cases, even if materialization was forced, the optimizer may still revert to the IN-TO-EXISTS strategy if materialization is not applicable. In the cases when materialization requres partial matching (because of the presense of NULL values), there are two subordinate switches that\

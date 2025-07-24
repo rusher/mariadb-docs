@@ -13,7 +13,7 @@ upgrading PHP at the same time.
 
 Ways to fix this issue:
 
-1. Switch to using the[mysqlnd driver](https://dev.mysql.com/downloads/connector/php-mysqlnd/) in\
+1. Switch to using the [mysqlnd driver](https://dev.mysql.com/downloads/connector/php-mysqlnd/) in\
    PHP (Recommended solution).
 2. Run with a lower [error reporting level](https://php.net/error-reporting):
 

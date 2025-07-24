@@ -23,7 +23,7 @@ the path of least resistance. If you are unfamiliar with git, please refer to\
 the [git documentation](https://git-scm.com/doc) for an understanding\
 of version control with git.
 
-For instructions on creating a local branch of MariaDB, see the[Getting the MariaDB Source Code](getting-the-mariadb-source-code.md) page.
+For instructions on creating a local branch of MariaDB, see the [Getting the MariaDB Source Code](getting-the-mariadb-source-code.md) page.
 
 See the [Generic Build Instructions](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page for\
 general instructions on compiling MariaDB from the source.\

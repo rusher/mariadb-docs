@@ -6,9 +6,9 @@
 
 **Release date:** 29 Feb 2016
 
-For the highlights of this release, see the[release notes](../../1.3/mariadb-connector-j-136-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.3/mariadb-connector-j-136-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [CONJ-252](https://jira.mariadb.org/browse/CONJ-252) : Correction of charset parameter on Statement.setCharacterStream() and setClob. [Revision #012b8c3](https://github.com/mariadb-corporation/mariadb-connector-j/commit/012b8c3) 2016-02-19
 * [CONJ-253](https://jira.mariadb.org/browse/CONJ-253) : Protocol encoding correction for binary field. [Revision #123f02a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/123f02a) 2016-02-20

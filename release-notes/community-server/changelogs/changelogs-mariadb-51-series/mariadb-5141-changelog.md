@@ -8,7 +8,7 @@ See the [MariaDB 5.1.41 Release Notes](../../old-releases/release-notes-mariadb-
 highlights of this release.
 
 MariaDB-5.1.41 RC is based on MySQL-5.1.41, and in addition to the changes\
-listed in the [5.1.39](mariadb-5139-changelog.md) and[5.1.38](mariadb-5138-changelog.md) changelogs it includes these additional\
+listed in the [5.1.39](mariadb-5139-changelog.md) and [5.1.38](mariadb-5138-changelog.md) changelogs it includes these additional\
 changes and bug fixes:
 
 * Includes MySQL 5.1.41

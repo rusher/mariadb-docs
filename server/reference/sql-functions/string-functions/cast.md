@@ -16,7 +16,7 @@ The type can be one of the following values:
 * [CHAR](../../data-types/string-data-types/char.md)
 * [DATE](../../data-types/date-and-time-data-types/date.md)
 * [DATETIME](../../data-types/date-and-time-data-types/datetime.md)
-* \[DECIMAL[(M\[,D\])](../../data-types/numeric-data-types/decimal.md)]
+* \[DECIMAL [(M\[,D\])](../../data-types/numeric-data-types/decimal.md)]
 * [DOUBLE](../../data-types/numeric-data-types/double.md)
 * [FLOAT](../../data-types/numeric-data-types/float.md)
 * [INTEGER](../../data-types/numeric-data-types/int.md)

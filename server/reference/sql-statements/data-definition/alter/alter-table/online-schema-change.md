@@ -24,7 +24,7 @@ INSERT INTO items(name) VALUES (“New item”);
 
 If the `INSERT` statement begins its execution after [ALTER TABLE](./) is issued, it will not be blocked and will proceed normally, and thus it may finish before `ALTER TABLE`.
 
-`ALTER TABLE` always allows concurrent [SELECT ](../../../data-manipulation/selecting-data/select.md)statements. If the `LOCK=NONE` locking strategy is chosen, it will allow concurrent modifications (INSERT/DELETE/UPDATE). Namely, `LOCK=NONE` was supported by InnoDB and the Partition engine when `ALGORITHM=NOCOPY` is chosen and is a default locking strategy when available.
+`ALTER TABLE` always allows concurrent [SELECT ](../../../data-manipulation/selecting-data/select.md) statements. If the `LOCK=NONE` locking strategy is chosen, it will allow concurrent modifications (INSERT/DELETE/UPDATE). Namely, `LOCK=NONE` was supported by InnoDB and the Partition engine when `ALGORITHM=NOCOPY` is chosen and is a default locking strategy when available.
 
 With the new release, `LOCK=NONE` support is added for `ALGORITHM=COPY`, thus almost all `ALTER TABLE` operations (a few exceptions are given below) now allow concurrent DML.
 
@@ -48,7 +48,7 @@ The requirement for an engine is to allow concurrent writes, while another conne
 
 ### **MyISAM/Aria**
 
-MyISAM is capable of concurrent [INSERTs ](../../../data-manipulation/inserting-loading-data/insert.md)and also supports concurrent inserts while reading: we can’t say it supports [REPEATABLE READ](../../../transactions/transactions-repeatable-read.md) transaction isolation layer, but the newly inserted data is not seen by the readers until the end of the statement, so it satisfies the criterion, however it is not transactional.
+MyISAM is capable of concurrent [INSERTs ](../../../data-manipulation/inserting-loading-data/insert.md) and also supports concurrent inserts while reading: we can’t say it supports [REPEATABLE READ](../../../transactions/transactions-repeatable-read.md) transaction isolation layer, but the newly inserted data is not seen by the readers until the end of the statement, so it satisfies the criterion, however it is not transactional.
 
 An attempt to invoke any statement that can update or delete a row will be blocked until the end of `ALTER TABLE` (or will evaluate before `ALTER TABLE` acquires a lock, if it started earlier).
 

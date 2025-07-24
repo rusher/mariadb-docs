@@ -43,7 +43,7 @@ In addition to the standard [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO
 
 ## Extensions and New Features
 
-We've added a lot of[new features to MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-in-the-different-mariadb-releases/README.md). If a\
+We've added a lot of [new features to MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-in-the-different-mariadb-releases/README.md). If a\
 patch or feature is useful, safe, and stable — we make\
 every effort to include it in MariaDB. The most notable features are:
 

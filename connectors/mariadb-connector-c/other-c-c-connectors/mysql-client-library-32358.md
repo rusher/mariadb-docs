@@ -42,9 +42,9 @@ Besides using this library as the basis, the other options are:
 
 Monty Program Ab is about to start a project for creating a new free client library that is binary compatible with the old client library. See [Monty's blog](https://monty-says.blogspot.com/2010/12/in-search-of-bsdlgplapache-licensed.html) about this for more information.
 
-If you want to be part of this development effort, you can discuss this on the[maria-developers mailing list](https://launchpad.net/~maria-developers).
+If you want to be part of this development effort, you can discuss this on the [maria-developers mailing list](https://launchpad.net/~maria-developers).
 
-If you are interested in sponsoring this effort, you can[contact Monty Program](https://montyprogram.com/contact).
+If you are interested in sponsoring this effort, you can [contact Monty Program](https://montyprogram.com/contact).
 
 ## See also:
 
@@ -56,7 +56,7 @@ If you are interested in sponsoring this effort, you can[contact Monty Program](
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
+information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 {% endhint %}
 

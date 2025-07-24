@@ -1,7 +1,7 @@
 # MariaDB 5.3.0 Changelog p5
 
 [Download](https://downloads.askmonty.org/mariadb/5.3.0) |[Release Notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-530-release-notes.md) |**Changelog**\
-(page:[1](mariadb-530-changelog.md)[2](mariadb-530-changelog-p2.md)[3](mariadb-530-changelog-p3.md)[4](mariadb-530-changelog-p4.md)5[6](mariadb-530-changelog-p6.md)\
+(page:[1](mariadb-530-changelog.md)[2](mariadb-530-changelog-p2.md)[3](mariadb-530-changelog-p3.md)[4](mariadb-530-changelog-p4.md) 5 [6](mariadb-530-changelog-p6.md)\
 ) |[Overview of 5.3](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
 **Release date:** 26 July 2011
@@ -77,7 +77,7 @@
         table must be set up. The code failed to do that, so all scans after\
         the first one returned zero rows from the materialized table.
   * [Revision #2869.2.1](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2869.2.1)\
-    Sat 2010-12-25 16:23:16 +0300[MySQL Bug #46680](https://bugs.mysql.com/bug.php?id=46680): Assertion failed in file item\_subselect.cc, line 305 crashing on HAVING subquery
+    Sat 2010-12-25 16:23:16 +0300 [MySQL Bug #46680](https://bugs.mysql.com/bug.php?id=46680): Assertion failed in file item\_subselect.cc, line 305 crashing on HAVING subquery
 * Backport the testcase (the fix itself was included with the subquery optimizations backport)
 * [Revision #2876](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2876)\
   Wed 2011-01-12 15:00:10 +0300
@@ -503,9 +503,9 @@
       Item\_subselect engine with a partial match engine, eventually we call\
       its ::print() method. However the partial match engines are designed only\
       for execution, hence there is no implementation of this print() method.
-  * The fix temporarily removes the assert, until this code is merged with[MWL#106](https://askmonty.org/worklog/?tid=106).
+  * The fix temporarily removes the assert, until this code is merged with [MWL#106](https://askmonty.org/worklog/?tid=106).
 
-[MariaDB 5.3.0](../../old-releases/release-notes-mariadb-5-3-series/mariadb-530-release-notes.md) Changelog — page:[1](mariadb-530-changelog.md)[2](mariadb-530-changelog-p2.md)[3](mariadb-530-changelog-p3.md)[4](mariadb-530-changelog-p4.md)5[6](mariadb-530-changelog-p6.md)
+[MariaDB 5.3.0](../../old-releases/release-notes-mariadb-5-3-series/mariadb-530-release-notes.md) Changelog — page:[1](mariadb-530-changelog.md)[2](mariadb-530-changelog-p2.md)[3](mariadb-530-changelog-p3.md)[4](mariadb-530-changelog-p4.md) 5 [6](mariadb-530-changelog-p6.md)
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

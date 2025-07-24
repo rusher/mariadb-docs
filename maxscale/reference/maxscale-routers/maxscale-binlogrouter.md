@@ -60,7 +60,7 @@ number_of_noncompressed_files=2
 
 There is usually no reason to modify the contents of the binlog directory.\
 Changing the contents can cause **failures** if not done correctly. Never make\
-any changes if running a version prior to 23.08, except when a[bootstrap](maxscale-binlogrouter.md#bootstrap-binlogrouter) is needed.
+any changes if running a version prior to 23.08, except when a [bootstrap](maxscale-binlogrouter.md#bootstrap-binlogrouter) is needed.
 
 A binlog file has the name .\<sequence\_number>. The basename is decided\
 by the primary server. The sequence number increases by one for each file and is six\
@@ -421,9 +421,9 @@ Possible values are:
 * Default: false
 * Dynamic: Yes
 
-Enable[semi-synchronous](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication)\
+Enable [semi-synchronous](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication)\
 replication when replicating from a MariaDB server. If enabled, the binlogrouter\
-will send acknowledgment for each received event. Note that the[rpl\_semi\_sync\_master\_enabled](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication#rpl_semi_sync_master_enabled)\
+will send acknowledgment for each received event. Note that the [rpl\_semi\_sync\_master\_enabled](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication#rpl_semi_sync_master_enabled)\
 parameter must be enabled in the MariaDB server where the replication is done\
 from for the semi-synchronous replication to take place.
 
@@ -566,7 +566,7 @@ START SLAVE;
 ### Galera cluster
 
 When replicating from a Galera cluster, [select\_master](maxscale-binlogrouter.md#select_master) must be\
-set to true, and the servers must be monitored by the[Galera Monitor](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md).\
+set to true, and the servers must be monitored by the [Galera Monitor](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md).\
 Configuring binlogrouter is the same as described above.
 
 The Galera cluster must be configured to use [Wsrep GTID Mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).

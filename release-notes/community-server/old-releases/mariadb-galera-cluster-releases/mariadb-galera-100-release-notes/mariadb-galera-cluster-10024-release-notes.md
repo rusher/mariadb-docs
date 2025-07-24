@@ -7,14 +7,14 @@ The most recent [MariaDB Galera Cluster 10.0](https://github.com/mariadb-corpora
 **Release date:** 26 Feb 2016
 
 MariaDB Galera Cluster 10.0.24 is a [_**Stable**_](../../../about/release-criteria.md) (GA)\
-release. It is a merge of [MariaDB 10.0.24](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10024-release-notes) and[Galera Cluster](https://codership.com/content/using-galera-cluster) with\
+release. It is a merge of [MariaDB 10.0.24](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10024-release-notes) and [Galera Cluster](https://codership.com/content/using-galera-cluster) with\
 additional bug fixes.
 
-Various articles about MariaDB Galera Cluster, including[known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and[how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are\
+Various articles about MariaDB Galera Cluster, including [known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and [how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are\
 available in the [**Galera**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md) section of the documentation.
 
 For a list of changes made in MariaDB Galera Cluster 10.0.24, with links to\
-detailed information on each push, see the[MariaDB Galera Cluster 10.0.24 Changelog](../mariadb-galera-100-changelogs/mariadb-galera-cluster-10024-changelog.md).
+detailed information on each push, see the [MariaDB Galera Cluster 10.0.24 Changelog](../mariadb-galera-100-changelogs/mariadb-galera-cluster-10024-changelog.md).
 
 ## Updates and fixes in this version
 
@@ -41,8 +41,8 @@ Debian 6 "Squeeze".
 * This version of MariaDB Galera Cluster supports `wsrep` API v25 which means\
   MariaDB Galera Cluster can be used with either a 25.2.x or 25.3.x\
   Galera `wsrep` provider. A 25.3.x `wsrep` provider is included in the\
-  MariaDB repositories and is also available from the[downloads](https://downloads.mariadb.org/mariadb-galera/10.0) page.
-* See the [MariaDB 10.0.24 Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10024-release-notes) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10024-changelog.md) for more information on the changes in\
+  MariaDB repositories and is also available from the [downloads](https://downloads.mariadb.org/mariadb-galera/10.0) page.
+* See the [MariaDB 10.0.24 Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10024-release-notes) and [Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10024-changelog.md) for more information on the changes in\
   MariaDB.
 * On Ubuntu and Debian, the Galera Arbitrator daemon (garbd) and the galera\
   library are in two separate packages. The packages are named galera-3\
@@ -53,7 +53,7 @@ Debian 6 "Squeeze".
   mariadb-galera-server (not recommended).
 
 Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\
-with Galera 25.3.x must be started with[wsrep\_provider\_options='socket.checksum=1'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep-variable-details/wsrep_provider_options#socketchecksum) in order to make it backward\
+with Galera 25.3.x must be started with [wsrep\_provider\_options='socket.checksum=1'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep-variable-details/wsrep_provider_options#socketchecksum) in order to make it backward\
 compatible with Galera v2. Galera wsrep providers other than 25.3.x or 25.2.x\
 are not supported.
 

@@ -33,12 +33,12 @@ installed with the following commands.
 MaxScale can also be installed using a tarball.\
 That may be required if you are using a Linux distribution for which there\
 exist no installation package or if you want to install many different\
-MaxScale versions side by side. For instructions on how to do that, please refer to[Install MariaDB MaxScale using a Tarball](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-installing-mariadb-maxscale-using-a-tarball.md).
+MaxScale versions side by side. For instructions on how to do that, please refer to [Install MariaDB MaxScale using a Tarball](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-installing-mariadb-maxscale-using-a-tarball.md).
 
 ### Building MariaDB MaxScale From Source Code
 
 Alternatively you may download the MariaDB MaxScale source and build your own binaries.\
-To do this, refer to the separate document[Building MariaDB MaxScale from Source Code](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code.md)
+To do this, refer to the separate document [Building MariaDB MaxScale from Source Code](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code.md)
 
 ### Assumptions
 
@@ -46,7 +46,7 @@ To do this, refer to the separate document[Building MariaDB MaxScale from Source
 
 MaxScale assumes that memory allocations always succeed and in general does\
 not check for memory allocation failures. This assumption is compatible with\
-the Linux kernel parameter[vm.overcommit\_memory](https://www.kernel.org/doc/Documentation/vm/overcommit-accounting)\
+the Linux kernel parameter [vm.overcommit\_memory](https://www.kernel.org/doc/Documentation/vm/overcommit-accounting)\
 having the value `0`, which is also the default on most systems.
 
 With `vm.overcommit_memory` being `0`, memory _allocations_ made by an\
@@ -78,7 +78,7 @@ cat /proc/sys/vm/overcommit_memory
 steps in configuring your MariaDB MaxScale installation. Follow this tutorial\
 to learn how to configure and start using MaxScale.
 
-For a detailed list of all configuration parameters, refer to the[Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and the module specific documents\
+For a detailed list of all configuration parameters, refer to the [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and the module specific documents\
 listed in the [Documentation Contents](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-contents.md).
 
 ### Encrypting Passwords

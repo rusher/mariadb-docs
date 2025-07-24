@@ -6,9 +6,9 @@ The most recent release of [MariaDB 10.3](../../old-releases/release-notes-maria
 
 **Release date:** 26 Feb 2018
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #583eb96c24](https://github.com/MariaDB/server/commit/583eb96c24)\

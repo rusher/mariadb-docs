@@ -91,7 +91,7 @@ password=mypwd
 
 ### Common Monitor Parameters
 
-For a list of optional parameters that all monitors support, read the[Monitor Common](mariadb-maxscale-2106-maxscale-2106-common-monitor-parameters.md) document.
+For a list of optional parameters that all monitors support, read the [Monitor Common](mariadb-maxscale-2106-maxscale-2106-common-monitor-parameters.md) document.
 
 ### Galera Monitor optional parameters
 
@@ -126,7 +126,7 @@ especially useful if the cluster drops down to one node and an SST is required\
 to increase the cluster size.
 
 The current list of non-blocking SST\
-methods are `xtrabackup`, `xtrabackup-v2` and `mariadb-backup`. Read the[wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables)\
+methods are `xtrabackup`, `xtrabackup-v2` and `mariadb-backup`. Read the [wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables)\
 documentation for more details.
 
 #### `disable_master_role_setting`

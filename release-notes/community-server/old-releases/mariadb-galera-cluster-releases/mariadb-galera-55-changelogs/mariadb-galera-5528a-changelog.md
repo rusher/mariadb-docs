@@ -6,7 +6,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 
 **Release date:** 21 Dec 2012
 
-For the highlights of this release, see the[release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes).
+For the highlights of this release, see the [release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes).
 
 The revision number links will take you to the revision's page on Launchpad. On Launchpad you can view more details of the revision and view diffs of the code modified in that revision.
 
@@ -15,8 +15,8 @@ The revision number links will take you to the revision's page on Launchpad. On 
 * [Revision #3364](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3364) \[merge]\ Thu 2012-12-13 18:01:50 +0400
   * merging.
   * [Revision #3356.1.2](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3356.1.2) \[merge]\ Fri 2012-11-30 13:36:29 +0200
-    * References: [Bug #1066784](https://bugs.launchpad.net/bugs/1066784) - Merged with [MariaDB 5.5.28](../../release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md)a bzr merge -r tag:mariadb-5.5.28a lp:maria/5.5 ...no conflicts
-    * This merges in [MariaDB 5.5.28](../../release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md)a:
+    * References: [Bug #1066784](https://bugs.launchpad.net/bugs/1066784) - Merged with [MariaDB 5.5.28](../../release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md) a bzr merge -r tag:mariadb-5.5.28a lp:maria/5.5 ...no conflicts
+    * This merges in [MariaDB 5.5.28](../../release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md) a:
       * [MariaDB 5.5.28a Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5528a-release-notes.md)
       * [MariaDB 5.5.28a Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5528a-changelog.md)
   * [Revision #3356.1.1](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3356.1.1)\ Wed 2012-11-28 17:38:32 +0200

@@ -6,9 +6,9 @@
 
 **Release date:** 4 Aug 2022
 
-For the highlights of this release, see the[release notes](../../3.0/mariadb-connector-j-307-release-notes.md).
+For the highlights of this release, see the [release notes](../../3.0/mariadb-connector-j-307-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #63317349](https://github.com/mariadb-corporation/mariadb-connector-j/commit/63317349) bump 3.0.7 version

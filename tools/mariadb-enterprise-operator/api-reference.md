@@ -1029,7 +1029,7 @@ _Appears in:_
 
 #### LabelSelector
 
-_Underlying type:_ _[struct{MatchLabels map[string]string "json:\"matchLabels,omitempty\""; MatchExpressions []LabelSelectorRequirement "json:\"matchExpressions,omitempty\""}](#struct{matchlabels-map[string]string-"json:\"matchlabels,omitempty\"";-matchexpressions-[]labelselectorrequirement-"json:\"matchexpressions,omitempty\""})_
+_Underlying type:_ _[struct{MatchLabels map [string]string "json:\"matchLabels,omitempty\""; MatchExpressions []LabelSelectorRequirement "json:\"matchExpressions,omitempty\""}](#struct{matchlabels-map[string]string-"json:\"matchlabels,omitempty\"";-matchexpressions-[]labelselectorrequirement-"json:\"matchexpressions,omitempty\""})_
 
 Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta
 

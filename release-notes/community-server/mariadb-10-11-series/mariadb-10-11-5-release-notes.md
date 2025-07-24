@@ -64,7 +64,7 @@ Thanks, and enjoy MariaDB!
 * innodb protection against dual processes accessing data insufficient ([MDEV-31568](https://jira.mariadb.org/browse/MDEV-31568))
 * ER\_DUP\_KEY in `mysql.innodb_table_stats` upon RENAME on sequence ([MDEV-31607](https://jira.mariadb.org/browse/MDEV-31607))
 * Assertion \`\`!strcmp(index->table->name.m\_name, "SYS\_FOREIGN") || !strcmp(index->table->name.m\_name, "SYS\_FOREIGN\_COLS")'`failed in`btr\_node\_ptr\_max\_size\` ([MDEV-19216](https://jira.mariadb.org/browse/MDEV-19216))
-* InnoDB: Failing assertion: `page_type == i_s_page_type[page_type].type_value` ([MDEV-31386](https://jira.mariadb.org/browse/MDEV-31386))
+* InnoDB: Failing assertion: `page_type == i_s_page_type [page_type].type_value` ([MDEV-31386](https://jira.mariadb.org/browse/MDEV-31386))
 * `btr_estimate_n_rows_in_range()` accesses unfixed, unlatched page ([MDEV-30648](https://jira.mariadb.org/browse/MDEV-30648))
 * `MODIFY COLUMN` can break FK constraints, and lead to unrestorable dumps ([MDEV-31086](https://jira.mariadb.org/browse/MDEV-31086))
 * Recovery or backup failure after [innodb\_undo\_log\_truncate=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_undo_log_truncate) ([MDEV-31487](https://jira.mariadb.org/browse/MDEV-31487))

@@ -6,9 +6,9 @@
 
 **Release date:** 19 Jul 2018
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-0x-release-notes/mariadb-connector-nodejs-070-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-0x-release-notes/mariadb-connector-nodejs-070-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #924f958](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/924f958) - \[misc] change pool implementation to permit node 6 compatibility (removal of async await)

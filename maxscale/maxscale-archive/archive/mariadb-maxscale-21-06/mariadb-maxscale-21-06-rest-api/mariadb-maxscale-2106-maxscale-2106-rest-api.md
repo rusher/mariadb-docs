@@ -57,7 +57,7 @@ user is `admin:mariadb`.
 
 It is highly recommended to enable HTTPS on the MaxScale REST API to make the\
 communication between the client and MaxScale secure. Without it, the passwords\
-can be intercepted from the network traffic. Refer to the[Configuration Guide](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) for more\
+can be intercepted from the network traffic. Refer to the [Configuration Guide](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md) for more\
 details on how to enable HTTPS for the MaxScale REST API.
 
 For more details on how administrative interface users are created and managed,\
@@ -66,7 +66,7 @@ documentation of the [users](mariadb-maxscale-2106-maxscale-2106-admin-user-reso
 
 #### JSON Web Tokens
 
-MaxScale supports authentication via[JSON Web Tokens](https://tools.ietf.org/html/rfc7519).
+MaxScale supports authentication via [JSON Web Tokens](https://tools.ietf.org/html/rfc7519).
 
 ```
 GET /v1/auth
@@ -254,7 +254,7 @@ parameters. Parameters are given in the HTTP query string:`https://localhost:898
   This parameter controls which rows are returned in a REST API response that\
   returns an array in the `data` member (i.e. a request to a resource\
   collection). Requests to individual resources are not filtered.\
-  The argument to the filter parameter must be a key-value pair with a valid[JSON Pointer](https://tools.ietf.org/html/rfc6901) as the key and a valid\
+  The argument to the filter parameter must be a key-value pair with a valid [JSON Pointer](https://tools.ietf.org/html/rfc6901) as the key and a valid\
   JSON type as the value. The comparison is done for each individual object in\
   the `data` array of the result. For example, if the object stored in`data[0]` has a value pointed by the given JSON pointer and that value\
   compares equal to the given value, the array row is kept in the result.\
@@ -323,7 +323,7 @@ If the content has not changed the server responds with a 304 status code. If\
 the content has changed the server responds with a 200 status code and the\
 requested resource.
 
-The value of this header must be a date value in the["HTTP-date"](https://www.ietf.org/rfc/rfc2822.txt) format.
+The value of this header must be a date value in the ["HTTP-date"](https://www.ietf.org/rfc/rfc2822.txt) format.
 
 **If-None-Match**
 
@@ -339,7 +339,7 @@ the same resource at an earlier point in time.
 The request is performed only if the requested resource has not been modified\
 since the provided date.
 
-The value of this header must be a date value in the["HTTP-date"](https://www.ietf.org/rfc/rfc2822.txt) format.
+The value of this header must be a date value in the ["HTTP-date"](https://www.ietf.org/rfc/rfc2822.txt) format.
 
 **X-HTTP-Method-Override**
 

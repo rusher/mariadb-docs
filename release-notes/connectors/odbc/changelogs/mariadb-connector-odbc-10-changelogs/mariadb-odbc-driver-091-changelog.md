@@ -6,7 +6,7 @@ The most recent [_**Stable**_](../../../../community-server/about/release-criter
 
 **Release date:** 2 Apr 2014
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-odbc-10-release-notes/mariadb-odbc-driver-09-beta.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-odbc-10-release-notes/mariadb-odbc-driver-09-beta.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\

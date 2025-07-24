@@ -6,9 +6,9 @@
 
 **Release date:** 18 Jun 2015
 
-For the highlights of this release, see the[release notes](../../1.1/mariadb-connector-j-119-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.1/mariadb-connector-j-119-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #fae71ea](https://github.com/mariadb-corporation/mariadb-connector-j/commit/fae71ea)\
   2015-06-04 13:20:03 +0200

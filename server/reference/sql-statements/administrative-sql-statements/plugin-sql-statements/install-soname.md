@@ -27,7 +27,7 @@ If the value of [plugin\_dir](../../../../ha-and-performance/optimization-and-tu
 
 `INSTALL SONAME` also loads and initializes the plugin code tomake the plugin available for use. A plugin is initialized by executing itsinitialization function, which handles any setup that the plugin must performbefore it can be used.
 
-To use `INSTALL SONAME`, you must have the[INSERT privilege](../../account-management-sql-statements/grant.md) for the `mysql.plugin` table.
+To use `INSTALL SONAME`, you must have the [INSERT privilege](../../account-management-sql-statements/grant.md) for the `mysql.plugin` table.
 
 At server startup, the server loads and initializes any plugin that islisted in the `mysql.plugin` table. This means that a plugin is installedwith `INSTALL SONAME` only once, not every time the serverstarts. Plugin loading at startup does not occur if the server is started withthe `--skip-grant-tables` option.
 

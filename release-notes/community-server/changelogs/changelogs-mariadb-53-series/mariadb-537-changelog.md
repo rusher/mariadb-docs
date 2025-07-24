@@ -4,7 +4,7 @@
 
 **Release date:** 4 May 2012
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-537-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-537-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\
@@ -53,7 +53,7 @@ modified in that revision.
   * merge
   * [Revision #2732.53.34](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2732.53.34)\
     Wed 2012-05-02 16:53:02 +0200
-    * [Bug #993103](https://bugs.launchpad.net/bugs/993103): Wrong result with LAST\_DAY('0000-00-00 00:00:00')IS NULL in WHERE condition
+    * [Bug #993103](https://bugs.launchpad.net/bugs/993103): Wrong result with LAST\_DAY('0000-00-00 00:00:00') IS NULL in WHERE condition
     * Fix is to set maybe\_null flag for Item\_func\_last\_day.
   * [Revision #2732.53.33](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2732.53.33)\
     Wed 2012-04-25 15:30:19 +0200
@@ -169,7 +169,7 @@ modified in that revision.
       * fixes [Bug #983047](https://bugs.launchpad.net/bugs/983047)
       * [MDEV-221](https://jira.mariadb.org/browse/MDEV-221) - Properly escape command line when starting mysql\_install\_db\
         since password characters can contain quotes or spaces.
-      * The proper quoting method for command line arguments used here was extracted from[everyone-quotes-arguments-the-wrong-way.aspx](https://blogs.msdn.com/b/twistylittlepassagesallalike/archive/2011/04/23/everyone-quotes-arguments-the-wrong-way.aspx)
+      * The proper quoting method for command line arguments used here was extracted from [everyone-quotes-arguments-the-wrong-way.aspx](https://blogs.msdn.com/b/twistylittlepassagesallalike/archive/2011/04/23/everyone-quotes-arguments-the-wrong-way.aspx)
       * Additionally, mysql\_install\_db.exe now passes root password to "`mysqld.exe --bootstrap`"
       * in hexadecimal form, to handle potential special chars inside password string literal.
 

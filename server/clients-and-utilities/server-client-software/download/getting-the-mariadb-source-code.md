@@ -8,7 +8,7 @@ The MariaDB source is hosted on GitHub: [server](https://github.com/MariaDB/serv
 git clone https://github.com/MariaDB/server mariadb-server
 ```
 
-If you want a source tarball for a specific released MariaDB version, you can find it at[downloads.mariadb.org](https://downloads.mariadb.org).
+If you want a source tarball for a specific released MariaDB version, you can find it at [downloads.mariadb.org](https://downloads.mariadb.org).
 
 At any given time, developers will be working on their own branches locally or on GitHub, with the main MariaDB branches receiving pushes less often.
 

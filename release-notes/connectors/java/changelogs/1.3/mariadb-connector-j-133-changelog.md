@@ -6,9 +6,9 @@
 
 **Release date:** 8 Dec 2015
 
-For the highlights of this release, see the[release notes](../../1.3/mariadb-connector-j-133-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.3/mariadb-connector-j-133-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 ## Fixes
 
@@ -18,8 +18,8 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [CONJ-226](https://jira.mariadb.org/browse/CONJ-226) : PreparedStatement return NULL When TIME column value=00:00:00. [Revision #528fa17](https://github.com/mariadb-corporation/mariadb-connector-j/commit/528fa17) 2015-11-30
 * [CONJ-227](https://jira.mariadb.org/browse/CONJ-227) : Mariadb alias in url connection string wasn't working in HA mode. [Revision #4a5b824](https://github.com/mariadb-corporation/mariadb-connector-j/commit/4a5b824) 2015-11-30
 * [CONJ-228](https://jira.mariadb.org/browse/CONJ-228) : Handle unsigned numeric data.
-  * [Revision #cf73089](https://github.com/mariadb-corporation/mariadb-connector-j/commit/cf73089)2015-12-03
-  * [Revision #e9c756d](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e9c756d)2015-12-04
+  * [Revision #cf73089](https://github.com/mariadb-corporation/mariadb-connector-j/commit/cf73089) 2015-12-03
+  * [Revision #e9c756d](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e9c756d) 2015-12-04
 * [CONJ-224](https://jira.mariadb.org/browse/CONJ-224) : Metadata driver version. [Revision #749bca5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/749bca5) 2015-12-04
 * [CONJ-229](https://jira.mariadb.org/browse/CONJ-229) : Host is not mandatory for named pipe connection. [Revision #43de452](https://github.com/mariadb-corporation/mariadb-connector-j/commit/43de452) 2015-12-02
 * [CONJ-179](https://jira.mariadb.org/browse/CONJ-179) : Statement.getMoreResults() was returning wrong value. [Revision #76cfdfe](https://github.com/mariadb-corporation/mariadb-connector-j/commit/76cfdfe) 2015-11-22

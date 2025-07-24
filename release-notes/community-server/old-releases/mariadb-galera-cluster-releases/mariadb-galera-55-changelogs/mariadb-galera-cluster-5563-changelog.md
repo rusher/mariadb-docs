@@ -4,7 +4,7 @@
 
 **Release date:** 1 Feb 2019
 
-For the highlights of this release, see the[release notes](../mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes.md). For changes in\
+For the highlights of this release, see the [release notes](../mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes.md). For changes in\
 MariaDB, see the [MariaDB 5.5.63 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5563-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\

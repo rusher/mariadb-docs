@@ -8,7 +8,7 @@ Crosses(g1,g2)
 
 ## Description
 
-Returns `1` if `g1` spatially crosses `g2`. Returns `NULL` if `g1` is a [Polygon](../geometry-constructors/polygon.md) or a [MultiPolygon](../geometry-constructors/multipolygon.md), or if `g2` is a[Point](../geometry-constructors/point.md) or a [MultiPoint](../geometry-constructors/multipoint.md). Otherwise, returns `0`.
+Returns `1` if `g1` spatially crosses `g2`. Returns `NULL` if `g1` is a [Polygon](../geometry-constructors/polygon.md) or a [MultiPolygon](../geometry-constructors/multipolygon.md), or if `g2` is a [Point](../geometry-constructors/point.md) or a [MultiPoint](../geometry-constructors/multipoint.md). Otherwise, returns `0`.
 
 The term spatially crosses denotes a spatial relation between two given geometries that has the following properties:
 

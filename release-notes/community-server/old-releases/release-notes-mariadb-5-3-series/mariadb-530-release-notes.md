@@ -15,7 +15,7 @@ For a list of every change made in [MariaDB 5.3.0](mariadb-530-release-notes.md)
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-Be notified of new releases automatically by adding the[releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
+Be notified of new releases automatically by adding the [releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
 your favorite feed reader or by [subscribing](https://mariadb.org) to the\
 announce 'at' mariadb.org announcement list (this is a low traffic,\
 announce-only list).

@@ -111,7 +111,7 @@ Oracle mode makes the following changes to [Prepared Statements](https://app.git
 | Oracle type                | MariaDB synonym                                                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `VARCHAR2`                 | [VARCHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/varchar)                  |
-| `NUMBER(M[,D])`            | [DECIMAL(M\[,D\])](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal)        |
+| `NUMBER(M [,D])`            | [DECIMAL(M\[,D\])](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal)        |
 | `NUMBER`                   | [DOUBLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/double)                   |
 | `DATE` (with time portion) | MariaDB [DATETIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime) |
 | `RAW`                      | [VARBINARY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/varbinary)              |

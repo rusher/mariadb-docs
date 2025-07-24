@@ -4,7 +4,7 @@
 
 **Release date:** 6 Feb 2023
 
-[MariaDB 10.3](what-is-mariadb-103.md) is the previous stable series of MariaDB, supported until May 2023, and an evolution of[MariaDB 10.2](../release-notes-mariadb-10-2-series/what-is-mariadb-102.md) with several entirely new features not found anywhere else and\
+[MariaDB 10.3](what-is-mariadb-103.md) is the previous stable series of MariaDB, supported until May 2023, and an evolution of [MariaDB 10.2](../release-notes-mariadb-10-2-series/what-is-mariadb-102.md) with several entirely new features not found anywhere else and\
 with backported and reimplemented features from MySQL.
 
 [MariaDB 10.3.38](mariadb-10-3-38-release-notes.md) is a [_**Stable (GA)**_](../../about/release-criteria.md) release.

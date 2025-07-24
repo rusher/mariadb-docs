@@ -36,7 +36,7 @@ in previous [changelogs](../../../connectors/odbc/changelogs/) it includes the f
 * Fix for XtraDB 9: missing DBUG\_RETURN.
 * Fix crashes by taking kernel mutex when calling srv\_table\_reserve\_slot()\
   during thread startup.
-* Apply to XtraDB MySQL/build-in innodb patches for [MySQL Bug #49032](https://bugs.mysql.com/bug.php?id=49032) and[MySQL Bug #47720](https://bugs.mysql.com/bug.php?id=47720).
+* Apply to XtraDB MySQL/build-in innodb patches for [MySQL Bug #49032](https://bugs.mysql.com/bug.php?id=49032) and [MySQL Bug #47720](https://bugs.mysql.com/bug.php?id=47720).
 * Fix freed-twice error in XtraDB (from InnoDB plugin 1.0.6).
 * Fixed race condition when innobase\_shutdown\_for\_mysql() was called before\
   parser was initialized (as it's initialized on first usage).

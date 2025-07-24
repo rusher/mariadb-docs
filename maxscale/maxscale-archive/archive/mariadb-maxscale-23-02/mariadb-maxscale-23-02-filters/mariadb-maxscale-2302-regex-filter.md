@@ -20,11 +20,11 @@
 
 The Regex filter is a filter module for MariaDB MaxScale that is able to rewrite\
 query content using regular expression matches and text substitution. The\
-regular expressions use the[PCRE2 syntax](https://www.pcre.org/current/doc/html/pcre2syntax.html).
+regular expressions use the [PCRE2 syntax](https://www.pcre.org/current/doc/html/pcre2syntax.html).
 
 PCRE2 library uses a different syntax than POSIX to refer to capture\
 groups in the replacement string. The main difference is the usage of the dollar\
-character instead of the backslash character for references e.g. `$1` instead of`\1`. For more details about the replacement string differences, please read the[Creating a new string with substitutions](https://www.pcre.org/current/doc/html/pcre2api.html#SEC34)\
+character instead of the backslash character for references e.g. `$1` instead of`\1`. For more details about the replacement string differences, please read the [Creating a new string with substitutions](https://www.pcre.org/current/doc/html/pcre2api.html#SEC34)\
 chapter in the PCRE2 manual.
 
 ### Configuration
@@ -72,7 +72,7 @@ options=case
 * Values: `ignorecase`, `case`, `extended`
 * Default: `ignorecase`
 
-The _options_-parameter affects how the patterns are compiled as[usual](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters).
+The _options_-parameter affects how the patterns are compiled as [usual](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters).
 
 #### `replace`
 
@@ -146,7 +146,7 @@ The optional log\_trace parameter toggles the logging of non-matching and\
 matching queries with their replacements into the log file on the _info_ level.\
 This is the preferred method of diagnosing the matching of queries since the log\
 level can be changed at runtime. For more details about logging levels and\
-session specific logging, please read the[Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#global-settings).
+session specific logging, please read the [Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#global-settings).
 
 ```
 log_trace=true

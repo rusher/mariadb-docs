@@ -20,7 +20,7 @@ New global variable: [key\_cache\_segments](../../../server-usage/storage-engine
 key cache. This is the default. If `key_cache_segments` is`1` (or higher) then the new key cache segmentation code is used. In practice there is no practical use of a single-segment segmented key cache except for testing purposes, and setting`key_cache_segments = 1` should be slower than any other option and should not be used in production.
 
 Other global variables used when working with regular key caches also\
-apply to segmented key caches: [key\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size),[key\_cache\_age\_threshold](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold), [key\_cache\_block\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size), and[key\_cache\_division\_limit](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit).
+apply to segmented key caches: [key\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size),[key\_cache\_age\_threshold](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold), [key\_cache\_block\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size), and [key\_cache\_division\_limit](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit).
 
 ## Segmented Key Cache Statistics
 

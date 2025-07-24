@@ -27,7 +27,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 ## Changelog
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[changelog](../changelogs/mariadb-connector-c-22-changelogs/mariadb-connector-c-223-changelog.md).
+information on each push, see the [changelog](../changelogs/mariadb-connector-c-22-changelogs/mariadb-connector-c-223-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

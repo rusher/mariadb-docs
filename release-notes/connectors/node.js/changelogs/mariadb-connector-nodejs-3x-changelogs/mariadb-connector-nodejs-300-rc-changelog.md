@@ -6,9 +6,9 @@
 
 **Release date:** 20 Oct 2021
 
-For the highlights of this release, see the[release notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-0-0-rc-release-notes.md).
+For the highlights of this release, see the [release notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-0-0-rc-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-nodejs) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #d78ba3b](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/d78ba3b) \[[CONJS-180](https://jira.mariadb.org/browse/CONJS-180)] compatibility: support mysql2 `stream` option #173

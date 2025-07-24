@@ -25,7 +25,7 @@ Provisioning and lifecycle management of MariaDB Enterprise products:
 * Officially certified through [Red Hat’s Operator Certification Program](https://connect.redhat.com/en/partner-with-us/red-hat-openshift-certification)
 * Joint MariaDB + Red Hat support for OpenShift-related issues
 * Listed in the [Red Hat Ecosystem Catalog](https://catalog.redhat.com/software/container-stacks/detail/65789bcbe17f1b31944acb1d)
-* Available in the [OpenShift console ](https://app.gitbook.com/s/kuTXWg0NDbRx6XUeYpGD/mariadb-enterprise-operator/installation/openshift#openshift-console)via the certified catalog
+* Available in the [OpenShift console ](https://app.gitbook.com/s/kuTXWg0NDbRx6XUeYpGD/mariadb-enterprise-operator/installation/openshift#openshift-console) via the certified catalog
 
 ### UBI-Based Images
 

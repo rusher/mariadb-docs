@@ -1,7 +1,7 @@
 # Generic Build Instructions
 
 The instructions on this page will help you compile [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md) from source.\
-Links to more complete instructions for specific platforms can be found on the[source](./) page.
+Links to more complete instructions for specific platforms can be found on the [source](./) page.
 
 First, [get a copy of the MariaDB source](../../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md).
 
@@ -172,7 +172,7 @@ mysql-test/mysql-test-run --force
 
 Each of the above are run from the build directory. There is no need to '`make install`/`cmake --install .`' MariaDB prior to running them.
 
-**NOTE:** If you are doing more extensive testing or debugging of MariaDB (like with real application data and workloads) you may want to start and run MariaDB directly from the source directory instead of installing it with '`sudo make install`'. If so, see[Running MariaDB from the Source Directory](../../../starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md).
+**NOTE:** If you are doing more extensive testing or debugging of MariaDB (like with real application data and workloads) you may want to start and run MariaDB directly from the source directory instead of installing it with '`sudo make install`'. If so, see [Running MariaDB from the Source Directory](../../../starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md).
 
 ## Increasing Version Number or Tagging a Version
 

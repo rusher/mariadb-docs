@@ -97,7 +97,7 @@ State updated
 -rw-rw---- 1 mysql my     1039 Sep 21 17:58 /tmp/new_table.frm
 ```
 
-The procedure for MyISAM tables is identical, except that[myisamchk](../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) doesn't have the `--ignore-control-file` option.
+The procedure for MyISAM tables is identical, except that [myisamchk](../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) doesn't have the `--ignore-control-file` option.
 
 ## Copying InnoDB's Transportable Tablespaces
 

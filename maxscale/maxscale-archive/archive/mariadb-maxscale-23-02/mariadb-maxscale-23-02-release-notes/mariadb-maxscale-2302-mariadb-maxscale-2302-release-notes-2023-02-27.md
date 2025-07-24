@@ -41,7 +41,7 @@ new endpoint for canceling active queries was added. The `POST /sql/:id/cancel`\
 endpoint will interrupt the ongoing operation on the given connection.
 
 For more information on how ODBC type connections differ from native MariaDB\
-connections, refer to the SQL resource[documentation](https://mariadb.com/kb/en/REST-API/Resources-SQL#open-sql-connection-to-server).
+connections, refer to the SQL resource [documentation](https://mariadb.com/kb/en/REST-API/Resources-SQL#open-sql-connection-to-server).
 
 **Asynchronous Query API**
 
@@ -60,7 +60,7 @@ into MariaDB. The initial version supports MariaDB-to-MariaDB and\
 PostgreSQL-to-MariaDB migrations as well as generic migrations done via the ODBC\
 catalog functions.
 
-For more information on the new API functions, refer to the SQL resource[documentation](https://mariadb.com/kb/en/REST-API/Resources-SQL#prepare-etl-operation).
+For more information on the new API functions, refer to the SQL resource [documentation](https://mariadb.com/kb/en/REST-API/Resources-SQL#prepare-etl-operation).
 
 #### [MXS-3003](https://jira.mariadb.org/browse/MXS-3003) Support inbound proxy protocol
 
@@ -77,28 +77,28 @@ for more information.
 #### [MXS-3269](https://jira.mariadb.org/browse/MXS-3260) Make it possible to change at runtime the number of threads used by MaxScale
 
 It is now possible to change at runtime the number of threads MaxScale\
-uses for routing client traffic. See[here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#threads-1)\
+uses for routing client traffic. See [here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#threads-1)\
 for more information.
 
 #### [MXS-3708](https://jira.mariadb.org/browse/MXS-3708) Cache runtime modification
 
-Some configuration parameters, most notable the[rules](../mariadb-maxscale-23-02-filters/mariadb-maxscale-2302-cache.md#rules),\
+Some configuration parameters, most notable the [rules](../mariadb-maxscale-23-02-filters/mariadb-maxscale-2302-cache.md#rules),\
 can now be changed at runtime.
 
 #### [MXS-3827](https://jira.mariadb.org/browse/MXS-3827) Audit log for the REST API
 
-The REST-API calls to MaxScale can now be logged. See[here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#administration-audit-file)\
+The REST-API calls to MaxScale can now be logged. See [here](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#administration-audit-file)\
 for more information.
 
 #### [MXS-4106](https://jira.mariadb.org/browse/MXS-4106) Redis authentication
 
-Authentication can be enabled when Redis is used as the cache storage. See[here](../mariadb-maxscale-23-02-filters/mariadb-maxscale-2302-cache.md#storage_redis) for more information.
+Authentication can be enabled when Redis is used as the cache storage. See [here](../mariadb-maxscale-23-02-filters/mariadb-maxscale-2302-cache.md#storage_redis) for more information.
 
 #### [MXS-4107](https://jira.mariadb.org/browse/MXS-4107) TLS encrypted Redis connections
 
 SSL/TLS can now be used in the communication between MaxScale and\
 the Redis server when the latter is used as the storage for the\
-cache. See[here](../mariadb-maxscale-23-02-filters/mariadb-maxscale-2302-cache.md#storage_redis) for more information.
+cache. See [here](../mariadb-maxscale-23-02-filters/mariadb-maxscale-2302-cache.md#storage_redis) for more information.
 
 #### [MXS-4182](https://jira.mariadb.org/browse/MXS-4182) Session load indicator
 
@@ -108,7 +108,7 @@ during the previous 30 seconds.
 
 #### [MXS-4270](https://jira.mariadb.org/browse/MXS-4270) ed25519 authentication support
 
-MariaDB Server ed25519 authentication plugin support added. See[here](../mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-ed25519-authenticator.md) for more information.
+MariaDB Server ed25519 authentication plugin support added. See [here](../mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-ed25519-authenticator.md) for more information.
 
 #### [MXS-4320](https://jira.mariadb.org/browse/MXS-4320) Let maxctrl show datetime values using local client timezone
 

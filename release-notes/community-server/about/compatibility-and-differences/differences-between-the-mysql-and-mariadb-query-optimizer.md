@@ -16,7 +16,7 @@ In February 2013, MySQL 5.6 had its first stable release. It had a number of new
 
 ![optimizer-areas-mysql-56-r2](../../../.gitbook/assets/optimizer3.PNG)
 
-In April 2014, [MariaDB 10.0](../../old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) became stable. As compared to [MariaDB 5.5](../../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)had some features that were backported from MySQL 5.6, and also some new features were implemented:
+In April 2014, [MariaDB 10.0](../../old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) became stable. As compared to [MariaDB 5.5](../../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) had some features that were backported from MySQL 5.6, and also some new features were implemented:
 
 ![optimizer-areas-mariadb-100-r2](../../../.gitbook/assets/optimizer4.PNG)
 

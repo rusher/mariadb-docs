@@ -135,7 +135,7 @@ UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, "column_name", "value")
   WHERE id=1;
 ```
 
-Note: `COLUMN_ADD()` is a regular function (just like[CONCAT()](../sql-statements/built-in-functions/string-functions/concat.md)), hence, in order to update the value in the table you have to use the `UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col, ....)` pattern.
+Note: `COLUMN_ADD()` is a regular function (just like [CONCAT()](../sql-statements/built-in-functions/string-functions/concat.md)), hence, in order to update the value in the table you have to use the `UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col, ....)` pattern.
 
 #### COLUMN\_GET
 

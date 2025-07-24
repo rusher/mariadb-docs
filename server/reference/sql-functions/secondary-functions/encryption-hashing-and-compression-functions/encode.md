@@ -12,7 +12,7 @@ ENCODE(str,pass_str)
 `ENCODE` is not considered cryptographically secure, and should not be used for password encryption.
 {% endhint %}
 
-Encrypt `str` using `pass_str` as the password. To decrypt the result, use[DECODE()](decode.md).
+Encrypt `str` using `pass_str` as the password. To decrypt the result, use [DECODE()](decode.md).
 
 The result is a binary string of the same length as `str`.
 

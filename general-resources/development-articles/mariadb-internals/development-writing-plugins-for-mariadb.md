@@ -11,13 +11,13 @@ See [Pluggable Authentication](https://github.com/mariadb-corporation/docs-serve
 ## Storage Engine Plugins
 
 Storage engines can extend `CREATE TABLE` syntax with optional\
-index, field, and table attribute clauses. See[Extending CREATE TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information.
+index, field, and table attribute clauses. See [Extending CREATE TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information.
 
 See [Storage Engine Development](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/storage-engines/storage-engines-storage-engine-development/README.md).
 
 ## Information Schema Plugins
 
-Information Schema plugins can have their own [FLUSH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) and [SHOW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show) statements. See[FLUSH and SHOW for Information Schema plugins](information-schema-plugins-show-and-flush-statements.md).
+Information Schema plugins can have their own [FLUSH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) and [SHOW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show) statements. See [FLUSH and SHOW for Information Schema plugins](information-schema-plugins-show-and-flush-statements.md).
 
 ## Encryption Plugins
 
@@ -36,7 +36,7 @@ the MySQL plugin declaration in the following ways:
 2. it has a 'maturity' declaration
 3. it has a field for a text representation of the version field
 
-MariaDB can load plugins that only have the MySQL plugin declaration but both `PLUGIN_MATURITY` and `PLUGIN_AUTH_VERSION` will show up as 'Unknown' in the[INFORMATION\_SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema).
+MariaDB can load plugins that only have the MySQL plugin declaration but both `PLUGIN_MATURITY` and `PLUGIN_AUTH_VERSION` will show up as 'Unknown' in the [INFORMATION\_SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema).
 
 For compiled-in (not dynamically loaded) plugins, the presence of the MariaDB plugin declaration is mandatory.
 

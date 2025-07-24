@@ -10,7 +10,7 @@ This is a [alpha](../../../community-server/about/release-criteria.md) release o
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
 
-MariaDB Connector/ODBC 3.2.0 is built on top of[MariaDB Connector/C v.3.3.2](../../c/mariadb-connector-c-33-release-notes/mariadb-connector-c-332-release-notes.md), and contains all fixes and changes from [MariaDB Connector/ODBC v.3.1.18](../mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-18-release-notes.md)
+MariaDB Connector/ODBC 3.2.0 is built on top of [MariaDB Connector/C v.3.3.2](../../c/mariadb-connector-c-33-release-notes/mariadb-connector-c-332-release-notes.md), and contains all fixes and changes from [MariaDB Connector/ODBC v.3.1.18](../mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-18-release-notes.md)
 
 ## Notable Changes
 
@@ -29,7 +29,7 @@ ATTR={<attrname1>=<attrvalue1>[,<attrname2=attrvalue2,...]}
 ## Changelog
 
 For a complete list of every change made in this release, with links to\
-detailed information on each push, see the[changelog](../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-0-changelog.md).
+detailed information on each push, see the [changelog](../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-0-changelog.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

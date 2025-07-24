@@ -6,9 +6,9 @@
 
 **Release date:** 6 Feb 2023
 
-For the highlights of this release, see the[release notes](../../old-releases/mariadb-10-5-series/mariadb-10-5-19-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/mariadb-10-5-series/mariadb-10-5-19-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.5) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.5) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.4.28](../changelogs-mariadb-10-4-series/mariadb-10-4-28-changelog.md)

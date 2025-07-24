@@ -11,7 +11,7 @@ The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.5.20](mariadb-5520-release-notes.md)-alpha, with links to detailed\
-information on each push, see the[MariaDB 5.5.20 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5520-changelog.md).
+information on each push, see the [MariaDB 5.5.20 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5520-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.

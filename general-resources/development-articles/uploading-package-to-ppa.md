@@ -76,7 +76,7 @@ Restart GPG-agent and source '/.bashrc', or restart session
 * If this gives timeout error, keep re-trying after a while
 
 9. Upload the key's fingerprint here:\
-   Upload [ImportingYourPGPKey](https://help.launchpad.net/YourAccount/ImportingYourPGPKey) fingerprint here[+editpgpkeys](https://launchpad.net/~rsurve/+editpgpkeys)
+   Upload [ImportingYourPGPKey](https://help.launchpad.net/YourAccount/ImportingYourPGPKey) fingerprint here [+editpgpkeys](https://launchpad.net/~rsurve/+editpgpkeys)
 10. `gpg --export [your-key-id] > ~/debian-packaging/pub.key`
 11. `gpg --export-secret-key [your-key-id] > ~/debian-packaging/secret.key`
 

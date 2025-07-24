@@ -1,6 +1,6 @@
 # Avrorouter Tutorial
 
-This tutorial is a short introduction to the[Avrorouter](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-avrorouter.md), how to set it up and how it interacts\
+This tutorial is a short introduction to the [Avrorouter](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-avrorouter.md), how to set it up and how it interacts\
 with the binlogrouter.
 
 The first part configures the services and sets them up for the binary log to Avro\
@@ -125,7 +125,7 @@ This will start the replication of binary logs from the primary server at\
 replicates is `binlog.000015`. This is the same file that was configured as the\
 starting file in the avrorouter.
 
-For more details about the SQL commands, refer to the[Binlogrouter](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-binlogrouter.md) documentation.
+For more details about the SQL commands, refer to the [Binlogrouter](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-binlogrouter.md) documentation.
 
 After the binary log streaming has started, the avrorouter will automatically\
 start processing the binlogs.

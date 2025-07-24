@@ -78,7 +78,7 @@ capability of a cluster while maintaining consistency. This is achieved by\
 splitting the query load into read and write queries. Read queries, which do not\
 modify data, are spread across multiple nodes while all write queries will be\
 sent to a single node. For more details on how the load balancing works, refer\
-to [slave\_selection\_criteria](mariadb-maxscale-2308-readwritesplit.md#slave_selection_criteria) and[master\_accept\_reads](mariadb-maxscale-2308-readwritesplit.md#master_accept_reads).
+to [slave\_selection\_criteria](mariadb-maxscale-2308-readwritesplit.md#slave_selection_criteria) and [master\_accept\_reads](mariadb-maxscale-2308-readwritesplit.md#master_accept_reads).
 
 The router is designed to be used with a traditional Primary-Replica replication\
 cluster. It automatically detects changes in the primary server and will use the\
@@ -111,7 +111,7 @@ Readwritesplit router-specific settings are specified in the configuration file\
 of MariaDB MaxScale in its specific section. The section can be freely named but\
 the name is used later as a reference in a listener section.
 
-For more details about the standard service parameters, refer to the[Configuration Guide](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/).
+For more details about the standard service parameters, refer to the [Configuration Guide](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/).
 
 Starting with 2.3, all router parameters can be configured at runtime. Use`maxctrl alter service` to modify them. The changed configuration will only be\
 taken into use by new sessions.
@@ -206,9 +206,9 @@ be up to date in order for them to be used for routing.
 
 Note that this feature does not guarantee that writes done on the primary are\
 visible for reads done on the replica. This is mainly due to the method of\
-replication lag measurement. For a feature that guarantees this, refer to[causal\_reads](mariadb-maxscale-2308-readwritesplit.md#causal_reads).
+replication lag measurement. For a feature that guarantees this, refer to [causal\_reads](mariadb-maxscale-2308-readwritesplit.md#causal_reads).
 
-The lag is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). Note that since\
+The lag is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). Note that since\
 the granularity of the lag is seconds, a lag specified in milliseconds will be\
 rejected, even if the duration is longer than a second.
 
@@ -280,7 +280,7 @@ SELECT @myid; -- Might return 1 or 0
 #### `connection_keepalive`
 
 **Note:** This parameter has been moved into the MaxScale core. For the\
-current documentation, read the[connection\_keepalive](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#connection_keepalive)\
+current documentation, read the [connection\_keepalive](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#connection_keepalive)\
 section in the configuration guide.
 
 Send keepalive pings to backend servers. This feature was introduced in MaxScale\
@@ -402,17 +402,17 @@ future MaxScale release.
 
 #### `max_sescmd_history`
 
-This parameter has been moved to[the MaxScale core](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#max_sescmd_history)\
+This parameter has been moved to [the MaxScale core](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#max_sescmd_history)\
 in MaxScale 6.0.
 
 #### `disable_sescmd_history`
 
-This parameter has been moved to[the MaxScale core](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#disable_sescmd_history)\
+This parameter has been moved to [the MaxScale core](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#disable_sescmd_history)\
 in MaxScale 6.0.
 
 #### `prune_sescmd_history`
 
-This parameter has been moved to[the MaxScale core](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#prune_sescmd_history)\
+This parameter has been moved to [the MaxScale core](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#prune_sescmd_history)\
 in MaxScale 6.0.
 
 #### `master_accept_reads`
@@ -520,7 +520,7 @@ will not be closed even if all backend connections for that session have\
 failed. This is done in the hopes that before the next query from the idle\
 session arrives, a reconnection to one of the replicas is made. However, this can\
 leave idle connections around unless the client application actively closes\
-them. To prevent this, use the[connection\_timeout](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#connection_timeout)\
+them. To prevent this, use the [connection\_timeout](https://mariadb.com/kb/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#connection_timeout)\
 parameter.
 
 **Note:** If `master_failure_mode` is set to `error_on_write` and the connection\
@@ -594,7 +594,7 @@ risk.
 
 The duration to wait until an error is returned to the client when`delayed_retry` is enabled. The default value is 10 seconds.
 
-The timeout is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The timeout is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,\
@@ -619,7 +619,7 @@ If no replacement node becomes available, the client connection is closed.
 
 To control how long a transaction replay can take, use`transaction_replay_timeout`.
 
-Please refer to the[Transaction Replay Limitations](mariadb-maxscale-2308-readwritesplit.md#transaction-replay-limitations) section for\
+Please refer to the [Transaction Replay Limitations](mariadb-maxscale-2308-readwritesplit.md#transaction-replay-limitations) section for\
 a more detailed explanation of what should and should not be done with\
 transaction replay.
 
@@ -673,7 +673,7 @@ The time how long transactions are attempted for. This feature is disabled by\
 default and was added in MaxScale 6.2.1. To explicitly disable this feature, set\
 the value to 0 seconds.
 
-The timeout is[a duration type](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations)\
+The timeout is [a duration type](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations)\
 and the value must include a unit for the duration.
 
 When `transaction_replay_timeout` is enabled, the time a transaction replay can\
@@ -825,7 +825,7 @@ If a client connection modifies the database and `causal_reads` is enabled, any\
 subsequent reads performed on replica servers will be done in a manner that\
 prevents replication lag from affecting the results.
 
-The following table contains a comparison of the modes. Read the[implementation of causal\_reads](mariadb-maxscale-2308-readwritesplit.md#implementation-of-causal_reads) for more\
+The following table contains a comparison of the modes. Read the [implementation of causal\_reads](mariadb-maxscale-2308-readwritesplit.md#implementation-of-causal_reads) for more\
 information on what a sync consists of and why minimizing the number of them is\
 important.
 
@@ -848,7 +848,7 @@ being routed almost exclusively to the primary server.
 addition to this, the `session_track_system_variables` parameter must include`last_gtid` in its list of tracked system variables.
 
 **Note:** This feature also enables multi-statement execution of SQL in the\
-protocol. This is equivalent to using `allowMultiQueries=true` in[Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/#allowmultiqueries)\
+protocol. This is equivalent to using `allowMultiQueries=true` in [Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/#allowmultiqueries)\
 or using `CLIENT_MULTI_STATEMENTS` and `CLIENT_MULTI_RESULTS` in the\
 Connector/C. The _Implementation of causal\_reads_ section explains why this is\
 necessary.
@@ -892,7 +892,7 @@ The possible values for this parameter are:
   This mode is the inverse of the `local` mode in the sense that it improves\
   read latency at the cost of read scalability while still retaining the\
   causality guarantees for reads. This functionality can also be considered an\
-  improved version of the functionality that the[CCRFilter](../mariadb-maxscale-23-08-filters/mariadb-maxscale-2308-consistent-critical-read-filter.md) module provides.
+  improved version of the functionality that the [CCRFilter](../mariadb-maxscale-23-08-filters/mariadb-maxscale-2308-consistent-critical-read-filter.md) module provides.
 * `fast_global`
 * This mode is identical to the `fast` mode except that it uses the global\
   GTID instead of the session local one. This is similar to how `local` and`global` modes differ from each other. The value of `causal_reads_timeout`\
@@ -982,7 +982,7 @@ SET @maxscale_secret_variable=(
 ```
 
 The `SET` command will synchronize the replica to a certain logical point in the\
-replication stream (see[MASTER\_GTID\_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait) for more\
+replication stream (see [MASTER\_GTID\_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait) for more\
 details). If the synchronization fails, the query will not run and it will be\
 retried on the server where the transaction was originally done.
 
@@ -1043,7 +1043,7 @@ server which would cause the connection to be closed and a warning to be logged.
 
 * This feature does not work with Galera or any other non-standard\
   replication mechanisms. As Galera does not update the `gtid_slave_pos`\
-  variable when events are replicated via the Galera library, the[MASTER\_GTID\_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait)\
+  variable when events are replicated via the Galera library, the [MASTER\_GTID\_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait)\
   function used by MaxScale to synchronize reads will wait until the\
   timeout. With Galera this is not a serious issue as it, by nature, is a\
   mostly-synchronous replication mechanism.
@@ -1076,7 +1076,7 @@ server which would cause the connection to be closed and a warning to be logged.
 The timeout for the replica synchronization done by `causal_reads`. The\
 default value is 10 seconds.
 
-The timeout is specified as documented[here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The timeout is specified as documented [here](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,\
@@ -1217,7 +1217,7 @@ maxctrl call command readwritesplit reset-gtid My-RW-Router
 
 ### Examples
 
-Examples of the readwritesplit router in use can be found in the[Tutorials](https://mariadb.com/kb/Tutorials) folder.
+Examples of the readwritesplit router in use can be found in the [Tutorials](https://mariadb.com/kb/Tutorials) folder.
 
 ### Readwritesplit routing decisions
 
@@ -1279,7 +1279,7 @@ of the following group:
 * All statements within an explicit read-only transaction (`START TRANSACTION READ ONLY`)
 * `SHOW` statements except `SHOW MASTER STATUS`
 
-The list of supported built-in fuctions can be found[here](https://github.com/mariadb-corporation/MaxScale/blob/23.02/query_classifier/qc_sqlite/builtin_functions.cc).
+The list of supported built-in fuctions can be found [here](https://github.com/mariadb-corporation/MaxScale/blob/23.02/query_classifier/qc_sqlite/builtin_functions.cc).
 
 #### Routing to every session backend
 
@@ -1416,7 +1416,7 @@ session state by executing all session commands that were executed. This means\
 that if the session state is changed mid-transaction in a way that affects the\
 results, transaction replay will fail.
 
-The following partial transaction demonstrates the problem by using[SQL\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) inside a transaction.
+The following partial transaction demonstrates the problem by using [SQL\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) inside a transaction.
 
 ```
 SET SQL_MODE='';            -- A session command
@@ -1455,7 +1455,7 @@ transaction that would be routed to more than one node.
 **Limitations in multi-statement handling**
 
 When a multi-statement query is executed through the readwritesplit router, it\
-will always be routed to the primary. See[strict\_multi\_stmt](mariadb-maxscale-2308-readwritesplit.md#strict_multi_stmt) for more\
+will always be routed to the primary. See [strict\_multi\_stmt](mariadb-maxscale-2308-readwritesplit.md#strict_multi_stmt) for more\
 details.
 
 If the multi-statement query creates a temporary table, it will not be\

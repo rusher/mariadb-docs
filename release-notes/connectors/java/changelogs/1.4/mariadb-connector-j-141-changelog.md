@@ -6,9 +6,9 @@
 
 **Release date:** 11 Apr 2016
 
-For the highlights of this release, see the[release notes](../../1.4/mariadb-connector-j-141-release-notes.md).
+For the highlights of this release, see the [release notes](../../1.4/mariadb-connector-j-141-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #651af72](https://github.com/mariadb-corporation/mariadb-connector-j/commit/651af72)
   * when option rewriteBatchedStatements is set to true, correction of packet separation when query size > max\_allow\_packet

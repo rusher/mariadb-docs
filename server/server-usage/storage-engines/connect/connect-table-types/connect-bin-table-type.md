@@ -45,7 +45,7 @@ by default:
 However, the column type need not necessarily match the field format within the\
 table file. In particular, this occurs for field formats that correspond to\
 numeric types that are not handled by CONNECT\[[2](connect-bin-table-type.md#_note-1)]. Indeed, BIN table files may\
-internally contain float numbers or binary numbers of any byte length in big-endian or little-endian representation\[[3](connect-bin-table-type.md#_note-2)]. Also, as in[DOS or FIX types](connect-dos-and-fix-table-types.md) tables, you may want to handle some character fields as numeric or\
+internally contain float numbers or binary numbers of any byte length in big-endian or little-endian representation\[[3](connect-bin-table-type.md#_note-2)]. Also, as in [DOS or FIX types](connect-dos-and-fix-table-types.md) tables, you may want to handle some character fields as numeric or\
 vice versa.
 
 This is why it is possible to specify the field format when it does not\

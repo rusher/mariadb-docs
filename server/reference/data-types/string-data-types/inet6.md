@@ -68,7 +68,7 @@ Mixing `INET6` with other data types for [LEAST](../../sql-structure/operators/c
 * [HEX()](../../sql-functions/string-functions/hex.md) with an INET6 argument returns a hexadecimal representation of the underlying 16-byte binary string
 * Arithmetic operators (+,-,\*,/,MOD,DIV) are not supported for INET6. This may change in the future.
 * The [INET6\_ATON](../../sql-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) function now understands INET6 values as an argument
-* The prototypes of the [IS\_IPV4\_COMPAT](../../sql-functions/secondary-functions/miscellaneous-functions/is_ipv4_compat.md) and I[S\_IPV4\_MAPPED](../../sql-functions/secondary-functions/miscellaneous-functions/is_ipv4_mapped.md) functions have changed from `a BINARY(16)` to `a INET6`,
+* The prototypes of the [IS\_IPV4\_COMPAT](../../sql-functions/secondary-functions/miscellaneous-functions/is_ipv4_compat.md) and I [S\_IPV4\_MAPPED](../../sql-functions/secondary-functions/miscellaneous-functions/is_ipv4_mapped.md) functions have changed from `a BINARY(16)` to `a INET6`,
 
 {% tabs %}
 {% tab title="Current" %}

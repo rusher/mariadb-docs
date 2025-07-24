@@ -176,7 +176,7 @@ The following Information Schema tables relate to the thread pool:
 
 Commercial editions of MySQL since 5.5 include an Oracle MySQL Enterprise\
 thread pool implemented as a plugin, which delivers similar functionality.\
-A detailed discussion about the design of the feature is at[Mikael Ronstrom's blog](https://mikaelronstrom.blogspot.com/2011/10/mysql-thread-pool-summary.html).\
+A detailed discussion about the design of the feature is at [Mikael Ronstrom's blog](https://mikaelronstrom.blogspot.com/2011/10/mysql-thread-pool-summary.html).\
 Here is the summary of similarities and differences, based on the above\
 materials.
 
@@ -215,7 +215,7 @@ materials.
 
 ## Thread Pool Internals
 
-Low-level implementation details are documented in the[WL#246](https://web.archive.org/web/20160526152157/https://worklog.askmonty.org/worklog/Server-BackLog/?tid=246)
+Low-level implementation details are documented in the [WL#246](https://web.archive.org/web/20160526152157/https://worklog.askmonty.org/worklog/Server-BackLog/?tid=246)
 
 ## Running Benchmarks
 

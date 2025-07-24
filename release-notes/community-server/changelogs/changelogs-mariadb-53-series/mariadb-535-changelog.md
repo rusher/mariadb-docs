@@ -4,7 +4,7 @@
 
 **Release date:** 29 Feb 2012
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-535-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-535-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\
@@ -12,7 +12,7 @@ modified in that revision.
 
 * [Revision #3450](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/3450)\
   Tue 2012-02-28 15:41:55 +0100
-  * [Bug #938977](https://bugs.launchpad.net/bugs/938977) - Query performance with join/index super slow on [MariaDB 5.3.4](../../old-releases/release-notes-mariadb-5-3-series/mariadb-534-release-notes.md)RC
+  * [Bug #938977](https://bugs.launchpad.net/bugs/938977) - Query performance with join/index super slow on [MariaDB 5.3.4](../../old-releases/release-notes-mariadb-5-3-series/mariadb-534-release-notes.md) RC
   * make sure that stored routines are evaluated (that is, de facto - cached) in convert\_const\_to\_int().\
     revert the fix for [Bug #806943](https://bugs.launchpad.net/bugs/806943) because it cannot be repeated anymore.\
     add few tests for convert\_const\_to\_int()

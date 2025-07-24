@@ -14,7 +14,7 @@ The goals are:
 2. Code which cannot reasonably be tested by MTR needs to be tested by another\
    tool and those code lines marked with /\* purecov: tested \*/.
 
-* In this case the tool used for testing should be documented in the[worklog](../tools/worklog.md) entry for the code or in the commit message.
+* In this case the tool used for testing should be documented in the [worklog](../tools/worklog.md) entry for the code or in the commit message.
 
 1. Code that can't reasonably be tested (such as error conditions) should be\
    marked with '/\* purecov: inspected \*/' so that a reviewer of the code can\

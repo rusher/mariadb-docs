@@ -142,7 +142,7 @@ MariaDB [(none)]> SHOW DATABASES;
 You have successfully deployed a MariaDB Enterprise Cluster with MaxScale in Kubernetes using the MariaDB Enterprise Operator!
 {% endhint %}
 
-Refer to the [documentation](README.md), the [API reference](api-reference.md)and the [examples catalog](examples-catalog.md) for further detail.
+Refer to the [documentation](README.md), the [API reference](api-reference.md) and the [examples catalog](examples-catalog.md) for further detail.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

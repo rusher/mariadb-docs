@@ -183,7 +183,7 @@ changed significantly and the master should be re-selected, although the old\
 master may still be the best choice.
 
 The master change described above is different from failover and switchover\
-described in section[Failover, switchover and auto-rejoin](mariadb-maxscale-2208-mariadb-monitor.md#failover,-switchover-and-auto-rejoin).\
+described in section [Failover, switchover and auto-rejoin](mariadb-maxscale-2208-mariadb-monitor.md#failover,-switchover-and-auto-rejoin).\
 A master change only modifies the server roles inside MaxScale but does not\
 modify the cluster other than changing the targets of read and write queries.\
 Failover and switchover perform a master change on their own.
@@ -218,12 +218,12 @@ section.
 
 ### Common Monitor Parameters
 
-For a list of optional parameters that all monitors support, read the[Monitor Common](mariadb-maxscale-2208-common-monitor-parameters.md) document.
+For a list of optional parameters that all monitors support, read the [Monitor Common](mariadb-maxscale-2208-common-monitor-parameters.md) document.
 
 ### MariaDB Monitor optional parameters
 
 These are optional parameters specific to the MariaDB Monitor. Failover,\
-switchover and rejoin-specific parameters are listed in their own[section](mariadb-maxscale-2208-mariadb-monitor.md#cluster-manipulation-operations). Rebuild-related parameters are\
+switchover and rejoin-specific parameters are listed in their own [section](mariadb-maxscale-2208-mariadb-monitor.md#cluster-manipulation-operations). Rebuild-related parameters are\
 described in the [Rebuild server-section](mariadb-maxscale-2208-mariadb-monitor.md#rebuild-server). ColumnStore\
 parameters are described in the [ColumnStore commands-section](mariadb-maxscale-2208-mariadb-monitor.md#settings).
 
@@ -271,7 +271,7 @@ case, the slave connection is ignored.
 
 Designate additional conditions fo&#x72;_&#x4D;aster_-status, i.e qualified for read and write queries.
 
-Normally, if a suitable master candidate server is found as described in[Master selection](mariadb-maxscale-2208-mariadb-monitor.md#master-selection), MaxScale designates it _Master_._master\_conditions_ sets additional conditions for a master server. This\
+Normally, if a suitable master candidate server is found as described in [Master selection](mariadb-maxscale-2208-mariadb-monitor.md#master-selection), MaxScale designates it _Master_._master\_conditions_ sets additional conditions for a master server. This\
 setting is an enum\_mask, allowing multiple conditions to be set simultaneously.\
 Conditions 2, 3 and 4 refer to slave servers. If combined, a single slave must\
 fulfill all of the given conditions for the master to be viable.
@@ -291,7 +291,7 @@ The available conditions are:
    down, results from the last successful monitor tick are used.
 4. running\_slave : Same as connecting\_slave, with the addition that the\
    slave must also be Running.
-5. primary\_monitor\_master : If this MaxScale is[cooperating](mariadb-maxscale-2208-mariadb-monitor.md#cooperative-monitoring) with another MaxScale and this is the\
+5. primary\_monitor\_master : If this MaxScale is [cooperating](mariadb-maxscale-2208-mariadb-monitor.md#cooperative-monitoring) with another MaxScale and this is the\
    secondary MaxScale, require that the candidate master is selected also by the\
    primary MaxScale.
 
@@ -331,7 +331,7 @@ The available conditions are:
    applies to any relays between the slave and the master.
 3. running\_master : The master must be running. Relays may be down.
 4. writable\_master : The master must be writable, i.e. labeled Master.
-5. primary\_monitor\_master : If this MaxScale is[cooperating](mariadb-maxscale-2208-mariadb-monitor.md#cooperative-monitoring) with another MaxScale and this is the\
+5. primary\_monitor\_master : If this MaxScale is [cooperating](mariadb-maxscale-2208-mariadb-monitor.md#cooperative-monitoring) with another MaxScale and this is the\
    secondary MaxScale, require that the candidate master is selected also by the\
    primary MaxScale.
 
@@ -354,7 +354,7 @@ considered failed. If automatic failover is enabled (`auto_failover=true`), it\
 may be performed at this time. A value of 0 or 1 enables immediate failover.
 
 If automatic failover is not possible, the monitor will try to\
-search for another server to fulfill the master role. See section[Master selection](mariadb-maxscale-2208-mariadb-monitor.md#master-selection)\
+search for another server to fulfill the master role. See section [Master selection](mariadb-maxscale-2208-mariadb-monitor.md#master-selection)\
 for more details. Changing the master may break replication as queries could be\
 routed to a server without previous events. To prevent this, avoid having\
 multiple valid master servers in the cluster.
@@ -417,7 +417,7 @@ marked \[Slave].
 * Dynamic: Yes
 * Default: `false`
 
-Works similar to[enforce\_read\_only\_slaves](mariadb-maxscale-2208-mariadb-monitor.md#enforce_read_only_slaves) except will se&#x74;_&#x72;ead\_only_ on any writable server that is not the primary and not in\
+Works similar to [enforce\_read\_only\_slaves](mariadb-maxscale-2208-mariadb-monitor.md#enforce_read_only_slaves) except will se&#x74;_&#x72;ead\_only_ on any writable server that is not the primary and not in\
 maintenance (a superset of the servers altered by _enforce\_read\_only\_slaves_).
 
 The monitor user requires the SUPER-privilege\
@@ -436,7 +436,7 @@ If a running server that is not the master\
 or a relay master is out of disk space the server is set to maintenance mode.\
 Such servers are not used for router sessions and are ignored when performing a\
 failover or other cluster modification operation. See the general monitor\
-parameters [disk\_space\_threshold](mariadb-maxscale-2208-common-monitor-parameters.md#disk_space_threshold) and[disk\_space\_check\_interval](mariadb-maxscale-2208-common-monitor-parameters.md#disk_space_check_interval)\
+parameters [disk\_space\_threshold](mariadb-maxscale-2208-common-monitor-parameters.md#disk_space_threshold) and [disk\_space\_check\_interval](mariadb-maxscale-2208-common-monitor-parameters.md#disk_space_check_interval)\
 on how to enable disk space monitoring.
 
 Once a server has been put to maintenance mode, the disk space situation\
@@ -460,7 +460,7 @@ Using this setting is recommended when multiple MaxScales are monitoring the\
 same backend cluster. When enabled, the monitor attempts to acquire exclusive\
 locks on the backend servers. The monitor considers itself the primary monitor\
 if it has a majority of locks. The majority can be either over all configured\
-servers or just over running servers. See[Cooperative monitoring](mariadb-maxscale-2208-mariadb-monitor.md#cooperative-monitoring)\
+servers or just over running servers. See [Cooperative monitoring](mariadb-maxscale-2208-mariadb-monitor.md#cooperative-monitoring)\
 for more details on how this feature works and which value to use.
 
 Allowed values:
@@ -797,13 +797,13 @@ least one slave, those events are lost when a new master is chosen. If the old\
 master comes back online, the other servers have likely moved on with a\
 diverging history and the old master can no longer join the replication cluster.
 
-To reduce the chance of losing data, use[semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication).\
+To reduce the chance of losing data, use [semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication).\
 In semisynchronous mode, the master waits for a slave to receive an event before\
 returning an acknowledgement to the client. This does not yet guarantee a clean\
 failover. If the master fails after preparing a transaction but before receiving\
 slave acknowledgement, it will still commit the prepared transaction as part of\
 its crash recovery. If the slaves never saw this transaction, the\
-old master has diverged from the cluster. See[Configuring the Master Wait Point](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication)\
+old master has diverged from the cluster. See [Configuring the Master Wait Point](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication)\
 for more information. This situation is much less likely in MariaDB Server\
 10.6.2 and later, as the improved crash recovery logic will delete such\
 transactions.
@@ -812,7 +812,7 @@ Even a controlled shutdown of the master may lose events. The server does not by
 default wait for all data to be replicated to the slaves when shutting down and\
 instead simply closes all connections. Before shutting down the master with the\
 intention of having a slave promoted, run _switchover_ first to ensure that all\
-data is replicated. For more information on server shutdown, see[Binary Log Dump Threads and the Shutdown Process](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-threads).
+data is replicated. For more information on server shutdown, see [Binary Log Dump Threads and the Shutdown Process](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-threads).
 
 Switchover requires that the cluster is "frozen" for the duration of the\
 operation. This means that no data modifying statements such as INSERT or UPDATE\
@@ -872,7 +872,7 @@ master.
 Enable automatic master failover. When automatic failover is enabled, MaxScale\
 will elect a new master server for the cluster if the old master goes down. A\
 server is assumed _Down_ if it cannot be connected to, even if this is caused by\
-incorrect credentials. Failover triggers if the master stays down for[failcount](mariadb-maxscale-2208-mariadb-monitor.md#failcount) monitor intervals. Failover will not take place if\
+incorrect credentials. Failover triggers if the master stays down for [failcount](mariadb-maxscale-2208-mariadb-monitor.md#failcount) monitor intervals. Failover will not take place if\
 MaxScale is set [passive](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#passive).
 
 As failover alters replication, it requires more privileges than normal\
@@ -1015,7 +1015,7 @@ values are 90 seconds for both. `switchover_timeout` is also used as the time\
 limit for a rejoin operation. Rejoin should rarely time out, since it is a\
 faster operation than switchover.
 
-The timeouts are specified as documented[here](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The timeouts are specified as documented [here](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the timeouts is seconds, a timeout specified in milliseconds will be rejected,\
@@ -1032,7 +1032,7 @@ further automatic modifications to the misbehaving cluster.
 * Dynamic: Yes
 * Default: `true`
 
-Enable additional master failure verification for automatic failover.`verify_master_failure` enables this feature and[master\_failure\_timeout](mariadb-maxscale-2208-mariadb-monitor.md#master_failure_timeout) defines the timeout.
+Enable additional master failure verification for automatic failover.`verify_master_failure` enables this feature and [master\_failure\_timeout](mariadb-maxscale-2208-mariadb-monitor.md#master_failure_timeout) defines the timeout.
 
 Failure verification is performed by checking whether the slave servers are\
 still connected to the master and receiving events. An event is either a change\
@@ -1055,7 +1055,7 @@ met.
 * Dynamic: Yes
 * Default: `10s`
 
-The master failure timeout is specified as documented[here](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
+The master failure timeout is specified as documented [here](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#durations). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,\
@@ -1158,12 +1158,12 @@ that multiple monitors (typically in different MaxScale instances) can monitor\
 the same backend server cluster and only one will be the primary monitor. Only\
 the primary monitor may perform _switchover_, _failover_ or _rejoin_ operations.\
 The primary also decides which server is the master. Cooperative monitoring is\
-enabled with the[cooperative\_monitoring\_locks](mariadb-maxscale-2208-mariadb-monitor.md#cooperative_monitoring_locks)-setting.\
+enabled with the [cooperative\_monitoring\_locks](mariadb-maxscale-2208-mariadb-monitor.md#cooperative_monitoring_locks)-setting.\
 Even with this setting, only one monitor per server per MaxScale is allowed.\
 This limitation can be circumvented by defining multiple copies of a server in\
 the configuration file.
 
-Cooperative monitoring uses[server locks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock)\
+Cooperative monitoring uses [server locks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock)\
 for coordinating between monitors. When cooperating, the monitor regularly\
 checks the status of a lock named _maxscale\_mariadbmonitor_ on every server and\
 acquires it if free. If the monitor acquires a majority of locks, it is the\
@@ -1250,9 +1250,9 @@ lost. This time ultimately depends on TCP keepalive settings on the machines\
 running MariaDB Server.
 
 On MariaDB Server 10.3.3 and later, the TCP keepalive settings can be configured\
-for just the server process. See[Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#tcp_keepalive_interval)\
+for just the server process. See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#tcp_keepalive_interval)\
 for information on settings _tcp\_keepalive\_interval_, _tcp\_keepalive\_probes_ an&#x64;_&#x74;cp\_keepalive\_time_. These settings can also be set on the operating system\
-level, as described[here](https://www.tldp.org/HOWTO/TCP-Keepalive-HOWTO/usingkeepalive.html).
+level, as described [here](https://www.tldp.org/HOWTO/TCP-Keepalive-HOWTO/usingkeepalive.html).
 
 As of MaxScale 6.4.16, 22.08.13, 23.02.10, 23.08.6 and 24.02.2, configuring\
 TCP keepalive is no longer necessary as monitor sets the session _wait\_timeout_\
@@ -1279,7 +1279,7 @@ on the target server is lost. This is useful when a slave server has diverged\
 from the master server, or when adding a new server to the cluster. The\
 MariaDB Server configuration files are not affected.
 
-MariaDB-Monitor can perform this operation by running[mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/) on both the source and\
+MariaDB-Monitor can perform this operation by running [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/) on both the source and\
 target servers. To do this, MaxScale needs to have ssh-access on the machines.\
 Also, the following tools need to be installed on the source and target\
 machines:
@@ -1294,7 +1294,7 @@ The _ssh\_user_ and _ssh\_keyfile_-settings define the SSH credentials MaxScale\
 uses to access the servers. MaxScale must be able to run commands with _sudo_ on\
 both the source and target servers. mariadb-backup, on the other hand, needs to\
 authenticate to the MariaDB Server being copied from. For this, MaxScale uses\
-the monitor user. The monitor user may thus require additional privileges. See[mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-overview#authentication-and-privileges)\
+the monitor user. The monitor user may thus require additional privileges. See [mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-overview#authentication-and-privileges)\
 for more details.
 
 When launched, the rebuild operation proceeds as below. If any step fails, the\
@@ -1634,7 +1634,7 @@ A typical failure reason is that a command such as `STOP SLAVE` takes longer tha
 monitor will retry most such queries if the failure was caused by a timeout. The retrying\
 continues until the total time for a failover or switchover has been spent. If the log\
 shows warnings or errors about commands timing out, increasing the backend timeout\
-settings of the monitor should help. Other settings to look at are `query_retries` and`query_retry_timeout`. These are general MaxScale settings described in the[Configuration guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/). Setting`query_retries` to 2 is a reasonable first try.
+settings of the monitor should help. Other settings to look at are `query_retries` and`query_retry_timeout`. These are general MaxScale settings described in the [Configuration guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/). Setting`query_retries` to 2 is a reasonable first try.
 
 If switchover causes the old master (now slave) to fail replication, then most\
 likely a user or perhaps a scheduled event performed a write while monitor\

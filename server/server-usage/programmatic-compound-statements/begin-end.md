@@ -22,7 +22,7 @@ Note that `END` will perform a commit. If you are running in [autocommit](../../
 Use of multiple statements requires that a client is able to send statement strings containing the ; statement delimiter. This is handled in the [mysql](https://mariadb.com/kb/en/mysql-command-line_client) command-line client with the [DELIMITER](../../clients-and-utilities/mariadb-client/delimiters.md) command.\
 Changing the `;` end-of-statement delimiter (for example, to`//`) allows `;` to be used in a program body.
 
-A compound statement within a [stored program](../stored-routines/) can be[labeled](labels.md). `end_label` cannot be given unless `begin_label` also is present. If both are present, they must be the same.
+A compound statement within a [stored program](../stored-routines/) can be [labeled](labels.md). `end_label` cannot be given unless `begin_label` also is present. If both are present, they must be the same.
 
 `BEGIN ... END` constructs can be nested. Each block can define its own variables, a `CONDITION`, a `HANDLER` and a [CURSOR](programmatic-compound-statements-cursors/), which don't exist in the outer blocks. The most local declarations override the outer objects which use the same name (see example below).
 

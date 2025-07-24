@@ -6,9 +6,9 @@
 
 **Release date:** 7 Jun 2017
 
-For the highlights of this release, see the[release notes](../../2.0/mariadb-connector-j-202-release-notes.md).
+For the highlights of this release, see the [release notes](../../2.0/mariadb-connector-j-202-release-notes.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #0d59d8d](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0d59d8d) - \[misc] avoid reading from end in case of replication configuration with 2 servers with different versions

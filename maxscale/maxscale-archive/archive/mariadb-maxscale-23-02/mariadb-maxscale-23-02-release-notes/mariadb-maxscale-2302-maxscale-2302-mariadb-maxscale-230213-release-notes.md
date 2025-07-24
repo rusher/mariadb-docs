@@ -5,7 +5,7 @@ Release 23.02.13 is a GA release.
 This document describes the changes in release 23.02.13, when compared to the\
 previous release in the same series.
 
-If you are upgrading from an older major version of MaxScale, please read the[upgrading document](../mariadb-maxscale-23-02-upgrading/mariadb-maxscale-2302-upgrading-mariadb-maxscale-from-2208-to-2302.md) for\
+If you are upgrading from an older major version of MaxScale, please read the [upgrading document](../mariadb-maxscale-23-02-upgrading/mariadb-maxscale-2302-upgrading-mariadb-maxscale-from-2208-to-2302.md) for\
 this MaxScale version.
 
 For any problems you encounter, please consider submitting a bug\

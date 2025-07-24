@@ -4,7 +4,7 @@
 
 Before upgrading to MariaDB MaxScale, it is critical to review the changes. This guide outlines new features, altered parameters, and deprecated functionality to ensure a smooth transition.
 
-For more information about what has changed, please refer to the[ChangeLog](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
+For more information about what has changed, please refer to the [ChangeLog](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
 
 Before starting the upgrade, any existing configuration files should be backed up.
 
@@ -40,7 +40,7 @@ filters=PsReuse
 
 #### `optimistic_trx`
 
-The `optimistic_trx` parameter has been replaced with the use of the[OptimisticTrx](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
+The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -288,7 +288,7 @@ if defined:
 * If a master server is placed into maintenance mode, all open transactions are\
   allowed to gracefully finish before the session is closed. To forcefully close\
   the connections, use the `--force` option for `maxctrl set server`.
-* The `lazy_connect` feature can be used as a workaround to[MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the\
+* The `lazy_connect` feature can be used as a workaround to [MXS-619](https://jira.mariadb.org/browse/MXS-619). It also reduces the\
   overall load on the system when connections are rapidly opened and closed.
 * Transaction replays now have a limit on how many times a replay is\
   attempted. The default values is five attempts and is controlled by the`transaction_replay_attempts` parameter.

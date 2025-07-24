@@ -53,7 +53,7 @@ Exclude queries that match the regex.
 
 If neither `match` nor `exclude` are defined, the filter does nothing and all events\
 are replicated. This filter does not accept regular expression options as a separate\
-setting, such settings must be defined in the patterns themselves. See the[PCRE2 api documentation](https://www.pcre.org/current/doc/html/pcre2api.html#SEC20) for\
+setting, such settings must be defined in the patterns themselves. See the [PCRE2 api documentation](https://www.pcre.org/current/doc/html/pcre2api.html#SEC20) for\
 more information.
 
 The two settings are matched against the database and table name concatenated\
@@ -90,7 +90,7 @@ etc.).
 
 Both `rewrite_src` and `rewrite_dest` must be defined to enable statement rewriting.
 
-When statement rewriting is enabled[GTID-based replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)\
+When statement rewriting is enabled [GTID-based replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)\
 must be used. The filter will disallow replication for all slaves that attempt\
 to replicate with traditional file-and-position based replication.
 
@@ -125,7 +125,7 @@ service=BinlogServer
 port=4000
 ```
 
-For more information about the binlogrouter and how to use it, refer to the[binlogrouter documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter.md).
+For more information about the binlogrouter and how to use it, refer to the [binlogrouter documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

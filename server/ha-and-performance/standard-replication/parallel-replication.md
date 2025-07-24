@@ -36,7 +36,7 @@ Parallel replication can in addition be disabled on a per-multi-source\
 connection by setting [@@connection\_name.slave-parallel-mode](replication-and-binary-log-system-variables.md) to "none".
 
 The value (#) of slave\_parallel\_threads specifies how many threads will be created in a pool of worker\
-threads used to apply events in parallel for _all_ your replicas (this includes[multi-source replication](multi-source-replication.md)). If the value is zero,\
+threads used to apply events in parallel for _all_ your replicas (this includes [multi-source replication](multi-source-replication.md)). If the value is zero,\
 then no worker threads are created, and old-style replication is used where\
 events are applied inside the SQL thread. Usually the value, if non-zero,\
 should be at least two times the number of multi-source primary connections\
@@ -87,7 +87,7 @@ running most transactions in parallel.
 There are a few heuristics to try to avoid needless conflicts. If a\
 transaction executed a row lock wait on the primary, it will not be run in parallel\
 on the replica. Transactions can also be marked explicitly as potentially\
-conflicting on the primary, by setting the variable[@@skip\_parallel\_replication](replication-and-binary-log-system-variables.md). More such heuristics may be added in later\
+conflicting on the primary, by setting the variable [@@skip\_parallel\_replication](replication-and-binary-log-system-variables.md). More such heuristics may be added in later\
 MariaDB versions. There is a further [--slave-parallel-mode](replication-and-binary-log-system-variables.md) called\
 "aggressive", where these heuristics are disabled, allowing even more\
 transactions to be applied in parallel.
@@ -99,7 +99,7 @@ earlier events (it is however possible to apply a MyISAM update in parallel\
 with a later InnoDB update). DDL statements are not applied in parallel with\
 any other transactions, earlier or later.
 
-The different kind of transactions can be identified in the output of[mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/). For example:
+The different kind of transactions can be identified in the output of [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/). For example:
 
 ```
 #150324 13:06:26 server id 1  end_log_pos 6881 	GTID 0-1-42 ddl
@@ -114,7 +114,7 @@ The different kind of transactions can be identified in the output of[mariadb-bi
 
 GTID 0-1-42 is marked as being DDL. GTID 0-1-47 is marked as being\
 non-transactional DML, while GTID 0-1-49 is transactional DML (seen on the\
-"trans" keyword). GTID 0-1-49 was additionally run with[@@skip\_parallel\_replication](replication-and-binary-log-system-variables.md)\
+"trans" keyword). GTID 0-1-49 was additionally run with [@@skip\_parallel\_replication](replication-and-binary-log-system-variables.md)\
 set on the primary. GTID 0-1-59 is transactional DML that had a row lock wait when run on the\
 primary (the "waited" keyword).
 
@@ -157,7 +157,7 @@ applications.
 
 The opportunities for parallel replication on replicas can be highly increased\
 if more transactions are committed in a [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary. This can be tuned\
-using the [binlog\_commit\_wait\_count](replication-and-binary-log-system-variables.md) and[binlog\_commit\_wait\_usec](replication-and-binary-log-system-variables.md) variables. If for example the\
+using the [binlog\_commit\_wait\_count](replication-and-binary-log-system-variables.md) and [binlog\_commit\_wait\_usec](replication-and-binary-log-system-variables.md) variables. If for example the\
 application can tolerate up to 50 milliseconds extra delay for transactions on\
 the primary, one can set `binlog_commit_wait_usec=50000` and`binlog_commit_wait_count=20` to get up to 20 transactions at\
 a time available for replication in parallel. Care must however be taken to\
@@ -169,7 +169,7 @@ Note that even if there is no parallelism available from the primary [group comm
 replication, since the actual commit steps of different transactions can run\
 in parallel. This can be particularly effective on a replica with binlog enabled\
 ([log\_slave\_updates=1](replication-and-binary-log-system-variables.md)), and more so if replica is configured\
-to be crash-safe ([sync\_binlog=1](replication-and-binary-log-system-variables.md) and[innodb\_flush\_log\_at\_trx\_commit=1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)), as this makes [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) possible on the replica.
+to be crash-safe ([sync\_binlog=1](replication-and-binary-log-system-variables.md) and [innodb\_flush\_log\_at\_trx\_commit=1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)), as this makes [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) possible on the replica.
 
 #### Minimal Mode of In-Order Parallel Replication
 
@@ -238,7 +238,7 @@ switched to replicate from a different primary using CHANGE MASTER, MariaDB\
 automatically handles restarting each replication domain at the appropriate\
 point in the binlog.
 
-Out-of-order parallel replication is disabled when[--slave-parallel-mode=minimal](replication-and-binary-log-system-variables.md) (or none).
+Out-of-order parallel replication is disabled when [--slave-parallel-mode=minimal](replication-and-binary-log-system-variables.md) (or none).
 
 ## Checking Worker Thread Status in SHOW PROCESSLIST
 
@@ -310,10 +310,10 @@ threads in the pool, only to have them wait for the long-running query to\
 complete, stalling any other primary connection or replication domain, which\
 will have to wait for a worker thread to become free.
 
-This can be avoided by setting[slave\_domain\_parallel\_threads](replication-and-binary-log-system-variables.md) to a number that is lower\
+This can be avoided by setting [slave\_domain\_parallel\_threads](replication-and-binary-log-system-variables.md) to a number that is lower\
 than `slave_parallel_threads`. When set different from zero,\
 each replication domain in one primary connection can reserve at most that many\
-worker threads at any one time, leaving the rest (up to the value of[slave\_parallel\_threads](replication-and-binary-log-system-variables.md)) free for other primary connections or replication domains to use in parallel.
+worker threads at any one time, leaving the rest (up to the value of [slave\_parallel\_threads](replication-and-binary-log-system-variables.md)) free for other primary connections or replication domains to use in parallel.
 
 The `slave_domain_parallel_threads` variable is dynamic and\
 can be changed without restarting the server; all replicas must be stopped while\
