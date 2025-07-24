@@ -30,7 +30,8 @@ layout:
 * The prior release in this series was MariaDB Connector/Node.js 2.5.1, released on 26 Oct 2020.
 * This release (MariaDB Connector/Node.js 2.5.2) was released on 4 Dec 2020.
 * The next release in this series is MariaDB Connector/Node.js 2.5.3, released on 24 Feb 2021.
-* The latest release in this series is MariaDB Connector/Node.js 2.5.6, released on 17 Feb 2022.
+
+{% include "../.gitbook/includes/most-recent-nodejs.md" %}
 
 ## Useful Resources
 
