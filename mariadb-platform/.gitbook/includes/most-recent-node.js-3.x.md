@@ -1,1 +1,5 @@
-* The most recent release in this series is [MariaDB Connector/Node.js 3.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes), released on 25 Apr 2025
+---
+title: most-recent-nodejs
+---
+
+* The most recent MariaDB Connector/Node.js release is 3.5.4, released on 25 Apr 2025

@@ -1,16 +1,5 @@
 ---
 noIndex: true
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # MariaDB Connector/Node.js 0.7.0
@@ -19,15 +8,16 @@ layout:
 
 ## About this Release
 
-* MariaDB Connector/Node.js 0.7.0 was released on 19 Jul 2018.
+* MariaDB Connector/Node.js 0.7.0 was released on 19 Jul 2018
 * [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-0x-release-notes/mariadb-connector-nodejs-070-release-notes)
-* This release is Alpha maturity. Only Stable (GA) releases should be used in production.
-* For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs).
+* This release is Alpha maturity. Only Stable (GA) releases should be used in production
+* For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs)
 
 ## Release History
 
-* This release (MariaDB Connector/Node.js 0.7.0) was released on 19 Jul 2018.
-* The latest release in this series is MariaDB Connector/Node.js 0.7.0, released on 19 Jul 2018.
+* This release (MariaDB Connector/Node.js 0.7.0) was released on 19 Jul 2018
+
+{% include "../.gitbook/includes/most-recent-node.js-3.x.md" %}
 
 ## Useful Resources
 
