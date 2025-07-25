@@ -1655,13 +1655,13 @@ The options related to the [file\_key\_management](../../security/securing-maria
 
 The system variables related to the c password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
-The options related to the [simple\_password\_check](../../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
+The options related to the [simple\_password\_check](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md).
 
 ### Password Validation Plugin - `cracklib_password_check`
 
 The system variables related to the [cracklib\_password\_check](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
 
-The options related to the [cracklib\_password\_check](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md).
+The options related to the [cracklib\_password\_check](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin can be found [here](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md#options).
 
 ## Audit Plugins - Options and System Variables
 
