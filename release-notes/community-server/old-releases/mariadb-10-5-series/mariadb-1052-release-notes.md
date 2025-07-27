@@ -1,20 +1,18 @@
 # MariaDB 10.5.2 Release Notes
 
-The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
+{% include "../../../.gitbook/includes/latest-10-5.md" %}
 
-[Download](https://downloads.mariadb.org/mariadb/10.5.2/)[Release Notes](mariadb-1052-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1052-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+<a href="https://downloads.mariadb.org/mariadb/10.5.2/" class="button primary">Download</a> <a href="mariadb-1052-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-105-series/mariadb-1052-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-105.md" class="button secondary">Overview of 10.5</a>
 
 **Release date:** 26 Mar 2020
 
 [MariaDB 10.5](what-is-mariadb-105.md) is the current _development_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](../release-notes-mariadb-10-4-series/what-is-mariadb-104.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.2](mariadb-1052-release-notes.md) is a [_**Beta**_](../../about/release-criteria.md) release.
 
-**Do not use&#x20;**_**beta**_**&#x20;releases in production!**
-
-**For an overview of** [**MariaDB 10.5**](what-is-mariadb-105.md) **see the**[**What is MariaDB 10.5?**](what-is-mariadb-105.md) **page.**
+{% include "../../../.gitbook/includes/non-stable.md" %}
 
 Thanks, and enjoy MariaDB!
 
