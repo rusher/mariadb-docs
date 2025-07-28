@@ -83,6 +83,8 @@ Use the `TEMPORARY` keyword to create a temporary table that is only available t
 {% endtab %}
 {% endtabs %}
 
+#### Replicating temporary tables
+
 {% tabs %}
 {% tab title="Current" %}
 From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), by default, temporary tables are only created on the replica if the primary is using binlog\_format=STATEMENT.
