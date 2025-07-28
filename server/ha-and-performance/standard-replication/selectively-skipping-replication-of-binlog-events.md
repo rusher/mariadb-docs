@@ -28,13 +28,12 @@ This is possible with the following [system variables](../optimization-and-tunin
 
 When the [skip\_replication](replication-and-binary-log-system-variables.md) variable is set to true, changes are logged into the [binary log](../../server-management/server-monitoring-logs/binary-log/) with the flag `@@skip_replication` set. Such events will not be replicated by replicas that run with`--replicate-events-marked-for-skip` set different from its default of `REPLICATE`.
 
-| Variable Name | Scope             | Access Type | Data Type | Default Value |
-| ------------- | ----------------- | ----------- | --------- | ------------- |
-| Variable Name | skip\_replication |             |           |               |
-| Scope         | Session only      |             |           |               |
-| Access Type   | Dynamic           |             |           |               |
-| Data Type     | bool              |             |           |               |
-| Default Value | OFF               |             |           |               |
+| Variable Name | skip\_replication |
+| ------------- | ----------------- |
+| Scope         | Session only      |
+| Access Type   | Dynamic           |
+| Data Type     | bool              |
+| Default Value | OFF               |
 
 The `skip_replication` option only has effect if [binary logging](../../server-management/server-monitoring-logs/binary-log/) is enabled\
 and [sql\_log\_bin](replication-and-binary-log-system-variables.md) is true.
@@ -51,13 +50,12 @@ changes are replicated to the replica. If set to `FILTER_ON_SLAVE`, events so\
 marked will be skipped on the replica and not replicated. If set to`FILTER_ON_MASTER`, the filtering will be done on the primary, saving on\
 network bandwidth as the events will not be received by the replica at all.
 
-| Variable Name | Scope                                | Access Type       | Data Type          | Default Value |
-| ------------- | ------------------------------------ | ----------------- | ------------------ | ------------- |
-| Variable Name | replicate\_events\_marked\_for\_skip |                   |                    |               |
-| Scope         | Global                               |                   |                    |               |
-| Access Type   | Dynamic                              |                   |                    |               |
-| Data Type     | enum: REPLICATE                      | FILTER\_ON\_SLAVE | FILTER\_ON\_MASTER |               |
-| Default Value | REPLICATE                            |                   |                    |               |
+| Variable Name | replicate\_events\_marked\_for\_skip                       |
+| ------------- | ---------------------------------------------------------- |
+| Scope         | Global                                                     |
+| Access Type   | Dynamic                                                    |
+| Data Type     | enum: REPLICATE \| FILTER\_ON\_SLAVE \| FILTER\_ON\_MASTER |
+| Default Value | REPLICATE                                                  |
 
 **Note:** `replicate_events_marked_for_skip` is a dynamic variable (it can be\
 changed without restarting the server), however the replica threads must be\
@@ -92,7 +90,7 @@ replicated.
 
 ## skip\_replication and sql\_log\_bin
 
-[@@sql_log_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md) and `@@skip_replication` are somewhat\
+[@@sql\_log\_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md) and `@@skip_replication` are somewhat\
 related, as they can both be used to prevent a change on the primary from being\
 replicated to the replica. The difference is that with `@@skip_replication`,\
 changes are still written into the binlog, and replication of the events is\
