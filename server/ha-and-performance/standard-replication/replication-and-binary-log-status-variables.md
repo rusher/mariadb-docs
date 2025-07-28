@@ -11,7 +11,7 @@ description: >-
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 {% endhint %}
 
-The following status variables are useful in [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md). See [Server Status Variables](../optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
+The following status variables are useful in [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](./). See [Server Status Variables](../optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 
 See also the [Full list of MariaDB options, system and status variables](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
@@ -23,13 +23,13 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `Binlog_cache_disk_use`
 
-* Description: Number of transactions which used a temporary disk cache because they could not fit in the regular [binary log](../../server-management/server-monitoring-logs/binary-log/) cache, being larger than [binlog\_cache\_size](../optimization-and-tuning/system-variables/server-system-variables.md#binlog_cache_size). The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of transactions which used a temporary disk cache because they could not fit in the regular [binary log](../../server-management/server-monitoring-logs/binary-log/) cache, being larger than [binlog\_cache\_size](../optimization-and-tuning/system-variables/server-system-variables.md#binlog_cache_size). The global value can be flushed by [FLUSH STATUS](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Binlog_cache_use`
 
-* Description: Number of transaction which used the regular [binary log](../../server-management/server-monitoring-logs/binary-log/) cache, being smaller than [binlog\_cache\_size](../optimization-and-tuning/system-variables/server-system-variables.md#binlog_cache_size). The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of transaction which used the regular [binary log](../../server-management/server-monitoring-logs/binary-log/) cache, being smaller than [binlog\_cache\_size](../optimization-and-tuning/system-variables/server-system-variables.md#binlog_cache_size). The global value can be flushed by [FLUSH STATUS](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -98,7 +98,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `Binlog_stmt_cache_disk_use`
 
-* Description: Number of non-transaction statements which used a temporary disk cache because they could not fit in the regular [binary log](../../server-management/server-monitoring-logs/binary-log/) cache, being larger than [binlog\_stmt\_cache\_size](../optimization-and-tuning/system-variables/server-system-variables.md#binlog_stmt_cache_size). The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of non-transaction statements which used a temporary disk cache because they could not fit in the regular [binary log](../../server-management/server-monitoring-logs/binary-log/) cache, being larger than [binlog\_stmt\_cache\_size](../optimization-and-tuning/system-variables/server-system-variables.md#binlog_stmt_cache_size). The global value can be flushed by [FLUSH STATUS](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -209,10 +209,9 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `Rpl_transactions_multi_engine`
 
-* Description: Number of replicated transactions that involved changes in multiple (transactional) storage engines, before considering the update of `mysql.gtid_slave_pos`. These are transactions that were already cross-engine, independent of the GTID position update introduced by replication. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of replicated transactions that involved changes in multiple (transactional) storage engines, before considering the update of `mysql.gtid_slave_pos`. These are transactions that were already cross-engine, independent of the GTID position update introduced by replication. The global value can be flushed by [FLUSH STATUS](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes)
 
 #### `Slave_connections`
 
@@ -240,7 +239,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `Slave_retried_transactions`
 
-* Description: Number of times the slave has retried transactions since the server started. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of times the slave has retried transactions since the server started. The global value can be flushed by [FLUSH STATUS](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -270,17 +269,15 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `Transactions_gtid_foreign_engine`
 
-* Description: Number of replicated transactions where the update of the `gtid_slave_pos` table had to choose a storage engine that did not otherwise participate in the transaction. This can indicate that setting [gtid\_pos\_auto\_engines](gtid.md) might be useful. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of replicated transactions where the update of the `gtid_slave_pos` table had to choose a storage engine that did not otherwise participate in the transaction. This can indicate that setting [gtid\_pos\_auto\_engines](gtid.md) might be useful. The global value can be flushed by [FLUSH STATUS](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes)
 
 #### `Transactions_multi_engine`
 
-* Description: Number of transactions that changed data in multiple (transactional) storage engines. If this is significantly larger than [Rpl\_transactions\_multi\_engine](replication-and-binary-log-status-variables.md#rpl_transactions_multi_engine), it indicates that setting [gtid\_pos\_auto\_engines](https://mariadb.com/kb/en/gtid_pos_auto_engines) could reduce the need for cross-engine transactions. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of transactions that changed data in multiple (transactional) storage engines. If this is significantly larger than [Rpl\_transactions\_multi\_engine](replication-and-binary-log-status-variables.md#rpl_transactions_multi_engine), it indicates that setting [gtid\_pos\_auto\_engines](https://mariadb.com/kb/en/gtid_pos_auto_engines) could reduce the need for cross-engine transactions. The global value can be flushed by [FLUSH STATUS](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
