@@ -70,7 +70,7 @@ For additional information, see "[Configure In-Memory Joins](../../architecture/
 
 ## Load Ordered Data in Proper Order
 
-Enterprise ColumnStore uses extent elimination to optimize queries. [Extent elimination](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination) uses the minimum and maximum values in the [extent map](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-performance-tuning/columnstore-query-tuning/mariadb-enterprise-columnstore-storage-architecture/README.md#extent-map) to determine which extents can be skipped for a query.
+Enterprise ColumnStore uses extent elimination to optimize queries. [Extent elimination](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination) uses the minimum and maximum values in the [extent map](../../architecture/columnstore-storage-architecture.md#extent-map) to determine which extents can be skipped for a query.
 
 When data is loaded into Enterprise ColumnStore, it appends the data to the latest extent. When an extent reaches the maximum number of column values, Enterprise ColumnStore creates a new extent. As a consequence, if ordered data is loaded in its proper order, then similar values will be clustered together in the same extent. This can improve query performance, because extent elimination performs best when similar values are clustered together.
 
