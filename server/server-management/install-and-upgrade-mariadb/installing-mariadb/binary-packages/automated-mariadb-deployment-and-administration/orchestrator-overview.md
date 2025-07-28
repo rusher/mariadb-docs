@@ -11,20 +11,20 @@ Orchestrator provides automation for MariaDB replication in the following ways:
 
 Note that, if we don't want to use Orchestrator to automate operations, we can still use it as a dynamic inventory. Other tools can use it to obtain a list of existing MariaDB servers via its REST API or CLI commands.
 
-Orchestrator has several big users, listed in the documentation [Users](https://github.com/openark/orchestrator/blob/master/docs/users) page. It is also included in the PMM monitoring solution.
+Orchestrator has several big users, listed in the documentation [Users](https://github.com/openark/orchestrator/blob/master/docs/users.md) page. It is also included in the PMM monitoring solution.
 
 To install Orchestrator, see:
 
-* The [install.md](https://github.com/openark/orchestrator/blob/master/docs/install) for a manual installation;
-* The links in [README.md](https://github.com/openark/orchestrator/blob/master/README), to install Orchestrator using automation tools.
+* The [install.md](https://github.com/openark/orchestrator/blob/master/docs/install.md) for a manual installation;
+* The links in [README.md](https://github.com/openark/orchestrator/blob/master/README.md), to install Orchestrator using automation tools.
 
 ## Supported Topologies
 
-Currently, Orchestrator fully supports MariaDB [GTID](../../../../../ha-and-performance/standard-replication/gtid.md), [replication](../../../../../server-usage/storage-engines/myrocks/myrocks-and-replication.md), and [semi-synchronous replication](../../../../../ha-and-performance/standard-replication/semisynchronous-replication.md). While Orchestrator does not support Galera specific logic, it works with Galera clusters. For details, see [Supported Topologies and Versions](https://github.com/openark/orchestrator/blob/master/docs/supported-topologies-and-versions) in Orchestrator documentation.
+Currently, Orchestrator fully supports MariaDB [GTID](../../../../../ha-and-performance/standard-replication/gtid.md), [replication](../../../../../server-usage/storage-engines/myrocks/myrocks-and-replication.md), and [semi-synchronous replication](../../../../../ha-and-performance/standard-replication/semisynchronous-replication.md). While Orchestrator does not support Galera specific logic, it works with Galera clusters. For details, see [Supported Topologies and Versions](https://github.com/openark/orchestrator/blob/master/docs/supported-topologies-and-versions.md) in Orchestrator documentation.
 
 ## Architecture
 
-Orchestrator consists of a single executable called `orchestrator`. This is a process that periodically connects to the target servers. It will run SQL queries against target servers, so it needs a user with proper permissions. When the process is running, a GUI is available via a web browser, at the URL '[localhost:3000'](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/https:/localhost:3000'/README.md). It also exposes a REST API (see [Using the web API](https://github.com/openark/orchestrator/blob/master/docs/using-the-web-api) in the Orchestrator documentation).
+Orchestrator consists of a single executable called `orchestrator`. This is a process that periodically connects to the target servers. It will run SQL queries against target servers, so it needs a user with proper permissions. When the process is running, a GUI is available via a web browser, at the URL '[localhost:3000'](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/https:/localhost:3000'/README.md). It also exposes a REST API (see [Using the web API](https://github.com/openark/orchestrator/blob/master/docs/using-the-web-api.md) in the Orchestrator documentation).
 
 Orchestrator expects to find a JSON configuration file called `orchestrator.conf.json`, in `/etc`.
 

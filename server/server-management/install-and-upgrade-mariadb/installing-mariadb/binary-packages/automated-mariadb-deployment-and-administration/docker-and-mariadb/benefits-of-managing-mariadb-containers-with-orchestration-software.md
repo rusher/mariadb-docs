@@ -6,7 +6,7 @@ During the discussion, we should keep in mind that Docker Engine, CRI-I, contain
 
 ## Container Ephemeral Nature
 
-Images are an [OCI](https://github.com/opencontainers/image-spec/blob/main/spec) specified format that can be compiled from Dockerfiles as one of the ways. Containers are the [OCI runtime specified](https://github.com/opencontainers/runtime-spec/blob/main/spec) way of creating a runtime version of an images. Normally, a container is not modified from the moment it is created. In other words, containers are usually designed to be **ephemeral**, meaning that they can be destroyed and replaced with new containers at any time. Provided that there is proper redundancy (for example, there are several web servers running the same services) destroying one container and starting a new one of the same type won't cause any damage.
+Images are an [OCI](https://github.com/opencontainers/image-spec) specified format that can be compiled from Dockerfiles as one of the ways. Containers are the [OCI runtime specified](https://github.com/opencontainers/runtime-spec/blob/main/spec) way of creating a runtime version of an images. Normally, a container is not modified from the moment it is created. In other words, containers are usually designed to be **ephemeral**, meaning that they can be destroyed and replaced with new containers at any time. Provided that there is proper redundancy (for example, there are several web servers running the same services) destroying one container and starting a new one of the same type won't cause any damage.
 
 We will discuss a bit later how this applies to MariaDB, and more generally to database servers.
 

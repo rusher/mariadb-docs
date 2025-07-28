@@ -9,7 +9,7 @@ MariaDB and Vault may relate to each other in several ways:
 * MariaDB (and MySQL) can be used as a secret engine, a component which stores, generates, or encrypts data.
 * MariaDB (and MySQL) can be used as a backend storage, providing durability for Vault data.
 
-For information about how to install Vault, see [Install Vault](https://www.vaultproject.io/docs/install), as well as [MySQL/MariaDB Database Secrets Engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria).
+For information about how to install Vault, see [Install Vault](https://developer.hashicorp.com/vault/install), as well as [MySQL/MariaDB Database Secrets Engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria).
 
 ## Vault Features
 

@@ -117,13 +117,13 @@ end
 
 With the [Ansible provisioner](https://www.vagrantup.com/docs/provisioning/ansible), Ansible runs in the host system and applies a playbook in the guest system. In this example, it runs a playbook called `vagrant.yml`. The [Ansible Local provisioner](https://www.vagrantup.com/docs/provisioning/ansible_local) runs the playbook in the vagrant machine.
 
-For more information, see [Using Vagrant and Ansible](https://docs.ansible.com/ansible/2.3/guide_vagrant.html) in the Ansible documentation. For an introduction to Ansible for MariaDB users, see [Ansible and MariaDB](../ansible-and-mariadb/).
+For more information, see [Using Vagrant and Ansible](https://docs.ansible.com/ansible/latest/reference_appendices/config.html) in the Ansible documentation. For an introduction to Ansible for MariaDB users, see [Ansible and MariaDB](../ansible-and-mariadb/).
 
 ### Provisioning Vagrant with Puppet
 
 To provision a Vagrant machine or box by running Puppet:
 
-```
+```ini
 Vagrant.configure("2") do |config|
   ...
   config.vm.provision "puppet" do |puppet|
