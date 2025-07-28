@@ -8,7 +8,7 @@ Without detection or prevention of partial writes, the integrity of the database
 
 ## innodb\_doublewrite - an Imperfect Solution
 
-Since its inception, Innodb has had a mechanism to detect and ignore partial writes via the [InnoDB Doublewrite Buffer](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-doublewrite-buffer.md) (also innodb\_checksum can be used to detect a partial write).
+Since its inception, Innodb has had a mechanism to detect and ignore partial writes via the [InnoDB Doublewrite Buffer](../../../../server-usage/storage-engines/innodb/innodb-doublewrite-buffer.md) (also innodb\_checksum can be used to detect a partial write).
 
 Doublewrites, controlled by the [innodb\_doublewrite](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) system variable, comes with its own set of problems. Especially on SSD, writing each page twice can have detrimental effects (write leveling).
 

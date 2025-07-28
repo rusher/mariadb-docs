@@ -130,7 +130,7 @@ If [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md#-log
 
 ### Custom Option File Locations
 
-MariaDB can be configured to read options from custom options files with the following command-line arguments. These command-line arguments can be used with most of MariaDB's command-line tools, not just [mariadbd](starting-and-stopping-mariadb/mariadbd-options.md). They must be given as the first argument on the command line:
+MariaDB can be configured to read options from custom options files with the following command-line arguments. These command-line arguments can be used with most of MariaDB's command-line tools, not just [mariadbd](../../starting-and-stopping-mariadb/mariadbd-options.md). They must be given as the first argument on the command line:
 
 | Option                                                                                                      | Description                                                        |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |

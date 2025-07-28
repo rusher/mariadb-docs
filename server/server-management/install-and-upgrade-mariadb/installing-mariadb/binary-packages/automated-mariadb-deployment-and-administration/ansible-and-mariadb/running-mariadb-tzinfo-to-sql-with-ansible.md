@@ -6,7 +6,7 @@ For documentation about the `mariadb-tzinfo-to-sql` utility, see [mysql\_tzinfo\
 
 First, we should install `mariadb-tzinfo-to-sql` if it is available on our system. For example, to install it on Ubuntu, we can use this task. For other systems, use the proper module and package name.
 
-```
+```ini
 - name: Update timezone info
   tags: [ timezone-update ]
   apt:
@@ -38,7 +38,7 @@ We use the `shell` module to run the command. Running a command in this way is n
 
 ## Using Galera
 
-If we're using [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera-cluster/README.md) we'll want to only update the timezone tables in one node, because the other nodes will replicate the changes. For our convenience, we can run this operation on the first node. If the nodes hostnames are defined in a list called `cluster_hosts`, we can check if the current node is the first in this way:
+If we're using [MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) we'll want to only update the timezone tables in one node, because the other nodes will replicate the changes. For our convenience, we can run this operation on the first node. If the nodes hostnames are defined in a list called `cluster_hosts`, we can check if the current node is the first in this way:
 
 ```
 when: timezone_info.changed and inventory_hostname == cluster_hosts[0].hostname
