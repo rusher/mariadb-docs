@@ -87,22 +87,12 @@ Use the `TEMPORARY` keyword to create a temporary table that is only available t
 
 {% tabs %}
 {% tab title="Current" %}
-From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), by default, temporary tables are only created on the replica if the primary is using binlog\_format=STATEMENT.
+From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), by default, temporary tables are only created on the replica if the primary is using the [STATEMENT binary log format](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging).
 
 The new deterministic rules for logging of temporary tables are:
 
-* STATEMENT binlog format is used. If it is binlogged, 1 is stored in\
-  TABLE\_SHARE->table\_creation\_was\_logged. The user can change this\
-  behavior by setting create\_temporary\_table\_binlog\_formats to\
-  MIXED,STATEMENT in which case the create is logged in statement\
-  format also in MIXED mode (as before).
-* Changes to temporary tables are only binlogged if and only if\
-  the CREATE was logged. The logging happens under STATEMENT or MIXED.\
-  If binlog\_format=ROW, temporary table changes are not binlogged. A\
-  temporary table that is changed under ROW is marked as 'not up to\
-  date in binlog' and no future row changes are logged. Any usage of\
-  this temporary table will force row logging of other tables in any\
-  future statements using the temporary table to be row logged.
+* The STATEMENT binlog format is used. If it is binlogged, 1 is stored in TABLE\_SHARE->table\_creation\_was\_logged. The user can change this behavior by setting [create\_temporary\_table\_binlog\_formats](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#create_tmp_table_binlog_formats) to MIXED,STATEMENT in which case the create is logged in statement format also in MIXED mode (as before).
+* Changes to temporary tables are only binlogged if and only if the CREATE was logged. The logging happens under STATEMENT or MIXED. If binlog\_format=ROW, temporary table changes are not binlogged. A temporary table that is changed under ROW is marked as 'not up to date in binlog' and no future row changes are logged. Any usage of this temporary table will force row logging of other tables in any future statements using the temporary table to be row logged.
 * DROP TEMPORARY is binlogged only if the CREATE was binlogged.
 {% endtab %}
 
