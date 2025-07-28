@@ -93,6 +93,7 @@ This restriction does not apply if only non-transactional storage engines are us
 ## See Also
 
 * [Replication and Foreign Keys](replication-and-foreign-keys.md)
+* [Replicating Temporary Tables](../../reference/sql-statements/data-definition/create/create-table.md#replicating-temporary-tables)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
