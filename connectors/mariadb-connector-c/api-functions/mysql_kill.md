@@ -12,12 +12,12 @@ int mysql_kill(MYSQL * mysql,
 
 ## Description
 
-This function is used to ask the server to kill a MariaDB thread specified by the processid parameter. This value must be retrieved by [SHOW PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist). If trying to kill the own connection [mysql\_thread\_id()](mysql_thread_id.md) should be used.
+This function is used to ask the server to kill a MariaDB thread specified by the processid parameter. This value must be retrieved by [SHOW PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-processlist). If trying to kill the own connection [mysql\_thread\_id()](mysql_thread_id.md) should be used.
 
 Returns 0 on success, otherwise nonzero.
 
 {% hint style="info" %}
-To stop a running command without killing the connection use [KILL QUERY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/kill). The mysql\_kill() function only kills a connection, it doesn't free any memory - this must be done explicitly by calling [mysql\_close()](mysql_close.md).
+To stop a running command without killing the connection, use [KILL QUERY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/kill). The `mysql_kill()` function only kills a connection; it doesn't free any memory - this must be done explicitly by calling [mysql\_close()](mysql_close.md).
 {% endhint %}
 
 ## See also
@@ -25,6 +25,5 @@ To stop a running command without killing the connection use [KILL QUERY](https:
 * [mysql\_thread\_id()](mysql_thread_id.md)
 * [mysql\_close()](mysql_close.md)
 * [mariadb\_cancel()](mariadb_cancel.md)
-
 
 {% @marketo/form formId="4316" %}
