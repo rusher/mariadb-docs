@@ -2,11 +2,11 @@
 
 _perror_ is a utility that displays descriptions for system or storage engine error codes.
 
-See [MariaDB Error Codes](broken-reference) for a full list of MariaDB error codes, and [Operating System Error Codes](broken-reference) for a list of Linux and Windows error codes.
+See [MariaDB Error Codes](../../reference/error-codes/) for a full list of MariaDB error codes, and [Operating System Error Codes](../../reference/error-codes/operating-system-error-codes.md) for a list of Linux and Windows error codes.
 
 ## Usage
 
-```
+```ini
 perror [OPTIONS] [ERRORCODE [ERRORCODE...]]
 ```
 
@@ -26,20 +26,20 @@ If you need to describe a negative error code, use `--` before the first error c
 
 System error code:
 
-```
+```bash
 shell> perror 96
 OS error code  96:  Protocol family not supported
 ```
 
-MariaDB/MySQL [error code](broken-reference):
+MariaDB/MySQL error code:
 
-```
+```bash
 shell> perror 1005 1006
 MySQL error code 1005 (ER_CANT_CREATE_TABLE): Can't create table %`s.%`s (errno: %M)
 MySQL error code 1006 (ER_CANT_CREATE_DB): Can't create database '%-.192s' (errno: %M)
 ```
 
-```
+```bash
 shell> perror --silent 1979
 You are not owner of query %lu
 ```

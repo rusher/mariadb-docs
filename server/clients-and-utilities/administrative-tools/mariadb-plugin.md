@@ -2,32 +2,32 @@
 
 `mariadb-plugin` is a tool for enabling or disabling [plugins](../../reference/plugins/).
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_plugin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+The client was previously called `mysql_plugin`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-It is a commandline alternative to the [INSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) statements, and the `--plugin-load option` to [mariadbd](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
+It is a command line alternative to the [INSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) statements, and the `--plugin-load option` to [mariadbd](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
 
 `mariadb-plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](../../reference/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
 
 `mariadb-plugin` basically has two use cases:
 
-* adding a plugin even before the first real server startup
-* removing a plugin that crashes the server on startup
+1. To add a plugin even before the first real server startup.
+2. To remove a plugin that crashes the server on startup.
 
-For the install use case, adding a [plugin-load-add](../../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-add) entry to `my.cnf` or in a separate include option file, is probably a better alternative. In case of a plugin loaded via a `mysql.plugin` crashing the server, uninstalling the plugin with the help of `mariadb-plugin` can be the only viable action though.
+For the installation use case, adding a [plugin-load-add](../../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-add) entry to `my.cnf` or in a separate include option file is a better alternative. In case of a plugin loaded via a `mysql.plugin` crashing the server, uninstalling the plugin with the help of `mariadb-plugin` can be the only viable action, though.
 
 ## Usage
 
-```
+```bash
 mariadb-plugin [options] <plugin> ENABLE|DISABLE
 ```
 
-`mariadb-plugin` expects to find a configuration file that indicates how to configure the plugins. The configuration file is by default the same name as the plugin, with a `.ini` extension. For example:
+`mariadb-plugin` expects to find a configuration file that indicates how to configure the plugins. The configuration file has, by default, the same name as the plugin, with an  `.ini` extension:
 
-```
+```bash
 mariadb-plugin crazyplugins ENABLE
 ```
 
-Here, `mariadb-plugin` will look for a file called `crazyplugins.ini`
+Here, `mariadb-plugin`  looks for a file called `crazyplugins.ini` :
 
 ```
 crazyplugins
@@ -36,11 +36,11 @@ crazyplugin2
 crazyplugin3
 ```
 
-The first line should contain the name of the library object file, with no extension. The other lines list the names of the components. Each value should be on a separate line, and the `#` character at the start of the line indicates a comment.
+The first line should contain the name of the library object file, with no extension. The other lines list the names of the components. Each value should be on a separate line. The `#` character at the start of a line indicates a comment.
 
 ## Options
 
-The following options can be specified on the command line, while some can be specified in the `[mysqld]` group of any option file. For options specified in a `[mysqld]` group, only the `--basedir`, `--datadir`, and `--plugin-dir` options can be used - the rest are ignored.
+The following options can be specified on the command line, while some can be specified in the `[mysqld]` group of any option file. For options specified in a `[mysqld]` group, only the `--basedir`, `--datadir`, and `--plugin-dir` options can be used — the rest are ignored.
 
 | Option                       | Description                                                                                     |
 | ---------------------------- | ----------------------------------------------------------------------------------------------- |

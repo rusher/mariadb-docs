@@ -1,10 +1,10 @@
 # mariadb-embedded
 
-`mariadb-embedded` is a [mariadb client](../mariadb-client/mariadb-command-line-client.md) statically linked to libmariadbd, the embedded server.
+`mariadb-embedded` is a [mariadb client](../mariadb-client/mariadb-command-line-client.md), statically linked to `libmariadbd`, the embedded server.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_embedded`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Previously, the client was called `mysql_embedded`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-Upon execution, an embedded MariaDB server is instantiated and you can execute statements just as you would using the normal mariadb client, using the same options.
+Upon execution, an embedded MariaDB server is instantiated, and you can execute statements just as you would using the normal mariadb client, using the same options.
 
 {% hint style="danger" %}
 Do not run _mariadb-embedded_ using the same database as a running MariaDB server!
@@ -12,7 +12,7 @@ Do not run _mariadb-embedded_ using the same database as a running MariaDB serve
 
 ## Examples
 
-```
+```bash
 sudo mariadb-embedded -e 'select user, host, password from mysql.user where user="root"'
 +------+-----------+-------------------------------------------+
 | user | host      | password                                  |
@@ -26,7 +26,7 @@ sudo mariadb-embedded -e 'select user, host, password from mysql.user where user
 
 Sending options with `--server-arg`:
 
-```
+```bash
 sudo mariadb-embedded --server-arg='--skip-innodb'
   --server-arg='--default-storage-engine=myisam' 
   --server-arg='--log-error=/tmp/mysql.err' 
