@@ -13,7 +13,7 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 
 The following status variables are useful in [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](./). See [Server Status Variables](../optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 
-See also the [Full list of MariaDB options, system and status variables](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `Binlog_bytes_written`
 
