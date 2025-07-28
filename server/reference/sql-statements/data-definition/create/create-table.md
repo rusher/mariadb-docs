@@ -83,6 +83,40 @@ Use the `TEMPORARY` keyword to create a temporary table that is only available t
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="Current" %}
+From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), by default, temporary tables are only created on the replica if the primary is using binlog\_format=STATEMENT.
+
+The new deterministic rules for logging of temporary tables are:
+
+* STATEMENT binlog format is used. If it is binlogged, 1 is stored in\
+  TABLE\_SHARE->table\_creation\_was\_logged. The user can change this\
+  behavior by setting create\_temporary\_table\_binlog\_formats to\
+  MIXED,STATEMENT in which case the create is logged in statement\
+  format also in MIXED mode (as before).
+* Changes to temporary tables are only binlogged if and only if\
+  the CREATE was logged. The logging happens under STATEMENT or MIXED.\
+  If binlog\_format=ROW, temporary table changes are not binlogged. A\
+  temporary table that is changed under ROW is marked as 'not up to\
+  date in binlog' and no future row changes are logged. Any usage of\
+  this temporary table will force row logging of other tables in any\
+  future statements using the temporary table to be row logged.
+* DROP TEMPORARY is binlogged only if the CREATE was binlogged.
+{% endtab %}
+
+{% tab title="< 12.0" %}
+In some contexts, temporary tables on the primary and replica can become inconsistent.\
+One example is if a temporary table is updated with the value of a non deterministic function\
+like [UUID](../../../sql-functions/secondary-functions/miscellaneous-functions/uuid.md)(), in which the change is never sent to the replica.
+
+\
+In some other contexts, while using MIXED mode, all changes will be logged in ROW mode while the user has any active temporary tables, even if the temporary tables are not used\
+in the query. This depends on in which format some previous independent commands were logged.
+
+There are many other pitfalls with logging temporary table to the replica.
+{% endtab %}
+{% endtabs %}
+
 ## CREATE TABLE ... LIKE
 
 Use the `LIKE` clause instead of a full table definition to create an empty table with the same definition as another table, including columns, indexes, and table options. Foreign key definitions, as well as any DATA DIRECTORY or INDEX DIRECTORY table options specified on the original table, will not be created.
