@@ -49,7 +49,7 @@ Returns zero on success, non zero if an error occurred (invalid option or value)
     char *filename= "mydata.csv";
     mysql_optionsv(mysql, MARIADB_OPT_VERIFY_LOCAL_INFILE_CALLBACK, my_verify_filename, (void *)filename);
     ```
-*   `MYSQL_PROGRESS_CALLBACK`: Specifies a callback function which will be able to visualize the progress of certain long running statements (i.e. [LOAD DATA LOCAL INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) or [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table)).
+*   `MYSQL_PROGRESS_CALLBACK`: Specifies a callback function which will be able to visualize the progress of certain long running statements (i.e. [LOAD DATA LOCAL INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/data-import-with-mariadb-enterprise-server/load-data-with-load-data-local-infile) or [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table)).
 
     ```c
     static void report_progress(const MYSQL *mysql __attribute__((unused)),
@@ -102,14 +102,14 @@ Returns zero on success, non zero if an error occurred (invalid option or value)
     ```c
     mysql_optionsv(mysql, MYSQL_OPT_BIND, (void *)"192.168.8.3");
     ```
-*   `MYSQL_OPT_NONBLOCK`: Specify stack size for non blocking operations.\
+*   `MYSQL_OPT_NONBLOCK`: Specify stack size for non-blocking operations.\
     The argument for MYSQL\_OPT\_NONBLOCK is the size of the stack used to save the state of a non-blocking operation while it is waiting for I/O and the application is doing other processing. Normally, applications will not have to change this, and it can be passed as zero to use the default value.
 
     ```c
     mysql_optionsv(mysql, MYSQL_OPT_NONBLOCK, 0);
     ```
-*   `MYSQL_OPT_CAN_HANDLE_EXPIRED_PASSWORDS`: If this option is set, the client indicates that it will be able to handle expired passwords by setting the CLIENT\_CAN\_HANDLE\_EXPIRED\_PASSWORDS capability flag.\
-    If the password has expired and CLIENT\_CAN\_HANDLE\_EXPIRED\_PASSWORDS is set, the server will not return an error when connecting, but put the connection in sandbox mode, where all commands will return error 1820 (ER\_MUST\_CHANGE\_PASSWORD) unless a new password was set. This option was added in MariaDB Connector/C 3.0.4
+*   `MYSQL_OPT_CAN_HANDLE_EXPIRED_PASSWORDS`: If this option is set, the client indicates that it will be able to handle expired passwords by setting the `CLIENT_CAN_HANDLE_EXPIRED_PASSWORDS` capability flag.\
+    If the password has expired and `CLIENT_CAN_HANDLE_EXPIRED_PASSWORDS` is set, the server will not return an error when connecting, but put the connection in sandbox mode, where all commands will return error 1820 (`ER_MUST_CHANGE_PASSWORD`) unless a new password was set. This option was added in MariaDB Connector/C 3.0.4
 
     ```c
     mysql_optionsv(mysql, MYSQL_OPT_CAN_HANDLE_EXPIRED_PASSWORDS, 1);
@@ -127,7 +127,7 @@ Returns zero on success, non zero if an error occurred (invalid option or value)
 
 #### Connection Options
 
-Some of these options can also be set as arguments to the [mysql_real_connect](mysql_real_connect.md) function.
+Some of these options can also be set as arguments to the [mysql\_real\_connect](mysql_real_connect.md) function.
 
 *   `MARIADB_OPT_HOST`: Hostname or IP address of the server to connect to.
 
@@ -184,7 +184,7 @@ Some of these options can also be set as arguments to the [mysql_real_connect](m
     ```c
     mysql_optionsv(mysql, MYSQL_OPT_COMPRESS, NULL);
     ```
-*   `MYSQL_OPT_LOCAL_INFILE`: Enable or disable the use of [LOAD DATA LOCAL INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
+*   `MYSQL_OPT_LOCAL_INFILE`: Enable or disable the use of [LOAD DATA LOCAL INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/data-import-with-mariadb-enterprise-server/load-data-with-load-data-local-infile)
 
     ```c
     unsigned int enable= 1, disable= 0;
@@ -301,7 +301,7 @@ Some of these options can also be set as arguments to the [mysql_real_connect](m
     ```c
     mysql_optionsv(mysql, MYSQL_DEFAULT_AUTH, (void *)"ed25519");
     ```
-*   `MYSQL_ENABLE_CLEARTEXT_PLUGIN`: This option is supported to be compatible with MySQL client libraries. MySQL client libraries use this option to determine whether the [mysql_clear_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam#client-authentication-plugins) authentication plugin can be used. However, MariaDB clients and client libraries do not need to set any options in order to use this authentication plugin. Therefore, this option does not actually do anything in MariaDB Connector/C.
+*   `MYSQL_ENABLE_CLEARTEXT_PLUGIN`: This option is supported to be compatible with MySQL client libraries. MySQL client libraries use this option to determine whether the [mysql\_clear\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam#client-authentication-plugins) authentication plugin can be used. However, MariaDB clients and client libraries do not need to set any options in order to use this authentication plugin. Therefore, this option does not actually do anything in MariaDB Connector/C.
 
     ```c
     mysql_optionsv(mysql, MYSQL_ENABLE_CLEARTEXT_PLUGIN, 1);
@@ -327,12 +327,12 @@ Some of these options can also be set as arguments to the [mysql_real_connect](m
     ```c
     mysql_optionsv(mysql, MYSQL_PLUGIN_DIR, (void *)"/opt/mariadb/lib/plugins");
     ```
-*   `MYSQL_SECURE_AUTH`: Refuse to connect to the server if the server uses the [mysql_old_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password) authentication plugin. This mode is off by default, which is a difference in behavior compared to MySQL 5.6 and later, where it is on by default.
+*   `MYSQL_SECURE_AUTH`: Refuse to connect to the server if the server uses the [mysql\_old\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password) authentication plugin. This mode is off by default, which is a difference in behavior compared to MySQL 5.6 and later, where it is on by default.
 
     ```c
     mysql_optionsv(mysql, MYSQL_SECURE_AUTH, 1);
     ```
-*   `MYSQL_SERVER_PUBLIC_KEY`: Specifies the name of the file which contains the RSA public key of the database server. The format of this file must be in PEM format. This option is used by the [caching_sha2_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-sha-256) client authentication plugin. It was introduced in Connector/C 3.1.0.
+*   `MYSQL_SERVER_PUBLIC_KEY`: Specifies the name of the file which contains the RSA public key of the database server. The format of this file must be in PEM format. This option is used by the [caching\_sha2\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-sha-256) client authentication plugin. It was introduced in Connector/C 3.1.0.
 
     ```c
     mysql_optionsv(mysql, MYSQL_SERVER_PUBLIC_KEY, (void *)(void *)"certs/server-cert.pem);
@@ -353,7 +353,7 @@ These options work together, according to the following rules:
 
 #### Connection Attribute Options
 
-Connection attributes are stored in the [session\_connect\_attrs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-session_connect_attrs-table) and [session\_account\_connect\_attrs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-session_account_connect_attrs-table) Performance Schema tables.\
+Connection attributes are stored in the [session\_connect\_attrs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-session_connect_attrs-table) and [session\_account\_connect\_attrs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-session_account_connect_attrs-table) Performance Schema tables.\
 By default, MariaDB Connector/C sends the following connection attributes to the server:
 
 * \_client\_name: always "libmariadb"
@@ -364,7 +364,7 @@ By default, MariaDB Connector/C sends the following connection attributes to the
 * \_server\_host: the hostname (as specified in mysql\_real\_connect). This attribute was added in Connector/C 3.0.5
 
 {% hint style="info" %}
-If the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) is disabled, connection attributes will not be stored on server.
+If the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) is disabled, connection attributes will not be stored on server.
 {% endhint %}
 
 *   `MYSQL_OPT_CONNECT_ATTR_DELETE`: Deletes a connection attribute for the given key.
@@ -388,6 +388,5 @@ If the [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/refer
 * [mysql\_init()](mysql_init.md)
 * [mysql\_options()](mysql_options.md)
 * [mysql\_real\_connect()](mysql_real_connect.md)
-
 
 {% @marketo/form formId="4316" %}
