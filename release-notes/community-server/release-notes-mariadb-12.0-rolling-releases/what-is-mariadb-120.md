@@ -71,6 +71,8 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 * Server displays if it was started with the [skip-slave-start](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#skip-slave-start) option ([MDEV-27669](https://jira.mariadb.org/browse/MDEV-27669))
 * [show\_slave\_auth\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#show_slave_auth_info) has been added as a system variable (previously it was just an option). It determines whether to show the user and password in [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) (SHOW SLAVE HOSTS) on the primary.
 * [replicate\_same\_server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#replicate_same_server_id) system variable added (previously it was just an option), which permits not skipping events having our server id.
+* Ensure that creation and usage of temporary tables in replication is predictable ([MDEV-36099](https://jira.mariadb.org/browse/MDEV-36099))
+  * [create\_tmp\_table\_binlog\_formats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#create_tmp_table_binlog_formats) system variable.
 
 ### Galera <a href="#galera" id="galera"></a>
 
