@@ -83,7 +83,7 @@ Use the `TEMPORARY` keyword to create a temporary table that is only available t
 {% endtab %}
 {% endtabs %}
 
-#### Replicating temporary tables
+### Replicating temporary tables
 
 {% tabs %}
 {% tab title="Current" %}
