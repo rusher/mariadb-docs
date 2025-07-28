@@ -22,13 +22,11 @@ The storage engine API also allows storage engines to set or limit the logging f
 
 ### Statement-Based Logging
 
-In [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) and before, statement-based logging was the default. [Mixed logging](binary-log-formats.md#mixed-logging) is now the default.
-
 When statement-based logging is enabled, statements are logged to the [binary log](./) exactly as they were executed. Temporary tables created on the primary will also be created on the replica.\
 This mode is only recommended where one needs to keep the binary log as small as possible, the primary and replica have identical data (including using the same storage engines for all tables), and all functions being used are deterministic (repeatable with the same arguments).\
 Statements and tables using timestamps or auto\_increment are safe to use with statement-based logging.
 
-This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable to `STATEMENT`.
+This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable to `STATEMENT`.
 
 In certain cases when it would be impossible to execute the statement on the replica, the server will switch to\
 row-based logging for the statement. Some cases of this are:
@@ -37,12 +35,12 @@ row-based logging for the statement. Some cases of this are:
 * [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../server-usage/storage-engines/s3-storage-engine/), to another storage engine.
 * One is using [SEQUENCEs](../../../reference/sql-structure/sequences/) in the statement or the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) definition.
 
-In certain cases, a statement may not be deterministic, and therefore not safe for [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/server-monitoring-logs/binary-log/broken-reference/README.md). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:
+In certain cases, a statement may not be deterministic, and therefore not safe for [replication](../../../ha-and-performance/standard-replication/). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:
 
 ```
 [Warning] Unsafe statement written to the binary log using statement format since 
-  BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This 
-  is unsafe because the set of rows included cannot be predicted.
+  BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. 
+  This is unsafe because the set of rows included cannot be predicted.
 ```
 
 See [Unsafe Statements for Statement-based Replication](../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md) for more information.
@@ -53,6 +51,8 @@ If you need to execute non-deterministic statements, then it is safer to use mix
 
 Note that some tables, like temporary tables created in row mode, does not support statement based logging (as the data is not in the binary log). Any statement that uses a table that does not support statement logging will use row based logging. This is to ensure that the data on master and the slave are consistent.
 
+Statement-based logging was the default prior to [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes) and before. [Mixed logging](binary-log-formats.md#mixed-logging) is now the default.
+
 ### Mixed Logging
 
 Mixed logging is the default binary log format.
@@ -61,7 +61,7 @@ When mixed logging is enabled, the server uses a combination of statement-based 
 
 During one transaction, some statements may be logged with row logging while others are logged with statement-based logging.
 
-This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable to `MIXED`.
+This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable to `MIXED`.
 
 ### Row-Based Logging
 
@@ -69,9 +69,9 @@ When row-based logging is enabled, DML statements are **not** logged to the [bin
 
 Row-based logging uses more storage than the other log formats but is the safest to use. In practice [mixed logging](binary-log-formats.md#mixed-logging) should be as safe.
 
-If one wants to be able to see the original query that was logged, one can enable [annotated rows events](../../../reference/clientserver-protocol/replication-protocol/annotate_rows_event.md), that is shown with [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/), with [--binlog-annotate-row-events](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md). This option is on by default.
+If one wants to be able to see the original query that was logged, one can enable [annotated rows events](../../../reference/clientserver-protocol/replication-protocol/annotate_rows_event.md), that is shown with [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/), with [--binlog-annotate-row-events](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_annotate_row_events). This option is on by default.
 
-This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable to `ROW`.
+This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable to `ROW`.
 
 #### Things to be aware of with row-based logging
 
@@ -83,11 +83,11 @@ When using row base logging, some statement works different on the master.
 
 ## Compression of the Binary Log
 
-[Compression of the binary log](compressing-events-to-reduce-size-of-the-binary-log.md) can be used with any of the binary log formats, but the best results come from using mixed or row-based logging. You can enable compression by using the [--log\_bin\_compress](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) startup option.
+[Compression of the binary log](compressing-events-to-reduce-size-of-the-binary-log.md) can be used with any of the binary log formats, but the best results come from using mixed or row-based logging. You can enable compression by using the [--log\_bin\_compress](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin_compress) startup option.
 
 ## Configuring the Binary Log Format
 
-The format for [binary log](./) events can be configured by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable. If you have the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege, then you can change it dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The format for [binary log](./) events can be configured by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable. If you have the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege, then you can change it dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL binlog_format='ROW';
@@ -107,9 +107,9 @@ It can also be set in a server [option group](../../install-and-upgrade-mariadb/
 binlog_format=ROW
 ```
 
-Be careful when changing the binary log format when using [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/server-monitoring-logs/binary-log/broken-reference/README.md). When you change the binary log format on a server, it only changes the format for that server. Changing the binary log format on a primary has no effect on the replica's binary log format. This can cause replication to give inconsistent results or to fail.
+Be careful when changing the binary log format when using [replication](../../../ha-and-performance/standard-replication/). When you change the binary log format on a server, it only changes the format for that server. Changing the binary log format on a primary has no effect on the replica's binary log format. This can cause replication to give inconsistent results or to fail.
 
-Be careful changing the binary log format dynamically when the server is a replica and [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md) is enabled. If you change the global value dynamically, then that does not also affect the session values of any currently running threads. This can cause problems with [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md), because the [worker threads](../../../ha-and-performance/standard-replication/replication-threads.md#worker-threads) will remain running even after [STOP SLAVE](../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) is executed. This can be worked around by resetting the [slave\_parallel\_threads](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable. For example:
+Be careful changing the binary log format dynamically when the server is a replica and [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md) is enabled. If you change the global value dynamically, then that does not also affect the session values of any currently running threads. This can cause problems with [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md), because the [worker threads](../../../ha-and-performance/standard-replication/replication-threads.md#worker-threads) will remain running even after [STOP SLAVE](../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) is executed. This can be worked around by resetting the [slave\_parallel\_threads](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#slave_parallel_threads) system variable. For example:
 
 ```sql
 STOP SLAVE;
@@ -123,7 +123,7 @@ For considerations when replicating temporary tables, see [Replicating temporary
 
 ## Effect of the Binary Log Format on Replicas
 
-A replica will apply any events it gets from the primary, regardless of the binary log format. The [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable only applies to normal (not replicated) updates.
+A replica will apply any events it gets from the primary, regardless of the binary log format. The [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable only applies to normal (not replicated) updates.
 
 If you are running MySQL or an older MariaDB than 10.0.22, you should be aware of that if you are running the replica in `binlog_format=STATEMENT` mode, the replica will stop if the primary is used with `binlog_format` set to anything else than `STATEMENT`.
 
@@ -133,9 +133,9 @@ The binary log format is upwards-compatible. This means replication should alway
 
 Statements that affect the `mysql` database can be logged in a different way to that expected.
 
-If the mysql database is edited directly, logging is performed as expected according to the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md). Statements that directly edit the mysql database include [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md), [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md), [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md), [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md), [DO](../../../reference/sql-statements/stored-routine-statements/do.md), [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md), and [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md).
+If the mysql database is edited directly, logging is performed as expected according to the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format). Statements that directly edit the mysql database include [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md), [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md), [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md), [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md), [DO](../../../reference/sql-statements/stored-routine-statements/do.md), [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md), and [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md).
 
-If the `mysql` database is edited indirectly, statement logging is used regardless of [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) setting. Statements editing the `mysql` database indirectly include [GRANT](../../../reference/sql-statements/account-management-sql-statements/grant.md), [REVOKE](../../../reference/sql-statements/account-management-sql-statements/revoke.md), [SET PASSWORD](../../../reference/sql-statements/account-management-sql-statements/set-password.md), [RENAME USER](../../../reference/sql-statements/account-management-sql-statements/rename-user.md), [ALTER](../../../reference/sql-statements/data-definition/alter/), [DROP](../../../reference/sql-statements/data-definition/drop/) and [CREATE](../../../reference/sql-statements/data-definition/create/) (except for the situation described below).
+If the `mysql` database is edited indirectly, statement logging is used regardless of [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) setting. Statements editing the `mysql` database indirectly include [GRANT](../../../reference/sql-statements/account-management-sql-statements/grant.md), [REVOKE](../../../reference/sql-statements/account-management-sql-statements/revoke.md), [SET PASSWORD](../../../reference/sql-statements/account-management-sql-statements/set-password.md), [RENAME USER](../../../reference/sql-statements/account-management-sql-statements/rename-user.md), [ALTER](../../../reference/sql-statements/data-definition/alter/), [DROP](../../../reference/sql-statements/data-definition/drop/) and [CREATE](../../../reference/sql-statements/data-definition/create/) (except for the situation described below).
 
 CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) portion of the statement is logged using statement-based logging, while the [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) portion is logged according to the value of `binlog_format`.
 
