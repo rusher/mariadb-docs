@@ -10,7 +10,7 @@ Currently, the zlib compression algorithm is used to compress events.
 
 Compression will have the most impact when events are of a non-negligible size, as each event is compressed individually. For example, batch INSERT statements that insert many rows or large values, or row-based events that touch a number of rows in one query.
 
-The [log\_bin\_compress](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) option is used to enable compression of events. Only events with data (query text or row data) above a certain size are compressed; the limit is set with the [log\_bin\_compress\_min\_len](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) option.
+The [log\_bin\_compress](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin_compress) option is used to enable compression of events. Only events with data (query text or row data) above a certain size are compressed; the limit is set with the [log\_bin\_compress\_min\_len](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin_compress_min_len) option.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
