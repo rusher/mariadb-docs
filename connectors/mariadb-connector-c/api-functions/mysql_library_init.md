@@ -13,12 +13,11 @@ Call to initialize the library before calling other functions, both for embedded
 Call [mysql\_library\_end()](mysql_library_end.md) to clean up after completion.
 
 {% hint style="info" %}
-mysql\_server\_init() is an alias.
+`mysql_server_init()` is an alias.
 {% endhint %}
 
 ## See also
 
 * [mysql\_library\_end()](mysql_library_end.md)
-
 
 {% @marketo/form formId="4316" %}
