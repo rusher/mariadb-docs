@@ -119,9 +119,11 @@ SET GLOBAL slave_parallel_threads=4;
 START SLAVE
 ```
 
+For considerations when replicating temporary tables, see [Replicating temporary tables](../../../reference/sql-statements/data-definition/create/create-table.md#replicating-temporary-tables).
+
 ## Effect of the Binary Log Format on Replicas
 
-In [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes) and later, a replica will apply any events it gets from the primary, regardless of the binary log format. The [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable only applies to normal (not replicated) updates.
+A replica will apply any events it gets from the primary, regardless of the binary log format. The [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable only applies to normal (not replicated) updates.
 
 If you are running MySQL or an older MariaDB than 10.0.22, you should be aware of that if you are running the replica in `binlog_format=STATEMENT` mode, the replica will stop if the primary is used with `binlog_format` set to anything else than `STATEMENT`.
 
@@ -141,6 +143,7 @@ CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TA
 
 * [Setting up replication](../../../ha-and-performance/standard-replication/setting-up-replication.md)
 * [Compressing the binary log](compressing-events-to-reduce-size-of-the-binary-log.md)
+* [Replicating temporary tables](../../../reference/sql-statements/data-definition/create/create-table.md#replicating-temporary-tables)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
