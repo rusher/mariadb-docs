@@ -76,7 +76,7 @@ The page also shows how to edit the binary log before replaying it. This allows 
 
 ### Incremental Backups with mariadb-backup
 
-The simplest way to take an incremental backup is to use mariadb-backup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md).
+The simplest way to take an incremental backup is to use mariadb-backup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with mariadb-backup](../../../../server-usage/backup-and-restore/mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md).
 
 mariadb-backup can run on both Linux and Windows systems.
 

@@ -6,7 +6,7 @@ First [Setup your build environment](build-environment-setup-for-linux.md).
 
 Then use automake/configure/make to generate the tar file:
 
-```
+```bash
 BUILD/autorun.sh
 ./configure --with-plugin-xtradb
 make dist

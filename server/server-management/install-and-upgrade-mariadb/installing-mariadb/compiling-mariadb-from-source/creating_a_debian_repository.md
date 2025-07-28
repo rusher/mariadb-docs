@@ -1,8 +1,8 @@
 # Creating a Debian Repository
 
-Below are instructions for creating your own Debian repository. The instructions are based on [repository-howto.en.html](https://www.debian.org/doc/manuals/repository-howto/repository-howto.en.html)
+Below are instructions for creating your own Debian repository. The instructions are based on [repository-howto.en.html](https://www.debian.org/doc/manuals/maint-guide/)
 
-```
+```bash
 REPO_DIR={pick some location}
 mkdir $REPO_DIR
 mkdir $REPO_DIR/binary
@@ -17,7 +17,7 @@ dpkg-scansources  source  /dev/null | gzip -9c > source/Sources.gz
 
 One needs to add a new file to the `/etc/apt/sources.list.d/` directory. For instance a new file called `mariadb.list`
 
-```
+```bash
 # sergey's MariaDB repository
 #
 deb file:///home/psergey/testrepo binary/
@@ -26,7 +26,7 @@ deb-src file:///home/psergey/testrepo source/
 
 after which one can run
 
-```
+```bash
 apt-get update  # Let apt learn about the new repository
 apt-get install mariadb-server
 ```
@@ -39,14 +39,14 @@ and collect bugs :-).
 
 Run
 
-```
+```bash
 dpkg --get-selections | grep mariadb
 dpkg --get-selections | grep mysql
 ```
 
 to see what is installed, and then
 
-```
+```bash
 dpkg --purge <packages>
 ```
 

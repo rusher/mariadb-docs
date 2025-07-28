@@ -45,7 +45,7 @@ InnoDB follows the "fail fast" philosophy. If table corruption is detected, by d
 
 To repair an InnoDB table after a crash:
 
-1. Restart MariaDB with the [--innodb-force-recovery](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) option set to a low but non-zero value.
+1. Restart MariaDB with the [--innodb-force-recovery](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) option set to a low but non-zero value.
 2. If MariaDB fails to start, retry with a higher value. Repeat until you succeed.
 
 At this point, you can follow two different procedures, depending if you can use a backup or not. Provided that you have a usable backup, it is often the best option to bring the database up quickly. But if you want to reduce the data loss as much as possible, you prefer to follow the second method.
