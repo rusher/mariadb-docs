@@ -13,32 +13,21 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 
 MariaDB includes a feature to include a checksum in [binary log](../../server-management/server-monitoring-logs/binary-log/) events.
 
-Checksums are enabled with the [binlog\_checksum option](replication-and-binary-log-system-variables.md). Until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes), this was disabled by default. From [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes), the option is set to `CRC32`.
+Checksums are enabled with the [binlog\_checksum option](replication-and-binary-log-system-variables.md), which is set to `CRC32` by default.
 
-The variable can be changed dynamically without restarting the server. Setting\
-the variable in any way (even to the existing value) forces a rotation of the [binary log](../../server-management/server-monitoring-logs/binary-log/) (the intention is to avoid having a single binlog where some events\
-are checksummed and others are not).
+The variable can be changed dynamically without restarting the server. Setting the variable in any way (even to the existing value) forces a rotation of the [binary log](../../server-management/server-monitoring-logs/binary-log/) (the intention is to avoid having a single binlog where some events are checksummed and others are not).
 
-When checksums are enabled, replicas will check events received over\
-the network for checksum errors, and will stop with an error if a corrupt event\
-is detected.
+When checksums are enabled, replicas will check events received over the network for checksum errors, and will stop with an error if a corrupt event is detected.
 
-In addition, the server can be configured to verify checksums in two other\
-places.
+In addition, the server can be configured to verify checksums in two other places.
 
-One is when reading events from the binlog on the primary, for example when\
-sending events to a replica or for something like SHOW BINLOG EVENTS. This is\
-controlled by option master\_verify\_checksum, and is thus used to detect file\
-system corruption of the binlog files.
+One is when reading events from the binlog on the primary, for example when sending events to a replica or for something like SHOW BINLOG EVENTS. This is controlled by the master\_verify\_checksum option, and is thus used to detect file system corruption of the binlog files.
 
-The other is when the replica SQL thread reads events from the [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md). This is\
-controlled by the slave\_sql\_verify\_checksum option, and is used to detect file\
-system corruption of replica relay log files.
+The other is when the replica SQL thread reads events from the [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md). This is controlled by the slave\_sql\_verify\_checksum option, and is used to detect file system corruption of replica relay log files.
 
 **MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), binlog checksums are computed when writing events into the statement or transaction caches, where before this was done when the caches were copied to the real binlog file. This moves the\
-checksum computation outside of holding LOCK\_log, improving scalability. See [MDEV-31273](https://jira.mariadb.org/browse/MDEV-31273).
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), binlog checksums are computed when writing events into the statement or transaction caches, where before this was done when the caches were copied to the real binlog file. This moves the checksum computation outside of holding LOCK\_log, improving scalability. See [MDEV-31273](https://jira.mariadb.org/browse/MDEV-31273).
 
 `master_verify_checksum`
 
