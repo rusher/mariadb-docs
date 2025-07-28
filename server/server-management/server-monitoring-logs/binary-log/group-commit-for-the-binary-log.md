@@ -50,7 +50,7 @@ SHOW GLOBAL STATUS WHERE Variable_name IN('Binlog_commits', 'Binlog_group_commit
 
 [Binlog\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_commits) is the total number of transactions committed to the [binary log](./).
 
-[Binlog\_group\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commits) is the total number of groups committed to the [binary log](./). As explained in the previous sections of this page, a group commit is when a group of transactions is flushed to the [binary log](./) together by sharing a single flush system call. When [sync\_binlog=1](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) is set, then this is also the total number of flush system calls executed in the process of flushing commits to the [binary log](./).
+[Binlog\_group\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commits) is the total number of groups committed to the [binary log](./). As explained in the previous sections of this page, a group commit is when a group of transactions is flushed to the [binary log](./) together by sharing a single flush system call. When [sync\_binlog=1](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sync_binlog) is set, then this is also the total number of flush system calls executed in the process of flushing commits to the [binary log](./).
 
 Thus the extent to which group commit is effective at reducing the number of flush system calls on the binary log can be determined by the ratio between these two status variables. [Binlog\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_commits) will always be as equal to or greater than [Binlog\_group\_commits](../../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commits). The greater the difference is between these status variables, the more effective group commit was at reducing flush overhead.
 
@@ -96,7 +96,7 @@ Group commit is also used to enable [conservative mode of in-order parallel repl
 
 ## Effects of Group Commit on InnoDB Performance
 
-When both [innodb\_flush\_log\_at\_trx\_commit=1](../../../server-usage/storage-engines/innodb/innodb-system-variables.md) (the default) is set and the [binary log](./) is enabled, there is now one less sync to disk inside InnoDB during commit (2 syncs shared between a group of transactions instead of 3). See [Binary Log Group Commit and InnoDB Flushing Performance](../../../server-usage/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) for more information.
+When both [innodb\_flush\_log\_at\_trx\_commit=1](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_log_at_trx_commit) (the default) is set and the [binary log](./) is enabled, there is now one less sync to disk inside InnoDB during commit (2 syncs shared between a group of transactions instead of 3). See [Binary Log Group Commit and InnoDB Flushing Performance](../../../server-usage/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) for more information.
 
 ## Status Variables
 
