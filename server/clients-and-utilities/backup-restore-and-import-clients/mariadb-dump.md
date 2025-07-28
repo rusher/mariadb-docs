@@ -2,31 +2,31 @@
 
 The `mariadb-dump` client is a backup program originally written by Igor Romanenko.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqldump`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Previously, the client used to be called `mysqldump`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-From [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes), the symlink`mysqldump`is deprecated and removed from the `mariadb` Docker Official Image.
+From [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes), the symlink `mysqldump` is deprecated and removed from the `mariadb` Docker Official Image.
 
 {% hint style="warning" %}
-**Note:** From [MariaDB 10.5.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-10-5-25-release-notes), [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-18-release-notes), [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes) and [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-2-release-notes) `mariadb-dump` generates a command at the beginning of the dump to enable [sandbox](../mariadb-client/mariadb-command-line-client.md#-sandbox) mode. This command cannot be interpreted by earlier versions of the [MariaDB command line client](../mariadb-client/mariadb-command-line-client.md) or by MySQL's command line client, and the client will generate an error if used against the versions that do not support it. This does not affect other methods of importing the data.
+**Note:** From MariaDB 11.4.2, 11.2.4, 11.1.5, 11.0.6, 10.11.8, 10.6.18, and 10.5.25,  `mariadb-dump` generates a command at the beginning of the dump to enable [sandbox](../mariadb-client/mariadb-command-line-client.md#-sandbox) mode. This command cannot be interpreted by earlier versions of the [MariaDB command line client](../mariadb-client/mariadb-command-line-client.md) or by MySQL's command line client, and the client will generate an error if used against the versions that do not support it. This does not affect other methods of importing the data.
 {% endhint %}
 
-The `mariadb-dump` client can be used to dump a database or a collection of databases for backup or transfer to another database server (not necessarily MariaDB or MySQL). The dump typically contains SQL statements to create the table, populate it, or both. However, `mariadb-dump` can also be used to generate files in CSV, other delimited text, or XML format.
+The `mariadb-dump` client can be used to dump a database or a collection of databases for backup or transfer to another database server (not necessarily MariaDB or MySQL). The dump typically contains SQL statements to create the table, populate it, or both. Also, `mariadb-dump` can also be used to generate files in CSV, other delimited text, or XML format.
 
-If you are doing a backup on the server and your tables all are [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) tables, consider using [mariadb-hotcopy](mariadb-hotcopy.md) instead because it can accomplish faster backups and faster restores.
+If you are doing a backup on the server and your tables all are [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) tables, consider using [mariadb-hotcopy](mariadb-hotcopy.md) instead, because it can accomplish faster backups and faster restores.
 
-mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/stored-routines/stored-procedures/), [views](../../server-usage/views/), and [events](../../server-usage/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](../../server-usage/stored-routines/stored-functions/) are however also part of the system tables (for example [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
+`mariadb-dump` dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/stored-routines/stored-procedures/), [views](../../server-usage/views/), and [events](../../server-usage/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](../../server-usage/stored-routines/stored-functions/) are also part of the system tables (for example, [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
 
 `mariadb-dump` supports the [enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md#mariadb-dump).
 
 ## Performance
 
-mariadb-dump doesn't usually consume much CPU resources on modern hardware as by default it uses a single thread. This method is good for a heavily loaded server.
+`mariadb-dump`  usually doesn't consume much CPU resources on modern hardware, as by default it uses a single thread. This method is good for a heavily loaded server.
 
-Disk input/outputs per second (IOPS), can however increase for multiple reasons. When you back-up on the same device as the database, this produces unnecessary random IOPS. The dump is done sequentially, on a per table basis, causing a full-table scan and many buffer page misses on tables that are not fully cached in memory.
+Disk input/outputs per second (IOPS), can, however, increase for multiple reasons. When you back up on the same device as the database, this produces unnecessary random IOPS. The dump is done sequentially, on a per-table basis, causing a full table scan and many buffer page misses on tables that are not fully cached in memory.
 
-It's recommended that you back-up from a network location to remove disk IOPS on the database server, but it is vital to use a separate network card to keep network bandwidth available for regular traffic.
+It's recommended that you back up from a network location to remove disk IOPS on the database server, but it is vital to use a separate network card to keep network bandwidth available for regular traffic.
 
-Although mariadb-dump will by default preserve your resources for regular spindle disks and low-core hardware, this doesn't mean that concurrent dumps cannot benefit from hardware architecture like SAN, flash storage, low write workload. The back-up time would benefit from a tool such as MyDumper.
+Although `mariadb-dump` by default preserves your resources for regular spindle disks and low-core hardware, this doesn't mean that concurrent dumps cannot benefit from hardware architecture like SAN, flash storage, low write workload. The backup time would benefit from a tool such as MyDumper.
 
 ## Usage
 
@@ -39,27 +39,29 @@ shell> mariadb-dump [options] --all-databases
 shell> mariadb-dump [options] --system=[option_list]
 ```
 
-If you do not name any tables following db\_name or if you use the`--databases` or `--all-databases` option, entire databases are dumped.
+If you do not name any tables after specifying `db_name` , or if you use the `--databases` or `--all-databases` option, entire databases are dumped.
 
-`mariadb-dump` does not dump the INFORMATION\_SCHEMA (or PERFORMANCE\_SCHEMA, if enabled) database by default. MariaDB dumps the `INFORMATION_SCHEMA` if you name it explicitly on the command line, although currently you must also use the `--skip-lock-tables` option.
+`mariadb-dump` does not dump the `INFORMATION_SCHEMA` (or `PERFORMANCE_SCHEMA`, if enabled) database by default. MariaDB dumps the `INFORMATION_SCHEMA` if you name it explicitly on the command line, although you must also use the `--skip-lock-tables` option.
 
 To see a list of the options your version of `mariadb-dump` supports, execute `mariadb-dump --help`.
 
-### Row by Row vs. Buffering
+## Row by Row vs. Buffering
 
-`mariadb-dump` can retrieve and dump table contents row by row, or it can retrieve the entire content from a table and buffer it in memory before dumping it. Buffering in memory can be a problem if you are dumping large tables. To dump tables row by row, use the `--quick` option (or `--opt`, which enables `--quick`). The `--opt` option (and hence `--quick`) is enabled by default, so to enable memory buffering, use`--skip-quick`.
+`mariadb-dump` can retrieve and dump table contents row by row, or it can retrieve the entire content from a table and buffer it in memory before dumping it. Buffering in memory can be a problem if you are dumping large tables. To dump tables row by row, use the `--quick` option (or `--opt`, which enables `--quick`). The `--opt` option (and hence `--quick`) is enabled by default, so to enable memory buffering, use `--skip-quick`.
 
-### mariadb-dump and the mysql.transaction\_registry\_table
+## mysql.transaction\_registry\_table
 
 `mariadb-dump` includes logic to cater for the [mysql.transaction\_registry table](../../reference/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md).
 
-### mariadb-dump and Old Versions of MySQL
+## Old Versions of MySQL
 
-If you are using a recent version of `mariadb-dump` to generate a dump to be reloaded into a very old MySQL server, you should not use the`--opt` or `--extended-insert` option. Use`--skip-opt` instead.
+If you are using a recent version of `mariadb-dump` to generate a dump to be reloaded into a very old MySQL server, you should _not_ use the `--opt` or `--extended-insert` option. Use `--skip-opt` instead.
 
-### Options
+## Options
 
 `mariadb-dump` supports the following options:
+
+### Scope
 
 #### --all
 
@@ -67,7 +69,7 @@ Deprecated. Use --create-options instead.
 
 #### -A, --all-databases
 
-Dump all the databases. This will be same as --databases with all databases selected.
+Dump all the databases. This is the same as `--databases` with all databases selected.
 
 #### -Y, --all-tablespaces
 
@@ -77,9 +79,11 @@ Dump all the tablespaces.
 
 Do not dump any tablespace information.
 
+### Other Options
+
 #### --add-drop-database
 
-Add a [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md) before each create. Typically used in conjunction with the --all-databases or --databases option because no [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md) statements are written unless one of those options is specified.
+Add a [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md) before each create. Typically used in conjunction with the `--all-databases` or `--databases` option, because no [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md) statements are written, unless one of those options is specified.
 
 #### --add-drop-table
 
@@ -103,7 +107,7 @@ Adds [STOP SLAVE](../../reference/sql-statements/administrative-sql-statements/r
 
 #### --as-of=name
 
-Dump [system versioned table](../../reference/sql-structure/temporal-tables/system-versioned-tables.md) as of specified timestamp. Argument is interpreted according to the --tz-utc setting. Table structures are always dumped as of current timestamp.From [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
+Dump [system versioned table](../../reference/sql-structure/temporal-tables/system-versioned-tables.md) as of specified timestamp. Argument is interpreted according to the `--tz-utc` setting. Table structures are always dumped as of current timestamp. This option is available from MariaDB 10.7.
 
 #### --character-sets-dir=name
 
@@ -111,15 +115,15 @@ Directory for [character set](../../reference/data-types/string-data-types/chara
 
 #### -i, --comments
 
-Write additional information in the dump file such as program version, server version, and host. Disable with --skip-comments.
+Write additional information in the dump file such as program version, server version, and host. Disable with `--skip-comments`.
 
 #### --compact
 
-Give less verbose output (useful for debugging). Disables structure comments and header/footer constructs. Enables the --skip-add-drop-table, --skip-add-locks, --skip-comments, --skip-disable-keys, and --skip-set-charset options.
+Give less verbose output (useful for debugging). Disables structure comments and header/footer constructs. Enables the `--skip-add-drop-table`, `--skip-add-locks`, `--skip-comment`s, `--skip-disable-keys`, and `--skip-set-charset` options.
 
 #### --compatible=name
 
-Change the dump to be compatible with a given mode. By default tables are dumped in a format optimized for MariaDB and MySQL. Legal modes are: ansi, mysql323, mysql40, postgresql, oracle, mssql, db2, maxdb, no\_key\_options, no\_table\_options, and no\_field\_options. One can use several modes separated by commas.This option does not guarantee compatibility with other servers. It only enables those SQL mode values that are currently available for making dump output more compatible. For example, --compatible=oracle does not map data types to Oracle types or use Oracle comment syntax.
+Change the dump to be compatible with a given mode. By default tables are dumped in a format optimized for MariaDB and MySQL. Legal modes are: ansi, `mysql323`, `mysql40`, `postgresql`, `oracle`, `mssql`, `db2`, `maxdb`, `no_key_options`, `no_table_options`, and `no_field_options`. You can use several modes, separated by commas. This option does not guarantee compatibility with other servers. It only enables those SQL mode values that are available for making dump output more compatible. For example, `--compatible=oracle` does not map data types to Oracle types or use Oracle comment syntax.
 
 #### -c, --complete-insert
 
@@ -131,19 +135,19 @@ Use compression in server/client protocol. Both client and server must support c
 
 #### --copy-s3-tables
 
-By default [S3](../../server-usage/storage-engines/s3-storage-engine/) tables are ignored. With this option set, the result file will contain a CREATE statement for a similar [Aria](../../server-usage/storage-engines/aria/) table, followed by the table data and ending with an ALTER TABLE xxx ENGINE=S3.
+By default [S3](../../server-usage/storage-engines/s3-storage-engine/) tables are ignored. With this option set, the result file will contain a `CREATE` statement for a similar [Aria](../../server-usage/storage-engines/aria/) table, followed by the table data and ending with an `ALTER TABLE`` `_`table`_` ``ENGINE=S3`.
 
 #### -a, --create-options
 
-Include all MariaDB and/or MySQL specific create options in CREATE TABLE statements. Use --skip-create-options to disable.
+Include all MariaDB and/or MySQL specific create options in `CREATE TABLE` statements. Use `--skip-create-options` to disable.
 
 #### -B, --databases
 
-Dump several databases. Normally, mariadb-dump treats the first name argument on the command line as a database name and following names as table names. With this option, it treats all name arguments as database names. [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md) and [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) statements are included in the output before each new database.
+Dump several databases. Normally, `mariadb-dump` treats the first name argument on the command line as a database name and following names as table names. With this option, it treats all name arguments as database names. [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md) and [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) statements are included in the output before each new database.
 
 #### -#, --debug\[=#]
 
-If using a debug version of MariaDB, write a debugging log. A typical debug\_options string is ´d:t:o,file\_name´. The default value is ´d:t:o,/tmp/mysqldump.trace´. If using a non-debug version, mariadb-dump will catch this and exit.
+If using a debug version of MariaDB, write a debugging log. A typical `debug_options` string is `d:t:o,file_name`. The default value is `d:t:o,/tmp/mysqldump.trace`. If using a non-debug version, `mariadb-dump` will catch this and exit.
 
 #### --debug-check
 
@@ -153,25 +157,25 @@ Check memory and open file usage at exit.
 
 Print some debug info at exit.
 
-#### --default-auth=name
+#### --default-auth=_name_
 
 Default authentication client-side plugin to use.
 
-#### --default-character-set=name
+#### --default-character-set=_name_
 
-Set the default [character set](../../reference/data-types/string-data-types/character-sets/) to name. If no character set is specified mariadb-dump uses utf8mb4.
+Set the default [character set](../../reference/data-types/string-data-types/character-sets/) to _name_. If no character set is specified, `mariadb-dump` uses utf8mb4.
 
-#### --defaults-extra-file=name
+#### --defaults-extra-file=_name_
 
-Read the file name after the global files are read. Must be given as the first argument.
+Read the file _name_ after the global files are read. Must be given as the first argument.
 
-#### --defaults-file=name
+#### --defaults-file=_name_
 
-Only read default options from the given file name. Must be given as the first argument.
+Only read default options from the given file _name_. Must be given as the first argument.
 
-#### --defaults-group-suffix=str
+#### --defaults-group-suffix=_str_
 
-Also read groups with a suffix of str. For example, since mariadb-dump normally reads the \[client] and \[mariadb-dump] (or \[mysqldump]) groups, --defaults-group-suffix=x would cause it to also read the groups \[mariadb-dump\_x] (or \[mysqldump\_x]) and \[client\_x].
+Also read groups with a suffix of _str_. For example, since `mariadb-dump` normally reads the `[client]` and `[mariadb-dump]` (or `[mysqldump]`) groups, `--defaults-group-suffix=`_`x`_ would cause it to also read the groups `[mariadb-dump_`_`x`_`]` (or `[mysqldump_`_`x`_`]`) and `[client_`_`x`_`]`.
 
 #### --delayed-insert
 
@@ -179,34 +183,34 @@ Insert rows with [INSERT DELAYED](../../reference/sql-statements/data-manipulati
 
 #### --delete-master-logs
 
-On a primary replication server, delete the binary logs by sending a [PURGE BINARY LOGS](../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md) statement to the server after performing the dump operation. This option automatically enables --master-data=2.
+On a primary replication server, delete the binary logs by sending a [PURGE BINARY LOGS](../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md) statement to the server after performing the dump operation. This option automatically enables `--master-data=2`.
 
 #### --dir
 
-Parallel dump of multiple databases. Works just like --tab, with regard to output (sql file for table definition and tab-separated for data, same options, e.g --parallel). It also allows the --databases and --all-databases options. When --dir is used, it creates the directory structure in the output directory pointed to by --dir. For every database to be dumped, there will be a directory with the database name. All options that --tab supports are also supported by --dir, in particular --parallel. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115).
+Parallel dump of multiple databases. Works just like `--tab`, with regard to output (sql file for table definition and tab-separated for data, same options, for example, `--parallel`). It also allows the `--databases` and `--all-databases` options. When `--dir` is used, it creates the directory structure in the output directory pointed to by `--dir`. For every database to be dumped, there is a directory with the database name. All options that `--tab` supports are also supported by `--dir`, in particular `--parallel`. This option is available from MariaDB 11.5.
 
 #### -K, --disable-keys
 
-'/\*!40000 ALTER TABLE tb\_name DISABLE KEYS _/; and '/_!40000 ALTER TABLE tb\_name ENABLE KEYS \*/; will be put in the output. This makes loading the dump file faster because the indexes are created after all rows are inserted. This option is effective only for non-unique indexes of MyISAM tables. Disable with --skip-disable-keys.
+'`/*!40000 ALTER TABLE`` `_`tb_name`_` ``DISABLE KEYS`` `_`/;` and `'/`_`!40000 ALTER TABLE`` `_`tb_name`_` ``ENABLE KEYS */;` are written to the output. This makes loading the dump file faster, because the indexes are created after all rows are inserted. This option is effective only for non-unique indexes of MyISAM tables. Disable with `--skip-disable-keys`.
 
 #### --dump-date
 
-If the --comments option and this option are given, mariadb-dump produces a comment at the end of the dump of the following form:-- Dump completed on DATE However, the date causes dump files taken at different times to appear to be different, even if the data are otherwise identical. --dump-date and --skip-dump-date control whether the date is added to the comment. The default is --dump-date (include the date in the comment). --skip-dump-date suppresses date printing.
+If the `--comments` option and this option are given, `mariadb-dump` produces a comment at the end of the dump of the following form: `-- Dump completed on`` `_`date`_. However, the date causes dump files taken at different times to appear to be different, even if the data are otherwise identical. `--dump-date` and `--skip-dump-date` control whether the date is added to the comment. The default is `--dump-date` (include the date in the comment). `--skip-dump-date` suppresses date printing.
 
 #### -H, --dump-history
 
-Dump tables with [history](../../reference/sql-structure/temporal-tables/system-versioned-tables.md). From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-0-release-notes). Until this option, mariadb-dump could not read historical rows from versioned tables, and so historical data would not be backed up.
+Dump tables with [history](../../reference/sql-structure/temporal-tables/system-versioned-tables.md). This option is available from MariaDB 10.11. Until this option was introduced, `mariadb-dump` could not read historical rows from versioned tables, and so historical data would not be backed up.
 
 #### --dump-slave\[=value]
 
-Used for producing a dump file from a replica server that can be used to set up another replica server with the same primary. Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename of the primary to be appended to the dumped data output. Setting the value to 1 (the default) will print it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command in the dumped data output; if set to 2, that command will be prefixed with a comment symbol. This option will turn --lock-all-tables on, unless --single-transaction is specified too (in which case a global read lock is only taken a short time at the beginning of the dump - don't forget to read about --single-transaction below). In all cases any action on logs will happen at the exact moment of the dump. Option automatically turns --lock-tables off.
+Used for producing a dump file from a replica server that can be used to set up another replica server with the same primary. Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename of the primary to be appended to the dumped data output. Setting the value to `1` (the default) prints it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command in the dumped data output; if set to `2`, that command will be prefixed with a comment symbol. This option will turn on `--lock-all-tables`, unless `--single-transaction` is specified, too (in which case a global read lock is only taken a short time at the beginning of the dump. Make sure to read about `--single-transaction` below). In all cases, any action on logs happens at the exact moment of the dump. This option automatically turns off `--lock-tables`.
 
 {% tabs %}
 {% tab title="Current" %}
 This option pauses any running SQL threads during the dump.
 {% endtab %}
 
-{% tab title="< 10.11 ([MDEV-7611](https://jira.mariadb.org/browse/MDEV-7611))" %}
+{% tab title="< 10.11" %}
 This option stops any running SQL threads before the dump, and restarts **all stopped IO and SQL** threads after completion.
 {% endtab %}
 {% endtabs %}
