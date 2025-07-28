@@ -1,10 +1,3 @@
----
-description: >-
-  Get an overview of standard replication in MariaDB Server. This section
-  introduces the core concepts, benefits, and components of setting up
-  master-replica configurations for high availability and dat
----
-
 # Replication Overview
 
 Replication is a feature allowing the contents of one or more servers (called primaries) to be mirrored on one or more servers (called replicas).
