@@ -1,4 +1,4 @@
-# Replication
+# MyRocks and Replication
 
 Details about how MyRocks works with [replication](../../../ha-and-performance/standard-replication/).
 
@@ -23,10 +23,6 @@ ERROR 4056 (HY000): Can't execute updates on master with binlog_format != ROW.
 Yes. In many cases, database applications run a restricted set of SQL statements, and it's possible to prove that lack of Gap Lock support is not a problem and data skew will not occur.
 
 In that case, one can set `@@rocksdb_unsafe_for_binlog=1` and MyRocks will work with SBR. The user is however responsible for making sure their queries are not causing a data skew.
-
-## Read-Free Slave
-
-TODO
 
 ## Differences From Upstream MyRocks
 
