@@ -2,17 +2,15 @@
 
 The most recent release of [MariaDB 11.6](what-is-mariadb-116.md) is:[**MariaDB 11.6.2**](mariadb-11-6-2-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/11.6.2/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.6.2)
 
-[Download 11.6.1](https://downloads.mariadb.org/mariadb/11.6.1/)[Release Notes](mariadb-11-6-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md)[Overview of 11.6](what-is-mariadb-116.md)
+<a href="https://downloads.mariadb.org/mariadb/11.6.1/" class="button primary">Download</a> <a href="mariadb-11-6-1-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-116.md" class="button secondary">Overview of 11.6</a>
 
 **Release date:** 14 Aug 2024
 
-**Do not use non-stable (non-GA) releases in production!**
+{% include "../../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.6](what-is-mariadb-116.md) is a [rolling release](../../about/release-model.md). It is an evolution of [MariaDB 11.5](../release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115.md) with several entirely new features.
 
 [MariaDB 11.6.1](mariadb-11-6-1-release-notes.md) is a [_**Release Candidate (RC)**_](../../about/release-criteria.md) release.
-
-**For an overview of** [**MariaDB 11.6**](what-is-mariadb-116.md) **see the**[**What is MariaDB 11.6?**](what-is-mariadb-116.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -85,7 +83,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.19
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.19
 * `galera_gtid_2_cluster`: Assertion \`\`thd->wsrep\_next\_trx\_id() != (0x7fffffffffffffffLL \* 2ULL + 1)'\` ([MDEV-32633](https://jira.mariadb.org/browse/MDEV-32633))
 * table `gtid_slave_pos` entries never been deleted with `wsrep_gtid_mode = 0` ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))
 * Deadlock found when trying to get lock during applying ([MDEV-31658](https://jira.mariadb.org/browse/MDEV-31658))
@@ -95,7 +93,7 @@ Thanks, and enjoy MariaDB!
 
 ### Error Log
 
-* [server\_uid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#server_uid) system variable added, and value added to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) at startup ([MDEV-34494](https://jira.mariadb.org/browse/MDEV-34494))
+* [server\_uid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#server_uid) system variable added, and value added to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) at startup ([MDEV-34494](https://jira.mariadb.org/browse/MDEV-34494))
 
 ### General
 
@@ -108,11 +106,6 @@ Thanks, and enjoy MariaDB!
 * [Triggers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/triggers-events/triggers) now work correctly with bulk insert ([MDEV-24411](https://jira.mariadb.org/browse/MDEV-24411))
 * Fix assertion \`\`table->field\[0]->ptr >= table->record\[0] && table->field\[0]->ptr <= table->record\[0] + table->s->reclength'`failed in`void handler::assert\_icp\_limitations(uchar\*)\` ([MDEV-34632](https://jira.mariadb.org/browse/MDEV-34632))
 * [sandbox mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-sandbox) - now compatible with [--binary-mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-binary-mode) ([MDEV-34203](https://jira.mariadb.org/browse/MDEV-34203))
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
 
 ## Changelog
 
