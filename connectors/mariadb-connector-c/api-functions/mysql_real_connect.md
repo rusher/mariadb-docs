@@ -28,14 +28,14 @@ MYSQL * mysql_real_connect(MYSQL * mysql,
   * `CLIENT_LOCAL_FILES`: Allows LOAD DATA LOCAL statements
   * `CLIENT_MULTI_STATEMENTS`: Allows the client to send multiple statements in one command. Statements will be divided by a semicolon.
   * `CLIENT_MULTI_RESULTS`: Indicates that the client is able to handle multiple result sets from stored procedures or multi statements. This option will be automatically set if CLIENT\_MULTI\_STATEMENTS is set.
-  * And others per [protocol capabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection#capabilities).
+  * And others per [protocol capabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/clientserver-protocol/1-connecting/connection#capabilities).
 
 ## Description
 
 Establishes a connection to a database server. Returns a MYSQL \* handle or NULL if an error occurred.
 
 {% hint style="info" %}
-The password doesn't need to be encrypted before executing mysql\_real\_connect(). This will be handled in the client server protocol.
+The password doesn't need to be encrypted before executing `mysql_real_connect()`. This will be handled in the client server protocol.
 
 The connection handle can't be reused for establishing a new connection. It must be closed and reinitialized before.
 {% endhint %}
@@ -45,7 +45,6 @@ The connection handle can't be reused for establishing a new connection. It must
 * [mariadb\_reconnect](mariadb_reconnect.md)
 * [mysql\_close()](mysql_close.md)
 * [mysql\_init()](mysql_init.md)
-* [protocol capabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection#capabilities)
-
+* [protocol capabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/clientserver-protocol/1-connecting/connection#capabilities)
 
 {% @marketo/form formId="4316" %}
