@@ -15,21 +15,21 @@ int mysql_set_character_set(MYSQL * mysql,
 Sets the default [character set](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) for the current connection. Returns zero on success, non-zero on failure.
 
 {% hint style="info" %}
-It's strongly recommended to use mysql\_set\_character\_set() instead of SET NAMES ... since [mysql\_real\_escape\_string()](mysql_real_escape_string.md) might fail or deliver unexpected results.
+It's strongly recommended to use `mysql_set_character_set()` instead of SET NAMES ... since [mysql\_real\_escape\_string()](mysql_real_escape_string.md) might fail or deliver unexpected results.
 {% endhint %}
 
 The client library supports the following character sets:
 
 | Character set | Description                                                              |
 | ------------- | ------------------------------------------------------------------------ |
-| armscii8      | 8 bit character set for Armenian                                         |
+| armscii8      | 8-bit character set for Armenian                                         |
 | ascii         | US ASCII character set                                                   |
-| big5          | 2 byte character set for traditional Chinese, Hongkong, Macau and Taiwan |
-| binary        | 8 bit binary character set                                               |
-| cp1250        | Windows code page 1250 character set                                     |
-| cp1251        | Windows code page 1251 character set                                     |
-| cp1256        | Windows code page 1256 character set                                     |
-| cp1257        | Windows code page 1257 character set                                     |
+| big5          | 2-byte character set for traditional Chinese, Hongkong, Macau and Taiwan |
+| binary        | 8-bit binary character set                                               |
+| cp1250        | Windows code page 1250-character set                                     |
+| cp1251        | Windows code page 1251-character set                                     |
+| cp1256        | Windows code page 1256-character set                                     |
+| cp1257        | Windows code page 1257-character set                                     |
 | cp850         | MS-DOS Codepage 850 (Western Europe)                                     |
 | cp852         | MS-DOS Codepage 852 (Middle Europe)                                      |
 | cp866         | MS-DOS Codepage 866 (Russian)                                            |
@@ -65,6 +65,5 @@ The client library supports the following character sets:
 ## See also
 
 * [mysql\_real\_escape\_string()](mysql_real_escape_string.md)
-
 
 {% @marketo/form formId="4316" %}
