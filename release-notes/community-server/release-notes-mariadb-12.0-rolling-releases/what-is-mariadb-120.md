@@ -20,7 +20,7 @@ MariaDB 12.0 is a [rolling release](../about/release-model.md). It is an evoluti
 ### Stored Routines <a href="#stored-routines" id="stored-routines"></a>
 
 * Add support for the pre-defined weak SYS\_REFCURSOR ([MDEV-20034](https://jira.mariadb.org/browse/MDEV-20034))
-  * [max\_open\_cursors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_open_cursors) system variable limits the number of [cursors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-cursors) opened at the same time
+  * [max\_open\_cursors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_open_cursors) system variable limits the number of [cursors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-cursors) opened at the same time
 
 ### Server <a href="#server" id="server"></a>
 
@@ -97,8 +97,9 @@ For a list of all new variables, see [System Variables Added in MariaDB 12.0](ht
 
 #### Removed
 
-* [storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#storage_engine), deprecated in [MariaDB 5.5](../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
-* [large\_page\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#large_page_size), deprecated in [MariaDB 10.5.3](../old-releases/mariadb-10-5-series/mariadb-1053-release-notes.md).
+* [big\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#big_tables), deprecated in [MariaDB 10.5.0](../old-releases/mariadb-10-5-series/mariadb-1050-release-notes.md)
+* [large\_page\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#large_page_size), deprecated in [MariaDB 10.5.3](../old-releases/mariadb-10-5-series/mariadb-1053-release-notes.md)
+* [storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#storage_engine), deprecated in [MariaDB 5.5](../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
 
 ## List of All MariaDB 12.0 Releases
 
