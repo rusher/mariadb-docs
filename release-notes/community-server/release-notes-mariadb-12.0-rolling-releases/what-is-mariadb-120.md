@@ -80,8 +80,8 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 
 ### Audit Plugin <a href="#audit-plugin" id="audit-plugin"></a>
 
-* Log HOST:PORT of incoming connection instead of just the host ([MDEV-1282](https://jira.mariadb.org/browse/MDEV-1282))
-* Add tls\_version field for connection audit plugins ([MDEV-33834](https://jira.mariadb.org/browse/MDEV-33834))
+* The [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) now logs HOST:PORT of incoming connections instead of just the host ([MDEV-1282](https://jira.mariadb.org/browse/MDEV-1282))
+* Added tls\_version field for connection audit plugins ([MDEV-33834](https://jira.mariadb.org/browse/MDEV-33834))
 
 ### Configuration <a href="#configuration" id="configuration"></a>
 
