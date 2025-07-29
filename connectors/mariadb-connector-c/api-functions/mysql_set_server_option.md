@@ -14,16 +14,15 @@ int mysql_set_server_option(MYSQL * mysql,
 
 Server option, which can be one of the following values:
 
-| Option                                | Description                      |
-| ------------------------------------- | -------------------------------- |
-| MYSQL\_OPTION\_MULTI\_STATEMENTS\_OFF | Disables multi statement support |
-| MYSQL\_OPTION\_MULTI\_STATEMENTS\_ON  | Enable multi statement support   |
+| Option                              | Description                      |
+| ----------------------------------- | -------------------------------- |
+| `MYSQL_OPTION_MULTI_STATEMENTS_OFF` | Disables multi statement support |
+| `MYSQL_OPTION_MULTI_STATEMENTS_ON`  | Enable multi statement support   |
 
 Returns zero on success, non-zero on failure.
 
 ## See also
 
 * [mysql\_real\_connect()](mysql_real_connect.md)
-
 
 {% @marketo/form formId="4316" %}
