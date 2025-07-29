@@ -8,7 +8,7 @@ MYSQL_ROW_OFFSET mysql_row_seek(MYSQL_RES * result,
 ```
 
 * `result` - a result set identifier returned by [mysql\_store\_result()](mysql_store_result.md).
-* `offset` - row offset. This value can be obtained either by mysql\_row\_seek() or [mysql\_row\_tell()](mysql_row_tell.md)
+* `offset` - row offset. This value can be obtained either by `mysql_row_seek()` or [mysql\_row\_tell()](mysql_row_tell.md)
 
 ## Description
 
@@ -22,6 +22,5 @@ This function will not work if the result set was obtained by [mysql\_use\_resul
 
 * [mysql\_store\_result()](mysql_store_result.md)
 * [mysql\_row\_tell()](mysql_row_tell.md)
-
 
 {% @marketo/form formId="4316" %}
