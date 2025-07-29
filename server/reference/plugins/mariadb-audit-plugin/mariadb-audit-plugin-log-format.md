@@ -1,4 +1,4 @@
-# Log Format
+# Audit Plugin Log Format
 
 The audit plugin logs user access to MariaDB and its objects. The audit trail (i.e., audit log) is a set of records, written as a list of fields to a file in a plain‐text format. The fields in the log are separated by commas. The format used for the plugin's own log file is slightly different from the format used if it logs to the system log because it has its own standard format. The general format for the logging to the plugin's own file is defined like the following:
 
@@ -14,21 +14,21 @@ If the [server\_audit\_output\_type](mariadb-audit-plugin-options-and-system-var
 [connectionid],[queryid],[operation],[database],[object],[retcode]
 ```
 
-| Item logged   | Description                                                                                                                                     |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| timestamp     | Time at which the event occurred. If syslog is used, the format is defined by syslogd.                                                          |
-| syslog\_host  | Host from which the syslog entry was received.                                                                                                  |
-| syslog\_ident | For identifying a system log entry, including the MariaDB server.                                                                               |
-| syslog\_info  | For providing information for identifying a system log entry.                                                                                   |
-| serverhost    | The MariaDB server host name.                                                                                                                   |
-| username      | Connected user.                                                                                                                                 |
-| host          | Host from which the user connected.                                                                                                             |
-| connectionid  | Connection ID number for the related operation.                                                                                                 |
-| queryid       | Query ID number, which can be used for finding the relational table events and related queries. For TABLE events, multiple lines will be added. |
-| operation     | Recorded action type: CONNECT, QUERY, READ, WRITE, CREATE, ALTER, RENAME, DROP.                                                                 |
-| database      | Active database (as set by [USE](../../sql-statements/administrative-sql-statements/use-database.md)).                                          |
-| object        | Executed query for QUERY events, or the table name in the case of TABLE events.                                                                 |
-| retcode       | Return code of the logged operation.                                                                                                            |
+| Item logged   | Description                                                                                                                                                                  |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| timestamp     | Time at which the event occurred. If syslog is used, the format is defined by syslogd.                                                                                       |
+| syslog\_host  | Host from which the syslog entry was received.                                                                                                                               |
+| syslog\_ident | For identifying a system log entry, including the MariaDB server.                                                                                                            |
+| syslog\_info  | For providing information for identifying a system log entry.                                                                                                                |
+| serverhost    | The MariaDB server host name.                                                                                                                                                |
+| username      | Connected user.                                                                                                                                                              |
+| host          | Host from which the user connected.                                                                                                                                          |
+| connectionid  | Connection ID number for the related operation.                                                                                                                              |
+| queryid       | Query ID number, which can be used for finding the relational table events and related queries. For TABLE events, multiple lines will be added.                              |
+| operation     | Recorded action type: CONNECT, QUERY, READ, WRITE, CREATE, ALTER, RENAME, DROP.                                                                                              |
+| database      | Active database (as set by [USE](../../sql-statements/administrative-sql-statements/use-database.md)).                                                                       |
+| object        | Executed query for QUERY events, or the table name in the case of TABLE events. From MariaDB 12.0, CONNECTION events also contain the tls\_version and tls\_version\_length. |
+| retcode       | Return code of the logged operation.                                                                                                                                         |
 
 Various events will result in different audit records. Some events will not return a value for some fields (e.g., when the active database is not set when connecting to the server).
 
