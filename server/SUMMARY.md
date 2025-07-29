@@ -1045,8 +1045,6 @@
       * [Sample my.cnf Files](ha-and-performance/optimization-and-tuning/system-variables/sample-mycnf-files.md)
       * [Segmented Key Cache](ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache.md)
       * [Semisynchronous Replication Plugin Status Variables](ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)
-      *
-      *
       * [InnoDB Server Status Variables](ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)
       * [Setting Innodb Buffer Pool Size Dynamically](ha-and-performance/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md)
       * [Sphinx Status Variables](ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md)
@@ -1124,7 +1122,6 @@
   * [Hardware Optimization](ha-and-performance/hardware-optimization.md)
   * [Connection Redirection Mechanism in the MariaDB Client/Server Protocol](ha-and-performance/connection-redirection-mechanism-in-the-mariadb-clientserver-protocol.md)
 * [Reference](reference/README.md)
-  *
   * [SQL Structure](reference/sql-structure/README.md)
     * [SQL Language Structure](reference/sql-structure/sql-language-structure/README.md)
       * [Binary Literals](reference/sql-structure/sql-language-structure/binary-literals.md)

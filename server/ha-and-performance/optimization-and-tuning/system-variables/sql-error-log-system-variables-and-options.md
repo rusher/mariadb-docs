@@ -76,7 +76,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
-* Default Value: `OFF`
+* Default Value: `ON`
 * Introduced: [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-5-release-notes)
 
 #### `sql_error_log_with_db_and_thread_info`
