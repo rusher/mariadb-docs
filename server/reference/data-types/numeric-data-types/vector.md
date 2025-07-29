@@ -12,7 +12,7 @@ VECTOR(N)
 
 ## Description
 
-The `VECTOR` data type was added as part of the [vectors](../../sql-structure/vectors/) feature, which permits MariaDB Server to perform as a relational vector database. `N` represents the fixed number of dimensions of the vector up to a maximum of 65532. The `N` dimension will be determined by the embedding algorithm.
+The `VECTOR` data type was added as part of the [vectors](../../sql-structure/vectors/) feature, which permits MariaDB Server to perform as a relational vector database. `N` represents the fixed number of dimensions of the vector up to a maximum of 16383. The `N` dimension will be determined by the embedding algorithm.
 
 ## Example
 
