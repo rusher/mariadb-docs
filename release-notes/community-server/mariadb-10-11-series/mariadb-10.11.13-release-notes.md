@@ -18,7 +18,7 @@ Thanks, and enjoy MariaDB!
 
 #### Storage Engines
 
-[**InnoDB**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/)
+[**InnoDB**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb)
 
 * Huge performance drop after update ([MDEV-36759](https://jira.mariadb.org/browse/MDEV-36759))
 * InnoDB buffer pool reserves all assigned memory even with no/minimum load ([MDEV-36780](https://jira.mariadb.org/browse/MDEV-36780))
