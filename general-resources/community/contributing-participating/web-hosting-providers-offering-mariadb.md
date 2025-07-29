@@ -11,7 +11,7 @@ Here is an incomplete list of web hosting providers offering MariaDB for their h
 ### English
 
 * [1uhost.com](https://www.1uhost.com/mariadb-hosting)
-* [A2 Hosting](https://www.a2hosting.com/mariadb-hosting)
+* [A2 Hosting](https://hosting.com/hosting/platforms/mariadb-hosting/)
 * [ApisCP](https://apiscp.com/)
 * [Axcension](https://www.axcension.com/database-hosting.htm)
 * [CloudHulk](https://cloudhulk.com/cloud-shared-hosting.html?utm_source=mariadb\&utm_medium=link)
