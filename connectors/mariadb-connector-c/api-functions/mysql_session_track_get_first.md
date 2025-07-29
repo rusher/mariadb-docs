@@ -17,7 +17,7 @@ int mysql_session_track_get_first(MYSQL * mysql,enum enum_session_state_type typ
 
 ## Description
 
-_mysql\_session\_track\_get\_first()_ retrieves the first session status change information received from the server.
+_`mysql_session_track_get_first()`_ retrieves the first session status change information received from the server.
 
 Depending on the specified type the read only data pointer will contain the following information:
 
@@ -27,7 +27,7 @@ Depending on the specified type the read only data pointer will contain the foll
 
 Further data needs to be obtained by calling [mysql\_session\_track\_get\_next()](mysql_session_track_get_next.md).
 
-_mysql\_session\_track\_get\_first()_ was added in Connector/C 3.0 and MariaDB Server 10.2.
+_`mysql_session_track_get_first()`_ was added in Connector/C 3.0 and MariaDB Server 10.2.
 
 ## Returns
 
@@ -36,6 +36,5 @@ Zero for success, nonzero if an error occurred.
 ## See also
 
 [mysql\_session\_track\_get\_next()](mysql_session_track_get_next.md)
-
 
 {% @marketo/form formId="4316" %}
