@@ -22,14 +22,6 @@ Dear DBA:
 * Tricks in replication (eg, BLACKHOLE) may not work.
 * Several variables need to be set differently.
 
-## Galera is available in many places
-
-Galera's High Availability replication is available via:
-
-* [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later
-* Percona XtraDB Cluster
-* Codership's Galera Cluster for MySQL
-
 ## Overview of cross-colo writing
 
 (This overview is valid even for same-datacenter nodes, but the issues of latency vanish.)
