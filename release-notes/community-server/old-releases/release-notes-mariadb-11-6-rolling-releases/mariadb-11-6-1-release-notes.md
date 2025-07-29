@@ -1,6 +1,6 @@
 # MariaDB 11.6.1 Release Notes
 
-The most recent release of [MariaDB 11.6](what-is-mariadb-116.md) is:[**MariaDB 11.6.2**](mariadb-11-6-2-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/11.6.2/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.6.2)
+{% include "../../../.gitbook/includes/latest-11-6.md" %}
 
 <a href="https://downloads.mariadb.org/mariadb/11.6.1/" class="button primary">Download</a> <a href="mariadb-11-6-1-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-116.md" class="button secondary">Overview of 11.6</a>
 
