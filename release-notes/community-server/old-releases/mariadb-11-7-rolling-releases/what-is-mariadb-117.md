@@ -2,13 +2,9 @@
 
 MariaDB 11.7 is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
 
-The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is: [**MariaDB 11.7.2**](mariadb-11-7-2-release-notes.md) [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2)
+{% include "../../../.gitbook/includes/latest-11-7.md" %}
 
 [MariaDB 11.7](what-is-mariadb-117.md) is a [rolling release](../../about/release-model.md).
-
-## Upgrading
-
-* See [Upgrading Between Major MariaDB Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions) and [Upgrading from MariaDB 10.11 to MariaDB 11.0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-11-to-mariadb-11-0).
 
 ## New Features
 
@@ -41,7 +37,7 @@ The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is: [**MariaDB
 
 ### Slow Query Log
 
-* New variable, [log\_slow\_always\_query\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable), for specifying that all queries longer than this time are logged to the [slow query log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log), regardless of [log\_slow\_min\_examined\_row\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#log_slow_min_examined_row_limit) and [log\_slow\_rate\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#log_slow_rate_limit) ([MDEV-33144](https://jira.mariadb.org/browse/MDEV-33144))
+* New variable, [log\_slow\_always\_query\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable), for specifying that all queries longer than this time are logged to the [slow query log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log), regardless of [log\_slow\_min\_examined\_row\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_min_examined_row_limit) and [log\_slow\_rate\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_rate_limit) ([MDEV-33144](https://jira.mariadb.org/browse/MDEV-33144))
 
 ### Stored Routines
 
@@ -60,7 +56,7 @@ The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is: [**MariaDB
 
 * [SESSION\_USER()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/session_user), which used to be an alias for [USER()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/user) now shows the value of [CURRENT\_USER()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/current_user) when the session was created ([MDEV-30908](https://jira.mariadb.org/browse/MDEV-30908))
 * CURRENT\_TIMESTAMP should return a TIMESTAMP (WITH TIME ZONE?) ([MDEV-15751](https://jira.mariadb.org/browse/MDEV-15751))
-* A warning has been added when [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) is exceeded. ([MDEV-27277](https://jira.mariadb.org/browse/MDEV-27277))
+* A warning has been added when [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length) is exceeded. ([MDEV-27277](https://jira.mariadb.org/browse/MDEV-27277))
 
 ### Deprecated Variables
 
@@ -69,13 +65,6 @@ The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is: [**MariaDB
 #### Spider
 
 * The Spider variables [spider\_table\_crd\_thread\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-system-variables#spider_table_crd_thread_count) and [spider\_table\_sts\_thread\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-system-variables#spider_table_sts_thread_count) have been deprecated ([MDEV-28009](https://jira.mariadb.org/browse/MDEV-28009))
-
-## Security Vulnerabilities Fixed in [MariaDB 11.7](what-is-mariadb-117.md)
-
-For a complete list of security vulnerabilities (CVEs) fixed across all\
-versions of MariaDB, see the [Security Vulnerabilities Fixed in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security)\
-page.\
-Add listcve macro here - removed for performance reasons
 
 ## List of All [MariaDB 11.7](what-is-mariadb-117.md) Releases
 
