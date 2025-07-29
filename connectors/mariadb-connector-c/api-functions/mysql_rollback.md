@@ -13,13 +13,12 @@ my_bool mysql_rollback(MYSQL * mysql);
 Rolls back the current transaction for the database. Returns zero on success, nonzero if an error occurred.
 
 {% hint style="info" %}
-mysql\_rollback() will not work as expected if [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#autocommit) mode was set or the storage engine does not support transactions.
+`mysql_rollback()` will not work as expected if [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#autocommit) mode was set or the storage engine does not support transactions.
 {% endhint %}
 
 ## See also
 
 * [mysql\_commit()](mysql_commit.md)
 * [mysql\_autocommit()](mysql_autocommit.md)
-
 
 {% @marketo/form formId="4316" %}
