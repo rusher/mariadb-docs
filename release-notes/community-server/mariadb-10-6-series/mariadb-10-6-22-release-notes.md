@@ -100,12 +100,8 @@ Thanks, and enjoy MariaDB!
 
 ## Changelog
 
-For a complete list of changes and bugfixes made in [MariaDB 10.6.22](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-10622-release-notes/README.md), with links to detailed\
+For a complete list of changes and bugfixes made in MariaDB 10.6.22, with links to detailed\
 information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-22-changelog.md).
-
-## Contributors
-
-For a full list of contributors to [MariaDB 10.6.22](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-10622-release-notes/README.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-11-4-10-10-5-10-9-7-10-6-14-10-5-21-10-4-30-now-available/).
 
 {% include "../../.gitbook/includes/announce.md" %}
 
