@@ -2,7 +2,7 @@
 
 {% include "../../../.gitbook/includes/latest-11-7.md" %}
 
-<a href="https://downloads.mariadb.org/mariadb/11.7.0/" class="button primary">Download</a> <a href="mariadb-11-7-0-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-117.md" class="button secondary">Overview of 11.7</a>
+<a href="https://downloads.mariadb.org/mariadb/11.7.0/" class="button primary">Download</a> <a href="mariadb-11-7-0-release-notes.md" class="button secondary">Release Notes</a>  <a href="what-is-mariadb-117.md" class="button secondary">Overview of 11.7</a>
 
 **Release date:** 25 Sep 2024
 
