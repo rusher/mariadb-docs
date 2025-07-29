@@ -76,7 +76,7 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 
 ### Galera <a href="#galera" id="galera"></a>
 
-* Skip FK checks in Galera during applying in IST ([MDEV-34822](https://jira.mariadb.org/browse/MDEV-34822))
+* In [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), needless foreign key checks during Incremental State Transfers are now avoided ([MDEV-34822](https://jira.mariadb.org/browse/MDEV-34822))
 
 ### Audit Plugin <a href="#audit-plugin" id="audit-plugin"></a>
 
