@@ -1,8 +1,6 @@
 # MariaDB 11.6.2 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/11.6.2/)[Release Notes](mariadb-11-6-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md)[Overview of 11.6](what-is-mariadb-116.md)
-
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.6.2/)
+<a href="https://downloads.mariadb.org/mariadb/11.6.2/" class="button primary">Download</a> <a href="mariadb-11-6-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-116.md" class="button secondary">Overview of 11.6</a>
 
 **Release date:** 21 Nov 2024
 
@@ -85,11 +83,6 @@ Thanks, and enjoy MariaDB!
 * Trigger now works correctly with bulk update ([MDEV-34718](https://jira.mariadb.org/browse/MDEV-34718))
 * Fix assertion failure in find\_producing\_item upon a query from a view ([MDEV-35276](https://jira.mariadb.org/browse/MDEV-35276))
 * Add new setting, [--quick-max-column-width](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-quick-max-column-widthn) to the mariadb client for use in --quick mode ([MDEV-34704](https://jira.mariadb.org/browse/MDEV-34704))
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
 
 ## Changelog
 
