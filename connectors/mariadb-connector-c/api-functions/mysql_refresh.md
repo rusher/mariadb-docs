@@ -12,7 +12,7 @@ int mysql_refresh(MYSQL * mysql,
 
 ## Description
 
-Flushes different types of information stored on the server. The bit-masked parameter options specify which kind of information will be flushed. `options` can be any combinationation of the following:
+Flushes different types of information stored on the server. The bit-masked parameter options specify which kind of information will be flushed. `options` can be any combination of the following:
 
 | Option              | Description                                         |
 | ------------------- | --------------------------------------------------- |
@@ -27,11 +27,10 @@ Flushes different types of information stored on the server. The bit-masked para
 | REFRESH\_READ\_LOCK |                                                     |
 | REFRESH\_FAST       |                                                     |
 
-Returns zero on success, otherwise non zero.
+Returns zero on success, otherwise nonzero.
 
 {% hint style="info" %}
-To combine different values in the options parameter use the OR operator '|'. The function mysql\_reload() is an alias for mysql\_refresh().
+To combine different values in the options parameter, use the OR operator '|'. The function `mysql_reload()` is an alias for `mysql_refresh()`.
 {% endhint %}
-
 
 {% @marketo/form formId="4316" %}
