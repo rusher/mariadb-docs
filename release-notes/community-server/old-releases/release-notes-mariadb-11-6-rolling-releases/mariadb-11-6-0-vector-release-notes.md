@@ -4,6 +4,8 @@
 
 [Download 11.6.0 Vector Source](https://downloads.mariadb.org/mariadb/11.6.0)[Release Notes](mariadb-11-6-0-release-notes.md)[Overview of 11.6](what-is-mariadb-116.md)
 
+<a href="https://downloads.mariadb.org/mariadb/11.6.0" class="button primary">Download Vector Source</a> <a href="mariadb-11-6-0-vector-release-notes.md" class="button secondary">Release Notes</a>  <a href="what-is-mariadb-116.md" class="button secondary">Overview of 11.6</a>
+
 **Release date:** 29 July 2024
 
 {% include "../../../.gitbook/includes/non-stable.md" %}
