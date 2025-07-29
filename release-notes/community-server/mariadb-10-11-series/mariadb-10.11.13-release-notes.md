@@ -28,11 +28,6 @@ Thanks, and enjoy MariaDB!
 
 * As per the MariaDB Deprecation Policy, this will be the last release of MariaDB 10.11 for Ubuntu 20.04 Focal
 
-#### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/security):
-  * CVE-\`-\`\`\`
-
 ### Changelog
 
 For a complete list of changes and bugfixes made in MariaDB 10.11.13, with links to detailed\
