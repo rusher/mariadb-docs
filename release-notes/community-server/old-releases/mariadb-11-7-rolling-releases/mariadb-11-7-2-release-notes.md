@@ -1,16 +1,14 @@
 # MariaDB 11.7.2 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-7-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-2-changelog.md)[Overview of 11.7](what-is-mariadb-117.md)
+{% include "../../../.gitbook/includes/latest-11-7.md" %}
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2/)
+<a href="https://downloads.mariadb.org/mariadb/11.7.2/" class="button primary">Download</a> <a href="mariadb-11-7-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-117.md" class="button secondary">Overview of 11.7</a>
 
 **Release date:** 13 Feb 2025
 
 [MariaDB 11.7.2](mariadb-11-7-2-release-notes.md) is a [_**Stable (GA)**_](../../about/release-criteria.md) release. It is an evolution of [MariaDB 11.6](../release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) with several entirely new features.
 
 [MariaDB 11.7](what-is-mariadb-117.md) is a [rolling release](../../about/release-model.md). One is expected to upgrade to [MariaDB 11.8.2](../../mariadb-11-8-series/mariadb-11-8-2-release-notes.md), there will be no 11.7.3.
-
-**For an overview of** [**MariaDB 11.7**](what-is-mariadb-117.md) **see the**[**What is MariaDB 11.7?**](what-is-mariadb-117.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -66,7 +64,7 @@ Thanks, and enjoy MariaDB!
 * NULL-aware materialization with IN predicate and single column no longer skips building sorted Ordered\_key structures ([MDEV-34665](https://jira.mariadb.org/browse/MDEV-34665))
 * Fix possibly wrong result using a degenerated subquery (SELECT ) with window function ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869))
 
-### [Partitioning](https://mariadb.com/docs/columnstore/high-availability/mariadb-columnstore-performance-concepts#partitioning)
+### [Partitioning](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables)
 
 * History is now stored on the same partitions on different Galera nodes when system versioning is enabled ([MDEV-35096](https://jira.mariadb.org/browse/MDEV-35096))
 * Fix possible hang or crash during InnoDB purge with HASH indexes during ALTER TABLE ([MDEV-25654](https://jira.mariadb.org/browse/MDEV-25654))
