@@ -1415,6 +1415,7 @@ Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler
 * [max-error-count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count)
 * [max-length-for-sort-data](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_length_for_sort_data)
 * [max-long-data-size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_long_data_size)
+* [max\_open\_cursors](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_open_cursors)
 * [max-password-errors](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors)
 * [max-prepared-stmt-count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_prepared_stmt_count)
 * [max-recursive-iterations](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_recursive_iterations)
