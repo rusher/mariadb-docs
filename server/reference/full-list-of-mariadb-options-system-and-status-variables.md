@@ -1955,7 +1955,7 @@
 * [spider\_version](../server-usage/storage-engines/spider/spider-system-variables.md#spider_version)
 * [spider\_wait\_timeout](../server-usage/storage-engines/spider/spider-system-variables.md#spider_wait_timeout)
 * [spider\_xa\_register\_mode](../server-usage/storage-engines/spider/spider-system-variables.md#spider_xa_register_mode)
-* \--[sporadic-binlog-dump-fail](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)
+* \--[sporadic-binlog-dump-fail](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#sporadic-binlog-dump-fail)
 * [sql\_auto\_is\_null](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_auto_is_null)
 * [sql\_big\_selects](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_big_selects)
 * [sql\_big\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_big_tables)
