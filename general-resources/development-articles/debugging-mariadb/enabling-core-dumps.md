@@ -4,7 +4,7 @@
 
 Core dumps are enabled by default on **Windows**, so **this step can be skipped on Windows** in those versions. See [MDEV-18439](https://jira.mariadb.org/browse/MDEV-18439) for more information.
 
-In order to enable core dumps, you need to set the [core_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#core_file) system variable either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). For example:
+In order to enable core dumps, you need to set the [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#core_file) system variable either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). For example:
 
 ```
 [mariadb]
@@ -18,7 +18,7 @@ You can check your current value by executing:
 my_print_defaults --mariadbd
 ```
 
-[core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#core_file) is a system variable. Its value can be checked at runtime by executing the following:
+[core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#core_file) is a system variable. Its value can be checked at runtime by executing the following:
 
 ```
 SHOW GLOBAL VARIABLES LIKE 'core_file';
@@ -48,7 +48,7 @@ The resource limits for the `mariadbd` process are printed to the [error log](ht
 
 #### Running mariadbd Using mysqld\_safe
 
-If you are starting MariaDB by running [mysqld_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe), then configuring the following in the `[mysqld_safe]` option group in an option file should allow for unlimited sized core files:
+If you are starting MariaDB by running [mysqld\_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe), then configuring the following in the `[mysqld_safe]` option group in an option file should allow for unlimited sized core files:
 
 ```
 [mysqld_safe]
@@ -64,7 +64,7 @@ my_print_defaults mysqld_safe
 
 See [mysqld\_safe: Configuring the Core File Size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) for more details.
 
-**Note:** If you are using [mysqld_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) and running `mariadbd` as the `root` user, then no\
+**Note:** If you are using [mysqld\_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) and running `mariadbd` as the `root` user, then no\
 core file is created on some systems. The solution is to run `mariadbd` as another user.
 
 #### Running mariadbd Manually
@@ -147,7 +147,7 @@ kernel.core_uses_pid=1
 EOF
 ```
 
-Note: if you are using containers, the pid is always going to be 1, so this may not be a useful setting. Appending an identifier like %t to the [kernel.core_pattern](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#core-pattern) will generate more unique files.
+Note: if you are using containers, the pid is always going to be 1, so this may not be a useful setting. Appending an identifier like %t to the [kernel.core\_pattern](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#core-pattern) will generate more unique files.
 
 The value of `kernel.core_pattern` is printed to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when the `mariadbd` process crashes. That way, users can determine where the process may have dumped a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
 
@@ -246,7 +246,7 @@ You can send the signal with the [kill](https://linux.die.net/man/1/kill) comman
 sudo kill -6 $(pidof mariadbd)
 ```
 
-As an alternative to `$(pidof mariadbd)`, you can find the process ID either by using the [ps](https://linux.die.net/man/1/ps) utility or by checking the file defined by the [pid_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#pid_file) system variable.
+As an alternative to `$(pidof mariadbd)`, you can find the process ID either by using the [ps](https://linux.die.net/man/1/ps) utility or by checking the file defined by the [pid\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#pid_file) system variable.
 
 ## Core Files on Windows
 

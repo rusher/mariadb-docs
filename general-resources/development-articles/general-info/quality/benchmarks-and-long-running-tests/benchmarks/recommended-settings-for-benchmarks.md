@@ -42,15 +42,15 @@ See [configuring Linux for MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5
 
 ## InnoDB Settings
 
-[innodb\_buffer\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#innodb_buffer_pool_size) to about 80% of RAM or leaving <5G RAM free (on large RAM systems). Less if lots of connections are used.
+[innodb\_buffer\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#innodb_buffer_pool_size) to about 80% of RAM or leaving <5G RAM free (on large RAM systems). Less if lots of connections are used.
 
-[innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#innodb_log_file_size) to be larger than the amount of writes in the test run or sufficient to cover several minutes of the test run at least.
+[innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#innodb_log_file_size) to be larger than the amount of writes in the test run or sufficient to cover several minutes of the test run at least.
 
 ## MyISAM Settings
 
 ## General Settings
 
-[threads\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#threads_cache_size) should be the same as [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections) (unless using thread pools).
+[threads\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#threads_cache_size) should be the same as [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_connections) (unless using thread pools).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

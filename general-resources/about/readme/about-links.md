@@ -40,7 +40,7 @@ Relative links are links to a page in the same space, relative to the page you a
 [Joining the Community](../../community/joining-the-community.md)
 ```
 
-One big limitation of relative links is that they cannot cross [_**Space**_](about-links.md#about-spaces) boundaries.&#x20;
+One big limitation of relative links is that they cannot cross [_**Space**_](about-links.md#about-spaces) boundaries.
 
 This page you are currently reading is under the [General Resources](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/WCInJQ9cmGjq1lsTG91E/) space, so we can use internal links to link to other pages under `https://mariadb.com/docs/general-resources/`. If we want to link to a page in another space, we need to use [Space Links](about-links.md#space-links).
 
@@ -48,7 +48,7 @@ This page you are currently reading is under the [General Resources](https://app
 
 To link to pages in other [Spaces](about-links.md#about-spaces) we need to use special Space Links which use an internal identifier so that GitBook knows exactly what page you are pointing to.
 
-A space link begins with `https://app.gitbook.com/s/` , followed by a unique alphanumeric _`space identifier`_  (in this doc we'll call both of these together the _`space prefix`_), and finally the _`path`_ to the page.
+A space link begins with `https://app.gitbook.com/s/` , followed by a unique alphanumeric _`space identifier`_ (in this doc we'll call both of these together the _`space prefix`_), and finally the _`path`_ to the page.
 
 The _`path`_ is everything after the space name in a full page URI. For example, take the following full URI for the [Securing MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb) page:
 
@@ -134,7 +134,7 @@ https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E
 
 Here are some examples of Markdown links to various pages using space links:
 
-#### [Options, System & Status Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/full-list-of-mariadb-options-system-and-status-variables) in the Server space
+#### [Options, System & Status Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables) in the Server space
 
 ```markdown
 [Options, System & Status Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/full-list-of-mariadb-options-system-and-status-variables

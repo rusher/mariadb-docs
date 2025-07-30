@@ -336,3 +336,4 @@
 * [Videos](videos.md)
 * [White Papers](whitepapers.md)
 * [Distributions Including MariaDB](distributions-including-mariadb.md)
+* [Basic Support](basic-support.md)
