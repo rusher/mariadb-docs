@@ -15,7 +15,7 @@ Common Locations:
 * C:\Program Files\MariaDB x.y\data (x.y refers to the version number)
 * C:\Program Files (x86)\MariaDB x.y\data (32bit version on 64bit Windows)
 
-It's also possible that the error log has been explicitly written to another location. This is often done by changing the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) or [log\_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variables in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). See [Option Files](what-to-do-if-mariadb-doesnt-start.md#option-files) below for more information about that.
+It's also possible that the error log has been explicitly written to another location. This is often done by changing the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) or [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variables in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). See [Option Files](what-to-do-if-mariadb-doesnt-start.md#option-files) below for more information about that.
 
 A quick way to get the values of these system variables is to execute the following commands:
 
@@ -70,9 +70,9 @@ System error 1067 has occurred.
 Fatal error: Can't open privilege tables: Table 'mysql.host' doesn't exist
 ```
 
-If errors like this occur, then critical [system tables](../../reference/system-tables/) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) set the [basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir) or [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) to a non-standard location, but the new server is using the default location. Therefore, make sure that the [basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir) and [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) variables are correctly set.
+If errors like this occur, then critical [system tables](../../reference/system-tables/) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) set the [basedir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#basedir) or datadir to a non-standard location, but the new server is using the default location. Therefore, make sure that the basedir and datadir variables are correctly set.
 
-If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
+If you're unsure where the option file is located, see Configuring MariaDB with Option Files: Default Option File Locations for information on the default locations.
 
 If the [system tables](../../reference/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/) for more information.
 
@@ -85,7 +85,7 @@ May 13 10:24:28 mariadb3 mariadbd[19221]: 2019-05-13 10:24:28 0 [Warning] Can't 
 May 13 10:24:28 mariadb3 maridbd[19221]: 2019-05-13 10:24:28 0 [ERROR] Aborting
 ```
 
-This is usually a permission error on the directory in which this file is being written. Ensure that the entire [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is owned by the user running `mariadbd`, usually `mysql`. Ensure that directories have the "x" (execute) directory permissions for the owner. Ensure that all the parent directories of the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) upwards have "x" (execute) permissions for all (`user`, `group`, and `other`).
+This is usually a permission error on the directory in which this file is being written. Ensure that the entire [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is owned by the user running `mariadbd`, usually `mysql`. Ensure that directories have the "x" (execute) directory permissions for the owner. Ensure that all the parent directories of the datadir upwards have "x" (execute) permissions for all (`user`, `group`, and `other`).
 
 Once this is checked look at the [systemd](what-to-do-if-mariadb-doesnt-start.md#systemd) and [selinux](what-to-do-if-mariadb-doesnt-start.md#selinux) documentation below, or [AppArmor](what-to-do-if-mariadb-doesnt-start.md#AppArmorl).
 
