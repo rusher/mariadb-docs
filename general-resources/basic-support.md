@@ -76,3 +76,5 @@ chmod +x ./mdb-support.sh
 
 **Step 4:** Attach the file created by the script to this ticket. The file name will end with "\*-support.tgz".
 
+**Note:** If you have questions about running this support script or run into any issues, please add a comment with details to your open support ticket.
+
