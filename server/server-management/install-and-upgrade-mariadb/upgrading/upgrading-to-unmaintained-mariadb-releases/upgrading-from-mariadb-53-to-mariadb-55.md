@@ -44,17 +44,16 @@ Percona, the provider of [XtraDB](../../../../server-usage/storage-engines/innod
 
 * [innodb\_adaptive\_checkpoint](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint); Use [innodb\_adaptive\_flushing\_method](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method) instead.
 * [innodb\_auto\_lru\_dump](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump); Use [innodb\_buffer\_pool\_restore\_at\_startup](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup) instead (and [innodb\_buffer\_pool\_load\_at\_startup](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)).
-* [innodb\_blocking\_lru\_restore](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb\_blocking\_buffer\_pool\_restore](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore) instead.
+* innodb\_blocking\_lru\_restore; Use [innodb\_blocking\_buffer\_pool\_restore](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore) instead.
 * [innodb\_enable\_unsafe\_group\_commit](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit)
-* [innodb\_expand\_import](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb\_import\_table\_from\_xtrabackup](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup) instead.
+* innodb\_expand\_import; Use [innodb\_import\_table\_from\_xtrabackup](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup) instead.
 * [innodb\_extra\_rsegments](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments); Use [innodb\_rollback\_segments](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) instead.
 * [innodb\_extra\_undoslots](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots)
-* [innodb\_fast\_recovery](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb\_flush\_log\_at\_trx\_commit\_session](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb\_overwrite\_relay\_log\_info](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
+* innodb\_fast\_recovery
+* innodb\_flush\_log\_at\_trx\_commit\_session
+* [innodb\_overwrite\_relay\_log\_info](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log); Use [innodb\_recovery\_update\_relay\_log](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log) instead.
 * [innodb\_pass\_corrupt\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table); Use [innodb\_corrupt\_table\_action](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action) instead.
 * [innodb\_use\_purge\_thread](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread)
-* [xtradb\_enhancements](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
 
 ## Notes
 

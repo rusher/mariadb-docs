@@ -9,7 +9,7 @@ There are no changes in table or index formats between [MariaDB 10.0](https://ap
 
 For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.md) instead.
 
-For MariaDB Galera Cluster, see [Upgrading from MariaDB Galera Cluster 10.0 to MariaDB 10.1 with Galera Cluster](https://mariadb.com/kb/en/upgrading-galera-cluster-upgrading-from-mariadb-galera-cluster-100-to-maria) instead.
+For MariaDB Galera Cluster, see [Upgrading from MariaDB Galera Cluster ](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster)instead.
 
 Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/).
 
@@ -21,7 +21,7 @@ The suggested upgrade procedure is:
 * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../installing-mariadb/binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
 * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../../installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 
-1. Set [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md) to `0`. It can be changed dynamically with [SET GLOBAL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:`SET GLOBAL innodb_fast_shutdown=0;`
+1. Set [innodb\_fast\_shutdown](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) to `0`. It can be changed dynamically with [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md). For example:`SET GLOBAL innodb_fast_shutdown=0;`
 2. [Stop MariaDB](../../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 3. Uninstall the old version of MariaDB.
 
@@ -95,7 +95,7 @@ Note that explicit or implicit casts from MAX(string) to INT, DOUBLE or DECIMAL 
 
 You might consider using the following major new features in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1):
 
-* [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera/README.md) is now included by default.
+* [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) is now included by default.
 * [Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md)
 * [InnoDB/XtraDB Page Compression](../../../../server-usage/storage-engines/innodb/innodb-page-compression.md)
 
@@ -104,7 +104,6 @@ You might consider using the following major new features in [MariaDB 10.1](http
 ## See Also
 
 * [The features in MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
-* [Upgrading from MariaDB Galera Cluster 10.0 to MariaDB 10.1 with Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/getting-installing-and-upgrading-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-galera-cluster-upgrading-from-mariadb-galera-cluster-100-to-maria/README.md)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](upgrading-from-mariadb-101-to-mariadb-102.md)
 * [Upgrading from MariaDB 5.5 to MariaDB 10.0](../upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 

@@ -67,7 +67,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 You might consider using the following major new features in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
-* [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) has been upgraded from [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 3 to [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 4.
+* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) has been upgraded from [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 3 to [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 4.
 * [System-versioning](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md) extended with support for [application-time periods](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md).
 * [User password expiry](../../../../security/user-account-management/user-password-expiry.md)
 * [Account Locking](../../../../security/user-account-management/account-locking.md)

@@ -4,9 +4,9 @@
 
 For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.md) instead.
 
-For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.1 to MariaDB 10.2 with Galera Cluster](https://mariadb.com/kb/en/upgrading-from-mariadb-101-to-mariadb-102-with-galera-cluster) instead.
+For MariaDB Galera Cluster, see [Upgrading with Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md).
 
 The suggested upgrade procedure is:
 
@@ -16,7 +16,7 @@ The suggested upgrade procedure is:
 * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../installing-mariadb/binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
 * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../../installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 
-1. Set [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md) to `0`. It can be changed dynamically with [SET GLOBAL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:`SET GLOBAL innodb_fast_shutdown=0;`
+1. Set [innodb\_fast\_shutdown](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) to `0`. It can be changed dynamically with [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md). For example:`SET GLOBAL innodb_fast_shutdown=0;`
 
 * This step is not necessary when upgrading to [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) or later. Omitting it can make the upgrade process far faster. See [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289) for more information.
 
