@@ -30,10 +30,6 @@ This section contains release notes for MariaDB Server releases divided into the
 [mariadb-10-6-series](mariadb-10-6-series/)
 {% endcontent-ref %}
 
-{% content-ref url="old-releases/mariadb-10-5-series/" %}
-[mariadb-10-5-series](old-releases/mariadb-10-5-series/)
-{% endcontent-ref %}
-
 {% content-ref url="old-releases/" %}
 [old-releases](old-releases/)
 {% endcontent-ref %}
