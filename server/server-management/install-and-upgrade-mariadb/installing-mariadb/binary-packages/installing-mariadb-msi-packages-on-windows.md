@@ -117,7 +117,7 @@ The MSI installer supports silent installations as well. In its simplest form\
 silent installation with all defaults can be performed from an elevated command\
 prompt like this:
 
-```
+```bash
 msiexec /i path-to-package.msi /qn
 ```
 
@@ -131,7 +131,7 @@ correspond for example to checked/unchecked state of a checkbox in the UI, user\
 password, etc). With properties the command line to install the MSI package\
 would look like this:
 
-```
+```bash
 msiexec /i path-to-package.msi [PROPERTY_1=VALUE_1 ... PROPERTY_N=VALUE_N] /qn
 ```
 

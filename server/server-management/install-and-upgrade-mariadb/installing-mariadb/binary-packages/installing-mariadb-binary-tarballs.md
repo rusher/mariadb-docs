@@ -2,16 +2,18 @@
 
 Binary tarballs (bintars) are compressed tar archives that contain pre-compiled executables, libraries, and other deployment dependencies. They can usually be installed on any modern Linux distribution.
 
-MariaDB Binary tarballs are named following the pattern: mariadb-VERSION-OS.tar.gz. Be sure to [download](https://mariadb.org/download) the correct version for your machine.
+MariaDB Binary tarballs are named following the pattern: `mariadb-VERSION-OS.tar.gz`. Be sure to [download](https://mariadb.org/download) the correct version for your machine.
 
-**Note:** Some older binary tarballs are marked _'(GLIBC\_2.14)'_ or _'(requires GLIBC\_2.14+)'_. These binaries are built the same as the others, but on a newer build host, and they require GLIBC 2.14 or higher. Use the other binaries for machines with older versions of GLIBC installed. Run `ldd --version` to see which version is running on your distribution.\
-Others are marked _'systemd'_, which are for systems with `systemd` and GLIBC 2.19 or higher.
+{% hint style="warning" %}
+Some older binary tarballs are marked _'(GLIBC\_2.14)'_ or _'(requires GLIBC\_2.14+)'_. These binaries are built the same as the others, but on a newer build host, and they require GLIBC 2.14 or higher. Use the other binaries for machines with older versions of GLIBC installed. Run `ldd --version` to see which version is running on your distribution.\
+Others are marked `systemd`, which are for systems with `systemd` and GLIBC 2.19 or higher.
+{% endhint %}
 
 ### Benefits of Binary Tarballs
 
 Binary tarballs provide multiple benefits:
 
-* They are highly OS independent. As long as you get the bintar for the architecture, GLIBC version and if you are using systemd or not, the bintar should work almost anywhere.
+* They are highly OS independent. As long as you get the `bintar` for the architecture, GLIBC version and if you are using `systemd` or not, the `bintar` should work almost anywhere.
 * You do not need to be root to use them.
   * They can be installed by anyone to any path, including ones home directory.
 * You can have [any number of different MariaDB installations](../../../starting-and-stopping-mariadb/running-multiple-mariadb-server-processes.md) on the same machine. This is often desired during upgrades when one wants to have the old installation running until switching to the new one.
@@ -47,7 +49,7 @@ this has to be first option for the above commands!
 
 If you have root access to the system, you probably want to install MariaDB under the user and group 'mysql' (to keep compatibility with MySQL installations):
 
-```
+```bash
 groupadd mysql
 useradd -g mysql mysql
 cd /usr/local
@@ -65,7 +67,7 @@ If you are installing MariaDB to replace MySQL, then you can leave out the call 
 
 To start mariadbd you should now do:
 
-```
+```bash
 ./bin/mariadbd_safe --user=mysql &
 or
 ./bin/mariadbd_safe --defaults-file=~/.my.cnf --user=mysql &
@@ -73,7 +75,7 @@ or
 
 To test connection, modify your $PATH so you can invoke client such as [mariadb](../../../../clients-and-utilities/mariadb-client/), [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), etc.
 
-```
+```bash
 export PATH=$PATH:/usr/local/mysql/bin/
 ```
 
@@ -83,7 +85,7 @@ You may want to modify your .bashrc or .bash\_profile to make it permanent.
 
 Below, change /usr/local to the directory of your choice.
 
-```
+```bash
 cd /usr/local
 gunzip < /path-to/mariadb-VERSION-OS.tar.gz | tar xf -
 ln -s mariadb-VERSION-OS mysql
@@ -93,13 +95,13 @@ cd mysql
 
 If you have problems with the above gunzip command line, you can instead, if you have gnu tar, do:
 
-```
+```bash
 tar xfz /path-to/mariadb-VERSION-OS.tar.gz
 ```
 
 To start mariadbd you should now do:
 
-```
+```bash
 ./bin/mariadbd_safe --defaults-file=~/.my.cnf &
 ```
 
@@ -107,7 +109,7 @@ To start mariadbd you should now do:
 
 You can get mariadbd (the MariaDB server) to autostart by copying the file `mysql.server` file to the right place.
 
-```
+```bash
 cp support-files/mysql.server /etc/init.d/mysql.server
 ```
 
@@ -115,13 +117,13 @@ The exact place depends on your system. The `mysql.server` file contains instruc
 
 For systemd installation the mariadb.service file will need to be copied from the support-files/systemd folder to the /usr/lib/systemd/system/ folder.
 
-```
+```bash
 cp support-files/systemd/mariadb.service /usr/lib/systemd/system/mariadb.service
 ```
 
 Note that by default the /usr/ directory is write protected by systemd though, so when having the data directory in /usr/local/mysql/data as per the instructions above you also need to make that directory writable. You can do so by adding an extra service include file:
 
-```
+```bash
 mkdir /etc/systemd/system/mariadb.service.d/
 
 cat > /etc/systemd/system/mariadb.service.d/datadir.conf <<EOF
@@ -134,13 +136,13 @@ systemctl daemon-reload
 
 After this you can start and stop the service using
 
-```
+```bash
 systemctl start mariadb.service
 ```
 
 and
 
-```
+```bash
 systemctl stop mariadb.service
 ```
 
@@ -158,7 +160,7 @@ when your system boots.
 
 On systems using systemd you can instead enable automatic startup during system boot with
 
-```
+```bash
 systemctl enable mariadb.service
 ```
 

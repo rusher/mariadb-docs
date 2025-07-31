@@ -9,7 +9,7 @@ Here are the steps to install MariaDB near an existing MySQL installation.
 * as of writing this article) and extract the files in a directory of your\
   choice. I will assume for this article that the directory was /opt.
 
-```
+```ini
 [root@mariadb-near-mysql ~]# cat /etc/issue
 CentOS release 6.2 (Final)
 
@@ -26,7 +26,7 @@ mysql-server-5.1.61-1.el6_2.1.x86_64
 
 * Create data directory and symlinks as below:
 
-```
+```bash
 [root@mariadb-near-mysql opt]# mkdir mariadb-data
 [root@mariadb-near-mysql opt]# ln -s mariadb-5.5.24-linux-x86_64 mariadb
 [root@mariadb-near-mysql opt]# ls -al
@@ -40,7 +40,7 @@ drwxr-xr-x.  2 root root 4096 2012-06-06 07:26 mariadb-data
 
 * Create group mariadb and user mariadb and set correct ownerships:
 
-```
+```bash
 [root@mariadb-near-mysql opt]# groupadd --system mariadb
 [root@mariadb-near-mysql opt]# useradd -c "MariaDB Server" -d /opt/mariadb -g mariadb --system mariadb
 [root@mariadb-near-mysql opt]# chown -R mariadb:mariadb mariadb-5.5.24-linux-x86_64/
@@ -49,14 +49,14 @@ drwxr-xr-x.  2 root root 4096 2012-06-06 07:26 mariadb-data
 
 * Create a new my.cnf in /opt/mariadb from support files:
 
-```
+```bash
 [root@mariadb-near-mysql opt]# cp mariadb/support-files/my-medium.cnf mariadb-data/my.cnf
 [root@mariadb-near-mysql opt]# chown mariadb:mariadb mariadb-data/my.cnf
 ```
 
 * Edit the file /opt/mariadb-data/my.cnf and add custom paths, socket, port, user and the most important of all: data directory and base directory. Finally the file should have at least the following:
 
-```
+```ini
 [client]
 port		= 3307
 socket		= /opt/mariadb-data/mariadb.sock
@@ -71,7 +71,7 @@ user            = mariadb
 
 * Copy the init.d script from support files in the right location:
 
-```
+```bash
 [root@mariadb-near-mysql opt]# cp mariadb/support-files/mysql.server /etc/init.d/mariadb
 [root@mariadb-near-mysql opt]# chmod +x /etc/init.d/mariadb
 ```
@@ -93,7 +93,7 @@ The trickiest part will be the last changes to this file. You need to tell\
 mariadb to use only one cnf file. In the **start** section afte&#x72;**$bindir/mysqld\_safe** add **--defaults-file=/opt/mariadb-data/my.cnf**.\
 Finally the lines should look like:
 
-```
+```bash
 # Give extra arguments to mysqld with the my.cnf file. This script
 # may be overwritten at next upgrade.
 $bindir/mysqld_safe --defaults-file=/opt/mariadb-data/my.cnf --datadir="$datadir" --pid-file="$mysqld_pid_file_path" $other_args >/dev/null 2>&1 &
@@ -110,21 +110,21 @@ wait_for_ready () {
 
 * Run [mariadb-install-db](../../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) by explicitly giving it the my.cnf file as argument:
 
-```
+```bash
 [root@mariadb-near-mysql opt]# cd mariadb
 [root@mariadb-near-mysql mariadb]# scripts/mariadb-install-db --defaults-file=/opt/mariadb-data/my.cnf
 ```
 
 * Now you can start MariaDB by
 
-```
+```bash
 [root@mariadb-near-mysql opt]# /etc/init.d/mariadb start
 Starting MySQL...                                          [  OK  ]
 ```
 
 * Make MariaDB start at system start:
 
-```
+```bash
 [root@mariadb-near-mysql opt]# cd /etc/init.d
 [root@mariadb-near-mysql init.d]# chkconfig --add mariadb 
 [root@mariadb-near-mysql init.d]# chkconfig --levels 3 mariadb on
@@ -132,7 +132,7 @@ Starting MySQL...                                          [  OK  ]
 
 * Finally test that you have both instances running:
 
-```
+```bash
 [root@mariadb-near-mysql ~]# mysql -e "SELECT VERSION();"
 +-----------+
 | VERSION() |

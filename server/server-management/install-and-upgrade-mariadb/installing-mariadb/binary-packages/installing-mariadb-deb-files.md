@@ -30,7 +30,7 @@ MariaDB Corporation provides a MariaDB Package Repository for several Linux dist
 
 To use the script, execute the following command:
 
-```
+```bash
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 ```
 
@@ -52,14 +52,14 @@ One way to add an `apt` repository is by using the [add-apt-repository](https://
 
 For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `apt` repository:
 
-```
+```bash
 sudo apt-get install software-properties-common
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic main'
 ```
 
 And then you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
@@ -69,7 +69,7 @@ Another way to add an `apt` repository is by creating a [source list](https://ma
 
 For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could create the `MariaDB.list` file in `/etc/apt/sources.list.d/` with the following contents to add the MariaDB `apt` repository:
 
-```
+```bash
 # MariaDB 10.6 repository list - created 2019-01-27 09:50 UTC
 # http://downloads.mariadb.org/mariadb/repositories/
 deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic main
@@ -78,7 +78,7 @@ deb-src http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic mai
 
 And then you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
@@ -114,7 +114,7 @@ Archives are only of the distros and architectures supported at the time of rele
 
 For example, if you wanted to pin your repository to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-1059-release-notes) on Ubuntu 20.04 LTS (Focal), then you would have to first remove any existing MariaDB repository source list file from `/etc/apt/sources.list.d/`. And then you could use the following commands to add the MariaDB `apt-get` repository:
 
-```
+```bash
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el,s390x] http://archive.mariadb.org/mariadb-10.5.9/repo/ubuntu/ focal main main/debug'
 ```
 
@@ -122,13 +122,13 @@ Ensure you have the [signing key installed](installing-mariadb-deb-files.md#Impo
 
 Ubuntu Xenial and older will need:
 
-```
+```bash
 sudo apt-get install -y apt-transport-https
 ```
 
 And then you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
@@ -152,20 +152,20 @@ First, look for the repository string for the old version in `/etc/apt/sources.l
 
 And then, you can remove the repository for the old version by executing the [add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html) command and providing the `--remove` option. For example, if you wanted to remove a [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) repository, then you could do so by executing something like the following:
 
-```
+```bash
 sudo add-apt-repository --remove 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic main'
 ```
 
 After that, you can add the repository for the new version with the [add-apt-repository](https://manpages.ubuntu.com/manpages/bionic/man1/add-apt-repository.1.html) command. For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on Ubuntu 18.04 LTS (Bionic), then you could use the following commands to add the MariaDB `apt` repository:
 
-```
+```bash
 sudo apt-get install software-properties-common
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.6/ubuntu bionic main'
 ```
 
 And then you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
@@ -175,13 +175,13 @@ After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.co
 
 If you added the `apt` repository by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `/etc/apt/sources.list.d/`, then you can update the major release that the repository uses by updating the source list file in-place. For example, if you wanted to change the repository from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105) to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), and if the source list file was at `/etc/apt/sources.list.d/MariaDB.list`, then you could execute the following:
 
-```
+```bash
 sudo sed -i 's/10.5/10.6/' /etc/apt/sources.list.d/MariaDB.list
 ```
 
 And then you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
@@ -193,25 +193,25 @@ Before MariaDB can be installed, you also have to import the GPG public key that
 
 * Prior to Debian 9 (Stretch), and Debian Unstable (Sid), and Ubuntu 16.04 LTS (Xenial), the id of our GPG public key is `0xcbcb082a1bb943db`. The full key fingerprint is:
 
-```
+```bash
 1993 69E5 404B D5FC 7D2F E43B CBCB 082A 1BB9 43DB
 ```
 
 The [apt-key](https://manpages.ubuntu.com/manpages/bionic/man8/apt-key.8.html) utility can be used to import this key. For example:
 
-```
+```bash
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 ```
 
 * Starting with Debian 9 (Stretch) and Ubuntu 16.04 LTS (Xenial), the id of our GPG public key is `0xF1656F24C74CD1D8`. The full key fingerprint is:
 
-```
+```bash
 177F 4010 FE56 CA33 3630  0305 F165 6F24 C74C D1D8
 ```
 
 The [apt-key](https://manpages.ubuntu.com/manpages/bionic/man8/apt-key.8.html) utility can be used to import this key. For example:
 
-```
+```bash
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 ```
 
@@ -221,7 +221,7 @@ If you are unsure which GPG public key you need, then it is perfectly safe to im
 
 The command used to import the GPG public key is the same on both Debian and Ubuntu. For example:
 
-```
+```bash
 $ sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --secret-keyring /tmp/tmp.ASyOPV87XC --trustdb-name /etc/apt/trustdb.gpg --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 gpg: requesting key 1BB943DB from hkp server keyserver.ubuntu.com
@@ -241,13 +241,13 @@ After the `apt` repository is configured, you can install MariaDB by executing t
 
 To Install the most common packages, first you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
 To Install the most common packages, execute the following command:
 
-```
+```bash
 sudo apt-get install mariadb-server galera-4 mariadb-client libmariadb3 mariadb-backup mariadb-common
 ```
 
@@ -255,13 +255,13 @@ sudo apt-get install mariadb-server galera-4 mariadb-client libmariadb3 mariadb-
 
 To Install MariaDB Server, first you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
 Then, execute the following command:
 
-```
+```bash
 sudo apt-get install mariadb-server
 ```
 
@@ -275,13 +275,13 @@ You also need to install the `galera-4` package to obtain the [Galera](https://a
 
 To install MariaDB Galera Cluster, first you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
 To install MariaDB Galera Cluster, you could execute the following command:
 
-```
+```bash
 sudo apt-get install mariadb-server mariadb-client galera-4
 ```
 
@@ -289,7 +289,7 @@ MariaDB Galera Cluster also has a separate package that can be installed on arbi
 
 To install the arbitrator package, you could execute the following command:
 
-```
+```bash
 sudo apt-get install galera-arbitrator-4
 ```
 
@@ -303,13 +303,13 @@ See Galera for more information on MariaDB Galera Cluster.
 
 To Install the clients and client libraries, first you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
 Then, execute the following command:
 
-```
+```bash
 sudo apt-get install mariadb-client libmariadb3
 ```
 
@@ -317,13 +317,13 @@ sudo apt-get install mariadb-client libmariadb3
 
 To install [mariadb-backup](../../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md), first you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
 Then, execute the following command:
 
-```
+```bash
 sudo apt-get install mariadb-backup
 ```
 
@@ -333,13 +333,13 @@ Some [plugins](../../../../reference/plugins/) may also need to be installed.
 
 For example, to install the [cracklib\_password\_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, first you would have to update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 
 Then, execute the following command:
 
-```
+```bash
 sudo apt-get install mariadb-cracklib-password-check
 ```
 
@@ -347,7 +347,7 @@ sudo apt-get install mariadb-cracklib-password-check
 
 The MariaDB `apt` repository contains the last few versions of MariaDB. To show what versions are available, use the [apt-cache](https://manpages.ubuntu.com/manpages/bionic/man8/apt-cache.8.html) command:
 
-```
+```bash
 sudo apt-cache showpkg mariadb-server
 ```
 
@@ -358,7 +358,7 @@ need to specify the package name, an equal sign, and then the version number.
 
 However, when installing an older version of a package, if `apt-get` has to install dependencies, then it will automatically choose to install the latest versions of those packages. To ensure that all MariaDB packages are on the same version in this scenario, it is necessary to specify them all. Therefore, to install [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). from this `apt` repository, we would do the following:
 
-```
+```bash
 sudo apt-get install mariadb-server=10.6.21-1 mariadb-client=10.6.21-1 libmariadb3=10.6.21-1 mariadb-backup=10.6.21-1 mariadb-common=10.6.21-1
 ```
 
@@ -374,7 +374,7 @@ A tarball that contains the `.deb` packages can be downloaded from the following
 
 For example, to install the [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes) `.deb` packages on Ubuntu 18.04 LTS (Bionic), you could execute the following:
 
-```
+```bash
 sudo apt-get update
 sudo apt-get install libdbi-perl libdbd-mysql-perl psmisc libaio1 socat
 wget https://downloads.mariadb.com/MariaDB/mariadb-10.6.21/repo/ubuntu/mariadb-10.6.21-ubuntu-bionic-amd64-debs.tar
@@ -404,28 +404,28 @@ The available DEB packages depend on the specific MariaDB release series.
 
 For MariaDB, the following DEBs are available:
 
-| Package Name                           | Description                                                                                                                                                                                                                                        |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| galera-4                               | The WSREP provider for [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) 4.                                                                                                                       |
-| libmariadb3                            | Dynamic client libraries.                                                                                                                                                                                                                          |
-| libmariadb-dev                         | Development headers and static libraries.                                                                                                                                                                                                          |
-| libmariadbclient18                     | Virtual package to satisfy external depends                                                                                                                                                                                                        |
-| libmysqlclient18                       | Virtual package to satisfy external depends                                                                                                                                                                                                        |
-| mariadb-backup                         | [mariadb-backup](../../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md)                                                                                                                                            |
-| mariadb-client                         | Client tools like [mariadb CLI](../../../../clients-and-utilities/mariadb-client/), [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), and others.                                               |
-| mariadb-client-core                    | Core client tools                                                                                                                                                                                                                                  |
-| mariadb-common                         | Character set files and /etc/my.cnf                                                                                                                                                                                                                |
-| mariadb-plugin-connect                 | The [CONNECT](../../../../server-usage/storage-engines/connect/) storage engine.                                                                                                                                                                   |
-| mariadb-plugin-cracklib-password-check | The [cracklib\_password\_check](../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin.                                                                                           |
-| mariadb-plugin-gssapi-client           | The client-side component of the [gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin.                                                                                             |
-| mariadb-plugin-gssapi-server           | The server-side component of the [gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin.                                                                                             |
-| mariadb-plugin-rocksdb                 | The [MyRocks](../../../../server-usage/storage-engines/myrocks/) storage engine.                                                                                                                                                                   |
-| mariadb-plugin-spider                  | The [SPIDER](../../../../server-usage/storage-engines/spider/) storage engine.                                                                                                                                                                     |
-| mariadb-plugin-tokudb                  | The [TokuDB](../../../../server-usage/storage-engines/tokudb/) storage engine.                                                                                                                                                                     |
-| mariadb-server                         | The server and server tools, like [myisamchk](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) and [mariadb-hotcopy](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-hotcopy.md) are here. |
-| mariadb-server-core                    | The core server.                                                                                                                                                                                                                                   |
-| mariadb-test                           | mysql-client-test executable, and mysql-test framework with the tests.                                                                                                                                                                             |
-| mariadb-test-data                      | MariaDB database regression test suite - data files                                                                                                                                                                                                |
+| Package Name                             | Description                                                                                                                                                                                                                                        |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `galera-4`                               | The WSREP provider for [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) 4.                                                                                                                       |
+| `libmariadb3`                            | Dynamic client libraries.                                                                                                                                                                                                                          |
+| `libmariadb-dev`                         | Development headers and static libraries.                                                                                                                                                                                                          |
+| `libmariadbclient18`                     | Virtual package to satisfy external depends                                                                                                                                                                                                        |
+| `libmysqlclient18`                       | Virtual package to satisfy external depends                                                                                                                                                                                                        |
+| `mariadb-backup`                         | [mariadb-backup](../../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md)                                                                                                                                            |
+| `mariadb-client`                         | Client tools like [mariadb CLI](../../../../clients-and-utilities/mariadb-client/), [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), and others.                                               |
+| `mariadb-client-core`                    | Core client tools                                                                                                                                                                                                                                  |
+| `mariadb-common`                         | Character set files and /etc/my.cnf                                                                                                                                                                                                                |
+| `mariadb-plugin-connect`                 | The [CONNECT](../../../../server-usage/storage-engines/connect/) storage engine.                                                                                                                                                                   |
+| `mariadb-plugin-cracklib-password-check` | The [cracklib\_password\_check](../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin.                                                                                           |
+| `mariadb-plugin-gssapi-client`           | The client-side component of the [gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin.                                                                                             |
+| `mariadb-plugin-gssapi-server`           | The server-side component of the [gssapi](../../../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) authentication plugin.                                                                                             |
+| `mariadb-plugin-rocksdb`                 | The [MyRocks](../../../../server-usage/storage-engines/myrocks/) storage engine.                                                                                                                                                                   |
+| `mariadb-plugin-spider`                  | The [SPIDER](../../../../server-usage/storage-engines/spider/) storage engine.                                                                                                                                                                     |
+| `mariadb-plugin-tokudb`                  | The [TokuDB](../../../../server-usage/storage-engines/tokudb/) storage engine.                                                                                                                                                                     |
+| `mariadb-server`                         | The server and server tools, like [myisamchk](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) and [mariadb-hotcopy](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-hotcopy.md) are here. |
+| `mariadb-server-core`                    | The core server.                                                                                                                                                                                                                                   |
+| `mariadb-test`                           | mysql-client-test executable, and mysql-test framework with the tests.                                                                                                                                                                             |
+| `mariadb-test-data`                      | MariaDB database regression test suite - data files                                                                                                                                                                                                |
 
 <>
 
