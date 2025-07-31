@@ -1,9 +1,7 @@
 # mariadb-install-db
 
-
-
 {% hint style="warning" %}
-**This page is for the `mariadb-install-db` script for Linux/Unix only**
+**This page is for the `mariadb-install-db` script for Linux/Unix only.**
 
 For the Windows specific tool of similar name and purpose see [mysql\_install\_db.exe](../legacy-clients-and-utilities/mysql_install_db.md).
 
@@ -12,63 +10,61 @@ The Windows version shares the common theme (creating system tables), yet has a 
 
 `mariadb-install-db` initializes the MariaDB data directory and creates the [system tables](../../reference/system-tables/) in the [mysql](../../reference/system-tables/the-mysql-database-tables/) database, if they do not exist.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+{% hint style="info" %}
+Previously, the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+{% endhint %}
 
 MariaDB uses these tables to manage [privileges](../../reference/sql-statements/account-management-sql-statements/grant.md#privilege-levels), [roles](../../security/user-account-management/roles/), and [plugins](../../reference/plugins/). It also uses them to provide the data for the [help](../../reference/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](../mariadb-client/) client.
 
 `mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#bootstrap) mode and sending commands to create the [system tables](../../reference/system-tables/) and their content.
 
-## Using mariadb-install-db
+## Usage
 
-To invoke `mariadb-install-db`, use the following syntax:
+Invoke `mariadb-install-db` using the following syntax:
 
-```
+```bash
 $ mariadb-install-db [options]
 ```
 
-Because the MariaDB server, `mariadbd`, needs to access the data directory\
-when it runs later, you should either run `mariadb-install-db` from the same\
-account that is used for running `mariadbd` or run it as root and use the`--user` option to indicate the user name that `mariadbd` will run\
-as. It might be necessary to specify other options such as`--basedir` or `--datadir` if`mariadb-install-db` does not use the correct locations for the installation\
-directory or data directory. For example:
+Because the MariaDB server (`mariadbd`) needs to access the data directory when it runs, you should either run `mariadb-install-db` from the same account that is used for running `mariadbd`, or run it as `root` and use the `--user` option to indicate the username that `mariadbd` runs as. It might be necessary to specify other options such as `--basedir` or `--datadir` if `mariadb-install-db` does not use the correct locations for the installation directory or data directory. Here is a typical invocation:
 
-```
+```bash
 $ scripts/mariadb-install-db --user=mysql \
    --basedir=/opt/mysql/mysql \
    --datadir=/opt/mysql/mysql/data
 ```
 
-### Options
+## Options
 
 `mariadb-install-db` supports the following options:
 
-| Option                                    | Description                                                                                                                                                                                                                                                                                                                                                                                  |
-| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| --auth-root-authentication-method={normal | {socket}                                                                                                                                                                                                                                                                                                                                                                                     |
-| --auth-root-socket-user=USER              | Used with --auth-root-authentication-method=socket. It specifies the name of the second account to create with [SUPER](../../reference/sql-statements/account-management-sql-statements/grant.md#super) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of --user.                                                              |
-| --basedir=path                            | The path to the MariaDB installation directory.                                                                                                                                                                                                                                                                                                                                              |
-| --builddir=path                           | If using --srcdir with out-of-directory builds, you will need to set this to the location of the build directory where built files reside.                                                                                                                                                                                                                                                   |
-| --catalogs=\["list"]                      | Initialize MariaDB for [catalogs](../../security/user-account-management/catalogs/). Argument is a list, separated with space or ',', of the catalogs to create. The def catalog is created automatically. Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).                   |
-| --catalog-user=user                       | User when adding [catalogs](../../security/user-account-management/catalogs/) to running server. Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).                                                                                                                             |
-| --catalog-password\[=password]            | Password for [catalog-user](../../security/user-account-management/catalogs/). Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).                                                                                                                                               |
-| --catalog-client-arg=arg                  | Other arguments to 'mariadb' when adding new [catalogs](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/security/user-account-management/catalogs/README.md). Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).                      |
-| --cross-bootstrap                         | For internal use. Used when building the MariaDB system tables on a different host than the target.                                                                                                                                                                                                                                                                                          |
-| --datadir=path, --ldata=path              | The path to the MariaDB data directory.                                                                                                                                                                                                                                                                                                                                                      |
-| --client-debug                            | Write commands to-be executed in '/tmp/mariadb\_install\_db.log'. Added in [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116).                                                                                                                                                     |
-| --server-debug                            | Start mariadbd (server) with --debug.                                                                                                                                                                                                                                                                                                                                                        |
-| --defaults-extra-file=name                | Read this file after the global files are read. Must be given as the first option.                                                                                                                                                                                                                                                                                                           |
-| --defaults-file=name                      | Only read default options from the given file name Must be given as the first option.                                                                                                                                                                                                                                                                                                        |
-| --defaults-group-suffix=name              | In addition to the given groups, read also groups with this suffix.                                                                                                                                                                                                                                                                                                                          |
-| --force                                   | Causes mariadb-install-db to run even if DNS does not work. In that case, grant table entries that normally use host names will use IP addresses.                                                                                                                                                                                                                                            |
-| --no-defaults                             | Don't read default options from any option file. Must be given as the first option.                                                                                                                                                                                                                                                                                                          |
-| --print-defaults                          | Print the program argument list and exit. Must be given as the first option.                                                                                                                                                                                                                                                                                                                 |
-| --rpm                                     | For internal use. This option is used by RPM files during the MariaDB installation process.                                                                                                                                                                                                                                                                                                  |
-| --skip-name-resolve                       | Uses IP addresses rather than host names when creating grant table entries. This option can be useful if your DNS does not work.                                                                                                                                                                                                                                                             |
-| --skip-test-db                            | Don't install the test database                                                                                                                                                                                                                                                                                                                                                              |
-| --srcdir=path                             | For internal use. The path to the MariaDB source directory. This option uses the compiled binaries and support files within the source tree, useful for if you don't want to install MariaDB yet and just want to create the system tables. The directory under which mariadb-install-db looks for support files such as the error message file and the file for populating the help tables. |
-| --user=user\_name                         | The login user name to use for running mariadbd. Files and directories created by mariadbd is owned by this user. You must be root to use this option. By default, mariadbd runs using your current login name and files and directories that it creates is owned by you.                                                                                                          |
-| --verbose                                 | Verbose mode. Print more information about what the program does.                                                                                                                                                                                                                                                                                                                            |
-| --windows                                 | For internal use. This option is used for creating Windows distributions.                                                                                                                                                                                                                                                                                                                    |
+| Option                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --auth-root-authentication-method={`normal`\|`socket`} | If set to `normal`, it creates a `root@localhost` account that authenticates with the [`mysql_native_password`](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin and that has no initial password set, which can be insecure. If set to `socket`, it creates a `root@localhost` account that authenticates with the [`unix_socket`](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin. Set to `socket` by default. |
+| --auth-root-socket-user=_username_                     | Used with `--auth-root-authentication-method=`_`socket`_. It specifies the name of the second account to create with [SUPER](../../reference/sql-statements/account-management-sql-statements/grant.md#super) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of `--user`.                                                                                                                                                                                                         |
+| --basedir=_path_                                       | The _path_ to the MariaDB installation directory.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --builddir=_directory_                                 | If using `--srcdir` with out-of-directory builds, you will need to set this to the location of the _build directory_ where built files reside.                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --catalogs=\["_list_"]                                 | Initialize MariaDB for [catalogs](../../security/user-account-management/catalogs/). Argument is a _list of the catalogs to create_, separated with space or comma. The def catalog is created automatically. This option is available from MariaDB 11.7.                                                                                                                                                                                                                                                                                       |
+| --catalog-user=_username_                              | _User_ when adding catalogs to running server. This option is available from MariaDB 11.7.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| --catalog-password\[=_password_]                       | _Password_ for [catalog-user](../../security/user-account-management/catalogs/). This option is available from MariaDB 11.7.                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --catalog-client-arg=_argument_                        | Other _arguments_ to `mariadb` when adding new [catalogs](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/security/user-account-management/catalogs/README.md). This option is available from MariaDB 11.7.                                                                                                                                                                                                                                                                                           |
+| --cross-bootstrap                                      | For internal use. Used when building the MariaDB system tables on a different host than the target.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --datadir=_path_, --ldata=_path_                       | The _path_ to the MariaDB data directory.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| --client-debug                                         | Write commands to-be executed in `/tmp/mariadb_install_db.log`. This option is available from MariaDB 11.6.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| --server-debug                                         | Start mariadbd (server) with `--debug`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| --defaults-extra-file=_file_                           | Read this _file_ after the global files are read. Must be given as the first option.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| --defaults-file=_file_                                 | Only read default options from the given _file_ name. Must be given as the first option.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| --defaults-group-suffix=_suffix_                       | In addition to the given groups, read also groups with this _suffix_.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --force                                                | Causes mariadb-install-db to run even if DNS does not work. In that case, grant table entries that normally use host names will use IP addresses.                                                                                                                                                                                                                                                                                                                                                                                               |
+| --no-defaults                                          | Don't read default options from any option file. Must be given as the first option.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --print-defaults                                       | Print the program argument list and exit. Must be given as the first option.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --rpm                                                  | For internal use. This option is used by RPM files during the MariaDB installation process.                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| --skip-name-resolve                                    | Uses IP addresses rather than host names when creating grant table entries. This option can be useful if your DNS does not work.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --skip-test-db                                         | Don't install the test database                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --srcdir=_path_                                        | For internal use. The _path_ to the MariaDB source directory. This option uses the compiled binaries and support files within the source tree, useful for if you don't want to install MariaDB yet and just want to create the system tables. The directory under which mariadb-install-db looks for support files such as the error message file and the file for populating the help tables.                                                                                                                                                  |
+| --user=_username_                                      | The login _username_ to use for running mariadbd. Files and directories created by mariadbd is owned by this user. You must be root to use this option. By default, mariadbd runs using your current login name and files and directories that it creates is owned by you.                                                                                                                                                                                                                                                                      |
+| --verbose                                              | Verbose mode. Print more information about what the program does.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --windows                                              | For internal use. This option is used for creating Windows distributions.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ### Option Files
 
@@ -84,7 +80,7 @@ The following options relate to how MariaDB command line tools handles option fi
 | --defaults-extra-file=#   | Read this file after the global files are read.                                     |
 | --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. |
 
-#### Option Groups
+### Option Groups
 
 `mariadb-install-db` reads options from the following [option groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
@@ -112,7 +108,7 @@ If you have just [compiled MariaDB from source](../../server-management/install-
 
 To do so, you would have to provide the `--srcdir` option. For example:
 
-```
+```bash
 ./scripts/mariadb-install-db --srcdir=. --datadir=path-to-temporary-data-dir
 ```
 
@@ -170,7 +166,7 @@ An invalid password is initially set for both of these user accounts. This means
 
 For example, here is an example of setting the password for the `root@localhost` user account immediately after installation:
 
-```
+```bash
 $ sudo yum install MariaDB-server
 $ sudo systemctl start mariadb
 $ sudo mariadb
@@ -178,27 +174,25 @@ $ sudo mariadb
 MariaDB> SET PASSWORD = PASSWORD('XH4VmT3_jt');
 ```
 
-You may notice in the above example that the [mariadb](../mariadb-client/mariadb-command line-client.md) command line client is executed via [sudo](https://linux.die.net/man/8/sudo). This allows the `root@localhost` user account to successfully authenticate via the [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin.\
-<>
+You may notice in the above example that the [mariadb](../mariadb-client/mariadb-command-line-client.md) command-line client is executed via [sudo](https://linux.die.net/man/8/sudo). This allows the `root@localhost` user account to successfully authenticate via the [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)  authentication plugin.
 
 ## Troubleshooting Issues
 
 ### Checking the Error Log
 
-If `mariadb-install-db` fails, you should examine the [error log](../../server-management/server-monitoring-logs/error-log.md) in the\
-data directory, which is the directory specified with `--datadir` option. This should provide a clue about what went wrong.
+If `mariadb-install-db` fails, you should examine the [error log](../../server-management/server-monitoring-logs/error-log.md) in the data directory, which is the directory specified with `--datadir` option. This should provide a clue about what went wrong.
 
 ### Testing With mariadbd
 
 You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#skip-grant-tables) option will tell it to ignore the [system tables](../../reference/system-tables/). Enabling the [general query log](../../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
 
-```
+```bash
 mariadbd --skip-grant-tables --general-log
 ```
 
 At this point, you can use the [mariadb](../mariadb-client/) client to connect to the [mysql](../../reference/system-tables/the-mysql-database-tables/) database and look at the [system tables](../../reference/system-tables/). For example:
 
-```
+```bash
 $ /usr/local/mysql/bin/mysql -u root mysql
 MariaDB [mysql]> show tables
 ```
@@ -220,7 +214,7 @@ It only has the single `db.opt` file, which sets the client options `default-cha
 
 If you run `mysql` as an anonymous user, `mysql -u''@localhost`, and look for the grants and databases you are able to work with, you will get the following:
 
-```
+```sql
 SELECT current_user;
 +--------------+
 | current_user |
@@ -250,14 +244,14 @@ But looking from [SHOW GRANTS](../../reference/sql-statements/administrative-sql
 Let's go a step further.\
 Now, use the `root`/`unix` user, which has all rights, in order to create a new database with the prefix `test_` , something like:
 
-```
+```sql
 CREATE DATABASE test_electricity;
 ```
 
 With the above change, a new directory is created in the data directory.\
 Now login again with the anonymous user and run [SHOW DATABASES](../../reference/sql-statements/administrative-sql-statements/show/show-databases.md):
 
-```
+```sql
 SHOW DATABASES
 +--------------------+
 | Database           |
@@ -269,11 +263,11 @@ SHOW DATABASES
 ```
 
 Again we are able to see the newly created database, without any rights?\
-We have an anonymous user that has no privileges, but still can see the `test` and `test_electricity` databases.**Where does this come from?**
+We have an anonymous user that has no privileges, but still can see the `test` and `test_electricity` databases. Where does this come from?
 
-Login with the `root`/`unix` user to find out all privileges that the anonymous user has:
+Log in with the `root`/`unix` user to find out all privileges that the anonymous user has:
 
-```
+```sql
 SELECT * FROM mysql.user WHERE user='' AND host='localhost'\G
 *************************** 1. row ***************************
                   Host: localhost
@@ -333,7 +327,7 @@ Looking at the `mysql.db` table, it already contains 2 rows created when the `ma
 
 The anonymous user has database privileges (without `grant`, `alter_routine` and `execute`) on `test` and `test_%` databases:
 
-```
+```sql
 SELECT * FROM mysql.db\G
 *************************** 1. row ***************************
                  Host: %
@@ -397,7 +391,7 @@ Other databases privileges **are not automatically granted** for the newly creat
 
 If you run `mariadb-install-db` with the `--skip-test-db` option, no `test` database is created, which we can see as follows:
 
-```
+```sql
 SHOW DATABASES;
 +--------------------+
 | Database           |
@@ -413,7 +407,7 @@ Empty set (0.001 sec)
 
 Also, no anonymous user is created (only `unix`/`mariadb.sys`/`root` users):
 
-```
+```sql
 SELECT user,host FROM mysql.user;
 +-------------+-----------+
 | User        | Host      |

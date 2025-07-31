@@ -1,7 +1,5 @@
 # mariadb-upgrade
 
-## mariadb-upgrade
-
 `mariadb-upgrade` is a tool that checks and updates your tables to the latest version.
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_upgrade`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
@@ -45,7 +43,7 @@ mariadb-check --no-defaults --all-databases --fix-db-names --fix-table-names
 mariadb-check --no-defaults --check-upgrade --all-databases --auto-repair
 ```
 
-The connect options given to `mariadb-upgrade` are passed along to [mariadb-check](../table-tools/mariadb-check.md) and [mysql](../mariadb-client/mysql-command line-client.md).
+The connect options given to `mariadb-upgrade` are passed along to [mariadb-check](../table-tools/mariadb-check.md) and \[mysql]\(../mariadb-client/mysql-command line-client.md).
 
 The `mysql_fix_privilege_tables` script is not actually called; it's included as part of `mariadb-upgrade`
 
