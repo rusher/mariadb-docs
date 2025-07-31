@@ -1,6 +1,6 @@
 # dbForge Data Compare
 
-[dbForge Data Compare](https://www.devart.com/dbforge/mysql/datacompare/) helps compare and synchronize data in MariaDB, MySQL, and Percona databases and scripts folders. With this powerful GIU tool, you can easily find differences between your data, as it helps analyze comparison results, creates a synchronization script, and applies changes. Plus, MariaDB data can be compared with command-line support.
+[dbForge Data Compare](https://www.devart.com/dbforge/mysql/datacompare/) helps compare and synchronize data in MariaDB, MySQL, and Percona databases and scripts folders. With this powerful GIU tool, you can easily find differences between your data, as it helps analyze comparison results, creates a synchronization script, and applies changes. Plus, MariaDB data can be compared with command line support.
 
 ## dbForge Data Compare Tool Features:
 
@@ -15,7 +15,7 @@
 
 ### 2. MySQL & MariaDB Task Automation
 
-* Automate routine synchronizations with a command-line interface
+* Automate routine synchronizations with a command line interface
 * Plan your routine execution with Windows Scheduler
 * Support for PowerShell compatibility
 

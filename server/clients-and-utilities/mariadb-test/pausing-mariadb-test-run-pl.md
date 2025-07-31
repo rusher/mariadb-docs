@@ -11,14 +11,14 @@ There are two ways to enable this:
 
 ### Keep Alive
 
-If you plan on using this feature with other programs, such as buildbot, you should set the `MTR_STOP_KEEP_ALIVE` environment variable or the `--stop-keep-alive` command-line option with a value in seconds. This will make the script print messages to whatever program is calling mariadb-test-run.pl at the interval you set to prevent timeouts.
+If you plan on using this feature with other programs, such as buildbot, you should set the `MTR_STOP_KEEP_ALIVE` environment variable or the `--stop-keep-alive` command line option with a value in seconds. This will make the script print messages to whatever program is calling mariadb-test-run.pl at the interval you set to prevent timeouts.
 
 If you are calling mariadb-test-run.pl directly, you do not need to specify a timeout.
 
 ### The mariadb-test-run Stop File
 
 The stop file is a temporary file that you create on your system when you want\
-to pause the execution of mariadb-test-run. When enabled via the command-line or\
+to pause the execution of mariadb-test-run. When enabled via the command line or\
 environment variable options, mariadb-test-run will periodically check for the\
 existence of the file and if it exists it will stop until the file is no longer\
 present.

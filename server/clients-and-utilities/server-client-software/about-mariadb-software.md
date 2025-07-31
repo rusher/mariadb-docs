@@ -22,7 +22,7 @@ Due to its focus on performance and based on its threading model, MariaDB featur
 
 ### Security
 
-With encryption that we've introduced in recent versions of MariaDB, you can be assured that your databases will be secure — by default. Most other database systems don't have encryption by default.
+With encryption that we've introduced in recent versions of MariaDB, you can be assured that your databases is secure — by default. Most other database systems don't have encryption by default.
 
 Many organizations are leery about using commercial database software because they don't know for sure if the compiled code contains back-doors for accessing the data or some special way in which the software is using encryption that could allow a hacker to get at their data. Since MariaDB is open-source, governments and other organizations know that their databases are secure. Nothing is hidden.
 
@@ -44,7 +44,7 @@ MariaDB makes updates to active releases about once a month. The [MariaDB Founda
 
 If you're developing a career as a computer programmer, a web developer, or a similar role in computer technology, learning MariaDB will prove useful in your career. Many businesses develop and maintain custom software with MariaDB and the similar software. Additionally, many of the most popular web sites and software use MariaDB for their database — or they use another SQL database system that you can learn easily once you understand MariaDB.
 
-It's highly likely that, for any job to which you apply or take as a database developer or administrator or as a web site developer, you will be required to know or you will benefit from knowing MariaDB. Therefore, learning MariaDB is a good foundation for your career in computer technology. These documentation pages are your best resource for learning MariaDB in detail.
+It's highly likely that, for any job to which you apply or take as a database developer or administrator or as a web site developer, you is required to know or you isnefit from knowing MariaDB. Therefore, learning MariaDB is a good foundation for your career in computer technology. These documentation pages are your best resource for learning MariaDB in detail.
 
 ### Related Pages
 

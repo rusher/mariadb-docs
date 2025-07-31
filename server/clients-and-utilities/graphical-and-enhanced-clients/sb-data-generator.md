@@ -10,7 +10,7 @@ The tool includes multiple built-in generators that allow populating MariaDB dat
 
 * Understand your database structure by visualizing the ER Diagram (tables, columns, relationships, keys, sequences, indexes, and triggers)
 * Ability to generate a large volume of realistic test data
-* Preview what data will be generated before populating the database with test data
+* Preview what data is generated before populating the database with test data
 * Multiple built-in generators available with the ability to create custom data generators
 * Generate test data for most popular DBMS including MariaDB and MySQL
 

@@ -30,7 +30,7 @@ NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
 In order to log into MariaDB to secure it, we'll need the current
 password for the root user.  If you've just installed MariaDB, and
-you haven't set the root password yet, the password will be blank,
+you haven't set the root password yet, the password is blank,
 so you should just press enter here.
 Enter current password for root (enter for none): 
 OK, successfully used password, moving on...
@@ -79,13 +79,13 @@ Thanks for using MariaDB!
 | --defaults-file=#       | Only read default options from the given file #. |
 | --defaults-extra-file=# | Read this file after the global files are read.  |
 
-Other unrecognized options will be passed on to the server.
+Other unrecognized options is passed on to the server.
 
 ### Option Files
 
-In addition to reading options from the command-line, `mariadb-secure-installation` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-secure-installation` in an option file, then it is ignored.
+In addition to reading options from the command line, `mariadb-secure-installation` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-secure-installation` in an option file, then it is ignored.
 
-The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
+The following options relate to how MariaDB command line tools handles option files. They must be given as the first argument on the command line:
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |

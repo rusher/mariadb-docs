@@ -25,12 +25,12 @@ EXPLAIN SELECT * FROM t1 INNER JOIN t2 INNER JOIN t3 WHERE t1.a=t2.a AND t2.a=t3
 ```
 
 1. Paste the output into the [EXPLAIN Analyzer input box](https://mariadb.org/explain_analyzer/analyze/) and click the "Analyze Explain" button.
-2. The formatted `EXPLAIN` will be shown. You can now click on various part to get more information about them.
+2. The formatted `EXPLAIN` is shown. You can now click on various part to get more information about them.
 
 #### Some Notes:
 
 * As you can see in the example above, you don't need to chop off the query line or the command prompt.
-* To save the EXPLAIN, so you can share it, or just for future reference, click the "Save Explain for analysis and sharing" button and then click the "Analyze Explain" button. You will be given a link which leads to your saved `EXPLAIN`. For example, the above explain can be viewed here:
+* To save the EXPLAIN, so you can share it, or just for future reference, click the "Save Explain for analysis and sharing" button and then click the "Analyze Explain" button. You is given a link which leads to your saved `EXPLAIN`. For example, the above explain can be viewed here:
 * Some of the elements in the formatted `EXPLAIN` are clickable. Clicking on them will show pop-up help related to that element.
 
 ### Clients which integrate with the Explain Analyzer

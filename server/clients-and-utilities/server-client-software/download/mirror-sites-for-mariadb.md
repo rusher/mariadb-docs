@@ -69,7 +69,7 @@ rsync -a --partial --delete-after --delay-updates rsync.osuosl.org::mariadb /pat
 ```
 
 Be aware that when using the above rsync command, a "mariadb" directory **will**\
-**not** be created. Instead, the contents of the mariadb module will be rsynced\
+**not** be created. Instead, the contents of the mariadb module is rsynced\
 into whatever local folder you specify. We suggest creating a "mariadb" folder\
 for this.
 
@@ -403,7 +403,7 @@ rsync -avP archive.mariadb.org::mariadb/mariadb-10.4.13/ /path/to/local/dir/
 ```
 
 **Warning**, as of June 2025, the entire archive will use around 14 TB of disk space in\
-total, and if you want to keep your mirror up to date (via cron routine for instance), please **first compare** the STATUS file **before** doing the rsync. This file will be updated anytime a new content is added in the archive tree.
+total, and if you want to keep your mirror up to date (via cron routine for instance), please **first compare** the STATUS file **before** doing the rsync. This file is updated anytime a new content is added in the archive tree.
 
 You can use something like the following:
 

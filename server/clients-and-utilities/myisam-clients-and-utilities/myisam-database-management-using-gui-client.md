@@ -8,13 +8,13 @@ A MyISAM client refers to a specialized application or module designed to intera
 
 In the context of MyISAM, it's important to note that we are essentially referring to a [MySQL/MariaDB client](https://www.devart.com/dbforge/mysql/studio/), as the MyISAM storage engine is an integral part of these database management systems. A MyISAM client plays a pivotal role in initiating database management processes, sending queries to databases, and handling subsequent responses.
 
-In simpler terms, any MyISAM client serves as the interface that allows users to interact with MySQL/MariaDB. There is a wide range of available solutions catering to different needs, including lightweight command-line utilities like **myisamchk**, versatile options like the MySQL Command-Line Client, and feature-rich IDEs based on graphical user interfaces, such as MySQL Workbench or dbForge Studio for MySQL.
+In simpler terms, any MyISAM client serves as the interface that allows users to interact with MySQL/MariaDB. There is a wide range of available solutions catering to different needs, including lightweight command line utilities like **myisamchk**, versatile options like the MySQL Command-Line Client, and feature-rich IDEs based on graphical user interfaces, such as MySQL Workbench or dbForge Studio for MySQL.
 
 The choice of the right client largely depends on user preferences, the specific work environment, and the tasks they need to accomplish.
 
 ### How it works: a MyISAM client in action
 
-To better understand the functionality of a MyISAM client, let's delve into a practical scenario where a user needs to compose and execute a query against the database and subsequently retrieve the results. Whether you opt for a command-line or GUI client, the process unfolds as follows:
+To better understand the functionality of a MyISAM client, let's delve into a practical scenario where a user needs to compose and execute a query against the database and subsequently retrieve the results. Whether you opt for a command line or GUI client, the process unfolds as follows:
 
 **Step 1: Connection Setup**
 
@@ -42,7 +42,7 @@ Throughout this process, it's essential to note that the client does not directl
 
 ### dbForge Studio for MySQL and MariaDB as the MyISAM client
 
-dbForge Studio for MySQL that is also a viable [MariaDB tool](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html) offers full support for all MySQL storage engines, including MyISAM, and a user-friendly graphical interface that simplifies interactions with MyISAM tables. The functionality of the Studio makes it the common choice for professionals who prefer GUI tools over command-line utilities.
+dbForge Studio for MySQL that is also a viable [MariaDB tool](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html) offers full support for all MySQL storage engines, including MyISAM, and a user-friendly graphical interface that simplifies interactions with MyISAM tables. The functionality of the Studio makes it the common choice for professionals who prefer GUI tools over command line utilities.
 
 It includes options available in the **myisamchk** utility and [provides many more features to cover all database-related tasks on MySQL and MariaDB](https://www.devart.com/dbforge/mysql/studio/features.html), no matter which storage engine those databases use.
 

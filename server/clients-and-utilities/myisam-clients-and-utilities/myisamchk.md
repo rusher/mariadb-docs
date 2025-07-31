@@ -2,9 +2,9 @@
 
 ## myisamchk
 
-myisamchk is a commandline tool for checking, repairing and optimizing non-partitioned [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/myisam-overview.md) tables.
+myisamchk is a command line tool for checking, repairing and optimizing non-partitioned [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/myisam-overview.md) tables.
 
-myisamchk is run from the commandline as follows:
+myisamchk is run from the command line as follows:
 
 ```
 myisamchk [OPTIONS] tables[.MYI]
@@ -20,7 +20,7 @@ myisamchk should not be run while anyone is accessing any of the affected tables
 
 With no options, myisamchk simply checks your table as the default operation.
 
-The following options can be set while passed as commandline options to myisamchk, or set with a \[myisamchk] section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
+The following options can be set while passed as command line options to myisamchk, or set with a \[myisamchk] section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
 
 ### General Options
 
@@ -29,7 +29,7 @@ The following options can be set while passed as commandline options to myisamch
 | -H, --HELP                        | Display help and exit. Options are presented in a single list.
 | -?, --help                        | Display help and exit. Options are grouped by type of operation.
 | -# options, --debug=options        | Write a debugging log. A typical debug options string is `d:t:o,file_name`. The default is `d:t:o,/tmp/myisamchk.trace`. (Available in debug builds only)
-| -t path, --tmpdir=path         | Path for temporary files. Multiple paths can be specified, separated by colon (:) on Unix and semicolon (;) on Windows. They will be used in a round-robin fashion. If not set, the TMPDIR environment variable is used. |
+| -t path, --tmpdir=path         | Path for temporary files. Multiple paths can be specified, separated by colon (:) on Unix and semicolon (;) on Windows. They are used in a round-robin fashion. If not set, the TMPDIR environment variable is used. |
 | -s, --silent                   | Only print errors. One can use two -s (-ss) to make myisamchk very silent.
 | -v, --verbose                  | Print more information. This can be used with --description and --check. Use many -v for more verbosity.
 | -V, --version                  | Print version and exit.
@@ -71,7 +71,7 @@ The following check options are available:
 | -e, --extend-check       | Check the table VERY throughly. Only use this in extreme cases as it may be slow, and myisamchk should normally be able to find out if the table has errors even without this switch. Increasing the key\_buffer\_size can help speed the process up.             |
 | -F, --fast               | Check only tables that haven't been closed properly.                                                                                                                                                                                                              |
 | -C, --check-only-changed | Check only tables that have changed since last check.                                                                                                                                                                                                             |
-| -f, --force              | Restart with '-r' (recover) if there are any errors in the table. States will be updated as with '--update-state'.                                                                                                                                                |
+| -f, --force              | Restart with '-r' (recover) if there are any errors in the table. States is updated as with '--update-state'.                                                                                                                                                |
 | -i, --information        | Print statistics information about the table that is checked.                                                                                                                                                                                                     |
 | -m, --medium-check       | Faster than extend-check, but only finds 99.99% of all errors. Should be good enough for most cases.                                                                                                                                                              |
 | -U --update-state        | Mark tables as crashed if you find any errors. This should be used to get the full benefit of the --check-only-changed option, but you shouldn´t use this option if the mariadbd server is using the table and you are running it with external locking disabled. |

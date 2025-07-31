@@ -6,10 +6,10 @@
 
 MariaDB Enterprise Server users can import data into a database using the mariadb-import utility:
 
-* The mariadb-import utility provides a command-line interface (CLI)
+* The mariadb-import utility provides a command line interface (CLI)
 * The mariadb-import utility can import data from TSV and CSV files
 * The mariadb-import utility is available for Linux and Windows
-* The mariadb-import utility supports many command-line options
+* The mariadb-import utility supports many command line options
 
 ## Compatibility
 
@@ -87,7 +87,7 @@ $ mariadb-import --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 
 **Replace `FULLY_QUALIFIED_DOMAIN_NAME` with the IP address or Fully Qualified Domain Name of your database** Replace `TCP_PORT` with the TCP port of your database**Replace `DATABASE_USER` with the username for your database user account** If TLS is required, replace `/PATH_TO_PEM_FILE` with the path to the certificate authority chain (.pem) file**If your file is a CSV file, rather than a TSV file, specify `--fields-terminated-by=`,** Specify the database name as the first argument (from above, accounts)**The table name is extracted from the TSV or CSV file's basename (from above, contacts)**
 
-3. After the command is executed, you will be prompted for the password of your database user account.
+3. After the command is executed, you is prompted for the password of your database user account.
 
 ### Windows
 
@@ -114,7 +114,7 @@ $ mariadb-import --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 
 **Replace `FULLY_QUALIFIED_DOMAIN_NAME` with the IP address or Fully Qualified Domain Name of your database** Replace `TCP_PORT` with the TCP port of your database**Replace `DATABASE_USER` with the username for your database user account** Replace `/PATH_TO_PEM_FILE` with the path to the certificate authority chain (.pem) file**If your file is a CSV file, rather than a TSV file, specify --fields-terminated-by=,** Specify the database name as the first argument (from above, accounts)**The table name is extracted from the TSV or CSV file's basename (from above, contacts)**
 
-4. After the command is executed, you will be prompted for the password of your database user account.
+4. After the command is executed, you is prompted for the password of your database user account.
 
 ### MariaDB Import 10.3 and Older
 

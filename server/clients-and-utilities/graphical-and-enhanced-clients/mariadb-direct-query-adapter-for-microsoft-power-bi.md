@@ -12,7 +12,7 @@ MariaDB database products support analytics and data warehousing in addition to 
 
 [MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore) is a columnar storage engine designed to handle the extremely large data sets and ad hoc queries of analytical workloads. Data is written to disk by column rather than row and is automatically partitioned. Columnar data storage is designed to deliver real time analysis on billions of rows. MariaDB Enterprise ColumnStore is a plugin storage engine and is included with MariaDB Enterprise Server.
 
-MariaDB Direct Query Adapter enables Power BI users to work with remote data without the need to download it onto the local machine. Downloading analytical data sets can present challenges such as download speed and inadequate memory on a local machine, and even a powerful laptop or desktop will be outperformed by the processing power of a high end server or MPP system. MariaDB's Direct Query Adapter enables users to avoid these limitations and provides robust querying and data visualization from any location.
+MariaDB Direct Query Adapter enables Power BI users to work with remote data without the need to download it onto the local machine. Downloading analytical data sets can present challenges such as download speed and inadequate memory on a local machine, and even a powerful laptop or desktop is outperformed by the processing power of a high end server or MPP system. MariaDB's Direct Query Adapter enables users to avoid these limitations and provides robust querying and data visualization from any location.
 
 ## Requirements
 
@@ -43,7 +43,7 @@ Connect to your remote MariaDB database from Power BI Desktop using the MariaDB 
 
 1. Open Microsoft Power BI Desktop.
 2. From the Power BI home screen, choose Get Data->More. Enter "MariaDB". Select MariaDB from the menu and click "Connect".
-3. Enter the data source. This will be an IP address and port number, or in the case of SkySQL, it will be the qualified domain name and port number.
+3. Enter the data source. This is an IP address and port number, or in the case of SkySQL, it is the qualified domain name and port number.
 4. Select "DirectQuery" and click "OK".
 5. Enter your user name and password and click "Connect".
 

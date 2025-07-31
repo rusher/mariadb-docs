@@ -10,7 +10,7 @@ Common options for gathering information include:
 * myisamchk -ei
 * myisamchk -eiv
 
-The _-d_ option returns a short description of the table and its keys. Running the option while the table is being updated, and with external locking disabled, may result in an error, but no damage will be done to the table. Each extra _v_ adds more output. _-e_ checks the table thoroughly (but slowly), and the _-i_ options adds statistical information,
+The _-d_ option returns a short description of the table and its keys. Running the option while the table is being updated, and with external locking disabled, may result in an error, but no damage is done to the table. Each extra _v_ adds more output. _-e_ checks the table thoroughly (but slowly), and the _-i_ options adds statistical information,
 
 ## -dvv output
 
@@ -39,7 +39,7 @@ The following table describes the output from the running myisamchk with the _-d
 | table description   | Description of all indexes in the table, followed by all columns                                                                                                                                                        |
 | Key                 | Index number, starting with one. If not shown, the index is part of a multiple-column index.                                                                                                                            |
 | Start               | Where the index part starts in the row.                                                                                                                                                                                 |
-| Len                 | Length of the index or index part. The length of a multiple-column index is the sum of the component lengths. Indexes of string columns will be shorter than the full column length if only a string prefix is indexed. |
+| Len                 | Length of the index or index part. The length of a multiple-column index is the sum of the component lengths. Indexes of string columns is shorter than the full column length if only a string prefix is indexed. |
 | Index               | Whether an index value is unique or not. Either multip. or unique.                                                                                                                                                      |
 | Type                | Data type of the index of index part.                                                                                                                                                                                   |
 | Rec/key             | Record of the number of rows per value for the index or index part. Used by the optimizer to calculate query plans. Can be updated with [myisamchk-a](myisamchk.md). If not present, defaults to 30.                    |
@@ -74,11 +74,11 @@ The following table describes the output from the running myisamchk with the _-e
 | Data records     | Number of records in the table.                                                                                                                                                                                               |
 | Deleted blocks   | Number of deleted blocks that are still reserving space. Use [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment.                                            |
 | Key              | Index number, starting with one.                                                                                                                                                                                              |
-| Keyblocks used   | Percentage of the keyblocks that are used. Percentages will be higher for optimized tables.                                                                                                                                   |
+| Keyblocks used   | Percentage of the keyblocks that are used. Percentages is higher for optimized tables.                                                                                                                                   |
 | Packed           | Percentage space saved from packing key values with a common suffix.                                                                                                                                                          |
 | Max levels       | Depth of the [b-tree index](../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#b-tree-indexes) for the key. Larger tables and longer key values result in higher values. |
 | Records          | Number of records in the table.                                                                                                                                                                                               |
-| M.recordlength   | Average row length. For fixed rows, will be the actual length of each row.                                                                                                                                                    |
+| M.recordlength   | Average row length. For fixed rows, is the actual length of each row.                                                                                                                                                    |
 | Packed           | Percentage saving from stripping spaces from the end of strings.                                                                                                                                                              |
 | Recordspace used | Percentage of the data file used.                                                                                                                                                                                             |
 | Empty space      | Percentage of the data file unused.                                                                                                                                                                                           |

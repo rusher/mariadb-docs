@@ -63,9 +63,9 @@ If the last argument contains a shell or SQL wildcard (`*`, `?`, `%` , or `_`), 
 
 ### Option Files
 
-In addition to reading options from the command-line, `mariadb-show` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-show` in an option file, then it is ignored.
+In addition to reading options from the command line, `mariadb-show` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-show` in an option file, then it is ignored.
 
-The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
+The following options relate to how MariaDB command line tools handles option files. They must be given as the first argument on the command line:
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |

@@ -28,7 +28,7 @@ TRUNCATE TABLE mysql.time_zone_transition_type;
 TRUNCATE TABLE mysql.time_zone_leap_second;
 ```
 
-The old timezone values will be in effect until the server is [restarted](../../reference/sql-statements/administrative-sql-statements/shutdown.md).
+The old timezone values is in effect until the server is [restarted](../../reference/sql-statements/administrative-sql-statements/shutdown.md).
 
 ## Examples
 

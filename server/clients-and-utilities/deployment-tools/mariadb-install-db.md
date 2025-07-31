@@ -28,7 +28,7 @@ $ mariadb-install-db [options]
 
 Because the MariaDB server, `mariadbd`, needs to access the data directory\
 when it runs later, you should either run `mariadb-install-db` from the same\
-account that will be used for running `mariadbd` or run it as root and use the`--user` option to indicate the user name that `mariadbd` will run\
+account that is used for running `mariadbd` or run it as root and use the`--user` option to indicate the user name that `mariadbd` will run\
 as. It might be necessary to specify other options such as`--basedir` or `--datadir` if`mariadb-install-db` does not use the correct locations for the installation\
 directory or data directory. For example:
 
@@ -66,15 +66,15 @@ $ scripts/mariadb-install-db --user=mysql \
 | --skip-name-resolve                       | Uses IP addresses rather than host names when creating grant table entries. This option can be useful if your DNS does not work.                                                                                                                                                                                                                                                             |
 | --skip-test-db                            | Don't install the test database                                                                                                                                                                                                                                                                                                                                                              |
 | --srcdir=path                             | For internal use. The path to the MariaDB source directory. This option uses the compiled binaries and support files within the source tree, useful for if you don't want to install MariaDB yet and just want to create the system tables. The directory under which mariadb-install-db looks for support files such as the error message file and the file for populating the help tables. |
-| --user=user\_name                         | The login user name to use for running mariadbd. Files and directories created by mariadbd will be owned by this user. You must be root to use this option. By default, mariadbd runs using your current login name and files and directories that it creates will be owned by you.                                                                                                          |
+| --user=user\_name                         | The login user name to use for running mariadbd. Files and directories created by mariadbd is owned by this user. You must be root to use this option. By default, mariadbd runs using your current login name and files and directories that it creates is owned by you.                                                                                                          |
 | --verbose                                 | Verbose mode. Print more information about what the program does.                                                                                                                                                                                                                                                                                                                            |
 | --windows                                 | For internal use. This option is used for creating Windows distributions.                                                                                                                                                                                                                                                                                                                    |
 
 ### Option Files
 
-In addition to reading options from the command-line, `mariadb-install-db` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-install-db` in an option file, then it is ignored.
+In addition to reading options from the command line, `mariadb-install-db` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-install-db` in an option file, then it is ignored.
 
-The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
+The following options relate to how MariaDB command line tools handles option files. They must be given as the first argument on the command line:
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |
@@ -178,7 +178,7 @@ $ sudo mariadb
 MariaDB> SET PASSWORD = PASSWORD('XH4VmT3_jt');
 ```
 
-You may notice in the above example that the [mariadb](../mariadb-client/mariadb-command-line-client.md) command-line client is executed via [sudo](https://linux.die.net/man/8/sudo). This allows the `root@localhost` user account to successfully authenticate via the [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin.\
+You may notice in the above example that the [mariadb](../mariadb-client/mariadb-command line-client.md) command line client is executed via [sudo](https://linux.die.net/man/8/sudo). This allows the `root@localhost` user account to successfully authenticate via the [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication plugin.\
 <>
 
 ## Troubleshooting Issues
@@ -254,7 +254,7 @@ Now, use the `root`/`unix` user, which has all rights, in order to create a new 
 CREATE DATABASE test_electricity;
 ```
 
-With the above change, a new directory will be created in the data directory.\
+With the above change, a new directory is created in the data directory.\
 Now login again with the anonymous user and run [SHOW DATABASES](../../reference/sql-statements/administrative-sql-statements/show/show-databases.md):
 
 ```
@@ -391,11 +391,11 @@ Since database `test_electricity` satisfies the `test_%` pattern where `test_` i
 
 As long as records in `mysql.db` for the anonymous user exists, each new user created will have the privileges for the `test` and `test_%` databases.
 
-Other databases privileges **are not automatically granted** for the newly created user. We have to grant privileges, which will be visible in `mysql.db` table.
+Other databases privileges **are not automatically granted** for the newly created user. We have to grant privileges, which is visible in `mysql.db` table.
 
 ### Not Creating the test Database and Anonymous User
 
-If you run `mariadb-install-db` with the `--skip-test-db` option, no `test` database will be created, which we can see as follows:
+If you run `mariadb-install-db` with the `--skip-test-db` option, no `test` database is created, which we can see as follows:
 
 ```
 SHOW DATABASES;

@@ -85,7 +85,7 @@ An overlay can replace almost any file in the overlaid suite, or add new files.\
 For example, if some overlay of the main suite contains a`include/have_innodb.inc` file, then all tests that include it will see and\
 use the overlaid version. Or, an overlay can create a `t/create.opt` file\
 (even though the main suite does not have such a file), and `create.test`\
-will be executed with the specified additional options.
+is executed with the specified additional options.
 
 But adding an overlay never affects how the original suite is executed. That\
 is, mtr always executes the original suite as if no overlay was present. And\
@@ -116,7 +116,7 @@ binlog-format=statement
 binlog-format=mixed
 ```
 
-And all tests where this combinations file applies will be run three times:\
+And all tests where this combinations file applies is run three times:\
 once for the combination called "row", and `--binlog-format=row` on the\
 server command line, once for the "stmt" combination, and once for the "mix"\
 combination.
@@ -124,7 +124,7 @@ combination.
 More than one combinations file may be applicable to a given test file. In this\
 case, mtr will run the test for all possible combinations of the given\
 combinations. A test that uses replication (three combinations as above) and\
-innodb (two combinations - innodb and xtradb), will be run six times.
+innodb (two combinations - innodb and xtradb), is run six times.
 
 ## Sample Output
 
@@ -172,12 +172,12 @@ The mtr driver has special support for MariaDB plugins.
 First, on startup it copies or symlinks all dynamically-built plugins into`var/plugins`. This allows one to have many plugins loaded at the same time.\
 For example, one can load Federated and InnoDB engines together. Also, mtr\
 creates environment variables for every plugin with the corresponding plugin\
-name. For example, if the InnoDB engine was built, `$HA_INNODB_SO` will be\
+name. For example, if the InnoDB engine was built, `$HA_INNODB_SO` is\
 set to `ha_innodb.so` (or `ha_innodb.dll` on Windows). And the test can\
 safely use the corresponding environment variable on all platforms to refer to\
 a plugin file; it will always have the correct platform-dependent extension.
 
-Second, when combining server command-line options (which may come from many\
+Second, when combining server command line options (which may come from many\
 different sources) into one long list before starting `mariadbd`, mtr treats`--plugin-load` specially. Normal server semantics is to use the latest value\
 of any particular option on the command line. If one starts the server with,\
 for example, `--port=2000 --port=3000`, the server will use the last value\
@@ -213,13 +213,13 @@ instead of
 Third, to allow plugin sources to be simply copied into the `plugin/` or`storage/` directories, and still not affect existing tests (even if new\
 plugins are statically linked into the server), mtr automatically disables all\
 optional plugins on server startup. A plugin is optional if it can be disabled\
-with the corresponding `--skip-XXX` server command-line option. Mandatory\
+with the corresponding `--skip-XXX` server command line option. Mandatory\
 plugins, like MyISAM or MEMORY, do not have `--skip-XXX` options (e.g. there\
 is no `--skip-myisam` option). This mtr behavior means that no plugin,\
 statically or dynamically built, has any effect on the server unless it was\
 explicitly enabled. A convenient way to enable a given plugin _XXX_ for\
 specific tests is to create a `have_XXX.opt` file which contains the\
-necessary command-line options, and a `have_XXX.inc` file which checks\
+necessary command line options, and a `have_XXX.inc` file which checks\
 whether a plugin was loaded. Then any test that needs this plugin can source\
 the `have_XXX.inc` file and have the plugin loaded automatically.
 

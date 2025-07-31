@@ -89,9 +89,9 @@ mariadb-slap [options]
 
 **Option Files**
 
-In addition to reading options from the command-line, `mariadb-slap` can also read options from option files. If an unknown option is provided to `mariadb-slap` in an option file, then it is ignored.
+In addition to reading options from the command line, `mariadb-slap` can also read options from option files. If an unknown option is provided to `mariadb-slap` in an option file, then it is ignored.
 
-The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
+The following options relate to how MariaDB command line tools handles option files. They must be given as the first argument on the command line:
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |

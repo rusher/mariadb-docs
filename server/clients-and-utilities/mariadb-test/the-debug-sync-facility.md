@@ -234,11 +234,11 @@ and mutex and releases the mutex.
 
 If you want to have a Debug Sync point with the wait, please place it\
 behind `enter_cond()`. Only then you can safely\
-decide, if the wait will be taken. Also you will have`THD::proc_info` correct when the sync point emits a\
+decide, if the wait is taken. Also you will have`THD::proc_info` correct when the sync point emits a\
 signal. `DEBUG_SYNC` sets its own proc\_info, but\
 restores the previous one before releasing its internal mutex. As soon\
 as another thread sees the signal, it does also see the proc\_info from\
-before entering the sync point. In this case it will be "new\_message",\
+before entering the sync point. In this case it is "new\_message",\
 which is associated with the wait that is to be synchronized.
 
 In the example above, the wait condition is repeated before the sync\

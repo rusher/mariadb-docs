@@ -93,9 +93,9 @@ Options supported by Percona XtraBackup can be found on Percona's documentation.
 
 ### Option Files
 
-In addition to reading options from the command-line, Percona XtraBackup can also read options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
+In addition to reading options from the command line, Percona XtraBackup can also read options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
-The following options relate to how MariaDB/MySQL command-line tools handles option files. They must be given as the first argument on the command-line:
+The following options relate to how MariaDB/MySQL command line tools handles option files. They must be given as the first argument on the command line:
 
 | Option                  | Description                                      |
 | ----------------------- | ------------------------------------------------ |
@@ -131,7 +131,7 @@ CREATE USER 'xtrabackup'@'localhost' IDENTIFIED BY 'mypassword';
 GRANT RELOAD, PROCESS, LOCK TABLES, REPLICATION CLIENT ON *.* TO 'xtrabackup'@'localhost';
 ```
 
-The user account information can be specified with the `-user` and `--password` command-line options. For example:
+The user account information can be specified with the `-user` and `--password` command line options. For example:
 
 ```
 $ xtrabackup --backup \

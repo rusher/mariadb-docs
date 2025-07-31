@@ -24,7 +24,7 @@ Enjoy the advantages of MariaDB backup and restore Wizards
 
 Have a full or partial backup
 
-Restore database and schedule backups with a command-line interface
+Restore database and schedule backups with a command line interface
 
 Support for databases over 2Gb
 
@@ -42,11 +42,11 @@ View the comparison process results in a data grid
 
 ### 4. Routine Tasks Automation
 
-Sync and compare database schemas with command-line support
+Sync and compare database schemas with command line support
 
 Use the Windows Scheduler to automate the sync processes
 
-Run synchronization and schema comparison tasks with command-line execution files
+Run synchronization and schema comparison tasks with command line execution files
 
 ![HowcanIautomatemyroutinetasks](../../.gitbook/assets/HowcanIautomatemyroutinetasks.png)
 

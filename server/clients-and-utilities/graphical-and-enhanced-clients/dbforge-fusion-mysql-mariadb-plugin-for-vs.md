@@ -32,7 +32,7 @@ Generate comparison reports
 
 ### 4. Data Comparison
 
-Sync data with a command-line interface
+Sync data with a command line interface
 
 Adjust and export comparison results
 

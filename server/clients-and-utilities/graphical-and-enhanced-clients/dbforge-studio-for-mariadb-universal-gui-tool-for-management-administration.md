@@ -115,7 +115,7 @@ This powerful GUI tool offers a rich visual design that is perfect for working w
 
 * Pivot tables for summarizing and viewing the data
 * A powerful wizard with robust features
-* Full command-line support
+* Full command line support
 * 9 formats for reports' delivery
 
 ![start-page-6-data-analysis](../../.gitbook/assets/start-page-6-data-analysis.png)

@@ -35,7 +35,7 @@ This file should be located in the suite directory.
 
 ## `suite.opt` file
 
-This file lists server options that will be added to the `mariadbd` command\
+This file lists server options that is added to the `mariadbd` command\
 line for every test of this suite. It can refer to environment variables with\
 the `$NAME` syntax. Shell meta-characters should be quoted. For example
 
@@ -49,7 +49,7 @@ Note that options may be put either on one line or on separate lines. It is a\
 good idea to start an option name with the `--loose-` prefix if\
 the server may or may not recognize the option depending on the configuration.\
 An unknown option in the `.opt` file will stop the server from starting, and\
-the test will be aborted.
+the test is aborted.
 
 This file should be located in the suite directory.
 
@@ -63,7 +63,7 @@ started for this test, only master, or only slave respectively) for all\
 affected tests, for example, for all tests that include `somefile.inc`\
 directly or indirectly.
 
-A typical usage example is `include/have_blackhole.inc` and`include/have_blackhole.opt`. The latter contains the necessary command-line\
+A typical usage example is `include/have_blackhole.inc` and`include/have_blackhole.opt`. The latter contains the necessary command line\
 options to load the Blackhole storage engine, while the former verifies that\
 the engine was really loaded. Any test that needs the Blackhole engine needs\
 only to start from `source include/have_blackhole.inc;` and the engine will\
@@ -72,10 +72,10 @@ be automatically loaded for the test.
 ## `my.cnf` file
 
 This is not the `my.cnf` file that tests from this suite will use, but rather\
-a _template_ of it. It will be converted later to an actual `my.cnf`. If a\
+a _template_ of it. It is converted later to an actual `my.cnf`. If a\
 suite contains no `my.cnf` template, a default template,\
 — `include/default_my.cnf`\
-— will be used. Or `suite/rpl/my.cnf` if the test\
+— is used. Or `suite/rpl/my.cnf` if the test\
 includes `master-slave.inc` (it's one of the few bits of the old MySQL`mysql-test-run` magic that we have not removed yet). Typically a suite\
 template will not contain a complete server configuration, but rather start\
 from
@@ -148,14 +148,14 @@ This file should be located in the suite directory.
 ## other `*.cnf` files
 
 For every test file `somefile.test` (but for not included files) mtr will\
-look for `somefile.cnf` file. If such a file exists, it will be used as a\
+look for `somefile.cnf` file. If such a file exists, it is used as a\
 template instead of suite `my.cnf` or a default `include/default_my.cnf`\
 templates.
 
 ## `combinations` file
 
 The `combinations` file defines few sets of alternative configurations, and\
-every test in this suite will be run many times - once for every configuration.\
+every test in this suite is run many times - once for every configuration.\
 This can be used, for example, to run all replication tests in the _rpl_\
 suite for all three binlog format modes (row, statement, and mixed). A\
 corresponding `combinations` file would look as\
@@ -195,7 +195,7 @@ files have exactly the same format as a suite `combinations` file.
 This can cause many combination files affecting one test file (if a test\
 includes two `.inc` files, and both of them have corresponding`.combinations` files). In this case, mtr will run the test for all\
 combinations of combinations from both files. In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), for example,`rpl_init.inc` adds combinations for row/statement/mixed, and`have_innodb.inc` adds combinations for innodb/xtradb. Thus any replication\
-test that uses innodb will be run six times.
+test that uses innodb is run six times.
 
 ## `suite.pm` file
 
@@ -204,7 +204,7 @@ package that inherits from `My::Suite`.
 
 This file must normally end with `bless {}` — that\
 is it must return an object of that class. It can also return a string\
-— in this case all tests in the suite will be skipped,\
+— in this case all tests in the suite is skipped,\
 with this string being printed as a reason (for example "PBXT engine was not\
 compiled").
 
@@ -249,12 +249,12 @@ sub servers {(
 See the _sphinx_ suite for a working example.
 
 A `list_cases()` method returns a complete list of tests for this suite. By\
-default it will be the list of files that have `.test` extension, but without\
-the extension. This list will be filtered by mtr, subject to different mtr\
+default it is the list of files that have `.test` extension, but without\
+the extension. This list is filtered by mtr, subject to different mtr\
 options (`--big-test`, `--start-from`, etc), the suite object does not have\
 to do it.
 
-A `start_test()` method starts one test process, by default it will be`mariadb-test`. See the _unit_ suite for a working example of`list_cases()` and `start_test()` methods.
+A `start_test()` method starts one test process, by default it is`mariadb-test`. See the _unit_ suite for a working example of`list_cases()` and `start_test()` methods.
 
 A `skip_combinations()` method returns a hash that maps file names (where\
 combinations are defined) to a list of combinations that should be skipped. As\
@@ -276,7 +276,7 @@ An `is_default()` method returns 1 if this particular suite should be run by def
 
 ## `*.sh` files
 
-For every test file `sometest.test` mtr looks for `sometest-master.sh` and`sometest-slave.sh`. If either of these files is found, it will be run before\
+For every test file `sometest.test` mtr looks for `sometest-master.sh` and`sometest-slave.sh`. If either of these files is found, it is run before\
 the test itself.
 
 ## `*.require` files
@@ -355,7 +355,7 @@ which means any of the following 15 file names can be used:
 15. `qwe/r/foo.result`
 
 They are listed, precisely, in the order of preference, and mtr will walk that\
-list from top to bottom and the first file that is found will be used.
+list from top to bottom and the first file that is found is used.
 
 If this found file is a `.rdiff`, mtr continues walking down the list until\
 the first `.result` file is found. A `.rdiff` is applied to that`.result`.

@@ -154,7 +154,7 @@ CREATE TABLE webposts ENGINE=CONNECT TABLE_TYPE=JSON
   HTTP='http://jsonplaceholder.typicode.com/posts';
 ```
 
-The result in LibreOffice Base will be as shown below:
+The result in LibreOffice Base is as shown below:
 
 ![librebase\_6](../../.gitbook/assets/librebase_6.png)
 

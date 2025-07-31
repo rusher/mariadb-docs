@@ -56,7 +56,7 @@ Visually assess the data to be generated
 
 Schedule your routine data generation tasks
 
-Create a command-line execution file for running database documentation tasks
+Create a command line execution file for running database documentation tasks
 
 ### 11. Broad compatibility options
 

@@ -9,7 +9,7 @@ Features include:
 * Syntax highlighting & Autocomplete (sometimes called intellisense).
 * Customizable themes allowing the query editor to be completely customized.
 * The ability to run multiple queries at one time (and a customizable run query shortcut).
-* Improved query error detection (errors in queries will be underlined red).
+* Improved query error detection (errors in queries is underlined red).
 * Full dark mode & light mode support, along with custom themes.
 
 Other features include:

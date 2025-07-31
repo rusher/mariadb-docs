@@ -20,7 +20,7 @@
 HeidiSQL can:
 
 * Connect to multiple servers in one window
-* Connect to servers via commandline
+* Connect to servers via command line
 * Create and edit tables, views, stored routines, triggers and scheduled events.
 * Generate nice SQL-exports
 * Export from one server/database directly to another server/database

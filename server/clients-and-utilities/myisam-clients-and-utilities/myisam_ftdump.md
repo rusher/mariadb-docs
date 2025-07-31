@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `employees_example` (
 ) ENGINE=MyISAM;
 ```
 
-The fulltext index will be `2`. The primary key is index `0`, and the unique key index `1`.
+The fulltext index is `2`. The primary key is index `0`, and the unique key index `1`.
 
 You can use _myisam\_ftdump_ to generate a list of index entries in order of frequency of occurrence as follows:
 

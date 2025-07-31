@@ -28,7 +28,7 @@ $ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 * Replace `DATABASE_USER` with the username for your database user account
 * If TLS is required, replace `/PATH_TO_PEM_FILE` with the path to the certificate authority chain (.pem) file
 
-3. After the command is executed, you will be prompted for the password of your database user account.
+3. After the command is executed, you is prompted for the password of your database user account.
 
 ## Import Data
 
@@ -52,7 +52,7 @@ $ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 
 **If TLS is required, replace `/PATH_TO_PEM_FILE` with the path to the certificate authority chain (.pem) file**
 
-3. After the command is executed, you will be prompted for the password of your database user account.
+3. After the command is executed, you is prompted for the password of your database user account.
 4. For each table that you want to import, execute the `LOAD DATA LOCAL INFILE` statement to import the data from the TSV or CSV file into your MariaDB Enterprise Server database.
 
 For a TSV file:

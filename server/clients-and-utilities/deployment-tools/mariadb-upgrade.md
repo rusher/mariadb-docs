@@ -45,7 +45,7 @@ mariadb-check --no-defaults --all-databases --fix-db-names --fix-table-names
 mariadb-check --no-defaults --check-upgrade --all-databases --auto-repair
 ```
 
-The connect options given to `mariadb-upgrade` are passed along to [mariadb-check](../table-tools/mariadb-check.md) and [mysql](../mariadb-client/mysql-command-line-client.md).
+The connect options given to `mariadb-upgrade` are passed along to [mariadb-check](../table-tools/mariadb-check.md) and [mysql](../mariadb-client/mysql-command line-client.md).
 
 The `mysql_fix_privilege_tables` script is not actually called; it's included as part of `mariadb-upgrade`
 
@@ -109,15 +109,15 @@ One effect of not being able to create the `mysql_upgrade_info` file was that ev
 * The `datadir/mysql_upgrade_info` is now created at the start of the upgrade process and locked. This ensures that two `mariadb-upgrade` processes cannot be run in parallel, which can cause deadlocks ([MDEV-27068](https://jira.mariadb.org/browse/MDEV-27068)). One side-effect of this is that `mariadb-upgrade` has to have write access to `datadir`, which means it has to be run as the user that installed MariaDB, normally 'mysql' or 'root' .
 * One can use `mariadb-upgrade --force --force` to force the upgrade to be run, even if there was no version change or if one doesn't have write access to `datadir`. Note that if this option is used, the next `mariadb-upgrade` run will assume that there is a major version change and the upgrade must be done (again).
 * The upgrade will only be done if there is a major server version change (10.4.X -> 10.5.X). This will avoid unnecessary upgrades.
-* New option added: `--check-if-upgrade-is-needed`. If this is used, `mariadb-upgrade` will return 0 if there has been a major version change and one should run `mariadb-upgrade`. If not upgrade is need, 1 will be returned.
-* `--verbose` writes more information, including from which version to which version the upgrade will be done.
+* New option added: `--check-if-upgrade-is-needed`. If this is used, `mariadb-upgrade` will return 0 if there has been a major version change and one should run `mariadb-upgrade`. If not upgrade is need, 1 is returned.
+* `--verbose` writes more information, including from which version to which version the upgrade is done.
 * Better messages when there is no need to run `mariadb-upgrade`.
 
 #### Option Files
 
-In addition to reading options from the command-line, `mariadb-upgrade` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-upgrade` in an option file, then it is ignored.
+In addition to reading options from the command line, `mariadb-upgrade` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-upgrade` in an option file, then it is ignored.
 
-The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
+The following options relate to how MariaDB command line tools handles option files. They must be given as the first argument on the command line:
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |

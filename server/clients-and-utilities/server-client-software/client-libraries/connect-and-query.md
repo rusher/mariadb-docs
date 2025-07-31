@@ -33,7 +33,7 @@ Compatible third-party clients exist but are not listed here.
 
 | Executable Filename | Purpose                       |
 | ------------------- | ----------------------------- |
-| mariadb, mysql      | Connect from the command-line |
+| mariadb, mysql      | Connect from the command line |
 
 For additional information about MariaDB Client, see MariaDB Client.
 

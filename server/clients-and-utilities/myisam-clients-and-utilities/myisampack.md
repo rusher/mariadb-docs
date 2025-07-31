@@ -33,7 +33,7 @@ Do not run myisampack if the tables could be updated during the operation, and [
 
 ### Options
 
-The following variables can be set while passed as commandline options to`myisampack`, or set with a `[myisampack]` section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
+The following variables can be set while passed as command line options to`myisampack`, or set with a `[myisampack]` section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
 
 | Option                    | Description                                                                             |
 | ------------------------- | --------------------------------------------------------------------------------------- |

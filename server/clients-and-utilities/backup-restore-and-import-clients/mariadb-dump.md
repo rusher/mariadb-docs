@@ -8,7 +8,7 @@ Previously, the client used to be called `mysqldump`, and can still be accessed 
 
 {% tabs %}
 {% tab title="Current" %}
-`mariadb-dump` generates a command at the beginning of the dump to enable [sandbox](../mariadb-client/mariadb-command-line-client.md#-sandbox) mode. This command cannot be interpreted by earlier versions of the [MariaDB command line client](../mariadb-client/mariadb-command-line-client.md) or by MySQL's command line client, and the client generates an error if used against the versions that do not support it. This does not affect other methods of importing the data.
+`mariadb-dump` generates a command at the beginning of the dump to enable [sandbox](../mariadb-client/mariadb-command line-client.md#-sandbox) mode. This command cannot be interpreted by earlier versions of the [MariaDB command line client](../mariadb-client/mariadb-command line-client.md) or by MySQL's command line client, and the client generates an error if used against the versions that do not support it. This does not affect other methods of importing the data.
 {% endtab %}
 
 {% tab title="< 11.4.2 / 11.2.4 / 11.1.5 / 11.0.6 / 10.11.8 / 10.6.18 / 10.5.25" %}
@@ -211,7 +211,7 @@ Dump tables with [history](../../reference/sql-structure/temporal-tables/system-
 
 #### --dump-slave\[=value]
 
-Used for producing a dump file from a replica server that can be used to set up another replica server with the same primary. Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename of the primary to be appended to the dumped data output. Setting the value to `1` (the default) prints it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command in the dumped data output; if set to `2`, that command will be prefixed with a comment symbol. This option will turn on `--lock-all-tables`, unless `--single-transaction` is specified, too (in which case a global read lock is only taken a short time at the beginning of the dump. Make sure to read about `--single-transaction` below). In all cases, any action on logs happens at the exact moment of the dump. This option automatically turns off `--lock-tables`.
+Used for producing a dump file from a replica server that can be used to set up another replica server with the same primary. Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename of the primary to be appended to the dumped data output. Setting the value to `1` (the default) prints it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command in the dumped data output; if set to `2`, that command is prefixed with a comment symbol. This option will turn on `--lock-all-tables`, unless `--single-transaction` is specified, too (in which case a global read lock is only taken a short time at the beginning of the dump. Make sure to read about `--single-transaction` below). In all cases, any action on logs happens at the exact moment of the dump. This option automatically turns off `--lock-tables`.
 
 {% tabs %}
 {% tab title="Current" %}
@@ -324,7 +324,7 @@ When restoring the dump, if logging is turned on, the server logs queries to the
 
 Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename to be appended to the output, useful for dumping a primary replication server to produce a dump file that can be used to set up another server as a replica of the primary. These are the primary server coordinates from which the replica should start replicating after you load the dump file into the replica.&#x20;
 
-If the option is set to `1` (the default), print it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command; if set to `2`, that command will be prefixed with a comment symbol. This `--master-data` option turns `--lock-all-tables` on, unless `--single-transaction` is specified, too. In all cases, any action on logs will happen at the exact moment of the dump. This option automatically turns `--lock-tables` off. In all cases, any action on logs happens at the exact moment of the dump. It is also possible to set up a replica by dumping an existing replica of the primary. To do this, use the following procedure on the existing replica:
+If the option is set to `1` (the default), print it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command; if set to `2`, that command is prefixed with a comment symbol. This `--master-data` option turns `--lock-all-tables` on, unless `--single-transaction` is specified, too. In all cases, any action on logs will happen at the exact moment of the dump. This option automatically turns `--lock-tables` off. In all cases, any action on logs happens at the exact moment of the dump. It is also possible to set up a replica by dumping an existing replica of the primary. To do this, use the following procedure on the existing replica:
 
 {% stepper %}
 {% step %}
@@ -475,7 +475,7 @@ Direct output to a given _file_. This option should be used on Windows, to preve
 
 #### -R, --routines
 
-Include stored routines ([procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](../../server-usage/stored-routines/stored-functions/)) for the dumped databases in the output. Use of this option requires the SELECT privilege for the [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md) table. The output generated using --routines contains [CREATE PROCEDURE](../../server-usage/stored-routines/stored-procedures/create-procedure.md) and [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md) statements to re-create the routines. However, these statements do not include attributes such as the routine creation and modification timestamps. This means that when the routines are reloaded, they will be created with the timestamps equal to the reload time.If you require routines to be re-created with their original timestamp attributes, do not use `--routines`. Instead, dump and reload the contents of the [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md) table directly, using a MariaDB account which has appropriate privileges for the mysql database.
+Include stored routines ([procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](../../server-usage/stored-routines/stored-functions/)) for the dumped databases in the output. Use of this option requires the SELECT privilege for the [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md) table. The output generated using --routines contains [CREATE PROCEDURE](../../server-usage/stored-routines/stored-procedures/create-procedure.md) and [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md) statements to re-create the routines. However, these statements do not include attributes such as the routine creation and modification timestamps. This means that when the routines are reloaded, they are created with the timestamps equal to the reload time.If you require routines to be re-created with their original timestamp attributes, do not use `--routines`. Instead, dump and reload the contents of the [mysql.proc](../../reference/system-tables/the-mysql-database-tables/mysql-proc-table.md) table directly, using a MariaDB account which has appropriate privileges for the mysql database.
 
 #### --set-charset
 
@@ -655,9 +655,9 @@ An alternative is to specify the hexadecimal value of a character. For example, 
 
 ## Option Files
 
-In addition to reading options from the command-line, `mariadb-dump` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-dump` in an option file, then it is ignored.
+In addition to reading options from the command line, `mariadb-dump` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-dump` in an option file, then it is ignored.
 
-The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
+The following options relate to how MariaDB command line tools handles option files. They must be given as the first argument on the command line:
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |
@@ -737,7 +737,7 @@ Collation="latin1_swedish_ci" Create_options="" Comment="" />
 
 ## Restoring Dumps
 
-To restore a backup created with `mariadb-dump`, use the [mariadb client](../mariadb-client/mariadb-command-line-client.md) to import the dump:
+To restore a backup created with `mariadb-dump`, use the [mariadb client](../mariadb-client/mariadb-command line-client.md) to import the dump:
 
 ```bash
 mariadb db_name < backup-file.sql
