@@ -24,7 +24,7 @@ Galera's replication is not completely synchronous. It is sometimes called **vir
 
 An alternative approach to synchronous replication that uses group communication and transaction ordering techniques was suggested by a number of researchers. For example:
 
-* [Database State Machine Approach](https://library.epfl.ch/theses/?nr=2090)
+* [Database State Machine Approach](https://doi.org/10.5075/epfl-thesis-2090)
 * [Don't Be Lazy, Be Consistent](https://www.cs.mcgill.ca/~kemme/papers/vldb00.html)
 
 Prototype implementations have shown a lot of promise. We combined our experience in synchronous database replication and the latest research in the field to create the Galera Replication library and the wsrep API.
