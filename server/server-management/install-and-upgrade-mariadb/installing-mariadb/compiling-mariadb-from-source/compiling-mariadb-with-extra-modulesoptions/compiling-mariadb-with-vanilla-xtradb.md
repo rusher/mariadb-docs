@@ -4,7 +4,7 @@ Sometimes, one needs to have MariaDB compiled with Vanilla XtraDB. This page des
 
 The process is applicable to [MariaDB 5.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-534-release-notes) and XtraDB from Percona Server 5.1.61.
 
-```
+```bash
 wget http://s.petrunia.net/scratch/make-vanilla-xtradb-work-with-mariadb.diff
 
 bzr branch /path/to/mariadb-5.3 5.3-vanilla-xtradb-r3

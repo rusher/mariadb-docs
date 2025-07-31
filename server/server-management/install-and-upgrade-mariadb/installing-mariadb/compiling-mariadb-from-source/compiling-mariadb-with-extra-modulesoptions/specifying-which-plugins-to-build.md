@@ -4,13 +4,13 @@ By default all plugins are enabled and built as dynamic `.so` (or `.dll`) module
 
 Use `PLUGIN_xxx` cmake variables. They can be set on the command line with `-DPLUGIN_xxx=value` or in the cmake gui. Supported values are
 
-| Value   | Effect                                                                                                                                              |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NO      | the plugin will be not compiled at all                                                                                                              |
-| STATIC  | the plugin will be compiled statically, if supported. Otherwise it will be not compiled.                                                            |
-| DYNAMIC | the plugin will be compiled dynamically, if supported. Otherwise it will be not compiled. This is the default behavior.                             |
-| AUTO    | the plugin will be compiled statically, if supported. Otherwise it will be compiled dynamically.                                                    |
-| YES     | same as AUTO, but if plugin prerequisites (for example, specific libraries) are missing, it will not be skipped, it will abort cmake with an error. |
+| Value     | Effect                                                                                                                                              |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NO`      | the plugin will be not compiled at all                                                                                                              |
+| `STATIC`  | the plugin will be compiled statically, if supported. Otherwise it will be not compiled.                                                            |
+| `DYNAMIC` | the plugin will be compiled dynamically, if supported. Otherwise it will be not compiled. This is the default behavior.                             |
+| `AUTO`    | the plugin will be compiled statically, if supported. Otherwise it will be compiled dynamically.                                                    |
+| `YES`     | same as AUTO, but if plugin prerequisites (for example, specific libraries) are missing, it will not be skipped, it will abort cmake with an error. |
 
 Note that unlike autotools, cmake tries to configure and build incrementally. You can modify one configuration option and cmake will only rebuild the part of the tree affected by it. For example, when you do `cmake -DWITH_EMBEDDED_SERVER=1` in the already-built tree, it will make libmysqld to be built, but no other configuration options will be changed or reset to their default values.
 

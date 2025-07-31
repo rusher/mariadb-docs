@@ -15,7 +15,7 @@ You can install the necessary dependencies using either MacPorts or Homebrew.
 
 ## Using Homebrew
 
-* Download and install Homebrew from [https:brew.sh](https://brew.sh/)
+* Download and install Homebrew from [https://brew.sh](https://brew.sh/)
 
 `brew install cmake jemalloc traildb/judy/judy openssl boost gnutls`
 

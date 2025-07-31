@@ -4,7 +4,7 @@ In the event that you are using the Linux-based operating system Ubuntu or any o
 
 Before you begin, install the `software-properties-common`, `devscripts` and `equivs` packages.
 
-```
+```bash
 $ sudo apt-get install software-properties-common \
       devscripts \
       equivs
@@ -16,7 +16,7 @@ MariaDB requires a number of packages to compile from source. Fortunately, you c
 
 First add the authentication key for the repository, then add the repository.
 
-```
+```bash
 $ sudo apt-key adv --recv-keys \
       --keyserver hkp://keyserver.ubuntu.com:80 \
       0xF1656F24C74CD1D8
@@ -26,7 +26,7 @@ $ sudo add-apt-repository --update --yes --enable-source \
 
 Once the repository is set up, you can use `apt-get` to retrieve the build dependencies. MariaDB packages supplied by Ubuntu and packages supplied by the MariaDB repository have the same base name of `mariadb-server`. You need to specify the specific version you want to retrieve.
 
-```
+```bash
 $ sudo apt-get build-dep mariadb-10.3
 ```
 
@@ -34,13 +34,13 @@ $ sudo apt-get build-dep mariadb-10.3
 
 Once you have the base dependencies installed, you can retrieve the source code and start building MariaDB. The source code is available on GitHub. Use the `--branch` option to specify the particular version of MariaDB you want to build.
 
-```
+```bash
 $ git clone --branch 10.3 https://github.com/MariaDB/server.git
 ```
 
 The source code includes scripts to install the remaining build dependencies. For Ubuntu, they're located in the `debian/` directory. Navigate into the repository and run the `autobake-deb.sh` script. Then use
 
-```
+```bash
 $ cd server/
 $ ./debian/autobake-deb.sh
 ```
@@ -49,14 +49,14 @@ $ ./debian/autobake-deb.sh
 
 In the event that there are still build dependencies that are not satisfied, use `mk-build-deps` to generate a build dependency `deb` to use in installing the remaining packages.
 
-```
+```bash
 $ mk-build-deps debian/control
 $ apt-get install ./mariadb-*build-deps_*.deb
 ```
 
 Then, call the `autobake-deb.sh` script again to build MariaDB.
 
-```
+```bash
 $ ./debian/autobake-deb.sh
 ```
 

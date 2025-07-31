@@ -33,7 +33,7 @@ apt-get install mariadb-server
 
 and collect bugs :-).
 
-"apt-get install" will spray output of scripts and servers all over /var/log. It is also possible to set DEBIAN\_SCRIPT\_DEBUG=1 to get some (not all) of it to stdout.
+`apt-get install` will spray output of scripts and servers all over `/var/log`. It is also possible to set `DEBIAN_SCRIPT_DEBUG=1` to get some (not all) of it to `stdout`.
 
 ## Cleaning up after failed installation
 
@@ -50,7 +50,7 @@ to see what is installed, and then
 dpkg --purge <packages>
 ```
 
-until the former produces empty output. Note: after some failures, /etc/mysql and /var/lib/mysql are not cleaned and still need to be removed manually.
+until the former produces empty output. Note: after some failures, `/etc/mysql` and `/var/lib/mysql` are not cleaned and still need to be removed manually.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -12,7 +12,7 @@ To build MariaDB you need the following:
   build newer versions from the source tree.
   * NOTE: run
 
-```
+```bash
 git config --global core.autocrlf input
 ```
 
@@ -29,7 +29,7 @@ In the "Adjusting your PATH" dialog, choose "Use Git from Windows command prompt
   * Add `C:\GnuWin32\bin` to your system `PATH` after installation.
 * [Strawberry perl](https://strawberryperl.com): Used to run the test suite.[ActiveState Perl](https://www.activestate.com/activeperl/downloads) is\
   another Win32 Perl distribution and should work as well (but it is not as\
-  well tested). NOTE: Cygwin or mingw Perl versions will not work for testing. Use Windows native Perl, please.
+  well tested). NOTE: `Cygwin` or `mingw` Perl versions will not work for testing. Use Windows native Perl, please.
 * Optional: If you intend to build the MSI packages, install [Windows Installer XML](https://wixtoolset.org/releases/) . If you build MSI with 10.4,\
   also modify your Visual Studio installation, add "Redistributable MSMs" (see [MDEV-22555](https://jira.mariadb.org/browse/MDEV-22555))
 * [Gnu Diff](https://gnuwin32.sourceforge.net/packages/diffutils.htm), needed if you run mysql-test-run.pl tests.
@@ -45,7 +45,7 @@ The above instructions assume [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmU
 Branch the MariaDB repository, or unpack the source archive. On the command\
 prompt, switch to your source directory, then execute:
 
-```
+```bash
 mkdir bld
 cd bld
 cmake ..
@@ -62,7 +62,7 @@ subdirectory named `bld`. "`cmake ...`" is the configuration step,\
 
 Building Debug version is done with:
 
-```
+```bash
 cmake --build . --config Debug
 ```
 
@@ -70,21 +70,21 @@ cmake --build . --config Debug
 
 #### Build 64 bit binary
 
-Visual Studio 2019-2022 cmake generator will use host architecture by default, that is, with the steps above, cmake will build x64 binaries on x64 machine.
+Visual Studio 2019-2022 `cmake` generator will use host architecture by default, that is, with the steps above, `cmake` will build x64 binaries on x64 machine.
 
 #### Build 32 bit binary
 
-pass -A Win32 parameter for CMake, like this
+pass `-A Win32` parameter for `cMake`, like this
 
-```
+```bash
 cmake .. -A Win32
 ```
 
 Historical note:\
 With Visual Studio 2017 and earlier, one had to pass the name of 32bit generator ,e.g\
-cmake .. -G "Visual Studio 15 2017"
+`cmake .. -G "Visual Studio 15 2017`
 
-For a complete list of available generators, call "cmake" without any parameters.
+For a complete list of available generators, call `cmake` without any parameters.
 
 ### IDE Builds
 
@@ -92,21 +92,21 @@ Instead of calling "`cmake --build`" as above, open solution file `MariaDB.sln` 
 
 ## Building the ZIP Package
 
-```
+```bash
 cmake --build . --config relwithdebinfo --target package
 ```
 
-This is how it is "done by the book", standard cmake target.
+This is how it is "done by the book", standard `cmake` target.
 
-MariaDB however uses non-standard target "win\_package" for the packaging for its releases, it generates 2 ZIPs, a slim one with executables, and another one with debuginfo (.PDB files). The debuginfo is important to be able to debug released binaries, and to analyze crashes.
+MariaDB however uses non-standard target `win_package` for the packaging for its releases, it generates 2 ZIPs, a slim one with executables, and another one with `debuginfo` (.PDB files). The `debuginfo` is important to be able to debug released binaries, and to analyze crashes.
 
-```
+```bash
 cmake --build . --config relwithdebinfo --target win_package
 ```
 
 ## Building the MSI Package
 
-```
+```bash
 cmake --build . --config relwithdebinfo 
 cmake --build . --config relwithdebinfo --target MSI
 ```
@@ -115,7 +115,7 @@ cmake --build . --config relwithdebinfo --target MSI
 
 Starting with [MariaDB 5.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-527-release-notes), it is possible to build an installer which\
 includes 3rd party products, as described in [MWL#200](https://askmonty.org/worklog/Other/?tid=200). Currently only [HeidiSQL](https://www.heidisql.com) support is implemented; it is also\
-included in the official builds. Use the CMake parameter`-DWITH_THIRD_PARTY=HeidiSQL` to include it in the installer.
+included in the official builds. Use the `CMake` parameter`-DWITH_THIRD_PARTY=HeidiSQL` to include it in the installer.
 
 ## Code Signing
 
@@ -132,7 +132,7 @@ otherwise the packaging step will fail.
 The full script to create the release in an out-of-source build with Visual\
 Studio with signed binaries might look like:
 
-```
+```bash
 mkdir bld
 cd bld
 cmake .. -DSIGNCODE=1 -DWITH_THIRD_PARTY=HeidiSQL
@@ -146,7 +146,7 @@ and MSI package (e.g mariadb-5.2.6-win32.msi) in the `bld` directory.
 ## Running Tests
 
 * Important: Do not use Cygwin bash, MinGW bash, Git bash, WSL bash, or any other bash when running the test suite. You will then very likely use the wrong version of Perl too (a "Unix-flavoured" one on Windows), and spend a lot of time trying to figure out why this version of Perl does not work for the test suite. Use native perl, in cmd.exe , or powershell instead,
-* Switch mysql-test subdirectory of the build directory
+* Switch `mysql-test` subdirectory of the build directory
 
 ```
 cd C:\server\bld\mysql-test
@@ -154,7 +154,7 @@ cd C:\server\bld\mysql-test
 
 * Run the test suite
 
-```
+```bash
 perl mysql-test-run.pl --suite=main --parallel=auto
 ```
 
@@ -162,25 +162,25 @@ perl mysql-test-run.pl --suite=main --parallel=auto
 
 Assuming VS is installed on the machine
 
-```
+```bash
 perl mysql-test-run.pl  <test_name> --vsjitdebugger
 ```
 
-If vsjitdebugger does not start, you can edit AeDebug registry key as mentioned in
+If `vsjitdebugger` does not start, you can edit `AeDebug` registry key as mentioned in
 
 [debug-using-the-just-in-time-debugger?view=vs-2019#jit\_errors](https://docs.microsoft.com/en-us/visualstudio/debugger/debug-using-the-just-in-time-debugger?view=vs-2019#jit_errors)
 
 Alternatively:
 
-```
+```bash
 perl mysql-test-run.pl  <test_name> --devenv
 ```
 
 (devenv.exe needs to be in PATH)
 
-or, if you prefer WinDBG
+or, if you prefer `WinDBG`
 
-```
+```bash
 perl mysql-test-run.pl  <test_name> --windbg
 ```
 

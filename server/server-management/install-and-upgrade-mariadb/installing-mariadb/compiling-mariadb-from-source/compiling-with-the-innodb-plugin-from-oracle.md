@@ -6,16 +6,16 @@ If you want to use Oracle's InnoDB plugin, then you need to compile MariaDB and*
 configuring. For example, a simple `./configure` without\
 any options will do.
 
-When the InnoDB plugin is compiled, the innodb\_plugin test suite will test the\
+When the InnoDB plugin is compiled, the `innodb_plugin` test suite will test the\
 InnoDB plugin in addition to xtradb:
 
-```
+```bash
 ./mysql-test-run --suite=innodb_plugin
 ```
 
-To use the innodb\_plugin instead of xtradb you can do (for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)):
+To use the `innodb_plugin` instead of `xtradb` you can do (for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)):
 
-```
+```bash
 mysqld --ignore-builtin-innodb --plugin-load=innodb=ha_innodb.so \
 --plugin_dir=/usr/local/mysql/lib/mysql/plugin
 ```

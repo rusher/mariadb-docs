@@ -51,40 +51,39 @@ https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE
 Download a binary file using the following procedure:
 
 1. In your web browser, visit the MariaDB Download interface for the specific MariaDB database product:
+   * MariaDB Enterprise Server
+   * MariaDB MaxScale
+   * MariaDB Xpand
+2.  In your web browser, navigate to the binary file that you would like to download and copy the URL. For example, to download a binary tarball of MariaDB Enterprise Server 10.6.20-16 for RHEL 8 on x86\_64, the URL is:\
 
-* [MariaDB Enterprise Server](https://dlm.mariadb.com/browse/mariadb_enterprise_server/?_ga=2.24376250.1431602578.1740983101-1710706710.1737441288)
-* [MariaDB MaxScale](https://dlm.mariadb.com/browse/mariadbmaxscale/?_ga=2.24376250.1431602578.1740983101-1710706710.1737441288)
-* [MariaDB Xpand](https://dlm.mariadb.com/browse/xpand/?_ga=2.24376250.1431602578.1740983101-1710706710.1737441288)
 
-1. In your web browser, navigate to the binary file that you would like to download and copy the URL. For example, to download a binary tarball of MariaDB Enterprise Server 10.6.20-16 for RHEL 8 on x86\_64, the URL is:
+    ```
+    https://dlm.mariadb.com/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
+    ```
 
-```
-https://dlm.mariadb.com/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
-```
+    \
+    `FILE_ID` is an internal identifier that is different for each file.
+3.  Extract the `FILE` path from the copied URL. For example, to download the file mentioned above, the FILE path is:\
 
-`FILE_ID` is an internal identifier that is different for each file.
 
-1. Extract the `FILE` path from the copied URL.For example, to download the file mentioned above, the FILE\`path is:
+    ```
+    FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
+    ```
+4.  Use your Customer Download Token and the FILE path to construct your customer-specific URL to download the file using command-line tools or automation.For example, to download the file mentioned above, the customer-specific URL is:\
 
-```
-FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
-```
 
-1. Use your Customer Download Token and the FILE path to construct your customer-specific URL to download the file using command-line tools or automation.For example, to download the file mentioned above, the customer-specific URL is:
+    ```
+    https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
+    ```
+5. Use your customer-specific URL to download the file using command-line tools or automation:For example, to download the file mentioned above using `wget`:
 
-```
-https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
-```
-
-1. Use your customer-specific URL to download the file using command-line tools or automation:For example, to download the file mentioned above using `wget`:
-
-```
+```bash
 $ wget https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
 ```
 
-Or using `curl`:
+or using `curl`:
 
-```
+```bash
 $ curl -LO https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
 ```
 
