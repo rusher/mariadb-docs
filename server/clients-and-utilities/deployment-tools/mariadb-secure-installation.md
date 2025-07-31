@@ -4,7 +4,9 @@
 Note that many of the reasons for the existence of this script no longer apply (and therefore the guidelines in many online tutorials. In particular, from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), [Unix socket authentication](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is applied by default, and there is usually no need to create a root password. See [Authentication from MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md).
 {% endhint %}
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_secure_installation`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+{% hint style="info" %}
+Previously, (https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_secure_installation`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+{% endhint %}
 
 ## Description
 
@@ -68,7 +70,7 @@ installation should now be secure.
 Thanks for using MariaDB!
 ```
 
-### Options
+## Options
 
 `mariadb-secure-installation` accepts some options:
 
@@ -104,7 +106,7 @@ The following options relate to how MariaDB command line tools handles option fi
 | \[client-server]  | Options read by all MariaDB client programs and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | \[client-mariadb] | Options read by all MariaDB client programs.                                                                                                                             |
 
-### Use With Galera Cluster
+## Use With Galera Cluster
 
 This script is not 100% safe for use with [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) as it directly manipulates the [mysql.user](../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv](../../reference/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which is not transported by Galera to the other nodes.
 
