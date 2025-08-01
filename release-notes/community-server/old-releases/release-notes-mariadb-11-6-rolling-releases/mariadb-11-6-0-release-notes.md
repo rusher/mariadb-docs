@@ -1,20 +1,18 @@
 # MariaDB 11.6.0 Release Notes
 
-The most recent release of [MariaDB 11.6](what-is-mariadb-116.md) is:[**MariaDB 11.6.2**](mariadb-11-6-2-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/11.6.2/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.6.2)
+{% include "../../../.gitbook/includes/latest-11-6.md" %}
 
-[Download 11.6.0](https://downloads.mariadb.org/mariadb/11.6.0/)[Release Notes](mariadb-11-6-0-release-notes.md)[Overview of 11.6](what-is-mariadb-116.md)
+<a href="https://downloads.mariadb.org/mariadb/11.6.0" class="button primary">Download</a> <a href="mariadb-11-6-0-release-notes.md" class="button secondary">Release Notes</a>  <a href="what-is-mariadb-116.md" class="button secondary">Overview of 11.6</a>
 
 **Release date:** 26 June 2024
 
-**Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
+{% include "../../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.6](what-is-mariadb-116.md) is a [rolling release](../../about/release-model.md). It is an evolution of [MariaDB 11.5](../release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115.md) with several entirely new features.
 
 [MariaDB 11.6.0](mariadb-11-6-0-release-notes.md) is a single preview release. Features are to be considered preview, and none are guaranteed to make it into [MariaDB 11.6](what-is-mariadb-116.md).
 
 The preview is available as a container **quay.io/mariadb-foundation/mariadb-devel:11.6-preview**.
-
-**For an overview of** [**MariaDB 11.6**](what-is-mariadb-116.md) **see the**[**What is MariaDB 11.6?**](what-is-mariadb-116.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
