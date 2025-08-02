@@ -1,16 +1,12 @@
 # MariaDB 11.5.2 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/11.5.2/)[Release Notes](mariadb-11-5-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md)[Overview of 11.5](what-is-mariadb-115.md)
-
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.5.2/)
+<a href="https://downloads.mariadb.org/mariadb/11.5.2/" class="button primary">Download</a> <a href="mariadb-11-5-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-11-5-series/mariadb-11-5-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-115.md" class="button secondary">Overview of 11.5</a>
 
 **Release date:** 14 Aug 2024
 
 [MariaDB 11.5.2](mariadb-11-5-2-release-notes.md) is a [_**Stable (GA)**_](../../about/release-criteria.md) release. It is an evolution of [MariaDB 11.4](../../mariadb-11-4-series/what-is-mariadb-114.md) with several entirely new features.
 
 [MariaDB 11.5](what-is-mariadb-115.md) is a [rolling release](../../about/release-model.md). One is expected to upgrade to [MariaDB 11.6.2](../release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md), there will be no 11.5.3.
-
-**For an overview of** [**MariaDB 11.5**](what-is-mariadb-115.md) **see the**[**What is MariaDB 11.5?**](what-is-mariadb-115.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -84,7 +80,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.19
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.19
 * `galera_gtid_2_cluster`: Assertion \`\`thd->wsrep\_next\_trx\_id() != (0x7fffffffffffffffLL \* 2ULL + 1)'\` ([MDEV-32633](https://jira.mariadb.org/browse/MDEV-32633))
 * table `gtid_slave_pos` entries never been deleted with `wsrep_gtid_mode = 0` ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))
 * Deadlock found when trying to get lock during applying ([MDEV-31658](https://jira.mariadb.org/browse/MDEV-31658))
@@ -94,13 +90,13 @@ Thanks, and enjoy MariaDB!
 
 ### Error Log
 
-* [server\_uid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#server_uid) system variable added, and value added to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) at startup ([MDEV-34494](https://jira.mariadb.org/browse/MDEV-34494))
+* [server\_uid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#server_uid) system variable added, and value added to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) at startup ([MDEV-34494](https://jira.mariadb.org/browse/MDEV-34494))
 
 ### General
 
 * As per the [MariaDB Deprecation Policy](../../about/platform-deprecation-policy.md), this will be the last release of [MariaDB 11.5](what-is-mariadb-115.md) for Debian 10 "Buster", RHEL/CentOS 7, Ubuntu 23.10 "Mantic", and Fedora 38
 * Repositories for Ubuntu 24.04 "Noble" have been added
-* [IMPORT TABLESPACE](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/import-tablespace/README.md) no longer unnecessarily traverses tablespaces list ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
+* [IMPORT TABLESPACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#import-tablespace) no longer unnecessarily traverses tablespaces list ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
 * Fix unknown variable `defaults-group-suffix=` with [mariadb-secure-installation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-secure-installation) ([MDEV-33265](https://jira.mariadb.org/browse/MDEV-33265))
 * [mariadb-install-db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-install-db) no longer hangs on macOS ([MDEV-34129](https://jira.mariadb.org/browse/MDEV-34129))
 * Fix transaction termination with ER\_LOCK\_TABLE\_FULL when lock memory is growing ([MDEV-34167](https://jira.mariadb.org/browse/MDEV-34167))
@@ -109,11 +105,6 @@ Thanks, and enjoy MariaDB!
 * [Triggers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/triggers-events/triggers) now work correctly with bulk insert ([MDEV-24411](https://jira.mariadb.org/browse/MDEV-24411))
 * Fix assertion \`\`table->field\[0]->ptr >= table->record\[0] && table->field\[0]->ptr <= table->record\[0] + table->s->reclength'`failed in`void handler::assert\_icp\_limitations(uchar\*)\` ([MDEV-34632](https://jira.mariadb.org/browse/MDEV-34632))
 * [sandbox mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-sandbox) - now compatible with [--binary-mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-binary-mode) ([MDEV-34203](https://jira.mariadb.org/browse/MDEV-34203))
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
 
 ## Changelog
 
