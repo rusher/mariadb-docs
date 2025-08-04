@@ -10,8 +10,8 @@ int mysql_stmt_fetch_column(MYSQL_STMT * stmt,
 ```
 
 * `stmt` - a statement handle, which was previously allocated by [mysql\_stmt\_init()](mysql_stmt_init.md).
-* `bind_arg` - a pointer to a MYSQL\_BIND structure.
-* `column` - number of column, first column is numbered zero.
+* `bind_arg` - a pointer to a `MYSQL_BIND` structure.
+* `column` - number of columns, first column is numbered zero.
 * `offset` - offset at which to begin retrieving data.
 
 ## Description
