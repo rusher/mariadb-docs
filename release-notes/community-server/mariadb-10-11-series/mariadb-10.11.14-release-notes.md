@@ -100,7 +100,8 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Character Sets
 
-* Fresh MariaDB 11.4 installation gives errors when configuring utf8 ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815))
+* Changing the server character set in `my.cnf` could cause `debian-start` script to fail  with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
+
 
 ### Packaging
 
