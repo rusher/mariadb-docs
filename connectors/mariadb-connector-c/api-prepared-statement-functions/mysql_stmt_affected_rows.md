@@ -15,7 +15,7 @@ Returns the number of affected rows by the last prepared statement associated wi
 {% hint style="info" %}
 When using `UPDATE`, MariaDB will not update columns where the new value is the same as the old value. This creates the possibility that `mysql_stmt_affected_rows()` may not equal the number of rows matched, only the number of rows that were literally affected by the query.
 
-The [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace) statement first deletes the record with the same primary key and then inserts the new record. This function returns the number of deleted records in addition to the number of inserted records.
+The [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/replace) statement first deletes the record with the same primary key and then inserts the new record. This function returns the number of deleted records in addition to the number of inserted records.
 {% endhint %}
 
 ## See Also
