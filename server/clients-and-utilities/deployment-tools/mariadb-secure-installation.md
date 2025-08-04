@@ -1,11 +1,11 @@
 # mariadb-secure-installation
 
 {% hint style="info" %}
-Note that many of the reasons for the existence of this script no longer apply (and therefore the guidelines in many online tutorials. In particular, from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), [Unix socket authentication](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is applied by default, and there is usually no need to create a root password. See [Authentication from MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md).
+Note that many of the reasons for the existence of this script no longer apply (and therefore the guidelines in many online tutorials. In particular, from MariaDB 10.4, [Unix socket authentication](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is applied by default, and there is usually no need to create a root password. See [Authentication from MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md).
 {% endhint %}
 
 {% hint style="info" %}
-Previously, (https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_secure_installation`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Previously, the client was called `mysql_secure_installation`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 {% endhint %}
 
 ## Description
@@ -19,13 +19,13 @@ Previously, (https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old
 
 `mariadb-secure-installation` can be invoked without arguments:
 
-```
+```bash
 shell> mariadb-secure-installation
 ```
 
 The script will prompt you to determine which actions to perform.
 
-```
+```bash
 Example:
 localhost:# mariadb-secure-installation
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
@@ -85,9 +85,9 @@ Other unrecognized options is passed on to the server.
 
 ### Option Files
 
-In addition to reading options from the command line, `mariadb-secure-installation` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-secure-installation` in an option file, then it is ignored.
+In addition to reading options from the command line, `mariadb-secure-installation` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-secure-installation` in an option file, it is ignored.
 
-The following options relate to how MariaDB command line tools handles option files. They must be given as the first argument on the command line:
+The following options relate to how MariaDB command-line tools handle option files. They must be given as the first argument on the command line:
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |
@@ -102,17 +102,19 @@ The following options relate to how MariaDB command line tools handles option fi
 
 | Group             | Description                                                                                                                                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| \[client]         | Options read by all MariaDB and MySQL [client programs](../), which includes both MariaDB and MySQL clients. For example, mysqldump.                                     |
+| \[client]         | Options read by all MariaDB and MySQL [client programs](../), which includes both MariaDB and MySQL clients like mysqldump.                                              |
 | \[client-server]  | Options read by all MariaDB client programs and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | \[client-mariadb] | Options read by all MariaDB client programs.                                                                                                                             |
 
 ## Use With Galera Cluster
 
-This script is not 100% safe for use with [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) as it directly manipulates the [mysql.user](../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv](../../reference/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which is not transported by Galera to the other nodes.
+{% hint style="warning" %}
+This script is not completely safe for use with [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) as it directly manipulates the [mysql.user](../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv](../../reference/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which is not propagated by Galera to the other nodes.
+{% endhint %}
 
 You should run this script on the first node in the cluster before adding more nodes.
 
-If you want to run this after the cluster is up and running you should find alternative ways.
+If you want to run this after the cluster is up and running, you should find alternative ways.
 
 Anyone can vote for this to be fixed at [MDEV-10112](https://jira.mariadb.org/browse/MDEV-10112).
 
