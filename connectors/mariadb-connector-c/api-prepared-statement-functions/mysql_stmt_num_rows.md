@@ -13,12 +13,11 @@ unsigned long long mysql_stmt_num_rows(MYSQL_STMT * stmt);
 Returns the number of rows in the result set. The use of mysql\_stmt\_num\_rows() depends on whether or not you used [mysql\_stmt\_store\_result()](mysql_stmt_store_result.md) to buffer the entire result set in the statement handle.
 
 {% hint style="info" %}
-If you use [mysql\_stmt\_store\_result()](mysql_stmt_store_result.md), mysql\_stmt\_num\_rows() may be called immediately.
+If you use [mysql\_stmt\_store\_result()](mysql_stmt_store_result.md), `mysql_stmt_num_rows()` may be called immediately.
 {% endhint %}
 
 ## See Also
 
 * [mysql\_stmt\_store\_result()](mysql_stmt_store_result.md)
-
 
 {% @marketo/form formId="4316" %}
