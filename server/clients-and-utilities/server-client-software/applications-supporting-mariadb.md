@@ -21,6 +21,7 @@ Note: Every project we know of which works with MySQL also works with MariaDB. T
 * [Codeship](https://documentation.codeship.com/pro/getting-started/services-and-databases/)
 * [Dataedo](https://dataedo.com) - Database documentation tool with rich-text fields and ERD creator.
 * [DBeaver](https://dbeaver.jkiss.org/) - free convenient cross-platform and cross-database Java GUI client which supports special MySQL/MariaDB features.
+* [dbForge Edge](https://www.devart.com/dbforge/edge/) is a multidatabase solution for MariaDB/MySQL, SQL Server, Oracle, and PostgreSQL. It includes a full-featured IDE for MariaDB, covering all key tasks in database development, design, management, and administration.
 * [dbForge Compare Bundle](https://www.devart.com/dbforge/mysql/compare-bundle/) - contains two separate tools, dbForge Schema Compare and dbForge Data Compare.
 * [dbForge Data Compare](https://www.devart.com/dbforge/mysql/datacompare/) - data comparison and synchronization tool.
 * [dbForge Data Generator](https://www.devart.com/dbforge/mysql/data-generator/) - a visual tool for generation of large volumes of meaningful test table data.
