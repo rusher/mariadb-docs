@@ -23,7 +23,7 @@
   * [MariaDB Connector/C Types and Definitions](mariadb-connector-c/mariadb-connectorc-types-and-definitions.md)
   * [Building Connector/C From Source](mariadb-connector-c/building-connectorc-from-source/README.md)
     * [Compiling Connector/C](mariadb-connector-c/building-connectorc-from-source/compiling-connectorc.md)
-    * [Configuration Settings For Building Connector/C](mariadb-connector-c/building-connectorc-from-source/configuration-settings-for-building-connectorc.md)
+    * [Configuration Settings for Building Connector/C](mariadb-connector-c/building-connectorc-from-source/configuration-settings-for-building-connectorc.md)
     * [Prerequisites For Building Connector/C From Source](mariadb-connector-c/building-connectorc-from-source/prerequisites-for-building-connectorc-from-source.md)
   * [MariaDB Connector/C API Functions](mariadb-connector-c/api-functions/README.md)
     * [mariadb\_cancel](mariadb-connector-c/api-functions/mariadb_cancel.md)
