@@ -20,7 +20,7 @@ The following diagram shows the relationship between Dockerfiles, images and con
 
 Here's a simple Dockerfile example:
 
-```
+```docker
 FROM ubuntu:20.04
 
 RUN apt-get update
@@ -61,7 +61,7 @@ It is possible to use variables in a Dockerfile. This allows us, for example, to
 
 To use a variable, we can do something like this:
 
-```
+```docker
 FROM ubuntu:20.04
 
 ARG MARIADB_CONFIG_FILE
@@ -73,7 +73,7 @@ ENTRYPOINT mariadbd --defaults-file=$MARIADB_CONFIG_FILE
 
 Here `ARG` is used after the `FROM` directive, thus the variable cannot be used in `FROM`. It is also possible to declare a variable before `FROM`, so we can use a variable to select the base image to use or its tag, but in this case the variable cannot be used after the `FROM` directive, unless `ARG` is re-declared after the `FROM`. Here is an example:
 
-```
+```docker
 ARG UBUNTU_VERSION
 FROM ubuntu:$UBUNTU_VERSION
 
@@ -86,7 +86,7 @@ RUN echo 'Ubuntu version: $UBUNTU_VERSION' > /var/build_log
 
 We'll have to assign variables a value when we build the Dockerfile, in this way:
 
-```
+```bash
 docker build --build-arg UBUNTU_VERSION=20.04 .
 ```
 
@@ -130,7 +130,7 @@ In production, it is always better to know for sure which version we are install
 
 To pull an image from Docker Hub or a self-hosted registry, we use the `docker pull` command. For example:
 
-```
+```bash
 docker pull mariadb:10.5
 ```
 
@@ -138,7 +138,7 @@ This command downloads the specified image if it is not already present in the s
 
 After modifying a Dockerfile, we can build an image in this way:
 
-```
+```bash
 docker build .
 ```
 
@@ -146,7 +146,7 @@ This step can be automated by services like Docker Hub and GitHub. Check those s
 
 Once an image is created, it can be pushed to a registry. We can do it in this way:
 
-```
+```bash
 docker push <image_name>:<tag>
 ```
 

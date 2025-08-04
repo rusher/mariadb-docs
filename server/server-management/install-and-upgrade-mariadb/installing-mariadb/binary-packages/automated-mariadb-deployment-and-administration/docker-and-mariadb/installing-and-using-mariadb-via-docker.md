@@ -16,7 +16,7 @@ For information about installing Docker, see [Get Docker](https://docs.docker.co
 
 The script below will install the Docker repositories, required kernel modules and packages on the most common Linux distributions:
 
-```
+```bash
 curl -sSL https://get.docker.com/ | sh
 ```
 
@@ -24,15 +24,16 @@ curl -sSL https://get.docker.com/ | sh
 
 On some systems you may have to start the `dockerd daemon` yourself:
 
-```
+```bash
 sudo systemctl start docker
 sudo gpasswd -a "${USER}" docker
 ```
 
-If you don't have `dockerd` running, you will get the following error for most `docker` commands:\
-installing-and-using-mariadb-via-docker\
-Cannot connect to the Docker daemon at unix:_/var/run/docker.sock. Is the docker daemon running?_\
-\&#xNAN;_<>_
+If `dockerd` is not running, you will encounter the following error when using most `docker` commands:
+
+```
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
 
 ## Using MariaDB Images
 
@@ -42,7 +43,7 @@ The easiest way to use MariaDB on Docker is choosing a MariaDB image and creatin
 
 You can download a MariaDB image for Docker from the [Offical Docker MariaDB](https://hub.docker.com/_/mariadb/), or choose another image that better suits your needs. You can search Docker Hub (the official set of repositories) for an image with this command:
 
-```
+```bash
 docker search mariadb
 ```
 
@@ -50,17 +51,17 @@ Once you have found an image that you want to use, you can download it via Docke
 
 For example, if you want to install the default MariaDB image, you can type:
 
-```
-docker pull mariadb:10.4
+```bash
+docker pull mariadb:10.6
 ```
 
-This will install the 10.4 version. Versions 10.2, 10.3, 10.5 are also valid choices.
+This will install the 10.6 version.&#x20;
 
 You will see a list of necessary layers. For each layer, Docker will say if it is already present, or its download progress.
 
 To get a list of installed images:
 
-```
+```bash
 docker images
 ```
 
@@ -68,7 +69,7 @@ docker images
 
 An image is not a running process; it is just the software needed to be launched. To run it, we must create a container first. The command needed to create a container can usually be found in the image documentation. For example, to create a container for the official MariaDB image:
 
-```
+```bash
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d docker.io/library/mariadb:10.3
 ```
 
@@ -76,23 +77,23 @@ docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d dock
 
 10.2 and 10.5 are also valid target versions:
 
-```
+```bash
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d docker.io/library/mariadb:10.2
 ```
 
-```
+```bash
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306  -d docker.io/library/mariadb:10.5
 ```
 
 Optionally, after the image name, we can specify some [options for mariadbd](../../../../../starting-and-stopping-mariadb/mariadbd-options.md). For example:
 
-```
+```bash
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d mariadb:10.3 --log-bin --binlog-format=MIXED
 ```
 
 Docker will respond with the container's id. But, just to be sure that the container has been created and is running, we can get a list of running containers in this way:
 
-```
+```bash
 docker ps
 ```
 
@@ -107,38 +108,38 @@ CONTAINER ID        IMAGE                      COMMAND                CREATED   
 
 Docker allows us to restart a container with a single command:
 
-```
+```bash
 docker restart mariadbtest
 ```
 
 The container can also be stopped like this:
 
-```
+```bash
 docker stop mariadbtest
 ```
 
 The container will not be destroyed by this command. The data will still live inside the container, even if MariaDB is not running. To restart the container and see our data, we can issue:
 
-```
+```bash
 docker start mariadbtest
 ```
 
 With `docker stop`, the container will be gracefully terminated: a `SIGTERM` signal will be sent to the `mariadbd` process, and Docker will wait for the process to shutdown before returning the control to the shell. However, it is also possible to set a timeout, after which the process will be immediately killed with a `SIGKILL`. Or it is possible to immediately kill the process, with no timeout.
 
-```
+```bash
 docker stop --time=30 mariadbtest
 docker kill mariadbtest
 ```
 
 In case we want to destroy a container, perhaps because the image does not suit our needs, we can stop it and then run:
 
-```
+```bash
 docker rm mariadbtest
 ```
 
 Note that the command above does not destroy the data volume that Docker has created for /var/lib/mysql. If you want to destroy the volume as well, use:
 
-```
+```bash
 docker rm -v mariadbtest
 ```
 
@@ -155,7 +156,7 @@ Allowed values are:
 
 It is possible to change the restart policy of existing, possibly running containers:
 
-```
+```bash
 docker update --restart always mariadb
 # or, to change the restart policy of all containers:
 docker update --restart always $(docker ps -q)
@@ -169,7 +170,7 @@ A container can also be frozen with the `pause` command. Docker will freeze the 
 
 Both `pause` and `unpause` accept one or more container names. So, if we are running a cluster, we can freeze and resume all nodes simultaneously:
 
-```
+```bash
 docker pause node1 node2 node3
 docker unpause node1 node2 node3
 ```
@@ -180,7 +181,7 @@ Pausing a container is very useful when we need to temporarily free our system's
 
 If the container doesn't start, or is not working properly, we can investigate with the following command:
 
-```
+```bash
 docker logs mariadbtest
 ```
 
@@ -192,7 +193,7 @@ To check which operations were prevented by AppArmor, see [AppArmor Failures](ht
 
 To disable a profile, create a symlink with the profile name (in this example, `mariadbd`) to `etc/apparmor.d/disable`, and then reload profiles:
 
-```
+```bash
 ln -s /etc/apparmor.d/usr.sbin.mariadbd /etc/apparmor.d/disable/
 sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mariadbd
 ```
@@ -201,7 +202,7 @@ For more information, see [Policy Layout](https://gitlab.com/apparmor/apparmor/-
 
 After disabling the profile, you may need to run:
 
-```
+```bash
 sudo service docker restart
 docker system prune --all --volumes
 ```
@@ -212,13 +213,13 @@ Restarting the system will then allow Docker to operate normally.
 
 To access the container via Bash, we can run this command:
 
-```
+```bash
 docker exec -it mariadbtest bash
 ```
 
 Now we can use normal Linux commands like _cd_, _ls_, etc. We will have root privileges. We can even install our favorite file editor, for example:
 
-```
+```bash
 apt-get update
 apt-get install vim
 ```
@@ -235,7 +236,7 @@ Therefore connections to the MariaDB server must be made using TCP, even when th
 
 Find the IP address that has been assigned to the container:
 
-```
+```bash
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mariadbtest
 ```
 
@@ -247,13 +248,13 @@ After enabling network connections in MariaDB as described above, we will be abl
 
 On the host, run the client and set the server address ("-h") to the container's IP address that you found in the previous step:
 
-```
+```bash
 mysql -h 172.17.0.2 -u root -p
 ```
 
 This simple form of the connection should work in most situations. Depending on your configuration, it may also be necessary to specify the port for the server or to force TCP mode:
 
-```
+```bash
 mysql -h 172.17.0.2 -P 3306 --protocol=TCP -u root -p
 ```
 
@@ -263,7 +264,7 @@ Multiple MariaDB servers running in separate Docker containers can connect to ea
 
 When running a cluster or a replication setup via Docker, we will want the containers to use different ports. The fastest way to achieve this is mapping the containers ports to different port on our system. We can do this when creating the containers (`docker run` command), by using the `-p` option, several times if necessary. For example, for Galera nodes we will use a mapping similar to this one:
 
-```
+```bash
 -p 4306:3306 -p 5567:5567 -p 5444:5444 -p 5568:5568
 ```
 
@@ -277,7 +278,7 @@ First, we need the system image to run as a daemon. If we skip this step, MariaD
 
 To demonize an image, we need to give it a command that never ends. In the following example, we will create a Debian Jessie daemon that constantly pings the 8.8.8.8 special address:
 
-```
+```bash
 docker run --name debian -p 3306:3306 -d debian /bin/sh -c "while true; do ping 8.8.8.8; done"
 ```
 
@@ -285,7 +286,7 @@ docker run --name debian -p 3306:3306 -d debian /bin/sh -c "while true; do ping 
 
 At this point, we can enter the shell and issue commands. First we will need to update the repositories, or no packages will be available. We can also update the packages, in case some of them are newer than the image. Then, we will need to install a text editor; we will need it to edit configuration files. For example:
 
-```
+```bash
 # start an interactive Bash session in the container
 docker exec -ti debian bash
 apt-get -y update

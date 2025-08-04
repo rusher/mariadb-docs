@@ -8,13 +8,13 @@ For information about installing Bolt, see [Installing Bolt](https://puppet.com/
 
 The simplest way to call Bolt and instruct it to do something on some remote targets is the following:
 
-```
+```bash
 bolt ... --nodes 100.100.100.100,200.200.200.200,300,300,300,300
 ```
 
 However, for non-trivial setups it is usually better to use an inventory file. An example:
 
-```
+```yaml
 targets:
   - uri: maria-1.example.com
     name: maria_1
@@ -26,7 +26,7 @@ In this way, it will be possible to refer the target by name or alias.
 
 We can also define groups, followed by the group members. For example:
 
-```
+```yaml
 groups:
   - name: mariadb-staging
     targets:
@@ -42,7 +42,7 @@ groups:
 
 With an inventory of this type, it will be possible to run Bolt actions against all the targets that are members of a group:
 
-```
+```bash
 bolt ... --nodes mariadb-staging
 ```
 
@@ -52,7 +52,7 @@ In the examples in the rest of the page, the `--targets` parameter will be indic
 
 The simplest way to run a command remotely is the following:
 
-```
+```bash
 bolt command run 'mariadb-admin start-all-slaves' --targets <targets>
 ```
 
@@ -60,13 +60,13 @@ bolt command run 'mariadb-admin start-all-slaves' --targets <targets>
 
 To copy a file or a whole directory to targets:
 
-```
+```bash
 bolt file upload /path/to/source /path/to/destination --targets <targets>
 ```
 
 To copy a file or a whole directory from the targets to the local host:
 
-```
+```bash
 bolt file download /path/to/source /path/to/destination --targets <targets>
 ```
 
@@ -74,7 +74,7 @@ bolt file download /path/to/source /path/to/destination --targets <targets>
 
 We can use Bolt to run a local script on remote targets. Bolt will temporarily copy the script to the targets, run it, and delete it from the targets. This is convenient for scripts that are meant to only run once.
 
-```
+```bash
 bolt script run rotate_logs.sh --targets <targets>
 ```
 
@@ -82,7 +82,7 @@ bolt script run rotate_logs.sh --targets <targets>
 
 Puppet tasks are not always as powerful as custom scripts, but they are simpler and many of them are idempotent. The following task stops MariaDB replication:
 
-```
+```bash
 bolt task run mysql::sql --targets <targets> sql="STOP REPLICA"
 ```
 
@@ -92,13 +92,13 @@ It is also possible to apply whole manifests or portions of Puppet code (resourc
 
 To apply a manifest:
 
-```
+```bash
 bolt apply manifests/server.pp  --targets <targets>
 ```
 
 To apply a resource description:
 
-```
+```bash
 bolt apply --execute "file { '/etc/mysql/my.cnf': ensure => present }" --targets <targets>
 ```
 

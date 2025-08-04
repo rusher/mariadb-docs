@@ -8,7 +8,7 @@ The following methods summarize [Installing plugins in the MariaDB Docker Librar
 
 To see which plugins are available in the mariadb:
 
-```
+```bash
 $ docker run --rm mariadb:latest ls -C /usr/lib/mysql/plugin
 ```
 
@@ -18,7 +18,7 @@ Using the `--plugin-load-add` flag with the plugin name (can be repeated), the p
 
 For example, to enable the `simple\_password\_check` plugin:
 
-```
+```bash
 $ docker run --name some-%%REPO%% -e MARIADB_ROOT_PASSWORD=my-secret-pw --network=host -d mariadb:latest --plugin-load-add=simple_password_check
 ```
 
@@ -26,7 +26,7 @@ $ docker run --name some-%%REPO%% -e MARIADB_ROOT_PASSWORD=my-secret-pw --networ
 
 plugin-load-add\` can be used as a configuration option to load plugins. The example below loads the [FederatedX Storage Engine](../../../../../../server-usage/storage-engines/federatedx-storage-engine/).
 
-```
+```bash
 $ printf "[mariadb]\nplugin-load-add=ha_federatedx\n" > /my/custom/federatedx.conf
 $ docker run --name some-mariadb -v /my/custom:/etc/mysql/conf.d -e MARIADB_ROOT_PASSWORD=my-secret-pw -d mariadb:latest
 ```
@@ -37,7 +37,7 @@ $ docker run --name some-mariadb -v /my/custom:/etc/mysql/conf.d -e MARIADB_ROOT
 
 Create the SQL file used in initialization:
 
-```
+```bash
 $ echo 'INSTALL SONAME "disks";' > my_initdb/disks.sql
 ```
 
@@ -47,7 +47,7 @@ In this case, the `my\_initdb` is a `/docker-entrypoint-initdb.d` directory per 
 
 A number of plugins are in separate packages to reduce their installation size. The package names of MariaDB-created plugins can be determined using the following command:
 
-```
+```bash
 $ docker run --rm mariadb:latest sh -c 'apt-get update -qq && apt-cache search mariadb-plugin'
 ```
 
@@ -57,7 +57,7 @@ A new image needs to be created when using additional packages. The `mariadb` im
 
 In the following, the [CONNECT Storage Engine](../../../../../../server-usage/storage-engines/connect/) is installed:
 
-```
+```docker
 FROM mariadb:latest
 RUN apt-get update && \
     apt-get install mariadb-plugin-connect -y && \

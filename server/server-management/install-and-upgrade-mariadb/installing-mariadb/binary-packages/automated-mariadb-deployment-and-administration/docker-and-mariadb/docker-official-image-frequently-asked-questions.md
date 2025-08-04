@@ -8,7 +8,7 @@ If you have an existing data directory and wish to reset the root and user passw
 
 First create a `passwordreset.sql` file:
 
-```
+```sql
 CREATE USER IF NOT EXISTS root@localhost IDENTIFIED BY 'thisismyrootpassword';
 SET PASSWORD FOR root@localhost = PASSWORD('thisismyrootpassword');
 GRANT ALL ON *.* TO root@localhost WITH GRANT OPTION;
@@ -27,7 +27,7 @@ Adjust `myuser`, `databasename` and passwords as needed.
 
 Then:
 
-```
+```bash
 $ docker run --rm -v /my/own/datadir:/var/lib/mysql -v /my/own/passwordreset.sql:/passwordreset.sql:z %%IMAGE%%:latest --init-file=/passwordreset.sql
 ```
 
@@ -39,7 +39,7 @@ Question, are you getting errors like the following where a temporary server sta
 
 Example of log:
 
-```
+```log
 2023-01-28 12:53:42+00:00 [Note] [Entrypoint]: Starting temporary server
 2023-01-28 12:53:42+00:00 [Note] [Entrypoint]: Waiting for server startup
 2023-01-28 12:53:42 0 [Note] mariadbd (server 10.10.2-MariaDB-1:10.10.2+maria~ubu2204) starting as process 72 ...
@@ -54,13 +54,13 @@ The timeout on a temporary server start is a quite generous 30 seconds.
 
 The lack of a message like the following indicates it failed to complete writing a temporary file of 12MiB in 30 seconds.
 
-```
+```log
 2023-01-28 12:53:46 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
 ```
 
 If the datadir where this is stored is remote storage maybe it's a bit slow. It's ideal to have an InnoDB temporary path local so this can be configured using the command or configuration setting:
 
-```
+```ini
 innodb_temp_data_file_path=/dev/shm/ibtmp1:12M:autoextend
 ```
 
@@ -72,7 +72,7 @@ Note: depending on container runtime this space may be limited.
 
 A `docker-compose.yml` example:
 
-```
+```yaml
 version: "3"
 services:
   master:
@@ -113,7 +113,7 @@ services:
 
 This will show up in the container log as:
 
-```
+```log
 2024-01-29 17:38:13 0 [ERROR] Incorrect definition of table mysql.event: expected column 'definer' at position 3 to have type varchar(, found type char(141).
 2024-01-29 17:38:13 0 [ERROR] mariadbd: Event Scheduler: An error occurred when initializing system tables. Disabling the Event Scheduler.
 ```
@@ -124,7 +124,7 @@ The cause is the underlying table has change structure from the last MariaDB ver
 
 This will show up in the error log as:
 
-```
+```log
 2022-05-23 12:29:20 0 [ERROR] InnoDB: Upgrade after a crash is not supported. The redo log was created with MariaDB 10.5.4.
 2022-05-23 12:29:20 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error
 ```
@@ -137,7 +137,7 @@ So whenever you encounter this message. Start with the again with the tag set to
 
 The logs on shutdown should have a message like:
 
-```
+```log
 2023-11-06 10:49:23 0 [Note] InnoDB: Shutdown completed; log sequence number 84360; transaction id 49
 2023-11-06 10:49:23 0 [Note] mariadbd: Shutdown complete
 ```
@@ -146,7 +146,7 @@ After you see this, you can update your MariaDB tag to a later version.
 
 ## Every MariaDB start gives permission denied messages
 
-```
+```log
 2024-02-06 03:03:18+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.6+maria~ubu2204 started.
 /usr/local/bin/docker-entrypoint.sh: line 600: /var/lib/mysql//mysql_upgrade_info: Permission denied
 2024-02-06 03:03:18+00:00 [Note] [Entrypoint]: MariaDB upgrade (mariadb-upgrade) required, but skipped due to $MARIADB_AUTO_UPGRADE setting
@@ -159,7 +159,7 @@ After you see this, you can update your MariaDB tag to a later version.
 
 Or:
 
-```
+```log
 2024-08-16  4:54:05 0 [ERROR] InnoDB: Operating system error number 13 in a file operation.
 2024-08-16  4:54:05 0 [ERROR] InnoDB: The error means mariadbd does not have the access rights to the directory.
 ```
@@ -170,7 +170,7 @@ In this case, the container is running as a user that, inside the container, doe
 
 From the [transaction coordinator log](../../../../../server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md#bad-magic-header-in-tc-log) this is a corrupted file. This will have a log message like the following:
 
-```
+```log
 2024-05-21  8:55:58 0 [Note] Recovering after a crash using tc.log
 2024-05-21  8:55:58 0 [ERROR] Bad magic header in tc log
 2024-05-21  8:55:58 0 [ERROR] Crash recovery failed. Either correct the problem (if it's, for example, out of memory error) and restart, or delete tc log and start server with --tc-heuristic-recover={commit|rollback}
@@ -188,7 +188,7 @@ As such the solution is to restart the container with the previous MariaDB versi
 
 Do you get on every start:
 
-```
+```log
 db-1  | 2023-02-25 19:10:02 0 [Note] Starting MariaDB 10.11.2-MariaDB-1:10.11.2+maria~ubu2204-log source revision cafba8761af55ae16cc69c9b53a341340a845b36 as process 1                                                                                                         
 db-1  | 2023-02-25 19:10:02 0 [Note] mariadbd: Aria engine: starting recovery                                                                                                                                                                                                   
 db-1  | tables to flush: 3 2 1 0                                                                                                                                                                                                                                                
@@ -203,7 +203,7 @@ db-1  | 2023-02-26 13:03:29 0 [Note] InnoDB: Starting crash recovery from checkp
 
 Container runtimes are assume to start and stop very quickly. Check the shutdown logs. They may be a log like:
 
-```
+```log
 db-1  | 2023-02-26 13:03:17 0 [Note] InnoDB: Starting shutdown...                                                                                                                                                                                                               
 db-1  | 2023-02-26 13:03:17 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool                                                                                                                                                                            
 db-1  | 2023-02-26 13:03:17 0 [Note] InnoDB: Restricted to 519200 pages due to innodb_buf_pool_dump_pct=25                                                                                                                                                                      
@@ -213,7 +213,7 @@ db-1 exited with code 0
 
 Note that the logs didn't include the following messages:
 
-```
+```log
 db-1  | 2023-02-26 13:03:43 0 [Note] InnoDB: Shutdown completed; log sequence number 46590; transaction id 15
 db-1  | 2023-02-26 13:03:43 0 [Note] mariadbd: Shutdown complete
 ```
@@ -222,9 +222,9 @@ As these messages aren't here, the container was killed off before it could just
 
 Solution is to extend the timeout in the container runtime to allow MariaDB to complete its shutdown.
 
-## How do I create a MariaDB-backup of the data?
+## How do I create a `mariaDB-backup` of the data?
 
-```
+```bash
 docker volume create backup
 docker run --name mdb -v backup:/backup -v datavolume:/var/lib/mysql mariadb
 docker exec mdb mariadb-backup --backup --target-dir=/backup/d --user root --password soverysecret
@@ -238,7 +238,7 @@ docker exec mdb  rm -rf /backup/d
 
 With the backup prepared like previously:
 
-```
+```bash
 docker run -v backup:/docker-entrypoint-initdb.d -v newdatavolume:/var/lib/mysql mariadb
 ```
 
@@ -246,24 +246,24 @@ docker run -v backup:/docker-entrypoint-initdb.d -v newdatavolume:/var/lib/mysql
 
 Because Apptainer has all the filesystems readonly except or the volume, the /run/mysqld directory is used as a pidfile and socket directory. An easy way is to mark this as a scratch directory.
 
-```
+```bash
 mkdir mydatadir
 apptainer run --no-home --bind $PWD/mydatadir:/var/lib/mysql --env MARIADB_RANDOM_ROOT_PASSWORD=1 --net --network-args "portmap=3308:3306/tcp" --fakeroot --scratch=/run/mysqld  docker://mariadb:10.5
 ```
 
 Alternately:
 
-```
+```bash
 apptainer run --no-home --bind $PWD/mydatadir:/var/lib/mysql --env MARIADB_RANDOM_ROOT_PASSWORD=1 --net --network-args "portmap=3308:3306/tcp" --fakeroot   docker://mariadb:10.5 --socket=/var/lib/mysql/mariadb.sock --pid-file=/var/lib/mysql/mariadb.pid
 ```
 
 ## Why does the MariaDB container start as root?
 
-The MariaDB entrypoint briefly starts as root, and if a explicit volume is there, the owner of this volume will be root. To allow MariaDB to use the CHOWN capability to change to the volume owner to a user that can write to this volume, it needs to be briefly root. After this one action is taken, the entrypoint uses **gosu** to drop to a non-root user and continues execution. There is no accessible exploit vector to remotely affect the container startup when it is briefly running as the root user.
+The MariaDB entrypoint briefly starts as `root`, and if an explicit volume is there, the owner of this volume will be `root`. To allow MariaDB to use the `CHOWN` capability to change the volume owner to a user that can write to this volume, it needs to be briefly `root`. After this one action is taken, the entrypoint uses `gosu` to drop to a non-root user and continues execution. There is no accessible exploit vector to remotely affect the container startup when it is briefly running as the `root` user.
 
 ## Can I run the MariaDB container as an arbitrary user?
 
-Yes. using the _user: 2022_ in a compose file, or _--user 2022_ as a command will run the entrypoint as the user id 2022. When this occurs, it is assumed that the volume of the datadir has the right permissions for MariaDB to access the datadir. This can be useful if your local user is user id 2022 and your datadir is owned locally by this user. Note inside the container there isn't the same user names outside the container defined, so working with numbers is more portable.
+In a Docker Compose file or when running a command, you can specify the user with `user: 2022` or `--user 2022` to execute the entrypoint as user ID 2022. Ensure the datadir volume has appropriate permissions for MariaDB access, aligning with local ownership by user ID 2022. Note that inside the container, user names are not defined as they are outside, so using numeric IDs offers better portability.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
