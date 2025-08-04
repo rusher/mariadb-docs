@@ -6,7 +6,7 @@ For documentation about the `mariadb-tzinfo-to-sql` utility, see [mysql\_tzinfo\
 
 First, we should install `mariadb-tzinfo-to-sql` if it is available on our system. For example, to install it on Ubuntu, we can use this task. For other systems, use the proper module and package name.
 
-```ini
+```yaml
 - name: Update timezone info
   tags: [ timezone-update ]
   apt:
@@ -24,7 +24,7 @@ We also specify a `timezone-update` tag, so we can apply the role to only update
 
 The next task runs `mariadb-tzinfo-to-sql`.
 
-```
+```yaml
 - name: Move system timezone info into MariaDB
   tags: [ timezone-update ]
   shell: >

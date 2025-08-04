@@ -1,19 +1,14 @@
-
 # Installing MariaDB .deb Files with Ansible
 
 This page refers to the operations described in [Installing MariaDB .deb Files](../../installing-mariadb-deb-files.md). Refer to that page for a complete list and explanation of the tasks that should be performed.
 
-
 Here we discuss how to automate such tasks using Ansible. For example, here we show how to install a package or how to import a GPG key; but for an updated list of the necessary packages and for the keyserver to use, you should refer to [Installing MariaDB .deb Files](../../installing-mariadb-deb-files.md).
-
 
 ## Adding apt Repositories
 
-
 To [add a repository](../../installing-mariadb-deb-files.md#executing-add-apt-repository):
 
-
-```
+```yaml
 - name: Add specified repository into sources list
   ansible.builtin.apt_repository:
     repo: deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu bionic main
@@ -22,8 +17,7 @@ To [add a repository](../../installing-mariadb-deb-files.md#executing-add-apt-re
 
 If you prefer to keep the repository information in a [source list file](../../installing-mariadb-deb-files.md#creating-a-source-list-file) in the Ansible repository, you can upload that file to the target hosts in this way:
 
-
-```
+```yaml
 - name: Create a symbolic link
   ansible.builtin.file:
     src: ./file/mariadb.list
@@ -36,17 +30,13 @@ If you prefer to keep the repository information in a [source list file](../../i
 
 ## Updating the Repository Cache
 
+Both the Ansible modules [ansible.builtin.apt](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html) and [ansible.builtin.apt\_repository](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html) have an `update_cache` attribute. In ansible.builtin.apt it is set to "no" by default. Whenever a task sets it to 'yes', `apt-get update` is run on the target system. You have three ways to make sure that repositories are updated.
 
-Both the Ansible modules [ansible.builtin.apt](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html) and [ansible.builtin.apt_repository](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_repository_module.html) have an `update_cache` attribute. In ansible.builtin.apt it is set to "no" by default. Whenever a task sets it to 'yes', `apt-get update` is run on the target system. You have three ways to make sure that repositories are updated.
-
-
-The first is to use ansible.builtin.apt_repository to add the desired repository, as shown above. So you only need to worry about updating repositories if you use the file method.
-
+The first is to use ansible.builtin.apt\_repository to add the desired repository, as shown above. So you only need to worry about updating repositories if you use the file method.
 
 The second is to make sure that `update_cache` is set to 'yes' when you install a repository:
 
-
-```
+```yaml
 - name: Install foo
   apt:
     name: foo
@@ -55,8 +45,7 @@ The second is to make sure that `update_cache` is set to 'yes' when you install 
 
 But if you run certain tasks conditionally, this option may not be very convenient. So the third option is to update the repository cache explicitly as a separate task:
 
-
-```
+```yaml
 - name: Update repositories
   apt:
     - update_cache: yes
@@ -64,11 +53,9 @@ But if you run certain tasks conditionally, this option may not be very convenie
 
 ## Importing MariaDB GPG Key
 
+To [import the GPG key](../../installing-mariadb-deb-files.md#importing-the-mariadb-gpg-public-key) for MariaDB we can use the [ansible.builtin.apt\_key](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_key_module.html) Ansible module. For example:
 
-To [import the GPG key](../../installing-mariadb-deb-files.md#importing-the-mariadb-gpg-public-key) for MariaDB we can use the [ansible.builtin.apt_key](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_key_module.html) Ansible module. For example:
-
-
-```
+```yaml
 - name: Add an apt key by id from a keyserver
   ansible.builtin.apt_key:
     keyserver: hkp://keyserver.ubuntu.com:80
@@ -77,11 +64,9 @@ To [import the GPG key](../../installing-mariadb-deb-files.md#importing-the-mari
 
 ## Installing Packages
 
-
 To install Deb packages into a system:
 
-
-```
+```yaml
 - name: Install software-properties-common
   apt:
     name: software-properties-common
@@ -90,8 +75,7 @@ To install Deb packages into a system:
 
 To make sure that a specific version is installed, performing an upgrade or a downgrade if necessary:
 
-
-```
+```yaml
 - name: Install foo 1.0
   apt:
     name: foo=1.0
@@ -99,11 +83,9 @@ To make sure that a specific version is installed, performing an upgrade or a do
 
 To install a package or upgrade it to the latest version, use: `state: latest`.
 
-
 To install multiple packages at once:
 
-
-```
+```yaml
 - name: Install the necessary packages
   apt:
     pkg:
@@ -113,34 +95,25 @@ To install multiple packages at once:
 
 If all your servers run on the same system, you will always use ansible.builtin.apt and the names and versions of the packages will be the same for all servers. But suppose you have some servers running systems from the Debian family, and others running systems from the Red Hat family. In this case, you may find convenient to use two different task files for two different types of systems. To include the proper file for the target host's system:
 
-
-```
+```yaml
 - include: mariadb-debian.yml
   when: "{{ ansible_facts['os_family'] }} == 'Debian'
 ```
 
 The variables you can use to run the tasks related to the proper system are:
 
-
-* [ansible_fact ['distribution']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-distribution)
-* [ansible_fact ['distribution_major_version']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-distribution-major-version)
-* [ansible_fact ['os_family']](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-os-family)
-
+* [ansible\_fact \['distribution'\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-distribution)
+* [ansible\_fact \['distribution\_major\_version'\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-distribution-major-version)
+* [ansible\_fact \['os\_family'\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#ansible-facts-os-family)
 
 There is also a system-independent [package module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html), but if the package names depend on the target system using it may be of very little benefit.
 
-
 ## See Also
-
 
 * [Installing MariaDB .deb Files](../../installing-mariadb-deb-files.md)
 
-
-
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

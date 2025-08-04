@@ -2,13 +2,13 @@
 
 Users need to run [mariadb-install-db.exe](../installing-system-tables-mariadb-install-db/mariadb-install-db-exe.md), without parameters to create a data directory, e.g
 
-```
+```bash
 C:\zip_unpack\directory> bin\mariadb-install-db.exe
 ```
 
 Then you can start server like this
 
-```
+```bash
 C:\zip_unpack\directory> bin\mariadbd.exe --console
 ```
 

@@ -67,11 +67,9 @@ Creating a local mirror of the MariaDB Enterprise Repository or the MariaDB Comm
 
 1. [Configure a MariaDB repository.](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/repo/README.md#configure-mariadb-repository)
 2. Set up a repository mirroring tool, for example:
-
-* For YUM: `reposync`, available at: [23016](https://access.redhat.com/solutions/23016)
-* For APT: `debmirror`, available at: [Setup#Debian\_Repository\_Mirroring\_Tools](https://wiki.debian.org/DebianRepository/Setup#Debian_Repository_Mirroring_Tools)
-
-1. Secure the repository mirror to prevent outside access.
+   * YUM: `reposync`, available at: [23016](https://access.redhat.com/solutions/23016)
+   * APT: `debmirror`, available at: [Setup#Debian\_Repository\_Mirroring\_Tools](https://wiki.debian.org/DebianRepository/Setup#Debian_Repository_Mirroring_Tools)
+3. Secure the repository mirror to prevent outside access.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

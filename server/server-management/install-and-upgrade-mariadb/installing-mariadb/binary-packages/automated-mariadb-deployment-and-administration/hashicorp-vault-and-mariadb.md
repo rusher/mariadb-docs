@@ -41,7 +41,7 @@ The main Vault components are:
 
 It is possible to start Vault in dev mode:
 
-```
+```bash
 vault server -dev
 ```
 

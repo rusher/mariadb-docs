@@ -38,49 +38,49 @@ As mentioned, Orchestrator can be used from the command-line. Here you can find 
 
 List clusters:
 
-```
+```bash
 orchestrator -c clusters
 ```
 
 Discover a specified instance and add it to the known topology:
 
-```
+```bash
 orchestrator -c discover -i <host>:<port>
 ```
 
 Forget about an instance:
 
-```
+```bash
 orchestrator -c topology -i <host>:<port>
 ```
 
 Move a replica to a different master:
 
-```
+```bash
 orchestrator -c move-up -i <replica-host>:<replica-port> -d <master-host>:<master-port>
 ```
 
 Move a replica up, so that it becomes a "sibling" of its master:
 
-```
+```bash
 orchestrator -c move-up -i <replica-host>:<replica-port>
 ```
 
 Move a replica down, so that it becomes a replica of its"sibling":
 
-```
+```bash
 orchestrator -c move-below -i <replica-host>:<replica-port> -d <master-host>:<master-port>
 ```
 
 Make a node read-only:
 
-```
+```bash
 orchestrator -c set-read-only -i <host>:<port>
 ```
 
 Make a node writeable:
 
-```
+```bash
 orchestrator -c set-writeable -i <host>:<port>
 ```
 
