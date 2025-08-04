@@ -19,13 +19,12 @@ int mysql_stmt_fetch_column(MYSQL_STMT * stmt,
 This function can be used to fetch large data of a single column in pieces. Returns zero on success, non-zero on failure.
 
 {% hint style="info" %}
-The size of the buffer is specified within MYSQL\_BIND structure.
+The size of the buffer is specified within `MYSQL_BIND` structure.
 {% endhint %}
 
 ## See Also
 
 * [mysql\_stmt\_fetch()](mysql_stmt_fetch.md)
 * [mysql\_stmt\_send\_long\_data()](mysql_stmt_send_long_data.md)
-
 
 {% @marketo/form formId="4316" %}
