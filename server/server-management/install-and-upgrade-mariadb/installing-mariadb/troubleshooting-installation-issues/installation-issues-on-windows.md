@@ -12,7 +12,7 @@ Recent versions of MariaDB may not install on unsupported Windows versions. See 
 
 ## [MariaDB 5.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-525-release-notes) and earlier
 
-### On Windows Vista/7 , changes to database or my.ini are not persistent, when mysqld.exe is run from the command line.
+On Windows Vista/7 , changes to database or my.ini are not persistent, when mysqld.exe is run from the command line.
 
 The reason for this behavior is Vista/Win7 file system redirection. Writes to\
 protected locations (in this case a subdirectory of Program Files) are\
