@@ -89,9 +89,9 @@ Start MariaDB Enterprise Server on the restored data directory.
 
 ## Storage Snapshots
 
-**Technical challenge: Backup resource overhead, backup duration**
+**Technical challenge: Backup resource overhead, backup duration.**
 
-**Trade-off: Limited to platforms with volume-level snapshots, may require crash recovery**
+**Trade-off: Limited to platforms with volume-level snapshots, may require crash recovery.**
 
 While MariaDB Enterprise Backups produces file-level backups, users on storage solutions may prefer to instead perform volume-level snapshots to minimize resource impact. This storage capability exists with some SAN, NAS, and volume manager platforms.
 
@@ -99,7 +99,7 @@ Snapshots occur point-in-time, so no preparation step is needed to ensure data i
 
 Just as traditional full, incremental, and partial backups should be tested, so too should recovery from snapshots be tested on an ongoing basis.
 
-### Snapshotting
+## Taking Snapshots
 
 {% tabs %}
 {% tab title="Current" %}

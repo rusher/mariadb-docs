@@ -2,7 +2,7 @@
 
 ## Overview
 
-Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) backup and restore operations are performed using MariaDB Enterprise Backup, an enterprise-build of [MariaDB Backup](mariadb-backup/).
+Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) backup and restore operations are performed using MariaDB Enterprise Backup, an enterprise-build of [MariaDB Backup](../mariadb-backup/).
 
 MariaDB Enterprise Backup is compatible with MariaDB Enterprise Server.
 
@@ -17,7 +17,7 @@ MariaDB Enterprise Backup is compatible with MariaDB Enterprise Server.
 
 ## Storage Engines and Backup Types
 
-MariaDB Backup creates a file-level backup of data from the MariaDB Community Server data directory. This backup includes [temporal data](../../reference/sql-structure/temporal-tables/), and the encrypted and unencrypted tablespaces of supported storage engines (e.g., [InnoDB](../storage-engines/innodb/), [MyRocks](../storage-engines/myrocks/), [Aria](../storage-engines/aria/)).
+MariaDB Backup creates a file-level backup of data from the MariaDB Community Server data directory. This backup includes [temporal data](../../../reference/sql-structure/temporal-tables/), and the encrypted and unencrypted tablespaces of supported storage engines (e.g., [InnoDB](../../storage-engines/innodb/), [MyRocks](../../storage-engines/myrocks/), [Aria](../../storage-engines/aria/)).
 
 MariaDB Enterprise Server implements:
 
@@ -520,7 +520,7 @@ Create Table: CREATE TABLE `t1` (
 
 Recovering from a backup restores the data directory at a specific point-in-time, but it does not restore the binary log. In a point-in-time recovery, you begin by restoring the data directory from a full or incremental backup, then use the mysqlbinlog utility to recover the binary log data to a specific point in time.
 
-1. First, prepare the backup as you normally would for a [full](mariadb-backup/full-backup-and-restore-with-mariadb-backup.md) or [incremental](mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md) backup:
+1. First, prepare the backup as you normally would for a [full](../mariadb-backup/full-backup-and-restore-with-mariadb-backup.md) or [incremental](../mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md) backup:
 
 ```bash
 mariadb-backup --prepare --target-dir=/data/backups/full
