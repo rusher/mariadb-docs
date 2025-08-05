@@ -2,29 +2,18 @@
 
 There are a several options and system variables related to the [MariaDB Audit Plugin](./), once it has been [installed](mariadb-audit-plugin-installation.md). System variables can be displayed using the [SHOW VARIABLES](../../sql-statements/administrative-sql-statements/show/show-variables.md) statement like so:
 
-```sql
-SHOW GLOBAL VARIABLES LIKE '%server_audit%';
+<pre class="language-sql"><code class="lang-sql">SHOW GLOBAL VARIABLES LIKE '%server_audit%';
 
 +-------------------------------+-----------------------+
 | Variable_name                 | Value                 |
 +-------------------------------+-----------------------+
 | server_audit_events           | CONNECT,QUERY,TABLE   |
 | server_audit_excl_users       |                       |
-| server_audit_file_path        | server_audit.log      |
-| server_audit_file_rotate_now  | OFF                   |
-| server_audit_file_rotate_size | 1000000               |
-| server_audit_file_rotations   | 9                     |
-| server_audit_incl_users       |                       |
-| server_audit_logging          | ON                    |
-| server_audit_mode             | 0                     |
-| server_audit_output_type      | file                  |
-| server_audit_query_log_limit  | 1024                  |
-| server_audit_syslog_facility  | LOG_USER              |
-| server_audit_syslog_ident     | mysql-server_auditing |
-| server_audit_syslog_info      |                       |
+<strong>| server_audit_file_path        | server_audit.log      |
+</strong>| ...                           | ...                   |
 | server_audit_syslog_priority  | LOG_INFO              |
 +-------------------------------+-----------------------+
-```
+</code></pre>
 
 To change the value of one of these variables, you can use the `SET` statement, or set them at the command-line when starting MariaDB. It's recommended that you set them in the MariaDB configuration for the server like so:
 
@@ -57,12 +46,22 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 #### `server_audit_excl_users`
 
 * Description: If not empty, it contains the list of users whose activity will NOT be logged: `SET GLOBAL server_audit_excl_users='user_foo, user_bar'`. CONNECT records aren't affected by this variable - they are always logged. The user is still logged if it's specified in [server\_audit\_incl\_users](mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users).
-* Command line: `--server-audit-excl-users=value`
+* Command line: `--server-audit-excl-users=`_`value`_
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value: Empty string
 * Size limit: 1024 characters
+
+#### `server_audit_file_buffer_size`
+
+* Description: Size (in bytes) of file buffer to make logging faster.
+* Command line: `--server-audit-file-bugger-size=`_`#`_&#x20;
+* Scope: Global
+* Dynamic: ?
+* Data Type: `numeric`
+* Size limit: ?
+* Introduced: MariaDB 12.1
 
 #### `server_audit_file_path`
 
@@ -160,7 +159,17 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `1024`
-* Range: `0` to `2147483647`
+* Range: `0` to `2147483647`&#x20;
+
+#### `server_audit_sync_log_file`
+
+* Description: Force sync log file.
+* Command line: `--server-audit-sync-log-file`
+* Scope: Global
+* Dynamic: ?
+* Data Type: N/A
+* Default Value: N/A
+* Introduced: MariaDB 12.1
 
 #### `server_audit_syslog_facility`
 
@@ -209,7 +218,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
     * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN ](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN ](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)while the server is running.
   * See [MariaDB Audit Plugin - Installation: Prohibiting Uninstallation](mariadb-audit-plugin-installation.md#prohibiting-uninstallation) for more information.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Command line: `--server-audit=val`
