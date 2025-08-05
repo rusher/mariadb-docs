@@ -10,13 +10,14 @@ In this page we discuss basic Vagrant concepts.
 
 ## Vagrant Concepts
 
-A **Vagrant machine** is compiled from a box. It can be a virtual machine, a container or a remote server from a cloud service.
+Following are the core Vagrant concepts:
 
-A **box** is a package that can be used to create Vagrant machines. We can download boxes from app.vagrantup.com, or we can build a new box from a Vagrantfile. A box can be used as a base for another box. The base boxes are usually operating system boxes downloaded from app.vagrantup.com.
-
-A **provider** is responsible for providing the virtualization technology that will run our machine.
-
-A **provisioner** is responsible for installing and configuring the necessary software on a newly created Vagrant machine.
+| Concept         | Description                                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Vagrant Machine | The final environment created from a box. It can be a virtual machine, a container, or a remote cloud server.                           |
+| Box             | A reusable package used to create Vagrant machines. It can be a base OS image downloaded from Vagrant Cloud or a custom-built template. |
+| Provider        | The underlying virtualization technology that runs the machine (e.g., VirtualBox, VMware, Hyper-V, Docker).                             |
+| Provisioner     | A tool or script (e.g., Shell, Ansible, Puppet) that automatically installs and configures software on the machine after it is created. |
 
 ### Example
 
@@ -72,13 +73,13 @@ If you need to use an unsupported provisioning method, you can develop a custom 
 
 It is possible to install a plugin with this command:
 
-```
+```bash
 vagrant plugin install <plugin_name>
 ```
 
 A Vagrantfile can require that a plugin is installed in this way:
 
-```
+```bash
 require 'plugin_name'
 ```
 
@@ -98,32 +99,32 @@ This is a list of the most common Vagrant commands. For a complete list, see [Co
 
 To list the available machines:
 
-```
+```bash
 vagrant box list
 ```
 
 To start a machine from a box:
 
-```
+```bash
 cd /box/directory
 vagrant up
 ```
 
 To connect to a machine:
 
-```
+```bash
 vagrant ssh
 ```
 
 To see all machines status and their id:
 
-```
+```bash
 vagrant global-status
 ```
 
 To destroy a machine:
 
-```
+```bash
 vagrant destroy <id>
 ```
 

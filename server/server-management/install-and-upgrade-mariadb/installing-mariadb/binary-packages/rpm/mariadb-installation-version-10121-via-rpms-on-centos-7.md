@@ -1,90 +1,139 @@
 # MariaDB Installation (Version 10.1.21) via RPMs on CentOS 7
 
-Here are the detailed steps for installing MariaDB (version 10.1.21) via RPMs on CentOS 7.
 
-The RPM's needed for the installation are all available on the MariaDB website and are given below:
 
-* jemalloc-3.6.0-1.el7.x86\_64.rpm
-* MariaDB-10.1.21-centos7-x86\_64-client.rpm
-* MariaDB-10.1.21-centos7-x86\_64-compat.rpm
-* galera-25.3.19-1.rhel7.el7.centos.x86\_64.rpm
-* jemalloc-devel-3.6.0-1.el7.x86\_64.rpm
-* MariaDB-10.1.21-centos7-x86\_64-common.rpm
-* MariaDB-10.1.21-centos7-x86\_64-server.rpm
+This guide provides the detailed steps for installing MariaDB 10.1.21 via individual RPM packages on CentOS 7. The process involves installing dependencies, then the main packages, and resolving potential conflicts as they appear.
 
-Step by step installation:
-
-*
-  1. First install all of the dependencies needed. Its easy to do this via YUM packages:\
-     yum install rsync nmap lsof perl-DBI nc
-*
-  2. rpm -ivh jemalloc-3.6.0-1.el7.x86\_64.rpm
-*
-  3. rpm -ivh jemalloc-devel-3.6.0-1.el7.x86\_64.rpm
-*
-  4. rpm -ivh MariaDB-10.1.21-centos7-x86\_64-common.rpm MariaDB-10.1.21-centos7-x86\_64-compat.rpm MariaDB-10.1.21-centos7-x86\_64-client.rpm galera-25.3.19-1.rhel7.el7.centos.x86\_64.rpm MariaDB-10.1.21-centos7-x86\_64-server.rpm
-
-While installing MariaDB-10.1.21-centos7-x86\_64-common.rpm there might be a conflict with older MariaDB packages. we need to remove them and install the original rpm again.
-
-Here is the error message for dependencies:
+The RPMs needed for the installation are available from the MariaDB website. The required packages for this guide are:
 
 ```
+jemalloc-3.6.0-1.el7.x86_64.rpm
+MariaDB-10.1.21-centos7-x86_64-client.rpm
+MariaDB-10.1.21-centos7-x86_64-compat.rpm
+galera-25.3.19-1.rhel7.el7.centos.x86_64.rpm
+jemalloc-devel-3.6.0-1.el7.x86_64.rpm
+MariaDB-10.1.21-centos7-x86_64-common.rpm
+MariaDB-10.1.21-centos7-x86_64-server.rpm
+```
+
+#### Step-by-Step Installation
+
+1\. Install Basic Dependencies
+
+First, use yum to install some general system packages that may be required.
+
+```bash
+yum install rsync nmap lsof perl-DBI nmap-ncat
+```
+
+2\. Install MariaDB RPM Packages
+
+Next, install the downloaded RPMs in sequence. Make sure to run these commands as a user with sufficient privileges (e.g., using sudo).
+
+```bash
+rpm -ivh jemalloc-3.6.0-1.el7.x86_64.rpm
+rpm -ivh jemalloc-devel-3.6.0-1.el7.x86_64.rpm
+rpm -ivh MariaDB-10.1.21-centos7-x86_64-common.rpm
+rpm -ivh MariaDB-10.1.21-centos7-x86_64-compat.rpm
+rpm -ivh MariaDB-10.1.21-centos7-x86_64-client.rpm
+rpm -ivh galera-25.3.19-1.rhel7.el7.centos.x86_64.rpm
+rpm -ivh MariaDB-10.1.21-centos7-x86_64-server.rpm
+```
+
+{% hint style="warning" %}
+During this process, you may encounter errors related to dependencies or conflicts. The sections below describe these common issues and their solutions.
+{% endhint %}
+
+#### Troubleshooting Common Installation Errors and Warnings
+
+**Error 1: Package Conflict with `mariadb-libs`**
+
+{% tabs %}
+{% tab title="Error Message" %}
+While installing `mariadb-common`, you may encounter a conflict with an existing package.
+
+```bash
 # rpm -ivh MariaDB-10.1.21-centos7-x86_64-common.rpm 
+
 warning: MariaDB-10.1.21-centos7-x86_64-common.rpm: Header V4 DSA/SHA1 Signature, key ID 1bb943db: NOKEY
 error: Failed dependencies:
 	mariadb-libs < 1:10.1.21-1.el7.centos conflicts with MariaDB-common-10.1.21-1.el7.centos.x86_64
 ```
+{% endtab %}
 
-Solution:\
-search for this package:
+{% tab title="Solution" %}
+You must find and remove the conflicting `mariadb-libs` package.
 
-```
-# rpm -qa | grep mariadb-libs
-mariadb-libs-5.5.52-1.el7.x86_64
-```
+```bash
+# Search for the installed package
+rpm -qa | grep mariadb-libs
+# Expected output: mariadb-libs-5.5.52-1.el7.x86_64
 
-Remove this package:
-
-```
-# rpm -ev --nodeps mariadb-libs-5.5.52-1.el7.x86_64
-Preparing packages...
-mariadb-libs-1:5.5.52-1.el7.x86_64
+# Remove the conflicting package (use the exact name from the command above)
+rpm -ev --nodeps mariadb-libs-5.5.52-1.el7.x86_64
 ```
 
-While installing the Galera package there might be a conflict in installation for a dependency package.\
-Here is the error message:
+After removing it, you can run the `rpm -ivh MariaDB-10.1.21-centos7-x86_64-common.rpm` command again.
+{% endtab %}
+{% endtabs %}
 
-```
-[root@centos-2 /]# rpm -ivh galera-25.3.19-1.rhel7.el7.centos.x86_64.rpm 
+**Error 2: Failed Dependency for Galera**
+
+{% tabs %}
+{% tab title="Error Message" %}
+While installing the Galera package, the installation may fail due to a missing library.
+
+```bash
+# rpm -ivh galera-25.3.19-1.rhel7.el7.centos.x86_64.rpm 
+
 error: Failed dependencies:
 	libboost_program_options.so.1.53.0()(64bit) is needed by galera-25.3.19-1.rhel7.el7.centos.x86_64
-
-The dependencies for Galera package is: libboost_program_options.so.1.53.0
 ```
+{% endtab %}
 
-Solution:
+{% tab title="Solution" %}
+The required dependency `libboost_program_options` can be installed using yum.
 
-```
+```bash
 yum install boost-devel.x86_64
 ```
 
-Another warning message while installing Galera package is as shown below:
+After installing `boost-devel`, you can run the `rpm -ivh galera...` command again.
+{% endtab %}
+{% endtabs %}
+
+**Warning: GPG Key `NOKEY`**
+
+{% tabs %}
+{% tab title="Warning Message" %}
+You may also see a warning about a missing GPG key during the installation.
 
 ```
 warning: galera-25.3.19-1.rhel7.el7.centos.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 1bb943db: NOKEY
 ```
+{% endtab %}
 
-The solution for this is to import the key:
+{% tab title="Solution" %}
+This warning can be resolved by importing the official MariaDB GPG key.
 
+```bash
+rpm --import http://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 ```
-#rpm --import http://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+{% endtab %}
+{% endtabs %}
+
+#### Post-Installation
+
+After all RPMs are successfully installed, the final step is to secure the server. This involves setting the root password, removing test databases, and disallowing remote root login.
+
+```bash
+# First, start the newly installed MariaDB service
+systemctl start mariadb
+
+# Now, run the security script and follow the prompts
+mysql_secure_installation
 ```
 
-After step 4, the installation will be completed. The last step will be to run [mysql\_secure\_installation](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_secure_installation.md) to secure the production server by dis allowing remote login for root, creating root password and removing the test database.
+***
 
-*
-  5. mysql\_secure\_installation
-
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
-{% @marketo/form formId="4316" %}
+_This page is licensed: CC BY-SA / Gnu FDL_

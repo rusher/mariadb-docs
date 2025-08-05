@@ -8,7 +8,7 @@ There is a version specifically for Windows, [mysql\_install\_db.exe](mariadb-in
 
 To invoke `mariadb-install-db`, use the following syntax:
 
-```
+```bash
 mariadb-install-db --user=mysql
 ```
 
