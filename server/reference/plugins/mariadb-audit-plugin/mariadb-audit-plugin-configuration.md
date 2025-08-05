@@ -24,7 +24,7 @@ SHOW GLOBAL VARIABLES LIKE 'server_audit%';
 | server_audit_mode             | 0                     |
 | server_audit_output_type      | file                  |
 | server_audit_query_log_limit  | 1024                  |
-| server_audit_sync_log_file.   |                       |
+| server_audit_sync_log_file    |                       |
 | server_audit_syslog_facility  | LOG_USER              |
 | server_audit_syslog_ident     | mysql-server_auditing |
 | server_audit_syslog_info      |                       |
