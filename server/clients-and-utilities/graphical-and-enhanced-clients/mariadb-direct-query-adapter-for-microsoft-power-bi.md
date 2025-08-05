@@ -28,8 +28,8 @@ To use MariaDB Direct Query Adapter with Microsoft Power BI Desktop:
 1. Check the [system requirements for Microsoft Power BI Desktop](https://www.microsoft.com/en-us/download/details.aspx?id=58494).
 2. Download [Microsoft Power BI Desktop](https://www.microsoft.com/en-us/download/details.aspx?id=58494) using the Microsoft instructions.
 3. Download [MariaDB ODBC Connector](https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector).
-4. Select MariaDB ODBC Connector v3.1.10 or later for MS Windows 64-bit.
-5. Click on the download or choose "Open" to start the MariaDB ODBC Connector 64-bit Setup Wizard.
+4. Select MariaDB ODBC Connector v3.1.10 or later for Windows.
+5. Click on the download or choose "Open" to start the MariaDB ODBC Connector Setup Wizard.
 6. Click "Next".
 7. Read and accept the terms and agreement.
 8. Click "Next".
