@@ -2,7 +2,7 @@
 
 ## Overview
 
-Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) backup and restore operations are performed using MariaDB Enterprise Backup, an enterprise-build of [MariaDB Backup](../mariadb-backup/).
+Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) backup and restore operations are performed using MariaDB Enterprise Backup, an enterprise-build of [MariaDB Backup](mariadb-backup/).
 
 MariaDB Enterprise Backup is compatible with MariaDB Enterprise Server.
 
@@ -17,7 +17,7 @@ MariaDB Enterprise Backup is compatible with MariaDB Enterprise Server.
 
 ## Storage Engines and Backup Types
 
-MariaDB Backup creates a file-level backup of data from the MariaDB Community Server data directory. This backup includes [temporal data](../../../reference/sql-structure/temporal-tables/), and the encrypted and unencrypted tablespaces of supported storage engines (e.g., [InnoDB](../../storage-engines/innodb/), [MyRocks](../../storage-engines/myrocks/), [Aria](../../storage-engines/aria/)).
+MariaDB Backup creates a file-level backup of data from the MariaDB Community Server data directory. This backup includes [temporal data](../../reference/sql-structure/temporal-tables/), and the encrypted and unencrypted tablespaces of supported storage engines (e.g., [InnoDB](../storage-engines/innodb/), [MyRocks](../storage-engines/myrocks/), [Aria](../storage-engines/aria/)).
 
 MariaDB Enterprise Server implements:
 
@@ -29,7 +29,7 @@ Backup support is specific to storage engines. All supported storage engines ena
 
 **Note:** MariaDB Enterprise Backup does not support backups of MariaDB ColumnStore. Backup of MariaDB ColumnStore can be performed using [MariaDB ColumnStore Tools](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards). Backup of data ingested to MariaDB ColumnStore can also occur pre-ingestion, such as in the case of HTAP where backup could occur of transactional data in MariaDB Enterprise Server, and restore of data to MariaDB ColumnStore would then occur through reprocessing..
 
-## Non-blocking Backups
+## Nonblocking Backups
 
 A feature of MariaDB Enterprise Backup and MariaDB Enterprise Server, non-blocking backups minimize workload impact during backups. When MariaDB Enterprise Backup connects to MariaDB Enterprise Server, staging operations are initiated to protect data during read.
 
@@ -520,7 +520,7 @@ Create Table: CREATE TABLE `t1` (
 
 Recovering from a backup restores the data directory at a specific point-in-time, but it does not restore the binary log. In a point-in-time recovery, you begin by restoring the data directory from a full or incremental backup, then use the mysqlbinlog utility to recover the binary log data to a specific point in time.
 
-1. First, prepare the backup as you normally would for a [full](../mariadb-backup/full-backup-and-restore-with-mariadb-backup.md) or [incremental](../mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md) backup:
+1. First, prepare the backup as you normally would for a [full](mariadb-backup/full-backup-and-restore-with-mariadb-backup.md) or [incremental](mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md) backup:
 
 ```bash
 mariadb-backup --prepare --target-dir=/data/backups/full

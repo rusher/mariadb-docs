@@ -30,7 +30,7 @@ To restore from a backup by moving files, use the `--move-back` option:
 mariadb-backup --move-back --target-dir=/data/backups/full
 ```
 
-## Multi-threading
+## Multithreading
 
 **Technical challenge:: CPU bottlenecks**
 
@@ -99,24 +99,30 @@ Snapshots occur point-in-time, so no preparation step is needed to ensure data i
 
 Just as traditional full, incremental, and partial backups should be tested, so too should recovery from snapshots be tested on an ongoing basis.
 
-### Snapshotting with MariaDB Enterprise Server
+### Snapshotting
 
-MariaDB Enterprise Server includes [advanced backup](mariadb-enterprise-backup.md#non-blocking-backups) functionality to reduce the impact of backup operations:
+{% tabs %}
+{% tab title="Current" %}
+
+
+MariaDB Server includes [advanced backup](mariadb-enterprise-backup.md#non-blocking-backups) functionality to reduce the impact of backup operations:
 
 1. Connect with a client and issue a `BACKUP STAGE START` statement and then a `BACKUP STAGE BLOCK_COMMIT` statement.
 2. Take the snapshot.
 3. Issue a `BACKUP STAGE END` statement.
 4. Once the backup has been completed, remove all files which begin with the `#sql prefix`. These files are generated when `ALTER TABLE` occurs during a staged backup.
 5. Retrieve, copy, or store the snapshot as is typical for your storage platform and as per business requirements to make the backup durable. This may require mounting the snapshot in some manner.
+{% endtab %}
 
-### Snapshotting with MariaDB Community Server
-
+{% tab title="< 10.11" %}
 It is recommended to briefly prevent writes while snapshotting. Specific commands vary depending on storage platform, business requirements, and setup, but a general approach is to:
 
 1. Connect with a client and issue a `FLUSH TABLES WITH READ LOCK` statement, leaving the client connected.
 2. Take the snapshot.
 3. Issue an `UNLOCK TABLES` statement, to remove the read lock.
 4. Retrieve, copy, or store the snapshot as is typical for your storage platform and as per business requirements to make the backup durable. This may require mounting the snapshot in some manner.
+{% endtab %}
+{% endtabs %}
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
