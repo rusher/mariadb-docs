@@ -83,7 +83,6 @@ Thanks, and enjoy MariaDB!
 ### Galera
 
 * galera\_3nodes.inconsistency\_shutdown test occasionally hangs ([MDEV-36968](https://jira.mariadb.org/browse/MDEV-36968))
-* The galera RPM wasn't buildable on Fedora 41 or later because of changes rpmbuild. The build script has been changed to be compatible with newer rpmbuild behaviour. ([MDEV-35108](https://jira.mariadb.org/browse/MDEV-35108))
 
 ### Replication
 
@@ -104,7 +103,7 @@ Thanks, and enjoy MariaDB!
 
 ### Character Sets
 
-* Fresh MariaDB 11.4 installation gives errors when configuring utf8 ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815))
+* Fresh MariaDB installation gives errors when configuring utf8 ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815))
 
 ### Packaging
 
