@@ -4,18 +4,13 @@
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 {% endhint %}
 
-`Annotate_rows` events accompany `row` events and describe the query which\
-caused the row event.
+`Annotate_rows` events accompany `row` events and describe the query which caused the row event.
 
-Until [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes), the binlog event type `Annotate_rows_log_event` was off by default (so as not to change the binary log format and to allow one to replicate [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) to MySQL/[MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)). You can enable this with [--binlog-annotate-row-events](annotate_rows_log_event.md#master-option-binlog-annotate-row-events).
-
-In the [binary log](./), each `Annotate_rows` event precedes the\
-corresponding Table map event or the first of the Table map events, if there\
-are more than one (e.g. in a case of multi-delete or insert delayed).
+In the [binary log](./), each `Annotate_rows` event precedes the corresponding Table map event or the first of the Table map events, if there are more than one (e.g. in a case of multi-delete or insert delayed).
 
 ## `Annotate_rows` Example
 
-```
+```sql
 master> DROP DATABASE IF EXISTS test;
 master> CREATE DATABASE test;
 master> USE test;
@@ -76,7 +71,7 @@ log. See [binlog\_annotate\_row\_events](../../../ha-and-performance/standard-re
 
 Session values allow you to annotate only some selected statements:
 
-```
+```sql
 ...
 SET SESSION binlog_annotate_row_events=ON;
 ... statements to be annotated ...
@@ -99,7 +94,7 @@ log contains them).
 
 ## Example of mariadb-binlog Output
 
-```
+```sql
 ...> mariadb-binlog.exe -vv -R --user=root --port=3306 --host=localhost master-bin.000001  
 
 /*!40019 SET @@session.max_insert_delayed_threads=0*/;
