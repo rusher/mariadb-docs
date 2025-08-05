@@ -1,5 +1,9 @@
 # Differences Between FederatedX and Federated
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 The main differences are:
 
 ## New features in FederatedX

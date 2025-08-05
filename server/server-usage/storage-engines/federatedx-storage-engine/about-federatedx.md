@@ -1,5 +1,9 @@
 # About FederatedX
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 The FederatedX storage engine is a fork of MySQL's [Federated storage engine](https://dev.mysql.com/doc/refman/5.5/en/federated-storage-engine.html), which is no longer being developed by Oracle. The original purpose of FederatedX was to keep this storage engine's development progressing-- to both add new features as well as fix old bugs.
 
 Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), the [CONNECT](../connect/) storage engine also allows access to a remote database via MySQL or ODBC connection (table types: [MYSQL](../connect/connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md), [ODBC](../connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)). However, in the current implementation there are several limitations.

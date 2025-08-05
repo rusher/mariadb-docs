@@ -1,5 +1,9 @@
 # Data Types
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 Many data types make no or little sense when applied to plain files. This why [CONNECT](./) supports only a restricted set of data types. However, ODBC, JDBC\
 or MYSQL source tables may contain data types not supported by CONNECT. In this\
 case, CONNECT makes an automatic conversion to a similar supported type when it\

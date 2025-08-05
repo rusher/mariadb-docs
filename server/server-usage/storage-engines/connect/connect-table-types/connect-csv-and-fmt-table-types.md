@@ -1,5 +1,9 @@
 # CONNECT CSV and FMT Table Types
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ## CSV Type
 
 Many source data files are formatted with variable length fields and records.\
@@ -71,12 +75,12 @@ specify the 'QUOTED=_n_' option to indicate the level of quoting and/or the\
 '`QCHAR=c`' to specify what is this eventual quoting character, which is`"` by default. Quoting with single quotes must be specified as`QCHAR=''''`. On writing, fields are quoted depending on the value of\
 the quoting level, which is `–1` by default meaning no quoting:
 
-|   |                                                                                                                                                                                                                                             |
-| - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   |                                                                                                                                                                                                                                     |
+| - | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0 | The fields between quotes are read and the quotes discarded. On writing, fields are quoted only if they contain the separator character or begin with the quoting character. If they contain the quoting character, it are doubled. |
-| 1 | Only text fields are written between quotes, except null fields. This includes also the column names of an eventual header.                                                                                                             |
-| 2 | All fields are written between quotes, except null fields.                                                                                                                                                                              |
-| 3 | All fields are written between quotes, including null fields.                                                                                                                                                                           |
+| 1 | Only text fields are written between quotes, except null fields. This includes also the column names of an eventual header.                                                                                                         |
+| 2 | All fields are written between quotes, except null fields.                                                                                                                                                                          |
+| 3 | All fields are written between quotes, including null fields.                                                                                                                                                                       |
 
 Files written this way are successfully read by most applications including spreadsheets.
 

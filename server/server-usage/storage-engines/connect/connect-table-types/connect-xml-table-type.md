@@ -1,5 +1,9 @@
 # CONNECT XML Table Type
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ## Overview
 
 CONNECT supports tables represented by XML files. For these tables, the\

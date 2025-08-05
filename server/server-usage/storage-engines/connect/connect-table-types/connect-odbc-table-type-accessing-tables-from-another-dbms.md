@@ -1,5 +1,9 @@
 # CONNECT ODBC Table Type: Accessing Tables From Another DBMS
 
+{% hint style="info" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ODBC (Open Database Connectivity) is a standard API for accessing database management systems (DBMS). CONNECT uses this API to access data contained in other DBMS without having to implement a specific application for each one. An exception is the access to MySQL that should be done using the [MYSQL table type](connect-mysql-table-type-accessing-mysqlmariadb-tables.md).
 
 Note: On Linux, unixODBC must be installed.

@@ -1,5 +1,9 @@
 # Using CONNECT - Virtual and Special Columns
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 CONNECT supports MariaDB [virtual and persistent columns](../../../../reference/sql-statements/data-definition/create/generated-columns.md). It is also possible to declare a column as\
 being a CONNECT special column. Let us see on an example how this can be done. The boys table we\
 have seen previously can be recreated as:

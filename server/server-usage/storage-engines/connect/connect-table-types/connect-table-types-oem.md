@@ -1,15 +1,12 @@
 # CONNECT Table Types - OEM: Implemented in an External LIB
 
-Although CONNECT provides a rich set of table types, specific applications may\
-need to access data organized in a way that is not handled by its existing\
-foreign data wrappers (FDW). To handle these cases, CONNECT features an\
-interface that enables developers to implement in C++ the required table wrapper\
-and use it as if it were part of the standard CONNECT table type list. CONNECT\
-can use these additional handlers providing the corresponding external module\
-(dll or shared lib) be available.
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
 
-To create such a table on an existing handler, use a Create Table statement as\
-shown below.
+Although CONNECT provides a rich set of table types, specific applications may need to access data organized in a way that is not handled by its existing foreign data wrappers (FDW). To handle these cases, CONNECT features an interface that enables developers to implement in C++ the required table wrapper and use it as if it were part of the standard CONNECT table type list. CONNECT can use these additional handlers providing the corresponding external module (dll or shared lib) be available.
+
+To create such a table on an existing handler, use a Create Table statement as shown below.
 
 ```
 CREATE TABLE xtab (COLUMN definitions)
@@ -22,13 +19,9 @@ The option module gives the name of the DLL or shared library implementing the O
 
 This library must export a function _GetMYTYPE_. The option subtype enables CONNECT to have the name of the exported function and to use the new table type. Other options are interpreted by the OEM type and can also be specified within the _option\_list_ option.
 
-Column definitions can be unspecified only if the external wrapper is able to\
-return this information. For this it must export a function ColMYTYPE returning\
-these definitions in a format acceptable by the CONNECT discovery function.
+Column definitions can be unspecified only if the external wrapper is able to return this information. For this it must export a function ColMYTYPE returning these definitions in a format acceptable by the CONNECT discovery function.
 
-Which and how options must be specified and the way columns must be defined may\
-vary depending on the OEM type used and should be documented by the OEM type\
-implementer(s).
+Which and how options must be specified and the way columns must be defined may vary depending on the OEM type used and should be documented by the OEM type implementer(s).
 
 ## An OEM Table Example
 

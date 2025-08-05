@@ -1,5 +1,9 @@
 # CONNECT DBF Table Type
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ## Overview
 
 A table of type `DBF` is physically a dBASE III or IV formatted file (used by\

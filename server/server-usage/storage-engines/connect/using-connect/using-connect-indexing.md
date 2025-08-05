@@ -1,5 +1,9 @@
 # Using CONNECT - Indexing
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 [Indexing](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/) is one of the main ways to optimize queries. Key columns, in\
 particular when they are used to join tables, should be indexed. But what\
 should be done for columns that have only few distinct values? If they are\

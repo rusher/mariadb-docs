@@ -1,5 +1,9 @@
 # OEM Table Example
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 This is an example showing how an OEM table can be implemented.
 
 The header File `my_global.h`:

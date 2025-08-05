@@ -1,6 +1,8 @@
 # CONNECT Zipped File Tables
 
-#### Note
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
 
 Connect can work on table files that are compressed in one or several zip files.
 
@@ -9,7 +11,7 @@ The specific options used when creating tables based on zip files are:
 | Table Option | Type    | Description                                                                                                                                                                                                                                               |
 | ------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ZIPPED       | Boolean | Required to be set as true.                                                                                                                                                                                                                               |
-| ENTRY\*      | String  | The optional name or pattern of the zip entry or entries to be used with the table. If not specified, all entries or only the first one are used depending on the mulentries option setting.                                                          |
+| ENTRY\*      | String  | The optional name or pattern of the zip entry or entries to be used with the table. If not specified, all entries or only the first one are used depending on the mulentries option setting.                                                              |
 | MULENTRIES\* | Boolean | True if several entries are part of the table. If not specified, it defaults to false if the entry option is not specified. If the entry option is specified, it defaults to true if the entry name contains wildcard characters or false if it does not. |
 | APPEND\*     | Boolean | Used when creating new zipped tables (see below)                                                                                                                                                                                                          |
 | LOAD\*       | String  | Used when creating new zipped tables (see below)                                                                                                                                                                                                          |
@@ -146,7 +148,7 @@ CREATE TABLE mkzq (whatever INT)
 ENGINE=connect table_type=DBF zipped=1
 file_name='C:/Data/EAUX/dbf/CQUART.ZIP'
 option_list='Load=C:/Data/EAUX/dbf/CQUART.DBF';
-``` 
+```
 
 ```sql
 CREATE TABLE zquart

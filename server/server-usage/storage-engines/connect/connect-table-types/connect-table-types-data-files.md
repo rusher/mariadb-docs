@@ -1,33 +1,21 @@
 # CONNECT Table Types - Data Files
 
-Most of the tables processed by CONNECT are just plain DOS or UNIX data files,\
-logically regarded as tables thanks to the description given when creating\
-the table. This description comes from the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md)\
-statement. Depending on the application, these tables can already exist as data\
-files, used as is by CONNECT, or can have been physically made by CONNECT as\
-the result of a `CREATE TABLE ... SELECT ...` and/or INSERT statement(s).
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
 
-The file _path/name_ is given by the `FILE_NAME` option. If it is a\
-relative path/name, it are relative to the database directory, the one\
-containing the table `.FRM` file.
+Most of the tables processed by CONNECT are just plain DOS or UNIX data files, logically regarded as tables thanks to the description given when creating the table. This description comes from the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement. Depending on the application, these tables can already exist as data files, used as is by CONNECT, or can have been physically made by CONNECT as the result of a `CREATE TABLE ... SELECT ...` and/or INSERT statement(s).
+
+The file _path/name_ is given by the `FILE_NAME` option. If it is a relative path/name, it are relative to the database directory, the one containing the table `.FRM` file.
 
 Unless specified, the maturity of file table types is stable.
 
 ## Multiple File Tables
 
-A **multiple** file table is one that is physically contained in several files\
-of the same type instead of just one. These files are processed sequentially\
-during the process of a query and the result is the same as if all the table\
-files were merged into one. This is great to process files coming from\
-different sources (such as cash register log files) or made at different time\
-periods (such as bank monthly reports) regarded as one table. Note that the\
-operations on such files are restricted to sequential Select and Update; and\
-that VEC multiple tables are not supported by CONNECT. The file list depends on\
-the setting of the **multiple** option of the `CREATE TABLE` statement for\
-that table.
+A **multiple** file table is one that is physically contained in several files of the same type instead of just one. These files are processed sequentially during the process of a query and the result is the same as if all the table files were merged into one. This is great to process files coming from different sources (such as cash register log files) or made at different time periods (such as bank monthly reports) regarded as one table. Note that the operations on such files are restricted to sequential Select and Update; and\
+that VEC multiple tables are not supported by CONNECT. The file list depends on the setting of the **multiple** option of the `CREATE TABLE` statement for that table.
 
-Multiple tables are specified by the option MULTIPLE=_n_, which can take\
-four values:
+Multiple tables are specified by the option MULTIPLE=_n_, which can take This storage engine has been deprecated.four values:
 
 |   |                                                                                                                                                                |
 | - | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |

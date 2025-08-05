@@ -1,5 +1,9 @@
 # CONNECT INI Table Type
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ## Overview
 
 The INI type is one of the configuration or initialization files often found on\
