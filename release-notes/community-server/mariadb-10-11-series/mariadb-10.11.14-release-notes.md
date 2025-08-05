@@ -35,6 +35,9 @@ Thanks, and enjoy MariaDB!
 * After a successful shrinking of innodb\_buffer\_pool\_size, there will be no message about it in the server error log.
   * After a failed shrinking of innodb\_buffer\_pool\_size, the adaptive hash index will not be re-enabled if innodb\_adaptive\_hash\_index was ON when SET GLOBAL innodb\_buffer\_pool\_size=... started to execute. ([MDEV-36868](https://jira.mariadb.org/browse/MDEV-36868))
 * AUTO\_INCREMENT leads to non-serializable on results ([MDEV-36330](https://jira.mariadb.org/browse/MDEV-36330))
+* The new parameter innodb\_linux\_aio controls which Linux implementation to use for innodb\_use\_native\_aio=ON. ([MDEV-36234](https://jira.mariadb.org/browse/MDEV-36234))
+  * innodb\_linux\_aio=auto is equivalent to innodb\_linux\_aio=io\_uring when it is available, and falling back to innodb\_linux\_aio=aio when not.
+  * Previously, only one implementation (libaio or io\_uring) was available. Currently, if io\_uring is disabled in the environment, we will fall back to the older libaio interface.
 
 ### Data Definition - Alter Table
 
@@ -105,12 +108,6 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 ### Packaging
 
 * mariadb systemd mult-instance service was changed to not attempt changes to the permissions on its pam helper server. This prevented unconstructive behaviour and errors in the systemd journal when starting the mariadb@.service. ([MDEV-36738](https://jira.mariadb.org/browse/MDEV-36738))
-
-### Docker
-
-* The new parameter innodb\_linux\_aio controls which Linux implementation to use for innodb\_use\_native\_aio=ON.
-  * innodb\_linux\_aio=auto is equivalent to innodb\_linux\_aio=io\_uring when it is available, and falling back to innodb\_linux\_aio=aio when not.
-  * Previously, only one implementation (libaio or io\_uring) was available. Currently, if io\_uring is disabled in the environment, we will fall back to the older libaio interface. ([MDEV-36234](https://jira.mariadb.org/browse/MDEV-36234))
 
 ### Sequences
 
