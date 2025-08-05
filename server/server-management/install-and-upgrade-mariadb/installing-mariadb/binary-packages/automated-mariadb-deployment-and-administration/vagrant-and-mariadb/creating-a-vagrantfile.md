@@ -8,7 +8,7 @@ A Vagrantfile is a Ruby file that instructs Vagrant to create, depending on how 
 
 Here is a simple Vagrantfile example:
 
-```
+```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "hashicorp/bionic64"
   config.vm.provider "virtualbox"
@@ -24,19 +24,19 @@ We use `vm.provision` to specify the name of the file that is going to be execut
 
 To create new Vagrant machines from the Vagrantfile, move to the directory that contains the Vagrant project and run:
 
-```
+```bash
 vagrant up
 ```
 
 To compile the Vagrantfile into a box:
 
-```
+```bash
 vagrant package
 ```
 
 These operations can take time. To preventively check if the Vagrantfile contains syntax errors or certain types of bugs:
 
-```
+```bash
 vagrant validate
 ```
 
@@ -52,7 +52,7 @@ It is possible to specify multiple providers. In this case, Vagrant will try to 
 
 Here is an example of providers usage:
 
-```
+```ruby
 Vagrant.configure("2") do |config|
     config.vm.box = "hashicorp/bionic64"
     config.vm.provider "virtualbox" do |vb|
@@ -79,7 +79,7 @@ To find out how to develop a new provisioner, see [Plugin Development: Provision
 
 In the example above, the [shell](https://www.vagrantup.com/docs/provisioning/shell) provisioner runs boostrap.sh inside the Vagrant machine to provision it. A simple bootstrap.sh may look like the following:
 
-```
+```bash
 #!/bin/bash
 
 apt-get update
@@ -98,7 +98,7 @@ If we use the `shell` provisioner, we need a way to upload files to the new mach
 
 Instead, we can just put the file we need to upload somewhere in the synced folder, and then copy it with a shell command:
 
-```
+```bash
 cp ./files/my.cnf /etc/mysql/conf.d/
 ```
 
@@ -106,7 +106,7 @@ cp ./files/my.cnf /etc/mysql/conf.d/
 
 Here is an example of how to provision a Vagrant machine or box by running Ansible:
 
-```
+```ruby
 Vagrant.configure("2") do |config|
   ...
   config.vm.provision "ansible" do |ansible|
@@ -123,7 +123,7 @@ For more information, see [Using Vagrant and Ansible](https://docs.ansible.com/a
 
 To provision a Vagrant machine or box by running Puppet:
 
-```ini
+```ruby
 Vagrant.configure("2") do |config|
   ...
   config.vm.provision "puppet" do |puppet|
@@ -139,7 +139,7 @@ Puppet needs to be installed in the guest machine.
 
 To use a Puppet server, the `puppet_server` provisioner can be used:
 
-```
+```ruby
 Vagrant.configure("2") do |config|
   ...
   config.vm.provision "puppet_server" do |puppet|
@@ -160,13 +160,13 @@ The project directory (the one that contains the Vagrantfile) by default is shar
 
 The synced folder can be changed. In the above example, we could simply add one line:
 
-```
+```ruby
 config.vm.synced_folder "/host/path", "/guest/path"
 ```
 
 The synced folder can also be disabled:
 
-```
+```ruby
 config.vm.synced_folder '.', '/vagrant', disabled: true
 ```
 
@@ -192,13 +192,13 @@ Some providers support multiple private networks. This means that every network 
 
 The following line shows how to create or join a private network called "example", where this machine's IP is assigned by the provider via DHCP:
 
-```
+```ruby
 config.vm.network 'private_network', name: 'example', type: 'dhcp'
 ```
 
 While this is very convenient to avoid IP conflicts, sometimes you prefer to assign some IP's manually, in this way:
 
-```
+```ruby
 config.vm.network 'private_network', name: 'example', ip: '111.222.111.222'
 ```
 
@@ -208,7 +208,7 @@ As explained above, public networks are networks that can be accessed by machine
 
 To let a machine join a public network:
 
-```
+```ruby
 # use provider DHCP:
 config.vm.network "public_network", use_dhcp_assigned_default_route: true
 
@@ -218,7 +218,7 @@ config.vm.network "public_network", ip: "111.222.111.222"
 
 To improve security, you may want to configure a gateway:
 
-```
+```ruby
 config.vm.provision "shell", run: "always", inline: "route add default gw 111.222.111.222"
 ```
 
@@ -226,7 +226,7 @@ config.vm.provision "shell", run: "always", inline: "route add default gw 111.22
 
 Vagrant allows us to map a TCP or UDP port in a guest system to a TCP or UDP port in the host system. For example, you can map a virtual machine port 3306 to the host port 12345. Then you can connect MariaDB in this way:
 
-```
+```bash
 mariadb -hlocalhost -P12345 -u<user> -p<password>
 ```
 
@@ -239,7 +239,7 @@ There are a couple of caveats:
 
 To expose a port:
 
-```
+```ruby
 config.vm.network 'forwarded_port', guest: 3306, host: 3306
 ```
 
