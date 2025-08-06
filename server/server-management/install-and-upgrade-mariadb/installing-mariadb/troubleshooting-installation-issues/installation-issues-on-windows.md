@@ -20,8 +20,8 @@ redirected to the user's so-called "Virtual Store".
 
 Workarounds:
 
-* Run mysqld.exe as service. See answer [here](https://stackoverflow.com/questions/4962342/mariadb-on-windows-what-is-this-error-when-trying-to-start-the-database-engine) on how to create a MariaDB service.
-* Run mysqld.exe from the [elevated command prompt](https://www.winhelponline.com/articles/158/1/How-to-open-an-elevated-Command-Prompt-in-Windows-Vista.html).
+* Run `mysqld.exe` as service. See answer [here](https://stackoverflow.com/questions/4962342/mariadb-on-windows-what-is-this-error-when-trying-to-start-the-database-engine) on how to create a MariaDB service.
+* Run `mysqld.exe` from the [elevated command prompt](https://www.winhelponline.com/articles/158/1/How-to-open-an-elevated-Command-Prompt-in-Windows-Vista.html).
 * [Change the ACL](https://technet.microsoft.com/en-us/library/bb727008.aspx) of the data directory and add full control for the current\
   user.
 

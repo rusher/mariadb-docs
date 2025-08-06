@@ -13,19 +13,19 @@ To get your system ready to apply the fix, do the following:
 * Comment out the standard [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) repo in the `/etc/apt/sources.list` or `/etc/apt/sources.list.d/mariadb.repo` file (or wherever you have the repositories configured).
 * Add a [MariaDB 5.5.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes) repository to the `sources.list`. The easiest way is to add the following. Just replace '`{os}`' and '`{dist}`' with the appropriate values.
 
-```
+```bash
 deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.5.32/repo/{os} {dist} main
 ```
 
 For example, on Debian Wheezy the line would be:
 
-```
+```bash
 deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.5.32/repo/debian wheezy main
 ```
 
 And on Ubuntu Raring the line would be:
 
-```
+```bash
 deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.5.32/repo/ubuntu raring main
 ```
 
@@ -35,7 +35,7 @@ deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.5.32/repo/ubuntu raring main
 * Then '`sudo apt-get update`' to get things back to normal
 * As a final optional step, once your normal mirror has at least [MariaDB 5.5.33a](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533a-release-notes) you can '`sudo apt-get upgrade`' to upgrade. To check what version of MariaDB our mirror has, run the following command (after running '`sudo apt-get update`'):
 
-```
+```bash
 apt-cache show mariadb-server | grep Version
 ```
 
@@ -56,7 +56,7 @@ The following packages have unmet dependencies:
 
 To fix it, the following server and client packages need to be temporarily downgraded to 5.5.32 (replace '`wheezy`' with the name of whatever distribution you are using):
 
-```
+```bash
 sudo apt-get install \
   libmysqlclient18=5.5.32+maria-1~wheezy \
   mariadb-client-5.5=5.5.32+maria-1~wheezy \
@@ -79,7 +79,7 @@ The following packages have unmet dependencies:
 
 To fix it, only the client packages need to be temporarily downgraded to 5.5.32 (replace wheezy with whatever your distribution is):
 
-```
+```bash
 sudo apt-get install \
   libmysqlclient18=5.5.32+maria-1~wheezy \
   mariadb-client-5.5=5.5.32+maria-1~wheezy \
@@ -98,7 +98,7 @@ The following packages have unmet dependencies:
 
 To fix it, the library needs to be downgraded to 5.5.32 (replace wheezy with your distribution):
 
-```
+```bash
 sudo apt-get install \
   libmysqlclient=5.5.32+maria-1~wheezy \
   libmariadbclient=5.5.32+maria-1~wheezy

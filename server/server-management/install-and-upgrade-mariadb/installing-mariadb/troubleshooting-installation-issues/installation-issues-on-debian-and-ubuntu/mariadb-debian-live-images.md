@@ -68,8 +68,8 @@ for 64-bit (amd64) systems, and one with both.
 
 The LXDE and Gnome images contain documentation under `/srv/PDF`. Including\
 instructions on how to create your own Debian live images in live mode (you\
-need 16GB RAM or more to be able to do this). See the README, README.live, and\
-live-manual.en.pdf files under `/srv/PDF` for details.
+need 16GB RAM or more to be able to do this). See the README, `README.live`, and\
+`live-manual.en.pdf` files under `/srv/PDF` for details.
 
 **Note:** Some HP notebooks are not able to boot binary hybrid iso images from a USB stick.
 
@@ -88,7 +88,7 @@ or just use the links above (or go to:).
 A USB stick or CD/DVD can be used as bootable media. The preferred way is a USB stick.
 
 * for Linux: `dd if=./<image_name_as_above.iso> of=/dev/<USB-stick-ID_like_sdb_or_sdc>`
-* for other systems: cygwin includes dd and some other linux/Unix tools.
+* for other systems: `cygwin` includes `dd` and some other linux/Unix tools.
 
 The iso images have been successfully tested on:
 
