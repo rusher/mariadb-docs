@@ -20,7 +20,7 @@ The revision number links will take you to the revision's page on GitHub. On [Gi
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.11.14](../changelogs-mariadb-10-11-series/mariadb-10.11.14-changelog.md)
-* * <sup>_Merge_</sup> [<sup>_Revision #c4ed889b74_</sup>](https://github.com/MariaDB/server/commit/c4ed889b74) <sup>_2025-07-28 19:40:10 +0200 - Merge branch '10.11' into 11.4_</sup>
+* <sup>_Merge_</sup> [<sup>_Revision #c4ed889b74_</sup>](https://github.com/MariaDB/server/commit/c4ed889b74) <sup>_2025-07-28 19:40:10 +0200 - Merge branch '10.11' into 11.4_</sup>
 * [Revision #ca91bf5d2a](https://github.com/MariaDB/server/commit/ca91bf5d2a) <sup>_2025-07-17 17:23:56 +0200_</sup>
   * Update ColumnStore 23.10.5-1
 * [Revision #0ef4b1ab7f](https://github.com/MariaDB/server/commit/0ef4b1ab7f) <sup>_2025-07-22 23:08:29 +0200_</sup>
