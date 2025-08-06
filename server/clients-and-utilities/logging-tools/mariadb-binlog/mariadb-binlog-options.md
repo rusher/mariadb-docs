@@ -1,15 +1,14 @@
 # mariadb-binlog Options
 
-## mariadb-binlog Options
+{% hint style="info" %}
+Previously, the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+{% endhint %}
+
+## Options
 
 [mariadb-binlog](./) is a utility included with MariaDB for processing [binary log](../../../server-management/server-monitoring-logs/binary-log/) and [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) files.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
-
-### Options
-
-The following options are supported by [mariadb-binlog](./). They can be specified on\
-the command line or in option files:
+The following options are supported by [mariadb-binlog](./). They can be specified on the command line or in option files:
 
 | Option                                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,7 +82,7 @@ the command line or in option files:
 | -V, --version                                                | Print version and exit.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | --verify-binlog-checksum                                     | Verify [binlog event checksums](../../../ha-and-performance/standard-replication/binlog-event-checksums.md) when reading a binlog file.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
-### Option Files
+## Option Files
 
 In addition to reading options from the command line, `mariadb-binlog` can also read options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-binlog` in an option file, it is ignored.
 
@@ -99,7 +98,7 @@ The following options relate to how MariaDB command line tools handles option fi
 
 `mariadb-binlog` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c). However, MariaDB Connector/C does not handle the parsing of option files for this client. That is performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
-#### Option Groups
+## Option Groups
 
 `mariadb-binlog` reads options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
