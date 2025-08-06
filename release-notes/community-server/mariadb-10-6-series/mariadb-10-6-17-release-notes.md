@@ -184,7 +184,7 @@ Thanks, and enjoy MariaDB!
 * `mysql.slow_log` reports incorrect start time ([MDEV-11628](https://jira.mariadb.org/browse/MDEV-11628))
 * Update federated table and column privileges ([MDEV-32984](https://jira.mariadb.org/browse/MDEV-32984))
 * Disable transparent huge pages after page buffers have been allocated ([MDEV-33279](https://jira.mariadb.org/browse/MDEV-33279))
-* Deprecate [secure\_auth=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth) ([MDEV-32617](https://jira.mariadb.org/browse/MDEV-32617))
+* Deprecate [secure\_auth=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#secure_auth) ([MDEV-32617](https://jira.mariadb.org/browse/MDEV-32617))
 * sys schema view `session_ssl_status` is empty ([MDEV-32751](https://jira.mariadb.org/browse/MDEV-32751))
 
 ## Changelog

@@ -25,8 +25,8 @@ Notable changes of this release include:
 * [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) 4 version 26.4.0 has been added in this release, see the Galera 4 Notes section for details
 * [Account Locking](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/user-account-management/account-locking) ([MDEV-13095](https://jira.mariadb.org/browse/MDEV-13095))
 * a number of bugs related to [MDEV-15562](https://jira.mariadb.org/browse/MDEV-15562) Instant DROP COLUMN have been fixed
-* New variable, [max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors) for limiting the number of failed connection attempts by a user.
-* [MDEV-17475](https://jira.mariadb.org/browse/MDEV-17475): Maximum value of [table\_definition\_cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#table_definition_cache) is now `2097152`.
+* New variable, [max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_password_errors) for limiting the number of failed connection attempts by a user.
+* [MDEV-17475](https://jira.mariadb.org/browse/MDEV-17475): Maximum value of [table\_definition\_cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#table_definition_cache) is now `2097152`.
 
 ## Galera 4 Notes
 

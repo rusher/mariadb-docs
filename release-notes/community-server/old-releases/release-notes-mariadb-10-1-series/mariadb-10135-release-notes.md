@@ -18,7 +18,7 @@ Thanks, and enjoy MariaDB!
 
 ## Notable Changes
 
-* New variable, [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#core_file) for specifying whether to write a core file on crash.
+* New variable, [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#core_file) for specifying whether to write a core file on crash.
 * ALTER TABLE:
   * Bug #25928471: ONLINE ALTER AND CONCURRENT DELETE ON TABLE WITH MANY TEXT COLUMNS CAUSES CRASH
   * [MDEV-14693](https://jira.mariadb.org/browse/MDEV-14693) XA: Assertion \`!clust\_index->online\_log' failed in rollback\_inplace\_alter\_table

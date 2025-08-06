@@ -16,7 +16,7 @@ MariaDB Enterprise Server 10.6.4-1 was released on 2021-08-26.
 * Atomic DDL
   * DDL (Data Definition Language) statements are now atomic operations. If the DDL statement is not fully successful, the operation will be rolled back. When the server crashes or is killed in the middle of a DDL statement, the operation is rolled back during crash recovery when the server is restarted. ([MDEV-17567](https://jira.mariadb.org/browse/MDEV-17567))
   * During crash recovery, the server uses the DDL log to determine if an operation needs to be rolled back. When the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) is enabled, the crash recovery process ensures that the successful operations are written to the binary log and that the unsuccessful operations are not.
-  * By default, the DDL log is at `ddl-recovery.log` in the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir). When DDL statements are being executed, the DDL log is synchronized to disk very frequently. If you want to configure a custom path for the DDL log, the [log-ddl-recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes) option can be used.
+  * By default, the DDL log is at `ddl-recovery.log` in the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir). When DDL statements are being executed, the DDL log is synchronized to disk very frequently. If you want to configure a custom path for the DDL log, the [log-ddl-recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes) option can be used.
   * As of this release, the following storage engines fully support atomic DDL:
     * [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria)
     * [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb)
@@ -28,10 +28,10 @@ MariaDB Enterprise Server 10.6.4-1 was released on 2021-08-26.
 * UTF-8 (utf8) character set alias
   * The [utf8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) character set has been renamed to [utf8mb3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets), which used to be an alias for the `utf8` character set
   * The character set `utf8` is now an alias that defaults to `utf8mb3` but can be turned into an alias for [utf8mb4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) with a config change
-  * The new default of [old\_mode=UTF8\_IS\_UTF8MB3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old_mode) is what makes `utf8mb3` default to `utf8`, and anything that removes this new value from old\_mode changes `utf8` to mean `utf8mb4` ([MDEV-8334](https://jira.mariadb.org/browse/MDEV-8334))
+  * The new default of [old\_mode=UTF8\_IS\_UTF8MB3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#old_mode) is what makes `utf8mb3` default to `utf8`, and anything that removes this new value from old\_mode changes `utf8` to mean `utf8mb4` ([MDEV-8334](https://jira.mariadb.org/browse/MDEV-8334))
   * In a future release series (after 10.6) the default value of `old_mode` will drop this new value, making `utf8` default to `utf8mb4`
 * IPv6 by Default ([MDEV-6536](https://jira.mariadb.org/browse/MDEV-6536))
-  * When [--bind-address=HOSTNAME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#bind_address) is configured, MariaDB Enterprise Server now listens on both IPv6 and IPv4 addresses.
+  * When [--bind-address=HOSTNAME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#bind_address) is configured, MariaDB Enterprise Server now listens on both IPv6 and IPv4 addresses.
 
 ## Changes in Storage Engines
 
@@ -122,7 +122,7 @@ ALTER TABLE tab
 * (This item is also mentioned above in Notable Changes .)
 * The [utf8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old-mode#utf8_is_utf8mb3) character set has been renamed to [utf8mb3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old-mode#utf8_is_utf8mb3), which was formerly an alias for the `utf8` character set
 * The character set `utf8` is now an alias that defaults to `utf8mb3` but can be turned into an alias for [utf8mb4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations#character-sets) with a config change
-* The new default of [old\_mode=UTF8\_IS\_UTF8MB3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old_mode) is what makes `utf8mb3` default to `utf8`, and anything that removes this new value from `old_mode` changes `utf8` to mean `utf8mb4` ([MDEV-8334](https://jira.mariadb.org/browse/MDEV-8334))
+* The new default of [old\_mode=UTF8\_IS\_UTF8MB3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#old_mode) is what makes `utf8mb3` default to `utf8`, and anything that removes this new value from `old_mode` changes `utf8` to mean `utf8mb4` ([MDEV-8334](https://jira.mariadb.org/browse/MDEV-8334))
 * In a future release series (after 10.6) the default value of `old_mode` will drop this new value, making utf8 default to `utf8mb4`
 * Ignored indexes
   * An index can be marked with the `IGNORED` option, which forbids the optimizer from using the index in queries. The `IGNORED` option can be used to evaluate whether an index is actually helpful for performance without dropping the index. ([MDEV-7317](https://jira.mariadb.org/browse/MDEV-7317))
@@ -322,7 +322,7 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * [binlog\_expire\_logs\_seconds](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) system variable added
 * columnstore\_cache\_use\_import system variable added
 * columnstore\_decimal\_overflow\_check system variable added
-* [Com\_multi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#com_multi) status variable removed
+* [Com\_multi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#com_multi) status variable removed
 * [ER\_BINLOG\_UNSAFE\_SKIP\_LOCKED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4100-to-4199/e4175) error code added
 * [ER\_BLACKBOX\_ERROR](broken-reference) error code error number changed from 4174 to 6000
 * [ER\_JSON\_TABLE\_ALIAS\_REQUIRED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4100-to-4199/e4177) error code added
@@ -434,7 +434,7 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * `mariadbd` [--wsrep-certificate-expiration-hours-warning](https://app.gitbook.com/s/kuTXWg0NDbRx6XUeYpGD/mariadb-enterprise-operator/metrics#mariadb-metrics) command-line option added
 * `mariadbd` [--wsrep-mode command-line](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) option added
 * `mariadbd` wsrep-ssl-mode command-line option added
-* [max\_recursive\_iterations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_recursive_iterations) system variable default value changed from 4294967295 to 1000 ([MDEV-17239](https://jira.mariadb.org/browse/MDEV-17239))
+* [max\_recursive\_iterations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_recursive_iterations) system variable default value changed from 4294967295 to 1000 ([MDEV-17239](https://jira.mariadb.org/browse/MDEV-17239))
 * [memory\_by\_host\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
 * [memory\_by\_thread\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
 * [memory\_by\_user\_by\_current\_bytes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/memory_by_host_by_current_bytes-and-xmemory_by_host_by_current_bytes-views) sys table added
@@ -443,7 +443,7 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * [metrics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/sys-schema/sys-schema-views/metrics-sys-schema-view) sys table added
 * `MINUS` reserved word added
 * `OFFSET` reserved word added
-* [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old_mode) system variable default value changed from "" (empty) to UTF8\_IS\_`UTF8MB3`
+* [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#old_mode) system variable default value changed from "" (empty) to UTF8\_IS\_`UTF8MB3`
 * processlist sys table added
 * ps\_check\_lost\_instrumentation sys table added
 * Resultset\_metadata\_skipped status variable added

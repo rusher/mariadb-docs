@@ -38,7 +38,7 @@ Thanks, and enjoy MariaDB!
 
 ### Variables
 
-* New status variable: [max\_used\_connections\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#max_used_connections_time) ([MDEV-30543](https://jira.mariadb.org/browse/MDEV-30543))
+* New status variable: [max\_used\_connections\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#max_used_connections_time) ([MDEV-30543](https://jira.mariadb.org/browse/MDEV-30543))
 
 ### Security
 

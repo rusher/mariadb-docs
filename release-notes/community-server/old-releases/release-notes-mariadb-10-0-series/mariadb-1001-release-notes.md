@@ -33,7 +33,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 * [MDEV-4011](https://jira.mariadb.org/browse/MDEV-4011) - Per thread memory usage. — Original code from [Taobao, developed by Peng Lixun](https://mysql.taobao.org/index.php/Patch_source_code#per-thread_memory_usage_statistics).
   * [information\_schema.processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) has two new columns: `MEMORY_USAGE` and `EXAMINED_ROWS`.
-  * [SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status) has a new variable: [Memory\_used](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#memory_used).
+  * [SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status) has a new variable: [Memory\_used](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#memory_used).
 * [Cassandra storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-overview)
 * Named [dynamic columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/dynamic-columns) ([MDEV-377](https://jira.mariadb.org/browse/MDEV-377))
 * Faster UNIQUE key generation with ALTER TABLE ([MDEV-539](https://jira.mariadb.org/browse/MDEV-539))

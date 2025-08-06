@@ -36,7 +36,7 @@ MariaDB Enterprise Server 10.2.41-14 was released on 2021-12-13.
 
 ### Can result in unexpected behavior
 
-* [skip\_networking](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#skip_networking) does not prevent replication. ([MDEV-24969](https://jira.mariadb.org/browse/MDEV-24969))
+* [skip\_networking](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#skip_networking) does not prevent replication. ([MDEV-24969](https://jira.mariadb.org/browse/MDEV-24969))
 * [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) joiner node incorrectly uses `localhost` for TLS certificate verification and fails to join cluster when [wsrep\_sst\_method=mariadb-backup](broken-reference/) and `encrypt=3` are configured. ([MDEV-26360](https://jira.mariadb.org/browse/MDEV-26360))
 * [mariadb --binary-mode](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) is not able to replay some [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) outputs if `0` is in the data. ([MDEV-25444](https://jira.mariadb.org/browse/MDEV-25444))
 * Memory leak with row-based replication can lead to high memory usage on replica servers. ([MDEV-26712](https://jira.mariadb.org/browse/MDEV-26712))

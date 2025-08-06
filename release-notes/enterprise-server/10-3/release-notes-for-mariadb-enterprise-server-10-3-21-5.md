@@ -53,7 +53,7 @@ MariaDB Enterprise Server 10.3.22-6 was released on 2020-03-02.
 
 ### Related to installation or upgrade
 
-* Server could not be started when [lc\_messages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#lc_messages) is set in a config file. (MENT-625)
+* Server could not be started when [lc\_messages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#lc_messages) is set in a config file. (MENT-625)
 
 ## Interface Changes
 

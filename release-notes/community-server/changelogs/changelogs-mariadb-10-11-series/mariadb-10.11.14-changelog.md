@@ -76,7 +76,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #cb7978a12d](https://github.com/MariaDB/server/commit/cb7978a12d) <sup>_2025-05-16 11:29:56 +0200_</sup>
   * MDEV-36720 Possible memory leak on updating table with index without overlaps
 * [Revision #9306353d2d](https://github.com/MariaDB/server/commit/9306353d2d) <sup>_2025-05-07 16:17:37 +0200_</sup>
-  * MDEV-36753 Assertion 'str[strlen(str)-1] != '\n'' failed in my\_message\_sql upon REPAIR .. USE\_FRM with encryption enabled
+  * MDEV-36753 Assertion 'str\[strlen(str)-1] != '\n'' failed in my\_message\_sql upon REPAIR .. USE\_FRM with encryption enabled
 * [Revision #0b16d7871c](https://github.com/MariaDB/server/commit/0b16d7871c) <sup>_2025-06-21 14:56:00 -0400_</sup>
   * MDEV-37195:
 * [Revision #16190d2d77](https://github.com/MariaDB/server/commit/16190d2d77) <sup>_2025-07-15 12:01:08 -0600_</sup>
@@ -102,7 +102,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #96045fb53a](https://github.com/MariaDB/server/commit/96045fb53a) <sup>_2025-07-05 10:56:59 +1000_</sup>
   * MDEV-37052: JSON\_TABLE stack overflow handling errors
 * [Revision #30185c9c7c](https://github.com/MariaDB/server/commit/30185c9c7c) <sup>_2025-06-15 14:27:40 +0300_</sup>
-  * MDEV-23207 Assertion 'tl-\>table == \_\_null' failed in THD::open\_temporary\_table
+  * MDEV-23207 Assertion 'tl->table == \_\_null' failed in THD::open\_temporary\_table
 * [Revision #fc465596ea](https://github.com/MariaDB/server/commit/fc465596ea) <sup>_2025-07-08 14:01:50 +0300_</sup>
   * MDEV-37164 Assertion 'vers\_conditions.delete\_history' failed upon PREPARE
 * [Revision #39f4908216](https://github.com/MariaDB/server/commit/39f4908216) <sup>_2025-07-08 13:16:09 +0200_</sup>
@@ -156,11 +156,11 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #ec495bffe9](https://github.com/MariaDB/server/commit/ec495bffe9) <sup>_2025-06-12 20:10:22 -0400_</sup>
   * MDEV-36215: Avoid wrong result due to table elimination
 * [Revision #4f7faa4bc8](https://github.com/MariaDB/server/commit/4f7faa4bc8) <sup>_2025-06-17 20:04:56 +0530_</sup>
-  * MDEV-36650  Unexpected checkpoint in the test innodb.doublewrite
+  * MDEV-36650 Unexpected checkpoint in the test innodb.doublewrite
 * [Revision #3944655357](https://github.com/MariaDB/server/commit/3944655357) <sup>_2025-06-17 17:36:08 +1000_</sup>
   * MDEV-37019 MSAN\_STAT\_WORKAROUND macro remove
 * [Revision #4be442ec35](https://github.com/MariaDB/server/commit/4be442ec35) <sup>_2025-06-17 14:36:30 +0530_</sup>
-  * MDEV-36962  innodb.log\_file\_overwrite fails with ASAN
+  * MDEV-36962 innodb.log\_file\_overwrite fails with ASAN
 * [Revision #39ef6c0dc8](https://github.com/MariaDB/server/commit/39ef6c0dc8) <sup>_2025-05-28 17:51:11 +1000_</sup>
   * MDEV-34425 mroonga files are not copied by mariabackup
 * [Revision #72d2b7697d](https://github.com/MariaDB/server/commit/72d2b7697d) <sup>_2024-04-20 16:51:00 -0700_</sup>
@@ -174,7 +174,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #f66cd044d5](https://github.com/MariaDB/server/commit/f66cd044d5) <sup>_2025-06-13 19:34:36 -0400_</sup>
   * Enable use of elf\_aux\_info() to detect CPU features on aarch64 and powerpc64
 * [Revision #729b27d390](https://github.com/MariaDB/server/commit/729b27d390) <sup>_2025-06-06 08:33:20 +1100_</sup>
-  * MDEV-29300  Assertion '*ref && (*ref)-\>fixed()' failed in Item\_field::fix\_outer\_field on SELECT
+  * MDEV-29300 Assertion '\*ref && (\*ref)->fixed()' failed in Item\_field::fix\_outer\_field on SELECT
 * [Revision #7ba32f3ac8](https://github.com/MariaDB/server/commit/7ba32f3ac8) <sup>_2025-06-12 19:02:36 +0530_</sup>
   * MDEV-24588, 36851 followup: Fix derived, hybrid func test for --view-protocol
 * [Revision #fadfd9ea28](https://github.com/MariaDB/server/commit/fadfd9ea28) <sup>_2025-05-09 18:31:25 -0400_</sup>
@@ -182,7 +182,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #6d684b64d5](https://github.com/MariaDB/server/commit/6d684b64d5) <sup>_2025-05-22 20:02:04 -0400_</sup>
   * Rocksdb: Add missing getauxval() test for Linux
 * [Revision #f1f9284181](https://github.com/MariaDB/server/commit/f1f9284181) <sup>_2025-06-11 16:38:10 +0300_</sup>
-  * MDEV-34046 Parameterized PS converts error to warning, causes 	   replication problems
+  * MDEV-34046 Parameterized PS converts error to warning, causes replication problems
 * [Revision #bff9b1e472](https://github.com/MariaDB/server/commit/bff9b1e472) <sup>_2025-05-30 17:44:55 +0530_</sup>
   * MDEV-36851: COALESCE() returns nullable column while IFNULL() does not
 * [Revision #c427618462](https://github.com/MariaDB/server/commit/c427618462) <sup>_2025-06-10 15:21:04 +0700_</sup>
@@ -209,9 +209,9 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e7aaf29e00](https://github.com/MariaDB/server/commit/e7aaf29e00) <sup>_2025-05-23 16:12:01 +0530_</sup>
   * MDEV-24588: Fix crash with unnamed column in derived table
 * [Revision #5ff01ad7bb](https://github.com/MariaDB/server/commit/5ff01ad7bb) <sup>_2025-06-03 11:27:21 +0300_</sup>
-  * MDEV-33370 Assertion !is\_set() || (m\_status == DA\_OK\_BULK && 	   is\_bulk\_op()) failed after ALTER TABLE of versioned table
+  * MDEV-33370 Assertion !is\_set() || (m\_status == DA\_OK\_BULK && is\_bulk\_op()) failed after ALTER TABLE of versioned table
 * [Revision #6409e43177](https://github.com/MariaDB/server/commit/6409e43177) <sup>_2025-05-18 18:55:04 -0400_</sup>
-  * Replace deprecated CMAKE\_COMPILER\_IS\_GNU(CC|CXX) with CMAKE_(C|CXX)_COMPILER_ID
+  * Replace deprecated CMAKE\_COMPILER\_IS\_GNU(CC|CXX) with CMAKE\_(C|CXX)\_COMPILER\_ID
 * [Revision #5cd982c51b](https://github.com/MariaDB/server/commit/5cd982c51b) <sup>_2025-06-03 14:18:09 +1000_</sup>
   * MDEV-34863 RAM Usage Changed Significantly Between 10.11 Releases (postfix)
 * [Revision #4d37b1c4b9](https://github.com/MariaDB/server/commit/4d37b1c4b9) <sup>_2025-05-28 14:44:43 +0300_</sup>
@@ -241,9 +241,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #6f8ef26885](https://github.com/MariaDB/server/commit/6f8ef26885) <sup>_2025-04-29 16:28:01 +1000_</sup>
   * MDEV-36032 Check whether a table can be a sequence when ALTERed with SEQUENCE=1
 
-{% include "../../.gitbook/includes/announce.md" %}
-
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
-<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formid="4316" formId="4316" %}

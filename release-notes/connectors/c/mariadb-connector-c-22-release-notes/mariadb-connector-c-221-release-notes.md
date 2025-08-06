@@ -19,7 +19,7 @@ ready for general usage (based on bug inflow).
 
 * [CONC-147](https://jira.mariadb.org/browse/CONC-147): Allow client to bind to a specific network address:\
   On clients with multiple possible TCP routes to a server, it's now possible to bind the\
-  client to a specific address.This can be done either via mysql\_options(mysql, MYSQL\_OPT\_BIND, bind\_address) or by an entry "[bind-address=your\_bind\_address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#bind_address)" in the configuration file.
+  client to a specific address.This can be done either via mysql\_options(mysql, MYSQL\_OPT\_BIND, bind\_address) or by an entry "[bind-address=your\_bind\_address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#bind_address)" in the configuration file.
 
 ## Bug fixes
 
