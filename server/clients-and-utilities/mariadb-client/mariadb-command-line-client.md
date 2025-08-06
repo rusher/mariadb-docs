@@ -1,20 +1,20 @@
 # mariadb Command-Line Client
 
-**mariadb** is a simple SQL shell with GNU readline capabilities.
+`mariadb` is a simple SQL shell with GNU readline capabilities.
 
 {% tabs %}
 {% tab title="Current" %}
-The command line client is called **mariadb**. On Unix system, a symlink named `mysql` is available. On Windows, an alternative binary named `mysql.exe` is available.
+The command-line client is called `mariadb`. On Unix system, a symlink named `mysql` is available. On Windows, an alternative binary named `mysql.exe` is available.
 {% endtab %}
 
 {% tab title="< 10.5" %}
-The command line client is called **mysql**.
+The command-line client is called `mysql`.
 {% endtab %}
 {% endtabs %}
 
 ## Overview
 
-**mariadb** supports interactive and non-interactive use. When used interactively, query results are presented in an ASCII-table format. When used non-interactively (for example, as a filter), the result is presented in tab-separated format. The output format can be changed using command options.
+`mariadb` supports interactive and non-interactive use. When used interactively, query results are presented in an ASCII-table format. When used non-interactively (for example, as a filter), the result is presented in tab-separated format. The output format can be changed using command options.
 
 If you have problems due to insufficient memory for large result sets, use the`--quick` option. This forces mariadb to retrieve results from the server a row at a time rather than retrieving the entire result set and buffering it in memory before displaying it. This is done by returning the result set using the `mysql_use_result()` C API function in the client/server library rather than `mysql_store_result()`.
 
@@ -82,7 +82,7 @@ Print results using tab as the column separator, with each row on a new line. Wi
 
 #### `--binary-mode`
 
-By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This switch turns off both features, and also turns off parsing of all client commands except \C and DELIMITER, in non-interactive mode (for input piped to mariadb or loaded using the 'source' command). This is necessary when processing output from [mariadb-binlog](../logging-tools/mariadb-binlog/) that may contain blobs.
+By default, `ASCII '\0'` is disallowed and `\r\n` is translated to `\n`. This switch turns off both features, and also turns off parsing of all client commands except `\C` and `DELIMITER`, in non-interactive mode (for input piped to mariadb or loaded using the `source` command). This is necessary when processing output from [mariadb-binlog](../logging-tools/mariadb-binlog/) that may contain blobs.
 
 #### `--character-sets-dir=name`
 
@@ -90,7 +90,7 @@ Directory for [character set](../../reference/data-types/string-data-types/chara
 
 #### `--column-names`
 
-Write column names in results. (Defaults to on; use `--skip-column-names` to disable.)
+Write column names in results. (Defaults to `ON`; use `--skip-column-names` to disable.)
 
 #### `--column-type-info`
 
@@ -106,19 +106,19 @@ Compress all information sent between the client and the server if both support 
 
 #### `--connect-expired-password`
 
-Notify the server that this client is prepared to handle [expired password sandbox mode](../../security/user-account-management/user-password-expiry.md) even if `--batch` was specified. From [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes).
+Notify the server that this client is prepared to handle [expired password sandbox mode](../../security/user-account-management/user-password-expiry.md) even if `--batch` was specified.
 
-#### `--connect-timeout=num`
+#### `--connect-timeout=`_`num`_
 
-Number of seconds before connection timeout. Defaults to zero.
+Number of seconds before connection timeout. Defaults to `0`.
 
-#### `-D, --database=name`
+#### `-D, --database=`_`name`_
 
 Database to use.
 
-#### `-``[options], --debug[=options]`
+#### `-``[`_`options`_`], --debug[=`_`options`_`]`
 
-On debugging builds, write a debugging log. A typical debug\_options string is `d:t:o,file_name`. The default is `d:t:o,/tmp/mysql.trace`.
+On debugging builds, write a debugging log. A typical `debug_options` string is `d:t:o,file_name`. The default is `d:t:o,/tmp/mysql.trace`.
 
 #### `--debug-check`
 
@@ -128,45 +128,45 @@ Check memory and open file usage at exit.
 
 Print some debug info at exit.
 
-#### `--default-auth=plugin`
+#### `--default-auth=`_`plugin`_
 
 Default authentication client-side plugin to use.
 
-#### `--default-character-set=name`
+#### `--default-character-set=`_`name`_
 
 Set the default [character set](../../reference/data-types/string-data-types/character-sets/). A common issue that can occur when the operating system uses utf8 or another multibyte character set is that output from the mariadb client is formatted incorrectly, due to the fact that the MariaDB client uses the latin1 character set by default. You can usually fix such issues by using this option to force the client to use the system character set instead. If set to `auto` the character set is taken from the client environment (`LC_CTYPE` on Unix).
 
-#### `--defaults-extra-file=file`
+#### `--defaults-extra-file=`_`file`_
 
-Read this file after the global files are read. Must be given as the first option.
+Read this _file_ after the global files are read. Must be given as the first option.
 
-#### `--defaults-file=file`
+#### `--defaults-file=`_`file`_
 
 Only read default options from the given _file_. Must be given as the first option.
 
-#### `--defaults-group-suffix=suffix`
+#### `--defaults-group-suffix=`_`suffix`_
 
-In addition to the given groups, also read groups with this suffix.
+In addition to the given groups, also read groups with this _suffix_.
 
-#### `--delimiter=name`
+#### `--delimiter=`_`name`_
 
-Delimiter to be used. The default is the semicolon character (“;”).
+Delimiter to be used. The default is the semicolon (`;`).
 
 #### `--enable-cleartext-plugin`
 
 Obsolete option. Exists only for MySQL compatibility.
 
-#### `-e, --execute=name`
+#### `-e, --execute=`_`name`_
 
 Execute statement and quit. Disables `--force` and history file. The default output format is like that produced with `--batch`.
 
 #### `-f, --force`
 
-Continue even if we get an SQL error. Sets `--abort-source-on-error` to 0.
+Continue even if we get an SQL error. Sets `--abort-source-on-error` to `0`.
 
-#### `-h, --host=name`
+#### `-h, --host=`_`host`_
 
-Connect to host.
+Connect to _host_.
 
 #### `-H, --html`
 
@@ -186,25 +186,25 @@ SQL Command to execute when connecting to the MariaDB server. Will automatically
 
 #### `--line-numbers`
 
-Write line numbers for errors. (Defaults to on; use `--skip-line-numbers` to disable.)
+Write line numbers for errors. (Defaults to `ON`; use `--skip-line-numbers` to disable.)
 
 #### `--local-infile`
 
-Enable or disable LOCAL capability for [LOAD DATA INFILE](../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md). With no value, the option enables LOCAL. The option may be given as`--local-infile=0` or `--local-infile=1` to explicitly disable or enable LOCAL. Enabling LOCAL has no effect if the server does not also support it.
+Enable or disable LOCAL capability for [LOAD DATA INFILE](../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md). With no value, the option enables `LOCAL`. The option may be given as`--local-infile=0` or `--local-infile=1` to explicitly disable or enable `LOCAL`. Enabling `LOCAL` has no effect if the server does not also support it.
 
-#### `--max-allowed-packet=num`
+#### `--max-allowed-packet=`_`num`_
 
 The maximum packet length to send to or receive from server. The default is 16MB, the maximum 1GB.
 
-#### `--max-join-size=num`
+#### `--max-join-size=`_`num`_
 
-Automatic limit for rows in a join when using `--safe-updates`. Default is 1000000.
+Automatic limit for rows in a join when using `--safe-updates`. Default is `1000000`.
 
 #### `-G, --named-commands`
 
 Enable named commands. Named commands mean mariadb's internal commands (see below) . When enabled, the named commands can be used from any line of the query, otherwise only from the first line, before an enter. Long-format commands are allowed, not just short-format commands. For example, `quit` and `\q` are both recognized. Disable with `--disable-named-commands`. This option is disabled by default.
 
-#### `--net-buffer-length=num`
+#### `--net-buffer-length=`_`num`_
 
 The buffer size for TCP/IP and socket communication. Default is 16KB.
 
@@ -224,17 +224,17 @@ Ignore statements except those that occur while the default database is the one 
 
 Pager to use to display results (Unix only). If you don't supply an option, the default pager is taken from your ENV variable PAGER. Valid pagers are _less_, _more_, _cat \[> filename]_, etc. See interactive help (\h) also. This option does not work in batch mode. Disable with `--disable-pager`. This option is disabled by default.
 
-#### `-p, --password[=name]`
+#### `-p, --password[=`_`password`_`]`
 
-Password to use when connecting to server. If you use the short option form (-p), you cannot have a space between the option and the password. If you omit the password value following the `--password` or `-p` option on the command line, mariadb prompts for one. Specifying a password on the command line should be considered insecure. You can use an option file to avoid giving the password on the command line.
+_Password_ to use when connecting to server. If you use the short option form (`-p`), you cannot have a space between the option and the password. If you omit the password value following the `--password` or `-p` option on the command line, mariadb prompts for one. Specifying a password on the command line should be considered insecure. You can use an option file to avoid giving the password on the command line.
 
-#### `--plugin-dir=name`
+#### `--plugin-dir=`_`name`_
 
 Directory for client-side plugins.
 
-#### `-P, --port=num`
+#### `-P, --port=`_`num`_
 
-Port number to use for connection or 0 for default to, in order of preference, my.cnf, $MYSQL\_TCP\_PORT, /etc/services, built-in default (3306).
+Port number to use for connection or `0` for default to, in order of preference, `my.cnf`, `$MYSQL_TCP_PORT`, `/etc/services`, built-in default (`3306`).
 
 #### `--print-defaults`
 
@@ -242,15 +242,15 @@ Print the program argument list and exit. Must be given as the first option.
 
 #### `--progress-reports`
 
-Get [progress reports](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting) for long running commands (such as [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/)). (Defaults to on; use `--skip-progress-reports` to disable.)
+Get [progress reports](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting) for long running commands (such as [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/)). (Defaults to `ON`; use `--skip-progress-reports` to disable.)
 
-#### `--prompt=name`
+#### `--prompt=`_`name`_
 
-Set the mariadb prompt to this value. See [prompt command](mariadb-command line-client.md#prompt-command) for options.
+Set the mariadb prompt to this value. See [prompt command](mariadb-command-line-client.md#prompt-command) for options.
 
-#### `--protocol=name`
+#### `--protocol=`_`name`_
 
-The protocol to use for connection (tcp, socket, pipe, memory).
+The protocol to use for connection (`tcp`, `socket`, `pipe`, `memory`).
 
 #### `-q, --quick`
 
@@ -260,7 +260,7 @@ Don't cache result, print it row by row. This may slow down the server if the ou
 
 {% tabs %}
 {% tab title="Current" %}
-Maximal field length limit in case of --quick.
+Maximal field length limit in case of `--quick`.
 {% endtab %}
 
 {% tab title="< 11.7.1 / 11.6.2 / 11.4.4 / 10.11.10 / 10.6.20 / 10.5.27" %}
@@ -270,7 +270,7 @@ This option is not available.
 
 #### `-r, --raw`
 
-For tabular output, the “boxing” around columns enables one column value to be distinguished from another. For nontabular output (such as is produced in batch mode or when the `--batch` or `--silent` option is given), special characters are escaped in the output so they can be identified easily. Newline, tab, NUL, and backslash are written as , , `\0`, and \`\`. The `--raw` option disables this character escaping.
+For tabular output, the “boxing” around columns enables one column value to be distinguished from another. For nontabular output (such as is produced in batch mode or when the `--batch` or `--silent` option is given), special characters are escaped in the output so they can be identified easily. Newline, tab, NUL, and backslash are written as `\n`, `\t`, `\0`, and `\\`. The `--raw` option disables this character escaping.
 
 #### `--reconnect`
 
@@ -278,13 +278,13 @@ Reconnect if the connection is lost. This option is enabled by default. Disable 
 
 #### `-U, --safe-updates`
 
-Allow only those [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements that specify which rows to modify by using key values. If you have set this option in an option file, you can override it by using `--safe-updates` on the command line. See [using the --safe-updates option](mariadb-command line-client.md#using-the-safe-updates-option) for more.
+Allow only those [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements that specify which rows to modify by using key values. If you have set this option in an option file, you can override it by using `--safe-updates` on the command line. See [using the --safe-updates option](mariadb-command-line-client.md#using-the-safe-updates-option) for more.
 
 #### `--sandbox`
 
 {% tabs %}
 {% tab title="Current" %}
-Disallow commands that access the file system (except `\P` without an argument and `\e`). Disabled commands include system (`\!`), tee (), pager with an argument(`\P foo`), source (`\.`). Using a disabled command is an error, which can be ignored with [--force](mariadb-command line-client.md#-f-force). A sandbox command (`\-`) enables the sandbox mode until EOF (current file or the session, if interactive).
+Disallow commands that access the file system (except `\P` without an argument and `\e`). Disabled commands include system (`\!`), tee (`\T`), pager with an argument(`\P`` `_`foo`_), source (`\.`). Using a disabled command is an error, which can be ignored with `--force`. A sandbox command (`\-`) enables the sandbox mode until EOF (current file or the session, if interactive).
 {% endtab %}
 
 {% tab title="< 11.4.2 / 11.2.4 / 11.1.5 / 11.0.6 / 10.11.8 / 10.6.18 / 10.5.25" %}
@@ -306,19 +306,19 @@ This option is not available.
 
 #### `--secure-auth`
 
-Refuse client connecting to server if it uses old (pre-MySQL4.1.1) protocol. Defaults to false.
+Refuse client connecting to server if it uses old (pre-MySQL4.1.1) protocol. Defaults to `FALSE`.
 
-#### `--select-limit=num`
+#### `--select-limit=`_`num`_
 
-Automatic limit for `SELECT` when using --safe-updates. Default 1000.
+Automatic limit for `SELECT` when using `--safe-updates`. Default `1000`.
 
-#### `--server-arg=name`
+#### `--server-arg=`_`name`_
 
 Send embedded server this as a parameter.
 
-#### `--shared-memory-base-name=name`
+#### `--shared-memory-base-name=`_`name`_
 
-Shared-memory name to use for Windows connections using shared memory to a local server (started with the --shared-memory option). Case-sensitive.
+Shared-memory name to use for Windows connections using shared memory to a local server (started with the `--shared-memory` option). Case-sensitive.
 
 #### `--show-warnings`
 
@@ -326,7 +326,7 @@ Show warnings after every statement. Applies to interactive and batch mode.
 
 #### `--sigint-ignore`
 
-Ignore SIGINT signals (usually CTRL-C).
+Ignore `SIGINT` signals (usually `CTRL-C`).
 
 #### `-s, --silent`
 
@@ -360,10 +360,10 @@ Don't reconnect if the connection is lost. See `--reconnect`.
 
 For connections to localhost, the Unix socket file to use, or, on Windows, the name of the named pipe to use. The socket file can exist in different locations depending on setup. Common locations include:
 
-* Debian-based, Ubuntu: /var/run/mysqld/mysqld.sock
-* SUSE: /var/run/mysql/mysql.sock
-* Red Hat: /var/lib/mysql/mysql.sock
-* Other: /tmp/mysql.sock
+* Debian-based, Ubuntu: `/var/run/mysqld/mysqld.sock`
+* SUSE: `/var/run/mysql/mysql.sock`
+* Red Hat: `/var/lib/mysql/mysql.sock`
+* Other: `/tmp/mysql.sock`
 
 #### `--ssl`
 
@@ -379,31 +379,31 @@ Enables [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-i
 {% endtab %}
 {% endtabs %}
 
-#### `--ssl-ca=name`
+#### `--ssl-ca=`_`name`_
 
 Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Authorities (CAs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option implies the `--ssl` option.
 
-#### `--ssl-capath=name`
+#### `--ssl-capath=`_`name`_
 
 Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Authorities (CAs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option is only supported if the client was built with OpenSSL or yaSSL. If the client was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. This option implies the `--ssl` option.
 
-#### `--ssl-cert=name`
+#### `--ssl-cert=`_`name`_
 
 Defines a path to the X509 certificate file to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. This option implies the `--ssl` option.
 
-#### `--ssl-cipher=name`
+#### `--ssl-cipher=`_`name`_
 
 List of permitted ciphers or cipher suites to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option implies the `--ssl` option.
 
-#### `--ssl-crl=name`
+#### `--ssl-crl=`_`name`_
 
 Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL or Schannel. If the client was built with yaSSL or GnuTLS, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
 
-#### `--ssl-crlpath=name`
+#### `--ssl-crlpath=`_`name`_
 
 Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL. If the client was built with yaSSL, GnuTLS, or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms.
 
-#### `--ssl-key=name`
+#### `--ssl-key=`_`name`_
 
 Defines a path to a private key file to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. This option implies the `--ssl` option.
 
@@ -423,33 +423,33 @@ Enables [server certificate verification](../../security/securing-mariadb/securi
 
 Display output in table format. This is the default for interactive use, but can be used to produce table output in batch mode.
 
-#### `--tee=name`
+#### `--tee=`_`name`_
 
-Append everything into outfile. See interactive help (\h) also. Does not work in batch mode. Disable with `--disable-tee`. This option is disabled by default.
+Append everything into outfile. See interactive help (`\h`) also. Does not work in batch mode. Disable with `--disable-tee`. This option is disabled by default.
 
-#### `--tls-version=name`
+#### `--tls-version=`_`name`_
 
 This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. See [Secure Connections Overview: TLS Protocol Versions](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions) for more information.
 
-#### `--ssl-fp=name`
+#### `--ssl-fp=`_`name`_
 
-Server certificate fingerprint (implies --ssl).
+Server certificate fingerprint (implies `--ssl`).
 
-#### `--ssl-fplist=name`
+#### `--ssl-fplist=`_`name`_
 
-File with accepted server certificate fingerprints, one per line (implies --ssl).
+File with accepted server certificate fingerprints, one per line (implies `--ssl`).
 
 #### `-n, --unbuffered`
 
 Flush buffer after each query.
 
-#### `-u`, `--user=name`
+#### `-u`, `--user=`_`name`_
 
 User for login if not current user.
 
 #### `-v, --verbose`
 
-Write more. (-v -v -v gives the table output format).
+Write more. (`-v -v -v` gives the table output format).
 
 #### `-V, --version`
 
@@ -479,9 +479,9 @@ The following options relate to how MariaDB command line tools handles option fi
 | --no-defaults             | Don't read default options from any option file.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --defaults-file=#         | Only read default options from the given file #.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --defaults-extra-file=#   | Read this file after the global files are read.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. If not set, MariaDB checks the $MYSQL\_GROUP\_SUFFIX environment variable. From [MariaDB 12.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.1-release-notes), [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-2-release-notes), [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-6-release-notes), [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.12-release-notes), $MARIADB\_GROUP\_SUFFIX is also checked, and takes precedence if both are set. |
+| --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. If not set, MariaDB checks the $MYSQL\_GROUP\_SUFFIX environment variable. From [MariaDB 12.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.1-release-notes), [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-2-release-notes), [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-6-release-notes), [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.12-release-notes), `$MARIADB_GROUP_SUFFIX` is also checked, and takes precedence if both are set. |
 
-`mariadb` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c). However, MariaDB Connector/C does not handle the parsing of option files for this client. That is performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 ## **Option Groups**
 
@@ -521,7 +521,7 @@ check the manual that corresponds to your MariaDB server version
  for the right syntax to use near '' at line 3
 ```
 
-The solution is to specify a distinct delimiter for the duration of the process, using the `DELIMITER` [command](mariadb-command line-client.md#mariadb-commands). The delimiter can be any set of characters you choose, but it needs to be a distinctive set of characters that won't cause further confusion. `//` is a common choice, and used throughout the documentation.
+The solution is to [specify a distinct delimiter](mariadb-command-line-client.md#delimiters) for the duration of the process, using the `DELIMITER`. The delimiter can be any set of characters you choose, but it needs to be a distinctive set of characters that won't cause further confusion. `//` is a common choice, and used throughout the documentation.
 
 Here's how the function can be entered, using the new delimiter:
 
@@ -542,9 +542,9 @@ DELIMITER ;
 
 At the end, the delimiter is restored to the default semicolon. The `\g` and `\G` delimiters can always be used, even when a custom delimiter is specified.
 
-## How to Specify Which Protocol to Use When Connecting to the Server
+## Specify Which Protocol to Use
 
-You can force which protocol are used to connect to the `mariadbd` server, by giving the `protocol` option one of the following values: `tcp`, `socket`, `pipe` or `memory`.
+You can force which protocol are used to connect to the `mariadbd` server, by giving the `protocol` option one of the following values: `tcp`, `socket`, `pipe` , or `memory`.
 
 {% tabs %}
 {% tab title="Current" %}
@@ -552,7 +552,7 @@ A connection property specified via the command line (e.g. `--port=3306`) forces
 {% endtab %}
 
 {% tab title="< 10.6.1" %}
-If `protocol` is not specified, command line connection properties that do not force protocol are ignored.
+If `protocol` is not specified, command-line connection properties that do not force protocol are ignored.
 {% endtab %}
 {% endtabs %}
 
@@ -564,7 +564,7 @@ Unix
 * In other cases (`hostname` is given and it's not `localhost`) then a TCP/IP connection through the `port` option is used.
 
 {% hint style="warning" %}
-Note that `localhost` is a special value. Using 127.0.0.1 is not the same thing. The latter will connect to the mariadbd server through TCP/IP.
+`localhost` is a special value. Using `127.0.0.1` is not the same thing. The latter will connect to the `mariadbd` server through TCP/IP.
 {% endhint %}
 
 Windows
@@ -574,7 +574,7 @@ Windows
 * Named pipes will also be used if the `libmysql` / `libmariadb` client library detects that the client doesn't support TCP/IP.
 * In other cases, a TCP/IP connection through the `port` option is used.
 
-## How to Test Which Protocol is Used
+## Test Which Protocol is Used
 
 The `status` command shows you information about which protocol is used:
 
@@ -604,35 +604,35 @@ UNIX socket:            /tmp/mysql-dbug.sock
 
 ## mariadb Commands
 
-There are also a number of commands that can be run inside the client. Note that all text commands must be first on the line and ending with a semicolon (`;`).
+There are also a number of commands that can be run inside the client. Note that all text commands must be first on the line and end with a semicolon (`;`).
 
-| Command       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| -             | Enables [sandbox](mariadb-command line-client.md#-sandbox) mode until EOF (current file or the session, if interactive). From [MariaDB 10.5.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/mariadb-10-5-25-release-notes), [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-18-release-notes), [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes), [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-2-release-notes). |
-| ?, ?          | Synonym for \`help'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| clear, \c     | Clear the current input statement.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| connect,      | Reconnect to the server. Optional arguments are db and host.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| delimiter, \d | Set statement delimiter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| edit, \e      | Edit command with $EDITOR.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ego, \G       | Send command to mariadb server, display result vertically.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| exit, \q      | Exit mariadb. Same as quit.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| go, \g        | Send command to mariadb server.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| help, \h      | Display this help.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| nopager,      | Disable pager, print to stdout.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| notee,        | Don't write into outfile.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| pager, \P     | Set PAGER \[to\_pager]. Print the query results via PAGER.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| print, \p     | Print current command.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| prompt,       | Change your mariadb prompt. See [prompt command](mariadb-command line-client.md#prompt-command) for options.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| quit, \q      | Quit mariadb.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| rehash, #     | Rebuild completion hash.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| source, .     | Execute an SQL script file. Takes a file name as an argument. Usually looks in the working directory, unless, from [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), a path is given with [--script-dir](mariadb-command line-client.md#-script-dir).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| status, \s    | Get status information from the server.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| system, !     | Execute a system shell command. Only works in Unix-like systems.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| tee,          | Set outfile \[to\_outfile]. Append everything into given outfile.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| use, \u       | Use another database. Takes database name as argument.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| charset, \C   | Switch to another charset. Might be needed for processing binlog with multi-byte charsets.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| warnings, \W  | Show warnings after every statement.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| nowarning, \w | Don't show warnings after every statement.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Command       | Description                                                                                                                                                                                           |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -             | Enables sandbox mode until EOF (current file or the session, if interactive). From MariaDB 10.5.25, MariaDB 10.6.18, MariaDB 10.11.8, MariaDB 11.0.6, MariaDB 11.1.5, MariaDB 11.2.4, MariaDB 11.4.2. |
+| ?, ?          | Synonym for \`help'.                                                                                                                                                                                  |
+| clear, \c     | Clear the current input statement.                                                                                                                                                                    |
+| connect,      | Reconnect to the server. Optional arguments are db and host.                                                                                                                                          |
+| delimiter, \d | Set statement delimiter.                                                                                                                                                                              |
+| edit, \e      | Edit command with $EDITOR.                                                                                                                                                                            |
+| ego, \G       | Send command to mariadb server, display result vertically.                                                                                                                                            |
+| exit, \q      | Exit mariadb. Same as quit.                                                                                                                                                                           |
+| go, \g        | Send command to mariadb server.                                                                                                                                                                       |
+| help, \h      | Display this help.                                                                                                                                                                                    |
+| nopager,      | Disable pager, print to stdout.                                                                                                                                                                       |
+| notee,        | Don't write into outfile.                                                                                                                                                                             |
+| pager, \P     | Set PAGER \[to\_pager]. Print the query results via PAGER.                                                                                                                                            |
+| print, \p     | Print current command.                                                                                                                                                                                |
+| prompt,       | Change your mariadb prompt.                                                                                                                                                                           |
+| quit, \q      | Quit mariadb.                                                                                                                                                                                         |
+| rehash, #     | Rebuild completion hash.                                                                                                                                                                              |
+| source, .     | Execute an SQL script file. Takes a file name as an argument. Usually looks in the working directory, unless, from MariaDB 12.0, a path is given with `--script-dir`.                                 |
+| status, \s    | Get status information from the server.                                                                                                                                                               |
+| system, !     | Execute a system shell command. Only works in Unix-like systems.                                                                                                                                      |
+| tee, \T       | Set outfile \[`to_outfile`]. Append everything into given outfile.                                                                                                                                    |
+| use, \u       | Use another database. Takes database name as argument.                                                                                                                                                |
+| charset, \C   | Switch to another charset. Might be needed for processing binlog with multi-byte charsets.                                                                                                            |
+| warnings, \W  | Show warnings after every statement.                                                                                                                                                                  |
+| nowarning, \w | Don't show warnings after every statement.                                                                                                                                                            |
 
 ## The mysql\_history File
 
@@ -663,16 +663,16 @@ The prompt command reconfigures the default prompt `\N [\d]>`. The string for de
 | \h     | The server host.                                                    |
 | \l     | The current delimiter.                                              |
 | \m     | Minutes of the current time.                                        |
-|        | A newline character.                                                |
+| \n     | A newline character.                                                |
 | \O     | The current month in three-letter format (Jan, Feb, ...).           |
 | \o     | The current month in numeric format.                                |
 | \P     | am/pm.                                                              |
 | \p     | The current TCP/IP port or socket file.                             |
-|        | The current time, in 24-hour military time (0–23).                  |
-|        | The current time, standard 12-hour time (1–12).                     |
+| \R     | The current time, in 24-hour military time (0–23).                  |
+| \r     | The current time, standard 12-hour time (1–12).                     |
 | \S     | Semicolon.                                                          |
 | \s     | Seconds of the current time.                                        |
-|        | A tab character.                                                    |
+| \t     | A tab character.                                                    |
 | \U     | Your full user\_name@host\_name account name.                       |
 | \u     | Your user name.                                                     |
 | \v     | The server version.                                                 |
@@ -680,10 +680,10 @@ The prompt command reconfigures the default prompt `\N [\d]>`. The string for de
 | \Y     | The current year, four digits.                                      |
 | \y     | The current year, two digits.                                       |
 | \_     | A space.                                                            |
-| \\     | A space (a space follows the backslash).                            |
+| \      | A space (a space follows the backslash).                            |
 | '      | Single quote.                                                       |
 | "      | Double quote.                                                       |
-| \ \\   | A literal “\” backslash character.                                  |
+| \\\\   | A literal “\” backslash character.                                  |
 | \x     | x, for any “x” not listed above.                                    |
 
 ## mariadb Tips
@@ -718,8 +718,7 @@ Monty
 
 ### Using the --safe-updates Option
 
-For beginners, a useful startup option is `--safe-updates` (or`--i-am-a-dummy`, which has the same effect). It is helpful for cases when you might have issued a`DELETE FROM tbl_name` statement but forgotten the`WHERE` clause. Normally, such a statement deletes all rows from the table. With `--safe-updates`, you can delete rows only by specifying the key values that identify them. This helps prevent\
-accidents.
+For beginners, a useful startup option is `--safe-updates` (or`--i-am-a-dummy`, which has the same effect). It is helpful for cases when you might have issued a`DELETE FROM tbl_name` statement but forgotten the`WHERE` clause. Normally, such a statement deletes all rows from the table. With `--safe-updates`, you can delete rows only by specifying the key values that identify them. This helps prevent accidents.
 
 When you use the `--safe-updates` option, mariadb issues the following statement when it connects to the MariaDB server:
 
