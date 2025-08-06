@@ -8,28 +8,28 @@ To see a list of [audit plugin-related variables](mariadb-audit-plugin-options-a
 {% tab title="Current" %}
 ```sql
 SHOW GLOBAL VARIABLES LIKE 'server_audit%';
-
 +-------------------------------+-----------------------+
 | Variable_name                 | Value                 |
 +-------------------------------+-----------------------+
-| server_audit_events           | CONNECT,QUERY,TABLE   |
+| server_audit_events           |                       |
 | server_audit_excl_users       |                       |
-| server_audit_file_buffer_size | #                     |
+| server_audit_file_buffer_size | 0                     |
 | server_audit_file_path        | server_audit.log      |
 | server_audit_file_rotate_now  | OFF                   |
 | server_audit_file_rotate_size | 1000000               |
 | server_audit_file_rotations   | 9                     |
 | server_audit_incl_users       |                       |
-| server_audit_logging          | ON                    |
+| server_audit_logging          | OFF                   |
 | server_audit_mode             | 0                     |
 | server_audit_output_type      | file                  |
 | server_audit_query_log_limit  | 1024                  |
-| server_audit_sync_log_file    |                       |
+| server_audit_sync_log_file    | OFF                   |
 | server_audit_syslog_facility  | LOG_USER              |
 | server_audit_syslog_ident     | mysql-server_auditing |
 | server_audit_syslog_info      |                       |
 | server_audit_syslog_priority  | LOG_INFO              |
 +-------------------------------+-----------------------+
+17 rows in set (0.003 sec)
 ```
 {% endtab %}
 
