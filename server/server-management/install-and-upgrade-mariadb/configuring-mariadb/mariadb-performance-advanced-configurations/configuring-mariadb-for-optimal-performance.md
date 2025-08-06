@@ -38,8 +38,11 @@ Some other important InnoDB variables:
 
 You can check if Aria is configured properly by executing:
 
-```
+```sql
 MariaDB [test]> show global status like "Aria%";
+```
+
+```
 +-----------------------------------+-------+
 | Variable_name                     | Value |
 +-----------------------------------+-------+
@@ -68,8 +71,11 @@ disk, which can hurt performance.
 
 You can check how the internal memory tables are performing by executing:
 
-```
+```sql
 MariaDB [test]> show global status like "Created%tables%";
+```
+
+```
 +-------------------------+-------+
 | Variable_name           | Value |
 +-------------------------+-------+
