@@ -1,18 +1,12 @@
----
-hidden: true
----
-
 # MariaDB 11.8.3 Release Notes
 
 {% include "../../.gitbook/includes/unreleased-11-8.md" %}
 
-<!--
 <a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-11.8.3-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.3-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.8.3/)
 
-**Release date:** ?
--->
+**Release date:** 6 Aug 2025
 
 MariaDB 11.8.3 is a [_**Stable (GA)**_](../about/release-criteria.md) release. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 
