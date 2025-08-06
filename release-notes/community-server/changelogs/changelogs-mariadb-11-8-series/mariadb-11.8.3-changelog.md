@@ -1,7 +1,5 @@
 # MariaDB 11.8.3 Changelog
 
-{% include "../../../.gitbook/includes/unreleased-11-8.md" %}
-
 <a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="../../mariadb-11-8-series/mariadb-11.8.3-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-11.8.3-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-11-8-series/what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.8.3/)
