@@ -9,22 +9,22 @@ noIndex: true
 ## About this Release
 
 * MariaDB Server 10.6.0 was released on 26 Apr 2021.
-* Please note: Newer releases exist within the MariaDB Server 10.6 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes)
 * MariaDB Server is open source software. [Source code is available.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 * This release is Alpha maturity. Only Stable (GA) releases should be used in production.
 
 ## About this Release Series
 
-* This release is part of the MariaDB Server 10.6 release series.
-* The MariaDB Server 10.6 release series is the current MariaDB development release.
-* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+* This release is part of the MariaDB 10.6 release series
+* MariaDB 10.6 is a long-term maintenance release series, the first stable release was in July 2021, and it will be maintained until July 2026
+* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
 ## Release History
 
 * This release (MariaDB Server 10.6.0) was released on 26 Apr 2021.
 * The next release in this series is MariaDB Server 10.6.1, released on 21 May 2021.
-* The latest release in this series is MariaDB Server 10.6.15, released on 14 Aug 2023.
+
+{% include "../.gitbook/includes/most-recent-10.6.md" %}
 
 ## Useful Resources
 
