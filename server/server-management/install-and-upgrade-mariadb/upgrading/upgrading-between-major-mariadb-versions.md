@@ -1,7 +1,6 @@
 # Upgrading Between Major MariaDB Versions
 
-MariaDB is designed to allow easy upgrades. You should be able to trivially upgrade from ANY earlier\
-MariaDB version to the latest one (for example [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).x to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011).x), usually in a few seconds. This is also mainly true for any MySQL version < 8.0 to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and up.
+MariaDB is designed to allow easy upgrades. You should be able to trivially upgrade from ANY earlier MariaDB version to the latest one (for example [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).x to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011).x), usually in a few seconds. This is also mainly true for any MySQL version < 8.0 to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and up.
 
 Upgrades are normally easy because:
 
@@ -17,9 +16,9 @@ Note that if you are using [MariaDB Galera Cluster](https://app.gitbook.com/o/di
 
 * Go through the individual version upgrade notes (listed below) to look for any major changes or configuration options that have changed.
 * Ensure that the target MariaDB version supports the storage engines you are using. For example, in 10.5 [TokuDB](../../../server-usage/storage-engines/tokudb/) is not supported.
-* Back up the database (just in case). At least, take a copy of the `mysql` system database directory under the data directory with [mariadb-dump --add-drop-table mysql](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (called mysqldump in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and earlier) as most of the upgrade changes are done there (adding new fields and new system tables etc).
+* Back up the database (just in case). At least, take a copy of the `mysql` system database directory under the data directory with [mariadb-dump --add-drop-table mysql](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (called `mysqldump` in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and earlier) as most of the upgrade changes are done there (adding new fields and new system tables etc).
 * Cleanly shutdown the server. This is necessary because even if data files are compatible between versions, recovery logs may not be.
-  * Ensure that the [innodb\_fast\_shutdown](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
+  * Ensure that the [innodb\_fast\_shutdown](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is `1`.
   * [innodb\_force\_recovery](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `3`.
 
 Note that rpms don't support upgrading between major versions, only minor like 10.4.1 to 10.4.2. If you are using rpms, you should de-install the old MariaDB rpms and install the new MariaDB rpms before running [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md). Note that when installing the new rpms, [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) may be run automatically. There is no problem with running [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) many times.
@@ -65,10 +64,10 @@ The common warnings/errors are:
 In the unlikely event something goes wrong, you can try the following:
 
 * Remove the InnoDB tables from the `mysql` data directory. They are:
-  * gtid\_slave\_pos
-  * innodb\_table\_stats
-  * innodb\_index\_stats
-  * transaction\_registry
+  * `gtid_slave_pos`
+  * `innodb_table_stats`
+  * `innodb_index_stats`
+  * `transaction_registry`
 * Move the `mysql` data directory to `mysql-old` and run [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) to generate a new one.
 * After the above, you have to add back your old users.
 * When done, delete the `mysql-old` data directory.

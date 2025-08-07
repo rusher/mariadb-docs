@@ -220,7 +220,7 @@ sudo apt update
 
 3\. Install MariaDB Enterprise Server and package dependencies:
 
-```
+```bash
 $ sudo apt install mariadb-server mariadb-backup
 ```
 
