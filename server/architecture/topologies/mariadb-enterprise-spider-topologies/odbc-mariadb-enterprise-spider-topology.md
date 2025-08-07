@@ -118,8 +118,8 @@ SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 Follow the link under [Operations](odbc-mariadb-enterprise-spider-topology.md#operations) for further information on the setup.
 
 ```sql
-INSTALL PLUGIN spider SONAME 'ha_spider.so';
-CREATE DATABASE IF NOT EXISTS spider_test;
+INSTALL SONAME 'ha_spider';
+CREATE DATABASE spider_test;
 USE spider_test;
 CREATE OR REPLACE TABLE contacts (
     contact_id  BIGINT NOT NULL PRIMARY KEY,
