@@ -74,8 +74,6 @@ Additional packages are required to convert and install the Oracle RPM.
 sudo apt-get install alien libaio1 unixodbc
 ```
 
-***
-
 #### Step 4: Convert the Oracle RPM to a DEB Package
 
 The downloaded file is an RPM, which must be converted to a DEB package for Debian-based systems.

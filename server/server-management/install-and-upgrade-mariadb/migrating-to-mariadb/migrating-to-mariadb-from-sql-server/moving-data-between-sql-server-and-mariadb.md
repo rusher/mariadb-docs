@@ -34,7 +34,7 @@ To execute a dump, we can pass the file to [mariadb](../../../../clients-and-uti
 
 Provided that a dump file contains syntax that is valid in MariaDB, it can be executed in this way:
 
-```
+```bash
 mariadb --show-warnings < dump.sql
 ```
 
