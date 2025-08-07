@@ -1,5 +1,7 @@
 # MariaDB 12.1.1 Release Notes
 
+{% include "../../.gitbook/includes/latest-12-1.md" %}
+
 <a href="https://mariadb.org/download/" class="button primary">Download</a> <a href="mariadb-12.1.1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-12.1-series/mariadb-12.1.1-changelog.md" class="button secondary">Changelog</a> <a href="changes-and-improvements-in-mariadb-12.1.md" class="button secondary">Overview of 12.1</a>
 
 **Release date:** 7 Aug 2025
@@ -56,6 +58,5 @@ For a complete list of changes made in MariaDB 12.1.1, with links to detailed in
 {% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
-<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formid="4316" formId="4316" %}

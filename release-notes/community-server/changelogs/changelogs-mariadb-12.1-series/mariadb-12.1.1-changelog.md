@@ -1,5 +1,7 @@
 # MariaDB 12.1.1 Changelog
 
+{% include "../../../.gitbook/includes/latest-12-1.md" %}
+
 <a href="https://mariadb.org/download/" class="button primary">Download</a> <a href="../../release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-12.1.1-changelog.md" class="button secondary">Changelog</a> <a href="../../release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md" class="button secondary">Overview of 12.1</a>
 
 **Release date:** 7 Aug 2025
@@ -15,9 +17,9 @@ The revision number links will take you to the revision's page on GitHub. On [Gi
 * [Revision #c329c43be7](https://github.com/MariaDB/server/commit/c329c43be7) <sup>_2025-05-01 13:38:10 +0700_</sup>
   * MDEV-35856: implement index hints
 * [Revision #4453d179e4](https://github.com/MariaDB/server/commit/4453d179e4) <sup>_2025-07-04 14:39:04 +0300_</sup>
-  * MDEV-36554 addendum: Assertion 'is\_wsrep() == wsrep\_on(mysql\_thd)' failed in void trx\_t::commit\_in\_memory(const mtr\_t*)
+  * MDEV-36554 addendum: Assertion 'is\_wsrep() == wsrep\_on(mysql\_thd)' failed in void trx\_t::commit\_in\_memory(const mtr\_t\*)
 * [Revision #603afc82d2](https://github.com/MariaDB/server/commit/603afc82d2) <sup>_2025-06-13 14:02:25 +0300_</sup>
-  * MDEV-36554: Assertion 'is\_wsrep() == wsrep\_on(mysql\_thd)' failed in void trx\_t::commit\_in\_memory(const mtr\_t*)
+  * MDEV-36554: Assertion 'is\_wsrep() == wsrep\_on(mysql\_thd)' failed in void trx\_t::commit\_in\_memory(const mtr\_t\*)
 * [Revision #b39ea86305](https://github.com/MariaDB/server/commit/b39ea86305) <sup>_2025-03-06 11:41:49 +0200_</sup>
   * MDEV-36077: Galera feature: Retry applying writesets at slaves
 * [Revision #dae5a99c73](https://github.com/MariaDB/server/commit/dae5a99c73) <sup>_2025-05-12 16:23:20 +0200_</sup>
@@ -122,7 +124,7 @@ The revision number links will take you to the revision's page on GitHub. On [Gi
 * [Revision #c2881f04e8](https://github.com/MariaDB/server/commit/c2881f04e8) <sup>_2025-04-30 20:03:27 +0400_</sup>
   * MDL\_lock encapsulation: MDL\_lock::get\_lock\_owner()
 * [Revision #62a1f0d990](https://github.com/MariaDB/server/commit/62a1f0d990) <sup>_2025-04-24 15:03:05 -0400_</sup>
-  * MDEV-36092 New-style hint: [NO_]SPLIT\_MATERIALIZED
+  * MDEV-36092 New-style hint: \[NO\_]SPLIT\_MATERIALIZED
 * [Revision #07d71fdcf8](https://github.com/MariaDB/server/commit/07d71fdcf8) <sup>_2024-11-21 14:31:04 +0200_</sup>
   * MDEV-20065 parallel replication for galera slave
 * [Revision #6ef1303d69](https://github.com/MariaDB/server/commit/6ef1303d69) <sup>_2025-05-02 23:07:54 +0300_</sup>
@@ -142,14 +144,14 @@ The revision number links will take you to the revision's page on GitHub. On [Gi
 * [Revision #212fad1b7e](https://github.com/MariaDB/server/commit/212fad1b7e) <sup>_2025-04-21 21:26:19 +0000_</sup>
   * MDEV-36397 Record change\_user command in MTR output
 * [Revision #2ee2e2d0f3](https://github.com/MariaDB/server/commit/2ee2e2d0f3) <sup>_2025-02-24 11:32:27 -0500_</sup>
-  * MDEV-36106 New-style hints: [NO\_]DERIVED\_CONDITION\_PUSHDOWN, [NO\_]MERGE
+  * MDEV-36106 New-style hints: \[NO\_]DERIVED\_CONDITION\_PUSHDOWN, \[NO\_]MERGE
 * <sup>_Merge_</sup> [<sup>_Revision #e653666368_</sup>](https://github.com/MariaDB/server/commit/e653666368) <sup>_2025-06-18 09:27:49 +0200 - Merge branch '12.0' into 12.1_</sup>
 * [Revision #247e2f8d4d](https://github.com/MariaDB/server/commit/247e2f8d4d) <sup>_2025-04-29 19:24:11 +0300_</sup>
   * MDEV-29499 Improving the 'Can't execute init\_slave query' error message with the actual failure
 * [Revision #28dbfcb397](https://github.com/MariaDB/server/commit/28dbfcb397) <sup>_2025-05-03 13:09:05 -0600_</sup>
   * MDEV-35837: Update CODING\_STANDARDS to C++17
 * [Revision #6a2afb42ba](https://github.com/MariaDB/server/commit/6a2afb42ba) <sup>_2025-06-06 18:42:30 +0530_</sup>
-  * MDEV-36487  Fix ha\_innobase::check() for sequences
+  * MDEV-36487 Fix ha\_innobase::check() for sequences
 * [Revision #37274ae01f](https://github.com/MariaDB/server/commit/37274ae01f) <sup>_2025-05-28 13:58:47 +0530_</sup>
   * MDEV-36032 Check whether a table can be a sequence when ALTERed with SEQUENCE=1
 * <sup>_Merge_</sup> [<sup>_Revision #a6f5555008_</sup>](https://github.com/MariaDB/server/commit/a6f5555008) <sup>_2025-06-05 12:00:59 +0200 - Merge branch '12.0' into 12.1_</sup>

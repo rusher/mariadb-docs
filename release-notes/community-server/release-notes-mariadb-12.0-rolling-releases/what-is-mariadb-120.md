@@ -105,6 +105,7 @@ For a list of all new variables, see [System Variables Added in MariaDB 12.0](ht
 
 | Date          | Release                                           | Status  | Release Notes                                    | Changelog                                                                             |
 | ------------- | ------------------------------------------------- | ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 7 Aug 2025    | [MariaDB 12.0.2](mariadb-12.0.2-release-notes.md) | GA      | [Release Notes](mariadb-12.0.2-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.2-changelog.md) |
 | 5 Jun 2025    | [MariaDB 12.0.1](mariadb-12.0.1-release-notes.md) | RC      | [Release Notes](mariadb-12.0.1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md) |
 | 26 March 2025 | MariaDB 12.0.0                                    | Preview |                                                  |                                                                                       |
 
