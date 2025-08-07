@@ -1,9 +1,11 @@
+---
+hidden: true
+---
+
 # MariaDB 12.1.1 Changelog
 
 <!--
-<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="../../release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-12.1.1-changelog.md" class="button secondary">Changelog</a> <a href="../../release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md" class="button secondary">Overview of 12.1</a>
-
-[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/12.1.1/)
+<a href="https://mariadb.org/download/" class="button primary">Download</a> <a href="../../release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-12.1.1-changelog.md" class="button secondary">Changelog</a> <a href="../../release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md" class="button secondary">Overview of 12.1</a>
 
 **Release date:** ?
 -->
