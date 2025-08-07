@@ -42,13 +42,14 @@ Thanks, and enjoy MariaDB!
 * Segfault on INTERSECT ALL with UNION in Oracle mode ([MDEV-25158](https://jira.mariadb.org/browse/MDEV-25158))
 * In certain cases privileges on sequences were too restrictive, for example, SELECT on a table might've erroneously required INSERT privilege on a sequences ([MDEV-36870](https://jira.mariadb.org/browse/MDEV-36870))
 
-### mariabackup
+### mariadb-backup
 
 * This commit fixes a bug where Aria tables are used in (master-\>slave1-\>slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave. ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
 
 ### Galera
 
 * galera\_3nodes.inconsistency\_shutdown test occasionally hangs ([MDEV-36968](https://jira.mariadb.org/browse/MDEV-36968))
+* Galera-26.4.23 corrects an incompatibility with OpenZFS >= 2.3.0 enabling the use of galera on this filesystem.
 
 ### Replication
 
@@ -61,6 +62,12 @@ Thanks, and enjoy MariaDB!
 ### Data Manipulation - Insert
 
 * UNIQUE constraint that was USING HASH and UNIQUE constrant WITHOUT OVERLAPS could be violated under heavy load in READ COMMITTED transaction isolation mode. ([MDEV-37199](https://jira.mariadb.org/browse/MDEV-37199))
+
+### General
+
+* Packages for RHEL8 no longer depend on liburing. The RHEL8 kernel had insufficient kernel support so linking was an unneeded dependency. libaio was sufficient ([MDBF-1042](https://jira.mariadb.org/browse/MDBF-1042))
+
+
 
 ## Changelog
 

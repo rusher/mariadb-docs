@@ -54,7 +54,7 @@ Thanks, and enjoy MariaDB!
 * Segfault on INTERSECT ALL with UNION in Oracle mode ([MDEV-25158](https://jira.mariadb.org/browse/MDEV-25158))
 * In certain cases privileges on sequences were too restrictive, for example, SELECT on a table might've erroneously required INSERT privilege on a sequences ([MDEV-36870](https://jira.mariadb.org/browse/MDEV-36870))
 
-### mariabackup
+### mariadb-backup
 
 * This commit fixes a bug where Aria tables are used in (master-\>slave1-\>slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
 * Maria-backup would crash during the 'maria\_recovery' part.
@@ -74,11 +74,15 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 ### Galera
 
 * galera\_3nodes.inconsistency\_shutdown test occasionally hangs ([MDEV-36968](https://jira.mariadb.org/browse/MDEV-36968))
+* Galera-26.4.23 corrects an incompatibility with OpenZFS >= 2.3.0 enabling the use of galera on this filesystem.
 
 ### Replication
 
 * semi sync makes the master unresponsive when a replica is stopped ([MDEV-36934](https://jira.mariadb.org/browse/MDEV-36934))
 * parallel slave ALTER-SEQUNCE attempted to binlog out-of-order ([MDEV-35570](https://jira.mariadb.org/browse/MDEV-35570))
+* mysqldump --dump-slave always starts stopped slave ([MDEV-7611](https://jira.mariadb.org/browse/MDEV-7611))
+* Optimize Rows\_log\_event Reporting of Process Info ([MDEV-36839](https://jira.mariadb.org/browse/MDEV-36839))
+* Seconds\_Behind\_Master Spike at Log Rotation on Parallel Replication ([MDEV-36840](https://jira.mariadb.org/browse/MDEV-36840))
 
 ### Stored routines
 
@@ -107,6 +111,23 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 ### XA
 
 * DML committed within XA transaction block after deadlock error and implicit rollback ([MDEV-37141](https://jira.mariadb.org/browse/MDEV-37141))
+
+### General
+
+* Packages for RHEL8 no longer depend on liburing. The RHEL8 kernel had insufficient kernel support so linking was an unneeded dependency. libaio was sufficient ([MDBF-1042](https://jira.mariadb.org/browse/MDBF-1042))
+* SLES 15 SP6 is a new package in this release. Because of incompatibilities of packages between SLES service pack versions there are now separate packages for 15sp6. An upgradeable repo file should include "sles/$releasever/$basearch" rather than the "sles15-amd64" or "sles/15/x86\_64" path that may exist currently. ([MDBF-1067](https://jira.mariadb.org/browse/MDBF-1067), [MDEV-36945](https://jira.mariadb.org/browse/MDEV-36945))
+* Fedora 42 is a new release version and x86\_64 and aarch64 packages are available ([MDBF-1060](https://jira.mariadb.org/browse/MDBF-1060))
+* Red Hat Enterprise Linux 10 packages are available for x86\_64, aarch64, ppc64le, and s390x hardware platforms ([MDBF-995](https://jira.mariadb.org/browse/MDBF-995))
+* Centos Stream 9 previously missed building a MariaDB-provider-lzo package and this has been corrected ([MDBF-1038](https://jira.mariadb.org/browse/MDBF-1038))
+
+
+
+
+
+
+
+
+
 
 ## Changelog
 
