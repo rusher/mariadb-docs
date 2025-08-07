@@ -4,17 +4,11 @@ hidden: true
 
 # MariaDB 12.0.2 Release Notes
 
-<!--
-<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-12.0.2-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
+MariaDB 12.0.2 is a [_**Stable (GA)**_](../about/release-criteria.md) release. It is an evolution of [MariaDB 11.8](../mariadb-11-8-series/what-is-mariadb-118.md) with several entirely new features.
 
-[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/12.0.2/)
+MariaDB 12.0 is a [rolling release](../about/release-model.md). One is expected to upgrade to MariaDB 12.1.2, there will be no 12.0.3.
 
-**Release date:** ?
--->
-
-[MariaDB 12.0](what-is-mariadb-120.md) is a [rolling release](../about/release-model.md). It is an evolution of [MariaDB 11.8](../mariadb-11-8-series/what-is-mariadb-118.md) with several entirely new features.
-
-MariaDB 12.0.2 is a [_**Stable (GA)**_](../about/release-criteria.md) release.
+Thanks, and enjoy MariaDB!
 
 {% hint style="success" %}
 **For an overview of MariaDB 12.0 see the** [**Changes and Improvements in MariaDB 12.0**](what-is-mariadb-120.md) **page.**
@@ -43,7 +37,6 @@ Thanks, and enjoy MariaDB!
 
 * Assertion when adding FK to MyISAM/Aria table with a vector index ([MDEV-37022](https://jira.mariadb.org/browse/MDEV-37022))
 
-
 ### Data Definition - Alter Table
 
 * Adding (with ALTER TABLE) a UNIQUE constraint that is USING HASH to a table with foreign keys could've caused the table to become corrupted. ([MDEV-36852](https://jira.mariadb.org/browse/MDEV-36852))
@@ -63,12 +56,10 @@ Thanks, and enjoy MariaDB!
 * Segfault on INTERSECT ALL with UNION in Oracle mode ([MDEV-25158](https://jira.mariadb.org/browse/MDEV-25158))
 * In certain cases privileges on sequences were too restrictive, for example, SELECT on a table might've erroneously required INSERT privilege on a sequences ([MDEV-36870](https://jira.mariadb.org/browse/MDEV-36870))
 
-
 ### mariabackup
 
-* This commit fixes a bug where Aria tables are used in (master-\>slave1-\>slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave. ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
-* Maria-backup would crash during the 'maria\_recovery' part. This could happen if server was doing repair or creating indexes while the
-backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
+* This commit fixes a bug where Aria tables are used in (master->slave1->slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave. ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
+* Maria-backup would crash during the 'maria\_recovery' part. This could happen if server was doing repair or creating indexes while the backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Optimizer
 
@@ -117,12 +108,11 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Plugin - AWS key management
 
-* aws\_key\_management compilation was previously broken, is now fixed. plugin can be compiled again. As before, -DNOT\_FOR\_DISTRIBUTION=ON  is necessary to build it. ([MDEV-30831](https://jira.mariadb.org/browse/MDEV-30831))
+* aws\_key\_management compilation was previously broken, is now fixed. plugin can be compiled again. As before, -DNOT\_FOR\_DISTRIBUTION=ON is necessary to build it. ([MDEV-30831](https://jira.mariadb.org/browse/MDEV-30831))
 
 ### Packaging
 
 * mariadb systemd mult-instance service was changed to not attempt changes to the permissions on its pam helper server. This prevented unconstructive behaviour and errors in the systemd journal when starting the mariadb@.service. ([MDEV-36738](https://jira.mariadb.org/browse/MDEV-36738))
-
 
 ### Sequences
 
@@ -152,6 +142,5 @@ For a complete list of changes made in MariaDB 12.0.1, with links to detailed in
 {% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
-<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formid="4316" formId="4316" %}
