@@ -1,14 +1,8 @@
----
-hidden: true
----
-
 # MariaDB 12.1.1 Release Notes
 
-<!--
 <a href="https://mariadb.org/download/" class="button primary">Download</a> <a href="mariadb-12.1.1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-12.1-series/mariadb-12.1.1-changelog.md" class="button secondary">Changelog</a> <a href="changes-and-improvements-in-mariadb-12.1.md" class="button secondary">Overview of 12.1</a>
 
-**Release date:** ?
--->
+**Release date:** 7 Aug 2025
 
 {% include "../../.gitbook/includes/non-stable.md" %}
 

@@ -1,16 +1,10 @@
----
-hidden: true
----
-
 # MariaDB 12.0.2 Changelog
 
-<!--
-<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="../../release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-12.0.2-changelog.md" class="button secondary">Changelog</a> <a href="../../release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
+<a href="https://dlm.mariadb.com/browse/mariadb_server/12.0.2/" class="button primary">Download</a> <a href="../../release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-12.0.2-changelog.md" class="button secondary">Changelog</a> <a href="../../release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/12.0.2/)
 
-**Release date:** ?
--->
+**Release date:** 7 Aug 2025
 
 For the highlights of this release, see the [release notes](../../release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes.md).
 
