@@ -1,8 +1,8 @@
-# MariaDB Connector/J 3.0.1 Changelog
+# Connector/J 3.0.1 Changelog
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../3.0/mariadb-connector-j-301-release-notes.md)[Changelog](mariadb-connector-j-301-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](../../3.0/mariadb-connector-j-301-release-notes.md) | **Changelog** | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 11 Aug 2021
 

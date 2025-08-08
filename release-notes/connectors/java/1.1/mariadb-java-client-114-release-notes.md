@@ -4,13 +4,9 @@
 
 **Release date:** 10 Sept 2013
 
-MariaDB Java Client 1.1.4 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
-release. In general this means that there are no known serious bugs,\
-except for those marked as feature requests, that no bugs were fixed\
-since last release that caused a notable code changes, and that we\
-believe the code is ready for general usage (based on bug inflow).
+MariaDB Java Client 1.1.4 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release. In general this means that there are no known serious bugs, except for those marked as feature requests, that no bugs were fixed since last release that caused a notable code changes, and that we believe the code is ready for general usage (based on bug inflow).
 
-**For a description of the MariaDB Java Client see the**[**About the MariaDB Java Client**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-the-mariadb-java-client/README.md) **page.**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 For a list of all changes made in this release, with links to detailed\
 information on each push, see the [changelog](../changelogs/1.1/mariadb-java-client-114-changelog.md).

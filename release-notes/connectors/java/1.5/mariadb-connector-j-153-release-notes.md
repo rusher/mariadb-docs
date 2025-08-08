@@ -2,14 +2,13 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://downloads.mariadb.org/connector-java/1.5.3/)[Release Notes](mariadb-connector-j-153-release-notes.md)[Changelog](../changelogs/1.5/mariadb-connector-j-153-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md)
+[Download](https://downloads.mariadb.org/connector-java/1.5.3/) | **Release Notes** | [Changelog](../changelogs/1.5/mariadb-connector-j-153-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 4 Oct 2016
 
-MariaDB Connector/J 1.5.3 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
-release.
+MariaDB Connector/J 1.5.3 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
-**For a description of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 ## Notable Changes
 

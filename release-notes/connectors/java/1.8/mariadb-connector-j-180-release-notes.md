@@ -2,17 +2,17 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://mariadb.com/downloads/?showall=1\&tab=connectors)[Release Notes](mariadb-connector-j-180-release-notes.md)[Changelog](../changelogs/1.8/mariadb-connector-j-180-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/?showall=1\&tab=connectors) | **Release Notes** | [Changelog](../changelogs/1.8/mariadb-connector-j-180-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 11 Feb 2019
 
-MariaDB Connector/J 1.8.0 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
-release.
+MariaDB Connector/J 1.8.0 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
-NOTE:\
-MariaDB Connector/J 1.8.x version is the maintenance version for Java 7. **Support for java 6 is dropped**
+{% hint style="warning" %}
+**NOTE:** MariaDB Connector/J 1.8.x version is the maintenance version for Java 7. **Support for java 6 is dropped**
+{% endhint %}
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 ### Evolutions
 

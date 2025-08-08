@@ -2,7 +2,7 @@
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://downloads.mariadb.org/connector-java/1.3.0/)[Release Notes](../../1.3/mariadb-connector-j-130-release-notes.md)[Changelog](mariadb-connector-j-130-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-the-mariadb-connector-j/README.md)
+[Download](https://downloads.mariadb.org/connector-java/1.3.0/) | [Release Notes](../../1.3/mariadb-connector-j-130-release-notes.md) | **Changelog** | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 16 Nov 2015
 

@@ -1,8 +1,8 @@
-# MariaDB Java Client 1.1.8 Changelog
+# Connector/J 1.1.8 Changelog
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://downloads.mariadb.org/client-java/1.1.8)[Release Notes](../../1.1/mariadb-java-client-118-release-notes.md)[Changelog](mariadb-java-client-118-changelog.md)[Java Client Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-the-mariadb-java-client/README.md)
+[Download](https://downloads.mariadb.org/client-java/1.1.8) | [Release Notes](../../1.1/mariadb-java-client-118-release-notes.md) | **Changelog** | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 16 Jan 2015
 

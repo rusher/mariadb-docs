@@ -2,23 +2,23 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-j-302-release-notes.md)[Changelog](../changelogs/3.0/mariadb-connector-j-302-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | **Release Notes** | [Changelog](../changelogs/3.0/mariadb-connector-j-302-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 16 Sep 2021
 
 MariaDB Connector/J 3.0.2 is a [_**Release Candidate (RC)**_](../../../community-server/about/release-criteria.md) release.
 
-**Do not use non-stable (non-GA) releases in production!**
+{% include "../../../.gitbook/includes/non-stable.md" %}
 
-**NOTE:** MariaDB Connector/J 3.0.2 is fully compatible with the latest release\
-of version 2.7. Further maintenance releases will not be provided for version\
-2.7 after MariaDB Connector/J 3.0 becomes stable (GA).
+{% hint style="warning" %}
+**NOTE:** MariaDB Connector/J 3.0.2 is fully compatible with the latest release of version 2.7. Further maintenance releases will not be provided for version 2.7 after MariaDB Connector/J 3.0 becomes stable (GA).
+{% endhint %}
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 ## Notable Changes
 
-See [mariadb-connector-j-300-release-notes.md](mariadb-connector-j-300-release-notes.md) and [mariadb-connector-j-301-release-notes.md](mariadb-connector-j-301-release-notes.md) for 3.0 release.\
+See [mariadb-connector-j-300-release-notes](mariadb-connector-j-300-release-notes.md) and [mariadb-connector-j-301-release-notes](mariadb-connector-j-301-release-notes.md) for 3.0 release.\
 with the following changes:
 
 ### Feature

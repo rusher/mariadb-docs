@@ -2,16 +2,17 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-j-260-release-notes.md)[Changelog](../changelogs/2.6/mariadb-connector-j-260-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | **Release Notes** | [Changelog](../changelogs/2.6/mariadb-connector-j-260-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 20 Mar 2020
 
 MariaDB Connector/J 2.6.0 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
-**NOTE:** MariaDB Connector/J 2.6.0 is fully compatible with the latest release of\
-version 2.5. Further maintenance releases will not be provided for version 2.5.
+{% hint style="warning" %}
+**NOTE:** MariaDB Connector/J 2.6.0 is fully compatible with the latest release of version 2.5. Further maintenance releases will not be provided for version 2.5.
+{% endhint %}
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) **page**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 ## Notable Updates
 

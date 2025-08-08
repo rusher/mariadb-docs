@@ -2,7 +2,7 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://downloads.mariadb.org/client-java/1.1.1/) | **Release Notes** | [Changelog](../changelogs/1.1/mariadb-java-client-111-changelog.md) |[Java Client Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-the-mariadb-java-client/README.md)
+[Download](https://downloads.mariadb.org/client-java/1.1.1/) | **Release Notes** | [Changelog](../changelogs/1.1/mariadb-java-client-111-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 01 Mar 2013
 
@@ -12,7 +12,7 @@ except for those marked as feature requests, that no bugs were fixed\
 since last release that caused a notable code changes, and that we\
 believe the code is ready for general usage (based on bug inflow).
 
-**For a description of the MariaDB Java Client see the**[**About the MariaDB Java Client**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-the-mariadb-java-client/README.md) **page.**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 For a list of changes made in this release, with links to detailed\
 information on each push, see the [changelog](../changelogs/1.1/mariadb-java-client-111-changelog.md).

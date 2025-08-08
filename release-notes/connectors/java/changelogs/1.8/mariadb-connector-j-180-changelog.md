@@ -1,8 +1,8 @@
-# MariaDB Connector/J 1.8.0 Changelog
+# Connector/J 1.8.0 Changelog
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://mariadb.com/downloads/?showall=1\&tab=connectors)[Release Notes](../../1.8/mariadb-connector-j-180-release-notes.md)[Changelog](mariadb-connector-j-180-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/?showall=1\&tab=connectors) | [Release Notes](../../1.8/mariadb-connector-j-180-release-notes.md) | **Changelog** | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 11 Feb 2019
 

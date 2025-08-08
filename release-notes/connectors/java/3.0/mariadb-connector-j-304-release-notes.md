@@ -2,13 +2,13 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-j-304-release-notes.md)[Changelog](../changelogs/3.0/mariadb-connector-j-304-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](mariadb-connector-j-304-release-notes.md) | [Changelog](../changelogs/3.0/mariadb-connector-j-304-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 25 Mar 2022
 
 MariaDB Connector/J 3.0.4 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 ### Bugs Fixed
 

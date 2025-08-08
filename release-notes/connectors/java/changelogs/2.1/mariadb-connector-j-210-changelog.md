@@ -1,10 +1,10 @@
-# MariaDB Connector/J 2.1.0 Changelog
+# Connector/J 2.1.0 Changelog
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://downloads.mariadb.org/connector-java/2.1.0/)[Release Notes](../../2.1/mariadb-connector-j-210-release-notes.md)[Changelog](mariadb-connector-j-210-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md)
+[Download](https://downloads.mariadb.org/connector-java/2.1.0/) | [Release Notes](../../2.1/mariadb-connector-j-210-release-notes.md) | **Changelog** | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
-**Release date:** 31 July 2017
+**Release date:** 31 Jul 2017
 
 For the highlights of this release, see the [release notes](../../2.1/mariadb-connector-j-210-release-notes.md).
 

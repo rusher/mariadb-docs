@@ -2,19 +2,20 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://downloads.mariadb.org/connector-java/2.0.1/)[Release Notes](mariadb-connector-j-201-release-notes.md)[Changelog](../changelogs/2.0/mariadb-connector-j-201-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+[Download](https://downloads.mariadb.org/connector-java/2.0.1/) | **Release Notes** | [Changelog](../changelogs/2.0/mariadb-connector-j-201-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 11 May 2017
 
-MariaDB Connector/J 2.0.1 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
-release.
+MariaDB Connector/J 2.0.1 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 ## Notable Changes
 
+{% hint style="warning" %}
 **Java 8 is the minimum required version**\
 The last release with Java 7 compatibility is [MariaDB Connector/J 1.6.0](../1.6/mariadb-connector-j-160-release-notes.md)
+{% endhint %}
 
 ## Change from 2.0.1
 

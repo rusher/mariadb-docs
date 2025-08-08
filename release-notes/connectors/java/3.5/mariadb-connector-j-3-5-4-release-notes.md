@@ -6,9 +6,7 @@
 
 MariaDB Connector/J 3.5.4 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
-{% hint style="info" %}
-**For an overview of MariaDB Connector/J see the** [**About MariaDB Connector/J**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j) **page**
-{% endhint %}
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 ## Notable Changes
 

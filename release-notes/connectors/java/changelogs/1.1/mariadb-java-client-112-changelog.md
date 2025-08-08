@@ -2,7 +2,7 @@
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://downloads.mariadb.org/client-java/1.1.2/) | [Release Notes](../../1.1/mariadb-java-client-112-release-notes.md) | **Changelog** |[Java Client Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-the-mariadb-java-client/README.md)
+[Download](https://downloads.mariadb.org/client-java/1.1.2/) | [Release Notes](../../1.1/mariadb-java-client-112-release-notes.md) | **Changelog** | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 02 May 2013
 

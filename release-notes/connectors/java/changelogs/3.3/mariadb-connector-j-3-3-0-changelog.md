@@ -2,7 +2,7 @@
 
 {% include "../../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)[Release Notes](../../3.3/mariadb-connector-j-3-3-0-release-notes.md)[Changelog](mariadb-connector-j-3-3-0-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector) | [Release Notes](../../3.3/mariadb-connector-j-3-3-0-release-notes.md) | **Changelog** | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 08 Nov 2023
 

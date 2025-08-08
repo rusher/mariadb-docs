@@ -2,16 +2,17 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-j-303-release-notes.md)[Changelog](../changelogs/3.0/mariadb-connector-j-303-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | **Release Notes** | [Changelog](../changelogs/3.0/mariadb-connector-j-303-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 25 Jan 2022
 
 MariaDB Connector/J 3.0.3 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release.
 
-**NOTE:** MariaDB Connector/J 3.0.3 is **NOT** fully compatible with the latest release\
-of version 2.7.
+{% hint style="warning" %}
+**NOTE:** MariaDB Connector/J 3.0.3 is **NOT** fully compatible with the latest release of version 2.7.
+{% endhint %}
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 New version 3.0 is a complete rewrite of the connector, with code simplification, reduced size (15%), more than 90% coverage tested, with performance gain.
 

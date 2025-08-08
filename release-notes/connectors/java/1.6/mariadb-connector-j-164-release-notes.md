@@ -2,14 +2,13 @@
 
 {% include "../../../.gitbook/includes/latest-java.md" %}
 
-[Download](https://downloads.mariadb.org/connector-java/1.6.4/)[Release Notes](mariadb-connector-j-164-release-notes.md)[Changelog](../changelogs/1.6/mariadb-connector-j-164-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+[Download](https://downloads.mariadb.org/connector-java/1.6.4/) | **Release Notes** | [Changelog](../changelogs/1.6/mariadb-connector-j-164-changelog.md) | [About MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 6 Sep 2017
 
-MariaDB Connector/J 1.6.4 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_\
-release compatible with java 6, 7, 8.
+MariaDB Connector/J 1.6.4 is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release compatible with java 6, 7, 8.
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
+{% include "../../../.gitbook/includes/connector-j-overview.md" %}
 
 ### Bug
 
