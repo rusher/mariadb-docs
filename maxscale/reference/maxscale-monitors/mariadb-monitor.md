@@ -1754,24 +1754,34 @@ connection. The port must not be blocked by a firewall or listened on by any\
 other program. If another process is listening on the port when rebuild is\
 starting, MaxScale will attempt to kill the process.
 
-**`mariadb-backup_use_memory`**
+**`mariabackup_use_memory`**
 
-String, default: "1G". Given as is to`mariadb-backup --prepare --use-memory=<mariadb-backup_use_memory>`. If set to empty,\
+* Type: string
+* Mandatory: No
+* Dynamic: Yes
+* Default: `1G`
+
+Given as is to`mariadb-backup --prepare --use-memory=<mariabackup_use_memory>`. If set to empty,\
 no `--use-memory` is set and mariadb-backup will use its internal default. See [here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-use-memory) for more\
 information.
 
 ```
-mariadb-backup_use_memory=2G
+mariabackup_use_memory=2G
 ```
 
-**`mariadb-backup_parallel`**
+**`mariabackup_parallel`**
 
-Numeric, default: 1. Given as is to`mariadb-backup --backup --parallel=<val>`.\
+* Type: number
+* Mandatory: No
+* Dynamic: Yes
+* Default: `1`
+
+Given as is to`mariadb-backup --backup --parallel=<val>`.\
 Defines the number of threads used for parallel data file transfer. See [here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-parallel) for more\
 information.
 
 ```
-mariadb-backup_parallel=2
+mariabackup_parallel=2
 ```
 
 **`backup_storage_address`**

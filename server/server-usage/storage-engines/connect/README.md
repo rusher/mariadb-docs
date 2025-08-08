@@ -7,6 +7,10 @@ description: >-
 
 # CONNECT
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 Note: You can download a PDF version of the CONNECT documentation (1.7.0003):
 
 {% file src="../../../.gitbook/assets/connect_1_7_03.pdf" %}

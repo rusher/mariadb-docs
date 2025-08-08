@@ -51,7 +51,7 @@ Remember, these features are in separate _preview packages_. The subsection head
 ## Misc. features
 
 * Add an optional argument to the [CRC32()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/numeric-functions/crc32) function, as well as the [CRC32C()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/numeric-functions/crc32c) function, which uses the Castagnoli polynomial. ([MDEV-27208](https://jira.mariadb.org/browse/MDEV-27208)). Note: The order of the 2-ary arguments was swapped after the preview release: `crc32('MariaDB')=crc32(crc32('Maria'),'DB')`
-* Deprecate the [keep\_files\_on\_create](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#keep_files_on_create) variable ([MDEV-23570](https://jira.mariadb.org/browse/MDEV-23570)).
+* Deprecate the [keep\_files\_on\_create](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#keep_files_on_create) variable ([MDEV-23570](https://jira.mariadb.org/browse/MDEV-23570)).
 * [my\_print\_defaults](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/my_print_defaults) now handles `--default-*` options in exactly the same way as other MariaDB tools ([MDEV-26238](https://jira.mariadb.org/browse/MDEV-26238)).
 * UCA [collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) are now notably faster ([MDEV-27266](https://jira.mariadb.org/browse/MDEV-27266), [MDEV-27265](https://jira.mariadb.org/browse/MDEV-27265)).
 

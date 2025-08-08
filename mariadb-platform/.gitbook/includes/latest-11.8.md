@@ -2,4 +2,4 @@
 title: most-recent-11.8
 ---
 
-* The latest release in this series is [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/mariadb-11-8-2-release-notes), released on 4 Jun 2025
+* The most recent release in this series is [MariaDB 11.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11.8.3-release-notes), released on 6 Aug 2025

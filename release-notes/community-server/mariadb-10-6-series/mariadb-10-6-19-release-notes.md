@@ -91,7 +91,7 @@ Thanks, and enjoy MariaDB!
 
 ### Error Log
 
-* [server\_uid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#server_uid) system variable added, and value added to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) at startup ([MDEV-34494](https://jira.mariadb.org/browse/MDEV-34494))
+* [server\_uid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#server_uid) system variable added, and value added to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) at startup ([MDEV-34494](https://jira.mariadb.org/browse/MDEV-34494))
 
 ### General
 

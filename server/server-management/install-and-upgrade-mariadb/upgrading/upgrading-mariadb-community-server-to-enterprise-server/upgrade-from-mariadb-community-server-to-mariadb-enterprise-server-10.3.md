@@ -8,7 +8,7 @@ When [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup prior to upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-usage/backup-and-restore/mariadb-backup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../../server-usage/backup-and-restore/backup-and-restore-with-mariadb-enterprise-server/).
+The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-usage/backup-and-restore/mariadb-backup/). For more information about backing up and restoring the database, please see the [Recovery Guide](broken-reference).
 
 1.  Take a full backup.
 
@@ -212,7 +212,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```
 
     ```bash
-    $ echo "4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0  mariadb_es_repo_setup" \
+    $ echo "${checksum}  mariadb_es_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -224,6 +224,8 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     $ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
        --mariadb-server-version="10.3"
     ```
+
+    1. _Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 3.  Install MariaDB Enterprise Server and package dependencies:
 
     ```
@@ -255,7 +257,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```
 
     ```bash
-    $ echo "4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0  mariadb_es_repo_setup" \
+    $ echo "${checksum}  mariadb_es_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -271,6 +273,8 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```bash
     $ sudo apt update
     ```
+
+    1. _Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 3.  Install MariaDB Enterprise Server and package dependencies:
 
     ```bash
@@ -302,7 +306,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```
 
     ```bash
-    $ echo "4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0  mariadb_es_repo_setup" \
+    $ echo "${checksum}  mariadb_es_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -314,6 +318,8 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     $ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
        --mariadb-server-version="10.3"
     ```
+
+    1. _Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 3.  Install MariaDB Enterprise Server and package dependencies:
 
     ```bash
@@ -431,6 +437,6 @@ When MariaDB Enterprise Server is up and running on your system, you should test
 
 ***
 
-© 2025 MariaDB. All rights reserved.
+{% include "../../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

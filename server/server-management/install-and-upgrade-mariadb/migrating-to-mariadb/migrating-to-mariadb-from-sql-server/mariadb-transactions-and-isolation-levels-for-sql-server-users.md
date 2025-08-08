@@ -35,7 +35,7 @@ The first read or write to an InnoDB table starts a transaction. No data access 
 
 By default [autocommit](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) is on, which means that the transaction is committed automatically after each SQL statement. We can disable it, and manually commit transactions:
 
-```
+```sql
 SET SESSION autocommit = 0;
 SELECT ... ;
 DELETE ... ;
@@ -44,7 +44,7 @@ COMMIT;
 
 Whether autocommit is enabled or not, we can start transactions explicitly, and they will not be automatically committed:
 
-```
+```sql
 START TRANSACTION;
 SELECT ... ;
 DELETE ... ;
@@ -80,8 +80,11 @@ MariaDB does something different: it always checks constraints after each row ch
 
 For example, suppose you have an `id` column that is the primary key, and you need to increase its value for some reason:
 
-```
+```sql
 SELECT id FROM customer;
+```
+
+```
 +----+
 | id |
 +----+
@@ -91,16 +94,20 @@ SELECT id FROM customer;
 |  4 |
 |  5 |
 +----+
-
-UPDATE customer SET id = id + 1;
-ERROR 1062 (23000): Duplicate entry '2' for key 'PRIMARY'
 ```
+
+```sql
+UPDATE customer SET id = id + 1;
+```
+
+<pre><code><strong>ERROR 1062 (23000): Duplicate entry '2' for key 'PRIMARY'
+</strong></code></pre>
 
 The reason why this happens is that, as the first thing, MariaDB tries to change 1 to 2, but a value of 2 is already present in the primary key.
 
 A solution is to use this non-standard syntax:
 
-```
+```sql
 UPDATE customer SET id = id + 1 ORDER BY id DESC;
 Query OK, 5 rows affected (0.00 sec)
 Rows matched: 5  Changed: 5  Warnings: 0
@@ -110,7 +117,7 @@ Changing the ids in reversed order won't duplicate any value.
 
 Similar problems can happen with `CHECK` constraints and foreign keys. To solve them, we can use a different approach:
 
-```
+```sql
 SET SESSION check_constraint_checks = 0;
 -- run some queries
 -- that temporarily violate a CHECK clause
@@ -155,13 +162,13 @@ tx_isolation = 'READ COMMITTED'
 
 It is also possible to change the default isolation level for the current session:
 
-```
+```bash
 SET SESSION tx_isolation = 'read-committed';
 ```
 
 Or just for one transaction, by issuing the following statement before starting a transaction:
 
-```
+```bash
 SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 ```
 
@@ -182,40 +189,64 @@ MariaDB isolation levels differ from SQL Server in the following ways:
 
 Here is an example of `WITH CONSISTENT SNAPSHOT` usage:
 
-```
+```sql
 -- session 1
 SELECT * FROM t1;
+```
+
+```
 +----+
 | id |
 +----+
 |  1 |
 +----+
+```
 
+```sql
 SELECT * FROM t2;
+```
+
+```
 +----+
 | id |
 +----+
 |  1 |
 +----+
+```
 
+```sql
 START TRANSACTION WITH CONSISTENT SNAPSHOT;
+```
 
+```sql
 -- session 2
 INSERT INTO t1 VALUES (2);
+```
 
+```sql
 -- session 1
 SELECT * FROM t1;
+```
+
+```
 +----+
 | id |
 +----+
 |  1 |
 +----+
+```
 
+```sql
 -- session 2
 INSERT INTO t2 VALUES (2);
+```
 
+```sql
 -- session 1
 SELECT * FROM t2;
+```
+
+```
 +----+
 | id |
 +----+
@@ -244,7 +275,7 @@ Note however that [lock\_wait\_timeout](../../../../ha-and-performance/optimizat
 
 There is a special syntax that can be used with `SELECT` and some non-transactional statements including `ALTER TABLE`: the [WAIT and NOWAIT](../../../../reference/sql-statements/transactions/wait-and-nowait.md) clauses. This syntax puts a timeout in seconds for all lock types, including row locks, table locks, and metadata locks. For example:
 
-```
+```sql
 Session 1:
 START TRANSACTION;
 -- let's acquire a metadata lock
@@ -288,7 +319,7 @@ In particular, check the following tables:
 
 Here is an example of their usage.
 
-```
+```sql
 -- session 1
 START TRANSACTION;
 UPDATE t SET id = 15 WHERE id = 10;
@@ -303,6 +334,9 @@ SELECT l.*, t.*
     JOIN information_schema.INNODB_TRX t
         ON l.lock_trx_id = t.trx_id
     WHERE trx_state = 'LOCK WAIT' \G
+```
+
+```
 *************************** 1. row ***************************
                    lock_id: 840:40:3:2
                lock_trx_id: 840

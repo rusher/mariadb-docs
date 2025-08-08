@@ -37,7 +37,7 @@ Notable changes of this release include:
 
 ### Variables
 
-* Added the [tcp\_nodelay](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#tcp_nodelay) system variable ([MDEV-16277](https://jira.mariadb.org/browse/MDEV-16277))
+* Added the [tcp\_nodelay](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#tcp_nodelay) system variable ([MDEV-16277](https://jira.mariadb.org/browse/MDEV-16277))
 * Removed the global [Innodb\_pages0\_read](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables) status variable ([MDEV-15705](https://jira.mariadb.org/browse/MDEV-15705)).
 
 ### General

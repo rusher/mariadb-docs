@@ -1,18 +1,10 @@
----
-hidden: true
----
-
 # MariaDB 10.6.23 Changelog
 
-{% include "../../../.gitbook/includes/unreleased-10-6.md" %}
-
-<!--
 <a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="../../mariadb-10-6-series/mariadb-10.6.23-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-10.6.23-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-6-series/what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/10.6.23/)
 
-**Release date:** ?
--->
+**Release date:** 6 Aug 2025
 
 For the highlights of this release, see the [release notes](../../mariadb-10-6-series/mariadb-10.6.23-release-notes.md).
 
@@ -43,7 +35,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #a3c3db7693](https://github.com/MariaDB/server/commit/a3c3db7693) <sup>_2025-07-14 16:38:24 +0200_</sup>
   * update WolfSSL to 5.8.0-stable
 * [Revision #fb2f324f85](https://github.com/MariaDB/server/commit/fb2f324f85) <sup>_2025-07-25 12:26:50 +0200_</sup>
-  * [MDEV-37310](https://jira.mariadb.org/browse/MDEV-37310) Non-debug failing assertion node-\>pcur-\>rel\_pos == BTR\_PCUR\_ON upon violating long unique under READ-COMMITTED
+  * [MDEV-37310](https://jira.mariadb.org/browse/MDEV-37310) Non-debug failing assertion node->pcur->rel\_pos == BTR\_PCUR\_ON upon violating long unique under READ-COMMITTED
 * [Revision #18f85c8c68](https://github.com/MariaDB/server/commit/18f85c8c68) <sup>_2025-07-24 00:11:33 +0200_</sup>
   * [MDEV-37302](https://jira.mariadb.org/browse/MDEV-37302) Assertion failure in Table\_triggers\_list::add\_tables\_and\_routines\_for\_triggers upon attempt to insert DEFAULT into non-insertable view
 * [Revision #5622f3f5e8](https://github.com/MariaDB/server/commit/5622f3f5e8) <sup>_2025-07-20 13:04:52 +0200_</sup>
@@ -65,7 +57,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #bfcd2674a3](https://github.com/MariaDB/server/commit/bfcd2674a3) <sup>_2025-07-16 16:40:17 +0200_</sup>
   * [MDEV-37199](https://jira.mariadb.org/browse/MDEV-37199) disable --view-protocol
 * [Revision #626d5bf832](https://github.com/MariaDB/server/commit/626d5bf832) <sup>_2025-07-16 16:25:53 +0530_</sup>
-  * [MDEV-36287](https://jira.mariadb.org/browse/MDEV-36287)  mariabackup ignores tables-file
+  * [MDEV-36287](https://jira.mariadb.org/browse/MDEV-36287) mariabackup ignores tables-file
 * [Revision #9703c90712](https://github.com/MariaDB/server/commit/9703c90712) <sup>_2025-07-11 15:49:53 +0200_</sup>
   * [MDEV-37199](https://jira.mariadb.org/browse/MDEV-37199) UNIQUE KEY USING HASH accepting duplicate records
 * [Revision #2746c19a9c](https://github.com/MariaDB/server/commit/2746c19a9c) <sup>_2025-07-11 11:23:30 +0200_</sup>
@@ -85,7 +77,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #499fa24d63](https://github.com/MariaDB/server/commit/499fa24d63) <sup>_2025-07-14 10:31:48 +0300_</sup>
   * [MDEV-27058](https://jira.mariadb.org/browse/MDEV-27058) fixup: Fix a bogus assertion
 * [Revision #ea962ca495](https://github.com/MariaDB/server/commit/ea962ca495) <sup>_2025-07-14 15:45:28 +1000_</sup>
-  * [MDEV-30436](https://jira.mariadb.org/browse/MDEV-30436) [fixup] Add missing check for HAVE\_PSI\_INTERFACE
+  * [MDEV-30436](https://jira.mariadb.org/browse/MDEV-30436) \[fixup] Add missing check for HAVE\_PSI\_INTERFACE
 * [Revision #998e765060](https://github.com/MariaDB/server/commit/998e765060) <sup>_2025-07-10 16:22:47 +1000_</sup>
   * [MDEV-32907](https://jira.mariadb.org/browse/MDEV-32907) Spider: do not create gbh if encountering Item\_aggregate\_ref
 * [Revision #3e9aa07cce](https://github.com/MariaDB/server/commit/3e9aa07cce) <sup>_2025-06-05 17:38:17 +1000_</sup>
@@ -95,7 +87,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #c78e906ed5](https://github.com/MariaDB/server/commit/c78e906ed5) <sup>_2025-06-05 16:26:10 +1000_</sup>
   * [MDEV-30264](https://jira.mariadb.org/browse/MDEV-30264) Remove unused method spider\_db\_result::fetch\_row\_from\_tmp\_table
 * [Revision #4d19e55441](https://github.com/MariaDB/server/commit/4d19e55441) <sup>_2025-07-12 14:59:11 +0300_</sup>
-  * [MDEV-36858](https://jira.mariadb.org/browse/MDEV-36858)  MariaDB MyISAM secondary indexes silently break for tables > 10B rows
+  * [MDEV-36858](https://jira.mariadb.org/browse/MDEV-36858) MariaDB MyISAM secondary indexes silently break for tables > 10B rows
 * [Revision #7fbbbc983f](https://github.com/MariaDB/server/commit/7fbbbc983f) <sup>_2025-07-11 16:07:08 +0300_</sup>
   * [MDEV-36330](https://jira.mariadb.org/browse/MDEV-36330): SERIALIZABLE read inconsistency
 * [Revision #f73ffd1150](https://github.com/MariaDB/server/commit/f73ffd1150) <sup>_2025-07-11 15:20:06 +0300_</sup>
@@ -109,13 +101,13 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #4c8af2007d](https://github.com/MariaDB/server/commit/4c8af2007d) <sup>_2025-06-19 11:32:40 +0200_</sup>
   * [MDEV-36934](https://jira.mariadb.org/browse/MDEV-36934): semi sync makes the master unresponsive when a replica is stopped
 * [Revision #c4a2688328](https://github.com/MariaDB/server/commit/c4a2688328) <sup>_2025-05-25 23:23:29 +0300_</sup>
-  * [MDEV-24726](https://jira.mariadb.org/browse/MDEV-24726) Assertion on compressed varstring as key field in optimizer 	   temporary table
+  * [MDEV-24726](https://jira.mariadb.org/browse/MDEV-24726) Assertion on compressed varstring as key field in optimizer temporary table
 * [Revision #31aa8b6939](https://github.com/MariaDB/server/commit/31aa8b6939) <sup>_2025-07-07 09:30:34 +0300_</sup>
   * [MDEV-37170](https://jira.mariadb.org/browse/MDEV-37170) Enable AVX10.1 CRC-32 on GCC 16
 * [Revision #a293dfd92a](https://github.com/MariaDB/server/commit/a293dfd92a) <sup>_2025-06-01 17:35:07 +0300_</sup>
   * Fix building with gcc 16 (evex512 removal)
 * [Revision #27660ff2e9](https://github.com/MariaDB/server/commit/27660ff2e9) <sup>_2025-07-01 10:59:20 +0530_</sup>
-  * [MDEV-37121](https://jira.mariadb.org/browse/MDEV-37121)   Change buffer freed pages are not removed during slow shutdown
+  * [MDEV-37121](https://jira.mariadb.org/browse/MDEV-37121) Change buffer freed pages are not removed during slow shutdown
 * [Revision #9059385262](https://github.com/MariaDB/server/commit/9059385262) <sup>_2025-06-20 10:41:50 +1000_</sup>
   * [MDEV-37048](https://jira.mariadb.org/browse/MDEV-37048) revert MSAN my\_vsnprintf\_ex for double workaround
 * [Revision #0dd6566ee4](https://github.com/MariaDB/server/commit/0dd6566ee4) <sup>_2025-07-02 14:25:38 +0530_</sup>
@@ -127,7 +119,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #f495460689](https://github.com/MariaDB/server/commit/f495460689) <sup>_2025-06-09 11:00:27 +0300_</sup>
   * [MDEV-36968](https://jira.mariadb.org/browse/MDEV-36968) : galera\_3nodes.inconsistency\_shutdown test occasionally hangs
 * [Revision #fd1266a980](https://github.com/MariaDB/server/commit/fd1266a980) <sup>_2025-06-11 15:57:42 +0300_</sup>
-  * [MDEV-34761](https://jira.mariadb.org/browse/MDEV-34761) : Assertion client\_state\_.mode() == wsrep::client\_state::m\_local failed in int wsrep::transaction::after\_statement(wsrep::unique\_lock<wsrep::mutex>&)
+  * [MDEV-34761](https://jira.mariadb.org/browse/MDEV-34761) : Assertion client\_state\_.mode() == wsrep::client\_state::m\_local failed in int wsrep::transaction::after\_statement(wsrep::unique\_lock[wsrep::mutex](wsrep::mutex)&)
 * [Revision #f41acb555d](https://github.com/MariaDB/server/commit/f41acb555d) <sup>_2025-06-23 08:56:00 +0300_</sup>
   * [MDEV-35523](https://jira.mariadb.org/browse/MDEV-35523) : Server crashes with "WSREP: Unknown writeset version: -1"
 * [Revision #c3578720e6](https://github.com/MariaDB/server/commit/c3578720e6) <sup>_2025-06-28 14:32:31 +0300_</sup>
@@ -139,7 +131,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #cda1826201](https://github.com/MariaDB/server/commit/cda1826201) <sup>_2025-05-21 14:56:16 +0200_</sup>
   * [MDEV-36852](https://jira.mariadb.org/browse/MDEV-36852) Table definition gets corrupt after adding unique hash key
 * [Revision #6ec57588bd](https://github.com/MariaDB/server/commit/6ec57588bd) <sup>_2025-06-11 20:47:43 +0530_</sup>
-  * [MDEV-30363](https://jira.mariadb.org/browse/MDEV-30363)   InnoDB: Failing assertion: trx-\>error\_state == DB\_SUCCESS in que\_run\_threads
+  * [MDEV-30363](https://jira.mariadb.org/browse/MDEV-30363) InnoDB: Failing assertion: trx->error\_state == DB\_SUCCESS in que\_run\_threads
 * [Revision #888663ce12](https://github.com/MariaDB/server/commit/888663ce12) <sup>_2025-06-03 10:32:22 +0200_</sup>
   * [MDEV-36280](https://jira.mariadb.org/browse/MDEV-36280) ALTER TABLE with DEFAULT NEXTVAL(sequence) fails due to insufficient grants
 * [Revision #643319a7fb](https://github.com/MariaDB/server/commit/643319a7fb) <sup>_2025-05-30 11:22:58 +0300_</sup>
@@ -151,13 +143,13 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #5f83b219bb](https://github.com/MariaDB/server/commit/5f83b219bb) <sup>_2025-05-21 10:59:34 +0300_</sup>
   * Fixed compiler warning from clang in connect/tabxcl.cpp
 * [Revision #6878c14000](https://github.com/MariaDB/server/commit/6878c14000) <sup>_2025-05-20 10:39:53 +0300_</sup>
-  * Updated storage/maria/ma\_test\_big.sh to use aria_ instead of maria_
+  * Updated storage/maria/ma\_test\_big.sh to use aria\_ instead of maria\_
 * [Revision #22024da64e](https://github.com/MariaDB/server/commit/22024da64e) <sup>_2025-05-08 15:08:02 +0300_</sup>
   * [MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143) Row event replication with Aria does not honour BLOCK\_COMMIT
 * [Revision #f533333f82](https://github.com/MariaDB/server/commit/f533333f82) <sup>_2025-05-29 11:28:15 +1000_</sup>
   * [MDEV-34388](https://jira.mariadb.org/browse/MDEV-34388): Stack overflow on Alpine Linux (postfix) - sanitizers
 * [Revision #fe6a5c2200](https://github.com/MariaDB/server/commit/fe6a5c2200) <sup>_2025-05-28 11:28:17 +0300_</sup>
-  * [MDEV-29155](https://jira.mariadb.org/browse/MDEV-29155) CREATE OR REPLACE with self-referencing CHECK hangs 	   forever, cannot be killed
+  * [MDEV-29155](https://jira.mariadb.org/browse/MDEV-29155) CREATE OR REPLACE with self-referencing CHECK hangs forever, cannot be killed
 * [Revision #0b2434d2e9](https://github.com/MariaDB/server/commit/0b2434d2e9) <sup>_2025-05-28 11:28:16 +0300_</sup>
   * [MDEV-25158](https://jira.mariadb.org/browse/MDEV-25158) Segfault on INTERSECT ALL with UNION in Oracle mode
 * [Revision #e021a61b6f](https://github.com/MariaDB/server/commit/e021a61b6f) <sup>_2025-05-02 17:13:28 +1000_</sup>
@@ -191,17 +183,17 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1037f95941](https://github.com/MariaDB/server/commit/1037f95941) <sup>_2025-05-21 11:10:09 +0300_</sup>
   * [MDEV-33675](https://jira.mariadb.org/browse/MDEV-33675) Assertion(reclength < vreclength) in setup\_vcols\_for\_repair()
 * [Revision #1a95c2a4b2](https://github.com/MariaDB/server/commit/1a95c2a4b2) <sup>_2025-05-21 11:10:09 +0300_</sup>
-  * [MDEV-36817](https://jira.mariadb.org/browse/MDEV-36817) Server crashes in do\_mark\_index\_columns instead of 	   ER\_DUP\_ENTRY on partitioned table
+  * [MDEV-36817](https://jira.mariadb.org/browse/MDEV-36817) Server crashes in do\_mark\_index\_columns instead of ER\_DUP\_ENTRY on partitioned table
 * [Revision #fbd736c872](https://github.com/MariaDB/server/commit/fbd736c872) <sup>_2025-05-21 11:10:09 +0300_</sup>
   * mysqltest: result\_format fix
 * [Revision #d5247592c5](https://github.com/MariaDB/server/commit/d5247592c5) <sup>_2025-05-21 11:10:09 +0300_</sup>
   * Test sysvars\_server failure fix
 * [Revision #2c4fe3557a](https://github.com/MariaDB/server/commit/2c4fe3557a) <sup>_2025-03-28 17:58:06 +1100_</sup>
-  * [MDEV-36337](https://jira.mariadb.org/browse/MDEV-36337): mroonga\_* udf correct ptr types for is\_null/error
+  * [MDEV-36337](https://jira.mariadb.org/browse/MDEV-36337): mroonga\_\* udf correct ptr types for is\_null/error
 * [Revision #b9a20752a9](https://github.com/MariaDB/server/commit/b9a20752a9) <sup>_2025-03-21 16:37:44 +1100_</sup>
   * [MDEV-36337](https://jira.mariadb.org/browse/MDEV-36337) auth\_ed25519 correct UDF pointers for is\_null/error
 * [Revision #0b5a084e27](https://github.com/MariaDB/server/commit/0b5a084e27) <sup>_2025-03-20 19:21:56 +1100_</sup>
-  * [MDEV-36337](https://jira.mariadb.org/browse/MDEV-36337): connect UDF pointers need unsigned char* for is\_null/error
+  * [MDEV-36337](https://jira.mariadb.org/browse/MDEV-36337): connect UDF pointers need unsigned char\* for is\_null/error
 * [Revision #c91c2e74ff](https://github.com/MariaDB/server/commit/c91c2e74ff) <sup>_2025-03-20 18:31:25 +1100_</sup>
   * [MDEV-36337](https://jira.mariadb.org/browse/MDEV-36337): udf\_example UDF pointers need unsigned is\_null/error
 * [Revision #497d6324bc](https://github.com/MariaDB/server/commit/497d6324bc) <sup>_2025-04-28 07:35:06 +0300_</sup>
@@ -223,7 +215,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #60f046d7e6](https://github.com/MariaDB/server/commit/60f046d7e6) <sup>_2025-05-02 17:34:39 +1000_</sup>
   * [MDEV-35009](https://jira.mariadb.org/browse/MDEV-35009): Initialize affected\_rows in SQL service
 * [Revision #c626715439](https://github.com/MariaDB/server/commit/c626715439) <sup>_2025-04-30 10:38:44 +1000_</sup>
-  * [MDEV-35452](https://jira.mariadb.org/browse/MDEV-35452) [fixup] fix spider/bugfix.perfschema view protocol
+  * [MDEV-35452](https://jira.mariadb.org/browse/MDEV-35452) \[fixup] fix spider/bugfix.perfschema view protocol
 * <sup>_Merge_</sup> [<sup>_Revision #76e8e24b0b_</sup>](https://github.com/MariaDB/server/commit/76e8e24b0b) <sup>_2025-04-30 10:35:11 +1000 - Merge branch '10.5' into 10.6_</sup>
 * [Revision #5c92b27d54](https://github.com/MariaDB/server/commit/5c92b27d54) <sup>_2025-04-17 15:35:38 +1000_</sup>
   * [MDEV-36633](https://jira.mariadb.org/browse/MDEV-36633) [MDEV-35452](https://jira.mariadb.org/browse/MDEV-35452) spider/bugfix.mdev\_33434 reports wrong error in view protocol
@@ -248,10 +240,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #2b448e7337](https://github.com/MariaDB/server/commit/2b448e7337) <sup>_2025-04-17 10:51:48 +0300_</sup>
   * print\_ddl\_recovery\_log.pl ; Print content of the ddl\_recovery.log
 
-
-{% include "../../.gitbook/includes/announce.md" %}
-
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
-<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formid="4316" formId="4316" %}

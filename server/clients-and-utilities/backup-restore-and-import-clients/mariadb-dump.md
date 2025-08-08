@@ -8,7 +8,7 @@ Previously, the client used to be called `mysqldump`, and can still be accessed 
 
 {% tabs %}
 {% tab title="Current" %}
-`mariadb-dump` generates a command at the beginning of the dump to enable [sandbox](../mariadb-client/mariadb-command line-client.md#-sandbox) mode. This command cannot be interpreted by earlier versions of the [MariaDB command line client](../mariadb-client/mariadb-command line-client.md) or by MySQL's command line client, and the client generates an error if used against the versions that do not support it. This does not affect other methods of importing the data.
+`mariadb-dump` generates a command at the beginning of the dump to enable \[sandbox]\(../mariadb-client/mariadb-command line-client.md#-sandbox) mode. This command cannot be interpreted by earlier versions of the \[MariaDB command line client]\(../mariadb-client/mariadb-command line-client.md) or by MySQL's command line client, and the client generates an error if used against the versions that do not support it. This does not affect other methods of importing the data.
 {% endtab %}
 
 {% tab title="< 11.4.2 / 11.2.4 / 11.1.5 / 11.0.6 / 10.11.8 / 10.6.18 / 10.5.25" %}
@@ -28,7 +28,7 @@ If you are doing a backup on the server and your tables all are [MyISAM](../../s
 
 ## Performance
 
-`mariadb-dump`  usually doesn't consume much CPU resources on modern hardware, as by default it uses a single thread. This method is good for a heavily loaded server.
+`mariadb-dump` usually doesn't consume much CPU resources on modern hardware, as by default it uses a single thread. This method is good for a heavily loaded server.
 
 Disk input/outputs per second (IOPS), can, however, increase for multiple reasons. When you back up on the same device as the database, this produces unnecessary random IOPS. The dump is done sequentially, on a per-table basis, causing a full table scan and many buffer page misses on tables that are not fully cached in memory.
 
@@ -143,7 +143,7 @@ Use compression in server/client protocol. Both client and server must support c
 
 #### --copy-s3-tables
 
-By default, [S3](../../server-usage/storage-engines/s3-storage-engine/) tables are ignored. With this option set, the result file will contain a `CREATE` statement for a similar [Aria](../../server-usage/storage-engines/aria/) table, followed by the table data and ending with an `ALTER TABLE`` `_`table`_` ``ENGINE=S3`.
+By default, [S3](../../server-usage/storage-engines/s3-storage-engine/) tables are ignored. With this option set, the result file will contain a `CREATE` statement for a similar [Aria](../../server-usage/storage-engines/aria/) table, followed by the table data and ending with an ` ALTER TABLE`` `` `_`table`_` `` ``ENGINE=S3 `.
 
 #### -a, --create-options
 
@@ -199,11 +199,11 @@ Parallel dump of multiple databases. Works just like `--tab`, with regard to out
 
 #### -K, --disable-keys
 
-'`/*!40000 ALTER TABLE`` `_`tb_name`_` ``DISABLE KEYS`` `_`/;` and `'/`_`!40000 ALTER TABLE`` `_`tb_name`_` ``ENABLE KEYS */;` are written to the output. This makes loading the dump file faster, because the indexes are created after all rows are inserted. This option is effective only for non-unique indexes of MyISAM tables. Disable with `--skip-disable-keys`.
+'` /*!40000 ALTER TABLE`` `` `_`tb_name`_` ``DISABLE KEYS`` `_`/;` and `'/`_` !40000 ALTER TABLE`` `` `_`tb_name`_` `` ``ENABLE KEYS */; ` are written to the output. This makes loading the dump file faster, because the indexes are created after all rows are inserted. This option is effective only for non-unique indexes of MyISAM tables. Disable with `--skip-disable-keys`.
 
 #### --dump-date
 
-If the `--comments` option and this option are given, `mariadb-dump` produces a comment at the end of the dump of the following form: `-- Dump completed on`` `_`date`_. However, the date causes dump files taken at different times to appear to be different, even if the data are otherwise identical. `--dump-date` and `--skip-dump-date` control whether the date is added to the comment. The default is `--dump-date` (include the date in the comment). `--skip-dump-date` suppresses date printing.
+If the `--comments` option and this option are given, `mariadb-dump` produces a comment at the end of the dump of the following form: ` -- Dump completed on`` `` `_`date`_. However, the date causes dump files taken at different times to appear to be different, even if the data are otherwise identical. `--dump-date` and `--skip-dump-date` control whether the date is added to the comment. The default is `--dump-date` (include the date in the comment). `--skip-dump-date` suppresses date printing.
 
 #### -H, --dump-history
 
@@ -305,7 +305,7 @@ Lines in the output file are terminated by the given _string_. This option is us
 
 #### -x, --lock-all-tables
 
-Lock all tables across all databases. This is achieved by acquiring a global read lock for the duration of the whole dump by executing [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md). This option automatically turns off \
+Lock all tables across all databases. This is achieved by acquiring a global read lock for the duration of the whole dump by executing [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md). This option automatically turns off\
 `--single-transaction` and `--lock-tables`.
 
 #### -l, --lock-tables
@@ -320,9 +320,9 @@ Log warnings and errors by appending them to the named _file_. The default is no
 
 When restoring the dump, if logging is turned on, the server logs queries to the general and [slow query log](../../server-management/server-monitoring-logs/slow-query-log/). Defaults to `ON`; use `--skip-log-queries` to disable.
 
-#### --master-data\[=#]&#x20;
+#### --master-data\[=#]
 
-Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename to be appended to the output, useful for dumping a primary replication server to produce a dump file that can be used to set up another server as a replica of the primary. These are the primary server coordinates from which the replica should start replicating after you load the dump file into the replica.&#x20;
+Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename to be appended to the output, useful for dumping a primary replication server to produce a dump file that can be used to set up another server as a replica of the primary. These are the primary server coordinates from which the replica should start replicating after you load the dump file into the replica.
 
 If the option is set to `1` (the default), print it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command; if set to `2`, that command is prefixed with a comment symbol. This `--master-data` option turns `--lock-all-tables` on, unless `--single-transaction` is specified, too. In all cases, any action on logs will happen at the exact moment of the dump. This option automatically turns `--lock-tables` off. In all cases, any action on logs happens at the exact moment of the dump. It is also possible to set up a replica by dumping an existing replica of the primary. To do this, use the following procedure on the existing replica:
 
@@ -373,7 +373,7 @@ CHANGE MASTER TO
        MASTER_LOG_POS = file_pos;
 ```
 
-The `CHANGE MASTER TO` statement might also need other parameters, such as `MASTER_HOST` to point the replica to the correct primary server host. Add any such parameters as necessary.&#x20;
+The `CHANGE MASTER TO` statement might also need other parameters, such as `MASTER_HOST` to point the replica to the correct primary server host. Add any such parameters as necessary.
 {% endstep %}
 {% endstepper %}
 
@@ -579,7 +579,7 @@ Dump the database's system tables in a logical form. With this option, the [mysq
 
 #### -T, --tab=_name_
 
-Produce tab-separated text-format data files. With this option, for each dumped table, `mariadb-dump`  creates a `tbl_name.sql` file containing the `CREATE TABLE` statement that creates the table, and a `tbl_name.txt` file containing the table's data. The option value is the directory in which to write the files. Note: This option can only be used when `mariadb-dump` is run on the same machine as the `mariadbd` server. You must have the `FILE` privilege, and the server must have permission to write files in the directory that you specify. By default, the `.txt` data files are formatted using tab characters between column values, and a newline at the end of each line. The format can be specified explicitly using the `--fields-`_`xxx`_ and `--lines-terminated-by` options. Column values are converted to the character set specified by the `--default-character-set` option.
+Produce tab-separated text-format data files. With this option, for each dumped table, `mariadb-dump` creates a `tbl_name.sql` file containing the `CREATE TABLE` statement that creates the table, and a `tbl_name.txt` file containing the table's data. The option value is the directory in which to write the files. Note: This option can only be used when `mariadb-dump` is run on the same machine as the `mariadbd` server. You must have the `FILE` privilege, and the server must have permission to write files in the directory that you specify. By default, the `.txt` data files are formatted using tab characters between column values, and a newline at the end of each line. The format can be specified explicitly using the `--fields-`_`xxx`_ and `--lines-terminated-by` options. Column values are converted to the character set specified by the `--default-character-set` option.
 
 #### --tables
 
@@ -611,7 +611,7 @@ Output version information and exit.
 
 #### -w _condition_, --where=_condition_
 
-Dump only rows selected by the given _`WHERE` condition_. Quotes around the condition are mandatory if it contains spaces or other characters that are special to your command interpreter. Example: \
+Dump only rows selected by the given _`WHERE` condition_. Quotes around the condition are mandatory if it contains spaces or other characters that are special to your command interpreter. Example:\
 `--where="user = ´jimf´" -w"userid > 1" -w"userid < 1"` .
 
 #### -L, --wildcards
@@ -737,7 +737,7 @@ Collation="latin1_swedish_ci" Create_options="" Comment="" />
 
 ## Restoring Dumps
 
-To restore a backup created with `mariadb-dump`, use the [mariadb client](../mariadb-client/mariadb-command line-client.md) to import the dump:
+To restore a backup created with `mariadb-dump`, use the \[mariadb client]\(../mariadb-client/mariadb-command line-client.md) to import the dump:
 
 ```bash
 mariadb db_name < backup-file.sql

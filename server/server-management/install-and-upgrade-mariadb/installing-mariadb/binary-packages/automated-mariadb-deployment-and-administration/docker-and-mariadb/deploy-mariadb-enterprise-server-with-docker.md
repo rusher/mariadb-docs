@@ -1,110 +1,72 @@
-
 # Deploy MariaDB Enterprise Server with Docker
 
 MariaDB Corporation provides Docker images for MariaDB Enterprise Server in the MariaDB Enterprise Docker Registry.
 
-
 Docker provides multiple benefits:
 
-
 * Docker is an open platform for developing, shipping, and running applications that allows you to separate your applications from your infrastructure.
-
-
 * Docker images are portable. A Docker image can be deployed in a Docker container on any system using the Docker platform, regardless of the host operating system.
-
-
 * Docker containers are isolated from the host operating system and from other Docker containers.
-
 
 If you want to deploy MariaDB Enterprise Server without Docker, alternative deployment methods are available.
 
-
 ## Use Cases
-
 
 MariaDB Enterprise Server can be deployed with Docker to support use cases that require software to be rapidly deployed on existing infrastructure, such as:
 
-
 * Continuously create and destroy automated testing environments as part of a continuous integration (CI) pipeline
-
-
 * Create a small test environment on a local workstation
-
-
 * Create multiple isolated test environments on the same host
-
-
 * Deployment alongside related containers using Docker Compose
-
 
 ## Compatibility
 
-
 The following products and versions can be deployed using the MariaDB Enterprise Docker Registry:
 
-
 * MariaDB Enterprise Server 10.5
-
-
 * MariaDB Enterprise Server 10.6
-
-
 * MariaDB Enterprise Server 11.4
-
 
 For details about which storage engines and plugins are supported in the images for each version, see "MariaDB Enterprise Docker Registry".
 
-
 ## Deploy Enterprise Server in a Docker Container
-
 
 To deploy MariaDB Enterprise Server in a Docker container, follow the instructions below.
 
-
 ### Step 1: Retrieve Customer Download Token
-
 
 MariaDB Corporation requires customers to authenticate when logging in to the MariaDB Enterprise Docker Registry. A customer-specific Customer Download Token must be provided as the password.
 
-
 Customer Download Tokens are available through the MariaDB Customer Portal.
-
 
 To retrieve the customer download token for your account:
 
-
 1. Navigate to the Customer Download Token at the MariaDB Customer Portal.
-1. Log in using your MariaDB ID.
-1. Copy the Customer Download Token to use as the password when logging in to the MariaDB Enterprise Docker Registry.
-
+2. Log in using your MariaDB ID.
+3. Copy the Customer Download Token to use as the password when logging in to the MariaDB Enterprise Docker Registry.
 
 ### Step 2: Log In to Docker Registry
 
-
 Log in to the MariaDB Enterprise Docker Registry by executing `docker login`:
 
-
-```
+```bash
 $ docker login docker.mariadb.com
 ```
 
 When prompted, enter the login details:
 
-
 * As the user name, enter the email address associated with your MariaDB ID.
-
-
 * As the password, enter your Customer Download Token.
-
 
 The login details will be saved.
 
-
 Confirm the login details were saved by checking the /.docker/config.json file for a JSON object named "docker.mariadb.com" inside an "auths" parent JSON object:
 
-
-```
+```bash
 $ cat ~/.docker/config.json
+```
+
+```json
 {
    "auths": {
       "docker.mariadb.com": {
@@ -116,23 +78,17 @@ $ cat ~/.docker/config.json
 
 ### Step 3: Choose an Image Tag
 
-
 The `enterprise-server` repository in the MariaDB Enterprise Docker Registry contains images for different MariaDB Enterprise Server releases using specific tags. Before continuing, you will need to decide which tag to use.
-
 
 To deploy a container using the most recent image for the latest MariaDB Enterprise Server release series (currently 11.4), use the `latest` tag.
 
-
 For additional information, see "MariaDB Enterprise Docker Registry: Supported Tags".
-
 
 ### Step 4: Pull Docker Image
 
-
 Pull the Docker image with the chosen tag by executing `docker pull`:
 
-
-```
+```bash
 $ docker pull docker.mariadb.com/enterprise-server:latest
 ```
 
@@ -146,8 +102,7 @@ docker.mariadb.com/enterprise-server:latest
 
 Confirm the Docker image has been pulled by executing `docker images`:
 
-
-```
+```bash
 $ docker images \
    --filter=reference='docker.mariadb.com/enterprise-server'
 ```
@@ -159,11 +114,9 @@ docker.mariadb.com/enterprise-server   latest    dd17291aa340   3 months ago   4
 
 ### Step 5: Create a Container
 
-
 Create a container using the pulled Docker image by executing `docker run`:
 
-
-```
+```bash
 $ docker run --detach \
    --name mariadb-es-latest \
    --env MARIADB_ROOT_PASSWORD='YourSecurePassword123!' \
@@ -178,18 +131,12 @@ $ docker run --detach \
 ```
 
 * Configure the container and set the root password using environment variables by setting the `--env` command-line option.
-
-
 * Configure TCP port bindings for the container by setting the `--publish` or `--publish-all` command-line options.
-
-
 * Configure MariaDB Enterprise Server by setting mariadbd command-line options.
-
 
 Confirm the container is running by executing `docker ps`:
 
-
-```
+```bash
 $ docker ps \
    --all \
    --filter ancestor='docker.mariadb.com/enterprise-server:latest'
@@ -202,14 +149,11 @@ CONTAINER ID   IMAGE                                         COMMAND            
 
 By default, Docker uses Docker bridge networking for new containers. For details on how to use host networking for new containers, see "Create a Container with Host Networking".
 
-
 ### Step 6: Connect to Container
-
 
 Connect to the container by executing MariaDB Client on the container using docker exec:
 
-
-```
+```bash
 $ docker exec --interactive --tty \
    mariadb-es-latest \
    mariadb \
@@ -219,8 +163,7 @@ $ docker exec --interactive --tty \
 
 Confirm the container is using the correct version of MariaDB Enterprise Server by querying the version system variable with the SHOW GLOBAL VARIABLES statement:
 
-
-```
+```sql
 SHOW GLOBAL VARIABLES
    LIKE 'version'\G
 ```
@@ -233,8 +176,7 @@ Variable_name: version
 
 Exit the container using `exit`:
 
-
-```
+```bash
 exit
 ```
 
@@ -244,11 +186,9 @@ Bye
 
 ### Step 7: Stop Container
 
-
 Stop a Docker container using `docker stop`:
 
-
-```
+```bash
 $ docker stop mariadb-es-latest
 ```
 
@@ -258,8 +198,7 @@ mariadb-es-latest
 
 Confirm the container is stopped by executing `docker ps`:
 
-
-```
+```bash
 $ docker ps \
    --all \
    --filter ancestor='docker.mariadb.com/enterprise-server:latest'
@@ -272,11 +211,9 @@ CONTAINER ID   IMAGE                                         COMMAND            
 
 ### Step 8: Remove Container
 
-
 Remove a Docker container using `docker rm`:
 
-
-```
+```bash
 $ docker rm mariadb-es-latest
 ```
 
@@ -286,8 +223,7 @@ mariadb-es-latest
 
 Confirm the container is removed by executing docker ps:
 
-
-```
+```bash
 $ docker ps \
    --all \
    --filter ancestor='docker.mariadb.com/enterprise-server:latest'
@@ -297,8 +233,6 @@ $ docker ps \
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

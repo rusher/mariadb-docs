@@ -13,9 +13,9 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 ## Notable Changes
 
 * Limit [innodb\_encryption\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encryption_threads) to 255 ([MDEV-22258](https://jira.mariadb.org/browse/MDEV-22258))
-* Minimum value of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) raised to 8 (previously 4) so fixed size data types like [DOUBLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/double) and [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) are not truncated for lower values of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length). ([MDEV-22715](https://jira.mariadb.org/browse/MDEV-22715))
+* Minimum value of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length) raised to 8 (previously 4) so fixed size data types like [DOUBLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/double) and [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) are not truncated for lower values of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length). ([MDEV-22715](https://jira.mariadb.org/browse/MDEV-22715))
 * Backport from MariaDB Server 10.5.4 improvements to [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) for InnoDB. (MENT-636)
-* Backport option [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#tls_version) from MariaDB Server 10.4. (MENT-581)
+* Backport option [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#tls_version) from MariaDB Server 10.4. (MENT-581)
 
 ## Issues Fixed
 
@@ -62,8 +62,8 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 
 ## Interface Changes
 
-* [mariadb-backup](broken-reference) [--tls-version](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) command-line option added
-* [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) system variable minimum value changed from 4 to 8
+* [mariadb-backup](broken-reference/) [--tls-version](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) command-line option added
+* [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length) system variable minimum value changed from 4 to 8
 * [mysql\_upgrade --tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) command-line option added
 * [mysql --tls-version](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) command-line option added
 * [mysqladmin --tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-admin#mariadb-admin) command-line option added

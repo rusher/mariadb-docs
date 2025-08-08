@@ -6,7 +6,7 @@ MariaDB Enterprise Server 10.2.30-5 was released on 2020-01-06.
 
 ## Notable Changes
 
-* [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) no longer sends unnecessary warnings to the error log about maximum row size for DDL statements when [innodb\_strict\_mode=OFF](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#innodb_strict_mode) and [log\_warnings<=2](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#log_warnings) ([MDEV-20832](https://jira.mariadb.org/browse/MDEV-20832))
+* [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) no longer sends unnecessary warnings to the error log about maximum row size for DDL statements when [innodb\_strict\_mode=OFF](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#innodb_strict_mode) and [log\_warnings<=2](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_warnings) ([MDEV-20832](https://jira.mariadb.org/browse/MDEV-20832))
 * Redundant writes to the [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) redo log have been removed. ([MDEV-21024](https://jira.mariadb.org/browse/MDEV-21024))
 * The default for the plugin load option plugin-maturity is now `stable` (MENT-240)
 * [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-installation) and the MariaDB Audit plugin trace now add the user who initiated statements with the `DELAYED` option. In previous versions a system user was added. (MENT-237)
@@ -21,7 +21,7 @@ MariaDB Enterprise Server 10.2.30-5 was released on 2020-01-06.
 
 * Client received error `SEC_E_INVALID_TOKEN` when SSL is used and connecting to MariaDB Enterprise Server running on Microsoft Windows. ([MDEV-13492](https://jira.mariadb.org/browse/MDEV-13492))
 * The restore of [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) tables was not always possible if MariaDB Backup was using the parameters [--prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement) `--incremental` ([MDEV-18310](https://jira.mariadb.org/browse/MDEV-18310))
-* An incomplete result set was returned when [sort\_buffer\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#sort_buffer_size) was too small. ([MDEV-21044](https://jira.mariadb.org/browse/MDEV-21044))
+* An incomplete result set was returned when [sort\_buffer\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#sort_buffer_size) was too small. ([MDEV-21044](https://jira.mariadb.org/browse/MDEV-21044))
 
 ## Interface Changes
 

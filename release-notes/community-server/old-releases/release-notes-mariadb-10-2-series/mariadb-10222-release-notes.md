@@ -22,7 +22,7 @@ Thanks, and enjoy MariaDB!
 
 * [HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) updated to 9.5
 * Backport [Information Schema CHECK\_CONSTRAINTS Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-check_constraints-table).
-* [MDEV-17475](https://jira.mariadb.org/browse/MDEV-17475): Maximum value of [table\_definition\_cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#table_definition_cache) is now `2097152`.
+* [MDEV-17475](https://jira.mariadb.org/browse/MDEV-17475): Maximum value of [table\_definition\_cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#table_definition_cache) is now `2097152`.
 * InnoDB ALTER TABLE fixes:[MDEV-16499](https://jira.mariadb.org/browse/MDEV-16499), [MDEV-18186](https://jira.mariadb.org/browse/MDEV-18186), [MDEV-18237](https://jira.mariadb.org/browse/MDEV-18237), [MDEV-18222](https://jira.mariadb.org/browse/MDEV-18222), [MDEV-18256](https://jira.mariadb.org/browse/MDEV-18256), [MDEV-18016](https://jira.mariadb.org/browse/MDEV-18016), [MDEV-16849](https://jira.mariadb.org/browse/MDEV-16849)
 * mariadb-backup fixes: [MDEV-18185](https://jira.mariadb.org/browse/MDEV-18185), [MDEV-18201](https://jira.mariadb.org/browse/MDEV-18201), [MDEV-18194](https://jira.mariadb.org/browse/MDEV-18194)
 * Galera crash recovery fix: [MDEV-15740](https://jira.mariadb.org/browse/MDEV-15740)

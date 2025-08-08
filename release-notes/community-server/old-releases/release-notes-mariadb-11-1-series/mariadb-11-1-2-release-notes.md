@@ -107,7 +107,7 @@ Thanks, and enjoy MariaDB!
 * Assertion \`\`s->table->opt\_range\_condition\_rows <= s->found\_records'`failed in`apply\_selectivity\_for\_table\` ([MDEV-31449](https://jira.mariadb.org/browse/MDEV-31449))
 * Inconsistency between MRR and SQL layer costs can cause poor query plan ([MDEV-31479](https://jira.mariadb.org/browse/MDEV-31479))
 * `MAX_SEL_ARG` memory exhaustion is not visible in the optimizer trace ([MDEV-30964](https://jira.mariadb.org/browse/MDEV-30964))
-* [SHOW TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-tables) not working properly with [lower\_case\_table\_names=2](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#lower_case_table_names) ([MDEV-30765](https://jira.mariadb.org/browse/MDEV-30765))
+* [SHOW TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-tables) not working properly with [lower\_case\_table\_names=2](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#lower_case_table_names) ([MDEV-30765](https://jira.mariadb.org/browse/MDEV-30765))
 * Segfault on select query using index for group-by and filesort ([MDEV-30143](https://jira.mariadb.org/browse/MDEV-30143))
 * Server crash in `store_length`, assertion failure in `Type_handler_string_result::sort_length` ([MDEV-31743](https://jira.mariadb.org/browse/MDEV-31743))
 

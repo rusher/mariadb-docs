@@ -99,8 +99,8 @@ Notable changes of this release include:
 ### Other
 
 * [HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) updated to 11.0 ([MDEV-22032](https://jira.mariadb.org/browse/MDEV-22032))
-* [require\_secure\_transport](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#require_secure_transport) system variable, for rejecting connections attempted using insecure transport ([MDEV-13362](https://jira.mariadb.org/browse/MDEV-13362))
-* [sql\_if\_exists](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#sql_if_exists) session system variable, which adds an implicit IF EXISTS to ALTER, RENAME and DROP of TABLES, VIEWS, FUNCTIONS and PACKAGES. ([MDEV-19964](https://jira.mariadb.org/browse/MDEV-19964))
+* [require\_secure\_transport](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#require_secure_transport) system variable, for rejecting connections attempted using insecure transport ([MDEV-13362](https://jira.mariadb.org/browse/MDEV-13362))
+* [sql\_if\_exists](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#sql_if_exists) session system variable, which adds an implicit IF EXISTS to ALTER, RENAME and DROP of TABLES, VIEWS, FUNCTIONS and PACKAGES. ([MDEV-19964](https://jira.mariadb.org/browse/MDEV-19964))
 * [XA PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/xa-transactions#syntax) transactions must survive client disconnection ([MDEV-742](https://jira.mariadb.org/browse/MDEV-742))
 * Binary tarball size has been reduced ([MDEV-21943](https://jira.mariadb.org/browse/MDEV-21943))
 

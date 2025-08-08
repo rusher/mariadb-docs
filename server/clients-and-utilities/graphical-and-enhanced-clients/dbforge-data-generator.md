@@ -1,6 +1,6 @@
 # dbForge Data Generator
 
-![dbforge\_data\_generator\_for\_mysql\_97x97](../../.gitbook/assets/dbforge_data_generator_for_mysql_97x97.png) [dbForge Data Generator for MariaDB and MySQL](https://www.devart.com/dbforge/mysql/data-generator/) is a powerful solution that helps create massive volumes of meaningful and realistic data. This tool performs various predefined data generators with customizable options.
+[dbForge Data Generator for MariaDB and MySQL](https://www.devart.com/dbforge/mysql/data-generator/) is a powerful solution that helps create massive volumes of meaningful and realistic data. This tool performs various predefined data generators with customizable options.
 
 ## Data Generator Key Features:
 

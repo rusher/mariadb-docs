@@ -1,10 +1,14 @@
 # CONNECT Table Types - VIR
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ## VIR Type
 
 A VIR table is a virtual table having only Special or Virtual columns. Its only property is its “size”, or cardinality, meaning the number of virtual rows it contains. It is created using the syntax:
 
-```
+```sql
 CREATE TABLE name [coldef] ENGINE=CONNECT TABLE_TYPE=VIR
 [BLOCK_SIZE=n];
 ```
@@ -17,7 +21,7 @@ Many DBMS use a no-column one-line table to do this, often call “dual”. MySQ
 syntax where no table is specified. With CONNECT, you can achieve the same purpose with a virtual\
 table, with the noticeable advantage of being able to display several lines:
 
-```
+```sql
 CREATE TABLE virt ENGINE=CONNECT table_type=VIR block_size=10;
 SELECT concat('The square root of ', n, ' is') what,
 round(sqrt(n),16) value FROM virt;

@@ -34,7 +34,7 @@ This is the main change that practically defines this release. Read about new op
 * [MDEV-29983](https://jira.mariadb.org/browse/MDEV-29983) Deprecate [innodb\_file\_per\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_file_per_table)
 * [MDEV-30128](https://jira.mariadb.org/browse/MDEV-30128) remove support for 5.1- replication events
 * [MDEV-29582](https://jira.mariadb.org/browse/MDEV-29582) deprecate mysql\* names
-* [MDEV-29227](https://jira.mariadb.org/browse/MDEV-29227) deprecate [explicit\_defaults\_for\_timestamp=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#explicit_defaults_for_timestamp)
+* [MDEV-29227](https://jira.mariadb.org/browse/MDEV-29227) deprecate [explicit\_defaults\_for\_timestamp=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#explicit_defaults_for_timestamp)
 * [MDEV-28910](https://jira.mariadb.org/browse/MDEV-28910) remove the 5.5.5- version hack
 * [MDEV-29668](https://jira.mariadb.org/browse/MDEV-29668) SUPER no longer allows actions that have fine-grained dedicated privileges
 

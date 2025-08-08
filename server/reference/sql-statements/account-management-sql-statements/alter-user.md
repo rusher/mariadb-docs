@@ -50,7 +50,7 @@ lock_option:
 
 ## Description
 
-The `ALTER USER` statement modifies existing MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#global-privileges) privilege or the [UPDATE](grant.md#table-privileges) privilege for the [mysql](../../system-tables/the-mysql-database-tables/) database. The global [SUPER](grant.md#global-privileges) privilege is also required if the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable is enabled.
+The `ALTER USER` statement modifies existing MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#global-privileges) privilege or the [UPDATE](grant.md#table-privileges) privilege for the [mysql](../../system-tables/the-mysql-database-tables/) database. The global [READ_ONLY ADMIN](grant.md#read_only-admin) privilege is also required if the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable is enabled.
 
 If any of the specified user accounts do not yet exist, an error results. If an error occurs, `ALTER USER` will still modify the accounts that do not result in an error. Only one error is produced for all users which have not been modified.
 

@@ -48,10 +48,10 @@ Thanks, and enjoy MariaDB!
 ### General
 
 * Rename [slow queries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log) variables ([MDEV-7567](https://jira.mariadb.org/browse/MDEV-7567))
-  * [log\_slow\_min\_examined\_row\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#log_slow_min_examined_row_limit) (min\_examined\_row\_limit)
-  * [log\_slow\_query](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#log_slow_query) (slow\_query\_log)
-  * [log\_slow\_query\_file\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#log_slow_query_file) (slow\_query\_log\_file) This will be renamed to [log\_slow\_query\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#log_slow_query_file) in the next [MariaDB 10.11](what-is-mariadb-1011.md) release.
-  * [log\_slow\_query\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#log_slow_query_time) (long\_query\_time)
+  * [log\_slow\_min\_examined\_row\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_min_examined_row_limit) (min\_examined\_row\_limit)
+  * [log\_slow\_query](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_query) (slow\_query\_log)
+  * [log\_slow\_query\_file\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_query_file) (slow\_query\_log\_file) This will be renamed to [log\_slow\_query\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_query_file) in the next [MariaDB 10.11](what-is-mariadb-1011.md) release.
+  * [log\_slow\_query\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_query_time) (long\_query\_time)
 * [replicate\_rewrite\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#replicate_rewrite_db) is now a system variable, no longer just an option ([MDEV-15530](https://jira.mariadb.org/browse/MDEV-15530))
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases on production systems!**\

@@ -15,26 +15,30 @@ file in the data directory and adds most important parameters to it (e.g port).
 "Database instance" feature is selected. It obsoletes similar utilities and\
 scripts that were used in the past such as `mysqld.exe` `--install`,`mysql_install_db.pl`, and `mysql_secure_installation.pl`.
 
-| Parameter                      | Description                                                                                                                                                                         |
-| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| -?, --help                     | Display help message and exit                                                                                                                                                       |
-| -d, --datadir=name             | Data directory of the new database                                                                                                                                                  |
-| -S, --service=name             | Name of the Windows service                                                                                                                                                         |
-| -p, --password=name            | Password of the root user                                                                                                                                                           |
-| -P, --port=#                   | mysqld port                                                                                                                                                                         |
-| -W, --socket=name              | named pipe name                                                                                                                                                                     |
-| -D, --default-user             | Create default user                                                                                                                                                                 |
-| -R, --allow-remote-root-access | Allow remote access from network for user root                                                                                                                                      |
-| -N, --skip-networking          | Do not use TCP connections, use pipe instead                                                                                                                                        |
-| -i, --innodb-page-size         | Innodb page size, since [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) |
-| -s,--silent                    | Print less information                                                                                                                                                              |
-| -o,--verbose-bootstrap         | Include mysqld bootstrap output                                                                                                                                                     |
-| -l,--large-pages               | Use large pages, since [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)                             |
-| -c,--config                    | my.ini config template file, since [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)                 |
+My apologies. You are correct. Here is the same formatted content presented in a proper markdown table.
 
-**Note**: to create a Windows service, `mariadb-install-db.exe` should be run\
+| Parameter(s)                       | Description                                           |
+| ---------------------------------- | ----------------------------------------------------- |
+| `-?`, `--help`                     | Display help message and exit                         |
+| `-d`, `--datadir=name`             | Data directory of the new database                    |
+| `-S`, `--service=name`             | Name of the `Windows` service                         |
+| `-p`, `--password=name`            | Password of the `root` user                           |
+| `-P`, `--port=#`                   | `mysqld` port                                         |
+| `-W`, `--socket=name`              | `named pipe` name                                     |
+| `-D`, `--default-user`             | Create default user                                   |
+| `-R`, `--allow-remote-root-access` | Allow remote access from network for user `root`      |
+| `-N`, `--skip-networking`          | Do not use `TCP` connections, use `pipe` instead      |
+| `-i`, `--innodb-page-size`         | `Innodb` page size, since `MariaDB 10.2.5`            |
+| `-s`, `--silent`                   | Print less information                                |
+| `-o`, `--verbose-bootstrap`        | Include `mysqld` bootstrap output                     |
+| `-l`, `--large-pages`              | Use large pages, since `MariaDB 10.6.1`               |
+| `-c`, `--config`                   | `my.ini` config template file, since `MariaDB 10.6.1` |
+
+{% hint style="info" %}
+**T**o create a Windows service, `mariadb-install-db.exe` should be run\
 by a user with full administrator privileges (which means elevated command\
 prompt on systems with UAC).
+{% endhint %}
 
 ## Example
 
@@ -42,12 +46,12 @@ prompt on systems with UAC).
 mariadb-install-db.exe --datadir=C:\db --service=MyDB --password=secret
 ```
 
-will create the database in the directory C:\db, register the auto-start\
+will create the database in the directory `C:\db`, register the auto-start\
 Windows service "MyDB", and set the root password to 'secret'.
 
 To start the service from the command line, execute
 
-```
+```bash
 sc start MyDB
 ```
 
@@ -56,7 +60,7 @@ sc start MyDB
 If you run your database instance as service, to remove it completely from the\
 command line, use
 
-```
+```bash
 sc stop <servicename>
 sc delete <servicename>
 rmdir /s /q <path-to-datadir>

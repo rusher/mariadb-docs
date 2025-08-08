@@ -1,17 +1,16 @@
 # TablePlus
 
-[TablePlus](https://tableplus.com/) is a modern, native app with a clean user interface that allows developers to simultaneously manage databases in a very fast and secure way.\
-TablePlus supports most of the popular databases such as MySQL, Postgres, SQL Server, SQLite, Microsoft SQL Server, Redis, Redshift, Oracle, and many more.
+[TablePlus](https://tableplus.com/) is an application with a clean user interface that allows developers to simultaneously manage databases in a very fast and secure way. It supports many popular database management systems like MariaDB, MySQL, and Postgres.
 
-![table](../../.gitbook/assets/table.png)
+![](../../.gitbook/assets/table.png)
 
-TablePlus is compatible with all versions of MariaDB. It is available for macOS, Windows, iOS, and Linux at the moment.
+TablePlus is is available for macOS, Windows, iOS, and Linux.
 
 Some notable features:
 
-* Native build
-* Convenient query editor
-* Multi Tabs & Code Review
+* Native build.
+* Convenient query editor.
+* Multi Tabs & Code Review.
 * Can connect to multiples databases simultaneously.
 
 TablePlus is available for free, but users can purchase a license to remove some limitations and customize the tool for higher needs on [TablePlus website](https://tableplus.com/pricing).

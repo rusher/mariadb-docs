@@ -4,7 +4,7 @@ For incompatibilities such as removed features, and changes to variables, see th
 
 ## Minor Upgrades
 
-To install a minor upgrade, e.g 10.1.27 on top of existing 10.1.26, with MSI, just download the 10.1.27 MSI and start it. It will do everything that needs to be done for minor upgrade automatically - shutdown MariaDB service(s), replace executables and DLLs, and start service(s) again.
+To install a minor upgrade with MSI, just download the MSI and install it. It will do everything that needs to be done for minor upgrade automatically - shutdown MariaDB service(s), replace executables and DLLs, and start service(s) again.
 
 The rest of the article is dedicated to _major_ upgrades, e.g 10.1.x to 10.2.y.
 
@@ -56,7 +56,7 @@ instances you want to upgrade.
 
 ![UpgradeWizard](../../../.gitbook/assets/UpgradeWizard.png)
 
-## mysql\_upgrade\_service
+## `mysql_upgrade_service`
 
 This is a command line tool that performs upgrades. The tool requires full\
 administrative privileges (it has to start and stop services).

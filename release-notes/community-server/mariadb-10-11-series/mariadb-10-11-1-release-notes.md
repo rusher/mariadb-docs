@@ -20,7 +20,7 @@ Thanks, and enjoy MariaDB!
 
 ### Authentication
 
-* [bind\_address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#bind_address) now accepts a comma-separated list of addresses to bind to ([MDEV-24377](https://jira.mariadb.org/browse/MDEV-24377))
+* [bind\_address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#bind_address) now accepts a comma-separated list of addresses to bind to ([MDEV-24377](https://jira.mariadb.org/browse/MDEV-24377))
 
 ### InnoDB
 

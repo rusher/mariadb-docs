@@ -32,7 +32,7 @@ modified in that revision.
   * Merge of maria/5.5 into maria-5.5-galera. bzr merge -r tag:mariadb-5.5.35 maria/5.5
 * [Revision #3460](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3460)\
   Thu 2014-01-23 15:57:47 -0500
-  * The bzr revision visible in [@@version\_comment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#version_comment) should represent the last\
+  * The bzr revision visible in [@@version\_comment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#version_comment) should represent the last\
     merged revision from codership branch and not the revision of the MGC tree\
     itself.
 * [Revision #3459](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3459)\

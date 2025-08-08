@@ -21,9 +21,9 @@ MariaDB Vector has integrations in several frameworks.
 * [AutoGen](https://github.com/microsoft/autogen) - agent to agent
 * [DSPy](https://github.com/stanfordnlp/dspy) - workflow
 * [Feast](https://github.com/feast-dev/feast) - machine learning (not GenAI)
+* [Firebase Studio template for MariaDB Vector](https://firebase.uservoice.com/forums/948424-general/suggestions/49702310-mariadb-vector) - visit link to vote for suggestion
 * [LangGraph](https://github.com/langchain-ai/langgraph) - agentic workflow
 * [Open WebUI](https://github.com/open-webui/open-webui) - AI Interface
-* [Firebase Studio template for MariaDB Vector](https://firebasestudio.uservoice.com/forums/953956-general/suggestions/49702310-mariadb-vector) - visit link to vote for suggestion
 
 For further alternatives, see [Qdrant's list of framework integrations](https://qdrant.tech/documentation/frameworks/).
 

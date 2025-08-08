@@ -1,5 +1,9 @@
 # Create Table Options
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 Create Table statements for “CONNECT” tables are standard MariaDB create statements specifying`engine=CONNECT`. There are a few additional table and column options specific to CONNECT.
 
 ### Table Options

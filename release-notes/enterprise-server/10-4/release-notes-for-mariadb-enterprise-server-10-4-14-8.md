@@ -13,7 +13,7 @@ MariaDB Enterprise Server 10.4.14-8 was released on 2020-09-08.
 ## Notable Changes
 
 * Limit innodb\_encryption\_threads to 255 ([MDEV-22258](https://jira.mariadb.org/browse/MDEV-22258))
-* Minimum value of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) raised to 8 (previously 4) so fixed size data types like [DOUBLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/double) and [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) are not truncated for lower values of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) . ([MDEV-22715](https://jira.mariadb.org/browse/MDEV-22715))
+* Minimum value of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length) raised to 8 (previously 4) so fixed size data types like [DOUBLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/double) and [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) are not truncated for lower values of [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length) . ([MDEV-22715](https://jira.mariadb.org/browse/MDEV-22715))
 * Backport from MariaDB Server 10.5.4 of improvements to [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) for InnoDB. (MENT-636)
 
 [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) privilege for system user mariadb.sys removed for system table [mysql.global\_priv](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/the-mysql-database-tables/mysql-columns_priv-table) ([MDEV-23237](https://jira.mariadb.org/browse/MDEV-23237))
@@ -79,7 +79,7 @@ MariaDB Enterprise Server 10.4.14-8 was released on 2020-09-08.
 
 * [mariadb-backup](broken-reference/) `--help` command-line option added
 * [mariadb-backup --mysqld-args](broken-reference/) command-line option added
-* [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) system variable minimum value changed from 4 to 8
+* [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length) system variable minimum value changed from 4 to 8
 
 ## Platforms
 

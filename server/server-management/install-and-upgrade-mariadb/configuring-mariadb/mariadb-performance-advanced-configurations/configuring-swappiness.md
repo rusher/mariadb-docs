@@ -14,9 +14,9 @@ The main way to avoid swapping is to make sure you have enough RAM for all proce
 
 Linux has a swappiness setting which determines the balance between swapping out pages (chunks of memory) from RAM to a preconfigured swap space on the hard drive.
 
-The setting is from 0 to 100, with lower values meaning a lower likelihood of swapping. The default is usually 60 - you can check this by running:
+The setting is from `0` to `100`, with lower values meaning a lower likelihood of swapping. The default is usually `60` --you can check this by running:
 
-```
+```bash
 sysctl vm.swappiness
 ```
 
@@ -24,13 +24,13 @@ The default setting encourages the server to use swap. Since there probably won'
 
 To set the swappiness to zero, add the line:
 
-```
+```ini
 vm.swappiness = 0
 ```
 
 This normally takes effect after a reboot, but you can change the value without rebooting as follows:
 
-```
+```bash
 sysctl -w vm.swappiness=0
 ```
 
@@ -38,7 +38,7 @@ Since RHEL 6.4, setting swappiness=0 more aggressively avoids swapping out, whic
 
 A low swappiness setting is recommended for database workloads. For MariaDB databases, it is recommended to set swappiness to a value of 1.
 
-```
+```ini
 vm.swappiness = 1
 ```
 

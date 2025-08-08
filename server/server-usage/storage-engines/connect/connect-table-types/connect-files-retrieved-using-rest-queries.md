@@ -1,5 +1,9 @@
 # CONNECT - Files Retrieved Using Rest Queries
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 Starting with [CONNECT version 1.07.0001](../), JSON, XML and possibly CSV data files can be retrieved as results from REST queries when creating or querying such tables. This is done internally by CONNECT using the CURL program generally available on all systems (if not just install it).
 
 This can also be done using the Microsoft Casablanca (cpprestsdk) package. To enable it, first, install the package as explained in [cpprestsdk](https://github.com/microsoft/cpprestsdk). Then make the GetRest library (dll or so) as explained in [Making the GetRest Library](../connect-making-the-getrest-library.md).

@@ -1,5 +1,9 @@
 # CONNECT OCCUR Table Type
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 Similarly to the [XCOL](connect-xcol-table-type.md) table type, `OCCUR` is an extension to the [PROXY](connect-proxy-table-type.md) type when\
 referring to a table or view having several columns containing the same kind of\
 data. It enables having a different view of the table where the data from\

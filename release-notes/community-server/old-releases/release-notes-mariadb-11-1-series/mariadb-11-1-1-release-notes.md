@@ -18,7 +18,7 @@ Thanks, and enjoy MariaDB!
 
 ## Notable Items
 
-* The [transaction\_isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#transaction_isolation) option is now a system variable, and the tx\_isolation system variable is deprecated ([MDEV-21921](https://jira.mariadb.org/browse/MDEV-21921))
+* The [transaction\_isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#transaction_isolation) option is now a system variable, and the tx\_isolation system variable is deprecated ([MDEV-21921](https://jira.mariadb.org/browse/MDEV-21921))
 
 ### InnoDB
 

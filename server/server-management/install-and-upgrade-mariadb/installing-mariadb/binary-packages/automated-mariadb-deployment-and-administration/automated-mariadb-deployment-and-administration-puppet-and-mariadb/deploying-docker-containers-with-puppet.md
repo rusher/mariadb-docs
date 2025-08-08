@@ -78,7 +78,7 @@ docker::run { 'mariadb-01':
 }
 ```
 
-`mariadb-01` is the contained name. We specified the optional `10.5` tag, and we mapped the guest port 3306 to the host port 6606. In production, you normally don't map ports because you don't need to connect MariaDB clients from the host system to MariaDB servers in the containers. Third-party tools can be installed as separate containers.
+`mariadb-01` is the contained name. We specified the optional `10.5` tag, and we mapped the guest port `3306` to the host port `6606`. In production, you normally don't map ports because you don't need to connect MariaDB clients from the host system to MariaDB servers in the containers. Third-party tools can be installed as separate containers.
 
 ## References
 

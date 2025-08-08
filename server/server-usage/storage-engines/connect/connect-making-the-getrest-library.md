@@ -1,5 +1,9 @@
 # Making the GetRest Library
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 To enable the REST feature with binary distributions of MariaDB, the function calling the cpprestsdk package is not included in CONNECT, thus allowing CONNECT normal operation when the cpprestsdk package is not installed. Therefore, it must be compiled separately as a library (so or dll) that are loaded by CONNECT when needed.
 
 This library will contain only one file shown here:

@@ -54,7 +54,7 @@ Thanks, and enjoy MariaDB!
 ### Statistics
 
 * [MDEV-19407](https://jira.mariadb.org/browse/MDEV-19407) - Assertion \`field->table->stats\_is\_read' failed in is\_eits\_usable
-* New status variable, [Aborted\_connects\_preauth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#aborted_connects_preauth), that records the number of connection attempts that were aborted prior to authentication ([MDEV-19277](https://jira.mariadb.org/browse/MDEV-19277)).
+* New status variable, [Aborted\_connects\_preauth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#aborted_connects_preauth), that records the number of connection attempts that were aborted prior to authentication ([MDEV-19277](https://jira.mariadb.org/browse/MDEV-19277)).
 
 ### Packaging
 

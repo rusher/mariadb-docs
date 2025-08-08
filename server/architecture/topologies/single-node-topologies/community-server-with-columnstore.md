@@ -208,7 +208,7 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     ```
 
     ```bash
-    $ echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a mariadb_repo_setup" \
+    $ echo "${checksum} mariadb_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -220,6 +220,8 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     $ sudo ./mariadb_repo_setup \
        --mariadb-server-version="mariadb-10.6"
     ```
+
+    1. _Checksums of the various releases of the `mariadb_repo_setup` script can be found in the_ [_Versions_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 2.  Install the EPEL repository:
 
     ```bash
@@ -260,7 +262,7 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     ```
 
     ```bash
-    $ echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a mariadb_repo_setup" \
+    $ echo "${checksum} mariadb_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -276,6 +278,8 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     ```bash
     $ sudo apt update
     ```
+
+    1. _Checksums of the various releases of the `mariadb_repo_setup` script can be found in the_ [_Versions_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 2.  Install some additional dependencies for ColumnStore.
 
     On Debian 10 and Ubuntu 20.04, install the following:
@@ -458,7 +462,7 @@ The credentials for cross engine joins were previously configured in the [Cross 
     ```bash
     $ sudo mariadb
     ```
-2.  Create the user account with the [CREATE USER](broken-reference) statement:
+2.  Create the user account with the [CREATE USER](broken-reference/) statement:
 
     ```sql
     CREATE USER 'cross_engine'@'127.0.0.1'
@@ -661,6 +665,6 @@ When you have MariaDB ColumnStore up and running, you should test it to ensure t
     MariaDB [(none)]>
     ```
 
-\\
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

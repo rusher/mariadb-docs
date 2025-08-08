@@ -12,7 +12,7 @@ Here are some examples.
 
 Omitting the host part indicates an account that can access from any host. So the following statements are equivalent:
 
-```
+```sql
 CREATE USER viviana;
 CREATE USER viviana@'%';
 ```
@@ -37,7 +37,7 @@ By default, an account has no password. A password can be set, or changed, in th
 
 With all these statements (`CREATE USER`, `ALTER USER`, `SET PASSWORD`) it is possible to specify the password in plain or as a hash:
 
-```
+```sql
 -- specifying plain passwords:
 CREATE USER tom@'%.example.com' IDENTIFIED BY 'plain secret';
 ALTER USER tom@'%.example.com' IDENTIFIED BY 'plain secret';
@@ -52,19 +52,19 @@ The [PASSWORD()](../../../../reference/sql-functions/secondary-functions/encrypt
 
 `SET PASSWORD` applies to the current account, by default. Superusers can change other accounts passwords in this way:
 
-```
+```sql
 SET PASSWORD FOR tom@'%.example.com' = PASSWORD 'secret hash';
 ```
 
 Passwords can have an expiry date, set by [default\_password\_lifetime](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime). To set a different date for a particular user:
 
-```
+```sql
 CREATE USER 'tom'@'%.example.com' PASSWORD EXPIRE INTERVAL 365 DAY;
 ```
 
 To set no expiry date for a particular user:
 
-```
+```sql
 CREATE USER 'tom'@'%.example.com' PASSWORD EXPIRE NEVER;
 ```
 
@@ -72,7 +72,7 @@ For more details, see [User Password Expiry](../../../../security/user-account-m
 
 It is also possible to lock an account with immediate effect:
 
-```
+```sql
 CREATE USER 'tom'@'%.example.com' ACCOUNT LOCK;
 ```
 
@@ -90,7 +90,7 @@ Windows users may be interested in the [named pipe](../../../../reference/plugin
 
 A plugin can be assigned to a user with `CREATE USER`, `ALTER USER` or `GRANT`, using the `IDENTIFIED VIA` syntax. For example:
 
-```
+```sql
 CREATE USER username@hostname IDENTIFIED VIA gssapi;
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA named_pipe;
 ```
@@ -114,7 +114,7 @@ For more information about secure connections, see [Secure Connections Overview]
 
 Permissions can be granted to accounts. As mentioned before, the specified accounts can actually be patterns, and multiple accounts may match a pattern. For example, in this example we are creating three accounts, and we are assigning permissions to all of them:
 
-```
+```sql
 CREATE USER 'tom'@'example.com';
 CREATE USER 'tom'@'123.123.123.123;
 CREATE USER 'tom'@'tomlaptop';
@@ -155,20 +155,20 @@ MariaDB supports [roles](../../../../security/user-account-management/roles/). P
 
 An account may have zero or one default roles. A default role is a role that is automatically active for a user when they connect. To assign an account or remove a default role, these SQL statements can be used:
 
-```
+```sql
 SET DEFAULT ROLE some_role FOR username@hostname;
 SET DEFAULT ROLE NONE FOR username@hostname;
 ```
 
 Normally a role is not a default role. If we assign a role in this way:
 
-```
+```sql
 GRANT some_role TO username@hostname;
 ```
 
 ...the user will not have that role automatically enabled. They will have to enable it explicitly:
 
-```
+```sql
 SET ROLE some_role;
 ```
 

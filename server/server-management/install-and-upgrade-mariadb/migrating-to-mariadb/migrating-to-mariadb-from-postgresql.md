@@ -18,7 +18,7 @@ See [CONNECT ODBC Table Type: Accessing Tables From Another DBMS](../../../serve
 
 Once the remote table is setup, you can migrate the data to local tables very simply. For example:
 
-```
+```sql
 CREATE TABLE psql_tab (
    id INT,
    str VARCHAR(50)
@@ -43,7 +43,7 @@ See [CONNECT JDBC Table Type: Accessing Tables from Another DBMS](../../../serve
 
 Once the remote table is setup, you can migrate the data to local tables very simply. For example:
 
-```
+```sql
 CREATE TABLE psql_tab (
    id INT,
    str VARCHAR(50)
@@ -70,7 +70,7 @@ PostgreSQL's [foreign data wrappers](https://wiki.postgresql.org/wiki/Foreign_da
 
 The foreign data wrapper also supports writes, so you should be able to write to the remote MariaDB table to migrate your PostgreSQL data. For example:
 
-```
+```sql
 CREATE TABLE tab (
    id INT,
    str text

@@ -102,7 +102,7 @@ This release incorporates MariaDB ColumnStore storage engine version 5.5.2.
 
 * [aria\_sort\_buffer\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables) system variable maximum value changed from `18446744073709551615` to `9223372036854775807`
 * [CHECK\_CONSTRAINTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-check_constraints-table) information schema table schema changed
-* [group\_concat\_max\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#group_concat_max_len) system variable maximum value changed from `18446744073709551615` to `4294967295`
+* [group\_concat\_max\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#group_concat_max_len) system variable maximum value changed from `18446744073709551615` to `4294967295`
 * [innodb\_idle\_flush\_pct](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_idle_flush_pct) system variable removed
 * [innodb\_write\_io\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_write_io_threads) system variable minimum value changed from `1` to `2`
 * mariadb-backup --log-innodb-page-corruption command-line option added
@@ -113,8 +113,8 @@ This release incorporates MariaDB ColumnStore storage engine version 5.5.2.
 * mariadb\_repo\_setup --version command-line option added
 * mariadbd --innodb-idle-flush-pct command-line option removed
 * mariadbd --optimizer-max-sel-arg-weight command-line option added
-* [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) system variable minimum value changed from `8` to `64`
-* [optimizer\_max\_sel\_arg\_weight](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_max_sel_arg_weight) system variable added
+* [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_sort_length) system variable minimum value changed from `8` to `64`
+* [optimizer\_max\_sel\_arg\_weight](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_max_sel_arg_weight) system variable added
 * [setup\_actors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_actors-table) performance schema table schema changed
 * [THREAD\_POOL\_QUEUES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table) information schema table schema changed
 

@@ -8,7 +8,7 @@ MYSQL_ROW_OFFSET mysql_stmt_row_seek(MYSQL_STMT * stmt,
 ```
 
 * `stmt` - a statement handle, which was previously allocated by [mysql\_stmt\_init()](mysql_stmt_init.md).
-* `offset` - row offset. This value can be obtained either by mysql\_stmt\_row\_seek() or [mysql\_stmt\_row\_tell()](mysql_stmt_row_tell.md).
+* `offset` - row offset. This value can be obtained either by `mysql_stmt_row_seek()` or [mysql\_stmt\_row\_tell()](mysql_stmt_row_tell.md).
 
 ## Description
 
@@ -22,6 +22,5 @@ The result set must be obtained by [mysql\_use\_result()](../api-functions/mysql
 
 * [mysql\_stmt\_row\_tell()](mysql_stmt_row_tell.md)
 * [mysql\_stmt\_store\_result](mysql_stmt_store_result.md)
-
 
 {% @marketo/form formId="4316" %}

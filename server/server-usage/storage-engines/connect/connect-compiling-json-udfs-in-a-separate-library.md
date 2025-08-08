@@ -1,5 +1,9 @@
 # Compiling JSON UDFs in a Separate Library
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 Although the JSON UDFs can be nicely included in the CONNECT library module, there are cases when you may need to have them in a separate library.
 
 This is when CONNECT is compiled embedded, or if you want to test or use these UDFs with other MariaDB versions not including them.

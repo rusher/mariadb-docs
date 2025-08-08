@@ -62,11 +62,11 @@ Notable changes of this release include:
 ### General
 
 * Do not resend unchanged resultset metadata for prepared statements ([MDEV-19237](https://jira.mariadb.org/browse/MDEV-19237))
-* [--bind-address=hostname](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#bind_address) now listens on both IPv6 and IPv4 addresses ([MDEV-6536](https://jira.mariadb.org/browse/MDEV-6536))
+* [--bind-address=hostname](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#bind_address) now listens on both IPv6 and IPv4 addresses ([MDEV-6536](https://jira.mariadb.org/browse/MDEV-6536))
 * Support systemd socket activation ([MDEV-5536](https://jira.mariadb.org/browse/MDEV-5536))
 * For the [GSSAPI plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi), support AD or local group name, and SIDs on Windows ([MDEV-23959](https://jira.mariadb.org/browse/MDEV-23959))
 * Check for $MARIADB\_HOME/my.cnf ([MDEV-21365](https://jira.mariadb.org/browse/MDEV-21365))
-* [max\_recursive\_iterations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_recursive_iterations) has been reduced to 1000 ([MDEV-17239](https://jira.mariadb.org/browse/MDEV-17239))
+* [max\_recursive\_iterations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_recursive_iterations) has been reduced to 1000 ([MDEV-17239](https://jira.mariadb.org/browse/MDEV-17239))
 * Setting system variables to negative values will no longer set them to the maximum value ([MDEV-22219](https://jira.mariadb.org/browse/MDEV-22219))
 
 ### Galera

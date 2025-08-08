@@ -4,14 +4,14 @@
 
 ![SQL Gui Screenshot](../../.gitbook/assets/main-dark.png)
 
-Beekeeper Studio works with MariaDB, but also works with other databases like Postgres, Redshift, SQL Server.
+Beekeeper Studio works with MariaDB, but also works with other databases.
 
 Beekeeper Studio includes the following features:
 
-* Tabbed interface
-* SSH tunneling
-* SQL autocomplete
-* Multi-connection
+* Tabbed interface.
+* SSH tunneling.
+* SQL autocomplete.
+* Multi-connection.
 
 The Community Edition is [free and open source](https://github.com/beekeeper-studio/beekeeper-studio), and is [privacy respecting](https://www.beekeeperstudio.io/mission/), with no usage tracking or similar behavior.
 

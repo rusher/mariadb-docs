@@ -206,7 +206,7 @@ Thanks, and enjoy MariaDB!
 
 ### Variables
 
-* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used).
+* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used).
 
 ### Security
 

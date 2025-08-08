@@ -125,3 +125,7 @@ The `systemctl` command is used to start and stop the MariaDB Enterprise Server 
 Navigation in the Single-Node Enterprise ColumnStore topology with Local storage deployment procedure:
 
 * Next: Step 1: Install MariaDB Enterprise ColumnStore 23.10.
+
+{% include "../../../../.gitbook/includes/license-copyright-mariadb.md" %}
+
+{% @marketo/form formId="4316" %}

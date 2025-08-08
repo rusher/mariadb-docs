@@ -1,5 +1,9 @@
 # JSON Sample Files
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ### Expense.json
 
 ```json

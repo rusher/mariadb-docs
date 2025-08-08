@@ -1,5 +1,9 @@
 # Inward and Outward Tables
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 There are two broad categories of file-based CONNECT tables. Inward and Outward. They are\
 described below.
 

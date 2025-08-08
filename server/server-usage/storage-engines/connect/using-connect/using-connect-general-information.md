@@ -1,5 +1,9 @@
 # Using CONNECT - General Information
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 The main characteristic of [CONNECT](../) is to enable accessing data scattered on a machine as if it was a centralized database. This, and the fact that locking is not used by connect (data files are open and closed for each query) makes CONNECT very useful for importing or exporting data into or from a MariaDB database and also for all types of Business Intelligence applications. However, it is not suited for transactional applications.
 
 For instance, the index type used by CONNECT is closer to bitmap indexing than to B-trees. It is very fast for retrieving result but not when updating is done. In fact, even if only one indexed value is modified in a big table, the index is entirely remade (yet this being four to five times faster than for a b-tree index). But normally in Business Intelligence applications, files are not modified so often.
@@ -27,10 +31,10 @@ many queries.
 
 Be aware of the two broad kinds of CONNECT tables:
 
-|         |                                                                                                                                                                                                                                                   |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|         |                                                                                                                                                                                                                                           |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Inward  | They are table whose file name is not specified at create. An empty file are given a default name (tabname.tabtype) and are populated like for other engines. They do not require the FILE privilege and can be used for testing purpose. |
-| Outward | They are all other CONNECT tables and access external data sources or files. They are the true useful tables but require the FILE privilege.                                                                                                      |
+| Outward | They are all other CONNECT tables and access external data sources or files. They are the true useful tables but require the FILE privilege.                                                                                              |
 
 ### Drop Table statement
 

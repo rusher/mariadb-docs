@@ -34,7 +34,7 @@ In addition to the [MariaDB-5.5.43](../release-notes-mariadb-5-5-series/mariadb-
 
 ### Optimizer
 
-* Merged [derived tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables)/VIEWs incorrectly increment [created\_tmp\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#created_tmp_tables) ([MDEV-7586](https://jira.mariadb.org/browse/MDEV-7586)).
+* Merged [derived tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables)/VIEWs incorrectly increment [created\_tmp\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#created_tmp_tables) ([MDEV-7586](https://jira.mariadb.org/browse/MDEV-7586)).
 
 ### Alter Table
 
