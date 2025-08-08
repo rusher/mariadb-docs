@@ -4,7 +4,9 @@ hidden: true
 
 # Connector/J 3.5.5 Release Notes
 
-<a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector" class="button primary">Download</a> <a href="mariadb-connector-j-3-5-4-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/3.5/mariadb-connector-j-3-5-4-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j" class="button secondary">Connector/J Overview</a>
+{% include "../../../.gitbook/includes/unreleased-java.md" %}
+
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector" class="button primary">Download</a> <a href="mariadb-connector-j-3-5-5-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/3.5/mariadb-connector-j-3-5-5-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j" class="button secondary">Connector/J Overview</a>
 
 **Release date:** ?
 
