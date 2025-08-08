@@ -25,7 +25,7 @@ Thanks, and enjoy MariaDB!
 * [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect) updated to 1.03.0007
 * Encryption for temporary files: temporary files created by the server (for binary log caches, for filesort, etc) are now encrypted if the encryption plugin is loaded and `--encrypt-tmp-files` was specified.
 * Numerous [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption) bugfixes.
-* New system variable [max\_digest\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_digest_length) allowing statement digests to be calculated using different lengths.
+* New system variable [max\_digest\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_digest_length) allowing statement digests to be calculated using different lengths.
 * [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) upgraded to 1.3.0, including the QUERY\_DCL filter option.
 
 ### New and Deprecated Distributions

@@ -24,7 +24,7 @@ the _client_, _shared_, and _server_ RPM files. See [About the MariaDB RPM Files
 
 After downloading the MariaDB RPM files, you might want to check their signatures. See [Checking MariaDB RPM Package Signatures](checking-mariadb-rpm-package-signatures.md) for more information about checking signatures.
 
-```
+```bash
 rpm --checksig $(find . -name '*.rpm')
 ```
 
@@ -32,7 +32,7 @@ Prior to installing MariaDB, be aware that it will conflict with an existing\
 installation of MySQL. To check whether MySQL is already installed, issue the\
 command:
 
-```
+```bash
 rpm -qa 'mysql*'
 ```
 
@@ -40,7 +40,7 @@ If necessary, you can remove found MySQL packages before installing MariaDB.
 
 To install MariaDB, use the command:
 
-```
+```bash
 rpm -ivh MariaDB-*
 ```
 
@@ -87,7 +87,7 @@ Giving mysqld 2 seconds to start
 
 Be sure to follow the instructions given in the preceding output and create a\
 password for the root user either by using [mariadb-admin](../../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) or by running the\
-/usr/bin/mysql\_secure\_installation script.
+`/usr/bin/mysql_secure_installation` script.
 
 Installing the MariaDB RPM files installs the MySQL tools in the `/usr/bin`\
 directory. You can confirm that MariaDB has been installed by using the [mariadb](../../../../../clients-and-utilities/mariadb-client/)\

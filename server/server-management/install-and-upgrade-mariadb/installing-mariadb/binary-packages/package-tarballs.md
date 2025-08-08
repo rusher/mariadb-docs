@@ -36,27 +36,31 @@ MariaDB Corporation provides package tarballs (.debs.tar, .rpms.tar) to support 
 
 MariaDB Corporation provides multiple interfaces to download package tarballs.
 
-### Download a Package Tarball with a Web Browser
+{% tabs %}
+{% tab title="with a Web Browser" %}
+1. Visit the MariaDB Downloads page.
+2. Complete customer login.
+3. Select the desired version and operating system.
+4. Click the Download button.
+{% endtab %}
 
-Steps to download a package tarball:
-
-1. Go to the MariaDB Downloads page at [dles](https://mariadb.com/dles)
-2. Complete customer login
-3. Select the desired version and operating system, then click the Download button
-
-### Download a Package Tarball with Command-Line or Automation
-
+{% tab title="with Command-Line or Automation" %}
 Package tarballs can be downloaded using command-line tools or automation from the MariaDB Download interface with the [Customer Download Token](../../deployment-general-installing-and-upgrading-instructions/token.md).
 
 For additional information, see ["Download Binary Files"](../../deployment-general-installing-and-upgrading-instructions/token.md#download-binary-files).
+{% endtab %}
+{% endtabs %}
 
 ## Installation from Package Tarball
 
 Once downloaded and extracted, you can:
 
-* Install .rpm packages (RHEL, CentOS, and SLES) using rpm -i
-* Install .deb packages (Debian, Ubuntu) using dpkg -i
-* Install from the simple package repositories included in the tarball. Missing dependencies will be resolved when using the apt, yum, or zypper package manager. See the README file enclosed in the package tarball for more information.
+* Install .rpm packages (RHEL, CentOS, and SLES)\
+  `rpm -i`
+* Install .deb packages (Debian, Ubuntu)\
+  `dpkg -i`
+* Install from the simple package repositories included in the tarball. Missing dependencies will be resolved when using the `apt`, `yum`, or `zypper` package manager. \
+  See the `README file` enclosed in the package tarball for more information.
 * Test packages before placement in an internal package repository for distribution to your servers. Secure this repository from outside access.
 
 Installation loads software to the system. This software requires configuration before the database server is ready for use.

@@ -6,31 +6,31 @@ MariaDB Server is available as a Homebrew "bottle", a pre-compiled package. This
 
 After installing Homebrew, MariaDB Server can be installed with this command:
 
-```
+```bash
 brew install mariadb
 ```
 
 After installation, start MariaDB Server:
 
-```
+```bash
 mysql.server start
 ```
 
 To auto-start MariaDB Server, use Homebrew's services functionality, which configures auto-start with the launchctl utility from [launchd](../../../starting-and-stopping-mariadb/launchd.md):
 
-```
+```bash
 brew services start mariadb
 ```
 
 After MariaDB Server is started, you can log in as your user:
 
-```
+```bash
 mysql
 ```
 
 Or log in as root:
 
-```
+```bash
 sudo mysql -u root
 ```
 
@@ -38,13 +38,13 @@ sudo mysql -u root
 
 First you may need to update your brew installation:
 
-```
+```bash
 brew update
 ```
 
 Then, to upgrade MariaDB Server:
 
-```
+```bash
 brew upgrade mariadb
 ```
 
@@ -54,14 +54,14 @@ In addition to the "bottled" MariaDB Server package available from Homebrew, you
 
 Two components not included in the bottle package are the CONNECT and OQGRAPH engines, because they have non-standard dependencies. To build MariaDB Server with these engines, you must first install `boost` and `judy`. Follow these steps to install the dependencies and build the server:
 
-```
+```bash
 brew install boost judy
 brew install mariadb --build-from-source
 ```
 
 You can also use Homebrew to build and install a pre-release version of MariaDB Server. Use this command to build and install a "development" version of MariaDB Server:
 
-```
+```bash
 brew install mariadb --devel
 ```
 

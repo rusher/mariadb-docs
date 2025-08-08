@@ -26,7 +26,7 @@ Thanks, and enjoy MariaDB!
 
 ### Replication
 
-* [explicit\_defaults\_for\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#explicit_defaults_for_timestamp) is stored in binlog, so that `CREATE TABLE` on slave would always have the same effect as on master. ([MDEV-29078](https://jira.mariadb.org/browse/MDEV-29078))
+* [explicit\_defaults\_for\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#explicit_defaults_for_timestamp) is stored in binlog, so that `CREATE TABLE` on slave would always have the same effect as on master. ([MDEV-29078](https://jira.mariadb.org/browse/MDEV-29078))
 * ER\_SLAVE\_INCIDENT error is specified now on slave to be seen with SHOW-SLAVE-STATUS ([MDEV-21087](https://jira.mariadb.org/browse/MDEV-21087))
 * INCIDENT\_EVENT is no longer binlogged when a being logged transaction can be safely rolledback ([MDEV-21443](https://jira.mariadb.org/browse/MDEV-21443))
 * sequences related row-format events are made to correspond to binlog\_row\_image ([MDEV-28487](https://jira.mariadb.org/browse/MDEV-28487))
@@ -78,7 +78,7 @@ table.keyXpartY [NOT] IN ( ... )
 
 ### General
 
-* [explicit\_defaults\_for\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#explicit_defaults_for_timestamp) now also has a session scope, not only global ([MDEV-29225](https://jira.mariadb.org/browse/MDEV-29225))
+* [explicit\_defaults\_for\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#explicit_defaults_for_timestamp) now also has a session scope, not only global ([MDEV-29225](https://jira.mariadb.org/browse/MDEV-29225))
 * MariaDB can be built with OpenSSL 3.0
 * [HELP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/help-command) was updated to include the latest content
 * Crash in [JSON\_EXTRACT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_extract) ([MDEV-29188](https://jira.mariadb.org/browse/MDEV-29188))

@@ -22,13 +22,13 @@ MariaDB has a [UNIX\_SOCKET](../../../../../../reference/plugins/authentication-
 
 Even for users who connect remotely, it is normally not necessary to insert passwords in an Ansible file. When we create a user with a password, a hash of the original password is stored in MariaDB. That hash can be found in the [mysql.user table](../../../../../../reference/system-tables/the-mysql-database-tables/mysql-user-table.md). To know the hash of a password without even creating a user, we can use the [PASSWORD()](../../../../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function:
 
-```
+```sql
 SELECT PASSWORD('my_password12') AS hash;
 ```
 
 When we create a user, we can actually specify a hash instead of the password the user will have to type:
 
-```
+```sql
 CREATE USER user@host IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
 

@@ -15,7 +15,7 @@ Note that the Debian packages have compatibility problems with PHP and NodeJS. W
 Note that upgrading from earlier versions will leave all users, including root and other users with `ALL PRIVILEGES ON *.*`, and `ALL PRIVILEGES ON db.*`, without the [SHOW CREATE ROUTINE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#database-privileges) privilege. While the users with read privileges on `mysql.proc` will be have the effective privileges of `SHOW CREATE ROUTINE`, they are unable to `GRANT` them.\
 To gain the privileges back on a global user, e.g. `root@localhost`:
 
-1. Start server with [skip-grant-tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#skip_grant_tables) as a configuration option
+1. Start server with [skip-grant-tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#skip_grant_tables) as a configuration option
 2. Run [mariadb client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client)
 3. Execute [FLUSH PRIVILEGES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush)
 4. Execute [GRANT ALL ON _._ TO root@localhost WITH GRANT OPTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant)
@@ -201,7 +201,7 @@ Thanks, and enjoy MariaDB!
 * `quote(NULL)` returns incorrect result in view (`'NU'` instead of `'NULL'`) ([MDEV-28651](https://jira.mariadb.org/browse/MDEV-28651))
 * `mysql.slow_log` reports incorrect start time ([MDEV-11628](https://jira.mariadb.org/browse/MDEV-11628))
 * Update federated table and column privileges ([MDEV-32984](https://jira.mariadb.org/browse/MDEV-32984))
-* Deprecate [secure\_auth=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth) ([MDEV-32617](https://jira.mariadb.org/browse/MDEV-32617))
+* Deprecate [secure\_auth=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#secure_auth) ([MDEV-32617](https://jira.mariadb.org/browse/MDEV-32617))
 * sys schema view `session_ssl_status` is empty ([MDEV-32751](https://jira.mariadb.org/browse/MDEV-32751))
 * Memory pressure ([MDEV-24670](https://jira.mariadb.org/browse/MDEV-24670))
 

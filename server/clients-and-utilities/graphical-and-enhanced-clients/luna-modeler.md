@@ -4,24 +4,20 @@
 
 Draw diagrams, reverse engineer existing database structures and generate SQL code.
 
-**Supported platforms include:**
-
-* MariaDB
-* PostgreSQL
-* SQLite
+Supported platforms include MariaDB, PostgreSQL, and SQLite.
 
 **Key features:**
 
-* Database modeling & schema design
-* Reverse engineering
-* Support for database-specific settings
-* Three display modes: metadata, sample data or descriptions
-* Default values for newly created objects
-* Export to PDF
-* Dark and Light themes
-* SQL script generation
+* Database modeling & schema design.
+* Reverse engineering.
+* Support for database-specific settings.
+* Three display modes: metadata, sample data or descriptions.
+* Default values for newly created objects.
+* Export to PDF.
+* Dark and Light themes.
+* SQL script generation.
 
-![mariadb-database-design-luna-modeler](../../.gitbook/assets/mariadb-database-design-luna-modeler.png)
+![](../../.gitbook/assets/mariadb-database-design-luna-modeler.png)
 
 **Supported OS**
 

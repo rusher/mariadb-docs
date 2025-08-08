@@ -33,7 +33,7 @@ New features and changes in this version include:
 
 #### Maria storage engine group commit
 
-* Two new system variables have been added:`maria_group_commit` and`maria_group_commit_interval`. See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables) for details.
+* Two new system variables have been added:`maria_group_commit` and`maria_group_commit_interval`. See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables) for details.
 
 #### Backport libservices [MWL#98](https://askmonty.org/worklog/?tid=98)
 

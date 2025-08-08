@@ -196,7 +196,7 @@ Thanks, and enjoy MariaDB!
 * `quote(NULL)` returns incorrect result in view (`'NU'` instead of `'NULL'`) ([MDEV-28651](https://jira.mariadb.org/browse/MDEV-28651))
 * `mysql.slow_log` reports incorrect start time ([MDEV-11628](https://jira.mariadb.org/browse/MDEV-11628))
 * Update federated table and column privileges ([MDEV-32984](https://jira.mariadb.org/browse/MDEV-32984))
-* Deprecate [secure\_auth=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth) ([MDEV-32617](https://jira.mariadb.org/browse/MDEV-32617))
+* Deprecate [secure\_auth=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#secure_auth) ([MDEV-32617](https://jira.mariadb.org/browse/MDEV-32617))
 * sys schema view `session_ssl_status` is empty ([MDEV-32751](https://jira.mariadb.org/browse/MDEV-32751))
 * Memory pressure ([MDEV-24670](https://jira.mariadb.org/browse/MDEV-24670))
 

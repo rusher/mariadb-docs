@@ -21,7 +21,7 @@ Thanks, and enjoy MariaDB!
 Notable changes of this release include:
 
 * [mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) now uses `utf8mb4` as a default [character set](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets), instead of `utf8`.
-* [sql\_safe\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#sql_safe_updates) can now be set as a command-line and `my.cnf` option.
+* [sql\_safe\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#sql_safe_updates) can now be set as a command-line and `my.cnf` option.
 * Fixed crash on upgrade from [MariaDB 10.1](../release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) or earlier: [MDEV-12023](https://jira.mariadb.org/browse/MDEV-12023)
 * [MDEV-17073](https://jira.mariadb.org/browse/MDEV-17073) - [INSERT…ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update) is now less deadlock-prone
 * [MDEV-17289](https://jira.mariadb.org/browse/MDEV-17289) - Multi-pass recovery fails to apply some redo log records

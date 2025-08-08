@@ -45,7 +45,7 @@ echo "${checksum} mariadb_repo_setup" | sha256sum -c -
 {% endtabs %}
 
 {% hint style="info" %}
-Checksums of the various releases of the script can be found in the Versions section at the bottom of this page. Substitute `${checksum}` in the example above with the latest checksum.
+Checksums of the various releases of the `mariadb_repo_setup` script can be found in the Versions section at the bottom of this page. Substitute `${checksum}` in the example above with the latest checksum.
 {% endhint %}
 
 ### Prerequisites
@@ -90,13 +90,13 @@ Retrieve your customer downloads token:
 
 Set the script to be executable:
 
-```
+```bash
 chmod +x mariadb_es_repo_setup
 ```
 
 Run the script:
 
-```
+```bash
 sudo ./mariadb_es_repo_setup --token="${token}" --apply
 ```
 {% endtab %}
@@ -104,13 +104,13 @@ sudo ./mariadb_es_repo_setup --token="${token}" --apply
 {% tab title="mariadb_repo_setup" %}
 Set the script to be executable:
 
-```
+```bash
 chmod +x mariadb_repo_setup
 ```
 
 Run the script:
 
-```
+```bash
 sudo ./mariadb_repo_setup
 ```
 {% endtab %}
@@ -185,22 +185,22 @@ To provide options to the script, you must tell your to expect them by executing
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --help
 ```
 
-| Option                      | Description                                                                                                                                                                                       |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| --help                      | Display a usage message and exit                                                                                                                                                                  |
-| --mariadb-server-version=   | Override the default MariaDB Server version. By default, the script will use '11.rolling'                                                                                                         |
-| --mariadb-maxscale-version= | Override the default MariaDB MaxScale version. By default, the script will use 'latest'                                                                                                           |
-| --os-type=                  | Override detection of OS type. Acceptable values include debian, ubuntu, rhel, and sles                                                                                                           |
-| --os-version=               | Override detection of OS version. Acceptable values depend on the OS type you specify                                                                                                             |
-| --skip-key-import           | Skip importing GPG signing keys                                                                                                                                                                   |
-| --skip-maxscale             | Skip the 'MaxScale' repository                                                                                                                                                                    |
-| --skip-server               | Skip the 'MariaDB Server' repository                                                                                                                                                              |
-| --skip-tools                | Skip the 'Tools' repository                                                                                                                                                                       |
-| --skip-verify               | Skip verification of MariaDB Server versions. Use with caution as this can lead to an invalid repository configuration file being created                                                         |
-| --skip-check-installed      | Skip tests for required prerequisites for this script                                                                                                                                             |
-| --skip-eol-check            | Skip tests for versions being past their EOL date                                                                                                                                                 |
-| --skip-os-eol-check         | Skip tests for operating system versions being past EOL date                                                                                                                                      |
-| --write-to-stdout           | Write output to stdout instead of to the OS's repository configuration file. This will also skip importing GPG public keys and updating the package cache on platforms where that behavior exists |
+| Option                        | Description                                                                                                                                                                                       |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--help`                      | Display a usage message and exit                                                                                                                                                                  |
+| `--mariadb-server-version=`   | Override the default MariaDB Server version. By default, the script will use '11.rolling'                                                                                                         |
+| `--mariadb-maxscale-version=` | Override the default MariaDB MaxScale version. By default, the script will use 'latest'                                                                                                           |
+| `--os-type=`                  | Override detection of OS type. Acceptable values include debian, ubuntu, rhel, and sles                                                                                                           |
+| `--os-version=`               | Override detection of OS version. Acceptable values depend on the OS type you specify                                                                                                             |
+| `--skip-key-import`           | Skip importing GPG signing keys                                                                                                                                                                   |
+| `--skip-maxscale`             | Skip the 'MaxScale' repository                                                                                                                                                                    |
+| `--skip-server`               | Skip the 'MariaDB Server' repository                                                                                                                                                              |
+| `--skip-tools`                | Skip the 'Tools' repository                                                                                                                                                                       |
+| `--skip-verify`               | Skip verification of MariaDB Server versions. Use with caution as this can lead to an invalid repository configuration file being created                                                         |
+| `--skip-check-installed`      | Skip tests for required prerequisites for this script                                                                                                                                             |
+| `--skip-eol-check`            | Skip tests for versions being past their EOL date                                                                                                                                                 |
+| `--skip-os-eol-check`         | Skip tests for operating system versions being past EOL date                                                                                                                                      |
+| `--write-to-stdout`           | Write output to stdout instead of to the OS's repository configuration file. This will also skip importing GPG public keys and updating the package cache on platforms where that behavior exists |
 
 #### `--mariadb-server-version`
 
@@ -210,7 +210,7 @@ The script can also configure your system to install from the repository of a di
 
 The string `mariadb-` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), that would be:
 
-```
+```bash
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version="mariadb-10.6"
 ```
 
@@ -243,7 +243,7 @@ desired version, or use the `--mariadb-maxscale-version` option.
 For example, to configure your system to install from the repository of MariaDB\
 MaxScale 6.1, that would be:
 
-```
+```bash
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --mariadb-maxscale-version="6.1"
 ```
 
@@ -299,7 +299,7 @@ Package Repository setup script.
 For example, to manually set the `--os-type` and `--os-version` to RHEL 8\
 you could do:
 
-```
+```bash
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --os-type=rhel --os-version=8
 ```
 
@@ -315,7 +315,7 @@ The `--write-to-stdout` option automatically enables `--skip-key-import`.
 
 For example:
 
-```
+```bash
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --write-to-stdout
 ```
 
@@ -342,7 +342,7 @@ following tasks:
    from MariaDB repositories a higher priority than packages from OS and other\
    repositories, which can help avoid conflicts. It looks like the following:
 
-```
+```ini
 Package: *
 Pin: origin downloads.mariadb.com
 Pin-Priority: 1000
@@ -369,13 +369,13 @@ After setting up the MariaDB Package Repository, you can install the software pa
 
 To install MariaDB on Red Hat Enterprise Linux (RHEL) and CentOS, see the instructions at [Installing MariaDB Packages with YUM](rpm/yum.md#installing-mariadb-packages-with-yum). For example:
 
-```
+```bash
 sudo yum install MariaDB-server MariaDB-client MariaDB-backup
 ```
 
 To install MariaDB MaxScale on Red Hat Enterprise Linux (RHEL) and CentOS, see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
 
-```
+```bash
 sudo yum install maxscale
 ```
 
@@ -383,13 +383,13 @@ sudo yum install maxscale
 
 To install MariaDB on Debian and Ubuntu, see the instructions at [Installing MariaDB Packages with APT](installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt). For example:
 
-```
+```bash
 sudo apt-get install mariadb-server mariadb-client mariadb-backup
 ```
 
 To install MariaDB MaxScale on Debian and Ubuntu, see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
 
-```
+```bash
 sudo apt-get install maxscale
 ```
 
@@ -397,13 +397,13 @@ sudo apt-get install maxscale
 
 To install MariaDB on SUSE Linux Enterprise Server (SLES), see the instructions at [Installing MariaDB Packages with ZYpp](rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp). For example:
 
-```
+```bash
 sudo zypper install MariaDB-server MariaDB-client MariaDB-backup
 ```
 
 To install MariaDB MaxScale on SUSE Linux Enterprise Server (SLES), see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
 
-```
+```bash
 sudo zypper install maxscale
 ```
 
@@ -451,6 +451,7 @@ sudo zypper install maxscale
 
 | **Version** | **sha256sum**                                                      |
 | ----------- | ------------------------------------------------------------------ |
+| 2025-08-07  | `923eea378be2c129adb4d191f01162c1fe5473f1114d7586f096b5f6b9874efe` |
 | 2025-02-13  | `c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a` |
 | 2024-11-14  | `ceaa5bd124c4d10a892c384e201bb6e0910d370ebce235306d2e4b860ed36560` |
 | 2024-08-14  | `6083ef1974d11f49d42ae668fb9d513f7dc2c6276ffa47caed488c4b47268593` |

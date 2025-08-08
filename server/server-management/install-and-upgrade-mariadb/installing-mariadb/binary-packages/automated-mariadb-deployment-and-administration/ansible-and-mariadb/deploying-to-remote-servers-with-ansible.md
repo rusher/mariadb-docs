@@ -8,7 +8,7 @@ This page shows some examples of ansible-playbook invocations. We'll see how to 
 
 Let's start with the simplest example: we just want our local Ansible to ping remote servers to see if they are reachable. Here's how to do it:
 
-```
+```bash
 ansible -i production-mariadb all -m ping
 ```
 
@@ -21,7 +21,7 @@ Before proceeding with more useful examples, let's discuss this syntax.
 
 To run ping on a specific group or host, we can just replace "all" with a group name or host name from the inventory:
 
-```
+```bash
 ansible -i production-mariadb main_cluster -m ping
 ```
 
@@ -29,7 +29,7 @@ ansible -i production-mariadb main_cluster -m ping
 
 The previous examples show how to run an Ansible module on remote servers. But it's also possible to run custom commands over SSH. Here's how:
 
-```
+```bash
 ansible -i production-mariadb all -a 'echo $PATH'
 ```
 
@@ -37,7 +37,7 @@ This command shows the value of `$PATH` on all servers in the inventory "product
 
 We can also run commands as root by adding the `-b` (or `--become`) option:
 
-```
+```bash
 # print a MariaDB variable
 ansible -i production-mariadb all -b -a 'mysql -e "SHOW GLOBAL VARIABLES LIKE \'innodb_buffer_pool_size\';"'
 
@@ -49,7 +49,7 @@ ansible -i production-mariadb all -b -a 'reboot'
 
 We saw how to run commands on remote hosts. Applying roles to remote hosts is not much harder, we just need to add some information. An example:
 
-```
+```bash
 ansible-playbook -i production-mariadb production-mariadb.yml
 ```
 
@@ -62,7 +62,7 @@ If we call ansible-playbook with no additional arguments, we will apply all appl
 
 To only apply roles to certain servers, we can use the `-l` parameter to specify a group, an individual host, or a pattern:
 
-```
+```bash
 # Apply to the mariadb-main role role
 ansible-playbook -i production-mariadb -l mariadb-main production-mariadb.yml
 
@@ -75,7 +75,7 @@ ansible-playbook -i production-mariadb -l mariadb-main-* production-mariadb.yml
 
 We can also apply tasks from roles selectively. Tasks may optionally have tags, and each tag corresponds to an operation that we may want to run on our remote hosts. For example, a "mariadb" role could have the "timezone-update" tag, to update the contents of the [timezone tables](../../../../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md#mysql-time-zone-tables). To only apply the tasks with the "timezone-update" tag, we can use this command:
 
-```
+```bash
 ansible-playbook -i production-mariadb --tag timezone-update production-mariadb.yml
 ```
 

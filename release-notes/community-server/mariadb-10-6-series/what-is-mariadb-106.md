@@ -66,13 +66,13 @@ See the [Differences in MariaDB Enterprise Server 10.6](../../enterprise-server/
 
 ### Character Sets
 
-* The `utf8` [character set](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) (and related collations) is now by default an alias for `utf8mb3` rather than the other way around. It can be set to imply `utf8mb4` by changing the value of the [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old_mode) system variable ([MDEV-8334](https://jira.mariadb.org/browse/MDEV-8334))
+* The `utf8` [character set](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) (and related collations) is now by default an alias for `utf8mb3` rather than the other way around. It can be set to imply `utf8mb4` by changing the value of the [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#old_mode) system variable ([MDEV-8334](https://jira.mariadb.org/browse/MDEV-8334))
 
 ### General
 
 * Bundle sys schema ([MDEV-9077](https://jira.mariadb.org/browse/MDEV-9077))
 * Do not resend unchanged resultset metadata for prepared statements ([MDEV-19237](https://jira.mariadb.org/browse/MDEV-19237))
-* [--bind-address=hostname](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#bind_address) now listens on both IPv6 and IPv4 addresses ([MDEV-6536](https://jira.mariadb.org/browse/MDEV-6536))
+* [--bind-address=hostname](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#bind_address) now listens on both IPv6 and IPv4 addresses ([MDEV-6536](https://jira.mariadb.org/browse/MDEV-6536))
 * Support systemd socket activation ([MDEV-5536](https://jira.mariadb.org/browse/MDEV-5536))
 * For the [GSSAPI plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi), support AD or local group name, and SIDs on Windows ([MDEV-23959](https://jira.mariadb.org/browse/MDEV-23959))
 * Check for $MARIADB\_HOME/my.cnf ([MDEV-21365](https://jira.mariadb.org/browse/MDEV-21365))
@@ -80,7 +80,7 @@ See the [Differences in MariaDB Enterprise Server 10.6](../../enterprise-server/
 ### Variables
 
 * For a list of all new variables, see [System Variables Added in MariaDB 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-10-6) and [Status Variables Added in MariaDB 10.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-106).
-* [max\_recursive\_iterations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_recursive_iterations) has been reduced to 1000 ([MDEV-17239](https://jira.mariadb.org/browse/MDEV-17239))
+* [max\_recursive\_iterations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_recursive_iterations) has been reduced to 1000 ([MDEV-17239](https://jira.mariadb.org/browse/MDEV-17239))
 
 #### InnoDB Variables
 
@@ -182,6 +182,7 @@ page.
 
 | Date        | Release                                             | Status      | Release Notes                                     | Changelog                                                                             |
 | ----------- | --------------------------------------------------- | ----------- | ------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| 6 Aug 2025  | [MariaDB 10.6.23](mariadb-10.6.23-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10.6.23-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10.6.23-changelog.md) |
 | 8 May 2025  | [MariaDB 10.6.22](mariadb-10-6-22-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-6-22-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-22-changelog.md) |
 | 4 Feb 2025  | [MariaDB 10.6.21](mariadb-10-6-21-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-6-21-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-21-changelog.md) |
 | 1 Nov 2024  | [MariaDB 10.6.20](mariadb-10-6-20-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-6-20-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-20-changelog.md) |

@@ -37,8 +37,8 @@ Notable changes of this release include:
 
 ### Variables
 
-* [version\_source\_revision](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#version_source_revision) - permits seeing which version of the source was used for the build ([MDEV-12583](https://jira.mariadb.org/browse/MDEV-12583)).
-* Renamed `idle_readwrite_transaction_timeout` to [idle\_write\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#idle_write_transaction_timeout).
+* [version\_source\_revision](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#version_source_revision) - permits seeing which version of the source was used for the build ([MDEV-12583](https://jira.mariadb.org/browse/MDEV-12583)).
+* Renamed `idle_readwrite_transaction_timeout` to [idle\_write\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#idle_write_transaction_timeout).
 
 The following deprecated variables have been removed:
 

@@ -1,5 +1,7 @@
 # Kubernetes Overview for MariaDB Users
 
+
+
 Kubernetes, or K8s, is software to orchestrate containers. It is released under the terms of an open source license, Apache License 2.0.
 
 Kubernetes was originally developed by Google. Currently it is maintained by the Cloud Native Computing Foundation (CNCF), with the status of Graduated Project.
@@ -26,25 +28,11 @@ For more details, see [Nodes](https://kubernetes.io/docs/concepts/architecture/n
 
 Every node must necessarily have the following components:
 
-* kubelet
-* kube-proxy
-* A container runtime
-
-#### kubelet
-
-kubelet has a set of **PodSpecs** which describe the desired state of pods. It checks that the current state of the pods matches the desired state. It especially takes care that containers don't crash.
-
-#### kube-proxy
-
-In a typical Kubernetes cluster, several containers located in different pods need to connect to other containers, located in the same pods (for performance and fault tolerance reasons). Therefore, when we develop and deploy an application, we can't know in advance the IPs of the containers to which it will have to connect. For example, an application server may need to connect to MariaDB, but the MariaDB IP will be different for every pod.
-
-The main purpose of kube-proxy is to implement the concept of Kubernetes **services**. When an application needs to connect to MariaDB, it will connect to the MariaDB service. kube-proxy will receive the request and will redirect it to a running MariaDB container in the same pod.
-
-#### Container Runtime
-
-Kubernetes manages the containers in a pod via a container runtime, or container manager, that supports the Kubernetes Container Runtime Interface (CRI). Container runtimes that meet this requisite are listed in the [Container runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) page in the Kubernetes documentation. More information about the Container Runtime Interface can be found [on GitHub](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface).
-
-Originally, Kubernetes used Docker as a container runtime. This was later deprecated, but Docker images can still be used using any container runtime.
+| Component           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `kubelet`           | `kubelet` has a set of `PodSpecs` which describe the desired state of pods. It checks that the current state of the pods matches the desired state. It especially takes care that containers don't crash.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `kube-proxy`        | <p>In a typical Kubernetes cluster, several containers located in different pods need to communicate with other containers within the same pods for performance and fault tolerance reasons. When developing and deploying applications, the IP addresses of these containers are unknown in advance. For instance, an application server may need to connect to a MariaDB instance, but the MariaDB's IP will vary for each pod.</p><p>The primary role of <code>kube-proxy</code> is to manage Kubernetes services. When an application needs to connect to MariaDB, it connects to the MariaDB service instead. </p><p><code>kube-proxy</code> then receives the request and redirects it to a running MariaDB container within the same pod.</p> |
+| `Container Runtime` | <p>Kubernetes orchestrates containers within a pod using a container runtime that complies with the Kubernetes Container Runtime Interface (CRI). Approved container runtimes are detailed on the <a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/">Container Runtimes page</a> of the Kubernetes documentation. Additional details about the CRI can be found on <a href="https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md">GitHub</a>.</p><p><em>Initially, Kubernetes defaulted to using Docker as its container runtime. Though now deprecated, Docker images remain viable with any compatible container runtime.</em></p>                    |
 
 ### Controllers
 
@@ -68,37 +56,23 @@ An API Server exposes API functions both internally and externally. It is essent
 
 The default implementation of the API Server is kube-apiserver. It is able to scale horizontally and to balance the load between its instances.
 
-#### kube-controller-manager
-
-Most controllers run in this component.
-
-#### etcd
-
-etcd contains all data used by a Kubernetes cluster. It is a good idea to take regular backups of etcd data.
-
-#### kube-scheduler
-
-When a new pod is created, kube-scheduler decides which node should host it. The decision is made based on several criteria, like the resource requirements for the pod.
-
-#### cloud-controller-manager
-
-cloud-controller-manager implements the logic and API of a cloud provider. It receives requests from the API Server and performs specific actions, like creating an instance in AWS. It also runs controllers that are specific to a cloud vendor.
+| Component                  | Description                                                                                                                                                  |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `kube-controller-manager`  | Most controllers run in this component.                                                                                                                      |
+| `etcd`                     | Contains all data used by a Kubernetes cluster. Taking regular backups of etcd data is advisable.                                                            |
+| `kube-scheduler`           | Decides which node should host a new pod based on criteria like resource requirements.                                                                       |
+| `cloud-controller-manager` | Implements logic and API of a cloud provider. Handles requests from the API Server and performs actions specific to a cloud vendor, like creating instances. |
 
 ### Clients and Tools
 
 Kubernetes comes with a set of tools that allow us to communicate with the API server and test a cluster.
 
-#### kubectl
-
-kubectl allows communication with the API server and run commands on a Kubernetes cluster.
-
-#### kubeadm
-
-kubeadm allows creating a Kubernetes cluster that is ready to receive commands from kubectl.
-
-#### kind and minikube
-
-These tools are meant to create and manage test clusters on a personal machine. They work on Linux, MacOS and Windows. kind creates a cluster that consists of Docker containers, therefore it requires Docker to be installed. minikube runs a single-node cluster on the local machine.
+| Tool       | Description                                                                                                                                                                                    |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `kubectl`  | Enables communication with the API server and allows running commands on a Kubernetes cluster.                                                                                                 |
+| `kubeadm`  | Facilitates the creation of a Kubernetes cluster ready to receive commands from kubectl.                                                                                                       |
+| `kind`     | Used to create and manage test clusters on a personal machine. It creates a cluster consisting of Docker containers, requiring Docker to be installed. Available on Linux, MacOS, and Windows. |
+| `minikube` | Runs a single-node cluster on the local machine. Available on Linux, MacOS, and Windows.                                                                                                       |
 
 ## Kubernetes Resources and References
 

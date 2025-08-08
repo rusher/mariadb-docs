@@ -1,7 +1,10 @@
 # CONNECT XCOL Table Type
 
-`XCOL` tables are based on another table or view, like [PROXY](connect-proxy-table-type.md) tables. This type can be\
-used when the object table has a column that contains a list of values.
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
+`XCOL` tables are based on another table or view, like [PROXY](connect-proxy-table-type.md) tables. This type can be used when the object table has a column that contains a list of values.
 
 Suppose we have a _'children'_ table that can be displayed as:
 
@@ -13,8 +16,7 @@ Suppose we have a _'children'_ table that can be displayed as:
 | Claude  | Marc                        |
 | Janet   | Arthur, Sandra, Peter, John |
 
-We can have a different view on these data, where each child are associated\
-with his/her mother by creating an `XCOL` table by:
+We can have a different view on these data, where each child are associated with his/her mother by creating an `XCOL` table by:
 
 ```
 CREATE TABLE xchild (
@@ -24,8 +26,7 @@ CREATE TABLE xchild (
 option_list='colname=child';
 ```
 
-The `COLNAME` option specifies the name of the column receiving the list\
-items. This will return from:
+The `COLNAME` option specifies the name of the column receiving the list items. This will return from:
 
 ```
 SELECT * FROM xchild;

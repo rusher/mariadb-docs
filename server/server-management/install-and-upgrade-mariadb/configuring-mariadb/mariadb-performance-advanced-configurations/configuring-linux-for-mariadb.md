@@ -10,27 +10,27 @@ Recommended schedulers are _none_, for SSDs and NVMes, and _mq-deadline_ (previo
 
 You can check your scheduler setting with:
 
-```
+```bash
 cat /sys/block/${DEVICE}/queue/scheduler
 ```
 
 For instance, it should look like this output:
 
-```
+```bash
 cat /sys/block/vdb/queue/scheduler
 [none] mq-deadline kyber bfq
 ```
 
 Older kernels may look like:
 
-```
+```bash
 cat /sys/block/sda/queue/scheduler
 [noop] deadline cfq
 ```
 
-Writing the new scheduler name to the same /sys node will change the scheduler:
+Writing the new scheduler name to the same `/sys` node will change the scheduler:
 
-```
+```bash
 echo noop >  /sys/block/vdb/queue/scheduler
 ```
 
@@ -48,14 +48,14 @@ If you are using [systemd](../../../starting-and-stopping-mariadb/systemd.md) to
 
 Otherwise, you can set the soft and hard limits for the `mysql` user account by adding the following lines to [/etc/security/limits.conf](https://linux.die.net/man/5/limits.conf):
 
-```
+```bash
 mysql soft nofile 65535
 mysql hard nofile 65535
 ```
 
 After the system is rebooted, the `mysql` user should use the new limits, and the user's `ulimit` output should look like the following:
 
-```
+```bash
 $ ulimit -Sn
 65535
 $ ulimit -Hn
@@ -72,14 +72,14 @@ If you are using [systemd](../starting-and-stopping-mariadb/systemd.md) to start
 
 Otherwise, you can set the soft and hard limits for the `mysql` user account by adding the following lines to [/etc/security/limits.conf](https://linux.die.net/man/5/limits.conf):
 
-```
+```bash
 mysql soft core unlimited
 mysql hard core unlimited
 ```
 
 After the system is rebooted, the `mysql` user should use the new limits, and the user's `ulimit` output should look like the following:
 
-```
+```bash
 $ ulimit -Sc
 unlimited
 $ ulimit -Hc

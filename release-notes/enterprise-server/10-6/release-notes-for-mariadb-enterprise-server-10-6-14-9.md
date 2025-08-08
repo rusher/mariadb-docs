@@ -15,7 +15,7 @@ MariaDB Enterprise Server 10.6.14-9 was released on 2023-06-13.
 
 * InnoDB's internal performance has been improved. ([MDEV-30567](https://jira.mariadb.org/browse/MDEV-30567))
 * The [aria\_log\_dir\_path system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria/aria-system-variables) is added as read-only. ([MDEV-30971](https://jira.mariadb.org/browse/MDEV-30971))
-* The default value for the [core\_file system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#core_file) has been changed from None to OFF. ([MDEV-11356](https://jira.mariadb.org/browse/MDEV-11356))
+* The default value for the [core\_file system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#core_file) has been changed from None to OFF. ([MDEV-11356](https://jira.mariadb.org/browse/MDEV-11356))
 * Starting with this release, the [innodb\_buffer\_pool\_filename system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename) is read-only and can't be changed dynamically. ([MDEV-30453](https://jira.mariadb.org/browse/MDEV-30453))
   * In previous releases, when `innodb_buffer_pool_dump_at_shutdown` was enabled, users with the `SUPER` privilege were able to dynamically change the value of the [innodb\_buffer\_pool\_filename system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename):
 
@@ -67,7 +67,7 @@ UPDATE performance_schema.setup_instruments
 * For some collations, when a unique constraint is defined with `UNIQUE(..) USING HASH`, duplicate values are accepted. ([MDEV-30034](https://jira.mariadb.org/browse/MDEV-30034))
 * When an InnoDB table with `ROW_FORMAT=REDUNDANT` is being rebuilt due to a DDL statement, the server can crash while trying to apply cached DML operations to the rebuilt table. ([MDEV-26198](https://jira.mariadb.org/browse/MDEV-26198))
 * Long uniques don't work correctly with `Unicode` collations. Equal strings (in terms of the collation) are compared as unequal if the length of the strings are different. ([MDEV-27653](https://jira.mariadb.org/browse/MDEV-27653), [MDEV-28190](https://jira.mariadb.org/browse/MDEV-28190))
-* When [innodb\_buffer\_pool\_filename](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename) is set to the empty string, the server tries to delete the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir) during shutdown. ([MDEV-30453](https://jira.mariadb.org/browse/MDEV-30453))
+* When [innodb\_buffer\_pool\_filename](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename) is set to the empty string, the server tries to delete the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) during shutdown. ([MDEV-30453](https://jira.mariadb.org/browse/MDEV-30453))
   * Starting with this release, the [innodb\_buffer\_pool\_filename system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename) is read-only and can't be changed dynamically.
   * However, starting with MariaDB Community Server 10.9, the server rejects using numeric IDs to represent non-default character sets in binary logs. Replica servers using these newer versions would raise the following error message:
 
@@ -75,7 +75,7 @@ UPDATE performance_schema.setup_instruments
 Unknown character set: '224'
 ```
 
-* Starting with this release, the server writes the [character\_set\_client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#character_set_client) value to the binary log as a string instead of as a numeric ID. This change allows MariaDB Community Server 10.9 and later to connect as replica servers.
+* Starting with this release, the server writes the [character\_set\_client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#character_set_client) value to the binary log as a string instead of as a numeric ID. This change allows MariaDB Community Server 10.9 and later to connect as replica servers.
 * When a [UNIQUE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table#unique) index includes a `PERIOD` in its definition, a duplicate key error can be incorrectly raised when the table uses the [utf8mb4\_unicode\_nopad\_ci collation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-collation). ([MDEV-30415](https://jira.mariadb.org/browse/MDEV-30415))
 * With Galera, when a value is retrieved from an InnoDB sequence using the [NEXTVAL() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences/sequence-functions/nextval), the server can crash due to metadata lock conflicts between WSREP threads. ([MDEV-30413](https://jira.mariadb.org/browse/MDEV-30413))
   * In previous releases, the following log message would be reported in the log prior to the crash:
@@ -260,7 +260,7 @@ ERROR 1105 (HY000): Unknown error
 * Starting with this release, no error is returned, and the results contain `NULL` for the `PAGE_NO` and `SPACE` columns for discarded tablespaces.
 * When [innodb\_undo\_directory](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_undo_directory) is set to a relative path, the path is not properly used by [mariadb-backup --copy-back](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup#-copy-back). ([MDEV-28187](https://jira.mariadb.org/browse/MDEV-28187))
   * In previous releases, the undo logs would be copied to the relative path compared to the current working directory.
-  * Starting with this release, the undo logs are copied to the relative path compared to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir).
+  * Starting with this release, the undo logs are copied to the relative path compared to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir).
 * When `UNIX_TIMESTAMP(CURRENT_TIME())` is executed, the incorrect value is returned. ([MDEV-26765](https://jira.mariadb.org/browse/MDEV-26765))
   * In previous releases, `NULL` is returned.
 * With Galera, when [wsrep\_sst\_method='mariadb-backup'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set, systemd raises an error about a mismatched PID. ([MDEV-25887](https://jira.mariadb.org/browse/MDEV-25887))
@@ -325,7 +325,7 @@ Skip copying 4 aria log file due to error
 ## Interface Changes
 
 * [aria\_log\_dir\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_log_dir_path) system variable added.
-* [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#core_file) system variable default value changed from `None` to `OFF`
+* [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#core_file) system variable default value changed from `None` to `OFF`
 * [innodb\_buffer\_pool\_filename](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename) system variable dynamic changed from `Yes` to `No`
 * [Innodb\_buffer\_pool\_pages\_split](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#innodb_buffer_pool_pages_data) status variable added.
 * `mariadb-backup` --aria-log-dir-path command-line option added.

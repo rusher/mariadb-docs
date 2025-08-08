@@ -66,40 +66,40 @@ config files:
 
 | Option                                                                                                                                         | Reason                                                                                                                                                                            |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| engine-condition-pushdown                                                                                                                      | Replaced with [set optimizer\_switch='engine\_condition\_pushdown=on'](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-condition-pushdown.md) |
-| innodb-adaptive-flushing-method                                                                                                                | Removed by [XtraDB](../../../../../server-usage/storage-engines/innodb/innodb-unmaintained/about-xtradb.md)                                                                       |
-| innodb-autoextend-increment                                                                                                                    | Removed by XtraDB                                                                                                                                                                 |
-| innodb-blocking-buffer-pool-restore                                                                                                            | Removed by XtraDB                                                                                                                                                                 |
-| innodb-buffer-pool-pages                                                                                                                       | Removed by XtraDB                                                                                                                                                                 |
-| innodb-buffer-pool-pages-blob                                                                                                                  | Removed by XtraDB                                                                                                                                                                 |
-| innodb-buffer-pool-pages-index                                                                                                                 | Removed by XtraDB                                                                                                                                                                 |
-| innodb-buffer-pool-restore-at-startup                                                                                                          | Removed by XtraDB                                                                                                                                                                 |
-| innodb-buffer-pool-shm-checksum                                                                                                                | Removed by XtraDB                                                                                                                                                                 |
-| innodb-buffer-pool-shm-key                                                                                                                     | Removed by XtraDB                                                                                                                                                                 |
-| innodb-checkpoint-age-target                                                                                                                   | Removed by XtraDB                                                                                                                                                                 |
-| innodb-dict-size-limit                                                                                                                         | Removed by XtraDB                                                                                                                                                                 |
-| innodb-doublewrite-file                                                                                                                        | Removed by XtraDB                                                                                                                                                                 |
-| innodb-fast-checksum                                                                                                                           | Renamed to [innodb-checksum-algorithm](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)                                   |
-| innodb-flush-neighbor-pages                                                                                                                    | Renamed to [innodb-flush-neighbors](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors)                                         |
-| innodb-ibuf-accel-rate                                                                                                                         | Removed by XtraDB                                                                                                                                                                 |
-| innodb-ibuf-active-contract                                                                                                                    | Removed by XtraDB                                                                                                                                                                 |
-| innodb-ibuf-max-size                                                                                                                           | Removed by XtraDB                                                                                                                                                                 |
-| innodb-import-table-from-xtrabackup                                                                                                            | Removed by XtraDB                                                                                                                                                                 |
-| innodb-index-stats                                                                                                                             | Removed by XtraDB                                                                                                                                                                 |
-| innodb-lazy-drop-table                                                                                                                         | Removed by XtraDB                                                                                                                                                                 |
-| innodb-merge-sort-block-size                                                                                                                   | Removed by XtraDB                                                                                                                                                                 |
-| innodb-persistent-stats-root-page                                                                                                              | Removed by XtraDB                                                                                                                                                                 |
-| innodb-read-ahead                                                                                                                              | Removed by XtraDB                                                                                                                                                                 |
-| innodb-recovery-stats                                                                                                                          | Removed by XtraDB                                                                                                                                                                 |
-| innodb-recovery-update-relay-log                                                                                                               | Removed by XtraDB                                                                                                                                                                 |
-| innodb-stats-auto-update                                                                                                                       | Renamed to innodb-stats-auto-recalc                                                                                                                                               |
-| innodb-stats-update-need-lock                                                                                                                  | Removed by XtraDB                                                                                                                                                                 |
-| innodb-sys-stats                                                                                                                               | Removed by XtraDB                                                                                                                                                                 |
-| innodb-table-stats                                                                                                                             | Removed by XtraDB                                                                                                                                                                 |
-| innodb-thread-concurrency-timer-based                                                                                                          | Removed by XtraDB                                                                                                                                                                 |
-| innodb-use-sys-stats-table                                                                                                                     | Removed by XtraDB                                                                                                                                                                 |
+| `engine-condition-pushdown`                                                                                                                    | Replaced with [set optimizer\_switch='engine\_condition\_pushdown=on'](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-condition-pushdown.md) |
+| `innodb-adaptive-flushing-method`                                                                                                              | Removed by [XtraDB](../../../../../server-usage/storage-engines/innodb/innodb-unmaintained/about-xtradb.md)                                                                       |
+| `innodb-autoextend-increment`                                                                                                                  | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-blocking-buffer-pool-restore`                                                                                                          | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-buffer-pool-pages`                                                                                                                     | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-buffer-pool-pages-blob`                                                                                                                | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-buffer-pool-pages-index`                                                                                                               | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-buffer-pool-restore-at-startup`                                                                                                        | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-buffer-pool-shm-checksum`                                                                                                              | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-buffer-pool-shm-key`                                                                                                                   | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-checkpoint-age-target`                                                                                                                 | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-dict-size-limit`                                                                                                                       | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-doublewrite-file`                                                                                                                      | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-fast-checksum`                                                                                                                         | Renamed to [innodb-checksum-algorithm](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)                                   |
+| `innodb-flush-neighbor-pages`                                                                                                                  | Renamed to [innodb-flush-neighbors](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbors)                                         |
+| `innodb-ibuf-accel-rate`                                                                                                                       | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-ibuf-active-contract`                                                                                                                  | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-ibuf-max-size`                                                                                                                         | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-import-table-from-xtrabackup`                                                                                                          | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-index-stats`                                                                                                                           | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-lazy-drop-table`                                                                                                                       | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-merge-sort-block-size`                                                                                                                 | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-persistent-stats-root-page`                                                                                                            | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-read-ahead`                                                                                                                            | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-recovery-stats`                                                                                                                        | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-recovery-update-relay-log`                                                                                                             | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-stats-auto-update`                                                                                                                     | Renamed to [innodb-stats-auto-recalc](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc)                                     |
+| `innodb-stats-update-need-lock`                                                                                                                | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-sys-stats`                                                                                                                             | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-table-stats`                                                                                                                           | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-thread-concurrency-timer-based`                                                                                                        | Removed by XtraDB                                                                                                                                                                 |
+| `innodb-use-sys-stats-table`                                                                                                                   | Removed by XtraDB                                                                                                                                                                 |
 | [rpl\_recovery\_rank](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank) | Unused in 10.0+                                                                                                                                                                   |
-| xtradb-admin-command                                                                                                                           | Removed by XtraDB                                                                                                                                                                 |
+| `xtradb-admin-command`                                                                                                                         | Removed by XtraDB                                                                                                                                                                 |
 
 ### Suggested upgrade procedure for replication
 
@@ -113,27 +113,37 @@ If you need help with upgrading or setting up replication, you can always [conta
 
 ## Upgrading to [MariaDB 10.1](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series) from MySQL 5.5
 
-The suggested upgrade procedure is:
+#### Pre-Upgrade Preparation
 
-1. Set [innodb\_fast\_shutdown](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) to `0`. This is to ensure that if you make a backup as part of the upgrade, all data is written to the InnoDB data files, which simplifies any restore in the future.
-2. Shutdown MySQL 5.5
-3. Take a [backup](../../../../../server-usage/backup-and-restore/backup-and-restore-overview.md)
+1. Set InnoDB for a Full Shutdown Set `innodb_fast_shutdown` to `0`. This is to ensure that if you make a backup as part of the upgrade, all data is written to the `InnoDB` data files, which simplifies any restore in the future.
+2. Shutdown MySQL Shutdown your `MySQL 5.5` server.
+3. Take a Full Backup
+   * When the server is shut down is the perfect time to take a backup of your databases.
+   * Store a copy of the backup on external media or a different machine for safety.
 
-* when the server is shut down is the perfect time to take a backup of your databases
-* store a copy of the backup on external media or a different machine for safety
+**OS and Database Upgrade**
 
-1. Perform the upgrade from Debian 8 to Debian 9
-2. During the upgrade, the [mysql\_upgrade](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) script will be run automatically; this script does two things:
-3. Upgrades the permission tables in the `mysql` database with some new fields
-4. Does a very quick check of all tables and marks them as compatible with [MariaDB 10.1](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series)
+4. Perform the OS Upgrade Proceed with the upgrade from `Debian 8` to `Debian 9`.
+   * Automatic Database Upgrade Process During the `Debian` upgrade, the `mysql_upgrade` script will be run automatically. This script does two things:
+     1. Upgrades the permission tables in the `mysql` database with some new fields.
+     2. Does a very quick check of all tables and marks them as compatible with `MariaDB 10.1`.
+        * In most cases, this should be a fast operation (depending of course on the number of tables).
 
-```
-* In most cases this should be a fast operation (depending of course on the number of tables)
-```
+**Post-Upgrade Configuration**
 
-1. Add new options to [my.cnf](../../../configuring-mariadb/configuring-mariadb-with-option-files.md) to enable features
+5.  Update Configuration and Restart You can now add new options to your `my.cnf` file to enable new features.
 
-* If you change `my.cnf` then you need to restart `mysqld` with e.g. `sudo service mysql restart` or `sudo service mariadb restart`.
+    * After changing `my.cnf`, you must restart the `mysqld` service.
+
+    ```bash
+    sudo service mysql restart
+    ```
+
+    _or_
+
+    ```bash
+    sudo service mariadb restart
+    ```
 
 ## Upgrading to [MariaDB 10.1](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series) from an older version of MariaDB
 
@@ -155,7 +165,7 @@ If you have been using MariaDB Galera Cluster 5.5 or 10.0 on Debian 8 "Jessie" i
 
 To get better performance from MariaDB used in production environments, here are some suggested additions to [your configuration file](../../../configuring-mariadb/configuring-mariadb-with-option-files.md) which in Debian is at `/etc/mysql/mariadb.d/my.cnf`:
 
-```
+```ini
 [[mysqld]]
 # Cache for disk based temporary files
 aria_pagecache_buffer_size=128M

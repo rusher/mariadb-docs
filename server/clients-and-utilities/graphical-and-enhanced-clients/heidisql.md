@@ -19,23 +19,22 @@
 
 HeidiSQL can:
 
-* Connect to multiple servers in one window
-* Connect to servers via command line
+* Connect to multiple servers in one window.
+* Connect to servers via command line.
 * Create and edit tables, views, stored routines, triggers and scheduled events.
-* Generate nice SQL-exports
-* Export from one server/database directly to another server/database
-* Manage user-privileges
-* Import text-files
-* Export table rows as CSV, HTML, XML, SQL, LaTeX and Wiki Markup
-* Browse and edit table-data using a comfortable grid
-* Bulk edit tables (move to db, change engine, collation etc.)
-* Batch-insert ascii or binary files into tables
-* Write queries with customizable syntax-highlighting and code-completion
-* Pretty reformat disordered SQL
-* Monitor and kill client-processes
-* Find specific text in all tables of all databases of one server
-* Optimize and repair tables in a batch manner
-* And more...
+* Generate nice SQL-exports.
+* Export from one server/database directly to another server/database.
+* Manage user-privileges.
+* Import text-files.
+* Export table rows as CSV, HTML, XML, SQL, LaTeX and Wiki Markup.
+* Browse and edit table-data using a comfortable grid.
+* Bulk edit tables (move to db, change engine, collation etc.).
+* Batch-insert ascii or binary files into tables.
+* Write queries with customizable syntax-highlighting and code-completion.
+* Pretty reformat disordered SQL.
+* Monitor and kill client-processes.
+* Find specific text in all tables of all databases of one server.
+* Optimize and repair tables in a batch manner.
 
 More information, including [Screenshots of HeidiSQL](https://www.heidisql.com/screenshots.php) are available at the [HeidiSQL Website](https://www.heidisql.com/).
 

@@ -41,7 +41,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
     ```
 
     ```bash
-    $ echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a mariadb_repo_setup" \
+    $ echo "${checksum} mariadb_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -53,6 +53,8 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
     $ sudo ./mariadb_repo_setup \
        --mariadb-server-version="mariadb-11.4"
     ```
+
+    1. _Checksums of the various releases of the `mariadb_repo_setup` script can be found in the_ [_Versions_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 2.  Install MariaDB Community Server and package dependencies:
 
     ```bash
@@ -81,7 +83,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
     ```
 
     ```bash
-    $ echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a mariadb_repo_setup" \
+    $ echo "${checksum} mariadb_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -97,6 +99,8 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
     ```bash
     $ sudo apt update
     ```
+
+    1. _Checksums of the various releases of the `mariadb_repo_setup` script can be found in the_ [_Versions_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 2.  Install MariaDB Community Server and package dependencies:
 
     ```bash
@@ -125,7 +129,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
     ```
 
     ```bash
-    $ echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a mariadb_repo_setup" \
+    $ echo "${checksum} mariadb_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -137,6 +141,8 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
     $ sudo ./mariadb_repo_setup \
        --mariadb-server-version="mariadb-11.4"
     ```
+
+    1. _Checksums of the various releases of the `mariadb_repo_setup` script can be found in the_ [_Versions_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 2.  Install MariaDB Community Server and package dependencies:
 
     ```bash
@@ -248,6 +254,6 @@ When MariaDB Community Server is up and running on your system, you should test 
     MariaDB [(none)]>
     ```
 
-\\
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

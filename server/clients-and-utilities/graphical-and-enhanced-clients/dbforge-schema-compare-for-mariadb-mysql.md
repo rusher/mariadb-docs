@@ -1,118 +1,113 @@
-# dbForge Schema Compare for MariaDB & MySQL
+# dbForge Schema Compare
 
-![dbforge\_schema\_compare\_for\_mysql](../../.gitbook/assets/dbforge_schema_compare_for_mysql.png)[dbForge Schema Compare](https://www.devart.com/dbforge/mysql/schemacompare/) is an efficient solution that allows for the comparison of the MariaDB database structure. With this tool, you can easily find the differences in MariaDB database schemas.
+[dbForge Schema Compare](https://www.devart.com/dbforge/mysql/schemacompare/) is a solution that allows for the comparison of the MariaDB database structure. With this tool, you can find the differences in MariaDB database schemas.
 
-## Schema Compare Tool Key features:
+Features are described in the following.
 
-### 1.MariaDB & MySQL Schema Synchronization
+## MariaDB & MySQL Schema Synchronization
 
-Update MariaDB schemas by generating accurate synchronization scripts
+Update MariaDB schemas by generating accurate synchronization scripts.
 
-Preview sync scripts for any schema objects
+Preview sync scripts for any schema objects.
 
-Customize the synchronization output with various options
+Customize the synchronization output with various options.
 
-Get warnings on possible errors while synchronization
+Get warnings on possible errors while synchronization.
 
-Sync asynchronous structure
+Sync asynchronous structure.
 
-![SynchronizationFeatures](../../.gitbook/assets/SynchronizationFeatures.png)
+![](../../.gitbook/assets/SynchronizationFeatures.png)
 
-### 2. MariaDB Backup and Restore
+## MariaDB Backup and Restore
 
-Enjoy the advantages of MariaDB backup and restore Wizards
+Use the advantages of MariaDB backup and restore Wizards.
 
-Have a full or partial backup
+Create a full or partial backup.
 
-Restore database and schedule backups with a command line interface
+Restore database and schedule backups with a command line interface.
 
-Support for databases over 2Gb
+Support for databases over 2Gb.
 
-![DatabaseBackup](../../.gitbook/assets/DatabaseBackup.png)
+![](../../.gitbook/assets/DatabaseBackup.png)
 
-### 3. Scripts Folder Comparison
+## Scripts Folder Comparison
 
-Compare the data both in two different databases and the database data with the data placed locally
+Compare the data both in two different databases and the database data with the data placed locally.
 
-Choose any connection and script folder stored locally with the new Data Comparison Wizard
+Choose any connection and script folder stored locally with the new Data Comparison Wizard.
 
-View the comparison process results in a data grid
+View the comparison process results in a data grid.
 
-![script-folder-comparison](../../.gitbook/assets/script-folder-comparison.png)
+![](../../.gitbook/assets/script-folder-comparison.png)
 
-### 4. Routine Tasks Automation
+## Routine Tasks Automation
 
-Sync and compare database schemas with command line support
+Sync and compare database schemas with command line support.
 
-Use the Windows Scheduler to automate the sync processes
+Use the Windows Scheduler to automate the sync processes.
 
-Run synchronization and schema comparison tasks with command line execution files
+Run synchronization and schema comparison tasks with command line execution files.
 
-![HowcanIautomatemyroutinetasks](../../.gitbook/assets/HowcanIautomatemyroutinetasks.png)
+![](../../.gitbook/assets/HowcanIautomatemyroutinetasks.png)
 
-### 5. Supported Schema Objects
+## Supported Schema Objects
 
-Packages
+Packages.
 
-Sequences
+Sequences.
 
-![SupportedSchemaObjects](../../.gitbook/assets/SupportedSchemaObjects.png)
+![](../../.gitbook/assets/SupportedSchemaObjects.png)
 
-### 6. Database Structure Comparison Configuration
+## Database Structure Comparison Configuration
 
-Filter the types of objects before the comparison
+Filter the types of objects before the comparison.
 
-Dismiss particular table options while comparing
+Dismiss particular table options while comparing.
 
-Use the Schema Comparison Wizard for switching between the Target and Source databases
+Use the Schema Comparison Wizard for switching between the Target and Source databases.
 
-![DatabaseStructureComparisonSetup](../../.gitbook/assets/DatabaseStructureComparisonSetup.png)
+![](../../.gitbook/assets/DatabaseStructureComparisonSetup.png)
 
-### 7. Comparison Results Analysis
+## Comparison Results Analysis
 
-Sort and filter the compared objects
+Sort and filter the compared objects.
 
 Get a clear view of MariaDB and MySQL schema diffs in the grid.
 
-Manage groups of compared objects
+Manage groups of compared objects.
 
-![HowcanIanalyzecomparisonresults](../../.gitbook/assets/HowcanIanalyzecomparisonresults.png)
+![](../../.gitbook/assets/HowcanIanalyzecomparisonresults.png)
 
-### 8. Comparison Results Export
+## Comparison Results Export
 
-Generate comparison results reports in HTML, Excel XML, XML for Excel
+Generate comparison results reports in HTML, Excel XML, XML for Excel.
 
-Include specifically selected objects in your comparison report
+Include specifically selected objects in your comparison report.
 
-![HowcanIexportdatacomparisonresults](../../.gitbook/assets/HowcanIexportdatacomparisonresults.png)
+![](../../.gitbook/assets/HowcanIexportdatacomparisonresults.png)
 
-### 9. Broad Compatibility
-
-MariaDB server versions 5.5-11.4
+## Compatibility
 
 All MariaDB instances set up on Windows, Linux, FreeBSD, etc.
 
-Various cloud services: Amazon RDS, Amazon Aurora, Google Cloud, Oracle MySQL Cloud, Alibaba Cloud
+Various cloud services: Amazon RDS, Amazon Aurora, Google Cloud, Oracle MySQL Cloud, Alibaba Cloud.
 
-Security connections: Secure Socket Layer (SSL), Secure Shell (SSH), HTTP Tunneling, PAM Percona
+Security connections: Secure Socket Layer (SSL), Secure Shell (SSH), HTTP Tunneling, PAM Percona.
 
-![broad-compatibility-new](../../.gitbook/assets/broad-compatibility-new.png)
+![](../../.gitbook/assets/broad-compatibility-new.png)
 
 Download a free 30-day trial of dbForge MariaDB and MySQL Schema Compare [here](https://www.devart.com/dbforge/mysql/schemacompare/download.html).
 
-[Documentation](https://docs.devart.com/schema-compare-for-mysql/)
+[Documentation](https://docs.devart.com/schema-compare-for-mysql/) is available, too.
 
-| Version                     | Introduced                                                                                                                                                                                                                                                                                                                            |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dbForge Schema Compare 10.1 | Support for the rds-ca-rsa2048-g1 SSL/TLS certificate for connecting to MariaDB servers on AWS and enhanced cloud compatibility features, new automation capabilities                                                                                                                                                                 |
-| dbForge Schema Compare 10.0 | [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), Added support for temporal tables in MariaDB                                                                                                                                                                 |
-| dbForge Schema Compare 5.2  | [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)                                                                                                                                                                          |
-| dbForge Schema Compare 5.1  | [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109), [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)                             |
-| dbForge Schema Compare 5.0  | [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)                                                                                                                                                                                                  |
-| dbForge Schema Compare 4.4  | [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)                                                                                                                                                                                    |
-| dbForge Schema Compare 4.3  | [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)                                                                                                                                                                                    |
-| dbForge Schema Compare 4.2  | [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)               |
-| dbForge Schema Compare 3.1  | [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) |
+| Version                     | Introduced                                                                                                                                                             |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dbForge Schema Compare 10.1 | Support for the rds-ca-rsa2048-g1 SSL/TLS certificate for connecting to MariaDB servers on AWS and enhanced cloud compatibility features, new automation capabilities. |
+| dbForge Schema Compare 10.0 | MariaDB 11.4, Added support for temporal tables in MariaDB.                                                                                                            |
+| dbForge Schema Compare 5.2  | MariaDB 11.3.                                                                                                                                                          |
+| dbForge Schema Compare 5.1  | MariaDB 10.9, MariaDB 10.10.                                                                                                                                           |
+| dbForge Schema Compare 5.0  | MariaDB 10.5.                                                                                                                                                          |
+| dbForge Schema Compare 4.4  | MariaDB 10.4.                                                                                                                                                          |
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

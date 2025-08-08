@@ -35,7 +35,7 @@ MariaDB Enterprise Server 10.4.12-6 was released on 2020-03-02.
 * The aria\_pack utility crashed when running an offline datafile compress on a table. ([MDEV-14183](https://jira.mariadb.org/browse/MDEV-14183))
 * Dropping a partition with wsrep\_OSU\_method=RSU and SESSION sql\_log\_bin=0 caused the [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) (Galera) node to hang. ([MDEV-21189](https://jira.mariadb.org/browse/MDEV-21189))
 * Shutdown of a replica (slave) Server could hang when [slave-parallel-threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is set to a value greater than 0 ([MDEV-20821](https://jira.mariadb.org/browse/MDEV-20821))
-* Using [SET STATEMENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set-statement) [max\_statement\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_statement_time) to set a timeout for the statement resulted in a crash. (MENT-634)
+* Using [SET STATEMENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set-statement) [max\_statement\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_statement_time) to set a timeout for the statement resulted in a crash. (MENT-634)
 * Querying the [wsrep\_on](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_on) system status variable after enabling Galera Cluster Replication in [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) for a running server could result in a crash. (MENT-633)
 
 ### Can result in unexpected behavior
@@ -60,7 +60,7 @@ MariaDB Enterprise Server 10.4.12-6 was released on 2020-03-02.
 
 ### Related to installation or upgrade
 
-* Server could not be started when [lc\_messages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#lc_messages) is set in a config file. (MENT-625)
+* Server could not be started when [lc\_messages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#lc_messages) is set in a config file. (MENT-625)
 
 ## Interface Changes
 

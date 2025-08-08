@@ -1,6 +1,10 @@
 # Current Status of the CONNECT Handler
 
-The current CONNECT handler is a GA (stable) release. It was written starting both from an aborted project written for MySQL in 2004 and from the “DBCONNECT” program. It was tested on all the examples described in this document, and is distributed with a set of 53 test cases. Here is a not limited list of future developments:
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
+The CONNECT handler is a GA (stable) release. It was written starting both from an aborted project written for MySQL in 2004 and from the “DBCONNECT” program. It was tested on all the examples described in this document, and is distributed with a set of 53 test cases. Here is a not limited list of future developments:
 
 1. Adding more table types.
 2. Make more tests files (53 are already made)

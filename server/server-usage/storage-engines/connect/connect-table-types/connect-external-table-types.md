@@ -1,5 +1,9 @@
 # CONNECT - External Table Types
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 Because so many ODBC and JDBC drivers exist and only the main ones have been heavily tested, these table types cannot be ranked as stable. Use them with care in production applications.
 
 These types can be used to access tables belonging to the current or another database server. Six types are currently provided:

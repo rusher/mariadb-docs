@@ -2,12 +2,12 @@
 
 If you see the error message:
 
-```
+```bash
 symbol mysql_get_server_name, version libmysqlclient_16 not defined in file libmysqlclient.so.16 with link time reference
 ```
 
 ...then you are probably trying to use the mysql command-line client from\
-MariaDB with libmysqlclient.so from MySQL.
+MariaDB with `libmysqlclient.so` from MySQL.
 
 The symbol `mysql_get_server_name()` is something present in the MariaDB\
 source tree and not in the MySQL tree.
@@ -18,19 +18,19 @@ installed this error will happen if your system finds the MySQL version of`libmy
 To figure out which library is being linked in dynamically (ie, the\
 wrong one) use the 'ldd' tool.
 
-```
+```bash
 ldd $(which mysql) | grep mysql
 ```
 
 or
 
-```
+```bash
 ldd /path/to/the/binary | grep mysql
 ```
 
 For example:
 
-```
+```bash
 me@mybox:~$ ldd $(which mysql)|grep mysql
         libmysqlclient.so.16 => /usr/lib/libmysqlclient.so.16 (0xb74df000)
 ```
@@ -39,19 +39,19 @@ You can then use your package manager's tools to find out which package the libr
 
 On CentOS the command to find out which package installed a specific file is:
 
-```
+```bash
 rpm -qf /path/to/file
 ```
 
 On Debian-based systems, the command is:
 
-```
+```bash
 dpkg -S /path/to/file
 ```
 
 Here's an example of locating the library and finding out which package it belongs to on an Ubuntu system:
 
-```
+```bash
 me@mybox:~$ ldd $(which mysql)|grep mysql
 	libmysqlclient.so.16 => /usr/lib/libmysqlclient.so.16 (0xb75f8000)
 me@mybox:~$ dpkg -S /usr/lib/libmysqlclient.so.16

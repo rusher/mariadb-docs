@@ -15,13 +15,12 @@ Returns the number of fields in a result set of a prepared statement.
 {% hint style="info" %}
 The number of fields will be available after calling [mysql\_stmt\_prepare()](mysql_stmt_prepare.md)
 
-mysql\_stmt\_field\_count() returns zero for UPSERT statements which don't produce a result set.
+`mysql_stmt_field_count()` returns zero for `UPSERT` statements which don't produce a result set.
 {% endhint %}
 
 ## See Also
 
 * [mysql\_stmt\_prepare()](mysql_stmt_prepare.md)
 * [mysql\_stmt\_param\_count()](mysql_stmt_param_count.md)
-
 
 {% @marketo/form formId="4316" %}

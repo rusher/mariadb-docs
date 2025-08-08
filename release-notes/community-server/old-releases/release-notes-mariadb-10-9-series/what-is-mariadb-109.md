@@ -1,4 +1,4 @@
-# Changes and Improvements in MariaDB 10.9
+# MariaDB 10.9 Changes & Improvements
 
 [MariaDB 10.9](what-is-mariadb-109.md) is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
 
@@ -43,12 +43,12 @@ The most recent release of [MariaDB 10.9](what-is-mariadb-109.md) is:[**MariaDB 
 ### Variables
 
 * For a list of all new variables, see [System Variables Added in MariaDB 10.9](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-10-9).
-* Merge [old](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old) to [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old_mode) sql variable ([MDEV-24920](https://jira.mariadb.org/browse/MDEV-24920))
+* Merge [old](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#old) to [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#old_mode) sql variable ([MDEV-24920](https://jira.mariadb.org/browse/MDEV-24920))
 
 The following variables have been deprecated:
 
 * [innodb\_change\_buffering](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_change_buffering)
-* [old](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old) (replaced by [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#old_mode))
+* [old](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#old) (replaced by [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#old_mode))
 
 and [Status Variables Added in MariaDB 10.9](what-is-mariadb-109.md).
 

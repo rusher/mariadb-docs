@@ -1,27 +1,18 @@
 # Audit Plugin Options and System Variables
 
+## Overview
+
 There are a several options and system variables related to the [MariaDB Audit Plugin](./), once it has been [installed](mariadb-audit-plugin-installation.md). System variables can be displayed using the [SHOW VARIABLES](../../sql-statements/administrative-sql-statements/show/show-variables.md) statement like so:
 
 ```sql
-SHOW GLOBAL VARIABLES LIKE '%server_audit%';
-
+SHOW GLOBAL VARIABLES LIKE 'server_audit%';
 +-------------------------------+-----------------------+
 | Variable_name                 | Value                 |
 +-------------------------------+-----------------------+
-| server_audit_events           | CONNECT,QUERY,TABLE   |
+| server_audit_events           |                       |
 | server_audit_excl_users       |                       |
-| server_audit_file_path        | server_audit.log      |
-| server_audit_file_rotate_now  | OFF                   |
-| server_audit_file_rotate_size | 1000000               |
-| server_audit_file_rotations   | 9                     |
-| server_audit_incl_users       |                       |
-| server_audit_logging          | ON                    |
-| server_audit_mode             | 0                     |
-| server_audit_output_type      | file                  |
-| server_audit_query_log_limit  | 1024                  |
-| server_audit_syslog_facility  | LOG_USER              |
-| server_audit_syslog_ident     | mysql-server_auditing |
-| server_audit_syslog_info      |                       |
+| server_audit_file_buffer_size | 0                     |
+| ...                           | ...                   |
 | server_audit_syslog_priority  | LOG_INFO              |
 +-------------------------------+-----------------------+
 ```
@@ -35,13 +26,13 @@ server_audit_excl_users='bob,ted'
 ...
 ```
 
-### System Variables
+## System Variables
 
 Below is a list of all system variables related to the Audit Plugin. See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them. See also the [full list of MariaDB options, system and status variables](../../full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `server_audit_events`
 
-* Description: If set, then this restricts audit logging to certain event types. If not set, then every event type is logged to the audit log: SET GLOBAL server\_audit\_events='connect, query'.
+* Description: If set, this restricts audit logging to certain event types. If not set, every event type is logged to the audit log.
 * Command line: `--server-audit-events=value`
 * Scope: Global
 * Dynamic: Yes
@@ -52,17 +43,28 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
   * `CONNECT`, `QUERY`, `TABLE`, `QUERY_DDL`, `QUERY_DML` (MariaDB Audit Plugin >= 1.2.0)
   * `CONNECT`, `QUERY`, `TABLE`, `QUERY_DDL`, `QUERY_DML`, `QUERY_DCL` (MariaDB Audit Plugin >=1.3.0)
   * `CONNECT`, `QUERY`, `TABLE`, `QUERY_DDL`, `QUERY_DML`, `QUERY_DCL`, `QUERY_DML_NO_SELECT` (MariaDB Audit Plugin >= 1.4.4)
-  * See [MariaDB Audit Plugin - Versions](mariadb-audit-plugin-versions.md) to determine which MariaDB releases contain each MariaDB Audit Plugin versions.
+  * Consult [MariaDB Audit Plugin - Versions](mariadb-audit-plugin-versions.md) for a list of MariaDB releases and their corresponding Audit Plugin versions.
 
 #### `server_audit_excl_users`
 
 * Description: If not empty, it contains the list of users whose activity will NOT be logged: `SET GLOBAL server_audit_excl_users='user_foo, user_bar'`. CONNECT records aren't affected by this variable - they are always logged. The user is still logged if it's specified in [server\_audit\_incl\_users](mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users).
-* Command line: `--server-audit-excl-users=value`
+* Command line: `--server-audit-excl-users=`_`value`_
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value: Empty string
 * Size limit: 1024 characters
+
+#### `server_audit_file_buffer_size`
+
+* Description: Size (in bytes) of file buffer to make logging faster.
+* Command line: `--server-audit-file-bugger-size=`_`#`_&#x20;
+* Scope: Global
+* Dynamic: Yes
+* Data Type: `numeric`
+* Size limit: 65536
+* Introduced: MariaDB 12.1
+* Usage: See [description](mariadb-audit-plugin-options-and-system-variables.md#audit_file_buffer_size-and-server_audit_sync_log_file)
 
 #### `server_audit_file_path`
 
@@ -160,7 +162,19 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `1024`
-* Range: `0` to `2147483647`
+* Range: `0` to `2147483647`&#x20;
+
+#### `server_audit_sync_log_file`
+
+* Description: Force sync log file.
+* Command line: `--server-audit-sync-log-file`
+* Scope: Global
+* Dynamic: Yes
+* Data Type: N/A
+* Default Value: `OFF`
+* Valid values: `ON` (or `1`), `OFF` (or `0`)
+* Introduced: MariaDB 12.1
+* Usage: See [description](mariadb-audit-plugin-options-and-system-variables.md#audit_file_buffer_size-and-server_audit_sync_log_file)
 
 #### `server_audit_syslog_facility`
 
@@ -200,7 +214,13 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 * Default Value: `LOG_INFO`
 * Valid Values:`LOG_EMERG`, `LOG_ALERT`, `LOG_CRIT`, `LOG_ERR`, `LOG_WARNING`, `LOG_NOTICE`, `LOG_INFO`, `LOG_DEBUG`
 
-### Options
+## Notes on System Variables
+
+### audit\_file\_buffer\_size and server\_audit\_sync\_log\_file
+
+The server audit plugin typically employs synchronous, per-event logging, causing performance bottlenecks. Individual file writes for each log entry can result in significant I/O overhead, especially in large database environments. As of MariaDB 12.1, two new variables were introduced to allow asynchronous logging, and more fine grained control over how audit log writes are handled. Using the `server_audit_file_buffer_size` setting (buffer size in bytes), you can configure an additional in-memory audit log buffer. When the size of the buffer exceeds the `server_audit_file_buffer_size` setting, the audit log is written to disk. Additionally, a manual on-demand audit log disk sync can be triggered by setting `server_audit_sync_log_file` to `ON` or `1`.
+
+## Options
 
 #### `server_audit`
 
@@ -209,7 +229,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
     * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN ](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN ](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)while the server is running.
   * See [MariaDB Audit Plugin - Installation: Prohibiting Uninstallation](mariadb-audit-plugin-installation.md#prohibiting-uninstallation) for more information.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Command line: `--server-audit=val`

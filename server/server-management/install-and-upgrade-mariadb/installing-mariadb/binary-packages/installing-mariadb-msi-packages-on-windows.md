@@ -199,14 +199,14 @@ msiexec /i path-to-package.msi SERVICENAME=MySQL ADDLOCAL=DEBUGSYMBOLS REMOVE=DE
 
 To uninstall silently, use the `REMOVE=ALL` property with msiexec:
 
-```
+```bash
 msiexec /i path-to-package.msi REMOVE=ALL /qn
 ```
 
 To keep the data directory during an uninstall, you will need to pass an\
 additional parameter:
 
-```
+```bash
 msiexec /i path-to-package.msi REMOVE=ALL CLEANUPDATA="" /qn
 ```
 
@@ -217,7 +217,7 @@ diagnosis. Please attach verbose logs to the bug reports you create. To create a
 installer log, start the installer from the command line with the `/l*v`\
 switch, like so:
 
-```
+```bash
 msiexec.exe /i path-to-package.msi  /l*v path-to-logfile.txt
 ```
 

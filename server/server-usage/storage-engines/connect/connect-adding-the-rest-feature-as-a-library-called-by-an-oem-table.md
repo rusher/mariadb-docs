@@ -1,5 +1,9 @@
 # Adding the REST Feature as a Library Called by an OEM Table
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 If you are using a version of MariaDB that does not support REST, this is how the REST feature can be added as a library called by an OEM table.
 
 Before making the REST OEM module, the Microsoft Casablanca package must be installed as for compiling MariaDB from source.

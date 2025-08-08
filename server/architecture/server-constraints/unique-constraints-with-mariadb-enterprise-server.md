@@ -287,6 +287,6 @@ ALTER TABLE hq_sales.customers DROP INDEX customer_email;
 ALTER TABLE hq_sales.customers ADD UNIQUE INDEX (customer_email);
 ```
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

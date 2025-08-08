@@ -17,7 +17,7 @@ Ways to fix this issue:
    PHP (Recommended solution).
 2. Run with a lower [error reporting level](https://php.net/error-reporting):
 
-```
+```php
 $err_level = error_reporting(0);
 $conn = mysql_connect('params');
 error_reporting($err_level);

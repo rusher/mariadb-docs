@@ -1,4 +1,4 @@
-# Changes and Improvements in MariaDB 11.1
+# MariaDB 11.1 Changes & Improvements
 
 [MariaDB 11.1](what-is-mariadb-111.md) is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
 
@@ -23,7 +23,7 @@ The most recent release of [MariaDB 11.1](what-is-mariadb-111.md) is:[**MariaDB 
 
 ### Transactions
 
-* The [transaction\_isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#transaction_isolation) option is now a system variable, and the tx\_isolation system variable is deprecated ([MDEV-21921](https://jira.mariadb.org/browse/MDEV-21921))
+* The [transaction\_isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#transaction_isolation) option is now a system variable, and the tx\_isolation system variable is deprecated ([MDEV-21921](https://jira.mariadb.org/browse/MDEV-21921))
 
 ### InnoDB
 

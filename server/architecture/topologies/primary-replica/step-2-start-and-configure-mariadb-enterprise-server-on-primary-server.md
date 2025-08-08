@@ -150,6 +150,6 @@ This page was step 2 of 7.
 
 Next: Step 3: Start and Configure MariaDB Enterprise Server on Replica Servers
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

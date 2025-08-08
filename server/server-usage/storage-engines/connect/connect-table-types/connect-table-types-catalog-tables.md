@@ -1,19 +1,15 @@
 # CONNECT Table Types - Catalog Tables
 
-A catalog table is one that returns information about another table, or data\
-source. It is similar to what MariaDB commands such as `DESCRIBE` or `SHOW`\
-do. Applied to local tables, this just duplicates what these commands do, with\
-the noticeable difference that they are tables and can be used inside queries\
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
+A catalog table is one that returns information about another table, or data source. It is similar to what MariaDB commands such as `DESCRIBE` or `SHOW` do. Applied to local tables, this just duplicates what these commands do, with the noticeable difference that they are tables and can be used inside queries\
 as joined tables or inside sub-selects.
 
-But their main interest is to enable querying the structure of external tables\
-that cannot be directly queried with description commands. Let's see an\
-example:
+But their main interest is to enable querying the structure of external tables that cannot be directly queried with description commands. Let's see an example:
 
-Suppose we want to access the tables from a Microsoft Access database as an ODBC\
-type table. The first information we must obtain is the list of tables existing in\
-this data source. To get it, we will create a catalog table that will return it\
-extracted from the result set of the SQLTables ODBC function:
+Suppose we want to access the tables from a Microsoft Access database as an ODBC type table. The first information we must obtain is the list of tables existing in this data source. To get it, we will create a catalog table that will return it extracted from the result set of the SQLTables ODBC function:
 
 ```
 CREATE TABLE tabinfo (

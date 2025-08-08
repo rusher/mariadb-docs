@@ -1,9 +1,10 @@
 # CONNECT PIVOT Table Type
 
-This table type can be used to transform the result of another table or view\
-(called the source table) into a pivoted table along “pivot” and “facts”\
-columns. A pivot table is a great reporting tool that sorts and sums (by\
-default) independent of the original data layout in the source table.
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
+This table type can be used to transform the result of another table or view (called the source table) into a pivoted table along “pivot” and “facts” columns. A pivot table is a great reporting tool that sorts and sums (by default) independent of the original data layout in the source table.
 
 For example, let us suppose you have the following “Expenses” table:
 

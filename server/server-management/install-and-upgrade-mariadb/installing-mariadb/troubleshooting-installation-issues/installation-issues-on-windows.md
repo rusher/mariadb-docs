@@ -12,7 +12,7 @@ Recent versions of MariaDB may not install on unsupported Windows versions. See 
 
 ## [MariaDB 5.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-525-release-notes) and earlier
 
-### On Windows Vista/7 , changes to database or my.ini are not persistent, when mysqld.exe is run from the command line.
+On Windows Vista/7 , changes to database or my.ini are not persistent, when mysqld.exe is run from the command line.
 
 The reason for this behavior is Vista/Win7 file system redirection. Writes to\
 protected locations (in this case a subdirectory of Program Files) are\
@@ -20,8 +20,8 @@ redirected to the user's so-called "Virtual Store".
 
 Workarounds:
 
-* Run mysqld.exe as service. See answer [here](https://stackoverflow.com/questions/4962342/mariadb-on-windows-what-is-this-error-when-trying-to-start-the-database-engine) on how to create a MariaDB service.
-* Run mysqld.exe from the [elevated command prompt](https://www.winhelponline.com/articles/158/1/How-to-open-an-elevated-Command-Prompt-in-Windows-Vista.html).
+* Run `mysqld.exe` as service. See answer [here](https://stackoverflow.com/questions/4962342/mariadb-on-windows-what-is-this-error-when-trying-to-start-the-database-engine) on how to create a MariaDB service.
+* Run `mysqld.exe` from the [elevated command prompt](https://www.winhelponline.com/articles/158/1/How-to-open-an-elevated-Command-Prompt-in-Windows-Vista.html).
 * [Change the ACL](https://technet.microsoft.com/en-us/library/bb727008.aspx) of the data directory and add full control for the current\
   user.
 

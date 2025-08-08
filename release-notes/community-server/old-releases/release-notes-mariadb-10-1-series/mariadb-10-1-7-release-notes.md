@@ -29,18 +29,18 @@ Thanks, and enjoy MariaDB!
 * SQL standards-compliant behavior when dealing with [Primary Keys with Nullable Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/primary-keys-with-nullable-columns).
 * Default values of server variables were changed as follows:
 
-| Variable name                                                                                                                                                                 | Old value | New value                                       |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------------- |
-| [join\_buffer\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#join_buffer_size)     | 128K      | 256K                                            |
-| [max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_allowed_packet) | 1M        | 4M                                              |
-| [query\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_cache_size)     | 0         | 1M                                              |
-| [query\_cache\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_cache_type)     | ON        | OFF                                             |
-| [secure\_auth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth)                | OFF       | ON                                              |
-| [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#sql_mode)                      |           | NO\_ENGINE\_SUBSTITUTION,NO\_AUTO\_CREATE\_USER |
-| [sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)                      | 0         | 10000                                           |
-| [sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)                        | 0         | 10000                                           |
-| [sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)                  | 0         | 10000                                           |
-| [table\_open\_cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#table_open_cache)     | 400       | 2000                                            |
+| Variable name                                                                                                                                                | Old value | New value                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ----------------------------------------------- |
+| [join\_buffer\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#join_buffer_size)          | 128K      | 256K                                            |
+| [max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_allowed_packet)      | 1M        | 4M                                              |
+| [query\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#query_cache_size)          | 0         | 1M                                              |
+| [query\_cache\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#query_cache_type)          | ON        | OFF                                             |
+| [secure\_auth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#secure_auth)                     | OFF       | ON                                              |
+| [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#sql_mode)                           |           | NO\_ENGINE\_SUBSTITUTION,NO\_AUTO\_CREATE\_USER |
+| [sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)     | 0         | 10000                                           |
+| [sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)       | 0         | 10000                                           |
+| [sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) | 0         | 10000                                           |
+| [table\_open\_cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#table_open_cache)          | 400       | 2000                                            |
 
 * One can now explicitly request MariaDB to select a good value for certain\
   command-line options by using the `--autoset` prefix. For example,\

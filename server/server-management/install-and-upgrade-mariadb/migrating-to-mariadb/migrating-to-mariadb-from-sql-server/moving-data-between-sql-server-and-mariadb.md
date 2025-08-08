@@ -34,7 +34,7 @@ To execute a dump, we can pass the file to [mariadb](../../../../clients-and-uti
 
 Provided that a dump file contains syntax that is valid in MariaDB, it can be executed in this way:
 
-```
+```bash
 mariadb --show-warnings < dump.sql
 ```
 
@@ -46,7 +46,7 @@ For other `mariadb` options, see [mariadb Command-line Client Options](../../../
 
 Another way to achieve the same purpose is to start the `mariadb` client in interactive mode first, and then run the `source` command. For example:
 
-```
+```bash
 root@d5a54a082d1b:/# mariadb -uroot -psecret
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 22
@@ -131,7 +131,7 @@ To enable `CONNECT` to work with SQL Server, we need to fulfill these requiremen
 
 Here is an example of a `CONNECT` table that points to a SQL Server table:
 
-```
+```sql
 CREATE TABLE city (
     id INT PRIMARY KEY,
     city_name VARCHAR(100),
@@ -152,7 +152,7 @@ The key points here are:
 
 `CONNECT` is able to query SQL Server to find out the remote table structure. We can use this feature to avoid specifying the column names and types:
 
-```
+```sql
 CREATE TABLE city
     ENGINE=CONNECT,
     TABLE_TYPE=ODBC,

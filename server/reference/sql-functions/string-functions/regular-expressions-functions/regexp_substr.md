@@ -29,24 +29,6 @@ SELECT REGEXP_SUBSTR(
   'https?://[^/]*');
 -> https://mariadb.org
 ```
-
-```sql
-SELECT REGEXP_SUBSTR('ABC','b');
--> B
-
-SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'b');
-->
-
-SELECT REGEXP_SUBSTR(BINARY'ABC','b');
-->
-
-SELECT REGEXP_SUBSTR('ABC','(?i)b');
--> B
-
-SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'(?+i)b');
--> B
-```
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
