@@ -100,7 +100,7 @@ Thanks, and enjoy MariaDB!
 
 ### Character Sets
 
-* Fresh MariaDB installation gives errors when configuring utf8 ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815))
+* Changing the server character set in `my.cnf` could cause `debian-start` script to fail  with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
 
 ### Packaging
 
