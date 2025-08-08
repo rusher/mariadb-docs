@@ -149,6 +149,6 @@ This page was step 4 of 5.
 
 Next: Step 5: Bulk Import of Data.
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

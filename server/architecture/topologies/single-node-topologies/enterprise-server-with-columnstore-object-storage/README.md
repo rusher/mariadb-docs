@@ -161,4 +161,6 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Object storag
 
 Next: Step 1: Install MariaDB Enterprise ColumnStore.
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../../.gitbook/includes/license-copyright-mariadb.md" %}
+
+{% @marketo/form formId="4316" %}

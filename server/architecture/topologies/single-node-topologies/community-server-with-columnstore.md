@@ -221,8 +221,7 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
        --mariadb-server-version="mariadb-10.6"
     ```
 
-    1. Checksums of the various releases of the script can be found in the [Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#versions) section at the bottom of the [MariaDB Package Repository Setup and Usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) page. Substitute `${checksum}` in the example above with the latest checksum.
-
+    1. _Checksums of the various releases of the script can be found in the_ [_Versions_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 2.  Install the EPEL repository:
 
     ```bash
@@ -280,8 +279,7 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     $ sudo apt update
     ```
 
-    1. Checksums of the various releases of the script can be found in the [Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#versions) section at the bottom of the [MariaDB Package Repository Setup and Usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) page. Substitute `${checksum}` in the example above with the latest checksum.
-
+    1. _Checksums of the various releases of the script can be found in the_ [_Versions_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 2.  Install some additional dependencies for ColumnStore.
 
     On Debian 10 and Ubuntu 20.04, install the following:
@@ -464,7 +462,7 @@ The credentials for cross engine joins were previously configured in the [Cross 
     ```bash
     $ sudo mariadb
     ```
-2.  Create the user account with the [CREATE USER](broken-reference) statement:
+2.  Create the user account with the [CREATE USER](broken-reference/) statement:
 
     ```sql
     CREATE USER 'cross_engine'@'127.0.0.1'
@@ -667,6 +665,6 @@ When you have MariaDB ColumnStore up and running, you should test it to ensure t
     MariaDB [(none)]>
     ```
 
-\\
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}
