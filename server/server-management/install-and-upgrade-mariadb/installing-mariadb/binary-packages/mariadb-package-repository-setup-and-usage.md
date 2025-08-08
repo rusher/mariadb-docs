@@ -45,7 +45,7 @@ echo "${checksum} mariadb_repo_setup" | sha256sum -c -
 {% endtabs %}
 
 {% hint style="info" %}
-Checksums of the various releases of the script can be found in the Versions section at the bottom of this page. Substitute `${checksum}` in the example above with the latest checksum.
+Checksums of the various releases of the `mariadb_repo_setup` script can be found in the Versions section at the bottom of this page. Substitute `${checksum}` in the example above with the latest checksum.
 {% endhint %}
 
 ### Prerequisites
