@@ -4,7 +4,7 @@ The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10
 
 There was a packaging issue with 10.0.5 on Debian & Ubuntu that prevented TokuDB from installing. This was fixed in 10.0.6.
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.5) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.5) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md) | [Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 7 Nov 2013
 

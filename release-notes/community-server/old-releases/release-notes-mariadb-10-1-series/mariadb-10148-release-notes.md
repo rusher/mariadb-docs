@@ -1,6 +1,6 @@
 # MariaDB 10.1.48 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.48/)[Release Notes](mariadb-10148-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10148-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.48/) | [Release Notes](mariadb-10148-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10148-changelog.md) | [Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 3 Nov 2020
 

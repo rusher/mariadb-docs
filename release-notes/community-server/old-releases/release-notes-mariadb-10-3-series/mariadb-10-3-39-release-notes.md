@@ -1,6 +1,6 @@
 # MariaDB 10.3.39 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.3.39/)[Release Notes](mariadb-10-3-39-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-10-3-39-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
+[Download](https://downloads.mariadb.org/mariadb/10.3.39/) | [Release Notes](mariadb-10-3-39-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-10-3-39-changelog.md) | [Overview of 10.3](what-is-mariadb-103.md)
 
 **Release date:** 10 May 2023
 

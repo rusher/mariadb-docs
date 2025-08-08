@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.32)[Release Notes](mariadb-10032-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10032-changelog.md)[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.32) | [Release Notes](mariadb-10032-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10032-changelog.md) | [Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 7 Aug 2017
 

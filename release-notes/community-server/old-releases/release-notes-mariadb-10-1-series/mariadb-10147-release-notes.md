@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
-[Download 10.1.47](https://downloads.mariadb.org/mariadb/10.1.47/)[Release Notes](mariadb-10147-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10147-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download 10.1.47](https://downloads.mariadb.org/mariadb/10.1.47/) | [Release Notes](mariadb-10147-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10147-changelog.md) | [Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 7 Oct 2020
 

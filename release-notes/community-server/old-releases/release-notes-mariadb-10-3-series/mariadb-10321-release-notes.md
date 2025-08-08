@@ -4,7 +4,7 @@ The most recent release of [MariaDB 10.3](what-is-mariadb-103.md) is:[**MariaDB 
 
 Note that this version contains an issue that disabled all events created by a server with a different server\_id. See [MDEV-21758](https://jira.mariadb.org/browse/MDEV-21758) for details.
 
-[Download](https://downloads.mariadb.org/mariadb/10.3.21/)[Release Notes](mariadb-10321-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-10321-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
+[Download](https://downloads.mariadb.org/mariadb/10.3.21/) | [Release Notes](mariadb-10321-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-10321-changelog.md) | [Overview of 10.3](what-is-mariadb-103.md)
 
 **Release date:** 11 Dec 2019
 

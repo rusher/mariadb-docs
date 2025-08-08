@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.9](what-is-mariadb-109.md) is:[**MariaDB 10.9.8**](mariadb-10-9-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.9.8/)
 
-[Download 10.9.0](https://downloads.mariadb.org/mariadb/10.9.0)[Release Notes](mariadb-1090-release-notes.md)[Changelog](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1080-changelog/README.md)[Overview of 10.9](what-is-mariadb-109.md)
+[Download 10.9.0](https://downloads.mariadb.org/mariadb/10.9.0) | [Release Notes](mariadb-1090-release-notes.md) | [Changelog](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1080-changelog/README.md) | [Overview of 10.9](what-is-mariadb-109.md)
 
 **Release date:** 23 March 2022
 

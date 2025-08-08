@@ -4,7 +4,7 @@ The most recent release of [MariaDB 10.4](https://mariadb.com/docs/release-notes
 
 Note that this version contains an issue that disabled all events created by a server with a different server\_id. See [MDEV-21758](https://jira.mariadb.org/browse/MDEV-21758) for details.
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.12/)[Release Notes](mariadb-10412-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10412-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
+[Download](https://downloads.mariadb.org/mariadb/10.4.12/) | [Release Notes](mariadb-10412-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10412-changelog.md) | [Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 **Release date:** 28 Jan 2020
 

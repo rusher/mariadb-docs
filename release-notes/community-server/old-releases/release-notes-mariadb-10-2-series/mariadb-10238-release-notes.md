@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download 10.2.38](https://downloads.mariadb.org/mariadb/10.2.38/)[Release Notes](mariadb-10238-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10238-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download 10.2.38](https://downloads.mariadb.org/mariadb/10.2.38/) | [Release Notes](mariadb-10238-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10238-changelog.md) | [Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 7 May 2021
 

@@ -4,7 +4,7 @@ The most recent release of [MariaDB 10.4](https://mariadb.com/docs/release-notes
 
 After an upgrade MariaDB Server can crash if InnoDB tables exist with a `FULLTEXT INDEX` and a `FOREIGN KEY` constraint attached to them. We got reports that the crash already will be encountered on startup, but a crash is also possible at a later stage. See [MDEV-20987](https://jira.mariadb.org/browse/MDEV-20987) for more details.**Do not download or use this release.**
 
-[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-1049-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1049-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
+[Download](https://mariadb.com/downloads/) | [Release Notes](mariadb-1049-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1049-changelog.md) | [Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.4.9/)
 

@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.0](what-is-mariadb-110.md) is:[**MariaDB 11.0.6**](mariadb-11-0-6-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.0.6/)
 
-[Download 11.0.4](https://downloads.mariadb.org/mariadb/11.0.4/)[Release Notes](mariadb-11-0-4-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-4-changelog.md)[Overview of 11.0](what-is-mariadb-110.md)
+[Download 11.0.4](https://downloads.mariadb.org/mariadb/11.0.4/) | [Release Notes](mariadb-11-0-4-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-4-changelog.md) | [Overview of 11.0](what-is-mariadb-110.md)
 
 **Release date:** 13 Nov 2023
 

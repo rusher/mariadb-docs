@@ -4,7 +4,7 @@ The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.m
 
 A regression was discovered after the release of [MariaDB 10.1.27](mariadb-10127-release-notes.md). It has been pulled from the downloads system, but some mirrors may still have it. **Do not download or install this version.** Stay with [MariaDB 10.1.26](mariadb-10126-release-notes.md) until 10.1.28 is released.
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.27)[Release Notes](mariadb-10127-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10127-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.27) | [Release Notes](mariadb-10127-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10127-changelog.md) | [Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 25 Sep 2017
 

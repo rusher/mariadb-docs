@@ -1,6 +1,6 @@
 # MariaDB 10.2.44 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.44/)[Release Notes](mariadb-10244-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10244-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.44/) | [Release Notes](mariadb-10244-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10244-changelog.md) | [Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 20 May 2022
 

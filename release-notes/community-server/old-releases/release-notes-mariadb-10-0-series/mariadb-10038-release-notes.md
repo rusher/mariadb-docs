@@ -1,6 +1,6 @@
 # MariaDB 10.0.38 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.38)[Release Notes](mariadb-10038-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10038-changelog.md)[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.38) | [Release Notes](mariadb-10038-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10038-changelog.md) | [Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 31 Jan 2019
 

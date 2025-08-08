@@ -1,6 +1,6 @@
 # MariaDB 10.1.23 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.23)[Release Notes](mariadb-10123-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10123-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.23) | [Release Notes](mariadb-10123-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10123-changelog.md) | [Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 3 May 2017
 

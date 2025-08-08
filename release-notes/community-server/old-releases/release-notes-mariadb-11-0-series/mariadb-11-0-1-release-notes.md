@@ -1,6 +1,6 @@
 # MariaDB 11.0.1 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/11.0.1)[Release Notes](mariadb-11-0-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md)[Overview of 11.0](what-is-mariadb-110.md)
+[Download](https://downloads.mariadb.org/mariadb/11.0.1) | [Release Notes](mariadb-11-0-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md) | [Overview of 11.0](what-is-mariadb-110.md)
 
 **Release date:** 22 Feb 2023
 

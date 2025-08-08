@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download 10.4.17](https://downloads.mariadb.org/mariadb/10.4.17/)[Release Notes](mariadb-10417-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10417-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
+[Download 10.4.17](https://downloads.mariadb.org/mariadb/10.4.17/) | [Release Notes](mariadb-10417-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10417-changelog.md) | [Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 **Release date:** 11 Nov 2020
 

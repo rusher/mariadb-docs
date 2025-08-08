@@ -1,6 +1,6 @@
 # MariaDB 10.9.8 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-9-8-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-8-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
+[Download](https://mariadb.com/downloads) | [Release Notes](mariadb-10-9-8-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-10-9-8-changelog.md) | [Overview of 10.9](what-is-mariadb-109.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.9.8/)
 

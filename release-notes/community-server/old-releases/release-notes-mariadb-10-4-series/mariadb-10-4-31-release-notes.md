@@ -1,6 +1,6 @@
 # MariaDB 10.4.31 Release Notes
 
-[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-10-4-31-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-31-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
+[Download](https://mariadb.com/downloads/) | [Release Notes](mariadb-10-4-31-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-31-changelog.md) | [Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.4.31/)
 

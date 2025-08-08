@@ -1,6 +1,6 @@
 # MariaDB 10.7.8 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.7.8/)[Release Notes](mariadb-10-7-8-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-10-7-8-changelog.md)[Overview of 10.7](what-is-mariadb-107.md)
+[Download](https://downloads.mariadb.org/mariadb/10.7.8/) | [Release Notes](mariadb-10-7-8-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-10-7-8-changelog.md) | [Overview of 10.7](what-is-mariadb-107.md)
 
 **Release date:** 6 Feb 2023
 
