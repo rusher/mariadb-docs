@@ -27,13 +27,13 @@ MariaDB Connector/Node.js 2.0.5 is a [_**Stable**_](../../../community-server/ab
 
 New Options
 
-| Option        | Description                                                                                                                                                                                                                                                                      | Type      | Default                        |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------ |
-| `idleTimeout` | Indicate idle time after which a pool connection is released. Value must be lower than [@@wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables). In seconds (0 means never release) | _integer_ | 1800                           |
-| `minimumIdle` | Permit to set a minimum number of connection in pool. Recommendation is to use fixed pool, so not setting this value.                                                                                                                                                            | _integer_ | _set to connectionLimit value_ |
+| Option        | Description                                                                                                                                                                                                                                                | Type      | Default                        |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------ |
+| `idleTimeout` | Indicate idle time after which a pool connection is released. Value must be lower than [@@wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables). In seconds (0 means never release) | _integer_ | 1800                           |
+| `minimumIdle` | Permit to set a minimum number of connection in pool. Recommendation is to use fixed pool, so not setting this value.                                                                                                                                      | _integer_ | _set to connectionLimit value_ |
 
 This permits to set a minimum pool size, meaning that after a period of inactivity, the pool will decrease the inner number of connection to a minimum number of connections (defined with `minimumIdle`).\
-By default, connections not used after `idleTimeout` (default to 30 minutes) will be discarded, avoiding reaching server [@@wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables).
+By default, connections not used after `idleTimeout` (default to 30 minutes) will be discarded, avoiding reaching server [@@wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables).
 
 Pool handle connection creation automatically, with now some delayed after failing to establish a connection, to avoid using CPU unnecessary.\
 Authentication error in pool have now a better handling.

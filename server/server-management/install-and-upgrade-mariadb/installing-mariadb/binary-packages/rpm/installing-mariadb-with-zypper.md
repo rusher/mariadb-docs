@@ -22,7 +22,7 @@ MariaDB Corporation provides a MariaDB Package Repository for several Linux dist
 
 To use the script, execute the following command:
 
-```
+```bash
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 ```
 
@@ -38,7 +38,7 @@ The MariaDB Foundation provides a MariaDB repository for several Linux distribut
 
 For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on SLES 15, then you could use the following commands to add the MariaDB `zypper` repository:
 
-```
+```bash
 sudo zypper addrepo --gpgcheck --refresh https://yum.mariadb.org/10.6/sles/15/x86_64 mariadb
 sudo zypper --gpg-auto-import-keys refresh
 ```
@@ -48,15 +48,11 @@ sudo zypper --gpg-auto-import-keys refresh
 If you wish to pin the `zypper` repository to a specific minor release, or if you would like to downgrade to a specific minor release, then\
 you can create a `zypper` repository with the URL hard-coded to that specific minor release.
 
-The MariaDB Foundation archives repositories of old minor releases at the following URL:
-
-*
-
 So if you can't find the repository of a specific minor release at `yum.mariadb.org`, then it would be a good idea to check the archive.
 
 For example, if you wanted to pin your repository to [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes) on SLES 15, then you could use the following commands to add the MariaDB `zypper` repository:
 
-```
+```bash
 sudo zypper removerepo mariadb
 sudo zypper addrepo --gpgcheck --refresh https://yum.mariadb.org/10.6.21/sles/15/x86_64 mariadb
 ```
@@ -75,13 +71,13 @@ If you configured `zypper` to install from MariaDB Foundation's MariaDB Reposito
 
 First, you can remove the repository for the old version by executing the following command:
 
-```
+```bash
 sudo zypper removerepo mariadb
 ```
 
 After that, you can add the repository for the new version. For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on SLES 15, then you could use the following commands to add the MariaDB `zypper` repository:
 
-```
+```bash
 sudo zypper addrepo --gpgcheck --refresh https://yum.mariadb.org/10.6/sles/15/x86_64 mariadb
 sudo zypper --gpg-auto-import-keys refresh
 ```
@@ -101,7 +97,7 @@ is `0x1BB943DB`. The full key fingerprint is:
 
 The [rpm](https://linux.die.net/man/8/rpm) utility can be used to import this key. For example:
 
-```
+```bash
 sudo rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 ```
 
@@ -115,7 +111,7 @@ After the `zypper` repository is configured, you can install MariaDB by executin
 
 To Install the most common packages, execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-server galera-4 MariaDB-client MariaDB-shared MariaDB-backup MariaDB-common
 ```
 
@@ -123,7 +119,7 @@ sudo zypper install MariaDB-server galera-4 MariaDB-client MariaDB-shared MariaD
 
 To Install MariaDB Server, execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-server
 ```
 
@@ -137,7 +133,7 @@ You also need to install the `galera-4` package to obtain the [Galera](https://a
 
 To install MariaDB Galera Cluster, you could execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-server MariaDB-client galera-4
 ```
 
@@ -152,7 +148,7 @@ See [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3V
 
 To Install the clients and client libraries, execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-client MariaDB-shared
 ```
 
@@ -160,7 +156,7 @@ sudo zypper install MariaDB-client MariaDB-shared
 
 To install [mariadb-backup](../../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/), execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-backup
 ```
 
@@ -170,7 +166,7 @@ Some [plugins](../../../../../reference/plugins/) may also need to be installed.
 
 For example, to install the [cracklib\_password\_check](../../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-cracklib-password-check
 ```
 
@@ -182,7 +178,7 @@ The MariaDB `zypper` repository also contains [debuginfo](https://en.opensuse.or
 
 To install [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) for the most common packages, execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-server-debuginfo MariaDB-client-debuginfo MariaDB-shared-debuginfo MariaDB-backup-debuginfo MariaDB-common-debuginfo
 ```
 
@@ -190,7 +186,7 @@ sudo zypper install MariaDB-server-debuginfo MariaDB-client-debuginfo MariaDB-sh
 
 To install [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) for MariaDB Server, execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-server-debuginfo
 ```
 
@@ -200,7 +196,7 @@ sudo zypper install MariaDB-server-debuginfo
 
 To install [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) for the clients and client libraries, execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-client-debuginfo MariaDB-shared-debuginfo
 ```
 
@@ -208,7 +204,7 @@ sudo zypper install MariaDB-client-debuginfo MariaDB-shared-debuginfo
 
 To install [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) for [mariadb-backup](../../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/), execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-backup-debuginfo
 ```
 
@@ -218,7 +214,7 @@ For some [plugins](../../../../../reference/plugins/), [debuginfo](https://en.op
 
 For example, to install [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) for the [cracklib\_password\_check](../../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, execute the following command:
 
-```
+```bash
 sudo zypper install MariaDB-cracklib-password-check-debuginfo
 ```
 
@@ -226,7 +222,7 @@ sudo zypper install MariaDB-cracklib-password-check-debuginfo
 
 The MariaDB `zypper` repository contains the last few versions of MariaDB. To show what versions are available, use the following command:
 
-```
+```bash
 zypper search --details MariaDB-server
 ```
 
@@ -243,7 +239,7 @@ The packages that the MariaDB-server package depend on are: MariaDB-client,\
 MariaDB-shared, and MariaDB-common. Therefore, to install [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes) from this `zypper`\
 repository, we would do the following:
 
-```
+```bash
 sudo zypper install MariaDB-server-10.6.21 MariaDB-client-10.6.21 MariaDB-shared-10.6.21 MariaDB-backup-10.6.21 MariaDB-common-10.6.21
 ```
 

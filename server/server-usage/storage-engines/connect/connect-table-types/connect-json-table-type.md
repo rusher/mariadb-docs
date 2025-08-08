@@ -1,5 +1,9 @@
 # CONNECT JSON Table Type
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ## Overview
 
 JSON (JavaScript Object Notation) is a lightweight data-interchange format widely used on the Internet. Many applications, generally written in JavaScript or PHP use and produce JSON data, which are exchanged as files of different physical formats. JSON data is often returned from REST queries.

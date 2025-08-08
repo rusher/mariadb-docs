@@ -5,7 +5,7 @@ binaries available for download which contain the features. If you want to try o
 need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
 code yourself.
 
-[Download](https://mariadb.com/downloads/)[Release Notes](../../old-releases/mariadb-10-5-series/mariadb-10-5-29-release-notes.md)[Changelog](mariadb-10-5-29-changelog.md)[Overview of 10.5](../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.29/)**Release date:** ?
+[Download](https://mariadb.com/downloads/) [Release Notes](../../old-releases/mariadb-10-5-series/mariadb-10-5-29-release-notes.md) [Changelog](mariadb-10-5-29-changelog.md) [Overview of 10.5](../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.29/) **Release date:** 6 May 2025
 
 For the highlights of this release, see the [release notes](../../old-releases/mariadb-10-5-series/mariadb-10-5-29-release-notes.md).
 

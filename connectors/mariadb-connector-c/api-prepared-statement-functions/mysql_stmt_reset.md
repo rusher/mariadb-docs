@@ -10,11 +10,11 @@ my_bool mysql_stmt_reset(MYSQL_STMT * stmt);
 
 ## Description
 
-Resets a prepared statement on client and server to state after prepare.
+Resets a prepared statement on the client and server to state after prepare.
 
 {% hint style="info" %}
-mysql\_stmt\_reset() resets the statement on the server, unbuffered result sets and errors. Bindings and stored result sets will not be cleared. The latter one will be cleared when re-executing or closing the prepared statement.\
-To reprepare a prepared statement with another SQL statement use [mysql\_stmt\_prepare()](mysql_stmt_prepare.md).
+`mysql_stmt_reset()` resets the statement on the server, unbuffered result sets, and errors. Bindings and stored result sets will not be cleared. The latter one will be cleared when re-executing or closing the prepared statement.\
+To reprepare a prepared statement with another SQL statement, use [mysql\_stmt\_prepare()](mysql_stmt_prepare.md).
 {% endhint %}
 
 ## See Also
@@ -22,6 +22,5 @@ To reprepare a prepared statement with another SQL statement use [mysql\_stmt\_p
 * [mysql\_stmt\_close()](mysql_stmt_close.md)
 * [mysql\_stmt\_prepare()](mysql_stmt_prepare.md)
 * [mysql\_stmt\_execute()](mysql_stmt_execute.md)
-
 
 {% @marketo/form formId="4316" %}

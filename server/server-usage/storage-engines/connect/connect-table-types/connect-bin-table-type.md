@@ -1,5 +1,9 @@
 # CONNECT BIN Table Type
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ## Overview
 
 A table of type BIN is physically a binary file in which each row is a logical\

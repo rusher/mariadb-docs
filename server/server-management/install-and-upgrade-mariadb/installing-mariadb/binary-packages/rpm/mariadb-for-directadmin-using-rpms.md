@@ -2,15 +2,20 @@
 
 If you are using DirectAdmin and you encounter any issues with [Installing MariaDB with YUM](yum.md), then the directions below may help. The process is very straightforward.
 
-**Note:** Installing with YUM is preferable to installing the MariaDB RPM packages manually, so only do this if you are having issues such as:
+{% hint style="info" %}
+Installing with YUM is preferable to installing the MariaDB RPM packages manually, so only do this if you are having issues such as:\
+Starting httpd:
 
 ```
-Starting httpd:
   httpd:
     Syntax error on line 18 of /etc/httpd/conf/httpd.conf:
     Syntax error on line 1 of /etc/httpd/conf/extra/httpd-phpmodules.conf:
       Cannot load /usr/lib/apache/libphp5.so into server:
         libmysqlclient.so.18: cannot open shared object file: No such file or directory
+```
+{% endhint %}
+
+```
 ```
 
 Or:
@@ -33,23 +38,16 @@ To install the RPMs, there is a quick and easy guide to [Installing MariaDB with
 We do not want DirectAdmin's custombuild to remove/overwrite our MariaDB\
 installation whenever an update is performed. To rectify this, disable automatic MySQL installation.
 
-Edit `/usr/local/directadmin/custombuild/options.conf`
+Edit `/usr/local/directadmin/custombuild/options.conf`  and replace `mysql_inst=yes` with `mysql_inst=no`
 
-Change:
-
-```
-mysql_inst=yes
+```bash
+sudo sed -i 's/^mysql_inst=yes/mysql_inst=no/' /usr/local/directadmin/custombuild/options.conf
 ```
 
-To:
-
-```
-mysql_inst=no
-```
-
-**Note:**\
+{% hint style="warning" %}
 When MariaDB is installed manually (i.e. not using YUM), updates are not\
 automatic. You will need to update the RPMs yourself.
+{% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

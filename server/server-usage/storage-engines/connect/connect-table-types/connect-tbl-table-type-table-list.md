@@ -1,30 +1,18 @@
 # CONNECT TBL Table Type: Table List
 
-This type allows defining a table as a list of tables of any engine and type.\
-This is more flexible than multiple tables that must be all of the same file\
-type. This type does, but is more powerful than, what is done with the [MERGE](../../merge.md)\
-engine.
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
 
-The list of the columns of the TBL table may not necessarily include all the\
-columns of the tables of the list. If the name of some columns is different in\
-the sub-tables, the column to use can be specified by its position given by the`FLAG` option of the column. If the `ACCEPT` option is set to true (Y or 1)\
-columns that do not exist in some of the sub-tables are accepted and their\
-value are null or\
-pseudo-null (this depends on the nullability of the column) for\
-the tables not having this column. The column types can also be different and\
-an automatic conversion are done if necessary.
+This type allows defining a table as a list of tables of any engine and type. This is more flexible than multiple tables that must be all of the same file type. This type does, but is more powerful than, what is done with the [MERGE](../../merge.md) engine.
 
-**Note:** If not specified, the column definitions are retrieved from the first\
-table of the table list.
+The list of the columns of the TBL table may not necessarily include all the columns of the tables of the list. If the name of some columns is different in the sub-tables, the column to use can be specified by its position given by the`FLAG` option of the column. If the `ACCEPT` option is set to true (Y or 1) columns that do not exist in some of the sub-tables are accepted and their value are null or pseudo-null (this depends on the nullability of the column) for the tables not having this column. The column types can also be different and an automatic conversion are done if necessary.
 
-The default database of the sub-tables is the current database or if not, can\
-be specified in the DBNAME option. For the tables that are not in the default\
-database, this can be specified in the table list. For instance, to create a\
-table based on the French table _employe_ in the current database and on the\
-English table _employee_ of the _db2_ database, the syntax of the create\
-statement can be:
+**Note:** If not specified, the column definitions are retrieved from the first table of the table list.
 
-```
+The default database of the sub-tables is the current database or if not, can be specified in the DBNAME option. For the tables that are not in the default database, this can be specified in the table list. For instance, to create a table based on the French table _employe_ in the current database and on the English table _employee_ of the _db2_ database, the syntax of the create statement can be:
+
+```sql
 CREATE TABLE allemp (
   SERIALNO char(5) NOT NULL flag=1,
   NAME varchar(12) NOT NULL flag=2,
@@ -38,14 +26,11 @@ ENGINE=CONNECT table_type=TBL
 table_list='employe,db2.employee' option_list='Accept=1';
 ```
 
-The search for columns in sub tables is done by name and, if they exist with a\
-different name, by their position given by a not null `FLAG` option.\
-Column _sex_ exists only in the English table (`FLAG` is `0`). Its values\
-will null value for the French table.
+The search for columns in sub tables is done by name and, if they exist with a different name, by their position given by a not null `FLAG` option. Column _sex_ exists only in the English table (`FLAG` is `0`). Its values will null value for the French table.
 
 For instance, the query:
 
-```
+```sql
 SELECT name, sex, title, salary FROM allemp WHERE department = 318;
 ```
 

@@ -10,7 +10,7 @@ In addition to this there are Enterprise Features and some backported features. 
 
 Enterprise Features:
 
-* [MariaDB Enterprise Backup](broken-reference)
+* [MariaDB Enterprise Backup](broken-reference/)
 * [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit)
 * Index limit increased to 128 indexes
 * Slow master shutdown as default
@@ -21,7 +21,7 @@ Enterprise Features:
 Backported Features:
 
 * [S3 Storage Engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine)
-* New option [--require\_secure\_transport](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#require_secure_transport)
+* New option [--require\_secure\_transport](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#require_secure_transport)
 * GTID support for MariaDB Enterprise Cluster (powered by Galera)
 * Crash recovery for semi-synchronous replication
 * [mariadb-dump option --as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) to dump data as of a given time for system versioned tables

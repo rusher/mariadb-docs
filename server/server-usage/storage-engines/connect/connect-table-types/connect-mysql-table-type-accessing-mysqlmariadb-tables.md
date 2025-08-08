@@ -1,5 +1,9 @@
 # CONNECT MYSQL Table Type: Accessing MySQL/MariaDB Tables
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 This table type uses libmysql API to access a MySQL or MariaDB table or view. This\
 table must be created on the current server or on another local or remote\
 server. This is similar to what the [FederatedX](../../federatedx-storage-engine/) storage engine provides with some\

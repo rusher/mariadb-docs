@@ -1,35 +1,28 @@
 # LibreOffice Base
 
-[LibreOffice Base](https://www.libreoffice.org/discover/base/) is an open source RDBMS (relational database management system) front-end tool to create and manage various databases.
+[LibreOffice Base](https://www.libreoffice.org/discover/base/) is an open source RDBMS (relational database management system) frontend tool to create and manage various databases.
 
 ## Preparing the ODBC Connection
 
-First, make sure to prepare MariaDB Connector/ODBC as explained in [MariaDB Connector/ODBC](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
+First, make sure to prepare MariaDB Connector/ODBC as explained in [MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc).
 
-That includes:
+This includes
 
-* Download [the latest MariaDB Connector/ODBC](https://mariadb.com/downloads/#connectors)
-* Copy the shared library libmaodbc.so to /usr/lib/\[multi-arch]
-* Install the unixodbc, unixodbc-dev, openssh-client, odbcinst packages
-* Create a template file for the [ODBC driver](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc#configuring-mariadb-connectorodbc-as-a-unixodbc-driver-on-linux). A sample “MariaDB\_odbc\_driver\_template.ini” could be:
-
-|                                                  |
-| ------------------------------------------------ |
-| \[MariaDB ODBC 3.1 Driver]                       |
-| Description = MariaDB Connector/ODBC v.3.1       |
-| Driver = /usr/lib/x86\_64-linux-gnu/libmaodbc.so |
-
+* downloading [the latest MariaDB Connector/ODBC](https://mariadb.com/downloads/#connectors),
+* copying the shared library libmaodbc.so to /usr/lib/\[multi-arch],
+* installing the unixodbc, unixodbc-dev, openssh-client, odbcinst packages, and
+* creating a template file for the [ODBC driver](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc#configuring-mariadb-connectorodbc-as-a-unixodbc-driver-on-linux).&#x20;
 * Install the ODBC driver from the template file by running:
 
-```
+```bash
 $ sudo odbcinst -i -d -f MariaDB_odbc_driver_template.ini
 odbcinst: Driver installed. Usage count increased to 1. 
     Target directory is /etc
 ```
 
-Verify successful installation in _/etc/odbcinst.ini_ file (this path is obtained by the config info _/-j_/ option, where drivers are installed in that predefined location).
+Verify the installation was successful in `/etc/odbcinst.ini` file (this path is obtained by the config info _/-j_/ option, where drivers are installed in that predefined location).
 
-```
+```bash
 $ odbcinst -j
 unixODBC 2.3.6
 DRIVERS............: /etc/odbcinst.ini
@@ -62,13 +55,13 @@ UsageCount=1
 
 * Install data source:
 
-```
+```bash
 odbcinst -i -s -h -f MariaDB_odbc_data_source_template.ini
 ```
 
 * Verify successful installation in the /.odbc.ini file
 
-```
+```bash
 $ cat ~/.odbc.ini 
 [MariaDB-server]
 Description=MariaDB server
@@ -80,9 +73,9 @@ DATABASE=test
 PORT=3306
 ```
 
-* Verify successful installation also using the [isql](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc#verifying-a-dsn-configuration-with-unixodbc-on-linux) utility, for example:
+* Verify successful installation also using the [isql](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc#verifying-a-dsn-configuration-with-unixodbc-on-linux) utility:
 
-```
+```bash
 $ isql MariaDB-server
 +---------------------------------------+
 | Connected!                            |
@@ -109,27 +102,27 @@ SQLRowCount returns 4
 
 Start Libreoffice Base from the terminal by running _lobase_ (make sure to install the _libreoffice-base_ package if needed). The default option is to create a new database, which is _HSQLDB_. In order to connect to a running MariaDB server, choose _“Connect to an existing database”_ and choose _“ODBC”_ driver as shown below:
 
-![librebase\_1](../../.gitbook/assets/librebase_1.png)
+![](../../.gitbook/assets/librebase_1.png)
 
 After that, choose DSN (the one that we created in the previous step) and click _“Next”_:
 
-![librebase\_2](../../.gitbook/assets/librebase_2.png)
+![](../../.gitbook/assets/librebase_2.png)
 
 Provide a user name (and password if needed) and again check the connection (with the _“Test Connection”_ button) and click _“Next”_:
 
-![librebase\_3](../../.gitbook/assets/librebase_3.png)
+![](../../.gitbook/assets/librebase_3.png)
 
 After that, we have options to register the database. Registration in this sense means that the database is viewable by other LibreOffice modules (like _LibreOffice Calc_ and _LibreOffice Writer_). So this step is optional. In this example, we will save as _“fosdem21\_mariadb.odb”_. See [Using a Registered Database](libreoffice-base.md#using-a-registered-database).
 
-![librebase\_4](../../.gitbook/assets/librebase_4.png)
+![](../../.gitbook/assets/librebase_4.png)
 
 It opens the following window:
 
-![librebase\_5](../../.gitbook/assets/librebase_5.png)
+![](../../.gitbook/assets/librebase_5.png)
 
-It consists of three windows/panels:
+It consists of three panels:
 
-1. “Database” window with the options
+1. “Database” window with the options,
 2. "Tables",
 3. "Queries",
 4. "Forms",
@@ -146,7 +139,7 @@ Let’s say we create a table using the REST API from JSON data from [posts](htt
 
 The queries we need to run in MariaDB are:
 
-```
+```sql
 CREATE TABLE webusers ENGINE=CONNECT TABLE_TYPE=JSON
   HTTP='http://jsonplaceholder.typicode.com/users';
 
@@ -160,11 +153,11 @@ The result in LibreOffice Base is as shown below:
 
 Double clicking on the table opens a new window with the data displayed to inspect:
 
-![librebase\_7](../../.gitbook/assets/librebase_7.png)
+![](../../.gitbook/assets/librebase_7.png)
 
 To create the table from the _“Tasks”_ window, use the option _“Create Table in Design View”_, where one can specify specific field names and types as shown:
 
-![librebase\_8](../../.gitbook/assets/librebase_8.png)
+![](../../.gitbook/assets/librebase_8.png)
 
 From the “Tasks” window one can create a table using the option _“Use Wizard to Create Table”_ to create some sample tables.
 

@@ -51,24 +51,24 @@ The locations are dependent on whether the `DEFAULT_SYSCONFDIR` [cmake](../insta
 
 * When the `DEFAULT_SYSCONFDIR` `cmake` option is **undefined**, MariaDB looks for the MariaDB option file in the following locations, and in the following order:
 
-| Location              | Scope                                                                                                                             |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| /etc/my.cnf           | Global                                                                                                                            |
-| /etc/mysql/my.cnf     | Global                                                                                                                            |
-| $MARIADB\_HOME/my.cnf | Server (from MariaDB 10.6)                                                                                                        |
-| $MYSQL\_HOME/my.cnf   | Server (before MariaDB 10.6)                                                                                                      |
-| defaults-extra-file   | File specified with [--defaults-extra-file](../../starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
-| \~/.my.cnf            | User                                                                                                                              |
+| Location               | Scope                                                                                                                             |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `/etc/my.cnf`          | Global                                                                                                                            |
+| `/etc/mysql/my.cnf`    | Global                                                                                                                            |
+| `$MARIADB_HOME/my.cnf` | Server (from MariaDB 10.6)                                                                                                        |
+| `$MYSQL_HOME/my.cnf`   | Server (before MariaDB 10.6)                                                                                                      |
+| `defaults-extra-file`  | File specified with [--defaults-extra-file](../../starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
+| `~/.my.cnf`            | User                                                                                                                              |
 
 * When the `DEFAULT_SYSCONFDIR` `cmake` option is **defined**, MariaDB looks for the MariaDB option file in the following locations in the following order:
 
-| Location                   | Scope                                                                                                                             |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| DEFAULT\_SYSCONFDIR/my.cnf | Global                                                                                                                            |
-| $MARIADB\_HOME/my.cnf      | Server (from MariaDB 10.6)                                                                                                        |
-| $MYSQL\_HOME/my.cnf        | Server (before MariaDB 10.6)                                                                                                      |
-| defaults-extra-file        | File specified with [--defaults-extra-file](../../starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
-| \~/.my.cnf                 | User                                                                                                                              |
+| Location                    | Scope                                                                                                                             |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `DEFAULT_SYSCONFDIR/my.cnf` | Global                                                                                                                            |
+| `$MARIADB_HOME/my.cnf`      | Server (from MariaDB 10.6)                                                                                                        |
+| `$MYSQL_HOME/my.cnf`        | Server (before MariaDB 10.6)                                                                                                      |
+| `defaults-extra-file`       | File specified with [--defaults-extra-file](../../starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
+| `~/.my.cnf`                 | User                                                                                                                              |
 
 * `MARIADB_HOME` or `MYSQL_HOME` is the [environment variable](mariadb-environment-variables.md) containing the path to the directory holding the server-specific `my.cnf` file. If `MYSQL_HOME` is not set, and the server is started with [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), `MYSQL_HOME` is set as follows:
   * If there is a `my.cnf` file in the MariaDB data directory, but not in the MariaDB base directory, `MYSQL_HOME` is set to the MariaDB data directory.
@@ -88,21 +88,21 @@ On Windows, the option file can be called either `my.ini` or `my.cnf`. MariaDB l
 | System Windows Directory\my.cnf | Global                                                                                                                            |
 | Windows Directory\my.ini        | Global                                                                                                                            |
 | Windows Directory\my.cnf        | Global                                                                                                                            |
-| C:\my.ini                       | Global                                                                                                                            |
-| C:\my.cnf                       | Global                                                                                                                            |
-| INSTALLDIR\my.ini               | Server                                                                                                                            |
-| INSTALLDIR\my.cnf               | Server                                                                                                                            |
-| INSTALLDIR\data\my.ini          | Server                                                                                                                            |
-| INSTALLDIR\data\my.cnf          | Server                                                                                                                            |
-| %MARIADB\_HOME%\my.ini          | Server (from MariaDB 10.6)                                                                                                        |
-| %MARIADB\_HOME%\my.cnf          | Server (from MariaDB 10.6)                                                                                                        |
-| %MYSQL\_HOME%\my.ini            | Server                                                                                                                            |
-| %MYSQL\_HOME%\my.cnf            | Server                                                                                                                            |
-| defaults-extra-file             | File specified with [--defaults-extra-file](../../starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
+| `c:\my.ini`                     | Global                                                                                                                            |
+| `c:\my.cnf`                     | Global                                                                                                                            |
+| `installdir\my.ini`             | Server                                                                                                                            |
+| `installdir\my.cnf`             | Server                                                                                                                            |
+| `installdir\data\my.ini`        | Server                                                                                                                            |
+| `installdir\data\my.cnf`        | Server                                                                                                                            |
+| `%mariadb_home%\my.ini`         | Server (from MariaDB 10.6)                                                                                                        |
+| `%mariadb_home%\my.cnf`         | Server (from MariaDB 10.6)                                                                                                        |
+| `%mysql_home%\my.ini`           | Server                                                                                                                            |
+| `%mysql_home%\my.cnf`           | Server                                                                                                                            |
+| `defaults-extra-file`           | File specified with [--defaults-extra-file](../../starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
 
 * The `System Windows Directory` is the directory returned by the [GetSystemWindowsDirectory](https://docs.microsoft.com/en-us/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getsystemwindowsdirectorya) function. The value is usually `C:\Windows`. To find its specific value on your system, open [cmd.exe](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd) and execute:
 
-```bash
+```batch
 echo %WINDIR%
 ```
 

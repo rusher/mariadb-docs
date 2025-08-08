@@ -1,18 +1,10 @@
----
-hidden: true
----
-
 # MariaDB 10.11.14 Release Notes
 
-{% include "../../.gitbook/includes/unreleased-10-11.md" %}
-
-<!--
 <a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="mariadb-10.11.14-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10.11.14-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/10.11.14/)
 
-**Release date:** ?
--->
+**Release date:** 6 Aug 2025
 
 [MariaDB 10.11](what-is-mariadb-1011.md) is a stable long term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028. It is an evolution of [MariaDB 10.10](../old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010.md) with several entirely new features.
 
@@ -35,6 +27,9 @@ Thanks, and enjoy MariaDB!
 * After a successful shrinking of innodb\_buffer\_pool\_size, there will be no message about it in the server error log.
   * After a failed shrinking of innodb\_buffer\_pool\_size, the adaptive hash index will not be re-enabled if innodb\_adaptive\_hash\_index was ON when SET GLOBAL innodb\_buffer\_pool\_size=... started to execute. ([MDEV-36868](https://jira.mariadb.org/browse/MDEV-36868))
 * AUTO\_INCREMENT leads to non-serializable on results ([MDEV-36330](https://jira.mariadb.org/browse/MDEV-36330))
+* The new parameter innodb\_linux\_aio controls which Linux implementation to use for innodb\_use\_native\_aio=ON. ([MDEV-36234](https://jira.mariadb.org/browse/MDEV-36234))
+  * innodb\_linux\_aio=auto is equivalent to innodb\_linux\_aio=io\_uring when it is available, and falling back to innodb\_linux\_aio=aio when not.
+  * Previously, only one implementation (libaio or io\_uring) was available. Currently, if io\_uring is disabled in the environment, we will fall back to the older libaio interface.
 
 ### Data Definition - Alter Table
 
@@ -59,7 +54,7 @@ Thanks, and enjoy MariaDB!
 * Segfault on INTERSECT ALL with UNION in Oracle mode ([MDEV-25158](https://jira.mariadb.org/browse/MDEV-25158))
 * In certain cases privileges on sequences were too restrictive, for example, SELECT on a table might've erroneously required INSERT privilege on a sequences ([MDEV-36870](https://jira.mariadb.org/browse/MDEV-36870))
 
-### mariabackup
+### mariadb-backup
 
 * This commit fixes a bug where Aria tables are used in (master-\>slave1-\>slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
 * Maria-backup would crash during the 'maria\_recovery' part.
@@ -78,13 +73,17 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Galera
 
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.23
 * galera\_3nodes.inconsistency\_shutdown test occasionally hangs ([MDEV-36968](https://jira.mariadb.org/browse/MDEV-36968))
-* The galera RPM wasn't buildable on Fedora 41 or later because of changes rpmbuild. The build script has been changed to be compatible with newer rpmbuild behaviour. ([MDEV-35108](https://jira.mariadb.org/browse/MDEV-35108))
+* Galera-26.4.23 corrects an incompatibility with OpenZFS >= 2.3.0 enabling the use of galera on this filesystem.
 
 ### Replication
 
 * semi sync makes the master unresponsive when a replica is stopped ([MDEV-36934](https://jira.mariadb.org/browse/MDEV-36934))
 * parallel slave ALTER-SEQUNCE attempted to binlog out-of-order ([MDEV-35570](https://jira.mariadb.org/browse/MDEV-35570))
+* mysqldump --dump-slave always starts stopped slave ([MDEV-7611](https://jira.mariadb.org/browse/MDEV-7611))
+* Optimize Rows\_log\_event Reporting of Process Info ([MDEV-36839](https://jira.mariadb.org/browse/MDEV-36839))
+* Seconds\_Behind\_Master Spike at Log Rotation on Parallel Replication ([MDEV-36840](https://jira.mariadb.org/browse/MDEV-36840))
 
 ### Stored routines
 
@@ -100,17 +99,11 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Character Sets
 
-* Fresh MariaDB 11.4 installation gives errors when configuring utf8 ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815))
+* Changing the server character set in `my.cnf` could cause `debian-start` script to fail  with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
 
 ### Packaging
 
 * mariadb systemd mult-instance service was changed to not attempt changes to the permissions on its pam helper server. This prevented unconstructive behaviour and errors in the systemd journal when starting the mariadb@.service. ([MDEV-36738](https://jira.mariadb.org/browse/MDEV-36738))
-
-### Docker
-
-* The new parameter innodb\_linux\_aio controls which Linux implementation to use for innodb\_use\_native\_aio=ON.
-  * innodb\_linux\_aio=auto is equivalent to innodb\_linux\_aio=io\_uring when it is available, and falling back to innodb\_linux\_aio=aio when not.
-  * Previously, only one implementation (libaio or io\_uring) was available. Currently, if io\_uring is disabled in the environment, we will fall back to the older libaio interface. ([MDEV-36234](https://jira.mariadb.org/browse/MDEV-36234))
 
 ### Sequences
 
@@ -119,6 +112,23 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 ### XA
 
 * DML committed within XA transaction block after deadlock error and implicit rollback ([MDEV-37141](https://jira.mariadb.org/browse/MDEV-37141))
+
+### General
+
+* Packages for RHEL8 no longer depend on liburing. The RHEL8 kernel had insufficient kernel support so linking was an unneeded dependency. libaio was sufficient ([MDBF-1042](https://jira.mariadb.org/browse/MDBF-1042))
+* SLES 15 SP6 is a new package in this release. Because of incompatibilities of packages between SLES service pack versions there are now separate packages for 15sp6. An upgradeable repo file should include "sles/$releasever/$basearch" rather than the "sles15-amd64" or "sles/15/x86\_64" path that may exist currently. ([MDBF-1067](https://jira.mariadb.org/browse/MDBF-1067), [MDEV-36945](https://jira.mariadb.org/browse/MDEV-36945))
+* Fedora 42 is a new release version and x86\_64 and aarch64 packages are available ([MDBF-1060](https://jira.mariadb.org/browse/MDBF-1060))
+* Red Hat Enterprise Linux 10 packages are available for x86\_64, aarch64, ppc64le, and s390x hardware platforms ([MDBF-995](https://jira.mariadb.org/browse/MDBF-995))
+* Centos Stream 9 previously missed building a MariaDB-provider-lzo package and this has been corrected ([MDBF-1038](https://jira.mariadb.org/browse/MDBF-1038))
+
+
+
+
+
+
+
+
+
 
 ## Changelog
 

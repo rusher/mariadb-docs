@@ -1,10 +1,8 @@
 # mycli
 
-**mycli** is a command line interface for MariaDB, MySQL, and Percona with auto-completion and syntax highlighting.
+**mycli** is a command-line interface for MariaDB, MySQL, and Percona, with auto-completion and syntax highlighting. It is written in Python, and runs on Linux, Mac and Windows.
 
-It is written in Python, and runs on Linux, Mac and Windows.
-
-![mycli\_screenshot](../../.gitbook/assets/mycli_screenshot.png)
+![](../../.gitbook/assets/mycli_screenshot.png)
 
 Read more at [mycli.net](https://mycli.net).
 

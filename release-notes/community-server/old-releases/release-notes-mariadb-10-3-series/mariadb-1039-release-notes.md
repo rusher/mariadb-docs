@@ -21,7 +21,7 @@ Thanks, and enjoy MariaDB!
 Notable changes of this release include:
 
 * New variable [innodb\_log\_optimize\_ddl](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) for avoiding delay due to page flushing and allowing concurrent backup.
-* New variable, [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#core_file) for specifying whether to write a core file on crash.
+* New variable, [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#core_file) for specifying whether to write a core file on crash.
 * InnoDB updated to 5.7.23
 * ALTER TABLE fixes:
   * [MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637) - Fix hang due to DDL with FOREIGN KEY or persistent statistics

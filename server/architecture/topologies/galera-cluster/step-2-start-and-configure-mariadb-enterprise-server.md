@@ -187,6 +187,6 @@ This page was step 2 of 6.
 
 Next: Step 3: Test MariaDB Enterprise Server
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

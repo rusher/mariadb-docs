@@ -81,7 +81,7 @@ MariaDB uses [group commit](../../../server-monitoring-logs/binary-log/group-com
 
 Replicas can apply the changes using multiple threads. This is known as [parallel replication](../../../../ha-and-performance/standard-replication/parallel-replication.md). Before [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) only one thread was used to apply changes. Since a primary can use many threads to write data, mono-thread replication is a well-known bottleneck. Parallel replication is not enabled by default. To use it, set the [slave\_parallel\_threads](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#slave_parallel_threads) variable to a number greater than 1. If replication is running, the replica threads must be stopped in order to change this value:
 
-```
+```sql
 STOP SLAVE SQL_THREAD;
 SET GLOBAL slave_parallel_threads = 4;
 START SLAVE SQL_THREAD;
@@ -145,13 +145,13 @@ In multi-source replication different channels exist, one for each primary.
 
 This changed the way [SQL replication statements](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/) work. [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) returns a different row for each channel. Several statements, like [CHANGE MASTER TO](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) or [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md). accept a parameter which specifies which replication channel they should affect. For example, to stop a channel called `wp1`:
 
-```
+```sql
 STOP SLAVE "wp1";
 ```
 
 Furthermore, variables that affect parallel replication can be prefixed with a channel name. This allow one to only use parallel replication for certain channels, or to tune it differently for each channel. For example, to enable parallel replication on a channel called `wp1`:
 
-```
+```sql
 SET GLOBAL wp1.slave_parallel_threads = 4;
 ```
 
@@ -191,13 +191,13 @@ Semi-synchronous replication is useful for failover, therefore a dual primary se
 
 Semi-synchronous replication can be enabled at runtime in this way on the primary:
 
-```
+```sql
 SET GLOBAL rpl_semi_sync_master_enabled = ON;
 ```
 
 Semi-synchronous replication is not used until it has been enabled on the replicas also. If the replicas are already replicating, the io\_thread needs to be stopped and restarted. This can be done as follows:
 
-```
+```sql
 SET GLOBAL rpl_semi_sync_slave_enabled = ON;
 STOP SLAVE IO_THREAD;
 START SLAVE IO_THREAD;

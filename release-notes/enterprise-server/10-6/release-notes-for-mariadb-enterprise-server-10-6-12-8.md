@@ -50,7 +50,7 @@ $ sudo systemctl start mariadb
 ## Notable Changes
 
 * The optimizer can now use column histogram data when estimating output cardinality of hashed (BNL-H) joins. ([MDEV-30812](https://jira.mariadb.org/browse/MDEV-30812))
-  * Starting with this release, the [optimizer\_switch system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_switch) has a new flag called hash\_join\_cardinality that can enable the feature.
+  * Starting with this release, the [optimizer\_switch system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_switch) has a new flag called hash\_join\_cardinality that can enable the feature.
   * When enabled, the optimizer uses a formula that provides conservative estimates.
   * To enable this functionality in a given session, set the flag using the [SET statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set):
 
@@ -75,7 +75,7 @@ SET optimizer_switch='hash_join_cardinality=on';
 
 * For certain data distributions, the optimizer histogram code can produce wrong selectivity, which can lead to performance degradation. ([MDEV-31067](https://jira.mariadb.org/browse/MDEV-31067))
 * The optimizer does not take into account the selectivity of the equality conditions for Block Nested Hash (BNL-H) joins.
-  * In previous releases, this issue can cause mis-estimates and bad query plans when running with [join\_cache\_level](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#join_cache_level) set to 3 or higher (the default is 2).
+  * In previous releases, this issue can cause mis-estimates and bad query plans when running with [join\_cache\_level](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#join_cache_level) set to 3 or higher (the default is 2).
 * When the lateral derived optimization is used to execute a query, the derived table is re-filled on every incoming row combination, even if the parameter values have not changed. ([MDEV-26301](https://jira.mariadb.org/browse/MDEV-26301))
 * When [slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is `optimistic` and [slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is greater than `0`, [ALTER SEQUENCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences/alter-sequence) can fail with an out-of-order binlog error if the sequence uses InnoDB. ([MDEV-31077](https://jira.mariadb.org/browse/MDEV-31077))
   * In previous releases, the following error can be raised:
@@ -96,7 +96,7 @@ Last_Error: Error 'An attempt was made to binlog GTID 0-1-100 which would create
 
 ## Interface Changes
 
-* `hash_join_cardinality=off` has been incrementally added to the default value of the [optimizer\_switch](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_switch) system variable.
+* `hash_join_cardinality=off` has been incrementally added to the default value of the [optimizer\_switch](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_switch) system variable.
 
 ## Platforms
 

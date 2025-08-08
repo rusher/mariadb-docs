@@ -23,7 +23,7 @@ Thanks, and enjoy MariaDB!
 * New system variable [innodb\_buf\_dump\_status\_frequency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) for determining how often the buffer pool dump status should be printed in the logs.
 * [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/mroonga) was enabled and updated to 5.04 (earlier versions of Mroonga did not work in 10.1).
 * Added support for [binlog\_row\_image=minimal](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) for compatibility with MySQL.
-* New status variables [Com\_create\_temporary\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#com_create_temporary_table) and [Com\_drop\_temporary\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#com_drop_temporary_table) for tracking the number of CREATE/DROP TEMPORARY TABLE statements.
+* New status variables [Com\_create\_temporary\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#com_create_temporary_table) and [Com\_drop\_temporary\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#com_drop_temporary_table) for tracking the number of CREATE/DROP TEMPORARY TABLE statements.
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
 

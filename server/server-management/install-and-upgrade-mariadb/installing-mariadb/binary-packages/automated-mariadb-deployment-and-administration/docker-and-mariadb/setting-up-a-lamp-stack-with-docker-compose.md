@@ -10,7 +10,7 @@ When using Docker Compose, the Docker infrastructure must be described in a YAML
 
 Let's see an example:
 
-```
+```yaml
 version: "3"
 
 services:
@@ -44,12 +44,14 @@ Then we have the list of services, namely the `web` and the `mariadb` services.
 
 Let's see the properties of the services:
 
-* `port` maps the 8080 container port to the 80 host system port. This is very useful for a development environment, but not in production, because it allows us to connect our browser to the containerized web server. Normally there is no need to connect to MariaDB from the host system.
-* `links` declares that this container must be able to connect `mariadb`. The hostname is the container name.
-* `depends_on` declares that `mariadb` needs to start before `web`. This is because we cannot do anything with our application until MariaDB is ready to accept connections.
-* `restart: always` declares that the containers must restart if they crash.
-* `volumes` creates volumes for the container if it is set in a service definition, or a volume that can be used by any container if it is set globally, at the same level as `services`. Volumes are directories in the host system that can be accessed by any number of containers. This allows destroying a container without losing data.
-* `environment` sets environment variables inside the container. This is important because in setting these variables we set the MariaDB root credentials for the container.
+| Property      | Description                                                                                                                             |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `port`        | Maps the 8080 container port to the 80 host system port; useful for development, allows browser connection to containerized web server. |
+| `links`       | Declares container connectivity, ensuring that the container can connect to `mariadb`. The hostname is the container name.              |
+| `depends_on`  | Specifies that `mariadb` must start before `web`, ensuring the application can connect once MariaDB is ready.                           |
+| `restart`     | Ensures containers restart automatically if they crash (`restart: always`).                                                             |
+| `volumes`     | Creates accessible directories for containers on the host system, facilitating data persistence even if a container is destroyed.       |
+| `environment` | Sets environment variables within the container, crucial for defining MariaDB root credentials.                                         |
 
 ### About Volumes
 
@@ -69,7 +71,7 @@ Variables allow making Docker Compose files more re-usable: in this case, we can
 
 The most common way to pass variables is to write them into a file. This has the benefit of allowing us to version the variable file along with the Docker Compose file. It uses the same syntax you would use in BASH:
 
-```
+```bash
 PHP_VERSION=8.0
 MARIADB_VERSION=10.5
 ...
@@ -77,7 +79,7 @@ MARIADB_VERSION=10.5
 
 For bigger setups, it could make sense to use different environment files for different services. To do so, we need to specify the file to use in the Compose file:
 
-```
+```yaml
 services:
   web:
     env_file:
@@ -91,57 +93,17 @@ Docker Compose is operated using `docker-compose`. Here we'll see the most commo
 
 Docker Compose assumes that the Composer file is located in the current directory and it's called `docker-compose.yml`. To use a different file, the `-f <filename>` parameter must be specified.
 
-To pull the necessary images:
-
-```
-docker-compose pull
-```
-
-Containers described in the Compose file can be created in several ways.
-
-To create them only if they do not exist:
-
-```
-docker-compose up --no-recreate
-```
-
-To create them if they do not exist and recreate them if their image or configuration have changed:
-
-```
-docker-compose up
-```
-
-To recreate containers in all cases:
-
-```
-docker-compose up --force-recreate
-```
-
-Normally `docker-compose up` starts the containers. To create them without starting them, add the `--no-start` option.
-
-To restart containers without recreating them:
-
-```
-docker-compose restart
-```
-
-To kill a container by sending it a `SIGKILL`:
-
-```
-docker-compose kill <service>
-```
-
-To instantly remove a running container:
-
-```
-docker-compose rm -f <serice>
-```
-
-To tear down all containers created by the current Compose file:
-
-```
-docker-compose down
-```
+| Command                              | Description                                                                                            |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `docker-compose pull`                | Pulls the necessary images.                                                                            |
+| `docker-compose up --no-recreate`    | Creates containers only if they do not already exist.                                                  |
+| `docker-compose up`                  | Creates containers if they don't exist and recreates them if their image or configuration has changed. |
+| `docker-compose up --force-recreate` | Recreates containers in all cases.                                                                     |
+| `docker-compose up --no-start`       | Creates containers without starting them.                                                              |
+| `docker-compose restart`             | Restarts containers without recreating them.                                                           |
+| `docker-compose kill <service>`      | Kills a specific container by sending it a SIGKILL signal.                                             |
+| `docker-compose rm -f <service>`     | Instantly removes a running container.                                                                 |
+| `docker-compose down`                | Tears down all containers, networks, and volumes created by the Compose file.                          |
 
 ## Docker Compose Resources and References
 

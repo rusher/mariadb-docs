@@ -40,19 +40,19 @@ See also a detailed breakdown of [System variable differences between MariaDB 5.
   and `replicate_wild_*` have been made dynamic, so they can be changed\
   without requiring a server restart. See [Dynamic Replication Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters) for more\
   information.
-* New [status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables) for checking if features are used. These are very useful in [user feedback](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/feedback-plugin) to tell developers how much a feature is used:
-  * [Feature\_dynamic\_columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_dynamic_columns)
-  * [Feature\_fulltext](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_fulltext)
-  * [Feature\_gis](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_gis)
-  * [Feature\_locale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_locale)
-  * [Feature\_subquery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_subquery)
-  * [Feature\_timezone](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_timezone)
-  * [Feature\_trigger](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_trigger)
-  * [Feature\_xml](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#feature_xml)
-* New [status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables) to see what's going on:
-  * [Opened\_views](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#opened_views)
-  * [Executed\_triggers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#executed_triggers)
-  * [Executed\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#executed_events)
+* New [status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables) for checking if features are used. These are very useful in [user feedback](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/feedback-plugin) to tell developers how much a feature is used:
+  * [Feature\_dynamic\_columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#feature_dynamic_columns)
+  * [Feature\_fulltext](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#feature_fulltext)
+  * [Feature\_gis](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#feature_gis)
+  * [Feature\_locale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#feature_locale)
+  * [Feature\_subquery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#feature_subquery)
+  * [Feature\_timezone](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#feature_timezone)
+  * [Feature\_trigger](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#feature_trigger)
+  * [Feature\_xml](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#feature_xml)
+* New [status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables) to see what's going on:
+  * [Opened\_views](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#opened_views)
+  * [Executed\_triggers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#executed_triggers)
+  * [Executed\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#executed_events)
 * New plugin to log SQL level errors. [SQL\_ERROR\_LOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/sql-error-log-plugin)
 * New variable [OLD\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old-mode) to set compatibility behavior with older MySQL or MariaDB versions.
 
@@ -89,7 +89,7 @@ mysqld --ignore-builtin-innodb --plugin-load=innodb=ha_innodb.so \
 --plugin_dir=/usr/local/mysql/lib/mysql/plugin
 ```
 
-([plugin\_dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#plugin_dir) should point to where ha\_innodb.so is installed)
+([plugin\_dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#plugin_dir) should point to where ha\_innodb.so is installed)
 
 The above options can of course also be added to your [my.cnf](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) file:
 

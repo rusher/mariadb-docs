@@ -360,6 +360,6 @@ This page was step 4 of 4.
 
 This procedure is complete.
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

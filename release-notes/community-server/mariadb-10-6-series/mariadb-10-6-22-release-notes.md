@@ -1,5 +1,7 @@
 # MariaDB 10.6.22 Release Notes
 
+{% include "../../.gitbook/includes/latest-10-6.md" %}
+
 <a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="mariadb-10-6-22-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-22-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.22/)

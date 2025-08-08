@@ -1,9 +1,8 @@
 # DBeaver
 
-[DBeaver](https://dbeaver.jkiss.org/) is a free multi-platform database tool for developers, SQL programmers, database administrators and analysts.\
-It supports all popular relational databases: MySQL, MariaDB, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, Teradata, Netezza, etc. Also, it supports NoSQL databases: MongoDB, Cassandra, Redis, Apache Hive, etc. in the Enterprise Edition version.
+[DBeaver](https://dbeaver.jkiss.org/) is a free multi-platform database tool for developers, SQL programmers, database administrators and analysts. It supports many popular relational databases like MySQL, MariaDB, and PostgreSQL.
 
-A brief list of basic features can be found below:
+A list of basic features:
 
 * Data viewer and editor: sorting, filtering, image displaying, export of selected data and much more.
 * Metadata browser: possibility to view and edit existing tables, views, columns, indexes, procedures, triggers, storage entities (tablespaces, partitions, etc), security entities (users, roles, etc).
@@ -13,11 +12,11 @@ A brief list of basic features can be found below:
 * Data and metadata search: full-text data search using against all chosen tables/views.
 * Database structure comparing: possibility to perform objects structure compare.
 
-DBeaver is actively developed and maintained. Usability is the main goal of this project, so program UI is carefully designed and implemented. Every user can send bug report and feature request on the [GitHub page](https://github.com/serge-rider/dbeaver).
+Usability is the main goal of this project, so the program UI is carefully designed and implemented. Users can send bug report and feature request on the [GitHub page](https://github.com/serge-rider/dbeaver).
 
-![screen1](../../.gitbook/assets/screen1.png)
+![](../../.gitbook/assets/screen1.png)
 
-![screen2](../../.gitbook/assets/screen2.png)
+![](../../.gitbook/assets/screen2.png)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

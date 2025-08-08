@@ -27,8 +27,8 @@ A file format compatibility bug that was introduced in [MariaDB 10.2.2](mariadb-
 * [MDEV-13125](https://jira.mariadb.org/browse/MDEV-13125): Core dumps can now be enabled dynamically
 * [MDEV-13132](https://jira.mariadb.org/browse/MDEV-13132): Literals in the `COLUMN_DEFAULT` column in the [Information Schema COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table are now quoted to distinguish them from expressions.
 * New variables:
-  * [tmp\_disk\_table\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#tmp_disk_table_size)
-  * [tmp\_memory\_table\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#tmp_memory_table_size)
+  * [tmp\_disk\_table\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#tmp_disk_table_size)
+  * [tmp\_memory\_table\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#tmp_memory_table_size)
 * As per the [MariaDB Deprecation Policy](../../about/platform-deprecation-policy.md), this will be the last release of [MariaDB 10.2](what-is-mariadb-102.md) for Ubuntu 16.10 "Yakkety"
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`

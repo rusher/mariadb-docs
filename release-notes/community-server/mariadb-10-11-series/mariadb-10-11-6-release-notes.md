@@ -207,7 +207,7 @@ Thanks, and enjoy MariaDB!
 
 ### Warnings and Notes
 
-* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-11-series/broken-reference/README.md).
+* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-11-series/broken-reference/README.md).
 
 ### Security
 

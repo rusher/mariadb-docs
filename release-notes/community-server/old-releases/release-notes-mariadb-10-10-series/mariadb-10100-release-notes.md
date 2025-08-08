@@ -54,7 +54,7 @@ Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-ddl
 
 ### Miscellaneous
 
-* Change default of [explicit\_defaults\_for\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#explicit_defaults_for_timestamp) to ON ([MDEV-28632](https://jira.mariadb.org/browse/MDEV-28632))
+* Change default of [explicit\_defaults\_for\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#explicit_defaults_for_timestamp) to ON ([MDEV-28632](https://jira.mariadb.org/browse/MDEV-28632))
 * \--ssl option set as default for mariadb CLI ([MDEV-27105](https://jira.mariadb.org/browse/MDEV-27105))
 * Add [RANDOM\_BYTES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/random_bytes) function ([MDEV-25704](https://jira.mariadb.org/browse/MDEV-25704))
 * The [INET4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet4) data type ([MDEV-23287](https://jira.mariadb.org/browse/MDEV-23287))

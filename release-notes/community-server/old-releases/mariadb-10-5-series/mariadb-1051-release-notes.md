@@ -58,9 +58,9 @@ Notable changes of this release include:
 ### Variables
 
 * Numerous deprecated variables removed ([MDEV-18650](https://jira.mariadb.org/browse/MDEV-18650))
-  * [multi\_range\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#multi_range_count)
-  * [thread\_concurrency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#thread_concurrency)
-  * [timed\_mutexes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#timed_mutexes)
+  * [multi\_range\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#multi_range_count)
+  * [thread\_concurrency](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#thread_concurrency)
+  * [timed\_mutexes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#timed_mutexes)
 
 ## Changelog
 

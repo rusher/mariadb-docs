@@ -15,7 +15,7 @@ A _dump_, also called a _logical backup_, consists of the SQL statements needed 
 
 The compatibility between different versions and technologies is achieved by using [executable comments](../../../../reference/sql-statements/comment-syntax.md), but we should be aware of how they work. If we use a feature introduced in version 11.1, for example, it will be included in the dump inside an executable comment. If we restore that backup on a server with [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), the 11.1 feature will be ignored. This is the only way to restore backups in older MariaDB versions.
 
-### mariadb-dump
+### `mariadb-dump`
 
 Logical backups are usually taken with [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously called mysqldump).
 
@@ -27,15 +27,15 @@ The `--master-data` option adds the statements to setup a slave to the dump.
 
 MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `CREATE <object_type>` statement, a corresponding `SHOW CREATE <object_type>` exists. For example, [SHOW CREATE TABLE](../../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `CREATE TABLE` statement that can be used to recreate a certain table, without data.
 
-### mydumper
+### `mydumper`
 
-[mydumper](https://github.com/maxbube/mydumper) is a 3rd party tools to take dumps from MariaDB and MySQL databases. It is much faster than mariadb-dump because it takes backups with several parallel threads, usually one thread for each available CPU core. It produces several files, that can be used to restore a database using the related tool myloader.
+[mydumper](https://github.com/maxbube/mydumper) is a 3rd party tools to take dumps from MariaDB and MySQL databases. It is much faster than `mariadb-dump` because it takes backups with several parallel threads, usually one thread for each available CPU core. It produces several files, that can be used to restore a database using the related tool myloader.
 
 Since is it a 3rd party tool, it could be incompatible with some present or future MariaDB features.
 
-## Hot Backups (mariadb-backup)
+## Hot Backups (`mariadb-backup`)
 
-mariadb-backup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../server-usage/storage-engines/innodb/innodb-undo-log.md). mariadb-backup also properly backups [MyRocks](../../../../server-usage/storage-engines/myrocks/) tables and non-transactional storage engines.
+`mariadb-backup` is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../server-usage/storage-engines/innodb/innodb-undo-log.md). `mariadb-backup` also properly backups [MyRocks](../../../../server-usage/storage-engines/myrocks/) tables and non-transactional storage engines.
 
 ## Cold Backups and Snapshots
 
@@ -43,7 +43,7 @@ A copy of all MariaDB files is a working backup. Therefore, the easiest way to b
 
 Snapshots are usually a better idea, as they are a consistent copy of the files at a given moment in time, taken without stopping the normal operations.
 
-A snapshot of the files can be taken at several levels: filesystem level, if the filesystem supports snapshots, for example zfs; Linux Logical Volume Manager (LVM) also supports snapshots; and virtual machines also allow one to take snapshots. Windows shadow copies are also snapshots, with a benefit: it is possible to restore a single file from a shadow copy. A snapshot is not an expensive operation, because it does not imply a copy of the files. The current files will not be modified anymore, and changes to them will be written in separate places.
+A snapshot of the files can be taken at several levels: filesystem level, if the filesystem supports snapshots, for example `zfs`; Linux Logical Volume Manager (LVM) also supports snapshots; and virtual machines also allow one to take snapshots. Windows shadow copies are also snapshots, with a benefit: it is possible to restore a single file from a shadow copy. A snapshot is not an expensive operation, because it does not imply a copy of the files. The current files will not be modified anymore, and changes to them will be written in separate places.
 
 The problem with snapshots is that they behave like a logical copy of the files as they are in a given point in time. But database files are not guaranteed to be consistent in every moment, because contents can be buffered before being flushed to the disk. You can think a database snapshot like a database after an operating system crash.
 

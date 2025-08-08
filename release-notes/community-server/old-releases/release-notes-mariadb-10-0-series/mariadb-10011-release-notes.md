@@ -35,7 +35,7 @@ Notable changes of this release include:
 * Updated [performance\_schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/performance-schema) to version 5.6.17
 * Updated [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/connect), and [OQGraph](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/oqgraph-storage-engine) engines.
 * Online [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) works for partitioned tables
-* New system variable [default\_regex\_flags](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#default_regex_flags). To make MariaDB [RLIKE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/regexp) operator behave in a non-standard but backward compatible way use
+* New system variable [default\_regex\_flags](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#default_regex_flags). To make MariaDB [RLIKE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/regexp) operator behave in a non-standard but backward compatible way use
 
 ```sql
 SET @@default_regex_flags='DOTALL';

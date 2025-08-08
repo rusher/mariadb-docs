@@ -1,11 +1,11 @@
-# Configuration Settings For Building Connector/C
+# Configuration Settings for Building Connector/C
 
 ### Configuration settings
 
-Connector/C specifies its build process with platform-independent CMake listfiles included in each directory of a source tree with the name CMakeLists.txt.\
-Configuration settings may be specified by passing the -D option to CMake command line interpreter.
+Connector/C specifies its build process with platform-independent `CMake listfiles` included in each directory of a source tree with the name `CMakeLists.txt`.\
+Configuration settings may be specified by passing the `-D` option to `CMake` command line interpreter.
 
-Do not build Connector/C from root of the source tree: Either create a subdirectory "build" inside the source tree or create a subdirectory outside of the source tree.
+Do not build Connector/C from the root of the source tree: Either create a subdirectory "build" inside the source tree or create a subdirectory outside of the source tree.
 
 Example:
 
@@ -15,7 +15,7 @@ cmake ../connector_c -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/loca
 
 #### Reconfiguration
 
-In case Connector/C was already configured, the CMakeCache.txt file needs to be removed first. In several cases, e.g. when cross compiling CMakeFiles subfolders need to be removed too.
+In case Connector/C was already configured, the `CMakeCache.txt` file needs to be removed first. In several cases, e.g. when cross compiling `CMakeFiles` subfolders need to be removed too.
 
 #### Generator options
 
@@ -39,9 +39,9 @@ If you want to use a different generator, e.g. for nmake on Windows, you need to
 
 #### Client plugins
 
-Client plugins can be configured as dynamic plugins (DYNAMIC) or built-in plugins (STATIC) by specifying the plugin name followed by suffix \_PLUGIN\_TYPE as key, and "DYNAMIC" or "STATIC" as value.
+Client plugins can be configured as dynamic plugins (DYNAMIC) or built-in plugins (STATIC) by specifying the plugin name followed by suffix `_PLUGIN_TYPE` as key, and "DYNAMIC" or "STATIC" as value.
 
-E.g. for building dialog plugin as a built-in plugin, for versions < Connector/C 3.0.4
+E.g. for building dialog plugin as a built-in plugin, for versions `< Connector/C` 3.0.4
 
 ```bash
 cmake .. -D{PLUGIN_NAME}_PLUGIN_TYPE=[STATIC|DYNAMIC|OFF]
@@ -69,6 +69,5 @@ Connector/C 3.0 supports the following plugins:
 | SHA256\_PASSWORD | Authentication | dynamic | SHA256 password authentication plugin                      |
 | AURORA           | Connection     | OFF     | Fail over plugin for Aurora (experimental)                 |
 | REPLICATION      | Connection     | OFF     | Replication/fail over plugin (experimental)                |
-
 
 {% @marketo/form formId="4316" %}

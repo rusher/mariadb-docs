@@ -16,6 +16,6 @@ MariaDB Enterprise Spider facilitates horizontal scalability by sharding tables.
 | ![Spider Sharded Topology](../../.gitbook/assets/es-spider-sharded-mariadb-topology-no-title.png) | <ul><li><strong>Shard tables for horizontal scalability</strong></li><li>Spider Node uses Spider storage engine for Sharded Spider Tables</li><li>Sharded Spider Table is a partitioned "virtual" table</li><li>Spider uses MariaDB foreign data wrapper to query Data Tables on Data Nodes for each partition</li><li>Data Node uses non-Spider storage engine for Data Tables</li><li>Supports transactions</li><li>Enterprise Server 10.3+, Enterprise Spider</li></ul> |
 | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-empty para
+{% include "../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

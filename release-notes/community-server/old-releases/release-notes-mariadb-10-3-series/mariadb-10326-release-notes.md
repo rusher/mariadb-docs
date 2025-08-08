@@ -20,7 +20,7 @@ Thanks, and enjoy MariaDB!
 
 * Set the default value of [innodb\_log\_optimize\_ddl](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_optimize_ddl) to `OFF` by default ([MDEV-23720](https://jira.mariadb.org/browse/MDEV-23720))
 * [BLACKHOLE Storage Engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/blackhole) maximum index size increased from 1000 to 3500 bytes ([MDEV-24017](https://jira.mariadb.org/browse/MDEV-24017))
-* [Calculating (auto rounding)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#div_precision_increment) issue ([MDEV-23702](https://jira.mariadb.org/browse/MDEV-23702))
+* [Calculating (auto rounding)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#div_precision_increment) issue ([MDEV-23702](https://jira.mariadb.org/browse/MDEV-23702))
 * Temporary tables can no longer overwrite existing files. Instead an error is returned should a conflict occur ([MDEV-23569](https://jira.mariadb.org/browse/MDEV-23569))
 * Binlog checksum verification at recovery time ([MDEV-23832](https://jira.mariadb.org/browse/MDEV-23832))
 * Verbose print-out of [Geometry types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) by [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) ([MDEV-22330](https://jira.mariadb.org/browse/MDEV-22330))
@@ -44,7 +44,7 @@ Thanks, and enjoy MariaDB!
 * Error upon querying the view, that selecting from versioned table with partitions ([MDEV-23779](https://jira.mariadb.org/browse/MDEV-23779))
 * `CREATE .. SELECT` wrong result on join versioned table ([MDEV-23799](https://jira.mariadb.org/browse/MDEV-23799))
 * Fixed a crash with the [NTH\_VALUE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/window-functions/nth_value) function ([MDEV-15180](https://jira.mariadb.org/browse/MDEV-15180))
-* Computing certain [window functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/window-functions) on a server started with [--encrypt-tmp\_files=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#encrypt_tmp_files) could cause a wrong query result or crash ([MDEV-23867](https://jira.mariadb.org/browse/MDEV-23867))
+* Computing certain [window functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/window-functions) on a server started with [--encrypt-tmp\_files=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#encrypt_tmp_files) could cause a wrong query result or crash ([MDEV-23867](https://jira.mariadb.org/browse/MDEV-23867))
 * A query with a certain form of WHERE clause over a table with multiple indexes could pick a less efficient range plan ([MDEV-23811](https://jira.mariadb.org/browse/MDEV-23811))
 * Fixed a memory leak for correlated subqueries with ROLLUP ([MDEV-17066](https://jira.mariadb.org/browse/MDEV-17066))
 

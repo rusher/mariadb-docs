@@ -36,7 +36,7 @@ Notable additions in this release include:
 
 ### Idle Transactions
 
-Connections with idle transactions can be automatically killed after a specified time period by means of the [idle\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#idle_transaction_timeout), [idle\_readonly\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#idle_readonly_transaction_timeout) and [idle\_readwrite\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#idle_readwrite_transaction_timeout) system variables.
+Connections with idle transactions can be automatically killed after a specified time period by means of the [idle\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#idle_transaction_timeout), [idle\_readonly\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#idle_readonly_transaction_timeout) and [idle\_readwrite\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#idle_readwrite_transaction_timeout) system variables.
 
 ### Compatibility
 
@@ -101,17 +101,17 @@ have a good visible effect:
 
 The following new system variables have been added:
 
-* [idle\_readonly\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#idle_readonly_transaction_timeout)
-* [idle\_readwrite\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#idle_readwrite_transaction_timeout)
-* [idle\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#idle_transaction_timeout)
+* [idle\_readonly\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#idle_readonly_transaction_timeout)
+* [idle\_readwrite\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#idle_readwrite_transaction_timeout)
+* [idle\_transaction\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#idle_transaction_timeout)
 
 ### Status Variables
 
 The following new status variables have been added:
 
-* [Com\_create\_sequence](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#com_create_sequence)
-* [Com\_drop\_sequence](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#com_drop_sequence)
-* [Handler\_tmp\_delete](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#handler_tmp_delete)
+* [Com\_create\_sequence](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#com_create_sequence)
+* [Com\_drop\_sequence](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#com_drop_sequence)
+* [Handler\_tmp\_delete](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-status-variables#handler_tmp_delete)
 
 See the [What is MariaDB 10.3?](what-is-mariadb-103.md) page for an overview of [MariaDB 10.3](what-is-mariadb-103.md).
 

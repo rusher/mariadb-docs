@@ -203,6 +203,6 @@ This page was step 5 of 6.
 
 Next: Step 6: Test MariaDB MaxScale
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

@@ -14,8 +14,8 @@ To upgrade between minor versions of MariaDB on Linux/Unix (for example from [Ma
 * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../installing-mariadb/binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
 * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
 
-1. Make any desired changes to configuration options in [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md), such as `my.cnf`.
-2. Start MariaDB.
+4. Make any desired changes to configuration options in [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md), such as `my.cnf`.
+5. Start MariaDB.
 
 To upgrade between major versions, see the following:
 

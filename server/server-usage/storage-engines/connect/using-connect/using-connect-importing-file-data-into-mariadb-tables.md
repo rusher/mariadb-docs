@@ -1,5 +1,9 @@
 # Using CONNECT - Importing File Data Into MariaDB Tables
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 Directly using external (file) data has many advantages, such as to work on “fresh” data produced for instance by cash registers, telephone switches, or scientific apparatus. However, you may want in some case to import external data into your MariaDB database. This is extremely simple and flexible using the CONNECT handler. For instance, let us suppose you want to import the data of the xsample.xml XML file previously given in example into a [MyISAM](../../myisam-storage-engine/) table called _biblio_ belonging to the connect database. All you have to do is to create it by:
 
 ```

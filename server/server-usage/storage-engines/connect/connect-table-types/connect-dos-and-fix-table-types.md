@@ -1,5 +1,9 @@
 # CONNECT DOS and FIX Table Types
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 ## Overview
 
 Tables of type DOS and FIX are based on text files (see [CONNECT Table Types - Data Files](connect-table-types-data-files.md)). Within a record, column fields are positioned at a fixed offset from\

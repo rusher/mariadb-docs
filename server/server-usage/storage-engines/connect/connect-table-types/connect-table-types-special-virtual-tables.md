@@ -1,5 +1,9 @@
 # CONNECT Table Types - Special "Virtual" Tables
 
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
+
 The special table types supported by CONNECT are the Virtual table type ([VIR](connect-table-types-vir.md) - introduced in [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes)), Directory Listing table type (DIR), the Windows Management Instrumentation Table Type (WMI), and the “Mac Address” type (MAC).
 
 These tables are “virtual tables”, meaning they have no physical data but rather produce result data using specific algorithms. Note that this is close to what Views are, so they could be regarded as special views.
@@ -8,7 +12,7 @@ These tables are “virtual tables”, meaning they have no physical data but ra
 
 A table of type DIR returns a list of file name and description as a result set. To create a DIR table, use a Create Table statement such as:
 
-```
+```sql
 CREATE TABLE SOURCE (
   DRIVE CHAR(2) NOT NULL,
   PATH VARCHAR(256) NOT NULL,
@@ -23,7 +27,7 @@ When used in a query, the table returns the same file information listing than t
 
 For instance, the query:
 
-```
+```sql
 SELECT fname, SIZE, modified FROM SOURCE
   WHERE fname like '%handler%';
 ```

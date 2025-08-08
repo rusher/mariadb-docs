@@ -1,16 +1,19 @@
 # CONNECT PROXY Table Type
 
-A `PROXY` table is a table that accesses and reads the data of another table or view.\
-For instance, to create a table based on the boys `FIX` table:
+{% hint style="warning" %}
+This storage engine has been deprecated.
+{% endhint %}
 
-```
+A `PROXY` table is a table that accesses and reads the data of another table or view. To create a table based on the boys `FIX` table:
+
+```sql
 CREATE TABLE xboy ENGINE=CONNECT 
   table_type=PROXY tabname=boys;
 ```
 
 Simply, `PROXY` being the default type when `TABNAME` is specified:
 
-```
+```sql
 CREATE TABLE xboy ENGINE=CONNECT tabname=boys;
 ```
 
@@ -89,7 +92,7 @@ creation, an indirect reference can only be tested when executing a query on\
 the table. However, this is possible only for local tables. When using remote\
 tables or views, a problem can occur if the remote table or the view refers\
 back to one of the local tables of the chain. The same caution should be used\
-than when using [FEDERATEDX](../../federatedx-storage-engine/README.md) tables.
+than when using [FEDERATEDX](../../federatedx-storage-engine/) tables.
 
 **Note:** All `PROXY` or `PROXY`-based tables are read-only in this\
 version.

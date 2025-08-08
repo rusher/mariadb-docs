@@ -8,7 +8,7 @@ DDL (Data Definition Language) statements are now atomic operations. If the DDL 
 
 During crash recovery, the server uses the DDL log to determine if an operation needs to be rolled back. When the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/binary) is enabled, the crash recovery process ensures that the successful operations are written to the binary log and that the unsuccessful operations are not.
 
-By default, the DDL log is at `ddl-recovery.log` in the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir). When DDL statements are being executed, the DDL log is synchronized to disk very frequently. If you want to configure a custom path for the DDL log, the [log-ddl-recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) option can be used.
+By default, the DDL log is at `ddl-recovery.log` in the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir). When DDL statements are being executed, the DDL log is synchronized to disk very frequently. If you want to configure a custom path for the DDL log, the [log-ddl-recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) option can be used.
 
 As of this release, the following storage engines fully support atomic DDL:
 

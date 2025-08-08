@@ -6,13 +6,13 @@ When Innodb writes to the filesystem, there is generally no guarantee that a giv
 
 Without detection or prevention of partial writes, the integrity of the database can be compromised after recovery.
 
-## innodb\_doublewrite - an Imperfect Solution
+## `innodb_doublewrite`--an Imperfect Solution
 
-Since its inception, Innodb has had a mechanism to detect and ignore partial writes via the [InnoDB Doublewrite Buffer](../../../../server-usage/storage-engines/innodb/innodb-doublewrite-buffer.md) (also innodb\_checksum can be used to detect a partial write).
+Since its inception, Innodb has had a mechanism to detect and ignore partial writes via the [InnoDB Doublewrite Buffer](../../../../server-usage/storage-engines/innodb/innodb-doublewrite-buffer.md) (also `innodb_checksum` can be used to detect a partial write).
 
 Doublewrites, controlled by the [innodb\_doublewrite](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) system variable, comes with its own set of problems. Especially on SSD, writing each page twice can have detrimental effects (write leveling).
 
-## Atomic Write - a Faster Alternative to innodb\_doublewrite
+## Atomic Write - a Faster Alternative to `innodb_doublewrite`
 
 A better solution is to directly ask the filesystem to provide an atomic (all or nothing) write guarantee. Currently this is only available on [a few SSD cards](atomic-write-support.md#devices-that-support-atomic-writes-with-mariadb).
 
@@ -28,11 +28,11 @@ One can disable atomic write support for all cards by setting the variable [inno
 
 To use atomic writes instead of the doublewrite buffer, add:
 
-```
+```ini
 innodb_use_atomic_writes = 1
 ```
 
-to the my.cnf config file.
+to the `my.cnf` config file.
 
 Note that atomic writes are only supported on [Fusion-io devices that use the NVMFS file system](fusion-io/fusion-io-introduction.md#atomic-writes) in these versions of MariaDB.
 

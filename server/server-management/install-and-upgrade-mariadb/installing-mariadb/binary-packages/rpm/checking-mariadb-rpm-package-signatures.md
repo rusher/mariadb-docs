@@ -10,32 +10,32 @@ The key we use has an id of `1BB943DB` and the key fingerprint is:
 
 To check the signature you first need to import the public part of the key like so:
 
-```
+```bash
 gpg --keyserver hkp://pgp.mit.edu --recv-keys 1BB943DB
 ```
 
 Next you need to let pgp know about the key like so:
 
-```
+```bash
 gpg --export --armour 1BB943DB > mariadb-signing-key.asc
 sudo rpm --import mariadb-signing-key.asc
 ```
 
 You can check to see if the key was imported with:
 
-```
+```bash
 rpm -qa gpg-pubkey*
 ```
 
 Once the key is imported, you can check the signature of the MariaDB RPM files by running the something like the following in your download directory:
 
-```
+```bash
 rpm --checksig $(find . -name '*.rpm')
 ```
 
 The output of the above will look something like this (make sure gpg shows up on each OK line):
 
-```
+```bash
 me@desktop:~$ rpm --checksig $(find . -name '*.rpm')
 ./kvm-rpm-centos5-amd64/rpms/MariaDB-test-5.1.55-98.el5.x86_64.rpm: (sha1) dsa sha1 md5 gpg OK
 ./kvm-rpm-centos5-amd64/rpms/MariaDB-server-5.1.55-98.el5.x86_64.rpm: (sha1) dsa sha1 md5 gpg OK

@@ -30,7 +30,7 @@ Notable changes of this release include:
     is an additional protection layer that makes new, yet unknown, security\
     vulnerabilities more difficult to exploit.
 * Storage Engine functionality
-  * [MDEV-6107](https://jira.mariadb.org/browse/MDEV-6107), merge default\_tmp\_storage\_engine - Added [default\_tmp\_storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#default_tmp_storage_engine) server variable and the command line\
+  * [MDEV-6107](https://jira.mariadb.org/browse/MDEV-6107), merge default\_tmp\_storage\_engine - Added [default\_tmp\_storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#default_tmp_storage_engine) server variable and the command line\
     option.
   * [MDEV-4260](https://jira.mariadb.org/browse/MDEV-4260), Don't create frm files for temporary tables - Temporary tables no longer create frm files on disk. Which means that if the temporary table is created in the [MEMORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/memory-storage-engine) engine, it will not touch the disk at all.
   * The [ARCHIVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/archive) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.

@@ -29,7 +29,7 @@ Backup support is specific to storage engines. All supported storage engines ena
 
 **Note:** MariaDB Enterprise Backup does not support backups of MariaDB ColumnStore. Backup of MariaDB ColumnStore can be performed using [MariaDB ColumnStore Tools](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards). Backup of data ingested to MariaDB ColumnStore can also occur pre-ingestion, such as in the case of HTAP where backup could occur of transactional data in MariaDB Enterprise Server, and restore of data to MariaDB ColumnStore would then occur through reprocessing..
 
-## Non-blocking Backups
+## Nonblocking Backups
 
 A feature of MariaDB Enterprise Backup and MariaDB Enterprise Server, non-blocking backups minimize workload impact during backups. When MariaDB Enterprise Backup connects to MariaDB Enterprise Server, staging operations are initiated to protect data during read.
 
