@@ -208,7 +208,7 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     ```
 
     ```bash
-    $ echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a mariadb_repo_setup" \
+    $ echo "${checksum} mariadb_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -220,6 +220,9 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     $ sudo ./mariadb_repo_setup \
        --mariadb-server-version="mariadb-10.6"
     ```
+
+    1. Checksums of the various releases of the script can be found in the [Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#versions) section at the bottom of the [MariaDB Package Repository Setup and Usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) page. Substitute `${checksum}` in the example above with the latest checksum.
+
 2.  Install the EPEL repository:
 
     ```bash
@@ -260,7 +263,7 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     ```
 
     ```bash
-    $ echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a mariadb_repo_setup" \
+    $ echo "${checksum} mariadb_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -276,6 +279,9 @@ MariaDB ColumnStore ships as a storage engine plugin for MariaDB Community Serve
     ```bash
     $ sudo apt update
     ```
+
+    1. Checksums of the various releases of the script can be found in the [Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#versions) section at the bottom of the [MariaDB Package Repository Setup and Usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) page. Substitute `${checksum}` in the example above with the latest checksum.
+
 2.  Install some additional dependencies for ColumnStore.
 
     On Debian 10 and Ubuntu 20.04, install the following:
