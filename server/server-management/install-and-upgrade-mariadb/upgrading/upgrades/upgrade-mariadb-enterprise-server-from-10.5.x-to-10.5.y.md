@@ -98,7 +98,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```
 
     ```bash
-    $ echo "4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0  mariadb_es_repo_setup" \
+    $ echo "${checksum}  mariadb_es_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -110,12 +110,18 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     $ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
        --mariadb-server-version="10.5"
     ```
+
+    1. _Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 3.  Update MariaDB Enterprise Server and package dependencies:
 
     ```bash
     $ sudo yum update "MariaDB-*" "galera*"
     ```
 
+
+{% endtab %}
+
+{% tab title="Install via APT" %}
 **Install via APT (Debian, Ubuntu)**
 
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
@@ -134,7 +140,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```
 
     ```bash
-    $ echo "4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0  mariadb_es_repo_setup" \
+    $ echo "${checksum}  mariadb_es_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -150,6 +156,8 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```bash
     $ sudo apt update
     ```
+
+    1. _Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 3.  Update MariaDB Enterprise Server and package dependencies:
 
     ```
@@ -176,7 +184,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```
 
     ```bash
-    $ echo "4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0  mariadb_es_repo_setup" \
+    $ echo "${checksum}  mariadb_es_repo_setup" \
         | sha256sum -c -
     ```
 
@@ -188,6 +196,8 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     $ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
        --mariadb-server-version="10.5"
     ```
+
+    1. _Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md#versions) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](../../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md) _page. Substitute `${checksum}` in the example above with the latest checksum._
 3.  Update MariaDB Enterprise Server and package dependencies:
 
     ```
@@ -301,6 +311,6 @@ When MariaDB Enterprise Server is up and running on your system, you should test
 
 ***
 
-© 2025 MariaDB. All rights reserved.
+{% include "../../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}
