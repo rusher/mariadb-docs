@@ -1,16 +1,12 @@
 # List of MariaDB Connector/J Releases
 
-[Download MariaDB Connector/J](https://mariadb.com/downloads/#connectors)
+<p align="center"><a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector/" class="button primary">Download MariaDB Connector/J</a> <a href="about-mariadb-connector-j.md" class="button secondary">About MariaDB Connector/J</a></p>
 
-MariaDB Connector/J is used to connect applications developed in Java to\
-MariaDB and MySQL databases using the standard JDBC API. The library is LGPL\
-licensed.
-
-[<< back to About MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md)
+MariaDB Connector/J is used to connect applications developed in Java to MariaDB and MySQL databases using the standard JDBC API. The library is LGPL licensed.
 
 | Date        | Release | Status      | Min. Java Compat. | Release Notes                                                                                                                                                  | Changelog                                                                                                                                                                                  |
-|-------------|---------| ----------- | ----------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01 Aug 2025 | 3.5.5   | Stable (GA) | Java 8            | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-5-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-5-changelog)                              |
+| ----------- | ------- | ----------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 08 Aug 2025 | 3.5.5   | Stable (GA) | Java 8            | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/3.5/mariadb-connector-j-3-5-5-release-notes)                                    | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/changelogs/3.5/mariadb-connector-j-3-5-5-changelog)                                                             |
 | 01 Jul 2025 | 3.5.4   | Stable (GA) | Java 8            | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-4-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-4-changelog)                              |
 | 27 Mar 2025 | 3.5.3   | Stable (GA) | Java 8            | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-3-changelog)                              |
 | 11 Feb 2025 | 3.5.2   | Stable (GA) | Java 8            | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-2-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-2-changelog)                              |
@@ -136,8 +132,8 @@ licensed.
 | 1 Mar 2013  | 1.1.1   | Stable (GA) | Java 6            | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-11-release-notes/mariadb-java-client-111-release-notes)     | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/changelogs/mariadb-connector-j-11-changelogs/mariadb-java-client-111-changelog)                                 |
 | 15 Jan 2013 | 1.1.0   | Stable (GA) | Java 6            | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-11-release-notes/mariadb-java-client-110-release-notes)     | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/changelogs/mariadb-connector-j-11-changelogs/mariadb-java-client-110-changelog)                                 |
 | 29 Nov 2012 | 1.0.0   | Stable (GA) | Java 6            |                                                                                                                                                                |                                                                                                                                                                                            |
+|             |         |             |                   |                                                                                                                                                                |                                                                                                                                                                                            |
 
-[<< back to About MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md)
-
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}
