@@ -103,4 +103,6 @@ Navigation in the procedure "Deploy Spider Federated Topology":
 
 Next: Step 1: Install Enterprise Spider
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
+
+{% @marketo/form formId="4316" %}

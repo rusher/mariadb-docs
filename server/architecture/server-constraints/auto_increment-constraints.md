@@ -394,6 +394,6 @@ The offset and increment values can be configured by setting the [auto\_incremen
 
 When Galera Cluster is used, the offset and increment values are managed automatically by default. They can be managed manually by disabling the [wsrep\_auto\_increment\_control](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_auto_increment_control) system variable.
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

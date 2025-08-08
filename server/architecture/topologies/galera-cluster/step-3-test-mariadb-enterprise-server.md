@@ -181,6 +181,6 @@ This page was step 3 of 6.
 
 Next: Step 4: Install MariaDB MaxScale
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

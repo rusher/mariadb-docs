@@ -168,8 +168,6 @@ WHERE customer_id = 4;
 
 The specific shards read by the query are listed in the `partitions` column. If partition pruning does not eliminate unnecessary shards for a query with a restrictive filter, then check the partition definitions.
 
-
-
 ## Next Step
 
 Navigation in the procedure "Deploy Spider Sharded Topology":
@@ -178,6 +176,6 @@ This page was step 3 of 3.
 
 This procedure is complete.
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}
