@@ -25,7 +25,7 @@ For a detailed breakdown of system variable differences, see:
 * [System variable differences between MariaDB 11.2 and MySQL 8.0](system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-and-mysql-unmaintained-series/system-variable-differences-between-mariadb-11-2-and-mysql-8-0.md)
 * [System variable differences between MariaDB 10.11 and MySQL 8.0](system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-10-11-and-mysql-8-0.md)
 * [System variable differences between MariaDB 10.6 and MySQL 8.0](system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-10-6-and-mysql-8-0.md)
-* [System variable differences between MariaDB 10.5 and MySQL 8.0](system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-10-5-and-mysql-8-0.md)
+* [System variable differences between MariaDB 10.5 and MySQL 8.0](system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-and-mysql-unmaintained-series/system-variable-differences-between-mariadb-10-5-and-mysql-8-0.md)
 * For unmaintained versions, see [System Variable Differences Between MariaDB and MySQL - Unmaintained Series](system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-and-mysql-unmaintained-series/)
 
 For a detailed breakdown of function differences, see:
@@ -36,7 +36,7 @@ For a detailed breakdown of function differences, see:
 * [Function Differences Between MariaDB 11.2 and MySQL 8.0](function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-and-mysql-unmaintained-series/function-differences-between-mariadb-11-2-and-mysql-8-0.md)
 * [Function Differences Between MariaDB 10.11 and MySQL 8.0](function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-11-and-mysql-8-0.md)
 * [Function Differences Between MariaDB 10.6 and MySQL 8.0](function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-6-and-mysql-8-0.md)
-* [Function Differences Between MariaDB 10.5 and MySQL 8.0](function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-and-mysql-unmaintained-series/function-differences-between-mariadb-10-5-and-mysql-8-0.md)
+* [Function Differences Between MariaDB 10.5 and MySQL 8.0](function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-5-and-mysql-8-0.md)
 * For unmaintained versions, see [Function Differences Between MariaDB and MySQL - Unmaintained Series](function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-and-mysql-unmaintained-series/)
 
 #### More Storage Engines
