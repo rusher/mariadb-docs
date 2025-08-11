@@ -2,10 +2,7 @@
 
 ## Usage
 
-This feature produces a trace as a JSON document for any [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select)/[UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update)/[DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) containing information about decisions taken by the optimizer during\
-the optimization phase (choice of table access method, various costs,\
-transformations, etc). This feature helps to explain why some decisions were\
-taken by the optimizer and why some were rejected.
+This feature produces a trace as a JSON document for any [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select)/[UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update)/[DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) containing information about decisions taken by the optimizer during the optimization phase (choice of table access method, various costs, transformations, etc). This feature helps to explain why some decisions were taken by the optimizer and why some were rejected.
 
 ## Associated System Variables
 
@@ -55,7 +52,9 @@ SET optimizer_trace='enabled=on';
 
 ## Memory Usage
 
-Each trace is stored as a string. It is extended (with realloc()) as the optimization progresses and appends data to it. The [optimizer\_trace\_max\_mem\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_trace_max_mem_size) variable sets a limit on the total amount of memory used by the current trace.\
+Each trace is stored as a string. It is extended (with realloc()) as the optimization progresses and appends data to it. The [optimizer\_trace\_max\_mem\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_trace_max_mem_size) variable sets a limit on the total amount of memory used by the current trace.
+
+\
 If this limit is reached, the current trace isn't extended (so it will be incomplete), and the MISSING\_BYTES\_BEYOND\_MAX\_MEM\_SIZE column will show the number of bytes missing from this trace.
 
 ## Privilege Checking
