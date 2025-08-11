@@ -13,6 +13,11 @@ taken by the optimizer and why some were rejected.
   * Default value is off
 * [optimizer\_trace\_max\_mem\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_trace_max_mem_size)= value
   * Default value: 1048576
+*   [optimizer\_record\_context](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_record_context){=1|0}&#x20;
+
+    * Default value: OFF. From [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1).
+
+
 
 ## INFORMATION\_SCHEMA.OPTIMIZER\_TRACE
 
