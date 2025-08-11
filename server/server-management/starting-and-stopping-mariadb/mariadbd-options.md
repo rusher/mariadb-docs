@@ -371,6 +371,7 @@ Options that are also system variables are listed after:
 * [optimizer-max-sel-arg-weight](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_max_sel_arg_weight)
 * [optimizer-max-sel-args](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_max_sel_args)
 * [optimizer-prune-level](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_prune_level)
+* [optimizer-record-context](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_record_context)
 * [optimizer-search-depth](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_search_depth)
 * [optimizer-selectivity-sampling-limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_selectivity_sampling_limit)
 * [optimizer-switch](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch)
