@@ -4,7 +4,7 @@ The following is a comparison of variables that either appear only in [MariaDB 1
 
 {% include "../../../../.gitbook/includes/mysql-8.0-has-been-a-bugfix....md" %}
 
-For a more complete list of differences, see [Incompatibilities and Feature Differences Between MariaDB 10.5 and MySQL 8.0](../incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-5-and-mysql-8.md) and [Function Differences Between MariaDB 10.5 and MySQL 8.0](../function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-5-and-mysql-8-0.md)
+For a more complete list of differences, see [Incompatibilities and Feature Differences Between MariaDB 10.5 and MySQL 8.0](../incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-5-and-mysql-8.md) and [Function Differences Between MariaDB 10.5 and MySQL 8.0](../function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-and-mysql-unmaintained-series/function-differences-between-mariadb-10-5-and-mysql-8-0.md)
 
 The most notable differences are that MariaDB includes, by default, the [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) storage engine (resulting in extra memory allocation), [Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), and has a different [thread pool implementation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb). For this reason, a default implementation of [MariaDB 10.5](../../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) will use more memory than MySQL 8.0. [MariaDB 10.5](../../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) and MySQL 8.0 also have different [GTID implementations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid).
 
@@ -335,6 +335,6 @@ MariaDB's extra memory usage can be handled with the following rules of thumb:
 
 * [System Variable Differences Between MariaDB 10.4 and MySQL 8.0](system-variable-differences-between-mariadb-and-mysql-unmaintained-series/system-variable-differences-between-mariadb-10-4-and-mysql-8-0.md)
 * [Incompatibilities and Feature Differences Between MariaDB 10.5 and MySQL 8.0](../incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-5-and-mysql-8.md)
-* [Function Differences Between MariaDB 10.5 and MySQL 8.0](../function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-5-and-mysql-8-0.md)
+* [Function Differences Between MariaDB 10.5 and MySQL 8.0](../function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-and-mysql-unmaintained-series/function-differences-between-mariadb-10-5-and-mysql-8-0.md)
 
 {% @marketo/form formid="4316" formId="4316" %}

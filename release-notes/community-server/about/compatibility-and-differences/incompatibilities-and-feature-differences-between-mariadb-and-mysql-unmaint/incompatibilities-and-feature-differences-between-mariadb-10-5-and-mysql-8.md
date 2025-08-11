@@ -68,7 +68,7 @@ The most notable [features available in MariaDB](https://github.com/mariadb-corp
 
 When moving from MySQL 8.0 to [MariaDB 10.5](../../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md), please take note of the following incompatibilities:
 
-* For a list of function differences, see [Function Differences Between MariaDB 10.5 and MySQL 8.0](../function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-5-and-mysql-8-0.md).
+* For a list of function differences, see [Function Differences Between MariaDB 10.5 and MySQL 8.0](../function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-and-mysql-unmaintained-series/function-differences-between-mariadb-10-5-and-mysql-8-0.md).
 * For a list of system variable differences, see [System Variable Differences Between MariaDB 10.5 and MySQL 8.0](../system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-10-5-and-mysql-8-0.md).
 * For replication, see [Replication Compatibility Between MariaDB and MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/broken-reference/README.md).
 * MariaDB does not support MySQL's SET PERSIST - [MDEV-16228](https://jira.mariadb.org/browse/MDEV-16228)
