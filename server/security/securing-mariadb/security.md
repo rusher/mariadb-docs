@@ -20,6 +20,8 @@ Some CVEs apply to MySQL but are not present in MariaDB, these are listed on the
 
 Separate lists of CVEs fixed in specific MariaDB series are maintained on their individual "What is MariaDB x.x?" pages:
 
+* [What is MariaDB 12.1?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)
+* [What is MariaDB 12.0?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
 * [What is MariaDB 11.8?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118)
 * [What is MariaDB 11.7?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 * [What is MariaDB 11.6?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
@@ -36,13 +38,13 @@ Separate lists of CVEs fixed in specific MariaDB series are maintained on their 
 * [What is MariaDB 10.7?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
 * [What is MariaDB 10.6?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 * [What is MariaDB 10.5?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)
-* [What is MariaDB 10.4?](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/broken-reference/README.md)
+* [What is MariaDB 10.4?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 * [What is MariaDB 10.3?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 * [What is MariaDB 10.2?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 * [What is MariaDB 10.1?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
 * [What is MariaDB 10.0?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
-* [What is MariaDB 5.5?](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/broken-reference/README.md)
-* [What is MariaDB 5.3?](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/broken-reference/README.md)
+* [What is MariaDB 5.5?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* [What is MariaDB 5.3?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)
 * [What is MariaDB 5.2?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)
 * [What is MariaDB 5.1?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)
 
