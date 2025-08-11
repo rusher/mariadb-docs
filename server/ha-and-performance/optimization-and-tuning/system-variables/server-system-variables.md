@@ -1989,6 +1989,16 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
   * `subquery_cache={on|off}` - see [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md).
   * `table_elimination={on|off}` - see [Table Elimination User Interface](../query-optimizations/table-elimination/table-elimination-user-interface.md)
 
+#### `optimizer_record_context`
+
+* Description: Controls storing of optimizer context of all tables that are referenced in a query.
+* Command line: `--optimizer-record-context{=0|1}`
+* Scope: Global, Session
+* Dynamic: Yes
+* Data Type: boolean
+* Default Value: `OFF`
+* Introduced: [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)
+
 #### `optimizer_trace`
 
 * Description: Controls [tracing of the optimizer](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace): optimizer\_trace=option=val\[,option=val...], where option is one of {enabled} and val is one of {on, off, default}
