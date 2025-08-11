@@ -25,8 +25,8 @@ strong C/C++ skills. Areas for non-developers include:
 * [Suggesting Features](../../development-articles/general-info/tools/jira.md)
 * Helping other people answering problems or even fixing their bugs on [IRC](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/irc/README.md) in the #maria channel on [Libera.Chat](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/irc/README.md) or on MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com).
 * Testing and Benchmarking
-  * Bug tests can be uploaded to the 'private' directory of our [FTP](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/ftp/README.md) server.
-* Creating documentation for MariaDB, or [translating existing documentation](https://mariadb.com/kb/en/translation-howto/).
+  * Bug tests can be uploaded to the 'private' directory of our [FTP](mariadb-public-ftp-server.md) server.
+* Creating documentation for MariaDB.
 * Advocating MariaDB in your area.
 * Participate in [open source events](https://mariadb.org/events/) and talk about MariaDB.
 * Running a [BuildBot](../../development-articles/general-info/tools/buildbot/) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
