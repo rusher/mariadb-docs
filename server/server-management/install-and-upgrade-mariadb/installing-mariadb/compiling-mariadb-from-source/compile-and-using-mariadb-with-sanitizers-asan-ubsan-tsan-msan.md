@@ -49,11 +49,11 @@ Important to note MSAN requires instrumented c++ and system libraries to have a 
 
 The time consuming aspect of building with MSAN is having [instrumented system libraries](https://github.com/MariaDB/buildbot/blob/main/ci_build_images/msan.instrumentedlibs.sh). To help with this MariaDB Foundation has built the MSAN container for `buildbot`, but this is reusable locally.
 
-The MariaDB Buildbot MSAN container, `quay.io/mariadb-foundation/bb-worker/debian12-msan-clang-20` a container with:
+The MariaDB Buildbot MSAN container, `quay.io/mariadb-foundation/bb-worker:debian12-msan-clang-20` is a container with:
 
 * the instrumented libraries required for MSAN
 * a very modern `clang` version
-* the latest stable Debian as a base image
+* a stable Debian as a base image
 * a compiled [rr](https://rr-project.org/) for debugging
 
 The build of this container isn't hard coded to MSAN so it can be used for:
@@ -65,7 +65,9 @@ The build of this container isn't hard coded to MSAN so it can be used for:
 
 ### Running the MSAN container
 
-First, run the container where your current directory is the source directory:
+First, run the container where your current directory is the source directory.
+
+For Podman:
 
 ```bash
 podman run -v $PWD:/source:z \
@@ -77,7 +79,7 @@ podman run -v $PWD:/source:z \
    quay.io/mariadb-foundation/bb-worker:debian12-msan-clang-20
 ```
 
-The `/build` options for docker are slighly different as they default to `noexec` and a `root` ownership by default.
+The `/build` options for Docker Engine are slightly different as they default to `noexec` and a `root` ownership by default.
 
 ```bash
 docker run -v $PWD:/source:z \
@@ -101,18 +103,17 @@ The purposes of these, and other options include:
 | `--tmpfs /build:size=10G,exec,uid=1000`        | a 10G build directory and `mtr` for docker                                        | keeps as transient, big enough for some mtr tests, exec and uid needed by build/tests     |
 | `--workdir /build`                             | default directory                                                                 |                                                                                           |
 | `--entrypoint bash`                            | Ensure the cmd of `buildbot` start isn't executed                                 |                                                                                           |
-| `--cap-add=SYS_PTRACE`                         | capability for tracing used by `gdb`                                              | for debugging                                                                             |
+| `--cap-add=SYS_PTRACE`                         | capability for tracing used by `gdb` and `rr`                                     | for debugging                                                                             |
 | Extra options                                  |                                                                                   |                                                                                           |
 | `--name containername`                         | useful if running multiple to keep track                                          | Used as a name for a new session in the container (podman exec -ti containername bash)    |
 | `--shm-size=10g`                               | Size of `/dev/shm` as alternate for mtr tests                                     | Default is unsable 64k, This is large enough for most `--big-tests` with some parallelism |
-| `--privileged`                                 | Allow rr recording                                                                | Note security impacting, don't run untrusted code as root                                 |
+| `--privileged`                                 | Allow `rr` recording                                                              | Note security impacting, don't run untrusted code as root                                 |
 | `-v $DATADIR:/var/lib/mysql:Z`                 | Mount an existing `datadir`                                                       | For testing against some prepared data                                                    |
 
 Notes:
 
-* docker can be used instead of the lighter weight `podman` if you so desired.
 * `/dev/shm` is mounted no-exec so it rr recording here cannot be replayed while in that location
-* optionally can make /build a filesystem mount to preserve the build.
+* optionally can make `/build` a filesystem mount to preserve the build.
 
 There are environment variables that affect the `cmake` configure options and `mtr` are:
 
@@ -129,7 +130,7 @@ UBSAN_OPTIONS=print_stacktrace=1:report_error_type=1
 MSAN_OPTIONS=abort_on_error=1:poison_in_dtor=0
 ```
 
-Note: galera `WSREP_PROVIDER` isn't instrumented with any sanitizer
+Note: Galera `WSREP_PROVIDER` isn't instrumented with any sanitizer
 
 Check the latest version of these running `env`.
 
@@ -150,7 +151,7 @@ cmake \
       -DWITH_INNODB_{BZIP2,LZ4,LZMA,LZO,SNAPPY}=OFF \
       -DWITH_ZLIB=bundled  \
       -DWITH_NUMA=NO  \
-      -DWITH_SYSTEMD=NO \
+      -DWITH_SYSTEMD=no \
       -DHAVE_LIBAIO_H=0    \
       -DCMAKE_DISABLE_FIND_PACKAGE_{URING,LIBAIO}=1  \
       -DPLUGIN_{MROONGA,ROCKSDB,OQGRAPH}=NO  \
@@ -207,7 +208,7 @@ Current outstanding MSAN bugs can be found on [JIRA by searching for this label]
 
 ### Running an combined ASAN and UBSAN Build
 
-The clang implemented instrumentation of the MemoryStanitizer (MSAN) conflicts with the AddressSanitizer (ASAN) and UndefinedBehaviour (UBSAN) mechanisms, however ASAN and UBSAN can be combined into the same build.
+The clang implemented instrumentation of the MemorySanitizer (MSAN) conflicts with the AddressSanitizer (ASAN) and UndefinedBehaviour (UBSAN) mechanisms, however ASAN and UBSAN can be combined into the same build.
 
 After starting the MSAN container the following will configure a combined ASAN and UBSAN build:
 
@@ -215,6 +216,7 @@ After starting the MSAN container the following will configure a combined ASAN a
 cmake \
       -DUPDATE_SUBMODULES=OFF \
       -DWITH_ASAN=ON  \
+      -DWITH_ASAN_SCOPED=ON \
       -DWITH_UBSAN=ON  \
       -DWITH_UNIT_TESTS=OFF \
      /source
@@ -223,7 +225,8 @@ cmake \
 | CMake Options                                  | Why                                                                                                                                                       |
 | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `UPDATE_SUBMODULES=OFF`                        | The source directory is read-only so cannot be updated from within the container                                                                          |
-| `WITH_ASAN=ON`                                 | Enables ASAN build in compile options                                                                                                                     |
+| `WITH_ASAN=ON`                                 | Enables Address Sanitizer build in compile options                                                                                                        |
+| `WITH_ASAN_SCOPED=ON`                          | Enables Address Sanitizer Use after Scope checking                                                                                                        |
 | `WITH_UBSAN=ON`                                | Enables UBSAN build in compile options                                                                                                                    |
 | `WITH_UNIT_TESTS=OFF or PLUGIN_PERFSCHEMA=OFF` | `clang` is incompatible with performance schema unit tests, at least one must be disabled (ref: [MDEV-22940](https://jira.mariadb.org/browse/MDEV-22940)) |
 
