@@ -14,7 +14,7 @@ For differences between specific releases, see
 * [Incompatibilities and Feature Differences Between MariaDB 11.2 and MySQL 8.0](incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-11-2-and-mysql-8.md)
 * [Incompatibilities and Feature Differences Between MariaDB 10.11 and MySQL 8.0](incompatibilities-and-feature-differences-between-mariadb-10-11-and-mysql-8.md)
 * [Incompatibilities and Feature Differences Between MariaDB 10.6 and MySQL 8.0](incompatibilities-and-feature-differences-between-mariadb-10-6-and-mysql-8.md)
-* [Incompatibilities and Feature Differences Between MariaDB 10.5 and MySQL 8.0](incompatibilities-and-feature-differences-between-mariadb-10-5-and-mysql-8.md)
+* [Incompatibilities and Feature Differences Between MariaDB 10.5 and MySQL 8.0](incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-5-and-mysql-8.md)
 * For unmaintained versions, see [Incompatibilities and Feature Differences Between MariaDB and MySQL - Unmaintained Series](incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/)
 
 For a detailed breakdown of system variable differences, see:

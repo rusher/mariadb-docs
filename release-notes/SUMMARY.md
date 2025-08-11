@@ -162,7 +162,6 @@
       * [Incompatibilities and Feature Differences Between MariaDB 11.4 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-11-4-and-mysql-8.md)
       * [Incompatibilities and Feature Differences Between MariaDB 10.11 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-10-11-and-mysql-8.md)
       * [Incompatibilities and Feature Differences Between MariaDB 10.6 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-10-6-and-mysql-8.md)
-      * [Incompatibilities and Feature Differences Between MariaDB 10.5 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-10-5-and-mysql-8.md)
       * [Differences Between the MySQL and MariaDB Query Optimizer](community-server/about/compatibility-and-differences/differences-between-the-mysql-and-mariadb-query-optimizer.md)
       * [MariaDB versus MySQL - Compatibility](community-server/about/compatibility-and-differences/mariadb-vs-mysql-compatibility.md)
       * [MariaDB versus MySQL - Features](community-server/about/compatibility-and-differences/mariadb-vs-mysql-features.md)
@@ -199,6 +198,7 @@
         * [Incompatibilities and Feature Differences Between MariaDB 10.9 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-9-and-mysql-8.md)
         * [Incompatibilities and Feature Differences Between MariaDB 10.8 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-8-and-mysql-8.md)
         * [Incompatibilities and Feature Differences Between MariaDB 10.7 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-7-and-mysql-8.md)
+        * [Incompatibilities and Feature Differences Between MariaDB 10.5 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-5-and-mysql-8.md)
         * [Incompatibilities and Feature Differences Between MariaDB 10.4 and MySQL 8.0](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-4-and-mysql-8.md)
         * [Incompatibilities and Feature Differences Between MariaDB 10.3 and MySQL 5.7](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/compatibility-differences-incompatibilities-and-feature-differences-between.md)
         * [Incompatibilities and Feature Differences Between MariaDB 10.2 and MySQL 5.7](community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-2-and-mysql-5.md)
@@ -2314,4 +2314,3 @@
 * [Enterprise Operator Release Notes](enterprise-operator/README.md)
   * [MariaDB Enterprise Operator 1.0.0](enterprise-operator/mariadb-enterprise-operator-1-0-0.md)
 * [Test Page](test-page.md)
-

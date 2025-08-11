@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5
 
 [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) is [MariaDB 5.3](../release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) + MySQL 5.5, with added features. The first stable release was in April 2012, and the final release in May 2020.
 
-For upgrading to [MariaDB 10.0](../release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), the more recent stable release, see [Upgrading from MariaDB 5.5 to MariaDB 10.0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5).
+For upgrading to [MariaDB 10.0](../release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), the more recent stable release, see [Upgrading from MariaDB 5.5 to MariaDB 10.0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-4-to-mariadb-10-5).
 
 ## Feature Comparison Matrix
 
