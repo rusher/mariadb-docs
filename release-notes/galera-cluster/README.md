@@ -1,0 +1,2 @@
+# Galera Cluster Release Notes
+
