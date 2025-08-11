@@ -33,17 +33,16 @@ can be found on the [MariaDB Server Releases](https://app.gitbook.com/s/aEnK0ZXm
 
 ### JIRA
 
-We manage our development plans in JIRA, so the definitive list will be there. [This search](https://jira.mariadb.org/issues/?jql=project+%3D+MDEV+AND+issuetype+%3D+Task+AND+fixVersion+in+%2811.8%29+ORDER+BY+priority+DESC) shows what we **currently** plan for 12.1. It shows all tasks with the **Fix-Version** being 12.1. Not all these tasks will really end up in the release but tasks with the "red" priorities have a much higher chance of being done in time. Practically, you can think of these tasks as "features that **will** be in 12.1". Tasks with the "green" priorities probably won't be in. Think of them as "bonus features that would be **nice to have** in 12.1".
+We manage our development plans in JIRA, so the definitive list will be there. [This search](https://jira.mariadb.org/issues/?jql=project+%3D+MDEV+AND+issuetype+%3D+Task+AND+fixVersion+in+%2812.1%29+ORDER+BY+priority+DESC) shows what we **currently** plan for 12.1. It shows all tasks with the **Fix-Version** being 12.1. Not all these tasks will really end up in the release but tasks with the "red" priorities have a much higher chance of being done in time. Practically, you can think of these tasks as "features that **will** be in 12.1". Tasks with the "green" priorities probably won't be in. Think of them as "bonus features that would be **nice to have** in 12.1".
 
 ### Contributing
 
-If you want to be part of developing any of these features, see [Contributing to the MariaDB Project](../../community/contributing-participating/contributing-to-the-mariadb-project.md). You can also add new features to this list or\
-to [JIRA](tools/jira.md).
+If you want to be part of developing any of these features, see [Contributing to the MariaDB Project](../../community/contributing-participating/contributing-to-the-mariadb-project.md). You can also add new features to this list or to [JIRA](tools/jira.md).
 
 ## See Also
 
-* [Current tasks for 11.8](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(12.1\)%20ORDER%20BY%20priority%20DESC)
-* [11.8 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(12.1\)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
+* [Current tasks for 12.1](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(12.1\)%20ORDER%20BY%20priority%20DESC)
+* [12.1 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(12.1\)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
 
 
 
