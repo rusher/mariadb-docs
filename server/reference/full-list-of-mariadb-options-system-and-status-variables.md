@@ -1221,6 +1221,7 @@
 * [optimizer\_search\_depth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_search_depth)
 * [optimizer\_selectivity\_sampling\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_selectivity_sampling_limit)
 * [optimizer\_switch](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch)
+* [optimizer\_record\_context](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_record_context)
 * [optimizer\_trace](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_trace)
 * [optimizer\_trace\_max\_mem\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_trace_max_mem_size)
 * [optimizer\_use\_condition\_selectivity](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity)
