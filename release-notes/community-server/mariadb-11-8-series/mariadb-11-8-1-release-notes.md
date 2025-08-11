@@ -63,11 +63,6 @@ Thanks, and enjoy MariaDB!
 
 * When using [mariadb-import](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import) with --innodb-optimize-keys, secondary index creation is delayed until after data load, potentially improving load speed. ([MDEV-34740](https://jira.mariadb.org/browse/MDEV-34740))
 
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.8.1](mariadb-11-8-1-release-notes.md), with links to detailed\
