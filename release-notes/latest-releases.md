@@ -4,9 +4,9 @@
 
 {% include ".gitbook/includes/latest-12-1.md" %}
 
+### MariaDB Server Rolling Release
+
 {% include ".gitbook/includes/latest-12-0.md" %}
-
-
 
 ### MariaDB Server Long-Term Release
 
