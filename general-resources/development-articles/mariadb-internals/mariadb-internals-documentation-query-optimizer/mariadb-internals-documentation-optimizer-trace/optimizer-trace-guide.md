@@ -1,8 +1,8 @@
-# optimizer-trace-guide
+# Optimizer Trace Guide
 
 ## Optimizer Trace Guide
 
-Optimizer trace uses the JSON format. It is basically a structured log file showing what actions were taken by the query optimizer.
+The optimizer trace uses the JSON format. It is basically a structured log file showing what actions were taken by the query optimizer.
 
 ### A Basic Example
 

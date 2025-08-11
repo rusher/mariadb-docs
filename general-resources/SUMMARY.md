@@ -269,7 +269,7 @@
         * [Basic Optimizer Trace Example](development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/basic-optimizer-trace-example.md)
         * [How to Collect Large Optimizer Traces](development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/how-to-collect-large-optimizer-traces.md)
         * [Optimizer Trace for Developers](development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-for-developers.md)
-        * [optimizer-trace-guide](development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-guide.md)
+        * [Optimizer Trace Guide](development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-guide.md)
         * [Optimizer Trace Overview](development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-overview.md)
         * [Optimizer Trace Resources](development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-resources.md)
     * [MariaDB Source Code Internals](development-articles/mariadb-internals/mariadb-source-code-internals/README.md)
