@@ -105,7 +105,7 @@ You might consider using the following major new features in [MariaDB 10.1](http
 
 * [The features in MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](upgrading-from-mariadb-101-to-mariadb-102.md)
-* [Upgrading from MariaDB 5.5 to MariaDB 10.0](../upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
+* [Upgrading from MariaDB 5.5 to MariaDB 10.0](upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

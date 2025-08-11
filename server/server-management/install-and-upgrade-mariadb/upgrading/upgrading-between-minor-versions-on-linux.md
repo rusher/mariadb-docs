@@ -25,7 +25,7 @@ To upgrade between major versions, see the following:
 * [Upgrading from MariaDB 10.11 to MariaDB 11.0](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-11-to-mariadb-11-0.md)
 * [Upgrading from MariaDB 10.6 to MariaDB 10.11](upgrading-from-to-specific-versions/upgrading-from-mariadb-10-6-to-mariadb-10-11.md)
 * [Upgrading from MariaDB 10.5 to MariaDB 10.6](upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6.md)
-* [Upgrading from MariaDB 10.4 to MariaDB 10.5](upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
+* [Upgrading from MariaDB 10.4 to MariaDB 10.5](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 * [Upgrading from MariaDB 10.3 to MariaDB 10.4](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-103-to-mariadb-104.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
