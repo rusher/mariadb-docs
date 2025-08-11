@@ -25,15 +25,15 @@ MariaDB Server 5.5 was a combination of MariaDB Server 5.3 and MySQL 5.5.
 MariaDB Server 10.0, and later build off of the previous MariaDB Server releases with backported features from MySQL and entirely new features not found anywhere else.
 
 Short descriptions of the various MariaDB Server releases and their main new features\
-can be found on the [MariaDB Server Releases](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/) page.
+can be found on the [MariaDB Server Releases](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server) page.
 
 ## Plans
 
-[MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118) is an upcoming major development release.
+[MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1) is an upcoming major development release.
 
 ### JIRA
 
-We manage our development plans in JIRA, so the definitive list will be there. [This search](https://jira.mariadb.org/issues/?jql=project+%3D+MDEV+AND+issuetype+%3D+Task+AND+fixVersion+in+%2811.8%29+ORDER+BY+priority+DESC) shows what we **currently** plan for 11.8. It shows all tasks with the **Fix-Version** being 11.8. Not all these tasks will really end up in 11.8 but tasks with the "red" priorities have a much higher chance of being done in time for 11.8. Practically, you can think of these tasks as "features that **will** be in 11.8". Tasks with the "green" priorities probably won't be in 11.8. Think of them as "bonus features that would be **nice to have** in 11.8".
+We manage our development plans in JIRA, so the definitive list will be there. [This search](https://jira.mariadb.org/issues/?jql=project+%3D+MDEV+AND+issuetype+%3D+Task+AND+fixVersion+in+%2811.8%29+ORDER+BY+priority+DESC) shows what we **currently** plan for 12.1. It shows all tasks with the **Fix-Version** being 12.1. Not all these tasks will really end up in the release but tasks with the "red" priorities have a much higher chance of being done in time. Practically, you can think of these tasks as "features that **will** be in 12.1". Tasks with the "green" priorities probably won't be in. Think of them as "bonus features that would be **nice to have** in 12.1".
 
 ### Contributing
 
@@ -42,11 +42,10 @@ to [JIRA](tools/jira.md).
 
 ## See Also
 
-* [Current tasks for 11.8](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(11.8\)%20ORDER%20BY%20priority%20DESC)
-* [11.8 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(11.8\)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
-* [What is MariaDB 11.8?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118)
-* [Plans for MariaDB 11.7](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/development-articles/general-info/broken-reference/README.md)
-* [Plans for MariaDB 11.6](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/development-articles/general-info/broken-reference/README.md)
+* [Current tasks for 11.8](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(12.1\)%20ORDER%20BY%20priority%20DESC)
+* [11.8 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(12.1\)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
+
+
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
