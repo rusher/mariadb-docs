@@ -1147,6 +1147,7 @@
 * [Memory\_used\_initial](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#memory_used_initial)
 * [metadata\_locks\_cache\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_cache_size)
 * [metadata\_locks\_hash\_instances](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_hash_instances)
+* [metadata\_locks\_instances](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_instances)
 * [mhnsw\_default\_distance](sql-structure/vectors/vector-system-variables.md#mhnsw_default_distance)
 * [mhnsw\_default\_m](sql-structure/vectors/vector-system-variables.md#mhnsw_default_m)
 * [mhnsw\_ef\_search](sql-structure/vectors/vector-system-variables.md#mhnsw_ef_search)
