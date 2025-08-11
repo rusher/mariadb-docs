@@ -15,12 +15,13 @@ At any given time, developers is working on their own branches locally or on Git
 The main MariaDB branches are:
 
 * [main](https://github.com/MariaDB/server/tree/main)
+* [12.1](https://github.com/MariaDB/server/tree/12.1)
+* [12.0](https://github.com/MariaDB/server/tree/12.0)
 * [11.8](https://github.com/MariaDB/server/tree/11.8)
 * [11.7](https://github.com/MariaDB/server/tree/11.7)
 * [11.4](https://github.com/MariaDB/server/tree/11.4)
 * [10.11](https://github.com/MariaDB/server/tree/10.11)
 * [10.6](https://github.com/MariaDB/server/tree/10.6)
-* [10.5](https://github.com/MariaDB/server/tree/10.5)
 
 Source repositories for the MariaDB Connectors are:
 
