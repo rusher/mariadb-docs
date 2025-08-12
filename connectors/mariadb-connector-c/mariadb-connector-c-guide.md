@@ -31,7 +31,7 @@ MariaDB Connector/C is distributed in [binary tarballs](https://app.gitbook.com/
 
 #### Installing with a Package Manager
 
-Since MariaDB Connector/C is now integrated with MariaDB Server, it can also be installed via a package manager on Linux. In order to do so, your system needs to be configured to install from one of the MariaDB repositories. The repository needs to be configured for [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) or later.
+Since MariaDB Connector/C is now integrated with MariaDB Server, it can also be installed via a package manager on Linux. In order to do so, your system needs to be configured to install from one of the MariaDB repositories. The repository needs to be configured for [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) or later.
 
 You can configure your package manager to install it from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage).
 
@@ -40,7 +40,7 @@ You can also configure your package manager to install it from MariaDB Foundatio
 **Installing with yum/dnf**
 
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's\
-repository using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum) or [dnf](https://en.wikipedia.org/wiki/DNF_(software)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
+repository using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) or [dnf](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 ```bash
 sudo yum install MariaDB-shared
@@ -69,7 +69,9 @@ sudo apt-get install libmariadb-dev
 
 **Installing with zypper**
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's repository using [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper). For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's repository using [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper).&#x20;
+
+For example:
 
 ```bash
 sudo zypper install MariaDB-shared
@@ -119,6 +121,6 @@ The source code is available at the [mariadb-connector-c repository](https://git
 
 GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
 
-For licensing questions, see the [Licensing FAQ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/faq/licensing-questions/licensing-faq).
+For licensing questions, see the [Licensing FAQ](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/faq/licensing-questions/licensing-faq).
 
 {% @marketo/form formId="4316" %}
