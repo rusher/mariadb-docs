@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Migration from MySQL to MariaDB Cluster using Replication
 
 This guide migrates a live database from a MySQL Galera Cluster to a MariaDB Galera Cluster. The migration strategy requires setting up a new MariaDB Cluster and using asynchronous replication to sync it with the existing MySQL Cluster. The method includes a reliable failback route.
