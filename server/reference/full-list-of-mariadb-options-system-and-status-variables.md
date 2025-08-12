@@ -21,6 +21,7 @@
 * [Acl\_users](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_users)
 * \--[allow-suspicious-udfs](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#allow-suspicious-udfs), [allow\_suspicious\_udfs](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs)
 * [alter\_algorithm](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm)
+* [analyze\_max\_length](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_max_length)
 * [analyze\_sample\_percentage](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_sample_percentage)
 * \--[ansii](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi)
 * [aria\_block\_size](../server-usage/storage-engines/aria/aria-system-variables.md#aria_block_size)
