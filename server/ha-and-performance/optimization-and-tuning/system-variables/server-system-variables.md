@@ -118,7 +118,7 @@ The suffix can be upper or lower-case.
 
 #### `analyze_max_length`
 
-* Description: Prevents collection of column statistics for [`CHAR`](../../../reference/data-types/string-data-types/char.md)/[`VARCHAR`](../../../reference/data-types/string-data-types/varchar.md) columns that can be analyzed automatically by [`ANALYZE TABLE PERSISTENT`](../../../reference/sql-statements/table-statements/analyze-table.md). Columns exceeding this threshold in bytes will be skipped unless included explicitly in `FOR COLUMNS(...)`.
+* Description: Prevents collection of column statistics for [`CHAR`](../../../reference/data-types/string-data-types/char.md)/[`VARCHAR`](../../../reference/data-types/string-data-types/varchar.md) columns that can be analyzed automatically by [`ANALYZE TABLE PERSISTENT`](../../../reference/sql-statements/table-statements/analyze-table.md). Columns exceeding this threshold in bytes will be skipped unless included explicitly in [`FOR COLUMNS(...)`](../../../reference/sql-statements/table-statements/analyze-table.md#skipping-long-char-varchar-columns).
 * Command line: `--analyze-max-length=val`
 * Scope: Global, Session
 * Dynamic: Yes
