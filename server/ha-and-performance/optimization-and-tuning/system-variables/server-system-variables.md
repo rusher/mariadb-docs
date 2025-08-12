@@ -125,7 +125,7 @@ The suffix can be upper or lower-case.
 * Data Type: `Integer (byte size)/ ulonglong`
 * Default Value: `4G (bytes)`
 * Applies To: `ANALYZE TABLE PERSISTENT`
-* Introduced: MariaDB 10.6.22-18
+* Introduced: [MariaDB 10.6.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10.6.23-release-notes)
 * Excludes: Columns longer than the defined threshold (default: 4G)
 * Can override: With `FOR COLUMNS(...)` syntax
 
