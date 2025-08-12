@@ -39,6 +39,47 @@ By default, ANALYZE TABLE statements are written to the [binary log](../../../se
 
 The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](../administrative-sql-statements/show/show-processlist.md) for the `ANALYZE TABLE` statement.
 
+### Skipping Long CHAR/VARCHAR Columns
+
+When using `ANALYZE TABLE PERSISTENT`  MariaDB, skip long `CHAR`/`VARCHAR` columns during statistics collection if they exceed the value of the `analyze_max_length` system variable.
+
+This prevents excessive disk usage when analyzing tables with large text columns.
+
+* If a column is longer than `analyze_max_length`, it is excluded from stats.
+* If a long column is **explicitly specified** in `FOR COLUMNS()`, it is **still analyzed**, regardless of its size.
+
+Example
+
+```sql
+SET GLOBAL analyze_max_length = 50000;
+ANALYZE TABLE large_text_table PERSISTENT;
+```
+
+```sql
+ANALYZE TABLE large_text_table PERSISTENT FOR COLUMNS(long_description);
+```
+
+```sql
+CREATE TABLE product_data (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    description VARCHAR(50000), -- long column
+    specs VARCHAR(1000)
+);
+
+-- Set limit
+SET SESSION analyze_max_length = 10000;
+
+-- Run analysis without explicitly selecting columns
+ANALYZE TABLE product_data PERSISTENT;
+
+-- 'description' will be skipped due to length > 10000
+
+-- To include it anyway
+ANALYZE TABLE product_data PERSISTENT FOR COLUMNS(description);
+
+```
+
 ## Performance Impact
 
 Note that analyzing tables with `ANALYZE` can have a performance impact and can use a lot of disk space for big tables. As column statistics usually do not change much over time, even when the table grows, there is no benefit to running `ANALYZE` very often.
