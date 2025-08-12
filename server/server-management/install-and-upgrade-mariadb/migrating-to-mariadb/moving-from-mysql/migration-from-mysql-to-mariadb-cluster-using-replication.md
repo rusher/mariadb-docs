@@ -44,7 +44,7 @@ Set up a new, empty MariaDB Galera Cluster that will become the target for the m
 
 **2.1. Install MariaDB Server and Galera Provider**
 
-Install MariaDB Server package and Galera wsrep provider library on each node of the new cluster. Refer [Install and Upgrade MariaDB](../../../upgrading/) for detailed instructions.
+Install MariaDB Server package and Galera wsrep provider library on each node of the new cluster. Refer [Install and Upgrade MariaDB](../../upgrading/) for detailed instructions.
 
 **2.2. Configure Each MariaDB Node**
 

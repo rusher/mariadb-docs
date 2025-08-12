@@ -1,6 +1,6 @@
 # Upgrading to MariaDB From MySQL 5.0 or Older
 
-If you upgrade to [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) from MySQL 5.1 you [don't have to do anything](../upgrading-from-mysql-to-mariadb/) with your data or MySQL clients. Things should "just work".
+If you upgrade to [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) from MySQL 5.1 you [don't have to do anything](../upgrading-from-mysql-to-mariadb.md) with your data or MySQL clients. Things should "just work".
 
 When upgrading between different major versions of MariaDB or MySQL you need to\
 run the [mysql\_upgrade](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) program to convert data that are incompatible between versions. This will also update your privilege tables in the mysql database to the latest format.
