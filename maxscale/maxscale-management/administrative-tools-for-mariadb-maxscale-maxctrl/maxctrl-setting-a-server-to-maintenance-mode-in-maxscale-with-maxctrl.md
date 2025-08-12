@@ -13,7 +13,7 @@ MaxCtrl is a command-line utility that can perform administrative tasks using Ma
 1. Configure the REST API if the default configuration is not sufficient.
 2. Use MaxCtrl to execute the set server command with the maintenance option:
 
-```
+```bash
 $ maxctrl --secure \
    --user=maxscale_rest_admin \
    --password=maxscale_rest_admin_password \
@@ -24,15 +24,15 @@ $ maxctrl --secure \
    set server server1 maintenance
 ```
 
-Replace server1 with the name of the specific server.
+Replace `server1` with the name of the specific server.
 
-If the specified server is a primary server, then MaxScale will allow open transactions to complete before closing any connections.
+3. If the specified server is a primary server, then MaxScale will allow open transactions to complete before closing any connections.
 
 ## Forcing a Server to Maintenance Mode
 
-1. Use MaxCtrl to execute the set server command with the maintenance --force option:
+1. Use MaxCtrl to execute the set server command with the `maintenance --force` option:
 
-```
+```bash
 $ maxctrl --secure \
    --user=maxscale_rest_admin \
    --password=maxscale_rest_admin_password \
@@ -42,10 +42,7 @@ $ maxctrl --secure \
    --tls-ca-cert=/certs/ca.pem \
 ```
 
-set server server1 maintenance --force\
-Replace server1 with the name of the specific server.
-
-When --force is specified, MaxScale immediately close all connections, even if the server is a primary server that has open transactions.
+2. Replace `server1` with the specific server name. When `--force` is used, MaxScale immediately closes all connections, even if the server is a primary server with open transactions.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

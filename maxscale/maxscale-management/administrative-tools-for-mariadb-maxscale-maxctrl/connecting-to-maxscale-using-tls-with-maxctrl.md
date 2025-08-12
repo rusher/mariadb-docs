@@ -8,7 +8,7 @@
 
 1. [Create a basic](creating-a-rest-api-user-for-maxscale-with-maxctrl.md#creating-a-basic-user) or [admin user](creating-a-rest-api-user-for-maxscale-with-maxctrl.md#creating-an-admin-user), depending on what kind of user you need:
 
-```
+```bash
 $ maxctrl create user "maxscale_rest_admin" "maxscale_rest_admin_password" --type=admin
 ```
 
@@ -24,7 +24,7 @@ Replace maxscale\_rest\_admin and maxscale\_rest\_admin\_password with the desir
 
 For example:
 
-```
+```ini
 [maxscale]
 ...
 admin_host            = 0.0.0.0
@@ -42,7 +42,7 @@ admin_port            = 8443
 
 For example:
 
-```
+```ini
 [maxscale]
 ...
 admin_ssl_key=/certs/server-key.pem
@@ -53,7 +53,7 @@ admin_ssl_ca_cert=/certs/ca-cert.pem
 4. Ensure that the client also has a TLS certificate, a private key, and the CA certificate.
 5. Use [MaxCtrl](./) to connect with TLS:
 
-```
+```ini
 $ maxctrl --secure \
    --user=maxscale_rest_admin \
    --password=maxscale_rest_admin_password \
@@ -63,7 +63,7 @@ $ maxctrl --secure \
    --tls-ca-cert=/certs/ca.pem
 ```
 
-Replace `maxscale_rest_admin and maxscale_rest_admin_password` with the actual user and password.
+Replace `maxscale_rest_admin` and `maxscale_rest_admin_password` with the actual user and password.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

@@ -4,7 +4,7 @@
 
 MaxScale has a [REST API](../../reference/maxscale-rest-api/), which can be configured to require authentication. When first installed, it has a single default admin user (admin) and password (mariadb). However, this user can be deleted, and other users can be created.
 
-[MaxCtrl](./) is a command-line utility that can perform administrative tasks using MaxScale's [REST API](broken-reference/). It can create a user for the [REST API](broken-reference).
+[MaxCtrl](./) is a command-line utility that can perform administrative tasks using MaxScale's [REST API](broken-reference/). It can create a user for the REST API.
 
 ## User Types
 
@@ -20,7 +20,7 @@ There are two types of users:
 1. Configure the [REST API](https://mariadb.com/kb/en/operating-maxscale-with-the-rest-api-configuring-maxscales-rest-api) if the default configuration is not sufficient.
 2. Use [MaxCtrl](./) to execute the create user command:
 
-```
+```bash
 $ maxctrl --secure \
    --user=admin \
    --password=mariadb \
@@ -38,7 +38,7 @@ Replace maxscale\_rest and maxscale\_rest\_password with the desired user and pa
 1. Configure the [REST API](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-the-rest-api-configuring-maxscales-rest-api/README.md) if the default configuration is not sufficient.
 2. Use [MaxCtrl](./) to execute the create user command with the --type=admin option:
 
-```
+```bash
 $ maxctrl --secure \
    --user=admin \
    --password=mariadb \
@@ -49,7 +49,7 @@ $ maxctrl --secure \
    create user "maxscale_rest_admin" "maxscale_rest_admin_password" --type=admin
 ```
 
-Replace maxscale\_rest\_admin and maxscale\_rest\_admin\_password with the desired user and password.
+Replace `maxscale_rest_admin` and `maxscale_rest_admin_password` with the desired user and password.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
