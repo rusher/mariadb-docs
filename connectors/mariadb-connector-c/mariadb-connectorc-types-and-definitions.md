@@ -6,68 +6,68 @@ MariaDB Connector/C provides the following types and definitions.
 
 #### enum mysql\_option
 
-`enum mysql_option` is used as a parameter in [mysql\_optionsv()](api-functions/mysql_optionsv.md) and [mysql\_get\_optionsv()](api-functions/mysql_get_optionv.md) API functions. For a list of integral constants and their meanings please check the documentation of [mysql\_get\_optionsv()](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/library/mysql_get_optionsv/README.md).
+`enum mysql_option` is used as a parameter in [mysql\_optionsv()](api-functions/mysql_optionsv.md) and [mysql\_get\_optionsv()](api-functions/mysql_get_optionv.md) API functions. For a list of integral constants and their meanings, please check the documentation of [mysql\_get\_optionsv()](api-functions/mysql_get_optionv.md).
 
 #### enum enum\_mysql\_timestamp\_type
 
-`enum enum_mysql_timestamp_type` is used in the MYSQL\_TIME structure and indicates the type. It has the following constants:
+`enum enum_mysql_timestamp_type` is used in the `MYSQL_TIME` structure and indicates the type. It has the following constants:
 
-* MYSQL\_TIMESTAMP\_NONE
-* MYSQL\_TIMESTAMP\_ERROR
-* MYSQL\_TIMESTAMP\_DATE
-* MYSQL\_TIMESTAMP\_DATETIME
-* MYSQL\_TIMESTAMP\_TIME
+* `MYSQL_TIMESTAMP_NONE`
+* `MYSQL_TIMESTAMP_ERROR`
+* `MYSQL_TIMESTAMP_DATE`
+* `MYSQL_TIMESTAMP_DATETIME`
+* `MYSQL_TIMESTAMP_TIME`
 
 #### enum mysql\_set\_option
 
 `enum mysql_set_option` is used as a parameter in [mysql\_set\_server\_option()](api-functions/mysql_set_server_option.md) and has the following constants:
 
-* MYSQL\_OPTIONS\_MULTI\_STATEMENTS\_ON
-* MYSQL\_OPTIONS\_MULTI\_STATEMENTS\_OFF
+* `MYSQL_OPTIONS_MULTI_STATEMENTS_ON`
+* `MYSQL_OPTIONS_MULTI_STATEMENTS_OFF`
 
 #### enum enum\_field\_types
 
-`enum field_types` describes the different field types used by MariaDB ] and has the following constants:
+`enum field_types` describes the different field types used by MariaDB and has the following constants:
 
-* MYSQL\_TYPE\_DECIMAL
-* MYSQL\_TYPE\_TINY
-* MYSQL\_TYPE\_SHORT
-* MYSQL\_TYPE\_LONG
-* MYSQL\_TYPE\_FLOAT
-* MYSQL\_TYPE\_DOUBLE
-* MYSQL\_TYPE\_NULL
-* MYSQL\_TYPE\_TIMESTAMP
-* MYSQL\_TYPE\_LONGLONG
-* MYSQL\_TYPE\_INT24
-* MYSQL\_TYPE\_DATE
-* MYSQL\_TYPE\_TIME
-* MYSQL\_TYPE\_DATETIME
-* MYSQL\_TYPE\_YEAR
-* MYSQL\_TYPE\_NEWDATE
-* MYSQL\_TYPE\_VARCHAR
-* MYSQL\_TYPE\_BIT
-* MYSQL\_TYPE\_TIMESTAMP2
-* MYSQL\_TYPE\_DATETIME2
-* MYSQL\_TYPE\_TIME2
-* MYSQL\_TYPE\_JSON
-* MYSQL\_TYPE\_NEWDECIMAL
-* MYSQL\_TYPE\_ENUM
-* MYSQL\_TYPE\_SET
-* MYSQL\_TYPE\_TINY\_BLOB
-* MYSQL\_TYPE\_MEDIUM\_BLOB
-* MYSQL\_TYPE\_LONG\_BLOB
-* MYSQL\_TYPE\_BLOB
-* MYSQL\_TYPE\_VAR\_STRING
-* MYSQL\_TYPE\_STRING
-* MYSQL\_TYPE\_GEOMETRY
+* `MYSQL_TYPE_DECIMAL`
+* `MYSQL_TYPE_TINY`
+* `MYSQL_TYPE_SHORT`
+* `MYSQL_TYPE_LONG`
+* `MYSQL_TYPE_FLOAT`
+* `MYSQL_TYPE_DOUBLE`
+* `MYSQL_TYPE_NULL`
+* `MYSQL_TYPE_TIMESTAMP`
+* `MYSQL_TYPE_LONGLONG`
+* `MYSQL_TYPE_INT24`
+* `MYSQL_TYPE_DATE`
+* `MYSQL_TYPE_TIME`
+* `MYSQL_TYPE_DATETIME`
+* `MYSQL_TYPE_YEAR`
+* `MYSQL_TYPE_NEWDATE`
+* `MYSQL_TYPE_VARCHAR`
+* `MYSQL_TYPE_BIT`
+* `MYSQL_TYPE_TIMESTAMP2`
+* `MYSQL_TYPE_DATETIME2`
+* `MYSQL_TYPE_TIME2`
+* `MYSQL_TYPE_JSON`
+* `MYSQL_TYPE_NEWDECIMAL`
+* `MYSQL_TYPE_ENUM`
+* `MYSQL_TYPE_SET`
+* `MYSQL_TYPE_TINY_BLOB`
+* `MYSQL_TYPE_MEDIUM_BLOB`
+* `MYSQL_TYPE_LONG_BLOB`
+* `MYSQL_TYPE_BLOB`
+* `MYSQL_TYPE_VAR_STRING`
+* `MYSQL_TYPE_STRING`
+* `MYSQL_TYPE_GEOMETRY`
 
 #### enum mysql\_enum\_shutdown\_level
 
 `enum mysql_enum_shutdown_level` is used as a parameter in [mysql\_server\_shutdown()](api-functions/mysql_server_end.md) and has the following constants:
 
-* SHUTDOWN\_DEFAULT
-* KILL\_QUERY
-* KILL\_CONNECTION
+* `SHUTDOWN_DEFAULT`
+* `KILL_QUERY`
+* `KILL_CONNECTION`
 
 #### enum enum\_stmt\_attr\_type
 
@@ -77,21 +77,21 @@ MariaDB Connector/C provides the following types and definitions.
 
 `enum_cursor_type` specifies the cursor type and is used in [mysql\_stmt\_attr\_set()](api-prepared-statement-functions/mysql_stmt_attr_set.md) function. Currently the following constants are supported:
 
-* CURSOR\_TYPE\_READ\_ONLY
-* CURSOR\_TYPE\_NO\_CURSOR
+* `CURSOR_TYPE_READ_ONLY`
+* `CURSOR_TYPE_NO_CURSOR`
 
 #### enum enum\_indicator\_type
 
 `enum_indicator_type` describes the type of indicator used for prepared statements bulk operations.
 
-|                              |                            |
-| ---------------------------- | -------------------------- |
-| STMT\_INDICATOR\_NTS         | String is zero terminated  |
-| STMT\_INDICATOR\_NONE        | No indicator in use        |
-| STMT\_INDICATOR\_NULL        | Value is NULL              |
-| STMT\_INDICATOR\_DEFAULT     | Use default value          |
-| STMT\_INDICATOR\_IGNORE      | Ignore the specified value |
-| STMT\_INDICATOR\_IGNORE\_ROW | Skip the current row       |
+|                             |                            |
+| --------------------------- | -------------------------- |
+| `STMT_INDICATOR_NTS`        | String is zero terminated  |
+| `STMT_INDICATOR_NONE`       | No indicator in use        |
+| `STMT_INDICATOR_NULL`       | Value is NULL              |
+| `STMT_INDICATOR_DEFAULT`    | Use default value          |
+| `STMT_INDICATOR_IGNORE`     | Ignore the specified value |
+| `STMT_INDICATOR_IGNORE_ROW` | Skip the current row       |
 
 ### Definitions
 
@@ -99,54 +99,22 @@ MariaDB Connector/C provides the following types and definitions.
 
 The following field flags are used in [MYSQL\_FIELD](mariadb-connectorc-data-structures.md) structure.
 
-|                          |       |                                                                  |
-| ------------------------ | ----- | ---------------------------------------------------------------- |
-| Flag                     | Value | Description                                                      |
-| NOT\_NULL\_FLAG          | 1     | Field can't be NULL                                              |
-| PRI\_KEY\_FLAG           | 2     | Field is part of primary key                                     |
-| UNIQUE\_KEY\_FLAG        | 4     | Field is part of unique key                                      |
-| MULTIPLE\_KEY\_FLAG      | 8     | Field is part of a key                                           |
-| BLOB\_FLAG               | 16    | Field is a blob                                                  |
-| UNSIGNED\_FLAG           | 32    | Field is unsigned integer                                        |
-| ZEROFILL\_FLAG           | 64    | Field is zero filled                                             |
-| BINARY\_FLAG             | 128   | Field is binary                                                  |
-| ENUM\_FLAG               | 256   | Field is enum                                                    |
-| AUTO\_INCREMENT\_FLAG    | 512   | Field is an autoincrement field                                  |
-| TIMESTAMP\_FLAG          | 1024  | Field is a timestamp                                             |
-| SET\_FLAG                | 2048  | Field is a set                                                   |
-| NO\_DEFAULT\_VALUE\_FLAG | 4096  | Field has no default value                                       |
-| ON\_UPDATE\_NOW\_FLAG    | 8192  | If a field is updated it will get the current time value (NOW()) |
-| NUM\_FLAG                | 32768 | Field is numeric                                                 |
+<table><thead><tr><th></th><th width="89"></th><th></th></tr></thead><tbody><tr><td>Flag</td><td>Value</td><td>Description</td></tr><tr><td><code>NOT_NULL_FLAG</code></td><td>1</td><td>Field can't be NULL</td></tr><tr><td><code>PRI_KEY_FLAG</code></td><td>2</td><td>Field is part of primary key</td></tr><tr><td><code>UNIQUE_KEY_FLAG</code></td><td>4</td><td>Field is part of unique key</td></tr><tr><td><code>MULTIPLE_KEY_FLAG</code></td><td>8</td><td>Field is part of a key</td></tr><tr><td><code>BLOB_FLAG</code></td><td>16</td><td>Field is a blob</td></tr><tr><td><code>UNSIGNED_FLAG</code></td><td>32</td><td>Field is unsigned integer</td></tr><tr><td><code>ZEROFILL_FLAG</code></td><td>64</td><td>Field is zero filled</td></tr><tr><td><code>BINARY_FLAG</code></td><td>128</td><td>Field is binary</td></tr><tr><td><code>ENUM_FLAG</code></td><td>256</td><td>Field is enum</td></tr><tr><td><code>AUTO_INCREMENT_FLAG</code></td><td>512</td><td>Field is an autoincrement field</td></tr><tr><td><code>TIMESTAMP_FLAG</code></td><td>1024</td><td>Field is a timestamp</td></tr><tr><td><code>SET_FLAG</code></td><td>2048</td><td>Field is a set</td></tr><tr><td><code>NO_DEFAULT_VALUE_FLAG</code></td><td>4096</td><td>Field has no default value</td></tr><tr><td><code>ON_UPDATE_NOW_FLAG</code></td><td>8192</td><td>If a field is updated it will get the current time value (NOW())</td></tr><tr><td><code>NUM_FLAG</code></td><td>32768</td><td>Field is numeric</td></tr></tbody></table>
 
 #### Server Status
 
 The server\_status can be obtained by the [mariadb\_get\_infov()](api-functions/mariadb_get_infov.md) function using the `MARIADB_CONNECTION_SERVER_STATUS` option.
 
-|                                        |       |                                                                                                   |
-| -------------------------------------- | ----- | ------------------------------------------------------------------------------------------------- |
-| SERVER\_STATUS\_IN\_TRANS              | 1     | A transaction is currently active                                                                 |
-| SERVER\_STATUS\_AUTOCOMMIT             | 2     | Autocommit mode is set                                                                            |
-| SERVER\_MORE\_RESULTS\_EXISTS          | 8     | more results exists (more packet follow)                                                          |
-| SERVER\_QUERY\_NO\_GOOD\_INDEX\_USED   | 16    |                                                                                                   |
-| SERVER\_QUERY\_NO\_INDEX\_USED         | 32    |                                                                                                   |
-| SERVER\_STATUS\_CURSOR\_EXISTS         | 64    | when using COM\_STMT\_FETCH, indicate that current cursor still has result                        |
-| SERVER\_STATUS\_LAST\_ROW\_SENT        | 128   | when using COM\_STMT\_FETCH, indicate that current cursor has finished to send results            |
-| SERVER\_STATUS\_DB\_DROPPED            | 1<<8  | database has been dropped                                                                         |
-| SERVER\_STATUS\_NO\_BACKSLASH\_ESCAPES | 1<<9  | current escape mode is "no backslash escape"                                                      |
-| SERVER\_STATUS\_METADATA\_CHANGED      | 1<<10 | A DDL change did have an impact on an existing PREPARE (an automatic reprepare has been executed) |
-| SERVER\_QUERY\_WAS\_SLOW               | 1<<11 | Last statement took more than the time value specified in server variable long\_query\_time.      |
-| SERVER\_PS\_OUT\_PARAMS                | 1<<12 | this resultset contain stored procedure output parameter                                          |
-| SERVER\_STATUS\_IN\_TRANS\_READONLY    | 1<<13 | current transaction is a read-only transaction                                                    |
-| SERVER\_SESSION\_STATE\_CHANGED        | 1<<14 | session state change. see Session change type for more information                                |
+<table><thead><tr><th></th><th width="91"></th><th></th></tr></thead><tbody><tr><td><code>SERVER_STATUS_IN_TRANS</code></td><td>1</td><td>A transaction is currently active</td></tr><tr><td><code>SERVER_STATUS_AUTOCOMMIT</code></td><td>2</td><td>Autocommit mode is set</td></tr><tr><td><code>SERVER_MORE_RESULTS_EXISTS</code></td><td>8</td><td>more results exists (more packet follow)</td></tr><tr><td><code>SERVER_QUERY_NO_GOOD_INDEX_USED</code></td><td>16</td><td></td></tr><tr><td><code>SERVER_QUERY_NO_INDEX_USED</code></td><td>32</td><td></td></tr><tr><td><code>SERVER_STATUS_CURSOR_EXISTS</code></td><td>64</td><td>when using <code>COM_STMT_FETCH</code>, indicate that current cursor still has result</td></tr><tr><td><code>SERVER_STATUS_LAST_ROW_SENT</code></td><td>128</td><td>when using <code>COM_STMT_FETCH</code>, indicate that current cursor has finished to send results</td></tr><tr><td><code>SERVER_STATUS_DB_DROPPED</code></td><td>1&#x3C;&#x3C;8</td><td>database has been dropped</td></tr><tr><td><code>SERVER_STATUS_NO_BACKSLASH_ESCAPES</code></td><td>1&#x3C;&#x3C;9</td><td>current escape mode is "no backslash escape"</td></tr><tr><td><code>SERVER_STATUS_METADATA_CHANGED</code></td><td>1&#x3C;&#x3C;10</td><td>A DDL change did have an impact on an existing PREPARE (an automatic reprepare has been executed)</td></tr><tr><td><code>SERVER_QUERY_WAS_SLOW</code></td><td>1&#x3C;&#x3C;11</td><td>Last statement took more than the time value specified in server variable <code>long_query_time</code>.</td></tr><tr><td><code>SERVER_PS_OUT_PARAMS</code></td><td>1&#x3C;&#x3C;12</td><td>this <code>resultset</code> contain stored procedure output parameter</td></tr><tr><td><code>SERVER_STATUS_IN_TRANS_READONLY</code></td><td>1&#x3C;&#x3C;13</td><td>current transaction is a read-only transaction</td></tr><tr><td><code>SERVER_SESSION_STATE_CHANGED</code></td><td>1&#x3C;&#x3C;14</td><td>session state change. see Session change type for more information</td></tr></tbody></table>
 
 #### Macros
 
 |                            |                                            |
 | -------------------------- | ------------------------------------------ |
-| IS\_PRI\_KEY(flag)         | True if the field is part of a primary key |
-| IS\_NOT\_NULL(flags)       | True if the field is defined as not NULL   |
-| IS\_BLOB(flags)            | True if the field is a text or blob field  |
-| IS\_NUM(column\_type)      | True if the column type is numeric         |
-| IS\_LONGDATA(column\_type) | True if the column is a blob or text field |
+| `IS_PRI_KEY(flag)`         | True if the field is part of a primary key |
+| `IS_NOT_NULL(flags)`       | True if the field is defined as not NULL   |
+| `IS_BLOB(flags)`           | True if the field is a text or blob field  |
+| `IS_NUM(column_type)`      | True if the column type is numeric         |
+| `IS_LONGDATA(column_type)` | True if the column is a blob or text field |
 
 {% @marketo/form formId="4316" %}
