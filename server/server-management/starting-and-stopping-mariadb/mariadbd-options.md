@@ -353,6 +353,7 @@ Options that are also system variables are listed after:
 ### Optimizer Options and System Variables
 
 * [alter-algorithm](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm)
+* [analyze-max-length](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_max_length)
 * [analyze-sample-percentage](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_sample_percentage)
 * [big-tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#big_tables)
 * [bulk-insert-buffer-size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bulk_insert_buffer_size)
