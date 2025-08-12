@@ -12,7 +12,7 @@ Tries to obtain a lock with a name given by the string `str`, using a timeout of
 
 A lock is released with [RELEASE\_LOCK()](release_lock.md), when the connection terminates (either normally or abnormally). A connection can hold multiple locks at the same time, so a lock that is no longer needed needs to be explicitly released.
 
-The [IS\_FREE\_LOCK](is_free_lock.md) function returns whether a specified lock a free or not, and the [IS\_USED\_LOCK](is_used_lock.md) whether the function is in use or not.
+The [IS\_FREE\_LOCK](is_free_lock.md) function returns whether a specified lock is free or not, and the [IS\_USED\_LOCK](is_used_lock.md) whether the function is in use or not.
 
 Locks obtained with `GET_LOCK()` do not interact with transactions. That is, committing a transaction does not release any such locks obtained during the transaction.
 
