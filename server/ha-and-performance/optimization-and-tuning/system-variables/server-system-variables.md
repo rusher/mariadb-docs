@@ -116,6 +116,19 @@ The suffix can be upper or lower-case.
 * Introduced: [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes)
 * Deprecated: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
+#### `analyze_max_length`
+
+* Description: Prevents collection of column statistics for `CHAR`/`VARCHAR` columns that can be analyzed automatically by `ANALYZE TABLE PERSISTENT`. Columns exceeding this threshold will be skipped unless included explicitly in `FOR COLUMNS(...)`
+* Commandline: `--analyze_max_length=default`
+* Scope: Global, Session
+* Dynamic: Yes
+* Data Type: `Integer (byte size)/ ulonglong`
+* Default Value: `4G (bytes)`
+* Applies To: `ANALYZE TABLE PERSISTENT`
+* Introduced: MariaDB **12.0+**
+* Excludes: Columns longer than the defined threshold (default: 4G)
+* Can override: With `FOR COLUMNS(...)` syntax
+
 #### `analyze_sample_percentage`
 
 * Description: Percentage of rows from the table [ANALYZE TABLE](../../../reference/sql-statements/table-statements/analyze-table.md) will sample to collect table statistics. Set to 0 to let MariaDB decide what percentage of rows to sample.

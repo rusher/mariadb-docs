@@ -1047,6 +1047,7 @@
       * [System and Status Variables Added By Major Release](ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/README.md)
         * [System Variables Added in MariaDB 12.1](ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-12.1.md)
         * [System Variables Added in MariaDB 12.0](ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-12.0.md)
+        * [System Variables Added in MariaDB 12.0](ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-12.0-1.md)
         * [System Variables Added in MariaDB 11.8](ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-11-8.md)
         * [System Variables Added in MariaDB 11.4](ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-11-4.md)
         * [Status Variables Added in MariaDB 11.4](ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-11-4.md)
