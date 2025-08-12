@@ -118,16 +118,16 @@ The suffix can be upper or lower-case.
 
 #### `analyze_max_length`
 
-* Description: Prevents collection of column statistics for `CHAR`/`VARCHAR` columns that can be analyzed automatically by `ANALYZE TABLE PERSISTENT`. Columns exceeding this threshold will be skipped unless included explicitly in `FOR COLUMNS(...)`
-* Commandline: `--analyze_max_length=default`
+* Description: Prevents collection of column statistics for [`CHAR`](../../../reference/data-types/string-data-types/char.md)/[`VARCHAR`](../../../reference/data-types/string-data-types/varchar.md) columns that can be analyzed automatically by [`ANALYZE TABLE PERSISTENT`](../../../reference/sql-statements/table-statements/analyze-table.md). Columns exceeding this threshold in bytes will be skipped unless included explicitly in `FOR COLUMNS(...)`.
+* Command line: `--analyze-max-length=val`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `Integer (byte size)/ ulonglong`
-* Default Value: `4G (bytes)`
-* Applies To: `ANALYZE TABLE PERSISTENT`
-* Introduced: [MariaDB 10.6.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10.6.23-release-notes)
-* Excludes: Columns longer than the defined threshold (default: 4G)
-* Can override: With `FOR COLUMNS(...)` syntax
+* Data Type: `INT UNSIGNED`
+* Default Value: `4294967295 (4G)`
+* Range: `32` to `4294967295`
+* Introduced: [MariaDB 10.6.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10.6.23-release-notes), [MariaDB 10.11.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.14-release-notes), [MariaDB 11.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes), [MariaDB 11.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11.8.3-release-notes), [MariaDB 12.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes), [MariaDB 12.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes)
+
+
 
 #### `analyze_sample_percentage`
 
