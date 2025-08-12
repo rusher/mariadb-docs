@@ -192,7 +192,7 @@ GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR ON *.* TO 'mariadb-backup'@'l
 ```
 {% endtab %}
 
-{% tab title="MairaDB 10.4 and Earlier" %}
+{% tab title="MariaDB 10.4 and Earlier" %}
 Prior to 10.5, the required privileges are:
 
 ```sql
@@ -211,7 +211,7 @@ If your database server is also using the [MyRocks storage engine](../../storage
 To use the [--history](mariadb-backup-options.md#history) option, the backup user also needs to have the following privileges granted:
 
 ```sql
-GRANT CREATE, INSERT ON mysql.mariadb_backup_history TO 'mariadb-backup'@'localhost';
+GRANT CREATE, ALTER, INSERT ON mysql.mariadb_backup_history TO 'mariadb-backup'@'localhost';
 ```
 
 Prior to MariaDB 10.11, the necessary permissions to use [--history](mariadb-backup-options.md#history) were:
@@ -224,6 +224,7 @@ If you're upgrading from an older version and you want to use the new default ta
 
 ```sql
 RENAME TABLE PERCONA_SCHEMA.xtrabackup_history TO mysql.mariadb_backup_history;
+ALTER TABLE mysql.mariadb_backup_history MODIFY format ENUM('file', 'tar', 'mbstream') DEFAULT NULL;
 ```
 
 The user account information can be specified with the [--user](mariadb-backup-options.md#user) and [--password](mariadb-backup-options.md#p-password) command-line options. For example:
