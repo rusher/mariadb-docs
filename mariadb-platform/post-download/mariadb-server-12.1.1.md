@@ -2,29 +2,29 @@
 noIndex: true
 ---
 
-# MariaDB Server 12.0.2
+# MariaDB Server 12.1.1
 
 {% @marketo/form formId="4279" %}
 
 ## About this Release
 
-* MariaDB Server 12.0.2 was released on 7 Aug 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.1-release-notes)
+* MariaDB Server 12.1.1 was released on 7 Aug 2025
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes)
 * MariaDB Server is open source software, the [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 * This release is Release Candidate (RC) maturity
 
 ## About this Release Series
 
-* This release is part of the MariaDB 12.0 release series
-* MariaDB 12.0 is a rolling release series
-* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
+* This release is part of the MariaDB 12.1 release series
+* MariaDB 12.1 is a rolling release series
+* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)
 
 ## Release History
 
-* The prior release in this series was MariaDB 12.0.1, released on 5 Jun 2025
-* This release (MariaDB 12.0.2) was released on 7 Aug 2025
+* The prior release in this series was MariaDB 12.1.0, released on 26 Jun 2025
+* This release (MariaDB 12.1.1) was released on 7 Aug 2025
 
-{% include "../.gitbook/includes/most-recent-12.0.md" %}
+{% include "../.gitbook/includes/most-recent-12.1.md" %}
 
 ## Useful Resources
 
