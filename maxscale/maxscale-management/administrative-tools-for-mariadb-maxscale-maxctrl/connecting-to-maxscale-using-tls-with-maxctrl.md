@@ -2,7 +2,7 @@
 
 ## Overview
 
-[MaxCtrl](./) is a command-line utility that can perform administrative tasks using [MaxScale's REST API](operating-maxscale-with-maxctrl/). It is possible to connect to MaxScale using TLS with MaxCtrl.
+[MaxCtrl](./) is a command-line utility that can perform administrative tasks using [MaxScale's REST API](broken-reference). It is possible to connect to MaxScale using TLS with MaxCtrl.
 
 ## Connecting to MaxScale using TLS
 

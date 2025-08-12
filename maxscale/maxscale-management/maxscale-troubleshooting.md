@@ -72,7 +72,7 @@ ERROR 1045 (28000): Access denied for user 'bob'@'office' (using password: YES)
 
 Make sure you create users for both `'bob'@'office'` and `'bob'@'maxscale'`. The host `'office'` is where the client is attempting to connect from and `'maxscale'` is the host where MaxScale is installed.
 
-If you do not want to create a second set of users, you can enable proxy\_protocol in MaxScale and configure the MariaDB server to [allow proxied connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks) from the MaxScale host.
+If you do not want to create a second set of users, you can enable proxy\_protocol in MaxScale and configure the MariaDB server to [allow proxied connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#proxy_protocol_networks) from the MaxScale host.
 
 #### Verifying that a user is allowed to connect
 

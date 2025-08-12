@@ -2,7 +2,7 @@
 
 ## Overview
 
-[MaxGUI](./) is a graphical utility that can perform administrative tasks using [MaxScale's REST API](../administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-maxctrl/). It is available starting in MaxScale 2.5. It supports many different operations.
+[MaxGUI](./) is a graphical utility that can perform administrative tasks using [MaxScale's REST API](broken-reference). It is available starting in MaxScale 2.5. It supports many different operations.
 
 [MaxGUI](./) is not available out-of-the box. MaxScale requires some configuration before [MaxGUI](./) can be used.
 

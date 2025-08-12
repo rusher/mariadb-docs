@@ -13,11 +13,11 @@ MariaDB MaxScale provides various administrative interfaces can be used to perfo
 
 MaxScale supports different administrative interfaces for different kinds of environments and preferences:
 
-| Interface                                                                                     | Description                               |
-| --------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| [MaxCtrl](administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-maxctrl/) | Command-line administrative utility.      |
-| [MaxGUI](maxgui/operating-maxscale-with-maxgui/)                                              | Graphical administrative utility.         |
-| [REST API](broken-reference)                                                                  | REST API for programmatic administration. |
+| Interface                     | Description                               |
+| ----------------------------- | ----------------------------------------- |
+| [MaxCtrl](broken-reference)   | Command-line administrative utility.      |
+| [MaxGUI](broken-reference)    | Graphical administrative utility.         |
+| [REST API](broken-reference/) | REST API for programmatic administration. |
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

@@ -44,7 +44,7 @@ The following statements are routed to the primary server:
 * Queries within open transactions\
   If the application uses explicit transactions, then all queries within the transaction will be routed to the primary server.\
   Explicit transactions are used in the following cases:
-  * When [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#autocommit) is set to OFF.
+  * When [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#autocommit) is set to OFF.
   * When [BEGIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction) is executed.
   * When [START TRANSACTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction) is executed.
 

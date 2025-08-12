@@ -6,7 +6,7 @@ When using MaxScale, it is often necessary to temporarily remove a server from t
 
 MaxScale allows users to set servers to "maintenance mode", which prevents MaxScale from routing traffic to the server and prevents it from being elected as the new primary server during failover or switchover.
 
-MaxGUI is a graphical utility that can perform administrative tasks using MaxScale's [MaxScale's REST API](../administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-maxctrl/). It is available starting in [MaxScale 2.5](broken-reference). It can be used to set a server to maintenance mode.
+MaxGUI is a graphical utility that can perform administrative tasks using MaxScale's [MaxScale's REST API](broken-reference). It is available starting in [MaxScale 2.5](broken-reference). It can be used to set a server to maintenance mode.
 
 ## Setting a Server to Maintenance Mode
 

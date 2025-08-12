@@ -1264,7 +1264,7 @@ lost. This time ultimately depends on TCP keepalive settings on the machines\
 running MariaDB Server.
 
 On MariaDB Server 10.3.3 and later, the TCP keepalive settings can be configured\
-for just the server process. See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#tcp_keepalive_interval)\
+for just the server process. See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#tcp_keepalive_interval)\
 for information on settings _tcp\_keepalive\_interval_, _tcp\_keepalive\_probes_ an&#x64;_&#x74;cp\_keepalive\_time_. These settings can also be set on the operating system\
 level, as described [here](https://www.tldp.org/HOWTO/TCP-Keepalive-HOWTO/usingkeepalive.html).
 

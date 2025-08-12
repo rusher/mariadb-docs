@@ -50,7 +50,7 @@ Perform the following procedure on all MariaDB Servers used by MaxScale:
 * On RHEL, CentOS, Rocky Linux, and SLES, a good custom configuration file would be: `/etc/my.cnf.d/z-custom-my.cnf`
 * On Debian and Ubuntu, a good custom configuration file would be: `/etc/mysql/mariadb.conf.d/z-custom-my.cnf`
 
-2. Set the [session\_track\_system\_variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#session_track_system_variables) system variable to last\_gtid, so that the server will track session-level changes to the value of the [last\_gtid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#last_gtid) system variable.
+2. Set the [session\_track\_system\_variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#session_track_system_variables) system variable to last\_gtid, so that the server will track session-level changes to the value of the [last\_gtid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#last_gtid) system variable.
 
 It needs to be set in the configuration file in a group that will be read by [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client), such as \[mariadb] or \[server].
 

@@ -4,7 +4,7 @@
 
 MaxScale has a [REST API](../../reference/maxscale-rest-api/), which can be configured to require authentication. When first installed, it has a single default admin user (admin) and password (mariadb). However, this user can be deleted, and other users can be created.
 
-[MaxCtrl](./) is a command-line utility that can perform administrative tasks using MaxScale's [REST API](broken-reference/). It can create a user for the [REST API](operating-maxscale-with-maxctrl/operating-maxscale-with-maxctrl-creating-a-rest-api-user-for-maxscale-with.md).
+[MaxCtrl](./) is a command-line utility that can perform administrative tasks using MaxScale's [REST API](broken-reference/). It can create a user for the [REST API](broken-reference).
 
 ## User Types
 

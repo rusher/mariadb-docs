@@ -13,7 +13,7 @@ When automatic failover is enabled for MariaDB Monitor, it does the following:
 3. It prepares the new primary server:
 
 * It stops its replica threads by executing [STOP REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica) and [RESET REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica).
-* It configures it to allow writes by setting [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) to OFF.
+* It configures it to allow writes by setting [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#read_only) to OFF.
 * If the handle\_events parameter is true, then it enable events that were previously enabled on the old primary server.
 * If the promotion\_sql\_file parameter is set, then the script referred to by the parameter is executed.
 * If there is an external master, then it configures that replication by executing [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to) and [START REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica).

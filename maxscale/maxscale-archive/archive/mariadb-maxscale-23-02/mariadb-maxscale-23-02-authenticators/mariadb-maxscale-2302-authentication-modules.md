@@ -161,7 +161,7 @@ authenticator_options=match_host=false
 
 Controls database name matching for authentication\
 when an incoming client logs in to a non-empty database. The setting functions\
-similar to the MariaDB Server setting [lower\_case\_table\_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables)\
+similar to the MariaDB Server setting [lower\_case\_table\_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables)\
 and should be set to the value used by the backends.
 
 The setting accepts the values 0, 1 or 2:
