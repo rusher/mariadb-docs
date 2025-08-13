@@ -2,7 +2,7 @@
 
 <a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a> <a href="../../mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-connector-odbc-3.2.6-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
 
-**Release date:** ?
+**Release date:** 30 May 2025
 
 For the highlights of this release, see the [release notes](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes.md).
 
