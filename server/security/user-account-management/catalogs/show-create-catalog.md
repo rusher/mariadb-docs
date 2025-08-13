@@ -1,8 +1,6 @@
 # SHOW CREATE CATALOG
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
-
-Catalog support is planned for 12.0.
+{% include "../../../.gitbook/includes/catalogs.md" %}
 
 ## Syntax
 
