@@ -16,6 +16,8 @@
 
 {% include "../../mariadb-platform/.gitbook/includes/most-recent-java.md" %}
 
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-java.md" %}
+
 ## Useful Resources
 
 * [MariaDB Server Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/)
