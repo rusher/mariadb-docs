@@ -6,7 +6,7 @@ Developers can use MariaDB Connector/C++ to perform basic DML (Data Manipulation
 
 By default, MariaDB Connector/C++ enables auto-commit. When auto-commit is enabled, each SQL statement is executed in its own transaction.
 
-Confirm that auto-commit is enabled by calling `sql::Connection::getAutoCommit():`
+Confirm the `auto-commit` is enabled by calling `sql::Connection::getAutoCommit():`
 
 ```c++
 bool isAutoCommit = conn->getAutoCommit();
@@ -14,7 +14,7 @@ bool isAutoCommit = conn->getAutoCommit();
 
 ## Multi-Statement Transactions
 
-MariaDB Connector/C++ supports multi-statement transactions when auto-commit is disabled.
+MariaDB Connector/C++ supports multi-statement transactions when the  `auto-commit` is disabled.
 
 Disable auto-commit by calling `sql::Connection::setAutoCommit():`
 
@@ -22,26 +22,26 @@ Disable auto-commit by calling `sql::Connection::setAutoCommit():`
 conn->setAutoCommit(false);
 ```
 
-When auto-commit is disabled, a new transaction is automatically started when the current transaction is manually committed or rolled back. This means your application does not need to manually start each new transaction with [START TRANSACTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction) or [BEGIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programmatic-compound-statements/begin-end).
+When auto-commit is disabled, a new transaction is automatically started when the current transaction is manually committed or rolled back. It means the application does not need to manually start each new transaction with [START TRANSACTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/start-transaction) or [BEGIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/clientserver-protocol/replication-protocol/begin_load_query_event).
 
 The transaction can be manually managed by performing the following operations:
 
-* Setting the transaction isolation by calling `sql::Connection::setTransactionIsolation()` or using [SET TRANSACTION ISOLATION LEVEL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/set-transaction).
-* Setting the transaction to read-only by calling `sql::Connection::setReadOnly()` or using [SET TRANSACTION READ ONLY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/set-transaction).
-* Creating a savepoint by calling `sql::Connection::setSavepoint()` or using [SAVEPOINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/savepoint).
-* Rolling back to a savepoint by calling `sql::Connection::releaseSavepoint()` or using [RELEASE SAVEPOINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/savepoint).
-* Committing the transaction by calling `sql::Connection::commit()` or using [COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/commit).
-* Rolling back the transaction by calling `sql::Connection::rollback()` or using [ROLLBACK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/rollback).
+* Setting the transaction isolation by calling `sql::Connection::setTransactionIsolation()` or using [SET TRANSACTION ISOLATION LEVEL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/set-transaction).
+* Set the transaction to read-only by calling `sql::Connection::setReadOnly()` or using [SET TRANSACTION READ ONLY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/set-transaction).
+* Create a `savepoint` by calling `sql::Connection::setSavepoint()` or using [SAVEPOINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/savepoint).
+* Roll back to a `savepoint` by calling `sql::Connection::releaseSavepoint()` or using [RELEASE SAVEPOINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/savepoint).
+* Commit the transaction by calling `sql::Connection::commit()` or using [COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/commit).
+* Roll back the transaction by calling `sql::Connection::rollback()` or using [ROLLBACK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/rollback).
 
 ## Code Example: DML in Transaction
 
-[UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update), [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert), and [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete) are DML (Data Manipulation Language) operations that modify data in a table.
+[UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update), [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert), and [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) are DML (Data Manipulation Language) operations that modify data in a table.
 
-The following code demonstrates how to execute [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update) on the [example table](setup-for-connector-cpp-examples.md) within a transaction with auto-commit disabled.
+The following code demonstrates how to execute [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) on the [example table](setup-for-connector-cpp-examples.md) within a transaction with auto-commit disabled.
 
-To insert or delete data, replace the [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update) statement in the code example with an [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) or [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statement:
+To insert or delete data, replace the [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) statement in the code example with an [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) or [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) statement:
 
-```c++
+```sql
 // Includes
 #include <iostream>
 #include <mariadb/conncpp.hpp>
@@ -138,13 +138,13 @@ int main(int argc, char **argv)
 }
 ```
 
-The following query confirms the [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update) of the [example table](setup-for-connector-cpp-examples.md):
+The query below confirms the [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) of the [example table](setup-for-connector-cpp-examples.md):
 
 ```sql
 SELECT * FROM test.contacts;
 ```
 
-```
+```sql
 +----+------------+-----------+-------------------------+
 | id | first_name | last_name | email                   |
 +----+------------+-----------+-------------------------+
@@ -157,6 +157,5 @@ SELECT * FROM test.contacts;
 ```
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}
