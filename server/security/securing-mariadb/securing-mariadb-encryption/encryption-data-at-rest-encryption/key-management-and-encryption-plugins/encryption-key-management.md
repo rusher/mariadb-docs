@@ -4,19 +4,29 @@ MariaDB's [data-at-rest encryption](../data-at-rest-encryption-overview.md) requ
 
 MariaDB supports the use of multiple encryption keys. Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports key rotation, then encryption keys can also be rotated, which creates a new version of the encryption key.
 
+## Supported Key Management Plugins list
+
+<table><thead><tr><th width="189">Plugin</th><th width="146">Status</th><th width="190">Key Rotation Support</th><th>Notes</th></tr></thead><tbody><tr><td>File-based key management</td><td>Supported</td><td>No</td><td>Simple but lacks rotation</td></tr><tr><td>HashiCorp Vault plugin</td><td>Supported, Recommended</td><td>Yes</td><td>Best for secure, scalable deployments</td></tr><tr><td>Eperi plugin</td><td>Deprecated</td><td>Yes (legacy)</td><td>No longer supported; do not use for new systems</td></tr></tbody></table>
+
 ## Choosing an Encryption Key Management Solution
 
 How MariaDB manages encryption keys depends on which encryption key management solution you choose. Currently, MariaDB has three options:
 
 ### File Key Management Plugin
 
-The File Key Management plugin that ships with MariaDB is a basic key management and encryption plugin that reads keys from a plain-text file. It can also serve as example and as a starting point when developing a key management plugin.
+The File Key Management plugin that ships with MariaDB is a basic key management and encryption plugin that reads keys from a plain-text file. It can also serve as an example and as a starting point when developing a key management plugin.
 
 For more information, see [File Key Management Plugin](file-key-management-encryption-plugin.md).
 
+### Hashicorp Key Management Plugin
+
+Integrates MariaDB encryption with Vault for secure key management.
+
+For more information, refer to the [Hashicorp Key Management Plugin](hashicorp-key-management-plugin.md).
+
 ### AWS Key Management Plugin
 
-The AWS Key Management plugin is a key management and encryption plugin that uses the Amazon Web Services (AWS) Key Management Service (KMS). The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.com/aws/aws-sdk-cpp), which uses the [Apache License, Version 2.0](https://github.com/aws/aws-sdk-cpp/blob/master/LICENSE). This license is not compatible with MariaDB Server's [GPL 2.0 license](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md), so we are not able to distribute packages that contain the AWS Key Management plugin. Therefore, the only way to currently obtain the plugin is to install it from the source.
+The AWS Key Management plugin is a key management and encryption plugin that uses the Amazon Web Services (AWS) Key Management Service (KMS). The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.com/aws/aws-sdk-cpp), which uses the [Apache License, Version 2.0](https://github.com/aws/aws-sdk-cpp/blob/master/LICENSE). The license is not compatible with MariaDB Server's [GPL 2.0 license](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md), so we are not able to distribute packages that contain the AWS Key Management plugin. Therefore, the only way to currently obtain the plugin is to install it from the source.
 
 For more information, see [AWS Key Management Plugin](aws-key-management-encryption-plugin.md).
 
@@ -60,7 +70,7 @@ The [Aria storage engine](../../../../../server-usage/storage-engines/aria/) doe
 
 #### Encryption Plugins without Key Rotation Support
 
-* The [File Key Management Plugin](file-key-management-encryption-plugin.md) does not support encryption key rotation, because it does not use a backend key management service (KMS).
+* The [File Key Management Plugin](file-key-management-encryption-plugin.md) does not support encryption key rotation because it does not use a backend key management service (KMS).
 
 ## Encryption Plugin API
 
