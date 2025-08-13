@@ -1,6 +1,6 @@
 # Connector/C 3.4.4 Release Notes
 
-The most recent [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](mariadb-connector-c-3-4-5-release-notes.md)
+{% include "../../../.gitbook/includes/latest-c.md" %}
 
 [Download](https://mariadb.com/downloads/connectors)[Release Notes](mariadb-connector-c-3-4-4-release-notes.md)[Changelog](../changelogs/mariadb-connectorc-3-4-changelogs/mariadb-connector-c-3-4-4-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-c/README.md)
 
