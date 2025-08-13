@@ -1,8 +1,6 @@
 # Connecting to a Server Configured for Catalogs
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
-
-Catalog support is planned for 12.0.
+{% include "../../../.gitbook/includes/catalogs.md" %}
 
 When connecting to a MariaDB server configured for [catalogs](./), one has to provide the catalog to connect to. There are several ways to do this:
 
