@@ -1,37 +1,35 @@
 # Java Connector Using Gradle
 
-[MariaDB Connector/J](./) is used to connect applications developed in Java to\
-MariaDB and MySQL databases using the standard JDBC API.
+[MariaDB Connector/J](./) is used to connect applications developed in Java to MariaDB and MySQL databases using the standard JDBC API.
 
 ## Prerequisites
 
-* A MariaDB / MySQL server running on localhost using the default port 3306
+* A MariaDB/MySQL server running on localhost using the default port 3306
 * Java version >= 8
 * Gradle
 
 ## Create Gradle Project
 
-Create a simple Java project with gradle :
+Create a simple Java project with Gradle:
 
 ```bash
 gradle init --type java-library
 ```
 
-The new project will be created in current folder.\
-This folder contains the file `build.gradle` that permits configuring Gradle.
+The new project will be created in the current folder. This folder contains the file `build. gradle` that permits configuring Gradle.
 
 ## Get MariaDB Java Driver
 
-Declares driver in `build.gradle` (and setting java minimal version to 1.8) :
+Declares driver in `build.gradle` (and setting Java minimal version to 1.8) :
 
-The `build.gradle` file will then be :
+The `build. gradle` file will then be :
 
 ```java
-// Apply the java-library plugin to add support for Java Library
+// Apply the Java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 
-// In this section you declare where to find the dependencies of your project
-repositories {
+// In this section, you declare where to find the dependencies of your project
+repositories.
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
@@ -41,10 +39,10 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    // This dependency is exported to consumers, that is to say found on their compile classpath.
+    // This dependency is exported to consumers, that is to say, found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
 
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    // This dependency is used internally, and not exposed to consumers on their compile classpath.
     implementation 'com.google.guava:guava:22.0'
 
     // Use JUnit test framework
@@ -58,23 +56,23 @@ dependencies {
 
 #### Connection
 
-Standard JDBC methods [DriverManager.getConnection(String url, String user, String password)](https://docs.oracle.com/javase/8/docs/api/java/sql/DriverManager.html#getConnection-java.lang.String-java.lang.String-java.lang.String-) are used to connect to the database.
+Standard JDBC methods, [DriverManager.getConnection(String url, String user, String password)](https://docs.oracle.com/javase/8/docs/api/java/sql/DriverManager.html#getConnection-java.lang.String-java.lang.String-java.lang.String-), are used to connect to the database.
 
-Basic url string is standardized for the MariaDB driver: `jdbc:(mysql|mariadb):[replication:|failover:|sequential:|aurora:]//<hostDescription>[,<hostDescription>...]/[database][?<key1>=<value1>[&<key2>=<value2>]]`
+The basic URL string is standardized for the MariaDB driver: `jdbc:(mysql|mariadb):[replication:|failover:|sequential:|aurora:]//<hostDescription>[,<hostDescription>...]/[database][?<key1>=<value1>[&<key2>=<value2>]]`
 
-The MariaDB driver is registered automatically for a url that begins with "jdbc:mariadb:" or "jdbc:mysql:".
+The MariaDB driver is registered automatically for a URL that begins with "jdbc:mariadb:" or "jdbc:mysql:".
 
-Assuming a server is installed on the local machine with default port 3306, the url String is then `"jdbc:mariadb://localhost/"`.
+Assuming a server is installed on the local machine with default port 3306, the URL string is then `"jdbc:mariadb://localhost/"`.
 
-Create a new file `App.java` in `src/main/java` with the following content: (assuming a server is installed on the local machine, with a user "root" with no password) :
+Create a new file `App.java` in `src/main/java` with the following content:(assuming a server is installed on the local machine, with a user "root" with no password):
 
 ```java
-import java.sql.*;
+Import java.sql.*;
 
 public class App {
 
     public static void main( String[] args ) throws SQLException {
-        //create connection for a server installed in localhost, with a user "root" with no password
+        //create a connection for a server installed on localhost, with a user "root" with no password
         try (Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost/", "root", null)) {
             // create a Statement
             try (Statement stmt = conn.createStatement()) {
@@ -90,7 +88,7 @@ public class App {
 }
 ```
 
-To run class App, add a new task in build.gradle:
+To run the class app, add a new task in the build. Gradle:
 
 ```java
 task run (type: JavaExec){
@@ -100,7 +98,7 @@ task run (type: JavaExec){
 }
 ```
 
-build project:
+Build project:
 
 ```shell
 c:\temp\gradle>gradle build
@@ -109,14 +107,12 @@ BUILD SUCCESSFUL in 1s
 4 actionable tasks: 4 up-to-date
 ```
 
-Gradle will automatically download the driver and compile the App file.
-
-To run the App class, just launch the previously-defined task "run":
+Gradle will automatically download the driver and compile the app file. To run the App class, just launch the previously defined task "run":
 
 ```shell
 c:\temp\gradle>gradle run
 
-> Task :run
+> Task: run
 Hello World!
 
 
@@ -126,7 +122,6 @@ BUILD SUCCESSFUL in 1s
 
 ## See Also
 
-* More information at [About MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md)
-
+* More information at [About MariaDB Connector/J](about-mariadb-connector-j.md)
 
 {% @marketo/form formId="4316" %}
