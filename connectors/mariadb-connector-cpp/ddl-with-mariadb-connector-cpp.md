@@ -6,15 +6,15 @@ C++ developers can use MariaDB Connector/C++ to perform basic DDL (Data Definiti
 
 DDL (Data Definition Language) refers to all SQL-schema statements in the SQL standard (ISO/IEC 9075-2:2016).
 
-Some examples of DDL include [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table), [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table), [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table), [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database), and [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table).
+Some examples of DDL include [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table), [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table), [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table), [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database), and [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/truncate-table).
 
 ## Code Example: ALTER TABLE
 
-[ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) is a DDL (Data Definition Language) operation that changes an existing table.
+[ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) is a DDL (Data Definition Language) operation that changes an existing table.
 
-The following code demonstrates how to execute [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) on the [example table](mariadb-connector-cpp-sample-application.md):
+The following code demonstrates how to execute [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) on the [example table](mariadb-connector-cpp-sample-application.md):
 
-```c++
+```sql
 // Includes
 #include <iostream>
 #include <mariadb/conncpp.hpp>
@@ -81,13 +81,13 @@ int main(int argc, char **argv)
 }
 ```
 
-Confirm the table was properly altered by using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) to execute a [DESC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/describe) statement on the same table:
+Confirm the table was properly altered by using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) to execute a [DESC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/describe) statement on the same table:
 
 ```sql
 DESC contacts;
 ```
 
-```
+```sql
 +---------------+--------------+------+-----+---------+----------------+
 | Field         | Type         | Null | Key | Default | Extra          |
 +---------------+--------------+------+-----+---------+----------------+
@@ -98,11 +98,11 @@ DESC contacts;
 +---------------+--------------+------+-----+---------+----------------+
 ```
 
-Code Example: TRUNCATE TABLE [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table) is a DDL (Data Definition Language) operation that deletes all data from an existing table.
+Code Example: `TRUNCATE TABLE` is a DDL (Data Definition Language) operation that deletes all data from an existing table.
 
-The following code demonstrates how to execute [TRUNCATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate) on the [example table](setup-for-connector-cpp-examples.md):
+The following code demonstrates how to execute [TRUNCATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/numeric-functions/truncate) on the [example table](setup-for-connector-cpp-examples.md):
 
-```c++
+```sql
 // Includes
 #include <iostream>
 #include <mariadb/conncpp.hpp>
@@ -169,17 +169,16 @@ int main(int argc, char **argv)
 }
 ```
 
-The following query confirms that the [TRUNCATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate) statement deleted all rows from the [example table](setup-for-connector-cpp-examples.md):
+The following query confirms that the [TRUNCATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/numeric-functions/truncate) statement deleted all rows from the [example table](setup-for-connector-cpp-examples.md):
 
 ```sql
 SELECT * FROM test.contacts;
 ```
 
-```
+```sql
 Empty set (0.000 sec)
 ```
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}
