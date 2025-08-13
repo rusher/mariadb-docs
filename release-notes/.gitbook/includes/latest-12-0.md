@@ -3,6 +3,9 @@ title: latest-12-0
 ---
 
 {% hint style="info" %}
-The most recent release of MariaDB 12.0 is: [**MariaDB 12.0.2**](../../community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes.md) GA -  <a href="https://downloads.mariadb.org/mariadb/12.0.1/" class="button primary">Download Now</a>\
-[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/12.0.1/)
+<p align="center">The most recent release of MariaDB 12.0 is:</p>
+
+<h3 align="center"><a href="../../community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes.md"><strong>MariaDB 12.0.2</strong></a> Stable (GA)  <a href="https://mariadb.com/downloads/" class="button primary">Download Now</a></h3>
+
+<p align="center"><a href="https://downloads.mariadb.org/mariadb/12.0.2/"><sub><em><mark style="color:$info;">Alternate download from mariadb.org</mark></em></sub></a></p>
 {% endhint %}

@@ -3,6 +3,9 @@ title: latest-11-4
 ---
 
 {% hint style="info" %}
-The most recent release of MariaDB 11.4 is: [**MariaDB 11.4.8**](../../community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes.md) Stable (GA) -  <a href="https://mariadb.com/downloads/" class="button primary">Download Now</a>\
-[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.4.8/)
+<p align="center">The most recent release of MariaDB 11.4 is:</p>
+
+<h3 align="center"><a href="../../community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes.md"><strong>MariaDB 11.4.8</strong></a> Stable (GA)  <a href="https://mariadb.com/downloads/" class="button primary">Download Now</a></h3>
+
+<p align="center"><a href="https://downloads.mariadb.org/mariadb/11.4.8/"><sub><em><mark style="color:$info;">Alternate download from mariadb.org</mark></em></sub></a></p>
 {% endhint %}
