@@ -4,17 +4,17 @@ C++ developers can use MariaDB Connector/C++ to perform basic DML (Data Manipula
 
 ## DML Operations
 
-DML (Data Manipulation Language) refers to all SQL-data statements in the SQL standard (_ISO/IEC 9075-2:2016_). Some examples of DML include [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete), [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace), [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select), and [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update).
+DML (Data Manipulation Language) refers to all SQL data statements in the SQL standard (_ISO/IEC 9075-2:2016_). Some examples of DML include [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete), [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert), [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/replace), [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select), and [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update).
 
 ## Code Example: INSERT, UPDATE, DELETE
 
-[INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update), and [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete) are DML (Data Manipulation Language) operations that modify the data in a table.
+[INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert), [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update), and [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) are DML (Data Manipulation Language) operations that modify the data in a table.
 
-The following code demonstrates how to execute [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) on the [example table](setup-for-connector-cpp-examples.md).
+The following code demonstrates how to execute an `INSERT` on the [example table](setup-for-connector-cpp-examples.md).
 
-To update or delete data, replace the [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) statement in the code example with an [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statement:
+To update or delete data, replace the `INSERT` statement in the code example with an `UPDATE` or `DELETE` statement:
 
-```c++
+```sql
 // Includes
 #include <iostream>
 #include <mariadb/conncpp.hpp>
@@ -94,13 +94,13 @@ int main(int argc, char **argv)
 }
 ```
 
-Confirm the data was properly inserted by using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) to execute a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement:
+Confirm the data was properly inserted by using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) to execute a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) statement:
 
 ```sql
 SELECT * FROM test.contacts;
 ```
 
-```
+```sql
 +----+------------+-----------+------------------------+
 | id | first_name | last_name | email                  |
 +----+------------+-----------+------------------------+
@@ -110,11 +110,11 @@ SELECT * FROM test.contacts;
 
 ## Code Example: SELECT
 
-[SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) is a DML (Data Manipulation Language) operation that reads the data from a table.
+[SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) is a DML (Data Manipulation Language) operation that reads the data from a table.
 
-The following code demonstrates how to execute [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) on the [example table](setup-for-connector-cpp-examples.md):
+The following code demonstrates how to execute `SELECT` on the [example table](setup-for-connector-cpp-examples.md):
 
-```c++
+```sql
 // Includes
 #include <iostream>
 #include <mariadb/conncpp.hpp>
@@ -198,13 +198,12 @@ int main(int argc, char **argv)
 
 Example output:
 
-```
+```sql
 - John Smith <john.smith@example.com>
 - Jon Smith <jon.smith@example.com>
 - Johnny Smith <johnny.smith@example.com>
 ```
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}
