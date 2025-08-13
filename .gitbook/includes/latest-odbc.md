@@ -3,7 +3,7 @@ title: latest-odbc
 ---
 
 {% hint style="info" %}
-The most recent [_**Stable**_](../../release-notes/community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:
+<p align="center">The most recent <a href="../../release-notes/community-server/about/release-criteria.md"><em><strong>Stable</strong></em></a> <em><strong>(GA)</strong></em> release of MariaDB Connector/ODBC is:</p>
 
-## [**MariaDB Connector/ODBC 3.2.5**](../../release-notes/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
+<h2 align="center"><a href="../../release-notes/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes.md"><strong>MariaDB Connector/ODBC 3.2.6</strong></a></h2>
 {% endhint %}

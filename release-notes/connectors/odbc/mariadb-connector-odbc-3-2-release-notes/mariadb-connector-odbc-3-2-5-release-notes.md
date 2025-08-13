@@ -1,5 +1,7 @@
 # Connector/ODBC 3.2.5 Release Notes
 
+{% include "../../../../.gitbook/includes/latest-odbc.md" %}
+
 [Download](https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector/) | [Release Notes](mariadb-connector-odbc-3-2-5-release-notes.md) | [Changelog](../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-5-changelog.md) | [About MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/mariadb-connector-odbc-guide)
 
 **Release date:** 24 Feb 2025

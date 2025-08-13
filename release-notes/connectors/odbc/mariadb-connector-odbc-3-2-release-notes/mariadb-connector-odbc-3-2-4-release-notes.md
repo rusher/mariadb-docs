@@ -1,5 +1,7 @@
 # Connector/ODBC 3.2.4 Release Notes
 
+{% include "../../../../.gitbook/includes/latest-odbc.md" %}
+
 [Download](https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector/) | [Release Notes](mariadb-connector-odbc-3-2-4-release-notes.md) | [Changelog](../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-4-changelog.md) | [About MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-odbc/README.md)
 
 **Release date:** 14 Nov 2024
