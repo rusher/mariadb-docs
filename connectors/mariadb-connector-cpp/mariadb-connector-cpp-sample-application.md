@@ -1,23 +1,23 @@
 # MariaDB Connector/C++ Sample Application
 
-[tasks.cpp](https://github.com/mariadb-corporation/dev-example-todo/blob/master/console/cpp/tasks.cpp) is a complete sample application that demonstrates CRUD (Create, Read, Update, Delete) operations using the MariaDB Connector/C++.
+Tasks.cpp is a complete sample application that demonstrates `CRUD` (`Create, Read, Update, Delete`) operations using the MariaDB Connector/C++.
 
 ## Setup
 
-The [tasks.cpp](https://github.com/mariadb-corporation/dev-example-todo/blob/master/console/cpp/tasks.cpp) sample application depends on a database `todo` and table `tasks`.
+The tasks.cpp sample application depends on a database, `todo` and the table task.,
 
 Create the example database and table:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS todo;
 
-CREATE TABLE todo.tasks (
+CREATE TABLE todo. tasks (
    id INT AUTO_INCREMENT PRIMARY KEY,
    description VARCHAR(200),
    completed BOOLEAN DEFAULT FALSE);
 ```
 
-Create a user `db_user` with privileges to execute the tasks sample application:
+Create a user `db_user` with privileges to execute the tasks of the sample application:
 
 ```sql
 CREATE USER IF NOT EXISTS db_user@192.0.2.1
@@ -26,14 +26,14 @@ CREATE USER IF NOT EXISTS db_user@192.0.2.1
 GRANT ALL PRIVILEGES ON todo.* TO db_user@192.0.2.1;
 ```
 
-Within the [tasks.cpp](https://github.com/mariadb-corporation/dev-example-todo/blob/master/console/cpp/tasks.cpp) file, navigate to the `main` method, and add the database connection values:
+Within the tasks.cpp file, navigate to the `main` method, and add the database connection values:
 
-```c++
+```sql
 sql::SQLString url("jdbc:mariadb://192.0.2.1:3306/todo");
 sql::Properties properties({{"user", "db_user"}, {"password", "db_user_password"}});
 ```
 
-```c++
+```sql
 sql::SQLString url("jdbc:mariadb://example.skysql.net:5509/todo");
 sql::Properties properties({
       {"user", "db_user"},
@@ -46,7 +46,7 @@ sql::Properties properties({
 
 ## Compiling
 
-After add the connection details to the [tasks.cpp](https://github.com/mariadb-corporation/dev-example-todo/blob/master/console/cpp/tasks.cpp) file, build the sample application:
+After adding the connection details to the tasks.cpp file, build the sample application:
 
 ```bash
 $ g++ -o tasks tasks.cpp -std=c++11 -lmariadbcpp
@@ -54,7 +54,7 @@ $ g++ -o tasks tasks.cpp -std=c++11 -lmariadbcpp
 
 ## Usage
 
-The sample application supports CRUD (Create, Read, Update, Delete) operations.
+The sample application supports `CRUD` (`Create, Read, Update, Delete`) operations.
 
 ### Create
 
@@ -74,7 +74,7 @@ $ ./tasks showTasks
 
 If the task got added, the preceding command lists the task:
 
-```
+```bash
 id = 1, description = New Task Description, completed = 0
 ```
 
@@ -88,7 +88,7 @@ $ ./tasks updateTaskStatus 1 1
 
 If the task got updated, the ./tasks showTasks command lists the updated task:
 
-```
+```bash
 id = 1, description = New Task Description, completed = 1
 ```
 
@@ -101,6 +101,5 @@ $ ./tasks deleteTask 1
 ```
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}
