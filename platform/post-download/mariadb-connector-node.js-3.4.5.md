@@ -14,7 +14,7 @@
 * The prior release in this series was MariaDB Connector/Node.js 3.4.4, released on 3 Jul 2025
 * This release (MariaDB Connector/Node.js 3.4.5) was released on 25 Jul 2025
 
-{% include "../.gitbook/includes/most-recent-nodejs.md" %}
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-nodejs.md" %}
 
 ## Useful Resources
 

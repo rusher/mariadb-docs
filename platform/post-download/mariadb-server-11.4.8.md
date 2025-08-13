@@ -24,7 +24,7 @@ noIndex: true
 * The prior release in this series was [MariaDB 11.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11.4.7-release-notes), released on 22 May 2025
 * This release ([MariaDB 11.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes)) was released on 6 Aug 2025
 
-{% include "../.gitbook/includes/most-recent-11.4.md" %}
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-11.4.md" %}
 
 ## Useful Resources
 

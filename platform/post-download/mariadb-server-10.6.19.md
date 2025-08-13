@@ -24,7 +24,7 @@ noIndex: true
 * The prior release in this series was [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes), released on 16 May 2024
 * This release ([MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes)) was released on 8 Aug 2024
 
-{% include "../.gitbook/includes/most-recent-10.6.md" %}
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-10.6.md" %}
 
 ## Useful Resources
 

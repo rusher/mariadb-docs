@@ -25,7 +25,7 @@ noIndex: true
 * This release (MariaDB Server 10.6.2) was released on 18 Jun 2021.
 * The next release in this series is MariaDB Server 10.6.3, released on 6 Jul 2021.
 
-{% include "../.gitbook/includes/most-recent-10.6.md" %}
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-10.6.md" %}
 
 ## Useful Resources
 

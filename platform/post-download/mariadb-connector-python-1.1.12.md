@@ -14,7 +14,7 @@
 * The prior release in this series was MariaDB Connector/Python 1.1.11, released on 15 Nov 2024
 * This release (MariaDB Connector/Python 1.1.12) was released on 24 Feb 2025
 
-{% include "../.gitbook/includes/most-recent-python.md" %}
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-python.md" %}
 
 ## Useful Resources
 

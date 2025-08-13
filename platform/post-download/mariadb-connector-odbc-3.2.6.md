@@ -14,7 +14,7 @@
 * The prior release in this series was MariaDB Connector/ODBC 3.2.5, released on 24 Feb 2025
 * This release (MariaDB Connector/ODBC 3.2.6) was released on 30 May 2025
 
-{% include "../.gitbook/includes/most-recent-odbc.md" %}
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-odbc.md" %}
 
 ## Useful Resources
 

@@ -20,7 +20,7 @@ noIndex: true
 * This release (MariaDB Connector/J 3.0.9) was released on 8 Nov 2022.
 * The next release in this series is MariaDB Connector/J 3.0.10, released on 11 Jan 2023.
 
-{% include "../.gitbook/includes/most-recent-java.md" %}
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 

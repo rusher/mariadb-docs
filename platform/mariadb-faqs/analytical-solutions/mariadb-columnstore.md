@@ -1,6 +1,6 @@
 # MariaDB ColumnStore
 
-#### A. MariaDB ColumnStore&#x20;
+#### A. MariaDB ColumnStore
 
 * Q: What is MariaDB ColumnStore and its role in data analytics?\
   A: MariaDB ColumnStore is a specialized columnar storage engine and analytical database product, available with MariaDB Enterprise Server. It is specifically designed for high-performance analytics, processing large volumes of big data, and data warehousing. ColumnStore utilizes massively parallel processing (MPP) to deliver fast query execution for complex analytical tasks.

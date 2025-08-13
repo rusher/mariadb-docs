@@ -1,6 +1,7 @@
 ---
 noIndex: true
 layout:
+  width: default
   title:
     visible: true
   description:
@@ -11,6 +12,8 @@ layout:
     visible: true
   pagination:
     visible: false
+  metadata:
+    visible: true
 ---
 
 # MariaDB Connector/Node.js 2.0.4
@@ -30,7 +33,7 @@ layout:
 * The prior release in this series was MariaDB Connector/Node.js 2.0.3, released on 31 Jan 2019.
 * This release (MariaDB Connector/Node.js 2.0.4) was released on 10 May 2019.
 
-{% include "../.gitbook/includes/most-recent-nodejs.md" %}
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-nodejs.md" %}
 
 ## Useful Resources
 
