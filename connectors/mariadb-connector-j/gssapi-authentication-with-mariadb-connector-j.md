@@ -99,9 +99,9 @@ This permit to use the current user TGT cache
 
 **limitation on windows**
 
-Main limitations are :
+Main limitations are:
 
-* To permit Java to retrieve TGT (Ticket-Granting-Ticket), the windows host need to have a registry entry set.
+* To permit Java to retrieve TGT (Ticket-Granting-Ticket), the windows host needs to have a registry entry set.
 
 ```sql
 HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Lsa\Kerberos\Parameters
@@ -110,16 +110,16 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Lsa\Kerberos\Parameters
   Value: 1
 ```
 
-* Kinit command must have been executed previously to connection.
+* The Kinit command must have been executed previously to the connection.
 
 ### Windows native java implementation
 
-Implementation is based on [Waffle](https://github.com/dblock/waffle) that support windows SSPI based on [JNA](https://github.com/java-native-access/jna).
+Implementation is based on [Waffle](https://github.com/dblock/waffle) that supports Windows SSPI based on [JNA](https://github.com/java-native-access/jna).
 
-if waffle-jna (and dependencies) is in classpath, native implementation will automatically be used.\
+If waffle-jna (and dependencies) is in the classpath, the native implementation will automatically be used.\
 (This permit to avoid any specific problem with admin right, registry, kinit ...)
 
-Dependencies :
+Dependencies:
 
 * [waffle-jna 1.8.1](https://maven-badges.herokuapp.com/maven-central/com.github.dblock.waffle/waffle-jna)
 * [jna 4.2.1](https://maven-badges.herokuapp.com/maven-central/net.java.dev.jna/jna)
@@ -132,12 +132,12 @@ Dependencies :
 
 * "GSSException: Failure unspecified at GSS-API level (Mechanism level: No Kerberos credentials available)"
 
-There is no active credential. Check with klist that there is an existing credential. If not create it with the "kinit" command
+There is no active credential. Check with Klist that there is an existing credential. If not, create it with the "kinit" command
 
-* "java.sql.SQLInvalidAuthorizationSpecException: Could not connect: GSSAPI name mismatch, requested 'userOne@EXAMPLE.COM', actual name 'userTwo@EXEMPLE.COM'"
+* "java.sql.SQLInvalidAuthorization SpecException: Could not connect:GSSAPI name mismatch, requested 'userOne@EXAMPLE.COM', actual name 'userTwo@EXAMPLE.COM'.
 
-There is an existing credential, but doesn't correspond to the connection user.\
-example :\
+There is an existing credential, but it doesn't correspond to the connection user.\
+example:\
 if user is created with a command like
 
 ```sql
@@ -146,9 +146,9 @@ CREATE USER userOne@'%' IDENTIFIED WITH gssapi AS 'userTwo@EXAMPLE.COM';
 
 klist must show the same principal (userTwo@EXAMPLE.COM in this example)
 
-* "GSSException: No valid credentials provided (Mechanism level: Clock skew too great (37))". The Kerberos protocol requires the time of the client
+* "GSSException: No valid credentials provided (Mechanism level: Clock skew too great (37))." The Kerberos protocol requires the time of the client
 
-and server to match: if the system clocks of the client does not match that of the KDC server, authentication will fail with this kind of error.\
+and server to match: if the system clocks of the client do not match that of the KDC server, authentication will fail with this kind of error.\
 The simplest way to synchronize the system clocks is to use a Network Time Protocol (NTP) server.
 
 {% @marketo/form formId="4316" %}
