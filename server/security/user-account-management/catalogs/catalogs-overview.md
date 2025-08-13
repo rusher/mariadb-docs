@@ -1,8 +1,8 @@
 # Catalogs Overview
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120) **—** Catalog support is planned for 12.0.
+{% include "../../../.gitbook/includes/catalogs.md" %}
 
-[Catalogs](./) are an upcoming feature that will be included in a future release of MariaDB. The MariaDB catalogs will be a multi-tenancy feature where a single instance MariaDB server handles multiple independent tenants (customers), who have their own users, schemas etc.\
+MariaDB catalogs will be a multi-tenancy feature where a single instance MariaDB server handles multiple independent tenants (customers), who have their own users, schemas etc.\
 See [MDEV-31542](https://jira.mariadb.org/browse/MDEV-31542) "Add multi-tenancy catalogs to MariaDB" for details.
 
 ## Background
