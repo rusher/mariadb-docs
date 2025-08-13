@@ -14,7 +14,7 @@
 * The prior release in this series was MariaDB Connector/C 3.4.4, released on 11 Feb 2025
 * This release (MariaDB Connector/C 3.4.5) was released on 9 Apr 2025
 
-{% include "../../mariadb-platform/.gitbook/includes/most-recent-c.md" %}
+{% include "../.gitbook/includes/most-recent-c.md" %}
 
 ## Useful Resources
 

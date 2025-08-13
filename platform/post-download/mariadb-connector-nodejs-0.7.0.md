@@ -17,7 +17,7 @@ noIndex: true
 
 * This release (MariaDB Connector/Node.js 0.7.0) was released on 19 Jul 2018
 
-{% include "../../mariadb-platform/.gitbook/includes/most-recent-nodejs.md" %}
+{% include "../.gitbook/includes/most-recent-nodejs.md" %}
 
 ## Useful Resources
 

@@ -17,7 +17,7 @@ noIndex: true
 
 * This release (MariaDB Connector/J 1.8.0) was released on 11 Feb 2019.
 
-{% include "../../mariadb-platform/.gitbook/includes/most-recent-java.md" %}
+{% include "../.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 

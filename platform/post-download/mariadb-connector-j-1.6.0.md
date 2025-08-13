@@ -19,7 +19,7 @@ noIndex: true
 * This release (MariaDB Connector/J 1.6.0) was released on 11 May 2017.
 * The next release in this series is MariaDB Connector/J 1.6.1, released on 7 Jun 2017.
 
-{% include "../../mariadb-platform/.gitbook/includes/most-recent-java.md" %}
+{% include "../.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 
