@@ -367,6 +367,18 @@ SELECT CONV(61,10,62);
 
 MariaDB Enterprise Server now supports descending indexes. Composite indexes can be used with differently ordered columns to get a significant performance boost in the corresponding `ORDER BY` use cases.
 
+### **Backported Features**:
+
+* New, Detailed Replication Lag Representation.
+* New Information Schema Table For Password Related Data.
+* GTID binlog events now include the thread ID.
+* Automatic SST user account management for Galera.
+* PARSEC authentication plugin.
+* Extending timestamp range to 2106.
+* Limit the size of created disk temporary files and tables.
+* The Software Bill of Materials (SBOM) JSON file is generated in the downloads archive.
+* [Vector Search](https://mariadb.com/resources/blog/mariadb-vector-preview-is-out/) capability has been added (MENT-2233).
+
 ## Operational Enhancements
 
 ### Schema and Partitioning Management / DDL

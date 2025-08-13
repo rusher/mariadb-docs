@@ -8,7 +8,7 @@ In addition to this there are Enterprise Features and some backported features. 
 
 Enterprise Features:
 
-* [MariaDB Backup](broken-reference)
+* [MariaDB Backup](broken-reference/)
 * [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit)
 * Index limit increased to 128 indexes
 * Slow master shutdown as default
@@ -23,7 +23,7 @@ Enterprise Features:
 * Dynamic change of [InnoDB purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-purge) threads
 * Sybase SQL mode for extended aliases
 
-Backported Features:
+**Backported Features:**
 
 * [mariadb-dump option --as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) to dump data as of a given time for system versioned tables
 * JSON functions
@@ -48,6 +48,7 @@ Backported Features:
 * New, Detailed Replication Lag Representation
 * New Information Schema Table For Password Related Data
 * GTID binlog events now include the thread ID
+* **Software Bill of Materials (SBOM)** JSON file generates in the downloads archive.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
