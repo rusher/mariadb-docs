@@ -10,6 +10,7 @@
   * [MariaDB Connector/J 3.5.5](post-download/mariadb-connector-j-3.5.5.md)
   * [MariaDB Connector/C 3.4.5](post-download/mariadb-connector-c-3.4.5.md)
   * [MariaDB Connector/Node.js 3.4.5](post-download/mariadb-connector-nodejs-3.4.5.md)
+  * [MariaDB Connector/Node.js 3.4.5](post-download/mariadb-connector-node.js-3.4.5.md)
   * [MariaDB Connector/ODBC 3.2.6](post-download/mariadb-connector-odbc-3.2.6.md)
   * [MariaDB Connector/Python 1.1.13](post-download/mariadb-connector-python-1.1.13.md)
   * [Thank you for Downloading](post-download/thank-you-for-downloading.md)
