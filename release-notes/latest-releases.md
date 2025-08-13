@@ -20,7 +20,7 @@
 
 ### MariaDB Connectors
 
-The most recent [_**Stable**_](community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](connectors/c/mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
+{% include ".gitbook/includes/latest-c.md" %}
 
 {% include ".gitbook/includes/latest-java.md" %}
 
