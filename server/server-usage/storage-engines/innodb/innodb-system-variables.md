@@ -884,12 +884,34 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_doublewrite`
 
-* Description: If set to `1`, the default, to improve fault tolerance [InnoDB](./) first stores data to a [doublewrite buffer](innodb-doublewrite-buffer.md) before writing it to data file. Disabling will provide a marginal peformance improvement.
+{% tabs %}
+{% tab title="Current" %}
+
+
+*   Description: If set to `ON`, the default, to improve fault tolerance [InnoDB](./) first stores data to a [doublewrite buffer](innodb-doublewrite-buffer.md) before writing it to data file. Disabling will provide a marginal performance improvement, and assumes that writes of [innodb\_page\_size](innodb-system-variables.md#innodb_page_size) are atomic. `fast` is like `ON`, but writes are not synchronized to data files. The deprecated start-up parameter [innodb\_flush\_method=NO\_FSYNC](innodb-system-variables.md#innodb_flush_method) will cause innodb\_doublewrite=ON to be changed to innodb\_doublewrite=fast, which will prevent InnoDB from making any durable writes to data files. This would normally be done right before the log checkpoint LSN is updated. Depending on the file systems being used and their configuration, this may or may not be safe.
+
+    The value innodb\_doublewrite=fast differs from the previous combination of innodb\_doublewrite=ON and innodb\_flush\_method=O\_DIRECT\_NO\_FSYNC by always invoking os\_file\_flush() on the doublewrite buffer itself in buf\_dblwr\_t::flush\_buffered\_writes\_completed(). This should be safer when there are multiple doublewrite batches between checkpoints.
+
+    Typically, once per second, buf\_flush\_page\_cleaner() would write out up to innodb\_io\_capacity pages and advance the log checkpoint. Also typically, innodb\_io\_capacity>128, which is the size of the doublewrite buffer in pages. Should os\_file\_flush\_func() not be invoked between doublewrite batches, writes could be reordered in an unsafe way.
+
+    The setting innodb\_doublewrite=fast could be safe when the doublewrite buffer (the first file of the system tablespace) and the data files reside in the same file system.
+* Command line: `--innodb-doublewrite{=val}`, `--skip-innodb-doublewrite`
+* Scope: Global
+* Dynamic: Yes
+* Data Type: `enum`
+* Default Value: `ON`
+* Valid Values: `OFF`, `ON`, `fast`
+{% endtab %}
+
+{% tab title="< MariaDB 11.0.6" %}
+* Description: If set to `1`, the default, to improve fault tolerance [InnoDB](./) first stores data to a [doublewrite buffer](innodb-doublewrite-buffer.md) before writing it to data file. Disabling will provide a marginal performance improvement.
 * Command line: `--innodb-doublewrite`, `--skip-innodb-doublewrite`
 * Scope: Global
-* Dynamic: No
+* Dynamic:No
 * Data Type: `boolean`
 * Default Value: `ON`
+{% endtab %}
+{% endtabs %}
 
 #### `innodb_doublewrite_file`
 
