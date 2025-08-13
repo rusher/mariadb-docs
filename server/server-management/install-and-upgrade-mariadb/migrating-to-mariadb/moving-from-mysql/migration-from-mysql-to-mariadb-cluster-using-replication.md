@@ -4,23 +4,23 @@ hidden: true
 
 # Migration from MySQL to MariaDB Cluster using Replication
 
-This guide migrates a live database from a MySQL Galera Cluster to a MariaDB Galera Cluster. The migration strategy requires setting up a new MariaDB Cluster and using asynchronous replication to sync it with the existing MySQL Cluster. The method includes a reliable failback route.
+This guide details migrating a live database from a MySQL Galera Cluster to a [MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide). The migration strategy requires setting up a new MariaDB Cluster and using [asynchronous replication](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/about-galera-replication#synchronous-vs.-asynchronous-replication) to sync it with the existing MySQL Cluster. The method includes a reliable failback route.
 
 {% hint style="info" %}
-This document focuses on the migration process itself. For detailed comparisons between the two database systems, please refer to [Incompatibilities and Feature Differences Between MariaDB and MySQL](https://mariadb.com/docs/release-notes/community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-rolling-and-mysql).
+This document focuses on the migration process itself. For detailed comparisons between the two database systems, please refer to [Incompatibilities and Feature Differences Between MariaDB and MySQL.](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences)
 {% endhint %}
 
 ### I. Prerequisites
 
 * **MySQL Server**: A running MySQL Galera Cluster (version 8.0 or 8.4) to migrate.
-* **MariaDB Server**: The target MariaDB version that supports Galera Cluster. This guide assumes the latest stable version.
+* **MariaDB Server**: The target [MariaDB version that supports Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-guide#galera-versions). This guide assumes the latest stable version.
 * **`mysqldump`**: A command-line utility by MySQL to create initial database backup.&#x20;
 
 {% hint style="warning" %}
 Due to changes in MySQL 8.0+, `mariadb-dump` may not be compatible for this initial step.
 {% endhint %}
 
-* **Root or Sudo Access**: Administrative privileges are required on all servers involved in the migration.
+* **Root or Sudo Access**: Administrative [privileges](../../../../security/user-account-management/roles/system-users-roles-and-privileges.md) are required on all servers involved in the migration.
 
 ### II. Migration Steps
 
@@ -30,8 +30,8 @@ Due to changes in MySQL 8.0+, `mariadb-dump` may not be compatible for this init
 While MariaDB maintains a high degree of compatibility with MySQL, it is crucial to review any differences that could impact your applications.
 {% endhint %}
 
-* **Version Compatibility**: Select a MariaDB version compatible with your MySQL version for replication.
-* **Feature Differences**: Review the [Incompatibilities and Feature Differences](https://mariadb.com/docs/release-notes/community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-rolling-and-mysql) to identify any deprecated features or changes in system tables, user accounts, and authentication that might affect your setup.
+* **Version Compatibility**: Select a [MariaDB version compatible](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/differences-between-the-mysql-and-mariadb-query-optimizer) with your MySQL version for replication.
+* **Feature Differences**: Review the [Incompatibilities and Feature Differences](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences) to identify any deprecated features or changes in [system tables](../../../../reference/system-tables/), [user accounts](../../../../security/user-account-management/), and authentication that might affect your setup.
 
 **Replication Compatibility**
 
@@ -40,23 +40,23 @@ While MariaDB maintains a high degree of compatibility with MySQL, it is crucial
 | 5.7           | 10.2 and newer                              |
 | 8.0           | 10.6.21, 10.11.11, 11.4.5, 11.7.2 and newer |
 
-For more details, see MySQL to MariaDB Replication Compatibility.
+For more details, see [MySQL to MariaDB Replication Compatibilit](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/replication-compatibility-between-mariadb-and-mysql)y.
 
 #### Step 2: Install and Configure a New MariaDB Galera Cluster
 
-Set up a new, empty MariaDB Galera Cluster that will become the target for the migration.
+Set up a new, empty [MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-cluster-quickstart-guides/mariadb-galera-cluster-guide) that will become the target for the migration.
 
 **2.1. Install MariaDB Server and Galera Provider**
 
-Install MariaDB Server package and Galera wsrep provider library on each node of the new cluster. Refer [Install and Upgrade MariaDB](../../upgrading/) for detailed instructions.
+Install MariaDB Server package and Galera wsrep provider library on each node of the new cluster. Refer [Install](../../installing-mariadb/) and [Upgrade MariaDB](../../upgrading/) for detailed instructions.
 
 **2.2. Configure Each MariaDB Node**
 
-Create a configuration file at `/etc/mysql/conf.d/galera.cnf` on each node. The configuration will be mostly identical across nodes, except for node-specific details like `wsrep_node_name` and `wsrep_node_address`.
+[Create a configuration file](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-cluster-quickstart-guides/mariadb-galera-cluster-guide#id-4.-configure-galera-cluster-galera.cnf-on-each-node) at `/etc/mysql/conf.d/galera.cnf` on each node. The configuration will be mostly identical across nodes, except for node-specific details like `wsrep_node_name` and `wsrep_node_address`.
 
 **Example `galera.cnf`:**
 
-```ini
+```toml
 [mysqld]
 # MariaDB settings
 binlog_format=ROW
@@ -82,7 +82,7 @@ wsrep_sst_method=mariadb-backup
 ```
 
 {% hint style="info" %}
-It is recommended to set `wsrep_sst_method` on all nodes to ensure consistency during State Snapshot Transfers (SST).
+It is recommended to set `wsrep_sst_method` on all nodes to ensure consistency during [State Snapshot Transfers ](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts)(SST).
 {% endhint %}
 
 #### Step 3: Back Up the MySQL Database
@@ -91,9 +91,9 @@ A full logical backup of the MySQL database is required to seed the new MariaDB 
 
 **3.1. Enable Binary Logging on MySQL**
 
-Asynchronous replication requires the binary log to be enabled on the MySQL source. If not enabled, enable it on at least one node in your MySQL cluster.
+[Asynchronous replication](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/about-galera-replication#synchronous-vs.-asynchronous-replication) requires the [binary log](https://dev.mysql.com/doc/refman/8.4/en/binary-log.html) to be enabled on the MySQL source. If not enabled, enable it on at least one node in your MySQL cluster.
 
-1. **Edit `my.cnf`**: In the `[mysqld]` section of your MySQL configuration file, add `log-bin=mysql-bin`.
+1. **Edit `my.cnf`**: In the `[mysqld]` section of your [MySQL configuration file](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html#option_mysqld_log-bin), add `log-bin=mysql-bin`.
 2. **Restart MySQL**: A server restart is required for the change to take effect.&#x20;
 
 {% hint style="danger" %}
@@ -106,7 +106,6 @@ Use `mysqldump` from the source MySQL server to create a full backup. Using `--a
 
 ```bash
 mysqldump --user=backup_user --password --all-databases --master-data=2 > /path/to/backup.sql
-
 ```
 
 > This above command generates a backup file and logs the source's binary log file name and position in the output.
@@ -121,16 +120,14 @@ Start the first MariaDB node with the `--wsrep-new-cluster` option. This initial
 
 ```bash
 sudo galera_new_cluster
-
 ```
 
 **4.2. Load the Backup File**
 
-Transfer the `backup.sql` file to the first MariaDB node and import it:'
+Transfer the `backup.sql` file to the first MariaDB node and import it:
 
 ```bash
 mariadb -u root -p < /path/to/backup.sql
-
 ```
 
 **4.3. Start Subsequent Nodes**
@@ -139,7 +136,6 @@ Start the MariaDB service normally on the remaining nodes. They will connect to 
 
 ```bash
 sudo systemctl start mariadb
-
 ```
 
 **4.4. Verify the Cluster**
@@ -148,10 +144,9 @@ Connect to any node and check the cluster size to ensure all nodes have joined s
 
 ```sql
 SHOW STATUS LIKE 'wsrep_cluster_size';
-
 ```
 
-The value should match the number of nodes in your cluster.
+> Cluster size should match the number of nodes in your cluster.
 
 #### Step 5: Set Up Asynchronous Replication
 
@@ -164,12 +159,11 @@ On the MySQL source node where binlogging is enabled, create a dedicated user fo
 ```sql
 CREATE USER 'repl_user'@'mariadb_node_ip' IDENTIFIED BY 'your_password';
 GRANT REPLICATION SLAVE ON *.* TO 'repl_user'@'mariadb_node_ip';
-
 ```
 
 **5.2. Configure the MariaDB Replica**
 
-On one of the MariaDB nodes, configure and start the replication process. Use the binary log file and position noted from the `mysqldump` output (`MASTER_LOG_FILE` and `MASTER_LOG_POS`) or use GTID-based replication.
+On one of the MariaDB nodes, configure and start the [replication process](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters). Use the binary log file and position noted from the `mysqldump` output (`MASTER_LOG_FILE` and `MASTER_LOG_POS`) or use GTID-based replication.
 
 ```sql
 CHANGE MASTER TO
@@ -180,7 +174,6 @@ CHANGE MASTER TO
   MASTER_USE_GTID=slave_pos;
 
 START SLAVE;
-
 ```
 
 #### Step 6: Monitor and Failover
@@ -193,17 +186,25 @@ Check the replica status on the MariaDB node to ensure it is synchronized.
 
 ```sql
 SHOW SLAVE STATUS\G
-
 ```
 
-Look for `Slave_IO_Running: Yes`, `Slave_SQL_Running: Yes`, and `Seconds_Behind_Master: 0`. Once the replica has caught up, `Seconds_Behind_Master` will be 0.
+Ensure the following conditions are met on the replica:
+
+* `Slave_IO_Running: Yes`
+* `Slave_SQL_Running: Yes`
+* `Seconds_Behind_Master: 0`
+
+A `Seconds_Behind_Master` value of `0` indicates the replica is completely synchronized.
 
 **6.2. Perform the Failover**
 
 Once the MariaDB cluster is fully synchronized, follow these steps:
 
-1. Stop application traffic to the MySQL cluster.
-2. Verify final synchronization: Ensure the MariaDB replica has processed all remaining events from the MySQL binary log.
-3. Promote MariaDB: Stop the replication on the MariaDB node (`STOP SLAVE;`) and reconfigure your application to connect to the new MariaDB Galera Cluster.
-4. Start application traffic on the MariaDB cluster.
-5. Decommission MySQL: Once you have verified that your application is running correctly on the new cluster, you can decommission the old MySQL cluster.
+1. **Stop Application Traffic:** Cease traffic to the MySQL cluster.
+2. **Verify Synchronization:** Confirm the MariaDB replica has processed all events from the MySQL binary log.
+3. **Promote MariaDB:**
+   * Stop replication on the MariaDB node using `STOP SLAVE;`.
+   * Update your application to connect to the MariaDB Galera Cluster.
+4. **Resume Application Traffic:** Redirect traffic to the MariaDB cluster.
+5. **Decommission MySQL:** After confirming the application runs smoothly on MariaDB, decommission the MySQL cluster.
+
