@@ -141,7 +141,6 @@ Hello World!
 
 ## See Also
 
-* More information at [About MariaDB Connector/J](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-j/README.md)
-
+* More information at [About MariaDB Connector/J](about-mariadb-connector-j.md)
 
 {% @marketo/form formId="4316" %}
