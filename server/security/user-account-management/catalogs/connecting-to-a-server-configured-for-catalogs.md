@@ -42,7 +42,7 @@ SELECT @@catalogs;
 +------------+
 |          0 |
 +------------+
-MariaDB [test]> USE catalog foo;
+USE catalog foo;
 ERROR 4193 (HY000): MariaDB is not configured to support catalogs
 ```
 
