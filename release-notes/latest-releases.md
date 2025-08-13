@@ -14,7 +14,7 @@
 
 {% include ".gitbook/includes/latest-11-4.md" %}
 
-{% include "../.gitbook/includes/latest-10.11 (2).md" %}
+{% include ".gitbook/includes/latest-10-11.md" %}
 
 {% include ".gitbook/includes/latest-10-6.md" %}
 
@@ -26,7 +26,7 @@ The most recent [_**Stable**_](community-server/about/release-criteria.md) _**(G
 
 {% include ".gitbook/includes/latest-nodejs.md" %}
 
-{% include "../.gitbook/includes/latest-odbc.md" %}
+{% include ".gitbook/includes/latest-odbc.md" %}
 
 {% include ".gitbook/includes/latest-python.md" %}
 

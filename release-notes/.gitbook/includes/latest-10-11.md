@@ -1,5 +1,5 @@
 ---
-title: The most recent release of ...
+title: latest-10-11
 ---
 
 {% hint style="info" %}

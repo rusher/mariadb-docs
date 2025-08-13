@@ -1,6 +1,6 @@
 # MariaDB 10.11 Changes & Improvements
 
-{% include "../../../.gitbook/includes/latest-10.11 (2).md" %}
+{% include "../../.gitbook/includes/latest-10-11.md" %}
 
 [MariaDB 10.11](what-is-mariadb-1011.md) is a long-term maintenance release series, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028.
 
