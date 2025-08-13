@@ -22,6 +22,8 @@
 
 {% include ".gitbook/includes/latest-c.md" %}
 
+{% include ".gitbook/includes/latest-cpp.md" %}
+
 {% include ".gitbook/includes/latest-java.md" %}
 
 {% include ".gitbook/includes/latest-nodejs.md" %}
@@ -29,6 +31,8 @@
 {% include ".gitbook/includes/latest-odbc.md" %}
 
 {% include ".gitbook/includes/latest-python.md" %}
+
+{% include ".gitbook/includes/latest-r2dbc.md" %}
 
 ## See Also
 
