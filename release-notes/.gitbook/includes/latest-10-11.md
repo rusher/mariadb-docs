@@ -3,6 +3,9 @@ title: latest-10-11
 ---
 
 {% hint style="info" %}
-The most recent release of [MariaDB 10.11](../../community-server/mariadb-10-11-series/what-is-mariadb-1011.md) is:[**MariaDB 10.11.11**](../../community-server/mariadb-10-11-series/mariadb-10.11.14-release-notes.md) Stable (GA) <a href="https://mariadb.com/downloads/" class="button primary">Download Now</a>\
-[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/10.11.14/)
+<p align="center">The most recent release of <a href="../../community-server/mariadb-10-11-series/what-is-mariadb-1011.md">MariaDB 10.11</a> is:</p>
+
+<h3 align="center"><a href="../../community-server/mariadb-10-11-series/mariadb-10.11.14-release-notes.md"><strong>MariaDB 10.11.14</strong></a> Stable (GA) <a href="https://mariadb.com/downloads/" class="button primary">Download Now</a></h3>
+
+<p align="center"><a href="https://downloads.mariadb.org/mariadb/10.11.14/"><sup><em>Alternate download from mariadb.org</em></sup></a></p>
 {% endhint %}
