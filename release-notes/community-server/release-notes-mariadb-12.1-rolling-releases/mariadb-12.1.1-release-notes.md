@@ -42,6 +42,7 @@ Thanks, and enjoy MariaDB!
 
 ### Miscellaneous <a href="#miscellaneous" id="miscellaneous"></a>
 
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars ([MDEV-36536](https://jira.mariadb.org/browse/MDEV-36536))
 * Retry applying of write sets on galera nodes ([MDEV-36077](https://jira.mariadb.org/browse/MDEV-36077))
 * [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) now supports wildcards with the `-L` or `--wildcards` option ([MDEV-21376](https://jira.mariadb.org/browse/MDEV-21376))
 * Per-table unique FOREIGN KEY constraint names ([MDEV-28933](https://jira.mariadb.org/browse/MDEV-28933))
