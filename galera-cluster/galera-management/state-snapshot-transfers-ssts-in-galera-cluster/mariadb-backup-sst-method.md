@@ -301,7 +301,7 @@ The `mariadb-backup` SST method has its own logging outside of the MariaDB Serve
 
 Logging for mariadb-backup SSTs works the following way.
 
-By default, on the donor node, it logs to `mariadb-backup.backup.log`. This log file is located in the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir).
+By default, on the donor node, it logs to `mariadb-backup.backup.log`. This log file is located in the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir).
 
 By default, on the joiner node, it logs to `mariadb-backup.prepare.log` and `mariadb-backup.move.log` These log files are also located in the `datadir`.
 
@@ -333,7 +333,7 @@ syslog
 
 ## Performing SSTs With IPv6 Addresses <a href="#performing-ssts-with-ipv6-addresses" id="performing-ssts-with-ipv6-addresses"></a>
 
-If you are performing [mariadb-backup ](mariadb-backup-sst-method.md) SSTs with IPv6 addresses, then the `socat` utility needs to be passed the `pf=ip6` option. This can be done by setting the `sockopt` option in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files):
+If you are performing [mariadb-backup ](mariadb-backup-sst-method.md)SSTs with IPv6 addresses, then the `socat` utility needs to be passed the `pf=ip6` option. This can be done by setting the `sockopt` option in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files):
 
 ```ini
 [sst]
@@ -344,7 +344,7 @@ See [MDEV-18797](https://jira.mariadb.org/browse/MDEV-18797) for more informatio
 
 ## Manual SST With mariadb-backup <a href="#manual-sst-with-mariabackup" id="manual-sst-with-mariabackup"></a>
 
-If Galera Cluster's automatic SSTs repeatedly fail, it can be helpful to perform a "manual SST"; see: [Manual SST of Galera Cluster node with ](manual-sst-of-galera-cluster-node-with-mariadb-backup.md)[mariadb-backup ](mariadb-backup-sst-method.md)
+If Galera Cluster's automatic SSTs repeatedly fail, it can be helpful to perform a "manual SST"; see: [Manual SST of Galera Cluster node with ](manual-sst-of-galera-cluster-node-with-mariadb-backup.md)[mariadb-backup](mariadb-backup-sst-method.md)
 
 ## See Also <a href="#see-also" id="see-also"></a>
 

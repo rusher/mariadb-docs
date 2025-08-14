@@ -1,6 +1,6 @@
 # Manual SST of Galera Cluster Node With mariadb-backup
 
-Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir) is very large, since a normal SST can take a long time to fail in that case.
+Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) is very large, since a normal SST can take a long time to fail in that case.
 
 A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup).
 
@@ -103,21 +103,21 @@ safe_to_bootstrap: 0
 EOF
 ```
 
-* Remove the existing contents of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir) on the joiner node.
+* Remove the existing contents of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) on the joiner node.
 
 ```
 MYSQL_DATADIR=/var/lib/mysql
 rm -Rf $MYSQL_DATADIR/*
 ```
 
-* Copy the contents of the backup directory to the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir) the on joiner node.
+* Copy the contents of the backup directory to the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) the on joiner node.
 
 ```
 mariadb-backup --copy-back \
    --target-dir=$MYSQL_BACKUP_DIR
 ```
 
-* Make sure the permissions of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir) are correct on the joiner node.
+* Make sure the permissions of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) are correct on the joiner node.
 
 ```
 chown -R mysql:mysql $MYSQL_DATADIR/

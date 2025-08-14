@@ -8,7 +8,7 @@ Galera status variables can be viewed with the [SHOW STATUS](https://app.gitbook
 SHOW STATUS LIKE 'wsrep%';
 ```
 
-See also the [Full list of MariaDB options, system and status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
 
 ## List of Galera Cluster status variables
 

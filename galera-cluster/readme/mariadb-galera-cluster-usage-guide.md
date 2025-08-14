@@ -8,6 +8,71 @@ MariaDB Enterprise Cluster, powered by Galera, is available with MariaDB Enterpr
 
 In order to handle increasing load and especially when that load exceeds what a single server can process, it is best practice to deploy multiple MariaDB Enterprise Servers with a replication solution to maintain data consistency between them. MariaDB Enterprise Cluster is a multi-primary replication solution that serves as an alternative to the single-primary MariaDB Replication.
 
+## An Introduction to Database Replication
+
+Database replication is the process of continuously copying data from one database server (a "node") to another, creating a distributed and resilient system. The goal is for all nodes in this system to contain the same set of data, forming what is known as a database cluster. From the perspective of a client application, this distributed nature is often transparent, allowing it to interact with the cluster as if it were a single database.
+
+### Replication Architectures
+
+#### **Primary/Replica**
+
+<div align="left"><figure><img src="../.gitbook/assets/asynchronousreplication.png" alt=""><figcaption><p>Primary/Primary Replication</p></figcaption></figure></div>
+
+The most common replication architecture is Primary/Replica (also known as Master/Slave). In this model:
+
+* The Primary node is the authoritative source. It is the only node that accepts write operations (e.g., `INSERT`, `UPDATE`, `DELETE`).
+* The Primary logs these changes and sends them to one or more Replica nodes.
+* The Replicas receive the stream of changes and apply them to their own copy of the data. Replicas are typically used for read-only queries, backups, or as a hot standby for failover.
+
+#### **Multi-Primary Replication**
+
+<div align="left"><figure><img src="../.gitbook/assets/synchronousreplication.png" alt=""><figcaption><p>Multi-primary Replication</p></figcaption></figure></div>
+
+In a multi-primary system, every node in the cluster acts as a primary. This means any node can accept write operations. When a node receives an update, it automatically propagates that change to all other primary nodes in the cluster. Each primary node logs its own changes and communicates them to its peers to maintain synchronization.
+
+### Replication Protocols: Asynchronous vs. Synchronous
+
+Beyond the architecture, the replication _protocol_ determines how transactions are confirmed across the cluster.
+
+#### **Asynchronous Replication (Lazy Replication)**
+
+In asynchronous replication, the primary node commits a transaction locally first and then sends the changes to the replicas in the background. The transaction is confirmed as complete to the client immediately after it's saved on the primary. This means there is a brief period, known as replication lag, where the replicas have not yet received the latest data.
+
+#### **Synchronous Replication (Eager Replication)**
+
+In synchronous replication, a transaction is not considered complete (committed) until it has been successfully applied and confirmed on all participating nodes. When the client receives confirmation, it is a guarantee that the data exists consistently across the cluster.
+
+### The Trade-offs of Synchronous Replication
+
+#### **Advantages**
+
+Synchronous replication offers several powerful advantages over its asynchronous counterpart:
+
+* High Availability: Since all nodes are fully synchronized, if one node fails, there is zero data loss. Traffic can be immediately directed to another node without complex failover procedures, as all data replicas are guaranteed to be consistent.
+* Read-After-Write Consistency: Synchronous replication guarantees causality. A `SELECT` query issued immediately after a transaction will always see the effects of that transaction, even if the query is executed on a different node in the cluster.
+
+#### **Disadvantages**
+
+Traditionally, synchronous protocols have suffered from significant performance and scaling challenges. They often rely on distributed locking or a two-phase commit (2PC) process, where nodes must coordinate on every single operation.
+
+This creates a messaging overhead that grows rapidly with the size of the cluster. For a system with $$n$$ nodes processing transactions, the number of coordination messages ($$m$$) can be debilitating. This direct dependency on all nodes for every commit leads to:
+
+* Increased Transaction Latency: Every write must wait for a network round trip and confirmation from all other nodes.
+* Poor Scalability: As you add more nodes, the probability of conflicts and deadlocks increases, and overall write throughput decreases dramatically.
+
+For these reasons, asynchronous replication has historically remained the dominant protocol for high-performance databases like MariaDB.
+
+### Galera's Solution: Modern Synchronous Replication
+
+Galera Cluster solves the traditional problems of synchronous replication by using a modern, certification-based approach built on several key innovations:
+
+* Group Communication: A robust messaging layer ensures that information is delivered to all nodes reliably and in the correct order, forming a solid foundation for data consistency.
+* Write-Set Replication: Instead of coordinating on every individual operation, database changes (writes) are grouped into a single package called a "write-set." This write-set is replicated as a single message, avoiding the high overhead of traditional two-phase commit.
+* Optimistic Execution: Transactions are first executed optimistically on a local node. The resulting write-set is then broadcast to the cluster for a fast, parallel certification process. If it passes certification (meaning no conflicts), it is committed on all nodes.
+* Transaction Reordering: This clever technique allows for the reordering of non-conflicting transactions before they are committed, which significantly increases parallelism and reduces the rate of transaction rollbacks.
+
+The certification-based replication system that Galera Cluster uses is built on these powerful approaches, delivering the benefits of synchronous replication without the traditional performance bottlenecks.
+
 ## How it Works
 
 MariaDB Enterprise Cluster is built on MariaDB Enterprise Server with Galera Cluster and MariaDB MaxScale. In MariaDB Enterprise Server 10.5 and later, it features enterprise-specific options, such as data-at-rest encryption for the write-set cache, that are not available in other Galera Cluster implementations.
@@ -240,7 +305,7 @@ MaxScale takes nodes out of the distribution that initiate a blocking SST operat
 
 ### Backups
 
-With MariaDB Enterprise Cluster, each node contains a replica of all the data in the cluster. As such, you run [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/backup-and-restore-with-mariadb-enterprise-server/mariadb-enterprise-backup) on any node to back up the available data. The process for backing up a node is the same as for a single MariaDB Enterprise Server.
+With MariaDB Enterprise Cluster, each node contains a replica of all the data in the cluster. As such, you run [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-enterprise-backup) on any node to back up the available data. The process for backing up a node is the same as for a single MariaDB Enterprise Server.
 
 ### Encryption
 

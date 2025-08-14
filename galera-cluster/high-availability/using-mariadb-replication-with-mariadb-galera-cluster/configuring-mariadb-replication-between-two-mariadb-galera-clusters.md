@@ -59,7 +59,7 @@ $ rsync -avrP /var/mariadb/backup c2dbserver:/var/mariadb/backup
 
 ### Restore the Backup on the Second Cluster's Replica
 
-At this point, you can restore the backup to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir), as you normally would. For example:
+At this point, you can restore the backup to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir), as you normally would. For example:
 
 ```
 $ mariadb-backup --copy-back \
