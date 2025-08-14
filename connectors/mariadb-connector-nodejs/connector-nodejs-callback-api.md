@@ -2,11 +2,11 @@
 
 ## Connector/Node.js Callback API
 
-There are two different connection implementations: one, the default, uses Promise and the other uses Callback, allowing for compatibility with the mysql and mysql2 API's. The documentation provided on this page follows Callback. If you want information on the Promise API, see the [PROMISE API](connector-nodejs-promise-api.md).
+There are two different connection implementations: one, the default, uses Promise, and the other uses Callback, allowing for compatibility with the MySQL and mysql2 API's. The documentation provided on this page follows Callback. If you want information on the Promise API, see the [PROMISE API](connector-nodejs-promise-api.md).
 
 ### Quick Start
 
-Install the mariadb Connector using npm
+Install the MariaDB Connector using npm
 
 ```sql
 $ npm install mariadb
@@ -44,67 +44,67 @@ This initializes the constant `mariadb`, which is set to use the Callback API ra
 
 ### Migrating from 2.x or mysql/mysql2 to 3.x
 
-Default behaviour for decoding [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) / [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) datatype for 2.x version and mysql/mysql2 drivers return a JavaScript [Number](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/number) object. BIGINT/DECIMAL values might not be in the safe range, resulting in approximate results.
+The default behavior for decoding BIGINT/DECIMAL datatypes in 2.x versions and MySQL/MySQL2 drivers returns [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) / [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) datatype for 2.x versions, and When/mysql2 drivers return a JavaScript [Number](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/number) object. BIGINT/DECIMAL values might not be in the safe range, resulting in approximate results.
 
-Since 3.x version, the driver has a reliable default, returning:
+Since the 3.x version, the driver has a reliable default, returning:
 
-* DECIMAL => javascript String
-* BIGINT => javascript [BigInt](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) object
+* DECIMAL => JavaScript String
+* BIGINT => JavaScript [BigInt](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) object
 
-For compatibility with the previous version or mysql/mysql driver, four options have been added to return BIGINT/DECIMAL as number, as previous defaults.
+For compatibility with the previous version or MySQL/mysql driver, four options have been added to return BIGINT/DECIMAL as a number, as the previous defaults.
 
-|               option | description                                                                                                                                                        |    type    | default |
-| -------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------: | :-----: |
-| **insertIdAsNumber** | Whether the query should return last insert id from INSERT/UPDATE command as BigInt or Number. default return BigInt                                               |  _boolean_ |  false  |
-|  **decimalAsNumber** | Whether the query should return decimal as Number. If enabled, this might return approximate values.                                                               |  _boolean_ |  false  |
-|   **bigIntAsNumber** | Whether the query should return BigInt data type as Number. If enabled, this might return approximate values.                                                      |  _boolean_ |  false  |
-| **checkNumberRange** | when used in conjunction of decimalAsNumber, insertIdAsNumber or bigIntAsNumber, if conversion to number is not exact, connector will throw an error (since 3.0.1) | _function_ |         |
+|               option | description                                                                                                                                                                 |    type    | default |
+| -------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------: | :-----: |
+| **insertIdAsNumber** | Whether the query should return the last insert ID from the INSERT/UPDATE command as BigInt or Number. default return BigInt                                                |  _boolean_ |  false  |
+|  **decimalAsNumber** | Whether the query should return a decimal as a number. If enabled, it might return approximate values.                                                                      |  _boolean_ |  false  |
+|   **bigIntAsNumber** | Whether the query should return the BigInt data type as a number. If enabled, it might return approximate values.                                                           |  _boolean_ |  false  |
+| **checkNumberRange** | when used in conjunction with decimalAsNumber, insertIdAsNumber, or bigIntAsNumber, if conversion to a number is not exact, the connector will throw an error (since 3.0.1) | _function_ |         |
 
 Previous options `supportBigNumbers` and `bigNumberStrings` still exist for compatibility, but are now deprecated.
 
 **Other considerations**
 
-mysql has an experimental syntax permitting the use of `??` characters as placeholder to escape id. This isn't implemented in the mariadb driver, permitting the same query syntax for [Connection.query](connector-nodejs-callback-api.md#connectionquerysql-values---promise) and [Connection.execute](connector-nodejs-callback-api.md#connectionexecutesql-values--promise).
+MySQL has an experimental syntax permitting the use of `??` characters as a placeholder to escape ID. This isn't implemented in the mariMariaDBadb driver, permitting the same query syntax for [Connection. Q](connector-nodejs-callback-api.md#connectionquerysql-values---promise)uery and [Connection.execute](connector-nodejs-callback-api.md#connectionexecutesql-values--promise).
 
-example:
+Example:
 
 ```js
   conn.query('call ??(?)', [myProc, 'myVal'], (err, res) => {});
 ```
 
-has to use explicit escapeId:
+To use explicit escapeId:
 
 ```js
-  conn.query(`call ${conn.escapeId(myProc)}(?)`, ['myVal'], (err, res) => {});
+  Conn.query(`call ${conn.escapeId(myProc)}(?)`, ['myVal'], (err, res) => {});
 ```
 
-Cluster configuration `removeNodeErrorCount` default to `Infinity` when mysql/mysql2 default to value `5`. This avoids removing nodes without explicitly saying so.
+Cluster configuration `removeNodeErrorCount` defaults to `Infinity` when mysql/mysql2 defaults to the value `5`. This avoids removing nodes without explicitly saying so.
 
 ### Recommendation
 
 #### Timezone consideration
 
-Client and database can have a different timezone.
+The client and database can have different timezone.
 
-The connector has different solutions when this is the case. the `timezone` option can have the following value:
+The connector has different solutions when this is the case. The `timezone` option can have the following value:
 
 * 'local' (default): connector doesn't do any conversion. If the database has a different timezone, there will be an offset issue.
-* 'auto' : connector retrieve server timezone. Dates will be converted if server timezone differs from client
-* IANA timezone / offset, example 'America/New\_York' or '+06:00'.
+* 'auto' : connector retrieve server timezone. Dates will be converted if the server timezone differs from the client.
+* IANA timezone/offset, example 'America/New\_York' or '+06:00'.
 
-**IANA timezone / offset**
+**IANA timezone/offset**
 
-When using IANA timezone, the connector will set the connection timezone to the timezone. this can throw an error on connection if timezone is unknown by the server (see [mariadb timezone documentation](https://mariadb.com/kb/en/time-zones/), timezone tables might be not initialized) If you are sure the server is using that timezone, this step can be skipped with the option `skipSetTimezone`.
+When using an IANA timezone, the connector will set the connection timezone to the timezone. This can throw an error on connection if the timezone is unknown by the server (see [mariadb timezone documentation](https://mariadb.com/kb/en/time-zones/), timezone tables might not be initialized). If you are sure the server is using that timezone, this step can be skipped with the option `skipSetTimezone`.
 
-If the timezone corresponds to JavaScript default timezone, then no conversion will be done
+If the timezone corresponds to the JavaScript default timezone, then no conversion will be done.
 
 **Timezone setting recommendation.**
 
-The best is to have the same timezone on client and database, then keep the 'local' default value.
+The best is to have the same timezone on the client and database, then keep the 'local' default value.
 
-If different, then either client or server has to convert the date. In general, it is best to use client conversion to avoid putting any unneeded stress on the database. timezone has to be set to the IANA timezone corresponding to server timezone and disabled `skipSetTimezone` option since you are sure that the server has the corresponding timezone.
+If different, then either the client or server has to convert the date. In general, it is best to use client conversion to avoid putting any unneeded stress on the database. Timezone has to be set to the IANA timezone corresponding to the server timezone, and disabled `skipSetTimezone` option since you are sure that the server has the corresponding timezone.
 
-example: a client uses 'America/New\_York' by default, and server 'America/Los\_Angeles'. execute 'SELECT @@system\_time\_zone' on the server. that will give the server default timezone. the server can return POSIX timezone like 'PDT' (Pacific Daylight Time). IANA timezone correspondence must be found: (see [IANA timezone List](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) and configure client-side. This will ensure DST (automatic date saving time change will be handled)
+Example: a client uses 'America/New\_York' by default, and server 'America/Los\_Angeles'. Execute 'SELECT @@system\_time\_zone' on the server it will give the server default timezone. The server caa n return POSIX timezone like 'PDT' (Pacific Daylight Time). IANA timezone correspondence must be found: (see [IANA timezone List](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) and configure client-side. This will ensure DST (automatic date saving time change will be handled)
 
 ```js
 const mariadb = require('mariadb');
@@ -119,7 +119,7 @@ const conn = mariadb.createConnection({
 
 #### Security consideration
 
-Connection details such as URL, username, and password are better hidden into environment variables. using code like :
+Connection details such as URL, username, and password are better hidden in environment variables. using code like :
 
 ```js
   const mariadb = require('mariadb');
@@ -161,7 +161,7 @@ DB_PWD=secretPasswrd
 
 .env files must NOT be pushed into the repository, using .gitignore
 
-Alternatively, node.js 20.0 introduced the experimental feature of using the `node --env-file=.env` syntax to load environment variables without the need for external dependencies. WE can then simply write
+Alternatively, Node.js 20.0 introduced the experimental feature of using the `node --env-file=.env` syntax to load environment variables without the need for external dependencies. WE can then simply write.
 
 ```js
 const mariadb = require('mariadb');
@@ -182,7 +182,7 @@ The Connector with the Callback API is similar to the one using Promise, but wit
 **Base:**
 
 * [`createConnection(options) → Connection`](connector-nodejs-callback-api.md#createconnectionoptions--connection): Creates a connection to a MariaDB Server.
-* [`createPool(options) → Pool`](connector-nodejs-callback-api.md#createpooloptions--pool) : Creates a new Pool.
+* [`createPooUsingions) → Pool`](connector-nodejs-callback-api.md#createpooloptions--pool) : Creates a new Pool.
 * [`createPoolCluster(options) → PoolCluster`](connector-nodejs-callback-api.md#createpoolclusteroptions--poolcluster) : Creates a new pool cluster.
 * [`importFile(options [, callback])`](connector-nodejs-callback-api.md#importfileoptions-callback) : import Sql file
 * [`version → String`](connector-nodejs-callback-api.md#version--string) : Return library version.
