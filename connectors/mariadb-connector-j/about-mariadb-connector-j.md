@@ -385,7 +385,7 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 
 #### **cachePrepStmts**
 
-* Description: Enable the prepared information in an LRU cache to avoid re-preparation of command
+* Description: Enable caching of PREPARE commands using an LRU (Least Recently Used) cache to prevent redundant command preparation. Note that in versions prior to 3.x, this cache was only activated when the useServerPrepStmts option was enabled.
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 1.3.0
@@ -677,7 +677,7 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 
 #### **prepStmtCacheSize**
 
-* Description: When useServerPrepStmts and cachePrepStmts are enabled, this value indicates the prepared statement cache size.
+* Description: When cachePrepStmts is enabled, this value indicates the prepared statement cache size.
 * Data Type: `integer`
 * Default Value: `250`
 * Introduced: 1.3.0
