@@ -44,7 +44,7 @@ Thanks, and enjoy MariaDB!
 
 ### mariadb-backup
 
-* This commit fixes a bug where Aria tables are used in (master-\>slave1-\>slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave. ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
+* This commit fixes a bug where Aria tables are used in (master->slave1->slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave. ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
 
 ### Galera
 
@@ -66,18 +66,15 @@ Thanks, and enjoy MariaDB!
 
 ### General
 
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables) option to not collect statistics for long char/varchars ([MDEV-36536](https://jira.mariadb.org/browse/MDEV-36536))
 * Packages for RHEL8 no longer depend on liburing. The RHEL8 kernel had insufficient kernel support so linking was an unneeded dependency. libaio was sufficient ([MDBF-1042](https://jira.mariadb.org/browse/MDBF-1042))
-
-
 
 ## Changelog
 
 For a complete list of changes made in MariaDB 10.6.23, with links to detailed information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10.6.23-changelog.md).
 
-
 {% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
-<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formid="4316" formId="4316" %}
