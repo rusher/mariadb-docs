@@ -1,6 +1,6 @@
 # mysql.roles\_mapping Table
 
-**System tables should not normally be edited directly. Use the related SQL statements instead.**
+{% include "../../../.gitbook/includes/system-tables-warning.md" %}
 
 The `mysql.roles_mapping` table contains information about mariaDB [roles](../../../security/user-account-management/roles/).
 

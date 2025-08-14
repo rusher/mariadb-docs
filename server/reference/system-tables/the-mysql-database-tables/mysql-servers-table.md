@@ -1,6 +1,6 @@
 # mysql.servers Table
 
-**System tables should not normally be edited directly. Use the related SQL statements instead.**
+{% include "../../../.gitbook/includes/system-tables-warning.md" %}
 
 The `mysql.servers` table contains information about servers as used by the [Spider](../../../server-usage/storage-engines/spider/), [FEDERATED](../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../server-usage/storage-engines/federatedx-storage-engine/), [Connect](../../../server-usage/storage-engines/connect/) storage engines.
 

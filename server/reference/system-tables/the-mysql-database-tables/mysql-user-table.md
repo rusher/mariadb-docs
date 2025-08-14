@@ -1,6 +1,6 @@
 # mysql.user Table
 
-**System tables should not normally be edited directly. Use the related SQL statements instead.**
+{% include "../../../.gitbook/includes/system-tables-warning.md" %}
 
 The [mysql.global\_priv table](mysql-global_priv-table.md) has replaced the `mysql.user` table, and `mysql.user` should be considered obsolete. It is now a [view](../../../server-usage/views/) into `mysql.global_priv` created for compatibility with older applications and monitoring scripts. New tools are supposed to use `INFORMATION_SCHEMA` tables. The dedicated `mariadb.sys` user is created as the definer of the view. Previously, `root` was the definer, which resulted in privilege problems when this username was changed ([MDEV-19650](https://jira.mariadb.org/browse/MDEV-19650)).
 

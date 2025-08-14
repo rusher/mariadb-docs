@@ -1,6 +1,6 @@
 # mysql.plugin Table
 
-**System tables should not normally be edited directly. Use the related SQL statements instead.**
+{% include "../../../.gitbook/includes/system-tables-warning.md" %}
 
 The `mysql.plugin` table can be queried to get information about installed [plugins](../../plugins/).
 

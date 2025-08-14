@@ -1,6 +1,6 @@
 # mysql.transaction\_registry Table
 
-**System tables should not normally be edited directly. Use the related SQL statements instead.**
+{% include "../../../.gitbook/includes/system-tables-warning.md" %}
 
 The `mysql.transaction_registry` table is part of [system-versioned tables](../../sql-structure/temporal-tables/system-versioned-tables.md). It is used for [transaction-precise versioning](../../sql-structure/temporal-tables/system-versioned-tables.md#transaction-precise-history-in-innodb), and contains the following fields:
 

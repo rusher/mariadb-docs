@@ -1,6 +1,6 @@
 # mysql.procs\_priv Table
 
-**System tables should not normally be edited directly. Use the related SQL statements instead.**
+{% include "../../../.gitbook/includes/system-tables-warning.md" %}
 
 The `mysql.procs_priv` table contains information about [stored procedure](../../../server-usage/stored-routines/stored-procedures/) and [stored function](../../../server-usage/stored-routines/stored-functions/) privileges. See [CREATE PROCEDURE](../../../server-usage/stored-routines/stored-procedures/create-procedure.md) and [CREATE FUNCTION](../../sql-statements/data-definition/create/create-function.md) on creating these.
 
