@@ -107,7 +107,7 @@ Thanks, and enjoy MariaDB!
 
 ### Character Sets
 
-* Changing the server character set in `my.cnf` could cause `debian-start` script to fail  with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
+* Changing the server character set in `my.cnf` could cause `debian-start` script to fail with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
 
 ### Plugin - AWS key management
 
@@ -127,6 +127,7 @@ Thanks, and enjoy MariaDB!
 
 ### General
 
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars ([MDEV-36536](https://jira.mariadb.org/browse/MDEV-36536))
 * Packages for RHEL8 no longer depend on liburing. The RHEL8 kernel had insufficient kernel support so linking was an unneeded dependency. libaio was sufficient ([MDBF-1042](https://jira.mariadb.org/browse/MDBF-1042))
 * SLES 15 SP6 and SLES 15 SP7 are new packages in this release. Because of incompatibilities of packages between SLES service pack versions there are now separate packages for 15sp6 and 15sp7. An upgradeable repo file should include "sles/$releasever/$basearch" rather than the "sles15-amd64" or "sles/15/x86\_64" path that may exist currently. ([MDBF-1067](https://jira.mariadb.org/browse/MDBF-1067), [MDEV-36945](https://jira.mariadb.org/browse/MDEV-36945))
 * Fedora 42 is a new release version and x86\_64 and aarch64 packages are available ([MDBF-1060](https://jira.mariadb.org/browse/MDBF-1060))
