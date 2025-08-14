@@ -37,7 +37,6 @@ Thanks, and enjoy MariaDB!
 
 * Assertion when adding FK to MyISAM/Aria table with a vector index ([MDEV-37022](https://jira.mariadb.org/browse/MDEV-37022))
 
-
 ### Data Definition - Alter Table
 
 * Adding (with ALTER TABLE) a UNIQUE constraint that is USING HASH to a table with foreign keys could've caused the table to become corrupted. ([MDEV-36852](https://jira.mariadb.org/browse/MDEV-36852))
@@ -57,12 +56,10 @@ Thanks, and enjoy MariaDB!
 * Segfault on INTERSECT ALL with UNION in Oracle mode ([MDEV-25158](https://jira.mariadb.org/browse/MDEV-25158))
 * In certain cases privileges on sequences were too restrictive, for example, SELECT on a table might've erroneously required INSERT privilege on a sequences ([MDEV-36870](https://jira.mariadb.org/browse/MDEV-36870))
 
-
 ### mariabackup
 
-* This commit fixes a bug where Aria tables are used in (master-\>slave1-\>slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave. ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
-* Maria-backup would crash during the 'maria\_recovery' part. This could happen if server was doing repair or creating indexes while the
-backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
+* This commit fixes a bug where Aria tables are used in (master->slave1->slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave. ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
+* Maria-backup would crash during the 'maria\_recovery' part. This could happen if server was doing repair or creating indexes while the backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Optimizer
 
@@ -108,16 +105,15 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Character Sets
 
-* Changing the server character set in `my.cnf` could cause `debian-start` script to fail  with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
+* Changing the server character set in `my.cnf` could cause `debian-start` script to fail with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
 
 ### Plugin - AWS key management
 
-* aws\_key\_management compilation was previously broken, is now fixed. plugin can be compiled again. As before, -DNOT\_FOR\_DISTRIBUTION=ON  is necessary to build it. ([MDEV-30831](https://jira.mariadb.org/browse/MDEV-30831))
+* aws\_key\_management compilation was previously broken, is now fixed. plugin can be compiled again. As before, -DNOT\_FOR\_DISTRIBUTION=ON is necessary to build it. ([MDEV-30831](https://jira.mariadb.org/browse/MDEV-30831))
 
 ### Packaging
 
 * mariadb systemd mult-instance service was changed to not attempt changes to the permissions on its pam helper server. This prevented unconstructive behaviour and errors in the systemd journal when starting the mariadb@.service. ([MDEV-36738](https://jira.mariadb.org/browse/MDEV-36738))
-
 
 ### Sequences
 
@@ -129,6 +125,7 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### General
 
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars ([MDEV-36536](https://jira.mariadb.org/browse/MDEV-36536))
 * Packages for RHEL8 no longer depend on liburing. The RHEL8 kernel had insufficient kernel support so linking was an unneeded dependency. libaio was sufficient ([MDBF-1042](https://jira.mariadb.org/browse/MDBF-1042))
 * SLES 15 SP6 and SLES 15 SP7 are new packages in this release. Because of incompatibilities of packages between SLES service pack versions there are now separate packages for 15sp6 and 15sp7. An upgradeable repo file should include "sles/$releasever/$basearch" rather than the "sles15-amd64" or "sles/15/x86\_64" path that may exist currently. ([MDBF-1067](https://jira.mariadb.org/browse/MDBF-1067), [MDEV-36945](https://jira.mariadb.org/browse/MDEV-36945))
 * Fedora 42 is a new release version and x86\_64 and aarch64 packages are available ([MDBF-1060](https://jira.mariadb.org/browse/MDBF-1060))
@@ -147,6 +144,5 @@ For a complete list of changes made in MariaDB 11.8.3, with links to detailed in
 {% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
-<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formid="4316" formId="4316" %}
