@@ -66,7 +66,7 @@ Thanks, and enjoy MariaDB!
 
 ### General
 
-* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables) option to not collect statistics for long char/varchars ([MDEV-36536](https://jira.mariadb.org/browse/MDEV-36536))
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars ([MDEV-36536](https://jira.mariadb.org/browse/MDEV-36536))
 * Packages for RHEL8 no longer depend on liburing. The RHEL8 kernel had insufficient kernel support so linking was an unneeded dependency. libaio was sufficient ([MDBF-1042](https://jira.mariadb.org/browse/MDBF-1042))
 
 ## Changelog
