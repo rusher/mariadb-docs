@@ -56,10 +56,8 @@ Thanks, and enjoy MariaDB!
 
 ### mariadb-backup
 
-* This commit fixes a bug where Aria tables are used in (master-\>slave1-\>slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
-* Maria-backup would crash during the 'maria\_recovery' part.
-This could happen if server was doing repair or creating indexes while the
-backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
+* This commit fixes a bug where Aria tables are used in (master->slave1->slave2) and a backup is taken on slave2. In this case it is possible that the replication position in the backup, stored in mysql.gtid\_slave\_pos, will be wrong. This will lead to replication errors if one is trying to use the backup as a new slave ([MDEV-36143](https://jira.mariadb.org/browse/MDEV-36143))
+* Maria-backup would crash during the 'maria\_recovery' part. This could happen if server was doing repair or creating indexes while the backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Optimizer
 
@@ -99,7 +97,7 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### Character Sets
 
-* Changing the server character set in `my.cnf` could cause `debian-start` script to fail  with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
+* Changing the server character set in `my.cnf` could cause `debian-start` script to fail with "Illegal mix of collations" ([MDEV-36815](https://jira.mariadb.org/browse/MDEV-36815)).
 
 ### Packaging
 
@@ -115,20 +113,12 @@ backup was running. ([MDEV-36860](https://jira.mariadb.org/browse/MDEV-36860))
 
 ### General
 
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars ([MDEV-36536](https://jira.mariadb.org/browse/MDEV-36536))
 * Packages for RHEL8 no longer depend on liburing. The RHEL8 kernel had insufficient kernel support so linking was an unneeded dependency. libaio was sufficient ([MDBF-1042](https://jira.mariadb.org/browse/MDBF-1042))
 * SLES 15 SP6 is a new package in this release. Because of incompatibilities of packages between SLES service pack versions there are now separate packages for 15sp6. An upgradeable repo file should include "sles/$releasever/$basearch" rather than the "sles15-amd64" or "sles/15/x86\_64" path that may exist currently. ([MDBF-1067](https://jira.mariadb.org/browse/MDBF-1067), [MDEV-36945](https://jira.mariadb.org/browse/MDEV-36945))
 * Fedora 42 is a new release version and x86\_64 and aarch64 packages are available ([MDBF-1060](https://jira.mariadb.org/browse/MDBF-1060))
 * Red Hat Enterprise Linux 10 packages are available for x86\_64, aarch64, ppc64le, and s390x hardware platforms ([MDBF-995](https://jira.mariadb.org/browse/MDBF-995))
 * Centos Stream 9 previously missed building a MariaDB-provider-lzo package and this has been corrected ([MDBF-1038](https://jira.mariadb.org/browse/MDBF-1038))
-
-
-
-
-
-
-
-
-
 
 ## Changelog
 
@@ -137,6 +127,5 @@ For a complete list of changes made in MariaDB 10.11.14, with links to detailed 
 {% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
-<!-- This page is licensed: CC BY-SA / Gnu FDL -->
 
 {% @marketo/form formid="4316" formId="4316" %}
