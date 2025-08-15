@@ -888,7 +888,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 {% tab title="Current" %}
 
 
-*   Description: If set to `ON`, the default, to improve fault tolerance [InnoDB](./) first stores data to a [doublewrite buffer](innodb-doublewrite-buffer.md) before writing it to data file. Disabling will provide a marginal performance improvement, and assumes that writes of [innodb\_page\_size](innodb-system-variables.md#innodb_page_size) are atomic. `fast` is like `ON`, but writes are not synchronized to data files. The deprecated start-up parameter [innodb\_flush\_method=NO\_FSYNC](innodb-system-variables.md#innodb_flush_method) will cause innodb\_doublewrite=ON to be changed to innodb\_doublewrite=fast, which will prevent InnoDB from making any durable writes to data files. This would normally be done right before the log checkpoint LSN is updated. Depending on the file systems being used and their configuration, this may or may not be safe.
+*   Description: If set to `ON`, the default, to improve fault tolerance [InnoDB](./) first stores data to a [doublewrite buffer](innodb-doublewrite-buffer.md) before writing it to data file. Disabling will provide a marginal performance improvement, and assumes that writes of [innodb\_page\_size](innodb-system-variables.md#innodb_page_size) are atomic. `fast` is available from [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), and is like `ON`, but writes are not synchronized to data files. The deprecated start-up parameter [innodb\_flush\_method=NO\_FSYNC](innodb-system-variables.md#innodb_flush_method) will cause innodb\_doublewrite=ON to be changed to innodb\_doublewrite=fast, which will prevent InnoDB from making any durable writes to data files. This would normally be done right before the log checkpoint LSN is updated. Depending on the file systems being used and their configuration, this may or may not be safe.
 
     The value innodb\_doublewrite=fast differs from the previous combination of innodb\_doublewrite=ON and innodb\_flush\_method=O\_DIRECT\_NO\_FSYNC by always invoking os\_file\_flush() on the doublewrite buffer itself in buf\_dblwr\_t::flush\_buffered\_writes\_completed(). This should be safer when there are multiple doublewrite batches between checkpoints.
 
@@ -2368,7 +2368,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Default Value: `1048576` (1M)
 * Range: `65536` to `67108864`
 
-#### `innodb_log_spin_wait_delay`
+#### `innodb_spin_wait_delay`
 
 * Description: Maximum delay (not strictly corresponding to a time unit) between spin lock polls. Default changed from `6` to `4` in [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes), as this was verified to give the best throughput by OLTP update index and read-write benchmarks on Intel Broadwell (2/20/40) and ARM (1/46/46).
 * Command line: `--innodb-log-spin-wait-delay=#`
