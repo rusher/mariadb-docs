@@ -322,29 +322,6 @@ To listen on all network interfaces, use `--Voila.ip='0.0.0.0'` as the last argu
 
 ```
 maxvisualize baseline-summary.json comparison-summary.json --Voila.ip='0.0.0.0'
-```              The results of the captured replay must first be post-processed into summaries that the visualization will then use. First, the `canonicals.csv` file must be generated that is needed in the post-processing:
-
-```
-maxplayer canonicals /path/to/capture.cx > canonicals.csv
-```
-
-After that, the baseline and comparison replay results can be post-processed into summaries using the `maxpostprocess` command:
-
-```
-maxpostprocess canonicals.csv baseline-result.csv -o baseline-summary.json
-maxpostprocess canonicals.csv comparison-result.csv -o comparison-summary.json
-```
-
-The visualization itself is done with the `maxvisualize` program. The visualization will open up a browser window to show the visualization. If no browser opens up, the visualization URL is also printed into the command line which by default should be `http://localhost:8866/`.
-
-```
-maxvisualize baseline-summary.json comparison-summary.json
-```
-
-To listen on all network interfaces, use `--Voila.ip='0.0.0.0'` as the last argument.
-
-```
-maxvisualize baseline-summary.json comparison-summary.json --Voila.ip='0.0.0.0'
 ```
 
 ### Settings
