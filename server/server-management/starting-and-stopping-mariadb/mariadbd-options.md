@@ -744,7 +744,7 @@ Some options and system variables related to the [InnoDB](../../server-usage/sto
 * [innodb-show-verbose-locks](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_show_verbose_locks)
 * [innodb-snapshot-isolation](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation)
 * [innodb-sort-buffer-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size)
-* innodb-spin-wait-delay
+* [innodb-spin-wait-delay](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_spin_wait_delay)
 * [innodb-stats-auto-recalc](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc)
 * [innodb-stats-auto-update](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_update)
 * [innodb-stats-include-delete-marked](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_include_delete_marked)
