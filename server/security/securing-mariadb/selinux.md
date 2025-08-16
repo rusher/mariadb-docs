@@ -53,7 +53,7 @@ A file or directory's current context can be checked by executing `ls` with the 
 
 ### Setting the File Context for the Data Directory
 
-If you use a custom directory for [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir), then you may need to set the file context for that directory. The SELinux file context for MariaDB data files is `mysqld_db_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
+If you use a custom directory for [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir), then you may need to set the file context for that directory. The SELinux file context for MariaDB data files is `mysqld_db_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
 
 ```bash
 sudo semanage fcontext --list | grep mysqld_db_t
