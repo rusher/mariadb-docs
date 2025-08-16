@@ -59,7 +59,7 @@ If you use a custom directory for [datadir](../../server-usage/replication-clust
 sudo semanage fcontext --list | grep mysqld_db_t
 ```
 
-If you would like to set the file context for your custom directory for your [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir), then that can be done by executing the [semanage fcontext](https://linux.die.net/man/8/semanage) and [restorecon](https://linux.die.net/man/8/restorecon) commands. For example:
+If you would like to set the file context for your custom directory for your [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir), then that can be done by executing the [semanage fcontext](https://linux.die.net/man/8/semanage) and [restorecon](https://linux.die.net/man/8/restorecon) commands. For example:
 
 ```bash
 sudo semanage fcontext -a -t mysqld_db_t "/mariadb/data(/.*)?"
