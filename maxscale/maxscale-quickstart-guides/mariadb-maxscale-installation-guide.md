@@ -102,7 +102,6 @@ GRANT
   ON *.* 
   TO `maxscale_monitor`@`%`
 GRANT SELECT ON mysql.global_priv TO 'maxscale_monitor'@'%';
-GRANT SELECT ON mysql.global_priv TO 'maxscale_monitor'@'%';
 ```
 
 #### **Define a Service (e.g., Read-Write Split):**
