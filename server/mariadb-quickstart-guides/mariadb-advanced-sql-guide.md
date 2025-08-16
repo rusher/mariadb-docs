@@ -21,7 +21,7 @@ CREATE TABLE student_tests (
 );
 ```
 
-For more details, see the official [CREATE TABLE](https://mariadb.net/docs/server/reference/sql-statements/data-definition/create/create-table) documentation.
+For more details, see the official [CREATE TABLE](../reference/sql-statements/data-definition/create/create-table.md) documentation.
 
 ### Inserting Records
 
@@ -90,7 +90,7 @@ SELECT * FROM student_details;
 +----+---------+---------------+
 ```
 
-For more details, see the [AUTO\_INCREMENT](https://mariadb.net/docs/server/reference/data-types/auto_increment) documentation.
+For more details, see the [AUTO\_INCREMENT](../reference/data-types/auto_increment.md) documentation.
 
 ### Querying from two tables on a common value (JOIN)
 
@@ -100,7 +100,7 @@ To combine rows from two tables based on a related column:
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ```
 
-This type of query is a join. For more details, consult the documentation on [JOINS](https://www.google.com/search?q=link_to_JOINS_documentation).
+This type of query is a join. For more details, consult the documentation on [JOINS](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/).
 
 ### Finding the Maximum Value
 
@@ -118,7 +118,7 @@ SELECT MAX(a) FROM t1;
 +--------+
 ```
 
-See the [MAX() function](https://mariadb.net/docs/server/reference/sql-functions/aggregate-functions/max) documentation. For a grouped example, refer to _Finding the Maximum Value and Grouping the Results_ below.
+See the [MAX() function](../reference/sql-functions/aggregate-functions/max.md) documentation. For a grouped example, refer to _Finding the Maximum Value and Grouping the Results_ below.
 
 ### Finding the Minimum Value
 
@@ -154,7 +154,7 @@ SELECT AVG(a) FROM t1;
 +--------+
 ```
 
-See the [AVG() function](https://mariadb.net/docs/server/reference/sql-functions/aggregate-functions/avg) documentation.
+See the [AVG() function](../reference/sql-functions/aggregate-functions/avg.md) documentation.
 
 ### Finding the Maximum Value and Grouping the Results
 
@@ -201,7 +201,7 @@ SELECT name, test, score FROM student_tests
 +---------+--------+-------+
 ```
 
-For more options, see the [ORDER BY](https://mariadb.net/docs/server/reference/sql-statements/data-manipulation/selecting-data/order-by) documentation.
+For more options, see the [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/order-by.md) documentation.
 
 ### Finding the Row with the Minimum of a Particular Column
 
@@ -278,11 +278,11 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, '2014-08-02') AS 
 
 To calculate current age, replace the specific date string (e.g., '2014-08-02') with CURDATE().
 
-See the [TIMESTAMPDIFF()](https://mariadb.net/docs/server/reference/sql-functions/date-time-functions/timestampdiff) documentation for more.
+See the [TIMESTAMPDIFF()](../reference/sql-functions/date-time-functions/timestampdiff.md) documentation for more.
 
 ### Using User-defined Variables
 
-[User-defined variables ](https://mariadb.net/docs/server/reference/sql-structure/sql-language-structure/user-defined-variables) can store values for use in subsequent queries within the same session.
+[User-defined variables ](../reference/sql-structure/sql-language-structure/user-defined-variables.md)can store values for use in subsequent queries within the same session.
 
 Example: Set a variable for the average score and use it to filter results.
 
@@ -335,7 +335,7 @@ SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details
 +---------+---------+---------------+
 ```
 
-See [User-defined Variables](https://mariadb.net/docs/server/reference/sql-structure/sql-language-structure/user-defined-variables) for more.
+See [User-defined Variables](../reference/sql-structure/sql-language-structure/user-defined-variables.md) for more.
 
 ### View Tables in Order of Size
 
