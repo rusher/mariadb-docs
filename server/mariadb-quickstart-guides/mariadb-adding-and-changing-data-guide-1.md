@@ -183,7 +183,7 @@ ON DUPLICATE KEY UPDATE status_column = 'old', col2 = VALUES(col2);
 
 Beyond these SQL statements, MariaDB offers bulk methods for adding data, such as:
 
-* [`LOAD DATA INFILE`](https://mariadb.net/docs/server/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile): For importing data from text files.
-* [`mariadb-import` utility](https://mariadb.net/docs/server/clients-and-utilities/backup-restore-and-import-clients/data-import-with-mariadb-enterprise-server/mariadb-import-utility): A command-line tool that uses `LOAD DATA INFILE`. These are covered in "[Bulk Data Importing Guide](https://mariadb.net/docs/server/mariadb-quickstart-guides/mariadb-importing-data-guide)").
+* [`LOAD DATA INFILE`](../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md): For importing data from text files.
+* [`mariadb-import` utility](../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md): A command-line tool that uses `LOAD DATA INFILE`. These are covered in "[Bulk Data Importing Guide](https://mariadb.net/docs/server/mariadb-quickstart-guides/mariadb-importing-data-guide)").
 
 CC BY-SA / Gnu FDL
