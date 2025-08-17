@@ -1,8 +1,8 @@
 # MariaDB 11.6 Changes & Improvements
 
-[MariaDB 11.6](what-is-mariadb-116.md) is an old rolling release and is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
 
-The most recent release of [MariaDB 11.6](what-is-mariadb-116.md) is:[**MariaDB 11.6.2**](mariadb-11-6-2-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/11.6.2/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.6.2)
+
+{% include "../../../.gitbook/includes/latest-11-6 (1).md" %}
 
 [MariaDB 11.6](what-is-mariadb-116.md) is a [rolling release](../../about/release-model.md).
 
