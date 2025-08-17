@@ -1,7 +1,5 @@
 # MariaDB 10.11.13 Changelog
 
-{% include "../../../../.gitbook/includes/latest-10-11.md" %}
-
 <a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="../../mariadb-10-11-series/mariadb-10.11.13-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-10.11.13-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-11-series/what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.13/)

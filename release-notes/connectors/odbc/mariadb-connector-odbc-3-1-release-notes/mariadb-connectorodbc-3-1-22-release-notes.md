@@ -1,6 +1,6 @@
 # Connector/ODBC 3.1.22 Release Notes
 
-{% include "../../../../.gitbook/includes/latest-odbc.md" %}
+{% include "../../../.gitbook/includes/latest-odbc.md" %}
 
 <a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a> <a href="mariadb-connectorodbc-3-1-22-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3.1.22-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
 

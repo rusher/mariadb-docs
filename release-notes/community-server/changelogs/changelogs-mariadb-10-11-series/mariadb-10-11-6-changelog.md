@@ -1,7 +1,5 @@
 # MariaDB 10.11.6 Changelog
 
-{% include "../../../../.gitbook/includes/latest-10-11.md" %}
-
 <a href="https://downloads.mariadb.org/mariadb/10.11.6/" class="button primary">Download</a> <a href="../../mariadb-10-11-series/mariadb-10-11-6-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-10-11-6-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-11-series/what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 **Release date:** 13 Nov 2023
