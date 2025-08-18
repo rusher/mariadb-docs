@@ -11,7 +11,7 @@ If you are looking to set up MariaDB Server, it is often easiest to use a reposi
 
 ## Using the repository configuration tool
 
-It's an online tool, visit https://mariadb.org/download/?t=repo-config and follow instructions from there. It will ask for your linux distribution, desired MariaDB version, and the mirror to use and will show what files to edit and what commands to run to configure a repository.
+Visit [https://mariadb.org/download/?t=repo-config](https://mariadb.org/download/?t=repo-config) and follow the instructions from there. It will ask for your Linux distribution, desired MariaDB version, and the mirror to use, and will show what files to edit and what commands to run to configure a repository.
 
 ## Using a repository setup script
 
