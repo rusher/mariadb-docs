@@ -9,21 +9,22 @@ noIndex: true
 ## About this Release
 
 * MariaDB Server 11.4.5 was released on 4 Feb 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-5-release-notes)
 * MariaDB Server is open source software, the [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 * This release is Stable (GA) maturity
 
 ## About this Release Series
 
-* This release is part of the [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114) release series
-* [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114) is a rolling release series
-* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114/)
+* This release is part of the MariaDB 11.4 release series
+* MariaDB 11.4 is a long-term maintenance release series, the first stable release was in May 2024, and it will be maintained until May 2029
+* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
 
 ## Release History
 
-* The prior release in this series was [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes), released on 1 Nov 2024
-* This release ([MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes)) was released on 4 Feb 2025
-* The latest release in this series is [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-6-release-notes), released on 6 May 2025
+* The prior release in this series was MariaDB 11.4.4, released on 1 Nov 2024
+* This release (MariaDB 11.4.5) was released on 4 Feb 2025
+
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-11.4.md" %}
 
 ## Useful Resources
 

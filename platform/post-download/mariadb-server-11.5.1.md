@@ -15,14 +15,14 @@ noIndex: true
 
 ## About this Release Series
 
-* This release is part of the [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) release series
-* [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) is a rolling release series
+* This release is part of the MariaDB 11.5 release series
+* MariaDB 11.5 is a rolling release series
 * [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 ## Release History
 
-* The prior release in this series was [MariaDB 11.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-0-release-notes), released on 18 Mar 2024
-* This release ([MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes)) was released on 30 May 2024
+* The prior release in this series was MariaDB 11.5.0, released on 18 Mar 2024
+* This release (MariaDB 11.5.1) was released on 30 May 2024
 * The latest release in this series is [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes), released on 14 Aug 2024
 
 ## Useful Resources

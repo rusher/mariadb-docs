@@ -15,14 +15,14 @@ noIndex: true
 
 ## About this Release Series
 
-* This release is part of the [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116) release series
-* [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116) is a rolling release series
+* This release is part of the MariaDB 11.6 release series
+* MariaDB 11.6 is a rolling release series
 * [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
 
 ## Release History
 
-* The prior release in this series was [MariaDB 11.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes) Vector, released on 29 Jul 2024
-* This release ([MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes)) was released on 14 Aug 2024
+* The prior release in this series was MariaDB 11.6.0 Vector, released on 29 Jul 2024
+* This release (MariaDB 11.6.1) was released on 14 Aug 2024
 * The latest release in this series is [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes), released on 21 Nov 2024
 
 ## Useful Resources

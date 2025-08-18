@@ -1,30 +1,24 @@
----
-noIndex: true
----
-
-# MariaDB Server 11.4.2
+# MariaDB Server 11.7.0
 
 {% @marketo/form formId="4279" %}
 
 ## About this Release
 
-* MariaDB Server 11.4.2 was released on 29 May 2024
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-2-release-notes)
+* MariaDB Server 11.7.0 was released on 25 Sep 2024
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 * MariaDB Server is open source software, the [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
-* This release is Stable (GA) maturity
+* This release is Release Candidate (RC) maturity
 
 ## About this Release Series
 
-* This release is part of the MariaDB 11.4 release series
-* MariaDB 11.4 is a long-term maintenance release series, the first stable release was in May 2024, and it will be maintained until May 2029
-* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
+* This release is part of the MariaDB 11.7 release series
+* MariaDB 11.7 is a rolling release series
+* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
 ## Release History
 
-* The prior release in this series was MariaDB 11.4.1, released on 16 Feb 2024
-* This release (MariaDB 11.4.2) was released on 29 May 2024
-
-{% include "../../mariadb-platform/.gitbook/includes/most-recent-11.4.md" %}
+* This release (MariaDB 11.7.0) was released on 25 Sep 2024
+* The latest release in this series is [MariaDB 11.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes), released on 13 Feb 2025
 
 ## Useful Resources
 
