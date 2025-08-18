@@ -15,16 +15,13 @@ Until [MariaDB 5.5](../../old-releases/release-notes-mariadb-5-5-series/changes-
   * All ports and sockets are generally the same.
   * All MySQL connectors (PHP, Perl, Python, Java, .NET, MyODBC, Ruby, MySQL C\
     connector etc) work unchanged with MariaDB.
-  * There are some [installation issues with PHP5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-with-php5)\
-    that you should be aware of (a bug in how the old PHP5 client checks library\
-    compatibility).
+  * There are some [installation issues with PHP5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-with-php5) that you should be aware of (a bug in how the old PHP5 client checks library compatibility).
 
 This means that for many cases, you can just uninstall MySQL and [install MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb) and you are good to go. There is not generally any need to convert any data files.
 
 However, you must still run [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) to finish the upgrade. This is needed to ensure that your mysql privilege and event tables are updated with the new fields MariaDB uses.
 
-That said, MariaDB has a lot of [new options, extension, storage engines and bug fixes](mariadb-vs-mysql-features.md) that are not in MySQL. You can find the feature set for the different MariaDB\
-versions on the [What is in the different MariaDB Releases](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-in-the-different-mariadb-releases/README.md) page.
+That said, MariaDB has a lot of [new options, extension, storage engines and bug fixes](mariadb-vs-mysql-features.md) that are not in MySQL. You can find the feature set for the different MariaDB versions on the [What is in the different MariaDB Releases](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-in-the-different-mariadb-releases/README.md) page.
 
 ### Drop-in Compatibility of Specific MariaDB Versions
 
@@ -160,12 +157,8 @@ For unmaintained versions, see:
   reporting: `STAGE`, `MAX_STAGE`, and `PROGRESS`.
 * [Long comments](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/comment-syntax) which start with `/*M!`\
   or `/*M!#####` are executed.
-* If you use [max\_user\_connections=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_user_connections) (which means any number of connections) when starting mysqld, you can't change the global variable\
-  anymore while mysqld remains running. This is because when mysqld is started\
-  with `max_user_connections=0` it does not allocate counting\
-  structures (which also involve a mutex for each connection). This would lead\
-  to wrong counters if you later changed the variable. If you want to be able\
-  to change this variable at runtime, set it to a high value at startup.
+* If you use [max\_user\_connections=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_user_connections) (which means any number of connections) when starting mysqld, you can't change the global variable anymore while mysqld remains running. This is because when mysqld is started with `max_user_connections=0` it does not allocate counting\
+  structures (which also involve a mutex for each connection). This would lead to wrong counters if you later changed the variable. If you want to be able to change this variable at runtime, set it to a high value at startup.
 * You can set `max_user_connections` (both the global variable and the `GRANT` option) to `-1` to stop users from connecting to the server. The global `max_user_connections` variable does not affect users with the `SUPER` privilege.
 * The [IGNORE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/ignore) directive does not ignore all errors (like fatal errors), only things that are safe to ignore.
 
@@ -182,8 +175,7 @@ For all practical purposes, [MariaDB 5.2](../../old-releases/release-notes-maria
 
 In some few cases MariaDB has to be incompatible to allow MariaDB to provide more and better information than MySQL.
 
-Here is the list of all known user level incompatibilities you may see\
-when using [MariaDB 5.1](../../old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md) instead of MySQL 5.1.
+Here is the list of all known user level incompatibilities you may see when using [MariaDB 5.1](../../old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md) instead of MySQL 5.1.
 
 * The installation package names start with MariaDB instead of MySQL.
 * Timings may be different as MariaDB is in many cases faster than MySQL.
@@ -195,13 +187,11 @@ when using [MariaDB 5.1](../../old-releases/release-notes-mariadb-5-1-series/cha
 * The slow query log has [more information](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics) about the query, which may be a problem if you have a script which parses the slow query log.
 * MariaDB by default takes a bit more memory than MySQL because we have by default enabled the [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) for handling internal temporary tables. If you need MariaDB to take very little\
   memory (at the expense of performance), you can set the value of `aria_pagecache_buffer_size` to `1M` (the default is `128M`).
-* If you are using [new command options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files),[new features of MariaDB](mariadb-vs-mysql-features.md) or [new storage engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines), you can't move easily back\
-  and forth between MySQL and MariaDB anymore.
+* If you are using [new command options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files),[new features of MariaDB](mariadb-vs-mysql-features.md) or [new storage engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines), you can't move easily back and forth between MySQL and MariaDB anymore.
 
 ## Old, Unsupported Configuration Options
 
-If you are using any of the following options in your `/etc/my.cnf` or other`my.cnf` file you should remove them. This is also true for MySQL 5.1 or\
-newer:
+If you are using any of the following options in your `/etc/my.cnf` or other`my.cnf` file you should remove them. This is also true for MySQL 5.1 or newer:
 
 * `skip-bdb`
 
