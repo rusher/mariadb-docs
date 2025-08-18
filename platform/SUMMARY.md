@@ -22,6 +22,7 @@
   * [MariaDB Server 10.11.14](post-download/mariadb-server-10.11.14.md)
   * [MariaDB Server 10.6.23](post-download/mariadb-server-10.6.23.md)
   * [MariaDB Server 11.8.2](post-download/mariadb-server-11.8.2.md)
+  * [MariaDB Server 11.8.0](post-download/mariadb-server-11.8.0.md)
   * [MariaDB Server 12.0.1](post-download/mariadb-server-12.0.1.md)
   * [MariaDB Server 12.0.0](post-download/mariadb-server-12.0.0.md)
   * [MariaDB Connector/C 2.1.0](post-download/mariadb-connector-c-2.1.0.md)

@@ -1,17 +1,12 @@
----
-noIndex: true
----
-
-# MariaDB Server 11.8.1
+# MariaDB Server 11.8.0
 
 {% @marketo/form formId="4279" %}
 
 ## About this Release
 
-* MariaDB Server 11.8.1 was released on 13 Feb 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-1-release-notes)
+* MariaDB Server 11.8.0 was released on 18 Dec 2024
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-0-release-notes)
 * MariaDB Server is open source software, the [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
-* This release is Release Candidate (RC) maturity
 
 ## About this Release Series
 
@@ -21,8 +16,7 @@ noIndex: true
 
 ## Release History
 
-* The prior release in this series was MariaDB 11.8.0, released on 18 Dec 2024
-* This release (MariaDB 11.8.1) was released on 13 Feb 2025
+* This release (MariaDB 11.8.0) was released on 18 Dec 2024
 
 {% include "../../mariadb-platform/.gitbook/includes/latest-11.8.md" %}
 
