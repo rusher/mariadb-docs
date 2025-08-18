@@ -1,16 +1,12 @@
----
-noIndex: true
----
-
-# MariaDB Server 10.11.12
+# MariaDB Server 10.11.6
 
 {% @marketo/form formId="4279" %}
 
 ## About this Release
 
-* MariaDB Server 10.11.12 was released on 6 May 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.12-release-notes)
-* MariaDB Server is open source software, the [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
+* MariaDB Server 10.11.6 was released on 13 Nov 2023
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-6-release-notes)
+* MariaDB Server is open source software, [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 * This release is Stable (GA) maturity
 
 ## About this Release Series
@@ -21,8 +17,8 @@ noIndex: true
 
 ## Release History
 
-* The prior release in this series was MariaDB 10.11.11, released on 4 Feb 2025
-* This release (MariaDB 10.11.12) was released on 6 May 2025
+* The prior release in this series was MariaDB Server 10.11.5, released on 14 Aug 2023
+* This release (MariaDB Server 10.11.6) was released on 13 Nov 2023
 
 {% include "../../mariadb-platform/.gitbook/includes/most-recent-10.11.md" %}
 

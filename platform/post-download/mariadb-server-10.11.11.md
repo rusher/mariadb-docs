@@ -9,21 +9,22 @@ noIndex: true
 ## About this Release
 
 * MariaDB Server 10.11.11 was released on 4 Feb 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-11-release-notes)
 * MariaDB Server is open source software, the [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 * This release is Stable (GA) maturity
 
 ## About this Release Series
 
 * This release is part of the MariaDB Server 10.11 release series
-* [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) is a long-term maintenance release series, the first stable release was in February 2023, and it will be maintained until February 2028
-* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011/)
+* The MariaDB Server 10.11 release series will be supported until 16 Feb 2028
+* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011)
 
 ## Release History
 
-* The prior release in this series was [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes), released on 1 Nov 2024
-* This release ([MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes)) was released on 4 Feb 2025
-* The latest release in this series is [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-12-release-notes), released on 6 May 2025
+* The prior release in this series was MariaDB 10.11.10, released on 1 Nov 2024
+* This release (MariaDB 10.11.11) was released on 4 Feb 2025
+
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-10.11.md" %}
 
 ## Useful Resources
 

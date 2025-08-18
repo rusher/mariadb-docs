@@ -10,7 +10,7 @@ noIndex: true
 
 * MariaDB Server 10.11.1 was released on 17 Nov 2022.
 * Please note: Newer releases exist within the MariaDB Server 10.11 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-1-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-1-release-notes)
 * MariaDB Server is open source software. [Source code is available.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 * This release is Release Candidate (RC) maturity. Only Stable (GA) releases should be used in production.
 
@@ -18,14 +18,15 @@ noIndex: true
 
 * This release is part of the MariaDB Server 10.11 release series.
 * The MariaDB Server 10.11 release series will be supported until 16 Feb 2028.
-* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011/)
+* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011)
 
 ## Release History
 
-* The prior release in this series was MariaDB Server 10.11.0, released on 26 Sep 2022.
-* This release (MariaDB Server 10.11.1) was released on 17 Nov 2022.
-* The next release in this series is MariaDB Server 10.11.2, released on 16 Feb 2023.
-* The latest release in this series is MariaDB Server 10.11.5, released on 14 Aug 2023.
+* The prior release in this series was MariaDB Server 10.11.0, released on 26 Sep 2022
+* This release (MariaDB Server 10.11.1) was released on 17 Nov 2022
+* The next release in this series is MariaDB Server 10.11.2, released on 16 Feb 2023
+
+{% include "../../mariadb-platform/.gitbook/includes/most-recent-10.11.md" %}
 
 ## Useful Resources
 
