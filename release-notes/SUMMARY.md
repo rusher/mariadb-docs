@@ -171,6 +171,7 @@
       * [SQL\_MODE=ORACLE](community-server/about/compatibility-and-differences/sql_modeoracle.md)
       * [Function Differences Between MariaDB and MySQL](community-server/about/compatibility-and-differences/function-differences-between-mariadb-and-mysql/README.md)
         * [Function Differences Between MariaDB Rolling and MySQL 8.0](community-server/about/compatibility-and-differences/function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-rolling-and-mysql-8-0.md)
+        * [Function Differences Between MariaDB 11.8 and MySQL 8.0](community-server/about/compatibility-and-differences/function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-11.8-and-mysql-8.0.md)
         * [Function Differences Between MariaDB 11.4 and MySQL 8.0](community-server/about/compatibility-and-differences/function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-11-4-and-mysql-8-0.md)
         * [Function Differences Between MariaDB 10.11 and MySQL 8.0](community-server/about/compatibility-and-differences/function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-11-and-mysql-8-0.md)
         * [Function Differences Between MariaDB 10.6 and MySQL 8.0](community-server/about/compatibility-and-differences/function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-6-and-mysql-8-0.md)
