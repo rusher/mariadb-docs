@@ -238,6 +238,14 @@ With CMAPI 1.3 and earlier:
 
 ### Get Status
 
+{% tabs %}
+{% tab title="Note" %}
+`curl` examples remain valid but are now considered **legacy**.
+{% endtab %}
+{% endtabs %}
+
+`$ mcs cluster status`
+
 ```bash
 $ curl -k -s https://mcs1:8640/cmapi/0.4.0/cluster/status \
       --header 'Content-Type:application/json' \
@@ -246,6 +254,8 @@ $ curl -k -s https://mcs1:8640/cmapi/0.4.0/cluster/status \
 ```
 
 ### Start Cluster
+
+`$ mcs cluster start --timeout 20`
 
 ```bash
 $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/start \
@@ -256,6 +266,8 @@ $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/start \
 ```
 
 ### Stop Cluster
+
+`$ mcs cluster shutdown --timeout 20`
 
 ```bash
 $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/shutdown \

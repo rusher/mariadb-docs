@@ -26,7 +26,7 @@ The File Key Management plugin is included in MariaDB packages as the `file_key_
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. The plugin can be installed by providing the [--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
-```
+```sql
 [mariadb]
 ...
 plugin_load_add = file_key_management
@@ -48,7 +48,7 @@ If you installed the plugin by providing the [--plugin-load](../../../../../serv
 
 In order to encrypt your tables with encryption keys using the File Key Management plugin, you first need to create the file that contains the encryption keys. The file needs to contain two pieces of information for each encryption key. First, each encryption key needs to be identified with a 32-bit integer as the key identifier. Second, the encryption key itself needs to be provided in hex-encoded form. These two pieces of information need to be separated by a semicolon. For example, the file is formatted in the following way:
 
-```
+```sql
 <encryption_key_id1>;<hex-encoded_encryption_key1>
 <encryption_key_id2>;<hex-encoded_encryption_key2>
 ```
@@ -59,7 +59,7 @@ The File Key Management plugin uses [Advanced Encryption Standard (AES)](https:/
 
 You can generate random encryption keys using the [openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html) command. For example, to create a random 256-bit (32-byte) encryption key, you would run the following command:
 
-```
+```sql
 $ openssl rand -hex 32
 a7addd9adea9978fda19f21e6be987880e68ac92632ca052e5bb42b1a506939a
 ```
@@ -69,14 +69,15 @@ The key file still needs to have a key identifier for each encryption key added 
 For example, to append three new encryption keys to a new key file, you could execute the following:
 
 ```bash
-$ (echo -n "1;" ; openssl rand -hex 32 ) | sudo tee -a  /etc/mysql/encryption/keyfile
-$ (echo -n "2;" ; openssl rand -hex 32 ) | sudo tee -a  /etc/mysql/encryption/keyfile
-$ (echo -n "100;" ; openssl rand -hex 32 ) | sudo tee -a  /etc/mysql/encryption/keyfile
+mkdir -p /etc/mysql/encryption
+echo $(echo -n "1;" ; openssl rand -hex 32) | sudo tee -a  /etc/mysql/encryption/keyfile
+echo $(echo -n "2;" ; openssl rand -hex 32) | sudo tee -a  /etc/mysql/encryption/keyfile
+echo $(echo -n "100;" ; openssl rand -hex 32) | sudo tee -a  /etc/mysql/encryption/keyfile
 ```
 
 The new key file would look something like the following after this step:
 
-```
+```sql
 1;a7addd9adea9978fda19f21e6be987880e68ac92632ca052e5bb42b1a506939a
 2;49c16acc2dffe616710c9ba9a10b94944a737de1beccb52dc1560abfdd67388b
 100;8db1ee74580e7e93ab8cf157f02656d356c2f437d548d5bf16bf2a56932954a3
@@ -90,7 +91,7 @@ If the key file is unencrypted, then the File Key Management plugin only require
 
 This system variable can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
-```
+```sql
 [mariadb]
 ...
 loose_file_key_management_filename = /etc/mysql/encryption/keyfile
@@ -126,7 +127,7 @@ $ sudo openssl enc -aes-256-cbc -md sha1 \
 
 **Note:** some more recent `openssl` versions may complain with
 
-```
+```sql
 *** WARNING : deprecated key derivation used.
 Using -iter or -pbkdf2 would be better.
 ```
@@ -146,7 +147,7 @@ The [file\_key\_management\_filekey](file-key-management-encryption-plugin.md#fi
 
 These system variables can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
-```
+```sql
 [mariadb]
 ...
 loose_file_key_management_filename = /etc/mysql/encryption/keyfile.enc
@@ -170,14 +171,11 @@ The encryption algorithm can be configured by setting the [file\_key\_management
 
 This system variable can be set to one of the following values:
 
-| System Variable Value | Description                                                                                                                                                                                                                                                                                                                                                             |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| AES\_CBC              | Data is encrypted using AES in the [Cipher Block Chaining (CBC)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_.28CBC.29) mode. This is the default value.                                                                                                                                                                         |
-| AES\_CTR              | Data is encrypted using AES either in the [Counter (CTR)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_.28CTR.29) mode or in the authenticated [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) mode, depending on context. This is only supported in some builds. See the previous section for more information. |
+<table><thead><tr><th width="207">System Variable Value</th><th>Description</th></tr></thead><tbody><tr><td>AES_CBC</td><td>Data is encrypted using AES in the <a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_.28CBC.29">Cipher Block Chaining (CBC)</a> mode. This is the default value.</td></tr><tr><td>AES_CTR</td><td>Data is encrypted using AES either in the <a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_.28CTR.29">Counter (CTR)</a> mode or in the authenticated <a href="https://en.wikipedia.org/wiki/Galois/Counter_Mode">Galois/Counter Mode (GCM)</a> mode, depending on context. This is only supported in some builds. See the previous section for more information.</td></tr></tbody></table>
 
 This system variable can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
-```
+```sql
 [mariadb]
 ...
 loose_file_key_management_encryption_algorithm = AES_CTR
@@ -195,17 +193,13 @@ Once the File Key Management Plugin is enabled, you can use it by creating an en
 CREATE TABLE t (i INT) ENGINE=InnoDB ENCRYPTED=YES
 ```
 
-Now, table `t` will be encrypted using the encryption key from the key file.
-
-For more information on how to use encryption, see [Data at Rest Encryption](../data-at-rest-encryption-overview.md).
+Now, table `t` will be encrypted using the encryption key from the key file. For more information on how to use encryption, see [Data at Rest Encryption](../data-at-rest-encryption-overview.md).
 
 ## Using Multiple Encryption Keys
 
 The File Key Management Plugin supports [using multiple encryption keys](encryption-key-management.md#using-multiple-encryption-keys). Each encryption key can be defined with a different 32-bit integer as a key identifier.
 
-When [encrypting InnoDB tables](../innodb-encryption/), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md).
-
-When [encrypting Aria tables](../aria-encryption/), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
+When [encrypting InnoDB tables](../innodb-encryption/), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md). When [encrypting Aria tables](../aria-encryption/), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
 
 ## Key Rotation
 
@@ -213,11 +207,7 @@ The File Key Management plugin does not currently support [key rotation](encrypt
 
 ## Versions
 
-| Version | Status | Introduced                                                                                                                                                                                                                                       |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes)                                                                                    |
-| 1.0     | Gamma  | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md) |
-| 1.0     | Alpha  | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)                                                                                    |
+<table><thead><tr><th width="108">Version</th><th width="151">Status</th><th>Introduced</th></tr></thead><tbody><tr><td>1.0</td><td>Stable</td><td><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes">MariaDB 10.1.18</a></td></tr><tr><td>1.0</td><td>Gamma</td><td><a href="https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md">MariaDB 10.1.13</a></td></tr><tr><td>1.0</td><td>Alpha</td><td><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes">MariaDB 10.1.3</a></td></tr></tbody></table>
 
 ## System Variables
 
