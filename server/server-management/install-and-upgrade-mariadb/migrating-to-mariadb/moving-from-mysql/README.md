@@ -47,3 +47,11 @@ description: >-
 [Incompatibilities and Feature Differences Between MariaDB 10.6 and MySQL 8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-10-6-and-mysql-8)
 {% endcontent-ref %}
 
+{% content-ref url="migration-from-mysql-to-mariadb-cluster-using-replication.md" %}
+[migration-from-mysql-to-mariadb-cluster-using-replication.md](migration-from-mysql-to-mariadb-cluster-using-replication.md)
+{% endcontent-ref %}
+
+{% content-ref url="migrating-to-mariadb-from-mysql-obsolete-articles/" %}
+[migrating-to-mariadb-from-mysql-obsolete-articles](migrating-to-mariadb-from-mysql-obsolete-articles/)
+{% endcontent-ref %}
+
