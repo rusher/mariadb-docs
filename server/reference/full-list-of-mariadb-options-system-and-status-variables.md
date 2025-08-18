@@ -97,7 +97,7 @@
 * [binlog\_gtid\_index\_page\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)
 * [binlog\_gtid\_index\_span\_min](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)
 * \--[binlog-ignore-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#binlog-ignore-db), [binlog\_ignore\_db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db)
-* [binlog\_large\_commit\_threshold](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_large_commit_threshold#binlog_large_commit_threshold)
+* [binlog\_large\_commit\_threshold](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_large_commit_threshold)
 * [binlog\_legacy\_event\_pos](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_legacy_event_pos)
 * [binlog\_optimize\_thread\_scheduling](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_optimize_thread_scheduling)
 * [binlog\_row\_image](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_image)
