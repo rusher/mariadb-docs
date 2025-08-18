@@ -38,8 +38,7 @@ For a detailed breakdown of function differences, see:
 
 #### More Storage Engines
 
-In addition to the standard [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine), [BLACKHOLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/blackhole), [CSV](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/csv), [MEMORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/memory-storage-engine), [ARCHIVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/archive), and [MERGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/merge) storage engines, the following are also included with MariaDB Source and Binary\
-packages:
+In addition to the standard [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine), [BLACKHOLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/blackhole), [CSV](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/csv), [MEMORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/memory-storage-engine), [ARCHIVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/archive), and [MERGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/merge) storage engines, the following are also included with MariaDB Source and Binary packages:
 
 * [ColumnStore](../../../columnstore/), a column oriented storage engine optimized for Data warehousing.
 * [MyRocks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks), a storage engine with great compression, in 10.2
@@ -58,8 +57,7 @@ packages:
 * MariaDB now provides much faster privilege checks for setups with many user accounts or many database
 * The new [FLUSH SSL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) command allows SSL certificates to be reloaded without restarting the server
 * Many optimizer enhancements in [MariaDB 5.3](../../old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md). [Subqueries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries) are now finally usable.\
-  The complete list and a comparison with MySQL is [here](optimizer-feature-comparison-matrix.md).\
-  A benchmark can be found [here](https://mariadb.com/blog/mariadb-53-optimizer-benchmark).
+  The complete list and a comparison with MySQL is [here](optimizer-feature-comparison-matrix.md). A benchmark can be found [here](https://mariadb.com/blog/mariadb-53-optimizer-benchmark).
 * Faster and safer replication:[Group commit for the binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log). This makes many setups that use replication and lots of updates [more than 2x times faster](https://www.facebook.com/note.php?note_id=10150211546215933).
 * [Parallel replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/parallel-replication) — new in 10.0
 * [Improvements](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/quality/benchmarks-and-long-running-tests/benchmarks/mariadb-53-asynchronous-io-on-windows-with-innodb) for InnoDB asynchronous IO subsystem on Windows.
@@ -68,27 +66,17 @@ packages:
   — new in 5.2
 * [Adjustable hash size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine/myisam-system-variables#key_cache_file_hash_size) for MyISAM and Aria. This can greatly improve shutdown time (from hours to minutes) if using a lot of MyISAM/Aria tables with delayed keys — new in 10.0.13
 * [CHECKSUM TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/checksum-table) is faster.
-* We improved the performance of character set conversions (and removed\
-  conversions when they were not really needed).\
-  Overall speed improvement is 1-5 % (according to sql-bench) but can be\
+* We improved the performance of character set conversions (and removed conversions when they were not really needed). Overall speed improvement is 1-5 % (according to sql-bench) but can be\
   higher for big result sets with all characters between 0x00-0x7f.
 * [Pool of Threads in MariaDB 5.1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53) and even better in [MariaDB 5.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb). This allows MariaDB to run with 200,000+ connections and with a notable speed improvement when using many connections.
 * Several speed improvements when a client connects to MariaDB. Many of the improvements were done in [MariaDB 10.1](../../old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) and [MariaDB 10.2](../../old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md).
 * There are some improvements to the DBUG code to make its execution faster when debug is compiled in but not used.
-* Our use of the Aria storage engine enables faster complex queries (queries\
-  which normally use disk-based temporary tables). The [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) storage\
-  engine is used for internal temporary tables, which should give a speedup\
-  when doing complex selects. Aria is usually faster for temporary tables when\
-  compared to MyISAM because Aria caches row data in memory and normally\
-  doesn't have to write the temporary rows to disk.
-* The test suite has been extended and now runs much faster than before, even though it\
-  tests more things.
+* Our use of the Aria storage engine enables faster complex queries (queries which normally use disk-based temporary tables). The [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) storage engine is used for internal temporary tables, which should give a speedup when doing complex selects. Aria is usually faster for temporary tables when\
+  compared to MyISAM because Aria caches row data in memory and normally doesn't have to write the temporary rows to disk. The test suite has been extended and now runs much faster than before, even though it tests more things.
 
 #### Extensions & New Features
 
-We've added a lot of new features to MariaDB. If a\
-patch or feature is useful, safe, and stable — we make\
-every effort to include it in MariaDB. The most notable features are:
+We've added a lot of new features to MariaDB. If a patch or feature is useful, safe, and stable — we make every effort to include it in MariaDB. The most notable features are:
 
 * Support introduced for [System-versioned tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables). Allows queries to access both current and historic data, aiding in managing retention, analysis and point-in-time recovery. — new in 10.3
 * [ALTER TABLE... DROP COLUMN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#drop-column) can now run as Instant operations. Can also now change the ordering of columns. — new in 10.4
@@ -119,22 +107,16 @@ every effort to include it in MariaDB. The most notable features are:
 * Several new [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions) — new in 10.2
 * [Microsecond Precision in Processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist)
 * [Table Elimination](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination)
-* [Virtual Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns)\
-  — new in 5.2
+* [Virtual Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns) — new in 5.2
 * [Microseconds in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/microseconds-in-mariadb) — new in 5.3
-* [Extended User Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics)\
-  — new in 5.2
+* [Extended User Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics) — new in 5.2
 * [KILL all queries for a user](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/kill) — new in 5.3,
 * [KILL QUERY ID - terminates the query by query\_id, leaving the connection intact](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/kill) — new in 10.0.5,
-* [Pluggable Authentication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/pluggable-authentication-overview)\
-  — new in 5.2
-* [Storage-engine-specific CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes)\
-  — new in 5.2
-* [Enhancements to INFORMATION SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)\
-  — new in 5.2
+* [Pluggable Authentication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/pluggable-authentication-overview) — new in 5.2
+* [Storage-engine-specific CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes) — new in 5.2
+* [Enhancements to INFORMATION SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema) — new in 5.2
 * [Group commit for the binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log). This makes [replication notably faster!](https://www.facebook.com/note.php?note_id=10150261692455933) — new in 5.3
-* Added `--rewrite-db` [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) option to change the used database\
-  — new in 5.2
+* Added `--rewrite-db` [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) option to change the used database — new in 5.2
 * [Progress reporting](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting) for [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) and [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) — new in 5.3
 * Faster [joins and subqueries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries) — new in 5.3
 * [HandlerSocket](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/handlersocket) and faster [HANDLER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/handler) calls — new in 5.3
@@ -162,8 +144,7 @@ For a full list, please see [features for each release](https://github.com/maria
 #### Fewer Warnings and Fewer Bugs
 
 * Bugs are bad. Fix as many bugs as possible and try to not introduce new ones.
-* Compiler warnings are also bad. Eliminate as many compiler warnings as\
-  possible.
+* Compiler warnings are also bad. Eliminate as many compiler warnings as possible.
 
 #### Truly Open Source
 
