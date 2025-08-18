@@ -152,12 +152,12 @@ For a full list, please see [features for each release](https://github.com/maria
 * MariaDB does not have closed source modules like the ones that can be found in MySQL Enterprise Edition. In fact, all the closed source features in MySQL 5.5 Enterprise Edition are found in the MariaDB open source version.
 * MariaDB client libraries (for C, for Java (JDBC), for Windows (ODBC)) are released under LGPL to allow linking with closed source software. MySQL client libraries are released under GPL that does not allow linking with closed source software.
 * MariaDB includes test cases for all fixed bugs. Oracle doesn't provide test cases for new bugs fixed in MySQL 5.5.
-* All [bugs](https://jira.mariadb.org) and [development plans](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/broken-reference/README.md) are public.
-* MariaDB is [developed by the community](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/broken-reference/README.md) in true open source spirit.
+* All [bugs](https://jira.mariadb.org) and [development plans](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/mariadb-server-roadmap) are public.
+* MariaDB is developed by the community in true open source spirit.
 
 #### Related Links
 
-* [Compatiblity between MariaDB and MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/broken-reference/README.md)
+* [Compatiblity between MariaDB and MySQL](mariadb-vs-mysql-compatibility.md)
 * [Moving from MySQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql)
 * [Troubleshooting Installation Issues](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues)
 
