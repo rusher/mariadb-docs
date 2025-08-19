@@ -15,8 +15,6 @@ file in the data directory and adds most important parameters to it (e.g port).
 "Database instance" feature is selected. It obsoletes similar utilities and\
 scripts that were used in the past such as `mysqld.exe` `--install`,`mysql_install_db.pl`, and `mysql_secure_installation.pl`.
 
-My apologies. You are correct. Here is the same formatted content presented in a proper markdown table.
-
 | Parameter(s)                       | Description                                           |
 | ---------------------------------- | ----------------------------------------------------- |
 | `-?`, `--help`                     | Display help message and exit                         |
