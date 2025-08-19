@@ -6,7 +6,7 @@ MariaDB supports the use of multiple encryption keys. Each encryption key uses a
 
 ## Supported Key Management Plugins list
 
-<table><thead><tr><th width="189">Plugin</th><th width="146">Status</th><th width="190">Key Rotation Support</th><th>Notes</th></tr></thead><tbody><tr><td>File-based key management</td><td>Supported</td><td>No</td><td>Simple but lacks rotation</td></tr><tr><td>HashiCorp Vault plugin</td><td>Supported, Recommended</td><td>Yes</td><td>Best for secure, scalable deployments</td></tr><tr><td>Eperi plugin</td><td>Deprecated</td><td>Yes (legacy)</td><td>No longer supported; do not use for new systems</td></tr></tbody></table>
+<table><thead><tr><th width="189">Plugin</th><th width="146">Status</th><th width="190">Key Rotation Support</th><th>Notes</th></tr></thead><tbody><tr><td>File-based key management</td><td>Supported</td><td>No</td><td>Simple but lacks rotation</td></tr><tr><td>HashiCorp Vault plugin</td><td>Supported, Recommended</td><td>Yes</td><td>Best for secure, scalable deployments</td></tr></tbody></table>
 
 ## Choosing an Encryption Key Management Solution
 
@@ -60,7 +60,7 @@ The [Aria storage engine](../../../../../server-usage/storage-engines/aria/) doe
 #### Encryption Plugins with Key Rotation Support
 
 * The [AWS Key Management Service (KMS)](https://aws.amazon.com/kms/) supports encryption key rotation, and the corresponding [AWS Key Management Plugin](aws-key-management-encryption-plugin.md) also supports encryption key rotation.
-* The [eperi Gateway for Databases](https://eperi.com/database-encryption/) supports encryption key rotation, and the corresponding [Eperi Key Management Plugin](broken-reference) also supports encryption key rotation.
+* **HashiCorp Key Management Plugin**: The HashiCorp Key Management Plugin integrates MariaDB with [Hashicorp Key Management Plugin](hashicorp-key-management-plugin.md) for centralized encryption key storage and lifecycle management. environments.
 
 #### Encryption Plugins without Key Rotation Support
 

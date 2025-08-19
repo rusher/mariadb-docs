@@ -47,7 +47,6 @@ How MariaDB manages encryption keys depends on which encryption key management s
 
 * [File Key Management Plugin](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)
 * [AWS Key Management Plugin](key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)
-* [Eperi Key Management Plugin](broken-reference)
 * [Hashicorp Key Management Plugin](key-management-and-encryption-plugins/hashicorp-key-management-plugin.md)
 
 Once you have an key management and encryption plugin set up and configured for your server, you can begin using encryption options to better secure your data.
