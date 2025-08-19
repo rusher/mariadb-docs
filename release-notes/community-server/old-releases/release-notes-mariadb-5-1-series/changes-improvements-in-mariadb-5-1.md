@@ -4,29 +4,29 @@
 
 [Download MariaDB 5.1](https://downloads.mariadb.org/mariadb/5.1)
 
-| Date        | Release                                          | Status            | Release Notes                                  | Changelog                                                                            |
-| ----------- | ------------------------------------------------ | ----------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------ |
-| 30 Jan 2013 | [MariaDB 5.1.67](mariadb-5167-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5167-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5167-changelog.md) |
-| 29 Nov 2012 | [MariaDB 5.1.66](mariadb-5166-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5166-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5166-changelog.md) |
-| 6 Apr 2012  | [MariaDB 5.1.62](mariadb-5162-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 2 Apr 2012  | [MariaDB 5.1.61](mariadb-5161-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 5 Dec 2011  | [MariaDB 5.1.69](mariadb-5162-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 1 Mar 2011  | [MariaDB 5.1.55](mariadb-5155-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 6 Dec 2010  | [MariaDB 5.1.53](mariadb-5153-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 19 Nov 2010 | [MariaDB 5.1.51](mariadb-5151-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 9 Sep 2010  | [MariaDB 5.1.50](mariadb-5150-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 9 Aug 2010  | [MariaDB 5.1.49](mariadb-5149-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 1 Jun 2010  | [MariaDB 5.1.47](mariadb-5147-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 10 May 2010 | [MariaDB 5.1.44](mariadb-5144-release-notes.md)b | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 24 Mar 2010 | [MariaDB 5.1.44](mariadb-5144-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 1 Feb 2010  | [MariaDB 5.1.42](mariadb-5142-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 13 Jan 2010 | [MariaDB 5.1.41](mariadb-5141-release-notes.md)  | Release Candidate | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 15 Nov 2009 | [MariaDB 5.1.39](mariadb-5139-release-notes.md)  | Beta              | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
-| 29 Oct 2009 | [MariaDB 5.1.38](mariadb-5138-release-notes.md)  | Beta              | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |
+| Date        | Release             | Status            | Release Notes                                   | Changelog                                                                             |
+| ----------- | ------------------- | ----------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------- |
+| 30 Jan 2013 | **MariaDB 5.1.67**  | Stable (GA)       | [Release Notes](mariadb-5167-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5167-changelog.md)  |
+| 29 Nov 2012 | **MariaDB 5.1.66**  | Stable (GA)       | [Release Notes](mariadb-5166-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5166-changelog.md)  |
+| 6 Apr 2012  | **MariaDB 5.1.62**  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md)  |
+| 2 Apr 2012  | **MariaDB 5.1.61**  | Stable (GA)       | [Release Notes](mariadb-5161-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5161-changelog.md)  |
+| 5 Dec 2011  | **MariaDB 5.1.60**  | Stable (GA)       | [Release Notes](mariadb-5160-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5160-changelog.md)  |
+| 1 Mar 2011  | **MariaDB 5.1.55**  | Stable (GA)       | [Release Notes](mariadb-5155-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5155-changelog.md)  |
+| 6 Dec 2010  | **MariaDB 5.1.53**  | Stable (GA)       | [Release Notes](mariadb-5153-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5153-changelog.md)  |
+| 19 Nov 2010 | **MariaDB 5.1.51**  | Stable (GA)       | [Release Notes](mariadb-5151-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5151-changelog.md)  |
+| 9 Sep 2010  | **MariaDB 5.1.50**  | Stable (GA)       | [Release Notes](mariadb-5150-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5150-changelog.md)  |
+| 9 Aug 2010  | **MariaDB 5.1.49**  | Stable (GA)       | [Release Notes](mariadb-5149-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5149-changelog.md)  |
+| 1 Jun 2010  | **MariaDB 5.1.47**  | Stable (GA)       | [Release Notes](mariadb-5147-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md)  |
+| 10 May 2010 | **MariaDB 5.1.44b** | Stable (GA)       | [Release Notes](mariadb-5144b-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5144b-changelog.md) |
+| 24 Mar 2010 | **MariaDB 5.1.44**  | Stable (GA)       | [Release Notes](mariadb-5144-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5144-changelog.md)  |
+| 1 Feb 2010  | **MariaDB 5.1.42**  | Stable (GA)       | [Release Notes](mariadb-5142-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5142-changelog.md)  |
+| 13 Jan 2010 | **MariaDB 5.1.41**  | Release Candidate | [Release Notes](mariadb-5141-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5141-changelog.md)  |
+| 15 Nov 2009 | **MariaDB 5.1.39**  | Beta              | [Release Notes](mariadb-5139-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5139-changelog.md)  |
+| 29 Oct 2009 | **MariaDB 5.1.38**  | Beta              | [Release Notes](mariadb-5138-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5138-changelog.md)  |
 
-In short, [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) is a binary drop in replacement of MySQL 5.1, but with performance like MySQL 5.5 (thanks to XtraDB), fewer bugs, and more features. Thanks to the extended and improved [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) program it's also easier to upgrade from MySQL 5.0 to [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) than to MySQL 5.1.
+In short, [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) is a binary drop in replacement of MySQL 5.1, but with performance like MySQL 5.5 (thanks to XtraDB), fewer bugs, and more features. Thanks to the extended and improved [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) program it's also easier to upgrade from MySQL 5.0 to MariaDB 5.1 than to MySQL 5.1.
 
-[MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) is based on MySQL 5.1. We do a merge once a month with MySQL5.1 to ensure all MySQL bug fixes get into MariaDB.
+MariaDB 5.1 is based on MySQL 5.1. We do a merge once a month with MySQL5.1 to ensure all MySQL bug fixes get into MariaDB.
 
 See also:
 
@@ -56,7 +56,7 @@ See also:
 
 ### Extensions & new features
 
-* [Table Elimination](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination) (New optimization) ([MWL#17](https://askmonty.org/worklog/?tid=17))
+* [Table Elimination](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/table-elimination) (New optimization) (MWL#17)
 * [Pool of Threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53) (Allows you to have 200,000+ connections\
   to MariadB)
 * MariaDB can handle up to 32 key segments per key (up from 16)
@@ -74,7 +74,7 @@ to [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md)
   on.
 * Cleaned up wrong warnings from mysqlcheck.
 
-(Upgrading from MySQL 5.1 to [MariaDB 5.1](changes-improvements-in-mariadb-5-1.md) is a trivial 1 min exercise as MariaDB\
+(Upgrading from MySQL 5.1 to MariaDB 5.1 is a trivial 1 min exercise as MariaDB\
 is a binary drop in replacement of MySQL. Just remove MySQL and install MariaDB\
 and things will **just work** )
 
