@@ -1,11 +1,11 @@
-# MariaDB Server 5.1.62
+# MariaDB Server 5.1.60
 
 {% @marketo/form formId="4279" %}
 
 ## About this Release
 
-* MariaDB Server 5.1.62 was released on 6 Apr 2012
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5162-release-notes)
+* MariaDB Server 5.1.60 was released on 5 Dec 2011
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5160-release-notes)
 * MariaDB Server is open source software, [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 
 ## About this Release Series
@@ -15,8 +15,8 @@
 
 ## Release History
 
-* The prior release in this series was MariaDB Server 5.1.60, released on 5 Dec 2011
-* This release (MariaDB Server 5.1.62) was released on 6 Apr 2012
+* The prior release in this series was MariaDB Server 5.1.55, released on 1 Mar 2011
+* This release (MariaDB Server 5.1.60) was released on 5 Dec 2011
 * The most recent release in this series is MariaDB Server 5.1.67, released on 30 Jan 2013
 
 ## Useful Resources

@@ -722,6 +722,7 @@
   * [MariaDB Server 5.1.67](post-download/mariadb-server-5.1.67.md)
   * [MariaDB Server 5.1.66](post-download/mariadb-server-5.1.66.md)
   * [MariaDB Server 5.1.62](post-download/mariadb-server-5.1.62.md)
+  * [MariaDB Server 5.1.60](post-download/mariadb-server-5.1.60.md)
   * [MariaDB Server 5.1.55](post-download/mariadb-server-5.1.55.md)
   * [MariaDB Server 5.1.53](post-download/mariadb-server-5.1.53.md)
   * [MariaDB Server 5.1.51](post-download/mariadb-server-5.1.51.md)
