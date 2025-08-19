@@ -31,6 +31,8 @@
 * [Architecture](architecture/README.md)
   * [Introduction to Galera Architecture](architecture/introduction-to-galera-architecture.md)
   * [Certification-Based Replication](architecture/certification-based-replication.md)
+  * [Quorum and Cluster Membership](architecture/quorum-and-cluster-membership.md)
+  * [Flow Control in Galera Cluster](architecture/flow-control-in-galera-cluster.md)
 * [Galera Security](galera-security/README.md)
   * [Securing Communications in Galera Cluster](galera-security/securing-communications-in-galera-cluster.md)
   * [MariaDB Enterprise Cluster Security](galera-security/mariadb-enterprise-cluster-security.md)
