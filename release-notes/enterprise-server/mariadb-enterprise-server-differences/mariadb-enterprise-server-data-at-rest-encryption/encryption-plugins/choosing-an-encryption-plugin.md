@@ -4,7 +4,7 @@
 
 ## Overview
 
-[MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-enterprise-server/README.md) and MariaDB Community Server support data-at-rest encryption, which secures data on the file system. The server and storage engines encrypt data before writing and decrypt during reads, ensuring that the data is only unencrypted when accessed directly through the server.
+MariaDB Enterprise Server and MariaDB Community Server support [data-at-rest encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption), which secures data on the file system. The server and storage engines encrypt data before writing and decrypt during reads, ensuring that the data is only unencrypted when accessed directly through the server.
 
 They support multiple encryption plugins, which are suited for different use cases.
 
