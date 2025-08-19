@@ -10,7 +10,7 @@ This is a [alpha](../../../community-server/about/release-criteria.md) release o
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
 
-MariaDB Connector/ODBC 3.2.0 is built on top of [MariaDB Connector/C v.3.3.2](../../c/mariadb-connector-c-33-release-notes/mariadb-connector-c-332-release-notes.md), and contains all fixes and changes from [MariaDB Connector/ODBC v.3.1.18](../mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-18-release-notes.md)
+MariaDB Connector/ODBC 3.2.0 is built on top of [MariaDB Connector/C v.3.3.2](../../c/3.3/3.3.2.md), and contains all fixes and changes from [MariaDB Connector/ODBC v.3.1.18](../mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-18-release-notes.md)
 
 ## Notable Changes
 

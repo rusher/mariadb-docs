@@ -30,7 +30,7 @@ Thanks, and enjoy MariaDB!
 * Replication:
   * [MDEV-18450](https://jira.mariadb.org/browse/MDEV-18450): [wait for all slaves shutdown](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/shutdown)
   * [MDEV-19116](https://jira.mariadb.org/browse/MDEV-19116), [MDEV-19117](https://jira.mariadb.org/browse/MDEV-19117): speed up rotation of binary logs, `SHOW BINARY LOGS` etc with optimizing binary log index file locking
-* Includes [Connector/C 3.1.0](../../../connectors/c/mariadb-connector-c-31-release-notes/mariadb-connector-c-310-release-notes.md)
+* Includes [Connector/C 3.1.0](../../../connectors/c/3.1/3.1.0.md)
 * Repositories for CentOS 7, RHEL 7 & 8, Fedora 28 & 29, and SLES 12 & 15 now\
   include a src.rpm file that you can use to build MariaDB. Instructions for\
   doing so are found on the [Building MariaDB from a Source RPM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/building-mariadb-from-a-source-rpm)\

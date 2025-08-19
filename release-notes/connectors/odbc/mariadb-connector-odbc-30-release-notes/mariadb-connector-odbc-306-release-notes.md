@@ -8,7 +8,7 @@ The most recent [_**Stable**_](../../../community-server/about/release-criteria.
 
 This is a [Stable (GA)](../../../community-server/about/release-criteria.md) release of MariaDB Connector/ODBC 3.0.
 
-MariaDB Connector/ODBC 3.0.6 is built on top of [MariaDB Connector/C v.3.0.6](../../c/mariadb-connector-c-30-release-notes/mariadb-connector-c-306-release-notes.md).
+MariaDB Connector/ODBC 3.0.6 is built on top of [MariaDB Connector/C v.3.0.6](../../c/3.0/3.0.6.md).
 
 ## Bug Fixes
 

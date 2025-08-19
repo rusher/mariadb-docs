@@ -9,7 +9,7 @@ The most recent [_**Stable**_](../../../community-server/about/release-criteria.
 This is a [_**Stable**_](../../../community-server/about/release-criteria.md) _**(GA)**_ release of MariaDB\
 Connector/ODBC.
 
-MariaDB Connector/ODBC 2.0.11 is built on top of [MariaDB Connector/C 2.2](../../c/mariadb-connector-c-22-release-notes/mariadb-connector-c-220-release-notes.md) and uses the\
+MariaDB Connector/ODBC 2.0.11 is built on top of [MariaDB Connector/C 2.2](../../c/2.2/2.2.0.md) and uses the\
 binary prepared statement protocol.
 
 ## Bug Fixes

@@ -74,7 +74,7 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 * [mysqlimport --tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import) command-line option added
 * [mysqlshow --tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-show) command-line option added
 * [mysqlslap --tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-slap) command-line option added
-* [tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version) system variable added
+* [tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption/ssltls-system-variables#tls_version) system variable added
 
 ## \* Platforms
 

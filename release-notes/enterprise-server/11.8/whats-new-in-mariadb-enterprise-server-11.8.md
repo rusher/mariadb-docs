@@ -138,7 +138,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 ### Key Management <a href="#key-management" id="key-management"></a>
 
-* [**KMS Plugin**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins) **Enhancement**: The file\_key\_management plugin can now read keys from a **Unix socket**, not just from files.
+* [**KMS Plugin**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins) **Enhancement**: The file\_key\_management plugin can now read keys from a **Unix socket**, not just from files.
 
 ### Observability & Information Schema <a href="#observability-information-schema" id="observability-information-schema"></a>
 

@@ -13,7 +13,7 @@ installing this **alpha** release on production systems or systems with\
 critical data. Not all of the features planned for the stable (GA) MariaDB\
 Connector/ODBC 3.0 release are implemented yet.
 
-MariaDB Connector/ODBC 3.0.0 is built on top of [MariaDB Connector/C 3.0](../../c/mariadb-connector-c-30-release-notes/mariadb-connector-c-301-release-notes.md) and uses the\
+MariaDB Connector/ODBC 3.0.0 is built on top of [MariaDB Connector/C 3.0](../../c/3.0/3.0.1.md) and uses the\
 binary prepared statement protocol.
 
 For `SQLExecDirect` calls, uses the `mariadb_stmt_execute_direct` MariaDB\

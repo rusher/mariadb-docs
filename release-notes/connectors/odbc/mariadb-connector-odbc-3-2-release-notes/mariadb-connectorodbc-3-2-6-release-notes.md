@@ -6,7 +6,7 @@
 
 This is a [Stable (GA)](../../../community-server/about/release-criteria.md) release of MariaDB Connector/ODBC 3.2.
 
-MariaDB Connector/ODBC 3.2.6 is built on top of [MariaDB Connector/C v.3.4.5](../../c/mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md).
+MariaDB Connector/ODBC 3.2.6 is built on top of [MariaDB Connector/C v.3.4.5](../../c/3.4/3.4.5.md).
 
 ## Bug Fixes
 

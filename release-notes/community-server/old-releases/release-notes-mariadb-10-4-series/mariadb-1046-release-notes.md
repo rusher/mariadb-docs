@@ -21,7 +21,7 @@ Thanks, and enjoy MariaDB!
 Notable changes of this release include:
 
 * MariaDB Server is now statically linked with the bundled wolfSSL library in MSI and ZIP packages on Windows, as well as in .deb packages provided by Debian's and Ubuntu's default repositories ([MDEV-18531](https://jira.mariadb.org/browse/MDEV-18531)).
-  * See [TLS and Cryptography Libraries Used by MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb) for more details.
+  * See [TLS and Cryptography Libraries Used by MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/tls-and-cryptography-libraries-used-by-mariadb) for more details.
 * MariaDB Named Commands ([MDEV-17591](https://jira.mariadb.org/browse/MDEV-17591))
 * System-versioned tables: [MDEV-19486](https://jira.mariadb.org/browse/MDEV-19486)
 * Galera: [MDEV-17458](https://jira.mariadb.org/browse/MDEV-17458)

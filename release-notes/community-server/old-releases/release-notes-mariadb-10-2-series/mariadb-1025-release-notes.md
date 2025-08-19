@@ -31,7 +31,7 @@ Thanks, and enjoy MariaDB!
   * This is an alpha version of this storage engine with limited functionality at this time
   * Currently, zlib and snappy compression is supported (only zlib on Windows)
   * MyRocks is not available for 32-bit platforms
-* [AWS Key Management plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin) added for Windows, CentOS, RHEL, and Fedora packages
+* [AWS Key Management plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin) added for Windows, CentOS, RHEL, and Fedora packages
 * [MDEV-12091](https://jira.mariadb.org/browse/MDEV-12091): Shutdown fails to wait for rollback of recovered transactions to finish
 * [MDEV-12219](https://jira.mariadb.org/browse/MDEV-12219): Discard temporary undo logs at transaction commit
 * [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289): compatibility fix for upgrading from 5.5 or 10.x

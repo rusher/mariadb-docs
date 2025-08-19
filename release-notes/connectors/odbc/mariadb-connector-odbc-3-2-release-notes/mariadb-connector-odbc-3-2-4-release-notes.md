@@ -10,7 +10,7 @@ This is a [Stable (GA)](../../../community-server/about/release-criteria.md) rel
 
 ## Notable Items
 
-* MariaDB Connector/ODBC 3.2.4 is built on top of [MariaDB Connector/C v.3.4.3](../../c/mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-3-release-notes.md).
+* MariaDB Connector/ODBC 3.2.4 is built on top of [MariaDB Connector/C v.3.4.3](../../c/3.4/3.4.3.md).
 
 ## Issues Fixed
 

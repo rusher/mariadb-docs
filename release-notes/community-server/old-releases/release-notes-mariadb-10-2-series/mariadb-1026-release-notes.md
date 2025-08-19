@@ -23,7 +23,7 @@ This is the first stable release in the [MariaDB 10.2](what-is-mariadb-102.md) s
 * [MyRocks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/building-myrocks-in-mariadb) alpha storage engine added ([MDEV-9658](https://jira.mariadb.org/browse/MDEV-9658))
 * [Window functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/window-functions) have been introduced.
 * Recursive Common Table Expressions ([MDEV-9864](https://jira.mariadb.org/browse/MDEV-9864))
-* [AWS Key Management plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin) added for Windows, CentOS, RHEL, and Fedora packages
+* [AWS Key Management plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin) added for Windows, CentOS, RHEL, and Fedora packages
 * Update InnoDB to 5.7.18 ([MDEV-11751](https://jira.mariadb.org/browse/MDEV-11751))
 * [Galera wsrep library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md) updated to 25.3.20
 * Packages for Ubuntu 17.04 "zesty" [added](https://downloads.mariadb.org/mariadb/repositories/)

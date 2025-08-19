@@ -10,7 +10,7 @@ This is a [Release Candidate (RC)](../../../community-server/about/release-crite
 
 **Do not use non-stable (non-GA) releases in production!**
 
-MariaDB Connector/ODBC 3.2.1 is built on top of [MariaDB Connector/C v.3.3.8](../../c/mariadb-connector-c-33-release-notes/mariadb-connector-c-3-3-8-release-notes.md).
+MariaDB Connector/ODBC 3.2.1 is built on top of [MariaDB Connector/C v.3.3.8](../../c/3.3/3.3.8.md).
 
 ## Notable Changes
 

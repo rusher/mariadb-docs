@@ -11,7 +11,7 @@ Connector/ODBC.
 
 ## Notes
 
-MariaDB Connector/ODBC 2.0.18 is built on top of [MariaDB Connector/C v.2.3.7](../../c/mariadb-connector-c-23-release-notes/mariadb-connector-c-237-release-notes.md) and uses the\
+MariaDB Connector/ODBC 2.0.18 is built on top of [MariaDB Connector/C v.2.3.7](../../c/2.3/2.3.7.md) and uses the\
 binary prepared statement protocol.
 
 In this version, one change is that when using a stored procedure (SP),\

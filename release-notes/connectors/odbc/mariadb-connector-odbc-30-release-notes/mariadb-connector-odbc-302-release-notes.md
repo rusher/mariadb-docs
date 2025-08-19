@@ -8,7 +8,7 @@ The most recent [_**Stable**_](../../../community-server/about/release-criteria.
 
 This is a [Stable (GA)](../../../community-server/about/release-criteria.md) release of MariaDB Connector/ODBC 3.0.
 
-MariaDB Connector/ODBC 3.0.2 is built on top of [MariaDB Connector/C 3.0](../../c/mariadb-connector-c-30-release-notes/mariadb-connector-c-302-release-notes.md) and uses the\
+MariaDB Connector/ODBC 3.0.2 is built on top of [MariaDB Connector/C 3.0](../../c/3.0/3.0.2.md) and uses the\
 binary prepared statement protocol.
 
 For Parameter Arrays operations (column-wise) with INSERT and UPDATE statements, and for`SQLBulkOperations`/`SQLSetPos` (SQL\_ADD/SQL\_UPDATE) it uses MariaDB's bulk\

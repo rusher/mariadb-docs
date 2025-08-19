@@ -26,7 +26,7 @@ The most recent release of [MariaDB 10.9](what-is-mariadb-109.md) is:[**MariaDB 
 
 ### Hashicorp Key Management Plugin
 
-* [Hashicorp Key Management Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin) for implementing [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption) using keys stored in the Hashicorp Vault KMS ([MDEV-19281](https://jira.mariadb.org/browse/MDEV-19281))
+* [Hashicorp Key Management Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin) for implementing [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption) using keys stored in the Hashicorp Vault KMS ([MDEV-19281](https://jira.mariadb.org/browse/MDEV-19281))
 
 ### Replication and Galera
 
