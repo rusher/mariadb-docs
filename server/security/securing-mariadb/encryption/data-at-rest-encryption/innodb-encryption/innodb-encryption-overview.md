@@ -134,7 +134,7 @@ Beginning in [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/b
 
 ## See Also
 
-* [Data at Rest Encryption](../data-at-rest-encryption-overview.md)
+* [Data at Rest Encryption](../overview.md)
 * [Why Encrypt MariaDB Data?](../why-encrypt-mariadb-data.md)
 * [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md)
 * [Information Schema INNODB\_TABLESPACES\_ENCRYPTION table](../../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)

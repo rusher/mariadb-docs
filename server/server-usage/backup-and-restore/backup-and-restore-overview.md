@@ -20,7 +20,7 @@ The main differences are as follows:
 
 ### `mariadb-backup`
 
-The [mariadb-backup](mariadb-backup/) program is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) with added support for [compression](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/) and [data-at-rest encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
+The [mariadb-backup](mariadb-backup/) program is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) with added support for [compression](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/) and [data-at-rest encryption](../../security/securing-mariadb/encryption/data-at-rest-encryption/overview.md).
 
 ### `mariadb-dump`
 
@@ -71,7 +71,7 @@ mariadb-hotcopy db_name_1 ... db_name_n /path/to/new_directory
 
 Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](mariadb-backup/) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
 
-[Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is a tool for performing fast, hot backups. It was designed specifically for [XtraDB/InnoDB](../storage-engines/innodb/) databases, but can be used with any storage engine (although not with [encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/) and [compression](../storage-engines/innodb/innodb-page-compression.md)). It is not included with MariaDB.
+[Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is a tool for performing fast, hot backups. It was designed specifically for [XtraDB/InnoDB](../storage-engines/innodb/) databases, but can be used with any storage engine (although not with [encryption](../../security/securing-mariadb/encryption/data-at-rest-encryption/) and [compression](../storage-engines/innodb/innodb-page-compression.md)). It is not included with MariaDB.
 
 ### Filesystem Snapshots
 

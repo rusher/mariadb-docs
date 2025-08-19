@@ -180,7 +180,7 @@ mariadb-backup reads client options from the following option groups from option
 
 ### Authentication and Privileges
 
-`mariadb-backup` needs to authenticate with the database server when it performs a backup operation (i.e. when the [--backup ](mariadb-backup-options.md#backup) option is specified). For most use cases, the user account that performs the backup needs to have the following global privileges on the database server.
+`mariadb-backup` needs to authenticate with the database server when it performs a backup operation (i.e. when the [--backup ](mariadb-backup-options.md#backup)option is specified). For most use cases, the user account that performs the backup needs to have the following global privileges on the database server.
 
 {% tabs %}
 {% tab title="MariaDB 10.5 and Later" %}
@@ -253,11 +253,11 @@ If you are using Linux and if you installed MariaDB with a package manager, then
 
 #### Using `mariadb-backup` with Data-at-Rest Encryption
 
-`mariadb-backup` supports [Data-at-Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/).
+`mariadb-backup` supports [Data-at-Rest Encryption](../../../security/securing-mariadb/encryption/data-at-rest-encryption/).
 
-mariadb-backup will query the server to determine which [key management and encryption plugin](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) is being used, and then it will load that plugin itself, which means that `mariadb-backup` needs to be able to load the key management and encryption plugin's shared library.
+mariadb-backup will query the server to determine which [key management and encryption plugin](../../../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) is being used, and then it will load that plugin itself, which means that `mariadb-backup` needs to be able to load the key management and encryption plugin's shared library.
 
-mariadb-backup will also query the server to determine which [encryption keys](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys) it needs to use.
+mariadb-backup will also query the server to determine which [encryption keys](../../../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys) it needs to use.
 
 In other words, `mariadb-backup` is able to figure out a lot of encryption-related information on its own, so normally one doesn't need to provide any extra options to backup or restore encrypted tables.
 
