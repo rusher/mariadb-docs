@@ -30,12 +30,6 @@ The AWS Key Management plugin is a key management and encryption plugin that use
 
 For more information, see [AWS Key Management Plugin](aws-key-management-encryption-plugin.md).
 
-### Eperi Key Management Plugin
-
-The Eperi Key Management plugin is a key management and encryption plugin that uses the [eperi Gateway for Databases](https://eperi.com/database-encryption/). The [eperi Gateway for Databases](https://eperi.com/database-encryption/) stores encryption keys on the key server outside of the database server itself, which provides an extra level of security. The [eperi Gateway for Databases](https://eperi.com/database-encryption/) also supports performing all data encryption operations on the key server as well, but this is optional.
-
-For more information, see [Eperi Key Management Plugin](eperi-key-management-encryption-plugin.md).
-
 ## Using Multiple Encryption Keys
 
 Key management and encryption plugins support using multiple encryption keys. Each encryption key can be defined with a different 32-bit integer as a key identifier.
@@ -66,7 +60,7 @@ The [Aria storage engine](../../../../../server-usage/storage-engines/aria/) doe
 #### Encryption Plugins with Key Rotation Support
 
 * The [AWS Key Management Service (KMS)](https://aws.amazon.com/kms/) supports encryption key rotation, and the corresponding [AWS Key Management Plugin](aws-key-management-encryption-plugin.md) also supports encryption key rotation.
-* The [eperi Gateway for Databases](https://eperi.com/database-encryption/) supports encryption key rotation, and the corresponding [Eperi Key Management Plugin](eperi-key-management-encryption-plugin.md) also supports encryption key rotation.
+* The [eperi Gateway for Databases](https://eperi.com/database-encryption/) supports encryption key rotation, and the corresponding [Eperi Key Management Plugin](broken-reference) also supports encryption key rotation.
 
 #### Encryption Plugins without Key Rotation Support
 

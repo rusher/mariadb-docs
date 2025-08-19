@@ -650,7 +650,6 @@
           * [Amazon Web Services (AWS) Key Management Service (KMS) Encryption Plugin Setup Guide](security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md)
           * [AWS Key Management Encryption Plugin](security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)
           * [Encryption Key Management](security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md)
-          * [Eperi Key Management Encryption Plugin](security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/eperi-key-management-encryption-plugin.md)
           * [File Key Management Encryption Plugin](security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)
           * [Hashicorp Key Management Plugin](security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md)
     * [Security Vulnerabilities Fixed in MariaDB](security/securing-mariadb/security.md)
