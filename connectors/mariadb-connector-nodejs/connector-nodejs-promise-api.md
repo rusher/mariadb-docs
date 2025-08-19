@@ -1,16 +1,16 @@
 # Connector/Node.js Promise API
 
+## Connector/Node.js Promise API
+
 There are two different connection implementations: one, the default, uses Promise and the other uses Callback, allowing for compatibility with the mysql and mysql2 API's.
 
-The documentation provided on this page is the promise API (default).
-If you want information on the Callback API, see the [CALLBACK API](connector-nodejs-callback-api.md).
+The documentation provided on this page is the promise API (default). If you want information on the Callback API, see the [CALLBACK API](connector-nodejs-callback-api.md).
 
-
-## Quick Start
+### Quick Start
 
 Install the mariadb Connector using npm
 
-```
+```sql
 $ npm install mariadb
 ```
 
@@ -38,11 +38,11 @@ async function asyncFunction() {
 asyncFunction();
 ```
 
-# Installation
+## Installation
 
 To use the Connector, you first need to install it on your system. The installation process for Promise and Callback API is managed with the same package through npm.
 
-```
+```sql
 $ npm install mariadb
 ```
 
@@ -52,50 +52,50 @@ To use the Connector, you need to import the package into your application code.
 const mariadb = require('mariadb');
 ```
 
-## Migrating from 2.x or mysql/mysql2 to 3.x
+### Migrating from 2.x or mysql/mysql2 to 3.x
 
-Default behaviour for decoding [BIGINT](https://mariadb.com/kb/en/bigint/) / [DECIMAL](https://mariadb.com/kb/en/decimal/) datatype for 2.x version and mysql/mysql2 drivers return a JavaScript [Number](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number) object.
-BIGINT/DECIMAL values might not be in the safe range, resulting in approximate results.
+Default behavior for decoding [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) / [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) datatype for 2.x version and mysql/mysql2 drivers return a JavaScript [Number](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/number) object. BIGINT/DECIMAL values might not be in the safe range, resulting in approximate results.
 
 Since 3.x version, driver has reliable default, returning:
+
 * DECIMAL => javascript String
-* BIGINT => javascript [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) object
+* BIGINT => javascript [BigInt](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) object
 
 For compatibility with previous version or mysql/mysql driver, 4 options have been added to return BIGINT/DECIMAL as number, as previous defaults.
 
-|               option | description                                                                                                                                                        |    type    | default | 
-|---------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------:|:-------:|
-| **insertIdAsNumber** | Whether the query should return last insert id from INSERT/UPDATE command as BigInt or Number. default return BigInt                                               | *boolean*  |  false  |
-|  **decimalAsNumber** | Whether the query should return decimal as Number. If enabled, this might return approximate values.                                                               | *boolean*  |  false  |
-|   **bigIntAsNumber** | Whether the query should return BigInt data type as Number. If enabled, this might return approximate values.                                                      | *boolean*  |  false  |
-| **checkNumberRange** | when used in conjunction of decimalAsNumber, insertIdAsNumber or bigIntAsNumber, if conversion to number is not exact, connector will throw an error (since 3.0.1) | *function* |         |
+|               option | description                                                                                                                                                        |    type    | default |
+| -------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------: | :-----: |
+| **insertIdAsNumber** | Whether the query should return last insert id from INSERT/UPDATE command as BigInt or Number. default return BigInt                                               |  _boolean_ |  false  |
+|  **decimalAsNumber** | Whether the query should return decimal as Number. If enabled, this might return approximate values.                                                               |  _boolean_ |  false  |
+|   **bigIntAsNumber** | Whether the query should return BigInt data type as Number. If enabled, this might return approximate values.                                                      |  _boolean_ |  false  |
+| **checkNumberRange** | when used in conjunction of decimalAsNumber, insertIdAsNumber or bigIntAsNumber, if conversion to number is not exact, connector will throw an error (since 3.0.1) | _function_ |         |
 
-Previous options `supportBigNumbers` and `bigNumberStrings` still exist for compatibility, but are now deprecated.
+Previous options `supportBigNumbers` and `bigNumberStrings` still exist for compatibility but are now deprecated.
 
-#### Other considerations
+**Other considerations**
 
-mysql has an experimental syntax permitting the use of `??` characters as placeholder to escape id.
-This isn't implemented in the MariaDB driver, permitting the same query syntax for [Connection.query](#connectionquerysql-values---promise) and [Connection.execute](#connectionexecutesql-values--promise).
+mysql has an experimental syntax permitting the use of `??` characters as placeholder to escape id. This isn't implemented in the MariaDB driver, permitting the same query syntax for [Connection.query](connector-nodejs-promise-api.md#connectionquerysql-values---promise) and [Connection.execute](connector-nodejs-promise-api.md#connectionexecutesql-values--promise).
 
 example:
+
 ```js
   const res = await conn.query('call ??(?)', [myProc, 'myVal']);
 ```
+
 has to use explicit escapeId:
+
 ```js
   const res = await conn.query(`call ${conn.escapeId(myProc)}(?)`, ['myVal']);
 ```
 
 Cluster configuration `removeNodeErrorCount` default to `Infinity` when mysql/mysql2 default to value `5`. This avoids removing nodes without explicitly saying so.
 
-## Recommendation
+### Recommendation
 
-### Enable 'trace' option in development
+#### Enable 'trace' option in development
 
-It is recommended to activate the `trace` option in development.
-Since the driver is asynchronous, enabling this option permits saving initial stack when calling any driver methods.
-This allows having interesting debugging information:
-example:
+It is recommended to activate the `trace` option in development. Since the driver is asynchronous, enabling this option permits saving initial stack when calling any driver methods. This allows having interesting debugging information: example:
+
 ```js
 const pool = mariadb.createPool({
   host: 'mydb.com',
@@ -130,47 +130,40 @@ await pool.query('wrong query');
 }
    */
 ```
+
 The caller method and line are now in the error stack, permitting easy error debugging.
 
-The problem is this error stack is created using [Error.captureStackTrace](https://nodejs.org/api/errors.html#errorcapturestacktracetargetobject-constructoropt) that is super slow (hoping [node.js solved it at some point](https://github.com/nodejs/performance/issues/40)).
-To give an idea, this slows down by 10% a query like 'select * from mysql.user LIMIT 1', so not recommended in production.
+The problem is this error stack is created using [Error.captureStackTrace](https://nodejs.org/api/errors.html#errorcapturestacktracetargetobject-constructoropt) that is super slow (hoping [node.js solved it at some point](https://github.com/nodejs/performance/issues/40)). To give an idea, this slows down by 10% a query like 'select \* from mysql.user LIMIT 1', so not recommended in production.
 
-### Timezone consideration
+#### Timezone consideration
 
 If Client and Server share the same timezone, default behavior (`timezone`='local') is the solution.
 
 The problem resides when client and server don't share the same timezone.
 
 The `timezone` option can have the following value:
+
 * 'local' (default): connector doesn't do any conversion. If the database has a different timezone, there will be offset issues.
 * 'auto': connector retrieves server timezone, and if client timezone differs from server, connector will set session timezone to client timezone
-* IANA timezone / offset, example 'America/New_York' or '+06:00'. Connector will set session timezone to indicated timezone. It is expected that this timezone corresponds to client tz.
+* IANA timezone / offset, example 'America/New\_York' or '+06:00'. Connector will set session timezone to indicated timezone. It is expected that this timezone corresponds to client tz.
 
-Using 'auto' or setting specific timezone solves timezone correction.
-Please be careful for fixed timezone: Etc/GMT+12 = GMT-12:00 = -12:00 = offset -12. Etc/GMT have opposite sign!!
+Using 'auto' or setting specific timezone solves timezone correction. Please be careful for fixed timezone: Etc./GMT+12 = GMT-12:00 = -12:00 = offset -12. Etc./GMT have opposite sign!!
 
 (Before 3.1, the connector was converting date to server timezone, but these were not correcting all timezone issues)
 
-##### IANA timezone / offset
+**IANA timezone / offset**
 
-When using IANA timezone, the connector will set the connection timezone to the timezone.
-This can throw an error on connection if timezone is unknown by the server (see [mariadb timezone documentation](https://mariadb.com/kb/en/time-zones/), timezone tables might be not initialized)
-If you are sure the server is using that timezone, this step can be skipped with the option `skipSetTimezone`.
+When using IANA timezone, the connector will set the connection timezone to the timezone. This can throw an error on connection if timezone is unknown by the server (see [mariadb timezone documentation](connector-nodejs-promise-api.md#timezone-consideration), timezone tables might be not initialized) If you are sure the server is using that timezone, this step can be skipped with the option `skipSetTimezone`.
 
 If the timezone corresponds to JavaScript default timezone, then no conversion will be done.
 
-##### Timezone setting recommendation
+**Timezone setting recommendation**
+
 The best is to have the same timezone on client and database, then keep the 'local' default value.
 
-If different, then either client or server has to convert the date.
-In general, it is best to use client conversion to avoid putting any unneeded stress on the database.
-Timezone has to be set to the IANA timezone corresponding to server timezone and disabled `skipSetTimezone` option since you are sure that the server has the corresponding timezone.
+If different, then either client or server has to convert the date. In general, it is best to use client conversion to avoid putting any unneeded stress on the database. Timezone has to be set to the IANA timezone corresponding to server timezone and disabled `skipSetTimezone` option since you are sure that the server has the corresponding timezone.
 
-Example: The client uses 'America/New_York' by default, and server 'America/Los_Angeles'.
-Execute 'SELECT @@system_time_zone' on the server. That will give the server default timezone.
-The server can return a POSIX timezone like 'PDT' (Pacific Daylight Time).
-IANA timezone correspondence must be found (see [IANA timezone List](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) and configure client-side.
-This will ensure DST (automatic daylight saving time change will be handled).
+Example: The client uses 'America/New\_York' by default, and server 'America/Los\_Angeles'. Execute 'SELECT @@system\_time\_zone' on the server. That will give the server default timezone. The server can return a POSIX timezone like 'PDT' (Pacific Daylight Time). IANA timezone correspondence must be found (see [IANA timezone List](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) and configure client-side. This will ensure DST (automatic daylight saving time change will be handled).
 
 ```js
 const conn = await mariadb.createConnection({
@@ -182,11 +175,10 @@ const conn = await mariadb.createConnection({
 });
 ```
 
+#### Security consideration
 
-### Security consideration
+Connection details such as URL, username, and password are better hidden into environment variables. Using code like:
 
-Connection details such as URL, username, and password are better hidden into environment variables.
-Using code like:
 ```js
 const conn = await mariadb.createConnection({
   host: process.env.DB_HOST,
@@ -194,12 +186,15 @@ const conn = await mariadb.createConnection({
   password: process.env.DB_PWD
 });
 ```
+
 Then for example, run node.js setting those environment variables:
+
 ```
 $ DB_HOST=localhost DB_USER=test DB_PASSWORD=secretPasswrd node my-app.js
 ```
 
 Another solution is using `dotenv` package. Dotenv loads environment variables from .env files into the process.env variable in Node.js:
+
 ```
 $ npm install dotenv
 ```
@@ -217,11 +212,13 @@ const conn = await mariadb.createConnection({
 ```
 
 with an .env file containing:
+
 ```
 DB_HOST=localhost
 DB_USER=test
 DB_PWD=secretPasswrd
 ```
+
 .env files must NOT be pushed into the repository, using .gitignore.
 
 Alternatively, Node.js 20.0 introduced the experimental feature of using the `node --env-file=.env` syntax to load environment variables without the need for external dependencies. We can then simply write:
@@ -236,88 +233,84 @@ const conn = await mariadb.createConnection({
 
 Assuming the presence of the same .env file as previously described.
 
-
-### Default options consideration
+#### Default options consideration
 
 For new projects, enabling option `supportBigInt` is recommended (It will be in a future 3.x version).
 
-This option permits to avoid exact value for big integer (value > 2^53) (see [javascript ES2020
-BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt))
+This option permits to avoid exact value for big integer (value > 2^53) (see [javascript ES2020 BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt))
 
-
-# Promise API
+## Promise API
 
 **Base:**
 
-* [`createConnection(options) → Promise`](#createconnectionoptions--promise): Creates a new connection.
-* [`createPool(options) → Pool`](#createpooloptions--pool): Creates a new Pool.
-* [`createPoolCluster(options) → PoolCluster`](#createpoolclusteroptions--poolcluster): Creates a new pool cluster.
-* [`importFile(options) → Promise`](#importfileoptions--promise): Import Sql file
-* [`version → String`](#version--string): Return library version.
-* [`defaultOptions(options) → Json`](#defaultoptionsoptions--json): List options with default values
-
+* [`createConnection(options) → Promise`](connector-nodejs-promise-api.md#createconnectionoptions--promise): Creates a new connection.
+* [`createPool(options) → Pool`](connector-nodejs-promise-api.md#createpooloptions--pool): Creates a new Pool.
+* [`createPoolCluster(options) → PoolCluster`](connector-nodejs-promise-api.md#createpoolclusteroptions--poolcluster): Creates a new pool cluster.
+* [`importFile(options) → Promise`](connector-nodejs-promise-api.md#importfileoptions--promise): Import Sql file
+* [`version → String`](connector-nodejs-promise-api.md#version--string): Return library version.
+* [`defaultOptions(options) → Json`](connector-nodejs-promise-api.md#defaultoptionsoptions--json): List options with default values
 
 **Connection:**
 
-* [`connection.query(sql [, values]) → Promise`](#connectionquerysql-values---promise): Executes a query.
-* [`connection.queryStream(sql [, values]) → Emitter`](#connectionquerystreamsql-values--emitter): Executes a query, returning an emitter object to stream rows.
-* [`connection.prepare(sql) → Promise`](#connectionpreparesql--promise): Prepares a query.
-* [`connection.execute(sql [, values]) → Promise`](#connectionexecutesql-values--promise): Prepare and Executes a query.
-* [`connection.batch(sql, values) → Promise`](#connectionbatchsql-values--promise): Fast batch processing.
-* [`connection.beginTransaction() → Promise`](#connectionbegintransaction--promise): Begins a transaction.
-* [`connection.commit() → Promise`](#connectioncommit--promise): Commits the current transaction, if any.
-* [`connection.release() → Promise`](#connectionrelease--promise): Release connection to pool if connection comes from pool.
-* [`connection.rollback() → Promise`](#connectionrollback--promise): Rolls back the current transaction, if any.
-* [`connection.changeUser(options) → Promise`](#connectionchangeuseroptions--promise): Changes the current connection user.
-* [`connection.ping() → Promise`](#connectionping--promise): Sends a 1 byte packet to the database to validate the connection.
-* [`connection.reset() → Promise`](#connectionreset--promise): Reset current connection state.
-* [`connection.isValid() → boolean`](#connectionisvalid--boolean): Checks that the connection is active without checking socket state.
-* [`connection.end() → Promise`](#connectionend--promise): Gracefully close the connection.
-* [`connection.destroy()`](#connectiondestroy): Forces the connection to close.
-* [`connection.escape(value) → String`](#connectionescapevalue--string): Escape parameter
-* [`connection.escapeId(value) → String`](#connectionescapeidvalue--string): Escape identifier
-* [`connection.pause()`](#connectionpause): Pauses the socket output.
-* [`connection.resume()`](#connectionresume): Resumes the socket output.
-* [`connection.serverVersion()`](#connectionserverversion): Retrieves the current server version.
-* [`connection.importFile(options) → Promise`](#connectionimportfileoptions--promise): Import Sql file
-* [`events`](#events): Subscribes to connection error events.
+* [`connection.query(sql [, values]) → Promise`](connector-nodejs-promise-api.md#connectionquerysql-values---promise): Executes a query.
+* [`connection.queryStream(sql [, values]) → Emitter`](connector-nodejs-promise-api.md#connectionquerystreamsql-values--emitter): Executes a query, returning an emitter object to stream rows.
+* [`connection.prepare(sql) → Promise`](connector-nodejs-promise-api.md#connectionpreparesql--promise): Prepares a query.
+* [`connection.execute(sql [, values]) → Promise`](connector-nodejs-promise-api.md#connectionexecutesql-values--promise): Prepare and Executes a query.
+* [`connection.batch(sql, values) → Promise`](connector-nodejs-promise-api.md#connectionbatchsql-values--promise): Fast batch processing.
+* [`connection.beginTransaction() → Promise`](connector-nodejs-promise-api.md#connectionbegintransaction--promise): Begins a transaction.
+* [`connection.commit() → Promise`](connector-nodejs-promise-api.md#connectioncommit--promise): Commits the current transaction, if any.
+* [`connection.release() → Promise`](connector-nodejs-promise-api.md#connectionrelease--promise): Release connection to pool if connection comes from pool.
+* [`connection.rollback() → Promise`](connector-nodejs-promise-api.md#connectionrollback--promise): Rolls back the current transaction, if any.
+* [`connection.changeUser(options) → Promise`](connector-nodejs-promise-api.md#connectionchangeuseroptions--promise): Changes the current connection user.
+* [`connection.ping() → Promise`](connector-nodejs-promise-api.md#connectionping--promise): Sends a 1 byte packet to the database to validate the connection.
+* [`connection.reset() → Promise`](connector-nodejs-promise-api.md#connectionreset--promise): Reset current connection state.
+* [`connection.isValid() → boolean`](connector-nodejs-promise-api.md#connectionisvalid--boolean): Checks that the connection is active without checking socket state.
+* [`connection.end() → Promise`](connector-nodejs-promise-api.md#connectionend--promise): Gracefully close the connection.
+* [`connection.destroy()`](connector-nodejs-promise-api.md#connectiondestroy): Forces the connection to close.
+* [`connection.escape(value) → String`](connector-nodejs-promise-api.md#connectionescapevalue--string): Escape parameter
+* [`connection.escapeId(value) → String`](connector-nodejs-promise-api.md#connectionescapeidvalue--string): Escape identifier
+* [`connection.pause()`](connector-nodejs-promise-api.md#connectionpause): Pauses the socket output.
+* [`connection.resume()`](connector-nodejs-promise-api.md#connectionresume): Resumes the socket output.
+* [`connection.serverVersion()`](connector-nodejs-promise-api.md#connectionserverversion): Retrieves the current server version.
+* [`connection.importFile(options) → Promise`](connector-nodejs-promise-api.md#connectionimportfileoptions--promise): Import Sql file
+* [`events`](connector-nodejs-promise-api.md#events): Subscribes to connection error events.
 
 **Pool:**
 
-* [`pool.getConnection() → Promise`](#poolgetconnection--promise): Creates a new connection.
-* [`pool.query(sql [, values]) → Promise`](#poolquerysql-values---promise): Executes a query.
-* [`pool.batch(sql, values) → Promise`](#poolbatchsql-values---promise): Executes a batch
-* [`pool.end() → Promise`](#poolend--promise): Gracefully closes the connection.
-* [`pool.escape(value) → String`](#poolescapevalue--string): Escape parameter
-* [`pool.escapeId(value) → String`](#poolescapeidvalue--string): Escape identifier
-* [`pool.importFile(options) → Promise`](#poolimportfileoptions--promise): Import Sql file
+* [`pool.getConnection() → Promise`](connector-nodejs-promise-api.md#poolgetconnection--promise): Creates a new connection.
+* [`pool.query(sql [, values]) → Promise`](connector-nodejs-promise-api.md#poolquerysql-values---promise): Executes a query.
+* [`pool.batch(sql, values) → Promise`](connector-nodejs-promise-api.md#poolbatchsql-values---promise): Executes a batch
+* [`pool.end() → Promise`](connector-nodejs-promise-api.md#poolend--promise): Gracefully closes the connection.
+* [`pool.escape(value) → String`](connector-nodejs-promise-api.md#poolescapevalue--string): Escape parameter
+* [`pool.escapeId(value) → String`](connector-nodejs-promise-api.md#poolescapeidvalue--string): Escape identifier
+* [`pool.importFile(options) → Promise`](connector-nodejs-promise-api.md#poolimportfileoptions--promise): Import Sql file
 * `pool.activeConnections() → Number`: Gets current active connection number.
 * `pool.totalConnections() → Number`: Gets current total connection number.
 * `pool.idleConnections() → Number`: Gets current idle connection number.
 * `pool.taskQueueSize() → Number`: Gets current stacked request.
-* [`pool events`](#pool-events): Subscribes to pool events.
+* [`pool events`](connector-nodejs-promise-api.md#pool-events): Subscribes to pool events.
 
 **PoolCluster**
 
-* [`poolCluster.add(id, config)`](#poolclusteraddid-config): Add a pool to cluster.
-* [`poolCluster.remove(pattern)`](#poolclusterremovepattern): Remove and end pool according to pattern.
-* [`poolCluster.end() → Promise`](#poolclusterend--promise): End cluster.
-* [`poolCluster.getConnection(pattern, selector) → Promise`](#poolclustergetconnectionpattern-selector--promise): Return a connection from cluster.
-* [`poolCluster.of(pattern, selector) → FilteredPoolCluster`](#poolclusterofpattern-selector--filteredpoolcluster): Return a subset of cluster.
-* [`poolCluster events`](#poolcluster-events): Subscribes to pool cluster events.
+* [`poolCluster.add(id, config)`](connector-nodejs-promise-api.md#poolclusteraddid-config): Add a pool to cluster.
+* [`poolCluster.remove(pattern)`](connector-nodejs-promise-api.md#poolclusterremovepattern): Remove and end pool according to pattern.
+* [`poolCluster.end() → Promise`](connector-nodejs-promise-api.md#poolclusterend--promise): End cluster.
+* [`poolCluster.getConnection(pattern, selector) → Promise`](connector-nodejs-promise-api.md#poolclustergetconnectionpattern-selector--promise): Return a connection from cluster.
+* [`poolCluster.of(pattern, selector) → FilteredPoolCluster`](connector-nodejs-promise-api.md#poolclusterofpattern-selector--filteredpoolcluster): Return a subset of cluster.
+* [`poolCluster events`](connector-nodejs-promise-api.md#poolcluster-events): Subscribes to pool cluster events.
 
+## Base API
 
-# Base API
+### `createConnection(options) → Promise`
 
-## `createConnection(options) → Promise`
-
-> * `options`: *JSON/String* [connection option documentation](#connection-options)
+> * `options`: _JSON/String_ [connection option documentation](connector-nodejs-promise-api.md#connection-options)
 >
 > Returns a promise that:
-> * resolves with a [Connection](#connection-api) object,
-> * raises an [Error](#error).
+>
+> * resolves with a [Connection](connector-nodejs-promise-api.md#connection-api) object,
+> * raises an [Error](connector-nodejs-promise-api.md#error).
 
-Creates a new [Connection](#connection-api) object.
+Creates a new [Connection](connector-nodejs-promise-api.md#connection-api) object.
 
 **Example:**
 
@@ -334,36 +327,35 @@ try {
 }
 ```
 
-### Connection options
+#### Connection options
 
 Essential options list:
 
-|               option | description                                                                                                                                                                                                                                                                                  |   type    |   default   |
-|---------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------:|:-----------:|
-|           **`user`** | User to access database.                                                                                                                                                                                                                                                                     | *string*  |
-|       **`password`** | User password.                                                                                                                                                                                                                                                                               | *string*  |
-|           **`host`** | IP address or DNS of the database server. *Not used when using option `socketPath`*.                                                                                                                                                                                                         | *string*  | "localhost" |
-|           **`port`** | Database server port number. *Not used when using option `socketPath`*                                                                                                                                                                                                                       | *integer* |    3306     |
-|            **`ssl`** | Enables TLS support. For more information, see the [`ssl` option](node-js-connection-options.md#ssl) documentation.                                                                                                                                                  |  *mixed*  |
-|       **`database`** | Default database to use when establishing the connection.                                                                                                                                                                                                                                    | *string*  |
-|     **`socketPath`** | Permits connections to the database through the Unix domain socket or named pipe.                                                                                                                                                                                                            | *string*  |
-|       **`compress`** | Compresses the exchange with the database through gzip. This permits better performance when the database is not in the same location.                                                                                                                                                       | *boolean* |    false    |
-| **`connectTimeout`** | Sets the connection timeout in milliseconds.                                                                                                                                                                                                                                                 | *integer* |    1000     |
-|  **`socketTimeout`** | Sets the socket timeout in milliseconds after connection succeeds. A value of `0` disables the timeout.                                                                                                                                                                                      | *integer* |      0      |
-|   **`queryTimeout`** | Set maximum query time in ms (an error will be thrown if limit is reached). 0 or undefined meaning no timeout. This can be superseded for a query using [`timeout`](https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#timeout) option |   *int*   |      0      | 
-|    **`rowsAsArray`** | Returns result-sets as arrays, rather than JSON. This is a faster way to get results. For more information, see Query.                                                                                                                                                                       | *boolean* |    false    |
-|         **`logger`** | Configure logger. For more information, see the [`logger` option](node-js-connection-options.md#logger) documentation.                                                                                                                                                                |  *mixed*  |
+|               option | description                                                                                                                                                                                                                                                                                                         |    type   |   default   |
+| -------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------: | :---------: |
+|           **`user`** | User to access database.                                                                                                                                                                                                                                                                                            |  _string_ |             |
+|       **`password`** | User password.                                                                                                                                                                                                                                                                                                      |  _string_ |             |
+|           **`host`** | IP address or DNS of the database server. _Not used when using option `socketPath`_.                                                                                                                                                                                                                                |  _string_ | "localhost" |
+|           **`port`** | Database server port number. _Not used when using option `socketPath`_                                                                                                                                                                                                                                              | _integer_ |     3306    |
+|            **`ssl`** | Enables TLS support. For more information, see the [`ssl` option](node-js-connection-options.md#ssl) documentation.                                                                                                                                                                                                 |  _mixed_  |             |
+|       **`database`** | Default database to use when establishing the connection.                                                                                                                                                                                                                                                           |  _string_ |             |
+|     **`socketPath`** | Permits connections to the database through the Unix domain socket or named pipe.                                                                                                                                                                                                                                   |  _string_ |             |
+|       **`compress`** | Compresses the exchange with the database through gzip. This permits better performance when the database is not in the same location.                                                                                                                                                                              | _boolean_ |    false    |
+| **`connectTimeout`** | Sets the connection timeout in milliseconds.                                                                                                                                                                                                                                                                        | _integer_ |     1000    |
+|  **`socketTimeout`** | Sets the socket timeout in milliseconds after connection succeeds. A value of `0` disables the timeout.                                                                                                                                                                                                             | _integer_ |      0      |
+|   **`queryTimeout`** | Set maximum query time in ms (an error will be thrown if limit is reached). 0 or undefined meaning no timeout. This can be superseded for a query using [`timeout`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/query-limits-and-timeouts) option |   _int_   |      0      |
+|    **`rowsAsArray`** | Returns result-sets as arrays, rather than JSON. This is a faster way to get results. For more information, see Query.                                                                                                                                                                                              | _boolean_ |    false    |
+|         **`logger`** | Configure logger. For more information, see the [`logger` option](node-js-connection-options.md#logger) documentation.                                                                                                                                                                                              |  _mixed_  |             |
 
 For more information, see the [Connection Options](node-js-connection-options.md) documentation.
 
-### Connecting to Local Databases
+#### Connecting to Local Databases
 
 When working with a local database (that is, cases where MariaDB and your Node.js application run on the same host), you can connect to MariaDB through the Unix socket or Windows named pipe for better performance, rather than using the TCP/IP layer.
 
 In order to set this up, you need to assign the connection a `socketPath` value. When this is done, the Connector ignores the `host` and `port` options.
 
-The specific socket path you need to set is defined by the
-[`socket`](https://mariadb.com/kb/en/library/server-system-variables/#socket) server system variable. If you don't know it offhand, you can retrieve it from the server.
+The specific socket path you need to set is defined by the [`socket`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/handlersocket/handlersocket-configuration-options) server system variable. If you don't know it offhand, you can retrieve it from the server.
 
 ```sql
 SHOW VARIABLES LIKE 'socket';
@@ -389,11 +381,11 @@ const conn = await mariadb.createConnection({
 });
 ```
 
-## `createPool(options) → Pool`
+### `createPool(options) → Pool`
 
-> * `options`: *JSON/String* [pool options](#pool-options)
+> * `options`: _JSON/String_ [pool options](connector-nodejs-promise-api.md#pool-options)
 >
-> Returns a [Pool](#pool-api) object,
+> Returns a [Pool](connector-nodejs-promise-api.md#pool-api) object,
 
 Creates a new pool.
 
@@ -416,30 +408,30 @@ try {
 }
 ```
 
-### Pool options
+#### Pool options
 
-Pool options include [connection option documentation](#connection-options) that will be used when creating new connections.
+Pool options include [connection option documentation](connector-nodejs-promise-api.md#connection-options) that will be used when creating new connections.
 
 Specific options for pools are:
 
-|option|description|type|default|
-|---:|---|:---:|:---:|
-| **`acquireTimeout`** | Timeout to get a new connection from pool. In order to have connection error information, must be higher than connectTimeout. In milliseconds. | *integer* | 10000 |
-| **`connectionLimit`** | Maximum number of connection in pool. | *integer* | 10 |
-| **`idleTimeout`** | Indicate idle time after which a pool connection is released. Value must be lower than [@@wait_timeout](https://mariadb.com/kb/en/library/server-system-variables/#wait_timeout). In seconds. 0 means never release. | *integer* | 1800 |
-| **`initializationTimeout`** | Pool will retry creating connection in loop, emitting 'error' event when reaching this timeout. In milliseconds. | *integer* | `acquireTimeout` value |
-| **`minimumIdle`** | Permit to set a minimum number of connection in pool. **Recommendation is to use fixed pool, so not setting this value**. | *integer* | *set to connectionLimit value* |
-| **`minDelayValidation`** | When asking a connection to pool, the pool will validate the connection state. "minDelayValidation" permits disabling this validation if the connection has been borrowed recently avoiding useless verifications in case of frequent reuse of connections. In milliseconds. 0 means validation is done each time the connection is asked. | *integer* | 500 |
-| **`noControlAfterUse`** | After giving back connection to pool (connection.end) connector will reset or rollback connection to ensure a valid state. This option permit to disable those controls | *boolean* | false |
-| **`resetAfterUse`** | When a connection is given back to pool, reset the connection if the server allows it (only for MariaDB version >= 10.2.22 /10.3.13). If disabled or server version doesn't allows reset, pool will only rollback open transaction if any| *boolean* | true before version 3, false since |
-| **`leakDetectionTimeout`** | Permit to indicate a timeout to log connection borrowed from pool. When a connection is borrowed from pool and this timeout is reached, a message will be logged to console indicating a possible connection leak. Another message will tell if the possible logged leak has been released. In milliseconds. 0 means leak detection is disabled. | *integer* | 0 |
-| **`pingTimeout`** | Validation timeout (ping) for checking an connection not used recently from pool. In milliseconds. | *integer* | 500 |
+|                      option | description                                                                                                                                                                                                                                                                                                                                      |    type   |               default              |
+| --------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------: | :--------------------------------: |
+|        **`acquireTimeout`** | Timeout to get a new connection from pool. In order to have connection error information, must be higher than connectTimeout. In milliseconds.                                                                                                                                                                                                   | _integer_ |                10000               |
+|       **`connectionLimit`** | Maximum number of connection in pool.                                                                                                                                                                                                                                                                                                            | _integer_ |                 10                 |
+|           **`idleTimeout`** | Indicate idle time after which a pool connection is released. Value must be lower than [@@wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1200-to-1299/e1205). In seconds. 0 means never release.                                                                                        | _integer_ |                1800                |
+| **`initializationTimeout`** | Pool will retry creating connection in loop, emitting 'error' event when reaching this timeout. In milliseconds.                                                                                                                                                                                                                                 | _integer_ |       `acquireTimeout` value       |
+|           **`minimumIdle`** | Permit to set a minimum number of connection in pool. **Recommendation is to use fixed pool, so not setting this value**.                                                                                                                                                                                                                        | _integer_ |   _set to connectionLimit value_   |
+|    **`minDelayValidation`** | When asking a connection to pool, the pool will validate the connection state. "minDelayValidation" permits disabling this validation if the connection has been borrowed recently avoiding useless verifications in case of frequent reuse of connections. In milliseconds. 0 means validation is done each time the connection is asked.       | _integer_ |                 500                |
+|     **`noControlAfterUse`** | After giving back connection to pool (connection.end) connector will reset or rollback connection to ensure a valid state. This option permit to disable those controls                                                                                                                                                                          | _boolean_ |                false               |
+|         **`resetAfterUse`** | When a connection is given back to pool, reset the connection if the server allows it (only for MariaDB version >= 10.2.22 /10.3.13). If disabled or server version doesn't allows reset, pool will only rollback open transaction if any                                                                                                        | _boolean_ | true before version 3, false since |
+|  **`leakDetectionTimeout`** | Permit to indicate a timeout to log connection borrowed from pool. When a connection is borrowed from pool and this timeout is reached, a message will be logged to console indicating a possible connection leak. Another message will tell if the possible logged leak has been released. In milliseconds. 0 means leak detection is disabled. | _integer_ |                  0                 |
+|           **`pingTimeout`** | Validation timeout (ping) for checking an connection not used recently from pool. In milliseconds.                                                                                                                                                                                                                                               | _integer_ |                 500                |
 
-## `createPoolCluster(options) → PoolCluster`
+### `createPoolCluster(options) → PoolCluster`
 
-> * `options`: *JSON* [poolCluster options](#poolCluster-options)
+> * `options`: _JSON_ [poolCluster options](connector-nodejs-promise-api.md#poolCluster-options)
 >
-> Returns a [PoolCluster](#poolCluster-api) object,
+> Returns a [PoolCluster](connector-nodejs-promise-api.md#poolCluster-api) object,
 
 Creates a new pool cluster. Cluster handle multiple pools, giving high availability / distributing load (using round robin / random / ordered).
 
@@ -461,26 +453,27 @@ try {
 }
 ```
 
-### PoolCluster options
+#### PoolCluster options
 
-Pool cluster options include [pool option documentation](#pool-options) that will be used when creating new pools.
+Pool cluster options include [pool option documentation](connector-nodejs-promise-api.md#pool-options) that will be used when creating new pools.
 
 Specific options for a pool cluster are:
 
-|                     option | description                                                                                                                                                                                    |   type    | default  | 
-|---------------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------:|:--------:|
-|             **`canRetry`** | When getting a connection from pool fails, can cluster retry with other pools                                                                                                                  | *boolean* |   true   |
-| **`removeNodeErrorCount`** | Maximum number of consecutive connection fail from a pool before pool is removed from cluster configuration. Infinity means node won't be removed. Default to Infinity since 3.0, was 5 before | *integer* | Infinity |
-|   **`restoreNodeTimeout`** | delay before a pool can be reused after a connection fails. 0 = can be reused immediately (in ms)                                                                                              | *integer* |   1000   |
-|      **`defaultSelector`** | default pools selector. Can be 'RR' (round-robin), 'RANDOM' or 'ORDER' (use in sequence = always use first pools unless fails)                                                                 | *string*  |   'RR'   |
+|                     option | description                                                                                                                                                                                    |    type   |  default |
+| -------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------: | :------: |
+|             **`canRetry`** | When getting a connection from pool fails, can cluster retry with other pools                                                                                                                  | _boolean_ |   true   |
+| **`removeNodeErrorCount`** | Maximum number of consecutive connection fail from a pool before pool is removed from cluster configuration. Infinity means node won't be removed. Default to Infinity since 3.0, was 5 before | _integer_ | Infinity |
+|   **`restoreNodeTimeout`** | delay before a pool can be reused after a connection fails. 0 = can be reused immediately (in ms)                                                                                              | _integer_ |   1000   |
+|      **`defaultSelector`** | default pools selector. Can be 'RR' (round-robin), 'RANDOM' or 'ORDER' (use in sequence = always use first pools unless fails)                                                                 |  _string_ |   'RR'   |
 
-## `importFile(options) → Promise`
+### `importFile(options) → Promise`
 
-> * `options`: *JSON/String* [connection option documentation](#connection-options) + one additional options `file`
+> * `options`: _JSON/String_ [connection option documentation](connector-nodejs-promise-api.md#connection-options) + one additional options `file`
 >
 > Returns a promise that:
+>
 > * resolves with an empty result,
-> * raises an [Error](#error).
+> * raises an [Error](connector-nodejs-promise-api.md#error).
 
 Import an sql file
 
@@ -494,13 +487,13 @@ try {
 }
 ```
 
-## `version → String`
+### `version → String`
 
 > Returns a String that is a library version. example '2.1.2'.
 
-## `defaultOptions(options) → Json`
+### `defaultOptions(options) → Json`
 
-> * `options`: *JSON/String* [connection option documentation](#connection-options) (non-mandatory)
+> * `options`: _JSON/String_ [connection option documentation](connector-nodejs-promise-api.md#connection-options) (non-mandatory)
 >
 > Returns a JSON value containing options default value.
 
@@ -522,17 +515,17 @@ console.log(mariadb.defaultOptions({ timezone: '+00:00' }));
 */        
 ```
 
-# Connection API
+## Connection API
 
-## `connection.query(sql[, values]) -> Promise`
+### `connection.query(sql[, values]) -> Promise`
 
-> * `sql`: *string | JSON* SQL string or JSON object to supersede default connection options. When using JSON object, object must have a "sql" key. For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
-> * `values`: *array | object* Placeholder values. Usually an array, but in cases of only one placeholder, it can be given as is.
+> * `sql`: _string | JSON_ SQL string or JSON object to supersede default connection options. When using JSON object, object must have a "sql" key. For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
+> * `values`: _array | object_ Placeholder values. Usually an array, but in cases of only one placeholder, it can be given as is.
 >
 > Returns a promise that:
-> * resolves with a JSON object for update/insert/delete or a [result-set](#result-set-array) object for a result-set.
-> * rejects with an [Error](#error).
-
+>
+> * resolves with a JSON object for update/insert/delete or a [result-set](connector-nodejs-promise-api.md#result-set-array) object for a result-set.
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
 Sends a query to a database and return a result as a Promise.
 
@@ -553,14 +546,14 @@ const rows = await conn.query({
 console.log(rows); //[ { 'NOW()': '2018-07-02 19:06:38' } ]
 ```
 
-### Placeholder
+#### Placeholder
 
 To prevent SQL Injection attacks, queries permit the use of question marks as placeholders. The Connection escapes values according to their type. Values can be of native JavaScript types, Buffers, Readables, objects with `toSQLString` methods, or objects that can be stringified (that is, `JSON.stringify`).
 
 When streaming, objects that implement Readable are streamed automatically. But there are two server system variables that may interfere:
 
-- [`net_read_timeout`](https://mariadb.com/kb/en/library/server-system-variables/#net_read_timeout): The server must receive queries before reaching this timeout, which defaults to 30 seconds.
-- [`max_allowed_packet`](https://mariadb.com/kb/en/library/server-system-variables/#max_allowed_packet): This system variable defines the maximum amount of data the Connector can send to the server.
+* [`net_read_timeout`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#net_read_timeout): The server must receive queries before reaching this timeout, which defaults to 30 seconds.
+* [`max_allowed_packet`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_allowed_packet): This system variable defines the maximum amount of data the Connector can send to the server.
 
 For instance,
 
@@ -573,7 +566,6 @@ const res = await connection.query("INSERT INTO someTable VALUES (?, ?, ?)", [
 //will send INSERT INTO someTable VALUES (1, _BINARY '.\'.st', 'mariadb')
 ```
 
-
 In the case of streaming,
 
 ```js
@@ -585,7 +577,7 @@ https.get(
 );
 ```
 
-### JSON Result-sets
+#### JSON Result-sets
 
 Queries return two different kinds of results, depending on the type of query you execute. When you execute write statements (such as `INSERT`, `DELETE` and `UPDATE`), the method returns a JSON object with the following properties:
 
@@ -602,11 +594,11 @@ const res = await connection.query('INSERT INTO animals(name) value (?)', ['sea 
 //res : { affectedRows: 1, insertId: 1, warningStatus: 0 }
 ```
 
-### Array Result-sets
+#### Array Result-sets
 
 When executing a `SELECT` statement, the method returns the result-set as an array of JSON objects. Each object in the array represents a row from the result-set, with column names as property keys.
 
-The result also includes a special non-enumerable `meta` property containing an array of [column metadata](#column-metadata) information.
+The result also includes a special non-enumerable `meta` property containing an array of [column metadata](connector-nodejs-promise-api.md#column-metadata) information.
 
 ```javascript
 const res = await connection.query('select * from animals');
@@ -618,13 +610,13 @@ const meta = res.meta;
 //    meta: [ ... ]
 ```
 
-### Query options
+#### Query options
 
 The following options can be set at either the query level or the connection level. When set at the connection level, they apply to all subsequent queries.
 
-#### `timeout`
+**`timeout`**
 
-*number, timeout in ms*
+_number, timeout in ms_
 
 Sets a timeout for query execution. Only available for MariaDB server >= 10.1.2.
 
@@ -648,9 +640,9 @@ try {
 }
 ```
 
-#### `namedPlaceholders`
+**`namedPlaceholders`**
 
-*boolean, default false*
+_boolean, default false_
 
 Enables the use of named placeholders instead of question mark placeholders. When enabled, the values parameter must be an object with keys matching the placeholder names in the query.
 
@@ -661,9 +653,9 @@ await connection.query(
 );
 ```
 
-#### `rowsAsArray`
+**`rowsAsArray`**
 
-*boolean, default false*
+_boolean, default false_
 
 Returns rows as arrays instead of objects, which can improve performance by 5-10% with local databases and reduces memory usage by avoiding the need to parse column metadata completely.
 
@@ -677,9 +669,9 @@ const meta = res.meta;
 //    meta: [...]
 ```
 
-#### `metaAsArray`
+**`metaAsArray`**
 
-*boolean, default false*
+_boolean, default false_
 
 A compatibility option that causes the Promise to return an array `[rows, metadata]` instead of rows with a `meta` property. This option is primarily for mysql2 compatibility.
 
@@ -692,13 +684,14 @@ const [rows, meta] = await connection.query({ metaAsArray: true, sql: 'select * 
 // meta = [...]
 ```
 
-#### `nestTables`
+**`nestTables`**
 
-*boolean / string, default false*
+_boolean / string, default false_
 
 Helps resolve column name conflicts in joins by grouping data by table. When set to `true`, results are grouped by table name. When set to a string value, it's used as a separator between table name and column name.
 
 With boolean value:
+
 ```javascript
 const res = await connection.query({
     nestTables: true, 
@@ -717,6 +710,7 @@ const res = await connection.query({
 ```
 
 With string value:
+
 ```javascript
 const res = await connection.query({
     nestTables: '_', 
@@ -728,21 +722,17 @@ const res = await connection.query({
 //]
 ```
 
-#### `dateStrings`
+**`dateStrings`**
 
-*boolean, default: false*
+_boolean, default: false_
 
 Whether you want the Connector to retrieve date values as strings, rather than `Date` objects.
 
+**`bigIntAsNumber`**
 
-#### `bigIntAsNumber`
+_boolean, default: true_
 
-*boolean, default: true*
-
-Whether the query should return JavaScript ES2020 [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
-for [BIGINT](https://mariadb.com/kb/en/bigint/) data type.
-This ensures having the expected value even for value > 2^53 (see [safe](node-js-connection-options.md#big-integer-support) range).
-This option can be set to query level, supplanting connection option `supportBigInt` value.
+Whether the query should return JavaScript ES2020 [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) for [BIGINT](https://mariadb.com/kb/en/bigint/) data type. This ensures having the expected value even for value > 2^53 (see [safe](node-js-connection-options.md#big-integer-support) range). This option can be set to query level, supplanting connection option `supportBigInt` value.
 
 this option is for compatibility for driver version < 3
 
@@ -755,20 +745,17 @@ const res2 = await shareConn.query({sql: 'select * from bigIntTable', supportBig
 // res :  [{ id: 9007199254740992 }] (not exact value)
 ```
 
+**`decimalAsNumber`**
 
-#### `decimalAsNumber`
+_boolean, default: false_
 
-*boolean, default: false*
+Whether the query should return decimal as Number. If enabled, this might return approximate values.
 
-Whether the query should return decimal as Number.
-If enabled, this might return approximate values.
+**`typeCast`**
 
+_Experimental_
 
-#### `typeCast`
-
-*Experimental*
-
-*function(column, next)*
+_function(column, next)_
 
 In the event that you need certain values returned as a different type, you can use this function to cast the value into that type yourself.
 
@@ -785,22 +772,22 @@ const tinyToBoolean = (column, next) => {
 connection.query({ typeCast: tinyToBoolean, sql: '...' });
 ```
 
-### Column Metadata
+#### Column Metadata
 
-* `collation`: Object indicates the column collation.  It has the properties: `index`, `name`, `encoding`, and `maxlen`.  For instance, `33, "UTF8_GENERAL_CI", "utf8", 3`
+* `collation`: Object indicates the column collation. It has the properties: `index`, `name`, `encoding`, and `maxlen`. For instance, `33, "UTF8_GENERAL_CI", "utf8", 3`
 * `columnLength`: Shows the column's maximum length if there's a limit and `0` if there is no limit, (such as with a `BLOB` column).
-* `type`:
-  Shows the column type as a String value. For more information on the relevant values, see	[`field-type.js`](/lib/const/field-type.js)
-* `columnType`: Shows the column type as an integer value. For more information on the relevant values, see	[`field-type.js`](/lib/const/field-type.js)
+* `type`: Shows the column type as a String value. For more information on the relevant values, see [`field-type.js`](../../lib/const/field-type.js)
+* `columnType`: Shows the column type as an integer value. For more information on the relevant values, see [`field-type.js`](../../lib/const/field-type.js)
 * `scale`: Provides the decimal part length.
-* `flags`: Shows the byte-encoded flags.  For more information, see [`field-detail.js`](/lib/const/field-detail.js).
-* `db()`: Name of the database schema.    You can also retrieve this using `schema()`.
+* `flags`: Shows the byte-encoded flags. For more information, see [`field-detail.js`](../../lib/const/field-detail.js).
+* `db()`: Name of the database schema. You can also retrieve this using `schema()`.
 * `table()`: Table alias.
 * `orgTable()`: Real table name.
 * `name()`: Column alias.
 * `orgName()`: Real column name.
 
 When using typeCast, additional function are available on Column, in order to decode value :
+
 * `string(): string` : decode [VARCHAR](https://mariadb.com/kb/en/varchar/)/[CHAR](https://mariadb.com/kb/en/char/)/[TEXT](https://mariadb.com/kb/en/text/) value
 * `buffer(): Buffer` : decode [BINARY](https://mariadb.com/kb/en/binary/)/[BLOB](https://mariadb.com/kb/en/blob/) value
 * `float(): float` : decode [FLOAT](https://mariadb.com/kb/en/float/) value
@@ -852,21 +839,19 @@ const meta = rows.meta;
 
 ```
 
+### `connection.queryStream(sql[, values]) → Emitter`
 
-## `connection.queryStream(sql[, values]) → Emitter`
-
-> * `sql`: *string | JSON* SQL string value or JSON object to supersede default connections options.  JSON objects must have an `"sql"` property.  For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
-> * `values`: *array | object* Defines placeholder values. This is usually an array, but in cases of only one placeholder, it can be given as a string.
+> * `sql`: _string | JSON_ SQL string value or JSON object to supersede default connections options. JSON objects must have an `"sql"` property. For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
+> * `values`: _array | object_ Defines placeholder values. This is usually an array, but in cases of only one placeholder, it can be given as a string.
 >
 > Returns an Emitter object that emits different types of events:
-> * error: Emits an [`Error`](#error) object when the query fails. (No `"end"` event will then be emitted).
-> * fields: Emits when column metadata from the result-set are received (the parameter is an array of [Metadata](#metadata-field) fields).
-> * data: Emits each time a row is received (parameter is a row).
-> * end: Emits when the query ends (no parameter).
-    > a method: close(): permits closing stream (since 3.0)
 >
+> * error: Emits an [`Error`](connector-nodejs-promise-api.md#error) object when the query fails. (No `"end"` event will then be emitted).
+> * fields: Emits when column metadata from the result-set are received (the parameter is an array of [Metadata](connector-nodejs-promise-api.md#metadata-field) fields).
+> * data: Emits each time a row is received (parameter is a row).
+> * end: Emits when the query ends (no parameter). > a method: close(): permits closing stream (since 3.0)
 
-### Streaming large result sets
+#### Streaming large result sets
 
 When using the `query()` method, the Connector returns the entire result-set with all its data in a single call. While this works well for small result sets, it can become problematic for queries returning millions of rows, potentially causing memory issues.
 
@@ -874,11 +859,11 @@ The `queryStream()` method solves this by using Node.js's event-driven architect
 
 **Important**: The stream handles backpressure automatically, pausing the socket when data handling takes time to prevent Node.js socket buffers from growing indefinitely. If you're using a pipeline and your data handling throws an error, you must explicitly call `queryStream.close()` to prevent connection hangs.
 
-### Streaming implementation options
+#### Streaming implementation options
 
 There are several ways to implement streaming:
 
-#### Using for-await-of (Node.js 10+)
+**Using for-await-of (Node.js 10+)**
 
 The simplest approach using modern JavaScript syntax:
 
@@ -896,7 +881,7 @@ async function streamingFunction() {
 }
 ```
 
-#### Using event listeners
+**Using event listeners**
 
 Traditional Node.js event-based approach:
 
@@ -916,7 +901,7 @@ connection.queryStream('SELECT * FROM mysql.user')
       });
 ```
 
-#### Using Node.js streams
+**Using Node.js streams**
 
 For advanced use cases, you can integrate with Node.js streams API:
 
@@ -954,20 +939,21 @@ stream.pipeline(
 );
 ```
 
-## `connection.prepare(sql) → Promise`
-> * `sql`: *string | JSON* SQL string value or JSON object to supersede default connections options.  JSON objects must have an `"sql"` property.  For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
+### `connection.prepare(sql) → Promise`
+
+> * `sql`: _string | JSON_ SQL string value or JSON object to supersede default connections options. JSON objects must have an `"sql"` property. For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
 >
 > Returns a promise that :
-> * resolves with a [Prepare](#prepareobject) object.
-> * rejects with an [Error](#error).
+>
+> * resolves with a [Prepare](connector-nodejs-promise-api.md#prepareobject) object.
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
-This permits to [PREPARE](https://mariadb.com/kb/en/prepare-statement/) a command that permits to be executed many times.
-After use, prepare.close() method MUST be call, in order to properly close object.
+This permits to [PREPARE](https://mariadb.com/kb/en/prepare-statement/) a command that permits to be executed many times. After use, prepare.close() method MUST be call, in order to properly close object.
 
-
-### Prepare object
+#### Prepare object
 
 Public variables :
+
 * `id`: Prepare statement Identifier
 * `query`: sql command
 * `database`: database it applies to.
@@ -975,31 +961,31 @@ Public variables :
 * `columns`: column array information.
 
 Public methods :
-#### `execute(values) → Promise`
-> * `values`: *array | object* Defines placeholder values. This is usually an array, but in cases of only one placeholder, it can be given as a string.
+
+**`execute(values) → Promise`**
+
+> * `values`: _array | object_ Defines placeholder values. This is usually an array, but in cases of only one placeholder, it can be given as a string.
 >
 > Returns a promise that :
-> * resolves with a JSON object for update/insert/delete or a [result-set](#result-set-array) object for a result-set.
-> * rejects with an [Error](#error).
+>
+> * resolves with a JSON object for update/insert/delete or a [result-set](connector-nodejs-promise-api.md#result-set-array) object for a result-set.
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
+**`executeStream(values) → Promise`**
 
-#### `executeStream(values) → Promise`
-> * `values`: *array | object* Defines placeholder values. This is usually an array, but in cases of only one placeholder, it can be given as a string.
+> * `values`: _array | object_ Defines placeholder values. This is usually an array, but in cases of only one placeholder, it can be given as a string.
 >
 > Returns an Emitter object that emits different types of events:
-> * error: Emits an [`Error`](#error) object when the query fails. (No `"end"` event will then be emitted).
+>
+> * error: Emits an [`Error`](connector-nodejs-promise-api.md#error) object when the query fails. (No `"end"` event will then be emitted).
 > * data: Emits each time a row is received (parameter is a row).
-> * end: Emits when the query ends (no parameter).
-    > a method: close(): permits closing stream (since 3.0)
+> * end: Emits when the query ends (no parameter). > a method: close(): permits closing stream (since 3.0)
 
 This is the equivalent of `queryStream` using execute.
 
-When using the `execute()` method, documented above, the Connector returns the entire result-set with all its data in a single call.
-While this is fine for queries that return small result-sets, it can grow unmanageable in cases of huge result-sets.
-Instead of retrieving all the data into memory, you can use the `executeStream()` method, which uses the event drive architecture to process rows one by one, which allows you to avoid putting too much strain on memory.
+When using the `execute()` method, documented above, the Connector returns the entire result-set with all its data in a single call. While this is fine for queries that return small result-sets, it can grow unmanageable in cases of huge result-sets. Instead of retrieving all the data into memory, you can use the `executeStream()` method, which uses the event drive architecture to process rows one by one, which allows you to avoid putting too much strain on memory.
 
-You may want to consider updating the [`net_read_timeout`](https://mariadb.com/kb/en/library/server-system-variables/#net_read_timeout) server system variable.
-The resultSet must be totally received before this timeout, which defaults to 30 seconds.
+You may want to consider updating the [`net_read_timeout`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#net_read_timeout) server system variable. The resultSet must be totally received before this timeout, which defaults to 30 seconds.
 
 * for-await-of
 
@@ -1040,15 +1026,11 @@ async function streamingFunction() {
       });
 ```
 
+**`close() → void`**
 
+This closes the prepared statement. Each time a Prepared object is used, it must be closed.
 
-#### `close() → void`
-This closes the prepared statement.
-Each time a Prepared object is used, it must be closed.
-
-In case prepare cache is enabled (having option `prepareCacheLength` > 0 (default)),
-Driver will either really close Prepare or keep it in cache.
-
+In case prepare cache is enabled (having option `prepareCacheLength` > 0 (default)), Driver will either really close Prepare or keep it in cache.
 
 ```javascript
 const prepare = await conn.prepare('INSERT INTO mytable(id,val) VALUES (?,?)');
@@ -1056,50 +1038,44 @@ await prepare.execute([1, 'val1'])
 prepare.close();
 ```
 
-## `connection.execute(sql[, values]) → Promise`
-> * `sql`: *string | JSON* SQL string or JSON object to supersede default connection options.  When using JSON object, an object must have a "sql" key. For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
-> * `values`: *array | object* Placeholder values. Usually an array, but in cases of only one placeholder, it can be given as is.
+### `connection.execute(sql[, values]) → Promise`
+
+> * `sql`: _string | JSON_ SQL string or JSON object to supersede default connection options. When using JSON object, an object must have a "sql" key. For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
+> * `values`: _array | object_ Placeholder values. Usually an array, but in cases of only one placeholder, it can be given as is.
 >
 > Returns a promise that :
-> * resolves with a JSON object for update/insert/delete or a [result-set](#result-set-array) object for a result-set.
-> * rejects with an [Error](#error).
+>
+> * resolves with a JSON object for update/insert/delete or a [result-set](connector-nodejs-promise-api.md#result-set-array) object for a result-set.
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
-This is quite similar to [`connection.query(sql [, values]) → Promise`](#connectionquerysql-values---promise) method, with a few differences:
-Execute will in fact [PREPARE](https://mariadb.com/kb/en/prepare-statement/) + [EXECUTE](https://mariadb.com/kb/en/execute-statement/) + [CLOSE](https://mariadb.com/kb/en/deallocate-drop-prepare/) command.
+This is quite similar to [`connection.query(sql [, values]) → Promise`](connector-nodejs-promise-api.md#connectionquerysql-values---promise) method, with a few differences: Execute will in fact [PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement) + [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-statement) + [CLOSE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-cursors/close) command.
 
-It makes sense to use this only if the command often is used and if prepare cache is enabled (default).
-If a PREPARE result is already in cache, only [EXECUTE](https://mariadb.com/kb/en/execute-statement/) command is executed.
-MariaDB server 10.6 even avoids resending result-set metadata if not changed since, permitting even faster results.
-
+It makes sense to use this only if the command often is used and if prepare cache is enabled (default). If a PREPARE result is already in cache, only [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-statement) command is executed. MariaDB server 10.6 even avoids resending result-set metadata if not changed since, permitting even faster results.
 
 ```javascript
 const res = await conn.execute('SELECT * FROM mytable WHERE someVal = ? and otherVal = ?', [1, 'val1']);
 ```
 
+### `connection.batch(sql, values) → Promise`
 
-## `connection.batch(sql, values) → Promise`
-
-> * `sql`: *string | JSON* SQL string value or JSON object to supersede default connections options.  JSON objects must have an `"sql"` property.  For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
-> * `values`: *array* Array of parameter (array of array or array of objects if using named placeholders).
+> * `sql`: _string | JSON_ SQL string value or JSON object to supersede default connections options. JSON objects must have an `"sql"` property. For instance, `{ dateStrings: true, sql: 'SELECT now()' }`
+> * `values`: _array_ Array of parameter (array of array or array of objects if using named placeholders).
 >
 > Returns a promise that :
+>
 > * resolves with a JSON object.
-> * rejects with an [Error](#error).
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
-Implementation depends on the server type and version.
-for MariaDB server version 10.2.7+, the implementation uses dedicated bulk protocol.
+Implementation depends on the server type and version. for MariaDB server version 10.2.7+, the implementation uses dedicated bulk protocol.
 
-For other, insert queries will be rewritten for optimization.
-example:
-insert into ab (i) values (?) with first batch values = 1, second = 2 will be rewritten
-insert into ab (i) values (1), (2).
+For other, insert queries will be rewritten for optimization. example: insert into ab (i) values (?) with first batch values = 1, second = 2 will be rewritten insert into ab (i) values (1), (2).
 
 If a query cannot be re-writen will execute a query for each value.
 
-An option `fullResult` permit to indicate if user wants to retrieve individual batch results (to retrieve generated ids).
-This might change the performance of bathing if set, depending on a server version (for server 11.5.1 and above with [MDEV-30366](https://jira.mariadb.org/browse/MDEV-30366), bulk will be use, or pipelining if not)
+An option `fullResult` permit to indicate if user wants to retrieve individual batch results (to retrieve generated ids). This might change the performance of bathing if set, depending on a server version (for server 11.5.1 and above with [MDEV-30366](https://jira.mariadb.org/browse/MDEV-30366), bulk will be use, or pipelining if not)
 
 For instance,
+
 ```javascript
 connection.query(
     'CREATE TEMPORARY TABLE batchExample(id int, id2 int, id3 int, t varchar(128), id4 int)'
@@ -1111,8 +1087,7 @@ const res = await connection.batch('INSERT INTO `batchExample` values (1, ?, 2, 
 console.log(res.affectedRows); // 2
 ```
 
-
-### Using the `fullResult` option
+#### Using the `fullResult` option
 
 By default, batch operations aggregate results, combining all individual operations into a single result. You can use the `fullResult: true` option to retrieve individual results for each parameter set.
 
@@ -1142,43 +1117,41 @@ results.forEach((res, i) => {
 // Result 1: OkPacket { affectedRows: 3, insertId: 1, warningStatus: 0 }
 ```
 
-#### When to use fullResult
+**When to use fullResult**
 
 The `fullResult` option is particularly useful when:
 
 1. You need to know which specific parameter sets succeeded or failed
 2. You need to access individual insertId values for each inserted row
 
-#### Performance considerations
+**Performance considerations**
 
-For MariaDB servers that support it (version 10.2.7+), the connector will use the optimized COM_STMT_BULK_EXECUTE protocol for better performance when possible. The `fullResult` option with bulk protocol requires 11.5.1.
+For MariaDB servers that support it (version 10.2.7+), the connector will use the optimized `COM_STMT_BULK_EXECUTE` protocol for better performance when possible. The `fullResult` option with bulk protocol requires 11.5.1.
 
-## `connection.beginTransaction() → Promise`
+### `connection.beginTransaction() → Promise`
 
->Returns a promise that :
->  * resolves (no argument)
->  * rejects with an [Error](#error).
+> Returns a promise that :
+>
+> * resolves (no argument)
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
 Begins a new transaction.
 
-## `connection.commit() → Promise`
+### `connection.commit() → Promise`
 
->Returns a promise that :
->  * resolves (no argument)
->  * rejects with an [Error](#error).
+> Returns a promise that :
+>
+> * resolves (no argument)
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
-Commits the current transaction if there is one active.
-The Connector tracks the current transaction state on the server.
-In the event that you issue the `commit()` method when there's no active transaction, it ignores the method and sends no commands to MariaDB.
+Commits the current transaction if there is one active. The Connector tracks the current transaction state on the server. In the event that you issue the `commit()` method when there's no active transaction, it ignores the method and sends no commands to MariaDB.
 
+### `connection.release() → Promise`
 
-## `connection.release() → Promise`
-
-_When connection comes from pool only_
-connection.release() is an async method returning an empty promise success. This function will never throw an error.
-default behavior is that if there is a transaction still open, a rollback command will be issued, and connection will be release to pool.
+_When connection comes from pool only_ connection.release() is an async method returning an empty promise success. This function will never throw an error. default behavior is that if there is a transaction still open, a rollback command will be issued, and connection will be release to pool.
 
 2 options might interfere:
+
 * `resetAfterUse` when set, connection will completely be reset like a fresh connection
 * `noControlAfterUse` when set, no control (rollback or reset) will be done on release
 
@@ -1195,15 +1168,14 @@ try {
 }
 ```
 
-## `connection.rollback() → Promise`
+### `connection.rollback() → Promise`
 
->Returns a promise that :
->  * resolves (no argument)
->  * rejects with an [Error](#error).
+> Returns a promise that :
+>
+> * resolves (no argument)
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
-Rolls back the current transaction if there is one active.
-The Connector tracks the current transaction state on the server.
-In the event that you issue the `rollback()` method when there's no active transaction, it ignores the method and sends no commands to MariaDB.
+Rolls back the current transaction if there is one active. The Connector tracks the current transaction state on the server. In the event that you issue the `rollback()` method when there's no active transaction, it ignores the method and sends no commands to MariaDB.
 
 ```javascript
 try {
@@ -1218,16 +1190,16 @@ try {
 }
 ```
 
-## `connection.changeUser(options) → Promise`
+### `connection.changeUser(options) → Promise`
 
-> * `options`: *JSON*, subset of [connection option documentation](#connection-options) = database / charset / password / user
+> * `options`: _JSON_, subset of [connection option documentation](connector-nodejs-promise-api.md#connection-options) = database / charset / password / user
 >
 > Returns a promise that :
->   * resolves without result
->   * rejects with an [Error](#error).
+>
+> * resolves without result
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
-Resets the connection and re-authorizes it using the given credentials.
-It is the equivalent of creating a new connection with a new user, reusing the open socket.
+Resets the connection and re-authorizes it using the given credentials. It is the equivalent of creating a new connection with a new user, reusing the open socket.
 
 ```javascript
 try {
@@ -1241,11 +1213,12 @@ try {
 }
 ```
 
-## `connection.ping() → Promise`
+### `connection.ping() → Promise`
 
->Returns a promise that :
->  * resolves (no argument)
->  * rejects with an [Error](#error).
+> Returns a promise that :
+>
+> * resolves (no argument)
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
 Sends a packet to the database containing one byte to check that the connection is still active.
 
@@ -1259,11 +1232,12 @@ conn.ping()
   })
 ```
 
-## `connection.reset() → Promise`
+### `connection.reset() → Promise`
 
->Returns a promise that :
->  * resolves (no argument)
->  * rejects with an [Error](#error).
+> Returns a promise that :
+>
+> * resolves (no argument)
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
 reset the connection. Reset will:
 
@@ -1274,23 +1248,22 @@ reset the connection. Reset will:
 * remove temporary tables
 * remove all PREPARE statement
 
-This command is only available for MariaDB >=10.2.4 or MySQL >= 5.7.3.
-the function will be rejected with the error "Reset command not permitted for server XXX" if the server version doesn't permit reset.
+This command is only available for `MariaDB >=10.2.4 or MySQL >= 5.7.3`. the function will be rejected with the error "Reset command not permitted for server XXX" if the server version doesn't permit reset.
 
-For previous MariaDB version, reset connection can be done using [`connection.changeUser(options) → Promise`](#connectionchangeuseroptions--promise) that do the same + redo authentication phase.
+For previous MariaDB version, reset connection can be done using [`connection.changeUser(options) → Promise`](connector-nodejs-promise-api.md#connectionchangeuseroptions--promise) that do the same + redo authentication phase.
 
-## `connection.isValid() → boolean`
+### `connection.isValid() → boolean`
 
 > Returns a boolean
 
-Indicates the connection state as the Connector knows it.
-If it returns false, there is an issue with the connection, such as the socket disconnected without the Connector knowing about it.
+Indicates the connection state as the Connector knows it. If it returns false, there is an issue with the connection, such as the socket disconnected without the Connector knowing about it.
 
-## `connection.end() → Promise`
+### `connection.end() → Promise`
 
->Returns a promise that :
->  * resolves (no argument)
->  * rejects with an [Error](#error).
+> Returns a promise that :
+>
+> * resolves (no argument)
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
 Closes the connection gracefully, after waiting for any currently executing queries to finish.
 
@@ -1304,12 +1277,9 @@ conn.end()
   })
 ```
 
+### `connection.destroy()`
 
-## `connection.destroy()`
-
-Closes the connection without waiting for any currently executing queries.
-These queries are interrupted.
-MariaDB logs the event as an unexpected socket close.
+Closes the connection without waiting for any currently executing queries. These queries are interrupted. MariaDB logs the event as an unexpected socket close.
 
 ```javascript
 try {
@@ -1328,28 +1298,29 @@ try {
 }
 ```
 
-## `connection.escape(value) → String`
+### `connection.escape(value) → String`
 
-This function permits escaping a parameter properly according to a parameter type to avoid injection.
-See [mariadb String literals](https://mariadb.com/kb/en/library/string-literals/) for escaping.
+This function permits escaping a parameter properly according to a parameter type to avoid injection. See [mariadb String literals](https://mariadb.com/kb/en/library/string-literals/) for escaping.
 
 Escaping has some limitations:
-- doesn't permit [Stream](https://nodejs.org/api/stream.html#stream_readable_streams) parameters
-- this is less efficient compared to using standard conn.query(), that will stream data to socket, avoiding string concatenation and using memory unnecessary
+
+* doesn't permit [Stream](https://nodejs.org/api/stream.html#stream_readable_streams) parameters
+* this is less efficient compared to using standard conn.query(), that will stream data to socket, avoiding string concatenation and using memory unnecessary
 
 escape per type:
+
 * boolean: explicit `true` or `false`
 * number: string representation. ex: 123 => '123'
 * Date: String representation using `YYYY-MM-DD HH:mm:ss.SSS` format
-* Buffer: _binary'<escaped buffer>'
+* Buffer: \_binary''
 * object with toSqlString function: String an escaped result of toSqlString
 * Array: list of escaped values. ex: `[true, "o'o"]` => `('true', 'o\'o')`
 * geoJson: MariaDB transformation to corresponding geotype. ex: `{ type: 'Point', coordinates: [20, 10] }` => `"ST_PointFromText('POINT(20 10)')"`
 * JSON: Stringification of JSON, or if `permitSetMultiParamEntries` is enabled, key escaped as identifier + value
-* String: escaped value, (\u0000, ', ", \b, \n, \r, \t, \u001A, and \ characters are escaped with '\')
+* String: escaped value, (\u0000, ', ", \b, \n, \r, \t, \u001A, and \ characters are escaped with '')
 
-Escape is done for [sql_mode](https://mariadb.com/kb/en/library/sql-mode/) value without NO_BACKSLASH_ESCAPES that disable \ escaping (default);  
-Escaping API are meant to prevent [SQL injection](https://en.wikipedia.org/wiki/SQL_injection). However, privilege the use of [`connection.query(sql [, values]) → Promise`](#connectionquerysql-values---promise) and avoid building the command manually.
+Escape is done for [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) value without NO\_BACKSLASH\_ESCAPES that disable \ escaping (default);\
+Escaping API are meant to prevent [SQL injection](https://en.wikipedia.org/wiki/SQL_injection). However, privilege the use of [`connection.query(sql [, values]) → Promise`](connector-nodejs-promise-api.md#connectionquerysql-values---promise) and avoid building the command manually.
 
 ```javascript
 const myColVar = "let'go";
@@ -1360,14 +1331,12 @@ const cmd2 = `SELECT * FROM ${conn.escapeId(myTable)} where myCol = ${conn.escap
 // cmd = cmd2 = "SELECT * FROM `table:a` where myCol = 'let\\'s go'"
 ```
 
-## `connection.escapeId(value) → String`
+### `connection.escapeId(value) → String`
 
-This function permits escaping an Identifier properly. See [Identifier Names](https://mariadb.com/kb/en/library/identifier-names/) for escaping.
-Value will be enclosed by '`' character if content doesn't satisfy:
-* ASCII: [0-9,a-z,A-Z$_] (numerals 0–9, basic Latin letters, both lowercase and uppercase, dollar sign, underscore)
-* Extended: U+0080 .. U+FFFF
-  and escaping '`' character if needed.
+This function permits escaping an Identifier properly. See [Identifier Names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-names) for escaping. Value will be enclosed by '\`' character if content doesn't satisfy:
 
+* ASCII: \[0-9,a-z,A-Z$\_] (numerals 0–9, basic Latin letters, both lowercase and uppercase, dollar sign, underscore)
+* Extended: U+0080 .. U+FFFF and escaping '\`' character if needed.
 
 ```javascript
 const myColVar = "let'go";
@@ -1380,37 +1349,32 @@ const cmd = 'SELECT * FROM ' + conn.escapeId(myTable) + ' where myCol = ' + conn
 const res = await con.query(`SELECT * FROM ${con.escapeId(myTable)} where myCol = ?`, [myColVar]); 
 ```
 
-
-## `connection.pause()`
+### `connection.pause()`
 
 Pauses data reads.
 
-## `connection.resume()`
+### `connection.resume()`
 
 Resumes data reads from a pause.
 
-
-## `connection.serverVersion()`
+### `connection.serverVersion()`
 
 > Returns a string
 
-Retrieves the version of the currently connected server.
-Throws an error when not connected to a server.
+Retrieves the version of the currently connected server. Throws an error when not connected to a server.
 
 ```javascript
   console.log(connection.serverVersion()); //10.2.14-MariaDB
 ```
 
+### `connection.importFile(options) → Promise`
 
-## `connection.importFile(options) → Promise`
-
-> * `options` *JSON*:
-    > ** file: <string> file path (mandatory)
-    > ** database: <string> database if different that current connection database (optional)
+> * `options` _JSON_: > \*\* file: file path (mandatory) > \*\* database: database if different that current connection database (optional)
 >
 > Returns a promise that :
->   * resolves without a result
->   * rejects with an [Error](#error).
+>
+> * resolves without a result
+> * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
 Import SQL file. If a database is set, the database will be used, then after file import, the database will be reverted to the previous value.
 
@@ -1425,7 +1389,7 @@ try {
 }
 ```
 
-## `Error`
+### `Error`
 
 When the Connector encounters an error, Promise returns an [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) object. In addition to the standard properties, this object has the following properties:
 
@@ -1434,11 +1398,11 @@ When the Connector encounters an error, Promise returns an [`Error`](https://dev
 * `sqlState`: The SQL state code following the ANSI SQL standard.
 * `code`: The error code as a string identifier.
 
-### Error handling best practices
+#### Error handling best practices
 
 When working with the MariaDB connector, implementing proper error handling is crucial for building robust applications. Here are some recommended practices:
 
-#### 1. Always use try/catch with async/await
+**1. Always use try/catch with async/await**
 
 ```javascript
 async function executeQuery() {
@@ -1476,7 +1440,7 @@ async function executeQuery() {
 }
 ```
 
-#### 2. Check for specific error codes
+**2. Check for specific error codes**
 
 The connector provides detailed error information that you can use to handle specific error scenarios:
 
@@ -1493,7 +1457,7 @@ try {
 }
 ```
 
-#### 3. Distinguish between fatal and non-fatal errors
+**3. Distinguish between fatal and non-fatal errors**
 
 The `fatal` property indicates whether the connection is still usable:
 
@@ -1513,7 +1477,7 @@ try {
 }
 ```
 
-### Error example
+#### Error example
 
 Here's an example of what an error object might look like when logged:
 
@@ -1535,12 +1499,11 @@ Here's an example of what an error object might look like when logged:
 
 When the `trace` option is enabled, errors include the original stack trace, which helps identify where in your code the query was executed.
 
-For a complete list of error codes and their meanings, see the [MariaDB Error Codes](https://mariadb.com/kb/en/library/mariadb-error-codes/) documentation.
+For a complete list of error codes and their meanings, see the [MariaDB Error Codes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes) documentation.
 
-## `events`
+### `events`
 
-Connection object that inherits from the Node.js [`EventEmitter`](https://nodejs.org/api/events.html).
-Emits an error event when the connection closes unexpectedly.
+Connection object that inherits from the Node.js [`EventEmitter`](https://nodejs.org/api/events.html). Emits an error event when the connection closes unexpectedly.
 
 ```javascript
 
@@ -1570,28 +1533,27 @@ conn.on('error', err => {
 
 ```
 
-
-# Pool API
+## Pool API
 
 A connection pool is a cache of database connections maintained so that connections can be reused when future requests to the database are required. Connection pools are used to enhance the performance of executing commands on a database.
 
-## Pool overview
+### Pool overview
 
 Each time a connection is requested, if the pool contains an available connection, the pool will validate the connection by exchanging an empty MySQL packet with the server to ensure the connection is still valid, then provide the connection.
 
 The pool reuses connections intensively to improve performance. This validation is only performed if a connection has been idle for a period (specified by the `minDelayValidation` option, which defaults to 500ms).
 
 If no connection is available, the request will be queued until either:
-- A connection becomes available (through creation or release)
-- The connection timeout (`acquireTimeout`) is reached
+
+* A connection becomes available (through creation or release)
+* The connection timeout (`acquireTimeout`) is reached
 
 When a connection is released back to the pool, any remaining transactions will be automatically rolled back to ensure a clean state for the next use.
 
-## `pool.getConnection() → Promise`
+### `pool.getConnection() → Promise`
 
-> * Returns a promise that:
-    >   * resolves with a [Connection](#connection-api) object
->   * rejects with an [Error](#error)
+> * Returns a promise that: > \* resolves with a [Connection](connector-nodejs-promise-api.md#connection-api) object
+>   * rejects with an [Error](connector-nodejs-promise-api.md#error)
 
 Retrieves a connection from the pool. If the pool is at its connection limit, the promise will wait until a connection becomes available or the `acquireTimeout` is reached.
 
@@ -1652,14 +1614,15 @@ async function transferFunds(fromAccount, toAccount, amount) {
 }
 ```
 
-## `pool.query(sql[, values]) → Promise`
+### `pool.query(sql[, values]) → Promise`
 
-> * `sql`: *string | JSON* SQL string or JSON object with query options
-> * `values`: *array | object* Placeholder values
+> * `sql`: _string | JSON_ SQL string or JSON object with query options
+> * `values`: _array | object_ Placeholder values
 >
 > Returns a promise that:
-> * resolves with query results (same as [connection.query()](#connectionquerysql-values---promise))
-> * rejects with an [Error](#error)
+>
+> * resolves with query results (same as [connection.query()](connector-nodejs-promise-api.md#connectionquerysql-values---promise))
+> * rejects with an [Error](connector-nodejs-promise-api.md#error)
 
 Executes a query using a connection from the pool. The connection is automatically acquired and released, making this method ideal for simple queries.
 
@@ -1710,14 +1673,15 @@ async function getRecentOrders(options) {
 }
 ```
 
-## `pool.batch(sql, values) → Promise`
+### `pool.batch(sql, values) → Promise`
 
-> * `sql`: *string | JSON* SQL string or JSON object with query options
-> * `values`: *array* Array of parameter sets (array of arrays or array of objects for named placeholders)
+> * `sql`: _string | JSON_ SQL string or JSON object with query options
+> * `values`: _array_ Array of parameter sets (array of arrays or array of objects for named placeholders)
 >
 > Returns a promise that:
+>
 > * resolves with batch operation results
-> * rejects with an [Error](#error)
+> * rejects with an [Error](connector-nodejs-promise-api.md#error)
 
 Executes a batch operation using a connection from the pool. The pool automatically handles connection acquisition and release.
 
@@ -1756,11 +1720,12 @@ async function addMultipleUsers(users) {
 }
 ```
 
-## `pool.end() → Promise`
+### `pool.end() → Promise`
 
 > Returns a promise that:
+>
 > * resolves when all connections are closed
-> * rejects with an [Error](#error) if closing fails
+> * rejects with an [Error](connector-nodejs-promise-api.md#error) if closing fails
 
 Gracefully closes all connections in the pool and ends the pool. This should be called when your application is shutting down to ensure all database resources are properly released.
 
@@ -1793,20 +1758,24 @@ process.on('SIGINT', gracefulShutdown);
 process.on('SIGTERM', gracefulShutdown);
 ```
 
-## `pool.escape(value) → String`
-This is an alias for [`connection.escape(value) → String`](#connectionescapevalue--string) to escape parameters when building queries manually.
+### `pool.escape(value) → String`
+
+This is an alias for [`connection.escape(value) → String`](connector-nodejs-promise-api.md#connectionescapevalue--string) to escape parameters when building queries manually.
 
 **Example:**
+
 ```javascript
 const userId = "user's-id";
 const query = `SELECT * FROM users WHERE id = ${pool.escape(userId)}`;
 // query = "SELECT * FROM users WHERE id = 'user\\'s-id'"
 ```
 
-## `pool.escapeId(value) → String`
-This is an alias for [`connection.escapeId(value) → String`](#connectionescapeidvalue--string) to escape identifiers like table or column names.
+### `pool.escapeId(value) → String`
+
+This is an alias for [`connection.escapeId(value) → String`](connector-nodejs-promise-api.md#connectionescapeidvalue--string) to escape identifiers like table or column names.
 
 **Example:**
+
 ```javascript
 const tableName = "user-data";
 const columnName = "last-login";
@@ -1814,15 +1783,15 @@ const query = `SELECT ${pool.escapeId(columnName)} FROM ${pool.escapeId(tableNam
 // query = "SELECT `last-login` FROM `user-data`"
 ```
 
-## `pool.importFile(options) → Promise`
+### `pool.importFile(options) → Promise`
 
-> * `options` <JSON>:
-    >   * `file`: <string> file path (mandatory)
->   * `database`: <string> database if different from current connection database (optional)
+> * `options` : > \* `file`: file path (mandatory)
+>   * `database`: database if different from current connection database (optional)
 >
 > Returns a promise that:
->   * resolves without result
->   * rejects with an [Error](#error)
+>
+> * resolves without result
+> * rejects with an [Error](connector-nodejs-promise-api.md#error)
 
 Imports an SQL file. If a database is specified, it will be used for the import and then reverted to the original database afterward.
 
@@ -1847,11 +1816,11 @@ async function importDatabaseDump(filePath, targetDatabase) {
 }
 ```
 
-## Pool events
+### Pool events
 
 The pool object inherits from Node.js [EventEmitter](https://nodejs.org/api/events.html) and emits the following events:
 
-### `acquire`
+#### `acquire`
 
 Emitted when a connection is acquired from the pool.
 
@@ -1861,7 +1830,7 @@ pool.on('acquire', (connection) => {
 });
 ```
 
-### `connection`
+#### `connection`
 
 Emitted when a new connection is created within the pool.
 
@@ -1875,7 +1844,7 @@ pool.on('connection', (connection) => {
 });
 ```
 
-### `release`
+#### `release`
 
 Emitted when a connection is released back to the pool.
 
@@ -1885,7 +1854,7 @@ pool.on('release', (connection) => {
 });
 ```
 
-### `error`
+#### `error`
 
 Emitted when an error occurs in the pool, such as failure to create a connection.
 
@@ -1897,7 +1866,7 @@ pool.on('error', (err) => {
 });
 ```
 
-## Pool monitoring methods
+### Pool monitoring methods
 
 The pool provides several methods to monitor its state:
 
@@ -1917,78 +1886,75 @@ const queued = pool.taskQueueSize();
 console.log(`Pool status: ${active}/${total} connections active, ${idle} idle, ${queued} requests queued`);
 ```
 
-## Pool best practices
+### Pool best practices
 
 1. **Right-size your connection pool**:
-    - Set `connectionLimit` based on your application's concurrency needs and database server capacity
-    - Too few connections can create bottlenecks
-    - Too many connections can overload the database server
-    - Start with a connection limit of 10–20 and adjust based on performance testing
+   * Set `connectionLimit` based on your application's concurrency needs and database server capacity
+   * Too few connections can create bottlenecks
+   * Too many connections can overload the database server
+   * Start with a connection limit of 10–20 and adjust based on performance testing
+2.  **Handle connection leaks**:
 
-2. **Handle connection leaks**:
-   ```javascript
-   const pool = mariadb.createPool({
-     // ...connection options
-     connectionLimit: 10,
-     leakDetectionTimeout: 30000  // Log potential leaks after 30 seconds
-   });
-   ```
+    ```javascript
+    const pool = mariadb.createPool({
+      // ...connection options
+      connectionLimit: 10,
+      leakDetectionTimeout: 30000  // Log potential leaks after 30 seconds
+    });
+    ```
+3.  **Always release connections**:
 
-3. **Always release connections**:
-   ```javascript
-   let conn;
-   try {
-     conn = await pool.getConnection();
-     // Use connection...
-   } catch (err) {
-     // Handle error...
-   } finally {
-     if (conn) conn.release();  // Always release in finally block
-   }
-   ```
+    ```javascript
+    let conn;
+    try {
+      conn = await pool.getConnection();
+      // Use connection...
+    } catch (err) {
+      // Handle error...
+    } finally {
+      if (conn) conn.release();  // Always release in finally block
+    }
+    ```
+4.  **Use connection validation wisely**:
 
-4. **Use connection validation wisely**:
-   ```javascript
-   const pool = mariadb.createPool({
-     // ...connection options
-     minDelayValidation: 500,  // Only validate connections unused for 500ms
-     pingTimeout: 1000         // Timeout for ping validation
-   });
-   ```
-
+    ```javascript
+    const pool = mariadb.createPool({
+      // ...connection options
+      minDelayValidation: 500,  // Only validate connections unused for 500ms
+      pingTimeout: 1000         // Timeout for ping validation
+    });
+    ```
 5. **Prefer pool.query() for simple operations**:
-    - For single queries, use `pool.query()` instead of manually acquiring and releasing connections
-    - Only use `getConnection()` when you need to maintain context across multiple queries
-
+   * For single queries, use `pool.query()` instead of manually acquiring and releasing connections
+   * Only use `getConnection()` when you need to maintain context across multiple queries
 6. **Implement proper error handling**:
-    - Listen for 'error' events on the pool
-    - Implement reconnection strategies for fatal errors
-    - Consider using a circuit breaker pattern for persistent database issues
-
+   * Listen for 'error' events on the pool
+   * Implement reconnection strategies for fatal errors
+   * Consider using a circuit breaker pattern for persistent database issues
 7. **Close the pool during application shutdown**:
-    - Always call `pool.end()` when your application terminates
-    - Use process signal handlers (SIGINT, SIGTERM) to ensure proper cleanup
+   * Always call `pool.end()` when your application terminates
+   * Use process signal handlers (SIGINT, SIGTERM) to ensure proper cleanup
 
-# Pool cluster API
+## Pool cluster API
 
 A pool cluster manages multiple database connection pools and provides high availability and load balancing capabilities. It allows your application to:
 
-- Connect to multiple database servers (for primary/replica setups)
-- Automatically handle failover if a database server goes down
-- Distribute queries across multiple servers
-- Group servers by pattern for targeted operations
+* Connect to multiple database servers (for primary/replica setups)
+* Automatically handle failover if a database server goes down
+* Distribute queries across multiple servers
+* Group servers by pattern for targeted operations
 
-## Pool cluster overview
+### Pool cluster overview
 
 The cluster manages a collection of connection pools, each identified by a name. You can select pools using pattern matching and specify different load balancing strategies (selectors) to determine which pool to use for each connection request.
 
 When a connection fails, the cluster can automatically retry with another pool matching the same pattern. If a pool fails consistently, it can be temporarily blacklisted or even removed from the cluster configuration.
 
-## `createPoolCluster(options) → PoolCluster`
+### `createPoolCluster(options) → PoolCluster`
 
-> * `options`: *JSON* [poolCluster options](#poolcluster-options)
+> * `options`: _JSON_ [poolCluster options](connector-nodejs-promise-api.md#poolcluster-options)
 >
-> Returns a [PoolCluster](#poolcluster-api) object
+> Returns a [PoolCluster](connector-nodejs-promise-api.md#poolcluster-api) object
 
 Creates a new pool cluster to manage multiple database connection pools.
 
@@ -2027,10 +1993,10 @@ cluster.add('replica2', {
 });
 ```
 
-## `poolCluster.add(id, config)`
+### `poolCluster.add(id, config)`
 
-> * `id`: *string* node identifier. Example: `'primary'`, `'replica1'`
-> * `config`: *JSON* [pool options](#pool-options) to create the pool
+> * `id`: _string_ node identifier. Example: `'primary'`, `'replica1'`
+> * `config`: _JSON_ [pool options](connector-nodejs-promise-api.md#pool-options) to create the pool
 >
 > Returns: void
 
@@ -2066,9 +2032,9 @@ cluster.add('replica-west', {
 });
 ```
 
-## `poolCluster.remove(pattern)`
+### `poolCluster.remove(pattern)`
 
-> * `pattern`: *string* Regex pattern to select pools. Example: `'replica*'`
+> * `pattern`: _string_ Regex pattern to select pools. Example: `'replica*'`
 >
 > Returns: void
 
@@ -2091,14 +2057,15 @@ cluster.remove('replica*');
 cluster.remove('analytics');
 ```
 
-## `poolCluster.getConnection([pattern], [selector]) → Promise`
+### `poolCluster.getConnection([pattern], [selector]) → Promise`
 
-> * `pattern`: *string* Regex pattern to select pools. Default: `'*'` (all pools)
-> * `selector`: *string* Selection strategy: 'RR' (round-robin), 'RANDOM', or 'ORDER'. Default: value of the `defaultSelector` option
+> * `pattern`: _string_ Regex pattern to select pools. Default: `'*'` (all pools)
+> * `selector`: _string_ Selection strategy: 'RR' (round-robin), 'RANDOM', or 'ORDER'. Default: value of the `defaultSelector` option
 >
 > Returns a promise that:
-> * resolves with a [Connection](#connection-api) object
-> * rejects with an [Error](#error)
+>
+> * resolves with a [Connection](connector-nodejs-promise-api.md#connection-api) object
+> * rejects with an [Error](connector-nodejs-promise-api.md#error)
 
 Gets a connection from a pool in the cluster that matches the pattern using the specified selection strategy.
 
@@ -2165,12 +2132,12 @@ async function executeQueryWithRetry(sql, params, maxRetries = 3) {
 }
 ```
 
-## `poolCluster.of(pattern, [selector]) → FilteredPoolCluster`
+### `poolCluster.of(pattern, [selector]) → FilteredPoolCluster`
 
-> * `pattern`: *string* Regex pattern to select pools. Example: `'replica*'`
-> * `selector`: *string* Selection strategy: 'RR' (round-robin), 'RANDOM', or 'ORDER'
+> * `pattern`: _string_ Regex pattern to select pools. Example: `'replica*'`
+> * `selector`: _string_ Selection strategy: 'RR' (round-robin), 'RANDOM', or 'ORDER'
 >
-> Returns a [FilteredPoolCluster](#filteredpoolcluster) object
+> Returns a [FilteredPoolCluster](connector-nodejs-promise-api.md#filteredpoolcluster) object
 
 Creates a new filtered pool cluster that only includes pools matching the specified pattern. This allows you to create specialized interfaces for different database roles.
 
@@ -2205,11 +2172,12 @@ async function writeData(userData) {
 }
 ```
 
-## `poolCluster.end() → Promise`
+### `poolCluster.end() → Promise`
 
 > Returns a promise that:
+>
 > * resolves when all pools in the cluster are closed
-> * rejects with an [Error](#error) if closing fails
+> * rejects with an [Error](connector-nodejs-promise-api.md#error) if closing fails
 
 Gracefully closes all connection pools in the cluster.
 
@@ -2242,15 +2210,16 @@ process.on('SIGINT', gracefulShutdown);
 process.on('SIGTERM', gracefulShutdown);
 ```
 
-## FilteredPoolCluster
+### FilteredPoolCluster
 
 A filtered pool cluster is a subset of the main cluster that only includes pools matching a specific pattern. It provides a simplified interface for working with logically grouped database nodes.
 
-### `filteredPoolCluster.getConnection() → Promise`
+#### `filteredPoolCluster.getConnection() → Promise`
 
 > Returns a promise that:
-> * resolves with a [Connection](#connection-api) object
-> * rejects with an [Error](#error)
+>
+> * resolves with a [Connection](connector-nodejs-promise-api.md#connection-api) object
+> * rejects with an [Error](connector-nodejs-promise-api.md#error)
 
 Gets a connection from one of the pools in the filtered cluster using the selector specified when the filtered cluster was created.
 
@@ -2272,14 +2241,15 @@ async function getReadOnlyData() {
 }
 ```
 
-### `filteredPoolCluster.query(sql[, values]) → Promise`
+#### `filteredPoolCluster.query(sql[, values]) → Promise`
 
-> * `sql`: *string | JSON* SQL string or JSON object with query options
-> * `values`: *array | object* Placeholder values
+> * `sql`: _string | JSON_ SQL string or JSON object with query options
+> * `values`: _array | object_ Placeholder values
 >
 > Returns a promise that:
+>
 > * resolves with query results
-> * rejects with an [Error](#error)
+> * rejects with an [Error](connector-nodejs-promise-api.md#error)
 
 Shorthand method to get a connection from the filtered cluster, execute a query, and release the connection.
 
@@ -2314,11 +2284,11 @@ async function updateUserStatus(id, status) {
 }
 ```
 
-## Pool Cluster Events
+### Pool Cluster Events
 
 The pool cluster inherits from Node.js [EventEmitter](https://nodejs.org/api/events.html) and emits the following events:
 
-### `remove`
+#### `remove`
 
 Emitted when a node is removed from the cluster configuration. This happens when a node fails to connect more than `removeNodeErrorCount` times (if this option is defined).
 
@@ -2331,7 +2301,7 @@ cluster.on('remove', (nodeId) => {
 });
 ```
 
-## Selection Strategies
+### Selection Strategies
 
 The pool cluster supports three different selection strategies for choosing which database node to use:
 
@@ -2339,68 +2309,65 @@ The pool cluster supports three different selection strategies for choosing whic
 2. **Random (`'RANDOM'`)**: Selects a random pool for each connection request.
 3. **Order (`'ORDER'`)**: Always tries pools in sequence, using the first available one. Useful for primary/fallback setups.
 
-## Pool Cluster Best Practices
+### Pool Cluster Best Practices
 
 1. **Use meaningful node identifiers**:
-    - Choose clear identifiers that indicate the node's role (e.g., 'primary', 'replica1')
-    - This makes pattern matching more intuitive and maintenance easier
+   * Choose clear identifiers that indicate the node's role (e.g., 'primary', 'replica1')
+   * This makes pattern matching more intuitive and maintenance easier
+2.  **Implement role-based access with patterns**:
 
-2. **Implement role-based access with patterns**:
-   ```javascript
-   // Direct write operations to primary
-   const primary = cluster.of('primary');
-   
-   // Direct read operations to replicas
-   const replicas = cluster.of('replica*', 'RR');
-   
-   async function saveData(data) {
-     // Writes go to primary
-     return await primary.query('INSERT INTO table SET ?', [data]);
-   }
-   
-   async function getData(id) {
-     // Reads come from replicas
-     return await replicas.query('SELECT * FROM table WHERE id = ?', [id]);
-   }
-   ```
+    ```javascript
+    // Direct write operations to primary
+    const primary = cluster.of('primary');
 
+    // Direct read operations to replicas
+    const replicas = cluster.of('replica*', 'RR');
+
+    async function saveData(data) {
+      // Writes go to primary
+      return await primary.query('INSERT INTO table SET ?', [data]);
+    }
+
+    async function getData(id) {
+      // Reads come from replicas
+      return await replicas.query('SELECT * FROM table WHERE id = ?', [id]);
+    }
+    ```
 3. **Use appropriate selectors for different scenarios**:
-    - `'ORDER'` for high availability with failover (tries primary first, then fallbacks)
-    - `'RR'` for load balancing across equivalent nodes (like replicas)
-    - `'RANDOM'` when pure distribution is needed
+   * `'ORDER'` for high availability with failover (tries primary first, then fallbacks)
+   * `'RR'` for load balancing across equivalent nodes (like replicas)
+   * `'RANDOM'` when pure distribution is needed
+4.  **Configure node removal thresholds appropriately**:
 
-4. **Configure node removal thresholds appropriately**:
-   ```javascript
-   const cluster = mariadb.createPoolCluster({
-     removeNodeErrorCount: 5,    // Remove after 5 consecutive failures
-     restoreNodeTimeout: 10000,  // Wait 10 seconds before retrying failed nodes
-     canRetry: true              // Enable retry on different nodes
-   });
-   ```
+    ```javascript
+    const cluster = mariadb.createPoolCluster({
+      removeNodeErrorCount: 5,    // Remove after 5 consecutive failures
+      restoreNodeTimeout: 10000,  // Wait 10 seconds before retrying failed nodes
+      canRetry: true              // Enable retry on different nodes
+    });
+    ```
+5.  **Monitor removed nodes**:
 
-5. **Monitor removed nodes**:
-   ```javascript
-   // Track cluster health
-   let clusterHealth = {
-     removedNodes: [],
-     lastIncident: null
-   };
-   
-   cluster.on('remove', (nodeId) => {
-     clusterHealth.removedNodes.push(nodeId);
-     clusterHealth.lastIncident = new Date();
-     
-     // Alert operations team
-     alertOps(`Database node ${nodeId} removed from cluster at ${clusterHealth.lastIncident}`);
-   });
-   ```
+    ```javascript
+    // Track cluster health
+    let clusterHealth = {
+      removedNodes: [],
+      lastIncident: null
+    };
 
+    cluster.on('remove', (nodeId) => {
+      clusterHealth.removedNodes.push(nodeId);
+      clusterHealth.lastIncident = new Date();
+      
+      // Alert operations team
+      alertOps(`Database node ${nodeId} removed from cluster at ${clusterHealth.lastIncident}`);
+    });
+    ```
 6. **Implement graceful degradation**:
-    - Design your application to function with reduced capabilities when some nodes are unavailable
-    - Use fallback strategies when specific node patterns become unavailable
-
+   * Design your application to function with reduced capabilities when some nodes are unavailable.
+   * Use fallback strategies when specific node patterns become unavailable
 7. **Always close the cluster during application shutdown**:
-    - Call `cluster.end()` to properly release all resources
-    - Use process signal handlers to ensure cleanup
+   * Call `cluster.end()` to properly release all resources
+   * Use process signal handlers to ensure cleanup.
 
 {% @marketo/form formId="4316" %}
