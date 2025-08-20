@@ -23,6 +23,7 @@
     * [Introduction to State Snapshot Transfers (SSTs)](galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md)
     * [Manual SST of Galera Cluster Node With mariadb-backup](galera-management/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariadb-backup.md)
     * [mariadb-backup SST Method](galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md)
+    * [Provisioning Nodes: State Transfers (SST & IST)](galera-management/state-snapshot-transfers-ssts-in-galera-cluster/provisioning-nodes-state-transfers-sst-and-ist.md)
   * [Upgrading Galera Cluster](galera-management/upgrading-galera-cluster/README.md)
     * [Upgrading from MariaDB 10.3 to MariaDB 10.4 with Galera Cluster](galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10-3-to-mariadb-10-4-with-galera-cluster.md)
     * [Upgrading from MariaDB 10.4 to MariaDB 10.5 with Galera Cluster](galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10-4-to-mariadb-10-5-with-galera-cluster.md)
