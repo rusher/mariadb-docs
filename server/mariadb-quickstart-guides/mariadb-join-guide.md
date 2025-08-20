@@ -168,10 +168,10 @@ While this syntax works, the explicit `JOIN` syntax (`INNER JOIN`, `LEFT JOIN`, 
 
 ### See Also
 
-* [More Advanced Joins](https://mariadb.com/docs/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins)
-* [JOIN Syntax](https://mariadb.com/docs/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax)
-* [COMMA vs JOIN](https://mariadb.com/docs/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join)
-* [Joins, Subqueries and SET](https://mariadb.com/docs/server/reference/sql-structure/joins-subqueries-set)
+* [More Advanced Joins](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md)
+* [JOIN Syntax](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)
+* [Comma vs JOIN](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join.md)
+* [Joins, Subqueries and SET](../reference/sql-structure/joins-subqueries-set.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
