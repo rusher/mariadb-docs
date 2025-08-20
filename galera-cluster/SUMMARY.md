@@ -30,7 +30,7 @@
     * [Upgrading from MariaDB 10.6 to MariaDB 10.11 with Galera Cluster](galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10-6-to-mariadb-10-11-with-galeracluster.md)
   * [Recovering a Primary Component After a Full Cluster Shutdown](galera-management/recovering-a-primary-component-after-a-full-cluster-shutdown.md)
   * [Galera Cluster Monitoring Guide](galera-management/galera-cluster-monitoring-guide.md)
-  * [Flow Control in Galera Cluster](galera-management/flow-control-in-galera-cluster.md)
+  * [Flow Control in Galera Cluster](architecture/flow-control-in-galera-cluster.md)
   * [Using Streaming Replication for Large Transactions](galera-management/using-streaming-replication-for-large-transactions.md)
 * [Architecture](architecture/README.md)
   * [Introduction to Galera Architecture](architecture/introduction-to-galera-architecture.md)

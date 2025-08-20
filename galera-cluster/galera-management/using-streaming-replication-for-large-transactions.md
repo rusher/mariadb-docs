@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Using Streaming Replication for Large Transactions
 
 Streaming Replication is a feature in MariaDB Galera Cluster that optimizes replication of large or long-running transactions. Typically, a node executes a transaction fully and replicates the complete write-set to other nodes at `COMMIT` time. Although efficient for most workloads, this approach can be challenging for very large or lengthy transactions.
