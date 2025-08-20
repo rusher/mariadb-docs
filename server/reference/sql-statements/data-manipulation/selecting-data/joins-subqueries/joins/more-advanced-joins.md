@@ -1,6 +1,6 @@
 # More Advanced Joins
 
-This article is a continuation of the [`JOIN`](join-syntax.md) syntax page. If you're getting started with `JOIN` statements, review that page first.
+This article is a continuation of the [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md). If you're getting started with `JOIN` statements, review that page first.
 
 ## The Employee Database
 
@@ -187,7 +187,10 @@ The result (limited to 10 rows) looks like this:
 
 ## See Also
 
-* [Introduction to JOINs](join-syntax.md)
+* [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md)
+* [JOIN Syntax](join-syntax.md)
+* [Comma vs JOIN](comma-vs-join.md)
+* [Joins, Subqueries and SET](../../../../../sql-structure/joins-subqueries-set.md)
 
 _The first version of this article was copied, with permission, from_ [_More\_Advanced\_Joins_](https://hashmysql.org/wiki/More_Advanced_Joins) _on 2012-10-05._
 
