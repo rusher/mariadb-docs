@@ -22,3 +22,7 @@ description: >-
 {% content-ref url="comma-vs-join.md" %}
 [comma-vs-join.md](comma-vs-join.md)
 {% endcontent-ref %}
+
+{% content-ref url="../../../../../sql-structure/joins-subqueries-set.md" %}
+[joins-subqueries-set.md](../../../../../sql-structure/joins-subqueries-set.md)
+{% endcontent-ref %}
