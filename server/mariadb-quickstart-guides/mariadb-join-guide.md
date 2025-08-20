@@ -166,6 +166,13 @@ While this syntax works, the explicit `JOIN` syntax (`INNER JOIN`, `LEFT JOIN`, 
 
 `JOIN` clauses can be concatenated (chained) to retrieve results from three or more tables by progressively joining them.
 
+### See Also
+
+* [More Advanced Joins](https://mariadb.com/docs/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins)
+* [JOIN Syntax](https://mariadb.com/docs/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax)
+* [COMMA vs JOIN](https://mariadb.com/docs/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join)
+* [Joins, Subqueries and SET](https://mariadb.com/docs/server/reference/sql-structure/joins-subqueries-set)
+
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
