@@ -26,7 +26,3 @@ description: >-
 {% content-ref url="../../../../../sql-structure/joins-subqueries-set.md" %}
 [joins-subqueries-set.md](../../../../../sql-structure/joins-subqueries-set.md)
 {% endcontent-ref %}
-
-{% content-ref url="../../../../../../server-usage/tables/mariadb-join-guide-1.md" %}
-[mariadb-join-guide-1.md](../../../../../../server-usage/tables/mariadb-join-guide-1.md)
-{% endcontent-ref %}
