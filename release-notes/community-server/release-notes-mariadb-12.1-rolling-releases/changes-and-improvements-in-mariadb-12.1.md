@@ -39,8 +39,8 @@ MariaDB 12.1 is a [rolling release](../about/release-model.md). It is an evoluti
 
 | Date         | Release                                           | Status  | Release Notes                                    | Changelog                                                                             |
 | ------------ | ------------------------------------------------- | ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
-| 26 June 2025 | MariaDB 12.1.0                                    | Preview |                                                  |                                                                                       |
 | 7 Aug 2025   | [MariaDB 12.1.1](mariadb-12.1.1-release-notes.md) | RC      | [Release Notes](mariadb-12.1.1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.1-series/mariadb-12.1.1-changelog.md) |
+| 26 June 2025 | MariaDB 12.1.0                                    | Preview |                                                  |                                                                                       |
 
 ***
 
