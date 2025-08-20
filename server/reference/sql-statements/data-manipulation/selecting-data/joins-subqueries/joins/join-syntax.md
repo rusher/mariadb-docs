@@ -132,6 +132,20 @@ See [System-versioned tables](../../../../../sql-structure/temporal-tables/syste
 
 Index hints can be specified to affect how the MariaDB optimizer makes use of indexes. For more information, see [How to force query plans](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans.md).
 
+### Oracle mode
+
+When Oracle mode is active, from MariaDB 12.1, the Oracle-style `+` syntax can be used. For example, the following two queries are identical:
+
+```sql
+SELECT * FROM t1 LEFT JOIN t2 ON t1.a = t2.b;
+```
+
+and
+
+```sql
+SELECT * FROM t1, t2 WHERE t1.a = t2.b(+);
+```
+
 ## Examples
 
 ```sql
