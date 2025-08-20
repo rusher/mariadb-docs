@@ -1,5 +1,11 @@
 # JOIN Syntax
 
+##
+
+{% hint style="info" %}
+For an introduction to joins, see [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md).
+{% endhint %}
+
 ## Description
 
 MariaDB supports the following `JOIN` syntaxes for the `table_references` part of [SELECT](../../select.md) statements and multiple-table [DELETE](../../../changing-deleting-data/delete.md) and [UPDATE](../../../changing-deleting-data/update.md) statements:
@@ -133,6 +139,13 @@ SELECT left_tbl.*
   FROM left_tbl LEFT JOIN right_tbl ON left_tbl.id = right_tbl.id
   WHERE right_tbl.id IS NULL;
 ```
+
+## See Also
+
+* [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md)
+* [More Advanced Joins](more-advanced-joins.md)
+* [Comma vs JOIN](comma-vs-join.md)
+* [Joins, Subqueries and SET](../../../../../sql-structure/joins-subqueries-set.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
