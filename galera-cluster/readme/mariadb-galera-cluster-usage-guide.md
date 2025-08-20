@@ -53,14 +53,13 @@ Synchronous replication offers several powerful advantages over its asynchronous
 
 #### **Disadvantages**
 
-Traditionally, synchronous protocols have suffered from significant performance and scaling challenges. They often rely on distributed locking or a two-phase commit (2PC) process, where nodes must coordinate on every single operation.
+Traditionally, eager replication protocols coordinate nodes one operation at a time. They use a two phase commit, or distributed locking. A system with $$𝑛$$ number of nodes due to process $$𝑜$$ operations with a throughput of $$𝑡$$ transactions per second gives you $$𝑚$$ messages per second with:
 
-This creates a messaging overhead that grows rapidly with the size of the cluster. For a system with $$n$$ nodes processing transactions, the number of coordination messages ($$m$$) can be debilitating. This direct dependency on all nodes for every commit leads to:
+<p align="center"><span class="math">𝑚=𝑛×𝑜×𝑡</span></p>
 
-* Increased Transaction Latency: Every write must wait for a network round trip and confirmation from all other nodes.
-* Poor Scalability: As you add more nodes, the probability of conflicts and deadlocks increases, and overall write throughput decreases dramatically.
+What this means that any increase in the number of nodes leads to an exponential growth in the transaction response times and in the probability of conflicts and deadlock rates.
 
-For these reasons, asynchronous replication has historically remained the dominant protocol for high-performance databases like MariaDB.
+For this reason, asynchronous replication remains the dominant replication protocol for database performance, scalability and availability. Widely adopted open source databases, such as MySQL and PostgreSQL only provide asynchronous replication solutions.
 
 ### Galera's Solution: Modern Synchronous Replication
 
@@ -79,7 +78,9 @@ MariaDB Enterprise Cluster is built on MariaDB Enterprise Server with Galera Clu
 
 As a multi-primary replication solution, any MariaDB Enterprise Server can operate as a Primary Server. This means that changes made to any node in the cluster replicate to every other node in the cluster, using certification-based replication and global ordering of transactions for the InnoDB storage engine.
 
-**Note:** MariaDB Enterprise Cluster is only available for Linux operating systems.
+{% hint style="info" %}
+MariaDB Enterprise Cluster is only available for Linux operating systems.
+{% endhint %}
 
 ## Architecture
 
