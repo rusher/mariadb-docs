@@ -1,7 +1,5 @@
 # JOIN Syntax
 
-##
-
 {% hint style="info" %}
 For an introduction to joins, see [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md).
 {% endhint %}
