@@ -18,7 +18,7 @@ MariaDB 12.1 is a [rolling release](../about/release-model.md). It is an evoluti
 ### Compatibility features <a href="#compatibility-features" id="compatibility-features"></a>
 
 * caching\_sha2\_password plugin ([MDEV-9804](https://jira.mariadb.org/browse/MDEV-9804))
-* ( + ) for outer join syntax ([MDEV-13817](https://jira.mariadb.org/browse/MDEV-13817))
+* [( + ) for outer join syntax in Oracle mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax#oracle-mode) ([MDEV-13817](https://jira.mariadb.org/browse/MDEV-13817))
 * Add [semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication) variable, [rpl\_semi\_sync\_master\_wait\_for\_slave\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication#rpl_semi_sync_master_wait_for_slave_count) ([MDEV-18983](https://jira.mariadb.org/browse/MDEV-18983))
 * Associative arrays: DECLARE TYPE .. TABLE OF .. INDEX BY ([MDEV-34319](https://jira.mariadb.org/browse/MDEV-34319)) ([blog post](https://mariadb.org/bringing-oracles-associative-arrays-to-mariadb/))
 * [DROP USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/drop-user) will now by default issue a warning if the user has active sessions, or fail in [Oracle mode](../about/compatibility-and-differences/sql_modeoracle.md) ([MDEV-35617](https://jira.mariadb.org/browse/MDEV-35617))
