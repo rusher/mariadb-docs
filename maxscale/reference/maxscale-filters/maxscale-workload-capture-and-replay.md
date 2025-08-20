@@ -1,6 +1,6 @@
 # MaxScale Workload Capture and Replay
 
-_The WCAR (Write Consistent Archive and Replay) module is a sophisticated feature designed to capture and archive client traffic passing through a MaxScale instance. This allows system administrators and developers to process and store vast volumes of data related to client-server interactions in a reliable manner. By harnessing this captured data, users gain the flexibility to replay and simulate the varied client activity typically seen in a production environment._
+_The WCAR (Workload Capture and Replay) module is a sophisticated feature designed to capture and archive client traffic passing through a MaxScale instance. This allows system administrators and developers to process and store vast volumes of data related to client-server interactions in a reliable manner. By harnessing this captured data, users gain the flexibility to replay and simulate the varied client activity typically seen in a production environment._
 
 _One of the module's primary advantages is that it removes the necessity of creating explicit traffic generators, which can be resource-intensive and complex to maintain. Instead, the WCAR module provides a seamless method for mirroring realistic client interactions and behavior patterns, which can be critical for testing, debugging, and optimizing system performance._
 
@@ -18,9 +18,10 @@ WCAR is designed to capture traffic on a production MaxScale instance. The captu
 then be used as a reproducible way of generating client traffic without having to write\
 application-specific traffic generators.
 
-The captured workloads can be used:_to verify that upgrades of MariaDB behave as expected._ to repeatedly measure effects of configuration changes, which is useful for database tuning.
-
-* investigate why certain scenarios take longer then expected, as a kind of SQL debugging tool.
+The captured workloads can be used to:
+* Verify that upgrades of MariaDB behave as expected.
+* Repeatedly measure effects of configuration changes, which is useful for database tuning.
+* Investigate why certain scenarios take longer then expected, as a kind of SQL debugging tool.
 
 ### Prerequisites
 
