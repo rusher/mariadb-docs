@@ -64,7 +64,6 @@
     * [Backup and Restore via dbForge Studio](server-usage/backup-and-restore/backup-and-restore-via-dbforge-studio.md)
   * [Tables](server-usage/tables/README.md)
     * [Altering Tables in MariaDB](server-usage/tables/mariadb-alter-table-guide.md)
-    * [Joining Tables with JOIN](server-usage/tables/mariadb-join-guide-1.md)
     * [Indexes](server-usage/tables/mariadb-indexes-guide-1.md)
     * [Views](server-usage/tables/mariadb-views-guide-1.md)
     * [Copying Tables Between Databases and Servers](server-usage/tables/copying-tables-between-different-mariadb-databases-and-mariadb-servers.md)
