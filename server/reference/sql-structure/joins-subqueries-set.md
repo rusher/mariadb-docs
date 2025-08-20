@@ -60,6 +60,13 @@ Advanced SQL queries that involve multiple joins, subqueries, and set operations
 
 Remember, practice is the key to mastering these advanced SQL concepts, like any other technical skill. Write queries, solve problems, make mistakes, and learn from them. Over time, you'll find yourself not only comfortable but proficient in creating intricate SQL queries.
 
+### See Also
+
+* [Joining Tables with JOIN Clauses Guide](../../mariadb-quickstart-guides/mariadb-join-guide.md)
+* [More Advanced Joins](../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md)
+* [JOIN Syntax](../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)
+* [Comma vs JOIN](../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join.md)
+
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
