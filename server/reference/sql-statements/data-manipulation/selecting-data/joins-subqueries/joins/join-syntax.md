@@ -146,6 +146,18 @@ and
 SELECT * FROM t1, t2 WHERE t1.a = t2.b(+);
 ```
 
+Similarly, the following two queries are identical:
+
+```sql
+SELECT * FROM t1 RIGHT JOIN t2 ON t1.a = t2.b;
+```
+
+and
+
+```sql
+SELECT * FROM t1, t2 WHERE t1.a(+) = t2.b;
+```
+
 ## Examples
 
 ```sql
