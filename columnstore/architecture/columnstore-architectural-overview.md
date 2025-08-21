@@ -1,18 +1,3 @@
----
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # ColumnStore Architectural Overview
 
 _MariaDB ColumnStore enhances MariaDB Enterprise Server with a columnar engine for OLAP and HTAP workloads, using MPP for scalability. It supports cross-engine JOINs, integrates with S3 storage, and provides high-speed bulk loading with multi-node management via REST API._
@@ -67,7 +52,7 @@ The ColumnStore nodes:
 
 ### Enterprise ColumnStore with Shared Local Storage
 
-![es-columnstore-topology-nfs-no-title](../.gitbook/assets/es-columnstore-topology-nfs-no-title.png)
+![es-columnstore-topology-nfs-no-title](<../.gitbook/assets/es-columnstore-topology-nfs-no-title (1).png>)
 
 The MariaDB Enterprise ColumnStore topology with Shared Local Storage delivers production analytics with high availability and fault tolerance by leveraging shared local storage, such as NFS.
 
@@ -435,7 +420,7 @@ The shared local storage can be backed up by:
 
 ### Enterprise Server Data Directory
 
-MariaDB Enterprise ColumnStore can leverage the standard [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/backup-and-restore-with-mariadb-enterprise-server/mariadb-enterprise-backup) utility to back up the Enterprise Server data directory.
+MariaDB Enterprise ColumnStore can leverage the standard [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-enterprise-backup) utility to back up the Enterprise Server data directory.
 
 The backup contains:
 

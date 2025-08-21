@@ -212,7 +212,7 @@ If a node has only been out of a cluster for a little while, then an IST is gene
 
 ## Data at Rest Encryption
 
-MariaDB Galera Cluster supports [Data at Rest Encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview). See [SSTs and Data at Rest Encryption](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#ssts-and-data-at-rest-encryption) for some disclaimers on how SSTs are affected when encryption is configured.
+MariaDB Galera Cluster supports [Data at Rest Encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/overview). See [SSTs and Data at Rest Encryption](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#ssts-and-data-at-rest-encryption) for some disclaimers on how SSTs are affected when encryption is configured.
 
 Some data still cannot be encrypted:
 

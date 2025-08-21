@@ -2,13 +2,13 @@
 
 ## Connector/Node.js Promise API
 
-There are two different connection implementations: one, the default, uses Promise and the other uses Callback, allowing for compatibility with the mysql and mysql2 API's.
+There are two different connection implementations: one, the default, uses Promise, and the other uses Callback, allowing for compatibility with the MySQL and mysql2 API's.
 
 The documentation provided on this page is the promise API (default). If you want information on the Callback API, see the [CALLBACK API](connector-nodejs-callback-api.md).
 
 ### Quick Start
 
-Install the mariadb Connector using npm
+Install the MariaDB Connector using npm
 
 ```sql
 $ npm install mariadb
@@ -54,7 +54,7 @@ const mariadb = require('mariadb');
 
 ### Migrating from 2.x or mysql/mysql2 to 3.x
 
-Default behavior for decoding [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) / [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) datatype for 2.x version and mysql/mysql2 drivers return a JavaScript [Number](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/number) object. BIGINT/DECIMAL values might not be in the safe range, resulting in approximate results.
+Default behaviour for decoding [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) / [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) datatype for 2.x version and mysql/mysql2 drivers return a JavaScript [Number](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/number) object. BIGINT/DECIMAL values might not be in threturns range, resulting in approximate results.
 
 Since 3.x version, driver has reliable default, returning:
 
@@ -308,7 +308,7 @@ This option permits to avoid exact value for big integer (value > 2^53) (see [ja
 > Returns a promise that:
 >
 > * resolves with a [Connection](connector-nodejs-promise-api.md#connection-api) object,
-> * raises an [Error](connector-nodejs-promise-api.md#error).
+> * Raises an [Error](connector-nodejs-promise-api.md#error).
 
 Creates a new [Connection](connector-nodejs-promise-api.md#connection-api) object.
 
@@ -331,21 +331,21 @@ try {
 
 Essential options list:
 
-|               option | description                                                                                                                                                                                                                                                                                                         |    type   |   default   |
-| -------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------: | :---------: |
-|           **`user`** | User to access database.                                                                                                                                                                                                                                                                                            |  _string_ |             |
-|       **`password`** | User password.                                                                                                                                                                                                                                                                                                      |  _string_ |             |
-|           **`host`** | IP address or DNS of the database server. _Not used when using option `socketPath`_.                                                                                                                                                                                                                                |  _string_ | "localhost" |
-|           **`port`** | Database server port number. _Not used when using option `socketPath`_                                                                                                                                                                                                                                              | _integer_ |     3306    |
-|            **`ssl`** | Enables TLS support. For more information, see the [`ssl` option](node-js-connection-options.md#ssl) documentation.                                                                                                                                                                                                 |  _mixed_  |             |
-|       **`database`** | Default database to use when establishing the connection.                                                                                                                                                                                                                                                           |  _string_ |             |
-|     **`socketPath`** | Permits connections to the database through the Unix domain socket or named pipe.                                                                                                                                                                                                                                   |  _string_ |             |
-|       **`compress`** | Compresses the exchange with the database through gzip. This permits better performance when the database is not in the same location.                                                                                                                                                                              | _boolean_ |    false    |
-| **`connectTimeout`** | Sets the connection timeout in milliseconds.                                                                                                                                                                                                                                                                        | _integer_ |     1000    |
-|  **`socketTimeout`** | Sets the socket timeout in milliseconds after connection succeeds. A value of `0` disables the timeout.                                                                                                                                                                                                             | _integer_ |      0      |
-|   **`queryTimeout`** | Set maximum query time in ms (an error will be thrown if limit is reached). 0 or undefined meaning no timeout. This can be superseded for a query using [`timeout`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/query-limits-and-timeouts) option |   _int_   |      0      |
-|    **`rowsAsArray`** | Returns result-sets as arrays, rather than JSON. This is a faster way to get results. For more information, see Query.                                                                                                                                                                                              | _boolean_ |    false    |
-|         **`logger`** | Configure logger. For more information, see the [`logger` option](node-js-connection-options.md#logger) documentation.                                                                                                                                                                                              |  _mixed_  |             |
+|               option | description                                                                                                                                                                                                                                                                                                                                                    |    type   |   default   |
+| -------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------: | :---------: |
+|           **`user`** | User to access database.                                                                                                                                                                                                                                                                                                                                       |  _string_ |             |
+|       **`password`** | User password.                                                                                                                                                                                                                                                                                                                                                 |  _string_ |             |
+|           **`host`** | IP address or DNS of the database server. _Not used when using option `socketPath`_.                                                                                                                                                                                                                                                                           |  _string_ | "localhost" |
+|           **`port`** | Database server port number. _Not used when using the option `socketPath`_                                                                                                                                                                                                                                                                                     | _integer_ |     3306    |
+|            **`ssl`** | Enables TLS support. For more information, see the [`ssl` option](node-js-connection-options.md#ssl) documentation.                                                                                                                                                                                                                                            |  _mixed_  |             |
+|       **`database`** | Default database to use when establishing the connection.                                                                                                                                                                                                                                                                                                      |  _string_ |             |
+|     **`socketPath`** | Permits connections to the database through the Unix domain socket or named pipe.                                                                                                                                                                                                                                                                              |  _string_ |             |
+|       **`compress`** | Compresses the exchange with the database through gzip. This permits better performance when the database is not in the same location.                                                                                                                                                                                                                         | _boolean_ |    false    |
+| **`connectTimeout`** | Sets the connection timeout in milliseconds.                                                                                                                                                                                                                                                                                                                   | _integer_ |     1000    |
+|  **`socketTimeout`** | Sets the socket timeout in milliseconds after connection succeeds. A value of `0` disables the timeout.                                                                                                                                                                                                                                                        | _integer_ |      0      |
+|   **`queryTimeout`** | Set maximum query time in ms (an error will be thrown if limit is reached). 0 or undefined meaning no timeout. This can be superseded for a query using the [`timeout`](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02routers/mariadb-maxscale-2402-maxscale-2402-kafkaimporter#timeout) option |   _int_   |      0      |
+|    **`rowsAsArray`** | Returns result-sets as arrays, rather than JSON. This is a faster way to get results. For more information, see Query.                                                                                                                                                                                                                                         | _boolean_ |    false    |
+|         **`logger`** | Configure logger. For more information, see the [`logger` option](node-js-connection-options.md#logger) documentation.                                                                                                                                                                                                                                         |  _mixed_  |             |
 
 For more information, see the [Connection Options](node-js-connection-options.md) documentation.
 
@@ -355,7 +355,7 @@ When working with a local database (that is, cases where MariaDB and your Node.j
 
 In order to set this up, you need to assign the connection a `socketPath` value. When this is done, the Connector ignores the `host` and `port` options.
 
-The specific socket path you need to set is defined by the [`socket`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/handlersocket/handlersocket-configuration-options) server system variable. If you don't know it offhand, you can retrieve it from the server.
+The specific socket path you need to set is defined by the [`socket`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#socket) server system variable. If you don't know it offhand, you can retrieve it from the server.
 
 ```sql
 SHOW VARIABLES LIKE 'socket';
@@ -418,7 +418,7 @@ Specific options for pools are:
 | --------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------: | :--------------------------------: |
 |        **`acquireTimeout`** | Timeout to get a new connection from pool. In order to have connection error information, must be higher than connectTimeout. In milliseconds.                                                                                                                                                                                                   | _integer_ |                10000               |
 |       **`connectionLimit`** | Maximum number of connection in pool.                                                                                                                                                                                                                                                                                                            | _integer_ |                 10                 |
-|           **`idleTimeout`** | Indicate idle time after which a pool connection is released. Value must be lower than [@@wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/error-codes/mariadb-error-codes-1200-to-1299/e1205). In seconds. 0 means never release.                                                                                        | _integer_ |                1800                |
+|           **`idleTimeout`** | Indicate idle time after which a pool connection is released. Value must be lower than [@@wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#wait_timeout). In seconds. 0 means never release.                                                                          | _integer_ |                1800                |
 | **`initializationTimeout`** | Pool will retry creating connection in loop, emitting 'error' event when reaching this timeout. In milliseconds.                                                                                                                                                                                                                                 | _integer_ |       `acquireTimeout` value       |
 |           **`minimumIdle`** | Permit to set a minimum number of connection in pool. **Recommendation is to use fixed pool, so not setting this value**.                                                                                                                                                                                                                        | _integer_ |   _set to connectionLimit value_   |
 |    **`minDelayValidation`** | When asking a connection to pool, the pool will validate the connection state. "minDelayValidation" permits disabling this validation if the connection has been borrowed recently avoiding useless verifications in case of frequent reuse of connections. In milliseconds. 0 means validation is done each time the connection is asked.       | _integer_ |                 500                |
@@ -552,7 +552,7 @@ To prevent SQL Injection attacks, queries permit the use of question marks as pl
 
 When streaming, objects that implement Readable are streamed automatically. But there are two server system variables that may interfere:
 
-* [`net_read_timeout`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#net_read_timeout): The server must receive queries before reaching this timeout, which defaults to 30 seconds.
+* [<kbd>`net_read_timeout`</kbd>](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#net_read_timeout): The server must receive queries before reaching this timeout, which defaults to 30 seconds.
 * [`max_allowed_packet`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_allowed_packet): This system variable defines the maximum amount of data the Connector can send to the server.
 
 For instance,
@@ -732,7 +732,7 @@ Whether you want the Connector to retrieve date values as strings, rather than `
 
 _boolean, default: true_
 
-Whether the query should return JavaScript ES2020 [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) for [BIGINT](https://mariadb.com/kb/en/bigint/) data type. This ensures having the expected value even for value > 2^53 (see [safe](node-js-connection-options.md#big-integer-support) range). This option can be set to query level, supplanting connection option `supportBigInt` value.
+Whether the query should return JavaScript ES2020 [BigInt](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) for [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) data type. This ensures having the expected value even for value > 2^53 (see [safe](node-js-connection-options.md#big-integer-support) range). This option can be set to query level, supplanting connection option `supportBigInt` value.
 
 this option is for compatibility for driver version < 3
 
@@ -776,10 +776,10 @@ connection.query({ typeCast: tinyToBoolean, sql: '...' });
 
 * `collation`: Object indicates the column collation. It has the properties: `index`, `name`, `encoding`, and `maxlen`. For instance, `33, "UTF8_GENERAL_CI", "utf8", 3`
 * `columnLength`: Shows the column's maximum length if there's a limit and `0` if there is no limit, (such as with a `BLOB` column).
-* `type`: Shows the column type as a String value. For more information on the relevant values, see [`field-type.js`](../../lib/const/field-type.js)
-* `columnType`: Shows the column type as an integer value. For more information on the relevant values, see [`field-type.js`](../../lib/const/field-type.js)
+* `type`: Shows the column type as a String value. For more information on the relevant values, see [`field-type.js`](../mariadb-connector-python/constants.md#field_type.json)
+* `columnType`: Shows the column type as an integer value. For more information on the relevant values, see [`field-type.js`](../mariadb-connector-python/constants.md#field_type.json)
 * `scale`: Provides the decimal part length.
-* `flags`: Shows the byte-encoded flags. For more information, see [`field-detail.js`](../../lib/const/field-detail.js).
+* `flags`: Shows the byte-encoded flags. For more information, see `field-detail.js`.
 * `db()`: Name of the database schema. You can also retrieve this using `schema()`.
 * `table()`: Table alias.
 * `orgTable()`: Real table name.
@@ -788,17 +788,17 @@ connection.query({ typeCast: tinyToBoolean, sql: '...' });
 
 When using typeCast, additional function are available on Column, in order to decode value :
 
-* `string(): string` : decode [VARCHAR](https://mariadb.com/kb/en/varchar/)/[CHAR](https://mariadb.com/kb/en/char/)/[TEXT](https://mariadb.com/kb/en/text/) value
-* `buffer(): Buffer` : decode [BINARY](https://mariadb.com/kb/en/binary/)/[BLOB](https://mariadb.com/kb/en/blob/) value
-* `float(): float` : decode [FLOAT](https://mariadb.com/kb/en/float/) value
-* `tiny(): int` : decode [TINY](https://mariadb.com/kb/en/tinyint/) value
-* `short(): int` : decode [SMALLINT](https://mariadb.com/kb/en/smallint/) value
-* `int(): int` : decode [INTEGER](https://mariadb.com/kb/en/int/) value
-* `long(): bigint` : decode [BIGINT](https://mariadb.com/kb/en/bigint/) value
-* `decimal(): string` : decode [DECIMAL](https://mariadb.com/kb/en/decimal/) value
-* `date(): date` : decode [DATE](https://mariadb.com/kb/en/date/) value
-* `datetime(): date` : decode [TIMESTAMP](https://mariadb.com/kb/en/timestamp/)/[DATETIME](https://mariadb.com/kb/en/datetime/) value
-* `geometry(): geojson` : decode [GEOMETRY](https://mariadb.com/kb/en/geometry-types/) value
+* `string(): string` : decode [VARCHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/varchar)/[CHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/char)/[TEXT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/text) value
+* `buffer(): Buffer` : decode [BINARY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/binary)/[BLOB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/blob) value
+* `float(): float` : decode [FLOAT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/float) value
+* `tiny(): int` : decode [TINY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/tinyint) value
+* `short(): int` : decode [SMALLINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/smallint) value
+* `int(): int` : decode [INTEGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/integer) value
+* `long(): bigint` : decode [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/bigint) value
+* `decimal(): string` : decode [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) value
+* `date(): date` : decode [DATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/date) value
+* `datetime(): date` : decode [TIMESTAMP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/timestamp-function)/[DATETIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime) value
+* `geometry(): geojson` : decode [GEOMETRY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry) value
 
 ```js
 const rows = await connection.query("SELECT 1, 'a'");
@@ -948,7 +948,7 @@ stream.pipeline(
 > * resolves with a [Prepare](connector-nodejs-promise-api.md#prepareobject) object.
 > * rejects with an [Error](connector-nodejs-promise-api.md#error).
 
-This permits to [PREPARE](https://mariadb.com/kb/en/prepare-statement/) a command that permits to be executed many times. After use, prepare.close() method MUST be call, in order to properly close object.
+This permits to [PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement) a command that permits to be executed many times. After use, prepare.close() method MUST be call, in order to properly close object.
 
 #### Prepare object
 
@@ -1050,7 +1050,7 @@ prepare.close();
 
 This is quite similar to [`connection.query(sql [, values]) → Promise`](connector-nodejs-promise-api.md#connectionquerysql-values---promise) method, with a few differences: Execute will in fact [PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement) + [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-statement) + [CLOSE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-cursors/close) command.
 
-It makes sense to use this only if the command often is used and if prepare cache is enabled (default). If a PREPARE result is already in cache, only [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-statement) command is executed. MariaDB server 10.6 even avoids resending result-set metadata if not changed since, permitting even faster results.
+It makes sense to use this only if the command often is used and if prepare cache is enabled (default). If a PREPARE result is already in cache, only [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-statement) The command is executed. MariaDB server 10.6 even avoids resending result-set metadata if not changed since, permitting even faster results.
 
 ```javascript
 const res = await conn.execute('SELECT * FROM mytable WHERE someVal = ? and otherVal = ?', [1, 'val1']);
@@ -1092,12 +1092,12 @@ console.log(res.affectedRows); // 2
 By default, batch operations aggregate results, combining all individual operations into a single result. You can use the `fullResult: true` option to retrieve individual results for each parameter set.
 
 ```javascript
-// Get individual results for each insert operation
+// Get individual results for each insert operation,
 let results = await connection.batch(
   {sql :'INSERT INTO users(name, age) VALUES (?, ?)', fullResult: true },
   [['John', 25], ['Jane', 26], ['Bob', 32]])
 // results is an array of individual OkPacket objects
-results.forEach((res, i) => {
+.forEach((res, i) => {
   console.log(`Result ${i+1}:`, res);
 });
 // Output:
@@ -1105,12 +1105,12 @@ results.forEach((res, i) => {
 // Result 2: OkPacket { affectedRows: 1, insertId: 2, warningStatus: 0 }
 // Result 3: OkPacket { affectedRows: 1, insertId: 3, warningStatus: 0 }
 
-// Get aggregate results for each insert operation
+// Get aggregate results for each insert operation,
 let results = await connection.batch(
   {sql :'INSERT INTO users(name, age) VALUES (?, ?)', fullResult: true },
   [['Boby', 24], ['Rico', 20], ['Johnny', 321]])
 // results is an array of individual OkPacket objects
-results.forEach((res, i) => {
+.forEach((res, i) => {
   console.log(`Result ${i+1}:`, res);
 });
 // Output:
@@ -1122,7 +1122,7 @@ results.forEach((res, i) => {
 The `fullResult` option is particularly useful when:
 
 1. You need to know which specific parameter sets succeeded or failed
-2. You need to access individual insertId values for each inserted row
+2. You need to access individual insertId values for each inserted row.
 
 **Performance considerations**
 
@@ -1148,11 +1148,11 @@ Commits the current transaction if there is one active. The Connector tracks the
 
 ### `connection.release() → Promise`
 
-_When connection comes from pool only_ connection.release() is an async method returning an empty promise success. This function will never throw an error. default behavior is that if there is a transaction still open, a rollback command will be issued, and connection will be release to pool.
+_When a .connection comes from pool, only_ connection.release() is an async method returning an empty promise success. This function will never throw an error. The default behavior is that if there is a transaction still open, a rollback command will be issued, and the connection will be released to pool.
 
 2 options might interfere:
 
-* `resetAfterUse` when set, connection will completely be reset like a fresh connection
+* `When resetAfterUse` set, the connection will completely be reset like a fresh connection
 * `noControlAfterUse` when set, no control (rollback or reset) will be done on release
 
 ```javascript
@@ -1173,7 +1173,7 @@ try {
 > Returns a promise that :
 >
 > * resolves (no argument)
-> * rejects with an [Error](connector-nodejs-promise-api.md#error).
+> * Rejects with an [Error](connector-nodejs-promise-api.md#error).
 
 Rolls back the current transaction if there is one active. The Connector tracks the current transaction state on the server. In the event that you issue the `rollback()` method when there's no active transaction, it ignores the method and sends no commands to MariaDB.
 
@@ -1192,12 +1192,12 @@ try {
 
 ### `connection.changeUser(options) → Promise`
 
-> * `options`: _JSON_, subset of [connection option documentation](connector-nodejs-promise-api.md#connection-options) = database / charset / password / user
+> * `options`: _JSON_, subset of [connection option dod](connector-nodejs-promise-api.md#connection-options)atabase/charset = database/charset / password/user
 >
 > Returns a promise that :
 >
 > * resolves without result
-> * rejects with an [Error](connector-nodejs-promise-api.md#error).
+> * Rejects with an [Error](connector-nodejs-promise-api.md#error).
 
 Resets the connection and re-authorizes it using the given credentials. It is the equivalent of creating a new connection with a new user, reusing the open socket.
 
@@ -1300,7 +1300,7 @@ try {
 
 ### `connection.escape(value) → String`
 
-This function permits escaping a parameter properly according to a parameter type to avoid injection. See [mariadb String literals](https://mariadb.com/kb/en/library/string-literals/) for escaping.
+This function permits escaping a parameter properly according to a parameter type to avoid injection. See [mariadb String literals](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/string-literals) for escaping.
 
 Escaping has some limitations:
 
@@ -1481,7 +1481,7 @@ try {
 
 Here's an example of what an error object might look like when logged:
 
-```
+```sql
 {
   Error: (conn:116, no: 1146, SQLState: 42S02) Table 'testdb.nonexistent_table' doesn't exist
   sql: SELECT * FROM nonexistent_table - parameters:[]
@@ -1503,7 +1503,7 @@ For a complete list of error codes and their meanings, see the [MariaDB Error Co
 
 ### `events`
 
-Connection object that inherits from the Node.js [`EventEmitter`](https://nodejs.org/api/events.html). Emits an error event when the connection closes unexpectedly.
+Connection object that inherits from the Node.js [`EventEmitter`](https://nodejs.org/api/events.html). Emits an error evthe ent when the connection closes unexpectedly.
 
 ```javascript
 

@@ -1,5 +1,9 @@
 # JOIN Syntax
 
+{% hint style="info" %}
+For an introduction to joins, see [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md).
+{% endhint %}
+
 ## Description
 
 MariaDB supports the following `JOIN` syntaxes for the `table_references` part of [SELECT](../../select.md) statements and multiple-table [DELETE](../../../changing-deleting-data/delete.md) and [UPDATE](../../../changing-deleting-data/update.md) statements:
@@ -126,6 +130,32 @@ See [System-versioned tables](../../../../../sql-structure/temporal-tables/syste
 
 Index hints can be specified to affect how the MariaDB optimizer makes use of indexes. For more information, see [How to force query plans](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans.md).
 
+### Oracle mode
+
+When [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle) is active, from [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1), the Oracle-style `+` syntax can be used. For example, the following two queries are identical:
+
+```sql
+SELECT * FROM t1 LEFT JOIN t2 ON t1.a = t2.b;
+```
+
+and
+
+```sql
+SELECT * FROM t1, t2 WHERE t1.a = t2.b(+);
+```
+
+Similarly, the following two queries are identical:
+
+```sql
+SELECT * FROM t1 RIGHT JOIN t2 ON t1.a = t2.b;
+```
+
+and
+
+```sql
+SELECT * FROM t1, t2 WHERE t1.a(+) = t2.b;
+```
+
 ## Examples
 
 ```sql
@@ -133,6 +163,13 @@ SELECT left_tbl.*
   FROM left_tbl LEFT JOIN right_tbl ON left_tbl.id = right_tbl.id
   WHERE right_tbl.id IS NULL;
 ```
+
+## See Also
+
+* [Joining Tables with JOIN Clauses Guide](../../../../../../mariadb-quickstart-guides/mariadb-join-guide.md)
+* [More Advanced Joins](more-advanced-joins.md)
+* [Comma vs JOIN](comma-vs-join.md)
+* [Joins, Subqueries and SET](../../../../../sql-structure/joins-subqueries-set.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
