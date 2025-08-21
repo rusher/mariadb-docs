@@ -16,7 +16,7 @@ Please read and understand this procedure before executing.
 
 ## Procedure Steps
 
-<table><thead><tr><th width="117.148193359375">Step</th><th>Description</th></tr></thead><tbody><tr><td>Step 1</td><td>Prepare System for Enterprise ColumnStore</td></tr><tr><td>Step 2</td><td>Install Enterprise ColumnStore</td></tr><tr><td>Step 3</td><td>Start and Configure Enterprise ColumnStore</td></tr><tr><td>Step 4</td><td>Test Enterprise ColumnStore</td></tr><tr><td>Step 5</td><td>Bulk Import Data to Enterprise ColumnStore</td></tr></tbody></table>
+<table><thead><tr><th width="117.148193359375">Step</th><th>Description</th></tr></thead><tbody><tr><td>Step 1</td><td><a href="step-1-prepare-systems-for-enterprise-columnstore-nodes.md">Prepare System for Enterprise ColumnStore</a></td></tr><tr><td>Step 2</td><td><a href="step-2-install-enterprise-columnstore.md">Install Enterprise ColumnStore</a></td></tr><tr><td>Step 3</td><td><a href="step-3-start-and-configure-enterprise-columnstore.md">Start and Configure Enterprise ColumnStore</a></td></tr><tr><td>Step 4</td><td><a href="step-4-test-enterprise-columnstore.md">Test Enterprise ColumnStore</a></td></tr><tr><td>Step 5</td><td><a href="step-5-bulk-import-of-data.md">Bulk Import Data to Enterprise ColumnStore</a></td></tr></tbody></table>
 
 ## Support
 

@@ -6,7 +6,7 @@ description: 'Step 3: Install MariaDB Enterprise Server'
 
 ## Overview
 
-This page details step 3 of the 9-step procedure "[Deploy ColumnStore Shared Local Storage Topology](broken-reference)".
+This page details step 3 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This step installs MariaDB Enterprise Server, MariaDB Enterprise ColumnStore 23.10, CMAPI, and dependencies.
 
@@ -63,7 +63,7 @@ $ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
       --mariadb-server-version="11.4"
 ```
 
-_Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](broken-reference) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](broken-reference) _page. Substitute `${checksum}` in the example above with the latest checksum._
+_Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/version) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) _page. Substitute `${checksum}` in the example above with the latest checksum._
 
 ## Install Enterprise Server and Enterprise ColumnStore
 
@@ -117,7 +117,7 @@ Navigation in the procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This page was step 3 of 9.
 
-Next: Step 4: Start and Configure MariaDB Enterprise Server.
+[Next: Step 4: Start and Configure MariaDB Enterprise Server.](step-4-start-and-configure-mariadb-enterprise-server.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

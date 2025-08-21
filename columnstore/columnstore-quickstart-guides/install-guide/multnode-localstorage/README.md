@@ -2,9 +2,9 @@
 
 ## Overview
 
-| Software Version                                                                                       | Diagram                                                                | Features                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../.gitbook/assets/es-columnstore-topology-nfs-no-title.png) | <p>Columnar storage engine with S3-compatible object storage</p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
+| Software Version                                                                                       | Diagram                                                                | Features                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../.gitbook/assets/es-columnstore-topology-nfs-no-title.png) | <p>Columnar storage engine with S3-compatible object storage</p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales read via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
 
 This procedure describes the deployment of the ColumnStore Shared Local Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
 
@@ -20,17 +20,7 @@ Please read and understand this procedure before executing.
 
 ## Procedure Steps
 
-| Step                       | Description                                   |
-| -------------------------- | --------------------------------------------- |
-| [Step 1](broken-reference) | Prepare ColumnStore Nodes                     |
-| [Step 2](broken-reference) | Configure Shared Local Storage                |
-| [Step 3](broken-reference) | Install MariaDB Enterprise Server             |
-| [Step 4](broken-reference) | Start and Configure MariaDB Enterprise Server |
-| [Step 5](broken-reference) | Test MariaDB Enterprise Server                |
-| [Step 6](broken-reference) | Install MariaDB MaxScale                      |
-| [Step 7](broken-reference) | Start and Configure MariaDB MaxScale          |
-| [Step 8](broken-reference) | Test MariaDB MaxScale                         |
-| [Step 9](broken-reference) | Import Data                                   |
+<table><thead><tr><th width="110">Step</th><th>Description</th></tr></thead><tbody><tr><td><a href="step-1-prepare-columnstore-nodes.md">Step 1</a></td><td>Prepare ColumnStore Nodes</td></tr><tr><td><a href="../multinode-s3/step-2-install-enterprise-columnstore.md">Step 2</a></td><td>Configure Shared Local Storage</td></tr><tr><td><a href="step-3-install-mariadb-enterprise-server.md">Step 3</a></td><td>Install MariaDB Enterprise Server</td></tr><tr><td><a href="../multinode-s3/step-4-test-enterprise-columnstore.md">Step 4</a></td><td>Start and Configure MariaDB Enterprise Server</td></tr><tr><td><a href="step-5-test-mariadb-enterprise-server.md">Step 5</a></td><td>Test MariaDB Enterprise Server</td></tr><tr><td><a href="step-6-install-mariadb-maxscale.md">Step 6</a></td><td>Install MariaDB MaxScale</td></tr><tr><td><a href="step-7-start-and-configure-mariadb-maxscale.md">Step 7</a></td><td>Start and Configure MariaDB MaxScale</td></tr><tr><td><a href="step-8-test-mariadb-maxscale.md">Step 8</a></td><td>Test MariaDB MaxScale</td></tr><tr><td><a href="step-9-import-data.md">Step 9</a></td><td>Import Data</td></tr></tbody></table>
 
 ## Support
 
@@ -40,26 +30,15 @@ Customers can obtain support by submitting a support case.
 
 The following components are deployed during this procedure:
 
-| Component                                                                                           | Function                                                                                                   |
-| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) | Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging. |
-| [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/)          | Database proxy that extends the availability, scalability, and security of MariaDB Enterprise Servers      |
+<table><thead><tr><th width="243">Component</th><th>Function</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/">MariaDB Enterprise Server</a></td><td>Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging.</td></tr><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/">MariaDB MaxScale</a></td><td>Database proxy that extends the availability, scalability, and security of MariaDB Enterprise Servers</td></tr></tbody></table>
 
 ### MariaDB Enterprise Server Components
 
-| Component                                                                                                | Description                                                                                                                                                                                                               |
-| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [MariaDB Enterprise ColumnStore](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/) | • Columnar storage engine • Highly available • Optimized for Online Analytical Processing (OLAP) workloads • Scalable query execution • Cluster Management API (CMAPI) provides a REST API for multi-node administration. |
+<table><thead><tr><th width="281">Component</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB Enterprise ColumnStore</a></td><td>• Columnar storage engine • Highly available • Optimized for Online Analytical Processing (OLAP) workloads • Scalable query execution • Cluster Management API (CMAPI) provides a REST API for multi-node administration.</td></tr></tbody></table>
 
 ### MariaDB MaxScale Components
 
-| Component               | Description                                                                                                                                                                                        |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Listener                | Listens for client connections to MaxScale then passes them to the router service                                                                                                                  |
-| MariaDB Monitor         | Tracks changes in the state of MariaDB Enterprise Servers.                                                                                                                                         |
-| Read Connection Router  | Routes connections from the listener to any available Enterprise ColumnStore node                                                                                                                  |
-| Read/Write Split Router | Routes read operations from the listener to any available Enterprise ColumnStore node, and routes write operations from the listener to a specific server that MaxScale uses as the primary server |
-| Server Module           | Connection configuration in MaxScale to an Enterprise ColumnStore node                                                                                                                             |
+<table><thead><tr><th width="218">Component</th><th>Description</th></tr></thead><tbody><tr><td>Listener</td><td>Listens for client connections to MaxScale then passes them to the router service</td></tr><tr><td>MariaDB Monitor</td><td>Tracks changes in the state of MariaDB Enterprise Servers.</td></tr><tr><td>Read Connection Router</td><td>Routes connections from the listener to any available Enterprise ColumnStore node</td></tr><tr><td>Read/Write Split Router</td><td>Routes read operations from the listener to any available Enterprise ColumnStore node, and routes write operations from the listener to a specific server that MaxScale uses as the primary server</td></tr><tr><td>Server Module</td><td>Connection configuration in MaxScale to an Enterprise ColumnStore node</td></tr></tbody></table>
 
 ## Topology
 
@@ -170,13 +149,7 @@ The Storage Manager directory is located at the following path by default:
 
 The most common shared local storage options for the ColumnStore Object Storage topology are:
 
-| Shared Local Storage                   | Common Usage | Description                                                                                                                                                                                                                                                                                                                                                                                     |
-| -------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| EBS (Elastic Block Store) Multi-Attach | AWS          | • EBS is a high-performance block-storage service for AWS (Amazon Web Services). • EBS Multi-Attach allows an EBS volume to be attached to multiple instances in AWS. Only clustered file systems, such as GFS2, are supported. • For deployments in AWS, EBS Multi-Attach is a recommended option for the Storage Manager directory, and Amazon S3 storage is the recommended option for data. |
-| EFS (Elastic File System)              | AWS          | • EFS is a scalable, elastic, cloud-native NFS file system for AWS (Amazon Web Services). • For deployments in AWS, EFS is a recommended option for the Storage Manager directory, and Amazon S3 storage is the recommended option for data. EFS is a scalable, elastic, cloud-native NFS file system for AWS (Amazon Web Services).                                                            |
-| Filestore                              | GCP          | • Filestore is high-performance, fully managed storage for GCP (Google Cloud Platform). • For deployments in GCP, Filestore is the recommended option for the Storage Manager directory, and Google Object Storage (S3-compatible) is the recommended option for data.                                                                                                                          |
-| GlusterFS                              | On-premises  | • GlusterFS is a distributed file system. • GlusterFS supports replication and failover.                                                                                                                                                                                                                                                                                                        |
-| NFS (Network File System)              | On-premises  | • NFS is a distributed file system. • If NFS is used, the storage should be mounted with the sync option to ensure that each node flushes its changes immediately. • For on-premises deployments, NFS is the recommended option for the Storage Manager directory, and any S3-compatible storage is the recommended option for data.                                                            |
+<table><thead><tr><th width="238">Shared Local Storage</th><th width="152">Common Usage</th><th>Description</th></tr></thead><tbody><tr><td>EBS (Elastic Block Store) Multi-Attach</td><td>AWS</td><td>• EBS is a high-performance block-storage service for AWS (Amazon Web Services). • EBS Multi-Attach allows an EBS volume to be attached to multiple instances in AWS. Only clustered file systems, such as GFS2, are supported. • For deployments in AWS, EBS Multi-Attach is a recommended option for the Storage Manager directory, and Amazon S3 storage is the recommended option for data.</td></tr><tr><td>EFS (Elastic File System)</td><td>AWS</td><td>• EFS is a scalable, elastic, cloud-native NFS file system for AWS (Amazon Web Services). • For deployments in AWS, EFS is a recommended option for the Storage Manager directory, and Amazon S3 storage is the recommended option for data. EFS is a scalable, elastic, cloud-native NFS file system for AWS (Amazon Web Services).</td></tr><tr><td>Filestore</td><td>GCP</td><td>• Filestore is high-performance, fully managed storage for GCP (Google Cloud Platform). • For deployments in GCP, Filestore is the recommended option for the Storage Manager directory, and Google Object Storage (S3-compatible) is the recommended option for data.</td></tr><tr><td>GlusterFS</td><td>On-premises</td><td>• GlusterFS is a distributed file system. • GlusterFS supports replication and failover.</td></tr><tr><td>NFS (Network File System)</td><td>On-premises</td><td>• NFS is a distributed file system. • If NFS is used, the storage should be mounted with the sync option to ensure that each node flushes its changes immediately. • For on-premises deployments, NFS is the recommended option for the Storage Manager directory, and any S3-compatible storage is the recommended option for data.</td></tr></tbody></table>
 
 ## Enterprise ColumnStore Management with CMAPI
 
@@ -260,32 +233,21 @@ $ curl -k -s -X DELETE https://mcs1:8640/cmapi/0.4.0/cluster/node \
 
 ### MariaDB Enterprise Server Configuration Management
 
-| Method             | Description                                                                                                                                                           |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Configuration File | Configuration files (such as /etc/my.cnf) can be used to set system-variables and options. The server must be restarted to apply changes made to configuration files. |
-| Command-line       | The server can be started with command-line options that set system-variables and options.                                                                            |
-| SQL                | Users can set system-variables that support dynamic changes on-the-fly using the SET statement.                                                                       |
+<table><thead><tr><th width="192">Method</th><th>Description</th></tr></thead><tbody><tr><td>Configuration File</td><td>Configuration files (such as /etc/my.cnf) can be used to set system-variables and options. The server must be restarted to apply changes made to configuration files.</td></tr><tr><td>Command-line</td><td>The server can be started with command-line options that set system-variables and options.</td></tr><tr><td>SQL</td><td>Users can set system-variables that support dynamic changes on-the-fly using the SET statement.</td></tr></tbody></table>
 
 MariaDB Enterprise Server packages are configured to read configuration files from different paths, depending on the operating system. Making custom changes to Enterprise Server default configuration files is not recommended because custom changes may be overwritten by other default configuration files that are loaded later.
 
 To ensure that your custom changes will be read last, create a custom configuration file with the z- prefix in one of the include directories.
 
-<table><thead><tr><th valign="top">Distribution</th><th valign="top">Example Configuration File Path</th></tr></thead><tbody><tr><td valign="top"><ul><li>CentOS</li><li>Red Hat Enterprise Linux (RHEL)</li></ul></td><td valign="top">/etc/my.cnf.d/z-custom-mariadb.cnf</td></tr><tr><td valign="top"><ul><li>Debian</li><li>Ubuntu</li></ul></td><td valign="top">/etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf</td></tr></tbody></table>
+<table><thead><tr><th width="314" valign="top">Distribution</th><th valign="top">Example Configuration File Path</th></tr></thead><tbody><tr><td valign="top"><ul><li>CentOS</li><li>Red Hat Enterprise Linux (RHEL)</li></ul></td><td valign="top">/etc/my.cnf.d/z-custom-mariadb.cnf</td></tr><tr><td valign="top"><ul><li>Debian</li><li>Ubuntu</li></ul></td><td valign="top">/etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf</td></tr></tbody></table>
 
 ### MariaDB Enterprise Server Service Management
 
 The systemctl command is used to start and stop the MariaDB Enterprise Server service.
 
-| Operation              | Command                          |
-| ---------------------- | -------------------------------- |
-| Start                  | `sudo systemctl start mariadb`   |
-| Stop                   | `sudo systemctl stop mariadb`    |
-| Restart                | `sudo systemctl restart mariadb` |
-| Enable during startup  | `sudo systemctl enable mariadb`  |
-| Disable during startup | `sudo systemctl disable mariadb` |
-| Status                 | `sudo systemctl status mariadb`  |
+<table><thead><tr><th width="225">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb</code></td></tr></tbody></table>
 
-For additional information, see "[Starting and Stopping MariaDB](broken-reference)".
+For additional information, see "[Starting and Stopping MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb)".
 
 ### MariaDB Enterprise Server Logs
 
@@ -293,13 +255,13 @@ MariaDB Enterprise Server produces log data that can be helpful in problem diagn
 
 Log filenames and locations may be overridden in the server configuration. The default location of logs is the data directory. The data directory is specified by the datadir system variable.
 
-| Log                                              | System Variable/Option                        | Default Filename      |
-| ------------------------------------------------ | --------------------------------------------- | --------------------- |
-| [MariaDB Error Log](broken-reference)            | [log\_error](broken-reference)                | `<hostname>.err`      |
-| [MariaDB Enterprise Audit Log](broken-reference) | [server\_audit\_file\_path](broken-reference) | `server_audit.log`    |
-| [Slow Query Log](broken-reference)               | [slow\_query\_log\_file](broken-reference)    | `<hostname>-slow.log` |
-| [General Query Log](broken-reference)            | [general\_log\_file](broken-reference)        | `<hostname>.log`      |
-| [Binary Log](broken-reference)                   | [log\_bin](broken-reference)                  | `<hostname>-bin`      |
+| Log                                                                                                                            | System Variable/Option                                                                                                                                                                      | Default Filename      |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log)         | [log\_error](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_error)                                                        | `<hostname>.err`      |
+| [MariaDB Enterprise Audit Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit)      | [server\_audit\_file\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables#server_audit_file_path) | `server_audit.log`    |
+| [Slow Query Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log)       | [slow\_query\_log\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#slow_query_log_file)                                  | `<hostname>-slow.log` |
+| [General Query Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/general-query-log) | [general\_log\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#general_log_file)                                         | `<hostname>.log`      |
+| [Binary Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log)               | [log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#log_bin)                                      | `<hostname>-bin`      |
 
 ### Enterprise ColumnStore Service Management
 
@@ -321,7 +283,7 @@ For additional information on endpoints, see "CMAPI".
 
 MaxScale can be configured using several methods. These methods make use of MaxScale's [REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/).
 
-<table><thead><tr><th width="200.962890625">Method</th><th>Benefits</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/">MaxCtrl</a></td><td>Command-line utility to perform administrative tasks through the REST API. See MaxCtrl Commands.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/maxgui/">MaxGUI</a></td><td>MaxGUI is a graphical utility that can perform administrative tasks through the REST API.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/">REST API</a></td><td>The REST API can be used directly. For example, the curl utility could be used to make REST API calls from the command-line. Many programming languages also have libraries to interact with REST APIs.</td></tr></tbody></table>
+<table><thead><tr><th width="104.962890625">Method</th><th>Benefits</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl">MaxCtrl</a></td><td>Command-line utility to perform administrative tasks through the REST API. See MaxCtrl Commands.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/maxgui">MaxGUI</a></td><td>MaxGUI is a graphical utility that can perform administrative tasks through the REST API.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/">REST API</a></td><td>The REST API can be used directly. For example, the curl utility could be used to make REST API calls from the command-line. Many programming languages also have libraries to interact with REST APIs.</td></tr></tbody></table>
 
 The procedure on these pages configures MaxScale using MaxCtrl.
 
@@ -337,6 +299,6 @@ For additional information, see "Start and Stop Services".
 
 Navigation in the procedure Shared Local Storage topology
 
-Next: Step 1: Prepare ColumnStore Nodes.
+[Next: Step 1: Prepare ColumnStore Nodes.](step-1-prepare-columnstore-nodes.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>

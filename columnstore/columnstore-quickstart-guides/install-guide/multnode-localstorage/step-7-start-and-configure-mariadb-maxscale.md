@@ -6,7 +6,7 @@ description: 'Step 7: Start and Configure MariaDB MaxScale'
 
 ## Overview
 
-This page details step 7 of the 9-step procedure "[Deploy ColumnStore Shared Local Storage Topology](broken-reference)".
+This page details step 7 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This step starts and configures MariaDB MaxScale 22.08.
 
@@ -186,7 +186,7 @@ Navigation in the procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This page was step 7 of 9.
 
-Next: Next: Step 8: Test MariaDB MaxScale.
+[Next: Next: Step 8: Test MariaDB MaxScale.](step-8-test-mariadb-maxscale.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

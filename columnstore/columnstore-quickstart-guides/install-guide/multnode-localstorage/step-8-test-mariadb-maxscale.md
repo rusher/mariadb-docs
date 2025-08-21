@@ -6,7 +6,7 @@ description: 'Step 8: Test MariaDB MaxScale'
 
 ## Overview
 
-This page details step 8 of the 9-step procedure "[Deploy ColumnStore Shared Local Storage Topology](broken-reference)".
+This page details step 8 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This step tests MariaDB MaxScale 22.08.
 
@@ -22,7 +22,7 @@ This action is performed **on the MaxScale node**:
 $ maxctrl show maxscale
 ```
 
-```
+```sql
 ┌──────────────┬───────────────────────────────────────────────────────┐
 │ Version      │ 22.08.15                                              │
 ├──────────────┼───────────────────────────────────────────────────────┤
@@ -122,7 +122,7 @@ This action is performed **on the MaxScale node**:
 $ maxctrl list servers
 ```
 
-```
+```sql
 ┌────────┬────────────────┬──────┬─────────────┬─────────────────┬────────┐
 │ Server │ Address        │ Port │ Connections │ State           │ GTID   │
 ├────────┼────────────────┼──────┼─────────────┼─────────────────┼────────┤
@@ -140,7 +140,7 @@ For each server object, view the configuration:
 $ maxctrl show server mcs1
 ```
 
-```
+```sql
 ┌─────────────────────┬───────────────────────────────────────────┐
 │ Server              │ mcs1                                      │
 ├─────────────────────┼───────────────────────────────────────────┤
@@ -226,7 +226,7 @@ This action is performed on the MaxScale node:
 $ maxctrl list monitors
 ```
 
-```
+```sql
 ┌─────────────────────┬─────────┬──────────────────┐
 │ Monitor             │ State   │ Servers          │
 ├─────────────────────┼─────────┼──────────────────┤
@@ -240,7 +240,7 @@ $ maxctrl list monitors
 $ maxctrl show monitor columnstore_monitor
 ```
 
-```
+```sql
 ┌─────────────────────┬─────────────────────────────────────┐
 │ Monitor             │ columnstore_monitor                 │
 ├─────────────────────┼─────────────────────────────────────┤
@@ -287,7 +287,7 @@ This action is performed on the MaxScale node:
 $ maxctrl list services
 ```
 
-```
+```sql
 ┌───────────────────────────┬────────────────┬─────────────┬───────────────────┬──────────────────┐
 │ Service                   │ Router         │ Connections │ Total Connections │ Servers          │
 ├───────────────────────────┼────────────────┼─────────────┼───────────────────┼──────────────────┤
@@ -303,7 +303,7 @@ $ maxctrl list services
 $ maxctrl show service query_router_service
 ```
 
-```
+```sql
 ┌─────────────────────┬─────────────────────────────────────────────────────────────┐
 │ Service             │ query_router_service                                        │
 ├─────────────────────┼─────────────────────────────────────────────────────────────┤
@@ -561,7 +561,7 @@ VALUES (@@global.hostname, @@global.server_id);
 SELECT * FROM test.load_balancing_test;
 ```
 
-```
+```sql
 +----+----------+-----------+
 | id | hostname | server_id |
 +----+----------+-----------+
@@ -608,7 +608,7 @@ Use the application user credentials you created for the --user and --password o
 SELECT @@global.hostname, @@global.server_id;
 ```
 
-```
+```sql
 +-------------------+--------------------+
 | @@global.hostname | @@global.server_id |
 +-------------------+--------------------+
@@ -622,7 +622,7 @@ SELECT @@global.hostname, @@global.server_id;
 SELECT @@global.hostname, @@global.server_id;
 ```
 
-```
+```sql
 +-------------------+--------------------+
 | @@global.hostname | @@global.server_id |
 +-------------------+--------------------+
@@ -640,7 +640,7 @@ For more information on different routing criteria, see `slave_selection_criteri
 
 This page was step 8 of 9.
 
-Next: Step 9: Import Data.
+[Next: Step 9: Import Data.](step-9-import-data.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

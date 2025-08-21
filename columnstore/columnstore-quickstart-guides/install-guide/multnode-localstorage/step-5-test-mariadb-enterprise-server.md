@@ -6,7 +6,7 @@ description: 'Step 5: Test MariaDB Enterprise Server'
 
 ## Overview
 
-This page details step 5 of the 9-step procedure "[Deploy ColumnStore Shared Local Storage Topology](broken-reference)".
+This page details step 5 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This step tests MariaDB Enterprise Server and MariaDB Enterprise ColumnStore 23.10.
 
@@ -14,9 +14,7 @@ Interactive commands are detailed. Alternatively, the described operations can b
 
 ## Test Enterprise Server Service
 
-Use Systemd to test whether the MariaDB Enterprise Server service is running.
-
-This action is performed **on each Enterprise ColumnStore node**.
+Use Systemd to test whether the MariaDB Enterprise Server service is running. This action is performed **on each Enterprise ColumnStore node**.
 
 Check if the MariaDB Enterprise Server service is running by executing the following:
 
@@ -49,11 +47,11 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-The `sudo` command is used here to connect to the Enterprise Server node using the root@localhost user account, which authenticates using the unix\_socket authentication plugin. Other user accounts can be used by specifying the --user and --password command-line options.
+The `sudo` command is used here to connect to the Enterprise Server node using the root@localhost user account, which authenticates using the unix\_socket authentication plugin. Other user accounts can be used by specifying the `--user` and `--password` command-line options.
 
 ## Test ColumnStore Storage Engine Plugin
 
-Query the [information\_schema.PLUGINS](broken-reference) table to confirm that the ColumnStore storage engine is loaded.
+Query the [information\_schema.PLUGINS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema) table to confirm that the ColumnStore storage engine is loaded.
 
 This action is performed on each Enterprise ColumnStore node.
 
@@ -79,9 +77,7 @@ The `PLUGIN_STATUS` column for each ColumnStore-related plugin should contain AC
 
 ### Test CMAPI Service
 
-Use Systemd to test whether the CMAPI service is running.
-
-This action is performed on each Enterprise ColumnStore node.
+Use Systemd to test whether the CMAPI service is running. This action is performed on each Enterprise ColumnStore node.
 
 Check if the CMAPI service is running by executing the following:
 
@@ -274,7 +270,7 @@ INSERT INTO test.contacts (first_name, last_name, email)
 $ sudo mariadb
 ```
 
-4. Execute a [SELECT](broken-reference) query to retrieve the data:
+4. Execute a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) query to retrieve the data:
 
 ```sql
 SELECT * FROM test.contacts;
@@ -295,7 +291,7 @@ Navigation in the procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This page was step 5 of 9.
 
-Next: Step 6: Install MariaDB MaxScale.
+[Next: Step 6: Install MariaDB MaxScale](step-6-install-mariadb-maxscale.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

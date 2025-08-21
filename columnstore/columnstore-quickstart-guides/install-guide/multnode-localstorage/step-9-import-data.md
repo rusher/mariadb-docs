@@ -6,7 +6,7 @@ description: 'Step 9: Import Data'
 
 ## Overview
 
-This page details step 9 of the 9-step procedure "[Deploy ColumnStore Shared Local Storage Topology](broken-reference)".
+This page details step 9 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This step bulk imports data to Enterprise ColumnStore.
 
@@ -39,11 +39,7 @@ CREATE TABLE inventory.products (
 
 Enterprise ColumnStore supports multiple methods to import data into ColumnStore tables.
 
-| Interface       | Method                                                                      | Benefits                                                                                      |
-| --------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| Shell           | [cpimport](step-9-import-data.md#cpimport)                                  | <ul><li>SQL access is not required</li></ul>                                                  |
-| SQL             | [LOAD DATA INFILE](step-9-import-data.md#load-data-infile)                  | <ul><li>Shell access is not required</li></ul>                                                |
-| Remote Database | [Remote Database Import](step-9-import-data.md#import-from-remote-database) | <ul><li>Use normal database client</li><li>Avoid dumping data to intermediate filed</li></ul> |
+<table><thead><tr><th width="160">Interface</th><th width="236">Method</th><th>Benefits</th></tr></thead><tbody><tr><td>Shell</td><td><a href="step-9-import-data.md#cpimport">cpimport</a></td><td><ul><li>SQL access is not required</li></ul></td></tr><tr><td>SQL</td><td><a href="step-9-import-data.md#load-data-infile">LOAD DATA INFILE</a></td><td><ul><li>Shell access is not required</li></ul></td></tr><tr><td>Remote Database</td><td><a href="step-9-import-data.md#import-from-remote-database">Remote Database Import</a></td><td><ul><li>Use normal database client</li><li>Avoid dumping data to intermediate filed</li></ul></td></tr></tbody></table>
 
 ### cpimport
 
