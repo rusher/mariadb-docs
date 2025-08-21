@@ -6,7 +6,7 @@ description: 'Step 1: Prepare Systems for Enterprise ColumnStore Nodes'
 
 ## Overview
 
-This page details step 1 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](broken-reference).
+This page details step 1 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](./).
 
 This step prepares the system to host MariaDB Enterprise Server and MariaDB Enterprise ColumnStore.
 
@@ -113,7 +113,7 @@ $ sudo systemctl disable apparmor
 $ sudo aa-status
 ```
 
-```
+```sql
 apparmor module is loaded.
 0 profiles are loaded.
 0 profiles are in enforce mode.
@@ -148,7 +148,7 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Local storage
 
 This page was step 1 of 5.
 
-Next: Step 2: Install MariaDB Enterprise ColumnStore.
+[Next: Step 2: Install MariaDB Enterprise ColumnStore.](step-2-install-enterprise-columnstore.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

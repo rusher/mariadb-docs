@@ -2,7 +2,7 @@
 
 ## Overview
 
-This page details step 4 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](broken-reference).
+This page details step 4 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](./).
 
 This step tests MariaDB Enterprise Server and MariaDB Enterprise ColumnStore 23.10.
 
@@ -16,7 +16,7 @@ Connect to the server using MariaDB Client using the root@localhost user account
 $ sudo mariadb
 ```
 
-```
+```sql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 38
 Server version: 11.4.5-3-MariaDB-Enterprise MariaDB Enterprise Server
@@ -30,7 +30,7 @@ MariaDB [(none)]>
 
 ## Test ColumnStore Plugin Status
 
-Query [information\_schema.PLUGINS](broken-reference) and confirm that the ColumnStore storage engine plugin is `ACTIVE`:
+Query [information\_schema.PLUGINS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema) and confirm that the ColumnStore storage engine plugin is `ACTIVE`:
 
 ```sql
 SELECT PLUGIN_NAME, PLUGIN_STATUS
@@ -38,7 +38,7 @@ FROM information_schema.PLUGINS
 WHERE PLUGIN_LIBRARY LIKE 'ha_columnstore%';
 ```
 
-```
+```sql
 +---------------------+---------------+
 | PLUGIN_NAME         | PLUGIN_STATUS |
 +---------------------+---------------+
@@ -83,7 +83,7 @@ INSERT INTO test.contacts (first_name, last_name, email)
 SELECT * FROM test.contacts;
 ```
 
-```
+```sql
 +------------+-----------+----------------------+
 | first_name | last_name | email                |
 +------------+-----------+----------------------+
@@ -125,7 +125,7 @@ INNER JOIN (SELECT CONCAT(street_address, ", ", city, ", ", state_code) AS addr,
 WHERE  contacts.email = addr.email;
 ```
 
-```
+```sql
 +----------+-----------------------------------------+
 | Name     | Address                                 |
 +----------+-----------------------------------------+
@@ -147,7 +147,7 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Local storage
 
 This page was step 4 of 5.
 
-Next: Step 5: Bulk Import of Data.
+[Next: Step 5: Bulk Import of Data.](step-5-bulk-import-of-data.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

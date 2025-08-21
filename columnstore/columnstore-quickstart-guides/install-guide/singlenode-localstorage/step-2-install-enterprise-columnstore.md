@@ -6,7 +6,7 @@ description: 'Step 2: Install Enterprise ColumnStore'
 
 ## Overview
 
-This page details step 2 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](broken-reference).
+This page details step 2 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](./).
 
 This step installs MariaDB Enterprise Server and MariaDB Enterprise ColumnStore 23.10.
 
@@ -64,7 +64,7 @@ $ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
       --mariadb-server-version="11.4"
 ```
 
-_Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](broken-reference) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](broken-reference) _page. Substitute `${checksum}` in the example above with the latest checksum._
+_Checksums of the various releases of the `mariadb_es_repo_setup` script can be found in the_ [_Versions_](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/version) _section at the bottom of the_ [_MariaDB Package Repository Setup and Usage_](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages) _page. Substitute `${checksum}` in the example above with the latest checksum._
 
 ## Install Enterprise ColumnStore
 
@@ -118,7 +118,7 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Local storage
 
 This page was step 2 of 5.
 
-Next: Step 3: Start and Configure MariaDB Enterprise ColumnStore.
+[Next: Step 3: Start and Configure MariaDB Enterprise ColumnStore.](step-3-start-and-configure-enterprise-columnstore.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

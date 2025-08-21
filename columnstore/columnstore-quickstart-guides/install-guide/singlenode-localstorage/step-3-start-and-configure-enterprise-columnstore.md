@@ -6,7 +6,7 @@ description: 'Step 3: Start and Configure Enterprise ColumnStore'
 
 ## Overview
 
-This page details step 3 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](broken-reference).
+This page details step 3 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](./).
 
 This step starts and configures MariaDB Enterprise Server and MariaDB Enterprise ColumnStore 23.10.
 
@@ -16,7 +16,7 @@ Interactive commands are detailed. Alternatively, the described operations can b
 
 Mandatory system variables and options for Single-Node Enterprise ColumnStore include:
 
-<table><thead><tr><th width="342">Connector</th><th>MariaDB Connector/R2DBC</th></tr></thead><tbody><tr><td><a href="broken-reference">character_set_server</a></td><td>Set this system variable to <code>utf8</code></td></tr><tr><td><a href="broken-reference">collation_server</a></td><td>Set this system variable to <code>utf8_general_ci</code></td></tr><tr><td>columnstore_use_import_for_batchinsert</td><td>Set this system variable to <code>ALWAYS</code> to always use <code>cpimport</code> for <a href="broken-reference">LOAD DATA INFILE</a> and <a href="broken-reference">INSERT...SELECT</a> statements.</td></tr></tbody></table>
+<table><thead><tr><th width="342">Connector</th><th>MariaDB Connector/R2DBC</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#character_set_server">character_set_server</a></td><td>Set this system variable to <code>utf8</code></td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#collation_server">collation_server</a></td><td>Set this system variable to <code>utf8_general_ci</code></td></tr><tr><td>columnstore_use_import_for_batchinsert</td><td>Set this system variable to <code>ALWAYS</code> to always use <code>cpimport</code> for <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile">LOAD DATA INFILE</a> and <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert-select">INSERT...SELECT</a> statements.</td></tr></tbody></table>
 
 ### Example Configuration
 
@@ -49,7 +49,7 @@ $ sudo systemctl enable mariadb-columnstore
 
 Enterprise ColumnStore requires a mandatory utility user account. By default, it connects to the server using the root user with no password. MariaDB Enterprise Server 10.6 will reject this login attempt by default, so you will need to configure Enterprise ColumnStore to use a different user account and password and create this user account on Enterprise Server.
 
-1. On the Enterprise ColumnStore node, create the user account with the [CREATE USER](broken-reference) statement:
+1. On the Enterprise ColumnStore node, create the user account with the [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/create-user) statement:
 
 ```sql
 CREATE USER 'util_user'@'127.0.0.1'
@@ -159,7 +159,7 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Local storage
 
 This page was step 3 of 5.
 
-Next: Step 4: Test MariaDB Enterprise ColumnStore.
+[Next: Step 4: Test MariaDB Enterprise ColumnStore.](step-4-test-enterprise-columnstore.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

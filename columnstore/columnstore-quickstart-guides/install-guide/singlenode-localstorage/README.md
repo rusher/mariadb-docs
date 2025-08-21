@@ -16,7 +16,7 @@ Please read and understand this procedure before executing.
 
 ## Procedure Steps
 
-<table><thead><tr><th width="170.148193359375">Step</th><th>Description</th></tr></thead><tbody><tr><td>Step 1</td><td><a href="broken-reference">Prepare System for Enterprise ColumnStore</a></td></tr><tr><td>Step 2</td><td><a href="broken-reference">Install Enterprise ColumnStore</a></td></tr><tr><td>Step 3</td><td><a href="broken-reference">Start and Configure Enterprise ColumnStore 23.10</a></td></tr><tr><td>Step 4</td><td><a href="broken-reference">Test Enterprise ColumnStore</a></td></tr><tr><td>Step 5</td><td><a href="broken-reference">Bulk Import Data to Enterprise ColumnStore</a></td></tr></tbody></table>
+<table><thead><tr><th width="117.148193359375">Step</th><th>Description</th></tr></thead><tbody><tr><td>Step 1</td><td>Prepare System for Enterprise ColumnStore</td></tr><tr><td>Step 2</td><td>Install Enterprise ColumnStore</td></tr><tr><td>Step 3</td><td>Start and Configure Enterprise ColumnStore</td></tr><tr><td>Step 4</td><td>Test Enterprise ColumnStore</td></tr><tr><td>Step 5</td><td>Bulk Import Data to Enterprise ColumnStore</td></tr></tbody></table>
 
 ## Support
 
@@ -30,11 +30,11 @@ The following components are deployed during this procedure:
 
 #### MariaDB Enterprise Server Components
 
-<table><thead><tr><th valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar Storage Engine</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="283" valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar Storage Engine</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li></ul></td></tr></tbody></table>
 
 ## Topology
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/ent-col-single-node-topology-local-no-title.png" alt=""><figcaption></figcaption></figure>
 
 The Single-Node Enterprise ColumnStore topology provides support for Online Analytical Processing (OLAP) workloads to MariaDB Enterprise Server.
 
@@ -46,7 +46,7 @@ The Enterprise ColumnStore node:
 
 ### High Availability
 
-Single-Node Enterprise ColumnStore does not provide high availability (HA) for Online Analytical Processing (OLAP). If you would like to deploy Enterprise ColumnStore with high availability, see [Enterprise ColumnStore with Shared Local storage](broken-reference).
+Single-Node Enterprise ColumnStore does not provide high availability (HA) for Online Analytical Processing (OLAP). If you would like to deploy Enterprise ColumnStore with high availability, see [Enterprise ColumnStore with Shared Local storage](./).
 
 ## Requirements
 
@@ -102,11 +102,7 @@ The recommended hardware requirements are:
 
 #### MariaDB Enterprise Server Configuration Management
 
-| Method             | Description                                                                                                                                                                                                     |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Configuration File | Configuration files (such as `/etc/my.cnf`) can be used to set [system variables](broken-reference) and [options](broken-reference). The server must be restarted to apply changes made to configuration files. |
-| Command-line       | The server can be started with command-line options that set [system variables](broken-reference) and [options](broken-reference).                                                                              |
-| SQL                | Users can set [system variables](broken-reference) that support dynamic changes on-the-fly using the [SET](broken-reference) statement.                                                                         |
+<table><thead><tr><th width="171">Method</th><th>Description</th></tr></thead><tbody><tr><td>Configuration File</td><td>Configuration files (such as <code>/etc/my.cnf</code>) can be used to set <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables">system variables</a> and <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options">options</a>. The server must be restarted to apply changes made to configuration files.</td></tr><tr><td>Command-line</td><td>The server can be started with command-line options that set <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables">system variables</a> and <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options">options</a>.</td></tr><tr><td>SQL</td><td>Users can set <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables">system variables</a> that support dynamic changes on-the-fly using the <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set">SET</a> statement.</td></tr></tbody></table>
 
 MariaDB Enterprise Server packages are configured to read configuration files from different paths, depending on the operating system. Making custom changes to Enterprise Server default configuration files is not recommended because custom changes may be overwritten by other default configuration files that are loaded later.
 
