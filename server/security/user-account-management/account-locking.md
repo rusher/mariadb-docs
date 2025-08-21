@@ -24,6 +24,8 @@ Prior to [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/communi
 
 Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected).
 
+### Locking Accounts
+
 User accounts can be locked at creation, with the [CREATE USER](../../reference/sql-statements/account-management-sql-statements/create-user.md) statement, or modified after creation with the [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statement. For example:
 
 ```sql
@@ -43,11 +45,15 @@ mariadb -ulorin
   ERROR 4151 (HY000): Access denied, this account is locked
 ```
 
-The [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statement is also used to unlock a user:
+### Unlocking Accounts
+
+The [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statement is used to unlock a user:
 
 ```sql
 ALTER USER 'lorin'@'localhost' ACCOUNT UNLOCK;
 ```
+
+### Show Whether a Specific Account is Locked
 
 The [SHOW CREATE USER](../../reference/sql-statements/administrative-sql-statements/show/show-create-user.md) statement will show whether the account is locked:
 
@@ -77,6 +83,26 @@ SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv))
     "password_last_changed": 1558017158
 } |
 +--------------------------------------------------------------------------------------+
+```
+
+### Show All Locked Accounts
+
+This query against the `mysql.global_priv` table will return all accounts which have `"account_locked": true` with the `Priv` json column:
+
+```sql
+SELECT CONCAT(user, '@', host) AS 'Locked Accounts' FROM mysql.global_priv WHERE Priv like '%account_locked":true%';
+```
+
+Example Output:
+
+```
++------------------------+
+| Locked Accounts        |
++------------------------+
+| mariadb.sys@localhost  |
+| bart.simpson@localhost |
++------------------------+
+2 rows in set (0.000 sec)
 ```
 
 ## See Also
