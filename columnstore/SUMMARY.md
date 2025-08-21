@@ -27,7 +27,7 @@
       * [Step 2: Configure Shared Local Storage](columnstore-quickstart-guides/install-guide/single-node-s3/step-2-configure-shared-local-storage.md)
       * [Step 3: Install MariaDB Enterprise Server](columnstore-quickstart-guides/install-guide/single-node-s3/step-3-install-mariadb-enterprise-server.md)
       * [Step 4: Start and Configure MariaDB Enterprise Server](columnstore-quickstart-guides/install-guide/single-node-s3/step-4-start-and-configure-mariadb-enterprise-server.md)
-      * [Step 5: Test MariaDB Enterprise Serverd](columnstore-quickstart-guides/install-guide/single-node-s3/step-5-test-mariadb-enterprise-serverd.md)
+      * [Step 5: Test MariaDB Enterprise Serverd](columnstore-quickstart-guides/install-guide/single-node-s3/step-5-test-mariadb-enterprise-server.md)
       * [Step 6: Install MariaDB MaxScale](columnstore-quickstart-guides/install-guide/single-node-s3/step-6-install-mariadb-maxscale.md)
       * [Step 7: Start and Configure MariaDB MaxScale](columnstore-quickstart-guides/install-guide/single-node-s3/step-7-start-and-configure-mariadb-maxscale.md)
       * [Step 8: Test MariaDB MaxScale](columnstore-quickstart-guides/install-guide/single-node-s3/step-8-test-mariadb-maxscale.md)

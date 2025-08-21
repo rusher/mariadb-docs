@@ -2,7 +2,7 @@
 description: 'Step 5: Test MariaDB Enterprise Server'
 ---
 
-# Step 5: Test MariaDB Enterprise Server
+# Step 5: Test MariaDB Enterprise Serverd
 
 ## Overview
 

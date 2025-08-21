@@ -716,7 +716,7 @@ Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
 
 This page was **step 4 of 9**.
 
-[Next: Step 5: Test MariaDB Enterprise Server.](step-5-test-mariadb-enterprise-serverd.md)
+[Next: Step 5: Test MariaDB Enterprise Server.](step-5-test-mariadb-enterprise-server.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
