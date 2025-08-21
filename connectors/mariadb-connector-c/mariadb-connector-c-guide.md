@@ -6,6 +6,8 @@ description: Quickstart Guide for Connector/C
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/97ObD80oLdZu6qT33Vhb/" %}
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/lJpmPdZs9UCVjAmVnQHV/" %}
+
 MariaDB Connector/C is used to connect applications developed in C/C++ to MariaDB and MySQL databases.The client library is LGPL licensed.
 
 ## Integration with MariaDB Server
