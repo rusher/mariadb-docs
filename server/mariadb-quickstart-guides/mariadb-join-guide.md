@@ -92,6 +92,26 @@ SELECT * FROM t1 LEFT JOIN t2 ON t1.a = t2.b;
 
 _Explanation:_ All rows from `t1` are present. For `t1.a = 1` and `t1.a = 3`, there are no matching `t2.b` values, so `b` is `NULL`. For `t1.a = 2`, a match is found (`t2.b = 2`), so `b` is `2`.
 
+#### RIGHT JOIN (t1 RIGHT JOIN t2)
+
+A `RIGHT JOIN` (or `RIGHT OUTER JOIN`) produces a result set with all rows from the "right" table (`t2` in this case). If a match is found in the "left" table (`t1`), the corresponding columns from the left table are included. If no match is found, these columns are filled with `NULL`.
+
+```sql
+SELECT * FROM t1 RIGHT JOIN t2 ON t1.a = t2.b;
+```
+
+**Output:**
+
+```
++------+------+
+| a    | b    |
++------+------+
+|    2 |    2 |
+| NULL |    4 |
++------+------+
+2 rows in set (0.00 sec)
+```
+
 #### LEFT JOIN (t2 LEFT JOIN t1) - Simulating a RIGHT JOIN
 
 This example uses a `LEFT JOIN` but with `t2` as the left table. This effectively demonstrates how a `RIGHT JOIN` would behave if `t1` were the left table and `t2` the right. A `RIGHT JOIN` includes all rows from the "right" table and `NULL`s for non-matching "left" table columns.
@@ -145,6 +165,15 @@ While this syntax works, the explicit `JOIN` syntax (`INNER JOIN`, `LEFT JOIN`, 
 ### Joining Multiple Tables
 
 `JOIN` clauses can be concatenated (chained) to retrieve results from three or more tables by progressively joining them.
+
+### See Also
+
+* [More Advanced Joins](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md)
+* [JOIN Syntax](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)
+* [Comma vs JOIN](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join.md)
+* [Joins, Subqueries and SET](../reference/sql-structure/joins-subqueries-set.md)
+
+_The initial version of this article was copied, with permission, from_ [_Introduction\_to\_Joins_](https://hashmysql.org/wiki/Introduction_to_Joins) _on 2012-10-05._
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

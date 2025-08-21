@@ -15,8 +15,8 @@ description: >-
 [mariadb-alter-table-guide.md](mariadb-alter-table-guide.md)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-join-guide-1.md" %}
-[mariadb-join-guide-1.md](mariadb-join-guide-1.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="mariadb-indexes-guide-1.md" %}

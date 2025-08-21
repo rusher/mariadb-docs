@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/Dn7q74OYovrrC5l3cYgb/" %}
 
-From [MariaDB 10.3](../../old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md), MariaDB's SQL\_MODE = ORACLE setting enables compatibility with Oracle Database SQL syntax and behavior in MariaDB. This feature is particularly useful for organizations looking to migrate applications from Oracle Database to MariaDB while preserving the behavior and syntax of Oracle SQL. By setting the [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) to `ORACLE`, developers can ensure that their existing SQL scripts, application logic, and database interactions are compatible with MariaDB's behavior, easing the migration process. This page provides detailed information on supported Oracle SQL syntax, behavior differences between Oracle and MariaDB, and tips for adapting applications and scripts to work smoothly under this mode.
+MariaDB's SQL\_MODE = ORACLE setting enables compatibility with Oracle Database SQL syntax and behavior in MariaDB. This feature is particularly useful for organizations looking to migrate applications from Oracle Database to MariaDB while preserving the behavior and syntax of Oracle SQL. By setting the [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) to `ORACLE`, developers can ensure that their existing SQL scripts, application logic, and database interactions are compatible with MariaDB's behavior, easing the migration process. This page provides detailed information on supported Oracle SQL syntax, behavior differences between Oracle and MariaDB, and tips for adapting applications and scripts to work smoothly under this mode.
 
 ```sql
 SET SQL_MODE='ORACLE';
@@ -10,14 +10,7 @@ SET SQL_MODE='ORACLE';
 
 All traditional MariaDB SQL/PSM syntax should work as before, as long as it does not conflict with Oracle's PL/SQL syntax. All MariaDB functions should be supported in both normal and Oracle modes.
 
-Prior to [MariaDB 10.3](../../old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md), MariaDB does not support Oracle's PL/SQL language, and `SET SQL_MODE=ORACLE` is only an alias for the following [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) in those versions:
-
-```sql
-SET SQL_MODE='PIPES_AS_CONCAT, ANSI_QUOTES, IGNORE_SPACE, NO_KEY_OPTIONS,
-NO_TABLE_OPTIONS, NO_FIELD_OPTIONS, NO_AUTO_CREATE_USER';
-```
-
-From [MariaDB 10.3](../../old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md), `SET SQL_MODE=ORACLE` is same as:
+`SET SQL_MODE=ORACLE` is the same as:
 
 ```sql
 SET SQL_MODE='PIPES_AS_CONCAT,ANSI_QUOTES,IGNORE_SPACE,ORACLE,NO_KEY_OPTIONS,
@@ -70,7 +63,22 @@ Oracle mode makes the following changes to [LOOP](https://app.gitbook.com/s/Ssme
 
 ### Variables
 
-<table><thead><tr><th>Oracle syntax</th><th width="85.4444580078125">Version</th><th>Description</th></tr></thead><tbody><tr><td><code>var:= 10;</code> Can also be used with MariaDB systemvariables</td><td>10.3</td><td>MariaDB uses <code>SET var= 10;</code></td></tr><tr><td><code>var INT := 10</code></td><td>10.3</td><td>Default variable value</td></tr><tr><td><code>var1 table_name.column_name%TYPE</code></td><td>10.3</td><td>Take data type from a table column. <a href="https://jira.mariadb.org/browse/MDEV-10577">MDEV-10577</a></td></tr><tr><td><code>var2 var1%TYPE</code></td><td>10.3</td><td>Take data type from another variable</td></tr><tr><td><code>rec1 table_name%ROWTYPE</code></td><td>10.3</td><td>Take ROW structure from a table. <a href="https://jira.mariadb.org/browse/MDEV-12133">MDEV-12133</a></td></tr><tr><td><code>rec2 rec1%ROWTYPE</code></td><td>10.3</td><td>Take ROW structure from ROW variable</td></tr><tr><td><code>CURSOR c1 IS SELECT a,b FROM t1; rec1 c1%ROWTYPE;</code></td><td>10.3</td><td>Take ROW structure from a cursor. <a href="https://jira.mariadb.org/browse/MDEV-12011">MDEV-12011</a></td></tr><tr><td>Variables can be declared after cursor declarations</td><td>10.3</td><td>In MariaDB mode, variables must be declared before cursors. <a href="https://jira.mariadb.org/browse/MDEV-10598">MDEV-10598</a></td></tr><tr><td>Triggers uses <code>:NEW</code> and <code>:OLD</code></td><td>10.3</td><td>ANSI uses NEW and OLD. <a href="https://jira.mariadb.org/browse/MDEV-10579">MDEV-10579</a></td></tr><tr><td><code>SQLCODE</code></td><td>10.3</td><td>Returns the number code of the most recent exception. Can only be used in Stored Procedures. <a href="https://jira.mariadb.org/browse/MDEV-10578">MDEV-10578</a></td></tr><tr><td><code>SQLERRM</code></td><td>10.3</td><td>Returns the error message associdated to it's error number argument or <code>SQLCODE</code> if no argument is given. Can only be used in Stored Procedures. <a href="https://jira.mariadb.org/browse/MDEV-10578">MDEV-10578</a></td></tr><tr><td><code>SQL%ROWCOUNT</code></td><td>10.3</td><td>Almost same as <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/row_count">ROW_COUNT()</a>. <a href="https://jira.mariadb.org/browse/MDEV-10583">MDEV-10583</a></td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/rownum">ROWNUM</a></td><td>10.6.1</td><td>Returns number of accepted rows</td></tr></tbody></table>
+| Oracle syntax                                                                                                                     | Description                                                                                                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `var:= 10;` Can also be used with MariaDB system variables                                                                        | MariaDB uses `SET var= 10;`                                                                                                                                                                                         |
+| `var INT := 10`                                                                                                                   | Default variable value                                                                                                                                                                                              |
+| `var1 table_name.column_name%TYPE`                                                                                                | Take data type from a table column. [MDEV-10577](https://jira.mariadb.org/browse/MDEV-10577)                                                                                                                        |
+| `var2 var1%TYPE`                                                                                                                  | Take data type from another variable                                                                                                                                                                                |
+| `rec1 table_name%ROWTYPE`                                                                                                         | Take ROW structure from a table. [MDEV-12133](https://jira.mariadb.org/browse/MDEV-12133)                                                                                                                           |
+| `rec2 rec1%ROWTYPE`                                                                                                               | Take ROW structure from ROW variable                                                                                                                                                                                |
+| `CURSOR c1 IS SELECT a,b FROM t1; rec1 c1%ROWTYPE;`                                                                               | Take ROW structure from a cursor. [MDEV-12011](https://jira.mariadb.org/browse/MDEV-12011)                                                                                                                          |
+| Variables can be declared after cursor declarations                                                                               | In MariaDB mode, variables must be declared before cursors. [MDEV-10598](https://jira.mariadb.org/browse/MDEV-10598)                                                                                                |
+| Triggers uses `:NEW` and `:OLD`                                                                                                   | ANSI uses NEW and OLD. [MDEV-10579](https://jira.mariadb.org/browse/MDEV-10579)                                                                                                                                     |
+| `SQLCODE`                                                                                                                         | Returns the number code of the most recent exception. Can only be used in Stored Procedures. [MDEV-10578](https://jira.mariadb.org/browse/MDEV-10578)                                                               |
+| `SQLERRM`                                                                                                                         | Returns the error message associdated to it's error number argument or `SQLCODE` if no argument is given. Can only be used in Stored Procedures. [MDEV-10578](https://jira.mariadb.org/browse/MDEV-10578)           |
+| `SQL%ROWCOUNT`                                                                                                                    | Almost same as [ROW\_COUNT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/row_count). [MDEV-10583](https://jira.mariadb.org/browse/MDEV-10583) |
+| [ROWNUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/rownum) | Returns number of accepted rows. From [MariaDB 10.6](../../mariadb-10-6-series/what-is-mariadb-106.md).                                                                                                             |
+| Associative arrays                                                                                                                | See [blog post](https://mariadb.org/bringing-oracles-associative-arrays-to-mariadb/). From [MariaDB 12.1](../../release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md).           |
 
 ### Exceptions
 
@@ -111,7 +119,7 @@ Oracle mode makes the following changes to [Prepared Statements](https://app.git
 | Oracle type                | MariaDB synonym                                                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `VARCHAR2`                 | [VARCHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/varchar)                  |
-| `NUMBER(M [,D])`            | [DECIMAL(M\[,D\])](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal)        |
+| `NUMBER(M [,D])`           | [DECIMAL(M\[,D\])](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal)        |
 | `NUMBER`                   | [DOUBLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/double)                   |
 | `DATE` (with time portion) | MariaDB [DATETIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime) |
 | `RAW`                      | [VARBINARY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/varbinary)              |
@@ -169,8 +177,6 @@ There are a number of [extra reserved words](https://app.gitbook.com/s/SsmexDFPv
 ### SHOW CREATE TABLE
 
 The [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table) statement will not display MariaDB-specific table options, such as AUTO\_INCREMENT or CHARSET, when Oracle mode is set.
-
-&#x20;
 
 ## See Also
 

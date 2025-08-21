@@ -73,6 +73,101 @@ The following table lists each version of the [Galera](https://app.gitbook.com/o
 | 26.4.1         | [10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | 26.4.0         | [10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
+## Cluster Failure and Recovery Scenarios
+
+While a Galera Cluster is designed for high availability, various scenarios can lead to node or cluster outages. This guide describes common failure situations and the procedures to safely recover from them.
+
+### Graceful Shutdown Scenarios
+
+This covers situations where nodes are intentionally stopped for maintenance or configuration changes, based on a three-node cluster.
+
+#### **One Node is Gracefully Stopped**
+
+When one node is stopped, it sends a message to the other nodes, and the cluster size is reduced. Properties like Quorum calculation are automatically adjusted. As soon as the node is started again, it rejoins the cluster based on its `wsrep_cluster_address` variable.
+
+If the write-set cache (`gcache.size`) on a donor node still has all the transactions that were missed, the node will rejoin using a fast Incremental State Transfer (IST). If not, it will automatically fall back to a full State Snapshot Transfer (SST).
+
+#### **Two Nodes Are Gracefully Stopped**
+
+The single remaining node forms a Primary Component and can serve client requests. To bring the other nodes back, you simply start them.
+
+However, the single running node must act as a Donor for the state transfer. During the SST, its performance may be degraded, and some load balancers may temporarily remove it from rotation. For this reason, it's best to avoid running with only one node.
+
+#### **All Three Nodes Are Gracefully Stopped**
+
+When the entire cluster is shut down, you must bootstrap it from the most advanced node to prevent data loss.
+
+1. Identify the most advanced node: On each server, check the `seqno` value in the `/var/lib/mysql/grastate.dat` file. The node with the highest `seqno` was the last to commit a transaction.
+2.  Bootstrap from that node: Use the appropriate MariaDB script to start a new cluster from this node only.
+
+    Bash
+
+    ```
+    galera_new_cluster
+    ```
+3. Start the other nodes normally: Once the first node is running, start the MariaDB service on the other nodes. They will join the new cluster via SST.
+
+### Unexpected Node Failure (Crash) Scenarios
+
+This covers situations where nodes become unavailable due to a power outage, hardware failure, or software crash.
+
+#### **One Node Disappears from the Cluster**
+
+If one node crashes, the two remaining nodes will detect the failure after a timeout period and remove the node from the cluster. Because they still have Quorum (2 out of 3), the cluster continues to operate without service disruption. When the failed node is restarted, it will rejoin automatically as described above.
+
+#### **Two Nodes Disappear from the Cluster**
+
+The single remaining node cannot form a Quorum by itself. It will switch to a non-Primary state and refuse to serve queries to protect data integrity. Any query attempt will result in an error:
+
+```
+ERROR 1047 (08S01): WSREP has not yet prepared node for application use
+```
+
+Recovery:
+
+* If the other nodes come back online, the cluster will re-form automatically.
+*   If the other nodes have permanently failed, you must manually force the remaining node to become a new Primary Component. Warning: Only do this if you are certain the other nodes are permanently down.
+
+    ```sql
+    SET GLOBAL wsrep_provider_options='pc.bootstrap=true';
+    ```
+
+#### **All Nodes Go Down Without a Proper Shutdown**
+
+In a datacenter power failure or a severe bug, all nodes may crash. The `grastate.dat` file will not be updated correctly and will show `seqno: -1`.
+
+**Recovery:**
+
+1.  On each node, run `mysqld` with the `--wsrep-recover` option. This will read the database logs and report the node's last known transaction position (GTID).
+
+    Bash
+
+    ```
+    mysqld --wsrep-recover
+    ```
+2. Compare the sequence numbers from the recovered position on all nodes.
+3. On the node with the highest sequence number, edit its `/var/lib/mysql/grastate.dat` file and set `safe_to_bootstrap: 1`.
+4. Bootstrap the cluster from that node using the `galera_new_cluster` command.
+5. Start the other nodes normally.
+
+### Recovering from a Split-Brain Scenario
+
+A split-brain occurs when a network partition splits the cluster, and no resulting group has a Quorum. This is most common with an even number of nodes. All nodes will become non-Primary.
+
+**Recovery:**
+
+1. Choose one of the partitioned groups to become the new Primary Component.
+2.  On one node within that chosen group, manually force it to bootstrap:
+
+    ```sql
+    SET GLOBAL wsrep_provider_options='pc.bootstrap=true';
+    ```
+3. This group will now become operational. When network connectivity is restored, the nodes from the other partition will automatically detect this Primary Component and rejoin it.
+
+{% hint style="danger" %}
+Never execute the bootstrap command on both sides of a partition. This will create two independent, active clusters with diverging data, leading to severe data inconsistency.
+{% endhint %}
+
 ## See Also
 
 * [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (`codership-team 'at' googlegroups (dot) com`) - A great mailing list for Galera users.

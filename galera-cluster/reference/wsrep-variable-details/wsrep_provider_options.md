@@ -497,7 +497,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
 #### `socket.ssl_cipher`
 
-* Description: TLS cipher to use. Implicitly enables the [socket.ssl](wsrep_provider_options.md#socket.ssl) option. Since [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes) defaults to the value of the [ssl\_cipher](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#ssl_cipher) system variable.
+* Description: TLS cipher to use. Implicitly enables the [socket.ssl](wsrep_provider_options.md#socket.ssl) option. Since [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes) defaults to the value of the [ssl\_cipher](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption/ssltls-system-variables#ssl_cipher) system variable.
 * Dynamic: No
 * Default: system default, before [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes) defaults to `AES128-SHA`.
 
