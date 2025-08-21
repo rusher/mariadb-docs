@@ -8,7 +8,7 @@ ColumnStore uses the optimizer statistics to add support for queries that contai
 
 In Enterprise ColumnStore 5 and before, ColumnStore would raise the following error when a query containing a circular inner join was executed:
 
-```
+```sql
 ERROR 1815 (HY000): Internal error: IDB-1003: Circular joins are not supported.
 ```
 
@@ -16,7 +16,7 @@ The optimizer statistics store each column's NDV (Number of Distinct Values), wh
 
 Enterprise ColumnStore's optimizer statistics can be collected for ColumnStore tables by executing [ANALYZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table):
 
-```
+```sql
 [[analyze-table|ANALYZE TABLE]] columnstore_tab;
 ```
 

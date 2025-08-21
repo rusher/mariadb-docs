@@ -15,6 +15,7 @@
   * [MariaDB Enterprise Columnstore Locking](architecture/mariadb-enterprise-columnstore-locking.md)
   * [Mariadb Enterprise Columnstore Query Evaluation](architecture/mariadb-enterprise-columnstore-query-evaluation.md)
   * [ColumnStore Storage Engine](architecture/columnstore-storage-engine-overview.md)
+  * [Topologies Overview](architecture/topologies-overview.md)
 * [Managing ColumnStore](management/README.md)
   * [ColumnStore Minimum Hardware Specification](management/columnstore-minimum-hardware-specification.md)
   * [Managing ColumnStore Database Environment](management/managing-columnstore-database-environment/README.md)
