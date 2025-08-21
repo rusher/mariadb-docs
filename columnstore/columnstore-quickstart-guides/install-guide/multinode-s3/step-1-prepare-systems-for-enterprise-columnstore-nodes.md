@@ -6,7 +6,7 @@ description: 'Step 1: Prepare Systems for Enterprise ColumnStore Nodes'
 
 ## Overview
 
-This page details step 1 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Object storage](broken-reference).
+This page details step 1 of a 5-step procedure for deploying Single-Node Enterprise ColumnStore with Object storage.
 
 This step prepares the system to host MariaDB Enterprise Server and MariaDB Enterprise ColumnStore 23.10.
 
@@ -144,9 +144,7 @@ $ sudo localedef -i en_US -f UTF-8 en_US.UTF-8
 
 ## Create an S3 Bucket
 
-If you want to use S3-compatible storage, it is important to create the S3 bucket before you start ColumnStore.
-
-If you already have an S3 bucket, confirm that the bucket is empty.
+If you want to use S3-compatible storage, it is important to create the S3 bucket before you start ColumnStore. If you already have an S3 bucket, confirm that the bucket is empty.
 
 S3 bucket configuration will be performed later in this procedure.
 
@@ -156,7 +154,7 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Object storag
 
 This page was step 1 of 5.
 
-Next: Step 2: Install MariaDB Enterprise ColumnStore.
+[Next: Step 2: Install MariaDB Enterprise ColumnStore](step-3-start-and-configure-enterprise-columnstore.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

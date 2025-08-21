@@ -6,7 +6,7 @@ description: 'Step 5: Bulk Import of Data'
 
 ## Overview
 
-This page details step 5 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Object storage](broken-reference).
+This page details step 5 of a 5-step procedure for deploying Single-Node Enterprise ColumnStore with Object storage.
 
 This step bulk imports data to Enterprise ColumnStore.
 

@@ -48,7 +48,7 @@ The Enterprise ColumnStore node:
 
 ### High Availability
 
-Single-Node Enterprise ColumnStore does not provide high availability (HA) for Online Analytical Processing (OLAP). If you would like to deploy Enterprise ColumnStore with high availability, see [Enterprise ColumnStore with Object storage](broken-reference).
+Single-Node Enterprise ColumnStore does not provide high availability (HA) for Online Analytical Processing (OLAP). If you would like to deploy Enterprise ColumnStore with high availability, see Enterprise ColumnStore with Object storage.
 
 ## Requirements
 
@@ -81,13 +81,13 @@ MariaDB Enterprise ColumnStore will refuse to start if the system has less than 
 
 If Enterprise ColumnStore is started on a system with less memory, the following error message will be written to the ColumnStore system log called `crit.log`:
 
-```
+```sql
 Apr 30 21:54:35 a1ebc96a2519 PrimProc[1004]: 35.668435 |0|0|0| C 28 CAL0000: Error total memory available is less than 3GB.
 ```
 
 And the following error message will be raised to the client:
 
-```
+```sql
 ERROR 1815 (HY000): Internal error: System is not ready yet. Please try again.
 ```
 
@@ -141,7 +141,7 @@ If you have any questions about using specific S3-compatible object storage with
 
 MariaDB Enterprise Server Configuration Management
 
-<table><thead><tr><th width="221.111083984375">Method</th><th>Description</th></tr></thead><tbody><tr><td>Configuration File</td><td>Configuration files (such as <code>/etc/my.cnf</code>) can be used to set <a href="broken-reference">system variables</a> and <a href="broken-reference">options</a>. The server must be restarted to apply changes made to configuration files.</td></tr><tr><td>Command-line</td><td>The server can be started with command-line options that set <a href="broken-reference">system variables</a> and <a href="broken-reference">options</a>.</td></tr><tr><td>SQL</td><td>Users can set <a href="broken-reference">system variables</a> that support dynamic changes on-the-fly using the <a href="broken-reference">SET</a> statement.</td></tr></tbody></table>
+<table><thead><tr><th width="221.111083984375">Method</th><th>Description</th></tr></thead><tbody><tr><td>Configuration File</td><td>Configuration files (such as <code>/etc/my.cnf</code>) can be used to set <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables">system variables</a> and <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options">options</a>. The server must be restarted to apply changes made to configuration files.</td></tr><tr><td>Command-line</td><td>The server can be started with command-line options that set <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables">system variables</a> and <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options">options</a>.</td></tr><tr><td>SQL</td><td>Users can set <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables">system variables</a> that support dynamic changes on-the-fly using the <a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set">SET</a> statement.</td></tr></tbody></table>
 
 MariaDB Enterprise Server packages are configured to read configuration files from different paths, depending on the operating system. Making custom changes to Enterprise Server default configuration files is not recommended because custom changes may be overwritten by other default configuration files that are loaded later.
 
@@ -159,7 +159,7 @@ The `systemctl` command is used to start and stop the MariaDB Enterprise Server 
 
 Navigation in the Single-Node Enterprise ColumnStore topology with Object storage deployment procedure:
 
-Next: Step 1: Install MariaDB Enterprise ColumnStore.
+[Next: Step 1: Install MariaDB Enterprise ColumnStore](step-2-install-enterprise-columnstore.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

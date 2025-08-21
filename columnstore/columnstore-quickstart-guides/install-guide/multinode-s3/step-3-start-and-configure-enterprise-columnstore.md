@@ -53,7 +53,7 @@ path       = your_local_cache_path
 
 The S3-compatible object storage options are configured under `[S3]`:
 
-* The `bucket` option must be set to the name of the bucket that you created in "[Create an S3 Bucket](broken-reference)".
+* The `bucket` option must be set to the name of the bucket that you created in "Create an S3 Bucket".
 * The `endpoint` option must be set to the endpoint for the S3-compatible object storage.
 * The `aws_access_key_id` and `aws_secret_access_key` options must be set to the access key ID and secret access key for the S3-compatible object storage.
 * To use a specific IAM role, you must uncomment and set `iam_role_name`, `sts_region`, and `sts_endpoint`.
@@ -88,14 +88,14 @@ $ sudo systemctl enable mariadb-columnstore
 
 Enterprise ColumnStore requires a mandatory utility user account to perform cross-engine joins and similar operations.
 
-1. Create the user account with the [CREATE USER](broken-reference) statement:
+1. Create the user account with the [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/create-user) statement:
 
 ```sql
 CREATE USER 'util_user'@'127.0.0.1'
 IDENTIFIED BY 'util_user_passwd';
 ```
 
-2. Grant the user account `SELECT` privileges on all databases with the [GRANT](broken-reference) statement:
+2. Grant the user account `SELECT` privileges on all databases with the [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) statement:
 
 ```sql
 GRANT SELECT, PROCESS ON *.*
@@ -198,7 +198,7 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Object storag
 
 This page was step 3 of 5.
 
-Next: Step 4: Test MariaDB Enterprise ColumnStore.
+[Next: Step 4: Test MariaDB Enterprise ColumnStore.](step-4-test-enterprise-columnstore.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

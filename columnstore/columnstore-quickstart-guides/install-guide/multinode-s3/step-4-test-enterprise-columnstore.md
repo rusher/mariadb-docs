@@ -6,7 +6,7 @@ description: 'Step 4: Test Enterprise ColumnStore'
 
 ## Overview
 
-This page details step 4 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Object storage](broken-reference).
+This page details step 4 of a 5-step procedure for deploying Single-Node Enterprise ColumnStore with Object storage.
 
 This step tests MariaDB Enterprise Server and MariaDB Enterprise ColumnStore 23.10.
 
@@ -32,13 +32,13 @@ If the `testS3Connection` command does not return `OK`, investigate the S3 confi
 
 ## Test Local Connection
 
-Connect to the server using [MariaDB Client](broken-reference) using the `root@localhost` user account:
+Connect to the server using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) using the `root@localhost` user account:
 
 ```bash
 $ sudo mariadb
 ```
 
-```
+```sql
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 38
 Server version: 11.4.5-3-MariaDB-Enterprise MariaDB Enterprise Server
@@ -52,7 +52,7 @@ MariaDB [(none)]>
 
 ## Test ColumnStore Plugin Status
 
-Query [information\_schema.PLUGINS](broken-reference) and confirm that the ColumnStore storage engine plugin is `ACTIVE`:
+Query [information\_schema.PLUGINS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema) and confirm that the ColumnStore storage engine plugin is `ACTIVE`:
 
 ```sql
 SELECT PLUGIN_NAME, PLUGIN_STATUS
@@ -60,7 +60,7 @@ FROM information_schema.PLUGINS
 WHERE PLUGIN_LIBRARY LIKE 'ha_columnstore%';
 ```
 
-```
+```sql
 +---------------------+---------------+
 | PLUGIN_NAME         | PLUGIN_STATUS |
 +---------------------+---------------+
@@ -145,7 +145,7 @@ INNER JOIN (SELECT CONCAT(street_address, ", ", city, ", ", state_code) AS addr,
 WHERE  contacts.email = addr.email;
 ```
 
-```
+```sql
 +----------+-----------------------------------------+
 | Name     | Address                                 |
 +----------+-----------------------------------------+
@@ -167,7 +167,7 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Object storag
 
 This page was step 4 of 5.
 
-Next: Step 5: Bulk Import of Data.
+[Next: Step 5: Bulk Import of Data.](step-5-bulk-import-of-data.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
