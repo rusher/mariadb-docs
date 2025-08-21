@@ -85,7 +85,7 @@ SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv))
 +--------------------------------------------------------------------------------------+
 ```
 
-### Show All Locked Accounts
+### Find Locked Accounts
 
 This query against the `mysql.global_priv` table will return all accounts which have `"account_locked": true` within the `Priv` json column:
 
