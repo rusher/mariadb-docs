@@ -6,7 +6,7 @@ description: 'Step 4: Start and Configure MariaDB Enterprise Server'
 
 ## Overview
 
-This page details step 4 of the 9-step procedure "[Deploy ColumnStore Object Storage Topology](broken-reference)".
+This page details step 4 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
 This step starts and configures MariaDB Enterprise Server, and MariaDB Enterprise ColumnStore 23.10.
 
@@ -38,24 +38,13 @@ $ sudo systemctl stop mariadb-columnstore-cmapi
 
 **On each Enterprise ColumnStore node**, configure Enterprise Server.
 
-| Connector                                  | MariaDB Connector/R2DBC                                                                                                  |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| [character\_set\_server](broken-reference) | Set this system variable to `utf8`                                                                                       |
-| [collation\_server](broken-reference)      | Set this system variable to `utf8_general_ci`                                                                            |
-| columnstore\_use\_import\_for\_batchinsert | Set this system variable to ALWAYS to always use cpimport for LOAD DATA INFILE and INSERT...SELECT statements.           |
-| [gtid\_strict\_mode](broken-reference)     | Set this system variable to ON.                                                                                          |
-| [log\_bin](broken-reference)               | Set this option to the file you want to use for the Binary Log. Setting this option enables binary logging.              |
-| [log\_bin\_index](broken-reference)        | Set this option to the file you want to use to track binlog filenames.                                                   |
-| [log\_slave\_updates](broken-reference)    | Set this system variable to ON.                                                                                          |
-| [relay\_log](broken-reference)             | Set this option to the file you want to use for the Relay Logs. Setting this option enables relay logging.               |
-| [relay\_log\_index](broken-reference)      | Set this option to the file you want to use to index Relay Log filenames.                                                |
-| [server\_id](broken-reference)             | Sets the numeric Server ID for this MariaDB Enterprise Server. The value set on this option must be unique to each node. |
+<table><thead><tr><th width="212">Connector</th><th>MariaDB Connector/R2DBC</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#character_set_server">character_set_server</a></td><td>Set this system variable to utf8</td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#collation_server">collation_server</a></td><td>Set this system variable to utf8_general_ci</td></tr><tr><td>columnstore_use_import_for_batchinsert</td><td>Set this system variable to ALWAYS to always use cpimport for LOAD DATA INFILE and INSERT...SELECT statements.</td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_strict_mode">gtid_strict_mode</a></td><td>Set this system variable to ON.</td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#log_bin">log_bin</a></td><td>Set this option to the file you want to use for the Binary Log. Setting this option enables binary logging.</td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#log_bin_index">log_bin_index</a></td><td>Set this option to the file you want to use to track binlog filenames.</td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#log_slave_updates">log_slave_updates</a></td><td>Set this system variable to ON.</td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#relay_log">relay_log</a></td><td>Set this option to the file you want to use for the Relay Logs. Setting this option enables relay logging.</td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#relay_log_index">relay_log_index</a></td><td>Set this option to the file you want to use to index Relay Log filenames.</td></tr><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#server_id">server_id</a></td><td>Sets the numeric Server ID for this MariaDB Enterprise Server. The value set on this option must be unique to each node.</td></tr></tbody></table>
 
 Mandatory system variables and options for ColumnStore Object Storage include:
 
 Example Configuration
 
-```
+```sql
 [mariadb]
 bind_address                           = 0.0.0.0
 log_error                              = mariadbd.err
@@ -76,7 +65,7 @@ server_id                              = 1
 
 On each Enterprise ColumnStore node, configure S3 Storage Manager to use S3-compatible storage by editing the /etc/columnstore/storagemanager.cnf configuration file:
 
-```
+```sql
 [ObjectStorage]
 …
 service = S3
@@ -129,7 +118,7 @@ $ sudo systemctl enable mariadb
 $ sudo systemctl stop mariadb-columnstore
 ```
 
-After the CMAPI service is installed in the next step, CMAPI will start the Enterprise ColumnStore service as-needed on each node. CMAPI disables the Enterprise ColumnStore service to prevent systemd from automatically starting Enterprise ColumnStore upon reboot.
+After the CMAPI service is installed in the next step, CMAPI will start the Enterprise ColumnStore service as needed on each node. CMAPI disables the Enterprise ColumnStore service to prevent systemd from automatically starting Enterprise ColumnStore upon reboot.
 
 3. On each Enterprise ColumnStore node, start and enable the CMAPI service, so that it starts automatically upon reboot:
 
@@ -141,7 +130,7 @@ $ sudo systemctl start mariadb-columnstore-cmapi
 $ sudo systemctl enable mariadb-columnstore-cmapi
 ```
 
-For additional information, see "[Starting and Stopping MariaDB](broken-reference)".
+For additional information, see "[Starting and Stopping MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb)".
 
 ## Create User Accounts
 
@@ -223,7 +212,7 @@ ColumnStore Object Storage 23.10 uses MariaDB MaxScale 22.08 to load balance bet
 
 This action is performed on the primary server.
 
-1. Use the [CREATE USER](broken-reference) statement to create the MaxScale user:
+1. Use the [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/create-user) statement to create the MaxScale user:
 
 ```sql
 CREATE USER 'mxs'@'192.0.2.%'
@@ -234,7 +223,7 @@ Replace the referenced IP address with the relevant address for your environment
 
 Ensure that the user account can connect from the IP address of the MaxScale instance.
 
-2. Use the [GRANT](broken-reference) statement to grant the privileges required by the router:
+2. Use the [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) statement to grant the privileges required by the router:
 
 ```sql
 GRANT SHOW DATABASES ON *.* TO 'mxs'@'192.0.2.%';
@@ -254,7 +243,7 @@ GRANT SELECT ON mysql.tables_priv TO 'mxs'@'192.0.2.%';
 GRANT SELECT ON mysql.user TO 'mxs'@'192.0.2.%';
 ```
 
-3. Use the [GRANT](broken-reference) statement to grant privileges required by the MariaDB Monitor.
+3. Use the [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) statement to grant privileges required by the MariaDB Monitor.
 
 ```sql
 GRANT BINLOG ADMIN,
@@ -727,7 +716,7 @@ Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
 
 This page was **step 4 of 9**.
 
-Next: Step 5: Test MariaDB Enterprise Server.
+[Next: Step 5: Test MariaDB Enterprise Server.](step-5-test-mariadb-enterprise-server.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

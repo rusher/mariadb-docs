@@ -2,8 +2,8 @@
 
 ## Overview
 
-| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../.gitbook/assets/es-columnstore-topology-s3-no-title.png) | <p><strong>Columnar storage engine with S3-compatible object storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
-| ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../.gitbook/assets/es-columnstore-topology-s3-no-title.png) | <p><strong>Columnar storage engine with S3-compatible object storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales read via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
+| ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 This procedure describes the deployment of the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
 
@@ -19,17 +19,17 @@ Please read and understand this procedure before executing.
 
 ## Procedure Steps
 
-| Step                       | Description                                   |
-| -------------------------- | --------------------------------------------- |
-| [Step 1](broken-reference) | Prepare ColumnStore Nodes                     |
-| [Step 2](broken-reference) | Configure Shared Local Storage                |
-| [Step 3](broken-reference) | Install MariaDB Enterprise Server             |
-| [Step 4](broken-reference) | Start and Configure MariaDB Enterprise Server |
-| [Step 5](broken-reference) | Test MariaDB Enterprise Server                |
-| [Step 6](broken-reference) | Install MariaDB MaxScale                      |
-| [Step 7](broken-reference) | Start and Configure MariaDB MaxScale          |
-| [Step 8](broken-reference) | Test MariaDB MaxScale                         |
-| [Step 9](broken-reference) | Import Data                                   |
+| Step                                                              | Description                                   |
+| ----------------------------------------------------------------- | --------------------------------------------- |
+| [Step 1](step-1-prepare-columnstore-nodes.md)                     | Prepare ColumnStore Nodes                     |
+| [Step 2](step-2-configure-shared-local-storage.md)                | Configure Shared Local Storage                |
+| [Step 3](step-3-install-mariadb-enterprise-server.md)             | Install MariaDB Enterprise Server             |
+| [Step 4](step-4-start-and-configure-mariadb-enterprise-server.md) | Start and Configure MariaDB Enterprise Server |
+| [Step 5](step-5-test-mariadb-enterprise-server.md)                | Test MariaDB Enterprise Server                |
+| [Step 6](step-6-install-mariadb-maxscale.md)                      | Install MariaDB MaxScale                      |
+| [Step 7](step-7-start-and-configure-mariadb-maxscale.md)          | Start and Configure MariaDB MaxScale          |
+| [Step 8](step-8-test-mariadb-maxscale.md)                         | Test MariaDB MaxScale                         |
+| [Step 9](step-9-import-data.md)                                   | Import Data                                   |
 
 ## Support
 
@@ -339,7 +339,7 @@ The systemctl command is used to start and stop the MariaDB Enterprise Server se
 
 <table><thead><tr><th width="262.592529296875">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb</code></td></tr></tbody></table>
 
-For additional information, see "[Starting and Stopping MariaDB](broken-reference)".
+For additional information, see "[Starting and Stopping MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb)".
 
 ### MariaDB Enterprise Server Logs
 
@@ -347,13 +347,19 @@ MariaDB Enterprise Server produces log data that can be helpful in problem diagn
 
 Log filenames and locations may be overridden in the server configuration. The default location of logs is the data directory. The data directory is specified by the datadir system variable.
 
-<table><thead><tr><th width="249">Log</th><th>System Variable/Option</th><th>Default Filename</th></tr></thead><tbody><tr><td><a href="broken-reference">MariaDB Error Log</a></td><td><a href="broken-reference">log_error</a></td><td><code>&#x3C;hostname>.err</code></td></tr><tr><td><a href="broken-reference">MariaDB Enterprise Audit Log</a></td><td><a href="broken-reference">server_audit_file_path</a></td><td><code>server_audit.log</code></td></tr><tr><td><a href="broken-reference">Slow Query Log</a></td><td><a href="broken-reference">slow_query_log_file</a></td><td><code>&#x3C;hostname>-slow.log</code></td></tr><tr><td><a href="broken-reference">General Query Log</a></td><td><a href="broken-reference">general_log_file</a></td><td><code>&#x3C;hostname>.log</code></td></tr><tr><td><a href="broken-reference">Binary Log</a></td><td><a href="broken-reference">log_bin</a></td><td><code>&#x3C;hostname>-bin</code></td></tr></tbody></table>
+| Log                                                                                                                            | System Variable/Option                                                                                                                                                                      | Default Filename      |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log)         | [log\_error](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_error)                                                        | `<hostname>.err`      |
+| [MariaDB Enterprise Audit Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit)      | [server\_audit\_file\_path](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables#server_audit_file_path) | `server_audit.log`    |
+| [Slow Query Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log)       | [slow\_query\_log\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#slow_query_log_file)                                  | `<hostname>-slow.log` |
+| [General Query Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/general-query-log) | [general\_log\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#general_log_file)                                         | `<hostname>.log`      |
+| [Binary Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log)               | [log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#log_bin)                                      | `<hostname>-bin`      |
 
 ### Enterprise ColumnStore Service Management
 
 The systemctl command is used to start and stop the ColumnStore service.
 
-<table><thead><tr><th width="262.5926513671875">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb-columnstore</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb-columnstore</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb-columnstore</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb-columnstore</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb-columnstore</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb-columnstore</code></td></tr></tbody></table>
+<table><thead><tr><th width="229.5926513671875">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb-columnstore</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb-columnstore</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb-columnstore</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb-columnstore</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb-columnstore</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb-columnstore</code></td></tr></tbody></table>
 
 In the ColumnStore Object Storage topology, the mariadb-columnstore service should not be enabled. The CMAPI service restarts Enterprise ColumnStore as needed, so it does not need to start automatically upon reboot.
 
@@ -369,7 +375,7 @@ For additional information on endpoints, see "CMAPI".
 
 MaxScale can be configured using several methods. These methods make use of MaxScale's [REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/).
 
-<table><thead><tr><th width="210.44439697265625">Method</th><th>Benefits</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/">MaxCtrl</a></td><td>Command-line utility to perform administrative tasks through the REST API. See MaxCtrl Commands.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/maxgui/">MaxGUI</a></td><td>MaxGUI is a graphical utility that can perform administrative tasks through the REST API.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/">REST API</a></td><td>The REST API can be used directly. For example, the curl utility could be used to make REST API calls from the command-line. Many programming languages also have libraries to interact with REST APIs.</td></tr></tbody></table>
+<table><thead><tr><th width="125.44439697265625">Method</th><th>Benefits</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/">MaxCtrl</a></td><td>Command-line utility to perform administrative tasks through the REST API. See MaxCtrl Commands.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/maxgui/">MaxGUI</a></td><td>MaxGUI is a graphical utility that can perform administrative tasks through the REST API.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/">REST API</a></td><td>The REST API can be used directly. For example, the curl utility could be used to make REST API calls from the command-line. Many programming languages also have libraries to interact with REST APIs.</td></tr></tbody></table>
 
 The procedure on these pages configures MaxScale using MaxCtrl.
 
@@ -377,14 +383,14 @@ The procedure on these pages configures MaxScale using MaxCtrl.
 
 The `systemctl` command is used to start and stop the MaxScale service.
 
-<table><thead><tr><th width="281.5555419921875">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start maxscale</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop maxscale</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart maxscale</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable maxscale</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable maxscale</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status maxscale</code></td></tr></tbody></table>
+<table><thead><tr><th width="209.5555419921875">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start maxscale</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop maxscale</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart maxscale</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable maxscale</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable maxscale</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status maxscale</code></td></tr></tbody></table>
 
-For additional information, see "[Starting and Stopping MariaDB](broken-reference)".
+For additional information, see "[Starting and Stopping MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb)".
 
 ## Next Step
 
 Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
 
-Next: Step 1: Prepare ColumnStore Nodes.
+[Next: Step 1: Prepare ColumnStore Nodes](step-1-prepare-columnstore-nodes.md).
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>

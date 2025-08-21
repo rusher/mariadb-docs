@@ -6,7 +6,7 @@ description: 'Step 8: Test MariaDB MaxScale'
 
 ## Overview
 
-This page details step 8 of the 9-step procedure "[Deploy ColumnStore Object Storage Topology](broken-reference)".
+This page details step 8 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
 This step tests MariaDB MaxScale 22.08.
 
@@ -22,7 +22,7 @@ This action is performed **on the MaxScale node**:
 $ maxctrl show maxscale
 ```
 
-```
+```sql
 ┌──────────────┬───────────────────────────────────────────────────────┐
 │ Version      │ 22.08.15                                              │
 ├──────────────┼───────────────────────────────────────────────────────┤
@@ -121,7 +121,7 @@ This action is performed **on the MaxScale node**:
 $ maxctrl list servers
 ```
 
-```
+```sql
 ┌────────┬────────────────┬──────┬─────────────┬─────────────────┬────────┐
 │ Server │ Address        │ Port │ Connections │ State           │ GTID   │
 ├────────┼────────────────┼──────┼─────────────┼─────────────────┼────────┤
@@ -139,7 +139,7 @@ For each server object, view the configuration:
 $ maxctrl show server mcs1
 ```
 
-```
+```sql
 ┌─────────────────────┬───────────────────────────────────────────┐
 │ Server              │ mcs1                                      │
 ├─────────────────────┼───────────────────────────────────────────┤
@@ -225,7 +225,7 @@ This action is performed on the MaxScale node:
 $ maxctrl list monitors
 ```
 
-```
+```sql
 ┌─────────────────────┬─────────┬──────────────────┐
 │ Monitor             │ State   │ Servers          │
 ├─────────────────────┼─────────┼──────────────────┤
@@ -239,7 +239,7 @@ $ maxctrl list monitors
 $ maxctrl show monitor columnstore_monitor
 ```
 
-```
+```sql
 ┌─────────────────────┬─────────────────────────────────────┐
 │ Monitor             │ columnstore_monitor                 │
 ├─────────────────────┼─────────────────────────────────────┤
@@ -286,7 +286,7 @@ This action is performed on the MaxScale node:
 $ maxctrl list services
 ```
 
-```
+```sql
 ┌───────────────────────────┬────────────────┬─────────────┬───────────────────┬──────────────────┐
 │ Service                   │ Router         │ Connections │ Total Connections │ Servers          │
 ├───────────────────────────┼────────────────┼─────────────┼───────────────────┼──────────────────┤
@@ -302,7 +302,7 @@ $ maxctrl list services
 $ maxctrl show service query_router_service
 ```
 
-```
+```sql
 ┌─────────────────────┬─────────────────────────────────────────────────────────────┐
 │ Service             │ query_router_service                                        │
 ├─────────────────────┼─────────────────────────────────────────────────────────────┤
@@ -518,7 +518,7 @@ If you configured the Read/Write Split Router, confirm that MaxScale routes writ
 $ maxctrl list listeners
 ```
 
-```
+```sql
 ┌────────────────────────────┬──────┬──────┬─────────┬───────────────────────────┐
 │ Name                       │ Port │ Host │ State   │ Service                   │
 ├────────────────────────────┼──────┼──────┼─────────┼───────────────────────────┤
@@ -631,7 +631,7 @@ SELECT @@global.hostname, @@global.server_id;
 
 Confirm that MaxScale routes the SELECT statements to different replica servers.
 
-For more information on different routing criteria, see slave\_selection\_criteria
+For more information on different routing criteria, see `slave_selection_criteria`
 
 ## Next Step
 
@@ -639,7 +639,7 @@ Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
 
 This page was **step 8 of 9**.
 
-Next: Step 9: Import Data
+[Next: Step 9: Import Data](step-9-import-data.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

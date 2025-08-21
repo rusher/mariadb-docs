@@ -6,7 +6,7 @@ description: 'Step 1: Prepare ColumnStore Nodes'
 
 ## Overview
 
-This page details step 1 of the 9-step procedure "[Deploy ColumnStore Object Storage Topology](broken-reference)".
+This page details step 1 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
 This step prepares systems to host MariaDB Enterprise Server and MariaDB Enterprise ColumnStore 23.10.
 
@@ -113,7 +113,7 @@ $ sudo systemctl disable apparmor
 $ sudo aa-status
 ```
 
-```
+```sql
 apparmor module is loaded.
 0 profiles are loaded.
 0 profiles are in enforce mode.
@@ -130,13 +130,7 @@ AppArmor will be configured and re-enabled later in this deployment procedure.
 
 MariaDB Enterprise ColumnStore requires the following TCP ports:
 
-| TCP Ports | Description                                  |
-| --------- | -------------------------------------------- |
-| 3306      | Port used for MariaDB Client traffic         |
-| 8600-8630 | Port range used for inter-node communication |
-| 8640      | Port used by CMAPI                           |
-| 8700      | Port used for inter-node communication       |
-| 8800      | Port used for inter-node communication       |
+<table><thead><tr><th width="185">TCP Ports</th><th>Description</th></tr></thead><tbody><tr><td>3306</td><td>Port used for MariaDB Client traffic</td></tr><tr><td>8600-8630</td><td>Port range used for inter-node communication</td></tr><tr><td>8640</td><td>Port used by CMAPI</td></tr><tr><td>8700</td><td>Port used for inter-node communication</td></tr><tr><td>8800</td><td>Port used for inter-node communication</td></tr></tbody></table>
 
 The firewall should be temporarily disabled on each Enterprise ColumnStore node during installation.
 
@@ -204,7 +198,7 @@ MariaDB Enterprise ColumnStore requires all nodes to have host names that are re
 
 On each Enterprise ColumnStore node, edit the /etc/hosts file to map host names to the IP address of each Enterprise ColumnStore node:
 
-```
+```sql
 192.0.2.1     mcs1
 192.0.2.2     mcs2
 192.0.2.3     mcs3
@@ -227,7 +221,7 @@ Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
 
 This page was step 1 of 9.
 
-Next: Step 2: Configure Shared Local Storage.
+[Next: Step 2: Configure Shared Local Storage](step-2-configure-shared-local-storage.md).
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

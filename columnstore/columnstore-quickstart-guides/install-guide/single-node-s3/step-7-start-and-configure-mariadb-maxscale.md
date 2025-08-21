@@ -6,7 +6,7 @@ description: 'Step 7: Start and Configure MariaDB MaxScale'
 
 ## Overview
 
-This page details step 7 of the 9-step procedure "[Deploy ColumnStore Object Storage Topology](broken-reference)".
+This page details step 7 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
 This step starts and configures MariaDB MaxScale 22.08.
 
@@ -183,7 +183,7 @@ Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
 
 This page was **step 7 of 9**.
 
-Next: Step 8: Test MariaDB MaxScale
+[Next: Step 8: Test MariaDB MaxScale](step-8-test-mariadb-maxscale.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

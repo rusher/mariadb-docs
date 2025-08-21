@@ -6,7 +6,7 @@ description: 'Step 9: Import Data'
 
 ## Overview
 
-This page details step 9 of the 9-step procedure "[Deploy ColumnStore Object Storage Topology](broken-reference)".
+This page details step 9 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
 This step bulk imports data to Enterprise ColumnStore.
 

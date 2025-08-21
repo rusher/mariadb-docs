@@ -6,7 +6,7 @@ description: 'Step 2: Configure Shared Local Storage'
 
 ## Overview
 
-This page details step 2 of the 9-step procedure "[Deploy ColumnStore Object Storage Topology](broken-reference)".
+This page details step 2 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
 This step configures shared local storage on systems hosting Enterprise ColumnStore 23.10.
 
@@ -32,7 +32,7 @@ Select a Shared Local Storage solution for the Storage Manager directory:
 * [GlusterFS](step-2-configure-shared-local-storage.md#configure-glusterfs)
 * [NFS (Network File System)](step-2-configure-shared-local-storage.md#configure-network-file-system-nfs)
 
-For additional information, see "[Shared Local Storage Options](broken-reference)".
+For additional information, see "[Shared Local Storage Options](step-2-configure-shared-local-storage.md#choose-a-shared-local-storage-solution)".
 
 ## Configure EBS Multi-Attach
 
@@ -66,9 +66,7 @@ For Enterprise ColumnStore deployments in GCP:
 
 ## Configure GlusterFS
 
-GlusterFS is a distributed file system.
-
-GlusterFS is a shared local storage option, but it is not one of the recommended options.
+GlusterFS is a distributed file system. GlusterFS is a shared local storage option, but it is not one of the recommended options.
 
 For more information, see "[Recommended Storage Options](../../../architecture/columnstore-storage-architecture.md#recommended-storage-options)".
 
@@ -160,7 +158,7 @@ peer probe: Host mcs1 port 24007 already in peer list
 $ sudo gluster peer status
 ```
 
-```
+```sql
 Number of Peers: 2
 
 Hostname: mcs2
@@ -234,7 +232,7 @@ Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
 
 This page was **step 2 of 9**.
 
-Next: Step 3: Install MariaDB Enterprise Server.
+[Next: Step 3: Install MariaDB Enterprise Server.](step-3-install-mariadb-enterprise-server.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

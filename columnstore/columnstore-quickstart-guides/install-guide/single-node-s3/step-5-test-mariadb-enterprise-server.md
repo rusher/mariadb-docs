@@ -6,7 +6,7 @@ description: 'Step 5: Test MariaDB Enterprise Server'
 
 ## Overview
 
-This page details step 5 of the 9-step procedure "[Deploy ColumnStore Object Storage Topology](broken-reference)".
+This page details step 5 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
 
 This step tests MariaDB Enterprise Server and MariaDB Enterprise ColumnStore 23.10.
 
@@ -52,7 +52,7 @@ $ sudo systemctl start mariadb
 
 ## Test Local Client Connections
 
-Use [MariaDB Client](broken-reference) to test the local connection to the Enterprise Server node.
+Use [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) to test the local connection to the Enterprise Server node.
 
 This action is performed on each Enterprise ColumnStore node:
 
@@ -73,7 +73,7 @@ The `sudo` command is used here to connect to the Enterprise Server node using t
 
 ## Test ColumnStore Storage Engine Plugin
 
-Query the [information\_schema.PLUGINS](broken-reference) table to confirm that the ColumnStore storage engine is loaded.
+Query the [information\_schema.PLUGINS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/plugins-table-information-schema) table to confirm that the ColumnStore storage engine is loaded.
 
 This action is performed on each Enterprise ColumnStore node.
 
@@ -313,7 +313,7 @@ Navigation in the procedure 'Deploy ColumnStore Object Storage Topology".
 
 This page was **step 5 of 9**.
 
-Next: Step 6: Install MariaDB MaxScale.
+[Next: Step 6: Install MariaDB MaxScale.](step-6-install-mariadb-maxscale.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
