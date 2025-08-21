@@ -58,8 +58,6 @@ Each mariadb-backup release only has one version number, and it is the same as t
 mariadb-backup based on MariaDB server 10.2.15-MariaDB Linux (x86_64)
 ```
 
-See [Compatibility of mariadb-backup Releases with MariaDB Server Releases](mariadb-backup-overview.md#compatibility-of-mariadb-backup-releases-with-mariadb-server-releases) for more information on mariadb-backup versions.
-
 ## Installing `mariadb-backup`
 
 ### Installing on Linux
