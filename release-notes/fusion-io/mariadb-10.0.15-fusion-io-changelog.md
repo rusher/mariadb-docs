@@ -1,6 +1,6 @@
 # MariaDB 10.0.15 Fusion-io Changelog
 
-[Download](https://ftp.osuosl.org/pub/mariadb/mariadb-10.0.15-fusion-io/)[Release Notes](broken-reference)[Changelog](broken-reference)[Fusion-io Introduction](broken-reference)
+[Download](https://ftp.osuosl.org/pub/mariadb/mariadb-10.0.15-fusion-io/)[Release Notes](mariadb-10.0.15-fusion-io-release-notes.md)[Changelog](mariadb-10.0.15-fusion-io-changelog.md)[Fusion-io Introduction](fusion-io-introduction.md)
 
 **Release date:** 12 Dec 2014
 
@@ -12,7 +12,7 @@ modified in that revision.
 
 * [Revision #4009](https://bazaar.launchpad.net/~maria-captains/maria/10.0-FusionIO/revision/4009)\
   Thu 2014-12-04 13:19:51 +0200
-  * [MDEV-7262](https://jira.mariadb.org/browse/MDEV-7262): innodb.innodb-mdev7046 and innodb-page\_compression\* fail on BuildBot
+  * [MDEV-7262](https://jira.mariadb.org/browse/MDEV-7262): innodb.innodb-mdev7046 and innodb-page\_ompression\* fail on BuildBot
 * [Revision #4008](https://bazaar.launchpad.net/~maria-captains/maria/10.0-FusionIO/revision/4008)\
   Wed 2014-12-03 13:23:42 +0200
   * Fix problem with trims.
@@ -120,7 +120,7 @@ modified in that revision.
   * Merge lp:maria/10.0 up to [MariaDB 10.0.10](../community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) revision 4140.
 * [Revision #3973](https://bazaar.launchpad.net/~maria-captains/maria/10.0-FusionIO/revision/3973)\
   Wed 2014-04-16 16:55:36 +0300
-  * [MDEV-6070](https://jira.mariadb.org/browse/MDEV-6070): FusionIO: Failure to create a table with ATOMIC\_WRITES option leaves the database in inconsistent state,
+  * [MDEV-6070](https://jira.mariadb.org/browse/MDEV-6070): FusionIO: Failure to create a table with ATOMIC\_WRITES option leaves the database in an nconsistent state,
 * [Revision #3972](https://bazaar.launchpad.net/~maria-captains/maria/10.0-FusionIO/revision/3972)\
   Tue 2014-04-15 14:28:25 +0300
   * Added support for LZO compression method.
