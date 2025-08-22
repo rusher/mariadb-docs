@@ -2794,7 +2794,7 @@ Options:
 #### reload tls
 
 ```
-Usage: reload service <service>
+Usage: reload tls <service>
 
 Global Options:
   -c, --config     MaxCtrl configuration file  [string] [default: "~/.maxctrl.cnf"]
