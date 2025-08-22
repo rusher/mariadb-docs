@@ -2463,3 +2463,7 @@
 * [Enterprise Operator Release Notes](enterprise-operator/README.md)
   * [MariaDB Enterprise Operator 1.0.0](enterprise-operator/mariadb-enterprise-operator-1-0-0.md)
 * [Test Page](test-page.md)
+* [Fusion-io](fusion-io/README.md)
+  * [Fusion-io Introduction](fusion-io/fusion-io-introduction.md)
+  * [MariaDB 10.0.15 Fusion-io Changelog](fusion-io/mariadb-10.0.15-fusion-io-changelog.md)
+  * [MariaDB 10.0.15 Fusion-io Release Notes](fusion-io/mariadb-10.0.15-fusion-io-release-notes.md)
