@@ -1480,6 +1480,18 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Default Value: `151`
 * Range: `10` to `100000`
 
+{% hint style="info" %}
+**Systemd thread limit (MDEV-30236)**\
+When running MariaDB under systemd, be aware that systemd's default `TasksMax` (≈ 4,915 tasks per service) may prevent reaching high `max_connections` values—even if configured higher. Starting with MariaDB 10.4.33, the systemd unit includes:
+
+```ini
+[Service]
+TasksMax=infinity
+```
+
+This setting removes the artificial cap, allowing `max_connections` to scale per your configuration (subject to OS memory and thread limits).
+{% endhint %}
+
 #### `max_delayed_threads`
 
 * Description: Limits to the number of [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) threads. Once this limit is reached, the insert is handled as if there was no DELAYED attribute. If set to `0`, DELAYED is ignored entirely. The session value can only be set to `0` or to the same as the global value.
