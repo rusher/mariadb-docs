@@ -131,7 +131,7 @@
 * [Cassandra\_unavailable\_exceptions](../server-usage/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_unavailable_exceptions)
 * [cassandra\_write\_consistency](../server-usage/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_write_consistency)
 * [character\_set\_client](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client)
-* \--[character-set-client-handshake](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)
+* \--[character-set-client-handshake](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#character-set-client-handshake)
 * [character\_set\_collations](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_collations)
 * [character\_set\_connection](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection)
 * [character\_set\_database](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_database)
