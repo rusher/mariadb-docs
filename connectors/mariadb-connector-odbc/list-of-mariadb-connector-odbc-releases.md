@@ -2,7 +2,7 @@
 
 [Download MariaDB Connector/ODBC](https://mariadb.com/downloads/mariadb-tx/connector)
 
-[<< back to About MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-odbc/README.md)
+[<< back to About MariaDB Connector/ODBC](mariadb-connector-odbc-guide.md)
 
 | Date        | Release                       | Status      | Release Notes                                                                                                                                                        | Changelog                                                                                                                                                           |
 | ----------- | ----------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -58,7 +58,6 @@
 | 29 Jan 2015 | MariaDB Connector/ODBC 1.0.0  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-10-release-notes/mariadb-connector-odbc-100-release-notes)     | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-10-changelogs/mariadb-connector-odbc-100-changelog)    |
 | 2 Apr 2014  | MariaDB ODBC Driver 0.9.1     | Beta        | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-10-release-notes/mariadb-odbc-driver-09-beta)                  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-10-changelogs/mariadb-odbc-driver-091-changelog)       |
 
-[<< back to About MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-odbc/README.md)
-
+[<< back to About MariaDB Connector/ODBC](mariadb-connector-odbc-guide.md)
 
 {% @marketo/form formId="4316" %}
