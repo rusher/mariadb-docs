@@ -70,7 +70,7 @@ WHERE PLUGIN_NAME='SERVER_AUDIT'\G
 ```sql
 *************************** 1. row ***************************
      PLUGIN_STATUS: ACTIVE
-    PLUGIN_LIBRARY: server_audit.so
+    PLUGIN_LIBRARY: server_audit2.so
 PLUGIN_DESCRIPTION: Audit the server activity
 ```
 
@@ -93,7 +93,7 @@ WHERE name = 'SERVER_AUDIT'\G
 ```sql
 *************************** 1. row ***************************
 name: SERVER_AUDIT
-  dl: server_audit.so
+  dl: server_audit2.so
 ```
 
 If you see the output shown above, then the MariaDB Audit plugin can be uninstalled with [UNINSTALL SONAME](mariadb-enterprise-audit.md#uninstall-with-uninstall-soname).
@@ -115,7 +115,7 @@ WHERE PLUGIN_NAME='SERVER_AUDIT'\G
 ```sql
 *************************** 1. row ***************************
      PLUGIN_STATUS: ACTIVE
-    PLUGIN_LIBRARY: server_audit.so
+    PLUGIN_LIBRARY: server_audit2.so
 PLUGIN_DESCRIPTION: Audit the server activity
        LOAD_OPTION: FORCE_PLUS_PERMANENT
 ```
@@ -212,11 +212,11 @@ SHOW GLOBAL VARIABLES
 2. Confirm that your server's plugin directory contains server\_audit.so, which is the shared library for MariaDB Enterprise Audit:
 
 ```bash
-$ ls -l /usr/lib64/mysql/plugin/server_audit.so
+$ ls -l /usr/lib64/mysql/plugin/server_audit2.so
 ```
 
 ```bash
--rwxr-xr-x. 1 root root 70432 Jul 15 19:03 /usr/lib64/mysql/plugin/server_audit.so
+-rwxr-xr-x. 1 root root 70432 Jul 15 19:03 /usr/lib64/mysql/plugin/server_audit2.so
 ```
 
 MariaDB Enterprise Audit is included in all distributions (binary tarball, DEB/RPM package tarball, DEB/RPM packages) for MariaDB Enterprise Server. If the `server_audit2.so` file is not present, confirm that MariaDB Enterprise Server is properly installed.
@@ -248,7 +248,7 @@ WHERE PLUGIN_NAME='SERVER_AUDIT'\G
 ```sql
 *************************** 1. row ***************************
      PLUGIN_STATUS: ACTIVE
-    PLUGIN_LIBRARY: server_audit.so
+    PLUGIN_LIBRARY: server_audit2.so
 PLUGIN_DESCRIPTION: MariaDB Enterprise Audit
        LOAD_OPTION: FORCE_PLUS_PERMANENT
 ```
