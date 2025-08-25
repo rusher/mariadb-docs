@@ -15,7 +15,7 @@ On Unix-like platforms, you also need to have the following tools installed:
 * `make`
 * [UnixODBC](https://www.unixodbc.org/) - libraries and development headers
 
-If you want your build to support [TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) on Unix-like platforms, then you also need to have the following tools installed:
+If you want your build to support [TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption) on Unix-like platforms, then you also need to have the following tools installed:
 
 * [OpenSSL](https://www.openssl.org/) - libraries and development headers
 
@@ -86,13 +86,12 @@ sudo make install
 
 ## Building MariaDB Connector/ODBC from a Source Package
 
-Building MariaDB Connector/ODBC from a source package is a bit different than building it from the git repoisitory. The source package comes without [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-c/README.md) source code. And in order to build MariaDB Connector/ODBC, you need to download MariaDB Connector/C source separately, and then copy it into the 'libmariadb' subdirectory in the root of the MariaDB Connector/ODBC source tree. Other steps are all the same as for building from git checkout.
+Building MariaDB Connector/ODBC from a source package is a bit different than building it from the git repository. The source package comes without [MariaDB Connector/C](../mariadb-connector-c/mariadb-connector-c-guide.md) source code. And in order to build MariaDB Connector/ODBC, you need to download MariaDB Connector/C source separately and then copy it into the 'libmariadb' subdirectory in the root of the MariaDB Connector/ODBC source tree. Other steps are all the same as for building from git checkout.
 
 Also, it should be possible to build from source package using the MariaDB Connector/C headers and library installed on your system. You need to ensure that the appropriate MariaDB Connector/C version is installed. Most probably you will need to point your compiler and/or linker to the location of the MariaDB Connector/C headers and/or library. e.g.
 
 ```bash
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCONC_WITH_UNIT_TESTS=Off -DCMAKE_C_FLAGS_RELWITHDEBINFO="-I/usr/local/incude/mariadb -L/usr/local/lib" .
 ```
-
 
 {% @marketo/form formId="4316" %}
