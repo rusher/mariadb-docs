@@ -222,9 +222,9 @@ maxctrl call command wcar stop CAPTURE_FLTR
 
 #### Installation
 
-Install the required packages on the MaxScale server where the replay is to be done. An additional dependency that must be manually installed is Python, version 3.9 or newer. On most linux distributions a new enough version is available as the default Python interpreter. You may also need to install the development packages for Python, `python3-devel` on RHEL based systems or `python3-dev` on Debian based systems.
+Install the required packages on the MaxScale server where the replay is to be done. An additional dependency that must be manually installed is Python, version 3.9 or newer. On most linux distributions a new enough version is available as the default Python interpreter. You may also need to install the development packages for Python, `python3-devel` on RHEL based systems or `python3-dev` on Debian based systems, as well as a C++ compiler.
 
-For RHEL 8, Rocky Linux 8 and Alma Linux 8, a newer version of Python must be installed with `dnf install python39 python39-devel` and it must be set as the default python implementation with `alternatives --set python3 /usr/bin/python3.9`. 
+For RHEL 8, Rocky Linux 8 and Alma Linux 8, a newer version of Python must be installed along with the development headers with `dnf install python39 python39-devel gcc-c++` and it must be set as the default python implementation with `alternatives --set python3 /usr/bin/python3.9`.
 
 The replay consists of restoring the database to the point in time where the capture was started. Start by restoring the replay database to this state. Once the database has been restored from the backup, copy the capture files over to the replay MaxScale server.
 
