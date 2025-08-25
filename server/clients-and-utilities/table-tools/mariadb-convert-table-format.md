@@ -2,21 +2,21 @@
 
 `mariadb-convert-table-format` converts the tables in a database to use a particular storage engine ([MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) by default).
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_convert_table_format`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+{% hint style="info" %}
+Previously, the client was called `mysql_convert_table_format`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+{% endhint %}
 
 ## Usage
 
-```
+```bash
 mariadb-convert-table-format [options] db_name
 ```
 
 ## Description
 
-`mariadb-convert-table-format` is written in Perl and requires that the DBI and DBD::mysql Perl modules be installed
+`mariadb-convert-table-format` is written in Perl and requires that the DBI and DBD::mysql Perl modules be installed. Invoke `mariadb-convert-table-format` like this:
 
-Invoke `mariadb-convert-table-format` like this:
-
-```
+```bash
 shell> mariadb-convert-table-format [options]db_name
 ```
 
