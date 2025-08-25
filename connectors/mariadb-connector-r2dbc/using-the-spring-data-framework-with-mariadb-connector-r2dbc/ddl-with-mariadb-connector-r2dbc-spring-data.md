@@ -8,7 +8,7 @@ Java developers can use MariaDB Connector/R2DBC to connect to MariaDB database p
 
 DDL (Data Definition Language) refers to all SQL-schema statements in the SQL standard (ISO/IEC 9075-2:2016).
 
-Some examples of DDL include [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table), [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table), [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table), [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database), and [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table).
+Some examples of DDL include [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table), [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table), [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table), [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database), and [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/truncate-table).
 
 With Spring Data, DDL operations can be performed by invoking the following methods:
 
@@ -110,7 +110,7 @@ DESC contact;
 
 The following code example truncates the test.contact table created above.
 
-TRUNCATE is a DDL (Data Definition Language) operation that deletes all data from an existing table and resets the AUTO\_INCREMENT column counter to 0:
+`TRUNCATE` is a DDL (Data Definition Language) operation that deletes all data from an existing table and resets the `AUTO_INCREMENT` column counter to 0:
 
 ```java
 // Module Imports
@@ -158,9 +158,8 @@ public class App {
 ```
 
 * A connection factory is used to create an instance of DatabaseClient to connect to the database.
-* The DROP and CREATE privileges are needed to truncate a table as TRUNCATE is a DDL statement that drops the table and creates a new table with the same table definition, in effect deleting all data.
+* The `DROP` and `CREATE` privileges are needed to truncate a table as `TRUNCATE` is a DDL statement that drops the table and creates a new table with the same table definition, in effect deleting all data.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}
