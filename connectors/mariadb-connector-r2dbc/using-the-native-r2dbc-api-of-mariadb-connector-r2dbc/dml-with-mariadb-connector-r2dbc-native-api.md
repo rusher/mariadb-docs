@@ -4,7 +4,7 @@ Java developers can use MariaDB Connector/R2DBC to connect to MariaDB database p
 
 ## DML Operations
 
-DML (Data Manipulation Language) refers to all SQL-data statements in the SQL standard (ISO/IEC 9075-2:2016), for example: [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete), [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace), [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select), and [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update).
+DML (Data Manipulation Language) refers to all SQL-data statements in the SQL standard (ISO/IEC 9075-2:2016), for example: [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete), [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert), [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/replace), [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select), and [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update).
 
 With R2DBC, DML operations are performed with the following classes:
 
@@ -94,11 +94,11 @@ public class App {
 }
 ```
 
-The bind(int index, Object value) method binds non-null values to indexed parameters. The index is an integer that starts at 0, and it should not be null. If the index is invalid, the method throws an `IllegalArgumentException`, which is handled in the catch block.
+The bind (int index, Object value) method binds non-null values to indexed parameters. The index is an integer that starts at 0, and it should not be null. If the index is invalid, the method throws an `IllegalArgumentException`, which is handled in the catch block.
 
-Alternatively, the bind(String name, Object value) method could be used to bind a non-null value to a named parameter.
+Alternatively, the bind (String name, Object value) method could be used to bind a non-null value to a named parameter.
 
-The `execute()` method executes the statement, and returns the results as a `Publisher<? extends Result>` instance.
+The `execute()` method executes the statement and returns the results as a `Publisher<? extends Result>` instance.
 
 Result instances must be fully consumed to ensure full execution of the corresponding Statement instance.
 
