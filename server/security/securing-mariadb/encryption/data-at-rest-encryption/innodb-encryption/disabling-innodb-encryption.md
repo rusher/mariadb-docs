@@ -93,7 +93,7 @@ InnoDB uses the [Redo Log](../../../../../server-usage/storage-engines/innodb/in
 
 First, set the [innodb\_encrypt\_log](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) system variable to `OFF` in a server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). Once this is done, [restart](https://mariadb.com/kb/en/) the MariaDB Server. When the Server comes back online, it begins writing unencrypted data to the Redo Log.
 
-After the server has been successfully restarted with encryption disabled, you may remove the [key management and encryption plugin](../key-management-and-encryption-plugins/encryption-key-management.md) that had been used. If you try to disable encryption for the Redo Log and remove the plugin in a single step, InnoDB will be unable to decrypt the log in order to remove the encryption.
+After the server has been successfully restarted with encryption disabled, you may remove the [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) that had been used. If you try to disable encryption for the Redo Log and remove the plugin in a single step, InnoDB will be unable to decrypt the log in order to remove the encryption.
 
 ### See Also
 

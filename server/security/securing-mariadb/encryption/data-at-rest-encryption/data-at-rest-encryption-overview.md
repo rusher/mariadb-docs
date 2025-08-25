@@ -39,9 +39,9 @@ These limitations exist in the data-at-rest encryption implementation:
 
 ## Encryption Key Management
 
-MariaDB's data-at-rest encryption requires the use of a [key management and encryption plugin](key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
+MariaDB's data-at-rest encryption requires the use of a [key management and encryption plugin](../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
 
-MariaDB supports the use of [multiple encryption keys](key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](key-management-and-encryption-plugins/encryption-key-management.md#rotating-keys), then encryption keys can also be rotated, which creates a new version of the encryption key.
+MariaDB supports the use of [multiple encryption keys](../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#rotating-keys), then encryption keys can also be rotated, which creates a new version of the encryption key.
 
 How MariaDB manages encryption keys depends on which encryption key management solution you choose. Currently, MariaDB has four options:
 
@@ -53,7 +53,7 @@ Once you have an key management and encryption plugin set up and configured for 
 
 ## Encrypting Data
 
-Encryption occurs whenever MariaDB writes pages to disk. Encrypting table data requires that you install a [key management and encryption plugin](key-management-and-encryption-plugins/encryption-key-management.md), such as the [File Key Management](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) plugin. Once you have a plugin set up and configured, you can enable encryption for your InnoDB and Aria tables.
+Encryption occurs whenever MariaDB writes pages to disk. Encrypting table data requires that you install a [key management and encryption plugin](../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md), such as the [File Key Management](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) plugin. Once you have a plugin set up and configured, you can enable encryption for your InnoDB and Aria tables.
 
 ### Encrypting Table Data
 
@@ -83,7 +83,6 @@ this case you save space and still have your data protected.
 ## Thanks
 
 * Tablespace encryption was donated to the MariaDB project by Google.
-* Per-table encryption and key identifier support was donated to the MariaDB project by [eperi](https://eperi.de/en).
 
 We are grateful to these companies for their support of MariaDB!
 

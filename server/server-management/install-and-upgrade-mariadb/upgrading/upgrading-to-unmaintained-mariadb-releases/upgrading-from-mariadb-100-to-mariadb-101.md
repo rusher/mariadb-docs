@@ -96,7 +96,7 @@ Note that explicit or implicit casts from MAX(string) to INT, DOUBLE or DECIMAL 
 You might consider using the following major new features in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1):
 
 * [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide) is now included by default.
-* [Encryption](../../../../security/securing-mariadb/encryption/data-at-rest-encryption/overview.md)
+* [Encryption](../../../../security/securing-mariadb/encryption/data-at-rest-encryption/data-at-rest-encryption-overview.md)
 * [InnoDB/XtraDB Page Compression](../../../../server-usage/storage-engines/innodb/innodb-page-compression.md)
 
 ## Notes

@@ -6,7 +6,7 @@ For encrypting data with the Aria storage engine, see [Encrypting Data for Aria]
 
 ## Basic Configuration
 
-Using data-at-rest encryption requires that you first configure an [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md) plugin, such as the [file\_key\_management](../key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) or [aws\_key\_management](../key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) plugins.\
+Using data-at-rest encryption requires that you first configure an [Encryption Key Management](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) plugin, such as the [file\_key\_management](../key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) or [aws\_key\_management](../key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) plugins.\
 MariaDB uses this plugin to store, retrieve and manage the various keys it uses when encrypting data to and decrypting data from the file system.
 
 Once you have the plugin configured, you need to set a few additional system variables to enable encryption on InnoDB tables, including [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables), [innodb\_encrypt\_log](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log), [innodb\_encryption\_threads](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads), [innodb\_encrypt\_temporary\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) and [innodb\_encryption\_rotate\_key\_age](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age).
@@ -134,9 +134,9 @@ Beginning in [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/b
 
 ## See Also
 
-* [Data at Rest Encryption](../overview.md)
-* [Why Encrypt MariaDB Data?](../why-encrypt-mariadb-data.md)
-* [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md)
+* [Data at Rest Encryption](../data-at-rest-encryption-overview.md)
+* [Why Encrypt MariaDB Data?](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/why-encrypt-mariadb-data.md)
+* [Encryption Key Management](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md)
 * [Information Schema INNODB\_TABLESPACES\_ENCRYPTION table](../../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

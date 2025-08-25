@@ -29,9 +29,9 @@ All data that is not supposed to fall into possible attackers hands should be en
 
 There are currently three options for key management:
 
-* [File Key Management Plugin](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)
-* [AWS Key Management Plugin](key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)
-* [Hashicorp Key Management Plugin](key-management-and-encryption-plugins/hashicorp-key-management-plugin.md)
+* [File Key Management Plugin](../../encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)
+* [AWS Key Management Plugin](../../encryption/data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)
+* [Hashicorp Key Management Plugin](../../encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md)
 
 See [Encryption Key Management](key-management-and-encryption-plugins/encryption-key-management.md) for details.
 
