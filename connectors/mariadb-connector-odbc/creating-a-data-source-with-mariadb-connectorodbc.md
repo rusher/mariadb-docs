@@ -66,7 +66,7 @@ sudo odbcinst -i -d -f MariaDB_odbc_driver_template.ini
 
 At this point, you should be able to connect to MariaDB by using the `Driver` with the `SQLDriverConnect` function. To connect with `SQLDriverConnect`, you would need to specify `Driver={MariaDB ODBC 3.0 Driver}` in your connection string along with your other connection parameters.
 
-See [Parameters](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-odbc/README.md#parameters) for connection string options.
+See [Parameters](mariadb-connector-odbc-guide.md#parameters) for connection string options.
 
 ### Configuring a DSN with UnixODBC on Linux
 
@@ -99,7 +99,7 @@ odbcinst -i -s -h -f MariaDB_odbc_data_source_template.ini
 
 At this point, you should be able to connect to MariaDB by using the `DSN` with either `SQLConnect` or the `SQLDriverConnect` functions. To connect with `SQLConnect`, you would have to provide `MariaDB-server` as the `ServerName` parameter. To connect with `SQLDriverConnect`, you would have to provide `DSN={MariaDB-server}` in the connection string along with your other connection parameters.
 
-See [Parameters](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/about-mariadb-connector-odbc/README.md#parameters) for connection string options.
+See [Parameters](mariadb-connector-odbc-guide.md#parameters) for connection string options.
 
 {% hint style="danger" %}
 UnixODBC also provides a GUI to add `DSNs`. However, MariaDB Connector/ODBC doesn't yet support this GUI interface for adding `DSNs`.
