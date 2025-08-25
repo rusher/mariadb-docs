@@ -8,11 +8,10 @@ Optimizing the filesystem can however in some cases make a noticeable difference
 
 The following theoretical file size and filesystem size limits apply to the three filesystems:
 
-| ext4                | XFS  | Brtfs |
-| ------------------- | ---- | ----- |
-|                     | ext4 | XFS   |
-| Max file size       | 16TB | 8EB   |
-| Max filesystem size | 1 EB | 8EB   |
+| Limit | [ext4](https://en.wikipedia.org/wiki/Ext4) | [XFS](https://en.wikipedia.org/wiki/XFS)  | [Btrfs](https://en.wikipedia.org/wiki/Btrfs) |
+| -- | -- | --| -- |
+| Max file size       | 16-256 TB | 8 EB | 16 EB |
+| Max filesystem size | 1 EB | 8 EB | 16 EB |
 
 Each has unique characteristics that are worth understanding to get the most from.
 
