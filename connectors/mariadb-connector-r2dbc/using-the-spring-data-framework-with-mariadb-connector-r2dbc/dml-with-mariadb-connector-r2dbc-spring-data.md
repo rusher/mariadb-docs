@@ -6,7 +6,7 @@ Java developers can use MariaDB Connector/R2DBC to connect to MariaDB database p
 
 ## DML Operations
 
-DML (Data Manipulation Language) refers to all SQL-data statements in the SQL standard (ISO/IEC 9075-2:2016), for example, [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete), [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace), [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select), and [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update).
+DML (Data Manipulation Language) refers to all SQL-data statements in the SQL standard (ISO/IEC 9075-2:2016), for example, [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete), [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert), [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/replace), [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select), and [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update).
 
 With Spring Data, DML operations can be performed by invoking the following methods:
 
@@ -20,11 +20,11 @@ With Spring Data, DML operations can be performed by invoking the following meth
 
 ## Code Example: INSERT, UPDATE, DELETE
 
-[INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update), and [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete) are DML (Data Manipulation Language) operations that modify the data in a table.
+[INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert), [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update), and [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) are DML (Data Manipulation Language) operations that modify the data in a table.
 
 The following example shows how to insert data into the example table created in [Setup for Examples](setup-for-connector-r2dbc-examples-spring-data.md).
 
-To update or delete data, replace the INSERT statement in the code example with an UPDATE, or DELETE statement:
+To update or delete data, replace the `INSERT` statement in the code example with an `UPDATE`, or `DELETE` statement:
 
 ```java
 //Module Imports
@@ -94,7 +94,7 @@ public class App {
 * To update or delete data, use the update() or delete() methods, instead of the insert() method.
 * To execute a specific DML statement, use the execute() method.
 
-Confirm the data was properly inserted by using MariaDB Client to execute a SELECT statement.
+Confirm the data was properly inserted by using MariaDB Client to execute a `SELECT` statement.
 
 Example output:
 
@@ -112,7 +112,7 @@ SELECT * FROM test.contact;
 
 ## Code Example: SELECT
 
-SELECT is a DML (Data Manipulation Language) operation that reads the data from a table.
+`SELECT` is a DML (Data Manipulation Language) operation that reads the data from a table.
 
 The following example shows how to select data from the example table created in [Setup for Examples](setup-for-connector-r2dbc-examples-spring-data.md):
 
@@ -215,6 +215,5 @@ Dani
 ```
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}
