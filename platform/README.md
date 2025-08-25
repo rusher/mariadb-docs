@@ -24,6 +24,8 @@ MariaDB Enterprise Platform comprises a number of services, including:
 
 MariaDB Enterprise Platform **includes advanced security features, such as transparent data encryption (TDE), query blocking, result limiting, and a database firewall**, which meet and exceed traditional enterprise security requirements. It also supports dynamic data masking and complete data obfuscation to protect personal data and meet GDPR requirements.
 
+MariaDB Enterprise has a [DoD](https://www.defense.gov/) [STIG certification](https://mariadb.com/newsroom/press-releases/mariadb-receives-stig-approval/), which is required for most US government IT solutions.
+
 #### Innovation <a href="#innovation" id="innovation"></a>
 
 The platform is **built for the enterprise and accelerated by open-source innovation, offering unmatched performance and compatibility with existing MySQL APIs and commands**. It supports a wide range of database workloads and data types, including transactional, analytical, semi-structured, and AI-ready vector data.
