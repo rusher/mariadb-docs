@@ -190,11 +190,12 @@ $ grep --extended-regexp --with-filename \
 
 ## Install the Audit Plugin
 
-MariaDB Enterprise Audit is installed by default in MariaDB Enterprise Server. It does not need to be manually installed.
+MariaDB Enterprise Audit comes preinstalled with MariaDB Enterprise Server, so no manual installation is required.
 
-To confirm that MariaDB Enterprise Audit is installed:
+To verify that the plugin is installed:
 
-1. Determine the path to your server's plugin directory. When MariaDB Enterprise Server is running, the plugin directory can be determined by querying the [plugin\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir) system variable:
+1. Locate your server’s plugin directory.
+   * When MariaDB Enterprise Server is running, you can find the directory by checking the value of the `plugin_dir` system variable.
 
 ```sql
 SHOW GLOBAL VARIABLES
@@ -209,7 +210,7 @@ SHOW GLOBAL VARIABLES
 +---------------+--------------------------+
 ```
 
-2. Confirm that your server's plugin directory contains server\_audit.so, which is the shared library for MariaDB Enterprise Audit:
+2. Verify the `server_audit2.so` file—the shared library used by MariaDB Enterprise Audit—is present in your server’s plugin directory.
 
 ```bash
 $ ls -l /usr/lib64/mysql/plugin/server_audit2.so
@@ -219,13 +220,14 @@ $ ls -l /usr/lib64/mysql/plugin/server_audit2.so
 -rwxr-xr-x. 1 root root 70432 Jul 15 19:03 /usr/lib64/mysql/plugin/server_audit2.so
 ```
 
-MariaDB Enterprise Audit is included in all distributions (binary tarball, DEB/RPM package tarball, DEB/RPM packages) for MariaDB Enterprise Server. If the `server_audit2.so` file is not present, confirm that MariaDB Enterprise Server is properly installed.
+MariaDB Enterprise Audit is bundled with all MariaDB Enterprise Server distributions (binary tarball, DEB/RPM package tarball, and DEB/RPM packages). If you do not see the `server_audit2.so` file, verify that MariaDB Enterprise Server has been installed correctly.
 
 ## Load the Audit Plugin
 
-MariaDB Enterprise Audit is loaded by the `mariadb-enterprise.cnf` configuration file included by default in MariaDB Enterprise Server, so it does not generally need to be manually loaded.
+MariaDB Enterprise Audit is enabled through the `mariadb-enterprise.cnf` configuration file, which is included by default with MariaDB Enterprise Server. This means manual loading is usually not required.
 
-The `mariadb-enterprise.cnf` configuration file loads MariaDB Enterprise Audit by setting the plugin-load-add and server-audit options:
+\
+The `mariadb-enterprise.cnf` file activates MariaDB Enterprise Audit by configuring the `plugin-load-add` and `server-audit` options.
 
 ```ini
 # -- Auditing - pre-load Plugin
@@ -233,11 +235,11 @@ plugin-load-add=server_audit
 server_audit=FORCE_PLUS_PERMANENT
 ```
 
-If you do not use `mariadb-enterprise.cnf` in your environment, you can load MariaDB Enterprise Audit by setting the same options in your configuration file.
+If your environment does not use `mariadb-enterprise.cnf`, you can enable MariaDB Enterprise Audit by adding the same options to your own configuration file.
 
 ### Confirm the Audit Plugin is Loaded
 
-To confirm that MariaDB Enterprise Audit is installed, query the plugins-table-information-schema|information\_schema.PLUGINS]] table:
+To verify that MariaDB Enterprise Audit is installed, check the `information_schema.PLUGINS` table.
 
 ```sql
 SELECT PLUGIN_STATUS, PLUGIN_LIBRARY, PLUGIN_DESCRIPTION, LOAD_OPTION
@@ -253,24 +255,21 @@ PLUGIN_DESCRIPTION: MariaDB Enterprise Audit
        LOAD_OPTION: FORCE_PLUS_PERMANENT
 ```
 
-MariaDB Enterprise Audit is loaded by the `mariadb-enterprise.cnf` configuration file included by default in MariaDB Enterprise Server. If your output does not match the example output shown above, confirm that the `mariadb-enterprise.cnf` configuration file sets the plugin-load-add and server-audit options.
+MariaDB Enterprise Audit is enabled through the `mariadb-enterprise.cnf` configuration file, which is included by default in MariaDB Enterprise Server. If your results differ from the example output above, verify that the `mariadb-enterprise.cnf` file specifies the `plugin-load-add` and `server-audit` options.
 
 ## Start Audit Logging
 
-When MariaDB Enterprise Audit is installed and loaded, audit logging must be explicitly started.
+When MariaDB Enterprise Audit is installed and loaded, audit logging does not begin automatically. You must explicitly start it, either from the shell or through SQL.
 
-Audit logging can be started using the shell or SQL:
-
-| Interface | Method                                                                                      | Benefits                                                                                                |
-| --------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Shell     | [Configuration File](mariadb-enterprise-audit.md#start-audit-logging-in-configuration-file) | SQL access is not required SUPER privilege is not required Configuration file can be version controlled |
-| SQL       | [SET GLOBAL Statement](mariadb-enterprise-audit.md#start-audit-logging-with-set-global)     | Server restart is not required                                                                          |
+<table><thead><tr><th width="111">Interface</th><th width="207">Method</th><th>Benefits</th></tr></thead><tbody><tr><td>Shell</td><td><a href="mariadb-enterprise-audit.md#start-audit-logging-in-configuration-file">Configuration File</a></td><td>SQL access is not required SUPER privilege is not required Configuration file can be version controlled.</td></tr><tr><td>SQL</td><td><a href="mariadb-enterprise-audit.md#start-audit-logging-with-set-global">SET GLOBAL Statement</a></td><td>Server restart is not required.</td></tr></tbody></table>
 
 ### Start Audit Logging in Configuration File
 
-Audit logging with MariaDB Enterprise Audit can be started by setting the [server\_audit\_logging](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_logging) system variable in a configuration file. Alternatively, audit logging can be started using [SET GLOBAL](mariadb-enterprise-audit.md#start-audit-logging-with-set-global) , which does not require the server to be restarted.
+enable audit logging with MariaDB Enterprise Audit by setting the `server_audit_logging` system variable in a configuration file.\
+Alternatively, you can enable it dynamically with `SET GLOBAL`, which does not require a server restart.
 
-1. Set the [server\_audit\_logging](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_logging) system variable in a configuration file:
+To configure in a file:\
+1\. Set the `server_audit_logging` system variable in the configuration file.
 
 ```ini
 [mariadb]
@@ -283,9 +282,9 @@ server_audit_logging = ON
 $ sudo systemctl restart mariadb
 ```
 
-If the server fails to start, check the [messages in the error log](mariadb-enterprise-audit.md#messages-in-mariadb-error-log).
+If the server does not start, review the [error log](mariadb-enterprise-audit.md#messages-in-mariadb-error-log) for details.
 
-3. Confirm that audit logging is started by querying the [Server\_audit\_active](mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md#server_audit_active) status variable with the [SHOW GLOBAL STATUS](../sql-statements/administrative-sql-statements/show/show-status.md) statement:
+3. To confirm that audit logging is running, check the value of the `Server_audit_active` status variable using the `SHOW GLOBAL STATUS` statement.
 
 ```sql
 SHOW GLOBAL STATUS
@@ -325,7 +324,7 @@ SHOW GLOBAL STATUS
 +---------------------+-------+
 ```
 
-When a system variable is dynamically changed with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement, the change does not survive server restarts. To ensure that audit logging is started when the server restarts, set the [server\_audit\_logging](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_logging) system variable in a configuration file too:
+When you modify a system variable dynamically using the `SET GLOBAL` statement, the change is not preserved after a server restart. To ensure audit logging automatically starts with the server, also configure the `server_audit_logging` system variable in a configuration file.
 
 ```ini
 [mariadb]
