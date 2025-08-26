@@ -12,7 +12,7 @@ VEC_DISTANCE_COSINE(v, s)
 
 ## Description
 
-`VEC_Distance_Cosine` is an SQL function that calculates a [Cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity#Cosine_distance) between two vectors.
+`VEC_Distance_Cosine` is an SQL function that calculates the [Cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity#Cosine_distance) between two (not necessarily normalized) vectors.
 
 Vectors must be of the same length. A distance between two vectors of different lengths is not defined, and `VEC_Distance_Cosine` will return `NULL` in such cases.
 
