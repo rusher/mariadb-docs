@@ -21,9 +21,9 @@ If the vector index was not built for the cosine function (see [CREATE TABLE wit
 ## Example
 
 ```sql
-SELECT VEC_DISTANT_COSINE(vec_fromtext('[1,2,3]'), vec_fromtext('[3,5,7]'));
+SELECT VEC_DISTANCE_COSINE(vec_fromtext('[1,2,3]'), vec_fromtext('[3,5,7]'));
 +-----------------------------------------------------------------------+
-| VEC_DISTANT_COSINE(vec_fromtext('[1,2,3]'), vec_fromtext('[3,5,7]')) |
+| VEC_DISTANCE_COSINE(vec_fromtext('[1,2,3]'), vec_fromtext('[3,5,7]')) |
 +-----------------------------------------------------------------------+
 |                                                   0.00258509695694209 |
 +-----------------------------------------------------------------------+
