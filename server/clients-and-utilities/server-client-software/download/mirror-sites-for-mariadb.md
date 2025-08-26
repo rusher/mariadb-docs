@@ -240,6 +240,7 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 **Iran**
 
+* Kernel.ir (Tehran)
 * Mobinhost (Tehran)
 * Parsvds (Tehran)
 
@@ -259,6 +260,7 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 * 山形大学, 米沢市 - Yamagata University (Yonezawa)
 * xTom GmbH (Osaka)
+* KuronekoServer (Tokyo)
 
 **Kenya**
 
