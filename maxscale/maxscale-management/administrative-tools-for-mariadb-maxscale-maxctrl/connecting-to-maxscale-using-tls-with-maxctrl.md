@@ -31,7 +31,7 @@ admin_host            = 0.0.0.0
 admin_port            = 8443
 ```
 
-3. [Enable TLS for MaxScale's REST API](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/data-in-transit-encryption-enabling-tls-on-mariadb-server).\
+3. [Enable TLS for MaxScale's REST API](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption/data-in-transit-encryption-enabling-tls-on-mariadb-server).\
    Several global parameters must be configured in maxscale.cnf.
 
 | Parameter                                                                                                                                                                                            | Description                                                                         |

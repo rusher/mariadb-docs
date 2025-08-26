@@ -268,7 +268,6 @@
       * [MaxScale 24.02 Throttle](maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02filters/mariadb-maxscale-2402-maxscale-2402-throttle.md)
       * [MaxScale 24.02 Top Filter](maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02filters/mariadb-maxscale-2402-maxscale-2402-top-filter.md)
       * [MaxScale 24.02 Transaction Performance Monitoring Filter](maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02filters/mariadb-maxscale-2402-maxscale-2402-transaction-performance-monitoring-filter.md)
-      * [MaxScale 24.02 WCAR: Workload Capture and Replay](maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02filters/mariadb-maxscale-2402-maxscale-2402-wcar-workload-capture-and-replay.md)
     * [MaxScale 24.02 Getting-Started](maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02getting-started/README.md)
       * [MaxScale 24.02 Building MariaDB MaxScale from Source Code](maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-building-mariadb-maxscale-from-source-code.md)
       * [MaxScale 24.02 Installing MariaDB MaxScale using a tarball](maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-installing-mariadb-maxscale-using-a-tarball.md)

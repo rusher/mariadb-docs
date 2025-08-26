@@ -10,7 +10,7 @@ MariaDB MaxScale is an advanced, open-source database proxy that provides intell
 
 {% stepper %}
 {% step %}
-### Key concepts
+#### Key concepts
 
 To understand MaxScale, familiarize yourself with these core components:
 
@@ -23,11 +23,11 @@ To understand MaxScale, familiarize yourself with these core components:
 {% endstep %}
 
 {% step %}
-### Installation
+#### Installation
 
 MariaDB MaxScale is typically installed from the official MariaDB repositories.
 
-#### **Add MariaDB Repository:**
+**Add MariaDB Repository:**
 
 Use the MariaDB Repository Configuration Tool (search "MariaDB Repository Generator") to get specific instructions for your OS and MaxScale version.
 
@@ -49,11 +49,11 @@ sudo dnf install -y maxscale
 {% endstep %}
 
 {% step %}
-### Basic configuration
+#### Basic configuration
 
 MaxScale's configuration is primarily done in its main configuration file in `/etc/maxscale.cnf`.
 
-#### **Define Servers:**
+**Define Servers:**
 
 Add a section for each of your backend MariaDB servers.
 
@@ -71,7 +71,7 @@ address=192.168.1.102
 port=3307
 ```
 
-#### **Define a Monitor:**
+**Define a Monitor:**
 
 This section tells MaxScale how to monitor your backend servers' health and roles and groups them into a cluster of servers.
 
@@ -104,7 +104,7 @@ GRANT
 GRANT SELECT ON mysql.global_priv TO 'maxscale_monitor'@'%';
 ```
 
-#### **Define a Service (e.g., Read-Write Split):**
+**Define a Service (e.g., Read-Write Split):**
 
 This configures how MaxScale routes queries. The readwritesplit router is very common for replication setups as it load balances read while routing writes to the primary node.
 
@@ -134,7 +134,7 @@ GRANT SELECT ON mysql.roles_mapping TO 'maxscale_user'@'%';
 GRANT SHOW DATABASES ON *.* TO 'maxscale_user'@'%';
 ```
 
-#### **Define a Listener:**
+**Define a Listener:**
 
 This specifies the port and protocol MaxScale will listen on for incoming client connections and which service to direct them to.
 
@@ -147,7 +147,7 @@ service=Read-Write-Service
 port=3306
 ```
 
-#### **Global MaxScale Configuration (usually at the top of `maxscale.cnf`):**
+**Global MaxScale Configuration (usually at the top of `maxscale.cnf`):**
 
 ```ini
 [maxscale]
@@ -157,7 +157,7 @@ threads=auto
 {% endstep %}
 
 {% step %}
-### Complete configuration
+#### Complete configuration
 
 Your `/etc/maxscale.cnf` should now look like this:
 
@@ -197,7 +197,7 @@ port=3306
 {% endstep %}
 
 {% step %}
-### Start and enable MaxScale
+#### Start and enable MaxScale
 
 After configuring `maxscale.cnf`, start and enable the MaxScale service.
 
@@ -209,7 +209,7 @@ sudo systemctl status maxscale # Check status
 {% endstep %}
 
 {% step %}
-### Basic usage and verification
+#### Basic usage and verification
 
 Once MaxScale is running, configure your applications to connect to MaxScale's listener port instead of directly to a MariaDB server.
 

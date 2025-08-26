@@ -306,7 +306,7 @@ referred to from _services_.
 A router module is capable of routing requests to backend servers according to\
 the characteristics of a request and/or the algorithm the router\
 implements. Examples of routers are `readconnroute` that provides _connection_\
-&#xNAN;_&#x72;outing_, that is, the server is chosen according to specified rules when the\
+\&#xNAN;_routing_, that is, the server is chosen according to specified rules when the\
 session is created and all requests are subsequently routed to that server,\
 and `readwritesplit` that provides _statement routing_, that is, each\
 individual request is routed to the most appropriate server.
@@ -1365,7 +1365,7 @@ some_parameter=$SOME_VALUE
 
 is encountered, then `$SOME_VALUE` will be replaced with the actual value\
 of the environment variable `SOME_VALUE`. Note:_Variable substitution will be made only if '$' is the first character_\
-&#xNAN;_&#x6F;f the value._ _Everything_ following '$' is interpreted as the name of the environment\
+\&#xNAN;_of the value._ _Everything_ following '$' is interpreted as the name of the environment\
 variable.
 
 * Referring to a non-existing environment variable is a fatal error.
@@ -3818,7 +3818,7 @@ The interpretation changed again in MaxScale versions 6.4.16, 22.08.13,\
 23.02.10, 23.08.6, 24.02.2. In these versions the value of `ssl_version` is an\
 enumeration of accepted TLS protocol versions. This means that`admin_ssl_version=TLSv1.2` again only allows TLSv1.2. To retain the behavior\
 from the previous releases where the newer versions were automatically enabled,\
-the protocol versions must be explicitly listed, for example`admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the`ssl_version` behave identically to how the MariaDB [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version)\
+the protocol versions must be explicitly listed, for example`admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the`ssl_version` behave identically to how the MariaDB [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption/ssltls-system-variables#tls_version)\
 parameter works.
 
 #### `ssl_cipher`
@@ -4227,10 +4227,10 @@ files.
 The encryption keys are stored in a text file stored on a local filesystem.
 
 The file uses the same format as the MariaDB server [File Key Management\
-Encryption Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin): a file\
+Encryption Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin): a file\
 consisting of an encryption key ID number and the hex-encoded encryption key\
 separated by a semicolon. Read [Creating the Key\
-File](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin#creating-the-key-file)\
+File](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin#creating-the-key-file)\
 for more details on how to create the file.
 
 For example, to configure encryption for the `nosqlprotocol` shared credentials\
@@ -4336,7 +4336,7 @@ engine included in the Vault. This key manager supports versioned keys. Only\
 version 2 key-value stores are supported.
 
 The encryption keys use the same format as the MariaDB [HashiCorp Vault Key\
-Management Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin):\
+Management Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin):\
 The key-value secret for each encryption key ID must contain the field `data`\
 which must contain a hex-encoded string that is either 32, 48 or 64 characters\
 long.

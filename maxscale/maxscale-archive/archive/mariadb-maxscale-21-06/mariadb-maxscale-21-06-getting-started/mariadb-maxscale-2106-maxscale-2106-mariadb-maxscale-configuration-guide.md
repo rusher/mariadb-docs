@@ -3547,7 +3547,7 @@ The interpretation changed again in MaxScale versions 6.4.16, 22.08.13,\
 23.02.10, 23.08.6, 24.02.2. In these versions the value of `ssl_version` is an\
 enumeration of accepted TLS protocol versions. This means that`admin_ssl_version=TLSv1.2` again only allows TLSv1.2. To retain the behavior\
 from the previous releases where the newer versions were automatically enabled,\
-the protocol versions must be explicitly listed, for example`admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the`ssl_version` behave identically to how the MariaDB [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version)\
+the protocol versions must be explicitly listed, for example`admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the`ssl_version` behave identically to how the MariaDB [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption/ssltls-system-variables#tls_version)\
 parameter works.
 
 #### `ssl_cipher`

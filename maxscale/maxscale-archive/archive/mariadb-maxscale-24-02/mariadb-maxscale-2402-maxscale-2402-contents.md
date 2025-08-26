@@ -89,7 +89,7 @@ Here are detailed documents about the filters MariaDB MaxScale offers. They cont
 
 The following filters are only available in MaxScale Enterprise.
 
-* [Wcar](maxscale-24-02filters/mariadb-maxscale-2402-maxscale-2402-wcar-workload-capture-and-replay.md)
+* [Wcar](broken-reference)
 
 ### Monitors
 
