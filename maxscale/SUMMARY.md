@@ -205,7 +205,7 @@
       * [MaxScale 25.01 SchemaRouter](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
       * [MaxScale 25.01 SmartRouter](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-smartrouter.md)
     * [MariaDB MaxScale 25.01 Tutorials](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/README.md)
-      * [Automatic Failover With MariaDB Monitor](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-automatic-failover-with-mariadb-monitor.md)
+      * [Automatic Failover with MariaDB Monitor](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-automatic-failover-with-mariadb-monitor.md)
       * [Avrorouter Tutorial](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
       * [Configuring Servers](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-configuring-servers.md)
       * [Configuring the Galera Monitor](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-configuring-the-galera-monitor.md)

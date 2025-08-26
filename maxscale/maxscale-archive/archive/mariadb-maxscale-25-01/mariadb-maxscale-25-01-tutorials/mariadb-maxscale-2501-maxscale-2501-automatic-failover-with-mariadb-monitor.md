@@ -1,30 +1,16 @@
-# Automatic Failover With MariaDB Monitor
+# Automatic Failover with MariaDB Monitor
 
+The [MariaDB Monitor](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) is not only capable of monitoring the state of a MariaDB primary-replica cluster but is also capable of performing _failover_ and _switchover_. In addition, in some circumstances it is capable of _rejoining_ a primary that has gone down and later reappears.
 
+Note that the failover (and switchover and rejoin) functionality is only supported in conjunction with GTID-based replication and initially only for simple topologies, that is, 1 primary and several replicas.
 
-The [MariaDB Monitor](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) is not only capable\
-of monitoring the state of a MariaDB primary-replica cluster but is also\
-capable of performing _failover_ and _switchover_. In addition, in some\
-circumstances it is capable of _rejoining_ a primary that has gone down and\
-later reappears.
+The failover, switchover and rejoin functionality are inherent parts of the _MariaDB Monitor_, but neither automatic failover nor automatic rejoin are enabled by default.
 
-Note that the failover (and switchover and rejoin) functionality is only\
-supported in conjunction with GTID-based replication and initially only\
-for simple topologies, that is, 1 primary and several replicas.
-
-The failover, switchover and rejoin functionality are inherent parts of\
-the _MariaDB Monitor_, but neither automatic failover nor automatic rejoin\
-are enabled by default.
-
-The following examples have been written with the assumption that there\
-are four servers - `server1`, `server2`, `server3` and `server4` - of\
-which `server1` is the initial primary and the other servers are replicas.\
-In addition there is a monitor called _TheMonitor_ that monitors those\
-servers.
+The following examples have been written with the assumption that there are four servers - `server1`, `server2`, `server3` and `server4` - of which `server1` is the initial primary and the other servers are replicas. In addition there is a monitor called _TheMonitor_ that monitors those servers.
 
 Somewhat simplified, the MaxScale configuration file would look like:
 
-```
+```sql
 [server1]
 type=server
 address=192.168.121.51
@@ -48,10 +34,9 @@ servers=server1,server2,server3,server4
 
 ## Manual Failover
 
-If everything is in order, the state of the cluster will look something\
-like this:
+If everything is in order, the state of the cluster will look something like this:
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬─────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State           │
@@ -66,10 +51,9 @@ $ maxctrl list servers
 └─────────┴─────────────────┴──────┴─────────────┴─────────────────┘
 ```
 
-If the primary now for any reason goes down, then the cluster state will\
-look like this:
+If the primary now for any reason goes down, then the cluster state will look like this:
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State          │
@@ -86,27 +70,20 @@ $ maxctrl list servers
 
 Note that the status for `server1` is _Down_.
 
-Since failover is by default _not_ enabled, the failover mechanism must be\
-invoked manually:
+Since failover is by default _not_ enabled, the failover mechanism must be invoked manually:
 
-```
+```sql
 $ maxctrl call command mariadbmon failover TheMonitor
 OK
 ```
 
-There are quite a few arguments, so let's look at each one separatel&#x79;_`call command` indicates that it is a module command that is to be_\
-&#xNAN;_&#x69;nvoked,_ `mariadbmon` indicates the module whose command we want to invoke (that\
-is the MariaDB Monitor),_`failover` is the command we want to invoke, and_ `TheMonitor` is the first and only argument to that command, the name of\
-the monitor as specified in the configuration file.
+There are quite a few arguments, so let's look at each one separatel&#x79;_`call command` indicates that it is a module command that is to be_ \&#xNAN;_invoked,_ `mariadbmon` indicates the module whose command we want to invoke (that is the MariaDB Monitor),_`failover` is the command we want to invoke, and_ `TheMonitor` is the first and only argument to that command, the name of the monitor as specified in the configuration file.
 
-The MariaDB Monitor will now autonomously deduce which replica is the most\
-appropriate one to be promoted to primary, promote it to primary and modify\
-the other replicas accordingly.
+The MariaDB Monitor will now autonomously deduce which replica is the most appropriate one to be promoted to primary, promote it to primary and modify the other replicas accordingly.
 
-If we now check the cluster state we will see that one of the remaining\
-replicas has been made into primary.
+If we now check the cluster state, we will see that one of the remaining replicas has been made into primary.
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬─────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State           │
@@ -121,10 +98,9 @@ $ maxctrl list servers
 └─────────┴─────────────────┴──────┴─────────────┴─────────────────┘
 ```
 
-If `server1` now reappears, it will not be rejoined to the cluster, as\
-shown by the following output:
+If `server1` now reappears, it will not be rejoined to the cluster, as shown by the following output:
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬─────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State           │
@@ -139,18 +115,15 @@ $ maxctrl list servers
 └─────────┴─────────────────┴──────┴─────────────┴─────────────────┘
 ```
 
-Had `auto_rejoin=true` been specified in the monitor section, then an\
-attempt to rejoin `server1` would have been made.
+Had `auto_rejoin=true` been specified in the monitor section, then an attempt to rejoin `server1` would have been made.
 
-In MaxScale 2.2.1, rejoining cannot be initiated manually, but in a\
-subsequent version a command to that effect will be provided.
+In MaxScale 2.2.1, rejoining cannot be initiated manually, but in a subsequent version a command to that effect will be provided.
 
 ## Automatic Failover
 
-To enable automatic failover, simply add `auto_failover=true` to the\
-monitor section in the configuration file.
+To enable automatic failover, simply add `auto_failover=true` to the monitor section in the configuration file.
 
-```
+```sql
 [TheMonitor]
 type=monitor
 module=mariadbmon
@@ -161,7 +134,7 @@ auto_failover=true
 
 When everything is running fine, the cluster state looks like follows:
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬─────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State           │
@@ -176,10 +149,9 @@ $ maxctrl list servers
 └─────────┴─────────────────┴──────┴─────────────┴─────────────────┘
 ```
 
-If `server1` now goes down, failover will automatically be performed and\
-an existing replica promoted to new primary.
+If `server1` now goes down, failover will automatically be performed and an existing replica promoted to new primary.
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬────────────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State                  │
@@ -194,15 +166,13 @@ $ maxctrl list servers
 └─────────┴─────────────────┴──────┴─────────────┴────────────────────────┘
 ```
 
-If you are continuously monitoring the server states, you may notice for a\
-brief period that the state of `server1` is _Down_ and the state of`server2` is still _Slave, Running_.
+If you are continuously monitoring the server states, you may notice for a brief period that the state of `server1` is _Down_ and the state of`server2` is still _Slave, Running_.
 
 ## Rejoin
 
-To enable automatic rejoin, simply add `auto_rejoin=true` to the\
-monitor section in the configuration file.
+To enable automatic rejoin, simply add `auto_rejoin=true` to the monitor section in the configuration file.
 
-```
+```sql
 [TheMonitor]
 type=monitor
 module=mariadbmon
@@ -211,12 +181,11 @@ auto_rejoin=true
 ...
 ```
 
-When automatic rejoin is enabled, the MariaDB Monitor will attempt to\
-rejoin a failed primary as a replica, if it reappears.
+When automatic rejoin is enabled, the MariaDB Monitor will attempt to rejoin a failed primary as a replica, if it reappears.
 
 When everything is running fine, the cluster state looks like follows:
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬─────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State           │
@@ -231,11 +200,9 @@ $ maxctrl list servers
 └─────────┴─────────────────┴──────┴─────────────┴─────────────────┘
 ```
 
-Assuming `auto_failover=true` has been specified in the configuration\
-file, when `server1` goes down for some reason, failover will be performed\
-and we end up with the following cluster state:
+Assuming `auto_failover=true` has been specified in the configuration file, when `server1` goes down for some reason, failover will be performed, and we end up with the following cluster state:
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬─────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State           │
@@ -250,18 +217,13 @@ $ maxctrl list servers
 └─────────┴─────────────────┴──────┴─────────────┴─────────────────┘
 ```
 
-If `server1` now reappears, the MariaDB Monitor will detect that and\
-attempt to rejoin the old primary as a replica.
+If `server1` now reappears, the MariaDB Monitor will detect that and attempt to rejoin the old primary as a replica.
 
-Whether rejoining will succeed depends upon the actual state of the old\
-primary. For instance, if the old primary was modified and the changes had\
-not been replicated to the new primary, before the old primary went down,\
-then automatic rejoin will not be possible.
+Whether rejoining will succeed depends upon the actual state of the old primary. For instance, if the old primary was modified and the changes had not been replicated to the new primary, before the old primary went down, then automatic rejoin will not be possible.
 
-If rejoining can be performed, then the cluster state will end up looking\
-like:
+If rejoining can be performed, then the cluster state will end up looking like:
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬─────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State           │
@@ -278,27 +240,20 @@ $ maxctrl list servers
 
 ## Switchover
 
-Switchover is for cases when you explicitly want to move the primary\
-role from one server to another.
+Switchover is for cases when you explicitly want to move the primary role from one server to another.
 
-If we continue from the cluster state at the end of the previous example\
-and want to make `server1` primary again, then we must issue the following\
-command:
+If we continue from the cluster state at the end of the previous example and want to make `server1` primary again, then we must issue the following command:
 
-```
+```sql
 $ maxctrl call command mariadbmon switchover TheMonitor server1 server2
 OK
 ```
 
-There are quite a few arguments, so let's look at each one separatel&#x79;_`call command` indicates that it is a module command that is to be_\
-&#xNAN;_&#x69;nvoked,_ `mariadbmon` indicates the module whose command we want to invoke,_`switchover` is the command we want to invoke, and_ `TheMonitor` is the first argument to the command, the name of the monitor\
-as specified in the configuration file,_`server1` is the second argument to the command, the name of the server we_\
-&#xNAN;_&#x77;ant to make into primary, and_ `server2` is the third argument to the command, the name of the _currentprimary_.
+There are quite a few arguments, so let's look at each one separatel&#x79;_`call command` indicates that it is a module command that is to be_ \&#xNAN;_invoked,_ `mariadbmon` indicates the module whose command we want to invoke,_`switchover` is the command we want to invoke, and_ `TheMonitor` is the first argument to the command, the name of the monitor as specified in the configuration file,_`server1` is the second argument to the command, the name of the server we_ \&#xNAN;_want to make into primary, and_ `server2` is the third argument to the command, the name of the _currentprimary_.
 
-If the command executes successfully, we will end up with the following\
-cluster state:
+If the command executes successfully, we will end up with the following cluster state:
 
-```
+```sql
 $ maxctrl list servers
 ┌─────────┬─────────────────┬──────┬─────────────┬─────────────────┐
 │ Server  │ Address         │ Port │ Connections │ State           │
