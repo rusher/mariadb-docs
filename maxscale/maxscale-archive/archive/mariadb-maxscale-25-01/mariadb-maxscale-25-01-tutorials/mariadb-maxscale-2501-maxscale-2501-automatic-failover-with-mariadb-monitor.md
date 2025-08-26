@@ -6,7 +6,7 @@ Note that the failover (and switchover and rejoin) functionality is only support
 
 The failover, switchover and rejoin functionality are inherent parts of the _MariaDB Monitor_, but neither automatic failover nor automatic rejoin are enabled by default.
 
-The following examples have been written with the assumption that there are four servers - `server1`, `server2`, `server3` and `server4` - of which `server1` is the initial primary and the other servers are replicas. In addition there is a monitor called _TheMonitor_ that monitors those servers.
+The following examples have been written with the assumption that there are four servers - `server1`, `server2`, `server3` and `server4` - of which `server1` is the initial primary and the other servers are replicas. In addition, there is a monitor called _TheMonitor_ that monitors those servers.
 
 Somewhat simplified, the MaxScale configuration file would look like:
 
