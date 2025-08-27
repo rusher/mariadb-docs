@@ -156,7 +156,7 @@ The optimizer may also consider using `t1_index2` and pick that over `using t1_i
 
 ### List of Hints
 
-#### JOIN\_INDEX and NO\_JOIN\_INDEX
+### JOIN\_INDEX and NO\_JOIN\_INDEX
 
 An index-level hint that forces MariaDB to use or ignore the specified index(es) for an access method (range, ref, etc.). Equivalent to `FORCE INDEX FOR JOIN` and `IGNORE INDEX FOR JOIN`.
 
