@@ -164,6 +164,10 @@ An index-level hint that forces MariaDB to use or ignore the specified indexes f
 
 An index-level hint that enables or disables the specified indexes for index scans for `GROUP BY` operations. Equivalent to `FORCE INDEX FOR GROUP BY` and `IGNORE INDEX FOR GROUP BY`.
 
+#### ORDER\_INDEX and NO\_ORDER\_INDEX
+
+An index-level hint that enables or disables the specified indexes for sorting rows. Equivalent to `FORCE INDEX FOR ORDER BY` and `IGNORE INDEX FOR ORDER BY`.
+
 **NO\_RANGE\_OPTIMIZATION**
 
 An index-level hint that disables range optimization for certain index(es):
