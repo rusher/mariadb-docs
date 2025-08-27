@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
 
-For more information about what has changed, please refer to the [ChangeLog](../mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
+For more information about what has changed, please refer to the [ChangeLog](broken-reference) and to the release notes.
 
 Before starting the upgrade, any existing configuration files should\
 be backed up.

@@ -63,11 +63,11 @@
 For more details, please refer to:
 
 * [MariaDB MaxScale 24.02.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-24-02/Release-Notes/MaxScale-24.02.5-Release-Notes.md)
-* [MariaDB MaxScale 24.02.4 Release Notes](maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24024-release-notes-2024-12-09.md)
-* [MariaDB MaxScale 24.02.3 Release Notes](maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24023-release-notes-2024-09-09.md)
-* [MariaDB MaxScale 24.02.2 Release Notes](maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24022-release-notes-2024-06-03.md)
-* [MariaDB MaxScale 24.02.1 Release Notes](maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24021-release-notes.md)
-* [MariaDB MaxScale 24.02.0 Release Notes](maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24020-release-notes-2024-02-29.md)
+* [MariaDB MaxScale 24.02.4 Release Notes](broken-reference)
+* [MariaDB MaxScale 24.02.3 Release Notes](broken-reference)
+* [MariaDB MaxScale 24.02.2 Release Notes](broken-reference)
+* [MariaDB MaxScale 24.02.1 Release Notes](broken-reference)
+* [MariaDB MaxScale 24.02.0 Release Notes](broken-reference)
 
 ### MariaDB MaxScale 23.08
 

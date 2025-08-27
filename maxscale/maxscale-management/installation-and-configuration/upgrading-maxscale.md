@@ -4,7 +4,7 @@
 
 Before upgrading to MariaDB MaxScale, it is critical to review the changes. This guide outlines new features, altered parameters, and deprecated functionality to ensure a smooth transition.
 
-For more information about what has changed, please refer to the [ChangeLog](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
+For more information about what has changed, please refer to the [ChangeLog](broken-reference) and to the release notes.
 
 Before starting the upgrade, any existing configuration files should be backed up.
 
@@ -138,7 +138,7 @@ The following deprecated core parameters have been removed:
 
 #### Schemarouter
 
-The deprecated aliases for the schemarouter parameters `ignore_databases`  and`ignore_databases_regex` have been removed. They can be replaced with`ignore_tables` and `ignore_tables_regex`.
+The deprecated aliases for the schemarouter parameters `ignore_databases` and`ignore_databases_regex` have been removed. They can be replaced with`ignore_tables` and `ignore_tables_regex`.
 
 In addition, the `preferred_server` parameter that was deprecated in 2.5 has also been removed.
 
