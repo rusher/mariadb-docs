@@ -7,3 +7,5 @@ description: >-
 
 # MariaDB MaxScale 25.01 Release Notes
 
+The MaxScale 25.01 release notes have moved here. 
+
