@@ -58,7 +58,7 @@ There can be one or more hints separated with space:
 hints:  hint hint ...
 ```
 
-#### Description
+### Description
 
 Each individual hint is hint name and arguments. In case there are no arguments,\
 the () brackets are still present:
@@ -154,9 +154,9 @@ It means: When considering a query plan that involves using `t1_index1` in a way
 
 The optimizer may also consider using `t1_index2` and pick that over `using t1_index1`. In such cases, the hint is effectively ignored and no warning is given.
 
-#### List of Hints
+### List of Hints
 
-**JOIN\_INDEX and NO\_JOIN\_INDEX**
+#### JOIN\_INDEX and NO\_JOIN\_INDEX
 
 An index-level hint that forces MariaDB to use or ignore the specified index(es) for an access method (range, ref, etc.). Equivalent to `FORCE INDEX FOR JOIN` and `IGNORE INDEX FOR JOIN`.
 
