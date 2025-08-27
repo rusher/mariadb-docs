@@ -16,14 +16,16 @@ MariaDB Vector has integrations in several frameworks.
 * [Spring AI, MariaDB Vector Store](https://docs.spring.io/spring-ai/reference/api/vectordbs/mariadb.html) - Java
 * [VectorDBBench](https://github.com/zilliztech/VectorDBBench/pull/375) - benchmarking for vector databases
 
-## Potential Future Integrations
-
-* [AutoGen](https://github.com/microsoft/autogen) - agent to agent
-* [DSPy](https://github.com/stanfordnlp/dspy) - workflow
-* [Feast](https://github.com/feast-dev/feast) - machine learning (not GenAI)
+## Potential Future Vector or AI Integrations
+* [AutoGen](https://github.com/microsoft/autogen) - Agent to agent, Python
+* [DB-GPT](https://github.com/eosphoros-ai/DB-GPT) - private LLM, vector search and text2sql, see [integration docs](http://docs.dbgpt.cn/docs/installation), Python
+* [DSPy](https://github.com/stanfordnlp/dspy) - Workflow, not accepting external integrations anymore, Python
+* [Feast](https://github.com/feast-dev/feast) - machine learning (not GenAI), Python
 * [Firebase Studio template for MariaDB Vector](https://firebase.uservoice.com/forums/948424-general/suggestions/49702310-mariadb-vector) - visit link to vote for suggestion
-* [LangGraph](https://github.com/langchain-ai/langgraph) - agentic workflow
-* [Open WebUI](https://github.com/open-webui/open-webui) - AI Interface
+* [LangGraph](https://github.com/langchain-ai/langgraph) - Agentic workflow, Python
+* [MindSQL](https://github.com/Mindinventory/MindSQL) - Text-to-SQL RAG Library simplifying database interactions, Python
+* [Open WebUI](https://github.com/open-webui/open-webui) - AI Interface, Python & Javascript
+* [Vanna AI](https://github.com/vanna-ai/vanna) - Vector search and text2sql, Python
 
 For further alternatives, see [Qdrant's list of framework integrations](https://qdrant.tech/documentation/frameworks/).
 
