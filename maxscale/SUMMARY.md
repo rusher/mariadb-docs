@@ -121,9 +121,8 @@
 
 ## MaxScale Archive
 
-* [Archive](maxscale-archive/archive/README.md)
+* [Archive](maxscale-archive/archive/README.md)0
   * [MariaDB MaxScale 25.01](maxscale-archive/archive/mariadb-maxscale-25-01/README.md)
-    * [MaxScale 25.01 Changelog](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-changelog.md)
     * [MaxScale 25.01 Contents](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-contents.md)
     * [MariaDB MaxScale 25.01 Authenticators](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-authenticators/README.md)
       * [MaxScale 25.01 Ed25519 Authenticator](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-ed25519-authenticator.md)
@@ -173,14 +172,6 @@
       * [MaxScale 25.01 MaxCtrl](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
       * [MaxScale 25.01 Module commands](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-module-commands.md)
       * [MaxScale 25.01 Securing Your MaxScale Deployment](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-securing-your-maxscale-deployment.md)
-    * [MariaDB MaxScale 25.01 Release Notes](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-release-notes/README.md)
-      * [MariaDB MaxScale 24.02.0 Release Notes -- 2024-02-29](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-release-notes/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-24020-release-notes-2024-02-29.md)
-      * [MariaDB MaxScale 24.02.1 Release Notes -- 2024-04-10](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-release-notes/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-24021-release-notes-2024-04-10.md)
-      * [MariaDB MaxScale 24.02.2 Release Notes -- 2024-06-03](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-release-notes/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-24022-release-notes-2024-06-03.md)
-      * [MariaDB MaxScale 24.02.3 Release Notes -- 2024-09-09](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-release-notes/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-24023-release-notes-2024-09-09.md)
-      * [MariaDB MaxScale 24.02.4 Release Notes -- 2024-12-09](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-release-notes/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-24024-release-notes-2024-12-09.md)
-      * [MariaDB MaxScale 25.01.1 Release Notes -- 2025-01-16](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-release-notes/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-25011-release-notes-2025-01-16.md)
-      * [MariaDB MaxScale 25.01.2 Release Notes](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-release-notes/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-enterprise-25012-release-notes.md)
     * [MariaDB MaxScale 25.01 REST API](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/README.md)
       * [MaxScale 25.01 Admin User Resource](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-admin-user-resource.md)
       * [MaxScale 25.01 Filter Resource](maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-filter-resource.md)
