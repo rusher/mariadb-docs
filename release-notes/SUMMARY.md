@@ -1420,8 +1420,6 @@
     * [MariaDB MaxScale 2.4.2 Release Notes](maxscale/2.4/2.4.2.md)
     * [MariaDB MaxScale 2.4.1 Release Notes](maxscale/2.4/2.4.1.md)
     * [MariaDB MaxScale 2.4.0 Release Notes](maxscale/2.4/2.4.0.md)
-  * [MariaDB MaxScale 24.02 Release Notes](maxscale/24.02/README.md)
-    * [DP](maxscale/24.02/dp.md)
 * [ColumnStore Release Notes](columnstore/README.md)
   * [MariaDB ColumnStore 23.10 Release Notes](columnstore/mariadb-columnstore-23-10-release-notes/README.md)
     * [MariaDB ColumnStore 23.10.4 Release Notes](columnstore/mariadb-columnstore-23-10-release-notes/mariadb-columnstore-23.10.4-release-notes.md)
