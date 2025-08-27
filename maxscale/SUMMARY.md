@@ -694,7 +694,7 @@
       * [Upgrading MariaDB MaxScale From 2.0 to 2.1](maxscale-archive/archive/mariadb-maxscale-22.08/mariadb-maxscale-2208-upgrading/mariadb-maxscale-2208-upgrading-mariadb-maxscale-from-20-to-21.md)
       * [Upgrading MariaDB MaxScale From 1.4 to 2.0](maxscale-archive/archive/mariadb-maxscale-22.08/mariadb-maxscale-2208-upgrading/mariadb-maxscale-2208-upgrading-mariadb-maxscale-from-14-to-20.md)
     * [MaxScale 22.08 Release Notes](maxscale-archive/archive/mariadb-maxscale-22.08/maxscale-22.08-release-notes/README.md)
-      * [MariaDB MaxScale 22.08.17 Release Notes](maxscale-archive/archive/mariadb-maxscale-22.08/maxscale-22.08-release-notes/mariadb-maxscale-22.08.17-release-notes.md)
+      * [MariaDB MaxScale 22.08.17 Release Notes](maxscale-archive/archive/mariadb-maxscale-22.08/maxscale-22.08-release-notes/mariadb-maxscale-2208-mariadb-maxscale-220817-release-notes.md)
       * [MariaDB MaxScale 22.08.16 Release Notes](maxscale-archive/archive/mariadb-maxscale-22.08/maxscale-22.08-release-notes/mariadb-maxscale-2208-maxscale-2208-mariadb-maxscale-220816-release-notes.md)
       * [MariaDB MaxScale 22.08.15 Release Notes](maxscale-archive/archive/mariadb-maxscale-22.08/maxscale-22.08-release-notes/mariadb-maxscale-2208-maxscale-2208-mariadb-maxscale-220815-release-notes-2024-12-09.md)
       * [MariaDB MaxScale 22.08.14 Release Notes](maxscale-archive/archive/mariadb-maxscale-22.08/maxscale-22.08-release-notes/mariadb-maxscale-2208-maxscale-2208-mariadb-maxscale-220814-release-notes-2024-09-09.md)
