@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn about the new features, bug fixes, and changes in MariaDB MaxScale 24.02
+  Learn about the new features, bug fixes, and changes in MariaDB MaxScale 2.5
   releases. This section provides detailed release notes for these specific
   versions.
 layout:
@@ -19,5 +19,5 @@ layout:
     visible: true
 ---
 
-# MariaDB MaxScale 24.02 Release Notes
+# MariaDB MaxScale 2.5 Release Notes
 
