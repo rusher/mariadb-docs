@@ -32,8 +32,6 @@ If the [query\_cache\_type](../../../../ha-and-performance/optimization-and-tuni
 
 `USE INDEX`, `FORCE INDEX` and `IGNORE INDEX` constrain the query planning to a specific index. For further information about some of these options, see [How to force query plans](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans.md).
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
-
 ## Expanded Optimizer Hints
 
 ### Syntax
@@ -60,7 +58,7 @@ There can be one or more hints separated with space:
 hints:  hint hint ...
 ```
 
-### Description
+#### Description
 
 Each individual hint is hint name and arguments. In case there are no arguments,\
 the () brackets are still present:
@@ -73,7 +71,7 @@ Incorrect hints produce warnings (a setting to make them errors is not implement
 Hints that are not ignored are kept in the query text (you can see them in SHOW PROCESSLIST, Slow Query Log, EXPLAIN EXTENDED)\
 Hints that were incorrect and were ignored are removed from there.
 
-#### Hint Hierarchy
+**Hint Hierarchy**
 
 Hints can be
 
@@ -99,7 +97,7 @@ hint_name(table_name@query_block [index_name [, index_name] ...])
 hint_name(@query_block  table_name [index_name [, index_name] ...])
 ```
 
-#### Query Block Naming
+**Query Block Naming**
 
 The `QB_NAME` hint is used to assign a name to the query block the hint is in. The Query Block is either a `SELECT` or a top-level construct of `UPDATE` or `DELETE` statement.
 
@@ -134,7 +132,7 @@ SELECT /*+ BKA(tbl1@`select#1`) */ 1 FROM tbl1 ...;
 
 Hints that control `@name` will control the first use of the CTE (common table expression).
 
-### Effect of Optimizer Hints
+#### Effect of Optimizer Hints
 
 The optimizer can be controlled by
 
@@ -156,9 +154,13 @@ It means: When considering a query plan that involves using `t1_index1` in a way
 
 The optimizer may also consider using `t1_index2` and pick that over `using t1_index1`. In such cases, the hint is effectively ignored and no warning is given.
 
-### List of Hints
+#### List of Hints
 
-#### NO\_RANGE\_OPTIMIZATION
+**JOIN\_INDEX and NO\_JOIN\_INDEX**
+
+An index-level hint that forces MariaDB to use or ignore the specified index(es) for an access method (range, ref, etc.). Equivalent to `FORCE INDEX FOR JOIN` and `IGNORE INDEX FOR JOIN`.
+
+**NO\_RANGE\_OPTIMIZATION**
 
 An index-level hint that disables range optimization for certain index(es):
 
@@ -166,7 +168,7 @@ An index-level hint that disables range optimization for certain index(es):
 SELECT /*+ NO_RANGE_OPTIMIZATION(tbl index1 index2) */  * FROM tbl ...
 ```
 
-#### NO\_ICP
+**NO\_ICP**
 
 An index-level hint that disables [Index Condition Pushdown](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-condition-pushdown.md) for the indexes. ICP+BKA is disabled as well.
 
@@ -174,7 +176,7 @@ An index-level hint that disables [Index Condition Pushdown](../../../../ha-and-
 SELECT /*+ NO_ICP(tbl index1 index2) */  * FROM tbl ...
 ```
 
-#### MRR and NO\_MRR
+**MRR and NO\_MRR**
 
 Index-level hints to force or disable use of MRR.
 
@@ -189,19 +191,19 @@ This controls:
 * MRR optimization for range access (mdev35483-mrr-is-narrow.sql);
 * BKA mdev35483-mrr-controls-bka-partially.sql.
 
-#### BKA() and NO\_BKA()
+**BKA() and NO\_BKA()**
 
 Query block or table-level hints.
 
 BKA() also enables MRR to make BKA possible. (This is different from session variables, where you need to enable MRR separately). This also enables BKAH.
 
-#### BNL() and NO\_BNL()
+**BNL() and NO\_BNL()**
 
 Controls BNL-H.
 
 The implementation is "BNL() hint effectively increases join\_cache\_level up to 4 " .. for the table(s) it applies to.
 
-#### MAX\_EXECUTION\_TIME()
+**MAX\_EXECUTION\_TIME()**
 
 Global-level hint to limit query execution time
 
@@ -212,9 +214,9 @@ SELECT /*+ MAX_EXECUTION_TIME(milliseconds) */ ...  ;
 A query that doesn't finish in the time specified will be aborted with an error.\
 If `@@max_statement_time` is set, the hint will be ignored and a warning produced. Note that this contradicts the stated principle that "new-style hints are more specific than server variable settings, so they override the server variable settings".
 
-### Subquery Hints
+#### Subquery Hints
 
-#### SUBQUERY Hint
+**SUBQUERY Hint**
 
 Query block-level hint.
 
@@ -226,7 +228,7 @@ SUBQUERY([@query_block_name] INTOEXISTS)
 
 This controls non-semi-join subqueries. The parameter specifies which subquery to use. Use of this hint disables conversion of subquery into semi-join.
 
-#### SEMIJOIN and NO\_SEMIJOIN
+**SEMIJOIN and NO\_SEMIJOIN**
 
 Query block-level hints.
 
@@ -238,6 +240,7 @@ This controls the conversion of subqueries to semi-joins and which semi-join str
 
 where the strategy is one of DUPSWEEDOUT, FIRSTMATCH, LOOSESCAN, MATERIALIZATION.
 {% endtab %}
+
 {% tab title="<12.1" %}
 Hints are placed after the main statement verb.
 
@@ -259,7 +262,7 @@ There can be one or more hints separated with space:
 hints:  hint hint ...
 ```
 
-### Description
+#### Description
 
 Each individual hint is hint name and arguments. In case there are no arguments,\
 the () brackets are still present:
@@ -272,7 +275,7 @@ Incorrect hints produce warnings (a setting to make them errors is not implement
 Hints that are not ignored are kept in the query text (you can see them in SHOW PROCESSLIST, Slow Query Log, EXPLAIN EXTENDED)\
 Hints that were incorrect and were ignored are removed from there.
 
-#### Hint Hierarchy
+**Hint Hierarchy**
 
 Hints can be
 
@@ -298,7 +301,7 @@ hint_name(table_name@query_block [index_name [, index_name] ...])
 hint_name(@query_block  table_name [index_name [, index_name] ...])
 ```
 
-#### Query Block Naming
+**Query Block Naming**
 
 The `QB_NAME` hint is used to assign a name to the query block the hint is in. The Query Block is either a `SELECT` or a top-level construct of `UPDATE` or `DELETE` statement.
 
@@ -333,7 +336,7 @@ SELECT /*+ BKA(tbl1@`select#1`) */ 1 FROM tbl1 ...;
 
 Hints that control `@name` will control the first use of the CTE (common table expression).
 
-### Effect of Optimizer Hints
+#### Effect of Optimizer Hints
 
 The optimizer can be controlled by
 
@@ -355,9 +358,9 @@ It means: When considering a query plan that involves using `t1_index1` in a way
 
 The optimizer may also consider using `t1_index2` and pick that over `using t1_index1`. In such cases, the hint is effectively ignored and no warning is given.
 
-### List of Hints
+#### List of Hints
 
-#### NO\_RANGE\_OPTIMIZATION
+**NO\_RANGE\_OPTIMIZATION**
 
 An index-level hint that disables range optimization for certain index(es):
 
@@ -365,7 +368,7 @@ An index-level hint that disables range optimization for certain index(es):
 SELECT /*+ NO_RANGE_OPTIMIZATION(tbl index1 index2) */  * FROM tbl ...
 ```
 
-#### NO\_ICP
+**NO\_ICP**
 
 An index-level hint that disables [Index Condition Pushdown](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-condition-pushdown.md) for the indexes. ICP+BKA is disabled as well.
 
@@ -373,7 +376,7 @@ An index-level hint that disables [Index Condition Pushdown](../../../../ha-and-
 SELECT /*+ NO_ICP(tbl index1 index2) */  * FROM tbl ...
 ```
 
-#### MRR and NO\_MRR
+**MRR and NO\_MRR**
 
 Index-level hints to force or disable use of MRR.
 
@@ -388,19 +391,19 @@ This controls:
 * MRR optimization for range access (mdev35483-mrr-is-narrow.sql);
 * BKA mdev35483-mrr-controls-bka-partially.sql.
 
-#### BKA() and NO\_BKA()
+**BKA() and NO\_BKA()**
 
 Query block or table-level hints.
 
 BKA() also enables MRR to make BKA possible. (This is different from session variables, where you need to enable MRR separately). This also enables BKAH.
 
-#### BNL() and NO\_BNL()
+**BNL() and NO\_BNL()**
 
 Controls BNL-H.
 
 The implementation is "BNL() hint effectively increases join\_cache\_level up to 4 " .. for the table(s) it applies to.
 
-#### MAX\_EXECUTION\_TIME()
+**MAX\_EXECUTION\_TIME()**
 
 Global-level hint to limit query execution time
 
@@ -411,9 +414,9 @@ SELECT /*+ MAX_EXECUTION_TIME(milliseconds) */ ...  ;
 A query that doesn't finish in the time specified will be aborted with an error.\
 If `@@max_statement_time` is set, the hint will be ignored and a warning produced. Note that this contradicts the stated principle that "new-style hints are more specific than server variable settings, so they override the server variable settings".
 
-### Subquery Hints
+#### Subquery Hints
 
-#### SUBQUERY Hint
+**SUBQUERY Hint**
 
 Query block-level hint.
 
@@ -425,7 +428,7 @@ SUBQUERY([@query_block_name] INTOEXISTS)
 
 This controls non-semi-join subqueries. The parameter specifies which subquery to use. Use of this hint disables conversion of subquery into semi-join.
 
-#### SEMIJOIN and NO\_SEMIJOIN
+**SEMIJOIN and NO\_SEMIJOIN**
 
 Query block-level hints.
 
