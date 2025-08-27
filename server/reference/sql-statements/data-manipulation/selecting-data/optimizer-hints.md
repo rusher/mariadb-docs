@@ -158,7 +158,7 @@ The optimizer may also consider using `t1_index2` and pick that over `using t1_i
 
 #### JOIN\_INDEX and NO\_JOIN\_INDEX
 
-An index-level hint that forces MariaDB to use or ignore the specified indexes for an access method (range, ref, etc.). Equivalent to `FORCE INDEX FOR JOIN` and `IGNORE INDEX FOR JOIN`.
+An index-level hint that enables or disables the specified indexes for an access method (range, ref, etc.). Equivalent to `FORCE INDEX FOR JOIN` and `IGNORE INDEX FOR JOIN`.
 
 #### GROUP\_INDEX and NO\_GROUP\_INDEX
 
@@ -167,6 +167,10 @@ An index-level hint that enables or disables the specified indexes for index sca
 #### ORDER\_INDEX and NO\_ORDER\_INDEX
 
 An index-level hint that enables or disables the specified indexes for sorting rows. Equivalent to `FORCE INDEX FOR ORDER BY` and `IGNORE INDEX FOR ORDER BY`.
+
+#### INDEX and NO\_INDEX
+
+An index-level hint that enables or disables the specified indexes, for all scopes (join access method, GROUP BY, or sorting). Equivalent to `FORCE INDEX` and `IGNORE INDEX`.
 
 **NO\_RANGE\_OPTIMIZATION**
 
