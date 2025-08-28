@@ -1382,7 +1382,7 @@
     * [MaxScale 23.08.2 Release Notes](maxscale/23.08/23.08.2.md)
     * [MaxScale 23.08.1 Release Notes](maxscale/23.08/23.08.1.md)
     * [MaxScale 23.08.0 Release Notes](maxscale/23.08/23.08.0.md)
- * [MariaDB MaxScale 23.02 Release Notes](maxscale/23.02/README.md)
+  * [MariaDB MaxScale 23.02 Release Notes](maxscale/23.02/README.md)
     * [MaxScale 23.02 Changelog](maxscale/23.02/23.02-changelog.md)
     * [MaxScale 23.02.14 Release Notes](maxscale/23.02/23.02.14.md)
     * [MaxScale 23.02.13 Release Notes](maxscale/23.02/23.02.13.md)
