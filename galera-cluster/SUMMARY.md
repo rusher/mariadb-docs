@@ -67,4 +67,3 @@
     * [ssl\_capath](reference/wsrep-variable-details/ssl_capath.md)
     * [ssl\_cert](reference/wsrep-variable-details/ssl_cert.md)
     * [ssl\_key](reference/wsrep-variable-details/ssl_key.md)
-    * [Page 1](reference/wsrep-variable-details/page-1.md)

@@ -209,10 +209,36 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
 #### `gcomm.thread_prio`
 
+{% hint style="info" %}
+`fifo` or `rr` real-time scheduling policies requires  `mariadb` service permissions at the OS level.
+{% endhint %}
+
 * Description: Gcomm thread policy and priority (in the format `policy:priority`. Priority is an integer, while policy can be one of:
   * `fifo`: First-in, first-out scheduling. Always preempt other, batch or idle threads and can only be preempted by other `fifo` threads of a higher priority or blocked by an I/O request.
   * `rr`: Round-robin scheduling. Always preempt other, batch or idle threads. Runs for a fixed period of time after which the thread is stopped and moved to the end of the list, being replaced by another round-robin thread with the same priority. Otherwise runs until preempted by other `rr` threads of a higher priority or blocked by an I/O request.
   * `other`: Default scheduling on Linux. Threads run until preempted by a thread of a higher priority or a superior scheduling designation, or blocked by an I/O request.
+*   Permissions: Using the `fifo` or `rr` real-time scheduling policies requires granting the `mariadb` service the necessary permissions at the OS level. On systemd-based distributions, this is done by adjusting the resource limits for the service.
+
+    The recommended method is to create a systemd override file:
+
+    1.  Open the MariaDB service unit for editing:
+
+        ```bash
+        sudo systemctl edit mariadb
+        ```
+    2.  Add the following content to the file. This grants the service the ability to set real-time priorities:
+
+        ```toml
+        [Service]
+        LimitRTPRIO=infinity
+        ```
+    3. Save the file and exit the editor.
+    4.  Reload the systemd daemon and restart the MariaDB service to apply the changes:
+
+        ```bash
+        sudo systemctl daemon-reload
+        sudo systemctl restart mariadb
+        ```
 * Dynamic: No
 * Default: Empty string
 
