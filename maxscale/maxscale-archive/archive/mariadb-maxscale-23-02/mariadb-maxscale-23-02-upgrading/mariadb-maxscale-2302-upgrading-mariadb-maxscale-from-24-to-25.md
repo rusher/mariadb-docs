@@ -3,7 +3,7 @@
 This document describes possible issues when upgrading MariaDB\
 MaxScale from version 2.4 to 2.5.
 
-For more information about MaxScale 2.5, refer to the [ChangeLog](../mariadb-maxscale-2302-changelog.md).
+For more information about MaxScale 2.5, refer to the [ChangeLog](broken-reference).
 
 Before starting the upgrade, any existing configuration files should be\
 backed up.

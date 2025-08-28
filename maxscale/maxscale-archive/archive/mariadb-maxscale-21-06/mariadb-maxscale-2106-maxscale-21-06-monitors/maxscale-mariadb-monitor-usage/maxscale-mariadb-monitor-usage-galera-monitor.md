@@ -22,7 +22,7 @@ The Galera Monitor (galeramon) supports:
 
 * Monitoring [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-galera-cluster-quickstart/README.md) deployments
 * Monitoring [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-galera-cluster-quickstart/README.md) deployments
-* Query-based load balancing with the [Read/Write Split Router (readwritesplit)](../../mariadb-maxscale-21-06-routers/readwrite-split-router-usage/understanding-maxscales-readwrite-split-router.md)
+* Query-based load balancing with the [Read/Write Split Router (readwritesplit)](../../../../../maxscale-use-cases/readwrite-split-router-usage/understanding-maxscales-readwrite-split-router.md)
 * Connection-based load balancing with the Read Connection Router (readconnroute)
 
 ### Deploying Galera Monitor

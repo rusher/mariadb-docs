@@ -1,10 +1,10 @@
 # Replaying Transactions with MaxScale's Read/Write Split Router
 
-The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) routes write queries to the primary server and load balances read-only queries between one or more replica servers. If a server fails, then the router may need to replay in-progress transactions on a different server.
+The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) routes write queries to the primary server and load balances read-only queries between one or more replica servers. If a server fails, then the router may need to replay in-progress transactions on a different server.
 
 ## Session Command History
 
-The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) maintains connection state on replica servers by keeping a session command history. If the router has to create a new connection, then it replays these session commands from the previous connection on the new connection.
+The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) maintains connection state on replica servers by keeping a session command history. If the router has to create a new connection, then it replays these session commands from the previous connection on the new connection.
 
 ## Minimizing Memory Usage of Session Command History
 

@@ -1,6 +1,6 @@
 # Delayed Retrying of Failed Queries with MaxScale's Read/Write Split Router
 
-The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) routes write queries to the primary server and load balances read-only queries between one or more replica servers. If a server fails, then the router may need to retry failed queries on a different server. The retry may need to be delayed in some cases, such as when [automatic failover](../../mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-mariadb-monitor/using-automatic-failover-with-maxscales-mariadb-monitor.md) is in progress.
+The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) routes write queries to the primary server and load balances read-only queries between one or more replica servers. If a server fails, then the router may need to retry failed queries on a different server. The retry may need to be delayed in some cases, such as when [automatic failover](../../maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-mariadb-monitor/using-automatic-failover-with-maxscales-mariadb-monitor.md) is in progress.
 
 ## Configuring Delayed Retries for Failed Queries
 

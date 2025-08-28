@@ -15,7 +15,7 @@ versioned. For instance, 2.5.1, the first GA version of MaxScale 2.5, was\
 followed by the maintenace release 2.5.2. 6.1, the first GA version of MaxScale\
 6, will be followed by the maintenance release 6.2.
 
-For more information about MaxScale 6, refer to the [ChangeLog](../mariadb-maxscale-2308-changelog.md).
+For more information about MaxScale 6, refer to the [ChangeLog](broken-reference).
 
 Before starting the upgrade, any existing configuration files should be backed\
 up.
