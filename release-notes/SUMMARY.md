@@ -1418,7 +1418,7 @@
     * [MaxScale 22.08.3 Release Notes](maxscale/22.08/22.08.3.md)
     * [MaxScale 22.08.2 Release Notes](maxscale/22.08/22.08.2.md)
     * [MaxScale 22.08.1 Release Notes](maxscale/22.08/22.08.1.md)
-    * [MaxScale 22.08.0 Release Notes](maxscale/22.08/22.08.0.md)
+    * [MaxScale 22.08.0 Release Notes](maxscale/22.08/maxscale-22.08.0-release-notes.md)
   * [MariaDB MaxScale 2.5 Release Notes](maxscale/2.5/README.md)
     * [MaxScale 2.5 Limitations and Known Issues](maxscale/2.5/limitations.md)
     * [MariaDB MaxScale 2.5.29 Release Notes](maxscale/2.5/2.5.29.md)
