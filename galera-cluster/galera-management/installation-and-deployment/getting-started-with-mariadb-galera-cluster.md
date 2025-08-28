@@ -58,7 +58,7 @@ To use MariaDB Galera Cluster, there are two primary packages that you need to i
 
 As mentioned in the previous section, Galera Cluster support is actually included in the standard MariaDB Server packages. That means that installing MariaDB Galera Cluster package is the same as installing standard MariaDB Server package in those versions. However, you will also have to install an additional package to obtain the Galera wsrep provider library.
 
-Some [SST](../monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) methods may also require additional packages to be installed. The [mariadb-backup](../monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md) SST method is generally the best option for large clusters that expect a lot of loads.
+Some [SST](../../high-availability/introduction-to-state-snapshot-transfers-ssts.md) methods may also require additional packages to be installed. The [mariadb-backup](../monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md) SST method is generally the best option for large clusters that expect a lot of loads.
 
 ### Installing MariaDB Galera Cluster with a Package Manager
 
@@ -156,7 +156,7 @@ wsrep_cluster_address=gcomm://192.168.0.1  # DNS names work as well, IP is prefe
 
 The new node only needs to connect to one of the existing cluster nodes. Once it connects to one of the existing cluster nodes, it will be able to see all of the nodes in the cluster. However, it is generally better to list all nodes of the cluster in [wsrep\_cluster\_address](../../reference/galera-cluster-system-variables.md#wsrep_cluster_address), so that any node can join a cluster by connecting to any of the other cluster nodes, even if one or more of the cluster nodes are down. It is even OK to list a node's own IP address in [wsrep\_cluster\_address](../../reference/galera-cluster-system-variables.md#wsrep_cluster_address), since Galera Cluster is smart enough to ignore it.
 
-Once all members agree on the membership, the cluster's state will be exchanged. If the new node's state is different from that of the cluster, then it will request an IST or [SST](../monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) to make itself consistent with the other nodes.
+Once all members agree on the membership, the cluster's state will be exchanged. If the new node's state is different from that of the cluster, then it will request an IST or [SST](../../high-availability/introduction-to-state-snapshot-transfers-ssts.md) to make itself consistent with the other nodes.
 
 ## Restarting the Cluster
 
@@ -202,7 +202,7 @@ Support for [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-mana
 
 In a State Snapshot Transfer (SST), the cluster provisions nodes by transferring a full data copy from one node to another. When a new node joins the cluster, the new node initiates a State Snapshot Transfer to synchronize its data with a node that is already part of the cluster.
 
-See [Introduction to State Snapshot Transfers (SSTs)](../monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.
+See [Introduction to State Snapshot Transfers (SSTs)](../../high-availability/introduction-to-state-snapshot-transfers-ssts.md) for more information.
 
 ## Incremental State Transfers (ISTs)
 
@@ -212,7 +212,7 @@ If a node has only been out of a cluster for a little while, then an IST is gene
 
 ## Data at Rest Encryption
 
-MariaDB Galera Cluster supports [Data at Rest Encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/data-at-rest-encryption-overview). See [SSTs and Data at Rest Encryption](../monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#ssts-and-data-at-rest-encryption) for some disclaimers on how SSTs are affected when encryption is configured.
+MariaDB Galera Cluster supports [Data at Rest Encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/data-at-rest-encryption-overview). See [SSTs and Data at Rest Encryption](../../high-availability/introduction-to-state-snapshot-transfers-ssts.md#ssts-and-data-at-rest-encryption) for some disclaimers on how SSTs are affected when encryption is configured.
 
 Some data still cannot be encrypted:
 
