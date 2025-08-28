@@ -18,22 +18,22 @@ For more details, please refer to:
 * [MariaDB MaxScale 21.06.18 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-210618-release-notes-2024-12-09.md)
 * [MariaDB MaxScale 21.06.17 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-210617-release-notes-2024-09-09.md)
 * [MariaDB MaxScale 21.06.16 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-210616-release-notes-2024-06-03.md)
-* [MariaDB MaxScale 6.4.15 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-6415-release-notes-2024-03-11.md)
-* [MariaDB MaxScale 6.4.14 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-6414-release-notes-2024-02-09.md)
-* [MariaDB MaxScale 6.4.13 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-6413-release-notes-2023-11-30.md)
-* [MariaDB MaxScale 6.4.12 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-6412-release-notes-2023-11-03.md)
-* [MariaDB MaxScale 6.4.11 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-6411-release-notes-2023-10-30.md)
-* [MariaDB MaxScale 6.4.10 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-6410-release-notes-2023-08-30.md)
-* [MariaDB MaxScale 6.4.9 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-649-release-notes-2023-08-21.md)
-* [MariaDB MaxScale 6.4.8 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-648-release-notes-2023-07-31.md)
-* [MariaDB MaxScale 6.4.7 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-647-release-notes-2023-05-24.md)
-* [MariaDB MaxScale 6.4.6 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-646-release-notes-2023-03-29.md)
-* [MariaDB MaxScale 6.4.5 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-645-release-notes-2023-01-13.md)
-* [MariaDB MaxScale 6.4.4 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-644-release-notes-2022-11-29.md)
-* [MariaDB MaxScale 6.4.3 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-643-release-notes-2022-10-14.md)
-* [MariaDB MaxScale 6.4.2 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-642-release-notes-2022-09-02.md)
-* [MariaDB MaxScale 6.4.1 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-641-release-notes-2022-07-14.md)
-* [MariaDB MaxScale 6.4.0 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-640-release-notes-2022-06-09.md)
+* [MariaDB MaxScale 6.4.15 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.14 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.13 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.12 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.11 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.10 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.9 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.8 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.7 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.6 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.5 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.4 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.3 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.2 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.1 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.4.0 Release Notes](broken-reference)
 
 ### MariaDB MaxScale 6.3
 
@@ -48,8 +48,8 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 6.3.1 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-631-release-notes-2022-05-16.md)
-* [MariaDB MaxScale 6.3.0 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-630-release-notes-2022-04-14.md)
+* [MariaDB MaxScale 6.3.1 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.3.0 Release Notes](broken-reference)
 
 ### MariaDB MaxScale 6.2
 
@@ -66,11 +66,11 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 6.2.4 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-624-release-notes-2022-03-30.md)
-* [MariaDB MaxScale 6.2.3 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-623-release-notes-2022-03-09.md)
-* [MariaDB MaxScale 6.2.2 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-622-release-notes-2022-02-14.md)
-* [MariaDB MaxScale 6.2.1 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-621-release-notes-2022-01-13.md)
-* [MariaDB MaxScale 6.2.0 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-620-release-notes-2021-11-26.md)
+* [MariaDB MaxScale 6.2.4 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.2.3 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.2.2 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.2.1 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.2.0 Release Notes](broken-reference)
 
 ### MariaDB MaxScale 6.1
 
@@ -98,12 +98,12 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 6.1.4 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-614-release-notes-2021-10-18.md)
-* [MariaDB MaxScale 6.1.3 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-613-release-notes-20211001.md)
-* [MariaDB MaxScale 6.1.2 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-612-release-notes-2021-09-27.md)
-* [MariaDB MaxScale 6.1.1 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-611-release-notes.md)
-* [MariaDB MaxScale 6.1.0 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-610-release-notes-2021-07-15.md)
-* [MariaDB MaxScale 6.0.0 Release Notes](mariadb-maxscale-21-06-release-notes/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-600-release-notes-2021-06-30.md)
+* [MariaDB MaxScale 6.1.4 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.1.3 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.1.2 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.1.1 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.1.0 Release Notes](broken-reference)
+* [MariaDB MaxScale 6.0.0 Release Notes](broken-reference)
 
 ### MariaDB MaxScale 2.5
 
