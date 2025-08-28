@@ -31,7 +31,7 @@
     * [Resetting the Quorum (Cluster Bootstrap)](galera-management/monitoring-and-recovery/resetting-the-quorum-cluster-bootstrap.md)
     * [State Snapshot Transfers (SSTs) in Galera Cluster](galera-management/monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/README.md)
       * [Introduction to State Snapshot Transfers (SSTs)](galera-management/monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md)
-      * [Understanding the GCache and IST](galera-management/monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/understanding-the-gcache-and-ist.md)
+      * [Rapid Node Recovery with IST and the GCache](galera-management/monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/rapid-node-recovery-with-ist-and-the-gcache.md)
       * [Manual SST of Galera Cluster Node With mariadb-backup](galera-management/monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariadb-backup.md)
       * [mariadb-backup SST Method](galera-management/monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md)
     * [Recovering a Primary Component After a Full Cluster Shutdown](galera-management/monitoring-and-recovery/recovering-a-primary-component-after-a-full-cluster-shutdown.md)
