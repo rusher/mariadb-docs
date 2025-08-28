@@ -61,7 +61,17 @@ WHERE t.TABLE_SCHEMA NOT IN ('information_schema', 'performance_schema', 'mysql'
 
 ### Unique Index
 
-A unique index ensures that all values in the indexed column (or combination of columns) are unique. However, unlike a primary key, columns in a unique index can store `NULL` values. Each key value uniquely identifies a row, but not every row needs to be represented if `NULL`s are allowed.
+A unique index ensures that all values in the indexed column (or combination of columns) are unique. However, unlike a primary key, columns in a unique index can store `NULL` values.&#x20;
+
+Each key value uniquely identifies a row, but not every row needs to be represented if `NULL`s are allowed.
+
+```python
+### INSERT INTO `securedb`.`t_long_keys`
+### SET
+###   @1=1 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='a' /* VARSTRING(4073) meta=4073 nullable=1 is_null=0 */
+###   @3=580 /* LONGINT meta=0 nullable=1 is_null=0 */
+```
 
 **Behavior (MariaDB 10.5+):**
 
