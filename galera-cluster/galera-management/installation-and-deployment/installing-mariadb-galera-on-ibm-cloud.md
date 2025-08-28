@@ -15,7 +15,7 @@ At the end of the tutorial, you will have a cluster with MariaDB up and running.
 * Select Service from the catalog
 * Search for Kubernetes Service and click on it
 
-![kubernetes-select](../.gitbook/assets/2.PNG)
+![kubernetes-select](../../.gitbook/assets/2.PNG)
 
 * You are now at the Kubernetes deployment page; you need to specify some details about the cluster
 * Choose a standard or free plan; the free plan only has one worker node and no subnet. to provision a standard cluster, you will need to upgrade account to Pay-As-You-Go
@@ -25,50 +25,50 @@ At the end of the tutorial, you will have a cluster with MariaDB up and running.
 * Enter your payment information, click Next, and submit your information
 * Choose classic or VPC, read the [docs](https://cloud.ibm.com/docs/containers?topic=containers-infrastructure_providers), and choose the most suitable type for yourself
 
-![infra-select](../.gitbook/assets/3.PNG)
+![infra-select](../../.gitbook/assets/3.PNG)
 
 * Now choose your location settings; for more information, please visit [Locations](https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones#zones)
 * Choose Geography (continent)
 
-![location-geo](../.gitbook/assets/4.PNG)
+![location-geo](../../.gitbook/assets/4.PNG)
 
 * Choose Single or Multizone. In single zone, your data is only kept in one datacenter; on the other hand, with Multizone it is distributed to multiple zones, thus safer in an unforeseen zone failure
 
-![location-avail](../.gitbook/assets/5.PNG)
+![location-avail](../../.gitbook/assets/5.PNG)
 
 * Choose a Worker Zone if using Single zones or Metro if Multizone
 
-![location-worker](../.gitbook/assets/6.PNG)
+![location-worker](../../.gitbook/assets/6.PNG)
 
 * If you wish to use Multizone please set up your account with [VRF](https://cloud.ibm.com/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) or [enable Vlan spanning](https://cloud.ibm.com/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning)
 * If at your current location selection, there is no available Virtual LAN, a new Vlan will be created for you
 * Choose a Worker node setup or use the preselected one, set Worker node amount per zone
 
-![worker-pool](../.gitbook/assets/7.PNG)
+![worker-pool](../../.gitbook/assets/7.PNG)
 
 * Choose Master Service Endpoint, In VRF-enabled accounts, you can choose private-only to make your master accessible on the private network or via VPN tunnel. Choose public-only to make your master publicly accessible. When you have a VRF-enabled account, your cluster is set up by default to use both private and public endpoints. For more information visit [endpoints](https://cloud.ibm.com/docs/account?topic=account-service-endpoints-overview).
 
-![endpoints](../.gitbook/assets/8.PNG)
+![endpoints](../../.gitbook/assets/8.PNG)
 
 * Give cluster a name
 
-![name-new](../.gitbook/assets/9.PNG)
+![name-new](../../.gitbook/assets/9.PNG)
 
 * Give desired tags to your cluster; for more information, visit [tags](https://cloud.ibm.com/docs/account?topic=account-tag)
 
-![tasg-new](../.gitbook/assets/10.PNG)
+![tasg-new](../../.gitbook/assets/10.PNG)
 
 * Click create
 
-![create-new](../.gitbook/assets/11.PNG)
+![create-new](../../.gitbook/assets/11.PNG)
 
 * Wait for you cluster to be provisioned
 
-![cluster-prepare](../.gitbook/assets/12.PNG)
+![cluster-prepare](../../.gitbook/assets/12.PNG)
 
 * Your cluster is ready for usage
 
-![cluster-done](../.gitbook/assets/13.PNG)
+![cluster-done](../../.gitbook/assets/13.PNG)
 
 ## Step 2 deploy IBM Cloud Block Storage plug-in
 
@@ -78,17 +78,17 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 * Select Software from the catalog
 * Search for IBM Cloud Block Storage plug-in and click on it
 
-![block-search](../.gitbook/assets/14.PNG)
+![block-search](../../.gitbook/assets/14.PNG)
 
 * On the application page Click in the dot next to the cluster, you wish to use
 * Click on Enter or Select Namespace and choose the default Namespace or use a custom one (if you get error please wait 30 minutes for the cluster to finalize)
 
-![block-cluster](<../.gitbook/assets/15 (1).PNG>)
+![block-cluster](<../../.gitbook/assets/15 (1).PNG>)
 
 * Give a name to this workspace
 * Click install and wait for the deployment
 
-![block-storage-create](../.gitbook/assets/16.PNG)
+![block-storage-create](../../.gitbook/assets/16.PNG)
 
 ## Step 3 deploy MariaDB Galera
 
@@ -98,47 +98,47 @@ We will deploy MariaDB on our cluster
 * Select Software from the catalog
 * Search for MariaDB and click on it
 
-![search](../.gitbook/assets/17.PNG)
+![search](../../.gitbook/assets/17.PNG)
 
 * On the application page Click in the dot next to the cluster, you wish to use
 
-![cluster-select](../.gitbook/assets/18.PNG)
+![cluster-select](../../.gitbook/assets/18.PNG)
 
 * Click on Enter or Select Namespace and choose the default Namespace or use a custom one
 
-![details-namespace](../.gitbook/assets/19.PNG)
+![details-namespace](../../.gitbook/assets/19.PNG)
 
 * Give a unique name to workspace, which you can easily recognize
 
-![details-name](../.gitbook/assets/20.PNG)
+![details-name](../../.gitbook/assets/20.PNG)
 
 * Select which resource group you want to use, it's for access controll and billing purposes. For more information please visit [resource groups](https://cloud.ibm.com/docs/account?topic=account-account_setup#bp_resourcegroups)
 
-![details-resource](../.gitbook/assets/21.PNG)
+![details-resource](../../.gitbook/assets/21.PNG)
 
 * Give tags to your MariaDB Galera, for more information visit [tags](https://cloud.ibm.com/docs/account?topic=account-tag)
 
-![details-tag](../.gitbook/assets/22.PNG)
+![details-tag](../../.gitbook/assets/22.PNG)
 
 * Click on Parameters with default values, You can set deployment values or use the default ones
 
-![parameters](../.gitbook/assets/23.PNG)
+![parameters](../../.gitbook/assets/23.PNG)
 
 * Please set the MariaDB Galera root password in the parameters
 
-![password](../.gitbook/assets/24.PNG)
+![password](../../.gitbook/assets/24.PNG)
 
 * After finishing everything, tick the box next to the agreements and click install
 
-![aggreement-create](../.gitbook/assets/25.PNG)
+![aggreement-create](../../.gitbook/assets/25.PNG)
 
 * The MariaDB Galera workspace will start installing, wait a couple of minutes
 
-![in-progress](../.gitbook/assets/26.PNG)
+![in-progress](../../.gitbook/assets/26.PNG)
 
 * Your MariaDB Galera workspace has been successfully deployed
 
-![done](../.gitbook/assets/27.PNG)
+![done](../../.gitbook/assets/27.PNG)
 
 ## Verify MariaDB Galera installation
 
@@ -146,15 +146,15 @@ We will deploy MariaDB on our cluster
 * Click on Clusters
 * Click on your Cluster
 
-![resource-select](../.gitbook/assets/28.PNG)
+![resource-select](../../.gitbook/assets/28.PNG)
 
 * Now you are at your clusters overview, here Click on Actions and Web terminal from the dropdown menu
 
-![cluster-main](../.gitbook/assets/29.PNG)
+![cluster-main](../../.gitbook/assets/29.PNG)
 
 * Click install - wait couple of minutes
 
-![terminal-install](../.gitbook/assets/30.PNG)
+![terminal-install](../../.gitbook/assets/30.PNG)
 
 * Click on Actions
 * Click Web terminal, and a terminal will open up
@@ -164,19 +164,19 @@ We will deploy MariaDB on our cluster
 $ kubectl get ns
 ```
 
-![get-ns](../.gitbook/assets/31.PNG)
+![get-ns](../../.gitbook/assets/31.PNG)
 
 ```
 $ kubectl get pod -n NAMESPACE -o wide
 ```
 
-![get-pod](../.gitbook/assets/32.PNG)
+![get-pod](../../.gitbook/assets/32.PNG)
 
 ```
 $ kubectl get service -n NAMESPACE
 ```
 
-![get-svc](../.gitbook/assets/33.PNG)
+![get-svc](../../.gitbook/assets/33.PNG)
 
 * Enter your pod with bash; please replace PODNAME with your mariadb pod's name
 
@@ -184,7 +184,7 @@ $ kubectl get service -n NAMESPACE
 $ kubectl exec --stdin --tty PODNAME -n NAMESPACE -- /bin/bash
 ```
 
-![bash](../.gitbook/assets/34.PNG)
+![bash](../../.gitbook/assets/34.PNG)
 
 * After you are in your pod , please verify that MariaDB is running on your pod's cluster. Please enter the root password after the prompt
 
@@ -192,7 +192,7 @@ $ kubectl exec --stdin --tty PODNAME -n NAMESPACE -- /bin/bash
 mysql -u root -p -e "SHOW STATUS LIKE 'wsrep_cluster_size'"
 ```
 
-![welcome](../.gitbook/assets/35.PNG)
+![welcome](../../.gitbook/assets/35.PNG)
 
 You have successfully deployed MariaDB Galera on IBM Cloud!
 

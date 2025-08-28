@@ -20,7 +20,7 @@ Common use cases for Galera replication include:
 * [What is MariaDB Galera Cluster?](readme/mariadb-galera-cluster-guide.md)
 * [About Galera Replication](readme/about-galera-replication.md)
 * [Codership: Using Galera Cluster](https://codership.com/content/using-galera-cluster)
-* [Getting Started with MariaDB/Galera Cluster](galera-management/getting-started-with-mariadb-galera-cluster.md)
+* [Getting Started with MariaDB/Galera Cluster](galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster.md)
 * [MariaDB Galera Cluster and M/S replication](https://www.youtube.com/watch?v=Nd0nvltLPdQ) (video)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

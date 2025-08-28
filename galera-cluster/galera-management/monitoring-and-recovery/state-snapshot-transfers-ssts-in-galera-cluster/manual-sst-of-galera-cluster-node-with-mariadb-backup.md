@@ -75,7 +75,7 @@ For example, a very common version number is "2.1".
 cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
 ```
 
-The file contains the values of the [`wsrep_local_state_uuid`](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [`wsrep_last_committed`](../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables.
+The file contains the values of the [`wsrep_local_state_uuid`](../../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [`wsrep_last_committed`](../../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables.
 
 The values are written in the following format:
 

@@ -28,7 +28,7 @@ The above features yield several benefits for a DBMS clustering solution, includ
 * Smaller client latencies
 
 The [Getting Started with MariaDB\
-Galera Cluster](../galera-management/getting-started-with-mariadb-galera-cluster.md) page has instructions on how to get up and running with MariaDB Galera Cluster.
+Galera Cluster](../galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster.md) page has instructions on how to get up and running with MariaDB Galera Cluster.
 
 A great resource for Galera users is [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (_`codership-team`_ _`'at'`_ _`googlegroups`_ _`(dot)`_ _`com`_) - If you use Galera, it is recommended you subscribe.
 
@@ -174,7 +174,7 @@ Never execute the bootstrap command on both sides of a partition. This will crea
 * [About Galera Replication](about-galera-replication.md)
 * [Codership: Using Galera Cluster](https://codership.com/content/using-galera-cluster)
 * [Galera Use Cases](../galera-use-cases.md)
-* [Getting Started with MariaDB Galera Cluster](../galera-management/getting-started-with-mariadb-galera-cluster.md)
+* [Getting Started with MariaDB Galera Cluster](../galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster.md)
 * [MariaDB Galera Cluster - Known Limitations](../galera-management/mariadb-galera-cluster-known-limitations.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}

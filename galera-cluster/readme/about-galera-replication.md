@@ -84,7 +84,7 @@ For more information on Group Commit, see the [Galera](https://galeracluster.com
 * [Galera Cluster: Galera Replication](https://galeracluster.com/products/)
 * [What is MariaDB Galera Cluster?](mariadb-galera-cluster-guide.md)
 * [Galera Use Cases](../galera-use-cases.md)
-* [Getting Started with MariaDB/Galera Cluster](../galera-management/getting-started-with-mariadb-galera-cluster.md)
+* [Getting Started with MariaDB/Galera Cluster](../galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

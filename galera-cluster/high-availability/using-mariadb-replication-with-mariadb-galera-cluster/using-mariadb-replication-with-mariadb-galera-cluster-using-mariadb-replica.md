@@ -17,7 +17,7 @@ Like with [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/h
 
 If the node is a replication master, then its replication slaves only replicate transactions that are in the binary log, so this means that the transactions that correspond to Galera Cluster write-sets would not be replicated by any replication slaves by default. If you would like a node to write its replicated write sets to the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log), then you will have to set [log\_slave\_updates=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#log_slave_updates). If the node has any replication slaves, then this would also allow those slaves to replicate the transactions that corresponded to those write sets.
 
-See [Configuring MariaDB Galera Cluster: Writing Replicated Write Sets to the Binary Log](../../galera-management/configuring-mariadb-galera-cluster.md#writing-replicated-write-sets-to-the-binary-log) for more information.
+See [Configuring MariaDB Galera Cluster: Writing Replicated Write Sets to the Binary Log](../../galera-management/configuration/configuring-mariadb-galera-cluster.md#writing-replicated-write-sets-to-the-binary-log) for more information.
 
 ## Configuring a Cluster Node as a Replication Slave
 
@@ -29,7 +29,7 @@ If the node is a replication slave, then it is probably also a good idea to enab
 
 ## Replication Filters
 
-Both [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](../../) support [replication filters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters), so extra caution must be taken when using all of these features together. See [Configuring MariaDB Galera Cluster: Replication Filters](../../galera-management/configuring-mariadb-galera-cluster.md#replication-filters) for more details on how MariaDB Galera Cluster interprets replication filters.
+Both [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](../../) support [replication filters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters), so extra caution must be taken when using all of these features together. See [Configuring MariaDB Galera Cluster: Replication Filters](../../galera-management/configuration/configuring-mariadb-galera-cluster.md#replication-filters) for more details on how MariaDB Galera Cluster interprets replication filters.
 
 ## Setting server\_id on Cluster Nodes
 

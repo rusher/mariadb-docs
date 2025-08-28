@@ -183,11 +183,11 @@ You can 'simulate' Master + Slaves by having clients write only to one node.
 * [innodb\_flush\_log\_at\_trx\_commit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_flush_log_at_trx_commit) - 2 or 0. IST or SST will recover from loss if you have 1.
 * [query\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_cache_size) - 0
 * [query\_cache\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_cache_type) - 0: The Query cache cannot be used in a Galera context.
-* [wsrep\_auto\_increment\_control](../reference/galera-cluster-system-variables.md#wsrep_auto_increment_control) - Normally want ON
-* [wsrep\_on](../reference/galera-cluster-system-variables.md#wsrep_on) - ON
-* [wsrep\_provider\_options](../reference/galera-cluster-system-variables.md#wsrep_provider_options) - Various settings may need tuning if you are using a WAN.
-* [wsrep\_slave\_threads](../reference/galera-cluster-system-variables.md#wsrep_slave_threads) - use for parallel replication
-* [wsrep\_sync\_wait](../reference/galera-cluster-system-variables.md#wsrep_sync_wait) (previously wsrep\_causal\_reads) - used transiently to dealing with "critical reads".
+* [wsrep\_auto\_increment\_control](../../reference/galera-cluster-system-variables.md#wsrep_auto_increment_control) - Normally want ON
+* [wsrep\_on](../../reference/galera-cluster-system-variables.md#wsrep_on) - ON
+* [wsrep\_provider\_options](../../reference/galera-cluster-system-variables.md#wsrep_provider_options) - Various settings may need tuning if you are using a WAN.
+* [wsrep\_slave\_threads](../../reference/galera-cluster-system-variables.md#wsrep_slave_threads) - use for parallel replication
+* [wsrep\_sync\_wait](../../reference/galera-cluster-system-variables.md#wsrep_sync_wait) (previously wsrep\_causal\_reads) - used transiently to dealing with "critical reads".
 
 ## Miscellany
 
@@ -195,7 +195,7 @@ Until recently, FOREIGN KEYs were buggy.
 
 LOAD DATA is auto chunked. That is, it is passed to other nodes piecemeal, not all at once.
 
-[MariaDB's known issues with Galera](mariadb-galera-cluster-known-limitations.md)
+[MariaDB's known issues with Galera](../mariadb-galera-cluster-known-limitations.md)
 
 DROP USER may not replicate?
 
@@ -211,11 +211,11 @@ WAN: May need to increase (from the defaults) wsrep\_provider\_options = evs...
 
 MySQL/Perona 5.6 or MariaDB 10 is recommended when going to Galera.
 
-[Cluster limitations](mariadb-galera-cluster-known-limitations.md)[Slide show](https://www.percona.com/files/presentations/percona-live/nyc-2012/PLNY12-galera-cluster-best-practices.pdf)
+[Cluster limitations](../mariadb-galera-cluster-known-limitations.md)[Slide show](https://www.percona.com/files/presentations/percona-live/nyc-2012/PLNY12-galera-cluster-best-practices.pdf)
 
 ## GTIDs
 
-See [Using MariaDB GTIDs with MariaDB Galera Cluster](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md).
+See [Using MariaDB GTIDs with MariaDB Galera Cluster](../../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md).
 
 ## How many nodes to have in a cluster
 

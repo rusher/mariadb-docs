@@ -36,7 +36,7 @@ By setting both MariaDB Server's TLS-related system variables and Galera Cluster
 
 ## Securing State Snapshot Transfers
 
-The method that you would use to enable TLS for [State Snapshot Transfers (SSTs)](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) would depend on the value of [wsrep\_sst\_method](../reference/galera-cluster-system-variables.md#wsrep_sst_method).
+The method that you would use to enable TLS for [State Snapshot Transfers (SSTs)](../galera-management/monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) would depend on the value of [wsrep\_sst\_method](../reference/galera-cluster-system-variables.md#wsrep_sst_method).
 
 ### mariadb-backup
 
@@ -52,7 +52,7 @@ This SST method simply uses the [mariadb-dump](https://app.gitbook.com/s/SsmexDF
 
 ### rsync
 
-This SST method supports encryption in transit via [stunnel](https://www.stunnel.org/). See [Introduction to State Snapshot Transfers (SSTs): rsync](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#rsync) for more information.
+This SST method supports encryption in transit via [stunnel](https://www.stunnel.org/). See [Introduction to State Snapshot Transfers (SSTs): rsync](../galera-management/monitoring-and-recovery/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#rsync) for more information.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

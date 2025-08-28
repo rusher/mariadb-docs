@@ -1,6 +1,6 @@
 # Building the Galera wsrep Package on Fedora
 
-The instructions on this page were used to create the _galera_ package on the Fedora Linux distribution. This package contains the wsrep provider for [MariaDB Galera Cluster](../readme/mariadb-galera-cluster-usage-guide.md).
+The instructions on this page were used to create the _galera_ package on the Fedora Linux distribution. This package contains the wsrep provider for [MariaDB Galera Cluster](../../../readme/mariadb-galera-cluster-usage-guide.md).
 
 The following table lists each version of the [Galera](https://mariadb.com/docs/galera-cluster) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](https://mariadb.com/docs/galera-cluster) 4 using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum), [apt](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/apt-upgrade-fails-but-the-database-is-running), or [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper), then the package is called `galera-4`.
 

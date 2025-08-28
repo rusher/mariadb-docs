@@ -13,7 +13,7 @@ There are two conceptually different ways to transfer a state from one MariaDB s
 
 SST methods are supported via a scriptable interface. New SST methods could potentially be developed by creating new SST scripts. The scripts usually have names of the form `wsrep_sst_<method>` where `<method>` is one of the SST methods listed below.
 
-You can choose your SST method by setting the [wsrep\_sst\_method](../../reference/galera-cluster-system-variables.md#wsrep_sst_method) system variable. It can be changed dynamically with [SET GLOBAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set#global-session) on the node that you intend to be an SST donor. For example:
+You can choose your SST method by setting the [wsrep\_sst\_method](../../../reference/galera-cluster-system-variables.md#wsrep_sst_method) system variable. It can be changed dynamically with [SET GLOBAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set#global-session) on the node that you intend to be an SST donor. For example:
 
 ```sql
 SET GLOBAL wsrep_sst_method='mariadb-backup';
@@ -27,7 +27,7 @@ It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFP
 wsrep_sst_method = mariadb-backup
 ```
 
-For an SST to work properly, the donor and joiner node must use the same SST method. Therefore, it is recommended to set [wsrep\_sst\_method](../../reference/galera-cluster-system-variables.md#wsrep_sst_method) to the same value on all nodes, since any node will usually be a donor or joiner node at some point.
+For an SST to work properly, the donor and joiner node must use the same SST method. Therefore, it is recommended to set [wsrep\_sst\_method](../../../reference/galera-cluster-system-variables.md#wsrep_sst_method) to the same value on all nodes, since any node will usually be a donor or joiner node at some point.
 
 MariaDB Galera Cluster comes with the following built-in SST methods:
 
@@ -84,7 +84,7 @@ You also need to run the certificate directory through [openssl rehash](mariadb-
 
 ### mysqldump
 
-This SST method runs [mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) on the donor node and pipes the output to the [mariadb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) client connected to the joiner node. The `mysqldump` SST method needs a username/password pair set in the [wsrep\_sst\_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth) variable in order to get the dump. The donor node is blocked with a read lock during the SST. This is the slowest SST method.
+This SST method runs [mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) on the donor node and pipes the output to the [mariadb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) client connected to the joiner node. The `mysqldump` SST method needs a username/password pair set in the [wsrep\_sst\_auth](../../../reference/galera-cluster-system-variables.md#wsrep_sst_auth) variable in order to get the dump. The donor node is blocked with a read lock during the SST. This is the slowest SST method.
 
 * This SST method supports [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid).
 * This SST method supports [Data at Rest Encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/data-at-rest-encryption-overview).
@@ -113,7 +113,7 @@ This SST method is an older SST method that uses the [Percona XtraBackup](https:
 
 ## Authentication
 
-All SST methods except `rsync` require authentication via username and password. You can tell the client what username and password to use by setting the [wsrep\_sst\_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth) system variable. It can be changed dynamically with [SET GLOBAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set#global-session) on the node that you intend to be a SST donor. For example:
+All SST methods except `rsync` require authentication via username and password. You can tell the client what username and password to use by setting the [wsrep\_sst\_auth](../../../reference/galera-cluster-system-variables.md#wsrep_sst_auth) system variable. It can be changed dynamically with [SET GLOBAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set#global-session) on the node that you intend to be a SST donor. For example:
 
 ```
 SET GLOBAL wsrep_sst_auth = 'mariadb-backup:password';
@@ -127,7 +127,7 @@ It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFP
 wsrep_sst_auth = mariadb-backup:password
 ```
 
-Some [authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) do not require a password. For example, the [unix\_socket](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) and [gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of [wsrep\_sst\_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth) empty. For example:
+Some [authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) do not require a password. For example, the [unix\_socket](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) and [gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of [wsrep\_sst\_auth](../../../reference/galera-cluster-system-variables.md#wsrep_sst_auth) empty. For example:
 
 ```
 [mariadb]
