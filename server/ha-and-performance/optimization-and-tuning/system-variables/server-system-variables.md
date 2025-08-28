@@ -2468,11 +2468,11 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 
 #### `shutdown_wait_for_slaves`
 
-* Description: When `ON`, `SHUTDOWN` command runs with the implicit `WAIT FOR ALL SLAVES` option. That is, when running `SHUTDOWN`, before killing the binary log dump threads, the server will first kill all client threads and send all binary log events to all connected replicas.
+* Description: When `ON, SHUTDOWN` command runs with implicit `WAIT FOR ALL SLAVES` option. That is, when running `SHUTDOWN`, before killing the binary log dump threads, the server will first kill all client threads and send all binary log events to all connected replicas.
 * Scope: Global
-* Dynamic: Yes
+* Dynamic: No
 * Data Type: `Boolean`
-* Default Value: `FALSE`
+* Default Value: `OFF`
 
 #### `skip_external_locking`
 
