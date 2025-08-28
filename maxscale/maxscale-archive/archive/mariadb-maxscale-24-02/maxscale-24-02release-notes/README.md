@@ -5,5 +5,8 @@ description: >-
   to ensure a smooth upgrade.
 ---
 
-# MaxScale 24.02 Release-Notes
+# MaxScale 24.02 Release Notes
 
+{% hint style="info" %}
+The MaxScale 24.02 release notes have moved [here](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale/24.02).
+{% endhint %}

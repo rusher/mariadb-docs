@@ -5,5 +5,8 @@ description: >-
   upgrade and deployment process.
 ---
 
-# MaxScale 23.02 Release-Notes
+# MaxScale 23.02 Release Notes
 
+{% hint style="info" %}
+The MaxScale 23.02 release notes have moved here.
+{% endhint %}
