@@ -21,13 +21,13 @@ MariaDB allows the user to configure flexibly what to encrypt. In or InnoDB, one
 
 Additionally, one can choose to encrypt InnoDB log files (recommended, with [innodb\_encrypt\_log=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)) and InnoDB Temporary Tables (with [innodb\_encrypt\_temporary\_tables=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables)).
 
-When [innodb\_encrypt\_log=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) or [innodb\_encrypt\_temporary\_tables=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) an encryption key of 1 must be defined. See [Enabling InnoDB Encryption](innodb-encryption/innodb-enabling-encryption.md).
+When [innodb\_encrypt\_log=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) or [innodb\_encrypt\_temporary\_tables=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) an encryption key of 1 must be defined. See [Enabling InnoDB Encryption](../../encryption/data-at-rest-encryption/innodb-encryption/innodb-enabling-encryption.md).
 
 ## Limitations
 
 These limitations exist in the data-at-rest encryption implementation:
 
-* Only data and only at rest is encrypted. Metadata (for example `.frm` files) and data sent to the client are not encrypted (but see [Secure Connections](../data-in-transit-encryption/)).
+* Only data and only at rest is encrypted. Metadata (for example `.frm` files) and data sent to the client are not encrypted (but see [Secure Connections](../../encryption/data-in-transit-encryption/)).
 * Only the MariaDB server knows how to decrypt the data, in particular
   * [mariadb-binlog](../../../../clients-and-utilities/logging-tools/mariadb-binlog/) can read encrypted binary logs only when --read-from-remote-server is used ([MDEV-8813](https://jira.mariadb.org/browse/MDEV-8813)).
   * [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) cannot back up instances that use encrypted InnoDB. However, MariaDB's fork, [MariaDB Backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/), can back up encrypted instances.
@@ -39,28 +39,28 @@ These limitations exist in the data-at-rest encryption implementation:
 
 ## Encryption Key Management
 
-MariaDB's data-at-rest encryption requires the use of a [key management and encryption plugin](../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
+MariaDB's data-at-rest encryption requires the use of a [key management and encryption plugin](key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
 
-MariaDB supports the use of [multiple encryption keys](../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#rotating-keys), then encryption keys can also be rotated, which creates a new version of the encryption key.
+MariaDB supports the use of [multiple encryption keys](key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](key-management-and-encryption-plugins/encryption-key-management.md#rotating-keys), then encryption keys can also be rotated, which creates a new version of the encryption key.
 
 How MariaDB manages encryption keys depends on which encryption key management solution you choose. Currently, MariaDB has four options:
 
-* [File Key Management Plugin](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)
-* [AWS Key Management Plugin](key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)
-* [Hashicorp Key Management Plugin](key-management-and-encryption-plugins/hashicorp-key-management-plugin.md)
+* [File Key Management Plugin](../../encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)
+* [AWS Key Management Plugin](../../encryption/data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)
+* [Hashicorp Key Management Plugin](../../encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md)
 
 Once you have an key management and encryption plugin set up and configured for your server, you can begin using encryption options to better secure your data.
 
 ## Encrypting Data
 
-Encryption occurs whenever MariaDB writes pages to disk. Encrypting table data requires that you install a [key management and encryption plugin](../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md), such as the [File Key Management](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) plugin. Once you have a plugin set up and configured, you can enable encryption for your InnoDB and Aria tables.
+Encryption occurs whenever MariaDB writes pages to disk. Encrypting table data requires that you install a [key management and encryption plugin](key-management-and-encryption-plugins/encryption-key-management.md), such as the [File Key Management](../../encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) plugin. Once you have a plugin set up and configured, you can enable encryption for your InnoDB and Aria tables.
 
 ### Encrypting Table Data
 
 MariaDB supports data-at-rest encryption for InnoDB and Aria storage engines. Additionally, it supports encrypting the [InnoDB redo log](../../../../server-usage/storage-engines/innodb/innodb-redo-log.md) and internal on-disk temporary tables that use the Aria storage engine..
 
-* [Encrypting Data for InnoDB](innodb-encryption/innodb-encryption-overview.md)
-* [Encrypting Data for Aria](aria-encryption/aria-encryption-overview.md)
+* [Encrypting Data for InnoDB](../../encryption/data-at-rest-encryption/innodb-encryption/innodb-encryption-overview.md)
+* [Encrypting Data for Aria](../../encryption/data-at-rest-encryption/aria-encryption/aria-encryption-overview.md)
 
 ### Encrypting Temporary Files
 
@@ -72,7 +72,7 @@ Since [MariaDB 10.1.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community
 
 MariaDB can also encrypt [binary logs](../../../../server-management/server-monitoring-logs/binary-log/) (including [relay logs](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md)).
 
-* [Encrypting Binary Logs](encrypting-binary-logs.md)
+* [Encrypting Binary Logs](../../encryption/data-at-rest-encryption/encrypting-binary-logs.md)
 
 ## Encryption and Page Compression
 

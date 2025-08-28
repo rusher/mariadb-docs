@@ -629,7 +629,7 @@
         * [SSL/TLS System Variables](security/securing-mariadb/encryption/data-in-transit-encryption/ssltls-system-variables.md)
         * [Using TLSv1.3](security/securing-mariadb/encryption/data-in-transit-encryption/using-tlsv13.md)
       * [Data-at-Rest Encryption](security/securing-mariadb/encryption/data-at-rest-encryption/README.md)
-        * [Data-at-Rest Encryption Overview](security/securing-mariadb/encryption/data-at-rest-encryption/data-at-rest-encryption-overview.md)
+        * [Data-at-Rest Encryption Overview](security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md)
         * [Encrypting Binary Logs](security/securing-mariadb/encryption/data-at-rest-encryption/encrypting-binary-logs.md)
         * [Why Encrypt MariaDB Data?](security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/why-encrypt-mariadb-data.md)
         * [Aria Encryption](security/securing-mariadb/encryption/data-at-rest-encryption/aria-encryption/README.md)

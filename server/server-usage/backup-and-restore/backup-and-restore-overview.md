@@ -20,7 +20,7 @@ The main differences are as follows:
 
 ### `mariadb-backup`
 
-The [mariadb-backup](mariadb-backup/) program is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) with added support for [compression](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/) and [data-at-rest encryption](../../security/securing-mariadb/encryption/data-at-rest-encryption/data-at-rest-encryption-overview.md).
+The [mariadb-backup](mariadb-backup/) program is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) with added support for [compression](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/) and [data-at-rest encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 
 ### `mariadb-dump`
 

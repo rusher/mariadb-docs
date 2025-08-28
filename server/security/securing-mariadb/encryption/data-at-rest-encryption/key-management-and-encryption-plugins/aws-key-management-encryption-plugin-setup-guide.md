@@ -256,7 +256,7 @@ Query OK, 0 rows affected (0.91 sec)
 -rw-rw----. 1 mysql mysql 188 Feb 25 19:10 /var/lib/mysql/aws-kms-key.3.1
 ```
 
-Read more about encrypting data in the [Data at Rest Encryption](../data-at-rest-encryption-overview.md) section of the MariaDB Documentation.
+Read more about encrypting data in the [Data at Rest Encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) section of the MariaDB Documentation.
 
 ## AWS KMS Plugin Option Reference
 

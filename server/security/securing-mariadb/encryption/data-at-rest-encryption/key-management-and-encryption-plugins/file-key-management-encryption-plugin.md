@@ -1,6 +1,6 @@
 # File Key Management Encryption Plugin
 
-MariaDB's [data-at-rest encryption](../data-at-rest-encryption-overview.md) requires the use of a [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
+MariaDB's [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) requires the use of a [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
 
 MariaDB supports the use of [multiple encryption keys](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation), then encryption keys can also be rotated, which creates a new version of the encryption key.
 
@@ -8,7 +8,7 @@ The File Key Management plugin that ships with MariaDB is a [key management and 
 
 ## Overview
 
-The File Key Management plugin is the easiest [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) to set up for users who want to use [data-at-rest encryption](../data-at-rest-encryption-overview.md). Some of the plugin's primary features are:
+The File Key Management plugin is the easiest [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) to set up for users who want to use [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). Some of the plugin's primary features are:
 
 * It reads encryption keys from a plain-text key file.
 * As an extra protection mechanism, the plain-text key file can be encrypted.
@@ -34,7 +34,7 @@ plugin_load_add = file_key_management
 
 ## Uninstalling the Plugin
 
-Before you uninstall the plugin, you should ensure that [data-at-rest encryption](../data-at-rest-encryption-overview.md) is completely disabled, and that MariaDB no longer needs the plugin to decrypt tables or other files.
+Before you uninstall the plugin, you should ensure that [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) is completely disabled, and that MariaDB no longer needs the plugin to decrypt tables or other files.
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
@@ -193,7 +193,7 @@ Once the File Key Management Plugin is enabled, you can use it by creating an en
 CREATE TABLE t (i INT) ENGINE=InnoDB ENCRYPTED=YES
 ```
 
-Now, table `t` will be encrypted using the encryption key from the key file. For more information on how to use encryption, see [Data at Rest Encryption](../data-at-rest-encryption-overview.md).
+Now, table `t` will be encrypted using the encryption key from the key file. For more information on how to use encryption, see [Data at Rest Encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 
 ## Using Multiple Encryption Keys
 
