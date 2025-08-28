@@ -1,4 +1,4 @@
-# MaxScale 24.02 Upgrading MariaDB MaxScale from 2.5 to 6
+# Upgrading MariaDB MaxScale from 2.5 to 6
 
 This document describes possible issues when upgrading MariaDB MaxScale from\
 version 2.5 to 6.
@@ -11,7 +11,7 @@ versioned. For instance, 2.5.1, the first GA version of MaxScale 2.5, was\
 followed by the maintenance release 2.5.2. 6.1, the first GA version of MaxScale\
 6, will be followed by the maintenance release 6.2.
 
-For more information about MaxScale 6, refer to the [ChangeLog](../mariadb-maxscale-2402-maxscale-2402-changelog.md).
+For more information about MaxScale 6, refer to the [ChangeLog](broken-reference).
 
 Before starting the upgrade, any existing configuration files should be backed\
 up.
