@@ -34,9 +34,9 @@ Choose the procedure for your desired operation and substitute your Customer Dow
 
 MariaDB Corporation provides the MariaDB Enterprise Repository to install MariaDB database products using package managers on CentOS / RHEL (YUM), Debian / Ubuntu (APT), and SLES (ZYpp).
 
-The MariaDB Enterprise Repository is configured using the mariadb\_es\_repo\_setup script, which requires the Customer Download Token to be provided via the --token option.
+The MariaDB Enterprise Repository is configured using the `mariadb_es_repo_setup` script, which requires the Customer Download Token to be provided via the `--token` option.
 
-For additional information, see ["Configure MariaDB Enterprise Repository"](../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md).
+For additional information, see "[MariaDB Package Repository Setup and Usage](../installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md)".
 
 ### Download Binary Files
 
@@ -78,22 +78,22 @@ Download a binary file using the following procedure:
 5. Use your customer-specific URL to download the file using command-line tools or automation:For example, to download the file mentioned above using `wget`:
 
 ```bash
-$ wget https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
+wget https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
 ```
 
 or using `curl`:
 
 ```bash
-$ curl -LO https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
+curl -LO https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
 ```
 
 ### Log In to MariaDB Enterprise Docker Registry
 
-Docker is an open platform for developing, shipping, and running applications that allows you to separate your applications from your infrastructure. MariaDB Corporation provides the [MariaDB Enterprise Docker Registry](../installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/).
+Docker is an open platform for developing, shipping, and running applications that allows you to separate your applications from your infrastructure. MariaDB Corporation provides the [MariaDB Enterprise Docker Registry](../installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md).
 
 The MariaDB Enterprise Docker Registry provides Docker images for MariaDB Enterprise Server. The Docker images for MariaDB Enterprise Server are currently beta maturity, so they are not currently recommended for production.
 
-For additional information, see "[Deploy with Docker](deployment-methods.md)".
+For additional information, see "[Deploy MariaDB Enterprise Server with Docker](../installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker.md)".
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

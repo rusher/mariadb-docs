@@ -21,13 +21,13 @@ MariaDB Enterprise Server can be deployed with Docker to support use cases that 
 
 ## Compatibility
 
-The following products and versions can be deployed using the [MariaDB Enterprise Docker Registry](mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md):
+The following products and versions can be deployed using the MariaDB Enterprise Docker Registry:
 
 * MariaDB Enterprise Server 10.5
 * MariaDB Enterprise Server 10.6
 * MariaDB Enterprise Server 11.4
 
-For details about which storage engines and plugins are supported in the images for each version, see "MariaDB Enterprise Docker Registry".
+For details about which storage engines and plugins are supported in the images for each version, see "[MariaDB Enterprise Docker Registry](mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md)".
 
 ## Deploy Enterprise Server in a Docker Container
 
@@ -82,14 +82,14 @@ The `enterprise-server` repository in the MariaDB Enterprise Docker Registry con
 
 To deploy a container using the most recent image for the latest MariaDB Enterprise Server release series (currently 11.4), use the `latest` tag.
 
-For additional information, see "MariaDB Enterprise Docker Registry: Supported Tags".
+For additional information, see "[MariaDB Enterprise Docker Registry: Tags](mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md#tags)".
 
 ### Step 4: Pull Docker Image
 
 Pull the Docker image with the chosen tag by executing `docker pull`:
 
 ```bash
-$ docker pull docker.mariadb.com/enterprise-server:latest
+docker pull docker.mariadb.com/enterprise-server:latest
 ```
 
 ```
@@ -103,7 +103,7 @@ docker.mariadb.com/enterprise-server:latest
 Confirm the Docker image has been pulled by executing `docker images`:
 
 ```bash
-$ docker images \
+docker images \
    --filter=reference='docker.mariadb.com/enterprise-server'
 ```
 
@@ -117,7 +117,7 @@ docker.mariadb.com/enterprise-server   latest    dd17291aa340   3 months ago   4
 Create a container using the pulled Docker image by executing `docker run`:
 
 ```bash
-$ docker run --detach \
+docker run --detach \
    --name mariadb-es-latest \
    --env MARIADB_ROOT_PASSWORD='YourSecurePassword123!' \
    --publish '3307:3306/tcp' \
@@ -137,7 +137,7 @@ $ docker run --detach \
 Confirm the container is running by executing `docker ps`:
 
 ```bash
-$ docker ps \
+docker ps \
    --all \
    --filter ancestor='docker.mariadb.com/enterprise-server:latest'
 ```
@@ -154,7 +154,7 @@ By default, Docker uses Docker bridge networking for new containers. For details
 Connect to the container by executing MariaDB Client on the container using docker exec:
 
 ```bash
-$ docker exec --interactive --tty \
+docker exec --interactive --tty \
    mariadb-es-latest \
    mariadb \
    --user=root \
@@ -189,7 +189,7 @@ Bye
 Stop a Docker container using `docker stop`:
 
 ```bash
-$ docker stop mariadb-es-latest
+docker stop mariadb-es-latest
 ```
 
 ```
@@ -199,7 +199,7 @@ mariadb-es-latest
 Confirm the container is stopped by executing `docker ps`:
 
 ```bash
-$ docker ps \
+docker ps \
    --all \
    --filter ancestor='docker.mariadb.com/enterprise-server:latest'
 ```
@@ -214,7 +214,7 @@ CONTAINER ID   IMAGE                                         COMMAND            
 Remove a Docker container using `docker rm`:
 
 ```bash
-$ docker rm mariadb-es-latest
+docker rm mariadb-es-latest
 ```
 
 ```
@@ -224,7 +224,7 @@ mariadb-es-latest
 Confirm the container is removed by executing docker ps:
 
 ```bash
-$ docker ps \
+docker ps \
    --all \
    --filter ancestor='docker.mariadb.com/enterprise-server:latest'
 ```
