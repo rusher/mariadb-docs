@@ -1,6 +1,6 @@
 # Deploy MariaDB Enterprise Server with Docker
 
-MariaDB Corporation provides Docker images for MariaDB Enterprise Server in the MariaDB Enterprise Docker Registry.
+MariaDB Corporation provides Docker images for MariaDB Enterprise Server in the [MariaDB Enterprise Docker Registry](mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md).
 
 Docker provides multiple benefits:
 
@@ -21,7 +21,7 @@ MariaDB Enterprise Server can be deployed with Docker to support use cases that 
 
 ## Compatibility
 
-The following products and versions can be deployed using the MariaDB Enterprise Docker Registry:
+The following products and versions can be deployed using the [MariaDB Enterprise Docker Registry](mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md):
 
 * MariaDB Enterprise Server 10.5
 * MariaDB Enterprise Server 10.6
