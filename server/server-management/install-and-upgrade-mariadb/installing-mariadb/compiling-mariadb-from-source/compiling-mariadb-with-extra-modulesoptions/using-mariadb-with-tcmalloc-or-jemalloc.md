@@ -38,7 +38,7 @@ If you want to do this only one time, as a test, you can also start a standard M
 /usr/sbin/mariadbd-safe --malloc-lib=tcmalloc
 ```
 
-If you want to configure [mariadbd-safe](../../../../starting-and-stopping-mariadb/mariadbd-safe.md) to use tcmalloc or jemalloc, edit your [configuration file](../../../configuring-mariadb/configuring-mariadb-with-option-files.md), in the `[server]` or `[mariadbd]` group:
+If you want to configure [mariadbd-safe](../../../../starting-and-stopping-mariadb/mariadbd-safe.md) to use tcmalloc or jemalloc, edit your [configuration file](../../../configuring-mariadb/configuring-mariadb-with-option-files.md), in the `[mariadbd-safe]` group:
 
 ```bash
 malloc-lib=tcmalloc
