@@ -20,6 +20,10 @@ Contributing is as simple as this:
 
 The MariaDB documentation team will review your edits, smooth out any rough edges (language and style), and incorporate your contribution into the documentation. Don’t be afraid to submit imperfect contributions, as long as they’re factually correct.
 
+Once you're set up to start editing, you can also use the `Edit on GitHub` button to open the page you're looking it in GitHub, as shown in the following screenshot. The button can be accessed from the `Ask` menu near the top of each page.
+
+<div align="left"><figure><img src="../../.gitbook/assets/image (6).png" alt="" width="275"><figcaption></figcaption></figure></div>
+
 Before you start making larger contributions, make yourself familiar with [the basics of technical writing](https://developers.google.com/style/highlights) (a 1-minute read). This is about using proper tone and content, language and grammar, as well as formatting, punctuation, and organization.
 
 The source format of pages is Markdown. How to format text is [on this GitBook page](https://gitbook.com/docs/creating-content/formatting/markdown). A Markdown cheat sheet with a 10-minute tutorial and a Markdown "playground" [can be found here](https://commonmark.org/help/).
