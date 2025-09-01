@@ -80,12 +80,12 @@ New [GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure
 
 ### Audit Plugin <a href="#audit-plugin" id="audit-plugin"></a>
 
-* The [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) now logs HOST:PORT of incoming connections instead of just the host ([MDEV-1282](https://jira.mariadb.org/browse/MDEV-1282))
+* The [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-overview) now logs HOST:PORT of incoming connections instead of just the host ([MDEV-1282](https://jira.mariadb.org/browse/MDEV-1282))
 * Added tls\_version field for connection audit plugins ([MDEV-33834](https://jira.mariadb.org/browse/MDEV-33834))
 
 ### Configuration <a href="#configuration" id="configuration"></a>
 
-* Get option group suffix from $MARIADB\_GROUP\_SUFFIX in addition to $MYSQL\_GROUP\_SUFFIX ([MDEV-21375](https://jira.mariadb.org/browse/MDEV-21375))
+* Get option group suffix from `$MARIADB_GROUP_SUFFIX` in addition to `$MYSQL_GROUP_SUFFIX` ([MDEV-21375](https://jira.mariadb.org/browse/MDEV-21375))
 
 ### mariadb Client
 
@@ -107,7 +107,7 @@ For a list of all new variables, see [System Variables Added in MariaDB 12.0](ht
 | ------------- | ------------------------------------------------- | ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
 | 7 Aug 2025    | [MariaDB 12.0.2](mariadb-12.0.2-release-notes.md) | GA      | [Release Notes](mariadb-12.0.2-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.2-changelog.md) |
 | 5 Jun 2025    | [MariaDB 12.0.1](mariadb-12.0.1-release-notes.md) | RC      | [Release Notes](mariadb-12.0.1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md) |
-| 26 March 2025 | MariaDB 12.0.0                                    | Preview |                                                  |                                                                                       |
+| 26 March 2025 | [MariaDB 12.0.0](./)                              | Preview |                                                  |                                                                                       |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
