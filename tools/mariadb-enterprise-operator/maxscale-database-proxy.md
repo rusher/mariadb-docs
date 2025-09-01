@@ -10,7 +10,7 @@ MaxScale is a sophisticated database proxy, router, and load balancer designed s
 * Replay pending transactions when a server goes down.
 * Support for Galera and Replication.
 
-&nbsp;
+&#x20;
 
 To better understand what MaxScale is capable of you may check the [product page](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) and the [documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/).
 
@@ -24,7 +24,7 @@ A server defines the backend database servers that MaxScale forwards traffic to.
 
 #### Monitors
 
-A monitor is an agent that queries the state of the servers and makes it available to the services in order to route traffic based on it. For more detailed information, please consult the [monitor reference](broken-reference).
+A monitor is an agent that queries the state of the servers and makes it available to the services in order to route traffic based on it. For more detailed information, please consult the [monitor reference](broken-reference/).
 
 Depending on which highly available configuration your servers have, you will need to choose betweeen the following modules:
 
@@ -415,7 +415,7 @@ Note that, the `Connection` uses the `Service` described in the [Kubernetes Serv
 
 To synchronize the configuration state across multiple replicas, MaxScale stores the configuration externally in a MariaDB table and conducts periodic polling across all replicas. By default, the table `mysql.maxscale_config` is used, but this can be configured by the user as well as the synchronization interval.
 
-Another crucial aspect to consider regarding HA is that only one monitor can be running at any given time to avoid conflicts. This can be achieved via cooperative locking, which can be configured by the user. Refer to [MaxScale docs](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-mariadb-monitor/using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor#using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor) for more information.
+Another crucial aspect to consider regarding HA is that only one monitor can be running at any given time to avoid conflicts. This can be achieved via cooperative locking, which can be configured by the user. Refer to [MaxScale docs](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-mariadb-monitor/using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor#using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor) for more information.
 
 ```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -506,7 +506,7 @@ The GUI is exposed via a dedicated Kubernetes `Service` in the same port as the 
 
 ## MaxScale API
 
-MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/maxscale-25-01-rest-api) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
+MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-25-01/maxscale-25-01-rest-api) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
 
 ## Troubleshooting
 
