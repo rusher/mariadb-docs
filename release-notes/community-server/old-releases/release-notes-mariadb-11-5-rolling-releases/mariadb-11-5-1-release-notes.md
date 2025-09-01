@@ -6,13 +6,11 @@
 
 **Release date:** 30 May 2024
 
-**Do not use non-stable (non-GA) releases in production!**
+{% include "../../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.5](what-is-mariadb-115.md) is a development version of the MariaDB rolling release. It is an evolution of [MariaDB 11.4](../../mariadb-11-4-series/what-is-mariadb-114.md) with several entirely new features.
 
 [MariaDB 11.5.1](mariadb-11-5-1-release-notes.md) is a [_**Release Candidate (RC)**_](../../about/release-criteria.md) release.
-
-**For an overview of** [**MariaDB 11.5**](what-is-mariadb-115.md) **see the**[**What is MariaDB 11.5?**](what-is-mariadb-115.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
