@@ -195,7 +195,7 @@ Until recently, FOREIGN KEYs were buggy.
 
 LOAD DATA is auto chunked. That is, it is passed to other nodes piecemeal, not all at once.
 
-[MariaDB's known issues with Galera](../mariadb-galera-cluster-known-limitations.md)
+[MariaDB's known issues with Galera](../../reference/mariadb-galera-cluster-known-limitations.md)
 
 DROP USER may not replicate?
 
@@ -211,7 +211,7 @@ WAN: May need to increase (from the defaults) wsrep\_provider\_options = evs...
 
 MySQL/Perona 5.6 or MariaDB 10 is recommended when going to Galera.
 
-[Cluster limitations](../mariadb-galera-cluster-known-limitations.md)[Slide show](https://www.percona.com/files/presentations/percona-live/nyc-2012/PLNY12-galera-cluster-best-practices.pdf)
+[Cluster limitations](../../reference/mariadb-galera-cluster-known-limitations.md)[Slide show](https://www.percona.com/files/presentations/percona-live/nyc-2012/PLNY12-galera-cluster-best-practices.pdf)
 
 ## GTIDs
 

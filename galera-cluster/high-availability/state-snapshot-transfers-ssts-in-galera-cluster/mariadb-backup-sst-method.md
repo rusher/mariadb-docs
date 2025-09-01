@@ -6,7 +6,7 @@ Note that if you use the `mariadb-backup` SST method, then you also need to have
 
 ## Choosing mariadb-backup for SSTs <a href="#choosing-mariabackup-for-ssts" id="choosing-mariabackup-for-ssts"></a>
 
-To use the mariadb-backup SST method, you must set the [`wsrep_sst_method=mariabackup`](../../../reference/wsrep-variable-details/wsrep_sst_method.md) on both the donor and joiner node. It can be changed dynamically with [`SET GLOBAL`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) on the node that you intend to be an SST donor. For example:
+To use the mariadb-backup SST method, you must set the [`wsrep_sst_method=mariabackup`](../../reference/wsrep-variable-details/wsrep_sst_method.md) on both the donor and joiner node. It can be changed dynamically with [`SET GLOBAL`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) on the node that you intend to be an SST donor. For example:
 
 ```sql
 SET GLOBAL wsrep_sst_method='mariabackup';
@@ -20,7 +20,7 @@ It can be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2
 wsrep_sst_method = mariabackup
 ```
 
-For an SST to work properly, the donor and joiner node must use the same SST method. Therefore, it is recommended to set [`wsrep_sst_method`](../../../reference/wsrep-variable-details/wsrep_sst_method.md) to the same value on all nodes, since any node will usually be a donor or joiner node at some point.
+For an SST to work properly, the donor and joiner node must use the same SST method. Therefore, it is recommended to set [`wsrep_sst_method`](../../reference/wsrep-variable-details/wsrep_sst_method.md) to the same value on all nodes, since any node will usually be a donor or joiner node at some point.
 
 ## Major Version Upgrades <a href="#major-version-upgrades" id="major-version-upgrades"></a>
 
@@ -101,7 +101,7 @@ compress-threads=4
 
 ## Authentication and Privileges <a href="#authentication-and-privileges" id="authentication-and-privileges"></a>
 
-To use the mariadb-backup SST method, [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) needs to be able to authenticate locally on the donor node, so that it can create a backup to stream to the joiner. You can tell the donor node what username and password to use by setting the [`wsrep_sst_auth`](../../../reference/wsrep-variable-details/wsrep_sst_method.md) system variable. It can be changed dynamically with [`SET GLOBAL`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) on the node that you intend to be an SST donor:
+To use the mariadb-backup SST method, [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) needs to be able to authenticate locally on the donor node, so that it can create a backup to stream to the joiner. You can tell the donor node what username and password to use by setting the [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md) system variable. It can be changed dynamically with [`SET GLOBAL`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) on the node that you intend to be an SST donor:
 
 ```sql
 SET GLOBAL wsrep_sst_auth = 'mariadbbackup:mypassword';
@@ -115,7 +115,7 @@ It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFP
 wsrep_sst_auth = mariadbbackup:mypassword
 ```
 
-Some [authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) do not require a password. For example, the [`unix_socket`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) and [`gssapi`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/authentication-with-enterprise-server/authentication-with-gssapi) authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of [`wsrep_sst_auth`](../../../reference/wsrep-variable-details/wsrep_sst_method.md) empty. For example:
+Some [authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) do not require a password. For example, the [`unix_socket`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) and [`gssapi`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/authentication-with-enterprise-server/authentication-with-gssapi) authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md) empty. For example:
 
 ```ini
 [mariadb]
@@ -133,7 +133,7 @@ BINLOG MONITOR ON *.* TO 'mariadbbackup'@'localhost';
 
 ### Passwordless Authentication - Unix Socket <a href="#passwordless-authentication-unix-socket" id="passwordless-authentication-unix-socket"></a>
 
-It is possible to use the [`unix_socket`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication plugin for the user account that performs SSTs. This would provide the benefit of not needing to configure a plain-text password in [`wsrep_sst_auth`](../../../reference/wsrep-variable-details/wsrep_sst_method.md).
+It is possible to use the [`unix_socket`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication plugin for the user account that performs SSTs. This would provide the benefit of not needing to configure a plain-text password in [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md).
 
 The user account would have to have the same name as the operating system user account that is running the `mysqld` process. On many systems, this is the user account configured as the `user` option, and it tends to default to `mysql`.
 
@@ -145,7 +145,7 @@ GRANT RELOAD, PROCESS, LOCK TABLES,
 REPLICATION CLIENT ON *.* TO 'mysql'@'localhost';
 ```
 
-To configure [`wsrep_sst_auth`](../../../reference/wsrep-variable-details/wsrep_sst_method.md), set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+To configure [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md), set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
 ```ini
 [mariadb]
@@ -155,7 +155,7 @@ wsrep_sst_auth = mysql:
 
 ### Passwordless Authentication - GSSAPI <a href="#passwordless-authentication-gssapi" id="passwordless-authentication-gssapi"></a>
 
-It is possible to use the [`gssapi`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/authentication-with-enterprise-server/authentication-with-gssapi) authentication plugin for the user account that performs SSTs. This would provide the benefit of not needing to configure a plain-text password in [`wsrep_sst_auth`](../../../reference/wsrep-variable-details/wsrep_sst_method.md).
+It is possible to use the [`gssapi`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/authentication-with-enterprise-server/authentication-with-gssapi) authentication plugin for the user account that performs SSTs. This would provide the benefit of not needing to configure a plain-text password in [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md).
 
 The following steps would need to be done beforehand:
 
@@ -174,7 +174,7 @@ GRANT RELOAD, PROCESS, LOCK TABLES,
 BINLOG MONITOR ON *.* TO 'mariadbbackup'@'localhost';
 ```
 
-To configure [`wsrep_sst_auth`](../../../reference/wsrep-variable-details/wsrep_sst_method.md), set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+To configure [`wsrep_sst_auth`](../../reference/wsrep-variable-details/wsrep_sst_method.md), set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
 ```ini
 [mariadb]
@@ -186,7 +186,7 @@ wsrep_sst_auth = mariadbbackup:
 
 When mariadb-backup is used to create the backup for the SST on the donor node, mariadb-backup briefly requires a system-wide lock at the end of the backup. This is done with [`BACKUP STAGE BLOCK_COMMIT`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage).
 
-If a specific node in your cluster is acting as the _primary_ node by receiving all of the application's write traffic, then this node should not usually be used as the donor node, because the system-wide lock could interfere with the application. In this case, you can define one or more preferred donor nodes by setting the [`wsrep_sst_donor`](../../../reference/galera-cluster-system-variables.md#wsrep_sst_donor) system variable.
+If a specific node in your cluster is acting as the _primary_ node by receiving all of the application's write traffic, then this node should not usually be used as the donor node, because the system-wide lock could interfere with the application. In this case, you can define one or more preferred donor nodes by setting the [`wsrep_sst_donor`](../../reference/galera-cluster-system-variables.md#wsrep_sst_donor) system variable.
 
 For example, let's say that we have a 5-node cluster with the nodes `node1`, `node2`, `node3`, `node4`, and `node5`, and let's say that `node1` is acting as the _primary_ node. The preferred donor nodes for `node2` could be configured by setting the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 

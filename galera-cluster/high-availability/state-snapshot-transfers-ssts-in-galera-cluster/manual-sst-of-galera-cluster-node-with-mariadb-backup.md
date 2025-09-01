@@ -1,6 +1,6 @@
 # Manual SST of Galera Cluster Node With mariadb-backup
 
-Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](../../../high-availability/introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) is very large, since a normal SST can take a long time to fail in that case.
+Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) is very large, since a normal SST can take a long time to fail in that case.
 
 A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup).
 
@@ -75,7 +75,7 @@ For example, a very common version number is "2.1".
 cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
 ```
 
-The file contains the values of the [`wsrep_local_state_uuid`](../../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [`wsrep_last_committed`](../../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables.
+The file contains the values of the [`wsrep_local_state_uuid`](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [`wsrep_last_committed`](../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables.
 
 The values are written in the following format:
 
@@ -131,7 +131,7 @@ For example, on [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-
 systemctl start mariadb
 ```
 
-* Watch the MariaDB [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) on the joiner node and verify that the node does not need to perform a [normal SSTs](../../../high-availability/introduction-to-state-snapshot-transfers-ssts.md) due to the manual SST.
+* Watch the MariaDB [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) on the joiner node and verify that the node does not need to perform a [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) due to the manual SST.
 
 ```
 tail -f /var/log/mysql/mysqld.log

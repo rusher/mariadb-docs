@@ -52,13 +52,13 @@ See also [MDEV-421](https://jira.mariadb.org/browse/MDEV-421) and [MDEV-6229](ht
 
 Galera Cluster needs access to the following ports:
 
-* Standard MariaDB Port (default: 3306) - For MySQL client connections and [State Snapshot Transfers](../../high-availability/introduction-to-state-snapshot-transfers-ssts.md) that use the `mysqldump` method. This can be changed by setting [port](https://mariadb.com/docs/server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#port).
+* Standard MariaDB Port (default: 3306) - For MySQL client connections and [State Snapshot Transfers](../../high-availability/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) that use the `mysqldump` method. This can be changed by setting [port](https://mariadb.com/docs/server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#port).
 * Galera Replication Port (default: 4567) - For Galera Cluster replication traffic, multicast replication uses both UDP transport and TCP on this port. Can be changed by setting [wsrep\_node\_address](../../reference/galera-cluster-system-variables.md#wsrep_node_address).
 * Galera Replication Listening Interface (default: `0.0.0.0:4567`) needs to be set using [gmcast.listen\_addr](../../reference/wsrep-variable-details/wsrep_provider_options.md#gmcastlisten_addr), either
   * in [wsrep\_provider\_options](../../reference/galera-cluster-system-variables.md#wsrep_provider_options): `wsrep_provider_options='gmcast.listen_addr=tcp://<IP_ADDR>:<PORT>;'`
   * or in [wsrep\_cluster\_address](../../reference/galera-cluster-system-variables.md#wsrep_cluster_address)
 * IST Port (default: 4568) - For Incremental State Transfers. Can be changed by setting [ist.recv\_addr](https://galeracluster.com/library/documentation/galera-parameters.html#ist-recv-addr) in [wsrep\_provider\_options](../../reference/galera-cluster-system-variables.md#wsrep_provider_options).
-* SST Port (default: 4444) - For all [State Snapshot Transfer](../../high-availability/introduction-to-state-snapshot-transfers-ssts.md) methods other than `mysqldump`. Can be changed by setting [wsrep\_sst\_receive\_address](../../reference/galera-cluster-system-variables.md#wsrep_sst_receive_address).
+* SST Port (default: 4444) - For all [State Snapshot Transfer](../../high-availability/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) methods other than `mysqldump`. Can be changed by setting [wsrep\_sst\_receive\_address](../../reference/galera-cluster-system-variables.md#wsrep_sst_receive_address).
 
 ## Mutiple Galera Cluster Instances on One Server
 
