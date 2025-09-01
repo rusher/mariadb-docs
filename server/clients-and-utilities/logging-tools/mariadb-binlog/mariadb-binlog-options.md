@@ -94,7 +94,7 @@ Force if binlog was not closed properly. Defaults to `ON`; use `--skip-force-if-
 
 If `mariadb-binlog` reads a binary log event that it does not recognize, it prints a warning, ignores the event, and continues. Without this option, `mariadb-binlog` stops if it reads such an event. Default value: `FALSE`
 
-#### --gtid-strict-_mode_
+#### --gtid-strict-mode
 
 Process binlog according to `gtid-strict-mode` specification. The start, stop positions are verified to satisfy start < stop comparison condition. Sequence numbers of any [gtid](../../../ha-and-performance/standard-replication/gtid.md) domain must comprise monotonically growing sequence, Defaults to `ON`; use `--skip-gtid-strict-mode` to disable. Available from MariaDB 10.8. Default value: `TRUE`
 
@@ -244,15 +244,26 @@ Enables [server certificate verification](../../../security/securing-mariadb/enc
 
 #### --start-datetime=_datetime_
 
-Start reading the binlog at first event having a datetime equal to or later than the argument; the argument must be a date and time in the local time zone, in any format accepted by the MariaDB server for [DATETIME](../../../reference/data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../reference/data-types/date-and-time-data-types/timestamp.md) types, for example: `2014-12-25 11:25:56` (you should probably use quotes for your shell to set it properly). This option is useful for point-in-time recovery.
+If specified, start reading the binlog at first event having a datetime equal to or later than the argument; the argument must be a date and time in the local time zone, in any format accepted by the MariaDB server for [DATETIME](../../../reference/data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../reference/data-types/date-and-time-data-types/timestamp.md) types, for example: `2014-12-25 11:25:56` (you should probably use quotes for your shell to set it properly). This option is useful for point-in-time recovery.
 
 #### -j pos, --start-position=_pos_
 
 Start reading the binlog at this position. Type can either be a positive integer or, from MariaDB 10.8, a [GTID](../../../ha-and-performance/standard-replication/gtid.md) list. When using a positive integer, the value only applies to the first binlog passed on the command line. In GTID mode, multiple GTIDs can be passed as a comma separated list, where each must have a unique domain id. The list represents the GTID binlog state that the client (another "replica" server) is aware of. Therefore, each GTID is exclusive; only events after a given sequence number is printed to allow users to receive events after their current state. Default value: `4`
 
+{% hint style="warning" %}
+Options `--start-position` and `--stop-position` currently compare Sequence Numbers only per Domain ID and ignore Server IDs. This is incorrect, as it is different from the Replication design for GTIDs, which compares per Domain–Server ID pair.
+MDEV-37231 tracks this bug.
+{% endhint %}
+
 #### --stop-datetime=_name_
 
-Stop reading the binlog at first event having a datetime equal or posterior to the argument; the argument must be a date and time in the local time zone, in any format accepted by the MariaDB server for `DATETIME` and `TIMESTAMP` types, for example: `2014-12-25 11:25:56` (you should probably use quotes for your shell to set it properly). Ignored in `--raw` mode.
+If specified, stop reading the binlog at first event having a datetime equal or posterior to the argument; the argument must be a date and time in the local time zone, in any format accepted by the MariaDB server for `DATETIME` and `TIMESTAMP` types, for example: `2014-12-25 11:25:56` (you should probably use quotes for your shell to set it properly). Ignored in `--raw` mode.
+
+{% tabs %}
+{% tab title="≥ 10.11.14" %}
+Emit a warning if the specified time is not found within the specified binlogs.
+{% endtab %}
+{% endtabs %}
 
 #### --stop-never
 
@@ -264,7 +275,21 @@ The replica [server\_id](../../../ha-and-performance/standard-replication/replic
 
 #### --stop-position=_position_
 
-Stop reading the binlog at this _position_. Type can either be a positive integer or, from MariaDB 10.8, a [GTID](../../../ha-and-performance/standard-replication/gtid.md) list. When using a positive integer, the value only applies to the last binlog passed on the command line. In GTID mode, multiple GTIDs can be passed as a comma separated list, where each must have a unique domain id. Each GTID is inclusive; only events up to the given sequence numbers are printed. Ignored in `--raw` mode. Default value: `18446744073709551615`
+If specified, stop reading the binlog at this _position_. Type can either be a positive integer or, from MariaDB 10.8, a [GTID](../../../ha-and-performance/standard-replication/gtid.md) list. When using a positive integer, the value only applies to the last binlog passed on the command line. In GTID mode, multiple GTIDs can be passed as a comma separated list, where each must have a unique domain id. Each GTID is inclusive; only events up to the given sequence numbers are printed. Ignored in `--raw` mode.
+
+{% tabs %}
+{% tab title="≥ 10.11.14" %}
+Emit a warning if the specified position or GTID is not within the specified binlogs.
+{% endtab %}
+{% tab title="≥ 10.5.27" %}
+Emit a warning if the specified position is beyond the end of the last binlog.
+{% endtab %}
+{% endtabs %}
+
+{% hint style="warning" %}
+Options `--start-position` and `--stop-position` currently compare Sequence Numbers only per Domain ID and ignore Server IDs. This is incorrect, as it is different from the Replication design for GTIDs, which compares per Domain–Server ID pair.
+MDEV-37231 tracks this bug.
+{% endhint %}
 
 #### -T, --table
 
