@@ -1,12 +1,8 @@
 # MariaDB 11.5 Changes & Improvements
 
+[MariaDB 11.5](what-is-mariadb-115.md) is an old [rolling release](../../about/release-model.md) and is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
+
 {% include "../../../.gitbook/includes/latest-11-5.md" %}
-
-
-
-[MariaDB 11.5](what-is-mariadb-115.md) is an old rolling release and is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
-
-[MariaDB 11.5](what-is-mariadb-115.md) is a previous [rolling release](../../about/release-model.md).
 
 ## Upgrading
 
