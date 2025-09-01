@@ -1,20 +1,18 @@
 # MariaDB 11.5.0 Release Notes
 
-The most recent release of [MariaDB 11.5](what-is-mariadb-115.md) is:[**MariaDB 11.5.2**](mariadb-11-5-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.5.2/)
+{% include "../../../.gitbook/includes/latest-11-5.md" %}
 
-[Download 11.5.0](https://downloads.mariadb.org/mariadb/11.5.0/) | [Release Notes](mariadb-11-5-0-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-5-series/) | [Overview of 11.5](what-is-mariadb-115.md)
+<a href="https://downloads.mariadb.org/mariadb/11.5.0/" class="button primary">Download</a> <a href="mariadb-11-5-0-release-notes.md" class="button secondary">Release Notes</a>  <a href="what-is-mariadb-115.md" class="button secondary">Overview of 11.5</a>
 
 **Release date:** 18 March 2024
 
-**Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
+{% include "../../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.5](what-is-mariadb-115.md) is an upcoming development series of MariaDB. It is an evolution of [MariaDB 11.4](../../mariadb-11-4-series/what-is-mariadb-114.md) with several entirely new features.
 
 [MariaDB 11.5.0](mariadb-11-5-0-release-notes.md) is a single preview release. Features are to be considered preview, and none are guaranteed to make it into [MariaDB 11.5](what-is-mariadb-115.md).
 
 The preview is available as a container **quay.io/mariadb-foundation/mariadb-devel:11.5-preview**.
-
-**For an overview of** [**MariaDB 11.5**](what-is-mariadb-115.md) **see the**[**What is MariaDB 11.5?**](what-is-mariadb-115.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
