@@ -81,6 +81,7 @@
   * [Upgrades](management/upgrades/README.md)
     * [Upgrade Multi-Node MariaDB Enterprise ColumnStore from 6 to 23.10](management/upgrades/upgrade-multi-node-mariadb-enterprise-columnstore-from-6-to-23.10.md)
     * [Major Release Upgrades for MariaDB Enterprise ColumnStore](management/upgrades/major-release-upgrades-for-mariadb-enterprise-columnstore.md)
+  * [Optimizing Linux Kernel Parameters for MariaDB ColumnStore](management/optimizing-linux-kernel-parameters-for-mariadb-columnstore.md)
 * [Security](security/README.md)
   * [ColumnStore Security Vulnerabilities](security/columnstore-security-vulnerabilities.md)
   * [Credentials Management](security/enterprise-columnstore-credentials-management.md)
