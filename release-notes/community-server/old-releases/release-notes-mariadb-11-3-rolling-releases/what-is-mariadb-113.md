@@ -2,7 +2,7 @@
 
 [MariaDB 11.3](what-is-mariadb-113.md) is an old rolling release and is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
 
-The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 11.3.2**](mariadb-11-3-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.3.2/)
+{% include "../../../.gitbook/includes/latest-11-3.md" %}
 
 [MariaDB 11.3](what-is-mariadb-113.md) is a previous rolling release. It is the first release in the new release model. From 11.3, we stop doing GA bug fix releases within each minor version. See [Adjusting the MariaDB Server release model](https://mariadb.org/adjusting-release-model) (mariadb.org).
 
