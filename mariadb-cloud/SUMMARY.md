@@ -1,6 +1,7 @@
 # Table of contents
 
 * [MariaDB Cloud](README.md)
+* [Introduction to MariaDB Cloud](introduction-to-mariadb-cloud.md)
 
 ## Getting Started
 
