@@ -20,7 +20,7 @@ The sensitivity of this process is determined by the `evs.auto_evict` parameter.
 
 Auto-Eviction is configured by passing the `evs.auto_evict` parameter within the `wsrep_provider_options` [system variable](../../reference/galera-cluster-system-variables.md#wsrep_provider_options) in your MariaDB configuration file (`my.cnf`).
 
-The value of `evs.auto_evict` determines the threshold for eviction. It defines how many times a peer can be placed on the delayed list before the node votes to evict it.
+The value of [`evs.auto_evict`](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.auto_evict) determines the threshold for eviction. It defines how many times a peer can be placed on the delayed list before the node votes to evict it.
 
 Example Configuration:
 
@@ -44,10 +44,10 @@ Even when disabled, the node will continue to monitor response times and log inf
 
 The Auto-Eviction feature is directly related to the [EVS (Extended Virtual Synchrony) protocol parameters](../../high-availability/recovering-a-primary-component-after-a-full-cluster-shutdown.md#the-evs-protocol) that control how the cluster detects unresponsive nodes in the first place. These parameters define what it means for a node to be "delayed."
 
-| Parameter                   | Description                                                                          |
-| --------------------------- | ------------------------------------------------------------------------------------ |
-| `evs.inactive_check_period` | Frequency of node checking for inactive peers.                                       |
-| `evs.suspect_timeout`       | Time duration after which a non-responsive node is marked as "suspect."              |
-| `evs.inactive_timeout`      | Time duration after which a non-responsive node is marked as "inactive" and removed. |
+| Parameter                                                                                                                 | Description                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [`evs.inactive_check_period`](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.inactive_check_period) | Frequency of node checking for inactive peers.                                       |
+| [`evs.suspect_timeout`](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.suspect_timeout)             | Time duration after which a non-responsive node is marked as "suspect."              |
+| [`evs.inactive_timeout`](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.inactive_timeout)           | Time duration after which a non-responsive node is marked as "inactive" and removed. |
 
 Tuning these values in conjunction with `evs.auto_evict` allows you to define how aggressively the cluster will fence off struggling nodes.

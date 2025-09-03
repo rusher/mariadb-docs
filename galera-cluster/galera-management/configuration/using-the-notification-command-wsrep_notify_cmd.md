@@ -12,15 +12,13 @@ This is extremely useful for integrating the cluster with external systems, such
 * Monitoring and Alerting: Send custom alerts to a monitoring system when a node's status changes.
 * Service Discovery: Update a service discovery tool with the current list of active cluster members.
 
-### 2. Configuration
+## Configuration
 
 To use this feature, you set the `wsrep_notify_cmd` variable in your MariaDB configuration file (`my.cnf`) to the full path of the script you want to execute.
 
 Example:
 
-Ini, TOML
-
-```
+```toml
 [mariadb]
 ...
 wsrep_notify_cmd = /path/to/your/script.sh
@@ -28,22 +26,22 @@ wsrep_notify_cmd = /path/to/your/script.sh
 
 The MariaDB server user (typically `mysql`) must have execute permissions for the specified script.
 
-### 3. How it Works: Passed Parameters
+## Passed Parameters
 
 When a cluster event occurs, the server executes the configured script and passes several arguments to it, providing context about the event. The script can then use these arguments to take appropriate action.
 
 The script is called with the following parameters:
 
-| Position | Parameter    | Description                                                                                           |
-| -------- | ------------ | ----------------------------------------------------------------------------------------------------- |
-| `$1`     | Status       | The new status of the node (e.g., `Synced`, `Donor`).                                                 |
-| `$2`     | View ID      | A unique identifier for the current cluster membership view.                                          |
-| `$3`     | Members List | A comma-separated list of the names of all members in the current view.                               |
-| `$4`     | Is Primary   | A boolean indicating if the current component is the Primary Component (`1` for true, `0` for false). |
+| Position | Parameter    | Description                                                                                                                                                                                              |
+| -------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$1`     | Status       | The new status of the node (e.g., `Synced`, `Donor`).                                                                                                                                                    |
+| `$2`     | View ID      | A unique identifier for the current cluster membership view.                                                                                                                                             |
+| `$3`     | Members List | A comma-separated list of the names of all members in the current view.                                                                                                                                  |
+| `$4`     | Is Primary   | A boolean indicating if the current component is the [Primary Component](../../high-availability/understanding-quorum-monitoring-and-recovery.md#advanced-quorum-control) (`1` for true, `0` for false). |
 
 #### Status Values (`$1`)
 
-The first argument indicates the new state of the local node. The most common values are:
+The first argument indicates the [new state of the local node](../../high-availability/monitoring-mariadb-galera-cluster.md#understanding-galera-node-states). The most common values are:
 
 * `Joining`: The node is starting to join the cluster.
 * `Joined`: The node has finished a state transfer and is catching up.
@@ -57,23 +55,23 @@ The View ID is a unique identifier composed of the view sequence number and the 
 
 #### Members List Format (`$3`)
 
-The third argument is a comma-separated list of the `wsrep_node_name` of every member in the current cluster component.
+The third argument is a comma-separated list of the `wsrep_node_name` of every [member in the current cluster component](../../high-availability/understanding-quorum-monitoring-and-recovery.md).
 
 Example:
 
+```
 galera1,galera2,galera3
+```
 
 Your script can parse this list to get a complete, real-time picture of the cluster's membership.
 
-### 4. Example Script
+## Example Script
 
 Here is a simple example of a bash script that logs all cluster state changes to a file.
 
 `notify_script.sh`:
 
-Bash
-
-```
+```bash
 #!/bin/bash
 
 # Define the log file
