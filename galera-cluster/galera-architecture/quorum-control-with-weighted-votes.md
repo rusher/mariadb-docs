@@ -4,9 +4,9 @@
 This page is a deep-dive into the advanced feature of weighted quorum. For a general overview of Quorum, its role in monitoring, and basic recovery, see [Understanding Quorum, Monitoring, and Recovery](../high-availability/understanding-quorum-monitoring-and-recovery.md).
 {% endhint %}
 
-MariaDB Galera Cluster supports a weighted quorum, where each node can be assigned a weight in the range of `0` to `255`, with which it will participate in quorum calculations. This provides fine-grained control over which nodes are most critical for forming a Primary Component, especially in complex or [geographically distributed topologies](galera-cluster-deployment-variants.md#id-3.-wide-area-network-wan-cluster-multi-data-center).
+MariaDB Galera Cluster supports a weighted quorum, where each node can be assigned a weight in the range of `0` to `255`, with which it will participate in quorum calculations. This provides fine-grained control over which nodes are most critical for forming a [Primary Component](quorum-control-with-weighted-votes.md#quorum-calculation-with-weights), especially in complex or [geographically distributed topologies](galera-cluster-deployment-variants.md#id-3.-wide-area-network-wan-cluster-multi-data-center).
 
-By default, every node has a weight of `1`. You can customize a node's weight during runtime by setting the `pc.weight` [provider option](../galera-management/configuration/configuring-mariadb-galera-cluster.md#mandatory-options):
+By default, every [node](../high-availability/monitoring-mariadb-galera-cluster.md#understanding-galera-node-states) has a weight of `1`. You can customize a node's weight during runtime by setting the `pc.weight` [provider option](../galera-management/configuration/configuring-mariadb-galera-cluster.md#mandatory-options):
 
 ```sql
 SET GLOBAL wsrep_provider_options="pc.weight=3";
@@ -30,7 +30,7 @@ Where:
 * $$w_i$$: The weight of each member (`pc.weight`).
 
 {% hint style="danger" %}
-Changing a node's weight is a cluster-wide membership event. If a network partition occurs at the exact moment a weight-change message is being delivered, it can lead to a corner case where the entire cluster becomes non-primary.
+Changing a node's weight is a cluster-wide membership event. If a [network partition](../high-availability/understanding-quorum-monitoring-and-recovery.md#understanding-and-recovering-from-a-split-brain) occurs at the exact moment a weight-change message is being delivered, it can lead to a corner case where the entire cluster becomes [non-primary](../high-availability/understanding-quorum-monitoring-and-recovery.md).
 {% endhint %}
 
 ## Practical Examples of Weighted Quorum
