@@ -1,5 +1,5 @@
 ---
-icon: hand-wave
+icon: cloud-sun
 layout:
   width: default
   title:
