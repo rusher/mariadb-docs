@@ -3578,7 +3578,7 @@ define two separate listeners that connect to the same service.
 
 The authenticator module to use. Each protocol module defines a default\
 authentication module, which is used if the setting is left undefined.\
-MariaDB and PostgreSQL protocols support multiple authenticators and they can\
+MariaDB and protocols support multiple authenticators and they can\
 be used simultaneously by giving a comma-separated list e.g.`authenticator=PAMAuth,mariadbauth,gssapiauth`
 
 #### `authenticator_options`
@@ -3931,13 +3931,6 @@ MariaDB servers or compatible.
 ### `CDC`
 
 See [Change Data Capture Protocol](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md) for more information.
-
-### `Postgresql` or `Postgresprotocol`
-
-Implements [Postgresql protocol](https://www.postgresql.org/docs/current/protocol.html).\
-The listener will accept Postgresql connections from clients and route the\
-client queries through a linked MaxScale service to backend servers. The\
-backends used by the service should be PostgreSQL servers or compatible.
 
 ### `nosqlprotocol`
 
