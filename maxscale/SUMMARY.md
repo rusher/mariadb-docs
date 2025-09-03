@@ -93,7 +93,6 @@
     * [MaxScale Tee Filter](reference/maxscale-filters/maxscale-tee-filter.md)
     * [MaxScale Throttle Filter](reference/maxscale-filters/maxscale-throttle-filter.md)
     * [MaxScale Top Filter](reference/maxscale-filters/maxscale-top-filter.md)
-  maxscale-transaction-performance-monitoring-filter.md)
     * [MaxScale Workload Capture and Replay](reference/maxscale-filters/maxscale-workload-capture-and-replay.md)
   * [MaxScale MaxCtrl](reference/maxscale-maxctrl.md)
   * [MaxScale Monitors](reference/maxscale-monitors/README.md)
