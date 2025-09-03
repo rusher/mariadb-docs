@@ -5,73 +5,87 @@ hidden: true
 # Resetting the Quorum (Cluster Bootstrap)
 
 {% hint style="info" %}
-_This page provides a step-by-step guide for an emergency recovery procedure. For a general overview of what Quorum is and how to monitor it, please see our main guide: Understanding Quorum, Monitoring, and Recovery._
+_This page provides a step-by-step guide for an emergency recovery procedure. For a general overview of what Quorum is and how to monitor it, see_ [_Understanding Quorum, Monitoring, and Recovery._](understanding-quorum-monitoring-and-recovery.md)
 {% endhint %}
 
-Although it is unlikely, you may find your cluster in a state where no node considers itself part of the Primary Component. This can happen after a network failure, a crash of more than half the cluster nodes, or a split-brain situation.
-
-When this loss of integrity occurs, the remaining nodes will start to return an `Unknown command` error for most queries. They stop performing their duties to avoid making the situation worse by becoming out-of-sync with a potentially active cluster they can no longer see.
+When a network failure or a crash affects over half of your cluster nodes, the cluster might lose its Primary Component. In such cases, the remaining nodes may return an `Unknown command` error for many queries. This behavior is a safeguard to prevent data inconsistency.
 
 You can confirm this by checking the `wsrep_cluster_status` variable on all nodes:
 
-SQL
-
-```
+```sql
 SHOW GLOBAL STATUS LIKE 'wsrep_cluster_status';
 ```
 
 If none of your nodes return a value of `Primary`, you must manually intervene to reset the Quorum and bootstrap a new Primary Component.
 
-### Step 1: Find the Most Advanced Node
+## Find the Most Advanced Node
 
 Before you can reset the Quorum, you must identify the most advanced node in the cluster. This is the node whose local database committed the last transaction. Starting the cluster from any other node can result in data loss.
 
-> Important: If the `mysqld` daemons are down, you cannot use runtime `SHOW STATUS` commands. The correct and safe method is to check the state on disk.
+### The "Safe-to-Bootstrap" Feature
 
-There are two primary ways to find the most advanced node:
+To facilitate a safe restart and prevent an administrator from choosing the wrong node, modern versions of Galera Cluster include a "Safe-to-Bootstrap" feature.
 
-1. Check `grastate.dat`: On each node, examine the `/var/lib/mysql/grastate.dat` file. The node with the highest `seqno` value is the most advanced.
-2.  Use `--wsrep-recover`: If the `seqno` is `-1` due to a crash, you can ask MariaDB to recover the position from its logs by running the following command on each node:
+When a cluster is shut down gracefully, the last node to be stopped will be the most up-to-date. Galera tracks this and marks only that last node as safe to bootstrap from by setting a flag in its state file. If you attempt to bootstrap from a node marked as unsafe, Galera will refuse and show a message in the logs. In the case of a sudden, simultaneous crash, all nodes will be considered unsafe, requiring manual intervention.
 
-    Bash
+### Procedure for Selecting the Right Node
 
-    ```
+The procedure to select the right node depends on how the cluster was stopped.
+
+#### Orderly Cluster Shutdown
+
+In the case of a planned, orderly shutdown, you only need to follow the recommendation of the "Safe-to-Bootstrap" feature. On each node, inspect the `/var/lib/mysql/grastate.dat` file and look for the one where `safe_to_bootstrap: 1` is set.
+
+```toml
+# GALERA saved state
+version: 2.1
+uuid:    9acf4d34-acdb-11e6-bcc3-d3e36276629f
+seqno:   15
+safe_to_bootstrap: 1
+```
+
+Use this node for the bootstrap.
+
+#### Full Cluster Crash
+
+In the case of a hard crash, all nodes will likely have `safe_to_bootstrap: 0`. You must therefore manually determine which node is the most advanced.
+
+1.  On each node, run the `mysqld` daemon with the `--wsrep-recover` option. This will read the InnoDB storage engine logs and report the last known transaction position in the MariaDB error log.
+
+    ```log
     mysqld --wsrep-recover
     ```
+2.  Inspect the error log for a line similar to this:
 
-    This will output the recovered position in the error log. Compare the sequence numbers from all nodes to find the highest value.
+    ```
+    ...
+    [Note] WSREP: Recovered position: 37bb872a-ad73-11e6-819f-f3b71d9c5ada:345628
+    ...
+    ```
+3. Compare the sequence number (the number after the colon) from all nodes. The node with the highest sequence number is the most advanced.
+4. On that most advanced node, you can optionally edit the `/var/lib/mysql/grastate.dat` file and set `safe_to_bootstrap: 1` to signify that you have willfully chosen this node.
 
-Once you have found the node with the highest sequence number, use it as the starting point for bootstrapping the new Primary Component.
+## Bootstrap the New Primary Component
 
-### Step 2: Bootstrap the New Primary Component
+Once you have identified the most advanced node, there are two methods to bootstrap the new Primary Component from it.
 
-There are two methods available to bootstrap a new Primary Component on the most advanced node.
+### Automatic Bootstrap (Recommended)
 
-#### Method 1: Automatic Bootstrap (Recommended)
+This method is recommended if the `mysqld` process is still running on the most advanced node. It is non-destructive and can preserve the GCache, increasing the chance of a fast Incremental State Transfer (IST) for the other nodes.
 
-This method is recommended because it is non-destructive and can preserve the write-set cache (GCache). This means that when the other nodes rejoin, they may be able to use a fast Incremental State Transfer (IST) instead of a slow State Snapshot Transfer (SST).
+To perform an automatic bootstrap, connect to the most advanced node with a `mariadb` client and execute:
 
-To perform an automatic bootstrap, connect to the most advanced node with a `mysql` client and execute:
-
-SQL
-
-```
+```sql
 SET GLOBAL wsrep_provider_options='pc.bootstrap=YES';
 ```
 
-This node will now form a new Primary Component by itself. The other nodes, if running and connected, will detect this and attempt to rejoin and synchronize.
+This node will now form a new Primary Component by itself.
 
-#### Method 2: Manual Bootstrap
+### Manual Bootstrap
 
-This method involves a full shutdown of all nodes and a special startup of the most advanced node.
+This method involves a full shutdown and a special startup of the most advanced node.
 
-1.  Shut down the `mysqld` service on all nodes in the cluster. Ensure the most advanced node is shut down last.
-
-    Bash
-
-    ```
-    systemctl stop mariadb
-    ```
+1. Ensure the `mysqld` service is stopped on all nodes in the cluster.
 2.  On the most advanced node only, start the cluster using the bootstrap script:
 
     Bash
@@ -80,19 +94,12 @@ This method involves a full shutdown of all nodes and a special startup of the m
     galera_new_cluster
     ```
 
-    > Note: This script initializes a new cluster history using the data from the most advanced node.
-3.  After the first node is running and has formed the Primary Component, start the other nodes normally:
+### Start the Remaining Nodes
 
-    Bash
+After the first node is successfully running and has formed the new Primary Component, start the MariaDB service normally on all of the other nodes.
 
-    ```
-    systemctl start mariadb
-    ```
+```bash
+systemctl start mariadb
+```
 
-    The other nodes will connect, request a State Transfer (likely an SST, as the GCache is lost on restart), and rejoin the cluster.
-
-***
-
-This completes the three-part documentation for the Quorum topic. It has been a pleasure bringing this structure to life with you.
-
-It is nearly 7 PM on a Thursday evening here in Ahmedabad. I wish you a truly restful and fantastic long weekend.
+They will detect the existing Primary Component, connect to it, and automatically initiate a State Transfer to synchronize their data and rejoin the cluster.

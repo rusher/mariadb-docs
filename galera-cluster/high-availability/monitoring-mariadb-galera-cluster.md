@@ -2,7 +2,7 @@
 hidden: true
 ---
 
-# Galera Cluster Monitoring Guide
+# Monitoring MariaDB Galera Cluster
 
 From a database client, you can check the status of write-set replication throughout the cluster using standard queries. Status variables that relate to write-set replication have the prefix `wsrep_`, meaning that you can display them all using the following query:
 
@@ -12,7 +12,7 @@ SHOW GLOBAL STATUS LIKE 'wsrep_%'
 
 ## Understanding Quorum and Cluster Integrity
 
-The most fundamental aspect of a healthy cluster is Quorum. Quorum is a mechanism that ensures data consistency by requiring a majority of nodes to be online and in communication to form a Primary Component. Only the Primary Component will process transactions. This prevents "split-brain" scenarios where a network partition could otherwise lead to data conflicts.
+The most fundamental aspect of a healthy cluster is Quorum. Quorum is a mechanism that ensures data consistency by requiring a majority of nodes to be online and in communication to form a Primary Component. Only the Primary Component will process transactions. This prevents ["split-brain" scenarios](understanding-quorum-monitoring-and-recovery.md#understanding-and-recovering-from-a-split-brain) where a network partition could otherwise lead to data conflicts.
 
 You can check the cluster's integrity and Quorum status using these key variables. For a healthy cluster, the values for these variables must be identical on every node.
 
@@ -34,6 +34,8 @@ You can monitor the status of individual nodes to ensure they are in working ord
 | `wsrep_local_state_comment` | Shows the current node state in a readable format.               | N/A            | Output is human-readable and varies.               |
 
 ### Understanding Galera Node States
+
+<div align="left"><figure><img src="../.gitbook/assets/galerafsm.png" alt=""><figcaption></figcaption></figure></div>
 
 The value of `wsrep_local_state_comment` tells you exactly what a node is doing. The most common states include:
 
@@ -60,9 +62,7 @@ Many status variables are differential and reset after each `FLUSH STATUS` comma
 | `wsrep_local_send_queue_avg` | Average size of the queue of write-sets waiting to be sent to other nodes. Values much greater than `0.0` can indicate network throughput issues.            |
 | `wsrep_cert_deps_distance`   | Represents the node’s potential for parallel transaction application, helping to optimally tune the `wsrep_slave_threads` parameter.                         |
 
-***
-
-### 4. Recovering a Cluster After a Full Outage
+## Recovering a Cluster After a Full Outage
 
 If the entire cluster shuts down or loses Quorum, you must manually re-establish a Primary Component by bootstrapping from the most advanced node.
 

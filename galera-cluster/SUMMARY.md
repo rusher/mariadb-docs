@@ -56,6 +56,7 @@
     * [Manual SST of Galera Cluster Node With mariadb-backup](high-availability/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariadb-backup.md)
   * [Rapid Node Recovery with IST and the GCache](high-availability/rapid-node-recovery-with-ist-and-the-gcache.md)
   * [Using MariaDB Replication with MariaDB Galera Cluster](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/README.md)
+    * [Overview of Hybrid Replication](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/overview-of-hybrid-replication.md)
     * [Using MariaDB Replication with MariaDB Galera Cluster](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md)
     * [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-mariadb-galera-cluster-and-mariadb.md)
     * [Configuring MariaDB Replication between Two MariaDB Galera Clusters](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters.md)
