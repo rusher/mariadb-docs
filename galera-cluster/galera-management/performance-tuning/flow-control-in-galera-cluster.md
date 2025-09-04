@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Flow Control in Galera Cluster
 
 Flow Control is a key feature in MariaDB Galera Cluster that ensures nodes remain synchronized. In [synchronous replication](../../galera-architecture/introduction-to-galera-architecture.md#core-architectural-components), no node should lag significantly in processing transactions. Picture the cluster as an assembly line; if one worker slows down, the whole line must adjust to prevent a breakdown. Flow Control manages this by aligning all nodes' replication processes:

@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Recovering a Primary Component After a Full Cluster Shutdown
 
 In a MariaDB Galera Cluster, an individual node is considered to have "failed" when it loses communication with the cluster's [Primary Component](understanding-quorum-monitoring-and-recovery.md#primary-component). This can happen for many reasons, including hardware failure, a software crash, loss of network connectivity, or a critical error during a [state transfer](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md).
