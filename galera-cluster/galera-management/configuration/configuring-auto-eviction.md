@@ -42,9 +42,9 @@ The Auto-Eviction feature is directly related to the [EVS (Extended Virtual Sync
 
 | Parameter                                                                                                                 | Description                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [`evs.inactive_check_period`](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.inactive_check_period) | Frequency of node checking for inactive peers.                                       |
-| [`evs.suspect_timeout`](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.suspect_timeout)             | Time duration after which a non-responsive node is marked as "suspect."              |
-| [`evs.inactive_timeout`](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.inactive_timeout)           | Time duration after which a non-responsive node is marked as "inactive" and removed. |
+| [evs.inactive\_check\_period](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.inactive_check_period) | Frequency of node checking for inactive peers.                                       |
+| [evs.suspect\_timeout](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.suspect_timeout)              | Time duration after which a non-responsive node is marked as "suspect."              |
+| [evs.inactive\_timeout](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.inactive_timeout)            | Time duration after which a non-responsive node is marked as "inactive" and removed. |
 
 Tuning these values in conjunction with `evs.auto_evict` allows you to define how aggressively the cluster will fence off struggling nodes.
 
