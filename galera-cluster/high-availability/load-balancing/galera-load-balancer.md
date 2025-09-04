@@ -2,10 +2,10 @@
 hidden: true
 ---
 
-# Galera Load Balancer (glb)
+# Galera Load Balancer (glbd)
 
 {% hint style="danger" %}
-The Galera Load Balancer (`glb`) is no longer under active development.\
+The Galera Load Balancer (`glbd`) is no longer under active development.\
 It is provided here for **historical and reference purposes only**.\
 For new deployments, we recommend using a modern, fully supported proxy such as [MariaDB MaxScale](https://mariadb.com/products/enterprise/maxscale/).
 {% endhint %}
