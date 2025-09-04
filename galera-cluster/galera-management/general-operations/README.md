@@ -1,2 +1,6 @@
-# Monitoring & Recovery
+---
+hidden: true
+---
+
+# General Operations
 
