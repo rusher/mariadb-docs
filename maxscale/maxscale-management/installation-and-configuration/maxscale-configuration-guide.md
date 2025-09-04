@@ -98,7 +98,7 @@ Services have sections of their own in the MaxScale configuration file.
 Limitations:
 
 * MaxScale: No limitations.
-* MaxScale Lite: At most 1 service can be created.
+* MaxScale Lite: At most 2 services can be created.
 
 #### Listener
 
@@ -3345,7 +3345,7 @@ both PROXY-headered and headerless connections from a proxy-enabled IP.
 
 * Type: Custom
 * Mandatory: No
-* Dynamic: No
+* Dynamic: Yes
 * Default: None
 
 This parameter specifies how full a disk may be, before MaxScale should start\
