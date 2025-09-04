@@ -50,7 +50,7 @@
   * [Resetting the Quorum (Cluster Bootstrap)](high-availability/resetting-the-quorum-cluster-bootstrap.md)
   * [Load Balancing](high-availability/load-balancing/README.md)
     * [Load Balancing in MariaDB Galera Cluster](high-availability/load-balancing/load-balancing-in-mariadb-galera-cluster.md)
-    * [Galera Load Balancer (glb)](high-availability/load-balancing/galera-load-balancer.md)
+    * [Galera Load Balancer (glbd)](high-availability/load-balancing/galera-load-balancer.md)
   * [State Snapshot Transfers (SSTs) in Galera Cluster](high-availability/state-snapshot-transfers-ssts-in-galera-cluster/README.md)
     * [Introduction to State Snapshot Transfers (SSTs)](high-availability/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md)
     * [mariadb-backup SST Method](high-availability/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md)
