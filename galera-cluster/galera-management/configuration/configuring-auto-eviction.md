@@ -42,7 +42,7 @@ Even when disabled, the node will continue to monitor response times and log inf
 
 ## Related Parameters for Failure Detection
 
-The Auto-Eviction feature is directly related to the [EVS (Extended Virtual Synchrony) protocol parameters](../../high-availability/recovering-a-primary-component-after-a-full-cluster-shutdown.md#the-evs-protocol) that control how the cluster detects unresponsive nodes in the first place. These parameters define what it means for a node to be "delayed."
+The Auto-Eviction feature is directly related to the [EVS (Extended Virtual Synchrony) protocol parameters](../../high-availability/recovering-a-primary-component.md#the-evs-protocol) that control how the cluster detects unresponsive nodes in the first place. These parameters define what it means for a node to be "delayed."
 
 | Parameter                                                                                                                 | Description                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |

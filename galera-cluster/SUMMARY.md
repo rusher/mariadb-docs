@@ -46,7 +46,7 @@
 * [High Availability](high-availability/README.md)
   * [Monitoring MariaDB Galera Cluster](high-availability/monitoring-mariadb-galera-cluster.md)
   * [Understanding Quorum, Monitoring, and Recovery](high-availability/understanding-quorum-monitoring-and-recovery.md)
-  * [Recovering a Primary Component After a Full Cluster Shutdown](high-availability/recovering-a-primary-component-after-a-full-cluster-shutdown.md)
+  * [Recovering a Primary Component](high-availability/recovering-a-primary-component.md)
   * [Resetting the Quorum (Cluster Bootstrap)](high-availability/resetting-the-quorum-cluster-bootstrap.md)
   * [Load Balancing](high-availability/load-balancing/README.md)
     * [Load Balancing in MariaDB Galera Cluster](high-availability/load-balancing/load-balancing-in-mariadb-galera-cluster.md)

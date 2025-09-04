@@ -20,7 +20,7 @@ If none of your nodes return a value of `Primary`, you must manually intervene t
 
 ## Find the Most Advanced Node
 
-Before you can reset the Quorum, you must identify the most advanced node in the cluster. This is the node whose local database committed the last [transaction](../galera-architecture/certification-based-replication.md). Starting the cluster from any other [node](recovering-a-primary-component-after-a-full-cluster-shutdown.md) can result in data loss.
+Before you can reset the Quorum, you must identify the most advanced node in the cluster. This is the node whose local database committed the last [transaction](../galera-architecture/certification-based-replication.md). Starting the cluster from any other [node](recovering-a-primary-component.md) can result in data loss.
 
 ### The "Safe-to-Bootstrap" Feature
 
@@ -34,7 +34,7 @@ The procedure to select the right node depends on how the cluster was stopped.
 
 #### Orderly Cluster Shutdown
 
-In the case of a planned, orderly shutdown, you only need to follow the recommendation of the "Safe-to-Bootstrap" feature. On each node, inspect the `/var/lib/mysql/grastate.dat` [file](recovering-a-primary-component-after-a-full-cluster-shutdown.md#manual-bootstrap-using-grastate.dat) and look for the one where `safe_to_bootstrap: 1` is set.
+In the case of a planned, orderly shutdown, you only need to follow the recommendation of the "Safe-to-Bootstrap" feature. On each node, inspect the `/var/lib/mysql/grastate.dat` [file](recovering-a-primary-component.md#manual-bootstrap-using-grastate.dat) and look for the one where `safe_to_bootstrap: 1` is set.
 
 ```toml
 # GALERA saved state
@@ -83,7 +83,7 @@ This node will now form a new Primary Component by itself.
 
 ### Manual Bootstrap
 
-This method involves a [full shutdown](recovering-a-primary-component-after-a-full-cluster-shutdown.md#manual-bootstrap-using-grastate.dat) and a special startup of the most advanced node.
+This method involves a [full shutdown](recovering-a-primary-component.md#manual-bootstrap-using-grastate.dat) and a special startup of the most advanced node.
 
 1. Ensure the `mysqld` service is stopped on all nodes in the cluster.
 2.  On the most advanced node only, start the cluster using the [bootstrap script](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#bootstrap):
