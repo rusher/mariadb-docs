@@ -2,7 +2,7 @@
 
 ## Admin User Resource
 
-Admin users represent administrative users that are able to query and change\
+Admin users represent administrative users that are able to query and change
 MaxScale's configuration.
 
 ### Resource Operations
