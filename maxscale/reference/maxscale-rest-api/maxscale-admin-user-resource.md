@@ -136,7 +136,7 @@ Get all administrative users.
 POST /v1/users/inet
 ```
 
-Create a new network user. The request body must define at least the\
+Create a new network user. The request body must define at least the
 following fields.
 
 * `data.id`
