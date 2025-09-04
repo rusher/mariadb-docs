@@ -65,4 +65,6 @@ A direct benefit of Galera's multi-master architecture is the ability to scale b
 * Write Scaling: Because every node in the cluster can accept write operations, you can distribute your application's write traffic across multiple nodes. This can increase write throughput, though it's important to remember that all writes must still be replicated and certified on all nodes, which can introduce [contention on high-velocity workloads](../galera-management/performance-tuning/using-streaming-replication-for-large-transactions.md#large-data-transactions).
 * Read Scaling: This is the most significant performance advantage. Since all nodes are kept synchronized, they all contain the same data. This allows you to distribute read queries across all nodes in the cluster, providing excellent horizontal scaling for read-heavy applications. This architecture is ideal for use with a load balancer (like MariaDB MaxScale) that can perform read-write splitting.
 
-This scaling is typically managed by a [load balancer,](../high-availability/load-balancing-in-mariadb-galera-cluster/) which distributes traffic intelligently across the cluster.
+This scaling is typically managed by a [load balancer,](../high-availability/load-balancing/load-balancing-in-mariadb-galera-cluster.md) which distributes traffic intelligently across the cluster.
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

@@ -27,3 +27,5 @@ Before implementing a hybrid setup, it is critical to understand the technical c
 | GTID Management     | Galera Cluster and MariaDB Replication use different GTID formats and implementations, requiring careful configuration to avoid conflicts.     |
 | Replication Lag     | The external replica experiences the usual latencies of asynchronous replication, causing it to lag behind the real-time state of the cluster. |
 | Failover Complexity | Failover within Galera Cluster is automatic, but failing over to the asynchronous DR replica is manual and requires careful planning.          |
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Load Balancing in MariaDB Galera Cluster
 
 While a client application can connect directly to any node in a MariaDB Galera Cluster, this is not a practical approach for a production environment. A direct connection creates a single point of failure and does not allow the application to take advantage of the cluster's high availability and read-scaling capabilities.

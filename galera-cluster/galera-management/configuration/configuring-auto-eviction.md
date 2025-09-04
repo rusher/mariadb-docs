@@ -51,3 +51,5 @@ The Auto-Eviction feature is directly related to the [EVS (Extended Virtual Sync
 | [`evs.inactive_timeout`](../../reference/wsrep-variable-details/wsrep_provider_options.md#evs.inactive_timeout)           | Time duration after which a non-responsive node is marked as "inactive" and removed. |
 
 Tuning these values in conjunction with `evs.auto_evict` allows you to define how aggressively the cluster will fence off struggling nodes.
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

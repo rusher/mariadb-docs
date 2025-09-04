@@ -12,11 +12,11 @@ The cluster consists of an [odd number of nodes](../high-availability/understand
 
 ### Purpose
 
-| Purpose                                                                                                             | Description                                                                                                                                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| High Availability                                                                                                   | The cluster can survive the [failure of one or more nodes](../high-availability/recovering-a-primary-component-after-a-full-cluster-shutdown.md#recovering-a-single-failed-node) (depending on its size) without interruption of service. |
-| [Read Scalability](../high-availability/load-balancing-in-mariadb-galera-cluster/#read-write-splitting-recommended) | Application read traffic can be distributed across all nodes in the cluster.                                                                                                                                                              |
-| Maintenance                                                                                                         | [Nodes can be taken offline for maintenance ](../high-availability/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md)(e.g., software upgrades) without causing downtime.                   |
+| Purpose                                                                                                                              | Description                                                                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| High Availability                                                                                                                    | The cluster can survive the [failure of one or more nodes](../high-availability/recovering-a-primary-component-after-a-full-cluster-shutdown.md#recovering-a-single-failed-node) (depending on its size) without interruption of service. |
+| [Read Scalability](../high-availability/load-balancing/load-balancing-in-mariadb-galera-cluster.md#read-write-splitting-recommended) | Application read traffic can be distributed across all nodes in the cluster.                                                                                                                                                              |
+| Maintenance                                                                                                                          | [Nodes can be taken offline for maintenance ](../high-availability/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md)(e.g., software upgrades) without causing downtime.                   |
 
 ### Key Consideration
 
@@ -64,3 +64,5 @@ The Galera Arbitrator acts as a voting member for quorum calculations but does n
 ### Key Consideration
 
 If the node running the arbitrator fails, the cluster reverts to a standard 2-node setup with no automatic failover capability. Therefore, the arbitrator itself should be [monitored](../high-availability/monitoring-mariadb-galera-cluster.md).
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

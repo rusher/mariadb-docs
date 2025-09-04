@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Galera Load Balancer (glb)
 
 {% hint style="danger" %}
@@ -10,7 +14,7 @@ Galera Load Balancer (`glbd`) is a simple, multi-threaded TCP connection balance
 
 It was inspired by **pen**, but unlike it, GLB focuses only on balancing **generic TCP connections**.
 
-### Features
+## Features
 
 | Feature                     | Description                                                                                        |
 | --------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -99,8 +103,8 @@ GLB supports five policies:
 
 GLB can be managed at runtime via:
 
-* **FIFO file**
-* **Control socket** (`-c <addr:port>`)
+* FIFO file
+* Control socket (`-c <addr:port>`)
 
 ### Commands
 
@@ -178,3 +182,5 @@ mysql -uroot -p -h127.0.0.1 -P3306
 
 * [MariaDB MaxScale](https://mariadb.com/products/enterprise/maxscale/) – recommended modern proxy
 * [Codership GLB on GitHub](https://github.com/codership/glb)
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

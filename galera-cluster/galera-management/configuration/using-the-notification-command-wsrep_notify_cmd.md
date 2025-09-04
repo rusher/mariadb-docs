@@ -4,13 +4,15 @@ hidden: true
 
 # Using the Notification Command (wsrep\_notify\_cmd)
 
-MariaDB Galera Cluster provides a powerful automation feature through the `wsrep_notify_cmd` system variable. When this variable is configured, the MariaDB server will automatically execute a specified command or script in response to changes in the cluster's membership or the local node's state.
+MariaDB Galera Cluster provides a powerful automation feature through the `wsrep_notify_cmd` [system variable](../../reference/galera-cluster-system-variables.md#wsrep_notify_cmd). When this variable is configured, the MariaDB server will automatically execute a specified command or script in response to changes in the cluster's membership or the local node's state.
 
 This is extremely useful for integrating the cluster with external systems, such as:
 
-* Load Balancers: Automatically add or remove nodes from the load balancer's pool as they join or leave the cluster.
-* Monitoring and Alerting: Send custom alerts to a monitoring system when a node's status changes.
-* Service Discovery: Update a service discovery tool with the current list of active cluster members.
+| System                                                                                                                                                | Description                                                                                        |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [Load Balancers](../../high-availability/load-balancing/load-balancing-in-mariadb-galera-cluster.md#id-2.-recommended-load-balancer-mariadb-maxscale) | Automatically add or remove nodes from the load balancer's pool as they join or leave the cluster. |
+| [Monitoring and Alerting](../../high-availability/monitoring-mariadb-galera-cluster.md)                                                               | Send custom alerts to a monitoring system when a node's status changes.                            |
+| Service Discovery                                                                                                                                     | Update a service discovery tool with the current list of active cluster members.                   |
 
 ## Configuration
 
@@ -24,7 +26,7 @@ Example:
 wsrep_notify_cmd = /path/to/your/script.sh
 ```
 
-The MariaDB server user (typically `mysql`) must have execute permissions for the specified script.
+The MariaDB server user must have execute permissions for the specified script.
 
 ## Passed Parameters
 
@@ -93,3 +95,5 @@ exit 0
 ```
 
 This script would provide a simple, human-readable log of all membership and node state changes, which can be invaluable for troubleshooting.
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
