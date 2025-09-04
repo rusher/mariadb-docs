@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Configuring Auto-Eviction
 
 Auto-Eviction is a feature in MariaDB Galera Cluster designed to enhance cluster stability by automatically removing non-responsive or "unhealthy" [nodes](../../high-availability/monitoring-mariadb-galera-cluster.md#understanding-galera-node-states). This prevents a single problematic node from degrading the entire cluster's [performance](../performance-tuning/flow-control-in-galera-cluster.md#monitoring-flow-control). In a Galera Cluster, each node monitors the network response times of other nodes. If a node becomes unresponsive due to reasons like memory swapping, network congestion, or a hung process, it can delay and potentially disrupt cluster operations. Auto-Eviction provides a deterministic method to isolate these misbehaving nodes effectively.

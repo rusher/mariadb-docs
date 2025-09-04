@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Understanding Quorum, Monitoring, and Recovery
 
 Quorum is essential for maintaining data consistency in a MariaDB Galera Cluster by safeguarding against network partitions or [node failures](recovering-a-primary-component-after-a-full-cluster-shutdown.md#recovering-the-primary-component-after-a-full-cluster-outage). It ensures that the cluster processes database queries and transactions only when a majority of [nodes](monitoring-mariadb-galera-cluster.md#checking-individual-node-status) are operational, healthy, and in communication.

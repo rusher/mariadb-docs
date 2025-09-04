@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Rapid Node Recovery with IST and the GCache
 
 {% hint style="info" %}
