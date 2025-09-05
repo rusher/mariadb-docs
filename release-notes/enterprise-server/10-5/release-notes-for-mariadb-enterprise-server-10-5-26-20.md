@@ -236,7 +236,7 @@ id FOR ORDINALITY )) AS jt;
 
 ## Installation Instructions
 
-* [MariaDB Enterprise Server ](../11-4/whats-new.md)[10](broken-reference)[.5](../11-4/whats-new.md)
+* [MariaDB Enterprise Server ](../11.4/whats-new.md)[10](broken-reference)[.5](../11.4/whats-new.md)
 * [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](broken-reference)[.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
 * [ColumnStore Object Storage Topology with MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage) [and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
