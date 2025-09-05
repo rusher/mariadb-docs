@@ -30,7 +30,7 @@ block
     B--->G("wsrep API")
     G--->D
     style F fill:#fff,stroke:#333,stroke-width:0px
-    style G fill:#fff,stroke:#333,stroke-width:0px
+    style G fill:#fff,stroke:#333,stroke-width:1px
 ```
 
 The internal architecture of MariaDB Galera Cluster revolves around four primary components:
