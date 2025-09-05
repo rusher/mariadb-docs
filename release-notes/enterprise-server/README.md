@@ -22,8 +22,8 @@ This section contains release notes for MariaDB Enterprise Server releases divid
 [11-4](11-4/)
 {% endcontent-ref %}
 
-{% content-ref url="10-6/" %}
-[10-6](10-6/)
+{% content-ref url="10.6/" %}
+[10.6](10.6/)
 {% endcontent-ref %}
 
 {% content-ref url="10-5/" %}
