@@ -97,12 +97,16 @@ When [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innod
 
 If you do not want to automatically encrypt every InnoDB table, then it is possible to manually enable encryption for just the subset of InnoDB tables that you would like to encrypt. MariaDB provides the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) and [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table options that can be used to manually enable encryption for specific InnoDB tables. These table options can be used with [CREATE TABLE](../../../../../reference/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statements. These table options can only be used with InnoDB tables that have their own [InnoDB's file-per-table tablespaces](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md), meaning that tables that were created with [innodb\_file\_per\_table=ON](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) set.
 
-| Table Option        | Value          | Description                                          |
-| ------------------- | -------------- | ---------------------------------------------------- |
-| ENCRYPTED           | Boolean        | Defines whether to encrypt the table                 |
-| ENCRYPTION\_KEY\_ID | 32-bit integer | Defines the identifier for the encryption key to use |
+| Table Option        | Value              | Description                                          |
+| ------------------- | ------------------ | ---------------------------------------------------- |
+| ENCRYPTED           | YES / NO / DEFAULT | Defines whether to encrypt the table                 |
+| ENCRYPTION\_KEY\_ID | 32-bit integer     | Defines the identifier for the encryption key to use |
 
 You can manually enable or disable encryption for a table by using the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option. If you only need to protect a subset of InnoDB tables with encryption, then it can be a good idea to manually encrypt each table that needs the extra protection, rather than encrypting all InnoDB tables globally with [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables). This allows you to balance security with speed, as it means the encryption and decryption performance overhead only applies to those tables that require the additional security.
+
+{% hint style="info" %}
+Setting the `ENCRYPTED` option to `DEFAULT` means that InnoDB tables are either encrypted or not, based on the global [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) setting.
+{% endhint %}
 
 If a manually encrypted InnoDB table contains a [FULLTEXT INDEX](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), then the internal table for the full-text index will not also be manually encrypted. To encrypt internal tables for InnoDB full-text indexes, you must [enable automatic InnoDB encryption](innodb-enabling-encryption.md#enabling-encryption-for-automatically-encrypted-tablespaces) by setting [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) to `ON` or `FORCE`.
 
