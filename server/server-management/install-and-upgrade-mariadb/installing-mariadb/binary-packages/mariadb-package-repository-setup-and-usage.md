@@ -383,6 +383,7 @@ sudo zypper install maxscale
 
 | Version    | sha256sum                                                          |
 | ---------- | ------------------------------------------------------------------ |
+| 2025-09-08 | `c33b022c2cc325fa50be62eae070ea0bdcaf85367f840accac7acaeea1e8a972` |
 | 2025-06-04 | `4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0` |
 | 2025-01-16 | `99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe` |
 | 2025-01-07 | `b98c6436e01ff33d7e88513edd7b77a965c4500d6d52ee3f106a198a558927af` |
