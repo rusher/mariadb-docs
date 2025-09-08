@@ -1,12 +1,8 @@
----
-hidden: true
----
-
 # Backing Up a MariaDB Galera Cluster
 
 The recommended strategy for creating a full, consistent backup of a MariaDB Galera Cluster is to perform the backup on a single [node](../../high-availability/monitoring-mariadb-galera-cluster.md#checking-individual-node-status). Because all nodes in a [healthy cluster](../../high-availability/understanding-quorum-monitoring-and-recovery.md) contain the same data, a complete backup from one node represents a snapshot of the entire cluster at a specific point in time.
 
-The preferred tool for this is `mariadb-backup`, which is MariaDB's fork of Percona XtraBackup. It can create a "hot" backup without blocking the node from serving traffic for an extended period.
+The preferred tool for this is [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview). `mariadb-backup` creates a "hot" backup without blocking the node from serving traffic for an extended period.
 
 ## The Challenge of Consistency in a Live Cluster
 

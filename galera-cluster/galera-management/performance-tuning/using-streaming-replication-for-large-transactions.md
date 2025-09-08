@@ -1,12 +1,8 @@
----
-hidden: true
----
-
 # Using Streaming Replication for Large Transactions
 
 Streaming Replication optimizes replication of large or long-running transactions in MariaDB Galera Cluster. Typically, a node executes a transaction fully and replicates the complete [write-set](../../galera-architecture/introduction-to-galera-architecture.md#the-wsrep-api) to other nodes at [COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/commit) time. Although efficient for most workloads, this approach can be challenging for very large or lengthy transactions.
 
-With Streaming Replication, the initiating node divides the transaction into smaller fragments. These fragments are certified and replicated to other nodes while the transaction is ongoing. Once a fragment is certified and applied to the replicas, it becomes immune to abortion by conflicting transactions, thus improving the chances of the entire transaction succeeding. This method also supports processing of transaction write-sets over 2GB.
+With Streaming Replication, the initiating node divides the transaction into smaller fragments. These fragments are certified and replicated to other nodes while the transaction is ongoing. Once a fragment is certified and applied to the replicas, it becomes immune to abortion by conflicting transactions, thus improving the chances of the entire transaction succeeding. This method also supports processing of transaction write-sets over two Gigabytes.
 
 {% hint style="info" %}
 Streaming Replication is available in Galera Cluster 4.0 and later versions. Both [MariaDB Enterprise Server 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/10-4) and newer, and [MariaDB Community Server 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server) and newer, on supported platforms, include Galera 4.
@@ -41,10 +37,10 @@ For applications that frequently update the same row (e.g., a counter, a job que
 
 ## How to Enable and Use Streaming Replication
 
-Streaming Replication should be enabled at the session level just for the transactions that need it. This is controlled by two [session variables](../../reference/galera-cluster-system-tables.md):
+Streaming Replication should be enabled at the session level just for the transactions that need it. This is controlled by two session variables:
 
-* [wsrep\_trx\_fragment\_unit](../../reference/galera-cluster-system-variables.md#wsrep_trx_fragment_unit): Defines what a "unit" of replication is.
-* `wsrep_trx_fragment_size`: Defines how many units make up a fragment.
+* [wsrep\_trx\_fragment\_unit](../../reference/galera-cluster-system-variables.md#wsrep_trx_fragment_unit) defines what a "unit" of replication is.
+* [wsrep\_trx\_fragment\_size](../../reference/galera-cluster-system-variables.md#wsrep_trx_fragment_size) defines how many units make up a fragment.
 
 To enable streaming, you set both variables:
 
@@ -63,7 +59,7 @@ The available fragment units for `wsrep_trx_fragment_unit` are:
 | `rows`       | The fragment size is defined by the number of rows affected.           |
 | `statements` | The fragment size is defined by the number of SQL statements executed. |
 
-To disable Streaming Replication, you can set [wsrep\_trx\_fragment\_size](../../reference/galera-cluster-system-variables.md#wsrep_trx_fragment_size) back to `0`.
+To disable Streaming Replication, you can set `wsrep_trx_fragment_size` back to `0`.
 
 ## _Managing_ a "Hot Record"
 

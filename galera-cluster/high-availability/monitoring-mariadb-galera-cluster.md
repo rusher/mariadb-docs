@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Monitoring MariaDB Galera Cluster
 
 From a [database client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client), you can check the status of [write-set replication](../galera-architecture/introduction-to-galera-architecture.md#the-wsrep-api) throughout the cluster using standard queries. Status variables that relate to write-set replication have the prefix `wsrep_`, meaning that you can display them all using the following query:

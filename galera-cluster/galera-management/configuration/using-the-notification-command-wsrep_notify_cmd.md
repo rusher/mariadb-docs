@@ -1,12 +1,8 @@
----
-hidden: true
----
-
 # Using the Notification Command (wsrep\_notify\_cmd)
 
 MariaDB Galera Cluster provides a powerful automation feature through the `wsrep_notify_cmd` [system variable](../../reference/galera-cluster-system-variables.md#wsrep_notify_cmd). When this variable is configured, the MariaDB server will automatically execute a specified command or script in response to changes in the cluster's membership or the local node's state.
 
-This is extremely useful for integrating the cluster with external systems, such as:
+This is extremely useful for integrating the cluster with external systems:
 
 | System                                                                                                                                                | Description                                                                                        |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -16,9 +12,7 @@ This is extremely useful for integrating the cluster with external systems, such
 
 ## Configuration
 
-To use this feature, you set the `wsrep_notify_cmd` variable in your MariaDB configuration file (`my.cnf`) to the full path of the script you want to execute.
-
-Example:
+To use this feature, you set the `wsrep_notify_cmd` variable in your MariaDB configuration file (`my.cnf`) to the full path of the script you want to execute:
 
 ```toml
 [mariadb]
@@ -26,7 +20,7 @@ Example:
 wsrep_notify_cmd = /path/to/your/script.sh
 ```
 
-The MariaDB server user must have execute permissions for the specified script.
+The MariaDB server user must have the permissions for the specified script.
 
 ## Passed Parameters
 
@@ -58,8 +52,6 @@ The View ID is a unique identifier composed of the view sequence number and the 
 #### Members List Format (`$3`)
 
 The third argument is a comma-separated list of the `wsrep_node_name` of every [member in the current cluster component](../../high-availability/understanding-quorum-monitoring-and-recovery.md).
-
-Example:
 
 ```
 galera1,galera2,galera3

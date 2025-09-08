@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Overview of Hybrid Replication
 
 #### Hybrid Replication in MariaDB

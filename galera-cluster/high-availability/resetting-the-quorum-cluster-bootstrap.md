@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Resetting the Quorum (Cluster Bootstrap)
 
 {% hint style="info" %}
