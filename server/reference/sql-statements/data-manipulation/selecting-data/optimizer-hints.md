@@ -232,7 +232,7 @@ Enables or disables the use of the Split Materialized Optimization (also called 
 
 #### DERIVED\_CONDITION\_PUSHDOWN and NO\_DERIVED\_CONDITION\_PUSHDOWN&#x20;
 
-Enables or disables the use of the condition pushdown for derived tables.
+Enables or disables the use of [condition pushdown for derived tables](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/condition-pushdown-into-derived-table-optimization.md).
 
 **Subquery Hints**
 
