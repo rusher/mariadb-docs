@@ -6,33 +6,6 @@ MariaDB Galera Cluster provides a synchronous replication system that uses an ap
 
 <div align="left"><figure><img src="../.gitbook/assets/replicationapi.png" alt=""><figcaption></figcaption></figure></div>
 
-```mermaid
----
-title: Hello world!
-displayMode: compact
-config:
-  theme: "neutral"
-  themeVariables:
-    primaryColor: "#fff"
-    primaryTextColor: "#000"
-    fontSize: 16
----
-block
-  block
-    columns 1
-    A("DBMS")
-    B("wsrep_hooks")
-    C("dlopen")
-    D("Galera Replication Plugin")
-    E("gcomm")
-    F("Replication API")
-  end
-    B--->G("wsrep API")
-    G--->D
-    style F fill:#fff,stroke:#333,stroke-width:0px
-    style G fill:#fff,stroke:#333,stroke-width:1px
-```
-
 The internal architecture of MariaDB Galera Cluster revolves around four primary components:
 
 ### MariaDB Server (DBMS)
