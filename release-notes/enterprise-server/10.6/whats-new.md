@@ -1,5 +1,7 @@
 # What's New in MariaDB Enterprise Server 10.6?
 
+{% include "../../.gitbook/includes/latest-es-10.6.md" %}
+
 MariaDB Enterprise Server 10.6 introduces the new features listed below.
 
 ## Atomic DDL

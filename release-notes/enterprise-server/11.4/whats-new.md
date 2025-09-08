@@ -1,5 +1,7 @@
 # What's New in MariaDB Enterprise Server 11.4
 
+{% include "../../.gitbook/includes/latest-es-11.4.md" %}
+
 MariaDB Enterprise Server 11.4 introduces new features to MariaDB Enterprise. Enhancements include JSON functions for validation and comparison, SQL functions for natural sorting and custom formatting, and a new UUID data type. Operational improvements include an improved cost-based optimizer, a new feature for non-blocking online schema changes, and faster InnoDB imports. Security is strengthened with default SSL encryption, password reuse prevention, and Galera Cluster security improvements. Replication is enhanced with default GTID, binary log size limits, and optimistic ALTER TABLE. Monitoring benefits from JSON histograms, new thread states, and detailed error reporting. These updates aim to improve developer experience, database administration, and overall performance.
 
 This document includes all major features and changes between 10.6 ES and 11.4 ES.
