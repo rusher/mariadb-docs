@@ -4,7 +4,7 @@
 
 MariaDB ColumnStore is a columnar storage engine. This is the second GA release in the ColumnStore 1.4 series. This release contains new features and fixes, compared to MariaDB ColumnStore 1.4.3.
 
-This release of MariaDB ColumnStore is included with [MariaDB Enterprise Server 10.4.13-7](../../enterprise-server/10-4/release-notes-for-mariadb-enterprise-server-10-4-13-7.md).
+This release of MariaDB ColumnStore is included with [MariaDB Enterprise Server 10.4.13-7](../../enterprise-server/old-releases/10-4/release-notes-for-mariadb-enterprise-server-10-4-13-7.md).
 
 MariaDB ColumnStore 1.4.4 was released on 2020-06-08.
 
@@ -39,7 +39,7 @@ columnstore\_use\_import\_for\_batchinsert system variable option ALWAYS added t
 * `Format(c1,0)` returns only sign, without a digit, on a decimal(1) field. ([MCOL-3595](https://jira.mariadb.org/browse/MCOL-3595))
 * [TIMEDIFF()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timediff) returns NULL instead of expected value. ([MCOL-3597](https://jira.mariadb.org/browse/MCOL-3597))
 * `MODA()` and `REGR_` UDAFs are not properly created. ([MCOL-3599](https://jira.mariadb.org/browse/MCOL-3599))
-* [BIT_COUNT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bit_count), [CHARSET()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset), [UNHEX()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/unhex), and [MINUTE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/minute) functions did not exist. ([MCOL-3600](https://jira.mariadb.org/browse/MCOL-3600))
+* [BIT\_COUNT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bit_count), [CHARSET()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset), [UNHEX()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/unhex), and [MINUTE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/minute) functions did not exist. ([MCOL-3600](https://jira.mariadb.org/browse/MCOL-3600))
 * `regr_` tests returns doubles with higher precision than in ColumnStore 1.2. ([MCOL-3631](https://jira.mariadb.org/browse/MCOL-3631))
 * Window function failures could return results rather than errors. ([MCOL-3632](https://jira.mariadb.org/browse/MCOL-3632))
 * `ISTRUE()` function did not exist. ([MCOL-3756](https://jira.mariadb.org/browse/MCOL-3756))
@@ -49,9 +49,9 @@ columnstore\_use\_import\_for\_batchinsert system variable option ALWAYS added t
 * [UNION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union) may complain about table not in query. ([MCOL-3828](https://jira.mariadb.org/browse/MCOL-3828))
 * [COUNT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count) as a window function does not work correctly with NULL values. ([MCOL-3839](https://jira.mariadb.org/browse/MCOL-3839))
 * SQLYog may encounter an error during ColumnStore cross-engine JOINs. ([MCOL-3845](https://jira.mariadb.org/browse/MCOL-3845))
-* [GROUP_CONCAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/group_concat) with `ORDER BY` and long doubles may fail. ([MCOL-3904](https://jira.mariadb.org/browse/MCOL-3904))
+* [GROUP\_CONCAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/group_concat) with `ORDER BY` and long doubles may fail. ([MCOL-3904](https://jira.mariadb.org/browse/MCOL-3904))
 * Error messages may point to the wrong function. ([MCOL-3924](https://jira.mariadb.org/browse/MCOL-3924))
-* Microsecond support for [FROM_UNIXTIME()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/from_unixtime) ([MCOL-3959](https://jira.mariadb.org/browse/MCOL-3959))
+* Microsecond support for [FROM\_UNIXTIME()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/from_unixtime) ([MCOL-3959](https://jira.mariadb.org/browse/MCOL-3959))
 * [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) after a `LOAD DATA LOCAL INFILE` in a transaction may silently fail. ([MCOL-4002](https://jira.mariadb.org/browse/MCOL-4002))
 * Unsupported `LIMIT` in correlated subqueries may give erroneous result. ([MCOL-3757](https://jira.mariadb.org/browse/MCOL-3757))
 

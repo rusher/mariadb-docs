@@ -1046,10 +1046,10 @@ MAX_MEMORY_USED: 392544
 ## What's new in older release series?
 
 * [What's New in MariaDB Enterprise Server 10.6?](../10.6/whats-new.md)
-* [What's New in MariaDB Enterprise Server 10.5?](../10-5/whats-new-in-mariadb-enterprise-server-10-5.md)
-* [What's New in MariaDB Enterprise Server 10.4?](../10-4/whats-new-in-mariadb-enterprise-server-10-4.md)
-* [What's New in MariaDB Enterprise Server 10.3?](../10-3/whats-new-in-mariadb-enterprise-server-10-3.md)
-* [What's New in MariaDB Enterprise Server 10.2?](../10-2/whats-new-in-mariadb-enterprise-server-10-2.md)
+* [What's New in MariaDB Enterprise Server 10.5?](../old-releases/10-5/whats-new-in-mariadb-enterprise-server-10-5.md)
+* [What's New in MariaDB Enterprise Server 10.4?](../old-releases/10-4/whats-new-in-mariadb-enterprise-server-10-4.md)
+* [What's New in MariaDB Enterprise Server 10.3?](../old-releases/10-3/whats-new-in-mariadb-enterprise-server-10-3.md)
+* [What's New in MariaDB Enterprise Server 10.2?](../old-releases/10-2/whats-new-in-mariadb-enterprise-server-10-2.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

@@ -4,7 +4,7 @@
 
 MariaDB ColumnStore is a columnar storage engine. This is the first GA release in the ColumnStore 1.4 series. This release contains new features and fixes, compared to MariaDB ColumnStore 1.4.2.
 
-This release of MariaDB ColumnStore is included with [MariaDB Enterprise Server 10.4.12-6](../../enterprise-server/10-4/release-notes-for-mariadb-enterprise-server-10-4-12-6.md).
+This release of MariaDB ColumnStore is included with [MariaDB Enterprise Server 10.4.12-6](../../enterprise-server/old-releases/10-4/release-notes-for-mariadb-enterprise-server-10-4-12-6.md).
 
 MariaDB ColumnStore 1.4.3 was released on 2020-03-02.
 
@@ -52,7 +52,7 @@ conjunction with an aggregate function.
 * If min/max are set, incorrect [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) results may be provided after a cpimport due to incorrect extent elimination. ([MCOL-3716](https://jira.mariadb.org/browse/MCOL-3716))
 * Impossible `WHERE` and `HAVING` conditions skipping may generate spurious warnings. ([MCOL-3769](https://jira.mariadb.org/browse/MCOL-3769))
 * Failure to start when Server is rebooted without mcsadmin shutdownSystem first. ([MCOL-3829](https://jira.mariadb.org/browse/MCOL-3829))
-* `ORDER BY` over negative [SEC_TO_TIME()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sec_to_time) results produce an incorrect order. ([MCOL-3598](https://jira.mariadb.org/browse/MCOL-3598))
+* `ORDER BY` over negative [SEC\_TO\_TIME()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sec_to_time) results produce an incorrect order. ([MCOL-3598](https://jira.mariadb.org/browse/MCOL-3598))
 * Stopping Server with systemd triggers restart by ColumnStore. ([MCOL-3718](https://jira.mariadb.org/browse/MCOL-3718))
 * `Note: 1618 COLLATE is ignored in ColumnStore` was not correctly surfaced. ([MCOL-3721](https://jira.mariadb.org/browse/MCOL-3721))
 * Subqueries with `ORDER BY ... LIMIT` may produce incorrect result. ([MCOL-3747](https://jira.mariadb.org/browse/MCOL-3747))
