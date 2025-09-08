@@ -7,4 +7,4 @@ description: >-
 
 # MaxScale 24.02 Upgrading
 
-This page has moved [here](../../../maxscale-management/deployment/upgrading-from-to-specific-versions/mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md).
+This page has moved [here](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md).

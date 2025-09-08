@@ -3,7 +3,7 @@
 This document describes particular issues to take into account when upgrading\
 MariaDB MaxScale from version 2.0 to 2.1.
 
-For more information about MariaDB MaxScale 2.1, please refer to the [ChangeLog](broken-reference).
+For more information about what has changed, please refer to the [ChangeLog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale) and to the [release notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale).
 
 ### Installation
 

@@ -3,8 +3,7 @@
 This document describes possible issues when upgrading MariaDB\
 MaxScale from version 2.2 to 2.3.
 
-For more information about MariaDB MaxScale 2.3, please refer\
-to the [ChangeLog](broken-reference).
+For more information about what has changed, please refer to the [ChangeLog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale) and to the [release notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale).
 
 Before starting the upgrade, we recommend you back up your current\
 configuration file.

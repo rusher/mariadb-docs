@@ -2,17 +2,15 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
 
-For more information about what has changed, please refer to the [ChangeLog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale) and to the release notes.
+For more information about what has changed, please refer to the [ChangeLog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale) and to the [release notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale).
 
 Before starting the upgrade, any existing configuration files should be backed up.
-
-## Upgrading MariaDB MaxScale from 24.02 to 25.01
 
 ### Readwritesplit
 
 #### `reuse_prepared_statements`
 
-The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md) filter module.
+The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -38,7 +36,7 @@ filters=PsReuse
 
 #### `optimistic_trx`
 
-The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
+The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -78,7 +76,7 @@ To downgrade from MaxScale 24.02 to an older MaxScale major release:
 
 ## Upgrading MariaDB MaxScale from 23.02 to 23.08
 
-MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5 and later. See [Cluster Manipulation Grants](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) for more information.
+MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5 and later. See [Cluster Manipulation Grants](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) for more information.
 
 ## Upgrading MariaDB MaxScale from 22.08 to 23.02
 
@@ -155,7 +153,7 @@ The deprecated MaxAdmin interface has been removed in 2.5.0 in favor of the REST
 
 ### Authentication
 
-The credentials used by services now require additional grants. For a full list of required grants, refer to the [protocol documentation](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/).
+The credentials used by services now require additional grants. For a full list of required grants, refer to the [protocol documentation](../mariadb-maxscale-25-01-protocols/).
 
 ### MariaDB-Monitor
 
@@ -396,7 +394,7 @@ GRANT SELECT ON mysql.tables_priv TO 'username'@'maxscalehost';
 
 ### Password encryption
 
-MaxScale 1.4 upgrades the used password encryption algorithms to more secure ones. This requires that the password files are recreated with the `maxkeys` tool. For more information about how to do this, please read the installation guide:[MariaDB MaxScale Installation Guide](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-installation-guide.md)
+MaxScale 1.4 upgrades the used password encryption algorithms to more secure ones. This requires that the password files are recreated with the `maxkeys` tool. For more information about how to do this, please read the installation guide:[MariaDB MaxScale Installation Guide](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-installation-guide.md)
 
 ### SSL
 
