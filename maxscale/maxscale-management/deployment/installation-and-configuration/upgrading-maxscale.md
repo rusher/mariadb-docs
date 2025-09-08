@@ -1,92 +1,77 @@
-# Upgrading MariaDB MaxScale
+# Upgrading MaxScale
 
-For more information about what has changed, please refer to the [ChangeLog](broken-reference) and to the [release notes](https://mariadb.com/kb/Release-Notes/).
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
 
-Before starting the upgrade, any existing configuration files should\
-be backed up.
+Before upgrading to MariaDB MaxScale, it is critical to review the changes. This guide outlines new features, altered parameters, and deprecated functionality to ensure a smooth transition.
 
-* [Upgrading MariaDB MaxScale](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale)
-* [Upgrading MariaDB MaxScale from 23.08 to 24.02](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-2308-to-2402)
-  * [Downgrading to older major versions](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#downgrading-to-older-major-versions)
-* [Upgrading MariaDB MaxScale from 23.02 to 23.08](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-2302-to-2308)
-* [Upgrading MariaDB MaxScale from 22.08 to 23.02](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-2208-to-2302)
-  * [Removed Features](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#removed-features)
-* [Upgrading MariaDB MaxScale from 21.06 to 22.08](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-2106-to-2208)
-  * [Removed Features](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#removed-features_1)
-* [Upgrading MariaDB MaxScale from 2.5 to 21.06](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-25-to-2106)
-  * [Duration Type Parameters](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#duration-type-parameters)
-  * [Changed Parameters](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#changed-parameters)
-    * [threads](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#threads)
-  * [Removed Parameters](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#removed-parameters)
-    * [Core Parameters](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#core-parameters)
-    * [Schemarouter](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#schemarouter)
-    * [mariadbmon](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#mariadbmon)
-  * [Session Command History](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#session-command-history)
-* [Upgrading MariaDB MaxScale from 2.4 to 2.5](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-24-to-25)
-  * [MaxAdmin](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#maxadmin)
-  * [Authentication](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#authentication)
-  * [MariaDB-Monitor](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#mariadb-monitor)
-    * [Password encryption](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#password-encryption)
-  * [Default Server State](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#default-server-state)
-  * [Columnstore Monitor](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#columnstore-monitor)
-  * [New binlog router](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#new-binlog-router)
-  * [Tee Filter](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#tee-filter)
-* [Upgrading MariaDB MaxScale from 2.3 to 2.4](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-23-to-24)
-  * [Section Names](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#section-names)
-    * [Reserved Names](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#reserved-names)
-    * [Whitespace in Names](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#whitespace-in-names)
-  * [Durations](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#durations)
-  * [Improved Admin User Encryption](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#improved-admin-user-encryption)
-  * [MariaDB-Monitor](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#mariadb-monitor_1)
-  * [ReadWriteSplit](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#readwritesplit)
-* [Upgrading MariaDB MaxScale from 2.2 to 2.3](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-22-to-23)
-  * [Increased Memory Use](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#increased-memory-use)
-  * [Unknown Global Parameters](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#unknown-global-parameters)
-  * [passwd is deprecated](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#passwd-is-deprecated)
-  * [authenticator\_options for servers is ignored](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#authenticator_options-for-servers-is-ignored)
-* [Upgrading MariaDB MaxScale from 2.1 to 2.2](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-21-to-22)
-  * [Administrative Users](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#administrative-users)
-  * [Regular Expression Parameters](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#regular-expression-parameters)
-  * [Binlog Server](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#binlog-server)
-  * [MaxCtrl Included in Main Package](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#maxctrl-included-in-main-package)
-* [Upgrading MariaDB MaxScale from 2.0 to 2.1](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-20-to-21)
-  * [IPv6 Support](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#ipv6-support)
-  * [Persisted Configuration Files](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#persisted-configuration-files)
-  * [MaxScale Log Files](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#maxscale-log-files)
-  * [ReadWriteSplit](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#readwritesplit_1)
-  * [Persistent Connections](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#persistent-connections)
-  * [User Data Cache](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#user-data-cache)
-  * [Galeramon Monitoring Algorithm](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#galeramon-monitoring-algorithm)
-  * [MaxAdmin Editing Mode](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#maxadmin-editing-mode)
-* [Upgrading MariaDB MaxScale from 1.4 to 2.0](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-mariadb-maxscale-from-14-to-20)
-  * [MaxAdmin](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#maxadmin_1)
-  * [MySQL Monitor](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#mysql-monitor)
-* [Upgrading MaxScale from 1.3 to 1.4](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-maxscale-from-13-to-14)
-  * [Service user permissions](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#service-user-permissions)
-  * [Password encryption](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#password-encryption_1)
-  * [SSL](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#ssl)
-* [Upgrading MaxScale from 1.2 to 1.3](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-maxscale-from-12-to-13)
-  * [Binlog Router](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#binlog-router)
-* [Upgrading MaxScale from 1.1 to 1.2](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-maxscale-from-11-to-12)
-  * [Installation](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#installation)
-  * [File location changes](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#file-location-changes)
-  * [Running MaxScale without root permissions](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#running-maxscale-without-root-permissions)
-* [Upgrading MaxScale from 1.0 to 1.1](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#upgrading-maxscale-from-10-to-11)
-  * [Installation](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#installation_1)
-  * [MaxAdmin changes](mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md#maxadmin-changes)
+For more information about what has changed, please refer to the [ChangeLog](broken-reference) and to the release notes.
+
+Before starting the upgrade, any existing configuration files should be backed up.
+
+## Upgrading MariaDB MaxScale from 24.02 to 25.01
+
+### Readwritesplit
+
+#### `reuse_prepared_statements`
+
+The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md) filter module.
+
+The functionality that previously was enabled with:
+
+```
+[My-Readwritesplit]
+type=service
+router=readwritesplit
+reuse_prepared_statements=true
+```
+
+Should now be implemented with:
+
+```
+[PsReuse]
+type=filter
+module=psreuse
+
+[My-Readwritesplit]
+type=service
+router=readwritesplit
+filters=PsReuse
+```
+
+#### `optimistic_trx`
+
+The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
+
+The functionality that previously was enabled with:
+
+```
+[My-Readwritesplit]
+type=service
+router=readwritesplit
+optimistic_trx=true
+```
+
+Should now be implemented with:
+
+```
+[OptimisticTrx]
+type=filter
+module=optimistictrx
+
+[My-Readwritesplit]
+type=service
+router=readwritesplit
+transaction_replay=true
+filters=OptimisticTrx
+```
 
 ## Upgrading MariaDB MaxScale from 23.08 to 24.02
 
 ### Downgrading to older major versions
 
-The MaxScale packaging has been modified in 24.02 to include all of the\
-necessary files in the package itself. This removes the need for a\
-post-installation script that installs them while also clearly stating what's\
-included in the package.
+The MaxScale packaging has been modified in 24.02 to include all of the necessary files in the package itself. This removes the need for a post-installation script that installs them while also clearly stating what's included in the package.
 
-However, as a result of this change, downgrades from 24.02 to older\
-major versions may cause the removal of necessary directories, namely\
-the `/var/cache/maxscale/` directory.
+However, as a result of this change, downgrades from 24.02 to older major versions may cause the removal of necessary directories, namely the `/var/cache/maxscale/` directory.
 
 To downgrade from MaxScale 24.02 to an older MaxScale major release:
 
@@ -96,8 +81,7 @@ To downgrade from MaxScale 24.02 to an older MaxScale major release:
 ## Upgrading MariaDB MaxScale from 23.02 to 23.08
 
 MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5\
-and later. See [Cluster Manipulation Grants](../maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
-for more information.
+and later. See [Cluster Manipulation Grants](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) for more information.
 
 ## Upgrading MariaDB MaxScale from 22.08 to 23.02
 
@@ -111,25 +95,18 @@ for more information.
 
 ### Removed Features
 
-* The support for legacy encryption keys generated with `maxkeys` from pre-2.5\
-  versions has been removed. This feature was deprecated in MaxScale 2.5 when\
-  the new key storage format was introduced. To migrate to the new key storage\
-  format, create a new key file with `maxkeys` and re-encrypt the passwords with`maxpasswd`.
+* The support for legacy encryption keys generated with `maxkeys` from pre-2.5 versions has been removed. This feature was deprecated in MaxScale 2.5 when the new key storage format was introduced. To migrate to the new key storage format, create a new key file with `maxkeys` and re-encrypt the passwords with`maxpasswd`.
 * The deprecated Database Firewall filter has been removed.
 
 ## Upgrading MariaDB MaxScale from 2.5 to 21.06
 
-**NOTE** MaxScale 6.4 was renamed to 21.06 in May 2024. Thus, what would have\
-been released as 6.4.16 in June, was released as 21.06.16. The purpose of this\
-change is to make the versioning scheme used by all MaxScale series\
-identical. 21.06 denotes the year and month when the first 6 release was made.
+{% hint style="info" %}
+MaxScale 6.4 was renamed to 21.06 in May 2024. Thus, what would have been released as 6.4.16 in June, was released as 21.06.16. The purpose of this change is to make the versioning scheme used by all MaxScale series identical. 21.06 denotes the year and month when the first 6 release was made.
+{% endhint %}
 
 ### Duration Type Parameters
 
-Using duration type parameters without an explicit suffix has been deprecated in\
-MaxScale 2.4. In MaxScale 6 they are no longer allowed when used with the REST\
-API or MaxCtrl. This means that any `create` or `alter` commands in MaxCtrl that\
-use a duration type parameter must explicitly specify the suffix of the unit.
+Using duration type parameters without an explicit suffix has been deprecated in MaxScale 2.4. In MaxScale 6 they are no longer allowed when used with the REST API or MaxCtrl. This means that any `create` or `alter` commands in MaxCtrl that use a duration type parameter must explicitly specify the suffix of the unit.
 
 For example, the following command:
 
@@ -143,10 +120,7 @@ should be replaced with:
 maxctrl alter service My-Service connection_keepalive 30000ms
 ```
 
-Duration type parameters can still be defined in the configuration file without\
-an explicit suffix but this behavior is deprecated. The recommended approach is\
-to add explicit suffixes to all duration type parameters when upgrading to\
-MaxScale 6.
+Duration type parameters can still be defined in the configuration file without an explicit suffix but this behavior is deprecated. The recommended approach is to add explicit suffixes to all duration type parameters when upgrading to MaxScale 6.
 
 ### Changed Parameters
 
@@ -166,23 +140,18 @@ The following deprecated core parameters have been removed:
 
 The deprecated aliases for the schemarouter parameters `ignore_databases` and`ignore_databases_regex` have been removed. They can be replaced with`ignore_tables` and `ignore_tables_regex`.
 
-In addition, the `preferred_server` parameter that was deprecated in 2.5 has\
-also been removed.
+In addition, the `preferred_server` parameter that was deprecated in 2.5 has also been removed.
 
 #### `mariadbmon`
 
-* MariaDBMonitor settings `ignore_external_masters`, `detect_replication_lagdetect_standalone_master`, `detect_stale_master` and `detect_stale_slave`\
-  have been removed. The first two were ineffective, the latter three are\
-  replaced by `master_conditions` and `slave_conditions`.
+* MariaDBMonitor settings `ignore_external_masters`, `detect_replication_lagdetect_standalone_master`, `detect_stale_master` and `detect_stale_slave` have been removed. The first two were ineffective, the latter three are replaced by `master_conditions` and `slave_conditions`.
 
 ### Session Command History
 
 The `prune_sescmd_history`, `max_sescmd_history` and `disable_sescmd_history`\
-have been made into generic service parameters that are shared between all\
-routers that support it.
+have been made into generic service parameters that are shared between all routers that support it.
 
-The default value of `prune_sescmd_history` was changed from `false` to`true`. This was done as most MaxScale installations either benefit from it\
-being enabled or are not affected by it.
+The default value of `prune_sescmd_history` was changed from `false` to`true`. This was done as most MaxScale installations either benefit from it being enabled or are not affected by it.
 
 ## Upgrading MariaDB MaxScale from 2.4 to 2.5
 
@@ -195,7 +164,7 @@ no longer be used.
 ### Authentication
 
 The credentials used by services now require additional grants. For a full list\
-of required grants, refer to the [protocol documentation](../maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-authentication-modules.md).
+of required grants, refer to the [protocol documentation](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/).
 
 ### MariaDB-Monitor
 
@@ -225,9 +194,6 @@ module=csmon
 version=1.5
 ...
 ```
-
-Please see the [documentation](https://mariadb.com/kb/Monitors/ColumnStore-Monitor#master-selection)\
-for details.
 
 ### New binlog router
 
@@ -424,7 +390,7 @@ add `address=0.0.0.0` to the listener definition.
 
 ### Persisted Configuration Files
 
-Starting with MaxScale 2.1, any changes made with the newly added [runtime configuration change](https://mariadb.com/kb/Reference/MaxAdmin#runtime-configuration-changes)\
+Starting with MaxScale 2.1, any changes made with the newly added runtime configuration change\
 will be persisted in a configuration file. These files are located in `/var/lib/maxscale/maxscale.cnf.d/`.
 
 ### MaxScale Log Files
@@ -507,7 +473,7 @@ GRANT SELECT ON mysql.tables_priv TO 'username'@'maxscalehost';
 
 MaxScale 1.4 upgrades the used password encryption algorithms to more secure ones.\
 This requires that the password files are recreated with the `maxkeys` tool.\
-For more information about how to do this, please read the installation guide:[MariaDB MaxScale Installation Guide](../maxscale-24-02getting-started/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-installation-guide.md)
+For more information about how to do this, please read the installation guide:[MariaDB MaxScale Installation Guide](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-installation-guide.md)
 
 ### SSL
 

@@ -17,7 +17,7 @@ no longer be used.
 ### Authentication
 
 The credentials used by services now require additional grants. For a full list\
-of required grants, refer to the [protocol documentation](../maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-authentication-modules.md).
+of required grants, refer to the [protocol documentation](../../../maxscale-archive/archive/mariadb-maxscale-24-02/maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-authentication-modules.md).
 
 ### MariaDB-Monitor
 
