@@ -92,13 +92,23 @@ Note the `"lateral": 1` member.
 
 ## Controlling the Optimization
 
-Lateral Derived is enabled by default, the optimizer will make a cost-based decision whether the optimization should be used.
+Lateral Derived is enabled by default. The optimizer will make a cost-based decision whether the optimization should be used.
 
 If you need to disable the optimization, it has an [optimizer\_switch](../optimizer-switch.md) flag. It can be disabled like so:
 
 ```sql
 SET optimizer_switch='split_materialized=off'
 ```
+
+{% tabs %}
+{% tab title="Current" %}
+From MariaDB 12.1, it is possible to enable or disable the optimization with an optimizer hint, [SPLIT\_MATERLIZED or NO\_SPLIT\_MATERIALIZED](../../../../reference/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#split_materialized-x-and-no_split_materialized-x).
+{% endtab %}
+
+{% tab title="<12.1" %}
+No [optimizer hint](../../../../reference/sql-statements/data-manipulation/selecting-data/optimizer-hints.md) is available.
+{% endtab %}
+{% endtabs %}
 
 ## References
 
