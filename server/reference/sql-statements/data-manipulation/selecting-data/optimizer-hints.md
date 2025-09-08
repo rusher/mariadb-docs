@@ -230,6 +230,10 @@ If `@@max_statement_time` is set, the hint will be ignored and a warning produce
 
 Enables or disables the use of the Split Materialized Optimization (also called the[ Lateral Derived Optimization](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/lateral-derived-optimization.md)).
 
+#### DERIVED\_CONDITION\_PUSHDOWN and NO\_DERIVED\_CONDITION\_PUSHDOWN&#x20;
+
+Enables or disables the use of the condition pushdown for derived tables.
+
 **Subquery Hints**
 
 **SUBQUERY Hint**
