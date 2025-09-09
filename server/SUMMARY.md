@@ -1101,7 +1101,7 @@
     * [Binlog Event Checksums](ha-and-performance/standard-replication/binlog-event-checksums.md)
     * [Changing a Replica to Become the Primary](ha-and-performance/standard-replication/changing-a-replica-to-become-the-primary.md)
     * [Replication When the Primary and Replica Have Different Table Definitions](ha-and-performance/standard-replication/replication-when-the-primary-and-replica-have-different-table-definitions.md)
-    * [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md)
+    * [START TRANSACTION ... WITH CONSISTENT SNAPSHOT](ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md)
     * [Restricting Speed of Reading Binlog from Primary by a Replica](ha-and-performance/standard-replication/restricting-speed-of-reading-binlog-from-primary-by-a-replica.md)
     * [Running Triggers on the Replica for Row-based Events](ha-and-performance/standard-replication/running-triggers-on-the-replica-for-row-based-events.md)
     * [Selectively Skipping Replication of Binlog Events](ha-and-performance/standard-replication/selectively-skipping-replication-of-binlog-events.md)
