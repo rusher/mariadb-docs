@@ -51,9 +51,11 @@ From a technical perspective, the process flow is as follows:
 
 The Galera Replication Plugin implements the `wsrep API` and acts as the `wsrep` Provider. It handles the core replication service functionality. The plugin itself consists of the following components:
 
-* Certification Layer: Prepares write-sets and performs [certification checks](certification-based-replication.md#requirements-for-certification-based-replication) on them to ensure they can be applied without conflict.
-* Replication Layer: Manages the replication protocol and provides the total ordering capability for transactions.
-* Group Communication Framework: Provides the plugin architecture for the various group communication systems that connect to Galera Cluster.
+| Layer                         | Description                                                                                                  |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Certification Layer           | Prepares write-sets and performs certification checks to ensure they can be applied without conflict.        |
+| Replication Layer             | Manages the replication protocol and provides total ordering capability for transactions.                    |
+| Group Communication Framework | Provides the plugin architecture for the various group communication systems that connect to Galera Cluster. |
 
 ### Group Communication (GComm) Framework
 
