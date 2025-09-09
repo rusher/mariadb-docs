@@ -10,7 +10,7 @@ MariaDB Enterprise Server 10.4.11-5 was released on 2020-01-06.
 * Redundant writes to the [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) redo log have been removed. ([MDEV-21024](https://jira.mariadb.org/browse/MDEV-21024))
 * The default for the plugin load option plugin-maturity is now `stable` (MENT-240)
 * [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) and the MariaDB Audit plugin trace now add the user who initiated statements with the `DELAYED` option. In previous versions a system user was added. (MENT-237)
-* MariaDB ColumnStore, a columnar storage engine, is now included with MariaDB Enterprise Server 10.4. Specific details on this component may be found in the [ColumnStore 1.4.2 release notes](../../../columnstore/columnstore-1-4/).
+* MariaDB ColumnStore, a columnar storage engine, is now included with MariaDB Enterprise Server 10.4. Specific details on this component may be found in the [ColumnStore 1.4.2 release notes](../../../columnstore/old-releases/columnstore-1-4/).
 * [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) no longer permits [server\_audit\_output\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables) to be set to `SYSLOG` on Microsoft Windows. (MENT-258)
 
 ## Issues Fixed

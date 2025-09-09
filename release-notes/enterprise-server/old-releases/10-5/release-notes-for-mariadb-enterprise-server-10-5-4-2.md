@@ -10,12 +10,12 @@ With MariaDB Enterprise Server 10.5 "mysql" command names are replaced with "mar
 
 ## Notable Changes
 
-MariaDB Enterprise ColumnStore is a columnar storage engine for analytical workloads. MariaDB Enterprise ColumnStore 1.5.3 is included in this release. Specific details on this component may be found in the [Enterprise ColumnStore 1.5.3 release notes](../../../columnstore/columnstore-1-5/mariadb-columnstore-1-5-3-release-notes.md).
+MariaDB Enterprise ColumnStore is a columnar storage engine for analytical workloads. MariaDB Enterprise ColumnStore 1.5.3 is included in this release. Specific details on this component may be found in the [Enterprise ColumnStore 1.5.3 release notes](../../../columnstore/old-releases/columnstore-1-5/mariadb-columnstore-1-5-3-release-notes.md).
 
 ## Changes in Storage Engines
 
 * New in storage engine ColumnStore:
-  * This release includes Enterprise [ColumnStore 1.5.3 release notes](../../../columnstore/columnstore-1-5/mariadb-columnstore-1-5-3-release-notes.md).
+  * This release includes Enterprise [ColumnStore 1.5.3 release notes](../../../columnstore/old-releases/columnstore-1-5/mariadb-columnstore-1-5-3-release-notes.md).
   * Comprehensive rewrite of installation, cluster management, and failover logic
   * Support for standard MariaDB Server collations and character sets
 * New in storage engine InnoDB:

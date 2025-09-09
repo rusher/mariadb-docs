@@ -15,8 +15,8 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 
 ## Changes in Storage Engines
 
-* This release originally included [Enterprise ColumnStore 5.4.1](../../../columnstore/mariadb-columnstore-5-4-release-notes/mariadb-columnstore-5-4-1-release-notes.md).
-* This release has been updated to include [Enterprise ColumnStore 5.4.3](../../../columnstore/mariadb-columnstore-5-4-release-notes/mariadb-columnstore-5-4-3-release-notes.md) on 2020-11-09.
+* This release originally included [Enterprise ColumnStore 5.4.1](../../../columnstore/old-releases/mariadb-columnstore-5-4-release-notes/mariadb-columnstore-5-4-1-release-notes.md).
+* This release has been updated to include [Enterprise ColumnStore 5.4.3](../../../columnstore/old-releases/mariadb-columnstore-5-4-release-notes/mariadb-columnstore-5-4-3-release-notes.md) on 2020-11-09.
 
 ## Platforms
 
