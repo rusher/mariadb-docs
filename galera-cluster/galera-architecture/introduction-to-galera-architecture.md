@@ -4,7 +4,25 @@ MariaDB Galera Cluster provides a synchronous replication system that uses an ap
 
 ## Core Architectural Components
 
-<div align="left"><figure><img src="../.gitbook/assets/replicationapi.png" alt=""><figcaption></figcaption></figure></div>
+```mermaid
+graph TD
+    A[DBMS]
+
+    subgraph wsrep API
+        B[wsrep hooks]
+        C[dlopen]
+        D[Galera Replication Plugin]
+    end
+
+    E[gcomm]
+
+    %% Link the layers together in a stack
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+
+```
 
 The internal architecture of MariaDB Galera Cluster revolves around four primary components:
 
