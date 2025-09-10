@@ -1,27 +1,19 @@
 # Table of contents
 
-* [Introduction to mariadb cloud](/introduction-to-mariadb-cloud.md)
-* [Serverless]()
-    * [Architecture](/Serverless/Architecture.md)
-    * [Readme](/Serverless/README.md)
-* [Faqs](/FAQs.md)
-* [Quickstart]()
-    * [Launch db using python](/Quickstart/Launch%20DB%20using%20Python.md)
-    * [Launch db using the rest api](/Quickstart/Launch%20DB%20using%20the%20REST%20API.md)
-    * [Launch db using the terraform provider](/Quickstart/Launch%20DB%20using%20the%20Terraform%20Provider.md)
-    * [Readme](/Quickstart/README.md)
-* [Portal features]()
-    * [Billing](/Portal%20features/Billing.md)
-    * [Infrastructure upgrades](/Portal%20features/Infrastructure%20Upgrades.md)
-    * [Launch page](/Portal%20features/Launch%20page.md)
-    * [Manage your service](/Portal%20features/Manage%20your%20Service.md)
-    * [Notifications](/Portal%20features/Notifications.md)
-    * [Readme](/Portal%20features/README.md)
-    * [Service details page](/Portal%20features/Service%20Details%20page.md)
-    * [Service monitoring panels](/Portal%20features/Service%20Monitoring%20Panels.md)
-* [Connecting to skysql dbs]()
-    * [Connect from java app](/Connecting%20to%20SkySQL%20DBs/Connect%20from%20Java%20App.md)
-    * [Connect from mongodb clients](/Connecting%20to%20SkySQL%20DBs/Connect%20from%20MongoDB%20clients.md)
-    * [Connect from node js app](/Connecting%20to%20SkySQL%20DBs/Connect%20from%20Node%20js%20App.md)
-    * [Connect from python app](/Connecting%20to%20SkySQL%20DBs/Connect%20from%20Python%20App.md)
-    * [Connect from ‘c++’ app](/Connecting%20to%20SkySQL%20DB
+* [MariaDB Cloud](README.md)
+* [Introduction to MariaDB Cloud](introduction-to-mariadb-cloud.md) 
+    * [Uptime SLA](Uptime%20SLA.md)
+
+
+## Getting Started
+
+* [Quickstart](getting-started/quickstart.md)
+* [Publish your docs](getting-started/publish-your-docs.md)
+
+## Basics
+
+* [Editor](basics/editor.md)
+* [Markdown](basics/markdown.md)
+* [Images & media](basics/images-and-media.md)
+* [Interactive blocks](basics/interactive-blocks.md)
+* [Integrations](basics/integrations.md)
