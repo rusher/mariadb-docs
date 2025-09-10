@@ -4,7 +4,7 @@ Retained version mariadb-cloud/summary.md
 * [MariaDB Cloud](README.md)
 * [Introduction to MariaDB Cloud](introduction-to-mariadb-cloud.md) 
     * [Uptime SLA](Uptime%20SLA.md)
-* [Serverless](README.md)
+* [Serverless](Serverless/README.md)
     * [Architecture](Serverless/Architecture.md)
 * [Faqs](FAQs.md)
 * [Quickstart](Quickstart/README.md)
