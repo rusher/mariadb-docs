@@ -17,7 +17,7 @@ MariaDB Enterprise Server 10.5.28-22 was released on 19 Mar 2025.
 ## Notable changes
 
 * Galera protocol versions are now shown by show status - change available with installation of galera library 26.4.21+ ([MDEV-35505](https://jira.mariadb.org/browse/MDEV-35505))
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) updated to 26.4.21
+* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) updated to [26.4.21](../../../galera-cluster/26.4/26.4.21.md)
   * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 
 ## Issues Fixed

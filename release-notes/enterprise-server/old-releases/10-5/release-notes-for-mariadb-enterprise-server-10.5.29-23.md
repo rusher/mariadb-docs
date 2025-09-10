@@ -20,7 +20,7 @@ MariaDB Enterprise Server 10.5.29-23 was released on 11 Jun 2025.
 
 * MariaDB effectively running as root CAP\_DAC\_OVERRIDE ([MDEV-36229](https://jira.mariadb.org/browse/MDEV-36229))
 * my\_getopt compares option names case sensitively ([MDEV-27126](https://jira.mariadb.org/browse/MDEV-27126))
-* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.22
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to [26.4.22](../../../galera-cluster/26.4/26.4.22.md)
 
 ## Issues Fixed <a href="#issues-fixed" id="issues-fixed"></a>
 
