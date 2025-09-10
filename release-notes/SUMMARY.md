@@ -1734,6 +1734,7 @@
       * [MySQL-wsrep 5.5.42-25.11 Release Notes](galera-cluster/mysql-wsrep/5.5/5.5.42-25.11.md)
 * [Connectors Release Notes](connectors/README.md)
   * [Connector/C](connectors/c/README.md)
+    * [Connector/C All Releases](connectors/c/all-releases.md)
     * [Connector/C 3.4 Release Notes](connectors/c/3.4/README.md)
       * [Connector/C 3.4.7 Release Notes](connectors/c/3.4/3.4.7.md)
       * [Connector/C 3.4.5 Release Notes](connectors/c/3.4/3.4.5.md)
