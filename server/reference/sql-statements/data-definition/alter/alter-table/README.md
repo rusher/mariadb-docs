@@ -54,7 +54,7 @@ alter_specification:
   | ENABLE KEYS
   | RENAME [TO] new_tbl_name
   | ORDER BY col_name [, col_name] ...
-  | RENAME COLUMN old_col_name TO new_col_name
+  | RENAME COLUMN [IF EXISTS] old_col_name TO new_col_name
   | RENAME {INDEX|KEY} old_index_name TO new_index_name
   | CONVERT TO CHARACTER SET charset_name [COLLATE collation_name]
   | [DEFAULT] CHARACTER SET [=] charset_name
