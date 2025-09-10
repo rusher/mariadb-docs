@@ -1,10 +1,10 @@
 # MariaDB 10.0.15 Fusion-io Changelog
 
-[Download](https://ftp.osuosl.org/pub/mariadb/mariadb-10.0.15-fusion-io/)[Release Notes](mariadb-10015-fusion-io-release-notes.md)[Changelog](mariadb-10015-fusion-io-changelog.md)[Fusion-io Introduction](fusion-io-introduction.md)
+[Download](https://archive.mariadb.org/mariadb-10.0.15-FusionIO/) | [Release Notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10015-fusion-io-release-notes.md) | [Changelog](mariadb-10015-fusion-io-changelog.md) | [Fusion-io Introduction](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction)
 
 **Release date:** 12 Dec 2014
 
-For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-10-0-series/mariadb-10015-fusion-io-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On\
 Launchpad you can view more details of the revision and view diffs of the code\
@@ -126,5 +126,7 @@ modified in that revision.
   * Added support for LZO compression method.
 
 {% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formId="4316" %}

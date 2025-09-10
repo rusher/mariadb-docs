@@ -1,15 +1,12 @@
 # MariaDB 10.0.15 Fusion-io Release Notes
 
-**Note:** This page describes features in an _**unreleased**_ version of MariaDB._**Unreleased**_ means there are no official packages or\
-binaries available for download which contain the features. If you want to try out any of the new features described here you will\
-need to [get](../../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md) and [compile](../../../installing-mariadb/compiling-mariadb-from-source/) the\
-code yourself.
-
-[Download](https://ftp.osuosl.org/pub/mariadb/mariadb-10.0.15-fusion-io/)[Release Notes](mariadb-10015-fusion-io-release-notes.md)[Changelog](mariadb-10015-fusion-io-changelog.md)[Fusion-io Introduction](fusion-io-introduction.md)
+[Download](https://archive.mariadb.org/mariadb-10.0.15-FusionIO/) | [Release Notes](mariadb-10015-fusion-io-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10015-fusion-io-changelog.md) | [Fusion-io Introduction](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction)
 
 **Release date:** 12 Dec 2014
 
-**For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **Fusion-io see the**[**Fusion-io Introduction**](fusion-io-introduction.md) **page.**
+{% hint style="info" %}
+**For an overview of** **MariaDB 10.0** **Fusion-io see the** [**Fusion-io Introduction**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction) **page.**
+{% endhint %}
 
 Thanks, and enjoy MariaDB!
 
@@ -28,8 +25,10 @@ Since the [MariaDB 10.0.9 Fusion-io preview](https://blog.mariadb.org/significan
 
 ## Other Changes
 
-For a complete list of changes made in MariaDB 10.0.15 Fustion-io, with links to detailed information on each push, see the [changelog](mariadb-10015-fusion-io-changelog.md).
+For a complete list of changes made in MariaDB 10.0.15 Fustion-io, with links to detailed information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10015-fusion-io-changelog.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formId="4316" %}
