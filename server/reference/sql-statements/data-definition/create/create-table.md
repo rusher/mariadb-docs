@@ -2,8 +2,7 @@
 
 ## Syntax
 
-```bnf
-CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+<pre><code>CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
     (<a data-footnote-ref href="#user-content-fn-1">create_definition</a>,...) [<a data-footnote-ref href="#user-content-fn-2">table_options</a>    ]... [<a data-footnote-ref href="#user-content-fn-3">partition_options</a>]
 CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
     [(<a data-footnote-ref href="#user-content-fn-1">create_definition</a>,...)] [<a data-footnote-ref href="#user-content-fn-2">table_options</a>   ]... [<a data-footnote-ref href="#user-content-fn-3">partition_options</a>]
@@ -13,7 +12,7 @@ CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
 
 select_statement:
     [IGNORE | REPLACE] [AS] SELECT ...   (Some legal select statement)
-```
+</code></pre>
 
 ## Description
 
