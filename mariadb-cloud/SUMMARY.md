@@ -2,7 +2,7 @@
 
 * [MariaDB Cloud](README.md)
 * [Introduction to MariaDB Cloud](introduction-to-mariadb-cloud.md) 
-    * [Uptime SLA](Uptime_SLA.md)
+    * [Observability](Observability.md)
 
 
 ## Getting Started
