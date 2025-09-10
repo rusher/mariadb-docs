@@ -40,7 +40,7 @@ alter_specification:
   | ADD PERIOD FOR [time_period_name|SYSTEM_TIME] (start_column_name, end_column_name)
   | ALTER [COLUMN] col_name SET DEFAULT literal | (expression)
   | ALTER [COLUMN] col_name DROP DEFAULT
-  | ALTER {INDEX|KEY} index_name [NOT] INVISIBLE
+  | ALTER {INDEX|KEY} [IF EXISTS] index_name [NOT] IGNORED
   | CHANGE [COLUMN] [IF EXISTS] old_col_name new_col_name column_definition
         [FIRST|AFTER col_name]
   | MODIFY [COLUMN] [IF EXISTS] col_name column_definition
