@@ -500,8 +500,6 @@
         * [Configuring Swappiness](server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/configuring-swappiness.md)
         * [Fusion-io](server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/fusion-io/README.md)
           * [Fusion-io Introduction](server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction.md)
-          * [MariaDB 10.0.15 Fusion-io Changelog](server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-changelog.md)
-          * [MariaDB 10.0.15 Fusion-io Release Notes](server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-release-notes.md)
     * [Upgrading MariaDB](server-management/install-and-upgrade-mariadb/upgrading/README.md)
       * [Upgrading Between Major MariaDB Versions](server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions.md)
       * [Upgrading Between Minor Versions on Linux](server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-minor-versions-on-linux.md)
