@@ -85,7 +85,7 @@ Installation of MariaDB Dump varies by operating system.
 9. On the next screen, click "Install".
 10. When the installation process completes, click "Finish".
 
-## Create a logical “Dump” SQL file
+## Create a Logical “Dump” SQL File
 
 The procedure to create a backup depends on the operating system.
 

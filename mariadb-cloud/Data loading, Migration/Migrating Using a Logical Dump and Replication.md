@@ -39,26 +39,23 @@ To minimize downtime during migration, you can set up live replication from your
 
 If you encounter an error while importing your users, you may need to uninstall the `simple_password_check` plugin on your SkySQL instance.
 
-````
 ```sql
 UNINSTALL PLUGIN simple_password_check;
 ```
-````
 
 4\. **Start Replication**: Turn on replication using SkySQL stored procedures. There are procedures allowing you to set and start replication. See our [documentation](<../Reference Guide/Sky Stored Procedures.md>) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
 
-````
 ```sql
-CALL sky.change_external_primary(
-````
+CALL sky.change_external_primary(host VARCHAR(255), port INT, logfile TEXT, logpos LONG,
+     use_ssl_encryption BOOLEAN );
+```
 
-host VARCHAR(255), port INT, logfile TEXT, logpos LONG , use\_ssl\_encryption BOOLEAN );
 
-````
+
+```sql
 CALL sky.replication_grants();
 CALL sky.start_replication();
 ```
-````
 
 #### Performance Optimization During Migration
 
@@ -86,7 +83,7 @@ CALL sky.start_replication();
 
 *   **Adjust Buffer Sizes**: Temporarily increase buffer sizes to optimize the import performance. This can be done via the Configuration Manager in the portal.
 
-    ```sql
+    ```ini
     innodb_buffer_pool_size = 2G
     innodb_log_file_size = 512M
     ```
