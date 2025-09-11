@@ -58,7 +58,7 @@
         * [Install mariadb-dump](Data%20loading,%20Migration/Install%20Mariadb-dump.md)
         * [Install mariadb-import](Data%20loading,%20Migration/Install-mariadb-import.md)
         * [Replicating Data from an External Database to SkySQL](Data%20loading,%20Migration/Replicating%20data%20from%20external%20DB.md)
-* [Data Offloading](SkyCopilot%20Guide/README.md)
+* [Data Offloading](Data%20offloading/README.md)
     * [Replicating data from SkySQL to external database](Data%20offloading/Replicating%20data%20from%20SkySQL%20to%20external%20database.md)
 * [SkyAI Agents](SkyCopilot%20Guide/README.md)
     * [SkyAI Agent API--User Guide](SkyCopilot%20Guide/SkyAI%20API%20Guide.md)
