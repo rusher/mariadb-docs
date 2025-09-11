@@ -34,7 +34,7 @@
     * [DBGate](Integrations/DBGate.md)
     * [HeidiSQL](Integrations/HeidiSQL.md)
     * [TablePlus](Integrations/TablePlus.md)
-* [Backup and restore](<Backup and Restore/README.md>)
+* [Backup and Restore](<Backup and Restore/README.md>)
   * [Backup Examples](backup-and-restore/backup-examples/README.md)
     * [Snapshot Backup Examples](<Backup and Restore/Snapshot Backup Examples.md>)
     * [Physical Backup Examples](<Backup and Restore/Physical Backup Examples.md>)
