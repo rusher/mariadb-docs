@@ -83,7 +83,7 @@
   * [Setting up GCP Private Service Connect](<Using AWS Azure GCP private VPC connections/Setting up GCP Private Service Connect.md>)
   * [Setting up Azure Private Link](<Using AWS Azure GCP private VPC connections/Setting up Azure Private Link.md>)
 * [Observability](Observability.md)
-* [Service tiers](<Service Tiers/README.md>)
+* [Service Tiers](<Service Tiers/README.md>)
 * [Fractional DBA Service--SkyDBA](FractionalDBA.md)
 * [Reference Guides](<Reference Guide/README.md>)
   * [Mariadb Server Versions Support](<Reference Guide/MariaDB Server Versions.md>)
