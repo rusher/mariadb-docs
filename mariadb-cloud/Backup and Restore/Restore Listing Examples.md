@@ -1,43 +1,18 @@
-<summary>
+# Restore Listing Examples
+
 Authentication
-</summary>
-<h3>
-<ol>
-<li>
-Go to the SkySQL <a href="https://app.skysql.com/user-profile/api-keys">API Key management page</a>  and generate an API key
-</li>
-<li>
-Export the value from the token field to an environment variable $API_KEY
 
-  ```
-  export API_KEY='... key data ...'
-  ```
-</li>
-<li>
-Use it on subsequent request, e.g:
+#### Go to the SkySQL [API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:    \`\`\`bash    curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"    \`\`\`In order to get all Restores scheduled in the past you need to make api call:curl --location 'https://api.skysql.com/skybackup/v1/restores' \\--header 'Accept: application/json' \\--header 'X-API-Key: ${API\_KEY}'
 
-        ```bash
-        curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API_KEY}"
-        ```
-</li>
-</ol>
-</details> 
-In order to get all Restores scheduled in the past you need to make api call:
-
-```bash
-curl --location 'https://api.skysql.com/skybackup/v1/restores' \
---header 'Accept: application/json' \
---header 'X-API-Key: ${API_KEY}'
-```
-
-## Get Restore by ID
+### Get Restore by ID
 
 ```bash
 curl --location 'https://api.skysql.com/skybackup/v1/restores/<ID>' \
 --header 'Accept: application/json' \
 --header 'X-API-Key: ${API_KEY}'
 ```
-- ID : the SkySQL Restore ID. aTo get the restore id, check the above sample call listing all 
+
+* ID : the SkySQL Restore ID. aTo get the restore id, check the above sample call listing all
 
 Typical response of those two apis should look like:
 

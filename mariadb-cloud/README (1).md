@@ -18,3 +18,4 @@ layout:
 
 # MariaDB Cloud
 
+Welcome to MariaDB Cloud!

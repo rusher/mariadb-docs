@@ -1,11 +1,11 @@
 ---
-icon: cloud-sun
+icon: globe-pointer
 layout:
   width: default
   title:
     visible: true
   description:
-    visible: false
+    visible: true
   tableOfContents:
     visible: true
   outline:
@@ -16,5 +16,5 @@ layout:
     visible: true
 ---
 
-# MariaDB Cloud
+# Publish your docs
 

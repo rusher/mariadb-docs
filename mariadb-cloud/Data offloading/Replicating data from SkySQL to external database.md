@@ -1,30 +1,29 @@
 # Replicating data from SkySQL to external database
 
-SkySQL customers can configure outbound replication from a Replicated Transactions service to a compatible MariaDB Server running elsewhere - could be your data center, self-managed MariaDB DB on the cloud or even other managed services like AWS RDS. 
+SkySQL customers can configure outbound replication from a Replicated Transactions service to a compatible MariaDB Server running elsewhere - could be your data center, self-managed MariaDB DB on the cloud or even other managed services like AWS RDS.
 
-SkySQL uses stored procedures to configure replication to other MariaDB or MySQL database servers. 
+SkySQL uses stored procedures to configure replication to other MariaDB or MySQL database servers.
 
-For additional information about the stored procedures used to configure replication with Replicated Transactions services, see [SkySQL Replication Helper Procedures for Replicated Transactions](../Reference%20Guide/Sky%20Stored%20Procedures.md)
-
+For additional information about the stored procedures used to configure replication with Replicated Transactions services, see [SkySQL Replication Helper Procedures for Replicated Transactions](<../Reference Guide/Sky Stored Procedures.md>)
 
 ## Requirements
 
 To configure outbound replication from your Replicated Transactions service in SkySQL to an external replica server using MariaDB Server, the following requirements must be met:
 
-- The external replica server must use a supported version of MariaDB Server, and the external replica server must use a version in the same or newer release series as the version used by the SkySQL service.
-- When the SkySQL service uses **ES 10.6**, the following versions are supported for the external replica server:
-    - MariaDB Server 10.6
-- When the SkySQL service uses **ES 10.5**, the following versions are supported for the external replica server:
-    - MariaDB Server 10.5
-    - MariaDB Server 10.6
-- When the SkySQL service uses **ES 10.4**, the following versions are supported for the external replica server:
-    - MariaDB Server 10.4
-    - MariaDB Server 10.5
-    - MariaDB Server 10.6
+* The external replica server must use a supported version of MariaDB Server, and the external replica server must use a version in the same or newer release series as the version used by the SkySQL service.
+* When the SkySQL service uses **ES 10.6**, the following versions are supported for the external replica server:
+  * MariaDB Server 10.6
+* When the SkySQL service uses **ES 10.5**, the following versions are supported for the external replica server:
+  * MariaDB Server 10.5
+  * MariaDB Server 10.6
+* When the SkySQL service uses **ES 10.4**, the following versions are supported for the external replica server:
+  * MariaDB Server 10.4
+  * MariaDB Server 10.5
+  * MariaDB Server 10.6
 
 ## Create User for Outbound Replication
 
-With the default database admin user provided, create an external_replication user as seen below.
+With the default database admin user provided, create an external\_replication user as seen below.
 
 ```sql
 CREATE USER 'replication_user'@'%' IDENTIFIED BY 'bigs3cret';
@@ -33,13 +32,14 @@ GRANT REPLICATION SLAVE ON *.* TO ‘external_replication’@'hostname';
 
 ## Check User Account
 
-**On the SkySQL service**, confirm that the new user has sufficient privileges by executing 
+**On the SkySQL service**, confirm that the new user has sufficient privileges by executing&#x20;
 
 ```sql
 SHOW GRANTS FOR 'external_replication'@'%';
 
 ```
-```text
+
+```
 +-------------+
 | Grants for external_replication@%                                                                                                              |
 +-------------+
@@ -49,25 +49,24 @@ SHOW GRANTS FOR 'external_replication'@'%';
 
 ## Add External Replica to Allowlist
 
-**On the SkySQL Customer Portal**, add the IP address of the external replica server to the SkySQL service's [allowlist](../Security/Configuring%20Firewall.md)
-- Click ‘Manage’→ ‘Manage Allowlist’ to add the IP address to the allowed list. 
+**On the SkySQL Customer Portal**, add the IP address of the external replica server to the SkySQL service's [allowlist](<../Security/Configuring Firewall.md>)
 
-<aside>
+* Click ‘Manage’→ ‘Manage Allowlist’ to add the IP address to the allowed list.
+
 💡 Note that if your ‘external replica server’ is also running on SkySQL (say for DR), you can find the outbound IP address from the ‘Details’ tab (Select on the Service name on the dashboard, then click ‘Details’)
-</aside>
 
 ## Obtain GTID Position
 
 **On the SkySQL service**, obtain the GTID position from which to start replication.
 
-When you want to start replication from the most recent transaction, the current GTID position can be obtained by querying the value of the 'gtid_current_pos:
+When you want to start replication from the most recent transaction, the current GTID position can be obtained by querying the value of the 'gtid\_current\_pos:
 
 ```sql
 SHOW GLOBAL VARIABLES
    LIKE 'gtid_current_pos';
 ```
 
-```text
+```
 `+------------------+-------------------+
 | Variable_name    | Value             |
 +------------------+-------------------+
@@ -79,7 +78,7 @@ SHOW GLOBAL VARIABLES
 
 **On the external replica server**, configure the GTID position from which to start replication.
 
-The GTID position can be configured by setting the 'gtid_slave_pos':
+The GTID position can be configured by setting the 'gtid\_slave\_pos':
 
 ```sql
 SET GLOBAL gtid_slave_pos='435700-435700-124';
@@ -88,9 +87,9 @@ SET GLOBAL gtid_slave_pos='435700-435700-124';
 
 ## Configure Replication
 
-**On the external replica server**, configure replication using the connection parameters for your SkySQL service.
+**On the external replica server**, configure replication using the connection parameters for your SkySQL service.
 
-Replication can be configured using the 'CHANGE MASTER TO' SQL statement:
+Replication can be configured using the 'CHANGE MASTER TO' SQL statement:
 
 ```sql
 CHANGE MASTER TO
@@ -103,15 +102,15 @@ CHANGE MASTER TO
    MASTER_USE_GTID=slave_pos;
 ```
 
-- Replace `FULLY_QUALIFIED_DOMAIN_NAME` with the Fully Qualified Domain Name of your service
-- Replace `TCP_PORT` with the read-write or read-only port of your service
-- Replace `~/PATH_TO_PEM_FILE` with the path to the certificate authority chain (.pem) file
+* Replace `FULLY_QUALIFIED_DOMAIN_NAME` with the Fully Qualified Domain Name of your service
+* Replace `TCP_PORT` with the read-write or read-only port of your service
+* Replace `~/PATH_TO_PEM_FILE` with the path to the certificate authority chain (.pem) file
 
 ## Start Replication
 
 **On the external replica server**, start replication.
 
-Replication can be started using the 'START REPLICA' SQL statement:
+Replication can be started using the 'START REPLICA' SQL statement:
 
 ```sql
 START REPLICA;
@@ -122,7 +121,7 @@ START REPLICA;
 
 **On the external replica server**, check replication status.
 
-Replication status can be checked using the 'SHOW REPLICA STATUS' SQL statement:
+Replication status can be checked using the 'SHOW REPLICA STATUS' SQL statement:
 
 ```
 SHOW REPLICA STATUS \G
