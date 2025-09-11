@@ -1,4 +1,3 @@
-Retained version mariadb-cloud/summary.md
 # Table of contents
 
 * [MariaDB Cloud](README.md)
@@ -66,8 +65,7 @@ Retained version mariadb-cloud/summary.md
     * [SkySQL MCP Server](SkyCopilot%20Guide/MCP%20Server.md)
 * [High availability, DR](High%20Availability,%20DR/README.md)
     * [Setup Global Replication](High%20Availability,%20DR/Setup%20Global%20Replication.md)
-* [Autonomously scale Compute/Storage](Autonomously%20scale%20Compute,%20Storage/README.md)
-    
+* [Autonomously scale Compute/Storage](Autonomously%20scale%20Compute,%20Storage/README.md) 
 * [Security](Security/README.md)
     * [Managing Portal Users](Security/Managing%20Portal%20Users.md)
     * [Configuring Firewall](Security/Configuring%20Firewall.md)
@@ -75,7 +73,6 @@ Retained version mariadb-cloud/summary.md
     * [Managing API keys](Security/Managing%20API%20keys.md)
     * [Private VPC connections](Security/Private%20VPC%20connections.md)
     * [Portal Single Sign-On](Security/Portal%20Single%20Sign-On.md)
-
 * [Configure your Database Server(s)](config/README.md)
     * [MariaDB Serverless Single Node](config/Mariadb-Serverless-Single-Node.md)
     * [MariaDB Server Single Node](config/Mariadb-Server-Single-Node.md)
