@@ -93,22 +93,3 @@
   * [SkySQL Region Choices](<Reference Guide/Region Choices.md>)
   * [SkySQL REST API Reference](<Reference Guide/REST API Reference.md>)
   * [SkySQL Stored Procedures](<Reference Guide/Sky Stored Procedures.md>)
-* [Changelog](Changelog.md)
-* [Readme](README.md)
-* [Support](Support.md)
-* [Uptime sla](<Uptime SLA.md>)
-* [.gitbook](<README (1).md>)
-* [Summary1](summary1.md)
-
-## Getting Started
-
-* [Quickstart](getting-started/quickstart.md)
-* [Publish your docs](getting-started/publish-your-docs.md)
-
-## Basics
-
-* [Editor](basics/editor.md)
-* [Markdown](basics/markdown.md)
-* [Images & media](basics/images-and-media.md)
-* [Interactive blocks](basics/interactive-blocks.md)
-* [Integrations](basics/integrations.md)
