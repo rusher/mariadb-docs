@@ -41,7 +41,7 @@
     * [Logical Backup Examples](<Backup and Restore/Logical Backup Examples.md>)
     * [Incremental Backup Examples](<Backup and Restore/Incremental Backup Examples.md>)
     * [Binarylog Backup Examples](<Backup and Restore/Binarylog Backup Examples.md>)
-    * [Other Backup API Examples](backup-and-restore/backup-examples/other-backup-api-examples.md)
+    * [Other Backup API Examples](<Backup and Restore/Other backup API examples.md>)
   * [Restore Examples](backup-and-restore/restore-examples/README.md)
     * [Restore Listing Examples](<Backup and Restore/Restore Listing Examples.md>)
     * [Restore from SkySQL Managed Storage](<Backup and Restore/Restore from SkySQL Managed Storage.md>)
