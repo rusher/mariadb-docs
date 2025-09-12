@@ -54,7 +54,7 @@ automatically, and if you are on a system that uses [sysVinit](sysvinit.md), the
 
 ### Bootstrapping a New Cluster
 
-When using [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-cluster-quickstart-guides/mariadb-galera-cluster-guide) with sysVinit, the first node in a cluster has to be started with `service mysql bootstrap`. See [Getting Started with MariaDB Galera Cluster: Bootstrapping a New Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster) for more information.
+When using [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-cluster-quickstart-guides/mariadb-galera-cluster-guide) with sysVinit, the first node in a cluster has to be started with `service mysql bootstrap`. See [Getting Started with MariaDB Galera Cluster: Bootstrapping a New Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster) for more information.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -78,7 +78,7 @@ wsrep_sst_method=mariadb-backup
 ```
 
 {% hint style="info" %}
-It is recommended to set `wsrep_sst_method` on all nodes to ensure consistency during [State Snapshot Transfers ](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts)(SST).
+It is recommended to set `wsrep_sst_method` on all nodes to ensure consistency during [State Snapshot Transfers ](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts)(SST).
 {% endhint %}
 
 #### Step 3: Back Up the MySQL Database

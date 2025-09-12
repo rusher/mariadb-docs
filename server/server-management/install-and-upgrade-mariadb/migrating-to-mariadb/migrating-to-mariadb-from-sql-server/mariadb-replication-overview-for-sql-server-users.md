@@ -248,7 +248,7 @@ If a single transaction is bigger than half of the Galera cache, it needs to be 
 
 When a node is restarted (after a crash or for maintenance reasons), it will need to receive all the changes that were written by other nodes since the moment it was unreachable. A node is therefore chosen as a donor, possibly using the [gcssync\_donor](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep-variable-details/wsrep_provider_options#gcssync_donor) wsrep\_provider\_options flag.
 
-If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariadb-backup method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method).
+If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariadb-backup method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method).
 
 ### Flow Control
 
@@ -272,7 +272,7 @@ Galera is implemented as a plugin. Starting from version 10.1, MariaDB comes wit
 
 Like asynchronous replication, Galera uses the binary log. It also requires that data changes are logged in the `ROW` format.
 
-For other required settings, see [Mandatory Options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/configuring-mariadb-galera-cluster#mandatory-options).
+For other required settings, see [Mandatory Options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/configuration/configuring-mariadb-galera-cluster#mandatory-options).
 
 ## Galera Limitations
 

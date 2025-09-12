@@ -267,7 +267,7 @@ The rest of the install and setup process is as normal.
 
 After the installation is complete, you can [start MariaDB](../../../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 
-If you are using [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

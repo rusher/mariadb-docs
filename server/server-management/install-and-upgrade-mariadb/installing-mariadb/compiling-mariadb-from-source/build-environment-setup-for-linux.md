@@ -88,7 +88,7 @@ You should now have your build environment set up and can proceed to [Getting th
 
 ## See Also
 
-* [Installing Galera from source](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/installing-galera-from-source)
+* [Installing Galera from source](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/installation-and-deployment/advanced-installation-from-source/installing-galera-from-source)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

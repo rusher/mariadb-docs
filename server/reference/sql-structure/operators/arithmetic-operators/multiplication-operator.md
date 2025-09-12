@@ -44,11 +44,11 @@ SELECT 18014398509481984*18014398509481984;
 
 ## See Also
 
-* [Type Conversion](../string-functions/type-conversion.md)
+* [Type Conversion](../../../sql-functions/string-functions/type-conversion.md)
 * [Addition Operator (+)](addition-operator.md)
-* [Subtraction Operator (-)](../../sql-structure/operators/arithmetic-operators/subtraction-operator.md)
+* [Subtraction Operator (-)](subtraction-operator.md)
 * [Division Operator (/)](division-operator.md)
-* [Operator Precedence](../../sql-structure/operators/operator-precedence.md)
+* [Operator Precedence](../operator-precedence.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

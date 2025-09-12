@@ -34,7 +34,7 @@ SELECT 300 DIV 0;
 
 ## See Also
 
-* [Division operator](division-operator.md)
+* [Division operator](../../sql-structure/operators/arithmetic-operators/division-operator.md)
 * [Operator Precedence](../../sql-structure/operators/operator-precedence.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)

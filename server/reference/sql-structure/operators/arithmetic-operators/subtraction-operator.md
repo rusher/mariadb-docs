@@ -53,9 +53,9 @@ SELECT - (3+5);
 ## See Also
 
 * [Type Conversion](../../../sql-functions/string-functions/type-conversion.md)
-* [Addition Operator (+)](../../../sql-functions/numeric-functions/addition-operator.md)
-* [Multiplication Operator (\*)](../../../sql-functions/numeric-functions/multiplication-operator.md)
-* [Division Operator (/)](../../../sql-functions/numeric-functions/division-operator.md)
+* [Addition Operator (+)](addition-operator.md)
+* [Multiplication Operator (\*)](multiplication-operator.md)
+* [Division Operator (/)](division-operator.md)
 * [Operator Precedence](../operator-precedence.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

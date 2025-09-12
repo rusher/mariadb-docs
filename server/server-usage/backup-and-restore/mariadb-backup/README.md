@@ -51,12 +51,12 @@ description: >-
 [mariadb-backup-and-backup-stage-commands.md](mariadb-backup-and-backup-stage-commands.md)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method" %}
-[mariadb-backup SST Method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method)
+{% content-ref url="https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method" %}
+[mariadb-backup SST Method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method)
 {% endcontent-ref %}
 
-{% content-ref url="https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariadb-backup" %}
-[Manual SST of Galera Cluster Node With mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariadb-backup)
+{% content-ref url="https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariadb-backup" %}
+[Manual SST of Galera Cluster Node With mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariadb-backup)
 {% endcontent-ref %}
 
 {% content-ref url="individual-database-restores-with-mariadb-backup-from-full-backup.md" %}

@@ -43,7 +43,7 @@ The following components are deployed during this procedure:
 
 ### MariaDB Enterprise Server Components
 
-<table><thead><tr><th width="305.2591552734375" valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/columnstore-storage-engine-overview">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar storage engine</li><li>Highly available</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li><li>Scalable query execution</li><li><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/mariadb-columnstore-cmapi-release-notes">Cluster Management API (CMAPI)</a> provides a REST API for multi-node administration</li></ul></td></tr></tbody></table>
+<table><thead><tr><th width="305.2591552734375" valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/columnstore-storage-engine-overview">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar storage engine</li><li>Highly available</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li><li>Scalable query execution</li><li><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/cmapi">Cluster Management API (CMAPI)</a> provides a REST API for multi-node administration</li></ul></td></tr></tbody></table>
 
 ### MariaDB MaxScale Components
 

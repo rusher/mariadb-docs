@@ -124,9 +124,9 @@ possible_keys: idx_a
 
 ### Rules for Conversion on Dyadic Arithmetic Operations
 
-Implicit type conversion also takes place on dyadic arithmetic operations ([+](../numeric-functions/addition-operator.md),[-](../../sql-structure/operators/arithmetic-operators/subtraction-operator.md),[\*](../numeric-functions/multiplication-operator.md),[/](../numeric-functions/division-operator.md)). MariaDB chooses the minimum data type that is guaranteed to fit the result and converts both arguments to the result data type.
+Implicit type conversion also takes place on dyadic arithmetic operations ([+](../../sql-structure/operators/arithmetic-operators/addition-operator.md),[-](../../sql-structure/operators/arithmetic-operators/subtraction-operator.md),[\*](../../sql-structure/operators/arithmetic-operators/multiplication-operator.md),[/](../../sql-structure/operators/arithmetic-operators/division-operator.md)). MariaDB chooses the minimum data type that is guaranteed to fit the result and converts both arguments to the result data type.
 
-For [addition (+)](../numeric-functions/addition-operator.md), [subtraction (-)](../../sql-structure/operators/arithmetic-operators/subtraction-operator.md) and [multiplication (\*)](../numeric-functions/multiplication-operator.md), the result data type is chosen as follows:
+For [addition (+)](../../sql-structure/operators/arithmetic-operators/addition-operator.md), [subtraction (-)](../../sql-structure/operators/arithmetic-operators/subtraction-operator.md) and [multiplication (\*)](../../sql-structure/operators/arithmetic-operators/multiplication-operator.md), the result data type is chosen as follows:
 
 * If either of the arguments is an approximate number (float, double), the result is double.
 * If either of the arguments is a string (char, varchar, text), the result is double.
@@ -135,7 +135,7 @@ For [addition (+)](../numeric-functions/addition-operator.md), [subtraction (-)]
 * If either of the arguments is of a temporal type with a zero fractional second precision (time(0), date, datetime(0), timestamp(0)), the result may vary between int, int unsigned, bigint or bigint unsigned, depending on the exact data type combination.
 * If both arguments are integer numbers (tinyint, smallint, mediumint, bigint), the result may vary between int, int unsigned, bigint or bigint unsigned, depending of the exact data types and their signs.
 
-For [division (/)](../numeric-functions/division-operator.md), the result data type is chosen as follows:
+For [division (/)](../../sql-structure/operators/arithmetic-operators/division-operator.md), the result data type is chosen as follows:
 
 * If either of the arguments is an approximate number (float, double), the result is double.
 * If either of the arguments is a string (char, varchar, text), the result is double.
