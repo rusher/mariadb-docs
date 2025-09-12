@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Galera Load Balancer (glbd)
 
 {% hint style="danger" %}
