@@ -29,11 +29,41 @@ This is obviously inefficient, if there are 1000 customers, then one will be doi
 
 However, the optimizer can take the condition `customer_id=1` and push it down into the OCT\_TOTALS view.
 
-(TODO: elaborate here)
+Inside the OCT_\TOTALS, the added condition is put into its HAVING clause, so we end up with:
+
+```sql
+SELECT
+  customer_id,
+  SUM(amount) AS TOTAL_AMT
+FROM orders
+WHERE  order_date BETWEEN '2017-10-01' AND '2017-10-31'
+GROUP BY customer_id
+HAVING
+  customer_id=1 
+ ```
+
+Then, parts of HAVING clause that refer to GROUP BY columns are  moved into the WHERE clause:
+
+```sql
+SELECT
+  customer_id,
+  SUM(amount) AS TOTAL_AMT
+FROM orders
+WHERE
+  order_date BETWEEN '2017-10-01' AND '2017-10-31' AND
+  customer_id=1
+GROUP BY customer_id
+```
+
+Once a restriction like `customer_id=1` is in the WHERE, the query  optimizer can use it to construct efficient table access paths.
+
+
 
 ## Controlling the Optimization
 
 The optimization is enabled by default. One can disable it by setting the [`optimizer_switch`](../optimizer-switch.md) flag `condition_pushdown_for_derived` to OFF.
+
+The pushdown from HAVING to WHERE part is controlled by `condition_pushdown_from_having` flag in [`optimizer_switch`](../optimizer-switch.md).
 
 {% tabs %}
 {% tab title="Current" %}
