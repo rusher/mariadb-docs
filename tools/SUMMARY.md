@@ -31,3 +31,15 @@
     * [Migrate Community operator to Enterprise operator](mariadb-enterprise-operator/migrations/migrate-community-operator-to-enterprise-operator.md)
     * [Migrate external MariaDB into Kubernetes](mariadb-enterprise-operator/migrations/migrate-external-mariadb-into-kubernetes.md)
     * [Migrate to Enterprise Operator 25.08](mariadb-enterprise-operator/migrations/migrate-25.08.md)
+* Enterprise MCP Server
+  * [Introduction](introduction.md)
+      * What is the MariaDB Enterprise MCP Server?
+      * The Value of an MCP Server
+  * [Objectives](objectives.md)
+      * Core Goals of the Enterprise Edition
+  * [Features](features.md)
+      * Standard Database Operations
+      * Vector and AI Functionality
+      * Workflow Orchestration
+  * [Authentication](authentication.md)
+      * Enterprise-Grade Secret Management
