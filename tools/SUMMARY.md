@@ -31,15 +31,15 @@
     * [Migrate Community operator to Enterprise operator](mariadb-enterprise-operator/migrations/migrate-community-operator-to-enterprise-operator.md)
     * [Migrate external MariaDB into Kubernetes](mariadb-enterprise-operator/migrations/migrate-external-mariadb-into-kubernetes.md)
     * [Migrate to Enterprise Operator 25.08](mariadb-enterprise-operator/migrations/migrate-25.08.md)
-* Enterprise MCP Server
-  * [Introduction](enterprise-mcp-server/introduction.md)
-      * What is the MariaDB Enterprise MCP Server?
-      * The Value of an MCP Server
-  * [Objectives](enterprise-mcp-server/objectives.md)
-      * Core Goals of the Enterprise Edition
-  * [Features](enterprise-mcp-server/features.md)
-      * Standard Database Operations
-      * Vector and AI Functionality
-      * Workflow Orchestration
-  * [Authentication](enterprise-mcp-server/authentication.md)
-      * Enterprise-Grade Secret Management
+* [MariaDB Enterprise MCP Server](mariadb-enterprise-mcp-server/README.md)
+  * [Introduction](mariadb-enterprise-mcp-server/introduction/README.md)
+    * [What is the MariaDB Enterprise MCP Server?](mariadb-enterprise-mcp-server/introduction/what-is-the-mariadb-enterprise-mcp-server.md)
+    * [The Value of an MCP Server](mariadb-enterprise-mcp-server/introduction/the-value-of-an-mcp-server.md)
+  * [Objectives](mariadb-enterprise-mcp-server/objectives/README.md)
+    * [Core Goals of the Enterprise Edition](mariadb-enterprise-mcp-server/objectives/core-goals-of-the-enterprise-edition.md)
+  * [Features](mariadb-enterprise-mcp-server/features/README.md)
+    * [Standard Database Operations](mariadb-enterprise-mcp-server/features/standard-database-operations.md)
+    * [Vector and AI Functionality](mariadb-enterprise-mcp-server/features/vector-and-ai-functionality.md)
+    * [Workflow Orchestration](mariadb-enterprise-mcp-server/features/workflow-orchestration.md)
+  * [Authentication](mariadb-enterprise-mcp-server/authentication/README.md)
+    * [Enterprise-Grade Secret Management](mariadb-enterprise-mcp-server/authentication/enterprise-grade-secret-management.md)
