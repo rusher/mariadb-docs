@@ -1,4 +1,4 @@
-# System\` Users, Roles, and Privileges
+# System\`s Users, Roles, and Privileges
 
 {% hint style="info" %}
 **Important:** The `PUBLIC` role is created implicitly by `GRANT` statements and its creation is not logged, distinguishing it from standard system principals.
@@ -10,21 +10,19 @@ MariaDB automatically creates several users and roles for administrative and int
 
 These user accounts are created by the `mariadb-install-db` script during the initial server setup.
 
-#### `root@localhost`
+### `root@localhost`
 
 | **Creation**   | Created automatically by `mariadb-install-db`.                                                                                                                                                                                                  |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Purpose**    | Serves as the primary administrative account for initial server setup and management.                                                                                                                                                           |
 | **Management** | It is highly recommended to secure this account immediately after installation. _Standard security practices include setting a strong password, renaming the account, or removing it entirely in favor of other named administrative accounts._ |
 
-#### `mariadb-sys@localhost`
+### `mariadb-sys@localhost`
 
 | **Creation**   | Created automatically by `mariadb-install-db`.                                                                         |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **Purpose**    | A mandatory system user required for internal server operations, such as executing scheduled events.                   |
 | **Management** | <p>This user account is essential for server functionality and is protected; </p><p><em>it cannot be dropped.</em></p> |
-
-***
 
 ## System Roles
 
