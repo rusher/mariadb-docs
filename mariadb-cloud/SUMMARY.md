@@ -93,3 +93,14 @@
   * [MariaDB Cloud Region Choices](<Reference Guide/Region Choices.md>)
   * [MariaDB Cloud REST API Reference](<Reference Guide/REST API Reference.md>)
   * [MariaDB Cloud Stored Procedures](<Reference Guide/Sky Stored Procedures.md>)
+  * [MariaDB Cloud API Reference Guide](reference-guide/mariadb-cloud-api-reference-guide/README.md)
+    * ```yaml
+      type: builtin:openapi
+      props:
+        models: true
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
