@@ -234,6 +234,10 @@ Enables or disables the use of the Split Materialized Optimization (also called 
 
 Enables or disables the use of [condition pushdown for derived tables](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/condition-pushdown-into-derived-table-optimization.md).
 
+#### MERGE and NO\_MERGE&#x20;
+
+Table-level hint that enables the use of merging,  or disables and uses materialization,  for the specified tables, views or common table expressions.
+
 **Subquery Hints**
 
 **SUBQUERY Hint**
