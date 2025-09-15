@@ -51,7 +51,7 @@ SHOW GLOBAL VARIABLES
 
 ### Configuring the Purge Batch Size
 
-The purge batch size is defined as the number of [InnoDB redo log](innodb-redo-log.md) records that must be written before triggering purge. The purge batch size can be set by configuring the [innodb\_purge\_batch\_size](innodb-system-variables.md#innodb_purge_batch_size) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
+The purge batch size is defined as the number of [InnoDB undo log](innodb-undo-log.md) records that must be written before triggering purge. The purge batch size can be set by configuring the [innodb\_purge\_batch\_size](innodb-system-variables.md#innodb_purge_batch_size) system variable. This system variable can be specified as a command-line argument to [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
