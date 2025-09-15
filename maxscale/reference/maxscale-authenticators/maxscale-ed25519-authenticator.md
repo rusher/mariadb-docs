@@ -3,7 +3,7 @@
 ## Overview
 
 Ed25519 is a highly secure authentication method based on public key
-cryptography. It is used with the `auth\_ed25519` plugin of MariaDB Server.
+cryptography. It is used with the `auth_ed25519` plugin of MariaDB Server.
 
 When a client authenticates via ed25519, MaxScale first sends them a random
 message. The client signs the message using their password as private key and
@@ -42,7 +42,7 @@ This setting defines the authentication mode used. Two values are supported:
 
 * `ed25519` (default) Digital signature based authentication. Requires mapping
   for backend support.
-* `sha256` Authenticate client with `caching\_sha2\_password` plugin instead.
+* `sha256` Authenticate client with `caching_sha2_password` plugin instead.
   Requires either SSL or configured RSA keys.
 
 ```
@@ -116,12 +116,12 @@ user_mapping_file=/home/joe/mapping.json
 
 The mapping-based solution requires the DBA to maintain a file with user
 passwords, which has security and upkeep implications. To avoid this,
-MaxScale can instead use the `caching\_sha2\_password` plugin to authenticate
+MaxScale can instead use the `caching_sha2_password` plugin to authenticate
 the client. This authentication scheme transmits the client password to MaxScale
 in full, allowing MaxScale to log into backends using `ed25519`. MaxScale
 effectively lies to the client about its authentication plugin and then uses
 the correct plugin with the backends. Enable sha256-authentication by setting
-authentication option `ed\_mode` to `sha256`.
+authentication option `ed_mode` to `sha256`.
 
 Sha256 authentication is best used with encrypted connections. The example
 below shows a listener configured for `sha256` mode and SSL.
@@ -139,7 +139,7 @@ ssl_cert=/tmp/my-cert.pem
 ssl_ca=/tmp/myCA.pem
 ```
 
-If SSL is not in use, `caching\_sha2\_password` transmits the password using
+If SSL is not in use, `caching_sha2_password` transmits the password using
 RSA-encryption. In this case, MaxScale needs the public and private RSA-keys.
 MaxScale sends the public key to the client if they don't already have it and
 the client uses it to encrypt the password. MaxScale then uses the private key
