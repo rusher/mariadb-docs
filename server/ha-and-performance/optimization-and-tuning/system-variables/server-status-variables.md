@@ -1642,7 +1642,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Memory_used`
 
-* Description: Global or per-connection memory usage, in bytes. This includes all per-connection memory allocations, but excludes global allocations such as the key\_buffer, innodb\_buffer\_pool etc.
+* Description: Global or per-connection memory usage, in bytes. This includes all per-connection memory allocations, and as of [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-16-release-notes) includes global allocations such as the key\_buffer, innodb\_buffer\_pool etc (which were excluded before MariaDB 10.6.16).
 * Scope: Global, Session
 * Data Type: `numeric`
 
