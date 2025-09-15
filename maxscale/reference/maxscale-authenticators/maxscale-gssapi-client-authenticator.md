@@ -22,7 +22,7 @@ installed to the server where MaxScale is located. The keytab file must be
 placed in the configured default location which almost always is`/etc/krb5.keytab`. Alternatively, the keytab filepath can be given as an
 authenticator option.
 
-The location of the keytab file can be changed with the KRB5\_KTNAME environment
+The location of the keytab file can be changed with the KRB5_KTNAME environment
 variable: [keytab_def.html](https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html)
 
 To take GSSAPI authentication into use, add the following to the listener.
