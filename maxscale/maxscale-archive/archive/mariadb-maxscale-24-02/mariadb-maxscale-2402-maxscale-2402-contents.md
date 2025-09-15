@@ -15,7 +15,7 @@
 
 ### Upgrading MariaDB MaxScale
 
-* [Upgrading MaxScale](maxscale-24-02upgrading/mariadb-maxscale-2402-maxscale-2402-upgrading-mariadb-maxscale.md)
+* [Upgrading MaxScale](broken-reference)
 
 ### Reference
 
