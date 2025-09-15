@@ -20,7 +20,7 @@ and backends. The MaxScale ed25519auth-plugin supports both alternatives.
 
 ### Configuration
 
-To begin, add "ed25519auth" to the list of authenticators for a listener.
+To begin, add `ed25519auth` to the list of authenticators for a listener.
 
 ```
 [Read-Write-Listener]
@@ -31,9 +31,9 @@ authenticator=ed25519auth
 ```
 
 MaxScale will now authenticate incoming clients with ed25519 if their user
-account has _plugin_ set to "ed25519" in the _mysql.user_-table. However,
+account has _plugin_ set to `ed25519` in the `mysql.user` table. However,
 routing queries will fail since MaxScale cannot authenticate to backends. To
-continue, either use a mapping file or enable sha256-mode. Sha256-mode is
+continue, either use a mapping file or enable sha256 mode. Sha256 mode is
 enabled with the following settings.
 
 #### `ed_mode`
@@ -116,14 +116,14 @@ user_mapping_file=/home/joe/mapping.json
 
 The mapping-based solution requires the DBA to maintain a file with user
 passwords, which has security and upkeep implications. To avoid this,
-MaxScale can instead use the caching_sha2_password-plugin to authenticate
+MaxScale can instead use the `caching_sha2_password` plugin to authenticate
 the client. This authentication scheme transmits the client password to MaxScale
 in full, allowing MaxScale to log into backends using ed25519. MaxScale
 effectively lies to the client about its authentication plugin and then uses
 the correct plugin with the backends. Enable sha256-authentication by setting
-authentication option `ed\_mode` to "sha256".
+authentication option `ed\_mode` to `sha256`.
 
-sha256-authentication is best used with encrypted connections. The example
+Sha256 authentication is best used with encrypted connections. The example
 below shows a listener configured for sha256 mode and SSL.
 
 ```
@@ -144,7 +144,7 @@ RSA-encryption. In this case, MaxScale needs the public and private RSA-keys.
 MaxScale sends the public key to the client if they don't already have it and
 the client uses it to encrypt the password. MaxScale then uses the private key
 to decrypt the password. The example below shows a listener configured for
-sha256-mode without SSL.
+sha256 mode without SSL.
 
 ```
 [Read-Write-Listener]
