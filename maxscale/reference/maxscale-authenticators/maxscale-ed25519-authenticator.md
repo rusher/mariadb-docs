@@ -2,13 +2,6 @@
 
 ## Overview
 
-* [Ed25519 Authenticator](maxscale-ed25519-authenticator.md#ed25519-authenticator)
-  * [Configuration](maxscale-ed25519-authenticator.md#configuration)
-    * [ed_mode](maxscale-ed25519-authenticator.md#ed_mode)
-    * [ed_rsa_privkey_path and ed_rsa_pubkey_path](maxscale-ed25519-authenticator.md#ed_rsa_privkey_path-and-ed_rsa_pubkey_path)
-  * [Using a mapping file](maxscale-ed25519-authenticator.md#using-a-mapping-file)
-  * [Using sha256-authentication](maxscale-ed25519-authenticator.md#using-sha256-authentication)
-
 Ed25519 is a highly secure authentication method based on public key
 cryptography. It is used with the auth_ed25519-plugin of MariaDB Server.
 
