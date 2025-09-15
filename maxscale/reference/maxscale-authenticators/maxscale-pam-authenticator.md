@@ -41,7 +41,7 @@ port=12345
 
 MaxScale uses the PAM authenticator plugin to authenticate users with _plugin_
 set to "pam" in the `mysql.user` table. The PAM service name of a user is read
-from the `authentication\_string`column. The matching PAM service in the
+from the `authentication_string`column. The matching PAM service in the
 operating system PAM config is used for authenticating the user. 
 If th&#x65;_&#x61;uthentication_string_ for a user is empty, 
 the fallback service "mysql" is used.
@@ -66,7 +66,7 @@ account         required        pam_unix.so
 
 If enabled, MaxScale communicates with the client as if using [mysql_clear_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection#mysql_clear_password-plugin).
 This setting has no effect on MaxScale-to-backend communication, which adapts to
-either "dialog" or `mysql\_clear\_password`, depending on which one the backend
+either "dialog" or `mysql_clear_password`, depending on which one the backend
 suggests. This setting is meant to be used with the similarly named MariaDB
 Server setting.
 
@@ -104,7 +104,7 @@ handle pam authentication. This subprocess runs the binary `maxscale_pam_auth_to
 system pam libraries. The binary is installed with the SUID bit set, which means
 that it runs with root-privileges regardless of the user launching it. This
 should bypass any file grant issues (e.g. reading `etc/shadow`) that may arise
-with the `password` or `password\_2FA` options. The `suid` option may also
+with the `password` or `password_2FA` options. The `suid` option may also
 perform faster if many clients authenticate with pam simultaneously due
 to better separation of clients. It may also resist buggy pam plugins crashing,
 as the crash would be limited to the subprocess only. The MariaDB Server uses
@@ -212,7 +212,7 @@ Anonymous mapping is enabled in MaxScale if the following user exists:
 
 When the authenticator detects such users, anonymous account mapping is enabled
 for the hosts of the anonymous users. To verify this, enable the info log
-(`log\_info=1` in MaxScale config file). When a client is logging in using the
+(`log_info=1` in MaxScale config file). When a client is logging in using the
 anonymous user account, MaxScale will log a message starting with "Found
 matching anonymous user ...".
 
@@ -297,7 +297,7 @@ not work with backend servers anyway.
 
 MaxScale binary directory contains the _test_pam_login_-executable. This simple
 program asks for a username, password and PAM service and then uses the given
-credentials to login to the given service. `test\_pam\_login` uses the same code
+credentials to login to the given service. `test_pam_login` uses the same code
 as MaxScale itself to communicate with the OS PAM interface and may be useful
 for diagnosing PAM login issues.
 
