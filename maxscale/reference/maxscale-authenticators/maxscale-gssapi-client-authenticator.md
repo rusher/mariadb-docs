@@ -2,9 +2,9 @@
 
 ## Overview
 
-GSSAPI is an authentication protocol that is commonly implemented with Kerberos 
-on Unix or Active Directory on Windows. This document describes GSSAPI authentication 
-in MaxScale. The authentication module name in MaxScale i&#x73;_&#x47;SSAPIAuth_.
+GSSAPI is an authentication protocol that is commonly implemented with Kerberos on Unix
+or Active Directory on Windows. This document describes GSSAPI authentication in MaxScale. 
+The authentication module name in MaxScale _SSAPIAuth_.
 
 ## Preparing the GSSAPI system
 
@@ -17,7 +17,7 @@ is a good example on how to set it up.
 
 The next step is to copy the keytab file from the server where MariaDB is installed 
 to the server where MaxScale is located. The keytab file must be placed in the configured
-default location which almost always is`/etc/krb5.keytab`. 
+default location which almost always is `/etc/krb5.keytab`. 
 Alternatively, the keytab filepath can be given as an authenticator option.
 
 The location of the keytab file can be changed with the `KRB5_KTNAME` environment variable: [keytab\_def.html](https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html)
