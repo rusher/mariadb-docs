@@ -652,6 +652,8 @@
 * [innodb\_buffer\_pool\_shm\_checksum](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_checksum)
 * [innodb\_buffer\_pool\_shm\_key](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_key)
 * [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size)
+* [innodb\_buffer\_pool\_size\_auto\_min](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size_auto_min)
+* [innodb\_buffer\_pool\_size\_max](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size_max)
 * [Innodb\_buffer\_pool\_wait\_free](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_wait_free)
 * [Innodb\_buffer\_pool\_write\_requests](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_write_requests)
 * [Innodb\_buffered\_aio\_submitted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffered_aio_submitted)
