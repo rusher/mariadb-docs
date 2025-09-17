@@ -1698,6 +1698,16 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Range: `262144` to `18446744073709551615` (<= [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-7-release-notes)) - limit to the above maximium because this is an operating system limit.
 * Block size: `4096`
 
+#### `innodb_log_checkpoint_now`
+
+* Description: Write back dirty pages from the [buffer pool](innodb-buffer-pool.md) and update the log checkpoint. Prior to [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.12-release-notes), [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-6-release-notes), [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-2-release-notes) was only available in debug builds. Introduced in order to force checkpoints before a backup, allowing mariadb-backup to create much smaller incremental backups. However, this comes at the cost of heavy I/O usage and it is now disabled by default.
+* Command line: `--innodb-log-checkpoint{=1|0}`
+* Scope: Global
+* Dynamic: Yes
+* Data Type: `boolean`
+* Default Value: `OFF`
+* Introduced: [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.12-release-notes), [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-6-release-notes), [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-2-release-notes)
+
 #### `innodb_log_checksum_algorithm`
 
 * Description: Experimental feature (as of [MariaDB 10.0.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes)), this variable specifies how to generate and verify [XtraDB redo log](innodb-redo-log.md) checksums. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
