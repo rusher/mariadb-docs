@@ -816,6 +816,7 @@
 * [innodb\_log\_archive](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_archive)
 * [innodb\_log\_block\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_block_size)
 * [innodb\_log\_buffer\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_buffer_size)
+* [innodb\_log\_checkpoint\_now](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_checkpoint_now)
 * [innodb\_log\_checksum\_algorithm](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksum_algorithm)
 * [innodb\_log\_checksums](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_checksums)
 * [innodb\_log\_compressed\_pages](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_compressed_pages)
