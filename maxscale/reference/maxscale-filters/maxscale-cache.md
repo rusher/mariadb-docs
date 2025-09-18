@@ -31,7 +31,7 @@ the isolation level of the backends actually is.
 
 The default behaviour can be altered using the configuration parameter [cache\_in\_transactions](maxscale-cache.md#cache_in_transactions).
 
-By default it is assumed that all `SELECT` statements are cacheable, which\
+By default it is assumed that all `SELECT` statements are cacheable, which
 means that also statements like `SELECT LOCALTIME` are cached. Please check [selects](maxscale-cache.md#selects) for how to change the default behaviour.
 
 ### Limitations
@@ -1638,18 +1638,18 @@ only indicative.
 
 For comparison, without caching, the qps is `33`.
 
-As can be seen, due to the query classifier cache there is\
+As can be seen, due to the query classifier cache there is
 no difference between exact and regex based matching.
 
 #### Summary
 
 For maximum performance:
 
-* Arrange the situation so that the default `selects=assume_cacheable`\
+* Arrange the situation so that the default `selects=assume_cacheable`
   can be used, and use no rules.
 
-Otherwise it is mostly a personal preference whether exact or regex\
-based rules are used. However, one should always test with real data\
+Otherwise it is mostly a personal preference whether exact or regex
+based rules are used. However, one should always test with real data
 and real queries before choosing one over the other.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
