@@ -2,11 +2,11 @@
 
 ## Overview
 
-MariaDB Enterprise ColumnStore 23.10.5 is a maintenance release of MariaDB Enterprise ColumnStore. MariaDB Enterprise ColumnStore is a columnar storage engine included with MariaDB Enterprise Server.
+MariaDB ColumnStore 23.10.5 is a maintenance release of MariaDB ColumnStore.
 
-MariaDB Enterprise ColumnStore 23.10.5 was released on. This release is of General Availability (GA) maturity. MariaDB Enterprise ColumnStore 23.10.5 is a GA release in the 23.10 series.
+MariaDB ColumnStore 23.10.5 was released on 6 August 2025. This release is of General Availability (GA) maturity. MariaDB ColumnStore 23.10.5 is a GA release in the 23.10 series.
 
-This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterprise Server 10.6.22-18.
+This release of MariaDB ColumnStore is included with MariaDB Community Server 12.0.2, 11.8.3, and 11.4.8.
 
 ## Notable Changes
 
@@ -18,7 +18,7 @@ This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterpri
 
 ## Platforms
 
-In alignment with the enterprise lifecycle, MariaDB Enterprise ColumnStore 23.10.5 is provided for:
+MariaDB ColumnStore 23.10.5 is provided for:
 
 * Debian 11 (x86\_64, ARM64)
 * Debian 12 (x86\_64, ARM64)

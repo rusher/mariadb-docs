@@ -4,9 +4,9 @@
 
 MariaDB Enterprise ColumnStore 23.10.6 is a maintenance release of MariaDB Enterprise ColumnStore. MariaDB Enterprise ColumnStore is a columnar storage engine included with MariaDB Enterprise Server.
 
-MariaDB Enterprise ColumnStore 23.10.6 was released on . This release is of General Availability (GA) maturity. MariaDB Enterprise ColumnStore 23.10.6 is a GA release in the 23.10 series.
+MariaDB Enterprise ColumnStore 23.10.6 was released on 8 September 2025. This release is of General Availability (GA) maturity. MariaDB Enterprise ColumnStore 23.10.6 is a GA release in the 23.10 series.
 
-This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterprise Server 10.6.23-19
+This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterprise Server 10.6.23-19 and MariaDB Enterprise Server 11.4.8-5.
 
 ## Notable Changes
 
