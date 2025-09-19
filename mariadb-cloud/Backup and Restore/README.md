@@ -6,13 +6,13 @@
 
 <summary>Overview</summary>
 
-#### SkySQL database snapshots create a point-in-time copy of the database persistent volume. Compared to full backups, snapshots provide a faster method for restoring your database with the same data.Snapshots are incremental in nature. After the initial full snapshot of a database persistent volumes, subsequent snapshots only capture and store the changes made since the last snapshot. This approach saves a lot of storage space and reduces the time it takes to create a snapshot database backup and the related cloud storage cost.Users have the flexibility to trigger a snapshot as per their scheduling requirements - either on-demand or according to a pre-defined schedule.The SkySQL snapshots benefit from MariaDB's \[backup stage flush]\(https://mariadb.com/kb/en/backup-stage/#:\~:text=active%20DDL%20commands.-,BACKUP%20STAGE%20FLUSH,as%20closed%20for%20the%20backup.) to create a consistent backup of the database - database lock temporarily suspends write operations and replication for just a few seconds. In a Primary/Replica topology, snapshot backups are prioritized and performed on the replica node. This is to ensure that the primary server can continue to operate in read/write mode, as the backup process is carried out on the replica node. After the backup process on the replica is completed, replication resumes automatically.
+#### MariaDB Cloud database snapshots create a point-in-time copy of the database persistent volume. Compared to full backups, snapshots provide a faster method for restoring your database with the same data.Snapshots are incremental in nature. After the initial full snapshot of a database persistent volumes, subsequent snapshots only capture and store the changes made since the last snapshot. This approach saves a lot of storage space and reduces the time it takes to create a snapshot database backup and the related cloud storage cost.Users have the flexibility to trigger a snapshot as per their scheduling requirements - either on-demand or according to a pre-defined schedule.The MariaDB Cloud snapshots benefit from MariaDB's \[backup stage flush]\(https://mariadb.com/kb/en/backup-stage/#:\~:text=active%20DDL%20commands.-,BACKUP%20STAGE%20FLUSH,as%20closed%20for%20the%20backup.) to create a consistent backup of the database - database lock temporarily suspends write operations and replication for just a few seconds. In a Primary/Replica topology, snapshot backups are prioritized and performed on the replica node. This is to ensure that the primary server can continue to operate in read/write mode, as the backup process is carried out on the replica node. After the backup process on the replica is completed, replication resumes automatically.
 
 </details>
 
 **Snapshot Backup Examples**
 
-SkySQL supports database snapshot backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a snapshot backup using the SkySQL API.
+SkySQL supports database snapshot backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a snapshot backup using the MariaDB Cloud API.
 
 * \[Examples]\(Snapshot Backup Examples.md)
 
@@ -38,7 +38,7 @@ _**Important:**_ Database snapshots are deleted immediately upon service deletio
 
 \#### Full (physical) Backup Examples
 
-SkySQL supports database physical backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a physical backup using the SkySQL API.
+SkySQL supports database physical backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a physical backup using the MariaDB Cloud API.
 
 * \[Examples]\(Physical Backup Examples.md)
 
@@ -62,7 +62,7 @@ SkySQL supports database physical backups either on-demand or according to a pre
 
 **Incremental Backup Examples**
 
-SkySQL supports database incremental backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule an incremental backup using the SkySQL API.
+SkySQL supports database incremental backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule an incremental backup using the MariaDB Cloud API.
 
 * \[Examples]\(Incremental Backup Examples.md)
 
@@ -78,7 +78,7 @@ SkySQL supports database incremental backups either on-demand or according to a 
 
 #### Logical Backup Examples
 
-SkySQL supports database logical backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a logical backup using the SkySQL API.
+SkySQL supports database logical backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a logical backup using the MariaDB Cloud API.
 
 * \[Examples]\(Logical Backup Examples.md)
 
@@ -113,9 +113,9 @@ SkySQL supports database logical backups either on-demand or according to a pre-
     - The primary server replicates data to a replica.
     - Backups are then initiated from the replica, ensuring no disruption to the primary server.
 
-    Details on how to set up replication with your SkySQL instance can be found [here](../Data%20loading%2C%20Migration/Replicating%20data%20from%20external%20DB/).
+    Details on how to set up replication with your MariaDB Cloud instance can be found [here](../Data%20loading%2C%20Migration/Replicating%20data%20from%20external%20DB/).
     ```
-* Automatic Nightly Backups : Automated nightly backups include a full backup of every database in the service to ensure that your SkySQL Database service is backed up regularly. Nightly backups are running for every SkySQL database by default.
+* Automatic Nightly Backups : Automated nightly backups include a full backup of every database in the service to ensure that your MariaDB Cloud Database service is backed up regularly. Nightly backups are running for every MariaDB Cloud database by default.
 * Bring Your Own Bucket (BYOB) : You can backup or restore data to/from your own bucket in either GCP or AWS. Sample GCP and AWS scripts can be found \[here]\(../Backup%20and%20Restore/Bring%20Your%20Own%20Bucket%20Examples/).
 * Point-in-time Recovery : You can restore from a full or a logical backup and then use a binlog backup to restore to a point-in-time.
 * Secure Backup/Restores : Control backup/restore privileges by granting roles to users in SkySQL.
@@ -127,7 +127,7 @@ SkySQL supports database logical backups either on-demand or according to a pre-
 
 > Restoring from a backup will, by default, erase all data in your target DB service. If you are uncertain, it is advisable to first create a backup of the DB service before initiating the restore process. Consider restoring to a new database instance as a preferred approach. For restores other than logical dumps, the database being restored will be temporarily stopped during the restoration.
 
-Users can instruct the restore of their SkySQL Database from their own SkySQL storage or from an external storage they own. The restore API provides options for listing, adding, and deleting a scheduled restore operation.
+Users can instruct the restore of their MariaDB Cloud Database from their own MariaDB Cloud storage or from an external storage they own. The restore API provides options for listing, adding, and deleting a scheduled restore operation.
 
 ### **List Restore Schedules**
 
@@ -139,7 +139,7 @@ SkySQL Users can fetch their already existing database restore schedules using t
 
 ### **Create a Restore**
 
-SkySQL Users can restore their databases using their own SkySQL managed backup storage or using an external storage they own. Check the provided service API examples for details.
+SkySQL Users can restore their databases using their own MariaDB Cloud managed backup storage or using an external storage they own. Check the provided service API examples for details.
 
 #### Database Restore Examples
 
@@ -165,5 +165,5 @@ When restoring from a logical dump in MariaDB:
 
 ## Limitations
 
-* Currently, SkySQL services deployed in Azure can only be backed up and restored using \[SkySQL Snapshots]\(Snapshot Backup Examples.md).
-* SkySQL Managed backups can only be restored within the same cloud provider. If you need to restore to a SkySQL service hosted on a different cloud provider, you must export your backup to S3 or GCS storage and follow the steps described \[here]\(Restore From Your Own Bucket.md).
+* Currently, MariaDB Cloud services deployed in Azure can only be backed up and restored using \[SkySQL Snapshots]\(Snapshot Backup Examples.md).
+* MariaDB Cloud Managed backups can only be restored within the same cloud provider. If you need to restore to a MariaDB Cloud service hosted on a different cloud provider, you must export your backup to S3 or GCS storage and follow the steps described \[here]\(Restore From Your Own Bucket.md).

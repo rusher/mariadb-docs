@@ -1,10 +1,10 @@
 # Serverless Architecture
 
-This document provides a comprehensive technical overview of SkySQL Serverless architecture, explaining how it achieves true serverless capabilities while maintaining full compatibility with MySQL and MariaDB.
+This document provides a comprehensive technical overview of MariaDB Cloud Serverless architecture, explaining how it achieves true serverless capabilities while maintaining full compatibility with MySQL and MariaDB.
 
 ## Design Philosophy
 
-SkySQL Serverless is built on the principle: **"Don't change what works"**. Instead of re-architecting the database engine like other cloud providers, SkySQL leverages cloud-native techniques to achieve serverless capabilities while preserving the mature, open-source database engine.
+SkySQL Serverless is built on the principle: **"Don't change what works"**. Instead of re-architecting the database engine like other cloud providers, MariaDB Cloud leverages cloud-native techniques to achieve serverless capabilities while preserving the mature, open-source database engine.
 
 ### Core Principles
 
@@ -21,7 +21,7 @@ SkySQL Serverless is built on the principle: **"Don't change what works"**. Inst
 
 ### 1. Intelligent Proxy
 
-The multi-tenant proxy is the cornerstone of SkySQL Serverless, providing:
+The multi-tenant proxy is the cornerstone of MariaDB Cloud Serverless, providing:
 
 #### Connection Management
 - **Always-On Connections**: Maintains application connections even when database scales to zero
@@ -57,7 +57,7 @@ SkySQL extends Kubernetes with custom controllers for database-specific operatio
 
 ### 3. Pre-Fabricated Database Pools
 
-To achieve millisecond launch times, SkySQL maintains pools of ready-to-use databases:
+To achieve millisecond launch times, MariaDB Cloud maintains pools of ready-to-use databases:
 
 #### Pool Management
 - **Regional Distribution**: Pools maintained in all supported regions
@@ -118,7 +118,7 @@ After extended inactivity (several hours):
 
 ## Buffer Pool Management
 
-The database buffer pool is critical for performance. SkySQL implements intelligent buffer pool management:
+The database buffer pool is critical for performance. MariaDB Cloud implements intelligent buffer pool management:
 
 ### Dynamic Sizing
 - **Proportional Scaling**: Buffer pool size adjusted with resource allocation
@@ -142,7 +142,7 @@ When scaling up after a scale-down:
 
 ## Live Migration System
 
-For horizontal scaling, SkySQL implements transparent live migrations:
+For horizontal scaling, MariaDB Cloud implements transparent live migrations:
 
 ### Migration Triggers
 - **High Watermark**: Migration initiated at ~70% memory utilization
@@ -217,7 +217,7 @@ SkySQL is evaluating distributed storage solutions:
 - **Custom Metrics**: Database-specific performance indicators
 
 ### Other Considerations
-- **Vendor Lock-in**: SkySQL maintains portability
+- **Vendor Lock-in**: MariaDB Cloud maintains portability
 - **Cost Transparency**: No hidden charges or surprise costs
 - **Performance**: Better performance due to no compute-storage disaggregation
 - **Compatibility**: Full compatibility with existing applications
@@ -269,4 +269,4 @@ SkySQL is evaluating distributed storage solutions:
 2. **Scaling Limits**: Set appropriate scaling limits
 3. **Resource Right-Sizing**: Monitor and adjust resource allocation
 
-This architecture enables SkySQL Serverless to provide true serverless capabilities while maintaining the performance, reliability, and compatibility that enterprises require. 
+This architecture enables MariaDB Cloud Serverless to provide true serverless capabilities while maintaining the performance, reliability, and compatibility that enterprises require. 

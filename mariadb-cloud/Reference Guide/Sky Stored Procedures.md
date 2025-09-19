@@ -1,4 +1,4 @@
-# SkySQL Stored Procedures
+# MariaDB Cloud Stored Procedures
 
 ## change_external_primary
 

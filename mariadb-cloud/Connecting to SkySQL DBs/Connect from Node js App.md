@@ -1,6 +1,6 @@
 # Connect from Node.js App
 
-Node.js developers can connect to SkySQL through a native MariaDB Connector. Using MariaDB Connector/Node.js you can connect to SkySQL to use and administer databases from within your Node.js application.
+Node.js developers can connect to MariaDB Cloud through a native MariaDB Connector. Using MariaDB Connector/Node.js you can connect to MariaDB Cloud to use and administer databases from within your Node.js application.
 
 ## Install MariaDB Connector/Node.js
 
@@ -56,12 +56,12 @@ is the base function used to create a `Connection` object.
 
 The `createConnection(options)` function returns a `Connection` object.
 
-Determine the [connection information](./) for your SkySQL database service:
+Determine the [connection information](./) for your MariaDB Cloud database service:
 
 | Option         | Description                                                                                                                                         |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| host           | The fully Qualified Domain Name from the "Connect" window in SkySQL portal                                                                          |
-| port           | The Read-Write Port or Read-Only Port from the "Connect" window in SkySQL portal                                                                    |
+| host           | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                                                          |
+| port           | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                                                                    |
 | user           | The desired username, which might be the default username in the Service Credentials view                                                           |
 | password       | The user's password, which might be the default password in the Service Credentials view if it was not yet customized                               |
 | database       | Database name to establish a connection to. No default is configured.                                                                               |
@@ -136,12 +136,12 @@ const** mariadb = require**(**'mariadb'**);
 
 The `createConnection(options)` returns a `Promise` that resolves to a `Connection` object if no error occurs, and rejects with an `Error` object if an error occurs.
 
-Determine the [connection information](./) for your SkySQL database service:
+Determine the [connection information](./) for your MariaDB Cloud database service:
 
 | Option         | Description                                                                                                                                         |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| host           | The fully Qualified Domain Name from the "Connect" window in SkySQL portal                                                                          |
-| port           | The Read-Write Port or Read-Only Port from the "Connect" window in SkySQL portal                                                                    |
+| host           | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                                                          |
+| port           | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                                                                    |
 | user           | The desired username, which might be the default username in the Service Credentials view                                                           |
 | password       | The user's password, which might be the default password in the Service Credentials view if it was not yet customized                               |
 | database       | Database name to establish a connection to. No default is configured.                                                                               |

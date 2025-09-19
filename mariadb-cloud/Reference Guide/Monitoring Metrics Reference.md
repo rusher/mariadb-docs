@@ -1,4 +1,4 @@
-# SkySQL Monitoring Metrics Reference
+# MariaDB Cloud Monitoring Metrics Reference
 
 |Panel Name|UI Tab|Scope|Panel Type|Description|
 |---|---|---|---|---|

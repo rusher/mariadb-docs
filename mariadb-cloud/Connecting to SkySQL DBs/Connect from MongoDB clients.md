@@ -4,7 +4,7 @@ The NoSQL protocol module allows a MariaDB server or cluster to execute transact
 
 For detailed information on supported commands, see "[NoSQL Protocol Module](https://mariadb.com/kb/en/mariadb-maxscale-2208-nosql-protocol-module/)" in MariaDB MaxScale documentation.
 
-💡 IMPORTANT - this feature is supported by the MariaDB advanced proxy - Maxscale. And, maxscale is only started when using the SkySQL Replicated topology. i.e. will not work when using a Standalone MariaDB server.
+💡 IMPORTANT - this feature is supported by the MariaDB advanced proxy - Maxscale. And, maxscale is only started when using the MariaDB Cloud Replicated topology. i.e. will not work when using a Standalone MariaDB server.
 
 ## Enable Support for NoSQL
 
@@ -19,7 +19,7 @@ Connect to the NoSQL interface using a MongoDB client library or compatible appl
 
 ## Connection Parameters
 
-From the Dashboard, the details needed to connect to your SkySQL service can be seen by clicking on the "CONNECT" button for the desired service.
+From the Dashboard, the details needed to connect to your MariaDB Cloud service can be seen by clicking on the "CONNECT" button for the desired service.
 
 The "NoSQL port" is the TCP port used to connect to the NoSQL interface.
 

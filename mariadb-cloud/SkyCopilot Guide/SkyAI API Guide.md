@@ -4,7 +4,7 @@
 
 ## Overview
 
-The **SkyAI Agent API** lets developers interact with **AI agents** built and hosted on the SkySQL platform. This API is perfect for embedding **conversational AI experiences** in your applications, dashboards, or internal tools – all without the need for complex LLM infrastructure or MLOps.
+The **SkyAI Agent API** lets developers interact with **AI agents** built and hosted on the MariaDB Cloud platform. This API is perfect for embedding **conversational AI experiences** in your applications, dashboards, or internal tools – all without the need for complex LLM infrastructure or MLOps.
 
 
 ## Authentication

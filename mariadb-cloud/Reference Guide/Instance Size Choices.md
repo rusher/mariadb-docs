@@ -1,4 +1,4 @@
-# SkySQL Instance Sizes
+# MariaDB Cloud Instance Sizes
 
 ## Serverless Instance Sizes
 
@@ -13,7 +13,7 @@ During the "Tech Preview" phase, all Serverless instances will utilize between 1
 Instance size choices are specific to the cloud provider, topology, region, and hardware architecture.
 
 <aside>
-💡 the list below provides available sizes as of Sept 2024. Likely to evolve over time. The SkySQL portal is the best place for accurate information.
+💡 the list below provides available sizes as of Sept 2024. Likely to evolve over time. The MariaDB Cloud portal is the best place for accurate information.
 </aside>
 
 ### MariaDB Server
@@ -68,11 +68,11 @@ With Power tier, the following instance sizes can be selected for MaxScale nodes
 
 ## REST Client
 
-A REST client can use the SkySQL DBaaS API to query instance size selections and choose an instance size for a new service.
+A REST client can use the MariaDB Cloud DBaaS API to query instance size selections and choose an instance size for a new service.
 
 ### **Query Database Node Options with REST Client**
 
-A REST client can query the SkySQL DBaaS API for the database node instance size selections for a specific cloud provider, architecture, and topology.
+A REST client can query the MariaDB Cloud DBaaS API for the database node instance size selections for a specific cloud provider, architecture, and topology.
 
 To see the available database node instance sizes for a topology, use `curl` to call the [`/provisioning/v1/sizes` API endpoint](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_sizes) with `type=server` set:
 
@@ -126,7 +126,7 @@ curl -sS --location \
 
 ### **Query MaxScale Node Options with REST Client**
 
-A REST client can query the SkySQL DBaaS API for the MaxScale node instance size selections for a specific cloud provider, architecture, and topology.
+A REST client can query the MariaDB Cloud DBaaS API for the MaxScale node instance size selections for a specific cloud provider, architecture, and topology.
 
 To see the default MaxScale instance size for a topology, cloud, and architecture, use `curl` to call the [`/provisioning/v1/sizes` API endpoint](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_sizes):
 
@@ -170,4 +170,4 @@ curl -sS --location \
    | jq .
 ```
 
-The output can show different instance sizes, depending on whether your SkySQL account is Foundation tier or Power tier.
+The output can show different instance sizes, depending on whether your MariaDB Cloud account is Foundation tier or Power tier.

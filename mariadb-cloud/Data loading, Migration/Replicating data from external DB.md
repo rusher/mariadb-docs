@@ -1,6 +1,6 @@
 # Replicating Data from an External Database to SkySQL
 
-MariaDB SkySQL customers can configure inbound replication from both **MySQL** and **MariaDB** to a compatible MariaDB running in SkySQL. This guide will walk you through setting up replication for both MySQL and MariaDB as the source databases.
+MariaDB MariaDB Cloud customers can configure inbound replication from both **MySQL** and **MariaDB** to a compatible MariaDB running in SkySQL. This guide will walk you through setting up replication for both MySQL and MariaDB as the source databases.
 
 For additional information about the stored procedures used to configure replication with Replicated Transactions services, see [SkySQL Replication Helper Procedures for Replicated Transactions](https://docs.skysql.com/Reference%20Guide/Sky%20Stored%20Procedures/).
 
@@ -36,7 +36,7 @@ SELECT @@current_gtid_pos;
 
 ### For MySQL (Binary Log Position Based)
 
-Configure the binary log file and position on the SkySQL service using the following stored procedure:
+Configure the binary log file and position on the MariaDB Cloud service using the following stored procedure:
 
 ```sql
 CALL sky.change_external_primary('mysql1.example.com', 3306, 'mysql-bin.000001', 154, false);
@@ -55,7 +55,7 @@ For MariaDB (GTID Based) if preferred refer to [sky.change\_external\_primary\_g
 
 ## Step 3: Start Replication
 
-Once the configuration is complete, start replication on the SkySQL service using the following command:
+Once the configuration is complete, start replication on the MariaDB Cloud service using the following command:
 
 ```sql
 CALL sky.start_replication();
@@ -150,11 +150,11 @@ You can reference the replication status procedure [here](<../Reference Guide/Sk
 
 ### Supported MariaDB Versions for Replication
 
-Ensure that the external primary server uses a supported version of MariaDB, which must be the same or older than the SkySQL service version.
+Ensure that the external primary server uses a supported version of MariaDB, which must be the same or older than the MariaDB Cloud service version.
 
-* **For SkySQL using ES 10.6**:
+* **For MariaDB Cloud using ES 10.6**:
   * MariaDB Server 10.2, 10.3, 10.4, 10.5, 10.6
-* **For SkySQL using ES 10.5**:
+* **For MariaDB Cloud using ES 10.5**:
   * MariaDB Server 10.2, 10.3, 10.4, 10.5
-* **For SkySQL using ES 10.4**:
+* **For MariaDB Cloud using ES 10.4**:
   * MariaDB Server 10.2, 10.3, 10.4

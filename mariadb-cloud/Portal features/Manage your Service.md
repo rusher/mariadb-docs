@@ -2,7 +2,7 @@
 
 SkySQL's self-service management features enable authorized accounts to launch cloud databases, start and stop cloud databases, delete cloud databases, apply database configuration changes, and configure the cloud database's IP firewall.
 
-Self-service [user management](<../Security/Managing Portal Users.md>) features enable you to define role-based access for your team to jointly manage SkySQL resources.
+Self-service [user management](<../Security/Managing Portal Users.md>) features enable you to define role-based access for your team to jointly manage MariaDB Cloud resources.
 
 ## Stop a Service
 

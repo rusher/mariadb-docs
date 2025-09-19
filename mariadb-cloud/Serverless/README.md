@@ -1,6 +1,6 @@
 # Serverless
 
-SkySQL Serverless is the first true serverless database solution for the MySQL and MariaDB ecosystem, uniquely built to meet the dynamic demands of modern applications. SkySQL Serverless combines instant scalability with cost efficiency, scaling down to zero when idle—saving you from paying for unused capacity. When workloads resume, Serverless service is ready in milliseconds, ensuring a seamless, uninterrupted experience for applications and users.
+SkySQL Serverless is the first true serverless database solution for the MySQL and MariaDB ecosystem, uniquely built to meet the dynamic demands of modern applications. MariaDB Cloud Serverless combines instant scalability with cost efficiency, scaling down to zero when idle—saving you from paying for unused capacity. When workloads resume, Serverless service is ready in milliseconds, ensuring a seamless, uninterrupted experience for applications and users.
 
 ### True Serverless Experience
 - **Instant Launch**: Databases ready in milliseconds using pre-fabricated micro databases
@@ -19,7 +19,7 @@ SkySQL Serverless is the first true serverless database solution for the MySQL a
 
 ## Free Developer Tier
 
-Every SkySQL account includes a perpetually free serverless database perfect for:
+Every MariaDB Cloud account includes a perpetually free serverless database perfect for:
 - Development and testing environments
 - Learning and experimentation
 - Proof-of-concept projects
@@ -70,7 +70,7 @@ SkySQL Serverless is designed to handle diverse workload types:
 
 ## Getting Started
 
-1. **[Create Account](https://app.skysql.com)** - Sign up for your free SkySQL account
+1. **[Create Account](https://app.skysql.com)** - Sign up for your free MariaDB Cloud account
 2. **[Launch Service](../Quickstart/README.md)** - Follow our quickstart guide
 3. **[Connect Application](../Connecting%20to%20SkySQL%20DBs/)** - Integrate with your applications
 4. **[Monitor Performance](../Observability.md)** - Use built-in monitoring tools

@@ -1,6 +1,6 @@
 # Launch DB using Python
 
-The Python example below shows how to launch a DB service and connect to it using the SkySQL DBaaS API.
+The Python example below shows how to launch a DB service and connect to it using the MariaDB Cloud DBaaS API.
 
 You need to configure the following environment variables: \* `API_KEY` \* `SKYSQL_CLIENT_IP`
 
@@ -60,7 +60,7 @@ headers = {
     'X-API-Key': API_KEY
 }
 
-# Function to launch a SkySQL DB service
+# Function to launch a MariaDB Cloud DB service
 def launch_skysql_db():
     url = "https://api.skysql.com/provisioning/v1/services"
     payload = {
@@ -86,7 +86,7 @@ def launch_skysql_db():
         response.raise_for_status()
         return response
     except requests.exceptions.RequestException as e:
-        print(f"Failed to launch SkySQL DB service: {e}")
+        print(f"Failed to launch MariaDB Cloud DB service: {e}")
         return None
 
 
@@ -133,11 +133,11 @@ def fetch_credentials(service_id):
 # Main function to execute the steps
 def main():
     # Step 0: Parse command-line arguments
-    parser = argparse.ArgumentParser(description="Launch SkySQL DB or use an existing service")
+    parser = argparse.ArgumentParser(description="Launch MariaDB Cloud DB or use an existing service")
     parser.add_argument('--service_id', type=str, help="Optional service ID to skip launching a new service")
     args = parser.parse_args()
 
-    # Step 1: Either use the provided service_id or launch a new SkySQL DB
+    # Step 1: Either use the provided service_id or launch a new MariaDB Cloud DB
     if args.service_id:
         print(f"Using provided service ID: {args.service_id}")
         service_id = args.service_id
@@ -146,7 +146,7 @@ def main():
 
         # Check if the response status code is within the 2xx range (success)
         if not (200 <= service_response.status_code < 300):
-            print("Failed to launch SkySQL DB service")
+            print("Failed to launch MariaDB Cloud DB service")
             print(service_response.json())  # Print detailed error message
             return
 

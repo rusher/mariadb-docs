@@ -1,14 +1,14 @@
 # Managing Portal Users
 
-By default, SkySQL services are launched and managed in the [Portal](<../../Portal features/>).
+By default, MariaDB Cloud services are launched and managed in the [Portal](<../../Portal features/>).
 
-For multiple SkySQL ID accounts to jointly manage a set of SkySQL services, these accounts can be added to a Team.
+For multiple MariaDB Cloud ID accounts to jointly manage a set of MariaDB Cloud services, these accounts can be added to a Team.
 
 The User Management interface in the [Portal](<../../Portal features/>) is a self-service tool to manage your Team.
 
 A Team can be managed by the initial user on the Team or by any Administrator added to the Team.
 
-An email address can belong to only one SkySQL Team. If an email address is already in a Team, it cannot be added to another Team.
+An email address can belong to only one MariaDB Cloud Team. If an email address is already in a Team, it cannot be added to another Team.
 
 ## **Access to User Management**
 

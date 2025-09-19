@@ -35,7 +35,7 @@ The method for configuring the data source varies between operating systems.
     ```
         
 3. Determine the connection parameters for your database.
-4. Configure `unixODBC` to connect to the data source by creating a file called `MariaDB_odbc_data_source_template.ini`with the relevant data source parameters. Be sure to specify `SSLVERIFY = 1` for your SkySQL database.
+4. Configure `unixODBC` to connect to the data source by creating a file called `MariaDB_odbc_data_source_template.ini`with the relevant data source parameters. Be sure to specify `SSLVERIFY = 1` for your MariaDB Cloud database.
     
     For example:
     

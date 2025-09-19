@@ -2,7 +2,7 @@
 
 SkySQL services are firewall-protected.
 
-Access to SkySQL services is managed on a per-service basis.
+Access to MariaDB Cloud services is managed on a per-service basis.
 
 IPv4 addresses and IPv4 netblocks can be added to the allowlist to enable service access. Access from other addresses will be blocked.
 

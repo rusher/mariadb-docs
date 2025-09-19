@@ -8,7 +8,7 @@ Launch page can be accessed at [Launch](https://app.skysql.com/launch-service)
 
 While making launch-time selections, your selections and estimated costs are shown on the right panel.
 
-To launch a SkySQL service from the Portal:
+To launch a MariaDB Cloud service from the Portal:
 
 1. From the Dashboard, click the `+ Launch New Service` button.
 2. Choose Service Type: `Transactions`

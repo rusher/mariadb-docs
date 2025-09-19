@@ -21,4 +21,4 @@ Available configuration parameters differ by cloud database topology.
 
 [2. Mariadb Server With Replica(s)](./Mariadb-Server-with-Replica(s).md)
 
-[3. SkySQL Intelligent Proxy Configuration](./SkySQL-Intelligent-Proxy.md)
+[3. MariaDB Cloud Intelligent Proxy Configuration](./SkySQL-Intelligent-Proxy.md)

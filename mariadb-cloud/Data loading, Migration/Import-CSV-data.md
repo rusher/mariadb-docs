@@ -1,6 +1,6 @@
 # Import CSV data
 
-SkySQL customers can import data into a SkySQL service using the `LOAD DATA LOCAL INFILE` SQL statement:
+SkySQL customers can import data into a MariaDB Cloud service using the `LOAD DATA LOCAL INFILE` SQL statement:
 
 - The `LOAD DATA LOCAL INFILE` statement can import data from TSV and CSV files
 - The `LOAD DATA LOCAL INFILE` statement can be executed by any client or connector
@@ -11,7 +11,7 @@ SkySQL customers can import data into a SkySQL service using the `LOAD DATA L
 
 ## **Enable Local Infiles**
 
-Support for local infiles must be enabled on the client side and on the SkySQL service.
+Support for local infiles must be enabled on the client side and on the MariaDB Cloud service.
 
 ### **Enable Local Infiles on the Client or Connector**
 
@@ -21,9 +21,9 @@ If you are using `mariadb` client, the [`--local-infile` option](https://mar
 
 ### **Enable Local Infiles in SkySQL**
 
-Support for local infiles must be enabled on the SkySQL service.
+Support for local infiles must be enabled on the MariaDB Cloud service.
 
-For SkySQL services that use MariaDB Server, the [local_infile system variable](https://mariadb.com/kb/en/server-system-variables/#local_infile) must be enabled:
+For MariaDB Cloud services that use MariaDB Server, the [local_infile system variable](https://mariadb.com/kb/en/server-system-variables/#local_infile) must be enabled:
 
 - For Replicated Transactions and Single Node Transactions services, the `local_infile` system variable is `OFF` by default
 
@@ -31,7 +31,7 @@ For SkySQL services that use MariaDB Server, the [local_infile system variable
 
 ## **Import Data**
 
-1. Determine the [connection parameters](<../../Connecting to Sky DBs/>) for your SkySQL service.
+1. Determine the [connection parameters](<../../Connecting to Sky DBs/>) for your MariaDB Cloud service.
 2. Connect with the `mariadb` client and specify the [-local-infile option](https://mariadb.com/docs/skysql-previous-release/data-operations/data-import/load-data-local-infile/), which is needed by the next step:
 
 ```bash
@@ -44,7 +44,7 @@ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 
 After the command is executed, you will be prompted for a password. Enter the default password for your default user, the password you set for the default user, or the password for the database user you created.
 
-For each table that you want to import, execute the [LOAD DATA LOCAL INFILE](https://mariadb.com/kb/en/load-data-infile/) statement to import the data from the TSV or CSV file into your SkySQL database service.
+For each table that you want to import, execute the [LOAD DATA LOCAL INFILE](https://mariadb.com/kb/en/load-data-infile/) statement to import the data from the TSV or CSV file into your MariaDB Cloud database service.
 
 For a TSV file:
 

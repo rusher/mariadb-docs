@@ -1,6 +1,6 @@
 # Connecting to Sky DBs
 
-This page describes how to connect to a SkySQL database using a MariaDB-compatible client.
+This page describes how to connect to a MariaDB Cloud database using a MariaDB-compatible client.
 
 ### **Important - Whitelist your IP address first**
 
@@ -28,7 +28,7 @@ Connection parameters include:
 - ssl-verify-server-cert (if SSL is ON)
 
 !!! Note
-    💡 Unlike previous SkySQL versions, the current version no longer requires clients to supply the Server SSL Certificate for SSL connections. Customers who migrated from MariaDB corporation to SkySQL Inc can continue to use provided certificates (when using the previous SkySQL method for connecting). But, we strongly recommend moving to the connection properties as shown in the Connect window for your service.
+    💡 Unlike previous MariaDB Cloud versions, the current version no longer requires clients to supply the Server SSL Certificate for SSL connections. Customers who migrated from MariaDB corporation to MariaDB Cloud Inc can continue to use provided certificates (when using the previous MariaDB Cloud method for connecting). But, we strongly recommend moving to the connection properties as shown in the Connect window for your service.
 
 !!! Note
     💡 **There is a default config change in the 11.4.2 MariaDB client that requires SSL. This needs to be disabled by setting ```--ssl-verify-server-cert=0```.**
@@ -42,7 +42,7 @@ After [installing the MariaDB client](./Connect%20using%20MariaDB%20CLI.md) acco
 
 ## Connecting from your Application
 
-Applications can connect to SkySQL using any of the below MariaDB supported connectors. There are several other connectors from the community too. 
+Applications can connect to MariaDB Cloud using any of the below MariaDB supported connectors. There are several other connectors from the community too. 
 
 - [C](Connect%20from%20‘C’%20App.md)
 - [C++](Connect%20from%20‘C++’%20App.md)
@@ -60,19 +60,19 @@ Applications can connect to SkySQL using any of the below MariaDB supported conn
 
 ## Connecting from SQL tools
 
-Clients listed here have been tested to properly connect with SkySQL and execute queries.
+Clients listed here have been tested to properly connect with MariaDB Cloud and execute queries.
 
-Most of the SQL clients and editors natively support MariaDB. Most often you can also just select 'MySQL' and connect to your SkySQL DB service. 
+Most of the SQL clients and editors natively support MariaDB. Most often you can also just select 'MySQL' and connect to your MariaDB Cloud DB service. 
 
 - [Connecting using Java clients like Squirrel SQL](https://squirrel-sql.sourceforge.io/)  
     - All you need to do is to make sure the "useSsl" property is set to 'true' if SSL is ON. 
 - MariaDB CLI
 - [Sequel Ace](https://sequel-ace.com/) - Connect to MariaDB from MacOS
-    - In the connection window, you should select 'Require SSL' if your SkySQL database has SSL turned ON (the default). 
+    - In the connection window, you should select 'Require SSL' if your MariaDB Cloud database has SSL turned ON (the default). 
 
 ### Graphical User Interfaces (GUIs)
 
-The following GUI clients have been tested to properly connect with SkySQL and execute queries. Most SQL clients and editors natively support MariaDB. You can often select 'MySQL' as the connection type to connect to your SkySQL DB service.
+The following GUI clients have been tested to properly connect with MariaDB Cloud and execute queries. Most SQL clients and editors natively support MariaDB. You can often select 'MySQL' as the connection type to connect to your MariaDB Cloud DB service.
 
 - [Connect using DBeaver](Connect%20using%20DBeaver.md) SkyDBA Recommended
 - [Connect using DBGate](Connect%20using%20DBGate.md)

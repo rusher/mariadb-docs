@@ -1,14 +1,14 @@
 # Quickstart
 
-The SkySQL database deployment time varies based on your preferences: a Serverless standalone instance can be ready in a few seconds, whereas a Provisioned standalone or clustered database may take a few minutes. Users can select from approximately 50 global regions and deploy on either AWS, GCP and Azure.
+The MariaDB Cloud database deployment time varies based on your preferences: a Serverless standalone instance can be ready in a few seconds, whereas a Provisioned standalone or clustered database may take a few minutes. Users can select from approximately 50 global regions and deploy on either AWS, GCP and Azure.
 
-You have three choices to provision a DB on SkySQL :
+You have three choices to provision a DB on MariaDB Cloud :
 
 This Quickstart explains how to launch database services and manage the lifecycle of database services using the [Portal](<../Portal features>) in a web browser.
 
-For users who prefer other interfaces, SkySQL offers the following alternatives:
+For users who prefer other interfaces, MariaDB Cloud offers the following alternatives:
 
-- Use the SkySQL web [Portal](<../Portal features>). Make your choices with a few clicks and hit Launch.
+- Use the MariaDB Cloud web [Portal](<../Portal features>). Make your choices with a few clicks and hit Launch.
 - Use the DBaaS API with a REST client
 - Use the [Terraform provider](<Launch DB using the Terraform Provider>)
 
@@ -21,7 +21,7 @@ Goto [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using 
 ## Step 2: Launch a Service
 
 
-1. [Log in to the SkySQL Portal](https://app.skysql.com/) and from the Dashboard, click the [+ Launch New Service](https://app.skysql.com/launch-service) button.
+1. [Log in to the MariaDB Cloud Portal](https://app.skysql.com/) and from the Dashboard, click the [+ Launch New Service](https://app.skysql.com/launch-service) button.
 
 2. From the launch interface, select the choices detailed below.
         

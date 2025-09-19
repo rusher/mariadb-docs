@@ -4,7 +4,7 @@
 SkySQL features data-in-transit encryption by default.
 
 ### Client-to-Server
-By default, SkySQL services feature data-in-transit encryption for client connections:
+By default, MariaDB Cloud services feature data-in-transit encryption for client connections:
 -TLS 1.2 and TLS 1.3 are supported. SSL/TLS certificates and encryption settings are not customer-configurable.
 
 For information on how to connect with TLS, see ["Connect and Query"](<../../Connecting to Sky DBs/>).
@@ -12,15 +12,15 @@ For information on how to connect with TLS, see ["Connect and Query"](<../../Con
 The "Disable SSL/TLS" option may be appropriate for some customers when also using AWS PrivateLink or GCP VPC Peering.
 
 ### Server-to-Server
-SkySQL services perform server-to-server communication between MariaDB MaxScale, MariaDB Server, and SkySQL infrastructure.
+SkySQL services perform server-to-server communication between MariaDB MaxScale, MariaDB Server, and MariaDB Cloud infrastructure.
 
 By default, these server-to-server communications are protected with data-in-transit encryption:
 
-For SkySQL Services on AWS, see "[Encryption in transit(AWS)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit)". SkySQL uses configurations which feature automatic in-transit encryption.
+For MariaDB Cloud Services on AWS, see "[Encryption in transit(AWS)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html#encryption-transit)". MariaDB Cloud uses configurations which feature automatic in-transit encryption.
 
-For SkySQL Services on GCP, see "[Encryption in transit (GCP)](https://cloud.google.com/docs/security/encryption-in-transit#encryption_in_transit_by_default)". SkySQL uses encryption by default.
+For MariaDB Cloud Services on GCP, see "[Encryption in transit (GCP)](https://cloud.google.com/docs/security/encryption-in-transit#encryption_in_transit_by_default)". MariaDB Cloud uses encryption by default.
 
-For SkySQL Services on Azure, see "[Encryption in transit (Azure)](https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)". SkySQL uses encryption by default.
+For MariaDB Cloud Services on Azure, see "[Encryption in transit (Azure)](https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)". MariaDB Cloud uses encryption by default.
 
 ## **Data-at-Rest Encryption**
 SkySQL features transparent data-at-rest encryption.

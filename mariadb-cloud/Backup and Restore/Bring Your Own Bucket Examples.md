@@ -6,7 +6,7 @@ Authentication
 <h3>
 <ol>
 <li>
-Go to the SkySQL <a href="https://app.skysql.com/user-profile/api-keys">API Key management page</a>  and generate an API key
+Go to the MariaDB Cloud <a href="https://app.skysql.com/user-profile/api-keys">API Key management page</a>  and generate an API key
 </li>
 <li>
 Export the value from the token field to an environment variable $API_KEY

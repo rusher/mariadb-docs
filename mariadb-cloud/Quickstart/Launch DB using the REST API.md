@@ -142,7 +142,7 @@ When the service has been launched, the JSON payload contains `"ready"`, and yo
 
 ### **Step 5: Obtain Connection Details**
 
-Obtain the connection credentials for the new SkySQL service by executing the following commands:
+Obtain the connection credentials for the new MariaDB Cloud service by executing the following commands:
 
 1. Obtain the hostname and port of the service and save them to the `SKYSQL_FQDN` and `SKYSQL_PORT` environment variables:
     - The hostname is specified with the `"fqdn"` key.
@@ -198,7 +198,7 @@ If you don't want the password to appear on the command-line, specify the `--pa
 
 ### **Step 7: Save Connection Information (Optional)**
 
-To connect to your SkySQL service easily, it is possible to create a `.my.cnf` file in your home directory that contains all the details of your connection.
+To connect to your MariaDB Cloud service easily, it is possible to create a `.my.cnf` file in your home directory that contains all the details of your connection.
 
 1. Use the following command to create a new `.my.cnf` file or overwrite an existing one and populates it with the connection information that was collected in the previous steps:
 

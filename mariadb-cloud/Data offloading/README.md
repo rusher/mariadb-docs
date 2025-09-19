@@ -1,6 +1,6 @@
 # Data Offloading
 
-There are multiple options to copy/offload data from a SkySQL DB. You can do a logical dump(i.e. output all data and DDL as SQL) to your local machine. Or, dump large data sets securely using the SkySQL Backup service to your own S3 or GCS bucket.
+There are multiple options to copy/offload data from a MariaDB Cloud DB. You can do a logical dump(i.e. output all data and DDL as SQL) to your local machine. Or, dump large data sets securely using the MariaDB Cloud Backup service to your own S3 or GCS bucket.
 
 You can then use the offloaded data to resurrect the DB elsewhere. You can also optionally setup "outbound replication" to keep the new DB in sync with SkySQL.
 
@@ -10,21 +10,21 @@ The [`mariadb-dump`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-
 
 ### **Prerequisites**
 
-Ensure you have the mariadb-dump utility installed on your system. See [here](<../Data loading, Migration/Install Mariadb-dump.md>). Obtain the necessary connection details for your SkySQL instance, including the host, username, and password.
+Ensure you have the mariadb-dump utility installed on your system. See [here](<../Data loading, Migration/Install Mariadb-dump.md>). Obtain the necessary connection details for your MariaDB Cloud instance, including the host, username, and password.
 
 ### **Exporting All Databases**
 
-To export all databases from your SkySQL instance, use the following command:
+To export all databases from your MariaDB Cloud instance, use the following command:
 
 ```bash
 mariadb-dump -h your_skysql_host -u your_username -p \
     --all-databases > all_databases_backup.sql
 ```
 
-* `-h your_skysql_host`: Specifies the host of your SkySQL instance.
-* `-u your_username`: Specifies the username to connect to the SkySQL instance.
+* `-h your_skysql_host`: Specifies the host of your MariaDB Cloud instance.
+* `-u your_username`: Specifies the username to connect to the MariaDB Cloud instance.
 * `-p`: Prompts for the password for the specified username.
-* `--all-databases`: Exports all databases in the SkySQL instance.
+* `--all-databases`: Exports all databases in the MariaDB Cloud instance.
 * `> all_databases_backup.sql`: Redirects the output to a file named all\_databases\_backup.sql.
 
 ### **Exporting Selected Databases**
@@ -117,7 +117,7 @@ Egress charges may apply when data is exported.
 
 ## **2. Using MariaDB Client**
 
-Use [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) with the connection information to export your schema from your SkySQL database service. Here is an example to export all rows from a single table:
+Use [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) with the connection information to export your schema from your MariaDB Cloud database service. Here is an example to export all rows from a single table:
 
 ```bash
 mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
@@ -136,20 +136,20 @@ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 * Optionally, for large tables, specify the `-quick command-line option` to disable result caching and reduce memory usage.
 * You can customize the SQL along with providing multiple SQL statements to `-execute`.
 
-## **3. Exporting Data Using SkySQL Backup Service API to S3 or GCS Bucket**
+## **3. Exporting Data Using MariaDB Cloud Backup Service API to S3 or GCS Bucket**
 
-The [SkySQL Backup service API](<../Backup and Restore/>) allows you to perform logical and physical dumps of your SkySQL databases to external storage buckets such as Amazon S3 or Google Cloud Storage (GCS).
+The [SkySQL Backup service API](<../Backup and Restore/>) allows you to perform logical and physical dumps of your MariaDB Cloud databases to external storage buckets such as Amazon S3 or Google Cloud Storage (GCS).
 
 ### **Prerequisites**
 
 * Obtain the necessary credentials for your S3 bucket.
-* Ensure you have access to the SkySQL Backup service API. You need to generate the API Key from the portal.
-* Obtain the service ID for your SkySQL instance.
+* Ensure you have access to the MariaDB Cloud Backup service API. You need to generate the API Key from the portal.
+* Obtain the service ID for your MariaDB Cloud instance.
 * Base64 encodes your S3 credentials.
 
 ### **Performing a Logical Dump to an S3 Bucket**
 
-To perform a logical dump of a SkySQL database to an S3 bucket, you need to make an API call to the SkySQL Backup service. Below is an example of how to do this.
+To perform a logical dump of a MariaDB Cloud database to an S3 bucket, you need to make an API call to the MariaDB Cloud Backup service. Below is an example of how to do this.
 
 Example API Call for Logical Dump (the output is all SQL statements):
 
@@ -173,13 +173,13 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups/schedules' \
 
 * backup\_type: Set to "logical" for a logical dump.
 * schedule: Set to "once" to schedule the backup immediately.
-* service\_id: The ID of your SkySQL service.
+* service\_id: The ID of your MariaDB Cloud service.
 * external\_storage.bucket.path: The S3 bucket path where the backup will be stored.
 * external\_storage.bucket.credentials: Base64 encoded S3 credentials.
 
 ### **Performing a Physical Dump to an S3 Bucket**
 
-**When databases are large and you want to move the data around securely this is likely the best option.** To perform a physical dump of a SkySQL database to an S3 bucket, you need to make a similar API call but specify the backup type as "physical".
+**When databases are large and you want to move the data around securely this is likely the best option.** To perform a physical dump of a MariaDB Cloud database to an S3 bucket, you need to make a similar API call but specify the backup type as "physical".
 
 Example API Call for Physical Dump
 
@@ -219,8 +219,8 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups/status' \
 }'
 ```
 
-* service\_id: The ID of your SkySQL service. This API call will return the status of the backups, including whether they are in progress, completed, or failed.
+* service\_id: The ID of your MariaDB Cloud service. This API call will return the status of the backups, including whether they are in progress, completed, or failed.
 
-## **4. Replicating changes from SkySQL to a compatible external DB**
+## **4. Replicating changes from MariaDB Cloud to a compatible external DB**
 
-See [Replicating data From SkySQL to External Database](<Replicating data from SkySQL to external database.md>) for details.
+See [Replicating data From MariaDB Cloud to External Database](<Replicating data from MariaDB Cloud to external database.md>) for details.

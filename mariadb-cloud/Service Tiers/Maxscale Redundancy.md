@@ -1,6 +1,6 @@
 # MaxScale Redundancy
 
-MariaDB MaxScale serves as the load balancer in certain SkySQL topologies.
+MariaDB MaxScale serves as the load balancer in certain MariaDB Cloud topologies.
 
 SkySQL supports MaxScale Redundancy as an option at time of launch:
 
@@ -18,7 +18,7 @@ SkySQL supports MaxScale Redundancy as an option at time of launch:
 
 ## Enable MaxScale Redundancy
 
-1. Launch a SkySQL service:
+1. Launch a MariaDB Cloud service:
 
 - Check the "Enable MaxScale Redundancy" checkbox.
 

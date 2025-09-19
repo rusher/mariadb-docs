@@ -1,3 +1,3 @@
 # Scripts Folder
 
-This folder is for storing SkySQL scripts.
+This folder is for storing MariaDB Cloud scripts.

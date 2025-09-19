@@ -8,15 +8,15 @@ For additional information about the stored procedures used to configure replica
 
 ## Requirements
 
-To configure outbound replication from your Replicated Transactions service in SkySQL to an external replica server using MariaDB Server, the following requirements must be met:
+To configure outbound replication from your Replicated Transactions service in MariaDB Cloud to an external replica server using MariaDB Server, the following requirements must be met:
 
-* The external replica server must use a supported version of MariaDB Server, and the external replica server must use a version in the same or newer release series as the version used by the SkySQL service.
-* When the SkySQL service uses **ES 10.6**, the following versions are supported for the external replica server:
+* The external replica server must use a supported version of MariaDB Server, and the external replica server must use a version in the same or newer release series as the version used by the MariaDB Cloud service.
+* When the MariaDB Cloud service uses **ES 10.6**, the following versions are supported for the external replica server:
   * MariaDB Server 10.6
-* When the SkySQL service uses **ES 10.5**, the following versions are supported for the external replica server:
+* When the MariaDB Cloud service uses **ES 10.5**, the following versions are supported for the external replica server:
   * MariaDB Server 10.5
   * MariaDB Server 10.6
-* When the SkySQL service uses **ES 10.4**, the following versions are supported for the external replica server:
+* When the MariaDB Cloud service uses **ES 10.4**, the following versions are supported for the external replica server:
   * MariaDB Server 10.4
   * MariaDB Server 10.5
   * MariaDB Server 10.6
@@ -32,7 +32,7 @@ GRANT REPLICATION SLAVE ON *.* TO ‘external_replication’@'hostname';
 
 ## Check User Account
 
-**On the SkySQL service**, confirm that the new user has sufficient privileges by executing&#x20;
+**On the MariaDB Cloud service**, confirm that the new user has sufficient privileges by executing&#x20;
 
 ```sql
 SHOW GRANTS FOR 'external_replication'@'%';
@@ -45,17 +45,17 @@ SHOW GRANTS FOR 'external_replication'@'%';
 
 ## Add External Replica to Allowlist
 
-**On the SkySQL Customer Portal**, add the IP address of the external replica server to the SkySQL service's [allowlist](<../Security/Configuring Firewall.md>)
+**On the MariaDB Cloud Customer Portal**, add the IP address of the external replica server to the MariaDB Cloud service's [allowlist](<../Security/Configuring Firewall.md>)
 
 * Click ‘Manage’→ ‘Manage Allowlist’ to add the IP address to the allowed list.
 
 {% hint style="info" %}
-If your ‘external replica server’ is also running on SkySQL (say, for DR), you can find the outbound IP address from the ‘Details’ tab (select on the Service name on the dashboard, then click ‘Details’).
+If your ‘external replica server’ is also running on MariaDB Cloud (say, for DR), you can find the outbound IP address from the ‘Details’ tab (select on the Service name on the dashboard, then click ‘Details’).
 {% endhint %}
 
 ## Obtain GTID Position
 
-**On the SkySQL service**, obtain the GTID position from which to start replication.
+**On the MariaDB Cloud service**, obtain the GTID position from which to start replication.
 
 When you want to start replication from the most recent transaction, the current GTID position can be obtained by querying the value of the 'gtid\_current\_pos:
 
@@ -81,7 +81,7 @@ SET GLOBAL gtid_slave_pos='435700-435700-124';
 
 ## Configure Replication
 
-**On the external replica server**, configure replication using the connection parameters for your SkySQL service.
+**On the external replica server**, configure replication using the connection parameters for your MariaDB Cloud service.
 
 Replication can be configured using the `CHANGE MASTER TO` SQL statement:
 

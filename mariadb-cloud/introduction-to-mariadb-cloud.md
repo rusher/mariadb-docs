@@ -4,7 +4,7 @@ MariaDB stands as one of the world's leading open-source relational databases, r
 
 SkySQL is an AI-driven, fully managed Database-as-a-Service (DBaaS), designed to deploy MariaDB and MySQL-compatible workloads across diverse environments including multiple data centers, regions, and cloud providers. It now offers both traditional provisioned and serverless deployment options, catering to a wide range of use cases and workload patterns while preventing over-provisioning. With the addition of the no-code SkyAI Agent builder, developers can easily provide natural language interfaces to their end users to ask questions of the data without SQL expertise.
 
-Originally developed by [MariaDB](http://mariadb.com), SkySQL aimed to be the most comprehensive cloud platform for MariaDB. Its robust feature set is the result of years of insights gathered from hundreds of customers running mission-critical workloads. In late 2023, the core team behind SkySQL formed an independent company, named **SkySQL**, to further advance the platform.
+Originally developed by [MariaDB](http://mariadb.com), MariaDB Cloud aimed to be the most comprehensive cloud platform for MariaDB. Its robust feature set is the result of years of insights gathered from hundreds of customers running mission-critical workloads. In late 2023, the core team behind MariaDB Cloud formed an independent company, named **SkySQL**, to further advance the platform.
 
 SkySQL provides MariaDB and MySQL-compatible workloads with enterprise-grade and production-ready features:
 
@@ -33,7 +33,7 @@ SkySQL provides MariaDB and MySQL-compatible workloads with enterprise-grade and
 
 * **Semi Autonomous Agent Builder:** Create domain specific AI agents to ask questions of your data with human in the loop validation via UI interface
 * **App Integration:** Embed conversational interfaces into your apps with the associated agent REST API endpoints
-* **Built-in Developer and DBA Copilot Agents:** Improves productivity with general SkySQL questions, query performance tuning, and troubleshooting guidance.
+* **Built-in Developer and DBA Copilot Agents:** Improves productivity with general MariaDB Cloud questions, query performance tuning, and troubleshooting guidance.
 
 ### **Global Multi-Cloud Presence**
 
@@ -52,7 +52,7 @@ SkySQL provides MariaDB and MySQL-compatible workloads with enterprise-grade and
 
 ### **State-of-the-Art Data Protection**
 
-* **Comprehensive Backup Solutions:** Goes beyond nightly backups with incremental, snapshot, and binlog backup options to both SkySQL and customer-managed storage.
+* **Comprehensive Backup Solutions:** Goes beyond nightly backups with incremental, snapshot, and binlog backup options to both MariaDB Cloud and customer-managed storage.
 * **Near-Zero RPO:** Achieves minimal data loss with continuous binlog streaming.
 
 ### **Dynamic Auto-scaling**

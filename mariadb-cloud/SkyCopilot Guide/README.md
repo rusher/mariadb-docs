@@ -11,7 +11,7 @@ We appreciate your feedback and suggestions. You can reach us at **[info@skysql.
 SkySQL offers two types of SkyAI Agents:
 
   * **Built-in Agents:** These are preconfigured agents designed to help developers and DBAs maximize the value of SkySQL. Currently, we have two agents: Developer Copilot and DBA Copilot. The Developer Copilot assists users in answering questions about MySQL, MariaDB, and SkySQL, in general. The DBA Copilot enables DBA tasks like performance tuning or debugging errors. They are tailored to enhance developer/DBA productivity.
-  * **User-Created Custom DB Agents:** These are agents on your schemas/datasets permitting natural language queries over complex databases with high accuracy, consistency, and ease. The databases these agents operate on can be managed within SkySQL or external MySQL or MariaDB DBs.
+  * **User-Created Custom DB Agents:** These are agents on your schemas/datasets permitting natural language queries over complex databases with high accuracy, consistency, and ease. The databases these agents operate on can be managed within MariaDB Cloud or external MySQL or MariaDB DBs.
 
 ## Why SkyAI Agents?
 
@@ -23,7 +23,7 @@ Traditional solutions fall short because of:
 
 A common approach, Agentic Retrieval-Augmented Generation (RAG), requires extensive data integration and maintenance, making it resource-intensive.
 
-However, automation alone isn't enough. Real-world databases often contain hundreds of tables with cryptic naming conventions, impure data, and hidden rules. This is where the human-in-the-loop design becomes essential. SkySQL engages the user interactively through a wizard-like interface that:
+However, automation alone isn't enough. Real-world databases often contain hundreds of tables with cryptic naming conventions, impure data, and hidden rules. This is where the human-in-the-loop design becomes essential. MariaDB Cloud engages the user interactively through a wizard-like interface that:
 
   * Proposes relevant tables and dimensions based on the Agent's intent.
   * Analyzes data to compute initial semantic descriptions for columns and tables.
@@ -35,7 +35,7 @@ Users validate and train the Agent by asking questions, inspecting the generated
 
 ![Sky Semantic Agents Architecture](SkyAI_Arch_image1.png)
 
-Under the hood, SkySQL handles:
+Under the hood, MariaDB Cloud handles:
 
   * **Vector Indexing** of DB metadata, high-cardinality text columns, and golden SQL to enable efficient semantic searches.
   * **Automatic Orchestration** of the RAG pipeline, reducing the need for external integrations and securing all AI interactions.
@@ -51,7 +51,7 @@ Once trained, the Agent can be consumed via a simple REST API that supports:
 
 ### 1\) Developer Copilot Agent for SQL Developers
 
-This agent functions much like modern copilot tools but is specifically tailored for SkySQL and MariaDB. It allows developers to interact with the database using natural language queries, enabling them to quickly find solutions without needing to dive deep into documentation or use SQL editing tools.
+This agent functions much like modern copilot tools but is specifically tailored for MariaDB Cloud and MariaDB. It allows developers to interact with the database using natural language queries, enabling them to quickly find solutions without needing to dive deep into documentation or use SQL editing tools.
 
 You can ask a wide range of questions, such as:
 
@@ -61,10 +61,10 @@ You can ask a wide range of questions, such as:
 
 **SkySQL-Specific Queries:**
 
-  * "Show me a SkySQL program to connect from Java."
+  * "Show me a MariaDB Cloud program to connect from Java."
   * "In SkySQL, how can I configure my DB properties?"
 
-Additionally, the agent can generate complex SQL queries spanning multiple tables, create schemas, write integration code, and even assist with tasks like generating stored procedures or loading data. This agent is trained using the SkySQL documentation and leverages the OpenAI LLM's prior knowledge to provide accurate, context-aware responses.
+Additionally, the agent can generate complex SQL queries spanning multiple tables, create schemas, write integration code, and even assist with tasks like generating stored procedures or loading data. This agent is trained using the MariaDB Cloud documentation and leverages the OpenAI LLM's prior knowledge to provide accurate, context-aware responses.
 
 **Example of the Developer Copilot in action:**
 ![Developer Copilot example](SkyAI_ama_example1.png)
@@ -82,9 +82,9 @@ When a user asks a question, it breaks the query down into discrete steps, each 
 
 The simplest way to get started is by using our Demo DB in the "DataSource" drop down. It features a standalone MariaDB server preloaded with sample data and includes logged slow queries for testing.
 
-You can begin by exploring some of the sample questions provided below. Alternatively, connect to any MariaDB server running on SkySQL or another platform to experiment with your own workloads.
+You can begin by exploring some of the sample questions provided below. Alternatively, connect to any MariaDB server running on MariaDB Cloud or another platform to experiment with your own workloads.
 
-Note: The default DB user created in SkySQL (eg. “dbpgf12345678”) already has the required privileges pre-created. 
+Note: The default DB user created in MariaDB Cloud (eg. “dbpgf12345678”) already has the required privileges pre-created. 
 
 **Steps to follow when using a non-SkySQL Datasource:**
 

@@ -126,7 +126,7 @@ Installation of MariaDB Client varies by operating system.
 
 ### Linux
 
-1. Determine the connection parameters for your SkySQL service.
+1. Determine the connection parameters for your MariaDB Cloud service.
 
 2. Use your connection parameters in the following command line:
 

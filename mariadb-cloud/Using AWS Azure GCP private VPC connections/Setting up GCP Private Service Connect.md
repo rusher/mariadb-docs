@@ -1,16 +1,16 @@
 # Setting up GCP Private Service Connect
 
-Google Private Service Connect (PSC) is a Google Cloud service that enables secure and private connectivity between Virtual Private Clouds (VPCs) and third-party services. By using PSC with SkySQL services, traffic does not traverse the public internet, which enhances security and reduces exposure to potential threats.
+Google Private Service Connect (PSC) is a Google Cloud service that enables secure and private connectivity between Virtual Private Clouds (VPCs) and third-party services. By using PSC with MariaDB Cloud services, traffic does not traverse the public internet, which enhances security and reduces exposure to potential threats.
 
 For detailed information about Google PSC, see ["Private Service Connect" (Google documentation)](https://cloud.google.com/vpc/docs/private-service-connect).
 
 ## **Considerations**
 
-* PSC is used for private connections within the same Google Cloud region. The SkySQL service and the connection VPC must be in the same region.
-* When using SkySQL with PSC, all connections occur through private endpoints. If you need to connect to the service from outside your VPC, you will need to use a VPN or other mechanism to go through the connected VPC. Alternatively, SkySQL can be configured to provide a second, public endpoint for an additional fee.
-* A list of Google Cloud project IDs that will be allowed to connect to the SkySQL service must be provided when enabling PSC. This list can be updated at any time.
-* The SkySQL IP Allowlist is not used with PSC connections. Access to the SkySQL service can be controlled by setting up firewall rules inside the connecting VPC.
-* Connections to SkySQL services by features such as SkySQL backups, and monitoring do not depend on PSC.
+* PSC is used for private connections within the same Google Cloud region. The MariaDB Cloud service and the connection VPC must be in the same region.
+* When using MariaDB Cloud with PSC, all connections occur through private endpoints. If you need to connect to the service from outside your VPC, you will need to use a VPN or other mechanism to go through the connected VPC. Alternatively, MariaDB Cloud can be configured to provide a second, public endpoint for an additional fee.
+* A list of Google Cloud project IDs that will be allowed to connect to the MariaDB Cloud service must be provided when enabling PSC. This list can be updated at any time.
+* The MariaDB Cloud IP Allowlist is not used with PSC connections. Access to the MariaDB Cloud service can be controlled by setting up firewall rules inside the connecting VPC.
+* Connections to MariaDB Cloud services by features such as MariaDB Cloud backups, and monitoring do not depend on PSC.
 * Query Editor is not supported when PSC is enabled.
 * PSC has connection limits which refer to the number of endpoints that can be created to a single PSC service within Google Cloud. Database connection limits are independent from PSC connection limits. The limit for PSC connections is 10.
 
@@ -18,23 +18,23 @@ For detailed information about Google PSC, see ["Private Service Connect" (Googl
 
 <details>
 
-<summary>Enable Google PSC via the SkySQL Portal</summary>
+<summary>Enable Google PSC via the MariaDB Cloud Portal</summary>
 
 \
 
 
-To enable PSC when launching a new service via the SkySQL Portal select the 'Google Private Service Connect' option in the 'Security' section. After the service completes provisioning, you will see a new option to "Manage Google Private Service Connect" in the service's context menu. Click this option to add one or more Google project IDs to the allowlist.
+To enable PSC when launching a new service via the MariaDB Cloud Portal select the 'Google Private Service Connect' option in the 'Security' section. After the service completes provisioning, you will see a new option to "Manage Google Private Service Connect" in the service's context menu. Click this option to add one or more Google project IDs to the allowlist.
 
 </details>
 
 <details>
 
-<summary>Enable Google PSC via the SkySQL DBaaS API</summary>
+<summary>Enable Google PSC via the MariaDB Cloud DBaaS API</summary>
 
 \
 
 
-To enable Google PSC when launching a new service via the SkySQL DBaaS API, add the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes to service creation JSON payload.
+To enable Google PSC when launching a new service via the MariaDB Cloud DBaaS API, add the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes to service creation JSON payload.
 
 ```
 {
@@ -49,20 +49,20 @@ To enable Google PSC when launching a new service via the SkySQL DBaaS API, add 
 ```
 
 * The `endpoint_mechanism` field must be set to `privateconnect`
-* The `endpoint_allowed_accounts` field must be set to a JSON array of one or more client project IDs in Google Cloud that will be allowed to establish a private connection to the SkySQL service.
+* The `endpoint_allowed_accounts` field must be set to a JSON array of one or more client project IDs in Google Cloud that will be allowed to establish a private connection to the MariaDB Cloud service.
 
-For more information on using the SkySQL DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/post_provisioning_v1_services).
+For more information on using the MariaDB Cloud DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/post_provisioning_v1_services).
 
 </details>
 
 <details>
 
-<summary>Enable Google PSC via the SkySQL Terraform Provider</summary>
+<summary>Enable Google PSC via the MariaDB Cloud Terraform Provider</summary>
 
 \
 
 
-To enable Google PSC when launching a new service via the SkySQL DBaaS API, set the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes on the `skysql_service` resource.
+To enable Google PSC when launching a new service via the MariaDB Cloud DBaaS API, set the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes on the `skysql_service` resource.
 
 ```hcl
 resource "skysql_service" "example" {
@@ -74,28 +74,28 @@ resource "skysql_service" "example" {
 ```
 
 * The `endpoint_mechanism` field must be set to `privateconnect`
-* The `endpoint_allowed_accounts` field must be set to a list of one or more customer project IDs in Google Cloud that will be allowed to establish a private connection to the SkySQL service.
+* The `endpoint_allowed_accounts` field must be set to a list of one or more customer project IDs in Google Cloud that will be allowed to establish a private connection to the MariaDB Cloud service.
 
-A complete example Terraform template that creates a new SkySQL service with Google PSC enabled can be found in the [terraform provider examples](https://github.com/skysqlinc/terraform-provider-skysql/tree/main/examples/private-service-connect).
+A complete example Terraform template that creates a new MariaDB Cloud service with Google PSC enabled can be found in the [terraform provider examples](https://github.com/skysqlinc/terraform-provider-skysql/tree/main/examples/private-service-connect).
 
-For more information on using the SkySQL Terraform Provider, see ["SkySQL Terraform Provider"](https://registry.terraform.io/providers/skysqlinc/skysql/latest/docs).
+For more information on using the MariaDB Cloud Terraform Provider, see ["SkySQL Terraform Provider"](https://registry.terraform.io/providers/skysqlinc/skysql/latest/docs).
 
 </details>
 
 **For the next step, see the** [**PSC Endpoint Setup**](<Setting up GCP Private Service Connect.md#private-service-connect-endpoint-setup>) **section on this page.**
 
-### **Enable Google PSC on an Existing SkySQL Service**
+### **Enable Google PSC on an Existing MariaDB Cloud Service**
 
 > \[!CAUTION] Enabling PSC on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the public endpoint is replaced with the new PSC endpoint.
 
 <details>
 
-<summary>Enable Google PSC on an existing service via the SkySQL Portal:</summary>
+<summary>Enable Google PSC on an existing service via the MariaDB Cloud Portal:</summary>
 
 \
 
 
-1. Log in to the SkySQL Portal
+1. Log in to the MariaDB Cloud Portal
 2. Click the "MANAGE" button (on the right) for the desired service.
 3. In the context menu, choose the "Set up Google Private Service Connect" menu item.
 4. In the popup window, add one or more GCP project IDs.
@@ -105,7 +105,7 @@ For more information on using the SkySQL Terraform Provider, see ["SkySQL Terraf
 
 <details>
 
-<summary>Enable Google PSC on an existing service via the SkySQL DBaaS API:</summary>
+<summary>Enable Google PSC on an existing service via the MariaDB Cloud DBaaS API:</summary>
 
 \
 
@@ -124,7 +124,7 @@ To enable Google PSC on an existing service, you will need to update the service
 ]
 ```
 
-This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the SkySQL DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
+This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the MariaDB Cloud DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
 
 </details>
 
@@ -132,15 +132,15 @@ This payload should then be sent to the API `PATCH` https://api.skysql.com/provi
 
 ## Private Service Connect Endpoint Setup
 
-To connect to a SkySQL service using Google PSC, you must create an endpoint in your VPC that connects to the SkySQL service. The endpoint will be used by clients in your VPC to connect to the SkySQL service.
+To connect to a MariaDB Cloud service using Google PSC, you must create an endpoint in your VPC that connects to the MariaDB Cloud service. The endpoint will be used by clients in your VPC to connect to the MariaDB Cloud service.
 
 ### Pre-requisites
 
-* You must have a VPC in the same region as the SkySQL service.
-*   You will need to lookup the Endpoint Service ID that SkySQL provisioned for you when you created your SkySQL Service.
+* You must have a VPC in the same region as the MariaDB Cloud service.
+*   You will need to lookup the Endpoint Service ID that MariaDB Cloud provisioned for you when you created your MariaDB Cloud Service.
 
-    * This ID can be found in the "Connect" window of the SkySQL portal.
-    * If using the SkySQL DBaaS API, the ID can be found in the response of the service details API call.
+    * This ID can be found in the "Connect" window of the MariaDB Cloud portal.
+    * If using the MariaDB Cloud DBaaS API, the ID can be found in the response of the service details API call.
 
     ```
     curl https://api.skysql.com/provisioning/v1/services/{SERVICE_ID} | jq ".endpoints[0].endpoint_service"
@@ -178,22 +178,22 @@ We recommend use of a subnet dedicated to Private Service Connect endpoints in t
 2. Configure the endpoint connection:
    * Target: Published service
    * Target service: the value of the Endpoint Service ID. See [Pre-requisites](<Setting up GCP Private Service Connect.md#pre-requisites>) for more information on how to find this ID.
-   * Endpoint name: set to the Database ID from SkySQL (dbxxxxxxxx)
+   * Endpoint name: set to the Database ID from MariaDB Cloud (dbxxxxxxxx)
    * Network: select the VPC network where the application is running
    * Subnetwork: select the subnet where the static internal IP address is reserved
    * IP address: select the reserved internal IP address from the prior step
    * Click "ADD ENDPOINT".
 
-After creation, the Endpoint should have a status of `Accepted`. If this status is not present, please ensure your Google Project ID is added to the list of allowed accounts in the SkySQL portal for this service.
+After creation, the Endpoint should have a status of `Accepted`. If this status is not present, please ensure your Google Project ID is added to the list of allowed accounts in the MariaDB Cloud portal for this service.
 
-### Connecting to your SkySQL Service
+### Connecting to your MariaDB Cloud Service
 
 After creating your PSC endpoint, your service should be available within your VPC at the Private IP Address you assigned to the endpoint.
 
-* DNS propagation from SkySQL to the Private IP address is not supported when using PSC.
-* The hostname when connecting to your SkySQL service should always be the Private IP address of the PSC endpoint.
+* DNS propagation from MariaDB Cloud to the Private IP address is not supported when using PSC.
+* The hostname when connecting to your MariaDB Cloud service should always be the Private IP address of the PSC endpoint.
 
-> \[!NOTE] When using PSC with SSL/TLS, there will be a hostname mismatch since the hostname provisioned by SkySQL will not match your internal IP Address. This can be ignored as the connection is still secure.
+> \[!NOTE] When using PSC with SSL/TLS, there will be a hostname mismatch since the hostname provisioned by MariaDB Cloud will not match your internal IP Address. This can be ignored as the connection is still secure.
 
 ### **Disabling Google PSC**
 
@@ -201,7 +201,7 @@ After creating your PSC endpoint, your service should be available within your V
 
 <details>
 
-<summary>Disable Google PSC via the SkySQL Portal</summary>
+<summary>Disable Google PSC via the MariaDB Cloud Portal</summary>
 
 \
 
@@ -218,7 +218,7 @@ After creating your PSC endpoint, your service should be available within your V
 
 <details>
 
-<summary>Disable Google PSC via the SkySQL DBaaS API</summary>
+<summary>Disable Google PSC via the MariaDB Cloud DBaaS API</summary>
 
 \
 
@@ -233,6 +233,6 @@ To disable Google PSC on an existing service, you will need to update the servic
 ]
 ```
 
-This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the SkySQL DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
+This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the MariaDB Cloud DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
 
 </details>

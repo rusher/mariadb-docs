@@ -4,7 +4,7 @@ This page provides a high-level overview of the Observability functionality in S
 
 In order to interact with our Observability APIs, an [API KEY](https://skysqlinc.github.io/skysql-docs/Security/Managing%20API%20keys/) must be generated. Throughout this document, we will refer to it as `{{SKYSQL_API_KEY}}`.
 
-Additionally, you will need the SkySQL Database ID, available by clicking on any of your existing services from the [SkySQL Console](https://app.skysql.com/), and navigating to the Details page. We will Refer to the Database ID as `{{SKYSQL_DATABASE_ID}}` throughout this document.
+Additionally, you will need the MariaDB Cloud Database ID, available by clicking on any of your existing services from the [SkySQL Console](https://app.skysql.com/), and navigating to the Details page. We will Refer to the Database ID as `{{SKYSQL_DATABASE_ID}}` throughout this document.
 
 For the impatient reader, we jump right to the [Integrations section](Observability.md#integrations), then for ones who are building custom instrumentation, we provide a detailed list of [APIs](Observability.md#apis) and their relevant documentation.
 
@@ -12,7 +12,7 @@ For the impatient reader, we jump right to the [Integrations section](Observabil
 
 ### Datadog
 
-Using the [Datadog](https://www.datadoghq.com/) integration, you can instrument Observability metrics from SkySQL into your Datadog account. This integration allows you to monitor and visualize SkySQL metrics alongside other services in your Datadog dashboard.
+Using the [Datadog](https://www.datadoghq.com/) integration, you can instrument Observability metrics from MariaDB Cloud into your Datadog account. This integration allows you to monitor and visualize MariaDB Cloud metrics alongside other services in your Datadog dashboard.
 
 #### Requirements.
 
@@ -77,11 +77,11 @@ SkySQL exposes a set of log-related endpoints under `observability/v2/logs`, all
 * Query log types and servers
 * Manage log retention settings
 
-Refer to the [Observability section of the SkySQL API docs](https://apidocs.skysql.com/#/Observability) for the full list of parameters and responses.
+Refer to the [Observability section of the MariaDB Cloud API docs](https://apidocs.skysql.com/#/Observability) for the full list of parameters and responses.
 
 #### Metrics
 
-You can retrieve metrics (in Prometheus-compatible format) from SkySQL using the `observability/v2/metrics` endpoint. To learn more about query parameters and usage, see:
+You can retrieve metrics (in Prometheus-compatible format) from MariaDB Cloud using the `observability/v2/metrics` endpoint. To learn more about query parameters and usage, see:
 
 Example:
 
@@ -90,11 +90,11 @@ curl --location 'https://api.skysql.com/observability/v2/metrics' \
 --header 'X-API-KEY: {{SKYSQL_API_KEY}}'
 ```
 
-Refer to the [Observability section of the SkySQL API docs](https://apidocs.skysql.com/#/Observability) for the full list of parameters and responses.
+Refer to the [Observability section of the MariaDB Cloud API docs](https://apidocs.skysql.com/#/Observability) for the full list of parameters and responses.
 
 ### API Documentation
 
-For the complete, detailed API reference (including request/response formats, error codes, etc.), please see the official SkySQL API docs here:
+For the complete, detailed API reference (including request/response formats, error codes, etc.), please see the official MariaDB Cloud API docs here:
 
 * [SkySQL Observability (Logs + Metrics) Endpoints](https://apidocs.skysql.com/#/Observability).
 * [Prometheus HTTP API](https://prometheus.io/docs/prometheus/latest/querying/api/).

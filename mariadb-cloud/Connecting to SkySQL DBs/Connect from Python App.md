@@ -22,7 +22,7 @@ Connections are created, used, and managed using the following `Connection` clas
 | reconnect() | Tries to make a connection object active again by reconnecting to the server using the same credentials which were specified in connect() method. |
 | close() | Closes the connection. |
 
-Determine the connection information for your SkySQL database service:
+Determine the connection information for your MariaDB Cloud database service:
 
 | connect() parameter | Where to find it |
 | --- | --- |

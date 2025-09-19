@@ -4,13 +4,13 @@
 
 <summary>Authentication</summary>
 
-#### Go to the SkySQL [API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:    \`\`\`bash    curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"    \`\`\`
+#### Go to the MariaDB Cloud [API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:    \`\`\`bash    curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"    \`\`\`
 
 </details>
 
 ### Restore From your Bucket (External Storage)
 
-You can restore your data from external cloud storage. SkySQL supports restoration from both Google Cloud Storage (GCS) and Amazon S3 cloud storage buckets. Your backup data should be created using either `mariabackup` or `mysqldump`.
+You can restore your data from external cloud storage. MariaDB Cloud supports restoration from both Google Cloud Storage (GCS) and Amazon S3 cloud storage buckets. Your backup data should be created using either `mariabackup` or `mysqldump`.
 
 Below is a sample restore call:
 
@@ -31,7 +31,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/restores' \
   }'
 ```
 
-* SERVICE\_ID : SkySQL serivce identifier, format dbtxxxxxx. You can fetch your service ID from the Fully qualified domain name(FQDN) of your service.\
+* SERVICE\_ID : MariaDB Cloud serivce identifier, format dbtxxxxxx. You can fetch your service ID from the Fully qualified domain name(FQDN) of your service.\
   E.g: in dbpgf17106534.sysp0000.db2.skysql.com, 'dbpgf17106534' is the service ID. You will find the FQDN in the [Connect window](https://app.skysql.com/dashboard)
 * ID : the backup data file reference, available in your GCS or S3 bucket.
 

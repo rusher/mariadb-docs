@@ -1,6 +1,6 @@
 # Connect from Java App
 
-MariaDB Connector/J enables Java applications to connect to SkySQL using a native MariaDB connector.
+MariaDB Connector/J enables Java applications to connect to MariaDB Cloud using a native MariaDB connector.
 
 ## Install MariaDB Connector/J via JAR
 
@@ -39,7 +39,7 @@ export CLASSPATH="/path/to/application:/path/to/mariadb-java-client-3.4.1.jar"
 
 #### **Connector/J 3.0**
 
-In MariaDB Connector/J 3.0, TLS is enabled for connections to SkySQL using the `sslMode` parameter.
+In MariaDB Connector/J 3.0, TLS is enabled for connections to MariaDB Cloud using the `sslMode` parameter.
 
 ```java
 import java.sql.*;
@@ -72,7 +72,7 @@ public class App {
 
 #### **Connector/J 2.7**
 
-In MariaDB Connector/J 2.7 and before, TLS is enabled for connections to SkySQL using the `useSsl` parameter.
+In MariaDB Connector/J 2.7 and before, TLS is enabled for connections to MariaDB Cloud using the `useSsl` parameter.
 
 ```java
 import java.sql.*;

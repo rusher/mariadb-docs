@@ -2,7 +2,7 @@
 
 This walkthrough explains how to launch database services and manage the lifecycle of database services using the Terraform provider.
 
-For users who prefer other interfaces, SkySQL offers the following alternatives:
+For users who prefer other interfaces, MariaDB Cloud offers the following alternatives:
 
 - Use the [Portal](<../../Portal features>) in a web browser
 - Use the [DBaaS API](<./Launch DB using the REST API.md>) with a REST client
@@ -33,7 +33,7 @@ This walkthrough demonstrates a service configuration that is suitable for a qui
 2. Fill out a name for the API key
 3. Click the "Create" button.
 4. Click the copy button to copy the API key.
-5. Store the API key somewhere safe as it is shown only once during the creation. The SkySQL platform does not store it anywhere.
+5. Store the API key somewhere safe as it is shown only once during the creation. The MariaDB Cloud platform does not store it anywhere.
 
 ### **Step 2: Create Terraform Project Directory**
 
@@ -140,7 +140,7 @@ data "skysql_availability_zones" "default" {
 
 ### **Step 4: Create `outputs.tf`**
 
-In the Terraform project directory, create an `outputs.tf` file that contains the [output values](https://developer.hashicorp.com/terraform/language/values/outputs) used to display metadata about the SkySQL service:
+In the Terraform project directory, create an `outputs.tf` file that contains the [output values](https://developer.hashicorp.com/terraform/language/values/outputs) used to display metadata about the MariaDB Cloud service:
 
 ```tf
 # -------------
@@ -175,7 +175,7 @@ output "availability_zones" {
 
 ### **Step 5: Create `variables.tf`**
 
-In the Terraform project directory, create a `variables.tf` file that contains the [input variables](https://developer.hashicorp.com/terraform/language/values/variables) used to configure the SkySQL service:
+In the Terraform project directory, create a `variables.tf` file that contains the [input variables](https://developer.hashicorp.com/terraform/language/values/variables) used to configure the MariaDB Cloud service:
 
 ```tf
 # ---------------
@@ -186,7 +186,7 @@ In the Terraform project directory, create a `variables.tf` file that contains
 variable "api_key" {
    type                 = string
    sensitive            = true
-   description          = "The SkySQL API Key generated at: https://app.skysql.com/user-profile/api-keys"
+   description          = "The MariaDB Cloud API Key generated at: https://app.skysql.com/user-profile/api-keys"
 }
 
 variable "service_type" {
@@ -345,7 +345,7 @@ terraform plan -var-file="skysql-nr-quickstart.tfvars"
 
 ### **Step 9: Run `terraform apply`**
 
-Execute the Terraform execution plan and create the SkySQL service by executing the [`terraform apply` command](https://developer.hashicorp.com/terraform/cli/commands/apply) and specifying the path to the `.tfvars` file:
+Execute the Terraform execution plan and create the MariaDB Cloud service by executing the [`terraform apply` command](https://developer.hashicorp.com/terraform/cli/commands/apply) and specifying the path to the `.tfvars` file:
 
 ```bash
 terraform apply -var-file="skysql-nr-quickstart.tfvars"
@@ -399,7 +399,7 @@ Then Terraform prints the outputs.
 
 ### **Step 10: Obtain Connection Credentials**
 
-Obtain the connection credentials for the new SkySQL service by executing the following commands:
+Obtain the connection credentials for the new MariaDB Cloud service by executing the following commands:
 
 1. Obtain the connection command from the `terraform.tfstate` file:
     
@@ -421,7 +421,7 @@ Obtain the connection credentials for the new SkySQL service by executing the fo
 
 ### **Step 11: Connect**
 
-Connect to the SkySQL service by executing the connection command from the previous step:
+Connect to the MariaDB Cloud service by executing the connection command from the previous step:
 
 ```bash
 mariadb --host dbpgf00000001.sysp0000.db.skysql.net --port 3306 \
@@ -496,7 +496,7 @@ Destroy complete! Resources: 1 destroyed.
 
 ## Manually Install Provider from Binary Distribution
 
-The SkySQL New Release Terraform provider can be downloaded from the [GitHub releases page](https://github.com/skysqlinc/terraform-provider-skysql) as a binary distribution and manually installed.
+The MariaDB Cloud New Release Terraform provider can be downloaded from the [GitHub releases page](https://github.com/skysqlinc/terraform-provider-skysql) as a binary distribution and manually installed.
 
 ### **Manually Install Provider on Linux**
 

@@ -1,6 +1,6 @@
 # Connect from ‘C++’ App
 
-MariaDB Connector/C++ enables C++ applications to establish client connections to SkySQL over TLS.
+MariaDB Connector/C++ enables C++ applications to establish client connections to MariaDB Cloud over TLS.
 
 ## Requirements
 
@@ -89,18 +89,18 @@ For latest release visit [C & C++ Connectors](https://mariadb.com/kb/en/mariadb-
 
 ## Connection Info
 
-The connection is configured via the information that is initially acquired from the SkySQL Portal pages:
+The connection is configured via the information that is initially acquired from the MariaDB Cloud Portal pages:
 
 | What to set            | Where to find it                                                                                                      |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Hostname in the URL    | The fully Qualified Domain Name from the "Connect" window in SkySQL portal                                            |
-| Port number in the URL | The Read-Write Port or Read-Only Port from the "Connect" window in SkySQL portal                                      |
+| Hostname in the URL    | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                            |
+| Port number in the URL | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                                      |
 | user parameter         | The desired username, which might be the default username in the Service Credentials view                             |
 | password parameter     | The user's password, which might be the default password in the Service Credentials view if it was not yet customized |
 
 ## Connection URL Syntax
 
-While MariaDB Connector/C++ supports several connection styles, we are going to detail just the JDBC syntax since all connections to SkySQL use a single idiom of hostname, port, user, password, and SSL parameters.
+While MariaDB Connector/C++ supports several connection styles, we are going to detail just the JDBC syntax since all connections to MariaDB Cloud use a single idiom of hostname, port, user, password, and SSL parameters.
 
 The base URL is specified as follows:
 

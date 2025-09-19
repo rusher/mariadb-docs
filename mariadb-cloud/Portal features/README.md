@@ -1,6 +1,6 @@
 # Portal features
 
-From the SkySQL Portal, you can launch, monitor, and manage your SkySQL services.
+From the MariaDB Cloud Portal, you can launch, monitor, and manage your MariaDB Cloud services.
 
 ## Access the Portal
 
@@ -11,7 +11,7 @@ You can access the Portal [here](https://app.skysql.com/dashboard)
 [![dashboard](dashboard.png)](dashboard.png)
 
 
-From the Dashboard, you can see a list of your SkySQL services and status information for each service.
+From the Dashboard, you can see a list of your MariaDB Cloud services and status information for each service.
 
 From a different view, the Dashboard can be accessed by clicking the "Dashboard" link in the main menu (left navigation in the Portal).
 
@@ -38,7 +38,7 @@ Service-specific interfaces are provided to:
 
 ## Connect
 
-From the Dashboard, the details needed to connect to your SkySQL service can be seen by clicking on the "CONNECT" button for the desired service.
+From the Dashboard, the details needed to connect to your MariaDB Cloud service can be seen by clicking on the "CONNECT" button for the desired service.
 
 See "[Client Connections](<../Connecting to Sky DBs/>)" for details on how to connect to a service.
 

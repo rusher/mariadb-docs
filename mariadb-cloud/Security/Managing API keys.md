@@ -1,7 +1,7 @@
 # Managing API keys
 
 ## **Getting Started with API Keys**
-1. Go to SkySQL API Key management page: https://app.skysql.com/user-profile/api-keys and generate an API key
+1. Go to MariaDB Cloud API Key management page: https://app.skysql.com/user-profile/api-keys and generate an API key
 
 2. Export the value from the token field to an environment variable $API_KEY
 

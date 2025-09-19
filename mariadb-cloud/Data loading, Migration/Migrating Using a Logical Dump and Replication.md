@@ -1,26 +1,26 @@
 # Migrating Using a Logical Dump and Replication
 
-To minimize downtime during migration, you can set up live replication from your source database to the SkySQL database.
+To minimize downtime during migration, you can set up live replication from your source database to the MariaDB Cloud database.
 
 ## Prerequisites
 
-1. An active SkySQL account. Identify requirements for your SkySQL implementation prior to [deployment](<../Portal features/Launch page.md>), including:
+1. An active MariaDB Cloud account. Identify requirements for your MariaDB Cloud implementation prior to [deployment](<../Portal features/Launch page.md>), including:
 
 * Topology - Mariadb Server Single node or with Replica(s)
 * [Instance size](<../Reference Guide/Instance Size Choices.md>)
 * Storage requirements
 * Desired server version
 
-2. An existing source database with the IP added to your SkySQL allowlist.
+2. An existing source database with the IP added to your MariaDB Cloud allowlist.
 
 ## Steps
 
-1.  **Dump the Source Database**: Take a dump of your source database using `mysqldump` or `mariadb-dump`. Include triggers, procedures, views, and schedules in the dump, and ignore the system databases to avoid conflicts with the existing SkySQL schemas.
+1.  **Dump the Source Database**: Take a dump of your source database using `mysqldump` or `mariadb-dump`. Include triggers, procedures, views, and schedules in the dump, and ignore the system databases to avoid conflicts with the existing MariaDB Cloud schemas.
 
     ```bash
     mysqldump -u [username] -p -h [hostname] --single-transaction --master-data=2 --routines --triggers --all-databases --ignore-database=mysql --ignore-database=information_schema --ignore-database=performance_schema --ignore-database=sys > dump.sql
     ```
-2.  **Create the Users and Grants Separately**: To avoid conflicts with the existing SkySQL users, use `SELECT CONCAT` on your source database to create users and grants in separate files. Note that you may need to create the schema and table grants separately as well.
+2.  **Create the Users and Grants Separately**: To avoid conflicts with the existing MariaDB Cloud users, use `SELECT CONCAT` on your source database to create users and grants in separate files. Note that you may need to create the schema and table grants separately as well.
 
     ```bash
     mysql -u [username] -p -h [hostname] --silent --skip-column-names -e "SELECT CONCAT('CREATE USER \'', user, '\'@\'', host, '\' IDENTIFIED BY PASSWORD \'', authentication_string, '\';') FROM mysql.user;" > users.sql
@@ -29,7 +29,7 @@ To minimize downtime during migration, you can set up live replication from your
 
     mysql -h [hostname] -u [username] -p --silent --skip-column-names -e "SELECT CONCAT('GRANT ', privilege_type, ' ON ', table_schema, '.', table_name, ' TO \'', grantee, '\';') FROM information_schema.table_privileges;" >> grants.sql
     ```
-3.  **Import the Dumps into SkySQL**: Import the logical dumps (SQL files) into your SkySQL database, ensuring to load the user and grant dumps after the main dump.
+3.  **Import the Dumps into SkySQL**: Import the logical dumps (SQL files) into your MariaDB Cloud database, ensuring to load the user and grant dumps after the main dump.
 
     ```bash
     mariadb -u [SkySQL username] -p -h [SkySQL hostname] --port 3306 --ssl-verify-server-cert < dump.sql
@@ -37,13 +37,13 @@ To minimize downtime during migration, you can set up live replication from your
     mariadb -u [SkySQL username] -p -h [SkySQL hostname] --port 3306 --ssl-verify-server-cert < grants.sql
     ```
 
-If you encounter an error while importing your users, you may need to uninstall the `simple_password_check` plugin on your SkySQL instance.
+If you encounter an error while importing your users, you may need to uninstall the `simple_password_check` plugin on your MariaDB Cloud instance.
 
 ```sql
 UNINSTALL PLUGIN simple_password_check;
 ```
 
-4\. **Start Replication**: Turn on replication using SkySQL stored procedures. There are procedures allowing you to set and start replication. See our [documentation](<../Reference Guide/Sky Stored Procedures.md>) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
+4\. **Start Replication**: Turn on replication using MariaDB Cloud stored procedures. There are procedures allowing you to set and start replication. See our [documentation](<../Reference Guide/Sky Stored Procedures.md>) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
 
 ```sql
 CALL sky.change_external_primary(host VARCHAR(255), port INT, logfile TEXT, logpos LONG,
@@ -68,7 +68,7 @@ CALL sky.start_replication();
 
 #### Data Integrity and Validation
 
-*   **Consistency Checks**: Perform consistency checks on the source database before migration. Use a [supported SQL client](../../Connecting%20to%20Sky%20DBs/) to connect to your SkySQL instance and run the following.
+*   **Consistency Checks**: Perform consistency checks on the source database before migration. Use a [supported SQL client](../../Connecting%20to%20Sky%20DBs/) to connect to your MariaDB Cloud instance and run the following.
 
     ```sql
     CHECK TABLE [table_name] FOR UPGRADE;
@@ -97,7 +97,7 @@ CALL sky.start_replication();
 
 #### Monitoring and Logging
 
-* **Enable Detailed Logging**: Enable detailed logging while testing the migration process to monitor and troubleshoot effectively. The slow\_log can be enabled in the SkySQL configuration manager.
+* **Enable Detailed Logging**: Enable detailed logging while testing the migration process to monitor and troubleshoot effectively. The slow\_log can be enabled in the MariaDB Cloud configuration manager.
 * **Resource Monitoring**: Use monitoring tools to track resource usage (CPU, memory, I/O) during the migration to ensure system stability. See our [monitoring documentation](<../Portal features/Service Monitoring Panels.md>) for details.
 
 #### Additional Resources
@@ -105,4 +105,4 @@ CALL sky.start_replication();
 * [Backup with mariadb-dump](https://mariadb.com/kb/en/mariadb-dump/)
 * [MariaDB Backup Documentation](https://mariadb.com/kb/en/mariadb-backup-overview/)
 * [Advanced Backup Techniques](https://mariadb.com/kb/en/backup-and-restore-overview/)
-* [Migrate RDS MySQL to SkySQL using the AWS Data Migration Service (DMS)](../Data%20loading,%20Migration/migrate-rds-mysql-to-skysql-using-amazon-data-migration-service_whitepaper_1109.pdf)
+* [Migrate RDS MySQL to MariaDB Cloud using the AWS Data Migration Service (DMS)](../Data%20loading,%20Migration/migrate-rds-mysql-to-skysql-using-amazon-data-migration-service_whitepaper_1109.pdf)

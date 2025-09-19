@@ -33,10 +33,10 @@ Our cloud providers (AWS, GCP, Azure) enforce strict upgrade schedules for Kuber
 ## How Infrastructure Upgrades Work
 
 ### Notification Timeline
-1. **3 Months Prior to Automated Upgrade**: SkySQL sends initial notification about upcoming infrastructure upgrade requirements
+1. **3 Months Prior to Automated Upgrade**: MariaDB Cloud sends initial notification about upcoming infrastructure upgrade requirements
 2. **Regular Reminders**: Follow-up notifications are sent as the deadline approaches
 3. **Grace Period**: Customers have time to perform upgrades before the automatic deadline
-4. **Automated Upgrade Deadline**: If not upgraded by the deadline, SkySQL will automatically perform the upgrade to maintain compliance
+4. **Automated Upgrade Deadline**: If not upgraded by the deadline, MariaDB Cloud will automatically perform the upgrade to maintain compliance
 
 ## Managing Infrastructure Upgrades in the Portal
 
@@ -68,7 +68,7 @@ A: Plan according to your maintenance windows.
 A: No, infrastructure upgrades begin immediately when initiated. Plan to perform them during appropriate maintenance windows.
 
 **Q: What happens if I don't upgrade by the deadline?**
-A: SkySQL will automatically perform the upgrade to maintain cloud provider compliance and platform stability.
+A: MariaDB Cloud will automatically perform the upgrade to maintain cloud provider compliance and platform stability.
 
 **Q: Will my data be affected during the upgrade?**
 A: No, infrastructure upgrades only restart the database service. Your data remains intact and unchanged.

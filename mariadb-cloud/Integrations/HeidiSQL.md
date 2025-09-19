@@ -3,7 +3,7 @@
 ## Steps:
 1. Open HeidiSQL and create a new session.
 2. Choose **MySQL** as the connection type.
-3. Enter the SkySQL credentials including hostname, port, username, and password.
+3. Enter the MariaDB Cloud credentials including hostname, port, username, and password.
 4. If SSL is enabled, go to the **SSL** tab.
 5. Check **Use SSL**.
 6. Test the connection and click **Open**.

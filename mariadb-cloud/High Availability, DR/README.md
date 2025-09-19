@@ -1,15 +1,15 @@
 # Higher Availability and Disaster Recovery Concepts
 
 !!! Note
-    SkySQL provides HA using semi-synchronous replicas. Unlike hyperscalers these replicas are not standy DB servers but actively used for Reads. When the primary crashes our intelligent proxy allows us to failover near instantly to an alternate replica. Or, failback when the original primary recovers. Ensuring data consistency even when replicas have a replication lag through “causal reads”, or transaction replay. 
+    MariaDB Cloud provides HA using semi-synchronous replicas. Unlike hyperscalers these replicas are not standy DB servers but actively used for Reads. When the primary crashes our intelligent proxy allows us to failover near instantly to an alternate replica. Or, failback when the original primary recovers. Ensuring data consistency even when replicas have a replication lag through “causal reads”, or transaction replay. 
 
 ----
 
 ## **Use 'Replicated Topology' for HA**
 
-For HA and Load balancing client requests there is no configuration required. Just launch a `replicated topology` DB service. SkySQL automatically starts an intelligent proxy that does all the heavy lifting. Detecting failures and replaying transactions, awareness of who the primary is at all times, balancing load and much more. 
+For HA and Load balancing client requests there is no configuration required. Just launch a `replicated topology` DB service. MariaDB Cloud automatically starts an intelligent proxy that does all the heavy lifting. Detecting failures and replaying transactions, awareness of who the primary is at all times, balancing load and much more. 
 
-You should be aware of the `causal_reads` configuration as outlined below. The sections below provide a more detailed description of how SkySQL delivers on HA and scaling across replicas. 
+You should be aware of the `causal_reads` configuration as outlined below. The sections below provide a more detailed description of how MariaDB Cloud delivers on HA and scaling across replicas. 
 
 ## **Level 1 Resiliency - container health checks, compute-storage isolation**
 
@@ -23,7 +23,7 @@ The deployment of DB servers occurs within containers orchestrated by Kubernetes
 
 While hardware failures are a possibility, a more common scenario we see in practice involves a DB crash due to resource exhaustion or timeouts—such as running out of allocated temp space due to rogue queries or an unplanned large spike in data load. In such instances, it is crucial for application connections to smoothly transition to an alternate server.
 
-Behind the scenes, SkySQL consistently directs SQL through its intelligent proxy. This proxy not only continuously monitors servers for failures but also remains acutely aware of any replication lags in the replica servers. Should a primary server fail, an immediate election process ensues to select a replica with the least lag. Simultaneously, attempts are made to flush any pending events, ensuring synchronization and full data consistency. Any pending transactions on the primary server are also replayed. Collectively, these measures enable applications to operate without connection-level interruptions or SQL exceptions. Achieving heightened levels of High Availability (HA) is effortlessly attainable by expanding the number of replicas. Replication can even extend across different cloud providers or to a self-managed (ˮpeace of mindˮ) replica within a customerʼs own environment.
+Behind the scenes, MariaDB Cloud consistently directs SQL through its intelligent proxy. This proxy not only continuously monitors servers for failures but also remains acutely aware of any replication lags in the replica servers. Should a primary server fail, an immediate election process ensues to select a replica with the least lag. Simultaneously, attempts are made to flush any pending events, ensuring synchronization and full data consistency. Any pending transactions on the primary server are also replayed. Collectively, these measures enable applications to operate without connection-level interruptions or SQL exceptions. Achieving heightened levels of High Availability (HA) is effortlessly attainable by expanding the number of replicas. Replication can even extend across different cloud providers or to a self-managed (ˮpeace of mindˮ) replica within a customerʼs own environment.
 
 [![HA in a Single Region](HA_in_single_region.drawio.png)](HA_in_single_region.drawio.png)
     
@@ -42,8 +42,8 @@ Causal consistency ensures that ‘reads’ are fresh only concerning the writes
 
 This model functions optimally when application clients utilize sticky SQL connections. However, in the modern landscape where applications are often distributed (micro services) and rely on connection pooling frameworks, a ‘write’ and the subsequent ‘read’ might occur on different connections. To ensure consistent reads, awareness of the ‘lag’ at a global level is imperative. Fortunately, this is seamlessly achieved with a simple switch in SkySQL. If the ‘write’ rate is moderate and the replicas can keep up (a prevalent scenario in practice), clients continue to uniformly utilize the entire cluster.
 
-### Configuring Causal Read in SkySQL 
-Causal consistency is configured in the SkySQL [Configuration Manager](https://app.skysql.com/settings/configuration-manager), under Maxscale Variables (applies to Replicated clusters only). Search for [causal reads](https://mariadb.com/kb/en/mariadb-maxscale-2208-readwritesplit/#causal_reads).
+### Configuring Causal Read in MariaDB Cloud 
+Causal consistency is configured in the MariaDB Cloud [Configuration Manager](https://app.skysql.com/settings/configuration-manager), under Maxscale Variables (applies to Replicated clusters only). Search for [causal reads](https://mariadb.com/kb/en/mariadb-maxscale-2208-readwritesplit/#causal_reads).
 
 [![Setting Causal Reads](causal.png)](causal.png)
 
@@ -68,16 +68,16 @@ Our replication model is fast as it is configured to be parallel and optimistic 
 
 ### **Increased throughput using Active-Active**
 
-Unlike RDS or GCP, where the standby is not used for client requests (wasting resources), SkySQL maximizes the available compute power across all nodes, delivering unparalleled cost effectiveness.
+Unlike RDS or GCP, where the standby is not used for client requests (wasting resources), MariaDB Cloud maximizes the available compute power across all nodes, delivering unparalleled cost effectiveness.
 
 A notable feature enhancing performance is the ‘Read-Write Splitting,’ allowing for custom routing to achieve consistently lower latencies for specific application patterns. For example, point queries and index-optimized queries can be directed to select nodes hosting frequently accessed data, while more resource-intensive scan-aggregation class queries (such as those for reporting dashboards or complex queries based on end-user selections of historical data) can be routed to a separate set of nodes. These routing strategies effectively segment actively used data sets, optimizing the DB buffer cache and resulting in lower latencies.
 
 The implementation of these routing strategies is straightforward, primarily through the use of “Hint Filters.” Standard SQL comments are utilized to customize routing to the appropriate server. Additional details on Hint Filters and Read-Write Splitting can be found in the MariaDB documentation.
 
-In SkySQL you can control routing using 2 strategies:
+In MariaDB Cloud you can control routing using 2 strategies:
 
 - Using the `read port` for the service: Typically this will be port 3307. When using this port the request (read_only) will be load balanced only across the available replicas. 
-- Using the [Hintfilter](https://mariadb.com/kb/en/mariadb-maxscale-24-hintfilter/)  (TODO: provide detailed example using SkySQL node names)
+- Using the [Hintfilter](https://mariadb.com/kb/en/mariadb-maxscale-24-hintfilter/)  (TODO: provide detailed example using MariaDB Cloud node names)
 
 
 ## **Level 3 Resiliency -  Disaster Recovery – Across Regions, Cloud Providers, or “Self-managed” Environments**
@@ -96,4 +96,4 @@ One effective strategy to mitigate such risks is to replicate data to a data cen
 
 SkySQL empowers users to configure “external” replicas that can run anywhere, offering flexibility and resilience.
 
-To facilitate this, SkySQL provides several built-in stored procedures for configuring both “outbound” and “inbound” replication to any compatible MariaDB or MySQL server environment. This flexibility allows users to tailor their disaster recovery strategy based on their specific needs, whether replicating across regions, cloud providers, or maintaining self-managed standby environments.
+To facilitate this, MariaDB Cloud provides several built-in stored procedures for configuring both “outbound” and “inbound” replication to any compatible MariaDB or MySQL server environment. This flexibility allows users to tailor their disaster recovery strategy based on their specific needs, whether replicating across regions, cloud providers, or maintaining self-managed standby environments.
