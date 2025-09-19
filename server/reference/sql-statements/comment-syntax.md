@@ -2,7 +2,7 @@
 
 There are three supported comment styles in MariaDB:
 
-1. From a '`#`' to the end of a line:
+1. From a hash sign (`#') to the end of a line:
 
 ```sql
 SELECT * FROM users; 
@@ -11,7 +11,7 @@ SELECT * FROM users;
 
 ```
 
-1. From a '`--`' to the end of a line. The space after the two dashes is required (as in MySQL).
+1. From a double hyphen `--` to the end of a line. The space after the two dashes is required (as in MySQL).
 
 ```sql
 SELECT * FROM users; -- This is a comment
