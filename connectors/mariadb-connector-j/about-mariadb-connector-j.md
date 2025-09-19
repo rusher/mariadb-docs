@@ -22,10 +22,10 @@ MariaDB Connector/J releases older than 1.2.0 may be compatible with server vers
 
 To determine which MariaDB Connector/J release series would be best to use for each Java version, please see the following table:
 
-| Java Version(s)                   | Recommended MariaDB Connector/J Release Series                                | JDBC Version |
-| --------------------------------- | ----------------------------------------------------------------------------- | ------------ |
-| Java 21, Java 17, Java 11, Java 8 | MariaDB Connector/J 3.5, 3.4, 3.3\[[1](about-mariadb-connector-j.md#_note-0)] | JDBC 4.2     |
-| Java 17, Java 11, Java 8          | MariaDB Connector/J 2.7                                                       | JDBC 4.2     |
+| Java Version(s)                            | Recommended MariaDB Connector/J Release Series                                | JDBC Version |
+|--------------------------------------------| ----------------------------------------------------------------------------- | ------------ |
+| Java 25, Java 21, Java 17, Java 11, Java 8 | MariaDB Connector/J 3.5, 3.4, 3.3\[[1](about-mariadb-connector-j.md#_note-0)] | JDBC 4.2     |
+| Java 17, Java 11, Java 8                   | MariaDB Connector/J 2.7                                                       | JDBC 4.2     |
 
 1. [↑](about-mariadb-connector-j.md#_ref-0) see parsec authentication restriction
 
