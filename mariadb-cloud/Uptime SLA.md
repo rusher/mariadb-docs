@@ -1,6 +1,6 @@
 # Uptime SLA
 
-SkySQL customers should assess the availability requirements of their application and choose an appropriate service tier to meet their objectives. MariaDB Cloud customers are on the Foundation Tier unless they have specifically purchased and paid for Power Tier service.
+MariaDB Cloud customers should assess the availability requirements of their application and choose an appropriate service tier to meet their objectives. MariaDB Cloud customers are on the Foundation Tier unless they have specifically purchased and paid for Power Tier service.
 
 ## **Performance Standard**
 
@@ -28,7 +28,7 @@ SkySQL customers should assess the availability requirements of their applicatio
 | Power Tier | Less than 99.995%, but greater than or equal to 99.0% | 10% |
 | Power Tier | Less than 99.0% | 25% |
 
-SkySQL will grant and process claims, provided the customer has satisfied its [Customer Obligations](https://skysql.com/sla/) and that none of the [Exclusions](https://skysql.com/sla/) listed apply to the claim. [Service Credits](https://skysql.com/sla/) will be issued only upon request within 60 days of the end of the billing period of the month of impact to service availability, and upon confirmation of outage. [Service Credits](https://skysql.com/sla/) will be issued in the form of a monetary credit applied to future use of the service that experienced the [Service Downtime](https://skysql.com/sla/). [Service Credits](https://skysql.com/sla/) will not be applied to fees for any other MariaDB Cloud instance.
+MariaDB Cloud will grant and process claims, provided the customer has satisfied its [Customer Obligations](https://skysql.com/sla/) and that none of the [Exclusions](https://skysql.com/sla/) listed apply to the claim. [Service Credits](https://skysql.com/sla/) will be issued only upon request within 60 days of the end of the billing period of the month of impact to service availability, and upon confirmation of outage. [Service Credits](https://skysql.com/sla/) will be issued in the form of a monetary credit applied to future use of the service that experienced the [Service Downtime](https://skysql.com/sla/). [Service Credits](https://skysql.com/sla/) will not be applied to fees for any other MariaDB Cloud instance.
 
 The aggregate maximum number of [Service Credits](https://skysql.com/sla/) to be issued by MariaDB Cloud to customers for any and all [Service Downtime](https://skysql.com/sla/) that occurs in a single billing month will not exceed 50% of the amount due from the customer for the covered service for the applicable month.
 

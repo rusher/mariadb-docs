@@ -51,7 +51,7 @@ To enable Azure Private Link when launching a new service via the MariaDB Cloud 
 * The `endpoint_mechanism` field must be set to `privateconnect`
 * The `endpoint_allowed_accounts` field must be set to a JSON array of one or more customer subscription IDs in Azure that will be allowed to establish a private connection to the MariaDB Cloud service. These IDs should be in the guid format.
 
-For more information on using the MariaDB Cloud DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/post_provisioning_v1_services).
+For more information on using the MariaDB Cloud DBaaS API, see ["MariaDB Cloud DBaaS API"](https://apidocs.skysql.com/#/Services/post_provisioning_v1_services).
 
 </details>
 
@@ -78,7 +78,7 @@ resource "skysql_service" "example" {
 
 A complete example Terraform template that creates a new MariaDB Cloud service with Azure Private Link enabled can be found in the [terraform provider examples](https://github.com/skysqlinc/terraform-provider-skysql/tree/main/examples/azure-private-link).
 
-For more information on using the MariaDB Cloud Terraform Provider, see ["SkySQL Terraform Provider"](https://registry.terraform.io/providers/skysqlinc/skysql/latest/docs).
+For more information on using the MariaDB Cloud Terraform Provider, see ["MariaDB Cloud Terraform Provider"](https://registry.terraform.io/providers/skysqlinc/skysql/latest/docs).
 
 </details>
 
@@ -124,7 +124,7 @@ To enable Azure Private Link on an existing service, you will need to update the
 ]
 ```
 
-This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the MariaDB Cloud DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
+This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the MariaDB Cloud DBaaS API, see ["MariaDB Cloud DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
 
 </details>
 
@@ -223,7 +223,7 @@ Since Private DNS setup is a complex process, we have provided a terraform examp
 \
 
 
-1. Visit the [SkySQL Portal](https://app.skysql.com/)
+1. Visit the [MariaDB Cloud Portal](https://app.skysql.com/)
 2. Find the service that you would like to modify.
 3. Click "MANAGE" on the far right side of the service listing.
 4. In the context menu, select "Manage Private Link".
@@ -250,6 +250,6 @@ To disable Azure Private Link on an existing service, you will need to update th
 ]
 ```
 
-This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the MariaDB Cloud DBaaS API, see ["SkySQL DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
+This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the MariaDB Cloud DBaaS API, see ["MariaDB Cloud DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
 
 </details>

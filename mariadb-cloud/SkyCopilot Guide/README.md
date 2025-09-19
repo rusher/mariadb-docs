@@ -8,7 +8,7 @@
     
 We appreciate your feedback and suggestions. You can reach us at **[info@skysql.com](mailto:info@skysql.com) or [support@skysql.com](mailto:support@skysql.com)**
 
-SkySQL offers two types of SkyAI Agents:
+MariaDB Cloud offers two types of SkyAI Agents:
 
   * **Built-in Agents:** These are preconfigured agents designed to help developers and DBAs maximize the value of SkySQL. Currently, we have two agents: Developer Copilot and DBA Copilot. The Developer Copilot assists users in answering questions about MySQL, MariaDB, and SkySQL, in general. The DBA Copilot enables DBA tasks like performance tuning or debugging errors. They are tailored to enhance developer/DBA productivity.
   * **User-Created Custom DB Agents:** These are agents on your schemas/datasets permitting natural language queries over complex databases with high accuracy, consistency, and ease. The databases these agents operate on can be managed within MariaDB Cloud or external MySQL or MariaDB DBs.
@@ -86,7 +86,7 @@ You can begin by exploring some of the sample questions provided below. Alternat
 
 Note: The default DB user created in MariaDB Cloud (eg. “dbpgf12345678”) already has the required privileges pre-created. 
 
-**Steps to follow when using a non-SkySQL Datasource:**
+**Steps to follow when using a non-MariaDB Cloud Datasource:**
 
 - First, add a Datasource and test the connectivity.
 - We recommend testing with a Development/Test DB first.
@@ -107,7 +107,7 @@ To analyze slow queries, you need to turn on 'Slow query' logging. The `slow_que
 
 It is recommended you start with a high `slow_query_time`, implement a `log_slow_rate_limit`, and disable logging when not in use.
 
-If using SkySQL, go to Config Manager to see all the current configuration templates. If you are using the default config ("SkySQL Default - Mariadb Server..."), click the 'Create New' button, and change the following settings:
+If using SkySQL, go to Config Manager to see all the current configuration templates. If you are using the default config ("MariaDB Cloud Default - Mariadb Server..."), click the 'Create New' button, and change the following settings:
 
   * Change 'slow\_query\_log' to `ON`. Change 'log\_output' to `TABLE` (defaults to `FILE`).
   * Adjust the 'long\_query\_time' if required (Defaults to 10 secs). **Caution:** If 'long\_query\_time' is set too low, you could substantially increase the load. You can check the global status variable `slow_queries` to tune the `long_query_time`.
@@ -118,7 +118,7 @@ It is also useful to turn ON 'Performance\_schema' (Note that this option will r
 
 ## Semi-Autonomous, No-Code Semantic SkyAI Agents
 
-SkySQL includes a No-Code SkyAI Agent Builder. This tool empowers domain experts to define the missing semantics critical for accurate responses without requiring programming expertise. The system then leverages the database's metadata—such as table definitions, constraints, and relationships—and learns from historical queries to train the Agent.
+MariaDB Cloud includes a No-Code SkyAI Agent Builder. This tool empowers domain experts to define the missing semantics critical for accurate responses without requiring programming expertise. The system then leverages the database's metadata—such as table definitions, constraints, and relationships—and learns from historical queries to train the Agent.
 
 ### Step 1: Define the DataSource
 

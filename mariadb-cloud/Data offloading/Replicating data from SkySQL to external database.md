@@ -1,10 +1,10 @@
 # Replicating data from MariaDB Cloud to external database
 
-SkySQL customers can configure outbound replication from a Replicated Transactions service to a compatible MariaDB Server running elsewhere - could be your data center, self-managed MariaDB DB on the cloud or even other managed services like AWS RDS.
+MariaDB Cloud customers can configure outbound replication from a Replicated Transactions service to a compatible MariaDB Server running elsewhere - could be your data center, self-managed MariaDB DB on the cloud or even other managed services like AWS RDS.
 
-SkySQL uses stored procedures to configure replication to other MariaDB or MySQL database servers.
+MariaDB Cloud uses stored procedures to configure replication to other MariaDB or MySQL database servers.
 
-For additional information about the stored procedures used to configure replication with Replicated Transactions services, see [SkySQL Replication Helper Procedures for Replicated Transactions](<../Reference Guide/Sky Stored Procedures.md>)
+For additional information about the stored procedures used to configure replication with Replicated Transactions services, see [MariaDB Cloud Replication Helper Procedures for Replicated Transactions](<../Reference Guide/Sky Stored Procedures.md>)
 
 ## Requirements
 

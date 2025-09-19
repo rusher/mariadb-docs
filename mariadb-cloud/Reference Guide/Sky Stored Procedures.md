@@ -100,7 +100,7 @@ CALL sky.gtid_status();
 
 ## kill_session
 
-Kills any non-root or non-SkySQL threads, similar to the [KILL](https://mariadb.com/kb/en/kill/) statement.
+Kills any non-root or non-MariaDB Cloud threads, similar to the [KILL](https://mariadb.com/kb/en/kill/) statement.
 
 ```sql
 CALL sky.kill_session(IN thread BIGINT);

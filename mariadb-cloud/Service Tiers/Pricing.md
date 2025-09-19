@@ -1,6 +1,6 @@
 # Pricing
 
-SkySQL pricing information is shown at time of service launch.
+MariaDB Cloud pricing information is shown at time of service launch.
 
 Pricing shown within the MariaDB Cloud interface is an estimate of the cost of using MariaDB Cloud services based on your specified usage parameters. Pricing information is shown at time of service launch and subsequently as estimated charges.
 

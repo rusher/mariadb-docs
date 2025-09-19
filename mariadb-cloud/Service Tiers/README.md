@@ -4,7 +4,7 @@ Power Tier is a premium service offering who have the most critical requirements
 
 ## **Upgrade to Power Tier**
 
-By default, any new signed up users are in the “Foundation Tier”. To upgrade to Power Tier, simply click the ‘Upgrade’ button - MariaDB Cloud support will contact you and start the upgrade process. You can also directly reach out to [SkySQL Support](broken-reference).
+By default, any new signed up users are in the “Foundation Tier”. To upgrade to Power Tier, simply click the ‘Upgrade’ button - MariaDB Cloud support will contact you and start the upgrade process. You can also directly reach out to [MariaDB Cloud Support](broken-reference).
 
 ## **Features**
 

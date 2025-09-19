@@ -18,7 +18,7 @@ curl --location '<https://api.skysql.com/skybackup/v1/backups/schedules>' \
 --header 'X-API-Key: ${API_KEY}'
 ```
 
-* API\_KEY : SKYSQL API KEY, see [SkySQL API Keys](https://app.skysql.com/user-profile/api-keys/)
+* API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
 **Get all Backup Schedules per service**
 
@@ -30,7 +30,7 @@ curl --location '<https://api.skysql.com/skybackup/v1/backups/schedules?service_
 --header 'X-API-Key: ${API_KEY}'
 ```
 
-* API\_KEY : SKYSQL API KEY, see [SkySQL API Keys](https://app.skysql.com/user-profile/api-keys/)
+* API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
 **Get Backup Schedule by ID**
 
@@ -42,7 +42,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups/schedules/200' \
 --header 'X-API-Key: ${API_KEY}'
 ```
 
-* API\_KEY : SKYSQL API KEY, see [SkySQL API Keys](https://app.skysql.com/user-profile/api-keys/)
+* API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
 **Update Backup Schedule**
 
@@ -58,7 +58,7 @@ curl --location --request PATCH '<https://api.skysql.com/skybackup/v1/backups/sc
 }'
 ```
 
-* API\_KEY : SKYSQL API KEY, see [SkySQL API Keys](https://app.skysql.com/user-profile/api-keys/)
+* API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 * SCHEDULE : Cron schedule, see [Cron](https://en.wikipedia.org/wiki/Cron)
 
 **Delete Backup Schedule**
@@ -71,7 +71,7 @@ curl --location --request DELETE 'https://api.skysql.com/skybackup/v1/backups/sc
 --header 'X-API-Key: ${API_KEY}'
 ```
 
-* API\_KEY : SKYSQL API KEY, see [SkySQL API Keys](https://app.skysql.com/user-profile/api-keys/)
+* API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
 ### Backup Status
 
@@ -87,7 +87,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups' \
 --header 'X-API-Key: ${API_KEY}'
 ```
 
-* API\_KEY : SKYSQL API KEY, see [SkySQL API Keys](https://app.skysql.com/user-profile/api-keys/)
+* API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
 #### List all backups by service
 
@@ -99,7 +99,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups?service_id=dbtgf282
 --header 'X-API-Key: ${API_KEY}'
 ```
 
-* API\_KEY : SKYSQL API KEY, see [SkySQL API Keys](https://app.skysql.com/user-profile/api-keys/)
+* API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
 The typical response of either of two calls should look like:
 

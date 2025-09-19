@@ -1,6 +1,6 @@
 # Configuring Firewall
 
-SkySQL services are firewall-protected.
+MariaDB Cloud services are firewall-protected.
 
 Access to MariaDB Cloud services is managed on a per-service basis.
 

@@ -64,7 +64,7 @@ To see expanded status and metrics information:
     
 ### Scaling
 
-SkySQL features automatic rule-based scaling (Autonomous) and manual on-demand scaling.
+MariaDB Cloud features automatic rule-based scaling (Autonomous) and manual on-demand scaling.
 
 **Note:** Scaling is not applicable to Serverless deployments.
 

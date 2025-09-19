@@ -1,12 +1,12 @@
 # Launch DB using the REST API
 
-This walkthrough explains how to launch database services and manage the lifecycle of database services using the [SkySQL DBaaS REST API](https://apidocs.skysql.com/).
+This walkthrough explains how to launch database services and manage the lifecycle of database services using the [MariaDB Cloud DBaaS REST API](https://apidocs.skysql.com/).
 
 ## Launch a Service
 
 ### **Step 1: Generate API Key**
 
-1. Go to [SkySQL API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key
+1. Go to [MariaDB Cloud API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key
 
 2. Export the value from the token field to an environment variable $API_KEY
     

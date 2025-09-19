@@ -16,7 +16,7 @@
 
 2. Upload the dump. Transfer the data dump to an S3/GCS bucket under your control.
 
-3. Call the migration API. Refer to the [SkySQL Managed Migration Tutorial](../Backup%20and%20Restore/Restore%20From%20Your%20Own%20Bucket.md).
+3. Call the migration API. Refer to the [MariaDB Cloud Managed Migration Tutorial](../Backup%20and%20Restore/Restore%20From%20Your%20Own%20Bucket.md).
 
 4. Start Replication. To minimize downtime during migration, set up live replication from your source database to your MariaDB Cloud database. Refer to the [Replicating data from external DB Tutorial](./Replicating%20data%20from%20external%20DB.md).
     

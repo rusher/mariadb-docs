@@ -1,6 +1,6 @@
 # Reference Guides
 
-## [SkySQL REST API Guide](<./REST API Reference.md>)
+## [MariaDB Cloud REST API Guide](<./REST API Reference.md>)
 
 ## [Configurable MariaDB Server variables:](<../config/README.md>)
 
@@ -8,17 +8,17 @@
 
 -  [MariaDB Server With Replica(s)](<../config/Mariadb-Server-with-Replica(s).md>)
 
--  [SkySQL Intelligent Proxy Configuration](<../config/SkySQL-Intelligent-Proxy.md>)
+-  [MariaDB Cloud Intelligent Proxy Configuration](<../config/SkySQL-Intelligent-Proxy.md>)
 
-## [SkySQL supported Instance sizes](<./Instance Size Choices.md>)
+## [MariaDB Cloud supported Instance sizes](<./Instance Size Choices.md>)
 
-## [SkySQL supported Cloud regions](<./Region Choices.md>)
+## [MariaDB Cloud supported Cloud regions](<./Region Choices.md>)
 
-## [SkySQL supported Backup types](./Backup%20Support.md)
+## [MariaDB Cloud supported Backup types](./Backup%20Support.md)
 
 ## [Sky Stored Procedures](<./Sky Stored Procedures.md>)
 
-## [SkySQL Monitoring Metrics Reference](<./Monitoring Metrics Reference.md>)
+## [MariaDB Cloud Monitoring Metrics Reference](<./Monitoring Metrics Reference.md>)
 
 ## [MariaDB Server Reference Guide](https://mariadb.com/kb/en/documentation/)
 

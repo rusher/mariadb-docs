@@ -1,6 +1,6 @@
 # Infrastructure Upgrades
 
-SkySQL runs on modern Kubernetes infrastructure across AWS, GCP, and Azure cloud providers. To maintain security, performance, and compliance with cloud provider requirements, periodic infrastructure upgrades are essential for all running services.  
+MariaDB Cloud runs on modern Kubernetes infrastructure across AWS, GCP, and Azure cloud providers. To maintain security, performance, and compliance with cloud provider requirements, periodic infrastructure upgrades are essential for all running services.  
 Infrastructure upgrades are a critical component of maintaining a secure, performant, and compliant database service. By staying current with these upgrades, you ensure continued access to the latest features, security updates, and cloud provider support.
 
 ## Understanding Infrastructure vs Database Upgrades

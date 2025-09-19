@@ -77,7 +77,7 @@
   * [MariaDB Serverless Single Node](config/Mariadb-Serverless-Single-Node.md)
   * [MariaDB Server Single Node](config/Mariadb-Server-Single-Node.md)
   * [MariaDB Server With Replica(s)](config/Mariadb-Server-with-Replica\(s\).md)
-  * [SkySQL Intelligent Proxy](config/SkySQL-Intelligent-Proxy.md)
+  * [MariaDB Cloud Intelligent Proxy](config/SkySQL-Intelligent-Proxy.md)
 * [Using AWS/AZURE/GCP Private VPC Connections](<Using AWS Azure GCP private VPC connections/README.md>)
   * [Setting up AWS Private Link](<Using AWS Azure GCP private VPC connections/Setting up AWS Private Link.md>)
   * [Setting up GCP Private Service Connect](<Using AWS Azure GCP private VPC connections/Setting up GCP Private Service Connect.md>)

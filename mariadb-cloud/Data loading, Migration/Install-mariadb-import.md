@@ -1,6 +1,6 @@
 # Install mariadb-import
 
-SkySQL customers can import data into a MariaDB Cloud service using the `mariadb-import` utility:
+MariaDB Cloud customers can import data into a MariaDB Cloud service using the `mariadb-import` utility:
 
 * The `mariadb-import` utility provides a command-line interface (CLI)
 * The `mariadb-import` utility can import data from TSV and CSV files

@@ -1,6 +1,6 @@
 # MariaDB Cloud MCP Server
 
-The **SkySQL Model Context Protocol (MCP) Server** offers a powerful interface for managing your MariaDB Cloud database instances and interacting with **SkyAI Agents**. It bridges the gap between your databases and AI-powered development tools.
+The **MariaDB Cloud Model Context Protocol (MCP) Server** offers a powerful interface for managing your MariaDB Cloud database instances and interacting with **SkyAI Agents**. It bridges the gap between your databases and AI-powered development tools.
 
 ## What is MariaDB Cloud MCP Server?
 
@@ -56,7 +56,7 @@ It's easy to get up and running with the MariaDB Cloud MCP Server. Follow these 
 
 Once your MCP Server is set up, you can start using SkyAI Agents.
 
-Checking this demo video for further info: [SkySQL MCP Server Demo](https://www.youtube.com/watch?v=S5SR9qfXOBs&t=1s)
+Checking this demo video for further info: [MariaDB Cloud MCP Server Demo](https://www.youtube.com/watch?v=S5SR9qfXOBs&t=1s)
 
 ---
 

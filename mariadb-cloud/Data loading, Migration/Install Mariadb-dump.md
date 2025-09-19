@@ -1,6 +1,6 @@
 # Install mariadb-dump
 
-SkySQL customers can manually create a backup of a MariaDB Cloud service using the `mariadb-dump` utility:
+MariaDB Cloud customers can manually create a backup of a MariaDB Cloud service using the `mariadb-dump` utility:
 
 * The `mariadb-dump` utility provides a command-line interface (CLI)
 * The `mariadb-dump` utility is available for Linux and Windows

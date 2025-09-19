@@ -1,6 +1,6 @@
 # Support-Assisted Data Import
 
-SkySQL customers can receive assistance when importing data into a MariaDB Cloud service:
+MariaDB Cloud customers can receive assistance when importing data into a MariaDB Cloud service:
 
 -  Many file formats are supported
 - Data of large size can be imported efficiently

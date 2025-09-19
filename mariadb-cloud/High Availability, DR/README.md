@@ -94,6 +94,6 @@ One effective strategy to mitigate such risks is to replicate data to a data cen
 *Failover when entire region becomes unavailable*
 
 
-SkySQL empowers users to configure “external” replicas that can run anywhere, offering flexibility and resilience.
+MariaDB Cloud empowers users to configure “external” replicas that can run anywhere, offering flexibility and resilience.
 
 To facilitate this, MariaDB Cloud provides several built-in stored procedures for configuring both “outbound” and “inbound” replication to any compatible MariaDB or MySQL server environment. This flexibility allows users to tailor their disaster recovery strategy based on their specific needs, whether replicating across regions, cloud providers, or maintaining self-managed standby environments.

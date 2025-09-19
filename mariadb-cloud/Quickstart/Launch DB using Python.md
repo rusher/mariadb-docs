@@ -6,7 +6,7 @@ You need to configure the following environment variables: \* `API_KEY` \* `SKYS
 
 ### **Step 1: Generate API Key**
 
-1. Go to [SkySQL API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key.
+1. Go to [MariaDB Cloud API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key.
 2.  Export the value from the token field to an environment variable API\_KEY:
 
     ```bash

@@ -1,6 +1,6 @@
 # Serverless
 
-SkySQL Serverless is the first true serverless database solution for the MySQL and MariaDB ecosystem, uniquely built to meet the dynamic demands of modern applications. MariaDB Cloud Serverless combines instant scalability with cost efficiency, scaling down to zero when idle—saving you from paying for unused capacity. When workloads resume, Serverless service is ready in milliseconds, ensuring a seamless, uninterrupted experience for applications and users.
+MariaDB Cloud Serverless is the first true serverless database solution for the MySQL and MariaDB ecosystem, uniquely built to meet the dynamic demands of modern applications. MariaDB Cloud Serverless combines instant scalability with cost efficiency, scaling down to zero when idle—saving you from paying for unused capacity. When workloads resume, Serverless service is ready in milliseconds, ensuring a seamless, uninterrupted experience for applications and users.
 
 ### True Serverless Experience
 - **Instant Launch**: Databases ready in milliseconds using pre-fabricated micro databases
@@ -28,13 +28,13 @@ Every MariaDB Cloud account includes a perpetually free serverless database perf
 **Specifications:**
 - 0.5 vCPU baseline
 - 2GB memory baseline
-- Auto-scaling up to 2 SCUs (SkySQL Compute Units)
+- Auto-scaling up to 2 SCUs (MariaDB Cloud Compute Units)
 - No time limits or restrictions
 
 ## Architecture Highlights
 
 ### Compute-Storage Approach
-SkySQL takes a different approach from services like AWS Aurora:
+MariaDB Cloud takes a different approach from services like AWS Aurora:
 - **Preserves Open Source**: No modifications to the mature InnoDB storage engine
 - **Native Kubernetes**: Uses standard Kubernetes volume management
 - **No Hidden Costs**: Transparent pricing without surprise IOPS charges
@@ -51,7 +51,7 @@ SkySQL takes a different approach from services like AWS Aurora:
 
 ## Supported Workloads
 
-SkySQL Serverless is designed to handle diverse workload types:
+MariaDB Cloud Serverless is designed to handle diverse workload types:
 
 ### Transactional Workloads (OLTP)
 - High-frequency, low-latency operations

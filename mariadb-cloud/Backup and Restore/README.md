@@ -1,6 +1,6 @@
 # Backup and restore
 
-### **SkySQL Snapshot Backups**
+### **MariaDB Cloud Snapshot Backups**
 
 <details>
 
@@ -12,7 +12,7 @@
 
 **Snapshot Backup Examples**
 
-SkySQL supports database snapshot backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a snapshot backup using the MariaDB Cloud API.
+MariaDB Cloud supports database snapshot backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a snapshot backup using the MariaDB Cloud API.
 
 * \[Examples]\(Snapshot Backup Examples.md)
 
@@ -38,7 +38,7 @@ _**Important:**_ Database snapshots are deleted immediately upon service deletio
 
 \#### Full (physical) Backup Examples
 
-SkySQL supports database physical backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a physical backup using the MariaDB Cloud API.
+MariaDB Cloud supports database physical backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a physical backup using the MariaDB Cloud API.
 
 * \[Examples]\(Physical Backup Examples.md)
 
@@ -62,7 +62,7 @@ SkySQL supports database physical backups either on-demand or according to a pre
 
 **Incremental Backup Examples**
 
-SkySQL supports database incremental backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule an incremental backup using the MariaDB Cloud API.
+MariaDB Cloud supports database incremental backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule an incremental backup using the MariaDB Cloud API.
 
 * \[Examples]\(Incremental Backup Examples.md)
 
@@ -78,7 +78,7 @@ SkySQL supports database incremental backups either on-demand or according to a 
 
 #### Logical Backup Examples
 
-SkySQL supports database logical backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a logical backup using the MariaDB Cloud API.
+MariaDB Cloud supports database logical backups either on-demand or according to a pre-established schedule. Below are examples of how to schedule a logical backup using the MariaDB Cloud API.
 
 * \[Examples]\(Logical Backup Examples.md)
 
@@ -131,7 +131,7 @@ Users can instruct the restore of their MariaDB Cloud Database from their own Ma
 
 ### **List Restore Schedules**
 
-SkySQL Users can fetch their already existing database restore schedules using the backup API. Check the provided API examples for details.
+MariaDB Cloud Users can fetch their already existing database restore schedules using the backup API. Check the provided API examples for details.
 
 #### Restore List Examples
 
@@ -139,7 +139,7 @@ SkySQL Users can fetch their already existing database restore schedules using t
 
 ### **Create a Restore**
 
-SkySQL Users can restore their databases using their own MariaDB Cloud managed backup storage or using an external storage they own. Check the provided service API examples for details.
+MariaDB Cloud Users can restore their databases using their own MariaDB Cloud managed backup storage or using an external storage they own. Check the provided service API examples for details.
 
 #### Database Restore Examples
 
@@ -147,7 +147,7 @@ SkySQL Users can restore their databases using their own MariaDB Cloud managed b
 
 ### **Delete Restore Schedule**
 
-SkySQL Users can delete their already defined database restore schedules with the provided service API.
+MariaDB Cloud Users can delete their already defined database restore schedules with the provided service API.
 
 #### Delete Restore Examples
 
@@ -165,5 +165,5 @@ When restoring from a logical dump in MariaDB:
 
 ## Limitations
 
-* Currently, MariaDB Cloud services deployed in Azure can only be backed up and restored using \[SkySQL Snapshots]\(Snapshot Backup Examples.md).
+* Currently, MariaDB Cloud services deployed in Azure can only be backed up and restored using \[MariaDB Cloud Snapshots]\(Snapshot Backup Examples.md).
 * MariaDB Cloud Managed backups can only be restored within the same cloud provider. If you need to restore to a MariaDB Cloud service hosted on a different cloud provider, you must export your backup to S3 or GCS storage and follow the steps described \[here]\(Restore From Your Own Bucket.md).

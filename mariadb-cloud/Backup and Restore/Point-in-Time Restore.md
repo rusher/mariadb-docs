@@ -32,7 +32,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/restores' \
 }'
 ```
 
-* API\_KEY : SKYSQL API KEY, see [SkySQL API Keys](https://app.skysql.com/user-profile/api-keys/)
+* API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 * SERVICE\_ID : MariaDB Cloud service identifier, format dbtxxxxxx. This is your restore target service
 * BACKUP\_SOURCE\_SERVICE\_ID: MariaDB Cloud service identifier, format dbtxxxxxx. This is your backup source service id
 * You can fetch the MariaDB Cloud service identifier from the Fully Qualified Domain Name (FQDN) of your service. For example: in dbpgf17106534.sysp0000.db2.skysql.com, 'dbpgf17106534' is the service ID. You will find the FQDN in the [Connect window](https://app.skysql.com/dashboard)

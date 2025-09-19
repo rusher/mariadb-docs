@@ -1,6 +1,6 @@
 # Billing
 
-Billing is associated with a SkySQL ID.
+Billing is associated with a MariaDB Cloud ID.
 
 For pricing information see "[Pricing](<../Billing and Power Tier/Pricing.md>)" .
 

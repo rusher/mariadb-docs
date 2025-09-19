@@ -1,6 +1,6 @@
 # Import CSV data
 
-SkySQL customers can import data into a MariaDB Cloud service using the `LOAD DATA LOCAL INFILE` SQL statement:
+MariaDB Cloud customers can import data into a MariaDB Cloud service using the `LOAD DATA LOCAL INFILE` SQL statement:
 
 - The `LOAD DATA LOCAL INFILE` statement can import data from TSV and CSV files
 - The `LOAD DATA LOCAL INFILE` statement can be executed by any client or connector

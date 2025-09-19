@@ -15,7 +15,7 @@ To make requests to the API, you must authenticate using an **API key**.
 
 1.  **Get an API Key**
 
-      * Go to: [SkySQL API Key Management](https://app.skysql.com/user-profile/api-keys)
+      * Go to: [MariaDB Cloud API Key Management](https://app.skysql.com/user-profile/api-keys)
       * Generate a new API key.
 
 2.  **Include the key in your request headers:**
@@ -256,4 +256,4 @@ A successful response returns a structured JSON object:
 # Useful Links
 
   * **API Reference:** [SkyAI Agent API Docs](https://apidocs.skysql.com/)
-  * **SkySQL Console:** [SkySQL Portal](https://app.skysql.com)
+  * **MariaDB Cloud Console:** [MariaDB Cloud Portal](https://app.skysql.com)

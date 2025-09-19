@@ -32,9 +32,9 @@ Follow these steps:
 3. **Import the Dumps into SkySQL**: Import the logical dumps (SQL files) into your MariaDB Cloud database, ensuring to load the user and grant dumps after the main dump.
 
     ```bash
-    mariadb -u [SkySQL username] -p -h [SkySQL hostname] --port 3306 --ssl-verify-server-cert < dump.sql
-    mariadb -u [SkySQL username] -p -h [SkySQL hostname] --port 3306 --ssl-verify-server-cert < users.sql
-    mariadb -u [SkySQL username] -p -h [SkySQL hostname] --port 3306 --ssl-verify-server-cert < grants.sql
+    mariadb -u [MariaDB Cloud username] -p -h [MariaDB Cloud hostname] --port 3306 --ssl-verify-server-cert < dump.sql
+    mariadb -u [MariaDB Cloud username] -p -h [MariaDB Cloud hostname] --port 3306 --ssl-verify-server-cert < users.sql
+    mariadb -u [MariaDB Cloud username] -p -h [MariaDB Cloud hostname] --port 3306 --ssl-verify-server-cert < grants.sql
     ```
 
 If you encounter an error while importing your users, you may need to uninstall the `simple_password_check` plugin on your MariaDB Cloud instance.

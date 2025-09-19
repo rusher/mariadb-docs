@@ -4,7 +4,7 @@ This document provides a comprehensive technical overview of MariaDB Cloud Serve
 
 ## Design Philosophy
 
-SkySQL Serverless is built on the principle: **"Don't change what works"**. Instead of re-architecting the database engine like other cloud providers, MariaDB Cloud leverages cloud-native techniques to achieve serverless capabilities while preserving the mature, open-source database engine.
+MariaDB Cloud Serverless is built on the principle: **"Don't change what works"**. Instead of re-architecting the database engine like other cloud providers, MariaDB Cloud leverages cloud-native techniques to achieve serverless capabilities while preserving the mature, open-source database engine.
 
 ### Core Principles
 
@@ -42,7 +42,7 @@ The proxy tracks and preserves:
 
 ### 2. Kubernetes Orchestration
 
-SkySQL extends Kubernetes with custom controllers for database-specific operations:
+MariaDB Cloud extends Kubernetes with custom controllers for database-specific operations:
 
 #### Custom Resource Definitions (CRDs)
 - **DatabaseService**: Defines serverless database configurations
@@ -74,7 +74,7 @@ When a user requests a database:
 
 ### 4. Auto-Scaling Engine
 
-SkySQL implements sophisticated auto-scaling across multiple dimensions:
+MariaDB Cloud implements sophisticated auto-scaling across multiple dimensions:
 
 #### Vertical Scaling Algorithm
 ```
@@ -164,7 +164,7 @@ For horizontal scaling, MariaDB Cloud implements transparent live migrations:
 ## Storage Management
 
 ### Auto-Scaling Storage
-SkySQL monitors and scales storage automatically:
+MariaDB Cloud monitors and scales storage automatically:
 
 #### Scaling Thresholds
 - **Small Volumes** (< 100GB): Scale at 60% capacity
@@ -177,7 +177,7 @@ SkySQL monitors and scales storage automatically:
 - **Block Storage Integration**: Currently uses cloud provider block storage (AWS EBS, Azure Disk, Google Persistent Disk)
 
 ### Future Storage Innovations
-SkySQL is evaluating distributed storage solutions:
+MariaDB Cloud is evaluating distributed storage solutions:
 - **Ceph/Rook Integration**: Self-managed distributed storage
 - **Multi-Cloud Storage**: Storage spanning multiple cloud providers
 - **Performance Optimization**: Custom storage optimizations for database workloads

@@ -3,7 +3,7 @@
 SkyDBA is a "Fractional" DBA Service, a cost-effective solution for businesses that need database administration but do not require a full-time database administrator. This service provides access to a team of experienced database administrators on a part-time basis. Whether it's for routine maintenance, troubleshooting, or strategic advice, SkyDBA's Fractional DBA Service ensures that expert assistance is just a message away. This approach not only saves the expense of a full-time employee but also provides a higher level of service due to the collective knowledge and experience of the SkyDBA team.
 
 !!! Note
-    SkyDBA is an optional service that you can purchase. You can use this service regardless of the Tier (Foundation or Power) used to deploy DB services. For more information, please contact [SkySQL support](mailto:support@skysql.com) 
+    SkyDBA is an optional service that you can purchase. You can use this service regardless of the Tier (Foundation or Power) used to deploy DB services. For more information, please contact [MariaDB Cloud support](mailto:support@skysql.com) 
 
 
 Here is what you can expect from this “add-on” service. 

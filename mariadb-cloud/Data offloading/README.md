@@ -138,7 +138,7 @@ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 
 ## **3. Exporting Data Using MariaDB Cloud Backup Service API to S3 or GCS Bucket**
 
-The [SkySQL Backup service API](<../Backup and Restore/>) allows you to perform logical and physical dumps of your MariaDB Cloud databases to external storage buckets such as Amazon S3 or Google Cloud Storage (GCS).
+The [MariaDB Cloud Backup service API](<../Backup and Restore/>) allows you to perform logical and physical dumps of your MariaDB Cloud databases to external storage buckets such as Amazon S3 or Google Cloud Storage (GCS).
 
 ### **Prerequisites**
 

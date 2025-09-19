@@ -1,5 +1,5 @@
 # Setup Global Replication
-SkySQL offers a robust platform for managing databases in the cloud and supports Global Replication for various use cases including disaster recovery, cross-region failover and global distribution of data. In this guide, we’ll explore how to automate the creation, restoration and replication of MariaDB Cloud database services for global availability using the MariaDB Cloud API. We will use the following MariaDB Cloud resources for the setup:
+MariaDB Cloud offers a robust platform for managing databases in the cloud and supports Global Replication for various use cases including disaster recovery, cross-region failover and global distribution of data. In this guide, we’ll explore how to automate the creation, restoration and replication of MariaDB Cloud database services for global availability using the MariaDB Cloud API. We will use the following MariaDB Cloud resources for the setup:
 
 - Provisioning APIs: To launch primary and secondary MariaDB Cloud services.
 - Backup APIs: To backup the primary service and restore the data to the secondary service.
