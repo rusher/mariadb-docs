@@ -111,8 +111,6 @@ kind: Secret
 type: Opaque
 metadata:
   name: mariadb-nslcd-secret
-  labels:
-    enterprise.mariadb.com/watch: ""
 stringData:
   nslcd.conf: |
     # /etc/nslcd.conf: Configuration file for nslcd(8)
@@ -179,11 +177,11 @@ metadata:
 spec:
   rootPasswordSecretKeyRef:
     name: mariadb
-    key: password
+    key: root-password
 
   username: mariadb
   passwordSecretKeyRef:
-    name: mariadb-password
+    name: mariadb
     key: password
     generate: true
   database: mariadb
