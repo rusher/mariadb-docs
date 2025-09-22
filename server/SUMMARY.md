@@ -1353,6 +1353,7 @@
       * [Atomic DDL](reference/sql-statements/data-definition/atomic-ddl.md)
       * [CONSTRAINT](reference/sql-statements/data-definition/constraint.md)
       * [RENAME TABLE](reference/sql-statements/data-definition/rename-table.md)
+      * [Renaming Databases](reference/sql-statements/data-definition/renaming-databases.md)
       * [ALTER](reference/sql-statements/data-definition/alter/README.md)
         * [ALTER DATABASE](reference/sql-statements/data-definition/alter/alter-database.md)
         * [ALTER FUNCTION](reference/sql-statements/data-definition/alter/alter-function.md)
