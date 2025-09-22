@@ -5,7 +5,7 @@ There is no `RENAME DATABASE` statement. To rename a database, use one of the fo
 ## Using RENAME TABLE
 
 {% hint style="danger" %}
-Use this procedure only if your tables have neither triggers nor views.
+Use this procedure only if your tables have neither triggers nor views or events.
 {% endhint %}
 
 To move your tables from a database named db1 to one named db2, run these statements:
