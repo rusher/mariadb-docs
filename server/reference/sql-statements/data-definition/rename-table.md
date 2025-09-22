@@ -26,23 +26,37 @@ CREATE TABLE new_table (...);
 RENAME TABLE old_table TO backup_table, new_table TO old_table;
 ```
 
+### Moving Tables to Another Database
+
 `tbl_name` can optionally be specified as `db_name`.`tbl_name`. See [Identifier Qualifiers](../../sql-structure/sql-language-structure/identifier-qualifiers.md). This allows to use `RENAME` to move a table from a database to another (as long as they are on the same filesystem):
 
 ```sql
 RENAME TABLE db1.t TO db2.t;
 ```
 
-Note that moving a table to another database is not possible if it has some [triggers](../../../server-usage/triggers-events/triggers/). Trying to do so produces the following error:
+#### Limitations of Moving Tables to Another Database
+
+{% hint style="warning" %}
+Note that moving a table to another database is not possible if it has [triggers](../../../server-usage/triggers-events/triggers/).&#x20;
+{% endhint %}
+
+Trying to do so produces the following error:
 
 ```sql
 ERROR 1435 (HY000): Trigger in wrong schema
 ```
 
-Also, views cannot be moved to another database:
+{% hint style="warning" %}
+Views cannot be moved to another database.
+{% endhint %}
+
+Trying to do so produces the following error:
 
 ```sql
 ERROR 1450 (HY000): Changing schema from 'old_db' to 'new_db' is not allowed.
 ```
+
+### Renaming Multiple Tables at Once
 
 Multiple tables can be renamed in a single statement. The presence or absence of the optional `S` (`RENAME TABLE` or `RENAME TABLES`) has no impact, whether a single or multiple tables are being renamed.
 
