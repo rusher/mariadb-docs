@@ -15,9 +15,11 @@ This statement renames one or more tables or [views](../../../server-usage/views
 
 ### IF EXISTS
 
-If this directive is used, one will not get an error if the table to be renamed doesn't exist.
+{% hint style="info" %}
+If this clause is used, you don't get an error if the table to be renamed doesn't exist.
+{% endhint %}
 
-The rename operation is done atomically, which means that no other session can access any of the tables while the rename is running. For example, if you have an existing table `old_table`, you can create another table`new_table` that has the same structure but is empty, and then replace the existing table with the empty one as follows (assuming that`backup_table` does not already exist):
+The rename operation is done atomically, which means that no other session can access any of the tables while the rename is running. For example, if you have an existing table `old_table`, you can create another table `new_table` that has the same structure but is empty, and then replace the existing table with the empty one as follows (assuming that `backup_table` does not already exist):
 
 ```sql
 CREATE TABLE new_table (...);
@@ -44,7 +46,9 @@ ERROR 1450 (HY000): Changing schema from 'old_db' to 'new_db' is not allowed.
 
 Multiple tables can be renamed in a single statement. The presence or absence of the optional `S` (`RENAME TABLE` or `RENAME TABLES`) has no impact, whether a single or multiple tables are being renamed.
 
+{% hint style="warning" %}
 If a `RENAME TABLE` renames more than one table and one renaming fails, all renames executed by the same statement are rolled back.
+{% endhint %}
 
 Renames are always executed in the specified order. Knowing this, it is also possible to swap two tables' names:
 
@@ -64,12 +68,21 @@ Executing the `RENAME TABLE` statement requires the [DROP](../account-management
 
 ### Atomic RENAME TABLE
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+`RENAME TABLE` is atomic for most storage engines, including InnoDB, MyRocks, MyISAM and Aria ([MDEV-23842](https://jira.mariadb.org/browse/MDEV-23842)).
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), `RENAME TABLE` is atomic for most engines, including InnoDB, MyRocks, MyISAM and Aria ([MDEV-23842](https://jira.mariadb.org/browse/MDEV-23842)).\
-This means that if there is a crash (server down or power outage) during `RENAME TABLE`, all tables will revert to their original names and any changes to trigger files will be reverted.\
-In older MariaDB version there was a small chance that, during a server crash happening in the middle of `RENAME TABLE`, some tables could have been renamed (in the worst case partly) while others would not be renamed.\
+This means that if there is a crash (server down or power outage) during `RENAME TABLE`, all tables  revert to their original names and any changes to trigger files are reverted.\
+\
 See [Atomic DDL](atomic-ddl.md) for more information.
+{% endtab %}
+
+{% tab title="< 10.6.1" %}
+`RENAME TABLE` is **not** atomic.
+
+There is a small chance that, during a server crash happening in the middle of `RENAME TABLE`, some tables could have been renamed (in the worst case partly) while others would not be renamed.
+{% endtab %}
+{% endtabs %}
 
 {% include "../../../.gitbook/includes/license-gplv2-fill-help-tables.md" %}
 
