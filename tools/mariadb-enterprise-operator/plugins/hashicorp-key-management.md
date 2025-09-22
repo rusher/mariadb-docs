@@ -268,9 +268,17 @@ Make sure when rotating the token, to do so in advance of the token expiring.
     ```
 
 2. **Restart The MariaDB StatefulSet.**
-    MariaDB will continue using the old token until the StatefulSet is restarted. If the name of the `MariaDB` CR  is `mariadb` (as per the example above), then:
-    ```sh
-    kubectl rollout restart statefulset mariadb
+    MariaDB will continue using the old token until the Pods are restarted. You can add the following annotation to the Pods in order to trigger an update, see the [updates documentation](https://mariadb.com/docs/tools/mariadb-enterprise-operator/updates) for further detail: 
+    ```yaml
+    apiVersion: k8s.mariadb.com/v1alpha1
+    kind: MariaDB
+    metadata:
+      name: mariadb
+    spec:
+      ...
+      podMetadata:
+        annotations:
+          enterprise.mariadb.com/restarted-at: "2025-09-19T12:54:10Z"
     ```
 
 ## Known Issues/Limitations
