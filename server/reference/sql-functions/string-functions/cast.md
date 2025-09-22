@@ -34,7 +34,7 @@ This introduced an incompatibility with previous versions of MariaDB, and all ve
 
 ## Examples
 
-Simple casts:
+### Simple Casts
 
 ```sql
 SELECT CAST("abc" AS BINARY);
@@ -120,7 +120,7 @@ Warning (Code 1292): Truncated incorrect INTEGER value: '\xAA'
 Warning (Code 1292): Truncated incorrect INTEGER value: '\xAA'
 ```
 
-Casting to intervals:
+### Casting to Intervals
 
 ```sql
 SELECT CAST(2019-01-04 AS INTERVAL DAY_SECOND(2)) AS "Cast";
