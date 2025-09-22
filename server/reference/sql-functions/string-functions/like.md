@@ -106,7 +106,7 @@ SELECT * FROM t1 where d like "t%";
 +----------+
 ```
 
-Use [collate](collate/) to specify a binary collation, forcing case-sensitive matches:
+Use [collate](../secondary-functions/information-functions/collation.md) to specify a binary collation, forcing case-sensitive matches:
 
 ```sql
 SELECT * FROM t1 WHERE d like "t%" COLLATE latin1_bin;
