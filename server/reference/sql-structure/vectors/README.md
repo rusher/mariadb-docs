@@ -19,8 +19,8 @@ description: >-
 [vector-system-variables.md](vector-system-variables.md)
 {% endcontent-ref %}
 
-{% content-ref url="vector-functions/" %}
-[vector-functions](vector-functions/)
+{% content-ref url="../../sql-functions/vector-functions/" %}
+[vector-functions](../../sql-functions/vector-functions/)
 {% endcontent-ref %}
 
 {% content-ref url="../../data-types/numeric-data-types/vector.md" %}

@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/pBQsCgBA6SJpi0m3pZuk/" %}
 
-{% include "../../../../.gitbook/includes/vectors-are-available-from-....md" %}
+{% include "../../../.gitbook/includes/vectors-are-available-from-....md" %}
 
 ## Syntax
 
@@ -16,7 +16,7 @@ VEC_DISTANCE_EUCLIDEAN(v, s)
 
 Vectors must be of the same length, a distance between two vectors of different lengths is not defined and `VEC_Distance_Euclidean` returns  `NULL` in such cases.
 
-If the vector index was not built for the euclidean function (see [CREATE TABLE with Vectors](../create-table-with-vectors.md)), the index is not used, and a full table scan performed instead. The [VEC\_DISTANCE](vector-functions-vec_distance.md) function is a generic function that behaves either as `VEC_DISTANCE_EUCLIDEAN` or [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md), depending on the underlying index type.
+If the vector index was not built for the euclidean function (see [CREATE TABLE with Vectors](../../sql-structure/vectors/create-table-with-vectors.md)), the index is not used, and a full table scan performed instead. The [VEC\_DISTANCE](vector-functions-vec_distance.md) function is a generic function that behaves either as `VEC_DISTANCE_EUCLIDEAN` or [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md), depending on the underlying index type.
 
 ## Example
 
@@ -55,8 +55,8 @@ SELECT id FROM v
 
 * [VEC\_DISTANCE](vector-functions-vec_distance.md)
 * [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md)
-* [Vector Overview](../vector-overview.md)
-* [CREATE TABLE with Vectors](../create-table-with-vectors.md)
+* [Vector Overview](../../sql-structure/vectors/vector-overview.md)
+* [CREATE TABLE with Vectors](../../sql-structure/vectors/create-table-with-vectors.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

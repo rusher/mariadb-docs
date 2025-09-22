@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/pBQsCgBA6SJpi0m3pZuk/" %}
 
-{% include "../../../../.gitbook/includes/vectors-are-available-from-....md" %}
+{% include "../../../.gitbook/includes/vectors-are-available-from-....md" %}
 
 ## Syntax
 

@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/pBQsCgBA6SJpi0m3pZuk/" %}
 
-{% include "../../../../.gitbook/includes/vectors-are-available-from-....md" %}
+{% include "../../../.gitbook/includes/vectors-are-available-from-....md" %}
 
 ## Syntax
 
@@ -57,8 +57,8 @@ SELECT id FROM v
 
 * [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md)
 * [VEC\_DISTANCE\_EUCLIDEAN](vec_distance_euclidean.md)
-* [Vector Overview](../vector-overview.md)
-* [CREATE TABLE with Vectors](../create-table-with-vectors.md)
+* [Vector Overview](../../sql-structure/vectors/vector-overview.md)
+* [CREATE TABLE with Vectors](../../sql-structure/vectors/create-table-with-vectors.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

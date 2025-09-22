@@ -68,7 +68,7 @@ INSERT INTO v VALUES
 
 ## Querying
 
-For vector indexes built with the `euclidean` function, [VEC\_DISTANCE\_EUCLIDEAN](vector-functions/vec_distance_euclidean.md) can be used. It calculates a Euclidean (L2) distance between two points:
+For vector indexes built with the `euclidean` function, [VEC\_DISTANCE\_EUCLIDEAN](../../sql-functions/vector-functions/vec_distance_euclidean.md) can be used. It calculates a Euclidean (L2) distance between two points:
 
 ```sql
 SELECT id FROM v ORDER BY 
@@ -103,13 +103,13 @@ SELECT id FROM v
 +----+
 ```
 
-For vector indexes built with the `cosine` function, [VEC\_DISTANCE\_COSINE](vector-functions/vec_distance_cosine.md) can be used. It calculates a [Cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity#Cosine_distance) between two vectors:
+For vector indexes built with the `cosine` function, [VEC\_DISTANCE\_COSINE](../../sql-functions/vector-functions/vec_distance_cosine.md) can be used. It calculates a [Cosine distance](https://en.wikipedia.org/wiki/Cosine_similarity#Cosine_distance) between two vectors:
 
 ```sql
 SELECT VEC_DISTANCE_COSINE(VEC_FROMTEXT('[1,2,3]'), VEC_FROMTEXT('[3,5,7]'));
 ```
 
-The [VEC\_DISTANCE](vector-functions/vector-functions-vec_distance.md) function is a generic function that behaves either as [VEC\_DISTANCE\_EUCLIDEAN](vector-functions/vec_distance_euclidean.md) or [VEC\_DISTANCE\_COSINE](vector-functions/vec_distance_cosine.md), depending on the underlying index type:
+The [VEC\_DISTANCE](../../sql-functions/vector-functions/vector-functions-vec_distance.md) function is a generic function that behaves either as [VEC\_DISTANCE\_EUCLIDEAN](../../sql-functions/vector-functions/vec_distance_euclidean.md) or [VEC\_DISTANCE\_COSINE](../../sql-functions/vector-functions/vec_distance_cosine.md), depending on the underlying index type:
 
 ```sql
 SELECT id FROM v 
