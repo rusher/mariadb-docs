@@ -24,7 +24,7 @@ For example, to take a backup of any database that starts with the string `app1_
 ```
 $ mariadb-backup --backup \
    --target-dir=/var/mariadb/backup/ \
-   --databases='app1_*' --tables='tab_*' \
+   --databases='app1 app2' --tables='tab_[0-9]+' \
    --user=mariadb-backup --password=mypassword
 ```
 
