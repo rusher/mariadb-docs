@@ -17,7 +17,7 @@ This is a list of [system variables](../server-system-variables.md) that have be
 | [server\_uid](../server-system-variables.md#server_uid)                                                                                  | [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-19-release-notes) |
 | [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode)                       | [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes)     |
 
-For system variables that have been removed or deprecated, see [Upgrading from MariaDB 10.5 to MariaDB 10.6](../../../../server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/upgrading-from-mariadb-10-5-to-mariadb-10-6.md).
+For system variables that have been removed or deprecated, see [Upgrading from MariaDB 10.5 to MariaDB 10.6](../../../../server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6.md).
 
 ## See Also
 
