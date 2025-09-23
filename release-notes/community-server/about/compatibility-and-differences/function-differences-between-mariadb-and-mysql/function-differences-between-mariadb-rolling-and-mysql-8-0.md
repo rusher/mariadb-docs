@@ -1,6 +1,6 @@
 # Function Differences Between MariaDB Rolling and MySQL 8.0
 
-The following is a list of all function differences between [MariaDB 11.8](../../../mariadb-11-8-series/what-is-mariadb-118.md) Rolling Release, and MySQL 8.0. It is based on functions available in the MySQL 8.0.39 and the [MariaDB 11.8.0](../../../mariadb-11-8-series/mariadb-11-8-0-release-notes.md) releases. For a more complete list of differences, see [Incompatibilities and Feature Differences Between MariaDB Rolling and MySQL 8.0](../incompatibilities-and-feature-differences-between-mariadb-rolling-and-mysql.md)
+The following is a list of all function differences between [MariaDB 12.1](../../../release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md) Rolling Release, and MySQL 8.0. It is based on functions available in the MySQL 8.0.39 and the [MariaDB 12.1.1](../../../release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes.md) releases. For a more complete list of differences, see [Incompatibilities and Feature Differences Between MariaDB Rolling and MySQL 8.0](../incompatibilities-and-feature-differences-between-mariadb-rolling-and-mysql.md)
 
 ## Present in MariaDB Only
 
@@ -131,11 +131,11 @@ MySQL has removed the following functions in MySQL 8.0.
 
 ### Vectors
 
-* [VEC\_DISTANCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vector-functions-vec_distance)
-* [VEC\_DISTANCE\_COSINE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_distance_cosine)
-* [VEC\_DISTANCE\_EUCLIDEAN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_distance_euclidean)
-* [VEC\_FromText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_fromtext)
-* [VEC\_ToText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_totext)
+* [VEC\_DISTANCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vector-functions-vec_distance)
+* [VEC\_DISTANCE\_COSINE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_distance_cosine)
+* [VEC\_DISTANCE\_EUCLIDEAN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_distance_euclidean)
+* [VEC\_FromText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_fromtext)
+* [VEC\_ToText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_totext)
 
 ### Window Functions
 
@@ -203,8 +203,8 @@ MariaDB and MySQL have differing [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2O
 
 ## See Also
 
-* \[Incompatibilities and Feature Differences Between MariaDB Rolling and MySQL 8.0]\(Incompatibilities and Feature Differences Between MariaDB Rolling and MySQL 8.0)
-* [Function Differences Between MariaDB 11.4 and MySQL 8.0](function-differences-between-mariadb-11-4-and-mysql-8-0.md)
+* [Incompatibilities and Feature Differences Between MariaDB Rolling and MySQL 8.0](../incompatibilities-and-feature-differences-between-mariadb-rolling-and-mysql.md)
+* [Function Differences Between MariaDB 11.8 and MySQL 8.0](function-differences-between-mariadb-11.8-and-mysql-8.0.md)
 * [System Variable Differences Between MariaDB Rolling and MySQL 8.0](../system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-rolling-and-mysql-8-0.md)
 * [MariaDB versus MySQL - Compatibility](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/function-differences-between-mariadb-and-mysql/broken-reference/README.md)
 * [MariaDB versus MySQL - Features](../mariadb-vs-mysql-features.md)
