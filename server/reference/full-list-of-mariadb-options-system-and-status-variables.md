@@ -1098,7 +1098,7 @@
 * [Master\_gtid\_wait\_time](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#master_gtid_wait_time)
 * [Master\_gtid\_wait\_timeouts](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#master_gtid_wait_timeouts)
 * \--[master-host](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)
-* [master\_info\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#master_info_file)
+* [master\_info\_file](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#master_info_file)
 * \--[master-password](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#master-password)
 * \--[master-port](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#master-port)
 * \--[master-retry-count](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#master-retry-count)
