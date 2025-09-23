@@ -102,6 +102,10 @@ We also have several secondary rsync mirrors you can pull from. In many instance
 | United States  | rsync://rsync.osuosl.org/mariadb/                 |
 | Uruguay        | rsync://espejito.fder.edu.uy/mariadb/             |
 
+### The MariaDB Foundation mirrorbits system
+
+The MariaDB Foundation maintains a mirror manager system (see: [mirrorbits](https://mariadb.org/mirrorbits)). It is hosted by Hetzner in Germany, it is **not** available via `rsync` so you can't use it as a source for your mirror but you are encouraged to use it for your MariaDB installation and deployments. You can check the status of the service at https://mirror.mariadb.org/mirrorstats.
+
 ## Getting Added to the Mirror List
 
 Once you have initially mirrored the MariaDB release tree, please send an email to (mirror (at) mariadb \[dot] org) with the following information:
@@ -118,7 +122,7 @@ Thank you for volunteering to mirror MariaDB!
 
 ## Credits
 
-The primary MariaDB mirrors have been generously provided by the [Oregon State University Open Source Lab](https://osuosl.org) (at rsync.osuosl.org) and [NetCologne](https://www.netcologne.de) (at mirror.netcologne.de)
+The primary MariaDB mirrors have been generously provided by the [Oregon State University Open Source Lab](https://osuosl.org) (at rsync.osuosl.org) and [NetCologne](https://www.netcologne.de) (at mirror.netcologne.de).
 
 Other mirrors (list not necessarily complete) are listed below and can be selected on the [mariadb.org/download/](https://mariadb.org/download/) site:
 
