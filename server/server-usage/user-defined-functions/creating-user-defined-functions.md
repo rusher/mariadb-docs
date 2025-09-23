@@ -62,7 +62,7 @@ Used to add the argument to the current aggregate.
 
 ### x\_remove()
 
-Starting from [MariaDB 10.4](../../server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-4-to-mariadb-10-5.md), improves the support of [window functions](../../reference/sql-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](../../server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-4-to-mariadb-10-5.md), improves the support of [window functions](../../reference/sql-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 ### Description
 

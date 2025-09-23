@@ -12,7 +12,7 @@ This is a list of [system variables](../../server-system-variables.md) that have
 | [innodb\_snapshot\_isolation](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation)             | [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes) |
 | [optimizer\_max\_sel\_args](../../server-system-variables.md#optimizer_max_sel_args)                                                               | [MariaDB 11.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes) |
 
-For system variables that have been removed or deprecated, see [Upgrading from MariaDB 10.11 to MariaDB 11.0](../../../../../server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-11-to-mariadb-11-0.md).
+For system variables that have been removed or deprecated, see [Upgrading from MariaDB 10.11 to MariaDB 11.0](../../../../../server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-11-to-mariadb-11-0.md).
 
 ## See Also
 

@@ -7,7 +7,7 @@ This is a list of [system variables](../../server-system-variables.md) that have
 | [binlog\_alter\_two\_phase](../../../../standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase)     | [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)                                                                                                                                     |
 | [innodb\_log\_file\_buffering](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_file_buffering) | [MariaDB 10.8.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/broken-reference/README.md) |
 
-For system variables that have been removed or deprecated, see [Upgrading from MariaDB 10.7 to MariaDB 10.8](../../../../../server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-7-to-mariadb-10-8.md).
+For system variables that have been removed or deprecated, see [Upgrading from MariaDB 10.7 to MariaDB 10.8](../../../../../server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-7-to-mariadb-10-8.md).
 
 ## See Also
 
