@@ -1,6 +1,6 @@
 # Incompatibilities and Feature Differences Between MariaDB Rolling and MySQL 8.0
 
-MariaDB maintains high levels of compatibility with MySQL, and most applications that use MySQL will work seamlessly with MariaDB. However, take note of the following incompatibilities and feature differences between MariaDB Rolling Release and MySQL 8.0. It is based on the versions MySQL 8.0.36 and [MariaDB 11.8.0](../../mariadb-11-8-series/mariadb-11-8-0-release-notes.md). Note that MySQL 8 is an 'evergreen' release, so features may be added or removed in later releases.
+MariaDB maintains high levels of compatibility with MySQL, and most applications that use MySQL will work seamlessly with MariaDB. However, take note of the following incompatibilities and feature differences between MariaDB Rolling Release and MySQL 8.0. It is based on the versions MySQL 8.0.36 and [MariaDB 12.1.1](../../release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes.md). Note that MySQL 8 is an 'evergreen' release, so features may be added or removed in later releases.
 
 ## Storage Engines
 
@@ -22,13 +22,13 @@ In addition to the standard [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO
 The most notable [features available in MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-in-the-different-mariadb-releases/README.md), but not in MySQL, are:
 
 * [MariaDB Vectors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors) allow MariaDB to perform as a relational vector database.
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) is a standard part of MariaDB Server.
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) is a standard part of MariaDB Server.
 * [Temporal data tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables) in the form of:
   * [System-versioned tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables) (allow you to query and operate on historic data).
   * [Application-time periods](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods) (allow you to query and operate on a temporal range of data), including the [WITHOUT OVERLAPS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods#without-overlaps) clause.
   * [Bitemporal tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/bitemporal-tables) (which combine both system-versioning and application-time periods).
 * [DML-only flashback](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/flashback), allowing instances, databases or tables to be rolled back to an old snapshot.
-* [Oracle compatibility mode](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/broken-reference/README.md)
+* [Oracle compatibility mode](sql_modeoracle.md)
 * MariaDB supports [localization](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) in a number of additional languages: Bulgarian, Chinese, Georgian, Hindi, Serbian, and Ukrainian.
 * MariaDB has made [major improvements to the optimizer](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/broken-reference/README.md).
 * [Sequences](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences)
