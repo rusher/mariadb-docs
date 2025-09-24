@@ -2552,3 +2552,4 @@
   * [MariaDB Enterprise Operator 1.0.0](enterprise-operator/mariadb-enterprise-operator-1-0-0.md)
   * [MariaDB Enterprise Operator 25.08](enterprise-operator/mariadb-enterprise-operator-25-08.md)
 * [Test Page](test-page.md)
+* [Release Notes - MariaDB 12.2 Rolling Release](release-notes-mariadb-12.2-rolling-release.md)
