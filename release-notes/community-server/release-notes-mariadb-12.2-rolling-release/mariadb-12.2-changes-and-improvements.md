@@ -17,3 +17,5 @@ MariaDB 12.2 is a [rolling release](../about/release-model.md). It is an evoluti
 | Date        | Release        | Status  | Release Notes | Changelog |
 | ----------- | -------------- | ------- | ------------- | --------- |
 | 23 Sep 2025 | MariaDB 12.2.0 | Preview |               |           |
+
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
