@@ -1362,6 +1362,7 @@
       * [MariaDB 5.1.41 Changelog](community-server/changelogs/changelogs-mariadb-51-series/mariadb-5141-changelog.md)
       * [MariaDB 5.1.39 Changelog](community-server/changelogs/changelogs-mariadb-51-series/mariadb-5139-changelog.md)
       * [MariaDB 5.1.38 Changelog](community-server/changelogs/changelogs-mariadb-51-series/mariadb-5138-changelog.md)
+  * [MariaDB 12.2 Changes & Improvements](community-server/mariadb-12.2-changes-and-improvements.md)
 * [MaxScale Release Notes](maxscale/README.md)
   * [MariaDB MaxScale 25.01 Release Notes](maxscale/25.01/README.md)
     * [MaxScale 25.01.4 Release Notes](maxscale/25.01/25.01.4.md)
