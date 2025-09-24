@@ -8,7 +8,7 @@ The most recent release of [MariaDB 10.10](what-is-mariadb-1010.md) is:[**MariaD
 
 ## Upgrading
 
-* See [Upgrading Between Major MariaDB Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions) and [Upgrading from MariaDB 10.9 to MariaDB 10.10](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/upgrading-from-mariadb-108-to-mariadb-109/README.md).
+* See [Upgrading Between Major MariaDB Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/platform-specific-upgrade-guides/upgrading-on-linux/upgrading-between-major-mariadb-versions) and [Upgrading from MariaDB 10.9 to MariaDB 10.10](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/upgrading-from-mariadb-108-to-mariadb-109/README.md).
 
 ## New Features & Improvements
 

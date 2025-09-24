@@ -10,7 +10,7 @@ This list includes all features since the previous long-term release, [MariaDB 1
 
 * Note that if you are using system versioned tables, all rows and indexes has to be updated in these to use the extended timestamp range ('`2106-02-07 06:28:15 UTC`'). Upgrading to 11.8 can take a **long time** if you have many rows in your system versioned tables!
 * If you are not using system versioned tables and you are upgrading from 10.0 and up, the upgrade should just take a few seconds.
-* See Also: [Upgrading Between Major MariaDB Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions) and [Upgrading from MariaDB 11.4 to MariaDB 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-4-to-mariadb-11-8).
+* See Also: [Upgrading Between Major MariaDB Versions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/platform-specific-upgrade-guides/upgrading-on-linux/upgrading-between-major-mariadb-versions) and [Upgrading from MariaDB 11.4 to MariaDB 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-community-server-upgrade-paths/upgrading-from-mariadb-11-4-to-mariadb-11-8).
 
 ## Downgrading
 
@@ -20,9 +20,9 @@ This list includes all features since the previous long-term release, [MariaDB 1
 
 ### Vectors
 
-* [Vector datatype and vector indexing](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/vector)
-* Functions [VEC\_FromText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_fromtext) and [VEC\_ToText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_totext)
-* Functions [VEC\_DISTANCE\_COSINE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_distance_cosine), [VEC\_DISTANCE\_EUCLIDEAN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_distance_euclidean), [VEC\_DISTANCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vector-functions-vec_distance) for calculating either a Euclidean or Cosine distance between two vectors. The last one automatically uses Euclidean or Cosine, depending on the underlying index type ([MDEV-35450](https://jira.mariadb.org/browse/MDEV-35450))
+* [Vector datatype and vector indexing](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector)
+* Functions [VEC\_FromText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_fromtext) and [VEC\_ToText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_totext)
+* Functions [VEC\_DISTANCE\_COSINE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_distance_cosine), [VEC\_DISTANCE\_EUCLIDEAN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_distance_euclidean), [VEC\_DISTANCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vector-functions-vec_distance) for calculating either a Euclidean or Cosine distance between two vectors. The last one automatically uses Euclidean or Cosine, depending on the underlying index type ([MDEV-35450](https://jira.mariadb.org/browse/MDEV-35450))
 * Vector indexes can use x86\_64 (AVX2 and AVX512), aarch64 neon ([MDEV-34699](https://jira.mariadb.org/browse/MDEV-34699)) and Powerpc64 AltiVec ([MDEV-36184](https://jira.mariadb.org/browse/MDEV-36184)) SIMD instructions
 
 ### Character Sets

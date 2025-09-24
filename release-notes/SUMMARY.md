@@ -237,6 +237,7 @@
     * [Platform Deprecation Policy](community-server/about/platform-deprecation-policy.md)
     * [Feature Deprecation Policy](community-server/about/feature-deprecation-policy.md)
     * [Maintenance Policy](community-server/about/maintenance-policy.md)
+  * [Release Notes - MariaDB 12.2 Rolling Release](community-server/release-notes-mariadb-12.2-rolling-release.md)
   * [Release Notes - MariaDB 12.1 Rolling Releases](community-server/release-notes-mariadb-12.1-rolling-releases/README.md)
     * [MariaDB 12.1 Changes & Improvements](community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md)
     * [MariaDB 12.1.1 Release Notes](community-server/release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes.md)
@@ -2552,4 +2553,3 @@
   * [MariaDB Enterprise Operator 1.0.0](enterprise-operator/mariadb-enterprise-operator-1-0-0.md)
   * [MariaDB Enterprise Operator 25.08](enterprise-operator/mariadb-enterprise-operator-25-08.md)
 * [Test Page](test-page.md)
-* [Release Notes - MariaDB 12.2 Rolling Release](release-notes-mariadb-12.2-rolling-release.md)
