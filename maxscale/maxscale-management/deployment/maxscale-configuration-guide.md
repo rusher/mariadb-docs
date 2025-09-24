@@ -1601,12 +1601,15 @@ Deprecated since MariaDB MaxScale 22.08. See `admin_ssl_ca`.
 * Dynamic: No
 * Default: `""`
 
-The path to the TLS CA certificate in PEM format. If defined, the client
-certificate, if provided, will be validated against it. This parameter is
-optional starting with MaxScale 2.3.19.
+The path to a TLS CA certificate in PEM format.
 
-**NOTE** Up until MariaDB MaxScale 6, the parameter was called `admin_ssl_ca_cert`,
-which is still accepted as an alias for `admin_ssl_ca`.
+If defined, the certificate is used as an additional CA certificate for all
+outbound HTTP request that are done when e.g. `admin_oidc_url` is defined. This
+can be used when the OIDC server either uses self-signed certificates or the CA
+is not trusted by default by the operating system.
+
+This does not enable mTLS in the REST-API which means that client TLS
+certificates are not validated even if a CA is specified.
 
 #### `admin_ssl_version`
 
