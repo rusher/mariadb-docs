@@ -12,6 +12,11 @@ MariaDB 12.2 is a [rolling release](../about/release-model.md). It is an evoluti
 
 ## New Features
 
+### Compatibility features <a href="#compatibility-features" id="compatibility-features"></a>
+
+* [Optimizer hints](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints): \[NO\_]ROWID\_FILTER ([MDEV-36089](https://jira.mariadb.org/browse/MDEV-36089)), \[NO\_]INDEX\_MERGE ([MDEV-36125](https://jira.mariadb.org/browse/MDEV-36125))
+* Implicit query block names ([MDEV-37511](https://jira.mariadb.org/browse/MDEV-37511))
+
 ## List of All MariaDB 12.2 Releases
 
 | Date        | Release        | Status  | Release Notes | Changelog |
