@@ -210,7 +210,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 ## Upgrade Instructions <a href="#upgrade-instructions" id="upgrade-instructions"></a>
 
-* [Upgrade to MariaDB Enterprise Server 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrades/upgrade-to-mariadb-enterprise-server-11.8)
+* [Upgrade to MariaDB Enterprise Server 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-enterprise-server-upgrade-paths/mariadb-enterprise-server-11.8/upgrade-to-mariadb-enterprise-server-11.8)
 
 ## What's new in older release series <a href="#whats-new-in-older-release-series" id="whats-new-in-older-release-series"></a>
 
