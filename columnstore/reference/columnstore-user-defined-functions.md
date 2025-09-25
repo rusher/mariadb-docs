@@ -1,15 +1,15 @@
-# ColumnStore User-Defined Functions
+# ColumnStore User Defined Functions
 
 ## Introduction
 
 MariaDB provides extensibility support through user defined functions (UDFs). For more details on the MariaDB server framework see [User-Defined Functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/user-defined-functions). This documentation applies to MariaDB ColumnStore version 1.0.10 and above.
 
-MariaDB ColumnStore provides scale-out query processing. As such, it requires a separate distributed implementation of each SQL function. This allows for the function application to happen on each PrimProc server node, providing distributed scale-out performance.
+MariaDB ColumnStore provides scale-out query processing. As such, it requires a separate distributed implementation of each SQL function. This allows for the function application to happen on each PrimProc[^1] server node, providing distributed scale-out performance.
 
 Thus, to fully implement a user defined function for MariaDB ColumnStore requires implementing 2 different APIs:
 
 * **The MariaDB server UDF API** allows utilization on all storage engines, and is the implementation used if applied in the select list.
-* **The ColumnStore distributed UDF API** enables distributed execution of `WHERE` clause and `GROUP BY` usage of the function, and is pushed down to PrimProc nodes for execution where possible.
+* **The ColumnStore distributed UDF API** enables distributed execution of `WHERE` clause and `GROUP BY` usage of the function, and is pushed down to PrimProc[^1] nodes for execution where possible.
 
 MariaDB ColumnStore supports user-defined function implementations in C/C++. User-defined aggregate and window functions are not supported in ColumnStore 1.0.
 
@@ -40,9 +40,9 @@ Three functions are required to be implemented (for more details see [user-defin
 
 ### ColumnStore Distributed UDF Implementation
 
-The function name and class must be registered in order to be recognized and used by the ColumnStore primitives processor (PrimProc). This is done by adding a line to perform the registration in the `UDFSDK::UDFMap()`_` function in the file **udfsdk.cpp**:
+The function name and class must be registered in order to be recognized and used by the ColumnStore primitives processor (PrimProc). This is done by adding a line to perform the registration in the `UDFSDK::UDFMap()`\_\` function in the file **udfsdk.cpp**:
 
-```sql
+```c
 FuncMap UDFSDK::UDFMap() const
 {
 	FuncMap fm;
@@ -61,14 +61,14 @@ FuncMap UDFSDK::UDFMap() const
 
 For a new UDF, add a new entry to the FuncMap object, mapping the name to the udf class.
 
-The UDF class should be defined in file **udfsdk.h** and implemented in file **udfsdk.cpp**. It is easiest to adapt the example classes for new instance but each class must implement the `funcexp::Func`_` C++ class definition:
+The UDF class should be defined in file **udfsdk.h** and implemented in file **udfsdk.cpp**. It is easiest to adapt the example classes for new instance but each class must implement the `funcexp::Func`\_\` C++ class definition:
 
 * **constructor:** any initialization necessary.
 * **destructor:** any de-initialization.
 * **getOperationType** performs parameter validation and returns the result data type.
 * **getVal** computes and returns the value of the UDF for each given return datatype.
 
-The code changes can be built using `make` within the directory **utils/udfsdk**, this  creates the following libraries in the same directory:
+The code changes can be built using `make` within the directory **utils/udfsdk**, this creates the following libraries in the same directory:
 
 * libudf\_mysql.so.1.0.0
 * libudfsdk.so.1.0.0
@@ -79,13 +79,13 @@ Those libraries contain the compiled code.
 
 The two libraries created before must be deployed to the **/usr/local/mariadb/columnstore/lib** directory (or equivalent lib directory in a non-root installation), replacing the existing files. Symbolic links in the MariaDB server directory point to these, but should be validated. Run the following as root from the **utils/udfsdk** directory in the build tree (specifying a password to `restartSystem` if needed for a multi-server cluster):
 
-```sql
+```bash
 $ cp libudf_mysql.so.1.0.0 libudfsdk.so.1.0.0 /usr/local/mariadb/columnstore/lib/
 $ ls -l /usr/local/mariadb/columnstore/mysql/lib/plugin/libudf_mysql.so
 lrwxrwxrwx. 1 root root 56 Jul 19 09:47 /usr/local/mariadb/columnstore/mysql/lib/plugin/libudf_mysql.so -> /usr/local/mariadb/columnstore/lib/libudf_mysql.so.1.0.0
 ```
 
-Repeat this for each ColumnStore PrimProc node in the cluster, then restart ColumnStore to make the libraries available.
+Repeat this for each ColumnStore PrimProc[^1] node in the cluster, then restart ColumnStore to make the libraries available.
 
 After restarting the system, the UDF must be registered with the MariaDB server so it can be used:
 
@@ -128,3 +128,5 @@ MariaDB [test]> select i1, i2 from t1 where mcs_add(i1,i2) = 4;
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
+
+[^1]: PrimProc is the ColumnStore Primitives Processor.

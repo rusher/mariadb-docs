@@ -1,5 +1,7 @@
 # ColumnStore Distributed Aggregate Functions
 
+## Functions
+
 MariaDB ColumnStore supports the following aggregate functions, these can be used in the `SELECT`, `HAVING`, and `ORDER BY` clauses of the SQL statement.
 
 | Function                           | Description                                                                                                              |
@@ -26,11 +28,11 @@ MariaDB ColumnStore supports the following aggregate functions, these can be use
 | VARIANCE(), VAR\_POP()             | The population standard variance of a numeric (INT variations, NUMERIC, DECIMAL) column                                  |
 | VAR\_SAMP()                        | The population standard variance of a numeric (INT variations, NUMERIC, DECIMAL) column                                  |
 
-### Note
+{% hint style="info" %}
+Regression functions (`REGR_AVGX` to `REGR_YY`), `CORR`, `COVAR_POP` and `COVAR_SAMP` are supported for version 1.2.0 and higher
+{% endhint %}
 
-* Regression functions (`REGR_AVGX` to `REGR_YY`), `CORR`, `COVAR_POP` and `COVAR_SAMP` are supported for version 1.2.0 and higher
-
-### Example
+## Example
 
 An example group by query using aggregate functions is:
 

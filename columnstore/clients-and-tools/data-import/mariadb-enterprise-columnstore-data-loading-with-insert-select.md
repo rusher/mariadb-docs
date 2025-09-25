@@ -33,7 +33,7 @@ When a bulk data load is running:
 * Write queries and concurrent bulk data loads on the same table will be blocked until the bulk data load operation is complete, and the write metadata lock on the table has been released.
 * The write metadata lock (MDL) can be monitored with the [METADATA\_LOCK\_INFO plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/metadata-lock-info-plugin).
 
-## Import the Schema
+## Importing the Schema
 
 Before data can be imported into the tables, the schema must be created.
 
@@ -65,10 +65,10 @@ CREATE TABLE inventory.products (
 ```
 
 {% hint style="info" %}
-**Note:** To get the best performance from Enterprise ColumnStore, make sure to follow Enterprise ColumnStore's best practices for schema design.
+To get the best performance from Enterprise ColumnStore, make sure to follow Enterprise ColumnStore's best practices for schema design.
 {% endhint %}
 
-## Appends Data
+## Appending Data
 
 When MariaDB Enterprise ColumnStore performs a bulk data load, it appends data to the table in the order in which the data is read. Appending data reduces the I/O requirements of bulk data loads, so that larger data sets can be loaded very efficiently.
 
@@ -76,7 +76,7 @@ While the bulk load is in progress, the newly appended data is temporarily hidde
 
 After the bulk load is complete, the newly appended data is visible to queries.
 
-## Sort the Query Results
+## Sorting the Query Results
 
 When MariaDB Enterprise ColumnStore performs a bulk data load, it appends data to the table in the order in which the data is read.
 
@@ -95,7 +95,7 @@ ORDER BY order_date;
 
 For additional information, see "[Load Ordered Data in Proper Order](../../high-availability/columnstore-query-tuning/query-tuning-recommendations-for-mariadb-enterprise-columnstore.md#load-ordered-data-in-proper-order)".
 
-## Confirm the Field Delimiter
+## Confirming the Field Delimiter
 
 Before importing a table's data into MariaDB Enterprise ColumnStore, confirm that the field delimiter is not present in the data.
 
@@ -103,7 +103,7 @@ The field delimiter is determined by the `columnstore_import_for_batchinsert_del
 
 To use a different delimiter, you can set the field delimiter.
 
-## Set the Field Delimiter
+## Setting the Field Delimiter
 
 When the data is passed to cpimport, each value is separated by a field delimiter. The field delimiter is determined by the `columnstore_import_for_batchinsert_delimiter` system variable.
 
@@ -123,7 +123,7 @@ SELECT *
 FROM innodb_inventory.products;
 ```
 
-## Set the Quoting Style
+## Setting the Quoting Style
 
 When the data is passed to cpimport, each value is enclosed by a quote character. The quote character is determined by the `columnstore_import_for_batchinsert_enclosed_by` system variable.
 

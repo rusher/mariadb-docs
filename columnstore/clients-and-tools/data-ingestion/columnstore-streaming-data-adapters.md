@@ -82,7 +82,7 @@ test	t2
 
 #### Automated Table Creation on ColumnStore
 
-You can have the adapter automatically create the tables on the ColumnStore instance with the -an option. In this case, the user used for cross-engine queries will be used to create the table (the values in `Columnstore.CrossEngineSupport`). This user  requires `CREATE` privileges on all streamed databases and tables.
+You can have the adapter automatically create the tables on the ColumnStore instance with the -an option. In this case, the user used for cross-engine queries will be used to create the table (the values in `Columnstore.CrossEngineSupport`). This user requires `CREATE` privileges on all streamed databases and tables.
 
 #### Data Transformation Mode
 
@@ -96,7 +96,7 @@ This mode is not as fast as the append-only mode and might not be suitable for h
 
 Download and install both [MaxScale](https://mariadb.com/downloads/mariadb-tx/maxscale) and [ColumnStore](https://mariadb.com/downloads/mariadb-ax).
 
-Copy the Columnstore.xml file from `/usr/local/mariadb/columnstore/etc/Columnstore.xml` from one of the ColumnStore PrimProc nodes to the server where the adapter is installed.
+Copy the Columnstore.xml file from `/usr/local/mariadb/columnstore/etc/Columnstore.xml` from one of the ColumnStore PrimProc[^1] nodes to the server where the adapter is installed.
 
 Configure MaxScale according to the [CDC tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-21-06).
 
@@ -203,3 +203,5 @@ In addition, it can't handle blob data types and only supports multiple inputs t
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
+
+[^1]: PrimProc is the ColumnStore Primitives Processor.

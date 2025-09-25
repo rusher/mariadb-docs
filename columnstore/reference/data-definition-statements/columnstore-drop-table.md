@@ -1,7 +1,4 @@
-# ColumnStore Drop Table
-
-1. [Syntax "Syntax"](columnstore-drop-table.md#syntax)
-2. [See also "See also"](columnstore-drop-table.md#see-also)
+# ColumnStore DROP TABLE
 
 The [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) statement deletes a table from ColumnStore.
 
@@ -14,8 +11,6 @@ DROP  TABLE [IF EXISTS]
 ```
 
 The `RESTRICT` clause limits the table to being dropped in the front end only. This could be useful when the table has been dropped on one user module and needs to be synced to others.
-
-images here
 
 The following statement drops the _orders_ table on the front end only:
 

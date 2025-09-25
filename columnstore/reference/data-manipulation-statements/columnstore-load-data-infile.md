@@ -1,5 +1,7 @@
 # ColumnStore LOAD DATA INFILE
 
+## Overview
+
 The `LOAD DATA INFILE` statement reads rows from a text file into a table at a very high speed. The file name must be given as a literal string.
 
 ```sql
@@ -38,7 +40,7 @@ LOAD DATA INFILE 'simpletable.tbl' INTO TABLE simpletable FIELDS TERMINATED BY '
 
 If the default mode is set to use cpimport internally, any output error files will be written to `/var/log/mariadb/columnstore/cpimport/` directory. It can be consulted for troubleshooting any errors reported.
 
-### See Also
+## See Also
 
 [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
 

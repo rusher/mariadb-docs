@@ -1,5 +1,7 @@
 # ColumnStore Naming Conventions
 
+## Overview
+
 This lists the different naming conventions enforced by the column store, compared to the normal [MariaDB naming conventions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/identifier-names).
 
 * Usernames: 64 characters (MariaDB has 80)
@@ -7,7 +9,7 @@ This lists the different naming conventions enforced by the column store, compar
 * The first character of all table and column names should be an `ASCII` letter (a-z A-Z).
 * ColumnStore reserves certain words that MariaDB does not, such as `SELECT`, `CHAR` and `TABLE`, so even wrapped in backticks these cannot be used.
 
-## Reserved words
+## Reserved Words
 
 In addition to MariaDB Server [reserved words](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/reserved-words), ColumnStore has additional reserved words that cannot be used as table names, column names or user defined variables, functions or stored procedure names.
 

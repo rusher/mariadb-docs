@@ -1,8 +1,6 @@
-# ColumnStore Create View
+# ColumnStore CREATE VIEW
 
-1. [Syntax "Syntax"](columnstore-create-view.md#syntax)
-
-Creates a stored query in the MariaDB ColumnStore
+Creates a stored query in the MariaDB ColumnStore.
 
 ## Syntax
 
@@ -13,7 +11,7 @@ CREATE
     AS select_statement
 ```
 
-Notes to CREATE VIEW:
+## Notes
 
 * If you describe a view in MariaDB ColumnStore, the column types reported may not match the actual column types in the underlying tables. This is normal and can be ignored.&#x20;
 

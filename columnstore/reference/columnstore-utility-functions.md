@@ -1,6 +1,6 @@
 # ColumnStore Utility Functions
 
-MariaDB ColumnStore Utility Functions are a set of simple functions that return useful information about the system, such as whether it is ready for queries.
+MariaDB ColumnStore utility functions are a set of simple functions that return useful information about the system, such as whether it is ready for queries.
 
 | Function            | Description                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

@@ -1,15 +1,6 @@
-# ColumnStore Select
+# ColumnStore SELECT
 
-The SELECT statement is used to query the database and display table data. You can add many clauses to filter the data.
-
-1. [Syntax "Syntax"](columnstore-select.md#syntax)
-2. [Projection List (SELECT) "Projection List (SELECT)"](columnstore-select.md#projection-list-select)
-3. [WHERE "WHERE"](columnstore-select.md#where)
-4. [GROUP BY "GROUP BY"](columnstore-select.md#group-by)
-5. [HAVING "HAVING"](columnstore-select.md#having)
-6. [ORDER BY "ORDER BY"](columnstore-select.md#order-by)
-7. [UNION "UNION"](columnstore-select.md#union)
-8. [LIMIT "LIMIT"](columnstore-select.md#limit)
+The `SELECT` statement is used to query the database and display table data. You can add many clauses to filter the data.
 
 ## Syntax
 
@@ -100,7 +91,8 @@ SELECT p_name FROM part UNION ALL SELECT p_name FROM  partno;
 
 ## LIMIT
 
-A limit is used to constrain the number of rows returned by the `SELECT` statement. `LIMIT` can have up to two arguments. `LIMIT` must contain a row count and may optionally contain an offset of the first row to return (the initial row is 0).\
+A limit is used to constrain the number of rows returned by the `SELECT` statement. `LIMIT` can have up to two arguments. `LIMIT` must contain a row count and may optionally contain an offset of the first row to return (the initial row is 0).
+
 The following statement returns 5 customer keys from the customer table:
 
 ```sql
@@ -113,7 +105,9 @@ The following statement returns 5 customer keys from the customer table beginnin
 SELECT custkey FROM customer LIMIT 1000,5;
 ```
 
-**NOTE:** When `LIMIT` is applied on a nested query's results, and the inner query contains `ORDER BY`, `LIMIT` is applied first and then `ORDER BY` is applied.
+{% hint style="info" %}
+When `LIMIT` is used in a nested query, and the inner query contains an `ORDER BY` clause, `LIMIT` is applied before   `ORDER BY` is applied.
+{% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

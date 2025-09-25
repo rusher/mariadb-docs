@@ -1,10 +1,10 @@
 # start
 
-Starts ColumnStore on all nodes
+Starts ColumnStore on all nodes.
 
 See [CMAPI](./) for detail on REST API endpoint, required headers, and other available actions.
 
-### DETAILS
+## Description
 
 Upon successful `start` call CMAPI connects to each MariaDB Enterprise ColumnStore node and performs start-up.
 
@@ -18,7 +18,7 @@ JSON data required for this call:
 
 Bash alias `mcsStart` is available starting with Enterprise ColumnStore 5.5.2.
 
-## EXAMPLES
+## Examples
 
 ### Executing cURL Manually
 

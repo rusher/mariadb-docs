@@ -1,6 +1,4 @@
-# ColumnStore Create Procedure
-
-1. [Syntax "Syntax"](columnstore-create-procedure.md#syntax)
+# ColumnStore CREATE PROCEDURE
 
 Creates a stored routine in ColumnStore.
 
@@ -24,9 +22,7 @@ routine_body:
 
 ColumnStore currently accepts definition of stored procedures with only input arguments and a single `SELECT` query while in Operating Mode = 1 (VTABLE mode). However, while in the Operating Mode = 0 (TABLE mode), ColumnStore will allow additional complex definition of stored procedures (i.e., OUT parameter, declare, cursors, etc.)
 
-See Operating Mode for information on [Operating Modes](../columnstore-operating-mode.md)
-
-images here
+See Operating Mode for information on [Operating Modes](../columnstore-operating-mode.md).
 
 The following statements create and call the `sp_complex_variable` stored procedure:
 

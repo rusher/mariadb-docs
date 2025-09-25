@@ -1,4 +1,4 @@
-# Data Loading with load\_from\_s3
+# Data Loading With load\_from\_s3
 
 ## Overview
 
@@ -6,7 +6,7 @@ MariaDB Enterprise ColumnStore includes a stored procedure called `columnstore_i
 
 ## Compatibility
 
-MariaDB Enterprise ColumnStore 23.02
+Available from MariaDB Enterprise ColumnStore 23.02.
 
 ## System Variables
 

@@ -1,5 +1,7 @@
 # ColumnStore Distributed Functions
 
+## Functions
+
 ColumnStore supports the following functions. These functions can be specified in the projection (`SELECT`), `WHERE` and `ORDER BY` portions of the SQL statement and will be processed in a distributed manner.
 
 * [&](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/bit-functions-and-operators/bitwise_and)
@@ -133,7 +135,7 @@ ColumnStore supports the following functions. These functions can be specified i
 * [YEAR()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/year)
 * [YEARWEEK()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/yearweek)
 
-## See also
+## See Also
 
 * [ColumnStore Non-Distributed Post-Processed Functions](columnstore-non-distributed-post-processed-functions.md)
 

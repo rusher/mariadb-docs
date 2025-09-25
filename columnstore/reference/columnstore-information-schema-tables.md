@@ -1,15 +1,6 @@
 # ColumnStore Information Schema Tables
 
-1. [COLUMNSTORE\_TABLES "COLUMNSTORE\_TABLES"](columnstore-information-schema-tables.md#columnstore_tables)
-2. [COLUMNSTORE\_COLUMNS "COLUMNSTORE\_COLUMNS"](columnstore-information-schema-tables.md#columnstore_columns)
-3. [COLUMNSTORE\_EXTENTS "COLUMNSTORE\_EXTENTS"](columnstore-information-schema-tables.md#columnstore_extents)
-4. [COLUMNSTORE\_FILES "COLUMNSTORE\_FILES"](columnstore-information-schema-tables.md#columnstore_files)
-5. [Stored Procedures "Stored Procedures"](columnstore-information-schema-tables.md#stored-procedures)
-6. [total\_usage() "total\_usage()"](columnstore-information-schema-tables.md#total_usage)
-7. [table\_usage() "table\_usage()"](columnstore-information-schema-tables.md#table_usage)
-8. [compression\_ratio() "compression\_ratio()"](columnstore-information-schema-tables.md#compression_ratio)
-
-MariaDB ColumnStore has four information schema tables that expose information about the table and column storage. The tables were added in version 1.0.5 of ColumnStore and were heavily modified for 1.0.6.
+MariaDB ColumnStore has four information schema tables that expose information about the table and column storage. The tables were added in version 1.0.5 and were heavily modified for 1.0.6.
 
 ## COLUMNSTORE\_TABLES
 
@@ -44,12 +35,12 @@ This table displays the extent map in a user-consumable form. An extent is a col
 
 **Notes:**
 
-1. The state is "Valid" for a normal state, "Invalid" if a cpimport has completed but the table has not yet been accessed (min/max values will be invalid) or "Updating" if there is a DML statement writing to the column
-2. In ColumnStore the block size is 8192 bytes
+1. The state is "Valid" for a normal state, "Invalid" if a cpimport has completed but the table has not yet been accessed (min/max values will be invalid) or "Updating" if there is a DML statement writing to the column.
+2. In ColumnStore the block size is 8192 bytes.
 3. By default, ColumnStore will write and create an extent file of 25&#x36;_&#x31;02&#x34;_&#x57;IDTH bytes for the first partition; if this is too small, then for uncompressed data, it will create a file of the maximum size for the extent (`MAX_BLOCKS * BLOCK_SIZE`). Snappy always compression adds a header block.
-4. Object IDs of less than 3000 are for internal tables and will not appear in any of the information schema tables
-5. HWM is set to zero for the lower segments when there are multiple segments in an extent file; these can be observed when `BLOCK_OFFSET > 0`
-6. When HWM is 0, the `DATA_SIZE` will show 0 instead of 8192 to avoid confusion when there are multiple segments in an extent file
+4. Object IDs of less than 3000 are for internal tables and will not appear in any of the information schema tables.
+5. HWM is set to zero for the lower segments when there are multiple segments in an extent file; these can be observed when `BLOCK_OFFSET > 0` .
+6. When HWM is 0, the `DATA_SIZE` will show 0 instead of 8192 to avoid confusion when there are multiple segments in an extent file.
 
 ## COLUMNSTORE\_FILES
 
@@ -72,7 +63,7 @@ The `total_usage()` procedure gives a total disk usage summary for all the colum
 > call columnstore_info.total_usage();
 ```
 
-### table\_usage()
+### table\_usage Procedure
 
 The `table_usage()` procedure gives the total data disk usage, dictionary disk usage, and grand total disk usage per table. It can be called in several ways; the first gives a total for each table:
 
@@ -96,7 +87,7 @@ You can also request all tables for a specified schema:
 **Note:** The quotes around the table name are required; an error will occur without them.
 {% endhint %}
 
-### compression\_ratio()
+### compression\_ratio Procedure
 
 The `compression_ratio()` procedure calculates the average compression ratio across all the compressed extents in ColumnStore. It is called using
 

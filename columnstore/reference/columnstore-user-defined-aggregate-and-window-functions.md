@@ -8,9 +8,9 @@ Starting with MariaDB ColumnStore 1.1, the ability to create and use user-define
 * **avg\_mode—mathematical mode**, i.e., the most frequent value in the set.
 * **SSQ—sum of squares**, i.e., the sum of each number squared in the set.
 
-Similar to built-in functions, the SDK supports distributed aggregate execution, where much of the calculation is scaled out across PrimProc nodes.
+Similar to built-in functions, the SDK supports distributed aggregate execution, where much of the calculation is scaled out across PrimProc[^1] nodes.
 
-## Using User-defined Aggregate Functions
+## Using User-Defined Aggregate Functions
 
 The reference examples above are included in the standard build of MariaDB ColumnStore. They can be used by registering them as user-defined aggregate functions. The same can be done for new functions, assuming the instance has the updated libraries included.
 
@@ -46,3 +46,5 @@ This requires a MariaDB ColumnStore source tree and the necessary tools to compi
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
+
+[^1]: PrimProc is the ColumnStore Primitives Processor.

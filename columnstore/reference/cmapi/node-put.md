@@ -1,10 +1,10 @@
 # node PUT
 
-Adds a ColumnStore node
+Adds a ColumnStore node.
 
 See [CMAPI](./) for detail on REST API endpoint, required headers, and other available actions.
 
-## DETAILS
+## Description
 
 Upon successful `node` PUT call CMAPI configures MariaDB Enterprise ColumnStore to add the new node and a dbroot for that node.
 
@@ -17,7 +17,7 @@ JSON data required for this call:
 | `timeout` | Maximum time in seconds to wait for completion of `add-node` operation |
 | `node`    | IP address of the node to add                                          |
 
-## EXAMPLES
+## Examples
 
 ### Executing cURL Manually
 

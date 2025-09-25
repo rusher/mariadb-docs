@@ -3,7 +3,7 @@
 ColumnStore has the ability to support full MariaDB query syntax through an operating mode. This operating mode may be set as a default for the instance or set at the session level. To set the operating mode at the session level, the following command is used. Once the session has ended, any subsequent session will return to the default for the instance.
 
 ```sql
-set infinidb_vtable_mode = n
+SET infinidb_vtable_mode = n
 ```
 
 where n is:

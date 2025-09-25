@@ -1,10 +1,10 @@
 # status
 
-Checks the status of ColumnStore
+Checks the status of ColumnStore.
 
 See [CMAPI](./) for detail on REST API endpoint, required headers, and other available actions.
 
-## DETAILS
+## Description
 
 Upon successful `status` call CMAPI returns JSON payload containing detailed information on MariaDB Enterprise Cluster status.
 
@@ -12,7 +12,7 @@ Call made via HTTPS `GET`, with authentication via shared secret using the `x-ap
 
 Bash alias `mcsStatus` is available starting with Enterprise ColumnStore 5.5.2.
 
-## EXAMPLES
+## Examples
 
 ### Executing cURL Manually
 

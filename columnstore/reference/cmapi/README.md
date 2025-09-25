@@ -81,7 +81,9 @@ sudo systemctl restart mariadb-columnstore-cmapi
 
 ## Bash Aliases
 
+{% hint style="info" %}
 Bash aliases are available starting with Enterprise ColumnStore 5.5.2.
+{% endhint %}
 
 These aliases are available if your `bash` shell is configured to source the `columnstoreAlias` shell script.
 
@@ -142,7 +144,7 @@ auto_failover = False
 
 Starting with Enterprise ColumnStore 5.5.2, the [CMAPI logs](http://localhost:8000/docs/columnstore/ref/col/logging/cmapi/) can be found at `/var/log/mariadb/columnstore/cmapi_server.log`.
 
-In previous versions, CMAPI's log messages can be viewed in the systemd journal:
+In previous versions, CMAPI's log messages can be viewed in the `systemd` journal:
 
 ```bash
 sudo journalctl -u mariadb-columnstore-cmapi
@@ -164,7 +166,9 @@ The first part of the standard HTTP response message is the status line. To dete
 | `400 <= x < 500` | Varies            | Client-side error Check endpoint, API key, and JSON data |
 | `500 <= x < 600` | Varies            | Server-side error Contact support                        |
 
-Please consult the [HTTP standard](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) to see the full list of status codes and their descriptions.
+{% hint style="info" %}
+Consult the [HTTP standard](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) to see the full list of status codes and their descriptions.
+{% endhint %}
 
 ### Headers
 

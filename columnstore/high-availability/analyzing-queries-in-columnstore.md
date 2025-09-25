@@ -4,14 +4,14 @@ hidden: true
 
 # Analyzing Queries
 
-## Determining active queries
+## Determining Active Queries
 
-### show processlist
+### SHOW PROCESSLIST
 
-The MariaDB **show processlist** command may be used to see a list of active queries on that UM:
+The MariaDB `SHOW PROCESSLIST` statement is used to see a list of active queries on that UM:
 
 ```sql
-MariaDB [test]> show processlist;
+MariaDB [test]> SHOW PROCESSLIST;
 +----+------+-----------+-------+---------+------+-------+--------------+
 | Id | User | Host | db | Command | Time | State | Info |
 +----+------+-----------+-------+---------+------+-------+--------------+
@@ -34,15 +34,15 @@ Start Time    Time (hh:mm:ss) Session ID SQL Statement
 Oct 7 08:38:30    00:00:03       73 select c_name,sum(lo_revenue) from customer, lineorder where lo_custkey = c_custkey and c_custkey = 6 group by c_name
 ```
 
-## Analysis of individual queries
+## Analysis of Individual Queries
 
-### Query statistics
+### Query Statistics
 
 The _`calGetStats`_ function provides statistics about resources used on the [User Module](../architecture/columnstore-user-module.md) (UM) node, PM node, and network by the last run query.\
 Example:
 
 ```sql
-MariaDB [test]> select count(*) from wide2;
+MariaDB [test]> SELECT count(*) FROM wide2;
 +----------+                                       
 | count(*) |
 +----------+
@@ -50,7 +50,7 @@ MariaDB [test]> select count(*) from wide2;
 +----------+
 1 row in set (0.22 sec)
 
-MariaDB [test]> select calGetStats();
+MariaDB [test]> SELECT calGetStats();
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | calGetStats()                                                                                                                                                                                     |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,7 +72,7 @@ The output contains information on:
 
 The output is useful to determine how much physical I/O was required, how much data was cached, and how many partition blocks were eliminated through use of extent map elimination. The system maintains min / max values for each extent and uses these to help implement where clause filters to completely bypass extents where the value is outside of the min/max range. When a column is ordered (or semi-ordered) during load such as a time column this offer very large performance gains as the system can avoid scanning many extents for the column.
 
-## Query plan / trace
+## Query Plan / Trace
 
 While the MariaDB Server's [EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) utility can be used to look at the query plan, it is somewhat less helpful for ColumnStore tables as ColumnStore does not use indexes or make use of MariaDB I/O functionality.\
 The execution plan for a query on a ColumnStore table is made up of multiple steps. Each step in the query plan performs a set of operations that are issued from the [User Module](../architecture/columnstore-user-module.md) to the set of [Performance Modules](../architecture/columnstore-performance-module.md) in support of a given step in a query.
@@ -83,7 +83,7 @@ The execution plan for a query on a ColumnStore table is made up of multiple ste
 
 These operations are automatically executed together in order to execute appropriate filters and column lookup by row offset.
 
-### Viewing the ColumnStore query plan
+### Viewing the ColumnStore Query Plan
 
 In MariaDB ColumnStore there is a set of SQL tracing stored functions provided to see the distributed query execution plan between the [UM](../architecture/columnstore-user-module.md) and the [PM](../architecture/columnstore-performance-module.md).
 
@@ -95,7 +95,7 @@ The basic steps to using these SQL tracing stored functions are:
    As an example, the following session starts a trace, issues a query against a 6 million row fact table and 300,000 row dimension table, and then reviews the output from the trace:
 
 ```sql
-MariaDB [test]> select calSetTrace(1);
+MariaDB [test]> SELECT calSetTrace(1);
 +----------------+
 | calSetTrace(1) |
 +----------------+
@@ -103,11 +103,11 @@ MariaDB [test]> select calSetTrace(1);
 +----------------+
 1 row in set (0.00 sec)
 
-MariaDB [test]> select c_name, sum(o_totalprice)
-    -> from customer, orders
-    -> where o_custkey = c_custkey
-    -> and c_custkey = 5
-    -> group by c_name;
+MariaDB [test]> SELECT c_name, sum(o_totalprice)
+    -> FROM customer, orders
+    -> WHERE o_custkey = c_custkey
+    -> AND c_custkey = 5
+    -> GROUP BY c_name;
 +--------------------+-------------------+
 | c_name             | sum(o_totalprice) |
 +--------------------+-------------------+
@@ -115,7 +115,7 @@ MariaDB [test]> select c_name, sum(o_totalprice)
 +--------------------+-------------------+
 1 row in set, 1 warning (0.34 sec)
 
-MariaDB [test]> select calGetTrace();
+MariaDB [test]> SELECT calGetTrace();
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                    ----------------------------------------------------------------------------------------------------------+
 | calGetTrace()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                    --------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                    ----------------------------------------------------------------------------------------------------------+
@@ -155,18 +155,18 @@ The columns headings in the output are as follows:
 * **Rows** – Intermediate rows returned.
 
 {% hint style="info" %}
-**Note:** The time recorded is the time from PrimProc and `ExeMgr`. Execution time from withing mysqld is not tracked here. There could be extra processing time in `mysqld` due to a number of factors such as `ORDER BY`.
+**Note:** The time recorded is the time from PrimProc[^1] and `ExeMgr`. Execution time from withing mysqld is not tracked here. There could be extra processing time in `mysqld` due to a number of factors such as `ORDER BY`.
 {% endhint %}
 
-## Cache clearing to enable cold testing
+## Cache Clearing to Enable Cold Testing
 
 Sometimes it can be useful to clear caches to allow understanding of un-cached and cached query access. The `calFlushCache()` function will clear caches on all servers. This is only really useful for testing query performance:
 
 ```sql
-MariaDB [test]> select calFlushCache();
+MariaDB [test]> SELECT calFlushCache();
 ```
 
-## Viewing extent map information
+## Viewing Extent Map Information
 
 It can be useful to view details about the extent map for a given column. This can be achieved using the edit item process on a PM server. Available arguments can be provided by using the `-h` flag. The most common use is to provide the column object id with the `-o` argument which will output details for the column and in this case the `-t` argument is provided to show min / max values as dates:
 
@@ -189,7 +189,7 @@ Here it can be seen that the extent maps for the `o_orderdate` (object id 3032) 
 
 Column object ids may be found by querying the `calpontsys.syscolumn` metadata table (deprecated) or `information_schema.columnstore_columns` table (version 1.0.6+).
 
-## Query statistics history
+## Query Statistics History
 
 MariaDB ColumnStore query statistics history can be retrieved for analysis. By default the query stats collection is disabled. To enable the collection of query stats, the element in the `ColumnStore.XML` configuration file should be set to Y (default is N).
 
@@ -212,14 +212,14 @@ grant INSERT on infinidb_querystats.querystats to 'cross_engine'@'localhost';
 
 When enabled the history of query statistics across all sessions along with execution time, and those stats provided by `calgetstats()` is stored in a table in the `infinidb_querystats` schema. Only queries in the following ColumnStore syntax are available for statistics monitoring:
 
-* SELECT
-* INSERT
-* UPDATE
-* DELETE
-* INSERT SELECT
-* LOAD DATA INFILE
+* `SELECT`
+* `INSERT`
+* `UPDATE`
+* `DELETE`
+* `INSERT ... SELECT`
+* `LOAD DATA INFILE`
 
-### Query statistics table
+## Query Statistics Table
 
 When QueryStats is enabled, the query statistics history is collected in the `querystats` table in the `infinidb_querystats` schema.
 
@@ -241,14 +241,14 @@ The columns of this table are:
 * **Cache I/O** (cacheIO) - The number of blocks that the query accessed from the cache. This statistic is only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELEC`T.
 * **Blocks Touched** (blocksTouched) - The total number of blocks that the query accessed physically and from the cache. This should be equal or less than the sum of physical I/O and cache I/O. This statistic is only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELECT`.
 * **Partition Blocks Eliminated** (CPBlocksSkipped) - The number of blocks being eliminated by the extent map casual partition. This statistic is only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELECT`.
-* **Messages from** [**UM**](../architecture/columnstore-user-module.md) **and the** [**PM**](../architecture/columnstore-performance-module.md) (msgOutUM) - The number of messages in bytes that ExeMgr sends to the PrimProc. If a message needs to be distributed to all the PMs, the sum of all the distributed messages will be counted. Only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELECT`.
-* **Messages from PM to UM** (msgInUM) - The number of messages in bytes that PrimProc sends to the ExeMgr. Only valid for queries that are processed by `ExeMgr`, i.e. `SELECT`, `DML` with where clause, and `INSERT SELECT`.
+* **Messages from** [**UM**](../architecture/columnstore-user-module.md) **and the** [**PM**](../architecture/columnstore-performance-module.md) (msgOutUM) - The number of messages in bytes that ExeMgr sends to the PrimProc[^1]. If a message needs to be distributed to all the PMs, the sum of all the distributed messages will be counted. Only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELECT`.
+* **Messages from PM to UM** (msgInUM) - The number of messages in bytes that PrimProc[^1] sends to the ExeMgr. Only valid for queries that are processed by `ExeMgr`, i.e. `SELECT`, `DML` with where clause, and `INSERT SELECT`.
 * **Memory Utilization** (maxMemPct) - This field shows memory utilization for the [User Module](../architecture/columnstore-user-module.md) (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
 * **Blocks Changed** (blocksChanged) - Total number of blocks that queries physically changed on disk. This is only for delete/update statements.
 * **Temp Files** (numTempFiles) - This field shows any temporary file utilization for the User Module (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
 * **Temp File Space** (tempFileSpace) - This shows the size of any temporary file utilization for the User Module (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
 
-### Query statistics viewing
+## Query Statistics Viewing
 
 Users can view the query statistics by selecting the rows from the query stats table in the `infinidb_querystats` schema. Examples listed below:
 
@@ -277,3 +277,5 @@ where querytype='INSERT SELECT' and starttime >= now() - interval 12 hour;
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
+
+[^1]: PrimProc is the ColumnStore Primitives Processor.

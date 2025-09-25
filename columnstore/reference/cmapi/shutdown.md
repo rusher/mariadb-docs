@@ -4,7 +4,7 @@ Shuts down ColumnStore on all nodes
 
 See [CMAPI](./) for detail on REST API endpoint, required headers, and other available actions.
 
-## DETAILS
+## Description
 
 Upon successful `shutdown` call CMAPI connects to each MariaDB Enterprise ColumnStore node and performs shut down.
 
@@ -18,7 +18,7 @@ JSON data required for this call:
 
 Bash alias `mcsShutdown` is available starting with Enterprise ColumnStore 5.5.2.
 
-## EXAMPLE
+## Examples
 
 ### Executing cURL Manually
 

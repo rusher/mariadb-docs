@@ -65,7 +65,7 @@ Aggregation performance is also influenced by the number of distinct aggregate c
 `SELECT COUNT()` is internally optimized to be `SELECT COUNT(COL-N)`, where `COL-N` is the column that uses the least number of bytes for storage. For example it would be pick a `CHAR(1)` column over int column because `CHAR(1)` uses 1 byte for storage and int uses 4 bytes. The implementation still honors ANSI semantics in that `SELECT COUNT()` will include nulls in the total count as opposed to an explicit `SELECT(COL-N)` which excludes `NULL` values in the count.
 {% endhint %}
 
-### Order By and Limit
+### ORDER BY and LIMIT
 
 `ORDER BY` and `LIMIT` are implemented at the very end by the `mariadbd` server process on the temporary result set table. This means that the unsorted results must be fully retrieved before either are applied. The performance overhead of this is minimal on small to medium results, but for larger results, it can be significant.
 

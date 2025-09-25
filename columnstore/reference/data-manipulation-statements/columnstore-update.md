@@ -1,12 +1,10 @@
-# ColumnStore Update
+# ColumnStore UPDATE
 
 The `UPDATE` statement changes data stored in rows.
 
-1. [Syntax "Syntax"](columnstore-update.md#syntax)
-
 ## Syntax
 
-Single-table syntax:
+### Single-Table Syntax
 
 ```sql
 UPDATE  table_reference 
@@ -16,7 +14,7 @@ UPDATE  table_reference
   [LIMIT row_count]
 ```
 
-Multiple-table syntax:
+### Multiple-Table Syntax
 
 ```sql
 UPDATE table_references
@@ -25,7 +23,8 @@ UPDATE table_references
 ```
 
 {% hint style="info" %}
-Note: It can only 1 table (but multiple columns) be updated from the table list in table\_references.
+Only **one** table can be updated from the table list in `table_reference`.\
+However, multiple columns can be updated.
 {% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

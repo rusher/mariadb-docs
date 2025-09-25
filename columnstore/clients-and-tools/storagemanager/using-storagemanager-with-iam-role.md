@@ -1,20 +1,20 @@
-# Using StorageManager with IAM Role
+# Using StorageManager With IAM Role
 
 ## AWS IAM Role Configuration
 
-We have added a new feature in Columnstore 5.5.2 that allows you to use AWS IAM roles in order to connect to S3 buckets without explicitly entering credentials into the **storagemanager.cnf** config file.
+From Columnstore 5.5.2, you can use AWS IAM roles in order to connect to S3 buckets without explicitly entering credentials into the `storagemanager.cnf` config file.
 
-You will need to modify the IAM role of your Amazon EC2 instance to allow for this. Please follow the AWS [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) before beginning this process.
+You need to modify the IAM role of your Amazon EC2 instance to allow for this. Please follow the AWS [documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) before beginning this process.
 
 It is important to note that you must update the AWS S3 endpoint based on your chosen region; otherwise, you might face delays in propagation as discussed [here](https://forums.aws.amazon.com/thread.jspa?messageID=552808) and [here](https://forums.aws.amazon.com/thread.jspa?messageID=801522).
 
-For a complete list of AWS service endpoints, please visit the AWS [reference guide](https://docs.aws.amazon.com/general/latest/gr/rande.html).
+For a complete list of AWS service endpoints, visit the AWS [reference guide](https://docs.aws.amazon.com/general/latest/gr/rande.html).
 
-### Sample configuration
+## Sample Configuration
 
 Edit your **Storage Manager** configuration file located at _`/etc/columnstore/storagemanager.cnf`_ in order to look similar to the example below (replacing those in the \[S3] section with your own custom variables):
 
-```sql
+```ini
 [ObjectStorage]
 service = S3
 object_size = 5M

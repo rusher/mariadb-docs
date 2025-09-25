@@ -1,10 +1,6 @@
-# ColumnStore Insert
+# ColumnStore INSERT
 
-The INSERT statement allows you to add data to tables.
-
-1. [Syntax "Syntax"](columnstore-insert.md#syntax)
-2. [INSERT SELECT "INSERT SELECT"](columnstore-insert.md#insert-select)
-3. [Autoincrement "Autoincrement"](columnstore-insert.md#autoincrement)
+The `INSERT` statement allows you to add data to tables.
 
 ## Syntax
 
@@ -29,7 +25,7 @@ INSERT INTO customer (custno, custname, custaddress, phoneno, cardnumber, commen
   (13, ‘John Q Public’, ‘200 Second Street, Dallas’, ‘(972) 555-1234’, 200, ‘LatePayment’);
 ```
 
-### INSERT SELECT
+## INSERT SELECT
 
 With `INSERT ... SELECT`, you can quickly insert many rows into a table from one or more other tables.
 
@@ -37,9 +33,9 @@ With `INSERT ... SELECT`, you can quickly insert many rows into a table from one
 * Non-transactional `INSERT ... SELECT` is directed to ColumnStores cpimport tool by default, which significantly increases performance.
 * Transactional `INSERT ... SELECT` statements (that is with `AUTOCOMMIT` off or after a `START TRANSACTION`) are processed through normal DML processes.
 
-### Autoincrement
+## AUTO\_INCREMENT
 
-Example
+Example for using `AUTO_INCREMENT` in ColumnStore:
 
 ```sql
 CREATE TABLE autoinc_test(

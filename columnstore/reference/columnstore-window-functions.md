@@ -1,19 +1,5 @@
 # ColumnStore Window Functions
 
-1. [Introduction "Introduction"](columnstore-window-functions.md#introduction)
-2. [Syntax "Syntax"](columnstore-window-functions.md#syntax)
-3. [Supported Functions "Supported Functions"](columnstore-window-functions.md#supported-functions)
-4. [Note "Note"](columnstore-window-functions.md#note)
-5. [Examples "Examples"](columnstore-window-functions.md#examples)
-6. [Example Schema "Example Schema"](columnstore-window-functions.md#example-schema)
-7. [Cumulative Sum and Running Max Example "Cumulative Sum and Running Max Example"](columnstore-window-functions.md#cumulative-sum-and-running-max-example)
-8. [Partitioned Cumulative Sum and Running Max Example "Partitioned Cumulative Sum and Running Max Example"](columnstore-window-functions.md#partitioned-cumulative-sum-and-running-max-example)
-9. [Ranking / Top Results "Ranking / Top Results"](columnstore-window-functions.md#ranking-top-results)
-10. [First and Last Values "First and Last Values"](columnstore-window-functions.md#first-and-last-values)
-11. [Prior and Next Example "Prior and Next Example"](columnstore-window-functions.md#prior-and-next-example)
-12. [Quartiles Example "Quartiles Example"](columnstore-window-functions.md#quartiles-example)
-13. [Percentile Example "Percentile Example"](columnstore-window-functions.md#percentile-example)
-
 ## Introduction
 
 MariaDB ColumnStore provides support for window functions broadly following the SQL 2003 specification. A window function allows for calculations relating to a window of data surrounding the current row in a result set. This capability provides for simplified queries in support of common business questions such as cumulative totals, rolling averages, and top 10 lists.
@@ -43,7 +29,7 @@ where _window\_definition_ is defined as:
 [ frame_clause ]
 ```
 
-PARTITION BY:
+### PARTITION BY
 
 * Divides the window result set into groups based on one or more expressions.
 * An expression may be a constant, column, and non window function expressions.
@@ -51,7 +37,7 @@ PARTITION BY:
 * The partition by columns do not need to be in the select list but do need to be available from the query result set.
 * If there is no `PARTITION BY` clause, all rows of the result set define the group.
 
-ORDER BY
+### ORDER BY
 
 * Defines the ordering of values within the partition.
 * Can be ordered by multiple keys which may be a constant, column or non window function expression.
@@ -67,7 +53,7 @@ and the optional _`frame_clause`_ is defined as:
 { RANGE | ROWS } BETWEEN frame_start AND frame_end
 ```
 
-and the optional _`frame_start`_ and _`frame_end`_ are defined as (value being a numeric expression):
+and the optional `frame_start` and `frame_end` are defined as (value being a numeric expression):
 
 ```sql
 UNBOUNDED PRECEDING
@@ -77,7 +63,7 @@ value FOLLOWING
 UNBOUNDED FOLLOWING
 ```
 
-RANGE/ROWS:
+### RANGE/ROWS
 
 * Defines the windowing clause for calculating the set of rows that the function applies to for calculating a given rows window function result.
 * Requires an `ORDER BY` clause to define the row order for the window.
@@ -88,7 +74,7 @@ RANGE/ROWS:
 * `CURRENT ROW` specifies the window start or ends at the current row or value.
 * If omitted, the default is `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.
 
-## Supported Functions
+## Supported Window Functions
 
 | Function                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -1,15 +1,8 @@
 # ColumnStore Conditions
 
-1. [filter "filter"](columnstore-conditions.md#filter)
-2. [String comparisons "String comparisons"](columnstore-conditions.md#string-comparisons)
-3. [Pattern matching "Pattern matching"](columnstore-conditions.md#pattern-matching)
-4. [OR processing "OR processing"](columnstore-conditions.md#or-processing)
-5. [table filter "table filter"](columnstore-conditions.md#table-filter)
-6. [join "join"](columnstore-conditions.md#join)
-
 A condition is a combination of expressions and operators that return `TRUE`, `FALSE` or `NULL. The` following syntax shows the conditions that can be used to return a `TRUE`, `FALSE`, or `NULL` condition.
 
-## filter
+## Filter
 
 ```sql
 filter:
@@ -28,15 +21,15 @@ NOT (filter)
 Note: A ‘literal’ may be a constant (e.g. 3) or an expression that evaluates to a constant \[e.g. 100 - (27 \* 3)]. For date columns, you may use the SQL ‘interval’ syntax to perform date arithmetic, as long as all the components of the expression are constants (e.g. ‘1998-12-01’ - interval ‘1’ year)
 {% endhint %}
 
-### String comparisons
+### String Comparisons
 
 ColumnStore, unlike the MyISAM engine, is case sensitive for string comparisons used in filters. For the most accurate results, and to avoid confusing results, make sure string filter constants are no longer than the column width itself.
 
-### Pattern matching
+### Pattern Matching
 
 Pattern matching as described with the LIKE condition allows you to use “_” to match any single character and “%” to match an arbitrary number of characters (including zero characters). To test for literal instances of a wildcard character, (“%” or “_”), precede it by the “\” character.
 
-### OR processing
+### OR Processing
 
 OR Processing has the following restrictions:
 
@@ -57,7 +50,7 @@ The following syntax shows the conditions you can use when executing a condition
 col_name_1 [=|!=|<>|<|<=|>=|>] col_name_2
 ```
 
-## join
+## Join
 
 The following syntax shows the conditions you can use when executing a join on two tables.
 

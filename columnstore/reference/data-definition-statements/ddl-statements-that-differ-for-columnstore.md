@@ -1,6 +1,6 @@
-# DDL statements that differ for ColumnStore
+# DDL Statements Different in ColumnStore
 
-In most cases, a ColumnStore table works just as any other MariaDB table. There are however a few differences.
+In most cases, a ColumnStore table works just as any other MariaDB table. There are, however, a few differences.
 
 The following table lists the data definition statements (DDL) that differ from normal MariaDB [DDL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition) when used on ColumnStore tables.
 

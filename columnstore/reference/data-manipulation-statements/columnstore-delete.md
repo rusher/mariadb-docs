@@ -1,8 +1,6 @@
-# ColumnStore Delete
+# ColumnStore DELETE
 
 The `DELETE` statement is used to remove rows from tables.
-
-1. [Syntax "Syntax"](columnstore-delete.md#syntax)
 
 ## Syntax
 
@@ -16,7 +14,7 @@ DELETE
 
 No disk space is recovered after a `DELETE`. `TRUNCATE` and `DROP PARTITION` can be used to recover space, or `CREATE TABLE`, loading only the remaining rows, then using DROP TABLE on the original table and `RENAME TABLE`.
 
-`LIMIT` will limit the number of rows deleted, which will perform the `DELETE` more quickly. The `DELETE` ... `LIMIT` statement can then be performed multiple times to achieve the same effect as `DELETE` with no `LIMIT`.
+`LIMIT` will limit the number of rows deleted, which will perform the `DELETE` more quickly. The `DELETE ... LIMIT` statement can then be performed multiple times to achieve the same effect as `DELETE` with no `LIMIT`.
 
 The following statement deletes customer records with a customer key identification between 1001 and 1999:
 

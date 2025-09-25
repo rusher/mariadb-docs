@@ -1,10 +1,10 @@
 # mode-set
 
-Sets all ColumnStore nodes to read-only or read-write
+Sets all ColumnStore nodes to read-only or read-write.
 
 See [CMAPI](./) for detail on REST API endpoint, required headers, and other available actions.
 
-### DETAILS
+## Description
 
 Upon successful `mode-set` call CMAPI re-configures MariaDB Enterprise ColumnStore to the designated mode, either read-only or read/write operation.
 
@@ -19,7 +19,7 @@ JSON data required for this call:
 
 Bash aliases `mcsReadOnly` and `mcsReadWrite` are available starting with Enterprise ColumnStore 5.5.2.
 
-## EXAMPLES
+## Examples
 
 ### Executing cURL Manually
 

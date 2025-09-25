@@ -1,10 +1,10 @@
 # node DELETE
 
-Removes a ColumnStore node
+Removes a ColumnStore node.
 
 See [CMAPI](./) for detail on REST API endpoint, required headers, and other available actions.
 
-### DETAILS
+## Description
 
 Upon successful `node` DELETE call CMAPI configures MariaDB Enterprise ColumnStore to remove the specified node.
 
@@ -17,7 +17,7 @@ JSON data required for this call:
 | `timeout` | Maximum time in seconds to wait for completion of `add-node` operation |
 | `node`    | IP address of the node to remove                                       |
 
-## EXAMPLES
+## Examples
 
 ### Executing cURL Manually
 
