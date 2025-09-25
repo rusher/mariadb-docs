@@ -27,7 +27,7 @@ A query is first parsed by the MariaDB server (mariadbd) process and passed thro
 * **Execute Multi-Join:** Apply one or more hash join operation against projected join columns, and use that value to probe a previously built hash map. Build out tuples as needed to satisfy inner or outer join requirements. See the multi-table join section of [performance configuration](mariadb-columnstore-performance-related-configuration-settings.md) for additional details on tuning this.
 * **Cross-Table Level Filters:** Project additional columns from the range of rows for the Primitive Step as needed for any cross-table level filters such as `table1.column1 < table2.column2`, or more advanced functions and expressions. Access of blocks is again based on row identifier, going directly to the blocks.
 * **Aggregation/Distinct Operation Part 1:** Apply any local group by, distinct, or aggregation operation against the set of joined rows assigned to a given Batch Primitive. Part 1 of this process is handled by PrimProc.
-* **Aggregation/Distinct Operation Part 2:** Apply any final group by, distinct, or aggregation operation against the set of joined rows assigned to a given Batch Primitive. This processing is handled by PrimProc. See the memory management section of [performance configuration](mariadb-columnstore-performance-related-configuration-settings.md) for additional details on tuning this.
+* **Aggregation/Distinct Operation Part 2:** Apply any final group by, distinct, or aggregation operation against the set of joined rows assigned to a given Batch Primitive. This processing is handled by PrimProc[^1]. See the memory management section of [performance configuration](mariadb-columnstore-performance-related-configuration-settings.md) for additional details on tuning this.
 
 ## ColumnStore Query Execution Paradigms
 
@@ -53,7 +53,7 @@ Its important to note that ColumnStore does not have a cost based optimizer, so 
 
 ### Joins
 
-Hash joins are utilized by ColumnStore to optimize for large scale joins and avoid the need for indexes and the overhead of nested loop processing. ColumnStore maintains table statistics so as to determine the optimal join order. This is implemented by first identifying the small table side (based on extent map data) and materializing the necessary rows from that table for the join. If the size of this is less than the configuration setting `PmMaxMemorySmallSide`, the join is pushed down into PrimProc for distributed in-memory processing. Otherwise, the larger side rows is not processed in a distributed manner for joining, and only the `WHERE` clause on that side is executed across all PrimProc modules in the cluster. If the join is too large for memory, disk-based join can be enabled to allow the query to complete.
+Hash joins are utilized by ColumnStore to optimize for large scale joins and avoid the need for indexes and the overhead of nested loop processing. ColumnStore maintains table statistics so as to determine the optimal join order. This is implemented by first identifying the small table side (based on extent map data) and materializing the necessary rows from that table for the join. If the size of this is less than the configuration setting `PmMaxMemorySmallSide`, the join is pushed down into PrimProc[^1] for distributed in-memory processing. Otherwise, the larger side rows is not processed in a distributed manner for joining, and only the `WHERE` clause on that side is executed across all PrimProc modules in the cluster. If the join is too large for memory, disk-based join can be enabled to allow the query to complete.
 
 ### Aggregations
 
@@ -73,7 +73,7 @@ Aggregation performance is also influenced by the number of distinct aggregate c
 
 Subqueries are executed in sequence thus the subquery intermediate results must be materialized and then the join logic applies with the outer query.
 
-Window functions are executed as part of final aggregation in PrimProc due to the need for ordering of the window results. The ColumnStore window function engines uses a dedicated faster sort process.
+Window functions are executed as part of final aggregation in PrimProc[^1] due to the need for ordering of the window results. The ColumnStore window function engines uses a dedicated faster sort process.
 
 ### Partitioning
 
