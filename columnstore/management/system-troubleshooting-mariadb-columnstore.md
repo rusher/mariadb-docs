@@ -1,14 +1,14 @@
 ---
 hidden: true
 ---
-
+<!-- Many mentions of UM. Also, some PM mentions left, like PM1 and PM2. -->
 # System Troubleshooting MariaDB ColumnStore
 
-### MariaDB ColumnStore alias commands
+### MariaDB ColumnStore Alias Commands
 
-During the installation, these alias commands are defined and placed in the `.bashrc` file of the install user. 1.1 and later releases, the alias will reside in `/etc/profile.d/columnstoreAlias.sh`
+During the installation, these alias commands are defined and placed in the `.bashrc` file of the install user. In ColumnStore 1.1 and later releases, the alias resides in `/etc/profile.d/columnstoreAlias.sh`.
 
-This example is from a non-root install:
+This example is from a non-root installation:
 
 ```sql
 alias mcsmysql='/home/mariadb-user/mariadb/columnstore/mysql/bin/mysql --defaults-file=/home/mariadb-user/mariadb/columnstore/mysql/my.cnf -u root'
@@ -426,23 +426,21 @@ To Disable, just set the LogFile setting back to off and do the shutdown/startsy
 setprocessconfig DDLProc pm LogFile off
 ```
 
-### Crash trace files
+### Crash Trace Files
 
-MariaDB ColumnStore 1.0.13 / 1.1.3 onwards includes a special crash handler which will log details of a crash from the main UM and PM daemons. These can be found in:
+MariaDB ColumnStore 1.0.13 / 1.1.3 onwards includes a special crash handler which logs details of a crash from the PrimProc daemons. These can be found in:
 
 ```sql
 /var/log/mariadb/columnstore/trace
 ```
 
-The filenames will be in the form `<processName>.<processID>.log`. These are similar to the crash traces that can be found in the MariaDB server log files if MariaDB server crashes.
+The filenames are in the form `<processName>.<processID>.log`. These are similar to the crash traces that can be found in the MariaDB server log files if MariaDB server crashes.
 
 ### Enable/Disable Core Files
 
-Since core files are very large (1gb) and can take up a lot of disk space, Core File Generating for MariaDB ColumnStore platform processes is defaulted to disable.
+Since core files are very large (1G) and can take up a lot of disk space, core file generating for MariaDB ColumnStore platform processes defaults to disable.
 
-The location of the MariaDB ColumnStore Process corefiles get placed here:
-
-/var/log/mariadb/columnstore/corefiles/
+The location of the MariaDB ColumnStore process core files get placed here: `/var/log/mariadb/columnstore/corefiles/`
 
 You can redirect the location to another disk with more space by using a soft link.
 
@@ -798,29 +796,29 @@ There are times when the system gets into a state where it will not successfully
 
 Here is a couple of examples of a configuration issue that could cause this situation.
 
-1. DBROOT 1 get reassigned to a different PM than PM1 when the system only has local storage, meaning DBOOT 1 is only on PM1.
-2. UM or PM is disabled, and the user wants to get it enabled.
+1. DBROOT 1 get reassigned to a different PrimProc than PM1 when the system only has local storage, meaning DBOOT 1 is only on PM1.
+2. PrimProc is disabled, and the user wants to enable it.
 
-Here is the process on how to recover. Run from PM1
+Here is the process on how to recover. Run from PM1:
 
 ```sql
 # mcsadmin shutdownsystem y
 ```
 
-Run 'postConfigure' based on the type of install it is, root or non-root. Command line arguments will be different between the two. This example shows for a root install.
+Run `postConfigure` based on the type of installation, either root or non-root. Command-line arguments are different between the two. This example shows a root installation:
 
 ```sql
 # /usr/local/mariadb/columnstore/bin/postConfigure
 
 // if ask to use old configuration, answer n
 // If you get to the Module that is disabled and you want it enabled, answer 'y to the enable module prompt
-// on each of the PM DBROOT prompts, enter the DBOOT number that goes to the PM
+// on each of the PM DBROOT prompts, enter the DBOOT number that goes to the PrimProc
 // When it completes the configuration part and asks for ssh password, enter 'exit' to exit postConfigure
 
 # mcsadmin startsystem
 ```
 
-### Query failure MessageQueueClient :: setup (): unknown name or service
+### Query Failure MessageQueueClient :: setup (): unknown name or service
 
 Due to a known issue in MariaDB Columnstore 1.2.5 and earlier, if a User Module or a Performance Module on a combined server is removed, the ColumnStore.xml entry for the ExeMgr setting gets set to "unassigned".\
 This setting will cause queries to fail especially when running multiple queries in parallel.
