@@ -22,7 +22,7 @@ Thanks, and enjoy MariaDB!
 
 ### Vectors
 
-* New function [VEC\_DISTANCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vector-functions-vec_distance) for calculating either a Euclidean or Cosine distance between two vectors, depending on the underlying index type ([MDEV-35450](https://jira.mariadb.org/browse/MDEV-35450))
+* New function [VEC\_DISTANCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vector-functions-vec_distance) for calculating either a Euclidean or Cosine distance between two vectors, depending on the underlying index type ([MDEV-35450](https://jira.mariadb.org/browse/MDEV-35450))
 * aarch64 SIMD instructions now supported ([MDEV-34699](https://jira.mariadb.org/browse/MDEV-34699))
 
 ### Optimizer

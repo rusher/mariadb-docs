@@ -308,8 +308,7 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 ### South Korea
 
-- Harukasan (부산시, Busan)
-- Yongbok.net
+- zzunipark (Gwangju, South Korea)
 
 ### Spain
 

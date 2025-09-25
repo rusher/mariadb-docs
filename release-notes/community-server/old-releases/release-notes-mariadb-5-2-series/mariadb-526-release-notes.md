@@ -83,7 +83,7 @@ See the [mysql\_install\_db.exe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/
 In this version of MariaDB there is an upgrade wizard for converting MySQL\
 instances to MariaDB.
 
-See [Upgrading MariaDB on Windows](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-mariadb-on-windows) for\
+See [Upgrading MariaDB on Windows](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/platform-specific-upgrade-guides/upgrading-mariadb-on-windows) for\
 instructions on using the upgrade wizard.
 
 {% include "../../../.gitbook/includes/announce.md" %}

@@ -11,17 +11,16 @@ The [ColumnStore Bulk Data API](columnstore-bulk-data-loading.md) enables the cr
 The MaxScale CDC Data Adapter has been deprecated.
 {% endhint %}
 
-The MaxScale CDC Data Adapter allows streaming change data events (binary log events) from MariaDB Master hosting non-columnstore engines (InnoDB, MyRocks, MyISAM) to MariaDB ColumnStore. In another words replicate data from MariaDB Master to MariaDB ColumnStore. It acts as a CDC Client for MaxScale and uses the events received from MaxScale as input to MariaDB ColumnStore Bulk Data API to push the data to MariaDB ColumnStore.![maxscale-cdc-adapter](../../.gitbook/assets/maxscale-cdc-adapter.jpg)
+The MaxScale CDC Data Adapter allows streaming change data events (binary log events) from MariaDB Master hosting non-columnstore engines (InnoDB, MyRocks, MyISAM) to MariaDB ColumnStore. In other words, replicate data from a MariaDB master server to MariaDB ColumnStore. It acts as a CDC Client for MaxScale and uses the events received from MaxScale as input to MariaDB ColumnStore Bulk Data API to push the data to MariaDB ColumnStore. [maxscale-cdc-adapter](../../.gitbook/assets/maxscale-cdc-adapter.jpg)
 
-\
-It registers with MariaDB MaxScale as a CDC Client using the [MaxScale CDC Connector API](https://mariadb.com/downloads/mariadb-ax/connector), receiving change data records from MariaDB MaxScale (that are converted from binlog events received from the Master on MariaDB TX) in a JSON format. Then, using the MariaDB ColumnStore bulk write SDK, converts the JSON data into API calls and streams it to a MariaDB PM node. The adapter has options to insert all the events in the same schema as the source database table or insert each event with metadata as well as table data. The event meta data includes the event timestamp, the GTID, event sequence and event type (insert, update, delete).
+It registers with MariaDB MaxScale as a CDC Client using the [MaxScale CDC Connector API](https://mariadb.com/downloads/mariadb-ax/connector), receiving change data records from MariaDB MaxScale (that are converted from binlog events received from the Master on MariaDB TX) in a JSON format. Then, using the MariaDB ColumnStore bulk write SDK, it converts the JSON data into API calls and streams it to a MariaDB PM node. The adapter has options to insert all the events in the same schema as the source database table or insert each event with metadata as well as table data. The event meta data includes the event timestamp, the GTID, event sequence and event type (insert, update, delete).
 
 ### Installation
 
 #### Pre-requisite:
 
-* Download and install MaxScale CDC Connector API from [connector](https://mariadb.com/downloads/mariadb-ax/connector)
-* Download and install MariaDB ColumnStore bulk write SDK from columnstore-bulk-write-sdk.md
+* Download and install MaxScale CDC Connector API from [connector](https://mariadb.com/downloads/mariadb-ax/connector).
+* Download and install MariaDB ColumnStore bulk write SDK from columnstore-bulk-write-sdk.md.
 
 #### CentOS 7
 
@@ -72,9 +71,9 @@ Usage: mxs_adapter [OPTION]... DATABASE TABLE
 
 #### Streaming Multiple Tables
 
-To stream multiple tables, use the -f parameter to define a path to a TSV formatted file. The file must have one database and one table name per line. The database and table must be separated by a TAB character and the line must be terminated in a newline \n.
+To stream multiple tables, use the -f parameter to define a path to a TSV formatted file. The file must have one database and one table name per line. The database and table must be separated by a TAB character and the line must be terminated in a newline (`\n`).
 
-Here is an example file with two tables, t1 and t2 both in the test database.
+Here is an example file with two tables, t1 and t2 both in the test database:
 
 ```sql
 test	t1
@@ -83,21 +82,21 @@ test	t2
 
 #### Automated Table Creation on ColumnStore
 
-You can have the adapter automatically create the tables on the ColumnStore instance with the -an option. In this case, the user used for cross-engine queries will be used to create the table (the values in `Columnstore.CrossEngineSupport`). This user will require `CREATE` privileges on all streamed databases and tables.
+You can have the adapter automatically create the tables on the ColumnStore instance with the -an option. In this case, the user used for cross-engine queries will be used to create the table (the values in `Columnstore.CrossEngineSupport`). This user  requires `CREATE` privileges on all streamed databases and tables.
 
 #### Data Transformation Mode
 
-The -z option enables the data transformation mode. In this mode, the data is converted from historical, append-only data to the current version of the data. In practice, this replicates changes from a MariaDB master server to ColumnStore via the MaxScale CDC.
+The `-z` option enables the data transformation mode. In this mode, the data is converted from historical, append-only data to the current version of the data. In practice, this replicates changes from a MariaDB master server to ColumnStore via the MaxScale CDC.
 
 {% hint style="info" %}
-Note: This mode is not as fast as the append-only mode and might not be suitable for heavy workloads. This is due to the fact that the data transformation is done via various DML statements.
+This mode is not as fast as the append-only mode and might not be suitable for heavy workloads. This is due to the fact that the data transformation is done via various DML statements.
 {% endhint %}
 
 ### Quick Start
 
 Download and install both [MaxScale](https://mariadb.com/downloads/mariadb-tx/maxscale) and [ColumnStore](https://mariadb.com/downloads/mariadb-ax).
 
-Copy the Columnstore.xml file from `/usr/local/mariadb/columnstore/etc/Columnstore.xml` from one of the ColumnStore UM or PMnodese to the server where the adapter is installed.
+Copy the Columnstore.xml file from `/usr/local/mariadb/columnstore/etc/Columnstore.xml` from one of the ColumnStore PrimProc nodes to the server where the adapter is installed.
 
 Configure MaxScale according to the [CDC tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-21-06).
 
@@ -183,7 +182,7 @@ The database connection configuration follows PDI’s default schema.
 
 By default, the plugin tries to use ColumnStore's default configuration _`/usr/local/mariadb/columnstore/etc/Columnstore.xml`_ to connect to the ColumnStore instance through the `Bulk Write SDK`. In addition, individual paths or variables can be used too.
 
-Information on how to prepare the _`Columnstore.xml`_ configuration file can be found here.
+Information on how to prepare the `Columnstore.xml` configuration file can be found here.
 
 ### Usage
 

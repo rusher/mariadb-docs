@@ -131,11 +131,11 @@ MySQL has removed the following functions in MySQL 8.0.
 
 ### Vectors
 
-* [VEC\_DISTANCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vector-functions-vec_distance)
-* [VEC\_DISTANCE\_COSINE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_distance_cosine)
-* [VEC\_DISTANCE\_EUCLIDEAN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_distance_euclidean)
-* [VEC\_FromText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_fromtext)
-* [VEC\_ToText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors/vector-functions/vec_totext)
+* [VEC\_DISTANCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vector-functions-vec_distance)
+* [VEC\_DISTANCE\_COSINE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_distance_cosine)
+* [VEC\_DISTANCE\_EUCLIDEAN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_distance_euclidean)
+* [VEC\_FromText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_fromtext)
+* [VEC\_ToText](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/vector-functions/vec_totext)
 
 ### Window Functions
 

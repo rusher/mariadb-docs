@@ -8,7 +8,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
 
 ## Upgrading from MariaDB Enterprise Server 10.6
 
-* Upgrading from 10.6 should use take a few seconds with [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) Please ensure that you do a [clean shutdown](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions#requirements-for-doing-an-upgrade-between-major-versions) of 10.6 before doing the upgrade.
+* Upgrading from 10.6 should use take a few seconds with [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) Please ensure that you do a [clean shutdown](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/platform-specific-upgrade-guides/upgrading-on-linux/upgrading-between-major-mariadb-versions#requirements-for-doing-an-upgrade-between-major-versions) of 10.6 before doing the upgrade.
 * The variable [optimizer\_adjust\_secondary\_key\_costs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizer_adjust_secondary_key_costs) has no effect in 11.4 as all the features are already in 11. The variable is deprecated and should be remove from existing config files.
 
 ## Compatibility
@@ -1040,8 +1040,8 @@ MAX_MEMORY_USED: 392544
 
 ## Upgrade Instructions
 
-* [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrades/upgrade-to-mariadb-enterprise-server-11.4)
-* [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-mariadb-community-server-to-enterprise-server/upgrade-from-mariadb-community-server-to-mariadb-enterprise-server-11.4)
+* [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-enterprise-server-upgrade-paths/mariadb-enterprise-server-11.4/upgrade-to-mariadb-enterprise-server-11.4)
+* [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-enterprise-server-upgrade-paths/mariadb-enterprise-server-11.4/upgrade-from-mariadb-community-server-to-mariadb-enterprise-server-11.4)
 
 ## What's new in older release series?
 

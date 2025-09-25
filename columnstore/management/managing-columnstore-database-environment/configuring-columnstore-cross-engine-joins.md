@@ -1,16 +1,16 @@
 ---
 hidden: true
 ---
-
+<!-- Mentions of UM. -->
 # Configuring ColumnStore Cross-Engine Joins
 
-MariaDB ColumnStore allows columnstore tables to be joined with non-columnstore tables (e.g. [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) tables) within a query. The non-columnstore table may be on the MariaDB ColumnStore system OR on an external server that supports MariaDB client connections.
+MariaDB ColumnStore allows ColumnStore tables to be joined with non-ColumnStore tables (e.g. [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) tables) within a query. The non-ColumnStore table may be on the MariaDB ColumnStore system *or* on an external server that supports MariaDB client connections.
 
 To enable this process, the section in `Columnstore.xml` is configured with connection information.
 
-The following is an example entry in the Columnstore.XML configuration file to gain access to joined tables, Single Server MariaDB ColumnStore install. The Host needs to be either 127.0.0.1 or 'localhost':
+The following is an example entry in the Columnstore.XML configuration file to gain access to joined tables, Single Server MariaDB ColumnStore install. The Host needs to be either `127.0.0.1` or `localhost`:
 
-```sql
+```xml
 <CrossEngineSupport>
        <Host>127.0.0.1</Host>
        <Port>3306</Port>
@@ -19,23 +19,21 @@ The following is an example entry in the Columnstore.XML configuration file to g
 </CrossEngineSupport>
 ```
 
-For a Multi-Node MariaDB Columnstore Installation, the Host needs to be the IP Address of the User-Module #1 or the Combination User/Performance Module #1.
+For a multi-node MariaDB Columnstore installation, the host needs to be the IP address of the user module #1 or the combination of user/performance module #1.
 
-If the MariaDB Client is running on an external Server, then it would be the IP Address of that server.
+If the MariaDB client is running on an external server, it is the IP address of that server.
 
-For version 1.2.0 onwards the additional options in the section are supported to add SSL/TLS encryption to the connections:
+For version 1.2.0 onwards, the additional options in the section are supported to add SSL/TLS encryption to the connections:
 
-```sql
+```xml
 <TLSCA></TLSCA>
        <TLSClientCert></TLSClientCert>
        <TLSClientKey></TLSClientKey>
 ```
 
-This change should be made while the ColumnStore server is down. In a multi node deployment, the change should be made on the PM1 node only as this will be replicated to other instances upon restart.
+This change must be made while the ColumnStore server is down. In a multi-node deployment, the change must be made on the PM1 node only as this is replicated to other instances upon restart.
 
-Check here on how to make changes via the command line to Columnstore.xml:
-
-[columnstore-configuration-file-update-and-distribution.md](../columnstore-system/columnstore-configuration-file-update-and-distribution.md)
+Check here on how to make changes via the command line to `Columnstore.xml`: [columnstore-configuration-file-update-and-distribution.md](../columnstore-system/columnstore-configuration-file-update-and-distribution.md)
 
 ## Troubleshooting
 
@@ -52,10 +50,10 @@ Check here on how to make changes via the command line to Columnstore.xml:
 * Confirm that the login used has create temporary tables permission on `infinidb_vtable`:
 
 ```sql
-grant create temporary tables on infinidb_vtable.* to mydbuser@127.0.0.1;
+GRANT CREATE temporary tables ON infinidb_vtable.* TO mydbuser@127.0.0.1;
 ```
 
-* Confirm that the login used has grant `SELECT` on the table referenced in the cross-engine join. Verify by attempting to connect from each UM using mcsmysql and query the table you want to reference:
+* Confirm that the login used has the `SELECT` privilege on the table referenced in the cross-engine join. Verify by attempting to connect from each UM using mcsmysql and query the table you want to reference:
 
 ```sql
 mcsmysql -u mydbuser -p -h 127.0.0.1 
