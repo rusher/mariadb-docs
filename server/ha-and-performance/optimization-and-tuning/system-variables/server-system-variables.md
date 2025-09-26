@@ -905,7 +905,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `128`
+* Default Value: `0`
 * Range: `0` to `65536`
 
 #### `hostname`
