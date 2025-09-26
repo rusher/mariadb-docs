@@ -159,7 +159,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `enumeration`
-* Default Value: `nulls_equal`
+* Default Value: `NULLS_UNEQUAL`
 * Valid Values: `nulls_equal`, `nulls_unequal`, `nulls_ignored`
 
 #### `myisam_use_mmap`
