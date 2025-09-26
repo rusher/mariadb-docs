@@ -129,7 +129,7 @@ Yes. MariaDB Cloud is available for procurement on Amazon AWS, Google Cloud and 
 
 * [Amazon AWS Listing](https://aws.amazon.com/marketplace/pp/prodview-txge2dgyj4ieg)
 * [Google Cloud Listing](https://console.cloud.google.com/marketplace/details/skysql-public/skysql-gcp-mp)
-* \[Microsoft Azure Listing] (https://azuremarketplace.microsoft.com/en-us/marketplace/apps/skysqlinc.skysql-fully-managed-cloud-database?tab=Overview)
+* [Microsoft Azure Listing](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/skysqlinc.skysql-fully-managed-cloud-database?tab=Overview)
 
 ### Will I be charged VAT or taxes?
 
