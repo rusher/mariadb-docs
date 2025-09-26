@@ -1,16 +1,16 @@
-# Switchover Primary Node
+# Switchover of the Primary Node
 
 To switchover to a new primary node with Enterprise ColumnStore, perform the following procedure.
 
-## Perform Switchover in MaxScale
+## Performing Switchover in MaxScale
 
 The primary node can be switched in MaxScale using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
-* Use [MaxCtrl](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl) or another supported REST client
-* Call a module command using the `call command` command
-* As the first argument, provide the name for the module, which is [mariadbmon](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-monitors/mariadb-monitor)
-* As the second argument, provide the module command, which is `switchover`
-* As the third argument, provide the name of the monitor
+* Use [MaxCtrl](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl) or another supported REST client.
+* Call a module command using the `call command` command.
+* As the first argument, provide the name for the module, which is [mariadbmon](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-monitors/mariadb-monitor).
+* As the second argument, provide the module command, which is `switchover` .
+* As the third argument, provide the name of the monitor.
 
 For example:
 
@@ -33,19 +33,17 @@ maxctrl call command \
    mcs2
 ```
 
-## Check Replication Status with MaxScale
+## Checking the Replication Status with MaxScale
 
 MaxScale is capable of checking the status of [MariaDB Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
-* List the servers using the `list servers` command
-
-For example:
+* List the servers using the `list servers` command, like this:
 
 ```bash
 maxctrl list servers
 ```
 
-If switchover was properly performed, the `State` column of the new primary will show `Master, Running`.
+If switchover was properly performed, the `State` column of the new primary shows `Master, Running`.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

@@ -15,5 +15,5 @@ layout:
     visible: true
 ---
 
-# Managing ColumnStore System
+# Deployment
 

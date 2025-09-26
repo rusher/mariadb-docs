@@ -6,7 +6,7 @@ These instructions detail the upgrade from **MariaDB Enterprise ColumnStore 6** 
 
 This action is performed for each replica server **on the MaxScale node**.
 
-Prior to upgrading, the replica servers must be [set to maintenance mode](../node-maintenance-for-mariadb-enterprise-columnstore/set-a-node-to-maintenance-mode.md) in MaxScale. The replicas can be set to maintenance mode in MaxScale using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api). If you are using [MaxCtrl](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl), the replicas can be set to maintenance mode using the `set server` command:
+Prior to upgrading, the replica servers must be [set to maintenance mode](../../node-maintenance-for-mariadb-enterprise-columnstore/set-a-node-to-maintenance-mode.md) in MaxScale. The replicas can be set to maintenance mode in MaxScale using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api). If you are using [MaxCtrl](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl), the replicas can be set to maintenance mode using the `set server` command:
 
 ```bash
 maxctrl set server \
@@ -81,7 +81,7 @@ This action is performed **on each ColumnStore node**.
 
 Prior to upgrading, several services must be stopped on each ColumnStore node:
 
-1.  Stop the [CMAPI](../../reference/cmapi/) service:
+1.  Stop the [CMAPI](../../../reference/cmapi/) service:
 
     ```bash
     sudo systemctl stop mariadb-columnstore-cmapi
@@ -201,7 +201,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS, Rocky L
 
 This action is performed **on each ColumnStore node**.
 
-After upgrading, the MariaDB Enterprise ColumnStore service should be stopped, since it will be controlled by [CMAPI](../../reference/cmapi/):
+After upgrading, the MariaDB Enterprise ColumnStore service should be stopped, since it will be controlled by [CMAPI](../../../reference/cmapi/):
 
 ```bash
 sudo systemctl stop mariadb-columnstore
@@ -214,7 +214,7 @@ CMAPI disables the Enterprise ColumnStore service in a multi-node deployment. Th
 
 This action is performed **on each ColumnStore node**.
 
-After upgrading, the [CMAPI](../../reference/cmapi/) service and the MariaDB Enterprise Server service must be started on each ColumnStore node:
+After upgrading, the [CMAPI](../../../reference/cmapi/) service and the MariaDB Enterprise Server service must be started on each ColumnStore node:
 
 1.  Start the CMAPI service:
 

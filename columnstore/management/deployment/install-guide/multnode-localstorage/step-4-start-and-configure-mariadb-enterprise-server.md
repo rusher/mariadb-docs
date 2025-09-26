@@ -6,7 +6,7 @@ description: 'Step 4: Start and Configure MariaDB Enterprise Server'
 
 ## Overview
 
-This page details step 4 of the 9-step procedure "Deploy ColumnStore Object Storage Topology".
+This page details step 4 of the 9-step procedure "Deploy ColumnStore Shared Local Storage Topology".
 
 This step starts and configures MariaDB Enterprise Server, and MariaDB Enterprise ColumnStore 23.10.
 
@@ -61,45 +61,6 @@ gtid_strict_mode                       = ON
 server_id                              = 1
 ```
 
-## Configure the S3 Storage Manager
-
-On each Enterprise ColumnStore node, configure S3 Storage Manager to use S3-compatible storage by editing the /etc/columnstore/storagemanager.cnf configuration file:
-
-```sql
-[ObjectStorage]
-…
-service = S3
-…
-[S3]
-bucket                = your_columnstore_bucket_name
-endpoint              = your_s3_endpoint
-aws_access_key_id     = your_s3_access_key_id
-aws_secret_access_key = your_s3_secret_key
-# iam_role_name       = your_iam_role
-# sts_region          = your_sts_region
-# sts_endpoint        = your_sts_endpoint
-# ec2_iam_mode        = enabled
-
-[Cache]
-cache_size = your_local_cache_size
-path       = your_local_cache_path
-```
-
-The S3-compatible object storage options are configured under \[S3]:
-
-* The bucket option must be set to the name of the bucket that you created in "Create an S3 Bucket".
-* The endpoint option must be set to the endpoint for the S3-compatible object storage.
-* The `aws_access_key_id and aws_secret_access_key` options must be set to the access key ID and secret access key for the S3-compatible object storage.
-* To use a specific IAM role, you must uncomment and set `iam_role_name, sts_region, and sts_endpoint`.
-* To use the IAM role assigned to an EC2 instance, you must uncomment `ec2_iam_mode=enabled`.
-
-The local cache options are configured under \[Cache]:
-
-* The cache\_size option is set to 2 GB by default.
-* The path option is set to `/var/lib/columnstore/storagemanager/cache` by default.
-
-Ensure that the specified path has sufficient storage space for the specified cache size.
-
 ## Start the Enterprise ColumnStore Services
 
 1. On each Enterprise ColumnStore node, start and enable the MariaDB Enterprise Server service, so that it starts automatically upon reboot:
@@ -130,7 +91,7 @@ $ sudo systemctl start mariadb-columnstore-cmapi
 $ sudo systemctl enable mariadb-columnstore-cmapi
 ```
 
-For additional information, see "[Starting and Stopping MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb)".
+For additional information, see "Start and Stop Services".
 
 ## Create User Accounts
 
@@ -294,8 +255,7 @@ SET GLOBAL read_only=ON;
 
 Initiate the primary server using CMAPI.
 
-1. Create an API key for the cluster.\
-   This API key should be stored securely and kept confidential, because it can be used to add cluster nodes to the multi-node Enterprise ColumnStore deployment.
+1. Create an API key for the cluster. This API key should be stored securely and kept confidential, because it can be used to add cluster nodes to the multi-node Enterprise ColumnStore deployment.
 
 For example, to create a random 256-bit API key using openssl rand:
 
@@ -385,7 +345,7 @@ $ curl -k -s https://mcs1:8640/cmapi/0.4.0/cluster/status \
 
 Add the replica servers with CMAPI:
 
-1. For each replica server, use [CMAPI](../../../architecture/columnstore-architectural-overview.md#cluster-management-api-cmapi-server) to add the replica server to the cluster.\
+1. For each replica server, use [CMAPI](../../../../architecture/columnstore-architectural-overview.md#cluster-management-api-cmapi-server) to add the replica server to the cluster.\
    The previously set API key needs to be provided as part of the X-API-key HTML header.
 
 For example, if the primary server's host name is mcs1 and the replica server's IP address is 192.0.2.2, use the following node command:
@@ -569,7 +529,7 @@ $ sudo setenforce enforcing
 
 For example, the file will usually look like this after the change:
 
-```editorconfig
+```systemd
 # This file controls the state of SELinux on the system.
 # SELINUX= can take one of these three values:
 #     enforcing - SELinux security policy is enforced.
@@ -668,7 +628,7 @@ $ sudo firewall-cmd --permanent --add-rich-rule='
 
 4. Reload the runtime configuration:
 
-```bash
+```
 $ sudo firewall-cmd --reload
 ```
 
@@ -712,12 +672,12 @@ $ sudo ufw reload
 
 ## Next Step
 
-Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
+Navigation in the procedure "Deploy ColumnStore Shared Local Storage Topology".
 
-This page was **step 4 of 9**.
+This page was step 4 of 9.
 
-[Next: Step 5: Test MariaDB Enterprise Server.](step-5-test-mariadb-enterprise-server.md)
+[Next: Step 5: Test MariaDB Enterprise Server](step-5-test-mariadb-enterprise-server.md).
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

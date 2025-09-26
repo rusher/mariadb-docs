@@ -43,7 +43,7 @@ The high level steps involved in performing a full backup of MariaDB ColumnStore
 
 ### Suspend Write Activity
 
-To suspend data writes to column store the following command can be issued the admin console:
+To suspend data writes to ColumnStore, issue the following command in the admin console:
 
 ```sql
 mcsadmin> suspendDatabaseWrites
@@ -55,9 +55,9 @@ This command suspends the DDL/DML writes to the MariaDB Columnstore Database
 Suspend Calpont Database Writes Request successfully completed
 ```
 
-Optionally y can be appended as an argument to `suspendDatabaseWrites` to avoid the confirmation prompt.
+Optionally, `y` can be appended as an argument to `suspendDatabaseWrites` to avoid the confirmation prompt.
 
-### Backup the MariaDB Server data files
+### Backup the MariaDB Server Data Files
 
 The MariaDB Server should be backed up using one of the available backup methods described in the [server backup and restore overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/backup-and-restore-overview). Since the column store data is not stored within the MariaDB Server backup should run very quickly. Utilizing either [mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) or just backing up the directory are straightforward options.
 

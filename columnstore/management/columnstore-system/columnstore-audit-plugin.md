@@ -1,23 +1,19 @@
 # ColumnStore Audit Plugin
 
-1. [Introduction "Introduction"](columnstore-audit-plugin.md#introduction)
-2. [Installation "Installation"](columnstore-audit-plugin.md#installation)
-3. [Enabling the audit plugin "Enabling the audit plugin"](columnstore-audit-plugin.md#enabling-the-audit-plugin)
+## Overview
 
-## Introduction
+MariaDB server includes an optional [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) that enables logging and tracking of all user access and statements. It is included, but disabled by default. It can be enabled for ColumnStore.
 
-MariaDB server includes an optional [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) that enables logging and tracking of all user access and statements. This is included and can be enabled for ColumnStore
+## Installing the Audit Plugin
 
-## Installation
-
-To enable the audit plugin for the currently running instance (but not across restarts) run the following as mcsmysql with the default root account:
+To enable the audit plugin for the currently running instance (but not across restarts), run the following as `mcsmysql` with the default root account:
 
 ```sql
 INSTALL PLUGIN server_audit 
 SONAME 'server_audit.so';
 ```
 
-To have this persist across restarts, edit the ColumnStore `my.cnf` file (example shown for root install):
+To make this persist across restarts, edit the ColumnStore `my.cnf` file (example shown for root install):
 
 ```bash
 $ vi /usr/local/mariadb/columnstore/mysql/my.cnf
@@ -28,7 +24,7 @@ plugin_load=server_audit=server_audit.so
 
 For more details, see the [audit plugin installation guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-installation)
 
-## Enabling the audit plugin
+## Enabling the Audit Plugin
 
 To enable audit logging the following global variable must be set to ON:
 

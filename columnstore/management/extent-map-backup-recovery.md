@@ -1,5 +1,7 @@
 # Extent Map Backup & Recovery
 
+## Overview
+
 MariaDB ColumnStore utilizes an Extent Map to manage data distribution across extents—logical blocks within physical segment files ranging from 8 to 64 MB. Each extent holds a consistent number of rows, with the Extent Map cataloging these extents, their corresponding block identifiers (LBIDs), and the minimum and maximum values for each column's data within the extent.​
 
 The primary node maintains the master copy of the Extent Map. Upon system startup, this map is loaded into memory and propagated to other nodes for redundancy and quick access. Corruption of the master Extent Map can render the system unusable and lead to data loss.​

@@ -1,6 +1,6 @@
 # ColumnStore Redistribute Data
 
-## Introduction
+## Overview
 
 When new PM nodes are added to a running instance it may be desirable to redistribute the data in current nodes across all of the nodes. This is not strictly required as ongoing data ingestion will prioritize the new empty nodes for data loading to rebalance the system.
 

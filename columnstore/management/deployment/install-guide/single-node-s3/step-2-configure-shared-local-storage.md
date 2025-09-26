@@ -68,7 +68,7 @@ For Enterprise ColumnStore deployments in GCP:
 
 GlusterFS is a distributed file system. GlusterFS is a shared local storage option, but it is not one of the recommended options.
 
-For more information, see "[Recommended Storage Options](../../../architecture/columnstore-storage-architecture.md#recommended-storage-options)".
+For more information, see "[Recommended Storage Options](../../../../architecture/columnstore-storage-architecture.md#recommended-storage-options)".
 
 ### Install GlusterFS
 

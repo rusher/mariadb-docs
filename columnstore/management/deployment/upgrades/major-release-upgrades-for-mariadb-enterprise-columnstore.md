@@ -58,7 +58,7 @@ On the **new ColumnStore cluster**, restore the table schemas and data.
       * If you are connecting directly to a multi-node ColumnStore cluster, they should refer to the host and port of the primary ColumnStore node
       * If you are connecting directly to single-node ColumnStore, they should refer to the host and port of the ColumnStore node
     * When the command is executed, `mariadb` client prompts for the user password
-2.  For each table, restore the data from the table's CSV file by executing the [cpimport utility](../../clients-and-tools/data-import/mariadb-enterprise-columnstore-data-loading-with-cpimport.md) on the primary ColumnStore node:
+2.  For each table, restore the data from the table's CSV file by executing the [cpimport utility](../../../clients-and-tools/data-import/mariadb-enterprise-columnstore-data-loading-with-cpimport.md) on the primary ColumnStore node:
 
     ```bash
     sudo cpimport -s ',' \

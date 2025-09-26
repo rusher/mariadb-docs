@@ -1,14 +1,14 @@
-# Remove a Node
+# Removing a Node
 
 To remove a node from Enterprise ColumnStore, perform the following procedure.
 
-## Unlink from Service in MaxScale
+## Unlinking from Service in MaxScale
 
 The server object for the node must be unlinked from the service using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
-* Unlink the server object from the service using the `unlink service` command
-* As the first argument, provide the name of the service
-* As the second argument, provide the name of the server
+* Unlink the server object from the service using the `unlink service` command.
+* As the first argument, provide the name of the service.
+* As the second argument, provide the name of the server.
 
 ```bash
 maxctrl unlink service \
@@ -16,25 +16,23 @@ maxctrl unlink service \
    mcs3
 ```
 
-## Check the Service in MaxScale
+## Checking the Service in MaxScale
 
 To confirm that the server object was properly unlinked from the service, the service should be checked using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
-* Show the services using the `show services` command
-
-For example:
+* Show the services using the `show services` command, like this:
 
 ```bash
 maxctrl show services
 ```
 
-## Unlink from Monitor in MaxScale
+## Unlinking from Monitor in MaxScale
 
 The server object for the node must be unlinked from the monitor using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
-* Unlink a server object from the monitor using the `unlink monitor` command
-* As the first argument, provide the name of the monitor
-* As the second argument, provide the name of the server
+* Unlink a server object from the monitor using the `unlink monitor` command.
+* As the first argument, provide the name of the monitor.
+* As the second argument, provide the name of the server.
 
 ```bash
 maxctrl unlink monitor \
@@ -42,25 +40,23 @@ maxctrl unlink monitor \
    mcs3
 ```
 
-## Check the Monitor in MaxScale
+## Checking the Monitor in MaxScale
 
 To confirm that the server object was properly unlinked from the monitor, the monitor should be checked using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
-* Show the monitors using the `show monitors` command
-
-For example:
+* Show the monitors using the `show monitors` command, like this:
 
 ```bash
 maxctrl show monitors
 ```
 
-## Remove the Server from MaxScale
+## Removing the Server from MaxScale
 
 The server object for the node must also be removed from MaxScale using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
-* Use [MaxCtrl](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl) or another supported REST client
-* Remove the server object using the `destroy server` command
-* As the first argument, provide the name for the server
+* Use [MaxCtrl](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl) or another supported REST client.
+* Remove the server object using the `destroy server` command.
+* As the first argument, provide the name for the server.
 
 For example:
 
@@ -69,19 +65,17 @@ maxctrl destroy server \
    mcs3
 ```
 
-## Check the Server in MaxScale
+## Checking the Server in MaxScale
 
 To confirm that the server object was properly removed, the server objects should be checked using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
-* Show the server objects using the `show servers` command
-
-For example:
+* Show the server objects using the `show servers` command, like this:
 
 ```bash
 maxctrl show servers
 ```
 
-## Stop the Enterprise ColumnStore Services
+## Stopping the Enterprise ColumnStore Services
 
 The Enterprise Server. Enterprise ColumnStore, and CMAPI services can be stopped using the `systemctl` command.
 
@@ -103,15 +97,15 @@ Perform the following procedure on the node:
     sudo systemctl stop mariadb-columnstore-cmapi
     ```
 
-## Remove the Node from Enterprise ColumnStore
+## Removing the Node from Enterprise ColumnStore
 
 The node must be removed from Enterprise ColumnStore using [CMAPI](../../reference/cmapi/):
 
-* Remove the node using the [remove-node](../../reference/cmapi/node-delete.md) endpoint path
-* Use a [supported REST client](../../reference/cmapi/#clients), such as `curl`
-* Format the JSON output using `jq` for enhanced readability
-* Authenticate using the configured [API key](../../reference/cmapi/#authentication)
-* Include the [required headers](../../reference/cmapi/#required-headers)
+* Remove the node using the [remove-node](../../reference/cmapi/node-delete.md) endpoint path.
+* Use a [supported REST client](../../reference/cmapi/#clients), such as `curl` .
+* Format the JSON output using `jq` for enhanced readability.
+* Authenticate using the configured [API key](../../reference/cmapi/#authentication).
+* Include the [required headers](../../reference/cmapi/#required-headers).
 
 For example, if the primary node's host name is `mcs1` and the IP address for the node to remove is `192.0.2.3`:
 
@@ -143,11 +137,11 @@ Example output:
 }
 ```
 
-## Check Enterprise ColumnStore Status
+## Checking the Enterprise ColumnStore Status
 
 To confirm that the node was properly removed, the status of Enterprise ColumnStore should be checked using [CMAPI](../../reference/cmapi/):
 
-* Check the status using the [status](../../reference/cmapi/status.md) endpoint path
+* Check the status using the [status](../../reference/cmapi/status.md) endpoint path.
 
 For example, if the primary node's host name is `mcs1`:
 

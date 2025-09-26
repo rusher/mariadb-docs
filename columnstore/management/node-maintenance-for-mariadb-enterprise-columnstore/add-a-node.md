@@ -2,17 +2,17 @@
 description: Adding a Node to MariaDB Enterprise ColumnStore
 ---
 
-# Add a Node
+# Adding a Node
 
 To add a new node to Enterprise ColumnStore, perform the following procedure.
 
-## Deploy Enterprise ColumnStore
+## Deploying Enterprise ColumnStore
 
 Before you can add a node to Enterprise ColumnStore, confirm that the Enterprise ColumnStore software has been deployed on the node in the desired topology.
 
 For additional information, see "[Topologies](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies)".
 
-## Backup MariaDB Data Directory on the Primary Server
+## Backing Up MariaDB Data Directory on the Primary Server
 
 Before the new node can be added, its MariaDB data directory must be consistent with the Primary Server. To ensure that it is consistent, take a backup of the Primary Server:
 
@@ -37,7 +37,7 @@ The instructions below show how to perform a backup using [MariaDB Backup](https
 
     Confirm successful completion of the prepare operation.
 
-## Restore the Backup on the New Node
+## Restoring the Backup on the New Node
 
 To make the new node consistent with the Primary Server, restore the new backup on the new node:
 
@@ -58,7 +58,7 @@ To make the new node consistent with the Primary Server, restore the new backup 
     sudo chown -R mysql:mysql /var/lib/mysql
     ```
 
-## Start the Enterprise ColumnStore Services
+## Starting the Enterprise ColumnStore Services
 
 The Enterprise Server. Enterprise ColumnStore, and CMAPI services can be started using the `systemctl` command. In case the services were started during the installation process, use the restart command.
 
@@ -87,7 +87,7 @@ Perform the following procedure on the new node:
     sudo systemctl enable mariadb-columnstore-cmapi
     ```
 
-## Configure MariaDB Replication
+## Configuring MariaDB Replication
 
 MariaDB Enterprise ColumnStore requires MariaDB Replication, which must be configured.
 
@@ -130,7 +130,7 @@ MariaDB Enterprise ColumnStore requires MariaDB Replication, which must be confi
 
     The above statement configures the new node to connect to the Primary Server to retrieve new binary log events and replicate them into the local database.
 
-## Add the Node to Enterprise ColumnStore
+## Adding the Node to Enterprise ColumnStore
 
 The new node must be added to Enterprise ColumnStore using [CMAPI](../../reference/cmapi/):
 
@@ -170,7 +170,7 @@ Example output:
 }
 ```
 
-## Check Enterprise ColumnStore Status
+## Checking Enterprise ColumnStore Status
 
 To confirm that the node was properly added, the status of Enterprise ColumnStore should be checked using [CMAPI](../../reference/cmapi/):
 
@@ -290,7 +290,7 @@ Example output:
 }
 ```
 
-## Add a Server to MaxScale
+## Adding a Server to MaxScale
 
 A server object for the new node must also be added to MaxScale using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
@@ -307,7 +307,7 @@ maxctrl create server \
    192.0.2.3
 ```
 
-## Check the Server in MaxScale
+## Verifying the Server in MaxScale
 
 To confirm that the server object was properly added, the server objects should be checked using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
@@ -319,7 +319,7 @@ For example:
 maxctrl show servers
 ```
 
-## Link to Monitor in MaxScale
+## Linking to Monitor in MaxScale
 
 The server object for the new node must be linked to the monitor using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
@@ -333,7 +333,7 @@ maxctrl link monitor \
    mcs3
 ```
 
-## Check the Monitor in MaxScale
+## Checking the Monitor in MaxScale
 
 To confirm that the server object was properly linked to the monitor, the monitor should be checked using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
@@ -345,7 +345,7 @@ For example:
 maxctrl show monitors
 ```
 
-## Link to Service in MaxScale
+## Linking to Service in MaxScale
 
 The server object for the new node must be linked to the service using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
@@ -359,7 +359,7 @@ maxctrl link service \
    mcs3
 ```
 
-## Check the Service in MaxScale
+## Checking the Service in MaxScale
 
 To confirm that the server object was properly linked to the service, the service should be checked using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 
@@ -371,7 +371,7 @@ For example:
 maxctrl show services
 ```
 
-## Check Replication Status with MaxScale
+## Checking the Replication Status with MaxScale
 
 MaxScale is capable of checking the status of [MariaDB Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) using [MaxScale's REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/reference/maxscale-rest-api):
 

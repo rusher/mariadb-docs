@@ -2,9 +2,11 @@
 
 In case where an entry in the MariaDB ColumnStore's configuration needs to be updated and distributed, this can be done from the command line from Performance Module #1. All changes made to MariaDB ColumnStore's configuration file need to be applied on PM1.
 
-NOTE: 'mcsadmin `distributeconfigfile`' only needs to be run if the system is Active. If the system is down, then just make the change, and when the system is started, the update will get distributed.
+{% hint style="info" %}
+`mcsadmin distributeconfigfile` only needs to be run if the system is active. If the system is down, then just make the change, and when the system is started, the update will get distributed.
+{% endhint %}
 
-Here is an example
+Here is an example:
 
 ```sql
 /usr/local/mariadb/columnstore/bin/configxml.sh setconfig SystemConfig SystemName mcs-1

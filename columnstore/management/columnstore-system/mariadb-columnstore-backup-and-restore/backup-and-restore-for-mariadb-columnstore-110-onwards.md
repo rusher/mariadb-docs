@@ -21,14 +21,14 @@
 17. [Restore Return Codes "Restore Return Codes"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#restore-return-codes)
 18. [Restore Operation Notes "Restore Operation Notes"](backup-and-restore-for-mariadb-columnstore-110-onwards.md#restore-operation-notes)
 
-## Backup and Restore package
+## Backup and Restore Package
 
 The Backup and Restore is part of the MariaDB ColumnStore Tools package.\
 It can be downloaded from:
 
 [tools-ax](https://mariadb.com/downloads/mariadb-ax/tools-ax)
 
-## Installing MariaDB ColumnStore Tools package
+## Installing MariaDB ColumnStore Tools Package
 
 The package is available as rpm, deb and binary. Follow the instructions to install the associated package:
 
@@ -59,12 +59,12 @@ The high level steps involved in performing a full backup of MariaDB ColumnStore
 * Backup the ColumnStore data files.
 * Resume write activity on the system.
 
-## columnstoreBackup
+## ColumnStore Backup
 
-In MariaDB ColumnStore 1.1.0 a tool - columnstoreBackup to automate the backup/restore across the MariaDB ColumnStore nodes is available.
+In MariaDB ColumnStore 1.1.0, the  `columnstoreBackup` tool is available to automate the backup/restore across MariaDB ColumnStore nodes.
 
 {% hint style="info" %}
-Note: columnstoreBackup tool is only for ColumnStore data backups. Other engines may not be fully backed up and data could be lost when restoring.
+`columnstoreBackup` tool is only for ColumnStore data backups. Other engines may not be fully backed up and data could be lost when restoring.
 {% endhint %}
 
 #### Backup Setup
@@ -151,9 +151,9 @@ These directories are created if they do not exist and can be created prior to e
 
 The columnstoreBackup option -n \[value] limits the number parallel rsync commands executed at a given time. The default 5 means up to 5 DBRoots will kick off rysnc commands to various PMs and the backup system will wait until all are complete and verified successful. At this time it will kick off another 5 DBRoots. The progress indicator should reflect the percentage of total completion and not individual rysnc commands. This value can be set higher via the -n command but if the number of DBRoots present in the system is large enough there may be a performance hit on system processing or network bandwidth limitations.
 
-## columnstoreRestore
+## ColumnStore Restore
 
-The tool is designed to be run on the system storing the backups. This will automate restoring from backups created by the `columnstoreBackup` tool.
+The `columnstoreRestore` tool is designed to be run on the system storing the backups. This automates restoring from backups created by the `columnstoreBackup` tool.
 
 #### Restore Setup
 

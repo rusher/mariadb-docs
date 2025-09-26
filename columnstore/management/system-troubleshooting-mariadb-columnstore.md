@@ -1,7 +1,7 @@
 ---
 hidden: true
 ---
-<!-- Many mentions of UM. Also, some PM mentions left, like PM1 and PM2. -->
+
 # System Troubleshooting MariaDB ColumnStore
 
 ### MariaDB ColumnStore Alias Commands
@@ -29,7 +29,7 @@ dbrm - cd to MariaDB ColumnStore DBRM file directory
 module - outputs the MariaDB ColumnStore local mode name, like 'pm1'
 ```
 
-### MariaDB ColumnStore Support Report tool
+### MariaDB ColumnStore Support Report Tool
 
 This tool can be executed by users, called "columnstoreSupport", that will generate a report that contains the log files and other system data that is used by MariaDB personnel to help diagnose system related issues and errors within the MariaDB ColumnStore Product.
 
@@ -85,7 +85,7 @@ Get dbms report data for pm1
 Columnstore Support Script Successfully completed, files located in columnstoreSupportReport.tar.gz
 ```
 
-columnstoreSupportReport.tar.gz is what you would provide to MariaDB personnel or attach to a JIRA.
+`columnstoreSupportReport.tar.gz` is what you would provide to MariaDB personnel or attach to a JIRA.
 
 This is what the report consists of:
 
@@ -136,7 +136,7 @@ This is what the report consists of:
 
 7. MariaDB ColumnStore MySQL log file: u`m1_mysqllogReport.tar.gz`
 
-### MariaDB ColumnStore logging
+### MariaDB ColumnStore Logging
 
 MariaDB ColumnStore utilizes the install system logging tool, whether it's syslog, rsyslog, or syslog-ng.\
 The logs are located in /var/log/mariadb/columnstore. There are these 5 logs:
@@ -178,13 +178,13 @@ Also, in the `/var/log/mariadb/columnstore` directory, there are a few other log
 
 The MariaDB ColumnStore process corefiles would be stored in `/var/log/mariadb/columnstore/corefiles`, that is if core file dumping is enabled on the system.
 
-#### MariaDB ColumnStore log files and what goes in them
+#### MariaDB ColumnStore Log Files and Contents
 
-* Crit, err, and warning used to log problems by a MariaDB ColumnStore Process.
-* Info will have logs showing high level actions that are going on in the system. During a stop/startsystem, it will show the high-level commands of the process/modules being stopped and started. The bulk-load (cpimport) tool logs is high level actions there also.
-* Debug will have the lower-level actions from the MariaDB ColumnStore Processes, which will include queries.
+* Critical errors, and warning used to log problems by a MariaDB ColumnStore Process.
+* Info has logs showing high level actions that are going on in the system. During a stop/startsystem, it will show the high-level commands of the process/modules being stopped and started. The bulk-load (cpimport) tool logs is high level actions there also.
+* Debug has the lower-level actions from the MariaDB ColumnStore Processes, which includes queries.
 
-The MariaDB Server will be logged here.
+The MariaDB Server are logged here.
 
 MariaDB ColumnStore-MySQL logs are stored here:
 
@@ -192,12 +192,15 @@ MariaDB ColumnStore-MySQL logs are stored here:
 /usr/local/mariadb/columnstore/mysql/db/’server-name’.err
 ```
 
-NOTE: Other informational log files will be written to the log directory as well as the Temporary Directory from MariaDB ColumnStore process during certain operations. So you will see a few other logs show up in the log directory besides these.
+{% hint style="info" %}
+Other informational log files will be written to the log directory as well as the Temporary Directory from MariaDB ColumnStore process during certain operations. So you will see a few other logs show up in the log directory besides these.
+{% endhint %}
 
-Temporary Directory for root installs is located in `/tmp/columnstore/tmp/filles/`\
-Temporary Directory for non-root installs is located in `$HOME/.tmp`
+Temporary Directory for root installs is located in `/tmp/columnstore/tmp/filles/`.
 
-#### MariaDB ColumnStore log files and how to setup
+Temporary Directory for non-root installs is located in `$HOME/.tmp` .
+
+#### MariaDB ColumnStore Log File Setup
 
 The MariaDB ColumnStore log files setup is done as part of the post-install/postConfigure installation pset uprocess. If some reason the MariaDB ColumnStore log files aren't being generated or the log-rotation is not working, then there might have been some install/setup error that occurred.
 
@@ -236,7 +239,7 @@ total 172
 
 If so, then logging is now working...
 
-#### Process STDOUT/STDERR logging
+#### Process STDOUT/STDERR Logging
 
 MariaDB ColumnStore Processes have built in STDOUT/STDERR logging that can be enabled. This could be used for additional debugging of issues. This is enabled on a Process by Process Level.\
 Here is an example of how to enable and disable. In this example, locate the Process to enable, like DDLProc. Then enter the Process name and Module-type on the 'setprocessconfig' command.
@@ -460,7 +463,7 @@ You can redirect the location to another disk with more space by using a soft li
 # ma startsystem
 ```
 
-### MariaDB ColumnStore database files
+### MariaDB ColumnStore Database Files
 
 The MariaDB ColumnStore has 3 sets of database files. These files are also always backed up and restored together as part of the backup and restore process.
 
@@ -480,7 +483,7 @@ The Extent Map is loaded into shared memory on each of the nodes during the star
 
 NOTE: The following utility can be used to dump the internal memory copy of the Extent Map `/usr/local/mariadb/columnstore/bin/editem`. There are a few options with this command: -i dumps a raw copy, and -d dumps a formatted copy.
 
-### MariaDB ColumnStore utilities
+### MariaDB ColumnStore Utilities
 
 Here are a few of the common utilities that are used to view and troubleshoot issues. All of these commands are located in /usr/local/mariadb/columnstore/bin/
 
@@ -507,7 +510,7 @@ These are utilities that would be run on all nodes in the system.
 
 * clearShm – used to clear the shared internal memory, used at times after a system-shutdown command is done just to make sure the memory is cleared
 
-### Tables locks and clearing
+### Tables Locks and Clearing
 
 A Table lock might be left set due to come failure on processing a DML/DDL command. Normally this lock can be cleared with the utility mentioned above, cleartablelock. But in the case where it doesn't clear the lock, it can also be cleared by restarting the Active DMLProc on the system. This will cause DMLProc to perform the rollback processing that will clear any table locks. And as a third option when the first to doesn't work, there is a tablelock file that can be removed
 
@@ -541,7 +544,7 @@ Run cleartablelock with the table lock ID shown in the viewtablelock
 
 When the status of DMLProc goes to ACTIVE from BUSY\_INIT (meaning it is performing rollbacks), then check to see if the lock still exists.
 
-**delete the tablelock file**
+**Delete the Tablelock File**
 
 If the previous 2 commands didn't work, you can delete the tablelock file if it exists
 
@@ -553,7 +556,7 @@ This is done from PM1.
 # mcsadmin restartSystem y
 ```
 
-### Multi-node install problems and how to diagnose
+### Multi-Node Installation Problems and Diagnosis
 
 Once you install the packages on the initial server, pm1, run post-install and postConfigure.
 
@@ -581,7 +584,7 @@ generally, when `ProcMon/ProcMgr` isn't active, it's because one of these issues
 1. If external storage, a pm /etc/fstab isn't set up
 2. message issue between the servers that is causing ProcMon and ProcMgr to fail to communicate. Make sure all server firewalls are disabled along with SELinux.
 
-### Add Module install problems and how to diagnose
+### Add Module Installation Problems and Diagnosis
 
 There are a number of reasons why an addModule command might fail, missing dependent packages, password, or ssh key not set up. Here are some things to investigate when this 'mcsadmin' command does fail.
 
@@ -591,9 +594,9 @@ There are a number of reasons why an addModule command might fail, missing depen
 4. Also, depending on how far the command got, it might have added an entry in the system configuration file for the new module. So you will need to check that and if you were adding pm2 and it failed, then it shows up in the system configuration via the 'getsystemn'. You would then need to remove that module before trying the addModule command.
 5. If your get the error return from the 'addModule' command if File Open error, that means it could locate the MariaDB ColumnStore rpm/deb/binary in the `$HOME` directory, i.e. /root for root user install. The logic takes the packages from here and pushes them to the new server.
 
-### postConfigure install problems and how to diagnose
+### postConfigure Installation Problems and Diagnosis
 
-The installation script, postConfigure, is run at install and upgrade times. The first part of the script takes information from the user and sets up the system configuration, which updates the Columnstore.xml and the ProcessConfig.xml configuration files.
+The installation script, `postConfigure`, is run at install and upgrade times. The first part of the script takes information from the user and sets up the system configuration, which updates the Columnstore.xml and the ProcessConfig.xml configuration files.
 
 The second part of the script performs a remote install of all of the other servers in the system, which is for a multi-node install configuration. The installation of the remote nodes is done simultaneously, and the remote install logs are placed in /tmp on 'pm1', i.e., "pm1\_installer.log". The actual log file name will be different based on whether you are doing an RPM, debian, or binary install.\
 So if postConfigure reports that a failure occurred during the remote server install phase, you can look at these logs in /tmp. The main reasons why this might fail:
@@ -623,7 +626,7 @@ The third part of postConfigure is the starting up of the system, which consist 
    b. If it reports a module status of FAILED, then check the log files from that module.
 4. Also check the log files from the local 'pm1' module.
 
-### startSystem problems and how to diagnose
+### startSystem Problems and Diagnosis
 
 So this is assuming that the system has made it successfully through a postConfigure install or upgrade. At some point, you might need to do a stop or shutdownsystem for some maintenance or some other reason. And then do the start system. If any failures occur with the startSystem command, you can check the following:
 
@@ -662,13 +665,13 @@ If the system ever gets into DBRM Read-Only Mode, it is best resolved by doing a
 
 DBRM Read-Only Mode means that changes cannot be made to the MariaDB ColumnStore Database while it is in this state. Queries can still be processed.
 
-### Non-Root System, PrimProc Process fails to start up
+### Non-Root System, PrimProc Process Fails to Start up
 
 For non-root systems, the user file settings are required to be set as shown in the Preparing Guide. So if you have a Non-Root install where it fails to start, and the 'mcsadmin getsystemi' shows that the PrimProc Process is in a failed state. Double check the user file settings on each node.
 
 preparing-for-columnstore-installation-10x.md
 
-### Create table error - Error occurred when calling system catalog
+### Create Table Error - Error Occurred When Calling System Catalog
 
 If you are having a problem creating a table after a new install is performed and you get the error "Error occurred when calling system catalog", chances are the System Catalog didn't get created by postConfigure. The call to create happens at the very end of postConfigure, so it is possible that postConfigure didn't complete or there was an error when trying to create it.
 
@@ -701,11 +704,11 @@ From Performance Module #1
 mcsadmin startsystem y
 ```
 
-### Truncate Table Failure with error of Columnstore engine ID different
+### Truncate Table Failure With Error of Columnstore Engine ID Different
 
 This issue has been reported after a system was upgraded from 1.1.x to 1.2.x versions of MariaDB ColumnStore. If the truncate error occurs with the Columnstore engine ID being different, then the existing table would need to be dropped and recreated as a fix.
 
-### MariaDB ColumnStore Process Restarting due to Allocating too much memory
+### MariaDB ColumnStore Process Restarting due to Allocating too Much Memory
 
 In the 1.2.2 and earlier releases, MariaDB ColumnStore Process, like PrimProc, ExeMgr, or WriteEngineService, can automatically restart due to over allocation of memory. PrimProc and WriteEngineService run on the Performance Module. ExeMgr runs on the User Module.
 
@@ -758,7 +761,7 @@ On pm1
 # mcsadmin startsystem y
 ```
 
-### Error in forking cpimport.bin (errno-12); Cannot allocate memory
+### Error Forking cpimport.bin (errno-12); Cannot Allocate Memory
 
 This Error is an indication that ExeMgr on the User Module doesnt have enough local memory to run the Bulk Load Process cpimport.bin. So check for Process Memory allocation by other processes on the User Module when this error gets reported.
 
@@ -790,7 +793,7 @@ Now run the commands to get User Module #1 as the Master. This is assuming User 
 # mcsadmin altersystem-enablemodule um2 y
 ```
 
-### How to Recover when system when DBROOT is incorrectly assigned or other Configuration problem
+### How to Recover When DBROOT is Incorrectly Assigned or Other Configuration Problems
 
 There are times when the system gets into a state where it will not successfully Start due to a configuration problem. And since it will not start, the user can't get it to the point to where it can be fixed via 'mcsadmin'. So when that happen's, they the user will need to run 'postConfigure' to correct the issue.
 
@@ -818,7 +821,7 @@ Run `postConfigure` based on the type of installation, either root or non-root. 
 # mcsadmin startsystem
 ```
 
-### Query Failure MessageQueueClient :: setup (): unknown name or service
+### Query Failure MessageQueueClient :: setup (): Unknown Name or Service
 
 Due to a known issue in MariaDB Columnstore 1.2.5 and earlier, if a User Module or a Performance Module on a combined server is removed, the ColumnStore.xml entry for the ExeMgr setting gets set to "unassigned".\
 This setting will cause queries to fail especially when running multiple queries in parallel.
@@ -833,7 +836,7 @@ The workaround fix is to delete the ExeMgr entry from the Columnstore.xml file.
 	</ExeMgr8>
 ```
 
-### Replication Data out-of-sync causing mysqld to not start and the System to not startup.
+### Replication Data out-of-sync causing mariadbd not to Start and the System not to Start up
 
 In the case where the system fails to startup or the MariaDB ColumnStore server (MySQL) fails to startup and it is reporting a replication error on Drop, Rename, Move Table or View, this could mean that the Binary Logs on the Module, usually a Slave User Module, are out of sync with the Database. An example would be when mysqld startups up on User Module #2, a slave module, it will go through the Replication bin-logs and run commands to capture up with the Master DB. If it tried to Drop a Table or View that doesn't exist in the Slave Database, it will reported an error and shutdown. This is an indication that the Replication and maybe the Data itself is out-of-sync between the Master and the slave Modules, usually UM1 and UM2. It resolve the issue to where the UM2 slave mysqld will run, the following procedure needs to be execute to get the UMs back in-sync.
 
@@ -874,7 +877,7 @@ FROM PM1:
 > startsystem
 ```
 
-### Enable MySQL Replication failure
+### Enable MySQL Replication Failure
 
 The Front-end Replication can be disabled and enabled via the 'mcsadmin' console. If the Replication stopped working between the User Modules, the user can run the `enableMySQLReplication` to get it set up and working.
 
@@ -901,7 +904,7 @@ On User Module #1:
 1. Check the Columnstore log files to see which step failed
 2. There are also additional log files that scripts will update providing additional information. They are located on UM1 in /tmp/columnstore\_tmp\_files for root install and .tmp in the non-root user home directory.
 
-### Problem Dropping table or Creating table an existing table
+### Problem Dropping Table or Creating Table
 
 Sometimes if the Table information between the front-end and the back end get out-of-sync, the following errors will be reported not allowing the customer to drop or create the table
 
