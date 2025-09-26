@@ -338,7 +338,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `0.000000` (>= [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)), `0` (<= [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes))
+* Default Value: `10.000000` (>= [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes)), `0` (<= [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes))
 * Range: `0` to `99`
 
 #### `init_slave`
