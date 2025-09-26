@@ -2,17 +2,13 @@
 
 ## Overview
 
-### What is SkySQL?
+### What is MariaDB Cloud?
 
 MariaDB Cloud is a modern database as a service (DBaaS) solution for production MySQL and MariaDB workloads. It simplifies database management with automated configuration, autonomous scaling, global replication, enterprise-grade security, real-time observability, automated backups and more. MariaDB Cloud delivers ultimate flexibility, reliability, performance and effortless management for your databases allowing you to focus on your application features. MariaDB Cloud provides both provisioned servers and serverless deployment options to handle a variety of use cases from mission-critical, always-on production to experimental, spiky workloads.
 
-### What is the history of SkySQL?
-
-MariaDB Cloud is a database-as-a-service (DBaaS) that was originally developed and managed by MariaDB Corporation. The cloud division (SkySQL) was later spun out of MariaDB into a independent company - [MariaDB Cloud Inc](https://skysql.com). The team that developed MariaDB Cloud transitioned over to the new company.
-
 ### Where is MariaDB Cloud available? What instance and storage options are available?
 
-MariaDB Cloud is available across 40+ global regions on Amazon AWS, Google Cloud and Microsoft Azure. Database services on MariaDB Cloud support a range of [instance](../Reference%20Guide/Instance%20Size%20Choices/) sizes. Storage starts at 10GB and can scale up to 9000GB. SkySQL's autonomous scaling takes the guesswork out of provisioning. You can start small and scale automatically as your needs evolve.
+MariaDB Cloud is available across 40+ global regions on Amazon AWS, Google Cloud and Microsoft Azure. Database services on MariaDB Cloud support a range of [instance](../Reference%20Guide/Instance%20Size%20Choices/) sizes. Storage starts at 10GB and can scale up to 9000GB. MariaDB Cloud's autonomous scaling takes the guesswork out of provisioning. You can start small and scale automatically as your needs evolve.
 
 ### How do I get started?
 
@@ -26,22 +22,22 @@ Launching a new database service with MariaDB Cloud is quick and easy. Serverles
 
 Yes. MariaDB Cloud delivers enterprise-grade cloud database service for your mission-critical applications. Multi-node databases feature a comprehensive [SLA](../Uptime%20SLA/), High Availability (HA) features, and operations features. [Enterprise support](https://skysql.com/support-policy/) options extend support to 24x7, with the additional option of [SkyDBA](../FractionalDBA/) for proactive assistance from a team of expert DBAs.
 
-### What is the history of SkySQL?
+### What is the history of MariaDB Cloud?
 
-MariaDB Cloud was originally developed and [launched in early 2020](https://mariadb.com/newsroom/press-releases/mariadb-skysql-launches-delivers-next-generation-cloud-database/) by MariaDB Corporation. In December 2023, MariaDB completed the spinoff of its MariaDB Cloud business to MariaDB Cloud Inc., as a new independent entity founded by the former MariaDB team that built and supported the MariaDB Cloud product.
+MariaDB Cloud is a database-as-a-service (DBaaS) that was originally developed and managed by MariaDB Corporation. The cloud division was later spun out of MariaDB into a independent company - SkySQL. After a while as an independent company SkySQL was again merged back to MariaDB as MariaDB Cloud.
 
 ## MariaDB Cloud Features
 
-### What services are available on SkySQL?
+### What services are available on MariaDB Cloud?
 
 MariaDB Cloud is primarily designed for online applications and offers two topologies -
 
 * Replicated: Useful for mission-critical, production workloads requiring read scaling. Replicated services feature 1 primary and up to 4 replicas and uses MariaDB MaxScale for load balancing and automatic zero-interruption failover.
 * Single Node: Useful for low-cost development and test transactional workloads. Single Node services cannot be scaled to Replicated topologies.
 
-### What options are available for scaling and right-sizing SkySQL?
+### What options are available for scaling and right-sizing MariaDB Cloud?
 
-You can choose [topologies to match your workload requirements, cloud regions to match your latency and operating requirements, instance sizes](../Portal%20features/Launch%20page/), and [support plan](broken-reference).
+You can choose [topologies to match your workload requirements, cloud regions to match your latency and operating requirements, instance sizes](../Portal%20features/Launch%20page/), and [support plan](broken-reference/).
 
 Our platform features:
 
@@ -49,9 +45,9 @@ Our platform features:
 * Availability from multiple AWS (Amazon Web Services), GCP (Google Cloud Platform), and Azure (Cloud Computing Services) [regions](../Reference%20Guide/Region%20Choices/).
 * Load Balancing features included with Replicated Transactions topologies allow for read-scaling through read-write splitting.
 * Custom instance sizes (for [Power Tier](../Billing%20and%20Power%20Tier/) customers)
-* Range of [support options](broken-reference)
+* Range of [support options](broken-reference/)
 
-### What reliability features are available on SkySQL?
+### What reliability features are available on MariaDB Cloud?
 
 * MariaDB Cloud is operated by a global team of Site Reliability Engineers (SRE), and expert DBAs. Platform problems are escalated to our team 24x7.
 * [Service Level Agreement](https://skysql.com/sla/), including an elevated SLA for [Power Tier](../Billing%20and%20Power%20Tier/) customers
@@ -61,9 +57,9 @@ Our platform features:
 * MaxScale Redundancy option
 * Inbound and outbound replication - you can replicate to your self managed MariaDB anywhere.
 
-### What operations features are available on SkySQL?
+### What operations features are available on MariaDB Cloud?
 
-* Support from MariaDB Cloud Inc, including Enterprise and Platinum tiers optionally with SkyDBA for reactive and proactive assistance
+* Support from MariaDB Cloud Inc, including Enterprise and Platinum tiers optionally with CloudDBA for reactive and proactive assistance
 * Vendor managed infrastructure and platform
 * MariaDB Cloud Portal and [MariaDB Cloud DBaaS API](https://apidocs.skysql.com/) for instance management
 * Compatibility with most programming languages and clients that work with MariaDB or MySQL, for off-the-shelf integration to your stack
@@ -75,7 +71,7 @@ Our platform features:
 * Ability to deploy additional services to support application migrations and testing on the same configuration used in production
 * On-demand tear-down of unneeded services
 
-### What governance, risk, compliance, and information security features are available on SkySQL?
+### What governance, risk, compliance, and information security features are available on MariaDB Cloud?
 
 * Firewall protection, including dedicated IP allowlists to access databases and to access monitoring features
 * Data-at-rest encryption
@@ -97,17 +93,17 @@ If you stop a service, you will continue to be charged for storage, since your d
 
 Your database service cost includes Standard support and nightly backups. See the [Pricing](Billing%20and%20Power%20Tier/Pricing.md) page for additional details on pricing.
 
-### Do I need to purchase a separte MariaDB license or subscription to use SkySQL?
+### Do I need to purchase a separate MariaDB license or subscription to use MariaDB Cloud?
 
-No additional licenses are necessary to use SkySQL.
+No additional licenses are necessary to use MariaDB Cloud.
 
 ### What is optional in MariaDB Cloud pricing?
 
 Add-ons are available to optimize your MariaDB Cloud experience:
 
 * [MariaDB Cloud Power Tier](../Billing%20and%20Power%20Tier/) is a premium service offering for MariaDB Cloud customers who have the most critical requirements for uptime, availability, performance, and support.
-* While all Foundation Tier services include Standard Support, Power Tier customers are offered the  [Enterprise support plan](broken-reference).
-* An optional add-on, [SkyDBA](../FractionalDBA/), further extends the premium support experience and the capabilities of your in-house DBAs with the backing from a global team of expert MariaDB DBAs, available 24/7 for the most severe (P1) issues. SkySQL's SkyDBAs manage your MariaDB Cloud databases both proactively and reactively so you can focus on your core business.
+* While all Foundation Tier services include Standard Support, Power Tier customers are offered the [Enterprise support plan](broken-reference/).
+* An optional add-on, [CloudDBA](../FractionalDBA/), further extends the premium support experience and the capabilities of your in-house DBAs with the backing from a global team of expert MariaDB DBAs, available 24/7 for the most severe (P1) issues. SkySQL's SkyDBAs manage your MariaDB Cloud databases both proactively and reactively so you can focus on your core business.
 
 ### Is discounted pricing available for a longer-term commitment?
 
@@ -145,9 +141,9 @@ Contact [billing@skysql.com](mailto:billing@skysql.com) with billing questions.
 
 ## Backup, Restore and Deletion
 
-### How do I backup my data on SkySQL?
+### How do I backup my data on MariaDB Cloud?
 
-MariaDB Cloud performs full backup of your database services each night. You can also use SkySQL's [Backup Service](<Backup and Restore/>) to schedule backups and perform restores. The Backup Service supports Snapshot, Full, Incremental and Logical Dump backups. You can perform restore on the same database or another database in the same or different region using the Backup Service.
+MariaDB Cloud performs full backup of your database services each night. You can also use MariaDB Cloud's [Backup Service](<Backup and Restore/>) to schedule backups and perform restores. The Backup Service supports Snapshot, Full, Incremental and Logical Dump backups. You can perform restore on the same database or another database in the same or different region using the Backup Service.
 
 ### Are automated backups sent offsite? Will my data be sent to another country?
 
@@ -191,18 +187,18 @@ No. MariaDB Cloud supports server-side certificates. Database users are authenti
 
 You can contact Support using the [Support Portal](https://support.skysql.com/) or by emailing [support@skysql.com](mailto:support@skysql.com).
 
-### What support options are available for SkySQL?
+### What support options are available for MariaDB Cloud?
 
-All customers with a valid payment profile receive Standard Support which includes 24x5, 2-hours response for P1 incidents. Standard Support is available at no extra charge. Enterprise Support provides 24x7, 30-min response for P1 incidents and is suitable for mission-critical workloads. [SkyDBA](FractionalDBA.md) is our premiere fractional DBA service that gives you direct access to our highly skilled DBA team who can provide technical expertise, guidance, and troubleshooting assistance when needed. See the [Support](broken-reference) page for full details on our support options.
+All customers with a valid payment profile receive Standard Support which includes 24x5, 2-hours response for P1 incidents. Standard Support is available at no extra charge. Enterprise Support provides 24x7, 30-min response for P1 incidents and is suitable for mission-critical workloads. [CloudDBA](FractionalDBA.md) is our premiere fractional DBA service that gives you direct access to our highly skilled DBA team who can provide technical expertise, guidance, and troubleshooting assistance when needed. See the [Support](broken-reference/) page for full details on our support options.
 
 ### Is 24x7x365 support available for mission-critical applications?
 
-Yes. [Enterprise Support](broken-reference) levels are available for customers requiring 24x7x365 support (24 hours per day, 7 days per week, 365 (or 366) days per year).
+Yes. [Enterprise Support](broken-reference/) levels are available for customers requiring 24x7x365 support (24 hours per day, 7 days per week, 365 (or 366) days per year).
 
-### **What professional services are available for SkySQL?**
+### **What professional services are available for MariaDB Cloud?**
 
 MariaDB Cloud offers a full range of professional services, including:
 
-* [SkyDBA](FractionalDBA.md) for proactive and reactive support
-* [Migration](broken-reference) assistance
+* [CloudDBA](FractionalDBA.md) for proactive and reactive support
+* [Migration](broken-reference/) assistance
 * Assistance with your MariaDB Cloud proof-of-concept ([contact us for more information](https://skysql.com/contact/)

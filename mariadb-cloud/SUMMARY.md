@@ -44,7 +44,7 @@
     * [Other Backup API Examples](<Backup and Restore/Other backup API examples.md>)
   * [Restore Examples](backup-and-restore/restore-examples/README.md)
     * [Restore Listing Examples](<Backup and Restore/Restore Listing Examples.md>)
-    * [Restore from MariaDB Cloud Managed Storage](<Backup and Restore/Restore from MariaDB Cloud Managed Storage.md>)
+    * [Restore from MariaDB Cloud Managed Storage](backup-and-restore/restore-examples/restore-from-mariadb-cloud-managed-storage.md)
     * [Restore From Your Own Bucket](<Backup and Restore/Restore From Your Own Bucket.md>)
     * [Point-In-Time Restore](<Backup and Restore/Point-in-Time Restore.md>)
     * [Restore Delete Examples](<Backup and Restore/Restore Delete Examples.md>)
@@ -59,7 +59,7 @@
     * [Install mariadb-import](<Data loading, Migration/Install-mariadb-import.md>)
     * [Replicating Data from an External Database to SkySQL](<Data loading, Migration/Replicating data from external DB.md>)
 * [Data Offloading](<Data offloading/README.md>)
-  * [Replicating data from MariaDB Cloud to external database](<Data offloading/Replicating data from MariaDB Cloud to external database.md>)
+  * [Replicating data from MariaDB Cloud to external database](data-offloading/replicating-data-from-mariadb-cloud-to-external-database.md)
 * [AI Agents](<SkyCopilot Guide/README.md>)
   * [AI Agents API--User Guide](<SkyCopilot Guide/SkyAI API Guide.md>)
   * [MariaDB Cloud MCP Server](<SkyCopilot Guide/MCP Server.md>)
@@ -95,9 +95,19 @@
   * [MariaDB Cloud Stored Procedures](<Reference Guide/Sky Stored Procedures.md>)
   * [MariaDB Cloud API Reference Guide](reference-guide/mariadb-cloud-api-reference-guide/README.md)
     * ```yaml
-      type: builtin:openapi
       props:
         models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
       dependencies:
         spec:
           ref:
