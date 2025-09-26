@@ -55,7 +55,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [ODBC-279](https://jira.mariadb.org/browse/ODBC-279) The fix and the testcase. Version bump -> 3.1.8
 * [Revision #7cf42bd](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/7cf42bd)\
   2020-04-17 00:20:20 +0200
-  * Changes in tests and tests framework for testing with SkySQL
+  * Changes in tests and tests framework for testing with MariaDB Cloud
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

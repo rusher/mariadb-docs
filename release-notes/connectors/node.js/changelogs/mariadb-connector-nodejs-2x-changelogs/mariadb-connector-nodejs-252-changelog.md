@@ -27,8 +27,8 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #fc69120](https://github.com/mariadb-corporation/mariadb-connector-j/commit/fc69120) \[misc] improving test reliability for unix env.
 * [Revision #7385d22](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7385d22) \[misc] test correction since Node.js v15 change error for pipe.
 * [Revision #6d6e069](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6d6e069) \[[CONJS-155](https://jira.mariadb.org/browse/CONJS-155)] Support for node.js 10.13-10.19
-* [Revision #9f84323](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9f84323) \[misc] travis SkySQL HA testing addition
-* [Revision #e41b0ee](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e41b0ee) \[misc] travis SkySQL HA testing addition
+* [Revision #9f84323](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9f84323) \[misc] travis MariaDB Cloud HA testing addition
+* [Revision #e41b0ee](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e41b0ee) \[misc] travis MariaDB Cloud HA testing addition
 * [Revision #1206ad0](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1206ad0) \[misc] dependency version update, style correction
 * [Revision #f311a13](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f311a13) \[[CONJS-154](https://jira.mariadb.org/browse/CONJS-154)] Timezone support correction and clarification
 * [Revision #ffdb074](https://github.com/mariadb-corporation/mariadb-connector-j/commit/ffdb074) \[[CONJS-152](https://jira.mariadb.org/browse/CONJS-152)] correction when enabling the `permitLocalInfile` option and initial commands

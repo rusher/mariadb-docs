@@ -29,7 +29,7 @@ Follow these steps:
     mysql -h [hostname] -u [username] -p --silent --skip-column-names -e "SELECT CONCAT('GRANT ', privilege_type, ' ON ', table_schema, '.', table_name, ' TO \'', grantee, '\';') FROM information_schema.table_privileges;" >> grants.sql
     ```
 
-3. **Import the Dumps into SkySQL**: Import the logical dumps (SQL files) into your MariaDB Cloud database, ensuring to load the user and grant dumps after the main dump.
+3. **Import the Dumps into MariaDB Cloud**: Import the logical dumps (SQL files) into your MariaDB Cloud database, ensuring to load the user and grant dumps after the main dump.
 
     ```bash
     mariadb -u [MariaDB Cloud username] -p -h [MariaDB Cloud hostname] --port 3306 --ssl-verify-server-cert < dump.sql
@@ -66,7 +66,7 @@ If you encounter an error while importing your users, you may need to uninstall 
     SET foreign_key_checks = 0;
     ```
 
-- **Disable Binary Logging**: If binary logging is not required during the import process, and you are using a standalone instance, it can potentially be disabled to improve performance. SkyDBA Services can assist with this as part of a detailed migration plan.
+- **Disable Binary Logging**: If binary logging is not required during the import process, and you are using a standalone instance, it can potentially be disabled to improve performance. CloudDBA Services can assist with this as part of a detailed migration plan.
 
 ### Data Integrity and Validation
 
@@ -98,7 +98,7 @@ If you encounter an error while importing your users, you may need to uninstall 
         --databases [database_name] > dump.sql
     ```
 
-- **Incremental Backups**: For large datasets, incremental backups can be used to minimize the amount of data to be transferred. SkyDBA Services can assist you with setting these up as part of a custom migration plan.
+- **Incremental Backups**: For large datasets, incremental backups can be used to minimize the amount of data to be transferred. CloudDBA Services can assist you with setting these up as part of a custom migration plan.
 
 ### Monitoring and Logging
 

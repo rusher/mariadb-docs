@@ -1,4 +1,4 @@
-# SkyAI Agents User Guide (Tech Preview)
+# AI Agents User Guide (Tech Preview)
 
 !!! Note
     - This capability is currently in Tech Preview.
@@ -8,12 +8,12 @@
     
 We appreciate your feedback and suggestions. You can reach us at **[info@skysql.com](mailto:info@skysql.com) or [support@skysql.com](mailto:support@skysql.com)**
 
-MariaDB Cloud offers two types of SkyAI Agents:
+MariaDB Cloud offers two types of AI Agents:
 
-  * **Built-in Agents:** These are preconfigured agents designed to help developers and DBAs maximize the value of SkySQL. Currently, we have two agents: Developer Copilot and DBA Copilot. The Developer Copilot assists users in answering questions about MySQL, MariaDB, and SkySQL, in general. The DBA Copilot enables DBA tasks like performance tuning or debugging errors. They are tailored to enhance developer/DBA productivity.
+  * **Built-in Agents:** These are preconfigured agents designed to help developers and DBAs maximize the value of MariaDB Cloud. Currently, we have two agents: Developer Copilot and DBA Copilot. The Developer Copilot assists users in answering questions about MySQL, MariaDB, and MariaDB Cloud, in general. The DBA Copilot enables DBA tasks like performance tuning or debugging errors. They are tailored to enhance developer/DBA productivity.
   * **User-Created Custom DB Agents:** These are agents on your schemas/datasets permitting natural language queries over complex databases with high accuracy, consistency, and ease. The databases these agents operate on can be managed within MariaDB Cloud or external MySQL or MariaDB DBs.
 
-## Why SkyAI Agents?
+## Why AI Agents?
 
 Traditional solutions fall short because of:
 
@@ -33,7 +33,7 @@ Users validate and train the Agent by asking questions, inspecting the generated
 
 ## Sky Semantic Agents Architecture
 
-![Sky Semantic Agents Architecture](SkyAI_Arch_image1.png)
+![Sky Semantic Agents Architecture](AI_Arch_image1.png)
 
 Under the hood, MariaDB Cloud handles:
 
@@ -57,26 +57,26 @@ You can ask a wide range of questions, such as:
 
 **General MariaDB Queries:**
 
-  * "What is the default storage engine in SkySQL?"
+  * "What is the default storage engine in MariaDB Cloud?"
 
-**SkySQL-Specific Queries:**
+**MariaDB Cloud-Specific Queries:**
 
   * "Show me a MariaDB Cloud program to connect from Java."
-  * "In SkySQL, how can I configure my DB properties?"
+  * "In MariaDB Cloud, how can I configure my DB properties?"
 
 Additionally, the agent can generate complex SQL queries spanning multiple tables, create schemas, write integration code, and even assist with tasks like generating stored procedures or loading data. This agent is trained using the MariaDB Cloud documentation and leverages the OpenAI LLM's prior knowledge to provide accurate, context-aware responses.
 
 **Example of the Developer Copilot in action:**
-![Developer Copilot example](SkyAI_ama_example1.png)
+![Developer Copilot example](AI_ama_example1.png)
 
 ### 2\) DBA Copilot Agent
 
-The DBA Copilot is a specialized agent that helps DBAs with system information, tuning, and diagnostics. It taps directly into SkySQL's built-in system tables and metadata to answer queries about the database's internal state.
+The DBA Copilot is a specialized agent that helps DBAs with system information, tuning, and diagnostics. It taps directly into MariaDB Cloud's built-in system tables and metadata to answer queries about the database's internal state.
 
 When a user asks a question, it breaks the query down into discrete steps, each of which typically gets translated into a SQL statement targeting system tables such as those in `information_schema`, `mysql`, or `performance_schema`. These steps are executed to fetch relevant data and provide actionable insights, making it easier for DBAs to monitor and optimize database performance.
 
 **Example of the DBA Copilot in action:**
-![DBA Copilot starter questions](SkyAI_DBA_image1.png)
+![DBA Copilot starter questions](AI_DBA_image1.png)
 
 ## Important information
 
@@ -107,7 +107,7 @@ To analyze slow queries, you need to turn on 'Slow query' logging. The `slow_que
 
 It is recommended you start with a high `slow_query_time`, implement a `log_slow_rate_limit`, and disable logging when not in use.
 
-If using SkySQL, go to Config Manager to see all the current configuration templates. If you are using the default config ("MariaDB Cloud Default - Mariadb Server..."), click the 'Create New' button, and change the following settings:
+If using MariaDB Cloud, go to Config Manager to see all the current configuration templates. If you are using the default config ("MariaDB Cloud Default - Mariadb Server..."), click the 'Create New' button, and change the following settings:
 
   * Change 'slow\_query\_log' to `ON`. Change 'log\_output' to `TABLE` (defaults to `FILE`).
   * Adjust the 'long\_query\_time' if required (Defaults to 10 secs). **Caution:** If 'long\_query\_time' is set too low, you could substantially increase the load. You can check the global status variable `slow_queries` to tune the `long_query_time`.
@@ -116,15 +116,15 @@ If using SkySQL, go to Config Manager to see all the current configuration templ
 
 It is also useful to turn ON 'Performance\_schema' (Note that this option will restart your DB service and does introduce some additional overhead so implementation should be tested/tuned for best practice).
 
-## Semi-Autonomous, No-Code Semantic SkyAI Agents
+## Semi-Autonomous, No-Code Semantic AI Agents
 
-MariaDB Cloud includes a No-Code SkyAI Agent Builder. This tool empowers domain experts to define the missing semantics critical for accurate responses without requiring programming expertise. The system then leverages the database's metadata—such as table definitions, constraints, and relationships—and learns from historical queries to train the Agent.
+MariaDB Cloud includes a No-Code AI Agent Builder. This tool empowers domain experts to define the missing semantics critical for accurate responses without requiring programming expertise. The system then leverages the database's metadata—such as table definitions, constraints, and relationships—and learns from historical queries to train the Agent.
 
 ### Step 1: Define the DataSource
 
 Ensure you have a clearly defined data source.
 
-The first step in creating an agent is to define the data source it will operate on. Click the "Add" button to open the data source configuration window. If you have an existing database in SkySQL, it will appear under the "QuickConnect" section. Simply click on the database name to auto-fill the connection details.
+The first step in creating an agent is to define the data source it will operate on. Click the "Add" button to open the data source configuration window. If you have an existing database in MariaDB Cloud, it will appear under the "QuickConnect" section. Simply click on the database name to auto-fill the connection details.
 
 You can also connect to any MySQL or MariaDB server that is accessible over the internet. Be sure to whitelist the IP address shown in the connection window to allow access.
 
@@ -335,13 +335,13 @@ Once schema refinement is complete, test the agent using structured queries:
 
 "Find the top 10 products in the 'Beverages' category, ranked by total quantity sold."
 
-**Best Practices for Evaluating and Tuning Your SkyAI Agent**
+**Best Practices for Evaluating and Tuning Your AI Agent**
 
-To ensure your SkyAI agent delivers accurate, relevant, and trustworthy SQL outputs, it's important to continuously monitor and refine its configuration. Here's how to do that effectively:
+To ensure your AI agent delivers accurate, relevant, and trustworthy SQL outputs, it's important to continuously monitor and refine its configuration. Here's how to do that effectively:
 
 **1. Monitor Outputs Using Your Business and Data Knowledge**
 
-SkyAI-generated queries may be syntactically correct, but semantically off. Use your domain expertise and understanding of the data to:
+AI-generated queries may be syntactically correct, but semantically off. Use your domain expertise and understanding of the data to:
 
   * Validate if the results align with business logic
   * Catch semantic mistakes, such as misused filters or joins
@@ -350,7 +350,7 @@ SkyAI-generated queries may be syntactically correct, but semantically off. Use 
 
 **2. Use the "Evaluate" Feature**
 
-The SkyAI Builder platform includes a powerful built-in evaluation feature that leverages a large language model (LLM) as a judge to automatically assess the quality and accuracy of agent responses. This evaluation system is designed to simulate human judgment, allowing developers to measure how well their agents understand and respond to natural language prompts.
+The AI Builder platform includes a powerful built-in evaluation feature that leverages a large language model (LLM) as a judge to automatically assess the quality and accuracy of agent responses. This evaluation system is designed to simulate human judgment, allowing developers to measure how well their agents understand and respond to natural language prompts.
 
 Use this to measure:
 
@@ -398,5 +398,5 @@ Over time, you'll get a well-tuned agent that produces accurate, efficient, and 
 
 Your trained agent is now ready for deployment—capable of transforming natural language queries into efficient SQL with high accuracy.
 
-In the Edit agent window, select the radio box "Published" to deploy the agent and make it available through the SkyAI Agent APIs.
+In the Edit agent window, select the radio box "Published" to deploy the agent and make it available through the AI Agent APIs.
 

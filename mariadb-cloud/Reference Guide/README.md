@@ -16,7 +16,7 @@
 
 ## [MariaDB Cloud supported Backup types](./Backup%20Support.md)
 
-## [Sky Stored Procedures](<./Sky Stored Procedures.md>)
+## [Stored Procedures](<./Stored Procedures.md>)
 
 ## [MariaDB Cloud Monitoring Metrics Reference](<./Monitoring Metrics Reference.md>)
 

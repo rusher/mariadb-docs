@@ -103,4 +103,4 @@ See "[Notifications](<../Portal features/Notifications.md>)" for additional deta
 
 ## Logout
 
-To log out from SkySQL, click your name in the upper-right corner of the interface, then choose "Logout" from the menu.
+To log out from MariaDB Cloud, click your name in the upper-right corner of the interface, then choose "Logout" from the menu.

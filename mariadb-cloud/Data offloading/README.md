@@ -2,11 +2,11 @@
 
 There are multiple options to copy/offload data from a MariaDB Cloud DB. You can do a logical dump(i.e. output all data and DDL as SQL) to your local machine. Or, dump large data sets securely using the MariaDB Cloud Backup service to your own S3 or GCS bucket.
 
-You can then use the offloaded data to resurrect the DB elsewhere. You can also optionally setup "outbound replication" to keep the new DB in sync with SkySQL.
+You can then use the offloaded data to resurrect the DB elsewhere. You can also optionally setup "outbound replication" to keep the new DB in sync with MariaDB Cloud.
 
 ## **1. Offload your Database using `mariadb-dump`**
 
-The [`mariadb-dump`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) utility is a powerful command-line tool that allows you to export databases, tables, or specific data from your MariaDB instance in SkySQL.
+The [`mariadb-dump`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) utility is a powerful command-line tool that allows you to export databases, tables, or specific data from your MariaDB instance in MariaDB Cloud.
 
 ### **Prerequisites**
 

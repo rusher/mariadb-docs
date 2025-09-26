@@ -2,7 +2,7 @@
 
 ## Overview
 
-Python developers can use MariaDB Connector/Python to establish client connections with SkySQL.
+Python developers can use MariaDB Connector/Python to establish client connections with MariaDB Cloud.
 
 ## Connections
 

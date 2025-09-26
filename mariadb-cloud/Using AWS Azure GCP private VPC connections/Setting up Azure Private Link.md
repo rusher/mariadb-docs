@@ -168,7 +168,7 @@ To connect to a MariaDB Cloud service using Azure Private Link, you must create 
 6. In the "Resource" tab, update the following:
 
 * Connection Method: "Connect to an Azure resource by resource ID or alias."
-* Resource ID or alias: Enter the value of the Endpoint Service ID provided to you by SkySQL. See [Pre-requisites](<Setting up Azure Private Link.md#pre-requisites>) for more information on how to find this ID.
+* Resource ID or alias: Enter the value of the Endpoint Service ID provided to you by MariaDB Cloud. See [Pre-requisites](<Setting up Azure Private Link.md#pre-requisites>) for more information on how to find this ID.
 * You should see a little green check mark in the "Resource ID or alias" field if the value is correct.
 * Request message: You can leave this blank as MariaDB Cloud will automatically approve connections from your allowlisted Azure Subscription.
 

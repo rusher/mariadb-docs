@@ -22,13 +22,13 @@ details of the revision and view diffs of the code modified in that revision.
   * fixed travis script
 * [Revision #4187c62](https://github.com/mariadb-corporation/mariadb-connector-python/commit/4187c62)\
   2020-09-01 12:45:16 +0200
-  * Travis fixes for SkySQL testing
+  * Travis fixes for MariaDB Cloud testing
 * [Revision #d860cac](https://github.com/mariadb-corporation/mariadb-connector-python/commit/d860cac)\
   2020-09-01 12:32:45 +0200
   * Fix test test\_connection\_default\_file:
 * [Revision #424320b](https://github.com/mariadb-corporation/mariadb-connector-python/commit/424320b)\
   2020-09-01 07:39:15 +0200
-  * Test fixes for SkySQL
+  * Test fixes for MariaDB Cloud
 * [Revision #bd560c2](https://github.com/mariadb-corporation/mariadb-connector-python/commit/bd560c2)\
   2020-08-29 12:20:52 +0200
   * Fix for [CONPY-108](https://jira.mariadb.org/browse/CONPY-108) (memory leak):

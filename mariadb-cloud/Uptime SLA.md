@@ -65,7 +65,7 @@ A customer will forfeit their right to receive a [Service Credit](https://skysq
     
 - **Uncorroborated impacts**
     
-    Only impacts to service availability detected at [point of measurement](https://skysql.com/sla/) are subject when determining the uptime percentage. Service availability impacts measured through any other means, such as application instrumentation, are excluded except as also measured as [Service Downtime](https://skysql.com/sla/) by SkySQL.
+    Only impacts to service availability detected at [point of measurement](https://skysql.com/sla/) are subject when determining the uptime percentage. Service availability impacts measured through any other means, such as application instrumentation, are excluded except as also measured as [Service Downtime](https://skysql.com/sla/) by MariaDB Cloud.
     
 - **Portal access**
     
@@ -89,7 +89,7 @@ A customer will forfeit their right to receive a [Service Credit](https://skysq
     
 - **Customer-approved maintenance**
     
-    When a customer approves SkySQL-recommended maintenance on a service, any resulting impact to service availability is excluded.
+    When a customer approves MariaDB Cloud-recommended maintenance on a service, any resulting impact to service availability is excluded.
     
 - **Customer-initiated changes**
     

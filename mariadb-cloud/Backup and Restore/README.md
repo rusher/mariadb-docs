@@ -118,7 +118,7 @@ MariaDB Cloud supports database logical backups either on-demand or according to
 * Automatic Nightly Backups : Automated nightly backups include a full backup of every database in the service to ensure that your MariaDB Cloud Database service is backed up regularly. Nightly backups are running for every MariaDB Cloud database by default.
 * Bring Your Own Bucket (BYOB) : You can backup or restore data to/from your own bucket in either GCP or AWS. Sample GCP and AWS scripts can be found \[here]\(../Backup%20and%20Restore/Bring%20Your%20Own%20Bucket%20Examples/).
 * Point-in-time Recovery : You can restore from a full or a logical backup and then use a binlog backup to restore to a point-in-time.
-* Secure Backup/Restores : Control backup/restore privileges by granting roles to users in SkySQL.
+* Secure Backup/Restores : Control backup/restore privileges by granting roles to users in MariaDB Cloud.
 * Other Backup API Examples : Various API scripts providing examples of listing backups, checking backup statuses, and working with backup schedules can be found \[here]\(../Backup%20and%20Restore/Other%20backup%20API%20examples/).
 
 ## Restores

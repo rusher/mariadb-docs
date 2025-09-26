@@ -1,4 +1,4 @@
-# Migrate your database to SkySQL
+# Migrate your database to MariaDB Cloud
 
 MariaDB Cloud provides a range of options to suit different migration scenarios.
 <ul>
@@ -6,7 +6,7 @@ MariaDB Cloud provides a range of options to suit different migration scenarios.
    <li> MariaDB Cloud supports migration from both on-premise and cloud-based infrastructure and provides a range of options to suit different migration scenarios. </li>
 </ul>
 
-Below are the most common scenarios for database migration to SkySQL.
+Below are the most common scenarios for database migration to MariaDB Cloud.
 
 ---
 ## Prerequisites
@@ -28,15 +28,15 @@ Ensure that your MariaDB Cloud servce deploymned configuration is compatible wit
 </details>
 ---
 
-## SkyDBA Assisted Migration 
+## CloudDBA Assisted Migration 
 
  - Existing customers can submit a [support case](https://support.skysql.com) to request assistance with a migration.
  - New customers can [contact us](mailto:support@skysql.com) to begin the migration planning process.
 
-Our [SkyDBA team](https://skysqlinc.github.io/skysql-docs/FractionalDBA/) can help design a migration plan to suit your needs.
+Our [CloudDBA team](https://skysqlinc.github.io/skysql-docs/FractionalDBA/) can help design a migration plan to suit your needs.
 
 <details>
-<summary>SkyDBA Assisted Migration Approach</summary>
+<summary>CloudDBA Assisted Migration Approach</summary>
 <br>
  We use a multi-step process to assist customers with migrations:
 <ul>
@@ -50,14 +50,14 @@ Our [SkyDBA team](https://skysqlinc.github.io/skysql-docs/FractionalDBA/) can he
 </details>
 ---
 
-## Self-Service Migration to SkySQL
+## Self-Service Migration to MariaDB Cloud
 
 MariaDB Cloud provides two different options for self-service migration 
 
 ### Option 1: Migrate using the MariaDB Cloud REST API
 MariaDB Cloud Managed Migration is a REST-based service that handles the migration process, including data migration, schema migration, and user migration. It provides a follow us steps to set up a live replication of your database to MariaDB Cloud and various insights to monitor the migration process.
 
-- [Sky SQL Managed Migration Tutorial](./SkySQL-managed-migration.md)
+- [Sky SQL Managed Migration Tutorial](./MariaDB Cloud-managed-migration.md)
 
 ### Option 2: Custom Migration
 

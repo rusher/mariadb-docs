@@ -1,6 +1,6 @@
-# Replicating Data from an External Database to SkySQL
+# Replicating Data from an External Database to MariaDB Cloud
 
-MariaDB MariaDB Cloud customers can configure inbound replication from both **MySQL** and **MariaDB** to a compatible MariaDB running in SkySQL. This guide will walk you through setting up replication for both MySQL and MariaDB as the source databases.
+MariaDB MariaDB Cloud customers can configure inbound replication from both **MySQL** and **MariaDB** to a compatible MariaDB running in MariaDB Cloud. This guide will walk you through setting up replication for both MySQL and MariaDB as the source databases.
 
 For additional information about the stored procedures used to configure replication with Replicated Transactions services, see [MariaDB Cloud Replication Helper Procedures for Replicated Transactions](https://docs.skysql.com/Reference%20Guide/Sky%20Stored%20Procedures/).
 
@@ -11,7 +11,7 @@ For additional information about the stored procedures used to configure replica
 2. **For MariaDB**:
    * GTID-based replication can be used instead of binary log for complex replication setups.
 
-Ensure that the external primary server is compatible with the version of MariaDB used in SkySQL.
+Ensure that the external primary server is compatible with the version of MariaDB used in MariaDB Cloud.
 
 ## Step 1: Obtain the Log File and Position
 
@@ -71,11 +71,11 @@ This will return a confirmation message such as:
 +----------------------------------------+
 ```
 
-You can find the documentation for this procedure [here](<../Reference Guide/Sky Stored Procedures.md#start_replication>).
+You can find the documentation for this procedure [here](<../Reference Guide/Stored Procedures.md#start_replication>).
 
 ## Step 4: Check Replication Status
 
-To verify the status of replication, you can run the following stored procedure on SkySQL:
+To verify the status of replication, you can run the following stored procedure on MariaDB Cloud:
 
 ```sql
 CALL sky.replication_status()\G;

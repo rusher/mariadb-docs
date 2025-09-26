@@ -2,7 +2,7 @@
 
 ## Overview
 
-Application developers can use MariaDB Connector/ODBC to establish a data source for client connections with SkySQL.
+Application developers can use MariaDB Connector/ODBC to establish a data source for client connections with MariaDB Cloud.
 
 The method for configuring the data source varies between operating systems.
 

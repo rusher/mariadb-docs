@@ -6,7 +6,7 @@ For Foundation Tier customers, maintenance windows are predefined by region.
 
 For Power Tier customers, maintenance windows are customer-selected.
 
-Notice is provided to customers in advance of maintenance. SkyDBA customers are asked to confirm maintenance prior to scheduled start.
+Notice is provided to customers in advance of maintenance. CloudDBA customers are asked to confirm maintenance prior to scheduled start.
 
 ## View Current Maintenance Window
 

@@ -12,7 +12,7 @@ For users who prefer other interfaces, MariaDB Cloud offers the following altern
 - Use the DBaaS API with a REST client
 - Use the [Terraform provider](<Launch DB using the Terraform Provider>)
 
-## Step 1: Register for SkySQL
+## Step 1: Register for MariaDB Cloud
 
 Goto [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using your Google, Github or LinkedIn credentials. Or, just use your Email address to sign up. 
 

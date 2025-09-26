@@ -1,6 +1,6 @@
 # Observability
 
-This page provides a high-level overview of the Observability functionality in SkySQL.
+This page provides a high-level overview of the Observability functionality in MariaDB Cloud.
 
 In order to interact with our Observability APIs, an [API KEY](https://skysqlinc.github.io/skysql-docs/Security/Managing%20API%20keys/) must be generated. Throughout this document, we will refer to it as `{{SKYSQL_API_KEY}}`.
 

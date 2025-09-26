@@ -66,7 +66,7 @@ As of 1 Feb 2013, we will stop building packages for the following:
 * Ubuntu 11.04 "Natty"
 
 If your chosen Linux Distribution or Operating System is deprecated, packages\
-or support are not completely unavailable. Companies such as [SkySQL](https://skysql.com) and [Monty Program](https://montyprogram.com)\
+or support are not completely unavailable. Companies such as [MariaDB Cloud](https://skysql.com) and [Monty Program](https://montyprogram.com)\
 (and others) provide support for all versions of MariaDB back to even very old\
 MySQL versions. This includes packaged binaries. Contact them for more details.
 

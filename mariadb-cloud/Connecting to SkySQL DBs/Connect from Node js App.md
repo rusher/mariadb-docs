@@ -34,7 +34,7 @@ NPM untars the download and installs MariaDB Connector/Node.js in the `node_modu
 
 ## Connect with MariaDB Connector/Node.js (Callback API)
 
-Node.js developers can use MariaDB Connector/Node.js to establish client connections with SkySQL.
+Node.js developers can use MariaDB Connector/Node.js to establish client connections with MariaDB Cloud.
 
 ## Require Callback API
 
@@ -118,7 +118,7 @@ main();
 
 ## Connect with MariaDB Connector/Node.js (Promise API)
 
-Node.js developers can use MariaDB Connector/Node.js to establish client connections with SkySQL.
+Node.js developers can use MariaDB Connector/Node.js to establish client connections with MariaDB Cloud.
 
 ## Require Promise API
 

@@ -86,7 +86,7 @@ distributions:
 Binary tar.gz files built on Ubuntu "Hardy" will also be going away. These are the ones that _do not_ require GLIBC\_2.14+. So for the next release, all binary tar.gz files for Linux will require GLIBC\_2.14+.
 
 If your chosen Linux Distribution or Operating System is deprecated, packages\
-or support are not completely unavailable. Companies such as [SkySQL](https://skysql.com), [Monty Program](https://montyprogram.com), and others provide support for all versions of\
+or support are not completely unavailable. Companies such as [MariaDB Cloud](https://skysql.com), [Monty Program](https://montyprogram.com), and others provide support for all versions of\
 MariaDB back to even very old MySQL versions. This includes packaged binaries.\
 Contact them for more details.
 

@@ -166,7 +166,7 @@ We recommend use of a subnet dedicated to Private Service Connect endpoints in t
 1. In the GCP console, navigate VPC network → VPC networks → → STATIC INTERNAL IP ADDRESSES → RESERVE STATIC ADDRESS.
    * Replace with the name of the VPC where the application is running.
 2. Configure the static internal IP address:
-   * Name: set to the Database ID (dbxxxxxxxx) from SkySQL.
+   * Name: set to the Database ID (dbxxxxxxxx) from MariaDB Cloud.
    * Subnet: select the subnet where to reserve the static IP address.
    * Static IP address: optionally choose the address.
    * Purpose: Non-shared

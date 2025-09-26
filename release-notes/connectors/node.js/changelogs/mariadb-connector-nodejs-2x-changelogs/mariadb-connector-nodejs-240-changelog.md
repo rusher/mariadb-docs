@@ -16,9 +16,9 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1d88900](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1d88900) - \[[CONJS-136](https://jira.mariadb.org/browse/CONJS-136)] typescript eslint correction
 * [Revision #510101a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/510101a) - \[[CONJS-136](https://jira.mariadb.org/browse/CONJS-136)] typescript error when trying to use SqlError interface
 * [Revision #641f8e2](https://github.com/mariadb-corporation/mariadb-connector-j/commit/641f8e2) - moment-timezone bump
-* [Revision #2df2038](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2df2038) - \[misc] correcting SkySQL tests
-* [Revision #859dd21](https://github.com/mariadb-corporation/mariadb-connector-j/commit/859dd21) - \[misc] add SkySQL testing - style correction
-* [Revision #625b1dd](https://github.com/mariadb-corporation/mariadb-connector-j/commit/625b1dd) - \[misc] add SkySQL testing
+* [Revision #2df2038](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2df2038) - \[misc] correcting MariaDB Cloud tests
+* [Revision #859dd21](https://github.com/mariadb-corporation/mariadb-connector-j/commit/859dd21) - \[misc] add MariaDB Cloud testing - style correction
+* [Revision #625b1dd](https://github.com/mariadb-corporation/mariadb-connector-j/commit/625b1dd) - \[misc] add MariaDB Cloud testing
 * [Revision #9b4b56a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9b4b56a) - \[[CONJS-131](https://jira.mariadb.org/browse/CONJS-131)] Duplication error now indicating option `checkDuplicate`.
 * [Revision #366ffd6](https://github.com/mariadb-corporation/mariadb-connector-j/commit/366ffd6) - \[[CONJS-86](https://jira.mariadb.org/browse/CONJS-86)] correcting SSL missing import
 * [Revision #58d3789](https://github.com/mariadb-corporation/mariadb-connector-j/commit/58d3789) - \[[CONJS-132](https://jira.mariadb.org/browse/CONJS-132)] Adding 'fast path' implementation: mysql packet usually never split header into multiple TCP packet

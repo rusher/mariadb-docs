@@ -5,7 +5,7 @@ MariaDB Cloud provides a range of options to suit different migration scenarios.
 * Databases can be migrated to MariaDB Cloud from many different database platforms, including Oracle, MySQL, PostgreSQL, Microsoft SQL Server, IBM DB2, and more.
 * MariaDB Cloud supports migration from both on-premise and cloud-based infrastructure and provides a range of options to suit different migration scenarios.
 
-Below are the most common scenarios for database migration to SkySQL.
+Below are the most common scenarios for database migration to MariaDB Cloud.
 
 ***
 
@@ -33,16 +33,16 @@ Ensure that your MariaDB Cloud servce deploymned configuration is compatible wit
 
 \---
 
-## SkyDBA Assisted Migration
+## CloudDBA Assisted Migration
 
 * Existing customers can submit a [support case](https://support.skysql.com) to request assistance with a migration.
 * New customers can [contact us](mailto:support@skysql.com) to begin the migration planning process.
 
-Our [SkyDBA team](https://skysqlinc.github.io/skysql-docs/FractionalDBA/) can help design a migration plan to suit your needs.
+Our [CloudDBA team](https://skysqlinc.github.io/skysql-docs/FractionalDBA/) can help design a migration plan to suit your needs.
 
 <details>
 
-<summary>SkyDBA Assisted Migration Approach</summary>
+<summary>CloudDBA Assisted Migration Approach</summary>
 
 \
 We use a multi-step process to assist customers with migrations:
@@ -60,7 +60,7 @@ We use a multi-step process to assist customers with migrations:
 
 \---
 
-## Self-Service Migration to SkySQL
+## Self-Service Migration to MariaDB Cloud
 
 MariaDB Cloud provides two diffeent options for self-service migration
 

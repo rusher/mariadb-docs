@@ -1,6 +1,6 @@
 # MariaDB Direct Query Adapter For Microsoft Power BI
 
-MariaDB Direct Query Adapter for Power BI enables Microsoft Power BI Desktop users to remotely connect to and query their MariaDB database including on MariaDB SkySQL without downloading the entire data set to their local machine.
+MariaDB Direct Query Adapter for Power BI enables Microsoft Power BI Desktop users to remotely connect to and query their MariaDB database including on MariaDB MariaDB Cloud without downloading the entire data set to their local machine.
 
 MariaDB Direct Query Adapter is a Microsoft certified connector for Microsoft Power BI Desktop.
 
@@ -43,7 +43,7 @@ Connect to your remote MariaDB database from Power BI Desktop using the MariaDB 
 
 1. Open Microsoft Power BI Desktop.
 2. From the Power BI home screen, choose Get Data->More. Enter "MariaDB". Select MariaDB from the menu and click "Connect".
-3. Enter the data source. This is an IP address and port number, or in the case of SkySQL, it is the qualified domain name and port number.
+3. Enter the data source. This is an IP address and port number, or in the case of MariaDB Cloud, it is the qualified domain name and port number.
 4. Select "DirectQuery" and click "OK".
 5. Enter your user name and password and click "Connect".
 

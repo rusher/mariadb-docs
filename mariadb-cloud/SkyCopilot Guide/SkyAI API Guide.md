@@ -1,10 +1,10 @@
 
 
-# SkyAI Agent  API – User Guide
+# AI Agent  API – User Guide
 
 ## Overview
 
-The **SkyAI Agent API** lets developers interact with **AI agents** built and hosted on the MariaDB Cloud platform. This API is perfect for embedding **conversational AI experiences** in your applications, dashboards, or internal tools – all without the need for complex LLM infrastructure or MLOps.
+The **AI Agent API** lets developers interact with **AI agents** built and hosted on the MariaDB Cloud platform. This API is perfect for embedding **conversational AI experiences** in your applications, dashboards, or internal tools – all without the need for complex LLM infrastructure or MLOps.
 
 
 ## Authentication
@@ -30,7 +30,7 @@ To make requests to the API, you must authenticate using an **API key**.
 
 ## Maintaining Chat Sessions
 
-The **SkyAI Agent Session API** allows you to initiate and manage conversational sessions with your SkyAI agents. Sessions are crucial for maintaining context across multiple interactions, which leads to more natural and coherent conversations with the agent.
+The **AI Agent Session API** allows you to initiate and manage conversational sessions with your AI agents. Sessions are crucial for maintaining context across multiple interactions, which leads to more natural and coherent conversations with the agent.
 
 -----
 
@@ -61,7 +61,7 @@ The **SkyAI Agent Session API** allows you to initiate and manage conversational
     }
     ```
 
-      * `agent_id` (string): The identifier of the SkyAI agent you want to talk to.
+      * `agent_id` (string): The identifier of the AI agent you want to talk to.
       * `metadata` (object, optional): Any additional information to associate with the session, like user identifiers or conversation topics.
 
 **Example using `curl`:**
@@ -146,7 +146,7 @@ Always ensure your API key is valid and your request body is correctly formatted
 
 
 ## Making a Chat  Request
-The  Chat API allows you to send natural language prompts to a SkyAI agent and receive structured responses, including generated SQL and data results when applicable. It supports both stateless and multi-turn conversational use cases and lets you pass agent-specific configuration such as table filters to control the context of the response.
+The  Chat API allows you to send natural language prompts to a AI agent and receive structured responses, including generated SQL and data results when applicable. It supports both stateless and multi-turn conversational use cases and lets you pass agent-specific configuration such as table filters to control the context of the response.
 
 The optional config object allows you to customize how the agent accesses and filters data during query generation. This is especially useful for enforcing data policies, scoping context, or running controlled experiments.
 
@@ -179,8 +179,8 @@ IMPORTANT: You can use this API on its own for single interactions, or in conjun
     }
     ```
 
-      * `prompt` (string): Your question to the SkyAI agent.
-      * `agent_id` (string): The UUID of the SkyAI agent to query
+      * `prompt` (string): Your question to the AI agent.
+      * `agent_id` (string): The UUID of the AI agent to query
       * `session_id` (string, optional): Use this to maintain 
       conversational context across turns.
       * `config` (object, optional): Configuration to pass contextual filters (e.g., row-level security, scope)
@@ -255,5 +255,5 @@ A successful response returns a structured JSON object:
 
 # Useful Links
 
-  * **API Reference:** [SkyAI Agent API Docs](https://apidocs.skysql.com/)
+  * **API Reference:** [AI Agent API Docs](https://apidocs.skysql.com/)
   * **MariaDB Cloud Console:** [MariaDB Cloud Portal](https://app.skysql.com)
