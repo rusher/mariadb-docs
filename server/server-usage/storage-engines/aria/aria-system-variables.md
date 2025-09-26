@@ -153,7 +153,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `134217720` (128MB)
+* Default Value: `134217728` (128MB)
 * Range: `131072` (128KB) upwards
 
 #### `aria_pagecache_division_limit`
