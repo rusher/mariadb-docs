@@ -2181,7 +2181,7 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `16384`
+* Default Value: `32768`
 * Range - 32 bit: `1024` to `4294967295`
 * Range - 64 bit: `1024` to `18446744073709547520`
 
