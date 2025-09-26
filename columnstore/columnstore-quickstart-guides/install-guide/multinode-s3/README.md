@@ -1,8 +1,25 @@
 ---
-description: Deploy Single-Node Enterprise ColumnStore with Object Storage
+description: >-
+  This guide provides steps for deploying a multi-node S3 ColumnStore, setting
+  up the environment, installing the software, and bulk importing data for
+  online analytical processing (OLAP) workloads.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
 ---
 
-# Multinode S3
+# Multi-Node S3
 
 ## Overview
 
@@ -18,7 +35,7 @@ Please read and understand this procedure before executing.
 
 ## Procedure Steps
 
-<table><thead><tr><th width="189.11102294921875">Step</th><th>Description</th></tr></thead><tbody><tr><td>Step 1</td><td><a href="broken-reference">Prepare System for Enterprise ColumnStore</a></td></tr><tr><td>Step 2</td><td><a href="broken-reference">Install Enterprise ColumnStore</a></td></tr><tr><td>Step 3</td><td><a href="broken-reference">Start and Configure Enterprise ColumnStore</a></td></tr><tr><td>Step 4</td><td><a href="broken-reference">Test Enterprise ColumnStore</a></td></tr><tr><td>Step 5</td><td><a href="broken-reference">Bulk Import Data to Enterprise ColumnStore</a></td></tr></tbody></table>
+<table><thead><tr><th width="189.11102294921875">Step</th><th>Description</th></tr></thead><tbody><tr><td>Step 1</td><td><a href="../multnode-localstorage/step-1-prepare-columnstore-nodes.md">Prepare System for Enterprise ColumnStore</a></td></tr><tr><td>Step 2</td><td><a href="step-2-install-enterprise-columnstore.md">Install Enterprise ColumnStore</a></td></tr><tr><td>Step 3</td><td><a href="step-3-start-and-configure-enterprise-columnstore.md">Start and Configure Enterprise ColumnStore</a></td></tr><tr><td>Step 4</td><td><a href="../multnode-localstorage/step-4-start-and-configure-mariadb-enterprise-server.md">Test Enterprise ColumnStore</a></td></tr><tr><td>Step 5</td><td><a href="step-5-bulk-import-of-data.md">Bulk Import Data to Enterprise ColumnStore</a></td></tr></tbody></table>
 
 ## Support
 
@@ -35,8 +52,6 @@ The following components are deployed during this procedure:
 <table><thead><tr><th width="285.1112060546875">Component</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB Enterprise ColumnStore</a></td><td><ul><li>Columnar Storage Engine</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li><li>S3-compatible object storage</li></ul></td></tr></tbody></table>
 
 ## Topology
-
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
 
 The Single-Node Enterprise ColumnStore topology provides support for Online Analytical Processing (OLAP) workloads to MariaDB Enterprise Server.
 

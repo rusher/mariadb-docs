@@ -1,4 +1,25 @@
-# Multnode Localstorage
+---
+description: >-
+  This guide provides steps for deploying a multi-node ColumnStore, setting up
+  the environment, installing the software, and bulk importing data for online
+  analytical processing (OLAP) workloads.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+---
+
+# Multi-Node Localstorage
 
 ## Overview
 

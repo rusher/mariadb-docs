@@ -1,8 +1,25 @@
 ---
-description: Deploy Single-Node MariaDB Enterprise ColumnStore with Local Storage
+description: >-
+  This guide provides steps for deploying a single-node ColumnStore, setting up
+  the environment, installing the software, and bulk importing data for online
+  analytical processing (OLAP) workloads.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
 ---
 
-# Singlenode Localstorage
+# Single-Node Localstorage
 
 This procedure describes the deployment of the **Single-Node Enterprise ColumnStore** topology with Local storage.
 
