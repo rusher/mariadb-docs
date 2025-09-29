@@ -6,6 +6,10 @@ This section contains release notes for MariaDB Server releases divided into the
 [about](about/)
 {% endcontent-ref %}
 
+{% content-ref url="release-notes-mariadb-12.2-rolling-release/" %}
+[release-notes-mariadb-12.2-rolling-release](release-notes-mariadb-12.2-rolling-release/)
+{% endcontent-ref %}
+
 {% content-ref url="release-notes-mariadb-12.1-rolling-releases/" %}
 [release-notes-mariadb-12.1-rolling-releases](release-notes-mariadb-12.1-rolling-releases/)
 {% endcontent-ref %}
