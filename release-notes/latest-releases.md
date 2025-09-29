@@ -2,6 +2,8 @@
 
 ### MariaDB Server Development Release
 
+{% include ".gitbook/includes/latest-12-2.md" %}
+
 {% include ".gitbook/includes/latest-12-1.md" %}
 
 ### MariaDB Server Rolling Release
