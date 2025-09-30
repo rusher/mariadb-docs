@@ -2257,7 +2257,9 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `32768`
+* Default Value:&#x20;
+  * \>= MariaDB 11.4.3: `32768`
+  * <=MariaDB 11.4.2: `24576` &#x20;
 * Range: `1024` to `4294967295`
 
 #### `rand_seed1`
