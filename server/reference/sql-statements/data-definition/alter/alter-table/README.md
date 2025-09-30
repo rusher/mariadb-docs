@@ -147,7 +147,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../../transactions/wait-and-
 
 ## IF EXISTS
 
-The `IF EXISTS` and `IF NOT EXISTS` clauses are available for the following:
+The `IF EXISTS` and `IF NOT EXISTS` clauses are available for the following clauses:
 
 ```sql
 ADD COLUMN       [IF NOT EXISTS]
@@ -164,9 +164,14 @@ MODIFY COLUMN    [IF EXISTS]
 DROP INDEX       [IF EXISTS]
 ```
 
-When `IF EXISTS` and `IF NOT EXISTS` are used in clauses, queries will not report errors when the condition is triggered for that clause. A warning with the same message text will be issued and the ALTER will move on to the next clause in the statement (or end if finished).
+When `IF EXISTS` and `IF NOT EXISTS` are used in clauses, queries will not report errors when the condition is triggered for that clause. A warning with the same message text will be issued and the `ALTER` will move on to the next clause in the statement (or end if finished).
 
-If this is directive is used after `ALTER ... TABLE`, one will not get an error if the table doesn't exist.
+If this is directive is used after `ALTER ... TABLE`, you don't get an error if the table doesn't exist. Example:
+
+```sql
+CREATE TABLE t (i INT);
+ALTER TABLE IF EXISTS t RENAME COLUMN IF EXISTS i TO k;
+```
 
 ## Column Definitions
 
