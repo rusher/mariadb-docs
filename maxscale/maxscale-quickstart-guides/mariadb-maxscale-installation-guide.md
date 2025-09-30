@@ -94,7 +94,8 @@ monitor_interval=5s
 {% code overflow="wrap" %}
 ```sql
 CREATE USER 'maxscale_monitor'@'%' IDENTIFIED BY 'monitor_password';
-GRANT BINLOG ADMIN, BINLOG MONITOR, CONNECTION ADMIN, READ_ONLY ADMIN, REPLICATION SLAVE ADMIN, SLAVE MONITOR, RELOAD, PROCESS, SUPER, EVENT, SET USER, SHOW DATABASES ON *.* TO `maxscale_monitor`@`%` GRANT SELECT ON mysql.global_priv TO 'maxscale_monitor'@'%';
+GRANT BINLOG ADMIN, BINLOG MONITOR, CONNECTION ADMIN, READ_ONLY ADMIN, REPLICATION SLAVE ADMIN, SLAVE MONITOR, RELOAD, PROCESS, SUPER, EVENT, SET USER, SHOW DATABASES ON *.* TO `maxscale_monitor`@`%`;
+GRANT SELECT ON mysql.global_priv TO 'maxscale_monitor'@'%';
 ```
 {% endcode %}
 
