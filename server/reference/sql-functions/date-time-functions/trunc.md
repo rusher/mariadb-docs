@@ -10,7 +10,7 @@ TRUNC(date[,fmt])
 
 ## Description
 
-Returns a [DATETIME](reference/data-types/date-and-time-data-types/datetime.md) truncated according to `fmt`.
+Returns a [DATETIME](../../data-types/date-and-time-data-types/datetime.md) truncated according to `fmt`.
 
 **Supported formats:**
 

@@ -50,7 +50,7 @@ SELECT * FROM t
 Is different from :
 
 ```sql
-SELECT * from t
+SELECT * FROM t
 ```
 
 Comments are also considered and can make the queries differ, so :
