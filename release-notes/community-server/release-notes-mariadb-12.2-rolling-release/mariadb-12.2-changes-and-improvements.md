@@ -12,7 +12,7 @@ MariaDB 12.2 is a [rolling release](../about/release-model.md). It is an evoluti
 * [Optimizer hint](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints): \[NO\_]INDEX\_MERGE ([MDEV-36125](https://jira.mariadb.org/browse/MDEV-36125))
 * [Optimizer hints](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints): Implicit query block names ([MDEV-37511](https://jira.mariadb.org/browse/MDEV-37511))
 * sql\_mode="oracle" does not support TO\_NUMBER() function ([MDEV-20022](https://jira.mariadb.org/browse/MDEV-20022))
-* Implement Oracle TRUNC() function ([MDEV-20023](https://jira.mariadb.org/browse/MDEV-20023))
+* Implement Oracle [TRUNC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/trunc)() function ([MDEV-20023](https://jira.mariadb.org/browse/MDEV-20023))
 
 ### Miscellaneous <a href="#miscellaneous" id="miscellaneous"></a>
 
@@ -25,8 +25,8 @@ MariaDB 12.2 is a [rolling release](../about/release-model.md). It is an evoluti
 
 ## List of All MariaDB 12.2 Releases
 
-| Date        | Release        | Status  | Release Notes | Changelog |
-| ----------- | -------------- | ------- | ------------- | --------- |
-| 23 Sep 2025 | MariaDB 12.2.0 | Preview |               |           |
+| Date        | Release              | Status  | Release Notes | Changelog |
+| ----------- | -------------------- | ------- | ------------- | --------- |
+| 23 Sep 2025 | MariaDB 12.2 Preview | Preview |               |           |
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
