@@ -3839,3 +3839,4 @@
       * [USER\_VAR\_EVENT](reference/clientserver-protocol/replication-protocol/user_var_event.md)
       * [XA\_PREPARE\_LOG\_EVENT](reference/clientserver-protocol/replication-protocol/xa_prepare_log_event.md)
       * [XID\_EVENT](reference/clientserver-protocol/replication-protocol/xid_event.md)
+* [TRUNC](trunc.md)
