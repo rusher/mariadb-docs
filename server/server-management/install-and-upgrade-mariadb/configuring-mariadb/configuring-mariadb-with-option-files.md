@@ -1,6 +1,6 @@
 # Configuring MariaDB with Option Files
 
-You can configure MariaDB to run the way you want by configuring the server with MariaDB's option files. The default MariaDB option file is called `my.cnf` (or `mariadb.cnf`) on Unix-like operating systems and `my.ini` on Windows. Depending on how you've [installed](../) MariaDB, the default option file may be in a number of places, or it may not exist at all.
+You can configure MariaDB to run the way you want by configuring the server with MariaDB's option files. The default MariaDB option file is called `my.cnf` on Unix-like operating systems and `my.ini` on Windows. Depending on how you've [installed](../) MariaDB, the default option file may be in a number of places, or it may not exist at all.
 
 ### Global Options Related to Option Files
 
@@ -49,7 +49,7 @@ On Linux, Unix, or Mac OS X, the default option file is called `my.cnf`. MariaDB
 
 The locations are dependent on whether the `DEFAULT_SYSCONFDIR` [cmake](../installing-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) option was defined when MariaDB was built. This option is usually defined as `/etc` when building [RPM packages](../installing-mariadb/binary-packages/rpm/), but it is usually not defined when building [DEB packages](../installing-mariadb/binary-packages/installing-mariadb-deb-files.md) or [binary tarballs](../installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md).
 
-* When the `DEFAULT_SYSCONFDIR` `cmake` option is **undefined**, MariaDB looks for the MariaDB option file in the following locations, and in the following order:
+* If the `DEFAULT_SYSCONFDIR` `cmake` option is **undefined**, MariaDB looks for the MariaDB option file in the following locations, and in the following order:
 
 | Location               | Scope                                                                                                                             |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,7 +60,7 @@ The locations are dependent on whether the `DEFAULT_SYSCONFDIR` [cmake](../insta
 | `defaults-extra-file`  | File specified with [--defaults-extra-file](../../starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
 | `~/.my.cnf`            | User                                                                                                                              |
 
-* When the `DEFAULT_SYSCONFDIR` `cmake` option is **defined**, MariaDB looks for the MariaDB option file in the following locations in the following order:
+* If the `DEFAULT_SYSCONFDIR` `cmake` option is **defined**, MariaDB looks for the MariaDB option file in the following locations in the following order:
 
 | Location                    | Scope                                                                                                                             |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -80,7 +80,7 @@ Note that if `MARIADB_HOME` is set, `MYSQL_HOME` is not used, even if set.
 
 #### Default Option File Locations on Windows
 
-On Windows, the option file can be called either `my.ini` or `my.cnf`. MariaDB looks for the MariaDB option file in the following locations in the following order:
+On Windows, the option file can be called either `my.ini` or `my.cnf`. MariaDB looks for option files in the following locations, and in the following order:
 
 | Location                        | Scope                                                                                                                             |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -116,7 +116,7 @@ Note that if `MARIADB_HOME` is set, `MYSQL_HOME` is not used, even if set.
 
 #### Default Option File Hierarchy
 
-MariaDB looks in all of the above locations, in order, even if it has already found an option file, and it's possible for more than one option file to exist. For example, you could have an option file in `/etc/my.cnf` with global settings for all servers, and then you could another option file in `~/.my.cnf` (i.e.your user account's home directory) which will specify additional settings (or override previously specified settings) that are specific only to that user.
+MariaDB looks in all of the above locations, in order, even if it has already found an option file, and it's possible for more than one option file to exist. For example, you could have an option file in `/etc/my.cnf` with global settings for all servers, and another option file in `~/.my.cnf` (that is, your user account's home directory) which specifies additional settings (or override previously specified settings) that are specific only to that user.
 
 Option files are usually optional. However, if the [--defaults-file](../../starting-and-stopping-mariadb/mariadbd-options.md#defaults-file) option is set, but the file does not exist,  MariaDB raises an error. If the `--defaults-file` option is set, MariaDB _only_ reads the option file referred to by this option.
 
@@ -126,7 +126,7 @@ If an option or system variable is not explicitly set, then it will be set to it
 If an option is set multiple times, the later setting will override the earlier setting.
 {% endhint %}
 
-If [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) is set, there are various other log file naming options that, if set, should be placed **after** in the config file hierarchy. Later settings override earlier settings, so `log-basename` overrides any earlier log file name settings. See [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) for details.
+If [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) is set, there are various other log file naming options that, if set, should be placed **later** in the configuration file hierarchy. Later settings override earlier settings, so `log-basename` overrides any earlier log file name settings. See [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) for details.
 
 ### Custom Option File Locations
 
@@ -139,9 +139,9 @@ MariaDB can be configured to read options from custom options files with the fol
 
 ### Option File Syntax
 
-The syntax of MariaDB option files:
+The syntax of MariaDB option files is as follows:
 
-* Lines starting with are comments.
+* Lines starting with `#` are comments.
 * Empty lines are ignored.
 * Option groups use the syntax `[group-name]`. See the [Option Groups](configuring-mariadb-with-option-files.md#option-groups) section below for more information on available option groups.
 * The same option group can appear multiple times.
@@ -149,7 +149,7 @@ The syntax of MariaDB option files:
 * The `!includedir` directive can be used to include all `.cnf` files (and potentially `.ini` files) in a given directory. The option files within the directory are read in alphabetical order. See the [Including Option File Directories](configuring-mariadb-with-option-files.md#including-option-file-directories) section below for more information on this syntax.
 * Dashes (`-`) and underscores (`_`) in options are interchangeable.
 * Double quotes can be used to quote values
-* , , , `\b`, `\s`, `\"`, `\'`, and `\\` are recognized as character escapes for new line, carriage return, tab, backspace, space, double quote, single quote, and backslash respectively.
+* `\n`, `\r`, `\t`, `\b`, `\s`, `\"`, `\'`, and `\\` are recognized as character escapes for new line, carriage return, tab, backspace, space, double quote, single quote, and backslash respectively.
 * Certain option prefixes are supported. See the [Option Prefixes](configuring-mariadb-with-option-files.md#option-prefixes) section below for information about available option prefixes.
 * See the [Options](configuring-mariadb-with-option-files.md#options) section below for information about available options.
 
@@ -186,8 +186,8 @@ MariaDB programs reads server options from the following server option groups:
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | \[client-server] | Options read by all MariaDB [client programs](../../../clients-and-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients.                                                                                                                                                      |
 | \[server]        | Options read by MariaDB Server.                                                                                                                                                                                                                                                                                                                                  |
-| \[mysqld]        | Options read by mysqld, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                                                                                                                     |
-| \[mysqld-X.Y]    | Options read by a specific version of mysqld, which includes both MariaDB Server and MySQL Server. For example, `[mariadb-11.4]`.                                                                                                                                                                                                                                |
+| \[mysqld]        | Options read by mysqld, including both MariaDB Server and MySQL Server.                                                                                                                                                                                                                                                                                          |
+| \[mysqld-X.Y]    | Options read by a specific version of mysqld, including both MariaDB Server and MySQL Server. For example, `[mariadb-11.4]`.                                                                                                                                                                                                                                     |
 | \[mariadb]       | Options read by MariaDB Server.                                                                                                                                                                                                                                                                                                                                  |
 | \[mariadb-X.Y]   | Options read by a specific version of MariaDB Server. For example, `[mariadb-11.4]`.                                                                                                                                                                                                                                                                             |
 | \[mariadbd]      | Options read by MariaDB Server.                                                                                                                                                                                                                                                                                                                                  |
@@ -202,7 +202,7 @@ MariaDB programs reads client options from the following option groups:
 
 | Group             | Description                                                                                                                                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| \[client]         | Options read by all MariaDB and MySQL [client programs](../../../clients-and-utilities/), which includes both MariaDB and MySQL clients. For example, mariadb-dump.      |
+| \[client]         | Options read by all MariaDB and MySQL [client programs](../../../clients-and-utilities/), including both MariaDB and MySQL clients. For example, mariadb-dump.           |
 | \[client-server]  | Options read by all MariaDB client programs and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | \[client-mariadb] | Options read by all MariaDB client programs.                                                                                                                             |
 
@@ -212,30 +212,30 @@ Many MariaDB tools reads options from their own option groups as well:
 
 | Group              | Description                                                                                                                                                                                                                                                       |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| \[mysqld\_safe]    | Options read by [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), which includes both MariaDB Server and MySQL Server.                                                                                                |
-| \[safe\_mysqld]    | Options read by [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), which includes both MariaDB Server and MySQL Server.                                                                                                |
+| \[mysqld\_safe]    | Options read by [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), including both MariaDB Server and MySQL Server.                                                                                                     |
+| \[safe\_mysqld]    | Options read by [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), including both MariaDB Server and MySQL Server.                                                                                                     |
 | \[mariadbd-safe]   | Options read by [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) from MariaDB Server.                                                                                                                                 |
 | \[mariadb\_safe]   | Options read by [mysqld\_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) from MariaDB Server. Deprecated, please avoid using this.                                                                                            |
 | \[mariadb-backup]  | Options read by [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/).                                                                                                                                                                       |
 | \[xtrabackup]      | Options read by [mariadb-backup](../../../server-usage/backup-and-restore/mariadb-backup/) and Percona XtraBackup.                                                                                                                                                |
-| \[mysql\_upgrade]  | Options read by [mysql\_upgrade](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md), which includes both MariaDB Server and MySQL Server.                                                                                              |
+| \[mysql\_upgrade]  | Options read by [mysql\_upgrade](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md), including both MariaDB Server and MySQL Server.                                                                                                   |
 | \[mariadb-upgrade] | Options read by [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md).                                                                                                                                                            |
 | \[sst]             | Specific options read by the [mariadb-backup SST method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method) and the xtrabackup-v2 SST method.                            |
-| \[mysql]           | Options read by [mysql](../../../clients-and-utilities/mariadb-client/), which includes both MariaDB Server and MySQL Server.                                                                                                                                     |
+| \[mysql]           | Options read by [mysql](../../../clients-and-utilities/mariadb-client/), including both MariaDB Server and MySQL Server.                                                                                                                                          |
 | \[mariadb-client]  | Options read by [mariadb](../../../clients-and-utilities/mariadb-client/).                                                                                                                                                                                        |
-| \[mysqldump]       | Options read by [mysqldump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md), which includes both MariaDB Server and MySQL Server.                                                                                                       |
+| \[mysqldump]       | Options read by [mysqldump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md), including both MariaDB Server and MySQL Server.                                                                                                            |
 | \[mariadb-dump]    | Options read by [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md).                                                                                                                                                 |
-| \[mysqlimport]     | Options read by [mysqlimport](../../../clients-and-utilities/legacy-clients-and-utilities/mysqlimport.md), which includes both MariaDB Server and MySQL Server.                                                                                                   |
+| \[mysqlimport]     | Options read by [mysqlimport](../../../clients-and-utilities/legacy-clients-and-utilities/mysqlimport.md), including both MariaDB Server and MySQL Server.                                                                                                        |
 | \[mariadb-import]  | Options read by [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md).                                                                                                                                             |
-| \[mysqlbinlog]     | Options read by [mysqlbinlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/), which includes both MariaDB Server and MySQL Server.                                                                                                                 |
+| \[mysqlbinlog]     | Options read by [mysqlbinlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/), including both MariaDB Server and MySQL Server.                                                                                                                      |
 | \[mariadb-binlog]  | Options read by [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/).                                                                                                                                                                   |
-| \[mysqladmin]      | Options read by [mysqladmin](../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md), which includes both MariaDB Server and MySQL Server.                                                                                                     |
+| \[mysqladmin]      | Options read by [mysqladmin](../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md), including both MariaDB Server and MySQL Server.                                                                                                          |
 | \[mariadb-admin]   | Options read by [mariadb-admin](../../../clients-and-utilities/administrative-tools/mariadb-admin.md).                                                                                                                                                            |
-| \[mysqlshow]       | Options read by [mysqlshow](../../../clients-and-utilities/legacy-clients-and-utilities/mysqlshow.md), which includes both MariaDB Server and MySQL Server.                                                                                                       |
-| \[mariadb-show]    | Options read by [mariadb-show](../../../clients-and-utilities/administrative-tools/mariadb-show.md).                                                                                                                                                              |
-| \[mysqlcheck]      | Options read by [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md), which includes both MariaDB Server and MySQL Server.                                                                                                                |
+| \[mysqlshow]       | Options read by [mysqlshow](../../../clients-and-utilities/legacy-clients-and-utilities/mysqlshow.md), including both MariaDB Server and MySQL Server.                                                                                                            |
+| \[mariadb-show]    | Options read by [mariadb-show](../../../clients-and-utilities/administrative-tools/mariadb-show.md). Note that this program reads `[client]` group options, too.                                                                                                  |
+| \[mysqlcheck]      | Options read by [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md), including both MariaDB Server and MySQL Server.                                                                                                                     |
 | \[mariadb-check]   | Options read by [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md).                                                                                                                                                                     |
-| \[mysqlslap]       | Options read by [mysqlslap](../../../clients-and-utilities/legacy-clients-and-utilities/mysqlslap.md), which includes both MariaDB Server and MySQL Server.                                                                                                       |
+| \[mysqlslap]       | Options read by [mysqlslap](../../../clients-and-utilities/legacy-clients-and-utilities/mysqlslap.md), including both MariaDB Server and MySQL Server.                                                                                                            |
 | \[mariadb-slap]    | Options read by [mariadb-slap](../../../clients-and-utilities/testing-tools/mariadb-slap.md).                                                                                                                                                                     |
 | \[odbc]            | Options read by [MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), but only if the [USE\_MYCNF](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/connector-odbc-guide) parameter is set. |
 
@@ -286,7 +286,7 @@ This command-line argument can be used with most of MariaDB's command-line tools
 ```bash
 $ mariadb-dump --print-defaults
 mariadb-dump would have been started with the following arguments:
---ssl_cert=/etc/my.cnf.d/certificates/client-cert.pem --ssl_key=/etc/my.cnf.d/certificates/client-key.pem --ssl_ca=/etc/my.cnf.d/certificates/ca.pem --ssl-verify-server-cert --max_allowed_packet=1GB
+--ssl_cert=/etc/my.cnf.d/certificates/client-cert.pem --ssl_key=/etc/my.cnf.d/certificates/client-key.pem --ssl_ca=/etc/my.cnf.d/certificates/ca.pem --ssl-verify-server-cert --max_allowed_packet=1G
 ```
 
 You can also check which options a given program is going to use by using the [my\_print\_defaults](../../../clients-and-utilities/administrative-tools/my_print_defaults.md) utility, and providing the names of the option groups that the program reads:
@@ -358,7 +358,7 @@ skip_external_locking
 
 ### Options
 
-Dashes (`-`) and underscores (`_`) in options are interchangeable.
+Dashes (`-`) and underscores (`_`) in option names are interchangeable.
 
 If an option is not explicitly set, then the server or client will simply use the default value for that option.
 
