@@ -75,8 +75,6 @@ When using `query_cache_type=ON`, and the query specifies `SQL_NO_CACHE` (case-i
 
 When using `query_cache_type=DEMAND` and the query specifies `SQL_CACHE`, the server will cache the query.
 
-
-
 ## Queries Stored in the Query Cache
 
 If the [query\_cache\_type](../system-variables/server-system-variables.md#query_cache_type) system variable is set to `1`, or `ON`, all queries fitting the size constraints will be stored in the cache unless they contain a `SQL_NO_CACHE` clause, or are of a nature that caching makes no sense, for example making use of a function that returns the current time. Queries with `SQL_NO_CACHE` will not attempt to acquire query cache lock.
@@ -234,7 +232,7 @@ Setting either [query\_cache\_type](../system-variables/server-system-variables.
 
 * The query cache needs to be disabled in order to use [OQGRAPH](../../../server-usage/storage-engines/oqgraph-storage-engine/).
 * The query cache is not used by the [Spider](../../../server-usage/storage-engines/spider/) storage engine (amongst others).
-* The query cache also needs to be disabled for MariaDB [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
+* The query cache also needs to be disabled for MariaDB [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
 
 ## LOCK TABLES and the Query Cache
 
@@ -375,8 +373,6 @@ Some fields that differentiate queries are (from "Query\_cache\_query\_flags" in
 * default\_week\_format ([default\_week\_format](../system-variables/server-system-variables.md#default_week_format) session variable)
 * div\_precision\_increment ([div\_precision\_increment](../system-variables/server-system-variables.md#div_precision_increment) session variable)
 * lc\_time\_names ([lc\_time\_names](../system-variables/server-system-variables.md#lc_time_names) session variable)
-
-
 
 ## Timeout and Mutex Contention
 
