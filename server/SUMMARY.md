@@ -1781,7 +1781,6 @@
       * [TIMESTAMPDIFF](reference/sql-functions/date-time-functions/timestampdiff.md)
       * [TO\_DAYS](reference/sql-functions/date-time-functions/to_days.md)
       * [TO\_SECONDS](reference/sql-functions/date-time-functions/to_seconds.md)
-      * [TRUNC](reference/sql-functions/date-time-functions/trunc.md)
       * [UNIX\_TIMESTAMP](reference/sql-functions/date-time-functions/unix_timestamp.md)
       * [UTC\_DATE](reference/sql-functions/date-time-functions/utc_date.md)
       * [UTC\_TIME](reference/sql-functions/date-time-functions/utc_time.md)
@@ -3840,3 +3839,4 @@
       * [USER\_VAR\_EVENT](reference/clientserver-protocol/replication-protocol/user_var_event.md)
       * [XA\_PREPARE\_LOG\_EVENT](reference/clientserver-protocol/replication-protocol/xa_prepare_log_event.md)
       * [XID\_EVENT](reference/clientserver-protocol/replication-protocol/xid_event.md)
+* [TRUNC](trunc.md)
