@@ -148,9 +148,9 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Command line: `--myisam-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `numeric`
-* Default Value: `134217720` (128MB)
-* Range: `4096` to `18446744073709547520`
+* Data Type: `BIGINT UNSIGNED`                &#x20;
+* Default Value: `134216704`
+* Range: `4096` to `1152921504606846975`
 
 #### `myisam_stats_method`
 
