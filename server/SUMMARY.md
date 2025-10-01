@@ -1224,6 +1224,7 @@
       * [Vector Framework Integrations](reference/sql-structure/vectors/vector-framework-integrations.md)
       * [Vector Functions](reference/sql-functions/vector-functions/README.md)
       * [VECTOR](reference/data-types/numeric-data-types/vector.md)
+      * [Optimizing Hybrid Search Query with Reciprocal Rank Fusion (RRF)](reference/sql-structure/vectors/optimizing-hybrid-search-query-with-reciprocal-rank-fusion-rrf.md)
   * [SQL Statements](reference/sql-statements/README.md)
     * [Comment Syntax](reference/sql-statements/comment-syntax.md)
     * [Account Management](reference/sql-statements/account-management-sql-statements/README.md)
