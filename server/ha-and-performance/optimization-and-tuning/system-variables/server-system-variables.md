@@ -2502,12 +2502,12 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 
 #### `skip_name_resolve`
 
-* Description: If set to 1 (0 is the default), only IP addresses are used for connections. Host names are not resolved. All host values in the GRANT tables must be IP addresses (or localhost).
+* Description: If set to `ON` (`OFF` is the default), only IP addresses are used for connections. Host names are not resolved. All host values in the GRANT tables must be IP addresses (or localhost). Some container configs explicitly set `skip_name_resolve` to `ON`, rather than leave it as the default, `OFF`.
 * Command line: `--skip-name-resolve`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
-* Default Value: `0`
+* Default Value: `OFF`
 
 #### `skip_networking`
 
