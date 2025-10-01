@@ -2180,10 +2180,12 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 * Command line: `--query-alloc-block-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `numeric`
-* Default Value: `32768`
-* Range - 32 bit: `1024` to `4294967295`
-* Range - 64 bit: `1024` to `18446744073709547520`
+* Data Type: `BIGINT UNSIGNED`                            &#x20;
+* Default Value:&#x20;
+  * \>= [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-3-release-notes), [MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-11-release-notes), [MariaDB 10.6.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-22-release-notes): `32768`
+  * <= [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-2-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes): `16384`
+* Range: `1024` to `4294967295`
+* Block size: `1024` &#x20;
 
 #### `query_cache_limit`
 
