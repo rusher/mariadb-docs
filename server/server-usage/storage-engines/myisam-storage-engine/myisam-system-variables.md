@@ -156,13 +156,13 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `myisam_stats_method`
 
-* Description: Determines how NULLs are treated for [MyISAM](./) index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md), [aria\_stats\_method](../aria/aria-system-variables.md), [innodb\_stats\_method](../innodb/innodb-system-variables.md).
+* Description: Determines how NULLs are treated for the purposes of [MyISAM](./) index statistics. If set to `nulls_equal`, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the default, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md), [aria\_stats\_method](../aria/aria-system-variables.md), [innodb\_stats\_method](../innodb/innodb-system-variables.md).
 * Command line: `--myisam-stats-method=name`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `enumeration`
 * Default Value: `NULLS_UNEQUAL`
-* Valid Values: `nulls_equal`, `nulls_unequal`, `nulls_ignored`
+* Valid Values: `NULLS_UNEQUAL, NULLS_EQUAL, NULLS_IGNORED`
 
 #### `myisam_use_mmap`
 
