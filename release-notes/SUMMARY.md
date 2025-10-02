@@ -1495,6 +1495,7 @@
       * [MariaDB MaxScale 2.4.2 Release Notes](maxscale/old-releases/2.4/2.4.2.md)
       * [MariaDB MaxScale 2.4.1 Release Notes](maxscale/old-releases/2.4/2.4.1.md)
       * [MariaDB MaxScale 2.4.0 Release Notes](maxscale/old-releases/2.4/2.4.0.md)
+  * [All Releases](maxscale/all-releases.md)
 * [ColumnStore Release Notes](columnstore/README.md)
   * [MariaDB ColumnStore 23.10 Release Notes](columnstore/23.10/README.md)
     * [MariaDB ColumnStore 23.10.6 Release Notes](columnstore/23.10/mariadb-columnstore-23.10.6-release-notes.md)
