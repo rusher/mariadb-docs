@@ -15,7 +15,7 @@ The `MYSQL_BIND` structure is used to bind parameters (which will be sent to the
 
 ### Array binding
 
-Array binding for bulk insert/updates was introduced with Connector/C 3.0 and requires [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) or above. It allows clients to control the number of rows that will be physically transferred between the server and the client in one logical bind or fetch. This can greatly improve the performance of many applications by trading buffer space for time (network traffic) and is a better and more secure alternative to `LOAD DATA LOCAL INFILE`, especially when the data will be generated within application.
+Array binding for bulk insert/updates was introduced with Connector/C 3.0 and requires [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) or above. It allows clients to control the number of rows that will be physically transferred between the server and the client in one logical bind or fetch. This can greatly improve the performance of many applications by trading buffer space for time (network traffic) and is a better and more secure alternative to `LOAD DATA LOCAL INFILE`, especially when the data will be generated within application.
 
 #### Indicator variables
 
@@ -58,14 +58,12 @@ unsigned int row_size= sizeof(struct my_data);
 mysql_stmt_attr_set(stmt, STMT_ATTR_ROW_SIZE, &row_size);
 ```
 
-Connector/C can now calculate the address of the data for a particular row and column as`address= bind_address + row_nr * row_size`
-where rows are numbered from 0 to size of rowset - 1.
+Connector/C can now calculate the address of the data for a particular row and column as`address= bind_address + row_nr * row_size` where rows are numbered from 0 to size of rowset - 1.
 
 If `row_size` is zero, column wise binding will be used instead.
 
 ![row\_wise\_binding](../../../.gitbook/assets/row_wise_binding.png)
 
 An example for row wise binding can be found [here](../prepared-statement-examples/bulk-insert-row-wise-binding.md).
-
 
 {% @marketo/form formId="4316" %}

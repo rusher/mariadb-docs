@@ -15,7 +15,6 @@
 * [Connector/C](mariadb-connector-c/README.md)
   * [MariaDB Connector/C Overview](mariadb-connector-c/mariadb-connector-c-guide.md)
   * [Install MariaDB Connector/C](mariadb-connector-c/install-mariadb-connector-c.md)
-  * [List of MariaDB Connector/C Releases](mariadb-connector-c/list-of-mariadb-connector-c-releases.md)
   * [Configuring MariaDB Connector/C with Option Files](mariadb-connector-c/configuring-mariadb-connectorc-with-option-files.md)
   * [MariaDB Binlog/Replication API reference](mariadb-connector-c/mariadb-binlogreplication-api-reference.md)
   * [MariaDB Connector/C Data Structures](mariadb-connector-c/mariadb-connectorc-data-structures.md)

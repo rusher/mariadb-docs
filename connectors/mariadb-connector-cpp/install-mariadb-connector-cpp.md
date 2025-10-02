@@ -11,7 +11,7 @@ MariaDB Connector/C++ has dependencies. You must install MariaDB Connector/C to 
 | 1.1                   | 3.3.3 or later      |
 | 1.0                   | 3.1.1 or later      |
 
-For additional information, see "[MariaDB Connector/C++ Release Notes](../mariadb-connector-c/list-of-mariadb-connector-c-releases.md)".
+For additional information, see "[MariaDB Connector/C++ Release Notes](broken-reference)".
 
 ## Linux Installation (Binary Tarball)
 

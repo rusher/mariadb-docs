@@ -13,12 +13,11 @@ my_bool mysql_commit(MYSQL * mysql);
 Commits the current transaction for the specified database connection. Returns zero on success, nonzero if an error occurred.
 
 {% hint style="info" %}
-Executing mysql\_commit() will not affected the behaviour of [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#autocommit). This means, any update or insert statements following mysql\_commit() will be rolled back when the connection gets closed.
+Executing mysql\_commit() will not affected the behaviour of [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#autocommit). This means, any update or insert statements following mysql\_commit() will be rolled back when the connection gets closed.
 {% endhint %}
 
 ## See also
 
 * [mysql\_rollback()](mysql_rollback.md)
-
 
 {% @marketo/form formId="4316" %}

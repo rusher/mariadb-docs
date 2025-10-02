@@ -16,7 +16,7 @@ my_bool mysql_ssl_set(MYSQL *mysql, const char *key, const char *cert,
 
 ## Description
 
-Used for establishing a [secure TLS connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). It must be called before attempting to use [mysql\_real\_connect()](mysql_real_connect.md). TLS support must be enabled in the client library in order for the function to have any effect.
+Used for establishing a [secure TLS connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption). It must be called before attempting to use [mysql\_real\_connect()](mysql_real_connect.md). TLS support must be enabled in the client library in order for the function to have any effect.
 
 NULL can be used for an unused parameter. Always returns zero.
 
@@ -27,6 +27,5 @@ NULL can be used for an unused parameter. Always returns zero.
 ## See also
 
 * [mysql\_get\_ssl\_cipher()](mysql_get_ssl_cipher.md)
-
 
 {% @marketo/form formId="4316" %}

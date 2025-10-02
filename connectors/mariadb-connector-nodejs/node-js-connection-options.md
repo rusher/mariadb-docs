@@ -138,7 +138,7 @@ SHOW VARIABLES LIKE 'have_ssl';
 +---------------+----------+
 ```
 
-A value of `NO` indicates that MariaDB was compiled without support for TLS. `DISABLED` means that it was compiled with TLS support, but it's currently turned off. In order to use SSL with the Connector, the server must return `YES`, indicating that TLS support is available and turned on. For more information, see the [MariaDB Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) documentation.
+A value of `NO` indicates that MariaDB was compiled without support for TLS. `DISABLED` means that it was compiled with TLS support, but it's currently turned off. In order to use SSL with the Connector, the server must return `YES`, indicating that TLS support is available and turned on. For more information, see the [MariaDB Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption) documentation.
 
 ### User Configuration
 

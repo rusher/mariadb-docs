@@ -12,7 +12,7 @@ void mysql_debug(const char * debug);
 
 Enables debug output for development and debug purposes by using Fred Fish's DBUG library. For using this function the mariadb-client library must be compiled with debug support.
 
-Almost all MariaDB binaries use the DBUG library and one can get a trace of the program execution by using the [--debug](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#debug) command line option with the binary. This will only work if the binary is compiled for debugging (compiler option `-DDBUG_ON`).
+Almost all MariaDB binaries use the DBUG library and one can get a trace of the program execution by using the [--debug](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#debug) command line option with the binary. This will only work if the binary is compiled for debugging (compiler option `-DDBUG_ON`).
 
 Returns void.
 
@@ -61,6 +61,5 @@ Enabling generation of debug information slows down the overall performance and 
 
 * mysql\_debug\_end()
 * [mysql\_dump\_debug\_info()](mysql_dump_debug_info.md)
-
 
 {% @marketo/form formId="4316" %}

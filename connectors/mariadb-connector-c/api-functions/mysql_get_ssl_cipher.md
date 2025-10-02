@@ -10,11 +10,10 @@ const char *mysql_get_ssl_cipher(MYSQL *mysql)
 
 ## Description
 
-Returns the name of the currently used cipher of the [TLS connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview), or NULL for non TLS connections.
+Returns the name of the currently used cipher of the [TLS connection](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption/secure-connections-overview), or NULL for non TLS connections.
 
 ## See also
 
 * [mysql\_ssl\_set()](mysql_ssl_set.md)
-
 
 {% @marketo/form formId="4316" %}
