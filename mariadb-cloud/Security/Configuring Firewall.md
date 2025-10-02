@@ -18,15 +18,15 @@ To modify Secure Access settings:
 2. Click the "Settings" link in the main menu (left navigation in the Portal).
 3. Click the "Secure Access" button.
 
-[![secure-access.png](secure-access.png)](secure-access.png)
+<figure><img src="secure-access.png" alt=""><figcaption></figcaption></figure>
 
-*Secure Access Settings*
+_Secure Access Settings_
 
 Alternatively, you can access firewall settings for a specific service by clicking on the "MANAGE" button for the desired service, then choose "Manage allowlist" from the menu.
 
-[![allow-list-dialog.png](allow-list-dialog.png)](allow-list-dialog.png)
+<figure><img src="allow-list-dialog.png" alt=""><figcaption></figcaption></figure>
 
-*Allowlist dialog*
+_Allowlist dialog_
 
 ## **Add to the Allowlist**
 
@@ -59,9 +59,11 @@ After saving the change, a [notification](<../Portal features/Notifications.md>)
 ## **IP Allowlist Limitations**
 
 **AWS/Azure Services:**
-- Allowlists exceeding 30 IP addresses are not permitted.
+
+* Allowlists exceeding 30 IP addresses are not permitted.
 
 **GCP Services:**
-- Same workflow as AWS/Azure, but with a limit of 200 IP addresses.
+
+* Same workflow as AWS/Azure, but with a limit of 200 IP addresses.
 
 For allowlists requiring more than 30 IP addresses, please contact [support@skysql.com](mailto:support@skysql.com).

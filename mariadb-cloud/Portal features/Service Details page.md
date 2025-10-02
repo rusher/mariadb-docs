@@ -8,7 +8,7 @@ After [service launch](<Launch page.md>), a detailed summary of the service can 
 2. From the Dashboard, click the name of the desired service.
 3. Click the "Details" tab.
 
-[![service-details.png](service-details.png)](../Portal%20features/service-details.png)
+<figure><img src="service-details.png" alt=""><figcaption></figcaption></figure>
 
 _Service Details_
 

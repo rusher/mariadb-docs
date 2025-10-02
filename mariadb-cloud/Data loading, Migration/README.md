@@ -1,3 +1,20 @@
+---
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+---
+
 # Migrations
 
 MariaDB Cloud provides a range of options to suit different migration scenarios.
@@ -6,8 +23,6 @@ MariaDB Cloud provides a range of options to suit different migration scenarios.
 * MariaDB Cloud supports migration from both on-premise and cloud-based infrastructure and provides a range of options to suit different migration scenarios.
 
 Below are the most common scenarios for database migration to MariaDB Cloud.
-
-***
 
 ## Prerequisites
 
@@ -18,8 +33,7 @@ Below are the most common scenarios for database migration to MariaDB Cloud.
 
 <summary>Considerations</summary>
 
-\
-
+\\
 
 Ensure that your MariaDB Cloud servce deploymned configuration is compatible with your existing source database one, including:
 
@@ -30,8 +44,6 @@ Ensure that your MariaDB Cloud servce deploymned configuration is compatible wit
 * Storage - Ensure that the MariaDB Cloud storage type and size is compatible with the source database
 
 </details>
-
-\---
 
 ## CloudDBA Assisted Migration
 
@@ -53,12 +65,9 @@ We use a multi-step process to assist customers with migrations:
 * Data Migration and Replication with import of data, with conversion to the new schema, and ongoing inbound replication of new data
 * Quality Assurance to assess data validity, data integrity, performance, accuracy of query results, stored code, and running code such as client applications, APIs, and batch jobs
 * Cutover including final database preparation, fallback planning, switchover, and decommissioning of old databases
-* \
-
+* \\
 
 </details>
-
-\---
 
 ## Self-Service Migration to MariaDB Cloud
 

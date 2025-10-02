@@ -1,10 +1,10 @@
 # Managing Portal Users
 
-By default, MariaDB Cloud services are launched and managed in the [Portal](<../../Portal features/>).
+By default, MariaDB Cloud services are launched and managed in the [Portal](../../Portal%20features/).
 
 For multiple MariaDB Cloud ID accounts to jointly manage a set of MariaDB Cloud services, these accounts can be added to a Team.
 
-The User Management interface in the [Portal](<../../Portal features/>) is a self-service tool to manage your Team.
+The User Management interface in the [Portal](../../Portal%20features/) is a self-service tool to manage your Team.
 
 A Team can be managed by the initial user on the Team or by any Administrator added to the Team.
 
@@ -14,28 +14,28 @@ An email address can belong to only one MariaDB Cloud Team. If an email address 
 
 To access the User Management interface:
 
-1. Log in to the [Portal](https://app.skysql.com/dashboard).
+1. Log in to the [Portal](https://app.skysql.com/dashboard).
 2. Click the "Settings" link in the main menu (left navigation in the Portal).
 3. Click the [User Management](https://app.skysql.com/settings/user-management) button.
 
-[![user-management.png](user-management.png)](user-management.png)
+<figure><img src="user-management.png" alt=""><figcaption></figcaption></figure>
 
-*User Management*
+_User Management_
 
 ## **Roles**
 
 Each Team member has one of the following roles:
 
-- Administrator
-- Member
-- Viewer
-- Billing
+* Administrator
+* Member
+* Viewer
+* Billing
 
 ## **Add a Team Member**
 
-[![user-management-invite.png](user-management-invite.png)](user-management-invite.png)
+<figure><img src="user-management-invite.png" alt=""><figcaption></figcaption></figure>
 
-*User Management - Invite*
+_User Management - Invite_
 
 From the User Management interface, an Administrator can invite someone to join a team:
 

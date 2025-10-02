@@ -1,3 +1,20 @@
+---
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+---
+
 # Data Offloading
 
 There are multiple options to copy/offload data from a MariaDB Cloud DB. You can do a logical dump(i.e. output all data and DDL as SQL) to your local machine. Or, dump large data sets securely using the MariaDB Cloud Backup service to your own S3 or GCS bucket.
@@ -223,4 +240,4 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups/status' \
 
 ## **4. Replicating changes from MariaDB Cloud to a compatible external DB**
 
-See [Replicating data From MariaDB Cloud to External Database](<Replicating data from MariaDB Cloud to external database.md>) for details.
+See [Replicating data From MariaDB Cloud to External Database](../Data%20offloading/Replicating%20data%20from%20MariaDB%20Cloud%20to%20external%20database.md) for details.

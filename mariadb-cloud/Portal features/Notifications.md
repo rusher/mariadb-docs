@@ -66,7 +66,7 @@ To access Notification Channel settings:
 2. Click the "Settings" link in the main menu (left navigation in the Portal).
 3. Click the "Notification Channel" button.
 
-[![notification-channels.png](notification-channels.png)](../Portal%20features/notification-channels.png)
+<figure><img src="notification-channels.png" alt=""><figcaption></figcaption></figure>
 
 _Notification Channels_
 
@@ -79,7 +79,7 @@ To add a Notification Channel, from the Notification Channel settings interface:
 3. Enter the email address that will receive notifications.
 4. Choose the notification categories that should be sent to that address.
 
-[![add-notification-channel.png](add-notification-channel.png)](../Portal%20features/add-notification-channel.png)
+<figure><img src="add-notification-channel.png" alt=""><figcaption></figcaption></figure>
 
 _Notification Channels - Adding a Channel_
 

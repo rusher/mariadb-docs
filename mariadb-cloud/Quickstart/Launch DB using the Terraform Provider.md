@@ -4,32 +4,30 @@ This walkthrough explains how to launch database services and manage the lifecyc
 
 For users who prefer other interfaces, MariaDB Cloud offers the following alternatives:
 
-- Use the [Portal](<../../Portal features>) in a web browser
-- Use the [DBaaS API](<./Launch DB using the REST API.md>) with a REST client
+* Use the [Portal](../../Portal%20features/) in a web browser
+* Use the [DBaaS API](<Launch DB using the REST API.md>) with a REST client
 
 This walkthrough demonstrates a service configuration that is suitable for a quick test. A more customized configuration should be selected for performance testing or for alignment to the needs of production workloads.
 
-!!! Note
-    This procedure uses Terraform. HashiCorp officially supports Terraform on several Linux distributions, but HashiCorp also provides binaries for Microsoft Windows, macOS, and other operating systems.
-    
-    For a list of operating systems that are officially supported for Terraform, see "[HashiCorp Terraform Documentation: Supported Operating Systems](https://developer.hashicorp.com/terraform/enterprise/requirements/os-specific/supported-os)".
-    
-    For a list of operating systems that have binaries available for Terraform, see "[HashiCorp Terraform Documentation: Install Terraform](https://developer.hashicorp.com/terraform/downloads)".
+!!! Note This procedure uses Terraform. HashiCorp officially supports Terraform on several Linux distributions, but HashiCorp also provides binaries for Microsoft Windows, macOS, and other operating systems.
 
+For a list of operating systems that are officially supported for Terraform, see "[HashiCorp Terraform Documentation: Supported Operating Systems](https://developer.hashicorp.com/terraform/enterprise/requirements/os-specific/supported-os)".
+
+For a list of operating systems that have binaries available for Terraform, see "[HashiCorp Terraform Documentation: Install Terraform](https://developer.hashicorp.com/terraform/downloads)".
 
 ## Dependencies
 
-- This procedure requires Terraform to be installed. For information about how to install Terraform, see "[HashiCorp Terraform Documentation: Install Terraform](https://developer.hashicorp.com/terraform/downloads)".
-- The examples in this procedure also use `jq`, a JSON parsing utility. [jq](https://stedolan.github.io/jq/download/) is available for Linux, macOS, and MS Windows. Install `jq` then proceed.
-- The examples in this procedure also use `curl`, a data transfer utility. [curl](https://curl.se/) is available for Linux, macOS, and MS Windows. Install `curl` then proceed.
-- The examples in this procedure also use `wget`, a file download utility. [GNU Wget](https://www.gnu.org/software/wget/) is available for Linux, macOS, and MS Windows. Install `wget` then proceed.
-- The examples in this procedure also use exported environment variables that are compatible with Bourne-like shells (such as `sh`, `bash`, and `zsh`).
+* This procedure requires Terraform to be installed. For information about how to install Terraform, see "[HashiCorp Terraform Documentation: Install Terraform](https://developer.hashicorp.com/terraform/downloads)".
+* The examples in this procedure also use `jq`, a JSON parsing utility. [jq](https://stedolan.github.io/jq/download/) is available for Linux, macOS, and MS Windows. Install `jq` then proceed.
+* The examples in this procedure also use `curl`, a data transfer utility. [curl](https://curl.se/) is available for Linux, macOS, and MS Windows. Install `curl` then proceed.
+* The examples in this procedure also use `wget`, a file download utility. [GNU Wget](https://www.gnu.org/software/wget/) is available for Linux, macOS, and MS Windows. Install `wget` then proceed.
+* The examples in this procedure also use exported environment variables that are compatible with Bourne-like shells (such as `sh`, `bash`, and `zsh`).
 
 ## Launch a Service
 
 ### **Step 1: Generate API Key**
 
-1. Go to the [Generate API Key](https://app.skysql.com/user-profile/api-keys) page.
+1. Go to the [Generate API Key](https://app.skysql.com/user-profile/api-keys) page.
 2. Fill out a name for the API key
 3. Click the "Create" button.
 4. Click the copy button to copy the API key.
@@ -44,14 +42,14 @@ mkdir -p ~/skysql-nr-tf
 cd ~/skysql-nr-tf
 ```
 
-### **Step 3: Create `main.tf`**
+### **Step 3: Create `main.tf`**
 
-In the Terraform project directory, create a `main.tf` file that contains the following:
+In the Terraform project directory, create a `main.tf` file that contains the following:
 
-- [Provider Requirements](https://developer.hashicorp.com/terraform/language/providers/requirements)
-- [Provider Configuration](https://developer.hashicorp.com/terraform/language/providers/configuration)
-- [Resources](https://developer.hashicorp.com/terraform/language/resources/syntax)
-- [Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+* [Provider Requirements](https://developer.hashicorp.com/terraform/language/providers/requirements)
+* [Provider Configuration](https://developer.hashicorp.com/terraform/language/providers/configuration)
+* [Resources](https://developer.hashicorp.com/terraform/language/resources/syntax)
+* [Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
 
 ```tf
 # ---------------------
@@ -138,9 +136,9 @@ data "skysql_availability_zones" "default" {
 }
 ```
 
-### **Step 4: Create `outputs.tf`**
+### **Step 4: Create `outputs.tf`**
 
-In the Terraform project directory, create an `outputs.tf` file that contains the [output values](https://developer.hashicorp.com/terraform/language/values/outputs) used to display metadata about the MariaDB Cloud service:
+In the Terraform project directory, create an `outputs.tf` file that contains the [output values](https://developer.hashicorp.com/terraform/language/values/outputs) used to display metadata about the MariaDB Cloud service:
 
 ```tf
 # -------------
@@ -173,9 +171,9 @@ output "availability_zones" {
 }
 ```
 
-### **Step 5: Create `variables.tf`**
+### **Step 5: Create `variables.tf`**
 
-In the Terraform project directory, create a `variables.tf` file that contains the [input variables](https://developer.hashicorp.com/terraform/language/values/variables) used to configure the MariaDB Cloud service:
+In the Terraform project directory, create a `variables.tf` file that contains the [input variables](https://developer.hashicorp.com/terraform/language/values/variables) used to configure the MariaDB Cloud service:
 
 ```tf
 # ---------------
@@ -280,9 +278,9 @@ variable "ip_address_comment" {
 
 The variables are configured in the next step.
 
-### **Step 6: Configure Service in a `.tfvars` File**
+### **Step 6: Configure Service in a `.tfvars` File**
 
-A [`.tfvars` file](https://developer.hashicorp.com/terraform/tutorials/configuration-language/variables#assign-values-with-a-file) can be used to configure the service using the input variables.
+A [`.tfvars` file](https://developer.hashicorp.com/terraform/tutorials/configuration-language/variables#assign-values-with-a-file) can be used to configure the service using the input variables.
 
 For example:
 
@@ -307,27 +305,27 @@ ip_address_comment  = "Describe the IP address"
 
 The input variables should be customized for your own needs:
 
-- For `api_key`, set it to the API key previously created in "[Step 1: Generate API Key](https://app.skysql.com/user-profile/api-keys)"
-- For `service_type`, choose a [Service Type Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_service_types)
-- For `topology`, choose a [Topology Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies)
-- For `cloud_provider`, choose a [Cloud Provider Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers)
-- For `region`, choose a [Region Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_regions)
-- For `availability_zone`, choose a [Availability Zone Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers__provider_name__zones) or leave it `null` to use the default availability zone for the cloud provider and region
-- For `architecture`, choose a [Hardware Architecture Selection](https://apidocs.skysql.com/#/CPU-Architectures/get_provisioning_v1_cpu_architectures)
-- For `size`, choose an [Instance Size Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_sizes)
-- For `storage`, choose a [Transactional Storage Size Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies__topology_name__storage_sizes)
-- For `nodes`, choose a node count
-- For `sw_version`, choose the [Software Version Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_versions) or leave it `null` to use the default version for the topology
-- For `name`, choose a name between 4-24 characters for the new service
-- For `deletion_protection`, choose whether the service can be deleted via Terraform (`false`) or whether trying to do so raises an error (`true`)
-- For `ip_address`, choose an IP address to allow through the firewall
-- For `ip_address_comment`, provide a description for the IP address
+* For `api_key`, set it to the API key previously created in "[Step 1: Generate API Key](https://app.skysql.com/user-profile/api-keys)"
+* For `service_type`, choose a [Service Type Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_service_types)
+* For `topology`, choose a [Topology Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies)
+* For `cloud_provider`, choose a [Cloud Provider Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers)
+* For `region`, choose a [Region Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_regions)
+* For `availability_zone`, choose a [Availability Zone Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers__provider_name__zones) or leave it `null` to use the default availability zone for the cloud provider and region
+* For `architecture`, choose a [Hardware Architecture Selection](https://apidocs.skysql.com/#/CPU-Architectures/get_provisioning_v1_cpu_architectures)
+* For `size`, choose an [Instance Size Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_sizes)
+* For `storage`, choose a [Transactional Storage Size Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies__topology_name__storage_sizes)
+* For `nodes`, choose a node count
+* For `sw_version`, choose the [Software Version Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_versions) or leave it `null` to use the default version for the topology
+* For `name`, choose a name between 4-24 characters for the new service
+* For `deletion_protection`, choose whether the service can be deleted via Terraform (`false`) or whether trying to do so raises an error (`true`)
+* For `ip_address`, choose an IP address to allow through the firewall
+* For `ip_address_comment`, provide a description for the IP address
 
-The following steps assume that the file is called `skysql-nr-quickstart.tfvars`.
+The following steps assume that the file is called `skysql-nr-quickstart.tfvars`.
 
-### **Step 7: Run `terraform init`**
+### **Step 7: Run `terraform init`**
 
-Initialize the Terraform project directory and download the Terraform provider from the [Terraform Registry](https://registry.terraform.io/namespaces/skysqlinc) by executing the [`terraform init` command](https://developer.hashicorp.com/terraform/cli/commands/init):
+Initialize the Terraform project directory and download the Terraform provider from the [Terraform Registry](https://registry.terraform.io/namespaces/skysqlinc) by executing the [`terraform init` command](https://developer.hashicorp.com/terraform/cli/commands/init):
 
 ```bash
 terraform init
@@ -335,17 +333,17 @@ terraform init
 
 If you need to download the provider manually, see "[Manually Install Provider from Binary Distribution](https://registry.terraform.io/providers/skysqlinc/skysql/latest/docs#installing-the-terraform-provider-for-skysql)".
 
-### **Step 8: Run `terraform plan`**
+### **Step 8: Run `terraform plan`**
 
-Create a Terraform execution plan by executing the [`terraform plan` command](https://developer.hashicorp.com/terraform/cli/commands/plan) and specifying the path to the `.tfvars` file:
+Create a Terraform execution plan by executing the [`terraform plan` command](https://developer.hashicorp.com/terraform/cli/commands/plan) and specifying the path to the `.tfvars` file:
 
 ```bash
 terraform plan -var-file="skysql-nr-quickstart.tfvars"
 ```
 
-### **Step 9: Run `terraform apply`**
+### **Step 9: Run `terraform apply`**
 
-Execute the Terraform execution plan and create the MariaDB Cloud service by executing the [`terraform apply` command](https://developer.hashicorp.com/terraform/cli/commands/apply) and specifying the path to the `.tfvars` file:
+Execute the Terraform execution plan and create the MariaDB Cloud service by executing the [`terraform apply` command](https://developer.hashicorp.com/terraform/cli/commands/apply) and specifying the path to the `.tfvars` file:
 
 ```bash
 terraform apply -var-file="skysql-nr-quickstart.tfvars"
@@ -401,23 +399,22 @@ Then Terraform prints the outputs.
 
 Obtain the connection credentials for the new MariaDB Cloud service by executing the following commands:
 
-1. Obtain the connection command from the `terraform.tfstate` file:
-    
-   ```bash
-    jq ".outputs.skysql_cmd" terraform.tfstate
-   ```
-    
-   ```bash
-   mariadb --host dbpgf00000001.sysp0000.db.skysql.net --port 3306 \
-      --user dbpgf00000001 -p --ssl-verify-server-cert
-   ```
-    
-2. Obtain the user password from the `terraform.tfstate` file:
-    
-   ```bash
-   jq ".outputs.skysql_credentials.value.password" terraform.tfstate \
-         "..password string.."
-   ```
+1.  Obtain the connection command from the `terraform.tfstate` file:
+
+    ```bash
+     jq ".outputs.skysql_cmd" terraform.tfstate
+    ```
+
+    ```bash
+    mariadb --host dbpgf00000001.sysp0000.db.skysql.net --port 3306 \
+       --user dbpgf00000001 -p --ssl-verify-server-cert
+    ```
+2.  Obtain the user password from the `terraform.tfstate` file:
+
+    ```bash
+    jq ".outputs.skysql_credentials.value.password" terraform.tfstate \
+          "..password string.."
+    ```
 
 ### **Step 11: Connect**
 
@@ -443,9 +440,9 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-### **Step 12: Run `terraform destroy`**
+### **Step 12: Run `terraform destroy`**
 
-Delete the service by executing the [`terraform destroy` command](https://developer.hashicorp.com/terraform/cli/commands/destroy) and specifying the path to the `.tfvars` file:
+Delete the service by executing the [`terraform destroy` command](https://developer.hashicorp.com/terraform/cli/commands/destroy) and specifying the path to the `.tfvars` file:
 
 ```bash
 terraform destroy -var-file="skysql-nr-quickstart.tfvars"
@@ -496,106 +493,98 @@ Destroy complete! Resources: 1 destroyed.
 
 ## Manually Install Provider from Binary Distribution
 
-The MariaDB Cloud New Release Terraform provider can be downloaded from the [GitHub releases page](https://github.com/skysqlinc/terraform-provider-skysql) as a binary distribution and manually installed.
+The MariaDB Cloud New Release Terraform provider can be downloaded from the [GitHub releases page](https://github.com/skysqlinc/terraform-provider-skysql) as a binary distribution and manually installed.
 
 ### **Manually Install Provider on Linux**
 
-With **Linux**, manually install the provider on the target system by performing the following steps in the same Bash terminal:
+With **Linux**, manually install the provider on the target system by performing the following steps in the same Bash terminal:
 
-   1. Set some environment variables to configure your provider version, OS, and architecture:
-      
-      ```bash
-      export TF_PROVIDER_RELEASE=3.0.0
-      export TF_PROVIDER_OS=linux
-      export TF_PROVIDER_ARCH=amd64
-      ```
-      
-      For `TF_PROVIDER_ARCH`, the following architectures are supported on Linux:
-      
-      - `386`
-      - `amd64`
-      - `arm`
-      - `arm64`
-   2. Download the provider from GitHub using `wget`:
-      
-      ```bash
-      wget -q https://github.com/skysqlinc/terraform-provider-skysql/releases/download/v3.0.0/terraform-provider-skysql_3.0.0_linux_amd64.zip
-      ```
-      
-   3. Create a Terraform plugin directory:
-      
-      ```bash
-      mkdir -p ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql
-      ```
-      
-   4. Move the provider's binary distribution to the Terraform plugin directory:
-      
-      ```bash
-      mv terraform-provider-skysql_${TF_PROVIDER_RELEASE}_${TF_PROVIDER_OS}_${TF_PROVIDER_ARCH}.zip ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql/
-      ```
-      
-   5. Verify that the provider's binary distribution is present in the Terraform plugin directory:
-      
-      ```bash
-      ls -l ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql/
-      ```
+1.  Set some environment variables to configure your provider version, OS, and architecture:
+
+    ```bash
+    export TF_PROVIDER_RELEASE=3.0.0
+    export TF_PROVIDER_OS=linux
+    export TF_PROVIDER_ARCH=amd64
+    ```
+
+    For `TF_PROVIDER_ARCH`, the following architectures are supported on Linux:
+
+    * `386`
+    * `amd64`
+    * `arm`
+    * `arm64`
+2.  Download the provider from GitHub using `wget`:
+
+    ```bash
+    wget -q https://github.com/skysqlinc/terraform-provider-skysql/releases/download/v3.0.0/terraform-provider-skysql_3.0.0_linux_amd64.zip
+    ```
+3.  Create a Terraform plugin directory:
+
+    ```bash
+    mkdir -p ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql
+    ```
+4.  Move the provider's binary distribution to the Terraform plugin directory:
+
+    ```bash
+    mv terraform-provider-skysql_${TF_PROVIDER_RELEASE}_${TF_PROVIDER_OS}_${TF_PROVIDER_ARCH}.zip ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql/
+    ```
+5.  Verify that the provider's binary distribution is present in the Terraform plugin directory:
+
+    ```bash
+    ls -l ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql/
+    ```
 
 ### **Manually Install Provider on macOS**
 
-With **macOS**, manually install the provider on the target system by performing the following steps in the same macOS Terminal:
+With **macOS**, manually install the provider on the target system by performing the following steps in the same macOS Terminal:
 
-   1. If [Homebrew](https://brew.sh/) is not installed, install it:
-      
-      ```bash
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      ```
+1.  If [Homebrew](https://brew.sh/) is not installed, install it:
 
-   2. Install `wget` using Homebrew:
-      
-      ```bash
-      brew install wget
-      ```
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+2.  Install `wget` using Homebrew:
 
-   3. Set some environment variables to configure your provider version, OS, and architecture:
-      
-      ```bash
-      export TF_PROVIDER_RELEASE=1.1.0
-      export TF_PROVIDER_OS=darwin
-      export TF_PROVIDER_ARCH=arm64
-      ```
-      
-      For `TF_PROVIDER_ARCH`, the following architectures are supported on macOS:
-      - `amd64`
-      - `arm64`
+    ```bash
+    brew install wget
+    ```
+3.  Set some environment variables to configure your provider version, OS, and architecture:
 
-   4. Download the provider from GitHub using `wget`:
-      
-      ```bash
-      wget -q https://github.com/skysqlinc/terraform-provider-skysql/releases/download/v3.0.0/terraform-provider-skysql_3.0.0_darwin_arm64.zip
-      ```
-      
-   5. Create a Terraform plugin directory:
-      
-      ```bash
-      mkdir -p ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql
-      ```
-      
-   6. Move the provider's binary distribution to the Terraform plugin directory:
-      
-      ```bash
-      mv terraform-provider-skysql_${TF_PROVIDER_RELEASE}_${TF_PROVIDER_OS}_${TF_PROVIDER_ARCH}.zip ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql/
-      ```
-      
-   7. Verify that the provider's binary distribution is present in the Terraform plugin directory:
-      
-      ```bash
-      ls -l ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql/
-      ```
+    ```bash
+    export TF_PROVIDER_RELEASE=1.1.0
+    export TF_PROVIDER_OS=darwin
+    export TF_PROVIDER_ARCH=arm64
+    ```
+
+    For `TF_PROVIDER_ARCH`, the following architectures are supported on macOS:
+
+    * `amd64`
+    * `arm64`
+4.  Download the provider from GitHub using `wget`:
+
+    ```bash
+    wget -q https://github.com/skysqlinc/terraform-provider-skysql/releases/download/v3.0.0/terraform-provider-skysql_3.0.0_darwin_arm64.zip
+    ```
+5.  Create a Terraform plugin directory:
+
+    ```bash
+    mkdir -p ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql
+    ```
+6.  Move the provider's binary distribution to the Terraform plugin directory:
+
+    ```bash
+    mv terraform-provider-skysql_${TF_PROVIDER_RELEASE}_${TF_PROVIDER_OS}_${TF_PROVIDER_ARCH}.zip ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql/
+    ```
+7.  Verify that the provider's binary distribution is present in the Terraform plugin directory:
+
+    ```bash
+    ls -l ~/.terraform.d/plugins/registry.terraform.io/skysqlinc/skysql/
+    ```
 
 ## Resources
 
-- [GitHub Project](https://github.com/skysqlinc/terraform-provider-skysql)
-- [Example Terraform Configuration Files](https://github.com/skysqlinc/terraform-provider-skysql/tree/main/examples)
-- [Terraform Registry](https://registry.terraform.io/namespaces/skysqlinc)
-- [API Documentation](https://apidocs.skysql.com/)
-- [API Reference Documentation](https://skysqlinc.github.io/skysql-docs/Reference%20Guide/REST%20API%20Reference/)
+* [GitHub Project](https://github.com/skysqlinc/terraform-provider-skysql)
+* [Example Terraform Configuration Files](https://github.com/skysqlinc/terraform-provider-skysql/tree/main/examples)
+* [Terraform Registry](https://registry.terraform.io/namespaces/skysqlinc)
+* [API Documentation](https://apidocs.skysql.com/)
+* [API Reference Documentation](https://skysqlinc.github.io/skysql-docs/Reference%20Guide/REST%20API%20Reference/)

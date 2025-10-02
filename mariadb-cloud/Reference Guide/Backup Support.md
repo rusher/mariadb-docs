@@ -16,4 +16,4 @@
 * Versions 11.6.2 and 11.7.1 support only snapshot backups
 * All other versions support all backup types: Full, Incremental, Dump, and Snapshot
 
-Please [contact us](broken-reference) if you have any questions about backup support for specific MariaDB versions.
+Please contact us if you have any questions about backup support for specific MariaDB versions.

@@ -12,10 +12,8 @@ The MariaDB Cloud MCP Server provides a comprehensive set of features designed t
 
 * **Launch and Manage Serverless Database Instances:** Programmatically launch and manage new serverless MariaDB database instances directly within MariaDB Cloud.
 * **Interact with AI-Powered Database Agents:** Seamlessly connect and interact with AI Agents (Developer Copilot, DBA Copilot and Custom agents) to use natural language queries for database operations.
-* **Execute SQL Queries Directly:** Run SQL queries on your MariaDB Cloud  instances through a unified interface.
+* **Execute SQL Queries Directly:** Run SQL queries on your MariaDB Cloud instances through a unified interface.
 * **Flexible Deployment:** Can be installed and integrated with various MCP client tools and IDEs.
-
----
 
 ## Benefits
 
@@ -27,8 +25,6 @@ The MariaDB Cloud MCP Server provides a comprehensive set of features designed t
 * **Cost-Effective Scalability:** Leverage MariaDB Cloud's serverless architecture for instant scaling and zero waste during idle times, optimizing costs.
 * **Seamless Integration:** Designed to integrate with popular AI-powered development tools that support the Model Context Protocol (MCP).
 
----
-
 ## Target Audience
 
 The MariaDB Cloud MCP Server is perfect for:
@@ -37,27 +33,17 @@ The MariaDB Cloud MCP Server is perfect for:
 * **Data Engineers:** Looking for a streamlined way to connect various models, agents, and data systems with reduced integration complexity.
 * **Organizations:** Aiming to leverage AI for more efficient, accurate, and secure operational data management without significant data migration or infrastructure changes.
 
----
-
 ## Getting Started with MariaDB Cloud's MCP Server
 
 It's easy to get up and running with the MariaDB Cloud MCP Server. Follow these simple steps to begin your journey:
 
-1.  **Sign Up for MariaDB Cloud:**
-    First, you'll need a MariaDB Cloud account to get your **API key**. Visit [app.skysql.com](https://app.skysql.com/) to sign up. It only takes a few seconds, and we offer a forever-free developer serverless tier that requires no credit card.
-
-2.  **Deploy the MCP Server:**
-    You have two main options for deploying the MCP Server:
-
-    * **Via Smithery.ai (Recommended for ease of use):**
-        Access the MariaDB Cloud MCP Server directly on [Smithery.ai](https://smithery.ai/). Follow the instructions provided there to connect the server with popular AI IDEs such as Claude, Cursor, Windsurf, and others, using your API key. Smithery.ai makes the setup process much smoother.
-    * **Via Our GitHub Repository:**
-        Alternatively, the MariaDB Cloud MCP Server is also available on our [GitHub repository](https://github.com/skysqlinc/skysql-mcp). If you prefer a more manual setup, you can clone the repository and follow the instructions in its README.
+1. **Sign Up for MariaDB Cloud:** First, you'll need a MariaDB Cloud account to get your **API key**. Visit [app.skysql.com](https://app.skysql.com/) to sign up. It only takes a few seconds, and we offer a forever-free developer serverless tier that requires no credit card.
+2. **Deploy the MCP Server:** You have two main options for deploying the MCP Server:
+   * **Via Smithery.ai (Recommended for ease of use):** Access the MariaDB Cloud MCP Server directly on [Smithery.ai](https://smithery.ai/). Follow the instructions provided there to connect the server with popular AI IDEs such as Claude, Cursor, Windsurf, and others, using your API key. Smithery.ai makes the setup process much smoother.
+   * **Via Our GitHub Repository:** Alternatively, the MariaDB Cloud MCP Server is also available on our [GitHub repository](https://github.com/skysqlinc/skysql-mcp). If you prefer a more manual setup, you can clone the repository and follow the instructions in its README.
 
 Once your MCP Server is set up, you can start using AI Agents.
 
-Checking this demo video for further info: [MariaDB Cloud MCP Server Demo](https://www.youtube.com/watch?v=S5SR9qfXOBs&t=1s)
+Checking this demo video for further info: [MariaDB Cloud MCP Server Demo](https://www.youtube.com/watch?v=S5SR9qfXOBs\&t=1s)
 
----
-
-
+***

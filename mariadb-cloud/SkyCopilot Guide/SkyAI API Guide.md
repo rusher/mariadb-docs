@@ -1,55 +1,44 @@
+# AI Agents API--User Guide
 
+## AI Agent API – User Guide
 
-# AI Agent  API – User Guide
-
-## Overview
+### Overview
 
 The **AI Agent API** lets developers interact with **AI agents** built and hosted on the MariaDB Cloud platform. This API is perfect for embedding **conversational AI experiences** in your applications, dashboards, or internal tools – all without the need for complex LLM infrastructure or MLOps.
 
-
-## Authentication
+### Authentication
 
 To make requests to the API, you must authenticate using an **API key**.
 
 **Steps:**
 
-1.  **Get an API Key**
-
-      * Go to: [MariaDB Cloud API Key Management](https://app.skysql.com/user-profile/api-keys)
-      * Generate a new API key.
-
+1. **Get an API Key**
+   * Go to: [MariaDB Cloud API Key Management](https://app.skysql.com/user-profile/api-keys)
+   * Generate a new API key.
 2.  **Include the key in your request headers:**
 
     ```
     X-API-Key: YOUR_API_KEY
     ```
 
------
-
------
-
-## Maintaining Chat Sessions
+### Maintaining Chat Sessions
 
 The **AI Agent Session API** allows you to initiate and manage conversational sessions with your AI agents. Sessions are crucial for maintaining context across multiple interactions, which leads to more natural and coherent conversations with the agent.
 
------
+#### Creating a Session
 
-### Creating a Session
-
-  * **Endpoint:**
+*   **Endpoint:**
 
     ```
     POST https://api.skysql.com/copilot/v1/session
     ```
-
-  * **Headers:**
+*   **Headers:**
 
     ```
     Content-Type: application/json
     X-API-Key: YOUR_API_KEY
     ```
-
-  * **Request Body:**
+*   **Request Body:**
 
     ```json
     {
@@ -61,8 +50,8 @@ The **AI Agent Session API** allows you to initiate and manage conversational se
     }
     ```
 
-      * `agent_id` (string): The identifier of the AI agent you want to talk to.
-      * `metadata` (object, optional): Any additional information to associate with the session, like user identifiers or conversation topics.
+    * `agent_id` (string): The identifier of the AI agent you want to talk to.
+    * `metadata` (object, optional): Any additional information to associate with the session, like user identifiers or conversation topics.
 
 **Example using `curl`:**
 
@@ -79,15 +68,13 @@ curl -X POST https://api.skysql.com/copilot/v1/session \
       }'
 ```
 
------
-
-### Response Structure
+#### Response Structure
 
 A successful response will return a JSON object containing:
 
-  * `session_id` (string): A unique identifier for the session that was created.
-  * `agent_id` (string): The identifier of the agent associated with this session.
-  * `created_at` (string): A timestamp indicating when the session was created.
+* `session_id` (string): A unique identifier for the session that was created.
+* `agent_id` (string): The identifier of the agent associated with this session.
+* `created_at` (string): A timestamp indicating when the session was created.
 
 **Example Response:**
 
@@ -99,19 +86,16 @@ A successful response will return a JSON object containing:
 }
 ```
 
------
-
-### Using the Session
+#### Using the Session
 
 Once you have a `session_id`, include it in all subsequent interactions with the agent to maintain context:
 
-  * **Chat Endpoint:**
+*   **Chat Endpoint:**
 
     ```
     POST https://api.skysql.com/copilot/v1/chat
     ```
-
-  * **Request Body:**
+*   **Request Body:**
 
     ```json
     {
@@ -122,49 +106,42 @@ Once you have a `session_id`, include it in all subsequent interactions with the
 
 Maintaining the same `session_id` across multiple requests lets the agent remember previous interactions, leading to more coherent conversations.
 
------
-
-### Error Handling
+#### Error Handling
 
 If your request is invalid or unauthorized, you might receive error responses such as:
 
-  * **401 Unauthorized:** Missing or invalid API key.
-  * **400 Bad Request:** Malformed request syntax or missing required fields.
-  * **500 Internal Server Error:** An error occurred on the server.
+* **401 Unauthorized:** Missing or invalid API key.
+* **400 Bad Request:** Malformed request syntax or missing required fields.
+* **500 Internal Server Error:** An error occurred on the server.
 
 Always ensure your API key is valid and your request body is correctly formatted.
 
------
+#### Tips for Effective Use of Sessions
 
-### Tips for Effective Use of Sessions
+* **Session Management:** Use the same `session_id` for a series of related interactions to keep the conversation flowing.
+* **Metadata Usage:** Leverage the `metadata` field to store relevant information that can help the agent provide more personalized responses.
+* **Session Termination:** Implement logic in your application to end sessions when they're no longer needed, which helps free up resources.
 
-  * **Session Management:** Use the same `session_id` for a series of related interactions to keep the conversation flowing.
-  * **Metadata Usage:** Leverage the `metadata` field to store relevant information that can help the agent provide more personalized responses.
-  * **Session Termination:** Implement logic in your application to end sessions when they're no longer needed, which helps free up resources.
+### Making a Chat Request
 
------
-
-
-## Making a Chat  Request
-The  Chat API allows you to send natural language prompts to a AI agent and receive structured responses, including generated SQL and data results when applicable. It supports both stateless and multi-turn conversational use cases and lets you pass agent-specific configuration such as table filters to control the context of the response.
+The Chat API allows you to send natural language prompts to a AI agent and receive structured responses, including generated SQL and data results when applicable. It supports both stateless and multi-turn conversational use cases and lets you pass agent-specific configuration such as table filters to control the context of the response.
 
 The optional config object allows you to customize how the agent accesses and filters data during query generation. This is especially useful for enforcing data policies, scoping context, or running controlled experiments.
 
 IMPORTANT: You can use this API on its own for single interactions, or in conjunction with the Session API to maintain context across multi-turn conversations with the same agent.
-  * **Endpoint:**
+
+*   **Endpoint:**
 
     ```
     POST https://api.skysql.com/copilot/v1/chat
     ```
-
-  * **Headers:**
+*   **Headers:**
 
     ```
     Content-Type: application/json
     X-API-Key: YOUR_API_KEY
     ```
-
-  * **Request Body:**
+*   **Request Body:**
 
     ```json
     {
@@ -179,16 +156,12 @@ IMPORTANT: You can use this API on its own for single interactions, or in conjun
     }
     ```
 
-      * `prompt` (string): Your question to the AI agent.
-      * `agent_id` (string): The UUID of the AI agent to query
-      * `session_id` (string, optional): Use this to maintain 
-      conversational context across turns.
-      * `config` (object, optional): Configuration to pass contextual filters (e.g., row-level security, scope)
-      * `table_filters` (object,optional): Key-value pairs where the key is a table name, and the value is a SQL WHERE clause to apply automatically
+    * `prompt` (string): Your question to the AI agent.
+    * `agent_id` (string): The UUID of the AI agent to query
+    * `session_id` (string, optional): Use this to maintain conversational context across turns.
+    * `config` (object, optional): Configuration to pass contextual filters (e.g., row-level security, scope)
+    * `table_filters` (object,optional): Key-value pairs where the key is a table name, and the value is a SQL WHERE clause to apply automatically
 
-
- 
-      
 **Example using `curl`:**
 
 ```bash
@@ -205,18 +178,16 @@ curl -X POST https://api.skysql.com/copilot/v1/chat \
           }
         }
       }'
-  ```
+```
 
------
-
-## Response Format
+### Response Format
 
 A successful response returns a structured JSON object:
 
-  * `response`: The agent's natural language reply.
-  * `sql`: (if applicable) The SQL generated by the agent to answer the question.
-  * `data`: Structured data returned (if relevant).
-  * `session_id`: Echoes your session ID, to help manage stateful interactions.
+* `response`: The agent's natural language reply.
+* `sql`: (if applicable) The SQL generated by the agent to answer the question.
+* `data`: Structured data returned (if relevant).
+* `session_id`: Echoes your session ID, to help manage stateful interactions.
 
 **Example Response:**
 
@@ -232,28 +203,22 @@ A successful response returns a structured JSON object:
 }
 ```
 
------
+### Error Handling
 
-## Error Handling
-
-| Code | Meaning             | Explanation               |
-| :--- | :------------------ | :------------------------ |
-| 401  | Unauthorized        | Missing or invalid API key |
-| 400  | Bad Request         | Malformed request syntax  |
+| Code | Meaning               | Explanation                         |
+| ---- | --------------------- | ----------------------------------- |
+| 401  | Unauthorized          | Missing or invalid API key          |
+| 400  | Bad Request           | Malformed request syntax            |
 | 500  | Internal Server Error | Something went wrong on the backend |
 
------
+### Best Practices
 
-## Best Practices
+* Use `session_id` to maintain conversation context across multiple prompts.
+* Check the `sql` output if you’re debugging or want insight into how the agent is reasoning.
+* Use clear, specific language in your prompts for optimal results.
+* Validate `data` before injecting it into your UI or downstream services.
 
-  * Use `session_id` to maintain conversation context across multiple prompts.
-  * Check the `sql` output if you’re debugging or want insight into how the agent is reasoning.
-  * Use clear, specific language in your prompts for optimal results.
-  * Validate `data` before injecting it into your UI or downstream services.
+## Useful Links
 
------
-
-# Useful Links
-
-  * **API Reference:** [AI Agent API Docs](https://apidocs.skysql.com/)
-  * **MariaDB Cloud Console:** [MariaDB Cloud Portal](https://app.skysql.com)
+* **API Reference:** [AI Agent API Docs](https://apidocs.skysql.com/)
+* **MariaDB Cloud Console:** [MariaDB Cloud Portal](https://app.skysql.com)

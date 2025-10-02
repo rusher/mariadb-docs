@@ -4,11 +4,9 @@
 
 <summary>Authentication</summary>
 
-#### Go to the MariaDB Cloud [API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:    \`\`\`bash    curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"    \`\`\`
+**Go to the MariaDB Cloud** [**API Key management page**](https://app.skysql.com/user-profile/api-keys) **and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g: \`\`\`bash curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}" \`\`\`**
 
 </details>
-
-### Restore From your Bucket (External Storage)
 
 You can restore your data from external cloud storage. MariaDB Cloud supports restoration from both Google Cloud Storage (GCS) and Amazon S3 cloud storage buckets. Your backup data should be created using either `mariabackup` or `mysqldump`.
 
@@ -35,22 +33,22 @@ curl --location 'https://api.skysql.com/skybackup/v1/restores' \
   E.g: in dbpgf17106534.sysp0000.db2.skysql.com, 'dbpgf17106534' is the service ID. You will find the FQDN in the [Connect window](https://app.skysql.com/dashboard)
 * ID : the backup data file reference, available in your GCS or S3 bucket.
 
-!!! Note Gzip compressed file expected.
+{% hint style="warning" %}
+A gzip compressed file is expected.
+{% endhint %}
 
-````
 Example:
+
 ```bash
 gzip <backup file> -c > <backup file>.gz
 ```
-````
 
 * GCS\_URI/S3\_URI : the GCS/S3 bucket URI where the backup file is stored.
 
 Format gs://BUCKET\_NAME/ or s3://BUCKET\_NAME/ !!! Note Make sure the BUCKET\_NAME contains a trailing slash.
 
 * BACKUP\_METHOD : the backup method used to create the backup file.\
-  Available options: `mariabackup` , `mysqldump`\
-
+  Available options: `mariabackup` , `mysqldump`\\
 *   GCP\_SERVICE\_ACCOUNT\_BASE64/AWS\_ACCOUNT\_ACCESS\_KEY\_BASE64 : Your base64 encoded GCP service account or AWS account access key.
 
     Information on how to create a GCP service account [here](https://cloud.google.com/iam/docs/keys-create-delete) Storage Admin role is required for the service account attemping the restore.

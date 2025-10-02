@@ -1,15 +1,31 @@
+---
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+---
+
 # Configure your Database Server(s)
 
 Database server configuration, including system variables, is managed through the Configuration Manager.
 
-[![configuration-manager.png](configuration-manager.png)](configuration-manager.png)
-
+<figure><img src="configuration-manager.png" alt=""><figcaption></figcaption></figure>
 
 ## **Access to Configuration Manager**
 
 To access the Configuration Manager interface:
 
-1. Log in to the [Portal](https://app.skysql.com/dashboard).
+1. Log in to the [Portal](https://app.skysql.com/dashboard).
 2. Click the "Settings" link in the main menu (left navigation in the Portal).
 3. Click the ["Configuration Manager"](https://app.skysql.com/settings/configuration-manager) button.
 
@@ -17,8 +33,8 @@ To access the Configuration Manager interface:
 
 Available configuration parameters differ by cloud database topology.
 
-[1. Mariadb Server Single Node](./Mariadb-Server-Single-Node.md)
+[1. Mariadb Server Single Node](Mariadb-Server-Single-Node.md)
 
-[2. Mariadb Server With Replica(s)](./Mariadb-Server-with-Replica(s).md)
+[2. Mariadb Server With Replica(s)](Mariadb-Server-with-Replica\(s\).md)
 
-[3. MariaDB Cloud Intelligent Proxy Configuration](./SkySQL-Intelligent-Proxy.md)
+[3. MariaDB Cloud Intelligent Proxy Configuration](SkySQL-Intelligent-Proxy.md)

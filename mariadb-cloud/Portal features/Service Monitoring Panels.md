@@ -2,24 +2,23 @@
 
 The available panels are :
 
-[![monitoring.png](monitoring.png)](monitoring.png)
-*Monitoring page*
+<figure><img src="monitoring.png" alt=""><figcaption><p>Monitoring page</p></figcaption></figure>
 
 ## Current SQL Commands (service)
 
 This panel shows the ratio between the types of SQL statements executed by the service during the selected time interval.
 
-## CPU Load (service,status)
+## CPU Load (service, status)
 
 This panel shows the CPU usage for each server node during the selected time interval.
 
-## QPS (service,status)
+## QPS (service, status)
 
 This panel shows the queries per second (QPS) executed by the server node during the selected time interval.
 
 ## Connections (service)
 
-This panel shows the number of used and aborted connections for each ES node along with the max_connections value.
+This panel shows the number of used and aborted connections for each ES node along with the max\_connections value.
 
 ## Replicas status
 
@@ -37,9 +36,9 @@ This panel shows the amount of storage space used (as the usage percentage, actu
 
 This panel shows the amount of storage space used by each server node during the selected time interval.
 
-[![lags-panel.png](lags-panel.png)](lags-panel.png)
+<figure><img src="lags-panel.png" alt=""><figcaption></figcaption></figure>
 
-## GTID Replication Position (service,replicas)
+## GTID Replication Position (service, replicas)
 
 This panel shows the Global Transaction ID (GTID) for each ES node during the selected time interval.
 
@@ -55,9 +54,9 @@ This panel shows the current binary log position of the replica SQL thread for e
 
 This panel shows the current binary log position of the replica I/O thread for each ES node during the selected time interval.
 
-[![queries-panel.png](queries-panel.png)](queries-panel.png)
+<figure><img src="queries-panel.png" alt=""><figcaption></figcaption></figure>
 
-## Top Command Counters (service,queries)
+## Top Command Counters (service, queries)
 
 This panel shows the top 30 statement types that were most frequently executed by all ES nodes during the selected time interval.
 
@@ -77,7 +76,7 @@ This panel shows the top 30 statement types that were most frequently executed b
 
 This panel shows the number of queries per second (QPS) executed by all ES nodes during the selected time interval.
 
-## MariaDB Slow Queries (service,queries)
+## MariaDB Slow Queries (service, queries)
 
 This panel shows the number of slow queries executed by all ES nodes during the selected time interval.
 
@@ -97,7 +96,7 @@ This panel shows the number of client threads running on all ES nodes during the
 
 This panel shows the number of client threads connected and running on the ES node during the selected time interval.
 
-[![database-panel.png](database-panel.png)](database-panel.png)
+<figure><img src="database-panel.png" alt=""><figcaption></figcaption></figure>
 
 ## MaxScale Service Connections
 
@@ -135,8 +134,7 @@ This panel shows the number of tables opened by the database server on the ES no
 
 This panel shows the number of tables that have been opened by all ES nodes during the selected time interval.
 
-
-[![system-panel.png](system-panel.png)](system-panel.png)
+<figure><img src="system-panel.png" alt=""><figcaption></figcaption></figure>
 
 ## CPU Load
 
@@ -154,7 +152,7 @@ This panel shows the total number of bytes read from the ES node's file system d
 
 This panel shows the total number of bytes written to the ES node's file system during the selected time interval.
 
-## I/O Activity (server,system)
+## I/O Activity (server, system)
 
 This panel shows the total number of bytes written to or read from the ES node's file system during the selected time interval.
 
@@ -186,7 +184,7 @@ This panel shows the amount of data sent and received over the network by the da
 
 This panel shows the amount of data sent and received over the network by the database server on the ES node during the selected time interval.
 
-## Network Traffic (server,status)
+## Network Traffic (server, status)
 
 This panel shows the amount of data sent and received over the network by the operating system on the ES node during the selected time interval.
 
@@ -222,7 +220,7 @@ This panel shows the current CPU usage for the ES or Xpand node.
 
 This panel shows the current memory usage details for the ES or Xpand node.
 
-## RAM (server,status,graph)
+## RAM (server, status, graph)
 
 This panel shows memory usage details for the ES or Xpand node during the selected time interval.
 
@@ -232,9 +230,9 @@ This panel shows the current size of the InnoDB buffer pool for the ES node in t
 
 ## Used Connections
 
-This panel shows the current number of client connections as a percentage of the ES node's max_connections value.
+This panel shows the current number of client connections as a percentage of the ES node's max\_connections value.
 
-## InnoDB Data / sec (server,status)
+## InnoDB Data / sec (server, status)
 
 This panel shows the number of bytes per second read and written by InnoDB during the selected time interval.
 
@@ -282,11 +280,11 @@ This panel shows memory usage details for the ES node during the selected time i
 
 This panel shows how much memory the ES node used for the InnoDB buffer pool, InnoDB log buffer, MyISAM key buffer, and query cache during the selected time interval.
 
-## Memory (server,performance)
+## Memory (server, performance)
 
 This panel shows memory usage details for the MaxScale node during the selected time interval.
 
-## RW/sec (server,cluster)
+## RW/sec (server, cluster)
 
 This panel shows the number of read and write operations per second that were handled by the threads on the MaxScale node during the selected time interval.
 
@@ -298,7 +296,7 @@ This panel shows the number of threads currently used by the MaxScale node.
 
 This panel lists the modules installed on the MaxScale node.
 
-## MaxScale Hangups (server,performance)
+## MaxScale Hangups (server, performance)
 
 This panel shows the number of client connections closed by the MaxScale node during the selected time interval.
 
@@ -306,15 +304,15 @@ This panel shows the number of client connections closed by the MaxScale node du
 
 This panel shows the number of errors encountered by threads on the MaxScale node during the selected time interval.
 
-## Event Queue Length (server,performance)
+## Event Queue Length (server, performance)
 
 This panel shows the total event queue length for all threads on the MaxScale node during the selected time interval.
 
-## MaxScale Descriptors (server,cluster)
+## MaxScale Descriptors (server, cluster)
 
 This panel shows the number of descriptors used by the MaxScale node during the selected time interval.
 
-## Max Time in Queue (server,cluster)
+## Max Time in Queue (server, cluster)
 
 This panel shows the longest time the MaxScale node waited for an I/O event during the selected time interval.
 
@@ -326,27 +324,10 @@ This panel shows the number of clients connected to the MaxScale node during the
 
 This panel shows the number of database server connections open between the MaxScale node and each ES or Xpand node during the selected time interval.
 
-## Resident (server,cluster)
+## Resident (server, cluster)
 
 This panel shows the current resident set size (RSS) of the MaxScale process.
 
-## Stack size (server,cluster)
+## Stack size (server, cluster)
 
 This panel shows the current stack size of the MaxScale node.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
