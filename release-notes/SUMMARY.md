@@ -1926,6 +1926,7 @@
       * [Connector/C 2.0.0 Changelog](connectors/c/changelogs/2.0.0.md)
       * [Connector/C 1.0.0 Changelog](connectors/c/changelogs/1.0.0.md)
   * [Connector/C++](connectors/c++/README.md)
+    * [Connector/C++ All Releases](connectors/c++/all-releases.md)
     * [Connector/C++ 1.1 Release Notes](connectors/c++/1.1/README.md)
       * [Connector/C++ 1.1.7 Release Notes](connectors/c++/1.1/1.1.7.md)
       * [Connector/C++ 1.1.6 Release Notes](connectors/c++/1.1/1.1.6.md)
