@@ -1,5 +1,7 @@
 # Connector/C++ All Releases
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/97ObD80oLdZu6qT33Vhb/" %}
+
 ## 1.1
 
 | Release               | Release Date | Release Status         |
