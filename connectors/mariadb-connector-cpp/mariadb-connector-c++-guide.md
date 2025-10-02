@@ -2,13 +2,11 @@
 description: Quickstart Guide for Connector/C++
 ---
 
-# MariaDB Connector/C++ Overview
+# MariaDB Connector/C++ OverviewO
 
 MariaDB Connector/C++ enables C++ applications to establish client connections to MariaDB database products over TLS.
 
-{% hint style="info" %}
-The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) _**(GA)**_ release of MariaDB Connector/C++ is:[**MariaDB Connector/C++ 1.1.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/c++/mariadb-connector-cpp-1-1-release-notes/mariadb-connector-cpp-1-1-6-release-notes)
-{% endhint %}
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/0sZptD6VDS0ZF1tsWwKB/" %}
 
 C++ applications can connect to MariaDB database products either with MariaDB Connector/C++ or [MariaDB Connector/C](../mariadb-connector-c/).
 
@@ -21,7 +19,6 @@ Using MariaDB Connector/C++ in C++ applications enables design with an object-or
 | Smart Pointers      | Yes           | No                                     |
 | Implements JDBC API | Yes           | No                                     |
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}
