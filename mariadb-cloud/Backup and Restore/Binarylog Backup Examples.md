@@ -8,9 +8,9 @@
 
 </details>
 
-### Binary Log Backup
+## Binary Log Backup
 
-#### One-Time Binary log
+### One-Time Binary Log
 
 To set up an one-time _binary log_ backup:
 
@@ -30,7 +30,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups/schedules' \
 * API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 * SERVICE\_ID : MariaDB Cloud serivce identifier, format dbtxxxxxx. You can fetch the service ID from the Fully qualified domain name(FQDN) of your service. E.g: in dbpgf17106534.sysp0000.db2.skysql.com, 'dbpgf17106534' is the service ID.You will find the FQDN in the [Connect window](https://app.skysql.com/dashboard)
 
-**Schedule Binary Log Backup**
+### **Schedule Binary Log Backup**
 
 To set up an cron _incremental_ backup:
 

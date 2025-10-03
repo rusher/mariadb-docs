@@ -4,7 +4,9 @@ This walkthrough explains how to launch database services and manage the lifecyc
 
 ## Launch a Service
 
-### **Step 1: Generate API Key**
+{% stepper %}
+{% step %}
+### **Generate API Key**
 
 1. Go to [MariaDB Cloud API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key
 2.  Export the value from the token field to an environment variable $API\_KEY
@@ -15,14 +17,16 @@ This walkthrough explains how to launch database services and manage the lifecyc
 
     The `API_KEY` environment variable will be used in the subsequent steps.
 
-Use it on subsequent request, e.g:
+Use it on subsequent request, for example:
 
 ```bash
  curl --request GET 'https://api.skysql.com/provisioning/v1/services' \
     --header "X-API-Key: $API_KEY"
 ```
+{% endstep %}
 
-### **Step 2: Use Swagger docs to try out the APIs**
+{% step %}
+### **Use Swagger docs to try out the APIs**
 
 You can use the API Documentation [here](https://apidocs.skysql.com/) and directly try out the APIs in your browser.
 
@@ -44,8 +48,10 @@ Pre-requisites for code below.
 
 *Finally, the examples use a backslash at the end of some of the lines to indicate to the shell that a command spans multiple lines. If your shell doesn't allow this, remove each trailing backslash character and join the following line to the end of the current line*.
 ```
+{% endstep %}
 
-### **Step 2: Determine the Client IP Address**
+{% step %}
+### **Determine the Client IP Address**
 
 When your new service is created, your client can only connect through the service's firewall if the client IP address is in the service's IP allowlist.
 
@@ -56,8 +62,12 @@ If you are not sure of your public IP address, you can use a lookup service, suc
 ```bash
 export SKYSQL_CLIENT_IP=`curl -sS checkip.amazonaws.com`
 ```
+{% endstep %}
 
-### **Step 3: Launch a Service**
+{% step %}
+### **Launch a Service**
+
+
 
 To launch a service:
 
@@ -119,8 +129,10 @@ Upon success, the command will return JSON with details about the new service.
     ```bash
     $ export SKYSQL_SERVICE=`jq -r .id response-service.json`
     ```
+{% endstep %}
 
-### **Step 4: Check Service State**
+{% step %}
+### **Check Service State**
 
 Before advancing, check the service state using the `/provisioning/v1/services/${SKYSQL_SERVICE}` [API endpoint](https://apidocs.skysql.com/#/allowed_roles%3AADMIN%3BMEMBER%3BVIEWER/get_provisioning_v1_services__service_id_):
 
@@ -135,8 +147,10 @@ curl -sS --location --request GET \
 When the service is still being launched, the JSON payload will contain `"pending_create"` or `"pending_modifying"` as the service status.
 
 When the service has been launched, the JSON payload contains `"ready"`, and you can continue with the next steps. Keep in mind that some of the following values will not be populated in the JSON data until this ready status has been achieved.
+{% endstep %}
 
-### **Step 5: Obtain Connection Details**
+{% step %}
+### **Obtain Connection Details**
 
 Obtain the connection credentials for the new MariaDB Cloud service by executing the following commands:
 
@@ -175,8 +189,10 @@ The default username and password will not be available until the service state 
     $ export SKYSQL_USERNAME=`jq -r .username response-credentials.json`
     $ export SKYSQL_PASSWORD=`jq -r .password response-credentials.json`
     ```
+{% endstep %}
 
-### **Step 6: Connect**
+{% step %}
+### **Connect**
 
 Connect to the database using the host, port, and default credentials using the [mariadb client](https://mariadb.com/docs/server/connect/clients/mariadb-client/):
 
@@ -187,8 +203,14 @@ mariadb --host ${SKYSQL_FQDN} --port ${SKYSQL_PORT} \
 ```
 
 If you don't want the password to appear on the command-line, specify the `--password` command-line option without an argument to be prompted for a password.
+{% endstep %}
 
-### **Step 7: Save Connection Information (Optional)**
+{% step %}
+### **Save Connection Information**
+
+{% hint style="info" %}
+This step is optional.
+{% endhint %}
 
 To connect to your MariaDB Cloud service easily, it is possible to create a `.my.cnf` file in your home directory that contains all the details of your connection.
 
@@ -214,6 +236,8 @@ EOF
     ```bash
     $ mariadb
     ```
+{% endstep %}
+{% endstepper %}
 
 ## Resources
 

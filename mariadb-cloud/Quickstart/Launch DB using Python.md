@@ -2,9 +2,14 @@
 
 The Python example below shows how to launch a DB service and connect to it using the MariaDB Cloud DBaaS API.
 
-You need to configure the following environment variables: \* `API_KEY` \* `SKYSQL_CLIENT_IP`
+You need to configure the following environment variables:&#x20;
 
-### **Step 1: Generate API Key**
+* &#x20;`API_KEY`&#x20;
+* &#x20;`SKYSQL_CLIENT_IP`&#x20;
+
+{% stepper %}
+{% step %}
+### **Generate API Key**
 
 1. Go to [MariaDB Cloud API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key.
 2.  Export the value from the token field to an environment variable API\_KEY:
@@ -21,8 +26,10 @@ Check any existing services:
  curl --request GET 'https://api.skysql.com/provisioning/v1/services' \
     --header "X-API-Key: $API_KEY"
 ```
+{% endstep %}
 
-### **Step 2: Determine the Client IP Address**
+{% step %}
+### **Determine the Client IP Address**
 
 When your new service is created, your client can only connect through the service's firewall if the client IP address is in the service's IP allowlist.
 
@@ -33,8 +40,10 @@ If you are not sure of your public IP address, you can use a lookup service, suc
 ```bash
 export SKYSQL_CLIENT_IP=`curl -sS checkip.amazonaws.com`
 ```
+{% endstep %}
 
-### **Step 3: Create the Service using Python**
+{% step %}
+### **Create the Service Using Python**
 
 The following Python script has been tested with Python 3.11
 
@@ -190,8 +199,8 @@ def main():
 
     # Step 5: Test the connection to the DB
     test_connection(connection_properties)
-
-
 if __name__ == "__main__":
     main()
 ```
+{% endstep %}
+{% endstepper %}

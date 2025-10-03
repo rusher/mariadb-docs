@@ -1,4 +1,4 @@
-# Replicating Data from an External Database to MariaDB Cloud
+# Replicating Data From an External Database to MariaDB Cloud
 
 MariaDB MariaDB Cloud customers can configure inbound replication from both **MySQL** and **MariaDB** to a compatible MariaDB running in MariaDB Cloud. This guide will walk you through setting up replication for both MySQL and MariaDB as the source databases.
 
@@ -71,7 +71,7 @@ This will return a confirmation message such as:
 +----------------------------------------+
 ```
 
-You can find the documentation for this procedure [here](<../Reference Guide/Stored Procedures.md#start_replication>).
+You can find the documentation for this procedure [here](../Reference%20Guide/Stored%20Procedures.md#start_replication).
 
 ## Step 4: Check Replication Status
 
@@ -140,21 +140,9 @@ Slave_Non_Transactional_Groups: 0
     Slave_Transactional_Groups: 0
 ```
 
-You can reference the replication status procedure [here](<../Reference Guide/Sky Stored Procedures.md#replication_status>).\
-
+You can reference the replication status procedure [here](<../Reference Guide/Sky Stored Procedures.md#replication_status>).
 
 ## Compatibility Notes
 
 * **For MySQL**: Only binary log-based replication is supported; GTID is not available.
 * **For MariaDB**: GTID-based replication can be used.
-
-### Supported MariaDB Versions for Replication
-
-Ensure that the external primary server uses a supported version of MariaDB, which must be the same or older than the MariaDB Cloud service version.
-
-* **For MariaDB Cloud using ES 10.6**:
-  * MariaDB Server 10.2, 10.3, 10.4, 10.5, 10.6
-* **For MariaDB Cloud using ES 10.5**:
-  * MariaDB Server 10.2, 10.3, 10.4, 10.5
-* **For MariaDB Cloud using ES 10.4**:
-  * MariaDB Server 10.2, 10.3, 10.4

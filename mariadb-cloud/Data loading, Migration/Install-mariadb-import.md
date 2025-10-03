@@ -5,7 +5,7 @@ MariaDB Cloud customers can import data into a MariaDB Cloud service using the `
 * The `mariadb-import` utility provides a command-line interface (CLI)
 * The `mariadb-import` utility can import data from TSV and CSV files
 * The `mariadb-import` utility is available for Linux and Windows
-* The `mariadb-import` utility supports [many command-line options](https://mariadb.com/docs/server/ref/mdb/cli/mariadb-import/)
+* The `mariadb-import` utility supports [many command-line options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import#options)
 
 ## Installation
 

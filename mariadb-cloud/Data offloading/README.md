@@ -21,7 +21,7 @@ There are multiple options to copy/offload data from a MariaDB Cloud DB. You can
 
 You can then use the offloaded data to resurrect the DB elsewhere. You can also optionally setup "outbound replication" to keep the new DB in sync with MariaDB Cloud.
 
-## **1. Offload your Database using `mariadb-dump`**
+## **1. Offloading Databases Using `mariadb-dump`**
 
 The [`mariadb-dump`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) utility is a powerful command-line tool that allows you to export databases, tables, or specific data from your MariaDB instance in MariaDB Cloud.
 
@@ -238,6 +238,6 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups/status' \
 
 * service\_id: The ID of your MariaDB Cloud service. This API call will return the status of the backups, including whether they are in progress, completed, or failed.
 
-## **4. Replicating changes from MariaDB Cloud to a compatible external DB**
+## **4. Replicating Changes From MariaDB Cloud to a Compatible External Database**
 
 See [Replicating data From MariaDB Cloud to External Database](../Data%20offloading/Replicating%20data%20from%20MariaDB%20Cloud%20to%20external%20database.md) for details.

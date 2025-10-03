@@ -73,7 +73,7 @@ We use a multi-step process to assist customers with migrations:
 
 MariaDB Cloud provides two diffeent options for self-service migration
 
-### Option 1: Migrate using the MariaDB Cloud REST API
+### Option 1: Migrate Using the MariaDB Cloud REST API
 
 MariaDB Cloud Managed Migration is a REST-based service that handles the migration process, including data migration, schema migration, and user migration. It provides a follow us steps to set up a live replication of your database to MariaDB Cloud and various insights to monitor the migration process.
 

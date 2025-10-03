@@ -4,13 +4,13 @@
 
 <summary>Authentication</summary>
 
-#### Go to the MariaDB Cloud [API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:    \`\`\`bash    curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"    \`\`\`
+**Go to the MariaDB Cloud** [**API Key management page**](https://app.skysql.com/user-profile/api-keys) **and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g: \`\`\`bash curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}" \`\`\`**
 
 </details>
 
-### Working with Backup Schedules
+## Working With Backup Schedules
 
-#### Get backup schedules inside the Organization :
+### Getting Backup Schedules Inside the Organization
 
 ```bash
 curl --location '<https://api.skysql.com/skybackup/v1/backups/schedules>' \
@@ -20,7 +20,7 @@ curl --location '<https://api.skysql.com/skybackup/v1/backups/schedules>' \
 
 * API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
-**Get all Backup Schedules per service**
+#### **Getting all Backup Schedules per Service**
 
 To get backup schedules for specific service :
 
@@ -32,7 +32,7 @@ curl --location '<https://api.skysql.com/skybackup/v1/backups/schedules?service_
 
 * API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
-**Get Backup Schedule by ID**
+#### **Getting Backup Schedules by ID**
 
 To get specific backup schedule by id :
 
@@ -44,7 +44,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups/schedules/200' \
 
 * API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
-**Update Backup Schedule**
+#### **Updating Backup Schedules**
 
 In the following example, we update the backup schedule to 9 AM UTC. Remember, you cannot change the schedules for one-time backups. To update specific backup schedule you need to make the following API call:
 
@@ -61,7 +61,7 @@ curl --location --request PATCH '<https://api.skysql.com/skybackup/v1/backups/sc
 * API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 * SCHEDULE : Cron schedule, see [Cron](https://en.wikipedia.org/wiki/Cron)
 
-**Delete Backup Schedule**
+#### **Deleting Backup Schedules**
 
 To delete a backup schedule you need to provide the backup schedule id. Example of the api call below:
 
@@ -77,7 +77,7 @@ curl --location --request DELETE 'https://api.skysql.com/skybackup/v1/backups/sc
 
 The following API illustrates how to get the available backups and status of backup jobs .
 
-#### List all backups inside the organization
+#### Listing all Backups Inside the Organization
 
 Here is an example to fetch all the available Backups in your org:
 
@@ -89,7 +89,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups' \
 
 * API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 
-#### List all backups by service
+#### Listing all Backups by Service
 
 To list all backups available for your service :
 

@@ -4,13 +4,13 @@
 
 <summary>Authentication</summary>
 
-#### Go to the MariaDB Cloud [API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"
+**Go to the MariaDB Cloud** [**API Key management page**](https://app.skysql.com/user-profile/api-keys) **and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"**
 
 </details>
 
-### Important Note
+## Important Note
 
-For Point-in-Time Restore to work, you must have a pre-configured backup schedule that ensures:
+For Point-in-Time Restore to work, you must have a preconfigured backup schedule that ensures:
 
 * Your backup schedule creates snapshot backups with a time gap shorter than your `expire_logs_days` database configuration setting (required for binary log availability)
 * Your selected restore point must be between two consecutive snapshot backups from this schedule

@@ -45,7 +45,11 @@ gzip <backup file> -c > <backup file>.gz
 
 * GCS\_URI/S3\_URI : the GCS/S3 bucket URI where the backup file is stored.
 
-Format gs://BUCKET\_NAME/ or s3://BUCKET\_NAME/ !!! Note Make sure the BUCKET\_NAME contains a trailing slash.
+Format: `gs://BUCKET_NAME/` or `s3://BUCKET_NAME/`&#x20;
+
+{% hint style="warning" %}
+Make sure the `BUCKET_NAME` contains a trailing slash.
+{% endhint %}
 
 * BACKUP\_METHOD : the backup method used to create the backup file.\
   Available options: `mariabackup` , `mysqldump`\\
@@ -55,8 +59,12 @@ Format gs://BUCKET\_NAME/ or s3://BUCKET\_NAME/ !!! Note Make sure the BUCKET\_N
 
     Sample GCP service account key and command to encode it:
 
-    echo -n ' { "type": "service\_account", "project\_id": "XXXXXXX", "private\_key\_id": "XXXXXXX", "private\_key": "-----BEGIN PRIVATE KEY-----XXXXX-----END PRIVATE KEY-----", "client\_email": "XXXXXXXXXXXXXXXXXXXXXXXXXXXX.iam.gserviceaccount.com", "client\_id": "XXXXXXX", "auth\_uri": "[https://accounts.google.com/o/oauth2/auth](https://accounts.google.com/o/oauth2/auth)", "token\_uri": "[https://oauth2.googleapis.com/token](https://oauth2.googleapis.com/token)", "auth\_provider\_x509\_cert\_url": "[https://www.googleapis.com/oauth2/v1/certs](https://www.googleapis.com/oauth2/v1/certs)", "client\_x509\_cert\_url": "[https://www.googleapis.com/robot/v1/metadata/x509/XXXXXXXXXXXXXX.iam.gserviceaccount.com](https://www.googleapis.com/robot/v1/metadata/x509/XXXXXXXXXXXXXX.iam.gserviceaccount.com)", "universe\_domain": "googleapis.com" } ' | base64
+```bash
+echo -n ' { "type": "service_account", "project_id": "XXXXXXX", "private_key_id": "XXXXXXX", "private_key": "-----BEGIN PRIVATE KEY-----XXXXX-----END PRIVATE KEY-----", "client_email": "XXXXXXXXXXXXXXXXXXXXXXXXXXXX.iam.gserviceaccount.com", "client_id": "XXXXXXX", "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs", "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/XXXXXXXXXXXXXX.iam.gserviceaccount.com", "universe_domain": "googleapis.com" } ' | base64
+```
 
-    Sample AWS account access key and command to encode it:
+Sample AWS account access key and command to encode it:
 
-    echo -n ' { \[default] aws\_access\_key\_id = XXXXXXXXXXXXXEXAMPLE aws\_secret\_access\_key = XXXXXXXXXXXXX/XXXXXXXXXXXXX/XXXXXXXXXXXXXEXAMPLEKEY region = XXXXXXXXXXXXX } ' | base64
+```bash
+echo -n ' { [default] aws_access_key_id = XXXXXXXXXXXXXEXAMPLE aws_secret_access_key = XXXXXXXXXXXXX/XXXXXXXXXXXXX/XXXXXXXXXXXXXEXAMPLEKEY region = XXXXXXXXXXXXX } ' | base64
+```

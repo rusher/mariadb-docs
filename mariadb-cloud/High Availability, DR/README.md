@@ -1,6 +1,8 @@
-# High availability, DR
+# High Availability and DR
 
-!!! Note MariaDB Cloud provides HA using semi-synchronous replicas. Unlike hyperscalers these replicas are not standy DB servers but actively used for Reads. When the primary crashes our intelligent proxy allows us to failover near instantly to an alternate replica. Or, failback when the original primary recovers. Ensuring data consistency even when replicas have a replication lag through “causal reads”, or transaction replay.
+{% hint style="info" %}
+MariaDB Cloud provides HA using semi-synchronous replicas. Unlike hyperscalers these replicas are not standy DB servers but actively used for Reads. When the primary crashes our intelligent proxy allows us to failover near instantly to an alternate replica. Or, failback when the original primary recovers. Ensuring data consistency even when replicas have a replication lag through “causal reads”, or transaction replay.
+{% endhint %}
 
 ## **Use 'Replicated Topology' for HA**
 
@@ -8,7 +10,7 @@ For HA and Load balancing client requests there is no configuration required. Ju
 
 You should be aware of the `causal_reads` configuration as outlined below. The sections below provide a more detailed description of how MariaDB Cloud delivers on HA and scaling across replicas.
 
-## **Level 1 Resiliency - container health checks, compute-storage isolation**
+## **Level 1 Resiliency - Container Health Checks, Compute-Storage Isolation**
 
 To provide high resiliency we try to protect every layer of the stack – disks, compute, Zones/cloud regions, network and even the load balancer accepting incoming DB connections. The graphic below depicts this architecture. Letʼs peel the onion a bit.
 
@@ -16,7 +18,7 @@ All Cloud databases configured for HA replicate the data across multiple availab
 
 The deployment of DB servers occurs within containers orchestrated by Kubernetes (k8s). In the event of cloud instance failures, MariaDB Cloud’s health monitoring prompts k8s to revive the container in an alternate instance, seamlessly reconnecting to the same storage volume. AWS RDS, for example, runs MariaDB on VMs requiring a replicated setup for any protection against node failures.
 
-## **Level 2 Resiliency - Failover using Intelligent proxy**
+## **Level 2 Resiliency - Failover Using Intelligent Proxy**
 
 While hardware failures are a possibility, a more common scenario we see in practice involves a DB crash due to resource exhaustion or timeouts—such as running out of allocated temp space due to rogue queries or an unplanned large spike in data load. In such instances, it is crucial for application connections to smoothly transition to an alternate server.
 
@@ -26,7 +28,7 @@ Behind the scenes, MariaDB Cloud consistently directs SQL through its intelligen
 
 _HA in a single region_
 
-## **Scaling Concurrent Users without Compromising Consistency**
+## **Scaling Concurrent Users Without Compromising Consistency**
 
 Cloud offerings of open source relational databases often achieve scalability by distributing data across a cluster of nodes, often relying on a replication model where ‘writes’ to the primary node are asynchronously transmitted to one or more replicas. Typically, the onus is on the customer to manage the distribution of traffic across the cluster, either through client application logic or by configuring a proxy service. Several customers have told us that this is simply too big a challenge, effectively capping the scalability of these cloud solutions. Even when customers successfully navigate this challenge, with this approach data consistency might not be uniform across the entire cluster at any given moment.
 
@@ -52,17 +54,17 @@ In general, if the application is not performing large transactions or batch wri
 
 Our replication model is fast as it is configured to be parallel and optimistic - on the replica multiple SQL threads process incoming writes concurrently. It is designed to detect conflicts and revert to proper sequencing, thus being transparent to the app and ensuring consistency.
 
-* Set [causal\_reads](https://mariadb.com/kb/en/mariadb-maxscale-2208-readwritesplit/#causal_reads) to 'local' to achieve consistency at a connection/session level.
+* Set [causal\_reads](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-use-cases/readwrite-split-router-usage/ensuring-causal-consistency-with-maxscales-readwrite-split-router) to 'local' to achieve consistency at a connection/session level.
   * We recommend first exploring to see if `causal_reads` set to `local` will suffice. This is quite fast (minimal to no tradeoff) and ensures read consistency at a connection/session level. If the app is using a connection pool, it is important to understand how it is being used.
   * Example: A banking app lets a user transfer $100 between accounts in a single session. The app writes the debit and credit, then reads the updated balances to show the user. The connection pool reuses the same session for the transaction and follow-up read. Replica lag is 500ms, but semi-sync replication and parallel SQL threads keep it minimal. The write (debit $100, credit $100) is committed on the primary. Within the same session, the read on the replica waits for the write to be applied (up to 500ms), then returns the correct balances.
-* Set [causal\_reads](https://mariadb.com/kb/en/mariadb-maxscale-2208-readwritesplit/#causal_reads) to 'global' for strict consistency across all connections.
-  * If global read consistency is a must, first try `global`. To use this, you will also need to tune the [causal\_reads\_timeout](https://mariadb.com/kb/en/mariadb-maxscale-2208-readwritesplit/#causal_reads_timeout). Reads will be load balanced, and a reader will wait a max of this timeout before giving up and retrying on the primary node. That is, if the replica is lagging, it will wait for this time to see if the replica catches up.
+* Set causal\_reads to 'global' for strict consistency across all connections.
+  * If global read consistency is a must, first try `global`. To use this, you will also need to tune the causal\_reads\_timeout. Reads will be load balanced, and a reader will wait a max of this timeout before giving up and retrying on the primary node. That is, if the replica is lagging, it will wait for this time to see if the replica catches up.
   * Example: A social media app displays a user’s post immediately after they submit it. Reads are load-balanced across replicas, but one replica is lagging due to a batch write. Assume the setup is causal\_read\_timeout = 300ms, replica lag is 400ms; primary CPU is at 50%, replicas at 70-80%. User posts a message (write goes to primary). Read is routed to a lagging replica, which waits 300ms for the write to apply but times out (lag > timeout). Query retries on the primary, taking 301ms total instead of the usual 1ms. The takeaway here is that global ensures consistency across all nodes but can degrade performance if replicas lag beyond causal\_read\_timeout. Tune the timeout and monitor lag carefully.
-* Set [causal\_reads](https://mariadb.com/kb/en/mariadb-maxscale-2208-readwritesplit/#causal_reads) to 'fast' to achieve consistency at a connection/session level but is faster than 'local' but at the cost of load balancing.
+* Set causal\_reads to 'fast' to achieve consistency at a connection/session level but is faster than 'local' but at the cost of load balancing.
   * If and only if your application is very read heavy, you should consider `fast_global`. This relies on `monitor_interval` (Maxscale tracks each replica once in this interval) to know if the replicas have caught up or are behind. This will likely need to be configured in milliseconds.
   * Example: A real-time analytics dashboard updates every 200ms with new data. The app is read-heavy, querying replicas constantly. The setup is monitor\_interval = 300ms (MaxScale polls replicas every 300ms). Writes occur every 200ms; replicas lag by 100-200ms. A write updates the data at T=0ms. At T=200ms, a read hits a replica. MaxScale’s last poll (T=-100ms) shows the replica as caught up, but it’s now behind by 200ms. The read returns stale data because monitor\_interval > write frequency. All traffic shifts to the primary since replicas can’t keep up reliably. The takeaway is that fast\_global works for read-heavy apps only if monitor\_interval is tuned lower than the write frequency (e.g., 100ms here), but it risks routing all traffic to the primary if misconfigured.
 
-### **Increased throughput using Active-Active**
+### **Increased Throughput Using Active-Active**
 
 Unlike RDS or GCP, where the standby is not used for client requests (wasting resources), MariaDB Cloud maximizes the available compute power across all nodes, delivering unparalleled cost effectiveness.
 

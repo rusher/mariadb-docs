@@ -1,4 +1,4 @@
-# Connect from ‘C++’ App
+# Connect From C++ App
 
 MariaDB Connector/C++ enables C++ applications to establish client connections to MariaDB Cloud over TLS.
 
@@ -93,8 +93,8 @@ The connection is configured via the information that is initially acquired from
 
 | What to set            | Where to find it                                                                                                      |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Hostname in the URL    | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                            |
-| Port number in the URL | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                                      |
+| Hostname in the URL    | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                     |
+| Port number in the URL | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                               |
 | user parameter         | The desired username, which might be the default username in the Service Credentials view                             |
 | password parameter     | The user's password, which might be the default password in the Service Credentials view if it was not yet customized |
 
@@ -137,7 +137,7 @@ In the following list, we've left out any parameters that aren't pertinent to ac
 
 Two categories of methods are available to establish a connection.
 
-#### **sql::Driver::connect()**
+### **sql::Driver::connect()**
 
 MariaDB Connector/C++ can connect using the non-static `connect()` methods in the `sql::Driver` class.
 
@@ -180,7 +180,7 @@ if (!conn) {
 }
 ```
 
-#### **sql::DriverManager::getConnection()**
+### **sql::DriverManager::getConnection()**
 
 MariaDB Connector/C++ can connect using the static `getConnection()` methods in the `sql::DriverManager` class.
 
@@ -220,7 +220,7 @@ try {
 }
 ```
 
-## Code Example: Connect
+## Code Example: Connecting
 
 The following code demonstrates how to connect using the [example database and user account](https://mariadb.com/docs/server/connect/programming-languages/c/example-setup/):
 

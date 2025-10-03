@@ -1,4 +1,4 @@
-# Connect from Node.js App
+# Connect From Node.js App
 
 Node.js developers can connect to MariaDB Cloud through a native MariaDB Connector. Using MariaDB Connector/Node.js you can connect to MariaDB Cloud to use and administer databases from within your Node.js application.
 
@@ -30,8 +30,6 @@ To download and install the MariaDB Connector/Node.js manually from source code:
 
 NPM untars the download and installs MariaDB Connector/Node.js in the `node_modules/` directory.
 
-***
-
 ## Connect with MariaDB Connector/Node.js (Callback API)
 
 Node.js developers can use MariaDB Connector/Node.js to establish client connections with MariaDB Cloud.
@@ -46,13 +44,13 @@ To use the Callback API, use the following module:
 const** mariadb = require**(**'mariadb/callback'**);
 ```
 
-## Connect
+## Connecting
 
 ```js
 createConnection(options) -> Connection
 ```
 
-is the base function used to create a `Connection` object.
+This is the base function used to create a `Connection` object.
 
 The `createConnection(options)` function returns a `Connection` object.
 
@@ -60,15 +58,15 @@ Determine the [connection information](./) for your MariaDB Cloud database servi
 
 | Option         | Description                                                                                                                                         |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| host           | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                                                          |
-| port           | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                                                                    |
+| host           | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                                                   |
+| port           | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                                                             |
 | user           | The desired username, which might be the default username in the Service Credentials view                                                           |
 | password       | The user's password, which might be the default password in the Service Credentials view if it was not yet customized                               |
 | database       | Database name to establish a connection to. No default is configured.                                                                               |
 | connectTimeout | Connection timeout in milliseconds. In Connector/Node.js 2.5.6, the default value changed to 1000. The default value for earlier versions is 10000. |
 | rowsAsArray    | A boolean value to indicate whether to return result sets as arrays instead of the default JSON. Arrays are comparatively faster.                   |
 
-## Code Example: Connect
+## Code Example: Connecting
 
 The following code example connects using the database and user account created in the [example setup](https://mariadb.com/docs/server/connect/programming-languages/c/example-setup/):
 
@@ -116,7 +114,7 @@ main();
 
 ***
 
-## Connect with MariaDB Connector/Node.js (Promise API)
+## Connecting With MariaDB Connector/Node.js (Promise API)
 
 Node.js developers can use MariaDB Connector/Node.js to establish client connections with MariaDB Cloud.
 
@@ -130,7 +128,7 @@ To use the Promise API, use the `mariadb` module:
 const** mariadb = require**(**'mariadb'**);
 ```
 
-## Connect
+## Connecting
 
 `createConnection(options) -> Promise` is the base function used to create a `Connection` object.
 
@@ -140,8 +138,8 @@ Determine the [connection information](./) for your MariaDB Cloud database servi
 
 | Option         | Description                                                                                                                                         |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| host           | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                                                          |
-| port           | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                                                                    |
+| host           | The fully Qualified Domain Name from the "Connect" window in MariaDB Cloud portal                                                                   |
+| port           | The Read-Write Port or Read-Only Port from the "Connect" window in MariaDB Cloud portal                                                             |
 | user           | The desired username, which might be the default username in the Service Credentials view                                                           |
 | password       | The user's password, which might be the default password in the Service Credentials view if it was not yet customized                               |
 | database       | Database name to establish a connection to. No default is configured.                                                                               |
@@ -162,7 +160,7 @@ MDB_USER = db_user
 MDB_PASS = db_user_password
 ```
 
-## Code Example: Connect
+## Code Example: Connecting
 
 The following code example connects using the database and user account created in [Setup for Examples](https://mariadb.com/docs/server/connect/programming-languages/c/example-setup/):
 

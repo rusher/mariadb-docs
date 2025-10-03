@@ -15,19 +15,23 @@ layout:
     visible: true
 ---
 
-# Connecting to MariaDB Cloud DBs
+# Connecting to MariaDB Cloud Databases
 
 This page describes how to connect to a MariaDB Cloud database using a MariaDB-compatible client.
 
-### **Important - Whitelist your IP address first**
+### **Important - Whitelist your IP Address First**
 
-!!! Note 💡 **Access to all services are protected by a firewall, by default. You need to IP whitelist your client’s (your desktop, laptop or server) IP. Just select ‘Manage —> Security Access’ and then click ‘Add my current IP’ to add the IP of your current workstation (laptop, desktop).**
+{% hint style="info" %}
+Access to all services is by default protected by a firewall. You need to IP whitelist your client’s (your desktop, laptop or server) IP. Select ‘Manage —> Security Access’ and then click ‘Add my current IP’ to add the IP of your current workstation (laptop, desktop).
+{% endhint %}
 
-!!! Note 💡 **If you are not sure or unable to obtain the IP address, you can use 0.0.0.0/0 to effectively disable the firewall. Goes without saying — don’t do this for your production DBs.**
+{% hint style="info" %}
+If you are not sure or unable to obtain the IP address, you can use `0.0.0.0/0` to effectively disable the firewall. Goes without saying — don’t do this for your production databases.
+{% endhint %}
 
-For more details go to the [Firewall](<../Security/Configuring Firewall.md>) settings page.
+For more details, go to the [Firewall](<../Security/Configuring Firewall.md>) settings page.
 
-## Connecting using the MariaDB Client CLI
+## Connecting Using the MariaDB Client
 
 Once your DB service is launched, click on the ‘Connect’ option for your service on the dashboard. This pops up all the required attributes to connect from any SQL client.
 
@@ -39,17 +43,21 @@ Connection parameters include:
 * TCP port (3306 or 3307)
 * ssl-verify-server-cert (if SSL is ON)
 
-!!! Note 💡 Unlike previous MariaDB Cloud versions, the current version no longer requires clients to supply the Server SSL Certificate for SSL connections. Customers who migrated from MariaDB corporation to MariaDB Cloud Inc can continue to use provided certificates (when using the previous MariaDB Cloud method for connecting). But, we strongly recommend moving to the connection properties as shown in the Connect window for your service.
+{% hint style="info" %}
+Unlike previous MariaDB Cloud versions, the current version no longer requires clients to supply the Server SSL Certificate for SSL connections. Customers who migrated from MariaDB corporation to MariaDB Cloud Inc can continue to use provided certificates (when using the previous MariaDB Cloud method for connecting). But, we strongly recommend moving to the connection properties as shown in the Connect window for your service.
+{% endhint %}
 
-!!! Note 💡 **There is a default config change in the 11.4.2 MariaDB client that requires SSL. This needs to be disabled by setting `--ssl-verify-server-cert=0`.**
+{% hint style="warning" %}
+There is a default config change in the 11.4.2 MariaDB client that requires SSL. This needs to be disabled by setting `--ssl-verify-server-cert=0`.
+{% endhint %}
 
-[![Connect window example](connect_window.png)](../Connecting%20to%20SkySQL%20DBs/connect_window.png)
+<figure><img src="connect_window.png" alt=""><figcaption></figcaption></figure>
 
-### Install and Connect using the MariaDB client
+### Install and Connect Using the MariaDB Client
 
-After [installing the MariaDB client](<Connect using MariaDB CLI.md>) according to your operating system, simply copy/paste the MariaDB CLI command as displayed in the Connect window.
+After [installing the MariaDB client](<Connect using MariaDB CLI.md>) according to your operating system, copy and paste the MariaDB  command as displayed in the Connect window.
 
-## Connecting from your Application
+## Connecting From Your Application
 
 Applications can connect to MariaDB Cloud using any of the below MariaDB supported connectors. There are several other connectors from the community too.
 
@@ -62,9 +70,11 @@ Applications can connect to MariaDB Cloud using any of the below MariaDB support
 * [Python](<Connect from Python App.md>)
 * [MongoDB Client](<Connect from MongoDB clients.md>)
 
-!!! Note 💡 For Server With Replica(s), you can also use any MongoDB client and use the [NoSQL Interface](<Connect from MongoDB clients.md>)
+{% hint style="info" %}
+For Server With Replicas, you can also use any MongoDB client and use the [NoSQL Interface](<Connect from MongoDB clients.md>).
+{% endhint %}
 
-## Connecting from SQL tools
+## Connecting From SQL Tools
 
 Clients listed here have been tested to properly connect with MariaDB Cloud and execute queries.
 
@@ -80,7 +90,7 @@ Most of the SQL clients and editors natively support MariaDB. Most often you can
 
 The following GUI clients have been tested to properly connect with MariaDB Cloud and execute queries. Most SQL clients and editors natively support MariaDB. You can often select 'MySQL' as the connection type to connect to your MariaDB Cloud DB service.
 
-* [Connect using DBeaver](../Connecting%20to%20SkySQL%20DBs/Connect%20using%20DBeaver.md) CloudDBA Recommended
-* [Connect using DBGate](../Connecting%20to%20SkySQL%20DBs/Connect%20using%20DBGate.md)
-* [Connect using HeidiSQL](../Connecting%20to%20SkySQL%20DBs/Connect%20using%20HeidiSQL.md)
-* [Connect using TablePlus](../Connecting%20to%20SkySQL%20DBs/Connect%20using%20TablePlus.md)
+* [Connect using DBeaver](../Integrations/DBeaver.md) (CloudDBA recommended)
+* [Connect using DBGate](../Integrations/DBGate.md)
+* [Connect using HeidiSQL](../Integrations/HeidiSQL.md)
+* [Connect using TablePlus](../Integrations/TablePlus.md)

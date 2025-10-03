@@ -17,9 +17,9 @@ layout:
 
 # AI Agents
 
-!!! Note - This capability is currently in Tech Preview. - Currently it is free to use. - We provide upto a million tokens of free usage per month per account. - Our "free usage" policy is subject to change as we finalize the product.
-
-We appreciate your feedback and suggestions. You can reach us at [**info@skysql.com**](mailto:info@skysql.com) **or** [**support@skysql.com**](mailto:support@skysql.com)
+{% hint style="info" %}
+This capability is currently in Tech Preview, and free to use. We provide up to a million tokens of free usage per month per account. Our "free usage" policy is subject to change as we finalize the product.
+{% endhint %}
 
 MariaDB Cloud offers two types of AI Agents:
 
@@ -44,7 +44,7 @@ However, automation alone isn't enough. Real-world databases often contain hundr
 
 Users validate and train the Agent by asking questions, inspecting the generated SQL, and tagging "golden SQL" queries that serve as the ground truth. This iterative process ensures the Agent's outputs are both accurate and contextually relevant.
 
-## Sky Semantic Agents Architecture
+## Semantic Agents Architecture
 
 Under the hood, MariaDB Cloud handles:
 
@@ -58,9 +58,9 @@ Once trained, the Agent can be consumed via a simple REST API that supports:
 * On-demand Natural Language Queries.
 * Advanced Semantic Searches (coming in the near future).
 
-## Built-in Agents
+## Built-In Agents
 
-### 1) Developer Copilot Agent for SQL Developers
+### Developer Copilot Agent for SQL Developers
 
 This agent functions much like modern copilot tools but is specifically tailored for MariaDB Cloud and MariaDB. It allows developers to interact with the database using natural language queries, enabling them to quickly find solutions without needing to dive deep into documentation or use SQL editing tools.
 
@@ -79,13 +79,13 @@ Additionally, the agent can generate complex SQL queries spanning multiple table
 
 **Example of the Developer Copilot in action:** ![Developer Copilot example](../SkyCopilot%20Guide/AI_ama_example1.png)
 
-### 2) DBA Copilot Agent
+### DBA Copilot Agent
 
 The DBA Copilot is a specialized agent that helps DBAs with system information, tuning, and diagnostics. It taps directly into MariaDB Cloud's built-in system tables and metadata to answer queries about the database's internal state.
 
 When a user asks a question, it breaks the query down into discrete steps, each of which typically gets translated into a SQL statement targeting system tables such as those in `information_schema`, `mysql`, or `performance_schema`. These steps are executed to fetch relevant data and provide actionable insights, making it easier for DBAs to monitor and optimize database performance.
 
-## Important information
+## Important Information
 
 The simplest way to get started is by using our Demo DB in the "DataSource" drop down. It features a standalone MariaDB server preloaded with sample data and includes logged slow queries for testing.
 
@@ -114,34 +114,44 @@ It is recommended you start with a high `slow_query_time`, implement a `log_slow
 
 If using MariaDB Cloud, go to Config Manager to see all the current configuration templates. If you are using the default config ("MariaDB Cloud Default - Mariadb Server..."), click the 'Create New' button, and change the following settings:
 
-* Change 'slow\_query\_log' to `ON`. Change 'log\_output' to `TABLE` (defaults to `FILE`).
-* Adjust the 'long\_query\_time' if required (Defaults to 10 secs). **Caution:** If 'long\_query\_time' is set too low, you could substantially increase the load. You can check the global status variable `slow_queries` to tune the `long_query_time`.
+* Change `slow_query_log` to `ON`. Change `log_output` to `TABLE` (defaults to `FILE`).
+* Adjust the `long_query_time` if required (Defaults to 10 secs). **Caution:** If `long_query_time` is set too low, you could substantially increase the load. You can check the global status variable `slow_queries` to tune the `long_query_time`.
 
 ### Performance Schema
 
-It is also useful to turn ON 'Performance\_schema' (Note that this option will restart your DB service and does introduce some additional overhead so implementation should be tested/tuned for best practice).
+It is also useful to turn ON 'Performance\_schema'.
+
+{% hint style="warning" %}
+Note that this option will restart your DB service and does introduce some additional overhead so implementation should be tested/tuned for best practice.
+{% endhint %}
 
 ## Semi-Autonomous, No-Code Semantic AI Agents
 
 MariaDB Cloud includes a No-Code AI Agent Builder. This tool empowers domain experts to define the missing semantics critical for accurate responses without requiring programming expertise. The system then leverages the database's metadata—such as table definitions, constraints, and relationships—and learns from historical queries to train the Agent.
 
-### Step 1: Define the DataSource
+## Steps
+
+{% stepper %}
+{% step %}
+### Defining the DataSource
 
 Ensure you have a clearly defined data source.
 
-The first step in creating an agent is to define the data source it will operate on. Click the "Add" button to open the data source configuration window. If you have an existing database in MariaDB Cloud, it will appear under the "QuickConnect" section. Simply click on the database name to auto-fill the connection details.
+The first step in creating an agent is to define the data source it will operate on. Click the "Add" button to open the data source configuration window. If you have an existing database in MariaDB Cloud, it will appear under the "QuickConnect" section. Click on the database name to auto-fill the connection details.
 
 You can also connect to any MySQL or MariaDB server that is accessible over the internet. Be sure to whitelist the IP address shown in the connection window to allow access.
 
 In this guide, we will connect to the default datasource "Demo DB" and use the Northwind database, which contains information on customers, orders, products, suppliers, employees, and shipping details—a classic dataset designed to model a small trading company's operations.
+{% endstep %}
 
-### Step 2: Define the Agent's Intent
+{% step %}
+### Defining the Agent's Intent
 
 Clearly outline the intent for your agent and its purpose. Provide enough details in the description to guide the agent creation process.
 
 **Example intent:**
 
-"The Northwind AI Agent enables users to explore complex queries about customers, orders, products, employees, and suppliers with precision and ease. Designed to generate accurate SQL queries, it provides insights into sales performance, customer order history, product trends, supplier relationships, and employee activity.""
+"The Northwind AI Agent enables users to explore complex queries about customers, orders, products, employees, and suppliers with precision and ease. Designed to generate accurate SQL queries, it provides insights into sales performance, customer order history, product trends, supplier relationships, and employee activity."
 
 This ensures the agent is created with enough context to respond within its designated scope.
 
@@ -172,14 +182,14 @@ If your database schema doesn't explicitly define key relationships (like foreig
 Suppose your schema looks like this:
 
 ```sql
-##customers table
+# customers table
 CREATE TABLE customers (
   id INT,
   name VARCHAR(100),
   email VARCHAR(100)
 );
 
-##orders table
+# orders table
 CREATE TABLE orders (
   id INT,
   customer_id INT,
@@ -204,8 +214,10 @@ Table Relationships
 [RELATIONSHIP]: Employees.EmployeeID -> EmployeeTerritories.EmployeeID (1:1)
 [RELATIONSHIP]: Customers.CustomerID -> Orders.CustomerID (1:M)
 ```
+{% endstep %}
 
-### Step 3: Selecting Relevant Tables and overcoming schema complexities
+{% step %}
+### Selecting Relevant Tables and Overcoming Schema Complexities
 
 As a general rule, avoid including more than 10 tables in a single AI agent's context. Large numbers of tables increase complexity, reduce accuracy, and make it harder for the agent to reason clearly about relationships. Instead, split responsibilities across multiple specialized agents, each focused on a specific domain or task. This improves performance, maintainability, and reliability.
 
@@ -246,8 +258,10 @@ Don't try to incorporate all of this into one agent.
   * Tasks: "Which features are most used?", "Track API call volume"
 
 Each agent has <10 tables, well-defined scope, and avoids overloading the model.
+{% endstep %}
 
-### Step 4: Pruning Unnecessary Columns
+{% step %}
+### Pruning Unnecessary Columns
 
 Always limit (prune) the columns included in an AI agent's context to only those that are truly required. This is especially important for wide tables — those with dozens or hundreds of columns — as including too many can overwhelm the model, dilute context, and reduce accuracy.
 
@@ -286,8 +300,10 @@ Only include:
 * `users.created_at`
 
 That's all the model needs to answer the question accurately.
+{% endstep %}
 
-### Step 5: Ensuring Essential Categorical Columns are Selected
+{% step %}
+### Ensuring Essential Categorical Columns are Selected
 
 Categorical columns provide structured context, making it easier for the agent to generate accurate queries by filtering and grouping data efficiently. These columns contain distinct, non-numeric values representing different categories or labels.
 
@@ -312,12 +328,16 @@ Categorical columns provide structured context, making it easier for the agent t
 * **Dynamic Filtering & Grouping** The agent can refine search results based on selected categories (e.g., region, product type), ensuring accurate and structured responses.
 
 By ensuring categorical columns are selected and indexed properly, the agent can efficiently process natural language queries and return meaningful results — even across complex business datasets.
+{% endstep %}
 
-### Step 6: Establishing 'Golden SQL' Benchmarks
+{% step %}
+### Establishing 'Golden SQL' Benchmarks
 
 Golden SQL queries serve as accuracy benchmarks for evaluating and guiding agent behavior. To be effective, these prompt/SQL pairs should closely reflect real-world questions users are likely to ask—the more natural and representative the phrasing, the better. It's important to include a diverse set of questions that span the full functional scope of the agent to ensure comprehensive coverage. We recommend creating at least 10 Golden SQL queries to provide a robust foundation for evaluation, consistency, and future tuning.
+{% endstep %}
 
-### Step 7: Testing and refining by running Sample Queries
+{% step %}
+### Testing and Refining by Running Sample Queries
 
 Once schema refinement is complete, test the agent using structured queries:
 
@@ -384,6 +404,8 @@ Every dataset and use case is different. The path to optimal performance is iter
 5. Repeat
 
 Over time, you'll get a well-tuned agent that produces accurate, efficient, and context-aware SQL aligned with your business goals.
+{% endstep %}
+{% endstepper %}
 
 ## Deploying and Using the Agent
 

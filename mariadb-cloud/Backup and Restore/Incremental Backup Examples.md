@@ -4,15 +4,15 @@
 
 <summary>Authentication</summary>
 
-#### Go to the MariaDB Cloud [API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:    \`\`\`bash    curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"    \`\`\`
+**Go to the MariaDB Cloud** [**API Key management page**](https://app.skysql.com/user-profile/api-keys) **and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g: \`\`\`bash curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}" \`\`\`**
 
 </details>
 
-### Incremental Backup
+## Incremental Backup
 
-Incremental backups can be taken once you have full backup. Read [here](https://mariadb.com/kb/en/incremental-backup-and-restore-with-mariabackup/) for more details.
+Incremental backups can be taken once you have full backup. Read [here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/incremental-backup-and-restore-with-mariadb-backup) for more details.
 
-#### One-time Incremental
+### One-Time Incremental
 
 To set up an one-time _incremental_ backup, you need to make the following API call:
 
@@ -31,7 +31,7 @@ curl --location 'https://api.skysql.com/skybackup/v1/backups/schedules' \
 * API\_KEY : SKYSQL API KEY, see [MariaDB Cloud API Keys](https://app.skysql.com/user-profile/api-keys/)
 * SERVICE\_ID : MariaDB Cloud service identifier, format dbtxxxxxx. You can fetch the service ID from the Fully qualified domain name(FQDN) of your service. E.g: in dbpgf17106534.sysp0000.db2.skysql.com, 'dbpgf17106534' is the service ID.You will find the FQDN in the [Connect window](https://app.skysql.com/dashboard)
 
-#### Cron Incremental
+### Cron Incremental
 
 To set up an cron _incremental_ backup, you need to make the following API call:
 
