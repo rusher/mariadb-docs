@@ -2,15 +2,6 @@
 
 Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Server](https://mariadb.org/en/#mariadb-server) backup and restore operations are performed using [MariaDB Backup](https://mariadb.com/docs/server/ref/mdb/cli/mariadb-backup/), an [open source backup tool](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/).
 
-* [Storage Engines and Backup Types](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Storage_Engines_and_Backup_Types)
-* [Hot Online Backups](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Hot_Online_Backups)
-* [Understanding Recovery](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Understanding_Recovery)
-* [Creating the Backup User](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Creating_the_Backup_User)
-* [Full Backup and Restore](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Full_Backup_and_Restore)
-* [Incremental Backup and Restore](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Incremental_Backup_and_Restore)
-* [Partial Backup and Restore](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Partial_Backup_and_Restore)
-* [Point-in-Time Recoveries](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Point-in-Time_Recoveries)
-
 ## **Storage Engines and Backup Types**
 
 MariaDB Backup creates a file-level backup of data from the MariaDB Server data directory. This backup includes [temporal data](https://mariadb.com/docs/server/sql/features/temporal-tables/), and the encrypted and unencrypted tablespaces of supported storage engines (e.g., [InnoDB](https://mariadb.com/docs/server/storage-engines/innodb/), [MyRocks](https://mariadb.com/docs/server/storage-engines/myrocks/), [Aria](https://mariadb.com/docs/server/storage-engines/aria/)).
@@ -55,13 +46,35 @@ When MariaDB Backup restores from a backup, it copies or moves the backup files 
 
 For MariaDB Backup to safely restore data from full and incremental backups, the data directory must be empty. One way to achieve this is to move the data directory aside to a unique directory name:
 
-1. Make sure that the Server is stopped.
-2. Move the data directory to a unique name (for example, `/var/lib/mysql-2020-01-01`) **OR** remove the old data directory (depending on how much space you have available).
-3. Create a new (empty) data directory (for example, `mkdir /var/lib/mysql`).
-4. Run MariaDB Backup to restore the databases into that directory.
-5. Change the ownership of all the restored files to the correct system user (for example, `chown -R mysql:mysql /var/lib/mysql`).
-6. Start MariaDB Server, which now uses the restored data directory.
-7. When ready, and if you have not already done so, delete the old data directory to free disk space.
+{% stepper %}
+{% step %}
+Make sure that the Server is stopped.
+{% endstep %}
+
+{% step %}
+Move the data directory to a unique name (for example, `/var/lib/mysql-2020-01-01`) **or** remove the old data directory (depending on how much space you have available).
+{% endstep %}
+
+{% step %}
+Create a new (empty) data directory (for example, `mkdir /var/lib/mysql`).
+{% endstep %}
+
+{% step %}
+Run MariaDB Backup to restore the databases into that directory.
+{% endstep %}
+
+{% step %}
+Change the ownership of all the restored files to the correct system user (for example, `chown -R mysql:mysql /var/lib/mysql`).
+{% endstep %}
+
+{% step %}
+Start MariaDB Server, which now uses the restored data directory.
+{% endstep %}
+
+{% step %}
+When ready, and if you have not already done so, delete the old data directory to free disk space.
+{% endstep %}
+{% endstepper %}
 
 ## **Creating the Backup User**
 
@@ -124,8 +137,8 @@ Once a full backup has been [prepared](https://mariadb.com/docs/server/data-oper
 
 To restore from a full backup:
 
-1. Stop the MariaDB Server
-2. [Empty](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Restore_Requires_Empty_Data_Directory) the data directory
+1. Stop the MariaDB Server.
+2. [Empty](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Restore_Requires_Empty_Data_Directory) the data directory.
 3.  Restore from the "full" directory using the `--copy-back` option:
 
     `$ sudo mariabackup --copy-back --target-dir=/data/backups/full`
@@ -186,13 +199,15 @@ Then, start MariaDB Server. When the Server starts, it works from the restored d
 
 The details of the restore procedure depend on the characteristics of the table:
 
-* [Partial Restore Non-partitioned Tables](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Partial_Restore_Non-partitioned_Tables)
-* [Partial Restore Partitioned Tables](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Partial_Restore_Partitioned_Tables)
-* [Partial Restore of Tables with Full-Text Indexes](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Partial_Restore_of_Tables_with_Full-Text_Indexes)
+* [Partial Restore Non-partitioned Tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/partial-backup-and-restore-with-mariadb-backup#restoring-individual-non-partitioned-tables)
+* [Partial Restore Partitioned Tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/partial-backup-and-restore-with-mariadb-backup#restoring-individual-partitions-and-partitioned-tables)
+* [Partial Restore of Tables with Full-Text Indexes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/partial-backup-and-restore-with-mariadb-backup#restoring-the-backup)
 
 As partial restores are performed while the server is running, not stopped, care should be taken to prevent production workloads during restore activity.
 
-!!! Note You can also use data from a full backup in a partial restore operation if you have prepared the data using the `--export` option as described above.
+{% hint style="info" %}
+You can also use data from a full backup in a partial restore operation if you have prepared the data using the `--export` option as described above.
+{% endhint %}
 
 ### **Partial Restore Non-partitioned Tables**
 
@@ -200,23 +215,56 @@ To restore a non-partitioned table from a backup, first create a new table on Ma
 
 Be extra careful if the backup data is from a server with a different version than the restore server, as some differences (such as a differing `ROW_FORMAT`) can cause an unexpected result.
 
-1. Create an empty table for the data being restored:
-2. `CREATE TABLE test.address_book (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), email VARCHAR(255));`
-3.  Modify the table to discard the tablespace:
+{% stepper %}
+{% step %}
+Create an empty table for the data being restored:
 
-    \*\*`ALTER** **TABLE** test**.**address_book DISCARD TABLESPACE**;**`
-4.  You can copy (or move) the files for the table from the backup to the data directory:
+```sql
+CREATE TABLE test.address_book 
+       (id INT PRIMARY KEY AUTO_INCREMENT, 
+        name VARCHAR(255), 
+        email VARCHAR(255));
+```
+{% endstep %}
 
-    `$ sudo cp /data/backups/part_inc1/test/address_book.* /var/lib/mysql/test`
-5.  Use a wildcard to include both the `.ibd` and `.cfg` files. Then, change the owner to the system user running MariaDB Server:
+{% step %}
+Modify the table to discard the tablespace:
 
-    `$ sudo chown mysql:mysql /var/lib/mysql/test/address_book.*`
-6.  Lastly, import the new tablespace:
+```sql
+ALTER TABLE test.address_book DISCARD TABLESPACE;
+```
+{% endstep %}
 
-    \*\*`ALTER** **TABLE** test**.**address_book IMPORT TABLESPACE**;**`
+{% step %}
+You can copy or move the files for the table from the backup to the data directory:
 
-    MariaDB Server looks in the data directory for the tablespace you copied in, then imports it for use. If the table is encrypted, it also looks for the encryption key with the relevant key ID that the table data specifies.
-7. Repeat this step for every table you wish to restore.
+```bash
+$ sudo cp /data/backups/part_inc1/test/address_book.* /var/lib/mysql/test
+```
+{% endstep %}
+
+{% step %}
+Use a wildcard to include both the `.ibd` and `.cfg` files. Then, change the owner to the system user running MariaDB Server:
+
+```bash
+$ sudo chown mysql:mysql /var/lib/mysql/test/address_book.*
+```
+{% endstep %}
+
+{% step %}
+Import the new tablespace:
+
+```sql
+ALTER TABLE test.address_book IMPORT TABLESPACE;
+```
+
+MariaDB Server looks in the data directory for the tablespace you copied in, then imports it for use. If the table is encrypted, it also looks for the encryption key with the relevant key ID that the table data specifies.
+{% endstep %}
+
+{% step %}
+Repeat this step for every table you wish to restore.
+{% endstep %}
+{% endstepper %}
 
 ### **Partial Restore Partitioned Tables**
 
@@ -226,34 +274,88 @@ To restore a partitioned table from a backup, first create a new table on MariaD
 
 Be extra careful if the backup data is from a server with a different version than the restore server, as some differences (such as a differing `ROW_FORMAT`) can cause an unexpected result.
 
-1.  Create an empty table for the data being restored:
+{% stepper %}
+{% step %}
+Create an empty table for the data being restored:
 
-    \*\*`CREATE** **TABLE** test**.**students **(** id INT **NOT** **NULL** AUTO_INCREMENT**,** name VARCHAR**(**255**),** email VARCHAR**(**255**),** graduating_year **YEAR,** **PRIMARY** **KEY** **(**id**,** graduating_year**))** ENGINE = InnoDBPARTITION **BY** RANGE **(**graduating_year**)** **(** PARTITION p0 **VALUES** **LESS** **THAN** **(**2019**),** PARTITION p1 **VALUES** **LESS** **THAN** **MAXVALUE);**`
-2.  Then create a second empty table matching the column specification, but without partitions. This will be your working table:
+```sql
+CREATE TABLE test.students 
+      (id INT NOT NULL AUTO_INCREMENT,
+       name VARCHAR(255), email VARCHAR(255),
+       graduating_year YEAR)
+       PRIMARY KEY (id, graduating_year)) 
+       ENGINE = InnoDB
+       PARTITION BY RANGE(graduating_year) 
+                (PARTITION p0 VALUES LESS THAN (2019),
+                 PARTITION p1 VALUES LESS THAN MAXVALUE);
+```
+{% endstep %}
 
-    \*\*`CREATE** **TABLE** test**.**students_work **ASSELECT** * **FROM** test**.**students **WHERE** **NULL;**`
-3.  For each partition you want to restore, discard the working table's tablespace:
+{% step %}
+Create a second empty table matching the column specification, but without partitions. This will be your working table:
 
-    \*\*`ALTER** **TABLE** test**.**students_work DISCARD TABLESPACE**;**`
-4.  Then, copy the table files from the backup, using the new name:
+```sql
+CREATE TABLE test.students_work AS
+       SELECT * FROM test.students WHERE NULL;
+```
+{% endstep %}
 
-    `$ sudo cp /data/backups/part_inc1/test/students.ibd /var/lib/mysql/test/students_work.ibd $ sudo cp /data/backups/part_inc1/test/students.cfg /var/lib/mysql/test/students_work.cfg`
-5.  Change the owner to that of the user running MariaDB Server:
+{% step %}
+For each partition you want to restore, discard the working table's tablespace:
 
-    `$ sudo chown mysql:mysql /var/lib/mysql/test/students_work.*`
-6.  Import the copied tablespace:
+```sql
+ALTER TABLE test.students_work DISCARD TABLESPACE;
+```
+{% endstep %}
 
-    \*\*`ALTER** **TABLE** test**.**students_work IMPORT TABLESPACE**;**`
-7.  Lastly, exchange the partition, copying the tablespace from the working table into the partition file for the target table:
+{% step %}
+Copy the table files from the backup, using the new name:
 
-    \*\*`ALTER** **TABLE** test**.**students EXCHANGE PARTITION p0 **WITH** **TABLE** test**.**students_work**;**`
-8.  Repeat the above process for each partition until you have them all exchanged into the target table. Then delete the working table, as it's no longer necessary:
+```bash
+$ sudo cp /data/backups/part_inc1/test/students.ibd \
+/var/lib/mysql/test/students_work.ibd $ 
+sudo cp /data/backups/part_inc1/test/students.cfg \
+/var/lib/mysql/test/students_work.cfg
+```
+{% endstep %}
 
-    \*\*`DROP** **TABLE** test**.**students_work**;**`
+{% step %}
+Change the owner to that of the user running MariaDB Server:
 
-    This restores a partitioned table.
+```bash
+$ sudo chown mysql:mysql /var/lib/mysql/test/students_work.*
+```
+{% endstep %}
 
-### **Partial Restore of Tables with Full-Text Indexes**
+{% step %}
+Import the copied tablespace:
+
+```sql
+ALTER TABLE test.students_work IMPORT TABLESPACE;
+```
+{% endstep %}
+
+{% step %}
+Exchange the partition, copying the tablespace from the working table into the partition file for the target table:
+
+```sql
+ALTER TABLE test.students 
+      EXCHANGE PARTITION p0 WITH TABLE test.students_work;
+```
+{% endstep %}
+
+{% step %}
+Repeat the above process for each partition until you have them all exchanged into the target table. Then delete the working table, as it's no longer necessary:
+
+```sql
+DROP TABLE test.students_work;
+```
+
+This restores a partitioned table.
+{% endstep %}
+{% endstepper %}
+
+### **Partial Restore of Tables With Full-Text Indexes**
 
 When restoring a table with a full-text search (FTS) index, InnoDB may throw a schema mismatch error.
 
@@ -265,80 +367,164 @@ In this case, to restore the table, it is recommended to:
 
 For example, to restore table `t1` with FTS index from database `db1`:
 
-1.  **In the MariaDB shell**, drop the table you are going to restore:
+{% stepper %}
+{% step %}
+In the [MariaDB Command-Line Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client), drop the table you are going to restore:
 
-    \*\*`DROP** **TABLE** **IF** **EXISTS** db1**.**t1**;**`
-2.  Create an empty table for the data being restored:
+```sql
+DROP TABLE IF EXISTS db1.t1;
+```
+{% endstep %}
 
-    \*\*`CREATE** **TABLE** db1**.**t1**(**f1 CHAR**(**10**))** ENGINE=INNODB**;**`
-3.  Modify the table to discard the tablespace:
+{% step %}
+Create an empty table for the data being restored:
 
-    \*\*`ALTER** **TABLE** db1**.**t1 DISCARD TABLESPACE**;**`
-4.  **In the operating system shell**, copy the table files from the backup to the data directory of the corresponding database:
+```sql
+CREATE TABLE db1.t1(f1 CHAR(10)) ENGINE=INNODB;
+```
+{% endstep %}
 
-    `$ sudo cp /data/backups/part/db1/t1.* /var/lib/mysql/db1`
-5.  Remove the `.cfg` file from the data directory:
+{% step %}
+Modify the table to discard the tablespace:
 
-    `$ sudo rm /var/lib/mysql/db1/t1.cfg`
-6.  Change the owner of the newly copied files to the system user running MariaDB Server:
+```sql
+ALTER TABLE db1.t1 DISCARD TABLESPACE;
+```
+{% endstep %}
 
-    `$ sudo chown mysql:mysql /var/lib/mysql/db1/t1.*`
-7.  **In the MariaDB shell**, import the copied tablespace:
+{% step %}
+In the operating system shell, copy the table files from the backup to the data directory of the corresponding database:
 
-    \*\*`ALTER** **TABLE** db1**.**t1 IMPORT TABLESPACE**;**`
-8.  Verify that the data has been successfully restored:
+```bash
+$ sudo cp /data/backups/part/db1/t1.* /var/lib/mysql/db1
+```
+{% endstep %}
 
-    \*\*`SELECT** * **FROM** db1**.**t1**;**`
+{% step %}
+Remove the `.cfg` file from the data directory:
 
-    `+--------+ | f1 | +--------+ | ABC123 | +--------+`
-9.  Add the necessary secondary indexes:
+```bash
+$ sudo rm /var/lib/mysql/db1/t1.cfg
+```
+{% endstep %}
 
-    \*\*`ALTER** **TABLE** db1**.**t1 **FORCE,** **ADD** FULLTEXT **INDEX** f_idx**(**f1**);**`
-10. The table is now fully restored:
+{% step %}
+Change the owner of the newly copied files to the system user running MariaDB Server:
 
-    \*\*`SHOW** **CREATE** **TABLE** db1**.**t1**\G**`
+```
+$ sudo chown mysql:mysql /var/lib/mysql/db1/t1.*
+```
+{% endstep %}
 
-    *
+{% step %}
+In the MariaDB Command-Line Client, import the copied tablespace:
 
-    ```sql
-    *************************** 1. row ***************************
-    ```
+```sql
+ALTER TABLE  db1.t1 IMPORT TABLESPACE;
+```
+{% endstep %}
 
-    ```sql
-           Table: t1
-    Create Table: CREATE TABLE `t1` (
-      `f1` char(10) DEFAULT NULL,
-      FULLTEXT KEY `f_idx` (`f1`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
-    ```
+{% step %}
+Verify that the data has been successfully restored:
 
-## **Point-in-Time Recovery**
+```sql
+SELECT * FROM db1.t1;
+```
+{% endstep %}
+
+{% step %}
+Add the necessary secondary indexes:
+
+```sql
+ALTER TABLE db1.t1 FORCE, ADD FULLTEXT INDEX f_idx(f1);
+```
+{% endstep %}
+
+{% step %}
+The table is now fully restored:
+
+```sql
+SHOW CREATE TABLE db1.t1\G
+*************************** 1. row ***************************
+       Table: t1
+Create Table: CREATE TABLE `t1` (
+  `f1` char(10) DEFAULT NULL,
+  FULLTEXT KEY `f_idx` (`f1`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+```
+{% endstep %}
+{% endstepper %}
+
+## **Point-In-Time Recovery**
 
 Recovering from a backup restores the data directory at a specific point-in-time, but it does not restore the binary log. In a point-in-time recovery, you begin by restoring the data directory from a full or incremental backup, then use the `mysqlbinlog` utility to recover the binary log data to a specific point in time.
 
-1.  First, prepare the backup as you normally would for a [full](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Preparing_a_Full_Backup_for_Recovery) or [incremental](https://mariadb.com/docs/server/data-operations/backups/community-server/mariadb-backup/#Preparing_an_Incremental_Backup) backup:
+{% stepper %}
+{% step %}
+Prepare the backup as you normally would for a [full](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/full-backup-and-restore-with-mariadb-backup) or [incremental](<MariaDB Backup.md#incremental-backup-and-restore>) backup:
 
-    `$ sudo mariabackup --prepare --target-dir=/data/backups/full`
-2.  When MariaDB Backup runs on a MariaDB Server where binary logs are enabled, it stores binary log information in the `xtrabackup_binlog_info` file. Consult this file to find the name of the binary log position to use. In the following example, the log position is `321`.
+```bash
+$ sudo mariabackup --prepare --target-dir=/data/backups/full
+```
+{% endstep %}
 
-    \`$ sudo cat /data/backups/full/xtraback\_binlog\_info
+{% step %}
+When MariaDB Backup runs on a MariaDB Server where binary logs are enabled, it stores binary log information in the `xtrabackup_binlog_info` file. Consult this file to find the name of the binary log position to use. In the following example, the log position is `321` :
 
-    mariadb-node4.00001 321\`
-3.  Update the configuration file to use a new data directory.
+```bash
+$ sudo cat /data/backups/full/xtraback_binlog_info
+mariadb-node4.00001 321`
+```
+{% endstep %}
 
-    \*\*`[mysqld]**datadir=/var/lib/mysql_new`
-4.  Using MariaDB Backup, restore from the backup to the new data directory:
+{% step %}
+Update the configuration file to use a new data directory:
 
-    `$ sudo mariabackup --copy-back --target-dir=/data/backups/full`
-5.  Then change the owner to the MariaDB Server system user:
+```ini
+[mariadbd]
+datadir=/var/lib/mysql_new
+```
+{% endstep %}
 
-    `$ sudo chown -R mysql:mysql /var/lib/mysql_new`
-6.  Start MariaDB Server:
+{% step %}
+Using [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup), restore from the backup to the new data directory:
 
-    `$ sudo systemctl start mariadb`
-7.  Using the binary log file in the old data directory, the start position in the `xtrabackup_binlog_info` file, the date and time you want to restore to, and the `mysqlbinlog` utility to create an SQL file with the binary log changes:
+```bash
+$ sudo mariadb-backup --copy-back --target-dir=/data/backups/full
+```
+{% endstep %}
 
-    `$ mysqlbinlog --start-position=321 \ --stop-datetime="2019-06-28 12:00:00" \ /var/lib/mysql/mariadb-node4.00001 \ > mariadb-binlog.sql`
-8.  Lastly, run the binary log SQL to restore the databases:
+{% step %}
+Change the owner to the MariaDB Server system user:
 
-    `$ mysql -u root -p < mariadb-binlog.sql`
+```bash
+$ sudo chown -R mysql:mysql /var/lib/mysql_new
+```
+{% endstep %}
+
+{% step %}
+Start MariaDB Server:
+
+```bash
+$ sudo systemctl start mariadb
+```
+{% endstep %}
+
+{% step %}
+Using the binary log file in the old data directory, the start position in the binary log file, the date and time you want to restore to, and the [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) utility to create an SQL file with the binary log changes:
+
+```bash
+$ mariadb-binlog --start-position=321 \ 
+              --stop-datetime="2019-06-28 12:00:00" \ 
+              /var/lib/mysql/mariadb-node4.00001 > mariadb-binlog.sql
+```
+{% endstep %}
+
+{% step %}
+Run the binary log SQL to restore the databases:
+
+```bash
+$ mysql -u root -p < mariadb-binlog.sql
+```
+{% endstep %}
+{% endstepper %}
