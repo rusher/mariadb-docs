@@ -4,7 +4,7 @@ Hybrid search combines the keyword precision of full-text search with the concep
 
 ## **Full-Text Search**
 
-Full-text search is the traditional keyword-based search, excelling at finding documents that contain the exact words from your query. Behind the scenes, it relies on a data structure called an inverted index—a dictionary that maps each word to a list of documents it appears in, allowing for very fast lookups. For instance, a search for 'apple pie recipe' will instantly find all documents indexed under those three words: ‘apple‘, ‘pie‘ & ‘reciple‘.
+Full-text search is the traditional keyword-based search, excelling at finding documents that contain the exact words from your query. Behind the scenes, it relies on a data structure called an inverted index—a dictionary that maps each word to a list of documents it appears in, allowing for very fast lookups. For instance, a search for 'apple pie recipe' will instantly find all documents indexed under those three words: ‘apple‘, ‘pie‘ & ‘recipe‘.
 
 ## **Vector Search**
 
@@ -141,7 +141,7 @@ full_outer_join_output AS (
   SELECT v.id, v.title, (v.partial_rrf + IFNULL(f.partial_rrf, 0)) AS total_rrf
   FROM vector_score v LEFT JOIN fulltext_score f USING (id)
   UNION
-  SELECT f.id, v.title, (IFNULL(v.partial_rrf, 0) + f.partial_rrf) AS total_rrf
+  SELECT f.id, f.title, (IFNULL(v.partial_rrf, 0) + f.partial_rrf) AS total_rrf
   FROM fulltext_score f LEFT JOIN vector_score v USING (id)
 )
 -- STEP 4: Select the final, unified list.
@@ -190,8 +190,9 @@ If you are combining lists from two very similar, high-performing algorithms, yo
 
 Consider a case where we fuse two similar vector models (Vector\_A, Vector\_B) that both rank 'Compostable Espresso Pods' as #1 and 'Recyclable Coffee Capsules' as #2. A lower k makes the winner more decisive.
 
-| Compostable Pods    | 1, 1        | 1/31 + 1/31 = 0.0645 | 1/61 + 1/61 = 0.0328 |
+| Product             | Ranks       | Total RRF (k=30)     | Total RRF (k=60)     |
 | ------------------- | ----------- | -------------------- | -------------------- |
+| Compostable Pods    | 1, 1        | 1/31 + 1/31 = 0.0645 | 1/61 + 1/61 = 0.0328 |
 | Recyclable Capsules | 2, 2        | 1/32 + 1/32 = 0.0625 | 1/62 + 1/62 = 0.0322 |
 | Score Difference    | <p><br></p> | 0.0020               | 0.0006               |
 
@@ -205,12 +206,13 @@ A formal, 3-step process can be used to scientifically determine the best k valu
 
 You need: Multiple Ranked Lists, a "Ground Truth" Set, and an Evaluation Metric (like NDCG). With a query like "healthy breakfast", your ground truth might look like this:
 
-| A | 'Oatmeal with Berries' | 3 (High)   |
-| - | ---------------------- | ---------- |
-| B | 'Green Smoothie'       | 3 (High)   |
-| C | 'Avocado Toast'        | 2 (Medium) |
-| D | 'Bacon and Eggs'       | 1 (Low)    |
-| E | 'Cinnamon Roll'        | 0 (None)   |
+| Doc ID | Title                  | Relevance  |
+| ------ | ---------------------- | ---------- |
+| A      | 'Oatmeal with Berries' | 3 (High)   |
+| B      | 'Green Smoothie'       | 3 (High)   |
+| C      | 'Avocado Toast'        | 2 (Medium) |
+| D      | 'Bacon and Eggs'       | 1 (Low)    |
+| E      | 'Cinnamon Roll'        | 0 (None)   |
 
 And your raw ranked lists might be:
 
@@ -254,7 +256,4 @@ In this experiment, k=60 is the winner. A key advantage of RRF is that its perfo
 
 #### Further Reading
 
-* Reciprocal Rank Fusion for IR (SIGIR '09): The original research paper that proposed the RRF method.
-
-\
-\
+* [Reciprocal Rank Fusion for IR (SIGIR '09): The original research paper that proposed the RRF method.](https://cormack.uwaterloo.ca/cormacksigir09-rrf.pdf)
