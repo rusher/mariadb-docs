@@ -91,7 +91,7 @@ With manual scaling, you can perform horizontal scaling (In/Out), vertical scali
 
 _Self-Service Scaling of Nodes_
 
-## Step 4: Tear-down
+## Step 4: Tear-Down
 
 When you are done with your testing session, you can stop the service. When a service is stopped, storage charges continue to accrue, but compute charges pause until the service is started again.
 
@@ -99,8 +99,10 @@ When you are done with testing, you can delete the service.
 
 Stopping, starting, and deleting a service are examples of Self-Service Operations that you can perform through the Portal.
 
-For additional information, see "[Self-Service Operations](<../Portal features/Manage your Service.md>)".
+## See Also
 
-[Launch DB using the REST API](Launch%20DB%20using%20the%20REST%20API/)
+[Self-Service Operations](<../Portal features/Manage your Service.md>)
 
-[Launch DB using the Terraform Provider](Launch%20DB%20using%20the%20Terraform%20Provider/)
+[Launch DB using the REST API](<Launch DB using the REST API.md>)
+
+[Launch DB using the Terraform Provider](<Launch DB using the Terraform Provider.md>)

@@ -17,7 +17,7 @@ For a list of operating systems that have binaries available for Terraform, see 
 
 ## Dependencies
 
-* This procedure requires Terraform to be installed. For information about how to install Terraform, see "[HashiCorp Terraform Documentation: Install Terraform](https://developer.hashicorp.com/terraform/downloads)".
+* This procedure requires Terraform to be installed. For information about how to install Terraform, see [HashiCorp Terraform Documentation: Install Terraform](https://developer.hashicorp.com/terraform/downloads).
 * The examples in this procedure also use `jq`, a JSON parsing utility. [jq](https://stedolan.github.io/jq/download/) is available for Linux, macOS, and MS Windows. Install `jq` then proceed.
 * The examples in this procedure also use `curl`, a data transfer utility. [curl](https://curl.se/) is available for Linux, macOS, and MS Windows. Install `curl` then proceed.
 * The examples in this procedure also use `wget`, a file download utility. [GNU Wget](https://www.gnu.org/software/wget/) is available for Linux, macOS, and MS Windows. Install `wget` then proceed.
@@ -25,15 +25,19 @@ For a list of operating systems that have binaries available for Terraform, see 
 
 ## Launch a Service
 
-### **Step 1: Generate API Key**
+{% stepper %}
+{% step %}
+### **Generate API Key**
 
 1. Go to the [Generate API Key](https://app.skysql.com/user-profile/api-keys) page.
-2. Fill out a name for the API key
+2. Fill out a name for the API key.
 3. Click the "Create" button.
 4. Click the copy button to copy the API key.
 5. Store the API key somewhere safe as it is shown only once during the creation. The MariaDB Cloud platform does not store it anywhere.
+{% endstep %}
 
-### **Step 2: Create Terraform Project Directory**
+{% step %}
+### **Create Terraform Project Directory**
 
 Create a directory for your Terraform project and change to the directory:
 
@@ -41,8 +45,10 @@ Create a directory for your Terraform project and change to the directory:
 mkdir -p ~/skysql-nr-tf
 cd ~/skysql-nr-tf
 ```
+{% endstep %}
 
-### **Step 3: Create `main.tf`**
+{% step %}
+### **Create `main.tf`**
 
 In the Terraform project directory, create a `main.tf` file that contains the following:
 
@@ -51,7 +57,7 @@ In the Terraform project directory, create a `main.tf` file that contains the fo
 * [Resources](https://developer.hashicorp.com/terraform/language/resources/syntax)
 * [Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
 
-```tf
+```
 # ---------------------
 # Provider Requirements
 # ---------------------
@@ -135,8 +141,10 @@ data "skysql_availability_zones" "default" {
   filter_by_provider  = var.cloud_provider
 }
 ```
+{% endstep %}
 
-### **Step 4: Create `outputs.tf`**
+{% step %}
+### **Create `outputs.tf`**
 
 In the Terraform project directory, create an `outputs.tf` file that contains the [output values](https://developer.hashicorp.com/terraform/language/values/outputs) used to display metadata about the MariaDB Cloud service:
 
@@ -170,8 +178,10 @@ output "availability_zones" {
   value = data.skysql_availability_zones.default
 }
 ```
+{% endstep %}
 
-### **Step 5: Create `variables.tf`**
+{% step %}
+### **Create `variables.tf`**
 
 In the Terraform project directory, create a `variables.tf` file that contains the [input variables](https://developer.hashicorp.com/terraform/language/values/variables) used to configure the MariaDB Cloud service:
 
@@ -277,14 +287,16 @@ variable "ip_address_comment" {
 ```
 
 The variables are configured in the next step.
+{% endstep %}
 
-### **Step 6: Configure Service in a `.tfvars` File**
+{% step %}
+### **Configure Service in a `.tfvars` File**
 
 A [`.tfvars` file](https://developer.hashicorp.com/terraform/tutorials/configuration-language/variables#assign-values-with-a-file) can be used to configure the service using the input variables.
 
 For example:
 
-```tf
+```ini
 api_key             = "... key data ..."
 service_type        = "transactional"
 topology            = "es-single"
@@ -322,8 +334,10 @@ The input variables should be customized for your own needs:
 * For `ip_address_comment`, provide a description for the IP address
 
 The following steps assume that the file is called `skysql-nr-quickstart.tfvars`.
+{% endstep %}
 
-### **Step 7: Run `terraform init`**
+{% step %}
+### **Run `terraform init`**
 
 Initialize the Terraform project directory and download the Terraform provider from the [Terraform Registry](https://registry.terraform.io/namespaces/skysqlinc) by executing the [`terraform init` command](https://developer.hashicorp.com/terraform/cli/commands/init):
 
@@ -332,16 +346,20 @@ terraform init
 ```
 
 If you need to download the provider manually, see "[Manually Install Provider from Binary Distribution](https://registry.terraform.io/providers/skysqlinc/skysql/latest/docs#installing-the-terraform-provider-for-skysql)".
+{% endstep %}
 
-### **Step 8: Run `terraform plan`**
+{% step %}
+### **Run `terraform plan`**
 
 Create a Terraform execution plan by executing the [`terraform plan` command](https://developer.hashicorp.com/terraform/cli/commands/plan) and specifying the path to the `.tfvars` file:
 
 ```bash
 terraform plan -var-file="skysql-nr-quickstart.tfvars"
 ```
+{% endstep %}
 
-### **Step 9: Run `terraform apply`**
+{% step %}
+### **Run `terraform apply`**
 
 Execute the Terraform execution plan and create the MariaDB Cloud service by executing the [`terraform apply` command](https://developer.hashicorp.com/terraform/cli/commands/apply) and specifying the path to the `.tfvars` file:
 
@@ -394,8 +412,10 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
 
 Then Terraform prints the outputs.
+{% endstep %}
 
-### **Step 10: Obtain Connection Credentials**
+{% step %}
+### **Obtain Connection Credentials**
 
 Obtain the connection credentials for the new MariaDB Cloud service by executing the following commands:
 
@@ -415,8 +435,10 @@ Obtain the connection credentials for the new MariaDB Cloud service by executing
     jq ".outputs.skysql_credentials.value.password" terraform.tfstate \
           "..password string.."
     ```
+{% endstep %}
 
-### **Step 11: Connect**
+{% step %}
+### **Connect**
 
 Connect to the MariaDB Cloud service by executing the connection command from the previous step:
 
@@ -439,8 +461,10 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 MariaDB [(none)]>
 ```
+{% endstep %}
 
-### **Step 12: Run `terraform destroy`**
+{% step %}
+### **Run `terraform destroy`**
 
 Delete the service by executing the [`terraform destroy` command](https://developer.hashicorp.com/terraform/cli/commands/destroy) and specifying the path to the `.tfvars` file:
 
@@ -490,6 +514,8 @@ skysql_service.default: Destruction complete after 2m38s
 
 Destroy complete! Resources: 1 destroyed.
 ```
+{% endstep %}
+{% endstepper %}
 
 ## Manually Install Provider from Binary Distribution
 

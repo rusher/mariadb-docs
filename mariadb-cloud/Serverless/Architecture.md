@@ -19,7 +19,7 @@ MariaDB Cloud Serverless is built on the principle: **"Don't change what works"*
 
 ## Core Components
 
-### 1. Intelligent Proxy
+### Intelligent Proxy
 
 The multi-tenant proxy is the cornerstone of MariaDB Cloud Serverless, providing:
 
@@ -44,7 +44,7 @@ The proxy tracks and preserves:
 * **Transaction Replay**: Replays partial transactions to ensure data integrity
 * **State Recreation**: Re-establishes session state on new connections
 
-### 2. Kubernetes Orchestration
+### Kubernetes Orchestration
 
 MariaDB Cloud extends Kubernetes with custom controllers for database-specific operations:
 
@@ -61,7 +61,7 @@ MariaDB Cloud extends Kubernetes with custom controllers for database-specific o
 * **Migration Controller**: Handles transparent live migrations
 * **Pool Controller**: Manages pre-fabricated database pools
 
-### 3. Pre-Fabricated Database Pools
+### Prefabricated Database Pools
 
 To achieve millisecond launch times, MariaDB Cloud maintains pools of ready-to-use databases:
 
@@ -81,7 +81,7 @@ When a user requests a database:
 4. Update control plane tracking
 5. Database ready for use
 
-### 4. Auto-Scaling Engine
+### Auto-Scaling Engine
 
 MariaDB Cloud implements sophisticated auto-scaling across multiple dimensions:
 
@@ -152,13 +152,12 @@ When scaling up after a scale-down:
 
 ### Implementation Details
 
-```sql
--- Buffer pool hydration process
+Buffer pool hydration process:
+
 1. Before scale-down: SHOW ENGINE INNODB STATUS → identify hot pages
 2. Store page IDs to fast SSD storage
 3. During scale-up: Background process fetches pages from disk
 4. Asynchronous hydration maintains query performance
-```
 
 ## Live Migration System
 

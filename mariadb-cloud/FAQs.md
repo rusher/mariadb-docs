@@ -24,7 +24,7 @@ Yes. MariaDB Cloud delivers enterprise-grade cloud database service for your mis
 
 ### What is the history of MariaDB Cloud?
 
-MariaDB Cloud is a database-as-a-service (DBaaS) that was originally developed and managed by MariaDB Corporation. The cloud division was later spun out of MariaDB into a independent company - SkySQL. After a while as an independent company SkySQL was again merged back to MariaDB as MariaDB Cloud.
+MariaDB Cloud is a database-as-a-service (DBaaS) that was originally developed and managed by MariaDB Corporation. The cloud division was later spun out of MariaDB into a independent company - SkySQL. After a while as an independent company, SkySQL was again merged back to MariaDB as MariaDB Cloud.
 
 ## MariaDB Cloud Features
 

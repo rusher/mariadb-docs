@@ -17,6 +17,12 @@ layout:
 
 # Serverless
 
+{% hint style="info" %}
+"Serverless" refers to a database model where the cloud provider fully manages the underlying database infrastructure, automatically scaling resources and applying a pay-for-what-you-use pricing model. The term "serverless" is a misnomer, as servers are still used, but the user is abstracted away from all server management tasks.
+{% endhint %}
+
+## MariaDB Cloud Serverless
+
 MariaDB Cloud Serverless is the first true serverless database solution for the MySQL and MariaDB ecosystem, uniquely built to meet the dynamic demands of modern applications. MariaDB Cloud Serverless combines instant scalability with cost efficiency, scaling down to zero when idle—saving you from paying for unused capacity. When workloads resume, Serverless service is ready in milliseconds, ensuring a seamless, uninterrupted experience for applications and users.
 
 ### True Serverless Experience
@@ -101,5 +107,5 @@ MariaDB Cloud Serverless is designed to handle diverse workload types:
 
 1. [**Create Account**](https://app.skysql.com) - Sign up for your free MariaDB Cloud account
 2. [**Launch Service**](../Quickstart/) - Follow our quickstart guide
-3. [**Connect Application**](../Connecting%20to%20SkySQL%20DBs/) - Integrate with your applications
+3. [**Connect Application**](../integrations/) - Integrate with your applications
 4. [**Monitor Performance**](../Observability.md) - Use built-in monitoring tools
