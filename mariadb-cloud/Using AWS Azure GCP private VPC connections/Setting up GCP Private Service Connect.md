@@ -20,8 +20,7 @@ For detailed information about Google PSC, see ["Private Service Connect" (Googl
 
 <summary>Enable Google PSC via the MariaDB Cloud Portal</summary>
 
-\
-
+\\
 
 To enable PSC when launching a new service via the MariaDB Cloud Portal select the 'Google Private Service Connect' option in the 'Security' section. After the service completes provisioning, you will see a new option to "Manage Google Private Service Connect" in the service's context menu. Click this option to add one or more Google project IDs to the allowlist.
 
@@ -31,8 +30,7 @@ To enable PSC when launching a new service via the MariaDB Cloud Portal select t
 
 <summary>Enable Google PSC via the MariaDB Cloud DBaaS API</summary>
 
-\
-
+\\
 
 To enable Google PSC when launching a new service via the MariaDB Cloud DBaaS API, add the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes to service creation JSON payload.
 
@@ -59,8 +57,7 @@ For more information on using the MariaDB Cloud DBaaS API, see ["MariaDB Cloud D
 
 <summary>Enable Google PSC via the MariaDB Cloud Terraform Provider</summary>
 
-\
-
+\\
 
 To enable Google PSC when launching a new service via the MariaDB Cloud DBaaS API, set the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes on the `skysql_service` resource.
 
@@ -92,8 +89,7 @@ For more information on using the MariaDB Cloud Terraform Provider, see ["MariaD
 
 <summary>Enable Google PSC on an existing service via the MariaDB Cloud Portal:</summary>
 
-\
-
+\\
 
 1. Log in to the MariaDB Cloud Portal
 2. Click the "MANAGE" button (on the right) for the desired service.
@@ -107,8 +103,7 @@ For more information on using the MariaDB Cloud Terraform Provider, see ["MariaD
 
 <summary>Enable Google PSC on an existing service via the MariaDB Cloud DBaaS API:</summary>
 
-\
-
+\\
 
 To enable Google PSC on an existing service, you will need to update the service endpoints with a payload similar to the following:
 
@@ -146,7 +141,11 @@ To connect to a MariaDB Cloud service using Google PSC, you must create an endpo
     curl https://api.skysql.com/provisioning/v1/services/{SERVICE_ID} | jq ".endpoints[0].endpoint_service"
     ```
 
-### Create a Subnet (optional)
+### Create a Subnet
+
+{% hint style="info" %}
+This step is optional.
+{% endhint %}
 
 We recommend use of a subnet dedicated to Private Service Connect endpoints in the same VPC where the application is running.
 
@@ -186,7 +185,7 @@ We recommend use of a subnet dedicated to Private Service Connect endpoints in t
 
 After creation, the Endpoint should have a status of `Accepted`. If this status is not present, please ensure your Google Project ID is added to the list of allowed accounts in the MariaDB Cloud portal for this service.
 
-### Connecting to your MariaDB Cloud Service
+### Connecting to MariaDB Cloud Service
 
 After creating your PSC endpoint, your service should be available within your VPC at the Private IP Address you assigned to the endpoint.
 
@@ -203,8 +202,7 @@ After creating your PSC endpoint, your service should be available within your V
 
 <summary>Disable Google PSC via the MariaDB Cloud Portal</summary>
 
-\
-
+\\
 
 1. Visit the [MariaDB Cloud Portal](https://app.skysql.com/)
 2. Find the service that you would like to modify.
@@ -220,8 +218,7 @@ After creating your PSC endpoint, your service should be available within your V
 
 <summary>Disable Google PSC via the MariaDB Cloud DBaaS API</summary>
 
-\
-
+\\
 
 To disable Google PSC on an existing service, you will need to update the service endpoints with a payload similar to the following:
 

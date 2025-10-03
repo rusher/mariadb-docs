@@ -19,8 +19,7 @@ For detailed information about AWS PrivateLink, see ["AWS PrivateLink" (Amazon d
 
 <summary>Enable Privatelink via the MariaDB Cloud Portal</summary>
 
-\
-
+\\
 
 To enable AWS PrivateLink when launching a new service via the MariaDB Cloud Portal select the 'Enable Private link' option in the 'Security' section. After the service completes provisioning, you will see a new option to "Set up Private Link" in the service's context menu. Click this option to add one or more AWS account IDs to the allowlist.
 
@@ -30,8 +29,7 @@ To enable AWS PrivateLink when launching a new service via the MariaDB Cloud Por
 
 <summary>Enable Privatelink via the MariaDB Cloud DBaaS API</summary>
 
-\
-
+\\
 
 To enable AWS PrivateLink when launching a new service via the MariaDB Cloud DBaaS API, add the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes to service creation JSON payload.
 
@@ -58,8 +56,7 @@ For more information on using the MariaDB Cloud DBaaS API, see ["MariaDB Cloud D
 
 <summary>Enable Privatelink via the MariaDB Cloud Terraform Provider</summary>
 
-\
-
+\\
 
 To enable AWS PrivateLink when launching a new service via the MariaDB Cloud DBaaS API, set the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes on the `skysql_service` resource.
 
@@ -91,8 +88,7 @@ For more information on using the MariaDB Cloud Terraform Provider, see ["MariaD
 
 <summary>Enable AWS PrivateLink on an existing service via the MariaDB Cloud Portal:</summary>
 
-\
-
+\\
 
 1. Log in to the MariaDB Cloud Portal
 2. Click the "MANAGE" button (on the right) for the desired service.
@@ -106,8 +102,7 @@ For more information on using the MariaDB Cloud Terraform Provider, see ["MariaD
 
 <summary>Enable AWS PrivateLink on an existing service via the MariaDB Cloud DBaaS API:</summary>
 
-\
-
+\\
 
 To enable AWS PrivateLink on an existing service, you will need to update the service endpoints with a payload similar to the following:
 
@@ -133,7 +128,7 @@ This payload should then be sent to the API `PATCH` https://api.skysql.com/provi
 
 To connect to a MariaDB Cloud service using AWS PrivateLink, you must create an endpoint in your VPC that connects to the MariaDB Cloud service. The endpoint will be used by clients in your VPC to connect to the MariaDB Cloud service.
 
-### Pre-requisites
+### Prerequisites
 
 * You must have a VPC in the same region as the MariaDB Cloud service.
 * You must create a security group that will be used to control access to the MariaDB Cloud service endpoint.
@@ -167,7 +162,7 @@ To connect to a MariaDB Cloud service using AWS PrivateLink, you must create an 
 
 After creation, the Endpoint will be in `Pending` status while AWS provisions the new endpoint. Once the endpoint is `Available`, you can connect to your MariaDB Cloud service using the new endpoint. The newly created endpoint now authorizes the internal IPs or security groups that you specified in the Source values to access the MariaDB Cloud service's connection port. When testing a client connection, ensure that the client host is authorized by the security group's Source settings and that you're using the "`readwrite`" port plus the appropriate username and password (either the default values or the value for any user you have created).
 
-### Connecting to your MariaDB Cloud Service
+### Connecting to MariaDB Cloud Service
 
 After creating your VPC endpoint, AWS will create a number of DNS records that will resolve to the private IP addresses of your Privatelink Endpoint.
 
@@ -206,8 +201,7 @@ After a short period of time, the service name provided in the MariaDB Cloud por
 
 <summary>Disable AWS PrivateLink via the MariaDB Cloud Portal</summary>
 
-\
-
+\\
 
 1. Visit the [MariaDB Cloud Portal](https://app.skysql.com/)
 2. Find the service that you would like to modify.
@@ -223,8 +217,7 @@ After a short period of time, the service name provided in the MariaDB Cloud por
 
 <summary>Disable AWS PrivateLink via the MariaDB Cloud DBaaS API</summary>
 
-\
-
+\\
 
 To disable AWS PrivateLink on an existing service, you will need to update the service endpoints with a payload similar to the following:
 

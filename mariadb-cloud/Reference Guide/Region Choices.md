@@ -54,5 +54,3 @@
 | northeurope        | Dublin, Ireland          | Provisioned, Serverless |
 | germanywestcentral | Frankfurt, Germany       | Provisioned             |
 | southeastasia      | Jurong West, Singapore   | Provisioned             |
-
-Please [contact us](broken-reference) if any aspect of service does not align to your intended use case.

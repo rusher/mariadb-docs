@@ -14,11 +14,11 @@ For the impatient reader, we jump right to the [Integrations section](Observabil
 
 Using the [Datadog](https://www.datadoghq.com/) integration, you can instrument Observability metrics from MariaDB Cloud into your Datadog account. This integration allows you to monitor and visualize MariaDB Cloud metrics alongside other services in your Datadog dashboard.
 
-#### Requirements.
+#### Requirements
 
 You will need your Datadog API key to set up the integration. We will refer to it as `{{DD_API_KEY}}` throughout this document.
 
-#### Agent Setup.
+#### Agent Setup
 
 You will need to configure the Datadog Agent to pull metrics from us. Here is an example of how you can setup the [DataDog Agent](https://docs.datadoghq.com/agent/):
 

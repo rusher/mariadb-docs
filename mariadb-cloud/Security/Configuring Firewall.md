@@ -38,7 +38,7 @@ IP addresses can be added to the allowlist from the Firewall settings interface 
 
 After saving the change, a [notification](<../Portal features/Notifications.md>) will be provided when the change has been applied.
 
-## **Remove from the Allowlist**
+## **Remove From the Allowlist**
 
 IP addresses can be removed from the allowlist from the Firewall settings interface or a service's Security Access interface:
 

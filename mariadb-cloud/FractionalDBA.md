@@ -1,12 +1,10 @@
-# Fractional DBA Service - CloudDBA
+# Fractional DBA Service: CloudDBA
 
 CloudDBA is a "Fractional" DBA Service, a cost-effective solution for businesses that need database administration but do not require a full-time database administrator. This service provides access to a team of experienced database administrators on a part-time basis. Whether it's for routine maintenance, troubleshooting, or strategic advice, CloudDBA's Fractional DBA Service ensures that expert assistance is just a message away. This approach not only saves the expense of a full-time employee but also provides a higher level of service due to the collective knowledge and experience of the CloudDBA team.
 
-!!! Note
-    CloudDBA is an optional service that you can purchase. You can use this service regardless of the Tier (Foundation or Power) used to deploy DB services. For more information, please contact [MariaDB Cloud support](mailto:support@skysql.com) 
+!!! Note CloudDBA is an optional service that you can purchase. You can use this service regardless of the Tier (Foundation or Power) used to deploy DB services. For more information, please contact [MariaDB Cloud support](mailto:support@skysql.com)
 
-
-Here is what you can expect from this “add-on” service. 
+Here is what you can expect from this “add-on” service.
 
 ### **Migration Methodology & Advice**
 
@@ -20,11 +18,11 @@ CloudDBAs offers tailored query analysis and professional tuning upon request. O
 
 With a CloudDBA subscription, your customer success manager can schedule quarterly business reviews with someone from the CloudDBA team to review items such as:
 
-- Historical usage focusing on peak
-- Future Growth/Capacity Planning
-- Recovery Time (RTO)/Recovery Point (RPO) Objectives
-- Escalation Points
-- Business Continuity
+* Historical usage focusing on peak
+* Future Growth/Capacity Planning
+* Recovery Time (RTO)/Recovery Point (RPO) Objectives
+* Escalation Points
+* Business Continuity
 
 ### **Quarterly Security Audits**
 
@@ -34,7 +32,9 @@ Work with the CloudDBA team to ensure that your environment is safe and secure. 
 
 CloudDBAs monitors instances for potential business impact events. Upon detection, events are internally flagged. We investigate and collaborate with your team as needed for swift resolution.
 
-### **Extended Troubleshooting/Analysis (Core Dumps, system logs, etc.)**
+### **Extended Troubleshooting and Analysis**
+
+Troubleshooting and analysis includes core dumps, system logs, and more.
 
 With a CloudDBA Subscription, our database experts can assist with tasks such as analyzing core dumps, system logs and other similar technical issues that require expert database server knowledge.
 
