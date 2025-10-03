@@ -115,10 +115,12 @@ In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.m
 
 Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see "[MariaDB Corporation Engineering Policies](https://mariadb.com/engineering-policies)".
 
+{% hint style="info" %}
 #### Note
 
-In alignment with the [MariaDB Engineering Policy](https://mariadb.com/engineering-policies), this release does not include CentOS 6.x and RHEL 6.x packages.
+In alignment with the [MariaDB Engineering Policy](https://mariadb.com/engineering-policies/), this release does not include CentOS 6.x and RHEL 6.x packages.
+{% endhint %}
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}
