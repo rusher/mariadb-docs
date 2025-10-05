@@ -26,9 +26,9 @@ Use it on subsequent request, for example:
 {% endstep %}
 
 {% step %}
-### **Use Swagger docs to try out the APIs**
+### **Use API Reference Guide to try out the APIs**
 
-You can use the API Documentation [here](https://apidocs.skysql.com/) and directly try out the APIs in your browser.
+You can use the API Documentation here and directly try out the APIs in your browser.
 
 All you need is to click ‘Authorize’ and type in `<supply your API key here>`
 

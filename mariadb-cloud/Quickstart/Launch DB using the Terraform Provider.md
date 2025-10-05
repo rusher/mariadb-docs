@@ -9,7 +9,9 @@ For users who prefer other interfaces, MariaDB Cloud offers the following altern
 
 This walkthrough demonstrates a service configuration that is suitable for a quick test. A more customized configuration should be selected for performance testing or for alignment to the needs of production workloads.
 
-!!! Note This procedure uses Terraform. HashiCorp officially supports Terraform on several Linux distributions, but HashiCorp also provides binaries for Microsoft Windows, macOS, and other operating systems.
+{% hint style="success" %}
+The procedure uses Terraform. HashiCorp officially supports Terraform on several Linux distributions, but HashiCorp also provides binaries for Microsoft Windows, macOS, and other operating systems.
+{% endhint %}
 
 For a list of operating systems that are officially supported for Terraform, see "[HashiCorp Terraform Documentation: Supported Operating Systems](https://developer.hashicorp.com/terraform/enterprise/requirements/os-specific/supported-os)".
 

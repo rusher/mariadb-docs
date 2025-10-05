@@ -121,7 +121,11 @@ Customers are billed monthly and an invoice for your MariaDB Cloud usage will be
 
 ### What forms of payment does MariaDB Cloud accept?
 
-MariaDB Cloud accepts payment by [all major credit card and through remittance accounts](<Portal features/Billing.md>). [Contact us](https://skysql.com/contact/) to have your account set up for payment by wire transfer or ACH. !!! Note MariaDB Cloud does not store any of your credit card information. We use Stripe to manage all credit card transactions. [Stripe](https://stripe.com) is a widely used payment processing platform that enables businesses to accept credit card payments securely
+MariaDB Cloud accepts payment by [all major credit card and through remittance accounts](<Portal features/Billing.md>). [Contact us](https://skysql.com/contact/) to have your account set up for payment by wire transfer or ACH.&#x20;
+
+{% hint style="success" %}
+MariaDB Cloud does not store any of your credit card information. We use Stripe to manage all credit card transactions. [Stripe](https://stripe.com) is a widely used payment processing platform that enables businesses to accept credit card payments securely
+{% endhint %}
 
 ### Can I procure MariaDB Cloud through Cloud Marketplaces?
 

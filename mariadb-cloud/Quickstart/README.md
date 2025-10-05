@@ -17,21 +17,19 @@ layout:
 
 # Quickstart
 
-The MariaDB Cloud database deployment time varies based on your preferences: a Serverless standalone instance can be ready in a few seconds, whereas a Provisioned standalone or clustered database may take a few minutes. Users can select from approximately 50 global regions and deploy on either AWS, GCP and Azure.
+The MariaDB Cloud database deployment time varies: a Serverless instance is ready in seconds, while a Provisioned database may take a few minutes. You can deploy on AWS, GCP, or Azure across nearly 50 global regions.
 
-You have three choices to provision a DB on MariaDB Cloud :
+You can provision a database in three ways:
 
-This Quickstart explains how to launch database services and manage the lifecycle of database services using the [Portal](<../Portal features/>) in a web browser.
+* MariaDB Cloud Portal: Use a web browser to launch services with a few clicks.
+* DBaaS API: Use a REST client for programmatic control.
+* Terraform Provider: Use infrastructure-as-code to manage your database.
 
-For users who prefer other interfaces, MariaDB Cloud offers the following alternatives:
-
-* Use the MariaDB Cloud web [Portal](<../Portal features/>). Make your choices with a few clicks and hit Launch.
-* Use the DBaaS API with a REST client
-* Use the [Terraform provider](Launch%20DB%20using%20the%20Terraform%20Provider/)
+This quickstart guide will walk you through using the Portal.
 
 ## Step 1: Register for MariaDB Cloud
 
-Goto [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using your Google, Github or LinkedIn credentials. Or, just use your Email address to sign up.
+Go to [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using your Google, Github or LinkedIn credentials. Or, just use your Email address to sign up.
 
 <div align="left"><figure><img src="skysql-id.png" alt=""><figcaption></figcaption></figure></div>
 
@@ -59,7 +57,7 @@ Goto [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using 
 
 ### Monitoring
 
-You can monitor all the important database and OS metrics from the dashboard. The monitoring UI also allows you to view,download any/all logs - error, info or Audit logs.
+You can monitor all the important database and OS metrics from the dashboard. The monitoring UI also allows you to view, download any/all logs - error, info or Audit logs.
 
 Basic status is shown on the Dashboard.
 
