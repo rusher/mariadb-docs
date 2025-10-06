@@ -61,7 +61,7 @@
 * [Data Offloading](<Data offloading/README.md>)
   * [Replicating Data From MariaDB Cloud to External Database](data-offloading/replicating-data-from-mariadb-cloud-to-external-database.md)
 * [AI Agents](<Copilot Guide/README.md>)
-  * [AI Agents API User Guide](<Copilot Guide/SkyAI API Guide.md>)
+  * [AI Agents API User Guide](<Copilot Guide/AI API Guide.md>)
   * [MariaDB Cloud MCP Server](<Copilot Guide/MCP Server.md>)
 * [High Availability and DR](<High Availability, DR/README.md>)
   * [Setup of Global Replication](<High Availability, DR/Setup Global Replication.md>)
