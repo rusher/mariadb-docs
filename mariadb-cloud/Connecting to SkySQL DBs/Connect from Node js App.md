@@ -149,10 +149,13 @@ Determine the [connection information](./) for your MariaDB Cloud database servi
 Create a file named `.env` to store your database credentials:
 
 ```jsx
+# env 1
 MDB_HOST = 192.0.2.50
 MDB_PORT = 3306
 MDB_USER = db_user
 MDB_PASS = db_user_password
+
+# env 2
 MDB_HOST = example.skysql.com
 MDB_PORT = 5001
 MDB_CA_PEM = /path/to/skysql_chain.pem

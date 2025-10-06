@@ -1,12 +1,6 @@
 # Point-In-Time Restore
 
-<details>
-
-<summary>Authentication</summary>
-
-**Go to the MariaDB Cloud** [**API Key management page**](https://app.skysql.com/user-profile/api-keys) **and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g:curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}"**
-
-</details>
+{% include "../.gitbook/includes/authentication.md" %}
 
 ## Important Note
 
@@ -53,5 +47,5 @@ To perform a Point-in-Time Restore through the MariaDB Cloud Portal:
 
 * Cross-cloud restore is not supported. Your restore target service must be in the same cloud provider as your backup source service.
 * Only MariaDB Cloud native snapshots can be used as restore source. External backups are not supported for Point-in-Time Restore.
-* Point-in-Time Restore requires [MariaDB 10.8](https://mariadb.com/kb/en/changes-improvements-in-mariadb-108/#mysqlbinlog-gtid-support) or later, which introduced the binary log search functionality needed for this feature.
+* Point-in-Time Restore requires [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/changelogs/changelogs-mariadb-10-8-series/mariadb-10-8-6-changelog) or later, which introduced the binary log search functionality needed for this feature.
 * Support for Serverless databases as Point-in-Time Restore sources is coming soon.

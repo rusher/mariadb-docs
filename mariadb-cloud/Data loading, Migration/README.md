@@ -29,11 +29,7 @@ Below are the most common scenarios for database migration to MariaDB Cloud.
 1. An active MariaDB Cloud account.
 2. An existing source database with the IP added to your MariaDB Cloud allowlist.
 
-<details>
-
-<summary>Considerations</summary>
-
-\\
+## Considerations
 
 Ensure that your MariaDB Cloud servce deploymned configuration is compatible with your existing source database one, including:
 
@@ -43,8 +39,6 @@ Ensure that your MariaDB Cloud servce deploymned configuration is compatible wit
 * Instance size - Ensure that the MariaDB Cloud instance is compatible with the source database instance type and size
 * Storage - Ensure that the MariaDB Cloud storage type and size is compatible with the source database
 
-</details>
-
 ## CloudDBA Assisted Migration
 
 * Existing customers can submit a [support case](https://support.skysql.com) to request assistance with a migration.
@@ -52,11 +46,8 @@ Ensure that your MariaDB Cloud servce deploymned configuration is compatible wit
 
 Our [CloudDBA team](https://skysqlinc.github.io/skysql-docs/FractionalDBA/) can help design a migration plan to suit your needs.
 
-<details>
+## CloudDBA Assisted Migration Approach
 
-<summary>CloudDBA Assisted Migration Approach</summary>
-
-\
 We use a multi-step process to assist customers with migrations:
 
 * Assessment of application requirements, inventory, and identified challenges
@@ -65,9 +56,6 @@ We use a multi-step process to assist customers with migrations:
 * Data Migration and Replication with import of data, with conversion to the new schema, and ongoing inbound replication of new data
 * Quality Assurance to assess data validity, data integrity, performance, accuracy of query results, stored code, and running code such as client applications, APIs, and batch jobs
 * Cutover including final database preparation, fallback planning, switchover, and decommissioning of old databases
-* \\
-
-</details>
 
 ## Self-Service Migration to MariaDB Cloud
 

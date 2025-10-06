@@ -66,4 +66,4 @@ After saving the change, a [notification](<../Portal features/Notifications.md>)
 
 * Same workflow as AWS/Azure, but with a limit of 200 IP addresses.
 
-For allowlists requiring more than 30 IP addresses, please contact [support@skysql.com](mailto:support@skysql.com).
+For allowlists requiring more than 30 IP addresses, please contact support.

@@ -11,7 +11,11 @@
 
 ![image (1)](https://github.com/user-attachments/assets/fead6067-9a5a-4e75-bcf2-2d20e0a4b727)
 
-## Notes:
+{% hint style="info" %}
+Ensure you are using the latest MariaDB driver in DBeaver to avoid compatibility issues.
+{% endhint %}
 
-* Ensure you are using the latest MariaDB driver in DBeaver to avoid compatibility issues.
-* If you experience connection issues, verify your firewall settings and database credentials.
+{% hint style="warning" %}
+If you experience connection issues, verify your firewall settings and database credentials.
+{% endhint %}
+

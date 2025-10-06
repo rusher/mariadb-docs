@@ -1,10 +1,12 @@
-# Connect from MongoDB clients
+# Connect From MongoDB Clients
 
 The NoSQL protocol module allows a MariaDB server or cluster to execute transactions for applications using MongoDB client libraries, transparently converting MongoDB API calls into the equivalent SQL. The MariaDB responses are then converted into the format expected by the MongoDB® client library and application.
 
 For detailed information on supported commands, see "[NoSQL Protocol Module](https://mariadb.com/kb/en/mariadb-maxscale-2208-nosql-protocol-module/)" in MariaDB MaxScale documentation.
 
-💡 IMPORTANT - this feature is supported by the MariaDB advanced proxy - Maxscale. And, maxscale is only started when using the MariaDB Cloud Replicated topology. i.e. will not work when using a Standalone MariaDB server.
+{% hint style="info" %}
+The feature is supported by MaxScale, the advanced proxy for MariaDB. MaxScale starts when using the MariaDB Cloud Replicated topology and will not function with a standalone MariaDB server.
+{% endhint %}
 
 ## Enable Support for NoSQL
 

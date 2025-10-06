@@ -19,17 +19,15 @@ layout:
 
 This page describes how to connect to a MariaDB Cloud database using a MariaDB-compatible client.
 
-### **Important - Whitelist your IP Address First**
-
 {% hint style="info" %}
+**Whitelist IP Address**\
 Access to all services is by default protected by a firewall. You need to IP whitelist your client’s (your desktop, laptop or server) IP. Select ‘Manage —> Security Access’ and then click ‘Add my current IP’ to add the IP of your current workstation (laptop, desktop).
 {% endhint %}
 
-{% hint style="info" %}
-If you are not sure or unable to obtain the IP address, you can use `0.0.0.0/0` to effectively disable the firewall. Goes without saying — don’t do this for your production databases.
-{% endhint %}
-
+{% hint style="danger" %}
+**Warning**: Using `0.0.0.0/0` will disable the firewall. Never do this for production databases.\
 For more details, go to the [Firewall](<../Security/Configuring Firewall.md>) settings page.
+{% endhint %}
 
 ## Connecting Using the MariaDB Client
 

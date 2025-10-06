@@ -192,11 +192,15 @@ After creating your PSC endpoint, your service should be available within your V
 * DNS propagation from MariaDB Cloud to the Private IP address is not supported when using PSC.
 * The hostname when connecting to your MariaDB Cloud service should always be the Private IP address of the PSC endpoint.
 
-> \[!NOTE] When using PSC with SSL/TLS, there will be a hostname mismatch since the hostname provisioned by MariaDB Cloud will not match your internal IP Address. This can be ignored as the connection is still secure.
+{% hint style="warning" %}
+When using PSC with SSL/TLS, there will be a hostname mismatch since the hostname provisioned by MariaDB Cloud will not match your internal IP Address. This can be ignored as the connection is still secure.
+{% endhint %}
 
 ### **Disabling Google PSC**
 
-> \[!CAUTION] Disabling PSC on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the private endpoint is replaced with the new public endpoint.
+{% hint style="warning" %}
+Disabling PSC on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the private endpoint is replaced with the new public endpoint.
+{% endhint %}
 
 <details>
 

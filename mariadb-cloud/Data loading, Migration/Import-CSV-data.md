@@ -5,7 +5,9 @@ MariaDB Cloud customers can import data into a MariaDB Cloud service using the `
 * The `LOAD DATA LOCAL INFILE` statement can import data from TSV and CSV files
 * The `LOAD DATA LOCAL INFILE` statement can be executed by any client or connector
 
-!!! Note Make sure your schema is already created in the database. If you need to import entire databases or create tables, you should use [mariab-import](Install-mariadb-import.md).
+{% hint style="warning" %}
+Make sure your schema is already created in the database. If you need to import entire databases or create tables, you should use [mariadb-import](Install-mariadb-import.md).
+{% endhint %}
 
 ## **Enable Local Infiles**
 

@@ -20,8 +20,7 @@ For detailed information about Azure Private Link, see ["Azure Private Link" (Az
 
 <summary>Enable Private Link via the MariaDB Cloud Portal</summary>
 
-\
-
+\\
 
 To enable Azure Private Link when launching a new service via the MariaDB Cloud Portal select the 'Enable Private link' option in the 'Security' section. After the service completes provisioning, you will see a new option to "Set up Private Link" in the service's context menu. Click this option to add one or more Azure Subscription IDs to the allowlist.
 
@@ -31,8 +30,7 @@ To enable Azure Private Link when launching a new service via the MariaDB Cloud 
 
 <summary>Enable Private Link via the MariaDB Cloud DBaaS API</summary>
 
-\
-
+\\
 
 To enable Azure Private Link when launching a new service via the MariaDB Cloud DBaaS API, add the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes to service creation JSON payload.
 
@@ -59,8 +57,7 @@ For more information on using the MariaDB Cloud DBaaS API, see ["MariaDB Cloud D
 
 <summary>Enable Private Link via the MariaDB Cloud Terraform Provider</summary>
 
-\
-
+\\
 
 To enable Azure Private Link when launching a new service via the MariaDB Cloud DBaaS API, set the `endpoint_mechanism` and `endpoint_allowed_accounts` attributes on the `skysql_service` resource.
 
@@ -86,14 +83,15 @@ For more information on using the MariaDB Cloud Terraform Provider, see ["MariaD
 
 ### **Enable Azure Private Link on an Existing MariaDB Cloud Service**
 
-> \[!CAUTION] Enabling Private Link on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the public endpoint is replaced with the new Private Link endpoint.
+{% hint style="info" %}
+Enabling Private Link on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the public endpoint is replaced with the new Private Link endpoint.
+{% endhint %}
 
 <details>
 
 <summary>Enable Azure Private Link on an existing service via the MariaDB Cloud Portal:</summary>
 
-\
-
+\\
 
 1. Log in to the MariaDB Cloud Portal
 2. Click the "MANAGE" button (on the right) for the desired service.
@@ -107,8 +105,7 @@ For more information on using the MariaDB Cloud Terraform Provider, see ["MariaD
 
 <summary>Enable Azure Private Link on an existing service via the MariaDB Cloud DBaaS API:</summary>
 
-\
-
+\\
 
 To enable Azure Private Link on an existing service, you will need to update the service endpoints with a payload similar to the following:
 
@@ -208,20 +205,23 @@ The following links will help guide you through the process of setting up Privat
 * [Linking a Private DNS Zone to a Virtual Network](https://learn.microsoft.com/en-us/azure/dns/private-dns-getstarted-portal#link-the-virtual-network)
 * [Adding DNS Records to a Private DNS Zone](https://learn.microsoft.com/en-us/azure/dns/private-dns-getstarted-portal#create-another-dns-record)
 
-> \[!CAUTION] When linking a DNS zone for your skysql.com domain, you will delegate all DNS resolution for that domain to Azure. This means that all DNS queries for that domain will be resolved by Azure DNS servers. If you have other public services that use the same domain, these hostnames will no longer resolve to services inside your linked VNet.
+{% hint style="success" %}
+When linking a DNS zone for your skysql.com domain, you will delegate all DNS resolution for that domain to Azure. This means that all DNS queries for that domain will be resolved by Azure DNS servers. If you have other public services that use the same domain, these hostnames will no longer resolve to services inside your linked VNet.
+{% endhint %}
 
 Since Private DNS setup is a complex process, we have provided a terraform example that can help with the process. We highly advise that you explore this example if your organization requires this type of setup. The example can be found in the [terraform provider examples](https://github.com/skysqlinc/terraform-provider-skysql/tree/main/examples/azure-private-link)
 
 ### **Disabling Azure Private Link**
 
-> \[!CAUTION] Disabling Private Link on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the private endpoint is replaced with the new public endpoint.
+{% hint style="info" %}
+Disabling Private Link on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the private endpoint is replaced with the new public endpoint.
+{% endhint %}
 
 <details>
 
 <summary>Disable Azure Private Link via the MariaDB Cloud Portal</summary>
 
-\
-
+\\
 
 1. Visit the [MariaDB Cloud Portal](https://app.skysql.com/)
 2. Find the service that you would like to modify.
@@ -237,8 +237,7 @@ Since Private DNS setup is a complex process, we have provided a terraform examp
 
 <summary>Disable Azure Private Link via the MariaDB Cloud DBaaS API</summary>
 
-\
-
+\\
 
 To disable Azure Private Link on an existing service, you will need to update the service endpoints with a payload similar to the following:
 

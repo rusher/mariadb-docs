@@ -11,7 +11,10 @@
 
 ![heidi](https://github.com/user-attachments/assets/37685278-b228-4387-9d48-8673d1d39e2d)
 
-## Notes
+{% hint style="info" %}
+Ensure your HeidiSQL client is up to date.
+{% endhint %}
 
-* Ensure your HeidiSQL client is up to date.
-* Using updated drivers on new MariaDB versions is essential as out of date drivers will return "Authentication failed" errors. It may be nessecary to manually install new drivers on Windows.
+{% hint style="warning" %}
+Using updated drivers on new MariaDB versions is essential as out of date drivers will return "Authentication failed" errors. It may be nessecary to manually install new drivers on Windows.
+{% endhint %}

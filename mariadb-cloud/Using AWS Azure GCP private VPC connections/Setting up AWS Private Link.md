@@ -19,8 +19,6 @@ For detailed information about AWS PrivateLink, see ["AWS PrivateLink" (Amazon d
 
 <summary>Enable Privatelink via the MariaDB Cloud Portal</summary>
 
-\\
-
 To enable AWS PrivateLink when launching a new service via the MariaDB Cloud Portal select the 'Enable Private link' option in the 'Security' section. After the service completes provisioning, you will see a new option to "Set up Private Link" in the service's context menu. Click this option to add one or more AWS account IDs to the allowlist.
 
 </details>
@@ -82,7 +80,9 @@ For more information on using the MariaDB Cloud Terraform Provider, see ["MariaD
 
 ### **Enable AWS PrivateLink on an Existing MariaDB Cloud Service**
 
-> \[!CAUTION] Enabling PrivateLink on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the public endpoint is replaced with the new PrivateLink endpoint.
+{% hint style="danger" %}
+Enabling PrivateLink on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the public endpoint is replaced with the new PrivateLink endpoint.
+{% endhint %}
 
 <details>
 
@@ -170,7 +170,9 @@ After creating your VPC endpoint, AWS will create a number of DNS records that w
 * The following DNS names provided are availability zone specific and rely on the user to match the correct DNS name to the availability zone of the client instance.
 * If connecting via these DNS names, we recommend using the first DNS name in the list to ensure that the connection is routed to the correct availability zone.
 
-> \[!NOTE] The DNS names provided by AWS will always be in the domain `amazonaws.com`. If connecting to your MariaDB Cloud service using SSL/TLS, the database certificate will not match the VPC endpoint name. Due to this, we recommend [Enabling Private DNS for AWS PrivateLink](<Setting up AWS Private Link.md#enabling-private-dns-for-aws-privatelink>).
+{% hint style="info" %}
+The DNS names provided by AWS will always be in the domain `amazonaws.com`. If connecting to your MariaDB Cloud service using SSL/TLS, the database certificate will not match the VPC endpoint name. Due to this, we recommend [Enabling Private DNS for AWS PrivateLink](<Setting up AWS Private Link.md#enabling-private-dns-for-aws-privatelink>).
+{% endhint %}
 
 ### Enabling Private DNS for AWS PrivateLink
 
@@ -195,29 +197,21 @@ After a short period of time, the service name provided in the MariaDB Cloud por
 
 ### **Disabling AWS PrivateLink**
 
-> \[!CAUTION] Disabling PrivateLink on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the private endpoint is replaced with the new public endpoint.
+{% hint style="danger" %}
+Disabling PrivateLink on an existing service will cause all existing connections to be dropped. The service will be unavailable for a short period of time while the private endpoint is replaced with the new public endpoint.
+{% endhint %}
 
-<details>
+## Disable AWS PrivateLink via the MariaDB Cloud Portal
 
-<summary>Disable AWS PrivateLink via the MariaDB Cloud Portal</summary>
+* Visit the [MariaDB Cloud Portal](https://app.skysql.com/)
+* Find the service that you would like to modify.
+* Click "MANAGE" on the far right side of the service listing.
+* In the context menu, select "Manage PrivateLink".
+* In the popup window, click "I want to disconnect my Private Link".
+* In the popup window, select "Disconnect".
+* Since the service's allowlist was cleared when AWS PrivateLink was previously enabled, you will need to [update the allowlist](<../Security/Configuring Firewall.md>) to allow clients to connect after disabling PrivateLink.
 
-\\
-
-1. Visit the [MariaDB Cloud Portal](https://app.skysql.com/)
-2. Find the service that you would like to modify.
-3. Click "MANAGE" on the far right side of the service listing.
-4. In the context menu, select "Manage PrivateLink".
-5. In the popup window, click "I want to disconnect my Private Link".
-6. In the popup window, select "Disconnect".
-7. Since the service's allowlist was cleared when AWS PrivateLink was previously enabled, you will need to [update the allowlist](<../Security/Configuring Firewall.md>) to allow clients to connect after disabling PrivateLink.
-
-</details>
-
-<details>
-
-<summary>Disable AWS PrivateLink via the MariaDB Cloud DBaaS API</summary>
-
-\\
+## Disable AWS PrivateLink via the MariaDB Cloud DBaaS API
 
 To disable AWS PrivateLink on an existing service, you will need to update the service endpoints with a payload similar to the following:
 
@@ -230,5 +224,3 @@ To disable AWS PrivateLink on an existing service, you will need to update the s
 ```
 
 This payload should then be sent to the API `PATCH` https://api.skysql.com/provisioning/v1/services/{SERVICE\_ID}/endpoints where `{SERVICE_ID}` is the ID of the service you are updating. For more information on using the MariaDB Cloud DBaaS API, see ["MariaDB Cloud DBaaS API"](https://apidocs.skysql.com/#/Services/patch_provisioning_v1_services__service_id__endpoints).
-
-</details>

@@ -1,12 +1,6 @@
 # Other Backup API Examples
 
-<details>
-
-<summary>Authentication</summary>
-
-**Go to the MariaDB Cloud** [**API Key management page**](https://app.skysql.com/user-profile/api-keys) **and generate an API keyExport the value from the token field to an environment variable $API\_KEYexport API\_KEY='... key data ...'Use it on subsequent request, e.g: \`\`\`bash curl --request GET 'https://api.skysql.com/skybackup/v1/backups/schedules' --header "X-API-Key: ${API\_KEY}" \`\`\`**
-
-</details>
+{% include "../.gitbook/includes/authentication.md" %}
 
 ## Working With Backup Schedules
 
@@ -125,4 +119,4 @@ The typical response of either of two calls should look like:
 }
 ```
 
-> The \*\* Backup id is the most important part of this data as you need to provide it in the restore api call\*\* to schedule restore execution.
+The Backup id is the most important part of this data as you need to provide it in the restore api call to schedule restore execution.

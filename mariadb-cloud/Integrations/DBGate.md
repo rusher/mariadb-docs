@@ -9,7 +9,10 @@
 5. Check the **Use SSL** option.
 6. Click **Connect** to establish the connection.
 
-## Notes
+{% hint style="success" %}
+In most cases, simply select **Use SSL**—there's no need to configure extra SSL certificate files.
+{% endhint %}
 
-* No need to configure additional SSL certificate files in most cases, just select **Use SSL** and you're good to go.
-* Make sure DBGate is updated to the latest version for best compatibility.
+{% hint style="warning" %}
+Make sure DBGate is updated to the latest version for best compatibility.
+{% endhint %}

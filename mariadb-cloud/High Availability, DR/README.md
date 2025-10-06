@@ -75,11 +75,13 @@ The implementation of these routing strategies is straightforward, primarily thr
 In MariaDB Cloud you can control routing using 2 strategies:
 
 * Using the `read port` for the service: Typically this will be port 3307. When using this port the request (read\_only) will be load balanced only across the available replicas.
-* Using the [Hintfilter](https://mariadb.com/kb/en/mariadb-maxscale-24-hintfilter/) (TODO: provide detailed example using MariaDB Cloud node names)
+* Using the [Hintfilter](https://mariadb.com/kb/en/mariadb-maxscale-24-hintfilter/)
 
 ## **Level 3 Resiliency - Disaster Recovery – Across Regions, Cloud Providers, or “Self-managed” Environments**
 
-!!! Note Please refer to [this](<Setup Global Replication.md>) document for the steps to setup a distant replica for DR.
+{% hint style="success" %}
+Please refer to [this](<Setup Global Replication.md>) document for the steps to setup a distant replica for DR.
+{% endhint %}
 
 The major cloud providers tout disaster recover across regions, ensuring resilience against natural disasters impacting an entire geographical region. But in reality, such disasters are exceedingly rare. Whatʼs far more common are technical issues impacting an entire region for a specific cloud provider. For instance, we’ve encountered DNS-level failures in GCP regions, rendering all services dependent on DNS, including MariaDB Cloud, inaccessible.
 

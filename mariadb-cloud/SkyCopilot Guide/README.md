@@ -23,7 +23,7 @@ This capability is currently in Tech Preview, and free to use. We provide up to 
 
 MariaDB Cloud offers two types of AI Agents:
 
-* **Built-in Agents:** These are preconfigured agents designed to help developers and DBAs maximize the value of MariaDB Cloud. Currently, we have two agents: Developer Copilot and DBA Copilot. The Developer Copilot assists users in answering questions about MySQL, MariaDB, and MariaDB Cloud, in general. The DBA Copilot enables DBA tasks like performance tuning or debugging errors. They are tailored to enhance developer/DBA productivity.
+* **Built-in Agents:** These are preconfigured agents designed to help developers and DBAs maximize the value of MariaDB Cloud. Currently, we have two agents: Developer Copilot and DBA Copilot. The Developer Copilot assists users in answering questions about MySQL, MariaDB, and MariaDB Cloud, in general. The DBA Copilot enables DBA tasks like performance tuning or deb ugging errors. They are tailored to enhance developer/DBA productivity.
 * **User-Created Custom DB Agents:** These are agents on your schemas/datasets permitting natural language queries over complex databases with high accuracy, consistency, and ease. The databases these agents operate on can be managed within MariaDB Cloud or external MySQL or MariaDB DBs.
 
 ## Why AI Agents?

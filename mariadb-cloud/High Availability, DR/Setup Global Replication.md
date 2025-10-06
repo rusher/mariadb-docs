@@ -76,7 +76,9 @@ Each MariaDB Cloud service has a unique identifier. Please make note of the iden
 
 In a real world scenario, the Primary service will contain data which will need to be restored to the Standby service before the replication can be set up. MariaDB Cloud performs full backup of your services every night. You can either use an existing nightly backup or create a schedule to perform a new full backup.
 
-!!! Note Depending on the size of your databases, backing up a service can take substantial time. Creating a new backup is not necessary if you already have an existing full backup of your service. If you have a recent backup (usually available) you can skip the step. After we restore from the backup we have to replay all the subsequent DB changes from the Source DB 'binlog'. Binlogs expire in 4 days, by default. So, you cannot use a backup older than 4 days.
+{% hint style="info" %}
+Depending on the size of your databases, backing up a service can take substantial time. Creating a new backup is not necessary if you already have an existing full backup of your service. If you have a recent backup (usually available) you can skip the step. After we restore from the backup we have to replay all the subsequent DB changes from the Source DB 'binlog'. Binlogs expire in 4 days, by default. So, you cannot use a backup older than 4 days.
+{% endhint %}
 
 1\. Use the following API to list backups associated with the Primary service. Replace {id} with the database id of the Primary service. Look for a "FULL" backup or "snapshot".
 
@@ -111,9 +113,11 @@ curl --location --request POST https://api.skysql.com/skybackup/v1/restores \
 }'
 ```
 
-!!! Note As of July 2024, you can only restore from Backups within the same Cloud provider. To restore to a different provider, you would need to explicitly Backup to your own S3/GCS bucket, copy the folder over to the other provider's bucket and initiate a Restore. Please refer to the [Backup Service](<../Backup and Restore/>) docs.
+{% hint style="warning" %}
+As of July 2024, you can only restore from Backups within the same Cloud provider. To restore to a different provider, you would need to explicitly Backup to your own S3/GCS bucket, copy the folder over to the other provider's bucket and initiate a Restore. Please refer to the [Backup Service](<../Backup and Restore/>) docs.
+{% endhint %}
 
-{% hint style="info" %}
+{% hint style="danger" %}
 Once the restore is complete, the default username and password displayed in the "connect" window of the Secondary service will not work. Restore overwrites this information with the username and password of the Primary service. Hence, you will have to use Primary service's username and password to connect to the Secondary service.
 {% endhint %}
 {% endstep %}

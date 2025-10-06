@@ -19,8 +19,8 @@ To configure outbound replication from your Replicated Transactions service in M
 With the default database admin user provided, create an external\_replication user as seen below.
 
 ```sql
-CREATE USER 'replication_user'@'%' IDENTIFIED BY 'bigs3cret';
-GRANT REPLICATION SLAVE ON *.* TO ‘external_replication’@'hostname';
+CREATE USER 'external_replication'@'hostname' IDENTIFIED BY 'bigs3cret';
+GRANT REPLICATION SLAVE ON *.* TO 'external_replication’@'hostname';
 ```
 
 ### Check User Account <a href="#check-user-account" id="check-user-account"></a>
