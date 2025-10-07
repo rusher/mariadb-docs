@@ -2,7 +2,7 @@
 
 {% include "../../.gitbook/includes/latest-12-1.md" %}
 
-<a href="https://mariadb.org/download/" class="button primary">Download</a> <a href="mariadb-12.1.1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-12.1-series/mariadb-12.1.1-changelog.md" class="button secondary">Changelog</a> <a href="changes-and-improvements-in-mariadb-12.1.md" class="button secondary">Overview of 12.1</a>
+<a href="https://downloads.mariadb.org/mariadb/12.1.1/" class="button primary">Download</a> <a href="mariadb-12.1.1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-12.1-series/mariadb-12.1.1-changelog.md" class="button secondary">Changelog</a> <a href="changes-and-improvements-in-mariadb-12.1.md" class="button secondary">Overview of 12.1</a>
 
 **Release date:** 7 Aug 2025
 
