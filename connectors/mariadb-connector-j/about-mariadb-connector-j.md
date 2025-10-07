@@ -110,7 +110,7 @@ final HikariDataSource ds = new HikariDataSource();
         ds.setAutoCommit(false);
 ```
 
-Please note that the driver class provided by MariaDB Connector/J \*\*is not `com.mysql.jdbc.Driver` but \`org.mariadb.jdbc.Driver!
+Please note that the driver class provided by MariaDB Connector/J **is not `com.mysql.jdbc.Driver` but `org.mariadb.jdbc.Driver`**!
 
 The `org.mariadb.jdbc.MariaDbDataSource` class can be used when the pool datasource configuration only permits the java.sql.Datasource implementation.
 
