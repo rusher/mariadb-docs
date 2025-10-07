@@ -12,16 +12,17 @@ hidden: true
 
 This is a [Stable (GA)](../../../community-server/about/release-criteria.md) release of MariaDB Connector/ODBC 3.2.
 
-MariaDB Connector/ODBC 3.2.7 is built on top of [MariaDB Connector/C v.3.4.5](../../c/3.4/3.4.5.md).
+MariaDB Connector/ODBC 3.2.7 is built on top of [MariaDB Connector/C v.3.4.7](../../c/3.4/3.4.7.md).
 
 ## Bug Fixes
 
-* ODBC-469 - SSLVERIFY=0, still getting The certificate's CN name does not match the passed value on Windows
-* ODBC-470 - Dropping statement handle could break protocol if other statement hasn't finished fetching results
-* ODBC-471 - Fetching of stored procedure out parameters could fail in case of result-set streaming
-* ODBC-472 - Some internal classes destructors called functions that can throw in some conditions
-* ODBC-473 - SQLGetData could write data of the wrong length in case of resultset streaming and cached resultset
-* ODBC-474 - Bulk operations with parameter callbacks could not respect NULL value indicators
+* [ODBC-469](https://jira.mariadb.org/browse/ODBC-469) - SSLVERIFY=0, still getting The certificate's CN name does not match the passed value on Windows
+* [ODBC-470](https://jira.mariadb.org/browse/ODBC-470) - Dropping statement handle could break protocol if other statement hasn't finished fetching results
+* [ODBC-471](https://jira.mariadb.org/browse/ODBC-471) - Fetching of stored procedure out parameters could fail in case of result-set streaming
+* [ODBC-472](https://jira.mariadb.org/browse/ODBC-472) - Some internal classes destructors called functions that can throw in some conditions
+* [ODBC-473](https://jira.mariadb.org/browse/ODBC-473) - SQLGetData could write data of the wrong length in case of resultset streaming and cached resultset
+* [ODBC-474](https://jira.mariadb.org/browse/ODBC-474) - Bulk operations with parameter callbacks could not respect NULL value indicators
+* [ODBC-475](https://jira.mariadb.org/browse/ODBC-475) - The connector did not support SQL_POSITIONED_STATEMENTS information type
 
 ## Changelog
 
