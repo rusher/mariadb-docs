@@ -114,7 +114,7 @@ curl --location --request POST https://api.skysql.com/skybackup/v1/restores \
 ```
 
 {% hint style="warning" %}
-As of July 2024, you can only restore from Backups within the same Cloud provider. To restore to a different provider, you would need to explicitly Backup to your own S3/GCS bucket, copy the folder over to the other provider's bucket and initiate a Restore. Please refer to the [Backup Service](<../Backup and Restore/>) docs.
+As of July 2024, you can only restore from Backups within the same Cloud provider. To restore to a different provider, you would need to explicitly Backup to your own S3/GCS bucket, copy the folder over to the other provider's bucket and initiate a Restore. Please refer to the [Backup Service](../cloud-data-handling/backup-and-restore/) docs.
 {% endhint %}
 
 {% hint style="danger" %}
