@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Analyzing Queries
 
 ## Determining Active Queries
@@ -38,8 +34,7 @@ Oct 7 08:38:30    00:00:03       73 select c_name,sum(lo_revenue) from customer,
 
 ### Query Statistics
 
-The _`calGetStats`_ function provides statistics about resources used on the [User Module](../architecture/columnstore-user-module.md) (UM) node, PM node, and network by the last run query.\
-Example:
+The _`calGetStats`_ function provides statistics about resources used on the node, and network by the last run query. Example:
 
 ```sql
 MariaDB [test]> SELECT count(*) FROM wide2;
@@ -85,7 +80,7 @@ These operations are automatically executed together in order to execute appropr
 
 ### Viewing the ColumnStore Query Plan
 
-In MariaDB ColumnStore there is a set of SQL tracing stored functions provided to see the distributed query execution plan between the [UM](../architecture/columnstore-user-module.md) and the [PM](../architecture/columnstore-performance-module.md).
+In MariaDB ColumnStore there is a set of SQL tracing stored functions provided to see the distributed query execution plan between the nodes.
 
 The basic steps to using these SQL tracing stored functions are:
 
@@ -139,12 +134,12 @@ The columns headings in the output are as follows:
   * **HJS - Hash Join Step**: Performing a hash join between 2 tables
   * **HVS - Having Step**: Performing the having clause on the result set
   * **SQS - Sub Query Step**: Performing a sub query
-  * **TAS - Tuple Aggregation step**: the process of receiving intermediate aggregation results at the UM from the PM nodes.
+  * **TAS - Tuple Aggregation step**: the process of receiving intermediate aggregation results from other nodes.
   * **TNS - Tuple Annexation Step**: Query result finishing, e.g. filling in constant columns, limit, order by and final distinct cases.
   * **TUS = Tuple Union step**: Performing a SQL union of 2 sub queries.
   * **TCS = Tuple Constant Step**: Process Constant Value Columns
   * **WFS = Window Function Step**: Performing a window function.
-* **Mode – Where the operation was performed**: UM or PM
+* **Mode –** Where the operation was performed within the PrimProc[^1] library
 * **Table** – Table for which columns may be scanned/projected.
 * **TableOID – ObjectID** for the table being scanned.
 * **ReferencedOIDs – ObjectIDs** for the columns required by the query.
@@ -155,7 +150,7 @@ The columns headings in the output are as follows:
 * **Rows** – Intermediate rows returned.
 
 {% hint style="info" %}
-**Note:** The time recorded is the time from PrimProc[^1] and `ExeMgr`. Execution time from withing mysqld is not tracked here. There could be extra processing time in `mysqld` due to a number of factors such as `ORDER BY`.
+**Note:** The time recorded is the time from PrimProc[^2] and `ExeMgr`. Execution time from withing mysqld is not tracked here. There could be extra processing time in `mysqld` due to a number of factors such as `ORDER BY`.
 {% endhint %}
 
 ## Cache Clearing to Enable Cold Testing
@@ -168,10 +163,10 @@ MariaDB [test]> SELECT calFlushCache();
 
 ## Viewing Extent Map Information
 
-It can be useful to view details about the extent map for a given column. This can be achieved using the edit item process on a PM server. Available arguments can be provided by using the `-h` flag. The most common use is to provide the column object id with the `-o` argument which will output details for the column and in this case the `-t` argument is provided to show min / max values as dates:
+It can be useful to view details about the extent map for a given column. This can be achieved using the edit item process on any ColumnStore server. Available arguments can be provided by using the `-h` flag. The most common use is to provide the column object id with the `-o` argument which will output details for the column and in this case the `-t` argument is provided to show min / max values as dates:
 
 ```sql
-/usr/local/mariadb/columnstore/bin/editem -o 3032 -t
+editem -o 3032 -t
 Col OID = 3032, NumExtents = 10, width = 4
 428032 - 432127 (4096) min: 1992-01-01, max: 1993-06-21, seqNum: 1, state: valid, fbo: 0, DBRoot: 1, part#: 0, seg#: 0, HWM: 0; status: avail
 502784 - 506879 (4096) min: 1992-01-01, max: 1993-06-22, seqNum: 1, state: valid, fbo: 0, DBRoot: 2, part#: 0, seg#: 1, HWM: 0; status: unavail
@@ -241,12 +236,12 @@ The columns of this table are:
 * **Cache I/O** (cacheIO) - The number of blocks that the query accessed from the cache. This statistic is only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELEC`T.
 * **Blocks Touched** (blocksTouched) - The total number of blocks that the query accessed physically and from the cache. This should be equal or less than the sum of physical I/O and cache I/O. This statistic is only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELECT`.
 * **Partition Blocks Eliminated** (CPBlocksSkipped) - The number of blocks being eliminated by the extent map casual partition. This statistic is only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELECT`.
-* **Messages from** [**UM**](../architecture/columnstore-user-module.md) **and the** [**PM**](../architecture/columnstore-performance-module.md) (msgOutUM) - The number of messages in bytes that ExeMgr sends to the PrimProc[^1]. If a message needs to be distributed to all the PMs, the sum of all the distributed messages will be counted. Only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELECT`.
-* **Messages from PM to UM** (msgInUM) - The number of messages in bytes that PrimProc[^1] sends to the ExeMgr. Only valid for queries that are processed by `ExeMgr`, i.e. `SELECT`, `DML` with where clause, and `INSERT SELECT`.
-* **Memory Utilization** (maxMemPct) - This field shows memory utilization for the [User Module](../architecture/columnstore-user-module.md) (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
-* **Blocks Changed** (blocksChanged) - Total number of blocks that queries physically changed on disk. This is only for delete/update statements.
-* **Temp Files** (numTempFiles) - This field shows any temporary file utilization for the User Module (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
-* **Temp File Space** (tempFileSpace) - This shows the size of any temporary file utilization for the User Module (UM) in support of any UM join, group by, aggregation, distinct, or other operation.
+* **Messages to other nodes** (`msgOutUM`) - The number of messages in bytes that ExeMgr sends to the PrimProc[^2]. If a message needs to be distributed to all the PMs, the sum of all the distributed messages will be counted. Only valid for queries that are processed by ExeMgr, i.e. `SELECT`, `DML` with `WHERE` clause, and `INSERT SELECT`.
+* **Messages from other nodes** (`msgInUM`) - The number of messages in bytes that PrimProc[^2] sends to the ExeMgr. Only valid for queries that are processed by `ExeMgr`, i.e. `SELECT`, `DML` with where clause, and `INSERT SELECT`.
+* **Memory Utilization** (`maxMemPct`) - This field shows memory utilization in support of any join, group by, aggregation, distinct, or other operation.
+* **Blocks Changed** (`blocksChanged`) - Total number of blocks that queries physically changed on disk. This is only for delete/update statements.
+* **Temp Files** (`numTempFiles`) - This field shows any temporary file utilization in support of any join, group by, aggregation, distinct, or other operation.
+* **Temp File Space** (`tempFileSpace`) - This shows the size of any temporary file utilization in support of any join, group by, aggregation, distinct, or other operation.
 
 ## Query Statistics Viewing
 
@@ -278,4 +273,6 @@ where querytype='INSERT SELECT' and starttime >= now() - interval 12 hour;
 
 {% @marketo/form formId="4316" %}
 
-[^1]: PrimProc is the ColumnStore Primitives Processor.
+[^1]: PrimProc is the ColumnStore Primitives Processor
+
+[^2]: PrimProc is the ColumnStore Primitives Processor.

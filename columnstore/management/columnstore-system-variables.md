@@ -1,7 +1,3 @@
----
-hidden: true
----
-<!-- Still some mentions of UM -->
 # ColumnStore System Variables
 
 ## Variables
@@ -65,9 +61,9 @@ where n is:
 
 ### ColumnStore Decimal Scale
 
-ColumnStore has the ability to support varied internal precision on decimal calculations. `infinidb_decimal_scale` is used internally by the ColumnStore engine to control how many significant digits to the right of the decimal point are carried through in suboperations on calculated columns. If, while running a query, you receive the message ‘aggregate overflow’, try reducing `infinidb_decimal_scale` and running the query again.&#x20;
+ColumnStore has the ability to support varied internal precision on decimal calculations. `infinidb_decimal_scale` is used internally by the ColumnStore engine to control how many significant digits to the right of the decimal point are carried through in suboperations on calculated columns. If, while running a query, you receive the message ‘aggregate overflow’, try reducing `infinidb_decimal_scale` and running the query again.
 
-Note that, as you decrease `infinidb_decimal_scale`, you may see reduced accuracy in the least significant digit(s) of a returned calculated column. _`infinidb_use_decimal_scale` is used internally by the ColumnStore engine to turn the use of this internal precision on and off. These two system variables can be set as a default for the instance or at session level.
+Note that, as you decrease `infinidb_decimal_scale`, you may see reduced accuracy in the least significant digit(s) of a returned calculated column. \_`infinidb_use_decimal_scale` is used internally by the ColumnStore engine to turn the use of this internal precision on and off. These two system variables can be set as a default for the instance or at session level.
 
 #### Enable/Disable Decimal Scale
 
@@ -93,9 +89,9 @@ where _n_ is the amount of precision desired for calculations.
 
 ### Introduction
 
-Joins are performed in memory on the [UM](../architecture/columnstore-user-module.md) node. When a join operation exceeds the memory allocated on the UM for query joins, the query is aborted with an error code IDB-2001.
+Joins are performed in memory. When a join operation exceeds the memory allocated for query joins, the query is aborted with an error code IDB-2001.
 
-Disk-based joins enable such queries to use disk for intermediate join data in case when the memory needed for join exceeds the memory limit on the UM. Although slower in performance as compared to a fully in-memory join, and bound by the temporary space on disk, it does allow such queries to complete.
+Disk-based joins enable such queries to use disk for intermediate join data in case when the memory needed for join exceeds the memory limit. Although slower in performance as compared to a fully in-memory join, and bound by the temporary space on disk, it does allow such queries to complete.
 
 {% hint style="info" %}
 Disk-based joins does not include aggregation and DML joins.
@@ -151,6 +147,7 @@ SET infinidb_use_import_for_batchinsert = n
 ```
 
 where n is:
+
 * 0 (disabled)
 * 1 (enabled)
 
@@ -176,13 +173,11 @@ If the following error is received, most likely with a transaction `LOAD DATA IN
 ERROR 1815 (HY000) at line 1 in file: 'ldi.sql': Internal error: CAL0006: IDB-2008: The version buffer overflowed. Increase VersionBufferFileSize or limit the rows to be processed.
 ```
 
-The `VersionBufferFileSize` setting is updated in the `ColumnStore.xml` typically located under `/usr/local/mariadb/columnstore/etc`. This dictates the size of the version buffer file on disk which provides DML transactional consistency. The default value is '1GB' which reserves up to a 1 Gigabyte file size. Modify this on the PM1 node and restart the system if you require a larger value.
+The `VersionBufferFileSize` setting is updated in the `ColumnStore.xml` typically located under `/usr/local/mariadb/columnstore/etc`. This dictates the size of the version buffer file on disk which provides DML transactional consistency. The default value is '1GB' which reserves up to a 1 Gigabyte file size. Modify this on the primary node and restart the system if you require a larger value.
 
 ## Local PrimProc Query Mode
 
-MariaDB ColumnStore has the ability to query data from just a single [PM](../architecture/columnstore-performance-module.md) instead of the whole database through the [UM](../architecture/columnstore-user-module.md). In order to accomplish this, the `infinidb_local_query` variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
-
-`<<toc title='' layout=standalone>>`
+MariaDB ColumnStore has the ability to query data from just a single node instead of the whole cluster. In order to accomplish this, the `infinidb_local_query` variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
 
 ### Enable Local PrimProc Query During Installation
 
@@ -208,10 +203,11 @@ SET infinidb_local_query = n
 ```
 
 where n is:
+
 * 0 (disabled)
 * 1 (enabled)
 
-At the session level, this variable applies only to executing a query on an individual [PrimProc](../architecture/columnstore-performance-module.md) and gives an error if executed on the [UM](../architecture/columnstore-user-module.md). The PrimProc must be set up with the local query option during installation.
+At the session level, this variable applies only to executing a query on an individual [PrimProc](../architecture/columnstore-performance-module.md). The PrimProc must be set up with the local query option during installation.
 
 ### Local PrimProc Query Examples
 
@@ -238,7 +234,7 @@ WHERE idbPm(fact.KEY) = idbLocalPm();
 
 The `infinidb_local_query` is set to `0` to allow query across all PrimProc nodes.
 
-The query is structured so that the UM process on the PrimProc node gets the fact table data locally from the PrimProc node (as indicated by the use of the [idbLocalPm()](../reference/columnstore-information-functions.md) function), while the dimension table data is extracted from all the PrimProc nodes.
+The query is structured so PrimProc gets the fact table data locally from the PrimProc node (as indicated by the use of the [idbLocalPm()](../reference/columnstore-information-functions.md) function), while the dimension table data is extracted from all the PrimProc nodes.
 
 Then you can execute the script to pipe it directly into cpimport:
 
@@ -255,6 +251,7 @@ SET infinidb_vtable_mode = n
 ```
 
 where n is:
+
 1. a generic, highly compatible row-by-row processing mode. Some WHERE clause components can be processed by ColumnStore, but joins are processed entirely by MySQL using a nested loop join mechanism.
 2. (the default) query syntax is evaluated by ColumnStore for compatibility with distributed execution and incompatible queries are rejected. Queries executed in this mode take advantage of distributed execution and typically result in higher performance.
 3. auto-switch mode: ColumnStore will attempt to process the query internally, if it cannot, it will automatically switch the query to run in row-by-row mode.
