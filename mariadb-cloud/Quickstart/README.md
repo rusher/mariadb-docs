@@ -1,4 +1,5 @@
 ---
+icon: rabbit
 layout:
   width: default
   title:
@@ -15,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Quickstart
+# Quickstart Guides
 
 The MariaDB Cloud database deployment time varies: a Serverless instance is ready in seconds, while a Provisioned database may take a few minutes. You can deploy on AWS, GCP, or Azure across nearly 50 global regions.
 
@@ -31,7 +32,7 @@ This quickstart guide will walk you through using the Portal.
 
 Go to [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using your Google, Github or LinkedIn credentials. Or, just use your Email address to sign up.
 
-<div align="left"><figure><img src="skysql-id.png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="mariadb-cloud-id.png" alt=""><figcaption></figcaption></figure></div>
 
 ## Step 2: Launch a Service
 

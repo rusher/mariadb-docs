@@ -38,12 +38,12 @@ layout:
 [Portal features](<Portal features/>)
 {% endcontent-ref %}
 
-{% content-ref url="Connecting to SkySQL DBs/" %}
-[Connecting to SkySQL DBs](<Connecting to SkySQL DBs/>)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="integrations/" %}
-[integrations](integrations/)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="Backup and Restore/" %}
@@ -58,8 +58,8 @@ layout:
 [Data offloading](<Data offloading/>)
 {% endcontent-ref %}
 
-{% content-ref url="SkyCopilot Guide/" %}
-[SkyCopilot Guide](<SkyCopilot Guide/>)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="High Availability, DR/" %}

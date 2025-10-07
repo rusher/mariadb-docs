@@ -140,7 +140,7 @@ Slave_Non_Transactional_Groups: 0
     Slave_Transactional_Groups: 0
 ```
 
-You can reference the replication status procedure [here](<../Reference Guide/Sky Stored Procedures.md#replication_status>).
+You can reference the replication status procedure [here](<../Reference Guide/Stored Procedures.md#replication_status>).
 
 ## Compatibility Notes
 

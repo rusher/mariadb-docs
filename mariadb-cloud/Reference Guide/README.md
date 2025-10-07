@@ -1,4 +1,5 @@
 ---
+icon: paperclip
 layout:
   width: default
   title:
@@ -15,5 +16,5 @@ layout:
     visible: true
 ---
 
-# Reference Guides
+# Reference
 

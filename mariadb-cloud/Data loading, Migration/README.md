@@ -65,7 +65,7 @@ MariaDB Cloud provides two diffeent options for self-service migration
 
 MariaDB Cloud Managed Migration is a REST-based service that handles the migration process, including data migration, schema migration, and user migration. It provides a follow us steps to set up a live replication of your database to MariaDB Cloud and various insights to monitor the migration process.
 
-* [Sky SQL Managed Migration Tutorial](SkySQL-managed-migration.md)
+* [Sky SQL Managed Migration Tutorial](mariadb-cloud-managed-migration.md)
 
 ### Option 2: Custom Migration
 

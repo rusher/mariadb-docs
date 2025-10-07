@@ -133,7 +133,7 @@ MariaDB Cloud includes a No-Code AI Agent Builder. This tool empowers domain exp
 
 {% stepper %}
 {% step %}
-### Defining the DataSource
+#### Defining the DataSource
 
 Ensure you have a clearly defined data source.
 
@@ -145,7 +145,7 @@ In this guide, we will connect to the default datasource "Demo DB" and use the N
 {% endstep %}
 
 {% step %}
-### Defining the Agent's Intent
+#### Defining the Agent's Intent
 
 Clearly outline the intent for your agent and its purpose. Provide enough details in the description to guide the agent creation process.
 
@@ -217,7 +217,7 @@ Table Relationships
 {% endstep %}
 
 {% step %}
-### Selecting Relevant Tables and Overcoming Schema Complexities
+#### Selecting Relevant Tables and Overcoming Schema Complexities
 
 As a general rule, avoid including more than 10 tables in a single AI agent's context. Large numbers of tables increase complexity, reduce accuracy, and make it harder for the agent to reason clearly about relationships. Instead, split responsibilities across multiple specialized agents, each focused on a specific domain or task. This improves performance, maintainability, and reliability.
 
@@ -261,7 +261,7 @@ Each agent has <10 tables, well-defined scope, and avoids overloading the model.
 {% endstep %}
 
 {% step %}
-### Pruning Unnecessary Columns
+#### Pruning Unnecessary Columns
 
 Always limit (prune) the columns included in an AI agent's context to only those that are truly required. This is especially important for wide tables — those with dozens or hundreds of columns — as including too many can overwhelm the model, dilute context, and reduce accuracy.
 
@@ -303,7 +303,7 @@ That's all the model needs to answer the question accurately.
 {% endstep %}
 
 {% step %}
-### Ensuring Essential Categorical Columns are Selected
+#### Ensuring Essential Categorical Columns are Selected
 
 Categorical columns provide structured context, making it easier for the agent to generate accurate queries by filtering and grouping data efficiently. These columns contain distinct, non-numeric values representing different categories or labels.
 
@@ -331,13 +331,13 @@ By ensuring categorical columns are selected and indexed properly, the agent can
 {% endstep %}
 
 {% step %}
-### Establishing 'Golden SQL' Benchmarks
+#### Establishing 'Golden SQL' Benchmarks
 
 Golden SQL queries serve as accuracy benchmarks for evaluating and guiding agent behavior. To be effective, these prompt/SQL pairs should closely reflect real-world questions users are likely to ask—the more natural and representative the phrasing, the better. It's important to include a diverse set of questions that span the full functional scope of the agent to ensure comprehensive coverage. We recommend creating at least 10 Golden SQL queries to provide a robust foundation for evaluation, consistency, and future tuning.
 {% endstep %}
 
 {% step %}
-### Testing and Refining by Running Sample Queries
+#### Testing and Refining by Running Sample Queries
 
 Once schema refinement is complete, test the agent using structured queries:
 

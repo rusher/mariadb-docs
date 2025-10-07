@@ -1,4 +1,5 @@
 ---
+icon: wrench
 layout:
   width: default
   title:

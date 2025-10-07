@@ -1,7 +1,14 @@
-# High Availability and DR
+---
+description: >-
+  This section covers options for high availability (HA) and disaster recovery
+  (DR).
+icon: chart-mixed
+---
+
+# High Availability & DR
 
 {% hint style="info" %}
-MariaDB Cloud provides HA using semi-synchronous replicas. Unlike hyperscalers these replicas are not standy DB servers but actively used for Reads. When the primary crashes our intelligent proxy allows us to failover near instantly to an alternate replica. Or, failback when the original primary recovers. Ensuring data consistency even when replicas have a replication lag through “causal reads”, or transaction replay.
+MariaDB Cloud provides HA using semi-synchronous replicas. Unlike hyperscalers these replicas are not standy database servers but actively used for Reads. When the primary crashes our intelligent proxy allows us to failover near instantly to an alternate replica. Or, failback when the original primary recovers. Ensuring data consistency even when replicas have a replication lag through “causal reads”, or transaction replay.
 {% endhint %}
 
 ## **Use 'Replicated Topology' for HA**
