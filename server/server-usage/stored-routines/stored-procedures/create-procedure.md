@@ -2,6 +2,32 @@
 
 ## Syntax
 
+{% tabs %} {% tab title="Current" %}
+```sql
+CREATE
+    [OR REPLACE]
+    [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]
+    PROCEDURE [IF NOT EXISTS] sp_name ([proc_parameter[,...]])
+    [characteristic ...] routine_body
+
+proc_parameter:
+    [ IN | OUT | INOUT ] param_name type [DEFAULT value or expression]
+
+type:
+    Any valid MariaDB data type
+
+characteristic:
+    LANGUAGE SQL
+  | [NOT] DETERMINISTIC
+  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
+  | SQL SECURITY { DEFINER | INVOKER }
+  | COMMENT 'string'
+
+routine_body:
+    Valid SQL procedure statement
+```
+{% endtab %}
+{% tab title="< 11.8.1" %}
 ```sql
 CREATE
     [OR REPLACE]
@@ -25,6 +51,8 @@ characteristic:
 routine_body:
     Valid SQL procedure statement
 ```
+
+{% endtab %} {% endtabs %}
 
 ## Description
 
@@ -97,6 +125,10 @@ value when the procedure returns. If you are calling the procedure\
 from within another stored procedure or function, you can also pass a\
 routine parameter or local routine variable as an `IN` or `INOUT`\
 parameter.
+
+### DEFAULT value or expression
+
+As of 11.8.1 each parameter can be defined as having a default value or expression. This can be useful if needing to add extra parameters to a procedure which is already in use. 
 
 ### DETERMINISTIC/NOT DETERMINISTIC
 
