@@ -2,7 +2,8 @@
 
 ## Syntax
 
-{% tabs %} {% tab title="Current" %}
+{% tabs %}
+{% tab title="Current" %}
 ```sql
 CREATE
     [OR REPLACE]
@@ -27,7 +28,8 @@ routine_body:
     Valid SQL procedure statement
 ```
 {% endtab %}
-{% tab title="< 11.8.1" %}
+
+{% tab title="< 11.8" %}
 ```sql
 CREATE
     [OR REPLACE]
@@ -51,8 +53,8 @@ characteristic:
 routine_body:
     Valid SQL procedure statement
 ```
-
-{% endtab %} {% endtabs %}
+{% endtab %}
+{% endtabs %}
 
 ## Description
 
@@ -128,7 +130,7 @@ parameter.
 
 ### DEFAULT value or expression
 
-As of 11.8.1 each parameter can be defined as having a default value or expression. This can be useful if needing to add extra parameters to a procedure which is already in use. 
+As of [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118), each parameter can be defined as having a default value or expression. This can be useful if needing to add extra parameters to a procedure which is already in use.
 
 ### DETERMINISTIC/NOT DETERMINISTIC
 
@@ -189,7 +191,7 @@ A subset of Oracle's PL/SQL language is supported in addition to the traditional
 ## Examples
 
 The following example shows a simple stored procedure that uses an `OUT`\
-parameter. It uses the DELIMITER command to set a new delimiter for the duration of the process — see [Delimiters in the mariadb client](broken-reference).
+parameter. It uses the DELIMITER command to set a new delimiter for the duration of the process — see [Delimiters in the mariadb client](broken-reference/).
 
 ```sql
 DELIMITER //
