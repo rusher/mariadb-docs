@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
 
-This page lists the most important SQL statements and contains links to their documentation pages. If you need a basic tutorial on how to use the MariaDB database server and how to execute simple commands, see [A MariaDB Primer](mariadb-usage-guide-1.md)...
+This page lists the most important SQL statements and contains links to their documentation pages. If you need a basic tutorial on how to use the MariaDB database server and how to execute simple commands, see [A MariaDB Primer](mariadb-usage-guide-1.md).
 
 Also see [Common MariaDB Queries](../../mariadb-quickstart-guides/mariadb-advanced-sql-guide.md) for examples of commonly-used queries.
 
