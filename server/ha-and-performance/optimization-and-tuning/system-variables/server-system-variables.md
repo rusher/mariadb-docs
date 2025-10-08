@@ -900,12 +900,12 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `host_cache_size`
 
-* Description: Number of host names that will be cached to avoid resolving. Setting to `0` disables the cache. Changing the value while the server is running causes an implicit [FLUSH HOSTS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md), clearing the host cache and truncating the [performance\_schema.host\_cache](../../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table.md) table. If you are connecting from a lot of different machines you should consider increasing.
+* Description: Number of host names that will be cached to avoid resolving. Setting to `0` disables the cache. Changing the value while the server is running causes an implicit [FLUSH HOSTS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md), clearing the host cache and truncating the [performance\_schema.host\_cache](../../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table.md) table. If you are connecting from a lot of different machines you should consider increasing. Some container configs explicitly set `host_cache_size` to `0`, rather than leave it as the default, `128`.
 * Command line: `--host-cache-size=#`.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `0`
+* Default Value: `128`
 * Range: `0` to `65536`
 
 #### `hostname`
