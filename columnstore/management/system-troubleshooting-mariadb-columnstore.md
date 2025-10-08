@@ -683,22 +683,22 @@ NOTE: This example is assuming it's a root user install
 
 ### Missing MariaDB ColumnStore Function or Engine
 
-After new Install or Upgrade, a MariaDB ColumnStore Function or Engine type might be missing from the MariaDB Database. If this occurs, you can run the following procedure on each of the UMs or PMs with UM front-end modules on the system. This procedure should get all of the Functions and Engines created.
+After new Install or Upgrade, a MariaDB ColumnStore Function or Engine type might be missing from the MariaDB Database. If this occurs, you can run the following procedure on each of the nodes on the system. This procedure should get all of the Functions and Engines created.
 
-From Performance Module #1
+From Performance Module #1:
 
 ```sql
 mcsadmin shutdownsystem y
 ```
 
-On all User Modules or Performance Modules with mysqld installed. This example assumes a root install in /usr/local/, run the following scripts
+On all nodes with mysqld installed. This example assumes a root install in /usr/local/, run the following scripts:
 
 ```sql
 /usr/local/mariadb/columnstore/bin/post-mysqld-install
 /usr/local/mariadb/columnstore/bin/post-mysql-install
 ```
 
-From Performance Module #1
+From Performance Module #1:
 
 ```sql
 mcsadmin startsystem y

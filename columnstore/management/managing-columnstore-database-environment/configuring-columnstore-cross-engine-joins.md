@@ -33,9 +33,9 @@ For version 1.2.0 onwards, the additional options in the section are supported t
        <TLSClientKey></TLSClientKey>
 ```
 
-This change must be made while the ColumnStore server is down. In a multi-node deployment, the change must be made on the PM1 node only as this is replicated to other instances upon restart.
+This change must be made while the ColumnStore server is down. In a multi-node deployment, the change must be made on the PrimProc[^1] node only as this is replicated to other instances upon restart.
 
-Check here on how to make changes via the command line to `Columnstore.xml`: [columnstore-configuration-file-update-and-distribution.md](../columnstore-system/columnstore-configuration-file-update-and-distribution.md)
+Read up on how to make changes via the command line to `Columnstore.xml`: [on this page](../columnstore-system/columnstore-configuration-file-update-and-distribution.md).
 
 ## Troubleshooting
 
@@ -55,7 +55,7 @@ Check here on how to make changes via the command line to `Columnstore.xml`: [co
 GRANT CREATE temporary tables ON infinidb_vtable.* TO mydbuser@127.0.0.1;
 ```
 
-* Confirm that the login used has the `SELECT` privilege on the table referenced in the cross-engine join. Verify by attempting to connect from each UM using mcsmysql and query the table you want to reference:
+* Confirm that the login used has the `SELECT` privilege on the table referenced in the cross-engine join. Verify by attempting to connect from each node using `mcsmysql` and query the table you want to reference:Prim
 
 ```sql
 mcsmysql -u mydbuser -p -h 127.0.0.1 
@@ -70,3 +70,5 @@ mcsmysql -u mydbuser -p -h 127.0.0.1
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
+
+[^1]: PrimProc is the ColumnStore Primitives Processor.
