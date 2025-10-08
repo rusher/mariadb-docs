@@ -259,7 +259,10 @@ The suffix can be upper or lower-case.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
-* Default Value: `utf8mb4`
+* Default Value:&#x20;
+  * \>=[ MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116): `utf8mb4`
+  * \>= [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106): `utf8mb3`
+  * <= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105): `utf8`
 
 #### `character_set_database`
 
