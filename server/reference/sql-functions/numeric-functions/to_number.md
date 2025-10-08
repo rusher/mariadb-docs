@@ -4,7 +4,7 @@
 `TO_NUMBER` is available from [MariaDB 12.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.2-rolling-release/mariadb-12.2-changes-and-improvements).
 {% endhint %}
 
-`TO_NUMBER` converts an expression to the NUMERIC data type.
+`TO_NUMBER` converts an expression to the [NUMERIC](../../data-types/numeric-data-types/numeric.md) data type.
 
 ## Syntax
 
@@ -22,7 +22,7 @@ The format parser understands the following components:
 * Digits: 0, 9
 * Hex digits: X
 * Group separators: comma (,) and G
-* Decimal delimiers: period (.) and D
+* Decimal delimiters: period (.) and D
 * Approximate number signature: EEEE
 * Currency/numeric flags: $ and B
 * Currency signatures: C, L, U
