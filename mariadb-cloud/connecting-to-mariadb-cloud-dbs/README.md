@@ -16,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Connecting to MariaDB Cloud
+# Connecting
 
 This page describes how to connect to a MariaDB Cloud database using a MariaDB-compatible client.
 
@@ -27,7 +27,7 @@ Access to all services is by default protected by a firewall. You need to IP whi
 
 {% hint style="danger" %}
 **Warning**: Using `0.0.0.0/0` will disable the firewall. Never do this for production databases.\
-For more details, go to the [Firewall](<../../Security/Configuring Firewall.md>) settings page.
+For more details, go to the [Firewall](<../Security/Configuring Firewall.md>) settings page.
 {% endhint %}
 
 ## Connecting Using the MariaDB Client
@@ -50,7 +50,7 @@ Unlike previous MariaDB Cloud versions, the current version no longer requires c
 There is a default config change in the 11.4.2 MariaDB client that requires SSL. This needs to be disabled by setting `--ssl-verify-server-cert=0`.
 {% endhint %}
 
-<figure><img src="../../Connecting to MariaDB Cloud DBs/connect_window.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Connecting to MariaDB Cloud DBs/connect_window.png" alt=""><figcaption></figcaption></figure>
 
 ### Install and Connect Using the MariaDB Client
 
@@ -89,7 +89,7 @@ Most of the SQL clients and editors natively support MariaDB. Most often you can
 
 The following GUI clients have been tested to properly connect with MariaDB Cloud and execute queries. Most SQL clients and editors natively support MariaDB. You can often select 'MySQL' as the connection type to connect to your MariaDB Cloud DB service.
 
-* [Connect using DBeaver](../../cloud-usage/database-tools/dbeaver.md) (CloudDBA recommended)
-* [Connect using DBGate](../../cloud-usage/database-tools/dbgate.md)
-* [Connect using HeidiSQL](../../cloud-usage/database-tools/heidisql.md)
-* [Connect using TablePlus](../../cloud-usage/database-tools/tableplus.md)
+* [Connect using DBeaver](../cloud-usage/database-tools/dbeaver.md) (CloudDBA recommended)
+* [Connect using DBGate](../cloud-usage/database-tools/dbgate.md)
+* [Connect using HeidiSQL](../cloud-usage/database-tools/heidisql.md)
+* [Connect using TablePlus](../cloud-usage/database-tools/tableplus.md)
