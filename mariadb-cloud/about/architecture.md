@@ -19,7 +19,54 @@ MariaDB Cloud Serverless is built on the principle: **"Don't change what works"*
 
 ## High-Level Architecture
 
-<figure><img src="../.gitbook/assets/serverless_architecture.png" alt=""><figcaption></figcaption></figure>
+```mermaid
+---
+config:
+  theme: neutral
+  layout: dagre
+---
+flowchart LR
+ subgraph cloud["Kubernetes Cluster"]
+    direction TB
+        proxies["Intelligent Proxy
+        Multitenant Intelligent Proxy
+        • Routing
+        • Load Balancing
+        • Failover"]
+        database["Database Server"]
+        serverpool@{ label: "Warm 'hot' DB Server Pool" }
+        operators["K8 Operator/Controllers
+ • Vertical Autoscaler
+ • Horizontal Autoscaler
+ • AutoPark"]
+  end
+    n3["Central Control Plane"] -- (1) Request operator to launch --> cloud
+    n4["Application Client"] <--> n5["Elastic Load Balancing"]
+    n5 <-- (5) Set up DNS endpoint for new service --> cloud
+    database <--> proxies
+    operators <-- (4) Register DB --> proxies
+    proxies --> serverpool
+    operators <-- (3) Scale to 1SCU --> database
+    serverpool -- (2) Checkout from pool, assign to user namespace --> database
+    proxies@{ shape: procs}
+    database@{ shape: cyl}
+    serverpool@{ shape: disk}
+    operators@{ shape: rounded}
+    n3@{ shape: rounded}
+    n4@{ shape: rounded}
+    n5@{ shape: hex}
+    style database fill:#C8E6C9,stroke:#757575
+    style serverpool fill:#C8E6C9,stroke:#757575
+    style n3 fill:#FFF9C4
+    style cloud fill:#BBDEFB,stroke:#000000
+    style n4 fill:#FFF9C4
+    style n5 fill:#FFD600
+    linkStyle 0 stroke:#FF6D00,fill:none
+    linkStyle 4 stroke:#FF6D00,fill:none
+    linkStyle 6 stroke:#FF6D00,fill:none
+    linkStyle 7 stroke:#FF6D00,fill:none
+```
+<!-- <figure><img src="../.gitbook/assets/serverless_architecture.png" alt=""><figcaption></figcaption></figure> -->
 
 ## Core Components
 
