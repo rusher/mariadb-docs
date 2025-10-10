@@ -65,6 +65,8 @@ Thanks, and enjoy MariaDB!
   * [CVE-2021-46659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46659)
   * [CVE-2022-0778](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778)
   * [CVE-2022-21595](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21595)
+  * [CVE-2022-31622](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31622)
+  * [CVE-2022-31623](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31623)
 
 Upgrading from 10.2 versions earlier than 10.2.17 is **highly recommended**\
 for all [**Galera**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) users due to bug [MDEV-12837](https://jira.mariadb.org/browse/MDEV-12837) which caused serious stability\
