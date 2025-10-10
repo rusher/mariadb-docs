@@ -4,7 +4,9 @@
 
 <a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="mariadb-10-6-22-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-106-series/mariadb-10-6-22-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.22/)
+[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/10.6.22/)
+
+**Release date:** 8 May 2025
 
 [MariaDB 10.6](what-is-mariadb-106.md) is a current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
@@ -54,11 +56,6 @@ Thanks, and enjoy MariaDB!
 
 * Upgrades fail on Windows ([MDEV-36128](https://jira.mariadb.org/browse/MDEV-36128))
 
-### OTHER
-
-* Field pointer may be uninitialized in fill\_record ([MDEV-36181](https://jira.mariadb.org/browse/MDEV-36181))
-* Wrong results from tables with a single record and an aggregate ([MDEV-35238](https://jira.mariadb.org/browse/MDEV-35238))
-
 ### Galera
 
 * [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.22
@@ -92,6 +89,12 @@ Thanks, and enjoy MariaDB!
 ### Plugin - Audit
 
 * Long server\_audit\_file\_path causes buffer overflow ([MDEV-36245](https://jira.mariadb.org/browse/MDEV-36245))
+
+### General
+
+* As per the [MariaDB Deprecation Policy](../about/platform-deprecation-policy.md), this will be the last release of [MariaDB 10.6](what-is-mariadb-106.md) for Ubuntu 20.04 LTS 'focal'
+* Field pointer may be uninitialized in fill\_record ([MDEV-36181](https://jira.mariadb.org/browse/MDEV-36181))
+* Wrong results from tables with a single record and an aggregate ([MDEV-35238](https://jira.mariadb.org/browse/MDEV-35238))
 
 ### Security
 
