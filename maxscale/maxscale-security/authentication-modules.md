@@ -1,12 +1,21 @@
 # Authentication Modules
 
 This document describes general MySQL protocol authentication in MaxScale. For
-REST-api authentication, see the [configuration guide](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and the [REST-api guide](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md).
+REST-api authentication, see the
+[configuration guide](../maxscale-management/deployment/maxscale-configuration-guide.md)
+and the
+[REST-api guide](../reference/maxscale-rest-api/maxscale-rest-api.md).
 
 Similar to the MariaDB Server, MaxScale uses authentication plugins to implement
 different authentication schemes for incoming clients. The same plugins also
 handle authenticating the clients to backend servers. The authentication plugins
-available in MaxScale are [standard MySQL password](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-mariadbmysql-authenticator.md),[GSSAPI](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-gssapi-client-authenticator.md) and [pluggable authentication modules (PAM)](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-pam-authenticator.md).
+available in MaxScale are
+[standard MySQL password](../reference/maxscale-authenticators/maxscale-mariadb-mysql-authenticator.md),
+[GSSAPI](../reference/maxscale-authenticators/maxscale-gssapi-client-authenticator.md),
+[ed25519](../reference/maxscale-authenticators/maxscale-ed25519-authenticator.md),
+[PARSEC](../reference/maxscale-authenticators/maxscale-parsec-authenticator.md)
+and
+[pluggable authentication modules (PAM)](../reference/maxscale-authenticators/maxscale-pam-authenticator.md).
 
 Most of the authentication processing is performed on the protocol level, before
 handing it over to one of the plugins. This shared part is described in this
@@ -35,7 +44,7 @@ does not always work, in which case the client should try to log in again.
 
 As the UAM is shared between all listeners of a service, its settings are
 defined in the service configuration. For more information, search the
-[configuration guide](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+[configuration guide](../maxscale-management/deployment/maxscale-configuration-guide.md)
 for _users\_refresh\_time_, _users\_refresh\_interval_ and
 _auth\_all\_servers_. Other settings which affect how the UAM connects to backends
 are the global settings _auth\_connect\_timeout_ and _local\_address_, and
@@ -44,8 +53,8 @@ the various server-level ssl-settings.
 ### Required grants
 
 To properly fetch user account information, the MaxScale service user must be
-able to read from various tables in the _mysql_-database: _user_, _db_,_tables\_priv_,
-_columns\_priv_, _procs\_priv_, _proxies\_priv_ and _roles\_mapping_.
+able to read from various tables in the _mysql_-database: _user_, _db_,
+_tables\_priv_, _columns\_priv_, _procs\_priv_, _proxies\_priv_, _global\_priv_ and _roles\_mapping_.
 The user should also have the _SHOW DATABASES_-grant.
 
 The *SET USER* grant is optional but recommended if MaxScale is used with
@@ -53,7 +62,7 @@ MariaDB version 12 or newer. Granting it to the service user allows the backend
 authentication to use the service credentials to log in after which the final
 user account is selected using the `SET SESSION AUTHORIZATION` command. For more
 information, refer to the documentation of the
-[use_service_credentials](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#use_service_credentials)
+[use_service_credentials](../maxscale-management/deployment/maxscale-configuration-guide.md#use_service_credentials)
 setting.
 
 ```sql
@@ -89,7 +98,7 @@ There are two primary ways to deal with this:
 
 1. Duplicate user accounts. For every user account with a restricted hostname an
    equivalent user account for MaxScale is added (`'alice'@'maxscale-ip'`).
-2. Use [proxy protocol](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+2. Use [proxy protocol](../maxscale-management/deployment/maxscale-configuration-guide.md#proxy_protocol).
 
 Option 1 limits the passwords for user accounts with shared usernames. Such
 accounts must use the same password since they will effectively share the
@@ -123,7 +132,7 @@ authenticator_options=skip_authentication=true,lower_case_table_names=1
 
 ### `skip_authentication`
 
-* Type: [boolean](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -150,7 +159,7 @@ authenticator_options=skip_authentication=true
 
 ### `match_host`
 
-* Type: [boolean](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
