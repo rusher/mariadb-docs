@@ -1,9 +1,9 @@
 # Table of contents
 
 * [MariaDB Cloud](README.md)
-  * [Key Features & Capabilities](/key-features-and-capabilities.md)
-  * [MariaDB Cloud Serverless](readme/serverless.md)
-  * [MariaDB Cloud Serverless Architecture](readme/architecture.md)
+  * [Key Features & Capabilities](about/key-features-and-capabilities.md)
+  * [MariaDB Cloud Serverless](about/serverless.md)
+  * [MariaDB Cloud Serverless Architecture](about/architecture.md)
 * [Quickstart Guides](Quickstart/README.md)
   * [Launch DB Using REST API](<Quickstart/Launch DB using the REST API.md>)
   * [Launch DB Using Terraform Provider](<Quickstart/Launch DB using the Terraform Provider.md>)
