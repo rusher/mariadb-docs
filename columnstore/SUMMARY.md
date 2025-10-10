@@ -80,6 +80,7 @@
     * [Backup and Restore with Object Storage](management/column-store-backup-and-restore/mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)
     * [Backup and Restore with Shared Local Storage](management/column-store-backup-and-restore/mariadb-enterprise-columnstore-backup-and-restore-with-shared-local-storage.md)
   * [Extent Map Backup & Recovery](management/extent-map-backup-recovery.md)
+  * [Upgrading MariaDB Enterprise ColumnStore (Alpha)](management/upgrades.md)
   * [System Troubleshooting MariaDB ColumnStore](management/system-troubleshooting-mariadb-columnstore.md)
   * [ColumnStore and Recursive CTE Limitations](management/columnstore-and-recursive-cte-limitations.md)
   * [Optimizing Linux Kernel Parameters for MariaDB ColumnStore](management/optimizing-linux-kernel-parameters-for-mariadb-columnstore.md)
