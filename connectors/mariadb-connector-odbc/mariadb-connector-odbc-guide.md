@@ -17,20 +17,9 @@ The current release series are:
 
 ## Recent Releases
 
-{% hint style="info" %}
-The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/release-criteria) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.2/3.2.5)
-{% endhint %}
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/UaJhKjcMny5efkRZHsG1/" %}
 
-| Date        | Release                       | Status      | Release Notes                                                                              | Changelog                                                                                         |
-| ----------- | ----------------------------- | ----------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
-| 24 Feb 2025 | MariaDB Connector/ODBC 3.2.5  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.2/3.2.5)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/3.2/3.2.5)  |
-| 14 Nov 2024 | MariaDB Connector/ODBC 3.2.4  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.2/3.2.4)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/3.2/3.2.4)  |
-| 26 Aug 2024 | MariaDB Connector/ODBC 3.2.3  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.2/3.2.3)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/3.2/3.2.3)  |
-| 24 Feb 2025 | MariaDB Connector/ODBC 3.1.21 | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.1/3.1.21) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/3.1/3.1.21) |
-| 4 Dec 2023  | MariaDB Connector/ODBC 3.1.20 | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.1/3.1.20) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/3.1/3.1.20) |
-| 7 Jul 2023  | MariaDB Connector/ODBC 3.1.19 | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.1/3.1.19) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/3.1/3.1.19) |
-
-[see all releases](broken-reference)
+<p align="center"><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/all-releases">See all MariaDB Connector/ODBC releases</a></p>
 
 ## Installing MariaDB Connector/ODBC
 

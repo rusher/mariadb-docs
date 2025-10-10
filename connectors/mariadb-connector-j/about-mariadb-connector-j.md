@@ -4,7 +4,7 @@
 
 {% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/cE4eh1fj6G5Yt6gTKoau/" %}
 
-<p align="center"><a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector/" class="button primary">Download MariaDB Connector/J</a> <a href="broken-reference" class="button secondary">List of MariaDB Connector/J Releases</a></p>
+<p align="center"><a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector/" class="button primary">Download MariaDB Connector/J</a> <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/all-releases" class="button secondary">List of MariaDB Connector/J Releases</a></p>
 
 MariaDB Connector/J is used to connect applications developed in Java to MariaDB and MySQL databases using the standard JDBC API. The library is LGPL licensed.
 
