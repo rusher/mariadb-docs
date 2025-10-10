@@ -1,44 +1,9 @@
----
-hidden: true
----
-
-# R Statistical Programming Using MariaDB as the Background Database
-
-1. [Introduction to R "Introduction to R"](r-statistical-programming-using-mariadb-as-the-background-database.md#introduction-to-r)
-2. [The R Environment "The R Environment"](r-statistical-programming-using-mariadb-as-the-background-database.md#the-r-environment)
-3. [Using R with MariaDB "Using R with MariaDB"](r-statistical-programming-using-mariadb-as-the-background-database.md#using-r-with-mariadb)
-4. [R Installation "R Installation"](r-statistical-programming-using-mariadb-as-the-background-database.md#r-installation)
-5. [Data Transfer between R and MariaDB "Data Transfer between R and MariaDB"](r-statistical-programming-using-mariadb-as-the-background-database.md#data-transfer-between-r-and-mariadb)
-
-```sql
-1. [Package: "odbc" "Package: "odbc""](#package-odbc)
-```
-
-```sql
-1. [Package: "RMariaDB" "Package: "RMariaDB""](#package-rmariadb)
-1. [Other Packages: "readr", "RODBC" "Other Packages: "readr", "RODBC""](#other-packages-readr-rodbc)
-```
-
-1. [R Programming Resources "R Programming Resources"](r-statistical-programming-using-mariadb-as-the-background-database.md#r-programming-resources)
-
-```sql
-1. [A) Programming "A) Programming"](#a-programming)
-```
-
-```sql
-1. [B) Statistics "B) Statistics"](#b-statistics)
-1. [C) Cheatsheets: Concept Summary "C) Cheatsheets: Concept Summary"](#c-cheatsheets-concept-summary)
-1. [D) Search Engine & R Package Spotlight "D) Search Engine & R Package Spotlight"](#d-search-engine-r-package-spotlight)
-1. [E) Statistical / Unsupervised Machine Learning, Deep Learning and Artificial Intelligence "E) Statistical / Unsupervised Machine Learning, Deep Learning and Artificial Intelligence"](#e-statistical-unsupervised-machine-learning-deep-learning-and-artificial-intelligence)
-1. [F) Text Mining "F) Text Mining"](#f-text-mining)
-1. [G) Shiny Web Apps & RMarkdown Documents "G) Shiny Web Apps & RMarkdown Documents"](#g-shiny-web-apps-rmarkdown-documents)
-1. [H) Advanced R Resources "H) Advanced R Resources"](#h-advanced-r-resources)
-```
+# Using MariaDB With R
 
 ## Introduction to R
 
 `R` is a language and environment for statistical computing and graphics.\
-`R` provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …), graphical techniques, machine learning packages and is highly extensible.
+`R` provides a wide variety of statistical (linear and nonlinear modeling, classical statistical tests, time-series analysis, classification, clustering, …), graphical techniques, machine learning packages and is highly extensible.
 
 One of `R’s` strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. Great care has been taken over the defaults for the minor design choices in graphics, but the user retains full control.
 
