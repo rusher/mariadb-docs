@@ -1,9 +1,6 @@
 # Table of contents
 
 * [MariaDB Cloud](README.md)
-
-# About
-
   * [Key Features & Capabilities](about/key-features-and-capabilities.md)
   * [MariaDB Cloud Serverless](about/serverless.md)
   * [MariaDB Cloud Serverless Architecture](about/architecture.md)
