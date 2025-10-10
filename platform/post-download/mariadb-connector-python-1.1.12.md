@@ -5,7 +5,7 @@
 ## About this Release
 
 * MariaDB Connector/Python 1.1.12 was released on 24 Feb 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/python/mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-12-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/python/1.1/1.1.12)
 * This release is Stable (GA) maturity
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-python)
 

@@ -10,7 +10,7 @@ noIndex: true
 
 * MariaDB Connector/J 1.7.2 was released on 20 Feb 2018.
 * Please note: Newer releases exist within the MariaDB Connector/J 1.7 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.7/mariadb-connector-j-172-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.7/1.7.2)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j).
 

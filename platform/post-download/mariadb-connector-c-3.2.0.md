@@ -10,7 +10,7 @@ noIndex: true
 
 * MariaDB Connector/C 3.2.0 was released on 10 Jun 2021.
 * Please note: Newer releases exist within the MariaDB Connector/C 3.2 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/c/mariadb-connector-c-32-release-notes/mariadb-connector-c-320-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/c/3.2/3.2.0)
 * This release is Beta maturity. Only Stable (GA) releases should be used in production.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c).
 
