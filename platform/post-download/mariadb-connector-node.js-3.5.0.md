@@ -1,20 +1,20 @@
-# MariaDB Connector/Python 1.1.13
+# MariaDB Connector/Node.js 3.5.0
 
 {% @marketo/form formId="4279" %}
 
 ## About this Release
 
-* MariaDB Connector/Python 1.1.13 was released on 15 Jul 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/python/1.1/1.1.13)
-* This release is Stable (GA) maturity
-* For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-python)
+* MariaDB Connector/Node.js 3.5.0 was released on 10 Oct 2025
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/3.x/3.5.0)
+* This release is Release Candidate (RC) maturity
+* For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs)
 
 ## Release History
 
-* The prior release in this series was MariaDB Connector/Python 1.1.12, released on 24 Feb 2025
-* This release (MariaDB Connector/Python 1.1.13) was released on 15 Jul 2025
+* The prior release was MariaDB Connector/Node.js 3.4.5, released on 25 Jul 2025
+* This release (MariaDB Connector/Node.js 3.5.0) was released on 10 Oct 2025
 
-{% include "../.gitbook/includes/most-recent-python.md" %}
+{% include "../.gitbook/includes/most-recent-nodejs.md" %}
 
 ## Useful Resources
 

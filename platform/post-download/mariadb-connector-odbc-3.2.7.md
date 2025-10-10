@@ -1,20 +1,20 @@
-# MariaDB Connector/Python 1.1.13
+# MariaDB Connector/ODBC 3.2.7
 
 {% @marketo/form formId="4279" %}
 
 ## About this Release
 
-* MariaDB Connector/Python 1.1.13 was released on 15 Jul 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/python/1.1/1.1.13)
+* MariaDB Connector/ODBC 3.2.7 was released on 10 Oct 2025
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.2/3.2.7)
 * This release is Stable (GA) maturity
-* For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-python)
+* For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc)
 
 ## Release History
 
-* The prior release in this series was MariaDB Connector/Python 1.1.12, released on 24 Feb 2025
-* This release (MariaDB Connector/Python 1.1.13) was released on 15 Jul 2025
+* The prior release in this series was MariaDB Connector/ODBC 3.2.6, released on 30 May 2025
+* This release (MariaDB Connector/ODBC 3.2.7) was released on 10 Oct 2025
 
-{% include "../.gitbook/includes/most-recent-python.md" %}
+{% include "../.gitbook/includes/most-recent-odbc.md" %}
 
 ## Useful Resources
 
