@@ -26,3 +26,7 @@
 | [1.0.2](1.0/1.0.2.md) | 2022-10-11   | Stable (GA)    |
 | [1.0.1](1.0/1.0.1.md) | 2021-06-17   | Stable (GA)    |
 | [1.0.0](1.0/1.0.0.md) | 2021-03-18   | Stable (GA)    |
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
+{% @marketo/form formid="4316" formId="4316" %}
