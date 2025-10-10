@@ -75,6 +75,8 @@ Thanks, and enjoy MariaDB!
   * [CVE-2021-46659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46659)
   * [CVE-2022-0778](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778)
   * [CVE-2022-21595](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21595)
+  * [CVE-2022-31622](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31622)
+  * [CVE-2022-31623](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31623)
 
 ## Changelog
 
