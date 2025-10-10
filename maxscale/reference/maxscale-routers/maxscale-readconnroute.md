@@ -32,11 +32,11 @@ fixed when the client connects also means that routing hints are ignored.
 ## Settings
 
 For more details about the standard service parameters, refer to the
-[Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+[Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 
 ### `router_options`
 
-* Type: [enum\_mask](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `master`, `slave`, `synced`, `running`
@@ -74,7 +74,7 @@ first in the _servers_ parameter for the service is chosen.
 
 ### `master_accept_reads`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -90,14 +90,14 @@ By default `master_accept_reads=true`.
 
 ### `max_replication_lag`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 0s
 
 The maximum acceptable replication lag. The value is in seconds and is
 specified as documented
-[here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+[here](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 The default value is `0s`, which means that the lag is ignored.
 
 The replication lag of a server must be less than the configured value in order

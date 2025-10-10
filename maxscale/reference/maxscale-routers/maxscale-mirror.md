@@ -6,7 +6,8 @@
 
 The `mirror` router is designed for data consistency and database behavior
 verification during system upgrades. It allows statement duplication to multiple
-servers in a manner similar to that of the [Tee filter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-tee-filter.md) with exporting of collected query metrics.
+servers in a manner similar to that of the [Tee filter](../maxscale-filters/maxscale-tee-filter.md)
+with exporting of collected query metrics.
 
 For each executed query the router exports a JSON object that describes the
 query results and has the following fields:
@@ -49,7 +50,7 @@ does not create new connections after the initial connections are created.
 
 #### `exporter`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: Yes
 * Dynamic: Yes
 * Values: `log`, `file`, `kafka`
@@ -107,7 +108,7 @@ This is a mandatory parameter when configured with `exporter=kafka`.
 
 #### `on_error`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Default: `ignore`
 * Mandatory: No
 * Dynamic: Yes
@@ -126,7 +127,7 @@ failing backends.
 
 #### `report`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Default: `always`
 * Mandatory: No
 * Dynamic: Yes

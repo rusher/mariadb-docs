@@ -37,7 +37,7 @@ The Regex filter has two mandatory parameters: _match_ and _replace_.
 
 #### `match`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: Yes
 * Dynamic: Yes
 
@@ -50,13 +50,13 @@ options=case
 
 #### `options`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`
 * Default: `ignorecase`
 
-The _options_-parameter affects how the patterns are compiled as [usual](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+The _options_-parameter affects how the patterns are compiled as [usual](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 
 #### `replace`
 
@@ -130,7 +130,7 @@ The optional log\_trace parameter toggles the logging of non-matching and
 matching queries with their replacements into the log file on the _info_ level.
 This is the preferred method of diagnosing the matching of queries since the log
 level can be changed at runtime. For more details about logging levels and
-session specific logging, please read the [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+session specific logging, please read the [Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 
 ```
 log_trace=true

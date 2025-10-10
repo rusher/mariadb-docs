@@ -406,11 +406,10 @@ fields.
   * The monitor module to use
 
 * `data.attributes.parameters.user`
- * The [`user`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariad
-b-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use
+ * The [`user`](../../maxscale-management/deployment/maxscale-configuration-guide.md#user) to use
 
 * `data.attributes.parameters.password`
-  * The [password](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use
+  * The [password](../../maxscale-management/deployment/maxscale-configuration-guide.md#password) to use
 
 All monitor parameters can be defined at creation time.
 
@@ -467,14 +466,14 @@ monitor.
 ### Modifiable Fields
 
 The following standard server parameter can be modified.
-
-- [user](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md#user)
-- [password](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md#password)
-- [monitor_interval](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md#monitor_interval)
-- [backend_connect_timeout](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md#backend_connect_timeout)
-- [backend_write_timeout](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md#backend_write_timeout)
-- [backend_read_timeout](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md#backend_read_timeout)
-- [backend_connect_attempts](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md#backend_connect_attempts)
+maxscale-monitors/common-monitor-parameters.md
+- [user](../maxscale-monitors/common-monitor-parameters.md#user)
+- [password](../maxscale-monitors/common-monitor-parameters.md#password)
+- [monitor_interval](../maxscale-monitors/common-monitor-parameters.md#monitor_interval)
+- [backend_connect_timeout](../maxscale-monitors/common-monitor-parameters.md#backend_connect_timeout)
+- [backend_write_timeout](../maxscale-monitors/common-monitor-parameters.md#backend_write_timeout)
+- [backend_read_timeout](../maxscale-monitors/common-monitor-parameters.md#backend_read_timeout)
+- [backend_connect_attempts](../maxscale-monitors/common-monitor-parameters.md#backend_connect_attempts)
 
 In addition to these standard parameters, the monitor specific parameters can
 also be modified. Refer to the monitor module documentation for details on these

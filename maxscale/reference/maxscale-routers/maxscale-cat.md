@@ -10,7 +10,8 @@ release.
 
 ### Configuration
 
-The router has no special parameters. To use it, define a service with`router=cat` and add the servers you want to use.
+The router has no special parameters. To use it, define a service with
+`router=cat` and add the servers you want to use.
 
 ### Behavior
 
@@ -35,8 +36,11 @@ be closed.
 
 ### Example
 
-Here is a simple example service definition that uses the servers from the [Configuring Servers](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-configuring-servers.md) tutorial and the
-credentials from the [MaxScale Tutorial](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
+Here is a simple example service definition that uses the servers from the
+[Configuring Servers](../../mariadb-maxscale-tutorials/configuring-servers.md)
+tutorial and the
+credentials from the
+[MaxScale Tutorial](../../mariadb-maxscale-tutorials/setting-up-mariadb-maxscale.md).
 
 ```
 [concat-service]

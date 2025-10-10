@@ -44,7 +44,7 @@ Readwritesplit router-specific settings are specified in the configuration file
 of MariaDB MaxScale in its specific section. The section can be freely named but
 the name is used later as a reference in a listener section.
 
-For more details about the standard service parameters, refer to the [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+For more details about the standard service parameters, refer to the [Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 
 Starting with 2.3, all router parameters can be configured at runtime. Use`maxctrl alter service` to modify them. The changed configuration will only be
 taken into use by new sessions.
@@ -127,7 +127,7 @@ lifetime of the client connections is short.
 
 ### `max_replication_lag`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 0s
@@ -148,7 +148,7 @@ visible for reads done on the replica. This is mainly due to the method of
 replication lag measurement. For a feature that guarantees this, refer to [causal\_reads](maxscale-readwritesplit.md#causal_reads).
 
 The lag is specified as documented
-[here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+[here](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 Note that since the granularity of the lag is seconds, a lag specified in
 milliseconds will be rejected, even if the duration is longer than a second.
 
@@ -169,7 +169,7 @@ seconds (`replication lag > MAX(300, 2 * max_replication_lag)`).
 
 ### `use_sql_variables_in`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `master`, `all`
@@ -219,7 +219,7 @@ SELECT @myid; -- Might return 1 or 0
 
 ### `master_reconnection`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true (>= MaxScale 24.02), false(<= MaxScale 23.08)
@@ -258,7 +258,7 @@ without any risk to the consistency of the database.
 
 ### `slave_selection_criteria`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `least_current_operations`, `adaptive_routing`, `least_behind_master`, `least_router_connections`, `least_global_connections`
@@ -330,7 +330,7 @@ future MaxScale release.
 
 ### `master_accept_reads`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -351,7 +351,7 @@ master_accept_reads=true
 
 ### `strict_multi_stmt`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -374,7 +374,7 @@ strict_multi_stmt=true
 
 ### `strict_sp_calls`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -386,7 +386,7 @@ All warnings and restrictions that apply to `strict_multi_stmt` also apply to`st
 
 ### `strict_tmp_tables`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true (>= MaxScale 24.02), false (<= MaxScale 23.08)
@@ -404,7 +404,7 @@ the session is closed.
 
 ### `master_failure_mode`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `fail_instantly`, `fail_on_write`, `error_on_write`
@@ -430,7 +430,7 @@ will not be closed even if all backend connections for that session have
 failed. This is done in the hopes that before the next query from the idle
 session arrives, a reconnection to one of the replicas is made. However, this can
 leave idle connections around unless the client application actively closes
-them. To prevent this, use the [connection\_timeout](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+them. To prevent this, use the [connection\_timeout](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 parameter.
 
 **Note:** If `master_failure_mode` is set to `error_on_write` and the connection
@@ -441,7 +441,7 @@ session can recover if one of the replicas is promoted as the primary.
 
 ### `retry_failed_reads`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -459,7 +459,7 @@ possible when `transaction_replay` is enabled.
 
 ### `delayed_retry`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -495,14 +495,14 @@ risk.
 
 ### `delayed_retry_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 10s
 
 The duration to wait until an error is returned to the client when`delayed_retry` is enabled.
 
-The timeout is specified as documented [here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md). If no explicit unit
+The timeout is specified as documented [here](../../maxscale-management/deployment/maxscale-configuration-guide.md). If no explicit unit
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent
 versions a value without a unit may be rejected. Note that since the granularity
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,
@@ -510,7 +510,7 @@ even if the duration is longer than a second.
 
 ### `transaction_replay`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -537,7 +537,7 @@ with transaction replay.
 
 ### `transaction_replay_max_size`
 
-* Type: [size](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 1 MiB
@@ -555,7 +555,7 @@ is ever exceeded, a message will be logged at the info level.
 The number of times that this limit has been exceeded is shown in`maxctrl show
 service` as `trx_max_size_exceeded`.
 
-Read [the configuration guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+Read [the configuration guide](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 for more details on size type parameters in MaxScale.
 
 ### `transaction_replay_attempts`
@@ -576,7 +576,7 @@ attempts is reset.
 
 ### `transaction_replay_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 30s (>= MaxScale 24.02), 0s (<= MaxScale 23.08)
@@ -584,7 +584,7 @@ attempts is reset.
 The time how long transactions are attempted for. To explicitly disable this
 feature, set the value to 0 seconds.
 
-The timeout is [a duration type](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+The timeout is [a duration type](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 and the value must include a unit for the duration.
 
 When `transaction_replay_timeout` is enabled, the time a transaction replay can
@@ -610,7 +610,7 @@ timeouts for transaction replay and is by default set to 30 seconds in MaxScale
 
 ### `transaction_replay_retry_on_deadlock`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -625,7 +625,7 @@ transaction checksum error is encountered.
 
 ### `transaction_replay_safe_commit`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -660,7 +660,7 @@ SQL is correctly formed and compatible with this behavior.
 
 ### `transaction_replay_retry_on_mismatch`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -674,7 +674,7 @@ or`transaction_replay_attempts`).
 
 ### `transaction_replay_checksum`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `full`, `result_only`, `no_insert_id`
@@ -709,12 +709,12 @@ Possible values are:
 ### `optimistic_trx`
 
 This feature has been moved into the
-[OptimisticTrx](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md)
+[OptimisticTrx](../maxscale-filters/maxscale-optimistic-transaction-execution-filter.md)
 filter in MaxScale 25.01 and the parameter has been removed from readwritesplit.
 
 ### `causal_reads`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `local`, `global`, `fast`, `fast_global`, `universal`, `fast_universal`
@@ -794,7 +794,7 @@ The possible values for this parameter are:
   read latency at the cost of read scalability while still retaining the
   causality guarantees for reads. This functionality can also be considered an
   improved version of the functionality that the
-  [CCRFilter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-consistent-critical-read-filter.md)
+  [CCRFilter](../maxscale-filters/maxscale-consistent-critical-read-filter.md)
   module provides.
 * `fast_global`
 * This mode is identical to the `fast` mode except that it uses the global
@@ -970,14 +970,14 @@ server which would cause the connection to be closed and a warning to be logged.
 
 ### `causal_reads_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 10s
 
 The timeout for the replica synchronization done by `causal_reads`.
 
-The timeout is specified as documented [here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md). If no explicit unit
+The timeout is specified as documented [here](../../maxscale-management/deployment/maxscale-configuration-guide.md). If no explicit unit
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent
 versions a value without a unit may be rejected. Note that since the granularity
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,
@@ -985,7 +985,7 @@ even if the duration is longer than a second.
 
 ### `lazy_connect`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -1015,7 +1015,7 @@ primary node if one was available.
 ### `reuse_prepared_statements`
 
 This feature has been moved into the
-[PsReuse](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md)
+[PsReuse](../maxscale-filters/maxscale-psreuse-filter.md)
 filter in MaxScale 25.01 and the parameter has been removed from readwritesplit.
 
 ### `sync_transaction`
@@ -1193,7 +1193,7 @@ rules govern how readwritesplit behaves with servers that have different ranks.
 ## Routing hints
 
 The readwritesplit router supports routing hints. For a detailed guide on hint
-syntax and functionality, please read [this](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-hint-syntax.md)
+syntax and functionality, please read [this](../maxscale-filters/maxscale-hintfilter.md)
 document.
 
 **Note**: Routing hints will always have the highest priority when a routing
@@ -1485,7 +1485,8 @@ transaction that would be routed to more than one node.
 **Limitations in multi-statement handling**
 
 When a multi-statement query is executed through the readwritesplit router, it
-will always be routed to the primary. See [strict\_multi\_stmt](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md) for more
+will always be routed to the primary. See
+[strict\_multi\_stmt](#strict_multi_stmt) for more
 details.
 
 If the multi-statement query creates a temporary table, it will not be

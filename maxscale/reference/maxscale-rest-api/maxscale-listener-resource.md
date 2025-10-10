@@ -324,7 +324,7 @@ The following is the minimal required JSON object for defining a new listener.
 }
 ```
 
-Refer to the [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for
+Refer to the [Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md) for
 a full list of listener parameters.
 
 #### Response

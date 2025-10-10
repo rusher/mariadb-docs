@@ -89,7 +89,7 @@ will be read again if a reconnection to either Kafka or MariaDB occurs.
 
 #### `kafka_sasl_mechanism`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `PLAIN`, `SCRAM-SHA-256`, `SCRAM-SHA-512`
@@ -119,7 +119,7 @@ also be provided.
 
 #### `kafka_ssl`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -156,7 +156,7 @@ SSL private key file in PEM format. If this parameter is defined,`kafka_ssl_cert
 
 #### `table_name_in`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `topic`, `key`
@@ -183,7 +183,7 @@ the name would be:
 
 #### `timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `5000ms`

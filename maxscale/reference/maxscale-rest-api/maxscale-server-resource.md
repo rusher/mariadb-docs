@@ -841,12 +841,12 @@ least the following fields.
   * Type of the object, must be `servers`
 
 * `data.attributes.parameters.address` OR `data.attributes.parameters.socket`
-  * The [`address`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#address) or
-    [`socket`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#socket) to use. Only
+  * The [`address`](../../maxscale-management/deployment/maxscale-configuration-guide.md#address) or
+    [`socket`](../../maxscale-management/deployment/maxscale-configuration-guide.md#socket) to use. Only
     one of the fields can be defined.
 
 * `data.attributes.parameters.port`
-  * The [`port`](../../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#port) to use. Needs
+  * The [`port`](../../../maxscale-management/deployment/maxscale-configuration-guide.md#port) to use. Needs
     to be defined if the `address` field is defined.
 
 The following is the minimal required JSON object for defining a new server.

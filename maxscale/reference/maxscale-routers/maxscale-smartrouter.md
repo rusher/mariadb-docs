@@ -20,7 +20,8 @@ SmartRouter is configured as a service that either routes to other MaxScale
 routers or plain servers. Although one can configure SmartRouter to use a plain
 server directly, we refer to the configured "servers" as clusters.
 
-For details about the standard service parameters, refer to the [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+For details about the standard service parameters, refer to the
+[Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 
 #### `master`
 
@@ -34,7 +35,8 @@ ReadWriteSplit. This document does not go into details about setting up
 primary-replica clusters, but suffice to say, that when setting up the ColumnStore
 servers they should be configured to be replicas of a MariaDB server running an
 InnoDB engine.
-The ReadWriteSplit [documentation](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md) has more on primary-replica setup.
+The ReadWriteSplit [documentation](maxscale-readwritesplit.md)
+has more on primary-replica setup.
 
 **Example**
 

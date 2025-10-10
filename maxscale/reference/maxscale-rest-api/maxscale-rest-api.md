@@ -12,7 +12,8 @@ of the comment and extend to the end of the current line.
 
 ## Configuration
 
-Read the [REST API](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#rest-api-configuration)
+Read the
+[REST API](../../maxscale-management/deployment/maxscale-configuration-guide.md#rest-api-configuration)
 section of the configuration guide for more details on how to configure the REST API.
 
 ## Authentication
@@ -24,7 +25,7 @@ user is `admin:mariadb`.
 It is highly recommended to enable HTTPS on the MaxScale REST API to make the
 communication between the client and MaxScale secure. Without it, the passwords
 can be intercepted from the network traffic. Refer to the
-[Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#admin_ssl_key) for more
+[Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md#admin_ssl_key) for more
 details on how to enable HTTPS for the MaxScale REST API.
 
 For more details on how administrative interface users are created and managed,
@@ -327,7 +328,7 @@ the resource documentation.
 ## Common Request Parameters
 
 All parameters that use boolean values use the same rules that are used for the
-[boolean values](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#booleans) in the
+[boolean values](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans) in the
 MaxScale configuration. For example, both `pretty=off` and `pretty=false`
 disable the `pretty` option.
 

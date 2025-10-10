@@ -155,7 +155,9 @@ section.
 
 ## Common Monitor Settings
 
-For a list of optional parameters that all monitors support, read the [Monitor Common](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md) document.
+For a list of optional parameters that all monitors support, read the
+[Monitor Common](common-monitor-parameters.md)
+document.
 
 ## Settings
 
@@ -166,7 +168,7 @@ parameters are described in the [ColumnStore commands-section](mariadb-monitor.m
 
 ### `assume_unique_hostnames`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -218,7 +220,7 @@ separated to different network interfaces.
 
 ### `master_conditions`
 
-* Type: [enum\_mask](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `connecting_slave`, `connected_slave`, `running_slave`, `primary_monitor_master`, `disk_space_ok`
@@ -252,10 +254,11 @@ The available conditions are:
    secondary MaxScale, require that the candidate primary is selected also by the
    primary MaxScale.
 6. disk\_space\_ok : The candidate primary must not be low on disk space. This
-   option only takes effect if [disk space check](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md) is enabled. Added in
-   MaxScale 23.08.5.
+   option only takes effect if [disk space check](common-monitor-parameters.md#disk_space_threshold)
+   is enabled. Added in MaxScale 23.08.5.
 
-The default value of this setting is`master_requirements=primary_monitor_master,disk_space_ok` to ensure that both
+The default value of this setting is
+`master_requirements=primary_monitor_master,disk_space_ok` to ensure that both
 monitors use the same primary server when cooperating and that the primary is
 not out of disk space.
 
@@ -268,7 +271,7 @@ master_conditions=connected_slave,running_slave
 
 ### `slave_conditions`
 
-* Type: [enum\_mask](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `linked_master`, `running_master`, `writable_master`, `primary_monitor_master`
@@ -297,8 +300,8 @@ The available conditions are:
    secondary MaxScale, require that the candidate primary is selected also by the
    primary MaxScale.
 6. disk\_space\_ok : The replica must not be low on disk space. This
-   option only takes effect if [disk space check](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md) is enabled. Added in
-   MaxScale 23.08.5.
+   option only takes effect if [disk space check](Monitor-Common.md#disk_space_threshold)
+   is enabled. Added in MaxScale 23.08.5.
 
 For example, to require that the primary server of the cluster must be running
 and writable for any servers to have _Slave_-status, set
@@ -334,7 +337,7 @@ multiplying that by `failcount`:
 
 ### `enforce_writable_master`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -356,7 +359,7 @@ prefers to select a writable server as primary if possible.
 
 ### `enforce_read_only_slaves`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -377,7 +380,7 @@ marked \[Slave].
 
 ### `enforce_read_only_servers`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -394,7 +397,7 @@ unclear which servers should be altered.
 
 ### `maintenance_on_low_disk_space`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -403,7 +406,10 @@ If a running server that is not the primary
 or a relay primary is out of disk space the server is set to maintenance mode.
 Such servers are not used for router sessions and are ignored when performing a
 failover or other cluster modification operation. See the general monitor
-parameters [disk\_space\_threshold](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md) and [disk\_space\_check\_interval](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
+parameters
+[disk\_space\_threshold](common-monitor-parameters.md#disk_space_threshold)
+and
+[disk\_space\_check\_interval](common-monitor-parameters.md#disk_space_check_interval)
 on how to enable disk space monitoring.
 
 Once a server has been put to maintenance mode, the disk space situation
@@ -417,7 +423,7 @@ maxctrl clear server server2 Maint
 
 ### `cooperative_monitoring_locks`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `majority_of_all`, `majority_of_running`
@@ -1124,7 +1130,7 @@ primary.
 
 #### `auto_failover`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `true`, `on`, `yes`, `1`, `false`, `off`, `no`, `0`, `safe`
@@ -1137,7 +1143,7 @@ When automatic failover is enabled, MaxScale
 will elect a new primary server for the cluster if the old primary goes down. A
 server is assumed _Down_ if it cannot be connected to, even if this is caused by
 incorrect credentials. Failover triggers if the primary stays down for [failcount](mariadb-monitor.md#failcount) monitor intervals. Failover will not take place if
-MaxScale is set [passive](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+MaxScale is set [passive](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 
 As failover alters replication, it requires more privileges than normal
 monitoring. See [here](mariadb-monitor.md#cluster-manipulation-grants) for a list of grants.
@@ -1149,7 +1155,7 @@ setups.
 
 #### `auto_rejoin`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1225,7 +1231,7 @@ monitor runs switchover to restore P as primary.
 
 #### `switchover_on_low_disk_space`**
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1236,9 +1242,9 @@ done if a replica without disk space issues is found. If`maintenance_on_low_disk
 will be put to maintenance during the next monitor iteration.
 
 For this parameter to have any effect, `disk_space_threshold` must be specified
-for the [server](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
-or the [monitor](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md).
-Also, [disk\_space\_check\_interval](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
+for the [server](../../maxscale-management/deployment/maxscale-configuration-guide.md#disk_space_threshold)
+or the [monitor](common-monitor-parameters.md#disk_space_threshold).
+Also, [disk\_space\_check\_interval](common-monitor-parameters.md#disk_space_check_interval)
 must be defined for the monitor.
 
 ```
@@ -1247,7 +1253,7 @@ switchover_on_low_disk_space=true
 
 #### `enforce_simple_topology`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1303,7 +1309,7 @@ See [replication\_user](mariadb-monitor.md#replication_user)
 
 #### `replication_master_ssl`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1339,7 +1345,7 @@ replication_custom_options=MASTER_SSL_CERT = '/tmp/certs/client-cert.pem',
 
 #### `failover_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `90s`
@@ -1354,7 +1360,7 @@ further automatic modifications to the misbehaving cluster.
 
 #### `switchover_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `90s`
@@ -1367,14 +1373,14 @@ even if the duration is longer than a second.
 
 #### `verify_master_failure`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 Enable additional primary failure verification for automatic failover.`verify_master_failure` enables this feature and [master\_failure\_timeout](mariadb-monitor.md#master_failure_timeout) defines the timeout.
 
-The primary failure timeout is specified as documented [here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md). If no explicit unit
+The primary failure timeout is specified as documented [here](../../maxscale-management/deployment/maxscale-configuration-guide.md). If no explicit unit
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent
 versions a value without a unit may be rejected. Note that since the granularity
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,
@@ -1396,12 +1402,12 @@ met.
 
 #### `master_failure_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
 
-`master_failure_timeout` is specified as documented [here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md). If no explicit unit
+`master_failure_timeout` is specified as documented [here](../../maxscale-management/deployment/maxscale-configuration-guide.md). If no explicit unit
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent
 versions a value without a unit may be rejected. Note that since the granularity
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,
@@ -1480,7 +1486,7 @@ See [promotion\_sql\_file](mariadb-monitor.md#promotion_sql_file).
 
 #### `handle_events`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -1662,15 +1668,16 @@ configure this feature.
 
 #### `write_test_interval`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Dynamic: Yes
 * Default: 0s
 
 If enabled (value > 0s), the monitor will perform a write test on the primary
 server if its gtid\_binlog\_pos has not changed within the configured interval.
 This test inserts one row to the table configured in [write\_test\_table](mariadb-monitor.md#write_test_table). If the insert fails or does not complete
-within [backend\_read\_timeout](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md),
-the server fails the write test. What happens after that depends on [write\_test\_fail\_action](mariadb-monitor.md#write_test_fail_action).
+within [backend\_read\_timeout](common-monitor-parameters.md#backend_read_timeout),
+the server fails the write test. What happens after that depends on
+[write\_test\_fail\_action](mariadb-monitor.md#write_test_fail_action).
 
 ```
 write_test_interval=20s
@@ -1707,7 +1714,7 @@ write_test_table=mxs.my_write_test_table
 
 #### `write_test_fail_action`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Default: `log`
 * Values: `log`, `failover`
 * Dynamic: Yes
@@ -2066,7 +2073,7 @@ run commands.
 
 #### `ssh_check_host_key`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -2076,7 +2083,7 @@ already listed in the known\_hosts-file of the user running MaxScale.
 
 #### `ssh_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
@@ -2434,7 +2441,7 @@ A typical failure reason is that a command such as `STOP SLAVE` takes longer tha
 monitor will retry most such queries if the failure was caused by a timeout. The retrying
 continues until the total time for a failover or switchover has been spent. If the log
 shows warnings or errors about commands timing out, increasing the backend timeout
-settings of the monitor should help. Other settings to look at are `query_retries` and`query_retry_timeout`. These are general MaxScale settings described in the [Configuration guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md). Setting`query_retries` to 2 is a reasonable first try.
+settings of the monitor should help. Other settings to look at are `query_retries` and`query_retry_timeout`. These are general MaxScale settings described in the [Configuration guide](../../maxscale-management/deployment/maxscale-configuration-guide.md). Setting`query_retries` to 2 is a reasonable first try.
 
 If switchover causes the old primary (now replica) to fail replication, then most
 likely a user or perhaps a scheduled event performed a write while monitor

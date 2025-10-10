@@ -1049,10 +1049,10 @@ least the following fields.
   * The router module to use
 
 * `data.attributes.parameters.user`
-  * The [`user`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#user) to use
+  * The [`user`](../../maxscale-management/deployment/maxscale-configuration-guide.md#user) to use
 
 * `data.attributes.parameters.password`
-  * The [`password`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#password) to use
+  * The [`password`](../../maxscale-management/deployment/maxscale-configuration-guide.md#password) to use
 
 The `data.attributes.parameters` object is used to define router and service
 parameters. All configuration parameters that can be defined in the
@@ -1067,13 +1067,13 @@ relationships: `servers` and `filters` relationships.
 If the request body defines a valid `relationships` object, the service is
 linked to those resources. For servers, this is equivalent to adding the list of
 server names into the
-[`servers`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#servers) parameter. For
+[`servers`](../../maxscale-management/deployment/maxscale-configuration-guide.md#servers) parameter. For
 filters, this is equivalent to adding the filters in the
 `data.relationships.filters.data` array to the
-[`filters`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#filters) parameter in the
+[`filters`](../../maxscale-management/deployment/maxscale-configuration-guide.md#filters) parameter in the
 order they appear. For other services, this is equivalent to adding the list of
 server names into the
-[`targets`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#targets) parameter.
+[`targets`](../../maxscale-management/deployment/maxscale-configuration-guide.md#targets) parameter.
 
 The following example defines a new service with both a server and a filter
 relationship.
@@ -1158,7 +1158,7 @@ The request body must be a JSON object which represents a set of new definitions
 for the service.
 
 All standard service parameters can be modified. Refer to the
-[service](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#service) documentation on
+[service](../../maxscale-management/deployment/maxscale-configuration-guide.md#service) documentation on
 the details of these parameters.
 
 In addition to the standard service parameters, router parameters can be updated
@@ -1203,7 +1203,7 @@ existing relationships of this type for the service.
 *Note:* The order of the values in the `filters` relationship will define the
  order the filters are set up in. The order in which the filters appear in the
  array will be the order in which the filters are applied to each query. Refer
- to the [`filters`](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#filters) parameter
+ to the [`filters`](../../maxscale-management/deployment/maxscale-configuration-guide.md#filters) parameter
  for more details.
 
 The following is an example request and request body that defines a single
