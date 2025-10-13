@@ -14,7 +14,8 @@ before you go into production:
 ### Encrypting Plaintext Passwords
 
 Ensuring the security of your MaxScale setup involves stringent control over
-the key file permissions. Utilizing [maxkeys](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+the key file permissions. Utilizing
+[maxkeys](maxscale-management/deployment/maxscale-configuration-guide.md#encrypting-passwords)
 is an effective approach to generate a secure key file.
 
 This generates a keyfile in `/var/lib/maxscale`
@@ -23,7 +24,8 @@ This generates a keyfile in `/var/lib/maxscale`
 $ maxkeys
 ```
 
-See [Encrypting Passwords](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+See
+[Encrypting Passwords](maxscale-management/deployment/maxscale-configuration-guide.md#encrypting-passwords)
 for more information about `maxkeys`.
 
 Once generated, this key file can be relocated to a secure location. This
