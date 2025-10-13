@@ -6,30 +6,6 @@ This document lists known issues and limitations in MariaDB MaxScale and its
 plugins. Since limitations are related to specific plugins, this document is
 divided into several sections.
 
-* [Limitations and Known Issues within MariaDB MaxScale](mariadb-maxscale-limitations-guide.md#limitations-and-known-issues-within-mariadb-maxscale)
-  * [Configuration limitations](mariadb-maxscale-limitations-guide.md#configuration-limitations)
-    * [Multiple MaxScales on same server](mariadb-maxscale-limitations-guide.md#multiple-maxscales-on-same-server)
-  * [Security limitations](mariadb-maxscale-limitations-guide.md#security-limitations)
-    * [MariaDB 10.2](mariadb-maxscale-limitations-guide.md#mariadb-102)
-  * [MariaDB Default Values](mariadb-maxscale-limitations-guide.md#mariadb-default-values)
-  * [Query Classification](mariadb-maxscale-limitations-guide.md#query-classification)
-    * [Transaction Boundary Detection](mariadb-maxscale-limitations-guide.md#transaction-boundary-detection)
-    * [XA Transactions](mariadb-maxscale-limitations-guide.md#xa-transactions)
-  * [Prepared Statements](mariadb-maxscale-limitations-guide.md#prepared-statements)
-  * [Protocol limitations](mariadb-maxscale-limitations-guide.md#protocol-limitations)
-    * [Limitations with MySQL/MariaDB Protocol support (MariaDBClient)](mariadb-maxscale-limitations-guide.md#limitations-with-mysqlmariadb-protocol-support-mariadbclient)
-  * [Authenticator limitations](mariadb-maxscale-limitations-guide.md#authenticator-limitations)
-    * [Limitations in the MySQL authenticator (MariaDBAuth)](mariadb-maxscale-limitations-guide.md#limitations-in-the-mysql-authenticator-mariadbauth)
-  * [Filter limitations](mariadb-maxscale-limitations-guide.md#filter-limitations)
-    * [Tee filter limitations (tee)](mariadb-maxscale-limitations-guide.md#tee-filter-limitations-tee)
-  * [Monitor limitations](mariadb-maxscale-limitations-guide.md#monitor-limitations)
-    * [Limitations with Galera Cluster Monitoring (galeramon)](mariadb-maxscale-limitations-guide.md#limitations-with-galera-cluster-monitoring-galeramon)
-  * [Router limitations](mariadb-maxscale-limitations-guide.md#router-limitations)
-* [ETL Limitations](mariadb-maxscale-limitations-guide.md#etl-limitations)
-  * [ETL Limitations with PostgreSQL as the Source](mariadb-maxscale-limitations-guide.md#etl-limitations-with-postgresql-as-the-source)
-    * [Limitations in Automatic SQL Generation](mariadb-maxscale-limitations-guide.md#limitations-in-automatic-sql-generation)
-  * [ETL Limitations with Generic ODBC Targets](mariadb-maxscale-limitations-guide.md#etl-limitations-with-generic-odbc-targets)
-
 ### Configuration limitations
 
 In versions 2.1.2 and earlier, the configuration files are limited to 1024
@@ -184,7 +160,9 @@ the same server is considered an error.
 #### Limitations with Galera Cluster Monitoring (galeramon)
 
 The default master selection is based only on MIN(wsrep\_local\_index). This
-can be influenced with the server priority mechanic described in the [Galera Monitor](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md) manual.
+can be influenced with the server priority mechanic described in the
+[Galera Monitor](../reference/maxscale-monitors/galera-monitor.md)
+manual.
 
 ### Router limitations
 
