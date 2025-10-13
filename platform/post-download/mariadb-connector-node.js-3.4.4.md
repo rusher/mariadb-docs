@@ -5,7 +5,7 @@
 ## About this Release
 
 * MariaDB Connector/Node.js 3.4.4 was released on 3 Jul 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-4-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/3.x/3.4.4)
 * This release is Stable (GA) maturity
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs)
 

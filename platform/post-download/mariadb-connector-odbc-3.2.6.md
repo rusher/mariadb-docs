@@ -5,7 +5,7 @@
 ## About this Release
 
 * MariaDB Connector/ODBC 3.2.6 was released on 30 May 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.2/3.2.6)
 * This release is Stable (GA) maturity
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc)
 

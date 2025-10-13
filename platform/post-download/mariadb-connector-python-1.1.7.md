@@ -9,7 +9,7 @@ noIndex: true
 ## About this Release
 
 * MariaDB Connector/Python 1.1.7 was released on 10 Jul 2023.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/python/mariadb-connector-python-1-1-release-notes/mariadb-connector-python-1-1-7-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/python/1.1/1.1.7)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-python).
 

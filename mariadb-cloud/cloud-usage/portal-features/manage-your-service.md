@@ -126,6 +126,6 @@ Your service and all its data will be deleted. This operation is non-reversible.
 * [Firewall Management](<../../Security/Configuring Firewall.md>)
 * [Configuration Management](../../cloud-management/config/)
 * Private Connections:
-  * [AWS PrivateLink](../../cloud-management/using-aws-azure-gcp-private-vpc-connections/setting-up-aws-private-link.md)
-  * [GCP Private Service Connect](../../cloud-management/using-aws-azure-gcp-private-vpc-connections/setting-up-gcp-private-service-connect.md)
+  * [AWS PrivateLink](../../connecting-to-mariadb-cloud-dbs/using-aws-azure-gcp-private-vpc-connections/setting-up-aws-private-link.md)
+  * [GCP Private Service Connect](../../connecting-to-mariadb-cloud-dbs/using-aws-azure-gcp-private-vpc-connections/setting-up-gcp-private-service-connect.md)
 * [User Management](<../../Security/Managing Portal Users.md>)

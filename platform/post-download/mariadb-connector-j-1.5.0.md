@@ -10,7 +10,7 @@ noIndex: true
 
 * MariaDB Connector/J 1.5.0 was released on 1 Aug 2016.
 * Please note: Newer releases exist within the MariaDB Connector/J 1.5 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.5/mariadb-connector-j-150-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.5/1.5.0)
 * This release is Release Candidate (RC) maturity. Only Stable (GA) releases should be used in production.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j).
 

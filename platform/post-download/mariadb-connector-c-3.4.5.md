@@ -5,7 +5,7 @@
 ## About this Release
 
 * MariaDB Connector/C 3.4.5 was released on 9 Apr 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/c/mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/c/3.4/3.4.5)
 * This release is Stable (GA) maturity
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c)
 

@@ -2,4 +2,4 @@
 title: most-recent-python
 ---
 
-* The most recent MariaDB Connector/Python release is 1.1.13, released 15 Jul 2025
+* The most recent MariaDB Connector/Python release is 1.1.14, released 10 Oct 2025

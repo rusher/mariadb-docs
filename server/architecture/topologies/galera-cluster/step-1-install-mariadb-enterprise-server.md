@@ -20,7 +20,7 @@ Customer Download Tokens are customer-specific and are available through the Mar
 
 To retrieve the token for your account:
 
-1. Navigate to
+1. Navigate to [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/).
 2. Log in.
 3. Copy the Customer Download Token.
 

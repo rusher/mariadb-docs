@@ -41,7 +41,9 @@ The `mariadb-backup` executable is included in binary tarballs on Linux.
 
 ### **Installing with a Package Manager**
 
-mariadb-backup can also be installed via a package manager on Linux. In order to do so, your system needs to be configured to install from one of the MariaDB repositories.
+mariadb-backup can also be installed via a package manager on Linux. Many Linux distributions provide MariaDB software "out of the box", including `mariadb-backup`. If your Linux distribution doesn't, however, you can install using a MariaDB repository.
+
+In order to do so, your system needs to be configured to install from one of the MariaDB repositories.
 
 You can configure your package manager to install it from MariaDB Corporation's MariaDB Package Repository by using the MariaDB Package Repository setup script.
 
@@ -57,8 +59,7 @@ sudo yum install MariaDB-backup
 
 **Installing with apt-get**
 
-On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant DEB package from MariaDB's\
-repository using [apt-get](https://wiki.debian.org/apt-get). For example:
+On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant DEB package from MariaDB's repository using [apt-get](https://wiki.debian.org/apt-get). For example:
 
 ```bash
 sudo apt-get install mariadb-backup

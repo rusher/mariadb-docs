@@ -2,7 +2,9 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/97ObD80oLdZu6qT33Vhb/" %}
 
-## About MariaDB Connector/R2DBC
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/gvM6Yo355bp8HK2Rzyby/" %}
+
+<p align="center"><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/r2dbc/all-releases">See all MariaDB Connector/R2DBC releases</a></p>
 
 ## Overview
 

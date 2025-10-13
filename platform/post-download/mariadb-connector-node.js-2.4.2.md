@@ -23,7 +23,7 @@ layout:
 ## About this Release
 
 * MariaDB Connector/Node.js 2.4.2 was released on 23 Jul 2020.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-242-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/2.x/2.4.2)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs).
 

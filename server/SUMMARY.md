@@ -1825,6 +1825,7 @@
       * [SIN](reference/sql-functions/numeric-functions/sin.md)
       * [SQRT](reference/sql-functions/numeric-functions/sqrt.md)
       * [TAN](reference/sql-functions/numeric-functions/tan.md)
+      * [TO\_NUMBER](reference/sql-functions/numeric-functions/to_number.md)
       * [TRUNCATE](reference/sql-functions/numeric-functions/truncate.md)
     * [Pseudo Columns](reference/sql-functions/pseudo-columns/README.md)
       * [\_rowid](reference/sql-functions/pseudo-columns/_rowid.md)

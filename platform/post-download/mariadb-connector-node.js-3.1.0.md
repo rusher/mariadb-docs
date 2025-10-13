@@ -24,7 +24,7 @@ layout:
 
 * MariaDB Connector/Node.js 3.1.0 was released on 15 Feb 2023.
 * Please note: Newer releases exist within the MariaDB Connector/Node.js 3.1 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-1-0-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/3.x/3.1.0)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs).
 

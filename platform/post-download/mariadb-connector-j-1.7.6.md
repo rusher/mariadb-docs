@@ -9,7 +9,7 @@ noIndex: true
 ## About this Release
 
 * MariaDB Connector/J 1.7.6 was released on 10 Dec 2020.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.7/mariadb-connector-j-176-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.7/1.7.6)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j).
 

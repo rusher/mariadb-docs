@@ -9,7 +9,7 @@ noIndex: true
 ## About this Release
 
 * MariaDB Connector/ODBC 1.0.6 was released on 11 Apr 2016.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-10-release-notes/mariadb-connector-odbc-106-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/1.0/1.0.6)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc).
 

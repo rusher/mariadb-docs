@@ -9,7 +9,7 @@ noIndex: true
 ## About this Release
 
 * MariaDB Connector/ODBC 3.2.0 was released on 21 Apr 2023.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-0-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.2/3.2.0)
 * This release is alpha maturity. Only Stable (GA) releases should be used in production.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc).
 

@@ -10,7 +10,7 @@ noIndex: true
 
 * MariaDB Connector/ODBC 3.1.12 was released on 21 Apr 2021.
 * Please note: Newer releases exist within the MariaDB Connector/ODBC 3.1 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-12-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.1/3.1.12)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc).
 

@@ -10,7 +10,7 @@ noIndex: true
 
 * MariaDB Connector/J 3.0.2 was released on 16 Sep 2021.
 * Please note: Newer releases exist within the MariaDB Connector/J 3.0 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/3.0/mariadb-connector-j-302-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/3.0/3.0.2)
 * This release is Release Candidate (RC) maturity. Only Stable (GA) releases should be used in production.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j).
 
