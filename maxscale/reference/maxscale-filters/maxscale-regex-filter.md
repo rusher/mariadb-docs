@@ -37,7 +37,7 @@ The Regex filter has two mandatory parameters: _match_ and _replace_.
 
 #### `match`
 
-* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: Yes
 * Dynamic: Yes
 
@@ -50,7 +50,7 @@ options=case
 
 #### `options`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`

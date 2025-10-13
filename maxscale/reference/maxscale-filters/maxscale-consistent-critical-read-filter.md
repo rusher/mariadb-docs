@@ -47,7 +47,7 @@ The CCR filter has no mandatory parameters.
 
 #### `time`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `60s`
@@ -85,7 +85,7 @@ modifying SQL statement is processed, the counter is reset to the value o&#x66;_
 
 #### `match`
 
-* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
@@ -103,7 +103,7 @@ options=case,extended
 
 #### `ignore`
 
-* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
@@ -112,7 +112,7 @@ See documentation for [match](maxscale-consistent-critical-read-filter.md#match)
 
 #### `options`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `ignorecase`, `case`, `extended`
@@ -122,7 +122,7 @@ Regular expression options for `match` and `ignore`.
 
 #### `global`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`

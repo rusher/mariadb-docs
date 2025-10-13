@@ -82,7 +82,7 @@ count=30
 
 #### `match`
 
-* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -98,7 +98,7 @@ options=case,extended
 
 #### `exclude`
 
-* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -108,7 +108,7 @@ the queries logged by the filter.
 
 #### `options`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `ignorecase`, `case`, `extended`

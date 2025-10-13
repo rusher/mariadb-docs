@@ -168,7 +168,7 @@ parameters are described in the [ColumnStore commands-section](mariadb-monitor.m
 
 ### `assume_unique_hostnames`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -220,7 +220,7 @@ separated to different network interfaces.
 
 ### `master_conditions`
 
-* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `connecting_slave`, `connected_slave`, `running_slave`, `primary_monitor_master`, `disk_space_ok`
@@ -271,7 +271,7 @@ master_conditions=connected_slave,running_slave
 
 ### `slave_conditions`
 
-* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `linked_master`, `running_master`, `writable_master`, `primary_monitor_master`
@@ -337,7 +337,7 @@ multiplying that by `failcount`:
 
 ### `enforce_writable_master`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -359,7 +359,7 @@ prefers to select a writable server as primary if possible.
 
 ### `enforce_read_only_slaves`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -380,7 +380,7 @@ marked \[Slave].
 
 ### `enforce_read_only_servers`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -397,7 +397,7 @@ unclear which servers should be altered.
 
 ### `maintenance_on_low_disk_space`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -423,7 +423,7 @@ maxctrl clear server server2 Maint
 
 ### `cooperative_monitoring_locks`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `majority_of_all`, `majority_of_running`
@@ -1130,7 +1130,7 @@ primary.
 
 #### `auto_failover`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `true`, `on`, `yes`, `1`, `false`, `off`, `no`, `0`, `safe`
@@ -1155,7 +1155,7 @@ setups.
 
 #### `auto_rejoin`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1231,7 +1231,7 @@ monitor runs switchover to restore P as primary.
 
 #### `switchover_on_low_disk_space`**
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1253,7 +1253,7 @@ switchover_on_low_disk_space=true
 
 #### `enforce_simple_topology`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1309,7 +1309,7 @@ See [replication\_user](mariadb-monitor.md#replication_user)
 
 #### `replication_master_ssl`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1345,7 +1345,7 @@ replication_custom_options=MASTER_SSL_CERT = '/tmp/certs/client-cert.pem',
 
 #### `failover_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `90s`
@@ -1360,7 +1360,7 @@ further automatic modifications to the misbehaving cluster.
 
 #### `switchover_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `90s`
@@ -1373,7 +1373,7 @@ even if the duration is longer than a second.
 
 #### `verify_master_failure`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -1402,7 +1402,7 @@ met.
 
 #### `master_failure_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
@@ -1486,7 +1486,7 @@ See [promotion\_sql\_file](mariadb-monitor.md#promotion_sql_file).
 
 #### `handle_events`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -1668,7 +1668,7 @@ configure this feature.
 
 #### `write_test_interval`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Dynamic: Yes
 * Default: 0s
 
@@ -1714,7 +1714,7 @@ write_test_table=mxs.my_write_test_table
 
 #### `write_test_fail_action`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Default: `log`
 * Values: `log`, `failover`
 * Dynamic: Yes
@@ -2073,7 +2073,7 @@ run commands.
 
 #### `ssh_check_host_key`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -2083,7 +2083,7 @@ already listed in the known\_hosts-file of the user running MaxScale.
 
 #### `ssh_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`

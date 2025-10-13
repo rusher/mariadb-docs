@@ -340,7 +340,7 @@ In the examples above the name "CAPTURE\_FLTR" was used.
 
 #### `start_capture`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Mandatory: No
 * Dynamic: No
@@ -349,7 +349,7 @@ Start capture when maxscale starts.
 
 #### `capture_duration`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Default: 0s
 * Maximum: Unlimited in MaxScale, 5min in MaxScale Lite.
 * Mandatory: No
@@ -359,7 +359,7 @@ Limit capture to this duration. If set to zero there is no limit.
 
 #### `capture_size`
 
-* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Default: 0
 * Maximum: Unlimited in MaxScale, 10MB in MaxScale Lite.
 * Mandatory: No

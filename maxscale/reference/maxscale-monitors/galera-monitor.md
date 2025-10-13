@@ -85,7 +85,8 @@ For a list of optional parameters that all monitors support, read the
 
 ### `disable_master_failback`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
+
 * Default: false
 * Dynamic: Yes
 
@@ -99,7 +100,8 @@ original node for as long as the new primary node is running. In this case the
 
 ### `available_when_donor`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
+
 * Default: false
 * Dynamic: Yes
 
@@ -120,7 +122,8 @@ documentation for more details.
 
 ### `disable_master_role_setting`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
+
 * Default: false
 * Dynamic: Yes
 
@@ -130,7 +133,8 @@ monitor.
 
 ### `use_priority`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
+
 * Default: false
 * Dynamic: Yes
 
@@ -140,7 +144,8 @@ allow for controlled node replacement.
 
 ### `root_node_as_master`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
+
 * Default: false
 * Dynamic: Yes
 
@@ -170,7 +175,8 @@ sub-optimal performance.
 
 ### `set_donor_nodes`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
+
 * Default: false
 * Dynamic: Yes
 

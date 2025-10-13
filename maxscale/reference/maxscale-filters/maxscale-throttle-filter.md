@@ -73,7 +73,7 @@ sampling duration (see `sampling_duration`).
 
 #### `throttling_duration`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: Yes
 * Dynamic: Yes
 
@@ -82,7 +82,7 @@ disconnects the session.
 
 #### `sampling_duration`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 250ms
@@ -96,7 +96,7 @@ longer this time is, the longer bursts of high frequency querying is allowed.
 
 #### `continuous_duration`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 2s

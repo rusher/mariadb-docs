@@ -49,7 +49,7 @@ max_resultset_rows=1000
 
 #### `max_resultset_size`
 
-* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `64Ki`
@@ -64,7 +64,7 @@ max_resultset_size=128Ki
 
 #### `max_resultset_return`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `empty`, `error`, `ok`

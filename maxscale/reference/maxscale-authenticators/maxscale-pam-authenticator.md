@@ -45,7 +45,7 @@ account         required        pam_unix.so
 
 #### `pam_use_cleartext_plugin`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -63,7 +63,7 @@ authenticator_options=pam_use_cleartext_plugin=1
 
 #### `pam_mode`
 
-* Type: [enumeration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enumeration](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `password`, `password_2FA`, `suid`

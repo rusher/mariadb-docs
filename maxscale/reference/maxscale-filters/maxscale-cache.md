@@ -236,7 +236,7 @@ nested parameters.
 
 #### `hard_ttl`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s` (no limit)
@@ -251,7 +251,7 @@ hard_ttl=60s
 
 #### `soft_ttl`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s` (no limit)
@@ -289,7 +289,7 @@ max_resultset_rows=1000
 
 #### `max_resultset_size`
 
-* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: `0` (no limit)
@@ -326,7 +326,7 @@ max_count=1000
 
 #### `max_size`
 
-* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: `0` (no limit)
@@ -366,7 +366,7 @@ maxctrl alter filter MyCache rules='/path/to/rules-file'
 
 #### `cached_data`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `shared`, `thread_specific`
@@ -392,7 +392,7 @@ changing this setting to `shared` has.
 
 #### `selects`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `assume_cacheable`, `verify_cacheable`
@@ -431,7 +431,7 @@ cost. Please read [performance](maxscale-cache.md#performance) for more details.
 
 #### `cache_in_transactions`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `never`, `read_only_transactions`, `all_transactions`
@@ -489,7 +489,7 @@ debug=31
 
 #### `enabled`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
@@ -507,7 +507,7 @@ for details.
 
 #### `invalidate`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `never`, `current`
@@ -540,7 +540,7 @@ and `cached_data=shared` _must_ be used.
 
 #### `clear_cache_on_parse_errors`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
@@ -561,7 +561,7 @@ affects entries in the cache.
 
 #### `users`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `mixed`, `isolated`
@@ -587,7 +587,7 @@ cause more traffic to the backend compared to a `mixed` cache.
 
 #### `timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `5s`
@@ -1282,7 +1282,7 @@ If no port is provided, then the default port `11211` will be used.
 
 **`max_value_size`**
 
-* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: 1Mi
@@ -1389,7 +1389,7 @@ Please see [authentication](maxscale-cache.md#authentication) for more informati
 
 **`ssl`**
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`

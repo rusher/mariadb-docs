@@ -127,7 +127,7 @@ lifetime of the client connections is short.
 
 ### `max_replication_lag`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 0s
@@ -169,7 +169,7 @@ seconds (`replication lag > MAX(300, 2 * max_replication_lag)`).
 
 ### `use_sql_variables_in`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `master`, `all`
@@ -219,7 +219,7 @@ SELECT @myid; -- Might return 1 or 0
 
 ### `master_reconnection`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true (>= MaxScale 24.02), false(<= MaxScale 23.08)
@@ -258,7 +258,7 @@ without any risk to the consistency of the database.
 
 ### `slave_selection_criteria`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `least_current_operations`, `adaptive_routing`, `least_behind_master`, `least_router_connections`, `least_global_connections`
@@ -330,7 +330,7 @@ future MaxScale release.
 
 ### `master_accept_reads`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -351,7 +351,7 @@ master_accept_reads=true
 
 ### `strict_multi_stmt`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -374,7 +374,7 @@ strict_multi_stmt=true
 
 ### `strict_sp_calls`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -386,7 +386,7 @@ All warnings and restrictions that apply to `strict_multi_stmt` also apply to`st
 
 ### `strict_tmp_tables`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true (>= MaxScale 24.02), false (<= MaxScale 23.08)
@@ -404,7 +404,7 @@ the session is closed.
 
 ### `master_failure_mode`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `fail_instantly`, `fail_on_write`, `error_on_write`
@@ -441,7 +441,7 @@ session can recover if one of the replicas is promoted as the primary.
 
 ### `retry_failed_reads`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -459,7 +459,7 @@ possible when `transaction_replay` is enabled.
 
 ### `delayed_retry`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -495,7 +495,7 @@ risk.
 
 ### `delayed_retry_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 10s
@@ -510,7 +510,7 @@ even if the duration is longer than a second.
 
 ### `transaction_replay`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -537,7 +537,7 @@ with transaction replay.
 
 ### `transaction_replay_max_size`
 
-* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 1 MiB
@@ -576,7 +576,7 @@ attempts is reset.
 
 ### `transaction_replay_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 30s (>= MaxScale 24.02), 0s (<= MaxScale 23.08)
@@ -610,7 +610,7 @@ timeouts for transaction replay and is by default set to 30 seconds in MaxScale
 
 ### `transaction_replay_retry_on_deadlock`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -625,7 +625,7 @@ transaction checksum error is encountered.
 
 ### `transaction_replay_safe_commit`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -660,7 +660,7 @@ SQL is correctly formed and compatible with this behavior.
 
 ### `transaction_replay_retry_on_mismatch`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -674,7 +674,7 @@ or`transaction_replay_attempts`).
 
 ### `transaction_replay_checksum`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `full`, `result_only`, `no_insert_id`
@@ -714,7 +714,7 @@ filter in MaxScale 25.01 and the parameter has been removed from readwritesplit.
 
 ### `causal_reads`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `local`, `global`, `fast`, `fast_global`, `universal`, `fast_universal`
@@ -970,7 +970,7 @@ server which would cause the connection to be closed and a warning to be logged.
 
 ### `causal_reads_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 10s
@@ -985,7 +985,7 @@ even if the duration is longer than a second.
 
 ### `lazy_connect`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false

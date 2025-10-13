@@ -58,7 +58,7 @@ NamedServerFilter requires at least one _matchXY_ - _targetXY_ pair.
 
 #### `matchXY`
 
-* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -77,7 +77,7 @@ options=case,extended
 
 #### `options`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`

@@ -81,7 +81,7 @@ release. Both `target` and `service` cannot be defined.
 
 #### `match`
 
-* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -94,7 +94,7 @@ match=/insert.*into.*order*/
 
 #### `exclude`
 
-* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -107,7 +107,7 @@ exclude=/select.*from.*t1/
 
 #### `options`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`
@@ -151,7 +151,7 @@ user=john
 
 #### `sync`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`

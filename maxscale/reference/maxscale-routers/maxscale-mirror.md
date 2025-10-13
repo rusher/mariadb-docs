@@ -50,7 +50,7 @@ does not create new connections after the initial connections are created.
 
 #### `exporter`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: Yes
 * Dynamic: Yes
 * Values: `log`, `file`, `kafka`
@@ -108,7 +108,7 @@ This is a mandatory parameter when configured with `exporter=kafka`.
 
 #### `on_error`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Default: `ignore`
 * Mandatory: No
 * Dynamic: Yes
@@ -127,7 +127,7 @@ failing backends.
 
 #### `report`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Default: `always`
 * Mandatory: No
 * Dynamic: Yes

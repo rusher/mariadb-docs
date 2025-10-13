@@ -535,7 +535,7 @@ is EXPLAINed during the period specified by [explain\_period](maxscale-diff.md#e
 
 #### `explain_period`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 15m
@@ -579,7 +579,7 @@ calculating the width and number of bins of the histogram.
 
 #### `qps_window`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: 15m
@@ -601,7 +601,7 @@ should be logged; _always_, when there is a significant difference o&#x72;_&#x6E
 
 #### `reset_replication`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`

@@ -36,7 +36,7 @@ For more details about the standard service parameters, refer to the
 
 ### `router_options`
 
-* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `master`, `slave`, `synced`, `running`
@@ -74,7 +74,7 @@ first in the _servers_ parameter for the service is chosen.
 
 ### `master_accept_reads`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -90,7 +90,7 @@ By default `master_accept_reads=true`.
 
 ### `max_replication_lag`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 0s

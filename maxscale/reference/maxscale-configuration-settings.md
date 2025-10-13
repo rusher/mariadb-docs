@@ -10,14 +10,14 @@
 
 [**admin\_audit**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 [**admin\_audit\_exclude\_methods**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `GET`, `PUT`, `POST`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, `CONNECT`, `TRACE`
@@ -32,21 +32,21 @@
 
 [**admin\_auth**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
 
 [**admin\_enabled**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
 
 [**admin\_gui**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
@@ -60,7 +60,7 @@
 
 [**admin\_jwt\_algorithm**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `auto`, `HS256`, `HS384`, `HS512`, `RS256`, `RS384`, `RS512`, `PS256`, `PS384`, `PS512`, `ES256`, `ES384`, `ES512`, `ED25519`, `ED448`
@@ -82,14 +82,14 @@
 
 [**admin\_jwt\_max\_age**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `24h`
 
 [**admin\_log\_auth\_failures**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -131,7 +131,7 @@
 
 [**admin\_secure\_gui**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
@@ -165,7 +165,7 @@
 
 [**admin\_ssl\_version**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `MAX`, `TLSv1.0`, `TLSv1.1`, `TLSv1.2`, `TLSv1.3`, `TLSv10`, `TLSv11`, `TLSv12`, `TLSv13`
@@ -180,7 +180,7 @@
 
 [**auth\_connect\_timeout**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
@@ -216,7 +216,7 @@
 
 [**config\_sync\_interval**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `5s`
@@ -230,7 +230,7 @@
 
 [**config\_sync\_timeout**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
@@ -251,7 +251,7 @@
 
 [**core\_file**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: true
 * Dynamic: No
 
@@ -271,7 +271,7 @@
 
 [**dump\_last\_statements**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `on_close`, `on_error`, `never`
@@ -292,7 +292,7 @@
 
 [**key\_manager**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Dynamic: Yes
 * Values: `none`, `file`, `kmip`, `vault`
 * Default: `none`
@@ -313,7 +313,7 @@
 
 [**load\_persisted\_configs**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
@@ -334,42 +334,42 @@
 
 [**log\_debug**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**log\_info**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**log\_notice**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**log\_throttling**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: number, [duration](../maxscale-management/deployment/maxscale-configuration-guide.md), [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: number, [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations), [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10, 1000ms, 10000ms`
 
 [**log\_warn\_super\_user**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
 
 [**log\_warning**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -390,7 +390,7 @@
 
 [**maxlog**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -404,21 +404,21 @@
 
 [**ms\_timestamp**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**passive**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**persist\_runtime\_changes**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: true
 * Dynamic: No
 
@@ -438,7 +438,7 @@
 
 [**query\_classifier\_cache\_size**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: System Dependent
@@ -452,14 +452,14 @@
 
 [**query\_retry\_timeout**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
 
 [**rebalance\_period**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0s`
@@ -501,7 +501,7 @@
 
 [**session\_trace\_match**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -515,14 +515,14 @@
 
 [**skip\_name\_resolve**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**sql\_mode**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `default`, `oracle`
@@ -530,14 +530,14 @@
 
 [**substitute\_variables**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
 
 [**syslog**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -563,34 +563,34 @@
 
 [**trace\_file\_size**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
 
 [**users\_refresh\_interval**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0s`
 
 [**users\_refresh\_time**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `30s`
 
 [**writeq\_high\_water**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `65536`
 
 [**writeq\_low\_water**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `1024`
@@ -661,7 +661,7 @@
 
 [**sql\_mode**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `default`, `oracle`
@@ -720,7 +720,7 @@
 
 [**persistmaxtime**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0s`
@@ -755,14 +755,14 @@
 
 [**proxy\_protocol**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**rank**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `primary`, `secondary`
@@ -785,7 +785,7 @@
 
 [**auth\_all\_servers**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -799,7 +799,7 @@
 
 [**connection\_keepalive**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `300s`
@@ -807,14 +807,14 @@
 
 [**disable\_sescmd\_history**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**enable\_root\_user**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -828,49 +828,49 @@
 
 [**force\_connection\_keepalive**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory No
 * Dynamic: Yes
 * Default: `false`
 
 [**idle\_session\_pool\_time**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `-1s`
 
 [**log\_auth\_warnings**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**log\_debug**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**log\_info**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**log\_notice**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**log\_warning**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -891,14 +891,14 @@
 
 [**multiplex\_timeout**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `60s`
 
 [**net\_write\_timeout**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [durations](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [durations](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory No
 * Dynamic: Yes
 * Default: `0s`
@@ -911,7 +911,7 @@
 
 [**prune\_sescmd\_history**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -938,14 +938,14 @@
 
 [**session\_track\_trx\_state**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**strip\_db\_esc**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -972,7 +972,7 @@
 
 [**user\_accounts\_file\_usage**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `add_when_load_ok`, `file_only_always`
@@ -987,7 +987,7 @@
 
 [**wait\_timeout**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0s`
@@ -1029,13 +1029,13 @@
 
 [**vault.timeout**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Default: 30s
 * Dynamic: Yes
 
 [**vault.tls**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: true
 * Dynamic: Yes
 
@@ -1081,7 +1081,7 @@
 
 [**ssl**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -1130,21 +1130,21 @@
 
 [**ssl\_verify\_peer\_certificate**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**ssl\_verify\_peer\_host**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory No
 * Dynamic: Yes
 * Default: `false`
 
 [**ssl\_version**](../maxscale-management/deployment/maxscale-configuration-guide.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `MAX`, `TLSv1.0`, `TLSv1.1`, `TLSv1.2`, `TLSv1.3`, `TLSv10`, `TLSv11`, `TLSv12`, `TLSv13`
@@ -1165,14 +1165,14 @@
 
 [**match\_host**](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/#match_host)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
 
 [**skip\_authentication**](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/#skip_authentication)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -1201,7 +1201,7 @@
 
 [**log\_password\_mismatch**](maxscale-authenticators/maxscale-mariadb-mysql-authenticator.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -1212,7 +1212,7 @@
 
 [**pam\_backend\_mapping**](maxscale-authenticators/maxscale-pam-authenticator.md)
 
-* Type: [enumeration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enumeration](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `none`, `mariadb`
@@ -1227,7 +1227,7 @@
 
 [**pam\_mode**](maxscale-authenticators/maxscale-pam-authenticator.md)
 
-* Type: [enumeration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enumeration](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `password`, `password_2FA`, `suid`
@@ -1235,7 +1235,7 @@
 
 [**pam\_use\_cleartext\_plugin**](maxscale-authenticators/maxscale-pam-authenticator.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -1248,28 +1248,28 @@
 
 [**exclude**](maxscale-filters/maxscale-binlog-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 [**match**](maxscale-filters/maxscale-binlog-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 [**rewrite\_dest**](maxscale-filters/maxscale-binlog-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 [**rewrite\_src**](maxscale-filters/maxscale-binlog-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -1287,28 +1287,28 @@
 
 [**global**](maxscale-filters/maxscale-consistent-critical-read-filter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**ignore**](maxscale-filters/maxscale-consistent-critical-read-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
 [**match**](maxscale-filters/maxscale-consistent-critical-read-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
 [**options**](maxscale-filters/maxscale-consistent-critical-read-filter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `ignorecase`, `case`, `extended`
@@ -1316,7 +1316,7 @@
 
 [**time**](maxscale-filters/maxscale-consistent-critical-read-filter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `60s`
@@ -1327,7 +1327,7 @@
 
 [**cache\_in\_transactions**](maxscale-filters/maxscale-cache.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `never`, `read_only_transactions`, `all_transactions`
@@ -1335,7 +1335,7 @@
 
 [**cached\_data**](maxscale-filters/maxscale-cache.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `shared`, `thread_specific`
@@ -1343,7 +1343,7 @@
 
 [**clear\_cache\_on\_parse\_errors**](maxscale-filters/maxscale-cache.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
@@ -1357,21 +1357,21 @@
 
 [**enabled**](maxscale-filters/maxscale-cache.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
 
 [**hard\_ttl**](maxscale-filters/maxscale-cache.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s` (no limit)
 
 [**invalidate**](maxscale-filters/maxscale-cache.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `never`, `current`
@@ -1393,14 +1393,14 @@
 
 [**max\_resultset\_size**](maxscale-filters/maxscale-cache.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: `0` (no limit)
 
 [**max\_size**](maxscale-filters/maxscale-cache.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: `0` (no limit)
@@ -1414,7 +1414,7 @@
 
 [**selects**](maxscale-filters/maxscale-cache.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `assume_cacheable`, `verify_cacheable`
@@ -1422,7 +1422,7 @@
 
 [**soft\_ttl**](maxscale-filters/maxscale-cache.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s` (no limit)
@@ -1443,14 +1443,14 @@
 
 [**timeout**](maxscale-filters/maxscale-cache.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `5s`
 
 [**users**](maxscale-filters/maxscale-cache.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `mixed`, `isolated`
@@ -1460,7 +1460,7 @@
 
 [**max\_value\_size**](maxscale-filters/maxscale-cache.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: 1Mi
@@ -1488,7 +1488,7 @@
 
 [**ssl**](maxscale-filters/maxscale-cache.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -1550,7 +1550,7 @@
 
 [**no\_verify**](maxscale-filters/maxscale-ldi-filter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -1585,7 +1585,7 @@
 
 [**use\_http**](maxscale-filters/maxscale-ldi-filter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -1596,28 +1596,28 @@
 
 [**check\_subqueries**](maxscale-filters/maxscale-masking-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**check\_unions**](maxscale-filters/maxscale-masking-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**check\_user\_variables**](maxscale-filters/maxscale-masking-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**large\_payload**](maxscale-filters/maxscale-masking-filter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignore`, `abort`
@@ -1625,14 +1625,14 @@
 
 [**prevent\_function\_usage**](maxscale-filters/maxscale-masking-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**require\_fully\_parsed**](maxscale-filters/maxscale-masking-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -1645,14 +1645,14 @@
 
 [**treat\_string\_arg\_as\_field**](maxscale-filters/maxscale-masking-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**warn\_type\_mismatch**](maxscale-filters/maxscale-masking-filter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `never`, `always`
@@ -1671,7 +1671,7 @@
 
 [**max\_resultset\_return**](maxscale-filters/maxscale-maxrows-filter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `empty`, `error`, `ok`
@@ -1686,7 +1686,7 @@
 
 [**max\_resultset\_size**](maxscale-filters/maxscale-maxrows-filter.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `64Ki`
@@ -1697,14 +1697,14 @@
 
 [**matchXY**](maxscale-filters/maxscale-named-server-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 [**options**](maxscale-filters/maxscale-named-server-filter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`
@@ -1737,7 +1737,7 @@
 
 [**append**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -1751,7 +1751,7 @@
 
 [**exclude**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -1764,14 +1764,14 @@
 
 [**flush**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**log\_data**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `service`, `session`, `date`, `user`, `reply_time`, `total_reply_time`, `query`, `default_db`, `num_rows`, `reply_size`, `transaction`, `transaction_time`, `num_warnings`, `error_msg`
@@ -1779,7 +1779,7 @@
 
 [**log\_type**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `session`, `unified`, `stdout`
@@ -1787,7 +1787,7 @@
 
 [**match**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -1801,7 +1801,7 @@
 
 [**options**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `case`, `ignorecase`, `extended`
@@ -1823,19 +1823,19 @@
 
 [**source\_exclude**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
 [**source\_match**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
 [**use\_canonical\_form**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -1849,13 +1849,13 @@
 
 [**user\_exclude**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
 [**user\_match**](maxscale-filters/maxscale-query-log-all-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
@@ -1879,13 +1879,13 @@
 
 [**match**](maxscale-filters/maxscale-regex-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: Yes
 * Dynamic: Yes
 
 [**options**](maxscale-filters/maxscale-regex-filter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`
@@ -1917,14 +1917,14 @@
 
 [**case\_sensitive**](maxscale-filters/maxscale-rewrite-filter.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
 
 [**log\_replacement**](maxscale-filters/maxscale-rewrite-filter.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -1948,17 +1948,17 @@
 
 [**case\_sensitive**](maxscale-filters/maxscale-rewrite-filter.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: From maxscale.cnf
 
 [**continue\_if\_matched**](maxscale-filters/maxscale-rewrite-filter.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 
 [**ignore\_whitespace**](maxscale-filters/maxscale-rewrite-filter.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: true
 
 [**regex\_grammar**](maxscale-filters/maxscale-rewrite-filter.md)
@@ -1969,7 +1969,7 @@
 
 [**what\_if**](maxscale-filters/maxscale-rewrite-filter.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 
 #### [Tee-Filter](maxscale-filters/maxscale-tee-filter.md)
@@ -1978,21 +1978,21 @@
 
 [**exclude**](maxscale-filters/maxscale-tee-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 [**match**](maxscale-filters/maxscale-tee-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 [**options**](maxscale-filters/maxscale-tee-filter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`
@@ -2014,7 +2014,7 @@
 
 [**sync**](maxscale-filters/maxscale-tee-filter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -2039,7 +2039,7 @@
 
 [**continuous\_duration**](maxscale-filters/maxscale-throttle-filter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 2s
@@ -2052,14 +2052,14 @@
 
 [**sampling\_duration**](maxscale-filters/maxscale-throttle-filter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 250ms
 
 [**throttling\_duration**](maxscale-filters/maxscale-throttle-filter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: Yes
 * Dynamic: Yes
 
@@ -2076,7 +2076,7 @@
 
 [**exclude**](maxscale-filters/maxscale-top-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -2089,14 +2089,14 @@
 
 [**match**](maxscale-filters/maxscale-top-filter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 [**options**](maxscale-filters/maxscale-top-filter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `ignorecase`, `case`, `extended`
@@ -2129,21 +2129,21 @@
 
 [**capture\_duration**](maxscale-filters/maxscale-workload-capture-and-replay.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Default: 0s
 * Mandatory: No
 * Dynamic: No
 
 [**capture\_size**](maxscale-filters/maxscale-workload-capture-and-replay.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Default: 0
 * Mandatory: No
 * Dynamic: No
 
 [**start\_capture**](maxscale-filters/maxscale-workload-capture-and-replay.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Mandatory: No
 * Dynamic: No
@@ -2156,37 +2156,37 @@
 
 [**available\_when\_donor**](maxscale-monitors/galera-monitor.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Dynamic: Yes
 
 [**disable\_master\_failback**](maxscale-monitors/galera-monitor.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Dynamic: Yes
 
 [**disable\_master\_role\_setting**](maxscale-monitors/galera-monitor.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Dynamic: Yes
 
 [**root\_node\_as\_master**](maxscale-monitors/galera-monitor.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Dynamic: Yes
 
 [**set\_donor\_nodes**](maxscale-monitors/galera-monitor.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Dynamic: Yes
 
 [**use\_priority**](maxscale-monitors/galera-monitor.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Dynamic: Yes
 
@@ -2196,14 +2196,14 @@
 
 [**assume\_unique\_hostnames**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**cooperative\_monitoring\_locks**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `majority_of_all`, `majority_of_running`
@@ -2211,21 +2211,21 @@
 
 [**enforce\_read\_only\_servers**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**enforce\_read\_only\_slaves**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**enforce\_writable\_master**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -2239,14 +2239,14 @@
 
 [**maintenance\_on\_low\_disk\_space**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**master\_conditions**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `connecting_slave`, `connected_slave`, `running_slave`, `primary_monitor_master`, `disk_space_ok`
@@ -2261,7 +2261,7 @@
 
 [**slave\_conditions**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `linked_master`, `running_master`, `writable_master`, `primary_monitor_master`
@@ -2292,7 +2292,7 @@
 
 [**ssh\_check\_host\_key**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -2313,7 +2313,7 @@
 
 [**ssh\_timeout**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
@@ -2329,7 +2329,7 @@
 
 [**auto\_failover**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `true`, `on`, `yes`, `1`, `false`, `off`, `no`, `0`, `safe`
@@ -2337,7 +2337,7 @@
 
 [**auto\_rejoin**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -2351,28 +2351,28 @@
 
 [**enforce\_simple\_topology**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**failover\_timeout**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `90s`
 
 [**handle\_events**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
 [**master\_failure\_timeout**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
@@ -2386,7 +2386,7 @@
 
 [**replication\_master\_ssl**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -2414,21 +2414,21 @@
 
 [**switchover\_on\_low\_disk\_space**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 [**switchover\_timeout**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `90s`
 
 [**verify\_master\_failure**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -2437,14 +2437,14 @@
 
 [**write\_test\_fail\_action**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Default: `log`
 * Values: `log`, `failover`
 * Dynamic: Yes
 
 [**write\_test\_interval**](maxscale-monitors/mariadb-monitor.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Dynamic: Yes
 * Default: 0s
 
@@ -2467,28 +2467,28 @@
 
 [**backend\_connect\_timeout**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `3s`
 
 [**backend\_read\_timeout**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `3s`
 
 [**backend\_write\_timeout**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `3s`
 
 [**disk\_space\_check\_interval**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `0s`
@@ -2502,7 +2502,7 @@
 
 [**events**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: enum
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `master_down`, `master_up`, `slave_down`, `slave_up`, `server_down`, `server_up`, `lost_master`, `lost_slave`, `new_master`, `new_slave`
@@ -2510,7 +2510,7 @@
 
 [**journal\_max\_age**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `28800s`
@@ -2523,7 +2523,7 @@
 
 [**monitor\_interval**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `2s`
@@ -2543,7 +2543,7 @@
 
 [**script\_timeout**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `90s`
@@ -2568,7 +2568,7 @@
 
 [**allow\_replication**](maxscale-protocols/maxscale-mariadb-protocol-module.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -2597,13 +2597,13 @@
 
 [**authentication\_required**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
 [**authentication\_shared**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
@@ -2614,31 +2614,31 @@
 
 [**authorization\_enabled**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
 [**auto\_create\_databases**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `true`
 
 [**auto\_create\_tables**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `true`
 
 [**cursor\_timeout**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Default: `60s`
 
 [**debug**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `none`, `in`, `out`, `back`
 * Default: `none`
@@ -2664,20 +2664,20 @@
 
 [**log\_unknown\_command**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
 [**on\_unknown\_command**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `return_error`, `return_empty`
 * Default: `return_error`
 
 [**ordered\_insert\_behavior**](maxscale-protocols/maxscale-nosql-protocol-module.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `atomic`, `default`
 * Default: `default`
@@ -2709,7 +2709,7 @@
 
 [**compression\_algorithm**](maxscale-routers/maxscale-binlogrouter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `none`, `zstandard`
@@ -2724,14 +2724,14 @@
 
 [**ddl\_only**](maxscale-routers/maxscale-binlogrouter.md)
 
-* Type: boolean
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: false
 
 [**encryption\_cipher**](maxscale-routers/maxscale-binlogrouter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `AES_CBC`, `AES_CTR`, `AES_GCM`
@@ -2746,14 +2746,14 @@
 
 [**expiration\_mode**](maxscale-routers/maxscale-binlogrouter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Dynamic: No
 * Values: `purge`, `archive`
 * Default: `purge`
 
 [**expire\_log\_duration**](maxscale-routers/maxscale-binlogrouter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s`
@@ -2767,7 +2767,7 @@
 
 [**net\_timeout**](maxscale-routers/maxscale-binlogrouter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `10s`
@@ -2781,14 +2781,14 @@
 
 [**rpl\_semi\_sync\_slave\_enabled**](maxscale-routers/maxscale-binlogrouter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: false
 * Dynamic: Yes
 
 [**select\_master**](maxscale-routers/maxscale-binlogrouter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -2806,7 +2806,7 @@
 
 [**explain**](maxscale-routers/maxscale-diff.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `other`, \`both'
@@ -2821,7 +2821,7 @@
 
 [**explain\_period**](maxscale-routers/maxscale-diff.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 15m
@@ -2841,7 +2841,7 @@
 
 [**on\_error**](maxscale-routers/maxscale-diff.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `close`, `ignore`
@@ -2858,14 +2858,14 @@
 
 [**qps\_window**](maxscale-routers/maxscale-diff.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: 15m
 
 [**report**](maxscale-routers/maxscale-diff.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `always`, `on_discrepancy`, `never`
@@ -2873,7 +2873,7 @@
 
 [**reset\_replication**](maxscale-routers/maxscale-diff.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -2918,21 +2918,21 @@
 
 [**cooperative\_replication**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
 
 [**enable\_idempotence**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
 
 [**exclude**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `""`
@@ -2946,7 +2946,7 @@
 
 [**kafka\_sasl\_mechanism**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `PLAIN`, `SCRAM-SHA-256`, `SCRAM-SHA-512`
@@ -2968,7 +2968,7 @@
 
 [**kafka\_ssl**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -2996,21 +2996,21 @@
 
 [**match**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `""`
 
 [**read\_gtid\_from\_kafka**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
 
 [**send\_schema**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -3024,7 +3024,7 @@
 
 [**timeout**](maxscale-routers/maxscale-kafkacdc.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `10s`
@@ -3061,7 +3061,7 @@
 
 [**kafka\_sasl\_mechanism**](maxscale-routers/maxscale-kafkaimporter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `PLAIN`, `SCRAM-SHA-256`, `SCRAM-SHA-512`
@@ -3083,7 +3083,7 @@
 
 [**kafka\_ssl**](maxscale-routers/maxscale-kafkaimporter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -3111,7 +3111,7 @@
 
 [**table\_name\_in**](maxscale-routers/maxscale-kafkaimporter.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `topic`, `key`
@@ -3119,7 +3119,7 @@
 
 [**timeout**](maxscale-routers/maxscale-kafkaimporter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `5000ms`
@@ -3136,7 +3136,7 @@
 
 [**exporter**](maxscale-routers/maxscale-mirror.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: Yes
 * Dynamic: Yes
 * Values: `log`, `file`, `kafka`
@@ -3170,7 +3170,7 @@
 
 [**on\_error**](maxscale-routers/maxscale-mirror.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Default: `ignore`
 * Mandatory: No
 * Dynamic: Yes
@@ -3178,7 +3178,7 @@
 
 [**report**](maxscale-routers/maxscale-mirror.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Default: `always`
 * Mandatory: No
 * Dynamic: Yes
@@ -3190,21 +3190,21 @@
 
 [**master\_accept\_reads**](maxscale-routers/maxscale-readconnroute.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
 
 [**max\_replication\_lag**](maxscale-routers/maxscale-readconnroute.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 0s
 
 [**router\_options**](maxscale-routers/maxscale-readconnroute.md)
 
-* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `master`, `slave`, `synced`, `running`
@@ -3216,7 +3216,7 @@
 
 [**causal\_reads**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `local`, `global`, `fast`, `fast_global`, `universal`, `fast_universal`
@@ -3224,42 +3224,42 @@
 
 [**causal\_reads\_timeout**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 10s
 
 [**delayed\_retry**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 [**delayed\_retry\_timeout**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 10s
 
 [**lazy\_connect**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 [**master\_accept\_reads**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 [**master\_failure\_mode**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `fail_instantly`, `fail_on_write`, `error_on_write`
@@ -3267,14 +3267,14 @@
 
 [**master\_reconnection**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true (>= MaxScale 24.02), false(<= MaxScale 23.08)
 
 [**max\_replication\_lag**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 0s
@@ -3288,7 +3288,7 @@
 
 [**retry\_failed\_reads**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -3302,7 +3302,7 @@
 
 [**slave\_selection\_criteria**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `least_current_operations`, `adaptive_routing`, `least_behind_master`, `least_router_connections`, `least_global_connections`
@@ -3310,28 +3310,28 @@
 
 [**strict\_multi\_stmt**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 [**strict\_sp\_calls**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 [**strict\_tmp\_tables**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true (>= MaxScale 24.02), false (<= MaxScale 23.08)
 
 [**transaction\_replay**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -3345,7 +3345,7 @@
 
 [**transaction\_replay\_checksum**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `full`, `result_only`, `no_insert_id`
@@ -3353,42 +3353,42 @@
 
 [**transaction\_replay\_max\_size**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [size](../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 1 MiB
 
 [**transaction\_replay\_retry\_on\_deadlock**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 [**transaction\_replay\_retry\_on\_mismatch**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 [**transaction\_replay\_safe\_commit**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
 
 [**transaction\_replay\_timeout**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 30s (>= MaxScale 24.02), 0s (<= MaxScale 23.08)
 
 [**use\_sql\_variables\_in**](maxscale-routers/maxscale-readwritesplit.md)
 
-* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `master`, `all`
@@ -3400,7 +3400,7 @@
 
 [**allow\_duplicates**](maxscale-routers/maxscale-schemarouter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -3414,28 +3414,28 @@
 
 [**ignore\_tables\_regex**](maxscale-routers/maxscale-schemarouter.md)
 
-* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [regex](../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
 [**max\_staleness**](maxscale-routers/maxscale-schemarouter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 150s
 
 [**refresh\_databases**](maxscale-routers/maxscale-schemarouter.md)
 
-* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
 
 [**refresh\_interval**](maxscale-routers/maxscale-schemarouter.md)
 
-* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `300s`

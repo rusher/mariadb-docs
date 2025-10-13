@@ -905,7 +905,7 @@ used for all unauthenticated MongoDB® clients connecting to the same listener p
 
 ### `authentication_required`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
@@ -921,7 +921,7 @@ MariaDB server.
 
 ### `authentication_shared`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
@@ -971,7 +971,7 @@ Specifies the _password_ of `authentication_user`.
 
 ### `authorization_enabled`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
@@ -999,7 +999,7 @@ MaxScale.
 
 ### `on_unknown_command`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `return_error`, `return_empty`
 * Default: `return_error`
@@ -1013,7 +1013,7 @@ Enumeration values:
 
 ### `log_unknown_command`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
@@ -1023,7 +1023,7 @@ currently is not supported.
 
 ### `auto_create_databases`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `true`
 
@@ -1033,7 +1033,7 @@ Note that setting this parameter to `true`, without also setting`auto_create_tab
 
 ### `auto_create_tables`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `true`
 
@@ -1054,7 +1054,7 @@ Specifies the length of the id column in tables that are automatically created.
 
 ### `ordered_insert_behavior`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `atomic`, `default`
 * Default: `default`
@@ -1075,7 +1075,7 @@ document) is used, has an impact on the performance. Please see the discussion a
 
 ### `cursor_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Default: `60s`
 
@@ -1084,7 +1084,7 @@ automatically closed.
 
 ### `debug`
 
-* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `none`, `in`, `out`, `back`
 * Default: `none`

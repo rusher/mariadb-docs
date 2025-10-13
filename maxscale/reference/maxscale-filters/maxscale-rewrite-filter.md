@@ -217,7 +217,7 @@ Default regex\_grammar for templates
 
 #### `case_sensitive`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
@@ -226,7 +226,7 @@ Default case sensitivity for templates
 
 #### `log_replacement`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -245,21 +245,21 @@ Overrides the global regex\_grammar of a template.
 
 #### `case_sensitive`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: From maxscale.cnf
 
 Overrides the global case sensitivity of a template.
 
 #### `ignore_whitespace`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: true
 
 Ignore whitespace differences in the match template and input sql.
 
 #### `continue_if_matched`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 
 If a template matches and the replacement is done, continue to the
@@ -267,7 +267,7 @@ next template and apply it to the result of the previous rewrite.
 
 #### `what_if`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 
 Do not make the replacement, only log what would have

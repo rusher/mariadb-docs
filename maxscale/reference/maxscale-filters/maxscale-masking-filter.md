@@ -166,7 +166,7 @@ rules=/path/to/rules-file
 
 #### `warn_type_mismatch`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `never`, `always`
@@ -182,7 +182,7 @@ warn_type_mismatch=always
 
 #### `large_payload`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignore`, `abort`
@@ -207,7 +207,7 @@ large_payload=ignore
 
 #### `prevent_function_usage`
 
-* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -237,7 +237,7 @@ prevent_function_usage=false
 
 #### `require_fully_parsed`
 
-* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -259,7 +259,7 @@ possible to bypass the protection that they are intended to provide.
 
 #### `treat_string_arg_as_field`
 
-* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -275,7 +275,7 @@ treat_string_arg_as_field=false
 
 #### `check_user_variables`
 
-* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -295,7 +295,7 @@ check_user_variables=false
 
 #### `check_unions`
 
-* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -315,7 +315,7 @@ check_unions=false
 
 #### `check_subqueries`
 
-* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`

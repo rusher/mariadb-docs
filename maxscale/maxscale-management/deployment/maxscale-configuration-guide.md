@@ -267,7 +267,8 @@ changes done with `SET GLOBAL` statements are lost if the process is restarted.
 
 #### Booleans
 
-Boolean type parameters interpret the values `true`, `yes`, `on` and `1` a&#x73;_&#x74;rue_ values and `false`, `no`, `off` and `0` as _false_ values. Starting with
+Boolean type parameters interpret the values `true`, `yes`, `on` and `1` as
+_true_ values and `false`, `no`, `off` and `0` as _false_ values. Starting with
 MaxScale 23.02, the REST API also accepts the same boolean values for boolean
 type parameters.
 
@@ -1464,7 +1465,9 @@ MaxScale 23.02 and earlier, also `writeq_low_water` had to be non-zero.
 * Default: `1024`
 
 Low water mark for network write buffer. Once the traffic throttling is enabled,
-it will only be disabled when the network write buffer is below`writeq_low_water` bytes. The parameter accepts [size type values](maxscale-configuration-guide.md#sizes). The
+it will only be disabled when the network write buffer is below
+`writeq_low_water` bytes. The parameter accepts
+[size type values](maxscale-configuration-guide.md#sizes). The
 default value was 8192 bytes before 22.08.4.
 
 The value of `writeq_high_water` must always be greater than the value of`writeq_low_water`.
@@ -2733,7 +2736,7 @@ keepalive feature, you can disable it with `connection_keepalive=0s`.
 
 #### `force_connection_keepalive`
 
-* Type: boolean
+* Type: [boolean](maxscale-configuration-guide.md#booleans)
 * Mandatory No
 * Dynamic: Yes
 * Default: `false`

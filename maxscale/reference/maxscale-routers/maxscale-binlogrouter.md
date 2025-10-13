@@ -264,7 +264,7 @@ binary logs to the replicas.
 
 #### `net_timeout`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `10s`
@@ -273,7 +273,7 @@ Network connection and read timeout for the connection to the primary.
 
 #### `select_master`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -304,7 +304,7 @@ replication manually with `CHANGE MASTER TO`.
 
 #### `expiration_mode`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Dynamic: No
 * Values: `purge`, `archive`
 * Default: `purge`
@@ -313,7 +313,7 @@ Choose whether expired logs should be purged or archived.
 
 #### `expire_log_duration`
 
-* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s`
@@ -342,7 +342,7 @@ is always kept.
 
 #### `compression_algorithm`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `none`, `zstandard`
@@ -360,7 +360,7 @@ is not compressed.
 
 #### `ddl_only`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: false
@@ -401,7 +401,7 @@ binlogs.
 
 #### `encryption_cipher`
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `AES_CBC`, `AES_CTR`, `AES_GCM`
@@ -421,7 +421,7 @@ Possible values are:
 
 #### `rpl_semi_sync_slave_enabled`
 
-* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: false
 * Dynamic: Yes
