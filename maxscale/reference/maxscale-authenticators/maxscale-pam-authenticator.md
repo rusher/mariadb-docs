@@ -51,7 +51,7 @@ account         required        pam_unix.so
 * Default: `false`
 
 If enabled, MaxScale communicates with the client as if
-using [mysql\_clear\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection#mysql_clear_password-plugin).
+using [mysql\_clear\_password](../../../reference/clientserver-protocol/1-connecting/connection.md#mysql_clear_password-plugin).
 This setting has no effect on MaxScale-to-backend communication,
 which adapts to either "dialog" or `mysql_clear_password`,
 depending on which one the backend suggests.
@@ -209,13 +209,13 @@ This means, that if a user is found and the authentication fails, anonymous auth
 is not attempted even when it could use a different PAM service with a different outcome.
 
 Setting up PAM group mapping for the MariaDB server is a more involved process as the server
-requires details on which Unix user or group is mapped to which MariaDB user.
-See [this guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication) for more details.
-Performing all the steps in the guide also on the MaxScale machine is not required,
-as the MaxScale PAM plugin only checks that the client host matches an anonymous
-user and that the client (with the username and password it provided) can log into
-the local PAM configuration.
-If using normal password authentication, simply generating the Unix user and password should be enough.
+requires details on which Unix user or group is mapped to which MariaDB user. See
+[this guide](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication.md)
+for more details. Performing all the steps in the guide also on the MaxScale
+machine is not required, as the MaxScale PAM plugin only checks that the client
+host matches an anonymous user and that the client (with the username and
+password it provided) can log into the local PAM configuration. If using normal
+password authentication, simply generating the Unix user and password should be enough.
 
 ## Implementation Details and Limitations
 

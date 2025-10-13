@@ -62,7 +62,8 @@ by the custom parser and causes the autocommit modification to not be noticed.
 #### XA Transactions
 
 MaxScale will treat statements executed after `XA START` and before `XA END` as
-if they were executed in a normal read-write transaction started with `START TRANSACTION`. This means that only XA transactions in the ACTIVE state will be
+if they were executed in a normal read-write transaction started with `START TRANSACTION`.
+This means that only XA transactions in the ACTIVE state will be
 routed as transactions and all statements after `XA END` are routed normally.
 
 XA transactions and normal transactions are mutually exclusive in MariaDB. This
@@ -176,7 +177,8 @@ connector is 3.1.18. Older versions of the driver suffer from problems that may
 manifest as crashes or memory leaks. The driver must be installed on the system
 in order for the ETL feature to work.
 
-The data loading into MariaDB is done with `autocommit`, `unique_checks` and`foreign_key_checks` disabled inside of a single transaction. This is done to
+The data loading into MariaDB is done with `autocommit`, `unique_checks` and
+`foreign_key_checks` disabled inside of a single transaction. This is done to
 leverage the optimizations done for InnoDB that allows faster insertions into
 empty tables. When loading data into MariaDB versions 10.5 or older, this can
 translate into long rollback times in case the ETL operation fails.

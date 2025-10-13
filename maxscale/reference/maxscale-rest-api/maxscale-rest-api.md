@@ -228,7 +228,7 @@ the [JSON API](http://jsonapi.org/format/) specification.
 - [monitors](maxscale-monitor-resource.md)
 - [sessions](maxscale-session-resource.md)
 - [users](maxscale-admin-user-resource.md)
-- [roles](Resources-Role.md)
+- [roles](maxscale-role-resource.md)
 - [sql](maxscale-sql-resource.md)
 
 In addition to the named resources, the REST API will respond with a HTTP 200 OK

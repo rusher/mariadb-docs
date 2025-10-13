@@ -51,6 +51,8 @@ are `ssl_key`, `ssl_cert`, `ssl_ca`, `ssl_verify_peer_certificate` and
 For a list of optional parameters that all monitors support, read the
 [Monitor Common](Monitor-Common.md) document.
 
+## Settings
+
 The following lists optional parameters specific to the MaxScale Monitor.
 
 ### `advertised_url`

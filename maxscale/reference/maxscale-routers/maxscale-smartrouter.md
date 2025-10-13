@@ -1,8 +1,6 @@
 # MaxScale SmartRouter
 
-## SmartRouter
-
-### Overview
+## Overview
 
 SmartRouter is the query router of the SmartQuery framework. Based on the type
 of the query, each query is routed to the server or cluster that can best
@@ -14,7 +12,7 @@ a single entry point in MaxScale. This allows a MaxScale client to freely mix
 transactional and analytical queries using the same connection. This is known
 as Hybrid Transactional and Analytical Processing, HTAP.
 
-### Settings
+## Settings
 
 SmartRouter is configured as a service that either routes to other MaxScale
 routers or plain servers. Although one can configure SmartRouter to use a plain
@@ -23,7 +21,7 @@ server directly, we refer to the configured "servers" as clusters.
 For details about the standard service parameters, refer to the
 [Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 
-#### `master`
+### `master`
 
 * Type: target
 * Mandatory: Yes
@@ -96,7 +94,7 @@ Unix domain socket compared to accessing them over a TCP/IP socket.
 
 A complete configuration example can be found at the end of this document.
 
-### Cluster selection - how queries are routed
+## Cluster selection - how queries are routed
 
 SmartRouter keeps track of the performance, or the execution time, of queries to
 the clusters. Measurements are stored with the canonical of a query as the key.
@@ -119,13 +117,13 @@ on different storage engines is being studied at MariaDB. As we learn more, we
 will be able to better categorize queries and move that knowledge into
 SmartRouter.
 
-### Limitations
+## Limitations
 
 * `LOAD DATA LOCAL INFILE` is not supported.
 * The performance data is not persisted. The measurements will be performed
   anew after each startup.
 
-### Complete configuration example
+## Complete configuration example
 
 ```
 [maxscale]

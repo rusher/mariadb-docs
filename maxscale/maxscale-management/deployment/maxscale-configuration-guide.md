@@ -39,7 +39,7 @@ is also possible to update the status of a server manually.
 | Auth Error               | The monitor cannot login and query the server due to insufficient privileges.                                                                                                                                                                                                                                              |
 | Maintenance              | The server is under maintenance. Typically this status bit is turned on manually using maxctrl, but it will also be turned on for a server that for some reason is blocking connections from MaxScale. When a server is in maintenance mode, no connections will be created to it and existing connections will be closed. |
 | Slave of External Master | The server is a replica of a primary that is not being monitored.                                                                                                                                                                                                                                                          |
-| Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../reference/maxscale-monitors/galera-monitor.md) for more information.                                                                                                                                  |
+| Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../reference/maxscale-monitors/galera-monitor.md#disable_master_failback) for more information.                                                                                                                                  |
 
 For more information on how to manually set these states via MaxCtrl, read the [Administration Tutorial](../../mariadb-maxscale-tutorials/maxscale-administration-tutorial.md).
 
@@ -676,7 +676,8 @@ even if the duration is longer than a second.
 * Dynamic: Yes
 * Default: `false`
 
-Deprecated since MariaDB MaxScale 25.01. Use [cooperative monitoring](../../reference/maxscale-monitors/mariadb-monitor.md)
+Deprecated since MariaDB MaxScale 25.01. Use
+[cooperative monitoring](../../reference/maxscale-monitors/mariadb-monitor.md#cooperative-monitoring)
 instead.
 
 Controls whether MaxScale is a passive node in a cluster of multiple MaxScale
@@ -2392,7 +2393,7 @@ user=maxscale
 password=Mhu87p2D
 ```
 
-See [MySQL protocol authentication documentation](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale-25-01-authentication-modules/README.md)
+See [MySQL protocol authentication documentation](../../maxscale-security/authentication-modules.md)
 for more information (such as required grants) and troubleshooting tips
 regarding user account management and client authentication.
 
@@ -2412,7 +2413,7 @@ user=maxscale
 password=Mhu87p2D
 ```
 
-See [MySQL protocol authentication documentation](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale-25-01-authentication-modules/README.md)
+See [MySQL protocol authentication documentation](../../maxscale-security/authentication-modules.md)
 for more information (such as required grants) and troubleshooting tips
 regarding user account management and client authentication.
 
@@ -3307,8 +3308,9 @@ both monitor and user account manager to connect.
 If the connection to the extra-port fails due to connection number limit or if
 the port is not open on the server, normal port is used.
 
-For more information, see [extra\_port](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
-and [extra\_max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables#extra_max_connections).
+For more information, see
+[extra\_port](../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port)
+and [extra\_max\_connections](../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_max_connections)
 
 #### `persistpoolmax`
 
@@ -3499,7 +3501,8 @@ Readconnroute will always use primary servers before secondary servers as long
 as they match the configured server type.
 
 Readwritesplit will pick servers that have the same rank as the current
-primary. Read the [readwritesplit documentation on server ranks](../../reference/maxscale-routers/maxscale-readwritesplit.md)
+primary. Read the
+[readwritesplit documentation on server ranks](../../reference/maxscale-routers/maxscale-readwritesplit.md#server-ranks)
 for a detailed description of the behavior.
 
 The following example server configuration demonstrates how `rank` can be used
@@ -3538,7 +3541,8 @@ they are available. When they are no longer available, the `DR-site-primary` and
 * Default: 0
 
 Server priority. Currently only used by galeramon to choose the order in which
-nodes are selected as the current primary server. Refer to the [Server Priorities](../../reference/maxscale-monitors/galera-monitor.md)
+nodes are selected as the current primary server. Refer to the
+[Server Priorities](../../reference/maxscale-monitors/galera-monitor.md#interaction-with-server-priorities)
 section of the galeramon documentation for more information on how to use it.
 
 Starting with MaxScale 2.5.21, this parameter also accepts negative values. In
@@ -3557,7 +3561,7 @@ the source of the replication. That is, if monitor sends a "CHANGE MASTER TO"-
 command to server A telling it to replicate from server B, the setting value
 from MaxScale configuration for server A would be used.
 
-See [MariaDB Monitor documentation](../../reference/maxscale-monitors/mariadb-monitor.md)
+See [MariaDB Monitor documentation](../../reference/maxscale-monitors/mariadb-monitor.md#replication_custom_options)
 for more information.
 
 ### Monitor
@@ -3696,7 +3700,7 @@ connections to MaxScale. If proxy headers are used, both MaxScale and the
 backends will know where the client originally came from.
 
 The `proxy_protocol_networks`-setting works similarly to the equivalent setting
-in [MariaDB Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/proxy-protocol-support).
+in [MariaDB Server](../../server/clients-and-utilities/server-client-software/client-libraries/proxy-protocol-support.md).
 The value can be a single IP or subnetwork, or a comma-separated list of them.
 Subnetworks are given in CIDR-format, e.g. "192.168.0.0/16". "\*" is a valid
 value, allowing anyone to send the header. "localhost" allows proxy headers
@@ -3756,7 +3760,8 @@ settings `pam_backend_mapping` or `pam_mapped_pw_file`, as these may overwrite
 the mapped credentials. Is most powerful when combined with service setting`user_accounts_file`, as then MaxScale can accept users that do not exist on
 backends and map them to backend users.
 
-This file functions very similar to [PAM-based mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam).
+This file functions very similar to
+[PAM-based mapping](../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md)
 Both user-to-user and group-to-user mappings can be defined. Also, the password
 and authentication plugin for the mapped users can be added. The file is only
 read during listener creation (typically MaxScale start) or when a listener is
@@ -3870,8 +3875,10 @@ The metadata is implemented using [the session state information](https://app.gi
 that is embedded in the OK packets that are generated by MaxScale. The values
 are encoded as system variables changes. This information can be accessed by all
 connectors that support reading the session state information. One example of
-this is the MariaDB Connector/C that implements it with the [mysql\_session\_track\_get\_first](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_first)
-and [mysql\_session\_track\_get\_next](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_next)
+this is the MariaDB Connector/C that implements it with the
+[mysql\_session\_track\_get\_first](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_first)
+and
+[mysql\_session\_track\_get\_next](https://github.com/mariadb-corporation/mariadb-connector-c/wiki/mysql_session_track_get_next)
 functions.
 
 The following example demonstrates the use of `connection_metadata`:
@@ -4379,11 +4386,11 @@ Read the following documents for different methods of altering the MaxScale
 configuration at runtime.
 
 * MaxCtrl
-* [create](../../reference/maxscale-maxctrl.md)
-* [destroy](../../reference/maxscale-maxctrl.md)
-* [add](../../reference/maxscale-maxctrl.md)
-* [remove](../../reference/maxscale-maxctrl.md)
-* [alter](../../reference/maxscale-maxctrl.md)
+  * [create](../../reference/maxscale-maxctrl.md#create)
+  * [destroy](../../reference/maxscale-maxctrl.md#destroy)
+  * [add](../../reference/maxscale-maxctrl.md#add)
+  * [remove](../../reference/maxscale-maxctrl.md#remove)
+  * [alter](../../reference/maxscale-maxctrl.md#alter)
 * [REST API](../../reference/maxscale-rest-api/maxscale-rest-api.md) documentation
 
 All changes to the configuration done via MaxCtrl are persisted as individual
@@ -4909,7 +4916,8 @@ error log file. By default, MariaDB MaxScale will log to a file in`/var/log/maxs
 
 ## Limitations
 
-The current limitations of MaxScale are listed in the [Limitations](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/README.md) document.
+The current limitations of MaxScale are listed in the [Limitations](../mariadb-maxscale-limitations-guide.md)
+document.
 
 ## Performance Optimization
 

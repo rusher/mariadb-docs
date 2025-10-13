@@ -15,9 +15,9 @@ the MongoDB® client library and application.
 
 ## Configuring
 
-There are a number of [parameters](maxscale-nosql-protocol-module.md#parameters) with which the behavior
-of _nosqlprotocol_ can be adjusted. A minimal configuration looks
-like:
+There are a number of [parameters](maxscale-nosql-protocol-module.md#parameters)
+with which the behavior of _nosqlprotocol_ can be adjusted. A minimal configuration
+looks like:
 
 ```
 [TheService]
@@ -1290,8 +1290,9 @@ The following operators are currently supported.
 
 #### `$type`
 
-When `$type` is used, it will be converted into a condition involving one or more [JSON\_TYPE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_type) comparisons. The following subset
-of types can be used in `$type` queries:
+When `$type` is used, it will be converted into a condition involving one or more
+[JSON\_TYPE](../../../server/reference/sql-functions/special-functions/json-functions/json_type.md)
+comparisons. The following subset of types can be used in `$type` queries:
 
 | Type           | Number | Alias    | MariaDB Type |
 | -------------- | ------ | -------- | ------------ |
@@ -2905,7 +2906,9 @@ the value of the `_id` field of the document in the `doc` column.
 
 All MongoDB® commands that _mongdbprotocol_ support (but for the ones that
 do not require database access), basically access or manipulate the
-content in the `doc` column using the [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions) of MariaDB.
+content in the `doc` column using the
+[JSON functions](../../../server/reference/sql-functions/special-functions/json-functions/json_type.md)
+of MariaDB.
 
 From within the mongo shell itself it is easy to find out just what SQL
 a particular MongoDB command is translated into.

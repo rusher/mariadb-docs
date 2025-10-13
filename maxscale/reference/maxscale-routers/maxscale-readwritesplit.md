@@ -430,7 +430,7 @@ will not be closed even if all backend connections for that session have
 failed. This is done in the hopes that before the next query from the idle
 session arrives, a reconnection to one of the replicas is made. However, this can
 leave idle connections around unless the client application actively closes
-them. To prevent this, use the [connection\_timeout](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+them. To prevent this, use the [connection\_timeout](../../maxscale-management/deployment/maxscale-configuration-guide.md#connection_timeout)
 parameter.
 
 **Note:** If `master_failure_mode` is set to `error_on_write` and the connection
@@ -502,11 +502,10 @@ risk.
 
 The duration to wait until an error is returned to the client when`delayed_retry` is enabled.
 
-The timeout is specified as documented [here](../../maxscale-management/deployment/maxscale-configuration-guide.md). If no explicit unit
-is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent
-versions a value without a unit may be rejected. Note that since the granularity
-of the timeout is seconds, a timeout specified in milliseconds will be rejected,
-even if the duration is longer than a second.
+If no explicit unit is provided, the value is interpreted as seconds in MaxScale 2.4.
+In subsequent versions a value without a unit may be rejected. Note that since the
+granularity of the timeout is seconds, a timeout specified in milliseconds will be
+rejected, even if the duration is longer than a second.
 
 ### `transaction_replay`
 
@@ -555,9 +554,6 @@ is ever exceeded, a message will be logged at the info level.
 The number of times that this limit has been exceeded is shown in`maxctrl show
 service` as `trx_max_size_exceeded`.
 
-Read [the configuration guide](../../maxscale-management/deployment/maxscale-configuration-guide.md)
-for more details on size type parameters in MaxScale.
-
 ### `transaction_replay_attempts`
 
 * Type: integer
@@ -583,9 +579,6 @@ attempts is reset.
 
 The time how long transactions are attempted for. To explicitly disable this
 feature, set the value to 0 seconds.
-
-The timeout is [a duration type](../../maxscale-management/deployment/maxscale-configuration-guide.md)
-and the value must include a unit for the duration.
 
 When `transaction_replay_timeout` is enabled, the time a transaction replay can
 take is controlled solely by this parameter. This is a more convenient and
@@ -885,7 +878,7 @@ SET @maxscale_secret_variable=(
 
 The `SET` command will synchronize the replica to a certain logical point in the
 replication stream (see
-[MASTER\_GTID\_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait)
+[MASTER\_GTID\_WAIT](../../../server/reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
 for more details). If the synchronization fails, the query will not run and it
 will be retried on the server where the transaction was originally done.
 
@@ -946,7 +939,7 @@ server which would cause the connection to be closed and a warning to be logged.
 * Starting with MaxScale 24.02.5, the fast modes `fast`, `fast_global` and`fast_universal`
   work with Galera clusters. In older versions, none of the`causal_reads` modes worked
   with Galera. The non-fast modes that rely on the
-  [MASTER\_GTID\_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait)
+  [MASTER\_GTID\_WAIT](../../../server/reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
   function still do not work with Galera. This is because Galera does not
   implement a mechanism that allows a client to wait for a particular GTID.
 * If the combination of the original SQL statement and the modifications
@@ -977,7 +970,7 @@ server which would cause the connection to be closed and a warning to be logged.
 
 The timeout for the replica synchronization done by `causal_reads`.
 
-The timeout is specified as documented [here](../../maxscale-management/deployment/maxscale-configuration-guide.md). If no explicit unit
+If no explicit unit
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent
 versions a value without a unit may be rejected. Note that since the granularity
 of the timeout is seconds, a timeout specified in milliseconds will be rejected,
@@ -1302,7 +1295,7 @@ of the following group:
 * `SHOW` statements except `SHOW MASTER STATUS`
 
 The list of supported built-in functions can be found
-[here](https://github.com/mariadb-corporation/MaxScale/blob/23.02/query_classifier/qc_sqlite/builtin_functions.cc).
+[here](https://github.com/mariadb-corporation/MaxScale/blob/24.02/server/modules/parser_plugin/pp_sqlite/builtin_functions.cc)
 
 ### Routing to every session backend
 
@@ -1446,7 +1439,9 @@ session state by executing all session commands that were executed. This means
 that if the session state is changed mid-transaction in a way that affects the
 results, transaction replay will fail.
 
-The following partial transaction demonstrates the problem by using [SQL\_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) inside a transaction.
+The following partial transaction demonstrates the problem by using
+[SQL\_MODE](../../../server/server-management/variables-and-modes/sql-mode.md)
+inside a transaction.
 
 ```
 SET SQL_MODE='';            -- A session command

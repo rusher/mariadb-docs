@@ -6,9 +6,9 @@ MaxScale's [Read/Write Split Router (readwritesplit)](../../reference/maxscale-r
 
 The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) supports:
 
-* [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) deployments
-* [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-galera-cluster-quickstart/README.md) deployments
-* [Multi-Node Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-columnstore/README.md) deployments
+* [MariaDB replication](../../../server/architecture/topologies/primary-replica.md)
+* [Galera Cluster](../../../server/architecture/topologies/galera-cluster.md)
+* [Columnstore Object Storage](../../../server/architecture/topologies/columnstore-object-storage.md) and [ColumnStore Shared Local Storage](../../../server/server/architecture/topologies/columnstore-shared-local-storage.md)
 
 ## When to Use the Read/Write Split Router?
 
@@ -21,13 +21,6 @@ The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/
 * Automatically replay transactions on the new primary after failover or switchover.
 * Automatically retry failed queries.
 * Enforce causal reads to avoid reading stale data caused by slave lag.
-
-## Deploying Read/Write Split Router
-
-* [Deploy ColumnStore Object Storage Topology](https://mariadb.com/kb/en/deploy-columnstore-object-storage-topology-with-mariadb-server/)
-* [Deploy ColumnStore Shared Local Storage Topology](https://mariadb.com/kb/en/columnstore-shared-local-storage/)
-* [Deploy Galera Cluster Topology](https://mariadb.com/kb/en/topologies-galera-cluster/)
-* [Deploy Primary/Replica Topology](https://mariadb.com/kb/en/deploy-primaryreplica-topology-with-enterprise-server/)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

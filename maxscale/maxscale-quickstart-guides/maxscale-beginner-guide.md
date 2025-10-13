@@ -134,7 +134,8 @@ The Read-Write Service configured above only uses one server. To enable
 read-write splitting, a replication cluster with a primary server and one or
 more replicas is required. Setting up such a cluster is outside the scope of
 this document, see
-[here](https://mariadb.com/kb/en/setting-up-replication/) for more information.
+[here](../../server/ha-and-performance/standard-replication/setting-up-replication.md)
+for more information.
 
 Once the replicas are set up, add them to the MaxScale configuration file as
 separate sections: `[server2]`, `[server3]` etc., similar to `[server1]`.
@@ -218,8 +219,11 @@ more. See [here](MaxGUI.md) for more information on the GUI.
 
 ## Further reading
 
-The [Configuration Guide](Configuration-Guide.md) lists all global configuration
-parameters. The [ReadWriteSplit documentation](../Routers/ReadWriteSplit.md)
+The
+[Configuration Guide](../maxscale-management/deployment/maxscale-configuration-guide.md)
+lists all global configuration parameters. The
+[ReadWriteSplit documentation](../reference/maxscale-routers/maxscale-readwritesplit.md)
 explains the ReadWriteSplit-router and its features, such as transaction replay
-and causal reads. The [MariaDB Monitor documentation](../Monitors/MariaDB-Monitor.md)
+and causal reads. The
+[MariaDB Monitor documentation](../reference/maxscale-monitors/mariadb-monitor.md)
 explains monitor features such as failover and switchover.

@@ -58,14 +58,16 @@ sudo ./postinst
 
 ### Required Packages
 
-For a definitive list of packages, consult the [install\_build\_deps.sh](https://mariadb.com/BUILD/install_build_deps.sh) script.
+For a definitive list of packages, consult the
+[install\_build\_deps.sh](https://github.com/mariadb-corporation/MaxScale/BUILD/install_build_deps.sh) script.
 
 ### Configuring the Build
 
 The tests and other parts of the build can be controlled via CMake arguments.
 
 Here is a small table with the names of the most common parameters and what
-they control. These should all be given as parameters to the -D switch i&#x6E;_&#x4E;AME_=_VALUE_ format (e.g. `-DBUILD_TESTS=Y`).
+they control. These should all be given as parameters to the -D switch
+in _NAME_=_VALUE_ format (e.g. `-DBUILD_TESTS=Y`).
 
 | Argument Name          | Explanation                                                                                                                                                                |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

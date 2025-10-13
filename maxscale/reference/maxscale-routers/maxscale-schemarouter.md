@@ -1,6 +1,6 @@
 # MaxScale SchemaRouter
 
-## SchemaRouter
+## Overview
 
 The SchemaRouter provides an easy and manageable sharding solution by
 building a single logical database server from multiple separate ones. Each
@@ -41,7 +41,7 @@ schemarouter automatically fetches the authentication data from all servers and
 joins it together. At the same time, the `auth_all_servers` parameter has been
 deprecated and is ignored if present in the configuration.
 
-### Routing Logic
+## Routing Logic
 
 * If a command modifies the session state by modifying any session or user
   variables, the query is routed to all nodes. These statements include `SET`
@@ -84,7 +84,7 @@ hints to direct where these statements should go.
 * `LOAD DATA LOCAL INFILE` commands are routed to the first available server
   that contains the tables listed in the query.
 
-#### Custom SQL Commands
+### Custom SQL Commands
 
 To check how databases and tables map to servers, execute the special query`SHOW SHARDS`. The query does not support any modifiers such as `LIKE`.
 
@@ -103,7 +103,7 @@ it based on its internal data. This means that newly created databases will not
 show up immediately and will only be visible when the cached data has been
 updated.
 
-#### Database Mapping
+### Database Mapping
 
 The schemarouter maps each of the servers to know where each database and table
 is located. As each user has access to a different set of tables and databases,
@@ -118,7 +118,7 @@ the update to complete. This waiting functionality was added in MaxScale 2.4.19,
 older versions did not wait for existing updates to finish and would perform
 parallel database mapping queries.
 
-### Configuration
+## Configuration
 
 Here is an example configuration of the schemarouter:
 
@@ -165,9 +165,9 @@ MaxScale's hostname instead of the client's hostname. Only user
 authentication uses the client's hostname and all other grants use MariaDB
 MaxScale's hostname.
 
-### Settings
+## Settings
 
-#### `allow_duplicates`
+### `allow_duplicates`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -180,7 +180,7 @@ This parameter was added in MaxScale 25.01 and it is a more convenient and
 efficient way to disable the duplicate table detection that previously was only
 possible with `ignore_tables_regex=.*`.
 
-#### `ignore_tables`
+### `ignore_tables`
 
 * Type: stringlist
 * Mandatory: No
@@ -192,7 +192,7 @@ tables. By default no tables are ignored.
 
 This parameter was once called `ignore_databases`.
 
-#### `ignore_tables_regex`
+### `ignore_tables_regex`
 
 * Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
@@ -218,17 +218,19 @@ ignore_tables_regex=^db1|^db2|^db3\.t
 
 This parameter was once called `ignore_databases_regex`.
 
-#### `max_sescmd_history`
+### `max_sescmd_history`
 
-This parameter has been moved to [the MaxScale core](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+This parameter has been moved to
+[the MaxScale core](../../maxscale-management/deployment/maxscale-configuration-guide.md#max_sescmd_history)
 in MaxScale 6.0.
 
-#### `disable_sescmd_history`
+### `disable_sescmd_history`
 
-This parameter has been moved to [the MaxScale core](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+This parameter has been moved to
+[the MaxScale core](../../maxscale-management/deployment/maxscale-configuration-guide.md#disable_sescmd_history)
 in MaxScale 6.0.
 
-#### `refresh_databases`
+### `refresh_databases`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -242,7 +244,7 @@ Before MaxScale 6.2.0, this parameter did nothing. Starting with the 6.2.0
 release of MaxScale this parameter now works again but it is disabled by default
 to retain the same behavior as in older releases.
 
-#### `refresh_interval`
+### `refresh_interval`
 
 * Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
@@ -252,13 +254,13 @@ to retain the same behavior as in older releases.
 The minimum interval between database map refreshes in seconds. The default
 value is 300 seconds.
 
-The interval is specified as documented [here](../../maxscale-management/deployment/maxscale-configuration-guide.md). If no explicit unit
+If no explicit unit
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent
 versions a value without a unit may be rejected. Note that since the granularity
 of the intervaltimeout is seconds, a timeout specified in milliseconds will be rejected,
 even if the duration is longer than a second.
 
-#### `max_staleness`
+### `max_staleness`
 
 * Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
@@ -276,7 +278,7 @@ This feature was added in MaxScale 23.08.0. Older versions of MaxScale
 always waited for the update to complete when the database map entry
 went stale.
 
-### Table Family Sharding
+## Table Family Sharding
 
 This functionality was introduced in 2.3.0.
 
@@ -295,7 +297,7 @@ USE db;
 SELECT * FROM tbl1; // May be routed to an incorrect backend if using table sharding.
 ```
 
-### Router Diagnostics
+## Router Diagnostics
 
 The `router_diagnostics` output for a schemarouter service contains the
 following fields.
@@ -305,20 +307,20 @@ following fields.
 
 In MaxScale 24.02, the `queries` `sescmd_percentage`, `longest_sescmd_chain`,`times_sescmd_limit_exceeded`, `longest_session`, `shortest_session` and`average_session` statistics have been replaced by core service statistics.
 
-### Module commands
+## Module commands
 
 Read [Module Commands](../maxscale-module-commands.md)
 documentation for details about module commands.
 
 The schemarouter supports the following module commands.
 
-#### `invalidate SERVICE`
+### `invalidate SERVICE`
 
 Invalidates the database map cache of the given service. This can be used to schedule
 the updates to the database maps to happen at off-peak hours by configuring a
 high value for `refresh_interval` and invalidating the cache externally.
 
-#### `clear SERVICE`
+### `clear SERVICE`
 
 Clears the database map cache of the given service. This forces new connections
 to use a freshly retrieved entry.
@@ -331,7 +333,7 @@ update. When the cache is cleared completely, all clients will have to wait for
 the update to complete. In general, cache invalidation should be preferred over
 cache clearing.
 
-### Limitations
+## Limitations
 
 * Cross-database queries (e.g. `SELECT column FROM database1.table UNION select column FROM database2.table`) are not properly supported. Such queries are routed either to the
   first explicit database in the query, the current database in use or to the first
@@ -370,7 +372,7 @@ cache clearing.
 * `USE db1` is routed to the server with `db1`. If the database is divided to multiple
   servers, only one server will get the command.
 
-### Examples
+## Examples
 
 [Here](../../mariadb-maxscale-tutorials/schemarouter-simple-sharding-with-two-servers.md)
 is a small tutorial on how to set up a sharded database.

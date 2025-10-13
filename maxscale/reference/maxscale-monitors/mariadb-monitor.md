@@ -9,8 +9,6 @@ the replication cluster by performing failover, switchover and rejoin. Backend
 server versions older than MariaDB/MySQL 5.5 are not supported. Failover and
 other similar operations require MariaDB 10.4 or later.
 
-Up until MariaDB MaxScale 2.2.0, this monitor was called _MySQL Monitor_.
-
 ## Required Grants
 
 The monitor user requires the following grant:
@@ -1062,13 +1060,15 @@ least one replica, those events are lost when a new primary is chosen. If the ol
 primary comes back online, the other servers have likely moved on with a
 diverging history and the old primary can no longer join the replication cluster.
 
-To reduce the chance of losing data, use [semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication).
+To reduce the chance of losing data, use
+[semisynchronous replication](../../server/ha-and-performance/standard-replication/semisynchronous-replication.md)
 In semisynchronous mode, the primary waits for a replica to receive an event before
 returning an acknowledgement to the client. This does not yet guarantee a clean
 failover. If the primary fails after preparing a transaction but before receiving
 replica acknowledgement, it will still commit the prepared transaction as part of
 its crash recovery. If the replicas never saw this transaction, the
-old primary has diverged from the cluster. See [Configuring the Master Wait Point](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication)
+old primary has diverged from the cluster. See
+[Configuring the Master Wait Point](../../server/ha-and-performance/standard-replication/semisynchronous-replication.md#configuring-the-master-wait-point)
 for more information. This situation is much less likely in MariaDB Server
 10.6.2 and later, as the improved crash recovery logic will delete such
 transactions.
@@ -1077,7 +1077,8 @@ Even a controlled shutdown of the primary may lose events. The server does not b
 default wait for all data to be replicated to the replicas when shutting down and
 instead simply closes all connections. Before shutting down the primary with the
 intention of having a replica promoted, run _switchover_ first to ensure that all
-data is replicated. For more information on server shutdown, see [Binary Log Dump Threads and the Shutdown Process](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-threads).
+data is replicated. For more information on server shutdown, see
+[Binary Log Dump Threads and the Shutdown Process](../../server/ha-and-performance/standard-replication/replication-threads.md).
 
 Switchover requires that the cluster is "frozen" for the duration of the
 operation. This means that no data modifying statements such as INSERT or UPDATE
@@ -1142,8 +1143,8 @@ failover. `false`, `off`, `no` and `0` disable the feature. `safe` enables [safe
 When automatic failover is enabled, MaxScale
 will elect a new primary server for the cluster if the old primary goes down. A
 server is assumed _Down_ if it cannot be connected to, even if this is caused by
-incorrect credentials. Failover triggers if the primary stays down for [failcount](mariadb-monitor.md#failcount) monitor intervals. Failover will not take place if
-MaxScale is set [passive](../../maxscale-management/deployment/maxscale-configuration-guide.md).
+incorrect credentials. Failover triggers if the primary stays down for [failcount](mariadb-monitor.md#failcount) monitor intervals. Failover will not take place if MaxScale is set
+[passive](../../maxscale-management/deployment/maxscale-configuration-guide.md#passive).
 
 As failover alters replication, it requires more privileges than normal
 monitoring. See [here](mariadb-monitor.md#cluster-manipulation-grants) for a list of grants.
@@ -1380,11 +1381,8 @@ even if the duration is longer than a second.
 
 Enable additional primary failure verification for automatic failover.`verify_master_failure` enables this feature and [master\_failure\_timeout](mariadb-monitor.md#master_failure_timeout) defines the timeout.
 
-The primary failure timeout is specified as documented [here](../../maxscale-management/deployment/maxscale-configuration-guide.md). If no explicit unit
-is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent
-versions a value without a unit may be rejected. Note that since the granularity
-of the timeout is seconds, a timeout specified in milliseconds will be rejected,
-even if the duration is longer than a second.
+Note that since the granularity of the timeout is seconds, a timeout specified
+in milliseconds will be rejected, even if the duration is longer than a second.
 
 Failure verification is performed by checking whether the replica servers are
 still connected to the primary and receiving events. An event is either a change
@@ -1529,7 +1527,8 @@ Even with this setting, only one monitor per server per MaxScale is allowed.
 This limitation can be circumvented by defining multiple copies of a server in
 the configuration file.
 
-Cooperative monitoring uses [server locks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock)
+Cooperative monitoring uses
+[server locks](../../../server/reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)
 for coordinating between monitors. When cooperating, the monitor regularly
 checks the status of a lock named _maxscale\_mariadbmonitor_ on every server and
 acquires it if free. If the monitor acquires a majority of locks, it is the
@@ -1620,7 +1619,8 @@ lost. This time ultimately depends on TCP keepalive settings on the machines
 running MariaDB Server.
 
 On MariaDB Server 10.3.3 and later, the TCP keepalive settings can be configured
-for just the server process. See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#tcp_keepalive_interval)
+for just the server process. See
+[Server System Variables](../../../server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_interval)
 for information on settings _tcp\_keepalive\_interval_, _tcp\_keepalive\_probes_ and
 _tcp\_keepalive\_time_. These settings can also be set on the operating system
 level, as described [here](https://www.tldp.org/HOWTO/TCP-Keepalive-HOWTO/usingkeepalive.html).
@@ -1763,15 +1763,17 @@ for more information.
 The following tools need to be installed on the backends:
 
 1. mariadb-backup. Backs up and restores MariaDB Server contents. Installed e.g.
-   with `yum install MariaDB-backup`. See [mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) for more
-   information.
+   with `yum install MariaDB-backup`. See
+   [mariadb-backup documentation](../../../server/server-usage/backup-and-restore/mariadb-backup)
+   for more information.
 2. pigz. Compresses and decompresses the backup stream. Installed e.g. with`yum install pigz`.
 3. socat. Streams data from one machine to another. Is likely already
    installed. If not, can be installed e.g. with `yum install socat`.
 
 mariadb-backup needs server credentials to log in and authenticate to the
 MariaDB Server being copied from. For this, MaxScale uses the monitor user.
-The monitor user may thus require additional privileges. See [mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-overview#authentication-and-privileges)
+The monitor user may thus require additional privileges. See
+[mariadb-backup documentation](../../../server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md#authentication-and-privileges)
 for more details.
 
 ### Rebuild server
@@ -2123,7 +2125,8 @@ starting, MaxScale will attempt to kill the process.
 * Default: `1G`
 
 Given as is to`mariadb-backup --prepare --use-memory=<mariadb_backup_use_memory>`. If set to empty,
-no `--use-memory` is set and mariadb-backup will use its internal default. See [here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-use-memory) for more
+no `--use-memory` is set and mariadb-backup will use its internal default. See
+[here](../../server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options.md#-use-memory) for more
 information.
 
 ```
@@ -2142,8 +2145,9 @@ and will continue working as an alias.
 * Default: `1`
 
 Given as is to`mariadb-backup --backup --parallel=<val>`.
-Defines the number of threads used for parallel data file transfer. See [here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-parallel) for more
-information.
+Defines the number of threads used for parallel data file transfer. See
+[here](../../server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options.md#-parallel)
+for more information.
 
 ```
 mariadb_backup_parallel=2
@@ -2441,7 +2445,10 @@ A typical failure reason is that a command such as `STOP SLAVE` takes longer tha
 monitor will retry most such queries if the failure was caused by a timeout. The retrying
 continues until the total time for a failover or switchover has been spent. If the log
 shows warnings or errors about commands timing out, increasing the backend timeout
-settings of the monitor should help. Other settings to look at are `query_retries` and`query_retry_timeout`. These are general MaxScale settings described in the [Configuration guide](../../maxscale-management/deployment/maxscale-configuration-guide.md). Setting`query_retries` to 2 is a reasonable first try.
+settings of the monitor should help. Other settings to look at are `query_retries` and
+`query_retry_timeout`. These are general MaxScale settings described in the
+[Configuration guide](../../maxscale-management/deployment/maxscale-configuration-guide.md).
+Setting `query_retries` to 2 is a reasonable first try.
 
 If switchover causes the old primary (now replica) to fail replication, then most
 likely a user or perhaps a scheduled event performed a write while monitor

@@ -9,7 +9,8 @@ aliases to `mariadbprotocol`.
 
 ## Connection Redirection
 
-The [Connection Redirection](https://mariadb.com/docs/server/ha-and-performance/connection-redirection-mechanism-in-the-mariadb-clientserver-protocol)
+The
+[Connection Redirection](../../../server/ha-and-performance/connection-redirection-mechanism-in-the-mariadb-clientserver-protocol.md)
 introduced in MariaDB 11.4 allows client connections to be redirected to another
 server if the server in question is going into maintenance. As MaxScale is
 intended to be the gateway through which clients connect to the database

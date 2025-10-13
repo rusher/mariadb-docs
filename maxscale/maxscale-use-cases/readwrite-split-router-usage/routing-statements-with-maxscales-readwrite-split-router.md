@@ -7,46 +7,46 @@ The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/
 The following statements are routed to the primary server:
 
 * Queries that write to the database. For example, this includes, but is not limited to, the following statements:
-  * [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
-  * [INSERT ... RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning)
-  * [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update)
-  * [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete)
-  * [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace)
-  * [REPLACE ... RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replacereturning)
-  * [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
+  * [INSERT](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md)
+  * [INSERT ... RETURNING](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning.md)
+  * [UPDATE](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)
+  * [DELETE](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
+  * [REPLACE](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md)
+  * [REPLACE ... RETURNING](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replacereturning.md)
+  * [LOAD DATA INFILE](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
 * Queries that modify the database (DDL)
   For example, this includes, but is not limited to, the following statements:
-  * [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database)
-  * [ALTER DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database)
-  * [DROP DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database)
-  * [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table)
-  * [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table)
-  * [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table)
-  * [CREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/create-view)
-  * [ALTER VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/alter-view)
-  * [DROP VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/drop-view)
-  * [CREATE SEQUENCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sequences/create-sequence)
-  * [ALTER SEQUENCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sequences/alter-sequence)
-  * [DROP SEQUENCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sequences/drop-sequence)
-  * [CREATE TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/triggers-events/triggers/create-trigger)
-  * [DROP TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger)
-  * [CREATE PROCEDURE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-procedures/create-procedure)
-  * [ALTER PROCEDURE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-procedures/alter-procedure)
-  * [DROP PROCEDURE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-procedures/drop-procedure)
-  * [CREATE FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function)
-  * [ALTER FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function)
-  * [DROP FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-functions/drop-function)
-  * [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user)
-  * [ALTER USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user)
-  * [DROP USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-user)
-  * [CREATE ROLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-role)
-  * [DROP ROLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-role)
+  * [CREATE DATABASE](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md)
+  * [ALTER DATABASE](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md)
+  * [DROP DATABASE](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md)
+  * [CREATE TABLE](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md)
+  * [ALTER TABLE](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)
+  * [DROP TABLE](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md)
+  * [CREATE VIEW](../../../server/server-usage/views/create-view.md)
+  * [ALTER VIEW](../../../server/server-usage/views/alter-view.md)
+  * [DROP VIEW](../../../server/server-usage/views/drop-view.md)
+  * [CREATE SEQUENCE](../../../server/reference/sql-statements-and-structure/sequences/create-sequence.md)
+  * [ALTER SEQUENCE](../../../server/reference/sql-statements-and-structure/sequences/alter-sequence.md)
+  * [DROP SEQUENCE](../../../server/reference/sql-statements-and-structure/sequences/drop-sequence.md)
+  * [CREATE TRIGGER](../../../server/server-usage/triggers-events/triggers/create-trigger.md)
+  * [DROP TRIGGER](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)
+  * [CREATE PROCEDURE](../../../server/server-usage/stored-routines/stored-procedures/create-procedure.md)
+  * [ALTER PROCEDURE](../../../server/server-usage/stored-routines/stored-procedures/alter-procedure.md)
+  * [DROP PROCEDURE](../../../server/server-usage/stored-routines/stored-procedures/drop-procedure.md)
+  * [CREATE FUNCTION](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
+  * [ALTER FUNCTION](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md)
+  * [DROP FUNCTION](../../../server/server-usage/stored-routines/stored-functions/drop-function.md)
+  * [CREATE USER](../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md)
+  * [ALTER USER](../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md)
+  * [DROP USER](../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-user.md)
+  * [CREATE ROLE](../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-role.md)
+  * [DROP ROLE](../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-role.md)
 * Queries within open transactions
   If the application uses explicit transactions, then all queries within the transaction will be routed to the primary server.
   Explicit transactions are used in the following cases:
-  * When [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#autocommit) is set to OFF.
-  * When [BEGIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction) is executed.
-  * When [START TRANSACTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction) is executed.
+  * When [autocommit](../../../server/server-management/variables-and-modes/server-system-variables.md#autocommit) is set to OFF.
+  * When [BEGIN](../../../server/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) is executed.
+  * When [START TRANSACTION](../../../server/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) is executed.
 
 For example, all queries will be routed to the primary server in this case:
 
@@ -76,7 +76,7 @@ COMMIT;
 * Queries using stored functions
 * Queries using user-defined functions (UDF)
 * Queries that use temporary tables
-* [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement) statements that execute prepared statements
+* [EXECUTE](../../../server/reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) statements that execute prepared statements
 
 ## Statements Routed to a Replica Server
 
@@ -84,24 +84,24 @@ The following statements are routed to a replica server:
 
 * Queries that are read-only
   For example, this includes, but is not limited to, the following statements:
-  * [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select)
+  * [SELECT](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)
 * Queries that read system or user-defined variables
   For example, this includes, but is not limited to, the following statements:
-  * [SHOW CHARACTER SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-character-set)
-  * [SHOW COLLATION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-collation)
-  * [SHOW COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns)
-  * [SHOW CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-database)
-  * [SHOW CREATE FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function)
-  * [SHOW CREATE PROCEDURE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure)
-  * [SHOW CREATE SEQUENCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-sequence)
-  * [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table)
-  * [SHOW CREATE TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger)
-  * [SHOW CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-user)
-  * [SHOW CREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-view)
-  * [SHOW DATABASES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases)
-  * [SHOW ENGINES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine)
-  * [SHOW TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-tables)
-  * [SHOW VARIABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables)
+  * [SHOW CHARACTER SET](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-character-set.md)
+  * [SHOW COLLATION](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-collation.md)
+  * [SHOW COLUMNS](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md)
+  * [SHOW CREATE DATABASE](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-database.md)
+  * [SHOW CREATE FUNCTION](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md)
+  * [SHOW CREATE PROCEDURE](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md)
+  * [SHOW CREATE SEQUENCE](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-sequence.md)
+  * [SHOW CREATE TABLE](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)
+  * [SHOW CREATE TRIGGER](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
+  * [SHOW CREATE USER](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-user.md)
+  * [SHOW CREATE VIEW](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-view.md)
+  * [SHOW DATABASES](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md)
+  * [SHOW ENGINES](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md)
+  * [SHOW TABLES](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-tables.md)
+  * [SHOW VARIABLES](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md)
 
 For example, the following queries would be routed to a replica:
 
@@ -117,9 +117,9 @@ SHOW statements
 
 The following statements are routed to all servers:
 
-* [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set) statements, including those embedded in read-only statements
-* [USE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database) statements
-* [PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement) statements that create prepared statements
+* [SET](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) statements, including those embedded in read-only statements
+* [USE](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statements
+* [PREPARE](../../../server/reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement.md) statements that create prepared statements
 * Internal client commands, such as `QUIT, PING, STMT RESET, and CHANGE USER`.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>

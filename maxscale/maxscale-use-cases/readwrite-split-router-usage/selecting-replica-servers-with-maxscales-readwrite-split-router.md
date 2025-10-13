@@ -18,9 +18,10 @@ In this mode, the router measures average server response times. When the router
 
 ## Using Least Behind Primary
 
-The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) uses the replica server that is least behind the primary server when the `slave_selection_criteria` parameter is set to `LEAST_BEHIND_MASTER`. This mode is only compatible with [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication).
+The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) uses the replica server that is least behind the primary server when the `slave_selection_criteria` parameter is set to `LEAST_BEHIND_MASTER`. This mode is only compatible with [MariaDB replication](../../server/ha-and-performance/standard-replication)
 
-In this mode, the router measures replica lag using the `Seconds_Behind_Master` column from [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status). The replica server that has the lowest value is considered to be the least behind the primary server.
+In this mode, the router measures replica lag using the `Seconds_Behind_Master` column from [SHOW REPLICA STATUS](../../server/reference/sql-statements/administrative-sql-statements/show/show-replica-status.md)
+The replica server that has the lowest value is considered to be the least behind the primary server.
 
 ## Setting the Replica Selection Criteria
 

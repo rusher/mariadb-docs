@@ -41,7 +41,7 @@ use of `passwd` was deprecated in MaxScale 2.3.0.
 * Dynamic: Yes
 * Default: None
 
-[Role](https://mariadb.com/docs/server/security/user-account-management/roles/roles_overview)
+[Role](../../../server/security/user-account-management/roles/roles_overview.md)
 the monitor should activate
 right after connecting to a server. If empty, no role is set. This setting may
 be useful if the same username is used for both monitors and services.
@@ -171,7 +171,8 @@ backend_connect_attempts=1
 * Dynamic: Yes
 * Default: None
 
-This parameter duplicates the `disk_space_threshold`[server parameter](../../maxscale-management/deployment/maxscale-configuration-guide.md).
+This parameter duplicates the `disk_space_threshold`
+[server parameter](../../maxscale-management/deployment/maxscale-configuration-guide.md#disk_space_threshold).
 If the parameter has _not_ been specified for a server, then the one specified
 for the monitor is applied.
 

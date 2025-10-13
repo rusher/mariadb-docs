@@ -83,10 +83,11 @@ password=mypwd
 For a list of optional parameters that all monitors support, read the
 [Common Monitor Parameters](common-monitor-parameters.md) document.
 
+## Settings
+
 ### `disable_master_failback`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
-
 * Default: false
 * Dynamic: Yes
 
@@ -101,7 +102,6 @@ original node for as long as the new primary node is running. In this case the
 ### `available_when_donor`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
-
 * Default: false
 * Dynamic: Yes
 
@@ -117,13 +117,12 @@ to increase the cluster size.
 
 The current list of non-blocking SST
 methods are `xtrabackup`, `xtrabackup-v2` and `mariadb-backup`. Read the
-[wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables)
+[wsrep\_sst\_method](../../../galera-cluster/reference/galera-cluster-system-variables.md)
 documentation for more details.
 
 ### `disable_master_role_setting`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
-
 * Default: false
 * Dynamic: Yes
 
@@ -134,7 +133,6 @@ monitor.
 ### `use_priority`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
-
 * Default: false
 * Dynamic: Yes
 
@@ -145,7 +143,6 @@ allow for controlled node replacement.
 ### `root_node_as_master`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
-
 * Default: false
 * Dynamic: Yes
 
@@ -176,7 +173,6 @@ sub-optimal performance.
 ### `set_donor_nodes`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
-
 * Default: false
 * Dynamic: Yes
 

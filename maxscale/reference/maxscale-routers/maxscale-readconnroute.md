@@ -95,9 +95,7 @@ By default `master_accept_reads=true`.
 * Dynamic: Yes
 * Default: 0s
 
-The maximum acceptable replication lag. The value is in seconds and is
-specified as documented
-[here](../../maxscale-management/deployment/maxscale-configuration-guide.md).
+The maximum acceptable replication lag. The value is in seconds.
 The default value is `0s`, which means that the lag is ignored.
 
 The replication lag of a server must be less than the configured value in order

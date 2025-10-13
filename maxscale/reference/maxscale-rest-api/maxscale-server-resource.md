@@ -906,7 +906,7 @@ new servers to be created and immediately taken into use.
 }
 ```
 
-Refer to the [Configuration Guide](../Getting-Started/Configuration-Guide.md)
+Refer to the [Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 for a full list of server parameters.
 
 #### Response

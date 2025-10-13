@@ -1,8 +1,6 @@
 # MaxScale KafkaCDC
 
-## KafkaCDC
-
-### Overview
+## Overview
 
 The KafkaCDC module reads data changes in MariaDB via replication and converts
 them into JSON objects that are then streamed to a Kafka broker.
@@ -112,7 +110,7 @@ will be queried from the primary server.
 During shutdown, the Kafka event queue is flushed. This can take up to 60
 seconds if the network is slow or there are network problems.
 
-### Configuration
+## Configuration
 
 * In order for `kafkacdc` to work, the binary logging on the source server must
   be configured to use row-based replication and the row image must be set to
@@ -125,9 +123,9 @@ seconds if the network is slow or there are network problems.
 * The KafkaCDC service must not be configured to use listeners. If a listener is
   configured, all attempts to start a session will fail.
 
-### Settings
+## Settings
 
-#### `bootstrap_servers`
+### `bootstrap_servers`
 
 * Type: string
 * Mandatory: Yes
@@ -136,7 +134,7 @@ seconds if the network is slow or there are network problems.
 The list of Kafka brokers to use in `host:port` format. Multiple values
 can be separated with commas. This is a mandatory parameter.
 
-#### `topic`
+### `topic`
 
 * Type: string
 * Mandatory: Yes
@@ -145,7 +143,7 @@ can be separated with commas. This is a mandatory parameter.
 The Kafka topic where the replicated events will be sent. This is a
 mandatory parameter.
 
-#### `enable_idempotence`
+### `enable_idempotence`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -170,7 +168,7 @@ user) when idempotence is enabled: max.in.flight.requests.per.connection=5 (must
 be less than or equal to 5), retries=INT32\_MAX (must be greater than 0),
 acks=all, queuing.strategy=fifo.
 
-#### `timeout`
+### `timeout`
 
 * Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
@@ -179,7 +177,7 @@ acks=all, queuing.strategy=fifo.
 
 The connection and read timeout for the replication stream.
 
-#### `gtid`
+### `gtid`
 
 * Type: string
 * Mandatory: No
@@ -202,18 +200,19 @@ used:
 Once the replication has started and a GTID position has been recorded, this
 parameter will be ignored. To reset the recorded GTID position, delete the`current_gtid.txt` file located in `/var/lib/maxscale/<SERVICE>/` where`<SERVICE>` is the name of the KafkaCDC service.
 
-#### `server_id`
+### `server_id`
 
 * Type: number
 * Mandatory: No
 * Dynamic: No
 * Default: `1234`
 
-The [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#server_id)
+The
+[server\_id](../../../server/ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id)
 used when replicating from the primary in direct replication mode. The default
 value is 1234. This parameter was added in MaxScale 2.5.7.
 
-#### `match`
+### `match`
 
 * Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
@@ -246,7 +245,7 @@ match=db1[.]
 exclude=db1 [.](accounts|users)
 ```
 
-#### `exclude`
+### `exclude`
 
 * Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
@@ -262,7 +261,7 @@ The pattern matching works the same way for both of the `exclude` and `match`
 parameters. See [match](maxscale-kafkacdc.md#match) for an explanation on how the patterns are
 matched against the database and table names.
 
-#### `cooperative_replication`
+### `cooperative_replication`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -287,7 +286,7 @@ exactly-once semantics for the Kafka event delivery. However, it does provide
 high-availability for the `kafkacdc` instances which allows automated failover
 between multiple MaxScale instances.
 
-#### `send_schema`
+### `send_schema`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -302,7 +301,7 @@ If this information in these schema change events is not needed or the code that
 processes the Kafka stream can't handle them, they can be disabled with this
 parameter.
 
-#### `read_gtid_from_kafka`
+### `read_gtid_from_kafka`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -315,7 +314,7 @@ MaxScale. Sometimes this is not desirable and the GTID should only be read from
 the local file or started anew. Examples of these are when the GTIDs are reset
 or the replication topology has changed.
 
-#### `kafka_ssl`
+### `kafka_ssl`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -325,7 +324,7 @@ or the replication topology has changed.
 Enable SSL for Kafka connections. This is a boolean parameter and is disabled by
 default.
 
-#### `kafka_ssl_ca`
+### `kafka_ssl_ca`
 
 * Type: path
 * Mandatory: No
@@ -335,7 +334,7 @@ default.
 Path to the certificate authority file in PEM format. If this is not provided,
 the default system certificates will be used.
 
-#### `kafka_ssl_cert`
+### `kafka_ssl_cert`
 
 * Type: path
 * Mandatory: No
@@ -350,7 +349,7 @@ controlled by [ssl.endpoint.identification.algorithm](https://kafka.apache.org/d
 
 If `kafka_ssl_cert` is provided, `kafka_ssl_key` must also be provided.
 
-#### `kafka_ssl_key`
+### `kafka_ssl_key`
 
 * Type: path
 * Mandatory: No
@@ -361,7 +360,7 @@ Path to the private key in PEM format.
 
 If `kafka_ssl_key` is provided, `kafka_ssl_cert` must also be provided.
 
-#### `kafka_sasl_user`
+### `kafka_sasl_user`
 
 * Type: string
 * Mandatory: No
@@ -372,7 +371,7 @@ Username for SASL authentication.
 
 If `kafka_sasl_user` is provided, `kafka_sasl_password` must also be provided.
 
-#### `kafka_sasl_password`
+### `kafka_sasl_password`
 
 * Type: string
 * Mandatory: No
@@ -383,7 +382,7 @@ Password for SASL authentication.
 
 If `kafka_sasl_password` is provided, `kafka_sasl_user` must also be provided.
 
-#### `kafka_sasl_mechanism`
+### `kafka_sasl_mechanism`
 
 * Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
@@ -404,7 +403,7 @@ Allowed values are:
 The value that should be used depends on the SASL mechanism used by the
 Kafka broker.
 
-### Example Configuration
+## Example Configuration
 
 The following configuration defines the minimal setup for streaming replication
 events from MariaDB into Kafka as JSON:
@@ -436,7 +435,7 @@ bootstrap_servers=127.0.0.1:9092
 topic=my-cdc-topic
 ```
 
-### Limitations
+## Limitations
 
 * The KafkaCDC module provides at-least-once semantics for the generated
   events. This means that each replication event is delivered to kafka at least

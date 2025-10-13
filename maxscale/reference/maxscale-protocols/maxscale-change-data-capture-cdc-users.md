@@ -1,6 +1,6 @@
 # MaxScale Change Data Capture (CDC) users
 
-## Change Data Capture (CDC) users
+## Overview
 
 Change Data Capture (CDC) is a new MaxScale protocol that allows compatible
 clients to authenticate and register for Change Data Capture events. The new
@@ -21,7 +21,7 @@ user=cdc_user
 password=cdc_password
 ```
 
-### Creating new CDC users
+## Creating new CDC users
 
 Starting with MaxScale 2.1, users can also be created through maxctrl:
 

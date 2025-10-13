@@ -1,17 +1,20 @@
 # MaxScale Regex Filter
 
-### Overview
+## Overview
 
 The Regex filter is a filter module for MariaDB MaxScale that is able to rewrite
 query content using regular expression matches and text substitution. The
-regular expressions use the [PCRE2 syntax](https://www.pcre.org/current/doc/html/pcre2syntax.html).
+regular expressions use the
+[PCRE2 syntax](https://www.pcre.org/current/doc/html/pcre2syntax.html).
 
 PCRE2 library uses a different syntax than POSIX to refer to capture
 groups in the replacement string. The main difference is the usage of the dollar
-character instead of the backslash character for references e.g. `$1` instead of`\1`. For more details about the replacement string differences, please read the [Creating a new string with substitutions](https://www.pcre.org/current/doc/html/pcre2api.html#SEC34)
+character instead of the backslash character for references e.g. `$1` instead of`\1`.
+For more details about the replacement string differences, please read the
+[Creating a new string with substitutions](https://www.pcre.org/current/doc/html/pcre2api.html#SEC34)
 chapter in the PCRE2 manual.
 
-### Configuration
+## Configuration
 
 The following demonstrates a minimal configuration.
 
@@ -31,11 +34,11 @@ password=mypasswd
 filters=MyRegexfilter
 ```
 
-### Settings
+## Settings
 
 The Regex filter has two mandatory parameters: _match_ and _replace_.
 
-#### `match`
+### `match`
 
 * Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: Yes
@@ -48,7 +51,7 @@ match=TYPE[ ]*=
 options=case
 ```
 
-#### `options`
+### `options`
 
 * Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
@@ -58,7 +61,7 @@ options=case
 
 The _options_-parameter affects how the patterns are compiled as [usual](../../maxscale-management/deployment/maxscale-configuration-guide.md).
 
-#### `replace`
+### `replace`
 
 * Type: string
 * Mandatory: Yes
@@ -71,7 +74,7 @@ pattern defined in _match_.
 replace=ENGINE =
 ```
 
-#### `source`
+### `source`
 
 * Type: string
 * Mandatory: No
@@ -87,7 +90,7 @@ and replacement applied to them.
 source=127.0.0.1
 ```
 
-#### `user`
+### `user`
 
 * Type: string
 * Mandatory: No
@@ -103,7 +106,7 @@ replacement applied to them.
 user=john
 ```
 
-#### `log_file`
+### `log_file`
 
 * Type: string
 * Mandatory: No
@@ -119,7 +122,7 @@ diagnostic purposes.
 log_file=/tmp/regexfilter.log
 ```
 
-#### `log_trace`
+### `log_trace`
 
 * Type: string
 * Mandatory: No
@@ -130,15 +133,16 @@ The optional log\_trace parameter toggles the logging of non-matching and
 matching queries with their replacements into the log file on the _info_ level.
 This is the preferred method of diagnosing the matching of queries since the log
 level can be changed at runtime. For more details about logging levels and
-session specific logging, please read the [Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md).
+session specific logging, please read the
+[Configuration Guide](../../maxscale-management/deployment/maxscale-configuration-guide.md#global-settings).
 
 ```
 log_trace=true
 ```
 
-### Examples
+## Examples
 
-#### Example 1 - Replace MySQL 5.1 create table syntax with that for later versions
+### Example 1 - Replace MySQL 5.1 create table syntax with that for later versions
 
 MySQL 5.1 used the parameter TYPE = to set the storage engine that should be
 used for a table. In later versions this changed to be ENGINE =. Imagine you

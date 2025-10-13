@@ -2,7 +2,8 @@
 
 ## PARSEC Authenticator
 
-The [PARSEC](https://mariadb.com/docs/server/reference/plugins/authentication-plugins/authentication-plugin-parsec)
+The
+[PARSEC](../../../server/reference/plugins/authentication-plugins/authentication-plugin-parsec.md)
 (Password Authentication using Response Signed with Elliptic Curve) authentication
 plugin uses salted passwords, key derivation, extensible password storage format,
 and both server-side and client-side scrambles.
@@ -15,11 +16,11 @@ This authentication plugin is intended to be used with MariaDB version 12 or
 later and requires that the service user has the `SET USER` grant.
 
 MariaDB versions 11.6 or later that include the PARSEC authentication plugin are
-supported but the passwords for the users must be provided via the [user mapping
-file](../Getting-Started/Configuration-Guide.md#user_mapping_file). The
-documentation for the [Ed25519
-authenticator](Ed25519-Authenticator.md#using-a-mapping-file) contains an
-example of how to configure the user mapping.
+supported but the passwords for the users must be provided via the
+[user mapping file](../../maxscale-management/deployment/maxscale-configuration-guide.mduser_mapping_file).
+The documentation for the
+[Ed25519 authenticator](maxscale-ed25519-Authenticator.md#using-a-mapping-file)
+contains an example of how to configure the user mapping.
 
 ### Configuration
 

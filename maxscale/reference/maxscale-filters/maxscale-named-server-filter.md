@@ -1,8 +1,6 @@
 # MaxScale Named Server Filter
 
-## Named Server Filter
-
-### Overview
+## Overview
 
 The **namedserverfilter** is a MariaDB MaxScale filter module able to route
 queries to servers based on regular expression (regex) matches. Since it is a
@@ -11,7 +9,7 @@ It requires a compatible router to be effective. Currently, both**readwritesplit
 data packets. This filter uses the _PCRE2_ library for regular expression
 matching.
 
-### Configuration
+## Configuration
 
 The filter accepts settings in two modes: _legacy_ and _indexed_. Only one of
 the modes may be used for a given filter instance. The legacy mode is meant for
@@ -52,18 +50,19 @@ password=mypasswd
 filters=NamedServerFilter
 ```
 
-### Settings
+## Settings
 
 NamedServerFilter requires at least one _matchXY_ - _targetXY_ pair.
 
-#### `matchXY`
+### `matchXY`
 
 * Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
-_matchXY_ defines a [PCRE2 regular expression](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+_matchXY_ defines a
+[PCRE2 regular expression](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 against which the incoming SQL query is matched. _XY_ must be a number in the range
 01 - 25. Each _match_-setting pairs with a similarly indexed _target_-setting. If one is
 defined, the other must be defined as well. If a query matches the pattern, the filter
@@ -75,7 +74,7 @@ match01=^SELECT
 options=case,extended
 ```
 
-#### `options`
+### `options`
 
 * Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
@@ -83,10 +82,10 @@ options=case,extended
 * Values: `ignorecase`, `case`, `extended`
 * Default: `ignorecase`
 
-[Regular expression options](../../maxscale-management/deployment/maxscale-configuration-guide.md)
+[Regular expression options](../../maxscale-management/deployment/maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
 for `matchXY`.
 
-#### `targetXY`
+### `targetXY`
 
 * Type: string
 * Mandatory: No
@@ -111,7 +110,7 @@ parameters.
 target01=MyServer2
 ```
 
-#### `source`
+### `source`
 
 * Type: string
 * Mandatory: No
@@ -144,7 +143,7 @@ by comma. Incoming client connections are subsequently checked against each.
 source=192.168.21.3,192.168.10.%
 ```
 
-#### `user`
+### `user`
 
 * Type: string
 * Mandatory: No
@@ -160,7 +159,7 @@ left as is and routed straight through.
 user=john
 ```
 
-### Additional remarks
+## Additional remarks
 
 The maximum number of accepted _match_ - _target_ pairs is 25.
 
@@ -179,9 +178,9 @@ routing hints are attached to any execution of that prepared statement. Text-
 mode prepared statements are not supported in this way. To divert them, use
 regular expressions which match the specific "EXECUTE"-query.
 
-### Examples
+## Examples
 
-#### Example 1 - Route queries targeting a specific table to a server
+### Example 1 - Route queries targeting a specific table to a server
 
 This will route all queries matching the regular expression `*from *users` to
 the server named _server2_. The filter will ignore character case in queries.

@@ -1,27 +1,6 @@
 # MaxScale Tee Filter
 
-## Tee Filter
-
-* [Tee Filter](maxscale-tee-filter.md#tee-filter)
-  * [Overview](maxscale-tee-filter.md#overview)
-  * [Configuration](maxscale-tee-filter.md#configuration)
-  * [Settings](maxscale-tee-filter.md#settings)
-    * [target](maxscale-tee-filter.md#target)
-    * [service](maxscale-tee-filter.md#service)
-    * [match](maxscale-tee-filter.md#match)
-    * [exclude](maxscale-tee-filter.md#exclude)
-    * [options](maxscale-tee-filter.md#options)
-    * [source](maxscale-tee-filter.md#source)
-    * [user](maxscale-tee-filter.md#user)
-    * [sync](maxscale-tee-filter.md#sync)
-  * [Limitations](maxscale-tee-filter.md#limitations)
-  * [Module commands](maxscale-tee-filter.md#module-commands)
-    * [tee disable \[FILTER\]](maxscale-tee-filter.md#tee-disable-filter)
-    * [tee enable \[FILTER\]](maxscale-tee-filter.md#tee-enable-filter)
-  * [Examples](maxscale-tee-filter.md#examples)
-    * [Example 1 - Replicate all inserts into the orders table](maxscale-tee-filter.md#example-1-replicate-all-inserts-into-the-orders-table)
-
-### Overview
+## Overview
 
 The tee filter is a "plumbing" fitting in the MariaDB MaxScale filter toolkit.
 It can be used in a filter pipeline of a service to make copies of requests from
@@ -31,7 +10,7 @@ the client and send the copies to another service within MariaDB MaxScale.
 service which uses a tee filter will require a grant for the loopback address,
 i.e. `127.0.0.1`.
 
-### Configuration
+## Configuration
 
 The configuration block for the TEE filter requires the minimal filter
 parameters in its section within the MaxScale configuration file. The service to
@@ -52,12 +31,12 @@ password=mypasswd
 filters=DataMartFilter
 ```
 
-### Settings
+## Settings
 
 The tee filter requires a mandatory parameter to define the service to replicate
 statements to and accepts a number of optional parameters.
 
-#### `target`
+### `target`
 
 * Type: target
 * Mandatory: No
@@ -68,7 +47,7 @@ The target where the filter will duplicate all queries. The target can be either
 a service or a server. The duplicate connection that is created to this target
 will be referred to as the "branch target" in this document.
 
-#### `service`
+### `service`
 
 * Type: service
 * Mandatory: No
@@ -79,7 +58,7 @@ The service where the filter will duplicate all queries. This parameter is
 deprecated in favor of the `target` parameter and will be removed in a future
 release. Both `target` and `service` cannot be defined.
 
-#### `match`
+### `match`
 
 * Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
@@ -92,7 +71,7 @@ What queries should be included.
 match=/insert.*into.*order*/
 ```
 
-#### `exclude`
+### `exclude`
 
 * Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
@@ -105,7 +84,7 @@ What queries should be excluded.
 exclude=/select.*from.*t1/
 ```
 
-#### `options`
+### `options`
 
 * Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
@@ -119,7 +98,7 @@ How regular expressions should be interpreted.
 options=case,extended
 ```
 
-#### `source`
+### `source`
 
 * Type: string
 * Mandatory: No
@@ -134,7 +113,7 @@ Only sessions that originate from this address will be replicated.
 source=127.0.0.1
 ```
 
-#### `user`
+### `user`
 
 * Type: string
 * Mandatory: No
@@ -149,7 +128,7 @@ sessions that are connected using this username are replicated.
 user=john
 ```
 
-#### `sync`
+### `sync`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -166,7 +145,7 @@ statements have been successfully executed on both targets.
 In the synchronous routing mode, a failure of the branch target will cause the
 client session to be closed.
 
-### Limitations
+## Limitations
 
 * All statements that are executed on the branch target are done in an
   asynchronous manner. This means that when the client receives the response
@@ -182,26 +161,26 @@ client session to be closed.
 With `sync=true`, a failure of the branch target will cause the whole session
 to be closed.
 
-### Module commands
+## Module commands
 
 Read [Module Commands](../maxscale-module-commands.md) documentation for
 details about module commands.
 
 The tee filter supports the following module commands.
 
-#### `tee disable [FILTER]`
+### `tee disable [FILTER]`
 
 This command disables a tee filter instance. A disabled tee filter will not send
 any queries to the target service.
 
-#### `tee enable [FILTER]`
+### `tee enable [FILTER]`
 
 Enable a disabled tee filter. This resumes the sending of queries to the target
 service.
 
-### Examples
+## Examples
 
-#### Example 1 - Replicate all inserts into the orders table
+### Example 1 - Replicate all inserts into the orders table
 
 Assume an order processing system that has a table called orders. You also have
 another database server, the datamart server, that requires all inserts into

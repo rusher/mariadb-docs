@@ -1135,7 +1135,7 @@ that the destruction of a service can be acknowledged via the REST API before
 the destruction process has fully completed.
 
 To find out whether a service is still in use after it has been destroyed, the
-[`sessions`](./Resources-Session.md) resource should be used. If a session for
+[`sessions`](maxscale-session-resource.md) resource should be used. If a session for
 the service is still open, it has not yet been destroyed.
 
 This endpoint also supports the `force=yes` parameter that will unconditionally
