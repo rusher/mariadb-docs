@@ -2084,6 +2084,78 @@ Timeout for all SQL operations done during the configuration synchronization. If
 an operation exceeds this timeout, the configuration change is treated as failed
 and an error is reported to the client that did the change.
 
+#### `telemetry`
+* Type: [boolean](maxscale-configuration-guide.md#booleans)
+* Mandatory: No
+* Dynamic: Yes
+* Default: false
+
+When enabled MaxScale sends telemetry to the OpenTelemetry Collector.
+
+#### `telemetry_attributes`
+* Type: stringlist
+* Default: empty
+* Dynamic: Yes
+* Mandatory: No
+
+Optional global attributes to send with every metric.
+Example `telemetry_attributes=project=default-project,cluster=mariadb1,instance=maxscale1`
+
+#### `telemetry_update_interval`
+* Type: [duration](maxscale-configuration-guide.md#durations)
+* Mandatory: No
+* Dynamic: Yes
+* Default: `60s`
+
+Minimum interval to send metrics to the collector.
+
+#### `telemetry_ssl_insecure`
+* Type: [boolean](maxscale-configuration-guide.md#booleans)
+* Mandatory: No
+* Dynamic: Yes
+* Default: false
+
+When enable and SSL certificates are defined, MaxScale OpenTelemetry uses insecure HTTPS
+and doesn't validate certificates.
+
+#### `telemetry_url`
+* Type: string
+* Mandatory: No
+* Dynamic: No
+* Default: `http://localhost:4318/v1/metrics`
+
+The OpenTelemetrymetrics URL where MaxScale pushes metrics.
+
+#### `telemetry_ssl_key`
+* Type: path
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+The path to the TLS private key in PEM format for sending telemetry.
+
+If the `telemetry_ssl_ca` and `telemetry_ssl_cert` options are all defined, the sending
+of metrics will use encrypted HTTPS instead of plain HTTP.
+If setting SSLm you also must to change the `telemetry_url` to `https` as in
+`https://localhost:4318/v1/metrics`.
+
+#### `telemetry_ssl_cert`
+* Type: path
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+The path to the TLS public certificate in PEM format. See `telemetry_ssl_key`
+and `admin_ssl_key` for more documentation details.
+
+#### `telemetry_ssl_ca`
+* Type: path
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+The path to a TLS CA certificate in PEM format.
+
 #### `key_manager`
 
 * Type: [enum](maxscale-configuration-guide.md#enumerations)
