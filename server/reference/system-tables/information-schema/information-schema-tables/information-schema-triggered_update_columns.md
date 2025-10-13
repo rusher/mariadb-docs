@@ -6,9 +6,15 @@ This table is available from [MariaDB 12.2](https://app.gitbook.com/s/aEnK0ZXmUb
 
 The [Information Schema](../) `TRIGGERED_UPDATE_COLUMNS` table shows columns specified in [triggers](../../../../server-usage/triggers-events/triggers/) for [update](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) operations.
 
+Columns are displayed only if the user has non-SELECT [privileges](../../../sql-statements/account-management-sql-statements/grant.md) on the columns.
+
 It contains the following columns:
 
 <table><thead><tr><th width="231.86663818359375">Column</th><th>Description</th></tr></thead><tbody><tr><td>TRIGGER_CATALOG</td><td>Always <code>def</code> in MariaDB.</td></tr><tr><td>TRIGGER_SCHEMA</td><td>Name of the database containing the trigger.</td></tr><tr><td>TRIGGER_NAME</td><td>Name of the trigger.</td></tr><tr><td>EVENT_OBJECT_CATALOG</td><td>Always <code>def</code> in MariaDB</td></tr><tr><td>EVENT_OBJECT_SCHEMA</td><td>Name of the database containing the table that the trigger is defined on. </td></tr><tr><td>EVENT_OBJECT_TABLE</td><td>Name of the table that the trigger is defined on.</td></tr><tr><td>EVENT_OBJECT_COLUMN</td><td>Name of the column that the trigger is defined on.</td></tr></tbody></table>
+
+## Examples
+
+
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
