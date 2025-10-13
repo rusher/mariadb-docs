@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This tutorial is an overview of what the MaxGUI offers as an alternative solution to [MaxCtrl](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md).
+This tutorial is an overview of what the MaxGUI offers as an alternative solution to [MaxCtrl](../reference/maxscale-maxctrl.md).
 
 ## Dashboard
 
@@ -12,7 +12,7 @@ This tutorial is an overview of what the MaxGUI offers as an alternative solutio
 
 ### Annotation
 
-1. [MaxScale object](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md). i.e. Service, Server, Monitor, Filter, and Listener (Clicking on it will navigate to its detail page)
+1. [MaxScale object](../maxscale-management/deployment/maxscale-configuration-guide.md). i.e. Service, Server, Monitor, Filter, and Listener (Clicking on it will navigate to its detail page)
 2. Create a new MaxScale object.
 3. Dashboard Tab Navigation.
 4. Search Input. This can be used as a quick way to search for a keyword in tables.
@@ -34,7 +34,7 @@ Clicking on the _Create New_ button (Annotation 2) to open a dialog for creating
 
 ### View Replication Status
 
-The replication status of a server monitored by [MariaDB-Monitor](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) can be viewed by mousing over the server name. A tooltip will be displayed with the following information:
+The replication status of a server monitored by [MariaDB-Monitor](../reference/maxscale-monitors/mariadb-monitor.md) can be viewed by mousing over the server name. A tooltip will be displayed with the following information:
 replication\_state, seconds\_behind\_master, slave\_io\_running, slave\_sql\_running.
 
 ### How to kill a session
@@ -114,7 +114,7 @@ This page visualizes MaxScale configuration as shown in the figure below.
 
 ### Clusters
 
-This page shows all monitor clusters using [mariadbmon](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) module in a card-like view.
+This page shows all monitor clusters using [mariadbmon](../reference/maxscale-monitors/mariadb-monitor.md) module in a card-like view.
 Clicking on the card will visualize the cluster into a tree graph as shown in the following figure.
 
 ![](<../.gitbook/assets/MaxGUI-cluster-visualization.png (3).png>)
@@ -283,7 +283,7 @@ Clicking on the "Data Migration" card will open a dialog, providing an option. t
 
 #### Data Migration worksheet
 
-MaxScale uses ODBC for extracting and loading from the data source to a server in MaxScale. Before starting a migration, ensure that you have set up the necessary configurations on the MaxScale server. Instruction can be found [here](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-sql-resource.md) and limitations [here](https://mariadb.com/kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/#etl-limitations).
+MaxScale uses ODBC for extracting and loading from the data source to a server in MaxScale. Before starting a migration, ensure that you have set up the necessary configurations on the MaxScale server. Instruction can be found [here](../reference/maxscale-rest-api/maxscale-sql-resource.md) and limitations [here](../maxscale-management/mariadb-maxscale-limitations-guide.md#etl-limitations).
 
 **Connections**
 
