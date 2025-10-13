@@ -304,6 +304,21 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Alias: enabledSSLProtocolSuites
 * Introduced: 1.5.0
 
+#### **fallbackToSystemKeyStore**
+
+* Description: keystoreXXX options are used to permit mutual authentication. When keystore option is not specified, this setting determines the connector's behavior: if set to false, not using any keystore; if set to true, the connector will follow standard Java convention and use the trust store defined by the "javax.net.ssl.trustStore" system property. 
+* Data Type: `boolean`
+* Default Value: `false`
+* Introduced: 3.3.2
+
+#### **fallbackToSystemTrustStore**
+
+* Description: Server certificates can be validated using either the serverSslCert or trustStore options. When neither option is specified, this setting determines the connector's behavior: if set to false, all certificates will be rejected; if set to true, the connector will follow standard Java convention and use the trust store defined by the "javax.net.ssl.trustStore" system property.
+* Data Type: `boolean`
+* Default Value: `false`
+* Introduced: 3.3.2
+
+
 #### **disableSslHostnameVerification**
 
 * Description: _deprecated, use `sslMode` instead_ When using ssl, the driver checks the hostname against the server's identity as presented in the server's certificate (checking alternative names or the certificate CN) to prevent man-in-the-middle attacks. This option permits deactivating this validation. Hostname verification is disabled when the trustServerCertificate option is set
