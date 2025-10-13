@@ -14,6 +14,32 @@ It contains the following columns:
 
 ## Examples
 
+<pre class="language-sql"><code class="lang-sql">CREATE TABLE t (a INT, b INT, c INT);
+INSERT INTO t VALUES (1, 2, 3);
+CREATE TABLE t1 (a_old INT, b_old INT, a_new INT, b_new INT);
+CREATE TABLE t2 (a_old INT, b_old INT, a_new INT, b_new INT); 
+CREATE TRIGGER trigger_before_update BEFORE UPDATE OF a, b ON t 
+  FOR EACH ROW INSERT INTO t1 VALUES (OLD.a, OLD.b, NEW.a, NEW.b);
+<strong>
+</strong><strong>SELECT * FROM INFORMATION_SCHEMA.TRIGGERED_UPDATE_COLUMNS\G 
+</strong>*************************** 1. row ***************************
+ TRIGGER_CATALOG: def 
+TRIGGER_SCHEMA: test 
+TRIGGER_NAME: trigger_before_update 
+EVENT_OBJECT_CATALOG: def 
+EVENT_OBJECT_SCHEMA: test 
+EVENT_OBJECT_TABLE: t 
+EVENT_OBJECT_COLUMN: a 
+*************************** 2. row *************************** 
+TRIGGER_CATALOG: def 
+TRIGGER_SCHEMA: test 
+TRIGGER_NAME: trigger_before_update 
+EVENT_OBJECT_CATALOG: def 
+EVENT_OBJECT_SCHEMA: test 
+EVENT_OBJECT_TABLE: t 
+EVENT_OBJECT_COLUMN: b
+</code></pre>
+
 
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
