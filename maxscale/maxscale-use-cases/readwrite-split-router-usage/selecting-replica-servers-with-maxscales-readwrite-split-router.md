@@ -1,6 +1,6 @@
 # Selecting Replica Servers with MaxScale's Read/Write Split Router
 
-The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) load balances read-only queries between one or more replica servers. It selects a replica server to execute a query using criteria configured by the `slave_selection_criteria` parameter.
+The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) load balances read-only queries between one or more replica servers. It selects a replica server to execute a query using criteria configured by the `slave_selection_criteria` parameter.
 
 | Criterion                  | Description                                                  |
 | -------------------------- | ------------------------------------------------------------ |
@@ -12,13 +12,13 @@ The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/ma
 
 ## Using Adaptive Routing
 
-The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) uses adaptive routing when the `slave_selection_criteria` parameter is set to `ADAPTIVE_ROUTING`.
+The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) uses adaptive routing when the `slave_selection_criteria` parameter is set to `ADAPTIVE_ROUTING`.
 
 In this mode, the router measures average server response times. When the router routes queries, it compares the response times of the different replica servers. It favors the faster servers for most queries, while still guaranteeing some traffic on the slowest servers.
 
 ## Using Least Behind Primary
 
-The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) uses the replica server that is least behind the primary server when the `slave_selection_criteria` parameter is set to `LEAST_BEHIND_MASTER`. This mode is only compatible with [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication).
+The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) uses the replica server that is least behind the primary server when the `slave_selection_criteria` parameter is set to `LEAST_BEHIND_MASTER`. This mode is only compatible with [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication).
 
 In this mode, the router measures replica lag using the `Seconds_Behind_Master` column from [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status). The replica server that has the lowest value is considered to be the least behind the primary server.
 

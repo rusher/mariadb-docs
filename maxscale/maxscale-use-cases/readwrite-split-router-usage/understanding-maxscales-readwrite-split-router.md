@@ -1,10 +1,10 @@
 # Understanding MaxScale's Read/Write Split Router
 
-MaxScale's [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) performs query-based load balancing. For each client connected to MaxScale, it opens up connections to multiple back-end database servers. When the client sends a write query to MaxScale, it routes the query to the connection opened with the primary server. When the client sends a read query to MaxScale, it routes the query to a connection opened with one of the replicas.
+MaxScale's [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) performs query-based load balancing. For each client connected to MaxScale, it opens up connections to multiple back-end database servers. When the client sends a write query to MaxScale, it routes the query to the connection opened with the primary server. When the client sends a read query to MaxScale, it routes the query to a connection opened with one of the replicas.
 
 ## What Does the Read/Write Split Router Support?
 
-The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) supports:
+The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) supports:
 
 * [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) deployments
 * [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-galera-cluster-quickstart/README.md) deployments
@@ -12,7 +12,7 @@ The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/ma
 
 ## When to Use the Read/Write Split Router?
 
-The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) allows you to:
+The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) allows you to:
 
 * Perform query-based load balancing.
 * Route client connections to multiple servers simultaneously.
@@ -28,9 +28,6 @@ The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/ma
 * [Deploy ColumnStore Shared Local Storage Topology](https://mariadb.com/kb/en/columnstore-shared-local-storage/)
 * [Deploy Galera Cluster Topology](https://mariadb.com/kb/en/topologies-galera-cluster/)
 * [Deploy Primary/Replica Topology](https://mariadb.com/kb/en/deploy-primaryreplica-topology-with-enterprise-server/)
-* Deploy Xpand Topology
-* write-split-router-usageDeploy MaxScale with MariaDB Monitor and Read/Write Split Router
-* [Deploy MaxScale with Galera Monitor and Read/Write Split Router](../../maxscale-archive/archive/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-galera-monitor.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
