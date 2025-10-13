@@ -8,14 +8,17 @@ _MaxGUI_ is a browser-based interface for MaxScale REST-API and query execution.
 
 ## Enabling MaxGUI
 
-To enable MaxGUI in a testing mode, add `admin_host=0.0.0.0` and`admin_secure_gui=false` under the `[maxscale]` section of the MaxScale
-configuration file. Once enabled, MaxGUI will be available on port 8989:`http://127.0.0.1:8989/`
+To enable MaxGUI in a testing mode, add `admin_host=0.0.0.0` and
+`admin_secure_gui=false` under the `[maxscale]` section of the MaxScale
+configuration file. Once enabled, MaxGUI will be available on port 8989:
+`http://127.0.0.1:8989/`
 
 ### Securing the GUI
 
 To make MaxGUI secure, set `admin_secure_gui=true` and configure both the`admin_ssl_key` and `admin_ssl_cert` parameters.
 
-See [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and [Configuration and Hardening](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-rest-api-tutorial.md)
+See [Configuration Guide](maxscale-configuration-guide.md) and
+[Configuration and Hardening](../../mariadb-maxscale-tutorials/rest-api-tutorial.md#configuration-and-hardening)
 for instructions on how to harden your MaxScale installation for production use.
 
 ## Authentication
@@ -42,7 +45,7 @@ By default, the refresh interval is 10 seconds.
 
 ### Detail
 
-This page shows information on each [MaxScale object](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and allow to edit its
+This page shows information on each [MaxScale object](maxscale-configuration-guide.md) and allow to edit its
 parameter, relationships and perform other manipulation operations.
 
 Access this page by clicking on the MaxScale object name on the [dashboard page](maxscale-maxgui-guide.md#dashboard)
@@ -54,7 +57,7 @@ This page visualizes MaxScale configuration and clusters.
 * Configuration: Visualizing MaxScale configuration.
 * Cluster: Visualizing a replication cluster into a tree graph and provides
   manual cluster manipulation operations such as`switchover, reset-replication, release-locks, failover, rejoin` . At the
-  moment, it supports only servers monitored by Monitor using [mariadbmon](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) module.
+  moment, it supports only servers monitored by Monitor using [mariadbmon](../../reference/maxscale-monitors/mariadb-monitor.md) module.
 
 Access this page by clicking the graph icon on the sidebar navigation.
 
