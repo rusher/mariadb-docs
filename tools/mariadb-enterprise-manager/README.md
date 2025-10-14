@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # MariaDB Enterprise Manager
 
 MariaDB Enterprise Manager is a comprehensive observability and management solution designed for your entire database fleet. It provides advanced, topology-aware monitoring and a powerful suite of visual tools for query development and schema management, all from a single, centralized interface.
