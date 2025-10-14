@@ -1,68 +1,228 @@
 # Quickstart Guide
 
-Created by Stefan Hinz, last modified by Egor Ustinov on Oct 13, 2025
-
 MariaDB Enterprise Manager is a database management and observability solution that provides advanced topology-aware monitoring coupled with visual schema management, query editing, and ERD design across multiple database connections.
 
 This guide describes steps to install MariaDB Enterprise Manager for evaluation purposes.
 
-Prerequisites
-
-* Prepare a machine for Enterprise Manager installation that complies with the following requirements:
-  * Minimal hardware resources (for evaluation setup):
-    * CPU: 2 cores (or 2 vCPUs) with x86-64 architecture
-    * RAM: 4 GB
-    * Storage: 100 GB
-  * 64-bit Linux OS with installed Docker engine and Docker compose: https://docs.docker.com/engine/install/
-  * Network ports 8090 and 4318 are opened for inbound traffic
-* Obtain MariaDB Customer Download Token:
-  * Navigate to the Customer Download Token at the MariaDB Customer Portal: https://customers.mariadb.com/downloads/token/
-  * Log in using your MariaDB ID: https://id.mariadb.com/
-  * Copy the Customer Download Token to use as the password when logging in to the MariaDB Enterprise Docker Registry
-* Setup MariaDB Enterprise Repository - `MariaDB Tools` for each monitored MariaDB Server and MaxScale:
-  * https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage
+## Prerequisites
 
 {% stepper %}
 {% step %}
-### Install Enterprise Manager
+### Prepare a machine for Enterprise Manager installation
 
-* Login to the MariaDB Enterprise Docker Registry providing your MariaDB ID as a username and Customer Download Token as a password:
+Machine requirements (minimal hardware resources for evaluation):
 
-{% code title="Login to Docker registry" %}
-```bash
-docker login docker.mariadb.com
-```
-{% endcode %}
+* CPU: 2 cores (or 2 vCPUs) with x86-64 architecture
+* RAM: 4 GB
+* Storage: 100 GB
 
-* Insert your Customer Download Token into the download URL and download the installation script (replace \<Customer\_Download\_Token> with your token):
+Other requirements:
 
-```
+* 64-bit Linux OS with installed Docker engine and Docker Compose: https://docs.docker.com/engine/install/
+* Network ports 8090 and 4318 opened for inbound traffic
+{% endstep %}
 
-</div>
+{% step %}
+### Obtain MariaDB Customer Download Token
 
-- Install Enterprise Manager following default options:
+1. Navigate to the [Customer Download Token at the MariaDB Customer Portal](https://customers.mariadb.com/downloads/token/)
+2. Log in using your [MariaDB ID](https://id.mariadb.com/)
+3. Copy the Customer Download Token — you will use it as the password when logging in to the MariaDB Enterprise Docker Registry
+{% endstep %}
 
-<div data-gb-custom-block data-tag="code">
-./install-enterprise-manager.sh
-```
+{% step %}
+### Setup MariaDB Enterprise Repository - "MariaDB Tools"
 
-* Setup agent on every MaxScale and MariaDB server with the command generated individually per MaxScale and MariaDB Server in Enterprise Manager UI:
-  * Click the three dots beside the server or MaxScale instance you want to install the Agent on and click Install Agent.
-  * The UI will generate a unique setup command for that specific server/MaxScale instance with the username and password you provide. Copy the command.
-  * On that specific server, paste and run the command in your terminal.
-  * Repeat the steps for all the MaxScale and MariaDB servers.
-* Wait 1–2 minutes until metrics start populating in Enterprise Manager from agents (default collection interval is 1 minute).
+Set up the repository for each monitored MariaDB Server and MaxScale:
+
+https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage
 {% endstep %}
 {% endstepper %}
 
-Attachments
+## Step 1: Install Enterprise Manager
 
-* &#x20;[image-20250930-112426.png](broken-reference) (image/png)
-* &#x20;[image-20250930-113014.png](broken-reference) (image/png)
-* &#x20;[image-20250930-113158.png](broken-reference) (image/png)
-* &#x20;[image-20250930-115151.png](broken-reference) (image/png)
-* &#x20;[image-20250930-115309.png](broken-reference) (image/png)
-* &#x20;[image-20250930-115500.png](broken-reference) (image/png)
-* &#x20;[image-20250930-121005.png](broken-reference) (image/png)
-* &#x20;[image-20250930-121629.png](broken-reference) (image/png)
-* &#x20;[image-20250930-121750.png](broken-reference) (image/png)
+{% stepper %}
+{% step %}
+### Login to the MariaDB Enterprise Docker Registry
+
+Use your MariaDB ID as username and Customer Download Token as password:
+
+```bash
+docker login docker.mariadb.com
+```
+{% endstep %}
+
+{% step %}
+### Download the installation script
+
+Insert your Customer Download Token into the download URL and download the installation script:
+
+```bash
+wget https://dlm.mariadb.com/<Customer_Download_Token>/enterprise-release-helpers/install-enterprise-manager.sh
+```
+{% endstep %}
+
+{% step %}
+### Make the installation script executable
+
+```bash
+chmod +x install-enterprise-manager.sh
+```
+{% endstep %}
+
+{% step %}
+### Run the installer with default options
+
+```bash
+./install-enterprise-manager.sh
+```
+{% endstep %}
+
+{% step %}
+### Access Enterprise Manager UI
+
+Open in a browser:
+
+https://\<Enterprise\_Manager\_IP>:8090
+
+Default credentials:
+
+* Username: admin
+* Password: mariadb
+{% endstep %}
+{% endstepper %}
+
+## Step 2: Register database topology in Enterprise Manager and enable monitoring
+
+Below are procedures for topologies without and with MaxScale.
+
+### Topology without MaxScale
+
+{% stepper %}
+{% step %}
+### Create monitoring user for each MariaDB Server (Enterprise Manager access)
+
+Run on each MariaDB server (replace \<Enterprise\_Manager\_IP> and ):
+
+```sql
+CREATE USER 'monitor'@'<Enterprise_Manager_IP>' IDENTIFIED BY '<password>';
+GRANT REPLICA MONITOR ON *.* TO 'monitor'@'<Enterprise_Manager_IP>';
+```
+{% endstep %}
+
+{% step %}
+### Add database topology in Enterprise Manager UI
+
+Add each MariaDB Server in the Enterprise Manager UI, providing access details for each server.
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Install agent on each MariaDB Server to enable metrics collection
+
+On each MariaDB server install the mema-agent package.
+
+* RedHat-based (RHEL, CentOS, Rocky Linux):
+
+```bash
+sudo yum install -y mema-agent
+```
+
+* Debian-based (Ubuntu, Debian):
+
+```bash
+sudo apt install -y mema-agent
+```
+{% endstep %}
+
+{% step %}
+### Create monitoring user for agent access (on each MariaDB Server)
+
+Run on each MariaDB server:
+
+```sql
+CREATE USER 'monitor'@'localhost' IDENTIFIED BY '<password>';
+GRANT PROCESS, BINLOG MONITOR, REPLICA MONITOR, REPLICATION MASTER ADMIN ON *.* TO 'monitor'@'localhost';
+```
+{% endstep %}
+
+{% step %}
+### Setup agent using the command generated in Enterprise Manager UI
+
+1.  In the UI, click the three dots beside the server you want to install the Agent on.\
+
+
+    <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+2. The UI will generate a unique setup command for that specific server with the username and password you provide.
+3. Copy and run the command on that specific server.
+4.  Repeat for all servers in the database fleet.\
+
+
+    <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Wait for metrics to appear
+
+Wait 1–2 minutes for metrics to start populating in Enterprise Manager from the agents (default collection interval is 1 minute).
+{% endstep %}
+{% endstepper %}
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+### Topology with MaxScale
+
+{% stepper %}
+{% step %}
+### Add MaxScale instances to Enterprise Manager
+
+Add each MaxScale instance in the Enterprise Manager UI, providing access details.
+
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Install agent on each MaxScale and MariaDB Server
+
+On each MaxScale and each MariaDB server install the mema-agent package.
+
+* RedHat-based (RHEL, CentOS, Rocky Linux):
+
+```bash
+sudo yum install -y mema-agent
+```
+
+* Debian-based (Ubuntu, Debian):
+
+```bash
+sudo apt install -y mema-agent
+```
+{% endstep %}
+
+{% step %}
+### Create monitoring user for agent access (on each MariaDB Server)
+
+Run on each MariaDB server:
+
+```sql
+CREATE USER 'monitor'@'localhost' IDENTIFIED BY '<password>';
+GRANT PROCESS, BINLOG MONITOR, REPLICA MONITOR, REPLICATION MASTER ADMIN ON *.* TO 'monitor'@'localhost';
+```
+{% endstep %}
+
+{% step %}
+### Setup agent using the command generated in Enterprise Manager UI
+
+1. Click the three dots beside the server or MaxScale instance you want to install the Agent on and click **Install Agent**.
+2. The UI will generate a unique setup command for that specific server/MaxScale instance with the username and password you provide. Copy the command.
+3. On that specific server/MaxScale instance, paste and run the command in your terminal.
+4. Repeat for all MaxScale and MariaDB servers.
+{% endstep %}
+
+{% step %}
+### Wait for metrics to appear
+
+Wait 1–2 minutes for metrics to start populating in Enterprise Manager from the agents (default collection interval is 1 minute).
+{% endstep %}
+{% endstepper %}

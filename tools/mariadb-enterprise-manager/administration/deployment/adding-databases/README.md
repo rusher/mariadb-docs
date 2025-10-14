@@ -20,7 +20,7 @@ Use this method for a single MariaDB Server or to manually define a Primary/Repl
 
 First, perform these actions on each MariaDB Server you plan to add.
 
-* Install the Agent package.
+1. Install the Agent package.
 
 {% code title="RHEL / CentOS / Rocky" %}
 ```bash
@@ -36,7 +36,7 @@ sudo apt install -y mema-agent
 ```
 {% endcode %}
 
-* Create the Enterprise Manager user (allows the Enterprise Manager server to connect remotely):
+2. Create the Enterprise Manager user (allows the Enterprise Manager server to connect remotely):
 
 ```sql
 CREATE USER 'monitor'@'<Enterprise_Manager_IP>' IDENTIFIED BY '<password>';
@@ -45,7 +45,7 @@ GRANT REPLICA MONITOR ON *.* TO 'monitor'@'<Enterprise_Manager_IP>';
 
 Replace `<Enterprise_Manager_IP>` with the IP of your Enterprise Manager server and `<password>` with a secure password.
 
-* Create the Local Agent user (required for the agent to collect detailed metrics from the local database instance):
+3. Create the Local Agent user (required for the agent to collect detailed metrics from the local database instance):
 
 ```sql
 CREATE USER 'monitor'@'localhost' IDENTIFIED BY '<password>';
@@ -63,18 +63,35 @@ Replace `<password>` with a secure password.
 3. Begin the Add Database process:
    * If this is your first time and no databases are present, you'll be on the "Add Database" screen automatically.
    * If you already have other databases, click the **+ Add Database** button.
-4. Ensure the **Database without MaxScale** option is selected.
+4.  Ensure the **Database without MaxScale** option is selected.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 5. Fill in the connection details for your first server using the Enterprise Manager User (`'monitor'@'<Enterprise_Manager_IP>'`).
+{% endstep %}
 
-At this point you have a choice:
+{% step %}
+### Standalone server or a cluster
 
-* To add a Standalone Server: Click **Add** and proceed to the next step.
-* To create a Cluster:
-  * Click the Plus icon (+) to add another server node.
-  * Fill in the connection details for the second server in your cluster and click **Confirm**. Repeat for all nodes in your cluster.
-  * Once all nodes are added, select the Topology Type (e.g., Primary/Replica — default — or Galera Cluster) and click **Confirm**.
+To add a Standalone Server: Click **Add** and proceed to the next step (4).
 
+To create a Cluster:
+
+1.  Click the Plus icon (+) to add another server node.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+2. Fill in the connection details for the second server in your cluster and click **Confirm**. Repeat for all nodes in your cluster.
+3.  Once all nodes are added, select the Topology Type (e.g., Primary/Replica — default — or Galera Cluster) and click **Confirm**.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
 To convert an existing standalone server into a cluster: click the three-dot menu (⋮) next to the server, choose **Edit**, and click the Plus icon (+). Then follow the same steps to add nodes.
+
+![](<../../../../.gitbook/assets/image (38).png>)
+{% endhint %}
 {% endstep %}
 
 {% step %}
@@ -82,13 +99,17 @@ To convert an existing standalone server into a cluster: click the three-dot men
 
 For each server added, link its agent:
 
-1. Find the server in the inventory list, click the three-dot menu (⋮), and select **Install Agent**.
-2. Enter the credentials for the Local Agent User (`'monitor'@'localhost'`) to generate a setup command.
+1.  Find the server in the inventory list, click the three-dot menu (⋮), and select **Install Agent**.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+2.  Enter the credentials for the Local Agent User (`'monitor'@'localhost'`) to generate a setup command.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 3. Copy the command and run it on that server's terminal to link the agent.
 {% endstep %}
 {% endstepper %}
-
-***
 
 ## Option 2: Adding a Cluster (With MaxScale)
 
@@ -130,7 +151,7 @@ Replace `<password>` with a secure password.
 ### Register the MaxScale Instance in the UI 🖥️
 
 1. Begin the Add Database process:
-   * If this is your first time and no databases are present, you'll be on the "Add Database" screen automatically.
+   * If this is your first time and no databases are present, you'll be on the "Add Database" screen to begin with.
    * If you already have other databases, click the **+ Add Database** button.
 2. Select the **Database with MaxScale** option.
 3. Provide the connection details for your MaxScale instance (IP address, API port `8989`, and its admin credentials).
@@ -144,42 +165,16 @@ You must link the agent on every server in the topology to Enterprise Manager. T
 
 For each server in the list (start with the MaxScale instance, then each MariaDB server):
 
-1. Click the three-dot menu (⋮) and select **Install Agent**.
-2. The UI will generate a unique setup command for that specific server with the username and password you provide. Copy the command.
+1.  Click the three-dot menu (⋮) and select **Install Agent**.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+2.  The UI will generate a unique setup command for that specific server with the username and password you provide. Copy the command.\
+
+
+    <figure><img src="../../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 3. On that specific server, paste and run the command in the terminal.
 
 Repeat this process for every server in the topology. Once all agents are linked, the dashboard will begin showing the health and performance of the entire cluster.
 {% endstep %}
 {% endstepper %}
-
-***
-
-## Images / Attachments
-
-(The images referenced above are attached in the original document and are kept with their original filenames and paths.)
-
-* image-20251007-171506.png
-* image-20251007-171533.png
-* image-20251007-171712.png
-* image-20251007-171917.png
-* image-20251007-173016.png
-* image-20251007-180005.png
-* image-20251007-180227.png
-* image-20251007-180519.png
-* image-20251007-181434.png
-* image-20251007-181531.png
-* image-20251007-185513.png
-* image-20251007-185616.png
-* image-20251007-192342.png
-* image-20251007-192407.png
-* image-20251009-133647.png
-* image-20251009-133727.png
-* image-20251009-133819.png
-* image-20251009-134324.png
-* image-20251009-134517.png
-* image-20251009-145512.png
-* image-20251009-145641.png
-
-Document generated by Confluence on Oct 13, 2025 16:28
-
-Atlassian: http://www.atlassian.com/

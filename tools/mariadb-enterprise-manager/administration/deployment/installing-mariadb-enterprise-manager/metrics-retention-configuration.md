@@ -14,7 +14,7 @@ Changing the retention time is done by editing the environment file for Enterpri
 
 Navigate to your Enterprise Manager installation directory and open the `.env` file in a text editor.
 
-{% code title=".env location" %}
+{% code title="# .env location" %}
 ```bash
 cd enterprise-manager/
 vim .env
@@ -29,16 +29,14 @@ Find the line containing `PROMETHEUS_RETENTION_TIME` and change its value. The c
 
 Examples:
 
-{% code title="Set retention to 90 days" %}
+{% code title="# Set retention to 90 days" %}
 ```bash
-# To change the retention period to 90 days:
 PROMETHEUS_RETENTION_TIME=90d
 ```
 {% endcode %}
 
-{% code title="Set retention to 52 weeks (one year)" %}
+{% code title="# Set retention to 52 weeks (one year)" %}
 ```bash
-# To change the retention period to 52 weeks (one year):
 PROMETHEUS_RETENTION_TIME=52w
 ```
 {% endcode %}
@@ -53,7 +51,7 @@ Changes to `PROMETHEUS_RETENTION_TIME` take effect only after the Prometheus ser
 
 You must restart the services for the new retention period to be applied.
 
-{% code title="Restart services" %}
+{% code title="# Restart services" %}
 ```bash
 docker compose up -d
 ```
@@ -68,17 +66,15 @@ Prometheus, the time-series database used by Enterprise Manager, does not delete
 * Block-Based Storage: Prometheus stores metrics data in **blocks**, which are typically two-hour chunks of time. In the background, these small blocks are compacted into larger ones.
 * Delayed Cleanup: Data is not deleted on a sample-by-sample basis. Instead, Prometheus removes an entire block once all the data within it has passed the retention period. This cleanup process runs in the background and may not be immediate.
 
-<details>
-
-<summary>Delayed metrics removal for deleted databases</summary>
+{% hint style="info" %}
+**Delayed metrics removal for deleted databases**
 
 After you delete a database from MariaDB Enterprise Manager, you may continue to see its historical metrics in Grafana dashboards for a period of time.
 
 This is expected behavior. Enterprise Manager does not immediately delete a database's metric history from Prometheus. Instead, the data is removed automatically by Prometheus's own cleanup process once it passes the configured retention period.
 
 These old metrics will no longer receive new data and will eventually disappear from the dashboards on their own.
-
-</details>
+{% endhint %}
 
 ## Valid retention time units
 

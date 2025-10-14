@@ -1,8 +1,5 @@
 # Network and Firewall Requirements
 
-Created by Egor Ustinov\
-Last modified on Oct 10, 2025
-
 Before installing MariaDB Enterprise Manager, ensure that your firewall and network rules allow traffic on all required ports. Proper connectivity is essential for the system to function correctly.
 
 The following table details the necessary ports and their purposes.
@@ -21,5 +18,5 @@ All ports listed are TCP. Ensure your firewall rules explicitly allow TCP traffi
 
 For the current version of MariaDB Enterprise Manager, ensure the following rules are in place:
 
-* From user workstations: allow traffic to the Enterprise Manager Server on TCP port 8090.
-* From agent hosts: allow traffic to the Enterprise Manager Server on TCP port 4318.
+* From user workstations, allow traffic to the Enterprise Manager Server on TCP port `8090`.
+* From agent hosts, allow traffic to the Enterprise Manager Server on TCP port `4318`.

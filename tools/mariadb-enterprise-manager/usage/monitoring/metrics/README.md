@@ -1,9 +1,7 @@
 # Metrics
 
-Created by Stefan Hinz, last modified by Tauseef Khan on Oct 10, 2025
-
 {% hint style="warning" %}
-In its current implementation, this feature runs on Linux only.
+This feature is currently compatible only with Linux systems.
 {% endhint %}
 
 ## MariaDB Server metrics
@@ -25,7 +23,7 @@ MariaDB Server metrics are gathered with the Prometheus exporter for MySQL and s
 
 MariaDB Enterprise Manager collects a wide range of time-series metrics from your MariaDB MaxScale instances to provide deep insight into their performance, health, and activity. Monitoring these metrics is crucial for diagnosing performance bottlenecks, ensuring high availability, and understanding how your database proxy is handling application traffic.
 
-Here is the list of available [MaxScale metrics](https://mariadb.com/docs/tools/mariadb-enterprise-operator/metrics#maxscale-metrics) collected by Enterprise Manager.
+Here is the list of available [MaxScale metrics](../../../../mariadb-enterprise-operator/metrics.md#maxscale-metrics) collected by Enterprise Manager.
 
 ## Node metrics
 

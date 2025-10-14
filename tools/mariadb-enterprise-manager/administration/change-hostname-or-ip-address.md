@@ -8,7 +8,7 @@ To set the hostname or IP address for an existing MariaDB Enterprise Management 
 
 SSH into the server where your Enterprise Manager is running:
 
-{% code title="Connect via SSH" %}
+{% code title="# Connect via SSH" %}
 ```bash
 ssh user@your-server-ip
 ```
@@ -20,7 +20,7 @@ ssh user@your-server-ip
 
 Change into the `enterprise-manager` directory, where your Docker Compose files are located:
 
-{% code title="Change directory" %}
+{% code title="# Change directory" %}
 ```bash
 cd enterprise-manager
 ```
@@ -32,7 +32,7 @@ cd enterprise-manager
 
 Open the environment file with a text editor (for example `nano`):
 
-{% code title="Open .env" %}
+{% code title="# Open .env" %}
 ```bash
 nano .env
 ```
@@ -40,7 +40,7 @@ nano .env
 
 Find the line that begins with `MEMA_HOSTNAME=` and update it with the new hostname or IP address. Example:
 
-{% code title=".env example" %}
+{% code title="# .env example" %}
 ```env
 MEMA_HOSTNAME=your.new.hostname.or.ip
 ```
@@ -50,7 +50,7 @@ MEMA_HOSTNAME=your.new.hostname.or.ip
 {% step %}
 ### Save the file
 
-Save the file and exit the editor (for `nano`, press Ctrl+O to write, then Enter, then Ctrl+X to exit).
+Save the file and exit the editor
 {% endstep %}
 
 {% step %}
@@ -58,7 +58,7 @@ Save the file and exit the editor (for `nano`, press Ctrl+O to write, then Enter
 
 Restart the MEM services so the new environment variable takes effect. The `--force-recreate` flag ensures the containers are rebuilt using the updated environment variables:
 
-{% code title="Restart services" %}
+{% code title="# Restart services" %}
 ```bash
 docker compose up -d --force-recreate
 ```

@@ -31,7 +31,9 @@ MEMA_TLS_KEYPATH=/certs/my-host.key
 ```
 {% endcode %}
 
-Note: The path you provide must begin with `/certs/`. This is because the host's `certs/` directory is mounted inside the Docker containers at the `/certs` path.
+{% hint style="info" %}
+The path you provide must begin with `/certs/`. This is because the host's `certs/` directory is mounted inside the Docker containers at the `/certs` path.
+{% endhint %}
 {% endstep %}
 
 {% step %}
@@ -40,11 +42,10 @@ Note: The path you provide must begin with `/certs/`. This is because the host's
 To apply the changes, restart the services:
 
 ```
+docker compose up -d
 ```
 {% endstep %}
 {% endstepper %}
-
-***
 
 ### Enabling the Audit Log
 
@@ -57,6 +58,7 @@ The audit log records all REST API requests made to MariaDB Enterprise Manager, 
 Open a terminal and change into your MariaDB Enterprise Manager installation directory.
 
 ```
+cd enterprise-manager/
 ```
 {% endstep %}
 
@@ -66,6 +68,7 @@ Open a terminal and change into your MariaDB Enterprise Manager installation dir
 Open the environment file using a text editor.
 
 ```
+nano .env
 ```
 {% endstep %}
 
@@ -77,11 +80,13 @@ Inside the editor, locate the line for the audit API setting.
 * Find this line:
 
 ```
+MEMA_AUDIT_API=false
 ```
 
 * Change it to:
 
 ```
+MEMA_AUDIT_API=true
 ```
 {% endstep %}
 
@@ -97,11 +102,10 @@ Save the changes and exit the editor.
 The change requires a restart to take effect.
 
 ```
+docker compose up -d
 ```
 {% endstep %}
 {% endstepper %}
-
-***
 
 ### Configuring Secure Connections
 
@@ -112,6 +116,7 @@ The connection from the `mema-agent` to the Enterprise Manager server is secured
 * To enable encryption: ensure the URL provided in the agent setup command uses `https://`.
 
 ```
+mema-agent setup --endpoint=https://<MEM_Address> ...
 ```
 
 * To bypass certificate checks: if you are using a self-signed or non-trusted TLS certificate on the Enterprise Manager server, you can add the `--otlp-insecure` flag to the agent setup command. This is recommended only for testing environments.
@@ -122,27 +127,13 @@ You can configure secure TLS connections from Enterprise Manager to your monitor
 
 In the "Add Database" page:
 
-{% stepper %}
-{% step %}
-Toggle the SSL/TLS option to ON.
-{% endstep %}
+<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
-{% step %}
-To validate the server's certificate against your Certificate Authority (CA), provide the path to your CA file in the Certificate Authority field. The file must be located in the `enterprise-manager/certs/` directory and the path must begin with `/certs/`.
-{% endstep %}
-
-{% step %}
-Check Verify peer certificate to enable validation.
-{% endstep %}
-
-{% step %}
-(Optional) Check Verify peer host to ensure the server's hostname matches the certificate.
-{% endstep %}
-
-{% step %}
-If the database requires client-side certificates for authentication, provide the paths to your client certificate and key in the Certificate and Key fields, respectively. These files must also be in the `enterprise-manager/certs/` directory.
-{% endstep %}
-{% endstepper %}
+1. Toggle the SSL/TLS option to ON.
+2. To validate the server's certificate against your Certificate Authority (CA), provide the path to your CA file in the Certificate Authority field. The file must be located in the `enterprise-manager/certs/` directory and the path must begin with `/certs/`.
+3. Check Verify peer certificate to enable validation.
+4. (Optional) Check Verify peer host to ensure the server's hostname matches the certificate.
+5. If the database requires client-side certificates for authentication, provide the paths to your client certificate and key in the Certificate and Key fields, respectively. These files must also be in the `enterprise-manager/certs/` directory.
 
 {% hint style="warning" %}
 All certificate and key files referenced for server validation or client authentication must be placed in the `enterprise-manager/certs/` directory on the host and referenced with a path beginning with `/certs/`.

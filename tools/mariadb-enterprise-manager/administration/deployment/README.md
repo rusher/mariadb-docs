@@ -1,9 +1,5 @@
 # Deployment
 
-Created by Stefan Hinz · Last modified by Egor Ustinov on Oct 13, 2025
-
-## Deployment
-
 This section provides an overview of the deployment process for MariaDB Enterprise Manager, covering installation and upgrades for both the central server and the monitoring agents.
 
 MariaDB Enterprise Manager is designed for a streamlined deployment experience. You can launch the main server with a single-line command for a quick start, and a UI-integrated helper tool simplifies the process of installing and registering agents on your monitored databases.
@@ -14,10 +10,10 @@ The Enterprise Manager Server is a Docker-based application installed on a dedic
 
 As a first step review the hardware, system, and network requirements:
 
-* [Hardware and System Requirements](broken-reference)
-* [Network and Firewall Requirements](broken-reference)
+* [Hardware and System Requirements](hardware-and-system-requirements.md)
+* [Network and Firewall Requirements](network-and-firewall-requirements.md)
 
-After confirming your hardware, system, and network are compliant, proceed with the installation instructions: [Installing MariaDB Enterprise Manager](broken-reference)
+After confirming your hardware, system, and network are compliant, proceed with the installation instructions: [Installing MariaDB Enterprise Manager](installing-mariadb-enterprise-manager/)
 
 ### Installing Enterprise Manager Agents
 
@@ -30,10 +26,3 @@ You can quickly set up and launch MariaDB Enterprise Manager with a single-line 
 
 Enterprise Manager includes a helper tool, integrated in the UI, for adding agents. The helper prompts you to download a small (< 50M) binary and then provides command-line instructions to install and register agents, enabling quick and seamless addition of new MariaDB databases to Enterprise Manager.
 {% endhint %}
-
-### This section describes
-
-* Installing MariaDB Enterprise Manager
-* Installing agents
-* Upgrading Enterprise Manager Server
-* Upgrading agents

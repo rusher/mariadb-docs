@@ -1,82 +1,102 @@
 # Agent installation
 
-Created by Egor Ustinov, last modified by Esa Korhonen on Oct 06, 2025
+The `mema-agent` is a small application that must be installed on every server you wish to monitor with MariaDB Enterprise Manager, including MariaDB Server nodes and MaxScale nodes.
 
-## Agent Installation and Setup With Package Manager
+This guide covers the recommended installation method using a package manager.
 
-* Instructions to install and register agent on MariaDB and MaxScale servers with package manager from repositories.
-* Documentation of parameters (Metrics collection frequency, Open Telemetry destination endpoint configuration to export metrics to 3rd party monitoring, SSL certificate, etc.)
+### Prerequisite: Create the Local Monitor User
 
-Install the MariaDB Enterprise Manager Agent from the MariaDB Enterprise repository. First, if the MariaDB enterprise repository is not yet installed, install it with the repository setup script as described here: https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage. Follow the instructions for `mariadb_es_repo_setup`.
+Before installing the agent on a MariaDB Server host, you must create a local user that the agent will use to connect to the database and collect metrics.
 
-{% stepper %}
-{% step %}
-### Repository setup
+Log in to your MariaDB Server and run the following commands:
 
-If the MariaDB Enterprise repository is not installed yet, run the repository setup script as described in the link above and follow the steps for `mariadb_es_repo_setup`.
-{% endstep %}
-
-{% step %}
-### Install the mema-agent package
-
-Install the mema-agent package using your distribution's package manager.
-
-{% tabs %}
-{% tab title="Ubuntu / Debian" %}
-Run:
-
-{% code title="Install on Debian/Ubuntu" %}
-```bash
-apt-get install mema-agent
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="RHEL / Rocky" %}
-Run:
-
-{% code title="Install on RHEL/Rocky" %}
-```bash
-yum install mema-agent
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-Note: the original documentation lists other package manager options with "and …?" — follow your distribution-specific instructions if different.
-{% endstep %}
-
-{% step %}
-### Register and configure the agent
-
-After installation, register and configure the agent according to your environment and the MariaDB Enterprise Manager instructions. Configure parameters such as:
-
-* Metrics collection frequency
-* Open Telemetry destination endpoint for exporting metrics to third-party monitoring
-* SSL certificate settings
-* Any other agent-specific parameters required by your deployment
-
-Refer to the MariaDB Enterprise Manager documentation for exact configuration file locations and available options.
-{% endstep %}
-{% endstepper %}
-
-## Agent Installation With Binary
-
-Prerequisite for setting up agent for MariaDB Server
-
-{% hint style="info" %}
-A MariaDB user must be created with the required permissions for the agent to collect metrics.
-{% endhint %}
-
-Create the user and grant permissions:
-
-{% code title="MariaDB SQL" %}
+{% code title="Create monitor user" %}
 ```sql
 CREATE USER 'monitor'@'localhost' IDENTIFIED BY '<password>';
 GRANT SELECT, PROCESS, REPLICATION CLIENT, RELOAD, REPLICA MONITOR, REPLICATION MASTER ADMIN ON *.* TO 'monitor'@'localhost';
 ```
 {% endcode %}
 
-## Attachments
+_Replace `<password>` with a secure password. You will need these credentials later when linking the agent in the Enterprise Manager UI._
 
-&#x20;(image/png)
+### Installation via Package Manager (Recommended)
+
+This method uses your OS's native package manager (`dnf`, `apt`, `zypper`) to install the agent from the MariaDB Enterprise repository.
+
+#### Step 1: Configure the MariaDB Enterprise Repository
+
+If you haven't already configured the MariaDB Enterprise repository on the server, follow these steps.
+
+{% stepper %}
+{% step %}
+### Get Your Customer Download Token
+
+* Navigate to the [MariaDB Customer Portal](https://customers.mariadb.com/downloads/token/) and log in.
+* Copy your **Customer Download Token**. You will need this for the script.
+{% endstep %}
+
+{% step %}
+### Download the Repository Setup Script
+
+In your server's terminal, download the official setup script:
+
+{% code title="# Download repo setup script" %}
+```bash
+curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
+```
+{% endcode %}
+{% endstep %}
+
+{% step %}
+### Run the Script
+
+Make the script executable, then run it with your download token:
+
+{% code title="# Make script executable and run" %}
+```bash
+chmod +x mariadb_es_repo_setup
+sudo ./mariadb_es_repo_setup --token="YOUR_TOKEN_HERE" --apply
+```
+{% endcode %}
+
+_Replace `YOUR_TOKEN_HERE` with the token you copied from the Customer Portal._
+{% endstep %}
+{% endstepper %}
+
+#### Step 2: Install the Agent Package
+
+Once the repository is configured, use your system's package manager to install the agent.
+
+{% tabs %}
+{% tab title="Red Hat / Rocky / CentOS" %}
+{% code title="Install on RHEL/CentOS/Rocky" %}
+```bash
+sudo dnf install mema-agent
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Debian / Ubuntu" %}
+{% code title="Install on Debian/Ubuntu" %}
+```bash
+sudo apt-get install mema-agent
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="SLES" %}
+{% code title="Install on SLES" %}
+```bash
+sudo zypper install mema-agent
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+The agent is now installed and running as a service.
+
+### Next Steps: Linking the Agent 🔗
+
+After the agent is installed, it is running but not yet configured or linked to your MariaDB Enterprise Manager server.
+
+The final step is to link the agent, which is done from the Enterprise Manager UI. Please refer to the ["Adding Databases to MariaDB Enterprise Manager" guide](./#adding-databases-to-mariadb-enterprise-manager) for the specific steps to generate the linking command.

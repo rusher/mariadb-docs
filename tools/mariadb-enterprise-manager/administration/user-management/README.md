@@ -15,10 +15,10 @@ Click the **Settings icon (⚙️)** in the left navigation bar.
 ### Open User Management
 
 Select **User management**.
+
+<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
-
-***
 
 ## Permissions, Roles & Users
 
@@ -28,6 +28,8 @@ In MariaDB Enterprise Manager, permissions, roles, and users are organized in a 
 * Roles are collections of one or more permissions grouped together. They can be pre-configured (for example `admin`, `monitoring-admin`, `viewer`) or custom-defined.
 * Users are assigned one or more roles and inherit the associated permissions.
 
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
 This structure allows administrators to manage access by assigning roles to users rather than setting individual permissions per user.
 
 ### The Admin Permission
@@ -35,9 +37,10 @@ This structure allows administrators to manage access by assigning roles to user
 Access to the User Management page is restricted based on a user's assigned permissions.
 
 * ✅ Only users with `admin` permissions (assigned via a role) can add, modify, or remove other users and roles.
-* ❌ Non-admin users cannot access or change these settings, but they can update their own password via their Profile page.
+*   ❌ Non-admin users cannot access or change these settings, but they can update their own password via their Profile page.\
 
-***
+
+    <figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 ## Default Roles
 
@@ -47,7 +50,9 @@ Enterprise Manager ships with three pre-configured roles:
 * `monitoring-admin`: Can manage databases and monitoring, but cannot manage users or roles.
 * `viewer`: Has read-only access to monitoring data and can use the Workspace.
 
+{% hint style="info" %}
 Although pre-configured roles can be edited or deleted, creating a custom role is strongly recommended when you need changes.
+{% endhint %}
 
 Roles (pre-configured or custom) are built from combinations of the following base permissions:
 
@@ -59,8 +64,6 @@ Roles (pre-configured or custom) are built from combinations of the following ba
 | `edit`     | Can manage databases and monitoring settings. **Requires the `view` permission to be selected as well.**                        |
 | `view`     | Can view dashboards and monitoring data.                                                                                        |
 | `sql`      | Can access the Query Editor and ERD tools in the Workspace. **Enabling this allows you to set a query row limit for the role.** |
-
-***
 
 ## Managing Roles
 
@@ -98,9 +101,17 @@ Select the checkboxes for the **Base Permissions** you want to grant.
 
 Click **Add**.
 
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
 If you select the `sql` permission, a **"Query editor row limit"** dropdown will appear. You can adjust this value as needed.
 
+![](<../../../.gitbook/assets/image (26).png>)
+{% endhint %}
+
+{% hint style="warning" %}
 Note: The system requires `view` permission along with `edit`. Otherwise, it throws an error.
+{% endhint %}
 {% endstep %}
 {% endstepper %}
 
@@ -124,10 +135,14 @@ Click the three-dot menu (⋮) on the right side of the role's row.
 
 Select one of the following options:
 
+<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+
 * **Update**: Opens the "Edit Role" dialog where you can change the role's name or its assigned permissions.
 * **Delete**: Permanently removes the custom role. A confirmation dialog will appear.
 
-Note: Roles that are currently assigned to any user cannot be deleted.
+{% hint style="info" %}
+Roles that are currently assigned to any user cannot be deleted.
+{% endhint %}
 {% endstep %}
 {% endstepper %}
 
@@ -189,17 +204,16 @@ Click the three-dot menu (⋮) on the right side of the user's row.
 
 Select one of the following options:
 
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+
 * **Update**: Opens the "Edit User" dialog where you can change the user's assigned role or update their password.
 * **Delete**: Permanently removes the user from MariaDB Enterprise Manager.
 
-Notes:
-
-* You cannot delete the user account that you are currently logged in with.
-* To delete an administrator account, you must first log in with a different administrator account.
+{% hint style="info" %}
+You cannot delete the user account that you are currently logged in with. To delete an administrator account, you must first log in with a different administrator account.
+{% endhint %}
 {% endstep %}
 {% endstepper %}
-
-***
 
 ## The Default Admin User
 
@@ -208,25 +222,3 @@ Upon installation of MariaDB Enterprise Manager, a default `admin` user is creat
 {% hint style="warning" %}
 For security, it is strongly recommended that you change this password immediately after your first login.
 {% endhint %}
-
-***
-
-## Attachments
-
-* [User Management - Roles.png](broken-reference)
-* [User Management - Users CRUD.png](broken-reference)
-* [User Management - Roles - Add Role.png](broken-reference)
-* [Profile.png](broken-reference)
-* [User Management - Roles - Add Role - With sql Permission.png](broken-reference)
-* [User Management.png](broken-reference)
-* [image-20251009-155249.png](broken-reference)
-* [graphviz (2).svg](broken-reference)
-* [image-20251009-155950.png](broken-reference)
-* [image-20251009-160109.png](broken-reference)
-* [image-20251009-160318.png](broken-reference)
-* [image-20251009-160946.png](broken-reference)
-* [image-20251010-134753.png](broken-reference)
-* [image-20251010-134856.png](broken-reference)
-* [image-20251010-134924.png](broken-reference)
-* [image-20251010-135004.png](broken-reference)
-* [image-20251010-135054.png](broken-reference)
