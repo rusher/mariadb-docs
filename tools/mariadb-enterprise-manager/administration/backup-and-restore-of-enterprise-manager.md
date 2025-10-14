@@ -1,6 +1,4 @@
-# 3262349343
-
-Created by Stefan Hinz, last modified by Egor Ustinov on Oct 08, 2025
+# Backup & Restore of Enterprise Manager
 
 Note: This is about backing up Enterprise Manager (EM), not the databases.
 

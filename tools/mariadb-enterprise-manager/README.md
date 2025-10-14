@@ -1,7 +1,5 @@
 # MariaDB Enterprise Manager
 
-Created by Stefan Hinz, last modified by Egor Ustinov on Oct 10, 2025
-
 MariaDB Enterprise Manager is a comprehensive observability and management solution designed for your entire database fleet. It provides advanced, topology-aware monitoring and a powerful suite of visual tools for query development and schema management, all from a single, centralized interface.
 
 At its core, Enterprise Manager uses lightweight agents to collect deep telemetry from your standalone databases, replicated topologies, and MaxScale clusters via the OpenTelemetry standard. This foundation powers the integrated **Grafana** dashboards, which come pre-packaged with production-ready visualizations and alerts. Beyond monitoring, the **Workspace** provides a shared environment for developers and DBAs with an advanced **Query Editor** and a visual **ERD Designer**. The entire system is secured with role-based access control, audit logging, and can integrate with your corporate **identity provider (OIDC)** for single sign-on.

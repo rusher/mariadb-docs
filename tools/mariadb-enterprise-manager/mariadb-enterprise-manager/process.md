@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Process
 
 Created by Stefan Hinz, last modified by Egor Ustinov on Sep 23, 2025
