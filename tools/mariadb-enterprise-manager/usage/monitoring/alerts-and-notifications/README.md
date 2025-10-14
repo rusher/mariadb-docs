@@ -1,13 +1,6 @@
 # Alerts and notifications
 
-This is an advanced draft\
-Created by Stefan Hinz, last modified by Tauseef Khan on Oct 13, 2025
-
 MariaDB Enterprise Manager provides a powerful and flexible alerting system, built on the capabilities of the integrated **Grafana Alerting** engine. It allows you to proactively monitor your entire database fleet, define custom rules for potential issues, and receive notifications through various channels to ensure you can respond quickly.
-
-{% hint style="info" %}
-This page is an advanced draft.
-{% endhint %}
 
 ### How It Works: The Alerting Flow
 
@@ -43,27 +36,14 @@ The firing alert is routed through a **Notification Policy**. The policy matches
 
 To configure alerting effectively, it's helpful to understand these core concepts from Grafana:
 
-* **Alert Rules**: An alert rule is the combination of a data query and a threshold condition. This is the core of your alert, defining what you want to measure and when it should be considered a problem.
-* **Alert Instances**: A single alert rule can generate multiple **Alert Instances**. For example, one rule to check CPU usage will create a separate instance for each server it monitors, allowing you to see the individual status of every server.
-* **Contact Points**: This is _where_ notifications are sent. You can configure contact points for various destinations, such as email addresses, Slack channels, PagerDuty, or a generic webhook.
-* **Notification Policies**: This is the "brain" of the routing system. Notification policies use labels to determine which firing alerts should be sent to which contact points. This allows you to, for example, send database-related alerts to the DBA team and OS-related alerts to the SRE team.
-* **Silences and Mute Timings**: These features allow you to temporarily pause notifications without stopping the alert rules themselves. **Silences** are for one-off events like a planned maintenance window, while **Mute Timings** can be used for recurring periods, such as nights and weekends.
+| Term                          | Description                                                                                                                                                                             |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Alert Rules**               | The combination of a data query and a threshold condition defining what to measure and when it's a problem.                                                                             |
+| **Alert Instances**           | Generated from an alert rule for each monitored entity, showing individual statuses.                                                                                                    |
+| **Contact Points**            | Destinations for notifications, such as email, Slack, PagerDuty, or webhooks.                                                                                                           |
+| **Notification Policies**     | Uses labels to route alerts to contact points, facilitating team-specific alerting.                                                                                                     |
+| **Silences and Mute Timings** | Allow temporary notification pauses without halting alerts. Silences cover single events, like maintenance, while Mute Timings are for recurring periods, such as at night or weekends. |
 
 {% hint style="info" %}
-For a deep dive into advanced topics like custom message templating, alert grouping, and more complex routing, see the official Grafana documentation:\
-https://grafana.com/docs/grafana/latest/alerting/fundamentals/
+For a deep dive into advanced topics like custom message templating, alert grouping, and more complex routing, see the [official Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/fundamentals/).
 {% endhint %}
-
-## Attachments
-
-Images attached to the original document:
-
-\
-\
-\
-\
-\
-\
-
-
-(Note: image filenames and attachment paths are preserved from the source.)

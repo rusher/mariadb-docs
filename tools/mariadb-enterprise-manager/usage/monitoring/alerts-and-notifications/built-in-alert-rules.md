@@ -1,9 +1,5 @@
 # Built in alert rules
 
-## Documentation : Built-in alert rules
-
-Created by Egor Ustinov, last modified by Tauseef Khan on Oct 10, 2025
-
 MariaDB Enterprise Manager includes a comprehensive set of pre-configured alert rules to provide production-ready monitoring for your entire database stack out-of-the-box. These alerts are built on the integrated Grafana Alerting engine and are designed to detect common issues across your MariaDB Servers, Galera Clusters, MaxScale instances, and the underlying operating systems.
 
 A key feature of these rules is the use of a **"sustained for"** duration. This means a condition must remain true for a specified period (e.g., 3 minutes) before an alert will fire. This prevents alert fatigue from brief, transient spikes and ensures you are only notified of persistent, actionable problems.

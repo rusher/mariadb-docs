@@ -10,24 +10,19 @@ This is an advanced draft.
 
 1. Navigate to your MariaDB Enterprise Manager installation directory:
 
-{% code title="Shell" %}
 ```bash
 cd enterprise-manager/
 ```
-{% endcode %}
 
 2. Open the `.env` file in a text editor (example uses nano):
 
-{% code title=".env (open with nano)" %}
 ```bash
 nano .env
 ```
-{% endcode %}
 
 3. Add the following block of variables to the file, filling in values for your SMTP server:
 
-{% code title=".env (SMTP settings)" %}
-```env
+```ini
 # --- Grafana SMTP Email Settings ---
 # Set to true to enable email alerting
 GF_SMTP_ENABLED=true
@@ -48,7 +43,6 @@ GF_SMTP_FROM_ADDRESS=alerts@my-domain.com
 # The display name for the sender
 GF_SMTP_FROM_NAME=MariaDB Enterprise Manager
 ```
-{% endcode %}
 
 4. Save the file and exit the editor.
 {% endstep %}
@@ -76,8 +70,8 @@ docker compose up -d grafana
 
 After Grafana restarts:
 
-* Open the Grafana UI.
-* Create a new "Contact point".
-* Use the "Test" button to send a test email and confirm that SMTP settings are correct and Enterprise Manager can send alerts.
+1. Open the Grafana UI.
+2. Create a new "Contact point".
+3. Use the "Test" button to send a test email and confirm that SMTP settings are correct and Enterprise Manager can send alerts.
 {% endstep %}
 {% endstepper %}
