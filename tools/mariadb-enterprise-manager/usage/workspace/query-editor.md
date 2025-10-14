@@ -1,7 +1,22 @@
 # Query Editor
 
-Created by Stefan Hinz on Sep 19, 2025
+{% hint style="info" %}
+In MariaDB Enterprise Manager, Query Editor worksheet is accessed from MaxScale's MaxGUI. Query Editor is well documented in the [MaxScale tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/using-maxgui).
+{% endhint %}
 
-Enterprise Manager contains a SQL query editing tool that helps write, test, debug, and optimize SQL queries without switching different applications.
+The Query Editor is a powerful, integrated environment for database developers and administrators. It provides a comprehensive set of tools for writing and debugging SQL, managing schema objects, and analyzing query results, all from a single interface.
 
-The tool is available from the [MaxScale GUI](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/using-maxgui#run-queries).
+This procedure outlines the steps required to access and utilize the Query Editor within the Workspace section of Enterprise Manager UI.&#x20;
+
+1.  From the main Workspace screen, click the "Run Queries" card.\
+
+
+    <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+2.  In the "Connect to..." dialog, select your target server, enter your credentials, and click Connect.\
+
+
+    <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+3.  Upon successful connection, the main [Query Editor worksheet](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/using-maxgui#query-editor-worksheet) will appear, ready for you to begin.\
+
+
+    <figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>

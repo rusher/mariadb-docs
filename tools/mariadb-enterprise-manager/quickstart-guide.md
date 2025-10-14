@@ -115,7 +115,7 @@ GRANT REPLICA MONITOR ON *.* TO 'monitor'@'<Enterprise_Manager_IP>';
 
 Add each MariaDB Server in the Enterprise Manager UI, providing access details for each server.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -153,13 +153,13 @@ GRANT PROCESS, BINLOG MONITOR, REPLICA MONITOR, REPLICATION MASTER ADMIN ON *.* 
 1.  In the UI, click the three dots beside the server you want to install the Agent on.\
 
 
-    <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 2. The UI will generate a unique setup command for that specific server with the username and password you provide.
 3. Copy and run the command on that specific server.
 4.  Repeat for all servers in the database fleet.\
 
 
-    <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -169,7 +169,7 @@ Wait 1–2 minutes for metrics to start populating in Enterprise Manager from th
 {% endstep %}
 {% endstepper %}
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Topology with MaxScale
 
