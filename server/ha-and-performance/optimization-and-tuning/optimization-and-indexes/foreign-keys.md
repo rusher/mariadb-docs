@@ -86,6 +86,7 @@ Foreign keys have the following limitations in MariaDB:
 * Foreign keys actions do not activate [triggers](../../../server-usage/triggers-events/triggers/).
 * If ON UPDATE CASCADE recurses to update the same table it has previously updated during the cascade, it acts like RESTRICT.
 * Indexed [generated columns](../../../reference/sql-statements/data-definition/create/generated-columns.md) (both VIRTUAL and PERSISTENT) are not supported as InnoDB foreign key indexes.
+* Prior to [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1), foreign key names are required to be unique per database. From MariaDB 12.1, foreign key names are only required to be unique per table.
 
 ## Examples
 
