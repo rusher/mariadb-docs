@@ -157,42 +157,6 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 
 ### REFERENCES
 
-Until  [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
-
-```sql
-CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);
-
-CREATE TABLE b(for_key INT REFERENCES a(not_key));
-
-SHOW CREATE TABLE b;
-+-------+----------------------------------------------------------------------------------+
-| Table | Create Table                                                                     |
-+-------+----------------------------------------------------------------------------------+
-| b     | CREATE TABLE `b` (
-  `for_key` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
-+-------+----------------------------------------------------------------------------------+
-
-INSERT INTO a VALUES (1,10);
-Query OK, 1 row affected (0.005 sec)
-
-INSERT INTO b VALUES (10);
-Query OK, 1 row affected (0.004 sec)
-
-INSERT INTO b VALUES (1);
-Query OK, 1 row affected (0.004 sec)
-
-SELECT * FROM b;
-+---------+
-| for_key |
-+---------+
-|      10 |
-|       1 |
-+---------+
-```
-
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)
-
 ```sql
 CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);
 
@@ -230,8 +194,6 @@ SELECT * FROM c;
 |       1 |
 +---------+
 ```
-
-##
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
