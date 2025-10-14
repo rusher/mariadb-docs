@@ -14,7 +14,7 @@
         * [Add multiple MaxScale monitors](mariadb-enterprise-manager/administration/deployment/adding-databases/add-multiple-maxscale-monitors.md)
       * [Network and Firewall Requirements](mariadb-enterprise-manager/administration/deployment/network-and-firewall-requirements.md)
     * [User Management](mariadb-enterprise-manager/administration/user-management/README.md)
-      * [Configure OpenID Connect Identity Provider  T Copy](mariadb-enterprise-manager/administration/user-management/configure-openid-connect-identity-provider-t-copy.md)
+      * [Configure OpenID Connect Identity Provider](mariadb-enterprise-manager/administration/user-management/configure-openid-connect-identity-provider.md)
     * [Backup & Restore of Enterprise Manager](mariadb-enterprise-manager/administration/backup-and-restore-of-enterprise-manager.md)
     * [Change hostname or IP address](mariadb-enterprise-manager/administration/change-hostname-or-ip-address.md)
     * [Security in Enterprise Manager](mariadb-enterprise-manager/administration/security-in-enterprise-manager.md)
