@@ -215,7 +215,7 @@ SSL certificates. Then, open a web browser and navigate to
 `http://127.0.0.1:8989`. A login screen should open, use username `admin` and
 password `mariadb` to access the GUI. The GUI can show MaxScale and server
 status, show and modify MaxScale configuration, perform SQL queries and much
-more. See [here](MaxGUI.md) for more information on the GUI.
+more. See [here](../maxscale-management/maxgui/) for more information on the GUI.
 
 ## Further reading
 

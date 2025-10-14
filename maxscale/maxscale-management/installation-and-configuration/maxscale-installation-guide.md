@@ -41,7 +41,7 @@ please refer to
 
 Alternatively, you may download the MariaDB MaxScale source and build your own binaries.
 To do this, refer to the separate document
-[Building MariaDB MaxScale from Source Code](building-maxscale-from-source-code.md).
+[Building MariaDB MaxScale from Source Code](building-maxscale-from-source.md).
 
 ### Assumptions
 
@@ -97,7 +97,7 @@ configuration file.
 
 There are various administration tasks that may be done with MariaDB MaxScale.
 A command line tools is available,
-[maxctrl](../../reference/reference/maxscale-maxctrl.md),
+[maxctrl](../../reference/maxscale-maxctrl.md),
 that interacts with a running MariaDB MaxScale and allows the status of MariaDB
 MaxScale to be monitored and give some control of the MariaDB MaxScale functionality.
 

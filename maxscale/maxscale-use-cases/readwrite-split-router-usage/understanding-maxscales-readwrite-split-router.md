@@ -6,9 +6,9 @@ MaxScale's [Read/Write Split Router (readwritesplit)](../../reference/maxscale-r
 
 The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) supports:
 
-* [MariaDB replication](../../../server/architecture/topologies/primary-replica.md)
-* [Galera Cluster](../../../server/architecture/topologies/galera-cluster.md)
-* [Columnstore Object Storage](../../../server/architecture/topologies/columnstore-object-storage.md) and [ColumnStore Shared Local Storage](../../../server/server/architecture/topologies/columnstore-shared-local-storage.md)
+* [MariaDB replication](../../../server/architecture/topologies/primary-replica) deployments.
+* [Galera Cluster](../../../server/architecture/topologies/galera-cluster) deployments.
+* [Columnstore Object Storage](../../../server/architecture/topologies/columnstore-object-storage) and [ColumnStore Shared Local Storage](../../../server/server/architecture/topologies/columnstore-shared-local-storage) deployments.
 
 ## When to Use the Read/Write Split Router?
 

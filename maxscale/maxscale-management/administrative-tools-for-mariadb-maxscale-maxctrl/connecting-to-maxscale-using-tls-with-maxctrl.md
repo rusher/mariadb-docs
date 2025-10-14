@@ -3,7 +3,7 @@
 ## Overview
 
 _MaxCtrl is a command-line utility that can perform administrative tasks using
-[MaxScale's REST API](../../reference/reference/maxscale-rest-api/).
+[MaxScale's REST API](../../reference/maxscale-rest-api/).
 It is possible to connect to MaxScale using TLS with MaxCtrl.
 
 ## Connecting to MaxScale using TLS

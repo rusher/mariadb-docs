@@ -28,8 +28,8 @@ GRANT SELECT ON mysql.global_priv TO 'maxscale_user'@'%';
 ### Monitor timeouts
 
 In MaxScale 25.10, only one monitor backend timeout remains:
-[backend_timeout](../Monitors/Monitor-Common.md#backend_timeout). This replaces
-the old `backend_connect_timeout`, `backend_write_timeout` and
+[backend_timeout](../../reference/maxscale-monitors/common-monitor-parameters.md#backend_timeout).
+This replaces the old `backend_connect_timeout`, `backend_write_timeout` and
 `backend_read_timeout`, using the same value for all underlying timeouts.
 `backend_connect_timeout` is still supported as an alias for `backend_timeout`,
 but any values given to `backend_write_timeout` and `backend_read_timeout` are
@@ -41,7 +41,8 @@ ignored.
 
 #### `reuse_prepared_statements`
 
-The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../../reference/maxscale-filters/maxscale-psreuse.md) filter module.
+The `reuse_prepared_statements` parameter has been replaced with the use of the
+[PsReuse](../../reference/maxscale-filters/maxscale-psreuse-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
