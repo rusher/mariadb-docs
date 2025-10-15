@@ -6,7 +6,7 @@ Troubleshooting installation/deployment issues for Enterprise Manager and Agent
 
 <summary>Is the MariaDB Enterprise repository configured correctly?</summary>
 
-The agent is distributed as a native OS package that can be installed from the MariaDB Enterprise repositories. The repositories can be installed by following the [repository installation instructions](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) [.](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage).)
+The agent is distributed as a native OS package that can be installed from the MariaDB Enterprise repositories. The repositories can be installed by following the [repository installation instructions](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage).
 
 Make sure to use the `mariadb_es_repo_setup` script with your Customer Download Token.
 
@@ -18,7 +18,13 @@ Make sure to use the `mariadb_es_repo_setup` script with your Customer Download 
 
 The agent installation can be done with the native package manager for your OS.
 
-Run:dnf install mema-agentRun:apt install mema-agent
+```bash
+# For Red Hat/CentOS/Rocky
+sudo dnf install -y mema-agent
+
+# For Debian/Ubuntu
+sudo apt install -y mema-agent
+```
 
 </details>
 
@@ -30,7 +36,7 @@ The `mema-agent setup` command should produce no errors if it is successful. You
 
 #### Did the setup fail on a MariaDB node?
 
-Make sure that MariaDB is listening on the loopback adapter address. If MariaDB cannot be accessed on port 3306 on localhost, the setup command should define the port with `--mariadb-port` and the host with `--mariadb-host`. To use a UNIX domain socket, use `--mariadb-socket` instead.
+Make sure that MariaDB is listening on the loopback adapter address. If MariaDB cannot be accessed on port `3306` on `localhost`, the setup command should define the port with `--mariadb-port` and the host with `--mariadb-host`. To use a UNIX domain socket, use `--mariadb-socket` instead.
 
 #### Did the setup fail on a MaxScale node?
 
@@ -46,15 +52,13 @@ The agent processes run as systemd services. Use normal systemd commands to insp
 
 **Show the agent status**
 
-Run:
-
 {% code title="Show status" %}
 ```bash
 sudo systemctl status mema-agent.slice
 ```
 {% endcode %}
 
-If the agent didn't start, errors will be shown in the status output. Once errors are fixed, start the agent again with:
+If the agent didn't start, errors will be shown in the status output. Once errors are fixed, start the agent again.
 
 {% code title="Start agent" %}
 ```bash
@@ -80,7 +84,7 @@ sudo journalctl -u mema-agent.slice --no-pager
 
 <summary>Can the agent collect MariaDB metrics?</summary>
 
-The credentials that the agent uses to connect to MariaDB require certain grants in order to collect all metrics. Check the [Quickstart Guide](broken-reference) for the set of grants and verify that the user provided with `--mariadb-user` has the necessary grants.
+The credentials that the agent uses to connect to MariaDB require certain grants in order to collect all metrics. Check the [Quickstart Guide](quickstart-guide.md) for the set of grants and verify that the user provided with `--mariadb-user` has the necessary grants.
 
 If the MariaDB metrics agent is working correctly, the logs should not have any errors. Check the logs with:
 
@@ -157,7 +161,7 @@ If the `curl` commands produce the expected output and the agent status does not
 
 To verify metrics are stored in the time series database, query a system OS metric. Example (assumes Enterprise Manager at 192.168.122.16 and default `admin:mariadb` credentials):
 
-{% code title="Query metric" %}
+{% code title="Query metric" overflow="wrap" %}
 ```bash
 curl -u admin:mariadb -k "https://192.168.122.16:8090/prometheus/api/v1/query?query=node_os_info"
 ```
