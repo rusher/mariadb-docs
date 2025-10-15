@@ -176,7 +176,7 @@ The script supports Linux distributions that are officially supported by MariaDB
 The distributions currently supported by the script include:
 
 * Red Hat Enterprise Linux (RHEL and equivalents) 8, 9, and 10
-* Debian 11 (Bullseye), 12 (Bookworm), and 13 (Trixie, community server only)&#x20;
+* Debian 11 (Bullseye), 12 (Bookworm), and 13 (Trixie, community server only)
 * Ubuntu 22.04 LTS (Jammy), and 24.04 LTS (Noble)
 * SUSE Linux Enterprise Server (SLES) 12 and 15
 
@@ -352,7 +352,7 @@ sudo yum install maxscale
 To install MariaDB on Debian and Ubuntu, see the instructions at [Installing MariaDB Packages with APT](installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt). For example:
 
 ```bash
-sudo apt-get install mariadb-server mariadb-client mariadb-backup
+sudo apt install mariadb-server mariadb-client mariadb-backup galera-4
 ```
 
 To install MariaDB MaxScale on Debian and Ubuntu, see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
