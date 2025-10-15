@@ -36,4 +36,4 @@ The agent must be installed on each [MariaDB Server](https://app.gitbook.com/s/S
 | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **23.02\***, **23.08\***, **24.02\***, **25.01\***, **25.10** | <p>RHEL/Rocky/AlmaLinux 8, 9, 10 </p><p>Ubuntu LTS 22.04, 24.04 </p><p>Debian 11, 12, 13</p> |
 
-\*Only Node/OS-level metrics are supported
+\* Monitoring and Single Sign-On are not supported for MaxScale versions below 25.10
