@@ -1,7 +1,5 @@
 # Troubleshooting Enterprise Manager
 
-Created by Stefan Hinz, last modified by Egor Ustinov on Oct 13, 2025
-
 Troubleshooting installation/deployment issues for Enterprise Manager and Agent
 
 <details>
