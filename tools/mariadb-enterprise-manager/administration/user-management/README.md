@@ -51,7 +51,11 @@ Enterprise Manager ships with three pre-configured roles:
 * `viewer`: Has read-only access to monitoring data and can use the Workspace.
 
 {% hint style="info" %}
-Although pre-configured roles can be edited or deleted, creating a custom role is strongly recommended when you need changes.
+**Create custom roles instead of editing pre-configured ones**
+
+While it's possible to edit or delete the pre-configured roles (`admin`, `viewer`, etc.), the recommended best practice is to create a new custom role to fit your specific permission requirements.
+
+Leaving the pre-configured roles unmodified ensures you always have a known, baseline configuration to reference or fall back on.
 {% endhint %}
 
 Roles (pre-configured or custom) are built from combinations of the following base permissions:
