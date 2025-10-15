@@ -198,7 +198,6 @@ DEALLOCATE PREPARE stmt;
 
 ## See Also
 
-* [Out parameters in PREPARE](out-parameters-in-prepare.md)
 * [EXECUTE Statement](execute-statement.md)
 * [DEALLOCATE / DROP Prepared Statement](deallocate-drop-prepare.md)
 * [EXECUTE IMMEDIATE](execute-immediate.md)

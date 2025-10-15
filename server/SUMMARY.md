@@ -1635,7 +1635,6 @@
       * [EXECUTE Statement](reference/sql-statements/prepared-statements/execute-statement.md)
       * [EXECUTE IMMEDIATE](reference/sql-statements/prepared-statements/execute-immediate.md)
       * [PREPARE Statement](reference/sql-statements/prepared-statements/prepare-statement.md)
-      * [Out Parameters in PREPARE](reference/sql-statements/prepared-statements/out-parameters-in-prepare.md)
     * [Programmatic & Compound Statements](reference/sql-statements/programmatic-compound-statements/README.md)
       * [BEGIN END](reference/sql-statements/programmatic-compound-statements/begin-end.md)
       * [CASE Statement](reference/sql-statements/programmatic-compound-statements/case-statement.md)
