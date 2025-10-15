@@ -1,9 +1,5 @@
 # ERD Designer
 
-{% hint style="info" %}
-In MariaDB Enterprise Manager, ERD worksheet is accessed from MaxScale's MaxGUI. The worksheet is well documented in the [MaxScale tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/using-maxgui).
-{% endhint %}
-
 Enterprise manager provides a visual interface for creating entity relationship diagrams (ERD) and for observing existing database schemas, so you can quickly understand table relationships, identify dependencies, and visually assess the impact of schema changes before implementation.
 
 This procedure outlines the steps required to access and utilize the Query Editor within the Workspace section of Enterprise Manager UI.&#x20;

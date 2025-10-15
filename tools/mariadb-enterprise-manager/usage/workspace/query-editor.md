@@ -1,9 +1,5 @@
 # Query Editor
 
-{% hint style="info" %}
-In MariaDB Enterprise Manager, Query Editor worksheet is accessed from MaxScale's MaxGUI. Query Editor is well documented in the [MaxScale tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/using-maxgui).
-{% endhint %}
-
 The Query Editor is a powerful, integrated environment for database developers and administrators. It provides a comprehensive set of tools for writing and debugging SQL, managing schema objects, and analyzing query results, all from a single interface.
 
 This procedure outlines the steps required to access and utilize the Query Editor within the Workspace section of Enterprise Manager UI.&#x20;
