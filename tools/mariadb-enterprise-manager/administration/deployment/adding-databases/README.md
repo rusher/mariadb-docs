@@ -1,14 +1,6 @@
 # Adding Databases
 
-Created by Stefan Hinz, last modified by Egor Ustinov on Oct 13, 2025
-
-This is the final draft.
-
-## Adding Databases to MariaDB Enterprise Manager
-
 This guide outlines the two primary methods for registering and monitoring your database topologies in MariaDB Enterprise Manager: adding a standalone server directly or adding a full cluster via its MaxScale instance.
-
-***
 
 ## Option 1: Adding a Server or Cluster (Without MaxScale)
 
