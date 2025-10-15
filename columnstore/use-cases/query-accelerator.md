@@ -1,5 +1,10 @@
 # Query Accelerator
 
+{% hint style="warning" %}
+MariaDB Query Accelerator is an **Alpha release**. Do not use it in production environments.\
+Query Accelerator works only in **ColumnStore 25.10.0** and with **MariaDB Enterprise Server**.
+{% endhint %}
+
 ## What is Query Accelerator
 
 Query Accelerator is a feature that allows MariaDB to use ColumnStore to execute queries that are otherwise executed by InnoDB. Under the hood Columnstore:
