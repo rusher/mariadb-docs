@@ -34,7 +34,7 @@ The most common way to install MariaDB on Linux is through your system's package
     *   For Debian/Ubuntu:Bash
 
         ```bash
-        sudo apt install mariadb-server mariadb-client
+        sudo apt install mariadb-server mariadb-client galera-4
         ```
     *   For Red Hat/CentOS/Fedora:Bash
 

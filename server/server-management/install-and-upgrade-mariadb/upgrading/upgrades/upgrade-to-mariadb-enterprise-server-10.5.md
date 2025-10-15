@@ -221,7 +221,7 @@ sudo apt update
 4. Install MariaDB Enterprise Server and package dependencies:
 
 ```
-$ sudo apt install mariadb-server mariadb-backup
+$ sudo apt install mariadb-server mariadb-backup galera-enterprise-4
 ```
 
 5. Installation of additional packages may be required for some plugins. Configure MariaDB. Installation only loads MariaDB Enterprise Server to the system. MariaDB Enterprise Server requires configuration before the database server is ready for use.
