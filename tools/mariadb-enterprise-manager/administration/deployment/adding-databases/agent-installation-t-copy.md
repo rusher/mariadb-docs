@@ -83,14 +83,6 @@ sudo apt-get install mema-agent
 ```
 {% endcode %}
 {% endtab %}
-
-{% tab title="SLES" %}
-{% code title="Install on SLES" %}
-```bash
-sudo zypper install mema-agent
-```
-{% endcode %}
-{% endtab %}
 {% endtabs %}
 
 The agent is now installed and running as a service.
