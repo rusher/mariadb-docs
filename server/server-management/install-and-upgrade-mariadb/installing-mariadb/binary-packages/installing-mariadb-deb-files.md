@@ -12,15 +12,12 @@ This page walks you through the simple installation steps using `apt`.
 
 We currently have APT repositories for the following Linux distributions:
 
-* Debian 10 (Buster)
 * Debian 11 (Bullseye)
 * Debian 12 (Bookworm)
+* Debian 13 (Trixie)
 * Debian Unstable (Sid)
-* Ubuntu 18.04 LTS (Bionic)
-* Ubuntu 20.04 LTS (Focal)
 * Ubuntu 22.04 (Jammy)
-* Ubuntu 22.10 (Kinetic)
-* Ubuntu 23.04 (Lunar)
+* Ubuntu 24.04 (Noble)
 
 #### Using the MariaDB Package Repository Setup Script
 
@@ -169,7 +166,7 @@ And then you would have to update the package cache by executing the following c
 sudo apt update
 ```
 
-After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
+After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) and you can [upgrade to the new version of MariaDB](installing-mariadb-deb-files.md#upgrading-to-a-new-version-of-mariadb).
 
 **Updating a Source List File**
 
@@ -185,7 +182,7 @@ And then you would have to update the package cache by executing the following c
 sudo apt update
 ```
 
-After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
+After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) and you can [upgrade to the new version of MariaDB](installing-mariadb-deb-files.md#upgrading-to-a-new-version-of-mariadb).
 
 ### Importing the MariaDB GPG Public Key
 
@@ -396,6 +393,22 @@ After the installation is complete, you can start MariaDB.
 
 If you are using [MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 
+## Upgrading to a new version of MariaDB
+
+After updating your repository configuration to move from the repository of one version of MariaDB to a newer version, as per the previous instructions, you will need to upgrade the MariaDB packages, this is done with:
+
+```bash
+sudo apt upgrade mariadb-server
+```
+
+Alternatively you can also run the following to installing the new version:
+
+```bash
+sudo apt install mariadb-server galera-4
+```
+
+The reason for specifying the `galera-4` package is to ensure the correct updated version of Galera is installed along with the new server version, replacing the versions that were there before.
+
 ## Available DEB Packages
 
 The available DEB packages depend on the specific MariaDB release series.
@@ -426,8 +439,6 @@ For MariaDB, the following DEBs are available:
 | `mariadb-server-core`                    | The core server.                                                                                                                                                                                                                                   |
 | `mariadb-test`                           | mysql-client-test executable, and mysql-test framework with the tests.                                                                                                                                                                             |
 | `mariadb-test-data`                      | MariaDB database regression test suite - data files                                                                                                                                                                                                |
-
-<>
 
 ## Actions Performed by DEB Packages
 
