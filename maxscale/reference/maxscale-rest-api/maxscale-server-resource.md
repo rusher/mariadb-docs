@@ -846,7 +846,7 @@ least the following fields.
     one of the fields can be defined.
 
 * `data.attributes.parameters.port`
-  * The [`port`](../../../maxscale-management/deployment/maxscale-configuration-guide.md#port) to use. Needs
+  * The [`port`](../../maxscale-management/deployment/maxscale-configuration-guide.md#port) to use. Needs
     to be defined if the `address` field is defined.
 
 The following is the minimal required JSON object for defining a new server.
@@ -931,7 +931,7 @@ server.
 ### Modifiable Fields
 
 In addition to the server
-[parameters](../Getting-Started/Configuration-Guide.md#server-1), the _services_
+[parameters](../../maxscale-management/deployment/maxscale-configuration-guide.md#server-1), the _services_
 and _monitors_ fields of the _relationships_ object can be modified. Removal,
 addition and modification of the links will change which service and monitors
 use this server.

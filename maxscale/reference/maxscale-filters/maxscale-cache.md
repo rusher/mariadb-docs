@@ -1,4 +1,4 @@
-z# MaxScale Cache
+# MaxScale Cache
 
 ## Overview
 
@@ -806,14 +806,14 @@ following the implication of different combinations is explained.
 Invalidation takes place only in the current cache, so how _visible_
 the invalidation is, depends upon the configuration value of`cached_data`.
 
-**`cached_data=thread_specific`**
+#### `cached_data=thread_specific`
 
 The invalidation is visible only to the sessions that are handled by
 the same worker thread where the invalidation occurred. Sessions of the
 same or other users that are handled by different worker threads will
 not see the new value before the TTL causes the value to be refreshed.
 
-**`cache_data=shared`**
+#### `cache_data=shared`
 
 The invalidation is immediately visible to all sessions of all users.
 
@@ -949,7 +949,7 @@ and so will
 SELECT b FROM tbl WHERE a > 5;
 ```
 
-**Qualified Names**
+#### Qualified Names
 
 When using `=` or `!=` in the rule object in conjunction with `database`,`table` and `column`, the provided string is interpreted as a name, that is,
 dot (`.`) denotes qualification or scope.
@@ -966,12 +966,12 @@ always be capable of deducing in what table a particular column is. If
 that is the case, then a value like `tbl.field` may not necessarily
 be a match even if the field is `field` and the table actually is `tbl`.
 
-**Implication of the default database**
+#### Implication of the default database
 
 If the rules concerns the `database`, then only if the statement refers
 to _no_ specific database, will the default database be considered.
 
-**Regexp Matching**
+#### Regexp Matching
 
 The string used for matching the regular expression contains as much
 information as there is available. For instance, in a situation like
@@ -983,7 +983,7 @@ SELECT fld FROM tbl;
 
 the string matched against the regular expression will be `somedb.tbl.fld`.
 
-**Examples**
+#### Examples
 
 Cache all queries targeting a particular database.
 
@@ -1055,7 +1055,7 @@ By providing a `use` field in the JSON object, the decision whether to use
 data from the cache can be controlled in a more detailed manner. The decision
 to use data from the cache can depend upon
 
-* the user.
+   * the user.
 
 Each entry in the `use` array is an object containing three fields,
 
@@ -1109,7 +1109,7 @@ Note that `use` is relevant only if the query is subject to caching,
 that is, if all queries are cached or if a query matches a particular
 rule in the `store` array.
 
-**Examples**
+#### Examples
 
 Use data from the cache for all users except `admin` (actually `'admin'@'%'`),
 regardless of what host the `admin` user comes from.
@@ -1273,7 +1273,7 @@ storage=storage_memcached
 
 `storage_memcache` has the following parameters:
 
-**`server`**
+#### `server`
 
 * Type: The Memcached server address specified as `host[:port]`
 * Mandatory: Yes
@@ -1281,7 +1281,7 @@ storage=storage_memcached
 
 If no port is provided, then the default port `11211` will be used.
 
-**`max_value_size`**
+#### `max_value_size`
 
 * Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
@@ -1297,7 +1297,7 @@ that is, if memcached has been configured to allow larger values than 1MiB
 but `max_value_size` has not been set accordingly, only resultsets up to 1MiB
 in size will be cached.
 
-**Example**
+#### Example
 
 From MaxScale 23.02 onwards, the storage configuration should be provided
 as nested parameters.
@@ -1318,12 +1318,12 @@ using `storage_options`:
 storage_options="server=192.168.1.31,max_value_size=10M"
 ```
 
-**Limitations**
+#### Limitations
 
 * Invalidation is not supported.
 * Configuration values given to `max_size` and `max_count` are ignored.
 
-**Security**
+#### Security
 
 _Neither_ the data in the memcached server _nor_ the traffic between MaxScale and
 the memcached server is encrypted. Consequently, _anybody_ with access to the
@@ -1362,7 +1362,7 @@ stalled for `timeout` seconds.
 
 `storage_redis` has the following parameters:
 
-**`server`**
+#### `server`
 
 * Type: The Redis server address specified as `host[:port]`
 * Mandatory: Yes
@@ -1370,7 +1370,7 @@ stalled for `timeout` seconds.
 
 If no port is provided, then the default port `6379` will be used.
 
-**`username`**
+#### `username`
 
 * Type: string
 * Mandatory: No
@@ -1379,7 +1379,7 @@ If no port is provided, then the default port `6379` will be used.
 
 Please see [authentication](maxscale-cache.md#authentication) for more information.
 
-**`password`**
+#### `password`
 
 * Type: string
 * Mandatory: No
@@ -1388,7 +1388,7 @@ Please see [authentication](maxscale-cache.md#authentication) for more informati
 
 Please see [authentication](maxscale-cache.md#authentication) for more information.
 
-**`ssl`**
+#### `ssl`
 
 * Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
@@ -1397,7 +1397,7 @@ Please see [authentication](maxscale-cache.md#authentication) for more informati
 
 Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 
-**`ssl_cert`**
+#### `ssl_cert`
 
 * Type: Path to existing readable file.
 * Mandatory: No
@@ -1409,7 +1409,7 @@ server. The certificate must match the key defined in `ssl_key`.
 
 Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 
-**`ssl_key`**
+#### `ssl_key`
 
 * Type: Path to existing readable file.
 * Mandatory: No
@@ -1420,7 +1420,7 @@ The SSL client private key MaxScale should use with the Redis server.
 
 Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 
-**`ssl_ca`**
+#### `ssl_ca`
 
 * Type: Path to existing readable file.
 * Mandatory: No
@@ -1432,7 +1432,7 @@ certificate specified with `ssl_cert`.
 
 Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 
-**Authentication**
+#### Authentication
 
 If `password` is provided, MaxScale will authenticate against Redis when a connection
 has been created. The authentication is performed using the [auth](https://redis.io/commands/auth/) command, with only the `password` as argument,
@@ -1444,7 +1444,7 @@ specified using `requirepass`, then only the _password_ should be provided.
 If the Redis server version is 6 or higher and the _Redis ACL system_ is used,
 then both _username_ and _password_ must be provided.
 
-**SSL**
+#### SSL
 
 If `ssl_key`, `ssl_cert` and `ssl_ca` are provided, then SSL/TLS will be used
 in the communication with the Redis server, if `ssl` is set to `true`.
@@ -1453,7 +1453,7 @@ Note that the SSL/TLS support is only available in Redis from version 6
 onwards and that the support is not by default built into Redis, but has
 to be specifically enabled at compile time as explained [here](https://redis.io/docs/management/security/encryption/).
 
-**Example**
+#### Example
 
 From MaxScale 23.02 onwards, the storage configuration should be provided
 as nested parameters.
@@ -1475,12 +1475,12 @@ using `storage_options`:
 storage_options="server=192.168.1.31,username=hello,password=world"
 ```
 
-**Limitations**
+#### Limitations
 
 * There is no distinction between soft and hard ttl, but only hard ttl is used.
 * Configuration values given to `max_size` and `max_count` are ignored.
 
-**Invalidation**
+#### Invalidation
 
 `storage_redis` supports invalidation, but the caveats documented [here](maxscale-cache.md#best-efforts)
 are of greater significance since also the communication between the cache and the
@@ -1494,7 +1494,7 @@ will not be affected by the invalidation.
 $ redis-cli flushall
 ```
 
-**Security**
+#### Security
 
 The data in the redis server is _not_ encrypted. Consequently, _anybody_ with
 access to the redis server has access to the cached data.

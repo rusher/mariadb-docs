@@ -474,7 +474,7 @@ The current auto tunable parameters are:
 | MaxScale Parameter                                                            | Server Variable Dependency                                                                                                                                                                       |
 | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [connection\_keepalive](maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest value of the servers used by the service                                                                                                                                     |
-| [wait\_timeout](maxscale-configuration-guide.md#wait_timeout)                 | The smallest [wait\_timeout](../../../server/maxscale-configuration-guide.md#wait_timeout) value of the servers used by the service |
+| [wait\_timeout](maxscale-configuration-guide.md#wait_timeout)                 | The smallest [wait\_timeout](../../../server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) value of the servers used by the service |
 
 The values of the server variables are collected by monitors, which means that
 if the servers of a service are not monitored by a monitor, then the parameters
@@ -1434,7 +1434,7 @@ the MaxScale log.
 
 #### `writeq_high_water`
 
-* Type: [size](#size)
+* Type: [size](#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `65536`
@@ -1458,7 +1458,7 @@ MaxScale 23.02 and earlier, also `writeq_low_water` had to be non-zero.
 
 #### `writeq_low_water`
 
-* Type: [size](#size)
+* Type: [size](#sizes)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `1024`
@@ -3452,7 +3452,7 @@ for more information.
 * Dynamic: Yes
 * Default: None
 
-This setting together with [monitorpasswd](#monitorpasswd) define server-specific
+This setting together with [monitorpasswd](#monitorpw) define server-specific
 credentials for monitoring the server. Monitors typically use the credentials in their
 own configuration sections to connect to all servers. If server-specific settings are
 given, the monitor uses those instead.
@@ -3502,8 +3502,8 @@ If the connection to the extra-port fails due to connection number limit or if
 the port is not open on the server, normal port is used.
 
 For more information, see
-[extra\_port](../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port)
-and [extra\_max\_connections](../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_max_connections)
+[extra\_port](../../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port)
+and [extra\_max\_connections](../../../server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_max_connections)
 
 #### `persistpoolmax`
 
@@ -3932,7 +3932,7 @@ authenticator specific documentation for more details.
 
 #### `sql_mode`
 
-* Type: [enum](#enumeration)
+* Type: [enum](#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `default`, `oracle`
@@ -3958,7 +3958,7 @@ backends will know where the client originally came from.
 
 The `proxy_protocol_networks`-setting works similarly to the equivalent setting
 in
-[MariaDB Server](../../server/clients-and-utilities/server-client-software/client-libraries/proxy-protocol-support.md).
+[MariaDB Server](../../../server/clients-and-utilities/server-client-software/client-libraries/proxy-protocol-support.md).
 The value can be a single IP or subnetwork, or a comma-separated list of them.
 Subnetworks are given in CIDR-format, e.g. "192.168.0.0/16". "\*" is a valid
 value, allowing anyone to send the header. "localhost" allows proxy headers
@@ -4017,7 +4017,7 @@ the mapped credentials. Is most powerful when combined with service setting
 backends and map them to backend users.
 
 This file functions very similar to
-[PAM-based mapping](../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md)
+[PAM-based mapping](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md)
 Both user-to-user and group-to-user mappings can be defined. Also, the password
 and authentication plugin for the mapped users can be added. The file is only
 read during listener creation (typically MaxScale start) or when a listener is
@@ -4181,7 +4181,7 @@ parameter is used.
 
 For more information about connection redirection and how MaxScale deals with
 it, read the
-[Connection Redirection](../../reference/maxscale-monitors/mariadb-monitor.md#connection-redirection)
+[Connection Redirection](../../reference/maxscale-protocols/maxscale-mariadb-protocol-module.md#connection-redirection)
 section in the MariaDB protocol module documentation.
 
 ### Include

@@ -15,7 +15,7 @@ the MongoDB® client library and application.
 
 ## Configuring
 
-There are a number of [parameters](maxscale-nosql-protocol-module.md#parameters)
+There are a number of [settings](#settings)
 with which the behavior of _nosqlprotocol_ can be adjusted. A minimal configuration
 looks like:
 
@@ -52,7 +52,7 @@ maxctrl create listener TheService MongoDB-Listener --protocol=nosqlprotocol 'no
 All the parameters that the nosqlprotocol module takes must be passed in the
 same JSON object.
 
-A complete example can be found at the [end](maxscale-nosql-protocol-module.md#example) of this document.
+A complete example can be found at the [end](#example) of this document.
 
 ## Authentication
 
@@ -303,22 +303,22 @@ require.
 
 | Command                                                                      | Role      |
 | ---------------------------------------------------------------------------- | --------- |
-| [createUser](maxscale-nosql-protocol-module.md#createUser)                   | userAdmin |
-| [dropUser](maxscale-nosql-protocol-module.md#dropUser)                       | userAdmin |
-| [grantRolesToUser](maxscale-nosql-protocol-module.md#grantRolesToUser)       | userAdmin |
-| [revokeRolesFromUser](maxscale-nosql-protocol-module.md#revokeRolesFromUser) | userAdmin |
-| [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser)                   | userAdmin |
-| [mxsRemoveUser](maxscale-nosql-protocol-module.md#mxsRemoveUser)             | userAdmin |
-| [mxsUpdateUser](maxscale-nosql-protocol-module.md#mxsUpdateUser)             | userAdmin |
-| [updateUser](maxscale-nosql-protocol-module.md#updateUser)                   | userAdmin |
-| [usersInfo](maxscale-nosql-protocol-module.md#usersInfo)                     | userAdmin |
+| [createUser](#createUser)                   | userAdmin |
+| [dropUser](#dropUser)                       | userAdmin |
+| [grantRolesToUser](#grantRolesToUser)       | userAdmin |
+| [revokeRolesFromUser](#revokeRolesFromUser) | userAdmin |
+| [mxsAddUser](#mxsAddUser)                   | userAdmin |
+| [mxsRemoveUser](#mxsRemoveUser)             | userAdmin |
+| [mxsUpdateUser](#mxsUpdateUser)             | userAdmin |
+| [updateUser](#updateUser)                   | userAdmin |
+| [usersInfo](#usersInfo)                     | userAdmin |
 
 It is important to note that even if nosqlprotocol authorization
 is enabled, the MariaDB server has the final word. That is, even if the
 roles of a user would be sufficient for a particular operation, if the
 granted privileges are not, the operation will not succeed. There may
-be a mismatch between roles and grants, for instance, if the wrong roles
-were specified when the user was added, or if the grants have been
+be a mismatch between roles and privileges, for instance, if the wrong roles
+were specified when the user was added, or if the privileges have been
 altered directly and not via nosqlprotocol.
 
 ### Bootstrapping the Authentication/Authorization
@@ -330,8 +330,8 @@ bootstrapping implicitly is much more convenient.
 #### Explicit bootstrapping
 
 In order to enable authorization you need to have NoSQL users and
-those can be created with [createUser](maxscale-nosql-protocol-module.md#createUser) or added
-with [mxsAddUser](maxscale-nosql-protocol-module.md#addUser).
+those can be created with [createUser](#createUser) or added
+with [mxsAddUser](#mxsadduser).
 
 If you want to _create_ a user, then you first need to configure
 nosqlprotocol with credentials that are sufficient for creating a user:
@@ -408,12 +408,12 @@ network traffic.
 
 However, when a user is created or added (or the password is changed),
 the password will be transferred in _cleartext_. To prevent eavesdropping,
-create/add users when connecting over a domain socket, or use [TLS/SSL](maxscale-nosql-protocol-module.md#tlsssl)
+create/add users when connecting over a domain socket, or use [TLS/SSL](#tlsssl)
 
 #### Implicit bootstrapping
 
 With implicit bootstrapping, you should first create the MariaDB
-user that should appear as the initial NoSQL user. As explained [here](maxscale-nosql-protocol-module.md#nosql-and-mariadb-users), the concept of a user is somewhat
+user that should appear as the initial NoSQL user. As explained [here](#nosql-and-mariadb-users), the concept of a user is somewhat
 different in MariaDB and NoSQL, which means that certain factors
 must be taken into account when creating the MariaDB user. Then
 at first startup, nosqlprotocol will create the corresponding
@@ -445,9 +445,9 @@ the `user` and `password` settings and they can be removed.
 
 ##### Grants
 
-When a NoSQL user is created using [createUser](maxscale-nosql-protocol-module.md#createUser)
+When a NoSQL user is created using [createUser](#createUser)
 the MariaDB grants are obtained from the specified NoSQL roles
-as explained [here](maxscale-nosql-protocol-module.md#Roles_and_privileges).
+as explained [here](#roles-and-privileges).
 
 When implicitly creating a NoSQL user from an existing user in
 MariaDB, the inverse operation must be performed. There are
@@ -728,8 +728,8 @@ So as to be able to connect to the MariaDB server on behalf of
 clients, nosqlprotocol must know their password. As the password
 is not transferred to nosqlprotocol during the authentication in
 a way that could be used when logging into MariaDB, the password
-must be stored when the user is created with [createUser](maxscale-nosql-protocol-module.md#createUser)
-or added with [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser).
+must be stored when the user is created with [createUser](#createUser)
+or added with [mxsAddUser](#mxsAddUser).
 
 Note that the password is not stored in cleartext but as three
 different hashes; hashed with sha1 for use with MariaDB, salted
@@ -798,7 +798,7 @@ both for reading and writing data.
 
 A table whose name is the same as the listener's name in the
 MaxScale configuration will be created in the database
-specified with the [authentication\_db](maxscale-nosql-protocol-module.md#authentication_db)
+specified with the [authentication\_db](#authentication_db)
 parameter. If it is not specified explicitly, the default is`nosqlprotocol`. The name of the table will be the name of
 the listener section in the MaxScale configuration file.
 
@@ -820,7 +820,7 @@ file will have the effect of making all accounts disappear.
 To retain the accounts, the table should also be renamed.
 
 `nosqlprotocol` will create the table when needed, so the
-user specified with [authentication\_user](maxscale-nosql-protocol-module.md#authentication_user)
+user specified with [authentication\_user](#authentication_user)
 must have sufficient grants to be able to do that.
 
 `nosqlprotocol` will store in the table, data that allow
@@ -831,12 +831,12 @@ of which MaxScale instance was used when the user was created.
 password, to be able to authenticate against the MariaDB server.
 Therefore it is **strongly** suggested to enable encryption key
 management in MaxScale and to provide an authentication
-key ID with [authentication\_key\_id](maxscale-nosql-protocol-module.md#authentication_key_id) so
+key ID with [authentication\_key\_id](#authentication_key_id) so
 that the data will be encrypted.
 
-If shared authentication has been enabled with [authentication\_shared](maxscale-nosql-protocol-module.md#authentication_shared) then [authentication\_user](maxscale-nosql-protocol-module.md#authentication_user) and [authentication\_password](maxscale-nosql-protocol-module.md#authentication_password) must also
-be provided. With [authentication\_db](maxscale-nosql-protocol-module.md#authentication_db) the
-database name can optionally be changed, and with [authentication\_key\_id](maxscale-nosql-protocol-module.md#authentication_key_id) an
+If shared authentication has been enabled with [authentication\_shared](#authentication_shared) then [authentication\_user](#authentication_user) and [authentication\_password](#authentication_password) must also
+be provided. With [authentication\_db](#authentication_db) the
+database name can optionally be changed, and with [authentication\_key\_id](#authentication_key_id) an
 encryption key ID, using which the sensitive data is encrypted,
 can optionally be provided.
 
@@ -913,7 +913,7 @@ Specifies whether the client always must authenticate. If authentication is requ
 it does not matter whether `user` and `password` have been specified, the client must
 authenticate.
 
-Authentication should not be required before users have been created with [createUser](maxscale-nosql-protocol-module.md#createUser) or added with [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser),
+Authentication should not be required before users have been created with [createUser](#createUser) or added with [mxsAddUser](#mxsAddUser),
 with authentication being optional and authorization being disabled.
 
 NOTE: All client activity is _always_ subject to authorization performed by the
@@ -976,8 +976,8 @@ Specifies the _password_ of `authentication_user`.
 * Default: `false`
 
 Specifies whether nosqlprotocol itself should perform authorization in the context
-of the commands [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser), [mxsRemoveUser](maxscale-nosql-protocol-module.md#mxsRemoveUser) and [mxsUpdateUser](maxscale-nosql-protocol-module.md#mxsUpdateUser). Authorization should not be enabled before users
-have been created with [createUser](maxscale-nosql-protocol-module.md#createUser) or added with [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser)
+of the commands [mxsAddUser](#mxsAddUser), [mxsRemoveUser](#mxsRemoveUser) and [mxsUpdateUser](#mxsUpdateUser). Authorization should not be enabled before users
+have been created with [createUser](#createUser) or added with [mxsAddUser](#mxsAddUser)
 with authorization being disabled.
 
 NOTE: All client activity is _always_ subject to authorization performed by the
@@ -1071,7 +1071,7 @@ Enumeration values:
   the behavior is as in the `default` case.
 
 What combination of `ordered_insert_behavior` and `ordered` (in the insert command
-document) is used, has an impact on the performance. Please see the discussion at [insert](maxscale-nosql-protocol-module.md#insert).
+document) is used, has an impact on the performance. Please see the discussion at [insert](#insert).
 
 ### `cursor_timeout`
 
@@ -1116,7 +1116,7 @@ and the resulting response sent to the client logged.
 Specifies what internal cache to use if any. Currently, the only
 permissible value is `cache`, which refers to the [cache filter](../maxscale-filters/maxscale-cache.md).
 
-Please see [caching](maxscale-nosql-protocol-module.md#caching) for more information.
+Please see [caching](#caching) for more information.
 
 ## Databases and Tables
 
@@ -1446,7 +1446,7 @@ The following fields are relevant.
 | Field     | Type    | Description                                                                                                                                              |
 | --------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | aggregate | string  | The name of the collection used as the input for the aggregation pipeline.                                                                               |
-| pipeline  | array   | An array of [aggregation pipeline stages](maxscale-nosql-protocol-module.md#aggregation-pipeline-stages) that process and transform the document stream. |
+| pipeline  | array   | An array of [aggregation pipeline stages](#aggregation-pipeline-stages) that process and transform the document stream. |
 | explain   | boolean | Optional. Specifies to return information on the processing of the pipeline.                                                                             |
 
 Depending on the stages and their parameters, the aggregation pipeline may be
@@ -1590,9 +1590,9 @@ The following fields are relevant.
 | query         | document | Optional. The query predicate.                                                                                                                            |
 | sort          | document | Optional. The sort specification used when the document is selected.                                                                                      |
 | remove        | boolean  | Mandatory, if update is not specified. If true, the document will be deleted.                                                                             |
-| update        | document | Mandatory, if remove is not specified. See [Update.behavior](maxscale-nosql-protocol-module.md#behavior) for details.                                     |
+| update        | document | Mandatory, if remove is not specified. See [Update.behavior](#behavior) for details.                                     |
 | new           | boolean  | Optional. If true the modified document and not the original document is returned. If remove is specified, then the original document is always returned. |
-| fields        | document | Optional. Specified which fields to return. See [Find.projection](maxscale-nosql-protocol-module.md#projection) for details.                              |
+| fields        | document | Optional. Specified which fields to return. See [Find.projection](#projection) for details.                              |
 | upsert        | boolean  | Optional. If true then a document will be created, if one is not found.                                                                                   |
 
 All other fields are ignored.
@@ -1707,7 +1707,7 @@ _aggregation pipeline_ is not supported.
 ####### Update with an Update Operator Expressions document
 
 The update statement field `u` can accept a document that only contains
-[update operator](maxscale-nosql-protocol-module.md#update-operators) expressions. For example:
+[update operator](#update-operators) expressions. For example:
 
 ```
 updates: [
@@ -1798,7 +1798,7 @@ following command
 the MariaDB user `'myDatabase.user1'@'%'` will be created.
 
 The elements of the `roles` array are converted into privileges
-as explained in [here](maxscale-nosql-protocol-module.md#roles_and_privileges).
+as explained in [here](#roles-and-privileges).
 
 In practice the creation is performed as follows:_First the MariaDB user is created._ Then the privileges are granted.
 
@@ -2233,7 +2233,7 @@ The following document will always be returned:
 ###### **mxsAddUser**
 
 The `mxsAddUser` command adds an _existing_ MariaDB user to the local
-nosqlprotocol account database. Use [createUser](maxscale-nosql-protocol-module.md#createUser) if the
+nosqlprotocol account database. Use [createUser](#createUser) if the
 MariaDB user should be created as well.
 
 Note that the `mxsAddUser` command does not check that the user exists
@@ -2277,8 +2277,8 @@ an existing user in the MariaDB server and the value of `pwd` should be
 that user's password in cleartext.
 
 The `roles` array should contain roles that a compatible with the
-grants of the user. Please check [roles and grants](maxscale-nosql-protocol-module.md#roles_and_grants)
-for a discussion on how to map roles map to grants.
+grants of the user. Please check [roles and privileges](#roles-and-privileges)
+for a discussion on how to map roles map to privileges.
 
 ###### Returns
 
@@ -2525,7 +2525,7 @@ collections or not. For example:
 ###### **mxsRemoveUser**
 
 The `mxsRemoveUser` removes a user from the local nosqlprotocol account
-database. Use [dropUser](maxscale-nosql-protocol-module.md#dropUser) if the MariaDB user should be dropped
+database. Use [dropUser](#dropUser) if the MariaDB user should be dropped
 as well.
 
 ##### Syntax
@@ -2644,7 +2644,7 @@ the session. For example:
 ###### **mxsUpdateUser**
 
 The `mxsUpdateUser` command updates a user in the local nosqlprotocol
-account database. Use [updateUser](maxscale-nosql-protocol-module.md#updateUser) to update MariaDB user
+account database. Use [updateUser](#updateUser) to update MariaDB user
 as well.
 
 Note that the `mxsUpdateUser` command does not check that the changed
@@ -2685,8 +2685,8 @@ The command has the following fields:
 | digestPassword | boolean  | Optional. If specified, must be true.                                                                                                                                    |
 
 The `roles` array should contain roles that a compatible with the
-grants of the user. Please check [roles and grants](maxscale-nosql-protocol-module.md#roles_and_grants)
-for a discussion on how to map roles map to grants.
+grants of the user. Please check [roles and privileges](#roles-and-privileges)
+for a discussion on how to map roles map to privileges.
 
 ##### Returns
 
@@ -2781,9 +2781,9 @@ data from the cache, the less valuable result will be evicted first.
 
 The responses of the following commands are cached.
 
-* [count](maxscale-nosql-protocol-module.md#count)
-* [distinct](maxscale-nosql-protocol-module.md#distinct)
-* [find](maxscale-nosql-protocol-module.md#find), provided all found documents can be returned in one response,
+* [count](#count)
+* [distinct](#distinct)
+* [find](#find), provided all found documents can be returned in one response,
   i.e., if `singleBatch` is `true` or `batchSize` is large enough.
 
 ## Compatibility

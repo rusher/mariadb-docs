@@ -21,7 +21,7 @@ fixed when the client connects also means that routing hints are ignored.
 **Warning:** By default `readconnroute` will not prevent writes from being done
   even if you define `router_options=slave`. To prevent writes, add
   `filters=readonly` to the service to load the
-  [ReadOnly](../maxcale-filters/maxscale-filters/maxscale-readonly.md)
+  [ReadOnly](../maxscale-filters/maxscale-readonly.md)
   module that will block all writes.
   Otherwise, the client application is responsible for making sure that it only
   performs read-only queries in such cases. `readconnroute` is simple by design:

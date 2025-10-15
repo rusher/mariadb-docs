@@ -15,7 +15,7 @@ before you go into production:
 
 Ensuring the security of your MaxScale setup involves stringent control over
 the key file permissions. Utilizing
-[maxkeys](maxscale-management/deployment/maxscale-configuration-guide.md#encrypting-passwords)
+[maxkeys](../maxscale-management/deployment/maxscale-configuration-guide.md#encrypting-passwords)
 is an effective approach to generate a secure key file.
 
 This generates a keyfile in `/var/lib/maxscale`
@@ -25,7 +25,7 @@ $ maxkeys
 ```
 
 See
-[Encrypting Passwords](maxscale-management/deployment/maxscale-configuration-guide.md#encrypting-passwords)
+[Encrypting Passwords](../maxscale-management/deployment/maxscale-configuration-guide.md#encrypting-passwords)
 for more information about `maxkeys`.
 
 Once generated, this key file can be relocated to a secure location. This

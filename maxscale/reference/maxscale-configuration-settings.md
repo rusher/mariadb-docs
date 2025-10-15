@@ -2502,7 +2502,7 @@
 
 [**events**](maxscale-monitors/common-monitor-parameters.md)
 
-* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
+* Type: [enum](../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `master_down`, `master_up`, `slave_down`, `slave_up`, `server_down`, `server_up`, `lost_master`, `lost_slave`, `new_master`, `new_slave`

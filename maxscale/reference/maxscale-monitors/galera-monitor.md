@@ -262,7 +262,7 @@ maxctrl alter server server2 priority=1
 
 This does not affect the Galera Cluster itself, just the roles MaxScale assigns
 to the servers. If multiple MaxScales monitor the same Galera Cluster without
-[configuration synchronization](../Getting-Started/Configuration-Guide.md#configuration-synchronization),
+[configuration synchronization](../../maxscale-management/deployment/maxscale-configuration-guide.md#configuration-synchronization),
 the commands should be run on all MaxScales.
 
 ## Bootstrap
@@ -293,7 +293,7 @@ values listed in *wsrep_incoming_addresses*. Other settings are copied from
 the server given in the *template*-setting, so that the discovered servers
 inherit e.g. TLS settings. If no server template is given, discovered servers
 will use
-[server default settings](../Getting-Started/Configuration-Guide.md#server-1).
+[server default settings](../../maxscale-management/deployment/maxscale-configuration-guide.md#server-1).
 The server template must be a valid, existing server in MaxScale configuration.
 It need not be monitored by any monitor and its *address* and *port*-settings
 can point to a non-existing (but theoretically valid) network address. It can be
@@ -304,7 +304,7 @@ maxctrl call command galeramon bootstrap monitor=MyGaleraMonitor template=MyServ
 ```
 
 Bootstrap is incompatible with
-[configuration synchronization](../Getting-Started/Configuration-Guide.md#configuration-synchronization)
+[configuration synchronization](../../maxscale-management/deployment/maxscale-configuration-guide.md#configuration-synchronization)
 and will refuse to run if it is enabled.
 
 ## Discover-replicas
@@ -338,7 +338,7 @@ e.g. *MyGaleraMonitor-server3*.
 
 A server can only be removed if it is not explicitly used by any other module,
 e.g. a service. Thus, this command is best used when services are configured with the
-[cluster](../Getting-Started/Configuration-Guide.md#cluster)-setting as the
+[cluster](../../maxscale-management/deployment/maxscale-configuration-guide.md#cluster)-setting as the
 services will then automatically match any changes in the set of monitored
 servers.
 

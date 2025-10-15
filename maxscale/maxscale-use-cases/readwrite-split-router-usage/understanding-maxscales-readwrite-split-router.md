@@ -8,7 +8,7 @@ The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/
 
 * [MariaDB replication](../../../server/architecture/topologies/primary-replica) deployments.
 * [Galera Cluster](../../../server/architecture/topologies/galera-cluster) deployments.
-* [Columnstore Object Storage](../../../server/architecture/topologies/columnstore-object-storage) and [ColumnStore Shared Local Storage](../../../server/server/architecture/topologies/columnstore-shared-local-storage) deployments.
+* [Columnstore Object Storage](../../../server/architecture/topologies/columnstore-object-storage) and [ColumnStore Shared Local Storage](../../../server/architecture/topologies/columnstore-shared-local-storage) deployments.
 
 ## When to Use the Read/Write Split Router?
 

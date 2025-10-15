@@ -78,7 +78,7 @@ in _NAME_=_VALUE_ format (e.g. `-DBUILD_TESTS=Y`).
 | TARGET\_COMPONENT      | Which component to install, default is the 'core' package. Other targets are 'experimental', which installs experimental packages and 'all' which installs all components. |
 | TARBALL                | Build tar.gz packages, requires PACKAGE=Y                                                                                                                                  |
 
-**Note**: You can look into [defaults.cmake](https://mariadb.com/cmake/defaults.cmake) for a
+**Note**: You can look into `defaults.cmake` for a
 list of the CMake variables.
 
 ### Running unit tests

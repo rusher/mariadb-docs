@@ -91,7 +91,7 @@ response time and performance. Longer sessions are less affected by a
 high`max_slave_connections` as the relative cost of opening a connection is
 lower.
 
-**Behavior of `max_slave_connections=0`**
+#### Behavior of `max_slave_connections=0`
 
 When readwritesplit is configured with `max_slave_connections=0`, readwritesplit
 will behave slightly differently in that it will route all reads to the current
@@ -430,7 +430,7 @@ will not be closed even if all backend connections for that session have
 failed. This is done in the hopes that before the next query from the idle
 session arrives, a reconnection to one of the replicas is made. However, this can
 leave idle connections around unless the client application actively closes
-them. To prevent this, use the [connection\_timeout](../../maxscale-management/deployment/maxscale-configuration-guide.md#connection_timeout)
+them. To prevent this, use the [wait\_timeout](../../maxscale-management/deployment/maxscale-configuration-guide.md#wait_timeout)
 parameter.
 
 **Note:** If `master_failure_mode` is set to `error_on_write` and the connection
@@ -826,7 +826,7 @@ Before MaxScale 2.5.0, the `causal_reads` parameter was a boolean
 parameter. False values translated to `none` and true values translated to `local`.
 The use of boolean parameters is deprecated but still accepted in MaxScale 2.5.0.
 
-**Implementation of `causal_reads`**
+#### Implementation of `causal_reads`
 
 This feature is based on the `MASTER_GTID_WAIT` function and the tracking of
 server-side status variables. By tracking the latest GTID that each statement
@@ -842,7 +842,7 @@ The exception to this rule is the `fast` mode which does not do any
 synchronization at all. This can be done as any reads that would go to
 out-of-date servers will be re-routed to the current primary.
 
-**Normal SQL**
+##### Normal SQL
 
 A practical example can be given by the following set of SQL commands executed
 with `autocommit=1`.
@@ -882,7 +882,7 @@ replication stream (see
 for more details). If the synchronization fails, the query will not run and it
 will be retried on the server where the transaction was originally done.
 
-**Prepared Statements**
+##### Prepared Statements
 
 Binary protocol prepared statements are handled in a different manner. Instead
 of adding the synchronization SQL into the original SQL query, it is sent as a
@@ -934,7 +934,7 @@ Message:  Causal read timed out while in a read-only transaction, cannot retry c
 Older versions of MaxScale attempted to retry the command on the current primary
 server which would cause the connection to be closed and a warning to be logged.
 
-**Limitations of Causal Reads**
+#### Limitations of Causal Reads
 
 * Starting with MaxScale 24.02.5, the fast modes `fast`, `fast_global` and`fast_universal`
   work with Galera clusters. In older versions, none of the`causal_reads` modes worked
@@ -1013,7 +1013,7 @@ filter in MaxScale 25.01 and the parameter has been removed from readwritesplit.
 
 ### `sync_transaction`
 
-* Type: [enum](../Getting-Started/Configuration-Guide.md#enumerations)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `soft`, `hard`
@@ -1094,7 +1094,7 @@ synchronization is possible.
 
 ### `sync_transaction_timeout`
 
-* Type: [duration](../Getting-Started/Configuration-Guide.md#durations)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 10s
@@ -1113,7 +1113,7 @@ not.
 
 ### `sync_transaction_max_lag`
 
-* Type: [duration](../Getting-Started/Configuration-Guide.md#durations)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 0s
@@ -1266,7 +1266,7 @@ replication lag, then statements will be routed to the primary. (There might be
 other similar configuration parameters in the future which limit the number of
 statements that will be routed to replicas.)
 
-**Transaction Isolation Level Tracking**
+#### Transaction Isolation Level Tracking
 
 If either `session_track_transaction_info=CHARACTERISTICS` or
 `session_track_system_variables=tx_isolation` is configured for the MariaDB
@@ -1429,7 +1429,7 @@ transaction which gets replayed ends up with a conflict and is reported as a
 replay failure when in reality a rolled back transaction could be safely
 ignored.
 
-**Limitations in Session State Modifications**
+#### Limitations in Session State Modifications
 
 Any changes to the session state (e.g. autocommit state, SQL mode) done inside a
 transaction will remain in effect even if the connection to the server where the
@@ -1467,7 +1467,7 @@ state after which the actual transaction is replayed. Due to the fact that the
 SQL\_MODE was changed mid-transaction, one of the queries will now return an
 error instead of the result we expected leading to a transaction replay failure.
 
-**Limitations in Service-to-Service Routing**
+#### Limitations in Service-to-Service Routing
 
 In a service-to-service configuration (i.e. a service using another service in
 its `targets` list ), if the topmost service starts a transaction, all
@@ -1477,7 +1477,7 @@ unnecessary transaction replays which in turn can end up with checksum
 conflicts. The recommended approach is to not use any commands inside a
 transaction that would be routed to more than one node.
 
-**Limitations in multi-statement handling**
+#### Limitations in multi-statement handling
 
 When a multi-statement query is executed through the readwritesplit router, it
 will always be routed to the primary. See
@@ -1489,7 +1489,7 @@ detected and reads to this table can be routed to replica servers. To
 prevent this, always execute the temporary table creation as an individual
 statement.
 
-**Limitations in client session handling**
+#### Limitations in client session handling
 
 Some of the queries that a client sends are routed to all backends instead of
 just to one. These queries include `USE <db name>` and `SET autocommit=0`, among

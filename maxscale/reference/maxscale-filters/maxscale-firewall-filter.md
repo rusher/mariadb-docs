@@ -117,7 +117,7 @@ errors that prevent it from being read, MaxScale will not start.
 
 ### `mode`
 
-- **Type**: [enum](../Getting-Started/Configuration-Guide.md#enumerations)
+- **Type**: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 - **Mandatory**: No
 - **Dynamic**: Yes
 - **Values**: `idle`, `learn-clear`, `learn-append`, `supervise`, `enforce`
@@ -149,7 +149,7 @@ and empty allow list, that is, no statements will be allowed.
 
 ### `action`
 
-- **Type**: [enum](../Getting-Started/Configuration-Guide.md#enumerations)
+- **Type**: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 - **Mandatory**: No
 - **Dynamic**: Yes
 - **Values**: `return-error`, `disconnect`
@@ -163,7 +163,7 @@ _enforcing_ mode and it encounters a statement that is not allowed:
 
 ### `user_scope`
 
-- **Type**: [enum](../Getting-Started/Configuration-Guide.md#enumerations)
+- **Type**: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 - **Mandatory**: No
 - **Dynamic**: Yes
 - **Values**: `collective`, `individual`
@@ -204,10 +204,10 @@ cause a warning to be logged:
 2024-11-18 08:01:47   warning: (1) [firewall] (Service); Firewall incident (user@127.0.0.1): DELETE FROM t
 ```
 When the firewall is in 'enforce' mode, a firewall violation will
-cause the event [firewall_incident](../Getting-Started/Configuration-Guide.md#firewall_incident),
+cause the event [firewall_incident](../../maxscale-management/deployment/maxscale-configuration-guide.md#firewall_incident),
 which, by default, will cause a warning to be logged to the MaxScale
-log file, if [maxlog](../Getting-Started/Configuration-Guide.md#maxlog) is enabled,
-and a syslog event to be generated, if [syslog](../Getting-Started/Configuration-Guide.md#syslog)
+log file, if [maxlog](../../maxscale-management/deployment/maxscale-configuration-guide.md#maxlog) is enabled,
+and a syslog event to be generated, if [syslog](../../maxscale-management/deployment/maxscale-configuration-guide.md#syslog)
 is enabled.
 
 ## Workflow

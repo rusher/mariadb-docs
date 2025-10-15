@@ -17,9 +17,9 @@ later and requires that the service user has the `SET USER` grant.
 
 MariaDB versions 11.6 or later that include the PARSEC authentication plugin are
 supported but the passwords for the users must be provided via the
-[user mapping file](../../maxscale-management/deployment/maxscale-configuration-guide.mduser_mapping_file).
+[user mapping file](../../maxscale-management/deployment/maxscale-configuration-guide.md#user_mapping_file).
 The documentation for the
-[Ed25519 authenticator](maxscale-ed25519-Authenticator.md#using-a-mapping-file)
+[Ed25519 authenticator](maxscale-ed25519-authenticator.md#using-a-mapping-file)
 contains an example of how to configure the user mapping.
 
 ### Configuration

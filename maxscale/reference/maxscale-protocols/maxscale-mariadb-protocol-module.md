@@ -24,7 +24,7 @@ automated redirects from taking place while still allowing clients to see the
 information if they need it.
 
 To redirect clients away from MaxScale, use the
-[redirect_url](../Getting-Started/Configuration-Guide.md#redirect_url)
+[redirect_url](../../maxscale-management/deployment/maxscale-configuration-guide.md#redirect_url)
 parameter.
 
 ## Configuration
@@ -59,7 +59,7 @@ replication will be rejected with a ER\_FEATURE\_DISABLED error (error number
 
 ### `compression`
 
-- **Type**: [enum_mask](../Getting-Started/Configuration-Guide.md#enumerations)
+- **Type**: [enum_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 - **Mandatory**: No
 - **Dynamic**: Yes
 - **Values**: `none`, `zlib`, `zstd`
@@ -74,7 +74,7 @@ To disable protocol level compression, set `mariadbprotocol.compression=none`.
 
 ### `compression_threshold`
 
-- **Type**: [size](../Getting-Started/Configuration-Guide.md#sizes)
+- **Type**: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 - **Mandatory**: No
 - **Dynamic**: Yes
 - **Default**: 50

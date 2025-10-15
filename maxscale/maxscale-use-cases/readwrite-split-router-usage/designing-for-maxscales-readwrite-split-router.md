@@ -10,7 +10,7 @@ This page contains topics that need to be considered when designing applications
 * How does the [Read/Write Split Router retry failed reads?](retrying-failed-reads-with-maxscales-readwrite-split-router.md)
 * How does the [Read/Write Split Router retry failed queries during automatic failover?](delayed-retrying-of-failed-queries-with-maxscales-readwrite-split-router.md)
 
-Additional information is available [here](broken-reference).
+Additional information is available [here](../../reference/maxscale-routers/maxscale-readwritesplit.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

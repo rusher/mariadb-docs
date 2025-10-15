@@ -44,12 +44,12 @@ address=192.168.0.2
 port=8989
 ```
 Add `ssl=true` to a server to force the monitor to use HTTPS. Other supported
-[SSL settings](../Getting-Started/Configuration-Guide.md#tlsssl-encryption)
+[SSL settings](../../maxscale-management/deployment/maxscale-configuration-guide.md#tlsssl-encryption)
 are `ssl_key`, `ssl_cert`, `ssl_ca`, `ssl_verify_peer_certificate` and
 `ssl_verify_peer_host`.
 
 For a list of optional parameters that all monitors support, read the
-[Monitor Common](Monitor-Common.md) document.
+[Common Monitor Parameters](common-monitor-parameters.md) document.
 
 ## Settings
 
