@@ -2271,6 +2271,7 @@
         * [Information Schema THREAD\_POOL\_QUEUES Table](reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md)
         * [Information Schema THREAD\_POOL\_STATS Table](reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_stats-table.md)
         * [Information Schema THREAD\_POOL\_WAITS Table](reference/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_waits-table.md)
+        * [Information Schema TRIGGERED\_UPDATE\_COLUMNS](reference/system-tables/information-schema/information-schema-tables/information-schema-triggered_update_columns.md)
         * [Information Schema TRIGGERS Table](reference/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
         * [Information Schema USER\_PRIVILEGES Table](reference/system-tables/information-schema/information-schema-tables/information-schema-user_privileges-table.md)
         * [Information Schema USER\_STATISTICS Table](reference/system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md)

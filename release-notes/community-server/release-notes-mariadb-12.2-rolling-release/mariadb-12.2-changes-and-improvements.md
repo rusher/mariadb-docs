@@ -20,7 +20,7 @@ MariaDB 12.2 is a [rolling release](../about/release-model.md). It is an evoluti
 * Implement Global temporary tables ([MDEV-35915](https://jira.mariadb.org/browse/MDEV-35915) I)
 * improved support of replication between tables of different structure ([MDEV-36290](https://jira.mariadb.org/browse/MDEV-36290))
 * Indexes on derived tables with GROUP BY produce wrong out\_rows estimates ([MDEV-36321](https://jira.mariadb.org/browse/MDEV-36321))
-* INFORMATION\_SCHEMA.TRIGGERED\_UPDATE\_COLUMNS ([MDEV-36996](https://jira.mariadb.org/browse/MDEV-36996))
+* Add [INFORMATION\_SCHEMA.TRIGGERED\_UPDATE\_COLUMNS](broken-reference) ([MDEV-36996](https://jira.mariadb.org/browse/MDEV-36996))
 * Implement [INFORMATION\_SCHEMA.PARAMETERS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-parameters-table).PARAMETER\_DEFAULT column ([MDEV-37054](https://jira.mariadb.org/browse/MDEV-37054))
 
 ## List of All MariaDB 12.2 Releases
