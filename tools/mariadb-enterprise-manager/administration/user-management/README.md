@@ -114,7 +114,7 @@ If you select the `sql` permission, a **"Query editor row limit"** dropdown will
 {% endhint %}
 
 {% hint style="warning" %}
-Note: The system requires `view` permission along with `edit`. Otherwise, it throws an error.
+When creating a role, selecting the `edit` permission requires you to also select the `view` permission. The system enforces this because a user can't edit something they aren't allowed to see.
 {% endhint %}
 {% endstep %}
 {% endstepper %}
