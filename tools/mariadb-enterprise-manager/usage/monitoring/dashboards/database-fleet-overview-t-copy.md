@@ -1,16 +1,16 @@
-# Database fleet overview
+# Database Fleet Overview
 
 <figure><img src="../../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
 The "fleet" dashboard is the central inventory for all your monitored database topologies. It provides a hierarchical, at-a-glance overview of the health, status, and configuration of your entire database environment.
 
-#### Understanding the Dashboard Columns
+## Understanding the Dashboard Columns
 
-**NAME Column**
+### **NAME Column**
 
 This column displays the logical names of your databases and the individual server nodes within each topology. It also contains important status and quick-access icons.
 
-**Status Icons**
+#### **Status Icons**
 
 | Icon     | Applies To                            | Meaning                                                                                          |
 | -------- | ------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -24,7 +24,7 @@ This column displays the logical names of your databases and the individual serv
 This icon (<img src="../../../../.gitbook/assets/image (55).png" alt="" data-size="line">) is a shortcut that takes you directly to the detailed Grafana monitoring dashboard for that specific node or topology.
 {% endhint %}
 
-**TYPE Column**
+### **TYPE Column**
 
 This column shows the role of each node as automatically detected by Enterprise Manager (e.g., `Primary`, `Replica`, `MaxScale`, `Galera Node`, `Standalone Server`).
 
@@ -32,7 +32,7 @@ This column shows the role of each node as automatically detected by Enterprise 
 If this column shows `'-'`, it indicates an issue. For instance, in a Primary/Replica topology, a server expected to be a `Replica` that shows `'-'` is likely not replicating correctly from the primary.
 {% endhint %}
 
-**LAST METRIC AGE Column**
+### **LAST METRIC AGE Column**
 
 This column shows the time elapsed since the agent on that node last reported metrics.
 
@@ -40,13 +40,13 @@ This column shows the time elapsed since the agent on that node last reported me
 If the age is 5 minutes or greater, it indicates a problem. Verify that the `mema-agent` is installed, running, and can communicate with the Enterprise Manager server on that host.
 {% endhint %}
 
-#### Interacting with Your Databases
+## Interacting with Your Databases
 
 You can perform actions on your databases and nodes using the three-dot menu (⋮) on the far right of each row.
 
 <figure><img src="../../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
-SSO to MaxScale (Single Sign-On)
+## **SSO to MaxScale (Single Sign-On)**
 
 For topologies managed by MaxScale, you can seamlessly access the MaxScale GUI directly from Enterprise Manager using Single Sign-On.
 
