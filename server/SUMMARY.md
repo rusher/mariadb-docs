@@ -700,6 +700,7 @@
 * [Architecture](architecture/README.md)
   * [Topologies](architecture/topologies/README.md)
     * [Topologies Overview](architecture/topologies/topologies-overview.md)
+    * [Compatibility](architecture/topologies/compatibility.md)
     * [Columnstore Object Storage](architecture/topologies/columnstore-object-storage/README.md)
       * [Step 1: Prepare ColumnStore Nodes](architecture/topologies/columnstore-object-storage/step-1-prepare-columnstore-nodes.md)
       * [Step 2: Configure Shared Local Storage](architecture/topologies/columnstore-object-storage/step-2-configure-shared-local-storage.md)
