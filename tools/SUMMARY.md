@@ -79,3 +79,18 @@
   * [Objectives](mariadb-enterprise-mcp-server/objectives/README.md)
   * [Features](mariadb-enterprise-mcp-server/features/README.md)
   * [Authentication](mariadb-enterprise-mcp-server/authentication/README.md)
+* [MariaDB RAG AI](mariadb-ai-rag/README.md)
+  * [Overview](overview.md)
+  * [Access Control](access-control.md)
+  * [API Reference](api-reference.md)
+  * [Configuration](configuration.md)
+  * [Database Integration](database-integration.md)
+  * [Environment Variables](environment-variables.md)
+  * [Installation](installation.md)
+  * [Orchestration](orchestration.md)
+  * [Performance Tuning](performance-tuning)
+  * [Service Management](service-management.md)
+  * [Supported Formats](supported-formats.md)
+  * [Troubleshooting](troubleshooting.md)
+
+  
