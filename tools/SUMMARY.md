@@ -11,7 +11,7 @@
         * [Metrics retention configuration](mariadb-enterprise-manager/administration/deployment/installing-mariadb-enterprise-manager/metrics-retention-configuration.md)
       * [Adding Databases](mariadb-enterprise-manager/administration/deployment/adding-databases/README.md)
         * [Agent installation](mariadb-enterprise-manager/administration/deployment/adding-databases/agent-installation-t-copy.md)
-        * [Add multiple MaxScale monitors](mariadb-enterprise-manager/administration/deployment/adding-databases/add-multiple-maxscale-monitors.md)
+        * [Add Multiple MaxScale Monitors](mariadb-enterprise-manager/administration/deployment/adding-databases/add-multiple-maxscale-monitors.md)
       * [Network and Firewall Requirements](mariadb-enterprise-manager/administration/deployment/network-and-firewall-requirements.md)
     * [User Management](mariadb-enterprise-manager/administration/user-management/README.md)
       * [Configure OpenID Connect Identity Provider](mariadb-enterprise-manager/administration/user-management/configure-openid-connect-identity-provider.md)

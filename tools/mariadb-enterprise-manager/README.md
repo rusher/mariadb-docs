@@ -17,7 +17,7 @@ At its core, Enterprise Manager uses lightweight agents to collect deep telemetr
 
 Leverage the power of a built-in **Grafana** instance, complete with pre-packaged dashboards and production-ready alerts. The platform provides the flexibility to create custom dashboards, define unique alert rules, and route notifications to a wide range of destinations.
 
-### **Integration with other observability solutions**
+### **Integration with Other Observability Solutions**
 
 Built on open standards, Enterprise Manager uses **OpenTelemetry** for metrics collection. Its integrated **Prometheus** time-series database exposes a query API, allowing you to seamlessly export metrics and integrate with your existing observability stack.
 

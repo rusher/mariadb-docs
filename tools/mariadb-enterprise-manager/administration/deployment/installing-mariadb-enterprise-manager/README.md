@@ -59,7 +59,13 @@ Install Enterprise Manager by running the script:
 ```
 {% endcode %}
 
-The script will ask for the IP address/hostname and port on which Enterprise Manager should listen for incoming connections. Input the correct address if the auto-detected value is incorrect. The address and port combination should be reachable from all monitored MariaDB Servers and MaxScales. The script will also launch Enterprise Manager.
+The script prompts you to enter IP address and port number on which Enterprise Manager should listen to for incoming connections. Verify the auto-detected value and correct it if it's wrong.
+
+{% hint style="info" %}
+This address and port must be reachable from all monitored MariaDB Server and MaxScale hosts.
+{% endhint %}
+
+After you provide the details, the script launches Enterprise Manager.
 {% endstep %}
 
 {% step %}

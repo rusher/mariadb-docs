@@ -8,25 +8,21 @@ Use this method for a single MariaDB Server or to manually define a Primary/Repl
 
 {% stepper %}
 {% step %}
-### Prepare Your Server(s)
+### Prepare your server(s)
 
-First, perform these actions on each MariaDB Server you plan to add.
+First, perform these actions **on each MariaDB Server** you plan to add.
 
 1. Install the Agent package.
 
-{% code title="RHEL / CentOS / Rocky" %}
 ```bash
 # For Red Hat/CentOS/Rocky
 sudo dnf install -y mema-agent
 ```
-{% endcode %}
 
-{% code title="Debian / Ubuntu" %}
 ```bash
 # For Debian/Ubuntu
 sudo apt install -y mema-agent
 ```
-{% endcode %}
 
 2. Create the Enterprise Manager user (allows the Enterprise Manager server to connect remotely):
 

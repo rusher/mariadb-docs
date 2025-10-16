@@ -4,7 +4,7 @@ By default, MariaDB Enterprise Manager retains detailed metrics for **30 days**.
 
 This guide explains how to change the retention period and how the underlying storage system works.
 
-## How to change the retention period
+## How to Change the Retention Period
 
 Changing the retention time is done by editing the environment file for Enterprise Manager and then restarting the services.
 
