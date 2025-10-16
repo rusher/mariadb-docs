@@ -4,10 +4,10 @@
 
 MariaDB Data Bridge can be integrated with external systems through its REST API. Common integration patterns include:
 
-- **Document Management Systems**: Automatically ingest documents from DMS platforms using the document ingestion endpoints
-- **Knowledge Bases**: Enhance existing knowledge bases with AI-powered search via the retrieval endpoints
-- **Customer Support Systems**: Integrate with ticketing systems for AI-assisted responses using the orchestration pipeline
-- **Business Intelligence Tools**: Connect BI tools for natural language querying of data through the API
+* **Document Management Systems**: Automatically ingest documents from DMS platforms using the document ingestion endpoints
+* **Knowledge Bases**: Enhance existing knowledge bases with AI-powered search via the retrieval endpoints
+* **Customer Support Systems**: Integrate with ticketing systems for AI-assisted responses using the orchestration pipeline
+* **Business Intelligence Tools**: Connect BI tools for natural language querying of data through the API
 
 Example integration with a document management system:
 
@@ -46,7 +46,7 @@ chunking_response = requests.post(
 
 MariaDB Data Bridge uses JWT-based authentication. The system can be integrated with existing authentication systems by implementing custom authentication middleware.
 
-```
+```ini
 # JWT Authentication settings
 SECRET_KEY=your_secure_random_string
 ACCESS_TOKEN_EXPIRE_MINUTES=60
