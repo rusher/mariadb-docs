@@ -96,5 +96,5 @@
   * [Reference](mariadb-ai-rag/reference/README.md)
     * [Environment Variables](mariadb-ai-rag/reference/environment-variables.md)
     * [Supported Formats](mariadb-ai-rag/reference/supported-formats.md)
-    * [Integration](integration.md)
+    * [Integration](mariadb-ai-rag/reference/integration.md)
   
