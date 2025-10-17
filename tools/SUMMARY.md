@@ -80,6 +80,8 @@
   * [Objectives](mariadb-enterprise-mcp-server/objectives/README.md)
   * [Features](mariadb-enterprise-mcp-server/features/README.md)
   * [Authentication](mariadb-enterprise-mcp-server/authentication/README.md)
+  * [Architecture](mariadb-enterprise-mcp-server/architecture.md)
+  * [Example](mariadb-enterprise-mcp-server/example.md)
 * [MariaDB RAG AI](mariadb-ai-rag/README.md)
   * [Getting Started](mariadb-ai-rag/getting-started/README.md)
     * [Overview](mariadb-ai-rag/getting-started/overview.md)
