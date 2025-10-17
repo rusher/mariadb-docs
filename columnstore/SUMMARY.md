@@ -159,3 +159,7 @@
     * [shutdown](reference/cmapi/shutdown.md)
     * [start](reference/cmapi/start.md)
     * [status](reference/cmapi/status.md)
+
+## MariaDB Exa
+
+* [MariaDB Exa](mariadb-exa/mariadb-exa.md)
