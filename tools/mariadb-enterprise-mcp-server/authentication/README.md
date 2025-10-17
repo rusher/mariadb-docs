@@ -1,49 +1,67 @@
-# Enterprise-Grade Authentication
+# Authentication
 
 A cornerstone of the Enterprise edition is its ability to integrate with centralized secret managers, eliminating the need for static credentials stored in local or `.env` files. The server dynamically fetches database credentials and API keys at startup, ensuring a secure and compliant operational posture.
 
----
-
 ## Key Features
 
-- **Multi-layered Authentication**: JWT-based authentication (HS256/RS256) with bcrypt password hashing
-- **Adaptive Architecture**: Intelligent tool registration based on service availability
-- **Role-Based Access Control (RBAC)**: Fine-grained permission management
-- **Multiple Deployment Modes**: Standalone, 1Password, Local Vault, and HCP Vault
-- **Database-Enforced User Validation**: Shared database ensures only registered users can access services
-
----
+* **Multi-layered Authentication**: JWT-based authentication (HS256/RS256) with bcrypt password hashing
+* **Adaptive Architecture**: Intelligent tool registration based on service availability
+* **Role-Based Access Control (RBAC)**: Fine-grained permission management
+* **Multiple Deployment Modes**: Standalone, 1Password, Local Vault, and HCP Vault
+* **Database-Enforced User Validation**: Shared database ensures only registered users can access services
 
 ## Authentication Flow
 
 ### 1. User Registration
-```
-User → POST /register → Hash Password → Store in DB → Return User Object
+
+```mermaid
+
+graph TD
+    A[User] --> B[POST /register]
+    B --> C[Hash Password]
+    C --> D[Store in DB]
+    D --> E[Return User Object]
+
 ```
 
 ### 2. User Login
-```
-User → POST /token → Verify Credentials → Assign Roles → Generate JWT → Return Token
+
+```mermaid
+
+graph TD
+    A[User] --> B[POST /token]
+    B --> C[Verify Credentials]
+    C --> D[Assign Roles]
+    D --> E[Generate JWT]
+    E --> F[Return Token]
 ```
 
 ### 3. Authenticated Request
-```
-Client → MCP Server (with JWT)
-  ↓
-Extract Token
-  ↓
-Verify JWT Signature
-  ↓
-Validate User in Database
-  ↓
-Forward Token to RAG API (if RAG based tools are used - conditional)
-  ↓
-RAG API Verifies & Processes (if RAG based tools are used - conditional)
-  ↓
-Return Response
+
+```mermaid
+graph LR
+    subgraph First Column
+        direction TB
+        A[Client]
+        D[Database]
+    end
+
+    subgraph Second Column
+        direction TB
+        B[MCP Server]
+        C["RAG API (Optional)"]
+    end
+
+    A -- "1. Request with JWT" --> B
+    B -- "2. Validate User" --> D
+    D -- "User Record" --> B
+    B -- "3. Forward Request" --> C
+    C -- "Result" --> B
+    B -- "4. Response" --> A
+
 ```
 
----
+***
 
 ## Deployment Modes
 
@@ -54,6 +72,7 @@ Return Response
 **Configuration**: Direct environment variables
 
 **Key Settings:**
+
 ```bash
 # Direct values in config file
 DB_HOST=localhost
@@ -66,6 +85,7 @@ GEMINI_API_KEY=your_api_key
 **When to Use**: Development, testing, small deployments, No external secret management available
 
 **Startup:**
+
 ```bash
 # RAG API
 rag-api.exe --config=config.env.secure.local
@@ -82,6 +102,7 @@ mcp-server.exe
 **Configuration**: `op://` secret references
 
 **Key Settings:**
+
 ```bash
 # 1Password references
 DB_USER=op://Employee/RAG-Database/username
@@ -92,11 +113,13 @@ GEMINI_API_KEY=op://Employee/RAG-API-Keys/gemini
 ```
 
 **Prerequisites:**
+
 1. Install 1Password CLI
 2. Authenticate: `op signin`
 3. Create vault and items with required secrets
 
 **Startup:**
+
 ```bash
 # RAG API
 op run --env-file=config.env.1password.employee -- rag-api.exe
@@ -114,6 +137,7 @@ op run --env-file=config.env.1password.employee -- mcp-server.exe
 **Configuration**: Local Vault server
 
 **Key Settings:**
+
 ```bash
 # Vault Configuration
 VAULT_ADDR=http://127.0.0.1:8200
@@ -124,6 +148,7 @@ VAULT_MOUNT_POINT=secret
 ```
 
 **Setup:**
+
 ```bash
 # Start Vault in dev mode
 vault server -dev -dev-root-token-id="rag-root-token"
@@ -143,6 +168,7 @@ vault kv put secret/rag-in-a-box/api-keys \
 ```
 
 **Startup:**
+
 ```bash
 # RAG API
 rag-api.exe --config=config.env.vault.local
@@ -161,6 +187,7 @@ mcp-server.exe
 **Configuration**: HCP Vault cluster
 
 **Key Settings:**
+
 ```bash
 # HCP Vault Configuration
 VAULT_ADDR=https://your-vault-cluster.hashicorp.cloud:8200
@@ -175,13 +202,15 @@ VAULT_SECRET_ID=your-vault-secret-id
 ```
 
 **Setup:**
+
 1. Create HCP Vault cluster
 2. Configure AppRole authentication
 3. Create policies for application access
 4. Store secrets in Vault
-5. Generate role_id and secret_id
+5. Generate role\_id and secret\_id
 
 **Startup:**
+
 ```bash
 # RAG API
 rag-api.exe --config=config.env.hcp.live
@@ -193,5 +222,4 @@ mcp-server.exe
 
 **When to Use**: Production, enterprise deployments
 
----
-
+***
