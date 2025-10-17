@@ -34,7 +34,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * Optimization that makes vector search 30-50% faster (more details in the [Vector Search](whats-new-in-mariadb-enterprise-server-11.8.md#vector-search) section)
 * Segmented key cache for [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria)
   * [aria\_pagecache\_segments](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_pagecache_segments) system variable
-* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars, see [Skipping Long CHAR/VARCHAR Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table#skipping-long-char-varchar-columns) for more information
 
 ## Data Types and Compatibility <a href="#data-types-and-compatibility" id="data-types-and-compatibility"></a>
 
