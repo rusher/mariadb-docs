@@ -1,7 +1,6 @@
 # Table of contents
 
-* [MariaDB ColumnStore](README.md)
-* [Quickstart Guides](columnstore-quickstart-guides/README.md)
+* [Quickstart Guides](README.md)
   * [MariaDB ColumnStore Guide](columnstore-quickstart-guides/mariadb-columnstore-guide.md)
   * [MariaDB ColumnStore System Usage](columnstore-quickstart-guides/mariadb-columnstore-usage-guide.md)
   * [MariaDB ColumnStore Hardware Guide](columnstore-quickstart-guides/mariadb-columnstore-hardware-guide.md)
@@ -159,6 +158,10 @@
     * [shutdown](reference/cmapi/shutdown.md)
     * [start](reference/cmapi/start.md)
     * [status](reference/cmapi/status.md)
+
+## MariaDB ColumnStore
+
+* [MariaDB ColumnStore](mariadb-columnstore/readme.md)
 
 ## MariaDB Exa
 
