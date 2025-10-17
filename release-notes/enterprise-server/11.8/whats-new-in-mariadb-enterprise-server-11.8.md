@@ -20,6 +20,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 * **Distance Functions**:
   * `VEC_DISTANCE()` auto-selects the best distance function based on the index configuration.
+* Optimization that makes vector search 30-50% (depending on the data) faster for the same recall. Enabled automatically for applicable vectors. Vectors are applicable if they can be gradually truncated to trade some recall for speed. For example matryoshka embeddings as produced by OpenAI are applicable.
 
 ## Indexes, SQL Functions, and Query Enhancements <a href="#indexes-sql-functions-and-query-enhancements" id="indexes-sql-functions-and-query-enhancements"></a>
 
@@ -27,6 +28,12 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Multi-Table DELETE Enhancements**: Support for `ORDER BY and LIMIT`.
 * **Single-Table DELETE Enhancements**: Now it allows index hints.
 * **NEW SHOW CREATE SERVER**: Recreate server objects similar to [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table).
+
+## Performance Improvements <a href="#data-types-and-compatibility" id="data-types-and-compatibility"></a>
+
+* Optimization that makes vector search 30-50% faster (more details in the [Vector Search](whats-new-in-mariadb-enterprise-server-11.8.md#vector-search) section)
+* Segmented key cache for [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria)
+  * [aria\_pagecache\_segments](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_pagecache_segments) system variable
 
 ## Data Types and Compatibility <a href="#data-types-and-compatibility" id="data-types-and-compatibility"></a>
 
@@ -58,6 +65,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
     ```sql
     CREATE OR REPLACE PROCEDURE p1(param1 INT, param2 INT DEFAULT 1)
     ```
+* Associative arrays: `DECLARE TYPE .. TABLE OF .. INDEX BY`
 
 ### Enhancements to System Versioned Tables <a href="#enhancements-to-system-versioned-tables" id="enhancements-to-system-versioned-tables"></a>
 
