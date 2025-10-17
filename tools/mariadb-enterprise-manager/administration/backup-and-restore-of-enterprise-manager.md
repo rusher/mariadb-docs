@@ -5,15 +5,15 @@ Note: This is about backing up Enterprise Manager (EM), not the databases.
 ## Backing up Enterprise Manager Server
 
 {% stepper %}
-
 {% step %}
-## Stop the Enterprise Manager
+### Stop the Enterprise Manager
+
 1. Go to the Enterprise Manager installation directory
 2. Run `docker compose stop` to stop the Enterprise Manager
 {% endstep %}
 
 {% step %}
-## Create a directory for backups
+### Create a directory for backups
 
 {% code title="Create the `backups` directory" %}
 ```bash
@@ -22,9 +22,8 @@ mkdir backups
 {% endcode %}
 {% endstep %}
 
-
 {% step %}
-## Take a backup of all the volumes
+### Take a backup of all the volumes
 
 {% code title="Back up all volumes" %}
 ```bash
@@ -36,7 +35,6 @@ docker run --rm --volumes-from enterprise-manager-supermax -v $(pwd)/backups/:/b
 
 The `backups` directory now contains the data from the Enterprise Manager.
 {% endstep %}
-
 {% endstepper %}
 
 ## Restoring Enterprise Manager Server
