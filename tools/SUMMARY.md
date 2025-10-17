@@ -77,7 +77,6 @@
     * [Migrate to Enterprise Operator 25.08](mariadb-enterprise-operator/migrations/migrate-25.08.md)
 * [MariaDB Enterprise MCP Server](mariadb-enterprise-mcp-server/README.md)
   * [Overview](mariadb-enterprise-mcp-server/introduction/README.md)
-  * [Objectives](mariadb-enterprise-mcp-server/objectives/README.md)
   * [Features](mariadb-enterprise-mcp-server/features/README.md)
   * [Authentication](mariadb-enterprise-mcp-server/authentication/README.md)
     * [Token Management](mariadb-enterprise-mcp-server/authentication/token-management.md)
