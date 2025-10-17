@@ -39,18 +39,11 @@ graph TD
 ### 3. Authenticated Request
 
 ```mermaid
-graph LR
-    subgraph First Column
-        direction TB
-        A[Client]
-        D[Database]
-    end
-
-    subgraph Second Column
-        direction TB
-        B[MCP Server]
-        C["RAG API (Optional)"]
-    end
+graph TD
+    A[Client]
+    B[MCP Server]
+    C["RAG API (Optional)"]
+    D[Database]
 
     A -- "1. Request with JWT" --> B
     B -- "2. Validate User" --> D
@@ -60,8 +53,6 @@ graph LR
     B -- "4. Response" --> A
 
 ```
-
-***
 
 ## Deployment Modes
 
