@@ -6,7 +6,7 @@ This dashboard shows MaxScale’s health and load, how backend servers are seen 
 
 Provides a visual representation of the entire system's architecture and connectivity.
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 | Section                         | Description                                                                                                                    |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -22,7 +22,7 @@ Provides a visual representation of the entire system's architecture and connect
 
 **System Metrics** provide comprehensive insights into the performance and health of individual system resources.
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Metric              | Description                                                                                                                      |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------- |

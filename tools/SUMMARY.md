@@ -12,6 +12,7 @@
       * [Adding Databases](mariadb-enterprise-manager/administration/deployment/adding-databases/README.md)
         * [Agent installation](mariadb-enterprise-manager/administration/deployment/adding-databases/agent-installation-t-copy.md)
         * [Add Multiple MaxScale Monitors](mariadb-enterprise-manager/administration/deployment/adding-databases/add-multiple-maxscale-monitors.md)
+        * [SSO to MaxScale (Single Sign-On)](mariadb-enterprise-manager/administration/deployment/adding-databases/sso-to-maxscale-single-sign-on.md)
       * [Network and Firewall Requirements](mariadb-enterprise-manager/administration/deployment/network-and-firewall-requirements.md)
     * [User Management](mariadb-enterprise-manager/administration/user-management/README.md)
       * [Configure OpenID Connect Identity Provider](mariadb-enterprise-manager/administration/user-management/configure-openid-connect-identity-provider.md)
@@ -97,4 +98,3 @@
     * [Environment Variables](mariadb-ai-rag/reference/environment-variables.md)
     * [Supported Formats](mariadb-ai-rag/reference/supported-formats.md)
     * [Integration](mariadb-ai-rag/reference/integration.md)
-  
