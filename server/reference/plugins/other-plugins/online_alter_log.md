@@ -8,6 +8,5 @@ This plugin represents the online alter log in a transaction. It is used to comm
 
 It is built in the server, and is always enabled.
 
-* Version: 2.0
-* Maturity: Stable
+For plugin version and maturity level, see [this page](../information-on-plugins/list-of-plugins.md).
 

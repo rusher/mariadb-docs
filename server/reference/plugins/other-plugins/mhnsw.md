@@ -10,6 +10,5 @@ See [Vector System Variables](../../sql-structure/vectors/vector-system-variable
 
 It is built in the server, and is always enabled.
 
-* Version: 1.0
-* Maturity: Stable
+For plugin version and maturity level, see [this page](../information-on-plugins/list-of-plugins.md).
 
