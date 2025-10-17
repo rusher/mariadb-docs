@@ -2205,6 +2205,7 @@
       * [Query Cache Information Plugin](reference/plugins/other-plugins/query-cache-information-plugin.md)
       * [Query Response Time Plugin](reference/plugins/other-plugins/query-response-time-plugin.md)
       * [User Variables Plugin](reference/plugins/other-plugins/user-variables-plugin.md)
+      * [online\_alter\_log](reference/plugins/other-plugins/online_alter_log.md)
     * [Password Validation Plugins](reference/plugins/password-validation-plugins/README.md)
       * [Cracklib Password Check Plugin](reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)
       * [Password Reuse Check Plugin](reference/plugins/password-validation-plugins/password-reuse-check-plugin.md)
