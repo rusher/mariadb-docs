@@ -101,11 +101,11 @@ MariaDB Enterprise ColumnStore supports multiple storage types:
 
 ### Deployment with S3-Compatible Storage
 
-![EntColumnStoreTopologyS3-Network-Diagram](../.gitbook/assets/entcolumnstoretopologys3-network-diagram.png)
+![EntColumnStoreTopologyS3-Network-Diagram](../../.gitbook/assets/entcolumnstoretopologys3-network-diagram.png)
 
 ### Deployment with Shared Storage
 
-![EntColStoreTopologySharedStorageNetworkDiagram](../.gitbook/assets/entcolstoretopologysharedstoragenetworkdiagram.png)
+![EntColStoreTopologySharedStorageNetworkDiagram](../../.gitbook/assets/entcolstoretopologysharedstoragenetworkdiagram.png)
 
 ## S3-Compatible Object Storage
 
@@ -272,7 +272,7 @@ To enable high availability for the DB Root directories, each directory should b
 
 ### Extents
 
-![EColumnStorePhysicalDataOrganizationColumnExtents](../.gitbook/assets/ecolumnstorephysicaldataorganizationcolumnextents.png)
+![EColumnStorePhysicalDataOrganizationColumnExtents](../../.gitbook/assets/ecolumnstorephysicaldataorganizationcolumnextents.png)
 
 Each column in a table is stored in units called extents.
 
@@ -284,7 +284,7 @@ If a string column is longer than 8 characters, the value is stored in a separat
 
 ### Segment Files
 
-![SegmentFiles](../.gitbook/assets/segmentfiles.png)
+![SegmentFiles](../../.gitbook/assets/segmentfiles.png)
 
 A segment file is used to store Enterprise ColumnStore data within a DB Root directory.
 
@@ -304,7 +304,7 @@ $ mcsSetConfig ExtentMap ExtentsPerSegmentFile 4
 
 ### Column Partitions
 
-![ColumnPartitions](../.gitbook/assets/columnpartitions.png)
+![ColumnPartitions](../../.gitbook/assets/columnpartitions.png)
 
 Enterprise ColumnStore automatically groups a column's segment files into column partitions.
 
@@ -326,7 +326,7 @@ $ mcsSetConfig ExtentMap FilesPerColumnPartition 8
 
 ### Extent Map
 
-![DataOrganizationExtentMap](../.gitbook/assets/dataorganizationextentmap.png)
+![DataOrganizationExtentMap](../../.gitbook/assets/dataorganizationextentmap.png)
 
 Enterprise ColumnStore maintains an Extent Map to determine which values are located in each extent.
 
@@ -377,7 +377,7 @@ $ mcsSetConfig VersionBuffer VersionBufferFileSize 2GB
 
 Using the Extent Map, ColumnStore can perform logical range partitioning and only retrieve the blocks needed to satisfy the query. This is done through Extent Elimination, the process of eliminating Extents from the results that don't meet the given join and filter conditions of the query, which reduces the overall I/O operations.
 
-![extent-elimination](../.gitbook/assets/extent-elimination.jpg)
+![extent-elimination](../../.gitbook/assets/extent-elimination.jpg)
 
 In Extent Elimination, ColumnStore scans the columns in join and filter conditions. It then extracts the logical horizontal partitioning information of each extent along with the minimum and maximum values for the column to further eliminate Extents. To eliminate an Extent when a column scan involves a filter, that filter is compared to the minimum and maximum values stored in each extent for the column. If the filter value is outside the Extents minimum and maximum value range, ColumnStore eliminates the Extent.
 

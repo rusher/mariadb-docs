@@ -51,7 +51,7 @@ The following components are deployed during this procedure:
 
 ## Topology
 
-<figure><img src="../../../../.gitbook/assets/ent-col-single-node-topology-local-no-title.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/ent-col-single-node-topology-local-no-title.png" alt=""><figcaption></figcaption></figure>
 
 The Single-Node Enterprise ColumnStore topology provides support for Online Analytical Processing (OLAP) workloads to MariaDB Enterprise Server.
 

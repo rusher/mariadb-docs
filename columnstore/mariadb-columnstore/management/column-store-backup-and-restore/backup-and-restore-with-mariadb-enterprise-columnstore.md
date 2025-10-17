@@ -29,10 +29,10 @@ With S3: an S3 snapshot of the [S3-compatible object storage](../../architecture
 
 To see the procedure to perform a full backup and restore, choose the storage type:
 
-| Storage Type                                                                                                                                                  | Diagram                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Enterprise ColumnStore with Object Storage](mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)                                        | ![columnstore-topology-s3](<../../.gitbook/assets/columnstore-topology-s3.png>) |
-| [Enterprise ColumnStore with Shared Local Storage](../../architecture/columnstore-architectural-overview.md#enterprise-columnstore-with-shared-local-storage) | ![columnstore-topology](../../.gitbook/assets/columnstore-topology.png)             |
+| Storage Type                                                                                                                                                  | Diagram                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [Enterprise ColumnStore with Object Storage](mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)                                        | ![columnstore-topology-s3](../../../.gitbook/assets/columnstore-topology-s3.png) |
+| [Enterprise ColumnStore with Shared Local Storage](../../architecture/columnstore-architectural-overview.md#enterprise-columnstore-with-shared-local-storage) | ![columnstore-topology](../../../.gitbook/assets/columnstore-topology.png)       |
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

@@ -28,7 +28,7 @@ MariaDB products can be deployed to form other topologies that leverage advanced
 
 ### Enterprise ColumnStore with Object Storage
 
-![columnstore-topology-s3](../.gitbook/assets/columnstore-topology-s3.png)
+![columnstore-topology-s3](../../.gitbook/assets/columnstore-topology-s3.png)
 
 The MariaDB Enterprise ColumnStore topology with Object Storage delivers production analytics with high availability, fault tolerance, and limitless data storage by leveraging S3-compatible storage.
 
@@ -52,7 +52,7 @@ The ColumnStore nodes:
 
 ### Enterprise ColumnStore with Shared Local Storage
 
-![es-columnstore-topology-nfs-no-title](<../.gitbook/assets/es-columnstore-topology-nfs-no-title (1).png>)
+![es-columnstore-topology-nfs-no-title](<../../.gitbook/assets/es-columnstore-topology-nfs-no-title (1).png>)
 
 The MariaDB Enterprise ColumnStore topology with Shared Local Storage delivers production analytics with high availability and fault tolerance by leveraging shared local storage, such as NFS.
 
@@ -204,7 +204,7 @@ The most common shared local storage option for GCP (Google Cloud Platform) depl
 
 ## Query Evaluation Architecture
 
-![ECStore-QueryExecutionwith-S3-FlowChart](../.gitbook/assets/ecstore-queryexecutionwith-s3-flowchart.png)
+![ECStore-QueryExecutionwith-S3-FlowChart](../../.gitbook/assets/ecstore-queryexecutionwith-s3-flowchart.png)
 
 MariaDB Enterprise ColumnStore uses distributed query execution and massively parallel processing (MPP) techniques to achieve vertical and horizontal scalability for production analytics and data warehousing.
 
@@ -212,7 +212,7 @@ For additional information, see "[MariaDB Enterprise ColumnStore Query Evaluatio
 
 ### Extent Elimination
 
-![ECStore-QueryExecutionExtentElimination](../.gitbook/assets/ecstore-queryexecutionextentelimination.png)
+![ECStore-QueryExecutionExtentElimination](../../.gitbook/assets/ecstore-queryexecutionextentelimination.png)
 
 MariaDB Enterprise ColumnStore uses extent elimination to scale query evaluation as the table size increases.
 
@@ -340,7 +340,7 @@ The CMAPI server has a role in automatic failover. After MaxScale performs autom
 
 ## Data Loading
 
-![ECStoreDataLoadingS3FlowChart](../.gitbook/assets/ecstoredataloadings3flowchart.png)
+![ECStoreDataLoadingS3FlowChart](../../.gitbook/assets/ecstoredataloadings3flowchart.png)
 
 MariaDB Enterprise ColumnStore performs bulk data loads very efficiently using a variety of mechanisms including the cpimport tool, specialized handling of certain SQL statements, and minimal locking during data import.
 
@@ -388,7 +388,7 @@ When a bulk data load is running:
 
 ## Backup and Restore
 
-![EntColStoreBackupS3FlowChart](../.gitbook/assets/entcolstorebackups3flowchart.png)
+![EntColStoreBackupS3FlowChart](../../.gitbook/assets/entcolstorebackups3flowchart.png)
 
 MariaDB Enterprise ColumnStore supports backup and restore using well-known tools and methods.
 

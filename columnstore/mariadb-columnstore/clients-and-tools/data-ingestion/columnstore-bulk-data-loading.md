@@ -91,7 +91,7 @@ Options:
 
 In this mode, you run the cpimport from your primary node (`mcs1`). The source file is located at this primary location and the data from cpimport is distributed across all the nodes. If no mode is specified, then this is the default.
 
-![cpimport-mode1](../../.gitbook/assets/cpimport-mode1.png)
+![cpimport-mode1](../../../.gitbook/assets/cpimport-mode1.png)
 
 Example:
 
@@ -103,7 +103,7 @@ cpimport -m1 mytest mytable mytable.tbl
 
 In this mode, you run the cpimport from your primary node (mcs1). The source data is in already partitioned data files residing on the PMs. Each PM should have the source data file of the same name but containing the partitioned data for the PM
 
-![cpimport-mode2](../../.gitbook/assets/cpimport-mode2.png)
+![cpimport-mode2](../../../.gitbook/assets/cpimport-mode2.png)
 
 Example:
 
@@ -115,7 +115,7 @@ cpimport -m2 mytest mytable -l /home/mydata/mytable.tbl
 
 In this mode, you run cpimport from the individual nodes independently, which will import the source file that exists on that node. Concurrent imports can be executed on every node for the same table.
 
-![cpimport-mode3](../../.gitbook/assets/cpimport-mode3.png)
+![cpimport-mode3](../../../.gitbook/assets/cpimport-mode3.png)
 
 Example:
 
