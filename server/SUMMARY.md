@@ -2200,6 +2200,8 @@
     * [Other Plugins](reference/plugins/other-plugins/README.md)
       * [Disks Plugin](reference/plugins/other-plugins/disks-plugin.md)
       * [Feedback Plugin](reference/plugins/other-plugins/feedback-plugin.md)
+      * [inet4](reference/plugins/other-plugins/inet4.md)
+      * [wsrep\_provider](reference/plugins/other-plugins/wsrep_provider.md)
       * [METADATA\_LOCK\_INFO Plugin](reference/plugins/other-plugins/metadata-lock-info-plugin.md)
       * [MYSQL\_JSON](reference/plugins/other-plugins/mysql_json.md)
       * [mhnsw](reference/plugins/other-plugins/mhnsw.md)
