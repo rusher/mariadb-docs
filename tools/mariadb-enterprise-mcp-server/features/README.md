@@ -32,7 +32,6 @@ The server’s integrated vector functionality enables semantic search and other
 The server exposes powerful orchestration endpoints that allow an AI agent to execute an entire RAG pipeline through a single, secure interface.
 
 * **Ingestion (`/orchestrate/ingestion`)**: Triggers the ingestion of documents into a specified vector store, including the chunking and embedding processes.
-* **Hybrid Search (`/hybrid_search`)**: Executes a search that combines semantic (vector) search with traditional keyword search to retrieve the most relevant document chunks.
 * **Generation (`/orchestrate/generation`)**: Executes a query against a set of documents, performing retrieval and generating a final, context-aware response from an LLM.
 
 ---
@@ -52,5 +51,4 @@ The server exposes powerful orchestration endpoints that allow an AI agent to ex
 | `insert_docs_vector_store` | Inserts documents and metadata into a vector store. | Vector & AI Functionality |
 | `search_vector_store`| Performs a semantic similarity search on a vector store. | Vector & AI Functionality |
 | `rag_ingestion` | Triggers the full document ingestion pipeline. | Workflow Orchestration |
-| `rag_hybrid_search` | Executes a combined semantic and keyword search. | Workflow Orchestration |
 | `rag_generation`| Synthesizes retrieved information with the user's query to generate a final, context-aware response. | Workflow Orchestration |
