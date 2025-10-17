@@ -54,7 +54,7 @@ Query Accelerator has the same limitations as ColumnStore in general, in that it
 * syntax or functions that Columnstore does not support;
 * data types ColumnStore does not support (unsupported data types are silently converted to strings, which in turn means that functions relying on the data type might not work either).
 
-## How to Enable Query Accelerator
+## Enabling Query Accelerator
 
 {% stepper %}
 {% step %}
@@ -105,23 +105,29 @@ To use Query Accelerator just for one query, you have to run those `SET` stateme
 {% endstep %}
 {% endstepper %}
 
-## Enable ColumnStore Processing for InnoDB Tables
+## Enabling Processing for InnoDB Tables
 
-There must be Engine Independent statistics for InnoDB table index column to be used for Query Accelerator.
+There must be engine-independent statistics for an InnoDB table index column so that it can be used for Query Accelerator.
 
 ```sql
-analyze table <table_name> persistent for columns (<column_name>) indexes();
+ANALYZE TABLE table_name PERSISTENT FOR COLUMNS (column_name) indexes();
 ```
 
 ## Control Client Session Variables and Parameters
 
-* `columnstore_unstable_optimizer`: enables unstable optimizer that is required for Query Accelerator RBO rule
-* `columnstore_select_handler`: enables/disables ColumnStore processing for InnoDB tables
-* `columnstore_query_accel_parallel_factor`: controls the number of parallel ranges to be used for Query Accelerator
+* `columnstore_unstable_optimizer`\
+  \
+  enables unstable optimizer that is required for Query Accelerator RBO[^1] rule.
+* `columnstore_select_handler` \
+  enables/disables ColumnStore processing for InnoDB tables.
+* `columnstore_query_accel_parallel_factor`\
+  controls the number of parallel ranges to be used for Query Accelerator.
 
-Watch out `max_connections`. If you set `columnstore_query_accel_parallel_factor` to a high value, you may need to increase `max_connections` to avoid connection pool exhaustion.
+{% hint style="warning" %}
+Watch out for `max_connections`. If you set `columnstore_query_accel_parallel_factor` to a high value, you may need to increase `max_connections` to avoid connection pool exhaustion.
+{% endhint %}
 
-## How to Verify Query Accelerator is Being Used
+## Verifying That Query Accelerator is Being Used
 
 There are two ways to verify Query Accelerator is being used:
 
