@@ -23,6 +23,8 @@ The Query Editor Workspace is organized around a flexible, multi-tabbed interfac
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
+### SQL Code Management Features
+
 These features are designed to make writing and managing SQL code efficient and intuitive.
 
 * **SQL Editor**: Write, run, and debug SQL statements. The editor supports executing queries in parallel across multiple **Query Tabs**, allowing you to work on different tasks or connect to different servers simultaneously within isolated sessions.
@@ -34,7 +36,7 @@ These features are designed to make writing and managing SQL code efficient and 
 * **Multiple Connections**: Define and manage connections to various database servers (e.g., development, testing, production). Each connection opens in its own top-level **Worksheet tab**, within which you can open multiple **Query Tabs**.
 * **Open/Edit/Save SQL Files**: Load existing SQL scripts from your local machine into the editor, make changes, and save them back without leaving the workspace.
 
-#### Data Management and Analysis Features
+### Data Management and Analysis Features
 
 These features help you interact with and understand the results of your queries.
 
