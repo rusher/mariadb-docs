@@ -12,7 +12,7 @@ See [What's New in MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/aEn
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup before upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md). For more information about backing up and restoring the database, please see the [Recovery Guide](broken-reference).
+The instructions below show how to perform a backup using [MariaDB Backup](../../../../../server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../upgrading/upgrades/broken-reference/).
 
 1\. Take a full backup. On MariaDB Enterprise Server 11.4 and later:
 
@@ -38,7 +38,7 @@ Confirm successful completion of the prepare operation.
 
 ## Audit Plugin Considerations <a href="#audit-plugin-considerations" id="audit-plugin-considerations"></a>
 
-If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin/) installed and are upgrading from MariaDB Enterprise Server 10.2 or 10.3, the audit plugin should be removed prior to the upgrade to prevent conflicts with the MariaDB Enterprise Audit Plugin, which [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit.md) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
+If you have the [MariaDB Audit Plugin](../../../../../reference/plugins/mariadb-audit-plugin/) installed and are upgrading from MariaDB Enterprise Server 10.2 or 10.3, the audit plugin should be removed prior to the upgrade to prevent conflicts with the MariaDB Enterprise Audit Plugin, which [MariaDB Enterprise Audit Plugin](../../../../../reference/plugins/mariadb-enterprise-audit.md) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
 
 ```sql
 UNINSTALL SONAME 'server_audit';
@@ -54,19 +54,19 @@ When upgrading to a new major release of MariaDB Enterprise Server, it is necess
 
 Before the old version can be uninstalled, we first need to stop the current MariaDB Server process.
 
-1\. Set the [innodb\_fast\_shutdown](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to 1:
+1\. Set the [innodb\_fast\_shutdown](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to 1:
 
 ```sql
 SET GLOBAL innodb_fast_shutdown = 1;
 ```
 
-2\. Use [XA RECOVER](../../../../reference/sql-statements/transactions/xa-transactions.md#xa-recover) to confirm that there are no external [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions.md) in a prepared state:
+2\. Use [XA RECOVER](../../../../../reference/sql-statements/transactions/xa-transactions.md#xa-recover) to confirm that there are no external [XA transactions](../../../../../reference/sql-statements/transactions/xa-transactions.md) in a prepared state:
 
 ```sql
 XA RECOVER;
 ```
 
-Commit or roll back any open [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions.md) before stopping the node for upgrade.
+Commit or roll back any open [XA transactions](../../../../../reference/sql-statements/transactions/xa-transactions.md) before stopping the node for upgrade.
 
 3\. Stop the server process: For distributions that use `systemd` (most supported OSes), you can manage the server process using the `systemctl` command:
 
@@ -164,7 +164,7 @@ echo "${checksum}  mariadb_es_repo_setup" \
     | sha256sum -c -
 ```
 
-{% include "../../../../.gitbook/includes/checksums-mariadb_es_repo_setup.md" %}
+{% include "../../../../../.gitbook/includes/checksums-mariadb_es_repo_setup.md" %}
 
 ```bash
 chmod +x mariadb_es_repo_setup
@@ -204,7 +204,7 @@ echo "${checksum}  mariadb_es_repo_setup" \
     | sha256sum -c -
 ```
 
-{% include "../../../../.gitbook/includes/checksums-mariadb_es_repo_setup.md" %}
+{% include "../../../../../.gitbook/includes/checksums-mariadb_es_repo_setup.md" %}
 
 ```bash
 chmod +x mariadb_es_repo_setup
@@ -247,7 +247,7 @@ echo "${checksum}  mariadb_es_repo_setup" \
     | sha256sum -c -
 ```
 
-{% include "../../../../.gitbook/includes/checksums-mariadb_es_repo_setup.md" %}
+{% include "../../../../../.gitbook/includes/checksums-mariadb_es_repo_setup.md" %}
 
 ```bash
 chmod +x mariadb_es_repo_setup
@@ -336,7 +336,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-2\. You can also verify the server version by checking the value of the [version](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version) system variable with the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement:
+2\. You can also verify the server version by checking the value of the [version](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version) system variable with the [SHOW GLOBAL STATUS](../../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement:
 
 ```sql
 SHOW GLOBAL VARIABLES LIKE 'version';
@@ -350,7 +350,7 @@ SHOW GLOBAL VARIABLES LIKE 'version';
 +---------------+-----------------------------+
 ```
 
-3\. You can also verify the server version by calling the [VERSION()](../../../../reference/sql-functions/secondary-functions/information-functions/version.md) function:
+3\. You can also verify the server version by calling the [VERSION()](../../../../../reference/sql-functions/secondary-functions/information-functions/version.md) function:
 
 ```sql
 SELECT VERSION();
@@ -364,6 +364,6 @@ SELECT VERSION();
 +-----------------------------+
 ```
 
-{% include "../../../../.gitbook/includes/license-copyright-mariadb.md" %}
+{% include "../../../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}

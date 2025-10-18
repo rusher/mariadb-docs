@@ -45,9 +45,9 @@ MariaDB Corporation provides multiple interfaces to download package tarballs.
 {% endtab %}
 
 {% tab title="Command line or automation" %}
-Package tarballs can be downloaded using command-line tools or automation from the MariaDB Download interface with the [Customer Download Token](../../deployment-general-installing-and-upgrading-instructions/token.md).
+Package tarballs can be downloaded using command-line tools or automation from the MariaDB Download interface with the [Customer Download Token](../../installing-enterprise-server/token.md).
 
-For additional information, see ["Download Binary Files"](../../deployment-general-installing-and-upgrading-instructions/token.md#download-binary-files).
+For additional information, see ["Download Binary Files"](../../installing-enterprise-server/token.md#download-binary-files).
 {% endtab %}
 {% endtabs %}
 

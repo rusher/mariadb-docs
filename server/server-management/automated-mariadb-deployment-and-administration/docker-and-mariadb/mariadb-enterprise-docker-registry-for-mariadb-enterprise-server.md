@@ -355,7 +355,7 @@ docker login docker.mariadb.com
 When prompted, enter the login details:
 
 * As the user name, enter the email address associated with your [MariaDB ID](https://id.mariadb.com/).
-* As the password, enter your [Customer Download Token](../../install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions/token.md).
+* As the password, enter your [Customer Download Token](../../install-and-upgrade-mariadb/installing-enterprise-server/token.md).
 
 The login details will be saved.
 

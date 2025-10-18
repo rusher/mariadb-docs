@@ -15,7 +15,7 @@ MariaDB Corporation's Customer Download Tokens are customer-specific. Protect th
 To retrieve the Customer Download Token for your account:
 
 1. Navigate to the [Customer Download Token at the MariaDB Customer Portal](https://customers.mariadb.com/downloads/token/?_ga=2.92018202.1431602578.1740983101-1710706710.1737441288).
-2. Log in using your [MariaDB ID](mariadb-id-sign-up.md).
+2. Log in using your [MariaDB ID](../installing-mariadb/mariadb-id-sign-up.md).
 3. Copy the Customer Download Token.
 
 ## Use the Customer Download Token
