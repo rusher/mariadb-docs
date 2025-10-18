@@ -1,27 +1,27 @@
 # Query Editor
 
-The Query Editor is a powerful, integrated environment for database developers and administrators. It provides a comprehensive set of tools for writing and debugging SQL, managing schema objects, and analyzing query results, all from a single interface.
+The Query Editor is a powerful, integrated environment for database developers and administrators. It provides a comprehensive set of tools for writing and debugging SQL and analyzing query results, all from a single interface.
 
 This procedure outlines the steps required to access and utilize the Query Editor within the Workspace section of Enterprise Manager UI.&#x20;
 
 1.  From the main Workspace screen, click the "Run Queries" card.\
 
 
-    <figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 2.  In the "Connect to..." dialog, select your target server, enter your credentials, and click Connect.\
 
 
-    <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 3.  Upon successful connection, the main [Query Editor worksheet](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/using-maxgui#query-editor-worksheet) will appear, ready for you to begin.\
 
 
-    <figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Query Editor Worksheet
 
 The Query Editor Workspace is organized around a flexible, multi-tabbed interface designed for parallel work. At the top level, **Worksheet tabs** represent your connections to different database servers. Within each worksheet, you can open multiple **Query Tabs**, allowing you to write and execute several independent SQL statements without losing your context.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SQL Code Management Features
 
@@ -63,7 +63,7 @@ Load existing SQL scripts from your local machine into the editor, make changes,
 
 These features help you interact with and understand the results of your queries.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **Export Result Sets**
 
@@ -73,13 +73,13 @@ Easily share or archive query results. You can export data grids directly into c
 {% step %}
 ### From results tab, click Export Results
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
 ### From Export results window, make the selection.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Setting                  | Description                                                                                                              |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
