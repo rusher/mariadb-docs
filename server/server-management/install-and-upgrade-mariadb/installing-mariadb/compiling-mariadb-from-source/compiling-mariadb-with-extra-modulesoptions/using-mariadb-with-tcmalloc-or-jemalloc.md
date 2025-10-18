@@ -93,7 +93,7 @@ systemctl restart mariadb
 
 #### Dockerfile
 
-If you run [MariaDB on Docker](../../binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/) and use an image from a Dockerfile that is publicly available, most probably you have an entrypoint that is a Bash script, which starts `mariadbd` directly. You can edit this Bash script as explained above. Or you can set the `LD_PRELOAD` variable from the Dockerfile:
+If you run [MariaDB on Docker](../../../../automated-mariadb-deployment-and-administration/docker-and-mariadb/) and use an image from a Dockerfile that is publicly available, most probably you have an entrypoint that is a Bash script, which starts `mariadbd` directly. You can edit this Bash script as explained above. Or you can set the `LD_PRELOAD` variable from the Dockerfile:
 
 ```bash
 ENV LD_PRELOAD=<path-to-library>
@@ -116,7 +116,7 @@ docker run -P -d --name mariadb --env LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libj
 
 #### Vagrantfile
 
-Usually [Vagrant](../../binary-packages/automated-mariadb-deployment-and-administration/vagrant-and-mariadb/) is used to start a complete system in a virtual machine. If this is your case, you can use one of the methods above, for example you can modify your Vagrantfile to copy a modified version of the `mariadb.service` file into the guest system to configure systemd.
+Usually [Vagrant](../../../../automated-mariadb-deployment-and-administration/vagrant-and-mariadb/) is used to start a complete system in a virtual machine. If this is your case, you can use one of the methods above, for example you can modify your Vagrantfile to copy a modified version of the `mariadb.service` file into the guest system to configure systemd.
 
 If you use Vagrant with the Docker provider, you can follow the instructions above to modify the Dockerfile.
 

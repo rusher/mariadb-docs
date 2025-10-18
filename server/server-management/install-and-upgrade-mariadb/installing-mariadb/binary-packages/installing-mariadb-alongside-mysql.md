@@ -4,10 +4,8 @@ MariaDB was originally designed as a drop-in replacement of MySQL, with more fea
 
 Here are the steps to install MariaDB near an existing MySQL installation.
 
-* Download the compiled binary tar.gz that contains the latest version\
-  ([mariadb-5.5.24-linux-x86\_64.tar.gz](https://downloads.mariadb.org/mariadb/5.5.24/#bits=64\&file_type=tar_gz)
-* as of writing this article) and extract the files in a directory of your\
-  choice. I will assume for this article that the directory was /opt.
+* Download the compiled binary tar.gz file that contains the latest version.
+* Extract the files in a directory of your choice. In the following, we assume you chose the `/opt` directory.
 
 ```ini
 [root@mariadb-near-mysql ~]# cat /etc/issue
@@ -89,9 +87,7 @@ user            = mariadb
 + lock_file_path="$lockdir/mariadb"
 ```
 
-The trickiest part will be the last changes to this file. You need to tell\
-mariadb to use only one cnf file. In the **start** section afte&#x72;**$bindir/mysqld\_safe** add **--defaults-file=/opt/mariadb-data/my.cnf**.\
-Finally the lines should look like:
+The trickiest part will be the last changes to this file. You need to tell mariadb to use only one configuration file. In the **start** section afte&#x72;**$bindir/mysqld\_safe** add **--defaults-file=/opt/mariadb-data/my.cnf**. Finally the lines should look like:
 
 ```bash
 # Give extra arguments to mysqld with the my.cnf file. This script
@@ -99,8 +95,7 @@ Finally the lines should look like:
 $bindir/mysqld_safe --defaults-file=/opt/mariadb-data/my.cnf --datadir="$datadir" --pid-file="$mysqld_pid_file_path" $other_args >/dev/null 2>&1 &
 ```
 
-The same change needs to be made to the [mariadb-admin](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command below in the wait\_for\_ready() function so that the mariadb start command can properly listen for the server start. In the **wait\_for\_ready()** function, after **$bindir/mariadb-admin** add **--defaults-file=/opt/mariadb-data/my.cnf**.\
-The lines should look like:
+The same change needs to be made to the [mariadb-admin](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command below in the wait\_for\_ready() function so that the mariadb start command can properly listen for the server start. In the **wait\_for\_ready()** function, after **$bindir/mariadb-admin** add **--defaults-file=/opt/mariadb-data/my.cnf**. The lines should look like:
 
 ```
 wait_for_ready () {
@@ -149,13 +144,13 @@ Starting MySQL...                                          [  OK  ]
 
 ## What about MariaDB Upgrades ?
 
-By having the **mariadb.socket**, **my.cnf** file and **databases** in **/opt/mariadb-data** if you want to upgrade the MariaDB version you will only need to:
+By having the **mariadb.socket**, **my.cnf** file and **databases** in **/opt/mariadb-data** means that if you want to upgrade the MariaDB version you will only need to:
 
-* extract the new version from the archive in /opt near the current version
-* stop MariaDB
-* change the symlink mariadb to point to the new directory
-* start MariaDB
-* run upgrade script... but remember you will need to provide the socket option --socket=/opt/mariadb-data/mariadb.sock
+* Extract the new version from the archive in `/opt` near the current version,
+* Stop MariaDB.
+* Change the symlink mariadb to point to the new directory.
+* Start MariaDB.
+* Run upgrade script... but remember you will need to provide the socket option --`socket=/opt/mariadb-data/mariadb.sock` .
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

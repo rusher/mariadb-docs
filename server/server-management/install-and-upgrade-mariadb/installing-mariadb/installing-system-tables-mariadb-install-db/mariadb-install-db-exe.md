@@ -4,16 +4,9 @@ The `mariadb-install-db.exe` utility is the Windows equivalent of [mariadb-insta
 
 ## Functionality
 
-The functionality of `mariadb-install-db.exe` is comparable with the shell\
-script `mariadb-install-db` used on Unix, however it has been extended with\
-both Windows specific functionality (creating a Windows service) and to\
-generally useful functionality. For example, it can set the 'root' user\
-password during database creation. It also creates the `my.ini` configuration\
-file in the data directory and adds most important parameters to it (e.g port).
+The functionality of `mariadb-install-db.exe` is comparable with the shell script `mariadb-install-db` used on Unix, however it has been extended with both Windows specific functionality (creating a Windows service) and to generally useful functionality. For example, it can set the 'root' user password during database creation. It also creates the `my.ini` configuration file in the data directory and adds most important parameters to it (e.g port).
 
-`mariadb-install-db.exe` is used by the MariaDB installer for Windows if the\
-"Database instance" feature is selected. It obsoletes similar utilities and\
-scripts that were used in the past such as `mysqld.exe` `--install`,`mysql_install_db.pl`, and `mysql_secure_installation.pl`.
+`mariadb-install-db.exe` is used by the MariaDB installer for Windows if the "Database instance" feature is selected. It obsoletes similar utilities and scripts that were used in the past such as `mysqld.exe` `--install`,`mysql_install_db.pl`, and `mysql_secure_installation.pl`.
 
 | Parameter(s)                       | Description                                           |
 | ---------------------------------- | ----------------------------------------------------- |

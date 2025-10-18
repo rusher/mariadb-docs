@@ -8,9 +8,9 @@ Alternatively, customers can download MariaDB database products using a web brow
 
 MariaDB Corporation customers can retrieve their Customer Download Token through the MariaDB Customer Portal.
 
-#### Note
-
+{% hint style="warning" %}
 MariaDB Corporation's Customer Download Tokens are customer-specific. Protect the token as you would any security credential.
+{% endhint %}
 
 To retrieve the Customer Download Token for your account:
 
@@ -87,13 +87,13 @@ or using `curl`:
 curl -LO https://dlm.mariadb.com/CUSTOMER_DOWNLOAD_TOKEN/FILE_ID/mariadb-enterprise-server/10.6.20-16/bintar-rhel-8-x86_64/mariadb-enterprise-10.6.20-16-rhel-8-x86_64.tar.gz
 ```
 
-### Log In to MariaDB Enterprise Docker Registry
+### Log in to MariaDB Enterprise Docker Registry
 
-Docker is an open platform for developing, shipping, and running applications that allows you to separate your applications from your infrastructure. MariaDB Corporation provides the [MariaDB Enterprise Docker Registry](../installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md).
+Docker is an open platform for developing, shipping, and running applications that allows you to separate your applications from your infrastructure. MariaDB Corporation provides the [MariaDB Enterprise Docker Registry](../../automated-mariadb-deployment-and-administration/docker-and-mariadb/mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md).
 
 The MariaDB Enterprise Docker Registry provides Docker images for MariaDB Enterprise Server. The Docker images for MariaDB Enterprise Server are currently beta maturity, so they are not currently recommended for production.
 
-For additional information, see "[Deploy MariaDB Enterprise Server with Docker](../installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker.md)".
+For additional information, see "[Deploy MariaDB Enterprise Server with Docker](../../automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker.md)".
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

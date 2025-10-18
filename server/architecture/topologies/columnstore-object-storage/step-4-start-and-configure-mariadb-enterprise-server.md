@@ -392,7 +392,7 @@ $ curl -k -s https://mcs1:8640/cmapi/0.4.0/cluster/status \
 
 Add the replica servers with CMAPI:
 
-1. For each replica server, use [CMAPI](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview#cluster-management-api-cmapi-server) to add the replica server to the cluster.\
+1. For each replica server, use [CMAPI](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-architectural-overview#cluster-management-api-cmapi-server) to add the replica server to the cluster.\
    The previously set API key needs to be provided as part of the X-API-key HTML header.
 
 For example, if the primary server's host name is mcs1 and the replica server's IP address is 192.0.2.2, use the following node command:

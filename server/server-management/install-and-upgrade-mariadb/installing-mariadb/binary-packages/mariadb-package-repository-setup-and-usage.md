@@ -2,22 +2,22 @@
 
 ## Overview
 
-If you are looking to set up MariaDB Server, it is often easiest to use a repository. The MariaDB Foundation has a repository configuration tool and MariaDB Corporation provides two convenient shell scripts to configure access to their MariaDB Package Repositories:
+If you are looking to set up MariaDB Server, it is often easiest to use a repository. MariaDB Foundation has a repository configuration tool and MariaDB Corporation provides two convenient shell scripts to configure access to their MariaDB Package Repositories:
 
 * `mariadb_es_repo_setup` for MariaDB Enterprise Server, which can be downloaded from:
   * [https://dlm.mariadb.com/enterprise-release-helpers/mariadb\_es\_repo\_setup](https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup)
 * `mariadb_repo_setup` for MariaDB Community Server, which can be downloaded from:
   * [https://r.mariadb.com/downloads/mariadb\_repo\_setup](https://r.mariadb.com/downloads/mariadb_repo_setup)
 
-## Using the MariaDB Foundation's repository configuration tool
+## Using MariaDB Foundation's Repository Configuration Tool
 
 Visit [https://mariadb.org/download/?t=repo-config](https://mariadb.org/download/?t=repo-config) and follow the instructions from there. It will ask for your Linux distribution, desired MariaDB version, and the mirror to use, and will show what files to edit and what commands to run to configure a repository.
 
-## Using the MariaDB Corporation's repository setup scripts
+## Using MariaDB Corporation's Repository Setup Scripts
 
 Alternatively, you can run a convenient shell script that will automatically configure a repository for you.
 
-### Download and Verify the script
+### Download and Verify the Script
 
 The repository setup script can be downloaded and verified in the following way:
 
@@ -82,7 +82,7 @@ sudo zypper install curl
 {% endtab %}
 {% endtabs %}
 
-### Run the script
+### Run the Script
 
 After the script is downloaded you need to run it with `root` user permissions. This is normally accomplished by using the `sudo` command:
 
@@ -329,7 +329,7 @@ On SUSE Linux Enterprise Server (SLES), the MariaDB Package Repository setup scr
 1. Creates a repository configuration file at `/etc/zypp/repos.d/mariadb.repo`.
 2. Imports the GPG public key used to verify the signature of MariaDB software packages with `rpm --import` from `downloads.mariadb.com`.
 
-## Installing Packages with the MariaDB Package Repository
+## Installing Packages With the MariaDB Package Repository
 
 After setting up the MariaDB Package Repository, you can install the software packages in the supported repositories.
 
