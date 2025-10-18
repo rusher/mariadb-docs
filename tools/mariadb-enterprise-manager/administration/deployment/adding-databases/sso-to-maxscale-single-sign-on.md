@@ -9,7 +9,7 @@ For topologies managed by MaxScale, you can seamlessly access the MaxScale GUI d
 1. Click the three-dot menu (⋮) next to a MaxScale node.
 2. Select "Manage MaxScale".
 
-<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}

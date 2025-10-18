@@ -6,7 +6,7 @@ This dashboard shows MaxScale’s health and load, how backend servers are seen 
 
 Provides a visual representation of the entire system's architecture and connectivity.
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Section                         | Description                                                                                                                    |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -22,7 +22,7 @@ Provides a visual representation of the entire system's architecture and connect
 
 **System Metrics** provide comprehensive insights into the performance and health of individual system resources.
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Metric              | Description                                                                                                                      |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,7 +34,7 @@ Provides a visual representation of the entire system's architecture and connect
 
 **Query Classifier Cache Metrics** help in analyzing and optimizing query routing efficiency by tracking cache hits/misses and monitoring cache size.
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Metric                   | Description                                                                                             |
 | ------------------------ | ------------------------------------------------------------------------------------------------------- |
@@ -48,7 +48,7 @@ Provides a visual representation of the entire system's architecture and connect
 
 Evaluate query routing efficiency by tracking and optimizing cache metrics like hits, misses, and cache size.
 
-<figure><img src="../../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Metric                   | Description                                                                                                 |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- |
