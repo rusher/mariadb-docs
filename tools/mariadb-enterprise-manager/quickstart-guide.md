@@ -83,10 +83,7 @@ Open in a browser:
 
 https://\<Enterprise\_Manager\_IP>:8090
 
-Default credentials:
-
-* Username: admin
-* Password: mariadb
+At the login screen, use the default username `admin` and the generated password displayed after the installation script finishes.
 {% endstep %}
 {% endstepper %}
 

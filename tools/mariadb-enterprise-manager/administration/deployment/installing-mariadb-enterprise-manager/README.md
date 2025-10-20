@@ -94,7 +94,7 @@ Access Enterprise Manager UI at:
 
 https://`<Enterprise_Manager_IP>`:8090
 
-At the login screen, use default username `admin` and password `mariadb`.
+At the login screen, use the default username `admin` and the generated password displayed after the installation script finishes.
 {% endstep %}
 {% endstepper %}
 
