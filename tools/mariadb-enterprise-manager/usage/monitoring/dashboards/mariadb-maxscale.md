@@ -8,15 +8,14 @@ Provides a visual representation of the entire system's architecture and connect
 
 <figure><img src="../../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-| Section                         | Description                                                                                                                    |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Project**                     | Displays the currently selected project label.                                                                                 |
-| **Name**                        | Shows the selected database/topology name.                                                                                     |
-| **Version**                     | Shows MaxScale version.                                                                                                        |
-| **Topology Info**               | Count of nodes grouped by type (e.g., server, MaxScale).                                                                       |
-| **Backend Server States**       | Timeline of each backend server’s role and health as seen by each MaxScale. Values are color-mapped to: Read, Write, Up, Down. |
-|                                 | Use this to spot failovers, read/write role flips, or outages over time.                                                       |
-| **Maxscale Uptime by Instance** | Uptime in seconds for each MaxScale instance.                                                                                  |
+| Section                         | Description                                                                                                                                                                                             |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Project**                     | Displays the currently selected project label.                                                                                                                                                          |
+| **Name**                        | Shows the selected database/topology name.                                                                                                                                                              |
+| **Version**                     | Shows MaxScale version.                                                                                                                                                                                 |
+| **Topology Info**               | Count of nodes grouped by type (e.g., server, MaxScale).                                                                                                                                                |
+| **Backend Server States**       | Timeline of each backend server’s role and health as seen by each MaxScale. Values are color-mapped to: Read, Write, Up, Down. Use this to spot failovers, read/write role flips, or outages over time. |
+| **Maxscale Uptime by Instance** | Uptime in seconds for each MaxScale instance.                                                                                                                                                           |
 
 ### System Metrics
 
