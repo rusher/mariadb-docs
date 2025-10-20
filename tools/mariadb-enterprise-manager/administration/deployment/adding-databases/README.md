@@ -1,5 +1,9 @@
 # Adding Databases
 
+{% hint style="warning" %}
+To install `mema-agent`, you need to setup [MariaDB Enterprise Repository - "MariaDB Tools"](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#repositories)
+{% endhint %}
+
 This guide outlines the two primary methods for registering and monitoring your database topologies in MariaDB Enterprise Manager: adding a standalone server directly or adding a full cluster via its MaxScale instance.
 
 ## Option 1: Adding a Server or Cluster (Without MaxScale)
@@ -111,19 +115,15 @@ Perform these actions on every server in the topology: the MaxScale instance(s) 
 
 * Install the Agent package on all servers.
 
-{% code title="RHEL / CentOS / Rocky" %}
 ```bash
 # For Red Hat/CentOS/Rocky
 sudo dnf install -y mema-agent
 ```
-{% endcode %}
 
-{% code title="Debian / Ubuntu" %}
 ```bash
 # For Debian/Ubuntu
 sudo apt install -y mema-agent
 ```
-{% endcode %}
 
 * Create a Local Agent user on each backend MariaDB Server:
 
