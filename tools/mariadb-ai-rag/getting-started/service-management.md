@@ -1,2 +1,22 @@
 # Service Management
 
+MariaDB Data Bridge runs as a web service using Uvicorn/FastAPI. You can manage the service using standard system commands.
+
+## Starting the Service
+
+```bash
+# Start the service using the executable directly
+./databridge
+```
+
+## Viewing Logs
+
+Logs are stored in the `logs` directory within the installation path:
+
+```bash
+# View API logs
+cat logs/api.log
+
+# View ingestion logs
+cat logs/ingestion.log
+```

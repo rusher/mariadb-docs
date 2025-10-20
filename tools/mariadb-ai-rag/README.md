@@ -22,6 +22,14 @@ MariaDB Data Bridge is an enterprise-grade Retrieval-Augmented Generation (RAG) 
 * [Access Control](access-control.md)
 * [Orchestration](orchestration.md)
 
+### Deployment
+
+* [Deployment Overview](deployment/overview.md)
+* [Ubuntu Deployment Guide](deployment/ubuntu-deployment.md)
+* [Docker Deployment Guide](deployment/docker-deployment.md)
+* [Technical Architecture](deployment/technical-architecture.md)
+* [Deployment Checklist](deployment/deployment-checklist.md)
+
 ### Performance and Troubleshooting
 
 * [Performance Tuning](performance-tuning.md)
