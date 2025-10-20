@@ -36,73 +36,69 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ## Document Management Endpoints
 
-### Upload Document
+### Upload Documents
 
 ```
 POST /documents/ingest
 ```
 
-**Purpose**: Uploads and processes a single document for ingestion into the system.
+**Purpose**: Uploads and processes one or more documents for ingestion into the system. Documents are processed asynchronously in the background.
 
-**Request**: `multipart/form-data` with file attachment
+**Request**: `multipart/form-data` with one or more file attachments
 
-**Response**:
-```json
-{
-  "id": 42,
-  "filename": "example.pdf",
-  "content_type": "application/pdf",
-  "size": 1048576,
-  "status": "processing",
-  "created_at": "2025-08-25T11:42:00.123456"
-}
-```
-
-**Usage Example**: Use this endpoint to upload individual documents. The document will be processed asynchronously, and its content will be extracted and prepared for chunking.
-
-```bash
-curl -X POST "http://localhost:8000/documents/ingest" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -F "file=@/path/to/document.pdf"
-```
-
-### Upload Multiple Documents
-
-```
-POST /documents/ingest-multiple
-```
-
-**Purpose**: Uploads and processes multiple documents in a single request.
-
-**Request**: `multipart/form-data` with multiple file attachments
+**Request Parameters**:
+- `files`: One or more files to upload (required)
 
 **Response**:
 ```json
 {
+  "message": "2 documents have been queued for ingestion.",
   "documents": [
     {
       "id": 42,
+      "source": "/uploaded_files/example1.pdf",
       "filename": "example1.pdf",
-      "status": "processing"
+      "status": "pending",
+      "content": null,
+      "error_message": null,
+      "created_at": "2025-10-20T12:00:00.123456",
+      "updated_at": null
     },
     {
       "id": 43,
+      "source": "/uploaded_files/example2.docx",
       "filename": "example2.docx",
-      "status": "processing"
+      "status": "pending",
+      "content": null,
+      "error_message": null,
+      "created_at": "2025-10-20T12:00:00.234567",
+      "updated_at": null
     }
-  ],
-  "total_count": 2
+  ]
 }
 ```
 
-**Usage Example**: Use this endpoint when you need to upload multiple documents at once. This is more efficient than making separate calls for each document.
+**Status Values**:
+- `pending`: Document is queued for processing
+- `completed`: Document has been successfully processed
+- `failed`: Document processing failed (check `error_message`)
+
+**Usage Example**: Upload one or more documents for ingestion.
 
 ```bash
-curl -X POST "http://localhost:8000/documents/ingest-multiple" \
+# Upload single document
+curl -X POST "http://localhost:8000/documents/ingest" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -F "files=@/path/to/document.pdf"
+
+# Upload multiple documents
+curl -X POST "http://localhost:8000/documents/ingest" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -F "files=@/path/to/document1.pdf" \
   -F "files=@/path/to/document2.docx"
 ```
+
+**Note**: The endpoint accepts both single and multiple files. Documents are processed asynchronously, so the initial status will be `pending`. Use the document ID to check processing status later.
 
 ### List Documents
 
@@ -213,128 +209,340 @@ curl -X DELETE "http://localhost:8000/documents" \
 
 ## Chunking Endpoints
 
-### Chunk Document
+### Chunk Documents (Batch)
 
 ```
-POST /chunks/document
+POST /chunk
 ```
 
-**Purpose**: Processes a document into chunks and creates vector embeddings for semantic search.
-
-**Request body**:
-```json
-{
-  "document_id": 42,
-  "chunk_size": 1000,
-  "chunk_overlap": 200,
-  "chunking_strategy": "recursive"
-}
-```
-
-**Response**:
-```json
-{
-  "document_id": 42,
-  "status": "processing",
-  "task_id": "abc123def456"
-}
-```
-
-**Usage Example**: Use this endpoint after document ingestion to prepare the document for semantic search. The chunking process divides the document into semantically meaningful segments and creates vector embeddings.
-
-```bash
-curl -X POST "http://localhost:8000/chunks/document" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"document_id": 42, "chunk_size": 1000, "chunk_overlap": 200, "chunking_strategy": "recursive"}'
-```
-
-### Chunk Multiple Documents
-
-```
-POST /chunks/batch
-```
-
-**Purpose**: Processes multiple documents into chunks in a single batch operation.
+**Purpose**: Processes multiple documents into chunks and creates vector embeddings for semantic search. Documents are processed asynchronously in the background.
 
 **Request body**:
 ```json
 {
   "document_ids": [42, 43, 44],
-  "chunk_size": 1000,
-  "chunk_overlap": 200,
-  "chunking_strategy": "recursive"
+  "chunking_method": "recursive",
+  "chunk_size": 512,
+  "chunk_overlap": 128,
+  "threshold": 0.8
+}
+```
+
+**Chunking Methods**:
+- `recursive`: Recursive text splitting (default)
+- `sentence`: Sentence-based chunking
+- `token`: Token-based chunking
+- `semantic`: Semantic similarity-based chunking (requires `threshold`)
+
+**Response**:
+```json
+{
+  "message": "Chunking task scheduled for 3 documents",
+  "queued_documents": [42, 43, 44],
+  "status": "success"
+}
+```
+
+**Usage Example**: Use this endpoint after document ingestion to prepare documents for semantic search. The chunking process divides documents into semantically meaningful segments and creates vector embeddings.
+
+```bash
+curl -X POST "http://localhost:8000/chunk" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "document_ids": [42, 43],
+    "chunking_method": "semantic",
+    "chunk_size": 512,
+    "chunk_overlap": 128,
+    "threshold": 0.8
+  }'
+```
+
+**Note**: For semantic chunking, the `threshold` parameter controls how similar adjacent chunks should be before they are merged.
+
+### Chunk All Documents
+
+```
+POST /chunk/all
+```
+
+**Purpose**: Processes all documents in the system into chunks. Useful for batch processing or reprocessing all documents with new chunking parameters.
+
+**Request body**:
+```json
+{
+  "chunking_method": "recursive",
+  "chunk_size": 512,
+  "chunk_overlap": 128,
+  "threshold": 0.8
 }
 ```
 
 **Response**:
 ```json
 {
-  "batch_id": "batch_xyz789",
-  "document_count": 3,
-  "status": "processing"
+  "message": "Chunking task scheduled for all documents",
+  "queued_documents": [42, 43, 44, 45, 46],
+  "status": "success"
 }
 ```
 
-**Usage Example**: Use this endpoint to process multiple documents at once, which is more efficient than individual chunking requests.
+**Usage Example**: Use this endpoint to reprocess all documents with new chunking settings.
 
 ```bash
-curl -X POST "http://localhost:8000/chunks/batch" \
+curl -X POST "http://localhost:8000/chunk/all" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"document_ids": [42, 43, 44], "chunk_size": 1000, "chunk_overlap": 200, "chunking_strategy": "recursive"}'
+  -d '{
+    "chunking_method": "recursive",
+    "chunk_size": 512,
+    "chunk_overlap": 128
+  }'
 ```
 
-## Retrieval and Generation Endpoints
+### Filter/Retrieve Chunks
 
-### Retrieve Documents
+```
+POST /chunks/filter
+```
+
+**Purpose**: Retrieves chunks for specific documents. Use this to check if chunking has completed or to retrieve chunk data.
+
+**Request body**:
+```json
+{
+  "document_ids": [42, 43]
+}
+```
+
+**Response**: Array of chunk objects
+```json
+[
+  {
+    "id": "uuid-string",
+    "document_id": 42,
+    "chunk_text": "This is the content of the first chunk...",
+    "chunk_index": 0,
+    "embedding": [0.123, 0.456, ...],
+    "metadata": {}
+  },
+  {
+    "id": "uuid-string-2",
+    "document_id": 42,
+    "chunk_text": "This is the content of the second chunk...",
+    "chunk_index": 1,
+    "embedding": [0.789, 0.012, ...],
+    "metadata": {}
+  }
+]
+```
+
+**Usage Example**: Check if documents have been chunked and retrieve their chunks.
+
+```bash
+curl -X POST "http://localhost:8000/chunks/filter" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"document_ids": [42, 43]}'
+```
+
+## Retrieval and Search Endpoints
+
+### Semantic Retrieval
 
 ```
 POST /retrieve
 ```
 
-**Purpose**: Performs semantic search to retrieve relevant document chunks based on a query.
+**Purpose**: Performs semantic search to retrieve relevant document chunks based on a query using vector similarity.
 
 **Request body**:
 ```json
 {
   "query": "What is MariaDB Data Bridge?",
-  "top_k": 5,
-  "filter": {
-    "document_ids": [42, 43]
-  }
+  "top_k": 20,
+  "document_ids": [42, 43]
 }
 ```
 
-**Response**:
+**Request Parameters**:
+- `query` (required): The search query
+- `top_k` (optional): Number of results to return (default: 20)
+- `document_ids` (optional): Filter results to specific document IDs (default: all documents)
+
+**Response**: Array of retrieval results
 ```json
-{
-  "results": [
-    {
-      "chunk_id": 101,
-      "document_id": 42,
-      "document_name": "product_overview.pdf",
-      "content": "MariaDB Data Bridge is an enterprise-grade RAG solution...",
-      "similarity_score": 0.92,
-      "metadata": {
-        "page": 1,
-        "section": "Introduction"
-      }
-    },
-    {...}
-  ],
-  "total_chunks_searched": 150,
-  "query_time_ms": 45
-}
+[
+  {
+    "id": "uuid-chunk-id",
+    "document_id": 42,
+    "content": "MariaDB Data Bridge is an enterprise-grade RAG solution...",
+    "metadata": {},
+    "distance": 0.15
+  },
+  {
+    "id": "uuid-chunk-id-2",
+    "document_id": 43,
+    "content": "Key features include document processing and semantic search...",
+    "metadata": {},
+    "distance": 0.23
+  }
+]
 ```
 
-**Usage Example**: Use this endpoint to find relevant information across your document collection. The system will convert your query into a vector embedding and find the most semantically similar chunks.
+**Response Fields**:
+- `id`: Unique chunk identifier
+- `document_id`: ID of the source document
+- `content`: The chunk text content
+- `metadata`: Additional metadata about the chunk
+- `distance`: Vector distance (lower = more similar)
+
+**Usage Example**: Use this endpoint to find semantically relevant information. The system converts your query into a vector embedding and finds the most similar chunks.
 
 ```bash
 curl -X POST "http://localhost:8000/retrieve" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"query": "What is MariaDB Data Bridge?", "top_k": 5}'
+  -d '{
+    "query": "What is MariaDB Data Bridge?",
+    "top_k": 5,
+    "document_ids": [42, 43]
+  }'
+```
+
+### Full-Text Search
+
+```
+POST /search
+```
+
+**Purpose**: Performs full-text search using MariaDB's FULLTEXT index to find relevant document chunks.
+
+**Request body**:
+```json
+{
+  "query": "MariaDB features",
+  "top_k": 10,
+  "document_ids": [42, 43]
+}
+```
+
+**Request Parameters**:
+- `query` (required): The search query
+- `top_k` (optional): Number of results to return (default: 10)
+- `document_ids` (optional): Filter results to specific document IDs
+
+**Response**: Array of search results
+```json
+[
+  {
+    "id": "uuid-chunk-id",
+    "document_id": 42,
+    "source": "/uploaded_files/product_overview.pdf",
+    "content": "MariaDB features include vector search, full-text indexing...",
+    "score": 15.5
+  },
+  {
+    "id": "uuid-chunk-id-2",
+    "document_id": 43,
+    "source": "/uploaded_files/technical_docs.pdf",
+    "content": "Additional MariaDB capabilities for enterprise applications...",
+    "score": 12.3
+  }
+]
+```
+
+**Response Fields**:
+- `id`: Unique chunk identifier
+- `document_id`: ID of the source document
+- `source`: File path of the source document
+- `content`: The chunk text content
+- `score`: Relevance score (higher = more relevant)
+
+**Usage Example**: Use this endpoint for keyword-based search when you need exact term matching.
+
+```bash
+curl -X POST "http://localhost:8000/search" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "MariaDB features",
+    "top_k": 10
+  }'
+```
+
+### Hybrid Search
+
+```
+POST /hybrid_search
+```
+
+**Purpose**: Combines semantic search (vector similarity) and full-text search using Reciprocal Rank Fusion (RRF) for optimal results.
+
+**Request body**:
+```json
+{
+  "query": "MariaDB vector capabilities",
+  "top_k": 20,
+  "k": 60,
+  "provider": "openai",
+  "model": "text-embedding-3-small",
+  "document_ids": [42, 43]
+}
+```
+
+**Request Parameters**:
+- `query` (required): The search query
+- `top_k` (optional): Number of results to return (default: 20)
+- `k` (optional): RRF parameter for rank fusion (default: 60)
+- `provider` (optional): Embedding provider for semantic search
+- `model` (optional): Embedding model for semantic search
+- `document_ids` (optional): Filter results to specific document IDs
+
+**Response**: Array of hybrid search results
+```json
+[
+  {
+    "id": "uuid-chunk-id",
+    "document_id": 42,
+    "source": "/uploaded_files/product_overview.pdf",
+    "content": "MariaDB vector capabilities enable semantic search...",
+    "metadata": {},
+    "distance": 0.18,
+    "score": 14.2
+  },
+  {
+    "id": "uuid-chunk-id-2",
+    "document_id": 43,
+    "source": "/uploaded_files/technical_docs.pdf",
+    "content": "Vector indexing in MariaDB provides fast similarity search...",
+    "metadata": {},
+    "distance": 0.25,
+    "score": 11.8
+  }
+]
+```
+
+**Response Fields**:
+- `id`: Unique chunk identifier
+- `document_id`: ID of the source document
+- `source`: File path of the source document
+- `content`: The chunk text content
+- `metadata`: Additional metadata about the chunk
+- `distance`: Vector distance from semantic search (lower = more similar)
+- `score`: Full-text relevance score (higher = more relevant)
+
+**Usage Example**: Use this endpoint for the best of both worlds - combining semantic understanding with keyword matching.
+
+```bash
+curl -X POST "http://localhost:8000/hybrid_search" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "MariaDB vector capabilities",
+    "top_k": 10,
+    "k": 60
+  }'
 ```
 
 ### Generate Text
@@ -355,47 +563,107 @@ POST /generate
   ],
   "llm_provider": "openai",
   "llm_model": "gpt-4",
-  "temperature": 0.25,
+  "temperature": 0.7,
+  "top_p": 0.9,
   "max_tokens": 1000
 }
 ```
 
+**Request Parameters**:
+- `query` (required): The user's question or prompt
+- `chunks` (required): Array of context chunks to use for generation
+- `llm_provider` (optional): LLM provider - `openai`, `anthropic`, `gemini`, `cohere`, `ollama`, `azure`, `bedrock`
+- `llm_model` (optional): Specific model to use (e.g., `gpt-4`, `claude-3-opus`)
+- `temperature` (optional): Controls randomness (0.0-2.0, default: 0.7)
+- `top_p` (optional): Nucleus sampling parameter (0.0-1.0, default: 0.9)
+- `max_tokens` (optional): Maximum tokens to generate (1-8192, default: 1000)
+
 **Response**:
 ```json
 {
-  "response": "MariaDB Data Bridge is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that seamlessly integrates with MariaDB. Its key features include...",
-  "model_used": "openai/gpt-4",
-  "tokens_used": 245,
-  "generation_time_ms": 1250
+  "response": "MariaDB Data Bridge is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that seamlessly integrates with MariaDB. Its key features include..."
 }
 ```
 
-**Usage Example**: Use this endpoint after retrieving relevant chunks to generate a coherent response based on the information in those chunks. This combines the retrieval and generation steps of the RAG process.
+**Usage Example**: Use this endpoint after retrieving relevant chunks to generate a coherent response based on the information in those chunks.
 
 ```bash
 curl -X POST "http://localhost:8000/generate" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"query": "Explain MariaDB Data Bridge features", "chunks": ["chunk1", "chunk2"], "llm_provider": "openai", "llm_model": "gpt-4"}'
+  -d '{
+    "query": "Explain MariaDB Data Bridge features",
+    "chunks": ["chunk1", "chunk2"],
+    "llm_provider": "openai",
+    "llm_model": "gpt-4",
+    "temperature": 0.7
+  }'
+```
+
+### Asynchronous Generation
+
+```
+POST /generate-async
+```
+
+**Purpose**: Generates a response asynchronously, useful for long-running generation tasks.
+
+**Request body**: Same as `/generate`
+
+**Response**: Same as `/generate`
+
+**Usage Example**: Use this endpoint for generation tasks that may take longer to complete.
+
+```bash
+curl -X POST "http://localhost:8000/generate-async" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "Provide a detailed analysis",
+    "chunks": ["chunk1", "chunk2"],
+    "llm_provider": "openai",
+    "llm_model": "gpt-4"
+  }'
 ```
 
 ### Streaming Generation
 
 ```
-POST /generate/stream
+POST /generate-stream
 ```
 
-**Purpose**: Generates a response to a query with streaming output, allowing for real-time display of results.
+**Purpose**: Generates a response with streaming output (Server-Sent Events), allowing for real-time display of results as tokens are generated.
 
 **Request body**: Same as `/generate`
 
-**Response**: Server-Sent Events (SSE) stream with incremental text generation
+**Response**: Server-Sent Events (SSE) stream with the following event types:
+
+```json
+// Start event
+{"type": "start", "provider": "openai", "model": "gpt-4"}
+
+// Token events (streamed as generated)
+{"type": "token", "content": "MariaDB", "chunk_index": 1}
+{"type": "token", "content": " Data", "chunk_index": 2}
+{"type": "token", "content": " Bridge", "chunk_index": 3}
+
+// Completion event
+{"type": "complete", "duration": 2.5, "chunks_streamed": 150}
+
+// Error event (if error occurs)
+{"type": "error", "message": "Error description"}
+```
 
 **Usage Example**: Use this endpoint for a better user experience when generating longer responses, as it allows displaying partial results as they become available.
 
 ```bash
-curl -X POST "http://localhost:8000/generate/stream" \
+curl -X POST "http://localhost:8000/generate-stream" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"query": "Explain MariaDB Data Bridge features", "chunks": ["chunk1", "chunk2"], "llm_provider": "openai", "llm_model": "gpt-4"}'
+  -d '{
+    "query": "Explain MariaDB Data Bridge features",
+    "chunks": ["chunk1", "chunk2"],
+    "llm_provider": "openai",
+    "llm_model": "gpt-4"
+  }'
 ```

@@ -12,42 +12,59 @@ The orchestration module provides high-level endpoints that coordinate multiple 
 POST /orchestrate/ingestion
 ```
 
-**Purpose**: Orchestrates the complete ingestion workflow: document upload, processing, and chunking.
+**Purpose**: Orchestrates the complete ingestion workflow: document upload, processing, chunking, and embedding. This endpoint handles the entire pipeline from files to searchable chunks.
 
-**Request body**:
+**Request**: `multipart/form-data` with files and optional configuration
+
+**Form Parameters**:
+- `files`: One or more files to upload (optional if using `file_paths`)
+- `file_paths`: JSON array of server-side file paths (optional if using `files`)
+- `config`: JSON string with chunking configuration (optional)
+
+**Configuration JSON Structure**:
 ```json
 {
-  "file_paths": ["/path/to/document1.pdf", "/path/to/document2.docx"],
-  "chunking_config": {
-    "chunk_size": 1000,
-    "chunk_overlap": 200,
-    "chunking_strategy": "recursive",
-    "metadata_fields": ["title", "author", "date"]
-  },
-  "wait_for_completion": true,
-  "timeout_seconds": 300
+  "chunking_method": "recursive",
+  "chunk_size": 512,
+  "chunk_overlap": 128,
+  "threshold": 0.8,
+  "embedding_provider": "openai",
+  "embedding_model": "text-embedding-3-small",
+  "embedding_batch_size": 32
 }
 ```
+
+**Chunking Methods**:
+- `recursive`: Recursive text splitting (default)
+- `sentence`: Sentence-based chunking
+- `token`: Token-based chunking
+- `semantic`: Semantic similarity-based chunking (requires `threshold`)
 
 **Response**:
 ```json
 {
-  "documents": [
-    {"id": 42, "filename": "document1.pdf", "status": "completed"},
-    {"id": 43, "filename": "document2.docx", "status": "completed"}
-  ],
-  "chunks_created": 25,
-  "processing_time_ms": 15000
+  "message": "Successfully ingested and chunked 2 documents",
+  "document_ids": [42, 43],
+  "chunk_count": 25,
+  "processing_time_seconds": 15.2
 }
 ```
 
-**Usage Example**: Use this endpoint when you need to ingest documents and prepare them for retrieval.
+**Usage Example**: Upload and process documents in a single request.
 
 ```bash
+# Upload files with custom chunking config
 curl -X POST "http://localhost:8000/orchestrate/ingestion" \
   -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"file_paths": ["/path/to/document1.pdf", "/path/to/document2.docx"], "wait_for_completion": true}'
+  -F "files=@/path/to/document1.pdf" \
+  -F "files=@/path/to/document2.docx" \
+  -F 'config={"chunking_method":"semantic","chunk_size":512,"threshold":0.8}'
+
+# Use server-side file paths
+curl -X POST "http://localhost:8000/orchestrate/ingestion" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -F 'file_paths=["./docs/file1.pdf","./docs/file2.pdf"]' \
+  -F 'config={"chunking_method":"recursive","chunk_size":512}'
 ```
 
 ### Generation Orchestration
@@ -56,123 +73,189 @@ curl -X POST "http://localhost:8000/orchestrate/ingestion" \
 POST /orchestrate/generation
 ```
 
-**Purpose**: Orchestrates the generation workflow: retrieval and text generation.
+**Purpose**: Orchestrates the complete RAG workflow: retrieval and text generation in a single request. Automatically retrieves relevant chunks and generates a response.
 
 **Request body**:
 ```json
 {
   "query": "What are the key features?",
-  "retrieval_config": {
-    "top_k": 5,
-    "filter": {
-      "document_ids": [42, 43],
-      "metadata_filter": {"author": "John Doe"}
-    }
-  },
-  "generation_config": {
-    "llm_provider": "openai",
-    "llm_model": "gpt-4",
-    "temperature": 0.25,
-    "max_tokens": 1000,
-    "system_prompt": "You are a helpful assistant."
-  }
+  "document_ids": [42, 43],
+  "retrieval_method": "hybrid",
+  "top_k": 5,
+  "llm_provider": "openai",
+  "llm_model": "gpt-4",
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "max_tokens": 1000
 }
 ```
+
+**Request Parameters**:
+- `query` (required): The user's question or prompt
+- `document_ids` (optional): Filter retrieval to specific documents (default: all documents)
+- `retrieval_method` (optional): `semantic`, `fulltext`, or `hybrid` (default: `hybrid`)
+- `top_k` (optional): Number of chunks to retrieve (default: 5)
+- `llm_provider` (optional): LLM provider - `openai`, `anthropic`, `gemini`, `cohere`, `ollama`, `azure`, `bedrock`
+- `llm_model` (optional): Specific model to use
+- `temperature` (optional): Controls randomness (0.0-2.0, default: 0.7)
+- `top_p` (optional): Nucleus sampling (0.0-1.0, default: 0.9)
+- `max_tokens` (optional): Maximum tokens to generate (1-8192, default: 1000)
+- `stream` (optional): Enable streaming (default: false)
 
 **Response**:
 ```json
 {
-  "retrieval_results": [
-    {"chunk_id": 101, "similarity_score": 0.92, "content": "...", "metadata": {"title": "Features Document"}}
-  ],
-  "generated_response": "The key features include...",
-  "processing_time_ms": 2500
+  "query": "What are the key features?",
+  "response": "The key features include document processing, semantic search, and AI-powered generation...",
+  "chunks_used": 5,
+  "retrieval_method": "hybrid",
+  "processing_time_seconds": 2.5,
+  "retrieval_time_ms": 150.3,
+  "generation_time_ms": 2350.7
 }
 ```
 
-**Usage Example**: Use this endpoint when you want to query existing documents.
+**Response Fields**:
+- `query`: The original query
+- `response`: The generated response
+- `chunks_used`: Number of chunks used for generation
+- `retrieval_method`: The retrieval method used
+- `processing_time_seconds`: Total processing time
+- `retrieval_time_ms`: Time spent on retrieval (optional)
+- `generation_time_ms`: Time spent on generation (optional)
+
+**Usage Example**: Query documents and get an AI-generated response in one call.
 
 ```bash
 curl -X POST "http://localhost:8000/orchestrate/generation" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"query": "What are the key features?", "retrieval_config": {"top_k": 5}}'
+  -d '{
+    "query": "What are the key features?",
+    "document_ids": [42, 43],
+    "retrieval_method": "hybrid",
+    "top_k": 5,
+    "llm_provider": "openai",
+    "llm_model": "gpt-4"
+  }'
 ```
 
 ### Streaming Generation Orchestration
 
 ```
-POST /orchestrate/generation/stream
+POST /orchestrate/generation-stream
 ```
 
-**Purpose**: Same as the generation endpoint but returns the response as a stream.
+**Purpose**: Same as the generation endpoint but returns the response as a Server-Sent Events (SSE) stream for real-time display.
 
-**Request body**: Same as the generation endpoint.
+**Request body**: Same as `/orchestrate/generation`
 
-**Response**: Server-sent events stream with the generated text.
+**Response**: Server-Sent Events (SSE) stream with the following event types:
 
-**Usage Example**: Use this endpoint for real-time user interfaces.
+```json
+// Start event
+{"type": "start", "query": "What are the key features?"}
+
+// Retrieval complete event
+{"type": "retrieval_complete", "chunks_retrieved": 5, "retrieval_time_ms": 150.3}
+
+// Token events (streamed as generated)
+{"type": "token", "content": "The", "chunk_index": 1}
+{"type": "token", "content": " key", "chunk_index": 2}
+{"type": "token", "content": " features", "chunk_index": 3}
+
+// Completion event
+{"type": "complete", "total_time_seconds": 2.5, "tokens_generated": 150}
+
+// Error event (if error occurs)
+{"type": "error", "message": "Error description"}
+```
+
+**Usage Example**: Use this endpoint for real-time user interfaces with progressive response display.
 
 ```bash
-curl -X POST "http://localhost:8000/orchestrate/generation/stream" \
+curl -X POST "http://localhost:8000/orchestrate/generation-stream" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"query": "What are the key features?", "retrieval_config": {"top_k": 5}}'
+  -d '{
+    "query": "What are the key features?",
+    "document_ids": [42, 43],
+    "retrieval_method": "hybrid",
+    "top_k": 5
+  }'
 ```
 
 ### Full Pipeline
 
 ```
-POST /orchestrate/pipeline
+POST /orchestrate/full-pipeline
 ```
 
-**Purpose**: Executes the complete RAG pipeline in a single request: document ingestion, chunking, retrieval, and generation.
+**Purpose**: Executes the complete RAG pipeline in a single request: document ingestion, chunking, embedding, retrieval, and generation. This is the ultimate one-call solution for processing new documents and getting an AI-generated answer.
 
-**Request body**:
+**Request**: `multipart/form-data` with files and configuration
+
+**Form Parameters**:
+- `files`: One or more files to upload (optional if using `file_paths`)
+- `file_paths`: JSON array of server-side file paths (optional if using `files`)
+- `query`: The query string (required)
+- `config`: JSON string with pipeline configuration (optional)
+
+**Configuration JSON Structure**:
 ```json
 {
-  "file_paths": ["/path/to/document1.pdf", "/path/to/document2.docx"],
-  "query": "What are the key features?",
-  "chunking_config": {
-    "chunk_size": 1000,
-    "chunk_overlap": 200,
-    "chunking_strategy": "recursive"
-  },
-  "retrieval_config": {
-    "top_k": 5
-  },
-  "generation_config": {
-    "llm_provider": "openai",
-    "llm_model": "gpt-4",
-    "temperature": 0.25,
-    "max_tokens": 1000
-  },
-  "wait_for_completion": true,
-  "timeout_seconds": 300
+  "chunking_method": "recursive",
+  "chunk_size": 512,
+  "chunk_overlap": 128,
+  "retrieval_method": "hybrid",
+  "top_k": 5,
+  "embedding_provider": "openai",
+  "embedding_model": "text-embedding-3-small",
+  "llm_provider": "openai",
+  "llm_model": "gpt-4",
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "max_tokens": 1000
 }
 ```
 
 **Response**:
 ```json
 {
-  "documents": [
-    {"id": 42, "filename": "document1.pdf", "status": "completed"},
-    {"id": 43, "filename": "document2.docx", "status": "completed"}
-  ],
-  "chunks_created": 25,
-  "retrieval_results": [
-    {"chunk_id": 101, "similarity_score": 0.92, "content": "..."}
-  ],
-  "generated_response": "The key features include...",
-  "total_processing_time_ms": 15000
+  "message": "Full pipeline completed successfully",
+  "document_ids": [42, 43],
+  "chunk_count": 25,
+  "query": "What are the key features?",
+  "response": "The key features include document processing, semantic search, and AI-powered generation...",
+  "chunks_used": 5,
+  "total_processing_time_seconds": 20.5
 }
 ```
 
-**Usage Example**: Use this endpoint for a complete end-to-end workflow when you have new documents and want to immediately query them.
+**Response Fields**:
+- `message`: Status message
+- `document_ids`: IDs of ingested documents
+- `chunk_count`: Total chunks created
+- `query`: The original query
+- `response`: The AI-generated response
+- `chunks_used`: Number of chunks used for generation
+- `total_processing_time_seconds`: Total pipeline execution time
+
+**Usage Example**: Process new documents and get an answer in one request.
 
 ```bash
-curl -X POST "http://localhost:8000/orchestrate/pipeline" \
+# Upload files and query
+curl -X POST "http://localhost:8000/orchestrate/full-pipeline" \
   -H "Authorization: Bearer YOUR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"file_paths": ["/path/to/document1.pdf"], "query": "What are the key features?"}'
+  -F "files=@/path/to/document1.pdf" \
+  -F "files=@/path/to/document2.docx" \
+  -F "query=What are the key features?" \
+  -F 'config={"chunking_method":"semantic","retrieval_method":"hybrid","top_k":5}'
+
+# Use server-side file paths
+curl -X POST "http://localhost:8000/orchestrate/full-pipeline" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -F 'file_paths=["./docs/file1.pdf","./docs/file2.pdf"]' \
+  -F "query=Summarize the main points" \
+  -F 'config={"chunking_method":"recursive","llm_model":"gpt-4"}'
 ```

@@ -44,13 +44,13 @@ curl -X POST "http://localhost:8000/token" \
 
 ## User Management
 
-### Register or Update User
+### Register User
 
 ```
-POST /users
+POST /users/register
 ```
 
-**Purpose**: Creates a new user or updates an existing one (admin only).
+**Purpose**: Creates a new user account (admin only).
 
 **Request body**:
 ```json
@@ -67,6 +67,17 @@ POST /users
   "id": 42,
   "is_active": true
 }
+```
+
+**Usage Example**:
+```bash
+curl -X POST "http://localhost:8000/users/register" \
+  -H "Authorization: Bearer YOUR_ADMIN_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "newuser@example.com",
+    "password": "secure_password"
+  }'
 ```
 
 ### Get Current User

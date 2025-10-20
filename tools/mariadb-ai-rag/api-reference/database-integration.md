@@ -49,43 +49,59 @@ curl -X POST "http://localhost:8000/documents/ingest-from-table" \
 ### Ingest from SQL Query
 
 ```
-POST /documents/ingest-from-query
+POST /documents/sql-ingest
 ```
 
-**Purpose**: Ingests data from the results of a custom SQL query, providing maximum flexibility for selecting and transforming data from your database.
+**Purpose**: Executes a SELECT query and ingests the results as a CSV document. The query results are stored as a document that can be chunked and searched. This provides a way to make database query results searchable via RAG.
 
 **Request body**:
 ```json
 {
   "sql_query": "SELECT id, title, content, author, published_date FROM articles WHERE status = 'published' AND category = 'technical'",
-  "column_mapping": {
-    "content": ["title", "content"],
-    "metadata": ["author", "published_date"],
-    "id_column": "id"
-  },
-  "batch_size": 500,
-  "authorized_users": ["user1@example.com", "user2@example.com", "user3@example.com"]
+  "role": "ai_nexus",
+  "document_name": "published_articles"
 }
 ```
+
+**Request Parameters**:
+- `sql_query` (required): A SELECT query to execute (only SELECT queries are allowed)
+- `role` (optional): Database role to use for query execution (default: from `DEFAULT_SQL_ROLE` environment variable)
+- `document_name` (optional): Name for the generated CSV document (default: "query_results")
+
+**Security Notes**:
+- Only SELECT queries are allowed (enforced by regex validation)
+- Multiple statements are not allowed (no semicolons outside of quoted strings)
+- User must have permission to use the specified role
+- Query is executed using MariaDB's role-based access control
 
 **Response**:
 ```json
 {
-  "job_id": "query_ingest_abc456",
-  "status": "processing",
-  "estimated_rows": 127,
-  "authorized_users": ["user1@example.com", "user2@example.com", "user3@example.com"]
+  "id": 42,
+  "source": "sql://generated/1729425000/published_articles.csv",
+  "filename": "published_articles.csv",
+  "status": "completed",
+  "content": "id,title,content,author,published_date\n1,Article Title,Article content...,John Doe,2025-01-15\n...",
+  "error_message": null,
+  "created_at": "2025-10-20T12:00:00.123456",
+  "updated_at": "2025-10-20T12:00:01.234567"
 }
 ```
 
-**Usage Example**: Use this endpoint when you need to ingest data from complex queries or joins across multiple tables.
+**Usage Example**: Query database and ingest results for RAG search.
 
 ```bash
-curl -X POST "http://localhost:8000/documents/ingest-from-query" \
+curl -X POST "http://localhost:8000/documents/sql-ingest" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"sql_query": "SELECT id, title, content, author, published_date FROM articles WHERE status = \'published\'", "column_mapping": {"content": ["title", "content"], "metadata": ["author", "published_date"], "id_column": "id"}, "authorized_users": ["user1@example.com", "user2@example.com"]}'
+  -d '{
+    "sql_query": "SELECT id, title, content, author FROM articles WHERE status = '\''published'\''",
+    "role": "ai_nexus",
+    "document_name": "published_articles"
+  }'
 ```
+
+**Note**: The query results are converted to CSV format and stored as a document. You can then chunk this document using the chunking endpoints to make the data searchable.
 
 ### Check Database Ingestion Status
 
