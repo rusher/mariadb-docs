@@ -28,7 +28,7 @@ SELECT column_a, SUM(column_b) FROM innodb_table GROUP BY column_a
 
 The effectiveness of Query Accelerator can vary depending on the type of queries you run and the specific characteristics of your database schema. Certain types of queries or configurations may not benefit from Query Accelerator, or could potentially experience decreased performance. It's essential to understand when Query Accelerator is most advantageous and when traditional InnoDB operations might be more efficient. Consider the following points to optimize query performance with Query Accelerator:
 
-* To minimize performance overhead of pulling data, make sure your query uses an indexed or partitioned column.
+* Make sure your query uses an indexed or partitioned column. Otherwise, Query Accelerator won't work.
 * Also, run `ANALYZE TABLE` before running Query Accelerator.
 
 ## Queries not to run in Query Accelerator
@@ -43,16 +43,14 @@ Performance issues occur for queries like this:
 
 InnoDB handles such comparison much better than ColumnStore in general, and in Query Accelerator, that would be even worse.
 
-* Generally, if you don’t use aggregation functions in a query, InnoDB will be better than ColumnStore in general and Query Accelerator in particular.
-* This is also true for multi-table joins.
-* Query Accelerator takes a minimum of time (between 0.05 and 0.5 seconds) to run a query. So if your queries are fast already in InnoDB, they’re not likely to benefit from Query Accelerator.
+* Generally, if your query takes longer than a minute in InnoDB, try Query Accelerator.
 
 ### Queries not Working in Query Accelerator
 
 Query Accelerator has the same limitations as ColumnStore in general, in that it has a limited set of [functions](../reference/columnstore-distributed-functions.md) and [data types](../reference/columnstore-data-types.md) it can handle. Therefore, be aware of
 
 * syntax or functions that Columnstore does not support;
-* data types ColumnStore does not support (unsupported data types are silently converted to strings, which in turn means that functions relying on the data type might not work either).
+* data types ColumnStore does not support.
 
 ## Enabling Query Accelerator
 
