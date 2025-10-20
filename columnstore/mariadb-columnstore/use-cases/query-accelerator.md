@@ -28,7 +28,7 @@ SELECT column_a, SUM(column_b) FROM innodb_table GROUP BY column_a
 
 The effectiveness of Query Accelerator can vary depending on the type of queries you run and the specific characteristics of your database schema. Certain types of queries or configurations may not benefit from Query Accelerator, or could potentially experience decreased performance. It's essential to understand when Query Accelerator is most advantageous and when traditional InnoDB operations might be more efficient. Consider the following points to optimize query performance with Query Accelerator:
 
-* Make sure your query uses an indexed or partitioned column. Otherwise, Query Accelerator won't work.
+* Make sure your query uses tables that are indexed, and the index key has the first integer column.
 * Also, run `ANALYZE TABLE` before running Query Accelerator.
 
 ## Queries not to run in Query Accelerator
