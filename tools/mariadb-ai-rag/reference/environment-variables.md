@@ -4,7 +4,7 @@ MariaDB Data Bridge uses environment variables for configuration. These can be s
 
 ## Required Environment Variables
 
-```
+```ini
 # Database Configuration (Required)
 DB_HOST=localhost
 DB_PORT=3306
