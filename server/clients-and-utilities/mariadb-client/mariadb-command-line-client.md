@@ -320,9 +320,9 @@ Send embedded server this as a parameter.
 
 Shared-memory name to use for Windows connections using shared memory to a local server (started with the `--shared-memory` option). Case-sensitive.
 
-#### --show-serveroutput
+#### `--show-serveroutput`
 
-Enables displaying of `DBMS_OUTPUT` messages.
+Enables displaying of `DBMS_OUTPUT` messages. See [this page](../../server-usage/stored-routines/dbms_output.md) for details.
 
 #### `--show-warnings`
 
@@ -623,14 +623,14 @@ There are also a number of commands that can be run inside the client. Note that
 | go, \g             | Send command to mariadb server.                                                                                                                                                                       |
 | help, \h           | Display this help.                                                                                                                                                                                    |
 | nopager,           | Disable pager, print to stdout.                                                                                                                                                                       |
-| noserveroutput, \o | Disables displaying of `DBMS_OUTPUT` messages.                                                                                                                                                        |
+| noserveroutput, \o | Disables displaying of `DBMS_OUTPUT` messages. See [this page](../../server-usage/stored-routines/dbms_output.md) for details.                                                                        |
 | notee,             | Don't write into outfile.                                                                                                                                                                             |
 | pager, \P          | Set PAGER \[to\_pager]. Print the query results via PAGER.                                                                                                                                            |
 | print, \p          | Print current command.                                                                                                                                                                                |
 | prompt,            | Change your mariadb prompt.                                                                                                                                                                           |
 | quit, \q           | Quit mariadb.                                                                                                                                                                                         |
 | rehash, #          | Rebuild completion hash.                                                                                                                                                                              |
-| serveroutput, \O   | Enables displaying of `DBMS_OUTPUT` messages.                                                                                                                                                         |
+| serveroutput, \O   | Enables displaying of `DBMS_OUTPUT` messages. See [this page](../../server-usage/stored-routines/dbms_output.md) for details.                                                                         |
 | source, .          | Execute an SQL script file. Takes a file name as an argument. Usually looks in the working directory, unless, from MariaDB 12.0, a path is given with `--script-dir`.                                 |
 | status, \s         | Get status information from the server.                                                                                                                                                               |
 | system, !          | Execute a system shell command. Only works in Unix-like systems.                                                                                                                                      |

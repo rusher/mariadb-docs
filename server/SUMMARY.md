@@ -102,6 +102,7 @@
       * [Stored Function Limitations](server-usage/stored-routines/stored-functions/stored-function-limitations.md)
     * [Binary Logging of Stored Routines](server-usage/stored-routines/binary-logging-of-stored-routines.md)
     * [Stored Routine Limitations](server-usage/stored-routines/stored-routine-limitations.md)
+    * [DBMS\_OUTPUT](server-usage/stored-routines/dbms_output.md)
   * [Storage Engines](server-usage/storage-engines/README.md)
     * [Storage Engines Overview](server-usage/storage-engines/storage-engines-storage-engines-overview.md)
     * [Choosing the Right Storage Engine](server-usage/storage-engines/choosing-the-right-storage-engine.md)
