@@ -2346,6 +2346,7 @@
           * [Information Schema XTRADB\_INTERNAL\_HASH\_TABLES Table](reference/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_internal_hash_tables-table.md)
           * [Information Schema XTRADB\_READ\_VIEW Table](reference/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_read_view-table.md)
           * [Information Schema XTRADB\_RSEG Table](reference/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_rseg-table.md)
+        * [Information Schema WSREP\_BF\_ABORTS](reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_bf_aborts.md)
     * [Performance Schema](reference/system-tables/performance-schema/README.md)
       * [Performance Schema Digests](reference/system-tables/performance-schema/performance-schema-digests.md)
       * [Performance Schema Overview](reference/system-tables/performance-schema/performance-schema-overview.md)
