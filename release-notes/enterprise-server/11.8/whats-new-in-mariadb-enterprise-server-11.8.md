@@ -151,7 +151,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 ## Key Management <a href="#key-management" id="key-management"></a>
 
 * [**KMS Plugin**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins) **Enhancement**: The file\_key\_management plugin can now read keys from a **Unix socket**, not just from files.
-* **File Key Management Encryption Plugin:** Added key rotation capability; see [this page](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin#key-rotation) for details. In addition, a new Information Schema table was added, [FILE\_KEY\_MANAGEMENT\_KEYS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-files-table/information-schema-file_key_management_keys).
+* **File Key Management Encryption Plugin:** Added key rotation capability; see [this page](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin#key-rotation) for details. In addition, a new Information Schema table was added, [FILE\_KEY\_MANAGEMENT\_KEYS](broken-reference).
 
 ## Observability & Information Schema <a href="#observability-information-schema" id="observability-information-schema"></a>
 
@@ -182,6 +182,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Enhanced ANALYZE FORMAT=JSON**:
   * Includes `r_index_rows, r_icp_filtered`.
 * **Thread Naming for Diagnostics**: Thread names are now more descriptive.
+* **Galera Information Schema:** New [WSREP\_BF\_ABORTS](broken-reference) Information Schema table.
 
 ## Tool Improvements <a href="#tool-improvements" id="tool-improvements"></a>
 
