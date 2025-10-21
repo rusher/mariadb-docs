@@ -123,11 +123,7 @@ Once installation is complete, save all related Docker images and settings by ru
 {% code title="# Save images and archive" %}
 ```bash
 cd enterprise-manager
-docker image save -o grafana.tar docker.io/grafana/grafana:12.1
-docker image save -o prometheus.tar docker.io/prom/prometheus:v3.5.0
-docker image save -o otelcol.tar docker.io/otel/opentelemetry-collector-contrib:0.135.0
-docker image save -o supermax.tar docker.mariadb.com/supermax:<version>  # (NEED FINAL TAG)
-docker image save -o nginx.tar docker.io/nginx:1.29
+docker compose images | awk 'p{print $2 ":" $3} {p=1}' | xargs docker image save -o images.tar
 cd ..
 tar -czvf enterprise-manager.tar.gz enterprise-manager
 ```
@@ -151,11 +147,7 @@ On the target machine, extract the archive and load the Docker images:
 ```bash
 tar -xzvf enterprise-manager.tar.gz
 cd enterprise-manager
-docker image load -i grafana.tar
-docker image load -i prometheus.tar
-docker image load -i otelcol.tar
-docker image load -i supermax.tar
-docker image load -i nginx.tar
+docker image load -i images.tar
 ```
 {% endcode %}
 {% endstep %}
