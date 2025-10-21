@@ -11,6 +11,12 @@ MariaDB and Vault may relate to each other in several ways:
 
 For information about how to install Vault, see [Install Vault](https://developer.hashicorp.com/vault/install), as well as [MySQL/MariaDB Database Secrets Engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria).
 
+{% hint style="info" %}
+Namespace support is available as of MariaDB Enterprise Server 11.8.
+
+See the [Hashicorp namespaces documentation](https://developer.hashicorp.com/vault/docs/enterprise/namespaces) for details.
+{% endhint %}
+
 ## Vault Features
 
 Vault is used via an HTTP/HTTPS API.
