@@ -1,11 +1,11 @@
 # MariaDB ColumnStore 25.10.0 Release Notes
 
 {% hint style="info" %}
-This is the first release of the 25.10 release series. For that reason, this page doesn't comprise minor bug fixes or feature changes.
+This is the first release of the 25.10 release series, and Alpha release status. For that reason, this page doesn't comprise minor bug fixes or feature changes.
 {% endhint %}
 
 {% hint style="info" %}
-ColumnStore 25.10.0 works with MariaDB Enterprise Server 10.6, 11.4, and 11.8.
+ColumnStore 25.10.0 works with MariaDB Enterprise Server 11.8.
 {% endhint %}
 
 ## Role in MariaDB Enterprise Platform 2026
