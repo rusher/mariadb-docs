@@ -1,6 +1,6 @@
 # Installing MariaDB on IBM Cloud
 
-Get MariaDB on IBM Cloud
+Get MariaDB on IBM Cloud.
 
 You should have an IBM Cloud account, otherwise you can [register here](https://cloud.ibm.com/registration).\
 At the end of the tutorial you will have a cluster with MariaDB up and running. IBM Cloud uses Bitnami charts to deploy MariaDB on with helm

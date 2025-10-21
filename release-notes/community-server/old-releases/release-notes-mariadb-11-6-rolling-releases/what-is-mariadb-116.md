@@ -2,8 +2,6 @@
 
 {% include "../../../.gitbook/includes/latest-11-6.md" %}
 
-{% include "../../../.gitbook/includes/latest-11-6-duplicate.md" %}
-
 [MariaDB 11.6](what-is-mariadb-116.md) is a [rolling release](../../about/release-model.md).
 
 ## Upgrading

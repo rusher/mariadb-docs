@@ -1,5 +1,9 @@
 # Network and Firewall Requirements
 
+{% hint style="warning" %}
+It's recommended to run MariaDB Enterprise Manager on an internal, secured network. Direct public exposure is not recommended.
+{% endhint %}
+
 Before installing MariaDB Enterprise Manager, ensure that your firewall and network rules allow traffic on all required ports. Proper connectivity is essential for the system to function correctly.
 
 The following table details the necessary ports and their purposes.

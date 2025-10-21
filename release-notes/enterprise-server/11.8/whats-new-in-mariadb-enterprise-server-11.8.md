@@ -20,6 +20,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 * **Distance Functions**:
   * `VEC_DISTANCE()` auto-selects the best distance function based on the index configuration.
+* Optimization that makes vector search 30-50% (depending on the data) faster for the same recall. Enabled automatically for applicable vectors. Vectors are applicable if they can be gradually truncated to trade some recall for speed. For example matryoshka embeddings as produced by OpenAI are applicable.
 
 ## Indexes, SQL Functions, and Query Enhancements <a href="#indexes-sql-functions-and-query-enhancements" id="indexes-sql-functions-and-query-enhancements"></a>
 
@@ -27,6 +28,13 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Multi-Table DELETE Enhancements**: Support for `ORDER BY and LIMIT`.
 * **Single-Table DELETE Enhancements**: Now it allows index hints.
 * **NEW SHOW CREATE SERVER**: Recreate server objects similar to [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table).
+
+## Performance Improvements <a href="#data-types-and-compatibility" id="data-types-and-compatibility"></a>
+
+* Optimization that makes vector search 30-50% faster (more details in the [Vector Search](whats-new-in-mariadb-enterprise-server-11.8.md#vector-search) section)
+* Segmented key cache for [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria)
+  * [aria\_pagecache\_segments](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_pagecache_segments) system variable
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars, see [Skipping Long CHAR/VARCHAR Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table#skipping-long-char-varchar-columns) for more information
 
 ## Data Types and Compatibility <a href="#data-types-and-compatibility" id="data-types-and-compatibility"></a>
 
@@ -58,8 +66,10 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
     ```sql
     CREATE OR REPLACE PROCEDURE p1(param1 INT, param2 INT DEFAULT 1)
     ```
+* Associative arrays: `DECLARE TYPE .. TABLE OF .. INDEX BY`&#x20;
+* Added `caching_sha2_password` plugin, see [Authentication Plugin - SHA-256](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-sha-256) for more information
 
-### Enhancements to System Versioned Tables <a href="#enhancements-to-system-versioned-tables" id="enhancements-to-system-versioned-tables"></a>
+## Enhancements to System Versioned Tables <a href="#enhancements-to-system-versioned-tables" id="enhancements-to-system-versioned-tables"></a>
 
 *   System Versioned Tables is a powerful feature for auditing changes to data. Enabling System Versioned Tables is as easy as creating a table by using
 
@@ -80,7 +90,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
     ALTER TABLE contracts ADD COLUMN rs TIMESTAMP(6) AS ROW START, ADD COLUMN re TIMESTAMP(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re);
     ```
 
-### Security <a href="#security" id="security"></a>
+## Security <a href="#security" id="security"></a>
 
 * **New** [**Authentication Plugin—PARSEC**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-parsec):
   * Based on elliptic curve cryptography.
@@ -112,7 +122,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
       CREATE USER dba IDENTIFIED VIA UNIX_SOCKET AS 'jack' OR IDENTIFIED VIA UNIX_SOCKET AS 'jill';
       ```
 
-### Replication & Clustering <a href="#replication-clustering" id="replication-clustering"></a>
+## Replication & Clustering <a href="#replication-clustering" id="replication-clustering"></a>
 
 * Improved Replication Lag Monitoring:
   *   [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) now includes:\\
@@ -136,11 +146,11 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **New Option – `--slave-abort-blocking-timeout`**: Kills blocking non-replication queries after a timeout.
 * **Galera SST Automation**: SST user is now auto-created and managed internally.
 
-### Key Management <a href="#key-management" id="key-management"></a>
+## Key Management <a href="#key-management" id="key-management"></a>
 
 * [**KMS Plugin**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins) **Enhancement**: The file\_key\_management plugin can now read keys from a **Unix socket**, not just from files.
 
-### Observability & Information Schema <a href="#observability-information-schema" id="observability-information-schema"></a>
+## Observability & Information Schema <a href="#observability-information-schema" id="observability-information-schema"></a>
 
 * Temporary File Disk Space Limits:
   * `max_tmp_session_space_usage` and `max_tmp_total_space_usage` prevent runaway disk usage.

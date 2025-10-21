@@ -54,7 +54,7 @@ It can be queried via the [INFORMATION\_SCHEMA.GEOMETRY\_COLUMNS](https://app.gi
 * The Facebook Prefix Index Queries Optimization ([MDEV-6929](https://jira.mariadb.org/browse/MDEV-6929)), enabled with [innodb\_prefix\_index\_cluster\_optimization](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables) and two new status variables, [Innodb\_secondary\_index\_triggered\_cluster\_reads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables) and [Innodb\_secondary\_index\_triggered\_cluster\_reads\_avoided](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables) to track its effectiveness.
 * Default size of [query\_alloc\_block\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#query_alloc_block_size) changed from `8192` to `16384` and [query\_prealloc\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#query_prealloc_size) from `8192` to `24576` to avoid the need for simple queries with one join to call `my_malloc`.
 * Other Webscale patches ([MDEV-6039](https://jira.mariadb.org/browse/MDEV-6039))
-* [Out parameters in PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/out-parameters-in-prepare) were removed, as it was decided to rather implement the feature in a standard way.
+* Out parameters in PREPARE were removed, as it was decided to rather implement the feature in a standard way.
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases on production systems!**
 

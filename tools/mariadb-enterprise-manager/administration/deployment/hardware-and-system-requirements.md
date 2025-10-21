@@ -22,7 +22,7 @@ Tip: Adjust storage size depending on your requirements for metrics retention.
 
 ## Enterprise Manager Agent🕵
 
-The agent must be installed on each MariaDB Server and MaxScale instance you wish to monitor. Below are the supported operating systems.
+The agent must be installed on each [MariaDB Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/basics-guide#connecting-to-mariadb-server) and [MaxScale](../../../mariadb-enterprise-operator/maxscale-database-proxy.md) instance you wish to monitor. Below are the supported operating systems.
 
 ### Supported Platforms for MariaDB Server
 
@@ -36,4 +36,4 @@ The agent must be installed on each MariaDB Server and MaxScale instance you wis
 | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **23.02\***, **23.08\***, **24.02\***, **25.01\***, **25.10** | <p>RHEL/Rocky/AlmaLinux 8, 9, 10 </p><p>Ubuntu LTS 22.04, 24.04 </p><p>Debian 11, 12, 13</p> |
 
-\*Only Node/OS-level metrics are supported
+\* Monitoring and Single Sign-On(SSO) are only supported for MaxScale versions 25.10 and Above

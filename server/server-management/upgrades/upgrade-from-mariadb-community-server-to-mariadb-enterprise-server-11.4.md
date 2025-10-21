@@ -294,7 +294,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 3.  Install MariaDB Enterprise Server and package dependencies:
 
     ```bash
-    $ sudo apt install mariadb-server mariadb-backup
+    $ sudo apt install mariadb-server mariadb-backup galera-enterprise-4
     ```
 
     Installation of additional packages may be required for some plugins.

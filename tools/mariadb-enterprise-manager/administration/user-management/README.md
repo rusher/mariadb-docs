@@ -51,7 +51,11 @@ Enterprise Manager ships with three pre-configured roles:
 * `viewer`: Has read-only access to monitoring data and can use the Workspace.
 
 {% hint style="info" %}
-Although pre-configured roles can be edited or deleted, creating a custom role is strongly recommended when you need changes.
+**Create custom roles instead of editing pre-configured ones**
+
+While it's possible to edit or delete the pre-configured roles (`admin`, `viewer`, etc.), the recommended best practice is to create a new custom role to fit your specific permission requirements.
+
+Leaving the pre-configured roles unmodified ensures you always have a known, baseline configuration to reference or fall back on.
 {% endhint %}
 
 Roles (pre-configured or custom) are built from combinations of the following base permissions:
@@ -110,7 +114,7 @@ If you select the `sql` permission, a **"Query editor row limit"** dropdown will
 {% endhint %}
 
 {% hint style="warning" %}
-Note: The system requires `view` permission along with `edit`. Otherwise, it throws an error.
+When creating a role, selecting the `edit` permission requires you to also select the `view` permission.&#x20;
 {% endhint %}
 {% endstep %}
 {% endstepper %}
@@ -157,6 +161,14 @@ Roles that are currently assigned to any user cannot be deleted.
 ### Users tab
 
 From the User Management page, ensure you are on the **Users** tab.
+
+{% hint style="info" %}
+Users tab show the list of User associated with your Enterprise Manager instance.&#x20;
+
+![](<../../../.gitbook/assets/image (60).png>)
+
+The User you're logged in with to Enterprise Manager is shown in **bold**.
+{% endhint %}
 {% endstep %}
 
 {% step %}
@@ -217,8 +229,4 @@ You cannot delete the user account that you are currently logged in with. To del
 
 ## The Default Admin User
 
-Upon installation of MariaDB Enterprise Manager, a default `admin` user is created with the password `mariadb`.
-
-{% hint style="warning" %}
-For security, it is strongly recommended that you change this password immediately after your first login.
-{% endhint %}
+Upon installation of MariaDB Enterprise Manager, a default `admin` user is created with an automatically generated password.

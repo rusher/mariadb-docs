@@ -1,18 +1,15 @@
-# MariaDB Server Versions Support
+# MariaDB Server Version Support
 
-| Version                    |
-| -------------------------- |
-| 11.4.5                     |
-| 10.11.11                   |
-| 10.6.20                    |
-| 10.5.25                    |
-| 11.6.2 (Vector Preview)    |
-| 11.7.1 (Release Candidate) |
+## Server Versions
 
-### Notes:
+| Version  |
+| -------- |
+| 11.8     |
+| 11.4     |
+| 10.11.11 |
+| 10.6     |
+| 10.5.25  |
 
-* 11.6.2 is a Vector Preview release version
-* 11.7.1 is a Release Candidate release version
-* All other MariaDB Server versions are stable releases
+## Notes
 
-For more information about specific features and capabilities of each version, please refer to the respective documentation links above.
+For more information about specific features and capabilities of each version, please refer to the MariaDB [Server documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/) and [release notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server).

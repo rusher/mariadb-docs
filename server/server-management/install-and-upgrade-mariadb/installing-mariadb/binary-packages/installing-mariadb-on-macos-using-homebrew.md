@@ -1,4 +1,4 @@
-# Installing MariaDB Server on macOS Using Homebrew
+# Installing MariaDB on macOS (Homebrew)
 
 MariaDB Server is available for installation on macOS (formerly Mac OS X) via the [Homebrew](https://brew.sh/) package manager.
 
@@ -36,13 +36,13 @@ sudo mysql -u root
 
 ## Upgrading MariaDB
 
-First you may need to update your brew installation:
+Update your brew installation:
 
 ```bash
 brew update
 ```
 
-Then, to upgrade MariaDB Server:
+Then upgrade MariaDB Server:
 
 ```bash
 brew upgrade mariadb

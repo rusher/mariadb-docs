@@ -1,5 +1,9 @@
 # MariaDB 5.5.33 Debian and Ubuntu Installation Issues
 
+{% hint style="warning" %}
+This page is obsolete. The information is old, outdated, or otherwise currently incorrect. We are keeping the page for historical reasons only. **Do not** rely on the information in this article.
+{% endhint %}
+
 Shortly after the [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes) release we became aware of some installation issues with the Debian and Ubuntu repositories. These issues were fixed in [MariaDB 5.5.33a](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533a-release-notes), but due to how apt works, steps need to be taken to solve the broken dependencies before upgrading.
 
 We know of three scenarios when dependencies were broken. The steps to fix each of them are pretty much the same, only the list of broken dependencies and hence the list of packages to take care of them differs. The basic idea is to downgrade those certain packages to 5.5.32 temporarily before upgrading them to 5.5.33a.

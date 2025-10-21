@@ -1,6 +1,8 @@
 # MariaDB Debian Live Images
 
-**Note:** This page is obsolete. The information is old, outdated, or otherwise currently incorrect. We are keeping the page for historical reasons only. **Do not** rely on the information in this article.
+{% hint style="warning" %}
+This page is obsolete. The information is old, outdated, or otherwise currently incorrect. We are keeping the page for historical reasons only. **Do not** rely on the information in this article.
+{% endhint %}
 
 A member of the MariaDB community, Mark `<ms (at) it-infrastrukturen (dot) org>`,\
 has created some Debian "squeeze" 6.0.4 based, live iso images with [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)\

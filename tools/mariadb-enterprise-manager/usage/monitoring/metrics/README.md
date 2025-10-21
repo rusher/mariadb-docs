@@ -1,12 +1,8 @@
 # Metrics
 
-{% hint style="warning" %}
-This feature is currently compatible only with Linux systems.
-{% endhint %}
-
 ## MariaDB Server metrics
 
-MariaDB Server metrics are gathered with the Prometheus exporter for MySQL and stored in Enterprise Manager’s Prometheus with the “mariadb” prefix. The agent runs the exporter with the following collector flags:
+MariaDB Server metrics are gathered with the Prometheus exporter for MySQL and stored in Enterprise Manager’s Prometheus with the `mariadb` prefix. The agent runs the exporter with the following collector flags:
 
 | Collector name                           | Description                                                                                                                             |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -27,7 +23,7 @@ Here is the list of available [MaxScale metrics](../../../../mariadb-enterprise-
 
 ## Node metrics
 
-Node metrics provide crucial information about the health and performance of the underlying operating system on each monitored host. These metrics are essential for diagnosing infrastructure bottlenecks, understanding resource utilization, and planning for future capacity.
+Node metrics provide crucial information about the health and performance of the underlying hardware and operating system on each monitored host. These metrics are essential for diagnosing infrastructure bottlenecks, understanding resource utilization, and planning for future capacity.
 
 MariaDB Enterprise Manager gathers these metrics using **Prometheus Node Exporter**, which includes a default set of collectors.
 

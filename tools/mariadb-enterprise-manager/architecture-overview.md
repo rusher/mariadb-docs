@@ -12,13 +12,15 @@ The Enterprise Manager Server runs on a dedicated host and acts as the central c
 
 <figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
-The core components are:
+The core components are the following:
 
-* **Supermax:** The primary backend application that serves the main web UI for management, server registration, and configuration.
-* **Grafana:** Provides powerful, pre-built dashboards for visualizing time-series performance metrics.
-* **Prometheus:** The time-series database that ingests and stores all monitoring data collected from the agents.
-* **OpenTelemetry Collector:** The central endpoint that receives telemetry data (metrics, logs, traces) from all agents.
-* **Nginx:** A web server that acts as a reverse proxy, directing browser traffic to the appropriate service (Supermax or Grafana).
+| Component                   | Description                                                                                                            |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Supermax**                | The primary backend application that serves the main web UI for management, server registration, and configuration.    |
+| **Grafana**                 | Provides powerful, pre-built dashboards for visualizing time-series performance metrics.                               |
+| **Prometheus**              | The time-series database that ingests and stores all monitoring data collected from the agents.                        |
+| **OpenTelemetry Collector** | The central endpoint that receives telemetry data (metrics, logs, traces) from all agents.                             |
+| **Nginx**                   | A web server that acts as a reverse proxy, directing browser traffic to the appropriate service (Supermax or Grafana). |
 
 ## Enterprise Manager Agent
 
@@ -38,5 +40,5 @@ These components are installed via the `mema-agent` package (RPM or DEB) and inc
 
 For the system to function correctly, the following firewall ports must be open on the Enterprise Manager Server host:
 
-* 8090 (HTTP/S): The main entry point for the web UI. Nginx listens on this port and proxies requests to Supermax and Grafana.
-* 4318 (HTTP/S): Agents on monitored nodes push telemetry data to this port.
+* `8090` (_HTTP/S_): The main entry point for the web UI. Nginx listens on this port and proxies requests to Supermax and Grafana.
+* `4318` (_HTTP/S_): Agents on monitored nodes push telemetry data to this port.

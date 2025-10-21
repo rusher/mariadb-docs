@@ -90,6 +90,8 @@
     * [mysql\_session\_track\_get\_next](mariadb-connector-c/api-functions/mysql_session_track_get_next.md)
     * [mysql\_set\_character\_set](mariadb-connector-c/api-functions/mysql_set_character_set.md)
     * [mysql\_set\_server\_option](mariadb-connector-c/api-functions/mysql_set_server_option.md)
+    * [mysql\_set\_local\_infile\_handler](mariadb-connector-c/api-functions/mysql_set_local_infile_handler.md)
+    * [mysql\_set\_local\_infile\_default](mariadb-connector-c/api-functions/mysql_set_local_infile_default.md)
     * [mysql\_shutdown](mariadb-connector-c/api-functions/mysql_shutdown.md)
     * [mysql\_sqlstate](mariadb-connector-c/api-functions/mysql_sqlstate.md)
     * [mysql\_ssl\_set](mariadb-connector-c/api-functions/mysql_ssl_set.md)

@@ -113,7 +113,7 @@ Query OK, 0 rows affected (0.00 sec)
 * [ALTER EVENT](alter-event.md)
 * [DROP EVENT](../../../reference/sql-statements/data-definition/drop/drop-event.md)
 * [Event Limitations](event-limitations.md)
-* [Automating MariaDB Tasks with Events](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/automating-mariadb-tasks-with-events.md)
+* [Automating MariaDB Tasks with Events](../../../server-management/automated-mariadb-deployment-and-administration/automating-mariadb-tasks-with-events.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

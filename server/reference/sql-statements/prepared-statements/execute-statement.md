@@ -9,7 +9,7 @@ EXECUTE stmt_name
 
 ## Description
 
-After preparing a statement with [PREPARE](prepare-statement.md), you execute it with an`EXECUTE` statement that refers to the prepared statement name. If the prepared statement contains any parameter markers, you must supply a`USING` clause that lists user variables containing the values to be bound to the parameters. Parameter values can be supplied only by user variables, and the `USING` clause must name exactly as many variables as the number of parameter markers in the statement.
+After preparing a statement with [PREPARE](prepare-statement.md), you execute it with an`EXECUTE` statement that refers to the prepared statement name. If the prepared statement contains any parameter markers, you must supply a`USING` clause that lists expressions containing the values to be bound to the parameters. The `USING` clause must name exactly as many expressions as the number of parameter markers in the statement.
 
 You can execute a given prepared statement multiple times, passing different variables to it or setting the variables to different values before each execution.
 
@@ -21,11 +21,11 @@ ERROR 1243 (HY000): Unknown prepared statement handler (stmt_name) given to EXEC
 
 {% tabs %}
 {% tab title="Current" %}
-`EXECUTE` with expression as parameters can be used, not just variables (@var\_name) as parameters.
+`EXECUTE` with arbitrary expression as parameters can be used, not just user variables (@var\_name).
 {% endtab %}
 
 {% tab title="< 10.2.3" %}
-You can only use variables (@var\_name) as parameters.
+You can only use user variables (@var\_name) as parameters.
 {% endtab %}
 {% endtabs %}
 

@@ -1,6 +1,6 @@
 # Workspace
 
-Workspace extends monitoring functionalities of MariaDB Enterprise Manager with query editing, visual schema management, and ERD design, enabling a shared environment for DBAs, developers, and analysts.
+Workspace enhances MariaDB Enterprise Manager by adding query editing, visual schema management, and ERD design. It provides a collaborative environment for DBAs, developers, and analysts.
 
 ## Query Editor
 
@@ -14,7 +14,6 @@ Workspace extends monitoring functionalities of MariaDB Enterprise Manager with 
 | SQL History                  | Running history of executed SQL with quick replay into the editor.                           |
 | Multiple Connections         | Open simultaneous connections (dev/test/prod) and work in parallel, tab-isolated.            |
 | Open/Edit/Save SQL Files     | Load scripts, edit, and save changes without leaving the workspace.                          |
-| Process List Viewer          | View and manage live sessions/commands.                                                      |
 | Export Result Sets           | Export results as CSV, JSON, or SQL for hand-offs and audits.                                |
 | Display multiple Result Sets | View multiple result sets in the same window.                                                |
 | Vertical Results Mode        | Columnar display for wide rows to improve readability of tall/wide data.                     |
@@ -31,12 +30,12 @@ Workspace extends monitoring functionalities of MariaDB Enterprise Manager with 
 | Model Tables, Indexes      | Manage MariaDB data-related objects.                                       |
 | Create from Live Databases | Generate ERD models directly from live schemas.                            |
 
-## Schema Management
+## Database Administration
 
-| Feature          | Description                                                                                                            |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Schema Inspector | Detailed metadata views for all schema objects to understand structure and dependencies.                               |
-| Object Browser   | Navigate and explore databases, tables, views, routines, and triggers.                                                 |
-| Object Editor    | Create, modify, and delete schema objects together with managing constraints, renaming, copying objects relationships. |
-
-For more info: http://www.atlassian.com/
+| Feature             | Description                                                                                                            |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Schema Inspector    | Detailed metadata views for all schema objects to understand structure and dependencies.                               |
+| Object Browser      | Navigate and explore databases, tables, views, routines, and triggers.                                                 |
+| Object Editor       | Create, modify, and delete schema objects together with managing constraints, renaming, copying objects relationships. |
+| User Management     | View, edit, create, delete database users and privileges.                                                              |
+| Process List Viewer | View and manage live sessions/commands.                                                                                |

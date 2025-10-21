@@ -248,7 +248,7 @@ mariadb_logrotate_old_dir: /var/mysql/old-logs
 
 After setting up logrotate in Ansible, you may want to deploy it to a non-production server and test it manually as explained above. Once you're sure that it works fine on one server, you can be confident in the new Ansible tasks and deploy them on all servers.
 
-For more information on how to use Ansible to automate MariaDB configuration, see [Ansible and MariaDB](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/).
+For more information on how to use Ansible to automate MariaDB configuration, see [Ansible and MariaDB](../automated-mariadb-deployment-and-administration/ansible-and-mariadb/).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

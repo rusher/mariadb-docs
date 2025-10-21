@@ -1,20 +1,53 @@
-# Configure OpenID Connect Identity Provider  T Copy
+# Configure OpenID Connect Identity Provider
 
 MariaDB Enterprise Manager can be integrated with external identity providers (like Okta, Keycloak, or Azure AD) using OpenID Connect (OIDC). This allows you to centralize user authentication, enforce your organization's security policies, and enable single sign-on (SSO).
 
-### Before You Begin
+{% hint style="info" %}
+Integrating with an external Identity Provider is an optional feature. MariaDB Enterprise Manager includes a built-in user management system that works out-of-the-box.
+{% endhint %}
 
-Before you start, you must have the following information from your OIDC Identity Provider:
+## Before You Begin
 
-* **Authentication URL**: The endpoint of your Identity Provider used for authentication requests.
-* **Client ID**: The unique identifier for the MariaDB Enterprise Manager application registered with your provider.
-* **Client Secret**: The secret key for the MariaDB Enterprise Manager application.
-
-Additionally, you must configure your Identity Provider to pass the user's role in the JWT token, as explained in the "Mapping IDP Roles" section below.
+Before configuring OIDC in Enterprise Manager, you must first register Enterprise Manager as a client application within your Identity Provider's administrative console and obtain the necessary credentials.
 
 {% stepper %}
 {% step %}
-### Navigate to Identity Provider Settings
+### **Configure client settings in your identity provider**
+
+In your Identity Provider's client configuration screen, you will need to provide several URLs that point back to your MariaDB Enterprise Manager instance. These URLs tell the provider where to send the user after authentication and what origins are allowed to make requests.
+
+<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+
+While the exact field names may vary, you must configure the following endpoints, replacing `<Your_Enterprise_Manager_Address>` with the actual address of your instance:
+
+* Root / Home URL: `https://<Your_Enterprise_Manager_Address>:8090`
+* Valid Redirect URI: `https://<Your_Enterprise_Manager_Address>:8090/landing`
+* Valid Post Logout Redirect URI: `https://<Your_Enterprise_Manager_Address>:8090/`
+* Web Origins: `https://<Your_Enterprise_Manager_Address>:8090`
+{% endstep %}
+
+{% step %}
+### **Obtain your credentials**
+
+Once the client application is saved in your Identity Provider, find and copy the following values:
+
+* Authentication URL: The provider's endpoint for authentication requests.
+* Client ID: The unique ID for the Enterprise Manager application.
+* Client Secret: The secret key for the Enterprise Manager application.
+{% endstep %}
+
+{% step %}
+**Configure role mapping in your identity provider**
+
+Finally, you must configure your Identity Provider to pass the user's role in the JWT token. This is explained in the "Mapping IDP Roles" section further down this page.
+
+## Configuration Steps in Enterprise Manager
+{% endstep %}
+{% endstepper %}
+
+{% stepper %}
+{% step %}
+### Navigate to Identity Provider settings
 
 * From the main UI, click the **Settings icon (⚙️)** in the left navigation bar.
 * On the Settings page, click the **Identity Provider** card.
@@ -23,7 +56,7 @@ Additionally, you must configure your Identity Provider to pass the user's role 
 {% endstep %}
 
 {% step %}
-### Enter Your OIDC Provider Details
+### Enter your OIDC provider details
 
 On the OpenID Connect (OIDC) configuration page, fill in the details from your provider:
 
@@ -34,7 +67,7 @@ On the OpenID Connect (OIDC) configuration page, fill in the details from your p
 {% endstep %}
 
 {% step %}
-### Save the Configuration
+### Save the configuration
 
 * Click the **Save** button to apply the settings.
 

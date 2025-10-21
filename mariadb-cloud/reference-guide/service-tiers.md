@@ -12,8 +12,8 @@ Features available to MariaDB Cloud Power Tier customers include:
 
 * [Enhanced Service Level Agreement (SLA)](https://skysql.com/sla/)
 * [Extended Range of Instance Sizes](<../Reference Guide/Instance Size Choices.md>)
-* [Choice of Maintenance Window](../Service%20Tiers/broken-reference/)
-* [MaxScale Redundancy](../Service%20Tiers/broken-reference/)
+* Choice of Maintenance Window
+* MaxScale Redundancy
 * Choice of [Support Plans](https://skysql.com/support-policy/)
 * Point-in-time recovery
 * See all [Options](https://skysql.com/support-policy/) which augment the default MariaDB Cloud service experience
