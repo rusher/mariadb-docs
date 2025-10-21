@@ -84,7 +84,7 @@
   * [Example](mariadb-enterprise-mcp-server/example/README.md)
     * [Usage Examples](mariadb-enterprise-mcp-server/example/usage-examples.md)
   * [Frequently Asked Questions](mariadb-enterprise-mcp-server/frequently-asked-questions.md)
-* [MariaDB RAG AI](mariadb-ai-rag/README.md)
+* [MariaDB AI RAG](mariadb-ai-rag/README.md)
   * [Getting Started](mariadb-ai-rag/getting-started/README.md)
     * [Overview](mariadb-ai-rag/getting-started/overview.md)
     * [Installation](mariadb-ai-rag/getting-started/installation.md)
