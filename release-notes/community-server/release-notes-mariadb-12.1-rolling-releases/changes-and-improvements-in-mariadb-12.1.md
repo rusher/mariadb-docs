@@ -35,9 +35,9 @@ MariaDB 12.1 is a [rolling release](../about/release-model.md). It is an evoluti
 * Include definitions of tables and views in the [optimizer trace](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace) ([MDEV-36483](https://jira.mariadb.org/browse/MDEV-36483))
   * [optimizer\_record\_context](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_record_context) system variable.
 
-### Preview release only <a href="#miscellaneous" id="miscellaneous"></a>
+### Development release only <a href="#miscellaneous" id="miscellaneous"></a>
 
-These features were only available in the 12.1 preview release, and will be implemented in a later series.
+This feature was only available in the 12.1 development releases, and will be implemented in a later series.
 
 * Add [semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication) variable, [rpl\_semi\_sync\_master\_wait\_for\_slave\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication#rpl_semi_sync_master_wait_for_slave_count) ([MDEV-18983](https://jira.mariadb.org/browse/MDEV-18983))
 
