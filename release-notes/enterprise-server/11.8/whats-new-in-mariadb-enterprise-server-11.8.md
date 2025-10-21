@@ -28,6 +28,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Multi-Table DELETE Enhancements**: Support for `ORDER BY and LIMIT`.
 * **Single-Table DELETE Enhancements**: Now it allows index hints.
 * **NEW SHOW CREATE SERVER**: Recreate server objects similar to [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table).
+* **DBMS\_OUTPUT:** Messages submitted by `DBMS_OUTPUT.PUT_LINE()` are not sent to the client until the sending subprogram or trigger completes.
 
 ## Performance Improvements <a href="#data-types-and-compatibility" id="data-types-and-compatibility"></a>
 
