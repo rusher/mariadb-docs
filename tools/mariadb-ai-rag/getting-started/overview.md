@@ -1,14 +1,14 @@
 # Overview and Architecture
 
-## Introduction to MariaDB Data Bridge
+## Introduction to MariaDB AI RAG
 
-MariaDB Data Bridge is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that integrates with MariaDB to provide AI-powered document processing, semantic search, and natural language generation capabilities.
+MariaDB AI RAG is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that integrates with MariaDB to provide AI-powered document processing, semantic search, and natural language generation capabilities.
 
-The system enables organizations to leverage their document repositories and databases for AI-powered search and generation. By combining the reliability of MariaDB with modern AI capabilities, Data Bridge provides accurate, context-aware responses based on your organization's proprietary data.
+The system enables organizations to leverage their document repositories and databases for AI-powered search and generation. By combining the reliability of MariaDB with modern AI capabilities, AI RAG provides accurate, context-aware responses based on your organization's proprietary data.
 
 ## System Architecture
 
-MariaDB Data Bridge follows a modular architecture with the following key components:
+MariaDB AI RAG follows a modular architecture with the following key components:
 
 ### Core Components
 

@@ -41,9 +41,9 @@ MariaDB AI RAG is an enterprise-grade Retrieval-Augmented Generation (RAG) solut
 * [Supported File Formats](reference/supported-formats.md)
 * [Integration](reference/integration.md)
 
-## About MariaDB Data Bridge
+## About MariaDB AI RAG
 
-MariaDB Data Bridge enables organizations to leverage their document repositories and databases for AI-powered search and generation. By combining the reliability of MariaDB with modern AI capabilities, Data Bridge provides accurate, context-aware responses based on your organization's proprietary data.
+MariaDB AI RAG enables organizations to leverage their document repositories and databases for AI-powered search and generation. By combining the reliability of MariaDB with modern AI capabilities, AI RAG provides accurate, context-aware responses based on your organization's proprietary data.
 
 ### Key Features
 

@@ -2,7 +2,7 @@
 
 ## External Systems
 
-MariaDB Data Bridge can be integrated with external systems through its REST API. Common integration patterns include:
+MariaDB AI RAG can be integrated with external systems through its REST API. Common integration patterns include:
 
 - **Document Management Systems**: Automatically ingest documents from DMS platforms using the document ingestion endpoints
 - **Knowledge Bases**: Enhance existing knowledge bases with AI-powered search via the retrieval endpoints
@@ -44,7 +44,7 @@ chunking_response = requests.post(
 
 ## Authentication Integration
 
-MariaDB Data Bridge uses JWT-based authentication. The system can be integrated with existing authentication systems by implementing custom authentication middleware.
+MariaDB AI RAG uses JWT-based authentication. The system can be integrated with existing authentication systems by implementing custom authentication middleware.
 
 ```
 # JWT Authentication settings
