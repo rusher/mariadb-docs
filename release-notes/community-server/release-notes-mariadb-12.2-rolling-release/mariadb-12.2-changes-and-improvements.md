@@ -17,11 +17,16 @@ MariaDB 12.2 is a [rolling release](../about/release-model.md). It is an evoluti
 ### Miscellaneous <a href="#miscellaneous" id="miscellaneous"></a>
 
 * Remove depth limit of 32 from JSON functions ([MDEV-32854](https://jira.mariadb.org/browse/MDEV-32854))
-* Implement Global temporary tables ([MDEV-35915](https://jira.mariadb.org/browse/MDEV-35915)) (preview release only)
-* improved support of replication between tables of different structure ([MDEV-36290](https://jira.mariadb.org/browse/MDEV-36290))
 * Indexes on derived tables with GROUP BY produce wrong out\_rows estimates ([MDEV-36321](https://jira.mariadb.org/browse/MDEV-36321))
 * Add [INFORMATION\_SCHEMA.TRIGGERED\_UPDATE\_COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-triggered_update_columns) ([MDEV-36996](https://jira.mariadb.org/browse/MDEV-36996))
 * Implement [INFORMATION\_SCHEMA.PARAMETERS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-parameters-table).PARAMETER\_DEFAULT column ([MDEV-37054](https://jira.mariadb.org/browse/MDEV-37054))
+
+### Preview release only <a href="#miscellaneous" id="miscellaneous"></a>
+
+These features needed further testing and will be implemented in a future series.
+
+* Implement Global temporary tables ([MDEV-35915](https://jira.mariadb.org/browse/MDEV-35915)) (preview release only)
+* Improved support of replication between tables of different structure ([MDEV-36290](https://jira.mariadb.org/browse/MDEV-36290)) (preview release only)
 
 ## List of All MariaDB 12.2 Releases
 
