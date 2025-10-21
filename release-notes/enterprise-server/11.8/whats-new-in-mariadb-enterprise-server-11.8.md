@@ -185,6 +185,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Galera Information Schema:** New [WSREP\_BF\_ABORTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_bf_aborts) Information Schema table.
 * **Galera Information Schema:** New [WSREP\_THD\_STATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_thd_state) and [WSREP\_THD\_STATE\_HISTORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_thd_state_history) Information Schema tables.
 * **Galera Information Schema:** New Information Schema table [WSREP\_CONNECTIONS](broken-reference).
+* **Galera Information Schema:** New Information Schema [WSREP\_CERT\_KEYS](broken-reference) and [WSREP\_CERT\_KEYS\_HISTORY](broken-reference) tables.
 
 ## Tool Improvements <a href="#tool-improvements" id="tool-improvements"></a>
 
