@@ -2289,6 +2289,7 @@
         * [Information Schema USER\_VARIABLES Table](reference/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md)
         * [Information Schema USERS Table](reference/system-tables/information-schema/information-schema-tables/information-schema-users-table.md)
         * [Information Schema WSREP\_BF\_ABORTS](reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_bf_aborts.md)
+        * [Information Schema WSREP\_CONNECTIONS](reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_connections.md)
         * [Information Schema WSREP\_MEMBERSHIP Table](reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table.md)
         * [Information Schema WSREP\_STATUS Table](reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md)
         * [Information Schema WSREP\_THD\_STATE](reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_thd_state.md)
