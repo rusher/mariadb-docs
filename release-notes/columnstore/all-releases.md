@@ -1,4 +1,10 @@
-# ColumnStore All Releases
+# All Releases
+
+## ColumnStore 25.10
+
+| Version                                                                                         | Release Date | Release Status |
+| ----------------------------------------------------------------------------------------------- | ------------ | -------------- |
+| [25.10.0](mariadb-columnstore-25.10-release-notes/mariadb-columnstore-25.10.0-release-notes.md) | 2025-10-22   |                |
 
 ## ColumnStore 23.10
 
