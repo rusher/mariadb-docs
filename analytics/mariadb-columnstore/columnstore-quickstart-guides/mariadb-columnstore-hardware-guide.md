@@ -40,6 +40,6 @@ Adhering to these minimum specifications will provide a baseline for ColumnStore
 
 #### Further Resources:
 
-* [MariaDB ColumnStore Minimum Hardware Specification Documentation](https://mariadb.net/docs/columnstore/columnstore-quickstart-guides/columnstore-minimum-hardware-specification)
+* [MariaDB ColumnStore Minimum Hardware Specification Documentation](../management/deployment/columnstore-minimum-hardware-specification.md)
 * [MariaDB ColumnStore Overview](https://mariadb.com/products/columnstore/)
-* [MariaDB documentation: MariaDB ColumnStore](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/)
+* [MariaDB documentation: MariaDB ColumnStore](../)

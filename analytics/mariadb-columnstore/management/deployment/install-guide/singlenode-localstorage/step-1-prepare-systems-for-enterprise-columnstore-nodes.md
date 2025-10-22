@@ -90,7 +90,7 @@ SELINUXTYPE=targeted
 3. Confirm that SELinux is in permissive mode:
 
 ```bash
-$ sudo getenforce
+sudo getenforce
 Permissive
 ```
 

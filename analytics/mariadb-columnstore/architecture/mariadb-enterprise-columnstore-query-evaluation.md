@@ -71,11 +71,11 @@ As a smart storage engine, the ColumnStore storage engine plugin tightly integra
 
 The ColumnStore storage engine can use either the custom select handler or the generic select handler. The select handler can be configured using the `columnstore_select_handler` system variable:
 
-| Value | Description                                                                                                                                                                          |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| AUTO  | • When set to AUTO, Enterprise ColumnStore automatically chooses the best select handler for a given SELECT query. • AUTO was added in Enterprise ColumnStore 6.                     |
-| OFF   | • When set to OFF, Enterprise ColumnStore uses the generic select handlers for all SELECT queries. • It is not recommended to use this value, unless recommended by MariaDB Support. |
-| ON    | • When set to ON, Enterprise ColumnStore uses the custom select handlers for all SELECT queries. • ON is the default in Enterprise ColumnStore 5 and Enterprise ColumnStore 6.       |
+| Value | Description                                                                                                                                                                                                                                 |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AUTO  | <ul><li>When set to <code>AUTO</code>, Enterprise ColumnStore automatically chooses the best select handler for a given SELECT query.</li><li><code>AUTO</code> was added in Enterprise ColumnStore 6.</li></ul>                            |
+| OFF   | <ul><li>When set to <code>OFF</code>, Enterprise ColumnStore uses the generic select handlers for all <code>SELECT</code> queries.</li><li>It is not recommended to use this value, unless recommended by MariaDB Support.</li></ul>        |
+| ON    | <ul><li>When set to <code>ON</code>, Enterprise ColumnStore uses the custom select handlers for all <code>SELECT</code> queries.</li><li><code>ON</code> is the default in Enterprise ColumnStore 5 and Enterprise ColumnStore 6.</li></ul> |
 
 ## Joins
 
@@ -89,10 +89,10 @@ MariaDB Enterprise ColumnStore can be configured to allocate more memory for has
 
 The relevant configuration options are:
 
-| Section  | Option               | Description                                                                                                                                                                                                                          |
-| -------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| HashJoin | PmMaxMemorySmallSide | • Configures the amount of memory available for a single join. • Valid values are from 0 to 4 GB. • Default value is 1 GB.                                                                                                           |
-| HashJoin | TotalUmMemory        | • Configures the amount of memory available for all joins. • Values can be specified as a percentage of total system memory or as a specific amount of memory. • Valid percentage values are from 0 to 100%. • Default value is 25%. |
+| Section  | Option               | Description                                                                                                                                                                                                                                                                                                 |
+| -------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| HashJoin | PmMaxMemorySmallSide | <ul><li>Configures the amount of memory available for a single join.</li><li>Valid values are from <code>0</code> to <code>4</code> GB.</li><li>Default value is <code>1</code> GB.</li></ul>                                                                                                               |
+| HashJoin | TotalUmMemory        | <ul><li>Configures the amount of memory available for all joins.</li><li>Values can be specified as a percentage of total system memory or as a specific amount of memory.</li><li>Valid percentage values are from <code>0</code> to <code>100%</code></li><li>Default value is <code>25%</code></li></ul> |
 
 For example, to configure Enterprise ColumnStore to use more memory for hash joins using the mcsSetConfig utility:
 
@@ -107,18 +107,18 @@ MariaDB Enterprise ColumnStore can be configured to perform disk-based joins.
 
 The relevant configuration options are:
 
-| Section      | Option              | Description                                                                                                                                 |
-| ------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| HashJoin     | AllowDiskBasedJoin  | • Enables disk-based joins • Valid values are Y and N • Default value is N.                                                                 |
-| HashJoin     | TempFileCompression | • Enables compression for temporary files used by disk-based joins. • Valid values are Y and N • Default value is N.                        |
-| SystemConfig | SystemTempFileDir   | Configures the directory used for temporary files used by disk-based joins and aggregations • Default value is /tmp/columnstore\_tmp\_files |
+| Section      | Option              | Description                                                                                                                                                                           |
+| ------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| HashJoin     | AllowDiskBasedJoin  | <ul><li>Enables disk-based joins</li><li>Valid values are <code>Y</code> and <code>N</code></li><li>Default value is <code>N</code></li></ul>                                         |
+| HashJoin     | TempFileCompression | <ul><li>Enables compression for temporary files used by disk-based joins</li><li>Valid values are <code>Y</code> and <code>N</code></li><li>Default value is <code>N</code></li></ul> |
+| SystemConfig | SystemTempFileDir   | <ul><li>Configures the directory used for temporary files used by disk-based joins and aggregations</li><li>Default value is <code>/tmp/columnstore_tmp_files</code></li></ul>        |
 
 For example, to configure Enterprise ColumnStore to perform disk-based joins using the `mcsSetConfig` utility:
 
-```sql
-$ mcsSetConfig HashJoin AllowDiskBasedJoin Y
-$ mcsSetConfig HashJoin TempFileCompression Y
-$ mcsSetConfig SystemConfig SystemTempFileDir /mariadb/tmp
+```bash
+mcsSetConfig HashJoin AllowDiskBasedJoin Y
+mcsSetConfig HashJoin TempFileCompression Y
+mcsSetConfig SystemConfig SystemTempFileDir /mariadb/tmp
 ```
 
 ## Aggregations
@@ -133,11 +133,11 @@ In Enterprise ColumnStore 5.6.1 and later, disk-based aggregations can be config
 
 The relevant configuration options are:
 
-| Section        | Option                    | Description                                                                                                                                 |
-| -------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| RowAggregation | AllowDiskBasedAggregation | • Enables disk-based joins • Valid values are Y and N • Default value is N.                                                                 |
-| RowAggregation | Compression               | • Enables compression for temporary files used by disk-based joins. • Valid values are Y and N • Default value is N.                        |
-| SystemConfig   | SystemTempFileDir         | Configures the directory used for temporary files used by disk-based joins and aggregations • Default value is /tmp/columnstore\_tmp\_files |
+| Section        | Option                    | Description                                                                                                                                                                           |
+| -------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RowAggregation | AllowDiskBasedAggregation | <ul><li>Enables disk-based joins</li><li>Valid values are <code>Y</code> and <code>N</code></li><li>Default value is <code>N</code></li></ul>                                         |
+| RowAggregation | Compression               | <ul><li>Enables compression for temporary files used by disk-based joins</li><li>Valid values are <code>Y</code> and <code>N</code></li><li>Default value is <code>N</code></li></ul> |
+| SystemConfig   | SystemTempFileDir         | <ul><li>Configures the directory used for temporary files used by disk-based joins and aggregations</li><li>Default value is <code>/tmp/columnstore_tmp_files</code></li></ul>        |
 
 For example, to configure Enterprise ColumnStore to perform disk-based aggregations using the `mcsSetConfig` utility:
 

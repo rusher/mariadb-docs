@@ -6,12 +6,12 @@
 
 ## Overview
 
-The Read Replicas feature in MariaDB ColumnStore enables horizontal scaling of read performance by incorporating read-only nodes into a multi-node cluster. These replicas differ from standard ColumnStore nodes, in that they don't run the **WriteEngineServer process**. This means Read Replica nodes cannot handle write operations directly — instead, any write queries attempted on a replica are automatically forwarded to a read-write (RW) node.&#x20;
+The Read Replicas feature in MariaDB ColumnStore enables horizontal scaling of read performance by incorporating read-only nodes into a multi-node cluster. These replicas differ from standard ColumnStore nodes, in that they don't run the **WriteEngineServer process**. This means Read Replica nodes cannot handle write operations directly — instead, any write queries attempted on a replica are automatically forwarded to a read-write (RW) node.
 
-Replicas utilize shared storage with other nodes in the cluster, ensuring data consistency without duplication. A key requirement is maintaining at least one RW node — a cluster consisting solely of read replicas is not operational and cannot process reads or writes.&#x20;
+Replicas utilize shared storage with other nodes in the cluster, ensuring data consistency without duplication. A key requirement is maintaining at least one RW node — a cluster consisting solely of read replicas is not operational and cannot process reads or writes.
 
 {% hint style="warning" %}
-Read-only nodes are incompatible with S3 as the storage backend.&#x20;
+Read-only nodes are incompatible with S3 as the storage backend.
 
 Additionally, there is no automatic promotion of a read replica to RW mode if the only RW node fails, which could lead to temporary downtime until manual intervention.
 {% endhint %}
@@ -34,7 +34,7 @@ These commands require [CMAPI](../reference/cmapi/).
 sudo mcs node add --read-replica --node <private-ip>
 ```
 
-* **Remove Node.** To safely remove any node (RW or replica) from the cluster, run this command: &#x20;
+* **Remove Node.** To safely remove any node (RW or replica) from the cluster, run this command:
 
 ```bash
 sudo mcs node remove --node <private-ip>
@@ -60,7 +60,7 @@ sudo mcs cluster status
 ### Prerequisites
 
 {% hint style="info" %}
-**Ensure shared storage is mounted on all nodes** (at /var/lib/columnstore/data1 for non-s3 configuration), to ensure data consistency across RW nodes and read replicas.&#x20;
+**Ensure shared storage is mounted on all nodes** (at /var/lib/columnstore/data1 for non-s3 configuration), to ensure data consistency across RW nodes and read replicas.
 {% endhint %}
 
 Refer to [shared storage setup](columnstore-architectural-overview.md#shared-local-storage) for exact mount points details.
@@ -69,7 +69,7 @@ Refer to [shared storage setup](columnstore-architectural-overview.md#shared-loc
 
 {% stepper %}
 {% step %}
-#### Set Up MariaDB Repository
+**Set Up MariaDB Repository**
 
 Run the following to add the MariaDB repository (adjust "11.4" to the latest stable version):
 
@@ -83,7 +83,7 @@ See [this page](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management
 {% endstep %}
 
 {% step %}
-#### Install Packages
+**Install Packages**
 
 {% hint style="info" %}
 Run the following commands on all nodes.
@@ -107,7 +107,7 @@ sudo apt install -y mariadb-server mariadb-plugin-columnstore mariadb-columnstor
 {% endstep %}
 
 {% step %}
-#### Start and Enable Services
+**Start and Enable Services**
 
 ```bash
 sudo systemctl start mariadb
@@ -118,7 +118,7 @@ sudo systemctl enable mariadb-columnstore-cmapi
 {% endstep %}
 
 {% step %}
-#### Configure the Initial RW Node
+**Configure the Initial RW Node**
 
 On the primary RW node, set up the cluster API key (use a secure API key):
 
@@ -128,7 +128,7 @@ sudo mcs cluster set api-key --key <your-api-key-here>
 {% endstep %}
 
 {% step %}
-#### Add the Initial RW Node to the Cluster
+**Add the Initial RW Node to the Cluster**
 
 Run this from the primary RW node:
 
@@ -138,7 +138,7 @@ sudo mcs node add --node <private-ip-of-rw-node>
 {% endstep %}
 
 {% step %}
-#### Add Read Replica Nodes
+**Add Read Replica Nodes**
 
 From the primary RW node, add each read replica:
 
@@ -148,7 +148,7 @@ sudo mcs node add --read-replica --node <private-ip-of-replica>
 {% endstep %}
 
 {% step %}
-#### Verify the Cluster
+**Verify the Cluster**
 
 Check the status to ensure nodes are added and the cluster is healthy:
 
@@ -158,15 +158,14 @@ sudo mcs cluster status
 {% endstep %}
 
 {% step %}
-#### Configure Replication Between Nodes
+**Configure Replication Between Nodes**
 
 See [this page](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/setting-up-replication) for instructions on how to set up replication, and [this page](../management/deployment/install-guide/multinode-s3/step-4-test-enterprise-columnstore.md) for instructions how to create user accounts and configure replication for multi-node local storage.
 {% endstep %}
 
 {% step %}
-#### Configure MaxScale
+**Configure MaxScale**
 
-See [this page](../management/deployment/install-guide/multnode-localstorage/step-7-start-and-configure-mariadb-maxscale.md) for instructions.\
-
+See [this page](../management/deployment/install-guide/multnode-localstorage/step-7-start-and-configure-mariadb-maxscale.md) for instructions.
 {% endstep %}
 {% endstepper %}

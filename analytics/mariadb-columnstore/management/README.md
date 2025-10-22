@@ -7,8 +7,3 @@ icon: gear
 
 # Managing ColumnStore
 
-
-## Upgrades
-
-- See Upgrading MariaDB Enterprise ColumnStore (Alpha): [management/upgrades.md](./upgrades.md)
-

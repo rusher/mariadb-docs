@@ -13,7 +13,7 @@ The ColumnStore storage engine has the following features:
 | ---------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Storage Engine         | ColumnStore        |                                                                                                                                               |
 | Availability           | ES 10.5+, CS 10.5+ | MariaDB Enterprise Server                                                                                                                     |
-| Workload Optimization  | OLAP and Hybrid    | [OLAP Workloads ](columnstore-storage-architecture.md#olap-workloads)[Hybrid Workload](columnstore-storage-architecture.md#hybrid-workloads)s |
+| Workload Optimization  | OLAP and Hybrid    | [OLAP Workloads ](columnstore-storage-architecture.md#olap-workloads)[Hybrid Workloads](columnstore-storage-architecture.md#hybrid-workloads) |
 | Table Orientation      | Columnar           | [Columnar Storage Engine](columnstore-architectural-overview.md#columnar-storage-engine)                                                      |
 | ACID-compliant         | Yes                |                                                                                                                                               |
 | Indexes                | Unnecessary        | [Extent Elimination](mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination)                                                   |
@@ -31,7 +31,7 @@ The ColumnStore storage engine has the following features:
 
 To create a ColumnStore table, use the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) statement with the `ENGINE=ColumnStore` option:
 
-```
+```sql
 CREATE DATABASE columnstore_db;
 
 CREATE TABLE columnstore_db.analytics_test (
@@ -44,7 +44,7 @@ CREATE TABLE columnstore_db.analytics_test (
 
 To deploy a multi-node Enterprise ColumnStore deployment, a configuration similar to below is required:
 
-```
+```ini
 [mariadb]
 log_error                              = mariadbd.err
 character_set_server                   = utf8
@@ -62,13 +62,13 @@ server_id                              = 1
 
 ### Configure the Mandatory Utility User Account
 
-To configure the mandatory utility user account, use the mcsSetConfig command:
+To configure the mandatory utility user account, use the `mcsSetConfig` command:
 
-```
-$ sudo mcsSetConfig CrossEngineSupport Host 127.0.0.1
-$ sudo mcsSetConfig CrossEngineSupport Port 3306
-$ sudo mcsSetConfig CrossEngineSupport User cross_engine
-$ sudo mcsSetConfig CrossEngineSupport Password cross_engine_passwd
+```bash
+sudo mcsSetConfig CrossEngineSupport Host 127.0.0.1
+sudo mcsSetConfig CrossEngineSupport Port 3306
+sudo mcsSetConfig CrossEngineSupport User cross_engine
+sudo mcsSetConfig CrossEngineSupport Password cross_engine_passwd
 ```
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
