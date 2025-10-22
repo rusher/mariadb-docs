@@ -1,8 +1,6 @@
 # Backup & Restore of Enterprise Manager
 
-{% hint style="warning" %}
-This procedure is for backing up the MariaDB Enterprise Manager application itself, including its configuration and historical monitoring data. It does not back up the data in your monitored databases.
-{% endhint %}
+Note: This is about backing up the data, configuration and collected metrics of the Enterprise Manager (EM), not the databases.
 
 ## Backing up Enterprise Manager Server
 
@@ -37,10 +35,49 @@ docker run --rm --volumes-from enterprise-manager-supermax -v $(pwd)/backups/:/b
 
 The `backups` directory now contains the data from the Enterprise Manager.
 {% endstep %}
+
+{% step %}
+## Start the Enterprise Manager
+1. Go to the Enterprise Manager installation directory
+2. Run `docker compose up -d` to start the Enterprise Manager
+{% endstep %}
+
 {% endstepper %}
 
 ## Restoring Enterprise Manager Server
 
-{% hint style="warning" %}
-Instruction to restore Enterprise Manager server are under review at the moment stay tuned
-{% endhint %}
+{% stepper %}
+
+{% step %}
+## Stop the Enterprise Manager
+1. Go to the Enterprise Manager installation directory
+2. Run `docker compose stop` to stop the Enterprise Manager
+{% endstep %}
+
+{% step %}
+## Restore the backup of all volumes
+
+The backups are stored in the `~/backups/` directory.
+
+{% code title="Restore backup to all volumes" %}
+```bash
+# Clear out any existing data first
+docker run --rm --volumes-from enterprise-manager-grafana -v $(pwd)/backups/:/backups/ alpine:latest find /var/lib/grafana/ -delete -mindepth 1
+docker run --rm --volumes-from enterprise-manager-prometheus -v $(pwd)/backups/:/backups/ alpine:latest find /prometheus/ -delete -mindepth 1
+docker run --rm --volumes-from enterprise-manager-supermax -v $(pwd)/backups/:/backups/ alpine:latest find /var/lib/supermax/ -delete -mindepth 1
+
+# Restore the data from the backups
+docker run --rm --volumes-from enterprise-manager-grafana -v $(pwd)/backups/:/backups/ alpine:latest tar -C / -xzf /backups/grafana-backup.tar.gz
+docker run --rm --volumes-from enterprise-manager-prometheus -v $(pwd)/backups/:/backups/ alpine:latest tar -C / -xzf /backups/prometheus-backup.tar.gz
+docker run --rm --volumes-from enterprise-manager-supermax -v $(pwd)/backups/:/backups/ alpine:latest tar -C / -xzf /backups/supermax-backup.tar.gz
+```
+{% endcode %}
+{% endstep %}
+
+{% step %}
+## Start the Enterprise Manager
+1. Go to the Enterprise Manager installation directory
+2. Run `docker compose up -d` to start the Enterprise Manager
+{% endstep %}
+
+{% endstepper %}
