@@ -117,4 +117,8 @@ There are two ways to verify Query Accelerator is being used:
 1. Use `select mcs_get_plan('rules')` to get a list of the rules that were applied to the query.
 2. Look for patterns like `derived table - $added_sub_#db_name_#table_name_X` in the optimized plan using `select mcs_get_plan('optimized')`.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}
+
 [^1]: Rule-based optimizer

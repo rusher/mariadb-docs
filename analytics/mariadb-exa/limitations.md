@@ -123,3 +123,7 @@ When table definitions differ between source and Exasol, connector startup may f
 Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
 due to: Unable to resolve name [com.exasol.hibernate.dialect.ExasolDialect]
 ```
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

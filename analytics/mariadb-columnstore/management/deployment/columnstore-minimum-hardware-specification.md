@@ -30,6 +30,6 @@ These are minimum recommendations and in general the system will perform better 
 
 For AWS, our own internal testing generally uses m4.4xlarge instance types as a cost-effective middle ground. The R4.8xlarge has also been tested and performs about twice as fast for about twice the price.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

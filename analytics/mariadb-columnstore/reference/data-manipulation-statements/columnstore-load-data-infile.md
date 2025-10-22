@@ -44,6 +44,6 @@ If the default mode is set to use cpimport internally, any output error files wi
 
 [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

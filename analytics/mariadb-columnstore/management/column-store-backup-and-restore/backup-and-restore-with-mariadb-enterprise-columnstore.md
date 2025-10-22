@@ -34,6 +34,6 @@ To see the procedure to perform a full backup and restore, choose the storage ty
 | [Enterprise ColumnStore with Object Storage](mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)                                        | ![columnstore-topology-s3](../../../.gitbook/assets/columnstore-topology-s3.png) |
 | [Enterprise ColumnStore with Shared Local Storage](../../architecture/columnstore-architectural-overview.md#enterprise-columnstore-with-shared-local-storage) | ![columnstore-topology](../../../.gitbook/assets/columnstore-topology.png)       |
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

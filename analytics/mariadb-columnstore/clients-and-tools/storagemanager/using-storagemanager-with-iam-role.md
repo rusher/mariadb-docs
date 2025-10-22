@@ -44,6 +44,6 @@ path = /var/lib/columnstore/storagemanager/cache
 _Note: This is an AWS only feature. For other deployment methods, see the example_ [_here_](storagemanager-sample-storagemanagercnf.md)_._
 {% endhint %}
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

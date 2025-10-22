@@ -718,6 +718,6 @@ This page was **step 4 of 9**.
 
 [Next: Step 5: Test MariaDB Enterprise Server.](step-5-test-mariadb-enterprise-server.md)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

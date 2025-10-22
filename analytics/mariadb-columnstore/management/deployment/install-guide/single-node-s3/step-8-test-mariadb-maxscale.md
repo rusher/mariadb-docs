@@ -641,6 +641,6 @@ This page was **step 8 of 9**.
 
 [Next: Step 9: Import Data](step-9-import-data.md)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

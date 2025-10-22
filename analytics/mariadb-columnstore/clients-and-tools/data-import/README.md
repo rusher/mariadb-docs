@@ -61,3 +61,7 @@ When a bulk data load is running:
 | Fast        | columnstore\_info.load\_from\_s3                                                                                                                                                                 | SQL       | • Text file.                                        | • S3-compatible object storage            | • Loads data from the cloud. • Translates operation to cpimport command. • Non-blocking |
 | Fast        | [LOAD DATA \[ LOCAL \] INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) | SQL       | • Text file.                                        | • Server file system • Client file system | • Translates operation to cpimport command. • Non-blocking                              |
 | Slow        | [INSERT .. SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert)                                                      | SQL       | • Other table(s).                                   | • Same MariaDB server                     | • Translates operation to cpimport command. • Non-blocking                              |
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

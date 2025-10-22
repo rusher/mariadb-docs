@@ -98,6 +98,6 @@ A MariaDB global or session variable is available to specify a memory limit at w
 
 * `infinidb_um_mem_limit` - Memory limit in MB per user (i.e., switch to disk-based join if this limit is exceeded). By default, this limit is not set (value of 0).
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

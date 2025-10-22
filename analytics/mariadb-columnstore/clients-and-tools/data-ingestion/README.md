@@ -19,3 +19,7 @@ ColumnStore provides several mechanisms to ingest data:
     * [INSERT INTO SELECT](columnstore-batch-insert-mode.md) with autocommit behaves similarly to `LOAD DATE INFILE` because, internally, it is mapped to `cpimport` for higher performance.
     * Bulk update operations based on a join with a small staging table can be relatively fast, especially if updating a single column.
 * Using ColumnStore Bulk Write SDK or [ColumnStore Streaming Data Adapters](columnstore-streaming-data-adapters.md).
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

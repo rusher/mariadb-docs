@@ -68,6 +68,6 @@ Notes:
 * Circular joins are not supported in ColumnStore. See the Troubleshooting section
 * When the join memory limit is exceeded, a disk-based join will be used for processing if this option has been enabled.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

@@ -57,8 +57,6 @@ Although multiple topologies are listed on this page, the listed topologies are 
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![](../../.gitbook/assets/es-columnstore-htap-topology-s3-no-title.png) | <ul><li>Single-stack hybrid transactional/analytical workloads</li><li>ColumnStore for analytics with scalable S3-compatible object storage</li><li>InnoDB for transactions• Cross-engine JOINs</li><li>Enterprise Server, Enterprise ColumnStore, MaxScale</li></ul> |
 
-## Single Node Topologies
-
-* Deploy Single Node Topologies
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

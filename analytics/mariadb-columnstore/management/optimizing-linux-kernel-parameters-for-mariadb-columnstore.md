@@ -77,3 +77,7 @@ These optimized parameters are recommended for all MariaDB ColumnStore deploymen
 ### Conclusion
 
 By optimizing the Linux kernel parameters, you can significantly improve the performance of your MariaDB ColumnStore deployments. These recommendations provide a starting point for optimizing your system, and you may need to adjust the values based on your specific hardware and workload.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

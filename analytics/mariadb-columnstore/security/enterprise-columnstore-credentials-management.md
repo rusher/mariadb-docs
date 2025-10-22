@@ -57,6 +57,6 @@ To decrypt a password, execute the cspasswd utility and specify the --decrypt co
 $ cspasswd --decrypt util_user_encrypted_passwd
 ```
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

@@ -502,6 +502,6 @@ A typical log might look like this:
 
 _Prior to version 1.4, this folder was located at_ `/usr/local/mariadb/columnstore/bulk`_._
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

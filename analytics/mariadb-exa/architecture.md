@@ -50,5 +50,8 @@ When using MariaDB MaxScale, the architecture can include:
 * **Load Balancing / Query Routing:** MaxScale can manage read/write separation, and route analytics queries directly to MariaDB Exa in hybrid configurations.
 * **Security & Auditing:** MaxScale handles SSL termination, connection pooling, and authentication, reducing load on backend servers.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}
 
 [^1]: Business Intelligence

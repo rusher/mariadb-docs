@@ -253,6 +253,6 @@ columnstoreRestore will create a `restoreConfig` directory inside the `backupSer
 
 The columnstoreRestore option -n \[value] limits the number parallel `rsync` commands executed at a given time. The default 5 means up to 5 DBRoots will kick off `rysnc` commands to various PMs, and the backup system will wait until all are complete and verified successful. At this time, it will kick off another 5 DBRoots. The progress indicator should reflect the percentage of total completion and not individual `rysnc` commands. This value can be set higher via the -n command, but if the number of DBRoots present in the system is large enough there may be a performance hit on system processing or network bandwidth limitations.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

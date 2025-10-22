@@ -197,6 +197,6 @@ When Enterprise ColumnStore executes a query, it goes through the following proc
 8. ES returns the results to MaxScale.
 9. MaxScale returns the results to the client or application.
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

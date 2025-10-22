@@ -67,7 +67,7 @@ mcsmysql -u mydbuser -p -h 127.0.0.1
 
 * Cross engine will not work against a `MyISAM/Aria` table that has 0 or 1 rows in it. This is due to MariaDB's optimizer shortcut for this specific condition. We recommend using InnoDB instead of `MyISAM/Aria` for this case.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}
 

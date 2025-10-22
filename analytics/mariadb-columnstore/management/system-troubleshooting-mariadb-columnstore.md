@@ -926,6 +926,6 @@ DROP TABLE TABLE1 RESTRICT;
 
 Then the customer should be able to create the table at this point.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

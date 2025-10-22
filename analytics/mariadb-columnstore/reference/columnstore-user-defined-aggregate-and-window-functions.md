@@ -43,7 +43,7 @@ This requires a MariaDB ColumnStore source tree and the necessary tools to compi
 
 * The implementation of the median and `avg_mode` functions will scale in memory consumption to the size of the set of unique values in the aggregation.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}
 

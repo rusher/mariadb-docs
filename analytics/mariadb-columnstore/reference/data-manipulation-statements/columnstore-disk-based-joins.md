@@ -42,6 +42,6 @@ For modification at the session level, before issuing your join query from the S
 SET columnstore_um_mem_limit = value
 ```
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}
