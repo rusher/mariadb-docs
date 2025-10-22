@@ -90,3 +90,7 @@ The agent is now installed and running as a service.
 After the agent is installed, it is running but not yet configured or linked to your MariaDB Enterprise Manager server.
 
 The final step is to link the agent, which is done from the Enterprise Manager UI. Please refer to the ["Adding Databases to MariaDB Enterprise Manager" guide](./#adding-databases-to-mariadb-enterprise-manager) for the specific steps to generate the linking command.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

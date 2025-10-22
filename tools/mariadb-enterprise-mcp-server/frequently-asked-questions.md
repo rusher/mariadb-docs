@@ -80,3 +80,7 @@ The process works like this:
 The JSON snippets shown in the documentation are examples of the "behind-the-scenes" communication between a client, the LLM, and the MCP Server. They are not meant to be copied and pasted into a CLI but serve to illustrate how the protocol functions.
 
 </details>
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

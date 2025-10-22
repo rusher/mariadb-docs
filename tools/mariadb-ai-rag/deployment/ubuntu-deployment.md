@@ -777,3 +777,7 @@ Your MariaDB AI RAG is now running natively on Ubuntu.
 * Check logs
 * Verify config: `nano /path/to/config.env`
 * Test health: `curl http://localhost:8000/health`
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

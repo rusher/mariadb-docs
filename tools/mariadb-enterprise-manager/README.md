@@ -27,3 +27,7 @@ The Workspace provides a powerful suite of tools for developers and DBAs. It fea
 ### **Enterprise Security**
 
 Secure your management layer with robust security features. Authenticate users with your corporate [**identity provider (OIDC)**](administration/user-management/configure-openid-connect-identity-provider.md), enforce granular permissions with [**role-based access control (RBAC)**](administration/user-management/), and maintain compliance with a comprehensive **audit log** for all administrative actions.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

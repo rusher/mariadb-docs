@@ -13,6 +13,7 @@ POST /token
 **Purpose**: Authenticates a user and provides a JWT token for subsequent API calls.
 
 **Request body**:
+
 ```json
 {
   "username": "user@example.com",
@@ -21,6 +22,7 @@ POST /token
 ```
 
 **Response**:
+
 ```json
 {
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -47,9 +49,11 @@ POST /documents/ingest
 **Request**: `multipart/form-data` with one or more file attachments
 
 **Request Parameters**:
-- `files`: One or more files to upload (required)
+
+* `files`: One or more files to upload (required)
 
 **Response**:
+
 ```json
 {
   "message": "2 documents have been queued for ingestion.",
@@ -79,9 +83,10 @@ POST /documents/ingest
 ```
 
 **Status Values**:
-- `pending`: Document is queued for processing
-- `completed`: Document has been successfully processed
-- `failed`: Document processing failed (check `error_message`)
+
+* `pending`: Document is queued for processing
+* `completed`: Document has been successfully processed
+* `failed`: Document processing failed (check `error_message`)
 
 **Usage Example**: Upload one or more documents for ingestion.
 
@@ -109,10 +114,12 @@ GET /documents
 **Purpose**: Retrieves a paginated list of all documents uploaded by the authenticated user.
 
 **Parameters**:
-- `skip` (optional): Number of records to skip for pagination (default: 0)
-- `limit` (optional): Maximum number of records to return (default: 100)
+
+* `skip` (optional): Number of records to skip for pagination (default: 0)
+* `limit` (optional): Maximum number of records to return (default: 100)
 
 **Response**:
+
 ```json
 {
   "documents": [
@@ -150,6 +157,7 @@ GET /documents/{document_id}
 **Purpose**: Retrieves detailed information about a specific document.
 
 **Response**:
+
 ```json
 {
   "id": 42,
@@ -184,6 +192,7 @@ DELETE /documents
 **Purpose**: Deletes multiple documents and their associated chunks and vector embeddings.
 
 **Request body**:
+
 ```json
 {
   "document_ids": [42, 43, 44]
@@ -191,6 +200,7 @@ DELETE /documents
 ```
 
 **Response**:
+
 ```json
 {
   "deleted_count": 3,
@@ -218,6 +228,7 @@ POST /chunk
 **Purpose**: Processes multiple documents into chunks and creates vector embeddings for semantic search. Documents are processed asynchronously in the background.
 
 **Request body**:
+
 ```json
 {
   "document_ids": [42, 43, 44],
@@ -229,12 +240,14 @@ POST /chunk
 ```
 
 **Chunking Methods**:
-- `recursive`: Recursive text splitting (default)
-- `sentence`: Sentence-based chunking
-- `token`: Token-based chunking
-- `semantic`: Semantic similarity-based chunking (requires `threshold`)
+
+* `recursive`: Recursive text splitting (default)
+* `sentence`: Sentence-based chunking
+* `token`: Token-based chunking
+* `semantic`: Semantic similarity-based chunking (requires `threshold`)
 
 **Response**:
+
 ```json
 {
   "message": "Chunking task scheduled for 3 documents",
@@ -269,6 +282,7 @@ POST /chunk/all
 **Purpose**: Processes all documents in the system into chunks. Useful for batch processing or reprocessing all documents with new chunking parameters.
 
 **Request body**:
+
 ```json
 {
   "chunking_method": "recursive",
@@ -279,6 +293,7 @@ POST /chunk/all
 ```
 
 **Response**:
+
 ```json
 {
   "message": "Chunking task scheduled for all documents",
@@ -309,6 +324,7 @@ POST /chunks/filter
 **Purpose**: Retrieves chunks for specific documents. Use this to check if chunking has completed or to retrieve chunk data.
 
 **Request body**:
+
 ```json
 {
   "document_ids": [42, 43]
@@ -316,6 +332,7 @@ POST /chunks/filter
 ```
 
 **Response**: Array of chunk objects
+
 ```json
 [
   {
@@ -357,6 +374,7 @@ POST /retrieve
 **Purpose**: Performs semantic search to retrieve relevant document chunks based on a query using vector similarity.
 
 **Request body**:
+
 ```json
 {
   "query": "What is MariaDB AI RAG?",
@@ -366,11 +384,13 @@ POST /retrieve
 ```
 
 **Request Parameters**:
-- `query` (required): The search query
-- `top_k` (optional): Number of results to return (default: 20)
-- `document_ids` (optional): Filter results to specific document IDs (default: all documents)
+
+* `query` (required): The search query
+* `top_k` (optional): Number of results to return (default: 20)
+* `document_ids` (optional): Filter results to specific document IDs (default: all documents)
 
 **Response**: Array of retrieval results
+
 ```json
 [
   {
@@ -391,11 +411,12 @@ POST /retrieve
 ```
 
 **Response Fields**:
-- `id`: Unique chunk identifier
-- `document_id`: ID of the source document
-- `content`: The chunk text content
-- `metadata`: Additional metadata about the chunk
-- `distance`: Vector distance (lower = more similar)
+
+* `id`: Unique chunk identifier
+* `document_id`: ID of the source document
+* `content`: The chunk text content
+* `metadata`: Additional metadata about the chunk
+* `distance`: Vector distance (lower = more similar)
 
 **Usage Example**: Use this endpoint to find semantically relevant information. The system converts your query into a vector embedding and finds the most similar chunks.
 
@@ -419,6 +440,7 @@ POST /search
 **Purpose**: Performs full-text search using MariaDB's FULLTEXT index to find relevant document chunks.
 
 **Request body**:
+
 ```json
 {
   "query": "MariaDB features",
@@ -428,11 +450,13 @@ POST /search
 ```
 
 **Request Parameters**:
-- `query` (required): The search query
-- `top_k` (optional): Number of results to return (default: 10)
-- `document_ids` (optional): Filter results to specific document IDs
+
+* `query` (required): The search query
+* `top_k` (optional): Number of results to return (default: 10)
+* `document_ids` (optional): Filter results to specific document IDs
 
 **Response**: Array of search results
+
 ```json
 [
   {
@@ -453,11 +477,12 @@ POST /search
 ```
 
 **Response Fields**:
-- `id`: Unique chunk identifier
-- `document_id`: ID of the source document
-- `source`: File path of the source document
-- `content`: The chunk text content
-- `score`: Relevance score (higher = more relevant)
+
+* `id`: Unique chunk identifier
+* `document_id`: ID of the source document
+* `source`: File path of the source document
+* `content`: The chunk text content
+* `score`: Relevance score (higher = more relevant)
 
 **Usage Example**: Use this endpoint for keyword-based search when you need exact term matching.
 
@@ -480,6 +505,7 @@ POST /hybrid_search
 **Purpose**: Combines semantic search (vector similarity) and full-text search using Reciprocal Rank Fusion (RRF) for optimal results.
 
 **Request body**:
+
 ```json
 {
   "query": "MariaDB vector capabilities",
@@ -492,14 +518,16 @@ POST /hybrid_search
 ```
 
 **Request Parameters**:
-- `query` (required): The search query
-- `top_k` (optional): Number of results to return (default: 20)
-- `k` (optional): RRF parameter for rank fusion (default: 60)
-- `provider` (optional): Embedding provider for semantic search
-- `model` (optional): Embedding model for semantic search
-- `document_ids` (optional): Filter results to specific document IDs
+
+* `query` (required): The search query
+* `top_k` (optional): Number of results to return (default: 20)
+* `k` (optional): RRF parameter for rank fusion (default: 60)
+* `provider` (optional): Embedding provider for semantic search
+* `model` (optional): Embedding model for semantic search
+* `document_ids` (optional): Filter results to specific document IDs
 
 **Response**: Array of hybrid search results
+
 ```json
 [
   {
@@ -524,13 +552,14 @@ POST /hybrid_search
 ```
 
 **Response Fields**:
-- `id`: Unique chunk identifier
-- `document_id`: ID of the source document
-- `source`: File path of the source document
-- `content`: The chunk text content
-- `metadata`: Additional metadata about the chunk
-- `distance`: Vector distance from semantic search (lower = more similar)
-- `score`: Full-text relevance score (higher = more relevant)
+
+* `id`: Unique chunk identifier
+* `document_id`: ID of the source document
+* `source`: File path of the source document
+* `content`: The chunk text content
+* `metadata`: Additional metadata about the chunk
+* `distance`: Vector distance from semantic search (lower = more similar)
+* `score`: Full-text relevance score (higher = more relevant)
 
 **Usage Example**: Use this endpoint for the best of both worlds - combining semantic understanding with keyword matching.
 
@@ -554,6 +583,7 @@ POST /generate
 **Purpose**: Generates a response to a query using a language model and the provided context chunks.
 
 **Request body**:
+
 ```json
 {
   "query": "Explain MariaDB AI RAG features",
@@ -570,15 +600,17 @@ POST /generate
 ```
 
 **Request Parameters**:
-- `query` (required): The user's question or prompt
-- `chunks` (required): Array of context chunks to use for generation
-- `llm_provider` (optional): LLM provider - `openai`, `anthropic`, `gemini`, `cohere`, `ollama`, `azure`, `bedrock`
-- `llm_model` (optional): Specific model to use (e.g., `gpt-4`, `claude-3-opus`)
-- `temperature` (optional): Controls randomness (0.0-2.0, default: 0.7)
-- `top_p` (optional): Nucleus sampling parameter (0.0-1.0, default: 0.9)
-- `max_tokens` (optional): Maximum tokens to generate (1-8192, default: 1000)
+
+* `query` (required): The user's question or prompt
+* `chunks` (required): Array of context chunks to use for generation
+* `llm_provider` (optional): LLM provider - `openai`, `anthropic`, `gemini`, `cohere`, `ollama`, `azure`, `bedrock`
+* `llm_model` (optional): Specific model to use (e.g., `gpt-4`, `claude-3-opus`)
+* `temperature` (optional): Controls randomness (0.0-2.0, default: 0.7)
+* `top_p` (optional): Nucleus sampling parameter (0.0-1.0, default: 0.9)
+* `max_tokens` (optional): Maximum tokens to generate (1-8192, default: 1000)
 
 **Response**:
+
 ```json
 {
   "response": "MariaDB AI RAG is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that seamlessly integrates with MariaDB. Its key features include..."
@@ -667,3 +699,7 @@ curl -X POST "http://localhost:8000/generate-stream" \
     "llm_model": "gpt-4"
   }'
 ```
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

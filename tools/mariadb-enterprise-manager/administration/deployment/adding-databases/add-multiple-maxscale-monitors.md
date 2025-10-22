@@ -1,4 +1,4 @@
-# Add multiple MaxScale monitors
+# Add Multiple MaxScale Monitors
 
 MariaDB Enterprise Manager allows you to monitor multiple logical databases or clusters that are managed by the same set of high-availability MaxScale instances. After adding your first MaxScale instance, you can easily add more monitors to track different services without re-entering the connection details.
 
@@ -59,3 +59,6 @@ If you need to change which MaxScale monitor an existing logical database is tra
 {% endstep %}
 {% endstepper %}
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

@@ -43,3 +43,7 @@
 { "tool": "rag_generation", "parameters": { "database_name": "test_db", "vector_store_name": "my_vectors", "user_query": "What is the capital of France?", "k": 5, "temperature": 0.9 } }
 ```
 {% endcode %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

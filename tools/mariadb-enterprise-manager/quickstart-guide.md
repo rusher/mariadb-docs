@@ -225,3 +225,7 @@ GRANT PROCESS, BINLOG MONITOR, REPLICA MONITOR, REPLICATION MASTER ADMIN ON *.* 
 Wait 1–2 minutes for metrics to start populating in Enterprise Manager from the agents (default collection interval is 1 minute).
 {% endstep %}
 {% endstepper %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

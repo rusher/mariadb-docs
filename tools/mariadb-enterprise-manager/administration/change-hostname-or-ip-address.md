@@ -1,4 +1,4 @@
-# Change hostname or IP address
+# Change Hostname or IP Address
 
 To set the hostname or IP address for an existing MariaDB Enterprise Management instance, follow these instructions. Changing the hostname or IP address is useful if your server's IP changed or if you need to switch from an IP address to a public DNS name.
 
@@ -57,3 +57,7 @@ docker compose up -d --force-recreate
 After the restart, your Enterprise Manager will be accessible at the new hostname or IP address.
 {% endstep %}
 {% endstepper %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

@@ -12,7 +12,7 @@ This procedure outlines the steps required to access and utilize the Query Edito
 
 
     <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-3.  Upon successful connection, the main [Query Editor worksheet](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials/using-maxgui#query-editor-worksheet) will appear, ready for you to begin.\
+3.  Upon successful connection, the main [Query Editor worksheet](broken-reference) will appear, ready for you to begin.\
 
 
     <figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
@@ -129,3 +129,6 @@ Interact directly with the data displayed in the Results grid. Perform actions l
 
 <figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

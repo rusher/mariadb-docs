@@ -42,3 +42,7 @@
    * [https://dlm.mariadb.com/browse/ai\_rag\_enterprise/1.0.0/](https://dlm.mariadb.com/browse/ai_rag_enterprise/1.0.0/)
 2. Run the `.msi` installer.
 3. Follow the installation wizard instructions.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

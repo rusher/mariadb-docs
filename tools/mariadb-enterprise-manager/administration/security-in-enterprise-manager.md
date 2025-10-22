@@ -138,3 +138,7 @@ In the "Add Database" page:
 {% hint style="warning" %}
 All certificate and key files referenced for server validation or client authentication must be placed in the `enterprise-manager/certs/` directory on the host and referenced with a path beginning with `/certs/`.
 {% endhint %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

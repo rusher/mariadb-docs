@@ -108,3 +108,7 @@ Once your design is complete, you can export it for documentation or deployment.
 <figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Click the **"Apply Script"** button (▶) in the toolbar to execute the generated SQL against your connected database. This allows you to deploy your new or modified schema directly from the designer.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

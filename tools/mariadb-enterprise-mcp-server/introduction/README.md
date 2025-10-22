@@ -32,3 +32,7 @@ Key objectives include:
 * **Streamline Complex AI Workflows**: Provide a unified endpoint for orchestrating multi-step RAG (Retrieval-Augmented Generation) pipelines, from data ingestion to final response generation.
 * **Improve Manageability**: Offer a robust, configurable, and observable server that can be reliably deployed and managed by platform engineering and DBA teams.
 * **Accelerate AI Application Development**: Provide a standardized protocol that simplifies how developers connect AI agents to MariaDB data.
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

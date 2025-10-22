@@ -19,6 +19,7 @@ POST /token
 **Purpose**: Authenticates a user and provides a JWT token for subsequent API calls.
 
 **Request body**:
+
 ```json
 {
   "username": "user@example.com",
@@ -27,6 +28,7 @@ POST /token
 ```
 
 **Response**:
+
 ```json
 {
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -53,6 +55,7 @@ POST /users/register
 **Purpose**: Creates a new user account (admin only).
 
 **Request body**:
+
 ```json
 {
   "email": "newuser@example.com",
@@ -61,6 +64,7 @@ POST /users/register
 ```
 
 **Response**:
+
 ```json
 {
   "email": "newuser@example.com",
@@ -70,6 +74,7 @@ POST /users/register
 ```
 
 **Usage Example**:
+
 ```bash
 curl -X POST "http://localhost:8000/users/register" \
   -H "Authorization: Bearer YOUR_ADMIN_TOKEN" \
@@ -89,6 +94,7 @@ GET /users/me
 **Purpose**: Retrieves information about the currently authenticated user.
 
 **Response**:
+
 ```json
 {
   "email": "user@example.com",
@@ -107,6 +113,7 @@ DELETE /users/delete
 **Purpose**: Deletes a user by email address (admin only).
 
 **Request body**:
+
 ```json
 {
   "email": "user@example.com"
@@ -114,6 +121,7 @@ DELETE /users/delete
 ```
 
 **Response**:
+
 ```json
 {
   "message": "User user@example.com deleted successfully"
@@ -121,6 +129,7 @@ DELETE /users/delete
 ```
 
 **Usage Example**:
+
 ```bash
 curl -X DELETE "http://localhost:8000/users/delete" \
   -H "Authorization: Bearer YOUR_TOKEN" \
@@ -141,6 +150,7 @@ POST /documents/{document_id}/share
 **Purpose**: Shares a document with specific users.
 
 **Request body**:
+
 ```json
 {
   "user_emails": ["user1@example.com", "user2@example.com"]
@@ -148,6 +158,7 @@ POST /documents/{document_id}/share
 ```
 
 **Response**:
+
 ```json
 {
   "document_id": 42,
@@ -174,6 +185,7 @@ GET /documents/{document_id}/access
 **Purpose**: Lists all users who have access to a document.
 
 **Response**:
+
 ```json
 {
   "document_id": 42,
@@ -193,6 +205,7 @@ GET /users/me/roles
 **Purpose**: Gets the roles assigned to the current user.
 
 **Response**:
+
 ```json
 {
   "roles": ["user", "admin"]
@@ -208,6 +221,7 @@ POST /users/{user_id}/roles
 **Purpose**: Assigns a role to a user (admin only).
 
 **Request body**:
+
 ```json
 {
   "role": "admin"
@@ -235,9 +249,11 @@ GET /users/ingest-directory?email={email}
 **Purpose**: Retrieves the custom ingest directory configured for a user (admin only or self).
 
 **Query Parameters**:
-- `email` (required): Email address of the user
+
+* `email` (required): Email address of the user
 
 **Response**:
+
 ```json
 {
   "email": "user@example.com",
@@ -248,6 +264,7 @@ GET /users/ingest-directory?email={email}
 ```
 
 **Response (no directory configured)**:
+
 ```json
 {
   "email": "user@example.com",
@@ -257,6 +274,7 @@ GET /users/ingest-directory?email={email}
 ```
 
 **Usage Example**:
+
 ```bash
 curl -X GET "http://localhost:8000/users/ingest-directory?email=user@example.com" \
   -H "Authorization: Bearer YOUR_TOKEN"
@@ -273,6 +291,7 @@ POST /users/ingest-directory
 **Purpose**: Sets or updates the custom ingest directory for a user (admin only).
 
 **Request body**:
+
 ```json
 {
   "email": "user@example.com",
@@ -281,6 +300,7 @@ POST /users/ingest-directory
 ```
 
 **Response**:
+
 ```json
 {
   "email": "user@example.com",
@@ -292,6 +312,7 @@ POST /users/ingest-directory
 ```
 
 **Usage Example**:
+
 ```bash
 curl -X POST "http://localhost:8000/users/ingest-directory" \
   -H "Authorization: Bearer YOUR_TOKEN" \
@@ -300,9 +321,10 @@ curl -X POST "http://localhost:8000/users/ingest-directory" \
 ```
 
 **Validation**:
-- The directory path must exist on the server
-- Only admin users can set ingest directories
-- The directory path is validated before being saved
+
+* The directory path must exist on the server
+* Only admin users can set ingest directories
+* The directory path is validated before being saved
 
 ### Delete User Ingest Directory
 
@@ -313,6 +335,7 @@ DELETE /users/ingest-directory
 **Purpose**: Removes the custom ingest directory configuration for a user (admin only).
 
 **Request body**:
+
 ```json
 {
   "email": "user@example.com"
@@ -320,6 +343,7 @@ DELETE /users/ingest-directory
 ```
 
 **Response**:
+
 ```json
 {
   "email": "user@example.com",
@@ -329,6 +353,7 @@ DELETE /users/ingest-directory
 ```
 
 **Response (no directory configured)**:
+
 ```json
 {
   "email": "user@example.com",
@@ -338,6 +363,7 @@ DELETE /users/ingest-directory
 ```
 
 **Usage Example**:
+
 ```bash
 curl -X DELETE "http://localhost:8000/users/ingest-directory" \
   -H "Authorization: Bearer YOUR_TOKEN" \
@@ -346,3 +372,7 @@ curl -X DELETE "http://localhost:8000/users/ingest-directory" \
 ```
 
 **Note**: Deleting the ingest directory configuration will cause the user to fall back to the default ingest directory (`./`).
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

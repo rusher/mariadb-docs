@@ -9,34 +9,42 @@ The MariaDB AI RAG API provides a comprehensive RESTful interface for document i
 ## Available API Documentation
 
 ### [API Reference](api-reference.md)
+
 Complete reference for all API endpoints including:
-- Document ingestion and management
-- Chunking operations
-- Retrieval and search
-- AI generation
-- Batch operations
+
+* Document ingestion and management
+* Chunking operations
+* Retrieval and search
+* AI generation
+* Batch operations
 
 ### [Access Control](access-control.md)
+
 Authentication and authorization documentation:
-- JWT-based authentication
-- User management endpoints
-- Role-based access control
-- Document sharing and permissions
-- User directory management
+
+* JWT-based authentication
+* User management endpoints
+* Role-based access control
+* Document sharing and permissions
+* User directory management
 
 ### [Database Integration](database-integration.md)
+
 Direct database ingestion capabilities:
-- SQL query ingestion
-- Table and view ingestion
-- Role-based database access
-- Structured data processing
+
+* SQL query ingestion
+* Table and view ingestion
+* Role-based database access
+* Structured data processing
 
 ### [Orchestration](orchestration.md)
+
 High-level workflow endpoints:
-- Full pipeline orchestration
-- Ingestion orchestration
-- Generation orchestration
-- Multi-step RAG workflows
+
+* Full pipeline orchestration
+* Ingestion orchestration
+* Generation orchestration
+* Multi-step RAG workflows
 
 ## Quick Start
 
@@ -58,9 +66,13 @@ curl -X GET "http://localhost:8000/documents" \
 ## Base URL
 
 The default base URL for the API is:
+
 ```
 http://localhost:8000
 ```
 
 For production deployments, replace with your configured host and port.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

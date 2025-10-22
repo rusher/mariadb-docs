@@ -32,3 +32,7 @@ Per-node status summary with short state logic
 | **Flow Control**      | Is this node throttling or being throttled? (`wsrep_flow_control_*` rate > 0 → **ON**, otherwise **OFF**) |
 | **Cluster Status**    | Is the node in the **Primary** component? (Based on `wsrep_cluster_status`)                               |
 | **Connected**         | Is the node linked to the group? (Based on `wsrep_connected`)                                             |
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

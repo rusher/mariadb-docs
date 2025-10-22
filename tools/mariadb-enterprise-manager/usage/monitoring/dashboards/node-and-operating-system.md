@@ -44,3 +44,7 @@ Monitors disk performance and utilization for the node’s storage devices.
 | Disk Throughput  | Read and write throughput (bytes per second) per device.             |
 | Disk IOPS        | Number of input/output operations per second for reads and writes.   |
 | Disk Utilisation | Percentage of time that disk devices are busy handling I/O requests. |
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

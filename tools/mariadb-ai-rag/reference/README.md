@@ -9,30 +9,36 @@ This section provides detailed reference information for configuring and integra
 ## Documentation in This Section
 
 ### [Environment Variables](environment-variables.md)
+
 Complete reference for all environment variables:
-- Database configuration
-- API keys and secrets
-- Embedding provider settings
-- LLM provider configuration
-- Service ports and hosts
-- Authentication settings
+
+* Database configuration
+* API keys and secrets
+* Embedding provider settings
+* LLM provider configuration
+* Service ports and hosts
+* Authentication settings
 
 ### [Supported File Formats](supported-formats.md)
+
 List of supported document formats for ingestion:
-- PDF documents
-- Microsoft Office files (DOCX, XLSX, PPTX)
-- Text files (TXT, MD, CSV)
-- Code files (Python, JavaScript, Java, etc.)
-- And more
+
+* PDF documents
+* Microsoft Office files (DOCX, XLSX, PPTX)
+* Text files (TXT, MD, CSV)
+* Code files (Python, JavaScript, Java, etc.)
+* And more
 
 ### [Integration](integration.md)
+
 Guide for integrating the RAG API with external systems:
-- REST API integration examples
-- Authentication workflows
-- Client library usage
-- Document management system integration
-- Business intelligence tool integration
-- Custom application integration
+
+* REST API integration examples
+* Authentication workflows
+* Client library usage
+* Document management system integration
+* Business intelligence tool integration
+* Custom application integration
 
 ## Configuration Best Practices
 
@@ -46,7 +52,10 @@ When configuring your MariaDB AI RAG deployment:
 
 ## Additional Resources
 
-- [API Reference](../api-reference/README.md) - Complete API endpoint documentation
-- [Configuration Guide](../getting-started/configuration.md) - Detailed configuration instructions
-- [Troubleshooting](../performance-and-troubleshooting/troubleshooting.md) - Common issues and solutions
+* [API Reference](../api-reference/) - Complete API endpoint documentation
+* [Configuration Guide](../getting-started/configuration.md) - Detailed configuration instructions
+* [Troubleshooting](../performance-and-troubleshooting/troubleshooting.md) - Common issues and solutions
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

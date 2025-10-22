@@ -37,3 +37,7 @@ The agent must be installed on each [MariaDB Server](https://app.gitbook.com/s/S
 | **23.02\***, **23.08\***, **24.02\***, **25.01\***, **25.10** | <p>RHEL/Rocky/AlmaLinux 8, 9, 10 </p><p>Ubuntu LTS 22.04, 24.04 </p><p>Debian 11, 12, 13</p> |
 
 \* Monitoring and Single Sign-On(SSO) are only supported for MaxScale versions 25.10 and Above
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}
