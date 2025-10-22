@@ -9,7 +9,7 @@ Prerequisites
   * Navigate to the [Customer Download Token at the MariaDB Customer Portal](https://customers.mariadb.com/downloads/token/)
   * Log in using your [MariaDB ID](https://id.mariadb.com/)
   * Copy the Customer Download Token to use as the password when logging in to the MariaDB Enterprise Docker Registry
-* Set up MariaDB Enterprise Repository - `MariaDB Tools` for each monitored MariaDB Server and MaxScale
+* Set up MariaDB Enterprise Repository - `MariaDB Enterprise Tools` for each monitored MariaDB Server and MaxScale
   * https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage
 {% endhint %}
 

@@ -35,7 +35,7 @@ Other requirements:
 {% endstep %}
 
 {% step %}
-### Setup MariaDB Enterprise Repository - "MariaDB Tools"
+### Setup MariaDB Enterprise Repository - "MariaDB Enterprise Tools"
 
 [Set up the repository for each monitored MariaDB Server and MaxScale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup)
 {% endstep %}
