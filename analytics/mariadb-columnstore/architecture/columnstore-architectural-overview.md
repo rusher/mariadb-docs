@@ -388,7 +388,7 @@ When a bulk data load is running:
 
 ## Backup and Restore
 
-![EntColStoreBackupS3FlowChart](../../.gitbook/assets/entcolstorebackups3flowchart.png)
+![EntColStoreBackupS3FlowChart](<../../.gitbook/assets/entcolstorebackups3flowchart (1).png>)
 
 MariaDB Enterprise ColumnStore supports backup and restore using well-known tools and methods.
 
