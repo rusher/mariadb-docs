@@ -1,4 +1,4 @@
-# Agent installation
+# Agent Installation
 
 {% hint style="warning" %}
 To install `mema-agent`, you need to setup [MariaDB Enterprise Repository - "MariaDB Tools"](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#repositories)
@@ -12,7 +12,7 @@ This guide covers the recommended installation method using a package manager.
 
 Before installing the agent on a MariaDB Server host, you must create a local user that the agent will use to connect to the database and collect metrics.
 
-Log in to your MariaDB Server and run the following commands:
+Log in to your MariaDB Server and run the following:
 
 {% code title="Create monitor user" %}
 ```sql

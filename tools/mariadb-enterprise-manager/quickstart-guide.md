@@ -1,3 +1,7 @@
+---
+description: MariaDB Enterprise Manager installation and configuration guide
+---
+
 # Quickstart Guide
 
 MariaDB Enterprise Manager is a database management and observability solution that provides advanced topology-aware monitoring coupled with visual schema management, query editing, and ERD design across multiple database connections.
