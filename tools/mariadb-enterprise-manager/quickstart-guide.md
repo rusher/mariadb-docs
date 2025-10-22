@@ -14,7 +14,7 @@ This guide describes steps to install MariaDB Enterprise Manager for evaluation 
 {% step %}
 ### Prepare a machine for Enterprise Manager installation
 
-Machine requirements (minimal hardware resources for evaluation):
+[Machine requirements](administration/deployment/hardware-and-system-requirements.md) (minimal hardware resources for evaluation):
 
 * CPU: 2 cores (or 2 vCPUs) with x86-64 architecture
 * RAM: 4 GB
@@ -23,7 +23,7 @@ Machine requirements (minimal hardware resources for evaluation):
 Other requirements:
 
 * 64-bit Linux OS with installed Docker engine and Docker Compose: https://docs.docker.com/engine/install/
-* Network ports 8090 and 4318 opened for inbound traffic
+* [Network ports](administration/deployment/network-and-firewall-requirements.md) 8090 and 4318 opened for inbound traffic
 {% endstep %}
 
 {% step %}
@@ -101,7 +101,7 @@ Below are procedures for topologies without and with MaxScale.
 {% step %}
 ### Create monitoring user for each MariaDB Server (Enterprise Manager access)
 
-Run on each MariaDB server (replace \<Enterprise\_Manager\_IP> and ):
+Run on each [MariaDB server](usage/monitoring/dashboards/mariadb-server.md) (replace \<Enterprise\_Manager\_IP> ):
 
 ```sql
 CREATE USER 'monitor'@'<Enterprise_Manager_IP>' IDENTIFIED BY '<password>';
@@ -120,7 +120,7 @@ Add each MariaDB Server in the Enterprise Manager UI, providing access details f
 {% step %}
 ### Install agent on each MariaDB Server to enable metrics collection
 
-On each MariaDB server install the mema-agent package.
+On each MariaDB server install the [mema-agent package](administration/deployment/adding-databases/agent-installation-t-copy.md).
 
 * RedHat-based (RHEL, CentOS, Rocky Linux):
 
@@ -164,7 +164,7 @@ GRANT PROCESS, BINLOG MONITOR, REPLICA MONITOR, REPLICATION MASTER ADMIN ON *.* 
 {% step %}
 ### Wait for metrics to appear
 
-Wait 1–2 minutes for metrics to start populating in Enterprise Manager from the agents (default collection interval is 1 minute).
+Wait 1–2 minutes for [metrics](../mariadb-enterprise-operator/metrics.md) to start populating in Enterprise Manager from the agents (default collection interval is 1 minute).
 {% endstep %}
 {% endstepper %}
 
