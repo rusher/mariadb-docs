@@ -1,6 +1,6 @@
 # MaxScale LDI Filter
 
-## LDI Filter
+## Overview
 
 The `ldi` (LOAD DATA INFILE) filter was introduced in MaxScale 23.08.0 and it
 extends the MariaDB `LOAD DATA INFILE` syntax to support loading data from any
@@ -17,7 +17,7 @@ LOAD DATA INFILE 'S3://my-bucket/my-data.csv' INTO TABLE t1
     FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 ```
 
-### How to Upload Data
+## How to Upload Data
 
 Here is a minimal configuration for the filter that can be used to load data
 from AWS S3:
@@ -48,13 +48,13 @@ Once the credentials are configured, the data loading can be started:
 LOAD DATA INFILE 'S3://my-bucket/my-data.csv' INTO TABLE t1;
 ```
 
-#### Data Uploads with MariaDB Xpand
+### Data Uploads with MariaDB Xpand
 
 This feature has been removed in MaxScale 24.02.
 
-### Common Problems With Data Loading
+## Common Problems With Data Loading
 
-#### Missing Files
+### Missing Files
 
 If you are using self-hosted object storage programs like Minio, a common
 problem is that they do not necessarily support the newer virtual-hosted-style
@@ -69,9 +69,9 @@ Conversely, if the `host` parameter is set to a plain IP address, it is assumed
 that it does not support the newer virtual-hosted-style request. If the host
 does support it, the filter must be configured with `protocol_version=2`.
 
-### Settings
+## Settings
 
-#### `key`
+### `key`
 
 * Type: string
 * Mandatory: No
@@ -81,7 +81,7 @@ The S3 access key used to perform all requests to it.
 
 This must be either configured in the MaxScale configuration file or set with`SET @maxscale.ldi.s3_key='<key>'` before starting the data load.
 
-#### `secret`
+### `secret`
 
 * Type: string
 * Mandatory: No
@@ -91,7 +91,7 @@ The S3 secret key used to perform all requests to it.
 
 This must be either configured in the MaxScale configuration file or set with`SET @maxscale.ldi.s3_secret='<secret>'` before starting the data load.
 
-#### `region`
+### `region`
 
 * Type: string
 * Mandatory: No
@@ -103,7 +103,7 @@ The S3 region where the data is located.
 The value can be overridden with `SET @maxscale.ldi.s3_region='<region>'` before
 starting the data load.
 
-#### `host`
+### `host`
 
 * Type: string
 * Mandatory: No
@@ -116,7 +116,7 @@ used. The corresponding value for Google Cloud Storage is`storage.googleapis.com
 The value can be overridden with `SET @maxscale.ldi.s3_host='<host>'` before
 starting the data load.
 
-#### `port`
+### `port`
 
 * Type: integer
 * Mandatory: No
@@ -130,18 +130,18 @@ The value can be overridden with `SET @maxscale.ldi.s3_port=<port>` before
 starting the data load. Note that unlike the other values, the value for this
 variable must be an SQL integer and not an SQL string.
 
-#### `no_verify`
+### `no_verify`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 If set to true, TLS certificate verification for the object storage is skipped.
 
-#### `use_http`
+### `use_http`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -149,7 +149,7 @@ If set to true, TLS certificate verification for the object storage is skipped.
 If set to true, communication with the object storage is done unencrypted using
 HTTP instead of HTTPS.
 
-#### `protocol_version`
+### `protocol_version`
 
 * Type: integer
 * Mandatory: No
@@ -167,11 +167,11 @@ For object storage programs like Minio, the value must be set to 1 as the bucket
 name cannot be resolved via the subdomain like it is done for object stores in
 the cloud.
 
-#### `import_user`
+### `import_user`
 
 This parameter has been removed in MaxScale 24.02.
 
-#### `import_password`
+### `import_password`
 
 This parameter has been removed in MaxScale 24.02.
 

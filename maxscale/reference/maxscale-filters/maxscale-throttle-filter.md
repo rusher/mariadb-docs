@@ -1,8 +1,6 @@
 # MaxScale Throttle Filter
 
-## Throttle
-
-### Overview
+## Overview
 
 The throttle filter is used to limit the maximum query frequency (QPS - queries
 per second) of a database session to a configurable value. The main use cases
@@ -13,9 +11,9 @@ The throttling is dynamic. The query frequency is not limited to an absolute
 value. Depending on the configuration the throttle will allow some amount of
 high frequency queries, or especially short bursts with no frequency limitation.
 
-### Configuration
+## Configuration
 
-#### Basic Configuration
+### Basic Configuration
 
 ```
 [Throttle]
@@ -41,7 +39,7 @@ When a session has been continuously throttled for `throttling_duration`
 milliseconds, or 60 seconds in this example, MaxScale will disconnect the
 session.
 
-#### Allowing high frequency bursts
+### Allowing high frequency bursts
 
 The two parameters `max_qps` and `sampling_duration` together define how a
 session is throttled.
@@ -57,9 +55,9 @@ maintain that speed for 2 seconds before throttling starts.
 If the client continues to query at high speed and throttling duration is set to
 10 seconds, Maxscale will disconnect the session 12 seconds after it started.
 
-### Settings
+## Settings
 
-#### `max_qps`
+### `max_qps`
 
 * Type: number
 * Mandatory: Yes
@@ -71,18 +69,18 @@ This is the frequency to which a session will be limited over a given time
 period. QPS is not measured as an instantaneous value but over a configurable
 sampling duration (see `sampling_duration`).
 
-#### `throttling_duration`
+### `throttling_duration`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: Yes
 * Dynamic: Yes
 
 This defines how long a session is allowed to be throttled before MaxScale
 disconnects the session.
 
-#### `sampling_duration`
+### `sampling_duration`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 250ms
@@ -94,9 +92,9 @@ allowed before throttling kicks in.
 The lower this value is, the more strict throttling becomes. Conversely, the
 longer this time is, the longer bursts of high frequency querying is allowed.
 
-#### `continuous_duration`
+### `continuous_duration`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 2s

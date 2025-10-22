@@ -1,5 +1,11 @@
 # All Releases
 
+## MaxScale 25.10
+
+| Version                     | Release Date | Release Status |
+| --------------------------- | ------------ | -------------- |
+| [25.10.0](25.10/25.10.0.md) | 2025-09-22   | Stable (GA)    |
+
 ## MaxScale 25.01
 
 | Version                     | Release Date | Release Status |

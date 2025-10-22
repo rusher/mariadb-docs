@@ -1,22 +1,6 @@
 # MaxScale Hintfilter
 
-## Hintfilter
-
-* [Hint Syntax](maxscale-hintfilter.md#hint-syntax)
-  * [Comments and comment types](maxscale-hintfilter.md#comments-and-comment-types)
-  * [Hint body](maxscale-hintfilter.md#hint-body)
-    * [Routing destination hints](maxscale-hintfilter.md#routing-destination-hints)
-      * [Route to primary](maxscale-hintfilter.md#route-to-primary)
-      * [Route to replica](maxscale-hintfilter.md#route-to-replica)
-      * [Route to named server](maxscale-hintfilter.md#route-to-named-server)
-      * [Route to last used server](maxscale-hintfilter.md#route-to-last-used-server)
-      * [Name-value hints](maxscale-hintfilter.md#name-value-hints)
-  * [Hint stack](maxscale-hintfilter.md#hint-stack)
-* [Prepared Statements](maxscale-hintfilter.md#prepared-statements)
-  * [Binary Protocol](maxscale-hintfilter.md#binary-protocol)
-  * [Text Protocol](maxscale-hintfilter.md#text-protocol)
-* [Examples](maxscale-hintfilter.md#examples)
-  * [Routing SELECT queries to primary](maxscale-hintfilter.md#routing-select-queries-to-primary)
+## Overview
 
 ## Hint Syntax
 
@@ -26,7 +10,8 @@ comments that might appear in the query.
 
 ### Comments and comment types
 
-The client connection will need to have comments enabled. For example the`mariadb` and `mysql` command line clients have comments disabled by default and
+The client connection will need to have comments enabled. For example the
+`mariadb` and `mysql` command line clients have comments disabled by default and
 they need to be enabled by passing the `--comments` or `-c` option to it. Most,
 if not all, connectors keep all comments intact in executed queries.
 

@@ -1,6 +1,6 @@
 # MaxScale Cat
 
-## Cat
+## Overview
 
 The `cat` router is a special router that concatenates result sets.
 
@@ -8,11 +8,12 @@ _Note:_ This module is experimental and must be built from source. The
 module is deprecated in MaxScale 23.08 and might be removed in a future
 release.
 
-### Configuration
+## Configuration
 
-The router has no special parameters. To use it, define a service with`router=cat` and add the servers you want to use.
+The router has no special parameters. To use it, define a service with
+`router=cat` and add the servers you want to use.
 
-### Behavior
+## Behavior
 
 The order the servers are defined in is the order in which the servers are
 queried. This means that the results are ordered based on the `servers`
@@ -33,10 +34,13 @@ care when performing administrative operations though this router.
 If a connection to one of the servers is lost, the client connection will also
 be closed.
 
-### Example
+## Example
 
-Here is a simple example service definition that uses the servers from the [Configuring Servers](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-configuring-servers.md) tutorial and the
-credentials from the [MaxScale Tutorial](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
+Here is a simple example service definition that uses the servers from the
+[Configuring Servers](../../mariadb-maxscale-tutorials/configuring-servers.md)
+tutorial and the
+credentials from the
+[MaxScale Tutorial](../../mariadb-maxscale-tutorials/setting-up-mariadb-maxscale.md).
 
 ```
 [concat-service]

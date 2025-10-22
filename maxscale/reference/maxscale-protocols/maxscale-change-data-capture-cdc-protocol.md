@@ -1,10 +1,11 @@
 # MaxScale Change Data Capture (CDC) Protocol
 
-## Change Data Capture (CDC) Protocol
+## Overview
 
 The CDC protocol was deprecated in MaxScale 24.08 and will be removed
-in the next major release. [KafkaCDC](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md) can be
-used instead.
+in the next major release.
+[KafkaCDC](../maxscale-routers/maxscale-kafkacdc.md)
+can be used instead.
 
 CDC is a new protocol that allows compatible clients to authenticate and
 register for Change Data Capture events. The new protocol must be use in
@@ -13,7 +14,7 @@ AVRO records. Change Data Capture protocol is used by clients in order to
 interact with stored AVRO file and also allows registered clients to be notified
 with the new events coming from MariaDB 10.0/10.1 database.
 
-### Creating Users
+## Creating Users
 
 The users and their hashed passwords are stored in `/var/cache/maxscale/<service name>/cdcusers` where `<service name>` is the name of the service.
 
@@ -29,29 +30,29 @@ password=maxpwd
 
 If the `cdcusers` file cannot be found, the service user (_maxuser:maxpwd_ in the example) can be used to connect through the CDC protocol.
 
-For more details, refer to the [CDC users documentation](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-users.md).
+For more details, refer to the [CDC users documentation](maxscale-change-data-capture-cdc-users.md).
 
-### Protocol Phases
+## Protocol Phases
 
-#### Connection and Authentication
+### Connection and Authentication
 
 * Client connects to MaxScale CDC protocol listener.
 * Send the authentication message which includes the user and the SHA1 of the password
 
 In the future, optional flags could be implemented.
 
-#### Registration
+### Registration
 
 * Sending UUID
 * Specify the output format (AVRO or JSON) for data retrieval.
 
-#### Data Request
+### Data Request
 
 * Send CDC commands to retrieve router statistics or to query for data events
 
-### Protocol Details
+## Protocol Details
 
-#### Authentication
+### Authentication
 
 The authentication starts when the client sends the hexadecimal representation
 of the username concatenated with a colon (`:`) and the SHA1 of the password.
@@ -67,7 +68,7 @@ foobar:SHA1(foopasswd) ->  666f6f6261723a3137336363643535253331
 
 Server returns `OK` on success and `ERR` on failure.
 
-#### Registration
+### Registration
 
 **REGISTER**
 
@@ -83,7 +84,7 @@ REGISTER UUID=11ec2300-2e23-11e6-8308-0002a5d5c51b, TYPE=AVRO
 
 Server returns `OK` on success and `ERR` on failure.
 
-#### Change Data Capture Commands
+### Change Data Capture Commands
 
 **REQUEST-DATA**
 
@@ -106,7 +107,7 @@ REQUEST-DATA dbi1.table1.000003
 REQUEST-DATA db2.table4 0-11-345
 ```
 
-### Example Client
+## Example Client
 
 MaxScale includes an example CDC client application written in Python 3. You can
 find the source code for it [in the MaxScale repository](https://github.com/mariadb-corporation/MaxScale/tree/2.0/server/modules/protocol/examples/cdc.py).

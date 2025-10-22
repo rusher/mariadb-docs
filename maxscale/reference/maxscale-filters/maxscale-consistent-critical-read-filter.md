@@ -1,8 +1,6 @@
 # MaxScale Consistent Critical Read Filter
 
-## Consistent Critical Read Filter
-
-### Overview
+## Overview
 
 The Consistent Critical Read (CCR) filter allows consistent critical reads to be
 done through MaxScale while still allowing scaleout of non-critical reads.
@@ -16,7 +14,7 @@ by default, propagate to other sessions.
 _Note:_ This filter does not work with prepared statements. Only text protocol
 queries are handled by this filter.
 
-#### Controlling the Filter with SQL Comments
+### Controlling the Filter with SQL Comments
 
 The triggering of the filter can be limited further by adding MaxScale supported
 comments to queries and/or by using regular expressions. The query comments take
@@ -25,7 +23,7 @@ parameter might give a different result. Even a comment cannot cause a
 SELECT-query to trigger the filter. Such a comment is considered an error and
 ignored.
 
-The comments must follow the [MaxScale hint syntax](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-hint-syntax.md)
+The comments must follow the [MaxScale hint syntax](maxscale-hintfilter.md#hint-syntax)
 and the _HintFilter_ needs to be in the filter chain before the CCR-filter. If a
 query has a MaxScale supported comment line which defines the parameter `ccr`,
 that comment is caught by the CCR-filter. Parameter values `match` and `ignore`
@@ -41,25 +39,25 @@ comment. The `match`-comment typically has no effect, since write queries by
 default trigger the filter anyway. It can be used to override an ignore-type
 regular expression that would otherwise prevent triggering.
 
-### Settings
+## Settings
 
 The CCR filter has no mandatory parameters.
 
-#### `time`
+### `time`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `60s`
 
 The time window during which queries are routed to the primary. The duration
-can be specified as documented [here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
-but the value will always be rounded to the nearest second.
+value will always be rounded to the nearest second.
 If no explicit unit has been specified, the value is interpreted as seconds
 in MaxScale 2.4. In subsequent versions a value without a unit may be rejected.
 The default value for this parameter is 60 seconds.
 
-When a data modifying SQL statement is processed, a timer is set to the value o&#x66;_&#x74;ime_. Once the timer has elapsed, all statements are routed normally. If a new
+When a data modifying SQL statement is processed, a timer is set to the value
+_time_. Once the timer has elapsed, all statements are routed normally. If a new
 data modifying SQL statement is processed within the time window, the timer is
 reset to the value of _time_.
 
@@ -67,7 +65,7 @@ Enabling this parameter in combination with the _count_ parameter causes both
 the time window and number of queries to be inspected. If either of the two
 conditions are met, the query is re-routed to the primary.
 
-#### `count`
+### `count`
 
 * Type: count
 * Mandatory: No
@@ -81,16 +79,17 @@ After processing a data modifying SQL statement, a counter is set to the value
 of _count_ and all statements are routed to the primary. Each executed statement
 after a data modifying SQL statement cause the counter to be decremented. Once
 the counter reaches zero, the statements are routed normally. If a new data
-modifying SQL statement is processed, the counter is reset to the value o&#x66;_&#x63;ount_.
+modifying SQL statement is processed, the counter is reset to the value of _count_.
 
-#### `match`
+### `match`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
-These [regular expression settings](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+These
+[regular expression settings](../../maxscale-management/deployment/maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
 control which statements trigger statement re-routing. Only non-SELECT statements are
 inspected. For CCRFilter, the _exclude_-parameter is instead named _ignore_, yet works
 similarly.
@@ -101,18 +100,18 @@ ignore=.*UPDATE.*
 options=case,extended
 ```
 
-#### `ignore`
+### `ignore`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
 See documentation for [match](maxscale-consistent-critical-read-filter.md#match).
 
-#### `options`
+### `options`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `ignorecase`, `case`, `extended`
@@ -120,9 +119,9 @@ See documentation for [match](maxscale-consistent-critical-read-filter.md#match)
 
 Regular expression options for `match` and `ignore`.
 
-#### `global`
+### `global`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -134,7 +133,7 @@ the write done by the other connection to be visible.
 
 This parameter only works with the `time` parameter. The use of `global` and`count` at the same time is not allowed and will be treated as an error.
 
-### Example Configuration
+## Example Configuration
 
 Here is a minimal filter configuration for the CCRFilter which should solve most
 problems with critical reads after writes.

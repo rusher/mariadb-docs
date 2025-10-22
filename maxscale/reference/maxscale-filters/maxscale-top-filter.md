@@ -1,24 +1,6 @@
 # MaxScale Top Filter
 
-## Top Filter
-
-* [Top Filter](maxscale-top-filter.md#top-filter)
-  * [Overview](maxscale-top-filter.md#overview)
-  * [Configuration](maxscale-top-filter.md#configuration)
-  * [Settings](maxscale-top-filter.md#settings)
-    * [filebase](maxscale-top-filter.md#filebase)
-    * [count](maxscale-top-filter.md#count)
-    * [match](maxscale-top-filter.md#match)
-    * [exclude](maxscale-top-filter.md#exclude)
-    * [options](maxscale-top-filter.md#options)
-    * [source](maxscale-top-filter.md#source)
-    * [user](maxscale-top-filter.md#user)
-  * [Examples](maxscale-top-filter.md#examples)
-    * [Example 1 - Heavily Contended Table](maxscale-top-filter.md#example-1-heavily-contended-table)
-    * [Example 2 - One Application Server is Slow](maxscale-top-filter.md#example-2-one-application-server-is-slow)
-  * [Output Report](maxscale-top-filter.md#output-report)
-
-### Overview
+## Overview
 
 The top filter is a filter module for MariaDB MaxScale that monitors every SQL
 statement that passes through the filter. It measures the duration of that
@@ -27,7 +9,7 @@ returned. The top N times are kept, along with the SQL text itself and a list
 sorted on the execution times of the query is written to a file upon closure of
 the client session.
 
-### Configuration
+## Configuration
 
 Example minimal configuration:
 
@@ -45,12 +27,12 @@ password=mypasswd
 filters=MyLogFilter
 ```
 
-### Settings
+## Settings
 
 The top filter has one mandatory parameter, `filebase`, and a number of optional
 parameters.
 
-#### `filebase`
+### `filebase`
 
 * Type: string
 * Mandatory: Yes
@@ -67,7 +49,7 @@ The filebase may also be set as the filter, the mechanism to set the filebase
 via the filter option is superseded by the parameter. If both are set the
 parameter setting will be used and the filter option ignored.
 
-#### `count`
+### `count`
 
 * Type: number
 * Mandatory: No
@@ -80,14 +62,14 @@ The number of SQL statements to store and report upon.
 count=30
 ```
 
-#### `match`
+### `match`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
-[Limits](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+[Limits](../../maxscale-management/deployment/maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
 the queries logged by the filter.
 
 ```
@@ -96,28 +78,28 @@ exclude=where
 options=case,extended
 ```
 
-#### `exclude`
+### `exclude`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
-[Limits](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+[Limits](../../maxscale-management/deployment/maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
 the queries logged by the filter.
 
-#### `options`
+### `options`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `ignorecase`, `case`, `extended`
 * Default: `case`
 
-[Regular expression options](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+[Regular expression options](../../maxscale-management/deployment/maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
 for `match` and `exclude`.
 
-#### `source`
+### `source`
 
 * Type: string
 * Mandatory: No
@@ -132,7 +114,7 @@ Only sessions that originate from this address will be logged.
 source=127.0.0.1
 ```
 
-#### `user`
+### `user`
 
 * Type: string
 * Mandatory: No
@@ -148,9 +130,9 @@ generated.
 user=john
 ```
 
-### Examples
+## Examples
 
-#### Example 1 - Heavily Contended Table
+### Example 1 - Heavily Contended Table
 
 You have an order system and believe the updates of the PRODUCTS table is
 causing some performance issues for the rest of your application. You would like
@@ -171,7 +153,7 @@ filebase=/var/logs/top/ProductsUpdate
 Note the exclude entry, this is to prevent updates to the PRODUCTS\_STOCK table
 from being included in the report.
 
-#### Example 2 - One Application Server is Slow
+### Example 2 - One Application Server is Slow
 
 One of your applications servers is slower than the rest, you believe it is
 related to database access but you are not sure what is taking the time.
@@ -217,7 +199,7 @@ queries of the slow application server and another that gives you the top 20
 queries of your control application server. These two sets of files can then be
 compared to determine what if anything is different between the two.
 
-### Output Report
+## Output Report
 
 The following is an example report for a number of fictitious queries executed
 against the employees example database available for MySQL.

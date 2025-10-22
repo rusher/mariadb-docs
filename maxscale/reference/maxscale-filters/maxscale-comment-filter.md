@@ -1,8 +1,6 @@
 # MaxScale Comment Filter
 
-## Comment Filter
-
-### Overview
+## Overview
 
 With the _comment_ filter it is possible to define comments that are
 injected before the actual statements. These comments appear as sql
@@ -23,11 +21,11 @@ password=mypasswd
 filters=MyComment
 ```
 
-### Settings
+## Settings
 
 The Comment filter requires one mandatory parameter to be defined.
 
-#### `inject`
+### `inject`
 
 * Type: string
 * Mandatory: Yes
@@ -38,9 +36,9 @@ There is also defined variable $IP that can be used to comment the
 IP address of the client in the injected comment.
 Variables must be written in all caps.
 
-### Examples
+## Examples
 
-#### Example 1 - Inject IP address of the connected client into statements
+### Example 1 - Inject IP address of the connected client into statements
 
 as comment.
 

@@ -1,12 +1,13 @@
 # MaxScale Change Data Capture (CDC) users
 
-## Change Data Capture (CDC) users
+## Overview
 
 Change Data Capture (CDC) is a new MaxScale protocol that allows compatible
 clients to authenticate and register for Change Data Capture events. The new
 protocol must be use in conjunction with AVRO router which currently converts
 MariaDB binlog events into AVRO records. Clients connect to CDC listener and
-authenticate using credentials provided in a format described in the [CDC Protocol documentation](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md).
+authenticate using credentials provided in a format described in the
+[CDC Protocol documentation](maxscale-change-data-capture-cdc-protocol.md).
 
 **Note**: If no users are found in that file or if it doesn't exist, the only
 available user will be the _service user_:
@@ -20,7 +21,7 @@ user=cdc_user
 password=cdc_password
 ```
 
-### Creating new CDC users
+## Creating new CDC users
 
 Starting with MaxScale 2.1, users can also be created through maxctrl:
 
@@ -42,7 +43,8 @@ bash$ cdc_users.py user1 pass1 >> /var/lib/maxscale/avro-service/cdcusers
 ```
 
 Users can be deleted by removing the related rows in 'cdcusers' file. For
-more details on the format of the _cdcusers_ file, read the [CDC Protocol documentation](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md).
+more details on the format of the _cdcusers_ file, read the
+[CDC Protocol documentation](maxscale-change-data-capture-cdc-protocol.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

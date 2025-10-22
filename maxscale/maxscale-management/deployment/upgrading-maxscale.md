@@ -2,11 +2,38 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
 
-Before upgrading to MariaDB MaxScale, it is critical to review the changes. This guide outlines new features, altered parameters, and deprecated functionality to ensure a smooth transition.
+Before upgrading to MariaDB MaxScale, it is critical to review the changes.
+This guide outlines new features, altered parameters, and deprecated functionality
+to ensure a smooth transition.
 
-For more information about what has changed, please refer to the [ChangeLog](../installation-and-configuration/broken-reference/) and to the release notes.
+For more information about what has changed, please refer to the
+[ChangeLog and release notes](../../../release-notes/maxscale/) of
+the releases you are upgrading from and upgrading to.
 
 Before starting the upgrade, any existing configuration files should be backed up.
+
+## Upgrading MariaDB MaxScale from 25.01 to 25.10
+
+### Service User Grants
+
+The service users now require a `SELECT` grant on the `mysql.global_priv` table
+in order to be able to support authentication of users with multiple
+authentication mechanisms. If this grant is not given to the service users, a
+warning is logged. The following SQL shows how the grant is given to a user:
+
+```
+GRANT SELECT ON mysql.global_priv TO 'maxscale_user'@'%';
+```
+
+### Monitor timeouts
+
+In MaxScale 25.10, only one monitor backend timeout remains:
+[backend_timeout](../../reference/maxscale-monitors/common-monitor-parameters.md#backend_timeout).
+This replaces the old `backend_connect_timeout`, `backend_write_timeout` and
+`backend_read_timeout`, using the same value for all underlying timeouts.
+`backend_connect_timeout` is still supported as an alias for `backend_timeout`,
+but any values given to `backend_write_timeout` and `backend_read_timeout` are
+ignored.
 
 ## Upgrading MariaDB MaxScale from 24.02 to 25.01
 
@@ -14,7 +41,8 @@ Before starting the upgrade, any existing configuration files should be backed u
 
 #### `reuse_prepared_statements`
 
-The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-psreuse.md) filter module.
+The `reuse_prepared_statements` parameter has been replaced with the use of the
+[PsReuse](../../reference/maxscale-filters/maxscale-psreuse-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -40,7 +68,7 @@ filters=PsReuse
 
 #### `optimistic_trx`
 
-The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-optimistic-transaction-execution-filter.md) filter module.
+The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../../reference/maxscale-filters/maxscale-optimistic-transaction-execution-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -80,7 +108,10 @@ To downgrade from MaxScale 24.02 to an older MaxScale major release:
 
 ## Upgrading MariaDB MaxScale from 23.02 to 23.08
 
-MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5 and later. See [Cluster Manipulation Grants](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) for more information.
+MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5
+and later. See
+[Cluster Manipulation Grants](../../reference/maxscale-monitors/mariadb-monitor.md#cluster-manipulation-grants)
+for more information.
 
 ## Upgrading MariaDB MaxScale from 22.08 to 23.02
 
@@ -159,7 +190,7 @@ The deprecated MaxAdmin interface has been removed in 2.5.0 in favor of the REST
 
 ### Authentication
 
-The credentials used by services now require additional grants. For a full list of required grants, refer to the [protocol documentation](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/).
+The credentials used by services now require additional grants. For a full list of required grants, refer to the [protocol documentation](../../reference/maxscale-protocols/).
 
 ### MariaDB-Monitor
 
@@ -400,7 +431,7 @@ GRANT SELECT ON mysql.tables_priv TO 'username'@'maxscalehost';
 
 ### Password encryption
 
-MaxScale 1.4 upgrades the used password encryption algorithms to more secure ones. This requires that the password files are recreated with the `maxkeys` tool. For more information about how to do this, please read the installation guide:[MariaDB MaxScale Installation Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-installation-guide.md)
+MaxScale 1.4 upgrades the used password encryption algorithms to more secure ones. This requires that the password files are recreated with the `maxkeys` tool.
 
 ### SSL
 

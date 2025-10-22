@@ -11,46 +11,40 @@ description: >-
 
 MariaDB MaxScale is an advanced proxy, router, and load balancer:
 
-* MaxScale performs automated failover for MariaDB replication. When the primary server fails, MaxScale promotes a replica to be the new primary and redirects the remaining replicas to it.
-* MaxScale's ReadWriteSplit router performs query-based load balancing. ReadWriteSplit routes each write statement to the current primary server and load balances read statements by routing them to the replica servers.
-* MaxScale's ReadConnRoute router performs connection-based load balancing. ReadConnRoute routes each connection to a single primary or replica node, depending on configuration.
-* MaxScale can import data from Kafka and export data into Kafka. MaxScale's KafkaCDC router streams data from MariaDB database products to a Kafka broker. MaxScale's KafkaImporter router streams data from Kafka to MariaDB database products.
-* MaxScale provides built-in mechanisms to perform server maintenance without disrupting applications or clients. Servers can be set to maintenance mode using the command-line interface with MaxCtrl, a web browser with MaxGUI, or REST API.
+* MaxScale performs automated failover for MariaDB replication. When the primary
+  server fails, MaxScale promotes a replica to be the new primary and redirects
+  the remaining replicas to it.
+* MaxScale's ReadWriteSplit router performs query-based load balancing.
+  ReadWriteSplit routes each write statement to the current primary server
+  and load balances read statements by routing them to the replica servers.
+* MaxScale's ReadConnRoute router performs connection-based load balancing.
+  ReadConnRoute routes each connection to a single primary or replica node,
+  depending on configuration.
+* MaxScale can import data from Kafka and export data into Kafka. MaxScale's
+  KafkaCDC router streams data from MariaDB database products to a Kafka broker.
+  MaxScale's KafkaImporter router streams data from Kafka to MariaDB database products.
+* MaxScale provides built-in mechanisms to perform server maintenance without
+  disrupting applications or clients. Servers can be set to maintenance mode
+  using the command-line interface with MaxCtrl, a web browser with MaxGUI, or REST API.
 * MaxScale's Cache filter can improve SELECT performance by caching and reusing results.
-* Security and traffic controls for database connections and queries can be implemented with MaxScale. MaxScale's QLAfilter can be used to create an audit trail by logging all queries. MaxScale's RegexFilter can also perform audit logging or protect against SQL injection by matching queries against a regular expression and performing various actions on the query, such as logging it, modifying it, or routing it to a specific server.
+* Security and traffic controls for database connections and queries can be implemented
+  with MaxScale. MaxScale's QLAfilter can be used to create an audit trail by logging
+  all queries. MaxScale's RegexFilter can also perform audit logging or protect
+  against SQL injection by matching queries against a regular expression and
+  performing various actions on the query, such as logging it, modifying it, or
+  routing it to a specific server.
 
 MariaDB MaxScale can be deployed in the cloud or on-premises.
 
 ## Scheduled Releases
 
-MariaDB MaxScale follows the MariaDB Enterprise release schedule, which can be found here.
+MariaDB MaxScale follows the MariaDB Enterprise release schedule, which can be found
+[here](../../release-notes/enterprise-server/enterprise-server-release-schedule.md).
 
-## Latest Software Releases
+## Software Releases
 
-| Release Series | Latest Release Date | Latest Release                                                                 |
-| -------------- | ------------------- | ------------------------------------------------------------------------------ |
-| 24.02          | 2024-12-09          | [MariaDB MaxScale 24.02.4](broken-reference)                                   |
-| 23.08          | 2024-12-09          | MariaDB MaxScale 23.08.8                                                       |
-| 23.02          | 2024-12-09          | [MariaDB MaxScale 23.02.12](broken-reference)                                  |
-| 22.08          | 2024-12-09          | MariaDB MaxScale 22.08.15                                                      |
-| 6              | 2024-03-11          | [MariaDB MaxScale 6.4.15](../maxscale-archive/archive/mariadb-maxscale-21-06/) |
-| 2.5            | 2023-10-25          | [MariaDB MaxScale 2.5.29](broken-reference/)                                   |
-| 2.4            | 2022-01-10          | [MariaDB MaxScale 2.4.19](broken-reference/)                                   |
-
-## Available Documentation
-
-### Security
-
-* [Authentication with MariaDB MaxScale](../maxscale-security/maxscale-authentication/)
-* [Data-in-Transit Encryption for MariaDB MaxScale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption)
-
-### Architecture
-
-* [MariaDB MaxScale Architecture](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/understanding-mariadb-architecture)
-
-### What's New
-
-* See the [MariaDB MaxScale 24.02 Changelog](broken-reference) for a list of what's new in MaxScale 24.02 and prior versions.
+The supported MaxScale versions can be found from the latest
+[MariaDB Engineering Policy](https://mariadb.com/engineering-policies/).
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
