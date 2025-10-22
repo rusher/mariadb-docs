@@ -1,5 +1,7 @@
 # What's New in MariaDB Enterprise Server 11.8
 
+{% include "../../.gitbook/includes/latest-es-11.8.md" %}
+
 MariaDB Enterprise Server 11.8 introduces a wide range of enhancements spanning developer productivity, security, compatibility, observability, and support for modern workloads like vector search. The MariaDB Enterprise Server 11.8.2-0 Technical Preview adds the innovations from the MariaDB Community Server releases 11.5 to 11.8 to MariaDB Enterprise Server 11.4.
 
 ## Vector Search <a href="#vector-search" id="vector-search"></a>

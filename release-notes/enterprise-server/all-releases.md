@@ -4,6 +4,7 @@
 
 | Version                      | Release Date | Release Status |
 | ---------------------------- | ------------ | -------------- |
+| [11.8.3-1](11.8/11.8.3-1.md) | 2025-10-22   | Stable (GA)    |
 | [11.8.2-0](11.8/11.8.2-0.md) | 2025-06-04   | Tech Preview   |
 
 ## MariaDB Enterprise Server 11.4
