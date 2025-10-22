@@ -55,9 +55,7 @@ MariaDB AI RAG follows a modular architecture with the following key components:
 config:
   theme: neutral
   layout: dagre
-  themeCSS: 'svg { background-color: white; }'
 ---
-%%{init: { 'themeCSS': 'svg { background-color: white; }' }}%%
 flowchart TB
     n1["Document Ingestion"] --> n2["Chunking Module"]
     n2 --> n3["Vector Database"]
@@ -68,13 +66,13 @@ flowchart TB
     n1@{ shape: manual-input}
     n3@{ shape: cyl}
     n7@{ shape: terminal}
-    style n1 fill:transparent
-    style n2 fill:transparent
-    style n3 fill:transparent
-    style n4 fill:transparent
-    style n5 fill:transparent
-    style n6 fill:transparent
-    style n7 fill:transparent
+    style n1 fill:#FFFFFF
+    style n2 fill:#FFFFFF
+    style n3 fill:#FFFFFF
+    style n4 fill:#FFFFFF
+    style n5 fill:#FFFFFF
+    style n6 fill:#FFFFFF
+    style n7 fill:#FFFFFF
 ```
 
 ## Data Flow
