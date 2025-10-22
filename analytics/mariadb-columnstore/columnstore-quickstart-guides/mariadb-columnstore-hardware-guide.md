@@ -43,3 +43,7 @@ Adhering to these minimum specifications will provide a baseline for ColumnStore
 * [MariaDB ColumnStore Minimum Hardware Specification Documentation](../management/deployment/columnstore-minimum-hardware-specification.md)
 * [MariaDB ColumnStore Overview](https://mariadb.com/products/columnstore/)
 * [MariaDB documentation: MariaDB ColumnStore](../)
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}

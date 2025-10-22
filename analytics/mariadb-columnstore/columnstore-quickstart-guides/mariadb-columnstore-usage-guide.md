@@ -313,6 +313,6 @@ When using the cpimport utility, the input file must be converted to `UTF-8` dat
 iconv -f ISO-8859-1 -t UTF-8 < input.txt > output.txt
 ```
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

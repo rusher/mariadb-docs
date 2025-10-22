@@ -19,10 +19,13 @@ Exasol offers:
 
 * Extreme performance for complex aggregations and joins, even on billions of rows.
 * SQL compatibility with ANSI SQL and support for many advanced analytic functions.
-* Elastic scalability, allowing nodes to be added for horizontal growth.&#x20;
-* High Availability through multimode deployments, standby nodes, data redistribution and data redundancy.&#x20;
+* Elastic scalability, allowing nodes to be added for horizontal growth.
+* High Availability through multimode deployments, standby nodes, data redistribution and data redundancy.
 * Separation of compute and storage allowing for effective scaling for resource intensive workloads.
-* Simple connectivity through standard JDBC and ODBC drivers.&#x20;
+* Simple connectivity through standard JDBC and ODBC drivers.
 
 When paired with MariaDB Enterprise Server and MaxScale, MariaDB Exa can act as a real-time analytical sink for data replicated or streamed from operational systems.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
+{% @marketo/form formId="4316" %}
