@@ -4,7 +4,7 @@
 
 New customers can [contact MariaDB Corporation](https://mariadb.com/contact/) for more information.
 
-Existing MariaDB Subscription customers can obtain assistance via the [Customer Support Portal](https://customers.mariadb.com/) as detailed in [MariaDB Support Policy](https://mariadb.com/subscription-services-policies/).
+Existing MariaDB Subscription customers can obtain assistance via the [Customer Support Portal](https://customers.mariadb.com/) as detailed in [MariaDB Support Policy](https://mariadb.com/support-policy/).
 
 Available services include:
 

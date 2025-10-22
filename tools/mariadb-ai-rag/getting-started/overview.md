@@ -1,14 +1,14 @@
 # Overview and Architecture
 
-## Introduction to MariaDB Data Bridge
+## Introduction to MariaDB AI RAG
 
-MariaDB Data Bridge is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that integrates with MariaDB to provide AI-powered document processing, semantic search, and natural language generation capabilities.
+MariaDB AI RAG is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that integrates with MariaDB to provide AI-powered document processing, semantic search, and natural language generation capabilities.
 
-The system enables organizations to leverage their document repositories and databases for AI-powered search and generation. By combining the reliability of MariaDB with modern AI capabilities, Data Bridge provides accurate, context-aware responses based on your organization's proprietary data.
+The system enables organizations to leverage their document repositories and databases for AI-powered search and generation. By combining the reliability of MariaDB with modern AI capabilities, AI RAG provides accurate, context-aware responses based on your organization's proprietary data.
 
 ## System Architecture
 
-MariaDB Data Bridge follows a modular architecture with the following key components:
+MariaDB AI RAG follows a modular architecture with the following key components:
 
 ### Core Components
 
@@ -56,28 +56,29 @@ MariaDB Data Bridge follows a modular architecture with the following key compon
 
 ### Architecture Diagram
 
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│                 │     │                 │     │                 │
-│    Document     │────▶│    Chunking     │────▶│    Vector       │
-│    Ingestion    │     │    Module       │     │    Database     │
-│                 │     │                 │     │                 │
-└─────────────────┘     └─────────────────┘     └────────┬────────┘
-                                                         │
-                                                         ▼
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│                 │     │                 │     │                 │
-│    Generation   │◀────│    Retrieval    │◀────│    Query        │
-│    Module       │     │    Module       │     │    Processing   │
-│                 │     │                 │     │                 │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│                 │
-│    Response     │
-│                 │
-└─────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+  layout: dagre
+---
+flowchart TB
+    n1["Document Ingestion"] --> n2["Chunking Module"]
+    n2 --> n3["Vector Database"]
+    n3 --> n4["Query Processing"]
+    n4 --> n5["Retrieval Module"]
+    n5 --> n6["Generation Module"]
+    n6 --> n7["Response"]
+    n1@{ shape: manual-input}
+    n3@{ shape: cyl}
+    n7@{ shape: terminal}
+    style n1 fill:transparent
+    style n2 fill:transparent
+    style n3 fill:transparent
+    style n4 fill:transparent
+    style n5 fill:transparent
+    style n6 fill:transparent
+    style n7 fill:transparent
 ```
 
 ## Data Flow

@@ -1,10 +1,12 @@
-# MariaDB AI RAG - Ubuntu Native Deployment Guide
+# Ubuntu Deployment Guide
+
+## MariaDB AI RAG - Ubuntu Native Deployment Guide
 
 **Deploy MariaDB AI RAG .deb package directly on Ubuntu (without Docker)**
 
----
+***
 
-## Quick Start
+### Quick Start
 
 ```bash
 # 1. Install MariaDB
@@ -35,21 +37,24 @@ CONFIG_FILE=/path/to/config.env /opt/rag-in-a-box/bin/mcp-server
 curl http://localhost:8000/health
 ```
 
----
+***
 
-## Prerequisites
+### Prerequisites
 
-### System Requirements
-- **OS**: Ubuntu 22.04 LTS or 24.04 LTS (x86_64)
-- **CPU**: 4+ cores (8+ recommended)
-- **RAM**: 8+ GB (16+ recommended)
-- **Storage**: 20+ GB free
-- **Access**: Root/sudo privileges
+#### System Requirements
 
-### Required
-- **Google Gemini API Key**: Get from https://makersuite.google.com/app/apikey
+* **OS**: Ubuntu 22.04 LTS or 24.04 LTS (x86\_64)
+* **CPU**: 4+ cores (8+ recommended)
+* **RAM**: 8+ GB (16+ recommended)
+* **Storage**: 20+ GB free
+* **Access**: Root/sudo privileges
 
-### Verify System
+#### Required
+
+* **Google Gemini API Key**: Get from https://makersuite.google.com/app/apikey
+
+#### Verify System
+
 ```bash
 # Check Ubuntu version
 lsb_release -a
@@ -62,9 +67,9 @@ sudo netstat -tuln | grep -E ':(8000|8002|3306)'
 # No output = ports available
 ```
 
----
+***
 
-## Step 1: Install MariaDB
+### Step 1: Install MariaDB
 
 ```bash
 # Update package lists
@@ -81,28 +86,29 @@ sudo systemctl enable mariadb
 sudo systemctl status mariadb
 ```
 
----
+***
 
-## Step 2: Secure MariaDB
+### Step 2: Secure MariaDB
 
 ```bash
 sudo mysql_secure_installation
 ```
 
 **Follow prompts:**
-- Enter current password for root: [Press Enter]
-- Switch to unix_socket authentication? **n**
-- Change the root password? **Y**
-  - New password: **[Choose a secure password]**
-  - Re-enter: **[Same password]**
-- Remove anonymous users? **Y**
-- Disallow root login remotely? **Y**
-- Remove test database? **Y**
-- Reload privilege tables? **Y**
 
----
+* Enter current password for root: \[Press Enter]
+* Switch to unix\_socket authentication? **n**
+* Change the root password? **Y**
+  * New password: **\[Choose a secure password]**
+  * Re-enter: **\[Same password]**
+* Remove anonymous users? **Y**
+* Disallow root login remotely? **Y**
+* Remove test database? **Y**
+* Reload privilege tables? **Y**
 
-## Step 3: Create Database
+***
+
+### Step 3: Create Database
 
 ```bash
 # Login to MariaDB
@@ -111,6 +117,7 @@ sudo mariadb -u root -p
 ```
 
 **In MariaDB shell:**
+
 ```sql
 -- Create database
 CREATE DATABASE kb_chunks CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -122,9 +129,9 @@ SHOW DATABASES;
 EXIT;
 ```
 
----
+***
 
-## Step 4: Configure MariaDB
+### Step 4: Configure MariaDB
 
 ```bash
 # Edit configuration
@@ -132,6 +139,7 @@ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 ```
 
 **Add under `[mysqld]` section:**
+
 ```ini
 character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
@@ -142,14 +150,15 @@ innodb_buffer_pool_size = 2G
 ```
 
 **Save and restart:**
+
 ```bash
 # Save: Ctrl+X, Y, Enter
 sudo systemctl restart mariadb
 ```
 
----
+***
 
-## Step 5: Install MariaDB AI RAG Package
+### Step 5: Install MariaDB AI RAG Package
 
 ```bash
 # Navigate to directory with .deb file
@@ -164,6 +173,7 @@ sudo apt-get install -f
 ```
 
 **Verify installation:**
+
 ```bash
 # Check installed files
 dpkg -L ai-nexus | head -20
@@ -177,9 +187,9 @@ dpkg -L ai-nexus | head -20
 ls -lh /opt/rag-in-a-box/bin/
 ```
 
----
+***
 
-## Step 6: Configure MariaDB AI RAG
+### Step 6: Configure MariaDB AI RAG
 
 ```bash
 # Edit configuration file
@@ -238,9 +248,9 @@ EMBEDDING_BATCH_SIZE=32
 
 **Save:** Ctrl+X, Y, Enter
 
----
+***
 
-## Step 7: Start Services in their own terminals
+### Step 7: Start Services in their own terminals
 
 ```bash
 # Start RAG API
@@ -250,13 +260,18 @@ EMBEDDING_BATCH_SIZE=32
 CONFIG_FILE=/path/to/config.env /opt/rag-in-a-box/bin/mcp-server
 ```
 
-## Step 8: Verify Deployment
+### Step 8: Verify Deployment
 
-# Check listening ports
+Check listening ports:
+
+```
 sudo netstat -tuln | grep -E ':(8000|8002)'
-# Should show LISTEN on both ports
+```
 
-### Test Health Endpoints
+Should show LISTEN on both ports
+
+#### Test Health Endpoints
+
 ```bash
 # Test RAG API
 curl http://localhost:8000/health
@@ -270,9 +285,10 @@ curl http://localhost:8002/health
 curl http://localhost:8000/
 ```
 
-### View Logs
+#### View Logs
 
 **Expected log messages:**
+
 ```
 INFO:     Started server process
 INFO:     Waiting for application startup.
@@ -280,11 +296,12 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000
 ```
 
----
+***
 
-## Step 9: Test Functionality
+### Step 9: Test Functionality
 
-### Generate Authentication Token
+#### Generate Authentication Token
+
 ```bash
 # Generate token
 curl -X POST "http://localhost:8000/token" \
@@ -295,7 +312,8 @@ curl -X POST "http://localhost:8000/token" \
 export TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 ```
 
-### Test Document Upload
+#### Test Document Upload
+
 ```bash
 # Create test document
 echo "This is a test document for MariaDB AI RAG RAG system. It contains sample text for testing." > test_document.txt
@@ -309,7 +327,8 @@ curl -X POST "http://localhost:8000/documents/ingest" \
 # {"document_id":1,"filename":"test_document.txt","chunks_created":1,"status":"success"}
 ```
 
-### Test RAG Query
+#### Test RAG Query
+
 ```bash
 # Query the document
 curl -X POST "http://localhost:8000/orchestrate/generation" \
@@ -320,7 +339,8 @@ curl -X POST "http://localhost:8000/orchestrate/generation" \
 # Expected: AI-generated response with sources
 ```
 
-### Verify Database
+#### Verify Database
+
 ```bash
 # Login to MariaDB
 mariadb -u root -p kb_chunks
@@ -328,6 +348,7 @@ mariadb -u root -p kb_chunks
 ```
 
 **In MariaDB:**
+
 ```sql
 -- Show tables
 SHOW TABLES;
@@ -342,22 +363,24 @@ SELECT COUNT(*) FROM vdb_tbl_DEMO_gemini;
 EXIT;
 ```
 
----
+***
 
 ## Access Points
 
 After successful deployment:
 
-- **RAG API Swagger UI**: http://\<server-ip\>:8000/docs
-- **RAG API Health**: http://\<server-ip\>:8000/health
-- **MCP Server**: http://\<server-ip\>:8002/mcp
-- **MCP Health**: http://\<server-ip\>:8002/health
+* **RAG API Swagger UI**: http://\<server-ip>:8000/docs
+* **RAG API Health**: http://\<server-ip>:8000/health
+* **MCP Server**: http://\<server-ip>:8002/mcp
+* **MCP Health**: http://\<server-ip>:8002/health
 
 **Get server IP:**
+
 ```bash
 hostname -I
 ```
----
+
+***
 
 ## Troubleshooting
 
@@ -368,18 +391,21 @@ hostname -I
 **Common causes:**
 
 1. **MariaDB not running**
+
 ```bash
 sudo systemctl status mariadb
 sudo systemctl start mariadb
 ```
 
 2. **Configuration errors**
+
 ```bash
 nano /path/to/config.env
 # Check for typos, missing values
 ```
 
 3. **Port already in use**
+
 ```bash
 sudo lsof -i :8000
 sudo lsof -i :8002
@@ -387,6 +413,7 @@ sudo lsof -i :8002
 ```
 
 4. **Permission issues**
+
 ```bash
 sudo chmod +x /opt/rag-in-a-box/bin/rag-api
 sudo chmod +x /opt/rag-in-a-box/bin/mcp-server
@@ -471,7 +498,7 @@ sudo swapon /swapfile
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
 
----
+***
 
 ## Maintenance
 
@@ -545,7 +572,7 @@ EXIT;
 EOF
 ```
 
----
+***
 
 ## Uninstall
 
@@ -560,16 +587,17 @@ sudo rm -rf /opt/rag-in-a-box/
 mariadb -u root -p -e "DROP DATABASE kb_chunks;"
 ```
 
----
+***
 
 ## Security Best Practices
 
-### 1. Change Default Passwords
+### Change Default Passwords
 
 ```bash
 # Change MariaDB root password
 sudo mariadb -u root -p
 ```
+
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'your_new_secure_password';
 FLUSH PRIVILEGES;
@@ -577,6 +605,7 @@ EXIT;
 ```
 
 **Update config:**
+
 ```bash
 nano /path/to/config.env
 # DB_PASSWORD=your_new_secure_password
@@ -584,7 +613,7 @@ nano /path/to/config.env
 CONFIG_FILE=/path/to/config.env /opt/rag-in-a-box/bin/mcp-server
 ```
 
-### 2. Generate New Secret Keys
+### Generate New Secret Keys
 
 ```bash
 # Generate secure key
@@ -594,7 +623,7 @@ python3 -c "import secrets; print(secrets.token_urlsafe(64))"
 nano /path/to/config.env
 ```
 
-### 3. Configure Firewall
+### Configure Firewall
 
 ```bash
 # Install UFW
@@ -616,12 +645,13 @@ sudo ufw enable
 sudo ufw status
 ```
 
-### 4. Restrict Database Access
+### Restrict Database Access
 
 ```bash
 # Create dedicated database user
 sudo mariadb -u root -p
 ```
+
 ```sql
 CREATE USER 'rag_user'@'localhost' IDENTIFIED BY 'your_secure_password';
 GRANT ALL PRIVILEGES ON kb_chunks.* TO 'rag_user'@'localhost';
@@ -630,13 +660,14 @@ EXIT;
 ```
 
 **Update config:**
+
 ```bash
 nano /path/to/config.env
 # DB_USER=rag_user
 # DB_PASSWORD=your_secure_password
 ```
 
----
+***
 
 ## Quick Reference
 
@@ -676,10 +707,10 @@ RAG API (Port 8000)
 MCP Server (Port 8002)
 ```
 
-**Start order:** MariaDB → RAG API → MCP Server  
+**Start order:** MariaDB → RAG API → MCP Server\
 **Stop order:** MCP Server → RAG API → MariaDB
 
----
+***
 
 ## Architecture Overview
 
@@ -693,7 +724,7 @@ Ubuntu System (Native)
     └── FastAPI Server (Port 8002)
 ```
 
----
+***
 
 ## Performance Tuning
 
@@ -728,19 +759,21 @@ iostat -x 1
 iftop
 ```
 
----
+***
 
 ## Deployment Complete! 🎉
 
 Your MariaDB AI RAG is now running natively on Ubuntu.
 
 **Next Steps:**
-1. Access Swagger UI: http://\<server-ip\>:8000/docs
+
+1. Access Swagger UI: http://\<server-ip>:8000/docs
 2. Generate authentication token
 3. Upload test documents
 4. Start querying with RAG
 
 **For support:**
-- Check logs
-- Verify config: `nano /path/to/config.env`
-- Test health: `curl http://localhost:8000/health`
+
+* Check logs
+* Verify config: `nano /path/to/config.env`
+* Test health: `curl http://localhost:8000/health`

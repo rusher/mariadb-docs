@@ -7,8 +7,8 @@ icon: chart-pie-simple-circle-currency
 
 ## Overview
 
-MariaDB Exa is powered by [Exasol](https://www.exasol.com/analytics-engine/). MariaDB Exa is a high-performance, in-memory, MPP (Massively Parallel Processing) analytical database designed for fast, large-scale SQL analytics.\
-\
+MariaDB Exa is powered by [Exasol](https://www.exasol.com/analytics-engine/). MariaDB Exa is a high-performance, in-memory, MPP (Massively Parallel Processing) analytical database designed for fast, large-scale SQL analytics.
+
 MariaDB Exa is optimized for columnar storage, vectorized execution, and distributed query processing, making it an excellent complement to MariaDB Enterprise Server and MariaDB MaxScale in modern analytic architectures.
 
 This guide describes how to integrate MariaDB Exa for analytical workloads, data pipelines, and change data capture (CDC) scenarios. It also introduces common configuration patterns, performance considerations, and validation techniques used in production and benchmarking environments.
@@ -26,4 +26,3 @@ Exasol offers:
 
 When paired with MariaDB Enterprise Server and MaxScale, MariaDB Exa can act as a real-time analytical sink for data replicated or streamed from operational systems.
 
-\

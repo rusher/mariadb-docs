@@ -1,6 +1,8 @@
 # Backup & Restore of Enterprise Manager
 
-Note: This is about backing up Enterprise Manager (EM), not the databases.
+{% hint style="warning" %}
+This procedure is for backing up the MariaDB Enterprise Manager application itself, including its configuration and historical monitoring data. It does not back up the data in your monitored databases.
+{% endhint %}
 
 ## Backing up Enterprise Manager Server
 
@@ -39,4 +41,6 @@ The `backups` directory now contains the data from the Enterprise Manager.
 
 ## Restoring Enterprise Manager Server
 
-Instruction to restore Enterprise Manager server
+{% hint style="warning" %}
+Instruction to restore Enterprise Manager server are under review at the moment stay tuned
+{% endhint %}

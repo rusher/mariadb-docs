@@ -21,8 +21,6 @@ In production, MariaDB Exa is deployed as a cluster of nodes.
 
 Data is automatically distributed across nodes, using MariaDB Exa internal partitioning and replication for fault tolerance.
 
-\
-
 
 [^1]: Massive Parallel Processing — analytical database designed for fast, large-scale SQL analytics
 

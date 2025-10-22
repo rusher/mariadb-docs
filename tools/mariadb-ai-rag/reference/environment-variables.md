@@ -1,10 +1,10 @@
 # Environment Variables
 
-MariaDB Data Bridge uses environment variables for configuration. These can be set in a `.env` file in the installation directory.
+MariaDB AI RAG uses environment variables for configuration. These can be set in a `.env` file in the installation directory.
 
 ## Required Environment Variables
 
-```
+```ini
 # Database Configuration (Required)
 DB_HOST=localhost
 DB_PORT=3306
@@ -31,7 +31,7 @@ COHERE_API_KEY=your_cohere_api_key
 
 ### Authentication
 
-MariaDB Data Bridge implements JWT-based authentication. Configure the following parameters in your `.env` file:
+MariaDB AI RAG implements JWT-based authentication. Configure the following parameters in your `.env` file:
 
 ```
 SECRET_KEY=your_secure_random_string

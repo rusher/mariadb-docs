@@ -2,19 +2,20 @@
 
 ## Overview
 
-This guide covers the basic configuration of the MariaDB AI RAG system. For production deployments and advanced configuration scenarios, please refer to the [Deployment Documentation](../deployment/README.md).
+This guide covers the basic configuration of the MariaDB AI RAG system. For production deployments and advanced configuration scenarios, please refer to the [Deployment Documentation](../deployment/).
 
 **See Also:**
-- [Ubuntu Deployment Guide](../deployment/ubuntu-deployment.md) - Production configuration for Ubuntu/Debian
-- [Docker Deployment Guide](../deployment/docker-deployment.md) - Container-based deployment configuration
-- [Deployment Checklist](../deployment/deployment-checklist.md) - Configuration validation checklist
-- [Technical Architecture](../deployment/technical-architecture.md) - System architecture and configuration details
+
+* [Ubuntu Deployment Guide](../deployment/ubuntu-deployment.md) - Production configuration for Ubuntu/Debian
+* [Docker Deployment Guide](../../mariadb-enterprise-operator/docker-images.md) - Container-based deployment configuration
+* [Deployment Checklist](../deployment/deployment-checklist.md) - Configuration validation checklist
+* [Technical Architecture](../deployment/technical-architecture.md) - System architecture and configuration details
 
 ## Configuration File
 
-MariaDB Data Bridge uses a `.env` configuration file located in the installation directory. A template is provided at `config.env.template`. Copy this file to `.env` and modify the parameters according to your environment.
+MariaDB AI RAG uses a `.env` configuration file located in the installation directory. A template is provided at `config.env.template`. Copy this file to `.env` and modify the parameters according to your environment.
 
-```
+```ini
 # Database Configuration (Required)
 DB_HOST=localhost
 DB_PORT=3306
@@ -38,7 +39,7 @@ COHERE_API_KEY=your_cohere_api_key
 
 ## Database Initialization
 
-MariaDB Data Bridge requires a properly configured database. The system can automatically initialize the database schema during first startup, or you can manually initialize it using the provided SQL script:
+MariaDB AI RAG requires a properly configured database. The system can automatically initialize the database schema during first startup, or you can manually initialize it using the provided SQL script:
 
 ```bash
 mysql -u username -p database_name < init-db.sql
@@ -48,9 +49,9 @@ mysql -u username -p database_name < init-db.sql
 
 ### Authentication
 
-MariaDB Data Bridge implements JWT-based authentication. Configure the following parameters in your `.env` file:
+MariaDB AI RAG implements JWT-based authentication. Configure the following parameters in your `.env` file:
 
-```
+```ini
 SECRET_KEY=your_secure_random_string
 ACCESS_TOKEN_EXPIRE_MINUTES=60
 ```

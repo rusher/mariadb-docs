@@ -1,16 +1,17 @@
-# MariaDB AI RAG - Technical Architecture & Functional Specification
+# Technical Architecture
 
 ## Table of Contents
-1. [System Architecture](#system-architecture)
-2. [Component Details](#component-details)
-3. [Data Flow](#data-flow)
-4. [Security Architecture](#security-architecture)
-5. [Configuration Management](#configuration-management)
-6. [API Specifications](#api-specifications)
-7. [Database Schema](#database-schema)
-8. [Performance Characteristics](#performance-characteristics)
 
----
+1. [System Architecture](technical-architecture.md#system-architecture)
+2. [Component Details](technical-architecture.md#component-details)
+3. [Data Flow](technical-architecture.md#data-flow)
+4. [Security Architecture](technical-architecture.md#security-architecture)
+5. [Configuration Management](technical-architecture.md#configuration-management)
+6. [API Specifications](technical-architecture.md#api-specifications)
+7. [Database Schema](technical-architecture.md#database-schema)
+8. [Performance Characteristics](technical-architecture.md#performance-characteristics)
+
+***
 
 ## System Architecture
 
@@ -18,78 +19,78 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         Windows Host System                          │
-│                                                                       │
-│  ┌─────────────────────────────────────────────────────────────┐   │
-│  │              Docker Desktop (WSL 2 Backend)                  │   │
-│  │                                                               │   │
-│  │  ┌────────────────────────────────────────────────────────┐ │   │
-│  │  │              Docker Network: ai-nexus-network          │ │   │
-│  │  │                  (Bridge Driver)                       │ │   │
-│  │  │                                                         │ │   │
-│  │  │  ┌──────────────────────────────────────────────────┐ │ │   │
-│  │  │  │      ai-nexus Container (Ubuntu 24.04)           │ │ │   │
-│  │  │  │                                                   │ │ │   │
-│  │  │  │  ┌────────────────────────────────────────────┐ │ │ │   │
-│  │  │  │  │  Process 1: RAG API (PID: dynamic)         │ │ │ │   │
-│  │  │  │  │  - Framework: FastAPI                      │ │ │ │   │
-│  │  │  │  │  - Server: Uvicorn (ASGI)                  │ │ │ │   │
-│  │  │  │  │  - Bind: 0.0.0.0:8000                      │ │ │ │   │
-│  │  │  │  │  - Workers: 1                              │ │ │ │   │
-│  │  │  │  │  - Binary: /opt/rag-in-a-box/bin/rag-api  │ │ │ │   │
-│  │  │  │  └────────────────────────────────────────────┘ │ │ │   │
-│  │  │  │                                                   │ │ │   │
-│  │  │  │  ┌────────────────────────────────────────────┐ │ │ │   │
-│  │  │  │  │  Process 2: MCP Server (PID: dynamic)      │ │ │ │   │
-│  │  │  │  │  - Framework: FastAPI                      │ │ │ │   │
-│  │  │  │  │  - Server: Uvicorn (ASGI)                  │ │ │ │   │
-│  │  │  │  │  - Bind: 0.0.0.0:8002                      │ │ │ │   │
-│  │  │  │  │  - Workers: 1                              │ │ │ │   │
-│  │  │  │  │  - Binary: /opt/rag-in-a-box/bin/mcp-server│ │ │ │   │
-│  │  │  │  └────────────────────────────────────────────┘ │ │ │   │
-│  │  │  │                                                   │ │ │   │
-│  │  │  │  Startup: start-services.sh                      │ │ │   │
-│  │  │  │  Health Check: 180s timeout, 10s interval        │ │ │   │
-│  │  │  └──────────────────┬────────────────────────────┘ │ │   │
-│  │  │                     │                               │ │   │
-│  │  │                     │ MySQL Protocol (Port 3306)    │ │   │
-│  │  │                     │                               │ │   │
-│  │  │  ┌──────────────────▼────────────────────────────┐ │ │   │
-│  │  │  │      mysql-db Container (MariaDB 11)          │ │ │   │
-│  │  │  │                                                │ │ │   │
-│  │  │  │  ┌──────────────────────────────────────────┐ │ │ │   │
-│  │  │  │  │  MariaDB Server                          │ │ │ │   │
-│  │  │  │  │  - Version: 11.x                         │ │ │ │   │
-│  │  │  │  │  - Storage Engine: InnoDB                │ │ │ │   │
-│  │  │  │  │  - Character Set: utf8mb4                │ │ │ │   │
-│  │  │  │  │  - Collation: utf8mb4_unicode_ci         │ │ │ │   │
-│  │  │  │  │  - Page Size: 16KB                       │ │ │ │   │
-│  │  │  │  │  - Row Format: Dynamic                   │ │ │ │   │
-│  │  │  │  └──────────────────────────────────────────┘ │ │ │   │
-│  │  │  │                                                │ │ │   │
-│  │  │  │  ┌──────────────────────────────────────────┐ │ │ │   │
-│  │  │  │  │  Persistent Volume: mysql_data           │ │ │ │   │
-│  │  │  │  │  - Database: kb_chunks                   │ │ │ │   │
-│  │  │  │  │  - Tables: documents_*, vdb_tbl_*        │ │ │ │   │
-│  │  │  │  │  - Indexes: Vector indexes               │ │ │ │   │
-│  │  │  │  └──────────────────────────────────────────┘ │ │ │   │
-│  │  │  └────────────────────────────────────────────┘ │ │   │
-│  │  └─────────────────────────────────────────────────┘ │   │
-│  └───────────────────────────────────────────────────────┘   │
-│                                                               │
-│  Port Mappings (Host → Container):                           │
-│  - 8000:8000  (RAG API)                                      │
-│  - 8002:8002  (MCP Server)                                   │
-│  - 3306:3306  (MariaDB)                                      │
-└───────────────────────────────────────────────────────────────┘
+│                         Windows Host System                         │
+│                                                                     │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │              Docker Desktop (WSL 2 Backend)                 │    │
+│  │                                                             │    │
+│  │  ┌────────────────────────────────────────────────────────┐ │    │
+│  │  │              Docker Network: ai-nexus-network          │ │    │
+│  │  │                  (Bridge Driver)                       │ │    │
+│  │  │                                                        │ │    │
+│  │  │  ┌──────────────────────────────────────────────────┐  │ │    │
+│  │  │  │      ai-nexus Container (Ubuntu 24.04)           │  │ │    │
+│  │  │  │                                                  │  │ │    │
+│  │  │  │  ┌────────────────────────────────────────────┐  │  │ │    │
+│  │  │  │  │  Process 1: RAG API (PID: dynamic)         │  │  │ │    │
+│  │  │  │  │  - Framework: FastAPI                      │  │  │ │    │
+│  │  │  │  │  - Server: Uvicorn (ASGI)                  │  │  │ │    │
+│  │  │  │  │  - Bind: 0.0.0.0:8000                      │  │  │ │    │
+│  │  │  │  │  - Workers: 1                              │  │  │ │    │
+│  │  │  │  │  - Binary: /opt/rag-in-a-box/bin/rag-api   │  │  │ │    │
+│  │  │  │  └────────────────────────────────────────────┘  │  │ │    │
+│  │  │  │                                                  │  │ │    │
+│  │  │  │  ┌────────────────────────────────────────────┐  │  │ │    │
+│  │  │  │  │  Process 2: MCP Server (PID: dynamic)      │  │  │ │    │
+│  │  │  │  │  - Framework: FastAPI                      │  │  │ │    │
+│  │  │  │  │  - Server: Uvicorn (ASGI)                  │  │  │ │    │
+│  │  │  │  │  - Bind: 0.0.0.0:8002                      │  │  │ │    │
+│  │  │  │  │  - Workers: 1                              │  │  │ │    │
+│  │  │  │  │  - Binary: /opt/rag-in-a-box/bin/mcp-server│  │  │ │    │
+│  │  │  │  └────────────────────────────────────────────┘  │  │ │    │
+│  │  │  │                                                  │  │ │    │
+│  │  │  │  Startup: start-services.sh                      │  │ │    │
+│  │  │  │  Health Check: 180s timeout, 10s interval        │  │ │    │
+│  │  │  └──────────────────┬────────────────────────────┘     │ │    │
+│  │  │                     │                                  │ │    │
+│  │  │                     │ MySQL Protocol (Port 3306)       │ │    │
+│  │  │                     │                                  │ │    │
+│  │  │  ┌──────────────────▼────────────────────────────┐     │ │    │
+│  │  │  │      mysql-db Container (MariaDB 11)          │     │ │    │
+│  │  │  │                                               │     │ │    │
+│  │  │  │  ┌──────────────────────────────────────────┐ │     │ │    │
+│  │  │  │  │  MariaDB Server                          │ │     │ │    │
+│  │  │  │  │  - Version: 11.x                         │ │     │ │    │
+│  │  │  │  │  - Storage Engine: InnoDB                │ │     │ │    │
+│  │  │  │  │  - Character Set: utf8mb4                │ │     │ │    │
+│  │  │  │  │  - Collation: utf8mb4_unicode_ci         │ │     │ │    │
+│  │  │  │  │  - Page Size: 16KB                       │ │     │ │    │
+│  │  │  │  │  - Row Format: Dynamic                   │ │     │ │    │
+│  │  │  │  └──────────────────────────────────────────┘ │     │ │    │
+│  │  │  │                                               │     │ │    │
+│  │  │  │  ┌──────────────────────────────────────────┐ │     │ │    │
+│  │  │  │  │  Persistent Volume: mysql_data           │ │     │ │    │
+│  │  │  │  │  - Database: kb_chunks                   │ │     │ │    │
+│  │  │  │  │  - Tables: documents_*, vdb_tbl_*        │ │     │ │    │
+│  │  │  │  │  - Indexes: Vector indexes               │ │     │ │    │
+│  │  │  │  └──────────────────────────────────────────┘ │     │ │    │
+│  │  │  └────────────────────────────────────────────┘ │ │           │
+│  │  └─────────────────────────────────────────────────┘ │           │
+│  └───────────────────────────────────────────────────────┘          │
+│                                                                     │
+│  Port Mappings (Host → Container):                                  │
+│  - 8000:8000  (RAG API)                                             │
+│  - 8002:8002  (MCP Server)                                          │
+│  - 3306:3306  (MariaDB)                                             │
+└─────────────────────────────────────────────────────────────────────┘
 
 External Services (Internet):
-┌────────────────────────────────────────┐
-│  Google Generative AI API              │
-│  - Endpoint: generativelanguage.googleapis.com │
-│  - Embedding: text-embedding-004       │
-│  - LLM: gemini-2.0-flash              │
-└────────────────────────────────────────┘
+┌─────────────────────────────────────────────────┐
+│  Google Generative AI API                       │
+│  - Endpoint: generativelanguage.googleapis.com  │
+│  - Embedding: text-embedding-004                │
+│  - LLM: gemini-2.0-flash                        │
+└─────────────────────────────────────────────────┘
 ```
 
 ### Container Dependency Graph
@@ -109,7 +110,7 @@ Start Order:
    └─ Restart Policy: unless-stopped
 ```
 
----
+***
 
 ## Component Details
 
@@ -118,21 +119,24 @@ Start Order:
 **Binary Location**: `/opt/rag-in-a-box/bin/rag-api`
 
 **Responsibilities**:
-- Document ingestion and processing
-- Text chunking and embedding generation
-- Vector storage and retrieval
-- Semantic search
-- RAG query processing
-- Authentication and authorization
+
+* Document ingestion and processing
+* Text chunking and embedding generation
+* Vector storage and retrieval
+* Semantic search
+* RAG query processing
+* Authentication and authorization
 
 **Technology Stack**:
-- **Framework**: FastAPI (Python)
-- **ASGI Server**: Uvicorn
-- **Database Driver**: PyMySQL / aiomysql
-- **Embedding Client**: Google Generative AI SDK
-- **Document Processing**: LangChain / Custom parsers
+
+* **Framework**: FastAPI (Python)
+* **ASGI Server**: Uvicorn
+* **Database Driver**: PyMySQL / aiomysql
+* **Embedding Client**: Google Generative AI SDK
+* **Document Processing**: LangChain / Custom parsers
 
 **Endpoints**:
+
 ```
 Authentication:
 POST   /token                 - Generate JWT token
@@ -156,6 +160,7 @@ GET    /openapi.json          - OpenAPI spec
 ```
 
 **Configuration Variables**:
+
 ```bash
 APP_HOST=0.0.0.0
 APP_PORT=8000
@@ -182,44 +187,51 @@ CHUNK_OVERLAP=128
 **Binary Location**: `/opt/rag-in-a-box/bin/mcp-server`
 
 **Responsibilities**:
-- Model Context Protocol implementation
-- Database tool exposure
-- Vector store tool exposure
-- RAG tool exposure
-- Authentication and rate limiting
+
+* Model Context Protocol implementation
+* Database tool exposure
+* Vector store tool exposure
+* RAG tool exposure
+* Authentication and rate limiting
 
 **Technology Stack**:
-- **Framework**: FastAPI (Python)
-- **ASGI Server**: Uvicorn
-- **Protocol**: MCP (Model Context Protocol)
-- **Database Client**: PyMySQL
+
+* **Framework**: FastAPI (Python)
+* **ASGI Server**: Uvicorn
+* **Protocol**: MCP (Model Context Protocol)
+* **Database Client**: PyMySQL
 
 **Available Tools**:
 
 **Core Tools**:
-- `health_check` - Server health verification
-- `get_server_status` - Detailed server status
+
+* `health_check` - Server health verification
+* `get_server_status` - Detailed server status
 
 **Database Tools**:
-- `list_databases` - List all databases
-- `list_tables` - List tables in database
-- `get_table_schema` - Get table structure
-- `execute_sql` - Execute SQL queries
-- `create_database` - Create new database
-- `drop_database` - Delete database
+
+* `list_databases` - List all databases
+* `list_tables` - List tables in database
+* `get_table_schema` - Get table structure
+* `execute_sql` - Execute SQL queries
+* `create_database` - Create new database
+* `drop_database` - Delete database
 
 **Vector Store Tools**:
-- `create_vector_store` - Create vector store
-- `delete_vector_store` - Delete vector store
-- `list_vector_stores` - List all vector stores
-- `insert_docs_vector_store` - Add documents
-- `search_vector_store` - Semantic search
+
+* `create_vector_store` - Create vector store
+* `delete_vector_store` - Delete vector store
+* `list_vector_stores` - List all vector stores
+* `insert_docs_vector_store` - Add documents
+* `search_vector_store` - Semantic search
 
 **RAG Tools**:
-- `ingest_documents` - Ingest documents via RAG API
-- `generate_response` - Generate RAG responses
+
+* `ingest_documents` - Ingest documents via RAG API
+* `generate_response` - Generate RAG responses
 
 **Configuration Variables**:
+
 ```bash
 MCP_HOST=0.0.0.0
 MCP_PORT=8002
@@ -241,6 +253,7 @@ MCP_LOG_LEVEL=INFO
 **Image**: `mariadb:11`
 
 **Configuration**:
+
 ```yaml
 Environment:
   MYSQL_ROOT_PASSWORD: your_secure_database_password
@@ -264,6 +277,7 @@ Volume:
 ```
 
 **Database Schema**:
+
 ```sql
 -- Documents Table
 CREATE TABLE documents_DEMO_gemini (
@@ -292,7 +306,7 @@ CREATE TABLE vdb_tbl_DEMO_gemini (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 
----
+***
 
 ## Data Flow
 
@@ -311,7 +325,7 @@ User Upload
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  2. Document Processing                │
+│  2. Document Processing               │
 │  - Extract text from file             │
 │  - Clean and normalize text           │
 │  - Store in documents table           │
@@ -319,7 +333,7 @@ User Upload
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  3. Text Chunking                      │
+│  3. Text Chunking                     │
 │  - Method: Recursive character split  │
 │  - Chunk size: 512 tokens             │
 │  - Overlap: 128 tokens                │
@@ -328,7 +342,7 @@ User Upload
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  4. Embedding Generation               │
+│  4. Embedding Generation              │
 │  - Batch size: 32 chunks              │
 │  - Call Gemini API                    │
 │  - Model: text-embedding-004          │
@@ -337,7 +351,7 @@ User Upload
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  5. Vector Storage                     │
+│  5. Vector Storage                    │
 │  - Store in vdb_tbl_DEMO_gemini       │
 │  - Link to document_id                │
 │  - Store chunk text + embedding       │
@@ -346,7 +360,7 @@ User Upload
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  6. Response to User                   │
+│  6. Response to User                  │
 │  - Document ID                        │
 │  - Number of chunks                   │
 │  - Processing status                  │
@@ -360,21 +374,21 @@ User Query
     │
     ▼
 ┌───────────────────────────────────────┐
-│  1. Query Reception                    │
+│  1. Query Reception                   │
 │  - Validate JWT token                 │
 │  - Parse query text                   │
 └───────────────┬───────────────────────┘
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  2. Query Embedding                    │
+│  2. Query Embedding                   │
 │  - Call Gemini API                    │
 │  - Generate 768-dim vector            │
 └───────────────┬───────────────────────┘
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  3. Similarity Search                  │
+│  3. Similarity Search                 │
 │  - Calculate cosine similarity        │
 │  - Filter by threshold (0.8)          │
 │  - Retrieve top-k chunks (default: 5) │
@@ -383,7 +397,7 @@ User Query
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  4. Context Preparation                │
+│  4. Context Preparation               │
 │  - Combine retrieved chunks           │
 │  - Add source metadata                │
 │  - Format for LLM prompt              │
@@ -391,7 +405,7 @@ User Query
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  5. LLM Generation                     │
+│  5. LLM Generation                    │
 │  - Construct prompt:                  │
 │    "Context: {chunks}"                │
 │    "Question: {query}"                │
@@ -401,7 +415,7 @@ User Query
                 │
                 ▼
 ┌───────────────────────────────────────┐
-│  6. Response Formatting                │
+│  6. Response Formatting               │
 │  - AI-generated answer                │
 │  - Source documents                   │
 │  - Confidence scores                  │
@@ -412,7 +426,7 @@ User Query
     Return to User
 ```
 
----
+***
 
 ## Security Architecture
 
@@ -420,36 +434,36 @@ User Query
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  1. Token Generation                                         │
-│                                                              │
-│  POST /token                                                 │
+│  1. Token Generation                                        │
+│                                                             │
+│  POST /token                                                │
 │  Body: {"username": "admin", "password": "password"}        │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐│
-│  │  Server validates credentials                          ││
-│  │  Generates JWT with:                                   ││
-│  │  - Header: {"alg": "HS256", "typ": "JWT"}             ││
-│  │  - Payload: {"sub": "admin", "exp": <timestamp>}      ││
-│  │  - Signature: HMAC-SHA256(header.payload, SECRET_KEY) ││
-│  └────────────────────────────────────────────────────────┘│
-│                                                              │
+│                                                             │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Server validates credentials                          │ │
+│  │  Generates JWT with:                                   │ │
+│  │  - Header: {"alg": "HS256", "typ": "JWT"}              │ │
+│  │  - Payload: {"sub": "admin", "exp": <timestamp>}       │ │
+│  │  - Signature: HMAC-SHA256(header.payload, SECRET_KEY)  │ │
+│  └────────────────────────────────────────────────────────┘ │
+│                                                             │
 │  Response: {"access_token": "eyJ...", "token_type": "bearer"}│
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  2. Authenticated Request                                    │
-│                                                              │
-│  GET /documents                                              │
+│  2. Authenticated Request                                   │
+│                                                             │
+│  GET /documents                                             │
 │  Headers: {"Authorization": "Bearer eyJ..."}                │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐│
-│  │  Server extracts token                                 ││
-│  │  Verifies signature with SECRET_KEY                    ││
-│  │  Checks expiration (30 minutes)                        ││
-│  │  Validates claims                                      ││
-│  └────────────────────────────────────────────────────────┘│
-│                                                              │
+│                                                             │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Server extracts token                                 │ │
+│  │  Verifies signature with SECRET_KEY                    │ │
+│  │  Checks expiration (30 minutes)                        │ │
+│  │  Validates claims                                      │ │
+│  └────────────────────────────────────────────────────────┘ │
+│                                                             │
 │  If valid: Process request                                  │
 │  If invalid: Return 401 Unauthorized                        │
 └─────────────────────────────────────────────────────────────┘
@@ -458,6 +472,7 @@ User Query
 ### Security Keys
 
 **Critical Requirement**: All three keys must be identical for unified authentication:
+
 ```bash
 SECRET_KEY=<same-value>
 JWT_SECRET_KEY=<same-value>
@@ -465,6 +480,7 @@ MCP_AUTH_SECRET_KEY=<same-value>
 ```
 
 **Key Generation** (for production):
+
 ```python
 import secrets
 key = secrets.token_urlsafe(64)
@@ -474,49 +490,42 @@ key = secrets.token_urlsafe(64)
 ### Security Features
 
 1. **JWT Authentication**
-   - Algorithm: HS256
-   - Expiration: 30 minutes (configurable)
-   - Unified token for RAG API and MCP Server
-
+   * Algorithm: HS256
+   * Expiration: 30 minutes (configurable)
+   * Unified token for RAG API and MCP Server
 2. **Rate Limiting**
-   - 100 requests per minute (default)
-   - Configurable per endpoint
-
+   * 100 requests per minute (default)
+   * Configurable per endpoint
 3. **CORS Configuration**
-   - Allowed origins: Configurable
-   - Credentials: Supported
-   - Methods: GET, POST, PUT, DELETE, OPTIONS
-
+   * Allowed origins: Configurable
+   * Credentials: Supported
+   * Methods: GET, POST, PUT, DELETE, OPTIONS
 4. **File Upload Security**
-   - Max file size: 200MB
-   - Allowed extensions: .pdf, .txt, .docx, .md, .html, .csv, .json, .xml
-   - Malware scanning: Optional
-   - Quarantine: Enabled for suspicious files
-
+   * Max file size: 200MB
+   * Allowed extensions: .pdf, .txt, .docx, .md, .html, .csv, .json, .xml
+   * Malware scanning: Optional
+   * Quarantine: Enabled for suspicious files
 5. **Database Security**
-   - Parameterized queries (SQL injection prevention)
-   - Connection pooling
-   - Encrypted connections (optional)
+   * Parameterized queries (SQL injection prevention)
+   * Connection pooling
+   * Encrypted connections (optional)
 
----
+***
 
 ## Configuration Management
 
 ### Configuration Modes
 
 #### 1. Standalone Mode
-**File**: `config.env.secure.local`
-**Usage**: Direct environment variables
-**Security**: Secrets stored in file
-**Best for**: Development, single developer
+
+**File**: `config.env.secure.local` **Usage**: Direct environment variables **Security**: Secrets stored in file **Best for**: Development, single developer
 
 #### 2. Vault Mode
-**File**: `config.env.vault.local`
-**Usage**: HashiCorp Vault integration
-**Security**: Secrets stored in Vault
-**Best for**: Team development, production-like
+
+**File**: `config.env.vault.local` **Usage**: HashiCorp Vault integration **Security**: Secrets stored in Vault **Best for**: Team development, production-like
 
 **Vault Configuration**:
+
 ```bash
 VAULT_ADDR=http://rag-vault:8200
 VAULT_TOKEN=rag-root-token
@@ -525,33 +534,32 @@ VAULT_MOUNT_POINT=secret
 ```
 
 #### 3. 1Password Mode
-**File**: `config.env.1password.employee`
-**Usage**: 1Password CLI references
-**Security**: Secrets in 1Password vault
-**Best for**: Enterprise with 1Password
+
+**File**: `config.env.1password.employee` **Usage**: 1Password CLI references **Security**: Secrets in 1Password vault **Best for**: Enterprise with 1Password
 
 **1Password References**:
+
 ```bash
 GEMINI_API_KEY=op://Employee/RAG-API-Keys/gemini
 DB_PASSWORD=op://Employee/RAG-Database/password
 ```
 
 #### 4. HCP Vault Mode
-**File**: `config.env.hcp.live`
-**Usage**: HashiCorp Cloud Platform
-**Security**: Cloud-managed secrets
-**Best for**: Production cloud deployments
 
----
+**File**: `config.env.hcp.live` **Usage**: HashiCorp Cloud Platform **Security**: Cloud-managed secrets **Best for**: Production cloud deployments
+
+***
 
 ## API Specifications
 
 ### RAG API Endpoints
 
 #### POST /token
+
 **Description**: Generate JWT authentication token
 
 **Request**:
+
 ```json
 {
   "username": "admin",
@@ -560,6 +568,7 @@ DB_PASSWORD=op://Employee/RAG-Database/password
 ```
 
 **Response**:
+
 ```json
 {
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -568,20 +577,24 @@ DB_PASSWORD=op://Employee/RAG-Database/password
 ```
 
 #### POST /ingest
+
 **Description**: Upload and process documents
 
 **Headers**:
+
 ```
 Authorization: Bearer <token>
 Content-Type: multipart/form-data
 ```
 
 **Request**:
+
 ```
 file: <binary-file-data>
 ```
 
 **Response**:
+
 ```json
 {
   "document_id": 123,
@@ -592,15 +605,18 @@ file: <binary-file-data>
 ```
 
 #### POST /generate
+
 **Description**: Generate RAG response
 
 **Headers**:
+
 ```
 Authorization: Bearer <token>
 Content-Type: application/json
 ```
 
 **Request**:
+
 ```json
 {
   "query": "What is the main topic?",
@@ -610,6 +626,7 @@ Content-Type: application/json
 ```
 
 **Response**:
+
 ```json
 {
   "answer": "The main topic is...",
@@ -628,13 +645,14 @@ Content-Type: application/json
 }
 ```
 
----
+***
 
 ## Database Schema
 
 ### Tables
 
-#### documents_DEMO_gemini
+#### documents\_DEMO\_gemini
+
 ```sql
 CREATE TABLE documents_DEMO_gemini (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -648,7 +666,8 @@ CREATE TABLE documents_DEMO_gemini (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 
-#### vdb_tbl_DEMO_gemini
+#### vdb\_tbl\_DEMO\_gemini
+
 ```sql
 CREATE TABLE vdb_tbl_DEMO_gemini (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -666,18 +685,16 @@ CREATE TABLE vdb_tbl_DEMO_gemini (
 
 ### Vector Storage Format
 
-**Embedding Dimensions**: 768 (float32)
-**Storage Size**: 768 × 4 bytes = 3,072 bytes per vector
-**Format**: Binary BLOB
-**Encoding**: IEEE 754 single-precision floating-point
+**Embedding Dimensions**: 768 (float32) **Storage Size**: 768 × 4 bytes = 3,072 bytes per vector **Format**: Binary BLOB **Encoding**: IEEE 754 single-precision floating-point
 
----
+***
 
 ## Performance Characteristics
 
 ### Resource Requirements
 
 **Per Container**:
+
 ```
 ai-nexus:
   CPU: 1-2 cores
@@ -693,29 +710,33 @@ mysql-db:
 ### Performance Metrics
 
 **Document Ingestion**:
-- Processing speed: ~5 documents/batch
-- Chunking: ~100 chunks/second
-- Embedding generation: ~32 chunks/batch
-- Total time: ~30-60 seconds per document (depends on size)
+
+* Processing speed: \~5 documents/batch
+* Chunking: \~100 chunks/second
+* Embedding generation: \~32 chunks/batch
+* Total time: \~30-60 seconds per document (depends on size)
 
 **Query Performance**:
-- Embedding generation: ~100-200ms
-- Similarity search: ~50-100ms (depends on dataset size)
-- LLM generation: ~1-3 seconds
-- Total response time: ~2-4 seconds
+
+* Embedding generation: \~100-200ms
+* Similarity search: \~50-100ms (depends on dataset size)
+* LLM generation: \~1-3 seconds
+* Total response time: \~2-4 seconds
 
 ### Scalability
 
 **Current Limits**:
-- Max file size: 200MB
-- Max concurrent requests: 100/minute
-- Database connections: 10 (pool size)
+
+* Max file size: 200MB
+* Max concurrent requests: 100/minute
+* Database connections: 10 (pool size)
 
 **Scaling Options**:
-- Horizontal: Deploy multiple ai-nexus containers
-- Vertical: Increase container resources
-- Database: Use read replicas for queries
 
----
+* Horizontal: Deploy multiple ai-nexus containers
+* Vertical: Increase container resources
+* Database: Use read replicas for queries
+
+***
 
 **End of Technical Architecture Document**

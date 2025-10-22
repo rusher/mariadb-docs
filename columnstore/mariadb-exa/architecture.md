@@ -48,10 +48,7 @@ Analysts or BI[^1] tools (like Tableau, Power BI, or Looker) connect to Exasol u
 When using MariaDB MaxScale, the architecture can include:
 
 * **Load Balancing / Query Routing:** MaxScale can manage read/write separation, and route analytics queries directly to MariaDB Exa in hybrid configurations.
-* **Security & Auditing:** MaxScale handles SSL termination, connection pooling, and authentication, reducing load on backend servers.\
-  \
-  \
-  \
+* **Security & Auditing:** MaxScale handles SSL termination, connection pooling, and authentication, reducing load on backend servers.
 
 
 [^1]: Business Intelligence

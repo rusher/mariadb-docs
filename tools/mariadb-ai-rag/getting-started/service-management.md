@@ -1,6 +1,6 @@
 # Service Management
 
-MariaDB Data Bridge runs as a web service using Uvicorn/FastAPI. You can manage the service using standard system commands.
+MariaDB AI RAG runs as a web service using Uvicorn/FastAPI. You can manage the service using standard system commands.
 
 ## Starting the Service
 

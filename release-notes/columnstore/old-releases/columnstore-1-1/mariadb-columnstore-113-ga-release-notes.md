@@ -6,7 +6,7 @@
 
 MariaDB ColumnStore 1.1.3 is a [_**GA**_](../../../community-server/about/release-criteria.md) release.
 
-For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-architectural-overview)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.\
 For general "how to questions" ask questions [here](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/) or subscribe to mariadb-columnstore@googlegroups.com
@@ -14,8 +14,8 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 ## Notable changes
 
 * [Beta](../../../community-server/about/release-criteria.md) release of [Apache Spark Adapter](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md) for integration of MariaDB ColumnStore utilizing the Spark SQL feature.
-* [GA](../../../community-server/about/release-criteria.md) release of [MaxScale CDC Adapter](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/clients-and-tools/data-ingestion/columnstore-streaming-data-adapters)
-* [GA](../../../community-server/about/release-criteria.md) release of [Aache Kafka Data Adapter](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/clients-and-tools/data-ingestion/columnstore-streaming-data-adapters)
+* [GA](../../../community-server/about/release-criteria.md) release of [MaxScale CDC Adapter](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/clients-and-tools/data-ingestion/columnstore-streaming-data-adapters)
+* [GA](../../../community-server/about/release-criteria.md) release of [Aache Kafka Data Adapter](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/clients-and-tools/data-ingestion/columnstore-streaming-data-adapters)
 * [MCOL-1121](https://jira.mariadb.org/browse/MCOL-1121) - The Kafka adapter has been made to work with more generic streams
 * [MCOL-1214](https://jira.mariadb.org/browse/MCOL-1214) - The base MariaDB server version is now [10.2.13](../../../community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10213-release-notes.md) which include several maintenance and security fixes.
 * Package repositories for [MariaDB AX and MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md) now available
@@ -129,13 +129,13 @@ There are a number bugs and known limitations within this version of MariaDB Col
 * [MCOL-1222](https://jira.mariadb.org/browse/MCOL-1222): ColumnStore start/restart can return before system is ready
 * [MCOL-1224](https://jira.mariadb.org/browse/MCOL-1224): post-install non-root has incorrect permissions for /etc/rc.local
 * [MCOL-1225](https://jira.mariadb.org/browse/MCOL-1225): LD\_LIBRARY\_PATH not set correctly in centos6 non-root install
-* The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/management/columnstore-system/columnstore-system-monitoring-configuration).
+* The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/management/columnstore-system/columnstore-system-monitoring-configuration).
 * While Millisecond and Microsecond storage is supported for datetime, time and timestamp columns, at this time the query results cannot return millisecond and microseconds.
 * UTF-8 Limitation
   * UTF-8 must be declared at the table level if the instance has been set up with a UTF-8 profile. Tables created with a non-matching character set will yield indeterminate results.
   * Viewing SQL output should be done using client software that supports UTF-8 character sets.
   * UTF-8 characters are not supported in object names.
-* Known security issues and fixes are documented [here](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/security/columnstore-security-vulnerabilities).
+* Known security issues and fixes are documented [here](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/security/columnstore-security-vulnerabilities).
 
 ## Documentation
 

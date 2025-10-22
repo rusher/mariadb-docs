@@ -1,6 +1,6 @@
 # API Reference
 
-MariaDB Data Bridge exposes a comprehensive RESTful API for programmatic interaction with the system. All API endpoints require authentication except for the login endpoint.
+MariaDB AI RAG exposes a comprehensive RESTful API for programmatic interaction with the system. All API endpoints require authentication except for the login endpoint.
 
 ## Authentication Endpoints
 
@@ -359,7 +359,7 @@ POST /retrieve
 **Request body**:
 ```json
 {
-  "query": "What is MariaDB Data Bridge?",
+  "query": "What is MariaDB AI RAG?",
   "top_k": 20,
   "document_ids": [42, 43]
 }
@@ -376,7 +376,7 @@ POST /retrieve
   {
     "id": "uuid-chunk-id",
     "document_id": 42,
-    "content": "MariaDB Data Bridge is an enterprise-grade RAG solution...",
+    "content": "MariaDB AI RAG is an enterprise-grade RAG solution...",
     "metadata": {},
     "distance": 0.15
   },
@@ -404,7 +404,7 @@ curl -X POST "http://localhost:8000/retrieve" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "query": "What is MariaDB Data Bridge?",
+    "query": "What is MariaDB AI RAG?",
     "top_k": 5,
     "document_ids": [42, 43]
   }'
@@ -556,9 +556,9 @@ POST /generate
 **Request body**:
 ```json
 {
-  "query": "Explain MariaDB Data Bridge features",
+  "query": "Explain MariaDB AI RAG features",
   "chunks": [
-    "MariaDB Data Bridge is an enterprise-grade RAG solution that integrates with MariaDB...",
+    "MariaDB AI RAG is an enterprise-grade RAG solution that integrates with MariaDB...",
     "Key features include document processing, semantic search, and AI-powered responses..."
   ],
   "llm_provider": "openai",
@@ -581,7 +581,7 @@ POST /generate
 **Response**:
 ```json
 {
-  "response": "MariaDB Data Bridge is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that seamlessly integrates with MariaDB. Its key features include..."
+  "response": "MariaDB AI RAG is an enterprise-grade Retrieval-Augmented Generation (RAG) solution that seamlessly integrates with MariaDB. Its key features include..."
 }
 ```
 
@@ -592,7 +592,7 @@ curl -X POST "http://localhost:8000/generate" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "query": "Explain MariaDB Data Bridge features",
+    "query": "Explain MariaDB AI RAG features",
     "chunks": ["chunk1", "chunk2"],
     "llm_provider": "openai",
     "llm_model": "gpt-4",
@@ -661,7 +661,7 @@ curl -X POST "http://localhost:8000/generate-stream" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "query": "Explain MariaDB Data Bridge features",
+    "query": "Explain MariaDB AI RAG features",
     "chunks": ["chunk1", "chunk2"],
     "llm_provider": "openai",
     "llm_model": "gpt-4"

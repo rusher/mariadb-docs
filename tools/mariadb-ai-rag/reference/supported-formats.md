@@ -1,6 +1,6 @@
 # Supported File Formats
 
-MariaDB Data Bridge supports the following file formats for document ingestion:
+MariaDB AI RAG supports the following file formats for document ingestion:
 
 - PDF (`.pdf`)
 - Microsoft Word (`.doc`, `.docx`)

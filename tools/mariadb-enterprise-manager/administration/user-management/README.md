@@ -150,8 +150,6 @@ Roles that are currently assigned to any user cannot be deleted.
 {% endstep %}
 {% endstepper %}
 
-***
-
 ## Managing Users
 
 ### Adding a User
