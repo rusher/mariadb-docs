@@ -1112,7 +1112,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 
 ## HashiCorp Vault Encryption Plugin
 
-MariaDB Enterprise Server 10.5 introduces an encryption plugin to support for [HashiCorp Vault](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb):
+MariaDB Enterprise Server 10.5 introduces an encryption plugin to support for [HashiCorp Vault](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb):
 
 * It allows HashiCorp Vault to manage encryption keys for [data-at-rest encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption).
 * It communicates with the remote KMS using TLS.
