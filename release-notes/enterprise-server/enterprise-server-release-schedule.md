@@ -14,6 +14,7 @@ Upcoming minor or maintenance releases are scheduled for:
 * 2026-03-09
 * 2026-06-08
 * 2026-09-07
+* 2026-12-07
 
 ## Prior Releases
 
