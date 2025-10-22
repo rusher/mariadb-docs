@@ -349,7 +349,7 @@ SHOW GLOBAL VARIABLES LIKE 'version';
 +---------------+-----------------------------+
 | Variable_name | Value                       |
 +---------------+-----------------------------+
-| version       | 11.8.2-0-MariaDB-Enterprise |
+| version       | 11.8.3-1-MariaDB-Enterprise |
 +---------------+-----------------------------+
 ```
 
@@ -363,7 +363,7 @@ SELECT VERSION();
 +-----------------------------+
 | VERSION()                   |
 +-----------------------------+
-| 11.8.2-0-MariaDB-Enterprise |
+| 11.8.3-1-MariaDB-Enterprise |
 +-----------------------------+
 ```
 
