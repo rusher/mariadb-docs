@@ -8,7 +8,7 @@ CMAPI 1.6.0 is compatible with MariaDB Enterprise ColumnStore 5.6 and 6. CMAPI 1
 
 ## Notable Changes
 
-* CMAPI now disables the [ExeMgr process](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/mariadb-enterprise-columnstore-query-evaluation#exemgr-process-facility) on replica nodes to avoid unnecessary CPU usage. ([MCOL-4860](https://jira.mariadb.org/browse/MCOL-4860))
+* CMAPI now disables the [ExeMgr process](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/mariadb-enterprise-columnstore-query-evaluation#exemgr-process-facility) on replica nodes to avoid unnecessary CPU usage. ([MCOL-4860](https://jira.mariadb.org/browse/MCOL-4860))
 * To avoid conflicts between systemd and CMAPI, the mariadb-columnstore systemd unit is disabled when CMAPI is installed and re-enabled when CMAPI is uninstalled. ([MCOL-4938](https://jira.mariadb.org/browse/MCOL-4938))
 * Some CMAPI Log messages have been clarified. ([MCOL-4851](https://jira.mariadb.org/browse/MCOL-4851))
 * CMAPI properly applies configuration changes to multiple nodes. ([MCOL-4851](https://jira.mariadb.org/browse/MCOL-4851))

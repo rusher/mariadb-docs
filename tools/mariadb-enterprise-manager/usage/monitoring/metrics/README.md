@@ -1,6 +1,6 @@
 # Metrics
 
-## MariaDB Server metrics
+## MariaDB Server Metrics
 
 MariaDB Server metrics are gathered with the Prometheus exporter for MySQL and stored in Enterprise Manager’s Prometheus with the `mariadb` prefix. The agent runs the exporter with the following collector flags:
 
@@ -15,13 +15,13 @@ MariaDB Server metrics are gathered with the Prometheus exporter for MySQL and s
 | collect.slave\_hosts                     | Emits replica host topology using `SHOW SLAVE HOSTS`/`SHOW REPLICA HOSTS` (note: MariaDB expects the legacy `SHOW SLAVE HOSTS` syntax). |
 | collect.slave\_status                    | Exposes replication status from `SHOW SLAVE/REPLICA STATUS` (I/O/SQL thread states, positions/GTID, seconds behind, etc.).              |
 
-## MaxScale metrics
+## MaxScale Metrics
 
 MariaDB Enterprise Manager collects a wide range of time-series metrics from your MariaDB MaxScale instances to provide deep insight into their performance, health, and activity. Monitoring these metrics is crucial for diagnosing performance bottlenecks, ensuring high availability, and understanding how your database proxy is handling application traffic.
 
 Here is the list of available [MaxScale metrics](../../../../mariadb-enterprise-operator/metrics.md#maxscale-metrics) collected by Enterprise Manager.
 
-## Node metrics
+## Node Metrics
 
 Node metrics provide crucial information about the health and performance of the underlying hardware and operating system on each monitored host. These metrics are essential for diagnosing infrastructure bottlenecks, understanding resource utilization, and planning for future capacity.
 

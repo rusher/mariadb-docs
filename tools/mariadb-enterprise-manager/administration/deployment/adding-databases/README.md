@@ -109,7 +109,7 @@ Use this method to add a complete primary/replica or Galera cluster that is mana
 
 {% stepper %}
 {% step %}
-### Prepare All Servers in the Topology
+### Prepare all servers in the topology
 
 Perform these actions on every server in the topology: the MaxScale instance(s) and each backend MariaDB Server attached.
 
@@ -136,7 +136,7 @@ Replace `<password>` with a secure password.
 {% endstep %}
 
 {% step %}
-### Register the MaxScale Instance in the UI 🖥️
+### Register the MaxScale instance in the UI 🖥️
 
 1. Begin the Add Database process:
    * If this is your first time and no databases are present, you'll be on the "Add Database" screen to begin with.
@@ -147,7 +147,7 @@ Replace `<password>` with a secure password.
 {% endstep %}
 
 {% step %}
-### Link All Agents 🔗
+### Link all a 🔗
 
 You must link the agent on every server in the topology to Enterprise Manager. The UI will show the MaxScale instance and discovered backend servers marked as "Not Registered."
 

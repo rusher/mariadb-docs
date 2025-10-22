@@ -22,6 +22,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
   * `VEC_DISTANCE()` auto-selects the best distance function based on the index configuration.
 * Optimization that makes vector search 30-50% (depending on the data) faster for the same recall. Enabled automatically for applicable vectors. Vectors are applicable if they can be gradually truncated to trade some recall for speed. For example matryoshka embeddings as produced by OpenAI are applicable.
 * Namespace support was added to HashiCorp Vault in MariaDB. See the [Hashicorp namespaces documentation](https://developer.hashicorp.com/vault/docs/enterprise/namespaces) for details.
+* [Audit logging buffer writes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit#audit-logging-buffer-writes) are possible now.
 
 ## Indexes, SQL Functions, and Query Enhancements <a href="#indexes-sql-functions-and-query-enhancements" id="indexes-sql-functions-and-query-enhancements"></a>
 
@@ -184,8 +185,8 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Thread Naming for Diagnostics**: Thread names are now more descriptive.
 * **Galera Information Schema:** New [WSREP\_BF\_ABORTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_bf_aborts) Information Schema table.
 * **Galera Information Schema:** New [WSREP\_THD\_STATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_thd_state) and [WSREP\_THD\_STATE\_HISTORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_thd_state_history) Information Schema tables.
-* **Galera Information Schema:** New Information Schema table [WSREP\_CONNECTIONS](broken-reference).
-* **Galera Information Schema:** New Information Schema [WSREP\_CERT\_KEYS](broken-reference) and [WSREP\_CERT\_KEYS\_HISTORY](broken-reference) tables.
+* **Galera Information Schema:** New Information Schema table [WSREP\_CONNECTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_connections).
+* **Galera Information Schema:** New Information Schema [WSREP\_CERT\_KEYS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_cert_keys) and [WSREP\_CERT\_KEYS\_HISTORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_cert_keys_history) tables.
 
 ## Tool Improvements <a href="#tool-improvements" id="tool-improvements"></a>
 
@@ -213,7 +214,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 ## Available Versions <a href="#available-versions" id="available-versions"></a>
 
-* [MariaDB Enterprise Server 11.8.2-0](release-notes-for-mariadb-enterprise-server-11.8.2-0-tech-preview.md) Tech Preview
+* [MariaDB Enterprise Server 11.8.2-0](11.8.2-0.md) Tech Preview
 
 ## Installation Instructions <a href="#installation-instructions" id="installation-instructions"></a>
 

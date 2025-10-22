@@ -17,7 +17,7 @@ auto_failover = False
 ```
 
 * The default value of the `auto_failover` option is `True`.
-* The `auto_failover` option should be set to `False` when [non-shared local storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview#storage-architecture) is used.
+* The `auto_failover` option should be set to `False` when [non-shared local storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-architectural-overview#storage-architecture) is used.
 * The format and logic of CMAPI logging has been improved. ([MCOL-4907](https://jira.mariadb.org/browse/MCOL-4907))
 * Transaction IDs are included more consistently in exception messages. ([MCOL-4921](https://jira.mariadb.org/browse/MCOL-4921))
 
