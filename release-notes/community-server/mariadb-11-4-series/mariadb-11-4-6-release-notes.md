@@ -156,12 +156,7 @@ could cause a crash in the optimizer. The essential part is that ON expression h
 
 ## Changelog
 
-For a complete list of changes made in [MariaDB 11.4.6](mariadb-11-4-6-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-6-changelog.md).
-
-## Contributors
-
-For a full list of contributors to [MariaDB 11.4.6](mariadb-11-4-6-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-7-1-rc-and-mariadb-10-6-5-10-5-13-10-4-22-10-3-32-and-10-2-41-now-available/).
+For a complete list of changes made in [MariaDB 11.4.6](mariadb-11-4-6-release-notes.md), with links to detailed information on each push, see the [changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-6-changelog.md).
 
 {% include "../../.gitbook/includes/announce.md" %}
 
