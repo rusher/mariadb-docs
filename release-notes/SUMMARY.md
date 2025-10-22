@@ -2575,4 +2575,6 @@
 * [Enterprise Operator Release Notes](enterprise-operator/README.md)
   * [MariaDB Enterprise Operator 1.0.0](enterprise-operator/1.0.0.md)
   * [MariaDB Enterprise Operator 25.08](enterprise-operator/25.08.md)
+* [AI Rag Release Notes](ai-rag-release-notes.md)
+* [MCP Server Release Notes](mcp-server-release-notes.md)
 * [Test Page](test-page.md)
