@@ -55,6 +55,7 @@ MariaDB AI RAG follows a modular architecture with the following key components:
 config:
   theme: neutral
   layout: dagre
+  themeCSS: 'svg { background-color: white; }'
 ---
 %%{init: { 'themeCSS': 'svg { background-color: white; }' }}%%
 flowchart TB
