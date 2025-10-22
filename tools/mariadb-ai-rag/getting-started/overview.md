@@ -56,6 +56,7 @@ config:
   theme: neutral
   layout: dagre
 ---
+%%{init: { 'themeCSS': 'svg { background-color: white; }' }}%%
 flowchart TB
     n1["Document Ingestion"] --> n2["Chunking Module"]
     n2 --> n3["Vector Database"]
