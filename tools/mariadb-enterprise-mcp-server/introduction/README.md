@@ -1,5 +1,11 @@
 # Overview
 
+{% hint style="success" %}
+"Model Context Protocol" (MCP) is a standard or interface designed to bridge the gap between AI development tools (like copilots in your code editor) and your project's specific environment.
+
+In simple terms, it's a way for an AI to understand the context of what you're working on.
+{% endhint %}
+
 The **MariaDB Enterprise MCP (Model Context Protocol) Server** is a secure, enterprise-grade application designed to act as the primary interface between AI assistants and MariaDB data ecosystems. This product solves a key challenge: how to allow powerful AI agents to safely and efficiently leverage an organization's most valuable asset—its data.
 
 It achieves this by providing a single, hardened endpoint that offers not only standard database operations but also advanced AI workflow orchestration and integration with industry-standard authentication systems.

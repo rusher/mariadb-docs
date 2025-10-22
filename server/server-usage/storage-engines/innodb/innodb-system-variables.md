@@ -1360,7 +1360,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value: `3`
-* Range: `0` to `16`
+* Range: `1` to `16`
 
 #### `innodb_ft_num_word_optimize`
 
