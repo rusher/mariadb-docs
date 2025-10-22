@@ -69,7 +69,7 @@ The `MYSQL_BIND` structure is used to provide parameters for prepared statements
 
 |                         |                 |                                                                     |
 | ----------------------- | --------------- | ------------------------------------------------------------------- |
-| unsigned long \*        | length          | Pointer for the length of the buffer (not used for parameters)      |
+| unsigned long \*        | length          | Pointer for the length of the buffer (not used for parameters). The length is ignored for numeric and fixed size data types, as the buffer_type value determines the size of the data. |
 | my\_bool \*             | is\_nulll       | Pointer which indicates if column is NULL (not used for parameters) |
 | my\_bool \*             | error           | Pointer which indicates if an error occured                         |
 | void \*                 | buffer          | Data buffer which contains or receives data                         |
