@@ -18,6 +18,18 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 * Default Value: None
 * Introduced: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
+#### `wsrep_applier_retry_count`
+
+* Description: Maximum number of applier retry attempts. Prior to MariaDB 12.1, replication\
+  applying always stops for the first non-ignored failure occurring in event applying, and the node will emergency abort (or start inconsistency voting). Some failures, however, can be concurrency related, and applying may succeed if the operation is tried at later time. This variable controls the retry-applying feature. It is set to zero by default, which means no retrying.
+* Commandline: `--wsrep-applier-retry-count=value`
+* Scope: Global
+* Dynamic: Yes
+* Data Type: INT UNSIGNED
+* Default Value: `0`
+* Range: `0` to `4294967295`
+* Introduced: [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)
+
 #### `wsrep_auto_increment_control`
 
 * Description: If set to `1` (the default), will automatically adjust the [auto\_increment\_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) and [auto\_increment\_offset](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) variables according to the size of the cluster, and when the cluster size changes. This avoids replication conflicts due to [auto\_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/auto_increment). In a primary-replica environment, can be set to `OFF`.

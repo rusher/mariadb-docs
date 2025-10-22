@@ -3,6 +3,7 @@ description: >-
   Comprehensive documentation, release notes and learning resources for all
   MariaDB products.
 layout:
+  width: default
   title:
     visible: true
   description:
@@ -13,9 +14,11 @@ layout:
     visible: true
   pagination:
     visible: false
+  metadata:
+    visible: true
 ---
 
-# Official MariaDB Documentation
+# MariaDB Documentation
 
 ### Getting Started
 
@@ -47,8 +50,4 @@ Stay updated with the latest releases and version-specific changes.
 * [MariaDB ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore)
 * [MariaDB Enterprise Operator](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator)
 * [MariaDB Connectors](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors)
-
-
-
-
-
+* [MariaDB MaxScale](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale)

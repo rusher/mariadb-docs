@@ -44,7 +44,7 @@ Docker runs on all major operating systems. On Windows and MacOS it runs on a Li
 
 Docker's characteristics makes it optimal to test MariaDB functionalities without wasting time on installation and without making changes to the host system. However, it is not ideal to test MariaDB performance.
 
-See [Installing and Using MariaDB via Docker](../../installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md).
+See [Installing and Using MariaDB via Docker](../../../automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md).
 
 ## Reinitializing MariaDB Data Directory
 

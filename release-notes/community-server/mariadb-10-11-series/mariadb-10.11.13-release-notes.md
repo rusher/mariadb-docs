@@ -28,7 +28,7 @@ Thanks, and enjoy MariaDB!
 
 #### General
 
-* As per the MariaDB Deprecation Policy, this will be the last release of MariaDB 10.11 for Ubuntu 20.04 Focal
+* As per the [MariaDB Deprecation Policy](../about/platform-deprecation-policy.md), this will be the last release of [MariaDB 10.6](../mariadb-10-6-series/what-is-mariadb-106.md) for Ubuntu 20.04 LTS 'focal'
 
 ### Changelog
 

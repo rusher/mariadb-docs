@@ -1,14 +1,12 @@
 # MaxScale Query Log All Filter
 
-## Query Log All Filter
-
-### Overview
+## Overview
 
 The Query Log All (QLA) filter logs query content. Logs are written to a file in
 CSV format. Log elements are configurable and include the time submitted and the
 SQL statement text, among others.
 
-### Configuration
+## Configuration
 
 A minimal configuration is below.
 
@@ -27,18 +25,18 @@ password=mypasswd
 filters=MyLogFilter
 ```
 
-### Log Rotation
+## Log Rotation
 
 The `qlafilter` logs can be rotated by executing the `maxctrl rotate logs`
 command. This will cause the log files to be reopened when the next message is
 written to the file. This applies to both unified and session type logging.
 
-### Settings
+## Settings
 
 The QLA filter has one mandatory parameter, `filebase`, and a number of optional
 parameters. These were introduced in the 1.0 release of MariaDB MaxScale.
 
-#### `filebase`
+### `filebase`
 
 * Type: string
 * Mandatory: Yes
@@ -51,27 +49,27 @@ added to the filename for each written session file. For unified log files,_.uni
 filebase=/tmp/SqlQueryLog
 ```
 
-#### `match`
+### `match`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 Include queries that match the regex.
 
-#### `exclude`
+### `exclude`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 Exclude queries that match the regex.
 
-#### `options`
+### `options`
 
-* Type: [enum\_mask](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `case`, `ignorecase`, `extended`
@@ -79,7 +77,7 @@ Exclude queries that match the regex.
 
 The `extended` option enables PCRE2 extended regular expressions.
 
-#### `user`
+### `user`
 
 * Type: string
 * Mandatory: No
@@ -88,7 +86,7 @@ The `extended` option enables PCRE2 extended regular expressions.
 
 Limit logging to sessions with this user.
 
-#### `source`
+### `source`
 
 * Type: string
 * Mandatory: No
@@ -97,9 +95,9 @@ Limit logging to sessions with this user.
 
 Limit logging to sessions with this client source address.
 
-#### `user_match`
+### `user_match`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
@@ -112,9 +110,9 @@ Here is an example pattern that matches the users `alice` and `bob`:
 user_match=/(^alice$)|(^bob$)/
 ```
 
-#### `user_exclude`
+### `user_exclude`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
@@ -127,9 +125,9 @@ Here is an example pattern that excludes the users `alice` and `bob`:
 user_exclude=/(^alice$)|(^bob$)/
 ```
 
-#### `source_match`
+### `source_match`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
@@ -143,9 +141,9 @@ address `192.168.0.109`:
 source_match=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 ```
 
-#### `source_exclude`
+### `source_exclude`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
@@ -159,9 +157,9 @@ address `192.168.0.109`:
 source_exclude=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 ```
 
-#### `log_type`
+### `log_type`
 
-* Type: [enum\_mask](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `session`, `unified`, `stdout`
@@ -175,9 +173,9 @@ The type of log file to use.
 | unified | Use one file for all sessions   |
 | stdout  | Same as unified, but to stdout  |
 
-#### `log_data`
+### `log_data`
 
-* Type: [enum\_mask](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `service`, `session`, `date`, `user`, `reply_time`, `total_reply_time`, `query`, `default_db`, `num_rows`, `reply_size`, `transaction`, `transaction_time`, `num_warnings`, `error_msg`
@@ -227,7 +225,7 @@ the execution of binary protocol commands as SQL
 batched statements (COM\_STMT\_BULK\_LOAD) used by some connectors is not
 logged.
 
-#### `duration_unit`
+### `duration_unit`
 
 * Type: string
 * Mandatory: No
@@ -238,9 +236,9 @@ The unit for logging a duration. The unit can be `milliseconds` or `microseconds
 The abbreviations `ms` for milliseconds and `us` for microseconds are also valid.
 This option is available as of MaxScale version 6.2.
 
-#### `use_canonical_form`
+### `use_canonical_form`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -249,23 +247,23 @@ When this option is true the canonical form of the query is logged. In the
 canonical form all user defined constants are replaced with question marks.
 This option is available as of MaxScale version 6.2.
 
-#### `flush`
+### `flush`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 Flush log files after every write.
 
-#### `append`
+### `append`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
-#### `separator`
+### `separator`
 
 * Type: string
 * Mandatory: No
@@ -275,7 +273,7 @@ Flush log files after every write.
 Defines the separator string between elements of
 log entries. The value should be enclosed in quotes.
 
-#### `newline_replacement`
+### `newline_replacement`
 
 * Type: string
 * Mandatory: No
@@ -292,7 +290,7 @@ is to the output. The value should be enclosed in quotes.
 newline_replacement=" NL "
 ```
 
-### Limitations
+## Limitations
 
 * Trailing parts of SQL queries that are larger than 16MiB are not
   logged. This means that the log output might contain truncated SQL.
@@ -300,9 +298,9 @@ newline_replacement=" NL "
   their textual form. This is done due to the large volumes of data that
   are usually involved with batched execution.
 
-### Examples
+## Examples
 
-#### Example 1 - Query without primary key
+### Example 1 - Query without primary key
 
 Imagine you have observed an issue with a particular table and you want to
 determine if there are queries that are accessing that table but not using the

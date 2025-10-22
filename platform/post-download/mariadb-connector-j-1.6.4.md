@@ -10,7 +10,7 @@ noIndex: true
 
 * MariaDB Connector/J 1.6.4 was released on 6 Sep 2017.
 * Please note: Newer releases exist within the MariaDB Connector/J 1.6 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.6/mariadb-connector-j-164-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/1.6/1.6.4)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j).
 

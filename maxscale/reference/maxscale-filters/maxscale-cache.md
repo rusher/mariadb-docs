@@ -1,8 +1,6 @@
 # MaxScale Cache
 
-## Cache
-
-### Overview
+## Overview
 
 From MaxScale version 2.2.11 onwards, the cache filter is no longer
 considered experimental. The following changes to the default behaviour
@@ -23,30 +21,34 @@ By _default_ the cache will be used and populated in the following circumstances
   has been performed.
 
 In practice, the last bullet point basically means that if a transaction has
-been started with `BEGIN`, `START TRANSACTION` or `START TRANSACTION READ WRITE`, then the cache will be used and populated until the first `UPDATE`,`INSERT` or `DELETE` statement is encountered.
+been started with `BEGIN`, `START TRANSACTION` or `START TRANSACTION READ
+WRITE`, then the cache will be used and populated until the first `UPDATE`,
+`INSERT` or `DELETE` statement is encountered.
 
 That is, in default mode the cache effectively causes the system to behave
 as if the _isolation level_ would be `READ COMMITTED`, irrespective of what
 the isolation level of the backends actually is.
 
-The default behaviour can be altered using the configuration parameter [cache\_in\_transactions](maxscale-cache.md#cache_in_transactions).
+The default behaviour can be altered using the configuration parameter
+[cache\_in\_transactions](maxscale-cache.md#cache_in_transactions).
 
 By default it is assumed that all `SELECT` statements are cacheable, which
-means that also statements like `SELECT LOCALTIME` are cached. Please check [selects](maxscale-cache.md#selects) for how to change the default behaviour.
+means that also statements like `SELECT LOCALTIME` are cached. Please check
+[selects](maxscale-cache.md#selects) for how to change the default behaviour.
 
-### Limitations
+## Limitations
 
 All of these limitations may be addressed in forthcoming releases.
 
-#### Prepared Statements
+### Prepared Statements
 
 Resultsets of prepared statements are **not** cached.
 
-#### Multi-statements
+### Multi-statements
 
 Multi-statements are always sent to the backend and their result is**not** cached.
 
-#### Security
+### Security
 
 The cache is **not** aware of grants.
 
@@ -61,14 +63,14 @@ the data of each user separately, which effectively means that there can
 be no unintended sharing. Please see [users](maxscale-cache.md#users) for how to change
 the default behaviour.
 
-#### `information_schema`
+### `information_schema`
 
 When [invalidation](maxscale-cache.md#invalidation) is enabled, SELECTs targeting tables
 in `information_schema` are not cached. The reason is that as the content
 of the tables changes as the side-effect of something else, the cache would
 not know when to invalidate the cache-entries.
 
-### Invalidation
+## Invalidation
 
 Since MaxScale 2.5, the cache is capable of invalidating entries in the
 cache when a modification (UPDATE, INSERT or DELETE) that may affect those
@@ -117,7 +119,7 @@ Note also that since the invalidation may not, depending on how the
 cache has been configured, be visible to all sessions of all users, it
 is still important to configure a reasonable [soft](maxscale-cache.md#soft_ttl) and [hard](maxscale-cache.md#hard_ttl) TTL.
 
-#### Best Efforts
+### Best Efforts
 
 The invalidation offered by the MaxScale cache can be said to be of _best efforts_ quality. The reason is that in order to ensure that the
 cache in all circumstances reflects the state in the actual database,
@@ -163,7 +165,7 @@ situation _before_ the insert and will thus not be correct.
 The stale result will be returned until the value has reached its _time-to-live_
 or its invalidation is caused by some update operation.
 
-### Configuration
+## Configuration
 
 The cache is simple to add to any existing service. However, some experimentation
 may be required in order to find the configuration settings that provide
@@ -194,14 +196,14 @@ should use the very same servers _or_ a completely different set of servers,
 where the used table names are different. Otherwise there can be unintended
 sharing.
 
-### Settings
+## Settings
 
 The cache filter has no mandatory parameters but a range of optional ones.
 Note that it is advisable to specify `max_size` to prevent the cache from
 using up all memory there is, in case there is very little overlap among the
 queries.
 
-#### `storage`
+### `storage`
 
 * Type: string
 * Mandatory: No
@@ -218,7 +220,7 @@ storage=storage_redis
 
 See [Storage](maxscale-cache.md#storage-1) for what storage modules are available.
 
-#### `storage_options`
+### `storage_options`
 
 * Type: string
 * Mandatory: No
@@ -234,9 +236,9 @@ upon the specific module.
 From 23.02 onwards, the storage module configuration should be provided using
 nested parameters.
 
-#### `hard_ttl`
+### `hard_ttl`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s` (no limit)
@@ -249,9 +251,9 @@ backend (and cached). See also [soft\_ttl](maxscale-cache.md#soft_ttl).
 hard_ttl=60s
 ```
 
-#### `soft_ttl`
+### `soft_ttl`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s` (no limit)
@@ -273,7 +275,7 @@ soft_ttl=60s
 If the value of `soft_ttl` is larger than `hard_ttl` it will be adjusted
 down to the same value.
 
-#### `max_resultset_rows`
+### `max_resultset_rows`
 
 * Type: count
 * Mandatory: No
@@ -287,16 +289,15 @@ stored in the cache. A resultset larger than this, will not be stored.
 max_resultset_rows=1000
 ```
 
-#### `max_resultset_size`
+### `max_resultset_size`
 
-* Type: [size](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: `0` (no limit)
 
 Specifies the maximum size of a resultset, for it to be stored in the cache.
-A resultset larger than this, will not be stored. The size can be specified
-as described [here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+A resultset larger than this, will not be stored.
 
 ```
 max_resultset_size=128Ki
@@ -305,7 +306,7 @@ max_resultset_size=128Ki
 Note that the value of `max_resultset_size` should not be larger than the
 value of `max_size`.
 
-#### `max_count`
+### `max_count`
 
 * Type: count
 * Mandatory: No
@@ -324,9 +325,9 @@ of `max_count`.
 max_count=1000
 ```
 
-#### `max_size`
+### `max_size`
 
-* Type: [size](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: `0` (no limit)
@@ -342,7 +343,7 @@ is used, then the total size is #threads \* the value of `max_size`.
 max_size=100Mi
 ```
 
-#### `rules`
+### `rules`
 
 * Type: path
 * Mandatory: No
@@ -364,9 +365,9 @@ rules, alter the rules parameter to the same value it has.
 maxctrl alter filter MyCache rules='/path/to/rules-file'
 ```
 
-#### `cached_data`
+### `cached_data`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `shared`, `thread_specific`
@@ -390,9 +391,9 @@ cached_data=shared
 Default is `thread_specific`. See `max_count` and `max_size` what implication
 changing this setting to `shared` has.
 
-#### `selects`
+### `selects`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `assume_cacheable`, `verify_cacheable`
@@ -429,9 +430,9 @@ the following circumstances:
 Note that parsing all `SELECT` statements carries a performance
 cost. Please read [performance](maxscale-cache.md#performance) for more details.
 
-#### `cache_in_transactions`
+### `cache_in_transactions`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `never`, `read_only_transactions`, `all_transactions`
@@ -463,7 +464,7 @@ Default is `all_transactions`.
 The values `read_only_transactions` and `all_transactions` have roughly the
 same effect as changing the isolation level of the backend to `read_committed`.
 
-#### `debug`
+### `debug`
 
 * Type: number
 * Mandatory: No
@@ -487,9 +488,9 @@ Default is `0`. To log everything, give `debug` a value of `31`.
 debug=31
 ```
 
-#### `enabled`
+### `enabled`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
@@ -505,9 +506,9 @@ variables using which the behaviour of the cache can be modified
 at runtime. Please see [Runtime Configuration](maxscale-cache.md#runtime-configuration)
 for details.
 
-#### `invalidate`
+### `invalidate`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `never`, `current`
@@ -538,9 +539,9 @@ If it is important that an application _immediately_ sees all changes, irrespect
 of who has caused them, then a combination of `invalidate=current`
 and `cached_data=shared` _must_ be used.
 
-#### `clear_cache_on_parse_errors`
+### `clear_cache_on_parse_errors`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `true`
@@ -559,9 +560,9 @@ Changing the value to `false` may mean that stale data is returned from
 the cache, if an UPDATE/INSERT/DELETE cannot be parsed and the statement
 affects entries in the cache.
 
-#### `users`
+### `users`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `mixed`, `isolated`
@@ -585,9 +586,9 @@ same query, then the data will be fetched twice and also stored
 twice. So, a `isolated` cache will in general use more memory and
 cause more traffic to the backend compared to a `mixed` cache.
 
-#### `timeout`
+### `timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `5s`
@@ -599,14 +600,14 @@ such as _redis_ or _memcached_.
 timeout=7000ms
 ```
 
-### Runtime Configuration
+## Runtime Configuration
 
 The cache filter can be configured at runtime by executing SQL commands. If
 there is more than one cache filter in a service, only the first cache filter
 will be able to process the variables. The remaining filters will not see them
 and thus configuring them at runtime is not possible.
 
-#### `@maxscale.cache.populate`
+### `@maxscale.cache.populate`
 
 Using the variable `@maxscale.cache.populate` it is possible to specify at
 runtime whether the cache should be populated or not. Its initial value is
@@ -637,7 +638,7 @@ SELECT @maxscale.cache.populate;
 
 but only _after_ it has been explicitly set once.
 
-#### `@maxscale.cache.use`
+### `@maxscale.cache.use`
 
 Using the variable `@maxscale.cache.use` it is possible to specify at
 runtime whether the cache should be used or not. Its initial value is
@@ -673,7 +674,7 @@ SELECT @maxscale.cache.use;
 
 but only after it has explicitly been set once.
 
-#### `@maxscale.cache.soft_ttl`
+### `@maxscale.cache.soft_ttl`
 
 Using the variable `@maxscale.cache.soft_ttl` it is possible at runtime
 to specify _in seconds_ what _soft ttl_ should be applied. Its initial
@@ -707,7 +708,7 @@ SELECT @maxscale.cache.soft_ttl;
 
 but only after it has explicitly been set once.
 
-#### `@maxscale.cache.hard_ttl`
+### `@maxscale.cache.hard_ttl`
 
 Using the variable `@maxscale.cache.hard_ttl` it is possible at runtime
 to specify _in seconds_ what _hard ttl_ should be applied. Its initial
@@ -736,7 +737,7 @@ SELECT @maxscale.cache.hard_ttl;
 
 but only after it has explicitly been set once.
 
-### Client Driven Caching
+## Client Driven Caching
 
 With `@maxscale.cache.populate` and `@maxscale.cache.use` is it possible
 to make the caching completely client driven.
@@ -789,7 +790,7 @@ SELECT a, b FROM tbl1;
 SET @maxscale.cache.populate=FALSE;
 ```
 
-### Threads, Users and Invalidation
+## Threads, Users and Invalidation
 
 What caching approach is used and how different users are treated
 has a significant impact on the behaviour of the cache. In the
@@ -800,23 +801,23 @@ following the implication of different combinations is explained.
 | thread\_specific   | No thread contention. Data/work duplicated across threads. May cause unintended sharing.                                       | No thread contention. Data/work duplicated across threads and users. No unintended sharing. Requires the most amount of memory. |
 | shared             | Thread contention under high load. No duplicated data/work. May cause unintended sharing. Requires the least amount of memory. | Thread contention under high load. Data/work duplicated across users. No unintended sharing.                                    |
 
-#### Invalidation
+### Invalidation
 
 Invalidation takes place only in the current cache, so how _visible_
 the invalidation is, depends upon the configuration value of`cached_data`.
 
-**`cached_data=thread_specific`**
+#### `cached_data=thread_specific`
 
 The invalidation is visible only to the sessions that are handled by
 the same worker thread where the invalidation occurred. Sessions of the
 same or other users that are handled by different worker threads will
 not see the new value before the TTL causes the value to be refreshed.
 
-**`cache_data=shared`**
+#### `cache_data=shared`
 
 The invalidation is immediately visible to all sessions of all users.
 
-### Rules
+## Rules
 
 The caching rules are expressed as a JSON object or as an array of JSON objects.
 
@@ -855,7 +856,7 @@ matches, the `store` field of each object are evaluated in sequential order
 until a match is found. Then, the `use` field of that object is used when
 deciding whether data in the cache should be used.
 
-#### When to Store
+### When to Store
 
 By default, if no rules file have been provided or if the `store` field is
 missing from the object, the results of all queries will be stored to the
@@ -948,7 +949,7 @@ and so will
 SELECT b FROM tbl WHERE a > 5;
 ```
 
-**Qualified Names**
+#### Qualified Names
 
 When using `=` or `!=` in the rule object in conjunction with `database`,`table` and `column`, the provided string is interpreted as a name, that is,
 dot (`.`) denotes qualification or scope.
@@ -965,12 +966,12 @@ always be capable of deducing in what table a particular column is. If
 that is the case, then a value like `tbl.field` may not necessarily
 be a match even if the field is `field` and the table actually is `tbl`.
 
-**Implication of the default database**
+#### Implication of the default database
 
 If the rules concerns the `database`, then only if the statement refers
 to _no_ specific database, will the default database be considered.
 
-**Regexp Matching**
+#### Regexp Matching
 
 The string used for matching the regular expression contains as much
 information as there is available. For instance, in a situation like
@@ -982,7 +983,7 @@ SELECT fld FROM tbl;
 
 the string matched against the regular expression will be `somedb.tbl.fld`.
 
-**Examples**
+#### Examples
 
 Cache all queries targeting a particular database.
 
@@ -1045,7 +1046,7 @@ Cache all queries containing a WHERE clause
 Note that this will actually cause all queries that contain WHERE anywhere,
 to be cached.
 
-#### When to Use
+### When to Use
 
 By default, if no rules file have been provided or if the `use` field is
 missing from the object, all users may be returned data from the cache.
@@ -1054,7 +1055,7 @@ By providing a `use` field in the JSON object, the decision whether to use
 data from the cache can be controlled in a more detailed manner. The decision
 to use data from the cache can depend upon
 
-* the user.
+   * the user.
 
 Each entry in the `use` array is an object containing three fields,
 
@@ -1108,7 +1109,7 @@ Note that `use` is relevant only if the query is subject to caching,
 that is, if all queries are cached or if a query matches a particular
 rule in the `store` array.
 
-**Examples**
+#### Examples
 
 Use data from the cache for all users except `admin` (actually `'admin'@'%'`),
 regardless of what host the `admin` user comes from.
@@ -1125,7 +1126,7 @@ regardless of what host the `admin` user comes from.
 }
 ```
 
-### Security
+## Security
 
 As the cache is not aware of grants, unless the cache has been explicitly
 configured who the caching should apply to, the presence of the cache
@@ -1218,7 +1219,7 @@ should be applied to _alice_ only.
 With these rules in place, _bob_ is again denied access, since queries
 targeting the table `access` will in his case not be served from the cache.
 
-### Storage
+## Storage
 
 There are two types of storages that can be used; _local_ and _shared_.
 
@@ -1245,7 +1246,7 @@ amount of time) to process for the database server, or
 As a general rule a _shared_ storage should not be used without first
 assessing its value using a realistic workload.
 
-#### `storage_inmemory`
+### `storage_inmemory`
 
 This simple storage module uses the standard memory allocator for storing
 the cached data.
@@ -1256,7 +1257,7 @@ storage=storage_inmemory
 
 This storage module takes no arguments.
 
-#### `storage_memcached`
+### `storage_memcached`
 
 This storage module uses [memcached](https://memcached.org/) for storing the
 cached data.
@@ -1272,7 +1273,7 @@ storage=storage_memcached
 
 `storage_memcache` has the following parameters:
 
-**`server`**
+#### `server`
 
 * Type: The Memcached server address specified as `host[:port]`
 * Mandatory: Yes
@@ -1280,9 +1281,9 @@ storage=storage_memcached
 
 If no port is provided, then the default port `11211` will be used.
 
-**`max_value_size`**
+#### `max_value_size`
 
-* Type: [size](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Mandatory: No
 * Dynamic: No
 * Default: 1Mi
@@ -1296,7 +1297,7 @@ that is, if memcached has been configured to allow larger values than 1MiB
 but `max_value_size` has not been set accordingly, only resultsets up to 1MiB
 in size will be cached.
 
-**Example**
+#### Example
 
 From MaxScale 23.02 onwards, the storage configuration should be provided
 as nested parameters.
@@ -1317,18 +1318,18 @@ using `storage_options`:
 storage_options="server=192.168.1.31,max_value_size=10M"
 ```
 
-**Limitations**
+#### Limitations
 
 * Invalidation is not supported.
 * Configuration values given to `max_size` and `max_count` are ignored.
 
-**Security**
+#### Security
 
 _Neither_ the data in the memcached server _nor_ the traffic between MaxScale and
 the memcached server is encrypted. Consequently, _anybody_ with access to the
 memcached server or to the network have access to the cached data.
 
-#### `storage_redis`
+### `storage_redis`
 
 This storage module uses [redis](https://redis.io/) for storing the
 cached data.
@@ -1361,7 +1362,7 @@ stalled for `timeout` seconds.
 
 `storage_redis` has the following parameters:
 
-**`server`**
+#### `server`
 
 * Type: The Redis server address specified as `host[:port]`
 * Mandatory: Yes
@@ -1369,7 +1370,7 @@ stalled for `timeout` seconds.
 
 If no port is provided, then the default port `6379` will be used.
 
-**`username`**
+#### `username`
 
 * Type: string
 * Mandatory: No
@@ -1378,7 +1379,7 @@ If no port is provided, then the default port `6379` will be used.
 
 Please see [authentication](maxscale-cache.md#authentication) for more information.
 
-**`password`**
+#### `password`
 
 * Type: string
 * Mandatory: No
@@ -1387,16 +1388,16 @@ Please see [authentication](maxscale-cache.md#authentication) for more informati
 
 Please see [authentication](maxscale-cache.md#authentication) for more information.
 
-**`ssl`**
+#### `ssl`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
 
 Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 
-**`ssl_cert`**
+#### `ssl_cert`
 
 * Type: Path to existing readable file.
 * Mandatory: No
@@ -1408,7 +1409,7 @@ server. The certificate must match the key defined in `ssl_key`.
 
 Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 
-**`ssl_key`**
+#### `ssl_key`
 
 * Type: Path to existing readable file.
 * Mandatory: No
@@ -1419,7 +1420,7 @@ The SSL client private key MaxScale should use with the Redis server.
 
 Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 
-**`ssl_ca`**
+#### `ssl_ca`
 
 * Type: Path to existing readable file.
 * Mandatory: No
@@ -1431,7 +1432,7 @@ certificate specified with `ssl_cert`.
 
 Please see [ssl](maxscale-cache.md#ssl-1) for more information.
 
-**Authentication**
+#### Authentication
 
 If `password` is provided, MaxScale will authenticate against Redis when a connection
 has been created. The authentication is performed using the [auth](https://redis.io/commands/auth/) command, with only the `password` as argument,
@@ -1443,7 +1444,7 @@ specified using `requirepass`, then only the _password_ should be provided.
 If the Redis server version is 6 or higher and the _Redis ACL system_ is used,
 then both _username_ and _password_ must be provided.
 
-**SSL**
+#### SSL
 
 If `ssl_key`, `ssl_cert` and `ssl_ca` are provided, then SSL/TLS will be used
 in the communication with the Redis server, if `ssl` is set to `true`.
@@ -1452,7 +1453,7 @@ Note that the SSL/TLS support is only available in Redis from version 6
 onwards and that the support is not by default built into Redis, but has
 to be specifically enabled at compile time as explained [here](https://redis.io/docs/management/security/encryption/).
 
-**Example**
+#### Example
 
 From MaxScale 23.02 onwards, the storage configuration should be provided
 as nested parameters.
@@ -1474,12 +1475,12 @@ using `storage_options`:
 storage_options="server=192.168.1.31,username=hello,password=world"
 ```
 
-**Limitations**
+#### Limitations
 
 * There is no distinction between soft and hard ttl, but only hard ttl is used.
 * Configuration values given to `max_size` and `max_count` are ignored.
 
-**Invalidation**
+#### Invalidation
 
 `storage_redis` supports invalidation, but the caveats documented [here](maxscale-cache.md#best-efforts)
 are of greater significance since also the communication between the cache and the
@@ -1493,7 +1494,7 @@ will not be affected by the invalidation.
 $ redis-cli flushall
 ```
 
-**Security**
+#### Security
 
 The data in the redis server is _not_ encrypted. Consequently, _anybody_ with
 access to the redis server has access to the cached data.
@@ -1501,12 +1502,12 @@ access to the redis server has access to the cached data.
 Unless [SSL](maxscale-cache.md#ssl) has been enabled, _anybody_ with access to the network has
 access to the cached data.
 
-### Example
+## Example
 
 In the following we define a cache _MyCache_ that uses the cache storage module`storage_inmemory` and whose _soft ttl_ is `30` seconds and whose _hard ttl_ is`45` seconds. The cached data is shared between all threads and the maximum size
 of the cached data is `50` mebibytes. The rules for the cache are in the file`cache_rules.json`.
 
-#### Configuration
+### Configuration
 
 ```
 [MyCache]
@@ -1525,7 +1526,7 @@ type=service
 filters=MyCache
 ```
 
-#### `cache_rules.json`
+### `cache_rules.json`
 
 The rules specify that the data of the table `sbtest` should be cached.
 
@@ -1541,7 +1542,7 @@ The rules specify that the data of the table `sbtest` should be cached.
 }
 ```
 
-### Performance
+## Performance
 
 When the cache filter was introduced, the most significant factor affecting
 the performance of the cache was whether the statements needed to be parsed.
@@ -1587,7 +1588,8 @@ If the rule is instead expressed using a regular expression
 
 then the statement will not be parsed.
 
-However, when the [query classifier cache](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+However, when the
+[query classifier cache](../../maxscale-management/deployment/maxscale-configuration-guide.md#query_classifier_cache_size)
 was introduced, the parsing cost was significantly reduced and
 currently the cost for parsing and regular expression matching
 is roughly the same.
@@ -1641,7 +1643,7 @@ For comparison, without caching, the qps is `33`.
 As can be seen, due to the query classifier cache there is
 no difference between exact and regex based matching.
 
-#### Summary
+### Summary
 
 For maximum performance:
 

@@ -17,20 +17,9 @@ The current release series are:
 
 ## Recent Releases
 
-{% hint style="info" %}
-The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/release-criteria) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes)
-{% endhint %}
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/UaJhKjcMny5efkRZHsG1/" %}
 
-| Date        | Release                       | Status      | Release Notes                                                                                                                                                        | Changelog                                                                                                                                                           |
-| ----------- | ----------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 24 Feb 2025 | MariaDB Connector/ODBC 3.2.5  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-5-changelog) |
-| 14 Nov 2024 | MariaDB Connector/ODBC 3.2.4  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-4-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-4-changelog) |
-| 26 Aug 2024 | MariaDB Connector/ODBC 3.2.3  | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-3-release-notes)  | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3-2-3-changelog) |
-| 24 Feb 2025 | MariaDB Connector/ODBC 3.1.21 | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-21-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3-1-21-changelog) |
-| 4 Dec 2023  | MariaDB Connector/ODBC 3.1.20 | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-20-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3-1-20-changelog) |
-| 7 Jul 2023  | MariaDB Connector/ODBC 3.1.19 | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-19-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3-1-19-changelog) |
-
-[see all releases](list-of-mariadb-connector-odbc-releases.md)
+<p align="center"><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/all-releases">See all MariaDB Connector/ODBC releases</a></p>
 
 ## Installing MariaDB Connector/ODBC
 
@@ -158,7 +147,7 @@ See [Creating a Data Source with MariaDB Connector/ODBC](creating-a-data-source-
 
 ## Installing Client Authentication Plugins
 
-Authentication plugins are all compiled in statically on Windows since [3.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-18-release-notes)
+Authentication plugins are all compiled in statically on Windows since [3.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.1/3.1.18)
 
 In MariaDB Connector/ODBC 3.1 and later, MariaDB Connector/ODBC bundles client authentication plugins with the connector.
 
@@ -515,7 +504,7 @@ These errors occur because the [pam](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO
 
 See [ODBC-23](https://jira.mariadb.org/browse/ODBC-23) for more information.
 
-Authentication plugins are all compiled in statically on Windows since [3.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-18-release-notes)
+Authentication plugins are all compiled in statically on Windows since [3.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/3.1/3.1.18)
 
 ## Reporting Bugs
 

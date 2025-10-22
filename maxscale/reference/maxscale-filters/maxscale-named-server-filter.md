@@ -1,8 +1,6 @@
 # MaxScale Named Server Filter
 
-## Named Server Filter
-
-### Overview
+## Overview
 
 The **namedserverfilter** is a MariaDB MaxScale filter module able to route
 queries to servers based on regular expression (regex) matches. Since it is a
@@ -11,7 +9,7 @@ It requires a compatible router to be effective. Currently, both**readwritesplit
 data packets. This filter uses the _PCRE2_ library for regular expression
 matching.
 
-### Configuration
+## Configuration
 
 The filter accepts settings in two modes: _legacy_ and _indexed_. Only one of
 the modes may be used for a given filter instance. The legacy mode is meant for
@@ -32,7 +30,7 @@ while a SELECT on TableTwo is suggested to be routed to the primary server of th
 service. Whether a list of server names is interpreted as a route-to-any or
 route-to-all is up to the attached router. The HintRouter sees a list as a
 suggestion to route-to-any. For additional information on hints and how they can
-also be embedded into SQL-queries, see [Hint-Syntax](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-hint-syntax.md).
+also be embedded into SQL-queries, see [Hint-Syntax](maxscale-hintfilter.md#hint-syntax).
 
 ```
 [NamedServerFilter]
@@ -52,54 +50,57 @@ password=mypasswd
 filters=NamedServerFilter
 ```
 
-### Settings
+## Settings
 
 NamedServerFilter requires at least one _matchXY_ - _targetXY_ pair.
 
-#### `matchXY`
+### `matchXY`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
-_matchXY_ defines a [PCRE2 regular expression](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+_matchXY_ defines a
+[PCRE2 regular expression](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 against which the incoming SQL query is matched. _XY_ must be a number in the range
 01 - 25. Each _match_-setting pairs with a similarly indexed _target_-setting. If one is
 defined, the other must be defined as well. If a query matches the pattern, the filter
-attaches a routing hint defined by the _target_-setting to the query. Th&#x65;_&#x6F;ptions_-parameter affects how the patterns are compiled.
+attaches a routing hint defined by the _target_-setting to the query. The
+_options_-parameter affects how the patterns are compiled.
 
 ```
 match01=^SELECT
 options=case,extended
 ```
 
-#### `options`
+### `options`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`
 * Default: `ignorecase`
 
-[Regular expression options](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+[Regular expression options](../../maxscale-management/deployment/maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
 for `matchXY`.
 
-#### `targetXY`
+### `targetXY`
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
-The hint which is attached to the queries matching the regular expression defined b&#x79;_&#x6D;atchXY_. If a compatible router is used in the service the query will be routed
+The hint which is attached to the queries matching the regular expression defined by
+_matchXY_. If a compatible router is used in the service the query will be routed
 accordingly. The target can be one of the following:
 
 * a server or service name (adds a `HINT_ROUTE_TO_NAMED_SERVER` hint)
 * a list of server names, comma-separated (adds several`HINT_ROUTE_TO_NAMED_SERVER` hints)
 * `->master` (adds a `HINT_ROUTE_TO_MASTER` hint)
 * `->slave` (adds a `HINT_ROUTE_TO_SLAVE` hint)
-* `->all` (adds a `HINT_ROUTE_TO_ALL` hint)
+* `->all` (legacy hint that never did anything, ignored)
 
 The support for service names was added in MaxScale 6.3.2. Older
 versions of MaxScale did not accept service names in the `target`
@@ -109,7 +110,7 @@ parameters.
 target01=MyServer2
 ```
 
-#### `source`
+### `source`
 
 * Type: string
 * Mandatory: No
@@ -142,7 +143,7 @@ by comma. Incoming client connections are subsequently checked against each.
 source=192.168.21.3,192.168.10.%
 ```
 
-#### `user`
+### `user`
 
 * Type: string
 * Mandatory: No
@@ -158,7 +159,7 @@ left as is and routed straight through.
 user=john
 ```
 
-### Additional remarks
+## Additional remarks
 
 The maximum number of accepted _match_ - _target_ pairs is 25.
 
@@ -177,9 +178,9 @@ routing hints are attached to any execution of that prepared statement. Text-
 mode prepared statements are not supported in this way. To divert them, use
 regular expressions which match the specific "EXECUTE"-query.
 
-### Examples
+## Examples
 
-#### Example 1 - Route queries targeting a specific table to a server
+### Example 1 - Route queries targeting a specific table to a server
 
 This will route all queries matching the regular expression `*from *users` to
 the server named _server2_. The filter will ignore character case in queries.

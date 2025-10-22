@@ -1,4 +1,5 @@
 ---
+icon: shield-halved
 layout:
   width: default
   title:

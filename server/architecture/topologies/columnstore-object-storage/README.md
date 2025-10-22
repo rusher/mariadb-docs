@@ -87,7 +87,7 @@ These requirements are for the ColumnStore Object Storage topology when deployed
 * Preferred Object Storage Providers: Hardware
 * Shared Local Storage Directories
 * Shared Local Storage Options
-* [Recommended Storage Options](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#recommended-storage-options)
+* [Recommended Storage Options](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#recommended-storage-options)
 
 ### Node Count
 
@@ -180,7 +180,7 @@ If you have any questions about using specific S3-compatible object storage with
 
 ### Shared Local Storage Directories
 
-The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata.
+The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata.
 
 The Storage Manager directory is located at the following path by default:
 

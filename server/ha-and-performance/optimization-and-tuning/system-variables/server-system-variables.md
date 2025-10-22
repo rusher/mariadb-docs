@@ -125,7 +125,7 @@ The suffix can be upper or lower-case.
 * Data Type: `INT UNSIGNED`
 * Default Value: `4294967295 (4G)`
 * Range: `32` to `4294967295`
-* Introduced: [MariaDB 10.6.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10.6.23-release-notes), [MariaDB 10.11.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.14-release-notes), [MariaDB 11.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes), [MariaDB 11.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11.8.3-release-notes), [MariaDB 12.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes), [MariaDB 12.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes)
+* Introduced: [MariaDB 10.6.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10.6.23-release-notes), [MariaDB 10.11.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.14-release-notes), [MariaDB 11.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes), [MariaDB 11.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11.8.3-release-notes), [MariaDB 12.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes), [MariaDB 12.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes), [MariaDB Enterprise Server 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/11.8/whats-new-in-mariadb-enterprise-server-11.8)
 
 #### `analyze_sample_percentage`
 
@@ -229,7 +229,9 @@ The suffix can be upper or lower-case.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
-* Default Value: `utf8mb4`&#x20;
+* Default Value:&#x20;
+  * \>= [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116): `utf8mb4`
+  * <= [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115): `latin1`&#x20;
 
 #### `character_set_collations`
 
@@ -259,7 +261,10 @@ The suffix can be upper or lower-case.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
-* Default Value: `utf8mb4`
+* Default Value:&#x20;
+  * \>=[ MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116): `utf8mb4`
+  * \>= [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106): `utf8mb3`
+  * <= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105): `utf8`
 
 #### `character_set_database`
 
@@ -900,12 +905,12 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `host_cache_size`
 
-* Description: Number of host names that will be cached to avoid resolving. Setting to `0` disables the cache. Changing the value while the server is running causes an implicit [FLUSH HOSTS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md), clearing the host cache and truncating the [performance\_schema.host\_cache](../../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table.md) table. If you are connecting from a lot of different machines you should consider increasing.
+* Description: Number of host names that will be cached to avoid resolving. Setting to `0` disables the cache. Changing the value while the server is running causes an implicit [FLUSH HOSTS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md), clearing the host cache and truncating the [performance\_schema.host\_cache](../../../reference/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table.md) table. If you are connecting from a lot of different machines you should consider increasing. Some container configs explicitly set `host_cache_size` to `0`, rather than leave it as the default, `128`.
 * Command line: `--host-cache-size=#`.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `0`
+* Default Value: `128`
 * Range: `0` to `65536`
 
 #### `hostname`

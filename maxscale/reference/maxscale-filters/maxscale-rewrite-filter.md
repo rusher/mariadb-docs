@@ -1,8 +1,6 @@
 # MaxScale Rewrite Filter
 
-## Rewrite Filter
-
-### Overview
+## Overview
 
 The rewrite filter allows modification of sql queries on the fly.
 Reasons for modifying queries can be to rewrite a query for performance,
@@ -11,7 +9,7 @@ cannot be changed in a timely manner.
 
 The examples will use Rewrite Filter file format. See below.
 
-#### Syntax
+### Syntax
 
 **Native syntax**
 
@@ -177,7 +175,7 @@ wrong_column_name
 correct_column_name
 ```
 
-### Configuration
+## Configuration
 
 Adding a rewrite filter.
 
@@ -194,9 +192,9 @@ type=service
 filters=Rewrite
 ```
 
-### Settings
+## Settings
 
-#### `template_file`
+### `template_file`
 
 * Type: string
 * Mandatory: Yes
@@ -205,7 +203,7 @@ filters=Rewrite
 
 Path to the template file.
 
-#### `regex_grammar`
+### `regex_grammar`
 
 * Type: string
 * Mandatory: No
@@ -215,27 +213,27 @@ Path to the template file.
 
 Default regex\_grammar for templates
 
-#### `case_sensitive`
+### `case_sensitive`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: true
 
 Default case sensitivity for templates
 
-#### `log_replacement`
+### `log_replacement`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
 
 Log replacements at NOTICE level.
 
-### Settings per template in the template file
+## Settings per template in the template file
 
-#### `regex_grammar`
+### `regex_grammar`
 
 * Type: string
 * Values: `Native`, `ECMAScript`, `Posix`, `EPosix`, `Awk`, `Grep`, `EGrep`
@@ -243,37 +241,37 @@ Log replacements at NOTICE level.
 
 Overrides the global regex\_grammar of a template.
 
-#### `case_sensitive`
+### `case_sensitive`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: From maxscale.cnf
 
 Overrides the global case sensitivity of a template.
 
-#### `ignore_whitespace`
+### `ignore_whitespace`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: true
 
 Ignore whitespace differences in the match template and input sql.
 
-#### `continue_if_matched`
+### `continue_if_matched`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 
 If a template matches and the replacement is done, continue to the
 next template and apply it to the result of the previous rewrite.
 
-#### `what_if`
+### `what_if`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 
 Do not make the replacement, only log what would have
 been replaced (NOTICE level).
 
-### Rewrite file format
+## Rewrite file format
 
 The rf format for an entry is:
 
@@ -323,7 +321,7 @@ select @{2} from mytable where user = @{3}
 and @{3} in (select user from approved_users)
 ```
 
-### Json file format
+## Json file format
 
 The json file format is harder to read and edit manually.
 It will be needed if support for editing of rewrite templates
@@ -347,7 +345,7 @@ and @{3} in (select user from approved_users)"
 }
 ```
 
-### Reload template file
+## Reload template file
 
 The configuration is re-read if any dynamic value is updated
 even if the value does not change.
@@ -356,7 +354,7 @@ even if the value does not change.
 maxctrl alter filter Rewrite log_replacement=false
 ```
 
-### Reference
+## Reference
 
 * ECMAScript [ECMAScript](https://cplusplus.com/reference/regex/ECMAScript)
 * Posix [V1\_chap09.html#tag\_09\_03](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_03)

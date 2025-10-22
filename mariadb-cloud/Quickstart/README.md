@@ -1,4 +1,5 @@
 ---
+icon: rabbit
 layout:
   width: default
   title:
@@ -15,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Quickstart
+# Quickstart Guides
 
 The MariaDB Cloud database deployment time varies: a Serverless instance is ready in seconds, while a Provisioned database may take a few minutes. You can deploy on AWS, GCP, or Azure across nearly 50 global regions.
 
@@ -31,7 +32,7 @@ This quickstart guide will walk you through using the Portal.
 
 Go to [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using your Google, Github or LinkedIn credentials. Or, just use your Email address to sign up.
 
-<div align="left"><figure><img src="skysql-id.png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="mariadb-cloud-id.png" alt=""><figcaption></figcaption></figure></div>
 
 ## Step 2: Launch a Service
 
@@ -48,7 +49,7 @@ Go to [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using
 
 
 
-    For additional information on available selections, see "[Service Launch](<../Portal features/Launch page.md>)".
+    For additional information on available selections, see "[Service Launch](../cloud-usage/portal-features/launch-page.md)".
 
     <figure><img src="launch-service.png" alt=""><figcaption></figcaption></figure>
 3. You will then be redirected to the Dashboard. If you choose a Serverless deployment, your service will be in a 'Healthy' state and ready for use. For other deployment types, the service will initially be in a 'Creating' state. Please wait until it transitions to a 'Healthy' state before proceeding to the next step. Typically, launching a new Provisioned database takes about 5 minutes or less.
@@ -77,13 +78,13 @@ MariaDB Cloud features automatic rule-based scaling (Autonomous) and manual on-d
 
 **Note:** Scaling is not applicable to Serverless deployments.
 
-With automatic scaling, node count (horizontal) and node size (vertical) changes can be triggered based on load. Additionally, storage capacity expansion can be triggered based on usage. These Autonomous features are opt-in. For additional information, see "[Autonomous](<../Autonomously scale Compute, Storage/>)".
+With automatic scaling, node count (horizontal) and node size (vertical) changes can be triggered based on load. Additionally, storage capacity expansion can be triggered based on usage. These Autonomous features are opt-in. For additional information, see "[Autonomous](../cloud-management/autonomously-scale-compute-storage.md)".
 
 <figure><img src="autonomous.png" alt=""><figcaption></figcaption></figure>
 
 _Autonomous_
 
-With manual scaling, you can perform horizontal scaling (In/Out), vertical scaling (Up/Down), and storage expansion on-demand using Self-Service Operations. For additional information, see "[Self-Service Operations](<../Portal features/Manage your Service.md>)".
+With manual scaling, you can perform horizontal scaling (In/Out), vertical scaling (Up/Down), and storage expansion on-demand using Self-Service Operations. For additional information, see "[Self-Service Operations](../cloud-usage/portal-features/manage-your-service.md)".
 
 <figure><img src="scaling.png" alt=""><figcaption></figcaption></figure>
 
@@ -99,7 +100,7 @@ Stopping, starting, and deleting a service are examples of Self-Service Operatio
 
 ## See Also
 
-[Self-Service Operations](<../Portal features/Manage your Service.md>)
+[Self-Service Operations](../cloud-usage/portal-features/manage-your-service.md)
 
 [Launch DB using the REST API](<Launch DB using the REST API.md>)
 

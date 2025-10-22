@@ -1,5 +1,11 @@
 # All Releases
 
+## MaxScale 25.10
+
+| Version                     | Release Date | Release Status |
+| --------------------------- | ------------ | -------------- |
+| [25.10.0](25.10/25.10.0.md) | 2025-09-22   | Stable (GA)    |
+
 ## MaxScale 25.01
 
 | Version                     | Release Date | Release Status |
@@ -130,25 +136,25 @@
 
 ## MaxScale 2.4
 
-| Version                                                                                                                    | Release Date | Release Status |
-| -------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------- |
-| [2.4.19](old-releases/2.4/2.4.19.md)                                                                                       | 2022-01-04   | Stable (GA)    |
-| [2.4.18](old-releases/2.4/2.4.18.md)                                                                                       | 2021-10-29   | Stable (GA)    |
-| [2.4.17](old-releases/2.4/2.4.17.md)                                                                                       | 2021-03-08   | Stable (GA)    |
-| [2.4.16](old-releases/2.4/2.4.16.md)                                                                                       | 2021-02-16   | Stable (GA)    |
-| [2.4.15](old-releases/2.4/2.4.15.md)                                                                                       | 2021-01-19   | Stable (GA)    |
-| [2.4.14](old-releases/2.4/2.4.14.md)                                                                                       | 2020-11-24   | Stable (GA)    |
-| [2.4.13](old-releases/2.4/2.4.13.md)                                                                                       | 2020-10-14   | Stable (GA)    |
-| [2.4.12](old-releases/2.4/2.4.12.md)                                                                                       | 2020-08-24   | Stable (GA)    |
-| [2.4.11](old-releases/2.4/2.4.11.md)                                                                                       | 2020-07-13   | Stable (GA)    |
-| [2.4.10](old-releases/2.4/2.4.10.md)                                                                                       | 2020-06-05   | Stable (GA)    |
-| [2.4.9](old-releases/2.4/2.4.9.md)                                                                                         | 2020-04-29   | Stable (GA)    |
-| [2.4.8](old-releases/2.4/2.4.8.md)                                                                                         | 2020-03-17   | Stable (GA)    |
-| [2.4.7](old-releases/2.4/2.4.7.md)                                                                                         | 2020-02-12   | Stable (GA)    |
-| [2.4.6](old-releases/2.4/2.4.6.md)                                                                                         | 2020-01-21   | Stable (GA)    |
-| [2.4.5](old-releases/2.4/2.4.5.md)                                                                                         | 2019-12-20   | Stable (GA)    |
-| [2.4.4](old-releases/2.4/2.4.4.md)                                                                                         | 2019-11-13   | Stable (GA)    |
-| [2.4.3](old-releases/2.4/2.4.3.md)                                                                                         | 2019-11-05   | Stable (GA)    |
-| [2.4.2](old-releases/2.4/2.4.2.md)                                                                                         | 2019-08-29   | Stable (GA)    |
-| [2.4.1](../connectors/node.js/changelogs/mariadb-connector-nodejs-2x-changelogs/mariadb-connector-nodejs-241-changelog.md) | 2019-08-20   | Stable (GA)    |
-| [2.4.0](old-releases/2.4/2.4.1.md)                                                                                         | 2019-06-28   | Stable (GA)    |
+| Version                                                | Release Date | Release Status |
+| ------------------------------------------------------ | ------------ | -------------- |
+| [2.4.19](old-releases/2.4/2.4.19.md)                   | 2022-01-04   | Stable (GA)    |
+| [2.4.18](old-releases/2.4/2.4.18.md)                   | 2021-10-29   | Stable (GA)    |
+| [2.4.17](old-releases/2.4/2.4.17.md)                   | 2021-03-08   | Stable (GA)    |
+| [2.4.16](old-releases/2.4/2.4.16.md)                   | 2021-02-16   | Stable (GA)    |
+| [2.4.15](old-releases/2.4/2.4.15.md)                   | 2021-01-19   | Stable (GA)    |
+| [2.4.14](old-releases/2.4/2.4.14.md)                   | 2020-11-24   | Stable (GA)    |
+| [2.4.13](old-releases/2.4/2.4.13.md)                   | 2020-10-14   | Stable (GA)    |
+| [2.4.12](old-releases/2.4/2.4.12.md)                   | 2020-08-24   | Stable (GA)    |
+| [2.4.11](old-releases/2.4/2.4.11.md)                   | 2020-07-13   | Stable (GA)    |
+| [2.4.10](old-releases/2.4/2.4.10.md)                   | 2020-06-05   | Stable (GA)    |
+| [2.4.9](old-releases/2.4/2.4.9.md)                     | 2020-04-29   | Stable (GA)    |
+| [2.4.8](old-releases/2.4/2.4.8.md)                     | 2020-03-17   | Stable (GA)    |
+| [2.4.7](old-releases/2.4/2.4.7.md)                     | 2020-02-12   | Stable (GA)    |
+| [2.4.6](old-releases/2.4/2.4.6.md)                     | 2020-01-21   | Stable (GA)    |
+| [2.4.5](old-releases/2.4/2.4.5.md)                     | 2019-12-20   | Stable (GA)    |
+| [2.4.4](old-releases/2.4/2.4.4.md)                     | 2019-11-13   | Stable (GA)    |
+| [2.4.3](old-releases/2.4/2.4.3.md)                     | 2019-11-05   | Stable (GA)    |
+| [2.4.2](old-releases/2.4/2.4.2.md)                     | 2019-08-29   | Stable (GA)    |
+| [2.4.1](../connectors/node.js/changelogs/2.x/2.4.1.md) | 2019-08-20   | Stable (GA)    |
+| [2.4.0](old-releases/2.4/2.4.1.md)                     | 2019-06-28   | Stable (GA)    |

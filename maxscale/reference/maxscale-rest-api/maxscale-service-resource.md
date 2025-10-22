@@ -1,15 +1,15 @@
 # MaxScale Service Resource
 
-## Service Resource
+## Overview
 
 A service resource represents a service inside MaxScale. A service is a
 collection of network listeners, filters, a router and a set of backend servers.
 
-### Resource Operations
+## Resource Operations
 
 The _:name_ in all of the URIs must be the name of a service in MaxScale.
 
-#### Get a service
+### Get a service
 
 ```
 GET /v1/services/:name
@@ -17,11 +17,11 @@ GET /v1/services/:name
 
 Get a single service.
 
-**Response**
+#### Response
 
 `Status: 200 OK`
 
-```
+```javascript
 {
     "data": {
         "attributes": {
@@ -29,9 +29,12 @@ Get a single service.
             "listeners": [
                 {
                     "attributes": {
+                        "module": "MariaDBProtocol",
                         "parameters": {
                             "MariaDBProtocol": {
-                                "allow_replication": true
+                                "allow_replication": true,
+                                "compression": "zlib,zstd",
+                                "compression_threshold": 50
                             },
                             "address": "::",
                             "authenticator": null,
@@ -50,6 +53,7 @@ Get a single service.
                             "port": 4008,
                             "protocol": "MariaDBProtocol",
                             "proxy_protocol_networks": null,
+                            "redirect_url": null,
                             "service": "Read-Connection-Router",
                             "socket": null,
                             "sql_mode": "default",
@@ -60,6 +64,7 @@ Get a single service.
                             "ssl_cipher": null,
                             "ssl_crl": null,
                             "ssl_key": null,
+                            "ssl_passphrase": "",
                             "ssl_verify_peer_certificate": false,
                             "ssl_verify_peer_host": false,
                             "ssl_version": "MAX",
@@ -90,6 +95,7 @@ Get a single service.
                     "type": "listeners"
                 }
             ],
+            "module": "readconnroute",
             "parameters": {
                 "auth_all_servers": false,
                 "connection_keepalive": "300000ms",
@@ -113,38 +119,40 @@ Get a single service.
                 "prune_sescmd_history": true,
                 "rank": "primary",
                 "retain_last_statements": -1,
+                "role": null,
                 "router": "readconnroute",
                 "router_options": "master",
-                "session_trace": false,
                 "strip_db_esc": true,
                 "type": "service",
                 "user": "maxuser",
                 "user_accounts_file": null,
                 "user_accounts_file_usage": "add_when_load_ok",
                 "version_string": null,
-                "wait_timeout": "0ms"
+                "wait_timeout": "28800000ms"
             },
             "router": "readconnroute",
-            "router_diagnostics": {
-                "queries": 0,
-                "server_query_statistics": []
-            },
             "source": {
                 "file": "/etc/maxscale.cnf",
                 "type": "static"
             },
-            "started": "Fri, 05 Jan 2024 07:23:54 GMT",
+            "started": "Fri, 25 Jul 2025 15:43:46 GMT",
             "state": "Started",
             "statistics": {
                 "active_operations": 0,
                 "avg_sescmd_history_length": 0.0,
+                "avg_session_active_pct": 0.0,
                 "avg_session_lifetime": 0.0,
+                "avg_session_queries": 0.0,
                 "connections": 0,
                 "failed_auths": 0,
                 "max_connections": 0,
                 "max_sescmd_history_length": 0,
-                "max_session_lifetime": 0,
+                "max_session_active_pct": 0.0,
+                "max_session_lifetime": 0.0,
+                "max_session_queries": 0,
                 "routed_packets": 0,
+                "routed_reads": 0,
+                "routed_writes": 0,
                 "total_connections": 0
             },
             "total_connections": 0,
@@ -152,8 +160,58 @@ Get a single service.
                 {
                     "default_role": "",
                     "global_priv": false,
+                    "host": "127.0.0.1",
+                    "plugins": [
+                        {
+                            "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                            "plugin": "mysql_native_password"
+                        }
+                    ],
+                    "proxy_priv": false,
+                    "ssl": false,
+                    "super_priv": false,
+                    "user": "healthcheck"
+                },
+                {
+                    "default_role": "",
+                    "global_priv": false,
+                    "host": "::1",
+                    "plugins": [
+                        {
+                            "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                            "plugin": "mysql_native_password"
+                        }
+                    ],
+                    "proxy_priv": false,
+                    "ssl": false,
+                    "super_priv": false,
+                    "user": "healthcheck"
+                },
+                {
+                    "default_role": "",
+                    "global_priv": false,
                     "host": "localhost",
-                    "plugin": "mysql_native_password",
+                    "plugins": [
+                        {
+                            "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                            "plugin": "mysql_native_password"
+                        }
+                    ],
+                    "proxy_priv": false,
+                    "ssl": false,
+                    "super_priv": false,
+                    "user": "healthcheck"
+                },
+                {
+                    "default_role": "",
+                    "global_priv": false,
+                    "host": "localhost",
+                    "plugins": [
+                        {
+                            "auth_string": "",
+                            "plugin": "mysql_native_password"
+                        }
+                    ],
                     "proxy_priv": false,
                     "ssl": false,
                     "super_priv": false,
@@ -163,7 +221,12 @@ Get a single service.
                     "default_role": "",
                     "global_priv": true,
                     "host": "127.0.0.1",
-                    "plugin": "mysql_native_password",
+                    "plugins": [
+                        {
+                            "auth_string": "5EDBD32E469DAE0CE10E6999C3899DEFCB9F12E0",
+                            "plugin": "mysql_native_password"
+                        }
+                    ],
                     "proxy_priv": false,
                     "ssl": false,
                     "super_priv": true,
@@ -173,7 +236,12 @@ Get a single service.
                     "default_role": "",
                     "global_priv": true,
                     "host": "%",
-                    "plugin": "mysql_native_password",
+                    "plugins": [
+                        {
+                            "auth_string": "5EDBD32E469DAE0CE10E6999C3899DEFCB9F12E0",
+                            "plugin": "mysql_native_password"
+                        }
+                    ],
                     "proxy_priv": false,
                     "ssl": false,
                     "super_priv": true,
@@ -183,7 +251,12 @@ Get a single service.
                     "default_role": "",
                     "global_priv": true,
                     "host": "localhost",
-                    "plugin": "mysql_native_password",
+                    "plugins": [
+                        {
+                            "auth_string": "",
+                            "plugin": "mysql_native_password"
+                        }
+                    ],
                     "proxy_priv": false,
                     "ssl": false,
                     "super_priv": true,
@@ -193,14 +266,19 @@ Get a single service.
                     "default_role": "",
                     "global_priv": true,
                     "host": "%",
-                    "plugin": "mysql_native_password",
+                    "plugins": [
+                        {
+                            "auth_string": "",
+                            "plugin": "mysql_native_password"
+                        }
+                    ],
                     "proxy_priv": false,
                     "ssl": false,
                     "super_priv": true,
                     "user": "root"
                 }
             ],
-            "users_last_update": "Fri, 05 Jan 2024 07:23:55 GMT"
+            "users_last_update": "Fri, 25 Jul 2025 15:43:49 GMT"
         },
         "id": "Read-Connection-Router",
         "links": {
@@ -260,7 +338,7 @@ Get a single service.
 }
 ```
 
-#### Get all services
+### Get all services
 
 ```
 GET /v1/services
@@ -268,11 +346,11 @@ GET /v1/services
 
 Get all services.
 
-**Response**
+#### Response
 
 `Status: 200 OK`
 
-```
+```javascript
 {
     "data": [
         {
@@ -281,9 +359,12 @@ Get all services.
                 "listeners": [
                     {
                         "attributes": {
+                            "module": "MariaDBProtocol",
                             "parameters": {
                                 "MariaDBProtocol": {
-                                    "allow_replication": true
+                                    "allow_replication": true,
+                                    "compression": "zlib,zstd",
+                                    "compression_threshold": 50
                                 },
                                 "address": "::",
                                 "authenticator": null,
@@ -302,6 +383,7 @@ Get all services.
                                 "port": 4006,
                                 "protocol": "MariaDBProtocol",
                                 "proxy_protocol_networks": null,
+                                "redirect_url": null,
                                 "service": "RW-Split-Router",
                                 "socket": null,
                                 "sql_mode": "default",
@@ -312,6 +394,7 @@ Get all services.
                                 "ssl_cipher": null,
                                 "ssl_crl": null,
                                 "ssl_key": null,
+                                "ssl_passphrase": "",
                                 "ssl_verify_peer_certificate": false,
                                 "ssl_verify_peer_host": false,
                                 "ssl_version": "MAX",
@@ -342,6 +425,7 @@ Get all services.
                         "type": "listeners"
                     }
                 ],
+                "module": "readwritesplit",
                 "parameters": {
                     "auth_all_servers": false,
                     "causal_reads": "none",
@@ -369,21 +453,23 @@ Get all services.
                     "max_slave_connections": 255,
                     "multiplex_timeout": "60000ms",
                     "net_write_timeout": "0ms",
-                    "optimistic_trx": false,
                     "password": "*****",
                     "prune_sescmd_history": true,
                     "rank": "primary",
                     "retain_last_statements": -1,
                     "retry_failed_reads": true,
-                    "reuse_prepared_statements": false,
+                    "role": null,
                     "router": "readwritesplit",
-                    "session_trace": false,
                     "slave_connections": 255,
                     "slave_selection_criteria": "least_current_operations",
                     "strict_multi_stmt": false,
                     "strict_sp_calls": false,
                     "strict_tmp_tables": true,
                     "strip_db_esc": true,
+                    "sync_transaction": "none",
+                    "sync_transaction_count": 1,
+                    "sync_transaction_max_lag": "0ms",
+                    "sync_transaction_timeout": "10000ms",
                     "transaction_replay": false,
                     "transaction_replay_attempts": 5,
                     "transaction_replay_checksum": "full",
@@ -398,53 +484,45 @@ Get all services.
                     "user_accounts_file": null,
                     "user_accounts_file_usage": "add_when_load_ok",
                     "version_string": null,
-                    "wait_timeout": "0ms"
+                    "wait_timeout": "28800000ms"
                 },
                 "router": "readwritesplit",
                 "router_diagnostics": {
                     "queries": 4,
                     "replayed_transactions": 0,
-                    "ro_transactions": 1,
+                    "ro_transactions": 0,
                     "route_all": 1,
                     "route_master": 3,
                     "route_slave": 0,
-                    "rw_transactions": 0,
-                    "server_query_statistics": [
-                        {
-                            "avg_selects_per_session": 0,
-                            "avg_sess_duration": "0ns",
-                            "id": "server1",
-                            "read": 1,
-                            "total": 4,
-                            "write": 3
-                        },
-                        {
-                            "avg_selects_per_session": 0,
-                            "avg_sess_duration": "0ns",
-                            "id": "server2",
-                            "read": 1,
-                            "total": 1,
-                            "write": 0
-                        }
-                    ],
+                    "rw_transactions": 1,
+                    "sync_transaction_in_progress": 0,
+                    "sync_transaction_lag": 0.0,
+                    "sync_transaction_ok": 0,
+                    "sync_transaction_timeout": 0,
                     "trx_max_size_exceeded": 0
                 },
                 "source": {
                     "file": "/etc/maxscale.cnf",
                     "type": "static"
                 },
-                "started": "Fri, 05 Jan 2024 07:23:54 GMT",
+                "started": "Fri, 25 Jul 2025 15:43:46 GMT",
                 "state": "Started",
                 "statistics": {
                     "active_operations": 0,
                     "avg_sescmd_history_length": 0.0,
+                    "avg_session_active_pct": 0.0,
                     "avg_session_lifetime": 0.0,
+                    "avg_session_queries": 0.0,
                     "connections": 1,
                     "failed_auths": 0,
                     "max_connections": 1,
                     "max_sescmd_history_length": 0,
-                    "max_session_lifetime": 0,
+                    "max_session_active_pct": 0.0,
+                    "max_session_lifetime": 0.0,
+                    "max_session_queries": 0,
                     "routed_packets": 4,
+                    "routed_reads": 0,
+                    "routed_writes": 4,
                     "total_connections": 1
                 },
                 "total_connections": 1,
@@ -452,8 +530,58 @@ Get all services.
                     {
                         "default_role": "",
                         "global_priv": false,
+                        "host": "127.0.0.1",
+                        "plugins": [
+                            {
+                                "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
+                        "proxy_priv": false,
+                        "ssl": false,
+                        "super_priv": false,
+                        "user": "healthcheck"
+                    },
+                    {
+                        "default_role": "",
+                        "global_priv": false,
+                        "host": "::1",
+                        "plugins": [
+                            {
+                                "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
+                        "proxy_priv": false,
+                        "ssl": false,
+                        "super_priv": false,
+                        "user": "healthcheck"
+                    },
+                    {
+                        "default_role": "",
+                        "global_priv": false,
                         "host": "localhost",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
+                        "proxy_priv": false,
+                        "ssl": false,
+                        "super_priv": false,
+                        "user": "healthcheck"
+                    },
+                    {
+                        "default_role": "",
+                        "global_priv": false,
+                        "host": "localhost",
+                        "plugins": [
+                            {
+                                "auth_string": "",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": false,
@@ -463,7 +591,12 @@ Get all services.
                         "default_role": "",
                         "global_priv": true,
                         "host": "127.0.0.1",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "5EDBD32E469DAE0CE10E6999C3899DEFCB9F12E0",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": true,
@@ -473,7 +606,12 @@ Get all services.
                         "default_role": "",
                         "global_priv": true,
                         "host": "%",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "5EDBD32E469DAE0CE10E6999C3899DEFCB9F12E0",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": true,
@@ -483,7 +621,12 @@ Get all services.
                         "default_role": "",
                         "global_priv": true,
                         "host": "localhost",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": true,
@@ -493,14 +636,19 @@ Get all services.
                         "default_role": "",
                         "global_priv": true,
                         "host": "%",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": true,
                         "user": "root"
                     }
                 ],
-                "users_last_update": "Fri, 05 Jan 2024 07:23:55 GMT"
+                "users_last_update": "Fri, 25 Jul 2025 15:43:49 GMT"
             },
             "id": "RW-Split-Router",
             "links": {
@@ -540,9 +688,12 @@ Get all services.
                 "listeners": [
                     {
                         "attributes": {
+                            "module": "MariaDBProtocol",
                             "parameters": {
                                 "MariaDBProtocol": {
-                                    "allow_replication": true
+                                    "allow_replication": true,
+                                    "compression": "zlib,zstd",
+                                    "compression_threshold": 50
                                 },
                                 "address": "::",
                                 "authenticator": null,
@@ -561,6 +712,7 @@ Get all services.
                                 "port": 4008,
                                 "protocol": "MariaDBProtocol",
                                 "proxy_protocol_networks": null,
+                                "redirect_url": null,
                                 "service": "Read-Connection-Router",
                                 "socket": null,
                                 "sql_mode": "default",
@@ -571,6 +723,7 @@ Get all services.
                                 "ssl_cipher": null,
                                 "ssl_crl": null,
                                 "ssl_key": null,
+                                "ssl_passphrase": "",
                                 "ssl_verify_peer_certificate": false,
                                 "ssl_verify_peer_host": false,
                                 "ssl_version": "MAX",
@@ -601,6 +754,7 @@ Get all services.
                         "type": "listeners"
                     }
                 ],
+                "module": "readconnroute",
                 "parameters": {
                     "auth_all_servers": false,
                     "connection_keepalive": "300000ms",
@@ -624,38 +778,40 @@ Get all services.
                     "prune_sescmd_history": true,
                     "rank": "primary",
                     "retain_last_statements": -1,
+                    "role": null,
                     "router": "readconnroute",
                     "router_options": "master",
-                    "session_trace": false,
                     "strip_db_esc": true,
                     "type": "service",
                     "user": "maxuser",
                     "user_accounts_file": null,
                     "user_accounts_file_usage": "add_when_load_ok",
                     "version_string": null,
-                    "wait_timeout": "0ms"
+                    "wait_timeout": "28800000ms"
                 },
                 "router": "readconnroute",
-                "router_diagnostics": {
-                    "queries": 0,
-                    "server_query_statistics": []
-                },
                 "source": {
                     "file": "/etc/maxscale.cnf",
                     "type": "static"
                 },
-                "started": "Fri, 05 Jan 2024 07:23:54 GMT",
+                "started": "Fri, 25 Jul 2025 15:43:46 GMT",
                 "state": "Started",
                 "statistics": {
                     "active_operations": 0,
                     "avg_sescmd_history_length": 0.0,
+                    "avg_session_active_pct": 0.0,
                     "avg_session_lifetime": 0.0,
+                    "avg_session_queries": 0.0,
                     "connections": 0,
                     "failed_auths": 0,
                     "max_connections": 0,
                     "max_sescmd_history_length": 0,
-                    "max_session_lifetime": 0,
+                    "max_session_active_pct": 0.0,
+                    "max_session_lifetime": 0.0,
+                    "max_session_queries": 0,
                     "routed_packets": 0,
+                    "routed_reads": 0,
+                    "routed_writes": 0,
                     "total_connections": 0
                 },
                 "total_connections": 0,
@@ -663,8 +819,58 @@ Get all services.
                     {
                         "default_role": "",
                         "global_priv": false,
+                        "host": "127.0.0.1",
+                        "plugins": [
+                            {
+                                "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
+                        "proxy_priv": false,
+                        "ssl": false,
+                        "super_priv": false,
+                        "user": "healthcheck"
+                    },
+                    {
+                        "default_role": "",
+                        "global_priv": false,
+                        "host": "::1",
+                        "plugins": [
+                            {
+                                "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
+                        "proxy_priv": false,
+                        "ssl": false,
+                        "super_priv": false,
+                        "user": "healthcheck"
+                    },
+                    {
+                        "default_role": "",
+                        "global_priv": false,
                         "host": "localhost",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "976B96FB3F7898CCFFCABC014300C311FB7607FD",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
+                        "proxy_priv": false,
+                        "ssl": false,
+                        "super_priv": false,
+                        "user": "healthcheck"
+                    },
+                    {
+                        "default_role": "",
+                        "global_priv": false,
+                        "host": "localhost",
+                        "plugins": [
+                            {
+                                "auth_string": "",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": false,
@@ -674,7 +880,12 @@ Get all services.
                         "default_role": "",
                         "global_priv": true,
                         "host": "127.0.0.1",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "5EDBD32E469DAE0CE10E6999C3899DEFCB9F12E0",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": true,
@@ -684,7 +895,12 @@ Get all services.
                         "default_role": "",
                         "global_priv": true,
                         "host": "%",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "5EDBD32E469DAE0CE10E6999C3899DEFCB9F12E0",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": true,
@@ -694,7 +910,12 @@ Get all services.
                         "default_role": "",
                         "global_priv": true,
                         "host": "localhost",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": true,
@@ -704,14 +925,19 @@ Get all services.
                         "default_role": "",
                         "global_priv": true,
                         "host": "%",
-                        "plugin": "mysql_native_password",
+                        "plugins": [
+                            {
+                                "auth_string": "",
+                                "plugin": "mysql_native_password"
+                            }
+                        ],
                         "proxy_priv": false,
                         "ssl": false,
                         "super_priv": true,
                         "user": "root"
                     }
                 ],
-                "users_last_update": "Fri, 05 Jan 2024 07:23:55 GMT"
+                "users_last_update": "Fri, 25 Jul 2025 15:43:49 GMT"
             },
             "id": "Read-Connection-Router",
             "links": {
@@ -772,7 +998,39 @@ Get all services.
 }
 ```
 
-#### Create a service
+### Get service relationships
+
+```
+GET /v1/services/:name/relationships/:type
+```
+
+The _:type_ in the URI must be either _servers_, _services_ or _filters_,
+depending on which relationship is being retrieved.
+
+#### Response
+
+`Status: 200 OK`
+
+```javascript
+{
+    "data": [
+        {
+            "id": "server1",
+            "type": "servers"
+        },
+        {
+            "id": "server2",
+            "type": "servers"
+        }
+    ],
+    "links": {
+        "related": "http://localhost:8989/v1/servers/",
+        "self": "http://localhost:8989/v1/services/Read-Connection-Router/relationships/servers/"
+    }
+}
+```
+
+### Create a service
 
 ```
 POST /v1/services
@@ -782,15 +1040,19 @@ Create a new service by defining the resource. The posted object must define at
 least the following fields.
 
 * `data.id`
-* Name of the service
+  * Name of the service
+
 * `data.type`
-* Type of the object, must be `services`
+  * Type of the object, must be `services`
+
 * `data.attributes.router`
-* The router module to use
+  * The router module to use
+
 * `data.attributes.parameters.user`
-* The [user](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use
+  * The [`user`](../../maxscale-management/deployment/maxscale-configuration-guide.md#user) to use
+
 * `data.attributes.parameters.password`
-* The [password](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use
+  * The [`password`](../../maxscale-management/deployment/maxscale-configuration-guide.md#password) to use
 
 The `data.attributes.parameters` object is used to define router and service
 parameters. All configuration parameters that can be defined in the
@@ -804,15 +1066,19 @@ relationships: `servers` and `filters` relationships.
 
 If the request body defines a valid `relationships` object, the service is
 linked to those resources. For servers, this is equivalent to adding the list of
-server names into the [servers](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter. For
-filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the [filters](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter in the
+server names into the
+[`servers`](../../maxscale-management/deployment/maxscale-configuration-guide.md#servers) parameter. For
+filters, this is equivalent to adding the filters in the
+`data.relationships.filters.data` array to the
+[`filters`](../../maxscale-management/deployment/maxscale-configuration-guide.md#filters) parameter in the
 order they appear. For other services, this is equivalent to adding the list of
-server names into the [targets](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter.
+server names into the
+[`targets`](../../maxscale-management/deployment/maxscale-configuration-guide.md#targets) parameter.
 
 The following example defines a new service with both a server and a filter
 relationship.
 
-```
+```javascript
 {
     "data": {
         "id": "my-service",
@@ -846,13 +1112,13 @@ relationship.
 }
 ```
 
-**Response**
+#### Response
 
 Service is created:
 
 `Status: 204 No Content`
 
-#### Destroy a service
+### Destroy a service
 
 ```
 DELETE /v1/services/:name
@@ -868,20 +1134,21 @@ they are allowed to gracefully close before the service is destroyed. This means
 that the destruction of a service can be acknowledged via the REST API before
 the destruction process has fully completed.
 
-To find out whether a service is still in use after it has been destroyed, the [sessions](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-session-resource.md) resource should be used. If a session for
+To find out whether a service is still in use after it has been destroyed, the
+[`sessions`](maxscale-session-resource.md) resource should be used. If a session for
 the service is still open, it has not yet been destroyed.
 
 This endpoint also supports the `force=yes` parameter that will unconditionally
 delete the service by first unlinking it from all servers and filters that it
 uses.
 
-**Response**
+#### Response
 
 Service is destroyed:
 
 `Status: 204 No Content`
 
-#### Update a service
+### Update a service
 
 ```
 PATCH /v1/services/:name
@@ -890,7 +1157,8 @@ PATCH /v1/services/:name
 The request body must be a JSON object which represents a set of new definitions
 for the service.
 
-All standard service parameters can be modified. Refer to the [service](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) documentation on
+All standard service parameters can be modified. Refer to the
+[service](../../maxscale-management/deployment/maxscale-configuration-guide.md#service) documentation on
 the details of these parameters.
 
 In addition to the standard service parameters, router parameters can be updated
@@ -900,7 +1168,7 @@ parameters can be updated at runtime.
 
 The following example modifies a service by changing the `user` parameter to `admin`.
 
-```
+```javascript
 {
     "data": {
         "attributes": {
@@ -912,13 +1180,13 @@ The following example modifies a service by changing the `user` parameter to `ad
 }
 ```
 
-**Response**
+#### Response
 
 Service is modified:
 
 `Status: 204 No Content`
 
-#### Update service relationships
+### Update service relationships
 
 ```
 PATCH /v1/services/:name/relationships/:type
@@ -932,11 +1200,11 @@ value of the _data_ field must be an array of relationship objects that define
 the _id_ and _type_ fields of the relationship. This object will replace the
 existing relationships of this type for the service.
 
-_Note:_ The order of the values in the `filters` relationship will define the
-order the filters are set up in. The order in which the filters appear in the
-array will be the order in which the filters are applied to each query. Refer
-to the [filters](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter
-for more details.
+*Note:* The order of the values in the `filters` relationship will define the
+ order the filters are set up in. The order in which the filters appear in the
+ array will be the order in which the filters are applied to each query. Refer
+ to the [`filters`](../../maxscale-management/deployment/maxscale-configuration-guide.md#filters) parameter
+ for more details.
 
 The following is an example request and request body that defines a single
 server relationship for a service that is equivalent to a `servers=my-server`
@@ -952,7 +1220,8 @@ PATCH /v1/services/my-rw-service/relationships/servers
 }
 ```
 
-All relationships for a service can be deleted by sending an empty array as th&#x65;_&#x64;ata_ field value. The following example removes all servers from a service.
+All relationships for a service can be deleted by sending an empty array as the
+_data_ field value. The following example removes all servers from a service.
 
 ```
 PATCH /v1/services/my-rw-service/relationships/servers
@@ -962,7 +1231,7 @@ PATCH /v1/services/my-rw-service/relationships/servers
 }
 ```
 
-**Response**
+#### Response
 
 Service relationships modified:
 
@@ -972,7 +1241,7 @@ Invalid JSON body:
 
 `Status: 400 Bad Request`
 
-#### Stop a service
+### Stop a service
 
 ```
 PUT /v1/services/:name/stop
@@ -980,20 +1249,21 @@ PUT /v1/services/:name/stop
 
 Stops a started service.
 
-**Parameters**
+#### Parameters
 
 This endpoint supports the following parameters:
 
-* `force=yes`
-* Close all existing connections that were created through this listener.
+- `force=yes`
 
-**Response**
+  - Close all existing connections that were created through this listener.
+
+#### Response
 
 Service is stopped:
 
 `Status: 204 No Content`
 
-#### Start a service
+### Start a service
 
 ```
 PUT /v1/services/:name/start
@@ -1001,13 +1271,13 @@ PUT /v1/services/:name/start
 
 Starts a stopped service.
 
-**Response**
+#### Response
 
 Service is started:
 
 `Status: 204 No Content`
 
-#### Reload users of a service
+### Reload users of a service
 
 ```
 POST /v1/services/:name/reload
@@ -1015,44 +1285,46 @@ POST /v1/services/:name/reload
 
 Reloads the list of database users used for authentication.
 
-**Response**
+#### Response
 
 Users are reloaded:
 
 `Status: 204 No Content`
 
-#### Get service listeners
-
+### Get service listeners
 ```
 GET /v1/services/:name/listeners
 ```
 
-This endpoint is deprecated, use the [this](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the
+[this](maxscale-listener-resource.md#get-all-listeners) listeners endpoint instead.
 
-#### Get a single service listener
+### Get a single service listener
 
 ```
 GET /v1/services/:name/listeners/:listener
 ```
 
-This endpoint is deprecated, use the [this](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md)
+This endpoint is deprecated, use the [this](maxscale-listener-resource.md#get-a-listener)
 listeners endpoint instead.
 
-#### Create a new listener
+### Create a new listener
 
 ```
 POST /v1/services/:name/listeners
 ```
 
-This endpoint is deprecated, use the [this](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the
+[this](maxscale-listener-resource.md#create-a-new-listener) listeners endpoint instead.
 
-#### Destroy a listener
+### Destroy a listener
 
 ```
 DELETE /v1/services/:service/listeners/:name
 ```
 
-This endpoint is deprecated, use the [this](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the
+[this](maxscale-listener-resource.md#destroy-a-listener) listeners endpoint instead.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

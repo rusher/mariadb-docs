@@ -24,7 +24,7 @@ layout:
 
 * MariaDB Connector/Node.js 2.5.1 was released on 26 Oct 2020.
 * Please note: Newer releases exist within the MariaDB Connector/Node.js 2.5 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-251-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/2.x/2.5.1)
 * This release is Stable (GA) maturity.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs).
 

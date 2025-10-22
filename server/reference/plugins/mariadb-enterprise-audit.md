@@ -348,6 +348,21 @@ SHOW GLOBAL STATUS
 +---------------------+-------+
 ```
 
+### Audit Logging Buffer Writes
+
+{% hint style="info" %}
+Buffer writes are available from MariaDB Enterprise Server 11.8.
+{% endhint %}
+
+Audit log buffering is controlled by these variables:
+
+* `server_audit_file_buffer_size` — This defines the size of the buffer. The default value is `0`, meaning there's no buffering at all. Setting non-zero value enables the buffering with the buffer of the specified size aligned by `8192`. The maximum value is `65536`.&#x20;
+* `server_audit_sync_log_file` — This flushes the buffer to the log file. While the log record is in the buffer, it cannot be seen in the log file. If there aren't many events to log, the time before records can be observed can be significant. You can issue this statement to force writing the buffer to the file, making sure not to miss recent records:
+
+```sql
+SET GLOBAL server_audit_log_file=1
+```
+
 ## Forbid Uninstallation
 
 In a secure environment, MariaDB Enterprise Audit provides administrators with an audit trail of actions performed by users on the MariaDB Enterprise Server node. To protect the integrity of the audit trail, users should not be able to uninstall MariaDB Enterprise Audit. If the server-audit option is set to `FORCE_PLUS_PERMANENT`, MariaDB Enterprise Server will prevent MariaDB Enterprise Audit from being uninstalled:

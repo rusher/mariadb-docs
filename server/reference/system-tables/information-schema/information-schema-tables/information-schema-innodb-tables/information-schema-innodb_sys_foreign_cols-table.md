@@ -6,12 +6,36 @@ The `PROCESS` [privilege](../../../../sql-statements/account-management-sql-stat
 
 It has the following columns:
 
-| Column         | Description                                                                                                                                  |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| ID             | Foreign key index associated with this column, matching the [INNODB\_SYS\_FOREIGN.ID](information-schema-innodb_sys_foreign-table.md) field. |
-| FOR\_COL\_NAME | Child column name.                                                                                                                           |
-| REF\_COL\_NAME | Parent column name.                                                                                                                          |
-| POS            | Ordinal position of the column in the table, starting from 0.                                                                                |
+| Column         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID             | <p>Foreign key index associated with this column, matching the <a href="information-schema-innodb_sys_foreign-table.md">INNODB_SYS_FOREIGN.ID</a> field. </p><p></p><p>Prior to <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1">MariaDB 12.1</a>, this is preceded by the database name. From MariaDB 12.1, foreign key names are only required to be unique per table, not per database, so the redundant database name is not shown.</p> |
+| FOR\_COL\_NAME | Child column name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| REF\_COL\_NAME | Parent column name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| POS            | Ordinal position of the column in the table, starting from 0.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+
+## Examples
+
+Prior to MariaDB 12.1:
+
+```sql
+SELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_FOREIGN_COLS\G
+*************************** 1. row ***************************
+          ID: test/fk_book_author
+FOR_COL_NAME: author_id
+REF_COL_NAME: id
+         POS: 0
+```
+
+From MariaDB 12.1:
+
+```sql
+SELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_FOREIGN_COLS\G
+*************************** 1. row ***************************
+          ID: fk_book_author
+FOR_COL_NAME: author_id
+REF_COL_NAME: id
+         POS: 0
+```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

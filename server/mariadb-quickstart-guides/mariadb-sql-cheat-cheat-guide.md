@@ -12,7 +12,7 @@ _(If you need a basic tutorial on how to use the MariaDB database server and exe
 
 * [**CREATE DATABASE**](../reference/sql-statements/data-definition/create/create-database.md): Used to create a new, empty database.
 * [**DROP DATABASE**](../reference/sql-statements/data-definition/drop/drop-database.md): Used to completely destroy an existing database.
-* **USE**: Used to select a default database for subsequent statements.
+* [**USE**](../reference/sql-statements/administrative-sql-statements/use-database.md): Used to select a default database for subsequent statements.
 * [**CREATE TABLE**](../reference/sql-statements/data-definition/create/create-table.md): Used to create a new table, which is where your data is actually stored.
 * [**ALTER TABLE**](../reference/sql-statements/data-definition/alter/alter-table/): Used to modify an existing table's definition (e.g., add/remove columns, change types).
 * [**DROP TABLE**](../reference/sql-statements/data-definition/drop/drop-table.md): Used to completely destroy an existing table and all its data.

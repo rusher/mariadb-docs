@@ -1,5 +1,7 @@
 # What's New in MariaDB Enterprise Server 11.8
 
+{% include "../../.gitbook/includes/latest-es-11.8.md" %}
+
 MariaDB Enterprise Server 11.8 introduces a wide range of enhancements spanning developer productivity, security, compatibility, observability, and support for modern workloads like vector search. The MariaDB Enterprise Server 11.8.2-0 Technical Preview adds the innovations from the MariaDB Community Server releases 11.5 to 11.8 to MariaDB Enterprise Server 11.4.
 
 ## Vector Search <a href="#vector-search" id="vector-search"></a>
@@ -20,6 +22,9 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 * **Distance Functions**:
   * `VEC_DISTANCE()` auto-selects the best distance function based on the index configuration.
+* Optimization that makes vector search 30-50% (depending on the data) faster for the same recall. Enabled automatically for applicable vectors. Vectors are applicable if they can be gradually truncated to trade some recall for speed. For example matryoshka embeddings as produced by OpenAI are applicable.
+* Namespace support was added to HashiCorp Vault in MariaDB. See the [Hashicorp namespaces documentation](https://developer.hashicorp.com/vault/docs/enterprise/namespaces) for details.
+* [Audit logging buffer writes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit#audit-logging-buffer-writes) are possible now.
 
 ## Indexes, SQL Functions, and Query Enhancements <a href="#indexes-sql-functions-and-query-enhancements" id="indexes-sql-functions-and-query-enhancements"></a>
 
@@ -27,6 +32,14 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Multi-Table DELETE Enhancements**: Support for `ORDER BY and LIMIT`.
 * **Single-Table DELETE Enhancements**: Now it allows index hints.
 * **NEW SHOW CREATE SERVER**: Recreate server objects similar to [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table).
+* **DBMS\_OUTPUT:** Messages submitted by `DBMS_OUTPUT.PUT_LINE()` are not sent to the client until the sending subprogram or trigger completes.
+
+## Performance Improvements <a href="#data-types-and-compatibility" id="data-types-and-compatibility"></a>
+
+* Optimization that makes vector search 30-50% faster (more details in the [Vector Search](whats-new-in-mariadb-enterprise-server-11.8.md#vector-search) section)
+* Segmented key cache for [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria)
+  * [aria\_pagecache\_segments](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_pagecache_segments) system variable
+* Add [analyze\_max\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#analyze_max_length) option to not collect statistics for long char/varchars, see [Skipping Long CHAR/VARCHAR Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table#skipping-long-char-varchar-columns) for more information
 
 ## Data Types and Compatibility <a href="#data-types-and-compatibility" id="data-types-and-compatibility"></a>
 
@@ -58,8 +71,10 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
     ```sql
     CREATE OR REPLACE PROCEDURE p1(param1 INT, param2 INT DEFAULT 1)
     ```
+* Associative arrays: `DECLARE TYPE .. TABLE OF .. INDEX BY`&#x20;
+* Added `caching_sha2_password` plugin, see [Authentication Plugin - SHA-256](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-sha-256) for more information
 
-### Enhancements to System Versioned Tables <a href="#enhancements-to-system-versioned-tables" id="enhancements-to-system-versioned-tables"></a>
+## Enhancements to System Versioned Tables <a href="#enhancements-to-system-versioned-tables" id="enhancements-to-system-versioned-tables"></a>
 
 *   System Versioned Tables is a powerful feature for auditing changes to data. Enabling System Versioned Tables is as easy as creating a table by using
 
@@ -80,7 +95,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
     ALTER TABLE contracts ADD COLUMN rs TIMESTAMP(6) AS ROW START, ADD COLUMN re TIMESTAMP(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re);
     ```
 
-### Security <a href="#security" id="security"></a>
+## Security <a href="#security" id="security"></a>
 
 * **New** [**Authentication Plugin—PARSEC**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-parsec):
   * Based on elliptic curve cryptography.
@@ -112,7 +127,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
       CREATE USER dba IDENTIFIED VIA UNIX_SOCKET AS 'jack' OR IDENTIFIED VIA UNIX_SOCKET AS 'jill';
       ```
 
-### Replication & Clustering <a href="#replication-clustering" id="replication-clustering"></a>
+## Replication & Clustering <a href="#replication-clustering" id="replication-clustering"></a>
 
 * Improved Replication Lag Monitoring:
   *   [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) now includes:\\
@@ -136,11 +151,12 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **New Option – `--slave-abort-blocking-timeout`**: Kills blocking non-replication queries after a timeout.
 * **Galera SST Automation**: SST user is now auto-created and managed internally.
 
-### Key Management <a href="#key-management" id="key-management"></a>
+## Key Management <a href="#key-management" id="key-management"></a>
 
 * [**KMS Plugin**](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins) **Enhancement**: The file\_key\_management plugin can now read keys from a **Unix socket**, not just from files.
+* **File Key Management Encryption Plugin:** Added key rotation capability; see [this page](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin#key-rotation) for details. In addition, a new Information Schema table was added, [FILE\_KEY\_MANAGEMENT\_KEYS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-files-table/information-schema-file_key_management_keys).
 
-### Observability & Information Schema <a href="#observability-information-schema" id="observability-information-schema"></a>
+## Observability & Information Schema <a href="#observability-information-schema" id="observability-information-schema"></a>
 
 * Temporary File Disk Space Limits:
   * `max_tmp_session_space_usage` and `max_tmp_total_space_usage` prevent runaway disk usage.
@@ -169,6 +185,10 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Enhanced ANALYZE FORMAT=JSON**:
   * Includes `r_index_rows, r_icp_filtered`.
 * **Thread Naming for Diagnostics**: Thread names are now more descriptive.
+* **Galera Information Schema:** New [WSREP\_BF\_ABORTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_bf_aborts) Information Schema table.
+* **Galera Information Schema:** New [WSREP\_THD\_STATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_thd_state) and [WSREP\_THD\_STATE\_HISTORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_thd_state_history) Information Schema tables.
+* **Galera Information Schema:** New Information Schema table [WSREP\_CONNECTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_connections).
+* **Galera Information Schema:** New Information Schema [WSREP\_CERT\_KEYS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_cert_keys) and [WSREP\_CERT\_KEYS\_HISTORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_cert_keys_history) tables.
 
 ## Tool Improvements <a href="#tool-improvements" id="tool-improvements"></a>
 
@@ -180,6 +200,11 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
   * `--dir=<path>` restores from the dumped directory structure.
   * Supports `--database, --table, --ignore-database, --ignore-table` for selective restore.
   * `--innodb-optimize-keys`: defers index creation to speed up data loads.
+* **mariadb-test (mtr):**
+  * `mtr` can be started with the `--enable_serveroutput` option to enable `DBMS_OUTPUT` messages. See [this section](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-test/mariadb-test-overview#options) for details.
+* **mariadb (command-line client)**
+  * New `--enable_serveroutput` option to enable `DBMS_OUTPUT` messages at start time. See [this section](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#options) for details.
+  * New `serveroutput` and `noserveroutput` command to enable and disable those messages at runtime. See [this section](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#mariadb-commands) for details.
 
 ## Userstat Plugin Enhancements <a href="#userstat-plugin-enhancements" id="userstat-plugin-enhancements"></a>
 
@@ -191,13 +216,13 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 ## Available Versions <a href="#available-versions" id="available-versions"></a>
 
-* [MariaDB Enterprise Server 11.8.2-0](release-notes-for-mariadb-enterprise-server-11.8.2-0-tech-preview.md) Tech Preview
+* [MariaDB Enterprise Server 11.8.2-0](11.8.2-0.md) Tech Preview
 
 ## Installation Instructions <a href="#installation-instructions" id="installation-instructions"></a>
 
 * [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
 * [Deploy MariaDB Enterprise with Package Tarballs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/package-tarballs)
-* [Deploy MariaDB Enterprise with Docker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker)
+* [Deploy MariaDB Enterprise with Docker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker)
 * [Enterprise Cluster Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 * [Primary/Replica Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
 * [ColumnStore Object Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
@@ -210,7 +235,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 ## Upgrade Instructions <a href="#upgrade-instructions" id="upgrade-instructions"></a>
 
-* [Upgrade to MariaDB Enterprise Server 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/mariadb-enterprise-server-upgrade-paths/mariadb-enterprise-server-11.8/upgrade-to-mariadb-enterprise-server-11.8)
+* [Upgrade to MariaDB Enterprise Server 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/mariadb-enterprise-server-11.8/upgrade-to-mariadb-enterprise-server-11.8)
 
 ## What's new in older release series <a href="#whats-new-in-older-release-series" id="whats-new-in-older-release-series"></a>
 

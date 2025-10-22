@@ -5,7 +5,7 @@
 ## About this Release
 
 * MariaDB Connector/J 3.5.5 was released on 8 Aug 2025
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/3.5/mariadb-connector-j-3-5-5-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/3.5/3.5.5)
 * This release is Stable (GA) maturity
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j)
 

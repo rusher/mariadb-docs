@@ -1,12 +1,11 @@
 # MaxScale Mirror
 
-## Mirror
-
-### Overview
+## Overview
 
 The `mirror` router is designed for data consistency and database behavior
 verification during system upgrades. It allows statement duplication to multiple
-servers in a manner similar to that of the [Tee filter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-tee-filter.md) with exporting of collected query metrics.
+servers in a manner similar to that of the [Tee filter](../maxscale-filters/maxscale-tee-filter.md)
+with exporting of collected query metrics.
 
 For each executed query the router exports a JSON object that describes the
 query results and has the following fields:
@@ -31,9 +30,9 @@ the following fields:
 | duration | Query duration in milliseconds             |
 | type     | Result type, one of ok, error or resultset |
 
-### Settings
+## Settings
 
-#### `main`
+### `main`
 
 * Type: target
 * Mandatory: Yes
@@ -47,9 +46,9 @@ the client connection will be closed. Connection failures to other targets are
 not fatal errors and any open connections to them will be closed. The router
 does not create new connections after the initial connections are created.
 
-#### `exporter`
+### `exporter`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: Yes
 * Dynamic: Yes
 * Values: `log`, `file`, `kafka`
@@ -65,7 +64,7 @@ values are:
 * Exports metrics to a Kafka broker. Configured with the [kafka\_broker](maxscale-mirror.md#kafka_broker) and [kafka\_topic](maxscale-mirror.md#kafka_topic)
   parameters.
 
-#### `file`
+### `file`
 
 * Type: string
 * Default: No default value
@@ -82,7 +81,7 @@ the value for it to take effect.
 
 This is a mandatory parameter when configured with `exporter=file`.
 
-#### `kafka_broker`
+### `kafka_broker`
 
 * Type: string
 * Default: No default value
@@ -94,7 +93,7 @@ with optional ports in `host:port` format.
 
 This is a mandatory parameter when configured with `exporter=kafka`.
 
-#### `kafka_topic`
+### `kafka_topic`
 
 * Type: string
 * Default: No default value
@@ -105,9 +104,9 @@ The kafka topic where the metrics are sent.
 
 This is a mandatory parameter when configured with `exporter=kafka`.
 
-#### `on_error`
+### `on_error`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Default: `ignore`
 * Mandatory: No
 * Dynamic: Yes
@@ -124,9 +123,9 @@ What to do when a backend network connection fails. Accepted values are:
 This parameter was added in MaxScale 6.0. Older versions always ignored
 failing backends.
 
-#### `report`
+### `report`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Default: `always`
 * Mandatory: No
 * Dynamic: Yes
@@ -142,7 +141,7 @@ When to report the result of the queries. Accepted values are:
 This parameter was added in MaxScale 6.0. Older versions always reported the
 result.
 
-### Example Configuration
+## Example Configuration
 
 ```
 [server1]
@@ -179,7 +178,7 @@ service=Mirror-Router
 port=3306
 ```
 
-### Limitations
+## Limitations
 
 * Broken network connections are not recreated.
 * Prepared statements are not supported.

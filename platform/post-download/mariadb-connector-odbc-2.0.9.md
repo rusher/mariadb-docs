@@ -10,7 +10,7 @@ noIndex: true
 
 * MariaDB Connector/ODBC 2.0.9 was released on 16 Nov 2015.
 * Please note: Newer releases exist within the MariaDB Connector/ODBC 2.0 release series.
-* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-20-release-notes/mariadb-connector-odbc-209-release-notes)
+* [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/2.0/2.0.9)
 * This release is Beta maturity. Only Stable (GA) releases should be used in production.
 * For more information, see the [product documentation](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc).
 

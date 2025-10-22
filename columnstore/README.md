@@ -8,38 +8,38 @@ icon: table-columns
 
 # MariaDB ColumnStore
 
-{% content-ref url="columnstore-quickstart-guides/" %}
-[columnstore-quickstart-guides](columnstore-quickstart-guides/)
+{% content-ref url="mariadb-columnstore/columnstore-quickstart-guides/" %}
+[columnstore-quickstart-guides](mariadb-columnstore/columnstore-quickstart-guides/)
 {% endcontent-ref %}
 
-{% content-ref url="architecture/" %}
-[architecture](architecture/)
+{% content-ref url="mariadb-columnstore/architecture/" %}
+[architecture](mariadb-columnstore/architecture/)
 {% endcontent-ref %}
 
-{% content-ref url="management/" %}
-[management](management/)
+{% content-ref url="mariadb-columnstore/management/" %}
+[management](mariadb-columnstore/management/)
 {% endcontent-ref %}
 
-{% content-ref url="security/" %}
-[security](security/)
+{% content-ref url="mariadb-columnstore/security/" %}
+[security](mariadb-columnstore/security/)
 {% endcontent-ref %}
 
-{% content-ref url="use-cases/" %}
-[use-cases](use-cases/)
+{% content-ref url="mariadb-columnstore/use-cases/" %}
+[use-cases](mariadb-columnstore/use-cases/)
 {% endcontent-ref %}
 
-{% content-ref url="high-availability/" %}
-[high-availability](high-availability/)
+{% content-ref url="mariadb-columnstore/high-availability/" %}
+[high-availability](mariadb-columnstore/high-availability/)
 {% endcontent-ref %}
 
-{% content-ref url="clients-and-tools/" %}
-[clients-and-tools](clients-and-tools/)
+{% content-ref url="mariadb-columnstore/clients-and-tools/" %}
+[clients-and-tools](mariadb-columnstore/clients-and-tools/)
 {% endcontent-ref %}
 
-{% content-ref url="tutorials.md" %}
-[tutorials.md](tutorials.md)
+{% content-ref url="mariadb-columnstore/tutorials.md" %}
+[tutorials.md](mariadb-columnstore/tutorials.md)
 {% endcontent-ref %}
 
-{% content-ref url="reference/" %}
-[reference](reference/)
+{% content-ref url="mariadb-columnstore/reference/" %}
+[reference](mariadb-columnstore/reference/)
 {% endcontent-ref %}

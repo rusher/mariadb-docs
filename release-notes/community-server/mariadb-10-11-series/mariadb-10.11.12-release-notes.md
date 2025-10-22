@@ -2,7 +2,7 @@
 
 {% include "../../.gitbook/includes/latest-10-11.md" %}
 
-&#x20;<a href="mariadb-10.11.12-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
+<a href="mariadb-10.11.12-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-1011.md" class="button secondary">Overview of 10.11</a>
 
 [MariaDB 10.11](what-is-mariadb-1011.md) is a stable long term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028. It is an evolution of [MariaDB 10.10](../old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010.md) with several entirely new features.
 
@@ -153,12 +153,7 @@ could cause a crash in the optimizer. The essential part is that ON expression h
 
 ## Changelog
 
-For a complete list of changes made in [MariaDB 10.11.12](mariadb-10.11.12-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md).
-
-## Contributors
-
-For a full list of contributors to [MariaDB 10.11.12](mariadb-10.11.12-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-11-3-10-10-4-10-9-6-10-8-8-10-6-13-10-5-20-10-4-29-and-10-3-39-now-available/).
+For a complete list of changes made in [MariaDB 10.11.12](mariadb-10.11.12-release-notes.md), with links to detailed information on each push, see the [changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-12-changelog.md).
 
 {% include "../../.gitbook/includes/announce.md" %}
 

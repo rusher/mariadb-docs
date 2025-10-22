@@ -2,22 +2,22 @@
 
 ## Overview
 
-If you are looking to set up MariaDB Server, it is often easiest to use a repository. The MariaDB Foundation has a repository configuration tool and MariaDB Corporation provides two convenient shell scripts to configure access to their MariaDB Package Repositories:
+If you are looking to set up MariaDB Server, it is often easiest to use a repository. MariaDB Foundation has a repository configuration tool and MariaDB Corporation provides two convenient shell scripts to configure access to their MariaDB Package Repositories:
 
 * `mariadb_es_repo_setup` for MariaDB Enterprise Server, which can be downloaded from:
   * [https://dlm.mariadb.com/enterprise-release-helpers/mariadb\_es\_repo\_setup](https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup)
 * `mariadb_repo_setup` for MariaDB Community Server, which can be downloaded from:
   * [https://r.mariadb.com/downloads/mariadb\_repo\_setup](https://r.mariadb.com/downloads/mariadb_repo_setup)
 
-## Using the MariaDB Foundation's repository configuration tool
+## Using MariaDB Foundation's Repository Configuration Tool
 
 Visit [https://mariadb.org/download/?t=repo-config](https://mariadb.org/download/?t=repo-config) and follow the instructions from there. It will ask for your Linux distribution, desired MariaDB version, and the mirror to use, and will show what files to edit and what commands to run to configure a repository.
 
-## Using the MariaDB Corporation's repository setup scripts
+## Using MariaDB Corporation's Repository Setup Scripts
 
 Alternatively, you can run a convenient shell script that will automatically configure a repository for you.
 
-### Download and Verify the script
+### Download and Verify the Script
 
 The repository setup script can be downloaded and verified in the following way:
 
@@ -82,7 +82,7 @@ sudo zypper install curl
 {% endtab %}
 {% endtabs %}
 
-### Run the script
+### Run the Script
 
 After the script is downloaded you need to run it with `root` user permissions. This is normally accomplished by using the `sudo` command:
 
@@ -123,13 +123,14 @@ sudo ./mariadb_repo_setup
 
 ## Repositories
 
-The script will set up different repositories in a single repository configuration file. The primary two are the [MariaDB Community Server Repository](mariadb-package-repository-setup-and-usage.md#mariadb-community-server-repository), and the [MariaDB MaxScale Repository](mariadb-package-repository-setup-and-usage.md#mariadb-maxscale-repository).
+The script will set up different repositories in a single repository configuration file.
 
 The default repositories setup by `mariadb_es_repo_setup` are:
 
 * MariaDB Enterprise Server Repository
-* A MariaDB Enterprise Server Debug Repository (Ubuntu only)
+  * A MariaDB Enterprise Server Debug Repository (Ubuntu only)
 * MariaDB Enterprise MaxScale Repository
+* MariaDB Enterprise Tools Repository
 * MariaDB Tools Repository
 
 The default repositories set up by `mariadb_repo_setup` are:
@@ -176,7 +177,7 @@ The script supports Linux distributions that are officially supported by MariaDB
 The distributions currently supported by the script include:
 
 * Red Hat Enterprise Linux (RHEL and equivalents) 8, 9, and 10
-* Debian 11 (Bullseye), 12 (Bookworm), and 13 (Trixie, community server only)&#x20;
+* Debian 11 (Bullseye), 12 (Bookworm), and 13 (Trixie, community server only)
 * Ubuntu 22.04 LTS (Jammy), and 24.04 LTS (Noble)
 * SUSE Linux Enterprise Server (SLES) 12 and 15
 
@@ -296,15 +297,19 @@ For example:
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --write-to-stdout
 ```
 
-### Platform-Specific Behavior
+## Platform-Specific Behavior
 
-#### Platform-Specific Behavior on RHEL and CentOS
+{% tabs %}
+{% tab title="RHEL" %}
+#### Platform-Specific Behavior on RHEL and equivalents
 
-On Red Hat Enterprise Linux (RHEL) and CentOS, the MariaDB Package Repository setup script performs the following tasks:
+On Red Hat Enterprise Linux (RHEL) and equivalents, the MariaDB Package Repository setup script performs the following tasks:
 
 1. Creates a repository configuration file at `/etc/yum.repos.d/mariadb.repo`.
 2. Imports the GPG public key used to verify the signature of MariaDB software packages with `rpm --import` from `downloads.mariadb.com`.
+{% endtab %}
 
+{% tab title="Debian / Ubuntu" %}
 #### Platform-Specific Behavior on Debian and Ubuntu
 
 On Debian and Ubuntu, the MariaDB Package Repository setup script performs the following tasks:
@@ -319,48 +324,58 @@ Pin: origin downloads.mariadb.com
 Pin-Priority: 1000
 ```
 
-1. Imports the GPG public key used to verify the signature of MariaDB software package with `apt-key` from the `keyserver.ubuntu.com` key server.
-2. Updates the package cache with package definitions from the MariaDB Package Repository with `apt-get update`.
+1. Imports the GPG public key used to verify the signature of MariaDB software package
+2. Updates the package cache with package definitions from the MariaDB Package Repository with `apt update`.
+{% endtab %}
 
+{% tab title="SLES" %}
 #### Platform-Specific Behavior on SLES
 
 On SUSE Linux Enterprise Server (SLES), the MariaDB Package Repository setup script performs the following tasks:
 
 1. Creates a repository configuration file at `/etc/zypp/repos.d/mariadb.repo`.
 2. Imports the GPG public key used to verify the signature of MariaDB software packages with `rpm --import` from `downloads.mariadb.com`.
+{% endtab %}
+{% endtabs %}
 
-## Installing Packages with the MariaDB Package Repository
+## Installing Packages With the MariaDB Package Repository
 
 After setting up the MariaDB Package Repository, you can install the software packages in the supported repositories.
 
-### Installing Packages on RHEL and CentOS
+{% tabs %}
+{% tab title="RHEL" %}
+### Installing Packages on RHEL and equivalents
 
-To install MariaDB on Red Hat Enterprise Linux (RHEL) and CentOS, see the instructions at [Installing MariaDB Packages with YUM](rpm/yum.md#installing-mariadb-packages-with-yum). For example:
-
-```bash
-sudo yum install MariaDB-server MariaDB-client MariaDB-backup
-```
-
-To install MariaDB MaxScale on Red Hat Enterprise Linux (RHEL) and CentOS, see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
+To install MariaDB on Red Hat Enterprise Linux (RHEL) and equivalents, see the instructions at [Installing MariaDB Packages with YUM](rpm/yum.md#installing-mariadb-packages-with-yum). For example:
 
 ```bash
-sudo yum install maxscale
+sudo dnf install MariaDB-server MariaDB-client MariaDB-backup
 ```
 
+To install MariaDB MaxScale on Red Hat Enterprise Linux (RHEL) and equivalents, see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
+
+```bash
+sudo dnf install maxscale
+```
+{% endtab %}
+
+{% tab title="Debian / Ubuntu" %}
 ### Installing Packages on Debian and Ubuntu
 
 To install MariaDB on Debian and Ubuntu, see the instructions at [Installing MariaDB Packages with APT](installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt). For example:
 
 ```bash
-sudo apt-get install mariadb-server mariadb-client mariadb-backup
+sudo apt install mariadb-server mariadb-client mariadb-backup galera-4
 ```
 
 To install MariaDB MaxScale on Debian and Ubuntu, see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
 
 ```bash
-sudo apt-get install maxscale
+sudo apt install maxscale
 ```
+{% endtab %}
 
+{% tab title="SLES" %}
 ### Installing Packages on SLES
 
 To install MariaDB on SUSE Linux Enterprise Server (SLES), see the instructions at [Installing MariaDB Packages with ZYpp](rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp). For example:
@@ -374,6 +389,8 @@ To install MariaDB MaxScale on SUSE Linux Enterprise Server (SLES), see the inst
 ```bash
 sudo zypper install maxscale
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Versions
 
@@ -383,6 +400,7 @@ sudo zypper install maxscale
 
 | Version    | sha256sum                                                          |
 | ---------- | ------------------------------------------------------------------ |
+| 2025-10-22 | `1f584ffd368d18c64b8820bf6cd9b1114dda11a0ecf9524be3c967a3a5be941b` |
 | 2025-09-08 | `c33b022c2cc325fa50be62eae070ea0bdcaf85367f840accac7acaeea1e8a972` |
 | 2025-06-04 | `4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0` |
 | 2025-01-16 | `99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe` |

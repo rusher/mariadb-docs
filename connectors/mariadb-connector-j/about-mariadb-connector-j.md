@@ -4,7 +4,7 @@
 
 {% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/cE4eh1fj6G5Yt6gTKoau/" %}
 
-<p align="center"><a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector/" class="button primary">Download MariaDB Connector/J</a> <a href="mariadb-connector-j-releases.md" class="button secondary">List of MariaDB Connector/J Releases</a></p>
+<p align="center"><a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector/" class="button primary">Download MariaDB Connector/J</a> <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/all-releases" class="button secondary">List of MariaDB Connector/J Releases</a></p>
 
 MariaDB Connector/J is used to connect applications developed in Java to MariaDB and MySQL databases using the standard JDBC API. The library is LGPL licensed.
 
@@ -23,7 +23,7 @@ MariaDB Connector/J releases older than 1.2.0 may be compatible with server vers
 To determine which MariaDB Connector/J release series would be best to use for each Java version, please see the following table:
 
 | Java Version(s)                            | Recommended MariaDB Connector/J Release Series                                | JDBC Version |
-|--------------------------------------------| ----------------------------------------------------------------------------- | ------------ |
+| ------------------------------------------ | ----------------------------------------------------------------------------- | ------------ |
 | Java 25, Java 21, Java 17, Java 11, Java 8 | MariaDB Connector/J 3.5, 3.4, 3.3\[[1](about-mariadb-connector-j.md#_note-0)] | JDBC 4.2     |
 | Java 17, Java 11, Java 8                   | MariaDB Connector/J 2.7                                                       | JDBC 4.2     |
 
@@ -110,7 +110,7 @@ final HikariDataSource ds = new HikariDataSource();
         ds.setAutoCommit(false);
 ```
 
-Please note that the driver class provided by MariaDB Connector/J \*\*is not `com.mysql.jdbc.Driver` but \`org.mariadb.jdbc.Driver!
+Please note that the driver class provided by MariaDB Connector/J **is not `com.mysql.jdbc.Driver` but `org.mariadb.jdbc.Driver`**!
 
 The `org.mariadb.jdbc.MariaDbDataSource` class can be used when the pool datasource configuration only permits the java.sql.Datasource implementation.
 
@@ -197,7 +197,6 @@ General remark: Unknown options are accepted and silently ignored.
 The following options are currently supported.
 
 ### Essential Parameters
-
 
 #### **allowLocalInfile**
 
@@ -305,6 +304,21 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Alias: enabledSSLProtocolSuites
 * Introduced: 1.5.0
 
+#### **fallbackToSystemKeyStore**
+
+* Description: keystoreXXX options are used to permit mutual authentication. When keystore option is not specified, this setting determines the connector's behavior: if set to false, not using any keystore; if set to true, the connector will follow standard Java convention and use the trust store defined by the "javax.net.ssl.trustStore" system property. 
+* Data Type: `boolean`
+* Default Value: `false`
+* Introduced: 3.3.2
+
+#### **fallbackToSystemTrustStore**
+
+* Description: Server certificates can be validated using either the serverSslCert or trustStore options. When neither option is specified, this setting determines the connector's behavior: if set to false, all certificates will be rejected; if set to true, the connector will follow standard Java convention and use the trust store defined by the "javax.net.ssl.trustStore" system property.
+* Data Type: `boolean`
+* Default Value: `false`
+* Introduced: 3.3.2
+
+
 #### **disableSslHostnameVerification**
 
 * Description: _deprecated, use `sslMode` instead_ When using ssl, the driver checks the hostname against the server's identity as presented in the server's certificate (checking alternative names or the certificate CN) to prevent man-in-the-middle attacks. This option permits deactivating this validation. Hostname verification is disabled when the trustServerCertificate option is set
@@ -328,7 +342,6 @@ more information on [Using TLS/SSL with MariaDB java connector](using-tls-ssl-wi
 * Default Value: `false`
 * Introduced: 1.1.1
 * Deprecated: 3.0.0
-
 
 ### Pool Parameters
 
@@ -389,7 +402,6 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 2.2.0
-
 
 ### Infrequently Used Parameters
 
@@ -599,8 +611,8 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 #### **rewriteBatchedStatements**
 
 * Description: For insert queries, rewrite batchedStatement to execute in a single executeQuery.
-    * example: 'insert into ab (i) values (?)' with first batch values = 1, second = 2 will be rewritten as 'insert into ab (i) values (1), (2)'.
-    * When enabled, the `useServerPrepStmts` option will be forced to false
+  * example: 'insert into ab (i) values (?)' with first batch values = 1, second = 2 will be rewritten as 'insert into ab (i) values (1), (2)'.
+  * When enabled, the `useServerPrepStmts` option will be forced to false
 * Data Type: `boolean`
 * Default Value: `false`
 * Introduced: since 1.1.8, on 3 version since 3.5.6
@@ -770,8 +782,6 @@ See the [pool documentation](pool-datasource-implementation.md) for pool configu
 * Data Type: `boolean`
 * Default Value: `true`
 * Introduced: 1.0.0
-
-
 
 ### **Removed options**
 

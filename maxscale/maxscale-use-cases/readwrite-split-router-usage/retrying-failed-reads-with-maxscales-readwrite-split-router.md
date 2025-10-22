@@ -1,6 +1,6 @@
 # Retrying Failed Reads with MaxScale's Read/Write Split Router
 
-The [Read/Write Split Router (readwritesplit)](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) routes write queries to the primary server and load balances read-only queries between one or more replica servers. If a read-only query fails, then the router can retry the query on a different server.
+The [Read/Write Split Router (readwritesplit)](../../reference/maxscale-routers/maxscale-readwritesplit.md) routes write queries to the primary server and load balances read-only queries between one or more replica servers. If a read-only query fails, then the router can retry the query on a different server.
 
 ## Configuring Retries for Failed Reads
 

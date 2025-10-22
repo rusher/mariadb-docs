@@ -6,15 +6,11 @@ PHP5 may give an error if used with the old connect method:
 'mysql_connect(): Headers and client library minor version mismatch. Headers:50156 Library:50206'
 ```
 
-This is because the library wrongly checks and expects that the client library\
-must be the exact same version as PHP was compiled with. You would get the\
-same error if you tried to upgrade just the MySQL client library without\
-upgrading PHP at the same time.
+This is because the library wrongly checks and expects that the client library must be the exact same version as PHP was compiled with. You would get the same error if you tried to upgrade just the MySQL client library without upgrading PHP at the same time.
 
 Ways to fix this issue:
 
-1. Switch to using the [mysqlnd driver](https://dev.mysql.com/downloads/connector/php-mysqlnd/) in\
-   PHP (Recommended solution).
+1. Switch to using the [mysqlnd driver](https://dev.mysql.com/downloads/connector/php-mysqlnd/) in PHP (Recommended solution).
 2. Run with a lower [error reporting level](https://php.net/error-reporting):
 
 ```php

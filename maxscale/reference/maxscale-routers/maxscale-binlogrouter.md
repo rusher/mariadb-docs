@@ -1,5 +1,7 @@
 # MaxScale Binlogrouter
 
+## Overview
+
 The binlogrouter is a router that acts as a replication proxy for MariaDB
 primary-replica replication. The router connects to a primary, retrieves the binary
 logs and stores them locally. Replica servers can connect to MaxScale like they
@@ -15,7 +17,7 @@ will create a separate connection. This reduces the amount of work the primary
 database has to do which can be significant if there are a large number of
 replicating replicas.
 
-### Binlog purge, archive and compress
+## Binlog purge, archive and compress
 
 File purge and archive are mutually exclusive. Archiving simply means that
 a binlog is moved to another directory. That directory can be mounted to another
@@ -32,16 +34,21 @@ enough behind the current GTID that an older file needs to be opened.
 
 There is no automated way as of yet for the binlogrouter to use archived files,
 but should the need arise files can be copied from the archive to the binlog
-directory. See ['Modifying binlog files manually'](maxscale-binlogrouter.md#modifying-binlog-files-manually).
+directory. See ['Modifying binlog files manually'](#modifying-binlog-files-manually).
 
 The related configuration options, which are explained in more detail in the
-configuration section are:[_expiration\_mode_](maxscale-binlogrouter.md#expiration_mode) _Select purge or archive._ [datadir](maxscale-binlogrouter.md#datadir) Directory where binlog files are stored (the default is usually fine).[_archivedir_](maxscale-binlogrouter.md#archivedir) _Directory to which files are archived. This directory_
-\&#xNAN;_must exist when MaxScale is started._ [expire\_log\_minimum\_files](maxscale-binlogrouter.md#expire_log_minimum_files) The minimum number of
-binlogs to keep before purge or archive is allowed.[_expire\_log\_duration_](maxscale-binlogrouter.md#expire_log_duration) _Duration from the last file_
-\&#xNAN;_modification until the binlog is eligible for purge or archive._ [compression\_algorithm](maxscale-binlogrouter.md#compression_algorithm) Select a compression algorithm
-or `none` for no compression. Currently only zstandard is supported.
-
-* [number\_of\_noncompressed\_files](maxscale-binlogrouter.md#number_of_noncompressed_files) The minimum number of
+configuration section are:
+* [_expiration\_mode_](#expiration_mode) Select purge or archive.
+* [datadir](#datadir) Directory where binlog files are stored (the default is usually fine).
+* [_archivedir_](#archivedir) _Directory to which files are archived. This directory
+  must exist when MaxScale is started.
+* [expire\_log\_minimum\_files](#expire_log_minimum_files) The minimum number of
+binlogs to keep before purge or archive is allowed.
+* [_expire\_log\_duration_](#expire_log_duration) Duration from the last file
+  modification until the binlog is eligible for purge or archive.
+* [compression\_algorithm](#compression_algorithm) Select a compression algorithm
+  or `none` for no compression. Currently only zstandard is supported.
+* [number\_of\_noncompressed\_files](#number_of_noncompressed_files) The minimum number of
   binlogs not to compress.
 
 Following are example settings where it is expected that a
@@ -56,11 +63,11 @@ compression_algorithm=zstandard
 number_of_noncompressed_files=2
 ```
 
-### Modifying binlog files manually
+## Modifying binlog files manually
 
 There is usually no reason to modify the contents of the binlog directory.
 Changing the contents can cause **failures** if not done correctly. Never make
-any changes if running a version prior to 23.08, except when a [bootstrap](maxscale-binlogrouter.md#bootstrap-binlogrouter) is needed.
+any changes if running a version prior to 23.08, except when a [bootstrap](#bootstrap-binlogrouter) is needed.
 
 A binlog file has the name .\<sequence\_number>. The basename is decided
 by the primary server. The sequence number increases by one for each file and is six
@@ -87,7 +94,7 @@ As of version 24.02 any binlog except the latest one can be manually compressed,
 zstd --rm -z binlog.001234
 ```
 
-### Supported SQL Commands
+## Supported SQL Commands
 
 The binlogrouter supports a subset of the SQL constructs that the MariaDB server
 supports. The following commands are supported:
@@ -129,7 +136,7 @@ as binlogrouter only supports GTID based replication.
   must be one of the names shown in `SHOW BINARY LOGS`. The version of this
   command which accepts a timestamp is not currently supported.
   Automatic purging is supported using the configuration
-  parameter [expire\_log\_duration](maxscale-binlogrouter.md#expire_log_duration).
+  parameter [expire\_log\_duration](#expire_log_duration).
   The files are purged in the order they were created. If a file to be purged
   is detected to be in use, the purge stops. This means that the purge will
   stop at the oldest file that a replica is still reading.
@@ -206,19 +213,19 @@ as binlogrouter only supports GTID based replication.
   coordinates of the binlogrouter. In addition to these, the `server_id`
   variable will return the configured server ID of the binlogrouter.
 
-### Semi-sync replication
+## Semi-sync replication
 
 If the server from which the binlogrouter replicates from is using semi-sync
 replication, the binlogrouter will acknowledge the replicated events.
 
-### Settings
+## Settings
 
 The binlogrouter is configured similarly to how normal routers are configured in
 MaxScale. It requires at least one listener where clients can connect to and one
 server from which the database user information can be retrieved. An example
-configuration can be found in the [example](maxscale-binlogrouter.md#example) section of this document.
+configuration can be found in the [example](#example) section of this document.
 
-#### `datadir`
+### `datadir`
 
 * Type: path
 * Mandatory: No
@@ -227,7 +234,7 @@ configuration can be found in the [example](maxscale-binlogrouter.md#example) se
 
 Directory where binary log files are stored.
 
-#### `archivedir`
+### `archivedir`
 
 * Type: string
 * Mandatory: Yes
@@ -247,7 +254,7 @@ s3fs my-bucket /home/joe/S3_bucket_mount/ -o umask=0077
 
 The directory must exist when MaxScale starts.
 
-#### `server_id`
+### `server_id`
 
 * Type: count
 * Mandatory: No
@@ -257,18 +264,18 @@ The directory must exist when MaxScale starts.
 The server ID that MaxScale uses when connecting to the primary and when serving
 binary logs to the replicas.
 
-#### `net_timeout`
+### `net_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `10s`
 
 Network connection and read timeout for the connection to the primary.
 
-#### `select_master`
+### `select_master`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -297,18 +304,18 @@ GTID. If no GTID has been replicated, the router will start replication from the
 start. Manual configuration of the GTID can be done by first configuring the
 replication manually with `CHANGE MASTER TO`.
 
-#### `expiration_mode`
+### `expiration_mode`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Dynamic: No
 * Values: `purge`, `archive`
 * Default: `purge`
 
 Choose whether expired logs should be purged or archived.
 
-#### `expire_log_duration`
+### `expire_log_duration`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: `0s`
@@ -318,14 +325,14 @@ This is similar to the server system variable.
 
 A value of `0s` turns off purging.
 
-[expire\_log\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#expire_logs_days).
+[expire\_log\_days](../../../server/ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days).
 
 The duration is measured from the last modification of the log file. Files are
 purged in the order they were created. The automatic purge works in a similar
 manner to `PURGE BINARY LOGS TO <filename>` in that it will stop the purge if
 an eligible file is in active use, i.e. being read by a replica.
 
-#### `expire_log_minimum_files`
+### `expire_log_minimum_files`
 
 * Type: number
 * Mandatory: No
@@ -335,15 +342,15 @@ an eligible file is in active use, i.e. being read by a replica.
 The minimum number of log files the automatic purge keeps. At least one file
 is always kept.
 
-#### `compression_algorithm`
+### `compression_algorithm`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `none`, `zstandard`
 * Default: `none`
 
-#### `number_of_noncompressed_files`
+### `number_of_noncompressed_files`
 
 * Type: count
 * Mandatory: No
@@ -353,9 +360,9 @@ is always kept.
 The minimum number of log files that are not compressed. At least one file
 is not compressed.
 
-#### `ddl_only`
+### `ddl_only`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: No
 * Default: false
@@ -367,7 +374,7 @@ database. As only the DDL events are stored, it becomes very easy to set up an
 empty server with no data in it by simply pointing it at a binlogrouter instance
 that has `ddl_only` enabled.
 
-#### `encryption_key_id`
+### `encryption_key_id`
 
 * Type: string
 * Mandatory: No
@@ -375,7 +382,7 @@ that has `ddl_only` enabled.
 * Default: `""`
 
 Encryption key ID used to encrypt the binary logs. If configured, an [Encryption
-Key Manager](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+Key Manager](../../maxscale-management/deployment/maxscale-configuration-guide.md)
 must also be configured and it must contain the key with the given ID. If the
 encryption key manager supports versioning, new binary logs will be encrypted
 using the latest encryption key. Old binlogs will remain encrypted with older
@@ -394,9 +401,9 @@ this is possible if the data is replicated to a second MaxScale server that uses
 a different encryption key. The same approach can also be used to decrypt
 binlogs.
 
-#### `encryption_cipher`
+### `encryption_cipher`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: No
 * Values: `AES_CBC`, `AES_CTR`, `AES_GCM`
@@ -414,20 +421,22 @@ Possible values are:
 * `AES_CTR`
 * [AES in Counter Mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_\(CTR\)).
 
-#### `rpl_semi_sync_slave_enabled`
+### `rpl_semi_sync_slave_enabled`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: false
 * Dynamic: Yes
 
-Enable [semi-synchronous](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication)
+Enable
+[semi-synchronous](../../../server/ha-and-performance/standard-replication/semisynchronous-replication.md)
 replication when replicating from a MariaDB server. If enabled, the binlogrouter
-will send acknowledgment for each received event. Note that the [rpl\_semi\_sync\_master\_enabled](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication#rpl_semi_sync_master_enabled)
+will send acknowledgment for each received event. Note that the
+[rpl\_semi\_sync\_master\_enabled](../../../server/ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled)
 parameter must be enabled in the MariaDB server where the replication is done
 from for the semi-synchronous replication to take place.
 
-### New installation
+## New installation
 
 1. Configure and start MaxScale.
 2. If you have not configured `select_master=true` (automatic
@@ -450,7 +459,7 @@ START SLAVE;
 SHOW SLAVE STATUS \G
 ```
 
-### Upgrading from legacy versions
+## Upgrading from legacy versions
 
 Binlogrouter does not read any of the data that a version prior to 2.5
 has saved. By default binlogrouter will request the replication stream
@@ -459,7 +468,7 @@ for new systems. If a system is live, the entire replication data probably
 does not exist, and if it does, it is not necessary for binlogrouter to read
 and store all the data.
 
-#### Before you start
+### Before you start
 
 * Binlogrouter uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) which has three kernel limits.
   While Binlogrouter uses a modest number of inotify instances, the limit `max_user_instances` applies to the total
@@ -469,12 +478,12 @@ and store all the data.
 * Note that binlogrouter only supports GTID based replication.
 * Make sure that the configured data directory for the new binlogrouter
   is different from the old one, or move old data away.
-  See [datadir](maxscale-binlogrouter.md#datadir).
+  See [datadir](#datadir).
 * If the primary contains binlogs from the blank state, and there
   is a large amount of data, consider purging old binlogs.
-  See [Using and Maintaining the Binary Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log).
+  See [Using and Maintaining the Binary Log](../../../server/server-management/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log.md)
 
-#### Deployment
+### Deployment
 
 The method described here inflicts the least downtime. Assuming you have
 configured MaxScale version 2.5 or newer, and it is ready to go:
@@ -493,7 +502,7 @@ SHOW SLAVE STATUS \G
 
 1. Stop the old version of MaxScale, and start the new one.
    Verify routing functionality.
-2. Issue a `CHANGE MASTER TO` command, or use [select\_master](maxscale-binlogrouter.md#select_master).
+2. Issue a `CHANGE MASTER TO` command, or use [select\_master](#select_master).
 
 ```
 mariadb -u USER -pPASSWORD -h maxscale-IP -P binlog-PORT
@@ -514,7 +523,7 @@ START SLAVE
 **NOTE:** Even with `select_master=true` you have to set @@global.gtid\_slave\_pos
 if any binlog files have been purged on the primary. The server will only stream
 from the start of time if the first binlog file is present.
-See [select\_master](maxscale-binlogrouter.md#select_master).
+See [select\_master](#select_master).
 
 1. Redirect each replica to replicate from Binlogrouter.
 
@@ -528,7 +537,7 @@ START SLAVE;
 SHOW SLAVE STATUS \G
 ```
 
-#### Bootstrap binlogrouter
+### Bootstrap binlogrouter
 
 If for any reason you need to "bootstrap" the binlogrouter you can change
 the `datadir` or delete the entire binglog directory (`datadir`) when
@@ -537,7 +546,7 @@ deleted or the file system becomes corrupt.
 
 No changes are required to the attached replicas.
 
-if [select\_master](maxscale-binlogrouter.md#select_master) is set to `true` and the primary contains
+if [select\_master](#select_master) is set to `true` and the primary contains
 the entire binlog history, a simple restart of MaxScale sufficies.
 
 In the normal case, the primary does not have the entire history and
@@ -545,7 +554,7 @@ you will need to set the GTID position to a starting value, usually the
 earliest gtid state of all replicas. Once MaxScale has been restarted
 connect to the binlogrouter from the command line.
 
-If [select\_master](maxscale-binlogrouter.md#select_master) is set to true issue:
+If [select\_master](#select_master) is set to true issue:
 
 ```
 mariadb -u USER -pPASSWORD -h maxscale-IP -P binlog-PORT
@@ -563,13 +572,15 @@ SET @@global.gtid_slave_pos = "gtid_state";
 START SLAVE;
 ```
 
-### Galera cluster
+## Galera cluster
 
-When replicating from a Galera cluster, [select\_master](maxscale-binlogrouter.md#select_master) must be
-set to true, and the servers must be monitored by the [Galera Monitor](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md).
+When replicating from a Galera cluster, [select\_master](#select_master) must be
+set to true, and the servers must be monitored by the
+[Galera Monitor](../maxscale-monitors/galera-monitor.md).
 Configuring binlogrouter is the same as described above.
 
-The Galera cluster must be configured to use [Wsrep GTID Mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).
+The Galera cluster must be configured to use
+Wsrep GTID Mode](../../../galera-cluster/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md)
 
 The MariaDB version must be 10.5.1 or higher.
 The required GTID related server settings for MariaDB/Galera to work with
@@ -588,7 +599,7 @@ wsrep_gtid_mode = ON
 wsrep_gtid_domain_id = 42  # Must be the same for all servers
 ```
 
-### Example
+## Example
 
 The following is a small configuration file with automatic primary selection.
 With it, the service will accept connections on port 3306.
@@ -632,7 +643,7 @@ service=Replication-Proxy
 port=3306
 ```
 
-### Limitations
+## Limitations
 
 * Old-style replication with binlog name and file offset is not supported
   and the replication must be started by setting up the GTID to replicate
