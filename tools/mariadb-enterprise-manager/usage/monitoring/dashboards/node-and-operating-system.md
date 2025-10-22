@@ -1,6 +1,6 @@
-# Node and operating system
+# Node and Operating System
 
-The Node Dashboard provides detailed visibility into the health and performance of individual nodes that run MariaDB Server and MaxScale. It combines uptime, system capacity, operating system details, and hardware utilization with disk and network activity. This view helps administrators ensure each node has sufficient resources and can support the workloads running on it.
+The Node Dashboard pane provides detailed visibility into the health and performance of individual nodes that run MariaDB Server and MaxScale. It combines uptime, system capacity, operating system details, and hardware utilization with disk and network activity. This view helps administrators ensure each node has sufficient resources and can support the workloads running on it.
 
 ## Node Information
 

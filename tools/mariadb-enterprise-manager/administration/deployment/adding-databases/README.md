@@ -1,5 +1,9 @@
 # Adding Databases
 
+{% hint style="warning" %}
+To install `mema-agent`, you need to setup [MariaDB Enterprise Repository - "MariaDB Tools"](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#repositories)
+{% endhint %}
+
 This guide outlines the two primary methods for registering and monitoring your database topologies in MariaDB Enterprise Manager: adding a standalone server directly or adding a full cluster via its MaxScale instance.
 
 ## Option 1: Adding a Server or Cluster (Without MaxScale)
@@ -8,25 +12,21 @@ Use this method for a single MariaDB Server or to manually define a Primary/Repl
 
 {% stepper %}
 {% step %}
-### Prepare Your Server(s)
+### Prepare your server(s)
 
-First, perform these actions on each MariaDB Server you plan to add.
+First, perform these actions **on each MariaDB Server** you plan to add.
 
 1. Install the Agent package.
 
-{% code title="RHEL / CentOS / Rocky" %}
 ```bash
 # For Red Hat/CentOS/Rocky
 sudo dnf install -y mema-agent
 ```
-{% endcode %}
 
-{% code title="Debian / Ubuntu" %}
 ```bash
 # For Debian/Ubuntu
 sudo apt install -y mema-agent
 ```
-{% endcode %}
 
 2. Create the Enterprise Manager user (allows the Enterprise Manager server to connect remotely):
 
@@ -109,25 +109,21 @@ Use this method to add a complete primary/replica or Galera cluster that is mana
 
 {% stepper %}
 {% step %}
-### Prepare All Servers in the Topology
+### Prepare all servers in the topology
 
 Perform these actions on every server in the topology: the MaxScale instance(s) and each backend MariaDB Server attached.
 
 * Install the Agent package on all servers.
 
-{% code title="RHEL / CentOS / Rocky" %}
 ```bash
 # For Red Hat/CentOS/Rocky
 sudo dnf install -y mema-agent
 ```
-{% endcode %}
 
-{% code title="Debian / Ubuntu" %}
 ```bash
 # For Debian/Ubuntu
 sudo apt install -y mema-agent
 ```
-{% endcode %}
 
 * Create a Local Agent user on each backend MariaDB Server:
 
@@ -140,7 +136,7 @@ Replace `<password>` with a secure password.
 {% endstep %}
 
 {% step %}
-### Register the MaxScale Instance in the UI 🖥️
+### Register the MaxScale instance in the UI 🖥️
 
 1. Begin the Add Database process:
    * If this is your first time and no databases are present, you'll be on the "Add Database" screen to begin with.
@@ -151,7 +147,7 @@ Replace `<password>` with a secure password.
 {% endstep %}
 
 {% step %}
-### Link All Agents 🔗
+### Link all a 🔗
 
 You must link the agent on every server in the topology to Enterprise Manager. The UI will show the MaxScale instance and discovered backend servers marked as "Not Registered."
 

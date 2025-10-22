@@ -37,28 +37,26 @@ MariaDB Corporation provides package tarballs (.debs.tar, .rpms.tar) to support 
 MariaDB Corporation provides multiple interfaces to download package tarballs.
 
 {% tabs %}
-{% tab title="with a Web Browser" %}
+{% tab title="Web browser" %}
 1. Visit the MariaDB Downloads page.
 2. Complete customer login.
 3. Select the desired version and operating system.
 4. Click the Download button.
 {% endtab %}
 
-{% tab title="with Command-Line or Automation" %}
-Package tarballs can be downloaded using command-line tools or automation from the MariaDB Download interface with the [Customer Download Token](../../deployment-general-installing-and-upgrading-instructions/token.md).
+{% tab title="Command line or automation" %}
+Package tarballs can be downloaded using command-line tools or automation from the MariaDB Download interface with the [Customer Download Token](../../installing-enterprise-server/token.md).
 
-For additional information, see ["Download Binary Files"](../../deployment-general-installing-and-upgrading-instructions/token.md#download-binary-files).
+For additional information, see ["Download Binary Files"](../../installing-enterprise-server/token.md#download-binary-files).
 {% endtab %}
 {% endtabs %}
 
-## Installation from Package Tarball
+## Installation From Package Tarball
 
 Once downloaded and extracted, you can:
 
-* Install .rpm packages (RHEL, CentOS, and SLES)\
-  `rpm -i`
-* Install .deb packages (Debian, Ubuntu)\
-  `dpkg -i`
+* Install .rpm packages (RHEL, CentOS, and SLES): `rpm -i`
+* Install .deb packages (Debian, Ubuntu): `dpkg -i`
 * Install from the simple package repositories included in the tarball. Missing dependencies will be resolved when using the `apt`, `yum`, or `zypper` package manager. \
   See the `README file` enclosed in the package tarball for more information.
 * Test packages before placement in an internal package repository for distribution to your servers. Secure this repository from outside access.

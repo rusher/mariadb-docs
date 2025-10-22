@@ -17,7 +17,7 @@ After confirming your hardware, system, and network are compliant, proceed with 
 
 ### Installing Enterprise Manager Agents
 
-Agents are installed on each MariaDB Server and MaxScale host you wish to monitor. Use the Enterprise Manager UI to add database topology and to generate an agent setup command that will contain a proper set of labels for the metrics coming from monitored instances.
+To monitor a MariaDB Server and MaxScale host,  [install agent](adding-databases/agent-installation-t-copy.md) on it. Then, use the Enterprise Manager UI to [add the database](adding-databases/) topology and generate the agent setup command. This command includes the correct metric labels for that host.
 
 ### Quick start
 

@@ -1,3 +1,7 @@
+---
+description: MariaDB Enterprise Manager installation and configuration guide
+---
+
 # Quickstart Guide
 
 MariaDB Enterprise Manager is a database management and observability solution that provides advanced topology-aware monitoring coupled with visual schema management, query editing, and ERD design across multiple database connections.
@@ -83,10 +87,7 @@ Open in a browser:
 
 https://\<Enterprise\_Manager\_IP>:8090
 
-Default credentials:
-
-* Username: admin
-* Password: mariadb
+At the login screen, use the default username `admin` and the generated password displayed after the installation script finishes.
 {% endstep %}
 {% endstepper %}
 
@@ -113,7 +114,7 @@ GRANT REPLICA MONITOR ON *.* TO 'monitor'@'<Enterprise_Manager_IP>';
 
 Add each MariaDB Server in the Enterprise Manager UI, providing access details for each server.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -151,13 +152,13 @@ GRANT PROCESS, BINLOG MONITOR, REPLICA MONITOR, REPLICATION MASTER ADMIN ON *.* 
 1.  In the UI, click the three dots beside the server you want to install the Agent on.\
 
 
-    <figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 2. The UI will generate a unique setup command for that specific server with the username and password you provide.
 3. Copy and run the command on that specific server.
 4.  Repeat for all servers in the database fleet.\
 
 
-    <figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -167,7 +168,7 @@ Wait 1–2 minutes for metrics to start populating in Enterprise Manager from th
 {% endstep %}
 {% endstepper %}
 
-<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Topology with MaxScale
 

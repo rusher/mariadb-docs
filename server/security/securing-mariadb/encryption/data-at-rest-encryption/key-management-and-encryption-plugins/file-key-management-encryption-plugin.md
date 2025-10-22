@@ -16,7 +16,7 @@ The File Key Management plugin is the easiest [key management and encryption plu
 * It does not support key rotation.
 * It supports two different algorithms for encrypting data.
 
-It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md).
+It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/encryption-plugin-api).
 
 ## Installing the File Key Management Plugin's Package
 
@@ -24,9 +24,10 @@ The File Key Management plugin is included in MariaDB packages as the `file_key_
 
 ## Installing the Plugin
 
-Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. The plugin can be installed by providing the [--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. The plugin can be installed by providing the \
+[--plugin-load](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load) or the [--plugin-load-add](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load-add) options. This can be specified as a command-line argument to [mariadbd](../../../../../server-management/starting-and-stopping-mariadb/mariadbd.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
-```sql
+```ini
 [mariadb]
 ...
 plugin_load_add = file_key_management
@@ -36,13 +37,13 @@ plugin_load_add = file_key_management
 
 Before you uninstall the plugin, you should ensure that [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) is completely disabled, and that MariaDB no longer needs the plugin to decrypt tables or other files.
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
 ```sql
 UNINSTALL SONAME 'file_key_management';
 ```
 
-If you installed the plugin by providing the [--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the [--plugin-load](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load) or the [--plugin-load-add](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load-add) options in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Creating the Key File
 
@@ -203,11 +204,36 @@ When [encrypting InnoDB tables](../innodb-encryption/), the key that is used to 
 
 ## Key Rotation
 
-The File Key Management plugin does not currently support [key rotation](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation). See [MDEV-20713](https://jira.mariadb.org/browse/MDEV-20713) for more information.
+{% tabs %}
+{% tab title="Current Enterprise Server" %}
+The plugin supports key rotation and allows an optional key version in the key file. The keys can be rotated using the `FLUSH FILE_KEY_MANAGEMENT_KEYS` statement, without needing to restart the server. The plugin remains compatible with old key file format, and when version is not specified, it defaults to version 1.
+
+### Generation of New Key Versions
+
+How would new key versions be generated?
+
+The plugin doesn't generate any encryption keys itself, and it doesn't have a backend KMS[^1] to generate encryption keys for it either.
+
+Any encryption keys need to be generated by the user with external tools, such as OpenSSL. For example:
+
+```bash
+-- Generate a new 256-bit key
+openssl rand -hex 32
+```
+
+Keys need to be manually saved to the key file. See [this section](file-key-management-encryption-plugin.md#creating-the-key-file).
+
+The format of the key file is simplistic. It stores encryption keys in a plain-text file.
+{% endtab %}
+
+{% tab title="< 11.8" %}
+The File Key Management plugin does not support [key rotation](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation). See [MDEV-20713](https://jira.mariadb.org/browse/MDEV-20713) for more information.
+{% endtab %}
+{% endtabs %}
 
 ## Versions
 
-<table><thead><tr><th width="108">Version</th><th width="151">Status</th><th>Introduced</th></tr></thead><tbody><tr><td>1.0</td><td>Stable</td><td><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes">MariaDB 10.1.18</a></td></tr><tr><td>1.0</td><td>Gamma</td><td><a href="https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md">MariaDB 10.1.13</a></td></tr><tr><td>1.0</td><td>Alpha</td><td><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes">MariaDB 10.1.3</a></td></tr></tbody></table>
+<table><thead><tr><th width="108">Version</th><th width="151">Status</th><th>Introduced</th></tr></thead><tbody><tr><td>1.0</td><td>Stable</td><td>From MariaDB 10.1.18</td></tr></tbody></table>
 
 ## System Variables
 
@@ -263,3 +289,5 @@ The File Key Management plugin does not currently support [key rotation](../../.
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
+
+[^1]: Key Management Service

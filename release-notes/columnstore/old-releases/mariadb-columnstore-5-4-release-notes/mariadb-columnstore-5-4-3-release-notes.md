@@ -16,7 +16,7 @@ MariaDB Enterprise ColumnStore 5.4.3 was released on 2020-11-09.
 
 * [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statements crashing the Server. ([MCOL-4364](https://jira.mariadb.org/browse/MCOL-4364))
 * [INSERT SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert-select) statements not working when selecting from [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) to ColumnStore tables. ([MCOL-4320](https://jira.mariadb.org/browse/MCOL-4320))
-* [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statements crashing when [columnstore\_use\_import\_for\_batchinsert](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/clients-and-tools/data-import/mariadb-enterprise-columnstore-data-loading-with-insert-select) is set to ON or ALWAYS ([MCOL-4370](https://jira.mariadb.org/browse/MCOL-4370))
+* [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statements crashing when [columnstore\_use\_import\_for\_batchinsert](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/clients-and-tools/data-import/mariadb-enterprise-columnstore-data-loading-with-insert-select) is set to ON or ALWAYS ([MCOL-4370](https://jira.mariadb.org/browse/MCOL-4370))
 
 ## Platforms
 

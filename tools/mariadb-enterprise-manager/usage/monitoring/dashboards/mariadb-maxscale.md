@@ -6,23 +6,22 @@ This dashboard shows MaxScale’s health and load, how backend servers are seen 
 
 Provides a visual representation of the entire system's architecture and connectivity.
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-| Section                         | Description                                                                                                                    |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Project**                     | Displays the currently selected project label.                                                                                 |
-| **Name**                        | Shows the selected database/topology name.                                                                                     |
-| **Version**                     | Shows MaxScale version.                                                                                                        |
-| **Topology Info**               | Count of nodes grouped by type (e.g., server, MaxScale).                                                                       |
-| **Backend Server States**       | Timeline of each backend server’s role and health as seen by each MaxScale. Values are color-mapped to: Read, Write, Up, Down. |
-|                                 | Use this to spot failovers, read/write role flips, or outages over time.                                                       |
-| **Maxscale Uptime by Instance** | Uptime in seconds for each MaxScale instance.                                                                                  |
+| Section                         | Description                                                                                                                                                                                             |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Project**                     | Displays the currently selected project label.                                                                                                                                                          |
+| **Name**                        | Shows the selected database/topology name.                                                                                                                                                              |
+| **Version**                     | Shows MaxScale version.                                                                                                                                                                                 |
+| **Topology Info**               | Count of nodes grouped by type (e.g., server, MaxScale).                                                                                                                                                |
+| **Backend Server States**       | Timeline of each backend server’s role and health as seen by each MaxScale. Values are color-mapped to: Read, Write, Up, Down. Use this to spot failovers, read/write role flips, or outages over time. |
+| **Maxscale Uptime by Instance** | Uptime in seconds for each MaxScale instance.                                                                                                                                                           |
 
 ### System Metrics
 
 **System Metrics** provide comprehensive insights into the performance and health of individual system resources.
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Metric              | Description                                                                                                                      |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,7 +33,7 @@ Provides a visual representation of the entire system's architecture and connect
 
 **Query Classifier Cache Metrics** help in analyzing and optimizing query routing efficiency by tracking cache hits/misses and monitoring cache size.
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Metric                   | Description                                                                                             |
 | ------------------------ | ------------------------------------------------------------------------------------------------------- |
@@ -48,7 +47,7 @@ Provides a visual representation of the entire system's architecture and connect
 
 Evaluate query routing efficiency by tracking and optimizing cache metrics like hits, misses, and cache size.
 
-<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Metric                   | Description                                                                                                 |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- |

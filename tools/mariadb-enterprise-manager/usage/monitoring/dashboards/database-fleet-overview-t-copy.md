@@ -1,8 +1,8 @@
 # Database Fleet Overview
 
-<figure><img src="../../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
-
 The "fleet" dashboard is the central inventory for all your monitored database topologies. It provides a hierarchical, at-a-glance overview of the health, status, and configuration of your entire database environment.
+
+<figure><img src="../../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
 
 ## Understanding the Dashboard Columns
 
@@ -46,12 +46,6 @@ You can perform actions on your databases and nodes using the three-dot menu (â‹
 
 <figure><img src="../../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
-## **SSO to MaxScale (Single Sign-On)**
-
-For topologies managed by MaxScale, you can seamlessly access the MaxScale GUI directly from Enterprise Manager using Single Sign-On.
-
-SSO to MaxScale requires MaxScale 25.10.0 or higher.
-
 {% stepper %}
 {% step %}
 ### Accessing the MaxScale GUI
@@ -69,16 +63,18 @@ To enable SSO, add the following parameters to your MaxScale configuration file 
 [maxscale]
 # ... other settings ...
 admin_host=0.0.0.0
-admin_oidc_url=<Enterprise Manager Host Name>
+admin_oidc_url=https://<Enterprise Manager Host Name>:8090
 admin_oidc_client_id=admin
 admin_oidc_client_secret=mariadb
+admin_oidc_ssl_insecure=true
 ```
 
-| Parameter                  | Description                                                                     |
-| -------------------------- | ------------------------------------------------------------------------------- |
-| `admin_oidc_url`           | Hostname or IP address of your Enterprise Manager server.                       |
-| `admin_host`               | Must be set to `0.0.0.0` to allow external connections from Enterprise Manager. |
-| `admin_oidc_client_id`     | Default credentials used by Enterprise Manager to request the access token.     |
-| `admin_oidc_client_secret` | Default credentials used by Enterprise Manager to request the access token.     |
+| Parameter                  | Description                                                                      |
+| -------------------------- | -------------------------------------------------------------------------------- |
+| `admin_oidc_url`           | URL for Enterprise Manager server that includes hostname or IP address and port. |
+| `admin_host`               | Must be set to `0.0.0.0` to allow external connections from Enterprise Manager.  |
+| `admin_oidc_client_id`     | Default credentials used by Enterprise Manager to request the access token.      |
+| `admin_oidc_client_secret` | Default credentials used by Enterprise Manager to request the access token.      |
+| `admin_oidc_ssl_insecure`  | Skip TLS certificate verification in case certificates aren't configured         |
 {% endstep %}
 {% endstepper %}

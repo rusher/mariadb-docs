@@ -1,4 +1,8 @@
-# Agent installation
+# Agent Installation
+
+{% hint style="warning" %}
+To install `mema-agent`, you need to setup [MariaDB Enterprise Repository - "MariaDB Tools"](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#repositories)
+{% endhint %}
 
 The `mema-agent` is a small application that must be installed on every server you wish to monitor with MariaDB Enterprise Manager, including MariaDB Server nodes and MaxScale nodes.
 
@@ -8,7 +12,7 @@ This guide covers the recommended installation method using a package manager.
 
 Before installing the agent on a MariaDB Server host, you must create a local user that the agent will use to connect to the database and collect metrics.
 
-Log in to your MariaDB Server and run the following commands:
+Log in to your MariaDB Server and run the following:
 
 {% code title="Create monitor user" %}
 ```sql
@@ -29,26 +33,24 @@ If you haven't already configured the MariaDB Enterprise repository on the serve
 
 {% stepper %}
 {% step %}
-### Get Your Customer Download Token
+### Get your Customer Download Token
 
 * Navigate to the [MariaDB Customer Portal](https://customers.mariadb.com/downloads/token/) and log in.
 * Copy your **Customer Download Token**. You will need this for the script.
 {% endstep %}
 
 {% step %}
-### Download the Repository Setup Script
+### Download the repository setup script
 
 In your server's terminal, download the official setup script:
 
-{% code title="# Download repo setup script" %}
 ```bash
 curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
 ```
-{% endcode %}
 {% endstep %}
 
 {% step %}
-### Run the Script
+### Run the script
 
 Make the script executable, then run it with your download token:
 
@@ -69,19 +71,15 @@ Once the repository is configured, use your system's package manager to install 
 
 {% tabs %}
 {% tab title="Red Hat / Rocky / CentOS" %}
-{% code title="Install on RHEL/CentOS/Rocky" %}
 ```bash
 sudo dnf install mema-agent
 ```
-{% endcode %}
 {% endtab %}
 
 {% tab title="Debian / Ubuntu" %}
-{% code title="Install on Debian/Ubuntu" %}
 ```bash
 sudo apt-get install mema-agent
 ```
-{% endcode %}
 {% endtab %}
 {% endtabs %}
 

@@ -455,7 +455,7 @@ For single-node ColumnStore deployments, only a single user account needs to be 
 
 ### Create the Cross Engine Join User
 
-The credentials for cross engine joins were previously configured in the [Cross Engine Joins](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/management/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins) section. The user account must also be created and granted the necessary privileges to access data.
+The credentials for cross engine joins were previously configured in the [Cross Engine Joins](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/management/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins) section. The user account must also be created and granted the necessary privileges to access data.
 
 1.  Connect to the server using [MariaDB Client](../../../clients-and-utilities/server-client-software/client-libraries/connect-and-query.md#mariadb-client) using the `root@localhost` user account:
 
@@ -531,7 +531,7 @@ $ sudo cpimport -s '\t' inventory products /tmp/inventory-products.tsv
 
 ### LOAD DATA INFILE
 
-When data is loaded with the [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, MariaDB ColumnStore loads the data using [cpimport](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview#cpimport), which is a command-line utility that is designed to efficiently load data in bulk.
+When data is loaded with the [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, MariaDB ColumnStore loads the data using [cpimport](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-architectural-overview#cpimport), which is a command-line utility that is designed to efficiently load data in bulk.
 
 To import your data from a TSV (tab-separated values) file with [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement:
 

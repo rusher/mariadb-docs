@@ -156,13 +156,13 @@ Thanks, and enjoy MariaDB!
 
 ### Docker Official Images
 
-* Invert single and double quotes for sql command definitions in [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) due to failure under [sql\_mode=ANSI\_QUOTES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode#ansi_quotes) - contribution by Dominik Häckel
-* [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) --no-defaults behaviour was corrected - reported by Dominik Häckel
-* Added /docker-entrypoint-init.d for tar{,compression} from [mariadb-backup](../../../mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/) - [instructions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/docker-official-image-frequently-asked-questions#how-do-i-create-a-mariadb-backup-of-the-data)
+* Invert single and double quotes for sql command definitions in [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) due to failure under [sql\_mode=ANSI\_QUOTES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode#ansi_quotes) - contribution by Dominik Häckel
+* [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) --no-defaults behaviour was corrected - reported by Dominik Häckel
+* Added /docker-entrypoint-init.d for tar{,compression} from [mariadb-backup](../../../mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/) - [instructions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/docker-official-image-frequently-asked-questions#how-do-i-create-a-mariadb-backup-of-the-data)
 * Refactor `docker_mariadb_init` in the entrypoint for extending the MariaDB image
 * CIS failure due to world-writable directory /var/run/mysqld, added sticky bit - reported by @ollie1
 * Add [PROXY privileges](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#proxy-privileges) for root@MARIADB\_ROOT\_HOST - reported by Matthieu Gusmini
-* [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) added --galera\_online test, to match what the [mariadb-operator](https://github.com/mariadb-operator/mariadb-operator) does.
+* [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) added --galera\_online test, to match what the [mariadb-operator](https://github.com/mariadb-operator/mariadb-operator) does.
 
 ### Security
 

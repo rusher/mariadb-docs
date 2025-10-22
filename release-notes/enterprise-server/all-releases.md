@@ -2,9 +2,9 @@
 
 ## MariaDB Enterprise Server 11.8
 
-| Version                                                                               | Release Date | Release Status |
-| ------------------------------------------------------------------------------------- | ------------ | -------------- |
-| [11.8.2-0](11.8/release-notes-for-mariadb-enterprise-server-11.8.2-0-tech-preview.md) | 2025-06-04   | Tech Preview   |
+| Version                      | Release Date | Release Status |
+| ---------------------------- | ------------ | -------------- |
+| [11.8.2-0](11.8/11.8.2-0.md) | 2025-06-04   | Tech Preview   |
 
 ## MariaDB Enterprise Server 11.4
 
@@ -135,7 +135,7 @@
 | [10.2.36-10](old-releases/10-2/release-notes-for-mariadb-enterprise-server-10-2-36-10.md) | 2020-12-14   | Stable (GA)    |
 | [10.2.34-9](old-releases/10-2/release-notes-for-mariadb-enterprise-server-10-2-34-9.md)   | 2020-10-07   | Stable (GA)    |
 | [10.2.33-8](old-releases/10-2/release-notes-for-mariadb-enterprise-server-10-2-33-8.md)   | 2020-09-08   | Stable (GA)    |
-| [10.2.32-7](11.8/release-notes-for-mariadb-enterprise-server-11.8.2-0-tech-preview.md)    | 2020-06-08   | Stable (GA)    |
+| [10.2.32-7](11.8/11.8.2-0.md)                                                             | 2020-06-08   | Stable (GA)    |
 | [10.2.31-6](old-releases/10-2/release-notes-for-mariadb-enterprise-server-10-2-31-6.md)   | 2020-03-02   | Stable (GA)    |
 | [10.2.30-5](old-releases/10-2/release-notes-for-mariadb-enterprise-server-10-2-30-5.md)   | 2020-01-06   | Stable (GA)    |
 | [10.2.29-4](old-releases/10-2/release-notes-for-mariadb-enterprise-server-10-2-29-4.md)   | 2019-11-18   | Stable (GA)    |

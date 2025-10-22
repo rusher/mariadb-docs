@@ -80,7 +80,7 @@ The ColumnStore nodes:
 
 * Receive queries from MaxScale
 * Execute queries
-  * Use [shared local storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#shared-local-storage) for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#storage-manager-directory)
+  * Use [shared local storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#shared-local-storage) for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#storage-manager-directory)
 
 ## Requirements
 
@@ -154,9 +154,9 @@ The recommended hardware requirements are:
 
 The ColumnStore Object Storage topology requires the following storage types:
 
-| Storage Type                                                                                                                              | Description                                                                                                                                                                                                                                      |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Shared Local Storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#shared-local-storage) | The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata. |
+| Storage Type                                                                                                                                                  | Description                                                                                                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Shared Local Storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#shared-local-storage) | The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata. |
 
 ### Shared Local Storage Directories
 

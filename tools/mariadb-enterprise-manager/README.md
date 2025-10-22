@@ -9,7 +9,7 @@ MariaDB Enterprise Manager is a comprehensive observability and management solut
 
 At its core, Enterprise Manager uses lightweight agents to collect deep telemetry from your standalone databases, replicated topologies, and MaxScale clusters via the OpenTelemetry standard. This foundation powers the integrated **Grafana** dashboards, which come pre-packaged with production-ready visualizations and alerts. Beyond monitoring, the **Workspace** provides a shared environment for developers and DBAs with an advanced **Query Editor** and a visual **ERD Designer**. The entire system is secured with role-based access control, audit logging, and can integrate with your corporate **identity provider (OIDC)** for single sign-on.
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Key Capabilities at a Glance
 
@@ -17,7 +17,7 @@ At its core, Enterprise Manager uses lightweight agents to collect deep telemetr
 
 Leverage the power of a built-in **Grafana** instance, complete with pre-packaged dashboards and production-ready alerts. The platform provides the flexibility to create custom dashboards, define unique alert rules, and route notifications to a wide range of destinations.
 
-### **Integration with other observability solutions**
+### **Integration with Other Observability Solutions**
 
 Built on open standards, Enterprise Manager uses **OpenTelemetry** for metrics collection. Its integrated **Prometheus** time-series database exposes a query API, allowing you to seamlessly export metrics and integrate with your existing observability stack.
 

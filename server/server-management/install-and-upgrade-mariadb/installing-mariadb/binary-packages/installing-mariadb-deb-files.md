@@ -350,8 +350,7 @@ sudo apt-cache showpkg mariadb-server
 
 In the output you will see the available versions.
 
-To install an older version of a package instead of the latest version we just\
-need to specify the package name, an equal sign, and then the version number.
+To install an older version of a package instead of the latest version we just need to specify the package name, an equal sign, and then the version number.
 
 However, when installing an older version of a package, if `apt-get` has to install dependencies, then it will automatically choose to install the latest versions of those packages. To ensure that all MariaDB packages are on the same version in this scenario, it is necessary to specify them all. Therefore, to install [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). from this `apt` repository, we would do the following:
 
@@ -449,7 +448,7 @@ When the `mariadb-server` DEB package is installed, it will create a user and gr
 ## See Also
 
 * [Differences in MariaDB in Debian](../troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md)
-* [Installing MariaDB .deb Files with Ansible](automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)
+* [Installing MariaDB .deb Files with Ansible](../../../automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

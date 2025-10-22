@@ -1,10 +1,10 @@
-# Metrics retention configuration
+# Metrics Retention Configuration
 
 By default, MariaDB Enterprise Manager retains detailed metrics for **30 days**. You can configure this data retention period to balance your need for historical data with storage costs.
 
 This guide explains how to change the retention period and how the underlying storage system works.
 
-## How to change the retention period
+## How to Change the Retention Period
 
 Changing the retention time is done by editing the environment file for Enterprise Manager and then restarting the services.
 
@@ -59,7 +59,7 @@ docker compose up -d
 {% endstep %}
 {% endstepper %}
 
-## Data retention policy
+## Data Retention Policy
 
 Prometheus, the time-series database used by Enterprise Manager, does not delete expired data instantly.
 
@@ -76,7 +76,7 @@ This is expected behavior. Enterprise Manager does not immediately delete a data
 These old metrics will no longer receive new data and will eventually disappear from the dashboards on their own.
 {% endhint %}
 
-## Valid retention time units
+## Valid Retention Time Units
 
 When setting `PROMETHEUS_RETENTION_TIME`, you can use the following units:
 

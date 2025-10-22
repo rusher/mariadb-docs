@@ -39,7 +39,7 @@ transaction-isolation = REPEATABLE-READ
 
 {% tabs %}
 {% tab title="Current" %}
-To determine the global and session transaction isolation levels at runtime, check the value of the  [transaction\_isolation](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#transaction_isolation) variable.
+To determine the global and session transaction isolation levels at runtime, check the value of the [transaction\_isolation](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#transaction_isolation) variable.
 {% endtab %}
 
 {% tab title="< 11.1.1" %}
@@ -57,10 +57,14 @@ InnoDB supports each of the translation isolation levels described here using di
 
 The following sections describe how MariaDB supports the different transaction levels.
 
+{% include "../../../.gitbook/includes/with-both-read-uncommitted-....md" %}
+
 #### READ UNCOMMITTED
 
 `SELECT` statements are performed in a non-locking fashion, but a possible earlier version of a row might be used. Thus, using this isolation level, such reads are not consistent. This is also called a "dirty\
-read." Otherwise, this isolation level works like`READ COMMITTED`.
+read". Otherwise, this isolation level works like`READ COMMITTED`.
+
+{% include "../../../.gitbook/includes/with-both-read-uncommitted-....md" %}
 
 #### READ COMMITTED
 
