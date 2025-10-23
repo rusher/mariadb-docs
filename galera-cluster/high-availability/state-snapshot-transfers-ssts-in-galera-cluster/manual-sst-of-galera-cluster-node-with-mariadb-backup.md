@@ -88,7 +88,7 @@ For example, a very common version number is "2.1".
     cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
     ```
 
-    The file contains the values of the `wsrep_local_state_uuid` and `wsrep_last_committed` status variables. The values are written in the following format:
+    The file contains the values of the [wsrep\_local\_state\_uuid](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [wsrep\_last\_committed](../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables. The values are written in the following format:
 
     ```bash
     wsrep_local_state_uuid:wsrep_last_committed
@@ -103,7 +103,7 @@ For example, a very common version number is "2.1".
 
 For example, with the example values from the last two steps, we could do:
 
-```
+```bash
 sudo tee $MYSQL_BACKUP_DIR/grastate.dat <<EOF
 # GALERA saved state
 version: 2.1
@@ -115,21 +115,21 @@ EOF
 
 * Remove the existing contents of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) on the joiner node.
 
-```
+```bash
 MYSQL_DATADIR=/var/lib/mysql
 rm -Rf $MYSQL_DATADIR/*
 ```
 
 * Copy the contents of the backup directory to the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) the on joiner node.
 
-```
+```bash
 mariadb-backup --copy-back \
    --target-dir=$MYSQL_BACKUP_DIR
 ```
 
 * Make sure the permissions of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) are correct on the joiner node.
 
-```
+```bash
 chown -R mysql:mysql $MYSQL_DATADIR/
 ```
 
@@ -137,14 +137,12 @@ chown -R mysql:mysql $MYSQL_DATADIR/
 
 For example, on [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/systemd) systems, you can execute::
 
-```
+```bash
 systemctl start mariadb
 ```
 
 * Watch the MariaDB [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) on the joiner node and verify that the node does not need to perform a [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) due to the manual SST.
 
-```
+```bash
 tail -f /var/log/mysql/mysqld.log
 ```
-
-* \
