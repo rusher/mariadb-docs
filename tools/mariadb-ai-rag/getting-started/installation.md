@@ -11,10 +11,12 @@
 
 ## Installation Procedure
 
-### Linux (Debian/Ubuntu)
+{% tabs %}
+{% tab title="Debian/Ubuntu" %}
+### Debian/Ubuntu Installation
 
 1. Download the installation package from:
-   * [https://dlm.mariadb.com/browse/ai\_rag\_enterprise/1.0.0/](https://dlm.mariadb.com/browse/ai_rag_enterprise/1.0.0/)
+   * [https://mariadb.com/downloads/enterprise-tooling/ai-rag/](https://mariadb.com/downloads/enterprise-tooling/ai-rag/)
 2.  Install the package:
 
     ```bash
@@ -25,23 +27,29 @@
     ```bash
     sudo apt-get install -f
     ```
+{% endtab %}
 
-### Linux (RHEL/CentOS)
+{% tab title="RHEL" %}
+### RHEL (and equivalents) Installation
 
 1. Download the installation package from:
-   * [https://dlm.mariadb.com/browse/ai\_rag\_enterprise/1.0.0/](https://dlm.mariadb.com/browse/ai_rag_enterprise/1.0.0/)
+   * [https://mariadb.com/downloads/enterprise-tooling/ai-rag/](https://mariadb.com/downloads/enterprise-tooling/ai-rag/)
 2.  Install the package:
 
     ```bash
     sudo rpm -i rag-in-a-box-1.0-1.x86_64.rpm
     ```
+{% endtab %}
 
-### Windows
+{% tab title="Windows" %}
+### Windows Installation
 
 1. Download the installation package from:
-   * [https://dlm.mariadb.com/browse/ai\_rag\_enterprise/1.0.0/](https://dlm.mariadb.com/browse/ai_rag_enterprise/1.0.0/)
+   * [https://mariadb.com/downloads/enterprise-tooling/ai-rag/](https://mariadb.com/downloads/enterprise-tooling/ai-rag/)
 2. Run the `.msi` installer.
 3. Follow the installation wizard instructions.
+{% endtab %}
+{% endtabs %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
