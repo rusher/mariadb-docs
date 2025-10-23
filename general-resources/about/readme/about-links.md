@@ -50,7 +50,7 @@ This page you are currently reading is under the [General Resources](https://app
 
 To link to pages in other [Spaces](about-links.md#about-spaces) we need to use special _Space Links_ which use an internal identifier so that GitBook knows exactly what page you are pointing to.
 
-A space link begins with `https://app.gitbook.com/s/` , followed by a unique alphanumeric _`space identifier`_ (in this doc we'll call both of these together the _`space prefix`_), and finally the _`path`_ to the page.
+A space link begins with `https://app.gitbook.com/s/` , followed by a unique alphanumeric _`space identifier`_ (in this doc we'll call both of these together the _`space prefix`_), and finally the _`path`_ to the page _**without**_ the final `.md` extension that exists in the source code.
 
 The _`path`_ is everything after the space name in a full page URI. For example, take the following full URI for the [Securing MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb) page:
 
