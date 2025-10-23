@@ -150,6 +150,7 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
     ```
 * **New Option – `--slave-abort-blocking-timeout`**: Kills blocking non-replication queries after a timeout.
 * **Galera SST Automation**: SST user is now auto-created and managed internally.
+* **Backported** [MDEV-35304](https://jira.mariadb.org/browse/MDEV-35304) : Add `{{Connects_Tried}}` & `{{Master_Retry_Count}}` from [CS-12.0](../../community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md)
 
 ## Key Management <a href="#key-management" id="key-management"></a>
 
@@ -190,6 +191,30 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Galera Information Schema:** New Information Schema table [WSREP\_CONNECTIONS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_connections).
 * **Galera Information Schema:** New Information Schema [WSREP\_CERT\_KEYS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_cert_keys) and [WSREP\_CERT\_KEYS\_HISTORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/system-tables/information-schema/information-schema-tables/information-schema-wsrep_cert_keys_history) tables.
 
+## PL/SQL <a href="#tool-improvements" id="tool-improvements"></a>
+
+Support for Oracle-stype `INDEX BY` tables (associative arrays) was backported from [MariaDB 12.1](../../community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md) in stored routines and anonymous blocks, with this declaration syntax:
+
+```sql
+TYPE type_name TABLE OF rec_type_name INDEX BY idx_type_name;
+```
+
+Where:
+
+* `type_name` supports explicit and anchored data types (e.g `t1.col1%TYPE`).
+* The `INDEX BY` clause supports integer and string data types.
+* `rec_type_name` supports scalar and record data types.
+
+The implementation supports the following associative array methods:
+
+* `FIRST`
+* `LAST`
+* `NEXT`
+* `PRIOR`
+* `COUNT`
+* `EXISTS`
+* `DELETE`
+
 ## Tool Improvements <a href="#tool-improvements" id="tool-improvements"></a>
 
 * **mariadb-dump**:
@@ -216,7 +241,10 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 
 ## Available Versions <a href="#available-versions" id="available-versions"></a>
 
-* [MariaDB Enterprise Server 11.8.2-0](11.8.2-0.md) Tech Preview
+* [MariaDB Enterprise Server 11.8.3-1](11.8.3-1.md)
+* MariaDB Enterprise Server 11.8.2-0 Tech Preview
+
+See also: [All MariaDB Enterprise Releases](../all-releases.md)
 
 ## Installation Instructions <a href="#installation-instructions" id="installation-instructions"></a>
 
