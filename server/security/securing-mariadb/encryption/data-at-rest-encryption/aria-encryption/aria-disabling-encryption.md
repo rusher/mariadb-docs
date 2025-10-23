@@ -12,9 +12,9 @@ With tables that the user creates, you can disable encryption by setting the [ar
 SET GLOBAL aria_encrypt_tables = OFF;
 ```
 
-Unlike [InnoDB](../innodb-encryption/), Aria does not currently use background encryption threads. Before removing the [Encryption Key Management](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/key-management-encryption-plugins/README.md) plugin from the configuration file, you first need to manually rebuild each table to an unencrypted state.
+Unlike [InnoDB](../innodb-encryption/), Aria does not currently use background encryption threads. Before removing the [Encryption Key Management](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) plugin from the configuration file, you first need to manually rebuild each table to an unencrypted state.
 
-To find the encrypted tables, query the Information Schema, filtering the [TABLES](https://mariadb.com/kb/en/information_schema-tables-table) table for those that use the Aria storage engine and the `PAGE` [ROW\_FORMAT](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format).
+To find the encrypted tables, query the Information Schema, filtering the [TABLES](../../../../../reference/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table for those that use the Aria storage engine and the `PAGE` [ROW\_FORMAT](../../../../../reference/sql-statements/data-definition/create/create-table.md#row_format).
 
 ```sql
 SELECT TABLE_SCHEMA, TABLE_NAME
@@ -24,7 +24,7 @@ WHERE ENGINE = 'Aria'
   AND TABLE_SCHEMA != 'information_schema';
 ```
 
-Each table in the result-set was potentially written to disk in an encrypted state. Before removing the configuration for the encryption keys, you need to rebuild each of these to an unencrypted state. This can be done with an [ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement.
+Each table in the result-set was potentially written to disk in an encrypted state. Before removing the configuration for the encryption keys, you need to rebuild each of these to an unencrypted state. This can be done with an [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 ```sql
 ALTER TABLE test.aria_table ENGINE = Aria ROW_FORMAT = PAGE;
@@ -34,9 +34,9 @@ Once all of the Aria tables are rebuilt, they're safely unencrypted.
 
 ## Disabling Encryption for Internal On-disk Temporary Tables
 
-MariaDB routinely creates internal temporary tables. When these temporary tables are written to disk and the [aria\_used\_for\_temp\_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables) system variable is set to `ON`, MariaDB uses the Aria storage engine.
+MariaDB routinely creates internal temporary tables. When these temporary tables are written to disk and the [aria\_used\_for\_temp\_tables](../../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables) system variable is set to `ON`, MariaDB uses the Aria storage engine.
 
-To decrypt these tables, set the [encrypt\_tmp\_disk\_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables) to `OFF`. Once set, all internal temporary tables that are created from that point on are written unencrypted to disk.
+To decrypt these tables, set the [encrypt\_tmp\_disk\_tables](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables) to `OFF`. Once set, all internal temporary tables that are created from that point on are written unencrypted to disk.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -6,7 +6,7 @@ For encryption with the InnoDB and XtraDB storage engines, see [Encrypting Data 
 
 ## Basic Configuration
 
-In order to enable encryption for tables using the [Aria storage engine](../../../../../server-usage/storage-engines/aria/), there are a couple server system variables that you need to set and configure. Most users will want to set [aria\_encrypt\_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables) and [encrypt\_tmp\_disk\_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables).
+In order to enable encryption for tables using the [Aria storage engine](../../../../../server-usage/storage-engines/aria/), there are a couple server system variables that you need to set and configure. Most users will want to set [aria\_encrypt\_tables](../../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables) and [encrypt\_tmp\_disk\_tables](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables).
 
 Users of data-at-rest encryption will also need to have a [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) configured. Some examples are [File Key Management Plugin](../key-management-and-encryption-plugins/file-key-management-encryption-plugin.md) and [AWS Key Management Plugin](../key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md).
 

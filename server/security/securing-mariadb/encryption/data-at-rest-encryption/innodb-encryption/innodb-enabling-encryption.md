@@ -10,11 +10,11 @@ When encrypting any InnoDB tables, the best practice is also enable encryption f
 
 The [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable controls the configuration of automatic encryption of InnoDB tables. It has the following possible values:
 
-| Option | Description                                                                                                                                                                                                                                           |
-| ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| OFF    | Disables table encryption.                                                                                                                                                                                                                            |
-| ON     | Enables table encryption, but allows unencrypted tables to be created.                                                                                                                                                                                |
-| FORCE  | Enables table encryption, and doesn't allow unencrypted tables to be created. Added in [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes). |
+| Option | Description                                                                   |
+| ------ | ----------------------------------------------------------------------------- |
+| OFF    | Disables table encryption.                                                    |
+| ON     | Enables table encryption, but allows unencrypted tables to be created.        |
+| FORCE  | Enables table encryption, and doesn't allow unencrypted tables to be created. |
 
 When [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `ON`, InnoDB tables are automatically encrypted by default. For example, the following statements create an encrypted table and confirm that it is encrypted:
 
@@ -207,7 +207,7 @@ innodb_encrypt_log = ON
 
 Then, start MariaDB. When the server starts back up, it checks to recover InnoDB in the event of a crash. Once it is back online, it begins writing encrypted data to the Redo Log.
 
-In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and before, InnoDB does not support key rotation for the Redo Log. Key rotation for the Redo Log is supported in [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/broken-reference/README.md) and later. See [InnoDB Encryption Keys: Key Rotation](innodb-encryption-keys.md) for more information.
+Key rotation for the Redo Log is supported. See [InnoDB Encryption Keys: Key Rotation](innodb-encryption-keys.md) for more information.
 
 ### See Also
 
