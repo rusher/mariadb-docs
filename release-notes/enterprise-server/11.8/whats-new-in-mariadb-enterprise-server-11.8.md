@@ -248,18 +248,9 @@ See also: [All MariaDB Enterprise Releases](../all-releases.md)
 
 ## Installation Instructions <a href="#installation-instructions" id="installation-instructions"></a>
 
-* [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
+* [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage)
 * [Deploy MariaDB Enterprise with Package Tarballs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/package-tarballs)
 * [Deploy MariaDB Enterprise with Docker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
-* [Primary/Replica Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
-* [ColumnStore Object Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
-* [ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)
-* [HTAP Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)
-* [Single-Node Enterprise ColumnStore with MariaDB Enterprise Server and Object Storage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)
-* [Single-Node Enterprise ColumnStore with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/spider-sharded)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/spider-federated)
 
 ## Upgrade Instructions <a href="#upgrade-instructions" id="upgrade-instructions"></a>
 

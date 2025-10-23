@@ -1018,38 +1018,25 @@ MAX_MEMORY_USED: 392544
 
 ## Available Versions
 
+* [MariaDB Enterprise Server 11.4.8-5](11.4.8-5.md)
+* [MariaDB Enterprise Server 11.4.7-4](11.4.7-4.md)
 * [MariaDB Enterprise Server 11.4.5-3](11.4.5-3.md)
 * [MariaDB Enterprise Server 11.4.4-2](11.4.4-2.md)
 * [MariaDB Enterprise Server 11.4.3-1](11.4.3-1.md)
 * [MariaDB Enterprise Server 11.4.0-1](11.4.0-1.md)
 
-## Installation Instructions
+See also: [All MariaDB Enterprise Releases](../all-releases.md)
 
-* [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
+## Installation Instructions <a href="#installation-instructions" id="installation-instructions"></a>
+
+* [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage)
 * [Deploy MariaDB Enterprise with Package Tarballs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/package-tarballs)
 * [Deploy MariaDB Enterprise with Docker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
-* [Primary/Replica Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
-* [ColumnStore Object Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
-* [ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)
-* [HTAP Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)
-* [Single-Node Enterprise ColumnStore with MariaDB Enterprise Server and Object Storage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)
-* [Single-Node Enterprise ColumnStore with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/spider-sharded)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/spider-federated)
 
 ## Upgrade Instructions
 
 * [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/mariadb-enterprise-server-11.4/upgrade-to-mariadb-enterprise-server-11.4)
 * [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-enterprise-server/mariadb-enterprise-server-upgrade-paths/mariadb-enterprise-server-11.4/upgrade-from-mariadb-community-server-to-mariadb-enterprise-server-11.4)
-
-## What's new in older release series?
-
-* [What's New in MariaDB Enterprise Server 10.6?](../10.6/whats-new.md)
-* [What's New in MariaDB Enterprise Server 10.5?](../old-releases/10-5/whats-new-in-mariadb-enterprise-server-10-5.md)
-* [What's New in MariaDB Enterprise Server 10.4?](../old-releases/10-4/whats-new-in-mariadb-enterprise-server-10-4.md)
-* [What's New in MariaDB Enterprise Server 10.3?](../old-releases/10-3/whats-new-in-mariadb-enterprise-server-10-3.md)
-* [What's New in MariaDB Enterprise Server 10.2?](../old-releases/10-2/whats-new-in-mariadb-enterprise-server-10-2.md)
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
