@@ -2,13 +2,9 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
 
-Before upgrading to MariaDB MaxScale, it is critical to review the changes.
-This guide outlines new features, altered parameters, and deprecated functionality
-to ensure a smooth transition.
+Before upgrading to MariaDB MaxScale, it is critical to review the changes. This guide outlines new features, altered parameters, and deprecated functionality to ensure a smooth transition.
 
-For more information about what has changed, please refer to the
-[ChangeLog and release notes](../../../release-notes/maxscale/) of
-the releases you are upgrading from and upgrading to.
+For more information about what has changed, please refer to the [ChangeLog and release notes](../../../../release-notes/maxscale/) of the releases you are upgrading from and upgrading to.
 
 Before starting the upgrade, any existing configuration files should be backed up.
 
@@ -16,10 +12,7 @@ Before starting the upgrade, any existing configuration files should be backed u
 
 ### Service User Grants
 
-The service users now require a `SELECT` grant on the `mysql.global_priv` table
-in order to be able to support authentication of users with multiple
-authentication mechanisms. If this grant is not given to the service users, a
-warning is logged. The following SQL shows how the grant is given to a user:
+The service users now require a `SELECT` grant on the `mysql.global_priv` table in order to be able to support authentication of users with multiple authentication mechanisms. If this grant is not given to the service users, a warning is logged. The following SQL shows how the grant is given to a user:
 
 ```
 GRANT SELECT ON mysql.global_priv TO 'maxscale_user'@'%';
@@ -27,13 +20,7 @@ GRANT SELECT ON mysql.global_priv TO 'maxscale_user'@'%';
 
 ### Monitor timeouts
 
-In MaxScale 25.10, only one monitor backend timeout remains:
-[backend_timeout](../../reference/maxscale-monitors/common-monitor-parameters.md#backend_timeout).
-This replaces the old `backend_connect_timeout`, `backend_write_timeout` and
-`backend_read_timeout`, using the same value for all underlying timeouts.
-`backend_connect_timeout` is still supported as an alias for `backend_timeout`,
-but any values given to `backend_write_timeout` and `backend_read_timeout` are
-ignored.
+In MaxScale 25.10, only one monitor backend timeout remains: [backend\_timeout](../../../reference/maxscale-monitors/common-monitor-parameters.md#backend_timeout). This replaces the old `backend_connect_timeout`, `backend_write_timeout` and `backend_read_timeout`, using the same value for all underlying timeouts. `backend_connect_timeout` is still supported as an alias for `backend_timeout`, but any values given to `backend_write_timeout` and `backend_read_timeout` are ignored.
 
 ## Upgrading MariaDB MaxScale from 24.02 to 25.01
 
@@ -41,8 +28,7 @@ ignored.
 
 #### `reuse_prepared_statements`
 
-The `reuse_prepared_statements` parameter has been replaced with the use of the
-[PsReuse](../../reference/maxscale-filters/maxscale-psreuse-filter.md) filter module.
+The `reuse_prepared_statements` parameter has been replaced with the use of the [PsReuse](../../../reference/maxscale-filters/maxscale-psreuse-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -68,7 +54,7 @@ filters=PsReuse
 
 #### `optimistic_trx`
 
-The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../../reference/maxscale-filters/maxscale-optimistic-transaction-execution-filter.md) filter module.
+The `optimistic_trx` parameter has been replaced with the use of the [OptimisticTrx](../../../reference/maxscale-filters/maxscale-optimistic-transaction-execution-filter.md) filter module.
 
 The functionality that previously was enabled with:
 
@@ -108,10 +94,7 @@ To downgrade from MaxScale 24.02 to an older MaxScale major release:
 
 ## Upgrading MariaDB MaxScale from 23.02 to 23.08
 
-MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5
-and later. See
-[Cluster Manipulation Grants](../../reference/maxscale-monitors/mariadb-monitor.md#cluster-manipulation-grants)
-for more information.
+MariaDB Monitor switchover requires an additional grant on MariaDB Server 10.5 and later. See [Cluster Manipulation Grants](../../../reference/maxscale-monitors/mariadb-monitor.md#cluster-manipulation-grants) for more information.
 
 ## Upgrading MariaDB MaxScale from 22.08 to 23.02
 
@@ -190,7 +173,7 @@ The deprecated MaxAdmin interface has been removed in 2.5.0 in favor of the REST
 
 ### Authentication
 
-The credentials used by services now require additional grants. For a full list of required grants, refer to the [protocol documentation](../../reference/maxscale-protocols/).
+The credentials used by services now require additional grants. For a full list of required grants, refer to the [protocol documentation](../../../reference/maxscale-protocols/).
 
 ### MariaDB-Monitor
 
