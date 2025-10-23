@@ -69,31 +69,41 @@ cat $MYSQL_DATADIR/grastate.dat | grep version
 
 For example, a very common version number is "2.1".
 
-* Get the node's cluster state from the [`xtrabackup_galera_info`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#galera-info) file in the backup that was copied to the joiner node.
+*   Get the node's cluster state from the Galera info file in the backup that was copied to the joiner node.
 
-```
-cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
-```
+    The name of this file depends on the MariaDB version:
 
-The file contains the values of the [`wsrep_local_state_uuid`](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [`wsrep_last_committed`](../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables.
+    * MariaDB 11.4 and later: `mariadb_backup_galera_info`
+    * MariaDB 11.3 and earlier: `xtrabackup_galera_info`
 
-The values are written in the following format:
+    For MariaDB 11.4 and later:
 
-```
-wsrep_local_state_uuid:wsrep_last_committed
-```
+    ```bash
+    cat $MYSQL_BACKUP_DIR/mariadb_backup_galera_info
+    ```
 
-For example:
+    For MariaDB 11.3 and earlier:
 
-```
-d38587ce-246c-11e5-bcce-6bbd0831cc0f:1352215
-```
+    ```bash
+    cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
+    ```
 
+    The file contains the values of the [wsrep\_local\_state\_uuid](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [wsrep\_last\_committed](../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables. The values are written in the following format:
+
+    ```bash
+    wsrep_local_state_uuid:wsrep_last_committed
+    ```
+
+    For example:
+
+    ```
+    d38587ce-246c-11e5-bcce-6bbd0831cc0f:1352215
+    ```
 * Create a `grastate.dat` file in the backup directory of the joiner node. The Galera Cluster version ID, the cluster uuid, and the seqno from previous steps will be used to fill in the relevant fields.
 
 For example, with the example values from the last two steps, we could do:
 
-```
+```bash
 sudo tee $MYSQL_BACKUP_DIR/grastate.dat <<EOF
 # GALERA saved state
 version: 2.1
@@ -105,21 +115,21 @@ EOF
 
 * Remove the existing contents of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) on the joiner node.
 
-```
+```bash
 MYSQL_DATADIR=/var/lib/mysql
 rm -Rf $MYSQL_DATADIR/*
 ```
 
 * Copy the contents of the backup directory to the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) the on joiner node.
 
-```
+```bash
 mariadb-backup --copy-back \
    --target-dir=$MYSQL_BACKUP_DIR
 ```
 
 * Make sure the permissions of the [`datadir`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir) are correct on the joiner node.
 
-```
+```bash
 chown -R mysql:mysql $MYSQL_DATADIR/
 ```
 
@@ -127,14 +137,12 @@ chown -R mysql:mysql $MYSQL_DATADIR/
 
 For example, on [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/systemd) systems, you can execute::
 
-```
+```bash
 systemctl start mariadb
 ```
 
 * Watch the MariaDB [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) on the joiner node and verify that the node does not need to perform a [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) due to the manual SST.
 
-```
+```bash
 tail -f /var/log/mysql/mysqld.log
 ```
-
-* \
