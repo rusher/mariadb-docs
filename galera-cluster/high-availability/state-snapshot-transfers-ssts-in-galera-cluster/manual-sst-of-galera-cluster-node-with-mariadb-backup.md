@@ -69,26 +69,36 @@ cat $MYSQL_DATADIR/grastate.dat | grep version
 
 For example, a very common version number is "2.1".
 
-* Get the node's cluster state from the [`xtrabackup_galera_info`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#galera-info) file in the backup that was copied to the joiner node.
+*   Get the node's cluster state from the Galera info file in the backup that was copied to the joiner node.
 
-```
-cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
-```
+    The name of this file depends on the MariaDB version:
 
-The file contains the values of the [`wsrep_local_state_uuid`](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [`wsrep_last_committed`](../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables.
+    * MariaDB 11.4 and later: `mariadb_backup_galera_info`
+    * MariaDB 11.3 and earlier: `xtrabackup_galera_info`
 
-The values are written in the following format:
+    For MariaDB 11.4 and later:
 
-```
-wsrep_local_state_uuid:wsrep_last_committed
-```
+    ```bash
+    cat $MYSQL_BACKUP_DIR/mariadb_backup_galera_info
+    ```
 
-For example:
+    For MariaDB 11.3 and earlier:
 
-```
-d38587ce-246c-11e5-bcce-6bbd0831cc0f:1352215
-```
+    ```bash
+    cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
+    ```
 
+    The file contains the values of the `wsrep_local_state_uuid` and `wsrep_last_committed` status variables. The values are written in the following format:
+
+    ```bash
+    wsrep_local_state_uuid:wsrep_last_committed
+    ```
+
+    For example:
+
+    ```
+    d38587ce-246c-11e5-bcce-6bbd0831cc0f:1352215
+    ```
 * Create a `grastate.dat` file in the backup directory of the joiner node. The Galera Cluster version ID, the cluster uuid, and the seqno from previous steps will be used to fill in the relevant fields.
 
 For example, with the example values from the last two steps, we could do:
