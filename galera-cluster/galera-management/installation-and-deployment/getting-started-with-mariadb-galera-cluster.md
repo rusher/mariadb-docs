@@ -4,8 +4,10 @@ The most recent release of [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJ
 
 The current [versions](../../readme/mariadb-galera-cluster-guide.md#galera-versions) of the Galera wsrep provider library are 26.4.21 for [Galera](../../) 4. _For convenience, packages containing these libraries are included in the MariaDB_ [_YUM and APT repositories_](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum)_._
 
+{% hint style="warning" %}
 Currently, MariaDB Galera Cluster only supports the [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) storage engine (although there is\
 experimental support for [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria)).
+{% endhint %}
 
 ## Galera Cluster Support in MariaDB Server
 
@@ -33,13 +35,9 @@ During normal operation, a MariaDB Galera node consumes no more memory than a re
 certification index and uncommitted write sets, but normally, this should not be\
 noticeable in a typical application. There is one exception, though:
 
-1. Writeset caching during state transfer. When a node is receiving a state\
-   transfer, it cannot process and apply incoming writesets because it has no\
-   state to apply them to yet. Depending on a state transfer mechanism (e.g.[mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump)) the node that sends the state transfer may not be able to\
-   apply writesets as well. Thus, they need to cache those writesets for a\
-   catch-up phase. Currently the writesets are cached in memory and, if the\
-   system runs out of memory either the state transfer will fail or the cluster\
-   will block waiting for the state transfer to end.
+#### Writeset caching during state transfer
+
+When a node is receiving a state transfer, it cannot process and apply incoming writesets because it has no state to apply them to yet. Depending on a state transfer mechanism (e.g.[mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump)) the node that sends the state transfer may not be able to apply writesets as well. Thus, they need to cache those writesets for a catch-up phase. Currently the writesets are cached in memory and, if the system runs out of memory either the state transfer will fail or the cluster will block waiting for the state transfer to end.
 
 To control memory usage for writeset caching, check the [Galera parameters](../../reference/galera-cluster-system-variables.md): `gcs.recv_q_hard_limit`, `gcs.recv_q_soft_limit`, and `gcs.max_throttle`.
 
@@ -108,7 +106,7 @@ Do not use the [--wsrep-new-cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO
 
 For example, if you were manually starting [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) on a node, then you could bootstrap it by executing the following:
 
-```
+```bash
 $ mariadbd --wsrep-new-cluster
 ```
 
@@ -118,7 +116,7 @@ However, keep in mind that most users are not going to be starting [mariadbd](ht
 
 On operating systems that use [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), a node can be bootstrapped in the following way:
 
-```
+```bash
 $ galera_new_cluster
 ```
 
@@ -126,7 +124,7 @@ This wrapper uses [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/serve
 
 If you are using the [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) service that supports the [systemd service's method for interacting with multiple MariaDB Server processes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd#interacting-with-multiple-mariadb-server-processes), then you can bootstrap a specific instance by specifying the instance name as a suffix. For example:
 
-```
+```bash
 $ galera_new_cluster mariadb@node1
 ```
 
@@ -136,7 +134,7 @@ Systemd support and the galera\_new\_cluster script were added.
 
 On operating systems that use [sysVinit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit), a node can be bootstrapped in the following way:
 
-```
+```bash
 $ service mysql bootstrap
 ```
 
@@ -146,11 +144,13 @@ This runs [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-manag
 
 Once you have a cluster running and you want to add/reconnect another node to it, you must supply an address of one or more of the existing cluster members in the [wsrep\_cluster\_address](../../reference/galera-cluster-system-variables.md#wsrep_cluster_address) option. For example, if the first node of the cluster has the address 192.168.0.1, then you could add a second node to the cluster by setting the following option in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
 
-```
+{% code overflow="wrap" %}
+```ini
 [mariadb]
 ...
 wsrep_cluster_address=gcomm://192.168.0.1  # DNS names work as well, IP is preferred for performance
 ```
+{% endcode %}
 
 The new node only needs to connect to one of the existing cluster nodes. Once it connects to one of the existing cluster nodes, it will be able to see all of the nodes in the cluster. However, it is generally better to list all nodes of the cluster in [wsrep\_cluster\_address](../../reference/galera-cluster-system-variables.md#wsrep_cluster_address), so that any node can join a cluster by connecting to any of the other cluster nodes, even if one or more of the cluster nodes are down. It is even OK to list a node's own IP address in [wsrep\_cluster\_address](../../reference/galera-cluster-system-variables.md#wsrep_cluster_address), since Galera Cluster is smart enough to ignore it.
 
@@ -170,7 +170,7 @@ If you know for sure which node is the most advanced you can edit the `grastate.
 
 You can determine which node is the most advanced by checking `grastate.dat` on each node and looking for the node with the highest `seqno`. If the node crashed and `seqno=-1`, then you can find the most advanced node by recovering the `seqno` on each node with the [wsrep\_recover](../../reference/galera-cluster-system-variables.md#wsrep_recover) option. For example:
 
-```
+```bash
 $ mariadbd --wsrep_recover
 ```
 
@@ -178,13 +178,13 @@ $ mariadbd --wsrep_recover
 
 On operating systems that use [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), the position of a node can be recovered by running the `galera_recovery` script. For example:
 
-```
+```bash
 $ galera_recovery
 ```
 
 If you are using the [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) service that supports the [systemd service's method for interacting with multiple MariaDB Server processes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd#interacting-with-multiple-mariadb-server-processes), then you can recover the position of a specific instance by specifying the instance name as a suffix. For example:
 
-```
+```bash
 $ galera_recovery mariadb@node1
 ```
 
@@ -222,7 +222,7 @@ Some data still cannot be encrypted:
 
 [Galera Cluster's status variables](../../reference/galera-cluster-status-variables.md) can be queried with the standard [SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status) command. For example:
 
-```
+```sql
 SHOW GLOBAL STATUS LIKE 'wsrep_%';
 ```
 

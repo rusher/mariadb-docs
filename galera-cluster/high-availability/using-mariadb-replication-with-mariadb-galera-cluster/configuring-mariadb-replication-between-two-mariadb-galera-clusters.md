@@ -26,12 +26,16 @@ And as an extra safety measure:
 
 Our process to set up replication is going to be similar to the process described at [Setting up a Replication Slave with mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/full-backup-and-restore-with-mariadb-backup), but it will be modified a bit to work in this context.
 
+{% stepper %}
+{% step %}
 ### Start the First Cluster
 
 The very first step is to start the nodes in the first cluster. The first node will have to be [bootstrapped](../../galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster). The other nodes can be started normally.
 
 Once the nodes are started, you need to pick a specific node that will act as the replication primary for the second cluster.
+{% endstep %}
 
+{% step %}
 ### Backup the Database on the First Cluster's Primary Node and Prepare It
 
 The first step is to simply take and prepare a fresh [full backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/full-backup-and-restore-with-mariadb-backup) of the node that you have chosen to be the replication primary. For example:
@@ -48,7 +52,9 @@ And then you would prepare the backup as you normally would. For example:
 $ mariadb-backup --prepare \
    --target-dir=/var/mariadb/backup/
 ```
+{% endstep %}
 
+{% step %}
 ### Copy the Backup to the Second Cluster's Replica
 
 Once the backup is done and prepared, you can copy it to the node in the second cluster that will be acting as replica. For example:
@@ -56,7 +62,9 @@ Once the backup is done and prepared, you can copy it to the node in the second 
 ```
 $ rsync -avrP /var/mariadb/backup c2dbserver:/var/mariadb/backup
 ```
+{% endstep %}
 
+{% step %}
 ### Restore the Backup on the Second Cluster's Replica
 
 At this point, you can restore the backup to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#datadir), as you normally would. For example:
@@ -71,11 +79,15 @@ And adjusting file permissions, if necessary:
 ```
 $ chown -R mysql:mysql /var/lib/mysql/
 ```
+{% endstep %}
 
+{% step %}
 ### Bootstrap the Second Cluster's Replica
 
 Now that the backup has been restored to the second cluster's replica, you can start the server by [bootstrapping](../../galera-management/installation-and-deployment/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster) the node.
+{% endstep %}
 
+{% step %}
 ### Create a Replication User on the First Cluster's Primary
 
 Before the second cluster's replica can begin replicating from the first cluster's primary, you need to [create a user account](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/authentication-with-enterprise-server/authentication-with-gssapi#create-user) on the primary that the replica can use to connect, and you need to [grant](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) the user account the [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave) privilege. For example:
@@ -84,7 +96,9 @@ Before the second cluster's replica can begin replicating from the first cluster
 CREATE USER 'repl'@'c2dbserver1' IDENTIFIED BY 'password';
 GRANT REPLICATION SLAVE ON *.*  TO 'repl'@'c2dbserver1';
 ```
+{% endstep %}
 
+{% step %}
 ### Start Replication on the Second Cluster's Replica
 
 At this point, you need to get the replication coordinates of the primary from the original backup.
@@ -101,8 +115,8 @@ mariadb-bin.000096 568 0-1-2
 
 Regardless of the coordinates you use, you will have to set up the primary connection using [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) and then start the replication threads with [START SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-start-slave).
 
-#### GTIDs
-
+{% tabs %}
+{% tab title="GTIDs" %}
 If you want to use GTIDs, then you will have to first set [gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_slave_pos) to the [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) coordinates that we pulled from the [xtrabackup\_binlog\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/files-created-by-mariadb-backup#xtrabackup_binlog_info) file, and we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) command. For example:
 
 ```
@@ -115,9 +129,9 @@ CHANGE MASTER TO
    MASTER_USE_GTID=slave_pos;
 START SLAVE;
 ```
+{% endtab %}
 
-#### File and Position
-
+{% tab title="File and Position" %}
 If you want to use the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) command to the file and position coordinates that we pulled the [xtrabackup\_binlog\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup/files-created-by-mariadb-backup#xtrabackup_binlog_info) file. For example:
 
 ```
@@ -130,7 +144,11 @@ CHANGE MASTER TO
    MASTER_LOG_POS=568,
 START SLAVE;
 ```
+{% endtab %}
+{% endtabs %}
+{% endstep %}
 
+{% step %}
 ### Check the Status of the Second Cluster's Replica
 
 You should be done setting up the replica now, so you should check its status with [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-show-slave-status). For example:
@@ -138,17 +156,23 @@ You should be done setting up the replica now, so you should check its status wi
 ```
 SHOW SLAVE STATUS\G
 ```
+{% endstep %}
 
+{% step %}
 ### Start the Second Cluster
 
 If the replica is replicating normally, then the next step would be to start the MariaDB Server process on the other nodes in the second cluster.
 
 Now that the second cluster is up, ensure that it does not start accepting writes yet if you want to set up [circular replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-overview#ring-replication) between the two clusters.
+{% endstep %}
+{% endstepper %}
 
 ## Setting up Circular Replication
 
 You can also set up [circular replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-overview#ring-replication) between the two clusters, which means that the second cluster replicates from the first cluster, and the first cluster also replicates from the second cluster.
 
+{% stepper %}
+{% step %}
 ### Create a Replication User on the Second Cluster's Primary
 
 Before circular replication can begin, you also need to [create a user account](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/authentication-with-enterprise-server/authentication-with-gssapi#create-user) on the second cluster's primary that the first cluster's replica can use to connect, and you need to [grant](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) the user account the the [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave) privilege. For example:
@@ -157,15 +181,17 @@ Before circular replication can begin, you also need to [create a user account](
 CREATE USER 'repl'@'c1dbserver1' IDENTIFIED BY 'password';
 GRANT REPLICATION SLAVE ON *.*  TO 'repl'@'c1dbserver1';
 ```
+{% endstep %}
 
+{% step %}
 ### Start Circular Replication on the First Cluster
 
 How this is done would depend on whether you want to use the [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) coordinates or the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) file and position coordinates.
 
 Regardless, you need to ensure that the second cluster is not accepting any writes other than those that it replicates from the first cluster at this stage.
 
-#### GTIDs
-
+{% tabs %}
+{% tab title="GTIDs" %}
 To get the GTID coordinates on the second cluster, you can check [gtid\_current\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_current_pos) by executing:
 
 ```
@@ -184,9 +210,9 @@ CHANGE MASTER TO
    MASTER_USE_GTID=slave_pos;
 START SLAVE;
 ```
+{% endtab %}
 
-#### File and Position
-
+{% tab title="File and Position" %}
 To get the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) file and position coordinates on the second cluster, you can execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status):
 
 ```
@@ -206,6 +232,12 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+
+{% endtab %}
+{% endtabs %}
+{% endstep %}
+
+{% step %}
 ### Check the Status of the Circular Replication
 
 You should be done setting up the circular replication on the node in the first cluster now, so you should check its status with [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-show-slave-status). For example:
@@ -213,7 +245,7 @@ You should be done setting up the circular replication on the node in the first 
 ```
 SHOW SLAVE STATUS\G
 ```
-
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% endstep %}
+{% endstepper %}
 
 {% @marketo/form formId="4316" %}

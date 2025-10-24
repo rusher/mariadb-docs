@@ -4,7 +4,7 @@
 This page provides a deep-dive into Incremental State Transfer (IST), a method for a node to synchronize with the cluster. For information on a fallback mechanism, see [State Snapshot Transfers (SSTs)](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md).
 {% endhint %}
 
-## Incremental State Transfer (IST)?
+## Incremental State Transfer (IST)
 
 An Incremental State Transfer (IST) is the fast and efficient process where a joining node receives only the missing [transactions](../galera-architecture/certification-based-replication.md#how-the-process-works) it needs to catch up with the cluster, rather than receiving a full copy of the entire database.
 
@@ -30,13 +30,15 @@ The GCache is a special cache on each node whose primary purpose is to store rec
 
 When a node attempts to rejoin the cluster, it reports the [sequence number (`seqno`)](../galera-architecture/introduction-to-galera-architecture.md#global-transaction-id-gtid) of the last transaction it successfully applied. The potential donor node then checks its GCache for the very next `seqno` in that sequence.
 
-#### If the `seqno` is found in the GCache
-
+{% tabs %}
+{% tab title="seqno is found" %}
 The donor has the necessary history. It streams all subsequent write-sets from its GCache to the joiner. The joiner applies them in order and quickly becomes [Synced](monitoring-mariadb-galera-cluster.md#understanding-galera-node-states).
+{% endtab %}
 
-#### If the `seqno` is NOT found in the GCache
-
+{% tab title="seqno is NOT found" %}
 The node was disconnected for too long, and the required history has been purged from the cache. IST is not possible, and an SST is initiated.
+{% endtab %}
+{% endtabs %}
 
 ### Configuring the GCache
 
