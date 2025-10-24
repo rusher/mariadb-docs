@@ -1,6 +1,6 @@
 # TLS
 
-MariaDB Enterprise Operator supports issuing, configuring and rotating TLS certificates for both your `MariaDB` and `MaxScale` resources. It aims to be secure by default; for this reason, TLS certificates are issued and configured by the operator as a default behaviour.
+MariaDB Enterprise Kubernetes Operator supports issuing, configuring and rotating TLS certificates for both your `MariaDB` and `MaxScale` resources. It aims to be secure by default; for this reason, TLS certificates are issued and configured by the operator as a default behaviour.
 
 ## `MariaDB` configuration
 
@@ -711,7 +711,7 @@ The following set of algorithms and sizes are supported:
 
 ## CA renewal
 
-Depending on the setup, CAs can be managed and renewed by either MariaDB Enterprise Operator or cert-manager.
+Depending on the setup, CAs can be managed and renewed by either MariaDB Enterprise Kubernetes Operator or cert-manager.
 
 When managed by the operator, CAs have a lifetime of 3 years by default, and are marked for renewal after 66% of its lifetime has passed i.e. \~2 years. After being renewed, the operator will trigger an update of the instances to include the new CA in the bundle.
 

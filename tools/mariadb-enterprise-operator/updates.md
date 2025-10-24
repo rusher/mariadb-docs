@@ -1,6 +1,6 @@
 # Updates
 
-By leveraging the automation provided by MariaDB Enterprise Operator, you can declaratively manage large fleets of databases using CRs. This also covers day two operations, such as upgrades, which can be risky when rolling out updates to thousands of instances simultaneously.
+By leveraging the automation provided by MariaDB Enterprise Kubernetes Operator, you can declaratively manage large fleets of databases using CRs. This also covers day two operations, such as upgrades, which can be risky when rolling out updates to thousands of instances simultaneously.
 
 To mitigate this, and to give you full control on the upgrade process, you are able to choose between multiple update strategies described in the following sections.
 

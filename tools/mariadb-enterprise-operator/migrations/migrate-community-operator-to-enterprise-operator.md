@@ -1,7 +1,7 @@
 
 # Migrate Community operator to Enterprise operator
 
-In this guide, we will be migrating from the [MariaDB Community Operator](https://github.com/mariadb-operator/mariadb-operator) to the [MariaDB Enterprise Operator](../README.md) without downtime. This guide assumes:
+In this guide, we will be migrating from the [MariaDB Community Operator](https://github.com/mariadb-operator/mariadb-operator) to the [MariaDB Enterprise Kubernetes Operator](../README.md) without downtime. This guide assumes:
 
 * [0.37.1](https://github.com/mariadb-operator/mariadb-operator/releases/tag/0.37.1) version of the MariaDB Community Operator is installed in the cluster.
 * `MariaDB` community resources will be migrated to its counterpart `MariaDB` enterprise resource. In this case, we will be using `11.4.4` version, which is supported in both community and enterprise versions. Check the supported [MariaDB Enterprise images](../docker-images.md) and migrate to a counterpart community version first if needed.

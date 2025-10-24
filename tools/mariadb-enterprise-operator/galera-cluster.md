@@ -1,14 +1,14 @@
 # Galera Cluster
 
-MariaDB Enterprise Operator provides cloud native support for provisioning and operating multi-master MariaDB clusters using Galera. This setup enables the ability to perform writes on a single node and reads in all nodes, enhancing availability and allowing scalability across multiple nodes.
+MariaDB Enterprise Kubernetes Operator provides cloud native support for provisioning and operating multi-master MariaDB clusters using Galera. This setup enables the ability to perform writes on a single node and reads in all nodes, enhancing availability and allowing scalability across multiple nodes.
 
-In certain circumstances, it could be the case that all the nodes of your cluster go down at the same time, something that Galera is not able to recover by itself, and it requires manual action to bring the cluster up again, as documented in the [Galera documentation](https://galeracluster.com/library/documentation/crash-recovery.html). The MariaDB Enterprise Operator encapsulates this operational expertise in the `MariaDB` CR. You just need to declaratively specify `spec.galera`, as explained in more detail [later in this guide](galera-cluster.md#mariadb-configuration).
+In certain circumstances, it could be the case that all the nodes of your cluster go down at the same time, something that Galera is not able to recover by itself, and it requires manual action to bring the cluster up again, as documented in the [Galera documentation](https://galeracluster.com/library/documentation/crash-recovery.html). The MariaDB Enterprise Kubernetes Operator encapsulates this operational expertise in the `MariaDB` CR. You just need to declaratively specify `spec.galera`, as explained in more detail [later in this guide](galera-cluster.md#mariadb-configuration).
 
 To accomplish this, after the MariaDB cluster has been provisioned, the operator will regularly monitor the cluster's status to make sure it is healthy. If any issues are detected, the operator will initiate the [recovery process](galera-cluster.md#galera-cluster-recovery) to restore the cluster to a healthy state. During this process, the operator will set status conditions in the `MariaDB` and emit `Events` so you have a better understanding of the recovery progress and the underlying activities being performed. For example, you may want to know which `Pods` were out of sync to further investigate infrastructure-related issues (i.e. networking, storage...) on the nodes where these `Pods` were scheduled.
 
 ## Data-plane
 
-To be able to effectively provision and recover MariaDB Galera clusters, the following data-plane components run alongside MariaDB and co-operate with MariaDB Enterprise Operator:
+To be able to effectively provision and recover MariaDB Galera clusters, the following data-plane components run alongside MariaDB and co-operate with MariaDB Enterprise Kubernetes Operator:
 
 * init: Init container that dynamically provisions the Galera configuration file before the MariaDB container starts. Guarantees ordered deployment of `Pods` even if `spec.podManagementPolicy=Parallel` is set on the MariaDB `StatefulSet`, something crucial for performing the Galera recovery, as the operator needs to restart `Pods` independently.
 * agent: Sidecar agent that exposes the Galera state ([grastate.dat](https://galeracluster.com/2016/11/introducing-the-safe-to-bootstrap-feature-in-galera-cluster/)) via HTTP and allows the operator to remotely bootstrap and recover the Galera cluster. It comes with [multiple auth methods](galera-cluster.md#agent-auth-methods) to ensure that only the operator is able to call the agent.
@@ -124,7 +124,7 @@ Unlike the [ServiceAccount based authentication](galera-cluster.md#serviceaccoun
 
 ## Galera cluster recovery
 
-MariaDB Enterprise Operator monitors the Galera cluster and acts accordinly to recover it if needed. This feature is enabled by default, but you may tune it as you need:
+MariaDB Enterprise Kubernetes Operator monitors the Galera cluster and acts accordinly to recover it if needed. This feature is enabled by default, but you may tune it as you need:
 
 ```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -261,7 +261,7 @@ Finally, after your cluster has been bootstrapped, remember to unset `forceClust
 
 ## Bootstrap Galera cluster from existing PVCs
 
-MariaDB Enterprise Operator will never delete your `MariaDB` PVCs. Whenever you delete a `MariaDB` resource, the PVCs will remain intact so you could reuse them to re-provision a new cluster.
+MariaDB Enterprise Kubernetes Operator will never delete your `MariaDB` PVCs. Whenever you delete a `MariaDB` resource, the PVCs will remain intact so you could reuse them to re-provision a new cluster.
 
 That said, Galera is unable to form a cluster from pre-existing state, it requires a [cluster recovery](galera-cluster.md#galera-cluster-recovery) process to identify which `Pod` has the highest sequence number to bootstrap a new cluster. That's exactly what the operator does: whenever a new `MariaDB` Galera cluster is created and previously created PVCs exist, a cluster recovery process is automatically triggered.
 

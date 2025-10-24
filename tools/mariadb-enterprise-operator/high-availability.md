@@ -15,7 +15,7 @@ Refer to the following sections for further detail.
 
 ## Kubernetes Services
 
-In order to address nodes, MariaDB Enterprise Operator provides you with the following Kubernetes `Services`:
+In order to address nodes, MariaDB Enterprise Kubernetes Operator provides you with the following Kubernetes `Services`:
 
 * `<mariadb-name>`: To be used for read requests. It will point to all nodes.
 * `<mariadb-name>-primary`: To be used for write requests. It will point to a single node, the primary.
@@ -178,7 +178,7 @@ Take a look at the [Kubernetes documentation](https://kubernetes.io/docs/tasks/r
 
 By defining a `PodDisruptionBudget`, you are telling Kubernetes how many `Pods` your database tolerates to be down. This quite important for planned maintenance operations such as `Node` upgrades.
 
-MariaDB Enterprise Operator creates a default `PodDisruptionBudget` if you are running in HA, but you are able to define your own by setting:
+MariaDB Enterprise Kubernetes Operator creates a default `PodDisruptionBudget` if you are running in HA, but you are able to define your own by setting:
 
 ```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1

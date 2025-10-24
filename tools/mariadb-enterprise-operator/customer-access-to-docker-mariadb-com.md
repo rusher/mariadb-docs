@@ -1,6 +1,6 @@
 # Customer access to docker.mariadb.com
 
-This documentation aims to provide guidance on how to configure access to `docker.mariadb.com` in your MariaDB Enterprise Operator resources.
+This documentation aims to provide guidance on how to configure access to `docker.mariadb.com` in your MariaDB Enterprise Kubernetes Operator resources.
 
 ## Customer credentials
 

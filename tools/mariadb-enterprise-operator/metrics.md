@@ -1,6 +1,6 @@
 # Metrics
 
-MariaDB Enterprise Operator is able to configure [Prometheus operator](https://prometheus-operator.dev/) resources to scrape metrics from MariaDB and MaxScale instances. These metrics can be used later on to build [Grafana dashboards](metrics.md#grafana-dashboards) or trigger [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) alerts.
+MariaDB Enterprise Kubernetes Operator is able to configure [Prometheus operator](https://prometheus-operator.dev/) resources to scrape metrics from MariaDB and MaxScale instances. These metrics can be used later on to build [Grafana dashboards](metrics.md#grafana-dashboards) or trigger [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) alerts.
 
 ## Operator metrics
 
