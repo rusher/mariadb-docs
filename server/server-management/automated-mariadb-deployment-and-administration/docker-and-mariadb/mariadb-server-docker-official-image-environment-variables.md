@@ -2,7 +2,7 @@
 
 When you start the image, you can adjust the initialization of the MariaDB Server instance by passing one or more environment variables on the docker run command line. Do note that all of the variables below, except `MARIADB_AUTO_UPGRADE`, will have no effect if you start the container with a data directory that already contains a database: any pre-existing database will always be left untouched on container startup.
 
-Starting from tags `10.2.38`, `10.3.29`, `10.4.19`, and `10.5.10`, and all tags `10.6` and above, `MARIADB_*` variables will be used in preference to `MYSQL_*` variables.
+All tags from `10.6` and above, `MARIADB_*` variables will be used in preference to `MYSQL_*` variables.
 
 One of the following is required: `MARIADB_ROOT_PASSWORD_HASH`, `MARIADB_ROOT_PASSWORD`, `MARIADB_ALLOW_EMPTY_ROOT_PASSWORD`, or `MARIADB_RANDOM_ROOT_PASSWORD` (including `*_FILE` equivalents).
 
