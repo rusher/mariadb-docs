@@ -37,7 +37,7 @@
       * [ERD Designer](mariadb-enterprise-manager/usage/workspace/erd-designer.md)
       * [Database Administration](mariadb-enterprise-manager/usage/workspace/database-administration.md)
   * [Troubleshooting Enterprise Manager](mariadb-enterprise-manager/troubleshooting-enterprise-manager.md)
-* [MariaDB Enterprise Operator](mariadb-enterprise-operator/README.md)
+* [MariaDB Enterprise Kubernetes Operator](mariadb-enterprise-operator/README.md)
   * [Introduction](mariadb-enterprise-operator/introduction.md)
   * [Customer access to docker.mariadb.com](mariadb-enterprise-operator/customer-access-to-docker-mariadb-com.md)
   * [Docker Images](mariadb-enterprise-operator/docker-images.md)
