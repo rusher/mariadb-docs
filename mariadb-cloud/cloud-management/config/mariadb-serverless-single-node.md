@@ -2,7 +2,7 @@ For cloud databases using the MariaDB Serverless Single Node topology, the follo
 
 | Name | Default Value |
 |------|---------------|
-  | [auto_increment_increment](https://r.mariadb.com/skysql-system-variables/auto_increment_increment/) | 1 |
+  | [auto_increment_increment](https://app.gitbook.com/s/JqgUabdZsoY5EiaJmqgn/server-management/variables-and-modes/server-system-variables#auto_increment_increment) | 1 |
   | [autocommit](https://r.mariadb.com/skysql-system-variables/autocommit/) | ON |
   | [cracklib_password_check](https://r.mariadb.com/skysql-system-variables/cracklib_password_check/) | OFF |
   | [default_password_lifetime](https://r.mariadb.com/skysql-system-variables/default_password_lifetime/) | 0 |
