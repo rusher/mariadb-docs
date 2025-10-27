@@ -3688,7 +3688,8 @@ this parameter are `primary` and `secondary`. The default value is
 `primary`.
 
 This behavior depends on the router implementation but the general rule of thumb
-is that primary servers will be used before secondary servers.
+is that primary servers will be used before secondary servers. Note that this
+**does not affect** how monitors select servers.
 
 Readconnroute will always use primary servers before secondary servers as long
 as they match the configured server type.
