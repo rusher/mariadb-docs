@@ -225,10 +225,12 @@ SELECT @myid; -- Might return 1 or 0
 * Default: true (>= MaxScale 24.02), false(<= MaxScale 23.08)
 
 Allow the primary server to change mid-session. This feature requires
-that`disable_sescmd_history` is not used.
+that[`disable_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#disable_sescmd_history)
+is not used.
 
-Starting with MaxScale 24.02, if `disable_sescmd_history` is
-enabled,`master_reconnection` will be automatically disabled.
+Starting with MaxScale 24.02, if
+[`disable_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#disable_sescmd_history)
+is enabled,`master_reconnection` will be automatically disabled.
 
 When a readwritesplit session starts, it will pick a primary server as the
 current primary server of that session. When `master_reconnection` is disabled,
@@ -249,7 +251,7 @@ queries are received, readwritesplit will transparently reconnect to the new
 primary server.
 
 In both cases the change in the primary server can only take place
-if`prune_sescmd_history` is enabled or `max_sescmd_history` has not yet been
+if[`prune_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#prune_sescmd_history) is enabled or [`max_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#max_sescmd_history) has not yet been
 exceeded and the session does not have an open transaction.
 
 The recommended configuration is to use `master_reconnection=true`
@@ -1250,14 +1252,16 @@ The following operations are routed to primary:
 * User-defined function calls
 * Queries that use sequences (`NEXT VALUE FOR seq`, `NEXTVAL(seq)` or `seq.nextval`)
 * Statements that use any of the following functions:
-* `LAST_INSERT_ID()`
-* `GET_LOCK()`
-* `RELEASE_LOCK()`
-* `IS_USED_LOCK()`
-* `IS_FREE_LOCK()`
+  * `LAST_INSERT_ID()`
+  * `GET_LOCK()`
+  * `RELEASE_LOCK()`
+  * `IS_USED_LOCK()`
+  * `IS_FREE_LOCK()`
 * Statements that use any of the following variables:
-* `@@last_insert_id`
-* `@@identity`
+  * `@@last_insert_id`
+  * `@@identity`
+* Reads done with `causal_reads` enabled that timed out on the replica
+* Replication primary commands (e.g. `SHOW MASTER STATUS`)
 
 In addition to these, if the **readwritesplit** service is configured with the
 `max_replication_lag` parameter, and if all replicas suffer from too much
@@ -1286,15 +1290,12 @@ The ability to route some statements to replicas is important because it also
 decreases the load targeted to _primary_. Moreover, it is possible to have multiple
 replicas to share the load in contrast to single primary.
 
-Queries which can be routed to replicas must be auto committed and belong to one
-of the following group:
+The following types of queries can be routed to replicas:
 
-* Read-only statements (i.e. `SELECT`) that only use read-only built-in functions
+* Read-only statements (i.e. `SELECT` and `SHOW`) outside of transactions with
+  autocommit enabled that only use read-only built-in functions
+
 * All statements within an explicit read-only transaction (`START TRANSACTION READ ONLY`)
-* `SHOW` statements except `SHOW MASTER STATUS`
-
-The list of supported built-in functions can be found
-[here](https://github.com/mariadb-corporation/MaxScale/blob/24.02/server/modules/parser_plugin/pp_sqlite/builtin_functions.cc)
 
 ### Routing to every session backend
 
@@ -1316,12 +1317,11 @@ to _primary_ only. For example, `INSERT INTO t1 values(@myvar:=5, 7)` would be
 routed to _primary_ only.
 
 The router stores all of the executed session commands so that in case of a
-replica failure, a replacement replica can be chosen and the session command history
-can be repeated on that new replica. This means that the router stores each
-executed session command for the duration of the session. Applications that use
-long-running sessions might cause MariaDB MaxScale to consume a growing amount
-of memory unless the sessions are closed. This can be solved by adjusting the
-value of `max_sescmd_history`.
+connection failure, a replacement connection can be opened and the session
+command history can be replayed on that new connections. The number of stored
+session commands depends on the router configuration. For more information,
+refer to the documentation of
+[`max_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#max_sescmd_history).
 
 ### Routing to previous target
 
@@ -1490,68 +1490,27 @@ statement.
 
 #### Limitations in client session handling
 
-Some of the queries that a client sends are routed to all backends instead of
-just to one. These queries include `USE <db name>` and `SET autocommit=0`, among
-many others. Readwritesplit sends a copy of these queries to each backend server
-and forwards the primary's reply to the client. Below is a list of MySQL commands
-which are classified as session commands.
+Whenever a session command is executed, the type of the result that was returned
+by the primary server is compared to the result of all the other servers. If the
+command succeeded on the primary, it is expected to also succeed on all other
+servers and conversely, if it fails it's expected to fail on all other servers
+as well.
 
-```
-COM_INIT_DB (USE <db name> creates this)
-COM_CHANGE_USER
-COM_STMT_CLOSE
-COM_STMT_SEND_LONG_DATA
-COM_STMT_RESET
-COM_STMT_PREPARE
-COM_QUIT (no response, session is closed)
-COM_REFRESH
-COM_DEBUG
-COM_PING
-SQLCOM_CHANGE_DB (USE ... statements)
-SQLCOM_DEALLOCATE_PREPARE
-SQLCOM_PREPARE
-SQLCOM_SET_OPTION
-SELECT ..INTO variable|OUTFILE|DUMPFILE
-SET autocommit=1|0
-```
+If a command produces a different result than was expected, the connection to
+that server is permanently discarded and no further connection attempts are made
+to it within the same session.
 
-Prior to MaxScale 2.3.0, session commands that were 2²⁴ - 1 bytes or longer were
-not supported and caused the session to be closed.
+The most common case where a session command will produce a different result on
+a replica is when a database is created on the primary and a `USE <db>` command
+is executed right after it but the creation of the database hasn't had time to
+replicate to the replicas before the `USE <db>` command arrives.
 
-There is a possibility for misbehavior. If `USE mytable` is executed in one of
-the replicas and fails, it may be due to replication lag rather than the database
-not existing. Thus, the same command may produce different result in different
-backend servers. The replicas which fail to execute a session command will be
-dropped from the active list of replicas for this session to guarantee a
-consistent session state across all the servers used by the session. In
-addition, the server will not be used again for routing for the duration of the
-session.
-
-The above-mentioned behavior for user variables can be partially controlled with
-the configuration parameter `use_sql_variables_in`:
-
-```
-use_sql_variables_in=[master|all] (default: all)
-```
-
-**WARNING**
-
-If a SELECT query modifies a user variable when the `use_sql_variables_in`
-parameter is set to `all`, it will not be routed and the client will receive an
-error. A log message is written into the log further explaining the reason for
-the error. Here is an example use of a SELECT query which modifies a user
-variable and how MariaDB MaxScale responds to it.
-
-```
-MySQL [(none)]> set @id=1;
-Query OK, 0 rows affected (0.00 sec)
-
-MySQL [(none)]> SELECT @id := @id + 1 FROM test.t1;
-ERROR 1064 (42000): Routing query to backend failed. See the error log for further details.
-```
-
-Allow user variable modification in SELECT queries by setting`use_sql_variables_in=master`. This will route all queries that use user
-variables to the primary.
+If a `SELECT` query modifies a user variable when the `use_sql_variables_in`
+parameter is set to `all`, it will be routed to all backends to keep the session
+state consistent. For applications where this is a common pattern, the
+performance overhead of this can be avoided at the cost of the user variables
+being inconsistent by using `use_sql_variables_in=master`. This will route all
+queries that use user variables to the primary.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
