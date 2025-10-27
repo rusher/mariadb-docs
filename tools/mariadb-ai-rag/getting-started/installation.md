@@ -15,8 +15,8 @@
 {% tab title="Debian/Ubuntu" %}
 ### Debian/Ubuntu Installation
 
-1. Download the DEB installation package from:
-   * [https://dlm.mariadb.com/browse/ai\_rag\_enterprise/1.0.0/](https://dlm.mariadb.com/browse/ai_rag_enterprise/1.0.0/)
+1. Download the Debian / Ubuntu `.deb` installation package from:
+   * [https://mariadb.com/downloads/enterprise-tooling/ai-rag/](https://mariadb.com/downloads/enterprise-tooling/ai-rag/)
 2.  Install the package:
 
     ```bash
@@ -32,8 +32,8 @@
 {% tab title="RHEL" %}
 ### RHEL (and equivalents) Installation
 
-1. Download the RPM installation package from:
-   * [https://dlm.mariadb.com/browse/ai\_rag\_enterprise/1.0.0/](https://dlm.mariadb.com/browse/ai_rag_enterprise/1.0.0/)
+1. Download the RHEL `.rpm` installation package from:
+   * [https://mariadb.com/downloads/enterprise-tooling/ai-rag/](https://mariadb.com/downloads/enterprise-tooling/ai-rag/)
 2.  Install the package:
 
     ```bash
@@ -44,8 +44,8 @@
 {% tab title="Windows" %}
 ### Windows Installation
 
-1. Download the MSI installation package from:
-   * [https://dlm.mariadb.com/browse/ai\_rag\_enterprise/1.0.0/](https://dlm.mariadb.com/browse/ai_rag_enterprise/1.0.0/)
+1. Download the Windows `.msi` installation package from:
+   * [https://mariadb.com/downloads/enterprise-tooling/ai-rag/](https://mariadb.com/downloads/enterprise-tooling/ai-rag/)
 2. Run the `.msi` installer.
 3. Follow the installation wizard instructions.
 {% endtab %}
