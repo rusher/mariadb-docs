@@ -26,7 +26,7 @@ MariaDB 12.2 is a [rolling release](../about/release-model.md). It is an evoluti
 These features needed further testing and will be implemented in a future series.
 
 * Implement Global temporary tables ([MDEV-35915](https://jira.mariadb.org/browse/MDEV-35915)) (preview release only)
-* Improved support of replication between tables of different structure ([MDEV-36290](https://jira.mariadb.org/browse/MDEV-36290)) (preview release only)
+* Improved support of [replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) between tables of different structure ([MDEV-36290](https://jira.mariadb.org/browse/MDEV-36290)) (preview release only)
 
 ## List of All MariaDB 12.2 Releases
 
