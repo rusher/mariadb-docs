@@ -1189,25 +1189,24 @@ The readwritesplit router supports routing hints. For a detailed guide on hint
 syntax and functionality, please read [this](../maxscale-filters/maxscale-hintfilter.md)
 document.
 
-**Note**: Routing hints will always have the highest priority when a routing
-decision is made. This means that it is possible to cause inconsistencies in
-the session state and the actual data in the database by adding routing hints
-to DDL/DML statements which are then directed to replica servers. Only use routing
-hints when you are sure that they can cause no harm.
+The `route to master` hint can be used to treat a read as if it was a
+write. This is useful when a read done outside of a transaction depends on a
+previously committed transaction that may not have replicated to the other
+servers in the cluster. Alternative automated ways of solving this are
+[`causal_reads`](maxscale-readwritesplit.md#causal_reads) and
+[`sync_transaction`](maxscale-readwritesplit.md#sync_transaction).
 
-An exception to this rule is `transaction_replay`: when it is enabled, all
-routing hints inside transaction are ignored. This is done to prevent changes
-done inside a re-playable transaction from affecting servers outside of the
-transaction. This behavior was added in MaxScale 6.1.4. Older versions allowed
-routing hints to override the transaction logic.
+All routing hints are ignored if they are done inside of a transaction. This is
+done to guarantee the consistency of a transaction and to make sure that a
+transaction through readwritesplit behaves identically to a transaction done
+directly against MariaDB.
 
-### Known Limitations of Routing Hints
+The `route to slave` hint is always ignored by readwritesplit as it is
+either redundant or would cause writes to be sent to the wrong server.
 
-* If a `SELECT` statement with a `maxscale route to slave` hint is received
-  while autocommit is disabled, the query will be routed to a replica server. This
-  causes some metadata locks to be acquired on the database in question which
-  will block DDL statements on the server until either the connection is closed
-  or autocommit is enabled again.
+The `route to last` and `route to server <name>` hints only work on reads. If
+they are used on a write and the target server cannot be used for writes, it is
+treated as a retryable error if query retrying of writes is enable
 
 ## Module Commands
 
