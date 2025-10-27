@@ -23,9 +23,9 @@ MariaDB Enterprise Server can be deployed with Docker to support use cases that 
 
 The following products and versions can be deployed using the MariaDB Enterprise Docker Registry:
 
-* MariaDB Enterprise Server 10.5
-* MariaDB Enterprise Server 10.6
+* MariaDB Enterprise Server 11.8
 * MariaDB Enterprise Server 11.4
+* MariaDB Enterprise Server 10.6
 
 For details about which storage engines and plugins are supported in the images for each version, see "[MariaDB Enterprise Docker Registry](mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md)".
 
@@ -80,7 +80,7 @@ $ cat ~/.docker/config.json
 
 The `enterprise-server` repository in the MariaDB Enterprise Docker Registry contains images for different MariaDB Enterprise Server releases using specific tags. Before continuing, you will need to decide which tag to use.
 
-To deploy a container using the most recent image for the latest MariaDB Enterprise Server release series (currently 11.4), use the `latest` tag.
+To deploy a container using the most recent image for the latest MariaDB Enterprise Server release series (currently 11.8), use the `latest` tag.
 
 For additional information, see "[MariaDB Enterprise Docker Registry: Tags](mariadb-enterprise-docker-registry-for-mariadb-enterprise-server.md#tags)".
 
@@ -171,7 +171,7 @@ SHOW GLOBAL VARIABLES
 ```
 *************************** 1. row ***************************
 Variable_name: version
-        Value: 11.4.4-2-MariaDB-enterprise-log
+        Value: 11.8.3-1-MariaDB-enterprise-log
 ```
 
 Exit the container using `exit`:

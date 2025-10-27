@@ -204,9 +204,11 @@ The trailing comma tells the server to allow any other node as donor when the pr
 
 During the SST process, the donor node uses `socat` to stream the backup to the joiner node. Then the joiner node prepares the backup before restoring it. The `socat` utility must be installed on both the donor node and the joiner node in order for this to work. Otherwise, the MariaDB error log will contain an error like:
 
+{% code overflow="wrap" %}
 ```sql
 WSREP_SST: [ERROR] socat not found in path: /usr/sbin:/sbin:/usr//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin (20180122 14:55:32.993)
 ```
+{% endcode %}
 
 #### Installing Socat on RHEL/CentOS <a href="#installing-socat-on-rhelcentos" id="installing-socat-on-rhelcentos"></a>
 

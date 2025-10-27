@@ -15,12 +15,12 @@ All the Docker images used by this operator are based on [Red Hat UBI](https://c
 
 ## List of compatible images
 
-MariaDB Enterprise Operator is compatible with the following Docker images:
+MariaDB Enterprise Kubernetes Operator is compatible with the following Docker images:
 
 | Component | Image | Supported Tags | CPU Architecture |
 |-----------|-------|----------------|------------------|
-| MariaDB Enterprise Operator (ppc64le support) | docker.mariadb.com/mariadb-enterprise-operator |  25.8.0 <br>  |  amd64 <br>  arm64 <br>  ppc64le <br>  |
-| MariaDB Enterprise Operator | docker.mariadb.com/mariadb-enterprise-operator |  1.0.0 <br>  |  amd64 <br>  arm64 <br>  |
+| MariaDB Enterprise Kubernetes Operator (ppc64le support) | docker.mariadb.com/mariadb-enterprise-operator |  25.8.0 <br>  |  amd64 <br>  arm64 <br>  ppc64le <br>  |
+| MariaDB Enterprise Kubernetes Operator | docker.mariadb.com/mariadb-enterprise-operator |  1.0.0 <br>  |  amd64 <br>  arm64 <br>  |
 | MariaDB Enterprise Server (ppc64le support) | docker.mariadb.com/enterprise-server |  11.4.7-4.3 <br>  11.4.7-4.2 <br>  11.4.7-4.1 <br>  11.4 <br>  10.6.22-18.1 <br>  10.6 <br>  |  amd64 <br>  arm64 <br>  ppc64le <br>  |
 | MariaDB Enterprise Server | docker.mariadb.com/enterprise-server |  11.4.5-3 <br>  11.4.4-2 <br>  10.6.21-17 <br>  10.6.20-16.1 <br>  10.6.19-15.1 <br>  10.6.18-14.2 <br>  10.6.17-13.2 <br>  |  amd64 <br>  arm64 <br>  |
 | MaxScale Enterprise (ppc64le support) | docker.mariadb.com/maxscale |  25.01.3-1 <br>  25.01 <br>  |  amd64 <br>  arm64 <br>  ppc64le <br>  |
@@ -54,7 +54,7 @@ This method is ideal for a "bastion" or "jump" host that has network access to *
     ```
 
 2.  **Pull the required image.**
-    Pull the official MariaDB Enterprise Operator image from its public registry.
+    Pull the official MariaDB Enterprise Kubernetes Operator image from its public registry.
 
     ```bash
     docker pull docker.mariadb.com/mariadb-enterprise-operator:25.8.0

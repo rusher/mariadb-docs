@@ -62,15 +62,19 @@ Many status variables are differential and reset after each `FLUSH STATUS` comma
 
 If the entire cluster shuts down or [loses Quorum](resetting-the-quorum-cluster-bootstrap.md#procedure-for-selecting-the-right-node), you must manually re-establish a Primary Component by bootstrapping from the most advanced node.
 
-#### Step 1: Identify the Most Advanced Node
+{% stepper %}
+{% step %}
+### Identify the Most Advanced Node
 
 The "most advanced" node is the one that contains the most recent data. You must bootstrap the cluster from this node to avoid any data loss.
 
 1. Log in to each of your database servers.
 2. Examine the [`grastate.dat` file](resetting-the-quorum-cluster-bootstrap.md#find-the-most-advanced-node) located in the MariaDB data directory (e.g., `/var/lib/mysql/`).
 3. Look for the `seqno:` value in this file. The node with the highest `seqno` is the most advanced node. If a node was shut down gracefully, its `seqno` may be `-1`; these nodes should not be used to bootstrap if a node with a positive `seqno` is available.
+{% endstep %}
 
-#### Step 2: Bootstrap the New Primary Component
+{% step %}
+#### Bootstrap the New Primary Component
 
 Once you have identified the most advanced node, start the MariaDB service only on that node using a special bootstrap procedure using the command:
 
@@ -83,8 +87,10 @@ You can start `mariadbd` with the [--wsrep-new-cluster](https://app.gitbook.com/
 {% endhint %}
 
 This node will come online and form a new Primary Component by itself, with a cluster size of 1.
+{% endstep %}
 
-#### Step 3: Start the Other Nodes
+{% step %}
+#### Start the Other Nodes
 
 After the first node is successfully running as a new Primary Component, start the MariaDB service normally on all of the other nodes.
 
@@ -93,5 +99,7 @@ systemctl start mariadb
 ```
 
 They will detect the existing Primary Component, connect to it, and automatically initiate a [State Transfer (IST or SST)](rapid-node-recovery-with-ist-and-the-gcache.md) to synchronize their data and rejoin the cluster.
+{% endstep %}
+{% endstepper %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

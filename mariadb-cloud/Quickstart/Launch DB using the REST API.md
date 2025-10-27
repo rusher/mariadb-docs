@@ -1,4 +1,4 @@
-# Launch DB using the REST API
+# Launch DB Using REST API
 
 This walkthrough explains how to launch database services and manage the lifecycle of database services using the [MariaDB Cloud DBaaS REST API](https://apidocs.skysql.com/).
 
@@ -242,4 +242,4 @@ EOF
 ## Resources
 
 * [API Documentation](https://apidocs.skysql.com/)
-* [API Reference Documentation](<../Reference Guide/REST API Reference.md>)
+* [API Reference Documentation](../reference-guide/rest-api-reference.md)

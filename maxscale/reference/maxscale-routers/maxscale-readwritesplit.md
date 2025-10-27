@@ -145,7 +145,7 @@ be up to date in order for them to be used for routing.
 
 Note that this feature does not guarantee that writes done on the primary are
 visible for reads done on the replica. This is mainly due to the method of
-replication lag measurement. For a feature that guarantees this, refer to [causal\_reads](maxscale-readwritesplit.md#causal_reads).
+replication lag measurement. For a feature that guarantees this, refer to [`causal_reads`](maxscale-readwritesplit.md#causal_reads).
 
 The lag is specified as documented
 [here](../../maxscale-management/deployment/maxscale-configuration-guide.md).
@@ -225,10 +225,12 @@ SELECT @myid; -- Might return 1 or 0
 * Default: true (>= MaxScale 24.02), false(<= MaxScale 23.08)
 
 Allow the primary server to change mid-session. This feature requires
-that`disable_sescmd_history` is not used.
+that[`disable_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#disable_sescmd_history)
+is not used.
 
-Starting with MaxScale 24.02, if `disable_sescmd_history` is
-enabled,`master_reconnection` will be automatically disabled.
+Starting with MaxScale 24.02, if
+[`disable_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#disable_sescmd_history)
+is enabled,`master_reconnection` will be automatically disabled.
 
 When a readwritesplit session starts, it will pick a primary server as the
 current primary server of that session. When `master_reconnection` is disabled,
@@ -249,7 +251,7 @@ queries are received, readwritesplit will transparently reconnect to the new
 primary server.
 
 In both cases the change in the primary server can only take place
-if`prune_sescmd_history` is enabled or `max_sescmd_history` has not yet been
+if[`prune_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#prune_sescmd_history) is enabled or [`max_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#max_sescmd_history) has not yet been
 exceeded and the session does not have an open transaction.
 
 The recommended configuration is to use `master_reconnection=true`
@@ -417,9 +419,9 @@ loss of a primary server.
 
 | Value            | Description                                                                                                                      |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| fail\_instantly  | When the failure of the primary server is detected, the connection will be closed immediately.                                   |
-| fail\_on\_write  | The client connection is closed if a write query is received when no primary is available.                                       |
-| error\_on\_write | If no primary is available and a write query is received, an error is returned stating that the connection is in read-only mode. |
+| `fail_instantly`  | When the failure of the primary server is detected, the connection will be closed immediately.                                  |
+| `fail_on_write`  | The client connection is closed if a write query is received when no primary is available.                                       |
+| `error_on_write` | If no primary is available and a write query is received, an error is returned stating that the connection is in read-only mode. |
 
 These also apply to new sessions created after the primary has failed. This means
 that in `fail_on_write` or `error_on_write` mode, connections are accepted as
@@ -430,13 +432,13 @@ will not be closed even if all backend connections for that session have
 failed. This is done in the hopes that before the next query from the idle
 session arrives, a reconnection to one of the replicas is made. However, this can
 leave idle connections around unless the client application actively closes
-them. To prevent this, use the [wait\_timeout](../../maxscale-management/deployment/maxscale-configuration-guide.md#wait_timeout)
+them. To prevent this, use the [`wait_timeout`](../../maxscale-management/deployment/maxscale-configuration-guide.md#wait_timeout)
 parameter.
 
 **Note:** If `master_failure_mode` is set to `error_on_write` and the connection
 to the primary is lost, by default, clients will not be able to execute write
 queries without reconnecting to MariaDB MaxScale once a new primary is
-available. If [master\_reconnection](maxscale-readwritesplit.md#master_reconnection) is enabled, the
+available. If [`master_reconnection`](maxscale-readwritesplit.md#master_reconnection) is enabled, the
 session can recover if one of the replicas is promoted as the primary.
 
 ### `retry_failed_reads`
@@ -595,7 +597,7 @@ limit of`delayed_retry_timeout` multiplied by `transaction_replay_attempts`, by
 default this is 50 seconds. The minimum replay time limit can be as low
 as`transaction_replay_attempts` seconds (5 seconds by default) in cases where
 the connection fails after it was created. Usually this happens due to problems
-like the max\_connections limit being hit on the database server.
+like the `max_connections` limit being hit on the database server.
 
 `transaction_replay_timeout` is the recommended method of controlling the
 timeouts for transaction replay and is by default set to 30 seconds in MaxScale
@@ -637,11 +639,11 @@ DML statements that `delayed_retry` enabled. The result of this was that only
 statements done inside of an explicit transactions or with autocommit disabled
 were replayed and writes done with autocommit enabled were never replayed.
 
-In MaxScale 25.01.1 and newer versions, where `delayed_retry no longer attempts
+In MaxScale 25.01.1 and newer versions, where `delayed_retry` no longer attempts
 to retry a query if it was already sent to the database, write queries outside
 of transactions are delayed if no valid target is found but they are never
-retried. Thus`transaction\_replay\_safe\_commit`again only affects how
-the`COMMIT\` of a transaction is handled.
+retried. Thus `transaction_replay_safe_commit` again only affects how
+the `COMMIT` of a transaction is handled.
 
 If the data that is about to be modified is read before it is modified and it is
 locked in an appropriate manner (e.g. with `SELECT ... FOR UPDATE` or with
@@ -720,18 +722,18 @@ subsequent reads performed on replica servers will be done in a manner that
 prevents replication lag from affecting the results.
 
 The following table contains a comparison of the modes. Read the
-[implementation of causal\_reads](maxscale-readwritesplit.md#implementation-of-causal_reads)
+[implementation of `causal_reads`](maxscale-readwritesplit.md#implementation-of-causal_reads)
 for more information on what a sync consists of and why minimizing the number
 of them is important.
 
-| Mode            | Level of Causality | Latency                                                  |
-| --------------- | ------------------ | -------------------------------------------------------- |
-| local           | Session            | Low, one sync per write.                                 |
-| fast            | Session            | None, no sync at all.                                    |
-| global          | Service            | Medium, one sync per read.                               |
-| fast\_global    | Service            | None, no sync at all.                                    |
-| universal       | Cluster            | High, one sync per read plus a roundtrip to the primary. |
-| fast\_universal | Cluster            | Low, one roundtrip to the primary.                       |
+| Mode             | Level of Causality | Latency                                                  |
+| ---------------- | ------------------ | -------------------------------------------------------- |
+| `local`          | Session            | Low, one sync per write.                                 |
+| `fast`           | Session            | None, no sync at all.                                    |
+| `global`         | Service            | Medium, one sync per read.                               |
+| `fast_global`    | Service            | None, no sync at all.                                    |
+| `universal`      | Cluster            | High, one sync per read plus a roundtrip to the primary. |
+| `fast_universal` | Cluster            | Low, one roundtrip to the primary.                       |
 
 The `fast`, `fast_global` and `fast_universal` modes should only be used when
 low latency is more important than proper distribution of reads. These modes
@@ -742,7 +744,7 @@ being routed almost exclusively to the primary server.
 **Note:** This feature also enables multi-statement execution of SQL in the
 protocol. This is equivalent to using `allowMultiQueries=true` in [Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/#allowmultiqueries)
 or using `CLIENT_MULTI_STATEMENTS` and `CLIENT_MULTI_RESULTS` in the
-Connector/C. The _Implementation of causal\_reads_ section explains why this is
+Connector/C. The [implementation of `causal_reads`](maxscale-readwritesplit.md#implementation-of-causal_reads) section explains why this is
 necessary.
 
 The possible values for this parameter are:
@@ -762,7 +764,7 @@ The possible values for this parameter are:
   guarantees global happens-before ordering of reads when all transactions are
   inside a single GTID domain.This mode gives similar benefits as the `local`
   mode in that it improves read scalability at the cost of latency.
-  With MaxScale versions 2.5.14 and older, multi-domain use of causal\_reads
+  With MaxScale versions 2.5.14 and older, multi-domain use of `causal_reads`
   could cause non-causal reads to occur. Starting with MaxScale 2.5.15, this
   was fixed and all the GTID coordinates are passed alongside all requests
   which makes multi-domain GTIDs safe to use. However, this does mean that the
@@ -835,7 +837,7 @@ help of the `MASTER_GTID_WAIT` function.
 
 If the replica has not caught up to the primary within the configured time, as
 specified by
-[causal\_reads\_timeout](maxscale-readwritesplit.md#causal_reads_timeout),
+[`causal_reads_timeout`](maxscale-readwritesplit.md#causal_reads_timeout),
 it will be retried on the primary.
 
 The exception to this rule is the `fast` mode which does not do any
@@ -878,7 +880,7 @@ SET @maxscale_secret_variable=(
 
 The `SET` command will synchronize the replica to a certain logical point in the
 replication stream (see
-[MASTER\_GTID\_WAIT](../../../server/reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
+[`MASTER_GTID_WAIT`](../../../server/reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
 for more details). If the synchronization fails, the query will not run and it
 will be retried on the server where the transaction was originally done.
 
@@ -909,7 +911,7 @@ COM_STMT_EXECUTE:  ? = 123
 Both the synchronization query and the execution of the prepared statement are
 sent at the same time. This is done to remove the need to wait for the result of
 the synchronization query before routing the execution of the prepared
-statement. This keeps the performance of causal\_reads for prepared statements
+statement. This keeps the performance of `causal_reads` for prepared statements
 the same as it is for normal SQL queries.
 
 As a result of this, each time the synchronization query times out, the
@@ -939,7 +941,7 @@ server which would cause the connection to be closed and a warning to be logged.
 * Starting with MaxScale 24.02.5, the fast modes `fast`, `fast_global` and`fast_universal`
   work with Galera clusters. In older versions, none of the`causal_reads` modes worked
   with Galera. The non-fast modes that rely on the
-  [MASTER\_GTID\_WAIT](../../../server/reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
+  [`MASTER_GTID_WAIT`](../../../server/reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
   function still do not work with Galera. This is because Galera does not
   implement a mechanism that allows a client to wait for a particular GTID.
 * If the combination of the original SQL statement and the modifications
@@ -949,7 +951,7 @@ server which would cause the connection to be closed and a warning to be logged.
   a different synchronization mechanism.
 * SQL like `INSERT ... RETURNING` that commits a transaction and returns a
   resultset will only work with causal reads if the connector supports the
-  DEPRECATE\_EOF protocol feature. The following table contains a list of MariaDB
+  `DEPRECATE_EOF` protocol feature. The following table contains a list of MariaDB
   connectors and whether they support the protocol feature.
 
 | Connector         | Supported | Version |
@@ -997,7 +999,7 @@ only the primary connection is used.
 In MaxScale 23.08.2, if a
 [session command](maxscale-readwritesplit.md#routing-to-every-session-backend)
 is received as the first command, the default behavior is to execute it on a
-replica. If [master\_accept\_reads](maxscale-readwritesplit.md#master_accept_reads)
+replica. If [`master_accept_reads`](maxscale-readwritesplit.md#master_accept_reads)
 is enabled, the query is executed on the primary server, if one is available.
 In practice this means that workloads which are mostly reads with infrequent
 writes should disable`master_accept_reads` if they also use `lazy_connect`.
@@ -1189,25 +1191,24 @@ The readwritesplit router supports routing hints. For a detailed guide on hint
 syntax and functionality, please read [this](../maxscale-filters/maxscale-hintfilter.md)
 document.
 
-**Note**: Routing hints will always have the highest priority when a routing
-decision is made. This means that it is possible to cause inconsistencies in
-the session state and the actual data in the database by adding routing hints
-to DDL/DML statements which are then directed to replica servers. Only use routing
-hints when you are sure that they can cause no harm.
+The `route to master` hint can be used to treat a read as if it was a
+write. This is useful when a read done outside of a transaction depends on a
+previously committed transaction that may not have replicated to the other
+servers in the cluster. Alternative automated ways of solving this are
+[`causal_reads`](maxscale-readwritesplit.md#causal_reads) and
+[`sync_transaction`](maxscale-readwritesplit.md#sync_transaction).
 
-An exception to this rule is `transaction_replay`: when it is enabled, all
-routing hints inside transaction are ignored. This is done to prevent changes
-done inside a re-playable transaction from affecting servers outside of the
-transaction. This behavior was added in MaxScale 6.1.4. Older versions allowed
-routing hints to override the transaction logic.
+All routing hints are ignored if they are done inside of a transaction. This is
+done to guarantee the consistency of a transaction and to make sure that a
+transaction through readwritesplit behaves identically to a transaction done
+directly against MariaDB.
 
-### Known Limitations of Routing Hints
+The `route to slave` hint is always ignored by readwritesplit as it is
+either redundant or would cause writes to be sent to the wrong server.
 
-* If a `SELECT` statement with a `maxscale route to slave` hint is received
-  while autocommit is disabled, the query will be routed to a replica server. This
-  causes some metadata locks to be acquired on the database in question which
-  will block DDL statements on the server until either the connection is closed
-  or autocommit is enabled again.
+The `route to last` and `route to server <name>` hints only work on reads. If
+they are used on a write and the target server cannot be used for writes, it is
+treated as a retryable error if query retrying of writes is enable
 
 ## Module Commands
 
@@ -1251,14 +1252,16 @@ The following operations are routed to primary:
 * User-defined function calls
 * Queries that use sequences (`NEXT VALUE FOR seq`, `NEXTVAL(seq)` or `seq.nextval`)
 * Statements that use any of the following functions:
-* `LAST_INSERT_ID()`
-* `GET_LOCK()`
-* `RELEASE_LOCK()`
-* `IS_USED_LOCK()`
-* `IS_FREE_LOCK()`
+  * `LAST_INSERT_ID()`
+  * `GET_LOCK()`
+  * `RELEASE_LOCK()`
+  * `IS_USED_LOCK()`
+  * `IS_FREE_LOCK()`
 * Statements that use any of the following variables:
-* `@@last_insert_id`
-* `@@identity`
+  * `@@last_insert_id`
+  * `@@identity`
+* Reads done with `causal_reads` enabled that timed out on the replica
+* Replication primary commands (e.g. `SHOW MASTER STATUS`)
 
 In addition to these, if the **readwritesplit** service is configured with the
 `max_replication_lag` parameter, and if all replicas suffer from too much
@@ -1287,15 +1290,12 @@ The ability to route some statements to replicas is important because it also
 decreases the load targeted to _primary_. Moreover, it is possible to have multiple
 replicas to share the load in contrast to single primary.
 
-Queries which can be routed to replicas must be auto committed and belong to one
-of the following group:
+The following types of queries can be routed to replicas:
 
-* Read-only statements (i.e. `SELECT`) that only use read-only built-in functions
+* Read-only statements (i.e. `SELECT` and `SHOW`) outside of transactions with
+  autocommit enabled that only use read-only built-in functions
+
 * All statements within an explicit read-only transaction (`START TRANSACTION READ ONLY`)
-* `SHOW` statements except `SHOW MASTER STATUS`
-
-The list of supported built-in functions can be found
-[here](https://github.com/mariadb-corporation/MaxScale/blob/24.02/server/modules/parser_plugin/pp_sqlite/builtin_functions.cc)
 
 ### Routing to every session backend
 
@@ -1310,19 +1310,18 @@ Session commands include for example:
 * Commands that modify the session state (`SET`, `USE`, `CHANGE USER`)
 * Text protocol `PREPARE` statements
 * Binary protocol prepared statements
-* Other miscellaneous commands (COM\_QUIT, COM\_PING etc.)
+* Other miscellaneous commands (`COM_QUIT`, `COM_PING` etc.)
 
 **NOTE**: if variable assignment is embedded in a write statement it is routed
 to _primary_ only. For example, `INSERT INTO t1 values(@myvar:=5, 7)` would be
 routed to _primary_ only.
 
 The router stores all of the executed session commands so that in case of a
-replica failure, a replacement replica can be chosen and the session command history
-can be repeated on that new replica. This means that the router stores each
-executed session command for the duration of the session. Applications that use
-long-running sessions might cause MariaDB MaxScale to consume a growing amount
-of memory unless the sessions are closed. This can be solved by adjusting the
-value of `max_sescmd_history`.
+connection failure, a replacement connection can be opened and the session
+command history can be replayed on that new connections. The number of stored
+session commands depends on the router configuration. For more information,
+refer to the documentation of
+[`max_sescmd_history`](../../maxscale-management/deployment/maxscale-configuration-guide.md#max_sescmd_history).
 
 ### Routing to previous target
 
@@ -1333,8 +1332,8 @@ current primary.
 * If a query uses the `FOUND_ROWS()` function, it will be routed to the server
   where the last query was executed. This is done with the assumption that a
   query with `SQL_CALC_FOUND_ROWS` was previously executed.
-* COM\_STMT\_FETCH\_ROWS will always be routed to the same server where the
-  COM\_STMT\_EXECUTE was routed.
+* `COM_STMT_FETCH_ROWS` will always be routed to the same server where the
+  `COM_STMT_EXECUTE` was routed.
 
 ## Limitations
 
@@ -1409,7 +1408,7 @@ the two transactions are different. In these cases readwritesplit will abort the
 transaction and close the client connection.
 
 Statements that result in an implicit commit do not reset the transaction when
-transaction\_replay is enabled. This means that if the transaction is replayed,
+`transaction_replay` is enabled. This means that if the transaction is replayed,
 the transaction will be committed twice due to the implicit commit being
 present. The exception to this are the transaction management statements such as`BEGIN` and `START TRANSACTION`: they are detected and will cause the
 transaction to be correctly reset.
@@ -1440,7 +1439,7 @@ that if the session state is changed mid-transaction in a way that affects the
 results, transaction replay will fail.
 
 The following partial transaction demonstrates the problem by using
-[SQL\_MODE](../../../server/server-management/variables-and-modes/sql-mode.md)
+[`SQL_MODE`](../../../server/server-management/variables-and-modes/sql-mode.md)
 inside a transaction.
 
 ```
@@ -1464,7 +1463,7 @@ SELECT 'hello world';       -- Returns the string "hello world"
 
 First the session state is restored by executing all commands that changed the
 state after which the actual transaction is replayed. Due to the fact that the
-SQL\_MODE was changed mid-transaction, one of the queries will now return an
+`SQL_MODE` was changed mid-transaction, one of the queries will now return an
 error instead of the result we expected leading to a transaction replay failure.
 
 #### Limitations in Service-to-Service Routing
@@ -1481,7 +1480,7 @@ transaction that would be routed to more than one node.
 
 When a multi-statement query is executed through the readwritesplit router, it
 will always be routed to the primary. See
-[strict\_multi\_stmt](#strict_multi_stmt) for more
+[`strict_multi_stmt`](#strict_multi_stmt) for more
 details.
 
 If the multi-statement query creates a temporary table, it will not be
@@ -1491,68 +1490,27 @@ statement.
 
 #### Limitations in client session handling
 
-Some of the queries that a client sends are routed to all backends instead of
-just to one. These queries include `USE <db name>` and `SET autocommit=0`, among
-many others. Readwritesplit sends a copy of these queries to each backend server
-and forwards the primary's reply to the client. Below is a list of MySQL commands
-which are classified as session commands.
+Whenever a session command is executed, the type of the result that was returned
+by the primary server is compared to the result of all the other servers. If the
+command succeeded on the primary, it is expected to also succeed on all other
+servers and conversely, if it fails it's expected to fail on all other servers
+as well.
 
-```
-COM_INIT_DB (USE <db name> creates this)
-COM_CHANGE_USER
-COM_STMT_CLOSE
-COM_STMT_SEND_LONG_DATA
-COM_STMT_RESET
-COM_STMT_PREPARE
-COM_QUIT (no response, session is closed)
-COM_REFRESH
-COM_DEBUG
-COM_PING
-SQLCOM_CHANGE_DB (USE ... statements)
-SQLCOM_DEALLOCATE_PREPARE
-SQLCOM_PREPARE
-SQLCOM_SET_OPTION
-SELECT ..INTO variable|OUTFILE|DUMPFILE
-SET autocommit=1|0
-```
+If a command produces a different result than was expected, the connection to
+that server is permanently discarded and no further connection attempts are made
+to it within the same session.
 
-Prior to MaxScale 2.3.0, session commands that were 2²⁴ - 1 bytes or longer were
-not supported and caused the session to be closed.
+The most common case where a session command will produce a different result on
+a replica is when a database is created on the primary and a `USE <db>` command
+is executed right after it but the creation of the database hasn't had time to
+replicate to the replicas before the `USE <db>` command arrives.
 
-There is a possibility for misbehavior. If `USE mytable` is executed in one of
-the replicas and fails, it may be due to replication lag rather than the database
-not existing. Thus, the same command may produce different result in different
-backend servers. The replicas which fail to execute a session command will be
-dropped from the active list of replicas for this session to guarantee a
-consistent session state across all the servers used by the session. In
-addition, the server will not be used again for routing for the duration of the
-session.
-
-The above-mentioned behavior for user variables can be partially controlled with
-the configuration parameter `use_sql_variables_in`:
-
-```
-use_sql_variables_in=[master|all] (default: all)
-```
-
-**WARNING**
-
-If a SELECT query modifies a user variable when the `use_sql_variables_in`
-parameter is set to `all`, it will not be routed and the client will receive an
-error. A log message is written into the log further explaining the reason for
-the error. Here is an example use of a SELECT query which modifies a user
-variable and how MariaDB MaxScale responds to it.
-
-```
-MySQL [(none)]> set @id=1;
-Query OK, 0 rows affected (0.00 sec)
-
-MySQL [(none)]> SELECT @id := @id + 1 FROM test.t1;
-ERROR 1064 (42000): Routing query to backend failed. See the error log for further details.
-```
-
-Allow user variable modification in SELECT queries by setting`use_sql_variables_in=master`. This will route all queries that use user
-variables to the primary.
+If a `SELECT` query modifies a user variable when the `use_sql_variables_in`
+parameter is set to `all`, it will be routed to all backends to keep the session
+state consistent. For applications where this is a common pattern, the
+performance overhead of this can be avoided at the cost of the user variables
+being inconsistent by using `use_sql_variables_in=master`. This will route all
+queries that use user variables to the primary.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

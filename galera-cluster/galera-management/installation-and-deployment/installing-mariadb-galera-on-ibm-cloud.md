@@ -9,7 +9,7 @@ At the end of the tutorial, you will have a cluster with MariaDB up and running.
 2. We will deploy the IBM Cloud Block Storage plug-in; if you already have it, skip to step **3**
 3. MariaDB Galera deployment
 
-## Step 1 provision Kubernetes Cluster
+## Step 1: Provision Kubernetes Cluster
 
 * Click the Catalog button on the top
 * Select Service from the catalog
@@ -70,7 +70,7 @@ At the end of the tutorial, you will have a cluster with MariaDB up and running.
 
 ![cluster-done](../../.gitbook/assets/13.PNG)
 
-## Step 2 deploy IBM Cloud Block Storage plug-in
+## Step 2: Deploy IBM Cloud Block Storage Plug-in
 
 The Block Storage plug-in is a persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes Persistent Volumes (PVs).
 
@@ -90,7 +90,7 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 
 ![block-storage-create](../../.gitbook/assets/16.PNG)
 
-## Step 3 deploy MariaDB Galera
+## Step 3: Deploy MariaDB Galera
 
 We will deploy MariaDB on our cluster
 
@@ -140,7 +140,7 @@ We will deploy MariaDB on our cluster
 
 ![done](../../.gitbook/assets/27.PNG)
 
-## Verify MariaDB Galera installation
+## Verify MariaDB Galera Installation
 
 * Go to [Resources](https://cloud.ibm.com/resources) in your browser
 * Click on Clusters

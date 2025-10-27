@@ -73,7 +73,7 @@ The most common way to pass variables is to write them into a file. This has the
 
 ```bash
 PHP_VERSION=8.0
-MARIADB_VERSION=10.5
+MARIADB_VERSION=10.6
 ...
 ```
 

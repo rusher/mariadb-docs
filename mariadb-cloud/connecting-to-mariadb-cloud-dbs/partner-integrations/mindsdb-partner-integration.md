@@ -37,7 +37,7 @@ Before using MariaDB Cloud and MindsDB, both services require an account.
 
 #### Register for MariaDB Cloud
 
-MariaDB Cloud requires a [MariaDB ID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions/mariadb-id-sign-up) account.
+MariaDB Cloud requires a [MariaDB ID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/mariadb-id-sign-up) account.
 
 For the full procedure that shows how to quickly create a MariaDB ID account and launch a database service in MariaDB Cloud, see "[Quickstart](../../Quickstart/)".
 

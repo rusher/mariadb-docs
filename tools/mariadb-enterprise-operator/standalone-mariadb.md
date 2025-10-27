@@ -1,6 +1,6 @@
 # Standalone MariaDB
 
-MariaDB Enterprise Operator allows you to configure standalone MariaDB Enterprise Server instances. To achieve this, you can either omit the `replicas` field or set it to `1`:
+MariaDB Enterprise Kubernetes Operator allows you to configure standalone MariaDB Enterprise Server instances. To achieve this, you can either omit the `replicas` field or set it to `1`:
 
 ```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1

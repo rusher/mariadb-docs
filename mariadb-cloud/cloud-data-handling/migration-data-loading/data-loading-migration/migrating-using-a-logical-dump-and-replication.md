@@ -7,7 +7,7 @@ To minimize downtime during migration, you can set up live replication from your
 1. An active MariaDB Cloud account. Identify requirements for your MariaDB Cloud implementation prior to [deployment](../../../cloud-usage/portal-features/launch-page.md), including:
 
 * Topology - Mariadb Server Single node or with Replica(s)
-* [Instance size](<../../../Reference Guide/Instance Size Choices.md>)
+* [Instance size](broken-reference)
 * Storage requirements
 * Desired server version
 
@@ -80,7 +80,7 @@ If you encounter an error while importing your users, you may need to uninstall 
 {% step %}
 ### **Start Replication**
 
-Turn on replication using MariaDB Cloud stored procedures. There are procedures allowing you to set and start replication. See our [documentation](<../../../Reference Guide/Stored Procedures.md>) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
+Turn on replication using MariaDB Cloud stored procedures. There are procedures allowing you to set and start replication. See our [documentation](../../../reference-guide/stored-procedures.md) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
 
 ```sql
 CALL sky.change_external_primary(host VARCHAR(255), port INT, logfile TEXT, logpos LONG,

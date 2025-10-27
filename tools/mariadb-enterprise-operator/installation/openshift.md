@@ -1,6 +1,6 @@
 # OpenShift
 
-This documentation provides guidance on installing the MariaDB Enterprise Operator operator in OpenShift. This operator has been [certified by Red Hat](https://connect.redhat.com/en/partner-with-us/what-are-operators) and it is available in the OpenShift console.
+This documentation provides guidance on installing the MariaDB Enterprise Kubernetes Operator operator in OpenShift. This operator has been [certified by Red Hat](https://connect.redhat.com/en/partner-with-us/what-are-operators) and it is available in the OpenShift console.
 
 Operators are deployed into OpenShift with the [Operator Lifecycle Manager (OLM)](https://olm.operatorframework.io/), which facilitates the installation, updates, and overall management of their lifecycle.
 
@@ -129,7 +129,7 @@ As an alternative to create `Subscription` objects via the command line, you can
 
 ![](../../.gitbook/assets/certified-operator.png)
 
-Select `MariaDB Enterprise Operator`, click on install, and you will be able to create a `Subscription` object via the UI.
+Select `MariaDB Enterprise Kubernetes Operator`, click on install, and you will be able to create a `Subscription` object via the UI.
 
 Once deployed, the operator comes with example resources that can be deployed from the console directly. For instance, to create a `MariaDB`:
 

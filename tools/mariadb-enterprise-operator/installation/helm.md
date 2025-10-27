@@ -1,6 +1,6 @@
 # Helm
 
-Helm is the preferred way to install MariaDB Enterprise Operator in Kubernetes clusters. This documentation aims to provide guidance on how to manage the installation and upgrades of both the CRDs and the operator via Helm charts.
+Helm is the preferred way to install MariaDB Enterprise Kubernetes Operator in Kubernetes clusters. This documentation aims to provide guidance on how to manage the installation and upgrades of both the CRDs and the operator via Helm charts.
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@ Configure your [customer credentials as described in the documentation](../custo
 
 ## Charts
 
-MariaDB Enterprise Operator is splitted into two different helm charts for better convenience:
+MariaDB Enterprise Kubernetes Operator is splitted into two different helm charts for better convenience:
 
 * `mariadb-enterprise-operator-crds`: Bundles the [CustomResourceDefinitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) required by the operator.
 * `mariadb-enterprise-operator`: Contains all the template manifests required to install the operator. Refer to the [operator helm values](helm.md#operator-helm-values) section for detailed information about the supported values.

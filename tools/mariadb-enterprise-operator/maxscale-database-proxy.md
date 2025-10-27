@@ -151,7 +151,7 @@ Refer to the [API reference](api-reference.md) for further detail.
 
 ## Defaults
 
-MariaDB Enterprise Operator aims to provide highly configurable CRs, but at the same time maximize its usability by providing reasonable defaults. In the case of `MaxScale`, the following defaulting logic is applied:
+MariaDB Enterprise Kubernetes Operator aims to provide highly configurable CRs, but at the same time maximize its usability by providing reasonable defaults. In the case of `MaxScale`, the following defaulting logic is applied:
 
 * `spec.servers` are inferred from `spec.mariaDbRef`.
 * `spec.monitor.module` is inferred from the `spec.mariaDbRef`.
@@ -285,7 +285,7 @@ Refer to the [MaxScale reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX
 
 MaxScale requires authentication with differents levels of permissions for the following components/actors:
 
-* [MaxScale API](maxscale-database-proxy.md#maxscale-api) consumed by MariaDB Enterprise Operator.
+* [MaxScale API](maxscale-database-proxy.md#maxscale-api) consumed by MariaDB Enterprise Kubernetes Operator.
 * Clients connecting to MaxScale.
 * MaxScale connecting to MariaDB servers.
 * MaxScale monitor connecting to MariaDB servers.
@@ -506,7 +506,7 @@ The GUI is exposed via a dedicated Kubernetes `Service` in the same port as the 
 
 ## MaxScale API
 
-MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-25-01/maxscale-25-01-rest-api) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
+MariaDB Enterprise Kubernetes Operator interacts with the [MaxScale REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-25-01/maxscale-25-01-rest-api) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
 
 ## Troubleshooting
 
