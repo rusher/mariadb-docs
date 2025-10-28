@@ -471,7 +471,6 @@ Do not perform the following steps in a production environment.
 ```bash
 PRIMARY=$(kubectl get mariadb mariadb-repl -o jsonpath="{.status.currentPrimary}")
 echo "Purging binary logs in primary $PRIMARY"
-
 kubectl exec -it $PRIMARY -c mariadb -- mariadb -u root -p'MariaDB11!' --ssl=false -e "FLUSH LOGS;"
 kubectl exec -it $PRIMARY -c mariadb -- mariadb -u root -p'MariaDB11!' --ssl=false -e "PURGE BINARY LOGS BEFORE NOW();"
 kubectl exec -it $PRIMARY -c mariadb -- mariadb -u root -p'MariaDB11!' --ssl=false -e "SHOW BINARY LOGS;"
