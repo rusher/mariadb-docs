@@ -4,8 +4,8 @@ The following Configuration Manager parameters are used to configure MariaDB Ser
 
 | Name | Default Value |
 |------|---------------|
-| [auto_increment_increment](https://r.mariadb.com/skysql-system-variables/auto_increment_increment/) | 1 |
-| [autocommit](https://r.mariadb.com/skysql-system-variables/autocommit/) | ON |
+| [auto_increment_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#auto_increment_increment) | 1 |
+| [autocommit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#autocommit) | ON |
 | [binlog_cache_size](https://r.mariadb.com/skysql-system-variables/binlog_cache_size/) | 32768 |
 | [binlog_commit_wait_count](https://r.mariadb.com/skysql-system-variables/binlog_commit_wait_count/) | 0 |
 | [binlog_commit_wait_usec](https://r.mariadb.com/skysql-system-variables/binlog_commit_wait_usec/) | 100000 |
