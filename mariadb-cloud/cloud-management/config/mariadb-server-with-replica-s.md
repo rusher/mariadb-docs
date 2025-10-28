@@ -10,22 +10,22 @@ The following Configuration Manager parameters are used to configure MariaDB Ser
 | [binlog_commit_wait_count](https://r.mariadb.com/skysql-system-variables/binlog_commit_wait_count/) | 0 |
 | [binlog_commit_wait_usec](https://r.mariadb.com/skysql-system-variables/binlog_commit_wait_usec/) | 100000 |
 | [connect_timeout](https://r.mariadb.com/skysql-system-variables/connect_timeout/) | 5 |
-| [cracklib_password_check](https://r.mariadb.com/skysql-system-variables/cracklib_password_check/) | OFF |
-| [default_password_lifetime](https://r.mariadb.com/skysql-system-variables/default_password_lifetime/) | 0 |
-| [default_time_zone](https://r.mariadb.com/skysql-system-variables/default_time_zone/) | system |
-| [disconnect_on_expired_password](https://r.mariadb.com/skysql-system-variables/disconnect_on_expired_password/) | OFF |
-| [div_precision_increment](https://r.mariadb.com/skysql-system-variables/div_precision_increment/) | 4 |
-| [eq_range_index_dive_limit](https://r.mariadb.com/skysql-system-variables/eq_range_index_dive_limit/) | 200 |
-| [event_scheduler](https://r.mariadb.com/skysql-system-variables/event_scheduler/) | OFF |
-| [expire_logs_days](https://r.mariadb.com/skysql-system-variables/expire_logs_days/) | 4 |
+| [cracklib_password_check](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/cracklib-password-check-plugin#cracklib_password_check) | OFF |
+| [default_password_lifetime](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#default_password_lifetime) | 0 |
+| [default_time_zone](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#time_zone) | system |
+| [disconnect_on_expired_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#disconnect_on_expired_password) | OFF |
+| [div_precision_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#div_precision_increment) | 4 |
+| [eq_range_index_dive_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#eq_range_index_dive_limit) | 200 |
+| [event_scheduler](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#event_scheduler) | OFF |
+| [expire_logs_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#expire_logs_days) | 4 |
 | [explicit_defaults_for_timestamp](https://r.mariadb.com/skysql-system-variables/explicit_defaults_for_timestamp/) | OFF |
 | [gtid_strict_mode](https://r.mariadb.com/skysql-system-variables/gtid_strict_mode/) | ON |
 | [host_cache_size](https://mariadb.com/docs/skysql-previous-release/ref/mdb/system-variables/host_cache_size/) | 248 |
 | [idle_readonly_transaction_timeout](https://r.mariadb.com/skysql-system-variables/idle_readonly_transaction_timeout/) | 0 |
 | [idle_transaction_timeout](https://r.mariadb.com/skysql-system-variables/idle_transaction_timeout/) | 0 |
 | [idle_write_transaction_timeout](https://r.mariadb.com/skysql-system-variables/idle_write_transaction_timeout/) | 0 |
-| [innodb_autoextend_increment](https://r.mariadb.com/skysql-system-variables/innodb_autoextend_increment/) | 64 |
-| [innodb_autoinc_lock_mode](https://r.mariadb.com/skysql-system-variables/innodb_autoinc_lock_mode/) | 2 |
+| [innodb_autoextend_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_autoextend_increment) | 64 |
+| [innodb_autoinc_lock_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_autoinc_lock_mode) | 2 |
 | [innodb_buffer_pool_size](https://r.mariadb.com/skysql-system-variables/innodb_buffer_pool_size/) | AUTO_GENERATED |
 | [innodb_change_buffering](https://r.mariadb.com/skysql-system-variables/innodb_change_buffering/) | none |
 | [innodb_flush_log_at_trx_commit](https://r.mariadb.com/skysql-system-variables/innodb_flush_log_at_trx_commit/) | 1 |
@@ -36,21 +36,21 @@ The following Configuration Manager parameters are used to configure MariaDB Ser
 | [join_buffer_size](https://r.mariadb.com/skysql-system-variables/join_buffer_size/) | 262144 |
 | [local_infile](https://r.mariadb.com/skysql-system-variables/local_infile/) | ON |
 | [log_output](https://r.mariadb.com/skysql-system-variables/log_output/) | FILE |
-| [log_slow_filter](https://r.mariadb.com/skysql-system-variables/log_slow_filter/) | admin, filesort, filesort_on_disk, filesort_priority_queue, full_join, full_scan, query_cache, query_cache_miss, tmp_table, tmp_table_on_disk |
-| [log_slow_rate_limit](https://r.mariadb.com/skysql-system-variables/log_slow_rate_limit/) | 1 |
-| [log_slow_verbosity](https://r.mariadb.com/skysql-system-variables/log_slow_verbosity/) |  |
+| [log_slow_filter](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_filter) | admin, filesort, filesort_on_disk, filesort_priority_queue, full_join, full_scan, query_cache, query_cache_miss, tmp_table, tmp_table_on_disk |
+| [log_slow_rate_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_rate_limit) | 1 |
+| [log_slow_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#log_slow_verbosity) |  |
 | [log_warnings](https://r.mariadb.com/skysql-system-variables/log_warnings/) | 2 |
-| [long_query_time](https://r.mariadb.com/skysql-system-variables/long_query_time/) | 10.0 |
-| [lower_case_table_names](https://r.mariadb.com/skysql-system-variables/lower_case_table_names/) | 0 |
-| [max_allowed_packet](https://r.mariadb.com/skysql-system-variables/max_allowed_packet/) | 33554432 |
+| [long_query_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#long_query_time) | 10.0 |
+| [lower_case_table_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#lower_case_table_names) | 0 |
+| [max_allowed_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_allowed_packet) | 33554432 |
 | [max_connections](https://r.mariadb.com/skysql-system-variables/max_connections/) | AUTO_GENERATED |
 | [max_heap_table_size](https://mariadb.com/docs/skysql-previous-release/ref/mdb/system-variables/max_heap_table_size/) | 16777216 |
-| [max_password_errors](https://r.mariadb.com/skysql-system-variables/max_password_errors/) | 4294967295 |
+| [max_password_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#max_password_errors) | 4294967295 |
 | [net_buffer_length](https://r.mariadb.com/skysql-system-variables/net_buffer_length/) | 16384 |
 | [net_write_timeout](https://r.mariadb.com/skysql-system-variables/net_write_timeout/) | 60 |
 | [open_files_limit](https://mariadb.com/docs/skysql-previous-release/ref/mdb/system-variables/open_files_limit/) | 0 |
-| [optimizer_search_depth](https://r.mariadb.com/skysql-system-variables/optimizer_search_depth/) | 62 |
-| [optimizer_switch](https://mariadb.com/docs/skysql-previous-release/ref/mdb/system-variables/optimizer_switch/) | AUTO_GENERATED |
+| [optimizer_search_depth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_search_depth) | 62 |
+| [optimizer_switch](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#optimizer_switch) | AUTO_GENERATED |
 | [performance_schema](https://r.mariadb.com/skysql-system-variables/performance_schema/) | OFF |
 | [performance_schema_accounts_size](https://r.mariadb.com/skysql-system-variables/performance_schema_accounts_size/) | -1 |
 | [performance_schema_digests_size](https://r.mariadb.com/skysql-system-variables/performance_schema_digests_size/) | -1 |
@@ -82,7 +82,7 @@ The following Configuration Manager parameters are used to configure MariaDB Ser
 | [performance_schema_users_size](https://r.mariadb.com/skysql-system-variables/performance_schema_users_size/) | -1 |
 | [proxy_protocol_networks](https://r.mariadb.com/skysql-system-variables/proxy_protocol_networks/) | 10.0.0.0/8 |
 | [read_buffer_size](https://r.mariadb.com/skysql-system-variables/read_buffer_size/) | 131072 |
-| [read_only](https://r.mariadb.com/skysql-system-variables/read_only/) | OFF |
+| [read_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#read_only) | OFF |
 | [read_rnd_buffer_size](https://r.mariadb.com/skysql-system-variables/read_rnd_buffer_size/) | 262144 |
 | [rpl_semi_sync_master_enabled](https://r.mariadb.com/skysql-system-variables/rpl_semi_sync_master_enabled/) | ON |
 | [rpl_semi_sync_master_timeout](https://r.mariadb.com/skysql-system-variables/rpl_semi_sync_master_timeout/) | 10000 |
@@ -94,19 +94,19 @@ The following Configuration Manager parameters are used to configure MariaDB Ser
 | [server_audit](https://mariadb.com/docs/skysql-previous-release/ref/mdb/plugins/SERVER_AUDIT,server_audit2.so/) | ON |
 | [server_audit_file_rotate_size](https://r.mariadb.com/skysql-system-variables/server_audit_file_rotate_size/) | 1000000 |
 | [server_audit_logging](https://r.mariadb.com/skysql-system-variables/server_audit_logging/) | OFF |
-| [session_track_system_variables](https://r.mariadb.com/skysql-system-variables/session_track_system_variables/) | autocommit, character_set_client, character_set_connection, character_set_results, time_zone |
-| [simple_password_check_digits](https://r.mariadb.com/skysql-system-variables/simple_password_check_digits/) | 1 |
-| [simple_password_check_letters_same_case](https://r.mariadb.com/skysql-system-variables/simple_password_check_letters_same_case/) | 1 |
-| [simple_password_check_minimal_length](https://r.mariadb.com/skysql-system-variables/simple_password_check_minimal_length/) | 8 |
-| [simple_password_check_other_characters](https://r.mariadb.com/skysql-system-variables/simple_password_check_other_characters/) | 1 |
+| [session_track_system_variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#session_track_system_variables) | autocommit, character_set_client, character_set_connection, character_set_results, time_zone |
+| [simple_password_check_digits](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_digits) | 1 |
+| [simple_password_check_letters_same_case](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_letters_same_case) | 1 |
+| [simple_password_check_minimal_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_minimal_length) | 8 |
+| [simple_password_check_other_characters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_other_characters) | 1 |
 | [slave_compressed_protocol](https://r.mariadb.com/skysql-system-variables/slave_compressed_protocol/) | OFF |
 | [slave_parallel_mode](https://r.mariadb.com/skysql-system-variables/slave_parallel_mode/) | optimistic |
 | [slave_parallel_threads](https://r.mariadb.com/skysql-system-variables/slave_parallel_threads/) | AUTO_GENERATED |
 | [slave_parallel_workers](https://r.mariadb.com/skysql-system-variables/slave_parallel_workers/) | 0 |
-| [slow_query_log](https://r.mariadb.com/skysql-system-variables/slow_query_log/) | OFF |
+| [slow_query_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#slow_query_log) | OFF |
 | [sort_buffer_size](https://r.mariadb.com/skysql-system-variables/sort_buffer_size/) | 2097152 |
-| [sql_mode](https://r.mariadb.com/skysql-system-variables/sql_mode/) | ERROR_FOR_DIVISION_BY_ZERO, NO_AUTO_CREATE_USER, NO_ENGINE_SUBSTITUTION, STRICT_TRANS_TABLES |
-| [strict_password_validation](https://r.mariadb.com/skysql-system-variables/strict_password_validation/) | ON |
+| [sql_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#sql_mode) | ERROR_FOR_DIVISION_BY_ZERO, NO_AUTO_CREATE_USER, NO_ENGINE_SUBSTITUTION, STRICT_TRANS_TABLES |
+| [strict_password_validation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#strict_password_validation) | ON |
 | [sync_binlog](https://r.mariadb.com/skysql-system-variables/sync_binlog/) | 1 |
 | [sync_master_info](https://r.mariadb.com/skysql-system-variables/sync_master_info/) | 1 |
 | [sync_relay_log](https://r.mariadb.com/skysql-system-variables/sync_relay_log/) | 0 |
@@ -120,5 +120,5 @@ The following Configuration Manager parameters are used to configure MariaDB Ser
 | [thread_pool_priority](https://r.mariadb.com/skysql-system-variables/thread_pool_priority/) | auto |
 | [thread_stack](https://r.mariadb.com/skysql-system-variables/thread_stack/) | 299008 |
 | [tmp_table_size](https://mariadb.com/docs/skysql-previous-release/ref/mdb/system-variables/tmp_table_size/) | AUTO_GENERATED |
-| [transaction_isolation](https://r.mariadb.com/skysql-system-variables/tx_isolation) | REPEATABLE-READ |
+| [transaction_isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/server-system-variables#transaction_isolation) | REPEATABLE-READ |
 | [wait_timeout](https://r.mariadb.com/skysql-system-variables/wait_timeout/) | 600 |
