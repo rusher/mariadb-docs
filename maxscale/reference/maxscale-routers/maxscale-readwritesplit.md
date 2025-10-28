@@ -190,20 +190,22 @@ nodes. Any future reads of the user variables can also be performed on any node.
 The possible values for this parameter are:
 
 * `all` (default)
-* Modifications to user variables inside `SELECT` statements as well as reads
-  of user variables are routed to all servers.
-  Versions before MaxScale 22.08 returned an error if a user variable was
-  modified inside of a `SELECT` statement when `use_sql_variables_in=all` was
-  used. MaxScale 22.08 will instead route the query to all servers and discard
-  the extra results.
+
+  * Modifications to user variables inside `SELECT` statements as well as reads
+    of user variables are routed to all servers.  Versions before MaxScale 22.08
+    returned an error if a user variable was modified inside of a `SELECT`
+    statement when `use_sql_variables_in=all` was used. MaxScale 22.08 will
+    instead route the query to all servers and discard the extra results.
+
 * `master`
-* Modifications to user variables inside `SELECT` statements as well as reads
-  of user variables are routed to the primary server. This forces more of the
-  traffic onto the primary server but it reduces the amount of data that is
-  discarded for any `SELECT` statement that also modifies a user
-  variable. With this mode, the state of user variables is not deterministic
-  if they are modified inside of a `SELECT` statement. `SET` statements that
-  modify user variables are still routed to all servers.
+
+  * Modifications to user variables inside `SELECT` statements as well as reads
+    of user variables are routed to the primary server. This forces more of the
+    traffic onto the primary server but it reduces the amount of data that is
+    discarded for any `SELECT` statement that also modifies a user
+    variable. With this mode, the state of user variables is not deterministic
+    if they are modified inside of a `SELECT` statement. `SET` statements that
+    modify user variables are still routed to all servers.
 
 DML statements, such as `INSERT`, `UPDATE` or `DELETE`, that modify SQL user
 variables are still treated as writes and are only routed to the primary
@@ -419,7 +421,7 @@ loss of a primary server.
 
 | Value            | Description                                                                                                                      |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `fail_instantly`  | When the failure of the primary server is detected, the connection will be closed immediately.                                  |
+| `fail_instantly` | When the failure of the primary server is detected, the connection will be closed immediately.                                   |
 | `fail_on_write`  | The client connection is closed if a write query is received when no primary is available.                                       |
 | `error_on_write` | If no primary is available and a write query is received, an error is returned stating that the connection is in read-only mode. |
 
@@ -684,22 +686,27 @@ consistency of the replayed transaction.
 Possible values are:
 
 * `full` (default)
-* All responses from the server are included in the checksum. This retains the
-  full consistency guarantee of the replayed transaction as it must match
-  exactly the one that was already returned to the client.
+
+  * All responses from the server are included in the checksum. This retains the
+    full consistency guarantee of the replayed transaction as it must match
+    exactly the one that was already returned to the client.
+
 * `result_only`
-* Only resultsets and errors are included in the checksum. OK packets
-  (i.e. successful queries that do not return results) are ignored. This mode
-  is intended to be used in cases where the extra information (auto-generated
-  ID, warnings etc.) returned in the OK packet is not used by the
-  application.
-  This mode is safe to use only if the auto-generated ID is not actually used
-  by any following queries. An example of such behavior would be a transaction
-  that ends with an `INSERT` into a table with an `AUTO_INCREMENT` field.
+
+  * Only resultsets and errors are included in the checksum. OK packets
+    (i.e. successful queries that do not return results) are ignored. This mode
+    is intended to be used in cases where the extra information (auto-generated
+    ID, warnings etc.) returned in the OK packet is not used by the application.
+    This mode is safe to use only if the auto-generated ID is not actually used
+    by any following queries. An example of such behavior would be a transaction
+    that ends with an `INSERT` into a table with an `AUTO_INCREMENT` field.
+
 * `no_insert_id`
-* The same as `result_only` but results from queries that use`LAST_INSERT_ID()`
-  are also ignored. This mode is safe to use only if the result of the query is
-  not used by any subsequent statement in the transaction.
+
+  * The same as `result_only` but results from queries that
+    use`LAST_INSERT_ID()` are also ignored. This mode is safe to use only if the
+    result of the query is not used by any subsequent statement in the
+    transaction.
 
 ### `optimistic_trx`
 
@@ -750,83 +757,91 @@ necessary.
 The possible values for this parameter are:
 
 * `none` (default)
-* Read causality is disabled.
-* `local`
-* Writes are locally visible. Writes are guaranteed to be visible only to the
-  connection that does it. Unrelated modifications done by other connections
-  are not visible. This mode improves read scalability at the cost of latency
-  and reduces the overall load placed on the primary server without breaking
-  causality guarantees.
-* `global`
-* Writes are globally visible. If one connection writes a value, all
-  connections to the same service will see it. In general this mode is slower
-  than the `local` mode due to the extra synchronization it has to do. This
-  guarantees global happens-before ordering of reads when all transactions are
-  inside a single GTID domain.This mode gives similar benefits as the `local`
-  mode in that it improves read scalability at the cost of latency.
-  With MaxScale versions 2.5.14 and older, multi-domain use of `causal_reads`
-  could cause non-causal reads to occur. Starting with MaxScale 2.5.15, this
-  was fixed and all the GTID coordinates are passed alongside all requests
-  which makes multi-domain GTIDs safe to use. However, this does mean that the
-  GTID coordinates will never be reset: if replication is reset and GTID
-  coordinates go "backwards", readwritesplit will not consider these as being
-  newer than the ones already stored. To reset the stored GTID coordinates in
-  readwritesplit, MaxScale must be restarted.
-  MaxScale 6.4.11 added the new `reset-gtid` module command to
-  readwritesplit. This allows the global GTID state used
-  by`causal_reads=global` to be reset without having to restart MaxScale.
-* `fast`
-* This mode is similar to the `local` mode where it will only affect the
-  connection that does the write but where the `local` mode waits for a replica
-  server to catch up, the `fast` mode will only use servers that are known to
-  have replicated the write. This means that if no replica has replicated the
-  write, the primary where the write was done will be used. The value of
-  `causal_reads_timeout` is ignored in this mode. Currently the replication
-  state is only updated by the mariadbmon monitor whenever the servers are
-  monitored. This means that a smaller `monitor_interval` provides faster
-  replication state updates and possibly better overall usage of servers.
-  This mode is the inverse of the `local` mode in the sense that it improves
-  read latency at the cost of read scalability while still retaining the
-  causality guarantees for reads. This functionality can also be considered an
-  improved version of the functionality that the
-  [CCRFilter](../maxscale-filters/maxscale-consistent-critical-read-filter.md)
-  module provides.
-* `fast_global`
-* This mode is identical to the `fast` mode except that it uses the global
-  GTID instead of the session local one. This is similar to how `local` and
-  `global` modes differ from each other. The value of `causal_reads_timeout`
-  is ignored in this mode. Currently the replication state is only updated by
-  the mariadbmon monitor whenever the servers are monitored. This means that a
-  smaller `monitor_interval` provides faster replication state updates and
-  possibly better overall usage of servers.
-* `universal`
-* The universal mode guarantees that all SELECT statements always see the
-  latest observable transaction state on a database cluster. The basis of this
-  is the `@@gtid_current_pos` variable which is read from the current primary
-  server before each read. This guarantees that if a transaction was visible
-  at the time the read is received by readwritesplit, the transaction is
-  guaranteed to be complete on the replica server where the read is done.
-  This mode is the most consistent of all the modes. It provides consistency
-  regardless of where a write originated from but it comes at the cost of
-  increased latency. For every read, a round trip to the current primary server
-  is done. This means that the latency of any given SELECT statement increases
-  by roughly twice the network latency between MaxScale and the database
-  cluster. In addition, an extra SELECT statement is always executed on the
-  primary which places some load on the server.
-* `fast_universal`
-* A mix of `fast` and `universal`. This mode that guarantees that all SELECT
-  statements always see the latest observable transaction state but unlike
-  the `universal` mode that waits on the server to catch up, this mode behaves
-  like `fast` and routes the query to the current primary if no replicas are
-  available that have caught up.
-  This mode provides the same consistency guarantees of `universal` with a
-  constant latency overhead of one extra roundtrip. However, this also puts
-  the most load on the primary node as even a moderate write load can cause
-  the GTIDs of replicas to lag too far behind.
 
-Before MaxScale 2.5.0, the `causal_reads` parameter was a boolean
-parameter. False values translated to `none` and true values translated to `local`.
-The use of boolean parameters is deprecated but still accepted in MaxScale 2.5.0.
+  * Read causality is disabled.
+
+* `local`
+
+  * Writes are locally visible. Writes are guaranteed to be visible only to the
+    connection that does it. Unrelated modifications done by other connections
+    are not visible. This mode improves read scalability at the cost of latency
+    and reduces the overall load placed on the primary server without breaking
+    causality guarantees.
+
+* `global`
+
+  * Writes are globally visible. If one connection writes a value, all
+    connections to the same service will see it. In general this mode is slower
+    than the `local` mode due to the extra synchronization it has to do. This
+    guarantees global happens-before ordering of reads when all transactions are
+    inside a single GTID domain.This mode gives similar benefits as the `local`
+    mode in that it improves read scalability at the cost of latency.  With
+    MaxScale versions 2.5.14 and older, multi-domain use of `causal_reads` could
+    cause non-causal reads to occur. Starting with MaxScale 2.5.15, this was
+    fixed and all the GTID coordinates are passed alongside all requests which
+    makes multi-domain GTIDs safe to use. However, this does mean that the GTID
+    coordinates will never be reset: if replication is reset and GTID
+    coordinates go "backwards", readwritesplit will not consider these as being
+    newer than the ones already stored. To reset the stored GTID coordinates in
+    readwritesplit, MaxScale must be restarted.  MaxScale 6.4.11 added the new
+    `reset-gtid` module command to readwritesplit. This allows the global GTID
+    state used by`causal_reads=global` to be reset without having to restart
+    MaxScale.
+
+* `fast`
+
+  * This mode is similar to the `local` mode where it will only affect the
+    connection that does the write but where the `local` mode waits for a
+    replica server to catch up, the `fast` mode will only use servers that are
+    known to have replicated the write. This means that if no replica has
+    replicated the write, the primary where the write was done will be used. The
+    value of `causal_reads_timeout` is ignored in this mode. Currently the
+    replication state is only updated by the mariadbmon monitor whenever the
+    servers are monitored. This means that a smaller `monitor_interval` provides
+    faster replication state updates and possibly better overall usage of
+    servers.  This mode is the inverse of the `local` mode in the sense that it
+    improves read latency at the cost of read scalability while still retaining
+    the causality guarantees for reads. This functionality can also be
+    considered an improved version of the functionality that the
+    [CCRFilter](../maxscale-filters/maxscale-consistent-critical-read-filter.md)
+    module provides.
+
+* `fast_global`
+
+  * This mode is identical to the `fast` mode except that it uses the global
+    GTID instead of the session local one. This is similar to how `local` and
+    `global` modes differ from each other. The value of `causal_reads_timeout`
+    is ignored in this mode. Currently the replication state is only updated by
+    the mariadbmon monitor whenever the servers are monitored. This means that a
+    smaller `monitor_interval` provides faster replication state updates and
+    possibly better overall usage of servers.
+
+* `universal`
+
+  * The universal mode guarantees that all SELECT statements always see the
+    latest observable transaction state on a database cluster. The basis of this
+    is the `@@gtid_current_pos` variable which is read from the current primary
+    server before each read. This guarantees that if a transaction was visible
+    at the time the read is received by readwritesplit, the transaction is
+    guaranteed to be complete on the replica server where the read is done.
+    This mode is the most consistent of all the modes. It provides consistency
+    regardless of where a write originated from but it comes at the cost of
+    increased latency. For every read, a round trip to the current primary
+    server is done. This means that the latency of any given SELECT statement
+    increases by roughly twice the network latency between MaxScale and the
+    database cluster. In addition, an extra SELECT statement is always executed
+    on the primary which places some load on the server.
+
+* `fast_universal`
+
+  * A mix of `fast` and `universal`. This mode that guarantees that all SELECT
+    statements always see the latest observable transaction state but unlike the
+    `universal` mode that waits on the server to catch up, this mode behaves
+    like `fast` and routes the query to the current primary if no replicas are
+    available that have caught up.  This mode provides the same consistency
+    guarantees of `universal` with a constant latency overhead of one extra
+    roundtrip. However, this also puts the most load on the primary node as even
+    a moderate write load can cause the GTIDs of replicas to lag too far behind.
 
 #### Implementation of `causal_reads`
 
@@ -944,11 +959,13 @@ server which would cause the connection to be closed and a warning to be logged.
   [`MASTER_GTID_WAIT`](../../../server/reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
   function still do not work with Galera. This is because Galera does not
   implement a mechanism that allows a client to wait for a particular GTID.
+
 * If the combination of the original SQL statement and the modifications
   added to it by readwritesplit exceed the maximum packet size (16777213 bytes),
   the causal read will not be attempted and a non-causal read is done instead.
   This applies only to text protocol queries as the binary protocol queries use
   a different synchronization mechanism.
+
 * SQL like `INSERT ... RETURNING` that commits a transaction and returns a
   resultset will only work with causal reads if the connector supports the
   `DEPRECATE_EOF` protocol feature. The following table contains a list of MariaDB
@@ -1174,15 +1191,19 @@ rules govern how readwritesplit behaves with servers that have different ranks.
 * Sessions will use the current primary server as long as possible. This means
   that sessions with a secondary primary will not use the main primary as long
   as the secondary primary is available.
+
 * All replica connections will use the same rank as the primary connection. Any
   stale connections with a different rank than the primary will be discarded.
+
 * If no primary connection is available and `master_reconnection` is enabled, a
   connection to the best primary is created. If the new primary has a different
   priority than existing connections have, the connections with a different rank
   will be discarded.
+
 * If open connections exist, these will be used for routing. This means that if
   the primary is lost but the session still has replica servers with the same rank,
   they will remain in use.
+
 * If no open connections exist, the servers with the best rank will used.
 
 ## Routing hints
