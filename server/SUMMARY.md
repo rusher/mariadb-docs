@@ -260,7 +260,7 @@
       * [Differences Between MyRocks Variants](server-usage/storage-engines/myrocks/differences-between-myrocks-variants.md)
       * [Getting Started with MyRocks](server-usage/storage-engines/myrocks/getting-started-with-myrocks.md)
       * [Loading Data Into MyRocks](server-usage/storage-engines/myrocks/loading-data-into-myrocks.md)
-      * [Bloom Filters](server-usage/storage-engines/myrocks/myrocks-and-bloom-filters.md)
+      * [MyRocks Bloom Filters](server-usage/storage-engines/myrocks/myrocks-and-bloom-filters.md)
       * [MyRocks CHECK TABLE](server-usage/storage-engines/myrocks/myrocks-and-check-table.md)
       * [MyRocks Data Compression](server-usage/storage-engines/myrocks/myrocks-and-data-compression.md)
       * [Group Commit with Binary log](server-usage/storage-engines/myrocks/myrocks-and-group-commit-with-binary-log.md)
