@@ -166,7 +166,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `s3_region`
 
-* Description: The AWS region where your data should be stored. See [mysqld startup options for S3](using-the-s3-storage-engine.md#mysqld-startup-options-for-s3).
+* Description: The AWS region where your data should be stored. See [mariadbd startup options for S3](using-the-s3-storage-engine.md#mariadbd-startup-options-for-s3).
 * Command line: `--s3-region=val`
 * Scope: Global
 * Dynamic: No
@@ -186,7 +186,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `s3_secret_key`
 
-* Description: The AWS secret key to access your data. See [mysqld startup options for S3](using-the-s3-storage-engine.md#mysqld-startup-options-for-s3).
+* Description: The AWS secret key to access your data. See [mariadbd startup options for S3](using-the-s3-storage-engine.md#mariadbd-startup-options-for-s3).
 * Command line: `--s3-secret-key=val`
 * Scope: Global
 * Dynamic: No
