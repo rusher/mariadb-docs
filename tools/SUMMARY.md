@@ -49,7 +49,7 @@
     * [Standalone](mariadb-enterprise-operator/topologies/standalone.md)
     * [High Availability](mariadb-enterprise-operator/topologies/high-availability.md)
       * [Asynchronous Replication](mariadb-enterprise-operator/topologies/replication.md)
-      * [Synchronous Multi-master With Galera](mariadb-enterprise-operator/topologies/galera.md)
+      * [Synchronous Multi-Master With Galera](mariadb-enterprise-operator/topologies/galera.md)
     * [MaxScale Database Proxy](mariadb-enterprise-operator/topologies/maxscale.md)
     * [Data Plane](mariadb-enterprise-operator/topologies/data-plane.md)
   * [Backup and Restore](mariadb-enterprise-operator/backup-and-restore/README.md)
