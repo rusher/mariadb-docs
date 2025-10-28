@@ -67,7 +67,7 @@ The LGPL license allows you to distribute these MariaDB client library freely wi
 
 ## Distributing a proprietary application with the MariaDB / MySQL server
 
-When you are distributing your application together with MariaDB or MySQL you are bound (or can be seen to be bound by some lawyers) by the GPL if some of the following statements apply:
+When you are distributing your application together with MariaDB or MySQL, you are bound by the GPL if some of the following statements apply:
 
 * You are using GPL code from MySQL linked directly to your application. (Like the MySQL GPL client library).
 * Your application requires the MariaDB server to work and without the MariaDB server it doesn't start or it has very limited functionality.
