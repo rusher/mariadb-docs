@@ -261,7 +261,7 @@
       * [Getting Started with MyRocks](server-usage/storage-engines/myrocks/getting-started-with-myrocks.md)
       * [Loading Data Into MyRocks](server-usage/storage-engines/myrocks/loading-data-into-myrocks.md)
       * [Bloom Filters](server-usage/storage-engines/myrocks/myrocks-and-bloom-filters.md)
-      * [CHECK TABLE](server-usage/storage-engines/myrocks/myrocks-and-check-table.md)
+      * [MyRocks CHECK TABLE](server-usage/storage-engines/myrocks/myrocks-and-check-table.md)
       * [Data Compression](server-usage/storage-engines/myrocks/myrocks-and-data-compression.md)
       * [Group Commit with Binary log](server-usage/storage-engines/myrocks/myrocks-and-group-commit-with-binary-log.md)
       * [Index-Only Scans](server-usage/storage-engines/myrocks/myrocks-and-index-only-scans.md)
