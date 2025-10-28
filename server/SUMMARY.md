@@ -263,7 +263,7 @@
       * [MyRocks Bloom Filters](server-usage/storage-engines/myrocks/myrocks-and-bloom-filters.md)
       * [MyRocks CHECK TABLE](server-usage/storage-engines/myrocks/myrocks-and-check-table.md)
       * [MyRocks Data Compression](server-usage/storage-engines/myrocks/myrocks-and-data-compression.md)
-      * [Group Commit with Binary log](server-usage/storage-engines/myrocks/myrocks-and-group-commit-with-binary-log.md)
+      * [MyRocks Group Commit with Binary log](server-usage/storage-engines/myrocks/myrocks-and-group-commit-with-binary-log.md)
       * [Index-Only Scans](server-usage/storage-engines/myrocks/myrocks-and-index-only-scans.md)
       * [MyRocks and Replication](server-usage/storage-engines/myrocks/myrocks-and-replication.md)
       * [START TRANSACTION WITH CONSISTENT SNAPSHOT](server-usage/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
