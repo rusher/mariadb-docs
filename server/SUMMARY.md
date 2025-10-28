@@ -266,7 +266,7 @@
       * [MyRocks Group Commit with Binary log](server-usage/storage-engines/myrocks/myrocks-and-group-commit-with-binary-log.md)
       * [MyRocks Index-Only Scans](server-usage/storage-engines/myrocks/myrocks-and-index-only-scans.md)
       * [MyRocks and Replication](server-usage/storage-engines/myrocks/myrocks-and-replication.md)
-      * [START TRANSACTION WITH CONSISTENT SNAPSHOT](server-usage/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
+      * [MyRocks START TRANSACTION WITH CONSISTENT SNAPSHOT](server-usage/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
       * [MyRocks Column Families](server-usage/storage-engines/myrocks/myrocks-column-families.md)
       * [MyRocks Performance Troubleshooting](server-usage/storage-engines/myrocks/myrocks-performance-troubleshooting.md)
       * [Optimizer Statistics in MyRocks](server-usage/storage-engines/myrocks/optimizer-statistics-in-myrocks.md)
