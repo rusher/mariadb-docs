@@ -304,7 +304,6 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 - Daan van Gorkum
 - National University of Singapore
-- vHost (Singapore)
 
 ### South Korea
 
@@ -357,7 +356,6 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 ### Vietnam
 
 - BKNS.VN (Hanoi)
-- vHost (Hanoi)
 
 ## The MariaDB Archive
 
