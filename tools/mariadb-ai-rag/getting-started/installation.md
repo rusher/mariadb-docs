@@ -20,7 +20,7 @@
 2.  Install the package:
 
     ```bash
-    sudo dpkg -i rag-in-a-box_1.0_amd64.deb	
+    sudo dpkg -i ai-rag-*.deb	
     ```
 3.  Install dependencies:
 
@@ -37,7 +37,7 @@
 2.  Install the package:
 
     ```bash
-    sudo rpm -i rag-in-a-box-1.0-1.x86_64.rpm
+    sudo rpm -i ai-rag-*.rpm
     ```
 {% endtab %}
 
