@@ -682,7 +682,7 @@
       * [Roles Overview](security/user-account-management/roles/roles_overview.md)
       * [System\`s Users, Roles, and Privileges](security/user-account-management/roles/system-users-roles-and-privileges.md)
     * [Account Locking](security/user-account-management/account-locking.md)
-    * [Authentication from MariaDB 10.4](security/user-account-management/authentication-from-mariadb-10-4.md)
+    * [Authentication](security/user-account-management/authentication-from-mariadb-10-4.md)
     * [Incrementing of the access\_denied\_errors status variable](security/user-account-management/incrementing-of-the-access_denied_errors-status-variable.md)
     * [User Password Expiry](security/user-account-management/user-password-expiry.md)
     * [Catalogs](security/user-account-management/catalogs/README.md)

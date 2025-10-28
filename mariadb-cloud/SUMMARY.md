@@ -125,3 +125,23 @@
             kind: openapi
             spec: mariadb-api
       ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```

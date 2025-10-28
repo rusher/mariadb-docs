@@ -142,11 +142,11 @@ Global privileges do not take effect immediately and are only applied to connect
 * [Function privileges priv\_type](grant.md#function-privileges) are granted using `FUNCTION db_name.routine_name` for priv\_level, or using just `FUNCTION routine_name` to specify a function in the default database.
 * [Procedure privileges priv\_type](grant.md#procedure-privileges) are granted using `PROCEDURE db_name.routine_name` for priv\_level, or using just `PROCEDURE routine_name` to specify a procedure in the default database.
 
-#### The `USAGE` Privilege
+### The `USAGE` Privilege
 
 The `USAGE` privilege grants no real privileges. The [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md) statement will show a global `USAGE` privilege for a newly-created user. You can use `USAGE` with the `GRANT` statement to change options like `GRANT OPTION`and `MAX_USER_CONNECTIONS` without changing any account privileges.
 
-#### The `ALL PRIVILEGES` Privilege
+### The `ALL PRIVILEGES` Privilege
 
 The `ALL PRIVILEGES` privilege grants all available privileges. Granting all privileges only affects the given privilege level. For example, granting all privileges on a table does not grant any privileges on the database or globally.
 
@@ -154,7 +154,7 @@ Using `ALL PRIVILEGES` does not grant the special `GRANT OPTION` privilege.
 
 You can use `ALL` instead of `ALL PRIVILEGES`.
 
-#### The `GRANT OPTION` Privilege
+### The `GRANT OPTION` Privilege
 
 Use the `WITH GRANT OPTION` clause to give users the ability to grant privileges to other users at the given privilege level. Users with the `GRANT OPTION` privilege can only grant privileges they have. They cannot grant privileges at a higher privilege level than they have the `GRANT OPTION` privilege.
 

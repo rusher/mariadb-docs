@@ -8,15 +8,11 @@ Sensitive security issues can be reported on [https://hackerone.com/mariadb](htt
 
 ## About CVEs
 
-CVE® stands for _"Common Vulnerabilities and Exposures"_. It is\
-a publicly available and free to use database of known software\
-vulnerabilities maintained at
+CVE® stands for _"Common Vulnerabilities and Exposures"_. It is a publicly available and free-to-use database of known software vulnerabilities maintained at [https://cve.mitre.org/](https://cve.mitre.org/).
 
-On this page is the master list of CVEs fixed across all versions of MariaDB.\
-Follow the links to more information on a particular CVE or specific version\
-of MariaDB.
+On this page is the master list of CVEs fixed across all versions of MariaDB. Follow the links for more information on a particular CVE or specific version of MariaDB.
 
-Some CVEs apply to MySQL but are not present in MariaDB, these are listed on the [Security Vulnerabilities fixed in Oracle MySQL that did not exist in MariaDB](security-vulnerabilities-in-oracle-mysql-that-did-not-exist-in-mariadb.md) page.
+Some CVEs apply to MySQL but are not present in MariaDB; these are listed on the [Security Vulnerabilities fixed in Oracle MySQL that did not exist in MariaDB](security-vulnerabilities-in-oracle-mysql-that-did-not-exist-in-mariadb.md) page.
 
 Separate lists of CVEs fixed in specific MariaDB series are maintained on their respective pages:
 
