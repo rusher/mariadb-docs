@@ -86,7 +86,7 @@ work under the scope of this License."
 You also have the option to buy licenses for MySQL from Oracle to get MySQL under other copyright terms. If you would like to later be able to use MariaDB instead of MySQL, please ensure that your license agreement allows you to make changes to the MySQL code! (This is something that you should ensure in all cases as otherwise you may run\
 into bugs that Oracle will not fix, you are not allowed to fix and could make MySQL software unusable for you!)
 
-The rights to use the MariaDB code changes in your application can be requested from [SkySQL](https://www.skysql.com/about/contact).
+The rights to use the MariaDB code changes in your application can be requested.
 
 ## Legal notice
 
