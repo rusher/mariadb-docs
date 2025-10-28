@@ -45,7 +45,7 @@ Whilst this can be useful for development and testing, it is not recommended for
 * Upgrades require downtime
 * Only vertical scaling is possible
 
-For achieving high availability, we recommend deploying a highly available topology as described in the [high availability guide](./high_availability.md).
+For achieving high availability, we recommend deploying a highly available topology as described in the [high availability guide](./high-availability.md).
 
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}

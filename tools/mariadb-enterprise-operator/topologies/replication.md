@@ -81,7 +81,7 @@ The operator continiously monitors the replication status via [`SHOW SLAVE STATU
 
 By default, [semi-synchronous replication](https://mariadb.com/docs/server/ha-and-performance/standard-replication/semisynchronous-replication) is configured, which requires an acknowledgement from at least one replica before committing the transaction back to the client. This trades off performance for better consistency and facilitates [failover](#primary-failover) and [switchover](#primary-switchover) operations.
 
-If you are aiming for better performance, you can disable semi-synchronous replication, and go fully asynchronous, please refer to [configuration](#asynchronous-replication) section for doing so.
+If you are aiming for better performance, you can disable semi-synchronous replication, and go fully asynchronous, please refer to [configuration](#configuration) section for doing so.
 
 ## Configuration
 
@@ -147,7 +147,7 @@ spec:
 
 ## Probes
 
-Kubernetes probes are resolved by the agent (see [data-plane](./data_plane.md) documentation) in the replication topology, taking into account both the MariaDB and replication status. Additionally, as described in the [configuration documentation](../configuration.md#probes), probe thresholds may be tuned accordingly for a better reliability based on your environment.
+Kubernetes probes are resolved by the agent (see [data-plane](./data-plane.md) documentation) in the replication topology, taking into account both the MariaDB and replication status. Additionally, as described in the [configuration documentation](../configuration.md#probes), probe thresholds may be tuned accordingly for a better reliability based on your environment.
 
 In the following sub-sections we will be covering specifics about the replication topology.
 
@@ -164,7 +164,7 @@ The readiness probe checks that the MariaDB server is running and that the `Seco
 ## Lagged replicas
 
 A replica is considered to be lagging behind the primary when the `Seconds_Behind_Master` value reported by `SHOW SLAVE STATUS` exceeds the `spec.replication.replica.maxLagSeconds` configuration option. This results in the [readiness probe](#readiness-probe) failing for that replica, and it has the following implications:
-- When using [Kubernetes `Services` for high availability](./high_availability.md#kubernetes-services), queries will not be forwarded to lagged replicas. This doesn't affect MaxScale routing.
+- When using [Kubernetes `Services` for high availability](./high-availability.md#kubernetes-services), queries will not be forwarded to lagged replicas. This doesn't affect MaxScale routing.
 - When taking a [physical backup](../backup-and-restore/physical_backup.md), lagged replicas will not be considered as a target for taking the backup.
 - During a [primary switchover](#primary-switchover) managed by the operator, lagged replicas will block switchover operations, as all the replicas must be in sync before promoting the new primary. This doesn't affect MaxScale switchover operation.
 - During a [primary failover](#primary-failover) managed by the operator, lagged replicas will not be considered as candidates to be promoted as the new primary. MaxScale failover will not consider lagged replicas either.
@@ -193,7 +193,7 @@ Refrain from removing the `enterprise.mariadb.com/gtid` annotation in the `Volum
 ## Primary switchover
 
 {% hint style="info" %}
-Our recommendation for production environments is to rely on [MaxScale](./maxscale.md) for the [switchover operation](./maxscale.md#primary-server-switchover), as it provides [several advantages](./high_availability.md#maxscale).
+Our recommendation for production environments is to rely on [MaxScale](./maxscale.md) for the [switchover operation](./maxscale.md#primary-server-switchover), as it provides [several advantages](./high-availability.md#maxscale).
 {% endhint %}
 
 You can declaratively trigger a primary switchover by updating the `spec.replication.primary.podIndex` field in the `MariaDB` CR to the index of the replica you want to promote as the new primary. For example, to promote the replica at index `1`:
@@ -240,7 +240,7 @@ If the switchover operation is stuck waiting for replicas to be in sync, you can
 ## Primary failover
 
 {% hint style="info" %}
-Our recommendation for production environments is to rely on [MaxScale](./maxscale.md) for the failover process, as it provides [several advantages](./high_availability.md#maxscale).
+Our recommendation for production environments is to rely on [MaxScale](./maxscale.md) for the failover process, as it provides [several advantages](./high-availability.md#maxscale).
 {% endhint %}
 
 You can configure the operator to automatically perform a primary failover whenever the current primary becomes unavailable:
@@ -298,7 +298,7 @@ Furthermore, for the replication topology, the operator will trigger an addition
 
 The steps involved in updating a replication cluster are:
 1. Update each replica one by one, waiting for each replica to be ready before proceeding to the next one (see [readiness probe](#readiness-probe) section).
-2. Once all replicas are up to date and synced, perform a [primary switchover](#primary-switchover) to promote one of the replicas as the new primary. If `MariaDB` CR has a `MaxScale` configured using the `spec.maxScaleRef` field, the operator will trigger the [primary switchover in MaxScale](./maxscale.md#) instead.
+2. Once all replicas are up to date and synced, perform a [primary switchover](#primary-switchover) to promote one of the replicas as the new primary. If `MariaDB` CR has a `MaxScale` configured using the `spec.maxScaleRef` field, the operator will trigger the [primary switchover in MaxScale](./maxscale.md#primary-server-switchover) instead.
 3. Update the previous primary, now running as a replica.
 
 ## Scaling out
@@ -463,7 +463,7 @@ The `errorDurationThreshold` option defines the duration after which, a replica 
 
 We will be simulating a `1236` error in a replica to demostrate how the recovery process works:
 
-{% hint style="warning" %}
+{% hint style="danger" %}
 Do not perform the following steps in a production environment.
 {% endhint %}
 
@@ -471,7 +471,6 @@ Do not perform the following steps in a production environment.
 ```bash
 PRIMARY=$(kubectl get mariadb mariadb-repl -o jsonpath="{.status.currentPrimary}")
 echo "Purging binary logs in primary $PRIMARY"
-
 kubectl exec -it $PRIMARY -c mariadb -- mariadb -u root -p'MariaDB11!' --ssl=false -e "FLUSH LOGS;"
 kubectl exec -it $PRIMARY -c mariadb -- mariadb -u root -p'MariaDB11!' --ssl=false -e "PURGE BINARY LOGS BEFORE NOW();"
 kubectl exec -it $PRIMARY -c mariadb -- mariadb -u root -p'MariaDB11!' --ssl=false -e "SHOW BINARY LOGS;"

@@ -43,7 +43,7 @@ Operational expertise is baked into the `MariaDB` and `MaxScale` APIs and seamle
 * Provision and Configure MariaDB and MaxScale Declaratively: Define MariaDB Enterprise Server and MaxScale clusters in YAML manifests and deploy them with ease in Kubernetes.
 * Multiple [Highly Available](./topologies/high-availability.md) Topologies supported:
   * [Asynchronous Replication](./topologies/replication.md)
-  * [Synchronous Multi-Master with MariaDb Enterprise Cluster](./topologies/galera.md)
+  * [Synchronous Multi-Master with Galera](./topologies/galera.md)
   * [MaxScale](./topologies/maxscale.md) as a Database proxy to load balance requests and perform failover/switchover operations.
 * Cluster-Aware Rolling Updates: Perform rolling updates on MariaDB and MaxScale clusters, ensuring zero-downtime upgrades with no disruptions to your applications.
 * Flexible Storage Configuration and Volume Expansion: Easily configure storage for MariaDB instances, including the ability to expand volumes as needed.
