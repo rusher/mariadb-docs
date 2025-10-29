@@ -1,6 +1,6 @@
 # Securing Connections for Client and Server
 
-Starting from 11.4 MariaDB encrypts the transmitted data between the server and clients by default unless the server and client run on the same host.
+Starting from 11.4 MariaDB, it encrypts the transmitted data between the server and clients by default unless the server and client run on the same host.
 
 Before that the default behavior was to transmit the data unencrypted over the network introducing a security concerns as a malicious actor could potentially eavesdrop on the traffic as it is sent over the network between them.
 
@@ -10,13 +10,12 @@ The data in transit are encrypted (by default or if enabled manually) using the 
 
 ### Enabling TLS for MariaDB Server
 
-**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
+{% tabs %}
+{% tab title="Current" %}
+MariaDB enables TLS automatically. Certificates are generated on startup and only stored in memory. Certificate verification is enabled by default on the client side and certificates are verified if the authentication plugin itself is MitM safe (`mysql_native_password`, `ed25519`, `parsec`).
+{% endtab %}
 
-Starting from 11.4, MariaDB enables TLS automatically. Certificates are generated on startup and only stored in memory. Certificate verification is enabled by default on the client side and certificates are verified if the authentication plugin itself is MitM safe (mysql\_native\_password, ed25519, parsec).\
-If you want to use externally generated certificates as with older MariaDB versions, see below.
-
-**MariaDB until** [**11.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
-
+{% tab title="< 11.4" %}
 In order to enable TLS in a MariaDB server, you need to generate TLS certificates and configure the server to use them.
 
 To do that there are a number of system variables that you need to set, such as:
@@ -49,6 +48,8 @@ SHOW VARIABLES LIKE 'have_ssl';
 | have_ssl      | YES   |
 +---------------+-------+
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Reloading the Server's Certificates and Keys Dynamically
 
@@ -58,7 +59,7 @@ See [FLUSH SSL](../../../../reference/sql-statements/administrative-sql-statemen
 
 ### Enabling TLS for MariaDB Clients
 
-Different [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) may use different methods to enable TLS. You can let the client to use TLS without specifying client-side certificate — this is called a **one-way TLS** below — to have the connection encrypted. Or you can additionally provide client-side certificate — this is **two-way TLS** — which will allow the server to do the certificate based client authentication.
+Different [clients and utilities](../../../../clients-and-utilities/) may use different methods to enable TLS. You can let the client to use TLS without specifying client-side certificate — this is called a **one-way TLS** below — to have the connection encrypted. Or you can additionally provide client-side certificate — this is **two-way TLS** — which will allow the server to do the certificate based client authentication.
 
 #### Enabling One-Way TLS for MariaDB Clients
 
