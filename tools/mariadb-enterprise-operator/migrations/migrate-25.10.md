@@ -2,7 +2,6 @@
 
 This guide illustrates, step by step, how to migrate to `25.10.0` from previous versions. 
 
-
 - The Galera data-plane must be updated to the `25.10.0` version. You must set `updateStrategy.autoUpdateDataPlane=true` in your `MariaDB` resources before updating the operator. Then, once updated, the operator will also be updating the data-plane based on its version:
 ```diff
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -46,7 +45,7 @@ spec:
   name: mariadb-enterprise-operator
   source: certified-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: mariadb-enterprise-operator.v25.10.0
+  startingCSV: mariadb-enterprise-operator.v25.10.1
 ``` 
 
 As part of the 25.10 LTS release, we have introduced new [release channels](https://mariadb.com/docs/tools/mariadb-enterprise-operator/installation/openshift#release-channels). Consider switching to the `stable-v25.10` if you are willing to stay in the `25.10.x` version:
