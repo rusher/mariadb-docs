@@ -1,8 +1,8 @@
 # 25.10 LTS migration guide
 
-This guide illustrates, step by step, how to migrate to `25.10.0` from previous versions. 
+This guide illustrates, step by step, how to migrate to `25.10.1` from previous versions. 
 
-- The Galera data-plane must be updated to the `25.10.0` version. You must set `updateStrategy.autoUpdateDataPlane=true` in your `MariaDB` resources before updating the operator. Then, once updated, the operator will also be updating the data-plane based on its version:
+- The Galera data-plane must be updated to the `25.10.1` version. You must set `updateStrategy.autoUpdateDataPlane=true` in your `MariaDB` resources before updating the operator. Then, once updated, the operator will also be updating the data-plane based on its version:
 ```diff
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
@@ -15,16 +15,16 @@ spec:
 
 - Then, you may proceeed to update the operator. If you are using __Helm__:
 
-Upgrade `mariadb-enterprise-operator-crds` to `25.10.0`:
+Upgrade `mariadb-enterprise-operator-crds` to `25.10.1`:
 ```bash
 helm repo update mariadb-enterprise-operator
-helm upgrade --install mariadb-enterprise-operator-crds  mariadb-enterprise-operator/mariadb-enterprise-operator-crds --version 25.10.0
+helm upgrade --install mariadb-enterprise-operator-crds  mariadb-enterprise-operator/mariadb-enterprise-operator-crds --version 25.10.1
 ```
 
-Upgrade `mariadb-enterprise-operator` to `25.10.0`:
+Upgrade `mariadb-enterprise-operator` to `25.10.1`:
 ```bash 
 helm repo update mariadb-enterprise-operator
-helm upgrade --install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator --version 25.10.0 
+helm upgrade --install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator --version 25.10.1
 ```
 
 As part of the 25.10 LTS release, we have introduced support for LTS versions. Refer to the [Helm docs](https://mariadb.com/docs/tools/mariadb-enterprise-operator/installation/helm#long-term-support-versions) for sticking to LTS versions.
