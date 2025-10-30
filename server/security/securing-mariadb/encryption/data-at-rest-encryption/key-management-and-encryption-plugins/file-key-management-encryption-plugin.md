@@ -13,7 +13,7 @@ The File Key Management plugin is the easiest [key management and encryption plu
 * It reads encryption keys from a plain-text key file.
 * As an extra protection mechanism, the plain-text key file can be encrypted.
 * It supports multiple encryption keys.
-* It does not support key rotation.
+* It supports key rotation from MariaDB Enterprise Server 11.8.
 * It supports two different algorithms for encrypting data.
 
 It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/encryption-plugin-api).
