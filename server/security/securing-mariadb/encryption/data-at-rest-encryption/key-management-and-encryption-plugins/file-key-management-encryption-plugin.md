@@ -47,7 +47,7 @@ If you installed the plugin by providing the [--plugin-load](../../../../../serv
 
 ## Creating the Key File
 
-In order to encrypt your tables with encryption keys using the File Key Management plugin, create the file containing the encryption keys. File name and location don't matter&#x20;
+In order to encrypt your tables with encryption keys using the File Key Management plugin, create the file containing the encryption keys. File name and location don't matter; see in the following what configuration is needed.
 
 For each encryption key, the file contains these options, separated by a semicolon:
 
