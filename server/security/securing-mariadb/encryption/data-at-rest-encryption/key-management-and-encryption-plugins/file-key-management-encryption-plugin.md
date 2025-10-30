@@ -8,12 +8,12 @@ The File Key Management plugin that ships with MariaDB is a [key management and 
 
 ## Overview
 
-The File Key Management plugin is the easiest [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) to set up for users who want to use [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). Some of the plugin's primary features are:
+The File Key Management plugin is the [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) for users who want to use [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). Some of the plugin's primary features are:
 
 * It reads encryption keys from a plain-text key file.
 * As an extra protection mechanism, the plain-text key file can be encrypted.
 * It supports multiple encryption keys.
-* It supports key rotation from MariaDB Enterprise Server 11.8.
+* It supports key rotation with MariaDB Enterprise Server from MariaDB Enterprise Server 11.8.
 * It supports two different algorithms for encrypting data.
 
 It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/encryption-plugin-api).
