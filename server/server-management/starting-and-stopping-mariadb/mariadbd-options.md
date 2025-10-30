@@ -876,7 +876,7 @@ The options and system variables related to the [Mroonga](../../server-usage/sto
 
 ### TokuDB Storage Engine Options
 
-The options and system variables related to the [TokuDB](../../server-usage/storage-engines/tokudb/) storage engine can be found [here](../../server-usage/storage-engines/tokudb/tokudb-system-variables.md).
+The options and system variables related to the [TokuDB](../../server-usage/storage-engines/legacy-storage-engines/tokudb/) storage engine can be found [here](../../server-usage/storage-engines/legacy-storage-engines/tokudb/tokudb-system-variables.md).
 
 ### Vector Options
 

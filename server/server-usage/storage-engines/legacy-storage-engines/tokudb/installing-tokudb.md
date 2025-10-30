@@ -1,23 +1,8 @@
 # Installing TokuDB
 
-TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105) and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../myrocks/) as a long-term migration path.
+{% include "../../../../.gitbook/includes/tokudb-has-been-deprecated-....md" %}
 
 Note that ha\_tokudb is not included in binaries built with the "old" glibc. Binaries built with glibc 2.14+ do include it.
-
-TokuDB is available on the following distributions:
-
-| Distribution                            | Introduced                                                                                                                                                                                                                                                                                                                   |
-| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CentOS 6 64-bit and newer               | [MariaDB 5.5.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5536-release-notes) and [MariaDB 10.0.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes)   |
-| Debian 7 "wheezy"64-bit and newer       | [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes) and [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes)   |
-| Fedora 19 64-bit and newer              | [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes) and [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes)   |
-| openSUSE 13.1 64-bit and newer          | [MariaDB 5.5.41](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5541-release-notes) and [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) |
-| Red Hat 6 64-bit and newer              | [MariaDB 5.5.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5536-release-notes) and [MariaDB 10.0.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes)   |
-| Ubuntu 12.10 "quantal" 64-bit and newer | [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes) and [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes)   |
-
-**Note:** The TokuDB version that comes from MariaDB.org differs slightly from the\
-TokuDB version from [Tokutek](https://www.tokutek.com). Please\
-read the [TokuDB Differences](tokudb-differences.md) article before using TokuDB!
 
 The following sections detail how to install and enable TokuDB.
 
@@ -134,7 +119,7 @@ ERROR 1123 (HY000): Can't initialize function 'TokuDB'; Plugin initialization fu
 
 See the section above; [Check for Transparent HugePage Support on Linux](installing-tokudb.md#check-for-transparent-hugepage-support-on-linux).
 
-The [binary log also needs to be enabled](../../../server-management/server-monitoring-logs/binary-log/activating-the-binary-log.md) before attempting to enable TokuDB. Strictly speaking, the XA code requires two XA-capable storage engines, and this is checked at startup. In practice, this requires InnoDB and the binary log to be active. If it isn't, the following warning are returned and XA features are disabled:
+The [binary log also needs to be enabled](../../../../server-management/server-monitoring-logs/binary-log/activating-the-binary-log.md) before attempting to enable TokuDB. Strictly speaking, the XA code requires two XA-capable storage engines, and this is checked at startup. In practice, this requires InnoDB and the binary log to be active. If it isn't, the following warning are returned and XA features are disabled:
 
 ```
 Cannot enable tc-log at run-time. XA features of TokuDB are disabled
@@ -190,7 +175,7 @@ command:
 INSTALL SONAME 'ha_tokudb';
 ```
 
-TokuDB are installed until someone executes [UNINSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md).
+TokuDB are installed until someone executes [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md).
 
 ### Temporarily Enabling TokuDB When Starting MariaDB
 

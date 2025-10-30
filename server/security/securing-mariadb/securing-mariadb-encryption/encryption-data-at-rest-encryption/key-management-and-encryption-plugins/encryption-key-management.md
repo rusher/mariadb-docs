@@ -6,7 +6,7 @@ MariaDB supports the use of multiple encryption keys. Each encryption key uses a
 
 ## Supported Key Management Plugins list
 
-<table><thead><tr><th width="189">Plugin</th><th width="146">Status</th><th width="190">Key Rotation Support</th><th>Notes</th></tr></thead><tbody><tr><td>File-based key management</td><td>Supported</td><td>No</td><td>Simple but lacks rotation</td></tr><tr><td>HashiCorp Vault plugin</td><td>Supported, Recommended</td><td>Yes</td><td>Best for secure, scalable deployments</td></tr></tbody></table>
+<table><thead><tr><th width="189">Plugin</th><th width="146">Status</th><th width="190">Key Rotation Support</th><th>Notes</th></tr></thead><tbody><tr><td>File-based key management</td><td>Supported</td><td>Supported from MariaDB Enterprise Server 11.8</td><td>Simple but lacks rotation</td></tr><tr><td>HashiCorp Vault plugin</td><td>Supported, Recommended</td><td>Yes</td><td>Best for secure, scalable deployments</td></tr></tbody></table>
 
 ## Choosing an Encryption Key Management Solution
 

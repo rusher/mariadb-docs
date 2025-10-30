@@ -1,10 +1,10 @@
 # TokuDB System Variables
 
-TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105) and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../myrocks/) as a long-term migration path.
+{% include "../../../../.gitbook/includes/tokudb-has-been-deprecated-....md" %}
 
 This page lists system variables that are related to [TokuDB](./).
 
-See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them, and [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md) for a complete list of all options, statis variable and system variables in MariaDB.
+See [Server System Variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them, and [Full list of MariaDB options, system and status variables](../../../../reference/full-list-of-mariadb-options-system-and-status-variables.md) for a complete list of all options, statis variable and system variables in MariaDB.
 
 ## System Variables
 
@@ -18,7 +18,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_analyze_time`
 
-* Description: Time in seconds that [ANALYZE](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md) operations spend on each index when calculating cardinality. Accurate cardinality helps in particular with the performance of complex queries. If no analyzes are run, cardinality are 1 for primary indexes, and unknown (NULL) for other types of indexes.
+* Description: Time in seconds that [ANALYZE](../../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md) operations spend on each index when calculating cardinality. Accurate cardinality helps in particular with the performance of complex queries. If no analyzes are run, cardinality are 1 for primary indexes, and unknown (NULL) for other types of indexes.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: numeric
@@ -122,7 +122,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_data_dir`
 
-* Description: Directory where the TokuDB data is stored. By default the variable is empty, in which case the regular [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is used.
+* Description: Directory where the TokuDB data is stored. By default the variable is empty, in which case the regular [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is used.
 * Dynamic: No
 * Data Type: string
 * Default Value: Empty (the MariaDB datadir is used)
@@ -249,7 +249,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_lock_timeout_debug`
 
-* Description: When bit zero is set (default `1`), a JSON document describing the most recent lock conflict is reported to [tokudb\_last\_lock\_timeout](tokudb-system-variables.md#tokudb_last_lock_timeout). When set to `0`, no lock conflicts are reported. When bit one is set, the JSON document is printed to the [error log](../../../server-management/server-monitoring-logs/error-log.md).
+* Description: When bit zero is set (default `1`), a JSON document describing the most recent lock conflict is reported to [tokudb\_last\_lock\_timeout](tokudb-system-variables.md#tokudb_last_lock_timeout). When set to `0`, no lock conflicts are reported. When bit one is set, the JSON document is printed to the [error log](../../../../server-management/server-monitoring-logs/error-log.md).
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: numeric
@@ -257,7 +257,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_log_dir`
 
-* Description: Directory where the TokuDB log files are stored. By default the variable is empty, in which case the regular [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is used.
+* Description: Directory where the TokuDB log files are stored. By default the variable is empty, in which case the regular [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is used.
 * Dynamic: No
 * Data Type: string
 * Default Value: Empty (the MariaDB datadir is used)
@@ -301,8 +301,8 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_pk_insert_mode`
 
-* Description: Mode for primary key inserts using either REPLACE INTO or [INSERT IGNORE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md) on tables with no secondary index, or where all columns in the secondary index are in the primary key. For example `PRIMARY KEY (a,b,c), key (b,c)`
-  * `0`: Fast inserts. [Triggers](../../triggers-events/triggers/) may not work, and [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) will not work
+* Description: Mode for primary key inserts using either REPLACE INTO or [INSERT IGNORE](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md) on tables with no secondary index, or where all columns in the secondary index are in the primary key. For example `PRIMARY KEY (a,b,c), key (b,c)`
+  * `0`: Fast inserts. [Triggers](../../../triggers-events/triggers/) may not work, and [row-based replication](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) will not work
   * `1`: Fast inserts if no triggers are defined, otherwise inserts may be slow. Row-based replication will not work.
   * `2`: Slow inserts. Triggers and row-based replication work normally.
 * Scope: Global, Session
@@ -348,7 +348,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_row_format`
 
-* Description: Compression algorithm used by default to compress data. Can be overridden by a row format specified in the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement. note that the library can be specified directly, or an alias used, the mapping of which may change in future. Note that in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), and before [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes), the compression type did not default to this value. See [TokuDB Differences](tokudb-differences.md).
+* Description: Compression algorithm used by default to compress data. Can be overridden by a row format specified in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement. note that the library can be specified directly, or an alias used, the mapping of which may change in future. Note that in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), and before [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes), the compression type did not default to this value. See [TokuDB Differences](tokudb-differences.md).
   * `tokudb_default`, `tokudb_zlib`: Use the zlib library,
   * `tokudb_fast`, `tokudb_quicklz`: Use the quicklz library, the lightest compression with low CPU usage,
   * `tokudb_small`, `tokudb_lzma`: Use the lzma library. the highest compression and highest CPU usage
@@ -369,7 +369,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_rpl_lookup_rows`
 
-* Description: If set to `OFF` (`ON` is default), and [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) to `ROW` and [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) to `ON`, TokuDB replication slaves will not perform row lookups for update or delete row log events, removing the need for the associated IO.
+* Description: If set to `OFF` (`ON` is default), and [binlog\_format](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) to `ROW` and [read\_only](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) to `ON`, TokuDB replication slaves will not perform row lookups for update or delete row log events, removing the need for the associated IO.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: boolean
@@ -385,7 +385,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_rpl_unique_checks`
 
-* Description: If set to `OFF` (`ON` is default), and [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) to `ROW` and [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) to `ON`, TokuDB replication slaves will skip uniqueness checks on inserts and updates, removing the associated IO.
+* Description: If set to `OFF` (`ON` is default), and [binlog\_format](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) to `ROW` and [read\_only](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) to `ON`, TokuDB replication slaves will skip uniqueness checks on inserts and updates, removing the associated IO.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: boolean
@@ -409,7 +409,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_tmp_dir`
 
-* Description: Directory where the TokuDB bulk loaders temporary files are stored. Can be very large, and useful to place on a separate disk. By default the variable is empty, in which case the regular [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is used. [tokudb\_load\_save\_space](tokudb-system-variables.md#tokudb_load_save_space) determines whether the data is compressed or not. The error message `ERROR 1030 (HY000): Got error 1 from storage engine` could indicate that the disk has run out of space.
+* Description: Directory where the TokuDB bulk loaders temporary files are stored. Can be very large, and useful to place on a separate disk. By default the variable is empty, in which case the regular [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is used. [tokudb\_load\_save\_space](tokudb-system-variables.md#tokudb_load_save_space) determines whether the data is compressed or not. The error message `ERROR 1030 (HY000): Got error 1 from storage engine` could indicate that the disk has run out of space.
 * Dynamic: No
 * Data Type: `directory name`
 * Default Value: Empty (the MariaDB datadir is used)
@@ -422,7 +422,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_write_status_frequency`
 
-* Description: Progress is measured every this many writes for display by [SHOW PROCESSLIST](../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md). Useful to set to `1` to examine slow queries.
+* Description: Progress is measured every this many writes for display by [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md). Useful to set to `1` to examine slow queries.
 * Scope: Global,
 * Dynamic: Yes
 * Data Type: `numeric`

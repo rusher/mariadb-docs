@@ -1,6 +1,6 @@
-# 25.08 migration guide
+# 25.08 update guide
 
-This guide illustrates, step by step, how to migrate to `25.8.0` from previous versions. 
+This guide illustrates, step by step, how to update to `25.8.0` from previous versions. 
 
 - Uninstall you current `mariadb-enterprise-operator` for preventing conflicts:
 ```bash

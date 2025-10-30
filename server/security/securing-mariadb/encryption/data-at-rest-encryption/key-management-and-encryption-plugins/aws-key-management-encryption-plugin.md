@@ -113,7 +113,7 @@ To enable the AWS Key Management plugin, you also need to set the plugin's syste
 aws_key_management_master_key_id=alias/<your key's alias>
 ```
 
-Once you've updated the configuration file, [restart](https://mariadb.com/kb/en/) the MariaDB server to apply the changes and make the key management and encryption plugin available for use.
+Once you've updated the configuration file, restart the MariaDB server to apply the changes and make the key management and encryption plugin available for use.
 
 ## Using the AWS Key Management Plugin
 
