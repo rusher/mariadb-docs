@@ -9,7 +9,7 @@ The plugin is available from MariaDB 11.4, and built in to the server, but not e
 Without that plugin, options are grouped together, like this:
 
 ```ini
-wsrep_provider_options="base_dir = /var/lib/mysql/; base_host = node-1;"
+wsrep_provider_options="base_dir = /var/lib/mysql/; base_host = node-1;..."
 ```
 
 With this plugin loaded, you can configure individual variables, like this:
@@ -17,6 +17,7 @@ With this plugin loaded, you can configure individual variables, like this:
 ```ini
 wsrep_provider_base_dir  = /var/lib/mysql/
 wsrep_provider_base_host = node-1
+...
 ```
 
 This makes managing provider options easier, and helps avoid the problem of wsrep\_provider\_options exceeding the maximum length of 2048 characters for an individual variable.
