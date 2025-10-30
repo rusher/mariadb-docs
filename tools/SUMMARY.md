@@ -59,6 +59,8 @@
   * [TLS](mariadb-enterprise-operator/tls.md)
   * [Configuration](mariadb-enterprise-operator/configuration.md)
   * [Updates](mariadb-enterprise-operator/updates.md)
+    * [Update to 25.08 version](mariadb-enterprise-operator/releases/update-25.08.md)
+    * [Update to 25.10 LTS version](mariadb-enterprise-operator/releases/update-25.10.md)
   * [Metrics](mariadb-enterprise-operator/metrics.md)
   * [SQL Resources](mariadb-enterprise-operator/sql-resources.md)
   * [External MariaDB](mariadb-enterprise-operator/external-mariadb.md)

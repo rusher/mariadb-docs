@@ -1,6 +1,6 @@
-# 25.10 LTS migration guide
+# 25.10 LTS update guide
 
-This guide illustrates, step by step, how to migrate to `25.10.1` from previous versions. 
+This guide illustrates, step by step, how to update to `25.10.1` from previous versions. 
 
 - The Galera data-plane must be updated to the `25.10.1` version. You must set `updateStrategy.autoUpdateDataPlane=true` in your `MariaDB` resources before updating the operator. Then, once updated, the operator will also be updating the data-plane based on its version:
 ```diff
