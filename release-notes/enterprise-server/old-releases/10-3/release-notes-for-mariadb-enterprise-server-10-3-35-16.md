@@ -34,7 +34,7 @@ MariaDB Enterprise Server 10.3.35-16 was released on 2022-06-13.
 
 ## Backported Features
 
-MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../../enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server:
+MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../../about/enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server:
 
 * [mysqldump option --as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) reads data as of specific timestamp from system-versioned tables. (MENT-1457)
 
@@ -168,7 +168,7 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.35-16 is provided for:
+In alignment with the [enterprise lifecycle](../../about/enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.35-16 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 9 (x86\_64, ARM64)

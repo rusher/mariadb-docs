@@ -42,7 +42,7 @@ This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterpri
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../../enterprise-server/enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 6.4.1 is provided for:
+In alignment with the [enterprise lifecycle](../../../enterprise-server/about/enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 6.4.1 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 10 (x86\_64)
