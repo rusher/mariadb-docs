@@ -19,7 +19,7 @@ The Spider ODBC topology:
 
 ODBC MariaDB Enterprise Spider Topology
 
-<figure><img src="../../../.gitbook/assets/spider-federated-odbc.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/spider-federated-odbc.svg" alt=""><figcaption></figcaption></figure>
 
 In the Spider ODBC topology, a Spider Node contains one or more "virtual" Spider Tables. A Spider Table does not store data. When the Spider Table is queried in this topology, the Enterprise Spider storage engine uses an ODBC foreign data wrapper to read from and write to an ODBC Data Source.
 
