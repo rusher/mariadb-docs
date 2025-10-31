@@ -58,13 +58,13 @@ For each encryption key, the file contains these options, separated by a semicol
 Entries look like this:
 
 {% tabs %}
-{% tab title="Current" %}
+{% tab title="Current Enterprise Server" %}
 ```
 <encryption_key_id>;<encryption_key_version>;<hex-encoded_encryption_key>
 ```
 {% endtab %}
 
-{% tab title="< 11.8" %}
+{% tab title="Community Server & Enterprise Server < 11.8" %}
 ```ini
 <encryption_key_id>;<hex-encoded_encryption_key>
 ```
@@ -94,7 +94,7 @@ echo $(echo -n "100;" ; openssl rand -hex 32) | sudo tee -a  /etc/mysql/encrypti
 The resulting key file looks like this:
 
 {% tabs %}
-{% tab title="Current" %}
+{% tab title="Current Enterprise Server" %}
 ```
 1;1;a7addd9adea9978fda19f21e6be987880e68ac92632ca052e5bb42b1a506939a
 2;1;49c16acc2dffe616710c9ba9a10b94944a737de1beccb52dc1560abfdd67388b
@@ -102,7 +102,7 @@ The resulting key file looks like this:
 ```
 {% endtab %}
 
-{% tab title="< 11.8" %}
+{% tab title="Community Server & Enterprise Server < 11.8" %}
 ```sql
 1;a7addd9adea9978fda19f21e6be987880e68ac92632ca052e5bb42b1a506939a
 2;49c16acc2dffe616710c9ba9a10b94944a737de1beccb52dc1560abfdd67388b
@@ -252,7 +252,7 @@ The format of the key file is simplistic. It stores encryption keys in a plain-t
 {% endtab %}
 
 {% tab title="< 11.8" %}
-The File Key Management plugin does not support [key rotation](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation). See [MDEV-20713](https://jira.mariadb.org/browse/MDEV-20713) for more information.
+The File Key Management plugin does not support [key rotation](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation).
 {% endtab %}
 {% endtabs %}
 
