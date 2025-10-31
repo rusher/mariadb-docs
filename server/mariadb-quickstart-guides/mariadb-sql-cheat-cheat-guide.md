@@ -37,6 +37,7 @@ _(If you need a basic tutorial on how to use the MariaDB database server and exe
 
 This example demonstrates several of the statements in action:
 
+{% code expandable="true" %}
 ```sql
 -- Create a new database
 CREATE DATABASE mydb;
@@ -73,6 +74,7 @@ SELECT id, name FROM mytable;
 -- Drop the database (removes the database and its tables)
 DROP DATABASE mydb;
 ```
+{% endcode %}
 
 Common Query: Counting Rows
 

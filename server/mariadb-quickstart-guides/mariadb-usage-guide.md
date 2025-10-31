@@ -38,6 +38,7 @@ Example Setup:
 
 If the test database is empty or doesn't exist, you can run the following SQL statements to create and populate tables for the examples in this primer. Copy and paste these into the mariadb client prompt.
 
+{% code expandable="true" %}
 ```sql
 CREATE DATABASE IF NOT EXISTS test;
 USE test;
@@ -68,6 +69,7 @@ INSERT INTO books (Title, SeriesID, AuthorID) VALUES
   ('Wizardborn', 2, 2),
   ('The Hobbbit', 0, 1); -- Note: "Hobbbit" is intentionally misspelled for a later example
 ```
+{% endcode %}
 
 * **Semicolons (`;`):** The `mariadb` client allows complex SQL statements over multiple lines. It sends the statement to the server for execution only after you type a semicolon (`;`) and press \[Enter].
 

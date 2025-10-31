@@ -18,6 +18,7 @@ First, we'll create and populate two tables, `Employees` and `Hours`, to use in 
 
 **Employees Table:**
 
+{% code expandable="true" %}
 ```sql
 CREATE TABLE `Employees` (
   `ID` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -38,9 +39,11 @@ VALUES
   ('Fanny', 'Crowne', 'Restocker', '1023 Bokanovsky Lane', '326-555-6329'),
   ('Helmholtz', 'Watson', 'Janitor', '944 Soma Court', '329-555-2478');
 ```
+{% endcode %}
 
 **Hours Table:**
 
+{% code expandable="true" %}
 ```sql
 CREATE TABLE `Hours` (
   `ID` TINYINT(3) UNSIGNED NOT NULL,
@@ -80,6 +83,7 @@ VALUES ('1', '2005-08-08 07:00:42', '2005-08-08 17:01:36'),
   ('6', '2005-08-11 07:00:05', '2005-08-11 17:02:57'),
   ('6', '2005-08-12 07:02:07', '2005-08-12 16:58:23');
 ```
+{% endcode %}
 
 ### Building a Complex Query (Example: Employee Tardiness)
 
