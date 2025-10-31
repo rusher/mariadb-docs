@@ -9,7 +9,6 @@ The state of MariaDB mirrors is monitored at [https://mirmon.mariadb.org/](https
 ## How to Become a MariaDB Mirror
 
 The only requirements for becoming a mirror are:
-
 1. A willingness to mirror MariaDB
 1. Mirroring is done using rsync
 1. An https mirror should be utilised (http mirrors are not accepted any more)
@@ -138,6 +137,7 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 ### Austria
 
+- Alwyzon (Vienna)
 - Digital Nova (Graz)
 - Kumi Systems e.U (Vienna)
 - next layer GmbH (Vienna)
