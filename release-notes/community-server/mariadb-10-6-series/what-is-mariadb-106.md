@@ -10,7 +10,7 @@
 
 ## New Features & Improvements
 
-See the [Differences in MariaDB Enterprise Server 10.6](../../enterprise-server/about/mariadb-enterprise-server-differences/differences-in-mariadb-enterprise-server-10-6.md) page for items that are different between MariaDB Community Server 10.6 and MariaDB Enterprise Server 10.6.
+See the [Differences in MariaDB Enterprise Server 10.6](../../enterprise-server/mariadb-enterprise-server-differences/differences-in-mariadb-enterprise-server-10-6.md) page for items that are different between MariaDB Community Server 10.6 and MariaDB Enterprise Server 10.6.
 
 ### Atomic DDL
 
