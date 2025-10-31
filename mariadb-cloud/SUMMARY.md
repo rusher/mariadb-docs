@@ -5,6 +5,7 @@
   * [MariaDB Cloud Serverless](about/serverless.md)
   * [MariaDB Cloud Serverless Architecture](about/architecture.md)
 * [Quickstart Guides](Quickstart/README.md)
+  * [Using the Portal](quickstart/using-the-portal.md)
   * [Launch DB Using REST API](<Quickstart/Launch DB using the REST API.md>)
   * [Launch DB Using Terraform Provider](<Quickstart/Launch DB using the Terraform Provider.md>)
   * [Launch DB Using Python](<Quickstart/Launch DB using Python.md>)
