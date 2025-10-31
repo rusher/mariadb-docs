@@ -1,4 +1,8 @@
 ---
+description: >-
+  This section details the tools and processes for administering your MariaDB
+  Cloud databases, covering topics like provisioning, monitoring, security, and
+  scaling in a managed cloud environment.
 icon: gear
 layout:
   width: default
