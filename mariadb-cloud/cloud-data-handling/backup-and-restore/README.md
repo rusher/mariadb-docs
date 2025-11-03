@@ -64,7 +64,7 @@ MariaDB Cloud supports database incremental backups either on-demand or accordin
 
 ## **Logical (Mariadb-dump) Backups**
 
-Logical backups consist of the SQL statements necessary to restore the data, such as CREATE DATABASE, CREATE TABLE, and INSERT. This is done using mariadb-dump ([mariadb-dump](https://mariadb.com/kb/en/mariadb-dump/)) and is the most flexible way to perform a backup and restore, and a good choice when the data size is relatively small.
+Logical backups consist of the SQL statements necessary to restore the data, such as CREATE DATABASE, CREATE TABLE, and INSERT. This is done using mariadb-dump ([mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump)) and is the most flexible way to perform a backup and restore, and a good choice when the data size is relatively small.
 
 ### Logical Backup Examples
 
