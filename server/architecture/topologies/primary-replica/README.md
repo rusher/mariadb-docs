@@ -2,7 +2,7 @@
 
 ## Overview
 
-<table><thead><tr><th valign="top">Software Version</th><th>Diagram</th><th>Features</th></tr></thead><tbody><tr><td valign="top"><ul><li>Enterprise Server 10.4</li><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul></td><td><img src="../../../.gitbook/assets/es-primary-replica-topology-no-title.png" alt=""></td><td><p><strong>MariaDB Replication</strong></p><ul><li>Highly available</li><li>Asynchronous or semi-synchronous replication</li><li>Automatic failover via MaxScale</li><li>Manual provisioning of new nodes from backup</li><li>Scales reads via MaxScale</li><li>Enterprise Server 10.3+, MaxScale 2.5+</li></ul></td></tr></tbody></table>
+<table><thead><tr><th valign="top">Software Version</th><th>Diagram</th><th>Features</th></tr></thead><tbody><tr><td valign="top"><ul><li>Enterprise Server 10.4</li><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul></td><td><img src="../../../../analytics/.gitbook/assets/es-primary-replica-topology-no-title (1).png" alt=""></td><td><p><strong>MariaDB Replication</strong></p><ul><li>Highly available</li><li>Asynchronous or semi-synchronous replication</li><li>Automatic failover via MaxScale</li><li>Manual provisioning of new nodes from backup</li><li>Scales reads via MaxScale</li><li>Enterprise Server 10.3+, MaxScale 2.5+</li></ul></td></tr></tbody></table>
 
 This procedure describes the deployment of the **Primary/Replica topology** with MariaDB Enterprise Server and MariaDB MaxScale.
 
@@ -33,9 +33,9 @@ The following components are deployed during this procedure:
 
 ### MariaDB Enterprise Server Components
 
-| Component                                               | Description                                                                                          |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [InnoDB](../../../server-usage/storage-engines/innodb/) | <ul><li>General purpose storage engine</li></ul><ul><li>ACID-compliant</li><li>Performance</li></ul> |
+| Component                                               | Description                                                                                 |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [InnoDB](../../../server-usage/storage-engines/innodb/) | <ul><li>General purpose storage engine</li><li>ACID-compliant</li><li>Performance</li></ul> |
 
 ### MariaDB MaxScale Components
 
@@ -43,7 +43,7 @@ The following components are deployed during this procedure:
 
 ## Topology
 
-<figure><img src="../../../.gitbook/assets/es-primary-replica-topology-no-title.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../analytics/.gitbook/assets/es-primary-replica-topology-no-title (1).png" alt=""><figcaption></figcaption></figure>
 
 Primary/Replica topology provides read scalability and fault tolerance through asynchronous or semi-synchronous single-primary replication of MariaDB Enterprise Server 11.4
 
@@ -141,7 +141,7 @@ Log filenames and locations may be overridden in the server configuration. The d
 
 ### MaxScale Configuration Management
 
-MaxScale can be configured using several methods. These methods make use of MaxScale's [REST API](broken-reference).
+MaxScale can be configured using several methods. These methods make use of MaxScale's [REST API](broken-reference/).
 
 <table><thead><tr><th width="197.4073486328125">Method</th><th>Benefits</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/">MaxCtrl</a></td><td>Command-line utility to perform administrative tasks through the REST API. See MaxCtrl Commands.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/maxgui/">MaxGUI</a></td><td>MaxGUI is a graphical utility that can perform administrative tasks through the REST API.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/">REST API</a></td><td>The REST API can be used directly. For example, the <code>curl</code> utility could be used to make REST API calls from the command-line. Many programming languages also have libraries to interact with REST APIs.</td></tr></tbody></table>
 

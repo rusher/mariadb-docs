@@ -1,4 +1,4 @@
-# A Comparison Between Automation Systems
+# Comparison Between Automation Systems
 
 This page compares the automation systems that are covered by this section of the MariaDB documentation. More information about these systems are presented in the relevant pages, and more systems may be added in the future.
 
@@ -53,11 +53,11 @@ To recap, Ansible does not need to be installed on the server is administers. It
 {% endtab %}
 
 {% tab title="Puppet" %}
-### Puppet Architecture
+#### Puppet Architecture
 
 Puppet supports two types of architecture: agent-master or standalone. The agent-master architecture is recommended by Puppet Labs, and it is the most popular among Puppet users. For this reason, those who prefer a standalone architecture tend to prefer Ansible.
 
-#### Agent-Master Architecture
+**Agent-Master Architecture**
 
 When this architecture is chosen, manifests are sent to the **Puppet master**. There can be more than one master, for high availability reasons. All target hosts run a **Puppet agent**. Normally this is a service that automatically starts at system boot. The agent contacts a master at a given interval. It sends facts, and uses them to compile a **catalog** from the manifests. A catalog is a description of what exactly an individual server should run. The agent receives the catalog and checks if there are differences between its current configuration and the catalog. If differences are found, the agent applies the relevant parts of the catalog.
 
@@ -65,7 +65,7 @@ An optional component is **PuppetDB**. This is a central place where some data a
 
 If a manual change is made to a remove server, it will likely be overwritten the next time Puppet agent runs. To avoid this, the Puppet agent service can be stopped.
 
-#### Standalone Architecture
+**Standalone Architecture**
 
 As mentioned, this architecture is not recommended by Puppet Labs nor popular amongst Puppet users. It is similar to Ansible architecture.
 
@@ -73,7 +73,7 @@ Users can apply manifests from any host with Puppet installed. This could be the
 
 If a manual change is made to a remove server, it will be overwritten the next time Puppet apply runs. To avoid this, comment out any cron job running Puppet apply, or comment out the target server in the inventory.
 
-#### Inventory
+**Inventory**
 
 As mentioned, Puppet supports plugins to retrieve the inventory dynamically from remote services. In an agent-master architecture, one has to make sure that each target host has access to these services. In a standalone architecture, one has to make sure that the hosts running Puppet apply have access to these services.
 {% endtab %}
@@ -83,7 +83,7 @@ As mentioned, Puppet supports plugins to retrieve the inventory dynamically from
 
 Often our automation repositories need to contain secrets, like MariaDB user passwords or private keys for SSH authentication.
 
-Both Ansible and Puppet support integration with secret stores, like Hashicorp Vault.&#x20;
+Both Ansible and Puppet support integration with secret stores, like Hashicorp Vault.
 
 {% tabs %}
 {% tab title="Ansible" %}

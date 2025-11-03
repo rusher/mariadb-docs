@@ -136,7 +136,7 @@ After installing MariaDB (using `sudo make install`), but prior to starting Mari
 
 1. Ensure the directory where you want MariaDB to store it's data is owned by the `mariadb` user (if the user doesn't exist, you'll need to create it)
 2.  Create a [MariaDB configuration config file](../../configuring-mariadb/configuring-mariadb-with-option-files.md) (`/.my.cnf` or `/etc/my.cnf`) with the configuration options you desire. A suggested minimum configuration file, to specify where you want your data to be stored, would be:\
-    &#x20;
+
 
     ```ini
     [mariadbd]
