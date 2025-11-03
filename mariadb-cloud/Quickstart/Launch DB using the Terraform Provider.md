@@ -1,4 +1,4 @@
-# Launch DB using the Terraform Provider
+# Launch DB Using Terraform Provider
 
 This walkthrough explains how to launch database services and manage the lifecycle of database services using the Terraform provider.
 
@@ -20,9 +20,9 @@ For a list of operating systems that have binaries available for Terraform, see 
 ## Dependencies
 
 * This procedure requires Terraform to be installed. For information about how to install Terraform, see [HashiCorp Terraform Documentation: Install Terraform](https://developer.hashicorp.com/terraform/downloads).
-* The examples in this procedure also use `jq`, a JSON parsing utility. [jq](https://stedolan.github.io/jq/download/) is available for Linux, macOS, and MS Windows. Install `jq` then proceed.
-* The examples in this procedure also use `curl`, a data transfer utility. [curl](https://curl.se/) is available for Linux, macOS, and MS Windows. Install `curl` then proceed.
-* The examples in this procedure also use `wget`, a file download utility. [GNU Wget](https://www.gnu.org/software/wget/) is available for Linux, macOS, and MS Windows. Install `wget` then proceed.
+* The examples in this procedure also use `jq`, a JSON parsing utility. [jq](https://stedolan.github.io/jq/download/) is available for Linux, macOS, and MS Windows. Install `jq` , then proceed.
+* The examples in this procedure also use `curl`, a data transfer utility. [curl](https://curl.se/) is available for Linux, macOS, and MS Windows. Install `curl`, then proceed.
+* The examples in this procedure also use `wget`, a file download utility. [GNU Wget](https://www.gnu.org/software/wget/) is available for Linux, macOS, and MS Windows. Install `wget`, then proceed.
 * The examples in this procedure also use exported environment variables that are compatible with Bourne-like shells (such as `sh`, `bash`, and `zsh`).
 
 ## Launch a Service
@@ -324,7 +324,7 @@ The input variables should be customized for your own needs:
 * For `topology`, choose a [Topology Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies)
 * For `cloud_provider`, choose a [Cloud Provider Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers)
 * For `region`, choose a [Region Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_regions)
-* For `availability_zone`, choose a [Availability Zone Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers__provider_name__zones) or leave it `null` to use the default availability zone for the cloud provider and region
+* For `availability_zone`, choose an [Availability Zone Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers__provider_name__zones) or leave it `null` to use the default availability zone for the cloud provider and region
 * For `architecture`, choose a [Hardware Architecture Selection](https://apidocs.skysql.com/#/CPU-Architectures/get_provisioning_v1_cpu_architectures)
 * For `size`, choose an [Instance Size Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_sizes)
 * For `storage`, choose a [Transactional Storage Size Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies__topology_name__storage_sizes)
@@ -449,7 +449,7 @@ mariadb --host dbpgf00000001.sysp0000.db.skysql.net --port 3306 \
    --user dbpgf00000001 -p --ssl-verify-server-cert
 ```
 
-When prompted, type the password and press enter to connect:
+When prompted, type the password and press Enter to connect:
 
 ```bash
 Enter password:

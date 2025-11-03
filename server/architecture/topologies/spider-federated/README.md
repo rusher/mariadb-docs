@@ -6,7 +6,7 @@ description: Deploy Spider Federated Topology
 
 ## Overview
 
-<table><thead><tr><th valign="top">Software Version</th><th>Diagram</th><th valign="top">Features</th></tr></thead><tbody><tr><td valign="top"><ul><li>Enterprise Server 10.4</li><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul></td><td><img src="../../../.gitbook/assets/es-spider-federated-mariadb-topology-no-title.png" alt=""></td><td valign="top"><p><strong>Read from and write to tables on remote ES nodes</strong></p><ul><li>Spider Node uses Spider storage engine for Federated Spider Tables</li><li>Federated Spider Table is a "virtual" table</li><li>Spider uses MariaDB foreign data wrapper to query Data Table on Data Node</li><li>Data Node uses non-Spider storage engine for Data Tables</li><li>Supports transactions</li><li>Enterprise Server 10.3+, Enterprise Spider</li></ul></td></tr></tbody></table>
+<table><thead><tr><th valign="top">Software Version</th><th>Diagram</th><th valign="top">Features</th></tr></thead><tbody><tr><td valign="top"><ul><li>Enterprise Server 10.4</li><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul></td><td><img src="../../../.gitbook/assets/spider-federated.svg" alt=""></td><td valign="top"><p><strong>Read from and write to tables on remote ES nodes</strong></p><ul><li>Spider Node uses Spider storage engine for Federated Spider Tables</li><li>Federated Spider Table is a "virtual" table</li><li>Spider uses MariaDB foreign data wrapper to query Data Table on Data Node</li><li>Data Node uses non-Spider storage engine for Data Tables</li><li>Supports transactions</li><li>Enterprise Server 10.3+, Enterprise Spider</li></ul></td></tr></tbody></table>
 
 This procedure describes the deployment of the **Spider Federated topology** with MariaDB Enterprise Server
 
@@ -44,7 +44,7 @@ The following components are deployed during this procedure:
 
 ## Topology
 
-<figure><img src="../../../.gitbook/assets/es-spider-federated-mariadb-topology-no-title.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/spider-federated.svg" alt=""><figcaption></figcaption></figure>
 
 In the Spider Federated topology, a Spider Node contains one or more "virtual" Spider Tables. A Spider Table does not store data. When a Spider Table is queried, the Enterprise Spider storage engine uses a MariaDB foreign data wrapper to read from and write to a Data Table on a Data Node.
 

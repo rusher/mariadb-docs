@@ -301,7 +301,7 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- -
 
 {% tabs %}
 {% tab title="RHEL" %}
-#### Platform-Specific Behavior on RHEL and equivalents
+**Platform-Specific Behavior on RHEL and equivalents**
 
 On Red Hat Enterprise Linux (RHEL) and equivalents, the MariaDB Package Repository setup script performs the following tasks:
 
@@ -310,7 +310,7 @@ On Red Hat Enterprise Linux (RHEL) and equivalents, the MariaDB Package Reposito
 {% endtab %}
 
 {% tab title="Debian / Ubuntu" %}
-#### Platform-Specific Behavior on Debian and Ubuntu
+**Platform-Specific Behavior on Debian and Ubuntu**
 
 On Debian and Ubuntu, the MariaDB Package Repository setup script performs the following tasks:
 
@@ -329,7 +329,7 @@ Pin-Priority: 1000
 {% endtab %}
 
 {% tab title="SLES" %}
-#### Platform-Specific Behavior on SLES
+**Platform-Specific Behavior on SLES**
 
 On SUSE Linux Enterprise Server (SLES), the MariaDB Package Repository setup script performs the following tasks:
 
@@ -344,7 +344,7 @@ After setting up the MariaDB Package Repository, you can install the software pa
 
 {% tabs %}
 {% tab title="RHEL" %}
-### Installing Packages on RHEL and equivalents
+#### Installing Packages on RHEL and equivalents
 
 To install MariaDB on Red Hat Enterprise Linux (RHEL) and equivalents, see the instructions at [Installing MariaDB Packages with YUM](rpm/yum.md#installing-mariadb-packages-with-yum). For example:
 
@@ -360,7 +360,7 @@ sudo dnf install maxscale
 {% endtab %}
 
 {% tab title="Debian / Ubuntu" %}
-### Installing Packages on Debian and Ubuntu
+#### Installing Packages on Debian and Ubuntu
 
 To install MariaDB on Debian and Ubuntu, see the instructions at [Installing MariaDB Packages with APT](installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt). For example:
 
@@ -376,7 +376,7 @@ sudo apt install maxscale
 {% endtab %}
 
 {% tab title="SLES" %}
-### Installing Packages on SLES
+#### Installing Packages on SLES
 
 To install MariaDB on SUSE Linux Enterprise Server (SLES), see the instructions at [Installing MariaDB Packages with ZYpp](rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp). For example:
 

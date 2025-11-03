@@ -32,7 +32,7 @@ In the following steps, the source database is named `PROD` , and the destinatio
 
 {% stepper %}
 {% step %}
-### Dump Logical Objects.
+#### Dump Logical Objects.
 
 `RENAME TABLE` does not work for triggers, events, and routines. You need to dump these logical objects separately.
 
@@ -43,7 +43,7 @@ mariadb-dump PROD --no-data --routines --triggers --events \
 {% endstep %}
 
 {% step %}
-### Generate RENAME TABLE Commands.
+#### Generate RENAME TABLE Commands.
 
 Run the following query to generate a script with the necessary `RENAME TABLE` statements. This is much faster than a full logical dump.
 
@@ -55,7 +55,7 @@ TABLE_NAME, ';'FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'PROD'" \
 {% endstep %}
 
 {% step %}
-### List all Existing Objects.
+#### List all Existing Objects.
 
 ```sql
 SELECT TABLE_SCHEMA, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES 
@@ -70,7 +70,7 @@ SELECT TRIGGER_SCHEMA, TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS
 {% endstep %}
 
 {% step %}
-### Create the new Database.
+#### Create the new Database.
 
 ```sql
 CREATE DATABASE TEST;
@@ -78,7 +78,7 @@ CREATE DATABASE TEST;
 {% endstep %}
 
 {% step %}
-### Run the rename\_table Script.
+#### Run the rename\_table Script.
 
 ```bash
 mysql TEST < PROD_rename_table.sql
@@ -86,7 +86,7 @@ mysql TEST < PROD_rename_table.sql
 {% endstep %}
 
 {% step %}
-### Restore Logical Objects.
+#### Restore Logical Objects.
 
 After the rename script completes, restore the triggers, routines, and events into the new database.
 
@@ -96,7 +96,7 @@ mysql TEST < PROD_routines_triggers_events.sql
 {% endstep %}
 
 {% step %}
-### Verify all Objects are Restored.
+#### Verify all Objects are Restored.
 
 Verify that all objects have been correctly moved to the new `TEST` database.
 
@@ -113,7 +113,7 @@ SELECT TRIGGER_SCHEMA, TRIGGER_NAME FROM INFORMATION_SCHEMA.TRIGGERS
 {% endstep %}
 
 {% step %}
-### Cleanup.
+#### Cleanup.
 
 Once you have confirmed everything looks good, you can drop the old `PROD` database.
 
@@ -122,4 +122,3 @@ Privileges are neither dropped for `PROD`, nor are they "copied" to `TEST`. Use 
 {% endhint %}
 {% endstep %}
 {% endstepper %}
-

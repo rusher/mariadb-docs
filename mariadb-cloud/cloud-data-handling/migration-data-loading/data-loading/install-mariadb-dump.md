@@ -4,10 +4,10 @@ MariaDB Cloud customers can manually create a backup of a MariaDB Cloud service 
 
 * The `mariadb-dump` utility provides a command-line interface (CLI)
 * The `mariadb-dump` utility is available for Linux and Windows
-* The `mariadb-dump` utility supports [many command-line options](https://mariadb.com/kb/en/mariadb-dump/)
+* The `mariadb-dump` utility supports [many command-line options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump)
 * Egress charges may apply for customer-initiated backups
 
-For details about restoring a backup created with the `mariadb-dump` utility, see "[Restore a Manual Backup](https://mariadb.com/kb/en/mariadb-dump/#restoring)".
+For details about restoring a backup created with the `mariadb-dump` utility, see "[Restore a Manual Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#restoring-dumps)".
 
 ## Installation
 
@@ -89,7 +89,7 @@ Installation of MariaDB Dump varies by operating system.
 
 The procedure to create a backup depends on the operating system.
 
-If you plan to restore the backup to a MariaDB Cloud service, the `mysql` database should be excluded from the backup by specifying [`--ignore-database=mysql`](https://mariadb.com/kb/en/mariadb-dump/#options), because MariaDB Cloud user accounts do not have sufficient privileges to restore that database.
+If you plan to restore the backup to a MariaDB Cloud service, the `mysql` database should be excluded from the backup by specifying [`--ignore-database=mysql`](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#ignore-database-database), because MariaDB Cloud user accounts do not have sufficient privileges to restore that database.
 
 #### **Linux**
 

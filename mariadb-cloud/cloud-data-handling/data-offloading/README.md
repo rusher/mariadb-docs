@@ -126,7 +126,7 @@ INSERT INTO `your_table` VALUES (1,'Example Name','2023-01-01 00:00:00'),(2,'Ano
 UNLOCK TABLES;
 ```
 
-Finally, here is the reference to the utility where you will find all the [many command-line options](https://mariadb.com/kb/en/mariadb-dump/)
+Finally, here is the reference to the utility where you will find all the [many command-line options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump)
 
 {% hint style="warning" %}
 Egress charges may apply when data is exported.

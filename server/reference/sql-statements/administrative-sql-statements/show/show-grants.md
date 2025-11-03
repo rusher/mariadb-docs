@@ -51,7 +51,7 @@ SHOW GRANTS FOR journalist;
 
 {% tabs %}
 {% tab title="Current" %}
-### FOR PUBLIC
+#### FOR PUBLIC
 
 [GRANT ... TO PUBLIC](../../account-management-sql-statements/grant.md#to-public) grants privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
 

@@ -19,7 +19,7 @@ layout:
 
 ## **MariaDB Cloud Snapshot Backups**
 
-MariaDB Cloud database snapshots create a point-in-time copy of the database persistent volume. Compared to full backups, snapshots provide a faster method for restoring your database with the same data.Snapshots are incremental in nature. After the initial full snapshot of a database persistent volumes, subsequent snapshots only capture and store the changes made since the last snapshot. This approach saves a lot of storage space and reduces the time it takes to create a snapshot database backup and the related cloud storage cost.Users have the flexibility to trigger a snapshot as per their scheduling requirements - either on-demand or according to a pre-defined schedule.The MariaDB Cloud snapshots benefit from MariaDB's [backup stage flush](https://mariadb.com/kb/en/backup-stage/) to create a consistent backup of the database - database lock temporarily suspends write operations and replication for just a few seconds. In a Primary/Replica topology, snapshot backups are prioritized and performed on the replica node. This is to ensure that the primary server can continue to operate in read/write mode, as the backup process is carried out on the replica node. After the backup process on the replica is completed, replication resumes automatically.
+MariaDB Cloud database snapshots create a point-in-time copy of the database persistent volume. Compared to full backups, snapshots provide a faster method for restoring your database with the same data.Snapshots are incremental in nature. After the initial full snapshot of a database persistent volumes, subsequent snapshots only capture and store the changes made since the last snapshot. This approach saves a lot of storage space and reduces the time it takes to create a snapshot database backup and the related cloud storage cost.Users have the flexibility to trigger a snapshot as per their scheduling requirements - either on-demand or according to a predefined schedule.The MariaDB Cloud snapshots benefit from MariaDB's backup stage flush to create a consistent backup of the database - database lock temporarily suspends write operations and replication for just a few seconds. In a Primary/Replica topology, snapshot backups are prioritized and performed on the replica node. This is to ensure that the primary server can continue to operate in read/write mode, as the backup process is carried out on the replica node. After the backup process on the replica is completed, replication resumes automatically.
 
 {% hint style="danger" %}
 Database snapshots are deleted immediately upon service deletion.
@@ -40,7 +40,7 @@ MariaDB Cloud supports database snapshot backups either on-demand or according t
 
 ## **Full (physical) Backups**
 
-Full backups create a complete backup of the database server into a new backup folder. It uses [mariabackup](https://mariadb.com/kb/en/full-backup-and-restore-with-mariabackup/) under the hood. Physical backups are performed by copying the individual data files or directories.The physical backup uses backup stages to create a consistent backup of the database without requiring a global read lock for the entire duration of the backup, while allowing the database to continue processing transactions. Instead, the server read lock is only needed briefly during the [BACKUP STAGE FLUSH](https://mariadb.com/kb/en/backup-stage/) stage, which flushes the tables to ensure that all of them are in a consistent state at the exact same point in time, independent of storage engine. The database lock temporarily suspends write operations and replication; the duration of the lock is typically just a few seconds. In a Primary/Replica topology, backups are prioritized and performed on the replica node. This approach ensures that the primary server can continue to operate in read/write mode, as the backup process is carried out on the replica node. After the backup process on the replica is completed, replication resumes automatically.
+Full backups create a complete backup of the database server into a new backup folder. It uses [mariabackup](mariadb-backup.md) under the hood. Physical backups are performed by copying the individual data files or directories.The physical backup uses backup stages to create a consistent backup of the database without requiring a global read lock for the entire duration of the backup, while allowing the database to continue processing transactions. Instead, the server read lock is only needed briefly during the BACKUP STAGE FLUSH stage, which flushes the tables to ensure that all of them are in a consistent state at the exact same point in time, independent of storage engine. The database lock temporarily suspends write operations and replication; the duration of the lock is typically just a few seconds. In a Primary/Replica topology, backups are prioritized and performed on the replica node. This approach ensures that the primary server can continue to operate in read/write mode, as the backup process is carried out on the replica node. After the backup process on the replica is completed, replication resumes automatically.
 
 ### Full (physical) Backup Examples
 
@@ -50,7 +50,7 @@ MariaDB Cloud supports database physical backups either on-demand or according t
 
 ### **References**
 
-[**mariabackup**](https://mariadb.com/kb/en/full-backup-and-restore-with-mariabackup/)
+[**mariabackup**](mariadb-backup.md)
 
 ## **Incremental Backups**
 
@@ -64,7 +64,7 @@ MariaDB Cloud supports database incremental backups either on-demand or accordin
 
 ## **Logical (Mariadb-dump) Backups**
 
-Logical backups consist of the SQL statements necessary to restore the data, such as CREATE DATABASE, CREATE TABLE, and INSERT. This is done using mariadb-dump ([mariadb-dump](https://mariadb.com/kb/en/mariadb-dump/)) and is the most flexible way to perform a backup and restore, and a good choice when the data size is relatively small.
+Logical backups consist of the SQL statements necessary to restore the data, such as CREATE DATABASE, CREATE TABLE, and INSERT. This is done using mariadb-dump ([mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump)) and is the most flexible way to perform a backup and restore, and a good choice when the data size is relatively small.
 
 ### Logical Backup Examples
 
@@ -74,7 +74,7 @@ MariaDB Cloud supports database logical backups either on-demand or according to
 
 ### References
 
-[mariadb-dump](https://mariadb.com/kb/en/mariadb-dump/)
+[mariadb-dump](../migration-data-loading/data-loading/install-mariadb-dump.md)
 
 ## **BinaryLog Backups**
 

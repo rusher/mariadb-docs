@@ -1,4 +1,4 @@
-# Connect from Java App
+# Connect From Java App
 
 MariaDB Connector/J enables Java applications to connect to MariaDB Cloud using a native MariaDB connector.
 
@@ -27,7 +27,7 @@ To use Maven to install MariaDB Connector/J, add the dependency to your `pom.xml
 </dependency>
 ```
 
-For additional information on available releases, see the "[Release Notes for MariaDB Connector/J](https://mariadb.com/kb/en/mariadb-connector-j-release-notes/)".
+For additional information on available releases, see the "[Release Notes for MariaDB Connector/J](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/all-releases)".
 
 Depending on the features you plan to use, you may need to add some additional dependencies to `pom.xml`.
 
