@@ -30,7 +30,7 @@ Features that are in a release.
 * [CONNECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect) storage engine ([MDEV-4146](https://jira.mariadb.org/browse/MDEV-4146))
 * Better [table discovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/storage-engines-storage-engine-development/table-discovery). [Sequence](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/sequence-storage-engine) storage engine. Assisted discovery in [FederatedX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/federatedx-storage-engine) ([MDEV-3808](https://jira.mariadb.org/browse/MDEV-3808))
 * [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) storage engine ([MDEV-4438](https://jira.mariadb.org/browse/MDEV-4438))
-* [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) storage engine ([MDEV-4507](https://jira.mariadb.org/browse/MDEV-4507))
+* [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/legacy-storage-engines/tokudb) storage engine ([MDEV-4507](https://jira.mariadb.org/browse/MDEV-4507))
 * [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/mroonga) full-text search storage engine
 * [QUERY\_RESPONSE\_TIME plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/query-response-time-plugin)
 * [Engine independent table statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) ([MDEV-3806](https://jira.mariadb.org/browse/MDEV-3806))

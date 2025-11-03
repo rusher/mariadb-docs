@@ -21,7 +21,7 @@ The Spider Sharded topology:
 
 ## Sharded MariaDB Enterprise Spider Topology
 
-<figure><img src="../../../.gitbook/assets/spider-sharded.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/spider-sharded (1).svg" alt=""><figcaption></figcaption></figure>
 
 In the Spider Sharded topology, a Spider Node contains one or more "virtual" Spider Tables. A Spider Table does not store data. When a Spider Table is queried in this topology, the Enterprise Spider storage engine uses a MariaDB foreign data wrapper to read from and write to Data Tables on Data Nodes. The data for the Spider Table is partitioned among the Data Nodes using the regular partitioning syntax.
 
@@ -146,7 +146,7 @@ PARTITION BY LIST(branch_id) (
 
 ### Deployment
 
-* [Deploy MariaDB Enterprise Spider](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/mariadb-enterprise-server-differences/deployment#spider-topologies)
+* [Deploy MariaDB Enterprise Spider](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/mariadb-enterprise-server-differences/deployment#spider-topologies)
 
 ### Schema Design
 

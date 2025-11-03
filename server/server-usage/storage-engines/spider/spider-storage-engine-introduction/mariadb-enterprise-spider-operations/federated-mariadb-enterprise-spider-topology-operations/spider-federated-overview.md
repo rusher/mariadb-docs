@@ -36,4 +36,6 @@ ALTER TABLE spider_hq_sales.invoices
    COMMENT = 'server "new_hq_server", table "invoices"'
 ```
 
+{% include "../../../../../../.gitbook/includes/license-copyright-mariadb.md" %}
+
 {% @marketo/form formId="4316" %}

@@ -80,7 +80,7 @@ These requirements are for the Spider Federated topology when deployed with Mari
 
 ### Operating Systems
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/enterprise-server-lifecycle), the Spider Federated topology with MariaDB Enterprise Server is provided for:
+In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/enterprise-server-lifecycle), the Spider Federated topology with MariaDB Enterprise Server is provided for:
 
 * AlmaLinux 8 (x86\_64, ARM64)
 * AlmaLinux 9 (x86\_64, ARM64)

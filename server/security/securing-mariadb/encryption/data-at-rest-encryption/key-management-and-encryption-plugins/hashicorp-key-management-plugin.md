@@ -1,7 +1,7 @@
 # Hashicorp Key Management Plugin
 
 {% hint style="info" %}
-**MariaDB starting with** [**Community Server 10.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) **and** [**Enterprise Server 10.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/mariadb-enterprise-server-differences/differences-in-mariadb-enterprise-server-10-4)
+**MariaDB starting with** [**Community Server 10.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) **and** [**Enterprise Server 10.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/mariadb-enterprise-server-differences/differences-in-mariadb-enterprise-server-10-4)
 {% endhint %}
 
 The Hashicorp Key Management Pugin is used to implement encryption using keys stored in the Hashicorp Vault KMS. For more information, see [Hashicorp Vault and MariaDB](../../../../../server-management/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb.md), and for how to install Vault, see [Install Vault](https://www.vaultproject.io/docs/install), as well as [MySQL/MariaDB Database Secrets Engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria).
@@ -87,10 +87,10 @@ The plugin supports the following parameters, which must be set in advance and c
 * Description: Set the duration (in seconds) for the Hashicorp Vault server connection timeout. The default value is 15 seconds. The allowed range is from 1 to 86400 seconds. The user can also specify a zero value, which means the default timeout value set by the libcurl library (currently 300 seconds).
 * Commandline: `--[loose-]hashicorp-key-management-timeout=<timeout>`
 
-#### `hashicorp-key-management-retries`
+#### `hashicorp-key-management-max-retries`
 
 * Description: Number of server request retries in case of timeout. Default is three retries.
-* Commandline: `----[loose-]hashicorp-key-management-retries=<retries>`
+* Commandline: `----[loose-]hashicorp-key-management-max-retries=<retries>`
 
 #### `hashicorp-key-management-caching-enabled`
 

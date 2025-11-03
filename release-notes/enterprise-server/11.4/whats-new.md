@@ -1023,7 +1023,7 @@ MAX_MEMORY_USED: 392544
 * [MariaDB Enterprise Server 11.4.5-3](11.4.5-3.md)
 * [MariaDB Enterprise Server 11.4.4-2](11.4.4-2.md)
 * [MariaDB Enterprise Server 11.4.3-1](11.4.3-1.md)
-* [MariaDB Enterprise Server 11.4.0-1](11.4.0-1.md)
+* [MariaDB Enterprise Server 11.4.0-1](broken-reference)
 
 See also: [All MariaDB Enterprise Releases](../all-releases.md)
 

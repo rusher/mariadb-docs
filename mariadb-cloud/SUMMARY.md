@@ -5,6 +5,7 @@
   * [MariaDB Cloud Serverless](about/serverless.md)
   * [MariaDB Cloud Serverless Architecture](about/architecture.md)
 * [Quickstart Guides](Quickstart/README.md)
+  * [Using the Portal](quickstart/using-the-portal.md)
   * [Launch DB Using REST API](<Quickstart/Launch DB using the REST API.md>)
   * [Launch DB Using Terraform Provider](<Quickstart/Launch DB using the Terraform Provider.md>)
   * [Launch DB Using Python](<Quickstart/Launch DB using Python.md>)
@@ -105,6 +106,46 @@
   * [MariaDB Cloud REST API Reference](reference-guide/rest-api-reference.md)
   * [MariaDB Cloud Stored Procedures](reference-guide/stored-procedures.md)
   * [MariaDB Cloud API Reference Guide](reference-guide/mariadb-cloud-api-reference-guide/README.md)
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
     * ```yaml
       props:
         models: true

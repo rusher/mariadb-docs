@@ -22,7 +22,7 @@ Thanks, and enjoy MariaDB!
 * [Innodb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.44
 * [PCRE library](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/pcre) updated to 8.43
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.6.43-84.3
-* [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to 5.6.43-84.3
+* [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/legacy-storage-engines/tokudb) updated to 5.6.43-84.3
 * [MDEV-18686](https://jira.mariadb.org/browse/MDEV-18686) - Add option to PAM authentication plugin to allow case insensitive username matching
 * [MDEV-18272](https://jira.mariadb.org/browse/MDEV-18272) - InnoDB fails to rollback after exceeding FOREIGN KEY recursion depth
 * [MDEV-9519](https://jira.mariadb.org/browse/MDEV-9519) - Data corruption will happen on the Galera cluster size change

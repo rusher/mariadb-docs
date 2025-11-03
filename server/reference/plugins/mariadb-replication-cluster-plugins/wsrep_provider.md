@@ -1,43 +1,28 @@
 # wsrep\_provider
 
-This plugin implements `wsrep_provider` for MariaDB Galera Cluster.&#x20;
+This plugin is for [Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/). It splits up the `wsrep_provider_options` setting into individual configuration variables.&#x20;
 
-* It is available as of MariaDB 11.4.
-* It is disabled by default.
-* Minimum value for `repl.max_ws_size`: 1
-* Maximum value (this is also the default value) for `repl.max_ws_size` : 2147483647
-* It is recommended not to change the default value.
+{% hint style="info" %}
+The plugin is available from MariaDB 11.4, and built in to the server, but not enabled by default.
+{% endhint %}
 
-Enabling the plugin is done in two steps:
-
-{% stepper %}
-{% step %}
-Add this to the my.cnf configuration file, then restart MariaDB Server for the changes to take effect:
+Without that plugin, options are grouped together, like this:
 
 ```ini
-[mariadbd]
-wsrep-on=ON
-wsrep-cluster-address=gcomm://
-wsrep-provider=@ENV.WSREP_PROVIDER
-binlog-format=ROW
-plugin-wsrep-provider=ON
-```
-{% endstep %}
-
-{% step %}
-Run this query:
-
-```sql
-SET GLOBAL wsrep_provider_repl_max_ws_size=1;
+wsrep_provider_options="base_dir = /var/lib/mysql/; base_host = node-1;..."
 ```
 
-Alternatively, run this query:
+With this plugin loaded, you can configure individual variables, like this:
 
-```sql
-SET GLOBAL wsrep_provider_options="repl.max_ws_size=1";
+```ini
+wsrep_provider_base_dir  = /var/lib/mysql/
+wsrep_provider_base_host = node-1
+...
 ```
-{% endstep %}
-{% endstepper %}
+
+This makes managing provider options easier, and helps avoid the problem of wsrep\_provider\_options exceeding the maximum length of 2048 characters for an individual variable.
+
+To enable the plugin, add this line to the `[mariadbd]`, `[server]`, or `[galera]` sections of your [server option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). Alternatively, start the server with the `--plugin-wsrep-provider` option.
 
 See the [wsrep\_provider\_options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep-variable-details/wsrep_provider_options) page for what you can configure for Galera Cluster.
 

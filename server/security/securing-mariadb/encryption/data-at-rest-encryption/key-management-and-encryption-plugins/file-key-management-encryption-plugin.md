@@ -8,12 +8,12 @@ The File Key Management plugin that ships with MariaDB is a [key management and 
 
 ## Overview
 
-The File Key Management plugin is the easiest [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) to set up for users who want to use [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). Some of the plugin's primary features are:
+The File Key Management plugin is the [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md) for users who want to use [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). Some of the plugin's primary features are:
 
 * It reads encryption keys from a plain-text key file.
 * As an extra protection mechanism, the plain-text key file can be encrypted.
 * It supports multiple encryption keys.
-* It does not support key rotation.
+* It supports key rotation with MariaDB Enterprise Server from MariaDB Enterprise Server 11.8.
 * It supports two different algorithms for encrypting data.
 
 It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/encryption-plugin-api).
@@ -47,27 +47,42 @@ If you installed the plugin by providing the [--plugin-load](../../../../../serv
 
 ## Creating the Key File
 
-In order to encrypt your tables with encryption keys using the File Key Management plugin, you first need to create the file that contains the encryption keys. The file needs to contain two pieces of information for each encryption key. First, each encryption key needs to be identified with a 32-bit integer as the key identifier. Second, the encryption key itself needs to be provided in hex-encoded form. These two pieces of information need to be separated by a semicolon. For example, the file is formatted in the following way:
+In order to encrypt your tables with encryption keys using the File Key Management plugin, create the file containing the encryption keys. File name and location don't matter; see in the following what configuration is needed.
 
-```sql
-<encryption_key_id1>;<hex-encoded_encryption_key1>
-<encryption_key_id2>;<hex-encoded_encryption_key2>
+For each encryption key, the file contains these options, separated by a semicolon:
+
+* The key identifier (format: 32-bit integer)
+* The key version (optional, and only available as of Enterprise Server 11.8)
+* The key itself (format: hex-encoded)
+
+Entries look like this:
+
+{% tabs %}
+{% tab title="Current Enterprise Server" %}
 ```
+<encryption_key_id>;<encryption_key_version>;<hex-encoded_encryption_key>
+```
+{% endtab %}
+
+{% tab title="Community Server & Enterprise Server < 11.8" %}
+```ini
+<encryption_key_id>;<hex-encoded_encryption_key>
+```
+{% endtab %}
+{% endtabs %}
 
 You can also optionally encrypt the key file to make it less accessible from the file system. That is explained further in the section below.
 
-The File Key Management plugin uses [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) to encrypt data, which supports 128-bit, 192-bit, and 256-bit encryption keys. Therefore, the plugin also supports 128-bit, 192-bit, and 256-bit encryption keys.
+The File Key Management plugin uses [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) to encrypt data. It supports 128-bit, 192-bit, and 256-bit encryption keys, just like the plugin does.
 
-You can generate random encryption keys using the [openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html) command. For example, to create a random 256-bit (32-byte) encryption key, you would run the following command:
+Generate random encryption keys using the [openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html) command. To create a random 256-bit (32-byte) encryption key, run the following command:
 
 ```sql
 $ openssl rand -hex 32
 a7addd9adea9978fda19f21e6be987880e68ac92632ca052e5bb42b1a506939a
 ```
 
-The key file still needs to have a key identifier for each encryption key added to the beginning of each line. Key identifiers do not need to be contiguous.
-
-For example, to append three new encryption keys to a new key file, you could execute the following:
+The key file needs to have a key identifier for each encryption key added to the beginning of each line. Key identifiers do not have to be contiguous. For example, to append three new encryption keys to a new key file, issue this command:
 
 ```bash
 mkdir -p /etc/mysql/encryption
@@ -76,48 +91,60 @@ echo $(echo -n "2;" ; openssl rand -hex 32) | sudo tee -a  /etc/mysql/encryption
 echo $(echo -n "100;" ; openssl rand -hex 32) | sudo tee -a  /etc/mysql/encryption/keyfile
 ```
 
-The new key file would look something like the following after this step:
+The resulting key file looks like this:
 
+{% tabs %}
+{% tab title="Current Enterprise Server" %}
+```
+1;1;a7addd9adea9978fda19f21e6be987880e68ac92632ca052e5bb42b1a506939a
+2;1;49c16acc2dffe616710c9ba9a10b94944a737de1beccb52dc1560abfdd67388b
+100;2;8db1ee74580e7e93ab8cf157f02656d356c2f437d548d5bf16bf2a56932954a3
+```
+{% endtab %}
+
+{% tab title="Community Server & Enterprise Server < 11.8" %}
 ```sql
 1;a7addd9adea9978fda19f21e6be987880e68ac92632ca052e5bb42b1a506939a
 2;49c16acc2dffe616710c9ba9a10b94944a737de1beccb52dc1560abfdd67388b
 100;8db1ee74580e7e93ab8cf157f02656d356c2f437d548d5bf16bf2a56932954a3
 ```
+{% endtab %}
+{% endtabs %}
 
-The key identifiers give you a way to reference the encryption keys from MariaDB. In the example above, you could reference these encryption keys using the key identifiers `1`, `2` or `100` with the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option or with system variables such as [innodb\_default\_encryption\_key\_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id). You do not necessarily need multiple encryption keys--the encryption key with the key identifier `1` is the only mandatory encryption key.
+The key identifiers give you a way to reference the encryption keys from MariaDB. In the example above, you could reference these encryption keys using the key identifiers `1`, `2` or `100` with the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option or with system variables such as [innodb\_default\_encryption\_key\_id](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id). You do not necessarily need multiple encryption keys; an encryption key with the key identifier `1` is the only mandatory one.
 
-### Configuring the Path to an Unencrypted Key File
+If the key file is left unencrypted, the File Key Management plugin only requires the [file\_key\_management\_filename](file-key-management-encryption-plugin.md#file_key_management_filename) system variable to be configured.
 
-If the key file is unencrypted, then the File Key Management plugin only requires the [file\_key\_management\_filename](file-key-management-encryption-plugin.md#file_key_management_filename) system variable to be configured.
+This system variable can be specified as a command-line argument to `mariadbd` , or it can be specified in a server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) of an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), like this:
 
-This system variable can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
-
-```sql
+```ini
 [mariadb]
 ...
 loose_file_key_management_filename = /etc/mysql/encryption/keyfile
 ```
 
-Note that the [loose](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option prefix is specified. This option prefix is used in case the plugin hasn't been installed yet.
+{% include "../../../../../.gitbook/includes/to-avoid-startup-failures-....md" %}
 
 ## Encrypting the Key File
 
-By enabling the File Key Management plugin and setting the appropriate path on the [file\_key\_management\_filename](file-key-management-encryption-plugin.md#file_key_management_filename) system variable, you can begin using the plugin to manage your encryption keys. But, there is a security risk in doing so, given that the keys are stored in plain text on your system. You can reduce this exposure using file permissions, but it's better to encrypt the whole key file to further restrict access.
+{% hint style="info" %}
+This step is optional, but highly recommended.
+{% endhint %}
 
-There are some important details to keep in mind about encrypting the key file, such as:
+If you use an unencrypted key file, keys are stored in plain text on your system, posing a security risk. It's recommended to encrypt the key file, with these hints in mind:
 
-* The only algorithm that MariaDB currently supports to encrypt the key file is [Cipher Block Chaining (CBC)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#CBC) mode of [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
+* MariaDB only supports the [Cipher Block Chaining (CBC)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#CBC) mode of [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
 * The encryption key size can be 128-bits, 192-bits, or 256-bits.
 * The encryption key is created from the [SHA-1](https://en.wikipedia.org/wiki/SHA-1) hash of the encryption password.
-* The encryption password has a max length of 256 characters.
+* The encryption password has a maximum length of 256 characters.
 
-You can generate a random encryption password using the [openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html) command. For example, to create a random 256 character encryption password, you could execute the following:
+Generate a random encryption password using the [openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html) command. To create a random 256 character encryption password, execute the following:
 
 ```bash
 $ sudo openssl rand -hex 128 > /etc/mysql/encryption/keyfile.key
 ```
 
-You can encrypt the key file using the [openssl enc](https://www.openssl.org/docs/man1.1.1/man1/enc.html) command. For example, to encrypt the key file with the encryption password created in the previous step, you could execute the following:
+Encrypt the key file using the [openssl enc](https://www.openssl.org/docs/man1.1.1/man1/enc.html) command. To encrypt the key file with the encryption password created in the previous step, execute the following:
 
 ```bash
 $ sudo openssl enc -aes-256-cbc -md sha1 \
@@ -126,36 +153,34 @@ $ sudo openssl enc -aes-256-cbc -md sha1 \
    -out /etc/mysql/encryption/keyfile.enc
 ```
 
-**Note:** some more recent `openssl` versions may complain with
+The resulting `keyfile.enc` file is the encrypted version of `keyfile`. Delete the unencrypted key file.
 
-```sql
+{% hint style="info" %}
+Some more recent `openssl` versions may throw this warning:
+
+```bash
 *** WARNING : deprecated key derivation used.
 Using -iter or -pbkdf2 would be better.
 ```
+{% endhint %}
 
-Keys generated that way won't work with the current implementation of the plugin though. Also as SHA1 is only used to generate the actual AES encryption key, from a long random string, it's not really an issue here. SHA1 deprecation is mostly related to checksum / signing use cases, not to what we are using it here for.
+Having the key file encrypted requires both the [file\_key\_management\_filename](file-key-management-encryption-plugin.md#file_key_management_filename) and the [file\_key\_management\_filekey](file-key-management-encryption-plugin.md#file_key_management_filekey) system variables to be configured.
 
-Running this command reads the unencrypted `keyfile` file created above and creates a new encrypted `keyfile.enc` file, using the encryption password stored in `keyfile.key`. Once you've finished preparing your system, you can delete the unencrypted `keyfile` file, as it's no longer necessary.
+The `file_key_management_filekey` variable can be provided in two forms:
 
-### Configuring the Path to an Encrypted Key File
+* As a plain-text encryption password. This is not recommended, since the plain-text encryption password would be visible in the output of the [SHOW VARIABLES](../../../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement.
+* Prefixed with `FILE:`, it can be a path to a file that contains the plain-text encryption password.
 
-If the key file is encrypted, then the File Key Management plugin requires both the [file\_key\_management\_filename](file-key-management-encryption-plugin.md#file_key_management_filename) and the [file\_key\_management\_filekey](file-key-management-encryption-plugin.md#file_key_management_filekey) system variables to be configured.
+These variables can be specified as command-line arguments to `mariadbd`, or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-The [file\_key\_management\_filekey](file-key-management-encryption-plugin.md#file_key_management_filekey) system variable can be provided in two forms:
-
-* It can be the actual plain-text encryption password. This is not recommended, since the plain-text encryption password would be visible in the output of the [SHOW VARIABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement.
-* If it is prefixed with `FILE:`, then it can be a path to a file that contains the plain-text encryption password.
-
-These system variables can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
-
-```sql
+```ini
 [mariadb]
 ...
 loose_file_key_management_filename = /etc/mysql/encryption/keyfile.enc
 loose_file_key_management_filekey = FILE:/etc/mysql/encryption/keyfile.key
 ```
 
-Note that the [loose](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option prefix is specified. This option prefix is used in case the plugin hasn't been installed yet.
+{% include "../../../../../.gitbook/includes/to-avoid-startup-failures-....md" %}
 
 ## Choosing an Encryption Algorithm
 
@@ -227,7 +252,7 @@ The format of the key file is simplistic. It stores encryption keys in a plain-t
 {% endtab %}
 
 {% tab title="< 11.8" %}
-The File Key Management plugin does not support [key rotation](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation). See [MDEV-20713](https://jira.mariadb.org/browse/MDEV-20713) for more information.
+The File Key Management plugin does not support [key rotation](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md#key-rotation).
 {% endtab %}
 {% endtabs %}
 

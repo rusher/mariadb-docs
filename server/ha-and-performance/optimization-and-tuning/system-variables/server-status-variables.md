@@ -15,7 +15,7 @@ Most status variables are described on this page, but some are described elsewhe
 * [Server\_Audit Status Variables](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md)
 * [Sphinx Status Variables](sphinx-status-variables.md)
 * [Spider Status Variables](spider-status-variables.md)
-* [TokuDB Status Variables](../../../server-usage/storage-engines/tokudb/tokudb-status-variables.md)
+* [TokuDB Status Variables](../../../server-usage/storage-engines/legacy-storage-engines/tokudb/tokudb-status-variables.md)
 
 Use the [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement to view status variables. This\
 information also can be obtained using the [mariadb-admin extended-status](../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../../../reference/system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.
