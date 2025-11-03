@@ -8,7 +8,7 @@ This walkthrough explains how to launch database services and manage the lifecyc
 {% step %}
 ### **Generate API Key**
 
-1. Go to [MariaDB Cloud API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key
+1. Go to the [MariaDB Cloud API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key
 2.  Export the value from the token field to an environment variable $API\_KEY
 
     ```bash
@@ -17,7 +17,7 @@ This walkthrough explains how to launch database services and manage the lifecyc
 
     The `API_KEY` environment variable will be used in the subsequent steps.
 
-Use it on subsequent request, for example:
+Use it on subsequent requests, for example:
 
 ```bash
  curl --request GET 'https://api.skysql.com/provisioning/v1/services' \
@@ -26,7 +26,7 @@ Use it on subsequent request, for example:
 {% endstep %}
 
 {% step %}
-### **Use API Reference Guide to try out the APIs**
+### **Use the API Reference Guide to try out the APIs**
 
 You can use the API Documentation here and directly try out the APIs in your browser.
 
@@ -53,7 +53,7 @@ Pre-requisites for code below.
 {% step %}
 ### **Determine the Client IP Address**
 
-When your new service is created, your client can only connect through the service's firewall if the client IP address is in the service's IP allowlist.
+When your new service is created, your client can only connect through the service's firewall if the client's IP address is in the service's IP allowlist.
 
 Before creating the new service, determine the public IP address of your client host and save it to the `SKYSQL_CLIENT_IP` environment variable.
 
