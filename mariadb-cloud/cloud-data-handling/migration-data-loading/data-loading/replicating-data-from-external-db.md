@@ -2,7 +2,7 @@
 
 MariaDB MariaDB Cloud customers can configure inbound replication from both **MySQL** and **MariaDB** to a compatible MariaDB running in MariaDB Cloud. This guide will walk you through setting up replication for both MySQL and MariaDB as the source databases.
 
-For additional information about the stored procedures used to configure replication with Replicated Transactions services, see [MariaDB Cloud Replication Helper Procedures for Replicated Transactions](https://docs.skysql.com/Reference%20Guide/Sky%20Stored%20Procedures/).
+For additional information about the stored procedures used to configure replication with Replicated Transactions services, see [MariaDB Cloud Replication Helper Procedures for Replicated Transactions](../../../reference-guide/stored-procedures.md).
 
 ## Requirements
 
@@ -43,7 +43,7 @@ CALL sky.change_external_primary('mysql1.example.com', 3306, 'mysql-bin.000001',
 ```
 
 This procedure can be referenced in the official documentation:\
-[sky.change\_external\_primary()](https://docs.skysql.com/Reference%20Guide/Sky%20Stored%20Procedures/#change_external_primary)
+[sky.change\_external\_primary()](../../../reference-guide/stored-procedures.md#change_external_primary)
 
 This will return a `GRANT` statement that needs to be executed on the external MySQL server:
 
@@ -51,7 +51,7 @@ This will return a `GRANT` statement that needs to be executed on the external M
 GRANT REPLICATION SLAVE ON *.* TO 'skysql_replication'@'%' IDENTIFIED BY '<password_hash>';
 ```
 
-For MariaDB (GTID Based) if preferred refer to [sky.change\_external\_primary\_gtid()](https://docs.skysql.com/Reference%20Guide/Sky%20Stored%20Procedures/#change_external_primary_gtid)
+For MariaDB (GTID Based) if preferred refer to [sky.change\_external\_primary\_gtid()](../../../reference-guide/stored-procedures.md#change_external_primary_gtid)
 
 ## Step 3: Start Replication
 
@@ -71,7 +71,7 @@ This will return a confirmation message such as:
 +----------------------------------------+
 ```
 
-You can find the documentation for this procedure [here](../../../Reference%20Guide/Stored%20Procedures.md#start_replication).
+You can find the documentation for this procedure [here](../../../reference-guide/stored-procedures.md).
 
 ## Step 4: Check Replication Status
 
