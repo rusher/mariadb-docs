@@ -534,7 +534,7 @@
 * [hashicorp-key-management-cache-version-timeout](../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-cache-version-timeout)
 * [hashicorp-key-management-caching-enabled](../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-caching-enabled)
 * [hashicorp-key-management-check-kv-version](../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-check-kv-version)
-* [hashicorp-key-management-retries](../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-retries)
+* [hashicorp-key-management-max-retries](../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-max-retries)
 * [hashicorp-key-management-timeout](../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-timeout)
 * [hashicorp-key-management-token](../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-token)
 * [hashicorp-key-management-use-cache-on-timeout](../security/securing-mariadb/encryption/data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-use-cache-on-timeout)
