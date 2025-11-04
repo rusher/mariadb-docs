@@ -34,6 +34,8 @@ To access the Configuration Manager interface:
 2. Select <kbd>Settings</kbd> in the sidebar.
 3. Select <kbd>Configuration Manager</kbd>.
 
+After selecting Configuration Manager, you will be sent to Saved Configuration page, where you can view, create, and manage configuration templates for various MariaDB cloud topologies.
+
 ## **What is Configurable?**
 
 Available configuration parameters differ by cloud database topology.
