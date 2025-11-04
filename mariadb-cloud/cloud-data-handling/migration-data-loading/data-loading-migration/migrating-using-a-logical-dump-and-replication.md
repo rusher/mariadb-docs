@@ -7,7 +7,7 @@ To minimize downtime during migration, you can set up live replication from your
 1. An active MariaDB Cloud account. Identify requirements for your MariaDB Cloud implementation prior to [deployment](../../../cloud-usage/portal-features/launch-page.md), including:
 
 * Topology - Mariadb Server Single node or with Replica(s)
-* [Instance size](broken-reference)
+* Instance size
 * Storage requirements
 * Desired server version
 
