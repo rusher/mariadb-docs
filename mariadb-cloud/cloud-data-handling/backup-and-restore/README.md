@@ -34,7 +34,7 @@ MariaDB Cloud supports database snapshot backups either on-demand or according t
 ### References
 
 * [Amazon EBS Snapshots](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html)
-* [Google Cloud Kubernetes Engine - Snapshot Persistent Volume](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/snapshots)
+* [Google Cloud Kubernetes Engine - Snapshot Persistent Volume](https://cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/snapshot-persistentvolume)
 * [Kubernetes - Volume Snapshots](https://kubernetes.io/docs/concepts/storage/volume-snapshots/)
 * [MariaDB - How Mariabackup Works/Create a Consistent Backup Point](mariadb-backup.md)
 

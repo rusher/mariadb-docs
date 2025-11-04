@@ -21,7 +21,7 @@ The connection is configured via the information that is initially acquired from
 
 ## Code Example
 
-The following code demonstrates how to use MariaDB Connector/C to connect to SkySQL. This example uses the [example database and user account](https://mariadb.com/docs/server/connect/programming-languages/c/example-setup/):
+The following code demonstrates how to use MariaDB Connector/C to connect to SkySQL. This example uses the [example database and user account](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/setup-for-examples):
 
 ```c
 #include <stdio.h>
