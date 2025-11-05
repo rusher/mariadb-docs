@@ -6,7 +6,7 @@ hidden: true
 
 {% include "../../../.gitbook/includes/unreleased-10-6.md" %}
 
-<a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="../../mariadb-10-6-series/mariadb-10.6.23-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-10.6.23-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-6-series/what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
+<a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="../../mariadb-10-6-series/mariadb-10.6.24-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-10.6.24-changelog.md" class="button secondary">Changelog</a> <a href="../../mariadb-10-6-series/what-is-mariadb-106.md" class="button secondary">Overview of 10.6</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/10.6.23/)
 
