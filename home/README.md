@@ -55,6 +55,6 @@ Stay updated with the latest releases and version-specific changes.
 * [MariaDB ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore)
 * [MariaDB Galera Cluster](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/galera-cluster)
 * [MariaDB Connectors](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors)
-* [MariaDB Enterprise Kubernetes Operator](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator)
+* [MariaDB Enterprise Kubernetes Operator](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-operator)
 * [MariaDB AI RAG](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/ai-rag-release-notes)
 * [MariaDB MCP Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mcp-server-release-notes)
