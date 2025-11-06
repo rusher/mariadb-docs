@@ -49,8 +49,8 @@ Dedicated resources for specific MariaDB products and tools.
 
 Stay updated with the latest releases and version-specific changes.
 
-* [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes)
-* [MariaDB Community Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes)
+* [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server)
+* [MariaDB Community Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server)
 * [MariaDB MaxScale](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maxscale)
 * [MariaDB ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore)
 * [MariaDB Galera Cluster](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/galera-cluster)
