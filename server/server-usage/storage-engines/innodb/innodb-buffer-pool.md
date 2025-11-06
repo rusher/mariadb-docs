@@ -44,7 +44,7 @@ The minimum `innodb_buffer_pool_size` is 320 pages (256\*5/4). With the default 
 When the buffer pool is shrunk, InnoDB tries to inform the operating system that the underlying memory for part of the virtual address range is no longer needed and may be zeroed out. On many POSIX-like systems this is done by `madvise(MADV_DONTNEED)` where available (Linux, FreeBSD, NetBSD, OpenBSD, Dragonfly BSD, IBM AIX, Apple macOS). On Microsoft Windows, `VirtualFree(MEM_DECOMMIT)` is invoked. On many systems, there is also `MADV_FREE`, which would be a deferred variant of `MADV_DONTNEED`, not freeing the virtual memory mapping immediately. We prefer immediate freeing so that the resident set size of the process reflects the current `innodb_buffer_pool_size` value. Shrinking the buffer pool is a rarely executed intensive operation, and the immediate configuration of the MMU mappings should not incur significant additional penalty.
 {% endhint %}
 
-Issuing `SET GLOBAL innodb_buffer_pool_size` blocks until the buffer pool has been resized or the operation was aborted by a `KILL` or `SHUTDOWN` command, a client disconnect, or an interrupt.
+The [`Innodb_buffer_pool_resize_status`](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_resize_status) variable is removed. Issuing `SET GLOBAL innodb_buffer_pool_size` blocks until the buffer pool has been resized or the operation was aborted by a `KILL` or `SHUTDOWN` command, a client disconnect, or an interrupt.
 
 ## innodb\_old\_blocks\_pct and innodb\_old\_blocks\_time
 
