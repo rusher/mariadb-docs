@@ -162,17 +162,18 @@ page.
 
 ### List of All [MariaDB 11.4](what-is-mariadb-114.md) Releases
 
-| Date        | Release                     | Status      | Release Notes              | Changelog                                 |
-| ----------- | --------------------------- | ----------- | -------------------------- | ----------------------------------------- |
-| 6 Aug 2025  | [MariaDB 11.4.8](11.4.8.md) | Stable (GA) | [Release Notes](11.4.8.md) | [Changelog](../changelogs/11.4/11.4.8.md) |
-| 22 May 2025 | [MariaDB 11.4.7](11.4.7.md) | Stable (GA) | [Release Notes](11.4.7.md) | [Changelog](../changelogs/11.4/11.4.7.md) |
-| 6 May 2025  | [MariaDB 11.4.6](11.4.6.md) | Stable (GA) | [Release Notes](11.4.6.md) | [Changelog](../changelogs/11.4/11.4.6.md) |
-| 4 Feb 2025  | [MariaDB 11.4.5](11.4.5.md) | Stable (GA) | [Release Notes](11.4.5.md) | [Changelog](../changelogs/11.4/11.4.5.md) |
-| 1 Nov 2024  | [MariaDB 11.4.4](11.4.4.md) | Stable (GA) | [Release Notes](11.4.4.md) | [Changelog](../changelogs/11.4/11.4.4.md) |
-| 8 Aug 2024  | [MariaDB 11.4.3](11.4.3.md) | Stable (GA) | [Release Notes](11.4.3.md) | [Changelog](../changelogs/11.4/11.4.3.md) |
-| 29 May 2024 | [MariaDB 11.4.2](11.4.2.md) | Stable (GA) | [Release Notes](11.4.2.md) | [Changelog](../changelogs/11.4/11.4.2.md) |
-| 16 Feb 2024 | [MariaDB 11.4.1](11.4.1.md) | RC          | [Release Notes](11.4.1.md) | [Changelog](../changelogs/11.4/11.4.1.md) |
-| 24 Dec 2023 | [MariaDB 11.4.0](11.4.0.md) | Alpha       | [Release Notes](11.4.0.md) |                                           |
+| Date        | Release        | Status      | Release Notes              | Changelog                                 |
+| ----------- | -------------- | ----------- | -------------------------- | ----------------------------------------- |
+| 6 Nov 2025  | MariaDB 11.4.9 | Stable (GA) | [Release Notes](11.4.9.md) | [Changelog](../changelogs/11.4/11.4.9.md) |
+| 6 Aug 2025  | MariaDB 11.4.8 | Stable (GA) | [Release Notes](11.4.8.md) | [Changelog](../changelogs/11.4/11.4.8.md) |
+| 22 May 2025 | MariaDB 11.4.7 | Stable (GA) | [Release Notes](11.4.7.md) | [Changelog](../changelogs/11.4/11.4.7.md) |
+| 6 May 2025  | MariaDB 11.4.6 | Stable (GA) | [Release Notes](11.4.6.md) | [Changelog](../changelogs/11.4/11.4.6.md) |
+| 4 Feb 2025  | MariaDB 11.4.5 | Stable (GA) | [Release Notes](11.4.5.md) | [Changelog](../changelogs/11.4/11.4.5.md) |
+| 1 Nov 2024  | MariaDB 11.4.4 | Stable (GA) | [Release Notes](11.4.4.md) | [Changelog](../changelogs/11.4/11.4.4.md) |
+| 8 Aug 2024  | MariaDB 11.4.3 | Stable (GA) | [Release Notes](11.4.3.md) | [Changelog](../changelogs/11.4/11.4.3.md) |
+| 29 May 2024 | MariaDB 11.4.2 | Stable (GA) | [Release Notes](11.4.2.md) | [Changelog](../changelogs/11.4/11.4.2.md) |
+| 16 Feb 2024 | MariaDB 11.4.1 | RC          | [Release Notes](11.4.1.md) | [Changelog](../changelogs/11.4/11.4.1.md) |
+| 24 Dec 2023 | MariaDB 11.4.0 | Alpha       | [Release Notes](11.4.0.md) |                                           |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
