@@ -97,7 +97,7 @@
     * [Pricing](reference-guide/service-tiers/pricing.md)
     * [Maintenance Windows](reference-guide/service-tiers/maintenance-windows.md)
     * [MaxScale Redundancy](reference-guide/service-tiers/maxscale-redundancy.md)
-  * [Fractional DBA Service: CloudDBA](reference-guide/fractionaldba.md)
+  * [Fractional DBA Service: Remote DBA](reference-guide/fractionaldba.md)
   * [MariaDB Server Version Support](reference-guide/mariadb-server-versions.md)
   * [Supported Backup Types](reference-guide/backup-support.md)
   * [MariaDB Cloud Instance Sizes](reference/mariadb-cloud-instance-sizes.md)
