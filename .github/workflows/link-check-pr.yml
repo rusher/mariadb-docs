@@ -1,0 +1,38 @@
+name: Check Changed Files for Broken Links
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  link-checker:
+    # Change 'ubuntu-latest' to 'self-hosted' if you have already 
+    # set up your remote machine as a runner.
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required to correctly identify changed files
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        with:
+          # Optional: restrict scanning to specifically relevant file types
+          # to save time and avoid false positives in code files.
+          files: |
+             **.md
+             **.mdx
+             **.html
+             **.txt
+             docs/**
+
+      - name: Run Lychee on changed files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: lychee-verse/lychee-action@v2.0.0
+        with:
+          # This passes ONLY the changed files identified in the previous step to the scanner
+          args: --verbose --no-progress '${{ steps.changed-files.outputs.all_changed_files }}'
+          fail: true # Fails the PR check if broken links are found
