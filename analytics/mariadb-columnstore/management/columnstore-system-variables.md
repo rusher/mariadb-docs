@@ -6,13 +6,16 @@
 
 * Controls whether disk joins are forced to run even if they are not estimated to be the most efficient execution plan. This can be useful for debugging purposes or for situations where the optimizer's estimates are not accurate.
 * Scope: global, session
+* Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: OFF
+* Range: ON, OFF
 * Introduced in: MariaDB Enterprise Server 10.6
 
 #### columnstore\_diskjoin\_max\_partition\_tree\_depth
 
 * Sets the maximum depth of the partition tree that can be used for disk joins. A higher value allows for more complex joins, but may also increase the memory usage and execution time.
 * Scope: global, session
+* Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 10
 * Introduced in: MariaDB Enterprise Server 10.6
 
@@ -20,6 +23,7 @@
 
 * Sets the maximum number of values that can be used in an IN predicate on a Columnstore table. This limit helps to prevent performance issues caused by queries with a large number of IN values.
 * Scope: global, session
+* Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 10000
 * Introduced in: MariaDB Enterprise Server 10.6
 
@@ -27,6 +31,7 @@
 
 * Sets the maximum number of rows that can be returned by a parallel merge join on a Columnstore table. This limit helps to prevent memory issues caused by joins that return a large number of rows.
 * Scope: global, session
+* Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 1000000
 * Introduced in: MariaDB Enterprise Server 10.6
 
@@ -34,7 +39,7 @@
 
 * Command line: Yes
 * Scope: global, session
-* Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
+* Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 2
 * Range: 0,2
 
