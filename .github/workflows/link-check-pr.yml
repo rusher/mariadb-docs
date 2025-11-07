@@ -1,46 +1,31 @@
-cat << 'EOL' > .github/workflows/link-checker.yml
-name: Check Broken Links (Fast)
+name: Check Links in PR
 
-# This action runs on every Pull Request that targets your 'main' branch
 on:
   pull_request:
-    branches: [ "main" ] # Or "master", or whichever your default branch is
+    types: [opened, synchronize, reopened]
 
 jobs:
-  check-links:
-    runs-on: ubuntu-latest
+  link-check:
+    runs-on: self-hosted
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          # We need to fetch the whole history to compare branches
-          fetch-depth: 0 
+          fetch-depth: 0
 
-      - name: Get changed markdown files
-        id: changed-files
-        uses: tj-actions/changed-files@v44
+      - name: Get changed files
+        id: changes
+        uses: tj-actions/changed-files@v45
         with:
-          # This tells the action to only find files ending in .md
-          files_glob: "**/*.md"
+           files: |
+             **.md
+             **.html
 
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+      - name: Scan for broken links
+        if: steps.changes.outputs.any_changed == 'true'
+        uses: lycheeverse/lychee-action@v2.3.0
         with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Run link checker on CHANGED files
-        # This step only runs if the 'changed-files' step found .md files
-        if: steps.changed-files.outputs.any_changed == 'true'
-        run: |
-          echo "Checking the following files:"
-          # This variable ($ALL_CHANGED_FILES) comes from the 'changed-files' step
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"
-          python .github/scripts/check_links.py ${{ steps.changed-files.outputs.all_changed_files }}
-      
-      - name: No markdown files changed
-        if: steps.changed-files.outputs.any_changed == 'false'
-        run: echo "No markdown files changed in this PR. Skipping link check."
-EOL
+          # --no-progress keeps logs clean
+          # The variable at the end passes only the changed files to Lychee
+          args: --no-progress '${{ steps.changes.outputs.all_changed_files }}'
+          fail: true
