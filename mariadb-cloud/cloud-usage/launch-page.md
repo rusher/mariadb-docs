@@ -2,7 +2,7 @@
 
 The launch page can be accessed at [Launch](https://app.skysql.com/launch-service).
 
-<figure><img src="../../Portal features/launch.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/launch.png" alt=""><figcaption></figcaption></figure>
 
 _Launch Service_
 
@@ -17,10 +17,10 @@ To launch a MariaDB Cloud service from the Portal:
 5. Choose the desired [Region](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_regions).
    * Each region has a scheduled maintenance window.
 6. Choose the desired [Instance Size](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_sizes).
-   * If your workload requires a larger instance size, contact us regarding [Power Tier](../../../Billing%20and%20Power%20Tier/).
-7. If needed, enable [Auto-Scaling of Nodes](../../../Autonomously%20scale%20Compute,%20Storage/).
+   * If your workload requires a larger instance size, contact us regarding [Power Tier](../../Billing%20and%20Power%20Tier/).
+7. If needed, enable [Auto-Scaling of Nodes](../../Autonomously%20scale%20Compute,%20Storage/).
 8. Choose the desired [Storage Configuration](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies__topology_name__storage_sizes).
-9. If needed, enable [Auto-Scaling of Storage](../../../Autonomously%20scale%20Compute,%20Storage/).
+9. If needed, enable [Auto-Scaling of Storage](../../Autonomously%20scale%20Compute,%20Storage/).
 10. Choose the number of nodes to deploy.
 11. Choose the desired [Server Version](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_versions).
 12. Enter the desired Service Name between 4-24 characters.

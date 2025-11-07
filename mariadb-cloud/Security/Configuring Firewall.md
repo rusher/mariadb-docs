@@ -36,7 +36,7 @@ IP addresses can be added to the allowlist from the Firewall settings interface 
 2. Optionally enter an alias for this address. An alias provides a way to remember why an address was added to the allowlist.
 3. Click the "Save" button.
 
-After saving the change, a [notification](../cloud-usage/portal-features/notifications.md) will be provided when the change has been applied.
+After saving the change, a [notification](../cloud-usage/notifications.md) will be provided when the change has been applied.
 
 ## **Remove From the Allowlist**
 
@@ -45,7 +45,7 @@ IP addresses can be removed from the allowlist from the Firewall settings interf
 1. Click the "X" button to the right of the entry to remove.
 2. Click the "Save" button.
 
-After saving the change, a [notification](../cloud-usage/portal-features/notifications.md) will be provided when the change has been applied.
+After saving the change, a [notification](../cloud-usage/notifications.md) will be provided when the change has been applied.
 
 ## **Edit an Allowlist Entry**
 
@@ -54,7 +54,7 @@ An allowlist entry can be edited from the Firewall settings interface or a servi
 1. Modify the IP address or alias of the desired allowlist entry.
 2. Click the "Save" button.
 
-After saving the change, a [notification](../cloud-usage/portal-features/notifications.md) will be provided when the change has been applied.
+After saving the change, a [notification](../cloud-usage/notifications.md) will be provided when the change has been applied.
 
 ## **IP Allowlist Limitations**
 

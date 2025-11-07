@@ -2,7 +2,7 @@
 
 Billing is associated with a MariaDB Cloud ID.
 
-For pricing information, see "[Pricing](../../Billing%20and%20Power%20Tier/Pricing.md)".
+For pricing information, see "[Pricing](../Billing%20and%20Power%20Tier/Pricing.md)".
 
 ## **Usage Information**
 
@@ -18,7 +18,7 @@ Usage information can be shown by service or by resource.
 
 Click the resource name or service name to expand the view.
 
-<figure><img src="../../Portal features/current-usage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/current-usage.png" alt=""><figcaption></figcaption></figure>
 
 _Billing - Current Usage_
 

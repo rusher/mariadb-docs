@@ -2,11 +2,11 @@
 
 MariaDB Cloud's self-service management features enable authorized accounts to launch cloud databases, start and stop cloud databases, delete cloud databases, apply database configuration changes, and configure the cloud database's IP firewall.
 
-Self-service [user management](<../../Security/Managing Portal Users.md>) features enable you to define role-based access for your team to jointly manage MariaDB Cloud resources.
+Self-service [user management](<../Security/Managing Portal Users.md>) features enable you to define role-based access for your team to jointly manage MariaDB Cloud resources.
 
 ## Stop a Service
 
-<figure><img src="../../Portal features/stop-service.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/stop-service.png" alt=""><figcaption></figcaption></figure>
 
 _Stop Service_
 
@@ -23,7 +23,7 @@ The service will be stopped. You will only be charged for storage on a stopped s
 
 ## Start a Service
 
-<figure><img src="../../Portal features/start-service.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/start-service.png" alt=""><figcaption></figcaption></figure>
 
 _Start Service_
 
@@ -40,7 +40,7 @@ The service will be started. Service start may take up to 10-15 minutes. The nor
 
 ## Scale Nodes In/Out
 
-<figure><img src="../../Portal features/scale-in-out.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/scale-in-out.png" alt=""><figcaption></figcaption></figure>
 
 _Service - Horizontal Scaling_
 
@@ -53,7 +53,7 @@ To scale nodes horizontally:
 3. Click the "MANAGE" button (at right) for the desired service.
 4. Choose the "Scale nodes in/out" menu item.
 5. Change the node count to the desired value.
-6. Optionally, you can check the "Auto-scale nodes horizontally" checkbox to enable [Autonomous](../../../Autonomously%20scale%20Compute,%20Storage/) features for this service.
+6. Optionally, you can check the "Auto-scale nodes horizontally" checkbox to enable [Autonomous](../../Autonomously%20scale%20Compute,%20Storage/) features for this service.
 7. Click the "Apply Changes" button.
 
 The service immediately goes into scaling status.
@@ -62,7 +62,7 @@ The service immediately goes into scaling status.
 
 ## Scale Nodes Up/Down
 
-<figure><img src="../../Portal features/scale-up-down.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/scale-up-down.png" alt=""><figcaption></figcaption></figure>
 
 _Service - Vertical Scaling_
 
@@ -75,7 +75,7 @@ To scale nodes vertically:
 3. Click the "MANAGE" button (at right) for the desired service.
 4. Choose the "Scale nodes up/down" menu item.
 5. Change the node count to the desired value.
-6. Optionally, you can check the "Auto-scale nodes vertically" checkbox to enable [Autonomous](../../../Autonomously%20scale%20Compute,%20Storage/) features for this service.
+6. Optionally, you can check the "Auto-scale nodes vertically" checkbox to enable [Autonomous](../../Autonomously%20scale%20Compute,%20Storage/) features for this service.
 7. Click the "Apply Changes" button.
 
 The service immediately goes into scaling status.
@@ -84,7 +84,7 @@ The service immediately goes into scaling status.
 
 ## Scale Storage
 
-<figure><img src="../../Portal features/scale-storage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/scale-storage.png" alt=""><figcaption></figcaption></figure>
 
 _Service - Scale Storage_
 
@@ -103,7 +103,7 @@ Storage upgrades are not reversible.
 
 ## Delete a Service
 
-<figure><img src="../../Portal features/delete-service.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/delete-service.png" alt=""><figcaption></figcaption></figure>
 
 _Service - Delete_
 
@@ -123,9 +123,9 @@ Your service and all its data will be deleted. This operation is non-reversible.
 ## Other Self-Service Operations
 
 * [Service Launch](launch-page.md)
-* [Firewall Management](<../../Security/Configuring Firewall.md>)
-* [Configuration Management](../../cloud-management/config/)
+* [Firewall Management](<../Security/Configuring Firewall.md>)
+* [Configuration Management](../cloud-management/config/)
 * Private Connections:
-  * [AWS PrivateLink](../../connecting-to-mariadb-cloud-dbs/using-aws-azure-gcp-private-vpc-connections/setting-up-aws-private-link.md)
-  * [GCP Private Service Connect](../../connecting-to-mariadb-cloud-dbs/using-aws-azure-gcp-private-vpc-connections/setting-up-gcp-private-service-connect.md)
-* [User Management](<../../Security/Managing Portal Users.md>)
+  * [AWS PrivateLink](../connecting-to-mariadb-cloud-dbs/using-aws-azure-gcp-private-vpc-connections/setting-up-aws-private-link.md)
+  * [GCP Private Service Connect](../connecting-to-mariadb-cloud-dbs/using-aws-azure-gcp-private-vpc-connections/setting-up-gcp-private-service-connect.md)
+* [User Management](<../Security/Managing Portal Users.md>)

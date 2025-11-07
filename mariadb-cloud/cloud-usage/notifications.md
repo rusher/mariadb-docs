@@ -17,13 +17,13 @@ A menu of recent notifications will be displayed.
 
 The bell icon will include a red dot indicator when a new notification is present. This indicator can be cleared by clicking the "Clear all" link.
 
-[![notifications.png](<../../Portal features/notifications.png>)](../../Portal%20features/notifications.png)
+[![notifications.png](<../Portal features/notifications.png>)](../Portal%20features/notifications.png)
 
 _Notifications_
 
 To view historical notifications, click the "View more" link at the bottom of the menu. When viewing historical notifications, notifications can be filtered by category and time frame.
 
-[![notifications-all.png](<../../Portal features/notifications-all.png>)](../../Portal%20features/notifications-all.png)
+[![notifications-all.png](<../Portal features/notifications-all.png>)](../Portal%20features/notifications-all.png)
 
 _Notifications - current and historical_
 
@@ -50,7 +50,7 @@ From User Preferences, you can specify your notification preferences:
 * Whether to send notifications to you by email
 * Which Notification Categories you want to be sent
 
-[![notification-preferences.png](<../../Portal features/notification-preferences.png>)](../../Portal%20features/notification-preferences.png)
+[![notification-preferences.png](<../Portal features/notification-preferences.png>)](../Portal%20features/notification-preferences.png)
 
 _User Preferences_
 
@@ -66,7 +66,7 @@ To access Notification Channel settings:
 2. Click the "Settings" link in the main menu (left navigation in the Portal).
 3. Click the "Notification Channel" button.
 
-<figure><img src="../../Portal features/notification-channels.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/notification-channels.png" alt=""><figcaption></figcaption></figure>
 
 _Notification Channels_
 
@@ -79,7 +79,7 @@ To add a Notification Channel, from the Notification Channel settings interface:
 3. Enter the email address that will receive notifications.
 4. Choose the notification categories that should be sent to that address.
 
-<figure><img src="../../Portal features/add-notification-channel.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/add-notification-channel.png" alt=""><figcaption></figcaption></figure>
 
 _Notification Channels - Adding a Channel_
 

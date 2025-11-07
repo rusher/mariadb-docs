@@ -1,5 +1,4 @@
 ---
-icon: door-open
 layout:
   width: default
   title:
@@ -26,7 +25,7 @@ You can access the Portal [here](https://app.skysql.com/dashboard).
 
 ## Dashboard
 
-<figure><img src="../../Portal features/dashboard.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../Portal features/dashboard.png" alt=""><figcaption></figcaption></figure>
 
 From the Dashboard, you can see a list of your MariaDB Cloud services and status information for each service.
 
@@ -46,7 +45,7 @@ Service-specific interfaces will vary by topology.
 
 Service-specific interfaces are provided to:
 
-* [Connect](../../Connecting%20to%20Sky%20DBs/)
+* [Connect](../Connecting%20to%20Sky%20DBs/)
 * [Manage](manage-your-service.md)
 * [Monitor](service-monitoring-panels.md)
 * [Service Details](service-details-page.md)
@@ -57,16 +56,16 @@ Service-specific interfaces are provided to:
 
 From the Dashboard, the details needed to connect to your MariaDB Cloud service can be seen by clicking on the "CONNECT" button for the desired service.
 
-See "[Client Connections](../../Connecting%20to%20Sky%20DBs/)" for details on how to connect to a service.
+See "[Client Connections](../Connecting%20to%20Sky%20DBs/)" for details on how to connect to a service.
 
 ## Manage
 
 From the Dashboard, the "MANAGE" button for a service provides access to:
 
 * [Self-Service Operations](manage-your-service.md) to stop/start, delete, or scale your service
-* [Security access](<../../Security/Configuring Firewall.md>) to manage the firewall
-* [Autonomous](../../cloud-management/autonomously-scale-compute-storage.md) settings for auto-scale of nodes and auto-scale of storage
-* [Apply custom configuration](../../cloud-management/config/)
+* [Security access](<../Security/Configuring Firewall.md>) to manage the firewall
+* [Autonomous](../cloud-management/autonomously-scale-compute-storage.md) settings for auto-scale of nodes and auto-scale of storage
+* [Apply custom configuration](../cloud-management/config/)
 
 ## Billing
 
@@ -98,9 +97,9 @@ Server log files can be accessed by clicking the "Logs" link in the main menu (l
 
 These settings can be accessed by clicking the "Settings" link in the main menu (left navigation in the Portal):
 
-* [User Management](<../../Security/Managing Portal Users.md>)
-* [Configuration Manager](../../cloud-management/config/)
-* [Firewall](<../../Security/Configuring Firewall.md>)
+* [User Management](<../Security/Managing Portal Users.md>)
+* [Configuration Manager](../cloud-management/config/)
+* [Firewall](<../Security/Configuring Firewall.md>)
 * [Notification Channels](notifications.md) for the delivery of monitoring alerts by email
 * Policies for monitoring alerts
 
