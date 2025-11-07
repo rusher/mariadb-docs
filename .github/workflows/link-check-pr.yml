@@ -27,5 +27,5 @@ jobs:
         with:
           # --no-progress keeps logs clean
           # The variable at the end passes only the changed files to Lychee
-          args: --no-progress '${{ steps.changes.outputs.all_changed_files }}'
+          args: --no-progress ${{ steps.changes.outputs.all_changed_files }}
           fail: true
