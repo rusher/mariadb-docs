@@ -25,7 +25,7 @@
 ### [infinidb\_compression\_type](columnstore-system-variables.md#compression-mode)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: 2
 * Range: 0,2
@@ -33,35 +33,35 @@
 ### [infinidb\_decimal\_scale](columnstore-system-variables.md#columnstore-decimal-scale)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 8
 
 ### [infinidb\_diskjoin\_bucketsize](columnstore-system-variables.md#disk-based-joins)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 100
 
 ### [infinidb\_diskjoin\_largesidelimit](columnstore-system-variables.md#disk-based-joins)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 0
 
 ### [infinidb\_diskjoin\_smallsidelimit](columnstore-system-variables.md#disk-based-joins)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 0
 
 ### [infinidb\_double\_for\_decimal\_math](columnstore-system-variables.md#columnstore-decimal-to-double-math)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: OFF
 * Range: OFF, ON
@@ -69,21 +69,21 @@
 ### [infinidb\_import\_for\_batchinsert\_delimiter](columnstore-system-variables.md#batch-insert-mode-for-inserts)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 7
 
 ### [infinidb\_import\_for\_batchinsert\_enclosed\_by](columnstore-system-variables.md#batch-insert-mode-for-inserts)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 17
 
 ### [infinidb\_local\_query](columnstore-system-variables.md#local-pm-query-mode)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: 0
 * Range: 0,1
@@ -91,7 +91,7 @@
 ### infinidb\_ordered\_only
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: OFF
 * Range: OFF, ON
@@ -99,28 +99,28 @@
 ### infinidb\_string\_scan\_threshold
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 10
 
 ### infinidb\_stringtable\_threshold
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 20
 
 ### [infinidb\_um\_mem\_limit](columnstore-system-variables.md#disk-based-joins)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [numeric](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric)
 * Default value: 0
 
 ### [infinidb\_use\_decimal\_scale](columnstore-system-variables.md#columnstore-decimal-scale)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: OFF
 * Range: OFF, ON
@@ -128,7 +128,7 @@
 ### [infinidb\_use\_import\_for\_batchinsert](columnstore-system-variables.md#batch-insert-mode-for-inserts)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: ON
 * Range: OFF, ON
@@ -136,7 +136,7 @@
 ### infinidb\_varbin\_always\_hex
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: ON
 * Range: OFF, ON
@@ -144,7 +144,7 @@
 ### [infinidb\_vtable\_mode](columnstore-system-variables.md#operating-mode)
 
 * Command line: Yes
-* Scope: Both
+* Scope: global, session
 * Data type: [enumeration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum)
 * Default value: 1
 * Range: 0,1,2
