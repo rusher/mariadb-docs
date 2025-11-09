@@ -628,6 +628,7 @@
     * [Options, System & Status Variables](reference/full-list-of-mariadb-options-system-and-status-variables.md)
     * [Server Status Variables](ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md)
     * [Server System Variables](ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)
+    * [NEW\_MODE](server-management/variables-and-modes/new_mode.md)
     * [OLD\_MODE](server-management/variables-and-modes/old-mode.md)
     * [SQL\_MODE](server-management/variables-and-modes/sql-mode.md)
     * [SQL\_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modemssql)
