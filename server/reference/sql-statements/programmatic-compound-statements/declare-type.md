@@ -12,6 +12,8 @@ This feature is available from MariaDB 12.1.
 
 ## Overview
 
+One of the standout features of Oracle PL/SQL is the associative array — a versatile and efficient in-memory data structure that developers rely on for fast temporary lookups, streamlined batch processing, and dynamic report generation.
+
 `DECLARE TYPE` adds support for Oracle-style `INDEX BY` tables (associative arrays) for stored routines and anonymous blocks, using this syntax:
 
 ```sql
@@ -25,13 +27,38 @@ DECLARE
 
 It supports the following associative array methods:
 
-* FIRST
-* LAST
-* NEXT
-* PRIOR
-* COUNT
-* EXISTS
-* DELETE
+* `FIRST` — a function that returns the first key
+* `LAST` — a function that returns the last key
+* `NEXT` — a function that returns the key after the given one
+* `PRIOR` — a function that returns the key before the given one
+* `COUNT` — a function that returns the number of elements
+* `EXISTS` — a function that returns `TRUE` if the key exists
+* `DELETE` — a procedure that removes a specific key, or clears the array
+
+## Associative Arrays
+
+In Oracle, associative arrays (called index-by tables) are sparse collections of elements indexed by keys, which can be integers or strings.&#x20;
+
+Here’s an example of how to declare an associative array in Oracle:
+
+```sql
+DECLARE
+  TYPE array_t IS TABLE OF VARCHAR2(64) INDEX BY PLS_INTEGER;
+  array array_t;
+BEGIN
+  array(1) := 'Hello';
+  array(2) := 'World';
+  DBMS_OUTPUT.PUT_LINE(array(1));
+END;
+```
+
+While the MariaDB implementation is largely aligned with Oracle’s implementation, there are a few differences:
+
+* **Only literals as keys in the constructor**: When using constructors, keys must be literals — Oracle allows expressions.
+* **Collation control**: Instead of `NLS_SORT` or `NLS_COMP`, MariaDB uses the SQL-standard `COLLATE` clause.
+* **No nested associative arrays**: Arrays of arrays are not supported.
+
+These differences are largely rooted in architectural constraints — MariaDB is aiming at staying as close to Oracle semantics as possible while maintaining performance and predictability.
 
 ## Examples
 
