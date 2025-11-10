@@ -3792,6 +3792,7 @@
       * [Error 4204: Invalid binary vector format](reference/error-codes/mariadb-error-codes-4200-to-4299/e4204.md)
       * [Error 4205: Invalid vector format at offset](reference/error-codes/mariadb-error-codes-4200-to-4299/e4205.md)
       * [Error 4206: Cannot determine distance type for VEC\_DISTANCE, index is not found](reference/error-codes/mariadb-error-codes-4200-to-4299/e4206.md)
+      * [Error 4225: Optimizer hints at the INSERT part of a INSERT..SELECT statement are not supported](reference/error-codes/mariadb-error-codes-4200-to-4299/error-4225-optimizer-hints-at-the-insert-part-of-a-insert..select-statement-are-not-supported.md)
       * [Error 4226: Slave SQL thread aborted](reference/error-codes/mariadb-error-codes-4200-to-4299/e4226.md)
   * [Client/Server Protocol](reference/clientserver-protocol/README.md)
     * [Protocol Data Types](reference/clientserver-protocol/protocol-data-types.md)
