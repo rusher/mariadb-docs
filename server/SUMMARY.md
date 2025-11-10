@@ -1650,6 +1650,7 @@
       * [DECLARE CONDITION](reference/sql-statements/programmatic-compound-statements/declare-condition.md)
       * [DECLARE HANDLER](reference/sql-statements/programmatic-compound-statements/declare-handler.md)
       * [DECLARE Variable](reference/sql-statements/programmatic-compound-statements/declare-variable.md)
+      * [DECLARE TYPE](reference/sql-statements/programmatic-compound-statements/declare-type.md)
       * [FOR](reference/sql-statements/programmatic-compound-statements/for.md)
       * [GOTO](reference/sql-statements/programmatic-compound-statements/goto.md)
       * [IF](reference/sql-statements/programmatic-compound-statements/if.md)
