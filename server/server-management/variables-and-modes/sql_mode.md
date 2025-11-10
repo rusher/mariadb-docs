@@ -2,7 +2,7 @@
 
 MariaDB supports several different modes which allow you to tune it to suit your needs.
 
-The most important ways for doing this are using `SQL_MODE` (controlled by the [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable) and [OLD\_MODE](old-mode.md) (the [old\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable). `SQL_MODE` is used for getting MariaDB to emulate behavior from other SQL servers, while [OLD\_MODE](old-mode.md) is used for emulating behavior from older MariaDB or MySQL versions.
+The most important ways for doing this are using `SQL_MODE` (controlled by the [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable) and [OLD\_MODE](old_mode.md) (the [old\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable). `SQL_MODE` is used for getting MariaDB to emulate behavior from other SQL servers, while [OLD\_MODE](old_mode.md) is used for emulating behavior from older MariaDB or MySQL versions.
 
 `SQL_MODE`is a string with different options separated by commas ('`,`') without spaces. The options are case insensitive.
 
@@ -45,7 +45,7 @@ Note, that MariaDB assumes that table content matches the current setting of thi
 
 Changes the SQL syntax to be closer to ANSI SQL.
 
-Sets: [REAL\_AS\_FLOAT](sql-mode.md#real_as_float), [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space).
+Sets: [REAL\_AS\_FLOAT](sql_mode.md#real_as_float), [PIPES\_AS\_CONCAT](sql_mode.md#pipes_as_concat), [ANSI\_QUOTES](sql_mode.md#ansi_quotes), [IGNORE\_SPACE](sql_mode.md#ignore_space).
 
 It also adds a restriction: an error will be returned if a subquery uses an [aggregating function](../../reference/sql-functions/aggregate-functions/) with a reference to a column from an outer query in a way that cannot be resolved.
 
@@ -57,7 +57,7 @@ Changes `"` to be treated as \`\`\`, the identifier quote character. This may br
 
 #### DB2
 
-Same as: [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes) , [IGNORE\_SPACE](sql-mode.md#ignore_space), [DB2](sql-mode.md#db2), [NO\_KEY\_OPTIONS](sql-mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options)
+Same as: [PIPES\_AS\_CONCAT](sql_mode.md#pipes_as_concat), [ANSI\_QUOTES](sql_mode.md#ansi_quotes) , [IGNORE\_SPACE](sql_mode.md#ignore_space), [DB2](sql_mode.md#db2), [NO\_KEY\_OPTIONS](sql_mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql_mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql_mode.md#no_field_options)
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
@@ -83,7 +83,7 @@ Allow one to have spaces (including tab characters and new line characters) betw
 
 #### MAXDB
 
-Same as: [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space), [MAXDB](sql-mode.md#maxdb), [NO\_KEY\_OPTIONS](sql-mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options), [NO\_AUTO\_CREATE\_USER](sql-mode.md#no_auto_create_user).
+Same as: [PIPES\_AS\_CONCAT](sql_mode.md#pipes_as_concat), [ANSI\_QUOTES](sql_mode.md#ansi_quotes), [IGNORE\_SPACE](sql_mode.md#ignore_space), [MAXDB](sql_mode.md#maxdb), [NO\_KEY\_OPTIONS](sql_mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql_mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql_mode.md#no_field_options), [NO\_AUTO\_CREATE\_USER](sql_mode.md#no_auto_create_user).
 
 Also has the effect of silently converting [TIMESTAMP](../../reference/data-types/date-and-time-data-types/timestamp.md) fields into [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md) fields when created or modified.
 
@@ -91,7 +91,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-st
 
 #### MSSQL
 
-Additionally implies the following: [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space), [NO\_KEY\_OPTIONS](sql-mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options).
+Additionally implies the following: [PIPES\_AS\_CONCAT](sql_mode.md#pipes_as_concat), [ANSI\_QUOTES](sql_mode.md#ansi_quotes), [IGNORE\_SPACE](sql_mode.md#ignore_space), [NO\_KEY\_OPTIONS](sql_mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql_mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql_mode.md#no_field_options).
 
 Additionally from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes), implements a limited subset of Microsoft SQL Server's language. See [SQL\_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modemssql) for more.
 
@@ -99,11 +99,11 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-st
 
 #### MYSQL323
 
-Same as: [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options), [HIGH\_NOT\_PRECEDENCE](sql-mode.md#high_not_precedence).
+Same as: [NO\_FIELD\_OPTIONS](sql_mode.md#no_field_options), [HIGH\_NOT\_PRECEDENCE](sql_mode.md#high_not_precedence).
 
 #### MYSQL40
 
-Same as: [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options), [HIGH\_NOT\_PRECEDENCE](sql-mode.md#high_not_precedence).
+Same as: [NO\_FIELD\_OPTIONS](sql_mode.md#no_field_options), [HIGH\_NOT\_PRECEDENCE](sql_mode.md#high_not_precedence).
 
 #### NO\_AUTO\_CREATE\_USER
 
@@ -155,9 +155,9 @@ For [SELECT ... GROUP BY](../../reference/sql-statements/data-manipulation/selec
 
 #### ORACLE
 
-In all versions of MariaDB up to [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), this sets `sql_mode` that is equivalent to: [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space), [NO\_KEY\_OPTIONS](sql-mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options), [NO\_AUTO\_CREATE\_USER](sql-mode.md#no_auto_create_user)
+In all versions of MariaDB up to [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), this sets `sql_mode` that is equivalent to: [PIPES\_AS\_CONCAT](sql_mode.md#pipes_as_concat), [ANSI\_QUOTES](sql_mode.md#ansi_quotes), [IGNORE\_SPACE](sql_mode.md#ignore_space), [NO\_KEY\_OPTIONS](sql_mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql_mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql_mode.md#no_field_options), [NO\_AUTO\_CREATE\_USER](sql_mode.md#no_auto_create_user)
 
-From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), this mode also sets [SIMULTANEOUS\_ASSIGNMENT](sql-mode.md#simultaneous_assignment) and configures the server to understand a large subset of Oracle's PL/SQL language instead of MariaDB's traditional syntax for stored routines. See [SQL\_MODE=ORACLE From MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle).
+From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), this mode also sets [SIMULTANEOUS\_ASSIGNMENT](sql_mode.md#simultaneous_assignment) and configures the server to understand a large subset of Oracle's PL/SQL language instead of MariaDB's traditional syntax for stored routines. See [SQL\_MODE=ORACLE From MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle).
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
@@ -171,7 +171,7 @@ Allows using the pipe character (ASCII 124) as string concatenation operator. Th
 
 #### POSTGRESQL
 
-Same as: [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space), [POSTGRESQL](sql-mode.md#postgresql), [NO\_KEY\_OPTIONS](sql-mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options).
+Same as: [PIPES\_AS\_CONCAT](sql_mode.md#pipes_as_concat), [ANSI\_QUOTES](sql_mode.md#ansi_quotes), [IGNORE\_SPACE](sql_mode.md#ignore_space), [POSTGRESQL](sql_mode.md#postgresql), [NO\_KEY\_OPTIONS](sql_mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql_mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql_mode.md#no_field_options).
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
@@ -197,7 +197,7 @@ With this mode unset, MariaDB truncates fractional seconds when changing precisi
 
 #### TRADITIONAL
 
-Makes MariaDB work like a traditional SQL server. Same as: [STRICT\_TRANS\_TABLES](sql-mode.md#strict_trans_tables), [STRICT\_ALL\_TABLES](sql-mode.md#strict_all_tables), [NO\_ZERO\_IN\_DATE](sql-mode.md#no_zero_in_date), [NO\_ZERO\_DATE](sql-mode.md#no_zero_date), [ERROR\_FOR\_DIVISION\_BY\_ZERO](sql-mode.md#error_for_division_by_zero), [NO\_ENGINE\_SUBSTITUTION](sql-mode.md#no_engine_substitution), [NO\_AUTO\_CREATE\_USER](sql-mode.md#no_auto_create_user).
+Makes MariaDB work like a traditional SQL server. Same as: [STRICT\_TRANS\_TABLES](sql_mode.md#strict_trans_tables), [STRICT\_ALL\_TABLES](sql_mode.md#strict_all_tables), [NO\_ZERO\_IN\_DATE](sql_mode.md#no_zero_in_date), [NO\_ZERO\_DATE](sql_mode.md#no_zero_date), [ERROR\_FOR\_DIVISION\_BY\_ZERO](sql_mode.md#error_for_division_by_zero), [NO\_ENGINE\_SUBSTITUTION](sql_mode.md#no_engine_substitution), [NO\_AUTO\_CREATE\_USER](sql_mode.md#no_auto_create_user).
 
 ## Strict Mode
 

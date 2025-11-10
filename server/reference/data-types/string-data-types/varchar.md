@@ -128,7 +128,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 ## Truncation
 
-* Depending on whether or not [strict sql mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is set, you will either get a warning or an error if you try to insert a string that is too long into a `VARCHAR` column. If the extra characters are spaces, the spaces that can't fit will be removed and you will always get a warning, regardless of the [sql mode](../../../server-management/variables-and-modes/sql-mode.md) setting.
+* Depending on whether or not [strict sql mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) is set, you will either get a warning or an error if you try to insert a string that is too long into a `VARCHAR` column. If the extra characters are spaces, the spaces that can't fit will be removed and you will always get a warning, regardless of the [sql mode](../../../server-management/variables-and-modes/sql_mode.md) setting.
 
 ## Difference Between VARCHAR and TEXT
 

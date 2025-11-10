@@ -41,7 +41,7 @@ The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports 
 
 {% tabs %}
 {% tab title="Current" %}
-### Skipping Long CHAR/VARCHAR Columns
+#### Skipping Long CHAR/VARCHAR Columns
 
 From [MariaDB 10.6.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10.6.23-release-notes), [MariaDB 10.11.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.14-release-notes), [MariaDB 11.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes), [MariaDB 11.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11.8.3-release-notes), [MariaDB 12.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes), [MariaDB 12.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes), and [MariaDB Enterprise 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/11.8/whats-new-in-mariadb-enterprise-server-11.8) when using `ANALYZE TABLE PERSISTENT`, MariaDB skips long [`CHAR`](../../data-types/string-data-types/char.md)/[`VARCHAR`](../../data-types/string-data-types/varchar.md) columns during statistics collection if they exceed the value of the [`analyze_max_length`](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_max_length) system variable.
 
@@ -107,7 +107,7 @@ Running `ANALYZE` is indicated:
 
 ### Overview
 
-`ANALYZE TABLE` supports [engine-independent table statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md) (EITS). See [Engine-Independent Table Statistics: Collecting Statistics with the ANALYZE TABLE Statement](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#collecting-statistics-with-the-analyze-table-statement) for more information.&#x20;
+`ANALYZE TABLE` supports [engine-independent table statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md) (EITS). See [Engine-Independent Table Statistics: Collecting Statistics with the ANALYZE TABLE Statement](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#collecting-statistics-with-the-analyze-table-statement) for more information.
 
 You can run the statement on all columns with this statement — however, be aware that this can take a long time for very large (500+ GB) tables:
 
@@ -143,7 +143,7 @@ WHERE
 Here, the optimizer benefits from knowing these statistics:
 
 1. Which fraction of customers are in the EMEA region?
-2. Which fraction of orders are URGENT?&#x20;
+2. Which fraction of orders are URGENT?
 
 For that situation, you can issue this statement:
 

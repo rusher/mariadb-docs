@@ -73,7 +73,7 @@ CREATE USER, [DROP USER](drop-user.md), [CREATE ROLE](create-role.md), and [DROP
 
 See [Account Names](create-user.md#account-names) below for details on how account names are specified.
 
-One can also create users with [GRANT](grant.md) if [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have [NO\_AUTO\_CREATE\_USER](../../../server-management/variables-and-modes/sql-mode.md#no_auto_create_user) set. `NO_AUTO_CREATE_USER` is set by default.
+One can also create users with [GRANT](grant.md) if [SQL\_MODE](../../../server-management/variables-and-modes/sql_mode.md) does not have [NO\_AUTO\_CREATE\_USER](../../../server-management/variables-and-modes/sql_mode.md#no_auto_create_user) set. `NO_AUTO_CREATE_USER` is set by default.
 
 ## OR REPLACE
 

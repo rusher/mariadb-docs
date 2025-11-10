@@ -178,7 +178,7 @@ with the exception that any existing [privileges](../stored-functions/stored-rou
 
 ### sql\_mode
 
-MariaDB stores the [sql\_mode](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable setting that is in effect at the time a routine is created, and always executes the routine with this setting in force, regardless of the server [SQL mode](../../../server-management/variables-and-modes/sql-mode.md) in effect when the routine is invoked.
+MariaDB stores the [sql\_mode](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable setting that is in effect at the time a routine is created, and always executes the routine with this setting in force, regardless of the server [SQL mode](../../../server-management/variables-and-modes/sql_mode.md) in effect when the routine is invoked.
 
 ### Character Sets and Collations
 

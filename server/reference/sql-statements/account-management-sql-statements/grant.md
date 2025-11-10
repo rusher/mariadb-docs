@@ -89,7 +89,7 @@ The `GRANT` statement also allows you to implicitly create accounts in some case
 
 If the account does not yet exist, then `GRANT` can implicitly create it. To implicitly create an account with `GRANT`, a user is required to have the same privileges that would be required to explicitly create the account with the `CREATE USER` statement.
 
-If the `NO_AUTO_CREATE_USER` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is set, then accounts can only be created if authentication information is specified, or with a [CREATE USER](create-user.md) statement. If no authentication information is provided, `GRANT` will produce an error when the specified account does not exist, for example:
+If the `NO_AUTO_CREATE_USER` [SQL\_MODE](../../../server-management/variables-and-modes/sql_mode.md) is set, then accounts can only be created if authentication information is specified, or with a [CREATE USER](create-user.md) statement. If no authentication information is provided, `GRANT` will produce an error when the specified account does not exist, for example:
 
 ```sql
 SHOW VARIABLES LIKE '%sql_mode%' ;

@@ -10,7 +10,7 @@ Some features are meant to improve syntax and semantics compatibility between Ma
 
 ### sql\_mode and old\_mode
 
-SQL semantics and syntax, in MariaDB, are affected by the [sql\_mode](../../../variables-and-modes/sql-mode.md) variable. Its value is a comma-separated list of flags, and each of them, if specified, affects a different aspect of SQL syntax and semantics.
+SQL semantics and syntax, in MariaDB, are affected by the [sql\_mode](../../../variables-and-modes/sql_mode.md) variable. Its value is a comma-separated list of flags, and each of them, if specified, affects a different aspect of SQL syntax and semantics.
 
 A particularly important flag for users familiar with SQL Server is [MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modemssql).
 
@@ -28,7 +28,7 @@ SET GLOBAL sql_mode = '';
 SET SESSION sql_mode = CONCAT(sql_mode, ',MSSQL');
 ```
 
-[old\_mode](../../../variables-and-modes/old-mode.md) is very similar to sql\_mode, but its purpose is to provide compatibility with older MariaDB versions. Its flags shouldn't affect compatibility with SQL Server (though it is theoretically possible that some of them do, as a side effect).
+[old\_mode](../../../variables-and-modes/old_mode.md) is very similar to sql\_mode, but its purpose is to provide compatibility with older MariaDB versions. Its flags shouldn't affect compatibility with SQL Server (though it is theoretically possible that some of them do, as a side effect).
 
 ### Executable Comments
 
@@ -85,7 +85,7 @@ END;
 
 If we enter this procedure in this way in the `mariadb` client, as soon as we type the first `;` (after the first `SELECT`) and press enter, the statement will be sent. MariaDB will try to parse it, and will return an error.
 
-To avoid this, `mariadb` implements the [DELIMITER](broken-reference) statement. This client statement is never sent to MariaDB. Instead, the client uses it to find out when the typed query should be sent. Let's correct the above example:
+To avoid this, `mariadb` implements the [DELIMITER](broken-reference/) statement. This client statement is never sent to MariaDB. Instead, the client uses it to find out when the typed query should be sent. Let's correct the above example:
 
 ```
 DELIMITER ||

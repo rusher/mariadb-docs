@@ -44,7 +44,7 @@ or
 NEXTVAL(sequence_name)
 ```
 
-or in Oracle mode ([SQL\_MODE=ORACLE](../../../server-management/variables-and-modes/sql-mode.md))
+or in Oracle mode ([SQL\_MODE=ORACLE](../../../server-management/variables-and-modes/sql_mode.md))
 
 ```
 sequence_name.nextval
@@ -62,7 +62,7 @@ or
 LASTVAL(sequence_name)
 ```
 
-or in Oracle mode ([SQL\_MODE=ORACLE](../../../server-management/variables-and-modes/sql-mode.md))
+or in Oracle mode ([SQL\_MODE=ORACLE](../../../server-management/variables-and-modes/sql_mode.md))
 
 ```
 sequence_name.currval

@@ -4,9 +4,9 @@ The [old\_mode](../../ha-and-performance/optimization-and-tuning/system-variable
 
 MariaDB supports several different modes which allow you to tune it to suit your needs.
 
-The most important ways for doing this are with [SQL\_MODE](sql-mode.md) and `OLD_MODE`.
+The most important ways for doing this are with [SQL\_MODE](sql_mode.md) and `OLD_MODE`.
 
-[SQL\_MODE](sql-mode.md) is used for getting MariaDB to emulate behavior from other SQL servers, while `OLD_MODE` is used for emulating behavior from older MariaDB or MySQL versions.
+[SQL\_MODE](sql_mode.md) is used for getting MariaDB to emulate behavior from other SQL servers, while `OLD_MODE` is used for emulating behavior from older MariaDB or MySQL versions.
 
 `OLD_MODE` is a string with different options separated by commas ('`,`') without spaces. The options are case insensitive.
 
@@ -72,7 +72,7 @@ When a [TIME](../../reference/data-types/date-and-time-data-types/time.md) value
 
 ## OLD\_MODE and Stored Programs
 
-In contrast to [SQL\_MODE](sql-mode.md), [stored programs](../../server-usage/stored-routines/) use the current user's `OLD_MODE`value.
+In contrast to [SQL\_MODE](sql_mode.md), [stored programs](../../server-usage/stored-routines/) use the current user's `OLD_MODE`value.
 
 Changes to `OLD_MODE` are not sent to replicas.
 

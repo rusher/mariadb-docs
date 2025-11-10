@@ -106,7 +106,7 @@ It is possible to create stored aggregate functions as well. See [Stored Aggrega
 
 The `RETURNS` clause specifies the return type of the function. `NULL` values are permitted with all return types.
 
-What happens if the `RETURN` clause returns a value of a different type? It depends on the [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) in effect at the moment of the function creation.
+What happens if the `RETURN` clause returns a value of a different type? It depends on the [SQL\_MODE](../../../../server-management/variables-and-modes/sql_mode.md) in effect at the moment of the function creation.
 
 If the SQL\_MODE is strict (STRICT\_ALL\_TABLES or STRICT\_TRANS\_TABLES flags are specified), a 1366 error will be produced.
 
@@ -214,7 +214,7 @@ SELECT hello('world');
 +----------------+
 ```
 
-You can use a compound statement in a function to manipulate data with statements like `INSERT` and `UPDATE`. The following example creates a counter function that uses a temporary table to store the current value. Because the compound statement contains statements terminated with semicolons, you have to first change the statement delimiter with the `DELIMITER` statement to allow the semicolon to be used in the function body. See [Delimiters in the mariadb client](broken-reference) for more.
+You can use a compound statement in a function to manipulate data with statements like `INSERT` and `UPDATE`. The following example creates a counter function that uses a temporary table to store the current value. Because the compound statement contains statements terminated with semicolons, you have to first change the statement delimiter with the `DELIMITER` statement to allow the semicolon to be used in the function body. See [Delimiters in the mariadb client](broken-reference/) for more.
 
 ```sql
 CREATE TEMPORARY TABLE counter (c INT);

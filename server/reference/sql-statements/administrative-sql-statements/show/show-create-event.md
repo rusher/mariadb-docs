@@ -8,7 +8,7 @@ SHOW CREATE EVENT event_name
 
 ## Description
 
-This statement displays the [CREATE EVENT](../../data-definition/create/create-event.md) statement that creates a given [event](../../../../server-usage/triggers-events/event-scheduler/events.md), as well as the [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) that was used when the trigger was created, and the character set used by the connection. To find out which events are present, use [SHOW EVENTS](show-events.md).
+This statement displays the [CREATE EVENT](../../data-definition/create/create-event.md) statement that creates a given [event](../../../../server-usage/triggers-events/event-scheduler/events.md), as well as the [SQL\_MODE](../../../../server-management/variables-and-modes/sql_mode.md) that was used when the trigger was created, and the character set used by the connection. To find out which events are present, use [SHOW EVENTS](show-events.md).
 
 {% tabs %}
 {% tab title="Current" %}
