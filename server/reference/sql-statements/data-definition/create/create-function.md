@@ -46,6 +46,10 @@ Each parameter can be declared to use any valid data type, except that the `COLL
 
 For valid identifiers to use as function names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
+### RETURN
+
+The `RETURN` clause can return a function body. In newer versions of MariaDB, it can also return a cursor (using `SYS_REFCURSOR`).
+
 {% tabs %}
 {% tab title="Current" %}
 ### RETURN `func_body`
