@@ -130,7 +130,7 @@ parameter.
 
 ### DEFAULT value or expression
 
-As of [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118), each parameter can be defined as having a default value or expression. This can be useful if needing to add extra parameters to a procedure which is already in use.
+As of [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8), each parameter can be defined as having a default value or expression. This can be useful if needing to add extra parameters to a procedure which is already in use.
 
 ### DETERMINISTIC/NOT DETERMINISTIC
 
@@ -142,7 +142,7 @@ As of [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-se
 
 `MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md), [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md), [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) or DDL.
 
-`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements are used, but there no write operations are executed.
+`READS SQL DATA` means that the function reads data stored in databases but does not modify any data. This happens if [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements are used, but there no write operations are executed.
 
 `CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) or [DO](../../../reference/sql-statements/stored-routine-statements/do.md).
 
@@ -178,7 +178,7 @@ with the exception that any existing [privileges](../stored-functions/stored-rou
 
 ### sql\_mode
 
-MariaDB stores the [sql\_mode](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable setting that is in effect at the time a routine is created, and always executes the routine with this setting in force, regardless of the server [SQL mode](../../../server-management/variables-and-modes/sql_mode.md) in effect when the routine is invoked.
+MariaDB stores the [sql\_mode](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable setting that is in effect at the time a routine is created and always executes the routine with this setting in force, regardless of the server [SQL mode](../../../server-management/variables-and-modes/sql_mode.md) in effect when the routine is invoked.
 
 ### Character Sets and Collations
 
@@ -191,7 +191,7 @@ A subset of Oracle's PL/SQL language is supported in addition to the traditional
 ## Examples
 
 The following example shows a simple stored procedure that uses an `OUT`\
-parameter. It uses the DELIMITER command to set a new delimiter for the duration of the process — see [Delimiters in the mariadb client](broken-reference/).
+parameter. It uses the DELIMITER command to set a new delimiter for the duration of the process — see [Delimiters in the mariadb client](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md#delimiters).
 
 ```sql
 DELIMITER //
