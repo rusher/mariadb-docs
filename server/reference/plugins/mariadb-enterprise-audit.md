@@ -1155,6 +1155,10 @@ When audit logging is started and it is directed to syslog, MariaDB Enterprise A
 
 For additional information, see "[Start Audit Logging](mariadb-enterprise-audit.md#start-audit-logging)" and "[Audit Logging to Syslog](mariadb-enterprise-audit.md#audit-logging-to-system-log)".
 
+```log
+2021-08-03 22:02:45 server_audit: logging started to the syslog.
+```
+
 ### Stop Audit Logging
 
 When audit logging is stopped, MariaDB Enterprise Audit writes the following message in the MariaDB error log:
