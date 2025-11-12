@@ -3795,6 +3795,7 @@
       * [Error 4221: Unresolved table name for hint](reference/error-codes/mariadb-error-codes-4200-to-4299/e4221.md)
       * [Error 4222: Unresolved index name for hint](reference/error-codes/mariadb-error-codes-4200-to-4299/e4222.md)
       * [Error 4223: Optimizer hints are not supported inside view definitions](reference/error-codes/mariadb-error-codes-4200-to-4299/e4223.md)
+      * [Error 4224: Hint is ignored as malformed](reference/error-codes/mariadb-error-codes-4200-to-4299/e4224.md)
       * [Error 4225: Optimizer hints at the INSERT part of a INSERT..SELECT statement are not supported](reference/error-codes/mariadb-error-codes-4200-to-4299/e4225.md)
       * [Error 4226: Slave SQL thread aborted](reference/error-codes/mariadb-error-codes-4200-to-4299/e4226.md)
   * [Client/Server Protocol](reference/clientserver-protocol/README.md)
