@@ -32,7 +32,7 @@ Connection is done by many exchanges:
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) protocol version.
 * [string](../protocol-data-types.md#null-terminated-strings) server version
-  * MariaDB Server 10.X versions are by default prefixed "5.5.5-".&#x20;
+  * MariaDB Server 10.X versions are by default prefixed "5.5.5-".
   * [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110) and later versions do not have a "5.5.5-" default prefix.
 * [int<4>](../protocol-data-types.md#fixed-length-integers) connection id.
 * [string<8>](../protocol-data-types.md#fixed-length-strings) authentication plugin data (1st part).
@@ -272,7 +272,7 @@ client with capabilities CLIENT\_MYSQL + CONNECT\_WITH\_DB will have a value of 
 | FOUND\_ROWS                             | 2       |                                                                                                                                                                                      |
 | CONNECT\_WITH\_DB                       | 8       | You can specify database on connect.                                                                                                                                                 |
 | COMPRESS                                | 32      | Can use compression protocol                                                                                                                                                         |
-| LOCAL\_FILES                            | 128     | Can use [LOAD DATA LOCAL](broken-reference).                                                                                                                                         |
+| LOCAL\_FILES                            | 128     | Can use [LOAD DATA LOCAL](../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md#load-data-local-infile).                  |
 | IGNORE\_SPACE                           | 256     | Ignore spaces before `(`.                                                                                                                                                            |
 | CLIENT\_PROTOCOL\_41                    | 1 << 9  | 4.1 protocol.                                                                                                                                                                        |
 | CLIENT\_INTERACTIVE                     | 1 << 10 |                                                                                                                                                                                      |
