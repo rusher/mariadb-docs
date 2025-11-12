@@ -29,8 +29,10 @@ Generally, we recommend not to use [NFS](https://en.wikipedia.org/wiki/Network_F
 * MariaDB data and log files on NFS volumes can become locked and unavailable for use. Locking issues may occur in cases where multiple instances of MariaDB access the same data directory, or when MariaDB is shut down improperly, for instance, due to a power outage. In particular, sharing a data directory among MariaDB instances is not recommended.
 * Data inconsistencies due to messages received out of order or lost network traffic. To avoid this issue, use TCP with `hard` and `intr` mount options.
 
-Using NFS within a professional SAN environment or other storage system tends to offer greater reliability than using NFS outside of such an environment. However, NFS within a SAN environment may be slower than directly attached or bus-attached non-rotational storage.
+Using NFS within a professional SAN[^1] environment or other storage system tends to offer greater reliability than using NFS outside of such an environment. However, NFS within a SAN environment may be slower than directly attached or bus-attached non-rotational storage.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
+
+[^1]: A Storage Area Network (SAN) is a dedicated high-speed network that connects storage devices to servers, enabling the storage to appear as if it is directly attached to the server's operating system.
