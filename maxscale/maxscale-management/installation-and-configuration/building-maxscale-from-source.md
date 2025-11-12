@@ -7,7 +7,7 @@ requirements are as follows:
 
 * CMake version 3.16 or later (Packaging requires CMake 3.25.1 or later)
 * GCC version 4.9 or later
-* OpenSSL version 1.0.1 or later
+* OpenSSL version 1.1.1 or later
 * GNUTLS
 * Node.js 14 or newer for building MaxCtrl and the GUI (webpack), Node.js 10 or newer for running MaxCtrl
 * PAM
@@ -58,14 +58,16 @@ sudo ./postinst
 
 ### Required Packages
 
-For a definitive list of packages, consult the [install\_build\_deps.sh](https://mariadb.com/BUILD/install_build_deps.sh) script.
+For a definitive list of packages, consult the
+[install\_build\_deps.sh](https://github.com/mariadb-corporation/MaxScale/BUILD/install_build_deps.sh) script.
 
 ### Configuring the Build
 
 The tests and other parts of the build can be controlled via CMake arguments.
 
 Here is a small table with the names of the most common parameters and what
-they control. These should all be given as parameters to the -D switch i&#x6E;_&#x4E;AME_=_VALUE_ format (e.g. `-DBUILD_TESTS=Y`).
+they control. These should all be given as parameters to the -D switch
+in _NAME_=_VALUE_ format (e.g. `-DBUILD_TESTS=Y`).
 
 | Argument Name          | Explanation                                                                                                                                                                |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -76,7 +78,7 @@ they control. These should all be given as parameters to the -D switch i&#x6E;_&
 | TARGET\_COMPONENT      | Which component to install, default is the 'core' package. Other targets are 'experimental', which installs experimental packages and 'all' which installs all components. |
 | TARBALL                | Build tar.gz packages, requires PACKAGE=Y                                                                                                                                  |
 
-**Note**: You can look into [defaults.cmake](https://mariadb.com/cmake/defaults.cmake) for a
+**Note**: You can look into `defaults.cmake` for a
 list of the CMake variables.
 
 ### Running unit tests

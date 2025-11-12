@@ -16,9 +16,11 @@ See [About Spaces](about-links.md#about-spaces) for information on what Spaces a
 
 In GitBook (our documentation system), _**Spaces**_ are the main sections of the site you see along the top of every docs page:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../../.gitbook/assets/spaces-dark.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/spaces-light.png" alt=""></picture><figcaption></figcaption></figure>
 
 What space you are in is very important in determining whether you need to use a [Relative](about-links.md#relative-links) or [Space](about-links.md#space-links) link. Gitbook identifies Spaces via a unique space identifier. See the [Space Links](about-links.md#space-links) section for more details. We also have a handy [list of Space prefixes](about-links.md#list-of-space-prefixes) for use when creating space links in Markdown.
+
+In the [documentation source repository](https://github.com/mariadb-corporation/mariadb-docs) on GitHub, the spaces are the top-level folders.
 
 ## External Links
 
@@ -46,9 +48,9 @@ This page you are currently reading is under the [General Resources](https://app
 
 ## Space Links
 
-To link to pages in other [Spaces](about-links.md#about-spaces) we need to use special Space Links which use an internal identifier so that GitBook knows exactly what page you are pointing to.
+To link to pages in other [Spaces](about-links.md#about-spaces) we need to use special _Space Links_ which use an internal identifier so that GitBook knows exactly what page you are pointing to.
 
-A space link begins with `https://app.gitbook.com/s/` , followed by a unique alphanumeric _`space identifier`_ (in this doc we'll call both of these together the _`space prefix`_), and finally the _`path`_ to the page.
+A space link begins with `https://app.gitbook.com/s/` , followed by a unique alphanumeric _`space identifier`_ (in this doc we'll call both of these together the _`space prefix`_), and finally the _`path`_ to the page _**without**_ the final `.md` extension that exists in the source code.
 
 The _`path`_ is everything after the space name in a full page URI. For example, take the following full URI for the [Securing MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb) page:
 
@@ -76,55 +78,61 @@ See the [List of Space Prefixes](about-links.md#list-of-space-prefixes) section 
 
 A handy list of all space prefixes for the MariaDB Docs:
 
-#### MariaDB Platform space prefix
+#### [MariaDB Platform](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/) space prefix
 
 ```
 https://app.gitbook.com/s/JqgUabdZsoY5EiaJmqgn
 ```
 
-#### Server space prefix
+#### [Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) space prefix
 
 ```
 https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV
 ```
 
-#### MaxScale space prefix
+#### [MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) space prefix
 
 ```
 https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX
 ```
 
-#### ColumnStore space prefix
+#### [Analytics](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/) space prefix
 
 ```
 https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14
 ```
 
-#### Galera Cluster space prefix
+#### [Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) space prefix
 
 ```
 https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7
 ```
 
-#### Connectors space prefix
+#### [Connectors](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/) space prefix
 
 ```
 https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L
 ```
 
-#### Tools space prefix
+#### [Tools](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/kuTXWg0NDbRx6XUeYpGD/) space prefix
 
 ```
 https://app.gitbook.com/s/kuTXWg0NDbRx6XUeYpGD
 ```
 
-#### Release Notes space prefix
+#### [MariaDB Cloud](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/vPz15Lz0Iw3P3yKR3Prd/) space prefix
+
+```
+https://app.gitbook.com/s/vPz15Lz0Iw3P3yKR3Prd
+```
+
+#### [Release Notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/) space prefix
 
 ```
 https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb
 ```
 
-#### General Resources space prefix
+#### [General Resources](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/WCInJQ9cmGjq1lsTG91E/) space prefix
 
 ```
 https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E
@@ -137,7 +145,7 @@ Here are some examples of Markdown links to various pages using space links:
 #### [Options, System & Status Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables) in the Server space
 
 ```markdown
-[Options, System & Status Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/full-list-of-mariadb-options-system-and-status-variables
+[Options, System & Status Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables)
 ```
 
 #### [MariaDB 12.1 Changes & Improvements](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1) in the Release Notes space
@@ -146,10 +154,10 @@ Here are some examples of Markdown links to various pages using space links:
 [MariaDB 12.1 Changes & Improvements](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)
 ```
 
-#### [List of MariaDB Connector/C Releases](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/list-of-mariadb-connector-c-releases) in the Connectors space
+#### [MariaDB Connector/C Guide](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/mariadb-connector-c-guide) in the Connectors space
 
 ```markdown
-[List of MariaDB Connector/C Releases/](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/list-of-mariadb-connector-c-releases)
+[MariaDB Connector/C Guide](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/mariadb-connector-c-guide)
 ```
 
 When Space Links are rendered to the public site, GitBook handles translating Space Links into a link to the correct page. And if a page is moved or renamed then the link will be automatically updated on every page it appears on.

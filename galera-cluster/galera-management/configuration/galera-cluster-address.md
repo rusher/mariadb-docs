@@ -2,7 +2,7 @@
 
 URLs in [Galera](https://mariadb.com/docs/galera-cluster) take a particular format:
 
-```
+```uri
 <schema>://<cluster_address>[?option1=value1[&option2=value2]]
 ```
 

@@ -1,4 +1,4 @@
-# System Variables
+# S3 System Variables
 
 **MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
@@ -24,7 +24,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `s3_block_size`
 
-* Description: The default block size for a table, if not specified in [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md). Set to 4M as default. See [mysqld startup options for S3](using-the-s3-storage-engine.md#mysqld-startup-options-for-s3).
+* Description: The default block size for a table, if not specified in [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md). Set to 4M as default. See [mariadbd startup options for S3](using-the-s3-storage-engine.md#mariadbd-startup-options-for-s3).
 * Command line: `--s3-block-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -35,7 +35,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `s3_bucket`
 
-* Description: The AWS bucket where your data should be stored. All MariaDB table data is stored in this bucket. See [mysqld startup options for S3](using-the-s3-storage-engine.md#mysqld-startup-options-for-s3).
+* Description: The AWS bucket where your data should be stored. All MariaDB table data is stored in this bucket. See [mariadbd startup options for S3](using-the-s3-storage-engine.md#mariadbd-startup-options-for-s3).
 * Command line: `--s3-bucket=val`
 * Scope: Global
 * Dynamic: No
@@ -166,7 +166,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `s3_region`
 
-* Description: The AWS region where your data should be stored. See [mysqld startup options for S3](using-the-s3-storage-engine.md#mysqld-startup-options-for-s3).
+* Description: The AWS region where your data should be stored. See [mariadbd startup options for S3](using-the-s3-storage-engine.md#mariadbd-startup-options-for-s3).
 * Command line: `--s3-region=val`
 * Scope: Global
 * Dynamic: No
@@ -186,7 +186,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `s3_secret_key`
 
-* Description: The AWS secret key to access your data. See [mysqld startup options for S3](using-the-s3-storage-engine.md#mysqld-startup-options-for-s3).
+* Description: The AWS secret key to access your data. See [mariadbd startup options for S3](using-the-s3-storage-engine.md#mariadbd-startup-options-for-s3).
 * Command line: `--s3-secret-key=val`
 * Scope: Global
 * Dynamic: No

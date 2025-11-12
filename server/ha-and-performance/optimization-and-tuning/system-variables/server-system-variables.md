@@ -25,7 +25,7 @@ Many of the general system variables are described on this page, but others are 
 * [SQL\_ERROR\_LOG Plugin System Variables](sql-error-log-system-variables-and-options.md)
 * [SSL System Variables](../../../security/securing-mariadb/encryption/data-in-transit-encryption/ssltls-system-variables.md)
 * [Threadpool System Variables](../buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)
-* [TokuDB System Variables](../../../server-usage/storage-engines/tokudb/tokudb-system-variables.md)
+* [TokuDB System Variables](../../../server-usage/storage-engines/legacy-storage-engines/tokudb/tokudb-system-variables.md)
 * [Vector System Variables](../../../reference/sql-structure/vectors/vector-system-variables.md)
 
 See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -125,7 +125,7 @@ The suffix can be upper or lower-case.
 * Data Type: `INT UNSIGNED`
 * Default Value: `4294967295 (4G)`
 * Range: `32` to `4294967295`
-* Introduced: [MariaDB 10.6.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10.6.23-release-notes), [MariaDB 10.11.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.14-release-notes), [MariaDB 11.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes), [MariaDB 11.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11.8.3-release-notes), [MariaDB 12.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes), [MariaDB 12.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes)
+* Introduced: [MariaDB 10.6.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10.6.23-release-notes), [MariaDB 10.11.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.14-release-notes), [MariaDB 11.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11.4.8-release-notes), [MariaDB 11.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11.8.3-release-notes), [MariaDB 12.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.2-release-notes), [MariaDB 12.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/mariadb-12.1.1-release-notes), [MariaDB Enterprise Server 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/11.8/whats-new-in-mariadb-enterprise-server-11.8)
 
 #### `analyze_sample_percentage`
 
@@ -229,9 +229,9 @@ The suffix can be upper or lower-case.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
-* Default Value:&#x20;
+* Default Value:
   * \>= [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116): `utf8mb4`
-  * <= [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115): `latin1`&#x20;
+  * <= [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115): `latin1`
 
 #### `character_set_collations`
 
@@ -261,7 +261,7 @@ The suffix can be upper or lower-case.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
-* Default Value:&#x20;
+* Default Value:
   * \>=[ MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116): `utf8mb4`
   * \>= [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106): `utf8mb3`
   * <= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105): `utf8`
@@ -621,7 +621,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `enforce_storage_engine`
 
-* Description: Force the use of a particular storage engine for new tables. Used to avoid unwanted creation of tables using another engine. For example, setting to [InnoDB](../../../server-usage/storage-engines/innodb/) will prevent any [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) tables from being created. If another engine is specified in a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement, the outcome depends on whether the `NO_ENGINE_SUBSTITUTION` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) has been set or not. If set, the query will fail, while if not set, a warning will be returned and the table created according to the engine specified by this variable. The variable has a session scope, but is only modifiable by a user with the SUPER privilege.
+* Description: Force the use of a particular storage engine for new tables. Used to avoid unwanted creation of tables using another engine. For example, setting to [InnoDB](../../../server-usage/storage-engines/innodb/) will prevent any [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) tables from being created. If another engine is specified in a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement, the outcome depends on whether the `NO_ENGINE_SUBSTITUTION` [SQL\_MODE](../../../server-management/variables-and-modes/sql_mode.md) has been set or not. If set, the query will fail, while if not set, a warning will be returned and the table created according to the engine specified by this variable. The variable has a session scope, but is only modifiable by a user with the SUPER privilege.
 * Command line: None
 * Scope: Session
 * Dynamic: Yes
@@ -1818,6 +1818,16 @@ This setting removes the artificial cap, allowing `max_connections` to scale per
 * Default Value: `60`
 * Range: `1` upwards
 
+#### `new_mode`
+
+* Description: Used to enable new behavior in otherwise stable versions. See [NEW Mode](../../../server-management/variables-and-modes/new_mode.md). Non-default NEW\_MODE options are by design deprecated and will eventually be removed.
+* Command line: `--new-mode`
+* Scope: Global, Session
+* Dynamic: Yes
+* Data Type: `string`
+* Default Value: `(empty string)`
+* Valid Values: See [NEW Mode](../../../server-management/variables-and-modes/new_mode.md) for the full list.
+
 #### `note_verbosity`
 
 * Description: Verbosity level for note-warnings given to the user. Options are added in a comma-delimited string, except for `all`, which sets all options. Be aware that if the old [sql\_notes](server-system-variables.md#sql_notes) variable is 0, one will not get any notes. Setting `note_verbosity` to "" is the recommended way to disable notes.
@@ -1857,13 +1867,13 @@ This setting removes the artificial cap, allowing `max_connections` to scale per
 
 #### `old_mode`
 
-* Description: Used for getting MariaDB to emulate behavior from an old version of MySQL or MariaDB. See [OLD Mode](../../../server-management/variables-and-modes/old-mode.md). Fully replaces the [old](server-system-variables.md#old) variable from [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109). Non-default OLD\_MODE options are by design deprecated and will eventually be removed.
+* Description: Used for getting MariaDB to emulate behavior from an old version of MySQL or MariaDB. See [OLD Mode](../../../server-management/variables-and-modes/old_mode.md). Fully replaces the [old](server-system-variables.md#old) variable from [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109). Non-default OLD\_MODE options are by design deprecated and will eventually be removed.
 * Command line: `--old-mode`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value: `UTF8_IS_UTF8MB3` (>= [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)) `(empty string)` (<= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-10-5-series/what-is-mariadb-105))
-* Valid Values: See [OLD Mode](../../../server-management/variables-and-modes/old-mode.md) for the full list.
+* Valid Values: See [OLD Mode](../../../server-management/variables-and-modes/old_mode.md) for the full list.
 
 #### `old_passwords`
 
@@ -2185,12 +2195,12 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 * Command line: `--query-alloc-block-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `BIGINT UNSIGNED`                            &#x20;
-* Default Value:&#x20;
+* Data Type: `BIGINT UNSIGNED`
+* Default Value:
   * \>= [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-5-release-notes), [MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-11-release-notes), [MariaDB 10.6.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-22-release-notes): `32768`
   * <= [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes): `16384`
 * Range: `1024` to `4294967295`
-* Block size: `1024` &#x20;
+* Block size: `1024`
 
 #### `query_cache_limit`
 
@@ -2264,9 +2274,9 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value:&#x20;
+* Default Value:
   * \>= [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-5-release-notes), [MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-11-release-notes), [MariaDB 10.6.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-22-release-notes): `32768`
-  * <= [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes): `24576` &#x20;
+  * <= [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-21-release-notes): `24576`
 * Range: `1024` to `4294967295`
 
 #### `rand_seed1`
@@ -2656,14 +2666,14 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 
 #### `sql_mode`
 
-* Description: Sets the [SQL Mode](../../../server-management/variables-and-modes/sql-mode.md). Multiple modes can be set, separated by a comma.
+* Description: Sets the [SQL Mode](../../../server-management/variables-and-modes/sql_mode.md). Multiple modes can be set, separated by a comma.
 * Command line: `--sql-mode=value[,value[,value...]]`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value:
   * `STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION`
-* Valid Values: See [SQL Mode](../../../server-management/variables-and-modes/sql-mode.md) for the full list.
+* Valid Values: See [SQL Mode](../../../server-management/variables-and-modes/sql_mode.md) for the full list.
 
 #### `sql_notes`
 

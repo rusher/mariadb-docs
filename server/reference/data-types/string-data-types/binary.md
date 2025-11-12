@@ -14,7 +14,7 @@ The `BINARY` type is similar to the [CHAR](char.md) type, but stores binary byte
 
 It contains no character set, and comparison and sorting are based on the numeric value of the bytes.
 
-If the maximum length is exceeded, and [SQL strict mode](../../../server-management/variables-and-modes/sql-mode.md) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
+If the maximum length is exceeded, and [SQL strict mode](../../../server-management/variables-and-modes/sql_mode.md) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
 
 `BINARY` values are right-padded with `0x00` (the zero byte) to the specified length when inserted. The padding is _not_ removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, `0x00` is less than a space for comparison purposes.
 

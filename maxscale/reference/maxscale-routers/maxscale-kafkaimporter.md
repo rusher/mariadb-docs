@@ -1,8 +1,6 @@
 # MaxScale KafkaImporter
 
-## KafkaImporter
-
-### Overview
+## Overview
 
 The KafkaImporter module reads messages from Kafka and streams them into a
 MariaDB server. The messages are inserted into a table designated by either the
@@ -53,13 +51,13 @@ CREATE TABLE IF NOT EXISTS my_table (
 );
 ```
 
-#### Required Grants
+### Required Grants
 
 The user defined by the `user` parameter of the service must have `INSERT` and`CREATE` privileges on all tables that are created.
 
-### Settings
+## Settings
 
-#### `bootstrap_servers`
+### `bootstrap_servers`
 
 * Type: string
 * Mandatory: Yes
@@ -67,7 +65,7 @@ The user defined by the `user` parameter of the service must have `INSERT` and`C
 
 The list of Kafka brokers as a CSV list in `host:port` format.
 
-#### `topics`
+### `topics`
 
 * Type: stringlist
 * Mandatory: Yes
@@ -75,7 +73,7 @@ The list of Kafka brokers as a CSV list in `host:port` format.
 
 The comma separated list of topics to subscribe to.
 
-#### `batch_size`
+### `batch_size`
 
 * Type: count
 * Mandatory: No
@@ -87,9 +85,9 @@ into batches and commit them once either enough records are gathered (controlled
 by this parameter) or when the KafkaImporter goes idle. Any uncommitted records
 will be read again if a reconnection to either Kafka or MariaDB occurs.
 
-#### `kafka_sasl_mechanism`
+### `kafka_sasl_mechanism`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `PLAIN`, `SCRAM-SHA-256`, `SCRAM-SHA-512`
@@ -98,7 +96,7 @@ will be read again if a reconnection to either Kafka or MariaDB occurs.
 SASL mechanism to use. The Kafka broker must be configured with the same
 authentication scheme.
 
-#### `kafka_sasl_user`
+### `kafka_sasl_user`
 
 * Type: string
 * Mandatory: No
@@ -107,7 +105,7 @@ authentication scheme.
 
 SASL username used for authentication. If this parameter is defined,`kafka_sasl_password` must also be provided.
 
-#### `kafka_sasl_password`
+### `kafka_sasl_password`
 
 * Type: string
 * Mandatory: No
@@ -117,16 +115,16 @@ SASL username used for authentication. If this parameter is defined,`kafka_sasl_
 SASL password for the user. If this parameter is defined, `kafka_sasl_user` must
 also be provided.
 
-#### `kafka_ssl`
+### `kafka_ssl`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
 Enable SSL for Kafka connections.
 
-#### `kafka_ssl_ca`
+### `kafka_ssl_ca`
 
 * Type: path
 * Mandatory: No
@@ -136,7 +134,7 @@ Enable SSL for Kafka connections.
 SSL Certificate Authority file in PEM format. If this parameter is not
 defined, the system default CA certificate is used.
 
-#### `kafka_ssl_cert`
+### `kafka_ssl_cert`
 
 * Type: path
 * Mandatory: No
@@ -145,7 +143,7 @@ defined, the system default CA certificate is used.
 
 SSL public certificate file in PEM format. If this parameter is defined,`kafka_ssl_key` must also be provided.
 
-#### `kafka_ssl_key`
+### `kafka_ssl_key`
 
 * Type: path
 * Mandatory: No
@@ -154,9 +152,9 @@ SSL public certificate file in PEM format. If this parameter is defined,`kafka_s
 
 SSL private key file in PEM format. If this parameter is defined,`kafka_ssl_cert` must also be provided.
 
-#### `table_name_in`
+### `table_name_in`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `topic`, `key`
@@ -181,16 +179,16 @@ the name would be:
 `my database`.`my table`
 ```
 
-#### `timeout`
+### `timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `5000ms`
 
 Timeout for both Kafka and MariaDB network communication.
 
-#### `engine`
+### `engine`
 
 * Type: string
 * Default: `InnoDB`
@@ -210,7 +208,7 @@ CREATE TABLE IF NOT EXISTS my_table (data JSON NOT NULL);
 This is done to avoid conflicts where the custom engine does not support all the
 features that InnoDB supports.
 
-### Limitations
+## Limitations
 
 * The backend servers used by this service must be MariaDB version 10.2 or
   newer.

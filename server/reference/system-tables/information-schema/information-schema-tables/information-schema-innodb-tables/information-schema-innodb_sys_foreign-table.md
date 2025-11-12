@@ -6,13 +6,13 @@ The `PROCESS` [privilege](../../../../sql-statements/account-management-sql-stat
 
 It has the following columns:
 
-| Column    | Description                                           |
-| --------- | ----------------------------------------------------- |
-| ID        | Database name and foreign key name.                   |
-| FOR\_NAME | Database and table name of the foreign key child.     |
-| REF\_NAME | Database and table name of the foreign key parent.    |
-| N\_COLS   | Number of foreign key index columns.                  |
-| TYPE      | Bit flag providing information about the foreign key. |
+| Column    | Description                                                                                                                                                                                                                                                                                                                                                                           |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID        | Foreign key name. Prior to [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1), this is preceded by the database name. From MariaDB 12.1, foreign key names are only required to be unique per table, not per database, so the redundant database name is not shown. |
+| FOR\_NAME | Database and table name of the foreign key child.                                                                                                                                                                                                                                                                                                                                     |
+| REF\_NAME | Database and table name of the foreign key parent.                                                                                                                                                                                                                                                                                                                                    |
+| N\_COLS   | Number of foreign key index columns.                                                                                                                                                                                                                                                                                                                                                  |
+| TYPE      | Bit flag providing information about the foreign key.                                                                                                                                                                                                                                                                                                                                 |
 
 The `TYPE` column provides a bit flag with information about the foreign key. This information is `OR`'ed together to read:
 
@@ -27,15 +27,29 @@ The `TYPE` column provides a bit flag with information about the foreign key. Th
 
 ## Example
 
+Prior to [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1):
+
 ```sql
-SELECT * FROM INNODB_SYS_FOREIGN\G
+ELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_FOREIGN\G
 *************************** 1. row ***************************
-      ID: mysql/innodb_index_stats_ibfk_1
-FOR_NAME: mysql/innodb_index_stats
-REF_NAME: mysql/innodb_table_stats
-  N_COLS: 2
-    TYPE: 0
+      ID: test/fk_book_author
+FOR_NAME: test/book
+REF_NAME: test/author
+  N_COLS: 1
+    TYPE: 1
 ...
+```
+
+From MariaDB 12.1:
+
+```sql
+SELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_FOREIGN\G
+*************************** 1. row ***************************
+      ID: fk_book_author
+FOR_NAME: test/book
+REF_NAME: test/author
+  N_COLS: 1
+    TYPE: 1
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

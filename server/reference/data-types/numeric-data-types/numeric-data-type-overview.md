@@ -68,11 +68,11 @@ SELECT * FROM zf;
 
 ## Range
 
-When attempting to add a value that is out of the valid range for the numeric type, MariaDB will react depending on the [strict SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) setting.
+When attempting to add a value that is out of the valid range for the numeric type, MariaDB will react depending on the [strict SQL\_MODE](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) setting.
 
-If [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has been set (the default), MariaDB will return an error.
+If [strict\_mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) has been set (the default), MariaDB will return an error.
 
-If [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has not been set, MariaDB will adjust the number to fit in the field, returning a warning.
+If [strict\_mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) has not been set, MariaDB will adjust the number to fit in the field, returning a warning.
 
 ### Examples
 

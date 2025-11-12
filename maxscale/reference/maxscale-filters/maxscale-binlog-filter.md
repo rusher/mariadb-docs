@@ -1,8 +1,6 @@
 # MaxScale Binlog Filter
 
-## Binlog Filter
-
-### Overview
+## Overview
 
 The `binlogfilter` can be combined with a `binlogrouter` service to selectively
 replicate the binary log events to replica servers.
@@ -22,20 +20,20 @@ The filter works with both row based and statement based replication but we
 recommend using row based replication with the binlogfilter. This guarantees
 that there are no ambiguities in the event filtering.
 
-### Settings
+## Settings
 
-#### `match`
+### `match`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 Include queries that match the regex. See next entry, `exclude`, for more information.
 
-#### `exclude`
+### `exclude`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -56,18 +54,18 @@ in the statements. If any of the tables matches the _match_ pattern, the event
 is replicated. If any of the tables matches the _exclude_ pattern, the event is
 not replicated.
 
-#### `rewrite_src`
+### `rewrite_src`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
 See the next entry, `rewrite_dest`, for more information.
 
-#### `rewrite_dest`
+### `rewrite_dest`
 
-* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-management/deployment/maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -81,7 +79,8 @@ etc.).
 
 Both `rewrite_src` and `rewrite_dest` must be defined to enable statement rewriting.
 
-When statement rewriting is enabled [GTID-based replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+When statement rewriting is enabled
+[GTID-based replication](../../../server/ha-and-performance/standard-replication/gtid.md)
 must be used. The filter will disallow replication for all replicas that attempt
 to replicate with traditional file-and-position based replication.
 
@@ -91,7 +90,7 @@ defining the rewriting rules. To prevent accidental modification of the SQL into
 a form that is no longer valid, use database and table names that never occur in
 the inserted data and is never used as a constant value.
 
-### Example Configuration
+## Example Configuration
 
 With the following configuration, only events belonging to database `customers`
 are replicated. In addition to this, events for the table `orders` are excluded
@@ -116,7 +115,8 @@ service=BinlogServer
 port=4000
 ```
 
-For more information about the binlogrouter and how to use it, refer to the [binlogrouter documentation](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md).
+For more information about the binlogrouter and how to use it, refer to the
+[binlogrouter documentation](../maxscale-routers/maxscale-binlogrouter.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

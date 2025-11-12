@@ -1,14 +1,14 @@
 
 # Quickstart
 
-This guide aims to provide a quick way to get started with the MariaDB Enterprise Operator for Kubernetes. It will walk you through the process of deploying a MariaDB Enterprise Cluster and MaxScale via the `MariaDB` and `MaxScale` CRs ([Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)) respectively.
+This guide aims to provide a quick way to get started with the MariaDB Enterprise Kubernetes Operator for Kubernetes. It will walk you through the process of deploying a MariaDB Enterprise Cluster and MaxScale via the `MariaDB` and `MaxScale` CRs ([Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)) respectively.
 
 
 Before you begin, ensure you meet the following prerequisites:
 
 
 * Configure your [customer access for docker.mariadb.com](customer-access-to-docker-mariadb-com.md)
-* [Install the MariaDB Enterprise Operator](mariadb-enterprise-operator-installation/README.md)
+* [Install the MariaDB Enterprise Kubernetes Operator](mariadb-enterprise-operator-installation/README.md)
 
 
 The first step will be configuring a `Secret` with the credentials used by the `MariaDB` CR:
@@ -140,7 +140,7 @@ MariaDB [(none)]> SHOW DATABASES;
 ```
 
 {% hint style="success" %}
-You have successfully deployed a MariaDB Enterprise Cluster with MaxScale in Kubernetes using the MariaDB Enterprise Operator!
+You have successfully deployed a MariaDB Enterprise Cluster with MaxScale in Kubernetes using the MariaDB Enterprise Kubernetes Operator!
 {% endhint %}
 
 Refer to the [documentation](README.md), the [API reference](api-reference.md) and the [examples catalog](examples-catalog.md) for further detail.

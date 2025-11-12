@@ -36,7 +36,7 @@ Node.js developers can use MariaDB Connector/Node.js to establish client connect
 
 ## Require Callback API
 
-MariaDB Connector/Node.js provides two different connection implementations: one built on the [Promise API](https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md) and the other built on the Callback API.
+MariaDB Connector/Node.js provides two different connection implementations: one built on the [Promise API](https://mariadb.com/docs/connectors/mariadb-connector-nodejs/connector-nodejs-promise-api) and the other built on the Callback API.
 
 To use the Callback API, use the following module:
 
@@ -165,7 +165,7 @@ MDB_PASS = db_user_password
 
 ## Code Example: Connecting
 
-The following code example connects using the database and user account created in [Setup for Examples](https://mariadb.com/docs/server/connect/programming-languages/c/example-setup/):
+The following code example connects using the database and user account created in Setup for Examples:
 
 ```jsx
 // Required Modules

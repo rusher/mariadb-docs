@@ -2,9 +2,9 @@
 
 ## Overview
 
-| Software Version                                                                                       | Diagram                                                                | Features                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../.gitbook/assets/es-columnstore-topology-nfs-no-title.png) | <p>Columnar storage engine with S3-compatible object storage</p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
+| Software Version                                                                                       | Diagram                                                                                   | Features                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](<../../../../analytics/.gitbook/assets/es-columnstore-topology-nfs-no-title (1).png>) | <p>Columnar storage engine with S3-compatible object storage</p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
 
 This procedure describes the deployment of the ColumnStore Shared Local Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
 
@@ -80,7 +80,7 @@ The ColumnStore nodes:
 
 * Receive queries from MaxScale
 * Execute queries
-  * Use [shared local storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#shared-local-storage) for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#storage-manager-directory)
+  * Use [shared local storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#shared-local-storage) for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#storage-manager-directory)
 
 ## Requirements
 
@@ -105,7 +105,7 @@ These requirements are for the ColumnStore Object Storage topology when deployed
 
 ### Operating System
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/enterprise-server-lifecycle), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
+In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/enterprise-server-lifecycle), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
 
 * CentOS Linux 7 (x86\_64)
 * Debian 10 (x86\_64)
@@ -154,9 +154,9 @@ The recommended hardware requirements are:
 
 The ColumnStore Object Storage topology requires the following storage types:
 
-| Storage Type                                                                                                                              | Description                                                                                                                                                                                                                                      |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Shared Local Storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#shared-local-storage) | The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata. |
+| Storage Type                                                                                                                                                  | Description                                                                                                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Shared Local Storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#shared-local-storage) | The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata. |
 
 ### Shared Local Storage Directories
 

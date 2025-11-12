@@ -1,6 +1,6 @@
 # Helm
 
-Helm is the preferred way to install MariaDB Enterprise Operator in Kubernetes clusters. This documentation aims to provide guidance on how to manage the installation and upgrades of both the CRDs and the operator via Helm charts.
+Helm is the preferred way to install MariaDB Enterprise Kubernetes Operator in Kubernetes clusters. This documentation aims to provide guidance on how to manage the installation and upgrades of both the CRDs and the operator via Helm charts.
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@ Configure your [customer credentials as described in the documentation](../custo
 
 ## Charts
 
-MariaDB Enterprise Operator is splitted into two different helm charts for better convenience:
+MariaDB Enterprise Kubernetes Operator is splitted into two different helm charts for better convenience:
 
 * `mariadb-enterprise-operator-crds`: Bundles the [CustomResourceDefinitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) required by the operator.
 * `mariadb-enterprise-operator`: Contains all the template manifests required to install the operator. Refer to the [operator helm values](helm.md#operator-helm-values) section for detailed information about the supported values.
@@ -65,8 +65,26 @@ helm install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-ent
   -f values.yaml \
   --set metrics.enabled=true --set webhook.cert.certManager.enabled=true
 ```
-
 Refer to the [operator helm values](helm.md#operator-helm-values) section for detailed information about the supported values.
+
+## Long-Term Support Versions
+
+MariaDB Enterprise Kubernetes Operator provides stable Long-Term Support (LTS) versions.
+
+| Version | Supported Kubernetes Versions | Description |
+|---------|------------------------------|-------------|
+| `25.10` | `>=1.32.0-0 <= 1.34.0-0` | LTS 25.10. It was tested to work up to kubernetes v1.34. |
+
+If you instead wish to install a specific LTS release, you can do:
+
+```sh
+helm install --version "25.10.*" mariadb-enterprise-operator-crds mariadb-enterprise-operator/mariadb-enterprise-operator-crds
+helm install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator \
+  -f values.yaml \
+  --version "25.10.*"
+```
+
+Where: `--version "25.10.*"` installs the most recent available release within the 25.10 series.
 
 ## Deployment modes
 
@@ -98,6 +116,11 @@ helm install mariadb-enterprise-operator \
 
 {% hint style="info" %}
 Make sure you read and understand the [updates documentation](../updates.md) before proceeding to update the operator.
+{% endhint %}
+
+{% hint style="warning" %}
+To install a [Long-Term Support (LTS)](#long-term-support-versions) version instead, replace `<new-version>` with your desired LTS release.
+For example: `--version "25.10.*"` will automatically install the latest available patch within that LTS series.
 {% endhint %}
 
 The first step is upgrading the CRDs that the operator depends on:
@@ -222,9 +245,10 @@ helm uninstall mariadb-enterprise-operator-crds
 | config.exporterImage | string | `"mariadb/mariadb-prometheus-exporter-ubi:1.1.0"` | Default MariaDB exporter image |
 | config.exporterMaxscaleImage | string | `"mariadb/maxscale-prometheus-exporter-ubi:1.1.0"` | Default MaxScale exporter image |
 | config.galeraLibPath | string | `"/usr/lib64/galera/libgalera_enterprise_smm.so"` | Galera Enterprise library path to be used with Galera |
-| config.mariadbDefaultVersion | string | `"11.4"` | Default MariaDB Enterprise version to be used when unable to infer it via image tag |
-| config.mariadbImage | string | `"docker.mariadb.com/enterprise-server:11.4.7-4.1"` | Default MariaDB Enterprise image |
-| config.maxscaleImage | string | `"docker.mariadb.com/maxscale:25.01.3-1"` | Default MaxScale Enterprise image |
+| config.mariadbDefaultVersion | string | `"11.8"` | Default MariaDB Enterprise version to be used when unable to infer it via image tag |
+| config.mariadbImage | string | `"docker.mariadb.com/enterprise-server:11.8.3-1"` | Default MariaDB Enterprise image |
+| config.mariadbImageName | string | `"docker.mariadb.com/enterprise-server"` | Default MariaDB Enterprise image name |
+| config.maxscaleImage | string | `"docker.mariadb.com/maxscale:25.10.0"` | Default MaxScale Enterprise image |
 | crds | object | `{"enabled":false}` | CRDs |
 | crds.enabled | bool | `false` | Whether the helm chart should create and update the CRDs. It is false by default, which implies that the CRDs must be managed independently with the mariadb-enterprise-operator-crds helm chart. **WARNING** This should only be set to true during the initial deployment. If this chart manages the CRDs and is later uninstalled, all MariaDB instances will be DELETED. |
 | currentNamespaceOnly | bool | `false` | Whether the operator should watch CRDs only in its own namespace or not. |

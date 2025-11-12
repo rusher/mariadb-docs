@@ -1,6 +1,6 @@
 # MaxScale Psreuse
 
-## Psreuse
+## Overview
 
 The `psreuse` filter reuses identical prepared statements inside the same client
 connection. This filter only works with binary protocol prepared statements and

@@ -4,10 +4,10 @@ To minimize downtime during migration, you can set up live replication from your
 
 ## Prerequisites
 
-1. An active MariaDB Cloud account. Identify requirements for your MariaDB Cloud implementation prior to [deployment](../../../cloud-usage/portal-features/launch-page.md), including:
+1. An active MariaDB Cloud account. Identify requirements for your MariaDB Cloud implementation prior to [deployment](../../../cloud-usage/launch-page.md), including:
 
 * Topology - Mariadb Server Single node or with Replica(s)
-* [Instance size](<../../../Reference Guide/Instance Size Choices.md>)
+* Instance size
 * Storage requirements
 * Desired server version
 
@@ -80,7 +80,7 @@ If you encounter an error while importing your users, you may need to uninstall 
 {% step %}
 ### **Start Replication**
 
-Turn on replication using MariaDB Cloud stored procedures. There are procedures allowing you to set and start replication. See our [documentation](<../../../Reference Guide/Stored Procedures.md>) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
+Turn on replication using MariaDB Cloud stored procedures. There are procedures allowing you to set and start replication. See our [documentation](../../../reference-guide/stored-procedures.md) for details. The `dump.sql` file you created in step 1 will contain the GTID and binary log information needed for the `change_external_primary` procedure.
 
 ```sql
 CALL sky.change_external_primary(host VARCHAR(255), port INT, logfile TEXT, logpos LONG,
@@ -135,7 +135,7 @@ UNINSTALL PLUGIN simple_password_check;
 ### Monitoring and Logging
 
 * **Enable Detailed Logging**: Enable detailed logging while testing the migration process to monitor and troubleshoot effectively. The slow\_log can be enabled in the MariaDB Cloud configuration manager.
-* **Resource Monitoring**: Use monitoring tools to track resource usage (CPU, memory, I/O) during the migration to ensure system stability. See our [monitoring documentation](../../../cloud-usage/portal-features/service-monitoring-panels.md) for details.
+* **Resource Monitoring**: Use monitoring tools to track resource usage (CPU, memory, I/O) during the migration to ensure system stability. See our [monitoring documentation](../../../cloud-usage/service-monitoring-panels.md) for details.
 
 ## See Also
 

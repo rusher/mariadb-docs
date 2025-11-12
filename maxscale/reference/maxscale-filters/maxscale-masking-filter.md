@@ -1,8 +1,6 @@
 # MaxScale Masking Filter
 
-## Masking
-
-### Overview
+## Overview
 
 With the _masking_ filter it is possible to obfuscate the returned
 value of a particular column.
@@ -45,7 +43,7 @@ Note that the masking filter should be viewed as a best-effort solution
 intended for protecting against accidental misuse rather than malicious
 attacks.
 
-### Security
+## Security
 
 From MaxScale 2.3 onwards, the masking filter will reject statements
 that use functions in conjunction with columns that should be masked.
@@ -117,7 +115,7 @@ Please see the configuration parameter
 \[treat\_string\_arg\_as\_field(#treat\_string\_arg\_as\_field)
 for how to change the default behaviour.
 
-### Limitations
+## Limitations
 
 The masking filter can _only_ be used for masking columns of the following
 types: `BINARY`, `VARBINARY`, `CHAR`, `VARCHAR`, `BLOB`, `TINYBLOB`,`MEDIUMBLOB`, `LONGBLOB`, `TEXT`, `TINYTEXT`, `MEDIUMTEXT`, `LONGTEXT`,`ENUM` and `SET`. If the type of the column is something else, then no
@@ -129,7 +127,7 @@ that, thus indicating a situation where the payload is delivered in multiple
 packets, the value of the parameter `large_payloads` specifies how the masking
 filter should handle the situation.
 
-### Configuration
+## Configuration
 
 The masking filter is taken into use with the following kind of
 configuration setup.
@@ -146,11 +144,11 @@ type=service
 filters=Mask-SSN
 ```
 
-### Settings
+## Settings
 
 The masking filter has one mandatory parameter - `rules`.
 
-#### `rules`
+### `rules`
 
 * Type: path
 * Mandatory: Yes
@@ -164,9 +162,9 @@ of MariaDB MaxScale. The default module configuration directory i&#x73;_/etc/max
 rules=/path/to/rules-file
 ```
 
-#### `warn_type_mismatch`
+### `warn_type_mismatch`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `never`, `always`
@@ -180,9 +178,9 @@ allowed types.
 warn_type_mismatch=always
 ```
 
-#### `large_payload`
+### `large_payload`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignore`, `abort`
@@ -205,9 +203,9 @@ resultsets that do not contain such columns.
 large_payload=ignore
 ```
 
-#### `prevent_function_usage`
+### `prevent_function_usage`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -235,9 +233,9 @@ filter should be setup to allow or reject the use of certain functions.
 prevent_function_usage=false
 ```
 
-#### `require_fully_parsed`
+### `require_fully_parsed`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -257,9 +255,9 @@ Note that if this parameter is set to false, then `prevent_function_usage`,`chec
 less effective, as it with a statement that cannot be fully parsed may be
 possible to bypass the protection that they are intended to provide.
 
-#### `treat_string_arg_as_field`
+### `treat_string_arg_as_field`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -273,9 +271,9 @@ been enabled and `"` is used instead of backtick.
 treat_string_arg_as_field=false
 ```
 
-#### `check_user_variables`
+### `check_user_variables`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -293,9 +291,9 @@ will be rejected if `ssn` is a column that should be masked.
 check_user_variables=false
 ```
 
-#### `check_unions`
+### `check_unions`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -313,9 +311,9 @@ will be rejected if `b` is a column that should be masked.
 check_unions=false
 ```
 
-#### `check_subqueries`
+### `check_subqueries`
 
-* Type: [bool](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [bool](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -333,7 +331,7 @@ will be rejected if `a` is a column that should be masked.
 check_subqueries=false
 ```
 
-### Rules
+## Rules
 
 The masking rules are expressed as a JSON object.
 
@@ -363,7 +361,7 @@ latter ones optional.
 }
 ```
 
-#### `replace`
+### `replace`
 
 The value of this key is an object that specifies the column
 whose values should be masked. The object must contain the key`column` and may contain the keys `table` and `database`. The
@@ -440,7 +438,7 @@ The `match` value must be a valid pcre2 regular expression.
             }
 ```
 
-#### `obfuscate`
+### `obfuscate`
 
 The obfuscate rule allows the obfuscation of the value
 by passing it through an obfuscation algorithm.
@@ -472,7 +470,7 @@ SELECT name from db1.tbl1;`
 +------+
 ```
 
-#### `with`
+### `with`
 
 The value of this key is an object that specifies what the value of the matched
 column should be replaced with for the `replace` rule. Currently, the object
@@ -528,7 +526,7 @@ of the mask value to get the lengths to match.
 }
 ```
 
-#### `applies_to`
+### `applies_to`
 
 With this _optional_ key, whose value must be an array of strings,
 it can be specified what users the rule is applied to. Each string
@@ -550,7 +548,7 @@ should be a MariaDB account string, that is, `%` is a wildcard.
 If this key is not specified, then the masking is performed for all
 users, except the ones exempted using the key `exempted`.
 
-#### `exempted`
+### `exempted`
 
 With this _optional_ key, whose value must be an array of strings,
 it can be specified what users the rule is _not_ applied to. Each
@@ -569,14 +567,14 @@ string should be a MariaDB account string, that is, `%` is a wildcard.
 }
 ```
 
-### Module commands
+## Module commands
 
-Read [Module Commands](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-module-commands.md) documentation for details
+Read [Module Commands](../maxscale-module-commands.md) documentation for details
 about module commands.
 
 The masking filter supports the following module commands.
 
-#### `reload`
+### `reload`
 
 Reload the rules from the rules file. The new rules are taken into use
 only if the loading succeeds without any errors.
@@ -588,14 +586,14 @@ MaxScale> call command masking reload MyMaskingFilter
 `MyMaskingFilter` refers to a particular filter section in the
 MariaDB MaxScale configuration file.
 
-### Example
+## Example
 
 In the following we configure a masking filter _MyMasking_ that should always log a
 warning if a masking rule matches a column that is of a type that cannot be masked,
 and that should abort the client connection if a resultset package is larger than
 16MB. The rules for the masking filter are in the file `masking_rules.json`.
 
-#### Configuration
+### Configuration
 
 ```
 [MyMasking]
@@ -611,7 +609,7 @@ type=service
 filters=MyMasking
 ```
 
-#### `masking_rules.json`
+### `masking_rules.json`
 
 The rules specify that the data of a column whose name is `ssn`, should
 be replaced with the string _012345-ABCD_. If the length of the data is

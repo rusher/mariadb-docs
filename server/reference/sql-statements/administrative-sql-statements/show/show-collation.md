@@ -23,6 +23,25 @@ No similar information or extra information can be queried from the [Information
 
 See [Setting Character Sets and Collations](../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) for details on specifying the collation at the server, database, table and column levels.
 
+{% tabs %}
+{% tab title="Current" %}
+The `pad_attribute` column (not shown in the examples below) has a value of `NO PAD` or `PAD SPACE`. This attribute affects whether trailing spaces are significant in string comparisons. See the [INFORMATION\_SCHEMA.COLLATIONS](../../../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table description for more information.
+
+```sql
+SHOW COLLATION LIKE 'utf8mb4_bin'; 
++-------------+---------+------+---------+----------+---------+---------------+ 
+| Collation   | Charset | Id   | Default | Compiled | Sortlen | Pad_attribute | 
++-------------+---------+------+---------+----------+---------+---------------+ 
+| utf8mb4_bin | utf8mb4 | 46   |         | Yes      | 1       | PAD SPACE     | 
++-------------+---------+------+---------+----------+---------+---------------+
+```
+{% endtab %}
+
+{% tab title="< 12.1" %}
+The `pad_attribute` column is not available.
+{% endtab %}
+{% endtabs %}
+
 ## Examples
 
 ```sql

@@ -8,9 +8,7 @@ _Additionally, by facilitating traffic replay, the WCAR module aids in identifyi
 
 _In essence, the WCAR module not only preserves detailed and valuable traffic data but also empowers users with the tools to analyze and refine their systems through accurate simulation, paving the way for robust and resilient system architectures._
 
-## Workload Capture and Replay
-
-### Overview
+## Overview
 
 The _WCAR_ filter (module `wcar`) captures client traffic and stores it in a replayable format.
 
@@ -23,7 +21,7 @@ The captured workloads can be used to:
 * Repeatedly measure effects of configuration changes, which is useful for database tuning.
 * Investigate why certain scenarios take longer then expected, as a kind of SQL debugging tool.
 
-### Prerequisites
+## Prerequisites
 
 * Both the capture MaxScale and replay MaxScale servers must use the same
   linux distribution and CPU architecture. For example, if the capture was taken
@@ -32,9 +30,9 @@ The captured workloads can be used to:
   linux distributions that use the same CPU architecture.
 * The capture MariaDB instance must have binlogging enabled (`log-bin=1`)
 
-### Capture
+## Capture
 
-#### Quick start
+### Quick start
 
 Workload capture can be used without definitions in static configuration files
 and without a MaxScale restart.
@@ -69,7 +67,7 @@ maxctrl unlink service RWS-Router CAPTURE_FLTR
 maxctrl destroy filter CAPTURE_FLTR
 ```
 
-#### File based configuration
+### File based configuration
 
 Define a capture filter by adding the following
 configuration object and add it to each service whose traffic is to be
@@ -85,7 +83,7 @@ capture_size=1Gi    # Limit capture size to 1GiB
 start_capture=true  # Start capturing immediately after starting MaxScale
 ```
 
-#### Example configuration file
+### Example configuration file
 
 Here is an example configuration for capturing from a single MariaDB server, where capture
 starts when MaxScale starts and stops when MaxScale is stopped (`start_capture=true`).
@@ -126,7 +124,7 @@ protocol=MariaDBClient
 port=4006
 ```
 
-#### Capturing Traffic
+### Capturing Traffic
 
 This section explains how capture is done with configuration value `start_capture=true`.
 
@@ -148,7 +146,7 @@ where `NAME` is the capture name (defaults to `capture`), `YYYY-MM-DD` is the
 date and `HHMMSS` is the time and the `SUFFIX` is one of `.cx`, `.ex` or`.tx`. For example, a capture started on the 18th of April 2024 at 10:26:11
 would generate a file named `capture_2024-04-18_102611.cx`.
 
-#### Stopping the Capture
+### Stopping the Capture
 
 To stop the capture, simply stop MaxScale, or issue the command:
 
@@ -172,7 +170,7 @@ Once the capture tarball has been generated, copy it to the replay server.
 You might then want to delete the directories on the capture server from
 /var/lib/maxscale/wcar/\* to save space (and not copy them again later).
 
-### Commands
+## Commands
 
 Each of the commands can be called with the following syntax.
 
@@ -184,7 +182,7 @@ The `<filter>` is the name of the filter instance. In the example configuration,
 the value is `CAPTURE_FLTR`. The `[options]` is a list of optional arguments that
 the command might expect.
 
-#### `start <filter> [options]`
+### `start <filter> [options]`
 
 Starts a new capture. Issuing a start command will stop any ongoing capture.
 
@@ -192,8 +190,8 @@ The start command supports optional key-value pairs. If the values are also defi
 the configuration file the command line options have priority. The supported keys are:
 
 * **prefix** The prefix added to capture files. The default value is `capture`.
-* **duration** Limit capture to this duration. See also configuration file value ['capture\_duration'](maxscale-workload-capture-and-replay.md#capture_duration).
-* **size** Limit capture to approximately this many bytes in the file system. See also configuration file value ['capture\_size'](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/capture_size/README.md).
+* **duration** Limit capture to this duration. See also configuration file value ['capture\_duration'](#capture_duration).
+* **size** Limit capture to approximately this many bytes in the file system. See also configuration file value ['capture\_size'](#capture_size).
 
 The start command options are not persistent, and only apply to the capture that was thus started.
 
@@ -210,7 +208,7 @@ maxctrl call command wcar start CAPTURE_FLTR prefix=Scenario1 size=10G
 Running the same command again, but without size=10G, the `capture_size` used would be that defined
 in the configuration file or no limit if there was no such definition.
 
-#### `stop <filter>`
+### `stop <filter>`
 
 Stops the currently active capture if one is in progress.
 
@@ -218,9 +216,9 @@ Stops the currently active capture if one is in progress.
 maxctrl call command wcar stop CAPTURE_FLTR
 ```
 
-### Replay
+## Replay
 
-#### Installation
+### Installation
 
 Install the required packages on the MaxScale server where the replay is to be done. An additional dependency that must be manually installed is Python, version 3.9 or newer. On most linux distributions a new enough version is available as the default Python interpreter. You may also need to install the development packages for Python, `python3-devel` on RHEL based systems or `python3-dev` on Debian based systems, as well as a C++ compiler.
 
@@ -228,7 +226,7 @@ For RHEL 8, Rocky Linux 8 and Alma Linux 8, a newer version of Python must be in
 
 The replay consists of restoring the database to the point in time where the capture was started. Start by restoring the replay database to this state. Once the database has been restored from the backup, copy the capture files over to the replay MaxScale server.
 
-#### Preparing the Replay MariaDB Database
+### Preparing the Replay MariaDB Database
 
 **Full Restore**
 
@@ -267,7 +265,7 @@ procedure above and then running a write-only Replay prepares the replay server(
 for easily running read-only multiple times. This way of running read-only may, for
 example, be used when fine tuning server settings.
 
-#### Replaying the Capture
+### Replaying the Capture
 
 When replay is first done, the capture files will be transformed in-place.
 Transform can be run separately as well. Depending on the size and structure
@@ -298,7 +296,7 @@ maxplayer replay --user maxreplay --password replay-pw --host <host:port> --outp
 
 After both replays have been completed, the results can be post-processed and visualized.
 
-### Visualizing
+## Visualizing
 
 The results of the captured replay must first be post-processed into summaries that the visualization will then use. First, the `canonicals.csv` file must be generated that is needed in the post-processing:
 
@@ -325,9 +323,9 @@ To listen on all network interfaces, use `--Voila.ip='0.0.0.0'` as the last argu
 maxvisualize baseline-summary.json comparison-summary.json --Voila.ip='0.0.0.0'
 ```
 
-### Settings
+## Settings
 
-#### `capture_dir`
+### `capture_dir`
 
 * Type: path
 * Default: /var/lib/maxscale/wcar/
@@ -338,18 +336,18 @@ Directory under which capture directories are stored. Each
 capture directory has the name of the filter.
 In the examples above the name "CAPTURE\_FLTR" was used.
 
-#### `start_capture`
+### `start_capture`
 
-* Type: boolean
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Default: false
 * Mandatory: No
 * Dynamic: No
 
 Start capture when maxscale starts.
 
-#### `capture_duration`
+### `capture_duration`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Default: 0s
 * Maximum: Unlimited in MaxScale, 5min in MaxScale Lite.
 * Mandatory: No
@@ -357,9 +355,9 @@ Start capture when maxscale starts.
 
 Limit capture to this duration. If set to zero there is no limit.
 
-#### `capture_size`
+### `capture_size`
 
-* Type: [size](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-management/deployment/maxscale-configuration-guide.md#sizes)
 * Default: 0
 * Maximum: Unlimited in MaxScale, 10MB in MaxScale Lite.
 * Mandatory: No
@@ -368,7 +366,7 @@ Limit capture to this duration. If set to zero there is no limit.
 Limit capture to approximately this many bytes in the file system.
 If set to zero there is no limit.
 
-### maxplayer command line options
+## maxplayer command line options
 
 ```
 maxplayer -u user -p pwd --speed 1.5 -i 5s -o baseline.csv capture_2024-09-06_090002.cx --help
@@ -461,7 +459,7 @@ input file:       capture_2024-09-06_090002.cx
 -V --version      0.2
 ```
 
-### Limitations
+## Limitations
 
 * KILL commands do not work correctly during replay and may kill the wrong session ([MXS-5056](https://jira.mariadb.org/browse/MXS-5056))
 * COM\_STMT\_BULK\_EXECUTE is not captured ([MXS-5057](https://jira.mariadb.org/browse/MXS-5057))

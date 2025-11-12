@@ -19,7 +19,7 @@ SET old_passwords=1;
 CREATE USER username@hostname IDENTIFIED BY 'mariadb';
 ```
 
-If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user via [GRANT](../../sql-statements/account-management-sql-statements/grant.md):
+If [SQL\_MODE](../../../server-management/variables-and-modes/sql_mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user via [GRANT](../../sql-statements/account-management-sql-statements/grant.md):
 
 ```sql
 SET old_passwords=1;

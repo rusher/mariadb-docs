@@ -1,10 +1,10 @@
 # Customer access to docker.mariadb.com
 
-This documentation aims to provide guidance on how to configure access to `docker.mariadb.com` in your MariaDB Enterprise Operator resources.
+This documentation aims to provide guidance on how to configure access to `docker.mariadb.com` in your MariaDB Enterprise Kubernetes Operator resources.
 
 ## Customer credentials
 
-MariaDB Corporation requires customers to authenticate when logging in to the [MariaDB Enterprise Docker Registry](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/mariadb-enterprise-docker-registry-for-mariadb-enterprise-server). A Customer Download Token must be provided as the password. Customer Download Tokens are available through the MariaDB Customer Portal. To retrieve the customer download token for your account:
+MariaDB Corporation requires customers to authenticate when logging in to the [MariaDB Enterprise Docker Registry](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/automated-mariadb-deployment-and-administration/docker-and-mariadb/mariadb-enterprise-docker-registry-for-mariadb-enterprise-server). A Customer Download Token must be provided as the password. Customer Download Tokens are available through the MariaDB Customer Portal. To retrieve the customer download token for your account:
 
 * Navigate to the [Customer Download Token at the MariaDB Customer Portal](https://customers.mariadb.com/downloads/token/).
 * Log in using your [MariaDB ID](https://id.mariadb.com/).

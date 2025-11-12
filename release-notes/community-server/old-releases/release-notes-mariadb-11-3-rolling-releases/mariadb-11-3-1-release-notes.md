@@ -1,8 +1,8 @@
 # MariaDB 11.3.1 Release Notes
 
-The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 11.3.2**](mariadb-11-3-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.3.2/)
+{% include "../../../.gitbook/includes/latest-11-3.md" %}
 
-[Download 11.3.1](https://downloads.mariadb.org/mariadb/11.3.1/) | [Release Notes](mariadb-11-3-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md) | [Overview of 11.3](what-is-mariadb-113.md)
+[Download 11.3.1](https://downloads.mariadb.org/mariadb/11.3.1/) | [Release Notes](mariadb-11-3-1-release-notes.md) | [Changelog](../../changelogs/11.3/mariadb-11-3-1-changelog.md) | [Overview of 11.3](what-is-mariadb-113.md)
 
 **Release date:** 21 Nov 2023
 
@@ -189,7 +189,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.3.1](mariadb-11-3-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-3-series/mariadb-11-3-1-changelog.md).
+information on each push, see the [changelog](../../changelogs/11.3/mariadb-11-3-1-changelog.md).
 
 ## Contributors
 

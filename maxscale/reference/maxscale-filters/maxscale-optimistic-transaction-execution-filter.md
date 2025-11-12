@@ -1,6 +1,6 @@
 # MaxScale Optimistic Transaction Execution Filter
 
-## Optimistic Transaction Execution Filter
+## Overview
 
 The `optimistictrx` filter implements optimistic transaction execution. The
 filter is designed for a use-case where most of the transactions are read-only

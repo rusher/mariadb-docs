@@ -14,7 +14,7 @@ layout:
 
 # Introduction
 
-MariaDB Enterprise Operator provides a seamless way to run and operate containerized versions of MariaDB Enterprise Server and MaxScale on Kubernetes, allowing you to leverage Kubernetes orchestration and automation capabilities. This document outlines the features and advantages of using Kubernetes and the MariaDB Enterprise Operator to streamline the deployment and management of MariaDB and MaxScale instances.
+MariaDB Enterprise Kubernetes Operator provides a seamless way to run and operate containerized versions of MariaDB Enterprise Server and MaxScale on Kubernetes, allowing you to leverage Kubernetes orchestration and automation capabilities. This document outlines the features and advantages of using Kubernetes and the MariaDB Enterprise Kubernetes Operator to streamline the deployment and management of MariaDB and MaxScale instances.
 
 ## What is Kubernetes?
 
@@ -34,15 +34,17 @@ Kubernetes has been designed with flexibility in mind, allowing developers to ex
 
 <figure><img src="../.gitbook/assets/operator-overview.png" alt=""><figcaption></figcaption></figure>
 
-In particular, MariaDB Enterprise Operator, watches the desired state defined by users via `MariaDB` and `MaxScale` resources, and takes actions to ensure that the actual state of the system matches the desired state. This includes managing compute, storage and network resources, as well as the full lifecycle of the MariaDB and MaxScale instances. Whenever the desired state changes or the underlying infrastructure is modified, the Operator takes the necessary actions to reconcile the actual state with the desired state.
+In particular, MariaDB Enterprise Kubernetes Operator, watches the desired state defined by users via `MariaDB` and `MaxScale` resources, and takes actions to ensure that the actual state of the system matches the desired state. This includes managing compute, storage and network resources, as well as the full lifecycle of the MariaDB and MaxScale instances. Whenever the desired state changes or the underlying infrastructure is modified, the Operator takes the necessary actions to reconcile the actual state with the desired state.
 
 Operational expertise is baked into the `MariaDB` and `MaxScale` APIs and seamlessly managed by the Operator. This includes automated backups, restores, upgrades, monitoring, and other critical lifecycle tasks, ensuring reliability in Day 2 operations.
 
-## MariaDB Enterprise Operator Features
+## MariaDB Enterprise Kubernetes Operator Features
 
 * Provision and Configure MariaDB and MaxScale Declaratively: Define MariaDB Enterprise Server and MaxScale clusters in YAML manifests and deploy them with ease in Kubernetes.
-* High Availability with Galera: Ensure availability with MariaDB Enterprise Cluster, providing synchronous multi-master replication.
-* Query and Connection-Based Routing with MaxScale: MaxScale provides query routing and connection load balancing for improved application performance.
+* Multiple [Highly Available](https://mariadb.com/docs/tools/mariadb-enterprise-operator/topologies/high-availability) Topologies supported:
+  * [Asynchronous Replication](https://mariadb.com/docs/tools/mariadb-enterprise-operator/topologies/high-availability/replication)
+  * [Synchronous Multi-Master with Galera](https://mariadb.com/docs/tools/mariadb-enterprise-operator/topologies/high-availability/galera)
+  * [MaxScale](https://mariadb.com/docs/tools/mariadb-enterprise-operator/topologies/maxscale) as a Database proxy to load balance requests and perform failover/switchover operations.
 * Cluster-Aware Rolling Updates: Perform rolling updates on MariaDB and MaxScale clusters, ensuring zero-downtime upgrades with no disruptions to your applications.
 * Flexible Storage Configuration and Volume Expansion: Easily configure storage for MariaDB instances, including the ability to expand volumes as needed.
 * Physical Backups based on [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/full-backup-and-restore-with-mariadb-backup) and [Kubernetes VolumeSnapshots](https://kubernetes.io/docs/concepts/storage/volume-snapshots/). By leveraging the [BACKUP STAGE](https://mariadb.com/docs/server/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) feature, backups are taken without long read locks or service interruptions.

@@ -51,7 +51,7 @@ SELECT * FROM t1;
 +------------+
 ```
 
-### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
+### With [strict\_mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) set
 
 ```sql
 INSERT INTO t1 VALUES (-7);

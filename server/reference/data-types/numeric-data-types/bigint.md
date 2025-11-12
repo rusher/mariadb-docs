@@ -26,7 +26,7 @@ BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE
 
 ## EXAMPLES
 
-### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
+### With [strict\_mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) set
 
 ```sql
 CREATE TABLE bigints (a BIGINT,b BIGINT UNSIGNED,c BIGINT ZEROFILL);

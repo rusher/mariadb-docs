@@ -10,6 +10,7 @@ This guide explains how to retrieve data from MariaDB using the `SELECT` stateme
 
 To follow the examples, first create and populate the `books` and `authors` tables:
 
+{% code expandable="true" %}
 ```sql
 CREATE OR REPLACE TABLE books (
     isbn CHAR(20) PRIMARY KEY,
@@ -41,6 +42,7 @@ INSERT INTO books (title, author_id, isbn, year_pub) VALUES
  ('Idiot', 2, '0192834118', ''),
  ('Notes from Underground', 2, '067973452X', '');
 ```
+{% endcode %}
 
 ### Basic Data Retrieval
 

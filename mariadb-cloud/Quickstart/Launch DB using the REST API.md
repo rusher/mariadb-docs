@@ -1,4 +1,4 @@
-# Launch DB using the REST API
+# Launch DB Using REST API
 
 This walkthrough explains how to launch database services and manage the lifecycle of database services using the [MariaDB Cloud DBaaS REST API](https://apidocs.skysql.com/).
 
@@ -8,7 +8,7 @@ This walkthrough explains how to launch database services and manage the lifecyc
 {% step %}
 ### **Generate API Key**
 
-1. Go to [MariaDB Cloud API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key
+1. Go to the [MariaDB Cloud API Key management page](https://app.skysql.com/user-profile/api-keys) and generate an API key
 2.  Export the value from the token field to an environment variable $API\_KEY
 
     ```bash
@@ -17,7 +17,7 @@ This walkthrough explains how to launch database services and manage the lifecyc
 
     The `API_KEY` environment variable will be used in the subsequent steps.
 
-Use it on subsequent request, for example:
+Use it on subsequent requests, for example:
 
 ```bash
  curl --request GET 'https://api.skysql.com/provisioning/v1/services' \
@@ -26,7 +26,7 @@ Use it on subsequent request, for example:
 {% endstep %}
 
 {% step %}
-### **Use API Reference Guide to try out the APIs**
+### **Use the API Reference Guide to try out the APIs**
 
 You can use the API Documentation here and directly try out the APIs in your browser.
 
@@ -34,26 +34,23 @@ All you need is to click ‘Authorize’ and type in `<supply your API key here>
 
 {% hint style="info" %}
 Pre-requisites for code below.
+
+The examples below use `curl` as the REST client, available on Linux, macOS, and Windows. You may use any language client supporting REST over HTTP. Examples also use `jq`, a JSON parsing tool, and both utilities should be installed on your system.
+
+Using `tee`, you can save response JSON data to a file while piping it to `jq` for display. Linux and macOS support `tee` as shown. In Windows PowerShell, use the `-filepath` option with `tee`.
+
+The `chmod` command makes files private to the user. If not supported, adjust file permissions accordingly.
+
+Examples employ exported variables and `${VARIABLE_NAME}` syntax, compatible with Bourne-like shells (e.g., sh, bash, zsh). Windows users not using a Bourne-like shell should adjust by running the `jq` portion separately and manually assigning it to a variable.
+
+Backslashes are used to indicate a command spans multiple lines. Remove them if your shell doesn't support this and join lines together.
 {% endhint %}
-
-```
-*The examples below use curl as the REST client. curl is available for Linux, macOS, and MS Windows. Of course, you can use any language client that supports invoking REST over HTTP.* 
-*Examples below also use jq, a JSON parsing utility. [jq](https://stedolan.github.io/jq/download/) is available for Linux, macOS, and MS Windows. Install jq then proceed.*
-
-*The examples also make use of tee to save the response JSON data to a file while also allowing it to be piped to jq for output. Both Linux and macOS support tee as described in the examples. On MS Windows, Powershell has a tee command that requires the -filepath option to be inserted prior to the filename.*
-
-*The chmod command is used to make a file private to the current user. If your environment doesn't support chmod, you can set the file's permissions using other means.*
-
-*The examples also make use of exported variables and ${VARIABLE_NAME} variable references that are compatible with Bourne-like shells (such as sh, bash, and zsh). On MS Windows, you will need to adapt these instructions if you are not using a Bourne-like shell. For example, you can copy just the jq part of an export command (from inside the backticks), run that on its own, and then copy/paste the resulting string into a variable assignment for your shell.*
-
-*Finally, the examples use a backslash at the end of some of the lines to indicate to the shell that a command spans multiple lines. If your shell doesn't allow this, remove each trailing backslash character and join the following line to the end of the current line*.
-```
 {% endstep %}
 
 {% step %}
 ### **Determine the Client IP Address**
 
-When your new service is created, your client can only connect through the service's firewall if the client IP address is in the service's IP allowlist.
+When your new service is created, your client can only connect through the service's firewall if the client's IP address is in the service's IP allowlist.
 
 Before creating the new service, determine the public IP address of your client host and save it to the `SKYSQL_CLIENT_IP` environment variable.
 
@@ -66,8 +63,6 @@ export SKYSQL_CLIENT_IP=`curl -sS checkip.amazonaws.com`
 
 {% step %}
 ### **Launch a Service**
-
-
 
 To launch a service:
 
@@ -242,4 +237,4 @@ EOF
 ## Resources
 
 * [API Documentation](https://apidocs.skysql.com/)
-* [API Reference Documentation](<../Reference Guide/REST API Reference.md>)
+* [API Reference Documentation](../reference-guide/rest-api-reference.md)

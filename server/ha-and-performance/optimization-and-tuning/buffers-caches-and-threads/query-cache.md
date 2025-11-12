@@ -128,7 +128,7 @@ The query cache size is allocated in 1024 byte-blocks, thus it should be set to 
 
 The query result is stored using a minimum block size of [query\_cache\_min\_res\_unit](../system-variables/server-system-variables.md#query_cache_min_res_unit). Check two conditions to use a good value of this variable: Query cache insert result blocks with locks, each new block insert lock query cache, a small value will increase locks and fragmentation and waste less memory for small results, a big value will increase memory use wasting more memory for small results but it reduce locks. Test with your workload for fine tune this variable.
 
-If the [strict mode](../../../server-management/variables-and-modes/sql-mode.md) is enabled, setting the query cache size to an invalid value will cause an error. Otherwise, it will be set to the nearest permitted value, and a warning will be triggered.
+If the [strict mode](../../../server-management/variables-and-modes/sql_mode.md) is enabled, setting the query cache size to an invalid value will cause an error. Otherwise, it will be set to the nearest permitted value, and a warning will be triggered.
 
 ```sql
 SHOW VARIABLES LIKE 'query_cache_size';

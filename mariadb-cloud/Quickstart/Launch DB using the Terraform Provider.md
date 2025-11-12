@@ -1,4 +1,4 @@
-# Launch DB using the Terraform Provider
+# Launch DB Using Terraform Provider
 
 This walkthrough explains how to launch database services and manage the lifecycle of database services using the Terraform provider.
 
@@ -20,9 +20,9 @@ For a list of operating systems that have binaries available for Terraform, see 
 ## Dependencies
 
 * This procedure requires Terraform to be installed. For information about how to install Terraform, see [HashiCorp Terraform Documentation: Install Terraform](https://developer.hashicorp.com/terraform/downloads).
-* The examples in this procedure also use `jq`, a JSON parsing utility. [jq](https://stedolan.github.io/jq/download/) is available for Linux, macOS, and MS Windows. Install `jq` then proceed.
-* The examples in this procedure also use `curl`, a data transfer utility. [curl](https://curl.se/) is available for Linux, macOS, and MS Windows. Install `curl` then proceed.
-* The examples in this procedure also use `wget`, a file download utility. [GNU Wget](https://www.gnu.org/software/wget/) is available for Linux, macOS, and MS Windows. Install `wget` then proceed.
+* The examples in this procedure also use `jq`, a JSON parsing utility. [jq](https://stedolan.github.io/jq/download/) is available for Linux, macOS, and MS Windows. Install `jq` , then proceed.
+* The examples in this procedure also use `curl`, a data transfer utility. [curl](https://curl.se/) is available for Linux, macOS, and MS Windows. Install `curl`, then proceed.
+* The examples in this procedure also use `wget`, a file download utility. [GNU Wget](https://www.gnu.org/software/wget/) is available for Linux, macOS, and MS Windows. Install `wget`, then proceed.
 * The examples in this procedure also use exported environment variables that are compatible with Bourne-like shells (such as `sh`, `bash`, and `zsh`).
 
 ## Launch a Service
@@ -59,7 +59,7 @@ In the Terraform project directory, create a `main.tf` file that contains the fo
 * [Resources](https://developer.hashicorp.com/terraform/language/resources/syntax)
 * [Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
 
-```
+```hcl
 # ---------------------
 # Provider Requirements
 # ---------------------
@@ -150,7 +150,7 @@ data "skysql_availability_zones" "default" {
 
 In the Terraform project directory, create an `outputs.tf` file that contains the [output values](https://developer.hashicorp.com/terraform/language/values/outputs) used to display metadata about the MariaDB Cloud service:
 
-```tf
+```hcl
 # -------------
 # Output Values
 # -------------
@@ -187,7 +187,7 @@ output "availability_zones" {
 
 In the Terraform project directory, create a `variables.tf` file that contains the [input variables](https://developer.hashicorp.com/terraform/language/values/variables) used to configure the MariaDB Cloud service:
 
-```tf
+```hcl
 # ---------------
 # Input Variables
 # ---------------
@@ -298,7 +298,7 @@ A [`.tfvars` file](https://developer.hashicorp.com/terraform/tutorials/configura
 
 For example:
 
-```ini
+```hcl
 api_key             = "... key data ..."
 service_type        = "transactional"
 topology            = "es-single"
@@ -324,7 +324,7 @@ The input variables should be customized for your own needs:
 * For `topology`, choose a [Topology Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies)
 * For `cloud_provider`, choose a [Cloud Provider Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers)
 * For `region`, choose a [Region Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_regions)
-* For `availability_zone`, choose a [Availability Zone Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers__provider_name__zones) or leave it `null` to use the default availability zone for the cloud provider and region
+* For `availability_zone`, choose an [Availability Zone Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_providers__provider_name__zones) or leave it `null` to use the default availability zone for the cloud provider and region
 * For `architecture`, choose a [Hardware Architecture Selection](https://apidocs.skysql.com/#/CPU-Architectures/get_provisioning_v1_cpu_architectures)
 * For `size`, choose an [Instance Size Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_sizes)
 * For `storage`, choose a [Transactional Storage Size Selection](https://apidocs.skysql.com/#/Offering/get_provisioning_v1_topologies__topology_name__storage_sizes)
@@ -449,7 +449,7 @@ mariadb --host dbpgf00000001.sysp0000.db.skysql.net --port 3306 \
    --user dbpgf00000001 -p --ssl-verify-server-cert
 ```
 
-When prompted, type the password and press enter to connect:
+When prompted, type the password and press Enter to connect:
 
 ```bash
 Enter password:
@@ -521,7 +521,7 @@ Destroy complete! Resources: 1 destroyed.
 
 ## Manually Install Provider from Binary Distribution
 
-The MariaDB Cloud New Release Terraform provider can be downloaded from the [GitHub releases page](https://github.com/skysqlinc/terraform-provider-skysql) as a binary distribution and manually installed.
+The MariaDB Cloud New Release Terraform provider can be downloaded from the GitHub releases page as a binary distribution and manually installed.
 
 ### **Manually Install Provider on Linux**
 
@@ -611,8 +611,5 @@ With **macOS**, manually install the provider on the target system by performing
 
 ## Resources
 
-* [GitHub Project](https://github.com/skysqlinc/terraform-provider-skysql)
-* [Example Terraform Configuration Files](https://github.com/skysqlinc/terraform-provider-skysql/tree/main/examples)
 * [Terraform Registry](https://registry.terraform.io/namespaces/skysqlinc)
-* [API Documentation](https://apidocs.skysql.com/)
-* [API Reference Documentation](https://skysqlinc.github.io/skysql-docs/Reference%20Guide/REST%20API%20Reference/)
+* [API Documentation](../reference-guide/mariadb-cloud-api-reference-guide/)

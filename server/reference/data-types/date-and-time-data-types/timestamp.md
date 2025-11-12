@@ -67,7 +67,7 @@ MariaDB does not support time zone literals that contain time zone identifiers. 
 
 ## SQL\_MODE=MAXDB
 
-If the [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is set to `MAXDB`, TIMESTAMP fields will be silently converted to [DATETIME](datetime.md).
+If the [SQL\_MODE](../../../server-management/variables-and-modes/sql_mode.md) is set to `MAXDB`, TIMESTAMP fields will be silently converted to [DATETIME](datetime.md).
 
 ## Internal Format
 

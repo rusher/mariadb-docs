@@ -108,5 +108,5 @@ MariaDB Cloud Serverless is designed to handle diverse workload types:
 
 1. [**Create Account**](https://app.skysql.com) - Sign up for your free MariaDB Cloud account
 2. [**Launch Service**](../Quickstart/) - Follow our quickstart guide
-3. [**Connect Application**](broken-reference) - Integrate with your applications
+3. [**Connect Application**](../connecting-to-mariadb-cloud-dbs/#connecting-from-your-application) - Integrate with your applications
 4. [**Monitor Performance**](../cloud-management/observability.md) - Use built-in monitoring tools

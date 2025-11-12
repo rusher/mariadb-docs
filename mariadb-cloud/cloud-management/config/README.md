@@ -1,4 +1,8 @@
 ---
+description: >-
+  This section guides you through viewing, modifying, and applying configuration
+  settings for your MariaDB Cloud database services, ensuring optimal
+  performance and compliance.
 icon: database
 layout:
   width: default
@@ -20,22 +24,34 @@ layout:
 
 Database server configuration, including system variables, is managed through the Configuration Manager.
 
-<figure><img src="../../config/configuration-manager.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## **Access to Configuration Manager**
 
 To access the Configuration Manager interface:
 
 1. Log in to the [Portal](https://app.skysql.com/dashboard).
-2. Click the "Settings" link in the main menu (left navigation in the Portal).
-3. Click the ["Configuration Manager"](https://app.skysql.com/settings/configuration-manager) button.
+2. Select <kbd>Settings</kbd> in the sidebar.
+3. Select <kbd>Configuration Manager</kbd>.
+
+After selecting Configuration Manager, you will be sent to Saved Configuration page, where you can view, create, and manage configuration templates for various MariaDB cloud topologies.
 
 ## **What is Configurable?**
 
 Available configuration parameters differ by cloud database topology.
 
-[1. Mariadb Server Single Node](mariadb-server-single-node.md)
+{% content-ref url="mariadb-serverless-single-node.md" %}
+[mariadb-serverless-single-node.md](mariadb-serverless-single-node.md)
+{% endcontent-ref %}
 
-[2. Mariadb Server With Replicas](mariadb-server-with-replica-s.md)
+{% content-ref url="mariadb-server-single-node.md" %}
+[mariadb-server-single-node.md](mariadb-server-single-node.md)
+{% endcontent-ref %}
 
-[3. MariaDB Cloud Intelligent Proxy Configuration](maxscale.md)
+{% content-ref url="mariadb-server-with-replica-s.md" %}
+[mariadb-server-with-replica-s.md](mariadb-server-with-replica-s.md)
+{% endcontent-ref %}
+
+{% content-ref url="maxscale.md" %}
+[maxscale.md](maxscale.md)
+{% endcontent-ref %}

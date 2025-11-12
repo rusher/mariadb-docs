@@ -37,7 +37,7 @@ mariadbd --help --verbose
 
 There are several different methods to start or stop the MariaDB Server process. There are two primary categories that most of these methods fall into: starting the process with the help of a service manager, and starting the process manually. See [Starting and Stopping MariaDB](starting-and-stopping-mariadb-automatically.md) for more information.
 
-If you want to run different MariaDB versions on the same machine, using [binary tarballs](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md), [Docker](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md) or using Virtual Machines (VMs) are the recommended ways. A binary tarball uses least resources, Docker a bit more and a VM uses most resources.
+If you want to run different MariaDB versions on the same machine, using [binary tarballs](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md), [Docker](../automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md) or using Virtual Machines (VMs) are the recommended ways. A binary tarball uses least resources, Docker a bit more and a VM uses most resources.
 
 ### Service Managers
 
@@ -79,7 +79,7 @@ mariadbd-safe --defaults-file=/etc/my_instance1.cnf
 
 In some cases, there may be easier ways to run multiple MariaDB Server instances on the same server, such as:
 
-* Starting multiple [Docker](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md) containers.
+* Starting multiple [Docker](../automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md) containers.
 * Using [dbdeployer](../../clients-and-utilities/administrative-tools/dbdeployer.md) (no longer maintained).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

@@ -25,7 +25,7 @@ sudo yum update
 sudo yum -y install boost-devel check-devel glibc-devel openssl-devel scons
 ```
 
-1. Clone [galera.git](https://github.com/mariadb/galera) from [github.com/mariadb](https://github.com/mariadb) and checkout the mariadb-3.x branch:
+2. Clone [galera.git](https://github.com/mariadb/galera) from [github.com/mariadb](https://github.com/mariadb) and checkout the mariadb-3.x branch:
 
 ```
 git init repo
@@ -33,7 +33,7 @@ cd repo
 git clone -b mariadb-3.x https://github.com/MariaDB/galera.git
 ```
 
-1. Build the packages by executing under the`build.sh` scripts/ directory with the`-p` switch:
+3. Build the packages by executing under the`build.sh` scripts/ directory with the`-p` switch:
 
 ```
 cd galera

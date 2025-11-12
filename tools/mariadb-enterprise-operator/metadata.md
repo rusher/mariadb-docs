@@ -1,6 +1,6 @@
 # Metadata
 
-This documentation shows how to configure metadata in the MariaDB Enterprise Operator CRs.
+This documentation shows how to configure metadata in the MariaDB Enterprise Kubernetes Operator CRs.
 
 ## Children object metadata
 

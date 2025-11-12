@@ -2,8 +2,8 @@
 
 ## Overview
 
-| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../.gitbook/assets/es-columnstore-topology-s3-no-title.png) | <p><strong>Columnar storage engine with S3-compatible object storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
-| ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](<../../../../analytics/.gitbook/assets/es-columnstore-topology-s3-no-title (1).png>) | <p><strong>Columnar storage engine with S3-compatible object storage</strong></p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
+| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
 This procedure describes the deployment of the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
 
@@ -51,7 +51,7 @@ The following components are deployed during this procedure:
 
 ## Topology
 
-<figure><img src="../../../.gitbook/assets/es-columnstore-topology-s3-no-title.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../analytics/.gitbook/assets/es-columnstore-topology-s3-no-title (1).png" alt=""><figcaption></figcaption></figure>
 
 The MariaDB Enterprise ColumnStore topology with Object Storage delivers production analytics with high availability, fault tolerance, and limitless data storage by leveraging S3-compatible storage.
 
@@ -87,7 +87,7 @@ These requirements are for the ColumnStore Object Storage topology when deployed
 * Preferred Object Storage Providers: Hardware
 * Shared Local Storage Directories
 * Shared Local Storage Options
-* [Recommended Storage Options](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#recommended-storage-options)
+* [Recommended Storage Options](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#recommended-storage-options)
 
 ### Node Count
 
@@ -96,7 +96,7 @@ These requirements are for the ColumnStore Object Storage topology when deployed
 
 ### Operating System
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/enterprise-server-lifecycle), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
+In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/about/enterprise-server-lifecycle), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
 
 * CentOS Linux 7 (x86\_64)
 * Debian 10 (x86\_64)
@@ -180,7 +180,7 @@ If you have any questions about using specific S3-compatible object storage with
 
 ### Shared Local Storage Directories
 
-The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata.
+The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/mariadb-columnstore/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata.
 
 The Storage Manager directory is located at the following path by default:
 

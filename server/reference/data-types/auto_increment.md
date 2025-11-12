@@ -2,11 +2,11 @@
 
 ## Description
 
-The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record into the table (or upon adding an [AUTO\_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements/data-definition/alter/alter-table/) statement), and the `AUTO_INCREMENT` field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), automatically be incremented. This also applies to `0`, unless the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record into the table (or upon adding an [AUTO\_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements/data-definition/alter/alter-table/) statement), and the `AUTO_INCREMENT` field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), automatically be incremented. This also applies to `0`, unless the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql_mode.md#no_auto_value_on_zero) is enabled.
 
 `AUTO_INCREMENT` columns start from 1 by default. The automatically generated value can never be lower than `0`.
 
-Each table can have only one `AUTO_INCREMENT` column. It must defined as a key (not necessarily the `PRIMARY KEY` or `UNIQUE` key). In some storage engines (including the default [InnoDB](../../server-usage/storage-engines/innodb/)), if the key consists of multiple columns, the `AUTO_INCREMENT` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../../server-usage/storage-engines/aria/), [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/), [MERGE](../../server-usage/storage-engines/merge.md), [Spider](../../server-usage/storage-engines/spider/), [TokuDB](../../server-usage/storage-engines/tokudb/), [BLACKHOLE](../../server-usage/storage-engines/blackhole.md), [FederatedX](../../server-usage/storage-engines/federatedx-storage-engine/) and [Federated](../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md).
+Each table can have only one `AUTO_INCREMENT` column. It must defined as a key (not necessarily the `PRIMARY KEY` or `UNIQUE` key). In some storage engines (including the default [InnoDB](../../server-usage/storage-engines/innodb/)), if the key consists of multiple columns, the `AUTO_INCREMENT` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../../server-usage/storage-engines/aria/), [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/), [MERGE](../../server-usage/storage-engines/merge.md), [Spider](../../server-usage/storage-engines/spider/), [TokuDB](../../server-usage/storage-engines/legacy-storage-engines/tokudb/), [BLACKHOLE](../../server-usage/storage-engines/blackhole.md), [FederatedX](../../server-usage/storage-engines/federatedx-storage-engine/) and [Federated](../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md).
 
 ```sql
 CREATE TABLE animals (
@@ -336,7 +336,7 @@ SELECT * FROM t1;
 +---+
 ```
 
-If the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is set, zero values will not be automatically incremented:
+If the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql_mode.md#no_auto_value_on_zero) is set, zero values will not be automatically incremented:
 
 ```sql
 SET SQL_MODE='no_auto_value_on_zero';

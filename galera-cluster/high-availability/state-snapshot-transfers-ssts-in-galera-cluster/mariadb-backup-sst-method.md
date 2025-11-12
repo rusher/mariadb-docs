@@ -2,7 +2,9 @@
 
 The `mariabackup` SST method uses the [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/mariadb-backup) utility for performing SSTs. It is one of the methods that does not block the donor node. `mariadb-backup` was originally forked from [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup), and similarly, the `mariabackup` SST method was originally forked from the xtrabackup-v2 SST method.
 
-Note that if you use the `mariadb-backup` SST method, then you also need to have [socat](mariadb-backup-sst-method.md#socat-dependency) installed on the server. This is needed to stream the backup from the donor node to the joiner node. This is a limitation that was inherited from the xtrabackup-v2 SST method.
+{% hint style="warning" %}
+If you use the `mariadb-backup` SST method, then you also need to have [socat](mariadb-backup-sst-method.md#socat-dependency) installed on the server. This is needed to stream the backup from the donor node to the joiner node. This is a limitation that was inherited from the xtrabackup-v2 SST method.
+{% endhint %}
 
 ## Choosing mariadb-backup for SSTs <a href="#choosing-mariabackup-for-ssts" id="choosing-mariabackup-for-ssts"></a>
 
@@ -202,9 +204,11 @@ The trailing comma tells the server to allow any other node as donor when the pr
 
 During the SST process, the donor node uses `socat` to stream the backup to the joiner node. Then the joiner node prepares the backup before restoring it. The `socat` utility must be installed on both the donor node and the joiner node in order for this to work. Otherwise, the MariaDB error log will contain an error like:
 
+{% code overflow="wrap" %}
 ```sql
 WSREP_SST: [ERROR] socat not found in path: /usr/sbin:/sbin:/usr//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin (20180122 14:55:32.993)
 ```
+{% endcode %}
 
 #### Installing Socat on RHEL/CentOS <a href="#installing-socat-on-rhelcentos" id="installing-socat-on-rhelcentos"></a>
 

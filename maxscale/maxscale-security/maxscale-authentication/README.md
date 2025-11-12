@@ -17,6 +17,8 @@ In MariaDB MaxScale, authenticators perform the following tasks:
 
 ## Authenticators Supported by MaxScale
 
-* [GSSAPI Authenticator](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-gssapi-client-authenticator.md)
-* [Native Authenticator](native-authenticator.md)
-* [PAM Authenticator](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-pam-authenticator.md)
+* [GSSAPI Authenticator](../../reference/maxscale-authenticators/maxscale-gssapi-client-authenticator.md)
+* [Native Authenticator](../../reference/maxscale-authenticators/maxscale-mariadb-mysql-authenticator.md)
+* [PAM Authenticator](../../reference/maxscale-authenticators/maxscale-pam-authenticator.md)
+* [PARSEC Authenticator](../../reference/maxscale-authenticators/maxscale-parsec-authenticator.md)
+* [ed25519 Authenticator](../../reference/maxscale-authenticators/maxscale-ed25519-authenticator.md)

@@ -1,0 +1,31 @@
+name: Check Links in PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changes
+        uses: tj-actions/changed-files@v45
+        with:
+           files: |
+             **.md
+             **.html
+
+      - name: Scan for broken links
+        if: steps.changes.outputs.any_changed == 'true'
+        uses: lycheeverse/lychee-action@v2.3.0
+        with:
+          # --no-progress keeps logs clean
+          # The variable at the end passes only the changed files to Lychee
+          args: --no-progress ${{ steps.changes.outputs.all_changed_files }}
+          fail: true

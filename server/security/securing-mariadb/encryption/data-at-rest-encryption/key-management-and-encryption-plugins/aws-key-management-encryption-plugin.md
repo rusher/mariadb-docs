@@ -1,6 +1,6 @@
 # AWS Key Management Encryption Plugin
 
-Due to license incompatibilities between the MariaDB server source code and the Amazon AWS C++ SDK we can only distribute the plugin in source code form, and not as ready-to-use binaries. See [Installing the Plugin's Package](aws-key-management-encryption-plugin.md#installing-the-plugins-package) for details.
+Due to license incompatibilities between the MariaDB server source code and the Amazon AWS C++ SDK, we can only distribute the plugin in source code form, and not as ready-to-use binaries. See [Installing the Plugin's Package](aws-key-management-encryption-plugin.md#installing-the-plugins-package) for details.
 
 MariaDB's [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) requires the use of a [key management and encryption plugin](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management.md). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
 
@@ -23,17 +23,17 @@ Tutorials related to the AWS Key Management plugin can be found at the following
 
 * Before you use the plugin, you need to create a Customer Master Key (CMK). Create a key using the AWS Console as described in the [AMS KMS developer guide](https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html).
 * The easiest way to give the AWS key management plugin access to the key is to create an IAM Role with access to the key, and to apply that IAM Role to an EC2 instance where MariaDB Server runs.
-* Make sure that MariaDB Server runs under the correct AWS identity that has access to the above key. For example, you can store the AWS credentials in a AWS credentials file for the user who runs `mysqld`. More information about the credentials file can be found in [the AWS CLI Getting Started Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-file).
+* Make sure that MariaDB Server runs under the correct AWS identity that has access to the above key. For example, you can store the AWS credentials in an AWS credentials file for the user who runs `mysqld`. More information about the credentials file can be found in [the AWS CLI Getting Started Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-file).
 
 ## Installing the Plugin's Package
 
-The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.com/aws/aws-sdk-cpp), which uses the [Apache License, Version 2.0](https://github.com/aws/aws-sdk-cpp/blob/master/LICENSE). This license is not compatible with MariaDB Server's [GPL 2.0 license](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/broken-reference/README.md), so we are not able to distribute packages that contain the AWS Key Management plugin. Therefore, the only way to currently obtain the plugin is to install it from source.
+The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.com/aws/aws-sdk-cpp), which uses the [Apache License, Version 2.0](https://github.com/aws/aws-sdk-cpp/blob/master/LICENSE). This license is not compatible with MariaDB Server's [GPL 2.0 license](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/faq/licensing-questions/licensing-faq#licenses-used-by-mariadb), so we are not able to distribute packages that contain the AWS Key Management plugin. Therefore, the only way to currently obtain the plugin is to install it from source.
 
 ### Installing from Source
 
-When [compiling MariaDB from source](../../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/), the AWS Key Management plugin is not built by default in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), but it is built by default in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, on systems that support it.
+When [compiling MariaDB from source](../../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/), the AWS Key Management plugin is built by default, on systems that support it.
 
-Compilation is controlled by the following [cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) arguments:
+Compilation is controlled by the following [cmake](../../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) arguments:
 
 * `-DPLUGIN_AWS_KEY_MANAGEMENT=DYNAMIC` to build a loadable plugin library
 * `-DAWS_SDK_EXTERNAL_PROJECT=ON` to download the AWS C++ SDK code
@@ -41,16 +41,16 @@ Compilation is controlled by the following [cmake](../../../../../server-managem
 
 The plugin uses [AWS C++ SDK](https://github.com/awslabs/aws-sdk-cpp), which introduces the following restrictions:
 
-* The plugin can only be built on Windows, Linux and macOS.
+* The plugin can only be built on Windows, Linux, and macOS.
 * The plugin requires that one of the following compilers is used: `gcc` 4.8 or later, `clang` 3.3 or later, Visual Studio 2013 or later.
-* On Unix, the `libcurl` development package (e.g. `libcurl3-dev` on Debian Jessie), `uuid` development package and `openssl` need to be installed.
-* You may need to use a newer version of [cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) than is provided by default in your OS.
+* On Unix, the `libcurl` development package (e.g. `libcurl3-dev` on Debian Jessie), `uuid` development package, and `openssl` need to be installed.
+* You may need to use a newer version of [cmake](../../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) than is provided by default in your OS.
 
-You do not need to download / install the AWS C++ SDK yourself, the correct version of the SDK github repository will be cloned into the build directory at build time, and only the libraries for AWS components actually needed by the key management plugin will be built, which takes much less time than building the full AWS C++ SDK.
+You do not need to download/install the AWS C++ SDK yourself; the correct version of the SDK GitHub repository will be cloned into the build directory at build time, and only the libraries for AWS components actually needed by the key management plugin will be built, which takes much less time than building the full AWS C++ SDK.
 
 #### Building on Linux
 
-With all prerequisites installed the actual build process pretty much comes down to:
+With all prerequisites installed, the actual build process pretty much comes down to:
 
 ```bash
 # clone the MariaDB Server source code repository
@@ -69,23 +69,21 @@ cd plugin/aws_key_management
 make
 ```
 
-Cmake will print the following warning as part of its output, please take it serious and do not distribute the `aws_key_management.so` file to any third parties:**You have linked MariaDB with Apache 2.0 libraries! You may not distribute**\
-**the resulting binary. If you do, you will put yourself into a legal**\
-**problem with the Free Software Foundation.**
+Cmake will print the following warning as part of its output. Please take it seriously and do not distribute the `aws_key_management.so` file to any third parties: **You have linked MariaDB with Apache 2.0 libraries! You may not distribute the resulting binary. If you do, you will put yourself into a legal problem with the Free Software Foundation.**
 
-After `make` succeeded you can copy the created `aws_key_management.so` plugin library file to the plugin directory of your actual MariaDB Server machines installation, e.g. `/usr/lib64/mysql/plugin` on RedHat/Fedora based systems or `/usr/lib/mysql/plugin` on Debian based systems.
+After `make` succeeded you can copy the created `aws_key_management.so` plugin library file to the plugin directory of your actual MariaDB Server machines installation, e.g. `/usr/lib64/mysql/plugin` on RedHat/Fedora based systems or `/usr/lib/mysql/plugin` on Debian-based systems.
 
 ## Installing the Plugin
 
 Even after the package that contains the plugin's shared library is installed on the operating system, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
 
 ```sql
 INSTALL SONAME 'aws_key_management';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -97,17 +95,17 @@ plugin_load_add = aws_key_management
 
 Before you uninstall the plugin, you should ensure that [data-at-rest encryption](../../../securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) is completely disabled, and that MariaDB no longer needs the plugin to decrypt tables or other files.
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
 ```sql
 UNINSTALL SONAME 'aws_key_management';
 ```
 
-If you installed the plugin by providing the [--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the [--plugin-load](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Configuring the AWS Key Management Plugin
 
-To enable the AWS Key Management plugin, you also need to set the plugin's system variables. The [aws\_key\_management\_master\_key\_id](aws-key-management-encryption-plugin.md#aws_key_management_master_key_id) system variable is the primary one to set. These system variables can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+To enable the AWS Key Management plugin, you also need to set the plugin's system variables. The [aws\_key\_management\_master\_key\_id](aws-key-management-encryption-plugin.md#aws_key_management_master_key_id) system variable is the primary one to set. These system variables can be specified as command-line arguments to [mysqld](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -115,7 +113,7 @@ To enable the AWS Key Management plugin, you also need to set the plugin's syste
 aws_key_management_master_key_id=alias/<your key's alias>
 ```
 
-Once you've updated the configuration file, [restart](https://mariadb.com/kb/en/) the MariaDB server to apply the changes and make the key management and encryption plugin available for use.
+Once you've updated the configuration file, restart the MariaDB server to apply the changes and make the key management and encryption plugin available for use.
 
 ## Using the AWS Key Management Plugin
 
@@ -233,10 +231,10 @@ SET GLOBAL aws_key_management_rotate_key=-1;
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../../../../reference/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--aws-key-management=value`
 * Data Type: `enumerated`

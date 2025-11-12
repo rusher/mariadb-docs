@@ -1,6 +1,6 @@
 # Configuration
 
-This documentation aims to provide guidance on various configuration aspects shared across many MariaDB Enterprise Operator CRs.
+This documentation aims to provide guidance on various configuration aspects shared across many MariaDB Enterprise Kubernetes Operator CRs.
 
 ## my.cnf
 

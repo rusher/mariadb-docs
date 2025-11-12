@@ -13,7 +13,7 @@ represented internally as integers.
 
 `SET` values cannot contain commas.
 
-If a `SET` contains duplicate values, an error will be returned if [strict mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is enabled, or a warning if strict mode is not enabled.
+If a `SET` contains duplicate values, an error will be returned if [strict mode](../../../server-management/variables-and-modes/sql_mode.md#strict-mode) is enabled, or a warning if strict mode is not enabled.
 
 ## EXAMPLES
 

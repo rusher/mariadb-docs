@@ -12,7 +12,7 @@ sudo apt-get upgrade
 sudo apt-get -y install check debhelper libasio-dev libboost-dev libboost-program-options-dev libssl-dev scons
 ```
 
-1. Clone [galera.git](https://github.com/mariadb/galera) from [github.com/mariadb](https://github.com/mariadb) and checkout mariadb-3.x banch:
+2. Clone [galera.git](https://github.com/mariadb/galera) from [github.com/mariadb](https://github.com/mariadb) and checkout mariadb-3.x banch:
 
 ```
 git init repo
@@ -20,7 +20,7 @@ cd repo
 git clone -b mariadb-3.x https://github.com/MariaDB/galera.git
 ```
 
-1. Build the packages by executing `build.sh` under scripts/ directory with `-p` switch:
+3. Build the packages by executing `build.sh` under scripts/ directory with `-p` switch:
 
 ```
 cd galera

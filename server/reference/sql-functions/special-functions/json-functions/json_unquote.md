@@ -14,7 +14,7 @@ An error will occur if the given value begins and ends with double quotes and is
 
 If the given value is not a JSON string, value is passed through unmodified.
 
-Certain character sequences have special meanings within a string. Usually, a backslash is ignored, but the escape sequences in the table below are recognised by MariaDB, unless the [SQL Mode](../../../../server-management/variables-and-modes/sql-mode.md) is set to `NO_BACKSLASH_ESCAPES` .
+Certain character sequences have special meanings within a string. Usually, a backslash is ignored, but the escape sequences in the table below are recognised by MariaDB, unless the [SQL Mode](../../../../server-management/variables-and-modes/sql_mode.md) is set to `NO_BACKSLASH_ESCAPES` .
 
 | Escape sequence | Character                          |
 | --------------- | ---------------------------------- |
@@ -38,7 +38,7 @@ SELECT JSON_UNQUOTE('"Monty"');
 +-------------------------+
 ```
 
-With the default [SQL Mode](../../../../server-management/variables-and-modes/sql-mode.md):
+With the default [SQL Mode](../../../../server-management/variables-and-modes/sql_mode.md):
 
 ```sql
 SELECT JSON_UNQUOTE('Si\bng\ting');

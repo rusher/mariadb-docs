@@ -95,6 +95,7 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 
 ### Compatibility Options and System Variables
 
+* [--new-mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#new_mode)
 * [--old](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old)
 * [--old-alter-table](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table)
 * [--old-mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode)
@@ -876,7 +877,7 @@ The options and system variables related to the [Mroonga](../../server-usage/sto
 
 ### TokuDB Storage Engine Options
 
-The options and system variables related to the [TokuDB](../../server-usage/storage-engines/tokudb/) storage engine can be found [here](../../server-usage/storage-engines/tokudb/tokudb-system-variables.md).
+The options and system variables related to the [TokuDB](../../server-usage/storage-engines/legacy-storage-engines/tokudb/) storage engine can be found [here](../../server-usage/storage-engines/legacy-storage-engines/tokudb/tokudb-system-variables.md).
 
 ### Vector Options
 
@@ -1009,6 +1010,7 @@ The options related to [Galera Cluster](../../architecture/topologies/galera-clu
 Some options and system variables related to [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) can be found [here](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables). Direct links to many of them can be found below.
 
 * [wsrep-allowlist](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_allowlist)
+* [wsrep\_applier\_retry\_count](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_applier_retry_count)
 * [wsrep-auto-increment-control](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_auto_increment_control)
 * [wsrep-causal-reads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_causal_reads)
 * [wsrep-certify-nonPK](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_certify_nonpk)

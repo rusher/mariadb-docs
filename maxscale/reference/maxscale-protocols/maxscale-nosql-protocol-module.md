@@ -1,6 +1,6 @@
 # MaxScale NoSQL Protocol Module
 
-## NoSQL Protocol Module
+## Overview
 
 The `nosqlprotocol` module allows a MariaDB server or cluster to be
 used as the backend of an application using a MongoDB® client library.
@@ -13,149 +13,11 @@ converted into the equivalent SQL and executed against the MariaDB backend.
 The MariaDB responses are then in turn converted into the format expected by
 the MongoDB® client library and application.
 
-## Update with a Replacement Document]\(#update-with-a-replacement-document)
+## Configuring
 
-```
-* [Authentication Commands](#authentication-commands)
-
-  * [Logout](#logout)
-* [User Management Commands](#user-management-commands)
-
-  * [createUser](#createuser)
-  * [dropAllUsersFromDatabase](#dropallusersfromdatabase)
-  * [dropUser](#dropuser)
-  * [grantRolesToUser](#grantrolestouser)
-  * [revokeRolesFromUser](#revokerolesfromuser)
-  * [updateUser](#updateuser)
-  * [usersInfo](#usersinfo)
-* [Replication Commands](#replication-commands)
-
-  * [isMaster](#ismaster)
-  * [replSetGetStatus](#replsetgetstatus)
-* [Sessions Commands](#sessions-commands)
-
-  * [endSessions](#endsessions)
-* [Administration Commands](#administration-commands)
-
-  * [create](#create)
-  * [createIndexes](#createindexes)
-  * [drop](#drop)
-  * [dropDatabase](#dropdatabase)
-  * [dropIndexes](#dropindexes)
-  * [fsync](#fsync)
-  * [killCursors](#killcursors)
-  * [listCollections](#listcollections)
-  * [listDatabases](#listdatabases)
-* [listIndexes](#listindexes)
-
-  * [renameCollection](#renamecollection)
-  * [setParameter](#setparameter)
-* [Diagnostic Commands](#diagnostic-commands)
-
-  * [buildInfo](#buildinfo)
-  * [explain](#explain)
-  * [getCmdLineOpts](#getcmdlineopts)
-  * [getLog](#getlog)
-  * [hostInfo](#hostinfo)
-  * [listCommands](#listcommands)
-  * [ping](#ping)
-  * [serverStatus](#serverstatus)
-  * [validate](#validate)
-  * [whatsmyuri](#whatsmyuri)
-* [Free Monitoring Commands](#free-monitoring-commands)
-
-  * [getFreeMonitoringStatus](#getfreemonitoringstatus)
-* [MaxScale Specific Commands](#maxscale-specific-commands)
-
-  * [mxsAddUser](#mxsadduser)
-
-    * [Definition](#definition)
-
-      * [mxsAddUser](#mxsadduser_1)
-    * [Syntax](#syntax)
-
-      * [Command Fields](#command-fields)
-      * [Returns](#returns)
-  * [mxsCreateDatabase](#mxscreatedatabase)
-
-    * [Definition](#definition_1)
-
-      * [mxsCreateDatabase](#mxscreatedatabase_1)
-    * [Syntax](#syntax_1)
-
-      * [Command Fields](#command-fields_1)
-      * [Returns](#returns_1)
-  * [mxsDiagnose](#mxsdiagnose)
-
-    * [Definition](#definition_2)
-
-      * [mxsDiagnose](#mxsdiagnose_1)
-    * [Syntax](#syntax_2)
-
-      * [Command Fields](#command-fields_2)
-      * [Returns](#returns_2)
-  * [mxsGetConfig](#mxsgetconfig)
-
-    * [Definition](#definition_3)
-    * [mxsGetConfig](#mxsgetconfig_1)
-    * [Syntax](#syntax_3)
-
-      * [Command Fields](#command-fields_3)
-      * [Returns](#returns_3)
-  * [mxsListTables](#mxslisttables)
-
-    * [Definition](#definition_4)
-
-      * [mxsListTables](#mxslisttables_1)
-    * [Syntax](#syntax_4)
-
-      * [Command Fields](#command-fields_4)
-      * [Returns](#returns_4)
-  * [mxsRemoveUser](#mxsremoveuser)
-
-    * [Definition](#definition_5)
-
-      * [mxsRemoveUser](#mxsremoveuser_1)
-    * [Syntax](#syntax_5)
-
-      * [Command Fields](#command-fields_5)
-      * [Returns](#returns_5)
-  * [mxsSetConfig](#mxssetconfig)
-
-    * [Definition](#definition_6)
-
-      * [mxsSetConfig](#mxssetconfig_1)
-    * [Syntax](#syntax_6)
-
-      * [Command Fields](#command-fields_6)
-      * [Returns](#returns_6)
-  * [mxsUpdateUser](#mxsupdateuser)
-
-    * [Definition](#definition_7)
-
-      * [mxsUpdateUser](#mxsupdateuser_1)
-    * [Syntax](#syntax_7)
-
-      * [Command Fields](#command-fields_7)
-      * [Returns](#returns_7)
-```
-
-* [Object Id](maxscale-nosql-protocol-module.md#object-id)
-* [Caching](maxscale-nosql-protocol-module.md#caching)
-  * [Cached Commands](maxscale-nosql-protocol-module.md#cached-commands)
-* [Compatibility](maxscale-nosql-protocol-module.md#compatibility)
-* [Example](maxscale-nosql-protocol-module.md#example)
-  * [Configuring MaxScale](maxscale-nosql-protocol-module.md#configuring-maxscale)
-  * [MongoDB® Shell](maxscale-nosql-protocol-module.md#mongodb-shell)
-  * [MongoDB® Node.JS Driver](maxscale-nosql-protocol-module.md#mongodb-nodejs-driver)
-    * [Inserting a Document](maxscale-nosql-protocol-module.md#inserting-a-document)
-    * [Finding a Document](maxscale-nosql-protocol-module.md#finding-a-document)
-
-### Configuring
-
-There are a number of [parameters](maxscale-nosql-protocol-module.md#parameters) with which the behavior
-of _nosqlprotocol_ can be adjusted. A minimal configuration looks
-like:
+There are a number of [settings](#settings)
+with which the behavior of _nosqlprotocol_ can be adjusted. A minimal configuration
+looks like:
 
 ```
 [TheService]
@@ -190,9 +52,9 @@ maxctrl create listener TheService MongoDB-Listener --protocol=nosqlprotocol 'no
 All the parameters that the nosqlprotocol module takes must be passed in the
 same JSON object.
 
-A complete example can be found at the [end](maxscale-nosql-protocol-module.md#example) of this document.
+A complete example can be found at the [end](#example) of this document.
 
-### Authentication
+## Authentication
 
 Nosqlprotocol supports _SCRAM_ _authentication_ as implemented by MongoDB®.
 The mechanisms `SCRAM-SHA-1` and `SCRAM-SHA-256` are both supported.
@@ -218,7 +80,7 @@ MongoDB shell version v4.4.1
 >
 ```
 
-#### NoSQL and MariaDB Users
+### NoSQL and MariaDB Users
 
 A MariaDB user consists of a name and a host part. A user `'user'@'%'`
 and a user `'user'@'127.0.0.1'` are completely different. The host part
@@ -282,7 +144,7 @@ MariaDB [(none)]> select user, host from mysql.user;
 The MariaDB user corresponding to the NoSQL user `bob`, created in the
 context of the database `test`, has `test` as a prefix.
 
-**The `mariadb` database**
+#### The `mariadb` database
 
 The fact that NoSQL users have the database embedded in the MariaDB
 name may be inconvenient if the same data is accessed both as NoSQL
@@ -331,7 +193,7 @@ MariaDB [(none)]> select user, host from mysql.user;
 
 we will see that `alice` was created without a database prefix.
 
-#### Roles and Privileges
+### Roles and Privileges
 
 When creating a user nosqlprotocol accepts all roles as predefined by
 MongoDB®, but not all of them are translated into GRANT privileges.
@@ -369,7 +231,7 @@ nosqlprotocol account database, but they do not affect what privileges
 are granted to the MariaDB user. Currently user-defined roles are
 not supported.
 
-#### Client Authentication
+### Client Authentication
 
 Authenticationwise nosqlprotocol can be used in three different ways:
 
@@ -377,7 +239,7 @@ Authenticationwise nosqlprotocol can be used in three different ways:
 * Shared credentials
 * Unique credentials
 
-**Anonymously**
+#### Anonymously
 
 If there is an anonymous user on the MariaDB server and if nosqlprotocol
 is configured without a user/password, then all nosqlprotocol clients will
@@ -386,7 +248,7 @@ access the MariaDB server as anonymous users.
 Note that the anonymous MariaDB user is only intended for testing and
 should in general not be used, but deleted.
 
-**Shared Credentials**
+#### Shared Credentials
 
 If nosqlprotocol is configured with
 
@@ -400,7 +262,7 @@ then each MongoDB® client will use those credentials when accessing the
 MariaDB server. Note that from the perspective of the MariaDB server, it
 is not possible to distinguish between different MongoDB® clients.
 
-**Unique Credentials**
+#### Unique Credentials
 
 If nosqlprotocol authentication has been taken into use and a MongoDB®
 client authenticates, either when connecting or later, then the credentials
@@ -411,7 +273,7 @@ is not required, and if the MongoDB® client has not authenticated itself, the
 credentials specified with `nosqlprotocol.[user|password]` (or the anonymous
 user) will be used when accessing the MariaDB server.
 
-**Enforce Authentication**
+#### Enforce Authentication
 
 To enforce authentication, specify
 
@@ -423,7 +285,7 @@ in the configuration. If authentication is required, then any command
 that requires access to the MariaDB server will fail, unless the client
 has authenticated.
 
-#### Authorization
+### Authorization
 
 By default nosqlprotocol does no authorization. However, a nosqlprotocol
 client is _always_ subject to the authorization performed by the MariaDB
@@ -441,35 +303,35 @@ require.
 
 | Command                                                                      | Role      |
 | ---------------------------------------------------------------------------- | --------- |
-| [createUser](maxscale-nosql-protocol-module.md#createUser)                   | userAdmin |
-| [dropUser](maxscale-nosql-protocol-module.md#dropUser)                       | userAdmin |
-| [grantRolesToUser](maxscale-nosql-protocol-module.md#grantRolesToUser)       | userAdmin |
-| [revokeRolesFromUser](maxscale-nosql-protocol-module.md#revokeRolesFromUser) | userAdmin |
-| [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser)                   | userAdmin |
-| [mxsRemoveUser](maxscale-nosql-protocol-module.md#mxsRemoveUser)             | userAdmin |
-| [mxsUpdateUser](maxscale-nosql-protocol-module.md#mxsUpdateUser)             | userAdmin |
-| [updateUser](maxscale-nosql-protocol-module.md#updateUser)                   | userAdmin |
-| [usersInfo](maxscale-nosql-protocol-module.md#usersInfo)                     | userAdmin |
+| [createUser](#createUser)                   | userAdmin |
+| [dropUser](#dropUser)                       | userAdmin |
+| [grantRolesToUser](#grantRolesToUser)       | userAdmin |
+| [revokeRolesFromUser](#revokeRolesFromUser) | userAdmin |
+| [mxsAddUser](#mxsAddUser)                   | userAdmin |
+| [mxsRemoveUser](#mxsRemoveUser)             | userAdmin |
+| [mxsUpdateUser](#mxsUpdateUser)             | userAdmin |
+| [updateUser](#updateUser)                   | userAdmin |
+| [usersInfo](#usersInfo)                     | userAdmin |
 
 It is important to note that even if nosqlprotocol authorization
 is enabled, the MariaDB server has the final word. That is, even if the
 roles of a user would be sufficient for a particular operation, if the
 granted privileges are not, the operation will not succeed. There may
-be a mismatch between roles and grants, for instance, if the wrong roles
-were specified when the user was added, or if the grants have been
+be a mismatch between roles and privileges, for instance, if the wrong roles
+were specified when the user was added, or if the privileges have been
 altered directly and not via nosqlprotocol.
 
-#### Bootstrapping the Authentication/Authorization
+### Bootstrapping the Authentication/Authorization
 
 The authentication/authorization can be bootstrapped explicitly
 or implicitly. Bootstrapping explicitly provides more control, while
 bootstrapping implicitly is much more convenient.
 
-**Explicit bootstrapping**
+#### Explicit bootstrapping
 
 In order to enable authorization you need to have NoSQL users and
-those can be created with [createUser](maxscale-nosql-protocol-module.md#createUser) or added
-with [mxsAddUser](maxscale-nosql-protocol-module.md#addUser).
+those can be created with [createUser](#createUser) or added
+with [mxsAddUser](#mxsadduser).
 
 If you want to _create_ a user, then you first need to configure
 nosqlprotocol with credentials that are sufficient for creating a user:
@@ -546,12 +408,12 @@ network traffic.
 
 However, when a user is created or added (or the password is changed),
 the password will be transferred in _cleartext_. To prevent eavesdropping,
-create/add users when connecting over a domain socket, or use [TLS/SSL](maxscale-nosql-protocol-module.md#tlsssl)
+create/add users when connecting over a domain socket, or use [TLS/SSL](#tlsssl)
 
-**Implicit bootstrapping**
+#### Implicit bootstrapping
 
 With implicit bootstrapping, you should first create the MariaDB
-user that should appear as the initial NoSQL user. As explained [here](maxscale-nosql-protocol-module.md#nosql-and-mariadb-users), the concept of a user is somewhat
+user that should appear as the initial NoSQL user. As explained [here](#nosql-and-mariadb-users), the concept of a user is somewhat
 different in MariaDB and NoSQL, which means that certain factors
 must be taken into account when creating the MariaDB user. Then
 at first startup, nosqlprotocol will create the corresponding
@@ -581,11 +443,11 @@ port with a MongoDB® client using the specified credentials.
 Note that after the bootstrapping, nosqlprotocol will not use
 the `user` and `password` settings and they can be removed.
 
-**Grants**
+##### Grants
 
-When a NoSQL user is created using [createUser](maxscale-nosql-protocol-module.md#createUser)
+When a NoSQL user is created using [createUser](#createUser)
 the MariaDB grants are obtained from the specified NoSQL roles
-as explained [here](maxscale-nosql-protocol-module.md#Roles_and_privileges).
+as explained [here](#roles-and-privileges).
 
 When implicitly creating a NoSQL user from an existing user in
 MariaDB, the inverse operation must be performed. There are
@@ -676,9 +538,9 @@ nosqlprotocol.authorization_enabled=true
 
 At MaxScale startup, the NoSQL user will then be created.
 
-**Examples**
+##### Examples
 
-**Admin User**
+###### Admin User
 
 We want the initial NoSQL user to be an administrator, with
 full rights.
@@ -771,7 +633,7 @@ As can be seen, the user has the _any_ roles on the `admin`
 database, which means that all databases can be accessed and
 modified, and that new users can be created.
 
-**Test User**
+###### Test User
 
 We want the initial NoSQL user to be a user with limited rights,
 intended to be used for testing.
@@ -854,20 +716,20 @@ argument.
 As can be seen, the user has the `readWrite` role on the `test` database,
 which means that only the `test` database can be accessed and modified.
 
-**TLS/SSL**
+#### TLS/SSL
 
 Since `nosqlprotocol` is a regular protocol module used in a listener,
 the TLS/SSL support of listeners is available. Please see [TLS/SSL encryption](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/Getting-Started/Configuration-Guide.md#tls-encryption)
 for details.
 
-#### NoSQL Account Database
+### NoSQL Account Database
 
 So as to be able to connect to the MariaDB server on behalf of
 clients, nosqlprotocol must know their password. As the password
 is not transferred to nosqlprotocol during the authentication in
 a way that could be used when logging into MariaDB, the password
-must be stored when the user is created with [createUser](maxscale-nosql-protocol-module.md#createUser)
-or added with [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser).
+must be stored when the user is created with [createUser](#createUser)
+or added with [mxsAddUser](#mxsAddUser).
 
 Note that the password is not stored in cleartext but as three
 different hashes; hashed with sha1 for use with MariaDB, salted
@@ -881,7 +743,7 @@ can be used only by a particular MaxScale instance, or in &#x61;_&#x73;hared_ ma
 share the information and a user created/added on one instance
 can be used on another.
 
-**Private**
+#### Private
 
 In the private case, the account information of nosqlprotocol is
 stored in an [sqlite3](https://sqlite.org/index.html) database
@@ -916,8 +778,8 @@ access. At subsequent startups the permissions will be checked
 and MaxScale will refuse to start if the permissions allow
 access to others.
 
-**We strongly recommend that no manual modifications are made**
-**to the database.**
+**We strongly recommend that no manual modifications are made
+to the database.**
 
 Note that we make **no** guarantees that the way in which the
 account information is stored by `nosqlprotocol` will remain the
@@ -927,7 +789,7 @@ stored changes, existing account information will automatically
 be converted and no manual intervention, such as re-creation of
 accounts, will be needed.
 
-**Shared**
+#### Shared
 
 In the shared case, the account information of nosqlprotocol
 is stored in the cluster of the service in front of which the
@@ -936,7 +798,7 @@ both for reading and writing data.
 
 A table whose name is the same as the listener's name in the
 MaxScale configuration will be created in the database
-specified with the [authentication\_db](maxscale-nosql-protocol-module.md#authentication_db)
+specified with the [authentication\_db](#authentication_db)
 parameter. If it is not specified explicitly, the default is`nosqlprotocol`. The name of the table will be the name of
 the listener section in the MaxScale configuration file.
 
@@ -958,7 +820,7 @@ file will have the effect of making all accounts disappear.
 To retain the accounts, the table should also be renamed.
 
 `nosqlprotocol` will create the table when needed, so the
-user specified with [authentication\_user](maxscale-nosql-protocol-module.md#authentication_user)
+user specified with [authentication\_user](#authentication_user)
 must have sufficient grants to be able to do that.
 
 `nosqlprotocol` will store in the table, data that allow
@@ -969,12 +831,12 @@ of which MaxScale instance was used when the user was created.
 password, to be able to authenticate against the MariaDB server.
 Therefore it is **strongly** suggested to enable encryption key
 management in MaxScale and to provide an authentication
-key ID with [authentication\_key\_id](maxscale-nosql-protocol-module.md#authentication_key_id) so
+key ID with [authentication\_key\_id](#authentication_key_id) so
 that the data will be encrypted.
 
-If shared authentication has been enabled with [authentication\_shared](maxscale-nosql-protocol-module.md#authentication_shared) then [authentication\_user](maxscale-nosql-protocol-module.md#authentication_user) and [authentication\_password](maxscale-nosql-protocol-module.md#authentication_password) must also
-be provided. With [authentication\_db](maxscale-nosql-protocol-module.md#authentication_db) the
-database name can optionally be changed, and with [authentication\_key\_id](maxscale-nosql-protocol-module.md#authentication_key_id) an
+If shared authentication has been enabled with [authentication\_shared](#authentication_shared) then [authentication\_user](#authentication_user) and [authentication\_password](#authentication_password) must also
+be provided. With [authentication\_db](#authentication_db) the
+database name can optionally be changed, and with [authentication\_key\_id](#authentication_key_id) an
 encryption key ID, using which the sensitive data is encrypted,
 can optionally be provided.
 
@@ -986,7 +848,7 @@ stored changes, existing account information will automatically
 be converted and no manual intervention, such as re-creation of
 accounts, will be needed.
 
-### Wire Protocol
+## Wire Protocol
 
 _Nosqlprotocol_ fully supports wire protocol version 6 and only provides
 rudimentary support for earlier wire protocol versions, but reports at
@@ -995,7 +857,7 @@ client libraries are buggy and use an old wire protocol version if the
 server claims to support only version 6. Consequently, one should use a
 client library version that at least supports wire protocol version 6.
 
-### Client Library
+## Client Library
 
 As the goal of _nosqlprotocol_ is to implement, to the extent that it
 is feasible, the wire protocol and the database commands the way MongoDB®
@@ -1004,7 +866,7 @@ implements them, it should be possible to use any language specific driver.
 However, during the development of _nosqlprotocol_, the _only_ client library
 that has been verified to work is version 3.6 of _MongoDB Node.JS Driver_.
 
-### Settings
+## Settings
 
 Using the following parameters, the behavior of _nosqlprotocol_ can be
 adjusted. As they are not generic listener parameters, but specific t&#x6F;_&#x6E;osqlprotocol_ they must be qualified with the `nosqlprotocol`-prefix.
@@ -1022,7 +884,7 @@ nosqlprotocol.on_unknown_command=return_error
 ...
 ```
 
-#### `user`
+### `user`
 
 * Type: string
 * Mandatory: No
@@ -1031,7 +893,7 @@ nosqlprotocol.on_unknown_command=return_error
 Specifies the _user_ to be used when connecting to the backend, if the MongoDB®
 client is not authenticated.
 
-#### `password`
+### `password`
 
 * Type: string
 * Mandatory: No
@@ -1041,9 +903,9 @@ Specifies the _password_ to be used when connecting to the backend, is the Mongo
 client is not authenticated. Note that the same _user_/_password_ combination will be
 used for all unauthenticated MongoDB® clients connecting to the same listener port.
 
-#### `authentication_required`
+### `authentication_required`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
@@ -1051,22 +913,22 @@ Specifies whether the client always must authenticate. If authentication is requ
 it does not matter whether `user` and `password` have been specified, the client must
 authenticate.
 
-Authentication should not be required before users have been created with [createUser](maxscale-nosql-protocol-module.md#createUser) or added with [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser),
+Authentication should not be required before users have been created with [createUser](#createUser) or added with [mxsAddUser](#mxsAddUser),
 with authentication being optional and authorization being disabled.
 
 NOTE: All client activity is _always_ subject to authorization performed by the
 MariaDB server.
 
-#### `authentication_shared`
+### `authentication_shared`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
 Specifies whether the NoSQL account information should be stored in a shared
 manner or privately.
 
-#### `authentication_db`
+### `authentication_db`
 
 * Type: string
 * Mandatory: No
@@ -1078,7 +940,7 @@ exist, nosqlprotocol will attempt to create it, so either is should be
 manually created or the used specified with `authentication_user` should
 have the grants required to do so.
 
-#### `authentication_key_id`
+### `authentication_key_id`
 
 * Type: string
 * Mandatory: No
@@ -1091,7 +953,7 @@ given, the encryption key manager in MaxScale must also be enabled.
 The encryption key must be a 256-bit key. Keys of shorter length are rejected
 as invalid encryption keys.
 
-#### `authentication_user`
+### `authentication_user`
 
 * Type: string
 * Mandatory: Yes, if `authentication_shared` is true.
@@ -1099,7 +961,7 @@ as invalid encryption keys.
 Specifies the _user_ to be used when modifying and accessing the NoSQL
 account information stored in the MariaDB server.
 
-#### `authentication_password`
+### `authentication_password`
 
 * Type: string
 * Mandatory: No
@@ -1107,21 +969,21 @@ account information stored in the MariaDB server.
 
 Specifies the _password_ of `authentication_user`.
 
-#### `authorization_enabled`
+### `authorization_enabled`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
 Specifies whether nosqlprotocol itself should perform authorization in the context
-of the commands [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser), [mxsRemoveUser](maxscale-nosql-protocol-module.md#mxsRemoveUser) and [mxsUpdateUser](maxscale-nosql-protocol-module.md#mxsUpdateUser). Authorization should not be enabled before users
-have been created with [createUser](maxscale-nosql-protocol-module.md#createUser) or added with [mxsAddUser](maxscale-nosql-protocol-module.md#mxsAddUser)
+of the commands [mxsAddUser](#mxsAddUser), [mxsRemoveUser](#mxsRemoveUser) and [mxsUpdateUser](#mxsUpdateUser). Authorization should not be enabled before users
+have been created with [createUser](#createUser) or added with [mxsAddUser](#mxsAddUser)
 with authorization being disabled.
 
 NOTE: All client activity is _always_ subject to authorization performed by the
 MariaDB server.
 
-#### `host`
+### `host`
 
 * Type: string
 * Mandatory: No
@@ -1135,9 +997,9 @@ user. For tighter security, the IP-address of the MaxScale host can be specified
 NOTE: This value does **not** specify from which host it is allowed to connect to
 MaxScale.
 
-#### `on_unknown_command`
+### `on_unknown_command`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `return_error`, `return_empty`
 * Default: `return_error`
@@ -1149,9 +1011,9 @@ Enumeration values:
 * `return_error`: An error document is returned.
 * `return_empty`: An empty document is returned.
 
-#### `log_unknown_command`
+### `log_unknown_command`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `false`
 
@@ -1159,9 +1021,9 @@ Specifies whether an unknown command should be logged. This is primarily
 for debugging purposes, to find out whether a client uses a command that
 currently is not supported.
 
-#### `auto_create_databases`
+### `auto_create_databases`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `true`
 
@@ -1169,9 +1031,9 @@ Specifies whether databases should automatically be created, as needed.
 
 Note that setting this parameter to `true`, without also setting`auto_create_tables` to `true`, has no effect at all.
 
-#### `auto_create_tables`
+### `auto_create_tables`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Default: `true`
 
@@ -1181,7 +1043,7 @@ Note that this applies only if the relevant database already exists.
 If a database should also be created if needed, then `auto_create_databases`
 must also be set to `true`.
 
-#### `id_length`
+### `id_length`
 
 * Type: count
 * Mandatory: No
@@ -1190,9 +1052,9 @@ must also be set to `true`.
 
 Specifies the length of the id column in tables that are automatically created.
 
-#### `ordered_insert_behavior`
+### `ordered_insert_behavior`
 
-* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `atomic`, `default`
 * Default: `default`
@@ -1209,20 +1071,20 @@ Enumeration values:
   the behavior is as in the `default` case.
 
 What combination of `ordered_insert_behavior` and `ordered` (in the insert command
-document) is used, has an impact on the performance. Please see the discussion at [insert](maxscale-nosql-protocol-module.md#insert).
+document) is used, has an impact on the performance. Please see the discussion at [insert](#insert).
 
-#### `cursor_timeout`
+### `cursor_timeout`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Default: `60s`
 
 Specifies how long a cursor can be idle, that is, not accessed, before it is
 automatically closed.
 
-#### `debug`
+### `debug`
 
-* Type: [enum\_mask](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Values: `none`, `in`, `out`, `back`
 * Default: `none`
@@ -1245,18 +1107,18 @@ nosqlprotocol.debug=in,out,back
 to have the incoming command, the corresponding SQL sent to the backend
 and the resulting response sent to the client logged.
 
-#### `internal_cache`
+### `internal_cache`
 
 * Type: string
 * Mandatory: No
 * Default: ''
 
 Specifies what internal cache to use if any. Currently, the only
-permissible value is `cache`, which refers to the [cache filter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md).
+permissible value is `cache`, which refers to the [cache filter](../maxscale-filters/maxscale-cache.md).
 
-Please see [caching](maxscale-nosql-protocol-module.md#caching) for more information.
+Please see [caching](#caching) for more information.
 
-### Databases and Tables
+## Databases and Tables
 
 By default, _nosqlprotocol_ automatically creates databases as needed.
 The default behavior can be changed by setting `auto_create_databases` to
@@ -1293,13 +1155,115 @@ one.
 To reduce the risk for confusion, the recommendation is to use a specific
 database for tables that contain documents.
 
-### Operators
+## Indexes
+
+_Nosqlprotocol_ supports indexes but there are some limitations.
+
+In MongoDB®, a query like
+```
+db.runCommand({find: "toys", filter: { color: "red" }});
+```
+will return objects like
+```
+{
+  ...
+  "color": "red"
+}
+```
+as well as objects like
+```
+{
+  ...
+  "color": [ "red", "blue" ]
+}
+```
+_Nosqlprotocol_ translates that query into something like
+```
+... WHERE JSON_VALUE(doc, "$.color") = "red" OR JSON_CONTAINS(doc, "$.color", "red")
+```
+The former condition picks out objects whose `color` field contains
+a literal value `"red"` while the latter picks out objects whose
+`color` field contains an array containing the value `"color"`.
+
+In MariaDB Server it is currently not possible to create an index
+that would be appropritate for that use-case. It is also not possible
+to create an index that would work predictably, if the data types
+of the values of a field are different.
+
+Currently, an index is created with the assumption that the field
+is a literal text-value.
+
+When an index is created like
+```
+db.runCommand({createIndexes: "cars", indexes: [{keys: { color:1 }, name "color"}]});
+```
+the generated SQL will basically be like
+```
+ALTER TABLE `test`.`cars`
+ADD COLUMN `color` VARCHAR(255) COLLATE utf8mb3_general_ci
+    AS (JSON_UNQUOTE(JSON_EXTRACT(doc, '$.color'))),
+ADD INDEX `color`(`color`);
+```
+The index expression - `JSON_UNQUOTE(JSON_EXTRACT(doc, '$.color'))` -
+does not match the `WHERE` clause shown above, but even if it would
+match the first part, the second part would still require a table scan,
+so the index would not be used.
+
+Therefore, it is necessary to provide a hint that an index is present,
+so that different code can be generated. The hint need not specify the
+index to be used; it is sufficient that the field is present.
+
+For instance,
+```
+db.runCommand({find: "cars", filter: {color: "red"}, hint: undefined});
+```
+will cause the following `WHERE` clause to be generated
+```
+... WHERE JSON_UNQUOTE(JSON_EXTRACT(doc, '$.color')) = "red"
+```
+which will cause the index to be used.
+
+Due to the way JSON values are handled, the index will work correctly
+for exact match searches also when the value is an array or a document.
+
+For instance, with a collection and documents like
+```
+docs = db.docs;
+docs.createIndexes([{f:1}]);
+docs.save({f: 1});
+docs.save({f: "hello"});
+docs.save({f: [1, 2, 3]});
+docs.save({f: {g:3}});
+```
+the following indexed queries will return the correct documents.
+```
+docs.find({f: "hello"}).hint();
+docs.find({f: [1, 2, 3]}).hint();
+docs.find({f: {g:3}}).hint();
+```
+Even integer values can be sought after using the index, but the index
+will not be used unless the the value is enclosed in quotes and the
+conversion is correct. For instance,
+```
+docs.find({f: "1"}).hint();
+```
+will return nothing, but
+```
+docs.find({f: "1.0"}).hint();
+```
+will. Without quotes
+```
+docs.find({f: 1}).hint();
+```
+the document will be found, but the index will not be used.
+
+## Operators
 
 The following operators are currently supported.
 
-#### Query and Projection Operators
+### Query and Projection Operators
 
-**Comparison Query Operators**
+#### Comparison Query Operators
 
 * $eq
 * $gt
@@ -1310,7 +1274,7 @@ The following operators are currently supported.
 * $ne
 * $nin
 
-**Logical Query Operators**
+#### Logical Query Operators
 
 * $and
 * $not
@@ -1319,15 +1283,16 @@ The following operators are currently supported.
 * $alwaysFalse
 * $alwaysTrue
 
-**Element Query Operators**
+#### Element Query Operators
 
 * $exists
 * $type
 
-**`$type`**
+#### `$type`
 
-When `$type` is used, it will be converted into a condition involving one or more [JSON\_TYPE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_type) comparisons. The following subset
-of types can be used in `$type` queries:
+When `$type` is used, it will be converted into a condition involving one or more
+[JSON\_TYPE](../../../server/reference/sql-functions/special-functions/json-functions/json_type.md)
+comparisons. The following subset of types can be used in `$type` queries:
 
 | Type           | Number | Alias    | MariaDB Type |
 | -------------- | ------ | -------- | ------------ |
@@ -1340,24 +1305,24 @@ of types can be used in `$type` queries:
 
 The _"number"_ alias is supported and will match values whose MariaDB type is`DOUBLE` or `INTEGER`.
 
-**Evaluation Query Operators**
+#### Evaluation Query Operators
 
 * $mod
 * $regex
 
-**Array Query Operators**
+#### Array Query Operators
 
 * $all
 * $elemMatch
 * $size
 
-**`$elemMatch`**
+#### `$elemMatch`
 
 As arguments, only the operators `$eq` and `$ne` are supported.
 
-#### Update Operators
+### Update Operators
 
-**Field Update Operators**
+#### Field Update Operators
 
 * $bit
 * $currentDate
@@ -1371,7 +1336,7 @@ As arguments, only the operators `$eq` and `$ne` are supported.
 * $set
 * $unset
 
-#### Aggregation Pipeline Stages
+### Aggregation Pipeline Stages
 
 * $addFields
 * $collStats
@@ -1387,12 +1352,13 @@ As arguments, only the operators `$eq` and `$ne` are supported.
 * $unset
 * $unwind
 
-#### Aggregation Pipeline Operators
+### Aggregation Pipeline Operators
 
 * $abs
 * $add
 * $and
 * $arrayElemAt
+* $binarySize
 * $bsonSize
 * $ceil
 * $cmp
@@ -1407,6 +1373,8 @@ As arguments, only the operators `$eq` and `$ne` are supported.
 * $gt
 * $gte
 * $ifNull
+* $indexOfBytes
+* $indexOfCP
 * $isArray
 * $isNumber
 * $last
@@ -1416,14 +1384,25 @@ As arguments, only the operators `$eq` and `$ne` are supported.
 * $log10
 * $lt
 * $lte
+* $ltrim
 * $mod
 * $multiply
 * $ne
 * $not
 * $or
 * $pow
+* $reverseArray
+* $rtrim
 * $size
+* $slice
+* $split
 * $sqrt
+* $strCaseCmp
+* $strLenBytes
+* $strLenCP
+* $substr
+* $substrBytes
+* $substrCP
 * $subtract
 * $switch
 * $toBool
@@ -1432,11 +1411,15 @@ As arguments, only the operators `$eq` and `$ne` are supported.
 * $toDouble
 * $toInt
 * $toLong
+* $toLower
 * $toObjectId
 * $toString
+* $toUpper
+* $trim
+* $trunc
 * $type
 
-**Accumulators ($group)**
+#### Accumulators ($group)
 
 * $avg
 * $first
@@ -1446,7 +1429,7 @@ As arguments, only the operators `$eq` and `$ne` are supported.
 * $push
 * $sum
 
-### Database Commands
+## Database Commands
 
 The following commands are supported. At each command is specified
 what fields are relevant for the command.
@@ -1454,23 +1437,23 @@ what fields are relevant for the command.
 **All** non-listed fields are ignored; their presence or absence have no
 impact, unless otherwise explicitly specified.
 
-#### Aggregation Commands
+### Aggregation Commands
 
-**aggregate**
+#### aggregate
 
 The following fields are relevant.
 
 | Field     | Type    | Description                                                                                                                                              |
 | --------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | aggregate | string  | The name of the collection used as the input for the aggregation pipeline.                                                                               |
-| pipeline  | array   | An array of [aggregation pipeline stages](maxscale-nosql-protocol-module.md#aggregation-pipeline-stages) that process and transform the document stream. |
+| pipeline  | array   | An array of [aggregation pipeline stages](#aggregation-pipeline-stages) that process and transform the document stream. |
 | explain   | boolean | Optional. Specifies to return information on the processing of the pipeline.                                                                             |
 
 Depending on the stages and their parameters, the aggregation pipeline may be
 performed entirely using SQL, by fetching documents to MaxScale where they are
 post-processed or by a combination of the two approaches.
 
-**count**
+#### count
 
 The following fields are relevant.
 
@@ -1481,7 +1464,7 @@ The following fields are relevant.
 | limit | integer  | Optional. The maximum number of matching documents to return.                |
 | skip  | integer  | Optional. The number of matching documents to skip before returning results. |
 
-**distinct**
+#### distinct
 
 The following fields are relevant.
 
@@ -1491,9 +1474,9 @@ The following fields are relevant.
 | key      | string   | The field for which to return distinct values.                            |
 | query    | document | Optional. A query that selects which documents to count in the collection |
 
-#### Query and Write Operation Commands
+### Query and Write Operation Commands
 
-**delete**
+#### delete
 
 The following fields are relevant.
 
@@ -1510,7 +1493,7 @@ Each element of the deletes array contains the following fields:
 | q     | document | The query that matches documents to delete.                                                                                       |
 | limit | integer  | The number of matching documents to delete. Specify either a 0 to delete all matching documents or 1 to delete a single document. |
 
-**find**
+#### find
 
 The following fields are relevant.
 
@@ -1524,10 +1507,11 @@ The following fields are relevant.
 | limit       | Non-negative integer | Optional. The maximum number of documents to return. If unspecified, then defaults to no limit. A limit of 0 is equivalent to setting no limit.                                                    |
 | batchSize   | Non-negative integer | Optional. The number of documents to return in the first batch. Defaults to 101. A batchSize of 0 means that the cursor will be established, but no documents will be returned in the first batch. |
 | singleBatch | boolean              | Optional. Determines whether to close the cursor after the first batch. Defaults to false.                                                                                                         |
+| hint        | any                  | Optional. The value is ignored, but if the `hint` field is present, _nosqlprotocol_ will generate code with the assumption that there is an index for every field referred to in `filter`.         |
 
 All other fields are ignored.
 
-**Projection**
+##### Projection
 
 The `projection` parameter determines which fields are returned in the matching documents.
 The `projection` parameter takes a document of the following form:
@@ -1545,7 +1529,7 @@ will be returned.
 | : <0 or false> | Specifies the exclusion of a field.     |
 | :              | Adds a new field or resets an existing. |
 
-**Embedded Field Specification**
+###### Embedded Field Specification
 
 For fields in an embedded documents, the field can be specified using:
 
@@ -1554,12 +1538,12 @@ For fields in an embedded documents, the field can be specified using:
 In particular, specifying fields in embedded documents using nested form
 is not supported.
 
-**`_id` Field Projection**
+###### `_id` Field Projection
 
 The `_id` field is included in the returned documents by default unless you
 explicitly specify `_id: 0` in the projection to suppress the field.
 
-**Inclusion or Exclusion**
+##### Inclusion or Exclusion
 
 A `projection` cannot contain both include and exclude specifications,
 with the exception of the `_id` field:
@@ -1567,7 +1551,7 @@ with the exception of the `_id` field:
 * In projections that explicitly include fields, the `_id` field is the only field that can be explicitly excluded.
 * In projections that explicitly excludes fields, the `_id` field is the only field that can be explicitly include; however, the `_id` field is included by default.
 
-**Filtering by `_id`**
+##### Filtering by `_id`
 
 Note that there is a significant difference between
 
@@ -1596,7 +1580,7 @@ and in the latter
 That is, in the former case the _indexed_ column `id` will be used, in the
 latter it will not.
 
-**findAndModify**
+#### findAndModify
 
 The following fields are relevant.
 
@@ -1606,14 +1590,14 @@ The following fields are relevant.
 | query         | document | Optional. The query predicate.                                                                                                                            |
 | sort          | document | Optional. The sort specification used when the document is selected.                                                                                      |
 | remove        | boolean  | Mandatory, if update is not specified. If true, the document will be deleted.                                                                             |
-| update        | document | Mandatory, if remove is not specified. See [Update.behavior](maxscale-nosql-protocol-module.md#behavior) for details.                                     |
+| update        | document | Mandatory, if remove is not specified. See [Update.behavior](#behavior) for details.                                     |
 | new           | boolean  | Optional. If true the modified document and not the original document is returned. If remove is specified, then the original document is always returned. |
-| fields        | document | Optional. Specified which fields to return. See [Find.projection](maxscale-nosql-protocol-module.md#projection) for details.                              |
+| fields        | document | Optional. Specified which fields to return. See [Find.projection](#projection) for details.                              |
 | upsert        | boolean  | Optional. If true then a document will be created, if one is not found.                                                                                   |
 
 All other fields are ignored.
 
-**getLastError**
+#### getLastError
 
 The following fields are relevant.
 
@@ -1621,7 +1605,7 @@ The following fields are relevant.
 | ------------ | ---- | ----------- |
 | getLastError | any  | Ignored.    |
 
-**getMore**
+#### getMore
 
 The following fields are relevant.
 
@@ -1631,7 +1615,7 @@ The following fields are relevant.
 | collection | string           | The name of the collection over which the cursor is operating. |
 | batchSize  | positive integer | Optional. The number of documents to return in the batch.      |
 
-**insert**
+#### insert
 
 The `insert` command inserts one or more documents into the table whose
 name is the same as that of the collection. If the option `auto_create_tables`
@@ -1646,25 +1630,25 @@ The following fields are relevant.
 | documents | array   | An array of one or more documents to be inserted to the named collection. |
 | ordered   | boolean | Optional, with default being true. See below for description.             |
 
-**`ordered`**
+##### `ordered`
 
 The impact of `ordered` is dependent upon the value of `ordered_insert_behavior`.
 
-**`default`**
+##### `default`
 
 In this case `ordered` has the same impact as in MongoDB®. That is, if the value
 is `true`, then when an insert of a document fails, return without inserting any
 remaining documents listed in the inserts array. If `false`, then when an insert
 of a document fails, continue to insert the remaining documents.
 
-**`atomic`**
+##### `atomic`
 
 If `ordered` is `true`, then all documents will be inserted using a single
 INSERT command. That is, if the insertion of any document fails, for instance,
 due to a duplicate id, then no document will be inserted. If `ordered` is `false`,
 then the behavior is identical with that of `default`.
 
-**Performance**
+##### Performance
 
 What combination of `ordered_insert_behavior` and `ordered` is used, has an
 impact on the performance.
@@ -1678,7 +1662,7 @@ Of these, `atomic + true` is the fastest and `atomic|default + false` the slowes
 being roughly twice as slow. The performance of 'default + true' is halfway between
 the two.
 
-**resetError**
+#### resetError
 
 The following fields are relevant.
 
@@ -1686,7 +1670,7 @@ The following fields are relevant.
 | ---------- | ---- | ----------- |
 | resetError | any  | Ignored.    |
 
-**update**
+#### update
 
 The following fields are relevant.
 
@@ -1697,7 +1681,7 @@ The following fields are relevant.
 
 All other fields are ignored.
 
-**Update Statements**
+##### Update Statements
 
 Each element of the updates array is an update statement document.
 Each document contains the following fields:
@@ -1714,13 +1698,16 @@ with a _replacement-style_ update, even though MongoDB® rejects that.
 All other fields are ignored, with the exception of `upsert` that if present
 with the value of `true` will cause the command to fail.
 
-**Behavior**
+###### Behavior
 
-Currently only updating using _update operator expressions_ or with &#x61;_&#x72;eplacement document_ is supported. In particular, updating using a&#x6E;_&#x61;ggregation pipeline_ is not supported.
+Currently only updating using _update operator expressions_ or with a
+_replacement document_ is supported. In particular, updating using an
+_aggregation pipeline_ is not supported.
 
-**# Update with an Update Operator Expressions document**
+####### Update with an Update Operator Expressions document
 
-The update statement field `u` can accept a document that only contains [update operator](maxscale-nosql-protocol-module.md#update-operators) expressions. For example:
+The update statement field `u` can accept a document that only contains
+[update operator](#update-operators) expressions. For example:
 
 ```
 updates: [
@@ -1735,7 +1722,7 @@ updates: [
 
 In this case, the update command updates only the corresponding fields in the document.
 
-**# Update with a Replacement Document**
+####### Update with a _Replacement Document_
 
 The update statement field `u` field can accept a _replacement document_,
 i.e. the document contains only `field:value` expressions. For example:
@@ -1760,9 +1747,9 @@ document id will remain non-changed while the document otherwise is replaced. Th
 different from MongoDB® where the presence of the `_id` field in the replacement document
 causes an error, if the value is not the same as it is in the document being replaced.
 
-#### Authentication Commands
+### Authentication Commands
 
-**Logout**
+#### Logout
 
 The following fields are relevant.
 
@@ -1781,9 +1768,9 @@ Always returns
 { ok: 1 }
 ```
 
-#### User Management Commands
+### User Management Commands
 
-**createUser**
+#### createUser
 
 Creates a new MariaDB user and adds an entry to the local nosqlprotocol
 account database.
@@ -1811,7 +1798,7 @@ following command
 the MariaDB user `'myDatabase.user1'@'%'` will be created.
 
 The elements of the `roles` array are converted into privileges
-as explained in [here](maxscale-nosql-protocol-module.md#roles_and_privileges).
+as explained in [here](#roles-and-privileges).
 
 In practice the creation is performed as follows:_First the MariaDB user is created._ Then the privileges are granted.
 
@@ -1820,7 +1807,7 @@ In practice the creation is performed as follows:_First the MariaDB user is crea
 If the granting of privileges fails, an attempt will be made to
 drop the user.
 
-**dropAllUsersFromDatabase**
+#### dropAllUsersFromDatabase
 
 Drops all users from the local nosqlprotocol account database and
 the corresponding MariaDB users.
@@ -1836,7 +1823,7 @@ then an error will be returned. If even a single user can be dropped
 the returned document tells how many were dropped, which does not
 necessarily indicate that _all_ users were dropped.
 
-**dropUser**
+#### dropUser
 
 The following fields are relevant.
 
@@ -1847,7 +1834,7 @@ The following fields are relevant.
 The user will first be dropped from the MariaDB server and if
 that succeeds also from the local nosqlprotocol account database.
 
-**grantRolesToUser**
+#### grantRolesToUser
 
 This command _adds_ more roles to a NoSQL user, which may imply
 that additional privileges are granted to the corresponding MariaDB
@@ -1862,7 +1849,7 @@ Note that roles assigned to different databases will result in separate
 GRANT statements, which means that it is possible that some succeed and
 others do not.
 
-**revokeRolesFromUser**
+#### revokeRolesFromUser
 
 This command _removes_ roles from an NoSQL user, which may imply
 that privileges are revoked from the corresponding MariaDB user.
@@ -1876,7 +1863,7 @@ Note that roles to be removed from different databases will result in
 separate REVOKE statements, which means that it is possible that some
 succeed and others do not.
 
-**updateUser**
+#### updateUser
 
 This command updates the information about a particular user.
 
@@ -1892,7 +1879,7 @@ Changes to `customData` or `mechanisms` are made only to the local
 nosqlprotocol database, but changes to `pwd` or `roles` require
 the MariaDB server to be updated.
 
-**usersInfo**
+#### usersInfo
 
 This command returns information about one or more users.
 
@@ -1920,9 +1907,9 @@ If `showCredentials` is true, the returned object(s) will contain a`mariadb: { p
 That is, the same string that is found in the `password` column in
 the `mysql.user` table.
 
-#### Replication Commands
+### Replication Commands
 
-**isMaster**
+#### isMaster
 
 The following fields are relevant.
 
@@ -1930,7 +1917,7 @@ The following fields are relevant.
 | -------- | ---- | ----------- |
 | isMaster | any  | Ignored.    |
 
-**replSetGetStatus**
+#### replSetGetStatus
 
 The following fields are relevant.
 
@@ -1951,9 +1938,9 @@ This command will always return the document
 }
 ```
 
-#### Sessions Commands
+### Sessions Commands
 
-**endSessions**
+#### endSessions
 
 The following fields are relevant.
 
@@ -1967,9 +1954,9 @@ The following document will always be returned:
 { "ok" : 1 }
 ```
 
-#### Administration Commands
+### Administration Commands
 
-**create**
+#### create
 
 The following fields are relevant.
 
@@ -1983,20 +1970,37 @@ Currently, _capped collections_ and _views_ are not supported. Consequently,
 specifying that the collection should be capped or that it should be a
 view on another collection, will cause the command to fail.
 
-**createIndexes**
+#### createIndexes
 
-The following fields are relevant.
+Field | Type | Description
+------|------|------------
+createIndexes| string | The collection for which to create indexes.
+indexes| array | Specifies the indexes to create.
 
-| Field         | Type   | Description                                 |
-| ------------- | ------ | ------------------------------------------- |
-| createIndexes | string | The collection for which to create indexes. |
+The following fields are relevant for each document in the `indexes` array.
 
-**NOTE** Currently it is not possible to create indexes, but the command
-will nonetheless return success, provide the index specification passes
-some rudimentary sanity checks. Note also that the collection will be
-created if it does not exist.
+Field | Type | Description
+------|------|------------
+key | document | Contains key/value pairs, where the key is the name of the field to index and value the index direction or the index type. Currently the direction is ignored and a specific type cannot be specified.
+name | string | The name of the index.
+unique | boolean | Optional. If true, a unique index will be created.
+sparse | boolean | Optional and has no effect.
 
-**drop**
+For instance, the following command
+```
+db.runCommand({createIndexes: "cars", indexes: [{keys: { make: 1}, name: "make"}]});
+```
+results in the following SQL:
+```
+ALTER TABLE `test`.`cars`
+ADD COLUMN IF NOT EXISTS `make` VARCHAR(255) COLLATE utf8mb4_bin AS (JSON_VALUE(doc, '$.make')),
+ADD INDEX IF NOT EXISTS `make`(`make`) COMMENT 'Regular';
+```
+The value of the comment is either `Regular` or `Sparse`, depending on the value of `sparse`
+at creation time. The only purpose is for `listIndexes` to be able to report whether the
+index was supposed to be sparse or not.
+
+#### drop
 
 The following fields are relevant.
 
@@ -2004,7 +2008,7 @@ The following fields are relevant.
 | ----- | ------ | ----------------------------------- |
 | drop  | string | The name of the collection to drop. |
 
-**dropDatabase**
+#### dropDatabase
 
 The following fields are relevant.
 
@@ -2012,20 +2016,16 @@ The following fields are relevant.
 | ------------ | ---- | ----------- |
 | dropDatabase | any  | Ignored.    |
 
-**dropIndexes**
+#### dropIndexes
 
 The following fields are relevant.
 
-| Field       | Type | Description |
-| ----------- | ---- | ----------- |
-| dropIndexes | any  | Ignored.    |
+Field | Type | Description
+------|------|------------
+dropIndexes | string | The name of the collection whose indexes should be dropped.
+index | string|document|array-of-strings | Indexes to be dropped.
 
-**NOTE** Currently it is not possible to create indexes and thus there
-will never be any indexes that could be dropped. However, provided the
-specified collection exists, dropping indexes will always succeed except
-for an attempt to drop the built-in `_id_` index.
-
-**fsync**
+#### fsync
 
 The following fields are relevant.
 
@@ -2044,7 +2044,7 @@ The response will always be
 }
 ```
 
-**killCursors**
+#### killCursors
 
 The following fields are relevant.
 
@@ -2053,7 +2053,7 @@ The following fields are relevant.
 | killCursors | string | The name of the collection.     |
 | cursors     | array  | The ids of the cursors to kill. |
 
-**listCollections**
+#### listCollections
 
 The following fields are relevant.
 
@@ -2067,7 +2067,7 @@ Up until version 24.02, the command listed every table in the current
 database as a collection. From 24.08 onwards, only tables that contain
 NoSQL data will be returned as NoSQL collections.
 
-**listDatabases**
+#### listDatabases
 
 The following fields are relevant.
 
@@ -2076,7 +2076,7 @@ The following fields are relevant.
 | listDatabases | any     | Ignored.                                                                                                                                    |
 | nameOnly      | boolean | Optional. A flag to indicate whether the command should return just the database names, or return both database names and size information. |
 
-#### listIndexes
+### listIndexes
 
 The following fields are relevant.
 
@@ -2089,7 +2089,7 @@ although an attempt to do so using `createIndexes` will succeed, the
 result will always only contain information about the built-in
 index `_id_`.
 
-**renameCollection**
+#### renameCollection
 
 The following fields are relevant.
 
@@ -2099,7 +2099,7 @@ The following fields are relevant.
 | to               | string  | The new namespace of the collection. Moving a collection/table from one database to another succeeds provided the databases reside in the same filesystem. |
 | dropTarget       | boolean | Optional. If true, the target collection/table will be dropped before the renaming is made. The default value is false.                                    |
 
-**setParameter**
+#### setParameter
 
 The following fields are relevant.
 
@@ -2113,9 +2113,9 @@ Any kind of parameter is accepted and the response will always be:
 { "ok" : 1 }
 ```
 
-#### Diagnostic Commands
+### Diagnostic Commands
 
-**buildInfo**
+#### buildInfo
 
 The following fields are relevant.
 
@@ -2125,7 +2125,7 @@ The following fields are relevant.
 
 The command returns a document containing the stable fields. In addition, there is a field `maxscale` whose value is the MaxScale version, expressed as a string.
 
-**explain**
+#### explain
 
 The following fields are relevant.
 
@@ -2136,7 +2136,7 @@ The following fields are relevant.
 
 The command will return a document of the expected layout, but the content is only rudimentary.
 
-**getCmdLineOpts**
+#### getCmdLineOpts
 
 The following fields are relevant.
 
@@ -2144,7 +2144,7 @@ The following fields are relevant.
 | -------------- | ---- | ----------- |
 | getCmdLineOpts | any  | Ignored.    |
 
-**getLog**
+#### getLog
 
 The following fields are relevant.
 
@@ -2154,7 +2154,7 @@ The following fields are relevant.
 
 The command returns a document of the correct format, but _no_ actual log data will be returned.
 
-**hostInfo**
+#### hostInfo
 
 The following fields are relevant.
 
@@ -2162,7 +2162,7 @@ The following fields are relevant.
 | -------- | ---- | ----------- |
 | hostInfo | any  | Ignored.    |
 
-**listCommands**
+#### listCommands
 
 The following fields are relevant.
 
@@ -2170,7 +2170,7 @@ The following fields are relevant.
 | ------------ | ---- | ----------- |
 | listCommands | any  | Ignored.    |
 
-**ping**
+#### ping
 
 The following fields are relevant.
 
@@ -2178,7 +2178,7 @@ The following fields are relevant.
 | ----- | ---- | ----------- |
 | ping  | any  | Ignored.    |
 
-**serverStatus**
+#### serverStatus
 
 The following fields are relevant.
 
@@ -2186,7 +2186,7 @@ The following fields are relevant.
 | ------------ | ---- | ----------- |
 | serverStatus | any  | Ignored.    |
 
-**validate**
+#### validate
 
 The following fields are relevant.
 
@@ -2198,7 +2198,7 @@ The command does not actually perform any validation but for checking
 that the collection exists. The response will contain in `nrecords`
 the current number of documents/rows it contains.
 
-**whatsmyuri**
+#### whatsmyuri
 
 The following fields are relevant.
 
@@ -2208,9 +2208,9 @@ The following fields are relevant.
 
 This is an internal command, implemented only because the Mongo Shell uses it.
 
-#### Free Monitoring Commands
+### Free Monitoring Commands
 
-**getFreeMonitoringStatus**
+#### getFreeMonitoringStatus
 
 The following fields are relevant.
 
@@ -2224,22 +2224,22 @@ The following document will always be returned:
 { "state" : "undecided", "ok" : 1 }
 ```
 
-#### MaxScale Specific Commands
+### MaxScale Specific Commands
 
-**mxsAddUser**
+#### mxsAddUser
 
-**Definition**
+##### Definition
 
-**mxsAddUser**
+###### **mxsAddUser**
 
 The `mxsAddUser` command adds an _existing_ MariaDB user to the local
-nosqlprotocol account database. Use [createUser](maxscale-nosql-protocol-module.md#createUser) if the
+nosqlprotocol account database. Use [createUser](#createUser) if the
 MariaDB user should be created as well.
 
 Note that the `mxsAddUser` command does not check that the user exists
 or that the specified roles are compatible with the grants of the user.
 
-**Syntax**
+##### Syntax
 
 The 'mxsAddUser' command has the following syntax:
 
@@ -2259,7 +2259,7 @@ db.runCommand(
 )
 ```
 
-**Command Fields**
+##### Command Fields
 
 The command has the following fields:
 
@@ -2277,10 +2277,10 @@ an existing user in the MariaDB server and the value of `pwd` should be
 that user's password in cleartext.
 
 The `roles` array should contain roles that a compatible with the
-grants of the user. Please check [roles and grants](maxscale-nosql-protocol-module.md#roles_and_grants)
-for a discussion on how to map roles map to grants.
+grants of the user. Please check [roles and privileges](#roles-and-privileges)
+for a discussion on how to map roles map to privileges.
 
-**Returns**
+###### Returns
 
 If the addition of the user succeeds, the command returns a document
 with the single field `ok` whose value is `1`.
@@ -2302,16 +2302,16 @@ If there is a failure of some kind, the command returns an error document
 }
 ```
 
-**mxsCreateDatabase**
+#### mxsCreateDatabase
 
-**Definition**
+##### Definition
 
-**mxsCreateDatabase**
+###### **mxsCreateDatabase**
 
 The 'mxsCreateDatabase' command creates a new database and must be run
 against the `admin` database.
 
-**Syntax**
+##### Syntax
 
 The 'mxsCreateDatabase' has the following syntax:
 
@@ -2323,7 +2323,7 @@ db.adminCommand(
 )
 ```
 
-**Command Fields**
+###### Command Fields
 
 The command takes the following fields:
 
@@ -2331,7 +2331,7 @@ The command takes the following fields:
 | ----------------- | ------ | --------------------------------------- |
 | mxsCreateDatabase | string | The name of the database to be created. |
 
-**Returns**
+###### Returns
 
 If database creation succeeds, the command returns a document with the
 single field `ok` whose value is `1`.
@@ -2353,16 +2353,16 @@ If the database creation fails, the command returns an error document.
 }
 ```
 
-**mxsDiagnose**
+#### mxsDiagnose
 
-**Definition**
+##### Definition
 
-**mxsDiagnose**
+###### **mxsDiagnose**
 
 The `mxsDiagnose` command provides diagnostics for any other command; that is, how
 MaxScale will handle that command.
 
-**Syntax**
+##### Syntax
 
 The `mxsDiagnose` command has the following syntax:
 
@@ -2374,7 +2374,7 @@ db.runCommand(
 )
 ```
 
-**Command Fields**
+###### Command Fields
 
 The command takes the following fields:
 
@@ -2382,7 +2382,7 @@ The command takes the following fields:
 | ----------- | -------- | -------------------------------------------- |
 | mxsDiagnose | document | A command as provided to db.runCommand(...). |
 
-**Returns**
+##### Returns
 
 The command returns a document that contains diagnostics of the command
 provided as argument. For example:
@@ -2424,16 +2424,16 @@ of statements that would have been sent to the backend.
 If an error occurs while the command is being diagnosed, then there will be no`response` field but an `error` field whose value is an error document. Note that
 the value of `ok` will always be 1.
 
-**mxsGetConfig**
+#### mxsGetConfig
 
-**Definition**
+##### Definition
 
-**mxsGetConfig**
+###### **mxsGetConfig**
 
 The `mxsGetConfig` command returns the current configuration of the session
 and must be run against the 'admin' database.
 
-**Syntax**
+##### Syntax
 
 The `mxsGetConfig` has the following syntax:
 
@@ -2444,7 +2444,7 @@ db.runCommand(
     });
 ```
 
-**Command Fields**
+###### Command Fields
 
 The command takes the following fields:
 
@@ -2452,7 +2452,7 @@ The command takes the following fields:
 | ------------ | ---- | ----------- |
 | mxsGetConfig |      | Ignored.    |
 
-**Returns**
+##### Returns
 
 The command returns a document that contains the current configuration of
 the session. For example:
@@ -2470,15 +2470,15 @@ the session. For example:
 }
 ```
 
-**mxsListTables**
+#### mxsListTables
 
-**Definition**
+##### Definition
 
-**mxsListTables**
+###### **mxsListTables**
 
 The `mxsListTables` command lists all tables in a database.
 
-**Syntax**
+##### Syntax
 
 The 'mxsListTables' command has the following syntax:
 
@@ -2489,7 +2489,7 @@ db.runCommand(
     });
 ```
 
-**Command Fields**
+###### Command Fields
 
 The command takes the following fields:
 
@@ -2497,7 +2497,7 @@ The command takes the following fields:
 | ------------- | ---- | ----------- |
 | mxsListTables |      | Ignored.    |
 
-**Returns**
+##### Returns
 
 The command returns a cursor whose first and only batch contains
 the names of the tables in the database and whether they are NoSQL
@@ -2518,17 +2518,17 @@ collections or not. For example:
 }
 ```
 
-**mxsRemoveUser**
+#### mxsRemoveUser
 
-**Definition**
+##### Definition
 
-**mxsRemoveUser**
+###### **mxsRemoveUser**
 
 The `mxsRemoveUser` removes a user from the local nosqlprotocol account
-database. Use [dropUser](maxscale-nosql-protocol-module.md#dropUser) if the MariaDB user should be dropped
+database. Use [dropUser](#dropUser) if the MariaDB user should be dropped
 as well.
 
-**Syntax**
+##### Syntax
 
 The 'mxsRemoveUser' command has the following syntax:
 
@@ -2540,7 +2540,7 @@ db.runCommand(
 )
 ```
 
-**Command Fields**
+###### Command Fields
 
 The command has the following fields:
 
@@ -2548,7 +2548,7 @@ The command has the following fields:
 | ------------- | ------ | ----------------------------------- |
 | mxsRemoveUser | string | The name of the user to be removed. |
 
-**Returns**
+##### Returns
 
 If the removal of the user succeeds, the command returns a document
 with the single field `ok` whose value is `1`.
@@ -2570,11 +2570,11 @@ If there is a failure of some kind, the command returns an error document
 }
 ```
 
-**mxsSetConfig**
+#### mxsSetConfig
 
-**Definition**
+##### Definition
 
-**mxsSetConfig**
+###### **mxsSetConfig**
 
 The `mxsSetConfig` command changes the configuration of the session
 and must be run against the 'admin' database.
@@ -2582,7 +2582,7 @@ and must be run against the 'admin' database.
 Note that the changes only affect the current session and are **not**
 persisted.
 
-**Syntax**
+##### Syntax
 
 The `mxsSetConfig` has the following syntax:
 
@@ -2593,7 +2593,7 @@ db.runCommand(
     });
 ```
 
-**Command Fields**
+###### Command Fields
 
 The command takes the following fields:
 
@@ -2609,7 +2609,7 @@ The document takes the following fields:
 | auto\_create\_tables | boolean | Whether tables should be created as needed. |
 | id\_length           | integer | id column VARCHAR size in created tables.   |
 
-**Returns**
+##### Returns
 
 The command returns a document that contains the changed configuration of
 the session. For example:
@@ -2637,21 +2637,21 @@ the session. For example:
 }
 ```
 
-**mxsUpdateUser**
+#### mxsUpdateUser
 
-**Definition**
+##### Definition
 
-**mxsUpdateUser**
+###### **mxsUpdateUser**
 
 The `mxsUpdateUser` command updates a user in the local nosqlprotocol
-account database. Use [updateUser](maxscale-nosql-protocol-module.md#updateUser) to update MariaDB user
+account database. Use [updateUser](#updateUser) to update MariaDB user
 as well.
 
 Note that the `mxsUpdateUser` command does not check that the changed
 data is compatible e.g. with the grants of the corresponding MariaDB
 user.
 
-**Syntax**
+##### Syntax
 
 The 'mxsUpdateUser' command has the following syntax:
 
@@ -2671,7 +2671,7 @@ db.runCommand(
 )
 ```
 
-**Command Fields**
+###### Command Fields
 
 The command has the following fields:
 
@@ -2685,10 +2685,10 @@ The command has the following fields:
 | digestPassword | boolean  | Optional. If specified, must be true.                                                                                                                                    |
 
 The `roles` array should contain roles that a compatible with the
-grants of the user. Please check [roles and grants](maxscale-nosql-protocol-module.md#roles_and_grants)
-for a discussion on how to map roles map to grants.
+grants of the user. Please check [roles and privileges](#roles-and-privileges)
+for a discussion on how to map roles map to privileges.
 
-**Returns**
+##### Returns
 
 If the updating of the user succeeds, the command returns a document
 with the single field `ok` whose value is `1`.
@@ -2710,22 +2710,23 @@ If there is a failure of some kind, the command returns an error document
 }
 ```
 
-### Object Id
+## Object Id
 
 When a document is created, an id of type `ObjectId` will be autogenerated by
 the MongoDB® client library. If the id is provided explicitly, by assigning a
 value to the `_id` field, the value must be an `ObjectId`, a string or an
 integer.
 
-### Caching
+## Caching
 
 The conversion of the BSON used in the communication between the client and
 MaxScale, to the SQL used in the communication between MaxScale and the server
 carries a not insignificant cost, as does the conversion of result sets
 returned by the server to the BSON returned by MaxScale to the client. The
-regular [cache filter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) provides no remedy for this, as
-it is located after the protocol and uses SQL as the key and stores result
-sets as values.
+regular
+[cache filter](../maxscale-filters/maxscale-cache.md)
+provides no remedy for this, as it is located after the protocol and uses
+SQL as the key and stores result sets as values.
 
 From 23.08 onwards, the nosqlprotocol has a built-in cache that when used
 under certain conditions diminishes the conversion cost. The cache is
@@ -2737,9 +2738,11 @@ enabled by adding the following line to the NoSQL listener.
 nosqlprotocol.internal_cache=cache
 ```
 
-This effectively causes the [cache filter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) to be used
-inside the NoSQL protocol module. The internal cache can be configured just
-like the cache filter is, by using the following nested configuration syntax.
+This effectively causes the
+[cache filter](../maxscale-filters/maxscale-cache.md)
+to be used inside the NoSQL protocol module. The internal cache can
+be configured just like the cache filter is, by using the following
+nested configuration syntax.
 
 ```
 [My-NoSQL-Listener]
@@ -2774,29 +2777,30 @@ other NoSQL response is cacheable. Both will benefit the result set being
 in the cache. Since the used storage follows an LRU-approach when evicting
 data from the cache, the less valuable result will be evicted first.
 
-#### Cached Commands
+### Cached Commands
 
 The responses of the following commands are cached.
 
-* [count](maxscale-nosql-protocol-module.md#count)
-* [distinct](maxscale-nosql-protocol-module.md#distinct)
-* [find](maxscale-nosql-protocol-module.md#find), provided all found documents can be returned in one response,
+* [count](#count)
+* [distinct](#distinct)
+* [find](#find), provided all found documents can be returned in one response,
   i.e., if `singleBatch` is `true` or `batchSize` is large enough.
 
-### Compatibility
+## Compatibility
 
 Currently 30% of the tests in the [MongoDB® core](https://github.com/mongodb/mongo/tree/master/jstests/core)
 test-suite pass.
 
-### Example
+## Example
 
 The following is a minimal setup for getting _nosqlprotocol_ up and
 running. It is assumed the reader knows how to configure MaxScale for
-normal use. If not, please start with the [MaxScale tutorial](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
+normal use. If not, please start with the
+[MaxScale tutorial](../../mariadb-maxscale-tutorials/maxscale-administration-tutorial.md).
 Note that as _nosqlprotocol_ is the first component in the MaxScale
 routing chain, it can be used with all routers and filters.
 
-#### Configuring MaxScale
+### Configuring MaxScale
 
 In the following it is assumed that MaxScale already has been configured
 for normal use and that there exists a _service_ `[TheService]`.
@@ -2825,7 +2829,7 @@ log file.
 ... notice : (NoSQL-Listener); Listening for connections at [127.0.0.1]:17017
 ```
 
-#### MongoDB® Shell
+### MongoDB® Shell
 
 The mongo Shell is a powerful tool with which to access and manipulate a
 MongoDB database. It is part of the MongoDB® package. Having the native
@@ -2902,7 +2906,9 @@ the value of the `_id` field of the document in the `doc` column.
 
 All MongoDB® commands that _mongdbprotocol_ support (but for the ones that
 do not require database access), basically access or manipulate the
-content in the `doc` column using the [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions) of MariaDB.
+content in the `doc` column using the
+[JSON functions](../../../server/reference/sql-functions/special-functions/json-functions/json_type.md)
+of MariaDB.
 
 From within the mongo shell itself it is easy to find out just what SQL
 a particular MongoDB command is translated into.
@@ -2935,7 +2941,7 @@ Similarily, the SQL of the `find` command can be find out like:
 The returned SQL can be directly pasted at the `mysql` prompt, which is
 quite convenient in case the MongoDB® command does not behave as expected.
 
-#### MongoDB® Node.JS Driver
+### MongoDB® Node.JS Driver
 
 As all client libraries implement and depend on the MongoDB® wire protocol,
 all client libraries should work with _nosqlprotocol_. However, the
@@ -2962,7 +2968,7 @@ In practice, additional modifications may be needed since _nosqlprotocol_
 does not implement all commands and does not in all cases implement the
 full functionality of the commands that it supports.
 
-**Inserting a Document**
+#### Inserting a Document
 
 Store the following into a file called `insert.js`.
 
@@ -2999,7 +3005,7 @@ $ nodejs insert.js
 
 As the id is not explicitly provided, it will not be the same.
 
-**Finding a Document**
+#### Finding a Document
 
 Store the following into a file called `find.js`.
 

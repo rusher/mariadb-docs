@@ -12,6 +12,7 @@ It contains the following columns:
 | IS\_DEFAULT          | Whether the collation is the character set's default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | IS\_COMPILED         | Whether the collation is compiled into the server.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | SORTLEN              | Sort length, used for determining the memory used to sort strings in this collation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| PAD\_ATTRIBUTE       | <p>Determines whether or not trailing spaces are regarded as normal characters. See <a href="information-schema-collations-table.md#no-pad-collations">below</a>.<br>Available from MariaDB 12.1.</p>                                                                                                                                                                                                                                                                                                                                                          |
 | COMMENT              | <p>For utf8mb4_0900 collations, contains the corresponding alias collation.</p><p>From <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-5-release-notes">MariaDB 11.4.5</a>, <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes">MariaDB 11.7.2</a>, <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-1-release-notes">MariaDB 11.8.1</a>.</p> |
 
 The [SHOW COLLATION](../../../sql-statements/administrative-sql-statements/show/show-collation.md) statement returns the same results and both can be reduced in a similar way.
@@ -44,10 +45,25 @@ WHERE CHARACTER_SET_NAME LIKE 'utf8';
 {% endtab %}
 {% endtabs %}
 
-## NO PAD collations
+## NO PAD Collations
 
 `NO PAD` collations regard trailing spaces as normal characters. You can get a list of all `NO PAD` collations as follows:
 
+{% tabs %}
+{% tab title="Current" %}
+```sql
+SELECT collation_name FROM information_schema.COLLATIONS
+WHERE pad_attribute = "NO PAD";  
++------------------------------+
+| collation_name               |
++------------------------------+
+| big5_chinese_nopad_ci        |
+| big5_nopad_bin               |
+...
+```
+{% endtab %}
+
+{% tab title="< 12.1" %}
 ```sql
 SELECT collation_name FROM information_schema.COLLATIONS
 WHERE collation_name LIKE "%nopad%";  
@@ -57,6 +73,32 @@ WHERE collation_name LIKE "%nopad%";
 | big5_chinese_nopad_ci        |
 | big5_nopad_bin               |
 ...
+```
+{% endtab %}
+{% endtabs %}
+
+In comparisons, `NO PAD` collations evaluate to `0` (`FALSE`). Example:
+
+```sql
+SELECT 'a ' = 'a'; 
++------------+ 
+| 'a ' = 'a' | 
++------------+
+|          0 | 
++------------+
+```
+
+## PAD SPACE Collations
+
+&#x20;`PAD SPACE` collations pad strings to equal lengths in comparisons, so that the comparison evaluates to `1` (`TRUE`). Example:
+
+```sql
+SELECT 'a ' = 'a'; 
++------------+ 
+| 'a ' = 'a' | 
++------------+
+|          1 | 
++------------+
 ```
 
 ## Example

@@ -225,7 +225,6 @@ mariadb -h 127.0.0.1 -P 3306 -u my-user -p
 
 #### Further Resources:
 
-* [MariaDB MaxScale Installation Guide](https://www.google.com/search?q=https://mariadb.com/docs/maxscale/latest/install/\&authuser=1)
-* [MariaDB MaxScale Configuration Guide](https://www.google.com/search?q=https://mariadb.com/docs/maxscale/latest/config/\&authuser=1)
+* [MariaDB MaxScale Installation Guide](../maxscale-management/installation-and-configuration/maxscale-installation-guide.md)
+* [MariaDB MaxScale Configuration Guide](../maxscale-management/deployment/maxscale-configuration-guide.md)
 * [MariaDB MaxScale GitHub Repository](https://github.com/mariadb-corporation/MaxScale)
-* [DigitalOcean: How To Install and Configure MariaDB MaxScale (Tutorial)](https://www.google.com/search?q=https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-mariadb-maxscale-on-ubuntu-22-04\&authuser=1)

@@ -57,7 +57,7 @@ PCRE supports the following escape sequences to match special characters:
 | \xhh      | character with hex code hh                  |
 | \x{hhh..} | character with hex code hhh..               |
 
-Note, the backslash characters (here, and in all examples in the sections below) must be escaped with another backslash, unless you're using the [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) `NO_BACKSLASH_ESCAPES`.
+Note, the backslash characters (here, and in all examples in the sections below) must be escaped with another backslash, unless you're using the [SQL\_MODE](../../../../server-management/variables-and-modes/sql_mode.md) `NO_BACKSLASH_ESCAPES`.
 
 This example tests if a character has hex code 0x61:
 

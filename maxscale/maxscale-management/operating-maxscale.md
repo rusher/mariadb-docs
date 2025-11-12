@@ -1,15 +1,17 @@
 # Operating MaxScale
 
-## Overview
-
-|                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Configuring the REST API             | [Configuring MaxScale's REST API](configuring-maxscales-rest-api.md)                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Creating a REST API User             | [Creating a REST API User for MaxScale with MaxCtrl](broken-reference)                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Deleting a REST API User             | [Deleting a REST API User for MaxScale with MaxCtrl](broken-reference)                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Using TLS                            | \* [Enabling TLS on MaxScale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/encryption/data-in-transit-encryption/data-in-transit-encryption-enabling-tls-on-mariadb-server#enabling-tls) • [Enabling TLS for MaxScale's REST API](broken-reference) • [Connecting to MaxScale using TLS with MaxCtrl](administrative-tools-for-mariadb-maxscale-maxctrl/connecting-to-maxscale-using-tls-with-maxctrl.md#connecting-to-maxscale-using-tls) |
-| Configuring MaxScale for MaxGUI      | [Configuring MaxScale for MaxGUI](maxgui/configuring-maxscale-for-maxgui.md)                                                                                                                                                                                                                                                                                                                                                                                           |
-| Setting a Server to Maintenance Mode | <ul><li><a href="maxgui/">Setting a Server to Maintenance Mode in MaxScale with MaxGUI</a></li><li><a href="administrative-tools-for-mariadb-maxscale-maxctrl/">MaxScale with MaxCtrl</a></li></ul>                                                                                                                                                                                                                                                                    |
+* REST API
+  * [Configuring the REST-API](configuring-maxscales-rest-api.md)
+  * [Creating a REST API User](administrative-tools-for-mariadb-maxscale-maxctrl/creating-a-rest-api-user-for-maxscale-with-maxctrl.md)
+  * [Deleting a REST API User](../reference/maxscale-maxctrl.md#destroy-user)
+* TLS
+  * [Enabling TLS on MaxScale](deployment/maxscale-configuration-guide.md#tlsssl-encryption)
+  * [Enabling TLS for MaxScale's REST API](administrative-tools-for-mariadb-maxscale-maxctrl/connecting-to-maxscale-using-tls-with-maxctrl.md)
+  * [Connecting to MaxScale using TLS with MaxCtrl](administrative-tools-for-mariadb-maxscale-maxctrl/connecting-to-maxscale-using-tls-with-maxctrl.md)
+* MaxGUI
+  * [Configuring MaxScale for MaxGUI](maxgui/configuring-maxscale-for-maxgui.md)
+* Operations
+  * [Setting a Server to Maintenance Mode with MaxGUI](administrative-tools-for-mariadb-maxscale-maxctrl/maxctrl-setting-a-server-to-maintenance-mode-in-maxscale-with-maxctrl.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

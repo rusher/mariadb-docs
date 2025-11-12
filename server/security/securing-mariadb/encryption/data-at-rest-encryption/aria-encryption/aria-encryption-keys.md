@@ -4,7 +4,7 @@ As with other storage engines that support data-at-rest encryption, Aria relies 
 
 ## Encryption Keys
 
-MariaDB keeps track of each encryption key internally using a 32-bit integer, which serves as the key identifier. Unlike [InnoDB](../innodb-encryption/), Aria does not support the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option (for more information, see [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049)), which allows the user to specify the encryption key to use. Instead, Aria defaults to specific encryption keys provided by the Encryption Key Management plugin.
+MariaDB keeps track of each encryption key internally using a 32-bit integer, which serves as the key identifier. Unlike [InnoDB](../innodb-encryption/), Aria does not support the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option (for more information, see [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049)), which allows the user to specify the encryption key to use. Instead, Aria defaults to specific encryption keys provided by the Encryption Key Management plugin.
 
 * When working with user-created tables, Aria encrypts them to disk using the ID 1 key.
 * When working with internal temporary tables written to disk, Aria encrypts them to disk using the ID 2 key, unless there is no ID 2 key, then it falls back on the ID 1 key.

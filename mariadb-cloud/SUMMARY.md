@@ -5,6 +5,7 @@
   * [MariaDB Cloud Serverless](about/serverless.md)
   * [MariaDB Cloud Serverless Architecture](about/architecture.md)
 * [Quickstart Guides](Quickstart/README.md)
+  * [Using the Portal](quickstart/using-the-portal.md)
   * [Launch DB Using REST API](<Quickstart/Launch DB using the REST API.md>)
   * [Launch DB Using Terraform Provider](<Quickstart/Launch DB using the Terraform Provider.md>)
   * [Launch DB Using Python](<Quickstart/Launch DB using Python.md>)
@@ -27,6 +28,10 @@
     * [DBGate](connecting-to-mariadb-cloud-dbs/database-tools/dbgate.md)
     * [HeidiSQL](connecting-to-mariadb-cloud-dbs/database-tools/heidisql.md)
     * [TablePlus](connecting-to-mariadb-cloud-dbs/database-tools/tableplus.md)
+  * [Partner Integrations](connecting-to-mariadb-cloud-dbs/partner-integrations/README.md)
+    * [MindsDB Partner Integration](connecting-to-mariadb-cloud-dbs/partner-integrations/mindsdb-partner-integration.md)
+    * [Qlik Partner Integration](connecting-to-mariadb-cloud-dbs/partner-integrations/qlik-partner-integration.md)
+    * [Striim Partner Integration](connecting-to-mariadb-cloud-dbs/partner-integrations/striim-partner-integration.md)
 * [Management & Configuration](cloud-management/README.md)
   * [Configuring Database Servers](cloud-management/config/README.md)
     * [MariaDB Serverless Single Node](cloud-management/config/mariadb-serverless-single-node.md)
@@ -36,14 +41,14 @@
   * [Autonomously Scale Compute & Storage](cloud-management/autonomously-scale-compute-storage.md)
   * [Observability](cloud-management/observability.md)
 * [Cloud UI Portal](cloud-usage/README.md)
-  * [MariaDB Cloud UI Portal](cloud-usage/portal-features/README.md)
-    * [Launch Page](cloud-usage/portal-features/launch-page.md)
-    * [Manage Your Service](cloud-usage/portal-features/manage-your-service.md)
-    * [Service Details Page](cloud-usage/portal-features/service-details-page.md)
-    * [Infrastructure Upgrades](cloud-usage/portal-features/infrastructure-upgrades.md)
-    * [Notifications](cloud-usage/portal-features/notifications.md)
-    * [Service Monitoring Panels](cloud-usage/portal-features/service-monitoring-panels.md)
-    * [Billing](cloud-usage/portal-features/billing.md)
+  * [MariaDB Cloud UI Portal](cloud-usage/portal-features.md)
+  * [Launch Page](cloud-usage/launch-page.md)
+  * [Manage Your Service](cloud-usage/manage-your-service.md)
+  * [Service Details Page](cloud-usage/service-details-page.md)
+  * [Infrastructure Upgrades](cloud-usage/infrastructure-upgrades.md)
+  * [Notifications](cloud-usage/notifications.md)
+  * [Service Monitoring Panels](cloud-usage/service-monitoring-panels.md)
+  * [Billing](cloud-usage/billing.md)
 * [Data Loading & Backup](cloud-data-handling/README.md)
   * [Migration, Data Loading](cloud-data-handling/migration-data-loading/README.md)
     * [Migrations](cloud-data-handling/migration-data-loading/data-loading-migration/README.md)
@@ -85,18 +90,17 @@
   * [Managing API keys](<Security/Managing API keys.md>)
   * [Private VPC Connections](<Security/Private VPC connections.md>)
   * [Portal Single Sign-On](<Security/Portal Single Sign-On.md>)
-* [Reference](<Reference Guide/README.md>)
+* [Reference](reference/README.md)
   * [FAQs](reference-guide/faqs.md)
   * [MariaDB Cloud Uptime SLA](reference-guide/uptime-sla.md)
-  * [Service Tiers](reference-guide/service-tiers.md)
-  * [Fractional DBA Service: CloudDBA](reference-guide/fractionaldba.md)
-  * [MariaDB Server Version Support](<Reference Guide/MariaDB Server Versions.md>)
-  * [Supported Backup Types](<Reference Guide/Backup Support.md>)
-  * [MariaDB Cloud Instance Sizes](<Reference Guide/Instance Size Choices.md>)
-  * [MariaDB Cloud Monitoring Metrics Reference](<Reference Guide/Monitoring Metrics Reference.md>)
-  * [MariaDB Cloud Region Choices](<Reference Guide/Region Choices.md>)
-  * [MariaDB Cloud REST API Reference](<Reference Guide/REST API Reference.md>)
-  * [MariaDB Cloud Stored Procedures](<Reference Guide/Stored Procedures.md>)
+  * [Fractional DBA Service: Remote DBA](reference-guide/fractionaldba.md)
+  * [MariaDB Server Version Support](reference-guide/mariadb-server-versions.md)
+  * [Supported Backup Types](reference-guide/backup-support.md)
+  * [MariaDB Cloud Instance Sizes](reference/mariadb-cloud-instance-sizes.md)
+  * [MariaDB Cloud Monitoring Metrics Reference](reference/mariadb-cloud-monitoring-metrics-reference.md)
+  * [MariaDB Cloud Region Choices](reference-guide/region-choices.md)
+  * [MariaDB Cloud REST API Reference](reference-guide/rest-api-reference.md)
+  * [MariaDB Cloud Stored Procedures](reference-guide/stored-procedures.md)
   * [MariaDB Cloud API Reference Guide](reference-guide/mariadb-cloud-api-reference-guide/README.md)
     * ```yaml
       props:
@@ -118,3 +122,66 @@
             kind: openapi
             spec: mariadb-api
       ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+    * ```yaml
+      props:
+        models: true
+      type: builtin:openapi
+      dependencies:
+        spec:
+          ref:
+            kind: openapi
+            spec: mariadb-api
+      ```
+  * [Pricing](reference/pricing.md)
+  * [Maintenance Windows](reference/maintenance-windows.md)
+  * [MaxScale Redundancy](reference/maxscale-redundancy.md)

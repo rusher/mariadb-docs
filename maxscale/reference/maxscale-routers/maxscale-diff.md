@@ -1,12 +1,6 @@
----
-description: Diff is a router for comparing servers.
----
-
 # MaxScale Diff
 
-## Diff - router for comparing servers
-
-### Overview
+## Overview
 
 The `diff`-router, hereafter referred to as _Diff_, compares the
 behaviour of one MariaDB server version to that of another.
@@ -27,7 +21,7 @@ different servers, it is only meaningful to start it provided certain
 conditions are fulfilled and those conditions are easily ensured using
 the router itself.
 
-#### Histogram
+### Histogram
 
 Diff collects latency information separately for each _canonical_
 \&#xNAN;_statement_, which simply means a statement where all literals have been
@@ -36,10 +30,10 @@ in both cases `SELECT f FROM t WHERE f = ?`. The latency information
 of both of those statements will be collected under the same canonical
 statement.
 
-Before starting to register histogram data, Diff will collect [samples](maxscale-diff.md#samples) from _main_ that will be used for defining the
+Before starting to register histogram data, Diff will collect [samples](#samples) from _main_ that will be used for defining the
 edges and the number of bins of the histogram.
 
-#### Discrepancies
+### Discrepancies
 
 The responses from _main_ and _other_ are considered to be different
 
@@ -52,7 +46,7 @@ meaningful criteria, as there for varying reasons (e.g. network
 traffic) can be a significant amount of variance in the results. It
 would only always cause a large number of false positives.
 
-#### EXPLAIN
+### EXPLAIN
 
 When a discrepancy is detected, an EXPLAIN statement will be executed
 if the query was a DELETE, SELECT, INSERT or UPDATE. The EXPLAIN will
@@ -62,29 +56,31 @@ immediately after the original statement, but if the client is
 streaming requests, an other statement may have been exceuted in
 between.
 
-EXPLAINs are not always executed, but the frequency is controlled by [explain\_entries](maxscale-diff.md#explain_entries) and [explain\_period](maxscale-diff.md#explain_period). The EXPLAIN results are included in
-the [output](maxscale-diff.md#reporting) of Diff.
+EXPLAINs are not always executed, but the frequency is controlled by
+[explain\_entries](#explain_entries) and [explain\_period](#explain_period).
+The EXPLAIN results are included in the [output](#reporting) of Diff.
 
-#### QPS
+### QPS
 
 While running, Diff will also collect QPS information over a sliding
-window whose size is defined by [qps\_period](maxscale-diff.md#qps_period).
+window whose size is defined by [qps\_window](#qps_window).
 
-#### Reporting
+### Reporting
 
 Diff produces two kinds of output:
 
-* Output that is generated when Diff terminates or upon [request](maxscale-diff.md#summary). That output can be visualized as explained [here](maxscale-diff.md#visualizing).
-* [Optionally](maxscale-diff.md#report) Diff can continuously report queries whose
-  responses from _main_ and other _differ_ as described [here](maxscale-diff.md#discrepancies).
+* Output that is generated when Diff terminates or upon [request](#summary).
+  That output can be visualized as explained [here](#visualizing).
+* [Optionally](#report) Diff can continuously report queries whose
+  responses from _main_ and other _differ_ as described [here](#discrepancies).
 
 When Diff starts it will create a directory `diff` in MaxScale's
 data directory (typically `/var/lib/maxscale`). Under that it
 will create a directory whose name is the same as that of the
-service specified in [service](maxscale-diff.md#service). The output files are created
+service specified in [service](#service). The output files are created
 in that directory.
 
-### Setup
+## Setup
 
 The behaviour and usage of Diff is most easily explained
 using an example.
@@ -111,7 +107,7 @@ which, for this example, is assumed to run MariaDB 10.5.
 Suppose that the server should be upgraded to 11.2 and we want
 to find out whether there would be some issues with that.
 
-#### Prerequisites
+### Prerequisites
 
 In order to use Diff for comparing the behaviour of MariaDB 10.5
 and MariaDB 11.2, the following steps must be taken.
@@ -144,11 +140,11 @@ as being down.
 
 With these steps Diff is ready to be used.
 
-#### Running Diff
+### Running Diff
 
 Diff is controlled using a number of module commands.
 
-**Create**
+#### Create
 
 Syntax: `create new-service existing-service used-server new-server`
 
@@ -170,7 +166,7 @@ maxctrl call command diff create DiffMyService MyService MyServer1 MariaDB_112
 
 With this command, preparations for comparing the server `MariaDB_112`
 against the server `MyServer1` of the service `MyService` will be made.
-At this point it will be checked in what kind of replication relationship`MariaDB_112` is with respect to `MyServer1`. If the steps in [prerequisites](maxscale-diff.md#prerequisites) were followed, it will be detected that`MariaDB_112` replicates from `MyServer1`.
+At this point it will be checked in what kind of replication relationship`MariaDB_112` is with respect to `MyServer1`. If the steps in [prerequisites](#prerequisites) were followed, it will be detected that`MariaDB_112` replicates from `MyServer1`.
 
 If everything seems to be in order, the service `DiffMyService` will be
 created. Settings such as _user_ and _password_ that are needed by the
@@ -191,7 +187,7 @@ maxctrl list services
 
 Now the comparison can be started.
 
-**Start**
+#### Start
 
 Syntax: `start diff-service`
 
@@ -280,7 +276,7 @@ The `state` shows what Diff is currently doing. `synchronizing`
 means that it is in the process of changing `MyService` to use`DiffMyService`. `sync_state` shows that it is currently in the
 process of suspending sessions.
 
-**Status**
+#### Status
 
 Syntax: `status diff-service`
 
@@ -307,7 +303,7 @@ maxctrl call command diff status DiffMyService
 The state is now `comparing`, which means that everything is ready
 and clients can connect in normal fashion.
 
-**Summary**
+#### Summary
 
 Syntax: `summary diff-service`
 
@@ -339,9 +335,9 @@ MyServer1_2024-05-07_140323.json
 MariaDB_112_2024-05-07_140323.json
 ```
 
-The visualization of the results is done using the [maxvisualize](maxscale-diff.md#visualizing) program.
+The visualization of the results is done using the [maxvisualize](#visualizing) program.
 
-**Stop**
+#### Stop
 
 Syntax: `stop diff-service`
 
@@ -374,7 +370,7 @@ As the sessions have to be suspended, it may take a while
 before the operation has completed. The status can be checked with
 the 'status' command.
 
-**Destroy**
+#### Destroy
 
 Syntax: `destroy diff-service`
 
@@ -390,7 +386,7 @@ maxctrl call command diff destroy DiffMyService
 OK
 ```
 
-### Visualizing
+## Visualizing
 
 The visualization of the data is done with the `maxvisualize` program,
 which is part of the _Capture_ functionality. The visualization will
@@ -402,7 +398,7 @@ the command line which by default should be.
 In the case of the example above, the directory where the output files
 are created would be `/var/lib/maxscale/diff/MyService`. And the files
 to be used when visualizing would be called something like`MyServer1_2024-05-07_140323.json` and`MariaDB_112_2024-05-07_140323.json`. The timestamp will be different
-every time [summary](maxscale-diff.md#summary) is executed.
+every time [summary](#summary) is executed.
 
 ```
 maxvisualize MyServer1_2024-05-07_140323.json MariaDB_112_2024-05-07_140323.json
@@ -411,9 +407,9 @@ maxvisualize MyServer1_2024-05-07_140323.json MariaDB_112_2024-05-07_140323.json
 The order is significant; the first argument is the baseline and the
 second argument the results compared to the baseline.
 
-### Continuous Reporting
+## Continuous Reporting
 
-If the value of [report](maxscale-diff.md#report) is something else but `never`, Diff
+If the value of [report](#report) is something else but `never`, Diff
 will continously log results to a file whose name is the concatenation
 for the main and other server followed by a timestamp. In the example
 above, the name would be something like`MyServer1_MariaDB_112_2024-02-15_152838.json`.
@@ -470,7 +466,7 @@ Instead of an `explain` object, there may be an `explained_by` array,
 containing the ids of similar statements (i.e. their canonical
 statement is the same) that were EXPLAINed.
 
-### Mode
+## Mode
 
 Diff can run in a read-only or read-write mode and the mode is
 deduced from the replication relationship between _main_ an&#x64;_&#x6F;ther_.
@@ -478,7 +474,7 @@ deduced from the replication relationship between _main_ an&#x64;_&#x6F;ther_.
 If _other_ replicates from _main_, it is assumed that _main_ is
 the primary. In this case Diff will, when started, stop the
 replication from _main_ to _other_. When the comparison ends
-Diff will, depending on the value of [reset\_replication](maxscale-diff.md#reset_replication)
+Diff will, depending on the value of [reset\_replication](#reset_replication)
 either reset the replication from _main_ to _other_ or leave
 the situation as it is.
 
@@ -490,21 +486,22 @@ the comparison ends.
 If the replication relationship between _main_ and _other_
 is anything else, Diff will refuse to start.
 
-### Settings
+## Settings
 
-#### `main`
+### `main`
 
 * Type: server
 * Mandatory: Yes
 * Dynamic: No
 
 The main target from which results are returned to the client. Must be
-a server and must be one of the servers listed in [targets](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+a server and must be one of the servers listed in
+[targets](../../maxscale-management/deployment/maxscale-configuration-guide.md#targets).
 
 If the connection to the main target cannot be created or is lost
 mid-session, the client connection will be closed.
 
-#### `service`
+### `service`
 
 * Type: service
 * Mandatory: Yes
@@ -512,9 +509,9 @@ mid-session, the client connection will be closed.
 
 Specifies the service Diff will modify.
 
-#### `explain`
+### `explain`
 
-* Type: [enum](maxscale-diff.md#enumerations)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `none`, `other`, \`both'
@@ -523,7 +520,7 @@ Specifies the service Diff will modify.
 Specifies whether a request should be EXPLAINed on only _other_,
 both _other_ and _main_ or neither.
 
-#### `explain_entries`
+### `explain_entries`
 
 * Type: non-negative integer
 * Mandatory: No
@@ -531,19 +528,19 @@ both _other_ and _main_ or neither.
 * Default: 2
 
 Specifies how many times at most a particular canonical statement
-is EXPLAINed during the period specified by [explain\_period](maxscale-diff.md#explain_period).
+is EXPLAINed during the period specified by [explain\_period](#explain_period).
 
-#### `explain_period`
+### `explain_period`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 15m
 
-Specifies the length of the period during which at most [explain\_entries](maxscale-diff.md#explain_entries) number of EXPLAINs are executed
+Specifies the length of the period during which at most [explain\_entries](#explain_entries) number of EXPLAINs are executed
 for a statement.
 
-#### `max_request_lag`
+### `max_request_lag`
 
 * Type: non-negative integer
 * Mandatory: No
@@ -554,9 +551,9 @@ Specifies the maximum number of requests _other_ may be lagging
 behind _main_ before the execution of SELECTs against _other_
 are skipped to bring it back in line with _main_.
 
-#### `on_error`
+### `on_error`
 
-* Type: [enum](maxscale-diff.md#enumerations)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `close`, `ignore`
@@ -565,7 +562,7 @@ are skipped to bring it back in line with _main_.
 Specifies whether an error from _other_, will cause the session to
 be closed. By default it will not.
 
-#### `percentile`
+### `percentile`
 
 * Type: count
 * Mandatory: No
@@ -577,20 +574,20 @@ be closed. By default it will not.
 Specifies the percentile of sampels that will be considered when
 calculating the width and number of bins of the histogram.
 
-#### `qps_window`
+### `qps_window`
 
-* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-management/deployment/maxscale-configuration-guide.md#durations)
 * Mandatory: No
 * Dynamic: No
 * Default: 15m
 
 Specifies the size of the sliding window during which QPS is calculated
-and stored. When a [summary](maxscale-diff.md#summary) is requested, the QPS information
+and stored. When a [summary](#summary) is requested, the QPS information
 will also be saved.
 
-#### `report`
+### `report`
 
-* Type: [enum](maxscale-diff.md#enumerations)
+* Type: [enum](../../maxscale-management/deployment/maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `always`, `on_discrepancy`, `never`
@@ -599,9 +596,9 @@ will also be saved.
 Specifies when the results of executing a statement on _other_ and _main_
 should be logged; _always_, when there is a significant difference o&#x72;_&#x6E;ever_.
 
-#### `reset_replication`
+### `reset_replication`
 
-* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-management/deployment/maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -621,7 +618,7 @@ Note that since Diff writes updates directly to both _main_ an&#x64;_&#x6F;ther_
 start the replication. Especially not if `gtid_strict_mode`
 is on.
 
-#### `retain_faster_statements`
+### `retain_faster_statements`
 
 * Type: non-negative integer
 * Mandatory: No
@@ -632,14 +629,14 @@ Specifies the number of faster statements that are retained in memory.
 The statements will be saved in the summary when the comparison ends,
 or when Diff is explicitly instructed to do so.
 
-#### `retain_slower_statements`
+### `retain_slower_statements`
 
 * Type: non-negative integer
 * Mandatory: No
 * Dynamic: Yes
 * Default: 5
 
-#### `samples`
+### `samples`
 
 * Type: count
 * Mandatory: No
@@ -650,7 +647,7 @@ or when Diff is explicitly instructed to do so.
 Specifies the number of samples that will be collected in order to
 define the edges and number of bins of the histograms.
 
-### Limitations
+## Limitations
 
 Diff is not capable of adapting to any changes made in
 the cluster configuration. For instance, if Diff starts up in
@@ -660,7 +657,8 @@ will be that _other_ receives the same writes twice; once via the
 replication from the server it is replicating from and once when
 Diff executes the same writes.
 
-Diff is not compatible with [configuration synchronization](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+Diff is not compatible with
+[configuration synchronization](../../maxscale-management/deployment/maxscale-configuration-guide.md#configuration-synchronization).
 If _configuration synchronization_ is enabled, an attempt to create a
 Diff router will fail.
 

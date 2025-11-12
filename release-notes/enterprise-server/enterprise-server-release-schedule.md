@@ -19,11 +19,11 @@ Upcoming minor or maintenance releases are scheduled for:
 
 Previously-announced minor or maintenance release dates:
 
+* 2025-10-22 ([ES 11.8.3-1](11.8/11.8.3-1.md))
 * 2025-09-08 ([ES 11.4.8-5](11.4/11.4.8-5.md), [ES 10.6.23-19](10.6/10.6.23-19.md))
 * 2025-06-11 ([ES 11.4.7-4](11.4/11.4.7-4.md), [ES 10.6.22-18](10.6/10.6.22-18.md), [ES 10.5.29-23](old-releases/10-5/release-notes-for-mariadb-enterprise-server-10.5.29-23.md))
-* 2025-06-04 ([ES 11.8.2-0 Technical Preview](11.8/release-notes-for-mariadb-enterprise-server-11.8.2-0-tech-preview.md))
 * 2025-03-19 ([ES 11.4.5-3](11.4/11.4.5-3.md), [ES 10.6.21-17](10.6/10.6.21-17.md), [ES 10.5.28-22](old-releases/10-5/release-notes-for-mariadb-enterprise-server-10-5-28-22.md))
-* 2025-01-16 ([ES 11.4.4-2](11.4/11.4.4-2.md), [ES 11.4.0-1 Technical Preview](11.4/11.4.0-1.md))
+* 2025-01-16 ([ES 11.4.4-2](11.4/11.4.4-2.md), [ES 11.4.0-1 Technical Preview](broken-reference))
 * 2024-12-10 ([ES 10.6.20-16](10.6/changelog-10.6.20-16.md), [ES 10.5.27-21](old-releases/10-5/release-notes-for-mariadb-enterprise-server-10-5-27-21.md))
 * 2024-09-09 ([ES 10.6.19-15](10.6/10.6.19-15.md), [ES 10.5.26-20](old-releases/10-5/release-notes-for-mariadb-enterprise-server-10-5-26-20.md))
 * 2024-06-11 ([ES 10.6.18-14](10.6/10.6.18-14.md), [ES 10.5.25-19](old-releases/10-5/release-notes-for-mariadb-enterprise-server-10-5-25-19.md), [ES 10.4.34-24](old-releases/10-4/release-notes-for-mariadb-enterprise-server-10-4-34-24.md))
@@ -57,11 +57,11 @@ Previously-announced minor or maintenance release dates:
 
 ## Obtaining MariaDB Enterprise Server
 
-MariaDB Enterprise Server is available to MariaDB subscription customers via the [MariaDB Customer Portal](https://customers.mariadb.com/).
+MariaDB Enterprise Server is available to MariaDB subscription customers via the [MariaDB Enterprise Downloads page](https://mariadb.com/downloads/enterprise/).
 
 If you are not yet a MariaDB subscription customer, [contact MariaDB Corporation](https://mariadb.com/contact/) for more information.
 
-MariaDB Enterprise Server binary and source code is delivered over secure protocols from MariaDB Corporation-maintained infrastructure as detailed in the [Topologies Guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies).
+MariaDB Enterprise Server binary and source code is delivered over secure protocols from MariaDB Corporation-maintained infrastructure.
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

@@ -293,12 +293,13 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value:
-  * `autosize (0)`, resulting in [innodb\_buffer\_pool\_size](innodb-system-variables.md#innodb_buffer_pool_size)/64, if [large\_pages](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) round down to multiple of largest page size, with 1MiB minimum (>= [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes))
-  * `134217728` (<= [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes))
+  * `autosize (0)`, resulting in [innodb\_buffer\_pool\_size](innodb-system-variables.md#innodb_buffer_pool_size)/64, if [large\_pages](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) round down to multiple of largest page size, with 1MiB minimum (from [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes))
+  * `134217728` (until [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes))
 * Range:
-  * `0`, as autosize, and then `1048576` to `18446744073709551615` (>= [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108))
-  * `1048576` to [innodb\_buffer\_pool\_size](innodb-system-variables.md#innodb_buffer_pool_size)/[innodb\_buffer\_pool\_instances](innodb-system-variables.md#innodb_buffer_pool_instances) (<= [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107))
+  * `0`, as autosize, and then `1048576` to `18446744073709551615` (from [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108))
+  * `1048576` to [innodb\_buffer\_pool\_size](innodb-system-variables.md#innodb_buffer_pool_size)/[innodb\_buffer\_pool\_instances](innodb-system-variables.md#innodb_buffer_pool_instances) (until [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107))
 * Block size: `1048576`
+* Deprecated and ignored from MariaDB 10.11.12, MariaDB 11.4.6, MariaDB 11.8.2
 
 #### `innodb_buffer_pool_dump_at_shutdown`
 
@@ -471,7 +472,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_buffer_pool_size_max`
 
-* Description: Maximum innodb\_buffer\_pool\_size.
+* Description: Maximum `innodb_buffer_pool_size` value.
 * Command line: `--innodb-buffer-pool-size-max=#`
 * Scope: Global
 * Dynamic: No
@@ -479,7 +480,19 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Default Value: `134217728` (128MiB)
 * Range: `0` to `18446744073701163008`
 * Block size: `8388608`
-* Introduced: [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.12-release-notes), [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-6-release-notes), [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-2-release-notes)
+* Introduced: MariaDB 10.11.12, MariaDB 11.4.6, MariaDB 11.8.2
+
+#### `innodb_buffer_pool_size_min`
+
+* Description: Minimum `innodb_buffer_pool_size` value.
+* Command line: `--innodb-buffer-pool-size-min=#`
+* Scope: Global
+* Dynamic: No
+* Data Type: `numeric`
+* Default Value: `...`
+* Range: `0` to `...`
+* Block size: `...`
+* Introduced: MariaDB 10.11.12, MariaDB 11.4.6, MariaDB 11.8.2
 
 #### `innodb_change_buffer_dump`
 
@@ -910,8 +923,6 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 {% tabs %}
 {% tab title="Current" %}
-
-
 *   Description: If set to `ON`, the default, to improve fault tolerance [InnoDB](./) first stores data to a [doublewrite buffer](innodb-doublewrite-buffer.md) before writing it to data file. Disabling will provide a marginal performance improvement, and assumes that writes of [innodb\_page\_size](innodb-system-variables.md#innodb_page_size) are atomic. `fast` is available from [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), and is like `ON`, but writes are not synchronized to data files. The deprecated start-up parameter [innodb\_flush\_method=NO\_FSYNC](innodb-system-variables.md#innodb_flush_method) will cause innodb\_doublewrite=ON to be changed to innodb\_doublewrite=fast, which will prevent InnoDB from making any durable writes to data files. This would normally be done right before the log checkpoint LSN is updated. Depending on the file systems being used and their configuration, this may or may not be safe.
 
     The value innodb\_doublewrite=fast differs from the previous combination of innodb\_doublewrite=ON and innodb\_flush\_method=O\_DIRECT\_NO\_FSYNC by always invoking os\_file\_flush() on the doublewrite buffer itself in buf\_dblwr\_t::flush\_buffered\_writes\_completed(). This should be safer when there are multiple doublewrite batches between checkpoints.
@@ -1360,7 +1371,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value: `3`
-* Range: `0` to `16`
+* Range: `1` to `16`
 
 #### `innodb_ft_num_word_optimize`
 
@@ -1861,7 +1872,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value:&#x20;
+* Default Value:
   * `0 (>=`[MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-20-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes), [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-4-release-notes). [MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes), [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes))
   * `32 (<=` [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-19-release-notes), [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-3-release-notes))
 * Range: `1` to `18446744073709551615`
@@ -1964,7 +1975,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_max_undo_log_size`
 
-* Description: If an undo tablespace is larger than this, it are marked for truncation if [innodb\_undo\_log\_truncate](innodb-system-variables.md#innodb_undo_log_truncate) is set.
+* Description: If an undo tablespace is larger than this, it is marked for truncation if [innodb\_undo\_log\_truncate](innodb-system-variables.md#innodb_undo_log_truncate) is set.
 * Command line: `--innodb-max-undo-log-size=#`
 * Scope: Global
 * Dynamic: Yes

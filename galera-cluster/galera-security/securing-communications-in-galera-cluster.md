@@ -21,7 +21,7 @@ It is also a good idea to set MariaDB Server's regular TLS-related system variab
 
 For example, to set these variables for the server, add the system variables to a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#including-option-files):
 
-```
+```ini
 [mariadb]
 ...
 ssl_cert = /etc/my.cnf.d/certificates/server-cert.pem
@@ -44,7 +44,7 @@ See [mariadb-backup SST Method: TLS](../galera-management/state-snapshot-transfe
 
 ### xtrabackup-v2
 
-See xtrabackup-v2 SST Method: TLS for more information.
+See [xtrabackup-v2 SST Method](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early): TLS for more information.
 
 ### mysqldump
 
