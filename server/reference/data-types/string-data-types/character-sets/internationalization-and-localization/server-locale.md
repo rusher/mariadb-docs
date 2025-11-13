@@ -1,6 +1,6 @@
 # Server Locale
 
-The [lc\_time\_names](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names) server system variable sets the language used by the date and time functions [DAYNAME()](../../../../sql-functions/date-time-functions/dayname.md), [MONTHNAME()](../../../../sql-functions/date-time-functions/monthname.md) and [DATE\_FORMAT()](../../../../sql-functions/date-time-functions/date_format.md) and [lc\_messages](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) sets the language for error messages.
+The [lc\_time\_names](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names) server system variable sets the language used by the date and time functions [DAYNAME()](../../../../sql-functions/date-time-functions/dayname.md), [MONTHNAME()](../../../../sql-functions/date-time-functions/monthname.md), and [DATE\_FORMAT()](../../../../sql-functions/date-time-functions/date_format.md), and the [lc\_messages](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) sets the language for error messages.
 
 The list of the locales supported by the current MariaDB installation can be obtained via the [LOCALES](locales-plugin.md) plugin.
 

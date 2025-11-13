@@ -472,12 +472,12 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_buffer_pool_size_max`
 
-* Description: Maximum `innodb_buffer_pool_size` value. If this variable isn't specified, it defaults to twice the size of the [innodb\_buffer\_pool\_size](innodb-system-variables.md#innodb_buffer_pool_size) value.
+* Description: Maximum `innodb_buffer_pool_size` value.
 * Command line: `--innodb-buffer-pool-size-max=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: specified by the default value of [innodb\_buffer\_pool\_size](innodb-system-variables.md#innodb_buffer_pool_size), rounded up to the block size of that variable. See [the section about buffer pool changes](innodb-buffer-pool.md#buffer-pool-changes) in MariaDB 10.11.12, 11.4.6, and 11.8.2.
+* Default Value: specified by the initial value of [innodb\_buffer\_pool\_size](innodb-system-variables.md#innodb_buffer_pool_size), rounded up to the block size of that variable. See [the section about buffer pool changes](innodb-buffer-pool.md#buffer-pool-changes) in MariaDB 10.11.12, 11.4.6, and 11.8.2.
 * Range: `0` to `18446744073701163008`
 * Block size: `8388608` (8 MB on 64-bit systems)
 * Introduced: MariaDB 10.11.12, MariaDB 11.4.6, MariaDB 11.8.2
