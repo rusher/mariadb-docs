@@ -284,7 +284,7 @@ There can be one or more hints separated with space:
 hints:  hint hint ...
 ```
 
-**Description**
+### **Description**
 
 Each individual hint is hint name and arguments. In case there are no arguments,\
 the () brackets are still present:
