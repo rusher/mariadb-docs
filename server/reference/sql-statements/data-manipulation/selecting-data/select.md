@@ -58,7 +58,7 @@ lock_option:
 The following hints are available.&#x20;
 
 * In the list, _`tbl`_ is the name of a table used in the statement. A hint that names tables applies to all tables that it names. The `JOIN_FIXED_ORDER` hint names no tables and applies to all tables in the `FROM` clause of the query block in which it occurs.
-* In the list, _`query_block_name`_ is the query block to which the hint applies. If the hint includes no leading _`@query_block_name`_, it applies to the query block in which it occurs. When using the _`tbl@query_block_name`_ syntax, the hint applies to the named table in the named query block. To assign a name to a query block, see Optimizer Hints for Naming Query Blocks.
+* In the list, _`query_block_name`_ is the query block to which the hint applies. If the hint includes no leading _`@query_block_name`_, it applies to the query block in which it occurs. When using the _`tbl@query_block_name`_ syntax, the hint applies to the named table in the named query block. To assign a name to a query block, see [Optimizer Hints for Naming Query Blocks](optimizer-hints.md#query-block-naming).
 
 {% hint style="warning" %}
 If a table has an alias, hints must refer to the alias, not the table name.
