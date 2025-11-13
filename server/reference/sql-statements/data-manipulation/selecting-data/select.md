@@ -5,6 +5,7 @@
 ```sql
 SELECT
     [/*+ hints */]
+    [/*+ MAX_EXECUTION_TIME(milliseconds) */]
     [ALL | DISTINCT | DISTINCTROW]
     [HIGH_PRIORITY]
     [STRAIGHT_JOIN]
@@ -40,11 +41,23 @@ lock_option:
 
 {% tabs %}
 {% tab title="Current" %}
-`[/*+ hints */]` syntax is available from MariaDB 11.8.
+`[/*+ hints */]` syntax is available.
 {% endtab %}
 
 {% tab title="< 11.8" %}
-`[/*+ hints */]` syntax is unavailable.
+`[/*+ hints */]` syntax is **not** available.
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="Current" %}
+`[/*+ MAX_EXECUTION_TIME(`_`milliseconds`_`) */]` syntax is available.
+
+The hint limits the time of statement execution to the number of milliseconds given in the hint argument.
+{% endtab %}
+
+{% tab title="< 12.0" %}
+`[/*+ MAX_EXECUTION_TIME(`_`milliseconds`_`) */]` syntax is **not** available.
 {% endtab %}
 {% endtabs %}
 
