@@ -67,8 +67,8 @@ the () brackets are still present:
 hint:  hint_name([arguments])
 ```
 
-Incorrect hints produce warnings (a setting to make them errors is not implemented yet).\
-Hints that are not ignored are kept in the query text (you can see them in SHOW PROCESSLIST, Slow Query Log, EXPLAIN EXTENDED)\
+Incorrect hints produce warnings (a setting to make them errors is not implemented yet).
+Hints that are not ignored are kept in the query text (you can see them in SHOW PROCESSLIST, Slow Query Log, EXPLAIN EXTENDED).
 Hints that were incorrect and were ignored are removed from there.
 
 **Hint Hierarchy**
