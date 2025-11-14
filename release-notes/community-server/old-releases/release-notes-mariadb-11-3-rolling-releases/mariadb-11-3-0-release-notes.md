@@ -79,7 +79,7 @@ Thanks, and enjoy MariaDB!
 
 ## OLD\_MODE
 
-* Setting a non-default [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old-mode) value will now always issue a deprecation warning ([MDEV-31811](https://jira.mariadb.org/browse/MDEV-31811))
+* Setting a non-default [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old_mode) value will now always issue a deprecation warning ([MDEV-31811](https://jira.mariadb.org/browse/MDEV-31811))
 
 ## mariadb-backup
 
