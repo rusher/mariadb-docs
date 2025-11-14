@@ -58,7 +58,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 #### `server_audit_file_buffer_size`
 
 * Description: Size (in bytes) of file buffer to make logging faster.
-* Command line: `--server-audit-file-bugger-size=`_`#`_
+* Command line: `--server-audit-file-buffer-size=`_`#`_
 * Scope: Global
 * Dynamic: Yes
 * Data type: `numeric`
