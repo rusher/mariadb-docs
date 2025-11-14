@@ -541,7 +541,7 @@ Currently, using the `DELETE HISTORY` statement with a `BEFORE SYSTEM_TIME` grea
 
 The [TRUNCATE TABLE](../../sql-statements/table-statements/truncate-table.md) statement drops all historical records from a system-versioned table.
 
-Historic data is protected from `TRUNCATE` statements, as per the SQL standard, and an [Error 4137](broken-reference/) is instead raised:
+Historic data is protected from `TRUNCATE` statements, as per the SQL standard, and an [Error 4137](../../error-codes/mariadb-error-codes-4100-to-4199/e4137.md) is instead raised:
 
 ```sql
 TRUNCATE t;
@@ -617,8 +617,8 @@ A number of system variables are related to system-versioned tables:
 
 ## Limitations
 
-* Versioning clauses can not be applied to [generated (virtual and persistent) columns](../../sql-statements/data-definition/create/generated-columns.md).
-* [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), use the `-H` or `--dump-history` options to include the history.
+* Versioning clauses cannot be applied to [generated (virtual and persistent) columns](../../sql-statements/data-definition/create/generated-columns.md).
+* [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/10.11/what-is-mariadb-1011), use the `-H` or `--dump-history` options to include the history.
 
 ## See Also
 

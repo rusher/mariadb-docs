@@ -467,7 +467,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `134217728` (128MiB)
 * Range: `0` to `18446744073701163008`
-* Block size: `8388608`
+* Block size: `8388608` (8 MB on 64-bit systems)
 * Introduced: [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10.11.12-release-notes), [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-6-release-notes), [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/mariadb-11-8-2-release-notes)
 
 #### `innodb_buffer_pool_size_max`
@@ -477,21 +477,9 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `134217728` (128MiB)
+* Default Value: specified by the initial value of [innodb\_buffer\_pool\_size](innodb-system-variables.md#innodb_buffer_pool_size), rounded up to the block size of that variable. See [the section about buffer pool changes](innodb-buffer-pool.md#buffer-pool-changes) in MariaDB 10.11.12, 11.4.6, and 11.8.2.
 * Range: `0` to `18446744073701163008`
-* Block size: `8388608`
-* Introduced: MariaDB 10.11.12, MariaDB 11.4.6, MariaDB 11.8.2
-
-#### `innodb_buffer_pool_size_min`
-
-* Description: Minimum `innodb_buffer_pool_size` value.
-* Command line: `--innodb-buffer-pool-size-min=#`
-* Scope: Global
-* Dynamic: No
-* Data Type: `numeric`
-* Default Value: `...`
-* Range: `0` to `...`
-* Block size: `...`
+* Block size: `8388608` (8 MB on 64-bit systems)
 * Introduced: MariaDB 10.11.12, MariaDB 11.4.6, MariaDB 11.8.2
 
 #### `innodb_change_buffer_dump`

@@ -5,6 +5,11 @@
 ```sql
 SELECT
     [/*+ hints */]
+    [/*+ JOIN_PREFIX(argument_list) */]
+    [/*+ JOIN_ORDER(argument_list) */]
+    [/*+ JOIN_FIXED_ORDER(argument_list) */]
+    [/*+ JOIN_SUFFIX(argument_list) */]
+    [/*+ MAX_EXECUTION_TIME(milliseconds) */]
     [ALL | DISTINCT | DISTINCTROW]
     [HIGH_PRIORITY]
     [STRAIGHT_JOIN]
@@ -40,11 +45,53 @@ lock_option:
 
 {% tabs %}
 {% tab title="Current" %}
-`[/*+ hints */]` syntax is available from MariaDB 11.8.
+`[/*+ hints */]` syntax is available.
 {% endtab %}
 
 {% tab title="< 11.8" %}
-`[/*+ hints */]` syntax is unavailable.
+`[/*+ hints */]` syntax is **not** available.
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="Current" %}
+The following hints are available.&#x20;
+
+* In the list, _`tbl`_ is the name of a table used in the statement. A hint that names tables applies to all tables that it names. The `JOIN_FIXED_ORDER` hint names no tables and applies to all tables in the `FROM` clause of the query block in which it occurs.
+* In the list, _`query_block_name`_ is the query block to which the hint applies. If the hint includes no leading _`@query_block_name`_, it applies to the query block in which it occurs. When using the _`tbl@query_block_name`_ syntax, the hint applies to the named table in the named query block. To assign a name to a query block, see [Optimizer Hints for Naming Query Blocks](optimizer-hints.md#query-block-naming).
+
+{% hint style="warning" %}
+If a table has an alias, hints must refer to the alias, not the table name.
+
+Table names in hints cannot be qualified with schema names.
+{% endhint %}
+
+* `JOIN_FIXED_ORDER([@query_block_name])`: Forces the optimizer to join tables using the order in which they appear in the `FROM` clause. This is the same as specifying `SELECT STRAIGHT_JOIN`.
+* `JOIN_ORDER([@query_block_name] tbl [, tbl] ...)`: Instructs the optimizer to join tables using the specified table order. The hint applies to the named tables. The optimizer may place tables that are not named anywhere in the join order, including between specified tables.
+  * Alternative syntax: \
+    `JOIN_ORDER(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
+* `JOIN_PREFIX([@query_block_name] tbl [, tbl] ...)`: Instruct the optimizer to join tables using the specified table order for the first tables of the join execution plan. The hint applies to the named tables. The optimizer places all other tables after the named tables.
+  * Alternative syntax: \
+    `JOIN_PREFIX(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
+* `JOIN_SUFFIX([@query_block_name] tbl [, tbl] ...)`: Instruct the optimizer to join tables using the specified table order for the last tables of the join execution plan. The hint applies to the named tables. The optimizer places all other tables before the named tables.
+  * Alternative syntax: \
+    `JOIN_SUFFIX(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
+{% endtab %}
+
+{% tab title="< 12.0" %}
+Those hints are **not** available.
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="Current" %}
+`[/*+ MAX_EXECUTION_TIME(`_`milliseconds`_`) */]` syntax is available.
+
+The hint limits the time of statement execution to the number of milliseconds given in the hint argument.
+{% endtab %}
+
+{% tab title="< 12.0" %}
+`[/*+ MAX_EXECUTION_TIME(`_`milliseconds`_`) */]` syntax is **not** available.
 {% endtab %}
 {% endtabs %}
 

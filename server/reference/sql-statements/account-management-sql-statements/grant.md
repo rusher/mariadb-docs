@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```bnf
+```sql
 GRANT
     priv_type [(column_list)]
       [, priv_type [(column_list)]] ...
