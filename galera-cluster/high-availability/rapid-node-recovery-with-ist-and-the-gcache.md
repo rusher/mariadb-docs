@@ -22,6 +22,24 @@ IST is an automatic process, but it is only possible if the following conditions
 
 If these conditions are not met, the cluster automatically falls back to performing a full State Snapshot Transfer (SST).
 
+### Skipping Foreign Key Checks
+
+{% hint style="info" %}
+This functionality is available from MariaDB 12.0.
+{% endhint %}
+
+Appliers need to verify foreign key constraints during normal operation in multi-active topologies. Therefore, appliers are configured to enable FK[^1] checking.
+
+However, during node joining, in IST and latter catch-up period, the node is still idle (from local connections), and the only source for incoming transactions is the cluster sending certified write sets for applying. IST happens with parallel applying — there is a possibility that foreign key check cause lock conflicts between appliers accessing FK child and parent tables. Also, excessive FK checking slows down the IST process.
+
+To address that issue, you can relax FK checks for appliers during IST and catch-up periods. The relaxed FK check mode is configurable by [setting this flag](../reference/galera-cluster-system-variables.md#wsrep_mode):
+
+```
+wsrep_mode=SKIP_APPLIER_FK_CHECKS_IN_IST
+```
+
+When this operation mode is set, and the node is processing IST or catch-up, appliers skip FK checking.
+
 ## The Write-Set Cache (GCache)
 
 The GCache is a special cache on each node whose primary purpose is to store recent write-sets specifically to facilitate Incremental State Transfers. The size and configuration of the GCache are therefore critical for the cluster's recovery speed and [high availability](understanding-quorum-monitoring-and-recovery.md#quorum-calculation).
@@ -141,3 +159,5 @@ These calculations are guidelines. If your cluster nodes frequently request SSTs
 {% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
+[^1]: Foreign Key
