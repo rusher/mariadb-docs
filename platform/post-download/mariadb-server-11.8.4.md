@@ -20,7 +20,7 @@
 * The prior release in this series was [MariaDB 11.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/11.8.3), released on 6 Aug 2025
 * This release ([MariaDB 11.8.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.8/11.8.4)) was released on 6 Nov 2025
 
-{% include "../.gitbook/includes/latest-11.8.md" %}
+{% include "../.gitbook/includes/most-recent-11.8.md" %}
 
 ## Useful Resources
 
