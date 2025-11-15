@@ -12,7 +12,7 @@ VEC_ToText(v)
 
 ## Description
 
-`VEC_ToText` converts a binary vector into a json array of numbers (floats). Returns `NULL` and throws a warning [4201](broken-reference) if given an invalid vector.
+`VEC_ToText` converts a binary vector into a json array of numbers (floats). Returns `NULL` and throws a warning [Error 4201](../../error-codes/mariadb-error-codes-4200-to-4299/e4201.md) if given an invalid vector.
 
 ## Example
 
@@ -42,7 +42,7 @@ Warning (Code 4201): Invalid binary vector format. Must use IEEE standard float
 
 ## See Also
 
-* [Error 4201: Invalid binary vector format](broken-reference)
+* [Error 4201: Invalid binary vector format](../../error-codes/mariadb-error-codes-4200-to-4299/e4201.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

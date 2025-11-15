@@ -25,7 +25,7 @@ Connection is done by many exchanges:
         * Client sends `old_password`.
       * Else:
         * Server sends [Authentication switch request](connection.md#authentication-switch-request).
-        * Client may have many exchange with the server according to the [Plugin](connection.md#plugin-list).
+        * Client may have many exchanges with the server according to the [Plugin](connection.md#plugin-list).
       * Authentication switch ends with server sending either [OK\_Packet](../4-server-response-packets/ok_packet.md) or [ERR\_Packet](../4-server-response-packets/err_packet.md).
 
 ## Initial Handshake Packet
@@ -49,9 +49,9 @@ Connection is done by many exchanges:
 * If (`server_capabilities` & `CLIENT_MYSQL`):
   * [string<4>](../protocol-data-types.md#fixed-length-strings) filler.
 * Else:
-  * [int<4>](../protocol-data-types.md#fixed-length-integers) server capabilities 3rd part . MariaDB specific flags `/* MariaDB 10.2 or later */`.
+  * [int<4>](../protocol-data-types.md#fixed-length-integers) server capabilities 3rd part. MariaDB specific flags `/*` [`MariaDB 10.2`](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) `or later */`.
 * If (`server_capabilities` & `CLIENT_SECURE_CONNECTION`):
-  * [string](../protocol-data-types.md#fixed-length-strings) authentication plugin data 2nd part . Length = max(12, plugin data length - 9).
+  * [string](../protocol-data-types.md#fixed-length-strings) authentication plugin data 2nd part. Length = max(12, plugin data length - 9).
   * [string<1>](../protocol-data-types.md#fixed-length-strings) reserved byte.
 * If (server\_capabilities & PLUGIN\_AUTH):
   * [string](../protocol-data-types.md#null-terminated-strings) authentication plugin name.
@@ -73,9 +73,9 @@ If the client requests a TLS/SSL connection, the first response is an SSL connec
 
 ### Zero-Configuration SSL Encryption
 
-Automatic Encrypted Connections ([MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)+):
+Automatic Encrypted Connections ([MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.4/what-is-mariadb-114)+):
 
-Previously, failed SSL connections due to self-signed certificates prevented communication. [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)+ introduces a secondary validation method that works for all servers.
+Previously, failed SSL connections due to self-signed certificates prevented communication. [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.4/what-is-mariadb-114)+ introduces a secondary validation method that works for all servers.
 
 #### **What Happens When SSL Validation Fails?**
 
@@ -99,7 +99,7 @@ Password hash is generated depending on authentication plugin:
 
 #### **Server 11.4+ Confirmation Details:**
 
-For servers running [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114) or later, the final confirmation packet contains:
+For servers running [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/11.4/what-is-mariadb-114) or later, the final confirmation packet contains:
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) encryption (actually only 0x01 = SHA256 encryption)
 * [byte](../protocol-data-types.md#end-of-file-length-bytes) shared secret.
@@ -157,9 +157,9 @@ The server responds with an [OK\_packet](../4-server-response-packets/ok_packet.
 
 #### mysql\_old\_password Plugin
 
-_deprecated —_ send a 8 byte encrypted password.
+_deprecated —_ send an 8 byte encrypted password.
 
-Authentication plugin data format :
+Authentication plugin data format:
 
 * [byte<8>](../protocol-data-types.md#fixed-length-bytes) 8-byte seed.
 
@@ -170,7 +170,7 @@ Client response:
 #### mysql\_clear\_password Plugin
 
 {% hint style="danger" %}
-Since password is transmitted in clear, this has be used only when using SSL connection
+Since password is transmitted in clear, this has been used only when using SSL connection
 {% endhint %}
 
 Send clear password to server.
@@ -212,7 +212,7 @@ This end when the server sends an [EOF\_Packet](../4-server-response-packets/eof
 
 GSSAPI implementation.
 
-Authentication plugin data format :
+Authentication plugin data format:
 
 * [string](../protocol-data-types.md#null-terminated-strings) serverPrincipalName (UTF-8 format).
 * [string](../protocol-data-types.md#null-terminated-strings) mechanisms (UTF-8 format).
@@ -228,11 +228,11 @@ See [plugin description](../../plugins/authentication-plugins/authentication-plu
 
 The server sends a random nonce that the client signs.
 
-authentication plugin data format :
+authentication plugin data format:
 
 * [byte](../protocol-data-types.md#end-of-file-length-bytes) seed.
 
-Client response :
+Client response:
 
 * [byte](../protocol-data-types.md#end-of-file-length-bytes) `ed25519` encrypted password.
 
@@ -244,7 +244,6 @@ Authentication plugin data format:
 
 Client has to send an empty packet to request "ext-salt".
 
-
 Format of ext-salt is:
 
 * [string<1>](../protocol-data-types.md#fixed-length-strings) 'P' (denotes KDF algorithm = PBKDF2).
@@ -253,7 +252,7 @@ Format of ext-salt is:
 
 The client must then:
 
-* Generate derived key = hash password with PBKDF2 ( sha512 digest) with iteration number and salt from ext-salt.
+* Generate derived key = hash password with PBKDF2 (sha512 digest) with iteration number and salt from ext-salt.
 * Generate a client 32 bytes nonce.
 * Generate the signature with `ed25519` of an array concatenation of server nonce + client nonce with the generated derived key as private key.
 
@@ -284,7 +283,7 @@ client with capabilities CLIENT\_MYSQL + CONNECT\_WITH\_DB will have a value of 
 | MULTI\_RESULTS                          | 1 << 17 | Enable/disable multi-results.                                                                                                                                                        |
 | PS\_MULTI\_RESULTS                      | 1 << 18 | Enable/disable multi-results for PrepareStatement.                                                                                                                                   |
 | PLUGIN\_AUTH                            | 1 << 19 | Client supports plugin authentication.                                                                                                                                               |
-| CONNECT\_ATTRS                          | 1 << 20 | Client send connection attributes.                                                                                                                                                   |
+| CONNECT\_ATTRS                          | 1 << 20 | Client sends connection attributes.                                                                                                                                                  |
 | PLUGIN\_AUTH\_LENENC\_CLIENT\_DATA      | 1 << 21 | Enable authentication response packet to be larger than 255 bytes.                                                                                                                   |
 | CLIENT\_CAN\_HANDLE\_EXPIRED\_PASSWORDS | 1 << 22 | Client can handle expired passwords.                                                                                                                                                 |
 | CLIENT\_SESSION\_TRACK                  | 1 << 23 | Enable/disable session tracking in `OK_Packet`.                                                                                                                                      |
@@ -292,7 +291,7 @@ client with capabilities CLIENT\_MYSQL + CONNECT\_WITH\_DB will have a value of 
 | CLIENT\_OPTIONAL\_RESULTSET\_METADATA   | 1 << 25 | Not in use for MariaDB.                                                                                                                                                              |
 | CLIENT\_ZSTD\_COMPRESSION\_ALGORITHM    | 1 << 26 | Support `zstd` protocol compression.                                                                                                                                                 |
 | CLIENT\_CAPABILITY\_EXTENSION           | 1 << 29 | Reserved for future use.                                                                                                                                                             |
-| CLIENT\_SSL\_VERIFY\_SERVER\_CERT       | 1 << 30 | Client verify server certificate. Deprecated, client has options to indicate if server certificate must be verified.                                                                  |
+| CLIENT\_SSL\_VERIFY\_SERVER\_CERT       | 1 << 30 | Client verify server certificate. Deprecated, client has options to indicate if server certificate must be verified.                                                                 |
 | CLIENT\_REMEMBER\_OPTIONS               | 1 << 31 |                                                                                                                                                                                      |
 | MARIADB\_CLIENT\_PROGRESS               | 1 << 32 | Client support progress indicator.                                                                                                                                                   |
 | MARIADB\_CLIENT\_COM\_MULTI             | 1 << 33 | Permit `COM_MULTI` protocol.                                                                                                                                                         |
@@ -303,7 +302,7 @@ client with capabilities CLIENT\_MYSQL + CONNECT\_WITH\_DB will have a value of 
 
 ## Native Password Authentication
 
-The 20 byte string 'seed' is calculated by concatenating scramble first part (8 bytes) and scramble second part from [Initial handshake packet](connection.md#initial-handshake-packet). After that, the client calculates a password hash using the password and seed by using ^ (bitwise xor), + (string concatenation) and SHA1 as follows:
+The 20-byte string 'seed' is calculated by concatenating scramble first part (8 bytes) and scramble second part from [Initial handshake packet](connection.md#initial-handshake-packet). After that, the client calculates a password hash using the password and seed by using ^ (bitwise xor), + (string concatenation) and SHA1 as follows:
 
 ```
 SHA1( passwd) ^ SHA1( seed + SHA1( SHA1( passwd ) ) )
