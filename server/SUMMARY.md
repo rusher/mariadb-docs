@@ -972,6 +972,7 @@
       * [Full-Text Indexes](ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md)
         * [Full-Text Index Overview](ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-overview.md)
         * [Full-Text Index Stopwords](ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md)
+    * [Optimizer Hints](reference/sql-statements/data-manipulation/selecting-data/optimizer-hints.md)
     * [Compression](ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/README.md)
       * [Compression Plugins](ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md)
       * [Storage-Engine Independent Column Compression](ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md)
