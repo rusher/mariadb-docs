@@ -2051,6 +2051,7 @@
       * [SUBSTRING\_INDEX](reference/sql-functions/string-functions/substring_index.md)
       * [TO\_BASE64](reference/sql-functions/string-functions/to_base64.md)
       * [TO\_CHAR](reference/sql-functions/string-functions/to_char.md)
+      * [TO\_NUMBER](reference/sql-functions/string-functions/to_number.md)
       * [TRIM](reference/sql-functions/string-functions/trim.md)
       * [TRIM\_ORACLE](reference/sql-functions/string-functions/trim_oracle.md)
       * [Type Conversion](reference/sql-functions/string-functions/type-conversion.md)
