@@ -15,14 +15,14 @@ TO_NUMBER(string_subject,string_format)
 
 ## Description
 
-The function returns the DOUBLE data type for all signatures and input data types.
+The function returns the `DOUBLE` data type for all signatures and input data types.
 
 The format parser understands the following components:
 
 * Digits: 0, 9
 * Hex digits: X
-* Group separators: comma (,) and G
-* Decimal delimiters: period (.) and D
+* Group separators: comma (`,`) and G
+* Decimal delimiters: period (`.`) and D
 * Approximate number signature: EEEE
 * Currency/numeric flags: $ and B
 * Currency signatures: C, L, U
@@ -30,11 +30,13 @@ The format parser understands the following components:
 * Special format signatures: V, TM, TM9, TME
 * Format flag: FM
 
-The function was introduced for Oracle compatibility, but does not yet include the following features:\
-\- The ON CONVERSION ERROR clause\
-\- The third parameter (nlsparam)\
-\- Internationalized components: G, D, C, L, U.\
-These features will be implemented later in [MDEV-36978](https://jira.mariadb.org/browse/MDEV-36978).
+The function was introduced for Oracle compatibility, but does not include the following features:
+
+* The `ON CONVERSION ERROR` clause
+* The third parameter (nlsparam)
+* Internationalized components: G, D, C, L, U
+
+These features are planned to be be implemented via [MDEV-36978](https://jira.mariadb.org/browse/MDEV-36978).
 
 ## Examples
 
