@@ -56,7 +56,7 @@ There can be one or more hints separated with space:
 hints:  hint hint ...
 ```
 
-**Description**
+### **Description**
 
 Each individual hint is hint name and arguments. In case there are no arguments,\
 the () brackets are still present:
@@ -69,7 +69,7 @@ Incorrect hints produce warnings (a setting to make them errors is not implement
 Hints that are not ignored are kept in the query text (you can see them in SHOW PROCESSLIST, Slow Query Log, EXPLAIN EXTENDED)\
 Hints that were incorrect and were ignored are removed from there.
 
-**Hint Hierarchy**
+### **Hint Hierarchy**
 
 Hints can be
 
@@ -77,13 +77,13 @@ Hints can be
 * table-level - they apply to a table;
 * index-level - they apply to an index in a table.
 
-**Table-Level Hints**
+#### **Table-Level Hints**
 
 ```sql
 hint_name([table_name [table_name [,...]] )
 ```
 
-**Index-Level Hints**
+#### **Index-Level Hints**
 
 Index-level hints apply to indexes. Possible syntax variants are:
 
@@ -95,7 +95,7 @@ hint_name(table_name@query_block [index_name [, index_name] ...])
 hint_name(@query_block  table_name [index_name [, index_name] ...])
 ```
 
-**Query Block Naming**
+### **Query Block Naming**
 
 The `QB_NAME` hint is used to assign a name to the query block the hint is in. The Query Block is either a `SELECT` or a top-level construct of `UPDATE` or `DELETE` statement.
 
@@ -112,7 +112,7 @@ Query block scope is the whole statement. It is invalid to use the same name for
 
 Hints inside views are not supported, yet. You can neither use hints in `VIEW` definitions, nor control query plans inside non-merged views. (This is because `QB_NAME` binding are done "early", before we know that some tables are views.)
 
-**SELECT#N NAMES**
+### **SELECT#N NAMES**
 
 Besides the given name, any query block is given a name select#n. You can see it when running `EXPLAIN EXTENDED`:
 
@@ -126,11 +126,11 @@ It is **not** possible to use it in the hint text:
 SELECT /*+ BKA(tbl1@`select#1`) */ 1 FROM tbl1 ...;
 ```
 
-**QB\_NAME in CTEs**
+### **QB\_NAME in CTEs**
 
 Hints that control `@name` will control the first use of the CTE (common table expression).
 
-**Effect of Optimizer Hints**
+#### **Effect of Optimizer Hints**
 
 The optimizer can be controlled by
 
@@ -152,25 +152,25 @@ It means: When considering a query plan that involves using `t1_index1` in a way
 
 The optimizer may also consider using `t1_index2` and pick that over `using t1_index1`. In such cases, the hint is effectively ignored and no warning is given.
 
-**List of Hints**
+### **List of Hints**
 
-**JOIN\_INDEX and NO\_JOIN\_INDEX**
+#### **JOIN\_INDEX and NO\_JOIN\_INDEX**
 
 An index-level hint that enables or disables the specified indexes for an access method (range, ref, etc.). Equivalent to `FORCE INDEX FOR JOIN` and `IGNORE INDEX FOR JOIN`.
 
-**GROUP\_INDEX and NO\_GROUP\_INDEX**
+#### **GROUP\_INDEX and NO\_GROUP\_INDEX**
 
 An index-level hint that enables or disables the specified indexes for index scans for `GROUP BY` operations. Equivalent to `FORCE INDEX FOR GROUP BY` and `IGNORE INDEX FOR GROUP BY`.
 
-**ORDER\_INDEX and NO\_ORDER\_INDEX**
+#### **ORDER\_INDEX and NO\_ORDER\_INDEX**
 
 An index-level hint that enables or disables the specified indexes for sorting rows. Equivalent to `FORCE INDEX FOR ORDER BY` and `IGNORE INDEX FOR ORDER BY`.
 
-**INDEX and NO\_INDEX**
+#### **INDEX and NO\_INDEX**
 
 An index-level hint that enables or disables the specified indexes, for all scopes (join access method, GROUP BY, or sorting). Equivalent to `FORCE INDEX` and `IGNORE INDEX`.
 
-**NO\_RANGE\_OPTIMIZATION**
+#### **NO\_RANGE\_OPTIMIZATION**
 
 An index-level hint that disables range optimization for certain index(es):
 
@@ -178,7 +178,7 @@ An index-level hint that disables range optimization for certain index(es):
 SELECT /*+ NO_RANGE_OPTIMIZATION(tbl index1 index2) */  * FROM tbl ...
 ```
 
-**NO\_ICP**
+#### **NO\_ICP**
 
 An index-level hint that disables [Index Condition Pushdown](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-condition-pushdown.md) for the indexes. ICP+BKA is disabled as well.
 
@@ -186,7 +186,7 @@ An index-level hint that disables [Index Condition Pushdown](../../../../ha-and-
 SELECT /*+ NO_ICP(tbl index1 index2) */  * FROM tbl ...
 ```
 
-**MRR and NO\_MRR**
+#### **MRR and NO\_MRR**
 
 Index-level hints to force or disable use of MRR.
 
@@ -198,22 +198,22 @@ SELECT /*+ NO_MRR(tbl index1 index2) */  * FROM tbl ...
 
 This controls:
 
-* MRR optimization for range access (mdev35483-mrr-is-narrow.sql);
-* BKA mdev35483-mrr-controls-bka-partially.sql.
+* MRR optimization for range access;
+* BKA.
 
-**BKA() and NO\_BKA()**
+#### **BKA() and NO\_BKA()**
 
 Query block or table-level hints.
 
 BKA() also enables MRR to make BKA possible. (This is different from session variables, where you need to enable MRR separately). This also enables BKAH.
 
-**BNL() and NO\_BNL()**
+#### **BNL() and NO\_BNL()**
 
 Controls BNL-H.
 
 The implementation is "BNL() hint effectively increases join\_cache\_level up to 4 " .. for the table(s) it applies to.
 
-**MAX\_EXECUTION\_TIME()**
+### **MAX\_EXECUTION\_TIME()**
 
 Global-level hint to limit query execution time
 
@@ -224,21 +224,19 @@ SELECT /*+ MAX_EXECUTION_TIME(milliseconds) */ ...  ;
 A query that doesn't finish in the time specified will be aborted with an error.\
 If `@@max_statement_time` is set, the hint will be ignored and a warning produced. Note that this contradicts the stated principle that "new-style hints are more specific than server variable settings, so they override the server variable settings".
 
-**SPLIT\_MATERIALIZED(X) and NO\_SPLIT\_MATERIALIZED(X)**
+### **SPLIT\_MATERIALIZED(X) and NO\_SPLIT\_MATERIALIZED(X)**
 
 Enables or disables the use of the Split Materialized Optimization (also called the[ Lateral Derived Optimization](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/lateral-derived-optimization.md)).
 
-**DERIVED\_CONDITION\_PUSHDOWN and NO\_DERIVED\_CONDITION\_PUSHDOWN**
+### **DERIVED\_CONDITION\_PUSHDOWN and NO\_DERIVED\_CONDITION\_PUSHDOWN**
 
 Enables or disables the use of [condition pushdown for derived tables](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/condition-pushdown-into-derived-table-optimization.md).
 
-**MERGE and NO\_MERGE**
+### **MERGE and NO\_MERGE**
 
 Table-level hint that enables the use of merging, or disables and uses materialization, for the specified tables, views or common table expressions.
 
-**Subquery Hints**
-
-**SUBQUERY Hint**
+#### **SUBQUERY Hint**
 
 Query block-level hint.
 
@@ -250,7 +248,9 @@ SUBQUERY([@query_block_name] INTOEXISTS)
 
 This controls non-semi-join subqueries. The parameter specifies which subquery to use. Use of this hint disables conversion of subquery into semi-join.
 
-**SEMIJOIN and NO\_SEMIJOIN**
+For details, see the [Subquery Hints section](optimizer-hints.md#subquery-hints-1).
+
+### **SEMIJOIN and NO\_SEMIJOIN**
 
 Query block-level hints.
 
@@ -260,7 +260,7 @@ This controls the conversion of subqueries to semi-joins and which semi-join str
 [NO_]SEMIJOIN([@query_block_name] [strategy [, strategy] ...])
 ```
 
-where the strategy is one of DUPSWEEDOUT, FIRSTMATCH, LOOSESCAN, MATERIALIZATION.
+where the strategy is one of `DUPSWEEDOUT`, `FIRSTMATCH`, `LOOSESCAN`, `MATERIALIZATION`.
 {% endtab %}
 
 {% tab title="<12.1" %}
@@ -492,6 +492,71 @@ Table names in hints cannot be qualified with schema names.
 
 {% tab title="< 12.0" %}
 Join order hints are **not** available.
+{% endtab %}
+{% endtabs %}
+
+### Subquery Hints
+
+{% tabs %}
+{% tab title="Current" %}
+#### Overview
+
+Subquery hints determine:
+
+* If semijoin transformations are to be used;
+* Which semijoin strategies are permitted;
+* When semijoins are not used, whether to use subquery materialization or `IN-to-EXISTS` transformations.
+
+#### Syntax
+
+```
+hint_name([@query_block_name] [strategy [, strategy] ...])
+```
+
+* `hint_name`: The following hint names are permitted to enable or disable the named semijoin strategies: `SEMIJOIN`, `NO_SEMIJOIN`.
+* `strategy`: Enable or disable a semi-join strategy. The following strategy names are permitted: `DUPSWEEDOUT`, `FIRSTMATCH`, `LOOSESCAN`, `MATERIALIZATION`.
+
+#### Strategies
+
+For `SEMIJOIN` hints, if no strategies are named, semi-join is used based on the strategies enabled according to the `optimizer_switch` system variable, if possible. If strategies are named but inapplicable for the statement, `DUPSWEEDOUT` is used.
+
+For `NO_SEMIJOIN` hints, semi-join is not used if no strategies are named. If strategies are named that rule out all applicable strategies for the statement, `DUPSWEEDOUT` is used.
+
+If a subquery is nested within another, and both are merged into a semi-join of an outer query, any specification of semi-join strategies for the innermost query are ignored. `SEMIJOIN` and `NO_SEMIJOIN` hints can still be used to enable or disable semi-join transformations for such nested subqueries.
+
+If `DUPSWEEDOUT` is disabled, the optimizer may generate a query plan that is far from optimal. This occurs due to heuristic pruning during greedy search, which can be avoided by setting [`optimizer_prune_level`](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_prune_level)`=0`.
+
+#### Examples
+
+```sql
+SELECT /*+ NO_SEMIJOIN(@subquery1 FIRSTMATCH, LOOSESCAN) */ * FROM t2
+  WHERE t2.a IN (SELECT /*+ QB_NAME(subq1) */ a FROM t3);
+SELECT /*+ SEMIJOIN(@subquery1 MATERIALIZATION, DUPSWEEDOUT) */ * FROM t2
+  WHERE t2.a IN (SELECT /*+ QB_NAME(subquery1) */ a FROM t3);
+```
+
+Syntax of hints that affect whether to use subquery materialization or `IN`-to-`EXISTS` transformations:
+
+```sql
+SUBQUERY([@query_block_name] strategy)
+```
+
+The hint name is always `SUBQUERY`.
+
+For `SUBQUERY` hints, these _`strategy`_ values are permitted: `INTOEXISTS`, `MATERIALIZATION`.
+
+```sql
+SELECT id, a IN (SELECT /*+ SUBQUERY(MATERIALIZATION) */ a FROM t1) FROM t2;
+SELECT * FROM t2 WHERE t2.a IN (SELECT /*+ SUBQUERY(INTOEXISTS) */ a FROM t1);
+```
+
+For semi-join and `SUBQUERY` hints, a leading `@`_`query_block_name`_ specifies the query block to which the hint applies. If the hint includes no leading `@`_`query_block_name`_, the hint applies to the query block in which it occurs. To assign a name to a query block, see [Naming Query Blocks](https://dev.mysql.com/doc/refman/5.7/en/optimizer-hints.html#optimizer-hints-query-block-naming).
+
+If a hint comment contains multiple subquery hints, the first is used. If there are other following hints of that type, they produce a warning. Following hints of other types are silently ignored.
+{% endtab %}
+
+{% tab title="< 12.0" %}
+Subquery hints are **not** available.
 {% endtab %}
 {% endtabs %}
 
