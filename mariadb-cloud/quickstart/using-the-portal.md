@@ -15,7 +15,7 @@ This quickstart guide will walk you through using the Portal.
 
 Go to [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using your Google, GitHub, or LinkedIn credentials. Or just use your Email address to sign up.
 
-<div align="left"><figure><img src="../Quickstart/mariadb-cloud-id.png" alt=""><figcaption></figcaption></figure></div>
+<figure><img src="../.gitbook/assets/image.png" alt="Login form for MariaDB Cloud, showing information about the service in the left panel, and the login form itself in the right panel."><figcaption><p>MariaDB Cloud login form</p></figcaption></figure>
 
 ## Step 2: Launch a Service
 
