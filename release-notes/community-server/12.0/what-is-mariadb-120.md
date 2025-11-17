@@ -103,11 +103,11 @@ For a list of all new variables, see [System Variables Added in MariaDB 12.0](ht
 
 ## List of All MariaDB 12.0 Releases
 
-| Date          | Release                     | Status  | Release Notes              | Changelog                                                   |
-| ------------- | --------------------------- | ------- | -------------------------- | ----------------------------------------------------------- |
-| 7 Aug 2025    | [MariaDB 12.0.2](12.0.2.md) | GA      | [Release Notes](12.0.2.md) | [Changelog](../changelogs/12.0/mariadb-12.0.2-changelog.md) |
-| 5 Jun 2025    | [MariaDB 12.0.1](12.0.1.md) | RC      | [Release Notes](12.0.1.md) | [Changelog](../changelogs/12.0/mariadb-12.0.1-changelog.md) |
-| 26 March 2025 | [MariaDB 12.0.0](./)        | Preview |                            |                                                             |
+| Date          | Release                     | Status  | Release Notes              | Changelog                                 |
+| ------------- | --------------------------- | ------- | -------------------------- | ----------------------------------------- |
+| 7 Aug 2025    | [MariaDB 12.0.2](12.0.2.md) | GA      | [Release Notes](12.0.2.md) | [Changelog](../changelogs/12.0/12.0.2.md) |
+| 5 Jun 2025    | [MariaDB 12.0.1](12.0.1.md) | RC      | [Release Notes](12.0.1.md) | [Changelog](../changelogs/12.0/12.0.1.md) |
+| 26 March 2025 | [MariaDB 12.0.0](./)        | Preview |                            |                                           |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
