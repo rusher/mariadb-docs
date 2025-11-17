@@ -24,7 +24,7 @@ layout:
 
 Database server configuration, including system variables, is managed through the Configuration Manager.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## **Access to Configuration Manager**
 
