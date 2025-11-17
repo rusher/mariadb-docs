@@ -15,7 +15,7 @@ description: >-
 {% endcolumn %}
 
 {% column %}
-Optimize MariaDB Server performance by tuning buffers, caches, and threads. This section covers essential configurations to maximize throughput and responsiveness for your database workloads.
+Covers essential configurations to maximize throughput and responsiveness for your database workloads.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -27,7 +27,7 @@ Optimize MariaDB Server performance by tuning buffers, caches, and threads. This
 {% endcolumn %}
 
 {% column %}
-Explore MariaDB Server's internal optimizations. This section delves into how the database engine enhances query execution, data storage, and overall performance through its core architecture.
+Delves into how the database engine enhances query execution, data storage, and overall performance through its core architecture.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -39,7 +39,7 @@ Explore MariaDB Server's internal optimizations. This section delves into how th
 {% endcolumn %}
 
 {% column %}
-Optimize MariaDB Server performance with operating system tuning. This section covers configuring your OS for improved I/O, memory management, and network settings to maximize database efficiency.
+Covers configuring your OS for improved I/O, memory management, and network settings to maximize database efficiency.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -51,7 +51,7 @@ Optimize MariaDB Server performance with operating system tuning. This section c
 {% endcolumn %}
 
 {% column %}
-Optimize MariaDB Server queries with indexes. This section covers index types, creation, and best practices for leveraging them to significantly improve query performance and data retrieval speed.
+Covers index types, creation, and best practices for leveraging them to significantly improve query performance and data retrieval speed.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -75,7 +75,7 @@ Optimizer hints are options available that affect the execution plan.
 {% endcolumn %}
 
 {% column %}
-Optimize MariaDB Server performance and storage with compression. This section details how to apply data compression at various levels to reduce disk space and improve I/O efficiency.
+Details how to apply data compression at various levels to reduce disk space and improve I/O efficiency.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -87,7 +87,7 @@ Optimize MariaDB Server performance and storage with compression. This section d
 {% endcolumn %}
 
 {% column %}
-Optimize MariaDB Server performance by refining your data structure. This section covers schema design, data types, and normalization techniques to improve query efficiency and storage utilization.
+Covers schema design, data types, and normalization techniques to improve query efficiency and storage utilization.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -99,7 +99,7 @@ Optimize MariaDB Server performance by refining your data structure. This sectio
 {% endcolumn %}
 
 {% column %}
-Optimize MariaDB Server tables for enhanced performance. This section covers various techniques, including proper indexing, data types, and storage engine choices, to improve query speed and efficiency.
+Covers various techniques, including proper indexing, data types, and storage engine choices, to improve query speed and efficiency.
 {% endcolumn %}
 {% endcolumns %}
 
@@ -111,7 +111,7 @@ Optimize MariaDB Server tables for enhanced performance. This section covers var
 {% endcolumn %}
 
 {% column %}
-Optimize your MariaDB Server queries for peak performance. This section provides techniques for writing efficient SQL, understanding query execution plans, and leveraging indexes effectively to speed up your queries.
+Provides techniques for writing efficient SQL, understanding query execution plans, and leveraging indexes effectively to speed up your queries.
 {% endcolumn %}
 {% endcolumns %}
 
