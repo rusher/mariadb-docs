@@ -56,7 +56,7 @@ There can be one or more hints separated with space:
 hints:  hint hint ...
 ```
 
-#### **Description**
+**Description**
 
 Each individual hint is hint name and arguments. In case there are no arguments,\
 the () brackets are still present:
@@ -69,7 +69,7 @@ Incorrect hints produce warnings (a setting to make them errors is not implement
 Hints that are not ignored are kept in the query text (you can see them in SHOW PROCESSLIST, Slow Query Log, EXPLAIN EXTENDED)\
 Hints that were incorrect and were ignored are removed from there.
 
-#### **Hint Hierarchy**
+**Hint Hierarchy**
 
 Hints can be
 
@@ -77,13 +77,13 @@ Hints can be
 * table-level - they apply to a table;
 * index-level - they apply to an index in a table.
 
-#### **Table-Level Hints**
+**Table-Level Hints**
 
 ```sql
 hint_name([table_name [table_name [,...]] )
 ```
 
-#### **Index-Level Hints**
+**Index-Level Hints**
 
 Index-level hints apply to indexes. Possible syntax variants are:
 
@@ -95,7 +95,7 @@ hint_name(table_name@query_block [index_name [, index_name] ...])
 hint_name(@query_block  table_name [index_name [, index_name] ...])
 ```
 
-#### **Query Block Naming**
+**Query Block Naming**
 
 The `QB_NAME` hint is used to assign a name to the query block the hint is in. The Query Block is either a `SELECT` or a top-level construct of `UPDATE` or `DELETE` statement.
 
@@ -112,7 +112,7 @@ Query block scope is the whole statement. It is invalid to use the same name for
 
 Hints inside views are not supported, yet. You can neither use hints in `VIEW` definitions, nor control query plans inside non-merged views. (This is because `QB_NAME` binding are done "early", before we know that some tables are views.)
 
-#### **SELECT#N NAMES**
+**SELECT#N NAMES**
 
 Besides the given name, any query block is given a name select#n. You can see it when running `EXPLAIN EXTENDED`:
 
@@ -126,11 +126,11 @@ It is **not** possible to use it in the hint text:
 SELECT /*+ BKA(tbl1@`select#1`) */ 1 FROM tbl1 ...;
 ```
 
-#### **QB\_NAME in CTEs**
+**QB\_NAME in CTEs**
 
 Hints that control `@name` will control the first use of the CTE (common table expression).
 
-#### **Effect of Optimizer Hints**
+**Effect of Optimizer Hints**
 
 The optimizer can be controlled by
 
@@ -152,7 +152,7 @@ It means: When considering a query plan that involves using `t1_index1` in a way
 
 The optimizer may also consider using `t1_index2` and pick that over `using t1_index1`. In such cases, the hint is effectively ignored and no warning is given.
 
-#### **List of Hints**
+**List of Hints**
 
 **JOIN\_INDEX and NO\_JOIN\_INDEX**
 
@@ -236,7 +236,7 @@ Enables or disables the use of [condition pushdown for derived tables](../../../
 
 Table-level hint that enables the use of merging, or disables and uses materialization, for the specified tables, views or common table expressions.
 
-#### **Subquery Hints**
+**Subquery Hints**
 
 **SUBQUERY Hint**
 
@@ -284,7 +284,7 @@ There can be one or more hints separated with space:
 hints:  hint hint ...
 ```
 
-#### **Description**
+**Description**
 
 Each individual hint is hint name and arguments. In case there are no arguments,\
 the () brackets are still present:
@@ -297,7 +297,7 @@ Incorrect hints produce warnings (a setting to make them errors is not implement
 Hints that are not ignored are kept in the query text (you can see them in SHOW PROCESSLIST, Slow Query Log, EXPLAIN EXTENDED)\
 Hints that were incorrect and were ignored are removed from there.
 
-#### **Hint Hierarchy**
+**Hint Hierarchy**
 
 Hints can be
 
@@ -323,7 +323,7 @@ hint_name(table_name@query_block [index_name [, index_name] ...])
 hint_name(@query_block  table_name [index_name [, index_name] ...])
 ```
 
-#### **Query Block Naming**
+**Query Block Naming**
 
 The `QB_NAME` hint is used to assign a name to the query block the hint is in. The Query Block is either a `SELECT` or a top-level construct of `UPDATE` or `DELETE` statement.
 
@@ -340,7 +340,7 @@ Query block scope is the whole statement. It is invalid to use the same name for
 
 Hints inside views are not supported, yet. You can neither use hints in `VIEW` definitions, nor control query plans inside non-merged views. (This is because `QB_NAME` binding are done "early", before we know that some tables are views.)
 
-#### **SELECT#N NAMES**
+**SELECT#N NAMES**
 
 Besides the given name, any query block is given a name select#n. You can see it when running `EXPLAIN EXTENDED`:
 
@@ -354,11 +354,11 @@ It is **not** possible to use it in the hint text:
 SELECT /*+ BKA(tbl1@`select#1`) */ 1 FROM tbl1 ...;
 ```
 
-#### **QB\_NAME in CTEs**
+**QB\_NAME in CTEs**
 
 Hints that control `@name` will control the first use of the CTE (common table expression).
 
-#### **Effect of Optimizer Hints**
+**Effect of Optimizer Hints**
 
 The optimizer can be controlled by
 
@@ -380,7 +380,7 @@ It means: When considering a query plan that involves using `t1_index1` in a way
 
 The optimizer may also consider using `t1_index2` and pick that over `using t1_index1`. In such cases, the hint is effectively ignored and no warning is given.
 
-#### **List of Hints**
+**List of Hints**
 
 **NO\_RANGE\_OPTIMIZATION**
 
@@ -436,7 +436,7 @@ SELECT /*+ MAX_EXECUTION_TIME(milliseconds) */ ...  ;
 A query that doesn't finish in the time specified will be aborted with an error.\
 If `@@max_statement_time` is set, the hint will be ignored and a warning produced. Note that this contradicts the stated principle that "new-style hints are more specific than server variable settings, so they override the server variable settings".
 
-#### **Subquery Hints**
+**Subquery Hints**
 
 **SUBQUERY Hint**
 
@@ -465,6 +465,33 @@ where the strategy is one of `DUPSWEEDOUT`, `FIRSTMATCH`, `LOOSESCAN`, `MATERIAL
 
 {% tab title="< 12.0" %}
 Expanded optimizer hints are not available.
+{% endtab %}
+{% endtabs %}
+
+### Join Order Hints
+
+{% tabs %}
+{% tab title="Current" %}
+The following hints are available.
+
+* In the list, _`tbl`_ is the name of a table used in the statement. A hint that names tables applies to all tables that it names. The `JOIN_FIXED_ORDER` hint names no tables and applies to all tables in the `FROM` clause of the query block in which it occurs.
+* In the list, _`query_block_name`_ is the query block to which the hint applies. If the hint includes no leading _`@query_block_name`_, it applies to the query block in which it occurs. When using the _`tbl@query_block_name`_ syntax, the hint applies to the named table in the named query block. To assign a name to a query block, see [Optimizer Hints for Naming Query Blocks](https://mariadb.com/docs/server/reference/sql-statements/data-manipulation/selecting-data/optimizer-hints#query-block-naming).
+
+If a table has an alias, hints must refer to the alias, not the table name.
+
+Table names in hints cannot be qualified with schema names.
+
+* `JOIN_FIXED_ORDER([@query_block_name])`: Forces the optimizer to join tables using the order in which they appear in the `FROM` clause. This is the same as specifying `SELECT STRAIGHT_JOIN`.
+* `JOIN_ORDER([@query_block_name] tbl [, tbl] ...)`: Instructs the optimizer to join tables using the specified table order. The hint applies to the named tables. The optimizer may place tables that are not named anywhere in the join order, including between specified tables.
+  * Alternative syntax: `JOIN_ORDER(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
+* `JOIN_PREFIX([@query_block_name] tbl [, tbl] ...)`: Instruct the optimizer to join tables using the specified table order for the first tables of the join execution plan. The hint applies to the named tables. The optimizer places all other tables after the named tables.
+  * Alternative syntax: `JOIN_PREFIX(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
+* `JOIN_SUFFIX([@query_block_name] tbl [, tbl] ...)`: Instruct the optimizer to join tables using the specified table order for the last tables of the join execution plan. The hint applies to the named tables. The optimizer places all other tables before the named tables.
+  * Alternative syntax: `JOIN_SUFFIX(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
+{% endtab %}
+
+{% tab title="< 12.0" %}
+Join order hints are **not** available.
 {% endtab %}
 {% endtabs %}
 
