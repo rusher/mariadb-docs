@@ -204,7 +204,3 @@ if __name__ == "__main__":
 ```
 {% endstep %}
 {% endstepper %}
-
-Here's a bogus screenshot.
-
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
