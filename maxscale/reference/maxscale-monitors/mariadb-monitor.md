@@ -2,38 +2,32 @@
 
 ## Overview
 
-MariaDB Monitor monitors a Primary-Replica replication cluster. It probes the state of the backends and assigns server roles such as primary and replica, which are used by the routers when deciding where to route a query. It can also modify the replication cluster by performing failover, switchover and rejoin. Backend server versions older than MariaDB/MySQL 5.5 are not supported. Failover and other similar operations require MariaDB 10.4 or later.
+MariaDB Monitor monitors a Primary-Replica replication cluster. It probes the state of the backends and assigns server roles such as primary and replica, which are used by the routers when deciding where to route a query. It can also modify the replication cluster by performing failover, switchover and rejoin.
 
 ## Required Grants
 
 The monitor user requires the following grant:
 
-```
+```sql
 CREATE USER 'maxscale'@'maxscalehost' IDENTIFIED BY 'maxscale-password';
 GRANT REPLICATION CLIENT ON *.* TO 'maxscale'@'maxscalehost';
 ```
 
-In MariaDB Server versions 10.5.0 to 10.5.8, the monitor user instead requires REPLICATION SLAVE ADMIN:
+`REPLICA MONITOR` is required:
 
-```
-GRANT REPLICATION SLAVE ADMIN ON *.* TO 'maxscale'@'maxscalehost';
-```
-
-In MariaDB Server 10.5.9 and later, REPLICA MONITOR is required:
-
-```
+```sql
 GRANT REPLICA MONITOR ON *.* TO 'maxscale'@'maxscalehost';
 ```
 
-If the monitor needs to query server disk space (i.e. `disk_space_threshold` is set), then the FILE-grant is required with MariaDB Server versions 10.4.7, 10.3.17, 10.2.26 and 10.1.41 and later.
+If the monitor needs to query server disk space (for instance, `disk_space_threshold` is set),  the `FILE` grant is required:
 
-```
+```sql
 GRANT FILE ON *.* TO 'maxscale'@'maxscalehost';
 ```
 
-MariaDB Server 10.5.2 introduces CONNECTION ADMIN. This is recommended since it allows the monitor to log in even if server connection limit has been reached.
+The `CONNECTION ADMIN` privilege is recommended since it allows the monitor to log in even if server connection limit has been reached.
 
-```
+```sql
 GRANT CONNECTION ADMIN ON *.* TO 'maxscale'@'maxscalehost';
 ```
 
@@ -41,29 +35,37 @@ GRANT CONNECTION ADMIN ON *.* TO 'maxscale'@'maxscalehost';
 
 If [cluster manipulation operations](mariadb-monitor.md#cluster-manipulation-operations) are used, the following additional grants are required:
 
-```
+```sql
 GRANT SUPER, RELOAD, PROCESS, SHOW DATABASES, EVENT ON *.* TO 'maxscale'@'maxscalehost';
 GRANT SELECT ON mysql.user TO 'maxscale'@'maxscalehost';
 ```
 
-MariaDB 10.5.2 and later require read access to _mysql.global\_priv_:
+Read access to _mysql.global\_priv_ is required:
 
-```
+```sql
 GRANT SELECT ON mysql.global_priv TO 'maxscale'@'maxscalehost';
 ```
 
-As of MariaDB Server 11.0.1, the SUPER-privilege no longer contains several of its former sub-privileges. These must be given separately.
+{% tabs %}
+{% tab title="Current" %}
+The `SUPER` privilege no longer contains several of its former subprivileges. These must be given separately.
 
-```
+```sql
 GRANT RELOAD, PROCESS, SHOW DATABASES, EVENT, SET USER, READ_ONLY ADMIN ON *.* TO 'maxscale'@'maxscalehost';
 GRANT REPLICATION SLAVE ADMIN, BINLOG ADMIN, CONNECTION ADMIN ON *.* TO 'maxscale'@'maxscalehost';
 GRANT SELECT ON mysql.user TO 'maxscale'@'maxscalehost';
 GRANT SELECT ON mysql.global_priv TO 'maxscale'@'maxscalehost';
 ```
+{% endtab %}
+
+{% tab title="< 11.0.1" %}
+The `SUPER` privilege suffices.
+{% endtab %}
+{% endtabs %}
 
 If a separate replication user is defined (with `replication_user` and`replication_password`), it requires the following grant:
 
-```
+```sql
 CREATE USER 'replication'@'replicationhost' IDENTIFIED BY 'replication-password';
 GRANT REPLICATION SLAVE ON *.* TO 'replication'@'replicationhost';
 ```
@@ -1392,11 +1394,7 @@ backup_storage_path=/home/maxscale_ssh_user/backup_storage
 
 ### sudoers.d configuration
 
-If giving MaxScale general sudo-access is out of the question, MaxScale must be allowed to run the
-specific commands required by the backup operations. This can be achieved by creating a file with
-the commands in the`/etc/sudoers.d`-directory. In the example below, the user _johnny_ is given the
-power to run commands as root. The contents of the file may need to be tweaked due to changes in
-install locations.
+If giving MaxScale general sudo-access is out of the question, MaxScale must be allowed to run the specific commands required by the backup operations. This can be achieved by creating a file with the commands in the`/etc/sudoers.d`-directory. In the example below, the user _johnny_ is given the power to run commands as root. The contents of the file may need to be tweaked due to changes in install locations.
 
 ```
 johnny ALL= NOPASSWD: /bin/systemctl stop mariadb
