@@ -1429,7 +1429,6 @@
         * [GROUP BY](reference/sql-statements/data-manipulation/selecting-data/group-by.md)
         * [LIMIT](reference/sql-statements/data-manipulation/selecting-data/limit.md)
         * [LOCK IN SHARE MODE](reference/sql-statements/data-manipulation/selecting-data/lock-in-share-mode.md)
-        *
         * [ORDER BY](reference/sql-statements/data-manipulation/selecting-data/order-by.md)
         * [PROCEDURE](reference/sql-statements/data-manipulation/selecting-data/procedure.md)
         * [SELECT](reference/sql-statements/data-manipulation/selecting-data/select.md)
