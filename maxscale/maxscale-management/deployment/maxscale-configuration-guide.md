@@ -288,7 +288,7 @@ Even if a filter does not act on a query, the query is not lost. The query is si
 
 #### Enumerations
 
-Enumeration type parameters have a pre-defined set of accepted values. For types declared as `enum`, only one value is accepted. For `enum_mask` types, multiple values can be defined by separating them with commas. All enumeration values in MaxScale are case-sensitive.
+Enumeration type parameters have a predefined set of accepted values. For types declared as `enum`, only one value is accepted. For `enum_mask` types, multiple values can be defined by separating them with commas. All enumeration values in MaxScale are case-sensitive.
 
 For example the `router_options` parameter in the `readconnroute` router is a mask type enumeration:
 
@@ -1464,6 +1464,31 @@ If `client_id` is not configured, the value of `admin_jwt_issuer` is used as the
 * Default: `""`
 
 The client secret that's used when doing OpenID Connect requests. When using another MaxScale as the authorization server, this is the REST-API password that's used.
+
+#### `admin_oidc_ssl_insecure`
+
+* Type: [boolean](maxscale-configuration-guide.md#booleans)
+* Mandatory: No
+* Dynamic: Yes
+* Default: false
+
+Disable TLS certificate validation when fetching OIDC certificates. This should
+only be enabled when testing with a local OpenID Connect provider with
+self-signed certificates.
+
+#### `admin_oidc_extra_options`
+
+* Type: string
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+Extra options that are added to the initial authorization request. These options
+are sometimes needed to pass extra information to the identity provider service.
+
+For [Auth0](https://auth0.com/), the API that is used must be defined with this
+setting. For example, if the API name is `my-api` then
+`admin_oidc_extra_options=audience=my-api` should be used.
 
 #### `admin_verify_url`
 
@@ -3729,7 +3754,7 @@ $ bin/maxctrl show threads
 ...
 ```
 
-that is, the number of threads was 4 but has been reduced to 2, and while thread 2 has become drained it stays as _Dormant_ since thread 3 is still&#x6C;_Draining_, it is possible to make thread 2 _Active_ again by increasing the number of threads to 3.
+that is, the number of threads was 4 but has been reduced to 2, and while thread 2 has become drained it stays as _Dormant_ since thread 3 is still _Draining_, it is possible to make thread 2 _Active_ again by increasing the number of threads to 3.
 
 ```
 $ bin/maxctrl alter maxscale threads=3
