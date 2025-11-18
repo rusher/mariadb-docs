@@ -1460,6 +1460,31 @@ If `client_id` is not configured, the value of `admin_jwt_issuer` is used as the
 
 The client secret that's used when doing OpenID Connect requests. When using another MaxScale as the authorization server, this is the REST-API password that's used.
 
+#### `admin_oidc_ssl_insecure`
+
+* Type: [boolean](maxscale-configuration-guide.md#booleans)
+* Mandatory: No
+* Dynamic: Yes
+* Default: false
+
+Disable TLS certificate validation when fetching OIDC certificates. This should
+only be enabled when testing with a local OpenID Connect provider with
+self-signed certificates.
+
+#### `admin_oidc_extra_options`
+
+* Type: string
+* Mandatory: No
+* Dynamic: No
+* Default: `""`
+
+Extra options that are added to the initial authorization request. These options
+are sometimes needed to pass extra information to the identity provider service.
+
+For [Auth0](https://auth0.com/), the API that is used must be defined with this
+setting. For example, if the API name is `my-api` then
+`admin_oidc_extra_options=audience=my-api` should be used.
+
 #### `admin_verify_url`
 
 * Type: string
