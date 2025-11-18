@@ -3729,7 +3729,7 @@ $ bin/maxctrl show threads
 ...
 ```
 
-that is, the number of threads was 4 but has been reduced to 2, and while thread 2 has become drained it stays as _Dormant_ since thread 3 is still&#x6C;_&#x44;raining_, it is possible to make thread 2 _Active_ again by increasing the number of threads to 3.
+that is, the number of threads was 4 but has been reduced to 2, and while thread 2 has become drained it stays as _Dormant_ since thread 3 is still&#x6C;_Draining_, it is possible to make thread 2 _Active_ again by increasing the number of threads to 3.
 
 ```
 $ bin/maxctrl alter maxscale threads=3

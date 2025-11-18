@@ -80,7 +80,7 @@ $ maxctrl call command mariadbmon failover TheMonitor
 OK
 ```
 
-There are quite a few arguments, so let's look at each one separatel&#x79;_`call command` indicates that it is a module command that is to be_
+There are quite a few arguments, so let's look at each one separately_`call command` indicates that it is a module command that is to be_
 \&#xNAN;_invoked,_ `mariadbmon` indicates the module whose command we want to invoke (that
 is the MariaDB Monitor),_`failover` is the command we want to invoke, and_ `TheMonitor` is the first and only argument to that command, the name of
 the monitor as specified in the configuration file.
@@ -276,7 +276,7 @@ $ maxctrl call command mariadbmon switchover TheMonitor server1 server2
 OK
 ```
 
-There are quite a few arguments, so let's look at each one separatel&#x79;_`call command` indicates that it is a module command that is to be_
+There are quite a few arguments, so let's look at each one separately_`call command` indicates that it is a module command that is to be_
 \&#xNAN;_invoked,_ `mariadbmon` indicates the module whose command we want to invoke,_`switchover` is the command we want to invoke, and_ `TheMonitor` is the first argument to the command, the name of the monitor
 as specified in the configuration file,_`server1` is the second argument to the command, the name of the server we_
 \&#xNAN;_want to make into primary, and_ `server2` is the third argument to the command, the name of the _currentprimary_.
