@@ -59,7 +59,7 @@ First value the sequence will generate. Default `MINVALUE` if `INCREMENT` > `0`,
 
 #### CACHE / NOCACHE
 
-Number of values that should be cached. `0` if no `CACHE`. The underlying table will be updated first time a new sequence number is generated and each time the cache runs out. Default `1000`. [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md), shutting down the server, etc. will discard the cached values, and the next sequence number generated will be according to what's stored in the Sequence object. In effect, this will discard the cached values.&#x20;
+Number of values that should be cached. `0` if no `CACHE`. The underlying table will be updated first time a new sequence number is generated and each time the cache runs out. Default `1000`. [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md), shutting down the server, etc. will discard the cached values, and the next sequence number generated will be according to what's stored in the Sequence object. In effect, this will discard the cached values. 
 
 {% hint style="warning" %}
 Note that setting the cache to `1` from `1000` can make inserts to tables using sequences for default values 2x slower and increase the binary log sizes up to 7x.

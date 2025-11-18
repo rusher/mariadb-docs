@@ -90,7 +90,7 @@ SELECT 'a ' = 'a';
 
 ## PAD SPACE Collations
 
-&#x20;`PAD SPACE` collations pad strings to equal lengths in comparisons, so that the comparison evaluates to `1` (`TRUE`). Example:
+ `PAD SPACE` collations pad strings to equal lengths in comparisons, so that the comparison evaluates to `1` (`TRUE`). Example:
 
 ```sql
 SELECT 'a ' = 'a'; 

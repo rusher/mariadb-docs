@@ -10,7 +10,7 @@ This document focuses on the migration process itself. For detailed comparisons 
 
 * **MySQL Server**: A running MySQL Galera Cluster (version 8.0 or 8.4) to migrate.
 * **MariaDB Server**: The target [MariaDB version that supports Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-guide#galera-versions). This guide assumes the latest stable version.
-* **`mysqldump`**: A command-line utility by MySQL to create initial database backup.&#x20;
+* **`mysqldump`**: A command-line utility by MySQL to create initial database backup. 
 
 {% hint style="warning" %}
 Due to changes in MySQL 8.0+, `mariadb-dump` may not be compatible for this initial step.
@@ -90,7 +90,7 @@ A full logical backup of the MySQL database is required to seed the new MariaDB 
 [Asynchronous replication](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/about-galera-replication#synchronous-vs.-asynchronous-replication) requires the [binary log](https://dev.mysql.com/doc/refman/8.4/en/binary-log.html) to be enabled on the MySQL source. If not enabled, enable it on at least one node in your MySQL cluster.
 
 1. **Edit `my.cnf`**: In the `[mysqld]` section of your [MySQL configuration file](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html#option_mysqld_log-bin), add `log-bin=mysql-bin`.
-2. **Restart MySQL**: A server restart is required for the change to take effect.&#x20;
+2. **Restart MySQL**: A server restart is required for the change to take effect. 
 
 {% hint style="danger" %}
 Restarting MySQL will cause a brief outage for the node.

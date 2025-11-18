@@ -28,9 +28,9 @@ These functions return SQL standard compliant types:
 {% tab title="< 11.7" %}
 These functions do **not** return SQL standard compliant types:
 
-* `NOW()`&#x20;
-* `CURRENT_TIMESTAMP()`&#x20;
-* `LOCALTIMESTAMP`&#x20;
+* `NOW()` 
+* `CURRENT_TIMESTAMP()` 
+* `LOCALTIMESTAMP` 
 {% endtab %}
 {% endtabs %}
 

@@ -37,7 +37,7 @@ It supports the following associative array methods:
 
 ## Associative Arrays
 
-In Oracle, associative arrays (called index-by tables) are sparse collections of elements indexed by keys, which can be integers or strings.&#x20;
+In Oracle, associative arrays (called index-by tables) are sparse collections of elements indexed by keys, which can be integers or strings. 
 
 Here’s an example of how to declare an associative array in Oracle:
 

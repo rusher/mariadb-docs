@@ -72,8 +72,8 @@ the internal coding in tables depends on the table type, characters for text\
 files, and platform binary representation for binary files.
 
 The _length_ specification corresponds to the length of the table field in\
-which the value is stored for text files only. The _scale_ (wa&#x73;_&#x70;recision_) is the number of decimal digits written into text files. For\
-binary table types (BIN and VEC) this does not apply. The _length_ an&#x64;_&#x73;cale_ specifications are used to set the output field length and number of\
+which the value is stored for text files only. The _scale_ (was_precision_) is the number of decimal digits written into text files. For\
+binary table types (BIN and VEC) this does not apply. The _length_ and_scale_ specifications are used to set the output field length and number of\
 decimals for all types of tables.
 
 ## TYPE\_DECIM
@@ -93,7 +93,7 @@ INSERT INTO xxx VALUES (-2658.74);
 
 The internal representation of it are the character string`-2658.740000`. The way it is stored in a file table depends on the table\
 type. The _length_ field specification corresponds to the length of the table\
-field in which the value is stored and is calculated by CONNECT from th&#x65;_&#x70;recision_ and the _scale_ values. This length is _precision_ plus 1 i&#x66;_&#x73;cale_ is not 0 (for the decimal point) plus 1 if this column is not\
+field in which the value is stored and is calculated by CONNECT from the_precision_ and the _scale_ values. This length is _precision_ plus 1 if_scale_ is not 0 (for the decimal point) plus 1 if this column is not\
 unsigned (for the eventual minus sign). In fix formatted tables the number is\
 right justified in the field of width _length_, for variable formatted\
 tables, such as CSV, the field is the representing character string.

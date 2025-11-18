@@ -34,7 +34,7 @@ GROUP_CONCAT([DISTINCT] expr [,expr ...]
 
 ### LIMIT
 
-The [LIMIT](../../sql-statements/data-manipulation/selecting-data/limit.md) clause can be used with `GROUP_CONCAT`.&#x20;
+The [LIMIT](../../sql-statements/data-manipulation/selecting-data/limit.md) clause can be used with `GROUP_CONCAT`. 
 
 ## Examples
 

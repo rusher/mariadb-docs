@@ -182,7 +182,7 @@ OK_Packet:
 
 MariaDB has specific authentication methods.
 
-* [ED25519 plugin](1-connecting/connection.md#client_ed25519-plugin)&#x20;
+* [ED25519 plugin](1-connecting/connection.md#client_ed25519-plugin) 
 * [PARSEC plugin](1-connecting/connection.md#parsec-plugin) (from MariaDB 11.6.1)
 * [GSSAPI plugin](1-connecting/connection.md#auth_gssapi_client-plugin)
 
