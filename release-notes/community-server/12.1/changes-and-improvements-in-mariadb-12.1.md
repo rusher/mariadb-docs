@@ -45,10 +45,11 @@ This feature was only available in the 12.1 development releases, and will be im
 
 ## List of All MariaDB 12.1 Releases
 
-| Date         | Release                     | Status  | Release Notes              | Changelog                                 |
-| ------------ | --------------------------- | ------- | -------------------------- | ----------------------------------------- |
-| 7 Aug 2025   | [MariaDB 12.1.1](12.1.1.md) | RC      | [Release Notes](12.1.1.md) | [Changelog](../changelogs/12.1/12.1.1.md) |
-| 26 June 2025 | MariaDB 12.1.0              | Preview |                            |                                           |
+| Date         | Release        | Status  | Release Notes              | Changelog                                 |
+| ------------ | -------------- | ------- | -------------------------- | ----------------------------------------- |
+| 18 Nov 2025  | MariaDB 12.1.2 | GA      | [Release Notes](12.1.2.md) | [Changelog](../changelogs/12.1/12.1.2.md) |
+| 7 Aug 2025   | MariaDB 12.1.1 | RC      | [Release Notes](12.1.1.md) | [Changelog](../changelogs/12.1/12.1.1.md) |
+| 26 June 2025 | MariaDB 12.1.0 | Preview |                            |                                           |
 
 ***
 
