@@ -19,7 +19,7 @@ PARTITION BY RANGE (partitioning_expression)
 
 `PARTITION BY RANGE` indicates that the partitioning type is `RANGE`.
 
-* &#x20;_`partitioning_expression`_ is an SQL expression that returns a value from each row. In the simplest cases, it is a column name. This value is used to determine which partition should contain a row.
+*  _`partitioning_expression`_ is an SQL expression that returns a value from each row. In the simplest cases, it is a column name. This value is used to determine which partition should contain a row.
 * _`partition_name`_ is the name of a partition.
 * _`value`_ indicates the upper bound for that partition. The values must be ascending. For the first partition, the lower limit is `NULL`. When trying to insert a row, if its value is higher than the upper limit of the last partition, the row are rejected (with an error, if the [IGNORE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/ignore.md) keyword is not used).
 

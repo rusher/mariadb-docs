@@ -460,11 +460,11 @@ The `--ftwrl-wait-timeout` option specifies the maximum time that `mariadb-backu
 
 {% tabs %}
 {% tab title="From MariaDB 10.4" %}
-&#x20;this lock is acquired with **`BACKUP STAGE BLOCK_COMMIT`**.
+ this lock is acquired with **`BACKUP STAGE BLOCK_COMMIT`**.
 {% endtab %}
 
 {% tab title="Before 10.4" %}
-&#x20;this lock is acquired with **`FLUSH TABLES WITH READ LOCK (FTWRL)`**.
+ this lock is acquired with **`FLUSH TABLES WITH READ LOCK (FTWRL)`**.
 {% endtab %}
 {% endtabs %}
 
