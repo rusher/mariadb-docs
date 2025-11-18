@@ -24,7 +24,7 @@ Returns `NULL` if the argument is not understood.
 {% endtab %}
 
 {% tab title="< 10.5" %}
-&#x20;`INET6_ATON` **cannot** take [INET6](../../../data-types/string-data-types/inet6.md) as an argument.
+ `INET6_ATON` **cannot** take [INET6](../../../data-types/string-data-types/inet6.md) as an argument.
 {% endtab %}
 {% endtabs %}
 

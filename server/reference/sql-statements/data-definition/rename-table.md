@@ -37,7 +37,7 @@ RENAME TABLE db1.t TO db2.t;
 #### Limitations of Moving Tables to Another Database
 
 {% hint style="warning" %}
-Note that moving a table to another database is not possible if it has [triggers](../../../server-usage/triggers-events/triggers/).&#x20;
+Note that moving a table to another database is not possible if it has [triggers](../../../server-usage/triggers-events/triggers/). 
 {% endhint %}
 
 Trying to do so produces the following error:

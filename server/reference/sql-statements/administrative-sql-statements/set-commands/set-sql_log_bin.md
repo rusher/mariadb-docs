@@ -14,7 +14,7 @@ Note that setting `sql_log_bin=1` has no effect if [log\_bin](../../../../ha-and
 
 {% tabs %}
 {% tab title="Current" %}
-You cannot set `sql_log_bin` as a global variable.&#x20;
+You cannot set `sql_log_bin` as a global variable. 
 {% endtab %}
 
 {% tab title="< 5.6 / 5.5" %}

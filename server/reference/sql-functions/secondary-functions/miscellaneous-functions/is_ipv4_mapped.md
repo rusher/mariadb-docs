@@ -12,7 +12,7 @@ Returns 1 if a given a numeric binary string IPv6 address, such as returned by [
 
 {% tabs %}
 {% tab title="Current" %}
-When the argument is not [INET6](../../../data-types/string-data-types/inet6.md), automatic implicit [CAST](../../string-functions/cast.md) to INET6 is applied. As a consequence, `IS_IPV4_MAPPED` now understands arguments in both text representation and binary(16) representation.&#x20;
+When the argument is not [INET6](../../../data-types/string-data-types/inet6.md), automatic implicit [CAST](../../string-functions/cast.md) to INET6 is applied. As a consequence, `IS_IPV4_MAPPED` now understands arguments in both text representation and binary(16) representation. 
 {% endtab %}
 
 {% tab title="< 10.5" %}

@@ -9,7 +9,7 @@ IsClosed(g)
 
 ## Description
 
-Returns 1 if a given [LINESTRING's](../geometry-constructors/linestring.md) start and end points are the same, or 0 if they are not the same.&#x20;
+Returns 1 if a given [LINESTRING's](../geometry-constructors/linestring.md) start and end points are the same, or 0 if they are not the same. 
 
 `ST_IsClosed()` and `IsClosed()` are synonyms.
 

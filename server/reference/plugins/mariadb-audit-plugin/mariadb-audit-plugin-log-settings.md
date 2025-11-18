@@ -63,7 +63,7 @@ Looking in the Audit Plugin log (`server_audit.log`) for this entry, you can see
 ```
 {% endcode %}
 
-This log entry contains the date and time of the query, followed by the server host, and the user and host for the account.&#x20;
+This log entry contains the date and time of the query, followed by the server host, and the user and host for the account. 
 
 {% hint style="info" %}
 From MariaDB 12.0, in addition to the host, the audit log also contains the port, where applicable (for instance, connecting via a Unix socket doesn't use a port).

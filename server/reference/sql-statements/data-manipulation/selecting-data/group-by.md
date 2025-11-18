@@ -10,7 +10,7 @@ You can use multiple expressions in the `GROUP BY` clause, separated by commas.\
 Rows are grouped together if they match on each of the expressions.
 
 You can also use a single integer as the grouping expression. If you use an integer _n_,\
-the results will be grouped by the _&#x6E;_&#x74;h column in the select expression.
+the results will be grouped by the _&#x6E;_th column in the select expression.
 
 The `WHERE` clause is applied before the `GROUP BY` clause. It filters non-aggregated\
 rows before the rows are grouped together. To filter grouped rows based on aggregate values,\

@@ -83,7 +83,7 @@ In the example, we see that these two `COM_QUERY` commands are sent just after `
 
 ## Complete Example with GTID Registration
 
-&#x20;The example shows output up to `COM_BINLOG_DUMP` request, No Semi-Sync:
+ The example shows output up to `COM_BINLOG_DUMP` request, No Semi-Sync:
 
 ```
 T 127.0.0.1:23240 -> 127.0.0.1:42367 [AP]

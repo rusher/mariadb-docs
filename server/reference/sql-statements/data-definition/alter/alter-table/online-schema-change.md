@@ -2,7 +2,7 @@
 
 Generally speaking, “online” refers to the ability to update the table schema without blocking concurrent DML for the duration of the copy.
 
-&#x20;Suppose we have a table `item` featuring columns (`id SERIAL`, `name TEXT`).
+ Suppose we have a table `item` featuring columns (`id SERIAL`, `name TEXT`).
 
 Now, it can be `ALTERed` by adding a `TIMESTAMP` field in one connection, while having a concurrent connection inserting a new row.
 
