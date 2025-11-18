@@ -533,7 +533,7 @@ SET gtid_slave_pos="<position WITH domains removed>"
 
 ### CHANGE MASTER
 
-[CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) has an option, `master_use_gtid=[current_pos|slave_pos|no]`. When enabled (set t&#x6F;_&#x63;urrent\_pos_ or _slave\_pos_), the replica will connect to the master using the GTID position. When\
+[CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) has an option, `master_use_gtid=[current_pos|slave_pos|no]`. When enabled (set t&#x6F;_current\_pos_ or _slave\_pos_), the replica will connect to the master using the GTID position. When\
 disabled (set to "no"), the old-style binlog filename/offset position is used to decide\
 where to start replicating when connecting. Unlike in the old-style, when GTID is enabled, the values of the [MASTER\_LOG\_FILE](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos) options\
 are not updated per received event in [master\_info\_file](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) file.
