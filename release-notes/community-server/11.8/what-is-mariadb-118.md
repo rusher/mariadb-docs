@@ -181,7 +181,7 @@ The following deprecated features have been removed:
 | 6 Nov 2025  | MariaDB 11.8.4 | Stable (GA) | [Release Notes](11.8.4.md) | [Changelog](../changelogs/11.8/11.8.4.md)                   |
 | 6 Aug 2025  | MariaDB 11.8.3 | Stable (GA) | [Release Notes](11.8.3.md) | [Changelog](../changelogs/11.8/11.8.3.md)                   |
 | 4 Jun 2025  | MariaDB 11.8.2 | Stable (GA) | [Release Notes](11.8.2.md) | [Changelog](../changelogs/11.8/11.8.2.md)                   |
-| 13 Feb 2024 | MariaDB 11.8.1 | RC          | [Release Notes](11.8.1.md) | [Changelog](../changelogs/11.7/mariadb-11-7-1-changelog.md) |
+| 13 Feb 2024 | MariaDB 11.8.1 | RC          | [Release Notes](11.8.1.md) | [Changelog](../changelogs/11.8/11.8.1.md)                   |
 | 18 Dec 2024 | MariaDB 11.8.0 | Alpha       | [Release Notes](11.8.0.md) |                                                             |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
