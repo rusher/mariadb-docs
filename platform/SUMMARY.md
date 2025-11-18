@@ -7,6 +7,7 @@
   * [Best Practices](mariadb-platform-quickstart-guides/mariadb-best-practices-guide.md)
   * [Security](mariadb-platform-quickstart-guides/security.md)
 * [Post Download](post-download/README.md)
+  * [MariaDB Server 12.1.2](post-download/mariadb-server-12.1.2.md)
   * [MariaDB Server 11.8.5](post-download/mariadb-server-11.8.5.md)
   * [MariaDB Server 11.8.4](post-download/mariadb-server-11.8.4.md)
   * [MariaDB Server 11.4.9](post-download/mariadb-server-11.4.9.md)

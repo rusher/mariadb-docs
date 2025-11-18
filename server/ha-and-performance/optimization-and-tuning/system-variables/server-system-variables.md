@@ -1025,7 +1025,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `join_buffer_space_limit`
 
-* Description: Maximum size in bytes of the query buffer, By default 102&#x34;_&#x31;2&#x38;_&#x31;0.
+* Description: Maximum size in bytes of the query buffer, By default 1024_128_10.
 * Command line: `--join-buffer-space-limit=#`
 * Scope: Global, Session
 * Dynamic: Yes
