@@ -477,9 +477,9 @@ The following hints are available.
 * `JOIN_FIXED_ORDER([@query_block_name])`: Forces the optimizer to join tables using the order in which they appear in the `FROM` clause. This is the same as specifying `SELECT STRAIGHT_JOIN`.
 * `JOIN_ORDER([@query_block_name] tbl [, tbl] ...)`: Instructs the optimizer to join tables using the specified table order. The hint applies to the named tables. The optimizer may place tables that are not named anywhere in the join order, including between specified tables.
   * Alternative syntax: `JOIN_ORDER(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
-* `JOIN_PREFIX([@query_block_name] tbl [, tbl] ...)`: Instruct the optimizer to join tables using the specified table order for the first tables of the join execution plan. The hint applies to the named tables. The optimizer places all other tables after the named tables.
+* `JOIN_PREFIX([@query_block_name] tbl [, tbl] ...)`: Instructs the optimizer to join tables using the specified table order for the first tables of the join execution plan. The hint applies to the named tables. The optimizer places all other tables after the named tables.
   * Alternative syntax: `JOIN_PREFIX(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
-*   `JOIN_SUFFIX([@query_block_name] tbl [, tbl] ...)`: Instruct the optimizer to join tables using the specified table order for the last tables of the join execution plan. The hint applies to the named tables. The optimizer places all other tables before the named tables.
+*   `JOIN_SUFFIX([@query_block_name] tbl [, tbl] ...)`: Instructs the optimizer to join tables using the specified table order for the last tables of the join execution plan. The hint applies to the named tables. The optimizer places all other tables before the named tables.
 
     * Alternative syntax: `JOIN_SUFFIX(tbl[@query_block_name] [, tbl[@query_block_name]] ...`)
 
