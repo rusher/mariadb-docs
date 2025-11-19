@@ -1,3 +1,10 @@
+---
+description: >-
+  This section details special comments you can add to SQL statements to
+  influence the query optimizer, helping you manually select better execution
+  plans for improved performance and query tuning.
+---
+
 # Optimizer Hints
 
 Optimizer hints are options available that affect the execution plan.
