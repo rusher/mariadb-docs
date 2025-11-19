@@ -15,6 +15,18 @@ Optimizer hints are options available that affect the execution plan.
 
 `HIGH_PRIORITY` gives the statement a higher priority. If the table is locked, high priority `SELECT`s will be executed as soon as the lock is released, even if other statements are queued. `HIGH_PRIORITY` applies only if the storage engine only supports table-level locking (`MyISAM`, `MEMORY`, `MERGE`). See [HIGH\_PRIORITY and LOW\_PRIORITY clauses](../changing-deleting-data/high_priority-and-low_priority.md) for details.
 
+### NO\_ROWID\_FILTER
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
+
+```
+/* +NO_ROWID_FILTER([table_name [index_name [ ... ] ]] ) */
+```
+
+Does not consider `ROWID` filter for the scope of the hint (all tables in the query block, specific table, and specific indexes). See [ROWID\_FILTER](optimizer-hints.md#rowid_filter) for details.
+
 ### NO\_SPLIT\_MATERIALIZED
 
 {% hint style="info" %}
@@ -36,6 +48,38 @@ WHERE
    customer.c_custkey= o_custkey AND
    customer.country='FI';
 ```
+
+### ROWID\_FILTER
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
+
+```
+/* +ROWID_FILTER( [table_name [index_name [ ...] ]]) */
+```
+
+Like [NO\_RANGE\_OPTIMIZATION](optimizer-hints.md#no_range_optimization) or [MRR](optimizer-hints.md#mrr-and-no_mrr), this hint can be applied to:
+
+* Query blocks — `NO_ROWID_FILTER()`
+* Table — `NO_ROWID_FILTER(`_`table_name`_`)`
+* Specific indexes — `NO_ROWID_FILTER(`_`table_name index1 index2 ...`_`)`&#x20;
+
+Forces the use of `ROWID_FILTER` for the table index it targets:
+
+* For query blocks and tables, it enables the use of the `ROWID` filter, assuming it is disabled globally.
+* For indexes, it forces its use, regardless of the costs. The following query forces the use of the `ROWID` filter made from _`t1.idx1`_ if the chosen plan allows so (that is, if the access method to _`t1`_ allows it):
+
+```sql
+SELECT /*+ ROWID_FILTER(t1 idx1) */
+...
+```
+
+{% hint style="warning" %}
+Assuming the optimizer would pick _`idx2`_ for table _`t1`_ if the hint was _not_ used, this could result in the usage of both _`idx2`_ and _`idx1`_ if the hint _is_ used. That might become more expensive than a full table scan, or result in a change of the join order.
+
+Therefore, do not "blindly" use this filter, but rather make sure its use doesn't have a negative impact as described.
+{% endhint %}
 
 ### SPLIT\_MATERIALIZED
 
