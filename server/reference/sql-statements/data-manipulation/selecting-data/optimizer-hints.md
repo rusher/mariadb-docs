@@ -521,9 +521,9 @@ hint_name([@query_block_name] [strategy [, strategy] ...])
 
 **Strategies**
 
-For `SEMIJOIN` hints, if no strategies are named, semi-join is used based on the strategies enabled according to the `optimizer_switch` system variable, if possible. If strategies are named but inapplicable for the statement, `DUPSWEEDOUT` is used.
+For `SEMIJOIN` hints, if no strategies are named, semi-join is used based on the strategies enabled according to the `optimizer_switch` system variable, if possible. If strategies are named, but inapplicable for the statement, `DUPSWEEDOUT` is used.
 
-For `NO_SEMIJOIN` hints, semi-join is not used if no strategies are named. If strategies are named that rule out all applicable strategies for the statement, `DUPSWEEDOUT` is used.
+For `NO_SEMIJOIN` hints, semi-join is not used if no strategies are named. If named strategies rule out all applicable strategies for the statement, `DUPSWEEDOUT` is used.
 
 If a subquery is nested within another, and both are merged into a semi-join of an outer query, any specification of semi-join strategies for the innermost query are ignored. `SEMIJOIN` and `NO_SEMIJOIN` hints can still be used to enable or disable semi-join transformations for such nested subqueries.
 
