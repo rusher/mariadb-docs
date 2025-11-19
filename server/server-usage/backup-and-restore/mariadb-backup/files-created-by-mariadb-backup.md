@@ -236,7 +236,7 @@ If the `--stream` option was **not** provided, then this value are `file`.
 
 #### `compressed`
 
-If the --compress option was provided, then this value are `compressed`.
+If the `--compress` option was provided, then this value are `compressed`.
 
 Otherwise, this value are `N`.
 
@@ -302,19 +302,19 @@ d38587ce-246c-11e5-bcce-6bbd0831cc0f:1352215
 
 ### `<table>.delta`
 
-If the backup is an incremental backup, then this file contains changed pages for the table.
+If the backup is an incremental backup, this file contains changed pages for the table.
 
 ### `<table>.delta.meta`
 
-If the backup is an incremental backup, then this file contains metadata about `<table>.delta` files. The fields in this file are listed below.
+If the backup is an incremental backup, this file contains metadata about `<table>.delta` files. The fields in this file are listed below.
 
 #### `page_size`
 
-This field contains either the value of innodb\_page\_size or the value of the `KEY_BLOCK_SIZE` table option for the table if the `ROW_FORMAT` table option for the table is set to `COMPRESSED`.
+This field contains either the value of `innodb_page_size` or the value of the `KEY_BLOCK_SIZE` table option for the table if the `ROW_FORMAT` table option for the table is set to `COMPRESSED`.
 
 #### `zip_size`
 
-If the `ROW_FORMAT` table option for this table is set to `COMPRESSED`, then this field contains the value of the compressed page size.
+If the `ROW_FORMAT` table option for this table is set to `COMPRESSED`, this field contains the value of the compressed page size.
 
 #### `space_id`
 
