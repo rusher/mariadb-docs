@@ -522,10 +522,10 @@ This option, when enabled and used with GTID replication, will rotate the binary
 mariadb-backup --backup --galera-info
 ```
 
-{% tabs %}
-{% tab title="Current" %}
 ### `--history`
 
+{% tabs %}
+{% tab title="Current" %}
 Defines whether you want to track backup history in the `mysql.mariadb_backup_history` table.
 
 ```
@@ -544,8 +544,6 @@ Information is written to `mysql.mariadb_backup_history`.
 {% endtab %}
 
 {% tab title="< 10.11" %}
-### `--history`
-
 Defines whether you want to track backup history in the `PERCONA_SCHEMA.xtrabackup_history` table.
 
 ```
