@@ -460,11 +460,11 @@ The `--ftwrl-wait-timeout` option specifies the maximum time that `mariadb-backu
 
 {% tabs %}
 {% tab title="From MariaDB 10.4" %}
- this lock is acquired with **`BACKUP STAGE BLOCK_COMMIT`**.
+this lock is acquired with **`BACKUP STAGE BLOCK_COMMIT`**.
 {% endtab %}
 
 {% tab title="Before 10.4" %}
- this lock is acquired with **`FLUSH TABLES WITH READ LOCK (FTWRL)`**.
+this lock is acquired with **`FLUSH TABLES WITH READ LOCK (FTWRL)`**.
 {% endtab %}
 {% endtabs %}
 
@@ -522,6 +522,28 @@ This option, when enabled and used with GTID replication, will rotate the binary
 mariadb-backup --backup --galera-info
 ```
 
+{% tabs %}
+{% tab title="Current" %}
+### `--history`
+
+Defines whether you want to track backup history in the `mysql.mariadb_backup_history` table.
+
+```
+--history[=name]
+```
+
+When using this option, `mariadb-backup` records its operation in a table on the MariaDB Server. Passing a name to this option allows you group backups under arbitrary terms for later processing and analysis.
+
+```bash
+mariadb-backup --backup --history=backup_all
+```
+
+Information is written to `mysql.mariadb_backup_history`.
+
+`mariadb-backup` also records this in the [mariadb\_backup\_info](files-created-by-mariadb-backup.md#mariadb_backup_info) file.
+{% endtab %}
+
+{% tab title="< 10.11" %}
 ### `--history`
 
 Defines whether you want to track backup history in the `PERCONA_SCHEMA.xtrabackup_history` table.
@@ -530,15 +552,17 @@ Defines whether you want to track backup history in the `PERCONA_SCHEMA.xtraback
 --history[=name]
 ```
 
-When using this option, mariadb-backup records its operation in a table on the MariaDB Server. Passing a name to this option allows you group backups under arbitrary terms for later processing and analysis.
+When using this option, `mariadb-backup` records its operation in a table on the MariaDB Server. Passing a name to this option allows you group backups under arbitrary terms for later processing and analysis.
 
 ```bash
 mariadb-backup --backup --history=backup_all
 ```
 
-Currently, the table it uses by default is named `mysql.mariadb_backup_history`. Prior to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), the default table was `PERCONA_SCHEMA.xtrabackup_history`.
+Information is written to  `PERCONA_SCHEMA.xtrabackup_history`.
 
-mariadb-backup will also record this in the xtrabackup\_info file.
+`mariadb-backup`  also records this in the [xtrabackup\_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
+{% endtab %}
+{% endtabs %}
 
 ### `-H, --host`
 
