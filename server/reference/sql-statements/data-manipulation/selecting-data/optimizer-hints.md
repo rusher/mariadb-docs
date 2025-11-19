@@ -15,6 +15,50 @@ Optimizer hints are options available that affect the execution plan.
 
 `HIGH_PRIORITY` gives the statement a higher priority. If the table is locked, high priority `SELECT`s will be executed as soon as the lock is released, even if other statements are queued. `HIGH_PRIORITY` applies only if the storage engine only supports table-level locking (`MyISAM`, `MEMORY`, `MERGE`). See [HIGH\_PRIORITY and LOW\_PRIORITY clauses](../changing-deleting-data/high_priority-and-low_priority.md) for details.
 
+### NO\_SPLIT\_MATERIALIZED
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
+
+When a derived table is materialized, MariaDB processes and stores the results of that derived table temporarily before joining it with other tables. The "lateral derived" optimization specifically looks for ways to optimize these types of derived tables. It does that by pushing a splitting condition down into the derived table, to limit the number of rows materialized into the derived table. The `SPLIT_MATERIALIZED` hint forces this behavior, while `NO_SPLIT_MATERIALIZED` prevents it.
+
+`NO_SPLIT_MATERIALIZED(`_`X`_`)` disables the use of split-materialized optimization in the context of _`X` :_
+
+```sql
+SELECT
+  /*+ NO_SPLIT_MATERIALIZED(CUST_TOTALS) */
+  ...
+FROM
+  customer
+  (SELECT SUM(amount), o_custkey FROM orders GROUP BY o_custkey) as CUST_TOTALS
+WHERE
+   customer.c_custkey= o_custkey AND
+   customer.country='FI';
+```
+
+### SPLIT\_MATERIALIZED
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
+
+When a derived table is materialized, MariaDB processes and stores the results of that derived table temporarily before joining it with other tables. The "lateral derived" optimization specifically looks for ways to optimize these types of derived tables. It does that by pushing a splitting condition down into the derived table, to limit the number of rows materialized into the derived table. The `SPLIT_MATERIALIZED` hint forces this behavior, while `NO_SPLIT_MATERIALIZED` prevents it.
+
+`SPLIT_MATERIALIZED(`_`X`_`)` enables and forces the use of split-materialized optimization in the context of _`X`_, unless it is impossible to do (for instance, because a table is not a materialized derived table).
+
+```sql
+SELECT
+  /*+ SPLIT_MATERIALIZED(CUST_TOTALS) */
+  ...
+FROM
+  customer
+  (SELECT SUM(amount), o_custkey FROM orders GROUP BY o_custkey) as CUST_TOTALS
+WHERE
+   customer.c_custkey= o_custkey AND
+   customer.country='FI';
+```
+
 ### SQL\_CACHE / SQL\_NO\_CACHE
 
 If the [query\_cache\_type](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type) system variable is set to 2 or `DEMAND`, and the current statement is cacheable, `SQL_CACHE` causes the query to be cached and `SQL_NO_CACHE` causes the query not to be cached. For `UNION`s, `SQL_CACHE` or `SQL_NO_CACHE` should be specified for the first query. See also [The Query Cache](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) for more detail and a list of the types of statements that aren't cacheable.
