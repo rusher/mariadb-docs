@@ -1,3 +1,9 @@
+---
+description: >-
+  Activate roles for the current session. Learn how to enable all, none, or
+  specific roles to change your active privileges dynamically.
+---
+
 # SET ROLE
 
 ## Syntax

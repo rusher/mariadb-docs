@@ -1,3 +1,9 @@
+---
+description: >-
+  Assign privileges and roles. Learn the syntax to give users or roles
+  permission to access databases, tables, and execute specific commands.
+---
+
 # GRANT
 
 ## Syntax
