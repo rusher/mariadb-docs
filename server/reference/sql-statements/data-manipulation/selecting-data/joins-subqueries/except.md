@@ -1,3 +1,9 @@
+---
+description: >-
+  Return rows from the first result set that do not appear in the second. This
+  set operator performs a subtraction of two datasets.
+---
+
 # EXCEPT
 
 ## EXCEPT

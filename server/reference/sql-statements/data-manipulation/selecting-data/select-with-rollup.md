@@ -1,3 +1,9 @@
+---
+description: >-
+  Generate super-aggregate summaries. This modifier adds extra rows to the
+  result set representing subtotals and grand totals for grouped columns.
+---
+
 # SELECT WITH ROLLUP
 
 ## Syntax

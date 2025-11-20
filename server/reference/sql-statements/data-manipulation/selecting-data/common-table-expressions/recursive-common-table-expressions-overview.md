@@ -1,3 +1,10 @@
+---
+description: >-
+  Process hierarchical data using recursive CTEs. These expressions reference
+  themselves to repeatedly execute a subquery, perfect for traversing tree
+  structures or generating sequences.
+---
+
 # Recursive Common Table Expressions Overview
 
 Common Table Expressions (CTEs) are a standard SQL feature, and are essentially temporary named result sets. CTEs first appeared in the SQL standard in 1999, and the first implementations began appearing in 2007.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Group result sets by one or more columns. Learn to aggregate data using
+  functions like SUM, COUNT, and AVG in conjunction with grouping.
+---
+
 # GROUP BY
 
 Use the `GROUP BY` clause in a [SELECT](select.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any [functions and operators](../../../sql-functions/) except [grouping functions](../../../sql-functions/aggregate-functions/). When you use a `GROUP BY` clause, you will get a single result row for each group of rows that have the same value for the expression given in `GROUP BY`.
@@ -10,7 +16,7 @@ You can use multiple expressions in the `GROUP BY` clause, separated by commas.\
 Rows are grouped together if they match on each of the expressions.
 
 You can also use a single integer as the grouping expression. If you use an integer _n_,\
-the results will be grouped by the _&#x6E;_th column in the select expression.
+the results will be grouped by the \_n\_th column in the select expression.
 
 The `WHERE` clause is applied before the `GROUP BY` clause. It filters non-aggregated\
 rows before the rows are grouped together. To filter grouped rows based on aggregate values,\

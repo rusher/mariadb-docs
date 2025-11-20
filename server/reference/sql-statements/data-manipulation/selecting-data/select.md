@@ -1,3 +1,9 @@
+---
+description: >-
+  Retrieve data from the database. This fundamental statement selects columns
+  and rows from tables, supporting filtering, joining, and aggregation.
+---
+
 # SELECT
 
 ## Syntax
