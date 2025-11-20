@@ -646,7 +646,7 @@ For `NO_SEMIJOIN` hints, semi-join is not used if no strategies are named. If na
 
 If a subquery is nested within another, and both are merged into a semi-join of an outer query, any specification of semi-join strategies for the innermost query are ignored. `SEMIJOIN` and `NO_SEMIJOIN` hints can still be used to enable or disable semi-join transformations for such nested subqueries.
 
-If `DUPSWEEDOUT` is disabled, the optimizer may generate a query plan that is far from optimal. This occurs due to heuristic pruning during greedy search, which can be avoided by setting [`optimizer_prune_level`](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_prune_level)`=0`.
+If `DUPSWEEDOUT` is disabled, the optimizer may generate a query plan that is far from optimal.&#x20;
 
 #### **Examples**
 
