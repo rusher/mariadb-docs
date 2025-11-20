@@ -1,3 +1,9 @@
+---
+description: >-
+  View statistics on user activity. This statement displays metrics like CPU
+  time and rows read for each user account.
+---
+
 # SHOW USER\_STATISTICS
 
 ## Syntax

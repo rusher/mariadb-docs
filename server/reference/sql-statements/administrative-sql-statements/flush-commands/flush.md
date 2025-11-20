@@ -1,3 +1,9 @@
+---
+description: >-
+  Reload internal caches and clear buffers. Learn how to use the FLUSH statement
+  to reset logs, privileges, hosts, and other server states without restarting.
+---
+
 # FLUSH
 
 ## Syntax
