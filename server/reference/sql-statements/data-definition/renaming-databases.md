@@ -56,7 +56,7 @@ Run the following query to generate a script with the necessary `RENAME TABLE` s
 
 ```sql
 mysql -ss -e"SELECT CONCAT('RENAME TABLE PROD.', TABLE_NAME, ' TO TEST.', \
-TABLE_NAME, ';'FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'PROD'" \
+TABLE_NAME, ';') FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'PROD'" \
 > PROD_rename_table.sql
 ```
 {% endstep %}
