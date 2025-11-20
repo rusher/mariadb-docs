@@ -1,3 +1,9 @@
+---
+description: >-
+  Modify table structures. This guide covers adding columns, changing data
+  types, managing indexes, and other schema changes for existing tables.
+---
+
 # ALTER TABLE
 
 ## Syntax

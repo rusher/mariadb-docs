@@ -1,3 +1,9 @@
+---
+description: >-
+  Define a new table structure. This fundamental command specifies columns, data
+  types, indexes, and storage engine options for storing data.
+---
+
 # CREATE TABLE
 
 ## Syntax

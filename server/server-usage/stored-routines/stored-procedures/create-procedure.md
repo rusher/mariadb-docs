@@ -1,3 +1,9 @@
+---
+description: >-
+  Create a stored procedure. This statement defines a routine that can accept
+  input/output parameters and execute complex SQL logic.
+---
+
 # CREATE PROCEDURE
 
 ## Syntax
@@ -60,7 +66,7 @@ routine_body:
 
 Creates a [stored procedure](./). By default, a routine is associated with the default database. To associate the routine explicitly with a given database, specify the name as db\_name.sp\_name when you create it.
 
-When the routine is invoked, an implicit `USE`` `_`db_name`_ is performed (and undone when the routine terminates). The causes the routine to have the given default database while it executes. USE statements within stored routines are disallowed.
+When the routine is invoked, an implicit ` USE`` `` `_`db_name`_ is performed (and undone when the routine terminates). The causes the routine to have the given default database while it executes. USE statements within stored routines are disallowed.
 
 When a stored procedure has been created, you invoke it by using the `CALL` statement (see [CALL](../../../reference/sql-statements/stored-routine-statements/call.md)).
 

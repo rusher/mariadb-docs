@@ -1,3 +1,10 @@
+---
+description: >-
+  Understand the syntax and usage of constraints in table definitions. This
+  guide covers primary keys, foreign keys, unique, and check constraints to
+  enforce data integrity.
+---
+
 # CONSTRAINT
 
 MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](create/create-table.md) or [ALTER TABLE](alter/alter-table/) statements. A table constraint restricts the data you can add to the table. If you attempt to insert invalid data on a column, MariaDB throws an error.
