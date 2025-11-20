@@ -20,18 +20,7 @@ The mandatory parameters are the object type, the monitor module to use, the lis
 
 ## Monitor User
 
-The monitor user requires the `REPLICATION CLIENT` privilege to do basic monitoring. To create a user with the proper grants, run:
-
-```sql
-CREATE USER 'monitor_user'@'%' IDENTIFIED BY 'my_password';
-GRANT REPLICATION CLIENT ON *.* TO 'monitor_user'@'%';
-```
-
-**Note:** If the automatic failover of MariaDB Monitor is used, the user needs additional grants:
-
-```sql
-GRANT SUPER, RELOAD ON *.* TO 'monitor_user'@'%';
-```
+For the necessary privileges the monitor user must have, see [this section](../reference/maxscale-monitors/mariadb-monitor.md#required-grants).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
