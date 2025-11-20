@@ -1,3 +1,10 @@
+---
+description: >-
+  Browse the complete reference of system variables for the Audit Plugin. Use
+  these settings to fine-tune logging behavior, control performance impact, and
+  manage log file handling.
+---
+
 # Audit Plugin Options and System Variables
 
 ## Overview

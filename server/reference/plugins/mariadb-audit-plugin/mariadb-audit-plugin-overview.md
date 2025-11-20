@@ -1,4 +1,11 @@
-# Overview
+---
+description: >-
+  Learn about the MariaDB Audit Plugin, which provides detailed logging of
+  server activity. It records connections, queries, and administrative commands
+  to help meet security compliance needs.
+---
+
+# Audit Plugin Overview
 
 MariaDB and MySQL are used in a broad range of environments, but if you needed to record user access to be in compliance with auditing regulations for your organization, you would previously have had to use other database solutions. To meet this need, though, MariaDB has developed the MariaDB Audit Plugin. Although the MariaDB Audit Plugin has some unique features available only for MariaDB, it can be used also with MySQL.
 

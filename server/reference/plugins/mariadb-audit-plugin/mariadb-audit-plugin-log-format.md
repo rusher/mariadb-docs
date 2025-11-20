@@ -1,13 +1,20 @@
+---
+description: >-
+  Understand the structure of audit log entries. This guide breaks down the
+  fields in the log records, including timestamps, server IDs, user details, and
+  the specific operations performed.
+---
+
 # Audit Plugin Log Format
 
-The audit plugin logs user access to MariaDB and its objects. The audit trail (i.e., audit log) is a set of records, written as a list of fields to a file in a plain‐text format. The fields in the log are separated by commas. The format used for the plugin's own log file is slightly different from the format used if it logs to the system log because it has its own standard format. The general format for the logging to the plugin's own file is defined like the following:
+The audit plugin logs user access to MariaDB and its objects. The audit trail (that is, the audit log) is a set of records, written as a list of fields to a file in a plain‐text format. The fields in the log are separated by commas. The format used for the plugin's own log file is slightly different from the format used if it logs to the system log because it has its own standard format. The general format for the logging to the plugin's own file is defined like the following:
 
 ```ini
 [timestamp],[serverhost],[username],[host],[connectionid],
 [queryid],[operation],[database],[object],[retcode]
 ```
 
-If the [server\_audit\_output\_type](mariadb-audit-plugin-options-and-system-variables.md) variable is set to `syslog` instead of the default, `file`, the audit log file format will be as follows:
+If the [server\_audit\_output\_type](mariadb-audit-plugin-options-and-system-variables.md) variable is set to `syslog` instead of the default, `file`, the audit log file format is as follows:
 
 ```ini
 [timestamp][syslog_host][syslog_ident]:[syslog_info][serverhost],[username],[host],
@@ -30,7 +37,7 @@ If the [server\_audit\_output\_type](mariadb-audit-plugin-options-and-system-var
 | object        | Executed query for QUERY events, or the table name in the case of TABLE events. From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120), CONNECTION events also contain the tls version used, for example `TLSv1.3`. |
 | retcode       | Return code of the logged operation.                                                                                                                                                                                                                                                                              |
 
-Various events will result in different audit records. Some events will not return a value for some fields (e.g., when the active database is not set when connecting to the server).
+Various events result in different audit records. Some events do not return a value for some fields (for instance, when the active database is not set when connecting to the server).
 
 Below is a generic example of the output for connect events, with placeholders representing data. These are events in which a user connected, disconnected, or tried unsuccessfully to connect to the server.
 
