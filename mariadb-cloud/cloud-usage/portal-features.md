@@ -25,7 +25,7 @@ The Portal offers an intuitive dashboard, real-time performance metrics, and sea
 
 ## Dashboard
 
-<figure><img src="../Portal features/dashboard.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/dashboard.png" alt=""><figcaption></figcaption></figure>
 
 From the Dashboard, you can see a list of your MariaDB Cloud services and status information for each service.
 

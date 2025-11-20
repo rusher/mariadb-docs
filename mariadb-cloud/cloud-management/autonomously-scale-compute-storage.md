@@ -15,7 +15,7 @@ Auto-scale of storage enables expansion of capacity based on usage.
 
 Autonomous features can be enabled at the time of [service launch](../cloud-usage/launch-page.md). Autonomous features can be enabled or disabled after launch.
 
-<figure><img src="../Autonomously scale Compute, Storage/autonomous.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/autonomous (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Enable Auto-Scaling of Nodes
 

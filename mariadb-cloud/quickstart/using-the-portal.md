@@ -34,7 +34,7 @@ Go to [app.skysql.com](https://app.skysql.com) to sign up. You can sign up using
 
     For additional information on available selections, see "[Service Launch](../cloud-usage/launch-page.md)".
 
-    <figure><img src="../Quickstart/launch-service.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/launch-service.png" alt=""><figcaption></figcaption></figure>
 3. After launching, you will then be redirected to the Dashboard. If you choose a Serverless deployment, your service will be in a 'Healthy' state and ready for use. For other deployment types, the service will initially be in a 'Creating' state. Please wait until it transitions to a 'Healthy' state before proceeding to the next step. Typically, launching a new Provisioned database takes about 5 minutes or less.
 
 ## Step 3: Observe, Scale
@@ -51,7 +51,7 @@ To see expanded status and metrics information:
 2. From the Monitoring Dashboard, you can choose to view service (`Service Overview`) or server details from the navigation tabs.
 3. Specific views are provided for different sets of metrics. These views can be accessed using the buttons in the upper-right corner. From the service overview, views include `Status`, `Lags`, `Queries`, `Database`, and `System`.
 
-<figure><img src="../Quickstart/monitoring.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/monitoring.png" alt=""><figcaption></figcaption></figure>
 
 _Monitoring Dashboard_
 
@@ -63,13 +63,13 @@ MariaDB Cloud features automatic rule-based scaling (Autonomous) and manual on-d
 
 With automatic scaling, node count (horizontal) and node size (vertical) changes can be triggered based on load. Additionally, storage capacity expansion can be triggered based on usage. These Autonomous features are opt-in. For additional information, see "[Autonomous](../cloud-management/autonomously-scale-compute-storage.md)".
 
-<figure><img src="../Quickstart/autonomous.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/autonomous.png" alt=""><figcaption></figcaption></figure>
 
 _Autonomous_
 
 With manual scaling, you can perform horizontal scaling (In/Out), vertical scaling (Up/Down), and storage expansion on-demand using Self-Service Operations. For additional information, see "[Self-Service Operations](../cloud-usage/manage-your-service.md)".
 
-<figure><img src="../Quickstart/scaling.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/scaling.png" alt=""><figcaption></figcaption></figure>
 
 _Self-Service Scaling of Nodes_
 
