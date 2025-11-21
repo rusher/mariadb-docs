@@ -11812,7 +11812,7 @@ paths:
       summary: Returns client metrics presented according to the Prometheus data model
 openapi: 3.1.1
 servers:
-  - url: http://api.skysql.com/
+  - url: https://api.skysql.com/
 components:
   schemas:
     errr.ErrorDetails:
