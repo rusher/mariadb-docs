@@ -1,3 +1,9 @@
+---
+description: >-
+  Control operator precedence. Parentheses are used to group expressions and
+  enforce the order of evaluation in complex operations.
+---
+
 # Parentheses
 
 Parentheses are sometimes called precedence operators - this means that they can be used to change the other [operator's precedence](../../../sql-structure/operators/operator-precedence.md) in an expression. The expressions that are written between parentheses are computed before the expressions that are written outside. Parentheses must always contain an expression (that is, they cannot be empty), and can be nested.

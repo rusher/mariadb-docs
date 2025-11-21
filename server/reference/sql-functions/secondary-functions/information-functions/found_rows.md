@@ -1,3 +1,9 @@
+---
+description: >-
+  Count rows found by the last SELECT statement. This function returns the total
+  number of rows matching the query, disregarding any LIMIT clause.
+---
+
 # FOUND\_ROWS
 
 ## Syntax

@@ -1,3 +1,9 @@
+---
+description: >-
+  Return active roles. This function lists the roles currently enabled for the
+  user session.
+---
+
 # CURRENT\_ROLE
 
 ## Syntax
