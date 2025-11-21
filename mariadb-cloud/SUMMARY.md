@@ -104,84 +104,14 @@
   * [MariaDB Cloud Stored Procedures](reference-guide/stored-procedures.md)
   * [MariaDB Cloud API Reference Guide](reference-guide/mariadb-cloud-api-reference-guide/README.md)
     * ```yaml
+      type: builtin:openapi
       props:
         models: true
-      type: builtin:openapi
       dependencies:
         spec:
           ref:
             kind: openapi
-            spec: mariadb-api
-      ```
-    * ```yaml
-      props:
-        models: true
-      type: builtin:openapi
-      dependencies:
-        spec:
-          ref:
-            kind: openapi
-            spec: mariadb-api
-      ```
-    * ```yaml
-      props:
-        models: true
-      type: builtin:openapi
-      dependencies:
-        spec:
-          ref:
-            kind: openapi
-            spec: mariadb-api
-      ```
-    * ```yaml
-      props:
-        models: true
-      type: builtin:openapi
-      dependencies:
-        spec:
-          ref:
-            kind: openapi
-            spec: mariadb-api
-      ```
-    * ```yaml
-      props:
-        models: true
-      type: builtin:openapi
-      dependencies:
-        spec:
-          ref:
-            kind: openapi
-            spec: mariadb-api
-      ```
-    * ```yaml
-      props:
-        models: true
-      type: builtin:openapi
-      dependencies:
-        spec:
-          ref:
-            kind: openapi
-            spec: mariadb-api
-      ```
-    * ```yaml
-      props:
-        models: true
-      type: builtin:openapi
-      dependencies:
-        spec:
-          ref:
-            kind: openapi
-            spec: mariadb-api
-      ```
-    * ```yaml
-      props:
-        models: true
-      type: builtin:openapi
-      dependencies:
-        spec:
-          ref:
-            kind: openapi
-            spec: mariadb-api
+            spec: mariadb-cloud-api
       ```
   * [Pricing](reference/pricing.md)
   * [Maintenance Windows](reference/maintenance-windows.md)
