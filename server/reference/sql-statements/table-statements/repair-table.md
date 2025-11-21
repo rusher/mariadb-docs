@@ -1,3 +1,9 @@
+---
+description: >-
+  Repair corrupted tables. This statement fixes errors in tables for supported
+  storage engines like MyISAM, Aria, and Archive.
+---
+
 # REPAIR TABLE
 
 ## Syntax

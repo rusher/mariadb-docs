@@ -1,3 +1,9 @@
+---
+description: >-
+  Truncate a date. In Oracle mode, this function truncates a date value to a
+  specified unit of measure.
+---
+
 # TRUNC
 
 {% hint style="info" %}

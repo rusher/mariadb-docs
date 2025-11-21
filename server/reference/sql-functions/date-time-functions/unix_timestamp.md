@@ -1,3 +1,9 @@
+---
+description: >-
+  Return a Unix timestamp. This function returns the number of seconds since the
+  Unix Epoch ('1970-01-01 00:00:00' UTC).
+---
+
 # UNIX\_TIMESTAMP
 
 ## Syntax
