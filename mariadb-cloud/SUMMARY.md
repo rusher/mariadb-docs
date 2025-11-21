@@ -111,7 +111,7 @@
         spec:
           ref:
             kind: openapi
-            spec: mariadb-cloud-api
+            spec: MariaDB-Cloud-DBaaS-API
       ```
   * [Pricing](reference/pricing.md)
   * [Maintenance Windows](reference/maintenance-windows.md)
