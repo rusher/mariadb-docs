@@ -517,6 +517,7 @@
       * [Migrating to MariaDB from MySQL](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/README.md)
         * [Upgrading from MySQL to MariaDB](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/upgrading-from-mysql-to-mariadb.md)
         * [Migration from MySQL Galera Cluster to MariaDB Galera Cluster using Replication](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migration-from-mysql-to-mariadb-cluster-using-replication.md)
+        * [Migration from MySQL to MariaDB Cluster (Node-by-Node In-Place)](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migration-from-mysql-to-mariadb-cluster-node-by-node-in-place.md)
         * [Migrating to MariaDB from MySQL - Obsolete Articles](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/README.md)
           * [Screencast for Upgrading MySQL to MariaDB (Obsolete)](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/screencast-for-upgrading-mysql-to-mariadb-obsolete.md)
           * [Upgrading from MySQL 5.7 to MariaDB 10.2](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-from-mysql-57-to-mariadb-102.md)
@@ -1679,7 +1680,6 @@
       * [RESIGNAL](reference/sql-statements/programmatic-compound-statements/resignal.md)
       * [RETURN](reference/sql-statements/programmatic-compound-statements/return.md)
       * [SELECT INTO](reference/sql-statements/programmatic-compound-statements/selectinto.md)
-      *
       * [SIGNAL](reference/sql-statements/programmatic-compound-statements/signal.md)
       * [WHILE](reference/sql-statements/programmatic-compound-statements/while.md)
       * [Using Compound Statements Outside of Stored Programs](reference/sql-statements/programmatic-compound-statements/using-compound-statements-outside-of-stored-programs.md)
@@ -1717,7 +1717,6 @@
       * [ROLLBACK](reference/sql-statements/transactions/rollback.md)
       * [SAVEPOINT](reference/sql-statements/transactions/savepoint.md)
       * [SERIALIZABLE](reference/sql-statements/transactions/transactions-serializable.md)
-      *
       * [SQL statements Causing an Implicit Commit](reference/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit.md)
       * [START TRANSACTION](reference/sql-statements/transactions/start-transaction.md)
       * [Transaction Timeouts](reference/sql-statements/transactions/transaction-timeouts.md)
@@ -2184,8 +2183,6 @@
         * [Setting Character Sets and Collations](reference/data-types/string-data-types/character-sets/setting-character-sets-and-collations.md)
         * [Supported Character Sets and Collations](reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
         * [Unicode](reference/data-types/string-data-types/character-sets/unicode.md)
-        *
-        *
         * [Internationalization and Localization](reference/data-types/string-data-types/character-sets/internationalization-and-localization/README.md)
           * [Coordinated Universal Time](reference/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)
           * [Locales Plugin](reference/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md)
