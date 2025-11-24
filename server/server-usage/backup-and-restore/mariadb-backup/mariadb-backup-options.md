@@ -1618,7 +1618,7 @@ mariadb-backup --backup \
 
 In the example, _`nodes_*`_ matches tables named _`nodes`_, _`nodes_`_, _`nodes__`_, and so forth, because `*` means _zero or more occurrences of the previous character_ (`_`).&#x20;
 
-If instead you want to back up all tables whose names start with nodes, the regular expression is `^nodes.`, and to exclude tables starting with _`nodes_tmp`_, the expression is _`^nodes_tmp.`_.  (Notice the trailing period (`.`); it means _zero or more occurrences of characters following `nodes`_.) The command looks like this:
+If instead you want to back up all tables whose names start with _`nodes`_, the regular expression is `^nodes.`, and to exclude tables starting with _`nodes_tmp`_, the expression is _`^nodes_tmp.`_.  (Notice the trailing period (`.`); it means _zero or more occurrences of characters following `nodes`_.) The command looks like this:
 
 ```bash
 mariadb-backup --backup \
