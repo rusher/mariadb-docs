@@ -1616,7 +1616,24 @@ mariadb-backup --backup \
      --tables-exclude=nodes_tmp
 ```
 
-You can specify multiple tables as a comma-separated list.
+In the example, _`nodes_*`_ matches tables named _`nodes`_, _`nodes_`_, _`nodes__`_, and so forth, because `*` means _zero or more occurrences of the previous character_ (`_`).&#x20;
+
+If instead you want to back up all tables whose names start with nodes, the regular expression is `^nodes.`, and to exclude tables starting with _`nodes_tmp`_, the expression is _`^nodes_tmp.`_.  (Notice the trailing period (`.`); it means _zero or more occurrences of characters following `nodes`_.) The command looks like this:
+
+```bash
+mariadb-backup --backup \
+     --databases=example \
+     --tables=^nodes. \
+     --tables-exclude=^nodes_tmp.
+```
+
+In that example, some of the tables included via the `--tables` option are excluded by `--tables-excludes`. That works because `--tables-exclude` takes precedence over `--tables`.
+
+You can specify multiple table name regex[^2] patterns as a comma-separated list, for both the `--tables` and the `--tables-exclude` options.
+
+{% hint style="warning" %}
+The [`--databases`](mariadb-backup-options.md#databases) and [`--databases-exclude`](mariadb-backup-options.md#databases-exclude) options, if used, take precedence over `--tables` and `--tables-exclude`. That is, they can filter out tables, which are then not "visible" to the latter mentioned options.
+{% endhint %}
 
 If a backup is a partial backup, `mariadb-backup` records that detail in the `xtrabackup_info` file.
 
@@ -1630,12 +1647,9 @@ Defines the tables you want to exclude from the backup.
 
 Using this option, you can define what tables you want `mariadb-backup` to exclude from the backup. The table values are defined using Regular Expressions. To define the tables you want to include from the backup, see the `--tables` option.
 
-```bash
-mariadb-backup --backup \
-     --databases=example \
-     --tables=nodes_* \
-     --tables-exclude=nodes_tmp
-```
+{% hint style="info" %}
+See [the `--tables` option](mariadb-backup-options.md#tables) for examples and hints regarding regular expressions.
+{% endhint %}
 
 If a backup is a partial backup, `mariadb-backup` records that detail in the `xtrabackup_info` file.
 
@@ -1770,3 +1784,5 @@ mariadb-backup --version
 {% @marketo/form formId="4316" %}
 
 [^1]: FLUSH TABLES WITH READ LOCK
+
+[^2]: regular expression

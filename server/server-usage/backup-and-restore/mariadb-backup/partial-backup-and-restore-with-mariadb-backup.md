@@ -21,7 +21,7 @@ For a partial backup, there are a few other arguments that you can provide as we
 * To tell it which databases to backup, you can provide the `--databases` option.
 * To tell it which databases to exclude from the backup, you can provide the `--databases-exclude` option.
 * To tell it to check a file for the databases to backup, you can provide the `--databases-file` option.
-* To tell it which tables to backup, you can use the `--tables` option.
+* To tell it which tables to back up, you can use [the `--tables` option](mariadb-backup-options.md#tables).
 * To tell it which tables to exclude from the backup, you can provide the `--tables-exclude` option.
 * To tell it to check a file for specific tables to backup, you can provide the `--tables-file` option.
 
