@@ -369,17 +369,19 @@ SELECT CONV(61,10,62);
 
 MariaDB Enterprise Server now supports descending indexes. Composite indexes can be used with differently ordered columns to get a significant performance boost in the corresponding `ORDER BY` use cases.
 
-### **Backported Features**:
+## **Backported Features**
 
-* New, Detailed Replication Lag Representation.
-* New Information Schema Table For Password Related Data.
-* GTID binlog events now include the thread ID.
-* Automatic SST user account management for Galera.
-* PARSEC authentication plugin.
-* Extending timestamp range to 2106.
-* Limit the size of created disk temporary files and tables.
-* The Software Bill of Materials (SBOM) JSON file is generated in the downloads archive.
-* [Vector Search](https://mariadb.com/resources/blog/mariadb-vector-preview-is-out/) capability has been added (MENT-2233).
+* New, Detailed Replication Lag Representation
+* New Information Schema Table For Password Related Data
+* GTID binlog events now include the thread ID
+* Automatic SST user account management for Galera
+* PARSEC authentication plugin
+* Extending timestamp range to 2106
+* Limit the size of created disk temporary files and tables
+* The Software Bill of Materials (SBOM) JSON file is generated in the downloads archive
+* [Vector Search](https://mariadb.com/resources/blog/mariadb-vector-preview-is-out/) capability has been added ([MENT-2233](https://jira.mariadb.org/browse/MENT-2233))
+* Segmented key cache for Aria ([MENT-2361](https://jira.mariadb.org/browse/MENT-2361))
+  * A new variable [aria-pagecache-segments](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_pagecache_segments) (default 1) to define the number of segments has been added. The default disables the new feature.
 
 ## Operational Enhancements
 
