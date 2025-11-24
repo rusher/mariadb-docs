@@ -2,7 +2,9 @@
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}
 
-mariadb-backup supports streaming to stdout with the `--stream=xbstream` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
+`mariadb-backup` supports streaming to stdout with the `--stream=xbstream` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
+
+{% include "../../../.gitbook/includes/for-a-complete-list-of-mari....md" %}
 
 ### Encrypting and Decrypting Backup With openssl
 
