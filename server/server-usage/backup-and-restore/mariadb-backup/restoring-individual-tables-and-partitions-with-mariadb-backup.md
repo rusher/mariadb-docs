@@ -1,3 +1,10 @@
+---
+description: >-
+  Restore specific tables from a backup. Learn the process of importing
+  individual .ibd files to recover specific tables without restoring the whole
+  database.
+---
+
 # Restoring Individual Tables and Partitions with mariadb-backup
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}

@@ -1,3 +1,9 @@
+---
+description: >-
+  Perform complete server backups and restores. This guide covers creating a
+  full physical backup, preparing the data, and restoring it to the server.
+---
+
 # Full Backup and Restore with mariadb-backup
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}

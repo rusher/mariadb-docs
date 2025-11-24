@@ -1,3 +1,9 @@
+---
+description: >-
+  Reference guide for mariadb-backup command-line options. Explore parameters
+  for backup, prepare, copy-back, and restore operations.
+---
+
 # mariadb-backup Options
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}

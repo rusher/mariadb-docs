@@ -1,3 +1,9 @@
+---
+description: >-
+  Understand backup locking stages. This page explains how mariadb-backup uses
+  BACKUP STAGE commands to minimize locking during operation.
+---
+
 # mariadb-backup and BACKUP STAGE Commands
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}

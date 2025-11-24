@@ -1,3 +1,9 @@
+---
+description: >-
+  Deep dive into backup mechanics. Understand how the tool handles redo logs,
+  locking, and file copying to ensure consistent backups.
+---
+
 # How mariadb-backup Works
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}

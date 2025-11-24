@@ -64,6 +64,8 @@
       * [Using Encryption and Compression Tools With mariadb-backup](server-usage/backup-and-restore/mariadb-backup/using-encryption-and-compression-tools-with-mariadb-backup.md)
       * [How mariadb-backup Works](server-usage/backup-and-restore/mariadb-backup/how-mariadb-backup-works.md)
       * [mariadb-backup and BACKUP STAGE Commands](server-usage/backup-and-restore/mariadb-backup/mariadb-backup-and-backup-stage-commands.md)
+      * [mariadb-backup SST Method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method)
+      * [Manual SST of Galera Cluster Node With mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariadb-backup)
       * [Individual Database Restores with mariadb-backup from Full Backup](server-usage/backup-and-restore/mariadb-backup/individual-database-restores-with-mariadb-backup-from-full-backup.md)
     * [Replication as a Backup Solution](server-usage/backup-and-restore/replication-as-a-backup-solution.md)
     * [Backup and Restore via dbForge Studio](server-usage/backup-and-restore/backup-and-restore-via-dbforge-studio.md)

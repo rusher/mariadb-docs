@@ -1,3 +1,9 @@
+---
+description: >-
+  Restore a single database from a full backup. Learn the procedure to extract
+  and recover a specific database schema from a larger backup set.
+---
+
 # Individual Database Restores with mariadb-backup from Full Backup
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}

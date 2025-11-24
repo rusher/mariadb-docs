@@ -1,3 +1,9 @@
+---
+description: >-
+  Back up specific databases or tables. This guide explains how to filter your
+  backup to include only the data you need.
+---
+
 # Partial Backup and Restore with mariadb-backup
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}

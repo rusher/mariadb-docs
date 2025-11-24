@@ -1,3 +1,9 @@
+---
+description: >-
+  Secure and compress backup streams. Learn to pipe backup output to tools like
+  GPG and GZIP for encryption and storage efficiency.
+---
+
 # Using Encryption and Compression Tools With mariadb-backup
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}

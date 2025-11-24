@@ -1,3 +1,9 @@
+---
+description: >-
+  Initialize a replication slave using a backup. This guide shows how to use
+  mariadb-backup to provision a new replica from a master server.
+---
+
 # Setting up a Replica with mariadb-backup
 
 {% hint style="info" %}

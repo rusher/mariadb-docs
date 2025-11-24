@@ -1,3 +1,9 @@
+---
+description: >-
+  Save storage and time with incremental backups. Learn to back up only changed
+  data and combine these deltas with a full backup for restoration.
+---
+
 # Incremental Backup and Restore with mariadb-backup
 
 {% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}
