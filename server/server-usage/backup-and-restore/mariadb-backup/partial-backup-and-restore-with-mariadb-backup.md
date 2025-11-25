@@ -14,7 +14,7 @@ When using `mariadb-backup`, you have the option of performing partial backups. 
 
 ### Backing up the Database Server
 
-Just like with full backups, in order to back up the database, you need to run mariadb-backup with the `--backup` option to tell it to perform a backup and with the `--target-dir` option to tell it where to place the backup files. The target directory must be empty or not exist.
+Just like with full backups, in order to back up the database, you need to run mariadb-backup with the  `--backup` option to tell it to perform a backup and with the `--target-dir` option to tell it where to place the backup files. The target directory must be empty or not exist.
 
 For a partial backup, there are a few other arguments that you can provide as well:
 
@@ -29,12 +29,25 @@ The non-file partial backup options support regex in the database and table name
 
 For example, to take a backup of any database that starts with the string `app1_` and any table in those databases that start with the string `tab_`, run the following command:
 
-```
+```bash
 $ mariadb-backup --backup \
    --target-dir=/var/mariadb/backup/ \
    --databases='app1 app2' --tables='tab_[0-9]+' \
    --user=mariadb-backup --password=mypassword
 ```
+
+#### Using --history with Partial Backups
+
+You can use the `--history` option with a partial backup to log the operation in the history table for auditing purposes.
+
+```bash
+mariadb-backup --backup --databases="db1" \
+  --target-dir=/backup --history=partial_db1
+```
+
+{% hint style="warning" %}
+You cannot use a partial backup as the base for an incremental backup history chain. The `--incremental-history-name` option is incompatible with partial backups because restoring partial incrementals requires specific preparation steps (`--export`) that the history feature does not automate.
+{% endhint %}
 
 {% hint style="info" %}
 `mariadb-backup` cannot back up a subset of partitions from a partitioned table. Backing up a partitioned table is an all-or-nothing selection. See [MDEV-17132](https://jira.mariadb.org/browse/MDEV-17132) about that. If you need to backup a subset of partitions, one possibility is that instead of using `mariadb-backup`, you can export the file-per-table tablespaces of the partitions.

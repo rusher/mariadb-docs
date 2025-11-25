@@ -39,6 +39,20 @@ backup-my.cnf     test                    xtrabackup_logfile
 ibdata1           xtrabackup_binlog_info
 ```
 
+### Using the Backup History Feature
+
+You can optionally use the `--history` option to record metadata about your full backup in the database. This creates a centralized log and allows future incremental backups to reference this full backup by name instead of by directory path.
+
+```bash
+$ mariadb-backup --backup \
+   --target-dir=/var/mariadb/backup/ \
+   --user=mariadb-backup --password=mypassword \
+   --history=full_backup_weekly
+```
+
+* Privileges: The backup user requires `INSERT`, `CREATE`, and `ALTER` privileges on the history table (`mysql.mariadb_backup_history` in MariaDB 10.11+, or `PERCONA_SCHEMA.xtrabackup_history` in older versions).
+* Failure Case: If the user lacks privileges, the backup will complete the file copy process but will fail at the final step with an `INSERT command denied` error.
+
 ### Preparing the Backup for Restoration
 
 The data files that `mariadb-backup` creates in the target directory are not point-in-time consistent, given that the data files are copied at different times during the backup operation. If you try to restore from these files, InnoDB notices the inconsistencies and crashes to protect you from corruption

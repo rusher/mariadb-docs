@@ -687,6 +687,11 @@ mariadb-backup --backup \
 
 The table it uses is named `PERCONA_SCHEMA.xtrabackup_history`, but expect that name to change in future releases. See [MDEV-19246](https://jira.mariadb.org/browse/MDEV-19246) for more information.
 
+Table Name and Schema Changes (MariaDB 10.11):
+
+* MariaDB 10.11 and later: Uses mysql.mariadb\_backup\_history (InnoDB).
+* MariaDB 10.10 and earlier: Uses PERCONA\_SCHEMA.xtrabackup\_history (CSV).
+
 `mariadb-backup` also records this in the `xtrabackup_info` file.
 
 ### `--incremental-lsn`
