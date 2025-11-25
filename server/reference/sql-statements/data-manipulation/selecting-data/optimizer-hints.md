@@ -129,8 +129,10 @@ If the [query\_cache\_type](../../../../ha-and-performance/optimization-and-tuni
 
 ## Expanded Optimizer Hints
 
-{% tabs %}
-{% tab title="Current" %}
+{% hint style="info" %}
+The following hints are available from MariaDB 12.0, unless indicated otherwise.
+{% endhint %}
+
 Hints are placed after the main statement verb.
 
 ```sql
@@ -153,14 +155,14 @@ hints:  hint hint ...
 
 ### **Description**
 
-Each individual hint is hint name and arguments. In case there are no arguments,\
-the `()` brackets are still present:
+Each individual hint is hint name and arguments. In case there are no arguments, the `()` brackets are still present:
 
 ```
 hint:  hint_name([arguments])
 ```
 
-Incorrect hints produce warnings (a setting to make them errors is not implemented yet).\
+Incorrect hints produce warnings (a setting to make them errors is not implemented yet).
+
 Hints that are not ignored are kept in the query text (you can see them in `SHOW PROCESSLIST`, Slow Query Log, `EXPLAIN EXTENDED`). Hints that were incorrect and were ignored are removed from there.
 
 ### **Hint Hierarchy**
@@ -250,21 +252,41 @@ The optimizer may also consider using `t1_index2` and pick that over `using t1_i
 
 #### **JOIN\_INDEX and NO\_JOIN\_INDEX**
 
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
+
 An index-level hint that enables or disables the specified indexes for an access method (range, ref, etc.). Equivalent to `FORCE INDEX FOR JOIN` and `IGNORE INDEX FOR JOIN`.
 
 #### **GROUP\_INDEX and NO\_GROUP\_INDEX**
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
 
 An index-level hint that enables or disables the specified indexes for index scans for `GROUP BY` operations. Equivalent to `FORCE INDEX FOR GROUP BY` and `IGNORE INDEX FOR GROUP BY`.
 
 #### **ORDER\_INDEX and NO\_ORDER\_INDEX**
 
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
+
 An index-level hint that enables or disables the specified indexes for sorting rows. Equivalent to `FORCE INDEX FOR ORDER BY` and `IGNORE INDEX FOR ORDER BY`.
 
 #### **INDEX and NO\_INDEX**
 
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
+
 An index-level hint that enables or disables the specified indexes, for all scopes (join access method, GROUP BY, or sorting). Equivalent to `FORCE INDEX` and `IGNORE INDEX`.
 
 #### **NO\_RANGE\_OPTIMIZATION**
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
 
 An index-level hint that disables range optimization for certain index(es):
 
@@ -321,13 +343,25 @@ If `@@max_statement_time` is set, the hint will be ignored and a warning produce
 
 #### **SPLIT\_MATERIALIZED(X) and NO\_SPLIT\_MATERIALIZED(X)**
 
+{% hint style="info" %}
+These hints are available from MariaDB 12.1.
+{% endhint %}
+
 Enables or disables the use of the Split Materialized Optimization (also called the[ Lateral Derived Optimization](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/lateral-derived-optimization.md)).
 
 #### **DERIVED\_CONDITION\_PUSHDOWN and NO\_DERIVED\_CONDITION\_PUSHDOWN**
 
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
+
 Enables or disables the use of [condition pushdown for derived tables](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/condition-pushdown-into-derived-table-optimization.md).
 
 #### **MERGE and NO\_MERGE**
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.1.
+{% endhint %}
 
 Table-level hint that enables the use of merging, or disables and uses materialization, for the specified tables, views or common table expressions.
 
@@ -356,9 +390,7 @@ This controls the conversion of subqueries to semi-joins and which semi-join str
 ```
 
 where the strategy is one of `DUPSWEEDOUT`, `FIRSTMATCH`, `LOOSESCAN`, `MATERIALIZATION`.
-{% endtab %}
 
-{% tab title="<12.1" %}
 Hints are placed after the main statement verb.
 
 ```sql
@@ -556,17 +588,13 @@ This controls the conversion of subqueries to semi-joins and which semi-join str
 ```
 
 where the strategy is one of `DUPSWEEDOUT`, `FIRSTMATCH`, `LOOSESCAN`, `MATERIALIZATION`.
-{% endtab %}
-
-{% tab title="< 12.0" %}
-Expanded optimizer hints are not available.
-{% endtab %}
-{% endtabs %}
 
 ### Join Order Hints
 
-{% tabs %}
-{% tab title="Current" %}
+{% hint style="info" %}
+Join order hints are available from MariaDB 12.0.
+{% endhint %}
+
 #### Syntax
 
 Syntax of the `JOIN_FIXED_ORDER` hint:
@@ -610,17 +638,13 @@ General notes:
 
 * If a table has an alias, hints must refer to the alias, not the table name.
 * Table names in hints cannot be qualified with schema names.
-{% endtab %}
-
-{% tab title="< 12.0" %}
-Join order hints are **not** available.
-{% endtab %}
-{% endtabs %}
 
 ### Subquery Hints
 
-{% tabs %}
-{% tab title="Current" %}
+{% hint style="info" %}
+Subquery hints are available from MariaDB 12.0.
+{% endhint %}
+
 #### **Overview**
 
 Subquery hints determine:
@@ -675,12 +699,6 @@ SELECT * FROM t2 WHERE t2.a IN (SELECT /*+ SUBQUERY(INTOEXISTS) */ a FROM t1);
 For semi-join and `SUBQUERY` hints, a leading `@`_`query_block_name`_ specifies the query block to which the hint applies. If the hint includes no leading `@`_`query_block_name`_, the hint applies to the query block in which it occurs. To assign a name to a query block, see [Naming Query Blocks](optimizer-hints.md#query-block-naming).
 
 If a hint comment contains multiple subquery hints, the first is used. If there are other following hints of that type, they produce a warning. Following hints of other types are silently ignored.
-{% endtab %}
-
-{% tab title="< 12.0" %}
-Subquery hints are **not** available.
-{% endtab %}
-{% endtabs %}
 
 ## See Also
 
