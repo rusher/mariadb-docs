@@ -204,7 +204,7 @@ If your database server is also using the [MyRocks storage engine](../../storage
 To use the [--history](mariadb-backup-options.md#history) option(or the incremental history options), the backup user requires specific privileges on the history table.
 
 {% tabs %}
-{% tab title="< MariaDB 10.10" %}
+{% tab title="Current" %}
 The user needs `INSERT` to create history records and `SELECT` to read them for incremental backups:
 
 {% code overflow="wrap" %}
@@ -214,7 +214,7 @@ GRANT SELECT, INSERT, CREATE, ALTER ON mysql.mariadb_backup_history TO 'mariadb-
 {% endcode %}
 {% endtab %}
 
-{% tab title="> MariaDB 10.10" %}
+{% tab title="< MariaDB 10.10" %}
 The user needs privileges on the legacy `PERCONA_SCHEMA`:
 
 {% code overflow="wrap" %}
