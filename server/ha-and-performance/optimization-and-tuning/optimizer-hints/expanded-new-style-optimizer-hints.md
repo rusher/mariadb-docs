@@ -1,4 +1,8 @@
-# Expanded Optimizer Hints
+# Expanded New-Style Optimizer Hints
+
+{% hint style="info" %}
+New-style optimizer hints were introduced in MariaDB 12.0 and 12.1.
+{% endhint %}
 
 ## **Description**
 
@@ -107,7 +111,7 @@ This hint is available from MariaDB 12.1.
 /* +NO_ROWID_FILTER([table_name [index_name [ ... ] ]] ) */
 ```
 
-Does not consider `ROWID` filter for the scope of the hint (all tables in the query block, specific table, and specific indexes). See [ROWID\_FILTER](expanded-optimizer-hints.md#rowid_filter) for details.
+Does not consider `ROWID` filter for the scope of the hint (all tables in the query block, specific table, and specific indexes). See [ROWID\_FILTER](expanded-new-style-optimizer-hints.md#rowid_filter) for details.
 
 ### NO\_SPLIT\_MATERIALIZED
 
@@ -141,7 +145,7 @@ This hint is available from MariaDB 12.1.
 /* +ROWID_FILTER( [table_name [index_name [ ...] ]]) */
 ```
 
-Like [NO\_RANGE\_OPTIMIZATION](expanded-optimizer-hints.md#no_range_optimization) or [MRR](expanded-optimizer-hints.md#mrr-and-no_mrr), this hint can be applied to:
+Like [NO\_RANGE\_OPTIMIZATION](expanded-new-style-optimizer-hints.md#no_range_optimization) or [MRR](expanded-new-style-optimizer-hints.md#mrr-and-no_mrr), this hint can be applied to:
 
 * Query blocks — `NO_ROWID_FILTER()`
 * Table — `NO_ROWID_FILTER(`_`table_name`_`)`
@@ -255,6 +259,10 @@ SELECT /*+ NO_RANGE_OPTIMIZATION(tbl index1 index2) */  * FROM tbl ...
 
 ### **NO\_ICP**
 
+{% hint style="info" %}
+This hint is available from MariaDB 12.0.
+{% endhint %}
+
 An index-level hint that disables [Index Condition Pushdown](../query-optimizations/index-condition-pushdown.md) for the indexes. ICP+BKA is disabled as well.
 
 ```sql
@@ -262,6 +270,10 @@ SELECT /*+ NO_ICP(tbl index1 index2) */  * FROM tbl ...
 ```
 
 ### **MRR and NO\_MRR**
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.0.
+{% endhint %}
 
 Index-level hints to force or disable use of MRR.
 
@@ -278,17 +290,29 @@ This controls:
 
 ### **BKA() and NO\_BKA()**
 
+{% hint style="info" %}
+This hint is available from MariaDB 12.0.
+{% endhint %}
+
 Query block or table-level hints.
 
 `BKA()` also enables MRR to make BKA possible. (This is different from session variables, where you need to enable MRR separately). This also enables BKAH.
 
 ### **BNL() and NO\_BNL()**
 
+{% hint style="info" %}
+This hint is available from MariaDB 12.0.
+{% endhint %}
+
 Controls BNL-H.
 
 The implementation is "BNL() hint effectively increases join\_cache\_level up to 4 " .. for the table(s) it applies to.
 
 ### **MAX\_EXECUTION\_TIME()**
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.0.
+{% endhint %}
 
 Global-level hint to limit query execution time
 
@@ -303,7 +327,7 @@ If `@@max_statement_time` is set, the hint will be ignored and a warning produce
 ### **SPLIT\_MATERIALIZED(X) and NO\_SPLIT\_MATERIALIZED(X)**
 
 {% hint style="info" %}
-These hints are available from MariaDB 12.1.
+This hint is available from MariaDB 12.1.
 {% endhint %}
 
 Enables or disables the use of the Split Materialized Optimization (also called the[ Lateral Derived Optimization](../query-optimizations/optimizations-for-derived-tables/lateral-derived-optimization.md)).
@@ -326,6 +350,10 @@ Table-level hint that enables the use of merging, or disables and uses materiali
 
 ### **SUBQUERY**
 
+{% hint style="info" %}
+This hint is available from MariaDB 12.0.
+{% endhint %}
+
 Query block-level hint.
 
 ```sql
@@ -336,9 +364,13 @@ SUBQUERY([@query_block_name] INTOEXISTS)
 
 This controls non-semi-join subqueries. The parameter specifies which subquery to use. Use of this hint disables conversion of subquery into semi-join.
 
-For details, see the [Subquery Hints section](expanded-optimizer-hints.md#subquery-hints-1).
+For details, see the [Subquery Hints section](expanded-new-style-optimizer-hints.md#subquery-hints-1).
 
 ### **SEMIJOIN and NO\_SEMIJOIN**
+
+{% hint style="info" %}
+This hint is available from MariaDB 12.0.
+{% endhint %}
 
 Query block-level hints.
 
@@ -480,6 +512,6 @@ SELECT id, a IN (SELECT /*+ SUBQUERY(MATERIALIZATION) */ a FROM t1) FROM t2;
 SELECT * FROM t2 WHERE t2.a IN (SELECT /*+ SUBQUERY(INTOEXISTS) */ a FROM t1);
 ```
 
-For semi-join and `SUBQUERY` hints, a leading `@`_`query_block_name`_ specifies the query block to which the hint applies. If the hint includes no leading `@`_`query_block_name`_, the hint applies to the query block in which it occurs. To assign a name to a query block, see [Naming Query Blocks](expanded-optimizer-hints.md#query-block-naming).
+For semi-join and `SUBQUERY` hints, a leading `@`_`query_block_name`_ specifies the query block to which the hint applies. If the hint includes no leading `@`_`query_block_name`_, the hint applies to the query block in which it occurs. To assign a name to a query block, see [Naming Query Blocks](expanded-new-style-optimizer-hints.md#query-block-naming).
 
 If a hint comment contains multiple subquery hints, the first is used. If there are other following hints of that type, they produce a warning. Following hints of other types are silently ignored.
