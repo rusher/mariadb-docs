@@ -195,7 +195,7 @@ ORDER BY cc DESC LIMIT 1) FROM d;
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md)
 * [FOR UPDATE](for-update.md)
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
-* [Optimizer Hints](optimizer-hints.md)
+* [Optimizer Hints](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/)
 * [SELECT ... OFFSET ... FETCH](select-offset-fetch.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

@@ -152,7 +152,7 @@ SELECT * FROM store;
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md)
 * [FOR UPDATE](for-update.md)
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
-* [Optimizer Hints](optimizer-hints.md)
+* [Optimizer Hints](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

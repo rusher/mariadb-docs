@@ -61,7 +61,7 @@ lock_option:
 
 {% tabs %}
 {% tab title="Current" %}
-Available join order hints [can be found here](optimizer-hints.md#join-order-hints).
+Available join order hints [can be found here](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/#join-order-hints).
 {% endtab %}
 
 {% tab title="< 12.0" %}
@@ -171,9 +171,9 @@ The clause doesn't exist.
 
 ### Optimizer Hints
 
-These include [HIGH\_PRIORITY](optimizer-hints.md#high-priority), [STRAIGHT\_JOIN](optimizer-hints.md#straight_join), [SQL\_SMALL\_RESULT | SQL\_BIG\_RESULT](optimizer-hints.md#sql_small_result-sql_big_result), [SQL\_BUFFER\_RESULT](optimizer-hints.md#sql_buffer_result), [SQL\_CACHE | SQL\_NO\_CACHE](optimizer-hints.md#sql_cache-sql_no_cache), and [SQL\_CALC\_FOUND\_ROWS](optimizer-hints.md#sql_calc_found_rows).
+These include [HIGH\_PRIORITY](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/#high-priority), [STRAIGHT\_JOIN](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/#straight_join), [SQL\_SMALL\_RESULT | SQL\_BIG\_RESULT](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/#sql_small_result-sql_big_result), [SQL\_BUFFER\_RESULT](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/#sql_buffer_result), [SQL\_CACHE | SQL\_NO\_CACHE](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/#sql_cache-sql_no_cache), and [SQL\_CALC\_FOUND\_ROWS](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/#sql_calc_found_rows).
 
-See [Optimizer Hints](optimizer-hints.md) for details.
+See [Optimizer Hints](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/) for details.
 
 ### max\_statement\_time clause
 
@@ -209,7 +209,7 @@ See [Getting Data from MariaDB](../../../../server-usage/data-handling/mariadb-s
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md)
 * [FOR UPDATE](for-update.md)
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
-* [Optimizer Hints](optimizer-hints.md)
+* [Optimizer Hints](../../../../ha-and-performance/optimization-and-tuning/optimizer-hints/)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/about/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)

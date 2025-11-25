@@ -13,7 +13,7 @@ Common Table Expressions (CTEs) are a standard SQL feature, and are essentially 
 
 The [WITH](with.md) keyword signifies a CTE. It is given a name, followed by a body (the main query):
 
-![cte\_syntax](<../../../../../.gitbook/assets/cte_syntax (1).png>)
+![cte\_syntax](/broken/files/MFZE3zCsU3RNoysbwrNB)
 
 CTEs are similar to derived tables:
 
